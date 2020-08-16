@@ -3,7 +3,6 @@ include("begin.php");
 include($subroot . "logconfig.php");
 include("adminlib.php");
 $textpart = "setup";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 

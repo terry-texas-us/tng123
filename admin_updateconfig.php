@@ -3,7 +3,6 @@ include("begin.php");
 include("processvars.php");
 include("adminlib.php");
 $textpart = "setup";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 if (!count($_POST)) {

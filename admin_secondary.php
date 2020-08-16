@@ -2,7 +2,6 @@
 include("begin.php");
 include("adminlib.php");
 $textpart = "secondary";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 include($subroot . "importconfig.php");

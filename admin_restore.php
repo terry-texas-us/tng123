@@ -3,7 +3,6 @@
 include("begin.php");
 include("adminlib.php");
 $textpart = "setup";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 $admin_login = 1;

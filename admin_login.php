@@ -3,7 +3,6 @@ include("begin.php");
 $tngconfig['maint'] = "";
 include("adminlib.php");
 $textpart = "login";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 include("tngmaillib.php");
 

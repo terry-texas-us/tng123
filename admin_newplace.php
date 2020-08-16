@@ -4,7 +4,7 @@ include($subroot . "mapconfig.php");
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include("adminlib.php");
 $textpart = "findplace";
-//include("getlang.php");
+//include "getlang.php";
 include("$mylanguage/admintext.php");
 
 $admin_login = 1;

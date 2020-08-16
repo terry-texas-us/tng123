@@ -3,7 +3,6 @@ include("begin.php");
 $tngconfig['maint'] = "";
 include("adminlib.php");
 $textpart = "setup";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 $maintenance_mode = true;

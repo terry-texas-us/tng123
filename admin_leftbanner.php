@@ -5,7 +5,6 @@ $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
 include($cms['tngpath'] . "adminlib.php");
 $textpart = "index";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 $admin_login = 2;
 

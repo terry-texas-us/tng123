@@ -6,7 +6,6 @@ if (!$mediaID) {
 }
 
 $textpart = "photos";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 include($cms['tngpath'] . "checklogin.php");

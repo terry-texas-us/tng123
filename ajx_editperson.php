@@ -6,7 +6,6 @@ if (!$personID) {
 }
 
 $textpart = "people";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 include($cms['tngpath'] . "checklogin.php");

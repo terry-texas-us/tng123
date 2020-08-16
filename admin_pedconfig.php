@@ -3,7 +3,6 @@ include("begin.php");
 include($subroot . "pedconfig.php");
 include("adminlib.php");
 $textpart = "setup";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 if ($link) {

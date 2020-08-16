@@ -6,7 +6,6 @@ if (!$familyID) {
 }
 
 $textpart = "families";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 include($cms['tngpath'] . "checklogin.php");

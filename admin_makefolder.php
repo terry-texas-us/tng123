@@ -2,7 +2,6 @@
 include("begin.php");
 include("adminlib.php");
 $textpart = "setup";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 header("Content-type:text/html; charset=" . $session_charset);

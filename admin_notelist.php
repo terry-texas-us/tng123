@@ -3,7 +3,6 @@ include("begin.php");
 include($subroot . "mapconfig.php");
 include("adminlib.php");
 $textpart = "notes";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 $admin_login = 1;

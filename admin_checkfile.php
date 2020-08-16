@@ -1,7 +1,6 @@
 <?php
 include("begin.php");
 include("adminlib.php");
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 include("checklogin.php");

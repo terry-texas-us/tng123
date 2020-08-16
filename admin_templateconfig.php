@@ -2,7 +2,6 @@
 include("begin.php");
 include("adminlib.php");
 $textpart = "templates";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 $templatespath = "templates";

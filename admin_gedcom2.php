@@ -9,7 +9,6 @@ if ($umfs < 15) {
 include("begin.php");
 include("adminlib.php");
 $textpart = "trees";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 $admin_login = 1;

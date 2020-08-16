@@ -5,7 +5,6 @@ $tngconfig['maint'] = "";
 include($subroot . "mapconfig.php");
 include("adminlib.php");
 $textpart = "index";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 $admin_login = 2;
 

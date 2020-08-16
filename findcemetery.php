@@ -2,7 +2,6 @@
 include("begin.php");
 include("adminlib.php");
 $textpart = "cemeteries";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 include($cms['tngpath'] . "checklogin.php");

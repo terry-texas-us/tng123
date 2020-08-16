@@ -2,7 +2,6 @@
 include("begin.php");
 include("adminlib.php");
 $textpart = "events";
-//include("getlang.php");
 include("$mylanguage/admintext.php");
 
 $admin_login = 1;

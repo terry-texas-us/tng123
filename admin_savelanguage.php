@@ -24,7 +24,6 @@ if (file_exists($languages_path . $row['folder'])) {
   setcookie("tngnorels_$newroot", $row['norels'], time() + 31536000, "/");
 }
 
-//include("getlang.php");
 include("$languages_path$session_language/admintext.php");
 $admin_login = 1;
 include("checklogin.php");
