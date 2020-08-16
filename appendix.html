@@ -1,0 +1,2802 @@
+<!-- The Next Generation of Genealogy Sitebuilding, v.4.1.0, Written by Darrin Lythgoe, 2001-2004 -->
+<html>
+<head>
+    <link href="css/genstyle.css" rel="stylesheet">
+    <title>Appendix</title>
+
+    <style>
+        td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Appendix</h1>
+<br/>
+<h2>Description of Files</h2>
+<table cellspacing="0" cellpadding="4" class="normal" border="1">
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>Configuration Pages</b></td>
+    </tr>
+    <tr>
+        <td>adminmeta.php</td>
+        <td>For HTML or scripting language to be included in the HEAD section of each Admin page. Blank to start with, except for the style sheet declaration and a statement to keep search engines from indexing your Admin pages.
+            Customization is optional.
+        </td>
+    </tr>
+    <tr>
+        <td>calsettings.php</td>
+        <td>Settings for the calendar page.</td>
+    </tr>
+    <tr>
+        <td>config.php</td>
+        <td>Database and other settings. You need to customize this before anything will work.</td>
+    </tr>
+    <tr>
+        <td>customconfig.php</td>
+        <td>Custom settings (starts empty).</td>
+    </tr>
+    <tr>
+        <td>footer.html (<em>deprecated</em>)</td>
+        <td>HTML to be included at the bottom of each page. Blank to start with except for some text crediting me as the author of TNG. You may use a different file, but you must specify the new file in the General Settings.</td>
+    </tr>
+    <tr>
+        <td>footer.php</td>
+        <td>Same as footer.html, but built as a PHP file so it can include dynamic content.</td>
+    </tr>
+    <tr>
+        <td>genlog.txt</td>
+        <td>Raw log data (starts empty). Must be made writeable (chmod 664).</td>
+    </tr>
+    <tr>
+        <td>adminlog.txt</td>
+        <td>Raw log data for admin area (starts empty). Must be made writeable (chmod 664).</td>
+    </tr>
+    <tr>
+        <td>importconfig.php</td>
+        <td>Import-related settings.</td>
+    </tr>
+    <tr>
+        <td>logconfig.php</td>
+        <td>Log-related settings.</td>
+    </tr>
+    <tr>
+        <td>meta.html (<em>deprecated</em>)</td>
+        <td>For HTML or scripting language to be included in the HEAD section of each page. Blank to start with, except for the style sheet declaration. Customization is optional. You may use a different file, but you must specify the new file in the
+            General Settings.
+        </td>
+    </tr>
+    <tr>
+        <td>meta.php</td>
+        <td>Same as meta.html, but in PHP format.</td>
+    </tr>
+    <tr>
+        <td>mapconfig.php</td>
+        <td>Settings related to the Google Maps integration.</td>
+    </tr>
+    <tr>
+        <td>pedconfig.php</td>
+        <td>Settings for the pedigree charts. You will likely want to customize these in order to more closely integrate the charts with
+            the rest of your site..
+        </td>
+    </tr>
+    <tr>
+        <td>topmenu.html (<em>deprecated</em>)</td>
+        <td>HTML to be included at top of each page. Blank to start with except for the &lt;BODY&gt; tag. I recommend you put your site navigation here. You may use a different file, but you must specify the new file in the General Settings.</td>
+    </tr>
+    <tr>
+        <td>topmenu.php</td>
+        <td>Same as topmenu.html, but built as a PHP file so it can include dynamic content.</td>
+    </tr>
+    <tr>
+        <td>whatsnew.txt</td>
+        <td>Emtpy file for custom message on "What's New" page. Must be made writeable (chmod 664).</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>PHP Scripts</b></td>
+    </tr>
+    <tr>
+        <td>addnewacct.php</td>
+        <td>Puts information from potential user in users table, notifies administrator.</td>
+    </tr>
+    <tr>
+        <td>admin.php</td>
+        <td>Main administration menu page.</td>
+    </tr>
+    <tr>
+        <td>admin/index.php</td>
+        <td>Redirects people to the new menu location at admin.php.</td>
+    </tr>
+    <tr>
+        <td>admin_add2albumxml.php</td>
+        <td>Fetches media asynchonously for possible inclusion in an album.</td>
+    </tr>
+    <tr>
+        <td>admin_addalbum.php</td>
+        <td>Adds new album record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addassoc.php</td>
+        <td>Adds new association record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addbranch.php</td>
+        <td>Adds new branch record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addcemetery.php</td>
+        <td>Adds new cemetery record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addcitation.php</td>
+        <td>Adds new citation record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addcollection.php</td>
+        <td>Adds new media collection record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addentity.php</td>
+        <td>Adds new state or country (for cemetery locations) to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addevent.php</td>
+        <td>Adds new event record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addeventtype.php</td>
+        <td>Adds new event type record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addfamily.php</td>
+        <td>Adds new family record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addlanguage.php</td>
+        <td>Adds new language record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addmedia.php</td>
+        <td>Adds new media record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addnote.php</td>
+        <td>Adds new note record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addperson.php</td>
+        <td>Adds new individual record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addperson2.php</td>
+        <td>Adds new individual record to the database (short form).</td>
+    </tr>
+    <tr>
+        <td>admin_addplace.php</td>
+        <td>Adds new place record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addrepo.php</td>
+        <td>Adds new repository record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addreport.php</td>
+        <td>Adds new report record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addsource.php</td>
+        <td>Adds new source record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addtlevent.php</td>
+        <td>Adds new timeline event record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_addtree.php</td>
+        <td>Adds new tree record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_adduser.php</td>
+        <td>Adds new user record to the database.</td>
+    </tr>
+    <tr>
+        <td>admin_albums.php</td>
+        <td>Albums administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_associations.php</td>
+        <td>Displays associations for an individual.</td>
+    </tr>
+    <tr>
+        <td>admin_backup.php</td>
+        <td>Creates a backup file of a database table.</td>
+    </tr>
+    <tr>
+        <td>admin_branches.php</td>
+        <td>Branch administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_branchlabels.php</td>
+        <td>Labels branches within a tree.</td>
+    </tr>
+    <tr>
+        <td>admin_branchmenu.php</td>
+        <td>Accepts user parameters for labeling branches.</td>
+    </tr>
+    <tr>
+        <td>admin_branchoptions.php</td>
+        <td>Displays dropdown of available branches.</td>
+    </tr>
+    <tr>
+        <td>admin_cemeteries.php</td>
+        <td>Cemetery administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_changetree.php</td>
+        <td>Moves a person, source or repository to a new tree.</td>
+    </tr>
+    <tr>
+        <td>admin_changetreeform.php</td>
+        <td>Input form for selecting a new tree for a person, source or repository.</td>
+    </tr>
+    <tr>
+        <td>admin_checkfile.php</td>
+        <td>Checks the existence of a file.</td>
+    </tr>
+    <tr>
+        <td>admin_checkID.php</td>
+        <td>Utility that checks to see if an ID is unique.</td>
+    </tr>
+    <tr>
+        <td>admin_citations.php</td>
+        <td>Displays citations for a selected event.</td>
+    </tr>
+    <tr>
+        <td>admin_cleartree.php</td>
+        <td>Removes all data from the selected tree.</td>
+    </tr>
+    <tr>
+        <td>admin_corner.php</td>
+        <td>Corner frame for TNG logo.</td>
+    </tr>
+    <tr>
+        <td>admin_dataimport.php</td>
+        <td>Begins a GEDCOM import.</td>
+    </tr>
+    <tr>
+        <td>admin_defphotos.php</td>
+        <td>Sets default photo for each person with photos.</td>
+    </tr>
+    <tr>
+        <td>admin_deletealbum.php</td>
+        <td>Deletes an album record.</td>
+    </tr>
+    <tr>
+        <td>admin_deleteassoc.php</td>
+        <td>Deletes an association record.</td>
+    </tr>
+    <tr>
+        <td>admin_deletecitation.php</td>
+        <td>Deletes a citation record.</td>
+    </tr>
+    <tr>
+        <td>admin_deleteentity.php</td>
+        <td>Deletes a state or country (cemetery locations).</td>
+    </tr>
+    <tr>
+        <td>admin_deleteevent.php</td>
+        <td>Deletes an event record.</td>
+    </tr>
+    <tr>
+        <td>admin_deletefile.php</td>
+        <td>Deletes a file.</td>
+    </tr>
+    <tr>
+        <td>admin_deletenote.php</td>
+        <td>Deletes a note record.</td>
+    </tr>
+    <tr>
+        <td>admin_deletereview.php</td>
+        <td>Deletes a tentative edit record.</td>
+    </tr>
+    <tr>
+        <td>admin_deleteselected.php</td>
+        <td>Deletes entities checked from a list (photos, histories, etc.).</td>
+    </tr>
+    <tr>
+        <td>admin_diagnostics.php</td>
+        <td>Displays TNG and PHP diagnostics.</td>
+    </tr>
+    <tr>
+        <td>admin_editalbum.php</td>
+        <td>Displays an album record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editassoc.php</td>
+        <td>Displays an association record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editbranch.php</td>
+        <td>Displays a branch record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editcemetery.php</td>
+        <td>Displays a cemetery record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editcitation.php</td>
+        <td>Displays a citation record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editcollection.php</td>
+        <td>Displays a media collection record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editevent.php</td>
+        <td>Displays an event record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editeventtype.php</td>
+        <td>Displays an event type record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editfamily.php</td>
+        <td>Displays a family record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editlanguage.php</td>
+        <td>Displays a language record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editmedia.php</td>
+        <td>Displays a media record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editmedialink.php</td>
+        <td>Displays a media link record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editmore.php</td>
+        <td>Displays additional event information for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editmostwanted.php</td>
+        <td>Displays Most Wanted records for editing and sorting.</td>
+    </tr>
+    <tr>
+        <td>admin_editnote.php</td>
+        <td>Displays a note record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editnote2.php</td>
+        <td>Displays a note record for independent editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editperson.php</td>
+        <td>Displays a person record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editplace.php</td>
+        <td>Displays a place record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editrepo.php</td>
+        <td>Displays a repository record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editreport.php</td>
+        <td>Displays a report record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_editsource.php</td>
+        <td>Displays a source record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_edittlevent.php</td>
+        <td>Displays a timeline record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_edittree.php</td>
+        <td>Displays a tree record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_edituser.php</td>
+        <td>Displays a user record for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_eventtypes.php</td>
+        <td>Event types administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_export.php</td>
+        <td>Takes your export preferences prior to exporting a GEDCOM.</td>
+    </tr>
+    <tr>
+        <td>admin_families.php</td>
+        <td>Family administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_filepicker.php</td>
+        <td>Displays contents of a TNG folder to allow easy picking of photos and other items.</td>
+    </tr>
+    <tr>
+        <td>admin_findmwmedia.php</td>
+        <td>Displays summary of media records that match search criteria entered from the Most Wanted page.</td>
+    </tr>
+    <tr>
+        <td>admin_findreview.php</td>
+        <td>Displays summary of tentative edit records ready for review that match search criteria.</td>
+    </tr>
+    <tr>
+        <td>admin_gedcom2.php</td>
+        <td>Exports a complete GEDCOM for a tree.</td>
+    </tr>
+    <tr>
+        <td>admin_gedimport.php</td>
+        <td>Imports new genealogical data (individuals and marriages)</td>
+    </tr>
+    <tr>
+        <td>admin_gedimport_eventtypes.php</td>
+        <td>Dependency of gedimport.php (used when importing custom event types only).</td>
+    </tr>
+    <tr>
+        <td>admin_genconfig.php</td>
+        <td>Displays the values of your system variables for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_generateID.php</td>
+        <td>Generates a unique person or family ID.</td>
+    </tr>
+    <tr>
+        <td>admin_generatethumbs.php</td>
+        <td>Generate thumbnail images for existing photos.</td>
+    </tr>
+    <tr>
+        <td>admin_geocode.php</td>
+        <td>Obtain geocode information for place records.</td>
+    </tr>
+    <tr>
+        <td>admin_geocodeform.php</td>
+        <td>Form to launch geocoding utility.</td>
+    </tr>
+    <tr>
+        <td>admin_getphotodetails.php</td>
+        <td>Retrieves information on a photo for Most Wanted editor.</td>
+    </tr>
+    <tr>
+        <td>admin_importconfig.php</td>
+        <td>Displays the values of your import variables for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_languages.php</td>
+        <td>Language administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_leftbanner.php</td>
+        <td>Left navigational frame of admin set, displays menu items.</td>
+    </tr>
+    <tr>
+        <td>admin_logconfig.php</td>
+        <td>Displays the values of your log variables for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_login.php</td>
+        <td>Prompts a user to log in.</td>
+    </tr>
+    <tr>
+        <td>admin_mailusers.php</td>
+        <td>Form to initiate e-mail to users.</td>
+    </tr>
+    <tr>
+        <td>admin_main.php</td>
+        <td>Main admin menu, displays in central frame.</td>
+    </tr>
+    <tr>
+        <td>admin_makefolder.php</td>
+        <td>Attempts to create TNG folders (used during installation). Success depends on server setup.</td>
+    </tr>
+    <tr>
+        <td>admin_mapconfig.php</td>
+        <td>Displays the values of your map-related variables for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_media.php</td>
+        <td>Media administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_mediaeventxml.php</td>
+        <td>Fetches event data asynchronously for use with media linking.</td>
+    </tr>
+    <tr>
+        <td>admin_medialinksxml.php</td>
+        <td>Fetches entity data asynchronously for use with media linking.</td>
+    </tr>
+    <tr>
+        <td>admin_mediaupload.php</td>
+        <td>Media mass upload page.</td>
+    </tr>
+    <tr>
+        <td>admin_mediauploader.php</td>
+        <td>Processes mass uploads.</td>
+    </tr>
+    <tr>
+        <td>admin_merge.php</td>
+        <td>Search for possible duplicate individuals and merge them on command.</td>
+    </tr>
+    <tr>
+        <td>admin_mergeplaces.php</td>
+        <td>Merges place records.</td>
+    </tr>
+    <tr>
+        <td>admin_mergeplacesajax.php</td>
+        <td>Performs place merge in background.</td>
+    </tr>
+    <tr>
+        <td>admin_mergerepos.php</td>
+        <td>Search for possible duplicate repositories and merge them on command.</td>
+    </tr>
+    <tr>
+        <td>admin_mergesources.php</td>
+        <td>Search for possible duplicate sources and merge them on command.</td>
+    </tr>
+    <tr>
+        <td>admin_misc.php</td>
+        <td>Admin "Miscellaneous" menu.</td>
+    </tr>
+    <tr>
+        <td>admin_modmanager.php</td>
+        <td>The Mod Manager.</td>
+    </tr>
+    <tr>
+        <td>admin_mostwantedlist.php</td>
+        <td>Displays Most Wanted records for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_newalbum.php</td>
+        <td>Accepts information for new album record.</td>
+    </tr>
+    <tr>
+        <td>admin_newbranch.php</td>
+        <td>Accepts information for new branch record.</td>
+    </tr>
+    <tr>
+        <td>admin_newcemetery.php</td>
+        <td>Accepts information for new cemetery record.</td>
+    </tr>
+    <tr>
+        <td>admin_newcollection.php</td>
+        <td>Accepts information for new media collection record.</td>
+    </tr>
+    <tr>
+        <td>admin_newentity.php</td>
+        <td>Accepts information for new state or country record (cemetery locations).</td>
+    </tr>
+    <tr>
+        <td>admin_newevent.php</td>
+        <td>Accepts information for new event record.</td>
+    </tr>
+    <tr>
+        <td>admin_neweventtype.php</td>
+        <td>Accepts information for new event type record.</td>
+    </tr>
+    <tr>
+        <td>admin_newfamily.php</td>
+        <td>Accepts information for new family record.</td>
+    </tr>
+    <tr>
+        <td>admin_newlanguage.php</td>
+        <td>Accepts information for new language record.</td>
+    </tr>
+    <tr>
+        <td>admin_newmedia.php</td>
+        <td>Accepts information for new media record.</td>
+    </tr>
+    <tr>
+        <td>admin_newperson.php</td>
+        <td>Accepts information for new person record.</td>
+    </tr>
+    <tr>
+        <td>admin_newperson2.php</td>
+        <td>Accepts information for new person record (short form).</td>
+    </tr>
+    <tr>
+        <td>admin_newplace.php</td>
+        <td>Accepts information for new place record.</td>
+    </tr>
+    <tr>
+        <td>admin_newrepo.php</td>
+        <td>Accepts information for new repository record.</td>
+    </tr>
+    <tr>
+        <td>admin_newreport.php</td>
+        <td>Accepts information for new report record.</td>
+    </tr>
+    <tr>
+        <td>admin_newsource.php</td>
+        <td>Accepts information for new source record.</td>
+    </tr>
+    <tr>
+        <td>admin_newtlevent.php</td>
+        <td>Accepts information for new timeline event record.</td>
+    </tr>
+    <tr>
+        <td>admin_newtree.php</td>
+        <td>Accepts information for new tree record.</td>
+    </tr>
+    <tr>
+        <td>admin_newuser.php</td>
+        <td>Accepts information for new user record.</td>
+    </tr>
+    <tr>
+        <td>admin_notes.php</td>
+        <td>Displays notes for a selected event.</td>
+    </tr>
+    <tr>
+        <td>admin_notelist.php</td>
+        <td>Displays list of notes in the Admin/Miscellaneous section.</td>
+    </tr>
+    <tr>
+        <td>admin_optimize.php</td>
+        <td>Optimizes a database table.</td>
+    </tr>
+    <tr>
+        <td>admin_orderalbumform.php</td>
+        <td>Accepts entity to pass to sort utility.</td>
+    </tr>
+    <tr>
+        <td>admin_orderalbums.php</td>
+        <td>Sorts album links for a designated entity.</td>
+    </tr>
+    <tr>
+        <td>admin_ordermedia.php</td>
+        <td>Sorts media for a designated entity and media type.</td>
+    </tr>
+    <tr>
+        <td>admin_ordermediaform.php</td>
+        <td>Accepts entity and media type to pass to sort utility.</td>
+    </tr>
+    <tr>
+        <td>admin_pedconfig.php</td>
+        <td>Displays the values of your pedigree variables for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_people.php</td>
+        <td>Person administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_photoimport.php</td>
+        <td>Options for importing photos.</td>
+    </tr>
+    <tr>
+        <td>admin_photoimporter.php</td>
+        <td>Imports photos.</td>
+    </tr>
+    <tr>
+        <td>admin_phpinfo.php</td>
+        <td>Displays "PHP Info" page for your PHP installation.</td>
+    </tr>
+    <tr>
+        <td>admin_pickcemetery.php</td>
+        <td>Small popup to facilitate cemetery selection.</td>
+    </tr>
+    <tr>
+        <td>admin_places.php</td>
+        <td>Places administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_renumber.php</td>
+        <td>Resequences IDs.</td>
+    </tr>
+    <tr>
+        <td>admin_renumbermenu.php</td>
+        <td>Option menu for resequencing.</td>
+    </tr>
+    <tr>
+        <td>admin_reports.php</td>
+        <td>Reports administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_repositories.php</td>
+        <td>Repositories administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_restore.php</td>
+        <td>Restores a backed-up table.</td>
+    </tr>
+    <tr>
+        <td>admin_review.php</td>
+        <td>Displays a tentative edit for administrative review.</td>
+    </tr>
+    <tr>
+        <td>admin_reviewusers.php</td>
+        <td>Displays user records waiting for administrative review.</td>
+    </tr>
+    <tr>
+        <td>admin_rightbanner.php</td>
+        <td>Top right frame of admin set, displays TNG version, language switcher and other menu items.</td>
+    </tr>
+    <tr>
+        <td>admin_savelanguage.php</td>
+        <td>Processes a language switch.</td>
+    </tr>
+    <tr>
+        <td>admin_savereview.php</td>
+        <td>Save changes made during a review of tentative edit submissions.</td>
+    </tr>
+    <tr>
+        <td>admin_savewhatsnewmsg.php</td>
+        <td>Saves text to display on "What's New" page.</td>
+    </tr>
+    <tr>
+        <td>admin_secondary.php</td>
+        <td>Indicates progress of secondary data maintenance processes (GENDEX creation, tracking lines of descent)</td>
+    </tr>
+    <tr>
+        <td>admin_second_menu.php</td>
+        <td>Menu of secondary data processes.</td>
+    </tr>
+    <tr>
+        <td>admin_sendmailusers</td>
+        <td>Sends e-mail to users.</td>
+    </tr>
+    <tr>
+        <td>admin_setup.php</td>
+        <td>Configuration Setup page (the other one you need to worry about).</td>
+    </tr>
+    <tr>
+        <td>admin_showbranch.php</td>
+        <td>Show individuals in a particular branch.</td>
+    </tr>
+    <tr>
+        <td>admin_sources.php</td>
+        <td>Sources administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_tablecreate.php</td>
+        <td>Create all tables needed for application (WARNING: ALL PRE-EXISTING DATA WILL BE LOST!!)</td>
+    </tr>
+    <tr>
+        <td>admin_templateconfig.php</td>
+        <td>Displays template settings for editing.</td>
+    </tr>
+    <tr>
+        <td>admin_thumbnails.php</td>
+        <td>Form to initiate thumbnail generation.</td>
+    </tr>
+    <tr>
+        <td>admin_timelineevents.php</td>
+        <td>Timeline events administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_trees.php</td>
+        <td>Trees administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_updatealbum.php</td>
+        <td>Saves changes to an album record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateassoc.php</td>
+        <td>Saves changes to an association record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatebranch.php</td>
+        <td>Saves changes to a branch record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatecemetery.php</td>
+        <td>Saves changes to a cemetery record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatecitation.php</td>
+        <td>Saves changes to a citation record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatecollection.php</td>
+        <td>Saves changes to a media collection record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateconfig.php</td>
+        <td>Saves changes to system variables.</td>
+    </tr>
+    <tr>
+        <td>admin_updateevent.php</td>
+        <td>Saves changes to an event record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateeventtype.php</td>
+        <td>Saves changes to an event type record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatefamily.php</td>
+        <td>Saves changes to a family record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateimportconfig.php</td>
+        <td>Saves changes to import variables.</td>
+    </tr>
+    <tr>
+        <td>admin_updatelanguage.php</td>
+        <td>Saves changes to a language record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatelogconfig.php</td>
+        <td>Saves changes to log variables.</td>
+    </tr>
+    <tr>
+        <td>admin_updatemapconfig.php</td>
+        <td>Saves changes to map-related variables.</td>
+    </tr>
+    <tr>
+        <td>admin_updatetemplateconfig.php</td>
+        <td>Saves changes to template-related variables.</td>
+    </tr>
+    <tr>
+        <td>admin_updatemedia.php</td>
+        <td>Saves changes to a media record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatemore.php</td>
+        <td>Saves changes to an extended event record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatemostwanted.php</td>
+        <td>Saves changes to Most Wanted records.</td>
+    </tr>
+    <tr>
+        <td>admin_updatenote.php</td>
+        <td>Saves changes to a note record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatenote2.php</td>
+        <td>Saves changes to a note record from the Admin/Miscellaneous section.</td>
+    </tr>
+    <tr>
+        <td>admin_updatepedconfig.php</td>
+        <td>Saves changes to pedigree variables.</td>
+    </tr>
+    <tr>
+        <td>admin_updateperson.php</td>
+        <td>Saves changes to a person record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateplace.php</td>
+        <td>Saves changes to a place record.</td>
+    </tr>
+    <tr>
+        <td>admin_updaterepo.php</td>
+        <td>Saves changes to a repository record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatereport.php</td>
+        <td>Saves changes to a report record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateselectedeventtypes.php</td>
+        <td>Saves mass changes to event type records.</td>
+    </tr>
+    <tr>
+        <td>admin_updateselectedmedia.php</td>
+        <td>Saves mass changes to media records.</td>
+    </tr>
+    <tr>
+        <td>admin_updatesource.php</td>
+        <td>Saves changes to a source record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatetlevent.php</td>
+        <td>Saves changes to a timeline event record.</td>
+    </tr>
+    <tr>
+        <td>admin_updatetree.php</td>
+        <td>Saves changes to a tree record.</td>
+    </tr>
+    <tr>
+        <td>admin_updateuser.php</td>
+        <td>Saves changes to a user record.</td>
+    </tr>
+    <tr>
+        <td>admin_users.php</td>
+        <td>Users administration page.</td>
+    </tr>
+    <tr>
+        <td>admin_utilities.php</td>
+        <td>Backup, restore or optimize tables.</td>
+    </tr>
+    <tr>
+        <td>admin_whatsnewmsg.php</td>
+        <td>Accepts text to be displayed on the "What's New" page.</td>
+    </tr>
+    <tr>
+        <td>adminlib.php</td>
+        <td>Contains database, header functions.</td>
+    </tr>
+    <tr>
+        <td>adminlog.php</td>
+        <td>Contains functions that perform logging in admin area.</td>
+    </tr>
+    <tr>
+        <td>adminmaint.php</td>
+        <td>Stub to be displayed in Admin area during maintenance mode.</td>
+    </tr>
+    <tr>
+        <td>adminshowlog.php</td>
+        <td>Shows administrative log.</td>
+    </tr>
+    <tr>
+        <td>ahnentafel.php</td>
+        <td>Register ancestral report for an individual, where <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>ajx_addbookmark.php</td>
+        <td>Adds a site bookmark for the selected page.</td>
+    </tr>
+    <tr>
+        <td>ajx_checknewuser.php</td>
+        <td>Checks to see if a user exists via ajax.</td>
+    </tr>
+    <tr>
+        <td>ajx_delete.php</td>
+        <td>Deletes various record times via ajax.</td>
+    </tr>
+    <tr>
+        <td>ajx_deletebookmark.php</td>
+        <td>Removes the selected site bookmark.</td>
+    </tr>
+    <tr>
+        <td>ajx_editfamily.php</td>
+        <td>Displays a family record for editing in an overlay.</td>
+    </tr>
+    <tr>
+        <td>ajx_editperson.php</td>
+        <td>Displays a person record for editing in an overlay.</td>
+    </tr>
+    <tr>
+        <td>ajx_editprofile.php</td>
+        <td>Displays a user record for editing in an overlay.</td>
+    </tr>
+    <tr>
+        <td>ajx_fampreview.php</td>
+        <td>Displays preview pane for a family record.</td>
+    </tr>
+    <tr>
+        <td>ajx_getlastcite.php</td>
+        <td>Gets detail for last citation used.</td>
+    </tr>
+    <tr>
+        <td>ajx_login.php</td>
+        <td>Login from an overlay.</td>
+    </tr>
+    <tr>
+        <td>ajx_logxml.php</td>
+        <td>Fetches log data asynchonously.</td>
+    </tr>
+    <tr>
+        <td>ajx_newfamily.php</td>
+        <td>Form to create a family record in an overlay.</td>
+    </tr>
+    <tr>
+        <td>ajx_newperson.php</td>
+        <td>Form to create a person record in an overlay.</td>
+    </tr>
+    <tr>
+        <td>ajx_pedjson.php</td>
+        <td>Fetches pedigree data asynchonously in JSON format.</td>
+    </tr>
+    <tr>
+        <td>ajx_perspreview.php</td>
+        <td>Displays preview pane for a person record.</td>
+    </tr>
+    <tr>
+        <td>ajx_placeconvert.php</td>
+        <td>Removes tree assignments from place records.</td>
+    </tr>
+    <tr>
+        <td>ajx_savetentedit.php</td>
+        <td>Saves tentative edits for later review.</td>
+    </tr>
+    <tr>
+        <td>ajx_showmediaxml.php</td>
+        <td>Fetches media asynchronously (for slideshow).</td>
+    </tr>
+    <tr>
+        <td>ajx_slideshow.php</td>
+        <td>Runs the slide show.</td>
+    </tr>
+    <tr>
+        <td>ajx_smallimage.php</td>
+        <td>Generates image previews.</td>
+    </tr>
+    <tr>
+        <td>ajx_tentedit.php</td>
+        <td>Prompts user for tentative edits to displayed record.</td>
+    </tr>
+    <tr>
+        <td>ajx_timelinexml.php</td>
+        <td>Fetches timeline event data asynchonously in XML format.</td>
+    </tr>
+    <tr>
+        <td>ajx_tnginstall.php</td>
+        <td>Performs behind-the-scenes work during TNG installation from readme.html.</td>
+    </tr>
+    <tr>
+        <td>ajx_updateorder.php</td>
+        <td>Saves changes to various records via ajax.</td>
+    </tr>
+    <tr>
+        <td>ajx_updatuser.php</td>
+        <td>Saves user profile changes via ajax.</td>
+    </tr>
+    <tr>
+        <td>albumlib.php</td>
+        <td>Library of album-related functions.</td>
+    </tr>
+    <tr>
+        <td>api_checklogin.php</td>
+        <td>Basic authentication for API scripts.</td>
+    </tr>
+    <tr>
+        <td>api_family.php</td>
+        <td>API to return data for a family (takes familyID and tree as args).</td>
+    </tr>
+    <tr>
+        <td>api_library.php</td>
+        <td>Contains functions common to all API scripts</td>
+    </tr>
+    <tr>
+        <td>api_person.php</td>
+        <td>API to return data for a person (takes personID and tree as args).</td>
+    </tr>
+    <tr>
+        <td>anniversaries.php</td>
+        <td>Report of ndividuals matching user-entered date and event criteria.</td>
+    </tr>
+    <tr>
+        <td>anniversaries2.php</td>
+        <td>Works in conjunction with anniversaries.php. Without this redirection, the original page will not properly refresh on submission.</td>
+    </tr>
+    <tr>
+        <td>begin.php</td>
+        <td>Wrapper for including config.php.</td>
+    </tr>
+    <tr>
+        <td>bookmarks.php</td>
+        <td>All site bookmarks for the computer you're at.</td>
+    </tr>
+    <tr>
+        <td>branchlib.php</td>
+        <td>Queries used with branches.</td>
+    </tr>
+    <tr>
+        <td>branchlibjs.php</td>
+        <td>Library of Javascript code and functions used with branches.</td>
+    </tr>
+    <tr>
+        <td>browsealbums.php</td>
+        <td>List of all albums.</td>
+    </tr>
+    <tr>
+        <td>browsedocs.php (<em>deprecated</em>)</td>
+        <td>List of all histories (deprecated: please use browsemedia.php?mediatypeID=histories)</td>
+    </tr>
+    <tr>
+        <td>browseheadstones.php (<em>deprecated</em>)</td>
+        <td>List of all headstones (deprecated: please use browsemedia.php?mediatypeID=headstones).</td>
+    </tr>
+    <tr>
+        <td>browsemedia.php</td>
+        <td>Displays a list of all media. Add "?mediatype=sometype" to limit to one media type (i.e., "photos").</td>
+    </tr>
+    <tr>
+        <td>browsenotes.php</td>
+        <td>Displays a list of all notes.</td>
+    </tr>
+    <tr>
+        <td>browsephotos.php (<em>deprecated</em>)</td>
+        <td>Displays a list of all photos (deprecated: please use browsemedia.php?mediatypeID=photos).</td>
+    </tr>
+    <tr>
+        <td>browserepos.php</td>
+        <td>Displays a list of all repositories.</td>
+    </tr>
+    <tr>
+        <td>browsesources.php</td>
+        <td>Displays a list of all sources.</td>
+    </tr>
+    <tr>
+        <td>browsetrees.php</td>
+        <td>Displays list of all trees.</td>
+    </tr>
+    <tr>
+        <td>calendar.php</td>
+        <td>Shows events for the selected month in a calendar layout.</td>
+    </tr>
+    <tr>
+        <td>cemeteries.php</td>
+        <td>Displays list of all cemeteries (lets you drill down to find headstones).</td>
+    </tr>
+    <tr>
+        <td>changelanguage.php</td>
+        <td>Displays a list of all languages you've set up and allows visitors to select their preference.</td>
+    </tr>
+    <tr>
+        <td>checklogin.php</td>
+        <td>Behind-the-scenes check done on every page to see if user has logged in or not.</td>
+    </tr>
+    <tr>
+        <td>class.phpmailer.php</td>
+        <td>General mail-related functions.</td>
+    </tr>
+    <tr>
+        <td>class.smtp.php</td>
+        <td>SMTP mail-related functions.</td>
+    </tr>
+    <tr>
+        <td>datelib.php</td>
+        <td>Text date-to-true date conversion functions.</td>
+    </tr>
+    <tr>
+        <td>deepindex.php</td>
+        <td>Allows you to link to an Admin page beyond the home page and keep the navigation framework intact by passing a "page" parameter (ie, deepindex.php?page=photos.php).</td>
+    </tr>
+    <tr>
+        <td>deletelib.php</td>
+        <td>Library of functions used during deletions.</td>
+    </tr>
+    <tr>
+        <td>descend.php</td>
+        <td>Displays graphical descendancy chart for <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>descendtext.php</td>
+        <td>Displays text-only descendancy chart for <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>desctracker.php</td>
+        <td>Displays a graphical descendancy chart for a line of descent defined in descend.php.</td>
+    </tr>
+    <tr>
+        <td>end.php</td>
+        <td>Includes code to end each page.</td>
+    </tr>
+    <tr>
+        <td>eventlib.php</td>
+        <td>Library of functions used to display events.</td>
+    </tr>
+    <tr>
+        <td>eventlib_js.php</td>
+        <td>PHP-generated javascript for use with the event library.</td>
+    </tr>
+    <tr>
+        <td>eventmicro.php</td>
+        <td>Event-related snippet used in multiple files.</td>
+    </tr>
+    <tr>
+        <td>extrastree.php</td>
+        <td>Displays a list of all ancestors (where <i>person=###</i>) who have associated photos or histories.</td>
+    </tr>
+    <tr>
+        <td>familygroup.php</td>
+        <td>Displays a family group sheet, where <em>familyID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>famsearch.php</td>
+        <td>Searches for and displays summaries for families who match the criteria entered in <em>famsearchform.php</em>.</td>
+    </tr>
+    <tr>
+        <td>famsearchform.php</td>
+        <td>Search page to locate families.</td>
+    </tr>
+    <tr>
+        <td>findalbummedia.php</td>
+        <td>Displays summary of media records that match search criteria (used when adding media to albums).</td>
+    </tr>
+    <!--<tr><td>findfamily2.php</td><td>Displays summary of family records that match search criteria.</td></tr>-->
+    <tr>
+        <td>findfamilyform.php</td>
+        <td>Accepts search criteria to locate matching families.</td>
+    </tr>
+    <tr>
+        <td>findform.php</td>
+        <td>Displays summary of media records that match search criteria.</td>
+    </tr>
+    <tr>
+        <td>finditems.php</td>
+        <td>Generic finder utility (people, families, sources, repos, places).</td>
+    </tr>
+    <!--<tr><td>findperson.php</td><td>Displays a short summary of person records that match search criteria.</td></tr>-->
+    <!--<tr><td>findperson2.php</td><td>Displays longer summary of person records that match search criteria.</td></tr>-->
+    <tr>
+        <td>findpersonform.php</td>
+        <td>Accepts search criteria to locate matching persons.</td>
+    </tr>
+    <!--<tr><td>findpersonform2.php</td><td>Accepts search criteria to locate matching persons.</td></tr>-->
+    <!--<tr><td>findplace.php</td><td>Displays longer summary of place records that match search criteria.</td></tr>-->
+    <tr>
+        <td>findplaceform.php</td>
+        <td>Accepts search criteria to find matching places.</td>
+    </tr>
+    <!--<tr><td>findrepo.php</td><td>Displays summary of repository records that match search criteria.</td></tr>-->
+    <tr>
+        <td>findrepoform.php</td>
+        <td>Accepts search criteria to find matching repositories.</td>
+    </tr>
+    <!--<tr><td>findsource2.php</td><td>Displays summary of source records that match search criteria.</td></tr>-->
+    <tr>
+        <td>findsourceform.php</td>
+        <td>Accepts search criteria to find matching sources.</td>
+    </tr>
+    <tr>
+        <td>fpdf.php</td>
+        <td>FPDF library (to generate PDFs), written by Olivier Plathey.</td>
+    </tr>
+    <!--<tr><td>fpdf_cellfit.php</td><td>extension of FPDF library.</td></tr>-->
+    <tr>
+        <td>functions.php</td>
+        <td>Miscellaneous functions.</td>
+    </tr>
+    <tr>
+        <td>gedcom.php</td>
+        <td>Creates GEDCOM for download.</td>
+    </tr>
+    <tr>
+        <td>gedform.php</td>
+        <td>Form to request a GEDCOM file to download.</td>
+    </tr>
+    <tr>
+        <td>gedimport_families.php</td>
+        <td>Dependency of gedimport.php (handles family records).</td>
+    </tr>
+    <tr>
+        <td>gedimport_misc.php</td>
+        <td>Dependency of gedimport.php (miscellaneous functions).</td>
+    </tr>
+    <tr>
+        <td>gedimport_people.php</td>
+        <td>Dependency of gedimport.php (handles individual records).</td>
+    </tr>
+    <tr>
+        <td>gedimport_sources.php</td>
+        <td>Dependency of gedimport.php (handles source records).</td>
+    </tr>
+    <tr>
+        <td>gedimport_trees.php</td>
+        <td>Dependency of gedimport.php (handles tree-related functions).</td>
+    </tr>
+    <tr>
+        <td>genlib.php</td>
+        <td>Contains database, header, footer and menu functions.</td>
+    </tr>
+    <tr>
+        <td>geocodelib.php</td>
+        <td>Common geocoding functions.</td>
+    </tr>
+    <tr>
+        <td>getlang.php</td>
+        <td>Contains language preference functions.</td>
+    </tr>
+    <tr>
+        <td>getperson.php</td>
+        <td>Displays individual information, data first, where <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>globallib.php</td>
+        <td>Contains functions common to both public and admin pages.</td>
+    </tr>
+    <tr>
+        <td>google_marker.php</td>
+        <td>Generates pin image for display on map.</td>
+    </tr>
+    <tr>
+        <td>googleearthbylatlong.php</td>
+        <td>Creates an XML file for entry into Google Earth on a set of coordinates.</td>
+    </tr>
+    <tr>
+        <td>googlemapdrawthemap.php</td>
+        <td>Displays a clickable map in the Admin area.</td>
+    </tr>
+    <tr>
+        <td>googlemaplib.php</td>
+        <td>Library of map-related functions for public area.</td>
+    </tr>
+    <tr>
+        <td>googlemaplib2.php</td>
+        <td>Library of map-related functions for admin area.</td>
+    </tr>
+    <tr>
+        <td>headstones.php</td>
+        <td>Displays list of all headstones for a given cemetery or locality.</td>
+    </tr>
+    <tr>
+        <td>helplib.php</td>
+        <td>Contains functions for help screens.</td>
+    </tr>
+    <tr>
+        <td>historytemplate.php</td>
+        <td>A template file for creating histories (copies must go one folder below the genealogy area). This file can safely be removed from your site.</td>
+    </tr>
+    <tr>
+        <td>imageutils.php</td>
+        <td>PHP functions common to several photo-manipulating scripts.</td>
+    </tr>
+    <tr>
+        <td>img_newwin.php</td>
+        <td>Opens the image viewer in a new window.</td>
+    </tr>
+    <tr>
+        <td>img_viewer.php</td>
+        <td>The image viewer (normally runs in an iframe).</td>
+    </tr>
+    <tr>
+        <td>index.php</td>
+        <td>Your very basic home page (just in case you don't have one), with links to all the pages in this section. Please make it better!!</td>
+    </tr>
+    <tr>
+        <td>index_html.html</td>
+        <td>Your very basic home page (just in case you don't have one), with links to all the pages in this section, but this one is HTML. To use, rename to index.html and remove index.php. Please make it better!!</td>
+    </tr>
+    <tr>
+        <td>index_plus_header_footer.php</td>
+        <td>Your very basic home page (just in case you don't have one), with links to all the pages in this section. Please make it better!!</td>
+    </tr>
+    <tr>
+        <td>log.php</td>
+        <td>Logs actions to the log file (<em>genlog.txt</em>).</td>
+    </tr>
+    <tr>
+        <td>login.php</td>
+        <td>Prompts user to log in.</td>
+    </tr>
+    <tr>
+        <td>logout.php</td>
+        <td>Logs a user out.</td>
+    </tr>
+    <tr>
+        <td>maint.php</td>
+        <td>Stub to be displayed during maintenance mode.</td>
+    </tr>
+    <tr>
+        <td>managemods.class.php</td>
+        <td>Library used by the Mod Manager.</td>
+    </tr>
+    <tr>
+        <td>medialib.php</td>
+        <td>Library used by media-related scripts.</td>
+    </tr>
+    <tr>
+        <td>mediatypes.php</td>
+        <td>A list of TNG mediatype definitions.</td>
+    </tr>
+    <tr>
+        <td>micro_medialinks.php</td>
+        <td>Block of code used in several places for creating media links.</td>
+    </tr>
+    <tr>
+        <td>mostwanted.php</td>
+        <td>Most Wanted report.</td>
+    </tr>
+    <tr>
+        <td>newacctform.php</td>
+        <td>Form users can fill out to request a username/password login.</td>
+    </tr>
+    <tr>
+        <td>niceditmsgs.php</td>
+        <td>Creates JavaScript code to hold NicEdit messages.</td>
+    </tr>
+    <tr>
+        <td>pedbox.php</td>
+        <td>Fetches the photo used in the individual box on the pedigree and other charts.</td>
+    </tr>
+    <tr>
+        <td>pedigree.php</td>
+        <td>Displays a graphical pedigree chart for an individual, where <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>pedigreetext.php</td>
+        <td>Displays a text-only pedigree chart for an individual, where <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>personlib.php</td>
+        <td>Contains functions common to all public pages that show events (like for people, families, sources and photos).</td>
+    </tr>
+    <tr>
+        <td>photoblock.php</td>
+        <td>Contains code you can put on your home page to display a random photo.</td>
+    </tr>
+    <tr>
+        <td>places-all.php</td>
+        <td>Shows all largest locality place names in the database.</td>
+    </tr>
+    <tr>
+        <td>places-oneletter.php</td>
+        <td>Shows all place name localities beginning with a given character (passed from places.php).</td>
+    </tr>
+    <tr>
+        <td>places.php</td>
+        <td>Shows all place localities in the database (first letters only), plus some other interesting stats.</td>
+    </tr>
+    <tr>
+        <td>places100.php</td>
+        <td>Shows the top # places (ordered by number of localities), where <em>topnum=#</em>.</td>
+    </tr>
+    <tr>
+        <td>placesearch.php</td>
+        <td>Searches for and displays summaries for individuals who match place name criteria.</td>
+    </tr>
+    <tr>
+        <td>prefixes.php</td>
+        <td>Contains ID prefixes for individuals, families &amp; sources.</td>
+    </tr>
+    <tr>
+        <td>processlogin.php</td>
+        <td>Processes username and password entered by a user, performs login.</td>
+    </tr>
+    <tr>
+        <td>processvars.php</td>
+        <td>Creates conventional variables from all superglobal arrays.</td>
+    </tr>
+    <tr>
+        <td>pwdlib.php</td>
+        <td>Library of functions used with password encryption.</td>
+    </tr>
+    <tr>
+        <td>randomphoto.php</td>
+        <td>Used by some of the templates to insert a random photo from your database on the site home page.</td>
+    </tr>
+    <tr>
+        <td>readme.html</td>
+        <td>Installation guide and basic operating instructions. Can be removed after install is complete.</td>
+    </tr>
+    <tr>
+        <td>register.php</td>
+        <td>Displays a modified register descendancy report for an individual, where <em>personID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>reglib.php</td>
+        <td>Contains functions common to both the Register and Ahnentafel reports.</td>
+    </tr>
+    <tr>
+        <td>relateform.php</td>
+        <td>Page where visitors select two candidates for relationship chart.</td>
+    </tr>
+    <tr>
+        <td>relationship.php</td>
+        <td>Charts relationship between two people (within a fixed number of generations).</td>
+    </tr>
+    <tr>
+        <td>relationship2.php</td>
+        <td>Works in conjunction with relationship.php. Without this redirection, the original page will not properly refresh on submission.</td>
+    </tr>
+    <tr>
+        <td>reports.php</td>
+        <td>Displays a list of all active reports.</td>
+    </tr>
+    <tr>
+        <td>rpt_descend.php</td>
+        <td>Generates a PDF descendancy report.</td>
+    </tr>
+    <tr>
+        <td>rpt_fam.php</td>
+        <td>Generates a PDF family group sheet.</td>
+    </tr>
+    <tr>
+        <td>rpt_ind.php</td>
+        <td>Generates a PDF individual report.</td>
+    </tr>
+    <tr>
+        <td>rpt_pdfform.php</td>
+        <td>Collections options for PDF charts.</td>
+    </tr>
+    <tr>
+        <td>rpt_pedigree.php</td>
+        <td>Generates a PDF pedigree chart.</td>
+    </tr>
+    <tr>
+        <td>rpt_utils.php</td>
+        <td>Library of functions used by the PDF charts.</td>
+    </tr>
+    <tr>
+        <td>savelanguage.php</td>
+        <td>Saves the visitor's language preference.</td>
+    </tr>
+    <tr>
+        <td>savelanguage2.php</td>
+        <td>Saves the visitor's language preference and returns them to the previous page.</td>
+    </tr>
+    <tr>
+        <td>search.php</td>
+        <td>Searches for and displays summaries for individuals who match the criteria entered in <em>searchform.php</em>.</td>
+    </tr>
+    <tr>
+        <td>searchform.php</td>
+        <td>Search page to locate individuals.</td>
+    </tr>
+    <tr>
+        <td>sendlogin.php</td>
+        <td>Sends login information to e-mail address entered if a match is found.</td>
+    </tr>
+    <tr>
+        <td>showalbum.php</td>
+        <td>Shows contents of an album, where <em>albumID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>showhistory.php</td>
+        <td>Shows a history record, where <em>docID=###</em>, if the history is stored in the database. Deprecated.</td>
+    </tr>
+    <tr>
+        <td>showlog.php</td>
+        <td>Shows most recently logged actions.</td>
+    </tr>
+    <tr>
+        <td>showmap.php</td>
+        <td>Shows map of a cemetery, where <em>cemeteryID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>showmedia.php</td>
+        <td>Shows a media item, where <em>mediaID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>showmedialib.php</td>
+        <td>A library of functions used by media- and slideshow-related scripts.</td>
+    </tr>
+    <tr>
+        <td>showmediaxmllib.php</td>
+        <td>Library of functions used with the media slideshow.</td>
+    </tr>
+    <tr>
+        <td>showrepo.php</td>
+        <td>Shows a repository record, where <em>repoID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>showreport.php</td>
+        <td>Shows a report, where <em>reportID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>showsource.php</td>
+        <td>Shows a source record, where <em>sourceID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>showtree.php</td>
+        <td>Shows detail for a tree, where <em>treeID=###</em>.</td>
+    </tr>
+    <tr>
+        <td>statistics.php</td>
+        <td>Provides general database statistics.</td>
+    </tr>
+    <tr>
+        <td>subroot.php</td>
+        <td>Stores sub-root location of config files (optional).</td>
+    </tr>
+    <tr>
+        <td>suggest.php</td>
+        <td>Prompts user for suggested changes to viewed record.</td>
+    </tr>
+    <tr>
+        <td>surnames-all.php</td>
+        <td>Shows all surnames in the database.</td>
+    </tr>
+    <tr>
+        <td>surnames-oneletter.php</td>
+        <td>Shows all surnames beginning with a given character (passed from surnames.php).</td>
+    </tr>
+    <tr>
+        <td>surnames.php</td>
+        <td>Shows all surnames in the database (first letters only), plus some other interesting stats.</td>
+    </tr>
+    <tr>
+        <td>surnames100.php</td>
+        <td>Shows the top # surnames (ordered by occurence), where <em>topnum=#</em>.</td>
+    </tr>
+    <tr>
+        <td>surnametable.php</td>
+        <td>API for displaying top surnames (used in surnames.php).</td>
+    </tr>
+    <tr>
+        <td>tabledefs.php</td>
+        <td>Queries used to create the database tables.</td>
+    </tr>
+    <tr>
+        <td>timeline.php</td>
+        <td>Does 'behind-the-scenes' work for timeline chart.</td>
+    </tr>
+    <tr>
+        <td>timeline2.php</td>
+        <td>Displays timeline chart.</td>
+    </tr>
+    <tr>
+        <td>tngdblib.php</td>
+        <td>Library of database functions.</td>
+    </tr>
+    <tr>
+        <td>tngfiletypes.php</td>
+        <td>Definitions of some TNG file types.</td>
+    </tr>
+    <tr>
+        <td>tngmaillib.php</td>
+        <td>Library of mail functions.</td>
+    </tr>
+    <tr>
+        <td>tngpdf.php</td>
+        <td>Library of functions used with the PDF charts.</td>
+    </tr>
+    <tr>
+        <td>tngrobots.php</td>
+        <td>Tells crawlers which files to index and which to ignore.</td>
+    </tr>
+    <tr>
+        <td>tngrss.php</td>
+        <td>Outputs contents of "What's New" page in RSS newsreader format. When subscribing, you can get the feed to appear
+            in alternate languages if you append "&amp;lang=yourlanguage" (where "yourlanguage" is the name of the language as you have set it up in TNG) to the URL.
+        </td>
+    </tr>
+    <tr>
+        <td>tngsendmail.php</td>
+        <td>Sends suggested edit from users to site owner.</td>
+    </tr>
+    <tr>
+        <td>treelib.php</td>
+        <td>Queries to delete a tree and all dependent data.</td>
+    </tr>
+    <tr>
+        <td>ufpdf.php</td>
+        <td>UTF-8 version of FPDF library (to generate PDFs), written by Olivier Plathey.</td>
+    </tr>
+    <tr>
+        <td>version.php</td>
+        <td>Contains current version information.</td>
+    </tr>
+    <tr>
+        <td>whatsnew.php</td>
+        <td>Report of new individuals, families, photos, histories and headstones.</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>Text Pages<br/>(for each language folder)</b></td>
+    </tr>
+    <tr>
+        <td>admintext.php</td>
+        <td>Text messages for all administration pages.</td>
+    </tr>
+    <tr>
+        <td>albums_help.php</td>
+        <td>Help for all album administration pages.</td>
+    </tr>
+    <tr>
+        <td>alltext.php</td>
+        <td>Text messages common to both public and administration pages.</td>
+    </tr>
+    <tr>
+        <td>assoc_help.php</td>
+        <td>Help for all association pages.</td>
+    </tr>
+    <tr>
+        <td>backuprestore_help.php</td>
+        <td>Help for all backup/restore administration pages.</td>
+    </tr>
+    <tr>
+        <td>branches_help.php</td>
+        <td>Help for all branch administration pages.</td>
+    </tr>
+    <tr>
+        <td>cemeteries_help.php</td>
+        <td>Help for all cemetery administration pages.</td>
+    </tr>
+    <tr>
+        <td>citations_help.php</td>
+        <td>Help for all citation administration pages.</td>
+    </tr>
+    <tr>
+        <td>collections_help.php</td>
+        <td>Help for adding custom media types.</td>
+    </tr>
+    <tr>
+        <td>config_help.php</td>
+        <td>Help for general configuration settings.</td>
+    </tr>
+    <tr>
+        <td>cust_text.php</td>
+        <td>Reserved for custom text messages (starts empty).</td>
+    </tr>
+    <tr>
+        <td>data_help.php</td>
+        <td>Help for all data import administration pages.</td>
+    </tr>
+    <tr>
+        <td>events_help.php</td>
+        <td>Help for all events administration pages.</td>
+    </tr>
+    <tr>
+        <td>eventtypes_help.php</td>
+        <td>Help for all event types administration pages.</td>
+    </tr>
+    <tr>
+        <td>families_help.php</td>
+        <td>Help for all family administration pages.</td>
+    </tr>
+    <tr>
+        <td>index_help.php</td>
+        <td>Help for main administration menu page.</td>
+    </tr>
+    <tr>
+        <td>languages_help.php</td>
+        <td>Help for all language administration pages.</td>
+    </tr>
+    <tr>
+        <td>logconfig_help.php</td>
+        <td>Help for log configuration settings.</td>
+    </tr>
+    <tr>
+        <td>mapconfig_help.php</td>
+        <td>Help for map configuration settings.</td>
+    </tr>
+    <tr>
+        <td>media_help.php</td>
+        <td>Help for all media administration pages.</td>
+    </tr>
+    <tr>
+        <td>misc_help.php</td>
+        <td>Help for "Miscellaneous" administration pages.</td>
+    </tr>
+    <tr>
+        <td>modmanager_help.php</td>
+        <td>Help for Mod Manager pages.</td>
+    </tr>
+    <tr>
+        <td>more_help.php</td>
+        <td>Help for all "More" pages (additional information for events).</td>
+    </tr>
+    <tr>
+        <td>mostwanted_help.php</td>
+        <td>Help for "most wanted" administration pages.</td>
+    </tr>
+    <tr>
+        <td>notes_help.php</td>
+        <td>Help for all notes administration pages.</td>
+    </tr>
+    <tr>
+        <td>pedconfig_help.php</td>
+        <td>Help for pedigree configuration settings.</td>
+    </tr>
+    <tr>
+        <td>people_help.php</td>
+        <td>Help for all person administration pages.</td>
+    </tr>
+    <tr>
+        <td>places_googlemap_help.php</td>
+        <td>Help for searching for places on the Google Maps areas.</td>
+    </tr>
+    <tr>
+        <td>places_help.php</td>
+        <td>Help for all place administration pages.</td>
+    </tr>
+    <tr>
+        <td>reports_help.php</td>
+        <td>Help for all report administration pages.</td>
+    </tr>
+    <tr>
+        <td>repositories_help.php</td>
+        <td>Help for all repository administration pages.</td>
+    </tr>
+    <tr>
+        <td>second_help.php</td>
+        <td>Help for all secondary processes pages.</td>
+    </tr>
+    <tr>
+        <td>setup_help.php</td>
+        <td>Help for configuration setup menu page.</td>
+    </tr>
+    <tr>
+        <td>sources_help.php</td>
+        <td>Help for all sources administration pages.</td>
+    </tr>
+    <tr>
+        <td>templateconfig_help.php</td>
+        <td>Help for template configuration settings.</td>
+    </tr>
+    <tr>
+        <td>text.php</td>
+        <td>Text messages for all public pages.</td>
+    </tr>
+    <tr>
+        <td>tlevents_help.php</td>
+        <td>Help for all timeline event administration pages.</td>
+    </tr>
+    <tr>
+        <td>trees_help.php</td>
+        <td>Help for all trees administration pages.</td>
+    </tr>
+    <tr>
+        <td>users_help.php</td>
+        <td>Help for all users administration pages.</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>Images - in the img folder</b></td>
+    </tr>
+    <tr>
+        <td>###.png</td>
+        <td>"Pin" images to indicate map locations (various "place levels").</td>
+    </tr>
+    <tr>
+        <td>admArrowDown.gif</td>
+        <td>Downward pointing arrow for sorting photos.</td>
+    </tr>
+    <tr>
+        <td>admArrowUp.gif</td>
+        <td>Upward pointing arrow for sorting photos.</td>
+    </tr>
+    <tr>
+        <td>admin_icon_sprites.png</td>
+        <td>Tray of icon images for Admin functions.</td>
+    </tr>
+    <tr>
+        <td>albums_icon.gif</td>
+        <td>Icon for Albums.</td>
+    </tr>
+    <tr>
+        <td>ArrowDown.gif</td>
+        <td>Downward pointing arrow for pedigree chart. Indicates more individual information is present. Also used on menus.</td>
+    </tr>
+    <tr>
+        <td>arrowdown2.gif</td>
+        <td>Another ownward pointing arrow.</td>
+    </tr>
+    <tr>
+        <td>ArrowLeft.gif</td>
+        <td>Left-facing arrow for pedigree and descendancy charts. Indicates additional generations are present.</td>
+    </tr>
+    <tr>
+        <td>ArrowRight.gif</td>
+        <td>Right-facing arrow for pedigree chart. Indicates additional pedigree generations are present.</td>
+    </tr>
+    <tr>
+        <td>background.gif</td>
+        <td>Background pattern for admin pages.</td>
+    </tr>
+    <tr>
+        <td>backuprestore_icon.gif</td>
+        <td>Icon for Backup/Restore/Optimize Table Data.</td>
+    </tr>
+    <tr>
+        <td>black.gif</td>
+        <td>Black one-pixel image used to create pedigree lines with text-only option.</td>
+    </tr>
+    <tr>
+        <td>blank.gif</td>
+        <td>Blank image to correct transparency problem with PNG images.</td>
+    </tr>
+    <tr>
+        <td>branches_icon.gif</td>
+        <td>Icon for Branches.</td>
+    </tr>
+    <tr>
+        <td>cemeteries_icon.gif</td>
+        <td>Icon for Cemeteries.</td>
+    </tr>
+    <tr>
+        <td>Chart.gif</td>
+        <td>Small pedigree image used to indicate a link to another pedigree chart.</td>
+    </tr>
+    <tr>
+        <td>customeventtypes_icon.gif</td>
+        <td>Icon for Event Types.</td>
+    </tr>
+    <tr>
+        <td>data_icon.gif</td>
+        <td>Icon for Data Import.</td>
+    </tr>
+    <tr>
+        <td>dchart.gif</td>
+        <td>Small descendancy image used to indicate a link to a graphical representation of the descendancy report to that point.</td>
+    </tr>
+    <tr>
+        <td>doc.gif</td>
+        <td>Small document icon used to indicate that an individual has at least one history linked to their record.</td>
+    </tr>
+    <tr>
+        <td>documents_thumb.png</td>
+        <td>Default thumbnail for documents.</td>
+    </tr>
+    <tr>
+        <td>earth.gif</td>
+        <td>Icon to indicate a link to Google Earth.</td>
+    </tr>
+    <tr>
+        <td>families_icon.gif</td>
+        <td>Icon for Families.</td>
+    </tr>
+    <tr>
+        <td>female.gif</td>
+        <td>Generic female default thumbnail.</td>
+    </tr>
+    <tr>
+        <td>first_button.gif</td>
+        <td>Button indicating first in a series.</td>
+    </tr>
+    <tr>
+        <td>green.gif</td>
+        <td>Icon indicating a green light.</td>
+    </tr>
+    <tr>
+        <td>headstones_thumb.png</td>
+        <td>Default thumbnail for headstones.</td>
+    </tr>
+    <tr>
+        <td>histories_thumb.png</td>
+        <td>Default thumbnail for histories.</td>
+    </tr>
+    <tr>
+        <td>img_break.png</td>
+        <td>Used with image viewer</td>
+    </tr>
+    <tr>
+        <td>img_close.gif</td>
+        <td>Close button on image viewer</td>
+    </tr>
+    <tr>
+        <td>img_mag.gif</td>
+        <td>Magnifying class on image viewer</td>
+    </tr>
+    <tr>
+        <td>img_magdown.gif</td>
+        <td>Magnifying class on image viewer: down</td>
+    </tr>
+    <tr>
+        <td>img_magdownoff.gif</td>
+        <td>Magnifying class on image viewer: down (disabled)</td>
+    </tr>
+    <tr>
+        <td>img_magoff.gif</td>
+        <td>Magnifying class on image viewer (disabled)</td>
+    </tr>
+    <tr>
+        <td>img_magup.gif</td>
+        <td>Magnifying class on image viewer: up</td>
+    </tr>
+    <tr>
+        <td>img_magupoff.gif</td>
+        <td>Magnifying class on image viewer: up (disabled)</td>
+    </tr>
+    <tr>
+        <td>img_select.gif</td>
+        <td>Image viewer selector</td>
+    </tr>
+    <tr>
+        <td>img_shadow.png</td>
+        <td>Image viewer shadow</td>
+    </tr>
+    <tr>
+        <td>languages_icon.gif</td>
+        <td>Icon for Languages.</td>
+    </tr>
+    <tr>
+        <td>last_button.gif</td>
+        <td>Button indicating last in a series.</td>
+    </tr>
+    <tr>
+        <td>loadmap.gif</td>
+        <td>Big arrow for loading map on individual page.</td>
+    </tr>
+    <tr>
+        <td>loading.gif</td>
+        <td>Loading indicator for mass media upload.</td>
+    </tr>
+    <tr>
+        <td>male.gif</td>
+        <td>Generic male default thumbnail.</td>
+    </tr>
+    <tr>
+        <td>media-prevbg.gif</td>
+        <td>Bubble behind image previews (IE only).</td>
+    </tr>
+    <tr>
+        <td>media-prevbg.png</td>
+        <td>Bubble behind image previews.</td>
+    </tr>
+    <tr>
+        <td>misc_icon.gif</td>
+        <td>Icon for Miscellaneous.</td>
+    </tr>
+    <tr>
+        <td>modmgr_icon.gif</td>
+        <td>Icon for Mod Manager.</td>
+    </tr>
+    <tr>
+        <td>next_button.gif</td>
+        <td>Button indicating next in a series.</td>
+    </tr>
+    <tr>
+        <td>niceditoricons.gif</td>
+        <td>Tray of icon images used with NicEdit inline editor.</td>
+    </tr>
+    <tr>
+        <td>orange.gif</td>
+        <td>Icon indicating an orange light.</td>
+    </tr>
+    <tr>
+        <td>people_icon.gif</td>
+        <td>Icon for People.</td>
+    </tr>
+    <tr>
+        <td>person-prevbg.gif</td>
+        <td>Bubble behind person previews (IE only)</td>
+    </tr>
+    <tr>
+        <td>person-prevbg.png</td>
+        <td>Bubble behind person previews</td>
+    </tr>
+    <tr>
+        <td>photo.gif</td>
+        <td>Small camera icon used to indicate that an individual has at least one photo linked to their record.</td>
+    </tr>
+    <tr>
+        <td>photos_icon.gif</td>
+        <td>Icon for Photos.</td>
+    </tr>
+    <tr>
+        <td>photos_thumb.png</td>
+        <td>Default thumbnail for photos.</td>
+    </tr>
+    <tr>
+        <td>places_icon.gif</td>
+        <td>Icon for Places.</td>
+    </tr>
+    <tr>
+        <td>prev_button.gif</td>
+        <td>Button indicating previous in a series.</td>
+    </tr>
+    <tr>
+        <td>progressbar.gif</td>
+        <td>Progress bar for mass media upload.</td>
+    </tr>
+    <tr>
+        <td>recordings_thumb.png</td>
+        <td>Default thumbnail for recordings.</td>
+    </tr>
+    <tr>
+        <td>red.gif</td>
+        <td>Icon indicating a red light.</td>
+    </tr>
+    <tr>
+        <td>reports_icon.gif</td>
+        <td>Icon for Reports.</td>
+    </tr>
+    <tr>
+        <td>repos_icon.gif</td>
+        <td>Icon for Repositories.</td>
+    </tr>
+    <tr>
+        <td>second_icon.gif</td>
+        <td>Icon for Secondary Processes.</td>
+    </tr>
+    <tr>
+        <td>setup_icon.gif</td>
+        <td>Icon for Setup &amp; Configuration.</td>
+    </tr>
+    <tr>
+        <td>shadow50.png</td>
+        <td>Pin shadow for maps.</td>
+    </tr>
+    <tr>
+        <td>sources_icon.gif</td>
+        <td>Icon for Sources.</td>
+    </tr>
+    <tr>
+        <td>spacer.gif</td>
+        <td>Blank one-pixel image used as filler.</td>
+    </tr>
+    <tr>
+        <td>spinner.gif</td>
+        <td>Animated image to indicate that something is happening in the background.</td>
+    </tr>
+    <tr>
+        <td>tlevents_icon.gif</td>
+        <td>Icon for Timeline Events.</td>
+    </tr>
+    <tr>
+        <td>tng_admin.gif</td>
+        <td>Small icon for administration.</td>
+    </tr>
+    <tr>
+        <td>tng_aedit.gif</td>
+        <td>Small icon for editing (admin).</td>
+    </tr>
+    <tr>
+        <td>tng_album.gif</td>
+        <td>Small icon for albums.</td>
+    </tr>
+    <tr>
+        <td>tng_anote.gif</td>
+        <td>Small icon for notes (admin).</td>
+    </tr>
+    <tr>
+        <td>tng_anote_on.gif</td>
+        <td>Small icon for notes (at least one exists).</td>
+    </tr>
+    <tr>
+        <td>tng_assoc.gif</td>
+        <td>Small icon for associations (none present).</td>
+    </tr>
+    <tr>
+        <td>tng_assoc_on.gif</td>
+        <td>Small icon for associations (at least one exists).</td>
+    </tr>
+    <tr>
+        <td>tng_bmk.gif</td>
+        <td>Small icon for bookmarks.</td>
+    </tr>
+    <tr>
+        <td>tng_bmk2.gif</td>
+        <td>A different small icon for bookmarks.</td>
+    </tr>
+    <tr>
+        <td>tng_branch.gif</td>
+        <td>Small icon for labeling branches.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_altbirth.gif</td>
+        <td>Calendar icon for alternate birth event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_bapt.gif</td>
+        <td>Calendar icon for baptism (LDS) event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_birth.gif</td>
+        <td>Calendar icon for birth event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_burial.gif</td>
+        <td>Calendar icon for burial event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_death.gif</td>
+        <td>Calendar icon for alternate death event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_div.gif</td>
+        <td>Calendar icon for alternate divorce event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_educ.gif</td>
+        <td>Calendar icon for education event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_emig.gif</td>
+        <td>Calendar icon for emigration event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_endl.gif</td>
+        <td>Calendar icon for endowment (LDS) event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_enga.gif</td>
+        <td>Calendar icon for engagement event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_even.gif</td>
+        <td>Calendar icon for general event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_marr.gif</td>
+        <td>Calendar icon for marriage event.</td>
+    </tr>
+    <tr>
+        <td>tng_cal_seal.gif</td>
+        <td>Calendar icon for sealing (LDS) event.</td>
+    </tr>
+    <tr>
+        <td>tng_check.gif</td>
+        <td>Small checkmark icon.</td>
+    </tr>
+    <tr>
+        <td>tng_cite.gif</td>
+        <td>Small icon for citations (none present).</td>
+    </tr>
+    <tr>
+        <td>tng_cite_on.gif</td>
+        <td>Small icon for citations (at least one exists).</td>
+    </tr>
+    <tr>
+        <td>tng_clear.gif</td>
+        <td>Small icon for clearing trees.</td>
+    </tr>
+    <tr>
+        <td>tng_close.gif</td>
+        <td>Small icon for "Close".</td>
+    </tr>
+    <tr>
+        <td>tng_collapse.gif</td>
+        <td>Small arrow icon for "Collapse".</td>
+    </tr>
+    <tr>
+        <td>tng_colorpicker.gif</td>
+        <td>Small icon for color selection.</td>
+    </tr>
+    <tr>
+        <td>tng_contact.gif</td>
+        <td>Small icon for "Contact Us".</td>
+    </tr>
+    <tr>
+        <td>tng_date.gif</td>
+        <td>Small icon for dates &amp; anniversaries.</td>
+    </tr>
+    <tr>
+        <td>tng_delete.gif</td>
+        <td>Small icon for delete action.</td>
+    </tr>
+    <tr>
+        <td>tng_desc.gif</td>
+        <td>Small icon for descendancy.</td>
+    </tr>
+    <tr>
+        <td>tng_doc.gif</td>
+        <td>Small icon for documents.</td>
+    </tr>
+    <tr>
+        <td>tng_down.gif</td>
+        <td>Small icon for moving items down in a list.</td>
+    </tr>
+    <tr>
+        <td>tng_edit.gif</td>
+        <td>Small icon for editing.</td>
+    </tr>
+    <tr>
+        <td>tng_edit2.gif</td>
+        <td>Another small icon for editing (used on pedigree chart).</td>
+    </tr>
+    <tr>
+        <td>tng_expand.gif</td>
+        <td>Small arrow icon for "Expand".</td>
+    </tr>
+    <tr>
+        <td>tng_families.gif</td>
+        <td>Small icon for family search page.</td>
+    </tr>
+    <tr>
+        <td>tng_female.gif</td>
+        <td>Small icon to indicate displayed individual is a female.</td>
+    </tr>
+    <tr>
+        <td>tng_find.gif</td>
+        <td>Small icon for find pages.</td>
+    </tr>
+    <tr>
+        <td>tng_ged.gif</td>
+        <td>Small icon for GEDCOM download.</td>
+    </tr>
+    <tr>
+        <td>tng_help.gif</td>
+        <td>Small icon for menu guide.</td>
+    </tr>
+    <tr>
+        <td>tng_hist.gif</td>
+        <td>Small icon for histories.</td>
+    </tr>
+    <tr>
+        <td>tng_home.gif</td>
+        <td>Small icon for home page.</td>
+    </tr>
+    <tr>
+        <td>tng_home2.gif</td>
+        <td>Slightly larger icon for home page.</td>
+    </tr>
+    <tr>
+        <td>tng_hs.gif</td>
+        <td>Small icon for headstones.</td>
+    </tr>
+    <tr>
+        <td>tng_icon_sprites.gif</td>
+        <td>Tray of icon images used with public menus.</td>
+    </tr>
+    <tr>
+        <td>tng_ind.gif</td>
+        <td>Small icon for individual record page.</td>
+    </tr>
+    <tr>
+        <td>tng_left.gif</td>
+        <td>Small icon for moving items left from one list to another.</td>
+    </tr>
+    <tr>
+        <td>tng_log.gif</td>
+        <td>Small icon for login/logout.</td>
+    </tr>
+    <tr>
+        <td>tng_log2.gif</td>
+        <td>Slightly larger icon for login.</td>
+    </tr>
+    <tr>
+        <td>tng_logout.gif</td>
+        <td>Small icon for logout.</td>
+    </tr>
+    <tr>
+        <td>tng_male.gif</td>
+        <td>Small icon to indicate displayed individual is a male.</td>
+    </tr>
+    <tr>
+        <td>tng_media.gif</td>
+        <td>Small icon for media.</td>
+    </tr>
+    <tr>
+        <td>tng_minus.gif</td>
+        <td>Small icon for collapsing a hidden block.</td>
+    </tr>
+    <tr>
+        <td>tng_more.gif</td>
+        <td>Small icon for more info on an event (none present).</td>
+    </tr>
+    <tr>
+        <td>tng_more_on.gif</td>
+        <td>Small icon for more info on an event (at least one exists).</td>
+    </tr>
+    <tr>
+        <td>tng_mw.gif</td>
+        <td>Small icon for "Most Wanted" page.</td>
+    </tr>
+    <tr>
+        <td>tng_names.gif</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>tng_new.gif</td>
+        <td>Small icon for "What's New" page.</td>
+    </tr>
+    <tr>
+        <td>tng_note.gif</td>
+        <td>Small icon for notes.</td>
+    </tr>
+    <tr>
+        <td>tng_optimize.gif</td>
+        <td>Small icon for optimizing tables.</td>
+    </tr>
+    <tr>
+        <td>tng_ped.gif</td>
+        <td>Small icon for pedigree.</td>
+    </tr>
+    <tr>
+        <td>tng_photo.gif</td>
+        <td>Small icon for photos.</td>
+    </tr>
+    <tr>
+        <td>tng_place.gif</td>
+        <td>Small icon for places.</td>
+    </tr>
+    <tr>
+        <td>tng_plus.gif</td>
+        <td>Small icon for expanding a hidden block.</td>
+    </tr>
+    <tr>
+        <td>tng_print.gif</td>
+        <td>Small icon for printer-friendly link.</td>
+    </tr>
+    <tr>
+        <td>tng_rec.gif</td>
+        <td>Small icon for recordings.</td>
+    </tr>
+    <tr>
+        <td>tng_rel.gif</td>
+        <td>Small icon for relationship chart.</td>
+    </tr>
+    <tr>
+        <td>tng_repo.gif</td>
+        <td>Small icon for repositories.</td>
+    </tr>
+    <tr>
+        <td>tng_restore.gif</td>
+        <td>Small icon for restoring tables.</td>
+    </tr>
+    <tr>
+        <td>tng_right.gif</td>
+        <td>Small icon for moving items right from one list to another.</td>
+    </tr>
+    <tr>
+        <td>tng_rpt.gif</td>
+        <td>Small icon for reports.</td>
+    </tr>
+    <tr>
+        <td>tng_save.gif</td>
+        <td>Small icon for exporting a GEDCOM.</td>
+    </tr>
+    <tr>
+        <td>tng_search.gif</td>
+        <td>Small icon for search action.</td>
+    </tr>
+    <tr>
+        <td>tng_search2.gif</td>
+        <td>Slightly larger icon for search action.</td>
+    </tr>
+    <tr>
+        <td>tng_search_small.gif</td>
+        <td>Very small icon for place searching.</td>
+    </tr>
+    <tr>
+        <td>tng_small_icon_sprites.gif</td>
+        <td>Tray of small icon images used with "core icons" (basic options at top of page).</td>
+    </tr>
+    <tr>
+        <td>tng_sort_asc.gif</td>
+        <td>Small arrow icon indicating ascending sort.</td>
+    </tr>
+    <tr>
+        <td>tng_sort_desc.gif</td>
+        <td>Small arrow icon indicating descending sort.</td>
+    </tr>
+    <tr>
+        <td>tng_src.gif</td>
+        <td>Small icon for sources.</td>
+    </tr>
+    <tr>
+        <td>tng_stats.gif</td>
+        <td>Small icon for statistics.</td>
+    </tr>
+    <tr>
+        <td>tng_temple.gif</td>
+        <td>Small icon for LDS temple codes.</td>
+    </tr>
+    <tr>
+        <td>tng_test.gif</td>
+        <td>Small icon for testing a page.</td>
+    </tr>
+    <tr>
+        <td>tng_time.gif</td>
+        <td>Small icon for timeline.</td>
+    </tr>
+    <tr>
+        <td>tng_up.gif</td>
+        <td>Small icon for moving items up in a list.</td>
+    </tr>
+    <tr>
+        <td>tng_video.gif</td>
+        <td>Small icon for videos.</td>
+    </tr>
+    <tr>
+        <td>tnglogo.gif</td>
+        <td>TNG logo.</td>
+    </tr>
+    <tr>
+        <td>tngtab.png</td>
+        <td>Image used with inactive tabs.</td>
+    </tr>
+    <tr>
+        <td>tngtabactive.png</td>
+        <td>Image used with active tabs.</td>
+    </tr>
+    <tr>
+        <td>trees_icon.gif</td>
+        <td>Icon for Trees.</td>
+    </tr>
+    <tr>
+        <td>users_icon.gif</td>
+        <td>Icon for Users.</td>
+    </tr>
+    <tr>
+        <td>videos_thumb.png</td>
+        <td>Default icon for videos.</td>
+    </tr>
+    <tr>
+        <td>white.gif</td>
+        <td>Small "pin" image for use in legend.</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>JavaScript files - in the js folder</b></td>
+    </tr>
+    <tr>
+        <td>admin.js</td>
+        <td>Functions used in Admin files.</td>
+    </tr>
+    <tr>
+        <td>albums.js</td>
+        <td>Functions used with albums.</td>
+    </tr>
+    <tr>
+        <td>anchorposition.js</td>
+        <td>Required for color picker.</td>
+    </tr>
+    <tr>
+        <td>canvas-to-blob.min.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>colorpicker2.js</td>
+        <td>More required for color picker.</td>
+    </tr>
+    <tr>
+        <td>cors/jquery.postmessage-transport.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>cors/jquery.xdr-transport.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>dataimport.js</td>
+        <td>Functions used with GEDCOM import.</td>
+    </tr>
+    <tr>
+        <td>datevalidation.js</td>
+        <td>Makes sure entered dates are in a valid format.</td>
+    </tr>
+    <tr>
+        <td>dragdrop.js</td>
+        <td>Part of the Scriptaculous Javascript library.</td>
+    </tr>
+    <tr>
+        <td>effects.js</td>
+        <td>Part of the Scriptaculous Javascript library.</td>
+    </tr>
+    <tr>
+        <td>eventtypes.js</td>
+        <td>Library for event types administration.</td>
+    </tr>
+    <tr>
+        <td>img_utils.js</td>
+        <td>Functions used with the image viewer.</td>
+    </tr>
+    <tr>
+        <td>img_viewer.js</td>
+        <td>More functions used with the image viewer.</td>
+    </tr>
+    <tr>
+        <td>jquery.fileupload-fp.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>jquery.fileupload.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>jquery.fileupload-ui.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>jquery.iframe-transport.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>jquery.ui.widget.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>getperson.js</td>
+        <td>Functions for the individual page.</td>
+    </tr>
+    <tr>
+        <td>litbox.js</td>
+        <td>Library used to create modal dialog windows.</td>
+    </tr>
+    <tr>
+        <td>load-image.min.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>main.js</td>
+        <td>Library for the media mass upload.</td>
+    </tr>
+    <tr>
+        <td>mediafind.js</td>
+        <td>Library for media-related functions.</td>
+    </tr>
+    <tr>
+        <td>mediautils.js</td>
+        <td>Library for media-related functions.</td>
+    </tr>
+    <tr>
+        <td>mergeplaces.js</td>
+        <td>Functions used with the place merge utility.</td>
+    </tr>
+    <tr>
+        <td>mostwanted.js</td>
+        <td>Functions used while editing Most Wanted list.</td>
+    </tr>
+    <tr>
+        <td>net.js</td>
+        <td>AJAX library functions.</td>
+    </tr>
+    <tr>
+        <td>nicedit.js</td>
+        <td>Library for NicEdit.</td>
+    </tr>
+    <tr>
+        <td>popupwindow.js</td>
+        <td>Functions for color selection popup.</td>
+    </tr>
+    <tr>
+        <td>prototype.js</td>
+        <td>The Prototype ajax library.</td>
+    </tr>
+    <tr>
+        <td>reports.js</td>
+        <td>Routines common to new/edit report screens.</td>
+    </tr>
+    <tr>
+        <td>rpt_utils.js</td>
+        <td>For PDF popup form.</td>
+    </tr>
+    <tr>
+        <td>scriptaculous.js</td>
+        <td>The Scriptaculous Javascript library.</td>
+    </tr>
+    <tr>
+        <td>selectutils.js</td>
+        <td>Routines common to several admin screens.</td>
+    </tr>
+    <tr>
+        <td>slideshow.js</td>
+        <td>Functions that run the media slideshow.</td>
+    </tr>
+    <tr>
+        <td>tentedit.js</td>
+        <td>Functions used with tentative editing.</td>
+    </tr>
+    <tr>
+        <td>timeline.js</td>
+        <td>Library for the timeline page.</td>
+    </tr>
+    <tr>
+        <td>tmpl.js</td>
+        <td>Library for the media mass upload (specifically, a templating utility).</td>
+    </tr>
+    <tr>
+        <td>tngmenuhover.js</td>
+        <td>Library for TNG menus.</td>
+    </tr>
+    <tr>
+        <td>tngpededit.js</td>
+        <td>Functions used when editing within the pedigree chart.</td>
+    </tr>
+    <tr>
+        <td>tngpedigree.js</td>
+        <td>Library for AJAX pedigree chart.</td>
+    </tr>
+    <tr>
+        <td>users.js</td>
+        <td>Functions used in Users.</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>Style Sheets - in the css folder</b></td>
+    </tr>
+    <tr>
+        <td>bootstrap.css</td>
+        <td>Style used on the mass media upload page.</td>
+    </tr>
+    <tr>
+        <td>calendar.css</td>
+        <td>Style used exclusively on the calendar page.</td>
+    </tr>
+    <tr>
+        <td>cemeteries.css</td>
+        <td>Style used exclusively on the cemeteries page.</td>
+    </tr>
+    <tr>
+        <td>img_viewer.css</td>
+        <td>Style used exclusively by the image viewer.</td>
+    </tr>
+    <tr>
+        <td>jquery.fileupload-ui.css</td>
+        <td>Style used on the mass media upload page.</td>
+    </tr>
+    <tr>
+        <td>jquery.fileupload-ui-noscript.css</td>
+        <td>Style used on the mass media upload page.</td>
+    </tr>
+    <tr>
+        <td>genstyle.css</td>
+        <td>Presentational rules and guidelines.</td>
+    </tr>
+    <tr>
+        <td>media.css</td>
+        <td>Style used in showmedia.php and related files.</td>
+    </tr>
+    <tr>
+        <td>mytngstyle.css</td>
+        <td>If you know enough about style sheets and want to add your own style rules, add them here.</td>
+    </tr>
+    <tr>
+        <td>templatestyle.css</td>
+        <td>Template-specific style rules (blank in the default version).</td>
+    </tr>
+    <tr>
+        <td>timeline.css</td>
+        <td>Style used exclusively on the timeline page.</td>
+    </tr>
+    <tr>
+        <td>tngprint.css</td>
+        <td>Printer-friendly style sheet.</td>
+    </tr>
+    <tr>
+        <td>tngtabs1.css</td>
+        <td>Style sheet used to display page tabs.</td>
+    </tr>
+    <tr>
+        <td>tngtabs2.css</td>
+        <td>Alternate style sheet for displaying page tabs (same colors as template #4).</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>Font files (for PDF generation, in font folder)</b></td>
+    </tr>
+    <tr>
+        <td>courier.php</td>
+        <td>Courier</td>
+    </tr>
+    <tr>
+        <td>courierb.php</td>
+        <td>Courier Bold</td>
+    </tr>
+    <tr>
+        <td>courierbi.php</td>
+        <td>Courier Bold Italics</td>
+    </tr>
+    <tr>
+        <td>helvetica.php</td>
+        <td>Helvetica</td>
+    </tr>
+    <tr>
+        <td>helveticab.php</td>
+        <td>Helvetica Bold</td>
+    </tr>
+    <tr>
+        <td>helveticabi.php</td>
+        <td>Helvetica Bold Italics</td>
+    </tr>
+    <tr>
+        <td>helveticai.php</td>
+        <td>Helvetica Italics</td>
+    </tr>
+    <tr>
+        <td>symbol.php</td>
+        <td>Symbol</td>
+    </tr>
+    <tr>
+        <td>times.php</td>
+        <td>Times Roman</td>
+    </tr>
+    <tr>
+        <td>timesb.php</td>
+        <td>Times Roman Bold</td>
+    </tr>
+    <tr>
+        <td>timesbi.php</td>
+        <td>Times Roman Bold Italics</td>
+    </tr>
+    <tr>
+        <td>timesi.php</td>
+        <td>Times Roman Italics</td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#cccccc"><b>Other</b></td>
+    </tr>
+    <tr>
+        <td>license.txt</td>
+        <td>Your license agreement.</td>
+    </tr>
+    <tr>
+        <td>livingupdate.php</td>
+        <td>Utility to flag living individuals (left over from v4 upgrade).</td>
+    </tr>
+    <tr>
+        <td>switchcolor.php</td>
+        <td>Creates new tab background images according to the color numbers you enter.</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="Initial commit after project code reformat" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="87a7f1fc-3014-4478-ab5d-179398892c65" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\Apache24\htdocs\tng123" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost/tng123" />
+  <component name="ProjectId" id="1gBk9AoLPouUfWBo132qizIm0e3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager">
+    <configuration name="admin" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="localhost" start_url="/tng123/admin.php">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="" />
+      <created>1597595218929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597595218929</updated>
+      <workItem from="1597595220039" duration="1256000" />
+      <workItem from="1597598067026" duration="398000" />
+      <workItem from="1597598525430" duration="688000" />
+      <workItem from="1597599257974" duration="84000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit after project code reformat">
+      <created>1597598834728</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597598834728</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Apache24/htdocs/tng123/img" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit after project code reformat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit after project code reformat" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="861" y="387" key="#Servers" timestamp="1597595301204">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="861" y="387" key="#Servers/0.0.2560.1440@0.0.2560.1440" timestamp="1597595301204" />
+    <state x="736" y="375" width="1089" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597595386491">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="736" y="375" width="1089" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597595386491" />
+    <state x="996" y="554" width="568" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1597595371349">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="996" y="554" width="568" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.2560.1440@0.0.2560.1440" timestamp="1597595371349" />
+    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597599082397">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597599082397" />
+    <state x="1160" y="370" width="771" height="452" key="Github.ShareDialog" timestamp="1597597593025">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1160" y="370" width="771" height="452" key="Github.ShareDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597597593025" />
+    <state x="1029" y="425" key="Github.UntrackedFilesDialog" timestamp="1597597605745">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1029" y="425" key="Github.UntrackedFilesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597597605745" />
+    <state x="782" y="365" key="SettingsEditor" timestamp="1597599326567">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="782" y="365" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597599326567" />
+    <state x="873" y="453" key="Vcs.Push.Dialog.v2" timestamp="1597598941394">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="873" y="453" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597598941394" />
+    <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1597599057535">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597599057535" />
+  </component>
+</project>

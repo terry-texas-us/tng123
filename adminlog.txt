@@ -1,0 +1,31 @@
+Sun 16 Aug 2020 17:02:35 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:59:25 Generate Thumbnails: Thumbnails generated: 0; Records updated: 4; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).
+Sun 16 Aug 2020 16:58:10 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:53:59 Modify Import Configuration Settings (User: Administrator).
+Sun 16 Aug 2020 16:53:13 Modify Configuration Settings (User: Administrator).
+Sun 16 Aug 2020 16:47:31 Generate Thumbnails: Thumbnails generated: 0; Records updated: 1; Thumbnails not generated due to path, permissions, size or file name problems: 4 (User: Administrator).
+Sun 16 Aug 2020 16:46:58 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:45:43 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:43:59 Generate Thumbnails: Thumbnails generated: 0; Records updated: 1; Thumbnails not generated due to path, permissions, size or file name problems: 4 (User: Administrator).
+Sun 16 Aug 2020 16:40:13 <a href="admin_editmedia.php?mediaID=5">Edit Existing Media: 5</a> (User: Administrator).
+Sun 16 Aug 2020 16:39:43 Generate Thumbnails: Thumbnails generated: 1; Records updated: 1; Thumbnails not generated due to path, permissions, size or file name problems: 4 (User: Administrator).
+Sun 16 Aug 2020 16:39:37 <a href="admin_editmedia.php?mediaID=1">Edit Existing Media: 1</a> (User: Administrator).
+Sun 16 Aug 2020 16:39:33 <a href="admin_editmedia.php?mediaID=3">Edit Existing Media: 3</a> (User: Administrator).
+Sun 16 Aug 2020 16:39:23 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:39:13 <a href="admin_editmedia.php?mediaID=5">Edit Existing Media: 5</a> (User: Administrator).
+Sun 16 Aug 2020 16:39:04 <a href="admin_editmedia.php?mediaID=4">Edit Existing Media: 4</a> (User: Administrator).
+Sun 16 Aug 2020 16:38:53 <a href="admin_editmedia.php?mediaID=1">Edit Existing Media: 1</a> (User: Administrator).
+Sun 16 Aug 2020 16:36:43 Generate Thumbnails: Thumbnails generated: 0; Records updated: 0; Thumbnails not generated due to path, permissions, size or file name problems: 5 (User: Administrator).
+Sun 16 Aug 2020 16:34:49 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:34:42 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Sun 16 Aug 2020 16:34:32 <a href="admin_editmedia.php?mediaID=5">Edit Existing Media: 5</a> (User: Administrator).
+Sun 16 Aug 2020 16:34:23 <a href="admin_editmedia.php?mediaID=4">Edit Existing Media: 4</a> (User: Administrator).
+Sun 16 Aug 2020 16:34:09 <a href="admin_editmedia.php?mediaID=1">Edit Existing Media: 1</a> (User: Administrator).
+Sun 16 Aug 2020 16:33:31 Generate Thumbnails: Thumbnails generated: 0; Records updated: 0; Thumbnails not generated due to path, permissions, size or file name problems: 5 (User: Administrator).
+Sun 16 Aug 2020 16:33:11 <a href="admin_editmedia.php?mediaID=3">Edit Existing Media: 3</a> (User: Administrator).
+Sun 16 Aug 2020 16:30:50 Generate Thumbnails: Thumbnails generated: 0; Records updated: 0; Thumbnails not generated due to path, permissions, size or file name problems: 5 (User: Administrator).
+Sun 16 Aug 2020 16:17:01 GEDCOM Import: File Name:C:/Apache24/htdocs/tng123/gedcom/texas-tw-pre-1911-for-tng-rm-specific-(200816).ged, Tree: master/; 9421 People, 3333 Families, 88 Sources, 79 Notes, 5 Media, 824 Places (User: Administrator).
+Sun 16 Aug 2020 16:13:03 Edit Existing Event Type: 6 (User: Administrator).
+Sun 16 Aug 2020 16:12:53 Edit Existing Event Type: 4 (User: Administrator).
+Sun 16 Aug 2020 16:12:19 Edit Existing Event Type: 2 (User: Administrator).
+Sun 16 Aug 2020 16:11:28 Import/Export: 21 Event Types (User: Administrator).
