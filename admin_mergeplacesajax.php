@@ -133,4 +133,3 @@ if ($addtoquery) {
 }
 header("Content-Type: application/json; charset=" . $session_charset);
 echo "{\"latitude\":\"$keeplat\", \"longitude\":\"$keeplong\"}";
-?>

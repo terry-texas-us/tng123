@@ -44,4 +44,3 @@ if ($affected_rows == 1) {
 } else {
   echo "$original_name " . $admtext['alreadyexists'];
 }
-?>

@@ -65,4 +65,3 @@ if ($affected_rows) {
 }
 
 header("Location: admin_places.php?message=" . urlencode($message));
-?>

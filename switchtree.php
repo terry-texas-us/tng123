@@ -7,4 +7,3 @@ $_SESSION['assignedtree'] = $newtree;
 setcookie('activetree:' . $_SESSION['currentuser'], $newtree, 0, "/");
 
 header("Location: $return_page");
-?>

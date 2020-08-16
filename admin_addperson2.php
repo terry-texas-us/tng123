@@ -262,4 +262,3 @@ if ($result && tng_num_rows($result)) {
     header("Location: {$pedigree_url}personID=$personID&tree=$tree");
   }
 }
-?>

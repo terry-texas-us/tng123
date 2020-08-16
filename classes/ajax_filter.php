@@ -7,4 +7,3 @@ if (isset($_POST['filter'])) {
     unset($_SESSION['filter']);
   }
 }
-?>

@@ -586,5 +586,3 @@ function doubleLine($label1, $data1, $label2, $data2, $cite = '') {
   }
   $pdf->Ln($lineheight);
 }
-
-?>

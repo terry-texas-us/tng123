@@ -59,4 +59,3 @@ while ($tlrow = tng_fetch_assoc($tlresult)) {
 tng_free_result($tlresult);
 
 echo "</data>\n";
-?>

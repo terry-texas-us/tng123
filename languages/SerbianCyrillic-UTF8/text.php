@@ -1028,4 +1028,3 @@ $text['lastpage'] = "Последња страна";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

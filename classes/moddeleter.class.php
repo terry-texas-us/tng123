@@ -133,5 +133,3 @@ class moddeleter extends modbase
     return rmdir($dir);
   }
 }
-
-?>

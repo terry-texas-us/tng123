@@ -28,4 +28,4 @@ $result = @tng_query($query);
 
 $query = "UPDATE $families_table SET branch=REPLACE(branch,\",$branch,\",\",\") WHERE gedcom=\"$tree\" AND branch LIKE \"%,$branch,%\"";
 $result = @tng_query($query);
-?>
+

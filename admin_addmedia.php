@@ -184,4 +184,3 @@ if ($affected_rows == 1) {
   $message = $admtext['photonotadded'] . ".";
   header("Location: admin_media.php?message=" . urlencode($message));
 }
-?>

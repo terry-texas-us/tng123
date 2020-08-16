@@ -16,4 +16,3 @@ if ($link) {
 }
 
 echo phpinfo();
-?>

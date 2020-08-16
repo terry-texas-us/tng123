@@ -75,4 +75,4 @@ echo "<div style=\"padding: 5px\">\n";
 echo "<em><a href=\"{$showmedia_url}mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></em>\n";
 echo "</div>\n";
 echo "</div>\n";
-?>
+

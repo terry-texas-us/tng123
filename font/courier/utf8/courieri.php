@@ -146,4 +146,4 @@ $diff = '';
 $file = 'courieri.z';
 $ctg = 'courieri.ctg.z';
 $originalsize = 593740;
-?>
+

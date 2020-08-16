@@ -38,4 +38,3 @@ $orgnote = cleanIt($orgnote);
 $truncated = truncateIt(stripslashes($orgnote), 75);
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"display\":\"$truncated\"}";
-?>

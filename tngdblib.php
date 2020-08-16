@@ -431,5 +431,3 @@ function getPersonEventData($tree, $personID) {
 
   return tng_query($query);
 }
-
-?>

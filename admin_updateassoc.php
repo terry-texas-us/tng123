@@ -55,4 +55,3 @@ $namestr = truncateIt($namestr, 75);
 tng_free_result($result);
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"display\":\"$namestr\"}";
-?>

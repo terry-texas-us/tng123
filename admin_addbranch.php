@@ -45,4 +45,3 @@ if ($submitx) {
 } else {
   header("Location: admin_editbranch.php?branch=$branch&tree=$tree");
 }
-?>

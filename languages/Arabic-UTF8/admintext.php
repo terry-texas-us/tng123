@@ -2338,4 +2338,3 @@ $admtext['living'] = "حي";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

@@ -26,4 +26,4 @@ adminwritelog($admtext['deleted'] . ": {$admtext['album']} $albumID");
 
 $message = $admtext['album'] . " $albumID {$admtext['succdeleted']}.";
 header("Location: admin_albums.php?message=" . urlencode($message));
-?>
+

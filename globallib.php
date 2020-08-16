@@ -1391,5 +1391,3 @@ function isConnected() {
   //else
   //    return false;
 }
-
-?>

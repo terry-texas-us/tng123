@@ -62,4 +62,4 @@ fclose($fp);
 adminwritelog($admtext['modifymapsettings']);
 
 header("Location: admin_setup.php");
-?>
+

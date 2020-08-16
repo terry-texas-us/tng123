@@ -463,4 +463,3 @@ class modeditor extends modparser
   }
 } // class modparser
 
-?>

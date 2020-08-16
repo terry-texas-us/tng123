@@ -60,4 +60,3 @@ if ($action == "convert") {
 
 adminwritelog($logmsg);
 echo $logmsg;
-?>

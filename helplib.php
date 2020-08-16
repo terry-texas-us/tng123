@@ -20,4 +20,3 @@ function help_header($helptitle) {
 }
 
 global $link;
-?>

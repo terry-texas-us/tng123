@@ -22,4 +22,3 @@ setcookie("tngchar_$newroot", $row['charset'], time() + 31536000, "/");
 setcookie("tngnorels_$newroot", $row['norels'], time() + 31536000, "/");
 
 header("Location: $homepage");
-?>

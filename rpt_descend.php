@@ -352,4 +352,3 @@ function getVitalDates($row) {
   return $vitalinfo;
 }
 
-?>

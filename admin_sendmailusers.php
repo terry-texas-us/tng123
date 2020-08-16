@@ -47,4 +47,4 @@ if (!$numrows) {
 tng_free_result($result);
 
 header("Location: admin_mailusers.php?message=" . urlencode($message));
-?>
+

@@ -47,5 +47,3 @@ function getPhotoSrc($persfamID, $living, $gender) {
 
   return $photo;
 }
-
-?>

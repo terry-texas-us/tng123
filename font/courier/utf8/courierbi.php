@@ -146,4 +146,4 @@ $diff = '';
 $file = 'courierbi.z';
 $ctg = 'courierbi.ctg.z';
 $originalsize = 503460;
-?>
+

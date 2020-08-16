@@ -60,4 +60,4 @@ $_SESSION['tng_message'] = $tng_message;
 
 $timeline2_url = getURL("timeline2", 1);
 header("Location: $timeline2_url" . "primaryID=$primaryID&tree=$tree&chartwidth=$newwidth");
-?>
+

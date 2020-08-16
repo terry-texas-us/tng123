@@ -31,4 +31,4 @@ if (tng_affected_rows()) {
 } else {
   echo "0";
 }
-?>
+

@@ -45,4 +45,3 @@ adminwritelog($admtext['addnewtlevent'] . ": $tleventID - $evdetail");
 
 $message = $admtext['tlevent'] . " $tleventID {$admtext['succadded']}.";
 header("Location: admin_timelineevents.php?message=" . urlencode($message));
-?>

@@ -41,4 +41,3 @@ if ($table == "all") {
 } else {
   echo $table . "&" . $admtext['succoptimized'];
 }
-?>

@@ -71,4 +71,3 @@ fclose($fp);
 adminwritelog($admtext['modifyimportsettings']);
 
 header("Location: admin_setup.php");
-?>

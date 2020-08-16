@@ -50,4 +50,4 @@ adminwritelog($admtext['modifyeventtype'] . ": " . $admtext['all']);
 
 $message = $admtext['changestoallevtypes'] . " {$admtext['succsaved']}.";
 header("Location: admin_eventtypes.php?message=" . urlencode($message));
-?>
+

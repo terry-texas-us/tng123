@@ -675,5 +675,3 @@ function getIndividualRecord($personID, $prevlevel) {
     incrCounter($prefix);
   }
 }
-
-?>

@@ -172,4 +172,3 @@ if ($success > 0) {
 echo "</span>";
 
 tng_footer("");
-?>

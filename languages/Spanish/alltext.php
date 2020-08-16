@@ -29,13 +29,13 @@ $dates['ABOUT'] = "Circa";
 $dates['BEF'] = "Ant.";
 $dates['BEFORE'] = "Antes";
 $dates['AFT'] = "Desp.";
-$dates['AFTER'] = "Después";
+$dates['AFTER'] = "Despuï¿½s";
 $dates['BET'] = "Entre";
 $dates['BETWEEN'] = "Entre";
 $dates['TEXT_AND'] = "y";
 $dates['FROM'] = "Desde";
 $dates['TO'] = "hasta";
-$dates['Y'] = "Sí, fecha desconocida";
+$dates['Y'] = "Sï¿½, fecha desconocida";
 $dates['CAL'] = "Calc";
 $dates['EST'] = "Esti";
 
@@ -47,52 +47,52 @@ $text['text_next'] = "Siguiente";
 $text['text_prev'] = "Anterior";
 $text['clickdisplay'] = "Clic para mostrar";
 $text['clickhide'] = "Clic para ocultar";
-$text['forgot1'] = "<strong>¿Olvidó su nombre de usuario y contraseña?</strong><br />Ingrese su dirección de e-mail abajo para que le sea enviado su nombre de usuario.";
-$text['forgot2'] = "Ingrese su e-mail arriba y su nombre de usuario abajo para regenerar su contraseña (se le enviará una contraseña temporaria).";
-$text['newpass'] = "Su nueva contraseña temporaria";
-$text['usersent'] = "Su nombre de usuario ha sido enviado a su dirección de e-mail.";
-$text['pwdsent'] = "Su nueva contraseña temporaria ha sido enviada a su dirección de e-mail.";
-$text['loginnotsent2'] = "La dirección de e-mail que ha proporcionado no coincide con ninguna de las cuentas de usuarios actualmente registradas. No se envió información.";
-$text['loginnotsent3'] = "La dirección de e-mail y el nombre de usuario que ha proporcionado no coincide con ninguna de las cuentas de usuarios registradas. No se envió información.";
-$text['logininfo'] = "Su información de acceso";
+$text['forgot1'] = "<strong>ï¿½Olvidï¿½ su nombre de usuario y contraseï¿½a?</strong><br />Ingrese su direcciï¿½n de e-mail abajo para que le sea enviado su nombre de usuario.";
+$text['forgot2'] = "Ingrese su e-mail arriba y su nombre de usuario abajo para regenerar su contraseï¿½a (se le enviarï¿½ una contraseï¿½a temporaria).";
+$text['newpass'] = "Su nueva contraseï¿½a temporaria";
+$text['usersent'] = "Su nombre de usuario ha sido enviado a su direcciï¿½n de e-mail.";
+$text['pwdsent'] = "Su nueva contraseï¿½a temporaria ha sido enviada a su direcciï¿½n de e-mail.";
+$text['loginnotsent2'] = "La direcciï¿½n de e-mail que ha proporcionado no coincide con ninguna de las cuentas de usuarios actualmente registradas. No se enviï¿½ informaciï¿½n.";
+$text['loginnotsent3'] = "La direcciï¿½n de e-mail y el nombre de usuario que ha proporcionado no coincide con ninguna de las cuentas de usuarios registradas. No se enviï¿½ informaciï¿½n.";
+$text['logininfo'] = "Su informaciï¿½n de acceso";
 $text['collapseall'] = "Cotraer todo";
 $text['expandall'] = "Expandir todo";
 
 //media types
 $text['photos'] = "Fotos";
 $text['documents'] = "Documentos";
-$text['headstones'] = "Lápidas";
+$text['headstones'] = "Lï¿½pidas";
 $text['histories'] = "Historias";
 $text['recordings'] = "Grabaciones";
 $text['videos'] = "Videos";
 
 //For Google maps use - admin and public pages
 $admtext['placelevel'] = "Nivel de Lugares";
-$admtext['level1'] = "Dirección";
-$admtext['level2'] = "Ubicación";
+$admtext['level1'] = "Direcciï¿½n";
+$admtext['level2'] = "Ubicaciï¿½n";
 $admtext['level3'] = "Ciudad/Pueblo";
-$admtext['level4'] = "Municipio/Alcaldía";
+$admtext['level4'] = "Municipio/Alcaldï¿½a";
 $admtext['level5'] = "Estado/Provincia";
-$admtext['level6'] = "País";
+$admtext['level6'] = "Paï¿½s";
 $admtext['level0'] = "No Establecido";
 
-$text['male'] = "Varón";
+$text['male'] = "Varï¿½n";
 $text['female'] = "Mujer";
 $text['closewindow'] = "Cerrar Ventana";
 $text['loading'] = "Cargando...";
 
 $text['cancel'] = "Cancelar";
 $text['none'] = "Ninguno";
-$text['mainton'] = "El Modo Mantenimiento está Activado";
+$text['mainton'] = "El Modo Mantenimiento estï¿½ Activado";
 
 //moved here in 8.0.0
 $text['living'] = "Vivo";
-$admtext['text_private'] = "Privatizar la información del propietario";
-$admtext['confunlink'] = "¿Esta seguro que quiere desvincular este individuo como esposo en esta familia?";
-$admtext['confunlinkc'] = "¿Estás seguro que quiere desvincular este individuo como hijo en esta familia?";
-$admtext['confremchild'] = "¿Está seguro que quiere quitar este hijo de esta familia? El individuo no será borrado de la base de datos.";
+$admtext['text_private'] = "Privatizar la informaciï¿½n del propietario";
+$admtext['confunlink'] = "ï¿½Esta seguro que quiere desvincular este individuo como esposo en esta familia?";
+$admtext['confunlinkc'] = "ï¿½Estï¿½s seguro que quiere desvincular este individuo como hijo en esta familia?";
+$admtext['confremchild'] = "ï¿½Estï¿½ seguro que quiere quitar este hijo de esta familia? El individuo no serï¿½ borrado de la base de datos.";
 $admtext['enterfamilyid'] = "Por favor, ingrese un ID de Familia.";
-$admtext['yes'] = "Sí";
+$admtext['yes'] = "Sï¿½";
 $admtext['no'] = "No";
 $admtext['BIRT'] = "Nacimiento";
 $admtext['DEAT'] = "Fallecimiento";
@@ -101,15 +101,15 @@ $admtext['BURI'] = "Entierro";
 $admtext['BAPL'] = "Bautismo (LDS)";
 $admtext['ENDL'] = "Investidura (LDS)";
 $admtext['NICK'] = "Apodo";
-$admtext['TITL'] = "Título";
+$admtext['TITL'] = "Tï¿½tulo";
 $admtext['NSFX'] = "Sufijo";
 $admtext['NAME'] = "Nombre";
 $admtext['SLGC'] = "Sellado de Padres (LDS)";
 $admtext['MARR'] = "Casado";
-$admtext['SLGS'] = "Sellado de Cónyuge (LDS)";
+$admtext['SLGS'] = "Sellado de Cï¿½nyuge (LDS)";
 $admtext['hello'] = "Hola";
-$admtext['activated'] = "Su cuenta de usuario en genealogía ha sido activada.";
-$admtext['infois'] = "Su información de acceso es la siguiente";
+$admtext['activated'] = "Su cuenta de usuario en genealogï¿½a ha sido activada.";
+$admtext['infois'] = "Su informaciï¿½n de acceso es la siguiente";
 $admtext['subjectline'] = "Su cuenta de usuario ha sido activada.";
 
 //moved here in 8.1.0
@@ -132,7 +132,7 @@ $text['tuesday'] = "Martes";
 $text['wednesday'] = "Miercoles";
 $text['thursday'] = "Jueves";
 $text['friday'] = "Viernes";
-$text['saturday'] = "Sábado";
+$text['saturday'] = "Sï¿½bado";
 $text['contains'] = "contiene";
 $text['startswith'] = "comienza con";
 
@@ -141,17 +141,17 @@ $text['top'] = "Arriba";
 
 //moved here in 10.0.0
 $text['startingind'] = "Individuo Inicial";
-$text['enteremail'] = "Por favor, escriba una dirección de e-mail válida.";
-$text['page'] = "Página";
+$text['enteremail'] = "Por favor, escriba una direcciï¿½n de e-mail vï¿½lida.";
+$text['page'] = "Pï¿½gina";
 $text['go'] = "Ir";
-$text['years'] = "años";
+$text['years'] = "aï¿½os";
 
 //added in 10.0.0
-$admtext['CONL'] = "Confirmación (LDS)";
-$admtext['INIT'] = "Iniciación (LDS)";
+$admtext['CONL'] = "Confirmaciï¿½n (LDS)";
+$admtext['INIT'] = "Iniciaciï¿½n (LDS)";
 $admtext['step'] = "Hijastro";
-$text['switchm'] = "Cambio de sitio móvil";
-$text['switchs'] = "Cambio de sitio estándar";
+$text['switchm'] = "Cambio de sitio mï¿½vil";
+$text['switchs'] = "Cambio de sitio estï¿½ndar";
 
 //added in 11.0.0
 $text['dna_tests'] = "Pruebas de DNA";
@@ -178,7 +178,7 @@ $text['predicted'] = "Predicted";
 $admtext['ancestral_surnames'] = "Apellidos Antepasados";
 $admtext['admin_notes'] = "Notas del Administrador";
 $admtext['mda'] = "Antepasado mas distante";
-$admtext['mrca'] = "Antepasado común mas reciente";
+$admtext['mrca'] = "Antepasado comï¿½n mas reciente";
 $admtext['marker_values'] = "Valor de los Marcadores";
 $admtext['ref_seq'] = "Reference sequence";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "c.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

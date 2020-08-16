@@ -4,4 +4,4 @@
 //$text['messagename'] = "This is the message";
 //Wpisz tu swoje własne opisy, tak jak w następnej linii:
 //$text[messagename] = "Nazwa opisu";
-?>
+

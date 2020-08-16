@@ -19,4 +19,4 @@ if (file_exists($filename)) {
 }
 
 echo $deleted ? $admtext['deleted'] . "&nbsp;<img src=\"img/tng_check.gif\"/>" : $admtext['notdeleted'];
-?>
+

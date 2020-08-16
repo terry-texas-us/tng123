@@ -495,5 +495,3 @@ class modinstaller extends modparser
     return !$this->batch_error;
   }
 } // class modinstaller
-
-?>

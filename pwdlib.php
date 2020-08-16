@@ -162,5 +162,3 @@ function phpassInit($iteration_count_log2 = 8, $portable_hashes = TRUE) {
   $pwd_hasher = new PasswordHash($iteration_count_log2, $portable_hashes); // By default, use the portable hash from phpass
   return $pwd_hasher;
 }
-
-?>

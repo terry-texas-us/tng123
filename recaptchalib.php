@@ -128,5 +128,3 @@ class ReCaptcha
     return $recaptchaResponse;
   }
 }
-
-?>

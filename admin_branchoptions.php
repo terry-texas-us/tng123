@@ -21,4 +21,3 @@ if (!$numrows) {
   }
 }
 tng_free_result($result);
-?>

@@ -226,4 +226,3 @@ function tngImageFlip(&$image, $x = 0, $y = 0, $width = null, $height = null) {
   return true;
 }
 
-?>

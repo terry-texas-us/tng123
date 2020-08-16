@@ -99,4 +99,3 @@ adminwritelog("<a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID\">{$admte
 
 $message = $admtext['cemetery'] . " $cemeteryID {$admtext['succadded']}.";
 header("Location: admin_cemeteries.php?message=" . urlencode($message));
-?>

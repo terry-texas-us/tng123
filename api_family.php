@@ -118,4 +118,3 @@ tng_free_result($children);
 echo $family;
 
 echo "}";
-?>

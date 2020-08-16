@@ -32,4 +32,3 @@ if ($assignedtree) {
 }
 
 header("Location: admin_whatsnewmsg.php?color=$color&message=" . urlencode($message));
-?>

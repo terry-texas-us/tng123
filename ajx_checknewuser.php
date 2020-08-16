@@ -21,4 +21,4 @@ tng_free_result($result);
 
 header("Content-Type: application/json; charset=" . $session_charset);
 echo "{\"rval\":$success,\"html\":\"$message\"}";
-?>
+

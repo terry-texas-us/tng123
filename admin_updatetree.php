@@ -45,4 +45,4 @@ adminwritelog("<a href=\"admin_edittree.php?tree=$tree\">{$admtext['modifytree']
 
 $message = $admtext['changestotree'] . " $treenamedisp {$admtext['succsaved']}.";
 header("Location: admin_trees.php?message=" . urlencode($message));
-?>
+

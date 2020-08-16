@@ -26,4 +26,3 @@ if ($_GET['admin_login']) {
 } else {
   header("Location: " . $_SERVER["HTTP_REFERER"]);
 }
-?>

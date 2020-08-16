@@ -14,4 +14,3 @@ $options['compress_names'] = "0";
 $options['show_analyzer'] = "0";
 $options['delete_partial'] = "0";
 $options['delete_installed'] = "0";
-?>

@@ -54,4 +54,3 @@ $citationsrc = cleanIt($citationsrc);
 $truncated = truncateIt($citationsrc, 75);
 header("Content-Type: application/json; charset=" . $session_charset);
 echo "{\"display\":" . json_encode($truncated) . "}";
-?>

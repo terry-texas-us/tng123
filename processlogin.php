@@ -148,4 +148,3 @@ if ($check) {
 
 tng_free_result($result);
 header("Location: $headerstr");
-?>

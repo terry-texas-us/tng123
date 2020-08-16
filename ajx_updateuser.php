@@ -80,4 +80,3 @@ if ($proceed) {
 }
 
 header("Location: " . $_SESSION['destinationpage8']);
-?>

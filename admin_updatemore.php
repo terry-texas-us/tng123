@@ -79,4 +79,3 @@ if ($eventID) {
   $rval = 1;
 }
 echo $rval;
-?>

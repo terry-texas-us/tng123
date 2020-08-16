@@ -148,4 +148,3 @@ if ($need_assigned_tree) {
 
 $postvars = $_SESSION['postvars'] = "";
 unset($_SESSION['postvars']);
-?>

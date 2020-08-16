@@ -184,4 +184,4 @@ if ($ajaxmsg) {
   $sub = ($orgtable == "struct") ? "sub=structure&" : "";
   header("Location: admin_utilities.php?$sub" . "message=" . urlencode($message));
 }
-?>
+

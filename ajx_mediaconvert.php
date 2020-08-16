@@ -78,4 +78,3 @@ $logmsg = preg_replace("/xxx/", $count, $admtext['mediaexpl']);
 
 adminwritelog($logmsg);
 echo $logmsg;
-?>

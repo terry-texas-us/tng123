@@ -53,4 +53,4 @@ $result = tng_query($query);
 
 adminwritelog("{$admtext['deleted']}: {$admtext['event']} $eventID");
 echo 1;
-?>
+

@@ -148,4 +148,3 @@ $info = preg_replace("/\t/", " ", $info);
 //echo "{'eventID':'$eventID','display':'$display','eventdate':'$eventdate','eventplace':'$eventplace','info':'$info','allow_edit':'$allow_edit','allow_delete':'$allow_delete','editmsg':'$admtext[edit]','delmsg':'$admtext[text_delete]'}";
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"display\":\"$display\",\"eventdate\":\"$eventdate\",\"eventplace\":\"" . stripslashes($eventplace) . "\",\"info\":\"" . stripslashes($info) . "\"}";
-?>

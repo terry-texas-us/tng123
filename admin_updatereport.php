@@ -50,4 +50,4 @@ if ($submitx) {
 } else {
   header("Location: admin_editreport.php?reportID=$reportID");
 }
-?>
+

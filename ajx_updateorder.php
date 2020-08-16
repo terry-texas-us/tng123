@@ -694,4 +694,3 @@ if ($json) {
 }
 
 echo $rval;
-?>

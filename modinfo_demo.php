@@ -121,5 +121,3 @@ echo "
 </table>";
 
 $table = $oMod->get_parse_table();
-
-?>

@@ -25,4 +25,4 @@ adminwritelog($admtext['deleted'] . ": {$admtext['tentdata']} $tempID");
 $message = $admtext['tentdata'] . " $tempID {$admtext['succdeleted']}.";
 
 header("Location: admin_findreview.php?type={$row['type']}&message=" . urlencode($message) . "&time=" . microtime());
-?>
+

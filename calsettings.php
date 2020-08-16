@@ -66,4 +66,3 @@ $defaultHide = array('altbirth', 'burial', 'bapt', 'endl', 'seal');
 
 /* Make an array of all the event types */
 $calAllEvents = array_merge($calIndEvent, $calFamEvent, $calEvent);
-?>

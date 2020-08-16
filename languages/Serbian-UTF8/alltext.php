@@ -249,4 +249,3 @@ $text['marrabbr'] = "ven.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

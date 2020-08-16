@@ -106,4 +106,3 @@ switch ($type) {
     break;
 }
 echo $newID;
-?>

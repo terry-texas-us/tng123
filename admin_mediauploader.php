@@ -914,4 +914,3 @@ $options = array(
         'added' => $admtext['addnewmedia']
 );
 $upload_handler = new UploadHandler($options);
-?>

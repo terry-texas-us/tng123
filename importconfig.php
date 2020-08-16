@@ -17,4 +17,4 @@ $locimppath['headstones'] = "";
 $locimppath['other'] = "";
 $wholepath = "0";
 $tngimpcfg['privnote'] = "";
-?>
+

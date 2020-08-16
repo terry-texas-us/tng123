@@ -233,4 +233,3 @@ foreach ($timeline as $timeentry) {
 }
 
 echo "</data>\n";
-?>

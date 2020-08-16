@@ -347,5 +347,3 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
   echo "
       </div>";
 }
-
-?>

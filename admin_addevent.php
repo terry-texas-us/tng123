@@ -120,4 +120,3 @@ if ($eventID) {
 } else {
   echo "{\"id\":0}";
 }
-?>

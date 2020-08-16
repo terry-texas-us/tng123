@@ -33,4 +33,3 @@ if ($_SESSION['destinationpage8']) {
 } else {
   header("Location: " . $_SERVER['HTTP_REFERER']);
 }
-?>

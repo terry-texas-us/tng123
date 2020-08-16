@@ -163,4 +163,3 @@ if ($count) {
   $message = $admtext['nochanges'];
 }
 header("Location: admin_media.php?message=" . urlencode($message));
-?>

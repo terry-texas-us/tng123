@@ -438,4 +438,3 @@ echo "<p class=\"normal\">$names</p>\n";
 echo "<p class=\"normal\">$famnames</p>\n";
 
 adminwritelog($admtext['labelbranches'] . ": $tree/$branch ($branchaction/$set)");
-?>

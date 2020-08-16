@@ -1192,6 +1192,3 @@ class TTFontFile
 
 
 }
-
-
-?>

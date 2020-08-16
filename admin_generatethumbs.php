@@ -119,4 +119,3 @@ echo "<p><strong>{$admtext['thumbsgenerated']}:</strong> $count<br /><strong>{$a
 if ($conflicts) {
   echo "<p><strong>" . $admtext['thumbconflicts'] . ":</strong> $conflicts</p><p style=\"line-height:1.5\">$conflictstr</p>";
 }
-?>

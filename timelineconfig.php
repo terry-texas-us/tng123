@@ -14,4 +14,3 @@ $band3_multiple = 1;
 $band4_pct = "15%";
 $band4_interval = 150; //pixels
 $band4_multiple = 1;
-?>

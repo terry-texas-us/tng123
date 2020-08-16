@@ -49,4 +49,3 @@ if ($affected_rows == 1) {
 }
 
 header("Location: admin_eventtypes.php?message=" . urlencode($message));
-?>

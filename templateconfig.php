@@ -1471,4 +1471,3 @@ $tmp['t215_author-4'] = "Florence King";
 $tmp['t215_quote-5'] = "My grandmother started walking five miles a day when she was sixty. She's ninety-seven now, and we don't know where the hell she is.";
 $tmp['t215_author-5'] = "Ellen";
 $tmp['t215_latestnews'] = "We make every effort to document our research. If you have something you would like to add, please contact us.";
-?>

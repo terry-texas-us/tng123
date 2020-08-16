@@ -2338,4 +2338,3 @@ $admtext['living'] = "In vita";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

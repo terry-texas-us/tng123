@@ -45,4 +45,3 @@ if ($count) {
   $message = $admtext['nochanges'];
 }
 header("Location: admin_dna_tests.php?message=" . urlencode($message));
-?>

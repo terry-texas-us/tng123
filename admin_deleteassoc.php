@@ -20,4 +20,3 @@ tng_free_result($result);
 adminwritelog("{$admtext['deleted']}: {$admtext['association']} $assocID");
 
 echo $row['acount'];
-?>

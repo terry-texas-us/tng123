@@ -647,5 +647,3 @@ function parentLine($label1, $data1, $label2, $data2, $cite1 = '', $cite2 = '') 
     $pdf->Ln($lineheight);
   }
 }
-
-?>

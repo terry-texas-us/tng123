@@ -24,4 +24,4 @@ tng_free_result($result);
 adminwritelog($admtext['deleted'] . ": {$admtext['note']} $noteID");
 
 echo $row['ncount'];
-?>
+

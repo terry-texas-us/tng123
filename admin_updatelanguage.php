@@ -26,4 +26,4 @@ adminwritelog("<a href=\"editlanguage.php?languageID=$languageID\">{$admtext['mo
 
 $message = $admtext['changestolanguage'] . " $languageID {$admtext['succsaved']}.";
 header("Location: admin_languages.php?message=" . urlencode($message));
-?>
+

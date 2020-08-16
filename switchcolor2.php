@@ -22,4 +22,4 @@ if ($_GET["choice"] == "Display new tab") {
   echo "<p>Please copy it to $rootpath/img/$filename, or to img/$filename within the template folder you're using.</p>";
   echo "<p>Use the Back button on your browser to return to the previous page and create your other tab.</p>";
 }
-?>
+

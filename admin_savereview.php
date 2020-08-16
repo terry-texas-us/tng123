@@ -170,4 +170,4 @@ if ($succmsg) {
 }
 
 header("Location: admin_findreview.php?type=$type&message=" . urlencode($message));
-?>
+

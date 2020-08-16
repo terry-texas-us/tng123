@@ -562,4 +562,3 @@ echo "
 </div>
 </body>
 </html>";
-?>

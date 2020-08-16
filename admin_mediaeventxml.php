@@ -72,4 +72,3 @@ while ($custevent = tng_fetch_assoc($custevents)) {
 tng_free_result($custevents);
 
 echo "</eventlist>";
-?>

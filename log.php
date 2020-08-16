@@ -115,5 +115,3 @@ function preparebookmark($string) {
   $_SESSION['tnglastpage'] = $string;
   $gotlastpage = true;
 }
-
-?>

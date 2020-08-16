@@ -36,4 +36,3 @@ $albumID = tng_insert_id();
 adminwritelog($admtext['addnewalbum'] . ": $albumname");
 
 header("Location: admin_editalbum.php?albumID=$albumID&added=1");
-?>

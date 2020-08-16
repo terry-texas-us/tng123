@@ -382,4 +382,3 @@ if ($numfamilies) {
   echo "\"families\":[" . implode(",\n", $families) . "]\n";
 }
 echo "}";
-?>

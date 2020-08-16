@@ -11,4 +11,3 @@ $lines = file($logfile);
 foreach ($lines as $line) {
   echo "$line<br/>\n";
 }
-?>

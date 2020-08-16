@@ -344,4 +344,3 @@ if (!$personID) {
 
 echo "</channel>\n";
 echo "</rss>\n";
-?>

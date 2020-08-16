@@ -194,4 +194,3 @@ if ($newfamily == "ajax") {
 } else {
   header("Location: admin_editfamily.php?familyID=$familyID&tree=$tree&cw=$cw&added=1");
 }
-?>

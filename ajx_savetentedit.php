@@ -70,4 +70,4 @@ if ($tngconfig['revmail']) {
   tng_sendmail("TNG", $emailaddr, $owner, $sendemail, $text['revsubject'], $message, $emailaddr, $emailaddr);
 }
 echo 1;
-?>
+

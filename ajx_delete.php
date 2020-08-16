@@ -382,4 +382,3 @@ if ($logmsg) {
   adminwritelog($logmsg);
 }
 echo $id;
-?>

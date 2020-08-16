@@ -199,5 +199,3 @@ if ($sitever != 'mobile' && $options['adjust_headers']) {
 echo "
 </body>
 </html>";
-
-?>

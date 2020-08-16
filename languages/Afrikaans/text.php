@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Laaste Bladsy";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

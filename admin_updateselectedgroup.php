@@ -47,4 +47,3 @@ if ($count) {
   $message = $admtext['nochanges'];
 }
 header("Location: admin_dna_groups.php?message=" . urlencode($message));
-?>

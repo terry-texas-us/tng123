@@ -65,5 +65,3 @@ class modinfo extends modlister
     return $targets;
   }
 } // class
-
-?>

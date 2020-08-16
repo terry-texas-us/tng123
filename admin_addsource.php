@@ -65,4 +65,3 @@ if (isset($ajax)) {
 } else {
   header("Location: admin_editsource.php?sourceID=$sourceID&tree=$tree&added=1");
 }
-?>

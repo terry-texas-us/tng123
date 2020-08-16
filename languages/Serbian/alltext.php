@@ -76,8 +76,8 @@ $admtext['level5'] = "State/Province";
 $admtext['level6'] = "Country";
 $admtext['level0'] = "Not Set";
 
-$text['male'] = "Muško";
-$text['female'] = "Žensko";
+$text['male'] = "Muï¿½ko";
+$text['female'] = "ï¿½ensko";
 $text['closewindow'] = "Zatvori prozor";
 $text['loading'] = "Loading...";
 
@@ -91,7 +91,7 @@ $admtext['text_private'] = "Private";
 $admtext['confunlink'] = "Are you sure you want to unlink this individual as a spouse in this family?";
 $admtext['confunlinkc'] = "Are you sure you want to unlink this individual as a child in this family?";
 $admtext['confremchild'] = "Are you sure you want to remove this child from this family? The individual will not be deleted from the database.";
-$admtext['enterfamilyid'] = "Upišite ID porodice.";
+$admtext['enterfamilyid'] = "Upiï¿½ite ID porodice.";
 $admtext['yes'] = "Yes";
 $admtext['no'] = "No";
 $admtext['BIRT'] = "Birth";
@@ -133,7 +133,7 @@ $text['wednesday'] = "Wednesday";
 $text['thursday'] = "Thursday";
 $text['friday'] = "Friday";
 $text['saturday'] = "Saturday";
-$text['contains'] = "sadrži";
+$text['contains'] = "sadrï¿½i";
 $text['startswith'] = "pocinje sa";
 
 //moved here in 9.0.4
@@ -141,9 +141,9 @@ $text['top'] = "Top";
 
 //moved here in 10.0.0
 $text['startingind'] = "Starting Individual";
-$text['enteremail'] = "Milomo vas upišite važecu E-mail adresu";
+$text['enteremail'] = "Milomo vas upiï¿½ite vaï¿½ecu E-mail adresu";
 $text['page'] = "Page";
-$text['go'] = "Traži";
+$text['go'] = "Traï¿½i";
 $text['years'] = "god.";
 
 //added in 10.0.0
@@ -237,7 +237,7 @@ $admtext['generation_num'] = "Generations For Ancestral Surnames";
 
 // moved here from text.php in TNG 12.1.0
 $text['birthabbr'] = "rod.";
-$text['chrabbr'] = "krš.";
+$text['chrabbr'] = "krï¿½.";
 $text['deathabbr'] = "smr.";  //from descend
 $text['burialabbr'] = "sah.";  //from descend
 $text['marrabbr'] = "ven.";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "ven.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

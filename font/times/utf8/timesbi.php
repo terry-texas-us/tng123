@@ -151,4 +151,4 @@ $diff = '';
 $file = 'timesbi.z';
 $ctg = 'timesbi.ctg.z';
 $originalsize = 610820;
-?>
+

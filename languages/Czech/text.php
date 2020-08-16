@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Posledn� str�nka";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

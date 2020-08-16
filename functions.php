@@ -282,5 +282,3 @@ function doMedia($mediatypeID) {
 
   return $media;
 }
-
-?>

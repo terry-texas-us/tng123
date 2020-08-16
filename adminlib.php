@@ -315,5 +315,3 @@ function getHasKids($tree, $personID) {
 
   return $haskids;
 }
-
-?>

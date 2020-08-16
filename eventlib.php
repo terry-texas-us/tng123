@@ -64,5 +64,3 @@ function showCustEvents($id) {
   echo "</table>\n";
   echo "</div>\n";
 }
-
-?>

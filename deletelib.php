@@ -136,4 +136,3 @@ function updateHasKidsFamily($familyID) {
   }
 }
 
-?>

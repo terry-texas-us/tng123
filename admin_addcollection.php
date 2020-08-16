@@ -39,4 +39,3 @@ if (!in_array($collid, $stdcolls)) {
   }
 }
 echo $newcollid;
-?>

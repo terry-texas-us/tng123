@@ -740,5 +740,3 @@ function doCemPlusMap($imgrow, $tree) {
   }
   tng_free_result($hsresult);
 }
-
-?>

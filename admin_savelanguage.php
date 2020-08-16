@@ -30,4 +30,3 @@ $admin_login = 1;
 include("checklogin.php");
 
 header("Location: admin.php");
-?>

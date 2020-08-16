@@ -82,4 +82,3 @@ function geocode($address, $multiples, $id) {
   return $message;
 }
 
-?>

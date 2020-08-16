@@ -58,4 +58,3 @@ tng_execute($query, $params);
 adminwritelog("<a href=\"admin_editrepo.php?repoID=$repoID&tree=$tree\">{$admtext['addnewrepo']}: $tree/$repoID</a>");
 
 header("Location: admin_editrepo.php?repoID=$repoID&tree=$tree&added=1");
-?>

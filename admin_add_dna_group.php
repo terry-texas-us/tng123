@@ -32,4 +32,3 @@ adminwritelog("<a href=\"admin_dna_groups.php\">{$admtext['addgroup']}: $dna_gro
 
 $message = $admtext['dna_group'] . " $dna_group {$admtext['succadded']}.";
 header("Location: admin_dna_groups.php?message=$message&amp;dna_group=$dna_group&amp;test_type=$test_type&amp;tree=$tree");
-?>

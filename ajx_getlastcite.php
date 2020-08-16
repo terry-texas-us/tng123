@@ -18,4 +18,3 @@ $title = json_encode(truncateIt($srow['title'], 100));
 
 header("Content-Type: application/json; charset=" . $session_charset);
 echo "{\"sourceID\":\"{$row['sourceID']}\",\"title\":{$title},\"citepage\":" . json_encode($row['page']) . ",\"quay\":\"{$row['quay']}\",\"citedate\":\"{$row['citedate']}\",\"citetext\":" . json_encode($row['citetext']) . ",\"citenote\":" . json_encode($row['note']) . "}";
-?>

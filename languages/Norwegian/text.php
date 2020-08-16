@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Siste side";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

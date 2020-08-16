@@ -14,4 +14,3 @@ if ($dbowner) {
 if (!empty($tngconfig['footermsg'])) {
   $sitecredit .= "<p class=\"smaller center \">{$tngconfig['footermsg']}</p>\n";
 }
-?>

@@ -2,11 +2,11 @@
 $alltextloaded = 1;
 
 $dates['JAN'] = "Jan";
-$dates['JANUARY'] = "Sijeèanj";
+$dates['JANUARY'] = "Sijeï¿½anj";
 $dates['FEB'] = "Feb";
-$dates['FEBRUARY'] = "Veljaèa";
+$dates['FEBRUARY'] = "Veljaï¿½a";
 $dates['MAR'] = "Mar";
-$dates['MARCH'] = "Ožujak";
+$dates['MARCH'] = "Oï¿½ujak";
 $dates['APR'] = "Apr";
 $dates['APRIL'] = "Travanj";
 $dates['MAY'] = "May";
@@ -30,8 +30,8 @@ $dates['BEF'] = "Pri";
 $dates['BEFORE'] = "Prije";
 $dates['AFT'] = "Nak";
 $dates['AFTER'] = "Nakon";
-$dates['BET'] = "Izmaðu";
-$dates['BETWEEN'] = "Izmeðu";
+$dates['BET'] = "Izmaï¿½u";
+$dates['BETWEEN'] = "Izmeï¿½u";
 $dates['TEXT_AND'] = "i";
 $dates['FROM'] = "Od";
 $dates['TO'] = "za";
@@ -47,14 +47,14 @@ $text['text_next'] = "Naredni";
 $text['text_prev'] = "Prethodni";
 $text['clickdisplay'] = "Klikni za prikaz";
 $text['clickhide'] = "Klikni za sakriti";
-$text['forgot1'] = "<strong>Zaboravio si svoje korisnièko ime ili zaporku?</strong><br />Unesi svoju e-mail adresu dolje pa æe vam korisnièko ime biti poslato.";
-$text['forgot2'] = "Unesi svoju e-mail adresu gore i svoje korisnièko ime dolje da bi se vaša zaporka resetirala (privremena zaporka ce vam biti poslata).";
-$text['newpass'] = "Vaša privremena zaporka";
-$text['usersent'] = "Vaše korisnièko ime je poslato na vašu e-mail adresu.";
-$text['pwdsent'] = "Vaša nova privremena zaporka je poslana na vašu e-mail adresu.";
-$text['loginnotsent2'] = "E-mail adresa koju ste unijeli nije naðena. Informacija nije poslata.";
-$text['loginnotsent3'] = "E-mail adresa i korisnièko ime koje ste unijeli ne odgovara niti jednom korisnièkom raèunu u našoj evidenciji. Informacija nije poslana.";
-$text['logininfo'] = "Vaša login informacija";
+$text['forgot1'] = "<strong>Zaboravio si svoje korisniï¿½ko ime ili zaporku?</strong><br />Unesi svoju e-mail adresu dolje pa ï¿½e vam korisniï¿½ko ime biti poslato.";
+$text['forgot2'] = "Unesi svoju e-mail adresu gore i svoje korisniï¿½ko ime dolje da bi se vaï¿½a zaporka resetirala (privremena zaporka ce vam biti poslata).";
+$text['newpass'] = "Vaï¿½a privremena zaporka";
+$text['usersent'] = "Vaï¿½e korisniï¿½ko ime je poslato na vaï¿½u e-mail adresu.";
+$text['pwdsent'] = "Vaï¿½a nova privremena zaporka je poslana na vaï¿½u e-mail adresu.";
+$text['loginnotsent2'] = "E-mail adresa koju ste unijeli nije naï¿½ena. Informacija nije poslata.";
+$text['loginnotsent3'] = "E-mail adresa i korisniï¿½ko ime koje ste unijeli ne odgovara niti jednom korisniï¿½kom raï¿½unu u naï¿½oj evidenciji. Informacija nije poslana.";
+$text['logininfo'] = "Vaï¿½a login informacija";
 $text['collapseall'] = "Zatvori sve";
 $text['expandall'] = "Ekspandiraj sve";
 
@@ -71,50 +71,50 @@ $admtext['placelevel'] = "Razina mjesta";
 $admtext['level1'] = "Addresa";
 $admtext['level2'] = "Locatija";
 $admtext['level3'] = "Mjesto/Grad";
-$admtext['level4'] = "Županija";
+$admtext['level4'] = "ï¿½upanija";
 $admtext['level5'] = "Republika/Provincija";
-$admtext['level6'] = "Država";
+$admtext['level6'] = "Drï¿½ava";
 $admtext['level0'] = "Ne Dodijeljeno";
 
-$text['male'] = "Muškarac";
-$text['female'] = "Žena";
+$text['male'] = "Muï¿½karac";
+$text['female'] = "ï¿½ena";
 $text['closewindow'] = "Zatvori ovaj prozor";
-$text['loading'] = "Uèitavam...";
+$text['loading'] = "Uï¿½itavam...";
 
-$text['cancel'] = "Otkažite";
+$text['cancel'] = "Otkaï¿½ite";
 $text['none'] = "Nema";
-$text['mainton'] = "Modus Za Održavanje je UPALJEN";
+$text['mainton'] = "Modus Za Odrï¿½avanje je UPALJEN";
 
 //moved here in 8.0.0
-$text['living'] = "Živuæa";
+$text['living'] = "ï¿½ivuï¿½a";
 $admtext['text_private'] = "Privatno";
-$admtext['confunlink'] = "Dali ste sigurni da želite raskinuti vezu ove osobe kao suprugu u ovoj familiji?";
-$admtext['confunlinkc'] = "Dali ste sigurni da želite raskinuti vezu ove osobe kao dijete u ovoj familiji? ";
-$admtext['confremchild'] = "Dali ste sigurni da želite izvaditi ovo dijete iz ove familije?  Osoba neæe se izbrisati iz base podataka.";
+$admtext['confunlink'] = "Dali ste sigurni da ï¿½elite raskinuti vezu ove osobe kao suprugu u ovoj familiji?";
+$admtext['confunlinkc'] = "Dali ste sigurni da ï¿½elite raskinuti vezu ove osobe kao dijete u ovoj familiji? ";
+$admtext['confremchild'] = "Dali ste sigurni da ï¿½elite izvaditi ovo dijete iz ove familije?  Osoba neï¿½e se izbrisati iz base podataka.";
 $admtext['enterfamilyid'] = "Molim unesite ID obitelji.";
 $admtext['yes'] = "Da";
 $admtext['no'] = "Ne";
-$admtext['BIRT'] = "Roðenje";
+$admtext['BIRT'] = "Roï¿½enje";
 $admtext['DEAT'] = "Smrt";
-$admtext['CHR'] = "Krštenje";
+$admtext['CHR'] = "Krï¿½tenje";
 $admtext['BURI'] = "Ukop";
-$admtext['BAPL'] = "Krštenje (LDS)";
+$admtext['BAPL'] = "Krï¿½tenje (LDS)";
 $admtext['ENDL'] = "Endowment (LDS)";
 $admtext['NICK'] = "Nadimak";
 $admtext['TITL'] = "Titula";
 $admtext['NSFX'] = "Sufiks";
 $admtext['NAME'] = "Ime";
-$admtext['SLGC'] = "Zapeèaæeno na Roditelje (LDS)";
-$admtext['MARR'] = "Oženjen/Udata";
-$admtext['SLGS'] = "Zapeèaæeno na Suprugu (LDS)";
+$admtext['SLGC'] = "Zapeï¿½aï¿½eno na Roditelje (LDS)";
+$admtext['MARR'] = "Oï¿½enjen/Udata";
+$admtext['SLGS'] = "Zapeï¿½aï¿½eno na Suprugu (LDS)";
 $admtext['hello'] = "Dobar Dan";
-$admtext['activated'] = "Vaš genealoški raèun je aktiviran.";
-$admtext['infois'] = "Vaša prijavna informacija je";
-$admtext['subjectline'] = "Vaš genealoški raèun je aktiviran.";
+$admtext['activated'] = "Vaï¿½ genealoï¿½ki raï¿½un je aktiviran.";
+$admtext['infois'] = "Vaï¿½a prijavna informacija je";
+$admtext['subjectline'] = "Vaï¿½ genealoï¿½ki raï¿½un je aktiviran.";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "usvojen";
-$admtext['birth'] = "roðenje";
+$admtext['birth'] = "roï¿½enje";
 $admtext['foster'] = "usvojitelji";
 $admtext['sealing'] = "sealing";
 //added in 11.0.3
@@ -130,17 +130,17 @@ $text['sunday'] = "Nedelja";  //first day of week on calendar
 $text['monday'] = "Ponedjeljak";
 $text['tuesday'] = "Utorak";
 $text['wednesday'] = "Srijeda";
-$text['thursday'] = "Èetvrtak";
+$text['thursday'] = "ï¿½etvrtak";
 $text['friday'] = "Friday";
 $text['saturday'] = "Saturday";
-$text['contains'] = "sadrži";
-$text['startswith'] = "poèinje sa";
+$text['contains'] = "sadrï¿½i";
+$text['startswith'] = "poï¿½inje sa";
 
 //moved here in 9.0.4
 $text['top'] = "Vrh";
 
 //moved here in 10.0.0
-$text['startingind'] = "Poèetna osoba";
+$text['startingind'] = "Poï¿½etna osoba";
 $text['enteremail'] = "Molim unesite valjanu e-mail adresu.";
 $text['page'] = "Stranica";
 $text['go'] = "Idi";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "v.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

@@ -50,8 +50,8 @@ $text['clickhide'] = "Apasa pentru a ascunde";
 $text['forgot1'] = "<strong>Ai uitat utilizator sau parola?</strong><br />Introduce-ti adresa de e-mail mai jos pentru va trimite numele de utilizator.";
 $text['forgot2'] = "Introduce-ti adresa dumneavoastra de email deasupra si nume de utilizator dedesupt pentru a reseta parola (o parola temporara va fi trimisa la dumneavoastra).";
 $text['newpass'] = "Noua dumneavoastra parola temporara";
-$text['usersent'] = "Nume dumneavoastra de utilizator a fost trimis în casuta de email.";
-$text['pwdsent'] = "Parola dumneavoastra temporara a fost trimisã în casuta de email.";
+$text['usersent'] = "Nume dumneavoastra de utilizator a fost trimis ï¿½n casuta de email.";
+$text['pwdsent'] = "Parola dumneavoastra temporara a fost trimisï¿½ ï¿½n casuta de email.";
 $text['loginnotsent2'] = "Adresa de email furnizata nu corespunde nici unui membru inregistrat pana in prezent. Nici o informatie trimisa.";
 $text['loginnotsent3'] = "Adresa de email furnizata si contul de utilizator nu corespunde nici unui membru inregistra pana in prezent. Nici o informatie trimisa..";
 $text['logininfo'] = "Informatiile dumneavoastra de conectare";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "m.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

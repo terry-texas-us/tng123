@@ -42,4 +42,4 @@ if ($newscreen == "return") {
   $message = $admtext['changestotlevent'] . " $tleventID {$admtext['succsaved']}.";
   header("Location: admin_timelineevents.php?message=" . urlencode($message));
 }
-?>
+

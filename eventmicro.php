@@ -16,4 +16,3 @@ if ($eventID && !$eventstr) {
   }
   $eventstr = "$displayval: $info";
 }
-?>

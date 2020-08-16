@@ -382,5 +382,3 @@ class modremover extends modparser
     return !$this->batch_error;
   }
 } // class modremover
-
-?>

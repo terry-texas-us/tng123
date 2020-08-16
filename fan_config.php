@@ -61,4 +61,4 @@ $fan_use_info_box = true; //Show the information (B/M/D) box over the person
 $fan_info_width = 250;
 $fan_info_height = 70;
 $fan_info_style = "10pt Arial";
-?>
+

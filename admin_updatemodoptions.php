@@ -56,4 +56,4 @@ if (!is_writeable($optionsfile)) {
 
   header("Location: admin_modhandler.php");  // restored to new Mod Manager screen KCR 140504
 }
-?>
+

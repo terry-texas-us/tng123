@@ -6,7 +6,7 @@ $dates['JANUARY'] = "Janeiro";
 $dates['FEB'] = "Fev";
 $dates['FEBRUARY'] = "Fevereiro";
 $dates['MAR'] = "Mar";
-$dates['MARCH'] = "Março";
+$dates['MARCH'] = "Marï¿½o";
 $dates['APR'] = "Abr";
 $dates['APRIL'] = "Abril";
 $dates['MAY'] = "Mai";
@@ -28,53 +28,53 @@ $dates['ABT'] = "+/-";
 $dates['ABOUT'] = "cerca de";
 $dates['BEF'] = "ANT";
 $dates['BEFORE'] = "antes de";
-$dates['AFT'] = "PÓS";
+$dates['AFT'] = "Pï¿½S";
 $dates['AFTER'] = "depois de ";
 $dates['BET'] = "ENT";
 $dates['BETWEEN'] = "Entre";
 $dates['TEXT_AND'] = "e";
 $dates['FROM'] = "De";
-$dates['TO'] = "até";
+$dates['TO'] = "atï¿½";
 $dates['Y'] = "Sim, data desconhecida";
 $dates['CAL'] = "Cal";
 $dates['EST'] = "Est";
 
 //global messages
-$text['cannotexecutequery'] = "Não dá para fazer a consulta";
-$text['to'] = "até";
+$text['cannotexecutequery'] = "Nï¿½o dï¿½ para fazer a consulta";
+$text['to'] = "atï¿½";
 $text['of'] = "de";
-$text['text_next'] = "Próx";
+$text['text_next'] = "Prï¿½x";
 $text['text_prev'] = "Ant";
 $text['clickdisplay'] = "Clique para mostrar";
 $text['clickhide'] = "Clique para ocultar";
-$text['forgot1'] = "<strong>Esqueceu seu nome de usuário ou senha?</strong><br />Entre seu email abaixo para receber seu nome de usuário.";
-$text['forgot2'] = "Entre seu email acima e nome de usuário abaixo para gerar uma nova senha.";
-$text['newpass'] = "Sua senha temporária";
-$text['usersent'] = "Seu nome de usuário foi enviado para seu email.";
-$text['pwdsent'] = "Sua senha temporária foi gerada e enviada para seu email.";
-$text['loginnotsent2'] = "O email fornecido não corresponde a nenhuma conta de usuário. Nenhuma informação foi enviada para seu email.";
-$text['loginnotsent3'] = "O email e o nome de usuário fornecidos não correspondem a nenhuma conta de usuário. Nenhuma informaão foi enviada para seu email.";
-$text['logininfo'] = "Sua informação de login";
-$text['collapseall'] = "Minimizar representação";
-$text['expandall'] = "Maximizar representação";
+$text['forgot1'] = "<strong>Esqueceu seu nome de usuï¿½rio ou senha?</strong><br />Entre seu email abaixo para receber seu nome de usuï¿½rio.";
+$text['forgot2'] = "Entre seu email acima e nome de usuï¿½rio abaixo para gerar uma nova senha.";
+$text['newpass'] = "Sua senha temporï¿½ria";
+$text['usersent'] = "Seu nome de usuï¿½rio foi enviado para seu email.";
+$text['pwdsent'] = "Sua senha temporï¿½ria foi gerada e enviada para seu email.";
+$text['loginnotsent2'] = "O email fornecido nï¿½o corresponde a nenhuma conta de usuï¿½rio. Nenhuma informaï¿½ï¿½o foi enviada para seu email.";
+$text['loginnotsent3'] = "O email e o nome de usuï¿½rio fornecidos nï¿½o correspondem a nenhuma conta de usuï¿½rio. Nenhuma informaï¿½o foi enviada para seu email.";
+$text['logininfo'] = "Sua informaï¿½ï¿½o de login";
+$text['collapseall'] = "Minimizar representaï¿½ï¿½o";
+$text['expandall'] = "Maximizar representaï¿½ï¿½o";
 
 //media types
 $text['photos'] = "Fotos";
 $text['documents'] = "Documentos";
-$text['headstones'] = "Lápides";
-$text['histories'] = "Histórias";
-$text['recordings'] = "Áudios";
+$text['headstones'] = "Lï¿½pides";
+$text['histories'] = "Histï¿½rias";
+$text['recordings'] = "ï¿½udios";
 $text['videos'] = "Videos";
 
 //For Google maps use - admin and public pages
-$admtext['placelevel'] = "Nível do lugar";
-$admtext['level1'] = "Endereço";
+$admtext['placelevel'] = "Nï¿½vel do lugar";
+$admtext['level1'] = "Endereï¿½o";
 $admtext['level2'] = "Localidade";
 $admtext['level3'] = "Cidade";
 $admtext['level4'] = "Condado";
 $admtext['level5'] = "Estado";
-$admtext['level6'] = "País";
-$admtext['level0'] = "Não Definido";
+$admtext['level6'] = "Paï¿½s";
+$admtext['level0'] = "Nï¿½o Definido";
 
 $text['male'] = "masculino";
 $text['female'] = "feminino";
@@ -83,17 +83,17 @@ $text['loading'] = "Carregando...";
 
 $text['cancel'] = "Cancelar";
 $text['none'] = "Nenhum";
-$text['mainton'] = "Modo de Manutenção Ligado";
+$text['mainton'] = "Modo de Manutenï¿½ï¿½o Ligado";
 
 //moved here in 8.0.0
 $text['living'] = "Vivo";
-$admtext['text_private'] = "Manter privadas as informações do proprietário";
-$admtext['confunlink'] = "Tem certeza de que deseja ligar este indivíduo como esposa a esta família?";
-$admtext['confunlinkc'] = "Está seguro de que deseja desligar este indivíduo como filho desta família?";
-$admtext['confremchild'] = "Tem certeza de que deseja remover este filho desta família? O indivíduo não será excluído da base de dados.";
-$admtext['enterfamilyid'] = "Por favor, informe um ID de Família.";
+$admtext['text_private'] = "Manter privadas as informaï¿½ï¿½es do proprietï¿½rio";
+$admtext['confunlink'] = "Tem certeza de que deseja ligar este indivï¿½duo como esposa a esta famï¿½lia?";
+$admtext['confunlinkc'] = "Estï¿½ seguro de que deseja desligar este indivï¿½duo como filho desta famï¿½lia?";
+$admtext['confremchild'] = "Tem certeza de que deseja remover este filho desta famï¿½lia? O indivï¿½duo nï¿½o serï¿½ excluï¿½do da base de dados.";
+$admtext['enterfamilyid'] = "Por favor, informe um ID de Famï¿½lia.";
 $admtext['yes'] = "Sim";
-$admtext['no'] = "Não";
+$admtext['no'] = "Nï¿½o";
 $admtext['BIRT'] = "Nascimento";
 $admtext['DEAT'] = "Falecimento";
 $admtext['CHR'] = "Batismo";
@@ -101,21 +101,21 @@ $admtext['BURI'] = "Sepultamento";
 $admtext['BAPL'] = "Batismo (SUD)";
 $admtext['ENDL'] = "Investidura (SUD)";
 $admtext['NICK'] = "Apelido";
-$admtext['TITL'] = "Título";
+$admtext['TITL'] = "Tï¿½tulo";
 $admtext['NSFX'] = "Sufixo";
 $admtext['NAME'] = "Nome";
 $admtext['SLGC'] = "Selamento aos Pais (SUD)";
 $admtext['MARR'] = "Casamento";
-$admtext['SLGS'] = "Selamento ao Cônjuge (SUD)";
-$admtext['hello'] = "Olá";
-$admtext['activated'] = "A sua conta de usuário do sítio foi ativada";
-$admtext['infois'] = "Sua informação de login é a seguinte:";
-$admtext['subjectline'] = "Sua conta de usuário foi ativada.";
+$admtext['SLGS'] = "Selamento ao Cï¿½njuge (SUD)";
+$admtext['hello'] = "Olï¿½";
+$admtext['activated'] = "A sua conta de usuï¿½rio do sï¿½tio foi ativada";
+$admtext['infois'] = "Sua informaï¿½ï¿½o de login ï¿½ a seguinte:";
+$admtext['subjectline'] = "Sua conta de usuï¿½rio foi ativada.";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "adotado";
 $admtext['birth'] = "nascimento";
-$admtext['foster'] = "de criação";
+$admtext['foster'] = "de criaï¿½ï¿½o";
 $admtext['sealing'] = "selamento";
 //added in 11.0.3
 $admtext['putative'] = "presumido";
@@ -125,38 +125,38 @@ $text['editprofile'] = "Editar Perfil";
 
 //moved here in 9.0.0
 $text['letter'] = "Carta"; //as in page size
-$text['legal'] = "Ofício"; //as in page size
+$text['legal'] = "Ofï¿½cio"; //as in page size
 $text['sunday'] = "Domingo";  //first day of week on calendar
 $text['monday'] = "Segunda-feira";
-$text['tuesday'] = "Terça-feira";
+$text['tuesday'] = "Terï¿½a-feira";
 $text['wednesday'] = "Quarta-feira";
 $text['thursday'] = "Quinta-feira";
 $text['friday'] = "Sexta";
-$text['saturday'] = "Sábado";
-$text['contains'] = "contém";
-$text['startswith'] = "começa com";
+$text['saturday'] = "Sï¿½bado";
+$text['contains'] = "contï¿½m";
+$text['startswith'] = "comeï¿½a com";
 
 //moved here in 9.0.4
 $text['top'] = "Topo";
 
 //moved here in 10.0.0
 $text['startingind'] = "Pessoa inicial";
-$text['enteremail'] = "Por favor, forneça um e-mail.";
-$text['page'] = "Página";
+$text['enteremail'] = "Por favor, forneï¿½a um e-mail.";
+$text['page'] = "Pï¿½gina";
 $text['go'] = "Ir";
 $text['years'] = "anos";
 
 //added in 10.0.0
-$admtext['CONL'] = "Confirmação (SUD)";
-$admtext['INIT'] = "Iniciação (SUD)";
+$admtext['CONL'] = "Confirmaï¿½ï¿½o (SUD)";
+$admtext['INIT'] = "Iniciaï¿½ï¿½o (SUD)";
 $admtext['step'] = "Enteado(a)";
-$text['switchm'] = "Alternar para sítio móvel";
-$text['switchs'] = "Alternar para sítio padrão";
+$text['switchm'] = "Alternar para sï¿½tio mï¿½vel";
+$text['switchs'] = "Alternar para sï¿½tio padrï¿½o";
 
 //added in 11.0.0
 $text['dna_tests'] = "Testes de DNA";
 $admtext['preflang'] = "Linguagem preferida";
-$text['problem'] = "Ocorreu um erro. Isto pode ter sido causado por um problema de configuração, uma atualização incompleta de software ou um erro de programa. Caso você seja o proprietário do sítio, pode contactar o suporte do TNG para ajuda. Por favor, copie a consulta abaixo em sua mensagem ao suporte.";
+$text['problem'] = "Ocorreu um erro. Isto pode ter sido causado por um problema de configuraï¿½ï¿½o, uma atualizaï¿½ï¿½o incompleta de software ou um erro de programa. Caso vocï¿½ seja o proprietï¿½rio do sï¿½tio, pode contactar o suporte do TNG para ajuda. Por favor, copie a consulta abaixo em sua mensagem ao suporte.";
 $text['query'] = "Consulta";
 $text['fanchart'] = "Diagrama em leque";
 
@@ -168,11 +168,11 @@ $admtext['active'] = "Ativo";
 $admtext['select'] = "Selecionado";
 $admtext['selectall'] = "Selecionar Todos";
 $admtext['clearall'] = "Limpar Todos";
-$admtext['medialinks'] = "Ligações da Mídia";
+$admtext['medialinks'] = "Ligaï¿½ï¿½es da Mï¿½dia";
 
 //added here in 12.0.0
 $text['testgroup'] = "Grupo de Teste";
-$text['test_info_display'] = "Informação sobre o Teste para Mostrar";
+$text['test_info_display'] = "Informaï¿½ï¿½o sobre o Teste para Mostrar";
 $text['confirmed'] = "Confirmado";
 $text['predicted'] = "Previsto";
 $admtext['ancestral_surnames'] = "Sobrenomes de ancestrais";
@@ -183,15 +183,15 @@ $admtext['marker_values'] = "Valores dos Marcadores";
 $admtext['ref_seq'] = "Reference sequence";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
 $admtext['rcrs'] = "rCRS (revised Cambridge Reference Sequence)";
-$admtext['hvr_values'] = "Diferenças de HVR";
-$admtext['hvr1_values'] = "Diferenças de HVR1";
-$admtext['hvr2_values'] = "Diferenças de HVR2";
-$admtext['coding_reg'] = "Diferença de região de codificaçãos";
+$admtext['hvr_values'] = "Diferenï¿½as de HVR";
+$admtext['hvr1_values'] = "Diferenï¿½as de HVR1";
+$admtext['hvr2_values'] = "Diferenï¿½as de HVR2";
+$admtext['coding_reg'] = "Diferenï¿½a de regiï¿½o de codificaï¿½ï¿½os";
 $text['keep_name_private'] = "Manter o Nome Privado";
 $text['test_results'] = "Resultados de Testes";
 $admtext['dna_tests'] = "Testes de DNA";
 $admtext['vendor'] = "Fornecedor";
-$admtext['markers'] = "Número de marcadores SDR testados";
+$admtext['markers'] = "Nï¿½mero de marcadores SDR testados";
 $admtext['haplo'] = "Haplogrupo";
 $admtext['termsnp'] = "SNP terminal";
 $admtext['signsnp'] = "SNPs significantes";
@@ -201,17 +201,17 @@ $admtext['mtdna_test'] = "mtDNA (Mitochondrial)";
 $admtext['xdna_test'] = "X-DNA";
 
 //moved here in 12.0.0
-$admtext['xtra_mut'] = "Mutações extra";
+$admtext['xtra_mut'] = "Mutaï¿½ï¿½es extra";
 
 //changed in 12.1.0
-$text['test_number'] = "Número/Nome do Teste";
+$text['test_number'] = "Nï¿½mero/Nome do Teste";
 
 //added in 12.1.0
-$admtext['match_date'] = "Data da Coincidência";
+$admtext['match_date'] = "Data da Coincidï¿½ncia";
 $admtext['gedmatchID'] = "GEDmatch ID";
 $admtext['ydna_haplogroup'] = "Y-DNA Haplogroup";
 $admtext['mtdna_haplogroup'] = "mtDNA Haplogroup";
-$admtext['relationship_section'] = "Seção de Relacionamento";
+$admtext['relationship_section'] = "Seï¿½ï¿½o de Relacionamento";
 $admtext['relationship_range'] = "Faixa de Relacionamento";
 $admtext['suggested_relationship'] = "Sugerido";
 $admtext['actual_relationship'] = "Relacionamento Real";
@@ -220,20 +220,20 @@ $admtext['shared_dna'] = "DNA compartilhado";
 $admtext['shared centimorgans'] = "Total de cMs compartilhados";
 $admtext['shared_segments'] = "Segmentos compartilhados";
 $admtext['largest_segment'] = "Maior Segmento";
-$admtext['chromosome'] = "Número do Chromosoma";
-$admtext['segment_start'] = "Início do Segmento";
+$admtext['chromosome'] = "Nï¿½mero do Chromosoma";
+$admtext['segment_start'] = "Inï¿½cio do Segmento";
 $admtext['segment_end'] = "Fim do Segmento";
 $admtext['centiMorgans'] = "centiMorgans";
 $admtext['matchingSNPs'] = "SNPs Coincidentes";
 $admtext['xmatch'] = "X-Match";
 $text['keep_test_private'] = "Teste privado";
 $text['shared_dna'] = "Segmento de DNA compartilhado";
-$text['for_match'] = "para esta coincidência";
+$text['for_match'] = "para esta coincidï¿½ncia";
 $admtext['keeptest'] = "Privacidade do Teste";
 $admtext['keepname'] = "Provacidade do Nome";
 $admtext['allgroups'] = "Todos Grupos";
 $admtext['alltypes'] = "Todos Tipos";
-$admtext['generation_num'] = "Gerações de Sobrenomes de Ancestrais";
+$admtext['generation_num'] = "Geraï¿½ï¿½es de Sobrenomes de Ancestrais";
 
 // moved here from text.php in TNG 12.1.0
 $text['birthabbr'] = "nasc.";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "cas.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

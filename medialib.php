@@ -79,5 +79,3 @@ function removeImages($mediaID) {
     unlink("$rootpath$usefolder/" . $row['thumbpath']);
   }
 }
-
-?>

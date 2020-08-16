@@ -74,4 +74,3 @@ if ($email) {
 }
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"div\":\"$div\", \"msg\":\"$message\"}";
-?>

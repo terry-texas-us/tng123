@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Viimeinen sivu";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

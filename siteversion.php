@@ -17,5 +17,3 @@ function getSiteVersion($nomobile = false) {
 
   return $sitever;
 }
-
-?>

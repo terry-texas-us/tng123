@@ -23,4 +23,4 @@ $message = $admtext['tree'] . " $gedcom {$admtext['succcleared']}.";
 adminwritelog($admtext['deleted'] . ": {$admtext['tree']} $tree");
 
 header("Location: admin_trees.php?message=" . urlencode($message));
-?>
+

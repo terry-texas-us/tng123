@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Sista sidan";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

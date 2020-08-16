@@ -23,4 +23,3 @@ echo "var nicremlink = \"{$admtext['nicremlink']}\";";
 echo "var nictxtcol = \"{$admtext['nictxtcol']}\";";
 echo "var nicbkgcol = \"{$admtext['nicbkgcol']}\";";
 echo "var nicimage = \"{$admtext['nicimage']}\";";
-?>

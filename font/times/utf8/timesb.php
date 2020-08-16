@@ -179,4 +179,4 @@ $diff = '';
 $file = 'timesb.z';
 $ctg = 'timesb.ctg.z';
 $originalsize = 835868;
-?>
+

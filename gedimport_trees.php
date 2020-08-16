@@ -55,4 +55,3 @@ function ClearData($tree) {
   $result = tng_query($query);
 }
 
-?>

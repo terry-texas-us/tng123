@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Posledná stránka";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

@@ -144,4 +144,3 @@ $success = tng_sendmail($yourname, $emailtouse, $owner, $sendemail, $subject, $b
 $message = $success ? "mailsent" : $message = "mailnotsent&sowner=" . urlencode($owner) . "&ssendemail=" . urlencode($sendemail);
 
 header("Location: $suggest_url" . "enttype=$enttype&ID=$ID&tree=$tree&message=$message");
-?>

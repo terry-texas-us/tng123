@@ -215,4 +215,4 @@ if (!isset($cms['auto'])) {
 }
 
 @include($subroot . "customconfig.php");
-?>
+

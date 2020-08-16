@@ -127,4 +127,3 @@ fclose($fp);
 adminwritelog($admtext['modifypedsettings']);
 
 header("Location: admin_setup.php");
-?>

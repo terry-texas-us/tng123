@@ -478,5 +478,3 @@ class modbase
   }
 
 } // CLASS
-
-?>

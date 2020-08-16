@@ -1013,4 +1013,3 @@ $text['lastpage'] = "尾页";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

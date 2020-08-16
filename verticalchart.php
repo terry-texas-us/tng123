@@ -453,4 +453,3 @@ function do_chart($gens, $output = false) {
 }
 
 tng_footer($flags);
-?>

@@ -638,5 +638,3 @@ function drawHusbWifeCombo($w, $num, $fh, $mh, $hsp, $vsp, $endspace = 0, $drawl
     return ((($y1 + $y2) / 2) - $lineheight);
   }
 }
-
-?>

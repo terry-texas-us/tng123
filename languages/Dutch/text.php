@@ -1013,4 +1013,3 @@ $text['lastpage'] = "Laatste bladzijde";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

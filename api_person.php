@@ -42,4 +42,3 @@ $events = array();
 echo api_person($row, $fullevents);
 
 echo "}";
-?>

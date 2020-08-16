@@ -31,5 +31,5 @@ $result = tng_query($query);
 
 adminwritelog($admtext['deleted'] . ": $entity: $original_name");
 echo "1";
-?>
+
  

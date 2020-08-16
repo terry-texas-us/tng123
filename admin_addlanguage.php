@@ -33,4 +33,3 @@ adminwritelog("<a href=\"admin_editlanguage.php?languageID=$languageID\">{$admte
 
 $message = $admtext['language'] . " $display {$admtext['succadded']}.";
 header("Location: admin_languages.php?message=" . urlencode($message));
-?>

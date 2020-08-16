@@ -21,4 +21,3 @@ $familychart['shadowcolor'] = '#666';
 $familychart['livingsymbol'] = 1;    #set this to 0 to stop display of symbol
 $familychart['livingalways'] = 0;       #set this to 1 for use of living when logged in
 $familychart['adoptcolor'] = 'blue';  #for link to adoptive/natural family
-?>

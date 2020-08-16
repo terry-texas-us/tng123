@@ -17,4 +17,3 @@ if ($_SESSION['logged_in'] && $_SESSION['session_rp'] == $rootpath && $currentus
   }
   tng_free_result($result);
 }
-?>

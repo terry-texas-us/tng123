@@ -42,4 +42,4 @@ $image_resized = @imagecreatetruecolor($photowtouse, $photohtouse);
 
 // Display resized image
 imagejpeg($image_resized);
-?>
+

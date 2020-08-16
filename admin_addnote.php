@@ -44,4 +44,3 @@ $orgnote = cleanIt($orgnote);
 $truncated = truncateIt($orgnote, 75);
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"id\":\"$ID\",\"persfamID\":\"$persfamID\",\"tree\":\"$tree\",\"eventID\":\"$eventID\",\"display\":\"$truncated\",\"allow_edit\":$allow_edit,\"allow_delete\":$allow_delete}";
-?>

@@ -177,5 +177,3 @@ function tng_query_noerror($query) {
   $result = @mysqli_query($link, $query);
   return $result;
 }
-
-?>

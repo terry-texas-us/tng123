@@ -84,4 +84,3 @@ function getAlbumPhoto($albumID, $albumname) {
   return $imgsrc;
 }
 
-?>

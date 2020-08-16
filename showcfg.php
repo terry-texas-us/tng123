@@ -71,4 +71,3 @@ echo "</body>
 </html>
 ";
 exit;
-?>

@@ -51,4 +51,3 @@ $session_norels = isset($_SESSION['session_norels']) ? $_SESSION['session_norels
 if (!$session_charset) {
   $session_charset = $_SESSION['session_charset'] = ($charset ? $charset : "ISO-8859-1");
 }
-?>

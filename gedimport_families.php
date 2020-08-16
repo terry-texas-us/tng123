@@ -280,5 +280,3 @@ function getFamilyRecord($familyID, $prevlevel) {
     incrCounter($prefix);
   }
 }
-
-?>

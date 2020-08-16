@@ -137,5 +137,3 @@ function initMediaTypes() {
     tng_free_result($result);
   }
 }
-
-?>

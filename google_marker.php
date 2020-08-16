@@ -26,5 +26,3 @@ if ($len <= 2) {
 
 @imagepng($im);
 @imagedestroy($im);
-
-?>

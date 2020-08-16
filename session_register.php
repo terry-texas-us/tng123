@@ -21,4 +21,4 @@ session_register('currentuser');
 session_register('currentuserdesc');
 session_register('session_rp');
 session_register('lastcite');
-?>
+

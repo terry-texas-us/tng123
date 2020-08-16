@@ -492,4 +492,3 @@ echo "<message>\n";
 echo "<messageText>$msg</messageText>\n";
 echo "</message>\n";
 echo "</install>\n";
-?>

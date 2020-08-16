@@ -389,5 +389,3 @@ function buildRegNotes($notearray) {
   }
   return $notes;
 }
-
-?>

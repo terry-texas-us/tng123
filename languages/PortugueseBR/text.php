@@ -1013,4 +1013,3 @@ $text['lastpage'] = "�ltima p�gina";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

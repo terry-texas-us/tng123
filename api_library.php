@@ -91,5 +91,3 @@ function processEvents($events) {
   }
   return $output;
 }
-
-?>

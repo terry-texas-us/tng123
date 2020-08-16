@@ -2,36 +2,36 @@
 $alltextloaded = 1;
 
 $dates['JAN'] = "sty.";
-$dates['JANUARY'] = "styczeñ";
+$dates['JANUARY'] = "styczeï¿½";
 $dates['FEB'] = "luty";
 $dates['FEBRUARY'] = "luty";
 $dates['MAR'] = "mar.";
 $dates['MARCH'] = "marzec";
 $dates['APR'] = "kwie.";
-$dates['APRIL'] = "kwiecieñ";
+$dates['APRIL'] = "kwiecieï¿½";
 $dates['MAY'] = "maj";
 $dates['JUN'] = "czer.";
 $dates['JUNE'] = "czerwiec";
 $dates['JUL'] = "lip.";
 $dates['JULY'] = "lipiec";
 $dates['AUG'] = "sier.";
-$dates['AUGUST'] = "sierpieñ";
+$dates['AUGUST'] = "sierpieï¿½";
 $dates['SEP'] = "wrz.";
-$dates['SEPTEMBER'] = "wrzesieñ";
-$dates['OCT'] = "pa¼.";
-$dates['OCTOBER'] = "pa¼dziernik";
+$dates['SEPTEMBER'] = "wrzesieï¿½";
+$dates['OCT'] = "paï¿½.";
+$dates['OCTOBER'] = "paï¿½dziernik";
 $dates['NOV'] = "list.";
 $dates['NOVEMBER'] = "listopad";
 $dates['DEC'] = "gru.";
-$dates['DECEMBER'] = "grudzieñ";
+$dates['DECEMBER'] = "grudzieï¿½";
 $dates['ABT'] = "ok.";
-$dates['ABOUT'] = "oko³o";
+$dates['ABOUT'] = "okoï¿½o";
 $dates['BEF'] = "przed";
 $dates['BEFORE'] = "przed";
 $dates['AFT'] = "po";
 $dates['AFTER'] = "po";
-$dates['BET'] = "pomiêdzy";
-$dates['BETWEEN'] = "pomiêdzy";
+$dates['BET'] = "pomiï¿½dzy";
+$dates['BETWEEN'] = "pomiï¿½dzy";
 $dates['TEXT_AND'] = "oraz";
 $dates['FROM'] = "z";
 $dates['TO'] = "do";
@@ -45,21 +45,21 @@ $text['to'] = "do";
 $text['of'] = "z";
 $text['text_next'] = "Dalej";
 $text['text_prev'] = "Przegl.";
-$text['clickdisplay'] = "Poka¿";
+$text['clickdisplay'] = "Pokaï¿½";
 $text['clickhide'] = "Ukryj";
-$text['forgot1'] = "<strong>Zapomnia³e¶ login lub has³o?</strong><br />Wpisz Twój adres e-mail aby¶my mogli wys³aæ Ci nowe, tymczasowe, has³o.";
-$text['forgot2'] = "Aby zmieniæ has³o, podaj, w polu powy¿ej, Twój adres e-mail i w polu poni¿ej, Twoj± nazwê u¿ytkownika (has³o tymczasowe  zostanie wys³ane na podany adres).";
-$text['newpass'] = "Twoje nowe, tymczasowe, has³o";
-$text['usersent'] = "Dane i informacje wys³ane na adres e-mail.";
-$text['pwdsent'] = "Twoje nowe, tymczasowe, has³o zosta³o wys³ane na Twój adres e-mail .";
-$text['loginnotsent2'] = "Adres e-mail, który poda³e¶, nie figuruje w bazie danych. ¯adna informacja nie zosta³a wys³ana.";
-$text['loginnotsent3'] = "Adres e-mail i nazwa u¿ytkownika, które poda³e¶, nie figuruj± w bazie danych. ¯adna informacja nie zosta³a wys³ana.";
+$text['forgot1'] = "<strong>Zapomniaï¿½eï¿½ login lub hasï¿½o?</strong><br />Wpisz Twï¿½j adres e-mail abyï¿½my mogli wysï¿½aï¿½ Ci nowe, tymczasowe, hasï¿½o.";
+$text['forgot2'] = "Aby zmieniï¿½ hasï¿½o, podaj, w polu powyï¿½ej, Twï¿½j adres e-mail i w polu poniï¿½ej, Twojï¿½ nazwï¿½ uï¿½ytkownika (hasï¿½o tymczasowe  zostanie wysï¿½ane na podany adres).";
+$text['newpass'] = "Twoje nowe, tymczasowe, hasï¿½o";
+$text['usersent'] = "Dane i informacje wysï¿½ane na adres e-mail.";
+$text['pwdsent'] = "Twoje nowe, tymczasowe, hasï¿½o zostaï¿½o wysï¿½ane na Twï¿½j adres e-mail .";
+$text['loginnotsent2'] = "Adres e-mail, ktï¿½ry podaï¿½eï¿½, nie figuruje w bazie danych. ï¿½adna informacja nie zostaï¿½a wysï¿½ana.";
+$text['loginnotsent3'] = "Adres e-mail i nazwa uï¿½ytkownika, ktï¿½re podaï¿½eï¿½, nie figurujï¿½ w bazie danych. ï¿½adna informacja nie zostaï¿½a wysï¿½ana.";
 $text['logininfo'] = "Informacje o logowaniu";
-$text['collapseall'] = "Z³ó¿ wszystko";
-$text['expandall'] = "Rozwiñ wszystko";
+$text['collapseall'] = "Zï¿½ï¿½ wszystko";
+$text['expandall'] = "Rozwiï¿½ wszystko";
 
 //media types
-$text['photos'] = "Zdjêcia";
+$text['photos'] = "Zdjï¿½cia";
 $text['documents'] = "Dokumenty";
 $text['headstones'] = "Nagrobki";
 $text['histories'] = "Historie";
@@ -70,27 +70,27 @@ $text['videos'] = "Filmy";
 $admtext['placelevel'] = "Poziom miejsca";
 $admtext['level1'] = "Adres";
 $admtext['level2'] = "Miejsce zamieszkania";
-$admtext['level3'] = "Miejscowo¶æ";
+$admtext['level3'] = "Miejscowoï¿½ï¿½";
 $admtext['level4'] = "Powiat";
-$admtext['level5'] = "Województwo";
-$admtext['level6'] = "Pañstwo";
+$admtext['level5'] = "Wojewï¿½dztwo";
+$admtext['level6'] = "Paï¿½stwo";
 $admtext['level0'] = "Nie ustawione";
 
-$text['male'] = "Mê¿czyzna";
+$text['male'] = "Mï¿½czyzna";
 $text['female'] = "Kobieta";
 $text['closewindow'] = "Zamknij to okno";
-$text['loading'] = "£adowanie...";
+$text['loading'] = "ï¿½adowanie...";
 
 $text['cancel'] = "Anuluj";
 $text['none'] = "Brak";
-$text['mainton'] = "Tryb konserwacji jest w³±czony";
+$text['mainton'] = "Tryb konserwacji jest wï¿½ï¿½czony";
 
 //moved here in 8.0.0
-$text['living'] = "¯yj±cy";
+$text['living'] = "ï¿½yjï¿½cy";
 $admtext['text_private'] = "Prywatne";
-$admtext['confunlink'] = "Czy jeste¶ pewien, ¿e chcesz usun±æ ³±cze tej osoby, jako wspó³ma³¿onka, z tej rodziny?";
-$admtext['confunlinkc'] = "Czy jeste¶ pewien, ¿e chcesz od³±czyæ t± osobê, jako dziecko, z tej rodzinie?";
-$admtext['confremchild'] = "Czy jeste¶ pewien, ¿e chcesz usun±æ ³±cze tego dziecka z tej rodziny? To dziecko nie zostanie usuniête z bazy danych.";
+$admtext['confunlink'] = "Czy jesteï¿½ pewien, ï¿½e chcesz usunï¿½ï¿½ ï¿½ï¿½cze tej osoby, jako wspï¿½maï¿½ï¿½onka, z tej rodziny?";
+$admtext['confunlinkc'] = "Czy jesteï¿½ pewien, ï¿½e chcesz odï¿½ï¿½czyï¿½ tï¿½ osobï¿½, jako dziecko, z tej rodzinie?";
+$admtext['confremchild'] = "Czy jesteï¿½ pewien, ï¿½e chcesz usunï¿½ï¿½ ï¿½ï¿½cze tego dziecka z tej rodziny? To dziecko nie zostanie usuniï¿½te z bazy danych.";
 $admtext['enterfamilyid'] = "Podaj ID rodziny.";
 $admtext['yes'] = "Tak";
 $admtext['no'] = "Nie";
@@ -101,16 +101,16 @@ $admtext['BURI'] = "Pogrzeb";
 $admtext['BAPL'] = "Chrzest (LDS)";
 $admtext['ENDL'] = "Wprowadzenie (LDS)";
 $admtext['NICK'] = "Pseudonim";
-$admtext['TITL'] = "Tytu³";
+$admtext['TITL'] = "Tytuï¿½";
 $admtext['NSFX'] = "Przyrostek, np. Mc";
 $admtext['NAME'] = "Nazwisko";
-$admtext['SLGC'] = "Przyznany do rodziców (LDS)";
-$admtext['MARR'] = "¦lub";
-$admtext['SLGS'] = "Zarêczony(a) (LDS)";
+$admtext['SLGC'] = "Przyznany do rodzicï¿½w (LDS)";
+$admtext['MARR'] = "ï¿½lub";
+$admtext['SLGS'] = "Zarï¿½czony(a) (LDS)";
 $admtext['hello'] = "Witaj";
-$admtext['activated'] = "Pana/Pani konto genealogiczne jest ju¿ aktywne.";
+$admtext['activated'] = "Pana/Pani konto genealogiczne jest juï¿½ aktywne.";
 $admtext['infois'] = "Informacje do zalogowania";
-$admtext['subjectline'] = "Twoje konto u¿ytkownika w genealogii zosta³o aktywowane.";
+$admtext['subjectline'] = "Twoje konto uï¿½ytkownika w genealogii zostaï¿½o aktywowane.";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "adoptowany/a";
@@ -127,21 +127,21 @@ $text['editprofile'] = "Edycja profilu";
 $text['letter'] = "Pismo"; //as in page size
 $text['legal'] = "Prawnie"; //as in page size
 $text['sunday'] = "Niedziela";  //first day of week on calendar
-$text['monday'] = "Poniedzia³ek";
+$text['monday'] = "Poniedziaï¿½ek";
 $text['tuesday'] = "Wtorek";
-$text['wednesday'] = "¦roda";
+$text['wednesday'] = "ï¿½roda";
 $text['thursday'] = "Czwartek";
-$text['friday'] = "Pi±tek";
+$text['friday'] = "Piï¿½tek";
 $text['saturday'] = "Sobota";
-$text['contains'] = "zawieraj±ce";
-$text['startswith'] = "zaczyna siê od";
+$text['contains'] = "zawierajï¿½ce";
+$text['startswith'] = "zaczyna siï¿½ od";
 
 //moved here in 9.0.4
 $text['top'] = "najliczniejszych";
 
 //moved here in 10.0.0
-$text['startingind'] = "Zaczynaj osobê";
-$text['enteremail'] = "Proszê, podaj poprawny adres e-mail.";
+$text['startingind'] = "Zaczynaj osobï¿½";
+$text['enteremail'] = "Proszï¿½, podaj poprawny adres e-mail.";
 $text['page'] = "Strona";
 $text['go'] = "Dalej";
 $text['years'] = "lat";
@@ -155,46 +155,46 @@ $text['switchs'] = "Wersja standardowa";
 
 //added in 11.0.0
 $text['dna_tests'] = "Badania DNA";
-$admtext['preflang'] = "Preferowany jêzyk";
-$text['problem'] = "Wyst±pi³ b³±d w oprogramowaniu TNG. To mo¿e byæ ze wzglêdu na problem instalacji, modernizacji lub b³êdu programu. Je¶li jeste¶ w³a¶cicielem witryny, mo¿esz skontaktowaæ siê z obs³ug± TNG o pomoc w rozwi±zaniu tego problemu. Proszê wpisaæ poni¿ej zapytanie i wkleiæ go do wiadomo¶ci.";
+$admtext['preflang'] = "Preferowany jï¿½zyk";
+$text['problem'] = "Wystï¿½piï¿½ bï¿½ï¿½d w oprogramowaniu TNG. To moï¿½e byï¿½ ze wzglï¿½du na problem instalacji, modernizacji lub bï¿½ï¿½du programu. Jeï¿½li jesteï¿½ wï¿½aï¿½cicielem witryny, moï¿½esz skontaktowaï¿½ siï¿½ z obsï¿½ugï¿½ TNG o pomoc w rozwiï¿½zaniu tego problemu. Proszï¿½ wpisaï¿½ poniï¿½ej zapytanie i wkleiï¿½ go do wiadomoï¿½ci.";
 $text['query'] = "Zapytanie";
-$text['fanchart'] = "Wykres ko³owy";
+$text['fanchart'] = "Wykres koï¿½owy";
 
 //moved here in 12.0.0
 $admtext['menu'] = "Menu";
 $admtext['dna_groups'] = "Grupy DNA";
-$admtext['allbranches'] = "Ga³êzie";
+$admtext['allbranches'] = "Gaï¿½ï¿½zie";
 $admtext['active'] = "Aktywny";
 $admtext['select'] = "Wybierz";
 $admtext['selectall'] = "Wybierz wszystkie";
-$admtext['clearall'] = "Wyczy¶æ wszystkie";
-$admtext['medialinks'] = "Linki mediów";
+$admtext['clearall'] = "Wyczyï¿½ï¿½ wszystkie";
+$admtext['medialinks'] = "Linki mediï¿½w";
 
 //added here in 12.0.0
 $text['testgroup'] = "Grupa testowa";
-$text['test_info_display'] = "Informacje testowe do wy¶wietlenia";
+$text['test_info_display'] = "Informacje testowe do wyï¿½wietlenia";
 $text['confirmed'] = "Potwierdzony";
 $text['predicted'] = "Przewidziane";
 $admtext['ancestral_surnames'] = "Nazwisko rodowe";
 $admtext['admin_notes'] = "Notatki Administratora";
 $admtext['mda'] = "Najdalszy przodek";
-$admtext['mrca'] = "Najnowszy wspólny przodek";
-$admtext['marker_values'] = "Warto¶ci Markera";
+$admtext['mrca'] = "Najnowszy wspï¿½lny przodek";
+$admtext['marker_values'] = "Wartoï¿½ci Markera";
 $admtext['ref_seq'] = "Sekwencja odniesienia";
 $admtext['rsrs'] = "RSRS (Zrekonstruowany Sapiens Reference Sequence)";
 $admtext['rcrs'] = "rCRS (poprawiona Cambridge Reference Sequence)";
-$admtext['hvr_values'] = "Ró¿nice HVR";
-$admtext['hvr1_values'] = "Ró¿nice HVR1";
-$admtext['hvr2_values'] = "Ró¿nice HVR2";
-$admtext['coding_reg'] = "Kodowanie ró¿nic miêdzy regionami";
-$text['keep_name_private'] = "Zachowaj prywatno¶æ";
+$admtext['hvr_values'] = "Rï¿½nice HVR";
+$admtext['hvr1_values'] = "Rï¿½nice HVR1";
+$admtext['hvr2_values'] = "Rï¿½nice HVR2";
+$admtext['coding_reg'] = "Kodowanie rï¿½nic miï¿½dzy regionami";
+$text['keep_name_private'] = "Zachowaj prywatnoï¿½ï¿½";
 $text['test_results'] = "Wyniki testu";
 $admtext['dna_tests'] = "Testy DNA";
 $admtext['vendor'] = "Nazwa firmy";
-$admtext['markers'] = "Liczba testowanych markerów STR";
+$admtext['markers'] = "Liczba testowanych markerï¿½w STR";
 $admtext['haplo'] = "Haplogroup";
 $admtext['termsnp'] = "Terminal SNP";
-$admtext['signsnp'] = "Znacz±ce SNPs";
+$admtext['signsnp'] = "Znaczï¿½ce SNPs";
 $admtext['atdna_test'] = "atDNA (Autosomal)";
 $admtext['ydna_test'] = "Y-DNA";
 $admtext['mtdna_test'] = "mtDNA (Mitochondrial)";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "i";
 //$english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 //@include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

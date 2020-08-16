@@ -206,4 +206,3 @@ if ($count) {
   $message = $admtext['nochanges'];
 }
 header("Location: $location" . "?message=" . urlencode($message));
-?>

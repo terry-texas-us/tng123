@@ -24,7 +24,7 @@ $dates['NOV'] = "Nov";
 $dates['NOVEMBER'] = "November";
 $dates['DEC'] = "Des";
 $dates['DECEMBER'] = "Desember";
-$dates['ABT'] = "±";
+$dates['ABT'] = "ï¿½";
 $dates['ABOUT'] = "Ongeveer";
 $dates['BEF'] = "<";
 $dates['BEFORE'] = "Voor";
@@ -104,9 +104,9 @@ $admtext['NICK'] = "Noemnaam";
 $admtext['TITL'] = "Titel";
 $admtext['NSFX'] = "Agtervoegsel";
 $admtext['NAME'] = "Naam";
-$admtext['SLGC'] = "Verseël aan Ouer (LDS)";
+$admtext['SLGC'] = "Verseï¿½l aan Ouer (LDS)";
 $admtext['MARR'] = "Getroud";
-$admtext['SLGS'] = "Verseël aan Eggenoot (LDS)";
+$admtext['SLGS'] = "Verseï¿½l aan Eggenoot (LDS)";
 $admtext['hello'] = "Hallo";
 $admtext['activated'] = "Jou genealogie gebruikersrekening is geaktiveer";
 $admtext['infois'] = "Jou aantekengegewens is";
@@ -116,7 +116,7 @@ $admtext['subjectline'] = "Jou genealogiese gebruikersnaam is geaktiveer.";
 $admtext['adopted'] = "aangeneem";
 $admtext['birth'] = "geboorte";
 $admtext['foster'] = "pleeg";
-$admtext['sealing'] = "verseëling";
+$admtext['sealing'] = "verseï¿½ling";
 //added in 11.0.3
 $admtext['putative'] = "vermeende";
 
@@ -238,7 +238,7 @@ $admtext['generation_num'] = "Generations For Ancestral Surnames";
 // moved here from text.php in TNG 12.1.0
 $text['birthabbr'] = "*";
 $text['chrabbr'] = "&asymp;";
-$text['deathabbr'] = "†";  //from descend
+$text['deathabbr'] = "ï¿½";  //from descend
 $text['burialabbr'] = "&Omega;";  //from descend
 $text['marrabbr'] = "x.";
 
@@ -246,4 +246,3 @@ $text['marrabbr'] = "x.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

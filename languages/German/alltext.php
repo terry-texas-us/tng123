@@ -6,7 +6,7 @@ $dates['JANUARY'] = "Januar";
 $dates['FEB'] = "Feb";
 $dates['FEBRUARY'] = "Februar";
 $dates['MAR'] = "Mrz";
-$dates['MARCH'] = "März";
+$dates['MARCH'] = "Mï¿½rz";
 $dates['APR'] = "Apr";
 $dates['APRIL'] = "April";
 $dates['MAY'] = "Mai";
@@ -37,22 +37,22 @@ $dates['FROM'] = "von";
 $dates['TO'] = "bis";
 $dates['Y'] = "Datum unbekannt";
 $dates['CAL'] = "errechnet";
-$dates['EST'] = "geschätzt";
+$dates['EST'] = "geschï¿½tzt";
 
 //global messages
-$text['cannotexecutequery'] = "Kann Abfrage nicht ausführen";
+$text['cannotexecutequery'] = "Kann Abfrage nicht ausfï¿½hren";
 $text['to'] = "bis";
 $text['of'] = "von";
-$text['text_next'] = "Vorwärts";
-$text['text_prev'] = "Zurück";
+$text['text_next'] = "Vorwï¿½rts";
+$text['text_prev'] = "Zurï¿½ck";
 $text['clickdisplay'] = "Anklicken zum Einblenden";
 $text['clickhide'] = "Anklicken zum Ausblenden";
 $text['forgot1'] = "<strong>Benutzerkennung oder Passwort vergessen?</strong><br />Geben Sie nachfolgend Ihre E-Mail-Adresse ein, damit Ihnen Ihre Benutzerkennung zugesendet werden kann.";
-$text['forgot2'] = "Geben Sie oben Ihre E-Mail-Adresse und unten Ihre Benutzerkennung ein. Ihr Passwort wird zurückgesetzt. (Ein temporäres Passwort wird Ihnen zugesendet.)";
-$text['newpass'] = "Ihr neues, temporäres Passwort";
+$text['forgot2'] = "Geben Sie oben Ihre E-Mail-Adresse und unten Ihre Benutzerkennung ein. Ihr Passwort wird zurï¿½ckgesetzt. (Ein temporï¿½res Passwort wird Ihnen zugesendet.)";
+$text['newpass'] = "Ihr neues, temporï¿½res Passwort";
 $text['usersent'] = "Ihre Benutzerkennung wurde an Ihre E-Mail-Adresse gesendet.";
-$text['pwdsent'] = "Ihr neues, temporäres Passwort wurde an Ihre E-Mail-Adresse gesendet.";
-$text['loginnotsent2'] = "Die von Ihnen angegebene E-Mail-Adresse stimmt mit keiner vorhandenen Benutzerkennung überein. Es wurde nichts versendet.";
+$text['pwdsent'] = "Ihr neues, temporï¿½res Passwort wurde an Ihre E-Mail-Adresse gesendet.";
+$text['loginnotsent2'] = "Die von Ihnen angegebene E-Mail-Adresse stimmt mit keiner vorhandenen Benutzerkennung ï¿½berein. Es wurde nichts versendet.";
 $text['loginnotsent3'] = "Die von Ihnen angegebene E-Mail-Adresse und Benutzerkennung passen zu keinem der momentan angelegten Benutzer. Es wurde nichts versendet.";
 $text['logininfo'] = "Ihre Anmelde-Informationen";
 $text['collapseall'] = "Alles ausblenden";
@@ -76,9 +76,9 @@ $admtext['level5'] = "(Bundes-)Staat/-Land";
 $admtext['level6'] = "Land";
 $admtext['level0'] = "Nicht festgelegt";
 
-$text['male'] = "männlich";
+$text['male'] = "mï¿½nnlich";
 $text['female'] = "weiblich";
-$text['closewindow'] = "Fenster schließen";
+$text['closewindow'] = "Fenster schlieï¿½en";
 $text['loading'] = "Wird geladen...";
 
 $text['cancel'] = "Abbrechen";
@@ -88,9 +88,9 @@ $text['mainton'] = "Wartungs-Modus ist AKTIVIERT";
 //moved here in 8.0.0
 $text['living'] = "Lebend";
 $admtext['text_private'] = "Vertraulich";
-$admtext['confunlink'] = "Sind Sie sicher, dass Sie die Verknüpfung dieser Person als Ehepartner in dieser Familie lösen möchten?";
-$admtext['confunlinkc'] = "Sind Sie sicher, dass Sie die Verknüpfung dieser Person als Kind dieser Familie lösen möchten?";
-$admtext['confremchild'] = "Sind Sie sicher, dass Sie die Verknüpfung des Kindes zu dieser Familie lösen möchten? Das Kind wird nicht aus der Datenbank gelöscht.";
+$admtext['confunlink'] = "Sind Sie sicher, dass Sie die Verknï¿½pfung dieser Person als Ehepartner in dieser Familie lï¿½sen mï¿½chten?";
+$admtext['confunlinkc'] = "Sind Sie sicher, dass Sie die Verknï¿½pfung dieser Person als Kind dieser Familie lï¿½sen mï¿½chten?";
+$admtext['confremchild'] = "Sind Sie sicher, dass Sie die Verknï¿½pfung des Kindes zu dieser Familie lï¿½sen mï¿½chten? Das Kind wird nicht aus der Datenbank gelï¿½scht.";
 $admtext['enterfamilyid'] = "Familien-Kennung eingeben.";
 $admtext['yes'] = "Ja";
 $admtext['no'] = "Nein";
@@ -133,7 +133,7 @@ $text['wednesday'] = "Mittwoch";
 $text['thursday'] = "Donnerstag";
 $text['friday'] = "Freitag";
 $text['saturday'] = "Samstag";
-$text['contains'] = "enthält";
+$text['contains'] = "enthï¿½lt";
 $text['startswith'] = "beginnt mit";
 
 //moved here in 9.0.4
@@ -141,7 +141,7 @@ $text['top'] = "Top";
 
 //moved here in 10.0.0
 $text['startingind'] = "Start-Person";
-$text['enteremail'] = "Bitte eine gültige E-Mail-Adresse eingeben.";
+$text['enteremail'] = "Bitte eine gï¿½ltige E-Mail-Adresse eingeben.";
 $text['page'] = "Seite";
 $text['go'] = "Los!";
 $text['years'] = "Jahre";
@@ -156,7 +156,7 @@ $text['switchs'] = "Zur Desktop-Webseite wechseln";
 //added in 11.0.0
 $text['dna_tests'] = "DNA-Tests";
 $admtext['preflang'] = "Bevorzugte Sprache";
-$text['problem'] = "Ein Fehler ist in TNG aufgetreten. Ursache kann das Setup, ein unvollständiges Upgrade oder ein Programmfehler sein. Wenn Sie der Webseitenbetreiber sind, kontaktieren Sie den TNG-Support, um Hilfe zu erhalten. Bitte kopieren Sie die untenstehende Meldung in Ihre Nachricht.";
+$text['problem'] = "Ein Fehler ist in TNG aufgetreten. Ursache kann das Setup, ein unvollstï¿½ndiges Upgrade oder ein Programmfehler sein. Wenn Sie der Webseitenbetreiber sind, kontaktieren Sie den TNG-Support, um Hilfe zu erhalten. Bitte kopieren Sie die untenstehende Meldung in Ihre Nachricht.";
 $text['query'] = "Abfrage";
 $text['fanchart'] = "Fan Chart";
 
@@ -165,20 +165,20 @@ $admtext['menu'] = "Menu";
 $admtext['dna_groups'] = "DNA-Gruppen";
 $admtext['allbranches'] = "Alle Zweige";
 $admtext['active'] = "Aktiv";
-$admtext['select'] = "Auswählen";
-$admtext['selectall'] = "Alle auswählen";
+$admtext['select'] = "Auswï¿½hlen";
+$admtext['selectall'] = "Alle auswï¿½hlen";
 $admtext['clearall'] = "Auswahl aufheben";
-$admtext['medialinks'] = "Medien-Verknüpfungen";
+$admtext['medialinks'] = "Medien-Verknï¿½pfungen";
 
 //added here in 12.0.0
 $text['testgroup'] = "Test-Gruppe";
 $text['test_info_display'] = "Informationen zum Test, die angezeigt werden sollen";
-$text['confirmed'] = "Haplogruppe bestätigt";
+$text['confirmed'] = "Haplogruppe bestï¿½tigt";
 $text['predicted'] = "Haplogruppe aus STR erschlossen";
 $admtext['ancestral_surnames'] = "Familiennamen";
 $admtext['admin_notes'] = "Anmerkungen";
 $admtext['mda'] = "Am weitesten entfernter Vorfahre";
-$admtext['mrca'] = "Nächster gemeinsamer Vorfahre";
+$admtext['mrca'] = "Nï¿½chster gemeinsamer Vorfahre";
 $admtext['marker_values'] = "Werte der STR-Marker";
 $admtext['ref_seq'] = "Referenz-DNA";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
@@ -187,7 +187,7 @@ $admtext['hvr_values'] = "HVR-Abweichungen";
 $admtext['hvr1_values'] = "Abweichungen in der HVR1";
 $admtext['hvr2_values'] = "Abweichungen in der HVR2";
 $admtext['coding_reg'] = "Abweichungen in der Coding region";
-$text['keep_name_private'] = "Namen nicht veröffentlichen";
+$text['keep_name_private'] = "Namen nicht verï¿½ffentlichen";
 $text['test_results'] = "Testergebnisse";
 $admtext['dna_tests'] = "DNA-Tests";
 $admtext['vendor'] = "Anbieter";
@@ -201,7 +201,7 @@ $admtext['mtdna_test'] = "mtDNA";
 $admtext['xdna_test'] = "X-DNA";
 
 //moved here in 12.0.0
-$admtext['xtra_mut'] = "Zusätzliche Mutationen";
+$admtext['xtra_mut'] = "Zusï¿½tzliche Mutationen";
 
 //changed in 12.1.0
 $text['test_number'] = "Test-Nr.";
@@ -212,14 +212,14 @@ $admtext['gedmatchID'] = "GEDmatch-Nummer";
 $admtext['ydna_haplogroup'] = "Haplogruppe der Y-DNA";
 $admtext['mtdna_haplogroup'] = "Haplogruppe der mtDNA";
 $admtext['relationship_section'] = "Verwandtschaft";
-$admtext['relationship_range'] = "Mögliche Verwandtschaft";
+$admtext['relationship_range'] = "Mï¿½gliche Verwandtschaft";
 $admtext['suggested_relationship'] = "Vermutete Verwandtschaft";
-$admtext['actual_relationship'] = "Tatsächliche Verwandtschaft";
+$admtext['actual_relationship'] = "Tatsï¿½chliche Verwandtschaft";
 $admtext['related_side'] = "Verwandter Zweig";
 $admtext['shared_dna'] = "Gemeinsame DNA";
 $admtext['shared centimorgans'] = "Gemeinsame DNA in cM";
 $admtext['shared_segments'] = "Gemeinsame Segmente";
-$admtext['largest_segment'] = "Größtes Segment";
+$admtext['largest_segment'] = "Grï¿½ï¿½tes Segment";
 $admtext['chromosome'] = "Chromosom";
 $admtext['segment_start'] = "Beginn";
 $admtext['segment_end'] = "Ende";
@@ -228,7 +228,7 @@ $admtext['matchingSNPs'] = "Anzahl der SNP";
 $admtext['xmatch'] = "X-Match";
 $text['keep_test_private'] = "Test vertraulich halten";
 $text['shared_dna'] = "Gemeinsames DNA-Segment";
-$text['for_match'] = "für diesen Match";
+$text['for_match'] = "fï¿½r diesen Match";
 $admtext['keeptest'] = "Test vertraulich";
 $admtext['keepname'] = "Name vertraulich";
 $admtext['allgroups'] = "Alle Gruppen";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "verh.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

@@ -312,4 +312,3 @@ if ($totnum_tests) {
   $persontext .= "<br/>\n";
 }
 tng_free_result($dna_results);
-?>

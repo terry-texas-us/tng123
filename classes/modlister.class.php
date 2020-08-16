@@ -1390,5 +1390,5 @@ class modlister extends modparser
    </table>";
   }
 } // MODLISTER CLASS
-?>
+
 

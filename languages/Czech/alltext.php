@@ -3,31 +3,31 @@ $alltextloaded = 1;
 
 $dates['JAN'] = "Leden";
 $dates['JANUARY'] = "Leden";
-$dates['FEB'] = "Únor";
-$dates['FEBRUARY'] = "Únor";
-$dates['MAR'] = "Bøezen";
-$dates['MARCH'] = "Bøezen";
+$dates['FEB'] = "ï¿½nor";
+$dates['FEBRUARY'] = "ï¿½nor";
+$dates['MAR'] = "Bï¿½ezen";
+$dates['MARCH'] = "Bï¿½ezen";
 $dates['APR'] = "Duben";
 $dates['APRIL'] = "Duben";
-$dates['MAY'] = "Kvìten";
-$dates['JUN'] = "Èerven";
-$dates['JUNE'] = "Èerven";
-$dates['JUL'] = "Èervenec";
-$dates['JULY'] = "Èervenec";
+$dates['MAY'] = "Kvï¿½ten";
+$dates['JUN'] = "ï¿½erven";
+$dates['JUNE'] = "ï¿½erven";
+$dates['JUL'] = "ï¿½ervenec";
+$dates['JULY'] = "ï¿½ervenec";
 $dates['AUG'] = "Srpen";
 $dates['AUGUST'] = "Srpen";
-$dates['SEP'] = "Záøí";
-$dates['SEPTEMBER'] = "Záøí";
-$dates['OCT'] = "Øíjen";
-$dates['OCTOBER'] = "Øíjen";
+$dates['SEP'] = "Zï¿½ï¿½ï¿½";
+$dates['SEPTEMBER'] = "Zï¿½ï¿½ï¿½";
+$dates['OCT'] = "ï¿½ï¿½jen";
+$dates['OCTOBER'] = "ï¿½ï¿½jen";
 $dates['NOV'] = "Listopad";
 $dates['NOVEMBER'] = "Listopad";
 $dates['DEC'] = "Prosinec";
 $dates['DECEMBER'] = "Prosinec";
 $dates['ABT'] = "cca";
-$dates['ABOUT'] = "Pøibli¾nì";
-$dates['BEF'] = "pøed";
-$dates['BEFORE'] = "pøed";
+$dates['ABOUT'] = "Pï¿½ibliï¿½nï¿½";
+$dates['BEF'] = "pï¿½ed";
+$dates['BEFORE'] = "pï¿½ed";
 $dates['AFT'] = "po";
 $dates['AFTER'] = "po";
 $dates['BET'] = "mezi";
@@ -35,90 +35,90 @@ $dates['BETWEEN'] = "mezi";
 $dates['TEXT_AND'] = "a";
 $dates['FROM'] = "od";
 $dates['TO'] = "do";
-$dates['Y'] = "Ano, datum neznámé";
+$dates['Y'] = "Ano, datum neznï¿½mï¿½";
 $dates['CAL'] = "vyp";
 $dates['EST'] = "odhad";
 
 //global messages
-$text['cannotexecutequery'] = "Dotaz nelze provést";
-$text['to'] = "a¾";
+$text['cannotexecutequery'] = "Dotaz nelze provï¿½st";
+$text['to'] = "aï¿½";
 $text['of'] = "z";
-$text['text_next'] = "Dal¹í";
-$text['text_prev'] = "Pøedchozí";
-$text['clickdisplay'] = "Kliknìte pro zobrazení";
-$text['clickhide'] = "Kliknìte pro skrytí";
-$text['forgot1'] = "<strong>Zapomnìli jste va¹e u¾ivatelské jméno nebo heslo?</strong><br />Zapi¹te dolù svoji emailovou adresu, abychom vám mohli zaslat va¹e u¾ivatelské jméno.";
-$text['forgot2'] = "Zapi¹te vá¹ email nahoru a va¹e u¾ivatelské jméno dolù, aby mohlo být znovu nastaveno heslo (doèasné heslo vám bude zasláno).";
-$text['newpass'] = "Va¹e nové doèasné heslo";
-$text['usersent'] = "Va¹e u¾ivatelské jméno vám bylo zasláno na va¹i emailovou adresu.";
-$text['pwdsent'] = "Va¹e doèasné heslo vám bylo zasláno na va¹i emailovou adresu.";
-$text['loginnotsent2'] = "Emailová adresa, kterou jste zapsali, neodpovídá ¾ádnému u¾ivatelskému úètu. ®ádné údaje vám nebyly zaslány.";
-$text['loginnotsent3'] = "Emailová adresa a u¾ivatelské jméno, které jste zapsali, neodpovídá ¾ádnému u¾ivatelskému úètu. ®ádné údaje vám nebyly zaslány.";
-$text['logininfo'] = "Va¹e pøihla¹ovací údaje";
-$text['collapseall'] = "Sbalit v¹e";
-$text['expandall'] = "Rozbalit v¹e";
+$text['text_next'] = "Dalï¿½ï¿½";
+$text['text_prev'] = "Pï¿½edchozï¿½";
+$text['clickdisplay'] = "Kliknï¿½te pro zobrazenï¿½";
+$text['clickhide'] = "Kliknï¿½te pro skrytï¿½";
+$text['forgot1'] = "<strong>Zapomnï¿½li jste vaï¿½e uï¿½ivatelskï¿½ jmï¿½no nebo heslo?</strong><br />Zapiï¿½te dolï¿½ svoji emailovou adresu, abychom vï¿½m mohli zaslat vaï¿½e uï¿½ivatelskï¿½ jmï¿½no.";
+$text['forgot2'] = "Zapiï¿½te vï¿½ email nahoru a vaï¿½e uï¿½ivatelskï¿½ jmï¿½no dolï¿½, aby mohlo bï¿½t znovu nastaveno heslo (doï¿½asnï¿½ heslo vï¿½m bude zaslï¿½no).";
+$text['newpass'] = "Vaï¿½e novï¿½ doï¿½asnï¿½ heslo";
+$text['usersent'] = "Vaï¿½e uï¿½ivatelskï¿½ jmï¿½no vï¿½m bylo zaslï¿½no na vaï¿½i emailovou adresu.";
+$text['pwdsent'] = "Vaï¿½e doï¿½asnï¿½ heslo vï¿½m bylo zaslï¿½no na vaï¿½i emailovou adresu.";
+$text['loginnotsent2'] = "Emailovï¿½ adresa, kterou jste zapsali, neodpovï¿½dï¿½ ï¿½ï¿½dnï¿½mu uï¿½ivatelskï¿½mu ï¿½ï¿½tu. ï¿½ï¿½dnï¿½ ï¿½daje vï¿½m nebyly zaslï¿½ny.";
+$text['loginnotsent3'] = "Emailovï¿½ adresa a uï¿½ivatelskï¿½ jmï¿½no, kterï¿½ jste zapsali, neodpovï¿½dï¿½ ï¿½ï¿½dnï¿½mu uï¿½ivatelskï¿½mu ï¿½ï¿½tu. ï¿½ï¿½dnï¿½ ï¿½daje vï¿½m nebyly zaslï¿½ny.";
+$text['logininfo'] = "Vaï¿½e pï¿½ihlaï¿½ovacï¿½ ï¿½daje";
+$text['collapseall'] = "Sbalit vï¿½e";
+$text['expandall'] = "Rozbalit vï¿½e";
 
 //media types
 $text['photos'] = "Fotografie";
 $text['documents'] = "Dokumenty";
-$text['headstones'] = "Náhrobky";
-$text['histories'] = "Vyprávìní";
-$text['recordings'] = "Zvukové záznamy";
+$text['headstones'] = "Nï¿½hrobky";
+$text['histories'] = "Vyprï¿½vï¿½nï¿½";
+$text['recordings'] = "Zvukovï¿½ zï¿½znamy";
 $text['videos'] = "Videa";
 
 //For Google maps use - admin and public pages
-$admtext['placelevel'] = "Úroveò sídla";
+$admtext['placelevel'] = "ï¿½roveï¿½ sï¿½dla";
 $admtext['level1'] = "Adresa";
-$admtext['level2'] = "Místo";
-$admtext['level3'] = "Mìsto";
+$admtext['level2'] = "Mï¿½sto";
+$admtext['level3'] = "Mï¿½sto";
 $admtext['level4'] = "Okres";
 $admtext['level5'] = "Kraj";
-$admtext['level6'] = "Zemì";
+$admtext['level6'] = "Zemï¿½";
 $admtext['level0'] = "Nenastaveno";
 
-$text['male'] = "Mu¾";
-$text['female'] = "®ena";
-$text['closewindow'] = "Zavøít okno";
-$text['loading'] = "Nahrávám...";
+$text['male'] = "Muï¿½";
+$text['female'] = "ï¿½ena";
+$text['closewindow'] = "Zavï¿½ï¿½t okno";
+$text['loading'] = "Nahrï¿½vï¿½m...";
 
 $text['cancel'] = "Storno";
-$text['none'] = "®ádný";
-$text['mainton'] = "Re¾im údr¾by je zapnut";
+$text['none'] = "ï¿½ï¿½dnï¿½";
+$text['mainton'] = "Reï¿½im ï¿½drï¿½by je zapnut";
 
 //moved here in 8.0.0
-$text['living'] = "®ijící";
-$admtext['text_private'] = "Neveøejné";
-$admtext['confunlink'] = "Jste si jisti, ¾e chcete odpojit tuto osobu jako partnera z této rodiny?";
-$admtext['confunlinkc'] = "Jste si jisti, ¾e chcete odpojit tuto osobu jako dítì z této rodiny?";
-$admtext['confremchild'] = "Jste si jisti, ¾e chcete odstranit toto dítì z této rodiny? Tato osoba nebude smazána z databáze.";
+$text['living'] = "ï¿½ijï¿½cï¿½";
+$admtext['text_private'] = "Neveï¿½ejnï¿½";
+$admtext['confunlink'] = "Jste si jisti, ï¿½e chcete odpojit tuto osobu jako partnera z tï¿½to rodiny?";
+$admtext['confunlinkc'] = "Jste si jisti, ï¿½e chcete odpojit tuto osobu jako dï¿½tï¿½ z tï¿½to rodiny?";
+$admtext['confremchild'] = "Jste si jisti, ï¿½e chcete odstranit toto dï¿½tï¿½ z tï¿½to rodiny? Tato osoba nebude smazï¿½na z databï¿½ze.";
 $admtext['enterfamilyid'] = "Zadejte ID rodiny.";
 $admtext['yes'] = "Ano";
 $admtext['no'] = "Ne";
-$admtext['BIRT'] = "Narození";
-$admtext['DEAT'] = "Úmrtí";
-$admtext['CHR'] = "Køest";
-$admtext['BURI'] = "Pohøeb";
-$admtext['BAPL'] = "Køest (CJKSpd)";
-$admtext['ENDL'] = "Obdarování (CJKSpd)";
-$admtext['NICK'] = "Pøezdívka";
+$admtext['BIRT'] = "Narozenï¿½";
+$admtext['DEAT'] = "ï¿½mrtï¿½";
+$admtext['CHR'] = "Kï¿½est";
+$admtext['BURI'] = "Pohï¿½eb";
+$admtext['BAPL'] = "Kï¿½est (CJKSpd)";
+$admtext['ENDL'] = "Obdarovï¿½nï¿½ (CJKSpd)";
+$admtext['NICK'] = "Pï¿½ezdï¿½vka";
 $admtext['TITL'] = "Titul";
 $admtext['NSFX'] = "Sufix";
-$admtext['NAME'] = "Jméno";
-$admtext['SLGC'] = "Peèetìní s rodièi (CJKSpd)";
-$admtext['MARR'] = "Sòatek";
-$admtext['SLGS'] = "Peèetìní s partnerem (CJKSpd)";
-$admtext['hello'] = "Dobrý den";
-$admtext['activated'] = "Vá¹ u¾ivatelský úèet byl aktivován.";
-$admtext['infois'] = "Údaje pro pøihlá¹ení jsou";
-$admtext['subjectline'] = "Vá¹ u¾ivatelský úèet byl aktivován.";
+$admtext['NAME'] = "Jmï¿½no";
+$admtext['SLGC'] = "Peï¿½etï¿½nï¿½ s rodiï¿½i (CJKSpd)";
+$admtext['MARR'] = "Sï¿½atek";
+$admtext['SLGS'] = "Peï¿½etï¿½nï¿½ s partnerem (CJKSpd)";
+$admtext['hello'] = "Dobrï¿½ den";
+$admtext['activated'] = "Vï¿½ uï¿½ivatelskï¿½ ï¿½ï¿½et byl aktivovï¿½n.";
+$admtext['infois'] = "ï¿½daje pro pï¿½ihlï¿½enï¿½ jsou";
+$admtext['subjectline'] = "Vï¿½ uï¿½ivatelskï¿½ ï¿½ï¿½et byl aktivovï¿½n.";
 
 //moved here in 8.1.0
-$admtext['adopted'] = "adoptován";
+$admtext['adopted'] = "adoptovï¿½n";
 $admtext['birth'] = "narozen";
-$admtext['foster'] = "vzat do opatrování";
-$admtext['sealing'] = "peèetìn";
+$admtext['foster'] = "vzat do opatrovï¿½nï¿½";
+$admtext['sealing'] = "peï¿½etï¿½n";
 //added in 11.0.3
-$admtext['putative'] = "domnìlý";
+$admtext['putative'] = "domnï¿½lï¿½";
 
 //added in 9.0.0
 $text['editprofile'] = "Upravit profil";
@@ -126,124 +126,123 @@ $text['editprofile'] = "Upravit profil";
 //moved here in 9.0.0
 $text['letter'] = "Letter"; //as in page size
 $text['legal'] = "Legal"; //as in page size
-$text['sunday'] = "Nedìle";  //first day of week on calendar
-$text['monday'] = "Pondìlí";
-$text['tuesday'] = "Úterý";
-$text['wednesday'] = "Støeda";
-$text['thursday'] = "Ètvrtek";
-$text['friday'] = "Pátek";
+$text['sunday'] = "Nedï¿½le";  //first day of week on calendar
+$text['monday'] = "Pondï¿½lï¿½";
+$text['tuesday'] = "ï¿½terï¿½";
+$text['wednesday'] = "Stï¿½eda";
+$text['thursday'] = "ï¿½tvrtek";
+$text['friday'] = "Pï¿½tek";
 $text['saturday'] = "Sobota";
 $text['contains'] = "obsahuje";
-$text['startswith'] = "zaèíná na";
+$text['startswith'] = "zaï¿½ï¿½nï¿½ na";
 
 //moved here in 9.0.4
 $text['top'] = "Top";
 
 //moved here in 10.0.0
-$text['startingind'] = "Výchozí osoba";
-$text['enteremail'] = "Zadejte, prosím, platnou emailovou adresu.";
-$text['page'] = "Stránka";
+$text['startingind'] = "Vï¿½chozï¿½ osoba";
+$text['enteremail'] = "Zadejte, prosï¿½m, platnou emailovou adresu.";
+$text['page'] = "Strï¿½nka";
 $text['go'] = "Jdi";
 $text['years'] = "let";
 
 //added in 10.0.0
-$admtext['CONL'] = "Biømování (CJKSpd)";
-$admtext['INIT'] = "Zasvìcení (CJKSpd)";
-$admtext['step'] = "Nevlastní dítì";
-$text['switchm'] = "Pøepnout na mobilní verzi";
-$text['switchs'] = "Pøepnout na standardní verzi";
+$admtext['CONL'] = "Biï¿½movï¿½nï¿½ (CJKSpd)";
+$admtext['INIT'] = "Zasvï¿½cenï¿½ (CJKSpd)";
+$admtext['step'] = "Nevlastnï¿½ dï¿½tï¿½";
+$text['switchm'] = "Pï¿½epnout na mobilnï¿½ verzi";
+$text['switchs'] = "Pï¿½epnout na standardnï¿½ verzi";
 
 //added in 11.0.0
 $text['dna_tests'] = "Testy DNA";
-$admtext['preflang'] = "Preferovaný jazyk";
-$text['problem'] = "V programu TNG se objevila chyba. Pøíèinou mù¾e být chyba v nastavení, nedokonèená aktualizace nebo programová chyba. Pokud jste majitelem stránek, mù¾ete kontaktovat podporu TNG s ¾ádostí o pomoc pøi øe¹ení tohoto problému. Zkopírujte, prosím, dotaz uvedený ní¾e a vlo¾te jej do va¹í zprávy.";
+$admtext['preflang'] = "Preferovanï¿½ jazyk";
+$text['problem'] = "V programu TNG se objevila chyba. Pï¿½ï¿½ï¿½inou mï¿½ï¿½e bï¿½t chyba v nastavenï¿½, nedokonï¿½enï¿½ aktualizace nebo programovï¿½ chyba. Pokud jste majitelem strï¿½nek, mï¿½ï¿½ete kontaktovat podporu TNG s ï¿½ï¿½dostï¿½ o pomoc pï¿½i ï¿½eï¿½enï¿½ tohoto problï¿½mu. Zkopï¿½rujte, prosï¿½m, dotaz uvedenï¿½ nï¿½e a vloï¿½te jej do vaï¿½ï¿½ zprï¿½vy.";
 $text['query'] = "Dotaz";
-$text['fanchart'] = "Vìjíøový graf";
+$text['fanchart'] = "Vï¿½jï¿½ï¿½ovï¿½ graf";
 
 //moved here in 12.0.0
 $admtext['menu'] = "Menu";
 $admtext['dna_groups'] = "Skupiny DNA";
-$admtext['allbranches'] = "V¹echny vìtve";
+$admtext['allbranches'] = "Vï¿½echny vï¿½tve";
 $admtext['active'] = "Aktivovat";
 $admtext['select'] = "Vybrat";
-$admtext['selectall'] = "Vybrat v¹e";
-$admtext['clearall'] = "Vyèistit v¹e";
-$admtext['medialinks'] = "Odkazy na médium";
+$admtext['selectall'] = "Vybrat vï¿½e";
+$admtext['clearall'] = "Vyï¿½istit vï¿½e";
+$admtext['medialinks'] = "Odkazy na mï¿½dium";
 
 //added here in 12.0.0
-$text['testgroup'] = "Testovací skupina";
+$text['testgroup'] = "Testovacï¿½ skupina";
 $text['test_info_display'] = "Zobrazovat tyto informace o testu";
 $text['confirmed'] = "Potvrzeno";
-$text['predicted'] = "Pøedpovìzeno";
-$admtext['ancestral_surnames'] = "Rodová pøíjmení";
-$admtext['admin_notes'] = "Poznámky administrátora";
-$admtext['mda'] = "Nejvzdálenìj¹í pøedek";
-$admtext['mrca'] = "Nejbli¾¹í spoleèný pøedek";
-$admtext['marker_values'] = "Hodnoty markerù";
-$admtext['ref_seq'] = "Referenèní sekvence";
+$text['predicted'] = "Pï¿½edpovï¿½zeno";
+$admtext['ancestral_surnames'] = "Rodovï¿½ pï¿½ï¿½jmenï¿½";
+$admtext['admin_notes'] = "Poznï¿½mky administrï¿½tora";
+$admtext['mda'] = "Nejvzdï¿½lenï¿½jï¿½ï¿½ pï¿½edek";
+$admtext['mrca'] = "Nejbliï¿½ï¿½ï¿½ spoleï¿½nï¿½ pï¿½edek";
+$admtext['marker_values'] = "Hodnoty markerï¿½";
+$admtext['ref_seq'] = "Referenï¿½nï¿½ sekvence";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
 $admtext['rcrs'] = "rCRS (revised Cambridge Reference Sequence)";
-$admtext['hvr_values'] = "Rozdíly HVR";
-$admtext['hvr1_values'] = "Rozdíly HVR1";
-$admtext['hvr2_values'] = "Rozdíly HVR2";
-$admtext['coding_reg'] = "Rozdíly kódující oblasti";
-$text['keep_name_private'] = "Ponechat jméno neveøejné";
-$text['test_results'] = "Výsledky testu";
+$admtext['hvr_values'] = "Rozdï¿½ly HVR";
+$admtext['hvr1_values'] = "Rozdï¿½ly HVR1";
+$admtext['hvr2_values'] = "Rozdï¿½ly HVR2";
+$admtext['coding_reg'] = "Rozdï¿½ly kï¿½dujï¿½cï¿½ oblasti";
+$text['keep_name_private'] = "Ponechat jmï¿½no neveï¿½ejnï¿½";
+$text['test_results'] = "Vï¿½sledky testu";
 $admtext['dna_tests'] = "Testy DNA";
 $admtext['vendor'] = "Dodavatel";
-$admtext['markers'] = "Poèet STR markerù";
+$admtext['markers'] = "Poï¿½et STR markerï¿½";
 $admtext['haplo'] = "Haploskupina";
-$admtext['termsnp'] = "Terminální SNP";
-$admtext['signsnp'] = "Signifikantní SNP";
-$admtext['atdna_test'] = "atDNA (autozomální)";
+$admtext['termsnp'] = "Terminï¿½lnï¿½ SNP";
+$admtext['signsnp'] = "Signifikantnï¿½ SNP";
+$admtext['atdna_test'] = "atDNA (autozomï¿½lnï¿½)";
 $admtext['ydna_test'] = "Y-DNA";
-$admtext['mtdna_test'] = "mtDNA (mitochondriální)";
+$admtext['mtdna_test'] = "mtDNA (mitochondriï¿½lnï¿½)";
 $admtext['xdna_test'] = "X-DNA";
 
 //moved here in 12.0.0
-$admtext['xtra_mut'] = "Zvlá¹tní mutace";
+$admtext['xtra_mut'] = "Zvlï¿½tnï¿½ mutace";
 
 //changed in 12.1.0
-$text['test_number'] = "Èíslo/název";
+$text['test_number'] = "ï¿½ï¿½slo/nï¿½zev";
 
 //added in 12.1.0
 $admtext['match_date'] = "Datum shody";
 $admtext['gedmatchID'] = "GEDmatch ID";
 $admtext['ydna_haplogroup'] = "Haploskupina Y-DNA";
 $admtext['mtdna_haplogroup'] = "Haploskupina mtDNA";
-$admtext['relationship_section'] = "Sekce pøíbuzenských vztahù";
-$admtext['relationship_range'] = "Rozsah pøíbuzenských vztahù";
-$admtext['suggested_relationship'] = "Navrhované";
-$admtext['actual_relationship'] = "Aktuální pøíbuzenské vztahy";
-$admtext['related_side'] = "Související vìtev";
-$admtext['shared_dna'] = "Sdílená DNA";
-$admtext['shared centimorgans'] = "Celkovì sdílené cM";
-$admtext['shared_segments'] = "Sdílené segmenty";
-$admtext['largest_segment'] = "Nejvìt¹í segment";
-$admtext['chromosome'] = "Chromozóm è.";
-$admtext['segment_start'] = "Zaèátek segmentu";
+$admtext['relationship_section'] = "Sekce pï¿½ï¿½buzenskï¿½ch vztahï¿½";
+$admtext['relationship_range'] = "Rozsah pï¿½ï¿½buzenskï¿½ch vztahï¿½";
+$admtext['suggested_relationship'] = "Navrhovanï¿½";
+$admtext['actual_relationship'] = "Aktuï¿½lnï¿½ pï¿½ï¿½buzenskï¿½ vztahy";
+$admtext['related_side'] = "Souvisejï¿½cï¿½ vï¿½tev";
+$admtext['shared_dna'] = "Sdï¿½lenï¿½ DNA";
+$admtext['shared centimorgans'] = "Celkovï¿½ sdï¿½lenï¿½ cM";
+$admtext['shared_segments'] = "Sdï¿½lenï¿½ segmenty";
+$admtext['largest_segment'] = "Nejvï¿½tï¿½ï¿½ segment";
+$admtext['chromosome'] = "Chromozï¿½m ï¿½.";
+$admtext['segment_start'] = "Zaï¿½ï¿½tek segmentu";
 $admtext['segment_end'] = "Konec segmentu";
 $admtext['centiMorgans'] = "centiMorgany";
-$admtext['matchingSNPs'] = "Poèet shodných SNP";
+$admtext['matchingSNPs'] = "Poï¿½et shodnï¿½ch SNP";
 $admtext['xmatch'] = "X-shoda";
-$text['keep_test_private'] = "Neveøejný test";
-$text['shared_dna'] = "Sdílený segment DNA";
+$text['keep_test_private'] = "Neveï¿½ejnï¿½ test";
+$text['shared_dna'] = "Sdï¿½lenï¿½ segment DNA";
 $text['for_match'] = "pro tuto shodu";
 $admtext['keeptest'] = "Ochrana testu";
-$admtext['keepname'] = "Ochrana jména";
-$admtext['allgroups'] = "V¹echny skupiny";
-$admtext['alltypes'] = "V¹echny typy";
-$admtext['generation_num'] = "Generace pro rodová pøíjmení";
+$admtext['keepname'] = "Ochrana jmï¿½na";
+$admtext['allgroups'] = "Vï¿½echny skupiny";
+$admtext['alltypes'] = "Vï¿½echny typy";
+$admtext['generation_num'] = "Generace pro rodovï¿½ pï¿½ï¿½jmenï¿½";
 
 // moved here from text.php in TNG 12.1.0
 $text['birthabbr'] = "nar.";
-$text['chrabbr'] = "kø.";
-$text['deathabbr'] = "zemø.";  //from descend
-$text['burialabbr'] = "pohø.";  //from descend
-$text['marrabbr'] = "sò.";
+$text['chrabbr'] = "kï¿½.";
+$text['deathabbr'] = "zemï¿½.";  //from descend
+$text['burialabbr'] = "pohï¿½.";  //from descend
+$text['marrabbr'] = "sï¿½.";
 
 // loading English or English-UTF8 is required to display custom text for mods that do not provide all translations
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

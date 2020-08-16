@@ -1135,4 +1135,4 @@ if ($maxgcgen > 0 || $type == "all") {
   echo tng_menu("", "", "", 1);
   tng_footer("");
 }
-?>
+

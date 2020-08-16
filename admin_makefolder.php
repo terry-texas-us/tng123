@@ -22,4 +22,4 @@ if (@mkdir($folder, 0777)) {
 } else {
   echo $admtext['fmanual'];
 }
-?>
+

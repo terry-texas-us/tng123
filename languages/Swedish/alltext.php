@@ -26,34 +26,34 @@ $dates['DEC'] = "Dec";
 $dates['DECEMBER'] = "December";
 $dates['ABT'] = "ca";
 $dates['ABOUT'] = "cirka";
-$dates['BEF'] = "fö";
-$dates['BEFORE'] = "före";
+$dates['BEF'] = "fï¿½";
+$dates['BEFORE'] = "fï¿½re";
 $dates['AFT'] = "eft";
 $dates['AFTER'] = "efter";
 $dates['BET'] = "mel";
 $dates['BETWEEN'] = "mellan";
 $dates['TEXT_AND'] = "och";
-$dates['FROM'] = "från";
+$dates['FROM'] = "frï¿½n";
 $dates['TO'] = "till";
-$dates['Y'] = "Ja, datum okänt";
+$dates['Y'] = "Ja, datum okï¿½nt";
 $dates['CAL'] = "Ber";
 $dates['EST'] = "Uppsk";
 
 //global messages
-$text['cannotexecutequery'] = "Kan inte utföra sökningen";
+$text['cannotexecutequery'] = "Kan inte utfï¿½ra sï¿½kningen";
 $text['to'] = "till";
 $text['of'] = "av";
-$text['text_next'] = "Nästa";
-$text['text_prev'] = "Föregående";
-$text['clickdisplay'] = "Klicka för att visa";
-$text['clickhide'] = "Klicka för att gömma";
-$text['forgot1'] = "<strong>Har du glömt användarnamn eller lösenord?</strong><br />Skriv in din e-postadress nedan för att få ditt användarnamn skickat till dig.";
-$text['forgot2'] = "Skriv in din e-post ovan och ditt användarnamn nedan för att återställa ditt lösenord (ett tillfälligt lösenord kommer att skickas till dig).";
-$text['newpass'] = "Ditt nya temporära lösenord";
-$text['usersent'] = "Ditt användarnamn har skickats till din e-postadress.";
-$text['pwdsent'] = "Ditt nya tillfälliga lösenord har skickats till din e-postadress.";
-$text['loginnotsent2'] = "Den e-postadress du angav finns inte i användardatabasen. Ingen information har skickats.";
-$text['loginnotsent3'] = "Den e-postadress och användarnamn du angav finns inte i användardatabasen. Ingen information har skickats.";
+$text['text_next'] = "Nï¿½sta";
+$text['text_prev'] = "Fï¿½regï¿½ende";
+$text['clickdisplay'] = "Klicka fï¿½r att visa";
+$text['clickhide'] = "Klicka fï¿½r att gï¿½mma";
+$text['forgot1'] = "<strong>Har du glï¿½mt anvï¿½ndarnamn eller lï¿½senord?</strong><br />Skriv in din e-postadress nedan fï¿½r att fï¿½ ditt anvï¿½ndarnamn skickat till dig.";
+$text['forgot2'] = "Skriv in din e-post ovan och ditt anvï¿½ndarnamn nedan fï¿½r att ï¿½terstï¿½lla ditt lï¿½senord (ett tillfï¿½lligt lï¿½senord kommer att skickas till dig).";
+$text['newpass'] = "Ditt nya temporï¿½ra lï¿½senord";
+$text['usersent'] = "Ditt anvï¿½ndarnamn har skickats till din e-postadress.";
+$text['pwdsent'] = "Ditt nya tillfï¿½lliga lï¿½senord har skickats till din e-postadress.";
+$text['loginnotsent2'] = "Den e-postadress du angav finns inte i anvï¿½ndardatabasen. Ingen information har skickats.";
+$text['loginnotsent3'] = "Den e-postadress och anvï¿½ndarnamn du angav finns inte i anvï¿½ndardatabasen. Ingen information har skickats.";
 $text['logininfo'] = "Din login-information";
 $text['collapseall'] = "Komprimera allt";
 $text['expandall'] = "Expandera allt";
@@ -67,58 +67,58 @@ $text['recordings'] = "Ljudinspelningar";
 $text['videos'] = "Video";
 
 //For Google maps use - admin and public pages
-$admtext['placelevel'] = "Plats-nivå";
+$admtext['placelevel'] = "Plats-nivï¿½";
 $admtext['level1'] = "Adress";
-$admtext['level2'] = "Område";
+$admtext['level2'] = "Omrï¿½de";
 $admtext['level3'] = "Stad";
-$admtext['level4'] = "Län";
+$admtext['level4'] = "Lï¿½n";
 $admtext['level5'] = "Stat/Provins";
 $admtext['level6'] = "Land";
 $admtext['level0'] = "Ej definierad";
 
 $text['male'] = "Man";
 $text['female'] = "Kvinna";
-$text['closewindow'] = "Stäng detta fönster";
+$text['closewindow'] = "Stï¿½ng detta fï¿½nster";
 $text['loading'] = "Laddar...";
 
 $text['cancel'] = "Avbryt";
 $text['none'] = "Ingen";
-$text['mainton'] = "Underhållsläge är PÅ";
+$text['mainton'] = "Underhï¿½llslï¿½ge ï¿½r Pï¿½";
 
 //moved here in 8.0.0
 $text['living'] = "Levande";
 $admtext['text_private'] = "Private";
-$admtext['confunlink'] = "Är du säker att du vill frikoppla denna person som make/maka i denna familj?";
-$admtext['confunlinkc'] = "Är du säker på att du vill avlänka denna individ som barn i denna familj?";
-$admtext['confremchild'] = "Är du säker att du vill frikoppla detta barn från denna familj? Personen kommer inte att raderas från databasen.";
+$admtext['confunlink'] = "ï¿½r du sï¿½ker att du vill frikoppla denna person som make/maka i denna familj?";
+$admtext['confunlinkc'] = "ï¿½r du sï¿½ker pï¿½ att du vill avlï¿½nka denna individ som barn i denna familj?";
+$admtext['confremchild'] = "ï¿½r du sï¿½ker att du vill frikoppla detta barn frï¿½n denna familj? Personen kommer inte att raderas frï¿½n databasen.";
 $admtext['enterfamilyid'] = "Skriv in ett familje-ID.";
 $admtext['yes'] = "Ja";
 $admtext['no'] = "Nej";
-$admtext['BIRT'] = "Födelse";
-$admtext['DEAT'] = "Död";
+$admtext['BIRT'] = "Fï¿½delse";
+$admtext['DEAT'] = "Dï¿½d";
 $admtext['CHR'] = "Dop";
 $admtext['BURI'] = "Begravning";
 $admtext['BAPL'] = "Dop (LDS)";
-$admtext['ENDL'] = "Begåvning (LDS)";
+$admtext['ENDL'] = "Begï¿½vning (LDS)";
 $admtext['NICK'] = "Smeknamn";
 $admtext['TITL'] = "Titel";
 $admtext['NSFX'] = "Suffix";
 $admtext['NAME'] = "Namn";
-$admtext['SLGC'] = "Beseglad till föräldrar (LDS)";
+$admtext['SLGC'] = "Beseglad till fï¿½rï¿½ldrar (LDS)";
 $admtext['MARR'] = "Gift";
 $admtext['SLGS'] = "Beseglad till make/maka (LDS)";
 $admtext['hello'] = "Hej";
-$admtext['activated'] = "Ditt släktforskarkonto har aktiverats";
-$admtext['infois'] = "Din inloggningsinformation är";
-$admtext['subjectline'] = "Ditt släktforskarkonto har aktiverats.";
+$admtext['activated'] = "Ditt slï¿½ktforskarkonto har aktiverats";
+$admtext['infois'] = "Din inloggningsinformation ï¿½r";
+$admtext['subjectline'] = "Ditt slï¿½ktforskarkonto har aktiverats.";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "adopterad";
-$admtext['birth'] = "födelse";
+$admtext['birth'] = "fï¿½delse";
 $admtext['foster'] = "fostran";
 $admtext['sealing'] = "besegling";
 //added in 11.0.3
-$admtext['putative'] = "förmodade";
+$admtext['putative'] = "fï¿½rmodade";
 
 //added in 9.0.0
 $text['editprofile'] = "Editera profil";
@@ -126,15 +126,15 @@ $text['editprofile'] = "Editera profil";
 //moved here in 9.0.0
 $text['letter'] = "Letter"; //as in page size
 $text['legal'] = "Legal"; //as in page size
-$text['sunday'] = "Söndag";  //first day of week on calendar
-$text['monday'] = "Måndag";
+$text['sunday'] = "Sï¿½ndag";  //first day of week on calendar
+$text['monday'] = "Mï¿½ndag";
 $text['tuesday'] = "Tisdag";
 $text['wednesday'] = "Onsdag";
 $text['thursday'] = "Torsdag";
 $text['friday'] = "Fredag";
-$text['saturday'] = "Lördag";
-$text['contains'] = "innehåller";
-$text['startswith'] = "börjar med";
+$text['saturday'] = "Lï¿½rdag";
+$text['contains'] = "innehï¿½ller";
+$text['startswith'] = "bï¿½rjar med";
 
 //moved here in 9.0.4
 $text['top'] = "De vanligaste";
@@ -144,7 +144,7 @@ $text['startingind'] = "Startperson (proband)";
 $text['enteremail'] = "Skriv in en giltig e-postadress.";
 $text['page'] = "Sida";
 $text['go'] = "Visa";
-$text['years'] = "år";
+$text['years'] = "ï¿½r";
 
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmation (LDS)";
@@ -155,10 +155,10 @@ $text['switchs'] = "Byt till standard-sajt";
 
 //added in 11.0.0
 $text['dna_tests'] = "DNA-tester";
-$admtext['preflang'] = "Valt språk";
-$text['problem'] = "Ett fel uppstod i TNG-programmet. Detta kan bero på installationsfel, ofullständig uppgradering eller programfel. Om du är ägare till sajten, kontakta TNG-supporten för hjälp med problemet. Kopiera query-texten nedan och klistra in den i ditt meddelande.";
+$admtext['preflang'] = "Valt sprï¿½k";
+$text['problem'] = "Ett fel uppstod i TNG-programmet. Detta kan bero pï¿½ installationsfel, ofullstï¿½ndig uppgradering eller programfel. Om du ï¿½r ï¿½gare till sajten, kontakta TNG-supporten fï¿½r hjï¿½lp med problemet. Kopiera query-texten nedan och klistra in den i ditt meddelande.";
 $text['query'] = "Query";
-$text['fanchart'] = "Solfjäderdiagram";
+$text['fanchart'] = "Solfjï¿½derdiagram";
 
 //moved here in 12.0.0
 $admtext['menu'] = "Menu";
@@ -168,7 +168,7 @@ $admtext['active'] = "Active";
 $admtext['select'] = "Select";
 $admtext['selectall'] = "Select All";
 $admtext['clearall'] = "Clear All";
-$admtext['medialinks'] = "Media-länkar";
+$admtext['medialinks'] = "Media-lï¿½nkar";
 
 //added here in 12.0.0
 $text['testgroup'] = "Testgrupp";
@@ -176,10 +176,10 @@ $text['test_info_display'] = "Test Information To Display";
 $text['confirmed'] = "Confirmed";
 $text['predicted'] = "Predicted";
 $admtext['ancestral_surnames'] = "Anors efternamn";
-$admtext['admin_notes'] = "Administratörens noteringar";
+$admtext['admin_notes'] = "Administratï¿½rens noteringar";
 $admtext['mda'] = "Tidigaste ana";
-$admtext['mrca'] = "Närmaste gemensam ana";
-$admtext['marker_values'] = "Markörvärden";
+$admtext['mrca'] = "Nï¿½rmaste gemensam ana";
+$admtext['marker_values'] = "Markï¿½rvï¿½rden";
 $admtext['ref_seq'] = "Reference sequence";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
 $admtext['rcrs'] = "rCRS (revised Cambridge Reference Sequence)";
@@ -187,11 +187,11 @@ $admtext['hvr_values'] = "HVR-skillnader";
 $admtext['hvr1_values'] = "HVR1-skillnader";
 $admtext['hvr2_values'] = "HVR2-skillnader";
 $admtext['coding_reg'] = "Skillnader i Kodande Region";
-$text['keep_name_private'] = "Behåll namnet privat";
+$text['keep_name_private'] = "Behï¿½ll namnet privat";
 $text['test_results'] = "Testresultat";
 $admtext['dna_tests'] = "DNA-tester";
-$admtext['vendor'] = "Säljare";
-$admtext['markers'] = "Antal testade STR-markörer";
+$admtext['vendor'] = "Sï¿½ljare";
+$admtext['markers'] = "Antal testade STR-markï¿½rer";
 $admtext['haplo'] = "Haplogrupp";
 $admtext['termsnp'] = "Slutlig SNP";
 $admtext['signsnp'] = "Signifikanta SNP:er";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "v.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

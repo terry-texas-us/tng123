@@ -156,5 +156,3 @@ function convertDate($olddate) {
   }
   return ($newdate);
 }
-
-?>

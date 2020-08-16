@@ -382,4 +382,3 @@ if (tng_num_rows($result)) {
 }
 
 tng_free_result($result);
-?>

@@ -23,4 +23,3 @@ $objinits = array(
         'templatenum' => $templatenum,
         'tng_version' => $tng_version
 );
-?>

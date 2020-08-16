@@ -259,4 +259,3 @@ $persontext .= "</ul>\n";
 
 echo $persontext;
 //echo "</div>\n";
-?>

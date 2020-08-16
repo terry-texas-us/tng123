@@ -156,5 +156,3 @@ class surname_cloud
     echo($output);
   }
 }
-
-?>

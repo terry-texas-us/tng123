@@ -1013,4 +1013,4 @@ $text['lastpage'] = "Son Sayfa";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>
+

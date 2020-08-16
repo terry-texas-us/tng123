@@ -45,4 +45,4 @@ if ($trythumb) {
 header("Content-Type: application/json; charset=" . $session_charset);
 
 echo "{\"path\":" . json_encode($trypath) . ",\"thumbpath\":" . json_encode($trythumb) . "}";
-?>
+

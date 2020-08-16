@@ -59,4 +59,4 @@ $result = tng_query($query);
 
 $query = "DELETE from $branchlinks_table WHERE branch = \"$branch\" AND gedcom = \"$tree\"";
 $result = tng_query($query);
-?>
+

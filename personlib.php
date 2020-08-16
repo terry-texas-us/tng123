@@ -1456,5 +1456,3 @@ function beginSection($section) {
 function endSection($section) {
   return "</li> <!-- end $section -->\n";
 }
-
-?>

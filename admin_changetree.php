@@ -100,4 +100,3 @@ $query = "UPDATE $notelinks_table SET gedcom=\"$newtree\", persfamID=\"$newID\" 
 $result = tng_query($query);
 
 header("Location: $url");
-?>

@@ -1474,5 +1474,3 @@ function removeDelims($fact) {
 
   return $fact;
 }
-
-?>

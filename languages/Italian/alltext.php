@@ -35,12 +35,12 @@ $dates['BETWEEN'] = "Tra";
 $dates['TEXT_AND'] = "e";
 $dates['FROM'] = "da";
 $dates['TO'] = "a";
-$dates['Y'] = "sì, data sconosciuta";
+$dates['Y'] = "sï¿½, data sconosciuta";
 $dates['CAL'] = "Cal";
 $dates['EST'] = "Est";
 
 //global messages
-$text['cannotexecutequery'] = "Non può effettuare la richiesta";
+$text['cannotexecutequery'] = "Non puï¿½ effettuare la richiesta";
 $text['to'] = "to";
 $text['of'] = "di";
 $text['text_next'] = "Prossimo";
@@ -50,8 +50,8 @@ $text['clickhide'] = "Premi per Nascondere";
 $text['forgot1'] = "<strong>Hai dimentcato il Nome Utente o Password?</strong><br />Inserisci email qui sotto per ricevere il nome utente.";
 $text['forgot2'] = "Inserisci indirizzo email qui sopra e nome utente sotto per resettare a posto la password ( riceverai una nuova password al tuo indirizzo email).";
 $text['newpass'] = "La nuova password provvisoria";
-$text['usersent'] = "Il nome utente è stato inviato al tuo indirizzo email.";
-$text['pwdsent'] = "La nuova password provvisoria è stata inviata al tuo indirizzo email.";
+$text['usersent'] = "Il nome utente ï¿½ stato inviato al tuo indirizzo email.";
+$text['pwdsent'] = "La nuova password provvisoria ï¿½ stata inviata al tuo indirizzo email.";
 $text['loginnotsent2'] = "L'Indirizzo email non corrisponde a nessun nome utente. I vostri dettagli non sono stati inviati.";
 $text['loginnotsent3'] = "L'email e il nome utente non corrisponde con nessun account. I vostri dettagli on sono stati inviati.";
 $text['logininfo'] = "informazioni di collegamento";
@@ -70,7 +70,7 @@ $text['videos'] = "Video";
 $admtext['placelevel'] = "Disponga A livello";
 $admtext['level1'] = "Indirizzo";
 $admtext['level2'] = "Locale";
-$admtext['level3'] = "Città";
+$admtext['level3'] = "Cittï¿½";
 $admtext['level4'] = "Paese/Shire";
 $admtext['level5'] = "Stato/Provincia";
 $admtext['level6'] = "Paese";
@@ -83,16 +83,16 @@ $text['loading'] = "Caricamento...";
 
 $text['cancel'] = "Cancella";
 $text['none'] = "Nulla";
-$text['mainton'] = "Il modo manutenzione è attivo";
+$text['mainton'] = "Il modo manutenzione ï¿½ attivo";
 
 //moved here in 8.0.0
 $text['living'] = "In vita";
 $admtext['text_private'] = "Privato";
 $admtext['confunlink'] = "Sei sicuro di volere disconnettere questo individuo come sposo in questa famiglia?";
 $admtext['confunlinkc'] = "Sei sicuro di voler rimuovere il collegamento a questa persona come figlio nella famiglia?";
-$admtext['confremchild'] = "Sei sicuro voi volete rimuovere questo bambino da questa famiglia? L'individuo non sarà cancellato dal database.";
+$admtext['confremchild'] = "Sei sicuro voi volete rimuovere questo bambino da questa famiglia? L'individuo non sarï¿½ cancellato dal database.";
 $admtext['enterfamilyid'] = "Volete afferrare una famiglia ID.";
-$admtext['yes'] = "Sì";
+$admtext['yes'] = "Sï¿½";
 $admtext['no'] = "No";
 $admtext['BIRT'] = "Nascita";
 $admtext['DEAT'] = "Decessi";
@@ -108,9 +108,9 @@ $admtext['SLGC'] = "Sigillo ai genitori (LDS)";
 $admtext['MARR'] = "Sposato";
 $admtext['SLGS'] = "Sigillo al coniuge (LDS)";
 $admtext['hello'] = "Buongiorno";
-$admtext['activated'] = "Il vostro account è stato attivato";
+$admtext['activated'] = "Il vostro account ï¿½ stato attivato";
 $admtext['infois'] = "i vostri dati di collegamento sono:";
-$admtext['subjectline'] = "Il vostro conto utente genealogia è stato attivato";
+$admtext['subjectline'] = "Il vostro conto utente genealogia ï¿½ stato attivato";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "Adottato";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "Mar.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

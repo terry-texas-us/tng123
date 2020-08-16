@@ -10,10 +10,10 @@ $dates['MARCH'] = "maaliskuu";
 $dates['APR'] = "huhti";
 $dates['APRIL'] = "huhtikuu";
 $dates['MAY'] = "touko";
-$dates['JUN'] = "kesä";
-$dates['JUNE'] = "kesäkuu";
-$dates['JUL'] = "heinä";
-$dates['JULY'] = "heinäkuu";
+$dates['JUN'] = "kesï¿½";
+$dates['JUNE'] = "kesï¿½kuu";
+$dates['JUL'] = "heinï¿½";
+$dates['JULY'] = "heinï¿½kuu";
 $dates['AUG'] = "elo";
 $dates['AUGUST'] = "elokuu";
 $dates['SEP'] = "syys";
@@ -28,14 +28,14 @@ $dates['ABT'] = "n.";
 $dates['ABOUT'] = "noin";
 $dates['BEF'] = "enn.";
 $dates['BEFORE'] = "ennen";
-$dates['AFT'] = "jälk.";
-$dates['AFTER'] = "jälkeen";
+$dates['AFT'] = "jï¿½lk.";
+$dates['AFTER'] = "jï¿½lkeen";
 $dates['BET'] = "Aikana";
 $dates['BETWEEN'] = "Aikana";
 $dates['TEXT_AND'] = "ja";
-$dates['FROM'] = "Mistä";
+$dates['FROM'] = "Mistï¿½";
 $dates['TO'] = "mihin";
-$dates['Y'] = "Kyllä, päiväys tuntematon";
+$dates['Y'] = "Kyllï¿½, pï¿½ivï¿½ys tuntematon";
 $dates['CAL'] = "LAS";
 $dates['EST'] = "ARV";
 
@@ -45,15 +45,15 @@ $text['to'] = "-";
 $text['of'] = "/";
 $text['text_next'] = "Seuraava";
 $text['text_prev'] = "Edellinen";
-$text['clickdisplay'] = "Klikkaa näyttääksesi";
+$text['clickdisplay'] = "Klikkaa nï¿½yttï¿½ï¿½ksesi";
 $text['clickhide'] = "Klikkaa piilottaaksesi";
-$text['forgot1'] = "<strong>Unohditko käyttäjätunnuksesi tai salasanasi?</strong><br />Syötä sähköpostiosoitteesi, johon lähetämme käyttäjätunnuksesi.";
-$text['forgot2'] = "Syötä sähköpostiosoitteesi ja käyttäjätunnuksesi nollataksesi salasanasi (tilapäinen salasana lähetetään sinulle).";
-$text['newpass'] = "Uusi tilapäinen salasanasi";
-$text['usersent'] = "Käyttäjätunnuksesi on lähetetty sähköpostiosoitteeseesi.";
-$text['pwdsent'] = "Uusi tilapäinen salasanasi on lähetetty sähköpostiosoitteeseesi.";
-$text['loginnotsent2'] = "Sähköpostiosoite, jonka annoit, ei täsmää tietojemme kanssa. Mitään tietoja ei lähetetty.";
-$text['loginnotsent3'] = "Sähköpostiosoite ja käyttäjätunnus, jotka annoit, eivät täsmää yhteenkään käyttäjäämme. Mitään tietoja ei lähetetty.";
+$text['forgot1'] = "<strong>Unohditko kï¿½yttï¿½jï¿½tunnuksesi tai salasanasi?</strong><br />Syï¿½tï¿½ sï¿½hkï¿½postiosoitteesi, johon lï¿½hetï¿½mme kï¿½yttï¿½jï¿½tunnuksesi.";
+$text['forgot2'] = "Syï¿½tï¿½ sï¿½hkï¿½postiosoitteesi ja kï¿½yttï¿½jï¿½tunnuksesi nollataksesi salasanasi (tilapï¿½inen salasana lï¿½hetetï¿½ï¿½n sinulle).";
+$text['newpass'] = "Uusi tilapï¿½inen salasanasi";
+$text['usersent'] = "Kï¿½yttï¿½jï¿½tunnuksesi on lï¿½hetetty sï¿½hkï¿½postiosoitteeseesi.";
+$text['pwdsent'] = "Uusi tilapï¿½inen salasanasi on lï¿½hetetty sï¿½hkï¿½postiosoitteeseesi.";
+$text['loginnotsent2'] = "Sï¿½hkï¿½postiosoite, jonka annoit, ei tï¿½smï¿½ï¿½ tietojemme kanssa. Mitï¿½ï¿½n tietoja ei lï¿½hetetty.";
+$text['loginnotsent3'] = "Sï¿½hkï¿½postiosoite ja kï¿½yttï¿½jï¿½tunnus, jotka annoit, eivï¿½t tï¿½smï¿½ï¿½ yhteenkï¿½ï¿½n kï¿½yttï¿½jï¿½ï¿½mme. Mitï¿½ï¿½n tietoja ei lï¿½hetetty.";
 $text['logininfo'] = "Kirjautumistietosi";
 $text['collapseall'] = "Supista kaikki";
 $text['expandall'] = "Laajenna kaikki";
@@ -62,8 +62,8 @@ $text['expandall'] = "Laajenna kaikki";
 $text['photos'] = "Valokuvat";
 $text['documents'] = "Dokumentit";
 $text['headstones'] = "Hautakivet";
-$text['histories'] = "Elämäkerrat";
-$text['recordings'] = "Äänitteet";
+$text['histories'] = "Elï¿½mï¿½kerrat";
+$text['recordings'] = "ï¿½ï¿½nitteet";
 $text['videos'] = "Videot";
 
 //For Google maps use - admin and public pages
@@ -71,7 +71,7 @@ $admtext['placelevel'] = "Paikkataso";
 $admtext['level1'] = "Osoite";
 $admtext['level2'] = "Sijainti";
 $admtext['level3'] = "Kaupunki";
-$admtext['level4'] = "Lääni";
+$admtext['level4'] = "Lï¿½ï¿½ni";
 $admtext['level5'] = "Osavaltio";
 $admtext['level6'] = "Maa";
 $admtext['level0'] = "Ei asetettu";
@@ -83,16 +83,16 @@ $text['loading'] = "Lataa...";
 
 $text['cancel'] = "Peru";
 $text['none'] = "None";
-$text['mainton'] = "Ylläpitotila on päällä";
+$text['mainton'] = "Yllï¿½pitotila on pï¿½ï¿½llï¿½";
 
 //moved here in 8.0.0
 $text['living'] = "Elossa";
 $admtext['text_private'] = "Yksityinen";
-$admtext['confunlink'] = "Haluatko varmasti poistaa tämän henkilön linkityksen puolisona tähän perheeseen?";
-$admtext['confunlinkc'] = "Haluatko varmasti poistaa tämän henkilön linkityksen lapsena tähän perheeseen?";
-$admtext['confremchild'] = "Haluatko varmasti poistaa tämän lapsen tästä perheestä? Henkilöä ei poisteta tietokannasta.";
-$admtext['enterfamilyid'] = "Syötä perhe-ID.";
-$admtext['yes'] = "Kyllä";
+$admtext['confunlink'] = "Haluatko varmasti poistaa tï¿½mï¿½n henkilï¿½n linkityksen puolisona tï¿½hï¿½n perheeseen?";
+$admtext['confunlinkc'] = "Haluatko varmasti poistaa tï¿½mï¿½n henkilï¿½n linkityksen lapsena tï¿½hï¿½n perheeseen?";
+$admtext['confremchild'] = "Haluatko varmasti poistaa tï¿½mï¿½n lapsen tï¿½stï¿½ perheestï¿½? Henkilï¿½ï¿½ ei poisteta tietokannasta.";
+$admtext['enterfamilyid'] = "Syï¿½tï¿½ perhe-ID.";
+$admtext['yes'] = "Kyllï¿½";
 $admtext['no'] = "Ei";
 $admtext['BIRT'] = "Syntynyt";
 $admtext['DEAT'] = "Kuollut";
@@ -104,19 +104,19 @@ $admtext['NICK'] = "Lempinimi";
 $admtext['TITL'] = "Nimike";
 $admtext['NSFX'] = "Loppuliite";
 $admtext['NAME'] = "Nimi";
-$admtext['SLGC'] = "Sinetöity vanhemmille (LDS)";
+$admtext['SLGC'] = "Sinetï¿½ity vanhemmille (LDS)";
 $admtext['MARR'] = "Vihitty";
-$admtext['SLGS'] = "Sinetöity puolisolle (LDS)";
-$admtext['hello'] = "Hauska nähdä taas,";
-$admtext['activated'] = "Hakemasi käyttäjätunnus sukusivuille on luotu";
-$admtext['infois'] = "Käyttäjätietosi ovat";
-$admtext['subjectline'] = "Sukutietojen käyttäjätunnuksesi on aktivoitu.";
+$admtext['SLGS'] = "Sinetï¿½ity puolisolle (LDS)";
+$admtext['hello'] = "Hauska nï¿½hdï¿½ taas,";
+$admtext['activated'] = "Hakemasi kï¿½yttï¿½jï¿½tunnus sukusivuille on luotu";
+$admtext['infois'] = "Kï¿½yttï¿½jï¿½tietosi ovat";
+$admtext['subjectline'] = "Sukutietojen kï¿½yttï¿½jï¿½tunnuksesi on aktivoitu.";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "adoptoitu";
 $admtext['birth'] = "syntynyt";
 $admtext['foster'] = "kasvatus";
-$admtext['sealing'] = "sinetöinti";
+$admtext['sealing'] = "sinetï¿½inti";
 //added in 11.0.3
 $admtext['putative'] = "otaksuttu";
 
@@ -133,15 +133,15 @@ $text['wednesday'] = "keskiviikko";
 $text['thursday'] = "torstai";
 $text['friday'] = "Friday";
 $text['saturday'] = "Saturday";
-$text['contains'] = "sisältää";
+$text['contains'] = "sisï¿½ltï¿½ï¿½";
 $text['startswith'] = "alkaa";
 
 //moved here in 9.0.4
-$text['top'] = "Yleisimmät";
+$text['top'] = "Yleisimmï¿½t";
 
 //moved here in 10.0.0
-$text['startingind'] = "Lähdehenkilö";
-$text['enteremail'] = "Anna oikean muotoinen sähköpostiosoite";
+$text['startingind'] = "Lï¿½hdehenkilï¿½";
+$text['enteremail'] = "Anna oikean muotoinen sï¿½hkï¿½postiosoite";
 $text['page'] = "Sivu";
 $text['go'] = "Ok";
 $text['years'] = "vuotta";
@@ -149,20 +149,20 @@ $text['years'] = "vuotta";
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmaatio (LDS)";
 $admtext['INIT'] = "Pesu ja voitelu (LDS)";
-$admtext['step'] = "veli- tai tytärpuoli";
+$admtext['step'] = "veli- tai tytï¿½rpuoli";
 $text['switchm'] = "Vaihda mobiiliin";
 $text['switchs'] = "Vaihda normaaliin";
 
 //added in 11.0.0
 $text['dna_tests'] = "DNA testit";
 $admtext['preflang'] = "Haluttu kieli";
-$text['problem'] = "TNG ohjelmistossa tapahtui virhe. Tämä voi johtua virheellisistä asetuksista, vajavaisesta päivityksestä tai ohjelmistovirheestä. Jos olet sivuston omistaja, ota yhteyttä TNG:n tukeen saadaksesi apua ongelmaan. Ole hyvä ja kopioi alla näkyvä haku viestiisi.";
+$text['problem'] = "TNG ohjelmistossa tapahtui virhe. Tï¿½mï¿½ voi johtua virheellisistï¿½ asetuksista, vajavaisesta pï¿½ivityksestï¿½ tai ohjelmistovirheestï¿½. Jos olet sivuston omistaja, ota yhteyttï¿½ TNG:n tukeen saadaksesi apua ongelmaan. Ole hyvï¿½ ja kopioi alla nï¿½kyvï¿½ haku viestiisi.";
 $text['query'] = "Haku";
 $text['fanchart'] = "Viuhkakaavio";
 
 //moved here in 12.0.0
 $admtext['menu'] = "Menu";
-$admtext['dna_groups'] = "DNA ryhmät";
+$admtext['dna_groups'] = "DNA ryhmï¿½t";
 $admtext['allbranches'] = "All Branches";
 $admtext['active'] = "Active";
 $admtext['select'] = "Select";
@@ -171,14 +171,14 @@ $admtext['clearall'] = "Clear All";
 $admtext['medialinks'] = "Medialinkit";
 
 //added here in 12.0.0
-$text['testgroup'] = "Testiryhmä";
+$text['testgroup'] = "Testiryhmï¿½";
 $text['test_info_display'] = "Test Information To Display";
 $text['confirmed'] = "Confirmed";
 $text['predicted'] = "Predicted";
 $admtext['ancestral_surnames'] = "Perityt sukunimet";
-$admtext['admin_notes'] = "Ylläpitäjän muistiinpanot";
-$admtext['mda'] = "Kaukaisin esi-isä";
-$admtext['mrca'] = "Viimeisin yhteinen esi-isä";
+$admtext['admin_notes'] = "Yllï¿½pitï¿½jï¿½n muistiinpanot";
+$admtext['mda'] = "Kaukaisin esi-isï¿½";
+$admtext['mrca'] = "Viimeisin yhteinen esi-isï¿½";
 $admtext['marker_values'] = "Markkeriarvot";
 $admtext['ref_seq'] = "Reference sequence";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
@@ -187,21 +187,21 @@ $admtext['hvr_values'] = "HVR eroavuudet";
 $admtext['hvr1_values'] = "HVR1 eroavuudet";
 $admtext['hvr2_values'] = "HVR2 eroavuudet";
 $admtext['coding_reg'] = "Koodialueen eroavuudet";
-$text['keep_name_private'] = "Pidä nimi yksityisenä";
+$text['keep_name_private'] = "Pidï¿½ nimi yksityisenï¿½";
 $text['test_results'] = "Testitulokset";
 $admtext['dna_tests'] = "DNA testit";
-$admtext['vendor'] = "Myyjä";
-$admtext['markers'] = "Markkereiden lukumäärä";
-$admtext['haplo'] = "Haploryhmä";
-$admtext['termsnp'] = "Pääte SNP";
-$admtext['signsnp'] = "Merkitsevä SNPs";
+$admtext['vendor'] = "Myyjï¿½";
+$admtext['markers'] = "Markkereiden lukumï¿½ï¿½rï¿½";
+$admtext['haplo'] = "Haploryhmï¿½";
+$admtext['termsnp'] = "Pï¿½ï¿½te SNP";
+$admtext['signsnp'] = "Merkitsevï¿½ SNPs";
 $admtext['atdna_test'] = "atDNA (Autosomal)";
 $admtext['ydna_test'] = "Y-DNA";
 $admtext['mtdna_test'] = "mtDNA (Mitochondrial)";
 $admtext['xdna_test'] = "X-DNA";
 
 //moved here in 12.0.0
-$admtext['xtra_mut'] = "Lisä mutaatiot";
+$admtext['xtra_mut'] = "Lisï¿½ mutaatiot";
 
 //changed in 12.1.0
 $text['test_number'] = "Test Number/Name";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "vih.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

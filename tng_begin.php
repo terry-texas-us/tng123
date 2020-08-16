@@ -18,4 +18,3 @@ if ((strpos($_SERVER['SCRIPT_NAME'], "/changelanguage.php") === FALSE && strpos(
   $currentuserdesc = $_SESSION['currentuserdesc'];
 }
 include($cms['tngpath'] . "log.php");
-?>

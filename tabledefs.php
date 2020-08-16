@@ -837,4 +837,3 @@ $query = "CREATE TABLE $xnotes_table (
 	INDEX noteID (gedcom, noteID)
 ) ENGINE = MYISAM $collationstr";
 $result = performQuery($query, $xnotes_table);
-?>

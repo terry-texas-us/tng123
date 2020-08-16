@@ -35,4 +35,4 @@ adminwritelog($admtext['modifyeventtype'] . ": $eventtypeID");
 
 $message = $admtext['changestoevtype'] . " $eventtypeID {$admtext['succsaved']}.";
 header("Location: admin_eventtypes.php?message=" . urlencode($message));
-?>
+

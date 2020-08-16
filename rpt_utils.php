@@ -281,5 +281,3 @@ function getMyAncestors($focalPerson, $tree, $gen) {
 
   return $ancestorInfo;
 }
-
-?>

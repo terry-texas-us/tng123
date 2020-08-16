@@ -1044,4 +1044,3 @@ $text['lastpage'] = "Poslednja strana";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

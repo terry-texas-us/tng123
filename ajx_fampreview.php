@@ -317,4 +317,3 @@ $famtext .= endSection("info");
 $famtext .= "</ul>\n";
 
 echo $famtext;
-?>

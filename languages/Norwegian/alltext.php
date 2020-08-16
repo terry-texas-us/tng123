@@ -26,8 +26,8 @@ $dates['DEC'] = "Des";
 $dates['DECEMBER'] = "Desember";
 $dates['ABT'] = "Ca";
 $dates['ABOUT'] = "Cirka";
-$dates['BEF'] = "Før";
-$dates['BEFORE'] = "Før";
+$dates['BEF'] = "Fï¿½r";
+$dates['BEFORE'] = "Fï¿½r";
 $dates['AFT'] = "Ett";
 $dates['AFTER'] = "Etter";
 $dates['BET'] = "Mellom";
@@ -40,15 +40,15 @@ $dates['CAL'] = "Kal";
 $dates['EST'] = "Ber";
 
 //global messages
-$text['cannotexecutequery'] = "Kan ikke utføre spørringen";
+$text['cannotexecutequery'] = "Kan ikke utfï¿½re spï¿½rringen";
 $text['to'] = "til";
 $text['of'] = "av";
 $text['text_next'] = "Neste";
 $text['text_prev'] = "Forrige";
-$text['clickdisplay'] = "Klikk for å vise";
-$text['clickhide'] = "Klikk for å skjule";
-$text['forgot1'] = "<strong>Glemt brukernavn og passord?</strong><br />Skriv din e-postadresse nedenfor, så blir det sendt til deg.";
-$text['forgot2'] = "Skriv din e-postadresse ovenfor og brukernavnet nedenfor, for å resette passordet ditt (et midlertidig passord vil bli sendt til deg).";
+$text['clickdisplay'] = "Klikk for ï¿½ vise";
+$text['clickhide'] = "Klikk for ï¿½ skjule";
+$text['forgot1'] = "<strong>Glemt brukernavn og passord?</strong><br />Skriv din e-postadresse nedenfor, sï¿½ blir det sendt til deg.";
+$text['forgot2'] = "Skriv din e-postadresse ovenfor og brukernavnet nedenfor, for ï¿½ resette passordet ditt (et midlertidig passord vil bli sendt til deg).";
 $text['newpass'] = "Ditt nye midlertidige passord";
 $text['usersent'] = "Brukernavnet har blitt sendt til din e-postadresse.";
 $text['pwdsent'] = "Ditt midlertidige passord har blitt sendt til din e-postadresse.";
@@ -67,7 +67,7 @@ $text['recordings'] = "Opptak";
 $text['videos'] = "Videoer";
 
 //For Google maps use - admin and public pages
-$admtext['placelevel'] = "Stedsnivå";
+$admtext['placelevel'] = "Stedsnivï¿½";
 $admtext['level1'] = "Adresse";
 $admtext['level2'] = "Lokasjon";
 $admtext['level3'] = "By";
@@ -83,22 +83,22 @@ $text['loading'] = "Laster...";
 
 $text['cancel'] = "Avbryt";
 $text['none'] = "Ingen";
-$text['mainton'] = "Vedlikeholdsmodus PÅ";
+$text['mainton'] = "Vedlikeholdsmodus Pï¿½";
 
 //moved here in 8.0.0
-$text['living'] = "Nålevende";
+$text['living'] = "Nï¿½levende";
 $admtext['text_private'] = "Privat";
-$admtext['confunlink'] = "Er du sikker på at du vil fjerne linken for denne personen som ektefelle/partner i denne familien?";
-$admtext['confunlinkc'] = "Er du sikker på at du vil fjerne linken for denne personen som barn i denne familien?";
-$admtext['confremchild'] = "Er du sikker på at du vil fjerne dette barnet fra denne familien? Personen vil ikke bli slettet fra databasen.";
+$admtext['confunlink'] = "Er du sikker pï¿½ at du vil fjerne linken for denne personen som ektefelle/partner i denne familien?";
+$admtext['confunlinkc'] = "Er du sikker pï¿½ at du vil fjerne linken for denne personen som barn i denne familien?";
+$admtext['confremchild'] = "Er du sikker pï¿½ at du vil fjerne dette barnet fra denne familien? Personen vil ikke bli slettet fra databasen.";
 $admtext['enterfamilyid'] = "Skriv Familie ID.";
 $admtext['yes'] = "Ja";
 $admtext['no'] = "Nei";
-$admtext['BIRT'] = "Fødsel";
-$admtext['DEAT'] = "Død";
-$admtext['CHR'] = "Dåp";
+$admtext['BIRT'] = "Fï¿½dsel";
+$admtext['DEAT'] = "Dï¿½d";
+$admtext['CHR'] = "Dï¿½p";
 $admtext['BURI'] = "Gravferd";
-$admtext['BAPL'] = "Dåp (LDS)";
+$admtext['BAPL'] = "Dï¿½p (LDS)";
 $admtext['ENDL'] = "Velsignelse (LDS)";
 $admtext['NICK'] = "Kallenavn";
 $admtext['TITL'] = "Tittel";
@@ -114,7 +114,7 @@ $admtext['subjectline'] = "Din brukerkonto for nettstedet er aktivert.";
 
 //moved here in 8.1.0
 $admtext['adopted'] = "adoptert";
-$admtext['birth'] = "fødsel";
+$admtext['birth'] = "fï¿½dsel";
 $admtext['foster'] = "foster";
 $admtext['sealing'] = "besegling (LDS)";
 //added in 11.0.3
@@ -126,13 +126,13 @@ $text['editprofile'] = "Endre profil";
 //moved here in 9.0.0
 $text['letter'] = "Letter"; //as in page size
 $text['legal'] = "Legal"; //as in page size
-$text['sunday'] = "søndag";  //first day of week on calendar
+$text['sunday'] = "sï¿½ndag";  //first day of week on calendar
 $text['monday'] = "mandag";
 $text['tuesday'] = "tirsdag";
 $text['wednesday'] = "onsdag";
 $text['thursday'] = "torsdag";
 $text['friday'] = "fredag";
-$text['saturday'] = "lørdag";
+$text['saturday'] = "lï¿½rdag";
 $text['contains'] = "inneholder";
 $text['startswith'] = "starter med";
 
@@ -143,8 +143,8 @@ $text['top'] = "Topp";
 $text['startingind'] = "Startperson";
 $text['enteremail'] = "Skriv inn en gyldig e-postadresse.";
 $text['page'] = "Side";
-$text['go'] = "Utfør";
-$text['years'] = "år";
+$text['go'] = "Utfï¿½r";
+$text['years'] = "ï¿½r";
 
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmasjon";
@@ -155,9 +155,9 @@ $text['switchs'] = "Bytt til standard nettsted";
 
 //added in 11.0.0
 $text['dna_tests'] = "DNA tester";
-$admtext['preflang'] = "Foretrukket språk";
-$text['problem'] = "Det har oppstått en feil i TNG programvaren. Dette kan skyldes et konfigurasjonsproblem, en ufullstendig oppgradering eller en programfeil. Hvis du er eieren av nettstedet, kan du kontakte TNG systemstøtte for å få hjelp med dette problemet. Vennligst kopier spørringen under og lim den inn i meldingen.";
-$text['query'] = "Spørring";
+$admtext['preflang'] = "Foretrukket sprï¿½k";
+$text['problem'] = "Det har oppstï¿½tt en feil i TNG programvaren. Dette kan skyldes et konfigurasjonsproblem, en ufullstendig oppgradering eller en programfeil. Hvis du er eieren av nettstedet, kan du kontakte TNG systemstï¿½tte for ï¿½ fï¿½ hjelp med dette problemet. Vennligst kopier spï¿½rringen under og lim den inn i meldingen.";
+$text['query'] = "Spï¿½rring";
 $text['fanchart'] = "Anevifte";
 
 //moved here in 12.0.0
@@ -178,8 +178,8 @@ $text['predicted'] = "Beregnet";
 $admtext['ancestral_surnames'] = "Aners etternavn";
 $admtext['admin_notes'] = "Administrators notater";
 $admtext['mda'] = "Eldste (fjerneste) ane";
-$admtext['mrca'] = "Yngste (nærmeste) felles ane";
-$admtext['marker_values'] = "Markørverdier";
+$admtext['mrca'] = "Yngste (nï¿½rmeste) felles ane";
+$admtext['marker_values'] = "Markï¿½rverdier";
 $admtext['ref_seq'] = "Referansesekvens";
 $admtext['rsrs'] = "RSRS (Reconstructed Sapiens Reference Sequence)";
 $admtext['rcrs'] = "rCRS (revised Cambridge Reference Sequence)";
@@ -190,8 +190,8 @@ $admtext['coding_reg'] = "'Coding Region' forskjeller";
 $text['keep_name_private'] = "Hold navn Privat";
 $text['test_results'] = "Testresultater";
 $admtext['dna_tests'] = "DNA tester";
-$admtext['vendor'] = "Leverandør";
-$admtext['markers'] = "Antall STR-markører";
+$admtext['vendor'] = "Leverandï¿½r";
+$admtext['markers'] = "Antall STR-markï¿½rer";
 $admtext['haplo'] = "Haplogruppe";
 $admtext['termsnp'] = "Ende-SNP";
 $admtext['signsnp'] = "Signifikante SNP'er";
@@ -213,13 +213,13 @@ $admtext['ydna_haplogroup'] = "Y-DNA Haplogruppe";
 $admtext['mtdna_haplogroup'] = "mtDNA Haplogruppe";
 $admtext['relationship_section'] = "Slektskap";
 $admtext['relationship_range'] = "Estimert slektskap";
-$admtext['suggested_relationship'] = "Foreslått slektskap";
+$admtext['suggested_relationship'] = "Foreslï¿½tt slektskap";
 $admtext['actual_relationship'] = "Faktisk slektskap";
 $admtext['related_side'] = "Slektskap via Gren";
 $admtext['shared_dna'] = "Delt DNA";
 $admtext['shared centimorgans'] = "Totalt delt cM";
 $admtext['shared_segments'] = "Delte segmenter";
-$admtext['largest_segment'] = "Største segment";
+$admtext['largest_segment'] = "Stï¿½rste segment";
 $admtext['chromosome'] = "Kromosom Nr";
 $admtext['segment_start'] = "Segment start";
 $admtext['segment_end'] = "Segment slutt";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "g.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

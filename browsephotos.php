@@ -8,4 +8,4 @@ if ($_GET['showdocs'] == 1) {
 } else {
   header("Location: $browsemedia_url" . "mediatypeID=photos");
 }
-?>
+

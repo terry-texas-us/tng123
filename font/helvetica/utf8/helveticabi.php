@@ -152,4 +152,4 @@ $diff = '';
 $file = 'helveticabi.z';
 $ctg = 'helveticabi.ctg.z';
 $originalsize = 551824;
-?>
+

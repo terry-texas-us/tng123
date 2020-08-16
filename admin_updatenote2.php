@@ -31,4 +31,3 @@ adminwritelog($admtext['modifynote'] . ": $ID");
 
 $message = $admtext['notechanges'] . " $ID {$admtext['succsaved']}.";
 header("Location: admin_notelist.php?message=" . urlencode($message));
-?>

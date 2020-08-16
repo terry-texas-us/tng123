@@ -316,4 +316,3 @@ adminwritelog($admtext['modifysettings']);
 
 $oldsubroot = $newsubroot != $subroot ? "?sr=$subroot" : "";
 header("Location: admin_setup.php$oldsubroot");
-?>

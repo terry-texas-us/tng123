@@ -57,5 +57,3 @@ function getTemplateVars($templatenum) {
   }
   return $tmp;
 }
-
-?>

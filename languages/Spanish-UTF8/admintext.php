@@ -2338,4 +2338,3 @@ $admtext['living'] = "Vivo";
 if (!$alltextloaded) {
   getAllTextPath();
 }
-?>

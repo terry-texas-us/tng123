@@ -35,4 +35,3 @@ adminwritelog("<a href=\"admin_editreport.php?reportID=$reportID\">{$admtext['ad
 
 $message = $admtext['report'] . " $reportID {$admtext['succadded']}.";
 header("Location: admin_reports.php?message=" . urlencode($message));
-?>

@@ -89,4 +89,3 @@ foreach ($_POST as $newkey => $newvalue) {
 adminwritelog($admtext['modifytemplatesettings'] . " - {$admtext['template']} " . $form_templatenum . " - {$admtext['templateswitching']} = " . $form_templateswitching);
 
 header("Location: admin_setup.php");
-?>

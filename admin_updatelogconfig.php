@@ -61,4 +61,4 @@ fclose($fp);
 adminwritelog($admtext['modifylogsettings']);
 
 header("Location: admin_setup.php");
-?>
+

@@ -26,4 +26,4 @@ if (
 } else {
   $browser = "NA";
 }
-?>
+

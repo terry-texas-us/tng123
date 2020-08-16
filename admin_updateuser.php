@@ -152,4 +152,3 @@ if ($newuser) {
 } else {
   header("Location: admin_users.php?message=" . urlencode($message));
 }
-?>

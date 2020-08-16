@@ -2,26 +2,26 @@
 $alltextloaded = 1;
 
 $dates['JAN'] = "jan.";
-$dates['JANUARY'] = "janúar";
+$dates['JANUARY'] = "janï¿½ar";
 $dates['FEB'] = "feb.";
-$dates['FEBRUARY'] = "febrúar";
+$dates['FEBRUARY'] = "febrï¿½ar";
 $dates['MAR'] = "mar.";
 $dates['MARCH'] = "mars";
 $dates['APR'] = "apr.";
-$dates['APRIL'] = "apríl";
-$dates['MAY'] = "maí";
-$dates['JUN'] = "jún.";
-$dates['JUNE'] = "júní";
-$dates['JUL'] = "júl.";
-$dates['JULY'] = "júlí";
-$dates['AUG'] = "ágú.";
-$dates['AUGUST'] = "ágúst";
+$dates['APRIL'] = "aprï¿½l";
+$dates['MAY'] = "maï¿½";
+$dates['JUN'] = "jï¿½n.";
+$dates['JUNE'] = "jï¿½nï¿½";
+$dates['JUL'] = "jï¿½l.";
+$dates['JULY'] = "jï¿½lï¿½";
+$dates['AUG'] = "ï¿½gï¿½.";
+$dates['AUGUST'] = "ï¿½gï¿½st";
 $dates['SEP'] = "sep.";
 $dates['SEPTEMBER'] = "september";
 $dates['OCT'] = "okt.";
-$dates['OCTOBER'] = "október";
-$dates['NOV'] = "nóv.";
-$dates['NOVEMBER'] = "nóvember";
+$dates['OCTOBER'] = "oktï¿½ber";
+$dates['NOV'] = "nï¿½v.";
+$dates['NOVEMBER'] = "nï¿½vember";
 $dates['DEC'] = "des.";
 $dates['DECEMBER'] = "desember";
 $dates['ABT'] = "um";
@@ -33,72 +33,72 @@ $dates['AFTER'] = "eftir";
 $dates['BET'] = "Milli";
 $dates['BETWEEN'] = "milli";
 $dates['TEXT_AND'] = "Og";
-$dates['FROM'] = "Frá";
+$dates['FROM'] = "Frï¿½";
 $dates['TO'] = "til";
-$dates['Y'] = "Já, dagsetning ókunn";
+$dates['Y'] = "Jï¿½, dagsetning ï¿½kunn";
 $dates['CAL'] = "Cal";
 $dates['EST'] = "Ca.";
 
 //global messages
-$text['cannotexecutequery'] = "Ekki hægt að verða við beiðni";
+$text['cannotexecutequery'] = "Ekki hï¿½gt aï¿½ verï¿½a viï¿½ beiï¿½ni";
 $text['to'] = "til";
 $text['of'] = "af";
-$text['text_next'] = "Næsta";
+$text['text_next'] = "Nï¿½sta";
 $text['text_prev'] = "Fyrri";
-$text['clickdisplay'] = "Smelltu til að sýna";
-$text['clickhide'] = "Smelltu til að fela";
-$text['forgot1'] = "<strong>Ertu búinn að gleyma notendanafninu eða lykilorðinu?</strong><br />Sláðu inn netfangið þitt hér fyrir neðan og við sendum þér notendanafnið.";
-$text['forgot2'] = "Sláðu inn netfangið hér fyrir ofan og notendanafnið fyrir neðan til að fá nýtt lykilorð (þér verður sent tímabundið lykilorð).";
-$text['newpass'] = "Nýja bráðarbirgða lykilorðið þitt";
-$text['usersent'] = "Notendanafnð hefur verið sent á netfangið þitt.";
-$text['pwdsent'] = "Nýja bráðarbirgða lykilorðið hefur verið sent á netfangið þitt.";
-$text['loginnotsent2'] = "Þetta netfang er ekki til á skrá hjá okkur, engar upplýsingar hafa verið sendar.";
-$text['loginnotsent3'] = "Þetta netfang og/eða notendanafn er ekki til á skrá hjá okkur, engar upplýsingar hafa verið sendar.";
-$text['logininfo'] = "Notendanafnið þitt";
+$text['clickdisplay'] = "Smelltu til aï¿½ sï¿½na";
+$text['clickhide'] = "Smelltu til aï¿½ fela";
+$text['forgot1'] = "<strong>Ertu bï¿½inn aï¿½ gleyma notendanafninu eï¿½a lykilorï¿½inu?</strong><br />Slï¿½ï¿½u inn netfangiï¿½ ï¿½itt hï¿½r fyrir neï¿½an og viï¿½ sendum ï¿½ï¿½r notendanafniï¿½.";
+$text['forgot2'] = "Slï¿½ï¿½u inn netfangiï¿½ hï¿½r fyrir ofan og notendanafniï¿½ fyrir neï¿½an til aï¿½ fï¿½ nï¿½tt lykilorï¿½ (ï¿½ï¿½r verï¿½ur sent tï¿½mabundiï¿½ lykilorï¿½).";
+$text['newpass'] = "Nï¿½ja brï¿½ï¿½arbirgï¿½a lykilorï¿½iï¿½ ï¿½itt";
+$text['usersent'] = "Notendanafnï¿½ hefur veriï¿½ sent ï¿½ netfangiï¿½ ï¿½itt.";
+$text['pwdsent'] = "Nï¿½ja brï¿½ï¿½arbirgï¿½a lykilorï¿½iï¿½ hefur veriï¿½ sent ï¿½ netfangiï¿½ ï¿½itt.";
+$text['loginnotsent2'] = "ï¿½etta netfang er ekki til ï¿½ skrï¿½ hjï¿½ okkur, engar upplï¿½singar hafa veriï¿½ sendar.";
+$text['loginnotsent3'] = "ï¿½etta netfang og/eï¿½a notendanafn er ekki til ï¿½ skrï¿½ hjï¿½ okkur, engar upplï¿½singar hafa veriï¿½ sendar.";
+$text['logininfo'] = "Notendanafniï¿½ ï¿½itt";
 $text['collapseall'] = "Fella allt";
-$text['expandall'] = " útlista allt nánar ";
+$text['expandall'] = " ï¿½tlista allt nï¿½nar ";
 
 //media types
-$text['photos'] = "Ljósmyndir";
-$text['documents'] = "Skjöl";
+$text['photos'] = "Ljï¿½smyndir";
+$text['documents'] = "Skjï¿½l";
 $text['headstones'] = "Legsteinar";
-$text['histories'] = "Sögur";
-$text['recordings'] = "Upptökur";
-$text['videos'] = "Myndbönd";
+$text['histories'] = "Sï¿½gur";
+$text['recordings'] = "Upptï¿½kur";
+$text['videos'] = "Myndbï¿½nd";
 
 //For Google maps use - admin and public pages
-$admtext['placelevel'] = "Gerð staðar";
+$admtext['placelevel'] = "Gerï¿½ staï¿½ar";
 $admtext['level1'] = "Heimilisfang";
-$admtext['level2'] = "Staðsetning";
-$admtext['level3'] = "Bær/Borg";
+$admtext['level2'] = "Staï¿½setning";
+$admtext['level3'] = "Bï¿½r/Borg";
 $admtext['level4'] = "Hreppur";
-$admtext['level5'] = "Sýsla";
+$admtext['level5'] = "Sï¿½sla";
 $admtext['level6'] = "Land";
 $admtext['level0'] = "Ekki stillt";
 
-$text['male'] = "Maður";
+$text['male'] = "Maï¿½ur";
 $text['female'] = "Kona";
-$text['closewindow'] = "Loka þessum glugga";
-$text['loading'] = "Hleð inn síðu...";
+$text['closewindow'] = "Loka ï¿½essum glugga";
+$text['loading'] = "Hleï¿½ inn sï¿½ï¿½u...";
 
-$text['cancel'] = "Hætta við";
+$text['cancel'] = "Hï¿½tta viï¿½";
 $text['none'] = "ekkert";
-$text['mainton'] = "Viðhald í gangi";
+$text['mainton'] = "Viï¿½hald ï¿½ gangi";
 
 //moved here in 8.0.0
-$text['living'] = "Á lífi";
+$text['living'] = "ï¿½ lï¿½fi";
 $admtext['text_private'] = "Falin(n)";
-$admtext['confunlink'] = "Ertu viss um að þú viljir aftengja þennan einstakling sem maka í þessari fjölskyldu?";
-$admtext['confunlinkc'] = "Ertu viss um að þú viljir aftengja þennan einstakling sem barn í fjölskyldunni?";
-$admtext['confremchild'] = "Ertu viss um að þú viljir fjarlægja þetta barn frá fjölskyldunni? Einstklingurinn verður ekki eytt úr gagnagrunninum.";
-$admtext['enterfamilyid'] = "Sláðu inn fjölskyldu ID.";
-$admtext['yes'] = "Já";
+$admtext['confunlink'] = "Ertu viss um aï¿½ ï¿½ï¿½ viljir aftengja ï¿½ennan einstakling sem maka ï¿½ ï¿½essari fjï¿½lskyldu?";
+$admtext['confunlinkc'] = "Ertu viss um aï¿½ ï¿½ï¿½ viljir aftengja ï¿½ennan einstakling sem barn ï¿½ fjï¿½lskyldunni?";
+$admtext['confremchild'] = "Ertu viss um aï¿½ ï¿½ï¿½ viljir fjarlï¿½gja ï¿½etta barn frï¿½ fjï¿½lskyldunni? Einstklingurinn verï¿½ur ekki eytt ï¿½r gagnagrunninum.";
+$admtext['enterfamilyid'] = "Slï¿½ï¿½u inn fjï¿½lskyldu ID.";
+$admtext['yes'] = "Jï¿½";
 $admtext['no'] = "Nei";
-$admtext['BIRT'] = "Fæðing";
-$admtext['DEAT'] = "Andlát";
-$admtext['CHR'] = "Skírn";
-$admtext['BURI'] = "Jarðsetning";
-$admtext['BAPL'] = "Skírn (LDS)";
+$admtext['BIRT'] = "Fï¿½ï¿½ing";
+$admtext['DEAT'] = "Andlï¿½t";
+$admtext['CHR'] = "Skï¿½rn";
+$admtext['BURI'] = "Jarï¿½setning";
+$admtext['BAPL'] = "Skï¿½rn (LDS)";
 $admtext['ENDL'] = "Endowment (LDS)";
 $admtext['NICK'] = "Nickname";
 $admtext['TITL'] = "Title";
@@ -107,44 +107,44 @@ $admtext['NAME'] = "Fornafn";
 $admtext['SLGC'] = "Sealed to Parents (LDS)";
 $admtext['MARR'] = "Gifting";
 $admtext['SLGS'] = "Sealed to Spouse (LDS)";
-$admtext['hello'] = "Halló";
-$admtext['activated'] = "Notendareikningur þinn hefur verið búinn til.";
-$admtext['infois'] = "Skráningarupplýsingarnar þínar eru";
-$admtext['subjectline'] = "Ættfræði - Notendareikningur þinn hefur verið búinn til";
+$admtext['hello'] = "Hallï¿½";
+$admtext['activated'] = "Notendareikningur ï¿½inn hefur veriï¿½ bï¿½inn til.";
+$admtext['infois'] = "Skrï¿½ningarupplï¿½singarnar ï¿½ï¿½nar eru";
+$admtext['subjectline'] = "ï¿½ttfrï¿½ï¿½i - Notendareikningur ï¿½inn hefur veriï¿½ bï¿½inn til";
 
 //moved here in 8.1.0
-$admtext['adopted'] = "Ættleiðing";
-$admtext['birth'] = "fæðing";
-$admtext['foster'] = "Fóstur";
+$admtext['adopted'] = "ï¿½ttleiï¿½ing";
+$admtext['birth'] = "fï¿½ï¿½ing";
+$admtext['foster'] = "Fï¿½stur";
 $admtext['sealing'] = "sealing";
 //added in 11.0.3
 $admtext['putative'] = "putative";
 
 //added in 9.0.0
-$text['editprofile'] = "Breyta notendaupplýsingum";
+$text['editprofile'] = "Breyta notendaupplï¿½singum";
 
 //moved here in 9.0.0
-$text['letter'] = "Bréf"; //as in page size
-$text['legal'] = "Löglegt"; //as in page size
+$text['letter'] = "Brï¿½f"; //as in page size
+$text['legal'] = "Lï¿½glegt"; //as in page size
 $text['sunday'] = "Sunnudagur";  //first day of week on calendar
-$text['monday'] = "Mánudagur";
-$text['tuesday'] = "Þriðjudagur";
-$text['wednesday'] = "Miðvikudagur";
+$text['monday'] = "Mï¿½nudagur";
+$text['tuesday'] = "ï¿½riï¿½judagur";
+$text['wednesday'] = "Miï¿½vikudagur";
 $text['thursday'] = "Fimmtudagur";
-$text['friday'] = "Föstudagur";
+$text['friday'] = "Fï¿½studagur";
 $text['saturday'] = "Laugardagur";
 $text['contains'] = "inniheldur";
-$text['startswith'] = "byrjar á";
+$text['startswith'] = "byrjar ï¿½";
 
 //moved here in 9.0.4
 $text['top'] = "Efst";
 
 //moved here in 10.0.0
 $text['startingind'] = "Fyrsti einstaklingur";
-$text['enteremail'] = "Vinsamlegast sláðu inn netfang.";
-$text['page'] = "Síða";
-$text['go'] = "Áfram";
-$text['years'] = "ára";
+$text['enteremail'] = "Vinsamlegast slï¿½ï¿½u inn netfang.";
+$text['page'] = "Sï¿½ï¿½a";
+$text['go'] = "ï¿½fram";
+$text['years'] = "ï¿½ra";
 
 //added in 10.0.0
 $admtext['CONL'] = "Confirmation (LDS)";
@@ -154,27 +154,27 @@ $text['switchm'] = "Switch to mobile site";
 $text['switchs'] = "Switch to standard site";
 
 //added in 11.0.0
-$text['dna_tests'] = "DNA próf";
-$admtext['preflang'] = "Valið tungumál";
+$text['dna_tests'] = "DNA prï¿½f";
+$admtext['preflang'] = "Valiï¿½ tungumï¿½l";
 $text['problem'] = "An error has occurred in the TNG software. This could be due to a setup issue, an incomplete upgrade or a program bug. If you are the site owner, you may contact TNG support for help with this problem. Please copy the query below and paste it into your message.";
 $text['query'] = "Query";
 $text['fanchart'] = "Fan Chart";
 
 //moved here in 12.0.0
 $admtext['menu'] = "Valmynd";
-$admtext['dna_groups'] = "DNA hópar";
+$admtext['dna_groups'] = "DNA hï¿½par";
 $admtext['allbranches'] = "Allar greinar";
 $admtext['active'] = "Active";
 $admtext['select'] = "Velja";
 $admtext['selectall'] = "Velja allt";
 $admtext['clearall'] = "Hreinsa allt";
-$admtext['medialinks'] = "Tengingar við margmiðlun";
+$admtext['medialinks'] = "Tengingar viï¿½ margmiï¿½lun";
 
 //added here in 12.0.0
 $text['testgroup'] = "Test Group";
 $text['test_info_display'] = "Test Information To Display";
-$text['confirmed'] = "Staðfest";
-$text['predicted'] = "Spáð";
+$text['confirmed'] = "Staï¿½fest";
+$text['predicted'] = "Spï¿½ï¿½";
 $admtext['ancestral_surnames'] = "Ancestral surnames";
 $admtext['admin_notes'] = "Administrator notes";
 $admtext['mda'] = "Most distant ancestor";
@@ -188,8 +188,8 @@ $admtext['hvr1_values'] = "HVR1 Differences";
 $admtext['hvr2_values'] = "HVR2 Differences";
 $admtext['coding_reg'] = "Coding region differences";
 $text['keep_name_private'] = "Keep Name Private";
-$text['test_results'] = "Niðurstöður";
-$admtext['dna_tests'] = "DNA próf";
+$text['test_results'] = "Niï¿½urstï¿½ï¿½ur";
+$admtext['dna_tests'] = "DNA prï¿½f";
 $admtext['vendor'] = "Vendor";
 $admtext['markers'] = "Number of STR markers tested";
 $admtext['haplo'] = "Haplogroup";
@@ -204,7 +204,7 @@ $admtext['xdna_test'] = "X-DNA";
 $admtext['xtra_mut'] = "Extra mutations";
 
 //changed in 12.1.0
-$text['test_number'] = "Heiti/númer prófs";
+$text['test_number'] = "Heiti/nï¿½mer prï¿½fs";
 
 //added in 12.1.0
 $admtext['match_date'] = "Match Date";
@@ -246,4 +246,3 @@ $text['marrabbr'] = "G.";
 $english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
 @include($rootpath . $endrootpath . "languages/$english/cust_text.php");
 @include("cust_text.php");
-?>

@@ -273,4 +273,3 @@ if ($type == "child") {
 } else {
   header("Location: admin_editperson.php?personID=$personID&tree=$tree&added=1");
 }
-?>

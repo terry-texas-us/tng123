@@ -79,4 +79,3 @@ $size = @GetImageSize("$rootpath$usefolder/" . $imgrow['path'], $info);
 $adjheight = $size[1] - 1;
 
 $pagenav = getMediaNavigation($mediaID, $personID, $albumlinkID, $result, false);
-?>

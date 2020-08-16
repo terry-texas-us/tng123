@@ -53,4 +53,3 @@ $citationsrc = cleanIt($citationsrc);
 $truncated = truncateIt($citationsrc, 75);
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"id\":\"$citationID\",\"persfamID\":\"$persfamID\",\"tree\":\"$tree\",\"eventID\":\"$eventID\",\"display\":\"$truncated\",\"allow_edit\":$allow_edit,\"allow_delete\":$allow_delete}";
-?>

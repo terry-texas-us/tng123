@@ -531,4 +531,4 @@ if (!class_exists('TNGPDF')) {
   } // end of class
 
 }
-?>
+

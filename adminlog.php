@@ -34,4 +34,3 @@ function adminwritelog($string) {
   fclose($fp);
 }
 
-?>

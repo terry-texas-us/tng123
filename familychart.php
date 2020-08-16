@@ -599,4 +599,3 @@ function toggle(elem) {
 ";
 }
 
-?>
