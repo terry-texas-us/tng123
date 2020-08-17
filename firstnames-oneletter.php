@@ -1,7 +1,7 @@
 <?php
 $textpart = "surnames";
 @set_time_limit(0);
-include("tng_begin.php");
+include "tng_begin.php";
 
 $search_url = getURL("search", 1);
 $firstnames_url = getURL("firstnames", 1);

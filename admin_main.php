@@ -1,16 +1,15 @@
 <?php
-include("begin.php");
+include "begin.php";
 $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
 include($subroot . "mapconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "index";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 $admin_login = 2;
 
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 function adminMenuItem($destination, $label, $number, $message, $icon) {
   global $sitever;
 

@@ -1,11 +1,10 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, branch, living, private, gedcom FROM $people_table
 	WHERE personID=\"$personID\" AND gedcom=\"$tree\"";
 $result = tng_query($query);

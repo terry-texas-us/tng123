@@ -1,6 +1,6 @@
 <?php
 $textpart = "login";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $deftext = $text;
 include($cms['tngpath'] . "$mylanguage/text.php");

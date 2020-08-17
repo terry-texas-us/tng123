@@ -1,6 +1,6 @@
 <?php
 $textpart = "showphoto";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($cms['tngpath'] . "functions.php");
 include($cms['tngpath'] . "personlib.php");

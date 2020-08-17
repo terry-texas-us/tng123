@@ -1,12 +1,11 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
   $message = $admtext['norights'];
@@ -14,7 +13,7 @@ if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $repoID = ucfirst($repoID);
 setcookie("tng_tree", $tree, 0);

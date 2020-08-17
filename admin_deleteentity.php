@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "entities";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include($cms['tngpath'] . "checklogin.php");
@@ -13,7 +13,7 @@ if (!$allow_delete) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $original_name = $delitem;
 if ($session_charset != "UTF-8") {

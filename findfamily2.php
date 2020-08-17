@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "families";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 

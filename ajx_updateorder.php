@@ -1,7 +1,7 @@
 <?php
-include("begin.php");
-include("adminlib.php");
-include("$mylanguage/admintext.php");
+include "begin.php";
+include "adminlib.php";
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include($cms['tngpath'] . "checklogin.php");

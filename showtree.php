@@ -1,6 +1,6 @@
 <?php
 $textpart = "trees";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $showtree_url = getURL("showtree", 1);
 $statistics_url = getURL("statistics", 0);

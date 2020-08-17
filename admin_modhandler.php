@@ -11,21 +11,21 @@
       removing, and editing mod config files.
 */
 
-include("begin.php");
+include "begin.php";
 if (empty($rootpath)) {
   echo 'Error ', __LINE__, ': $rootpath missing! Please contact your system administrator.';
   exit;
 }
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "mods";
-include("getlang.php");
+include "getlang.php";
 
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-include("classes/version.php");
+include "checklogin.php";
+include "version.php";
+include "classes/version.php";
 
 define('NAMECOL', 1);
 define('FILECOL', 0);

@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "genlib.php");
 $textpart = "showphoto";
 include($cms['tngpath'] . "getlang.php");
@@ -21,7 +21,7 @@ $histories_url = getURL("histories", 1);
 
 initMediaTypes();
 
-include("showmediaxmllib.php");
+include "showmediaxmllib.php";
 
 if ($page < $totalpages) {
   $nextpage = $page + 1;

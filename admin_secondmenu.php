@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "secondary";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 if ($assignedtree) {
   $wherestr = "WHERE gedcom = \"$assignedtree\"";

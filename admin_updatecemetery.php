@@ -1,20 +1,19 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "mapconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "cemeteries";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_edit) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 if ($newfile && $newfile != "none") {
   if (substr($maplink, 0, 1) == "/") {

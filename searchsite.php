@@ -1,6 +1,6 @@
 <?php
 $textpart = "search";
-include("tng_begin.php");
+include "tng_begin.php";
 
 //if required login, redirect to search people?
 if ($requirelogin && !$currentuser) {

@@ -1,6 +1,6 @@
 <?php
 $textpart = "login";
-include("tng_begin.php");
+include "tng_begin.php";
 
 session_start();
 //$_SESSION['destinationpage8'] = $HTTP_REFERER;

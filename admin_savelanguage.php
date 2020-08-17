@@ -1,8 +1,6 @@
 <?php
-include("begin.php");
-include("adminlib.php");
-
-
+include "begin.php";
+include "adminlib.php";
 session_start();
 eval("\$newlanguage = preg_replace(\"/[^0-9]/\", '', \$newlanguage$instance);");
 
@@ -24,8 +22,7 @@ if (file_exists($languages_path . $row['folder'])) {
   setcookie("tngnorels_$newroot", $row['norels'], time() + 31536000, "/");
 }
 
-include("$languages_path$session_language/admintext.php");
+include "$languages_path$session_language/admintext.php";
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 header("Location: admin.php");

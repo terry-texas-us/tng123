@@ -1,6 +1,6 @@
 <?php
 $textpart = "search";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($cms['tngpath'] . "functions.php");
 

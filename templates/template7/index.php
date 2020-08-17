@@ -232,7 +232,7 @@ if (!$cms['support'] && $sitever != "mobile") {
                                                     <div class="normal">
 
                                                       <?php
-                                                      include("randomphoto.php"); // randomphoto code removed and replaced with include from userscripts directory Ken Roy
+                                                      include "randomphoto.php"; // randomphoto code removed and replaced with include from userscripts directory Ken Roy
                                                       ?>
 
                                                     </div>

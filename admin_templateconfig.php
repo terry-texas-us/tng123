@@ -1,15 +1,15 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "templates";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $templatespath = "templates";
 
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
-  include("version.php");
+  include "checklogin.php";
+  include "version.php";
 
   if ($assignedtree || !$allow_edit) {
     $message = $admtext['norights'];

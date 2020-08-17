@@ -6,10 +6,10 @@ if (isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language'
 $tngconfig = array();
 
 if (strpos($_SERVER['SCRIPT_NAME'], "/admin_updateconfig.php") === FALSE) {
-  include("processvars.php");
+  include "processvars.php";
 }
 
-include("subroot.php");
+include "subroot.php";
 include_once("tngconnect.php");
 include($tngconfig['subroot'] . "config.php");
 $subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : $cms['tngpath'];

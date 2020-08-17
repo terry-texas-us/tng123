@@ -1,14 +1,13 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "branches";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
-require("adminlog.php");
-require("deletelib.php");
+include "checklogin.php";
+require "adminlog.php";
+require "deletelib.php";
 
 if ($assignedbranch) {
   $message = $admtext['norights'];

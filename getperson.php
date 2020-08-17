@@ -1,7 +1,7 @@
 <?php
 $textpart = "getperson";
 $needMap = true;
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!$personID) {
   header("Location: thispagedoesnotexist.html");
@@ -289,7 +289,7 @@ $persontext .= "</table>\n";
 $persontext .= "<br/>\n";
 
 if (empty($tngconfig['hidedna']) && $rights['both']) {
-  include("dna_test_results_lib.php");
+  include "dna_test_results_lib.php";
 }
 
 //do parents

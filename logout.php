@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 if (!empty($cms['events'])) {
   include('cmsevents.php');
   cms_logout();

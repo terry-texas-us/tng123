@@ -1,6 +1,6 @@
 <?php
 $textpart = "reports";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($cms['tngpath'] . "functions.php");
 if (!isset($csv)) {

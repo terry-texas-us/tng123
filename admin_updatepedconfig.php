@@ -1,13 +1,13 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
-  include("version.php");
+  include "checklogin.php";
+  include "version.php";
 
   if ($assignedtree || !$allow_edit) {
     $message = $admtext['norights'];
@@ -16,7 +16,7 @@ if ($link) {
   }
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $fp = @fopen($subroot . "pedconfig.php", "w", 1);
 if (!$fp) {

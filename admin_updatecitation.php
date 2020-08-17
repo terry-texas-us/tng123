@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
-require("datelib.php");
+require "datelib.php";
 
 if (!$allow_edit) {
   $message = $admtext['norights'];
@@ -14,7 +14,7 @@ if (!$allow_edit) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 if ($session_charset != "UTF-8") {
   $citepage = tng_utf8_decode($citepage);

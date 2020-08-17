@@ -1,11 +1,11 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "genlib.php");
 $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
 include($cms['tngpath'] . "adminlib.php");
 $textpart = "index";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 $admin_login = 2;
 
 if ($link) {

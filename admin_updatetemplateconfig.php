@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "templates";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
   header("Location: admin_main.php");
@@ -11,8 +11,8 @@ if (!count($_POST)) {
 
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
-  include("version.php");
+  include "checklogin.php";
+  include "version.php";
 
   if ($assignedtree || !$allow_edit) {
     $message = $admtext['norights'];
@@ -21,7 +21,7 @@ if ($link) {
   }
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $gensettings = @file_get_contents($tngconfig['subroot'] . "config.php");
 $gensettings = str_replace("\$templatenum = \"$templatenum\"", "\$templatenum = \"$form_templatenum\"", $gensettings);

@@ -1,12 +1,11 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 $error_pfx = $ajax ? "error:" : "";
 
 $tree = $tree1;
@@ -20,7 +19,7 @@ if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $sourceID = ucfirst($sourceID);
 setcookie("tng_tree", $tree, 0);

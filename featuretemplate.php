@@ -12,7 +12,7 @@ exit;
 //1a: If you want to skip the login check when displaying this page, remove the comment marks from this line:
 //$nologin = 1;
 
-include("tng_begin.php");
+include "tng_begin.php";
 
 //STEP 3: Replace "Your Title Here" in the next line with the title of your page. Keep it surrounded with double quotes. 
 //  Do not include any double quotes within your title. This creates the primary headline at the top of the page.

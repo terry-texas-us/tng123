@@ -2,7 +2,7 @@
 // PDF Family Report
 // Author: Bret Rumsey
 //
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "genlib.php");
 include($cms['tngpath'] . "getlang.php");
 $textpart = "familygroup";

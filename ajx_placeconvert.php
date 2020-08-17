@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "findplace";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include($cms['tngpath'] . "checklogin.php");
@@ -11,7 +11,7 @@ if (!$allow_edit) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 if ($action == "convert") {

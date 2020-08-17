@@ -1,6 +1,6 @@
 <?php
 $textpart = "dna";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
   header("Location: thispagedoesnotexist.html");

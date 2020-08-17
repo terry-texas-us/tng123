@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "globallib.php");
 
 header("Content-type: image/png");

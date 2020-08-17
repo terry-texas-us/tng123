@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "misc";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $helplang = findhelp("misc_help.php");
 
 if ($assignedtree) {

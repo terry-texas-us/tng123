@@ -1,19 +1,18 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_media_edit && !$allow_media_add) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 initMediaTypes();
 
 function reorderMedia($query, $plink, $mediatypeID) {
@@ -39,7 +38,7 @@ function reorderMedia($query, $plink, $mediatypeID) {
 
 $thumbquality = 80;
 if (function_exists('imageJpeg')) {
-  include("imageutils.php");
+  include "imageutils.php";
 }
 
 $usefolder = $usecollfolder ? $mediatypes_assoc[$mediatypeID] : $mediapath;

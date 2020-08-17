@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 if (!$mediaID) {
   die("no args");
 }
 
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
@@ -63,7 +63,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         <td>
             <span class="subhead"><strong><?php echo $admtext['medialinks']; ?></strong></span><br/><br/>
             <form action="" name="form1" id="form1">
-              <?php include("micro_medialinks.php"); ?>
+              <?php include "micro_medialinks.php"; ?>
             </form>
         </td>
     </tr>

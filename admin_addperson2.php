@@ -1,20 +1,19 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
-require("adminlog.php");
-require("datelib.php");
+include "checklogin.php";
+require "adminlog.php";
+require "datelib.php";
 
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
   exit;
 }
 
-include("deletelib.php");
+include "deletelib.php";
 
 //this line needed to prevent garbage chars in IS0-8859-2
 header("Content-type:text/html; charset=" . $session_charset);

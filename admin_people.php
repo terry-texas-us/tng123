@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = true;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $varlist = array('newsearch', 'searchstring', 'tree', 'living', 'private', 'exactmatch', 'nokids', 'noparents', 'nospouse');
 foreach ($varlist as $myvar) {
   if (!isset(${$myvar})) {
@@ -249,7 +248,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
                               <?php
-                              include("treequery.php");
+                              include "treequery.php";
                               ?>
                                 <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                             </td>

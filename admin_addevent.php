@@ -1,20 +1,19 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "events";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_add) {
   $message = $admtext['norights'];
   exit;
 }
 
-require("datelib.php");
-require("adminlog.php");
+require "datelib.php";
+require "adminlog.php";
 
-include("geocodelib.php");
+include "geocodelib.php";
 
 $persfamID = ucfirst($persfamID);
 

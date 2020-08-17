@@ -1,12 +1,11 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "mods";
-include("getlang.php");
-include("$mylanguage/admintext.php");
+include "getlang.php";
+include "$mylanguage/admintext.php";
 
-include("version.php");
-
+include "version.php";
 function scan($dir) {
   $files = array_diff(scandir($dir), array('.', '..'));
   foreach ($files as $file) {
@@ -81,7 +80,7 @@ echo "The originals of files that have been changed are at cust_text.bak in the 
 // admin_cust_text_update.php created from cust_text_update.php  by Ken Roy 
 //		and following coded added to turn off Mod Manager options to display the Recommended Updates tab
 //	echo " Updating the Mod Manager Options to turn off the Recommended Updates tab.<br>\n";
-require("adminlog.php");
+require "adminlog.php";
 
 $optionsfile = $subroot . 'mmconfig.php';
 include $optionsfile;

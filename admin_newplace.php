@@ -1,16 +1,15 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "mapconfig.php");
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "findplace";
 //include "getlang.php";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_add) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));

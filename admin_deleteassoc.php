@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
-require("adminlog.php");
+require "adminlog.php";
 
 $query = "DELETE FROM $assoc_table WHERE assocID=\"$assocID\"";
 $result = tng_query($query);

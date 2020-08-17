@@ -4,7 +4,7 @@
 // Thanks to J. Kraber for his original implementation of this report.
 //
 $textpart = "getperson";
-include("tng_begin.php");
+include "tng_begin.php";
 $tngprint = 1;
 
 include($cms['tngpath'] . "personlib.php");

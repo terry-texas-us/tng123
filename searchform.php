@@ -1,6 +1,6 @@
 <?php
 $textpart = "search";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!empty($cms['events'])) {
   include('cmsevents.php');
@@ -60,7 +60,7 @@ tng_header($text['searchnames'], $flags);
 ?>
     <script type="text/javascript">
         //<![CDATA[
-        <?php include("branchlibjs.php"); ?>
+        <?php include "branchlibjs.php"; ?>
 
         function resetValues() {
           <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) {

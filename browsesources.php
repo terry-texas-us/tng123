@@ -1,6 +1,6 @@
 <?php
 $textpart = "sources";
-include("tng_begin.php");
+include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
 include($cms['tngpath'] . "functions.php");

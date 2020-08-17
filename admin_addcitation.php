@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
-require("datelib.php");
-require("adminlog.php");
+include "checklogin.php";
+require "datelib.php";
+require "adminlog.php";
 
 if (!$allow_add) {
   $message = $admtext['norights'];

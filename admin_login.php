@@ -1,10 +1,10 @@
 <?php
-include("begin.php");
+include "begin.php";
 $tngconfig['maint'] = "";
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "login";
-include("$mylanguage/admintext.php");
-include("tngmaillib.php");
+include "$mylanguage/admintext.php";
+include "tngmaillib.php";
 
 if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && $_SESSION['allow_admin'] && $currentuser) {
   $admin_url = getURL("admin", 0);

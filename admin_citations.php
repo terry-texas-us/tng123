@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
@@ -221,7 +221,7 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
                     <span id="checkmsg" class="normal"></span>
                 </td>
             </tr>
-          <?php include("micro_newsource.php"); ?>
+          <?php include "micro_newsource.php"; ?>
         </table>
         <p class="normal"><strong><?php echo $admtext['sevslater']; ?></strong></p>
     </form>

@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 require($subroot . "logconfig.php");
 include($cms['tngpath'] . "genlib.php");
 include($cms['tngpath'] . "getlang.php");

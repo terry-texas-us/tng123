@@ -2,17 +2,17 @@
 // Mod Manager Options written by Ken Roy to incorporate current mods to Mod Manager into the TNG code
 //			and support additional processing options
 // Based on the TNG v10.0.3 admin_modmgroptions.php module
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "mods";
-include("getlang.php");
+include "getlang.php";
 
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 //tng_db_connect($database_host,$database_name,$database_username,$database_password) or exit;
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 $admvers = "TNG12 V4.0 ";
 
 include $subroot . 'mmconfig.php';

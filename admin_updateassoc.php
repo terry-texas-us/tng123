@@ -1,12 +1,11 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
-require("datelib.php");
+include "checklogin.php";
+require "datelib.php";
 
 if (!$allow_edit) {
   $message = $admtext['norights'];
@@ -14,7 +13,7 @@ if (!$allow_edit) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $orgrelationship = $relationship;
 if ($session_charset != "UTF-8") {

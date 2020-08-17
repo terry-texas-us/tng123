@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "events";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include($cms['tngpath'] . "checklogin.php");
@@ -11,7 +11,7 @@ if (!$allow_delete) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $query = "SELECT addressID FROM $events_table WHERE eventID=\"$eventID\"";
 $result = tng_query($query);

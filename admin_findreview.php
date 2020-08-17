@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "review";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = true;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if ($type == "I") {
   $tng_search_preview = $_SESSION['tng_search_preview'] = 1;
   if ($newsearch) {

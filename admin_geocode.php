@@ -1,15 +1,14 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "findplace";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
-include("geocodelib.php");
-require("adminlog.php");
+include "checklogin.php";
+include "version.php";
+include "geocodelib.php";
+require "adminlog.php";
 
 $orgtree = $tree;
 $helplang = findhelp("places_help.php");

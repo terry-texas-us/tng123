@@ -1,6 +1,6 @@
 <?php
 $textpart = "reports";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $showreport_url = getURL("showreport", 1);
 $reports_url = getURL("reports", 0);

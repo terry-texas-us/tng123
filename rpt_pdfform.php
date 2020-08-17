@@ -13,7 +13,7 @@ switch ($_GET['pdftype']) {
 }
 
 $tngprint = 1;
-include("tng_begin.php");
+include "tng_begin.php";
 include($subroot . "pedconfig.php");
 
 if ($pdftype == "ped") {

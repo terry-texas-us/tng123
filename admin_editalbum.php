@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_media_edit && (!$allow_media_add || !$added)) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -403,7 +402,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                               $name = $plink['entityID'];
                             }
 
-                            include("eventmicro.php");
+                            include "eventmicro.php";
 
                             echo "<tr id=\"alink_{$plink['alinkID']}\"><td class=\"lightback\" align=\"center\">\n";
                             if ($type != "place") {

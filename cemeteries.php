@@ -1,6 +1,6 @@
 <?php
 $textpart = "headstones";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $browsemedia_url = getURL("browsemedia", 1);
 $headstones_url = getURL("headstones", 1);

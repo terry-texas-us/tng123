@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "trees";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 $tng_search_trees = $_SESSION['tng_search_trees'] = 1;
 if ($newsearch) {

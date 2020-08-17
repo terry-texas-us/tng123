@@ -3,8 +3,8 @@
 
 @set_time_limit(0);
 $textpart = "pedigree"; //Needed for tabs!!
-include("tng_begin.php");
-include("fan_config.php");
+include "tng_begin.php";
+include "fan_config.php";
 
 if (!$personID && !isset($needperson)) {
   die("no args");

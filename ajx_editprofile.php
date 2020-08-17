@@ -1,11 +1,10 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "login";
-include("$mylanguage/text.php");
+include "$mylanguage/text.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 //if no rights, just throw up a message. don't redirect
 //remove javascript. put that somewhere global
 

@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "reports";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 if ($assignedtree) {
   $message = $admtext['norights'];
@@ -27,7 +27,7 @@ tng_adminheader($admtext['whatsnew'], $flags);
 <script type="text/javascript">
     //<![CDATA[
     <?php
-    include("niceditmsgs.php");
+    include "niceditmsgs.php";
     ?>
     //]]>
 </script>

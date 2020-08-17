@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "reports";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $m = $mostwanted_table;
 if ($ID) {
   $query = "SELECT $m.title as title, $m.personID as personID, $m.description as description, $m.mediaID as mediaID, $m.gedcom as gedcom, mwtype, thumbpath,

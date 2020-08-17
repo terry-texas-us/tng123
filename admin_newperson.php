@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = true;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_add) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -46,7 +45,7 @@ include_once("eventlib_js.php");
 
     <?php
     if (!$assignedtree && !$assignedbranch) {
-      include("branchlibjs.php");
+      include "branchlibjs.php";
     } else {
       $query = "SELECT description FROM $branches_table WHERE gedcom = \"$assignedtree\" AND branch = \"$assignedbranch\" ORDER BY description";
       $branchresult = tng_query($query);

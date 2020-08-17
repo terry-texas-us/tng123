@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 $textpart = "login";
 include($cms['tngpath'] . "getlang.php");
 //include($cms['tngpath'] . "$mylanguage/text.php");

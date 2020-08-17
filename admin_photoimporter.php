@@ -1,13 +1,13 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-require("adminlog.php");
+include "checklogin.php";
+include "version.php";
+require "adminlog.php";
 
 if (!$allow_media_add || $assignedtree) {
   $message = $admtext['norights'];

@@ -1,6 +1,6 @@
 <?php
 $textpart = "gedcom";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $result = getPersonDataPlusDates($tree, $personID);
 if ($result) {

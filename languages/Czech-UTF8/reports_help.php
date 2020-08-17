@@ -1,5 +1,5 @@
 <?php
-include("../../helplib.php");
+include "../../helplib.php";
 echo help_header("Nápověda: Reporty");
 ?>
 

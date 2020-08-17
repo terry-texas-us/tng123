@@ -1,14 +1,13 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "mapconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "findplace";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $orgtree = $tree;
 $exptime = 0;
 if ($newsearch) {
@@ -235,7 +234,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                             <td>
                               <?php
                               if (!$tngconfig['places1tree']) {
-                                include("treequery.php");
+                                include "treequery.php";
                               }
                               ?>
                                 <input type="text" name="searchstring" value="<?php echo stripslashes($searchstring_noquotes); ?>" class="verylongfield">

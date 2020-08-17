@@ -1,10 +1,9 @@
 <?php
-include("begin.php");
-include("adminlib.php");
-include("$mylanguage/admintext.php");
+include "begin.php";
+include "adminlib.php";
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 initMediaTypes();
 
 $usefolder = $usecollfolder ? $mediatypes_assoc[$mediatypeID] : $mediapath;

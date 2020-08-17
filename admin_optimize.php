@@ -1,19 +1,18 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 if ($assignedtree) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 if ($table == "all") {
   $tablelist = array($cemeteries_table, $people_table, $families_table, $children_table, $languages_table, $places_table, $states_table,

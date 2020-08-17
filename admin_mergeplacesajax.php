@@ -1,17 +1,16 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "findplace";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_edit) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $query = "SELECT place, latitude, longitude, placelevel, zoom, notes FROM $places_table WHERE ID = \"$keep\"";
 $result = tng_query($query);

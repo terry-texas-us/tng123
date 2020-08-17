@@ -1,14 +1,13 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "mapconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "notes";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $orgtree = $tree;
 $exptime = 0;
 

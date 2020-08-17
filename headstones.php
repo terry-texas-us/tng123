@@ -1,7 +1,7 @@
 <?php
 $needMap = true;
 $textpart = "headstones";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($subroot . "mapconfig.php");
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";

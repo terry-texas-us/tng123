@@ -82,7 +82,7 @@ if ($result2) {
     $schecked = $plink['dontshow'] ? "" : " checked=\"checked\"";
     $alttext = $plink['altdescription'] || $plink['altnotes'] ? $admtext['yes'] : "&nbsp;";
 
-    include("eventmicro.php");
+    include "eventmicro.php";
 
     $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class=\"lightback\" align=\"center\">";
     $linkrows .= "<a href=\"#\" title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";

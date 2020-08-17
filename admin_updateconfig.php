@@ -1,9 +1,9 @@
 <?php
-include("begin.php");
-include("processvars.php");
-include("adminlib.php");
+include "begin.php";
+include "processvars.php";
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
   header("Location: admin_main.php");
@@ -17,8 +17,8 @@ if (!$safety) {
 
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
-  include("version.php");
+  include "checklogin.php";
+  include "version.php";
 
   if ($assignedtree || !$allow_edit) {
     $message = $admtext['norights'];
@@ -39,7 +39,7 @@ $tng_footermsg = preg_replace("/\"/", "\\\"", $tng_footermsg);
 
 $doctype = addslashes($doctype);
 
-require("adminlog.php");
+require "adminlog.php";
 
 $fp = @fopen($subroot . "config.php", "w", 1);
 if (!$fp) {

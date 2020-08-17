@@ -1,11 +1,10 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 if ($session_charset != "UTF-8") {
   $criteria = tng_utf8_decode($criteria);
   $myffirstname = tng_utf8_decode($myffirstname);

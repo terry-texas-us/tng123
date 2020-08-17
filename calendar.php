@@ -10,7 +10,7 @@
  */
 
 $textpart = "search";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $getperson_url = getURL("getperson", 1);
 $familygroup_url = getURL("familygroup", 1);

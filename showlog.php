@@ -1,6 +1,6 @@
 <?php
 $textpart = "showlog";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!$allow_admin) {
   $message = $admtext['norights'];

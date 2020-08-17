@@ -1,14 +1,14 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
+include "checklogin.php";
 @set_time_limit(0);
 
-require("adminlog.php");
+require "adminlog.php";
 
 if (!$allow_media_add) {
   echo $admtext['norights'];
@@ -22,7 +22,7 @@ initMediaTypes();
 $thumbquality = 80;
 $maxsizeallowed = 1000; //KB
 if (function_exists('imageJpeg')) {
-  include("imageutils.php");
+  include "imageutils.php";
 }
 
 $query = "SELECT mediaID, path, thumbpath, mediatypeID, usecollfolder, form, description FROM $media_table where path != \"\"";

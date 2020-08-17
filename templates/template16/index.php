@@ -78,7 +78,7 @@ $search .= "</form>\n";
                           <h3><?php echo $text['featphoto']; ?></h3>
                         <?php
                         $rp_maxwidth = "100%";
-                        include("randomphoto.php");
+                        include "randomphoto.php";
                         ?>
                       </div>
                       <!-- RANDOM PHOTO CODE ENDS HERE -->

@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "users";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $helplang = findhelp("users_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
@@ -16,7 +15,7 @@ tng_adminheader($admtext['emailusers'], $flags);
 <script language="JavaScript" src="js/selectutils.js"></script>
 <SCRIPT language="JavaScript" type="text/javascript">
   <?php
-  include("branchlibjs.php");
+  include "branchlibjs.php";
   ?>
 
   function validateForm() {

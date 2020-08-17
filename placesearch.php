@@ -1,7 +1,7 @@
 <?php
 $textpart = "search";
 $needMap = true;
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!$psearch) {
   exit;

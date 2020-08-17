@@ -1,16 +1,15 @@
 <?php
 //This page written and contributed by Bert Deelman. Thanks, Bert!
-include("begin.php");
+include "begin.php";
 include($subroot . "logconfig.php");
 include($subroot . "importconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 $file_uploads = (bool)ini_get("file_uploads");
 $safe_mode = (bool)ini_get("safe_mode");
 

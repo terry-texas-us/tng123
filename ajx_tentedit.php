@@ -1,6 +1,6 @@
 <?php
 $textpart = "getperson";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $factfield = $datefield = $placefield = "";
 

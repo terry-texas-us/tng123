@@ -1,6 +1,6 @@
 <?php
 $textpart = "timeline";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $timeline = $_SESSION['timeline'];
 if (!is_array($timeline)) {

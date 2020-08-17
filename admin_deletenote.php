@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "notes";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
-require("adminlog.php");
+require "adminlog.php";
 
 if ($noteID) {
   $query = "DELETE FROM $citations_table WHERE eventID=\"{$tngconfig['noteprefix']}$noteID{$tngconfig['notesuffix']}\"";

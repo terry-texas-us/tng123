@@ -1,6 +1,6 @@
 <?php
 $textpart = "showphoto";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!is_numeric($mediaID)) {
   header("Location: thispagedoesnotexist.html");

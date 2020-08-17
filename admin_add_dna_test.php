@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
-include("datelib.php");
+include "begin.php";
+include "adminlib.php";
+include "datelib.php";
 $textpart = "dna";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
+include "checklogin.php";
 
 if (!$allow_add) {
   $message = $admtext['norights'];
@@ -14,7 +14,7 @@ if (!$allow_add) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $thumbpath = stripslashes($thumbpath);
 

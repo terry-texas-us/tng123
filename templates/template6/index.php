@@ -112,7 +112,7 @@ if ($sitever == "mobile") {
                 <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""/><br/>
                 <!--	<center> ** removed since there is not a good way to center images -->
               <?php
-              include("randomphoto.php");
+              include "randomphoto.php";
               ?>
                 <p class="center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo $text['viewphotos']; ?></a>]</p>
                 <!--	</center> ** removed since there is not a good way to center images -->

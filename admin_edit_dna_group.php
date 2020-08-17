@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "dna";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));

@@ -2,7 +2,7 @@
 // The following page was created by Roger L. Smith (roger@ERC.MsState.Edu), 
 // copyright July 2003. Used by permission.
 $textpart = "stats";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $search_url = getURL("search", 1);
 $surnames_oneletter_url = getURL("surnames-oneletter", 1);

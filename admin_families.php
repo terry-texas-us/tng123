@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "families";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if ($newsearch) {
   $exptime = 0;
   setcookie("tng_search_families_post[search]", $searchstring, $exptime);
@@ -201,7 +200,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             <td><?php echo $admtext['searchfor']; ?>:</td>
                             <td>
                               <?php
-                              include("treequery.php");
+                              include "treequery.php";
                               ?>
                                 <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                             </td>

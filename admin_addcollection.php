@@ -1,16 +1,15 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_add) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $display_org = stripslashes($display);
 

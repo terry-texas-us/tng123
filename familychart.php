@@ -1,9 +1,9 @@
 <?php
 //Original code by Chris Moss
 
-include("famconfig.php");
+include "famconfig.php";
 $textpart = 'pedigree';
-include("tng_begin.php");
+include "tng_begin.php";
 
 $reverse = $rev;
 

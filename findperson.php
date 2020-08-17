@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "adminlib.php");
 $textpart = "people";
 include($cms['tngpath'] . "getlang.php");

@@ -1,7 +1,7 @@
 <?php
 $textpart = "whatsnew";
 
-include("tng_begin.php");
+include "tng_begin.php";
 if ($requirelogin && !$_SESSION['currentuser']) {
   header("Location:$homepage");
   exit;

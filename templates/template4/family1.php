@@ -1,5 +1,5 @@
 <?php
-include("tng_begin.php");
+include "tng_begin.php";
 
 //  $logstring should contain the URL for your family stories
 //	writelog creates an entry in the Access Log

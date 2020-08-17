@@ -2,7 +2,7 @@
 $textpart = "search";
 $order = "";
 $needMap = true;
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($cms['tngpath'] . "searchlib.php");
 

@@ -1,11 +1,10 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "trees";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 //permissions
 if ($assignedtree || !$allow_edit) {
   $message = $admtext['norights'];

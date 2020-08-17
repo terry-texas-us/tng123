@@ -1,14 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "timeline";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
-
+include "checklogin.php";
+include "version.php";
 $tng_search_tlevents = $_SESSION['tng_search_tlevents'];
 
 $query = "SELECT * FROM $tlevents_table WHERE tleventID = \"$tleventID\"";

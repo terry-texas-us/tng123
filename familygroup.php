@@ -1,6 +1,6 @@
 <?php
 $textpart = "familygroup";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($cms['tngpath'] . "personlib.php");
 

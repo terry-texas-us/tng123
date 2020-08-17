@@ -1,6 +1,6 @@
 <?php
 $textpart = "surnames";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $topnum = preg_replace("/[^0-9]/", '', $topnum);
 

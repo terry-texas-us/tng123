@@ -1,6 +1,6 @@
 <?php
 $textpart = "places";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $placesearch_url = getURL("placesearch", 1);
 $places_oneletter_url = getURL("places-oneletter", 1);

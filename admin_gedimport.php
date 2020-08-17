@@ -8,15 +8,14 @@ if ($umfs < 15) {
   @ini_set("post_max_size", "15M");
 }
 
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "gedimport";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_add || !$allow_edit || $assignedbranch) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -24,13 +23,13 @@ if (!$allow_add || !$allow_edit || $assignedbranch) {
 }
 
 include($subroot . "importconfig.php");
-require("datelib.php");
-require("gedimport_trees.php");
-require("gedimport_families.php");
-require("gedimport_sources.php");
-require("gedimport_people.php");
-require("gedimport_misc.php");
-require("adminlog.php");
+require "datelib.php";
+require "gedimport_trees.php";
+require "gedimport_families.php";
+require "gedimport_sources.php";
+require "gedimport_people.php";
+require "gedimport_misc.php";
+require "adminlog.php";
 $today = date("Y-m-d H:i:s");
 
 $readmsecs = (!empty($tngimpcfg['readmsecs']) && is_numeric($tngimpcfg['readmsecs'])) ? $tngimpcfg['readmsecs'] : 750;  //every 750 milliseconds

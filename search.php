@@ -1,7 +1,7 @@
 <?php
 $textpart = "search";
 $order = "";
-include("tng_begin.php");
+include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
 include($cms['tngpath'] . "searchlib.php");

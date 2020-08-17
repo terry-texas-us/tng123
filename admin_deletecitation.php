@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
-require("adminlog.php");
+require "adminlog.php";
 
 $query = "DELETE FROM $citations_table WHERE citationID=\"$citationID\"";
 $result = @tng_query($query);

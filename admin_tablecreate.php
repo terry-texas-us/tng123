@@ -1,16 +1,16 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
-  include("version.php");
+  include "checklogin.php";
+  include "version.php";
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 if ($assignedtree) {
   $message = $admtext['norights'];
@@ -20,7 +20,7 @@ if ($assignedtree) {
 
 $badtables = "";
 $collation = "";
-include("tabledefs.php");
+include "tabledefs.php";
 
 if (!$badtables) {
   adminwritelog($admtext['createtables']);

@@ -1,6 +1,6 @@
 <?php
 $textpart = "surnames";
-include("tng_begin.php");
+include "tng_begin.php";
 
 $search_url = getURL("search", 1);
 $firstnames_oneletter_url = getURL("firstnames-oneletter", 1);

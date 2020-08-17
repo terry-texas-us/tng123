@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "families";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_add) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -87,7 +86,7 @@ include_once("eventlib_js.php");
 
     <?php
     if (!$assignedtree && !$assignedbranch) {
-      include("branchlibjs.php");
+      include "branchlibjs.php";
     } else {
       $swapbranches = "";
     }

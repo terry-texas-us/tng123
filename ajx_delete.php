@@ -1,7 +1,7 @@
 <?php
-include("begin.php");
-include("adminlib.php");
-include("$mylanguage/admintext.php");
+include "begin.php";
+include "adminlib.php";
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include($cms['tngpath'] . "checklogin.php");
@@ -10,8 +10,8 @@ if (!$allow_media_delete) {
   exit;
 }
 
-require("adminlog.php");
-require("deletelib.php");
+require "adminlog.php";
+require "deletelib.php";
 
 function getID($fields, $table, $id, $idname = "ID") {
   $query = "SELECT $fields FROM $table WHERE $idname = \"$id\"";
@@ -52,7 +52,7 @@ switch ($t) {
     $logmsg = $admtext['deleted'] . ": {$admtext['language']} $id";
     break;
   case "media":
-    require("medialib.php");
+    require "medialib.php";
 
     resortMedia($id);
     if ($confirm || $tngconfig['mediadel'] == 1) {
@@ -234,7 +234,7 @@ switch ($t) {
     break;
   case "branch":
     $branch = $id;
-    require("branchlib.php");
+    require "branchlib.php";
 
     $logmsg = $admtext['deleted'] . ": {$admtext['branch']} $id";
     break;

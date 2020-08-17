@@ -6,15 +6,14 @@ if ($umfs < 10) {
   @ini_set("upload_max_filesize", "10M");
 }
 
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "gedimport";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_add || !$allow_add || !$allow_edit || $assignedbranch) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -22,7 +21,7 @@ if (!$allow_add || !$allow_add || !$allow_edit || $assignedbranch) {
 }
 
 include($subroot . "importconfig.php");
-require("adminlog.php");
+require "adminlog.php";
 $today = date("Y-m-d H:i:s");
 
 global $prefix;

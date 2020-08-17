@@ -1,12 +1,11 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "reports";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 $query = "SELECT thumbpath,	usecollfolder, description, notes, mediatypeID FROM $media_table WHERE mediaID = \"$mediaID\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);

@@ -1,14 +1,13 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "users";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
-require("adminlog.php");
-include("tngmaillib.php");
+include "checklogin.php";
+require "adminlog.php";
+include "tngmaillib.php";
 
 if ($assignedtree) {
   $message = $admtext['norights'];

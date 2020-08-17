@@ -1,13 +1,13 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "genlib.php");
 include($cms['tngpath'] . "adminlib.php");
 $textpart = "index";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 if ($link) {
-  include("checklogin.php");
+  include "checklogin.php";
 }
 ?>
 <!-- frames -->

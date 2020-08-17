@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "dna";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_edit) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -150,7 +149,7 @@ $atsurnamesarr = array();
 $atsurnamesexc = array();
 $atsurnamesexc = explode(',', $surnameexcl);
 $perID = array();
-include("tngdblib.php");
+include "tngdblib.php";
 
 function get_atdna_ancestor_surnames($personID, $tree, $type) {
   global $atsurnamesarr, $atsurnamesexc, $perID, $numgens;
@@ -577,7 +576,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
             <td class="tngshadow" id="linkstd">
               <?php echo displayToggle("plus2", 1, "links", $admtext['test_links'] . " (<span id=\"linkcount\">$numlinks</span>)", $admtext['linkssubt']); ?>
 
-              <?php include("micro_dnalinks.php"); ?>
+              <?php include "micro_dnalinks.php"; ?>
             </td>
         </tr>
 

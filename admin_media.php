@@ -1,13 +1,13 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "mapconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = true;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 include_once("tngdblib.php");
 
 $maxnoteprev = 350;  //don't use the global value here because we always want to truncate
@@ -240,7 +240,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                               <?php
                               $newwherestr = $wherestr;
                               $wherestr = $orgwherestr;
-                              include("treequery.php");
+                              include "treequery.php";
                               $wherestr = $newwherestr;
                               ?>
                                 <input type="text" name="searchstring" value="<?php echo $originalstring; ?>" class="longfield">

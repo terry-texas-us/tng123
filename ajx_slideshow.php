@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "genlib.php");
 $textpart = "showphoto";
 include($cms['tngpath'] . "getlang.php");
@@ -23,7 +23,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           <?php
           initMediaTypes();
 
-          include("showmediaxmllib.php");
+          include "showmediaxmllib.php";
 
           echo "<p class=\"adminnav topmargin\">$pagenav</p>";
           echo "<p class=\"subhead\"><strong>" . truncateIt($description, 100) . "</strong></p>\n";

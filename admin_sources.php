@@ -1,12 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "sources";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 if ($newsearch) {
   $exptime = 0;
@@ -158,7 +158,7 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
                               <?php
-                              include("treequery.php");
+                              include "treequery.php";
                               ?>
                                 <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                             </td>

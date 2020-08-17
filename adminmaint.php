@@ -1,13 +1,13 @@
 <?php
-include("begin.php");
+include "begin.php";
 $tngconfig['maint'] = "";
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $maintenance_mode = true;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 tng_adminheader($admtext['maintmode'], '');
 ?>

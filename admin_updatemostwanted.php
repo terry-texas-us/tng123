@@ -1,17 +1,16 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "reports";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_edit && !$allow_add) {
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 if ($session_charset != "UTF-8") {
   $title = tng_utf8_decode($title);

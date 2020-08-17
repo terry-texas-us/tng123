@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "photos";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_media_add) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -398,7 +397,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
     switchOnType(document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value);
     <?php
-    include("niceditmsgs.php");
+    include "niceditmsgs.php";
     ?>
 </script>
 <script type="text/javascript" src="js/nicedit.js"></script>

@@ -1,6 +1,6 @@
 <?php
 $nologin = 1;
-include("tng_begin.php");
+include "tng_begin.php";
 
 $dataprotect_url = getURL("data_protection_policy", 0);
 

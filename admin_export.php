@@ -1,14 +1,13 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "importconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "trees";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_ged && $assignedtree) {
   $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = \"$assignedtree\"";
   $result = tng_query($query);
@@ -43,7 +42,7 @@ tng_adminheader($admtext['gedexport'], $flags);
 ?>
 <script type="text/javascript">
   <?php
-  include("branchlibjs.php");
+  include "branchlibjs.php";
   ?>
 
   function toggleStuff() {

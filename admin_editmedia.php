@@ -1,16 +1,15 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "mapconfig.php");
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "photos";
 //include "getlang.php";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if (!$allow_media_edit && (!$allow_media_add || !$added)) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -18,7 +17,7 @@ if (!$allow_media_edit && (!$allow_media_add || !$added)) {
 }
 $showmedia_url = getURL("showmedia", 1);
 
-include("showmedialib.php");
+include "showmedialib.php";
 
 $query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $media_table WHERE mediaID = \"$mediaID\"";
 $result = tng_query($query);
@@ -480,7 +479,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
             <td class="tngshadow" id="linkstd">
               <?php echo displayToggle("plus2", 1, "links", $admtext['medialinks'] . " (<span id=\"linkcount\">$numlinks</span>)", $admtext['linkssubt']); ?>
 
-              <?php include("micro_medialinks.php"); ?>
+              <?php include "micro_medialinks.php"; ?>
             </td>
         </tr>
 
@@ -734,7 +733,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     toggleMediaURL();
     var findform = document.form1;
     <?php
-    include("niceditmsgs.php");
+    include "niceditmsgs.php";
     ?>
 </script>
 <script type="text/javascript" src="js/nicedit.js"></script>

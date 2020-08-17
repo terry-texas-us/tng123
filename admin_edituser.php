@@ -1,13 +1,12 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "users";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 if ($assignedtree || !$allow_edit) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -59,7 +58,7 @@ tng_adminheader($admtext['modifyuser'], $flags);
 <script type="text/javascript" src="js/users.js"></script>
 <script type="text/javascript">
   <?php
-  include("branchlibjs.php");
+  include "branchlibjs.php";
   ?>
 
   function validateForm() {

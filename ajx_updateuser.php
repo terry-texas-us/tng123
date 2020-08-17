@@ -1,12 +1,11 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "users";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
-require("adminlog.php");
+include "checklogin.php";
+require "adminlog.php";
 
 if (!$currentuser || $currentuser != $_POST['orguser']) {
   $message = $admtext['norights'];

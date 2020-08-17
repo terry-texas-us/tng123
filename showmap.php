@@ -1,7 +1,7 @@
 <?php
 $textpart = "headstones";
 $needMap = true;
-include("tng_begin.php");
+include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 include($subroot . "mapconfig.php");
 

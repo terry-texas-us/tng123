@@ -1,11 +1,10 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_edit) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));

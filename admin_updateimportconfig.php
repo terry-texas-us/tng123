@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
   header("Location: admin_main.php");
@@ -10,8 +10,7 @@ if (!count($_POST)) {
 }
 
 if ($link) {
-  include("checklogin.php");
-
+  include "checklogin.php";
   if ($assignedtree || !$allow_edit) {
     $message = $admtext['norights'];
     header("Location: admin_login.php?message=" . urlencode($message));
@@ -19,7 +18,7 @@ if ($link) {
   }
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 $fp = @fopen($subroot . "importconfig.php", "w", 1);
 if (!$fp) {

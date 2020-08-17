@@ -52,7 +52,7 @@ function tng_adminheader($title, $flags) {
     echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\"/>\n";
   }
   echo "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
-  include("adminmeta.php");
+  include "adminmeta.php";
   echo "<script type=\"text/javascript\">\n";
   echo "function toggleAll(flag) {\n";
   echo "for( var i = 0; i < document.form2.elements.length; i++ ) {\n";

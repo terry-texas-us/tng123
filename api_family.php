@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($cms['tngpath'] . "genlib.php");
 $textpart = "familygroup";
 include($cms['tngpath'] . "getlang.php");

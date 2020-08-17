@@ -1,13 +1,13 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
+  include "checklogin.php";
   if ($assignedtree) {
     echo $admtext['norights'];
     exit;

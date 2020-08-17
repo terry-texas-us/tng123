@@ -1,15 +1,14 @@
 <?php
-include("begin.php");
+include "begin.php";
 include($subroot . "importconfig.php");
-include("adminlib.php");
+include "adminlib.php";
 $textpart = "setup";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
-  include("version.php");
-
+  include "checklogin.php";
+  include "version.php";
   if ($assignedtree || !$allow_edit) {
     $message = $admtext['norights'];
     header("Location: admin_login.php?message=" . urlencode($message));

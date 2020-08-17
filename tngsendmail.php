@@ -1,5 +1,5 @@
 <?php
-include("begin.php");
+include "begin.php";
 $tngconfig['maint'] = "";
 include($cms['tngpath'] . "genlib.php");
 $textpart = "gedcom";

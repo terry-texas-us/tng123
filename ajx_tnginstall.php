@@ -4,9 +4,9 @@ if (isset($cms['support']) || isset($cms['tngpath']) || isset($_GET['lang']) || 
   die("Sorry!");
 }
 $tngconfig = array();
-include("processvars.php");
-include("subroot.php");
-include("tngconnect.php");
+include "processvars.php";
+include "subroot.php";
+include "tngconnect.php";
 include($tngconfig['subroot'] . "config.php");
 $subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : $cms['tngpath'];
 

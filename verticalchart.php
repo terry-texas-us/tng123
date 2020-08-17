@@ -1,6 +1,6 @@
 <?php
 $textpart = "pedigree";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($subroot . "pedconfig.php");
 if (!$personID && !isset($needperson)) {

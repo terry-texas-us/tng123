@@ -1,6 +1,6 @@
 <?php
 $textpart = "reports";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!empty($cms['events'])) {
   include('cmsevents.php');

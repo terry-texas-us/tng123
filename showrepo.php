@@ -1,6 +1,6 @@
 <?php
 $textpart = "sources";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!$repoID) {
   header("Location: thispagedoesnotexist.html");

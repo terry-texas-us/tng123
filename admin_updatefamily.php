@@ -1,15 +1,14 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "families";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
+include "checklogin.php";
+require "adminlog.php";
+require "datelib.php";
 
-require("adminlog.php");
-require("datelib.php");
-
-include("geocodelib.php");
+include "geocodelib.php";
 
 $query = "SELECT ID, branch, edituser, edittime FROM $families_table WHERE familyID = \"$familyID\" and gedcom = \"$tree\"";
 $result = tng_query($query);

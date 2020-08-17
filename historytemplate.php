@@ -16,7 +16,7 @@ exit;
 //$nologin = 1;
 
 $cms['tngpath'] = "../";
-include("../tng_begin.php");
+include "../tng_begin.php";
 if (!$cms['support']) {
   $cms['tngpath'] = "../";
 }

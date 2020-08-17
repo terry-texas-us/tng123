@@ -6,17 +6,16 @@ if ($umfs < 15) {
   @ini_set("post_max_size", "15M");
 }
 
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "trees";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-
+include "checklogin.php";
+include "version.php";
 include($subroot . "importconfig.php");
-require("adminlog.php");
+require "adminlog.php";
 
 if (!$allow_ged && $assignedtree) {
   $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = \"$assignedtree\"";

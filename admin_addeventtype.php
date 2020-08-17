@@ -1,18 +1,17 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "eventtypes";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_add) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
   exit;
 }
 
-require("adminlog.php");
+require "adminlog.php";
 
 /*
 if (get_magic_quotes_gpc() == 0) {

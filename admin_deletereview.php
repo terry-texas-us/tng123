@@ -1,15 +1,14 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "review";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
-
+include "checklogin.php";
 $tng_search_preview = $_SESSION['tng_search_preview'];
 
-require("adminlog.php");
+require "adminlog.php";
 
 $query = "SELECT type FROM $temp_events_table WHERE tempID=\"$tempID\"";
 $result = tng_query($query);

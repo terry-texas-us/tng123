@@ -8,11 +8,11 @@
 // updated 11 May 2014 by Ken Roy
 //		- to add Show List in Batch option to control Affected Files List in Batch Updates popup
 
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "mods";
-include("getlang.php");
-include("$mylanguage/admintext.php");
+include "getlang.php";
+include "$mylanguage/admintext.php";
 //	$link = tng_db_connect($database_host,$database_name,$database_username,$database_password);
 //echo __FILE__,' ',__LINE__;print_r($_POST);exit;
 
@@ -23,8 +23,8 @@ if (!count($_POST['options'])) {
 $options = $_POST['options'];
 
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 if ($assignedtree || !$allow_edit) {
   $message = $admtext['norights'];
@@ -37,7 +37,7 @@ if (isset($_SESSION['sortby'])) {
   unset($_SESSION['sortby']);
 }
 
-require("adminlog.php");
+require "adminlog.php";
 $optionsfile = $subroot . 'mmconfig.php';
 if (!is_writeable($optionsfile)) {
   $_SESSION['err_msg'] = "{$admtext['checkwrite']} {$admtext['cantwrite']} $optionsfile !";

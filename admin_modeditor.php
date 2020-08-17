@@ -9,17 +9,17 @@ define('EDITP', 5);
 
 $debug = false;
 
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "mods";
-include("getlang.php");
+include "getlang.php";
 
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 tng_db_connect($database_host, $database_name, $database_username, $database_password, $database_port, $database_socket) or exit;
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
-include("classes/version.php");
+include "checklogin.php";
+include "version.php";
+include "classes/version.php";
 $thisfile = $_SERVER['PHP_SELF'];
 
 include $subroot . 'mmconfig.php';

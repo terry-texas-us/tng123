@@ -1,6 +1,6 @@
 <?php
 $textpart = "whatsnew";
-include("tng_begin.php");
+include "tng_begin.php";
 
 if (!empty($cms['events'])) {
   include('cmsevents.php');

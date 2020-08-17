@@ -38,17 +38,17 @@
 //     order.  Thus, the first line we encounter is the last line of the log entry.  But we use that
 //    last line as the entry header.
 
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "mods";
-include("getlang.php");
+include "getlang.php";
 
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 //tng_db_connect($database_host,$database_name,$database_username,$database_password) or exit;
 $admin_login = 1;
-include("checklogin.php");
-include("version.php");
+include "checklogin.php";
+include "version.php";
 
 // temporary: these can be set from an options file
 //include 'classes/mod.class.config.php';

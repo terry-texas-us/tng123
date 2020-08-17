@@ -1,19 +1,18 @@
 <?php
-include("begin.php");
-include("adminlib.php");
-include("$mylanguage/admintext.php");
+include "begin.php";
+include "adminlib.php";
+include "$mylanguage/admintext.php";
 
 $admin_login = true;
-include("checklogin.php");
-
+include "checklogin.php";
 if (!$allow_delete) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
   exit;
 }
 
-require("adminlog.php");
-require("deletelib.php");
+require "adminlog.php";
+require "deletelib.php";
 
 function getID($fields, $table, $id) {
   $query = "SELECT $fields FROM $table WHERE ID = \"$id\"";
@@ -179,7 +178,7 @@ foreach (array_keys($_POST) as $key) {
       $branch = $args[0];
       $tree = $args[1];
       $items[] = $tree . "/" . $branch;
-      require("branchlib.php");
+      require "branchlib.php";
     } elseif ($xcemaction) {
       $query3 = "SELECT cemname FROM $cemeteries_table WHERE cemeteryID = \"$thisid\"";
       $result3 = @tng_query($query3);

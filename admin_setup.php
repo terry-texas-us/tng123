@@ -1,7 +1,7 @@
 <?php
-include("processvars.php");
-include("subroot.php");
-include("tngconnect.php");
+include "processvars.php";
+include "subroot.php";
+include "tngconnect.php";
 if (!file_exists($subroot . "config.php")) {
   $subroot = $_GET['sr'];
 }
@@ -10,7 +10,7 @@ include($subroot . "config.php");
 $templatepfx = is_numeric($templatenum) ? "template" : "";
 $templatepath = $templateswitching && $templatenum ? "templates/$templatepfx$templatenum/" : "";
 
-include("adminlib.php");
+include "adminlib.php";
 if ($subroot != $_GET['sr']) {
   $subroot = $_GET['sr'];
 }
@@ -34,12 +34,12 @@ $session_language = $_SESSION['session_language'];
 $session_charset = $_SESSION['session_charset'];
 
 $languages_path = "languages/";
-include("getlang.php");
-include("$mylanguage/admintext.php");
+include "getlang.php";
+include "$mylanguage/admintext.php";
 $link = tng_db_connect($database_host, $database_name, $database_username, $database_password, $database_port, $database_socket);
 if ($link) {
   $admin_login = 1;
-  include("checklogin.php");
+  include "checklogin.php";
   if ($assignedtree) {
     $message = $admtext['norights'];
     header("Location: admin_login.php?message=" . urlencode($message));
@@ -61,7 +61,7 @@ if ($result !== FALSE) {
   tng_free_result($result);
 }
 
-include("version.php");
+include "version.php";
 
 $error_reporting = ((int)ini_get('error_reporting')) & E_NOTICE;
 

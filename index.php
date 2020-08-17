@@ -1,5 +1,5 @@
 <?php
-include("tng_begin.php");
+include "tng_begin.php";
 
 //Insert the following lines in your index.php to take advantage of template switching
 if ($templateswitching && $templatenum) {

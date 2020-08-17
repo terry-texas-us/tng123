@@ -1,17 +1,16 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "people";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include("checklogin.php");
+include "checklogin.php";
+require "adminlog.php";
+require "datelib.php";
 
-require("adminlog.php");
-require("datelib.php");
-
-include("geocodelib.php");
-include("deletelib.php");
+include "geocodelib.php";
+include "deletelib.php";
 
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {

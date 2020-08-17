@@ -1,8 +1,8 @@
 <?php
-include("begin.php");
-include("adminlib.php");
+include "begin.php";
+include "adminlib.php";
 $textpart = "events";
-include("$mylanguage/admintext.php");
+include "$mylanguage/admintext.php";
 
 include($cms['tngpath'] . "checklogin.php");
 
@@ -10,10 +10,10 @@ if (!$allow_edit) {
   exit;
 }
 
-require("datelib.php");
-require("adminlog.php");
+require "datelib.php";
+require "adminlog.php";
 
-include("geocodelib.php");
+include "geocodelib.php";
 
 if ($session_charset != "UTF-8") {
   $eventplace = tng_utf8_decode($eventplace);

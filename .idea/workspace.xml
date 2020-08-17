@@ -10,9 +10,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addnewacct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addnewacct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_add2albumxml.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add2albumxml.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_add_dna_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add_dna_group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_add_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add_dna_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_addalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addalbum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_addassoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addassoc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_addbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addbranch.php" afterDir="false" />
@@ -50,6 +52,7 @@
       <change beforePath="$PROJECT_DIR$/admin_checkfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_checkfile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_citations.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_citations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_cleartree.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_cleartree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_cust_text_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_cust_text_update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_data_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_data_validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_dataimport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dataimport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_defphotos.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_defphotos.php" afterDir="false" />
@@ -63,6 +66,8 @@
       <change beforePath="$PROJECT_DIR$/admin_deletereview.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_deletereview.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_deleteselected.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_deleteselected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_diagnostics.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_diagnostics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_dna_groups.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dna_groups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_dna_tests.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dna_tests.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_edit_dna_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edit_dna_group.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_edit_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edit_dna_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_editalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editalbum.php" afterDir="false" />
@@ -124,7 +129,12 @@
       <change beforePath="$PROJECT_DIR$/admin_mergerepos.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mergerepos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_mergesources.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mergesources.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_misc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_misc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modeditor.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modeditor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modhandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modhandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modoptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modoptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modupdates.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modupdates.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_mostwanted.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mostwanted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_new_dna_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_new_dna_group.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_new_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_new_dna_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_newalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_newalbum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_newbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_newbranch.php" afterDir="false" />
@@ -173,6 +183,7 @@
       <change beforePath="$PROJECT_DIR$/admin_secondary.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_secondary.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_secondmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_secondmenu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_sendmailusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_sendmailusers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_setup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_showbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_showbranch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_showmodslog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_showmodslog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_sources.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_sources.php" afterDir="false" />
@@ -181,6 +192,8 @@
       <change beforePath="$PROJECT_DIR$/admin_thumbnails.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_thumbnails.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_timelineevents.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_timelineevents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_trees.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_trees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_update_dna_groups.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_update_dna_groups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_update_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_update_dna_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatealbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatealbum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updateassoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateassoc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatebranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatebranch.php" afterDir="false" />
@@ -196,6 +209,7 @@
       <change beforePath="$PROJECT_DIR$/admin_updatelogconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatelogconfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatemapconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemapconfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatemedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatemodoptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemodoptions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatemore.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemore.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatemostwanted.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemostwanted.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_updatenote.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatenote.php" afterDir="false" />
@@ -218,24 +232,79 @@
       <change beforePath="$PROJECT_DIR$/admin_utilities.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_utilities.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_valreport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_valreport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_whatsnewmsg.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_whatsnewmsg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlib.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminmaint.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminmaint.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminshowlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminshowlog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ahnentafel.php" beforeDir="false" afterPath="$PROJECT_DIR$/ahnentafel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_addbookmark.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_addbookmark.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_branchmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_branchmenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_caption.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_caption.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_checknewuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_checknewuser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_deletebookmark.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_deletebookmark.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_editfamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_editfamily.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_editperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_editperson.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_editprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_editprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_fampreview.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_fampreview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_famtimelinexml.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_famtimelinexml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_getlastcite.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_getlastcite.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_labels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_logxml.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_logxml.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_mediaconvert.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_mediaconvert.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_medialinks.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_medialinks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_newfamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_newfamily.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_newperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_newperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_pedjson.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_pedjson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_perspreview.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_perspreview.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_placeconvert.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_placeconvert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_savetentedit.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_savetentedit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_showbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_showbranch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_showmediaxml.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_showmediaxml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_slideshow.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_slideshow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_smallimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_smallimage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_tentedit.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_tentedit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_timelinexml.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_timelinexml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_tnginstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_tnginstall.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_updateorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_updateorder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_updateuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_updateuser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anniversaries.php" beforeDir="false" afterPath="$PROJECT_DIR$/anniversaries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anniversaries2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anniversaries2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_family.php" beforeDir="false" afterPath="$PROJECT_DIR$/api_family.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_person.php" beforeDir="false" afterPath="$PROJECT_DIR$/api_person.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/begin.php" beforeDir="false" afterPath="$PROJECT_DIR$/begin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks.php" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browse_dna_tests.php" beforeDir="false" afterPath="$PROJECT_DIR$/browse_dna_tests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsealbums.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsealbums.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsebranches.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsebranches.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsedocs.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsedocs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browseheadstones.php" beforeDir="false" afterPath="$PROJECT_DIR$/browseheadstones.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsemedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsemedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsenotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsenotes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsephotos.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsephotos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browserepos.php" beforeDir="false" afterPath="$PROJECT_DIR$/browserepos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsesources.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsesources.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsetrees-old.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsetrees-old.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsetrees.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsetrees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/calendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cemeteries.php" beforeDir="false" afterPath="$PROJECT_DIR$/cemeteries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelanguage.php" beforeDir="false" afterPath="$PROJECT_DIR$/changelanguage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_atdna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_atdna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_dna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_dna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_mtdna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_mtdna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_ydna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_ydna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_protection_policy.php" beforeDir="false" afterPath="$PROJECT_DIR$/data_protection_policy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deepindex.php" beforeDir="false" afterPath="$PROJECT_DIR$/deepindex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descend.php" beforeDir="false" afterPath="$PROJECT_DIR$/descend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descendtext.php" beforeDir="false" afterPath="$PROJECT_DIR$/descendtext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desctracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/desctracker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extrastree.php" beforeDir="false" afterPath="$PROJECT_DIR$/extrastree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/familychart.php" beforeDir="false" afterPath="$PROJECT_DIR$/familychart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/familygroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/familygroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/famsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/famsearchform.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearchform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fan.php" beforeDir="false" afterPath="$PROJECT_DIR$/fan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/featuretemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/featuretemplate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findalbummedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/findalbummedia.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findcemetery.php" beforeDir="false" afterPath="$PROJECT_DIR$/findcemetery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findciteform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findciteform.php" afterDir="false" />
@@ -243,7 +312,9 @@
       <change beforePath="$PROJECT_DIR$/findfamilyform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findfamilyform.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findform.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finditems.php" beforeDir="false" afterPath="$PROJECT_DIR$/finditems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/findperson.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findperson2.php" beforeDir="false" afterPath="$PROJECT_DIR$/findperson2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findpersonform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findpersonform.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findpersonform2.php" beforeDir="false" afterPath="$PROJECT_DIR$/findpersonform2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/findplace.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findplaceform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findplaceform.php" afterDir="false" />
@@ -251,7 +322,258 @@
       <change beforePath="$PROJECT_DIR$/findrepoform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findrepoform.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findsource2.php" beforeDir="false" afterPath="$PROJECT_DIR$/findsource2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findsourceform.php" beforeDir="false" afterPath="$PROJECT_DIR$/findsourceform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Danish/admintext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Danish/admintext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstnames-all.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstnames-all.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstnames-oneletter.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstnames-oneletter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstnames.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstnames.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstnames100.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstnames100.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedcom.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedcom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedform.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/getperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_marker.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_marker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headstones.php" beforeDir="false" afterPath="$PROJECT_DIR$/headstones.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heatmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/heatmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/historytemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/historytemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_newwin.php" beforeDir="false" afterPath="$PROJECT_DIR$/img_newwin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_viewer.php" beforeDir="false" afterPath="$PROJECT_DIR$/img_viewer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_plus_header_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/index_plus_header_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Afrikaans-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Afrikaans-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Afrikaans/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Afrikaans/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Arabic-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Arabic-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Chinese-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Chinese-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Croatian-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Croatian-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Croatian/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Croatian/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/albums_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/albums_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/assoc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/assoc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/backuprestore_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/backuprestore_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/branches_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/branches_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/cemeteries_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/cemeteries_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/citations_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/citations_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/collections_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/collections_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/config_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/config_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/data_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/data_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/dna_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/dna_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/events_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/events_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/eventtypes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/eventtypes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/families_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/families_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/importconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/importconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/index_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/index_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/languages_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/languages_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/logconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/logconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/mapconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/mapconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/media_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/media_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/misc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/misc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/modhandler_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/modhandler_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/modmanager_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/modmanager_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/more_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/more_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/mostwanted_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/mostwanted_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/notes2_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/notes2_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/notes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/notes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/pedconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/pedconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/people_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/people_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/places_googlemap_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/places_googlemap_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/places_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/places_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/reports_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/reports_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/repositories_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/repositories_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/second_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/second_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/setup_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/setup_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/sources_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/sources_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/templateconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/templateconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/tlevents_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/tlevents_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/trees_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/trees_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech-UTF8/users_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech-UTF8/users_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/albums_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/albums_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/assoc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/assoc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/backuprestore_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/backuprestore_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/branches_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/branches_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/cemeteries_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/cemeteries_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/citations_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/citations_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/collections_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/collections_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/config_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/config_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/data_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/data_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/dna_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/dna_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/events_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/events_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/eventtypes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/eventtypes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/families_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/families_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/importconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/importconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/index_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/index_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/languages_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/languages_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/logconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/logconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/mapconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/mapconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/media_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/media_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/misc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/misc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/modhandler_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/modhandler_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/modmanager_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/modmanager_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/more_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/more_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/mostwanted_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/mostwanted_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/notes2_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/notes2_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/notes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/notes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/pedconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/pedconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/people_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/people_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/places_googlemap_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/places_googlemap_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/places_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/places_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/reports_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/reports_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/repositories_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/repositories_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/second_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/second_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/setup_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/setup_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/sources_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/sources_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/templateconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/templateconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/tlevents_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/tlevents_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/trees_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/trees_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Czech/users_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Czech/users_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Danish-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Danish-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Danish/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Danish/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Dutch-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Dutch-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Dutch/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Dutch/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/albums_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/albums_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/assoc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/assoc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/backuprestore_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/backuprestore_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/branches_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/branches_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/cemeteries_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/cemeteries_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/citations_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/citations_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/collections_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/collections_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/config_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/config_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/data_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/data_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/dna_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/dna_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/events_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/events_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/eventtypes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/eventtypes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/families_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/families_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/importconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/importconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/index_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/index_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/languages_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/languages_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/logconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/logconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/mapconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/mapconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/media_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/media_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/misc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/misc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/modhandler_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/modhandler_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/modmanager_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/modmanager_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/more_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/more_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/mostwanted_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/mostwanted_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/notes2_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/notes2_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/notes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/notes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/pedconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/pedconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/people_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/people_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/places_googlemap_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/places_googlemap_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/places_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/places_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/reports_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/reports_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/repositories_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/repositories_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/second_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/second_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/setup_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/setup_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/sources_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/sources_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/templateconfig_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/templateconfig_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/tlevents_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/tlevents_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/trees_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/trees_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/English/users_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/English/users_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Finnish-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Finnish-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Finnish/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Finnish/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/French-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/French-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/French/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/French/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/French/index_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/French/index_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/German-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/German-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/German/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/German/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Greek-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Greek-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Icelandic-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Icelandic-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Icelandic/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Icelandic/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Italian-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Italian-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Italian/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Italian/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Norwegian-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Norwegian-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Norwegian/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Norwegian/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/albums_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/albums_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/assoc_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/assoc_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/cemeteries_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/cemeteries_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/citations_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/citations_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/collections_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/collections_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/events_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/events_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/families_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/families_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/index_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/index_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/media_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/media_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/more_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/more_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/notes_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/notes_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/people_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/people_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/places_googlemap_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/places_googlemap_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/places_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/places_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/repositories_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/repositories_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish-UTF8/sources_help.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish-UTF8/sources_help.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Polish/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Polish/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/PortugueseBR-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/PortugueseBR-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/PortugueseBR/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/PortugueseBR/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Romanian-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Romanian-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Romanian/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Romanian/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Russian-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Russian-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Serbian-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Serbian-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Serbian/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Serbian/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SerbianCyrillic-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SerbianCyrillic-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Slovak-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Slovak-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Slovak/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Slovak/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Spanish-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Spanish-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Spanish/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Spanish/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Swedish-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Swedish-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Swedish/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Swedish/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Turkish-UTF8/alltext.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Turkish-UTF8/alltext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maint.php" beforeDir="false" afterPath="$PROJECT_DIR$/maint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro_medialinks.php" beforeDir="false" afterPath="$PROJECT_DIR$/micro_medialinks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mostwanted.php" beforeDir="false" afterPath="$PROJECT_DIR$/mostwanted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newacctform.php" beforeDir="false" afterPath="$PROJECT_DIR$/newacctform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pedigree.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedigree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pedigreetext.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedigreetext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photoblock.php" beforeDir="false" afterPath="$PROJECT_DIR$/photoblock.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places-all.php" beforeDir="false" afterPath="$PROJECT_DIR$/places-all.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places-oneletter.php" beforeDir="false" afterPath="$PROJECT_DIR$/places-oneletter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places.php" beforeDir="false" afterPath="$PROJECT_DIR$/places.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places100.php" beforeDir="false" afterPath="$PROJECT_DIR$/places100.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/placesearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/placesearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/processlogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relateform.php" beforeDir="false" afterPath="$PROJECT_DIR$/relateform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relationship.php" beforeDir="false" afterPath="$PROJECT_DIR$/relationship.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relationship2.php" beforeDir="false" afterPath="$PROJECT_DIR$/relationship2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_descend.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_descend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_fam.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_fam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_ind.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_ind.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_pdfform.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_pdfform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_pedigree.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_pedigree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savelanguage.php" beforeDir="false" afterPath="$PROJECT_DIR$/savelanguage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savelanguage2.php" beforeDir="false" afterPath="$PROJECT_DIR$/savelanguage2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchform.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchsite.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchsite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/sendlogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/show_dna_test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/showalbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/showlog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showrepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/showrepo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showreport.php" beforeDir="false" afterPath="$PROJECT_DIR$/showreport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showsource.php" beforeDir="false" afterPath="$PROJECT_DIR$/showsource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showtree.php" beforeDir="false" afterPath="$PROJECT_DIR$/showtree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggest.php" beforeDir="false" afterPath="$PROJECT_DIR$/suggest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surnames-all.php" beforeDir="false" afterPath="$PROJECT_DIR$/surnames-all.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surnames-oneletter.php" beforeDir="false" afterPath="$PROJECT_DIR$/surnames-oneletter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surnames.php" beforeDir="false" afterPath="$PROJECT_DIR$/surnames.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surnames100.php" beforeDir="false" afterPath="$PROJECT_DIR$/surnames100.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switchcolor2.php" beforeDir="false" afterPath="$PROJECT_DIR$/switchcolor2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template16/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template16/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template4/family1.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template4/family1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template4/feature1.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template4/feature1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template6/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template6/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template7/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template7/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template8/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template8/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/timeline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeline2.php" beforeDir="false" afterPath="$PROJECT_DIR$/timeline2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngrss.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngrss.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngsendmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngsendmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verticalchart.php" beforeDir="false" afterPath="$PROJECT_DIR$/verticalchart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whatsnew.php" beforeDir="false" afterPath="$PROJECT_DIR$/whatsnew.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +625,8 @@
       <workItem from="1597599257974" duration="84000" />
       <workItem from="1597599452181" duration="793000" />
       <workItem from="1597600595024" duration="4819000" />
-      <workItem from="1597605481937" duration="6675000" />
+      <workItem from="1597605481937" duration="11057000" />
+      <workItem from="1597627811031" duration="440000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit after project code reformat">
       <created>1597598834728</created>
@@ -326,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597603836141</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Removed many commenented getlang.php includes.">
+      <created>1597615434966</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597615434966</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +707,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit after project code reformat" />
     <MESSAGE value="Removed redundant closing tags." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant closing tags." />
+    <MESSAGE value="Removed many commenented getlang.php includes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed many commenented getlang.php includes." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -397,14 +728,14 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="996" y="554" width="568" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.2560.1440@0.0.2560.1440" timestamp="1597595371349" />
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597604166524">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597619413407">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597604166524" />
-    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597603832719">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597619413407" />
+    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597615433169">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597603832719" />
+    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597615433169" />
     <state x="1160" y="370" width="771" height="452" key="Github.ShareDialog" timestamp="1597597593025">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -421,17 +752,17 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="782" y="365" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597606022889" />
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597603999851">
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597615450731">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597603999851" />
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597615450731" />
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1597599483610">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597599483610" />
-    <state x="987" y="453" width="587" height="592" key="find.popup" timestamp="1597615256477">
+    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597619363074">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="987" y="453" width="587" height="592" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597615256477" />
+    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597619363074" />
   </component>
 </project>

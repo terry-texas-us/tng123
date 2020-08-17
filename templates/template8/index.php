@@ -84,7 +84,7 @@ if ($sitever == "mobile") {
                 <!-- RANDOM PHOTO CODE STARTS HERE -->
                 <!-- If you don't want to have a random photo displayed, just remove the following line. -->
 
-              <?php include("randomphoto.php"); ?>
+              <?php include "randomphoto.php"; ?>
 
                 <!-- RANDOME PHOTO CODE ENDS HERE -->
 

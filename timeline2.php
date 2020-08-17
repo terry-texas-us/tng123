@@ -1,9 +1,9 @@
 <?php
 $textpart = "timeline";
-include("tng_begin.php");
+include "tng_begin.php";
 
 include($subroot . "pedconfig.php");
-include("timelineconfig.php");
+include "timelineconfig.php";
 
 $timeline = $_SESSION['timeline'];
 $tng_message = $_SESSION['tng_message'];
