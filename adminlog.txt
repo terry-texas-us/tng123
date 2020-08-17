@@ -1,3 +1,4 @@
+Mon 17 Aug 2020 17:42:46 Modify Map Configuration Settings (User: Administrator).
 Sun 16 Aug 2020 17:02:35 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
 Sun 16 Aug 2020 16:59:25 Generate Thumbnails: Thumbnails generated: 0; Records updated: 4; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).
 Sun 16 Aug 2020 16:58:10 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).

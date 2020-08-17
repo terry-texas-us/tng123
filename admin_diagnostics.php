@@ -306,11 +306,7 @@ function dirExists($dirref) {
 }
 
 function dirReadWrite($myuserid, $mygroupid, $dirref) {
-  global $cms;
-
   $rval = false;
-  //$newdirref = $cms['support']} ? '../../../' . $dirref : '../'.$dirref;
-  //$newdirref = $dirref;
 
   $userid = fileowner($dirref);
   $groupid = filegroup($dirref);

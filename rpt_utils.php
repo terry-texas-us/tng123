@@ -177,7 +177,7 @@ function getMaxStringWidth($strings, $font, $style, $size, $append = '', $oldmax
 }
 
 function getMyAncestors($focalPerson, $tree, $gen) {
-  global $children_table, $people_table, $families_table, $righttree;
+  global $righttree;
 
   $ancestorInfo = array();
 

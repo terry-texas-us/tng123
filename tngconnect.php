@@ -39,7 +39,6 @@ function tng_stmt_affected_rows($stmt) {
 }
 
 function tng_connect($dbhost, $dbusername, $dbpassword, $dbname, $dbport = null, $dbsocket = null) {
-  global $link;
   return @mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname, $dbport, $dbsocket);
 }
 

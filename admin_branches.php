@@ -14,8 +14,6 @@ if ($assignedbranch) {
 }
 
 function getBranchCount($tree, $branch, $table) {
-  global $admtext;
-
   $query = "SELECT count(ID) as count FROM $table WHERE gedcom = \"$tree\" and branch LIKE \"%$branch%\"";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);

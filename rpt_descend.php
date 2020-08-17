@@ -164,8 +164,7 @@ $pdf->Output();
 
 function getIndividual($key, $sex, $level, $trail, $num) {
   global $j, $infoDescend, $numbering;
-  global $tree, $genperpage, $text, $cms;
-  global $families_table, $people_table, $children_table, $trees_table;
+  global $tree, $genperpage, $text;
   global $numgen, $startnum, $righttree;
 
   if (is_null($j)) {

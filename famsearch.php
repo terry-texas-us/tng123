@@ -115,7 +115,7 @@ if ($order == "mname") {
 }
 
 function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $textstr) {
-  global $allwhere, $querystring, $lnprefixes, $criteria_limit, $criteria_count;
+  global $lnprefixes, $criteria_limit, $criteria_count;
 
   if ($qualifier == "exists" || $qualifier == "dnexist") {
     $value = $usevalue = "";

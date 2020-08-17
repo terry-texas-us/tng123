@@ -1,3 +1,87 @@
+Mon 17 Aug 2020 22:12:42 <a href="showrepo.php?repoID=R1&amp;tree=master"> Texas Wendish Heritage Society (R1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:12:37 <a href="showsource.php?sourceID=S36&amp;tree=master">Source St. Michael Lutheran Church (Winchester, Texas), &quot;Tauf Register&quot; (Baptism Register),, ; , . (S36)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:12:33 <a href="showrepo.php?repoID=R1&amp;tree=master"> Texas Wendish Heritage Society (R1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:09:45 <a href="timeline.php?primaryID=I29&amp;tree=master">Timeline (Johann Carl Teinert)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:09:20 <a href="register.php?personID=I29&amp;tree=master">Descendancy for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:09:08 <a href="register.php?personID=I29&amp;tree=master">Descendancy for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:47 <a href="descendtext.php?personID=I29&amp;tree=master">Descendancy for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:27 <a href="descendtext.php?personID=I29&amp;tree=master">Descendancy for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:15 <a href="descend.php?personID=I29&amp;tree=master&amp;display=compact">Descendancy for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:12 <a href="descend.php?personID=I29&amp;tree=master&amp;display=standard">Descendancy for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:08 <a href="extrastree.php?personID=I29&amp;tree=master">Family of Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:06 <a href="pedigree.php?personID=I29&amp;tree=master&amp;generations=4&amp;display=standard">Pedigree Chart for Johann Carl Teinert (I29)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:08:02 <a href="getperson.php?personID=I29&amp;tree=master">Individual info for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:07:52 <a href="fan.php?personID=I15&amp;tree=master&amp;parentset=0&amp;generations=4">Fan Chart: Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:07:31 <a href="ahnentafel.php?personID=I15&amp;tree=master">Ahnentafel: Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:07:28 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=textonly">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:07:25 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=standard">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:07:19 <a href="descend.php?personID=I15&amp;tree=master&amp;display=standard">Descendancy for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:07:12 <a href="ahnentafel.php?personID=I15&amp;tree=master">Ahnentafel: Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:53 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=textonly">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:46 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=box">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:44 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=compact">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:41 <a href="verticalchart.php?personID=I15&amp;tree=master&amp;generations=&amp;display=vertical">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a>   accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:38 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=standard">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:35 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:27 <a href="getperson.php?personID=I6127&amp;tree=master">Individual info for Johann August Hanusch (I6127)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:06:18 <a href="familygroup.php?familyID=F3193&amp;tree=master">Family Group Sheet for  / Bertha (F3193)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:05:51 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:05:46 <a href="browsesources.php?tree=&amp;offset=&amp;sourcesearch=">Sources</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:05:33 <a href="browsesources.php?tree=&amp;offset=&amp;sourcesearch=">Sources</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:05:31 <a href="reports.php">Reports</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:05:15 <a href="anniversaries.php?tngevent=&amp;tngdaymonth=17&amp;tngmonth=08&amp;tngyear=&amp;tngkeywords=&amp;tngneedresults=1&amp;offset=&amp;tree=&amp;tngpage=">Dates and Anniversaries </a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:05:04 <a href="showrepo.php?repoID=R1&amp;tree=master"> Texas Wendish Heritage Society (R1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:52 <a href="showsource.php?sourceID=S52&amp;tree=master">Source Joseph Wilson, editor, Pastor John Kilian Baptismal Records of St. Paul Lutheran Church, Serbin, Texas: 1854-1883 (Easley, South Carolina: Southern Historical Press, Inc., 1985), . (S52)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:39 <a href="showsource.php?sourceID=S52&amp;tree=master">Source Joseph Wilson, editor, Pastor John Kilian Baptismal Records of St. Paul Lutheran Church, Serbin, Texas: 1854-1883 (Easley, South Carolina: Southern Historical Press, Inc., 1985), . (S52)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:27 <a href="getperson.php?personID=I4967&amp;tree=master">Individual info for Johann Gerhard Schmidt (I4967)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:11 <a href="browsenotes.php?tree=&amp;offset=0&amp;notesearch=">Notes</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:07 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:06 <a href="places-oneletter.php?firstchar=&amp;psearch=United States&amp;offset=1">Place List: United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:05 <a href="places-oneletter.php?firstchar=&amp;psearch=Texas, United States&amp;offset=2">Place List: Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:04:03 <a href="places-oneletter.php?firstchar=&amp;psearch=Fayette, Texas, United States&amp;offset=3">Place List: Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:37 <a href="/tng123/heatmap.php?psearch=Fayette,%20Texas,%20United%20States">Place List | Heat Map | Fayette, Texas, United States for Place contains Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:34 <a href="places-oneletter.php?firstchar=&amp;psearch=Fayette, Texas, United States&amp;offset=3">Place List: Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:24 <a href="places-oneletter.php?firstchar=&amp;psearch=Texas, United States&amp;offset=2">Place List: Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:21 <a href="places-oneletter.php?firstchar=&amp;psearch=United States&amp;offset=1">Place List: United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:19 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:09 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=headstones">Headstones</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:03:05 <a href="cemeteries.php?tree=">Cemeteries and Headstones</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:59 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:56 <a href="showmedia.php?mediaID=5&amp;tnggallery=">Photos: Johann Symny (5)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:54 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:50 <a href="showmedia.php?mediaID=5&amp;tnggallery=">Photos: Johann Symny (5)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:47 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:39 <a href="showmedia.php?mediaID=2&amp;tnggallery=">Headstones: Teinert, Carl Herrmann & Christiana [Winzer] Grave Marker (2)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:38 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:36 <a href="browsealbums.php?tree=&amp;offset=&amp;mediasearch=">All Albums</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:34 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=recordings">Recordings</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:32 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=videos">Videos</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:29 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=videos">Videos</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:02:25 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=histories">Histories</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:46 <a href="showmedia.php?mediaID=3&amp;tnggallery=">Photos: Christiana Winzer (3)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:42 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=photos">Photos</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:33 <a href="showmedia.php?mediaID=3&amp;tnggallery=">Photos: Christiana Winzer (3)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:29 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=photos">Photos</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:21 <a href="statistics.php?tree=">Statistics</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:15 <a href='familychart.php?familyID=F7&amp;tree=master'>Family Chart: Johann Carl Hermann Teinert / Christiana Winzer (F7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:01:00 <a href="familygroup.php?familyID=F7&amp;tree=master">Family Group Sheet for Johann Carl Hermann Teinert / Christiana Winzer (F7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:00:57 <a href='familychart.php?familyID=F7&amp;tree=master'>Family Chart: Johann Carl Hermann Teinert / Christiana Winzer (F7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:00:53 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:00:43 <a href="getperson.php?personID=I11745&amp;tree=master">Individual info for Angelina Charpentier (I11745)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:00:41 <a href="search.php?mylastname=CHARPENTIER&amp;lnqualify=equals&amp;mybool=AND">Search Results for Last Name equals CHARPENTIER</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:00:37 <a href="surnames-oneletter.php?firstchar=C&amp;tree=">Surname List: Begins with C</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:00:32 <a href="surnames.php?tree=">Surname List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:39:30 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:04:27 <a href="showmedia.php?mediaID=1&amp;medialinkID=1">Photos: Johann Carl Hermann Teinert (1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:04:10 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:04:05 <a href='familychart.php?familyID=F14&amp;tree=master'>Family Chart: Johann Carl Teinert / Johanna Symny (F14)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:04:04 <a href="getperson.php?personID=I29&amp;tree=master">Individual info for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:03:47 <a href='familychart.php?familyID=F14&amp;tree=master'>Family Chart: Johann Carl Teinert / Johanna Symny (F14)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:02:43 <a href='familychart.php?familyID=F7&amp;tree=master'>Family Chart: Johann Carl Hermann Teinert / Christiana Winzer (F7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 18:02:35 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 17:42:58 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 14:38:40 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 14:37:22 <a href="surnames.php?tree=">Surname List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Mon 17 Aug 2020 03:32:49 <a href="mostwanted.php">Most Wanted</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Mon 17 Aug 2020 03:32:41 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Mon 17 Aug 2020 03:32:39 <a href="browserepos.php?tree=&amp;offset=&amp;reposearch=">Repositories</a> accessed by DESKTOP-AF2CIVV (User: Administrator).

@@ -101,7 +101,7 @@ function showDatePlace($event) {
 }
 
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
-  global $tree, $text, $photopath, $photosext, $firstsection, $children_table, $totcols, $righttree;
+  global $tree, $text, $children_table, $righttree;
   global $allow_lds_this, $allow_edit, $families_table, $people_table, $cms, $getperson_url, $familygroup_url, $personID;
 
   $indtext = "";

@@ -16,7 +16,7 @@ require "adminlog.php";
 initMediaTypes();
 
 function reorderMedia($query, $plink, $mediatypeID) {
-  global $admtext, $medialinks_table, $media_table;
+  global $medialinks_table, $media_table;
 
   $ptree = $plink['gedcom'];
   $eventID = $plink['eventID'];

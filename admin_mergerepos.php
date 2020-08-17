@@ -161,7 +161,7 @@ function addCriteria($row) {
 }
 
 function doNotes($persfam1, $persfam2, $varname) {
-  global $ccombinenotes, $admtext, $notelinks_table, $tree;
+  global $ccombinenotes, $notelinks_table, $tree;
 
   if ($varname) {
     if ($varname == "general") {

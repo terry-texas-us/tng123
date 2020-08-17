@@ -1,6 +1,6 @@
 <?php
 function reorderMedia($query, $plink, $mediatypeID) {
-  global $admtext, $medialinks_table, $media_table;
+  global $medialinks_table, $media_table;
 
   $ptree = $plink['gedcom'];
   $eventID = $plink['eventID'];
@@ -21,7 +21,7 @@ function reorderMedia($query, $plink, $mediatypeID) {
 }
 
 function resortMedia($mediaID) {
-  global $media_table, $medialinks_table, $people_table, $families_table, $sources_table, $repositories_table, $admtext;
+  global $media_table, $medialinks_table, $people_table, $families_table, $sources_table, $repositories_table;
 
   $query = "SELECT $media_table.mediaID as mediaID, personID, $medialinks_table.gedcom as gedcom, mediatypeID FROM $medialinks_table, $media_table WHERE $medialinks_table.mediaID = \"$mediaID\" AND $medialinks_table.mediaID = $media_table.mediaID";
   $result2 = tng_query($query);
@@ -47,7 +47,7 @@ function resortMedia($mediaID) {
 }
 
 function removeImages($mediaID) {
-  global $media_table, $rootpath, $admtext, $mediatypes_assoc, $mediapath;
+  global $media_table, $rootpath, $mediatypes_assoc, $mediapath;
 
   initMediaTypes();
 

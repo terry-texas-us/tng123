@@ -482,7 +482,7 @@ function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {
 }
 
 function checkLivingLinks($itemID) {
-  global $livedefault, $assignedtree, $assignedbranch, $people_table, $text, $medialinks_table, $sources_table, $citations_table, $families_table, $allow_living, $allow_private;
+  global $livedefault, $assignedtree, $assignedbranch, $people_table, $medialinks_table, $families_table, $allow_living, $allow_private;
 
   if (($livedefault == 2 || $allow_living) && $allow_private && !$assignedtree) {
     return true;
@@ -553,41 +553,8 @@ function checkLivingLinks($itemID) {
       return false;
     }  // found at least one
   }
-  /*
-   $query = "SELECT count(*) as pcount
-    FROM ($medialinks_table, $sources_table, $citations_table, $people_table)
-    WHERE $medialinks_table.personID = $sources_table.sourceID
-      AND $medialinks_table.gedcom = $sources_table.gedcom
-      AND $medialinks_table.gedcom = $citations_table.gedcom
-      AND $medialinks_table.gedcom = $people_table.gedcom
-      AND $sources_table.sourceID = $citations_table.sourceID
-      AND $citations_table.persfamID = $people_table.personID
-      AND $medialinks_table.mediaID = '$itemID'
-      AND living = 1 $criteria";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc( $result );
-     tng_free_result( $result );
-  if( $row['pcount'] )
-    return false;
 
-   $query = "SELECT count(*) as pcount
-    FROM ($medialinks_table, $sources_table, $citations_table, $families_table)
-    WHERE $medialinks_table.personID = $sources_table.sourceID
-      AND $medialinks_table.gedcom = $sources_table.gedcom
-      AND $medialinks_table.gedcom = $citations_table.gedcom
-      AND $medialinks_table.gedcom = $families_table.gedcom
-      AND $sources_table.sourceID = $citations_table.sourceID
-      AND $citations_table.persfamID = $families_table.familyID
-      AND $medialinks_table.mediaID = '$itemID'
-      AND living = 1 $fcriteria";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc( $result );
-     tng_free_result( $result );
-  if( $row['pcount'] )
-    return false;
-  */
-
-  // so we made it here ok, so there must not be any Living individulals linked to this media
+  // so we made it here ok, so there must not be any Living individuals linked to this media
   return true;
 }
 
@@ -615,7 +582,7 @@ function getScriptPath() {
 }
 
 function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
-  global $tngpage, $totalpages, $tree, $text, $orgtree, $test_type, $test_group;
+  global $tngpage, $totalpages, $text, $orgtree, $test_type, $test_group;
 
   $nextlink = '';
 
@@ -872,8 +839,6 @@ function getDisplayYear($datestr, $trueyear) {
 }
 
 function getYears($row) {
-  global $dates;
-
   if (!isset($row['death'])) {
     $row['death'] = '';
   }
@@ -1088,8 +1053,8 @@ function age($row) {
 }
 
 function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $gender = "") {
-  global $rootpath, $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_assoc;
-  global $photosext, $tree, $medialinks_table, $media_table, $text, $cms, $admtext, $tngconfig;
+  global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
+  global $photosext, $tree, $medialinks_table, $media_table, $cms, $admtext, $tngconfig;
 
   $photo = "";
   $photocheck = "";
@@ -1286,7 +1251,7 @@ function utf82iso88592($text) {
 }
 
 function getAllTextPath() {
-  global $rootpath, $mylanguage, $language, $languages_path, $endrootpath, $cms, $text, $admtext, $dates;
+  global $rootpath, $mylanguage, $language, $languages_path, $endrootpath, $cms;
 
   $rootpath = trim($rootpath);
   if ($rootpath && strpos($rootpath, "http") !== 0) {

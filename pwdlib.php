@@ -119,7 +119,6 @@ function PasswordCheck($str, $hash, $name = null) {
  */
 
 function PasswordTypeList($ReturnPart = null, $Force_No_Hash = false) {
-  global $cms;
   static $type_list;  // save for faster future calls
 
   if (!isset($type_list)) { // just do this once

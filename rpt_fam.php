@@ -220,7 +220,7 @@ else {
 $pdf->Output();
 
 function displayChild($personID, $childcount) {
-  global $familyID, $tree, $people_table, $families_table, $children_table, $text, $citesources, $righttree;
+  global $tree, $people_table, $families_table, $children_table, $text, $citesources, $righttree;
 
   $query = "SELECT * FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
   $result = tng_query($query);
@@ -494,7 +494,7 @@ function displayIndividual($personID, $showparents, $showmarriage) {
 
 // childNameLine
 function childNameLine($label1, $data1, $data2, $cite = '') {
-  global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
+  global $pdf, $paperdim, $rtmrg, $lineheight;
   global $rptFont, $rptFontSize, $lblFontSize;
   global $labelwidth;
 
@@ -517,7 +517,7 @@ function childNameLine($label1, $data1, $data2, $cite = '') {
 
 // nameLine
 function nameLine($label1, $data1, $shade = 0, $cite = '') {
-  global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
+  global $pdf, $paperdim, $rtmrg, $lineheight;
   global $rptFont, $rptFontSize, $lblFontSize;
   global $labelwidth;
 

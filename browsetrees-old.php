@@ -9,7 +9,7 @@ $showtree_url = getURL("showtree", 1);
 $search_url = getURL("search", 1);
 
 function doTreeSearch($instance, $pagenav) {
-  global $text, $photosearch;
+  global $text;
 
   $browsetrees_noargs_url = getURL("browsetrees-old", 0);
 

@@ -68,9 +68,9 @@ function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $al
 
 function doMedia($mediatypeID) {
   global $media_table, $medialinks_table, $change_limit, $cutoffstr, $wherestr, $text, $admtext, $families_table, $sources_table, $repositories_table, $citations_table, $nonames;
-  global $people_table, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $showmedia_url, $trees_table, $currentuser, $userlist;
-  global $rootpath, $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $header, $footer, $cemeteries_table, $mediatypes_assoc, $mediatypes_display;
-  global $getperson_url, $livedefault, $whatsnew, $wherestr2, $showmap_url, $thumbmaxw, $events_table, $eventtypes_table, $altstr, $tngconfig, $maxmediafilesize;
+  global $people_table, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $trees_table, $currentuser, $userlist;
+  global $rootpath, $mediapath, $header, $footer, $cemeteries_table, $mediatypes_assoc, $mediatypes_display;
+  global $getperson_url, $whatsnew, $wherestr2, $showmap_url, $thumbmaxw, $events_table, $eventtypes_table, $altstr, $tngconfig;
 
   if ($mediatypeID == "headstones") {
     $hsfields = ", $media_table.cemeteryID, cemname, city";
@@ -207,7 +207,6 @@ function doMedia($mediatypeID) {
 
     $showPhotoInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
 
-    //$href = $showmedia_url . "mediaID=$row[mediaID]";
     $href = getMediaHREF($row, 0);
     $notes = $wherestr && $row['altnotes'] ? $row['altnotes'] : $row['notes'];
     $notes = nl2br(truncateIt(getXrefNotes($row['notes'], $row['gedcom']), $tngconfig['maxnoteprev']));

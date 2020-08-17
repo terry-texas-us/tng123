@@ -219,7 +219,7 @@ function getNewChart($personID) {
 
 function doBox($level, $person, $spouseflag, $kidsflag) {
   global $pedigree, $topmarker, $botmarker, $spouseoffset, $maxwidth, $maxheight, $personID, $tree, $getperson_url;
-  global $generations, $display, $descend_url, $text, $cms, $numboxes, $rounded, $slot;
+  global $generations, $display, $descend_url, $text, $numboxes, $rounded, $slot;
 
   $numboxes++;
   if (!$topmarker[$level]) {
@@ -333,7 +333,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
 
 function doIndividual($person, $level) {
   global $tree, $generations, $pedigree, $righttree, $chart, $descend_url;
-  global $topmarker, $botmarker, $vslots, $vendspouses, $spouseoffset, $needtop, $starttop, $spouses_for_next_gen;
+  global $topmarker, $botmarker, $vslots, $spouseoffset, $needtop, $starttop, $spouses_for_next_gen;
 
   //look up person
   $result = getPersonData($tree, $person);
@@ -381,9 +381,6 @@ function doIndividual($person, $level) {
     //do box for main spouse (if not already done)
     $spousecount++;
     $originaltop = $topmarker[$level];
-    //if( $vslots[$famrow[familyID]] > 2 )
-    //$topmarker[$level] += 100 + intval(($pedigree[diff]) * ($vslots[$famrow[familyID]] - $vendspouses[$famrow[familyID]] - 1) / 2);
-    //echo "fam=$famrow[familyID], ve=" .$vendspouses[$famrow[familyID]] . ", vs= " . $vslots[$famrow[familyID]] . "<br />\n";
 
     //get children
 
@@ -434,7 +431,6 @@ function doIndividual($person, $level) {
       $chart .= doBox($level, $row, 0, 0);
       $needperson = 0;
     }
-    //echo "familyID = $famrow[familyID], vs=" . $vslots[$famrow[familyID]] . ", ve=" . $vendspouses[$famrow[familyID]] . "<br>";
 
     //get spouse data (if exists)
     $spouserow = array();

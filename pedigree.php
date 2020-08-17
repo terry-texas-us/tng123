@@ -305,7 +305,7 @@ function getColor($shifts) {
 }
 
 function showBox($generation, $slot) {
-  global $pedigree, $generations, $pedmax, $pedoptions, $boxes, $flags, $offpageimgh, $offpageimgw, $cms, $rounded, $templatepath;
+  global $pedigree, $generations, $pedmax, $boxes, $flags, $offpageimgh, $offpageimgw, $cms, $rounded, $templatepath;
 
   // set pointer to next father/mother pair
   $nextslot = $slot * 2;

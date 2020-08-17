@@ -34,8 +34,8 @@ function initIndividual() {
 }
 
 function getIndividualRecord($personID, $prevlevel) {
-  global $link, $people_table, $children_table, $events_table, $families_table, $tree, $admtext, $citations_table, $assoc_table, $pciteevents;
-  global $savestate, $lineinfo, $custeventlist, $notelinks_table, $stdnotes, $notecount, $lineending, $branchlinks_table;
+  global $people_table, $children_table, $families_table, $tree, $admtext, $citations_table, $assoc_table;
+  global $savestate, $lineinfo, $custeventlist, $stdnotes, $notecount, $branchlinks_table;
   global $today, $lnprefixes, $lnpfxnum, $specpfx, $currentuser, $newprefixes, $orgprefixes, $tngimpcfg, $pciteevents, $prefix, $burialtype;
 
   $personID = adjustID($personID, $savestate['ioffset']);

@@ -36,7 +36,7 @@ function showBlank($pedborder) {
 }
 
 function displayIndividual($key, $generation, $slot) {
-  global $tree, $generations, $marrdate, $marrplace, $pedmax, $people_table, $families_table, $children_table, $personID, $text;
+  global $tree, $generations, $marrdate, $marrplace, $pedmax, $text;
   global $cms, $getperson_url, $pedigree_url, $parentset, $righttree;
 
   $nextslot = $slot * 2;

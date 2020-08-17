@@ -95,7 +95,7 @@ $containerheight = ($generations * ($height + ($spacing * 2))) + $spacing;
 initChart();
 
 function initChart() {
-  global $width, $spacing, $height, $gens, $gedcom, $generations, $personID, $link;
+  global $gens, $gedcom, $generations, $personID;
 
   $gedcom = tng_real_escape_string($_GET['tree']);
   $gens[1][1] = $personID;
@@ -106,7 +106,7 @@ function initChart() {
 }
 
 function get_details(&$gens, $generation, $max_generations) {
-  global $width, $spacing, $height, $person_count, $gedcom, $people_table, $families_table, $text, $allow_living, $allow_private;
+  global $width, $person_count, $gedcom, $people_table, $families_table, $text;
   $delete_variables = array('firstname', 'lnprefix', 'lastname', 'title', 'prefix', 'suffix', 'nameorder', 'allow_living', 'allow_private');
   foreach ($gens[$generation] as $num => $g) {
     if ($g) {
@@ -335,7 +335,7 @@ function move_descendant(&$gens, $gen_num, $num) {
 
 
 function do_chart($gens, $output = false) {
-  global $width, $height, $spacing, $fontsize, $start_person, $session_charset, $cms, $templatepath, $text, $containerheight;
+  global $width, $height, $spacing, $fontsize, $text, $containerheight;
   $rows = sizeof($gens);
   $ignore = isset($_GET['ignorestart']);
   foreach ($gens as $gen_num => $generation) {

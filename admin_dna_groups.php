@@ -14,8 +14,6 @@ if (!$allow_delete || ($assignedtree && $assignedtree != $tree)) {
 }
 
 function getGroupCount($tree, $group, $table) {
-  global $admtext;
-
   $query = "SELECT count(dna_group) as count FROM $table WHERE gedcom = \"$tree\" and dna_group = \"$group\"";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);

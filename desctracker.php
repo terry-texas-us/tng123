@@ -14,7 +14,7 @@ $righttree = checktree($tree);
 $rightbranch = checkbranch($row['branch']);
 
 function drawBox($person, $box) {
-  global $tree, $pedigree, $photopath, $photosext, $browser, $childcount, $totkids, $more, $nonames, $text, $rootpath, $cms, $getperson_url, $boxheight, $boxwidth;
+  global $tree, $pedigree, $more, $cms, $getperson_url, $boxheight, $boxwidth;
 
   if ($box['lineoutof']) {
     $bgcolor = $pedigree['boxcolor'];
@@ -153,7 +153,7 @@ function drawEmpty($top, $middle, $bottom) {
 }
 
 function doNextPerson($row, $items, $nextperson, $box) {
-  global $tree, $text, $childcount, $pedigree, $totkids, $more, $righttree;
+  global $tree, $childcount, $totkids, $righttree;
 
   $nextnextfamily = $items[0];
   if ($row['personID'] == $nextperson && $nextnextfamily) {

@@ -281,7 +281,7 @@ function getOtherEvents($row) {
 }
 
 function getRegNotes($persfamID, $flag) {
-  global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $eventswithnotes;
+  global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text;
 
   $custnotes = array();
   $gennotes = array();
@@ -375,8 +375,6 @@ function getRegNotes($persfamID, $flag) {
 }
 
 function buildRegNotes($notearray) {
-  global $text;
-
   $notes = "";
   foreach ($notearray as $key => $note) {
     if ($notes) {

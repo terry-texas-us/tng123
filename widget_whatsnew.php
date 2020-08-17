@@ -27,10 +27,10 @@ if ($tree) {
 $change_limit = 10;
 
 function doMedia($mediatypeID) {
-  global $media_table, $medialinks_table, $wherestr, $text, $admtext, $families_table, $citations_table, $nonames;
-  global $people_table, $showmedia_url, $currentuser;
-  global $rootpath, $photopath, $header, $footer, $mediatypes_assoc, $mediatypes_display;
-  global $livedefault, $wherestr2, $thumbmaxw, $altstr, $tngconfig, $maxmediafilesize;
+  global $media_table, $medialinks_table, $wherestr, $text, $families_table, $citations_table, $nonames;
+  global $people_table;
+  global $mediatypes_assoc, $mediatypes_display;
+  global $wherestr2, $thumbmaxw, $altstr, $tngconfig;
 
   $change_limit = 5;
 
@@ -106,7 +106,6 @@ function doMedia($mediatypeID) {
 
     $showPhotoInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
 
-    //$href = $showmedia_url . "mediaID=$row[mediaID]";
     $href = getMediaHREF($row, 0);
     $notes = $wherestr && $row['altnotes'] ? $row['altnotes'] : $row['notes'];
     $notes = nl2br(truncateIt(getXrefNotes($row['notes'], $row['gedcom']), $tngconfig['maxnoteprev']));
@@ -124,7 +123,6 @@ function doMedia($mediatypeID) {
       }
       $href = "";
     }
-    //if( $row[status] ) $notes = "$text[status]: $row[status]. $notes";
 
     $mediatext .= "<div class=\"inner-block\">";
     $row['mediatypeID'] = $mediatypeID;

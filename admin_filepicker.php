@@ -68,7 +68,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 frmFiles();
 
 function frmFiles() {
-  global $ImageFileTypes, $subdir, $img, $admtext, $text, $page, $rootpath, $path, $tngpath, $pagetotal, $searchstring, $allow_delete, $dims, $tngconfig, $session_charset, $folders, $namedir, $datedir, $order, $cms;
+  global $ImageFileTypes, $subdir, $img, $admtext, $page, $rootpath, $path, $tngpath, $pagetotal, $searchstring, $allow_delete, $tngconfig, $folders, $namedir, $datedir, $order, $cms;
   $columns = 4;
   $datefmt = !empty($tngconfig['preferEuro']) && $tngconfig['preferEuro'] == "true" ? "d/m/Y h:i:s A" : "m/d/Y h:i:s A";
   ?>
@@ -246,7 +246,7 @@ function frmFiles() {
 
 
 function lCountFiles() {
-  global $ImageFileTypes, $subdir, $rootpath, $tngpath, $searchstring, $folders;
+  global $subdir, $rootpath, $tngpath, $searchstring, $folders;
 
   $nFileCount = 0;
   $savedir = getcwd();
@@ -279,7 +279,7 @@ function lCountFiles() {
 
 <?php
 function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
-  global $text, $subdir, $path;
+  global $text;
 
   if ($nPages > 1) {
     echo "<div class=\"normal\" style=\"float:right;padding:10px\">\n";
@@ -323,8 +323,6 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
 }
 
 function mfpLink($pagenum, $label, $active = false) {
-  global $subdir, $path;
-
   if (!$active) {
     echo "<a href=\"#\" onclick=\"return " . mfpGetUrl($pagenum) . "\" class=\"snlink\">$label</a>\n";
   } else {

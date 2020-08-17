@@ -18,7 +18,7 @@ if (!$generations) {
 }
 
 function displayIndividual($key, $generation, $slot, $column) {
-  global $columns, $tree, $generations, $pedmax, $personID, $text, $media_table, $medialinks_table, $col1fam, $col2fam;
+  global $columns, $tree, $pedmax, $text, $media_table, $medialinks_table, $col1fam, $col2fam;
   global $cms, $getperson_url, $showall, $parentset, $righttree;
 
   $nextslot = $slot * 2;

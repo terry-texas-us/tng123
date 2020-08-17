@@ -198,7 +198,7 @@ function doUpArrow($left,$top,$person) {
 
 function setoutparentfamily(&$family, &$childID, $left, $top, $width, $height, $swap) {
   #set parent family omitting the child who is the parent, which is done elsewhere
-  global $familychart, $family_url, $tree, $text;
+  global $familychart;
   if (!$family) {
     return;
   }
@@ -211,20 +211,15 @@ function setoutparentfamily(&$family, &$childID, $left, $top, $width, $height, $
   $wife = $family['wife'];
 
   if ($husband && $wife) {
-    //doUpArrow($xd,$top,$husband);
     doBox($husband, $left, $top, 'fambox', 'child');
 
-    //doUpArrow($xd+$width+$hsep,$top,$wife);
     doBox($wife, $left + $width + $hsep, $top, 'fambox', 'child');
 
     echo "<div class='descender' style='left: {$xd}px;top: {$y}px;'>&nbsp;</div>\n";
-    //<div style='text-align:center;padding:10px'><a href=\"{$family_url}familyID={$family['familyID']}&tree=$tree\" class=\"famlink smaller\">{$text['showfamily']}</a></div></div>\n";
     $both = 1;
   } elseif ($husband) {
-    //doUpArrow($left+$width+floor($hsep/2),$top,$husband);
     doBox($husband, $x, $top, 'fambox', 'child');
   } elseif ($wife) {
-    //doUpArrow($left+$width+floor($hsep/2),$top,$wife);
     doBox($wife, $x, $top, 'fambox', 'child');
   }
   $gh = $familychart['halfgenheight'];
@@ -255,7 +250,7 @@ function setoutparentfamily(&$family, &$childID, $left, $top, $width, $height, $
 
 function setoutmainfamily(&$family, $colsep, $order, $patorder, $matorder, $left, $top, $width, $height, $reverse) {
   #includes parents at appropriate positions for their families
-  global $familychart, $cms;
+  global $familychart;
   $leftparent = $reverse ? $family['wife'] : $family['husband'];
   $rightparent = $reverse ? $family['husband'] : $family['wife'];
   $vsep = $familychart['boxVsep'];
@@ -299,7 +294,7 @@ function setoutmainfamily(&$family, $colsep, $order, $patorder, $matorder, $left
 
 function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
   #class=fambox or mfambox, $type=parent or child
-  global $familychart, $cms, $text, $personID, $family_url, $downarrow, $uparrow;
+  global $familychart, $cms, $text, $family_url, $downarrow, $uparrow;
   $name = $person['displayname'];
   $gender = getGenderIcon($person['sex'], 0);
   $rev = $reverse ? '&amp;rev=1' : '';
@@ -468,7 +463,7 @@ function getRights(&$person) {
 
 function doheader($tree, &$family) {
   #calls tng_header, tng_Drawheading and tng_menu
-  global $text, $flags, $tngconfig, $allow_edit, $rightbranch, $disallowgedcreate, $allowpdf, $nonames, $allowgedcom, $family_url;
+  global $text, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames, $family_url;
   $descend_url = getURL("descend", 1);
   $pdfform_url = getURL("rpt_pdfform", 1);
 

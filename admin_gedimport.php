@@ -78,7 +78,7 @@ function initCustomEvent() {
 }
 
 function getMediaLinksToSave() {
-  global $admtext, $events_table, $tree, $medialinks_table;
+  global $events_table, $tree, $medialinks_table;
 
   $medialinks = array();
   $query = "SELECT medialinkID, mediaID, $medialinks_table.eventID, persfamID, eventtypeID, eventdate, eventplace, info
@@ -96,7 +96,7 @@ function getMediaLinksToSave() {
 }
 
 function getAlbumLinksToSave() {
-  global $admtext, $events_table, $tree, $album2entities_table, $medialinks_table, $link;
+  global $events_table, $tree, $album2entities_table;
 
   $albumlinks = array();
   $query = "SELECT alinkID, albumID, $album2entities_table.eventID, entityID, eventtypeID, eventdate, eventplace, info

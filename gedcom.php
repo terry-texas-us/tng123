@@ -27,7 +27,7 @@ if ($treerow['disallowgedcreate'] && (!$allow_ged || !$righttree)) {
 tng_free_result($treeresult);
 
 function getAncestor($person, $generation) {
-  global $tree, $maxgcgen, $indarray, $people_table, $text;
+  global $tree, $maxgcgen, $indarray, $people_table;
 
   $query = "SELECT personID, famc FROM $people_table WHERE personID = \"$person\" AND gedcom = \"$tree\"";
   $result = tng_query($query);
@@ -108,7 +108,7 @@ function writeCitation($citelist, $level) {
 }
 
 function getFact($row, $level) {
-  global $tree, $address_table, $text, $lineending;
+  global $tree, $address_table, $lineending;
 
   $fact = "";
   if ($row['age']) {
@@ -160,7 +160,7 @@ function getFact($row, $level) {
 }
 
 function getStdExtras($persfamID, $level) {
-  global $tree, $events_table, $text;
+  global $tree, $events_table;
 
   $stdex = array();
   $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = \"$tree\" AND parenttag != \"\" ORDER BY parenttag";
@@ -198,7 +198,7 @@ function doEvent($custevent, $level) {
 }
 
 function getNotes($id) {
-  global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $xnotes;
+  global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $xnotes;
 
   $query = "SELECT $notelinks_table.ID as ID, secret, $xnotes_table.note as note, $xnotes_table.noteID as noteID, $notelinks_table.eventID
 		FROM $notelinks_table
@@ -316,7 +316,7 @@ function writeNote($level, $label, $notes) {
 }
 
 function doXNotes() {
-  global $xnotes_table, $tree, $text, $xnotes, $lineending;
+  global $xnotes_table, $tree, $xnotes, $lineending;
 
   if ($xnotes) {
     $xnoteinfo = "";
@@ -337,7 +337,7 @@ function doXNotes() {
 }
 
 function getFamily($person, $parents, $generation) {
-  global $tree, $famarray, $indarray, $families_table, $children_table, $people_table, $text, $lineending, $gotfamily;
+  global $tree, $famarray, $indarray, $families_table, $children_table, $people_table, $lineending, $gotfamily;
 
   $query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y\") as changedate FROM $families_table WHERE familyID = \"$parents\" AND gedcom = \"$tree\"";
   $result = tng_query($query);
@@ -712,7 +712,7 @@ function doLDSEvent($tag, $key, $notes, $citations, $extras, $row) {
 }
 
 function writeFamily($family) {
-  global $tree, $ldsOK, $events_table, $eventtypes_table, $text, $citations, $lineending, $famarray, $private, $righttree;
+  global $tree, $ldsOK, $events_table, $eventtypes_table, $citations, $lineending, $famarray, $private, $righttree;
 
   $familyID = $family['familyID'];
   if ($famarray[$familyID]) {
@@ -852,7 +852,7 @@ function processEntities($entarray) {
 }
 
 function getDescendant($person, $generation) {
-  global $tree, $maxgcgen, $famarray, $indarray, $families_table, $children_table, $people_table, $text, $lineending;
+  global $tree, $maxgcgen, $famarray, $indarray, $families_table, $children_table, $people_table, $lineending;
 
   $result = getPersonGender($tree, $person);
   $row = tng_fetch_assoc($result);
@@ -971,7 +971,7 @@ function doSources() {
 }
 
 function doRepositories() {
-  global $tree, $repositories_table, $events_table, $eventtypes_table, $admtext, $savestate, $allrepos, $lineending;
+  global $tree, $repositories_table, $events_table, $eventtypes_table, $allrepos, $lineending;
 
   $newrepos = array_unique($allrepos);
   if ($newrepos) {

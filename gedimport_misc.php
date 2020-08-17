@@ -404,7 +404,7 @@ function getContinued() {
 }
 
 function deleteLinksOnMatch($entityID) {
-  global $tree, $events_table, $notelinks_table, $citations_table, $xnotes_table, $admtext, $address_table, $medialinks_table, $assoc_table;
+  global $tree, $events_table, $notelinks_table, $citations_table, $xnotes_table, $address_table, $assoc_table;
 
   $query = "SELECT addressID from $events_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
   $result = @tng_query($query);
@@ -420,10 +420,6 @@ function deleteLinksOnMatch($entityID) {
   $query = "DELETE from $assoc_table WHERE personID = \"$entityID\" AND gedcom = \"$tree\"";
   $result = @tng_query($query);
 
-  //we won't be able to match media links for custom events, since the custom event IDs will be renumbered, so delete the media links and start again
-  //$query = "DELETE from $medialinks_table WHERE gedcom = \"$tree\" AND personID = \"$entityID\" AND eventID != '' AND eventID REGEXP ('['0-9']')";
-  //$result = tng_query($query);
-
   $query = "SELECT xnoteID from $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
   $result = @tng_query($query);
   while ($row = tng_fetch_assoc($result)) {
@@ -438,7 +434,7 @@ function deleteLinksOnMatch($entityID) {
 }
 
 function getPlaceRecord($place, $prevlevel) {
-  global $savestate, $tree, $admtext, $lineinfo, $places_table, $link, $tngconfig;
+  global $savestate, $tree, $admtext, $lineinfo, $places_table, $tngconfig;
 
   $place = addslashes($place);
   $note = $namc = "";
@@ -700,7 +696,7 @@ function incrCounter($prefix) {
 
 //media
 function adjustMediaFileName($mm) {
-  global $assignnames, $wholepath, $imagetypes;
+  global $assignnames, $wholepath;
 
   if (!empty($mm['path']) && $assignnames) {
     $newname = $mm['path'];
@@ -759,7 +755,7 @@ function getLocalPathList($mediatypeID) {
 }
 
 function getMoreMMInfo($prevlevel, $mmcount) {
-  global $lineinfo, $tree, $admtext;
+  global $lineinfo;
 
   $moreinfo = initMultimedia();
   $origlevel = $prevlevel;
@@ -847,7 +843,7 @@ function getMoreMMInfo($prevlevel, $mmcount) {
 }
 
 function getMediaCollection($mediaobj) {
-  global $imagetypes, $historytypes, $documenttypes, $videotypes, $recordingtypes, $locimppath;
+  global $historytypes, $documenttypes, $videotypes, $recordingtypes, $locimppath;
 
   $mediatypeID = isset($mediaobj['mediatypeID']) ? $mediaobj['mediatypeID'] : "";
   $found = false;
@@ -941,7 +937,7 @@ function getMediaFolder($mediatypeID) {
 }
 
 function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
-  global $admtext, $medialinks_table, $tree, $media_table, $link, $savestate, $today, $tngimpcfg;
+  global $admtext, $medialinks_table, $tree, $media_table, $savestate, $today, $tngimpcfg;
 
   for ($mmctr = 1; $mmctr <= $mmcount; $mmctr++) {
     $mm = $mminfo[$mmctr];
@@ -1031,8 +1027,6 @@ function getCodedMedia() {
 }
 
 function mmd($nextchar) {
-  global $decodearr;
-
   if (ord($nextchar) <= 57) {
     $offset = 46;
   } elseif (ord($nextchar) <= 90) {
@@ -1069,8 +1063,8 @@ function initMultimedia() {
 }
 
 function getMultimediaRecord($objectID, $prevlevel) {
-  global $link, $tree, $admtext, $savestate, $lineinfo, $media_table;
-  global $mminfo, $today, $tngimpcfg, $mediapath, $thumbprefix, $thumbsuffix;
+  global $tree, $admtext, $savestate, $lineinfo, $media_table;
+  global $mminfo, $today, $tngimpcfg, $mediapath;
 
   $prefix = "M";
   $info = "";
@@ -1192,8 +1186,7 @@ function getMultimediaRecord($objectID, $prevlevel) {
         }
       }
 
-      //$thumbpath = ($thumbprefix || $thumbsuffix) ? $thumbprefix . $mminfo['path'] . $thumbsuffix : $mminfo['path'];
-      $thumbpath = "";  //inserted in place of previous line to make sure INSERT query below doesn't break
+      $thumbpath = "";
       if (!$mminfo['mediatypeID']) {
         $mminfo['mediatypeID'] = "photos";
       }
@@ -1208,14 +1201,12 @@ function getMultimediaRecord($objectID, $prevlevel) {
 
       $success = tng_affected_rows();
       if (!$success) {
-        //$thumbstr = $thumbprefix ? "thumbpath=\"$thumbprefix$mminfo['path']" . $thumbsuffix . "\", " : "";
         $query = "SELECT mediatypeID FROM $media_table WHERE gedcom = \"$tree\" AND mediakey = \"{$mminfo['ID']}\"";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
 
         $mediatypeIDstr = !$row['mediatypeID'] ? " mediatypeID=\"{$mminfo['mediatypeID']}\"," : "";
-        //$mediatypeIDstr = " mediatypeID=\"{$mminfo['mediatypeID']}\",";
         $query = "UPDATE $media_table SET path=\"{$mminfo['FILE']}\", description=\"{$mminfo['TITL']}\", notes=\"{$mminfo['NOTE']}\", form=\"{$mminfo['FORM']}\", datetaken=\"{$mminfo['datetaken']}\",$mediatypeIDstr changedate=\"$inschangedt\" WHERE gedcom = \"$tree\" AND mediakey = \"{$mminfo['ID']}\"";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
       }
@@ -1255,7 +1246,7 @@ function processNotes($persfamID, $eventID, $notearray) {
 }
 
 function saveNote($persfamID, $eventID, $note) {
-  global $notelinks_table, $xnotes_table, $admtext, $tree, $link, $tngimpcfg, $max_note_length, $session_charset;
+  global $notelinks_table, $xnotes_table, $admtext, $tree, $tngimpcfg, $max_note_length, $session_charset;
 
   $found = 0;
   if ($note['XNOTE']) {
@@ -1291,7 +1282,7 @@ function saveNote($persfamID, $eventID, $note) {
 }
 
 function getNoteRecord($noteID, $prevlevel) {
-  global $link, $tree, $admtext, $savestate, $lineinfo, $xnotes_table, $citations_table, $tngimpcfg, $notelinks_table, $max_note_length, $session_charset;
+  global $tree, $admtext, $savestate, $lineinfo, $xnotes_table, $citations_table, $tngimpcfg, $notelinks_table, $max_note_length, $session_charset;
 
   $noteID = adjustID($noteID, $savestate['noffset']);
 

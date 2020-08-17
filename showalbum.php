@@ -21,7 +21,7 @@ $flags['imgprev'] = true;
 $noneliving = $noneprivate = 1;
 function getAlbumLinkText($albumID) {
   global $noneliving, $noneprivate, $text, $album2entities_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
-  global $assignedtree, $showalbum_url, $showrepo_url, $showsource_url, $getperson_url, $familygroup_url, $placesearch_url, $tngconfig;
+  global $showalbum_url, $showrepo_url, $showsource_url, $getperson_url, $familygroup_url, $placesearch_url, $tngconfig;
 
   $links = "";
 

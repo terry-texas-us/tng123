@@ -242,7 +242,7 @@ function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_up
 }
 
 function set_innermenu_links($tng_version) {
-  global $text, $admtext;
+  global $admtext;
 
   $parts = explode(".", $tng_version);    // added to determine TNG vNN for
   $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display

@@ -456,8 +456,8 @@ $pdf->Output();
 
 // childLine
 function childLine($childnum, $data, $cite = '') {
-  global $pdf, $paperdim, $lftmrg, $rtmrg, $botmrg, $lineheight;
-  global $rptFont, $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
+  global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
+  global $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
   global $labelwidth, $text;
 
   $pdf->SetFont($rptFont, "B", $lblFontSize);
@@ -479,8 +479,8 @@ function childLine($childnum, $data, $cite = '') {
 
 // singleLine
 function singleLine($label, $data, $datastyle = '', $cite = '') {
-  global $pdf, $paperdim, $lftmrg, $rtmrg, $botmrg, $lineheight;
-  global $rptFont, $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
+  global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
+  global $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
   global $labelwidth;
 
   $data = strip_tags($data);
@@ -526,8 +526,8 @@ function singleLine($label, $data, $datastyle = '', $cite = '') {
 
 // nameLine
 function nameLine($label1, $data1, $label2, $data2, $cite = '') {
-  global $textindent, $pdf, $paperdim, $lftmrg, $rtmrg, $botmrg, $lineheight;
-  global $rptFont, $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
+  global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
+  global $rptFont, $rptFontSize, $lblFontSize, $citefontsub;
   global $labelwidth;
 
   $data1 = strip_tags($data1);
@@ -556,9 +556,9 @@ function nameLine($label1, $data1, $label2, $data2, $cite = '') {
 
 // doubleLine
 function doubleLine($label1, $data1, $label2, $data2, $cite = '') {
-  global $pdf, $paperdim, $lftmrg, $rtmrg, $botmrg, $lineheight;
-  global $rptFont, $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
-  global $linehalf, $labelwidth;
+  global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
+  global $rptFont, $rptFontSize, $lblFontSize, $citefontsub;
+  global $labelwidth;
 
   $data1 = strip_tags($data1);
   $data2 = strip_tags($data2);

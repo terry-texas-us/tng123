@@ -29,7 +29,7 @@ function showFact($text, $fact) {
 }
 
 function showDatePlace($event) {
-  global $cellnumber, $text, $cms, $tree, $familyID;
+  global $cellnumber;
 
   $dptext = "";
   if ($event['date'] || $event['place']) {
@@ -50,8 +50,8 @@ function showDatePlace($event) {
 }
 
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
-  global $tree, $text, $photopath, $photosext, $allow_living, $firstsection, $children_table, $livedefault, $totcols;
-  global $nonames, $cms, $personID, $families_table, $people_table, $righttree;
+  global $tree, $text, $totcols;
+  global $personID, $families_table, $people_table, $righttree;
 
   $indtext = "";
   $rights = determineLivingPrivateRights($ind, $righttree);

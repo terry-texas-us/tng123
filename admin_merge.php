@@ -260,7 +260,7 @@ function addCriteria($row) {
 }
 
 function doNotesCitations($persfam1, $persfam2, $varname) {
-  global $ccombinenotes, $admtext, $notelinks_table, $citations_table, $tree;
+  global $ccombinenotes, $notelinks_table, $citations_table, $tree;
 
   if ($varname) {
     if ($varname == "general") {
@@ -294,7 +294,7 @@ function doNotesCitations($persfam1, $persfam2, $varname) {
 }
 
 function doAssociations($personID1, $personID2) {
-  global $tree, $admtext, $assoc_table;
+  global $tree, $assoc_table;
 
   $query = "UPDATE $assoc_table set personID = \"$personID1\" WHERE personID = \"$personID2\" AND gedcom = \"$tree\"";
   $assocresult = tng_query($query);
@@ -304,7 +304,7 @@ function doAssociations($personID1, $personID2) {
 }
 
 function delAssociations($entity) {
-  global $tree, $admtext, $assoc_table;
+  global $tree, $assoc_table;
 
   $query = "DELETE FROM $assoc_table WHERE personID = \"$entity\" AND gedcom = \"$tree\"";
   $assocresult = tng_query($query);

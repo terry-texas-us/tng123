@@ -1,6 +1,6 @@
 <?php
 function getAlbumPhoto($albumID, $albumname) {
-  global $assignedtree, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
+  global $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
   global $mediatypes_assoc, $mediapath, $showalbum_url, $tngconfig, $sitever;
 
   $wherestr2 = $tree ? " AND $medialinks_table.gedcom = \"$tree\"" : "";

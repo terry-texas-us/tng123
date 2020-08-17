@@ -354,7 +354,7 @@ function drawCouple($couple, $topflag, $linedown) {
 //function drawBox( $drawpersonID, $spouseflag, $topflag ) {
 //}
 function drawBox($drawpersonID, $spouseflag, $topflag) {
-  global $pedigree, $gens, $rootpath, $photopath, $tree, $photosext, $getperson_url, $pedigree;
+  global $gens, $tree, $getperson_url, $pedigree;
   global $text, $personID1, $primarypersonID, $slot, $righttree;
 
   if ($spouseflag && !$topflag) {
@@ -429,7 +429,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
 }
 
 function doMultSpouse($prispouse1, $prispouse2, $otherspouse) {
-  global $pedigree, $gens, $text;
+  global $pedigree, $gens;
 
   echo "<div style=\"position:absolute;background-color:{$pedigree['bordercolor']}; top:" . ($gens->offsetV - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($pedigree['leftindent'] + intval($pedigree['puboxwidth'] / 2)) . "px;height:{$pedigree['linewidth']}px;width:" . ((2 * $pedigree['puboxwidth']) + $pedigree['boxHsep'] + $pedigree['leftindent'] + 1) . "px;z-index:3;overflow:hidden;\"></div>\n";
   echo "<div style=\"position:absolute;background-color:{$pedigree['shadowcolor']}; top:" . ($gens->offsetV - intval($pedigree['linewidth'] / 2) + $pedigree['shadowoffset'] + 1) . "px;left:" . ($pedigree['leftindent'] + intval($pedigree['puboxwidth'] / 2) + $pedigree['shadowoffset'] + 1) . "px;height:{$pedigree['linewidth']}px;width:" . ((2 * $pedigree['puboxwidth']) + $pedigree['boxHsep'] + $pedigree['leftindent'] + 1) . "px;z-index:1;overflow:hidden;\"></div>\n";
@@ -576,7 +576,7 @@ function checkParent($parentrow, $parent, $spouse) {
 
 //check ancestors of person1 to see if you find person2
 function checkpersonup($nextcouple) {
-  global $text, $tree, $targetID, $children_table, $families_table, $maxupgen, $gens, $needmore;
+  global $tree, $maxupgen, $gens, $needmore;
   //global $highest;
 
   $checkpersonID = $nextcouple['person'];
@@ -679,15 +679,13 @@ function checkpersonup($nextcouple) {
 
 //check descendants of person1 to see if you find person2
 function checkpersondown($checkpersonID) {
-  global $text, $tree, $targetID, $families_table, $people_table, $children_table, $primarypersonID, $secondpersonID, $maxupgen;
-  global $msg, $gens, $otherID, $disallowspouses, $needmore;
+  global $tree, $targetID, $secondpersonID, $maxupgen;
+  global $gens, $otherID, $disallowspouses, $needmore;
   //global $lowest, $highest;
 
   $gens->downcount += 1;
   $gensdown = $gens->downcount;
-  //if( $gensdown > $lowest ) $lowest = $gensdown;
 
-  //echo "down: person=$checkpersonID, target=$targetID, down=$gensdown, up = $gensup<br/>\n";
   //check person
   if ($checkpersonID != $targetID) {
     //get sex of each individual
@@ -742,7 +740,6 @@ function checkpersondown($checkpersonID) {
             }
           } elseif ($pushed) {
             $gens->match = 1;
-            //echo "got match 1, spouse=" . $spouserow[$spouse] . ", lowest=$lowest, sec=$secondpersonID<br>\n";
             $gens->spouseflag = $row['sex'] != $spouserow['sex'] ? 1 : 2;
             if ($gens->downcount == 1 && !$gensup && $spouserow[$spouse] == $targetID && $checkpersonID == $otherID) {
               $gens->spouses = 1;
@@ -760,7 +757,7 @@ function checkpersondown($checkpersonID) {
     }
   } else {
     $gens->downcount = $gensdown;
-    //echo "got match 2<br>\n";
+
     $gens->match = 1;
     $couple['person'] = $checkpersonID;
     $couple['spouse'] = "";

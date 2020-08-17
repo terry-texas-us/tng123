@@ -65,7 +65,7 @@ if ($order == "date") {
 
 function processEvents($prefix, $stdevents, $displaymsgs) {
   global $eventtypes_table, $text, $tree, $people_table, $families_table, $trees_table, $offset, $page, $psearch, $maxsearchresults, $numtrees;
-  global $placesearch_url, $psearchns, $urlstring, $cms, $familygroup_url, $pedigree_url, $getperson_url, $events_table, $showtree_url, $order, $namesort, $datesort, $tngconfig;
+  global $placesearch_url, $psearchns, $urlstring, $cms, $familygroup_url, $pedigree_url, $getperson_url, $events_table, $showtree_url, $order, $namesort, $datesort;
 
   $successcount = 0;
   $allwhere = "";

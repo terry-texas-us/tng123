@@ -1,5 +1,5 @@
 <?php
-$map['key'] = "";
+$map['key'] = "AIzaSyAlWTL2QZDQv9BWXBvCwdAuhq1Lak8jSwU";
 $map['displaytype'] = "TERRAIN";
 $map['stlat'] = "0";
 $map['stlong'] = "10";
@@ -21,4 +21,4 @@ $pinplacelevel3 = "038";
 $pinplacelevel4 = "074";
 $pinplacelevel5 = "122";
 $pinplacelevel6 = "155";
-
+?>

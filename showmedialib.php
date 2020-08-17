@@ -59,7 +59,7 @@ function output_iptc_data($info) {
 }
 
 function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID) {
-  global $wherestr, $requirelogin, $treerestrict, $assignedtree, $tnggallery, $mediasearch, $text, $tree, $all, $showall, $ordernum;
+  global $wherestr, $requirelogin, $treerestrict, $assignedtree, $tnggallery, $mediasearch, $tree, $all, $showall, $ordernum;
   global $media_table, $medialinks_table, $albumlinks_table, $allow_media_edit;
 
   $info = array();
@@ -155,7 +155,7 @@ function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID,
 }
 
 function findLivingPrivate($mediaID, $tree) {
-  global $tree, $text, $medialinks_table, $people_table, $families_table, $citations_table, $assignedtree;
+  global $tree, $medialinks_table, $people_table, $families_table, $citations_table;
 
   $info = array();
   //select all medialinks for this mediaID, joined with people
@@ -228,7 +228,7 @@ function findLivingPrivate($mediaID, $tree) {
 }
 
 function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlinks = true) {
-  global $allow_admin, $allow_media_edit, $noneliving, $albumname, $albumID, $offset, $tnggallery;
+  global $allow_admin, $allow_media_edit, $albumname, $albumID, $offset;
   global $tree, $page, $maxsearchresults, $linktype, $cms, $showall, $tnggallery, $text;
   global $showalbum_url, $browsemedia_url, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $showmedia_url, $tngconfig;
   global $totalpages, $all;
@@ -308,7 +308,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 }
 
 function getAlbumLinkText($mediaID) {
-  global $text, $albums_table, $albumlinks_table, $showalbum_url;
+  global $albums_table, $albumlinks_table, $showalbum_url;
 
   $albumlinktext = "";
   //get all albumlink records for this mediaID, joined with album tables
@@ -327,7 +327,7 @@ function getAlbumLinkText($mediaID) {
 
 function getMediaLinkText($mediaID, $ioffset) {
   global $text, $admtext, $medialinks_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
-  global $assignedtree, $showmedia_url, $showrepo_url, $showsource_url, $getperson_url, $familygroup_url, $placesearch_url, $tngconfig, $citations_table;
+  global $showmedia_url, $showrepo_url, $showsource_url, $getperson_url, $familygroup_url, $placesearch_url, $tngconfig, $citations_table;
 
   if ($ioffset) {
     $ioffsetstr = "$ioffset, ";
@@ -452,7 +452,7 @@ function getMediaLinkText($mediaID, $ioffset) {
 
 function showMediaSource($imgrow, $ss = false) {
   global $text, $usefolder, $size, $imagetypes, $htmldocs, $histories_url, $cms, $tngconfig, $videotypes, $recordingtypes;
-  global $mediatypeID, $description, $showmedia_url, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
+  global $description, $showmedia_url, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
 
   if ($sitever == "mobile") {
     $ss = false;

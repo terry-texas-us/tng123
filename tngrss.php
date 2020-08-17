@@ -24,9 +24,9 @@ function doMedia($mediatypeID) {
   global $tngdomain, $langstr, $mediatypes_display, $timezone, $session_charset;
 
   global $media_table, $medialinks_table, $change_limit, $cutoffstr, $text, $families_table, $sources_table, $repositories_table, $citations_table, $nonames;
-  global $people_table, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $showmedia_url, $trees_table, $assignedtree;
-  global $rootpath, $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $header, $footer, $cemeteries_table;
-  global $getperson_url, $livedefault, $whatsnew, $wherestr2, $showmap_url, $thumbmaxw, $events_table, $eventtypes_table, $tngconfig;
+  global $people_table, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $trees_table;
+  global $cemeteries_table;
+  global $getperson_url, $livedefault, $wherestr2, $events_table, $eventtypes_table;
 
   if ($mediatypeID == "headstones") {
     $hsfields = ", $media_table.cemeteryID, cemname";

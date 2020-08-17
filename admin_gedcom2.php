@@ -151,7 +151,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function getFact($row, $level) {
-        global $tree, $address_table, $admtext, $lineending;
+        global $tree, $address_table, $lineending;
 
         $fact = "";
         if ($row['age']) {
@@ -203,7 +203,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function getStdExtras($persfamID, $level) {
-        global $tree, $events_table, $admtext;
+        global $tree, $events_table;
 
         $stdex = array();
         $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = \"$tree\" AND parenttag != \"\" ORDER BY parenttag";
@@ -241,7 +241,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function getNotes($id) {
-        global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $admtext, $xnotes;
+        global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $xnotes;
 
         $query = "SELECT $notelinks_table.ID as ID, secret, $xnotes_table.note as note, $xnotes_table.noteID as noteID, $notelinks_table.eventID
 		FROM $notelinks_table
@@ -316,7 +316,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function doNote($level, $label, $notetxt, $private = "") {
-        global $admtext, $savestate, $fp, $saveimport, $saveimport_table, $tree;
+        global $admtext, $savestate, $saveimport, $saveimport_table, $tree;
 
         $noteinfo = "";
         $notetxt = str_replace("\r", "", $notetxt);
@@ -367,7 +367,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function doXNotes() {
-        global $xnotes_table, $tree, $admtext, $savestate, $tngconfig, $xnotes, $exliving, $exprivate;
+        global $xnotes_table, $tree, $savestate, $tngconfig, $xnotes, $exliving, $exprivate;
 
         $xnotestr = "";
 
@@ -424,8 +424,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function getMediaLinks($id) {
-        global $tree, $admtext, $savestate, $media_table, $medialinks_table;
-        global $expdir, $exppath, $lineending, $incl, $resume;
+        global $tree, $savestate, $media_table, $medialinks_table;
+        global $expdir, $exppath, $incl, $resume;
 
         $allmedia = array();
         if ($savestate['media']) {
@@ -630,7 +630,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function doAssociations($entityID) {
-        global $tree, $assoc_table, $admtext, $lineending;
+        global $tree, $assoc_table, $lineending;
 
         $assocstr = "";
         $query = "SELECT passocID, relationship FROM $assoc_table WHERE gedcom = \"$tree\" AND personID = \"$entityID\"";
@@ -646,7 +646,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function writeIndividual($ind) {
-        global $tree, $people_table, $events_table, $eventtypes_table, $admtext, $lnprefixes, $assoc_table, $branchstr;
+        global $tree, $people_table, $events_table, $eventtypes_table, $lnprefixes, $branchstr;
         global $children_table, $families_table, $citations, $templeready, $savestate, $fp, $lineending, $righttree, $exprivatestr, $exlivingstr;
 
         $rights = determineLivingPrivateRights($ind, $righttree);
@@ -946,8 +946,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function writeFamily($family) {
-        global $tree, $events_table, $eventtypes_table, $admtext, $citations, $savestate, $children_table, $people_table;
-        global $templeready, $fp, $lineending, $righttree, $exlivingstr, $exprivatestr;
+        global $tree, $events_table, $eventtypes_table, $citations, $savestate, $children_table, $people_table;
+        global $templeready, $fp, $lineending, $righttree;
 
         $familyID = $family['familyID'];
         $doit = !$templeready;

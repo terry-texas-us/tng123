@@ -13,8 +13,8 @@ function initFamily() {
 }
 
 function getFamilyRecord($familyID, $prevlevel) {
-  global $link, $families_table, $children_table, $events_table, $tree, $admtext, $stdevents, $citations_table, $fciteevents, $prefix, $assoc_table;
-  global $savestate, $lineinfo, $custeventlist, $notelinks_table, $stdnotes, $notecount, $custevents, $lineending, $today, $currentuser, $tngimpcfg, $branchlinks_table;
+  global $families_table, $children_table, $tree, $admtext, $fciteevents, $prefix, $assoc_table;
+  global $savestate, $lineinfo, $custeventlist, $stdnotes, $notecount, $today, $currentuser, $tngimpcfg, $branchlinks_table;
 
   $familyID = adjustID($familyID, $savestate['foffset'], "F");
 

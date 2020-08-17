@@ -10,7 +10,7 @@ include "checklogin.php";
 initMediaTypes();
 
 function get_album_nav($total, $perpage, $pagenavpages) {
-  global $page, $totalpages, $tree, $text, $orgtree, $albumID, $searchstring, $mediatypeID, $hsstat, $cemeteryID;
+  global $page, $totalpages, $text, $orgtree, $albumID, $searchstring, $mediatypeID, $hsstat, $cemeteryID;
 
   if (!$page) {
     $page = 1;

@@ -69,8 +69,6 @@ function restore($table) {
 }
 
 function writechunk($table, $fields, $values) {
-  global $admtext;
-
   $values = trim($values, ',');
   $query = "INSERT INTO $table ($fields) VALUES $values";
   return tng_query($query);

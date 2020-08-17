@@ -411,7 +411,6 @@ if (!class_exists('TNGPDF')) {
     function Footer() {
       global $footerConfig;
       global $tngdomain, $sitename, $dbowner, $text;
-      global $rptFont, $lftmrg;
 
       if ($this->page == 1 && $footerConfig['skipFirst'] == 'true') {
         return;

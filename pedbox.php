@@ -1,7 +1,7 @@
 <?php
 function getPhotoSrc($persfamID, $living, $gender) {
-  global $rootpath, $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_assoc;
-  global $photosext, $tree, $medialinks_table, $media_table, $text, $tngconfig, $cms;
+  global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
+  global $photosext, $tree, $medialinks_table, $media_table, $tngconfig, $cms;
 
   $photo = array();
   $showmedia_url = getURL("showmedia", 1);

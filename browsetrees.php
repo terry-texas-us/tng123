@@ -12,7 +12,7 @@ $browsesources_url = getURL("browsesources", 1);
 $switchtree_url = getURL("switchtree", 1);
 
 function doTreeSearch($instance, $pagenav) {
-  global $text, $photosearch, $treesearch;
+  global $text, $treesearch;
 
   $browsetrees_noargs_url = getURL("browsetrees", 0);
 

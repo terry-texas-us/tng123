@@ -23,7 +23,7 @@ $getperson_url = getURL("getperson", 1);
 $gotImageJpeg = function_exists('imageJpeg');
 
 function showDivs($type) {
-  global $wherestr, $text, $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $cms, $rootpath, $suggest_url, $getperson_url, $thumbmaxw;
+  global $wherestr, $text, $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $rootpath, $suggest_url, $getperson_url;
   global $gotImageJpeg, $maxmediafilesize;
 
   $mediatext = "<table class=\"whiteback\" cellpadding=\"8\" cellspacing=\"2\" width=\"100%\">\n";
@@ -46,7 +46,6 @@ function showDivs($type) {
     $mediatext .= "<tr><td class=\"databack normal\">\n";
     $href = getMediaHREF($row, 0);
     if ($imgsrc) {
-      //$mediatext .= "<div class=\"mwimage\">\n<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;left:$thumbmaxw" . "px\"></div></div>\n";
       $mediatext .= "<div class=\"mwimage\">\n<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $mediatext .= "<a href=\"$href\"";
       if ($gotImageJpeg && isPhoto($row) && filesize("$rootpath$usefolder/" . $row['path']) < $maxmediafilesize) {

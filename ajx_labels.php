@@ -35,7 +35,7 @@ $done = $fdone = array();
 $names = $famnames = "";
 
 function getGender($personID) {
-  global $tree, $people_table, $husbgender, $wifegender, $admtext;
+  global $tree, $people_table, $husbgender, $wifegender;
 
   $info = array();
   $query = "SELECT firstname, lastname, sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
@@ -61,7 +61,7 @@ function getGender($personID) {
 }
 
 function clearBranch($table, $branch) {
-  global $admtext, $tree;
+  global $tree;
 
   $query = "UPDATE $table SET branch=\"\" WHERE gedcom=\"$tree\" AND branch = \"$branch\"";
   $result = tng_query($query);
@@ -89,7 +89,7 @@ function clearBranch($table, $branch) {
 }
 
 function deleteBranch($table, $branch) {
-  global $admtext, $tree, $people_table, $families_table, $children_table;
+  global $tree, $people_table, $children_table;
 
   $counter = 0;
   if ($table == $people_table) {
@@ -137,7 +137,7 @@ function deleteBranch($table, $branch) {
 }
 
 function setPersonLabel($personID) {
-  global $tree, $people_table, $branch, $admtext, $branchlinks_table, $overwrite, $branchaction, $done, $names;
+  global $tree, $people_table, $branch, $branchlinks_table, $overwrite, $branchaction, $done, $names;
 
   //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($personID) {
@@ -229,7 +229,7 @@ function doFCounter() {
 }
 
 function setFamilyLabel($personID, $gender) {
-  global $tree, $families_table, $branch, $admtext, $overwrite, $branchlinks_table, $fcounter, $branchaction, $people_table, $fdone, $famnames;
+  global $tree, $families_table, $branch, $overwrite, $branchlinks_table, $branchaction, $people_table, $fdone, $famnames;
 
   //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($gender['self']) {
@@ -306,7 +306,7 @@ function setFamilyLabel($personID, $gender) {
 }
 
 function setSpousesLabel($personID, $gender) {
-  global $tree, $families_table, $branch, $admtext;
+  global $tree, $families_table;
 
   setFamilyLabel($personID, $gender);
   if ($gender['self']) {
@@ -318,7 +318,7 @@ function setSpousesLabel($personID, $gender) {
 }
 
 function doAncestors($personID, $gender, $gen) {
-  global $dagens, $tree, $agens, $children_table, $families_table, $branch, $husbgender, $wifegender, $admtext, $dospouses;
+  global $dagens, $tree, $agens, $children_table, $families_table, $husbgender, $wifegender, $dospouses;
 
   setPersonLabel($personID);
   setFamilyLabel($personID, $gender);
@@ -358,7 +358,7 @@ function doAncestors($personID, $gender, $gen) {
 }
 
 function doDescendants($personID, $gender, $gen, $maxgen) {
-  global $tree, $dgens, $people_table, $families_table, $children_table, $admtext, $dospouses;
+  global $tree, $families_table, $children_table, $dospouses;
 
   if ($gender['spouseorder']) {
     $query = "SELECT familyID FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = \"$tree\" ORDER BY {$gender['spouseorder']}";

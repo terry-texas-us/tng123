@@ -13,7 +13,7 @@ function initCitation() {
 }
 
 function handleSource($persfamID, $prevlevel) {
-  global $tree, $lineinfo, $admtext, $custevents, $stdevents, $citations_table, $savestate, $notecount;
+  global $lineinfo, $savestate, $notecount;
 
   $cite = initCitation();
   preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
@@ -104,8 +104,8 @@ function initSource() {
 }
 
 function getSourceRecord($sourceID, $prevlevel) {
-  global $link, $sources_table, $events_table, $notelinks_table, $tree, $admtext, $savestate, $lineinfo, $stdnotes, $notecount, $custevents;
-  global $custeventlist, $lineending, $currentuser, $tngimpcfg, $today, $prefix;
+  global $sources_table, $tree, $admtext, $savestate, $lineinfo, $stdnotes, $notecount;
+  global $currentuser, $tngimpcfg, $today, $prefix;
 
   $sourceID = adjustID($sourceID, $savestate['soffset']);
 
@@ -291,8 +291,8 @@ function getRestOfSource($sourceID, $prevlevel) {
 }
 
 function getRepoRecord($repoID, $prevlevel) {
-  global $link, $repositories_table, $events_table, $notelinks_table, $tree, $admtext, $savestate, $lineinfo, $stdnotes, $notecount, $custevents;
-  global $custeventlist, $lineending, $currentuser, $tngimpcfg, $today, $address_table, $prefix;
+  global $repositories_table, $tree, $admtext, $savestate, $lineinfo, $stdnotes, $notecount;
+  global $currentuser, $tngimpcfg, $today, $address_table, $prefix;
 
   $repoID = adjustID($repoID, $savestate['roffset']);
 

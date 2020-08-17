@@ -16,7 +16,7 @@ $dims = "width=\"20\" height=\"20\"";
 $isConnected = isConnected();
 
 function tng_adminheader($title, $flags) {
-  global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $dates, $cms, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
+  global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $cms, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
 
   header("Content-type:text/html;charset=" . $session_charset);
   echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n\n";
@@ -62,7 +62,6 @@ function tng_adminheader($title, $flags) {
   echo "else\n";
   echo "document.form2.elements[i].checked = false;\n";
   echo "}\n}\n}\n";
-  //echo "var MONTH_NAMES=new Array('$dates[JANUARY]','$dates[FEBRUARY]','$dates[MARCH]','$dates[APRIL]','$dates[MAY]','$dates[JUNE]','$dates[JULY]','$dates[AUGUST]','$dates[SEPTEMBER]','$dates[OCTOBER]','$dates[NOVEMBER]','$dates[DECEMBER]','$dates[JAN]','$dates[FEB]','$dates[MAR]','$dates[APR]','$dates[MAY]','$dates[JUN]','$dates[JUL]','$dates[AUG]','$dates[SEP]','$dates[OCT]','$dates[NOV]','$dates[DEC]');\n";
   echo "var closeimg = \"img/tng_close.gif\";var cmstngpath='';";
   echo "var loadingmsg = \"{$text['loading']}\";\n";
   echo "</script>\n";
@@ -81,7 +80,7 @@ function tng_adminheader($title, $flags) {
 }
 
 function getNewNumericID($type, $field, $table) {
-  global $tree, $admtext, $tngconfig;
+  global $tree, $tngconfig;
 
   eval("\$prefix = \$tngconfig['{$type}prefix'];");
   eval("\$suffix = \$tngconfig['{$type}suffix'];");
@@ -117,7 +116,7 @@ function findhelp($helpfile) {
 }
 
 function doMenu($tabs, $currtab, $innermenu = 0) {
-  global $newbrowser, $text, $sitever;
+  global $newbrowser, $sitever;
 
   $tabctr = 0;
   $menu = "<div style=\"width:100%;\">\n";
@@ -172,7 +171,7 @@ function checkReview($type) {
 }
 
 function deleteNote($noteID, $flag) {
-  global $notelinks_table, $xnotes_table, $admtext;
+  global $notelinks_table, $xnotes_table;
 
   $query = "SELECT xnoteID FROM $notelinks_table WHERE ID=\"$noteID\"";
   $result = tng_query($query);
@@ -228,7 +227,7 @@ function displayListLocation($start, $pagetotal, $grandtotal) {
 }
 
 function showEventRow($datefield, $placefield, $label, $persfamID) {
-  global $admtext, $tree, $gotmore, $gotnotes, $gotcites, $row, $dims, $noclass, $currentform;
+  global $admtext, $gotmore, $gotnotes, $gotcites, $row, $noclass, $currentform;
 
   $notesicon = $gotnotes[$label] ? "admin-note-on-icon" : "admin-note-off-icon";
   $citesicon = $gotcites[$label] ? "admin-cite-on-icon" : "admin-cite-off-icon";
@@ -271,7 +270,7 @@ function cleanID($id) {
 }
 
 function determineConflict($row, $table) {
-  global $currentuser, $tngconfig, $admtext;
+  global $currentuser, $tngconfig;
 
   $editconflict = false;
   $currenttime = time();

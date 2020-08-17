@@ -92,7 +92,7 @@ function getBirthInfo($thisperson, $noicon = null) {
 }
 
 function getCitations($persfamID, $shortcite = 1) {
-  global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay, $cms, $showsource_url;
+  global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay, $showsource_url;
 
   $actualtext = $shortcite ? "" : ", actualtext";
   $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, $citations_table.note as note, $citations_table.sourceID, description, eventID{$actualtext}
@@ -243,7 +243,7 @@ function reorderCitation($citekey, $withlink = 1) {
 }
 
 function getNotes($persfamID, $flag) {
-  global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $eventswithnotes, $allow_private;
+  global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $allow_private;
 
   $custnotes = array();
   $gennotes = array();
@@ -534,7 +534,7 @@ function setEvent($data, $datetr) {
   $eventctr++;
 
   if (!empty($map['key']) && !empty($data['place']) && empty($data['nomap'])) {
-    global $locations2map, $l2mCount, $places_table, $tree, $pinplacelevel0, $pinplacelevel1, $pinplacelevel2, $pinplacelevel3, $pinplacelevel4, $pinplacelevel5, $pinplacelevel6;
+    global $locations2map, $l2mCount, $places_table, $tree, $pinplacelevel0;
 
     $treestr = $tngconfig['places1tree'] ? "" : " gedcom = '$tree' AND";
     $safeplace = tng_real_escape_string($data['place']);
@@ -572,7 +572,7 @@ function setEvent($data, $datetr) {
 $datewidth = $thumbmaxw + 20 > 104 ? $thumbmaxw + 20 : 104;
 $eventcounter = 0;
 function showEvent($data) {
-  global $citations, $notestogether, $text, $tree, $entity, $tentedit_url;
+  global $notestogether, $text, $tree, $tentedit_url;
   global $tableid, $cellnumber, $cms, $placesearch_url, $tentative_edit;
   global $indnotes, $famnotes, $srcnotes, $reponotes, $indmedia, $fammedia, $srcmedia, $repomedia, $tngconfig;
   global $indalbums, $famalbums, $srcalbums, $repoalbums, $eventcounter, $num_collapsed;
@@ -789,7 +789,7 @@ function showBreak($breaksize) {
 }
 
 function doCustomEvents($entityID, $type, $nomap = 0) {
-  global $events_table, $eventtypes_table, $text, $tree, $tngprint, $allow_lds;
+  global $events_table, $eventtypes_table, $tree, $tngprint, $allow_lds;
 
   $query = "SELECT display, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, tag, description, eventID, collapse, ldsevent FROM ($events_table, $eventtypes_table) 
 		WHERE persfamID = \"$entityID\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"$tree\" AND keep = \"1\" AND parenttag = \"\" 
@@ -1017,8 +1017,8 @@ function writeAlbums($albums_array) {
 }
 
 function getMedia($entity, $linktype, $all = false) {
-  global $medialinks_table, $media_table, $tree, $text, $nonames, $sitever;
-  global $livedefault, $mediapath, $mediatypes_assoc, $tngconfig, $rootpath;
+  global $medialinks_table, $media_table, $tree, $text, $nonames;
+  global $mediapath, $mediatypes_assoc, $tngconfig, $rootpath;
 
   $media = array();
   //if mediatypeID, do it in media type sections, otherwise, do it all together
@@ -1238,7 +1238,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
 
 function getAlbumPhoto($albumID, $albumname) {
   global $livedefault, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
-  global $mediatypes_assoc, $mediapath, $showalbum_url, $sitever, $tree;
+  global $mediatypes_assoc, $mediapath, $showalbum_url, $tree;
 
   $wherestr2 = $tree ? " AND $medialinks_table.gedcom = \"$tree\"" : "";
 
@@ -1323,7 +1323,7 @@ function getAlbumPhoto($albumID, $albumname) {
 }
 
 function getFact($row) {
-  global $tree, $address_table, $text;
+  global $address_table, $text;
 
   $fact = array();
   $i = 0;
@@ -1382,7 +1382,7 @@ function getFact($row) {
 }
 
 function getStdExtras($persfamID) {
-  global $tree, $events_table, $text;
+  global $tree, $events_table;
 
   $stdex = array();
   $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = \"$tree\" AND parenttag != \"\" ORDER BY parenttag";

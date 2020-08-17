@@ -1,6 +1,6 @@
 <?php
 function adminwritelog($string) {
-  global $admtext, $currentuserdesc, $rootpath, $time_offset, $subroot;
+  global $admtext, $currentuserdesc, $time_offset, $subroot;
 
   require $subroot . "logconfig.php";
 

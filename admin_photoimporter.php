@@ -17,7 +17,7 @@ if (!$allow_media_add || $assignedtree) {
 
 $totalImported = 0;
 function importFrom($tngpath, $orgpath, $needsubdirs) {
-  global $rootpath, $media_table, $mediatypeID, $tree, $time_offset, $thumbprefix, $thumbsuffix, $session_charset, $totalImported;
+  global $rootpath, $media_table, $mediatypeID, $tree, $time_offset, $thumbprefix, $thumbsuffix, $totalImported;
   $subdirs = array();
 
   if ($orgpath) {
@@ -31,7 +31,6 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
     while ($filename = readdir($handle)) {
       if (is_file($filename)) {
         if (($thumbprefix && strpos($filename, $thumbprefix) !== 0) || ($thumbsuffix && substr($filename, -strlen($thumbsuffix)) != $thumbsuffix)) {
-          //$cleanfile = $session_charset == "UTF-8" ? utf8_encode($filename) : $filename;
           echo "Inserting $path/$filename ... ";
           //insert ignore into database
           $fileparts = pathinfo($filename);

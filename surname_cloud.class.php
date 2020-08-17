@@ -24,7 +24,7 @@ class surname_cloud
   */
 
   function display($top = "50", $surnameTree = "", $surnameBranch = "") {
-    global $people_table, $text, $lnprefixes, $assignedtree, $assignedbranch;
+    global $people_table, $text, $lnprefixes, $assignedtree;
     $treeBranchUrlString = "";
 
     // If you have surnames you wish to exclude enter them here
@@ -39,20 +39,12 @@ class surname_cloud
     if ($assignedtree && $assignedtree != "-x-guest-x-") {
       $surnameTree = $assignedtree;
     }
-    //if($assignedbranch)
-    //	$surnameBranch = $assignedbranch;
 
     if ($surnameTree != "") {
       $treeString = "gedcom = \"" . $surnameTree . "\"";
       $wherestr .= $wherestr ? " AND " . $treeString : "WHERE " . $treeString;
       $treeBranchUrlString .= "&amp;tree=$surnameTree";
     }
-
-    //if ($surnameBranch != "") {
-    //	$branchString = "branch = \"" . $surnameBranch . "\"";
-    //	$wherestr .= $wherestr ? " AND " . $branchString : "WHERE " . $branchString;
-    //	$treeBranchUrlString .= "&amp;branch=$surnameBranch";
-    //}
 
     // Get all unique surnames
     $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";

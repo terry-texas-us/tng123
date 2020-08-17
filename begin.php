@@ -1,5 +1,5 @@
 <?php
-//$cms = array();  //taken out because it's unnecessary and it makes "require login" fail for historytemplate pages
+
 if (isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
   die("Sorry!");
 }

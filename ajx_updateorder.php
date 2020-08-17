@@ -16,7 +16,7 @@ $json = false;
 initMediaTypes();
 
 function reorderMedia($query, $plink) {
-  global $admtext, $medialinks_table, $media_table, $type, $album2entities_table;
+  global $medialinks_table, $media_table, $type, $album2entities_table;
 
   $ptree = $plink['gedcom'];
   $eventID = $plink['eventID'];
@@ -50,7 +50,7 @@ function reorderMedia($query, $plink) {
 }
 
 function setDefault($tree, $entity, $media, $album) {
-  global $albumlinks_table, $medialinks_table, $allow_delete;
+  global $albumlinks_table, $medialinks_table;
 
   if ($album) {
     $query = "UPDATE $albumlinks_table SET defphoto = '' WHERE defphoto = '1' AND albumID = '$album'";

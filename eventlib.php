@@ -1,6 +1,6 @@
 <?php
 function showCustEvents($id) {
-  global $tree, $admtext, $events_table, $eventtypes_table, $allow_edit, $allow_delete, $gotnotes, $gotcites, $dims, $mylanguage, $languages_path;
+  global $tree, $admtext, $events_table, $eventtypes_table, $allow_edit, $allow_delete, $gotnotes, $gotcites, $mylanguage, $languages_path;
 
   echo "<div id=\"custevents\" style=\"margin-bottom:5px\">\n";
 

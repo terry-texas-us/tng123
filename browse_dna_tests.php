@@ -36,7 +36,7 @@ function get_test_groups($test_type, $test_group) {
 }
 
 function doTestSearch($instance, $pagenav) {
-  global $text, $testsearch, $tree, $test_type;
+  global $text, $testsearch, $tree;
 
   $browse_dna_tests_noargs_url = getURL("browse_dna_tests", 0);
 

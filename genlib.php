@@ -56,7 +56,7 @@ if (!$tree && $defaulttree) {
 
 function tng_header($title, $flags) {
   global $custommeta, $customheader, $cms, $session_charset, $tngprint, $sitename, $site_desc, $tngconfig, $tngdomain, $responsivetables;
-  global $text, $map, $browser, $templatepath, $tng_title, $tng_version, $tng_date, $tng_copyright, $sitever, $templatenum, $tmp, $http, $isConnected;
+  global $text, $templatepath, $tng_title, $tng_version, $tng_date, $tng_copyright, $sitever, $templatenum, $tmp, $http, $isConnected;
   global $fbOGimage, $pageURL;
 
   initMediaTypes();
@@ -228,7 +228,7 @@ function tng_header($title, $flags) {
 }
 
 function tng_footer($flags) {
-  global $customfooter, $cms, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $sitever, $tng_version, $tngconfig;
+  global $customfooter, $cms, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $sitever, $tngconfig;
 
   $needtherest = true;
   if ($tngprint) {
@@ -280,11 +280,11 @@ function tng_footer($flags) {
 }
 
 function tng_basicfooter($flags) {
-  global $text, $cms, $tng_version, $sitever, $http, $tngconfig, $tree, $personID, $flags, $templatepath;
+  global $text, $cms, $sitever, $flags, $templatepath;
 
   $footer = "";
   $newsitever = getSiteVersion();
-  //echo "ver=$sitever, nsv=$newsitever";
+
   if ($sitever == "mobile" || $newsitever != "standard") {
     $thispage = getScriptName(false);
     $thispage = preg_replace('/\??\&?sitever=(mobile|standard|tablet)/', "", $thispage);
@@ -306,24 +306,7 @@ function tng_basicfooter($flags) {
   }
   include $cms['tngpath'] . "stdsitecredit.php";
   $footer .= $sitecredit;
-  /*if(!$tngconfig['webmatches'] && $personID) {
-?>
-  <script type="text/javascript">
-    jQuery(document).ready(function(){
-      var params = {tree: '<?php echo $tree; ?>', personID: '<?php echo $personID; ?>'};
-      jQuery.ajax({
-        url: '<?php echo $cms['tngpath']; ?>mhtng.php',
-        data: params,
-        dataType: 'html',
-        success: function(req) {
-          jQuery('#nameheader').append(req);
-        }
-      })
-    });
-  </script>
-<?php
-}
-*/
+
   if (isset($flags['imgprev'])) {
     ?>
       <script type="text/javascript">
@@ -359,8 +342,8 @@ function tng_basicfooter($flags) {
 }
 
 function getSmallPhoto($medialink) {
-  global $rootpath, $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_assoc, $thumbmaxw, $thumbmaxh;
-  global $cms, $mediatypes_thumbs, $sitever, $tnggallery, $tngconfig;
+  global $rootpath, $mediapath, $mediatypes_assoc, $thumbmaxw, $thumbmaxh;
+  global $cms, $mediatypes_thumbs, $tnggallery, $tngconfig;
 
   if (!$thumbmaxh) {
     $thumbmaxh = 100;
@@ -461,7 +444,7 @@ function getFirstNameOnly($row) {
 }
 
 function tng_menu($enttype, $currpage, $entityID, $innermenu) {
-  global $tree, $text, $disallowgedcreate, $target, $allow_admin, $allow_edit, $currentuser;
+  global $tree, $text, $disallowgedcreate, $allow_edit;
   global $rightbranch, $cms, $allow_ged, $emailaddr, $newbrowser, $tngprint, $flags, $sitever;
 
   $nexttab = 0;
@@ -590,7 +573,7 @@ function tng_smallIcon($options) {
 }
 
 function tng_getLeftIcons() {
-  global $tngconfig, $text, $homepage, $currentuser, $allow_profile, $cms, $target, $sitever;
+  global $tngconfig, $text, $homepage, $currentuser, $allow_profile, $cms, $sitever;
 
   if (!isset($tngconfig['menucount'])) {
     $tngconfig['menucount'] = 0;
@@ -779,7 +762,7 @@ function tng_getLanguageSelect($instance) {
 }
 
 function tng_getLangMenu($title) {
-  global $chooselang, $languages_table, $mylanguage, $languages_path, $text, $tngconfig;
+  global $chooselang, $languages_table, $mylanguage, $languages_path, $tngconfig;
 
   $menu = "";
   if ($chooselang) {
@@ -816,7 +799,7 @@ function get_menustyle($key, $itemcount) {
 }
 
 function tng_mobileicons($title) {
-  global $text, $tngconfig, $custommenu, $custmenu, $custommobilemenu, $custommenulinks;
+  global $text, $tngconfig, $custmenu, $custommobilemenu, $custommenulinks;
 
   //container, full width, fixed at top
   //get left & right icons, put in single list
@@ -1149,7 +1132,7 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
 }
 
 function getMediaHREF($row, $mlflag) {
-  global $mediatypes_assoc, $mediapath, $htmldocs, $imagetypes, $videotypes, $recordingtypes, $notrunc, $cms;
+  global $mediatypes_assoc, $mediapath, $htmldocs, $imagetypes, $videotypes, $recordingtypes, $cms;
 
   $histories_url = getURL("histories", 1);
   $showmedia_url = getURL("showmedia", 1);
@@ -1165,9 +1148,6 @@ function getMediaHREF($row, $mlflag) {
   $thismediatype = $row['mediatypeID'];
   $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$thismediatype] : $mediapath;
 
-
-  //if($mlflag != 1)
-  //	$notrunc = 1;  //ok, I'm not sure if this is really needed, so I'm commenting it out
   if (!$row['abspath'] && (in_array($form, $imagetypes) || in_array($form, $videotypes) || in_array($form, $recordingtypes) || !$form)) {
     $uselink = $showmedia_url . "mediaID=" . $row['mediaID'];
     if ($mlflag == 1) {
@@ -1280,7 +1260,7 @@ function showLinks($linkList, $newtab = false, $class = null, $inner_html = null
 }
 
 function showMediaLinks($linkList) {
-  global $media_table, $rootpath, $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_assoc, $thumbmaxw, $thumbmaxh, $cms, $mediatypes_thumbs, $sitever;
+  global $media_table, $mediapath, $mediatypes_assoc, $cms;
   $links = explode(",", $linkList);
   $finishedmedList = "";
 

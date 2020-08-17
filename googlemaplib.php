@@ -15,7 +15,7 @@ $banreplace = array("[", "]", "", "and", " from%A0", " to%A0", " van%A0", " naar
 //$mcharsetstr = "&amp;oe=$session_charset";
 
 function tng_map_pins() {
-  global $locations2map, $l2mCount, $pinplacelevel0, $cms;
+  global $locations2map, $pinplacelevel0, $cms;
   global $map, $defermap, $session_charset;
 
   $minLat = 500;
