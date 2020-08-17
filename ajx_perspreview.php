@@ -2,7 +2,7 @@
 $textpart = "getperson";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "personlib.php";
 
 $result = getPersonFullPlusDates($tree, $personID);
 if (!tng_num_rows($result)) {

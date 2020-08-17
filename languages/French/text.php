@@ -1011,8 +1011,8 @@ $text['dna_info_head'] = "Info test ADN";
 $text['firstpage'] = "Premi�re page";
 $text['lastpage'] = "Derni�re page";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

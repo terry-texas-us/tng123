@@ -6,8 +6,8 @@ function tng_sendmail($from_name, $from_email, $to_name, $to_email, $subject, $b
     $success = false;
   } else {
     if ($tngconfig['usesmtp']) {
-      require_once("class.phpmailer.php");
-      require_once("class.smtp.php");
+      require_once "class.phpmailer.php";
+      require_once "class.smtp.php";
 
       //need host, port, username & password
       $options = new stdClass();

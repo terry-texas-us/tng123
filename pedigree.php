@@ -3,7 +3,7 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
+include $subroot . "pedconfig.php";
 if (!$personID && !isset($needperson)) {
   die("no args");
 }
@@ -28,7 +28,7 @@ if ($display == "textonly" || (!$display && $pedigree['usepopups'] == -1)) {
 }
 
 if ($allow_edit || $allow_add) {
-  include($cms['tngpath'] . "$mylanguage/admintext.php");
+  include $cms['tngpath'] . "$mylanguage/admintext.php";
 }
 
 $pedigree_url = getURL("pedigree", 1);
@@ -535,7 +535,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($text['pedigreefor'] . " $pedname", $flags);
 
 if ($allow_edit || $allow_add) {
-  include($cms['tngpath'] . "eventlib_js.php");
+  include $cms['tngpath'] . "eventlib_js.php";
 }
 
 $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row['sex']);

@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "events";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 $query = "SELECT eventID, age, agency, cause, $events_table.addressID, address1, address2, city, state, zip, country, info, phone, email, www FROM $events_table LEFT JOIN $address_table on $events_table.addressID = $address_table.addressID WHERE parenttag = \"$eventID\" AND $events_table.persfamID = \"$persfamID\" AND $events_table.gedcom = \"$tree\"";
 $result = tng_query($query);

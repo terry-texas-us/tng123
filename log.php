@@ -2,7 +2,7 @@
 function writelog($string) {
   global $text, $currentuser, $currentuserdesc, $cms, $rootpath, $_SERVER, $time_offset, $subroot, $exusers, $session_charset, $badhosts, $charset;
 
-  require($subroot . "logconfig.php");
+  require $subroot . "logconfig.php";
 
   if (!isset($_SERVER['REMOTE_HOST'])) {
     $_SERVER['REMOTE_HOST'] = '';

@@ -1,12 +1,12 @@
 <?php
 include "begin.php";
 $tngconfig['maint'] = "";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "login";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 
-include($cms['tngpath'] . "log.php");
+include $cms['tngpath'] . "log.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
@@ -15,6 +15,6 @@ header("Content-type:text/html; charset=" . $session_charset);
   <?php
   $loginfieldclass = "loginfield";
   $loginbtnclass = "btn loginbtn";
-  include($cms['tngpath'] . "loginlib.php");
+  include $cms['tngpath'] . "loginlib.php";
   ?>
 </div>

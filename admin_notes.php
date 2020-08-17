@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "notes";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 $query = "SELECT $eventtypes_table.eventtypeID, tag, display FROM $events_table 
 	LEFT JOIN  $eventtypes_table on $eventtypes_table.eventtypeID = $events_table.eventtypeID 

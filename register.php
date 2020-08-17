@@ -5,9 +5,9 @@ include "tng_begin.php";
 if (!$personID) {
   die("no args");
 }
-include($subroot . "pedconfig.php");
-include($cms['tngpath'] . "personlib.php");
-include($cms['tngpath'] . "reglib.php");
+include $subroot . "pedconfig.php";
+include $cms['tngpath'] . "personlib.php";
+include $cms['tngpath'] . "reglib.php";
 
 $getperson_url = getURL("getperson", 1);
 $register_url = getURL("register", 1);

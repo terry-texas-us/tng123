@@ -2,7 +2,7 @@
 $textpart = "familygroup";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "personlib.php";
 
 $familygroup_url = getURL("familygroup", 1);
 $getperson_url = getURL("getperson", 1);

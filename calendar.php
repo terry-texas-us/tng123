@@ -41,7 +41,7 @@ tng_header($text['calendar'], $flags);
     <h1 class="header"><span class="headericon" id="calendar-hdr-icon"></span><?php echo $text['calendar']; ?></h1><br clear="left"/>
 
 <?php
-include_once($cms['tngpath'] . "calsettings.php");
+include_once $cms['tngpath'] . "calsettings.php";
 
 // Make an array of all the event types
 $calAllEvents = array_merge($calIndEvent, $calFamEvent, $calEvent);

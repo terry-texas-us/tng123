@@ -25,7 +25,7 @@ tng_header("Your Feature 1 Story Title", $flags);
 	If you use a different file name, you need to also update the family1.php file name accordingly
 */
 
-// include($cms['tngpath'] . "$mylanguage/family1.php");
+// include $cms['tngpath'] . "$mylanguage/family1.php";
 ?>
 
 <h1>Family 1 Story</h1>
@@ -44,7 +44,7 @@ tng_header("Your Feature 1 Story Title", $flags);
     tng_footer.php function call in your language folder and use a PHP
 </p>
 <p>
-    include($mylanguage/family1.php) to include the content from you language folder for each language you support on your site.
+    include $mylanguage/family1.php to include the content from you language folder for each language you support on your site.
     <br/>
     For additional information see the TNG Wiki article on creating User Pages or histories using the historytemplate.php file at http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Getting_Started and
     http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Multi-Language

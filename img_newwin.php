@@ -1,9 +1,9 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "imgviewer";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 
 header("Content-type:text/html;charset=" . $session_charset);
 echo $tngconfig['doctype'] ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
@@ -25,7 +25,7 @@ echo $tngconfig['doctype'] ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PU
 
 <body onload="calcHeight(window.innerHeight);">
 <?php
-include($cms['tngpath'] . "js/img_utils.js");
+include $cms['tngpath'] . "js/img_utils.js";
 echo "<div id=\"loadingdiv2\" style=\"position:static;\">{$text['loading']}</div>\n";
 ?>
 

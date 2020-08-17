@@ -20,7 +20,7 @@ if (!$allow_add || !$allow_add || !$allow_edit || $assignedbranch) {
   exit;
 }
 
-include($subroot . "importconfig.php");
+include $subroot . "importconfig.php";
 require "adminlog.php";
 $today = date("Y-m-d H:i:s");
 

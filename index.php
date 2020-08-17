@@ -3,7 +3,7 @@ include "tng_begin.php";
 
 //Insert the following lines in your index.php to take advantage of template switching
 if ($templateswitching && $templatenum) {
-  include($cms['tngpath'] . "templates/$templatepfx$templatenum/index.php");
+  include $cms['tngpath'] . "templates/$templatepfx$templatenum/index.php";
   exit;
 }
 //end of lines to be inserted for template switching

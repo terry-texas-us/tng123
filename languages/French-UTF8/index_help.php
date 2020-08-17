@@ -1,7 +1,7 @@
 <?php
 $relpath = "../../";
-include($relpath . "begin.php");
-include($relpath . "version.php");
+include $relpath . "begin.php";
+include $relpath . "version.php";
 echo $tngconfig['doctype'] ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
 echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
 ?>
@@ -10,7 +10,7 @@ echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $t
     <title>Aide : Administration</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <?php
-  include($relpath . "adminmeta.php");
+  include $relpath . "adminmeta.php";
   ?>
     <style>
         p {

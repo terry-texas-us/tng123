@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $browsemedia_url = getURL("browsemedia", 1);
 
 if ($_GET['showdocs'] == 1) {

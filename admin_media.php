@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($subroot . "mapconfig.php");
+include $subroot . "mapconfig.php";
 include "adminlib.php";
 $textpart = "photos";
 include "$mylanguage/admintext.php";
@@ -8,7 +8,7 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
-include_once("tngdblib.php");
+include_once "tngdblib.php";
 
 $maxnoteprev = 350;  //don't use the global value here because we always want to truncate
 

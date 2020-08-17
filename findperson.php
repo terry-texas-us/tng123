@@ -1,11 +1,11 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "adminlib.php");
+include $cms['tngpath'] . "adminlib.php";
 $textpart = "people";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/admintext.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if ($session_charset != "UTF-8") {
   $myfirstname = tng_utf8_decode($myfirstname);

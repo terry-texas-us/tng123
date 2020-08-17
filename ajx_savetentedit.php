@@ -1,12 +1,12 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "getperson";
-include($cms['tngpath'] . "$languages_path$language/text.php");
+include $cms['tngpath'] . "$languages_path$language/text.php";
 
-include_once($cms['tngpath'] . "tngdblib.php");
-include($cms['tngpath'] . "checklogin.php");
-include($cms['tngpath'] . "tngmaillib.php");
+include_once $cms['tngpath'] . "tngdblib.php";
+include $cms['tngpath'] . "checklogin.php";
+include $cms['tngpath'] . "tngmaillib.php";
 
 if ($session_charset != "UTF-8") {
   $newplace = tng_utf8_decode($newplace);

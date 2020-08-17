@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "DNA-testoplysning";
 $text['firstpage'] = "F�rste side";
 $text['lastpage'] = "Sidste side";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

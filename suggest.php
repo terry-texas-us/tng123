@@ -4,7 +4,7 @@ include "tng_begin.php";
 
 //$tngconfig['maint'] = "";
 if (!empty($cms['events'])) {
-  include('cmsevents.php');
+  include 'cmsevents.php';
   cms_contact();
 }
 
@@ -193,7 +193,7 @@ if ($enttype) {
 ?>
 
 <?php
-@include($cms['tngpath'] . "TNG_captcha.php");
+@include $cms['tngpath'] . "TNG_captcha.php";
 
 $formstr = getFORM("tngsendmail", "post\" onsubmit=\"return validateForm();", "suggest", "suggest");
 echo $formstr;

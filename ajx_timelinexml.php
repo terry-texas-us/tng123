@@ -2,8 +2,8 @@
 $textpart = "timeline";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
-include($cms['tngpath'] . "datelib.php");
+include $subroot . "pedconfig.php";
+include $cms['tngpath'] . "datelib.php";
 
 header('Content-Type: application/xml');
 echo "<?xml version=\"1.0\"";

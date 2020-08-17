@@ -2,7 +2,7 @@
 $textpart = "gedcom";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "version.php");
+include $cms['tngpath'] . "version.php";
 
 $gedcom_url = getURL("gedcom", 1);
 
@@ -1029,7 +1029,7 @@ if ($maxgcgen > 0 || $type == "all") {
   header("Content-type: application/ged");
   header("Content-Disposition: attachment; filename=$filenamestr.ged\n\n");
 
-  include($cms['tngpath'] . "$mylanguage/text.php");
+  include $cms['tngpath'] . "$mylanguage/text.php";
   $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
   writelog(xmlcharacters("{$text['gedcreatedfrom']} $logname ($personID), $maxgcgen {$text['generations']} ($type) {$text['gedcreatedfor']} $email."));
   preparebookmark(xmlcharacters("{$text['gedcreatedfrom']} $namestr ($personID), $maxgcgen {$text['generations']} ($type) {$text['gedcreatedfor']} $email."));

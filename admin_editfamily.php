@@ -115,8 +115,8 @@ $revstar = checkReview("F");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyfamily'], $flags);
 $photo = showSmallPhoto($familyID, $namestr, 1, 0, "F");
-include_once("eventlib.php");
-include_once("eventlib_js.php");
+include_once "eventlib.php";
+include_once "eventlib_js.php";
 ?>
 <script type="text/javascript">
     var persfamID = "<?php echo $familyID; ?>";

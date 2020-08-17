@@ -7,7 +7,7 @@ if (!$sourceID) {
   exit;
 }
 
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "personlib.php";
 
 $showsource_url = getURL("showsource", 1);
 $showrepo_url = getURL("showrepo", 1);

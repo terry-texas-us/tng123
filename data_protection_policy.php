@@ -12,6 +12,6 @@ tng_header($text['dataprotect'], $flags);
 
 $langfolder = findlangfolder("data_protection_policy.php");
 
-include($cms['tngpath'] . "$langfolder/data_protection_policy.php");
+include $cms['tngpath'] . "$langfolder/data_protection_policy.php";
 
 tng_footer("");

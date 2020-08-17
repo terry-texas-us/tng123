@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if (!$allow_add) {
   $message = $admtext['norights'];
@@ -54,7 +54,7 @@ tng_free_result($result);
 
 header("Content-type:text/html; charset=" . $session_charset);
 
-include_once("eventlib.php");
+include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="famform1" id="famform1" onsubmit="return validateFamily(this,'<?php echo $slot; ?>');">

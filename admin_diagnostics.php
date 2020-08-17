@@ -1,8 +1,8 @@
 <?php
 //This page written and contributed by Bert Deelman. Thanks, Bert!
 include "begin.php";
-include($subroot . "logconfig.php");
-include($subroot . "importconfig.php");
+include $subroot . "logconfig.php";
+include $subroot . "importconfig.php";
 include "adminlib.php";
 $textpart = "setup";
 include "$mylanguage/admintext.php";

@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "DNA测试信息";
 $text['firstpage'] = "首页";
 $text['lastpage'] = "尾页";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

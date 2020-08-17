@@ -1,17 +1,17 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
-include($cms['tngpath'] . "adminlib.php");
+include $cms['tngpath'] . "adminlib.php";
 $textpart = "index";
 include "$mylanguage/admintext.php";
 $admin_login = 2;
 
 if ($link) {
-  include($cms['tngpath'] . "checklogin.php");
+  include $cms['tngpath'] . "checklogin.php";
 }
-include($cms['tngpath'] . "version.php");
+include $cms['tngpath'] . "version.php";
 
 $home_url = $homepage;
 

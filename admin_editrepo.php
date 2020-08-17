@@ -45,8 +45,8 @@ $helplang = findhelp("repositories_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyrepo'], $flags);
 $photo = showSmallPhoto($repoID, $row['reponame'], 1, 0, "R");
-include_once("eventlib.php");
-include_once("eventlib_js.php");
+include_once "eventlib.php";
+include_once "eventlib_js.php";
 ?>
 <script type="text/javascript">
     var persfamID = "<?php echo $repoID; ?>";

@@ -702,7 +702,7 @@ $query = "CREATE TABLE $temp_events_table (
 ) ENGINE = MYISAM $collationstr";
 $result = performQuery($query, $temp_events_table);
 
-include($tngconfig['subroot'] . "templateconfig.php");
+include $tngconfig['subroot'] . "templateconfig.php";
 $query = "DROP TABLE IF EXISTS $templates_table";
 $result = performQuery($query);
 $query = "CREATE TABLE $templates_table (
@@ -718,7 +718,7 @@ $query = "CREATE TABLE $templates_table (
 ) ENGINE = MYISAM $collationstr";
 $result = performQuery($query, $templates_table);
 
-include($subroot . "templateconfig.php");
+include $subroot . "templateconfig.php";
 $query = "INSERT IGNORE INTO $templates_table (template,ordernum,keyname,language,value) VALUES ";
 $values = "";
 foreach ($tmp as $key => $value) {

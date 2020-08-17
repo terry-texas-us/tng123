@@ -3,9 +3,9 @@ $needMap = true;
 $textpart = "headstones";
 include "tng_begin.php";
 
-include($subroot . "mapconfig.php");
+include $subroot . "mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $showmap_url = getURL("showmap", 1);
 $getperson_url = getURL("getperson", 1);

@@ -2335,7 +2335,7 @@ $admtext['author'] = "Autor";
 //change to $text
 $admtext['living'] = "Lebend";
 
-@include_once("alltext.php");
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

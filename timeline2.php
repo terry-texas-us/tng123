@@ -2,7 +2,7 @@
 $textpart = "timeline";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
+include $subroot . "pedconfig.php";
 include "timelineconfig.php";
 
 $timeline = $_SESSION['timeline'];

@@ -2,9 +2,9 @@
 $textpart = "showphoto";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
-require_once("albumlib.php");
+require_once "albumlib.php";
 
 $showalbum_url = getURL("showalbum", 1);
 $getperson_url = getURL("getperson", 1);

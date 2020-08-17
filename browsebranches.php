@@ -2,7 +2,7 @@
 $textpart = "trees";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $browsetrees_url = getURL("browsetrees", 1);
 $browsebranches_url = getURL("browsebranches", 1);

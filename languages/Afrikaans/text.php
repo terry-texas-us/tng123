@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "DNA Toets Info";
 $text['firstpage'] = "Eerste Bladsy";
 $text['lastpage'] = "Laaste Bladsy";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

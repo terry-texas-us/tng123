@@ -3,8 +3,8 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
-include($cms['tngpath'] . "pedbox.php");
+include $subroot . "pedconfig.php";
+include $cms['tngpath'] . "pedbox.php";
 
 initMediaTypes();
 

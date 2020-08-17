@@ -7,8 +7,8 @@ if (!is_numeric($mediaID)) {
   exit;
 }
 
-include($cms['tngpath'] . "functions.php");
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "functions.php";
+include $cms['tngpath'] . "personlib.php";
 
 //starting time between slides
 $slidetime_display = "3.0";
@@ -80,8 +80,8 @@ if (!tng_num_rows($result)) {
   header("Location: thispagedoesnotexist.html");
   exit;
 }
-include($cms['tngpath'] . "checklogin.php");
-include($cms['tngpath'] . "showmedialib.php");
+include $cms['tngpath'] . "checklogin.php";
+include $cms['tngpath'] . "showmedialib.php";
 
 $mediaperpage = 1;
 $max_showmedia_pages = 5;
@@ -183,7 +183,7 @@ tng_header($mediatypeIDstr . ": " . $description, $flags);
 
 $imgviewer = $tngconfig['imgviewer'];
 if (!$imgviewer || in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
-  include($cms['tngpath'] . "js/img_utils.js");
+  include $cms['tngpath'] . "js/img_utils.js";
 }
 
 $usefolder = $imgrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;

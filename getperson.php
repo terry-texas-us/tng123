@@ -12,7 +12,7 @@ if (!empty($tngprint)) {
   $tngconfig['hidemedia'] = "";
 }
 $defermap = $map['pstartoff'] || $tngconfig['istart'] ? 1 : 0;
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "personlib.php";
 
 $getperson_url = getURL("getperson", 1);
 $familygroup_url = getURL("familygroup", 1);

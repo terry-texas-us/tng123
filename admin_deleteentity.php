@@ -5,7 +5,7 @@ $textpart = "entities";
 include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if (!$allow_delete) {
   $message = $admtext['norights'];

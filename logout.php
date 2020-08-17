@@ -1,7 +1,7 @@
 <?php
 include "begin.php";
 if (!empty($cms['events'])) {
-  include('cmsevents.php');
+  include 'cmsevents.php';
   cms_logout();
 }
 session_start();

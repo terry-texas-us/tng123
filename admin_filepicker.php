@@ -6,7 +6,7 @@ include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
-include($subroot . "importconfig.php");
+include $subroot . "importconfig.php";
 
 initMediaTypes();
 

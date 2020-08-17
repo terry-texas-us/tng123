@@ -4,7 +4,7 @@ include "adminlib.php";
 include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if (!$allow_media_edit && !$allow_media_add && !$allow_media_delete) {
   $message = $admtext['norights'];

@@ -1293,9 +1293,9 @@ function getAllTextPath() {
     $thislanguage = trim($mylanguage ? $mylanguage : $languages_path . $language);
     if (strpos($thislanguage, "http") !== 0) {
       if ($cms['support']) {
-        @include_once($rootpath . $cms['tngpath'] . "$thislanguage/alltext.php");
+        @include_once $rootpath . $cms['tngpath'] . "$thislanguage/alltext.php";
       } else {
-        @include_once($rootpath . $endrootpath . "$thislanguage/alltext.php");
+        @include_once $rootpath . $endrootpath . "$thislanguage/alltext.php";
       }
     }
   }

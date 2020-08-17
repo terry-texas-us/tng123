@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "people";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if (!$allow_add) {
   $message = $admtext['norights'];
@@ -28,7 +28,7 @@ if ($father) {
 
 header("Content-type:text/html; charset=" . $session_charset);
 
-include_once("eventlib.php");
+include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="persform1" id="persform1" onSubmit="return validatePerson(this);">

@@ -29,8 +29,8 @@ $revstar = checkReview("I");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewperson'], $flags);
-include_once("eventlib.php");
-include_once("eventlib_js.php");
+include_once "eventlib.php";
+include_once "eventlib_js.php";
 ?>
 <script type="text/javascript">
     var persfamID = "";

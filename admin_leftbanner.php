@@ -1,14 +1,14 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
-include($cms['tngpath'] . "adminlib.php");
+include $cms['tngpath'] . "adminlib.php";
 $textpart = "index";
 include "$mylanguage/admintext.php";
 $admin_login = 2;
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 $home_url = $homepage;
 

@@ -158,7 +158,7 @@ global $pwd_hasher;
 
 function phpassInit($iteration_count_log2 = 8, $portable_hashes = TRUE) {
   global $cms, $pwd_hasher;
-  require_once($cms['tngpath'] . "pwdlib-phpass.php");
+  require_once $cms['tngpath'] . "pwdlib-phpass.php";
   $pwd_hasher = new PasswordHash($iteration_count_log2, $portable_hashes); // By default, use the portable hash from phpass
   return $pwd_hasher;
 }

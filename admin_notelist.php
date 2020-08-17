@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($subroot . "mapconfig.php");
+include $subroot . "mapconfig.php";
 include "adminlib.php";
 $textpart = "notes";
 include "$mylanguage/admintext.php";

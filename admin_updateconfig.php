@@ -293,7 +293,7 @@ fwrite($fp, "\$cms['credits'] = \"$cmscredits\";\n");
 fwrite($fp, "\$cms['adminurl'] = \"$adminurl\";\n");
 fwrite($fp, "}\n");
 fwrite($fp, "\n");
-fwrite($fp, "@include(\$subroot . \"customconfig.php\");\n");
+fwrite($fp, "@include \$subroot . \"customconfig.php\");\n";
 fwrite($fp, "?>\n");
 
 flock($fp, LOCK_UN);

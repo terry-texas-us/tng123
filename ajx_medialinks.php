@@ -8,7 +8,7 @@ if (!$mediaID) {
 $textpart = "photos";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 initMediaTypes();
 

@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "Informacja dotycz�ca testu DNA";
 $text['firstpage'] = "Pierwsza strona";
 $text['lastpage'] = "Ostatnia strona";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

@@ -2,10 +2,10 @@
 include "begin.php";
 $tmp = getTemplateVars($templatenum);
 $tngconfig['maint'] = "";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "language";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 
 $maintenance_mode = true;
 

@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "events";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if (!$allow_edit) {
   exit;

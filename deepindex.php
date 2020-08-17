@@ -1,7 +1,7 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
-include($cms['tngpath'] . "adminlib.php");
+include $cms['tngpath'] . "genlib.php";
+include $cms['tngpath'] . "adminlib.php";
 $textpart = "index";
 include "$mylanguage/admintext.php";
 

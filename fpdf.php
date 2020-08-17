@@ -1118,7 +1118,7 @@ class FPDF
     if (strpos($font, '/') !== false || strpos($font, "\\") !== false) {
       $this->Error('Incorrect font definition file name: ' . $font);
     }
-    include($this->fontpath . $font);
+    include $this->fontpath . $font;
     if (!isset($name)) {
       $this->Error('Could not include font definition file');
     }

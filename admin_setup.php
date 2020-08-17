@@ -5,7 +5,7 @@ include "tngconnect.php";
 if (!file_exists($subroot . "config.php")) {
   $subroot = $_GET['sr'];
 }
-include($subroot . "config.php");
+include $subroot . "config.php";
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";
 $templatepath = $templateswitching && $templatenum ? "templates/$templatepfx$templatenum/" : "";
@@ -18,13 +18,11 @@ $textpart = "setup";
 
 if (isset($sitever)) {
   setcookie("tng_siteversion", $sitever, time() + 31536000, "/");
-} else {
-  if (isset($_COOKIE['tng_siteversion'])) {
-    $sitever = $_COOKIE['tng_siteversion'];
-  }
+} elseif (isset($_COOKIE['tng_siteversion'])) {
+  $sitever = $_COOKIE['tng_siteversion'];
 }
 
-include_once("siteversion.php");
+include_once "siteversion.php";
 if (!$sitever) {
   $sitever = getSiteVersion();
 }

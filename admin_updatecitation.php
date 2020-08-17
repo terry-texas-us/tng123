@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "sources";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 require "datelib.php";
 

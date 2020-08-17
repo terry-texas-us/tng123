@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($subroot . "mapconfig.php");
+include $subroot . "mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "adminlib.php";
 $textpart = "cemeteries";

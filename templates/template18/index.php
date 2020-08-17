@@ -1,5 +1,5 @@
 <?php
-include($cms['tngpath'] . "surname_cloud.class.php");
+include $cms['tngpath'] . "surname_cloud.class.php";
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;

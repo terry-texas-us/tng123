@@ -3,13 +3,13 @@ $textpart = "headstones";
 $needMap = true;
 include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
-include($subroot . "mapconfig.php");
+include $subroot . "mapconfig.php";
 
 if (!$cemeteryID || !is_numeric($cemeteryID)) {
   header("Location: thispagedoesnotexist.html");
   exit;
 }
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $showmap_url = getURL("showmap", 1);
 $showmedia_url = getURL("showmedia", 1);

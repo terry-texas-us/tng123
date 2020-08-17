@@ -2,8 +2,8 @@
 $textpart = "relate";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
-include($cms['tngpath'] . "pedbox.php");
+include $subroot . "pedconfig.php";
+include $cms['tngpath'] . "pedbox.php";
 
 $relate_url = getURL("relateform", 1);
 $relationship_url = getURL("relationship", 1);

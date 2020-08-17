@@ -2,7 +2,7 @@
 $textpart = "sources";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $browserepos_url = getURL("browserepos", 1);
 $showrepo_url = getURL("showrepo", 1);

@@ -1,12 +1,12 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "familygroup";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 
-include($cms['tngpath'] . "checklogin.php");
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "checklogin.php";
+include $cms['tngpath'] . "personlib.php";
 
 $firstsection = 0;
 $tableid = "";

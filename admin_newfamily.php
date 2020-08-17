@@ -70,8 +70,8 @@ $revstar = checkReview("F");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewfamily'], $flags);
-include_once("eventlib.php");
-include_once("eventlib_js.php");
+include_once "eventlib.php";
+include_once "eventlib_js.php";
 ?>
 <SCRIPT language="JavaScript" type="text/javascript">
     var persfamID = "";

@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 
 
 session_start();
@@ -24,9 +24,6 @@ if (file_exists($languages_path . $row['folder'])) {
   setcookie("tngchar_$newroot", $row['charset'], time() + 31536000, "/");
   setcookie("tngnorels_$newroot", $row['norels'], time() + 31536000, "/");
 }
-//$textpart = "language";
-//include($cms[tngpath] . "$session_language/text.php");
-//include($cms[tngpath] . "checklogin.php");
 
 if ($_SESSION['destinationpage8']) {
   header("Location: " . $_SESSION['destinationpage8']);

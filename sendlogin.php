@@ -1,11 +1,11 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "login";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 
-include($cms['tngpath'] . "tngmaillib.php");
+include $cms['tngpath'] . "tngmaillib.php";
 
 //look up email
 $email = trim($email);

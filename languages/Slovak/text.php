@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "Inform�cia k DNA testu";
 $text['firstpage'] = "Prv� str�nka";
 $text['lastpage'] = "Posledn� str�nka";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

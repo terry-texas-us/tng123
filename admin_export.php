@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($subroot . "importconfig.php");
+include $subroot . "importconfig.php";
 include "adminlib.php";
 $textpart = "trees";
 include "$mylanguage/admintext.php";

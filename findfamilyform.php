@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if ($mediaID) {
   $mediaoption = ",mediaID:'$mediaID'";

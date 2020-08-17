@@ -305,7 +305,7 @@ if (!class_exists('TNGPDF')) {
       // if a style is available, revert to the regular font
       if(!is_file($this->_getfontpath().$family.$subdir.'/'.$file))
         $file=str_replace(' ','',$family).'.php';
-      include($this->_getfontpath().$family.$subdir.'/'.$file);
+      include $this->_getfontpath().$family.$subdir.'/'.$file;
       if(!isset($name))
         $this->Error('Could not include font definition file: '.$file);
       $i=count($this->fonts)+1;

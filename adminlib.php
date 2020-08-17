@@ -1,11 +1,11 @@
 <?php
-include_once("pwdlib.php");
-include_once("globallib.php");
-@include_once("mediatypes.php");
-@include_once("tngfiletypes.php");
+include_once "pwdlib.php";
+include_once "globallib.php";
+@include_once "mediatypes.php";
+@include_once "tngfiletypes.php";
 checkMaintenanceMode(1);
 if (isset($map['key']) && $map['key']) {
-  include_once("googlemaplib.php");
+  include_once "googlemaplib.php";
 }
 
 $http_user_agent = strtolower($_SERVER["HTTP_USER_AGENT"]);

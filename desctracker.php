@@ -2,7 +2,7 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
+include $subroot . "pedconfig.php";
 
 $desctracker_url = getURL("desctracker", 1);
 $getperson_url = getURL("getperson", 1);

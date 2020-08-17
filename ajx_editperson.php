@@ -8,7 +8,7 @@ if (!$personID) {
 $textpart = "people";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 initMediaTypes();
 
@@ -109,7 +109,7 @@ $reltypes = array("adopted", "birth", "foster", "sealing", "step", "putative");
 $photo = showSmallPhoto($personID, $namestr, 1, 0, false, $row['sex']);
 header("Content-type:text/html; charset=" . $session_charset);
 
-include_once("eventlib.php");
+include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="form1" id="form1" onsubmit="return updatePerson(this, <?php echo $slot; ?>);">

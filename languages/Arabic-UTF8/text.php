@@ -1007,8 +1007,8 @@ $text['dna_info_head'] = "معلومات حامض نووي";
 $text['firstpage'] = "الصفحة الأولى";
 $text['lastpage'] = "الصفحة الأخيرة";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

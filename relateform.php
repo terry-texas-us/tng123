@@ -2,7 +2,7 @@
 $textpart = "relate";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
+include $subroot . "pedconfig.php";
 
 $relatepersonID = $_SESSION['relatepersonID'];
 $relatetreeID = $_SESSION['relatetreeID'];

@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-include($subroot . "importconfig.php");
+include $subroot . "importconfig.php";
 
 //$checksecs = $tngconfig['checksecs'] && is_numeric($tngconfig['checksecs']) ? $tngconfig['checksecs'] : 20;
 

@@ -2,7 +2,7 @@
 $textpart = "showphoto";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $browsemedia_url = getURL("browsemedia", 1);
 $getperson_url = getURL("getperson", 1);

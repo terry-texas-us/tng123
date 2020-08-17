@@ -6,8 +6,8 @@ if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
   header("Location: thispagedoesnotexist.html");
   exit;
 }
-include($cms['tngpath'] . "functions.php");
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "functions.php";
+include $cms['tngpath'] . "personlib.php";
 
 $browse_dna_tests_url = getURL("browse_dna_tests", 1);
 $show_dna_test_url = getURL("show_dna_test", 1);

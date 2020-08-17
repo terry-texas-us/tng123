@@ -6,7 +6,7 @@ include "tng_begin.php";
 if (!$psearch) {
   exit;
 }
-include($cms['tngpath'] . "personlib.php");
+include $cms['tngpath'] . "personlib.php";
 
 $searchform_url = getURL("searchform", 1);
 $search_url = getURL("search", 1);

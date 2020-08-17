@@ -214,5 +214,5 @@ if (!isset($cms['auto'])) {
   $cms['adminurl'] = "";
 }
 
-@include($subroot . "customconfig.php");
+@include $subroot . "customconfig.php";
 

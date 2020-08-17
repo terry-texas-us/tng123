@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "findplace";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if ($session_charset != "UTF-8") {
   $place = tng_utf8_decode($place);

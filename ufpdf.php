@@ -58,7 +58,7 @@ if (!class_exists('UFPDF')) {
       if (defined('FPDF_FONTPATH')) {
         $file = FPDF_FONTPATH . $file;
       }
-      include($file);
+      include $file;
       if (!isset($name)) {
         $this->Error('Could not include font definition file');
       }

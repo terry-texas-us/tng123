@@ -5,7 +5,7 @@ include "tng_begin.php";
 if (!$personID) {
   die("no args");
 }
-include($subroot . "pedconfig.php");
+include $subroot . "pedconfig.php";
 
 $getperson_url = getURL("getperson", 1);
 $descend_url = getURL("descend", 1);

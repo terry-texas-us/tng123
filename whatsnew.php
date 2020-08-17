@@ -3,10 +3,10 @@ $textpart = "whatsnew";
 include "tng_begin.php";
 
 if (!empty($cms['events'])) {
-  include('cmsevents.php');
+  include 'cmsevents.php';
   cms_whatsnew();
 }
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $getperson_url = getURL("getperson", 1);
 $showmedia_url = getURL("showmedia", 1);

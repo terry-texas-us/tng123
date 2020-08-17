@@ -3,7 +3,7 @@ $textpart = "sources";
 include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $browsesources_url = getURL("browsesources", 1);
 $showsource_url = getURL("showsource", 1);

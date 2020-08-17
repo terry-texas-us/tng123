@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "Informácia k DNA testu";
 $text['firstpage'] = "Prvá stránka";
 $text['lastpage'] = "Posledná stránka";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

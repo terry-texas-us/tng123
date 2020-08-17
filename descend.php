@@ -2,7 +2,7 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-include($subroot . "pedconfig.php");
+include $subroot . "pedconfig.php";
 if (!$personID) {
   die("no args");
 }
@@ -17,7 +17,7 @@ if ($display == "textonly" || (!$display && !$pedigree['defdesc'])) {
   exit;
 }
 
-include($cms['tngpath'] . "pedbox.php");
+include $cms['tngpath'] . "pedbox.php";
 
 if ($pedigree['defdesc'] == "") {
   $pedigree['defdesc'] = 2;

@@ -1008,8 +1008,8 @@ $text['dna_info_head'] = "DNA Testi Bilgisi";
 $text['firstpage'] = "İlk Sayfa";
 $text['lastpage'] = "Son Sayfa";
 
-@include_once("captcha_text.php");
-@include_once("alltext.php");
+@include_once "captcha_text.php";
+@include_once "alltext.php";
 if (!$alltextloaded) {
   getAllTextPath();
 }

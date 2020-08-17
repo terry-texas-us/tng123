@@ -1,5 +1,5 @@
 <?php
-include($cms['tngpath'] . "surname_cloud.class.php");
+include $cms['tngpath'] . "surname_cloud.class.php";
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
@@ -208,7 +208,7 @@ $search .= "</form>\n";
                         <h2><?php echo $text['whatsnew'] . " | <a href=\"$whatsnew_url\">" . $text['more'] . "</a>"; ?></h2>
                       <?php
                       echo $cms['tngpath'];
-                      include($cms['tngpath'] . "widget_whatsnew.php");
+                      include $cms['tngpath'] . "widget_whatsnew.php";
                       ?>
                     </div>
                     <div class="tblock">

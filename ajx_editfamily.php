@@ -8,7 +8,7 @@ if (!$familyID) {
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 initMediaTypes();
 
@@ -107,7 +107,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 $righttree = checktree($tree);
 
-include_once("eventlib.php");
+include_once "eventlib.php";
 ?>
 
 <form action="" onsubmit="return updateFamily(this,<?php echo $slot; ?>,'admin_updatefamily.php');" method="post" name="famform1" id="famform1">

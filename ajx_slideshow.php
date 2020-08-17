@@ -1,13 +1,13 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "genlib.php");
+include $cms['tngpath'] . "genlib.php";
 $textpart = "showphoto";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 
-include($cms['tngpath'] . "functions.php");
-include($cms['tngpath'] . "checklogin.php");
-include($cms['tngpath'] . "showmedialib.php");
+include $cms['tngpath'] . "functions.php";
+include $cms['tngpath'] . "checklogin.php";
+include $cms['tngpath'] . "showmedialib.php";
 
 //starting time between slides
 //now defined in slideshow.js

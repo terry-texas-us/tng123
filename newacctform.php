@@ -2,7 +2,7 @@
 $textpart = "login";
 include "tng_begin.php";
 if (!empty($cms['events'])) {
-  include('cmsevents.php');
+  include 'cmsevents.php';
   cms_register();
 }
 
@@ -79,7 +79,7 @@ tng_header($text['regnewacct'], $flags);
 <?php
 echo tng_coreicons();
 
-@include($cms['tngpath'] . "TNG_captcha.php");
+@include $cms['tngpath'] . "TNG_captcha.php";
 
 if (!$tngconfig['disallowreg']) {
   echo "<p class=\"normal\"><strong>*{$text['required']}</strong></p>\n";

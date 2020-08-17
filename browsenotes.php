@@ -2,7 +2,7 @@
 $textpart = "notes";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 $browsenotes_url = getURL("browsenotes", 1);
 $showsource_url = getURL("showsource", 1);

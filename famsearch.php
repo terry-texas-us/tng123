@@ -4,7 +4,7 @@ $order = "";
 include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
-include($cms['tngpath'] . "searchlib.php");
+include $cms['tngpath'] . "searchlib.php";
 
 $searchform_url = getURL("famsearchform", 1);
 $search_url = getURL("famsearch", 1);

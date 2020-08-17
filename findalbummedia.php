@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "photos";
 include "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if ($assignedtree) {
   $wherestr = "WHERE gedcom = \"$assignedtree\"";

@@ -9,8 +9,8 @@ if ($currentuser || $_SESSION['passedcaptcha']) {
   return;
 }
 
-include_once($cms['tngpath'] . "$mylanguage/admintext.php");
-require_once($cms['tngpath'] . "recaptchalib.php");
+include_once $cms['tngpath'] . "$mylanguage/admintext.php";
+require_once $cms['tngpath'] . "recaptchalib.php";
 
 // Sign up for a reCAPTCHA account from https://www.google.com/recaptcha/admin/create
 // Once your account is created, enter your assigned keys

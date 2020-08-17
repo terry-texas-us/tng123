@@ -2,7 +2,7 @@
 $textpart = "imgviewer";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 if ($medialinkID) {
   $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom as gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
@@ -37,8 +37,8 @@ if (!tng_num_rows($result)) {
   tng_free_result($result);
   header("Location: thispagedoesnotexist.html");
 }
-include($cms['tngpath'] . "checklogin.php");
-include($cms['tngpath'] . "showmedialib.php");
+include $cms['tngpath'] . "checklogin.php";
+include $cms['tngpath'] . "showmedialib.php";
 
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $imgrow = $info['imgrow'];

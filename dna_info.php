@@ -1,11 +1,11 @@
 <?php
 // %version:11.0.0.2%
 //Created By Add DNA Test Results Mod
-require_once("begin.php");
-require_once($cms['tngpath'] . "genlib.php");
+require_once "begin.php";
+require_once $cms['tngpath'] . "genlib.php";
 $textpart = "dna";
-require_once($cms['tngpath'] . "getlang.php");
-require_once($cms['tngpath'] . "$mylanguage/text.php");
+require_once $cms['tngpath'] . "getlang.php";
+require_once $cms['tngpath'] . "$mylanguage/text.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>

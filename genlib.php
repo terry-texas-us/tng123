@@ -2,21 +2,21 @@
 if (isset($_GET['cms']) || isset($_POST['cms'])) {
   die("Sorry!");
 }
-include_once($cms['tngpath'] . "pwdlib.php");
-include_once($cms['tngpath'] . "globallib.php");
-@include_once($cms['tngpath'] . "mediatypes.php");
-@include_once($cms['tngpath'] . "tngfiletypes.php");
-include_once($cms['tngpath'] . "version.php");
+include_once $cms['tngpath'] . "pwdlib.php";
+include_once $cms['tngpath'] . "globallib.php";
+@include_once $cms['tngpath'] . "mediatypes.php";
+@include_once $cms['tngpath'] . "tngfiletypes.php";
+include_once $cms['tngpath'] . "version.php";
 checkMaintenanceMode(0);
 if (!empty($needMap)) {
-  include($subroot . "mapconfig.php");
+  include $subroot . "mapconfig.php";
   $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
   if ($map['key']) {
-    include_once($cms['tngpath'] . "googlemaplib.php");
+    include_once $cms['tngpath'] . "googlemaplib.php";
   }
 }
 $flags = array();
-@include($cms['tngpath'] . "tngrobots.php");
+@include $cms['tngpath'] . "tngrobots.php";
 
 $isConnected = isConnected();
 
@@ -171,10 +171,10 @@ function tng_header($title, $flags) {
   echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"{$cms['tngpath']}tngrss.php\" />\n";
 
   if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
-    include($cms['tngpath'] . "cookie_approval.php");
+    include $cms['tngpath'] . "cookie_approval.php";
   }
 
-  @include($custommeta);
+  @include $custommeta;
   if ($tngprint) {
     echo "<link href=\"{$cms['tngpath']}css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\" />\n";
   }
@@ -192,7 +192,7 @@ function tng_header($title, $flags) {
   if (!$cms['support']) {
     echo "</head>\n";
     if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
-      include($templatepath . $customheader);
+      include $templatepath . $customheader;
     } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
       $class = !empty($flags['homeclass']) ? $flags['homeclass'] : "publicbody";
       echo "<body class=\"{$class}\">\n";
@@ -258,7 +258,7 @@ function tng_footer($flags) {
         echo tng_basicfooter($flags);
         $needtherest = false;
       } else {
-        include($templatepath . $customfooter);
+        include $templatepath . $customfooter;
       }
     }
   }
@@ -274,7 +274,7 @@ function tng_footer($flags) {
     }
 
     if (!isset($flags['noend']) || !$flags['noend']) {
-      include($cms['tngpath'] . "end.php");
+      include $cms['tngpath'] . "end.php";
     }
   }
 }
@@ -294,7 +294,7 @@ function tng_basicfooter($flags) {
       $gotover = $newsitever == "mobile" ? "standard" : $newsitever;
       $message = $text['switchs'];
       if (file_exists($cms['tngpath'] . $templatepath . "mobile_footer.php")) {
-        include($cms['tngpath'] . $templatepath . "mobile_footer.php");
+        include $cms['tngpath'] . $templatepath . "mobile_footer.php";
       }
     } else {
       $gotover = "mobile";
@@ -304,7 +304,7 @@ function tng_basicfooter($flags) {
     $footer .= "<a href=\"$thispage{$con}sitever=$gotover\" class=\"fieldnameback lightlink2 rounded4\">&nbsp;{$message}&nbsp;</a>\n";
     $footer .= "</p><br/>\n";
   }
-  include($cms['tngpath'] . "stdsitecredit.php");
+  include $cms['tngpath'] . "stdsitecredit.php";
   $footer .= $sitecredit;
   /*if(!$tngconfig['webmatches'] && $personID) {
 ?>

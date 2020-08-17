@@ -10,8 +10,8 @@ if (strpos($_SERVER['SCRIPT_NAME'], "/admin_updateconfig.php") === FALSE) {
 }
 
 include "subroot.php";
-include_once("tngconnect.php");
-include($tngconfig['subroot'] . "config.php");
+include_once "tngconnect.php";
+include $tngconfig['subroot'] . "config.php";
 $subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : $cms['tngpath'];
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";
@@ -25,7 +25,7 @@ if (isset($sitever)) {
   }
 }
 
-include_once("siteversion.php");
+include_once "siteversion.php";
 if (!isset($sitever)) {
   $sitever = getSiteVersion();
 }
@@ -37,7 +37,7 @@ $session_charset = isset($_SESSION['session_charset']) ? $_SESSION['session_char
 $endrootpath = "";
 
 $languages_path = "languages/";
-include($cms['tngpath'] . "getlang.php");
+include $cms['tngpath'] . "getlang.php";
 $link = tng_db_connect($database_host, $database_name, $database_username, $database_password, $database_port, $database_socket);
 
 function getTemplateVars($templatenum) {

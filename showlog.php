@@ -9,10 +9,10 @@ if (!$allow_admin) {
 }
 
 if (isset($cms['events'])) {
-  include('cmsevents.php');
+  include 'cmsevents.php';
   cms_logs();
 }
-require($subroot . "logconfig.php");
+require $subroot . "logconfig.php";
 
 if ($maxloglines) {
   $loglines = $maxloglines;

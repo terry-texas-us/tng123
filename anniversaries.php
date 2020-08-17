@@ -2,7 +2,7 @@
 $textpart = "search";
 include "tng_begin.php";
 
-include($cms['tngpath'] . "functions.php");
+include $cms['tngpath'] . "functions.php";
 
 if (isset($tngyear)) {
   $tngyear = preg_replace("/[^0-9]/", "", $tngyear);

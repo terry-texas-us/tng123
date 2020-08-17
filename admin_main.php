@@ -2,7 +2,7 @@
 include "begin.php";
 $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
-include($subroot . "mapconfig.php");
+include $subroot . "mapconfig.php";
 include "adminlib.php";
 $textpart = "index";
 include "$mylanguage/admintext.php";
@@ -176,10 +176,8 @@ tng_adminheader($admtext['administration'], "");
       //no people? import
       if (!$total_people) {
         $messages .= "<li><a href=\"admin_dataimport.php\">{$admtext['importgedcom2']}</a> | <a href=\"admin_newperson.php\">{$admtext['task_people']}</a></li>\n";
-      } else {
-        if (!$total_families) {
-          $messages .= "<li><a href=\"admin_newfamily.php\">{$admtext['task_families']}</a></li>\n";
-        }
+      } elseif (!$total_families) {
+        $messages .= "<li><a href=\"admin_newfamily.php\">{$admtext['task_families']}</a></li>\n";
       }
 
       //new users to review?
@@ -216,11 +214,9 @@ tng_adminheader($admtext['administration'], "");
             $backupmsg = preg_replace("/xxx/", $daysSince, $admtext['lastbackup']);
           }
         }
-      } else {
-        if ($total_people && $daysSince != "0") {
-          //no backup ever done
-          $backupmsg = $admtext['nobackups'];
-        }
+      } elseif ($total_people && $daysSince != "0") {
+        //no backup ever done
+        $backupmsg = $admtext['nobackups'];
       }
       if ($backupmsg) {
         $messages .= "<li><a href=\"admin_utilities.php\">{$admtext['task_backup']} ($backupmsg)</a></li>\n";
@@ -309,10 +305,8 @@ tng_adminheader($admtext['administration'], "");
 $newsitever = getSiteVersion(true);
 if ($sitever == "mobile") {
   echo "<p class=\"smaller\"><a href=\"admin.php?sitever=$newsitever\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchs']}&nbsp;</a></p>\n";
-} else {
-  if ($sitever != $newsitever) {
-    echo "<p class=\"smaller\"><a href=\"admin.php?sitever=mobile\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";
-  }
+} elseif ($sitever != $newsitever) {
+  echo "<p class=\"smaller\"><a href=\"admin.php?sitever=mobile\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";
 }
 ?>
 </body>

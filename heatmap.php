@@ -4,7 +4,7 @@ $order = "";
 $needMap = true;
 include "tng_begin.php";
 
-include($cms['tngpath'] . "searchlib.php");
+include $cms['tngpath'] . "searchlib.php";
 
 $placesearch_url = getURL("placesearch", 1);
 $getperson_url = getURL("getperson", 1);

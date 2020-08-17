@@ -1,11 +1,11 @@
 <?php
 include "begin.php";
 $tngconfig['maint'] = "";
-include($cms['tngpath'] . "genlib.php");
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "genlib.php";
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/text.php";
 tng_db_connect($database_host, $database_name, $database_username, $database_password) or exit;
-include($cms['tngpath'] . "log.php");
+include $cms['tngpath'] . "log.php";
 
 //if medialinkID, get caption from there
 //else get caption from mediaID

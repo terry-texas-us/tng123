@@ -7,7 +7,7 @@ $tngconfig = array();
 include "processvars.php";
 include "subroot.php";
 include "tngconnect.php";
-include($tngconfig['subroot'] . "config.php");
+include $tngconfig['subroot'] . "config.php";
 $subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : $cms['tngpath'];
 
 session_start();
@@ -15,12 +15,12 @@ $session_language = $_SESSION['session_language'];
 $session_charset = $_SESSION['session_charset'];
 
 $languages_path = "languages/";
-include($cms['tngpath'] . "getlang.php");
+include $cms['tngpath'] . "getlang.php";
 $textpart = "install";
-include($cms['tngpath'] . "$mylanguage/text.php");
+include $cms['tngpath'] . "$mylanguage/text.php";
 
-include($cms['tngpath'] . "genlib.php");
-include($subroot . "importconfig.php");
+include $cms['tngpath'] . "genlib.php";
+include $subroot . "importconfig.php";
 $saveconfig = 0;
 $saveimportconfig = 0;
 $class = "red";
@@ -32,7 +32,7 @@ if (!trim($database_socket)) {
 }
 $link = tng_connect($database_host, $database_username, $database_password, $database_name, $database_port, $database_socket);
 if ($link && tng_select_db($link, $database_name)) {
-  include($cms['tngpath'] . "checklogin.php");
+  include $cms['tngpath'] . "checklogin.php";
   if (($assignedtree && $assignedtree != "-x-guest-x-") || !$allow_edit) {
     //echo "at=$assignedtree, ae=$allow_edit";
     $_POST['subroutine'] = "login";
@@ -49,7 +49,7 @@ function createtables($collation) {
 
   $badtables = "";
 
-  include($cms['tngpath'] . "tabledefs.php");
+  include $cms['tngpath'] . "tabledefs.php";
 
   return $badtables;
 }
@@ -444,7 +444,7 @@ if ($saveconfig) {
   fwrite($fp, "\$cms['credits'] = \"{$cms['credits']}\";\n");
   fwrite($fp, "}\n");
   fwrite($fp, "\n");
-  fwrite($fp, "@include(\$subroot . \"customconfig.php\");\n");
+  fwrite($fp, "@include \$subroot . \"customconfig.php\");\n";
   fwrite($fp, "?>\n");
 
   flock($fp, LOCK_UN);

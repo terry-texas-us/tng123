@@ -510,11 +510,11 @@ class tFPDF
       $originalsize = 0;
       $ttfstat = stat($ttffilename);
       if (file_exists($unifilename . '.mtx.php')) {
-        include($unifilename . '.mtx.php');
+        include $unifilename . '.mtx.php';
       }
       if (!isset($type) || !isset($name) || $originalsize != $ttfstat['size']) {
         $ttffile = $ttffilename;
-        require_once($this->_getfontpath() . 'unifont/ttfonts.php');
+        require_once $this->_getfontpath() . 'unifont/ttfonts.php';
         $ttf = new TTFontFile();
         $ttf->getMetrics($ttffile);
         $cw = $ttf->charWidths;
@@ -1345,7 +1345,7 @@ class tFPDF
 
   function _loadfont($font) {
     // Load a font definition file from the font directory
-    include($this->fontpath . $font);
+    include $this->fontpath . $font;
     $a = get_defined_vars();
     if (!isset($a['name'])) {
       $this->Error('Could not include font definition file');
@@ -1816,7 +1816,7 @@ class tFPDF
       else {
         if ($type == 'TTF') {
           $this->fonts[$k]['n'] = $this->n + 1;
-          require_once($this->_getfontpath() . 'unifont/ttfonts.php');
+          require_once $this->_getfontpath() . 'unifont/ttfonts.php';
           $ttf = new TTFontFile();
           $fontname = 'MPDFAA' . '+' . $font['name'];
           $subset = $font['subset'];
@@ -1947,7 +1947,7 @@ class tFPDF
 
   function _putTTfontwidths(&$font, $maxUni) {
     if (file_exists($font['unifilename'] . '.cw127.php')) {
-      include($font['unifilename'] . '.cw127.php');
+      include $font['unifilename'] . '.cw127.php';
       $startcid = 128;
     } else {
       $rangeid = 0;

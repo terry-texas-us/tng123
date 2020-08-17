@@ -1,11 +1,11 @@
 <?php
 include "begin.php";
-include($cms['tngpath'] . "adminlib.php");
+include $cms['tngpath'] . "adminlib.php";
 $textpart = "findpersonform";
-include($cms['tngpath'] . "getlang.php");
-include($cms['tngpath'] . "$mylanguage/admintext.php");
+include $cms['tngpath'] . "getlang.php";
+include $cms['tngpath'] . "$mylanguage/admintext.php";
 
-include($cms['tngpath'] . "checklogin.php");
+include $cms['tngpath'] . "checklogin.php";
 
 if (isset($type) && $type == "map") {
   $subtitle = $admtext['enternamepart2'];

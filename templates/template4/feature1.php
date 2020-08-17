@@ -29,7 +29,7 @@ tng_header("Your Feature 1 Story Title", $flags);
     If you are creating a story that you want to translate and display in the language the user has selected to view your site, then you can place the content that starts with the heading 1 (< h1 >) line to everything in the line before the tng_footer.php
     function call in your language folder and use a PHP
 </p>
-include($mylanguage/feature1.php) to include the content from you language folder for each language you support on your site.
+include $mylanguage/feature1.php to include the content from you language folder for each language you support on your site.
 <br/>
 For additional information see the TNG Wiki article on creating User Pages or histories using the historytemplate.php file at http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Getting_Started and http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Multi-Language
 </p>

@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include($subroot . "logconfig.php");
+include $subroot . "logconfig.php";
 include "adminlib.php";
 $textpart = "setup";
 include "$mylanguage/admintext.php";
