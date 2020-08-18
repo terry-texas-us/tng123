@@ -173,6 +173,5 @@ function tng_query($query) {
 function tng_query_noerror($query) {
   global $link;
 
-  $result = @mysqli_query($link, $query);
-  return $result;
+  return @mysqli_query($link, $query);
 }

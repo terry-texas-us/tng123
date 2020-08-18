@@ -555,8 +555,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         $crights = determineLivingPrivateRights($child, $righttree);
         $child['allow_living'] = $crights['living'];
         $child['allow_private'] = $crights['private'];
-        if ($cright['both']) {
-          //if( $child['relationship'] ) $info .= "2 PEDI {$child['relationship']}$lineending";
+        if ($crights['both']) {
           if ($crights['lds']) {
             if ($child['sealdate'] || $child['sealplace']) {
               $childnotes = getNotes($child['personID']);
@@ -646,7 +645,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function writeIndividual($ind) {
-        global $tree, $people_table, $events_table, $eventtypes_table, $lnprefixes, $branchstr;
+        global $tree, $people_table, $events_table, $eventtypes_table, $lnprefixes, $branchstr, $text;
         global $children_table, $families_table, $citations, $templeready, $savestate, $fp, $lineending, $righttree, $exprivatestr, $exlivingstr;
 
         $rights = determineLivingPrivateRights($ind, $righttree);
@@ -1119,7 +1118,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function doSources() {
-        global $tree, $sources_table, $admtext, $savestate, $tngconfig, $allsources, $allrepos, $branch;
+        global $tree, $sources_table, $admtext, $savestate, $tngconfig, $allsources, $allrepos, $branch, $text;
 
         $sourcestr = "";
         if ($branch) {
@@ -1224,7 +1223,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
       }
 
       function doRepositories() {
-        global $tree, $branch, $repositories_table, $admtext, $savestate, $tngconfig, $allrepos;
+        global $tree, $branch, $repositories_table, $admtext, $savestate, $tngconfig, $allrepos, $text;
 
         $repostr = "";
 

@@ -553,9 +553,7 @@ function getPlaceRecord($place, $prevlevel) {
 function isTemple($place) {
   global $ldsOK;
 
-  $isTemple = ($ldsOK && strlen($place) == 5 && $place == preg_replace("/[^A-Z]/", "", $place)) ? 1 : 0;
-
-  return $isTemple;
+  return ($ldsOK && strlen($place) == 5 && $place == preg_replace("/[^A-Z]/", "", $place)) ? 1 : 0;
 }
 
 function getMapCoords($prevlevel) {

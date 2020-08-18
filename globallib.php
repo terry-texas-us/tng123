@@ -12,7 +12,6 @@ $envelope = false;
 if (isset($offset) && $offset && !is_numeric($offset)) {
   die ("invalid offset");
 }
-//$endrootpath = "";
 
 $newroot = preg_replace("/\//", "", $rootpath);
 $newroot = preg_replace("/ /", "", $newroot);
@@ -74,9 +73,7 @@ function getName($row, $hcard = null) {
   global $nameorder;
 
   $locnameorder = !empty($row['nameorder']) ? $row['nameorder'] : (!empty($nameorder) ? $nameorder : 1);
-  $namestr = getNameUniversal($row, $locnameorder, $hcard);
-
-  return $namestr;
+  return getNameUniversal($row, $locnameorder, $hcard);
 }
 
 function getNameRev($row, $hcard = null) {
@@ -86,9 +83,7 @@ function getNameRev($row, $hcard = null) {
   if ($locnameorder != 2) {
     $locnameorder = 3;
   }
-  $namestr = getNameUniversal($row, $locnameorder, $hcard);
-
-  return $namestr;
+  return getNameUniversal($row, $locnameorder, $hcard);
 }
 
 function getNameUniversal($row, $order, $hcard = null) {
@@ -422,9 +417,7 @@ function determineLDSRights($notree = false) {
   global $ldsdefault, $allow_lds, $tree, $assignedtree;
 
   $treeOK = !$tree || $notree || !$assignedtree || $tree == $assignedtree;
-  $ldsOK = !$ldsdefault || ($ldsdefault == 2 && $allow_lds && $treeOK) ? true : false;
-
-  return $ldsOK;
+  return !$ldsdefault || ($ldsdefault == 2 && $allow_lds && $treeOK) ? true : false;
 }
 
 function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {

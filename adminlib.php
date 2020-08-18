@@ -95,9 +95,7 @@ function getNewNumericID($type, $field, $table) {
   $maxrow = tng_fetch_array($result);
   tng_free_result($result);
 
-  $newID = $maxrow['newID'] ? $maxrow['newID'] + 1 : 0;
-
-  return $newID;
+  return $maxrow['newID'] ? $maxrow['newID'] + 1 : 0;
 }
 
 function findhelp($helpfile) {
@@ -221,9 +219,7 @@ function displayHeadline($headline, $icon, $menu, $message) {
 function displayListLocation($start, $pagetotal, $grandtotal) {
   global $admtext, $text;
 
-  $rval = "<p>{$admtext['matches']}: " . number_format($start) . " {$text['to']} <span class=\"pagetotal\">" . number_format($pagetotal) . "</span> {$text['of']} <span class=\"restotal\">" . number_format($grandtotal) . "</span>";
-
-  return $rval;
+  return "<p>{$admtext['matches']}: " . number_format($start) . " {$text['to']} <span class=\"pagetotal\">" . number_format($pagetotal) . "</span> {$text['of']} <span class=\"restotal\">" . number_format($grandtotal) . "</span>";
 }
 
 function showEventRow($datefield, $placefield, $label, $persfamID) {

@@ -9,81 +9,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="Removed global variables unused in local scope.">
+    <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_add2albumxml.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add2albumxml.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_analyzemods.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_analyzemods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_branches.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branches.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_branchlabels.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchlabels.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_diagnostics.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_diagnostics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_dna_groups.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dna_groups.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_filepicker.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_filepicker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_edit_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edit_dna_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_gedcom2.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedcom2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_gedimport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedimport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_merge.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_merge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_mergerepos.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mergerepos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_mergesources.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mergesources.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_modeditor.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modeditor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_modtables.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modtables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_photoimporter.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_photoimporter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_restore.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_restore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_updateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_updatemedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemedia.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/adminlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajx_fampreview.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_fampreview.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajx_labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_labels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajx_tnginstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_tnginstall.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajx_updateorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_updateorder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albumlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/albumlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/begin.php" beforeDir="false" afterPath="$PROJECT_DIR$/begin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browse_dna_tests.php" beforeDir="false" afterPath="$PROJECT_DIR$/browse_dna_tests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browsetrees-old.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsetrees-old.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browsetrees.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsetrees.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descend.php" beforeDir="false" afterPath="$PROJECT_DIR$/descend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desctracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/desctracker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extrastree.php" beforeDir="false" afterPath="$PROJECT_DIR$/extrastree.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/familychart.php" beforeDir="false" afterPath="$PROJECT_DIR$/familychart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/familygroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/familygroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/famsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class.phpmailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/class.phpmailer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedcom.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedcom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedimport_families.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_families.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gedimport_misc.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_misc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedimport_people.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_people.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedimport_sources.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_sources.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedimport_trees.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_trees.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/genlib.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genlog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/globallib.php" beforeDir="false" afterPath="$PROJECT_DIR$/globallib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/googlemaplib.php" beforeDir="false" afterPath="$PROJECT_DIR$/googlemaplib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heatmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/heatmap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mapconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/mapconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medialib.php" beforeDir="false" afterPath="$PROJECT_DIR$/medialib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mostwanted.php" beforeDir="false" afterPath="$PROJECT_DIR$/mostwanted.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pedbox.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedbox.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pedigree.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedigree.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pedigreetext.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedigreetext.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/personlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/placesearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/placesearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwdlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/pwdlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reglib.php" beforeDir="false" afterPath="$PROJECT_DIR$/reglib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relationship.php" beforeDir="false" afterPath="$PROJECT_DIR$/relationship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpt_descend.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_descend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpt_fam.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_fam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpt_ind.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_ind.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpt_utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/showalbum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showmedialib.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmedialib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surname_cloud.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/surname_cloud.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recaptchalib.php" beforeDir="false" afterPath="$PROJECT_DIR$/recaptchalib.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tngconnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngconnect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tngpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngpdf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tngrss.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngrss.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verticalchart.php" beforeDir="false" afterPath="$PROJECT_DIR$/verticalchart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widget_whatsnew.php" beforeDir="false" afterPath="$PROJECT_DIR$/widget_whatsnew.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,8 +56,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tng161006" />
-    <property name="run.code.analysis.last.selected.profile" value="aPHP - only" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="index" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="localhost" start_url="/tng123/index.php">
@@ -139,7 +81,8 @@
       <workItem from="1597605481937" duration="11057000" />
       <workItem from="1597627811031" duration="12410000" />
       <workItem from="1597666800417" duration="17849000" />
-      <workItem from="1597691762983" duration="6119000" />
+      <workItem from="1597691762983" duration="21998000" />
+      <workItem from="1597755975455" duration="2442000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit after project code reformat">
       <created>1597598834728</created>
@@ -190,7 +133,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597635445820</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Removed global variables unused in local scope.">
+      <created>1597702917635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597702917635</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed global variables unused in local scope.">
+      <created>1597702967931</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597702967931</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,14 +215,15 @@
     <MESSAGE value="removed parens from includes and requires." />
     <MESSAGE value="Deleted unused file session_register.php." />
     <MESSAGE value="Completed include, require, include_once, and require once standardize." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed include, require, include_once, and require once standardize." />
+    <MESSAGE value="Removed global variables unused in local scope." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed global variables unused in local scope." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="907" y="142" width="746" height="899" key="#Inspections" timestamp="1597699054477">
+    <state x="907" y="142" width="746" height="899" key="#Inspections" timestamp="1597759665776">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="907" y="142" width="746" height="899" key="#Inspections/0.0.2560.1440@0.0.2560.1440" timestamp="1597699054477" />
+    <state x="907" y="142" width="746" height="899" key="#Inspections/0.0.2560.1440@0.0.2560.1440" timestamp="1597759665776" />
     <state x="873" y="379" width="814" height="729" key="#Intentions" timestamp="1597699705800">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -286,22 +244,26 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="996" y="554" width="568" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.2560.1440@0.0.2560.1440" timestamp="1597595371349" />
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597699274854">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597706512173">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597699274854" />
-    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597701624216">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597706512173" />
+    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597702967118">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597701624216" />
-    <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog" timestamp="1597700390023">
+    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597702967118" />
+    <state width="396" height="466" key="DebuggerActiveHint" timestamp="1597727534752">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597700390023" />
-    <state x="1061" y="475" key="FileChooserDialogImpl" timestamp="1597700375439">
+    <state width="396" height="466" key="DebuggerActiveHint/0.0.2560.1440@0.0.2560.1440" timestamp="1597727534752" />
+    <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog" timestamp="1597704718565">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1061" y="475" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1597700375439" />
+    <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597704718565" />
+    <state x="1061" y="475" key="FileChooserDialogImpl" timestamp="1597726215113">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1061" y="475" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1597726215113" />
     <state x="1160" y="370" width="771" height="452" key="Github.ShareDialog" timestamp="1597597593025">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -310,82 +272,86 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1029" y="425" key="Github.UntrackedFilesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597597605745" />
-    <state width="2517" height="508" key="GridCell.Tab.0.bottom" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.0.bottom" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.0.center" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.0.center" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.0.left" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.0.left" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.0.right" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.0.right" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.1.bottom" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.1.bottom" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.1.center" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.1.center" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.1.left" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.1.left" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.1.right" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.1.right" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.2.bottom" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.2.bottom" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.2.center" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.2.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.2.center" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.2.left" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.2.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.2.left" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state width="2517" height="508" key="GridCell.Tab.2.right" timestamp="1597691651261">
+    <state width="2517" height="508" key="GridCell.Tab.2.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state width="2517" height="508" key="GridCell.Tab.2.right" timestamp="1597729162448">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597691651261" />
-    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1597636674299">
+    <state width="2517" height="508" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
+    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1597759513361">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597636674299" />
-    <state x="782" y="172" width="996" height="903" key="SettingsEditor" timestamp="1597699229191">
+    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597759513361" />
+    <state x="782" y="172" width="996" height="903" key="SettingsEditor" timestamp="1597756711749">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="782" y="172" width="996" height="903" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597699229191" />
-    <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog" timestamp="1597700390023">
+    <state x="782" y="172" width="996" height="903" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597756711749" />
+    <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog" timestamp="1597729162542">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597700390023" />
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597635449492">
+    <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162542" />
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597702970540">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597635449492" />
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1597640321125">
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597702970540" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597718201348">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597640321125" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597718201348" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1597729162542">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162542" />
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1597599483610">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597599483610" />
-    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597700698101">
+    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597728074664">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597700698101" />
+    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597728074664" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -394,6 +360,21 @@
           <url>file://$PROJECT_DIR$/widget_whatsnew.php</url>
           <line>3</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/languages/English-UTF8/admintext.php</url>
+          <line>34</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/whatsnew.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/genlib.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

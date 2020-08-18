@@ -385,9 +385,7 @@ function getSmallPhoto($medialink) {
   }
   $altmsg = $medialink['allow_living'] ? str_replace("\"", "'", $medialink['description']) : "";
   $cleantitle = $tnggallery ? $altmsg : "";
-  $imgsrc = "<img src=\"$thumb\" border=\"0\" $dimensions alt=\"$altmsg\" title=\"$cleantitle\"$class />";
-
-  return $imgsrc;
+  return "<img src=\"$thumb\" border=\"0\" $dimensions alt=\"$altmsg\" title=\"$cleantitle\"$class />";
 }
 
 function tng_DrawHeading($photostr, $namestr, $years) {
@@ -567,9 +565,7 @@ function tng_smallIcon($options) {
     $end = "\n";
   }
 
-  $link = "$begin<a href=\"$url\" $onclick $targetloc $rel title=\"{$options['label']}\" class=\"$class\" id=\"{$options['id']}-smicon\">{$options['label']}</a>$end";
-
-  return $link;
+  return "$begin<a href=\"$url\" $onclick $targetloc $rel title=\"{$options['label']}\" class=\"$class\" id=\"{$options['id']}-smicon\">{$options['label']}</a>$end";
 }
 
 function tng_getLeftIcons() {

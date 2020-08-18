@@ -140,9 +140,7 @@ function get_ancestor_surnames($personID, $tree, $type) {
   if ($type == "atDNA") {
     sort($surnamesarr);
   }
-  $ancestorstr = implode(', ', $surnamesarr);
-
-  return $ancestorstr;
+  return implode(', ', $surnamesarr);
 }
 
 $atsurnamesarr = array();
@@ -176,9 +174,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
     }
   }
   tng_free_result($result);
-  $atancestorstr = implode(', ', $atsurnamesarr);
-
-  return $atancestorstr;
+  return implode(', ', $atsurnamesarr);
 }
 
 ?>

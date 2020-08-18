@@ -228,7 +228,7 @@ function doFCounter() {
 }
 
 function setFamilyLabel($personID, $gender) {
-  global $tree, $families_table, $branch, $overwrite, $branchlinks_table, $branchaction, $people_table, $fdone;
+  global $tree, $families_table, $branch, $overwrite, $branchlinks_table, $branchaction, $people_table, $fdone, $children_table;
 
   //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($gender['self']) {
@@ -237,10 +237,11 @@ function setFamilyLabel($personID, $gender) {
     while ($row = tng_fetch_assoc($result)) {
       $oldbranch = trim($row['branch']);
       if ($branchaction == "delete") {
-        $query = "DELETE FROM $families_table WHERE familyID = \"{$row['familyID']}\" AND gedcom = \"$tree\"";
+        $familyID = $row['familyID'];
+        $query = "DELETE FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
         $result2 = tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = \"{$row['familyID']}\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = \"$familyID\" AND gedcom = \"$tree\"";
         $result2 = tng_query($query);
 
         //also delete children, events, medialinks, citations, notes

@@ -334,32 +334,25 @@ function dirReadWrite($myuserid, $mygroupid, $dirref) {
 } // function dirReadWrite()
 
 function readPerms($in_Perms) {
-  $sP;
+  $sP = '';
 
   if ($in_Perms & 0x1000) {
-    $sP = 'p';
-  }    // FIFO pipe
-  elseif ($in_Perms & 0x2000) {
-    $sP = 'c';
-  }    // Character special
-  elseif ($in_Perms & 0x4000) {
-    $sP = 'd';
-  }    // Directory
-  elseif ($in_Perms & 0x6000) {
-    $sP = 'b';
-  }    // Block special
-  elseif ($in_Perms & 0x8000) {
-    $sP = '-';
-  }    // Regular
-  elseif ($in_Perms & 0xA000) {
-    $sP = 'l';
-  }    // Symbolic Link
-  elseif ($in_Perms & 0xC000) {
-    $sP = 's';
-  }    // Socket
-  else {
-    $sP = 'u';
-  }                // UNKNOWN
+    $sP = 'p'; // FIFO pipe
+  } elseif ($in_Perms & 0x2000) {
+    $sP = 'c'; // Character special
+  } elseif ($in_Perms & 0x4000) {
+    $sP = 'd'; // Directory
+  } elseif ($in_Perms & 0x6000) {
+    $sP = 'b'; // Block special
+  } elseif ($in_Perms & 0x8000) {
+    $sP = '-'; // Regular
+  } elseif ($in_Perms & 0xA000) {
+    $sP = 'l'; // Symbolic Link
+  } elseif ($in_Perms & 0xC000) {
+    $sP = 's'; // Socket
+  } else {
+    $sP = 'u'; // UNKNOWN
+  }
 
   // owner
   $sP .= (($in_Perms & 0x0100) ? 'r' : '-') . (($in_Perms & 0x0080) ? 'w' : '-') . (($in_Perms & 0x0040) ? (($in_Perms & 0x0800) ? 's' : 'x') : (($in_Perms & 0x0800) ? 'S' : '-'));

@@ -1,3 +1,11 @@
+Tue 18 Aug 2020 05:08:02 <a href="mostwanted.php">Most Wanted</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 04:57:36 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 04:57:13 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:29:32 <a href="placesearch.php?psearch=Warda, Fayette, Texas, United States">Search Results Warda, Fayette, Texas, United States and  tree equals  </a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:29:27 <a href="places-oneletter.php?firstchar=&amp;psearch=warda&amp;stretch=1">Place List: warda</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:29:15 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:29:06 <a href="search.php?mybool=AND&amp;nr=50&amp;mylastname=teinert&amp;lnqualify=contains">Search Results for Last Name contains teinert</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Mon 17 Aug 2020 22:27:14 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Mon 17 Aug 2020 22:12:42 <a href="showrepo.php?repoID=R1&amp;tree=master"> Texas Wendish Heritage Society (R1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Mon 17 Aug 2020 22:12:37 <a href="showsource.php?sourceID=S36&amp;tree=master">Source St. Michael Lutheran Church (Winchester, Texas), &quot;Tauf Register&quot; (Baptism Register),, ; , . (S36)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Mon 17 Aug 2020 22:12:33 <a href="showrepo.php?repoID=R1&amp;tree=master"> Texas Wendish Heritage Society (R1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).

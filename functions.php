@@ -277,7 +277,5 @@ function doMedia($mediatypeID) {
     $mediatext = str_replace("<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">", "<td valign=\"top\" class=\"databack\">", $mediatext);
   }
   tng_free_result($mediaresult);
-  $media = $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br />\n" : "";
-
-  return $media;
+  return $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br />\n" : "";
 }
