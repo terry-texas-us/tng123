@@ -4,7 +4,7 @@ include_once 'classes/modlister.class.php';
 class modinfo extends modlister
 {
 
-  function __construct($objinits) {
+  public function __construct($objinits) {
     parent::__construct($objinits);
     $this->modname = '';
     $this->version = '';

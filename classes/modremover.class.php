@@ -377,7 +377,7 @@ class modremover extends modparser
     foreach ($cfgpathlist as $cfgpath) {
       if (!$this->remove($cfgpath)) {
         $this->batch_error = true;
-      };
+      }
     }
     return !$this->batch_error;
   }

@@ -110,7 +110,6 @@ function getfamily($tree, $familyID, $personID) {
   global $families_table, $children_table, $people_table;
   if (!$familyID && $personID) {
     if ($familyID = getresult(tng_query("(SELECT familyID FROM $families_table WHERE husband='$personID' and gedcom='$tree' order by husborder limit 1) union (SELECT familyID FROM $families_table WHERE wife='$personID' and gedcom='$tree' order by wifeorder limit 1)"))) {
-      ;
     } else {
       $familyID = getresult(getChildFamily($tree, $personID, 'parentorder'));
     }

@@ -94,7 +94,7 @@ function getAlbumLinkText($albumID) {
     }
     if ($prow['eventID']) {
       $query = "SELECT description from $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
-      $eresult = tng_query($query);;
+      $eresult = tng_query($query);
       $erow = tng_fetch_assoc($eresult);
       $event = $erow['description'] ? $erow['description'] : $prow['eventID'];
       tng_free_result($eresult);

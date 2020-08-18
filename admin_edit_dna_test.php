@@ -229,7 +229,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                               <td><?php echo $admtext['gedmatchID']; ?>:</td>
                               <td><input type="text" name="GEDmatchID" value="<?php echo $row['GEDmatchID']; ?>" id="GEDmatchID" class="medfield"></td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
                         <tr>
                             <td><strong><?php echo $admtext['privatetest']; ?>:</strong>&nbsp;</td>
                             <td>
@@ -322,7 +322,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                               <td><?php echo $admtext['marker_values']; ?>:<br/><?php echo $admtext['separate']; ?>:<br/><?php echo $admtext['multivalues']; ?></td>
                               <td><textarea cols="90" rows="3" name="y_results"><?php echo $row['y_results']; ?></textarea></td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
                       <?php if ($row['test_type'] == "mtDNA" || $row['test_type'] == "atDNA") {
                         $mt_checkedstr = ($row['mtdna_confirmed']) ? "checked" : ""; ?>
                           <tr>
@@ -331,7 +331,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                                                                                                                                                                                          value="1" <?php echo $mt_checkedstr; ?>>
                               </td>
                           </tr>
-                      <?php };
+                      <?php }
                       if ($row['test_type'] == "Y-DNA" || $row['test_type'] == "atDNA") {
                         $y_checkedstr = ($row['ydna_confirmed']) ? "checked" : ""; ?>
                           <tr>
@@ -340,7 +340,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                                                                                                                                                                                        value="1" <?php echo $y_checkedstr; ?>>
                               </td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
 
                       <?php if ($row['test_type'] == "mtDNA") { ?>
                           <tr>
@@ -378,7 +378,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                               <td><textarea cols="69" rows="2" name="coding_reg"><?php echo $row['coding_reg']; ?></textarea>&nbsp;<?php echo $admtext['separate']; ?>
                               </td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
                       <?php if ($row['test_type'] == "Y-DNA") { ?>
                           <tr>
                               <td><?php echo $admtext['signsnp']; ?>:</td>
@@ -388,7 +388,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                               <td><?php echo $admtext['termsnp']; ?>:</td>
                               <td><input type="text" name="termsnp" value="<?php echo $row['terminal_snp']; ?>" class="medfield"></td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
                       <?php if ($row['test_type'] == "atDNA") { ?>
                           <tr>
                               <td colspan="2">&nbsp;</td>
@@ -469,7 +469,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                           <tr>
                               <td colspan="2">&nbsp;</td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
                         <tr>
                             <td colspan="2"><br/><strong><?php echo $admtext['mdaID']; ?></strong></td>
                         </tr>
@@ -549,7 +549,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                   <input type="checkbox" name="markeropt" value="1"<?php if ($row['markeropt']) {
                                     echo " checked=\"$checked\"";
                                   } ?>>&nbsp;<?php echo $text['test_results']; ?>&nbsp;&nbsp;
-                              <?php }; ?>
+                              <?php } ?>
                                 <input type="checkbox" name="notesopt" value="1"<?php if ($row['notesopt']) {
                                   echo " checked=\"$checked\"";
                                 } ?>>&nbsp;<?php echo $admtext['notes']; ?>&nbsp;&nbsp;

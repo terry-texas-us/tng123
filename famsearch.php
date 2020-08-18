@@ -247,7 +247,7 @@ if ($more) {
 }
 
 if ($allwhere) {
-  $allwhere = "WHERE " . $allwhere . " AND ";;
+  $allwhere = "WHERE " . $allwhere . " AND ";
   $querystring = "{$text['text_for']} $querystring";
 } else {
   $allwhere = "WHERE ";

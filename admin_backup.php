@@ -85,7 +85,7 @@ function getfiletime($filename) {
 
   $filemodtime = "";
   if ($fileflag) {
-    $filemod = filemtime($filename) + (3600 * $time_offset);;
+    $filemod = filemtime($filename) + (3600 * $time_offset);
     $filemodtime = date("F j, Y h:i:s A", $filemod);
   }
   return $filemodtime;

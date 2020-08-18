@@ -80,7 +80,7 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
                               <td><?php echo $admtext['gedmatchID']; ?>:</td>
                               <td><input type="text" name="GEDmatchID" value="<?php echo $row['GEDmatchID']; ?>" id="GEDmatchID" size="40" maxlength="40"></td>
                           </tr>
-                      <?php }; ?>
+                      <?php } ?>
                         <tr>
                             <td><strong><?php echo $admtext['privatetest']; ?>:</strong>&nbsp;</td>
                             <td>

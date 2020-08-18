@@ -239,7 +239,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
               </th>
             <?php
             $j++;
-          }; ?>
+          } ?>
         </tr>
         </thead>
       <?php

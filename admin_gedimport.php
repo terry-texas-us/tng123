@@ -144,7 +144,7 @@ function tng_extract($gedfilename) {
   global $rootpath, $gedpath, $savegedfilename, $basefilename;
 
   if (class_exists('ZipArchive')) {
-    $zip = new ZipArchive;
+    $zip = new ZipArchive();
     if ($zip->open($gedfilename)) {
       for ($i = 0; $i < $zip->numFiles; $i++) {
         $zfile = $zip->getNameIndex($i);

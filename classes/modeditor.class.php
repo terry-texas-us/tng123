@@ -21,7 +21,7 @@ class modeditor extends modparser
   */
   protected $classID = 'editor';
 
-  function __construct($objinits) {
+  public function __construct($objinits) {
     parent::__construct($objinits);
   }
 

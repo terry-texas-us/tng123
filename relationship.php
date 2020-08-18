@@ -36,24 +36,24 @@ $pedigree['puboxwidth'] += 40;
 
 class Relationship
 {
-  var $upcount = 0;
-  var $downcount = 0;
-  var $downarray = array();
-  var $uparray = array();
-  var $match = 0;
-  var $spouseflag = 0;
-  var $spouses = 0;
-  var $firstone = 1;
-  var $offsetH = 0;
-  var $offsetV = -1;
-  var $split = 0;
-  var $half = false;
-  var $multparents = 0;
-  var $multparent1, $multspouse1, $multspouse2;
-  var $uplist = array();
-  var $upptr = 0;
+  public $upcount = 0;
+  public $downcount = 0;
+  public $downarray = array();
+  public $uparray = array();
+  public $match = 0;
+  public $spouseflag = 0;
+  public $spouses = 0;
+  public $firstone = 1;
+  public $offsetH = 0;
+  public $offsetV = -1;
+  public $split = 0;
+  public $half = false;
+  public $multparents = 0;
+  public $multparent1, $multspouse1, $multspouse2;
+  public $uplist = array();
+  public $upptr = 0;
 
-  function reset() {
+  public function reset() {
     $this->match = 0;
     $this->spouseflag = 0;
     $this->spouses = 0;
@@ -63,7 +63,7 @@ class Relationship
     $this->half = false;
   }
 
-  function printRelationshipSentence() {
+  public function printRelationshipSentence() {
     global $text, $gender1, $gender2, $namestr, $namestr2;
 
     $spousemsg = "";
@@ -182,7 +182,7 @@ class Relationship
     echo "<p>" . $relmsg . "</p>\n";
   }
 
-  function getRelMsg($spouseflag, $namestr, $gender1, $namestr2, $gender2, $messages) {
+  public function getRelMsg($spouseflag, $namestr, $gender1, $namestr2, $gender2, $messages) {
     global $text;
 
     if ($spouseflag == 1) {
@@ -201,11 +201,11 @@ class Relationship
     return "$namestr {$text['is']} $reldesc $spousemsg $namestr2";
   }
 
-  function switchGender($gender) {
+  public function switchGender($gender) {
     return $gender == "M" ? "F" : ($gender == "F" ? "M" : $gender);
   }
 
-  function buildUparray() {
+  public function buildUparray() {
     $this->uparray = array();
     $index = $this->upptr;
     $upcount = $this->upcount - 1;

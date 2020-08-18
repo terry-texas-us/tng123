@@ -77,7 +77,7 @@ class modlister extends modparser
   protected $status_string = '';
   protected $warning = '';
 
-  function __construct($objinits) {
+  public function __construct($objinits) {
     parent::__construct($objinits);
   }
 
@@ -1134,7 +1134,7 @@ class modlister extends modparser
     $buttons['installall'] = "\r\n<button type=\"submit\" id=\"btnInstall\"
          class=\"msgapproved\" name=\"submit\" value=\"installall\">{$this->admtext['installall']}</button>";
     $buttons['deleteall'] = "\r\n<button type=\"submit\" id=\"btnDelete\"
-         class=\"msgerror\" name=\"submit\" value=\"deleteall\">{$this->admtext['deleteall']}</button>";;
+         class=\"msgerror\" name=\"submit\" value=\"deleteall\">{$this->admtext['deleteall']}</button>";
     $buttons['removeall'] = "\r\n<button type=\"submit\" id=\"btnRemove\"
          class=\"msgapproved\" name=\"submit\" value=\"removeall\">{$this->admtext['removeall']}</button>";
     $buttons['cleanupall'] = "\r\n<button type=\"submit\" id=\"btnClean\"

@@ -24,11 +24,11 @@ if (!class_exists('UFPDF')) {
      *                               Public methods                                 *
      *                                                                              *
      *******************************************************************************/
-    function UFPDF($orientation = 'P', $unit = 'mm', $format = 'A4') {
+    public function UFPDF($orientation = 'P', $unit = 'mm', $format = 'A4') {
       FPDF::FPDF($orientation, $unit, $format);
     }
 
-    function GetStringWidth($s) {
+    public function GetStringWidth($s) {
       //Get width of a string in the current font
       $s = (string)$s;
       $codepoints = $this->utf8_to_codepoints($s);
@@ -39,7 +39,7 @@ if (!class_exists('UFPDF')) {
       return $w * $this->FontSize / 1000;
     }
 
-    function AddFont($family, $style = '', $file = '') {
+    public function AddFont($family, $style = '', $file = '') {
       //Add a TrueType or Type1 font
       $family = strtolower($family);
       if ($family == 'arial') {
@@ -73,7 +73,7 @@ if (!class_exists('UFPDF')) {
       }
     }
 
-    function Text($x, $y, $txt) {
+    public function Text($x, $y, $txt) {
       //Output a string
       $s = sprintf('BT %.2f %.2f Td %s Tj ET', $x * $this->k, ($this->h - $y) * $this->k, $this->_escapetext($txt));
       if ($this->underline and $txt != '') {
@@ -85,12 +85,12 @@ if (!class_exists('UFPDF')) {
       $this->_out($s);
     }
 
-    function AcceptPageBreak() {
+    public function AcceptPageBreak() {
       //Accept automatic page break or not
       return $this->AutoPageBreak;
     }
 
-    function Cell($w, $h = 0, $txt = '', $border = 0, $ln = 0, $align = '', $fill = 0, $link = '') {
+    public function Cell($w, $h = 0, $txt = '', $border = 0, $ln = 0, $align = '', $fill = 0, $link = '') {
       //Output a cell
       $k = $this->k;
       if ($this->y + $h > $this->PageBreakTrigger and !$this->InFooter and $this->AcceptPageBreak()) {
@@ -181,7 +181,7 @@ if (!class_exists('UFPDF')) {
      *                                                                              *
      *******************************************************************************/
 
-    function _puttruetypeunicode($font) {
+    public function _puttruetypeunicode($font) {
       //Type0 Font
       $this->_newobj();
       $this->_out('<</Type /Font');
@@ -244,7 +244,7 @@ if (!class_exists('UFPDF')) {
       $this->_out('endobj');
     }
 
-    function _dounderline($x, $y, $width, $txt) {
+    public function _dounderline($x, $y, $width, $txt) {
       //Underline text
       $up = $this->CurrentFont['up'];
       $ut = $this->CurrentFont['ut'];
@@ -252,21 +252,21 @@ if (!class_exists('UFPDF')) {
       return sprintf('%.2f %.2f %.2f %.2f re f', $x * $this->k, ($this->h - ($y - $up / 1000 * $this->FontSize)) * $this->k, $w * $this->k, -$ut / 1000 * $this->FontSizePt);
     }
 
-    function _textstring($s) {
+    public function _textstring($s) {
       //Convert to UTF-16BE
       $s = $this->utf8_to_utf16be($s);
       //Escape necessary characters
       return '(' . strtr($s, array(')' => '\\)', '(' => '\\(', '\\' => '\\\\')) . ')';
     }
 
-    function _escapetext($s) {
+    public function _escapetext($s) {
       //Convert to UTF-16BE
       $s = $this->utf8_to_utf16be($s, false);
       //Escape necessary characters
       return '(' . strtr($s, array(')' => '\\)', '(' => '\\(', '\\' => '\\\\')) . ')';
     }
 
-    function _putinfo() {
+    public function _putinfo() {
       $this->_out('/Producer ' . $this->_textstring('UFPDF ' . UFPDF_VERSION));
       if (!empty($this->title)) {
         $this->_out('/Title ' . $this->_textstring($this->title));
@@ -288,7 +288,7 @@ if (!class_exists('UFPDF')) {
 
 // UTF-8 to UTF-16BE conversion.
 // Correctly handles all illegal UTF-8 sequences.
-    function utf8_to_utf16be(&$txt, $bom = true) {
+    public function utf8_to_utf16be(&$txt, $bom = true) {
       $l = strlen($txt);
       $out = $bom ? "\xFE\xFF" : '';
       for ($i = 0; $i < $l; ++$i) {
@@ -394,7 +394,7 @@ if (!class_exists('UFPDF')) {
 
 // UTF-8 to codepoint array conversion.
 // Correctly handles all illegal UTF-8 sequences.
-    function utf8_to_codepoints(&$txt) {
+    public function utf8_to_codepoints(&$txt) {
       $l = strlen($txt);
       $out = array();
       for ($i = 0; $i < $l; ++$i) {

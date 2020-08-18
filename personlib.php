@@ -843,7 +843,7 @@ function doMediaSection($entity, $medialist, $albums) {
     }
     $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
-    $media .= "$albumtext\n</table>\n";;
+    $media .= "$albumtext\n</table>\n";
   }
   return $media;
 }

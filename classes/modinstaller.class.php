@@ -490,7 +490,7 @@ class modinstaller extends modparser
     foreach ($cfgpathlist as $cfgpath) {
       if (!$this->install($cfgpath)) {
         $this->batch_error = true;
-      };
+      }
     }
     return !$this->batch_error;
   }

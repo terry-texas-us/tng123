@@ -28,7 +28,7 @@ $flags['error'] = $error;
 
 if ($cms['support'] == "phpnuke") {
   if ($multilingual == "1") {
-    $newlanguage = strtoupper(substr($currentlang, 0, 1)) . substr($currentlang, 1);;
+    $newlanguage = strtoupper(substr($currentlang, 0, 1)) . substr($currentlang, 1);
     session_start();
     $session_language = $_SESSION['session_language'] = $newlanguage;
   }

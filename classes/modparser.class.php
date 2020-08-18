@@ -20,7 +20,7 @@ include_once 'classes/modbase.class.php';
 
 class modparser extends modbase
 {
-  function __construct($objinits) {
+  public function __construct($objinits) {
     parent::__construct($objinits);
   }
 
@@ -1063,7 +1063,7 @@ class modparser extends modbase
     return $i;
   }
 
-  function find_label($parts, $index, $label) {
+  public function find_label($parts, $index, $label) {
 
     for ($i = $index; isset($parts[$i]); $i++) {
       if ($parts[$i][0] == 'label' && $parts[$i + 1][0] == $label) {
@@ -1073,7 +1073,7 @@ class modparser extends modbase
     return false;
   }
 
-  function count_args($argstring) {  // index for tag name
+  public function count_args($argstring) {  // index for tag name
     $s = explode("%", $argstring, $limit = 2);
     $args = trim($s[0]);
     if (empty($args)) {

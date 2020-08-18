@@ -156,7 +156,7 @@ if (!empty($action) && $action == EDITP) {
           window.location.href = "admin_showmodslog.php";
       </script>
     <?php
-  };
+  }
 }
 
 /*************************************************************************

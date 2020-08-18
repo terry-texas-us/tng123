@@ -189,7 +189,7 @@ class modbase
   // batch processing
   protected $batch_error = false;
 
-  function __construct($objinits) {
+  public function __construct($objinits) {
 
     // copy init values to data area
     foreach ($objinits as $key => $value) {
@@ -278,7 +278,6 @@ class modbase
 
     $fp = fopen($filepath, 'wb');
     if (!$fp) {
-      ;
       $_SESSION['err_msg'] = "{$this->admtext['checkwrite']} {$this->admtext['cannotopen']} $filepath ";
       return false;
     }

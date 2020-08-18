@@ -57,7 +57,7 @@ class UploadHandler
           'min_height' => 'Image requires a minimum height'
   );
 
-  function __construct($options = null, $initialize = true) {
+  public function __construct($options = null, $initialize = true) {
     $this->options = array(
             'script_url' => $this->get_full_url() . '/',
             'upload_dir' => $options['mediapath'],
@@ -390,7 +390,7 @@ class UploadHandler
             $this->error_messages[$error] : $error;
   }
 
-  function get_config_bytes($val) {
+  public function get_config_bytes($val) {
     $val = trim($val);
     $last = strtolower($val[strlen($val) - 1]);
     switch ($last) {

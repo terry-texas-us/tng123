@@ -16,7 +16,7 @@ class moddeleter extends modbase
 {
   protected $classID = "deleter";
 
-  function __construct($objinits) {
+  public function __construct($objinits) {
     // pass arguments thru to base class
     parent::__construct($objinits);
     //echo __LINE__;print_r(get_defined_vars());exit;
@@ -115,7 +115,7 @@ class moddeleter extends modbase
     foreach ($cfgpathlist as $cfgpath) {
       if (!$this->delete_mod($cfgpath)) {
         $this->batch_error = true;
-      };
+      }
     }
     return !$this->batch_error;
   }

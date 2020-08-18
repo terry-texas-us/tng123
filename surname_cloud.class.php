@@ -23,7 +23,7 @@ class surname_cloud
 
   */
 
-  function display($top = "50", $surnameTree = "", $surnameBranch = "") {
+  public function display($top = "50", $surnameTree = "", $surnameBranch = "") {
     global $people_table, $text, $lnprefixes, $assignedtree;
     $treeBranchUrlString = "";
 

@@ -11,21 +11,40 @@
   <component name="ChangeListManager">
     <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_branchlabels.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchlabels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_diagnostics.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_diagnostics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_backup.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_backup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_edit_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edit_dna_test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_gedcom2.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedcom2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajx_labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_labels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_gedimport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedimport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_mediauploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mediauploader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modeditor.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modeditor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_new_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_new_dna_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class.phpmailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/class.phpmailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedimport_misc.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_misc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class.smtp.php" beforeDir="false" afterPath="$PROJECT_DIR$/class.smtp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modbase.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modbase.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/moddeleter.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/moddeleter.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modeditor.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modeditor.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modinfo.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modinfo.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modinstaller.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modinstaller.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modlister.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modlister.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modparser.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modparser.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modremover.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modremover.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_dna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_dna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_ydna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_ydna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/familychart.php" beforeDir="false" afterPath="$PROJECT_DIR$/familychart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/famsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/unifont/ttfonts.php" beforeDir="false" afterPath="$PROJECT_DIR$/font/unifont/ttfonts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/fpdf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/genlib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/globallib.php" beforeDir="false" afterPath="$PROJECT_DIR$/globallib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/mapconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SerbianCyrillic-UTF8/text.php" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SerbianCyrillic-UTF8/text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/personlib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwdlib-phpass.php" beforeDir="false" afterPath="$PROJECT_DIR$/pwdlib-phpass.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recaptchalib.php" beforeDir="false" afterPath="$PROJECT_DIR$/recaptchalib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tngconnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngconnect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relationship.php" beforeDir="false" afterPath="$PROJECT_DIR$/relationship.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/showalbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showmedialib.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmedialib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surname_cloud.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/surname_cloud.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tfpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/tfpdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngpdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/ufpdf.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +75,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tng161006" />
-    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="aPHP - only" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RunManager">
     <configuration name="index" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="localhost" start_url="/tng123/index.php">
@@ -83,6 +102,7 @@
       <workItem from="1597666800417" duration="17849000" />
       <workItem from="1597691762983" duration="21998000" />
       <workItem from="1597755975455" duration="2442000" />
+      <workItem from="1597762488923" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit after project code reformat">
       <created>1597598834728</created>
@@ -244,10 +264,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="996" y="554" width="568" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.2560.1440@0.0.2560.1440" timestamp="1597595371349" />
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597706512173">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597762675266">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597706512173" />
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597762675266" />
     <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597702967118">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -320,14 +340,14 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="508" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162448" />
-    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1597759513361">
+    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1597762399843">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597759513361" />
-    <state x="782" y="172" width="996" height="903" key="SettingsEditor" timestamp="1597756711749">
+    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597762399843" />
+    <state x="782" y="172" width="996" height="903" key="SettingsEditor" timestamp="1597762655952">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="782" y="172" width="996" height="903" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597756711749" />
+    <state x="782" y="172" width="996" height="903" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597762655952" />
     <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog" timestamp="1597729162542">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -336,10 +356,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597702970540" />
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597718201348">
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597762474725">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597718201348" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597762474725" />
     <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1597729162542">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>

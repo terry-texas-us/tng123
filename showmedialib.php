@@ -428,7 +428,7 @@ function getMediaLinkText($mediaID, $ioffset) {
     }
     if ($prow['eventID']) {
       $query = "SELECT display from $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
-      $eresult = tng_query($query);;
+      $eresult = tng_query($query);
       $erow = tng_fetch_assoc($eresult);
       if ($prow['eventID'] == "BURI" && $prow['burialtype'] == "1") {
         $event = $text["cremated"];

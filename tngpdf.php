@@ -25,14 +25,14 @@ if (!class_exists('TNGPDF')) {
   {
 
 // Private properties
-    var $charset;      // character set being used
+    public $charset;      // character set being used
 
     /*******************************************************************************
      *                                                                              *
      *                               Public methods                                 *
      *                                                                              *
      *******************************************************************************/
-    function TNGPDF($orientation = 'P', $unit = 'mm', $format = 'A4') {
+    public function TNGPDF($orientation = 'P', $unit = 'mm', $format = 'A4') {
       global $session_charset;
 
       $this->charset = $session_charset;
@@ -41,14 +41,14 @@ if (!class_exists('TNGPDF')) {
     }
 
 
-    function _escapetext($s) {
+    public function _escapetext($s) {
       if ($this->charset == 'UTF-8') {
         $s = $this->utf8_to_utf16be($s, false);
       }
       return '(' . strtr($s, array(')' => '\\)', '(' => '\\(', '\\' => '\\\\')) . ')';
     }
 
-    function Image($file, $x = null, $y = null, $w = 0, $h = 0, $type = '', $link = '') {
+    public function Image($file, $x = null, $y = null, $w = 0, $h = 0, $type = '', $link = '') {
       //Put an image on the page
       if (!isset($this->images[$file])) {
         //First use of image, get info
@@ -105,7 +105,7 @@ if (!class_exists('TNGPDF')) {
       }
     }
 
-    function WriteLongIndent($h, $txt, $link = '', $indent = 0, $rows = 0, $textheight = 0) {
+    public function WriteLongIndent($h, $txt, $link = '', $indent = 0, $rows = 0, $textheight = 0) {
       if ($textheight == 0) {
         $textheight = $h;
       }
@@ -205,7 +205,7 @@ if (!class_exists('TNGPDF')) {
       }
     }
 
-    function WriteHTML($html, $indent = 0, $rows = 0) {
+    public function WriteHTML($html, $indent = 0, $rows = 0) {
       $this->indentRowCount = 0;
       if ($indent > 0) {
         $this->SetX($this->GetX() + $indent);
@@ -242,7 +242,7 @@ if (!class_exists('TNGPDF')) {
       }
     }
 
-    function OpenTag($tag, $attr) {
+    public function OpenTag($tag, $attr) {
       //Opening tag
       if ($tag == 'B' or $tag == 'I' or $tag == 'U') {
         $this->SetStyle($tag, true);
@@ -258,7 +258,7 @@ if (!class_exists('TNGPDF')) {
       }
     }
 
-    function CloseTag($tag) {
+    public function CloseTag($tag) {
       //Closing tag
       if ($tag == 'B' or $tag == 'I' or $tag == 'U') {
         $this->SetStyle($tag, false);
@@ -274,7 +274,7 @@ if (!class_exists('TNGPDF')) {
       }
     }
 
-    function SetStyle($tag, $enable) {
+    public function SetStyle($tag, $enable) {
       //echo "setting style";
       //Modify style and select corresponding font
       $this->$tag += ($enable ? 1 : -1);
@@ -323,14 +323,14 @@ if (!class_exists('TNGPDF')) {
     }
     */
 
-    function GetPageSize() {
+    public function GetPageSize() {
       $dim = array();
       $dim['w'] = $this->w;
       $dim['h'] = $this->h;
       return $dim;
     }
 
-    function GetFontSize($font = '', $fontsize = '') {
+    public function GetFontSize($font = '', $fontsize = '') {
       if ($font != '') {
         $origfamily = $this->FontFamily;
         $this->SetFont($font);
@@ -350,7 +350,7 @@ if (!class_exists('TNGPDF')) {
       return $size;
     }
 
-    function Header() {
+    public function Header() {
       global $titleConfig, $rootpath;
 
       if ($this->page == 1 && $titleConfig['skipFirst'] == 'true') {
@@ -408,7 +408,7 @@ if (!class_exists('TNGPDF')) {
       $this->SetLeftMargin($origlMargin);
     }
 
-    function Footer() {
+    public function Footer() {
       global $footerConfig;
       global $tngdomain, $sitename, $dbowner, $text;
 
@@ -447,7 +447,7 @@ if (!class_exists('TNGPDF')) {
       $this->SetLeftMargin($origlMargin);
     }
 
-    function GetFooterHeight() {
+    public function GetFooterHeight() {
       global $footerConfig;
 
       $this->SetFont($footerConfig['font'], '', $footerConfig['fontSizeSmall']);
@@ -458,7 +458,7 @@ if (!class_exists('TNGPDF')) {
     }
 
 
-    function CellFit($w, $h = 0, $txt = '', $border = 0, $ln = 0, $align = '', $fill = 0, $link = '', $scale = 0, $force = 1) {
+    public function CellFit($w, $h = 0, $txt = '', $border = 0, $ln = 0, $align = '', $fill = 0, $link = '', $scale = 0, $force = 1) {
 
       // CellFit adjusts text with horizontal scaling if text is too wide for cell
       // CellFit developed by Patrick Benny (www.fpdf.org)
@@ -507,7 +507,7 @@ if (!class_exists('TNGPDF')) {
       }
     }
 
-    function MBGetStringLength($s) {
+    public function MBGetStringLength($s) {
       //MBGetStringLength is a patch that allows CJK double-byte text, by Patrick Benny (www.fpdf.org)
       if ($this->CurrentFont['type'] == 'Type0') {
         $len = 0;
