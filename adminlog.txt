@@ -1,3 +1,15 @@
+Tue 18 Aug 2020 17:11:04 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
+Tue 18 Aug 2020 17:03:51 Generate Thumbnails: Thumbnails generated: 1; Records updated: 1; Thumbnails not generated due to path, permissions, size or file name problems: 0 (User: Administrator).
+Tue 18 Aug 2020 16:38:30 Generate Thumbnails: Thumbnails generated: 0; Records updated: 0; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).
+Tue 18 Aug 2020 16:07:28 Generate Thumbnails: Thumbnails generated: 0; Records updated: 5; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).
+Tue 18 Aug 2020 16:07:01 Generate Thumbnails: Thumbnails generated: 0; Records updated: 0; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).
+Tue 18 Aug 2020 16:06:50 <a href="admin_editmedia.php?mediaID=7">Edit Existing Media: 7</a> (User: Administrator).
+Tue 18 Aug 2020 16:05:26 <a href="admin_editcemetery.php?cemeteryID=1">Add New Cemetery: 1 - Holy Cross Lutheran Cemetery</a> (User: Administrator).
+Tue 18 Aug 2020 16:03:39 Enter new country: United States (User: Administrator).
+Tue 18 Aug 2020 16:03:23 Enter new state: Texas (User: Administrator).
+Tue 18 Aug 2020 16:01:52 <a href="admin_editmedia.php?mediaID=7">Add New Media: 7</a> (User: Administrator).
+Tue 18 Aug 2020 15:53:17 Deleted: Media 6 (User: Administrator).
+Tue 18 Aug 2020 15:51:47 <a href="admin_editmedia.php?mediaID=6">Add New Media: 6</a> (User: Administrator).
 Mon 17 Aug 2020 17:42:46 Modify Map Configuration Settings (User: Administrator).
 Sun 16 Aug 2020 17:02:35 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
 Sun 16 Aug 2020 16:59:25 Generate Thumbnails: Thumbnails generated: 0; Records updated: 4; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).

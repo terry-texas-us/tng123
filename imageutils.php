@@ -21,7 +21,7 @@ function get_pdf_dimensions($path, $box = "MediaBox") {
 
   while (!$stream->eof()) {
     $line = $stream->fgets();
-    if (preg_match("/" . $box . "\s*\[\s*[0-9]{1,} [0-9]{1,} ([0-9]{1,}) ([0-9]{1,})\s*\]/", $line, $matches)) {
+    if (preg_match("/" . $box . "\s*\[\s*[0-9]+ [0-9]+ ([0-9]+) ([0-9]+)\s*\]/", $line, $matches)) {
       $result["width"] = $matches[1];
       $result["height"] = $matches[2];
       break;
@@ -34,6 +34,7 @@ function get_pdf_dimensions($path, $box = "MediaBox") {
 }
 
 function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
+  global $session_charset;
   if (file_exists($src) && isset($dest)) {
     $destInfo = pathInfo($dest);
     $srcInfo = pathInfo($src);
@@ -60,11 +61,9 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
       $srcSize = @getImageSize($src);
     }
 
-    // image dest size $destSize[0] = width, $destSize[1] = height
-    if ($srcSize[1]) {
+    if ($srcSize[1]) { // [0] width / [1] height ratio
       $srcRatio = $srcSize[0] / $srcSize[1];
-    } // width/height ratio
-    else {
+    } else {
       return false;
     }
     if (!$maxWidth) {
@@ -109,18 +108,17 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
       }
 
       switch ($srcSize[2]) {
-        case 1: //GIF
+        case 1: // gif
           $srcImage = @imageCreateFromGif($src);
           break;
-        case 2: //JPEG
+        case 2: // jpeg
           $srcImage = @imageCreateFromJpeg($src);
           break;
-        case 3: //PNG
+        case 3: // png
           $srcImage = @imageCreateFromPng($src);
           break;
         default:
           return false;
-          break;
       }
       if (!$srcImage) {
         return false;
@@ -140,15 +138,13 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
         case 1:
         case 2:
           if ($srcSize[2] == 2) {
-            //fix photos taken on cameras that have incorrect
-            //dimensions
+            // fix photos taken on cameras that have incorrect dimensions
             if (function_exists('exif_read_data')) {
               $exif = @exif_read_data($src);
-              if ($exif !== false) {
-                //get the orientation
+              if ($exif !== false) { // get the orientation
                 $ort = $exif['Orientation'];
 
-                //determine what oreientation the image was taken at
+                // determine orientation the image was taken at
                 switch ($ort) {
                   case 2: // horizontal flip
                     tngImageFlip($destImage);
@@ -203,7 +199,7 @@ function tngImageFlip(&$image, $x = 0, $y = 0, $width = null, $height = null) {
     $height = imagesy($image);
   }
 
-  // Truecolor provides better results, if possible.
+  // truecolor provides better results, if possible.
   if (function_exists('imageistruecolor') && imageistruecolor($image)) {
     $tmp = imagecreatetruecolor(1, $height);
   } else {
@@ -217,7 +213,7 @@ function tngImageFlip(&$image, $x = 0, $y = 0, $width = null, $height = null) {
     // Copy left stripe to the right.
     imagecopy($image, $image, $x2 - $i, $y, $x + $i, $y, 1, $height);
 
-    // Copy backuped right stripe to the left.
+    // Copy backed up right stripe to the left.
     imagecopy($image, $tmp, $x + $i, $y, 0, 0, 1, $height);
   }
 

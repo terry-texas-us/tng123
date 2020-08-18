@@ -1,3 +1,20 @@
+Tue 18 Aug 2020 17:27:10 <a href="placesearch.php?psearch=Dauban, Rothenburg, Schlesien, Preußen&tree=master">Search Results Dauban, Rothenburg, Schlesien, Preußen and  tree equals Master </a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 17:11:28 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 17:11:18 <a href="showmap.php?cemeteryID=1&amp;tree=">Holy Cross Lutheran Cemetery, Warda, Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 17:09:22 <a href="headstones.php?country=United States&amp;state=Texas&amp;county=Fayette&amp;city=&amp;cemeteryID=&amp;tree=">Cemeteries and Headstones in Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 17:09:18 <a href="cemeteries.php?tree=">Cemeteries and Headstones</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 17:04:09 <a href="showmedia.php?mediaID=7&amp;tnggallery=">Headstones: Johann Carl Teinert Grave Marker (7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 17:04:04 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:24:24 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:12:00 <a href="showmedia.php?mediaID=7&amp;tnggallery=">Headstones: Johann Carl Teinert Grave Marker (7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:11:52 <a href="headstones.php?country=United States&amp;state=Texas&amp;county=Fayette&amp;city=&amp;cemeteryID=&amp;tree=">Cemeteries and Headstones in Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:11:48 <a href="cemeteries.php?tree=">Cemeteries and Headstones</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:08:19 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:08:05 <a href="getperson.php?personID=I29&amp;tree=master">Individual info for Johann Carl Teinert (I29)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 16:07:53 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 15:59:24 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 15:59:18 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=headstones">Headstones</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 15:59:09 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=headstones">Headstones</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 05:08:02 <a href="mostwanted.php">Most Wanted</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 04:57:36 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 04:57:13 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).

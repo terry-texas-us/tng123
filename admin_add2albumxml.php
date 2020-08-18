@@ -38,6 +38,7 @@ function get_album_nav($total, $perpage, $pagenavpages) {
     $navoffset = (($nextpage * $perpage) - $perpage);
     $nextlink = "<a href=\"#\" onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$nextpage', '$albumID');\" title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
   }
+  $curpage = 0;
   while ($curpage++ < $totalpages) {
     $navoffset = (($curpage - 1) * $perpage);
     if (($curpage <= $page - $pagenavpages || $curpage >= $page + $pagenavpages) && $pagenavpages) {

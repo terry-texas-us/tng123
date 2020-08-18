@@ -20,7 +20,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 initMediaTypes();
 
 $thumbquality = 80;
-$maxsizeallowed = 1000; //KB
+$maxsizeallowed = 4096; // in kilobytes
 if (function_exists('imageJpeg')) {
   include "imageutils.php";
 }
@@ -72,8 +72,7 @@ while ($row = tng_fetch_assoc($result)) {
     $needsupdate = 1;
   }
   if ($newthumbpath) {
-    //$cleanfile = $session_charset == "UTF-8" ? utf8_decode($row['path']) : $row['path'];
-    //$cleanpath = "$rootpath$usefolder/" . $cleanfile;
+    // TODO Need to sanitize file path
     $path = "$rootpath$usefolder/" . trim($row['path']);
     $destInfo = pathinfo($newthumbpath);
     if (strtoupper($srcInfo['extension']) != "PDF") {
