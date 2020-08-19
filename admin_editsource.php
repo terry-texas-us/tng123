@@ -159,7 +159,7 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
                               }
                               tng_free_result($reporesult);
                               ?>
-                                </div>
+                            </select>
                         </td>
                     </tr>
                     <tr>

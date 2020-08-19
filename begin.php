@@ -38,6 +38,15 @@ $endrootpath = "";
 
 $languages_path = "languages/";
 include $cms['tngpath'] . "getlang.php";
+
+function _($text) {
+  return $text;
+}
+
+function _e($text) {
+  echo $text;
+}
+
 $link = tng_db_connect($database_host, $database_name, $database_username, $database_password, $database_port, $database_socket);
 
 require_once "./core/templates.php";

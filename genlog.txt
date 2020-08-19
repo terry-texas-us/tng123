@@ -1,3 +1,8 @@
+Fri 21 Aug 2020 19:49:41 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 19:06:18 <a href="showsource.php?sourceID=S1&amp;tree=master">Source Anne Blasig, &quot;Appendix II: An Abstract of the Original Ship Register of the Wendish Colonists of Texas of 1854,&quot; The Wends of Texas, Anne Blasig (San Antonio: The Naylor Company, 1954), . (S1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 19:05:55 <a href="browsesources.php?tree=master&amp;offset=50&amp;sourcesearch=">Sources (Tree: master)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 19:05:44 <a href="browsesources.php?tree=master&amp;offset=&amp;sourcesearch=">Sources (Tree: master)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 19:05:34 <a href="browsesources.php?tree=&amp;offset=&amp;sourcesearch=">Sources</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Wed 19 Aug 2020 18:41:06 <a href="showtree.php?tree=boyce">Tree: Robert Edward Boyce</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Wed 19 Aug 2020 18:40:49 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Wed 19 Aug 2020 18:30:14 <a href="/tng123/heatmap.php?mybool=AND&nr=50&tree=tas-ancestors&branch=&mybirthplace=wayne&bpqualify=contains">Search Results | Heat Map for Birth Place contains wayne AND Tree equals Terry A. Smith Ancestors</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
