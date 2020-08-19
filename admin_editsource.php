@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "sources";
 include "$mylanguage/admintext.php";
 
@@ -19,10 +21,7 @@ initMediaTypes();
 
 $sourceID = ucfirst($sourceID);
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-$result = tng_query($query);
-$treerow = tng_fetch_assoc($result);
-tng_free_result($result);
+$treerow = getTree($trees_table, $tree);
 
 $query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = \"$tree\"";
 $result = tng_query($query);

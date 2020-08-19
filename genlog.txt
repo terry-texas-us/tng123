@@ -1,3 +1,46 @@
+Wed 19 Aug 2020 18:41:06 <a href="showtree.php?tree=boyce">Tree: Robert Edward Boyce</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:40:49 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:30:14 <a href="/tng123/heatmap.php?mybool=AND&nr=50&tree=tas-ancestors&branch=&mybirthplace=wayne&bpqualify=contains">Search Results | Heat Map for Birth Place contains wayne AND Tree equals Terry A. Smith Ancestors</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:29:09 <a href="search.php?mybool=AND&amp;nr=50&amp;tree=tas-ancestors&amp;branch=&amp;mybirthplace=wayne&amp;bpqualify=contains">Search Results for Birth Place contains wayne AND Tree equals Terry A. Smith Ancestors</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:27:47 <a href="places-oneletter.php?firstchar=&amp;psearch=wayne&amp;stretch=1">Place List: wayne</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:27:40 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:26:31 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:26:27 <a href="places-oneletter.php?firstchar=&amp;psearch=fort gay&amp;stretch=1">Place List: fort gay</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:26:24 <a href="placesearch.php?psearch=Fort Gay, Wayne, Virginia, United States">Search Results Fort Gay, Wayne, Virginia, United States and  tree equals  </a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:26:04 <a href="places-oneletter.php?firstchar=&amp;psearch=fort gay&amp;stretch=1">Place List: fort gay</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:25:47 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:25:05 <a href="placesearch.php?psearch=Ceredo, Wayne, West Virginia, United States&tree=tas-ancestors">Search Results Ceredo, Wayne, West Virginia, United States and  tree equals Terry A. Smith Ancestors </a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:25:01 <a href="places-oneletter.php?firstchar=&amp;psearch=wayne&amp;tree=tas-ancestors&amp;stretch=1">Place List: wayne (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:24:47 <a href="places-oneletter.php?firstchar=&amp;psearch=wayne&amp;tree=tas-ancestors&amp;stretch=1">Place List: wayne (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:24:28 <a href="places-oneletter.php?firstchar=&amp;psearch=wayne&amp;tree=tas-ancestors&amp;stretch=1">Place List: wayne (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:24:15 <a href="places-oneletter.php?firstchar=&amp;psearch=West Virginia, United States&amp;tree=tas-ancestors&amp;offset=2">Place List: West Virginia, United States (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:24:12 <a href="places-oneletter.php?firstchar=&amp;psearch=United States&amp;tree=tas-ancestors&amp;offset=1">Place List: United States (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:23:53 <a href="places.php?offset=&amp;tree=tas-ancestors">Place List (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 18:23:46 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:55:19 <a href="/tng123/heatmap.php?tree=tas-ancestors&psearch=West%20Virginia,%20United%20States">Place List | Heat Map | West Virginia, United States for Place contains West Virginia, United States AND Tree equals Terry A. Smith Ancestors</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:53:59 <a href="places-oneletter.php?firstchar=&amp;psearch=West Virginia, United States&amp;tree=tas-ancestors&amp;offset=2">Place List: West Virginia, United States (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:53:56 <a href="places-oneletter.php?firstchar=&amp;psearch=United States&amp;tree=tas-ancestors&amp;offset=1">Place List: United States (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:53:51 <a href="places.php?offset=&amp;tree=tas-ancestors">Place List (Tree: tas-ancestors)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:53:41 <a href="places.php?">Place List</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:48:00 <a href="famsearch.php?mybool=AND&nr=50&tree=boyce&myflastname=boyce&flnqualify=contains">Search Results for Last Name contains boyce AND Tree equals Robert Edward Boyce</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 17:30:43 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 16:03:56 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=standard">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 16:03:51 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 16:00:29 <a href='familychart.php?familyID=F7&amp;tree=master'>Family Chart: Johann Carl Hermann Teinert / Christiana Winzer (F7)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 15:59:46 <a href="descend.php?personID=I15&amp;tree=master&amp;display=standard">Descendancy for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 15:59:28 <a href="pedigree.php?personID=I15&amp;tree=master&amp;generations=4&amp;display=standard">Pedigree Chart for Johann Carl Hermann Teinert (I15)</a> 4 Generations accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 15:59:23 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 14:08:42 <a href="statistics.php?tree=">Statistics</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Wed 19 Aug 2020 13:56:09 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Robert Boyce Genealogy).
+Wed 19 Aug 2020 13:55:56 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Robert Boyce Genealogy).
+Wed 19 Aug 2020 13:55:50 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV (User: Robert Boyce Genealogy).
+Wed 19 Aug 2020 13:55:07 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV.
+Wed 19 Aug 2020 13:55:07 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV.
+Wed 19 Aug 2020 13:55:07 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV.
+Wed 19 Aug 2020 13:55:07 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV.
+Wed 19 Aug 2020 13:53:16 <a href="whatsnew.php?">What&apos;s New (past 30 days)</a> accessed by DESKTOP-AF2CIVV.
+Wed 19 Aug 2020 13:52:42 <a href="getperson.php?personID=I1&amp;tree=boyce">Individual info for Robert Edward Boyce (I1)</a> accessed by DESKTOP-AF2CIVV.
+Wed 19 Aug 2020 13:51:37 <a href="getperson.php?personID=I1&amp;tree=boyce">Individual info for Robert Edward Boyce (I1)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 19:43:31 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 19:14:38 <a href="showmedia.php?mediaID=8&amp;tnggallery=">Documents:  (8)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 18:44:29 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=documents">Documents</a> accessed by DESKTOP-AF2CIVV (User: Administrator).

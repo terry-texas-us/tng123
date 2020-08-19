@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "people";
 include "$mylanguage/admintext.php";
 
@@ -88,10 +90,7 @@ $row['allow_private'] = $rights['private'];
 
 $namestr = getName($row);
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-$result = tng_query($query);
-$treerow = tng_fetch_assoc($result);
-tng_free_result($result);
+$treerow = getTree($trees_table, $tree);
 
 $query = "SELECT DISTINCT eventID as eventID FROM $notelinks_table WHERE persfamID=\"$personID\" AND gedcom =\"$tree\"";
 $notelinks = tng_query($query);

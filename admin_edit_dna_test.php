@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "dna";
 include "$mylanguage/admintext.php";
 
@@ -13,22 +15,7 @@ if (!$allow_edit) {
   exit;
 }
 
-if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
-} else {
-  $wherestr = "";
-}
-
-$treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-$treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-$treenum = 0;
-while ($treerow = tng_fetch_assoc($treeresult)) {
-  $treenum++;
-  $trees[$treenum] = $treerow['gedcom'];
-  $treename[$treenum] = $treerow['treename'];
-}
-tng_free_result($treeresult);
+list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, $trees_table);
 
 $query = "SELECT * FROM $dna_tests_table WHERE testID = \"$testID\"";
 $result = tng_query($query);

@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "review";
 include "$mylanguage/admintext.php";
 
@@ -219,10 +221,7 @@ if (is_numeric($eventID)) {
   $displayval = $admtext[$eventID];
 }
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-$result = tng_query($query);
-$treerow = tng_fetch_assoc($result);
-tng_free_result($result);
+$treerow = getTree($trees_table, $tree);
 
 $query = "SELECT count(ID) as notecount FROM $notelinks_table WHERE persfamID=\"$persfamID\" AND gedcom =\"$tree\" AND eventID =\"$eventID\"";
 $notelinks = tng_query($query);

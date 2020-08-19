@@ -276,10 +276,8 @@ if ($tree && !$tngconfig['places1tree']) {
   $logurlstring = "&tree=$tree";
   $wherestr2 = " AND $places_table.gedcom = \"$tree\" ";
 
-  $query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-  $treeresult = tng_query($query);
-  $treerow = tng_fetch_assoc($treeresult);
-  tng_free_result($treeresult);
+  require_once "./admin/trees.php";
+  $treerow = getTree($trees_table, $tree);
 } else {
   $urlstring = $logurlstring = $wherestr2 = "";
 }

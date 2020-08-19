@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "sources";
 include "$mylanguage/admintext.php";
 
@@ -17,10 +19,7 @@ $showrepo_url = getURL("showrepo", 1);
 
 $repoID = ucfirst($repoID);
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-$result = tng_query($query);
-$treerow = tng_fetch_assoc($result);
-tng_free_result($result);
+$treerow = getTree($trees_table, $tree);
 
 $query = "SELECT reponame, changedby, $repositories_table.addressID, address1, address2, city, state, zip, country, phone, email, www, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $repositories_table LEFT JOIN $address_table on $repositories_table.addressID = $address_table.addressID WHERE repoID = \"$repoID\" AND $repositories_table.gedcom = \"$tree\"";
 $result = tng_query($query);

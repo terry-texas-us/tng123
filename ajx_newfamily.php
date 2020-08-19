@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
@@ -47,10 +49,7 @@ if (!isset($wifestr)) {
   $wifestr = $admtext['clickfind'];
 }
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom=\"$tree\" ORDER BY treename";
-$result = tng_query($query);
-$treerow = tng_fetch_assoc($result);
-tng_free_result($result);
+$treerow = getTree($trees_table, $tree);
 
 header("Content-type:text/html; charset=" . $session_charset);
 

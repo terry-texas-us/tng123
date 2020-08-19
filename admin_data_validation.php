@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "misc";
 include "$mylanguage/admintext.php";
 
@@ -9,22 +11,7 @@ include "checklogin.php";
 include "version.php";
 $helplang = findhelp("misc_help.php");
 
-if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
-} else {
-  $wherestr = "";
-}
-
-$treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-$treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-$treenum = 0;
-while ($treerow = tng_fetch_assoc($treeresult)) {
-  $treenum++;
-  $trees[$treenum] = $treerow['gedcom'];
-  $treename[$treenum] = $treerow['treename'];
-}
-tng_free_result($treeresult);
+list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, $trees_table);
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['validation'], $flags);

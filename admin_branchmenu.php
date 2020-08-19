@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "branches";
 include "$mylanguage/admintext.php";
 
@@ -13,10 +15,7 @@ if (!$allow_edit || $assignedbranch) {
   exit;
 }
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-$result = tng_query($query);
-$row = tng_fetch_assoc($result);
-tng_free_result($result);
+$row = getTree($trees_table, $tree);
 
 $query = "SELECT description FROM $branches_table WHERE gedcom = \"$tree\" and branch = \"$branch\"";
 $result = tng_query($query);

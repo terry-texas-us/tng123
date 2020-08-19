@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "index";
 include "$mylanguage/admintext.php";
 
@@ -17,15 +19,6 @@ if (!$allow_add || !$allow_edit || $assignedbranch) {
   exit;
 }
 
-if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-} else {
-  $wherestr = "";
-}
-$query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-$result = tng_query($query);
-$numtrees = tng_num_rows($result);
-
 if (!isset($tngimpcfg['defimpopt'])) {
   $tngimpcfg['defimpopt'] = 0;
 }
@@ -33,15 +26,7 @@ if (!isset($debug)) {
   $debug = false;
 }
 
-$treenum = 0;
-$trees = array();
-$treename = array();
-while ($treerow = tng_fetch_assoc($result)) {
-  $trees[$treenum] = $treerow['gedcom'];
-  $treename[$treenum] = $treerow['treename'];
-  $treenum++;
-}
-tng_free_result($result);
+list($query, $numtrees, $treenum, $trees, $treename) = getOrderedTreesList2($assignedtree, $trees_table);
 
 $helplang = findhelp("data_help.php");
 

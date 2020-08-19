@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "people";
 include "$mylanguage/admintext.php";
 
@@ -12,10 +14,7 @@ if (!$allow_add) {
   exit;
 }
 
-$query = "SELECT treename FROM $trees_table WHERE gedcom=\"$tree\" ORDER BY treename";
-$result = tng_query($query);
-$treerow = tng_fetch_assoc($result);
-tng_free_result($result);
+$treerow = getTree($trees_table, $tree);
 
 if ($father) {
   $query = "SELECT lnprefix, lastname, branch FROM $people_table WHERE gedcom=\"$tree\" AND personID=\"$father\"";

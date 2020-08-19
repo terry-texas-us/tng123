@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "branches";
 include "$mylanguage/admintext.php";
 
@@ -25,10 +27,7 @@ $wifegender['self'] = "wife";
 $wifegender['spouse'] = "husband";
 $wifegender['spouseorder'] = "wifeorder";
 
-$query = "SELECT treename FROM $trees_table where gedcom = \"$tree\"";
-$treeresult = tng_query($query);
-$treerow = tng_fetch_assoc($treeresult);
-tng_free_result($treeresult);
+$treerow = getTree($trees_table, $tree);
 
 $counter = $fcounter = 0;
 $done = $fdone = array();

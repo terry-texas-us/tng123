@@ -1,3 +1,13 @@
+Wed 19 Aug 2020 17:35:09 Label Branches: tas-ancestors/I325 (add/partial) (User: Administrator).
+Wed 19 Aug 2020 17:34:56 Add New Branch : /Riley with 0 generations (User: Administrator).
+Wed 19 Aug 2020 17:28:35 Label Branches: master/I15Branch (add/partial) (User: Administrator).
+Wed 19 Aug 2020 17:27:19 Label Branches: master/I15Branch (add/partial) (User: Administrator).
+Wed 19 Aug 2020 17:26:57 Add New Branch : /1 descendant generation from ancestors (User: Administrator).
+Wed 19 Aug 2020 13:50:20 GEDCOM Import: File Name:C:/Apache24/htdocs/tng123/gedcom/tas-ancesters-for-rm-specific-(200819).ged, Tree: tas-ancestors/; 2872 People, 823 Families, 88 Sources, 115 Notes, 0 Media, 531 Places (User: Administrator).
+Wed 19 Aug 2020 13:49:22 <a href="admin_edittree.php?tree=tas-ancestors">Add New Tree: tas-ancestors/Terry A. Smith Ancestors</a> (User: Administrator).
+Wed 19 Aug 2020 13:47:42 <a href="admin_edituser.php?userID=2">Add New User: robert</a> (User: Administrator).
+Wed 19 Aug 2020 13:45:54 GEDCOM Import: File Name:C:/Apache24/htdocs/tng123/gedcom/robert-edward-boyce-for-rm-specific-(200819).ged, Tree: boyce/; 169 People, 56 Families, 13 Sources, 1 Notes, 1 Media, 88 Places (User: Administrator).
+Wed 19 Aug 2020 13:45:39 <a href="admin_edittree.php?tree=boyce">Add New Tree: boyce/Robert Edward Boyce</a> (User: Administrator).
 Wed 19 Aug 2020 04:05:47 Modify Configuration Settings (User: Administrator).
 Wed 19 Aug 2020 04:02:12 Modify Configuration Settings (User: Administrator).
 Wed 19 Aug 2020 03:55:19 Modify Configuration Settings (User: Administrator).

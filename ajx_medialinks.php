@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 if (!$mediaID) {
   die("no args");
 }
@@ -24,21 +26,7 @@ if (!$allow_media_edit && !$allow_media_add) {
   exit;
 }
 
-if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
-} else {
-  $wherestr = "";
-}
-$treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-$treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-$treenum = 0;
-while ($treerow = tng_fetch_assoc($treeresult)) {
-  $treenum++;
-  $trees[$treenum] = $treerow['gedcom'];
-  $treename[$treenum] = $treerow['treename'];
-}
-tng_free_result($treeresult);
+list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, $trees_table);
 
 $query = "SELECT $medialinks_table.medialinkID as mlinkID, $medialinks_table.personID as personID, eventID, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, people.nameorder as nameorder, altdescription, altnotes, $medialinks_table.gedcom as gedcom, people.branch as branch, treename,
 	familyID, people.personID as personID2, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder,

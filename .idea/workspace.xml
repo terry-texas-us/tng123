@@ -11,28 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/templates.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addnewacct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addnewacct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_analyzemods.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_analyzemods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_editcemetery.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editcemetery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_editmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editmedia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_editplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editplace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_newcemetery.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_newcemetery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_newplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_newplace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_setup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_showmodslog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_showmodslog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_templateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_templateconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_branchlabels.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchlabels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_branchmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchmenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_edit_dna_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edit_dna_group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_edittree.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edittree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_mediaupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mediaupload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_showbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_showbranch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/adminlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/begin.php" beforeDir="false" afterPath="$PROJECT_DIR$/begin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class.phpmailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/class.phpmailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_labels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/famsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maint.php" beforeDir="false" afterPath="$PROJECT_DIR$/maint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showcfg.php" beforeDir="false" afterPath="$PROJECT_DIR$/showcfg.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subroot.php" beforeDir="false" afterPath="$PROJECT_DIR$/subroot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tng_begin.php" beforeDir="false" afterPath="$PROJECT_DIR$/tng_begin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heatmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/heatmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/placesearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/placesearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,18 +56,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Constants" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tng161006" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aPHP - only" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Apache24\htdocs\tng123" />
       <recent name="C:\Apache24\htdocs\tng123\admin" />
+      <recent name="C:\Apache24\htdocs\tng123" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,7 +95,8 @@
       <workItem from="1597666800417" duration="17849000" />
       <workItem from="1597691762983" duration="21998000" />
       <workItem from="1597755975455" duration="2442000" />
-      <workItem from="1597762488923" duration="37027000" />
+      <workItem from="1597762488923" duration="38559000" />
+      <workItem from="1597841479966" duration="19789000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit after project code reformat">
       <created>1597598834728</created>
@@ -195,7 +189,28 @@
       <option name="project" value="LOCAL" />
       <updated>1597773355161</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Created folder /core for files common to admin and public; added first file: templates.php.">
+      <created>1597811195256</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597811195256</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Created folder /core for files common to admin and public; added first file: templates.php.">
+      <created>1597811308944</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1597811308944</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Created folder admin and added trees.php.">
+      <created>1597856416361</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1597856416361</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,14 +281,16 @@
     <MESSAGE value="Removed global variables unused in local scope." />
     <MESSAGE value="Code cleanup run on PHP files." />
     <MESSAGE value="Thumbnails max to 4096 and light work in imageutils.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thumbnails max to 4096 and light work in imageutils.php" />
+    <MESSAGE value="Created folder /core for files common to admin and public; added first file: templates.php." />
+    <MESSAGE value="Created folder admin and added trees.php." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created folder admin and added trees.php." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1324" y="155" width="827" height="899" key="#Inspections" timestamp="1597810135831">
+    <state x="1324" y="155" width="827" height="899" key="#Inspections" timestamp="1597859458219">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1324" y="155" width="827" height="899" key="#Inspections/0.0.2560.1440@0.0.2560.1440" timestamp="1597810135831" />
+    <state x="1324" y="155" width="827" height="899" key="#Inspections/0.0.2560.1440@0.0.2560.1440" timestamp="1597859458219" />
     <state x="873" y="379" width="814" height="729" key="#Intentions" timestamp="1597699705800">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -302,22 +319,22 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1166" y="495" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function0/0.0.2560.1440@0.0.2560.1440" timestamp="1597788391153" />
-    <state x="1148" y="421" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1" timestamp="1597800304161">
+    <state x="1148" y="421" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1" timestamp="1597851504924">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1148" y="421" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1/0.0.2560.1440@0.0.2560.1440" timestamp="1597800304161" />
+    <state x="1148" y="421" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1/0.0.2560.1440@0.0.2560.1440" timestamp="1597851504924" />
     <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597764510072">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597764510072" />
-    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597773354677">
+    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597856415611">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597773354677" />
-    <state width="408" height="466" key="DebuggerActiveHint" timestamp="1597804081019">
+    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597856415611" />
+    <state width="412" height="466" key="DebuggerActiveHint" timestamp="1597859687964">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="408" height="466" key="DebuggerActiveHint/0.0.2560.1440@0.0.2560.1440" timestamp="1597804081019" />
+    <state width="412" height="466" key="DebuggerActiveHint/0.0.2560.1440@0.0.2560.1440" timestamp="1597859687964" />
     <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog" timestamp="1597704718565">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -334,70 +351,74 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1029" y="425" key="Github.UntrackedFilesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597597605745" />
-    <state width="2517" height="508" key="GridCell.Tab.0.bottom" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.0.bottom" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.0.center" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.0.center" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.0.left" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.0.left" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.0.right" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.0.right" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.1.bottom" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.1.bottom" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.1.center" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.1.center" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.1.left" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.1.left" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.1.right" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.1.right" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.2.bottom" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.2.bottom" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.2.center" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.2.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.2.center" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.2.left" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.2.center/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.2.left" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state width="2517" height="508" key="GridCell.Tab.2.right" timestamp="1597810142379">
+    <state width="2517" height="508" key="GridCell.Tab.2.left/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state width="2517" height="508" key="GridCell.Tab.2.right" timestamp="1597861919481">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597810142379" />
-    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1597787382634">
+    <state width="2517" height="508" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1597861919481" />
+    <state x="1117" y="644" key="NewPhpFileDialog" timestamp="1597841611026">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597787382634" />
-    <state x="782" y="43" width="996" height="1289" key="SettingsEditor" timestamp="1597808795550">
+    <state x="1117" y="644" key="NewPhpFileDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597841611026" />
+    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1597842937578">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="782" y="43" width="996" height="1289" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597808795550" />
+    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597842937578" />
+    <state x="782" y="43" width="1283" height="1289" key="SettingsEditor" timestamp="1597856016280">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="782" y="43" width="1283" height="1289" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597856016280" />
     <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog" timestamp="1597765461304">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597765461304" />
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597773232575">
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597856419189">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597773232575" />
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597856419189" />
     <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597762474725">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -410,10 +431,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597599483610" />
-    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597810462992">
+    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597862378323">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597810462992" />
+    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597862378323" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -424,16 +445,6 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/languages/English-UTF8/admintext.php</url>
-          <line>34</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/whatsnew.php</url>
-          <line>4</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/admin_checkfile.php</url>
           <line>14</line>
           <option name="timeStamp" value="13" />
@@ -442,11 +453,6 @@
           <url>file://$PROJECT_DIR$/admin_generatethumbs.php</url>
           <line>79</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/imageutils.php</url>
-          <line>36</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/imageutils.php</url>
@@ -467,6 +473,46 @@
           <url>file://$PROJECT_DIR$/admin_templateconfig.php</url>
           <line>18</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin_data_validation.php</url>
+          <line>13</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin_editplace.php</url>
+          <line>32</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin_branchmenu.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/famsearch.php</url>
+          <line>205</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/heatmap.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/placesearch.php</url>
+          <line>279</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/placesearch.php</url>
+          <line>273</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/placesearch.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

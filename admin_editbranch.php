@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "branches";
 include "$mylanguage/admintext.php";
 
@@ -19,10 +21,7 @@ $row = tng_fetch_assoc($result);
 $row['description'] = preg_replace("/\"/", "&#34;", $row['description']);
 tng_free_result($result);
 
-$query = "SELECT treename FROM $trees_table where gedcom = \"$tree\"";
-$treeresult = tng_query($query);
-$treerow = tng_fetch_assoc($treeresult);
-tng_free_result($treeresult);
+$treerow = getTree($trees_table, $tree);
 
 $helplang = findhelp("branches_help.php");
 

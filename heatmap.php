@@ -15,10 +15,8 @@ $markermap = $mtype == "m" || !isset($mtype);
 tng_query_noerror(" SET OPTION SQL_BIG_SELECTS = 1 ");
 
 if ($tree) {
-  $query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-  $treeresult = tng_query($query);
-  $treerow = tng_fetch_assoc($treeresult);
-  tng_free_result($treeresult);
+  require_once "./admin/trees.php";
+  $treerow = getTree($trees_table, $tree);
 }
 
 function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $textstr) {

@@ -242,10 +242,8 @@ if ($tree) {
     $querystring .= " {$text['cap_and']} ";
   }
 
-  $query = "SELECT treename FROM $trees_table WHERE gedcom = \"$tree\"";
-  $treeresult = tng_query($query);
-  $treerow = tng_fetch_assoc($treeresult);
-  tng_free_result($treeresult);
+  require_once "./admin/trees.php";
+  $treerow = getTree($trees_table, $tree);
 
   $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
 

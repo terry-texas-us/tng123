@@ -3,6 +3,8 @@ include "begin.php";
 include $subroot . "mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "adminlib.php";
+require_once "./admin/trees.php";
+
 $textpart = "findplace";
 include "$mylanguage/admintext.php";
 
@@ -29,10 +31,7 @@ $row['place'] = preg_replace("/\"/", "&#34;", $row['place']);
 
 if (!$tngconfig['places1tree']) {
   if ($row['gedcom']) {
-    $query = "SELECT treename FROM $trees_table WHERE gedcom = \"{$row['gedcom']}\"";
-    $result = tng_query($query);
-    $treerow = tng_fetch_assoc($result);
-    tng_free_result($result);
+    $treerow = getTree($trees_table, $row['gedcom']);
   } else {
     if ($assignedtree) {
       $wherestr = "WHERE gedcom = \"$assignedtree\"";
