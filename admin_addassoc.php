@@ -16,12 +16,6 @@ if ($session_charset != "UTF-8") {
   $relationship = tng_utf8_decode($relationship);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$relationship = addslashes($relationship);
-}
-*/
-
 $template = "sssss";
 $query = "INSERT INTO $assoc_table (gedcom, personID, passocID, relationship, reltype)  VALUES(?,?,?,?,?)";
 $params = array(&$template, &$tree, &$personID, &$passocID, &$relationship, &$reltype);
@@ -54,7 +48,7 @@ if ($reltype == "I") {
   $row = tng_fetch_assoc($result);
   $name = getFamilyName($row);
 }
-//$name = $session_charset != "UTF-8" ? utf8_encode($name) : $name;
+
 $namestr = cleanIt($name . ": " . stripslashes($relationship));
 $namestr = truncateIt($namestr, 75);
 tng_free_result($result);

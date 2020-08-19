@@ -35,26 +35,6 @@ if ($session_charset != "UTF-8") {
   $www = tng_utf8_decode($www);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$eventdate = addslashes($eventdate);
-	$eventplace = addslashes($eventplace);
-	$info = addslashes($info);
-	$age = addslashes($age);
-	$agency = addslashes($agency);
-	$cause = addslashes($cause);
-	$address1 = addslashes($address1);
-	$address2 = addslashes($address2);
-	$city = addslashes($city);
-	$state = addslashes($state);
-	$zip = addslashes($zip);
-	$country = addslashes($country);
-	$phone = addslashes($phone);
-	$email = addslashes($email);
-	$www = addslashes($www);
-}
-*/
-
 $eventdatetr = convertDate($eventdate);
 
 if (trim($eventplace)) {

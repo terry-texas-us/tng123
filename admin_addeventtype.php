@@ -13,14 +13,6 @@ if (!$allow_add) {
 
 require "adminlog.php";
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$type = addslashes($type);
-	$tag2 = addslashes($tag2);
-	$defdisplay = addslashes($defdisplay);
-}
-*/
-
 if ($tag2) {
   $tag = $tag2;
 } else {

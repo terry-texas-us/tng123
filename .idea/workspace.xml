@@ -12,19 +12,33 @@
   <component name="ChangeListManager">
     <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_branchlabels.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchlabels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_branchmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchmenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_edit_dna_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edit_dna_group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_edittree.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_edittree.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_mediaupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mediaupload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_showbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_showbranch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/adminlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajx_labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_labels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/famsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heatmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/heatmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/placesearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/placesearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addnewacct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addnewacct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_add_dna_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add_dna_group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_add_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_add_dna_test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addalbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addassoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addassoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addbranch.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addbranch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addcemetery.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addcemetery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addcitation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addcitation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addcollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addcollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addentity.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addentity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addevent.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addevent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addeventtype.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addeventtype.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addfamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addfamily.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addlanguage.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addlanguage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addnote.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addnote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addperson2.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addperson2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addplace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addrepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addrepo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addreport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addreport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addsource.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addsource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addtlevent.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addtlevent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addtree.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addtree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_adduser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_adduser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_gedcom2.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedcom2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatetemplateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatetemplateconfig.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +110,7 @@
       <workItem from="1597691762983" duration="21998000" />
       <workItem from="1597755975455" duration="2442000" />
       <workItem from="1597762488923" duration="38559000" />
-      <workItem from="1597841479966" duration="19789000" />
+      <workItem from="1597841479966" duration="20670000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit after project code reformat">
       <created>1597598834728</created>
@@ -210,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597856416361</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Created folder admin and added trees.php.">
+      <created>1597862763008</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1597862763008</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,10 +348,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597764510072" />
-    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597856415611">
+    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597862762320">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597856415611" />
+    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597862762320" />
     <state width="412" height="466" key="DebuggerActiveHint" timestamp="1597859687964">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -415,10 +436,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597765461304" />
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597856419189">
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597862765242">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597856419189" />
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597862765242" />
     <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597762474725">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -431,10 +452,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597599483610" />
-    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597862378323">
+    <state x="987" y="453" width="587" height="622" key="find.popup" timestamp="1597863442281">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597862378323" />
+    <state x="987" y="453" width="587" height="622" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1597863442281" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

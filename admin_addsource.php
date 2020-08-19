@@ -33,17 +33,6 @@ if ($session_charset != "UTF-8") {
   $actualtext = tng_utf8_decode($actualtext);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$shorttitle = addslashes($shorttitle);
-	$title = addslashes($title);
-	$author = addslashes($author);
-	$callnum = addslashes($callnum);
-	$publisher = addslashes($publisher);
-	$actualtext = addslashes($actualtext);
-}
-*/
-
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
 if (!$repoID) {

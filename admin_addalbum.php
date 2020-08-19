@@ -14,14 +14,6 @@ if (!$allow_media_add) {
 
 require "adminlog.php";
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$albumname = addslashes($albumname);
-	$description = addslashes($description);
-	$keywords = addslashes($keywords);
-}
-*/
-
 if (!$alwayson) {
   $alwayson = 0;
 }

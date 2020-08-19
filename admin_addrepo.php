@@ -18,21 +18,6 @@ require "adminlog.php";
 $repoID = ucfirst($repoID);
 setcookie("tng_tree", $tree, 0);
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$reponame = addslashes($reponame);
-	$address1 = addslashes($address1);
-	$address2 = addslashes($address2);
-	$city = addslashes($city);
-	$state = addslashes($state);
-	$zip = addslashes($zip);
-	$country = addslashes($country);
-	$phone = addslashes($phone);
-	$email = addslashes($email);
-	$www = addslashes($www);
-}
-*/
-
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
 if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {

@@ -71,22 +71,6 @@ if ($msg_exclude) {
   }
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$username = addslashes($username);
-	$password = addslashes($password);
-	$realname = addslashes($realname);
-	$phone = addslashes($phone);
-	$email = addslashes($email);
-	$website = addslashes($website);
-	$address = addslashes($address);
-	$city = addslashes($city);
-	$state = addslashes($state);
-	$zip = addslashes($zip);
-	$country = addslashes($country);
-}
-*/
-
 $username = trim($username);
 $password = trim($password);
 $realname = trim($realname);

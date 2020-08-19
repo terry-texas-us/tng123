@@ -59,26 +59,6 @@ if ($newperson == "ajax" && $session_charset != "UTF-8") {
   $endlplace = tng_utf8_decode($endlplace);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$firstname = addslashes($firstname);
-	$lnprefix = addslashes($lnprefix);
-	$lastname = addslashes($lastname);
-	$nickname = addslashes($nickname);
-	$prefix = addslashes($prefix);
-	$suffix = addslashes($suffix);
-	$title = addslashes($title);
-	$birthplace = addslashes($birthplace);
-	$altbirthplace = addslashes($altbirthplace);
-	$deathplace = addslashes($deathplace);
-	$burialplace = addslashes($burialplace);
-	$baptplace = addslashes($baptplace);
-	$confplace = tng_utf8_decode($confplace);
-	$initplace = tng_utf8_decode($initplace);
-	$endlplace = addslashes($endlplace);
-}
-*/
-
 if (!isset($baptdate)) {
   $baptdate = "";
 }

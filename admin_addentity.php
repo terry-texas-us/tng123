@@ -19,11 +19,6 @@ if ($session_charset != "UTF-8") {
   $newitem = tng_utf8_decode($newitem);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0)
-	$newname = addslashes( $newitem );
-else
-*/
 $newname = $newitem;
 
 $template = "s";

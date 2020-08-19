@@ -55,7 +55,6 @@ foreach ($mediatypes as $mediatype) {
   if (isset($incl[$msgID])) {
     eval("\$exppath['$msgID'] = \${'exp_path_" . $msgID . "'};");
     if ($exppath[$msgID]) {
-      //if (get_magic_quotes_gpc() )
       $exppath[$msgID] = stripslashes($exppath[$msgID]);
       if (strpos($exppath[$msgID], "/") !== false) {
         $expdir[$msgID] = 1;

@@ -79,20 +79,6 @@ if (function_exists('imageJpeg') && $thumbcreate == "auto") {
   }
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$description = addslashes($description);
-	$notes = addslashes($notes);
-	$datetaken = addslashes($datetaken);
-	$owner = addslashes($owner);
-	$status = addslashes($status);
-	$bodytext = addslashes($bodytext);
-	$width = addslashes($width);
-	$height = addslashes($height);
-	$plot = addslashes($plot);
-}
-*/
-
 if ($latitude && $longitude && !$zoom) {
   $zoom = 13;
 }

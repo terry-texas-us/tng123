@@ -15,14 +15,6 @@ if (!$allow_add) {
 
 require "adminlog.php";
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$dna_group = addslashes($dna_group);
-	$test_type = addslashes($test_type);
-	$description = addslashes($description);
-}
-*/
-
 $query = "INSERT INTO $dna_groups_table (dna_group,test_type,gedcom,description,action) VALUES (\"$dna_group\",\"$test_type\",\"$tree\",\"$description\",\"2\")";
 $result = tng_query($query);
 $success = tng_affected_rows();

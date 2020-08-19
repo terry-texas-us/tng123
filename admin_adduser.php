@@ -22,25 +22,6 @@ if ($gedcom_mult) {
   }
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$description = addslashes($description);
-	$username = addslashes($username);
-	$gedcom = addslashes($gedcom);
-	$branch = addslashes($branch);
-	$realname = addslashes($realname);
-	$phone = addslashes($phone);
-	$email = addslashes($email);
-	$address = addslashes($address);
-	$notes = addslashes($notes);
-	$website = addslashes($website);
-	$city = addslashes($city);
-	$state = addslashes($state);
-	$zip = addslashes($zip);
-	$country = addslashes($country);
-}
-*/
-
 $orgpwd = $password;
 $password = PasswordEncode($password);
 $password_type = PasswordType();

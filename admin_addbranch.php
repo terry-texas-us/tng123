@@ -15,13 +15,6 @@ if ($assignedbranch || !$allow_add) {
 require "adminlog.php";
 setcookie("tng_tree", $tree, 0);
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$branch = addslashes($branch);
-	$description = addslashes($description);
-}
-*/
-
 if (!$dospouses) {
   $dospouses = 0;
 }

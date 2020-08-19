@@ -17,11 +17,6 @@ if ($session_charset != "UTF-8") {
   $display = tng_utf8_decode($display);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0)
-	$display = addslashes( $display );
-*/
-
 $stdcolls = array("photos", "histories", "headstones", "documents", "recordings", "videos");
 $collid = cleanID($collid);
 $newcollid = 0;

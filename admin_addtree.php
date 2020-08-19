@@ -17,21 +17,6 @@ require "adminlog.php";
 $gedcom = preg_replace("/\s*/", "", $gedcom);
 $treenamedisp = stripslashes($treename);
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$treename = addslashes($treename);
-	$description = addslashes($description);
-	$owner = addslashes($owner);
-	$email = addslashes($email);
-	$address = addslashes($address);
-	$city = addslashes($city);
-	$state = addslashes($state);
-	$country = addslashes($country);
-	$zip = addslashes($zip);
-	$phone = addslashes($phone);
-}
-*/
-
 if (!$disallowgedcreate) {
   $disallowgedcreate = 0;
 }

@@ -29,21 +29,6 @@ if ($newfile && $newfile != "none") {
   }
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$cemname = addslashes($cemname);
-	$city = addslashes($city);
-	$county = addslashes($county);
-	$state = addslashes($state);
-	$country = addslashes($country);
-	$latitude = addslashes($latitude);
-	$longitude = addslashes($longitude);
-	$zoom = addslashes($zoom);
-	$notes = addslashes($notes);
-	$place = addslashes($place);
-}
-*/
-
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
 if ($latitude && $longitude && !$zoom) {

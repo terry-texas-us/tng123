@@ -14,13 +14,6 @@ if ($assignedtree || !$allow_add) {
 
 require "adminlog.php";
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$display = addslashes($display);
-	$folder = addslashes($folder);
-}
-*/
-
 $template = "ssss";
 $query = "INSERT INTO $languages_table (display,folder,charset,norels) VALUES (?,?,?,?)";
 $params = array(&$template, &$display, &$folder, &$langcharset, &$langnorels);

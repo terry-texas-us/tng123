@@ -46,7 +46,6 @@ foreach ($_FILES as $key => $file) {
   }
 }
 
-//$mq = get_magic_quotes_gpc();
 $lastkey = "";
 $holdarr = array();
 $orders = array();

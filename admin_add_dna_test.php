@@ -18,26 +18,6 @@ require "adminlog.php";
 
 $thumbpath = stripslashes($thumbpath);
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$test_number = addslashes($test_number);
-	$notes = addslashes($notes);
-	$vendor = addslashes($vendor);
-	$personID = addslashes($personID);
-	$dnatree = addslashes($dnatree);
-	$urls = addslashes($urls);
-	$markers = addslashes($markers);
-	$y_results = addslashes($y_results);
-	$hvr1_results = addslashes($hvr1_results);
-	$hvr2_results = addslashes($hvr2_results);
-	$person_name = addslashes($person_name);
-	$dna_group = addslashes($dna_group);
-	$surnames = addslashes($surnames);
-	$haplogroup = addslashes($haplogroup);
-	$signsnp = addslashes($signsnp);
-	$termsnp = addslashes($termsnp);
-}
-*/
 $descquery = "SELECT description FROM $dna_groups_table WHERE dna_group=\"$dna_group\"";
 $descresult = tng_query($descquery);
 $descrow = tng_fetch_assoc($descresult);

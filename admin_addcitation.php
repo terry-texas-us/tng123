@@ -19,15 +19,6 @@ if ($session_charset != "UTF-8") {
   $citenote = tng_utf8_decode($citenote);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$citedate = addslashes($citedate);
-	$citepage = addslashes($citepage);
-	$citetext = addslashes($citetext);
-	$citenote = addslashes($citenote);
-}
-*/
-
 $citedatetr = convertDate($citedate);
 $sourceID = strtoupper($sourceID);
 

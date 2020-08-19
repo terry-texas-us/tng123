@@ -15,17 +15,6 @@ if (!$allow_add) {
 require "adminlog.php";
 include "geocodelib.php";
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$place = addslashes($place);
-	$placelevel = addslashes($placelevel);
-	$latitude = addslashes($latitude);
-	$longitude = addslashes($longitude);
-	$zoom = addslashes($zoom);
-	$notes = addslashes($notes);
-}
-*/
-
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
 if ($latitude && $longitude && $placelevel && !$zoom) {

@@ -15,11 +15,6 @@ if ($session_charset != "UTF-8") {
   $note = tng_utf8_decode($note);
 }
 $orgnote = preg_replace("/$lineending/", " ", stripslashes($note));
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$note = addslashes($note);
-}
-*/
 
 $template = "ss";
 $query = "INSERT INTO $xnotes_table (noteID, gedcom, note)  VALUES(\"\", ?, ?)";

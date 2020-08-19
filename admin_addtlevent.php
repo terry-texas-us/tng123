@@ -14,13 +14,6 @@ if (!$allow_add) {
 
 require "adminlog.php";
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$evdetail = addslashes($evdetail);
-    $evtitle = addslashes($evtitle);
-}
-*/
-
 if (!$evday) {
   $evday = "0";
 }

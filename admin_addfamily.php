@@ -36,15 +36,6 @@ if ($newfamily == "ajax" && $session_charset != "UTF-8") {
   $marrtype = tng_utf8_decode($marrtype);
 }
 
-/*
-if (get_magic_quotes_gpc() == 0) {
-	$marrplace = addslashes($marrplace);
-	$divplace = addslashes($divplace);
-	$sealplace = addslashes($sealplace);
-	$marrtype = addslashes($marrtype);
-}
-*/
-
 $marrdatetr = convertDate($marrdate);
 $divdatetr = convertDate($divdate);
 $sealdatetr = convertDate($sealdate);
