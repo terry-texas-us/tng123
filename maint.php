@@ -1,6 +1,7 @@
 <?php
 include "begin.php";
-$tmp = getTemplateVars($templatenum);
+
+$tmp = getTemplateVars($templates_table, $templatenum);
 $tngconfig['maint'] = "";
 include $cms['tngpath'] . "genlib.php";
 $textpart = "language";

@@ -1,5 +1,6 @@
 <?php
 include "processvars.php";
+
 include "subroot.php";
 include "tngconnect.php";
 if (!file_exists($subroot . "config.php")) {
@@ -45,19 +46,8 @@ if ($link) {
   }
 }
 
-$query = "SELECT * FROM $templates_table WHERE template = \"$templatenum\"";
-$result = tng_query_noerror($query);
-
-if ($result !== FALSE) {
-  while ($row = tng_fetch_assoc($result)) {
-    $key = "t" . $row['template'] . "_" . $row['keyname'];
-    if ($row['language']) {
-      $key .= "_" . $row['language'];
-    }
-    $tmp[$key] = $row['value'];
-  }
-  tng_free_result($result);
-}
+require_once "./core/templates.php";
+$tmp = getTemplateVars($templates_table, $templatenum);
 
 include "version.php";
 

@@ -4,8 +4,6 @@ include "adminlib.php";
 $textpart = "templates";
 include "$mylanguage/admintext.php";
 
-$templatespath = "templates";
-
 if ($link) {
   $admin_login = 1;
   include "checklogin.php";
@@ -18,18 +16,7 @@ if ($link) {
   }
 }
 
-$tmp = array();
-$query = "SELECT * FROM $templates_table ORDER BY template, ordernum";
-$result = tng_query($query);
-
-while ($row = tng_fetch_assoc($result)) {
-  $key = "t" . $row['template'] . "_" . $row['keyname'];
-  if ($row['language']) {
-    $key .= "_" . $row['language'];
-  }
-  $tmp[$key] = $row['value'];
-}
-tng_free_result($result);
+$tmp = getAllTemplatesVars($templates_table);
 
 $languageArray = array();
 $query = "SELECT display, folder FROM $languages_table ORDER BY display";
@@ -167,7 +154,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <form name="formtop2">
                 <label for="form_templatenum"><b><?php echo $admtext['template']; ?>:</b></label>
               <?php
-              chdir($rootpath . $endrootpath . $templatespath);
+              chdir($rootpath . $endrootpath . TEMPLATES_PATH);
               $totaltemplates = 0;
               $sections = array();
               $entries = array();

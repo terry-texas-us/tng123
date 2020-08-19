@@ -1,3 +1,11 @@
+Tue 18 Aug 2020 19:43:31 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 19:14:38 <a href="showmedia.php?mediaID=8&amp;tnggallery=">Documents:  (8)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 18:44:29 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=documents">Documents</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 18:44:21 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=documents">Documents</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 18:24:59 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=">All Media</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 18:23:54 <a href="showmedia.php?mediaID=8&amp;tnggallery=">Documents:  (8)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 18:22:37 <a href="browsemedia.php?tree=&amp;offset=&amp;mediasearch=&amp;mediatypeID=documents">Documents</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
+Tue 18 Aug 2020 18:22:31 <a href="reports.php">Reports</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 17:27:10 <a href="placesearch.php?psearch=Dauban, Rothenburg, Schlesien, Preußen&tree=master">Search Results Dauban, Rothenburg, Schlesien, Preußen and  tree equals Master </a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 17:11:28 <a href="getperson.php?personID=I15&amp;tree=master">Individual info for Johann Carl Hermann Teinert (I15)</a> accessed by DESKTOP-AF2CIVV (User: Administrator).
 Tue 18 Aug 2020 17:11:18 <a href="showmap.php?cemeteryID=1&amp;tree=">Holy Cross Lutheran Cemetery, Warda, Fayette, Texas, United States</a> accessed by DESKTOP-AF2CIVV (User: Administrator).

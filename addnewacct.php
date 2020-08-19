@@ -149,8 +149,8 @@ if ($success > 0) {
 
     $welcome = "";
     if ($tngconfig['autoapp']) {
-      //send email to user saying they're ready to go
-      //include password if that feature not turned off
+      // send email to user saying they're ready to go
+      // include password if that feature not turned off
       $welcome = $admtext['hello'] . " $realname,\r\n\r\n{$admtext['activated']}";
       if (!$tngconfig['omitpwd']) {
         $welcome .= "{$text['password']}: $org_password\r\n";
@@ -158,7 +158,7 @@ if ($success > 0) {
       $welcome .= "\r\n$dbowner\r\n$tngdomain";
       $subject = $admtext['subjectline'];
     } elseif ($tngconfig['ackemail']) {
-      //send email to user saying that we're working on it
+      // send email to user saying that we're working on it
       $welcome = $admtext['hello'] . " $realname,\r\n\r\n{$text['ackmessage']}\r\n$dbowner\r\n$tngdomain";
       $subject = $text['acksubject'];
     }

@@ -40,20 +40,4 @@ $languages_path = "languages/";
 include $cms['tngpath'] . "getlang.php";
 $link = tng_db_connect($database_host, $database_name, $database_username, $database_password, $database_port, $database_socket);
 
-function getTemplateVars($templatenum) {
-  global $templates_table;
-  $query = "SELECT * FROM $templates_table WHERE template = \"$templatenum\"";
-  $result = tng_query_noerror($query);
-
-  if ($result !== FALSE) {
-    while ($row = tng_fetch_assoc($result)) {
-      $key = "t" . $row['template'] . "_" . $row['keyname'];
-      if ($row['language']) {
-        $key .= "_" . $row['language'];
-      }
-      $tmp[$key] = $row['value'];
-    }
-    tng_free_result($result);
-  }
-  return $tmp;
-}
+require_once "./core/templates.php";

@@ -1,3 +1,15 @@
+Wed 19 Aug 2020 04:05:47 Modify Configuration Settings (User: Administrator).
+Wed 19 Aug 2020 04:02:12 Modify Configuration Settings (User: Administrator).
+Wed 19 Aug 2020 03:55:19 Modify Configuration Settings (User: Administrator).
+Wed 19 Aug 2020 03:55:09 Modify Configuration Settings (User: Administrator).
+Wed 19 Aug 2020 02:57:35 Modify Template Configuration Settings - Template 5 - Enable Template Selection = 1 (User: Administrator).
+Wed 19 Aug 2020 02:03:54 Modify Configuration Settings (User: Administrator).
+Wed 19 Aug 2020 01:52:09 Modify Template Configuration Settings - Template 4 - Enable Template Selection = 1 (User: Administrator).
+Tue 18 Aug 2020 22:40:10 Modify Template Configuration Settings - Template 17 - Enable Template Selection = 1 (User: Administrator).
+Tue 18 Aug 2020 21:27:10 Modify Template Configuration Settings - Template 13 - Enable Template Selection = 1 (User: Administrator).
+Tue 18 Aug 2020 20:07:01 Modify Configuration Settings (User: Administrator).
+Tue 18 Aug 2020 19:43:23 Modify Configuration Settings (User: Administrator).
+Tue 18 Aug 2020 18:23:40 <a href="admin_editmedia.php?mediaID=8">Add New Media: 8</a> (User: Administrator).
 Tue 18 Aug 2020 17:11:04 <a href="admin_editmedia.php?mediaID=2">Edit Existing Media: 2</a> (User: Administrator).
 Tue 18 Aug 2020 17:03:51 Generate Thumbnails: Thumbnails generated: 1; Records updated: 1; Thumbnails not generated due to path, permissions, size or file name problems: 0 (User: Administrator).
 Tue 18 Aug 2020 16:38:30 Generate Thumbnails: Thumbnails generated: 0; Records updated: 0; Thumbnails not generated due to path, permissions, size or file name problems: 1 (User: Administrator).

@@ -51,7 +51,7 @@ include "checklogin.php";
 include "version.php";
 
 // temporary: these can be set from an options file
-//include 'classes/mod.class.config.php';
+// include 'classes/mod.class.config.php';
 include $subroot . 'mmconfig.php';
 
 define('YES', "1");

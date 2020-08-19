@@ -42,11 +42,9 @@ if ($currentuser) {
 
 <ul>
   <?php
-  if ($currentuser) {
-    //this means you're logged in
+  if ($currentuser) { // this means you're logged in
     echo "<li><a href=\"logout.php\">{$text['mnulogout']}</a></li>\n";
-  } else {
-    //this means you're logged out
+  } else { // this means you're logged out
     echo "<li><a href=\"login.php\">{$text['mnulogon']}</a></li>\n";
   }
   echo "<li><a href=\"newacctform.php\">{$text['mnuregister']}</a></li>\n";
@@ -63,6 +61,7 @@ if ($currentuser) {
   echo "<li><a href=\"browsemedia.php\">{$text['allmedia']}</a></li>\n";
   echo "<li><a href=\"cemeteries.php\">{$text['mnucemeteries']}</a></li>\n";
   echo "<li><a href=\"browsemedia.php?mediatypeID=headstones\">{$text['mnutombstones']}</a></li>\n";
+
   echo "<li><a href=\"places.php\">{$text['places']}</a></li>\n";
   echo "<li><a href=\"browsenotes.php\">{$text['notes']}</a></li>\n";
   echo "<li><a href=\"anniversaries.php\">{$text['anniversaries']}</a></li>\n";
@@ -72,6 +71,7 @@ if ($currentuser) {
   echo "<li><a href=\"whatsnew.php\">{$text['mnuwhatsnew']}</a></li>\n";
   echo "<li><a href=\"mostwanted.php\">{$text['mostwanted']}</a></li>\n";
   echo "<li><a href=\"changelanguage.php\">{$text['mnulanguage']}</a></li>\n";
+
   if ($allow_admin) {
     echo "<li><a href=\"showlog.php\">{$text['mnushowlog']}</a></li>\n";
     echo "<li><a href=\"admin.php\">{$text['mnuadmin']}</a></li>\n";

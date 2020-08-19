@@ -8,9 +8,6 @@ if (empty($_GET['mod'])) {
   $mod = $_GET['mod'];
 }
 
-//include  'subroot.php';
-//include $subroot.'config.php';
-
 if (pathinfo($mod, PATHINFO_EXTENSION) != 'cfg') {
   echo "Error: not a mod config file!";
   exit;

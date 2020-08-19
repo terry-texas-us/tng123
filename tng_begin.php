@@ -1,8 +1,7 @@
 <?php
 include_once "begin.php";
 
-global $tmp;
-$tmp = getTemplateVars($templatenum);
+$tmp = getTemplateVars($templates_table, $templatenum);
 
 include $cms['tngpath'] . "genlib.php";
 include $cms['tngpath'] . "$mylanguage/text.php";
