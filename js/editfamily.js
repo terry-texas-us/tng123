@@ -15,7 +15,7 @@ function updateChildrenOrder(id) {
 }
 
 function unlinkChild(personID, action) {
-    var confmsg = action == "child_delete" ? confdeletepers : confremchild;
+    var confmsg = action === "child_delete" ? confdeletepers : confremchild;
     if (confirm(confmsg)) {
         var params = {personID: personID, familyID: persfamID, desc: tree, t: action};
         jQuery.ajax({
@@ -27,15 +27,11 @@ function unlinkChild(personID, action) {
                     jQuery('#child_' + personID).remove();
                     childcount -= 1;
                     jQuery('#childcount').html(childcount);
-                }
-            });
+                });
+            }
+        });
     }
-}
-
-)
-;
-}
-return false
+    return false;
 }
 
 function EditChild(id) {

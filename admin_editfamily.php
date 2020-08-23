@@ -154,7 +154,7 @@ include_once "eventlib_js.php";
     }
 
     function unlinkChild(personID, action) {
-        var confmsg = action == "child_delete" ? "<?php echo $admtext['confdeletepers']; ?>" : "<?php echo $admtext['confremchild']; ?>";
+        var confmsg = action === "child_delete" ? "<?php echo $admtext['confdeletepers']; ?>" : "<?php echo $admtext['confremchild']; ?>";
         if (confirm(confmsg)) {
             var params = {personID: personID, familyID: persfamID, desc: tree, t: action};
             jQuery.ajax({
