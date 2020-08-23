@@ -58,7 +58,7 @@ $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
 $row['allow_living'] = $rights['living'];
 $row['allow_private'] = $rights['private'];
 $row['name'] = getName($row);
-//if( $row['name'] == $text['living'] ) $row['firstname'] = $text['living'];
+
 $firstfirstname = getFirstNameOnly($row);
 $personsex = $row['sex'];
 
@@ -196,7 +196,6 @@ echo "</form>\n";
           tng_free_result($result2);
         }
       }
-      //if(!$is_mozilla)
       echo "</td></tr></table>";
       echo "<br clear=\"all\" /></li>\n</ol>\n";
 
@@ -236,10 +235,10 @@ echo "</form>\n";
       //loop through nextgen
       //while there's one to pop and we're less than maxgen
       while (count($currgen) && $generation <= $generations) {
-        //echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br />\n";
-        echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br /><br />\n";
-        //echo "<ol class=\"ahnblock normal\">\n";
-        echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
+
+          echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br /><br />\n";
+
+          echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
         while ($nextfamily = array_shift($currgen)) {
           $parents = getFamilyData($tree, $nextfamily);
           if ($parents) {
@@ -265,11 +264,9 @@ echo "</form>\n";
                     $fathrow['firstname'] = $text['living'];
                   }
 
-                  //echo "<li value=\"$personcount\" class=\"aligntop\">";
                   echo "<li>";
-//						if(!$is_mozilla)
-                  //echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>";
-                  echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
+
+                    echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
                   echo "$personcount.&nbsp;&nbsp;</td><td>";
                   echo showSmallPhoto($fathrow['personID'], $fathrow['name'], $frights['both'], 0);
                   echo "<a href=\"$getperson_url" . "personID={$fathrow['personID']}&amp;tree=$tree\" name=\"p{$fathrow['personID']}\" id=\"p{$fathrow['personID']}\">{$fathrow['name']}</a>";
@@ -330,16 +327,14 @@ echo "</form>\n";
                       echo " $spfirstfirstname $spparents $spouseinfo";
                     }
                     echo " [<a href=\"$familygroup_url" . "familyID=$nextfamily&amp;tree=$tree\">{$text['groupsheet']}</a>]</p>\n";
-//							if(!$is_mozilla)
-                    echo "</td></tr></table>";
+
+                      echo "</td></tr></table>";
                     echo "<br clear=\"all\" /></li>\n";
                   }
 
-                  //echo "<li value=\"$personcount\" class=\"aligntop\">";
                   echo "<li>";
-//						if(!$is_mozilla)
-                  //echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>";
-                  echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
+
+                    echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
                   echo "$personcount.&nbsp;&nbsp;</td><td>";
                   echo showSmallPhoto($mothrow['personID'], $mothrow['name'], $mrights['both'], 0);
                   echo "<a href=\"$getperson_url" . "personID={$mothrow['personID']}&amp;tree=$tree\" name=\"p{$mothrow['personID']}\" id=\"p{$mothrow['personID']}\">{$mothrow['name']}</a>";
@@ -354,8 +349,8 @@ echo "</form>\n";
                   } else {
                     $notes = "";
                   }
-                  //echo "</li>\n";
-                  if ($mothrow['famc']) {
+
+                    if ($mothrow['famc']) {
                     if (!in_array($mothrow['famc'], $nextgen)) {
                       array_push($nextgen, $mothrow['famc']);
                     }
@@ -387,7 +382,6 @@ echo "</form>\n";
                 $childrow['allow_living'] = $crights['living'];
                 $childrow['allow_private'] = $crights['private'];
                 $childrow['name'] = getName($childrow);
-                //if( $childrow['name'] == $text['living'] ) $childrow['firstname'] = $text['living'];
 
                 echo "<li style=\"list-style-type:lower-roman\">";
                 if ($lastlastgen[$childrow['personID']]) {
@@ -402,7 +396,6 @@ echo "</form>\n";
               echo "</ol>\n</td></tr></table>\n";
               tng_free_result($result2);
             }
-//			if(!$is_mozilla)
             echo "</td></tr></table>";
             echo "<br clear=\"all\" /></li>\n";
           }

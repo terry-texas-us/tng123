@@ -102,11 +102,10 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
             }
           } else {
             //do union to check for children where person is either husband or wife
-            //echo "<br>$query<br>";
-            $nxtfams = getSpouseFamilyMinimalUnion($tree, $crow['personID']);
+
+              $nxtfams = getSpouseFamilyMinimalUnion($tree, $crow['personID']);
             $nxtkids = 0;
             while ($nxtfam = tng_fetch_assoc($nxtfams)) {
-              //echo "$query<br>kids=$nxtrow[ccount], tot=$nxtkids<br>";
               $result3 = countChildren($tree, $nxtfam['familyID']);
               $nxtrow = tng_fetch_assoc($result3);
               $nxtkids += $nxtrow['ccount'];

@@ -23,7 +23,7 @@ $hvr1_results = addslashes($hvr1_results);
 $hvr2_results = addslashes($hvr2_results);
 $person_name = addslashes($person_name);
 $dna_group = addslashes($dna_group);
-//$dna_group_desc = addslashes($group);
+
 $surnames = addslashes($surnames);
 $MD_ancestorID = addslashes($MD_ancestorID);
 $MRC_ancestorID = addslashes($MRC_ancestorID);

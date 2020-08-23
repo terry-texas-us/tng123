@@ -1,3 +1,4 @@
+Sun 23 Aug 2020 12:41:42 Modify Template Configuration Settings - Template 2 - Enable Template Selection = 1 (User: Administrator).
 Wed 19 Aug 2020 17:35:09 Label Branches: tas-ancestors/I325 (add/partial) (User: Administrator).
 Wed 19 Aug 2020 17:34:56 Add New Branch : /Riley with 0 generations (User: Administrator).
 Wed 19 Aug 2020 17:28:35 Label Branches: master/I15Branch (add/partial) (User: Administrator).

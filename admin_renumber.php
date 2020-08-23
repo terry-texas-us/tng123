@@ -128,7 +128,6 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
           $query = "SELECT ID from $table WHERE gedcom=\"$tree\" AND $id=\"$newID\"";
           $result1 = tng_query($query);
           if (!tng_num_rows($result1)) {
-            //if(tng_num_rows($result1)) die ("Problem: destination ID ($newID) already exists. Operation aborted.");
 
             //change ID in people to match next #
             $query = "UPDATE $table SET $id=\"$newID\" WHERE ID=\"{$row['ID']}\"";
@@ -221,7 +220,6 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
             $query = "UPDATE $notelinks_table SET persfamID=\"$newID\" WHERE gedcom=\"$tree\" AND persfamID=\"" . $row[$id] . "\"";
             $result2 = tng_query($query);
 
-            //echo "$row['personID'] -&gt; $newID<br>";
             $count++;
             if ($count % 10 == 0) {
               echo "<strong>$count</strong> ";

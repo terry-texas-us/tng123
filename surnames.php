@@ -61,10 +61,9 @@ if ($result) {
     if ($firstchar == "") {
       $linkstr .= "<a href=\"$search_url" . "mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">" . $text['nosurname'] . "</a> ";
     } else {
-      //$urlfirstchar = urlencode($surname[firstchar]);
       $urlfirstchar = $firstchar;
-      //if($charset == "UTF-8") $surname[firstchar] = utf8_encode($surname[firstchar]);
-      $countstr = $text['surnamesstarting'] . ": " . $firstchar . " (" . number_format($surname['lncount']) . " " . $text['totalnames'] . ")";
+
+        $countstr = $text['surnamesstarting'] . ": " . $firstchar . " (" . number_format($surname['lncount']) . " " . $text['totalnames'] . ")";
       $linkstr .= "<a href=\"$surnames_oneletter_url" . "firstchar=$urlfirstchar$treestr\" class=\"snlink\" title=\"$countstr\">{$firstchar}</a>";
     }
     $initialchar++;
@@ -99,7 +98,6 @@ if ($result) {
     if (($count - 1) % $collen == 0) {
       $col++;
     }
-    //$chartstr = $col ? "" : "<td width=\"400\"><a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\" title=\"{$surname['lowername']} ($tally_fmt)\"><div style=\"width:{$thiswidth}px;\" class=\"bar rightround\"></div></a></td>";
     $chartstr = $col ? "" : "<td class=\"bar-holder\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\" title=\"{$surname['lowername']} ($tally_fmt)\"><a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\"></a></div></td>";
     $linkstr2col[$col] .= "<tr><td class=\"snlink\">$count.</td><td class=\"nw\"><a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a> ($tally_fmt)</td>$chartstr</tr>";
     $count++;

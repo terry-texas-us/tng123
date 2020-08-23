@@ -19,7 +19,6 @@ class moddeleter extends modbase
   public function __construct($objinits) {
     // pass arguments thru to base class
     parent::__construct($objinits);
-    //echo __LINE__;print_r(get_defined_vars());exit;
   }
 
   public function delete_mod($cfgpath) {
@@ -92,33 +91,31 @@ class moddeleter extends modbase
       }
     } // support folder
 
-//echo '<br /> line ',__LINE__;exit;
-
     if (@!unlink($cfgpath)) {
       $msg = "<span class=\"hilighterr msgbold\">{$this->admtext['cantdel']} $cfgfile</span>";
       $this->mod_status = self::CANTDEL;
       $success = false;
     } else {
-      $msg = "<span class=\"msgapproved\">$cfgfile {$this->admtext['filedel']}</span>";
-      $this->mod_status = self::FILEDEL;
-      $success = true;
+        $msg = "<span class=\"msgapproved\">$cfgfile {$this->admtext['filedel']}</span>";
+        $this->mod_status = self::FILEDEL;
+        $success = true;
     }
-    $this->add_logevent($msg);
-    $this->write_eventlog();
-    return $success;
+      $this->add_logevent($msg);
+      $this->write_eventlog();
+      return $success;
   }
 
-  /**********************************************************************
-   * SUPPORTING FUNCTIONS
-   **********************************************************************/
-  public function batch_delete($cfgpathlist) {
-    foreach ($cfgpathlist as $cfgpath) {
-      if (!$this->delete_mod($cfgpath)) {
-        $this->batch_error = true;
-      }
+// SUPPORTING FUNCTIONS
+
+    public function batch_delete($cfgpathlist)
+    {
+        foreach ($cfgpathlist as $cfgpath) {
+            if (!$this->delete_mod($cfgpath)) {
+                $this->batch_error = true;
+            }
+        }
+        return !$this->batch_error;
     }
-    return !$this->batch_error;
-  }
 
   private function delTree($dir) {
 

@@ -113,7 +113,6 @@ function drawIndInfo($ind, $x, $y, $w, $listwhat, $xh = 0) {
   foreach ($list as $data) {
     $pdf->SetX($x + $textindent);
     $pdf->CellFit($w, $lineheight, $ind[$data], 0, 1, 'L', 0, '', 1, 0);
-    //$pdf->Cell($w,$lineheight,$ind[$data],0,1,'L',0,'');
   }
 }
 

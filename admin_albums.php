@@ -152,8 +152,8 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     $trow = tng_fetch_assoc($result2);
                     $tmediatypeID = $trow['mediatypeID'];
                     $tusefolder = $trow['usecollfolder'] ? $mediatypes_assoc[$tmediatypeID] : $mediapath;
-                    //$trelativepath = substr( $tusefolder, 0, 1 ) != "/" ? $cms['support'] ? "../../../" : "../" : "";
-                    tng_free_result($result2);
+
+                      tng_free_result($result2);
 
                     if ($trow['thumbpath'] && file_exists("$rootpath$tusefolder/" . $trow['thumbpath'])) {
                       $size = @GetImageSize("$rootpath$tusefolder/" . $trow['thumbpath']);

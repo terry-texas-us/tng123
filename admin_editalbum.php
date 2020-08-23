@@ -364,16 +364,16 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                               $husb['prefix'] = $plink['hprefix'];
                               $husb['suffix'] = $plink['hsuffix'];
                               $husb['nameorder'] = $plink['hnameorder'];
-                              //$husb['allow_living'] = 1;
-                              $wife['gedcom'] = $plink['gedcom'];
+
+                                $wife['gedcom'] = $plink['gedcom'];
                               $wife['firstname'] = $plink['wfirstname'];
                               $wife['lnprefix'] = $plink['wlnprefix'];
                               $wife['lastname'] = $plink['wlastname'];
                               $wife['prefix'] = $plink['wprefix'];
                               $wife['suffix'] = $plink['wsuffix'];
                               $wife['nameorder'] = $plink['wnameorder'];
-                              //$wife['allow_living'] = 1;
-                              $hrights = determineLivingPrivateRights($husb);
+
+                                $hrights = determineLivingPrivateRights($husb);
                               $husb['allow_living'] = $hrights['living'];
                               $husb['allow_private'] = $hrights['private'];
                               $name = getName($husb);

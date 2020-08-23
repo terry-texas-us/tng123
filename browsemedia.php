@@ -354,8 +354,6 @@ while ($row = tng_fetch_assoc($result)) {
     $medialinktext .= "\n['<a href=\"$showmedia_url" . "mediaID={$row['mediaID']}&amp;ioffset=$maxsearchresults\">{$text['morelinks']}</a>']";
   }
 
-  //if(!$noneliving)
-  //$row['description'] = $text['livingphoto'];
   $imgsrc = getSmallPhoto($row);
   if ($showPhotoInfo) {
     $href = $uselink;

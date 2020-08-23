@@ -201,18 +201,15 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
       $numrows = tng_num_rows($result);
       if ($result && $numrows) {
         while ($still_looking && $row = tng_fetch_assoc($result)) {
-          //echo "compare $row['firstname'] $row['lastname']<br/>\n";
           $wherestr2 = addCriteria($row);
 
           $query = "SELECT * FROM $sources_table WHERE sourceID > \"{$row['sourceID']}\" AND gedcom = \"$tree\" $wherestr2 ORDER BY sourceID LIMIT 1";
-          //echo "q2: $query<br/>\n";
           $result2 = tng_query($query);
           if ($result2 && tng_num_rows($result2)) {
             //set sourceID1, sourceID2
             $s1row = $row;
             $sourceID1 = $s1row['sourceID'];
             $s2row = tng_fetch_assoc($result2);
-            //echo "found $s2row['title'] $s2row['shorttitle']<br/>\n";
             $sourceID2 = $s2row['sourceID'];
             tng_free_result($result2);
             $still_looking = 0;

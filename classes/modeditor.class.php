@@ -63,26 +63,26 @@ class modeditor extends modparser
       if ($tags[$j]['name'] == 'target') {
         $tgtfile = $tags[$j]['arg1'];
       } elseif ($tags[$j]['name'] == 'parameter') {
-        $partable[$i]['file'] = $tgtfile;
-        $partable[$i]['var'] = $tags[$j]['arg1'];
-        $partable[$i]['val'] = $tags[$j]['arg2'];
-        $j++;
-        $partable[$i]['desc'] = $tags[$j]['arg1'];
-        $partable[$i++]['def'] = $tags[$j]['arg2'];
+          $partable[$i]['file'] = $tgtfile;
+          $partable[$i]['var'] = $tags[$j]['arg1'];
+          $partable[$i]['val'] = $tags[$j]['arg2'];
+          $j++;
+          $partable[$i]['desc'] = $tags[$j]['arg1'];
+          $partable[$i++]['def'] = $tags[$j]['arg2'];
       }
     }
 
-    /*************************************************************************
-     * TARGET FILES WITH PARAMETERS
-     *************************************************************************/
-    $active_target_file = '';
-    foreach ($partable as $parm) {
-      if ($parm['file'] != $active_target_file) {
 
-        // GET FILE BUFFER FOR EACH NEW FILE
-        $active_target_file = $parm['file'];
-        $atf = str_replace($this->rootpath, '', $active_target_file);
-        $target_file_contents = $this->read_file_buffer($parm['file']);
+// TARGET FILES WITH PARAMETERS
+
+      $active_target_file = '';
+      foreach ($partable as $parm) {
+          if ($parm['file'] != $active_target_file) {
+
+              // GET FILE BUFFER FOR EACH NEW FILE
+              $active_target_file = $parm['file'];
+              $atf = str_replace($this->rootpath, '', $active_target_file);
+              $target_file_contents = $this->read_file_buffer($parm['file']);
 
         // FILE MUST EXIST OR IT IS AN ERROR
         if (is_numeric($target_file_contents)) {
@@ -109,8 +109,8 @@ class modeditor extends modparser
       if (!preg_match($reg_exp, $target_file_contents, $matches)) {
         $this->mod_status = self::ERRORS;
         $this->show_log_errors = true;
-//echo __LINE__;print_r($tags[$j]);exit;
-        $this->add_logevent("<span class=\"msgerror\">{$this->admtext['tgtfile']} $atf</span> <span class=\"hilighterr msgbold\">{$this->admtext['noparam']}: {$parm['var']}</span>");
+
+          $this->add_logevent("<span class=\"msgerror\">{$this->admtext['tgtfile']} $atf</span> <span class=\"hilighterr msgbold\">{$this->admtext['noparam']}: {$parm['var']}</span>");
         $this->write_eventlog();
         return false;
       }

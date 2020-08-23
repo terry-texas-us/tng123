@@ -67,6 +67,6 @@ adminwritelog($admtext['mostwanted'] . " : $title");
 $truncated = preg_replace("/\r/", "", $truncated);
 $truncated = preg_replace("/\n/", "", $truncated);
 header("Content-Type: application/json; charset=" . $session_charset);
-//echo "{'ID':'$ID','title':'$cleantitle','description':'$truncated','mwtype':'$mwtype','mediaID':'$mediaID','thumbpath':'$thumbpath','width':'$size[0]','height':'$size[1]','edit':'$allow_edit','del':'$allow_delete'}";
+
 echo "{\"ID\":\"$ID\",\"title\":\"$cleantitle\",\"description\":\"$truncated\",\"mwtype\":\"$mwtype\",\"mediaID\":\"$mediaID\",\"thumbpath\":\"$thumbpath\",\"width\":\"{$size[0]}\",\"height\":\"{$size[1]}\",\"edit\":\"$allow_edit\",\"del\":\"$allow_delete\"";
 echo "}";

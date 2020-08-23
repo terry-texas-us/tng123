@@ -58,11 +58,6 @@ $query = "SELECT $xnotes_table.ID as ID, $xnotes_table.note as note, $notelinks_
 	$wherestr ORDER BY note LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
-//LEFT JOIN $families_table ON $notelinks_table.persfamID = $families_table.familyID AND $notelinks_table.gedcom = $families_table.gedcom
-//LEFT JOIN $sources_table ON $notelinks_table.persfamID = $sources_table.sourceID AND $notelinks_table.gedcom = $sources_table.gedcom
-//LEFT JOIN $repositories_table ON $notelinks_table.persfamID = $repositories_table.repoID AND $notelinks_table.gedcom = $repositories_table.gedcom
-//LEFT JOIN $people_table ON $notelinks_table.persfamID = $people_table.personID AND $notelinks_table.gedcom = $people_table.gedcom
-
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {

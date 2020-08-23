@@ -26,9 +26,7 @@ foreach ($bookmarks as $bookmark) {
   }
 }
 
-//echo $bookmarkstr; exit;
 setcookie($ref, stripslashes($bookmarkstr), time() + 31536000, "/");
-//setcookie($ref, "", time()+31536000, "/");
 
 $bookmarks_url = getURL("bookmarks", 0);
 header("Location: $bookmarks_url");

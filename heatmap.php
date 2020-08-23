@@ -222,7 +222,6 @@ if ($psearch) {
   $querystr = "";
 }
 
-//echo $query;
 $result = tng_query_noerror($query);
 $numrows = tng_num_rows($result);
 

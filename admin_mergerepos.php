@@ -223,7 +223,6 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
             $r1row = $row;
             $repoID1 = $r1row['repoID'];
             $r2row = tng_fetch_assoc($result2);
-            //echo "found $r2row['title'] $r2row['shorttitle']<br/>\n";
             $repoID2 = $r2row['repoID'];
             tng_free_result($result2);
             $still_looking = 0;
@@ -336,15 +335,10 @@ if ($mergeaction == $admtext['merge']) {
       if (!file_exists($defaultphoto1)) {
         rename($defaultphoto2, $defaultphoto1);
       }
-      //else
-      //unlink( $defaultphoto2 );
     }
   } else {
     $query = "DELETE FROM $medialinks_table WHERE personID = \"$repoID2\" AND gedcom = \"$tree\"";
     $mediaresult = tng_query($query);
-
-    //if( file_exists( $defaultphoto2 ) )
-    //unlink( $defaultphoto2 );
   }
   $repoID2 = "";
   $r2row = "";

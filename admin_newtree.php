@@ -46,7 +46,7 @@ function validateTreeForm(form) {
 }
 
 function alphaNumericCheck(string){
-	var regex=/^[0-9A-Za-z_-]+$/; //^['a-zA-z']+$/
+	var regex=/^[0-9A-Za-z_-]+$/;
 	return regex.test(string);
 }
 </script>

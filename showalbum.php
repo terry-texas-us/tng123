@@ -363,7 +363,6 @@ while ($row = tng_fetch_assoc($result)) {
     $firsthref = $href;
   }
 
-  //$href = $showmedia_url . "mediaID=$row['mediaID']&amp;albumlinkID=$row['albumlinkID']";
   if ($row['allow_living'] || !$nonamesloc) {
     $description = $showAlbumInfo ? "<a href=\"$href\">{$row['description']}</a>" : $row['description'];
     $notes = nl2br(truncateIt(getXrefNotes($row['notes']), $tngconfig['maxnoteprev']));

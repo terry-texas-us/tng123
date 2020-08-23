@@ -10,7 +10,6 @@ $surnames_oneletter_url = getURL("surnames-oneletter", 1);
 
 $firstchar = mb_substr($firstchar, 0, 1, $charset);
 $decodedfirstchar = stripslashes(urldecode($firstchar));
-//if($charset == "UTF-8") $decodedfirstchar = utf8_encode($decodedfirstchar);
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
 $logstring = "<a href=\"$surnames_oneletter_url" . "firstchar=$firstchar&amp;tree=$tree\">" . xmlcharacters($text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar$treestr") . "</a>";

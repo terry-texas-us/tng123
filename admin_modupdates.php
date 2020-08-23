@@ -9,7 +9,6 @@ include "getlang.php";
 
 include "$mylanguage/admintext.php";
 
-//tng_db_connect($database_host,$database_name,$database_username,$database_password) or exit;
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -181,7 +180,7 @@ function set_innermenu_links($tng_version) {
 /*************************************************************************
  * JAVASCRIPT SUPPORT
  *************************************************************************/
-//$sitever = 'mobile'; //turns off jQuery positioning for testing
+
 if ($sitever != 'mobile' && $options['adjust_headers']) {
   echo "
 <script type=\"text/javascript\">

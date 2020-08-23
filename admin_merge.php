@@ -360,18 +360,15 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
       $numrows = tng_num_rows($result);
       if ($result && $numrows) {
         while ($still_looking && $row = tng_fetch_assoc($result)) {
-          //echo "compare $row['firstname'] $row['lastname']<br/>\n";
           $wherestr2 = addCriteria($row);
 
           $query = "SELECT * FROM $people_table WHERE personID > \"{$row['personID']}\" AND gedcom = \"$tree\" $branchstr $wherestr2 ORDER BY LENGTH(personID), personID, lastname, firstname LIMIT 1";
-          //echo "q2: $query<br/>\n";
           $result2 = tng_query($query);
           if ($result2 && tng_num_rows($result2)) {
             //set personID1, personID2
             $p1row = $row;
             $personID1 = $p1row['personID'];
             $p2row = tng_fetch_assoc($result2);
-            //echo "found $p2row['firstname'] $p2row['lastname']<br/>\n";
             $personID2 = $p2row['personID'];
             tng_free_result($result2);
             $still_looking = 0;
@@ -677,15 +674,10 @@ if ($mergeaction == $admtext['merge']) {
       if (!file_exists($defaultphoto1)) {
         rename($defaultphoto2, $defaultphoto1);
       }
-      //else
-      //unlink( $defaultphoto2 );
     }
   } else {
     $query = "DELETE FROM $medialinks_table WHERE personID = \"$personID2\" AND gedcom = \"$tree\"";
     $mediaresult = tng_query($query);
-
-    //if( file_exists( $defaultphoto2 ) )
-    //unlink( $defaultphoto2 );
   }
 
   //clean up: remove all families with husband blank and wife blank
@@ -1035,7 +1027,6 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                           //key may only need to be "event" + sequence number
                           $ename = "event$key";
                           $inputname = "event$event";
-                          //echo "key:$key<br>event=$event<br>";
                           doRow($ename, "otherevents", $inputname);
                         }
 

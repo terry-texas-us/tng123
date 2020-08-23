@@ -31,8 +31,8 @@ function xmlPerson($currperson, $backperson, $generation) {
   $row['allow_living'] = $rights['living'];
   $row['allow_private'] = $rights['private'];
   $nameinfo = xmlcharacters(getName($row));
-  //$nameinfo = htmlentities( getName( $row ), ENT_QUOTES );
-  $person .= "\"name\":\"$nameinfo\",";
+
+    $person .= "\"name\":\"$nameinfo\",";
 
   $parentfamID = "";
   $locparentset = $parentset;
@@ -59,10 +59,9 @@ function xmlPerson($currperson, $backperson, $generation) {
     }
     tng_free_result($parents);
   }
-
   $person .= $parentfamID ? "\"famc\":\"$parentfamID\"," : "\"famc\":\"-1\",";
-  //if($parentfamID) $person .= "\"famc\":\"$parentfamID\",";
-  if ($display == "standard" && $pedigree['inclphotos']) {
+
+    if ($display == "standard" && $pedigree['inclphotos']) {
     $person .= xmlPhoto($currperson, $rights['both'], $row['sex']) . ",";
   } else {
     $person .= "\"photosrc\":\"-1\",\"photolink\":\"\",";
@@ -190,8 +189,8 @@ function xmlPerson($currperson, $backperson, $generation) {
         $spouseIDrow['allow_private'] = $rights['private'];
         $sp = "\"spID\":\"" . $spouserow[$spouse] . "\",";
         $sp .= "\"spname\":\"" . xmlcharacters(getName($spouseIDrow)) . "\",";
-        //$sp .= "\"spname\":\"" . htmlentities( getName( $spouseIDrow ), ENT_QUOTES ) . "\",";
-        tng_free_result($spouseIDresult);
+
+          tng_free_result($spouseIDresult);
       }
       $sp .= "\"spFamID\":\"" . $spouserow['familyID'] . "\"";
       $spfams .= $sp . "}\n";
@@ -231,7 +230,6 @@ function getChildren($familyID) {
         $child['allow_living'] = $rights['living'];
         $child['allow_private'] = $rights['private'];
         $children .= "{\"childID\":\"" . $child['pID'] . "\",\"name\":\"" . xmlcharacters(getName($child)) . "\"}";
-        //$children .= "{\"childID\":\"" . $child['pID'] . "\",\"name\":\"" . htmlentities( getName( $child ), ENT_QUOTES ) . "\"}";
       }
       $children = "\"children\":[$children]";  //used to be child
     }

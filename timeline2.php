@@ -12,7 +12,6 @@ if (!is_array($timeline)) {
   header("Location:" . getURL("timeline", 1) . "primaryID=$primaryID&tree=$tree");
   exit;
 }
-//$timeline = array();
 
 $findpersonform_url = getURL("findpersonform", 1);
 $getperson_url = getURL("getperson", 1);
@@ -226,7 +225,6 @@ function getEvents($person) {
   //loop through and format
   ksort($events);
   foreach ($events as $event) {
-    //$eventstr .= "<div style=\"position:relative; top:0px; left:$event['left']px; width:$maxleft" . "px;\">\n";
     $eventstr .= "<div class=\"tlevent\" style=\"margin-left:{$event['left']}px;\">\n";
     $eventstr .= "<table border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td class=\"pboxpopup nw\"><span class=\"normal\">&gt; ";
     $eventstr .= "{$event['year']} - {$event['text']} {$event['date']} &nbsp;</span></td></tr></table></div>\n";
@@ -307,7 +305,6 @@ $tlquery = "SELECT evday, evmonth, evyear, evtitle, evdetail, endday, endmonth, 
 	FROM $tlevents_table
 	WHERE (evyear * 1 <= $latest * 1 AND endyear * 1 >= $earliest * 1) OR (endyear = \"\" AND (evyear BETWEEN \"$earliest\" AND \"$latest\"))
 	ORDER BY evyear * 1, evmonth, evday";
-//WHERE (evyear BETWEEN \"$earliest\" AND \"$latest\") OR (endyear BETWEEN \"$earliest\" AND \"$latest\") OR ((evyear <= \"$earliest\") AND (endyear >= \"$latest\"))
 
 $tlresult = tng_query($tlquery) or die ($text['cannotexecutequery'] . ": $tlquery");
 $tlevents = array();
@@ -504,7 +501,6 @@ foreach ($keeparray as $timeentry) {
 
   $eventinfo = getEvents($timeentry);
   echo "$eventinfo</td></tr></table></div>\n";
-  //echo "</div>\n";
 }
 if ($highestll == 1) {
   echo "<br/><br/>";
@@ -664,6 +660,5 @@ if ($counter) {
     </script>
 
 <?php
-//$flags['more'] = "$enddiv\n";
 tng_footer($flags);
 ?>

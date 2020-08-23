@@ -141,8 +141,6 @@ if ($xphaction == $admtext['convto']) {
       $mediaID = substr($key, 2);
       $query .= " OR mediaID=\"$mediaID\"";
 
-      //removeImages($mediaID);
-
       $aquery = "DELETE FROM $albumlinks_table WHERE mediaID=\"$mediaID\"";
       $aresult = tng_query($aquery) or die ($admtext['cannotexecutequery'] . ": $aquery");
 

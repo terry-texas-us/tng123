@@ -33,7 +33,6 @@ $row['city'] = preg_replace("/\"/", "&#34;", $row['city']);
 $row['state'] = preg_replace("/\"/", "&#34;", $row['state']);
 $row['country'] = preg_replace("/\"/", "&#34;", $row['country']);
 
-//$allow_user_change = $allow_admin && !$assignedtree ? true : false;
 $allow_user_change = true;
 ?>
 

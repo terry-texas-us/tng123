@@ -65,7 +65,7 @@ define("DUMMYPLACE", "@@@@@@"); // sincerely hope there's not a place called thi
 define("NUMCOLS", 2);           //set as number of columns-1
 define("DEFAULT_COLUMN_LENGTH", $numcems);
 $numrows = tng_num_rows($cemresult);
-//$colsize =  ($numrows > 300) ? (int)ceil($numrows/4) : DEFAULT_COLUMN_LENGTH;
+
 $colsize = DEFAULT_COLUMN_LENGTH;
 $lastcountry = DUMMYPLACE;
 $divctr = $linectr = $colctr = $i = 0;
@@ -118,8 +118,6 @@ while ($i < $numrows) {
         echo "</div>\n";                    // displayed all cemeteries in the county
 
       } else {                                // display the county
-        //if($lastcounty != DUMMYPLACE)
-        //echo "</div>\n";
         $divname = "county$divctr";
         $divctr++;
         $lastcounty = $cemetery['county'];

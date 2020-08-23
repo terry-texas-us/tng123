@@ -75,7 +75,6 @@ if ($srcrow['title']) {
 if ($srcrow['shorttitle']) {
   $sourcetext .= showEvent(array("text" => $text['shorttitle'], "fact" => $srcrow['shorttitle']));
 }
-//if( $srcrow[type] ) $sourcetext .= showEvent( array( "text"=>$text['type'], "fact"=>$srcrow['type'] ) );
 if ($srcrow['author']) {
   $sourcetext .= showEvent(array("text" => $text['author'], "fact" => $srcrow['author']));
 }

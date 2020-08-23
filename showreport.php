@@ -132,11 +132,9 @@ if ($rrow['sqlselect']) {
 } else {
   if ($tree) {
     $peopletreestr = "$people_table.gedcom = \"$tree\"";
-    //$familytreestr = "if(sex='M',families1.gedcom = \"$tree\",families2.gedcom = \"$tree\")";
     $childrentreestr = "$children_table.gedcom = \"$tree\"";
   } else {
     $peopletreestr = "";
-    //$familytreestr = "";
     $childrentreestr = "";
   }
   $treestr = $peopletreestr;
@@ -486,8 +484,6 @@ if ($rrow['sqlselect']) {
 
   if ($need_families) {
     $families_join = "LEFT JOIN $families_table AS families1 ON ($people_table.gedcom = families1.gedcom AND $people_table.personID = families1.husband ) LEFT JOIN $families_table AS families2 ON ($people_table.gedcom = families2.gedcom AND $people_table.personID = families2.wife ) ";
-    //$families_join = "LEFT JOIN $families_table ON ($people_table.personID = $families_table.husband OR $people_table.personID = $families_table.wife) AND $people_table.gedcom = $families_table.gedcom";
-    //if( $familytreestr ) $treestr .= " AND $familytreestr";
   } else {
     $families_join = "";
   }
@@ -510,7 +506,7 @@ if ($rrow['sqlselect']) {
 
   $query = "SELECT $displaystr FROM ($people_table $trees_join) $families_join $children_join $cejoin $criteriastr $treestr $orderbystr";
 }
-//echo $query . " LIMIT $newoffset" . $maxsearchresults;
+
 $limitstr = $csv ? "" : " LIMIT $newoffset" . $maxsearchresults;
 $result = @tng_query($query . $limitstr);
 

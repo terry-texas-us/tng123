@@ -11,8 +11,6 @@ if ($assignedtree) {
   $color = "red";
 } else {
   $whatsnewmsg = stripslashes($whatsnewmsg);
-  //if($session_charset != "UTF-8")
-  //$whatsnewmsg = tng_utf8_decode($whatsnewmsg);
 
   $file = "$rootpath/whatsnew.txt";
   //write to file

@@ -41,7 +41,6 @@ function displayIndividual($key, $generation, $slot, $column) {
         }
       }
 
-      //if( $rights['both'] ) {
       $mediaquery = "SELECT count($medialinks_table.medialinkID) as mediacount FROM ($medialinks_table, $media_table) WHERE $medialinks_table.mediaID = $media_table.mediaID AND personID = \"$key\" AND $medialinks_table.gedcom = \"$tree\"";
       $mediaresult = tng_query($mediaquery) or die ($text['cannotexecutequery'] . ": $mediaquery");
       if ($mediaresult) {
@@ -195,8 +194,6 @@ if ($showall) {
 }
 $slot = 1;
 displayIndividual($personID, 1, $slot, 0);
-
-//echo $columns['0']['1'];
 ?>
     <table border="0" cellspacing="0" cellpadding="0">
         <tr>

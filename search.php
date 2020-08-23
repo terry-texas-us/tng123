@@ -132,7 +132,6 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
   if ($qualifier == "exists" || $qualifier == "dnexist") {
     $value = $usevalue = "";
   } else {
-    //$value = str_replace("%","%25",$value);
     $value = urldecode(trim($value));
     $usevalue = addslashes($value);
   }
@@ -335,7 +334,6 @@ if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexis
 		$orderstr LIMIT $newoffset" . $maxsearchresults;
   $query2 = "SELECT count(p.ID) as pcount FROM $people_table AS p $families_join $cejoin $allwhere";
 }
-//echo $query;
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
@@ -469,11 +467,8 @@ echo $header;
     </thead>
 <?php
 $i = $offsetplus;
-//$chartlinkimg = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
 $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" class=\"chartimg\" alt=\"\" />";
 while ($row = tng_fetch_assoc($result)) {
-  //these comments reversed in 8.1.2. Not sure why it was that way to begin with.
-  //$row['allow_living'] = !$row['living'] || $livedefault == 2 || ( $allow_living_db && (!$assignedtree || $assignedtree == $row['gedcom']) && checkbranch( $row['branch'] ) ) ? 1 : 0;
   $rights = determineLivingPrivateRights($row);
   $row['allow_living'] = $rights['living'];
   $row['allow_private'] = $rights['private'];

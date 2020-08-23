@@ -61,8 +61,6 @@ function tng_header($title, $flags) {
 
   initMediaTypes();
 
-  //echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\">\n\n";
-  //echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n\n";
   header("Content-type:text/html;charset=" . $session_charset);
   echo !empty($tngconfig['doctype']) ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
   if (!$cms['support']) {
@@ -70,14 +68,12 @@ function tng_header($title, $flags) {
   } else {
     echo $cms['credits'];
   }
-  //$siteprefix = $sitename ? ($title ? ": " . stripslashes($sitename) : stripslashes($sitename)) : "";
-  //$title = preg_replace("/\"/", "",$title);
   $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
   $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
   echo "<title>$title$siteprefix</title>\n";
   echo "<meta name=\"Keywords\" content=\"$site_desc\" />\n";
-  //echo "<meta name=\"Description\" content=\"" . preg_replace("/\"/", "", $title . $siteprefix) . "\" />\n";
-  echo "<meta name=\"Description\" content=\"" . $title . $siteprefix . "\" />\n";
+
+    echo "<meta name=\"Description\" content=\"" . $title . $siteprefix . "\" />\n";
 
   if ($fbOGimage) {
     echo "<meta property=\"og:title\" content=\"" . $sitename . "\"/>\n";
@@ -147,7 +143,6 @@ function tng_header($title, $flags) {
     echo "<script type=\"text/javascript\">stLight.options({publisher: \"be4e16ed-3cf4-460b-aaa4-6ac3d0e3004b\",doNotHash:true,doNotCopy:true,hashAddressBar:false});</script>\n";
   }
 
-  //echo "<script type=\"text/javascript\" src=\"{$http}://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e568cff0f533c7f\"></script>\n";
   if ($tngconfig['menu'] < 2 && !$tngprint && $sitever != "mobile") {
     echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/tngmenuhover2.js\"></script>\n";
   }
@@ -167,7 +162,6 @@ function tng_header($title, $flags) {
     echo "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "&message={$flags['error']}');});\n";
   }
   echo "</script>\n";
-  //echo "<style type=\"text/css\">.media-prev {background: transparent url({$cms['tngpath']}img/media-prevbg.png) no-repeat 0 0;}\n.person-prev {background: transparent url({$cms['tngpath']}img/person-prevbg.png) no-repeat 0 0;}</style>\n";
   echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"{$cms['tngpath']}tngrss.php\" />\n";
 
   if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
@@ -373,7 +367,6 @@ function getSmallPhoto($medialink) {
         $photowtouse = intval($thumbmaxh * $photoinfo[0] / $photoinfo[1]);
       }
     }
-    //$dimensions = " width=\"$photowtouse\" height=\"$photohtouse\"";
     $dimensions = " height=\"$photohtouse\"";
     $class = " class=\"thumb\"";
   } else {
@@ -877,10 +870,8 @@ function tng_icons($instance, $title = "") {
 
     if ($tngconfig['menu'] == 1) {
       $iconalign = "float-left";
-      //$innerborder = "";
     } else {
       $iconalign = " float-right";
-      //$innerborder = " style=\"border-right:1px solid #aaaaaa\"";
     }
 
     $left_icons = tng_getLeftIcons();
@@ -1064,7 +1055,6 @@ function treeDropdown($forminfo) {
         foreach ($forminfo['hidden'] as $hidden)
           $ret .= "<input type=\"hidden\" name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\" />\n";
       }
-      //$ret .= "<input type=\"submit\" value=\"$text[go]\" />\n";
       if ($forminfo['endform']) {
         $ret .= "</form><br/>\n";
       } else {
@@ -1153,7 +1143,6 @@ function getMediaHREF($row, $mlflag) {
     } elseif ($mlflag == 3) {
       $uselink .= "&amp;cemeteryID=" . $row['cemeteryID'];
     }
-    //$uselink .= $row['all'] ? "&amp;all=1" : "";
   } else {
     if ($row['abspath'] || substr($row['path'], 0, 4) == "http" || substr($row['path'], 0, 1) == "/") {
       $uselink = $row['path'];
@@ -1328,7 +1317,6 @@ function custom_links($linkdefs) {
     if (!isset($linkdefs[$i]['target'])) {
       continue;
     }
-//echo "doingx $i<br>";
     $target = $linkdefs[$i]['target'];
     $linkpath = !empty($linkdefs[$i]['external']) ? '' : $cms['tngpath'];
 
@@ -1364,7 +1352,6 @@ function custom_links($linkdefs) {
     if (empty($linkdefs[$i]['icon'])) {
       $linkdefs[$i]['icon'] = '';
     }
-    //echo $linkpath.$target . " " . $linkdefs[$i]['sprite'] . " " . $linkdefs[$i]['icon'] . " " . $label . " " . $literal . "<br>";
     $menustr .= tngddrow(
             $linkpath . $target,
             $linkdefs[$i]['sprite'],
@@ -1375,7 +1362,6 @@ function custom_links($linkdefs) {
     $tngconfig['menucount']++;
   }
 
-//debugPrint($linkdefs);
   return $menustr;
 }
 

@@ -208,8 +208,8 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                         }
                         $rolestr = 'usr' . ($row['role'] ? $row['role'] : 'custom');
                         echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a>&nbsp;</td>\n";
-                        //echo "<td class=\"lightback\" valign=\"top\" nowrap><span class=\"normal\">&nbsp;$form_allow_admin&nbsp;</span></td>\n";
-                        echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$row['gedcom']}&nbsp;</td>\n";
+
+                          echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$row['gedcom']}&nbsp;</td>\n";
                         echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$row['branch']}&nbsp;</td>\n";
                         echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$admtext[$rolestr]}&nbsp;</td>\n";
                         echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_allow_living&nbsp;</td>\n";

@@ -27,7 +27,6 @@ function getLine() {
     $lineinfo['level'] = isset($matches[1]) ? trim($matches[1]) : "";
     $lineinfo['tag'] = isset($matches[2]) ? trim($matches[2]) : "";
     $lineinfo['rest'] = isset($matches[3]) ? trim($matches[3], $lineending) : "";
-    //echo "$line: -$lineinfo['level']- -$lineinfo['tag']- -$lineinfo['rest']-<br/>\n";
   } else {
     $lineinfo['level'] = "";
     $lineinfo['tag'] = "";
@@ -138,17 +137,13 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
         case "TEMP":
           $moreinfo['PLAC'] = addslashes($lineinfo['rest']);
           getPlaceRecord($lineinfo['rest'], $lineinfo['level']);
-          //savePlace( $moreinfo['PLAC'] );
-          //$lineinfo = getLine();
           break;
         case "FAMC":
           preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
           $moreinfo[$tag] = adjustID($matches[1], $savestate['foffset']);
           $lineinfo = getLine();
           break;
-        //case "TEXT":
         case "NOTE":
-          //$notecount++;
           if (!$notecnt) {
             $moreinfo['NOTES'] = array();
           }
@@ -225,8 +220,6 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
           $lineinfo = getLine();
           break;
         default:
-          //if( $moreinfo['FACT'] ) $moreinfo['FACT'] .= ", ";
-          //$moreinfo['FACT'] .= addslashes( removeDelims( $lineinfo['rest'] ) );
           $lineinfo = getLine();
           break;
       }
@@ -259,8 +252,6 @@ function handleCustomEvent($id, $prefix, $tag) {
   if ($tag == "EVEN") {
     $fact = addslashes($lineinfo['rest'] . getContinued());
     $needfact = 1;
-    //next one must be TYPE
-    //$lineinfo = getLine();
     if ($lineinfo['tag'] == "TYPE") {
       $event['TYPE'] = trim(addslashes($lineinfo['rest']));
     } else {
@@ -970,8 +961,8 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
         if ($goahead) {
           if ($mm['FILE'] || $mm['TITL'] || $mm['NOTE'] || $mm['datetaken']) {
             $changedatestr = $mm['CHAN'] ? ", changedate=\"{$mm['CHAN']}\"" : "";
-            //$query = "UPDATE $media_table SET path=\"$mm['FILE']\", description=\"$mm['TITL']\", notes=\"$mm['NOTE']\", form=\"$mm['FORM']\"$changedatestr WHERE gedcom = \"$tree\" AND mediakey = \"$mm['OBJE']\"";
-            $descstr = $mm['TITL'] ? ", description=\"{$mm['TITL']}\"" : "";
+
+              $descstr = $mm['TITL'] ? ", description=\"{$mm['TITL']}\"" : "";
             $notestr = $mm['NOTE'] ? ", notes=\"{$mm['NOTE']}\"" : "";
             $datestr = $mm['datetaken'] ? ", datetaken=\"{$mm['datetaken']}\"" : "";
             $query = "UPDATE $media_table SET path=\"{$mm['FILE']}\"$descstr$notestr$datestr, form=\"{$mm['FORM']}\"$changedatestr WHERE gedcom = \"$tree\" AND mediakey = \"{$mm['OBJE']}\"";
@@ -1014,7 +1005,6 @@ function getCodedMedia() {
 
   while ($notdone) {
     $lineinfo = getLine();
-    //echo "$lineinfo['level'] $lineinfo['tag'] $lineinfo['rest']<br/>\n";
     if ($lineinfo['tag'] == "CONT" || $lineinfo['tag'] == "CONC") {
       $continued .= $lineinfo['rest'];
     } else {
@@ -1074,8 +1064,8 @@ function getMultimediaRecord($objectID, $prevlevel) {
   $mminfo = initMultimedia();
 
   $mminfo['ID'] = $objectID;
-  //echo "doing $objectID<br>\n";
-  $lineinfo = getLine();
+
+    $lineinfo = getLine();
   while ($lineinfo['tag'] && $lineinfo['level'] >= $prevlevel) {
     if ($lineinfo['level'] == $prevlevel) {
       $tag = $lineinfo['tag'];
@@ -1103,8 +1093,8 @@ function getMultimediaRecord($objectID, $prevlevel) {
         case "OBJE":
           //continue a previous one
           $continued = 1;
-          //echo "continuing $objectID<br>";
-          $mminfo['saved'] = $objectID;
+
+            $mminfo['saved'] = $objectID;
           preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
           $index = $matches[1];
           $mminfo[$index] = $mminfo[$objectID];
@@ -1410,11 +1400,6 @@ function saveCustEvents($prefix, $persfamID, $events, $totevents) {
           if ($num_medialinks) {
             if (isset($medialinks[$key])) {
               foreach ($medialinks[$key] as $medialinkID) {
-                //remove xxx event record
-                //$value = $eventlinks[$medialinkID];
-                //$query = "DELETE FROM $events_table WHERE eventID = \"$value\"";
-                //$result = @tng_query( $query ) or die ($admtext['cannotexecutequery'] . ": $query");
-
                 //put new eventID in old medialink records for this event
                 $query = "UPDATE $medialinks_table SET eventID = \"$eventID\" WHERE medialinkID = \"$medialinkID\"";
                 $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");

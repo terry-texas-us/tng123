@@ -479,7 +479,6 @@ class tFPDF
   }
 
   public function AddFont($family, $style = '', $file = '', $uni = false) {
-    //echo "fam=$family, style=$style<br>";
     // Add a TrueType, OpenType or Type1 font
     $ucFamily = $family;
     if (!$uni) {
@@ -494,7 +493,6 @@ class tFPDF
       }
     }
     $fontkey = $family . $style;
-    //echo "setting key=$fontkey<br>\n";
     if (isset($this->fonts[$fontkey])) {
       return;
     }
@@ -592,14 +590,10 @@ class tFPDF
   }
 
   public function SetFont($family, $style = '', $size = 0) {
-    //if($this->charset == "UTF-8")
-    //$style = "";
     // Select a font; size given in points
     if ($family == '') {
       $family = $this->FontFamily;
     }
-    //else
-    //$family = strtolower($family);
     if ($this->charset != "UTF-8") {
       $style = strtoupper($style);
       if (strpos($style, 'U') !== false) {
@@ -615,16 +609,14 @@ class tFPDF
         $size = $this->FontSizePt;
       }
     }
-    //$style = strtolower($style);
     // Test if font is already selected
-    //echo "testing $family, style=$style<br>\n";
     if ($this->FontFamily == $family && $this->FontStyle == $style && $this->FontSizePt == $size) {
       return;
     }
     // Test if font is already loaded
     $fontkey = $family . $style;
-    //echo "fontkey $fontkey<br>\n";
-    if (!isset($this->fonts[$fontkey])) {
+
+      if (!isset($this->fonts[$fontkey])) {
       // Test if one of the core fonts
       if ($family == 'arial') {
         $family = 'helvetica';
@@ -642,7 +634,6 @@ class tFPDF
       }
     }
     // Select it
-    //echo "got $family<br>\n";
     $this->FontFamily = $family;
     $this->FontStyle = $style;
     $this->FontSizePt = $size;
@@ -1758,11 +1749,10 @@ class tFPDF
     }
     foreach ($this->fonts as $k => $font) {
       // Font objects
-      //$this->fonts[$k]['n']=$this->n+1;
       $type = $font['type'];
       $name = $font['name'];
-      //echo "name=$name, type=$type<br>\n";
-      if ($type == 'Core' || $type == 'core') {
+
+        if ($type == 'Core' || $type == 'core') {
         // Standard font
         $this->fonts[$k]['n'] = $this->n + 1;
         $this->_newobj();

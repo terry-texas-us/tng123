@@ -21,15 +21,6 @@ $row['zip'] = preg_replace("/\"/", "&#34;", $row['zip']);
 $row['country'] = preg_replace("/\"/", "&#34;", $row['country']);
 
 if ($session_charset != "UTF-8") {
-  //$row['age']= utf8_encode($row['age']);
-  //$row['agency'] = utf8_encode($row['agency']);
-  //$row['cause'] = utf8_encode($row['cause']);
-  //$row['address1'] = utf8_encode($row['address1']);
-  //$row['address2'] = utf8_encode($row['address2']);
-  //$row['city'] = utf8_encode($row['city']);
-  //$row['state'] = utf8_encode($row['state']);
-  //$row['zip'] = utf8_encode($row['zip']);
-  //$row['country'] = utf8_encode($row['country']);
 }
 
 $helplang = findhelp("more_help.php");

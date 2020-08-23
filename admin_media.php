@@ -69,7 +69,6 @@ if ($offset) {
 if ($assignedtree) {
   $wherestr = "WHERE gedcom = \"$assignedtree\"";
   $wherestr2 = " AND $medialinks_table.gedcom = \"$assignedtree\"";
-  //$tree = $assignedtree;
 } else {
   $wherestr = "";
   if ($tree) {
@@ -449,7 +448,6 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                       $actionstr .= "<a href=\"" . $showmedia_url . "mediaID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                       while ($row = tng_fetch_assoc($result)) {
-                        //$cleanfile = $session_charset == "UTF-8" ? utf8_decode($row['thumbpath']) : $row['thumbpath'];
                         $mtypeID = $row['mediatypeID'];
                         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
                         $newactionstr = preg_replace("/xxx/", $row['mediaID'], $actionstr);

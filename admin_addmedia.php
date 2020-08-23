@@ -51,8 +51,6 @@ if (substr($thumbpath, 0, 1) == "/") {
 $newthumbpath = "$rootpath$usefolder/$treestr$thumbpath";
 
 if (function_exists('imageJpeg') && $thumbcreate == "auto") {
-  ///$cleanpath = $session_charset == "UTF-8" ? utf8_decode($newpath) : $newpath;
-  //$cleannewthumbpath = $session_charset == "UTF-8" ? utf8_decode($newthumbpath) : $newthumbpath;
   if (image_createThumb($newpath, $newthumbpath, $thumbmaxw, $thumbmaxh, $thumbquality)) {
     $destInfo = pathInfo($newthumbpath);
     if (strtoupper($destInfo['extension']) == "GIF" || strtoupper($destInfo['extension']) == "PDF") {

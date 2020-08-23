@@ -25,10 +25,6 @@ if ($mylastname) {
     $allwhere .= " AND lastname LIKE \"%" . trim($mylastname) . "%\"";
   }
 }
-//if( $field == "husband" )
-//	$allwhere .= " AND sex = \"M\"";
-//else if( $field == "wife" )
-//	$allwhere .= " AND sex = \"F\"";
 $query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, deathdate, burialdate, prefix, suffix, nameorder, living, private, branch FROM $people_table WHERE $allwhere ORDER BY lastname, lnprefix, firstname LIMIT 250";
 $result = tng_query($query);
 

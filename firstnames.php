@@ -61,9 +61,7 @@ if ($result) {
     if ($firstchar == "") {
       $linkstr .= "<a href=\"$search_url" . "myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">" . $text['nofirstname'] . "</a> ";
     } else {
-      //$urlfirstchar = urlencode($firstname[firstchar]);
       $urlfirstchar = $firstchar;
-      //if($charset == "UTF-8") $firstname[firstchar] = utf8_encode($firstname[firstchar]);
       $countstr = $text['firstnamesstarting'] . ": " . $firstchar . " (" . number_format($firstname['lncount']) . " " . $text['totalnames'] . ")";
       $linkstr .= "<a href=\"$firstnames_oneletter_url" . "firstchar=$urlfirstchar$treestr\" class=\"snlink\" title=\"$countstr\">{$firstchar}</a>";
     }
@@ -96,7 +94,6 @@ if ($result) {
     if (($count - 1) % $collen == 0) {
       $col++;
     }
-    //$chartstr = $col ? "" : "<td width=\"400\"><a href=\"$search_url" . "myfirstname=$firstname2&amp;fnqualify=equals&amp;mybool=AND$treestr\" title=\"{$firstname['lowername']} ($tally_fmt)\"><div style=\"width:{$thiswidth}px;\" class=\"bar rightround\"></div></a></td>";
     $chartstr = $col ? "" : "<td class=\"bar-holder\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\" title=\"{$firstname['lowername']} ($tally_fmt)\"><a href=\"$search_url" . "myfirstname=$firstname2&amp;fnqualify=startswith&amp;mybool=AND$treestr\"></a></div></td>";
     $linkstr2col[$col] .= "<tr><td class=\"snlink\">$count.</td><td class=\"nw\"><a href=\"$search_url" . "myfirstname=$firstname2&amp;fnqualify=startswith&amp;mybool=AND$treestr\">{$firstname['lowername']}</a> ($tally_fmt)</td>$chartstr</tr>";
     $count++;

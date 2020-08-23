@@ -34,24 +34,23 @@ $link = tng_connect($database_host, $database_username, $database_password, $dat
 if ($link && tng_select_db($link, $database_name)) {
   include $cms['tngpath'] . "checklogin.php";
   if (($assignedtree && $assignedtree != "-x-guest-x-") || !$allow_edit) {
-    //echo "at=$assignedtree, ae=$allow_edit";
     $_POST['subroutine'] = "login";
   }
 }
 
 function createtables($collation) {
-  global $branches_table, $branchlinks_table, $address_table, $cemeteries_table, $children_table, $citations_table, $countries_table;
-  global $events_table, $eventtypes_table, $families_table, $languages_table, $notelinks_table, $media_table, $medialinks_table;
-  global $people_table, $places_table, $reports_table, $repositories_table, $saveimport_table, $sources_table, $states_table, $mostwanted_table; //, $mhrequests_table;
-  global $temp_events_table, $tlevents_table, $trees_table, $users_table, $xnotes_table, $albums_table, $album2entities_table, $albumlinks_table, $assoc_table, $mediatypes_table;
-  global $dna_tests_table, $dna_links_table, $dna_groups_table, $templates_table;
-  global $cms, $link, $tngconfig;
+    global $branches_table, $branchlinks_table, $address_table, $cemeteries_table, $children_table, $citations_table, $countries_table;
+    global $events_table, $eventtypes_table, $families_table, $languages_table, $notelinks_table, $media_table, $medialinks_table;
+    global $people_table, $places_table, $reports_table, $repositories_table, $saveimport_table, $sources_table, $states_table, $mostwanted_table;
+    global $temp_events_table, $tlevents_table, $trees_table, $users_table, $xnotes_table, $albums_table, $album2entities_table, $albumlinks_table, $assoc_table, $mediatypes_table;
+    global $dna_tests_table, $dna_links_table, $dna_groups_table, $templates_table;
+    global $cms, $link, $tngconfig;
 
-  $badtables = "";
+    $badtables = "";
 
-  include $cms['tngpath'] . "tabledefs.php";
+    include $cms['tngpath'] . "tabledefs.php";
 
-  return $badtables;
+    return $badtables;
 }
 
 switch ($_POST['subroutine']) {
@@ -427,9 +426,8 @@ if ($saveconfig) {
   fwrite($fp, "\$tngconfig['hidetotals'] = \"{$tngconfig['hidetotals']}\";\n");
   fwrite($fp, "\$tngconfig['backupdays'] = \"{$tngconfig['backupdays']}\";\n");
   fwrite($fp, "\$tngconfig['webmatches'] = \"{$tngconfig['webmatches']}\";\n");
-  //fwrite( $fp, "\$tngconfig['mhmatchtype'] = \"{$tngconfig['mhmatchtype']}\";\n" );
-  //fwrite( $fp, "\$tngconfig['mhmatchconf'] = \"{$tngconfig['mhmatchconf']}\";\n" );
-  fwrite($fp, "\$tngconfig['sitekey'] = \"{$tngconfig['sitekey']}\";\n");
+
+    fwrite($fp, "\$tngconfig['sitekey'] = \"{$tngconfig['sitekey']}\";\n");
   fwrite($fp, "\$tngconfig['secret'] = \"{$tngconfig['secret']}\";\n");
   fwrite($fp, "\$tngconfig['mediadel'] = \"{$tngconfig['mediadel']}\";\n");
   fwrite($fp, "\$tngconfig['mediathumbs'] = \"{$tngconfig['mediathumbs']}\";\n");

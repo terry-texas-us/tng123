@@ -41,9 +41,7 @@ $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--
 // atDNA Tests
 $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class=\"lightlink\">{$admtext['atdna_test']}</a>";
 
-
 $menu = doMenu($comptabs, "", $innermenu);
-//	echo displayHeadline($text['dnatestscompare_atdna'],"img//dna_icon.gif",$menu,$message);
 ?>
 <h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_atdna']; ?></h1><br clear="left"/>
 <?php
@@ -246,8 +244,8 @@ echo $header;
               $dprights = determineLivingPrivateRights($ancrow, $dna_righttree, $dna_rightbranch);
               $ancrow['allow_living'] = $dprights['living'];
               $ancrow['allow_private'] = $dprights['private'];
-              //$vitalinfo = getBirthInfo($ancrow);
-              $anc_namestr = getName($ancrow);
+
+                $anc_namestr = getName($ancrow);
               $mrcanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>";
               tng_free_result($dna_anc_result);
             } else {

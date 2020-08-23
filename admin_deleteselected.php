@@ -184,8 +184,6 @@ foreach (array_keys($_POST) as $key) {
       $result3 = @tng_query($query3);
       $crow = tng_fetch_assoc($result3);
       tng_free_result($result3);
-      //if( $crow['maplink'] && file_exists( "$rootpath$headstonepath/$crow[maplink]" ) )
-      //unlink( "$rootpath$headstonepath/$crow[maplink]" );
       $items[] = $crow['cemname'];
     } elseif ($xnoteaction) {
       $nquery = "DELETE FROM $notelinks_table WHERE xnoteID=\"$thisid\"";

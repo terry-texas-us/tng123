@@ -47,8 +47,6 @@ function output_iptc_data($info) {
             } else {
               $str = ", NONE";
             }
-            //echo "key=$keytext, data encoding=$enc, TNG charset=$ucharset$str<br>";
-
             $outputtext .= tableRow($keytext, $fact);
           }
         }
@@ -97,11 +95,6 @@ function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID,
       $wherestr = "WHERE mediatypeID = '$mediatypeID'";
       $showall = "mediatypeID=$mediatypeID&amp;";
     }
-    //if( $tree ) {
-    //$wherestr .= " AND $medialinks_table.gedcom = \"$tree\"";
-    //$join = "INNER JOIN";
-    //}
-    //else
     $join = "LEFT JOIN";
     if ($mediasearch) {
       $wherestr .= " AND ($media_table.description LIKE \"%$mediasearch%\" OR $media_table.notes LIKE \"%$mediasearch%\" OR bodytext LIKE \"%$mediasearch%\")";
@@ -177,9 +170,8 @@ function findLivingPrivate($mediaID, $tree) {
   $noneliving = 1;
   $noneprivate = 1;
   $info['private'] = $info['living'] = "";
-  //$rightbranch = $livedefault == 2 ? 1 : 0;
-  //$allrightbranch = 1;
-  while ($prow = tng_fetch_assoc($presult)) {
+
+    while ($prow = tng_fetch_assoc($presult)) {
     if ($prow['private']) {
       $info['private'] = 1;
     }
@@ -221,8 +213,6 @@ function findLivingPrivate($mediaID, $tree) {
 
   $info['noneliving'] = $noneliving;
   $info['noneprivate'] = $noneprivate;
-  //$info['rightbranch'] = $rightbranch;
-  //$info['allrightbranch'] = $allrightbranch;
 
   return $info;
 }
@@ -635,7 +625,6 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
       $filesize = $imgrow['path'] && file_exists("$rootpath$usefolder/" . $imgrow['path']) ? display_size(filesize("$rootpath$usefolder/" . $imgrow['path'])) : "";
       $tabletext .= tableRow($text['filesize'], $filesize);
     }
-    //$tabletext .= tableRow($text['id'], $imgrow['mediaID']);
     if (in_array($imgrow['form'], $imagetypes)) {
       $tabletext .= tableRow($text['photosize'], "$size[0] x $size[1]");
     }

@@ -36,7 +36,6 @@ $slot = 0;
 function setTopMarker($level, $value, $debug) {
   global $topmarker;
 
-  //echo "level=$level, old=" . $topmarker[$level] . ", new=$value ($debug)<br>";
   $topmarker[$level] = $value;
 }
 
@@ -135,7 +134,6 @@ if ($pedigree['colorshift'] > 0) {
 }
 $pedigree['colorshift'] = round($pedigree['colorshift'] / 100 * $extreme / 5);
 $pedigree['url'] = getURL("pedigree", 1);
-//$pedigree[boxcolor] = getColor(1);
 
 function getColor($shifts) {
   global $pedigree;
@@ -275,7 +273,6 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
   // implant a picture (maybe)
   if ($pedigree['inclphotos'] && $pedigree['usepopups']) {
     $photohtouse = $pedigree['boxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
-    //$photoinfo = showSmallPhoto( $person['personID'], $person['name'], $person['allow_living'], $photohtouse );
     $photoInfo = getPhotoSrc($person['personID'], $person['allow_living'] && $person['allow_private'], $person['sex']);
     if ($photoInfo['ref']) {
       $imagestr = "<img src=\"{$photoInfo['ref']}\" border=\"0\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\" />";
@@ -285,7 +282,6 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
       $boxstr .= "<td class=\"lefttop\">$imagestr</td>";
     }
   }
-  //echo "name=$person[name], top=$top<br>\n";
 
   // name info
   if ($person['name']) {
@@ -322,7 +318,6 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left + $pedigree['boxwidth']) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($pedigree['boxHsep'] / 2) + 1) . "px;z-index:3;overflow:hidden\"></div>\n";
       } else {
         $boxstr .= "<div style=\"position: absolute; top:" . ($top + $pedigree['borderwidth'] + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2) + 1) . "px;left:" . ($left + $pedigree['boxwidth'] + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 3) . "px;z-index:5\">\n";
-        //$nextperson = $person['personID'] ? $person['personID'] : $spouseflag;
         $boxstr .= "<a href=\"$descend_url" . "personID=$spouseflag&amp;tree=$tree&amp;generations=$generations&amp;display=$display\" title=\"{$text['popupnote3']}\">{$pedigree['offpagelink']}</a></div>\n";
       }
     }
@@ -387,8 +382,6 @@ function doIndividual($person, $level) {
     $result2 = getChildrenMinimal($tree, $famrow['familyID']);
     $numkids = tng_num_rows($result2);
     if ($level < $generations) {
-      //if( $famrow[$spouse] )
-
       if ($numkids) {
         $needtop[$level + 1] = 1;
         $childleft = $pedigree['leftindent'] + ($pedigree['boxwidth'] + $pedigree['boxHsep'] + $spouseoffset) * $level;
@@ -404,8 +397,8 @@ function doIndividual($person, $level) {
           $vheight = 0;
         }
         if ($numkids == 1 && $spousecount < 2 && !$spouses_for_next_gen[$level + 1]) {
-          //$topmarker[$level + 1] += $pedigree[diff];
-          for ($i = $level + 1; $i <= $generations; $i++)
+
+            for ($i = $level + 1; $i <= $generations; $i++)
             setTopMarker($i, $topmarker[$i] + $pedigree['diff'], "lowering previous gens, 348");
         }
 
@@ -567,10 +560,9 @@ function getData($key, $sex, $level) {
       $stats['slots'] += $famslots;
       $vkey = $row['familyID'] . "-$level";
       $vslots[$vkey] = $famslots;
-      //echo "key=$vkey, slots=" . $vslots[$vkey] . "<br>";
-      $stats['es'] = $fam_es;
+
+        $stats['es'] = $fam_es;
       $vendspouses[$vkey] = $stats['es'];
-      //echo "fam=$row[familyID], stats = $stats[es], fames=$fames, es=$endspouseslots, slots=$famslots <br>";
     }
   }
   tng_free_result($result);
@@ -578,8 +570,8 @@ function getData($key, $sex, $level) {
     $stats['slots'] = 1;
     $vkey = $key . "-$level";
     $vslots[$vkey] = 1;
-    //echo "key=$vkey, slots=" . $vslots[$vkey] . "<br>";
-    $stats['es'] = 0; //do I need this?
+
+      $stats['es'] = 0; //do I need this?
     $vendspouses[$vkey] = 0;
   }
 

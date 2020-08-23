@@ -42,7 +42,6 @@ function tng_sendmail($from_name, $from_email, $to_name, $to_email, $subject, $b
       $mail->AddReplyTo($replyto, $from_name);
 
       $mail->CharSet = strtolower($session_charset);
-      //$mail->WordWrap = 50;
       if ($session_charset && strtoupper($session_charset) != "ISO-8859-1") {
         $mail->IsHTML(true);                                  // set email format to HTML
         $body = nl2br($body);

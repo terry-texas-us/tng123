@@ -86,7 +86,6 @@ include $cms['tngpath'] . "showmedialib.php";
 $mediaperpage = 1;
 $max_showmedia_pages = 5;
 
-//echo "mt=$mediatypeID"; exit;
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $ordernum = $info['ordernum'];
 $mediaID = $info['mediaID'];
@@ -139,9 +138,6 @@ $noneliving = $livinginfo['noneliving'] && $livinginfo['noneprivate'];
 
 $showPhotoInfo = $imgrow['alwayson'] || $noneliving;
 $nonamesloc = $livinginfo['private'] ? $tngconfig['nnpriv'] : $nonames;
-
-//$rightbranch = $livinginfo['rightbranch'];
-//$allrightbranch = $livinginfo['allrightbranch'];
 
 if ($noneliving || !$nonamesloc || $imgrow['alwayson']) {
   $description = preg_replace("/\"/", "&#34;", $mediadescription);

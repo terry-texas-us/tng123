@@ -277,7 +277,6 @@ $query2 = "SELECT count(f.ID) as fcount
 	LEFT JOIN $people_table AS mother ON f.gedcom=mother.gedcom AND wife = mother.personID
 	$allwhere (f.gedcom = $trees_table.gedcom)";
 
-//echo $query;
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
@@ -375,7 +374,7 @@ echo $header;
     </thead>
 <?php
 $i = $offsetplus;
-//$chartlinkimg = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
+
 $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" class=\"chartimg\">";
 while ($row = tng_fetch_assoc($result)) {
   //assemble frow and mrow, override family living flag if allow_living for either of these is no

@@ -23,8 +23,6 @@ if (isset($_SESSION['postvars']) && is_array($_SESSION['postvars'])) {
   }
 }
 
-//echo "li=" . $_SESSION['logged_in'] . ", srp=" . $_SESSION['session_rp'] . ", rp=$rootpath, al=$admin_login, aadb=" . $_SESSION['allow_admin'] . ", cu=$currentuser";
-//exit;
 if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && (!$admin_login || ($_SESSION['allow_admin'] && $currentuser))) {
   if ($currentuser == "Administrator-No-Users-Yet") {
     $query = "SELECT userID FROM $users_table";

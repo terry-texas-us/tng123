@@ -224,7 +224,6 @@ function doMedia($mediatypeID) {
       }
       $href = "";
     }
-    //if( $row[status] ) $notes = "$text[status]: $row[status]. $notes";
 
     $mediatext .= "<tr>";
     $row['mediatypeID'] = $mediatypeID;

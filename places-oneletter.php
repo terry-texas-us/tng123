@@ -163,11 +163,6 @@ echo $formstr;
                       $name .= "psearch=$olplace\">";
 
                       $name .= $place['myplace'];
-                      //if($session_charset == "UTF-8")
-                      //$name .= htmlentities(utf8_decode($place['myplace']),ENT_QUOTES); // this line handles UTF8 issues - R?al Charlebois
-                      //$name .= $place['myplace']; // Roger removed R?al's coding here - it works with curly single quote now
-                      //else
-                      //$name .= htmlentities($place['myplace'],ENT_QUOTES); // this line is not compatible with UTF8 (htmlentities)
                       $name .= "</a>";
 
                       echo "$snnum. $name ({$place['placecount']})$searchlink<br/>\n";

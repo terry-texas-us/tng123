@@ -63,7 +63,6 @@ function handleSource($persfamID, $prevlevel) {
           $mmcount++;
           $mminfo[$mmcount] = getMoreMMInfo($lineinfo['level'], $mmcount);
           $mminfo[$mmcount]['OBJE'] = $matches[1] ? $matches[1] : $mminfo[$mmcount]['FILE'];
-          //$mminfo[$mmcount]['linktype'] = "$prefix"; not sure this matters for citations
         } else {
           $lineinfo = getLine();
         }
@@ -79,15 +78,6 @@ function handleSource($persfamID, $prevlevel) {
   }
 
   return $cite;
-
-  //save it
-  //$prefix = substr( $persfamID, 0, 1 );
-  //$eventtype = $prefix . "_" . $prevtag . "_" . $prevtype;
-  //if( ( $custevents[$eventtype] && $custevents[$eventtype]['keep'] ) || in_array( $prevtag, $stdevents ) || !$prevtag ) {
-  //$eventtypeID = $custevents[$eventtype] ? $custevents[$eventtype]['eventtypeID'] : $prevtag;
-  //$query = "INSERT IGNORE INTO $citations_table (persfamID, gedcom, eventtypeID, sourceID, description, citedate, citedatetr, citetext, page, quay, note ) VALUES(\"$persfamID\", \"$tree\", \"" . $eventtypeID . "\", \"$cite['sourceID']\", \"$cite['desc']\", \"$cite['DATE']\", \"$cite['DATETR']\", \"$cite['TEXT']\", \"$cite['PAGE']\", \"$cite['QUAY']\", \"$cite['NOTE']\" )";
-  //$result = @tng_query( $query ) or die ($admtext['cannotexecutequery'] . ": $query");
-  //}
 }
 
 function initSource() {

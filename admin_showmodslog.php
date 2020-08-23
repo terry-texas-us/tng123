@@ -45,7 +45,6 @@ include "getlang.php";
 
 include "$mylanguage/admintext.php";
 
-//tng_db_connect($database_host,$database_name,$database_username,$database_password) or exit;
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -98,7 +97,7 @@ if (!isset($message)) {
   $message = "";
 }
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
-//$logheader = $options['maxloglines'] . " " . $admtext['recentactions'];
+
 $logheader = $admtext['recentactions'];
 $first_menu = TRUE;
 
@@ -122,7 +121,6 @@ echo "
    $headline
 </div><!--head-section-->";
 
-//if ( $sitever == "standard" && $options['compress_log'] == YES) {
 if ($options['compress_log'] == YES) {
   echo "
 <style>
@@ -136,7 +134,6 @@ if ($options['compress_log'] == YES) {
   $hideDetails = "";
 }
 
-//if (isset( $logfilename) ) $options['modlogfile']=$logfilename; //TEMPORARY CODE - get logfilename from querystring parameter
 $logfilename = 'modmgrlog.txt';
 if (!isset($options['modlogfile'])) {
   $options['modlogfile'] = $logfilename;
@@ -147,10 +144,7 @@ if ($clearmmlog || !file_exists($options['modlogfile'])) {
   file_put_contents($options['modlogfile'], $content);
 }
 $nColumns = 1;
-//echo "<table cellpadding=\"3\" cellspacing=\"1\" class=\"normal lightback w100\">\n";
 //Add the heading with the Mod Manager Recent Actions message
-//echo "<tr><td colspan=\"$nColumns\" class=\"fieldnameback fieldname\">$logheader</td></tr>";
-//echo "</table>";
 
 echo "
 <table id=\"infobar\" class=\"normal lightback $ibarclass\">
@@ -296,14 +290,8 @@ function set_innermenu_links($tng_version) {
   $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"collapseall\">{$text['collapseall']}</a>";
 
   //This section for View Log only to allow clearing the log
-  //if ($options['compress_log'] == YES) {
   $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_showmodslog.php?clearmmlog=true\" onclick=\"return confirm( '{$admtext['confirmclearlog']}')\"; class=\"lightlink\">{$admtext['clearlog']}</a>";
-  //}
-
-  // MM syntax
   $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
-
-  // mod guidelines
   $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
   // mods for TNGv10
@@ -314,7 +302,7 @@ function set_innermenu_links($tng_version) {
 /*************************************************************************
  * JQUERY/JAVASCRIPT FUNCTIONS
  *************************************************************************/
-//$sitever = 'mobile'; //bypass jQuery positioning for testing
+
 if ($sitever != 'mobile' && $options['adjust_headers']) {
   echo "
 <script type=\"text/javascript\">

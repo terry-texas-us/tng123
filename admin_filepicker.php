@@ -32,7 +32,6 @@ if ($path == "gedcom") {
 } else {
   $tngpath = "templates/" . $path . "/img";
   $img = "img/";
-  //$subdir = "img/" . $subdir;
 }
 $pagetotal = 50;
 
@@ -149,9 +148,8 @@ function frmFiles() {
         $nentries = $fnentries;
       }
     }
-    //$nentries = $folders ? $dnentries : $dnentries + $fnentries;
-    foreach ($nentries as $file => $value) {
-      //$file = addslashes($file);
+
+      foreach ($nentries as $file => $value) {
       $filename = $file;
       if (is_file($filename) && $filename != "index.html") {
         $fileparts = pathinfo($filename);
@@ -193,7 +191,6 @@ function frmFiles() {
         $nImageNr++;
       } elseif (is_dir($filename)) {
         if ($filename != '.' && ($filename != '..' || $subdir != '') && $filename != "@eaDir") {
-          //if( ( ( $subdir != '' ) && ( $filename != '.' ) ) || ( ( $subdir == '' ) && ( $filename != '.' ) && ( $filename != '..' ) ) ) {
           if ($nImageNr >= $lStartRec && $nImageShowed < $pagetotal) {
             if ($filename != '..') {
               $newsubdir = $subdir . $filename . '/';
@@ -238,7 +235,6 @@ function frmFiles() {
   ?>
     </table>
   <?php
-  //frmFilesHdFt( $columns, $nCurrentPage, $nPages );
   ?>
     </div>
   <?php

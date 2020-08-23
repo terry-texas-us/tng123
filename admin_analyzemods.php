@@ -9,7 +9,7 @@ include 'adminlib.php';
 $textpart = "mods";
 include 'getlang.php';
 include "$mylanguage/admintext.php";
-//tng_db_connect($database_host,$database_name,$database_username,$database_password) or exit;
+
 $admin_login = 1;
 include 'checklogin.php';
 include 'version.php';
@@ -130,35 +130,16 @@ if ($_GET && is_array($_GET)) {
       </td>
    </tr>";
 
-//echo __LINE__,' ';print_r($targetFiles);exit;
     $id = 1;
-    //$modfiles = get_modfile_names();
-    foreach ($modFiles as $file) {
+
+      foreach ($modFiles as $file) {
       $buffer = file_get_contents($modspath . $file);
       $buffer = htmlentities($buffer);
       $buffer = preg_replace('#([@^~])#', '', $buffer);
       $buffer = str_replace('$modspath', $modspath, $buffer);
       $buffer = str_replace('$extspath', $extspath, $buffer);
 
-
-//echo __LINE__,' ',$buffer;exit;
-
-      /*
-
-      $lines = file( $modspath.$file );
-      $contents ='';
-      foreach ($lines as $line) {
-         $line = str_replace ('<', '&lt;', $line);
-         $line = str_replace ('>', '&gt;', $line);
-         $line = trim ($line);
-         if (!empty ($line)) {
-            $contents .= $line . '<br />';
-         }
-      }
-      */
       if ($file == 'add_my_copyright_v11.0.0.1.cfg') {
-        //print_r( $buffer );exit;
-        //echo __LINE__,' ';print_r( $file );exit;
       }
       if (strpos($buffer, "%target:$mtarget%") || strpos($buffer, "%target: $mtarget")) {
         echo "
@@ -181,7 +162,7 @@ echo "
 /*************************************************************************
  * JAVASCRIPT SECTION
  *************************************************************************/
-//$sitever = 'mobile'; //turns off jQuery positioning for testing
+
 if ($sitever != 'mobile' && $options['adjust_headers']) {
   echo "
 <script type=\"text/javascript\">

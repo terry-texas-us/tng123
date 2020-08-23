@@ -165,8 +165,8 @@ class modremover extends modparser
           $tng_code = $tags[$j]['arg1'];
 
           $j++; // go to optag
-//echo __LINE__,' ',print_r( $tags[$j] );exit;
-          $optag = $tags[$j]['name'];
+
+            $optag = $tags[$j]['name'];
           $new_code = $tags[$j]['arg1'];
           $logstring .= "(%$optag:)&nbsp;";
         }
@@ -186,8 +186,8 @@ class modremover extends modparser
             $this->remove_vinserts($target_file_contents, $optag, $new_code, $logstring);
             continue 2; // finished - get next tag
           case 'vinsert:after':
-//echo __LINE__,' ',$target_file_contents;exit;
-            $this->remove_vinserts($target_file_contents, $optag, $new_code, $logstring);
+
+          $this->remove_vinserts($target_file_contents, $optag, $new_code, $logstring);
             continue 2;  // finished - get next tag
           case 'replace':
           case 'trimreplace':

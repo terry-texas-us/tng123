@@ -12,9 +12,153 @@
   <component name="ChangeListManager">
     <list default="true" id="b8a60443-a99a-4f0f-a78c-0ebfc44b901a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/begin.php" beforeDir="false" afterPath="$PROJECT_DIR$/begin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TNG_captcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/TNG_captcha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addevent.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addevent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_addperson2.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_addperson2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_albums.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_albums.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_analyzemods.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_analyzemods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_branchlabels.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_branchlabels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_dataimport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dataimport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_deleteselected.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_deleteselected.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_diagnostics.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_diagnostics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_editalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editalbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_editmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_editmore.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editmore.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_editperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_editperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_filepicker.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_filepicker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_gedcom2.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedcom2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_gedimport.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedimport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_gedimport_eventtypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_gedimport_eventtypes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_geocode.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_geocode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_media.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_medialinksxml.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_medialinksxml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_merge.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_merge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_mergerepos.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mergerepos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_mergesources.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mergesources.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modhandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modhandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modoptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modoptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modtables.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modtables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_modupdates.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_modupdates.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_mostwanted.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_mostwanted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_newmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_newmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_newtree.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_newtree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_people.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_people.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_photoimporter.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_photoimporter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_renumber.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_renumber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_savewhatsnewmsg.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_savewhatsnewmsg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_showmodslog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_showmodslog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_tablecreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_tablecreate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_templateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_templateconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_update_dna_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_update_dna_test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updateassoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateassoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updateevent.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateevent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatefamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatefamily.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updateimportconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateimportconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatemedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatemodoptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemodoptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatemostwanted.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatemostwanted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updateperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updateselectedmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updateselectedmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_updatetemplateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_updatetemplateconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/adminlog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ahnentafel.php" beforeDir="false" afterPath="$PROJECT_DIR$/ahnentafel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_addbookmark.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_addbookmark.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_deletebookmark.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_deletebookmark.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_editfamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_editfamily.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_editperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_editperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_editprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_editprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_labels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_mediaconvert.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_mediaconvert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_pedjson.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_pedjson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_perspreview.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_perspreview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_tnginstall.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_tnginstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajx_updateorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajx_updateorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anniversaries.php" beforeDir="false" afterPath="$PROJECT_DIR$/anniversaries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browse_dna_tests.php" beforeDir="false" afterPath="$PROJECT_DIR$/browse_dna_tests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsealbums.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsealbums.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsemedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsemedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browsenotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/browsenotes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calsettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/calsettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cemeteries.php" beforeDir="false" afterPath="$PROJECT_DIR$/cemeteries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checklogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/checklogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modbase.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modbase.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/moddeleter.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/moddeleter.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modeditor.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modeditor.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modinstaller.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modinstaller.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modlister.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modlister.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modparser.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modparser.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/modremover.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/modremover.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_atdna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_atdna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_mtdna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_mtdna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compare_selected_ydna.php" beforeDir="false" afterPath="$PROJECT_DIR$/compare_selected_ydna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datelib.php" beforeDir="false" afterPath="$PROJECT_DIR$/datelib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descend.php" beforeDir="false" afterPath="$PROJECT_DIR$/descend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descendtext.php" beforeDir="false" afterPath="$PROJECT_DIR$/descendtext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desctracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/desctracker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extrastree.php" beforeDir="false" afterPath="$PROJECT_DIR$/extrastree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/familygroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/familygroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/famsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/famsearchform.php" beforeDir="false" afterPath="$PROJECT_DIR$/famsearchform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finditems.php" beforeDir="false" afterPath="$PROJECT_DIR$/finditems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/findperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findperson2.php" beforeDir="false" afterPath="$PROJECT_DIR$/findperson2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstnames-oneletter.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstnames-oneletter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstnames.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstnames.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedcom.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedcom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedimport_misc.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_misc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedimport_people.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_people.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedimport_sources.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_sources.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedimport_trees.php" beforeDir="false" afterPath="$PROJECT_DIR$/gedimport_trees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/genlib.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genlog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getperson.php" beforeDir="false" afterPath="$PROJECT_DIR$/getperson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/globallib.php" beforeDir="false" afterPath="$PROJECT_DIR$/globallib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/googlemaplib.php" beforeDir="false" afterPath="$PROJECT_DIR$/googlemaplib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heatmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/heatmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.php" beforeDir="false" afterPath="$PROJECT_DIR$/log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modinfo_demo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modinfo_demo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pedigree.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedigree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pedigreetext.php" beforeDir="false" afterPath="$PROJECT_DIR$/pedigreetext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/personlib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places-oneletter.php" beforeDir="false" afterPath="$PROJECT_DIR$/places-oneletter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/placesearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/placesearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reglib.php" beforeDir="false" afterPath="$PROJECT_DIR$/reglib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relationship.php" beforeDir="false" afterPath="$PROJECT_DIR$/relationship.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_descend.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_descend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_fam.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_fam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_ind.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_ind.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_pdfform.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_pdfform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpt_pedigree.php" beforeDir="false" afterPath="$PROJECT_DIR$/rpt_pedigree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchform.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchlib.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchlib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showalbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/showalbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/showlog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showmedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showmedialib.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmedialib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showmediaxmllib.php" beforeDir="false" afterPath="$PROJECT_DIR$/showmediaxmllib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showreport.php" beforeDir="false" afterPath="$PROJECT_DIR$/showreport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showsource.php" beforeDir="false" afterPath="$PROJECT_DIR$/showsource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggest.php" beforeDir="false" afterPath="$PROJECT_DIR$/suggest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surnames-oneletter.php" beforeDir="false" afterPath="$PROJECT_DIR$/surnames-oneletter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surnames.php" beforeDir="false" afterPath="$PROJECT_DIR$/surnames.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tfpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/tfpdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeline2.php" beforeDir="false" afterPath="$PROJECT_DIR$/timeline2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngfiletypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngfiletypes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngmaillib.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngmaillib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngpdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngrobots.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngrobots.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tngrss.php" beforeDir="false" afterPath="$PROJECT_DIR$/tngrss.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treequery.php" beforeDir="false" afterPath="$PROJECT_DIR$/treequery.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +167,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,10 +205,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML&#10;TEXT" />
-    <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="aPHP - only" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="run.code.analysis.last.selected.profile" value="aJavascript - only" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="two.files.diff.last.used.file" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
   </component>
   <component name="RecentsManager">
@@ -100,6 +260,7 @@
       <workItem from="1597930687347" duration="15015000" />
       <workItem from="1597956279767" duration="34513000" />
       <workItem from="1598104159761" duration="13047000" />
+      <workItem from="1598184484489" duration="13110000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit after project code reformat">
       <created>1597598834728</created>
@@ -241,7 +402,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597873903992</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixed errors in editfamily.js, function unlinkChild.">
+      <created>1598186871265</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1598186871265</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixed errors in editfamily.js, function unlinkChild.">
+      <created>1598186932567</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1598186932567</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,14 +492,15 @@
     <MESSAGE value="Deleted commented magic quotes code." />
     <MESSAGE value="fixed htlm error in admin_editsource.php." />
     <MESSAGE value="fixed html error in admin_editsource.php." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed html error in admin_editsource.php." />
+    <MESSAGE value="fixed errors in editfamily.js, function unlinkChild." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed errors in editfamily.js, function unlinkChild." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1324" y="155" width="827" height="899" key="#Inspections" timestamp="1597859458219">
+    <state x="1324" y="155" width="827" height="899" key="#Inspections" timestamp="1598191374971">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1324" y="155" width="827" height="899" key="#Inspections/0.0.2560.1440@0.0.2560.1440" timestamp="1597859458219" />
+    <state x="1324" y="155" width="827" height="899" key="#Inspections/0.0.2560.1440@0.0.2560.1440" timestamp="1598191374971" />
     <state x="873" y="379" width="814" height="729" key="#Intentions" timestamp="1597699705800">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -357,26 +533,26 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1148" y="421" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1/0.0.2560.1440@0.0.2560.1440" timestamp="1597851504924" />
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597764510072">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598191552389">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1597764510072" />
-    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1597873903509">
+    <state x="1029" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1440@0.0.2560.1440" timestamp="1598191552389" />
+    <state x="904" y="306" key="CommitChangelistDialog2" timestamp="1598186932085">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1597873903509" />
+    <state x="904" y="306" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1598186932085" />
     <state width="412" height="466" key="DebuggerActiveHint" timestamp="1597859687964">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="412" height="466" key="DebuggerActiveHint/0.0.2560.1440@0.0.2560.1440" timestamp="1597859687964" />
-    <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog" timestamp="1598070615589">
+    <state x="93" y="93" width="2375" height="1255" maximized="true" key="DiffContextDialog" timestamp="1598149282510">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="DiffContextDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state x="1061" y="475" key="FileChooserDialogImpl" timestamp="1598070494268">
+    <state x="93" y="93" width="2375" height="1255" maximized="true" key="DiffContextDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598149282510" />
+    <state x="1061" y="475" key="FileChooserDialogImpl" timestamp="1598150044061">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1061" y="475" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1598070494268" />
+    <state x="1061" y="475" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1598150044061" />
     <state x="1160" y="370" width="771" height="452" key="Github.ShareDialog" timestamp="1597597593025">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -385,82 +561,82 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1029" y="425" key="Github.UntrackedFilesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597597605745" />
-    <state width="2517" height="266" key="GridCell.Tab.0.bottom" timestamp="1598126890457">
+    <state width="2517" height="266" key="GridCell.Tab.0.bottom" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1598126890457" />
-    <state width="2517" height="266" key="GridCell.Tab.0.center" timestamp="1598126890457">
+    <state width="2517" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.0.center" timestamp="1598197680465">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1598126890457" />
-    <state width="2517" height="266" key="GridCell.Tab.0.left" timestamp="1598126890457">
+    <state width="2517" height="266" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680465" />
+    <state width="2517" height="266" key="GridCell.Tab.0.left" timestamp="1598197680465">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1598126890457" />
-    <state width="2517" height="266" key="GridCell.Tab.0.right" timestamp="1598126890457">
+    <state width="2517" height="266" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680465" />
+    <state width="2517" height="266" key="GridCell.Tab.0.right" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1598126890457" />
-    <state width="2517" height="266" key="GridCell.Tab.1.bottom" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.1.bottom" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.1.center" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.1.center" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.1.left" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.1.left" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.1.right" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.1.right" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.2.bottom" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.2.bottom" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.2.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.2.center" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.2.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.2.center" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.2.center/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.2.left" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.2.center/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.2.left" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.2.left/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state width="2517" height="266" key="GridCell.Tab.2.right" timestamp="1598070615589">
+    <state width="2517" height="266" key="GridCell.Tab.2.left/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state width="2517" height="266" key="GridCell.Tab.2.right" timestamp="1598197680466">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="266" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1598070615589" />
-    <state x="1117" y="644" key="NewPhpFileDialog" timestamp="1597874063932">
+    <state width="2517" height="266" key="GridCell.Tab.2.right/0.0.2560.1440@0.0.2560.1440" timestamp="1598197680466" />
+    <state x="1117" y="644" key="NewPhpFileDialog" timestamp="1598134494038">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1117" y="644" key="NewPhpFileDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597874063932" />
-    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1598126733675">
+    <state x="1117" y="644" key="NewPhpFileDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598134494038" />
+    <state x="1102" y="423" key="RollbackChangesDialog" timestamp="1598137580718">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598126733675" />
-    <state x="782" y="43" width="1283" height="1289" key="SettingsEditor" timestamp="1597856016280">
+    <state x="1102" y="423" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598137580718" />
+    <state x="782" y="43" width="1283" height="1289" key="SettingsEditor" timestamp="1598190933190">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="782" y="43" width="1283" height="1289" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1597856016280" />
+    <state x="782" y="43" width="1283" height="1289" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1598190933190" />
     <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog" timestamp="1597765461304">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="93" y="93" width="2375" height="1255" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597765461304" />
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1597873906039">
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2" timestamp="1598186935689">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1597873906039" />
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597762474725">
+    <state x="1091" y="294" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1598186935689" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598149282510">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597762474725" />
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1597729162542">
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598149282510" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1598137782227">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1597729162542" />
+    <state x="93" y="93" width="2375" height="1255" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1598137782227" />
     <state x="1132" y="454" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1597599483610">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -469,10 +645,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="828" y="456" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1440@0.0.2560.1440" timestamp="1597956438574" />
-    <state x="729" y="196" width="984" height="842" key="find.popup" timestamp="1598126996899">
+    <state x="729" y="196" width="984" height="842" key="find.popup" timestamp="1598195367814">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="729" y="196" width="984" height="842" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1598126996899" />
+    <state x="729" y="196" width="984" height="842" key="find.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1598195367814" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -508,11 +684,6 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin_templateconfig.php</url>
-          <line>18</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/admin_data_validation.php</url>
           <line>13</line>
           <option name="timeStamp" value="36" />
@@ -534,12 +705,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/placesearch.php</url>
-          <line>279</line>
+          <line>277</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/placesearch.php</url>
-          <line>273</line>
+          <line>271</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

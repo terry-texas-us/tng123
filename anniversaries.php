@@ -439,10 +439,8 @@ if ($tngneedresults) {
     }
     //pass assembled values to the table mechanism below
 
-
-    //echo "debug: $query<br>\n";
-    $result = tng_query($query);
-    $numrows = tng_num_rows($result);
+$result = tng_query($query);
+      $numrows = tng_num_rows($result);
 
     if ($numrows == $maxsearchresults || $offsetplus > 1) {
       if ($needfamilies) {

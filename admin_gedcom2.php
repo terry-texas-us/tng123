@@ -257,7 +257,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
           if (!is_array($notearray[$eventid])) {
             $notearray[$eventid] = array();
           }
-          //array_push( $notearray[$eventid], $newnote );
           $innerarray = array();
           $innerarray['text'] = $newnote;
           $innerarray['id'] = "N" . $notelink['ID'];
@@ -323,14 +322,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
           $notetxt = str_replace("@", "@@", $notetxt);
         }
         $notes = preg_split('/\r\n|\n/', $notetxt);
-        //$note = trim( array_shift( $notes ) );
-        if ($level) {
+
+          if ($level) {
           $note = array_shift($notes);
           $noteinfo .= getNoteLine($level, $label, $note, 1);
         }
         $level++;
         foreach ($notes as $note) {
-          //$note = trim($note);
           $noteinfo .= getNoteLine($level, "CONT", $note, 0);
         }
         if ($private) {
@@ -408,11 +406,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         $citations = getCitations($xnotetxt['noteID']);
         $xnotestr .= writeCitation($citations['NAME'], $level + 2);
 
-        //$notes = split ( chr(10), $xnotetxt['note'] );
-        //foreach ( $notes as $note )
-        //$xnotestr .= "1 CONT $note$lineending";
-
-        //ncount purposefully not incremented here
         if ($saveimport) {
           $savestate['offset'] = ftell($fp);
           $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$xnotetxt['noteID']}\" WHERE gedcom = \"$tree\"";
@@ -451,14 +444,12 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
               } else {
                 $thisexppath = $exppath[$mediatypeID];
                 $thisexpdir = $expdir[$mediatypeID];
-                //$linktxt .= "1 OBJE$lineending";
-                if (!$prow['form']) {
+
+                  if (!$prow['form']) {
                   preg_match("/\.(.+)$/", $prow['path'], $matches);
                   $prow['form'] = $matches[1];
                 }
 
-                //strip $prow['path'] down to just the file name
-                //$filename = basename( $prow['path'] );
                 if (!$thisexpdir && strpos($prow['path'], "/")) {
                   $thisexpdir = 1;
                 }
@@ -744,9 +735,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             }
 
             $info .= doNotesAndMedia($indnotes, $indmedia, "NAME", 2);
-            //if( $indnotes['NAME'] )
-            //	$info .= writeNote( 2, "NOTE", $indnotes['NAME'] );
-            if ($ind['prefix']) {
+
+              if ($ind['prefix']) {
               $info .= "2 NPFX {$ind['prefix']}$lineending";
               if ($indnotes['NPFX']) {
                 $info .= writeNote(3, "NOTE", $indnotes['NPFX']);
@@ -1527,7 +1517,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 . "0 @SUB1@ SUBM$lineending"
                 . "1 NAME $ownername$lineending"
                 . "1 EMAIL $owneremail$lineending";
-        //if( $templeready ) $firstpart .= "1 DEST TempleReady$lineending";
 
         fwrite($fp, "$firstpart");
       }

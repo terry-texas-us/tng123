@@ -96,9 +96,6 @@ if (!class_exists('TNGPDF')) {
       if ($h == 0) {
         $h = $w * $info['h'] / $info['w'];
       }
-      //if ($just == 'C') {
-      //    $x = $this->lMargin + (($this->w - $this->lMargin - $this->rMargin) / 2) - ($w / 2);
-      //}
       $this->_out(sprintf('q %.2f 0 0 %.2f %.2f %.2f cm /I%d Do Q', $w * $this->k, $h * $this->k, $x * $this->k, ($this->h - ($y + $h)) * $this->k, $info['i']));
       if ($link) {
         $this->Link($x, $y, $w, $h, $link);
@@ -275,7 +272,6 @@ if (!class_exists('TNGPDF')) {
     }
 
     public function SetStyle($tag, $enable) {
-      //echo "setting style";
       //Modify style and select corresponding font
       $this->$tag += ($enable ? 1 : -1);
       $style = '';
@@ -285,43 +281,6 @@ if (!class_exists('TNGPDF')) {
         }
       $this->SetFont('', $style);
     }
-
-    /*
-    function AddFont($family,$style='',$file='')
-    {
-      //Add a TrueType or Type1 font
-      $family=strtolower($family);
-      $style=strtoupper($style);
-      if($style=='IB')
-        $style='BI';
-      $subdir='';
-      if($this->charset=='UTF-8')
-        $subdir='/unifont';
-      // don't fail here, just return
-      if(isset($this->fonts[$family.$style]))
-        return;
-      if($file=='')
-        $file=str_replace(' ','',$family).strtolower($style).'.php';
-      // if a style is available, revert to the regular font
-      if(!is_file($this->_getfontpath().$family.$subdir.'/'.$file))
-        $file=str_replace(' ','',$family).'.php';
-      include $this->_getfontpath().$family.$subdir.'/'.$file;
-      if(!isset($name))
-        $this->Error('Could not include font definition file: '.$file);
-      $i=count($this->fonts)+1;
-      if ($type == 'core')
-          $this->fonts[$family.$style]=array('i'=>$i,'type'=>$type,'family'=>$family,'name'=>$name,'up'=>$up,'ut'=>$ut,'cw'=>$cw);
-      else
-          $this->fonts[$family.$style]=array('i'=>$i,'type'=>$type,'family'=>$family,'name'=>$name,'desc'=>$desc,'up'=>$up,'ut'=>$ut,'cw'=>$cw,'file'=>$file,'ctg'=>$ctg);
-      if($file)
-      {
-        if($type=='TrueTypeUnicode')
-          $this->FontFiles[$file]=array('family'=>$family,'length1'=>$originalsize);
-        elseif ($type!='core')
-          $this->FontFiles[$file]=array('family'=>$family,'length1'=>$size1,'length2'=>$size2);
-      }
-    }
-    */
 
     public function GetPageSize() {
       $dim = array();
@@ -356,7 +315,6 @@ if (!class_exists('TNGPDF')) {
       if ($this->page == 1 && $titleConfig['skipFirst'] == 'true') {
         return;
       }
-      //echo "bold=" . $this->bold;
       $this->SetFont($titleConfig['font'], $this->bold, $titleConfig['fontSize']);
       $origlMargin = $this->lMargin;
       $this->lMargin = $titleConfig['lMargin'];

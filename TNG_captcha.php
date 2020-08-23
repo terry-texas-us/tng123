@@ -27,7 +27,6 @@ if ($tngSiteKey && $tngSecret) {
   //as the Theme. The last uncommented line will be in effect.
 
   $captchatheme = "light";
-  //$captchatheme = "dark";
 
 
   // This "switch" statement sets the language code for the reCAPTCHA

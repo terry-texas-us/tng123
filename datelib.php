@@ -147,7 +147,6 @@ function convertDate($olddate) {
           $newyear--;
         }
         $newday = cal_days_in_month(CAL_GREGORIAN, $newmonth, $newyear);
-        //$newday = date('t', mktime(0, 0, 0, $newmonth, $newyear));
       }
     }
     $newdate = sprintf("%04d-%02d-%02d", $newyear, $newmonth, $newday);

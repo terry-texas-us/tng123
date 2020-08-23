@@ -198,12 +198,8 @@ function getIndividualRecord($personID, $prevlevel) {
             $events[$custeventctr] = initEventHolder();
             $events[$custeventctr]['TAG'] = $tag;
             $thisevent = $prefix . "_" . $tag . "_";
-            //make sure it's a keeper before continuing by checking against type_tag_desc list
-            //if( in_array( $thisevent, $custeventlist ) )
-            //do it anyway
-            $events[$custeventctr]['INFO'] = getMoreInfo($personID, $lineinfo['level'], $tag, "");
-            //else
-            //	$lineinfo = getLine();
+
+              $events[$custeventctr]['INFO'] = getMoreInfo($personID, $lineinfo['level'], $tag, "");
           } else {
             $info[$tag] = getMoreInfo($personID, $lineinfo['level'], $tag, "");
             if (isset($info[$tag]['NOTES'])) {
@@ -481,12 +477,6 @@ function getIndividualRecord($personID, $prevlevel) {
     }
   }
 
-  //process surname prefix if necessary
-  //if( $info['NAME']['SPFX'] && $lnprefixes) {
-  //$info['lnprefix'] = $info['NAME']['SPFX'];
-  //$gotit = 1;
-  //}
-  //else {
   $gotit = 0;
   if ($info['SURN'] && $lnprefixes) {
     $lastname = preg_replace("/'/", "' ", stripslashes($info['SURN']));
@@ -534,7 +524,6 @@ function getIndividualRecord($personID, $prevlevel) {
       }
     }
   }
-  //}
   if ($gotit) {
     $info['lnprefix'] = addslashes($fullprefix);
     $info['SURN'] = addslashes(trim($fullsurname));

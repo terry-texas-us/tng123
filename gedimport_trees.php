@@ -8,7 +8,6 @@ function ClearData($tree) {
           $assoc_table,
           $children_table,
           $citations_table,
-    //$events_table,
           $families_table,
           $notelinks_table,
           $people_table,

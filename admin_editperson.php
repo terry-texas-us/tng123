@@ -680,7 +680,6 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
               if ($marriages && tng_num_rows($marriages)) {
               while ($marriagerow = tng_fetch_assoc($marriages))
               {
-              //if( !$spouse ) {
               if ($personID == $marriagerow['husband']) {
                 $self = "husband";
                 $spouse = "wife";
@@ -690,7 +689,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                   $spouse = "husband";
                 }
               }
-              //}
+
               echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
               echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
               if ($marrcount > 1) {

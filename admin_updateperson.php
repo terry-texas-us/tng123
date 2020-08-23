@@ -210,9 +210,8 @@ if (!$editconflict) {
       }
       $familyliving = ($living || $spouseliving) ? 1 : 0;
       $familyprivate = ($private || $spouseprivate) ? 1 : 0;
-      //branch clause removed in 11.1.1; probably shouldn't have been there
-      //$query = "UPDATE $families_table SET living = \"$familyliving\", private = \"$familyprivate\", branch = \"$allbranches\" WHERE familyID = \"{$marriagerow['familyID']}\" AND gedcom = \"$tree\"";
-      $query = "UPDATE $families_table SET living = \"$familyliving\", private = \"$familyprivate\" WHERE familyID = \"{$marriagerow['familyID']}\" AND gedcom = \"$tree\"";
+
+        $query = "UPDATE $families_table SET living = \"$familyliving\", private = \"$familyprivate\" WHERE familyID = \"{$marriagerow['familyID']}\" AND gedcom = \"$tree\"";
       $spouseresult = @tng_query($query);
     }
   }

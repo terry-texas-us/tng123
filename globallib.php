@@ -95,7 +95,6 @@ function getNameUniversal($row, $order, $hcard = null) {
       $row[$index] = '';
     }
 
-  //$nonames = showNames($row);
   $lastname = trim($row['lnprefix'] . " " . $row['lastname']);
   if (!empty($tngconfig['ucsurnames'])) {
     $lastname = tng_strtoupper($lastname);
@@ -333,8 +332,8 @@ function determineLivingRights($row, $usedb = 0, $allow_living_db = 0, $allow_pr
   $allow_private_loc = $usedb ? $allow_private_db : $allow_private;
 
   $rightbranch = checkbranch($row['branch']) ? 1 : 0;
-  //echo "myg=" . $_SESSION['mygedcom'] . ", myp=" . $_SESSION['mypersonID'] . "rp=" . $row['personID'] . "<br>";
-  //change $tree back to $row[gedcom] after all calling pages can be updated
+
+    //change $tree back to $row[gedcom] after all calling pages can be updated
   $living = $row['living'];
   $private = $row['private'];
 
@@ -347,7 +346,6 @@ function determineLivingRights($row, $usedb = 0, $allow_living_db = 0, $allow_pr
       if ($livedefault != 2) {   //everyone has living rights
         if ((!$allow_living_loc || !$rightbranch) && !$user_person) {
           $yes_living = false;
-          //echo "fn={$row['firstname']}, al=$allow_living, br={$row['branch']}, rb=$rightbranch, up=$user_person<br>";
         }
       }
     }
@@ -358,7 +356,6 @@ function determineLivingRights($row, $usedb = 0, $allow_living_db = 0, $allow_pr
     }
     $livingrights = $yes_living && $yes_private ? 1 : 0;
   }
-  //$livingrights = ((!$row['private'] || $allow_private) && (!$row['living'] || $livedefault == 2)) || ($allow_living && $rightbranch) || ($_SESSION['mypersonID'] && $_SESSION['mygedcom'] == $tree && $_SESSION['mypersonID'] == $row['personID']) ? 1 : 0;
 
   return $livingrights;
 }
@@ -406,7 +403,6 @@ function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranc
     if ($ldsdefault == 2 && (($allow_lds && $righttreebranch) || $user_person)) {
       $rights['lds'] = true;
     }
-    //echo $righttree . " " . $righttreebranch . " " . $row['branch'] . " | ";
   }
   $rights['both'] = $rights['private'] && $rights['living'];
 
@@ -826,7 +822,6 @@ function getDisplayYear($datestr, $trueyear) {
       $display = $trueyear ? $prefix . $trueyear : $newstr;
     }
   }
-  //echo "dd=$datestr, ds=$newstr, np=$numParts, r=$rest, lp=" . $parts[$numParts-1];
 
   return $display;
 }
@@ -1339,13 +1334,4 @@ function isConnected() {
   } else {
     return true;
   }
-
-  // use 80 for http or 443 for https protocol
-  //$connected = @fsockopen("www.google.com", 80);
-  //if ($connected){
-  //    fclose($connected);
-  //    return true;
-  //}
-  //else
-  //    return false;
 }

@@ -40,8 +40,8 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
 						VALUES (\"$mediatypeID\",\"$path/$filename\",\"$tree\",\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",\"0\",\"\",\"0\",\"\",\"\",\"0\",\"0\",\"\",\"\",\"0\",\"\",\"0\",\"0\",\"1\")";
           $result = @tng_query($query);
           $success = tng_affected_rows();
-          //$success = 1;
-          if ($success) {
+
+            if ($success) {
             echo "success<br/>\n";
             $totalImported++;
           } else {

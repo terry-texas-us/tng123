@@ -71,7 +71,6 @@ function showDatePlace($event) {
   $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
   $dptext .= "<td valign=\"top\" class=\"databack\"";
   if ($allow_lds_this && $event['ldstext']) {
-    //$dptext .= " " . $event['eventlds'];
     if ($event['eventlds'] == "div") {
       $dptext .= " colspan=\"4\"";
     }
@@ -430,7 +429,6 @@ $famalbums = getAlbums($famrow, "F");
 
 $famtext .= "<ul class=\"nopad\">\n";
 $famtext .= beginSection("info");
-//$famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" width=\"100%\">\n";
 
 //get husband & spouses
 if ($famrow['husband']) {
@@ -458,9 +456,6 @@ $children = tng_query($query);
 
 
 if ($children && tng_num_rows($children)) {
-  //put a break here, title "Children"
-  //$famtext .= showBreak('medbreak');
-
   $childcount = 0;
   while ($childrow = tng_fetch_assoc($children)) {
     $childcount++;
@@ -469,9 +464,6 @@ if ($children && tng_num_rows($children)) {
 }
 tng_free_result($children);
 
-//put a break here, title "Sources"
-//$famtext .= showBreak('medbreak');
-//$famtext .= "</table>\n";
 $famtext .= endSection("info");
 
 $firstsection = 1;

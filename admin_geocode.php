@@ -45,7 +45,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
               <?php
               $treestr = $tree1 ? " AND gedcom = \"$tree1\"" : "";
               $limitstr = $limit ? "LIMIT $limit" : "";
-              //$limitstr = "LIMIT 1";
+
               $query = "SELECT ID, place FROM $places_table WHERE (latitude = \"\" OR latitude IS NULL) AND (longitude = \"\" OR longitude IS NULL) AND temple != \"1\" AND geoignore != \"1\"$treestr ORDER BY place $limitstr";
               $result = tng_query($query);
 

@@ -90,7 +90,6 @@ function getMediaLinksToSave() {
     $key = preg_replace("/[^A-Za-z0-9:]/", "", $key);
     $value = $row['medialinkID'];
     $medialinks[$key][] = $value;
-    //$eventlinks[$value] = $row['eventID'];
   }
   return $medialinks;
 }
@@ -181,7 +180,7 @@ if (isset($remotefile) && $remotefile && $remotefile != "none") {
     $gedfilename = tng_extract($gedfilename);
 
     $fp = @fopen($gedfilename, "r");
-    //$fp = @fopen("xxx","r");
+
     if ($fp === false) {
       $openmsg = $admtext['cannotopen'] . " $basefilename. " . $admtext['umps'];
     } else {
@@ -313,7 +312,6 @@ if ($savestate['filename']) {
     if ($fp !== false) {
       $fstat = fstat($fp);
       fseek($fp, $savestate['offset']);
-      //$openmsg = "$savestate['filename'] $admtext['openedtoresume']" . $admtext['importinggedcom'];
       $openmsg = $admtext['importinggedcom'];
       $clearedtogo = "true";
 
@@ -430,7 +428,7 @@ if ($fp !== false) {
     $custevents[$eventtype]['display'] = $row['display'];
     $custevents[$eventtype]['eventtypeID'] = $row['eventtypeID'];
     if ($row['keep'] && !in_array($eventtype, $custeventlist)) {
-      array_push($custeventlist, $eventtype);  //used to be $row['tag']
+        array_push($custeventlist, $eventtype);
     }
   }
   tng_free_result($result);
@@ -497,25 +495,6 @@ if ($fp !== false) {
   }
   @fclose($fp);
 
-  //blank out remaining event-based media links
-  //foreach($medialinks as $medialinkarr) {
-  //foreach($medialinkarr as $medialinkID) {
-  //$query = "UPDATE $medialinks_table SET eventID = \"\" WHERE medialinkID = \"$medialinkID\"";
-  //$result = @tng_query($query);
-  //if(!tng_affected_rows()) {
-  //$query = "DELETE FROM $medialinks_table WHERE medialinkID = \"$medialinkID\"";
-  //$result = @tng_query($query);
-  //}
-  //}
-  //}
-  //delete remaining holdover events (used for media link preservation)
-  //$query = "DELETE from $events_table WHERE gedcom = \"$tree\" AND persfamID = \"XXX\"";
-  //$result = @tng_query($query);
-
-  //if( $saveimport ) {
-  //	$sql = "DELETE from $saveimport_table WHERE gedcom = \"$tree\"";
-  //	$result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $query");
-  //}
   $treemsg = $tree ? ", " . $admtext['tree'] . ": $tree/" : "";
   adminwritelog("{$admtext['gedimport']}: " . basename($admtext['filename']) . ":{$savestate['filename']}$treemsg; {$savestate['icount']} {$admtext['people']}, {$savestate['fcount']} {$admtext['families']}, {$savestate['scount']} {$admtext['sources']}, {$savestate['ncount']} {$admtext['notes']}, {$savestate['mcount']} {$admtext['media']}, {$savestate['pcount']} {$admtext['places']}");
   if (!empty($old)) {

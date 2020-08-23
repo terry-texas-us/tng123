@@ -8,8 +8,6 @@ include $cms['tngpath'] . "pedbox.php";
 $relate_url = getURL("relateform", 1);
 $relationship_url = getURL("relationship", 1);
 
-//$highest = 0;
-//$lowest = 0;
 $totalRelationships = 0;
 $needmore = true;
 
@@ -77,8 +75,8 @@ class Relationship
     } else {
       if ($this->split || $this->multparents) {  //(tree is split at the top)
         //cousins or siblings or aunt/uncle
-        //echo "up=" . $this->upcount . ", down=" . $this->downcount;
-        if ($this->downcount == 1 && $this->upcount == 1) {
+
+          if ($this->downcount == 1 && $this->upcount == 1) {
           $msgarray = $this->half ? array($text['halfbrother'], $text['halfsister'], $text['halfsibling']) : array($text['brother'], $text['sister'], $text['sibling']);
           $relmsg = $this->getRelMsg($this->spouseflag, $name1, $g1, $name2, $g2, $msgarray);
         } elseif (!$this->downcount) {
@@ -138,8 +136,8 @@ class Relationship
         }
       } else {
         //direct relationship
-        //echo "up=" . $this->upcount . ", down=" . $this->downcount;
-        if ($this->downcount == 2 || $this->upcount == 1) {
+
+          if ($this->downcount == 2 || $this->upcount == 1) {
           //son/daughter (get sex of person ?)
           $thisgender = $g1;
           if ($this->spouseflag) {
@@ -187,7 +185,6 @@ class Relationship
 
     if ($spouseflag == 1) {
       $spousemsg = $gender2 == "M" ? $text['rwife'] : ($gender2 == "F" ? $text['rhusband'] : $text['rspouse']);
-      //$gender1 = $this->switchGender($gender1);
     } elseif ($spouseflag == 2) { //same sex relationship
       $spousemsg = $gender2 == "M" ? $text['rhusband'] : ($gender2 == "F" ? $text['rwife'] : $text['rspouse']);
     }
@@ -211,7 +208,6 @@ class Relationship
     $upcount = $this->upcount - 1;
     while ($upcount >= 0) {
       $nextcouple = $this->uplist[$upcount][$index];
-      //$nextcouple = array($couple['person'],$couple['spouse']);
       $index = $nextcouple['childindex'];
       unset($nextcouple['childindex']);
       array_push($this->uparray, $nextcouple);
@@ -351,8 +347,6 @@ function drawCouple($couple, $topflag, $linedown) {
   echo "\n\n";
 }
 
-//function drawBox( $drawpersonID, $spouseflag, $topflag ) {
-//}
 function drawBox($drawpersonID, $spouseflag, $topflag) {
   global $gens, $tree, $getperson_url, $pedigree;
   global $text, $personID1, $primarypersonID, $slot, $righttree;
@@ -387,7 +381,6 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
     $newoffset = $spouseflag ? $gens->offsetV : $gens->offsetV + $pedigree['puboxheight'] + 2 * $pedigree['boxVsep'];
     $gens->offsetV = $gens->offsetV == -1 ? 0 : $newoffset;
 
-    //$gens->offsetV = 200;
     if ($row['famc'] && $pedigree['popupchartlinks']) {
       $iconactions = " onmouseover=\"if($('#ic$slot')) $('#ic$slot').show();\" onmouseout=\"if($('#ic$slot')) $('#ic$slot').hide();\"";
       $iconlinks = "<div class=\"floverlr\" id=\"ic$slot\" style=\"left:" . ($pedigree['puboxwidth'] - 35) . "px;top:" . ($pedigree['puboxheight'] - 15) . "px;display:none;\">";
@@ -417,8 +410,6 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
 
     // name info
     echo "<td align=\"{$pedigree['puboxalign']}\" class=\"pboxname\" style=\"height:$tableheight\">{$pedigree['begnamefont']}" . $pedigree['namelink'] . $pedigree['endfont'];
-    //if( $row['famc'] && $pedigree['popupchartlinks'])
-    //echo " <a href=\"{$pedigree['url']}" . "personID={$row['personID']}&amp;tree=$tree&amp;display={$pedigree['display']}\">{$pedigree['chartlink']}</a>";
 
     echo "</td></tr></table></div>\n";
     //end box
@@ -457,7 +448,6 @@ function finishRelationship($couple) {
 
   echo "<div id=\"tngchart\" align=\"left\" style=\"position:relative;\">\n";
 
-  //if( $gens->upcount || $gens->downcount || $gens->spouses || $gens->split ) {
   $downarray = $gens->downarray;
   $upcount = $gens->upcount;
   $downcount = $gens->downcount;
@@ -495,7 +485,6 @@ function finishRelationship($couple) {
       $upcount = $upcount - 1;
       while ($upcount >= 0) {
         $nextcouple = $gens->uplist[$upcount][$index];
-        //$nextcouple = array($couple['person'],$couple['spouse']);
         $index = $nextcouple['childindex'];
         drawCouple($nextcouple, 0, 1);
         $upcount--;
@@ -577,28 +566,19 @@ function checkParent($parentrow, $parent, $spouse) {
 //check ancestors of person1 to see if you find person2
 function checkpersonup($nextcouple) {
   global $tree, $maxupgen, $gens, $needmore;
-  //global $highest;
 
   $checkpersonID = $nextcouple['person'];
   $spouseID = $nextcouple['spouse'];
 
-  //$couple['person'] = $checkpersonID;
-  //$couple['spouse'] = $spouseID;
-  //array_push($gens->uparray, $couple);
-  //debugPrint($couple);
-
   $lastup = $gens->upcount;
   $gens->upcount += 1;
-  //echo "lastup=$lastup, upcount=" . $gens->upcount . "<br>";
   $gens->buildUparray();
 
   if (!isset($gens->uplist[$gens->upcount])) {
     $gens->uplist[$gens->upcount] = array();
   }
   $gensup = $gens->upcount;
-  //if( $gensup > $highest ) $highest = $gensup;
 
-  //echo "up: person=$checkpersonID, spouse=$spouseID, up=$gensup<br/>\n";
   //get all families in which this person is a child -- for each family
   $familyresult = getChildFamily($tree, $checkpersonID, "ordernum");
   while ($familyrow = tng_fetch_assoc($familyresult)) {
@@ -652,36 +632,25 @@ function checkpersonup($nextcouple) {
   /* exp */
   if ($needmore) {
     $gens->upptr++;
-    //echo "upx=" . $gens->upcount . ", ptr=" . $gens->upptr . ", lastup=$lastup<br>";
-    //debugPrint($gens->uplist[$lastup]);
-    if ($gens->upptr < count($gens->uplist[$lastup])) {
+
+      if ($gens->upptr < count($gens->uplist[$lastup])) {
       $nextcouple = $gens->uplist[$lastup][$gens->upptr];
       $gens->upcount--;
-      //echo "up=" . $gens->upcount . ", ptr=" . $gens->upptr . "<br>";
-      //debugPrint($nextcouple);
     } elseif (is_array($gens->uplist[$gensup])) {
       $gens->upptr = 0;
       $nextcouple = $gens->uplist[$gensup][$gens->upptr];
-      //debugPrint($nextcouple);
-      //	echo "done<br>";
     }
 
     if ($nextcouple) {
       checkpersonup($nextcouple);
     }
   }
-  /* exp */
-
-  //array_pop($gens->uparray);
-  //echo "popped it<br>";
-  //$gens->upcount -= 1;
 }
 
 //check descendants of person1 to see if you find person2
 function checkpersondown($checkpersonID) {
   global $tree, $targetID, $secondpersonID, $maxupgen;
   global $gens, $otherID, $disallowspouses, $needmore;
-  //global $lowest, $highest;
 
   $gens->downcount += 1;
   $gensdown = $gens->downcount;
@@ -746,7 +715,6 @@ function checkpersondown($checkpersonID) {
             } else {
               $couple = $revcouple;
             }
-            //echo "d=$gens[down], u=$gens[up], s={$spouserow[$spouse]}, targ=$targetID, check=$checkpersonID, oth=$otherID";
             finishRelationship($couple);
             array_pop($gens->downarray);
           }
@@ -886,7 +854,6 @@ if ($error) {
 
   checkpersonup($couple);
 
-  //if( $totalRelationships < $maxrels) {
   if (!$totalRelationships) {
     $gens = new Relationship();
 
@@ -911,7 +878,6 @@ if ($error) {
     echo "<p>$newstr</p>\n";
   }
 }
-//echo "down=$gens->downcount, up=$gens->upcount, sp=$gens->spouses, par=$gens->split<br>";
 ?>
     <script type="text/javascript">jQuery(document).ready(function () {
             jQuery('#searching').hide();

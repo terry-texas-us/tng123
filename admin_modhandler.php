@@ -58,7 +58,6 @@ if (!is_writable($rootpath)) {
   $message .= "{$admtext['checkwrite']} {$admtext['cantwrite']} $rootpath ";
 }
 
-//echo $message;exit;
 if (!empty($message)) {
   $message = "<span class=\"msgerror\">$message</span>";
 }
@@ -168,7 +167,6 @@ if (!empty($_POST)) {
       }
     } // DELETE ALL
     elseif ($submit == "deleteall") {
-//echo __LINE__;print_r($modlist);exit;
       include_once 'classes/moddeleter.class.php';
       $oDeleter = new moddeleter($objinits);
       if (!$oDeleter->batch_delete($modlist) || $options['redirect2log'] == ON_ALL) {
@@ -363,7 +361,6 @@ echo "
 jQuery(document).ready(function() {
 ";
 
-//$sitever = 'mobile'; //turns off jQuery positioning for testing
 if ($sitever != 'mobile' && $options['adjust_headers']) {
   echo "
    window.scroll(0,0);

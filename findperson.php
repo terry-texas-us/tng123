@@ -40,10 +40,6 @@ if ($livedefault < 2 && (!$allow_living_db || $assignedtree) && $nonames == 1) {
   }
 }
 
-//if( $field == "husband" )
-//	$allwhere .= " AND sex = \"M\"";
-//else if( $field == "wife" )
-//	$allwhere .= " AND sex = \"F\"";
 $query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, deathdate, burialdate, prefix, suffix, nameorder, living, private, branch, gedcom FROM $people_table WHERE $allwhere ORDER BY lastname, lnprefix, firstname LIMIT 250";
 $result = tng_query($query);
 

@@ -82,8 +82,6 @@ function writelog($string) {
           $updated = $charset == "UTF-8" ? utf8_encode($updated) : utf8_decode($updated);
           array_unshift($lines, "$updated $string.\n");
           $towrite = join('', $lines);
-          //if($session_charset)
-          //$towrite = mb_convert_encoding($towrite, $session_charset);
 
           ftruncate($fp, 0);
           fwrite($fp, $towrite);

@@ -138,7 +138,6 @@ function deleteBranch($table, $branch) {
 function setPersonLabel($personID) {
   global $tree, $people_table, $branch, $branchlinks_table, $overwrite, $branchaction, $done, $names;
 
-  //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($personID) {
     $row = "";
     if ($branchaction == "delete") {
@@ -230,7 +229,6 @@ function doFCounter() {
 function setFamilyLabel($personID, $gender) {
   global $tree, $families_table, $branch, $overwrite, $branchlinks_table, $branchaction, $people_table, $fdone, $famnames, $children_table;
 
-  //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($gender['self']) {
     $query = "SELECT branch, familyID, husband, wife, gedcom, living, private FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = \"$tree\"";
     $result = tng_query($query);
@@ -388,8 +386,6 @@ function doDescendants($personID, $gender, $gen, $maxgen) {
 
 if ($branchaction == "clear") {
   $branchtitle = $admtext['clearingbranch'];
-  //$branchclause = $set == "all" ? "" : " AND branch = \"$branch\"";
-  //$branch = "";
   $overwrite = 1;
 } elseif ($branchaction == "delete") {
   $branchtitle = "DELETING BRANCH";

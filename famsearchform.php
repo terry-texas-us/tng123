@@ -397,51 +397,42 @@ echo $formstr;
             echo "<tr>\n";
             echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";
             echo "<td>\n";
-            //eval( "\$cfq = \$cfq$row[eventtypeID] = \$_SESSION[tng_search_cfq$row[eventtypeID]];" );
             echo "<select name=\"cfq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
             foreach ($item_array as $item) {
               echo "<option value=\"$item[1]\"";
-              //if( $cfq == $item[1] ) echo " SELECTED";
               echo ">$item[0]</option>\n";
             }
             echo "</select>\n";
             echo "</td>\n";
-            //eval( "\$cef = \$cef$row[eventtypeID] = \$_SESSION[tng_search_cef$row[eventtypeID]];" );
             echo "<td><input type=\"text\" name=\"cef{$row['eventtypeID']}\" value=\"\" /></td>\n";
             echo "</tr>\n";
 
             echo "<tr>\n";
             echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['place']}:</span></td>\n";
             echo "<td>\n";
-            //eval( "\$cpq = \$cpq$row[eventtypeID] = \$_SESSION[tng_search_cpq$row[eventtypeID]];" );
             echo "<select name=\"cpq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
             foreach ($item_array as $item) {
               echo "<option value=\"$item[1]\"";
-              //if( $cpq == $item[1] ) echo " SELECTED";
               echo ">$item[0]</option>\n";
             }
             echo "</select>\n";
             echo "</td>\n";
-            //eval( "\$cep = \$cep$row[eventtypeID] = \$_SESSION[tng_search_cep$row[eventtypeID]];" );
             echo "<td><input type=\"text\" name=\"cep{$row['eventtypeID']}\" value=\"\" /></td>\n";
             echo "</tr>\n";
 
             echo "<tr>\n";
             echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['year']}:</span></td>\n";
-            //eval( "\$cyq = \$cyq$row[eventtypeID] = \$_SESSION[tng_search_cyq$row[eventtypeID]];" );
             echo "<td>\n";
             echo "<select name=\"cyq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
 
             $item2_array = array(array($text['equals'], ""), array($text['plusminus2'], "pm2"), array($text['plusminus5'], "pm5"), array($text['plusminus10'], "pm10"), array($text['lessthan'], "lt"), array($text['greaterthan'], "gt"), array($text['lessthanequal'], "lte"), array($text['greaterthanequal'], "gte"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
             foreach ($item2_array as $item) {
               echo "<option value=\"$item[1]\"";
-              //if( $cyq == $item[1] ) echo " SELECTED";
               echo ">$item[0]</option>\n";
             }
 
             echo "</select>\n";
             echo "</td>\n";
-            //eval( "\$cey = \$cey$row[eventtypeID] = \$_SESSION[tng_search_cey$row[eventtypeID]];" );
             echo "<td><input type=\"text\" name=\"cey$row[eventtypeID]\" value=\"\" /></td>\n";
             echo "</tr>\n";
           }

@@ -81,7 +81,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
       while ($row = tng_fetch_assoc($result)) {
         $eventtype = $row['type'] . "_" . $row['tag'] . "_" . $row['description'];
         if ($row['keep'] && !in_array($eventtype, $custeventlist)) {
-          array_push($custeventlist, $eventtype);  //used to be $row['tag']
+          array_push($custeventlist, $eventtype);
         }
       }
       tng_free_result($result);
@@ -102,7 +102,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
           $lineinfo['level'] = trim($matches[1]);
           $lineinfo['tag'] = trim($matches[2]);
           $lineinfo['rest'] = trim($matches[3], $lineending);
-          //echo "$line: -$lineinfo['level']- -$lineinfo['tag']- -$lineinfo['rest']-<br/>\n";
         } else {
           $lineinfo['level'] = "";
           $lineinfo['tag'] = "";
@@ -126,7 +125,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
           if ($lineinfo['tag'] == "CONC") {
             $continued .= addslashes($lineinfo['rest']);
           } elseif ($lineinfo['tag'] == "CONT") {
-            //if( $continued ) $lineinfo['rest'] = "\n$lineinfo['rest']";
             $continued .= addslashes("\n" . $lineinfo['rest']);
           } else {
             $notdone = 0;
@@ -145,9 +143,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
             if (!in_array($tag, $stdarray)) {
               if ($tag == "EVEN") {
                 $fact = addslashes($lineinfo['rest'] . getContinued());
-                //next one must be TYPE
-                //$lineinfo = getLine();
-                if ($lineinfo['tag'] == "TYPE") {
+
+                  if ($lineinfo['tag'] == "TYPE") {
                   $type = trim(addslashes($lineinfo['rest']));
                 } else {
                   if ($fact) {

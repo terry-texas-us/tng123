@@ -93,12 +93,6 @@ function displayIndividual($key, $generation, $slot) {
   echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
   echo "<tr>\n";
   $pedborder = $slot % 2 && $slot != 1 ? "class=\"nw pedborderleft\"" : "";
-  //if( $slot > 1 && $slot % 2 != 0 ) {
-  //echo "<td><IMG SRC=\"{$cms['tngpath']}img/black.gif\" HEIGHT=15 WIDTH=1 VSPACE=0 HSPACE=0 border=\"0\"></td>\n";
-  //}
-  //else {
-  //echo "<td><IMG SRC=\"{$cms['tngpath']}img/spacer.gif\" WIDTH=1 HEIGHT=1 border=\"0\" HSPACE=0 VSPACE=0></td>\n";
-  //}
   echo "<td colspan=\"2\" $pedborder><span class=\"normal\">&nbsp;$slot. <a href=\"$getperson_url" . "personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
 
   //arrow goes here in own cell
@@ -111,13 +105,8 @@ function displayIndividual($key, $generation, $slot) {
   echo "<tr>\n";
 
   $pedborder = $slot % 2 ? "" : "class=\"pedborderleft\"";
-  //if( $slot % 2 == 0 ) {
-  //echo "<td rowspan=\"6\"><IMG SRC=\"{$cms['tngpath']}img/black.gif\" HEIGHT=90 WIDTH=1 VSPACE=0 HSPACE=0 border=\"0\"></td>\n";
-  //}
-  //else {
-  //echo "<td rowspan=\"4\"><IMG SRC=\"{$cms['tngpath']}img/spacer.gif\" WIDTH=1 HEIGHT=1 border=\"0\" HSPACE=0 VSPACE=0></td>\n";
-  //}
-  if ($rights['both']) {
+
+    if ($rights['both']) {
     if ($row['birthdate'] || $row['altbirthdate'] || $row['altbirthplace'] || $row['deathdate'] || $row['burialdate'] || $row['burialplace'] || ($slot % 2 == 0 && ($marrdate[$slot] || $marrplace[$slot]))) {
       $dataflag = 1;
     } else {
@@ -164,7 +153,6 @@ function displayIndividual($key, $generation, $slot) {
       echo "</table>\n";
     }
   } else {
-    //echo "<tr>\n";
     showBlank($pedborder);
     if ($slot % 2 == 0) {
       echo "<tr>\n";
@@ -279,11 +267,6 @@ writelog("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;gene
 preparebookmark("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $pedname ($personID)") . "</a> $generations " . $gentext);
 
 $flags['tabs'] = $tngconfig['tabs'];
-//$flags['scripting'] = "<style>
-//.pedborderleft {
-//	border-left: solid 1.2px black;
-//	}
-//</style>";
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
 
 tng_header($text['pedigreefor'] . " $pedname", $flags);

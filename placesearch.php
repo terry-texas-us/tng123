@@ -127,7 +127,6 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 
     if (in_array($tngevent, $custevents)) {
       $eventsjoin = ", $events_table";
-      //$allwhere2 .= " AND $table.$idfield = $events_table.persfamID AND $table.gedcom = $events_table.gedcom AND eventtypeID = \"$tngevent\"";
       $allwhere2 .= " AND $table.$idfield = $events_table.persfamID AND $table.gedcom = $events_table.gedcom AND eventtypeID = \"$tngevent\" AND parenttag = \"\"";
       $tngevent = "event";
     }
@@ -170,7 +169,6 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 				ORDER BY $orderstr LIMIT $newoffset" . $maxsearchresults;
     }
 
-    //echo $query . "<br><br>";
     $result = tng_query($query);
     $numrows = tng_num_rows($result);
 
@@ -424,7 +422,6 @@ $successcount = 0;
 //then loop over events like anniversaries
 $stdevents = array("birth", "altbirth", "death", "burial");
 $displaymsgs = array("birth" => $text['birth'], "altbirth" => $text['christened'], "death" => $text['died'], "burial" => $text['buried']);
-//$dontdo = array("ADDR","BIRT","CHR","DEAT","BURI","NAME","NICK","TITL","NSFX");
 if ($ldsOK) {
   array_push($stdevents, "endl", "init", "conf", "bapt");
   $displaymsgs['endl'] = $text['endowedlds'];

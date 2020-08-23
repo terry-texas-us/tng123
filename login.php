@@ -3,7 +3,6 @@ $textpart = "login";
 include "tng_begin.php";
 
 session_start();
-//$_SESSION['destinationpage8'] = $HTTP_REFERER;
 
 $flags['error'] = "";
 

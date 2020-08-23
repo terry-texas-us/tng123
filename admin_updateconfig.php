@@ -103,7 +103,7 @@ fwrite($fp, "\$branches_table = \"$branches_table\";\n");
 fwrite($fp, "\$branchlinks_table = \"$branchlinks_table\";\n");
 fwrite($fp, "\$assoc_table = \"$assoc_table\";\n");
 fwrite($fp, "\$mostwanted_table = \"$mostwanted_table\";\n");
-//fwrite( $fp, "\$mhrequests_table = \"$mhrequests_table\";\n" );
+
 fwrite($fp, "\$dna_tests_table = \"$dna_tests_table\";\n");
 fwrite($fp, "\$dna_links_table = \"$dna_links_table\";\n");
 fwrite($fp, "\$dna_groups_table = \"$dna_groups_table\";\n");
@@ -244,9 +244,7 @@ fwrite($fp, "\$tngconfig['hidetasks'] = \"$hidetasks\";\n");
 fwrite($fp, "\$tngconfig['hidetotals'] = \"$hidetotals\";\n");
 fwrite($fp, "\$tngconfig['backupdays'] = \"$backupdays\";\n");
 fwrite($fp, "\$tngconfig['offline'] = \"$tng_offline\";\n");
-//fwrite( $fp, "\$tngconfig['webmatches'] = \"$webmatches\";\n" );
-//fwrite( $fp, "\$tngconfig['mhmatchtype'] = \"$mhmatchtype\";\n" );
-//fwrite( $fp, "\$tngconfig['mhmatchconf'] = \"$mhmatchconf\";\n" );
+
 fwrite($fp, "\$tngconfig['cookieapproval'] = \"$tng_cookieapproval\";\n");
 fwrite($fp, "\$tngconfig['dataprotect'] = \"$tng_dataprotect\";\n");
 fwrite($fp, "\$tngconfig['askconsent'] = \"$tng_askconsent\";\n");

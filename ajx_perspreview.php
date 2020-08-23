@@ -23,7 +23,6 @@ tng_free_result($result);
 header("Content-type:text/html; charset=" . $session_charset);
 
 initMediaTypes();
-//echo "<div style=\"position:absolute;top:50%;margin-top:-200px\">\n";
 $photostr = showSmallPhoto($personID, $namestr, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $namestr, getYears($row));
 
@@ -258,4 +257,3 @@ $persontext .= endSection("info");
 $persontext .= "</ul>\n";
 
 echo $persontext;
-//echo "</div>\n";

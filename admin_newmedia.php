@@ -347,7 +347,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
         var rval = true;
 
         var frm = document.form1;
-        //var nictext = $$('div .nicEdit-main')[0];
         var selectedType = frm.mediatypeID.options[frm.mediatypeID.selectedIndex].value;
         if (frm.thumbpath.value.length == 0 && frm.thumbcreate[1].checked == true) {
             alert("<?php echo $admtext['enterthumbpath']; ?>");

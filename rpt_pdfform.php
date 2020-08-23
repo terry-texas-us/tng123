@@ -119,7 +119,6 @@ if (is_dir($font_dir)) {
       while (($fontfamily = readdir($dh)) !== false) {
         //Added @eaDir to ignore Synology files
         if (is_dir("$font_dir/unifont/$fontfamily") && $fontfamily != "." && $fontfamily != ".." && $fontfamily != "@eaDir") {
-          //$fontkey = strtolower($fontfamily);
           $font_list[$fontfamily] = $fontfamily;
         }
       }

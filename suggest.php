@@ -2,7 +2,6 @@
 $textpart = "gedcom";
 include "tng_begin.php";
 
-//$tngconfig['maint'] = "";
 if (!empty($cms['events'])) {
   include 'cmsevents.php';
   cms_contact();

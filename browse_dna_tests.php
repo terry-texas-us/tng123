@@ -320,7 +320,6 @@ if ($test_type == "mtDNA") {
   $i = $offsetplus;
   while ($row = tng_fetch_assoc($result)) {
     if ($row['private_test'] && ($allow_private) || (!$row['private_test'])) {
-//	$group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
       $query = "SELECT description FROM $dna_groups_table WHERE dna_group=\"{$row['dna_group']}\"";
       $descresult = tng_query($query);
       $descrow = tng_fetch_assoc($descresult);

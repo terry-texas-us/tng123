@@ -282,8 +282,8 @@ class modlister extends modparser
               'afcopy2' => array(),
               'afcreate' => array()
       );
-//echo __LINE__;print_r( $this->cfgpath);exit;
-      $tags = $this->parse($this->cfgpath);
+
+        $tags = $this->parse($this->cfgpath);
       $istarget = false;
 
       // PROCESS THE PARSE TABLE USING WHILE LOOP

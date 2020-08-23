@@ -26,10 +26,6 @@ $showtree_url = getURL("showtree", 1);
 $getperson_url = getURL("getperson", 1);
 $familygroup_url = getURL("familygroup", 1);
 
-// remove already specified at lines 16-17
-//$headline = "{$text['dnatestscompare']}";
-//$text['dnatestscompare_atdna'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
-
 $flags['tabs'] = $tngconfig['tabs'];
 tng_header($text['dnatestscompare_mtdna'], $flags);
 
@@ -213,8 +209,8 @@ echo $header;
               $dprights = determineLivingPrivateRights($ancrow, $dna_righttree, $dna_rightbranch);
               $ancrow['allow_living'] = $dprights['living'];
               $ancrow['allow_private'] = $dprights['private'];
-              //$vitalinfo = getBirthInfo($ancrow);
-              $anc_namestr = getName($ancrow);
+
+                $anc_namestr = getName($ancrow);
               $mrcanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>";
               tng_free_result($dna_anc_result);
             } else {
@@ -240,7 +236,6 @@ echo $header;
           $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
           echo "<td valign=\"top\" class=\"$databack\">$group</td>";
           if (!$assignedtree && ($numtrees > 1)) {
-            //echo "<td valign=\"top\" class=\"$databack\">{$row['gedcom']}&nbsp;</td>"; ### Tree ID Mod: Data for new Tree ID column
             echo "<td valign=\"top\" class=\"$databack nw\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
           }
           echo "</tr>\n";

@@ -34,7 +34,6 @@ function showDiv($type) {
 		LEFT JOIN $people_table ON $mostwanted_table.personID = $people_table.personID AND $mostwanted_table.gedcom = $people_table.gedcom
 		WHERE mwtype = \"$type\" ORDER BY ordernum";
   $result = tng_query($query);
-  //echo $query;
 
   while ($lrow = tng_fetch_assoc($result)) {
     $lmediatypeID = $lrow['mediatypeID'];

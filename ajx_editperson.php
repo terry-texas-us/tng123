@@ -383,7 +383,7 @@ if ($editconflict) {
                   echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none\"><a href=\"#\" onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
                   echo "<table class=\"normal\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                   echo "<td valign=\"top\" colspan=\"4\">\n";
-                  //echo "<a href=\"editfamily.php?familyID=$parent['familyID']&amp;tree=$tree&amp;cw=$cw\">$parent['familyID']</a>\n</td></tr>";
+
                   echo $parent['familyID'] . "\n</td></tr>";
                   if ($gotfather) {
                   $fathrow = tng_fetch_assoc($gotfather);
@@ -396,8 +396,8 @@ if ($editconflict) {
             <td valign="top" colspan="4">
               <?php
               if ($fathrow['personID']) {
-                //echo "<a href=\"admin_editperson.php?personID=$fathrow['personID']&amp;tree=$tree&amp;cw=$cw\">" . getName( $fathrow ) . " - $fathrow['personID']</a>";
-                echo getName($fathrow) . " - " . $fathrow['personID'];
+
+                  echo getName($fathrow) . " - " . $fathrow['personID'];
               }
               ?>
             </td>
@@ -437,8 +437,8 @@ if ($editconflict) {
             <td valign="top" colspan="4">
               <?php
               if ($mothrow['personID']) {
-                //echo "<a href=\"editperson.php?personID=$mothrow['personID']&amp;tree=$tree&amp;cw=$cw\">" . getName( $mothrow ) . " - $mothrow['personID']</a>";
-                echo getName($mothrow) . " - " . $mothrow['personID'];
+
+                  echo getName($mothrow) . " - " . $mothrow['personID'];
               }
               ?>
             </td>
@@ -541,8 +541,8 @@ if ($editconflict) {
           echo "<table class=\"normal\" width=\"100%\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
           echo "<td valign=\"top\" width=\"94%\">\n";
           echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none\"><a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
-          //echo "<a href=\"editfamily.php?familyID=$marriagerow['familyID']&amp;tree=$tree&amp;cw=$cw\">$marriagerow['familyID']</a>\n</td></tr>";
-          echo $marriagerow['familyID'] . "\n</td></tr>";
+
+            echo $marriagerow['familyID'] . "\n</td></tr>";
           if ($marriagerow[$spouse]) {
             $query = "SELECT personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch FROM $people_table WHERE personID = \"{$marriagerow[$spouse]}\" AND gedcom = \"$tree\"";
             $spouseresult = tng_query($query);
@@ -559,7 +559,6 @@ if ($editconflict) {
                 <td valign="top">
                   <?php
                   if ($spouserow['personID']) {
-                    //echo "<a href=\"editperson.php?personID=$spouserow['personID']&amp;tree=$tree&amp;cw=$cw\">" . getName( $spouserow ) . " - $spouserow['personID']</a>";
                     echo getName($spouserow) . " - " . $spouserow['personID'];
                   }
                   ?>
@@ -592,10 +591,8 @@ while ($child = tng_fetch_assoc($children)) {
   if ($child['firstname'] || $child['lastname']) {
     echo "<tr><td>$ifkids</td><td><span class=\"normal\">$kidcount. ";
     if ($crights['both']) {
-      //if( $rightbranch )
-      //echo "<a href=\"admin_editperson.php?personID=$child['pID']&amp;tree=$tree&amp;cw=$cw\">" . getName( $child ) . " - $child['pID']</a>";
-      //else
-      echo getName($child) . " - {$child['pID']}";
+
+        echo getName($child) . " - {$child['pID']}";
     } else {
       echo $admtext['living'] . " - " . $child['pID'];
     }

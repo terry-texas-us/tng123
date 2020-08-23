@@ -180,9 +180,6 @@ function doNextPerson($row, $items, $nextperson, $box) {
     if ($box['lineinto']) {
       $box['topright'] = $childcount == $totkids ? 0 : 1;
       $box['topleft'] = $childcount != $totkids ? 1 : 0;
-      //if( ( $box[bottomleft] && !$box[bottomright] ) || $childcount == $totkids ) $box[bottomleft] = 0;
-      //if( $childcount == $totkids ) $box[bottomright] = 0;
-      //if( !$box[bottomleft] && $box[bottomright] ) $box[bottomleft] = 1;
       $box['bottomright'] = $childcount > $totkids / 2 ? 0 : 1;
       $box['bottomleft'] = $childcount > ($totkids + 1) / 2 ? 0 : 1;
     } else {
@@ -192,8 +189,8 @@ function doNextPerson($row, $items, $nextperson, $box) {
     $box['lineoutof'] = 0;
     $box['middleleft'] = 1;
     $box['middleright'] = 0;
-    //echo "tl=$box[topleft], tr=$box[topright], bl=$box[bottomleft], br=$box[bottomright]";
-    $spouserow['birthdatetr'] = $spouserow['altbirthdatetr'] = "0000-00-00"; //this is to suppress the age calculation on the chart
+
+      $spouserow['birthdatetr'] = $spouserow['altbirthdatetr'] = "0000-00-00"; //this is to suppress the age calculation on the chart
     drawBox($spouserow, $box);  //yes, that's intentional
   }
 }
@@ -207,8 +204,8 @@ function getBox($childcount, $totkids, $thisisit, $gotnext) {
   $thisside = ($childcount < (($totkids / 2) + .5)) && $gotnext ? 1 : 0;
   $thatside = ($childcount > (($totkids / 2) + .5)) && (!$gotnext || $box['lineoutof']) ? 1 : 0;
   $middle = $childcount == ($totkids / 2) + .5;
-  //echo "this=$thisside, that=$thatside, mid=$middle, cc=$childcount, tk=$totkids, gn=$gotnext, ";
-  $box['topright'] = ($childcount == $totkids) || (($childcount == $totkids - 1) && $thisisit && !$thisside && $more) ? 0 : 1;
+
+    $box['topright'] = ($childcount == $totkids) || (($childcount == $totkids - 1) && $thisisit && !$thisside && $more) ? 0 : 1;
   $box['topleft'] = $childcount != 1 ? 1 : 0;
   if ($thisside) {
     if ($box['lineoutof']) {
@@ -384,7 +381,6 @@ echo "</form>\n";
                     //get kids
                     $result2 = getChildrenDataPlusDates($tree, $nextfamily);
                     if ($result2) {
-                      //echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" border=\"0\">";
                       echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr>\n";
                       $totkids = tng_num_rows($result2);
                       if ($more) {
@@ -410,8 +406,8 @@ echo "</form>\n";
                         $box = getBox($childcount, $totkids, $thisisit, $gotnext);
                         $box['middleleft'] = 0;
                         $box['middleright'] = $thisisit && $more ? 1 : 0;
-                        //echo "tl=$box[topleft], tr=$box[topright], ml=$box[middleleft], mr=$box[middleright], bl=$box[bottomleft], br=$box[bottomright], cc=$childcount, tk=$totkids, gn=$gotnext";
-                        drawBox($row, $box);
+
+                          drawBox($row, $box);
                         doNextPerson($row, $items, $nextperson, $box);
                       }
                       echo "</tr>\n</table>";

@@ -11,16 +11,13 @@ include "getlang.php";
 
 include "$mylanguage/admintext.php";
 
-//tng_db_connect($database_host,$database_name,$database_username,$database_password) or exit;
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 $admvers = "TNG12 V4.0 ";
 
-//$optionsfile = 'classes/mod.class.config.php';
 $optionsfile = $subroot . 'mmconfig.php';
 include $optionsfile;
-//echo __FILE__,' ',__LINE__;print_r( $options );exit;
 
 define("YES", 1);
 define("NO", 0);
@@ -137,10 +134,6 @@ if ($options['fix_header'] == YES && $sitever != 'mobile') {
   $headclass = 'mmhead-scroll';
   $tableclass = 'm2table-scroll';
 }
-//$bkgclass = 'tmpbkg'.$templatenum;
-// only adjust css positioning for template 7 -- all others are standard
-//if( $templatenum == 7 )
-//   $tableclass = $tableclass.$templatenum;
 
 echo "
 <script type=\"text/javascript\" src=\"js/admin.js\"></script>
@@ -157,7 +150,6 @@ echo "
       <table id=\"m2table\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"2\" class=\"lightback $tableclass\" style=\"padding: 0px;\">
       <tr class=\"databack\">
          <td class=\"tngshadow\">";
-//echo __FILE__,' ',__LINE__;print_r( $options );
 
 echo displayToggle("plus0", 0, "log", $admtext['logoptions'], "");
 echo "
@@ -540,7 +532,7 @@ function set_innermenu_links($tng_version) {
 /*************************************************************************
  * JAVASCRIPT SUPPORT
  *************************************************************************/
-//$sitever = 'mobile'; //turns off jQuery positioning for testing
+
 if ($sitever != 'mobile' && $options['adjust_headers']) {
   echo "
 <script type=\"text/javascript\">

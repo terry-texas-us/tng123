@@ -205,27 +205,28 @@ class modbase
         $this->fix_header = 0;
       }
     }
-    $this->int_version = $this->version2integer($this->tng_version);
+      $this->int_version = $this->version2integer($this->tng_version);
 
-    if (!empty($this->admtext['error'])) {
-      $this->admtext['error'] = "<span class=\"msgerror\"><strong>{$this->admtext['error']}</strong></span>";
-    }
-    if (!empty($this->admtext['okay'])) {
-      $this->admtext['okay'] = "<span class=\"msgapproved\"><strong>{$this->admtext['okay']}</strong></span>";
-    }
+      if (!empty($this->admtext['error'])) {
+          $this->admtext['error'] = "<span class=\"msgerror\"><strong>{$this->admtext['error']}</strong></span>";
+      }
+      if (!empty($this->admtext['okay'])) {
+          $this->admtext['okay'] = "<span class=\"msgapproved\"><strong>{$this->admtext['okay']}</strong></span>";
+      }
   } // __construct
 
-  /***********************************************************************
-   * BUFFERS
-   ***********************************************************************/
-  protected function fix_eol($buffer) {
-    return preg_replace("#(?:\r\n|\r\r\n|[\r\n])#", "\r\n", $buffer);
-  }
+// BUFFERS
 
-  // remove spaces or tabs in from of CRLF that might prevent target match
-  protected function remove_hidden_whitespace($buffer) {
-    return preg_replace("#[ \t]*\r\n#", "\r\n", $buffer);
-  }
+    protected function fix_eol($buffer)
+    {
+        return preg_replace("#(?:\r\n|\r\r\n|[\r\n])#", "\r\n", $buffer);
+    }
+
+    // remove spaces or tabs in from of CRLF that might prevent target match
+    protected function remove_hidden_whitespace($buffer)
+    {
+        return preg_replace("#[ \t]*\r\n#", "\r\n", $buffer);
+    }
 
   protected function read_file_buffer($filepath, $flag = '') {
     $buffer = '';
@@ -235,7 +236,7 @@ class modbase
 
     // FILEPATH DOES NOT EXIST
     if (!file_exists($filepath)) {
-//echo __FILE__,__LINE__,$filepath,$flag;exit;
+
       if ($flag == self::FLAG_OPTIONAL) {
         return self::BYPASS;
       } elseif ($flag == self::FLAG_NOFOUL) {
@@ -278,28 +279,29 @@ class modbase
 
     $fp = fopen($filepath, 'wb');
     if (!$fp) {
-      $_SESSION['err_msg'] = "{$this->admtext['checkwrite']} {$this->admtext['cannotopen']} $filepath ";
-      return false;
+        $_SESSION['err_msg'] = "{$this->admtext['checkwrite']} {$this->admtext['cannotopen']} $filepath ";
+        return false;
     }
-    flock($fp, LOCK_EX);
-    $ret = fwrite($fp, $buffer);
-    flock($fp, LOCK_UN);
-    fclose($fp);
-    return $ret;
+      flock($fp, LOCK_EX);
+      $ret = fwrite($fp, $buffer);
+      flock($fp, LOCK_UN);
+      fclose($fp);
+      return $ret;
   }
 
-  /***********************************************************************
-   * LOGS
-   ***********************************************************************/
-  protected function add_logevent($string) {
-    $this->eventlog .= "<br />&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;" . $string;
-  }
+// LOGS
 
-  private function create_logfile() {
-    $rootpath = $this->rootpath;
+    protected function add_logevent($string)
+    {
+        $this->eventlog .= "<br />&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;" . $string;
+    }
 
-    $content = "#### Mod Manager Log " . date("D d M Y h:i:s A", time() + (3600 * $this->time_offset)) . " ####";
-    return $this->write_file_buffer($this->modlogfile, $content);
+    private function create_logfile()
+    {
+        $rootpath = $this->rootpath;
+
+        $content = "#### Mod Manager Log " . date("D d M Y h:i:s A", time() + (3600 * $this->time_offset)) . " ####";
+        return $this->write_file_buffer($this->modlogfile, $content);
   }
 
   // begin logging for new event
@@ -370,28 +372,28 @@ class modbase
         fwrite($fp, $line);
       }
       $linecount++;
-      if ($linecount == $this->maxloglines) {
-        break;
-      }
+        if ($linecount == $this->maxloglines) {
+            break;
+        }
     }
-    flock($fp, LOCK_UN);
-    fclose($fp);
-    unset($this->eventlog);
-    return;
+      flock($fp, LOCK_UN);
+      fclose($fp);
+      unset($this->eventlog);
+      return;
   }
 
-  /***********************************************************************
-   * MODS
-   ***********************************************************************/
-  public function get_modfile_names() {
-    $fileNames = array();
+// MODS
 
-    if ($handle = opendir($this->modspath)) {
-      while (false !== ($file = readdir($handle))) {
-        if (pathinfo($file, PATHINFO_EXTENSION) == 'cfg') {
-          $fileNames[] = $file;
-        }
-      }
+    public function get_modfile_names()
+    {
+        $fileNames = array();
+
+        if ($handle = opendir($this->modspath)) {
+            while (false !== ($file = readdir($handle))) {
+                if (pathinfo($file, PATHINFO_EXTENSION) == 'cfg') {
+                    $fileNames[] = $file;
+                }
+            }
       closedir($handle);
       sort($fileNames);
     }
@@ -400,8 +402,8 @@ class modbase
 
   // returns file names (no path) as array indexes and mod name as array values
   public function get_modlist_sorted() {
-//echo __LINE__,' ';print_r( $this->sortby);exit;
-    $mod_list = array();
+
+      $mod_list = array();
 
     if (!is_dir($this->modspath)) {
       return self::NOPATH;
@@ -439,8 +441,8 @@ class modbase
 
   // construct full paths for each file
   protected function resolve_file_path($path, $relative = self::ROOT_DIR) {
-//echo __LINE__;print_r($path);exit;
-    // leading slash unnecesary - all paths relative to tng root
+
+      // leading slash unnecesary - all paths relative to tng root
     $path = ltrim($path, "/");
 
     // set path for TNG config files
@@ -450,30 +452,24 @@ class modbase
       $path = $this->resolve_path_vars($path);
       return $this->rootpath . $this->modspath . '/' . $path;
     } else {
-      return $this->rootpath . $this->resolve_path_vars($path);
+        return $this->rootpath . $this->resolve_path_vars($path);
     }
   }
 
-  protected function resolve_path_vars($str) {
-    $str = str_replace('$modspath', $this->modspath, $str);
-    $str = str_replace('$extspath', $this->extspath, $str);
-    return $str;
-  }
+    protected function resolve_path_vars($str)
+    {
+        $str = str_replace('$modspath', $this->modspath, $str);
+        $str = str_replace('$extspath', $this->extspath, $str);
+        return $str;
+    }
 
-  /***********************************************************************
-   * MISCELLANEOUS
-   ***********************************************************************/
-  protected function version2integer($version) {
-    // 4-digit integer from string version for comparisons
-    //$int_version = str_replace( ".", "", $version );
 
-    /*
-        a strin like 121beta will procuce 121 not 1210 because it must only contain
-      three or less characters to be padded.  this means alpah characters must be
-      removed prior to padding, or a different function must be used.
-    */
-    $int_version = preg_replace("#[^0-9]#", "", $version);
-    return (int)str_pad($int_version, 4, "0", STR_PAD_RIGHT);
-  }
+// MISCELLANEOUS
+
+    protected function version2integer($version)
+    {
+        $int_version = preg_replace("#[^0-9]#", "", $version);
+        return (int)str_pad($int_version, 4, "0", STR_PAD_RIGHT);
+    }
 
 } // CLASS

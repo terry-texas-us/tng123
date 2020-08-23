@@ -151,8 +151,6 @@ if ($newfile && $newfile != "none") {
 }
 
 if (function_exists('imageJpeg') && $thumbcreate == "auto") {
-  //$cleanpath = $session_charset == "UTF-8" ? utf8_decode($newpath) : $newpath;
-  //$cleannewthumbpath = $session_charset == "UTF-8" ? utf8_decode($newthumbpath) : $newthumbpath;
   if (image_createThumb($newpath, $newthumbpath, $thumbmaxw, $thumbmaxh, $thumbquality)) {
     $destInfo = pathInfo($newthumbpath);
     if (strtoupper($destInfo['extension']) == "GIF") {

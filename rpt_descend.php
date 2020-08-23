@@ -23,7 +23,6 @@ $pdf->AddFont($rptFont, "B", '', $uni);
 
 // define formatting defaults
 $lineheight = $pdf->GetFontSize($rptFont, $rptFontSize) + 0.1;
-//$dxgen = 0.25;	// distance between each generation number (e.g. from 1. to 2. above)
 $dxtabln = 0.08; // distance from Name to vertical line (e.g. from Patriarch to | above)
 $dy = $pdf->GetFontSize($rptFont, $rptFontSize) + 0.08;  // line height (note: try to have line height so a specific number of whole lines fits on page
 $hangind = 0.25;    // how much to indent lines when more than one is needed

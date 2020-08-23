@@ -55,9 +55,8 @@ $update = "UPDATE $templates_table SET ";
 
 foreach ($_POST as $newkey => $newvalue) {
   $newvalue = addslashes($newvalue);
-  //$newvalue = str_replace("\\'","'",$newvalue);
-  //$newvalue = str_replace("\n","",$newvalue);
-  $key = substr($newkey, 5);
+
+    $key = substr($newkey, 5);
 
   //split key to get number, keyname & language
   $keyparts = explode("_", $key);
@@ -81,7 +80,6 @@ foreach ($_POST as $newkey => $newvalue) {
     $query = $update . "value = \"$newvalue\", ordernum = \"{$orders[$template]}\" WHERE template = \"$template\" AND keyname = \"$keyname\" AND language = \"$language\"";
     $result = tng_query($query);
   }
-  //fwrite($fp, "\$tmp['" . $key . "'] = \"$newvalue\";\n");
 }
 
 adminwritelog($admtext['modifytemplatesettings'] . " - {$admtext['template']} " . $form_templatenum . " - {$admtext['templateswitching']} = " . $form_templateswitching);

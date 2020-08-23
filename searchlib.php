@@ -249,7 +249,5 @@ function doCustomEvents($type) {
     }
   }
   tng_free_result($result);
-  //if( !$cejoin && $ecount )
-  //$cejoin = "LEFT JOIN $events_table ON $treefield = $events_table.gedcom AND $persfamfield = $events_table.persfamID " ;
   return $cejoin;
 }

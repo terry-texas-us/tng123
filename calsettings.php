@@ -46,7 +46,7 @@ if ($ldsOK) {              //don't show these if the user does not have rights t
 }
 
 /* Select which FAMILY events you'd like to show by setting an icon */
-//$calFamEvent['div']		= 'tng_cal_div.png';
+
 $calFamEvent['marr'] = 'tng_cal_marr.png';
 if ($ldsOK) {              //don't show these if the user does not have rights to see LDS data
   $calFamEvent['seal'] = 'tng_cal_seal.png';
@@ -54,15 +54,9 @@ if ($ldsOK) {              //don't show these if the user does not have rights t
 
 /* To show CUSTOM events, enter the GEDCOM TAG and set an icon */
 $calEvent = array();
-//$calEvent['EDUC']		= 'tng_cal_educ.png';
-//$calEvent['EMIG']		= 'tng_cal_emig.png';
-//$calEvent['ENGA']		= 'tng_cal_enga.png';
-//$calEvent['EVEN']		= 'tng_cal_even.png';
-
 
 /* You can hide certain events by default by entering the keys here */
 $defaultHide = array('altbirth', 'burial', 'bapt', 'endl', 'seal');
-
 
 /* Make an array of all the event types */
 $calAllEvents = array_merge($calIndEvent, $calFamEvent, $calEvent);

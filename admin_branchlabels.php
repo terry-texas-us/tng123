@@ -139,7 +139,6 @@ function deleteBranch($table, $branch) {
 function setPersonLabel($personID) {
   global $tree, $people_table, $branch, $branchlinks_table, $overwrite, $branchaction, $done;
 
-  //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($personID) {
     if ($branchaction == "delete") {
       $query = "SELECT sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
@@ -229,7 +228,6 @@ function doFCounter() {
 function setFamilyLabel($personID, $gender) {
   global $tree, $families_table, $branch, $overwrite, $branchlinks_table, $branchaction, $people_table, $fdone, $children_table;
 
-  //echo "personID=$personID, tree=$tree, branch=$branch<br>\n";
   if ($gender['self']) {
     $query = "SELECT branch, familyID FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = \"$tree\"";
     $result = tng_query($query);
@@ -363,7 +361,6 @@ function doDescendants($personID, $gender, $gen, $maxgen) {
   }
   $spouseresult = tng_query($query);
   while ($spouserow = tng_fetch_assoc($spouseresult)) {
-    //setPersonLabel( $spouserow[$gender['spouse']] );
     $query = "SELECT personID FROM $children_table WHERE familyID = \"{$spouserow['familyID']}\" AND gedcom = \"$tree\" ORDER BY ordernum";
     $childresult = tng_query($query);
     while ($childrow = tng_fetch_assoc($childresult)) {
@@ -405,8 +402,6 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
       <?php
       if ($branchaction == "clear") {
         $branchtitle = $admtext['clearingbranch'];
-        //$branchclause = $set == "all" ? "" : " AND branch = \"$branch\"";
-        //$branch = "";
         $overwrite = 1;
       } elseif ($branchaction == "delete") {
         $branchtitle = "DELETING BRANCH";

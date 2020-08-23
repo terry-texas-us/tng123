@@ -626,6 +626,5 @@ if (!$tngprint) {
         //]]>
     </script>
 <?php
-//$flags['more'] = "</div>\n";
 tng_footer($flags);
 ?>

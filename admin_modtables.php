@@ -176,8 +176,8 @@ exit;
  *************************************************************************/
 function fix_header($options) {
   global $sitever;
-  //$sitever = 'mobile'; //turns off jQuery positioning for testing
-  if ($sitever != 'mobile' && $options['adjust_headers']) {
+
+    if ($sitever != 'mobile' && $options['adjust_headers']) {
     echo "
    <script type=\"text/javascript\">
       jQuery(document).ready(function() {
@@ -244,7 +244,7 @@ echo "
 jQuery(document).ready(function() {
 ";
 
-//$sitever = 'mobile'; //turns off jQuery positioning for testing
+
 if ($sitever != 'mobile' && $options['adjust_headers']) {
   echo "
    window.scroll(0,0);

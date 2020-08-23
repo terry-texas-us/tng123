@@ -157,25 +157,15 @@ switch ($action) {
     $marriagerow = tng_fetch_assoc($marriage);
 
     if ($personID == $marriagerow['husband']) {
-      //$spquery = "SELECT living FROM $people_table WHERE personID = \"$marriagerow[wife]\" AND gedcom = \"$tree\"";
       $delspousestr = "husband = \"\"";
     } else {
       if ($personID == $marriagerow['wife']) {
-        //$spquery = "SELECT living FROM $people_table WHERE personID = \"$marriagerow[husband]\" AND gedcom = \"$tree\"";
         $delspousestr = "wife = \"\"";
       } else {
         $spquery = "";
         $delspousestr = "";
       }
     }
-    //if( $spquery ) {
-    //$spouselive = @tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
-    //$spouserow =  tng_fetch_assoc( $spouselive );
-    //$spouseliving = $spouserow[living];
-    //}
-    //else
-    //$spouseliving = 0;
-    //$familyliving = ($living || $spouseliving) ? 1 : 0;
     if ($delspousestr) {
       $query = "UPDATE $families_table SET $delspousestr WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
       $spouseresult = @tng_query($query);
@@ -284,11 +274,6 @@ switch ($action) {
     $thismediatypeID = $row['mediatypeID'];
     $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$thismediatypeID] : $mediapath;
     @tng_free_result($result);
-
-    //$photoref = $tree ? "$usefolder/$tree.$entity.$photosext" : "$photopath/$entity.$photosext";
-    //if( file_exists( "$rootpath$photoref" ) ) {
-    //@unlink( "$rootpath$photoref" );
-    //}
 
     if ($album) {
       $query = "UPDATE $albumlinks_table SET defphoto = '' WHERE albumlinkID = '{$row['albumlinkID']}'";

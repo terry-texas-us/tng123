@@ -146,7 +146,6 @@ if ($result && tng_num_rows($result)) {
   if (!$burialtype) {
     $burialtype = 0;
   }
-  //$firstname = preg_replace('/%(['0-9a-f']{2})/ie', 'chr(hexdec($1))', (string) $firstname);
   if ($type != "child") {
     $familyID = "";
   }
@@ -222,13 +221,11 @@ if ($result && tng_num_rows($result)) {
     $rval .= "</td>\n";
     $rval .= "<td class=\"lightback normal childblock\">\n";
 
-    //$name = $session_charset == "UTF-8" ? getName($row) : utf8_encode(getName($row));
     $name = getName($row);
     $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
     $rval .= "<a href=\"#\" onclick=\"EditChild('$personID');\">" . $name . "</a> - $personID<br />$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
     echo $rval;
   } elseif ($type == "spouse") {
-    //$name = $session_charset == "UTF-8" ? getName($row) : utf8_encode(getName($row));
     $name = getName($row);
     $name = preg_replace("/\"/", "\\\"", $name);
     echo "{\"id\":\"{$row['personID']}\",\"name\":\"$name\"}";

@@ -215,7 +215,6 @@ function getNotes($id) {
     if (!is_array($notearray[$eventid])) {
       $notearray[$eventid] = array();
     }
-    //array_push( $notearray[$eventid], $newnote );
     $innerarray = array();
     $innerarray['text'] = $newnote;
     $innerarray['id'] = "N" . $notelink['ID'];
@@ -289,7 +288,6 @@ function doNote($level, $label, $notetxt, $private = "") {
   }
   $level++;
   foreach ($notes as $note) {
-    //$note = trim($note);
     $noteinfo .= getNoteLine($level, "CONT", $note, 0);
   }
   if ($private) {
@@ -327,10 +325,6 @@ function doXNotes() {
       echo "0 @$xnote@ NOTE$lineending";
       echo doNote(0, "NOTE", $xnotetxt['note']);
 
-      //$notes = split ( chr(10), $xnotetxt['note'] );
-      //foreach ( $notes as $note ) {
-      //echo "1 CONT $note$lineending";
-      //}
       tng_free_result($xnotearray);
     }
   }
@@ -432,7 +426,6 @@ function appendParents($child) {
   $child['allow_living'] = $crights['living'];
   $child['allow_private'] = $crights['private'];
   if ($crights['both']) {
-    //if( $child['relationship'] ) $info .= "2 PEDI {$child['relationship']}$lineending";
     if ($rights['lds'] && $ldsOK) {
       if ($child['sealdate'] || $child['sealplace']) {
         $childnotes = getNotes($child['personID']);

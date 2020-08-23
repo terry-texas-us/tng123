@@ -213,8 +213,6 @@ switch ($t) {
     $result = @tng_query($query);
     $row = tng_fetch_assoc($result);
     tng_free_result($result);
-    //if( $row['maplink'] && file_exists( "$rootpath$headstonepath/$row[maplink]" ) )
-    //unlink( "$rootpath$headstonepath/$row[maplink]" );
 
     $query = "DELETE FROM $cemeteries_table WHERE cemeteryID=\"$id\"";
     $result = @tng_query($query);

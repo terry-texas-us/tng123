@@ -46,7 +46,6 @@ if ($reltype == "I") {
   $row = tng_fetch_assoc($result);
   $name = getFamilyName($row);
 }
-//$name = $session_charset != "UTF-8" ? utf8_encode($name) : $name;
 $namestr = cleanIt($name . ": " . $orgrelationship);
 
 $namestr = truncateIt($namestr, 75);

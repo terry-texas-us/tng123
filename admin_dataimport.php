@@ -11,8 +11,6 @@ include "checklogin.php";
 include "version.php";
 include $subroot . "importconfig.php";
 
-//$checksecs = $tngconfig['checksecs'] && is_numeric($tngconfig['checksecs']) ? $tngconfig['checksecs'] : 20;
-
 if (!$allow_add || !$allow_edit || $assignedbranch) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));

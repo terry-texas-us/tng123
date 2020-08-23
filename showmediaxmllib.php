@@ -62,9 +62,6 @@ $noneliving = $livinginfo['noneliving'] && $livinginfo['noneprivate'];
 $showPhotoInfo = $imgrow['alwayson'] || $noneliving;
 $nonamesloc = $livinginfo['private'] ? $tngconfig['nnpriv'] : $nonames;
 
-//$rightbranch = $livinginfo['rightbranch'];
-//$allrightbranch = $livinginfo['allrightbranch'];
-
 if ($noneliving || !$nonamesloc || $imgrow['alwayson']) {
   $description = $mediadescription;
   $notes = nl2br(xmlcharacters(getXrefNotes($medianotes, $tree)));

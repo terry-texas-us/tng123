@@ -31,9 +31,7 @@ $row['owner'] = preg_replace("/\"/", "&#34;", $row['owner']);
 $row['map'] = preg_replace("/\"/", "&#34;", $row['map']);
 $row['map'] = preg_replace("/>/", "&gt;", $row['map']);
 $row['map'] = preg_replace("/</", "&lt;", $row['map']);
-//$row['bodytext'] = preg_replace("/\"/", "&#34;",$row['bodytext']);
-//$row['bodytext'] = preg_replace("/>/", "&gt;",$row['bodytext']);
-//$row['bodytext'] = preg_replace("/</", "&lt;",$row['bodytext']);
+
 if ($row['usenl']) {
   $row['bodytext'] = nl2br($row['bodytext']);
 }
@@ -70,8 +68,6 @@ $query = "SELECT $medialinks_table.medialinkID as mlinkID, $medialinks_table.per
 	WHERE mediaID = \"$mediaID\" ORDER BY $medialinks_table.medialinkID DESC";
 $result2 = tng_query($query);
 $numlinks = tng_num_rows($result2);
-//took this out because nicEdit histories wouldn't open with the div turned off
-//$startclosed = $numlinks ? 0 : 1;
 
 $helplang = findhelp("media_help.php");
 
@@ -97,7 +93,7 @@ foreach ($mediatypes as $mediatype) {
 $sttypestr = implode(",", $standardtypes);
 
 $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
-//$cleanfile = $session_charset == "UTF-8" ? utf8_decode($row['thumbpath']) : $row['thumbpath'];
+
 if ($row['thumbpath'] && file_exists("$rootpath$usefolder/" . $row['thumbpath'])) {
   $photoinfo = @GetImageSize("$rootpath$usefolder/" . $row['thumbpath']);
   if ($photoinfo[1] < 50) {
@@ -750,10 +746,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
         $('#myimg').mousedown(function (e) {
             e.preventDefault();
             if ($("#mlbox").length)
-                var a = 1;//$("#mlbox").attr({ id: '' });
+                var a = 1;
             else {
                 $('.bselected').removeClass('bselected').addClass('bunselected');
-                //$("#mlbox").attr({ id: '' });
 
                 box = $('<div id="mlbox" class="mlbox bunselected">').hide();
 

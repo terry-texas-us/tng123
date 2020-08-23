@@ -144,7 +144,6 @@ switch ($type) {
           }
         }
         $namestr = getName($row);
-        //$lines .= "<td class=\"lightback\" align=\"center\"><a href=\"#\" onclick=\"return retItem('{$row['personID']}');\" id=\"item_{$row['personID']}\">{$admtext['select']}</a></td>\n";
         $lines .= "<tr id=\"linkrow_{$row['personID']}\">\n";
         if ($mediaquery) {
           $lines .= showAction($row['personID']);

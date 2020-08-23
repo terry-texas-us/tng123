@@ -156,11 +156,6 @@ tng_adminheader($admtext['diagnostics'], $flags);
                 $posixmygroupid = $posixuserinfo['gid'];
                 $posixgroupinfo = posix_getgrgid($posixmygroupid);
                 $posixgroup = $posixgroupinfo['name'];
-
-                //if ($myuserid != $posixmyuserid) {
-                //	echo '<img src="orange.gif" width="12" height="12">&nbsp;';
-                //	echo "$admtext['scruser']} $posixname; {$admtext['phpuser']} $myuserid. {$admtext['usrprob']<br />";
-                //}
               } else {
                 $posixmyuserid = $myuserid;
                 $posixname = get_current_user();
@@ -181,7 +176,6 @@ tng_adminheader($admtext['diagnostics'], $flags);
               if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'config.php'))) {
                 $text = "<p>$red&nbsp;{$admtext['rofile']} config.php</p>";
               }
-              //$uselog = $cms['support']} ? "../../../$logname" : "../$logname";
               $uselog = $logname;
               if (!(fileReadWrite($myuserid, $mygroupid, $uselog))) {
                 $ftext = "<p>$red&nbsp;{$admtext['rofile']} {$admtext['publog']} ($logname)</p>";
@@ -291,11 +285,7 @@ function fileReadWrite($myuserid, $mygroupid, $fileref) {
 } // function fileReadWrite()
 
 function dirExists($dirref) {
-  //global $cms;
-
   $rval = false;
-  //$newdirref = $cms['support']} ? '../../../' . $dirref : '../'.$dirref;
-  //$newdirref = $dirref;
 
   if (is_dir($dirref)) {
     $rval = true;

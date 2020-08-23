@@ -873,8 +873,8 @@ class modparser extends modbase
   private function _goto($parts, $index, $label, $refline) {
     // check for required number of args for this tag
     $i = $index;
-//echo __LINE__;print_r(func_get_args());exit;
-    // search for label in $parts and return the index
+
+      // search for label in $parts and return the index
     for ($i = $index; isset($parts[$i]); $i++) {
       // look at all the label tags
       if ($parts[$i][0] == 'label') {
@@ -930,8 +930,8 @@ class modparser extends modbase
       $this->parse_error['text'] = self::MISSING;
       return self::ERROR;
     }
-//echo __LINE__;print_r($this->int_version);exit;
-    // current TNG version does not fall within range continue with nex tag
+
+      // current TNG version does not fall within range continue with nex tag
     if ($start > $this->int_version || $end < $this->int_version) {
       $this->conditional = 'false';
       return $i;

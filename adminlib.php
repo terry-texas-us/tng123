@@ -101,13 +101,12 @@ function getNewNumericID($type, $field, $table) {
 function findhelp($helpfile) {
   global $mylanguage, $language;
 
-  if (file_exists("$mylanguage/$helpfile")) {
-    $helplang = $mylanguage;
-  }        //$mylanguage should already include "languages/"
-  elseif (file_exists("languages/$language/$helpfile")) {
-    $helplang = "languages/$language";
+  if (file_exists("$mylanguage/$helpfile")) { // $mylanguage should already include "languages/"
+      $helplang = $mylanguage;
+  } elseif (file_exists("languages/$language/$helpfile")) {
+      $helplang = "languages/$language";
   } else {
-    $helplang = "languages/English";
+      $helplang = "languages/English";
   }
 
   return $helplang;
@@ -275,8 +274,8 @@ function determineConflict($row, $table) {
       $tngconfig['edit_timeout'] = 15;
     }
     $expiretime = $row['edittime'] + (intval($tngconfig['edit_timeout']) * 60);
-    //echo "et=$expiretime, ct=$currenttime"; exit;
-    if ($expiretime > $currenttime) {
+
+      if ($expiretime > $currenttime) {
       $editconflict = true;
     }
   }

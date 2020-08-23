@@ -332,8 +332,8 @@ class modinstaller extends modparser
         $copyfiles_required++;
         $source_path = $tags[$j]['arg1'];
         $source_file = pathinfo($source_path, PATHINFO_BASENAME);
-        //echo $source_path;exit;
-        $filename = pathinfo($source_path, PATHINFO_BASENAME);
+
+          $filename = pathinfo($source_path, PATHINFO_BASENAME);
         $destination_path = $tags[$j]['arg2'];
         $dest_path = str_replace($this->rootpath, '', $destination_path);
 

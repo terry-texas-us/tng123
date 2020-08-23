@@ -112,17 +112,11 @@ echo "</form>\n";
         <!-- <div align="left"> -->
       <?php
       //$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
-      //$is_mozilla = preg_match('/mozilla/', $userAgent) && !preg_match('/compatible/', $userAgent) ? 1 : 0;
       while (count($currgen) && $generation <= $generations) {
-        //echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br/>\n";
         echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br/><br />\n";
-        //echo "<ol class=\"normal\">\n";
         echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
         while ($row = array_shift($currgen)) {
-          //echo "<li value=\"{$row['number']}\" style=\"vertical-align:top\">\n";
           echo "<li>";
-          //if(!$is_mozilla)
-          //echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>";
           echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
           echo "{$row['number']}.&nbsp;&nbsp;</td><td>";
           echo showSmallPhoto($row['personID'], $row['name'], $row['allow_living'] && $row['allow_private'], 0, false, $row['sex']);
@@ -150,10 +144,6 @@ echo "</form>\n";
             $newlist .= ", " . $row['genlist'];
           }
           while ($spouserow = array_shift($row['spouses'])) {
-            //$famrights = determineLivingPrivateRights($spouserow, $righttree);
-            //$spouserow['allow_living'] = $famrights['living'];
-            //$spouserow['allow_private'] = $famrights['private'];
-
             $marriagemsg = ($personsex == "F") ? $text['wasmarried_female'] : $text['wasmarried_male'];
             if ($spouserow['marrdate'] || $spouserow['marrplace']) {
               echo "<p>$firstfirstname " . $marriagemsg . " <a href=\"$getperson_url" . "personID={$spouserow['personID']}&amp;tree=$tree\">{$spouserow['name']}</a>";
@@ -213,7 +203,6 @@ echo "</form>\n";
               tng_free_result($result2);
             }
           }
-          //if(!$is_mozilla)
           echo "</td></tr></table>";
           echo "<br clear=\"all\"/></li>\n";
         }

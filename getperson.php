@@ -164,10 +164,6 @@ if ($rights['both']) {
   $dnanamestr = $namestr;
   $citekey = $personID . "_";
   $cite = reorderCitation($citekey);
-  //$citekey = $personID . "_NAME";
-  //$cite2 .= reorderCitation( $citekey );
-  //if( $cite2 )
-  //$cite .= $cite ? ", $cite2" : $cite2;
   if ($cite) {
     $namestr .= "<sup><span class=\"normal\">[$cite]</span></sup>";
   }
@@ -452,10 +448,6 @@ if ($parents && tng_num_rows($parents)) {
   tng_free_result($parents);
 }
 
-//do marriages
-//if( $spouseorder )
-//$marriages = getSpouseFamilyFull($tree, $self, $personID, $spouseorder);
-//else
 $marriages = getSpouseFamilyFullUnion($tree, $personID);
 $marrtot = tng_num_rows($marriages);
 $marrcount = 1;

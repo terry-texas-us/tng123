@@ -135,9 +135,6 @@ function doMedia($mediatypeID) {
       $notes = "({$text['livingphoto']})";
     }
 
-    //$description = strip_tags($description); // clean the text of HTML tags
-    //$notes = strip_tags($notes);
-
     if ($row['status']) {
       $notes = "{$text['status']}: {$row['status']}. $notes";
     }
@@ -154,7 +151,6 @@ function doMedia($mediatypeID) {
       $item .= "<category>{$text['tree']}: " . xmlcharacters($trow['treename']) . "</category>\n";
     } else {
       $item .= "<description>" . xmlcharacters(htmlspecialchars($notes, ENT_NOQUOTES, $session_charset)) . "</description>\n";
-      //$item .=  "<category></category>\n"; // the RSS validator recognises an empty tag as an error, commented it out
     }
     $changedate = date_format(date_create($row['changedatef']), "D, d M Y H:i:s");
     $item .= "<pubDate>$changedate $timezone</pubDate>\n";
@@ -208,7 +204,6 @@ if ($rssimage) {                            // define $rssimage in your customco
 echo $item;
 
 //you will need to define $rsslang in your customconfig.php file before you can use this
-//echo "<language>$rsslang</language>\n";
 
 $text['pastxdays'] = preg_replace("/xx/", "$change_cutoff", $text['pastxdays']);
 if (!$change_cutoff) {
@@ -288,8 +283,6 @@ if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a p
       $item .= "<category>{$text['tree']}: " . xmlcharacters($treerow['treename']) . "</category>\n";
       $changedate = date_format(date_create($row['changedatef']), "D, d M Y H:i:s");
       $item .= "<pubDate>$changedate $timezone </pubDate>\n";
-      //$item .=   "<guid isPermaLink=\"false\">>$tngdomain/$row[personID]-".date_format(date_create($row[changedatef]), DATE_ATOM)."</guid>\n";
-
       $item .= "</item>\n";
       echo $item;
     }
@@ -297,7 +290,6 @@ if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a p
   }
 }
 
-//$allwhere = " AND $people_table.gedcom = $families_table.gedcom";
 if ($familyID) {
   $whereclause = "WHERE $families_table.familyID = \"$familyID\"$privacystr ORDER BY changedate LIMIT $change_limit";
 } else {
@@ -333,8 +325,6 @@ if (!$personID) {
       $item .= "</description>\n";
       $item .= "<category>{$text['tree']}: " . xmlcharacters($treerow['treename']) . "</category>\n";
       $item .= "<pubDate>" . displayDate($row['changedatef']) . " $timezone </pubDate>\n";
-      //$item .= "<guid isPermaLink=\"false\">$tngdomain/$row[familyID]-".date_format(date_create($row[changedatef]), DATE_ATOM)."</guid>\n";
-
       $item .= "</item>\n";
       echo $item;
     }

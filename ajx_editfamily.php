@@ -361,8 +361,8 @@ include_once "eventlib.php";
                                     $birthstring = $admtext['nobirthinfo'];
                                   }
                                 }
-                                //echo $ajax ? getName( $child ) : "<a href=\"admin_editperson.php?personID={$child['pID']}&tree=$tree&cw=1\">" . getName( $child ) . "</a>";
-                                echo getName($child);
+
+                                  echo getName($child);
                                 echo " - {$child['pID']}<br />$birthstring";
                               } else {
                                 echo $admtext['living'] . " - " . $child['pID'];

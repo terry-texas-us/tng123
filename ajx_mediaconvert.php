@@ -27,7 +27,6 @@ function createFolder($base, $dest) {
       if (!file_exists($base . $folders[$i])) {
         @mkdir($folders[$i], 0755);
       }
-      //echo "making $base" . $folders[$i] . "<br>\n";
     }
   }
 }
@@ -48,7 +47,6 @@ foreach ($mediatypes_assoc as $type => $path) {
         if (!file_exists($dest)) {
           @mkdir($dest, 0755);
         }
-        //echo "making $dest<br>\n";
         $source = $rootpath . $usefolder . "/";
       } else {
         //move from tree folders
@@ -56,13 +54,11 @@ foreach ($mediatypes_assoc as $type => $path) {
         $dest = $rootpath . $usefolder . "/";
       }
       if ($row['abspath'] != "1" && strpos($row['path'], "http") !== 0 && file_exists($source . $row['path'])) {
-        //echo $source . $row['path'] . " => " . $dest . $row['path'] . "<br>\n";
         createFolder($dest, $row['path']);
         rename($source . $row['path'], $dest . $row['path']);
         $done = 1;
       }
       if ($row['thumbpath'] && strpos($row['thumbpath'], "http") !== 0 && file_exists($source . $row['thumbpath'])) {
-        //echo $source . $row['thumbpath'] . " => " . $dest . $row['thumbpath'] . "<br>\n";
         createFolder($dest, $row['thumbpath']);
         rename($source . $row['thumbpath'], $dest . $row['thumbpath']);
         $done = 1;

@@ -97,7 +97,6 @@ if ($tngprint) {
     //all pages not named get full indexing as well
     //no pages come in here unless they include genlib.php
     default:
-      //$flags['norobots'] = "";
       break;
   }
 }

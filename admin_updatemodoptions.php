@@ -13,8 +13,6 @@ include "adminlib.php";
 $textpart = "mods";
 include "getlang.php";
 include "$mylanguage/admintext.php";
-//	$link = tng_db_connect($database_host,$database_name,$database_username,$database_password);
-//echo __FILE__,' ',__LINE__;print_r($_POST);exit;
 
 if (!count($_POST['options'])) {
   header("Location: admin_main.php");
@@ -43,8 +41,6 @@ if (!is_writeable($optionsfile)) {
   $_SESSION['err_msg'] = "{$admtext['checkwrite']} {$admtext['cantwrite']} $optionsfile !";
   header("Location: admin_modhandler.php");  // restored to new Mod Manager screen KCR 140504
 } else {
-  //$optionsfile = "classes/mod.class.config.php";
-
   $optionstring = "<?php";
   foreach ($options as $key => $value) {
     $optionstring .= "\n\$options['$key'] = \"$value\";";

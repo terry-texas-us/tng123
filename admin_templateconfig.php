@@ -292,7 +292,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             }
             $sections[$n] .= "</td>\n</tr>\n";
           }
-          //debugPrint($sections);
+
           foreach ($entries as $i) {
             $section = $sections['t' . $i];
             if ($section) {

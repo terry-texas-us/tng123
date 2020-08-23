@@ -250,7 +250,6 @@ function doPlaces($place) {
 
   $num = 1;
   while ($row = tng_fetch_assoc($result)) {
-    //$row['place'] = preg_replace("/'/","&#39;", $row['place'] );
     $lines .= showAction($row['place'], $num);
     $lines .= "<td class=\"lightback normal\">" . $row['place'] . "&nbsp;</td></tr>\n";
     $num++;

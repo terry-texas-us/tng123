@@ -225,7 +225,6 @@ function getSpouseDates($row, $personsex) {
       if ($row['divplace']) {
         $spouseinfo .= "  " . $text['inplace'] . $row['divplace'];
       }
-      //$spouseinfo .= ". ";
     }
   }
   if ($spouseinfo) {

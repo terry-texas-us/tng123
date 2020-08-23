@@ -210,7 +210,6 @@ else {
       $cite = strip_tags($cite);
       $cite = preg_replace("/\n/", " ", $cite);
       $pdf->MultiCell($paperdim['w'] - $rtmrg - ($lftmrg * 1.5), $pdf->GetFontSize(), "$citectr. $cite\n\n", 0, 'L', 0, 0);
-      //$pdf->WriteHTML("<br>$citectr. $cite<br>");
       $citectr++;
     }
   }
@@ -313,7 +312,6 @@ function displayChild($personID, $childcount) {
     $fam['allow_living'] = $frights['living'];
     $fam['allow_private'] = $frights['private'];
 
-    //$fam['allow_living'] = !$fam['fliving'] || $livedefault == 2 || ( $allow_living && checkbranch( $fam['fbranch'] ) ) ? 1 : 0;
     $spousename = getName($fam);
     $fam['living'] = $fam['fliving'];
     $fam['private'] = $fam['fprivate'];
@@ -528,7 +526,6 @@ function nameLine($label1, $data1, $shade = 0, $cite = '') {
   }
   $pdf->SetFont($rptFont, $bold, $lblFontSize);
   $pdf->Cell($labelwidth, $lineheight, $label1, 1, 0, 'L', $shade);
-  //$pdf->CellFit($labelwidth, $lineheight, $label1, 1, 0, 'L', $shade);
   $pdf->SetFont($rptFont, $bold, $rptFontSize);
   $origx = $pdf->GetX();
   $pdf->CellFit($paperdim['w'] - $pdf->GetX() - $rtmrg, $lineheight, $data1, 1, 0, 'L', $shade, '', 1, 0);

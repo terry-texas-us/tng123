@@ -278,8 +278,6 @@ function getNotes($persfamID, $flag) {
     if ($note['noteID']) {
       getCitations($note['noteID']);
     }
-    //else
-    //getCitations( $note['ID'] );
     if (!$note['eventID']) {
       $note['eventID'] = "--x-general-x--";
     }
@@ -440,9 +438,7 @@ function buildGenNotes($notearray, $entity, $eventlist) {
     $events = explode(",", $eventlist);
     $eventctr = 0;
     foreach ($events as $event) {
-      //$eventlen = strlen( $event );
       foreach ($notearray as $key => $note) {
-        //if( substr($key,0,$eventlen) == $event ) {
         if (strtok($key, "_") == $event) {
           if ($note['title'] != $lasttitle && $eventctr) {
             if ($notes) {
@@ -800,7 +796,6 @@ function doCustomEvents($entityID, $type, $nomap = 0) {
     if (!$custevent['ldsevent'] || $allow_lds) {
       $displayval = getEventDisplay($custevent['display']);
       $eventID = $custevent['eventID'];
-      //$key = "cust$eventID";
       $fact = array();
       if ($custevent['info']) {
         $fact = checkXnote($custevent['info']);
@@ -837,7 +832,6 @@ function doMediaSection($entity, $medialist, $albums) {
   }
   $albumtext = writeAlbums($albums);
   if ($albumtext) {
-    //$media .= showBreak("smallbreak");
     if ($media) {
       $media .= "<br/>\n";
     }
@@ -1102,9 +1096,7 @@ function getMedia($entity, $linktype, $all = false) {
       }
       array_push($media[$eventID], $thismedia);
     } elseif ($linktype == "C") {
-      //if($entity['allow_living'] && $entity['allow_private']) {
       array_push($media, $thismedia);
-      //}
     } else {
       if (!isset($media[$eventID][$mediatypeID])) {
         $media[$eventID][$mediatypeID] = array();

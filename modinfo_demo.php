@@ -45,8 +45,6 @@ $oMod = new modinfo($objinits);
 $modlist = $oMod->get_modlist_sorted();
 $modnames = $oMod->get_modfile_names();
 
-//print_r( $modlist );
-
 $oMod->collect_info($modfile);
 
 $status = $oMod->get_status();
@@ -62,10 +60,8 @@ $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
 $raw_table = $oMod->tags;
-//print_r( $raw_table ); exit;
 
 $targets = $oMod->get_target_files();
-//print_r( $targets );exit;
 
 echo "
 <table>

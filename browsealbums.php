@@ -176,8 +176,6 @@ while ($row = tng_fetch_assoc($result)) {
     $prow['allow_living'] = $rights['living'];
     $prow['allow_private'] = $rights['private'];
 
-    //echo "al={$prow['allow_living']}, ap={$prow['allow_private']}<br>";
-
     if (!$rights['living']) {
       $foundliving = 1;
     }

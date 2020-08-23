@@ -371,10 +371,8 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                         $newactionstr = preg_replace("/zzz/", $row['ID'], $newactionstr);
                         $editlink = "admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}";
                         if ($allow_edit) {
-                          //$name = "<a href=\"$editlink\">" . getName( $row ) . "</a>";
                           $id = "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['personID'] . "</a>";
                         } else {
-                          //$name = getname( $row );
                           $id = $row['personID'];
                         }
                         echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns\">$newactionstr</div></td>\n";

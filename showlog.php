@@ -23,7 +23,6 @@ if ($maxloglines) {
 $showlog_url = getURL("showlog", 1);
 $logxml_url = getURL("ajx_logxml", 0);
 
-//$flags[autorefresh] = $autorefresh;
 if (isset($autorefresh)) {
   $flags['scripting'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/net.js\"></script>\n";
 }

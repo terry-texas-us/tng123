@@ -46,11 +46,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['tablecreation'
     <tr class="databack">
         <td class="tngshadow"><span class="normal"><p>
 <?php
-if ($badtables) //echo $admtext['tnotcreated'] . ": $badtables";
-{
-  echo "Tables not created: $badtables";
+if ($badtables) {
+    echo "Tables not created: $badtables";
 } else {
-  echo $admtext['tablesuccess'];
+    echo $admtext['tablesuccess'];
 }
 ?>
 </p>

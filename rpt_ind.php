@@ -126,7 +126,6 @@ else {
     getCitations($personID, 0);
   }
 
-  //$y = $pdf->GetY();
   $cite = reorderCitation($personID . "_", 0);
   $cite2 = reorderCitation($personID . "_NAME", 0);
   if ($cite2) {
@@ -412,8 +411,6 @@ else {
     $notes = preg_replace("/&nbsp;/", ' ', $notes);
     $notes = preg_replace("/<li>/", '* ', $notes);
     $notes = preg_replace("/<br\s*\/?>/", "", $notes);
-    //if(!isset($allowable_tags))
-    //$allowable_tags = "<a>";
     $allowable_tags = "";
     $notes = strip_tags($notes, $allowable_tags);
 
@@ -422,8 +419,6 @@ else {
     $pdf->MultiCell($paperdim['w'] - $rtmrg - $lftmrg, $pdf->GetFontSize(), $notes, 0, 'L', 0, 0);
 
     //media goes here
-    //$pdf->Ln(0.05);
-    //titleLine($text['photos']);
   }
 
   // create the citations page
@@ -443,10 +438,10 @@ else {
     $citectr = 1;
     foreach ($citestring as $cite) {
       $cite = strip_tags($cite);
-      //$cite = preg_replace("/\n/", " ", $cite);
-      $pdf->MultiCell($paperdim['w'] - $rtmrg - ($lftmrg * 1.5), $pdf->GetFontSize(), "$citectr. $cite\n\n", 0, 'L', 0, 0);
-      //$pdf->WriteHTML("<br>$citectr. $cite<br>");
-      $citectr++;
+
+        $pdf->MultiCell($paperdim['w'] - $rtmrg - ($lftmrg * 1.5), $pdf->GetFontSize(), "$citectr. $cite\n\n", 0, 'L', 0, 0);
+
+        $citectr++;
     }
   }
 }
