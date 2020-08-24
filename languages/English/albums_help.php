@@ -126,7 +126,7 @@ echo help_header("Help: Albums");
 
             <p style="float:right"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Albums</p></a>
-            <p>To delete an Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Delete icon next to that Albumm. The row will
+            <p>To delete an Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Delete icon next to that Album. The row will
                 change color and then vanish as the item is deleted.</p>
 
         </td>
