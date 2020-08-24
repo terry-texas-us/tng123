@@ -53,7 +53,6 @@ fwrite($fp, "\$pinplacelevel3 = \"$pinplacelevel3\";\n");
 fwrite($fp, "\$pinplacelevel4 = \"$pinplacelevel4\";\n");
 fwrite($fp, "\$pinplacelevel5 = \"$pinplacelevel5\";\n");
 fwrite($fp, "\$pinplacelevel6 = \"$pinplacelevel6\";\n");
-fwrite($fp, "?>\n");
 
 flock($fp, LOCK_UN);
 fclose($fp);

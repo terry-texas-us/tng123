@@ -283,8 +283,9 @@ fwrite($fp, "\n");
 fwrite($fp, "if(!isset(\$cms['auto'])) {\n");
 fwrite($fp, "\$cms['support'] = \"$cmssupport\";\n");
 fwrite($fp, "\$cms['url'] = \"$cmsurl\";\n");
-fwrite($fp, "if(!isset(\$cms['tngpath']))\n");
-fwrite($fp, "    \$cms['tngpath'] = \"$cmstngpath\";\n");
+fwrite($fp, "if (!isset(\$cms['tngpath'])) {\n");
+fwrite($fp, "  \$cms['tngpath'] = \"$cmstngpath\";\n");
+fwrite($fp, "}\n");
 fwrite($fp, "\$cms['module'] = \"$cmsmodule\";\n");
 fwrite($fp, "\$cms['cloaklogin'] = \"$cmscloaklogin\";\n");
 fwrite($fp, "\$cms['credits'] = \"$cmscredits\";\n");
@@ -292,7 +293,6 @@ fwrite($fp, "\$cms['adminurl'] = \"$adminurl\";\n");
 fwrite($fp, "}\n");
 fwrite($fp, "\n");
 fwrite($fp, "@include \$subroot . \"customconfig.php\";\n");
-fwrite($fp, "?>\n");
 
 flock($fp, LOCK_UN);
 fclose($fp);
@@ -305,7 +305,6 @@ if ($fp) {
   fwrite($fp, "\$tngconfig = array();\n");
   fwrite($fp, "\$tngconfig['subroot'] = \"$newsubroot\";\n");
   fwrite($fp, "\$subroot = \$tngconfig['subroot'] ? \$tngconfig['subroot'] : \"\";\n");
-  fwrite($fp, "?>\n");
   flock($fp, LOCK_UN);
   fclose($fp);
 }

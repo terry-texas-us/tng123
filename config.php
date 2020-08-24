@@ -96,7 +96,7 @@ $customfooter = "footer.php";
 $custommeta = "meta.php";
 $tngconfig['tabs'] = "tngtabs2.css";
 $tngconfig['menu'] = "0";
-$tngconfig['istart'] = "0";
+$tngconfig['istart'] = "1";
 $tngconfig['showhome'] = "0";
 $tngconfig['showsearch'] = "0";
 $tngconfig['searchchoice'] = "0";
@@ -203,16 +203,15 @@ $txt111 = "#FFFFFF";
 $tng_notinstalled = "";
 
 if (!isset($cms['auto'])) {
-  $cms['support'] = "";
-  $cms['url'] = "";
-  if (!isset($cms['tngpath'])) {
-    $cms['tngpath'] = "";
-  }
-  $cms['module'] = "";
-  $cms['cloaklogin'] = "";
-  $cms['credits'] = "";
-  $cms['adminurl'] = "";
+    $cms['support'] = "";
+    $cms['url'] = "";
+    if (!isset($cms['tngpath'])) {
+        $cms['tngpath'] = "";
+    }
+    $cms['module'] = "";
+    $cms['cloaklogin'] = "";
+    $cms['credits'] = "";
+    $cms['adminurl'] = "";
 }
 
 @include $subroot . "customconfig.php";
-?>

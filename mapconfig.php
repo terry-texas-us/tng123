@@ -21,4 +21,3 @@ $pinplacelevel3 = "038";
 $pinplacelevel4 = "074";
 $pinplacelevel5 = "122";
 $pinplacelevel6 = "155";
-
