@@ -77,7 +77,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <td><?php echo $admtext['progint']; ?>:</td>
                         <td><input type="text" value="<?php echo $tngimpcfg['readmsecs']; ?>" name="readmsecs" size="5"></td>
                     </tr>
-                    <!--<tr><td><?php echo $admtext['failint']; ?>:</td><td><input type="text" value="<?php echo $tngimpcfg['checksecs']; ?>" name="checksecs" size="5"></td></tr>-->
                     <tr>
                         <td><?php echo $admtext['defimpopt']; ?>:</td>
                         <td>

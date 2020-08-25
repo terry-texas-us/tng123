@@ -109,9 +109,7 @@ echo "</form>\n";
 ?>
     <div class="titleboxmedium">
         <div class="float-right"><?php echo $detail_link; ?></div>
-        <!-- <div align="left"> -->
       <?php
-      //$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
       while (count($currgen) && $generation <= $generations) {
         echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br/><br />\n";
         echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";

@@ -323,8 +323,6 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                 </select>
                             </td>
                             <td><input type="text" name="newlink1" id="newlink1" value="" onkeypress="return newlinkEnter(document.form1,this,event);"></td>
-                            <!--<td class="normal"><input type="submit" value="<?php echo $admtext['add']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-			<input type="button" value="<?php echo $admtext['find']; ?>" name="find1" onClick="findopen=true;openFind(document.find.linktype1.options['document.find.linktype1.selectedIndex'].value);$('newlines').innerHTML=resheremsg;"></td>-->
                             <td class="normal"><input type="button" value="<?php echo $admtext['add']; ?>" onclick="return addMedia2EntityLink(document.form1);"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
                             <td><a href="#"
                                    onclick="return findItem(findform.linktype1.options[findform.linktype1.selectedIndex].value,'newlink1',null,findform.tree1.options[findform.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>','a_<?php echo $albumID; ?>');"
@@ -349,14 +347,14 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                           while ($plink = tng_fetch_assoc($result3)) {
                             $oldlinks++;
                             if ($plink['personID'] != NULL) {
-                              $type = "person";
+                              $type = $admtext['person'];
                               $id = " (" . $plink['personID'] . ")";
                               $rights = determineLivingPrivateRights($plink);
                               $plink['allow_living'] = $rights['living'];
                               $plink['allow_private'] = $rights['private'];
                               $name = getName($plink);
                             } elseif ($plink['familyID'] != NULL) {
-                              $type = "family";
+                              $type = $admtext['family'];
                               $husb['gedcom'] = $plink['gedcom'];
                               $husb['firstname'] = $plink['hfirstname'];
                               $husb['lnprefix'] = $plink['hlnprefix'];
@@ -365,7 +363,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                               $husb['suffix'] = $plink['hsuffix'];
                               $husb['nameorder'] = $plink['hnameorder'];
 
-                                $wife['gedcom'] = $plink['gedcom'];
+                              $wife['gedcom'] = $plink['gedcom'];
                               $wife['firstname'] = $plink['wfirstname'];
                               $wife['lnprefix'] = $plink['wlnprefix'];
                               $wife['lastname'] = $plink['wlastname'];
@@ -389,15 +387,15 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                               }
                               $id = " (" . $plink['familyID'] . ")";
                             } elseif ($plink['sourceID'] != NULL) {
-                              $type = "source";
+                              $type = $admtext['source'];
                               $id = " (" . $plink['sourceID'] . ")";
                               $name = substr($plink['title'], 0, 25);
                             } elseif ($plink['repoID'] != NULL) {
-                              $type = "repository";
+                              $type = $admtext['repository'];
                               $id = " (" . $plink['repoID'] . ")";
                               $name = substr($plink['reponame'], 0, 25);
                             } else { //place
-                              $type = "place";
+                              $type = $admtext['place'];
                               $id = "";
                               $name = $plink['entityID'];
                             }
@@ -410,7 +408,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             }
                             echo "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>\n";
                             echo "</td>\n";
-                            echo "<td class=\"lightback  normal\">" . $admtext[$type] . "</td>\n";
+                            echo "<td class=\"lightback  normal\">" . $type . "</td>\n";
                             echo "<td class=\"lightback  normal\">$name$id&nbsp;</td>\n";
                             echo "<td class=\"lightback  normal\">{$plink['treename']}</td>\n";
                             echo "<td class=\"lightback normal\" id=\"event_{$plink['alinkID']}\">$eventstr&nbsp;</td>\n";

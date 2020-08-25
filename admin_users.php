@@ -161,7 +161,6 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['username']; ?></b>&nbsp;</td>
                             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
                             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></b>&nbsp;</td>
-                            <!--<td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['admin']; ?></b>&nbsp;</td>-->
                             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
                             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['branch']; ?></b>&nbsp;</td>
                             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['role']; ?></b>&nbsp;</td>

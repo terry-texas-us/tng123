@@ -59,7 +59,6 @@ while ($row = tng_fetch_assoc($result)) {
 }
 ?>
 	</select><br/><br/></span>
-                <!-- <input type="submit" name="secaction" value="<?php echo $admtext['creategendex']; ?>">  -->
                 <input type="submit" name="secaction" value="<?php echo $admtext['tracklines']; ?>">
                 <input type="submit" name="secaction" value="<?php echo $admtext['sortchildren']; ?>">
                 <input type="submit" name="secaction" value="<?php echo $admtext['sortspouses']; ?>">

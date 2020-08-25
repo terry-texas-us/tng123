@@ -48,10 +48,11 @@ if ($success) {
     tng_execute($query, $params);
   }
 
-  adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['addnewtest']}: $testID</a>");
+  adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['addnewdna']}: $testID</a>");
 
   header("Location: admin_edit_dna_test.php?testID=$testID&newtest=1&added=1");
 } else {
-  $message = $admtext['testnotadded'] . ".";
+  // TODO text ['testnotadded'] was not defined in any language. Manually added here.
+  $message = _('DNA test could not added');
   header("Location: admin_dna_tests.php?message=" . urlencode($message));
 }

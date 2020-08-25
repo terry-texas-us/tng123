@@ -8468,8 +8468,9 @@ msgstr "Citación"
 msgid "AND"
 msgstr "Y"
 
-# $admtext['apellidos'] = "Apellidos";
-### Native lookup failed. Duplicate? ###
+# $admtext['surnames'] = "Apellidos";
+msgid "Surnames"
+msgstr "Apellidos"
 
 # $admtext['subhead'] = "Subhead";
 msgid "Subhead"

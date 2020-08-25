@@ -206,7 +206,6 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
           <?php
           }
           ?>
-            <!--	<th class="fieldnameback center nw" colspan="<?php echo $col_span; ?>">&nbsp;</th> -->
             <th class="center nw" colspan="11" style="<?php echo "$style12 \"> {$text['12markers']} "; ?> </th>
                     <th class=" center nw
             " colspan="9" style="<?php echo "$style25 \"> {$text['25markers']} "; ?> </th>

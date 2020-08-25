@@ -77,10 +77,6 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                             </select>
                         </td>
                     </tr>
-                    <!--<tr>
-			<td><?php echo $admtext['useroffset']; ?>*:</td>
-			<td><input type="text" name="start" value="1" /></td>
-		</tr>-->
                 </table>
                 <br/>
                 <input type="hidden" name="start" value="1"/>

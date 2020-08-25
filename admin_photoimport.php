@@ -23,7 +23,8 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 $helplang = findhelp("data_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
-tng_adminheader($admtext['phimport'], $flags);
+// TODO text ['phimport'] was not defined in any language. Manually added here.
+tng_adminheader(_('Photo Import'), $flags);
 
 $standardtypes = array();
 $moptions = "";

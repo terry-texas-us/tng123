@@ -67,7 +67,7 @@ $helplang = findhelp("data_help.php");
 adminwritelog($admtext['media'] . " &gt;&gt; " . $admtext['import'] . " ($mediatypeID): $tree");
 
 $flags['tabs'] = $tngconfig['tabs'];
-tng_adminheader($admtext['phimport'], $flags);
+tng_adminheader(_('Photo Import'), $flags);
 
 $tngpath = $mediatypes_assoc[$mediatypeID];
 ?>

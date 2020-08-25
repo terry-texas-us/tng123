@@ -40,7 +40,8 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var type = "media";
     //var formname = "find";
     var findform = "find";
-    var resheremsg = '<span class="normal">' + "<?php echo $text['reshere']; ?>" + '</span>';
+    // TODO text ['reshere'] was not defined in any language. Manually added here.
+    var resheremsg = '<span class="normal">' + "<?php echo _('reshere'); ?>" + '</span>';
     var tng_thumbmaxw = <?php echo($thumbmaxw ? $thumbmaxw : "80"); ?>;
     var tng_thumbmaxh = <?php echo($thumbmaxh ? $thumbmaxh : "80"); ?>;
     var links_url = cmstngpath + "ajx_medialinks.php";
@@ -230,7 +231,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
 		            </span>&nbsp;
                         <input type="submit" class="btn start" value="<?php echo $admtext['startupl']; ?>"/>
                         <input type="reset" class="btn cancel" value="<?php echo $admtext['cancelupl']; ?>">
-                        <!--<input type="button" value="<?php echo $admtext['text_delete']; ?>">-->
                     </div>
                 </div>
                 <!-- The global progress information -->

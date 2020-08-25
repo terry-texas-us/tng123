@@ -162,7 +162,6 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                 <form action="admin_dna_tests.php" name="form1" id="form1">
                     <table class="normal">
                         <tr>
-                            <!-- 		<td><?php echo $admtext['searchfor']; ?>: </td>  -->
                             <td>
                               <?php
                               $newwherestr = $wherestr;

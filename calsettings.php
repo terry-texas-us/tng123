@@ -9,28 +9,19 @@
  * @version 2.0
  */
 
-
 /* Make sure we're running under TNG */
 if (!isset($tngconfig)) {
   die ("Sorry!");
 }
 
-
-/* We only show one type of seal date */
-$text['sealdate'] = $text['ssealdate'];
-
-
 /* What is the first day of the week? */
 $startOfWeek = isset($tngconfig['calstart']) ? $tngconfig['calstart'] : '0';    # 6=Saturday, 0=Sunday, 1=Monday, 2=Tuesday ...
-
 
 /* How many characters of a name can I display? */
 $truncateNameAfter = '28';
 
-
 /* How many events can I show for a single day? */
 $truncateDateAfter = '4';
-
 
 /* Select which INDIVIDUAL events you'd like to show by setting an icon */
 $calIndEvent['birth'] = 'tng_cal_birth.png';

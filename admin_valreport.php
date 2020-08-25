@@ -18,7 +18,8 @@ $helplang = findhelp("misc_help.php");
 $orgtree = $tree;
 
 $flags['tabs'] = $tngconfig['tabs'];
-tng_adminheader($admtext['validation'], $flags);
+// TODO text ['validation'] was not defined in any language. Manually added here.
+tng_adminheader(_('Validation'), $flags);
 ?>
 <script type="text/javascript" src="js/admin.js"></script>
 </head>

@@ -362,7 +362,15 @@ function determineLivingRights($row, $usedb = 0, $allow_living_db = 0, $allow_pr
 
 //end obsolete function
 
-function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranch = -1) {
+/**
+ * Determines access rights to a person based on the user, tree and branch
+ *
+ * @param array $row information required to determine rights
+ * @param int $pagerighttree negative to have tree rights examined (default)
+ * @param int $pagerightbranch negative to have branch rights examined (default)
+ * @return array ['private'], ['living'], ['lds'], plus ['both' ('private' and 'living')] rights of person
+ */
+function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranch = -1): array {
   global $livedefault, $ldsdefault, $allow_living, $allow_private, $allow_lds, $tree;
 
   if (!isset($row['living'])) {
@@ -387,7 +395,6 @@ function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranc
   $private = $row['private'];
 
   if ($private || $living || $ldsdefault == 2) {
-    //check tree
     $righttree = $pagerighttree >= 0 ? $pagerighttree : checktree($row['gedcom']);
     $righttreebranch = $pagerightbranch >= 0 ? $pagerightbranch : ($righttree ? checkbranch($row['branch']) : false);
     $user_person = !empty($_SESSION['mypersonID']) && $_SESSION['mygedcom'] == $tree && $_SESSION['mypersonID'] == $row['personID'];

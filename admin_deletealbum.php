@@ -20,8 +20,9 @@ $result = tng_query($query);
 $query = "DELETE FROM $albumlinks_table WHERE albumID=\"$albumID\"";
 $result = tng_query($query);
 
-adminwritelog($admtext['deleted'] . ": {$admtext['album']} $albumID");
+// TODO text ['album'] was not defined in any language. Manually added here.
+adminwritelog($admtext['deleted'] . ": " . _('Album') . " $albumID");
+$message = _('Album') . " $albumID {$admtext['succdeleted']}.";
 
-$message = $admtext['album'] . " $albumID {$admtext['succdeleted']}.";
 header("Location: admin_albums.php?message=" . urlencode($message));
 

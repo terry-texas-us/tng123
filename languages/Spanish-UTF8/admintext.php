@@ -2326,7 +2326,7 @@ $admtext['findciteid'] = "Encuentre Citation ID";
 $admtext['citation'] = "Citación";
 $admtext['text_and'] = "Y";
 //added in 12.2
-$admtext['apellidos'] = "Apellidos";
+$admtext['surnames'] = "Apellidos";
 $admtext['subhead'] = "Subhead";
 $admtext['image'] = "Imagen";
 $admtext['author'] = "Autor";

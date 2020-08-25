@@ -131,8 +131,6 @@ if (!empty($old)) {
   echo "<div class=\"databack normal\" style=\"padding:5px\">\n";
 }
 ?>
-<!--<div class="lightback pad2">
-<div class="databack normal pad5">-->
 
 <?php
 $stdevents = array("BIRT", "SEX", "DEAT", "BURI", "MARR", "SLGS", "SLGC", "NICK", "NSFX", "TITL", "BAPL", "CONL", "INIT", "ENDL", "CHAN", "CALN", "AUTH", "PUBL", "ABBR", "TEXT");

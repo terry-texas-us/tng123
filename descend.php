@@ -260,7 +260,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
   if ($person['famc'] && $pedigree['popupchartlinks']) {
     $iconactions = " onmouseover=\"if(jQuery('#ic$slot').length) jQuery('#ic$slot').show();\" onmouseout=\"if(jQuery('#ic$slot').length) jQuery('#ic$slot').hide();\"";
     $iconlinks = "<div class=\"floverlr\" id=\"ic$slot\" style=\"left:" . ($pedigree['puboxwidth'] - 35) . "px;top:" . ($pedigree['puboxheight'] - 15) . "px;display:none;background-color:$bgcolor\">";
-    $iconlinks .= "<a href=\"{$pedigree['url']}personID={$person['personID']}&amp;tree=$tree&amp;display=standard&amp;generations=" . $pedigree['initpedgens'] . "\" title=\"{$text['popupnote']}\">{$pedigree['chartlink']}</a>\n";
+    $iconlinks .= "<a href=\"{$pedigree['url']}personID={$person['personID']}&amp;tree=$tree&amp;display=standard&amp;generations=" . $pedigree['initpedgens'] . "\" title=\"{$text['popupnote2']}\">{$pedigree['chartlink']}</a>\n";
     $iconlinks .= "</div>\n";
     $slot++;
   } else {

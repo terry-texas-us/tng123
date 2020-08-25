@@ -259,7 +259,6 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                 <a href="#" onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
                                     <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0" hspace="2">
                                 </a>
-                                <!--<span id="deststrfield"><?php echo $takername; ?></span>-->
                             </td>
                         </tr>
                         <tr>

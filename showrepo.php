@@ -36,7 +36,7 @@ $reporow['allow_living'] = 1;
 
 $reponotes = getNotes($repoID, "R");
 
-$logstring = "<a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree\">{$text['repo']} {$reporow['reponame']} ($repoID)</a>";
+$logstring = "<a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree\">" . $text['repository'] . " {$reporow['reponame']} ($repoID)</a>";
 writelog($logstring);
 preparebookmark($logstring);
 

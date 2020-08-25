@@ -475,9 +475,9 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                   if (is_array($r1row)) {
                     $eventlist = array();
                     echo "<tr>\n";
-                    echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['repo']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r1row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                    echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['repository']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r1row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
                     if (is_array($r2row)) {
-                      echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['repo']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r2row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                      echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['repository']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r2row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
 
                       $query = "SELECT display, eventdate, eventplace, info, $events_table.eventtypeID as eventtypeID, $events_table.eventID as eventID FROM $events_table, $eventtypes_table WHERE persfamID = \"{$r2row['repoID']}\" AND gedcom = \"$tree\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID ORDER BY ordernum";
                       $evresult = tng_query($query);

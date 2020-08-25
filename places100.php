@@ -99,7 +99,6 @@ echo getFORM("places-oneletter", "get", "", "");
                     }
 
                     $num_in_col_ctr = 0;
-                    $noplace = urlencode($text['noplace']);
                     while ($place = tng_fetch_assoc($result)) {
                       $place2 = urlencode($place['myplace']);
 

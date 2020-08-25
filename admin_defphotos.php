@@ -54,7 +54,7 @@ while ($distinctplink = tng_fetch_assoc($result)) {
 }
 tng_free_result($result);
 
-adminwritelog($admtext['assigndef'] . ": {$admtext['defsassigned']}: $defsdone;");
+adminwritelog($admtext['assigndefs'] . ": {$admtext['defsassigned']}: $defsdone;");
 
 echo "<p><strong>{$admtext['defsassigned']}:</strong> $defsdone</p>";
 

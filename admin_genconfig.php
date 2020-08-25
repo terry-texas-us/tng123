@@ -398,7 +398,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                         <td><?php echo $admtext['mostwanted']; ?>:</td>
                                         <td><input type="text" value="<?php echo $mostwanted_table; ?>" name="mostwanted_table" size="20"></td>
                                     </tr>
-                                    <!--<tr><td><?php /*echo $admtext['mhrequests'];*/ ?>:</td><td><input type="text" value="<?php /*echo $mhrequests_table;*/ ?>" name="mhrequests_table" size="20"></td></tr>-->
                                     <tr>
                                         <td><?php echo $admtext['dna_tests']; ?>:</td>
                                         <td><input type="text" value="<?php echo $dna_tests_table; ?>" name="dna_tests_table" size="20"></td>
@@ -1981,44 +1980,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 </select>
                             </td>
                         </tr>
-                        <!--
-		<tr>
-			<td><?php /*echo $admtext['showmatches'];*/ ?>:</td>
-			<td>
-				<select name="webmatches">
-					<option value=""<?php /*if( !$tngconfig['webmatches'] ) echo " selected=\"selected\"";*/ ?>><?php /*echo $admtext['yes'];*/ ?></option>
-					<option value="1"<?php /*if( $tngconfig['webmatches'] ) echo " selected=\"selected\"";*/ ?>><?php /*echo $admtext['no'];*/ ?></option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td><?php /*echo $admtext['mhmatchtype'];*/ ?>:</td>
-			<td>
-				<select name="mhmatchtype">
-					<option value="all"<?php /*if( $tngconfig['mhmatchtype'] == "all" ) echo " selected=\"selected\"";*/ ?>><?php /*echo $admtext['all'];*/ ?></option>
-					<option value="smart_matches"<?php /*if( $tngconfig['mhmatchtype'] == "smart_matches" ) echo " selected=\"selected\"";*/ ?>>Smart Matches</option>
-					<option value="record_matches"<?php /*if( $tngconfig['mhmatchtype'] == "record_matches" ) echo " selected=\"selected\"";*/ ?>>Record Matches</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td><?php /*echo $admtext['mhconfidence'];*/ ?>:</td>
-			<td>
-				<select name="mhmatchconf">
-				<?php
-                        /*
-              for($c = 20; $c <= 100; $c += 10) {
-                echo "<option value=\"$c\"";
-                if( $tngconfig['mhmatchconf'] == $c )
-                  echo " selected=\"selected\"";
-                echo ">$c" . "%</option>\n";
-              }
-              */
-                        ?>
-				</select>
-			</td>
-		</tr>
--->
                     </table>
                 </div>
             </td>

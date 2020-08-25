@@ -36,8 +36,8 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var type = "media";
     //var formname = "find";
     var findform = "find";
-    var resheremsg = '<span class="normal">' + "<?php echo $text['reshere']; ?>" + '</span>';
-    ;
+    // TODO text ['reshere'] was not defined in any language. Manually added here.
+    var resheremsg = '<span class="normal">' + "<?php echo _('reshere'); ?>" + '</span>';
 
     function validateForm() {
         var rval = true;

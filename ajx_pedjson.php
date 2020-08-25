@@ -8,7 +8,7 @@ include $cms['tngpath'] . "pedbox.php";
 
 initMediaTypes();
 
-function xmlPhoto($persfamID, $living, $gender) {
+function xmlPhoto($persfamID, $living, $gender): string {
   $photoInfo = getPhotoSrc($persfamID, $living, $gender);
   $photoref = "\"photosrc\":\"{$photoInfo['ref']}\"";
   $photolink = $photoInfo['link'] ? "\"photolink\":\"{$photoInfo['link']}\"" : "\"photolink\":\"-1\"";
@@ -74,11 +74,11 @@ function xmlPerson($currperson, $backperson, $generation) {
     if ($row['altbirthdate'] && !$row['birthdate']) {
       $bd = $row['altbirthdate'];
       $bp = trim($row['altbirthplace']);
-      $birthabbr = "capaltbirthabbr";
+      $birthabbr = $text['capaltbirthabbr'];
     } elseif ($dataflag) {
       $bd = $row['birthdate'];
       $bp = trim($row['birthplace']);
-      $birthabbr = "capbirthabbr";
+      $birthabbr = $text['capbirthabbr'];
     } else {
       $bd = $bp = $birthabbr = "";
     }
@@ -87,11 +87,11 @@ function xmlPerson($currperson, $backperson, $generation) {
     if ($row['burialdate'] && !$row['deathdate']) {
       $dd = $row['burialdate'];
       $dp = trim($row['burialplace']);
-      $deathabbr = "capburialabbr";
+      $deathabbr = $text['capburialabbr'];
     } elseif ($dataflag) {
       $dd = $row['deathdate'];
       $dp = trim($row['deathplace']);
-      $deathabbr = "capdeathabbr";
+      $deathabbr = $text['capdeathabbr'];
     } else {
       $dd = $dp = $deathabbr = "";
     }
@@ -100,13 +100,12 @@ function xmlPerson($currperson, $backperson, $generation) {
   } else {
     $bd = $bp = $birthabbr = $dd = $dp = $deathabbr = $md = $mp = $marrabbr = $displaybirth = $displaydeath = "";
   }
-  $person .= "\"babbr\":\"" . $text[$birthabbr] . "\",";
+  $person .= "\"babbr\":\"" . $birthabbr . "\",";
   $person .= "\"bdate\":\"" . xmlcharacters(displayDate($bd)) . "\",";
   $person .= "\"bplace\":\"" . xmlcharacters($bp) . "\",";
-  $person .= "\"dabbr\":\"" . $text[$deathabbr] . "\",";
+  $person .= "\"dabbr\":\"" . $deathabbr . "\",";
   $person .= "\"ddate\":\"" . xmlcharacters(displayDate($dd)) . "\",";
   $person .= "\"dplace\":\"" . xmlcharacters($dp) . "\",";
-
 
   if ($displaybirth || $displaydeath) {
     $years = "$displaybirth-$displaydeath";
@@ -214,7 +213,7 @@ function xmlPerson($currperson, $backperson, $generation) {
   }
 }
 
-function getChildren($familyID) {
+function getChildren($familyID): string {
   global $tree, $pedigree, $righttree;
 
   $children = "";

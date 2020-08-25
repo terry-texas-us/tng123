@@ -1,6 +1,6 @@
 <?php
 
-declare (strict=1);
+declare (strict_types=1);
 
 define("TEMPLATES_PATH", "templates");
 

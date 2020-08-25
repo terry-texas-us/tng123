@@ -63,7 +63,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           tng_free_result($fresult);
         }
         tng_free_result($result);
-        echo "<br/><br/>{$admtext['finishedsort']}<br/>";
+// TODO text ['finishedsort'] was not defined in any language. Manually added here.
+        echo "<br/><br/>" . _('finished sort') . "<br/>";
       } elseif ($secaction == $admtext['sortspouses']) {
 
         echo "<p>" . $admtext['sortingspouses'] . "</p>";
@@ -115,7 +116,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           tng_free_result($fresult);
         }
         tng_free_result($result);
-        echo "<br/><br/>{$admtext['finishedsort']}<br/>";
+// TODO text ['finishedsort'] was not defined in any language. Manually added here.
+        echo "<br/><br/>" . _('finished sort') . "<br/>";
       } elseif ($secaction == $admtext['creategendex']) {
         //create gendex file
         function getVitals($person) {

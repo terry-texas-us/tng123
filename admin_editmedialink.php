@@ -23,6 +23,12 @@ $entityID = $type == "album" ? $row['entityID'] : $row['personID'];
 
 $ldsOK = determineLDSRights();
 
+/**
+ * @param $eventID
+ * @param $displayval
+ * @param $info
+ * @return string
+ */
 function doEvent($eventID, $displayval, $info) {
   global $meventID;
   return "<option value=\"$eventID\"" . ($eventID == $meventID ? " selected" : "") . ">$displayval" . ($info ? ": $info" : "") . "</option>\n";

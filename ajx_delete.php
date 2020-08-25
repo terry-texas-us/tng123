@@ -35,7 +35,7 @@ switch ($t) {
     $query = "DELETE FROM $album2entities_table WHERE albumID=\"$id\"";
     $result = @tng_query($query);
 
-    $logmsg = $admtext['deleted'] . ":: {$admtext['album']} $id";
+    $logmsg = $admtext['deleted'] . ":: " . _('Album') . " $id";
     break;
   case "file":
     if (file_exists($rootpath . $desc)) //$desc is the file name in filepicker
