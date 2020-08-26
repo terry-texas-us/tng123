@@ -13,16 +13,14 @@ class surname_cloud
   public function __construct() {
   }
 
-  /*
-    Method:
-      display($top, $surnameTree, $surnameBranch) - generates html code to display the surname cloud
-    Parameters:
-      $top - number of names to put in the cloud (default is 50 names)
-      $surnameTree - limit names from this tree (default is "" which means all trees)
-      $surnameBranch - limit names from this branch (default is "" which means all branches)
-
-  */
-
+  /**
+   * Generates html code to display the surname cloud
+   *
+   * @param string $top number of names to put in the cloud (default is 50 names)
+   * @param string $surnameTree limit names from this tree (default is "" which means all trees)
+   * @param string $surnameBranch limit names from this branch (default is "" which means all branches)
+   * @return string
+   */
   public function display($top = "50", $surnameTree = "", $surnameBranch = "") {
     global $people_table, $text, $lnprefixes, $assignedtree;
     $treeBranchUrlString = "";
@@ -57,7 +55,7 @@ class surname_cloud
     }
 
     // Fetch all surnames into an array
-    $surnames = array();
+    $surnames = [];
     $idx = 0;
     while ($row = tng_fetch_array($result)) {
       $row['id'] = $idx++;  // Save $surnames index
@@ -67,7 +65,7 @@ class surname_cloud
 
     // Sort the names array by count
     $countArray = $surnames;
-    $tempArray = array();
+    $tempArray = [];
     foreach ($countArray as $key => $row) {
       $tempArray[$key] = $row['count'];
     }
@@ -75,7 +73,7 @@ class surname_cloud
     $tempArray[] = "";
 
     $SurnameMax = $countArray[0]['count']; // First record should have the most
-    $name = array();
+
     $arr_length = count($countArray);
     for ($i = 0, $num = 1; $i < $arr_length && $num <= $top; $i++, $num++) {
       $name = $countArray[$i];

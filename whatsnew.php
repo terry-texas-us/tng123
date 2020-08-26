@@ -1,4 +1,5 @@
 <?php
+
 $textpart = "whatsnew";
 include "tng_begin.php";
 
@@ -7,6 +8,8 @@ if (!empty($cms['events'])) {
   cms_whatsnew();
 }
 include $cms['tngpath'] . "functions.php";
+
+require_once "./public/people.php";
 
 $getperson_url = getURL("getperson", 1);
 $showmedia_url = getURL("showmedia", 1);
@@ -195,22 +198,7 @@ if (tng_num_rows($result)) {
         $row['allow_private'] = $rights['private'];
         $namestr = getNameRev($row);
         $birthplacestr = "";
-        if ($rights['both']) {
-          if ($row['birthdate'] || $row['birthplace']) {
-            $birthdate = $text['birthabbr'] . " " . displayDate($row['birthdate']);
-            $birthplace = $row['birthplace'];
-          } else {
-            if ($row['altbirthdate'] || $row['altbirthplace']) {
-              $birthdate = $text['chrabbr'] . " " . displayDate($row['altbirthdate']);
-              $birthplace = $row['altbirthplace'];
-            } else {
-              $birthdate = "";
-              $birthplace = "";
-            }
-          }
-        } else {
-          $birthdate = $birthplace = "";
-        }
+        list($birthdate, $birthplace) = getBirthInformation($rights['both'], $row);
         if ($birthplace) {
           $birthplacestr = $birthplace . " <a href=\"$placesearch_url";
           if (!$tngconfig['places1tree']) {
