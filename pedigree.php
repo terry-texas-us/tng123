@@ -127,8 +127,8 @@ if (file_exists($arrltpath)) {
 
 // see if chart link image is present
 if (file_exists($rootpath . $endrootpath . "img/Chart.gif")) {
-  $chartlinkimg = @GetImageSize($rootpath . $endrootpath . "img/Chart.gif");
-  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}" . "img/Chart.gif\" border=\"0\" $chartlinkimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\" />";
+  $imageSize = @GetImageSize($rootpath . $endrootpath . "img/Chart.gif");
+  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}" . "img/Chart.gif\" border=\"0\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\" />";
 } else {
   $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
 }

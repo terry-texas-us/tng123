@@ -283,8 +283,8 @@ if ($pedigree['inclphotos'] && (trim($photopath) == "" || trim($photosext) == ""
   $pedigree['inclphotos'] = false;
 }
 if (file_exists($cms['tngpath'] . "img/Chart.gif")) {
-  $chartlinkimg = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $chartlinkimg[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
+  $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
+  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
 } else {
   $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
 }

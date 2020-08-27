@@ -209,7 +209,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
               <?php
               if ($numtrees > 1) {
                 ?>
-                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $text['tree']; ?></b>&nbsp;</span></td>
+                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $text['tree']; ?></b>&nbsp;</span></td>
                 <?php
               }
               ?>
@@ -217,8 +217,8 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 
           <?php
           $i = $offsetplus;
-          $chartlinkimg = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-          $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $chartlinkimg[3] alt=\"\" />";
+          $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
+          $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $imageSize[3] alt=\"\" />";
           while ($row = tng_fetch_assoc($result)) {
             $rights = determineLivingPrivateRights($row);
             $row['allow_living'] = $rights['living'];

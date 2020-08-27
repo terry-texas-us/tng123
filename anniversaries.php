@@ -495,7 +495,7 @@ $result = tng_query($query);
           <?php
           if ($numtrees > 1) {
             ?>
-              <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
             <?php
           }
           ?>
@@ -504,8 +504,8 @@ $result = tng_query($query);
 
       <?php
       $i = $offsetplus;
-      $chartlinkimg = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-      $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" alt=\"\" $chartlinkimg[3] />";
+      $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
+      $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" alt=\"\" $imageSize[3] />";
       $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
       while ($row = tng_fetch_assoc($result)) {
         echo "<tr>";
