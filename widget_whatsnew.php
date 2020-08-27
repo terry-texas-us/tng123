@@ -27,6 +27,8 @@ $singleMediaCard = new SingleMediaCard();
 echo $singleMediaCard->buildHtmlContent($tree, 'photos', 5);
 
 $recentPeopleCard = new RecentPeopleCard();
-echo $recentPeopleCard->buildHtmlContent($tree, 10);
+$recentPeopleCard->setPath($cms['tngpath']);
+$tables = ['people' => $people_table, 'trees' => $trees_table];
+echo $recentPeopleCard->buildHtmlContent($text['individuals'], $tables, $tree, 10);
 echo "</div>";
 echo "</div>";

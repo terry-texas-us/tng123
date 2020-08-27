@@ -185,26 +185,26 @@ if (tng_num_rows($result)) {
             <?php
           }
           ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname" width="130">&nbsp;<?php echo $text['lastmodified']; ?>&nbsp;</th>
+          <th data-tablesaw-priority="5" class="fieldnameback fieldname" width="130">&nbsp;<?php echo $text['lastmodified']; ?>&nbsp;</th>
         </tr>
         </thead>
 
       <?php
-      $chartlinkimg = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-      $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" alt=\"\" $chartlinkimg[3] />";
+      $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
+      $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" alt=\"\" $imageSize[3] />";
       while ($row = tng_fetch_assoc($result)) {
         $rights = determineLivingPrivateRights($row);
         $row['allow_living'] = $rights['living'];
         $row['allow_private'] = $rights['private'];
         $namestr = getNameRev($row);
         $birthplacestr = "";
-        list($birthdate, $birthplace) = getBirthInformation($rights['both'], $row);
+        [$birthdate, $birthplace] = getBirthInformation($rights['both'], $row);
         if ($birthplace) {
           $birthplacestr = $birthplace . " <a href=\"$placesearch_url";
           if (!$tngconfig['places1tree']) {
             $birthplacestr .= "tree={$row['gedcom']}&amp;";
           }
-          $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"\" width=\"9\" height=\"9\" /></a>";
+          $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\" /></a>";
         }
         echo "<tr><td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a>&nbsp;</td>";
         echo "<td class=\"databack\">\n";
