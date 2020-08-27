@@ -87,7 +87,7 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
     $photohtouse = $thumbmaxh;
     $photowtouse = intval($thumbmaxh * $photoinfo[0] / $photoinfo[1]);
   }
-  $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" border=\"1\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"margin-right:10px\">";
+  $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"border-width:1;border-style:solid;margin-right:10px\">";
 }
 ?>
 <script type="text/javascript" src="js/mediafind.js"></script>
@@ -148,33 +148,33 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 ?>
 
 <form action="admin_updatealbum.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <div>
-                    <div id="thumbholder" style="float:left;<?php if (!$photo) {
-                      echo "display:none";
-                    } ?>"><?php echo $photo; ?></div>
-                    <span class="plainheader"><?php echo $row['albumname'] . ": </span><br/>" . $row['description']; ?></div>
-              <?php
-              echo "<a href=\"#\" onclick=\"return removeDefault();\" class=\"smaller\" id=\"removedefault\"";
-              if (!$photo) {
-                echo " style=\"visibility:hidden\"";
-              }
-              echo ">{$admtext['removedef']}</a>\n";
-              ?>
-            </td>
-        </tr>
+  <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <div>
+          <div id="thumbholder" style="float:left;<?php if (!$photo) {
+            echo "display:none";
+          } ?>"><?php echo $photo; ?></div>
+          <span class="plainheader"><?php echo $row['albumname'] . ": </span><br>" . $row['description']; ?></div>
+        <?php
+        echo "<a href=\"#\" onclick=\"return removeDefault();\" class=\"smaller\" id=\"removedefault\"";
+        if (!$photo) {
+          echo " style=\"visibility:hidden\"";
+        }
+        echo ">{$admtext['removedef']}</a>\n";
+        ?>
+      </td>
+    </tr>
 
-        <tr class="databack">
+    <tr class="databack">
             <td class="tngshadow">
               <?php echo displayToggle("plus0", 0, "details", $admtext['existingalbuminfo'], $admtext['infosubt']); ?>
 
-                <div id="details" style="display:none">
-                    <br/>
-                    <table class="normal">
-                        <tr>
-                            <td><?php echo $admtext['albumname']; ?>:</td>
+              <div id="details" style="display:none">
+                <br>
+                <table class="normal">
+                  <tr>
+                    <td><?php echo $admtext['albumname']; ?>:</td>
                             <td><input type="text" name="albumname" size="50" value="<?php echo $row['albumname']; ?>"></td>
                         </tr>
                         <tr>
@@ -237,19 +237,19 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         echo "<div class=\"sortrow\" id=\"orderdivs_{$lrow['albumlinkID']}\" style=\"clear:both;position:relative\" onmouseover=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','hidden');\">";
                         echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                         echo "<td class=\"dragarea normal\">";
-                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
 
                         echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center\">";
-                        echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\" border=\"0\"><br/>Top</a></div>\n";
-                        echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$lrow['albumlinkID']}\" id=\"move{$lrow['albumlinkID']}\" value=\"$count\" onkeypress=\"return handleMediaEnter('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val(),event);\" />\n";
+                        echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>Top</a></div>\n";
+                        echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$lrow['albumlinkID']}\" id=\"move{$lrow['albumlinkID']}\" value=\"$count\" onkeypress=\"return handleMediaEnter('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val(),event);\">\n";
                         echo "<a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val());\" title=\"{$admtext['movetop']}\">Go</a>\n";
                         echo "</td>\n";
 
                         echo "<td class=\"lightback\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
                         if ($lrow['thumbpath'] && file_exists("$rootpath$usefolder/$treestr2" . $lrow['thumbpath'])) {
                           $size = @GetImageSize("$rootpath$usefolder/$treestr2" . $lrow['thumbpath']);
-                          echo "<a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\"><img src=\"$usefolder/$treestr2" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" border=\"0\" $size[3] alt=\"" . htmlentities($lrow['description'], ENT_QUOTES) . " \"></a>";
+                          echo "<a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\"><img src=\"$usefolder/$treestr2" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" $size[3] alt=\"" . htmlentities($lrow['description'], ENT_QUOTES) . " \"></a>";
                           $foundthumb = true;
                         } else {
                           echo "&nbsp;";
@@ -257,7 +257,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         }
                         echo "</td>\n";
                         $checked = $lrow['defphoto'] ? " checked" : "";
-                        echo "<td class=\"lightback normal\"><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br/>" . strip_tags($truncated) . "<br/>";
+                        echo "<td class=\"lightback normal\"><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br>" . strip_tags($truncated) . "<br>";
                         echo "<div id=\"del_{$lrow['albumlinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden\">";
                         if ($foundthumb) {
                           echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
@@ -430,22 +430,22 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
             </td>
         </tr>
 
-        <tr class="databack">
-            <td class="tngshadow">
-                <p class="normal">
-                  <?php
-                  echo $admtext['onsave'] . ":<br/>";
-                  echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br/>\n";
-                  if ($cw) {
-                    echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
-                  } else {
-                    echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
-                  }
-                  ?>
-                </p>
+    <tr class="databack">
+      <td class="tngshadow">
+        <p class="normal">
+          <?php
+          echo $admtext['onsave'] . ":<br>";
+          echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+          if ($cw) {
+            echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
+          } else {
+            echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
+          }
+          ?>
+        </p>
 
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                <input type="hidden" name="albumID" value="<?php echo "$albumID"; ?>">
+        <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+        <input type="hidden" name="albumID" value="<?php echo "$albumID"; ?>">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
             </td>
         </tr>

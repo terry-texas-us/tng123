@@ -6,21 +6,21 @@ echo help_header("Pomoc: Miejsca");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="cemeteries_help.php" class="lightlink">&laquo; Pomoc: Cmentarze</a> &nbsp; | &nbsp;
-                <a href="places_googlemap_help.php" class="lightlink">: Mapy Google &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Miejsca</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj lub Edycja</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Scal</a>
-            </p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="cemeteries_help.php" class="lightlink">&laquo; Pomoc: Cmentarze</a> &nbsp; | &nbsp;
+        <a href="places_googlemap_help.php" class="lightlink">: Mapy Google &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Miejsca</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Dodaj lub Edycja</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+        <a href="#merge" class="lightlink">Scal</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">

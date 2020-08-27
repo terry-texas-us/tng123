@@ -58,20 +58,20 @@ while ($row = tng_fetch_assoc($result)) {
   echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
 }
 ?>
-	</select><br/><br/></span>
-                <input type="submit" name="secaction" value="<?php echo $admtext['tracklines']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['sortchildren']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['sortspouses']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['relabelbranches']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['creategendex']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['evalmedia']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['refreshliving']; ?>">
-                <input type="submit" name="secaction" value="<?php echo $admtext['makeprivate']; ?>">
+	</select><br><br></span>
+              <input type="submit" name="secaction" value="<?php echo $admtext['tracklines']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['sortchildren']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['sortspouses']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['relabelbranches']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['creategendex']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['evalmedia']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['refreshliving']; ?>">
+              <input type="submit" name="secaction" value="<?php echo $admtext['makeprivate']; ?>">
             </form>
-            <p class="normal"><?php echo $admtext['postgdx']; ?>:<br/>
-                &raquo; <a href="http://gendexnetwork.org" target="_blank">GenDex Network</a><br/>
-                &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
-            </p>
+          <p class="normal"><?php echo $admtext['postgdx']; ?>:<br>
+            &raquo; <a href="http://gendexnetwork.org" target="_blank">GenDex Network</a><br>
+            &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
+          </p>
         </td>
     </tr>
 </table>

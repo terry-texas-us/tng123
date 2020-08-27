@@ -78,7 +78,7 @@ function getAlbumPhoto($albumID, $albumname) {
       if (function_exists('imageJpeg')) {
         $imgsrc .= " onmouseover=\"showPreview('{$trow['mediaID']}','','" . urlencode("$tusefolder/$treestr{$trow['path']}") . "','');\" onmouseout=\"closePreview('$albumID','','$sitever');\" onclick=\"closePreview('$albumID','');\"";
       }
-      $imgsrc .= "><img src=\"$tusefolder/$treestr" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" border=\"0\" class=\"thumb\" $size[3] alt=\"$albumname\" /></a>";
+      $imgsrc .= "><img src=\"$tusefolder/$treestr" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" class=\"thumb\" $size[3] alt=\"$albumname\"></a>";
     }
   }
   return $imgsrc;

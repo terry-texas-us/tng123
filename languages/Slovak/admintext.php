@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pre arch�vy...";
     $admtext['noevtypes'] = "�iadny typ udalosti neexistuje.";
     $admtext['DESI'] = "Z�ujem o potomka";
-    $admtext['allnone'] = "Pre ka�d� jazyk zadajte text, ktor� sa bude zobrazova�, <br />alebo nechajte tieto polia pr�zdne a na zobrazenie zadajte len jeden text hore.";
+    $admtext['allnone'] = "Pre ka�d� jazyk zadajte text, ktor� sa bude zobrazova�, <br>alebo nechajte tieto polia pr�zdne a na zobrazenie zadajte len jeden text hore.";
     $admtext['assocwith'] = "Spojen� s";
     $admtext['BAPM'] = "Krst";
     $admtext['umps'] = "V� s�bor GEDCOM je zrejme v��� ako je maxim�lna ve�kos� povolen� vo va�ej in�tal�cii PHP. Po�iadajte v�ho poskytovate�a internetu, aby zv��il hodnotu premennej 'upload_max_filesize' alebo m��ete nakop�rova� v� s�bor do adres�ra 'gedcom' na va�ich str�nkach a naimportova� ho odtia�.;";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Povinn�. Obsah tohto po�a mus� odpoveda� n�zvu a miestu v�ho s�boru <em>v prie�inku kolekcie</em> po nahran� s�boru na web. Napr. predpokladajme, �e nahr�vate fotografiu a v� prie�inok fotografi� na webe sa naz�va <em>photos</em>. Ak chcete, aby sa v� s�bor naz�val <em>mojafotka.jpg</em> a i�iel do podprie�inka <em>nov�fotky</em> v prie�inku <em>photos</em>, potom mali by ste do tohto po�a zada� <em>nov�fotky/mojafotka.jpg</em>.";
     $admtext['leaveblankphoto'] = "Toto pole nevypl�ujte, ak s�bor u� bol nahran�.";
     $admtext['thumbconflicts'] = "Miniat�ry neboli vytvoren�, preto�e bol probl�m s n�zvom s�boru, prie�inka alebo pr�stupov�ch pr�v";
-    $admtext['showmap'] = "Uk�za� mapu cintor�na a m�dium v�dy, ke� bude t�to polo�ka zobrazen�";
-    $admtext['bodytext'] = "<strong>ALEBO</strong><br/>Z�kladn� text";
-    $admtext['usenl'] = "Previes� konce riadkov na HTML na zobrazenie";
+  $admtext['showmap'] = "Uk�za� mapu cintor�na a m�dium v�dy, ke� bude t�to polo�ka zobrazen�";
+  $admtext['bodytext'] = "<strong>ALEBO</strong><br>Z�kladn� text";
+  $admtext['usenl'] = "Previes� konce riadkov na HTML na zobrazenie";
     $admtext['newwin'] = "Otvori� v novom okne";
     $admtext['modifymedia'] = "Upravi� existuj�ce m�dium";
     $admtext['addnewmedia'] = "Prida� nov� m�dium";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Ak ch�ba d�tum narodenia, predpoklada�, �e";
     $admtext['persliving'] = "Osoba �ije";
     $admtext['persdead'] = "Osoba zomrela";
-    $admtext['nodeathdate'] = "Ak ch�ba d�tum �mrtia, predpoklada�, �e<br />osoba zomrela, ak je star�ia ako";
+    $admtext['nodeathdate'] = "Ak ch�ba d�tum �mrtia, predpoklada�, �e<br>osoba zomrela, ak je star�ia ako";
     $admtext['pedconfigsettings'] = "Nastavenie sch�m";
     $admtext['usepopups'] = "V�chodzie zobrazenie";
     $admtext['maxpedgens'] = "Maxim�lny po�et gener�ci�";
@@ -1287,7 +1287,7 @@ switch ($textpart) {
     $admtext['usedefthumbs'] = "Pou�i� v�chodzie miniat�ry";
     $admtext['autogeo'] = "Geok�dova� v�etky nov� miesta";
     $admtext['revmail'] = "Upozorni� na n�vrhy na b�danie";
-    $admtext['assumepriv'] = "Osoba je neverejn�, ak zomrela<br />pred menej ako to�k�mi rokmi";
+    $admtext['assumepriv'] = "Osoba je neverejn�, ak zomrela<br>pred menej ako to�k�mi rokmi";
     $admtext['calstart'] = "Prv� de� v t��dni";
     $admtext['edit_timeout'] = "Upravi� �asov� limit (v min�tach)";
     $admtext['shownamespr'] = "Zobrazi� men� os�b ozna�en�ch ako neverejn�";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Zl��i� miesta";
     $admtext['findmerge'] = "N�js� kandid�tov na zl��enie";
     $admtext['selectplacemerge'] = "Vybra� miesta na zl��enie";
-    $admtext['mcol1'] = "Zl��i�<br/>tieto<br/>(vymaza�)";
-    $admtext['mcol2'] = "do<br/>t�chto<br/>(ponecha�)";
+    $admtext['mcol1'] = "Zl��i�<br>tieto<br>(vymaza�)";
+    $admtext['mcol2'] = "do<br>t�chto<br>(ponecha�)";
     $admtext['pmsucc'] = "Zlu�ovanie miest prebehlo �spe�ne";
     $admtext['nomerge'] = "Ni� nie je na zl��enie";
     $admtext['enterkeep'] = "Zvo�te, pros�m, cie� (z�znam) na zl��enie.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Zvo�te udalos� a akciu";
     $admtext['suggested'] = "Odpor��an�/navrhnut�";
-    $admtext['usernotes'] = "Pozn�mky oh�adom<br />navrhovanej zmeny<br />(nebud� ulo�en�)";
+    $admtext['usernotes'] = "Pozn�mky oh�adom<br>navrhovanej zmeny<br>(nebud� ulo�en�)";
     $admtext['postdate'] = "Zaznamenan�/odoslan�";
     $admtext['savedel'] = "Ulo�i� a odstr�ni�";
     $admtext['postpone'] = "Odlo�i�";

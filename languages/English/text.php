@@ -38,7 +38,7 @@ switch ($textpart) {
     $text['email'] = "Your Email";
     $text['suggestchange'] = "Suggest a change";
     $text['yourname'] = "Your Name";
-    $text['comments'] = "Description of<br />proposed changes";
+    $text['comments'] = "Description of<br>proposed changes";
     $text['comments2'] = "Comments";
     $text['submitsugg'] = "Submit Suggestion";
     $text['proposed'] = "Proposed Change";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Fast&nbsp;Mutating";
     $text['alltypes'] = "All Types";
     $text['allgroups'] = "All Groups";
-    $text['Ydna_LITbox_info'] = "Test(s) linked to this person were not necessarily taken by this person.<br />The 'Haplogroup' column displays data in red if the result is 'Predicted' or green if the test is 'Confirmed'";
+    $text['Ydna_LITbox_info'] = "Test(s) linked to this person were not necessarily taken by this person.<br>The 'Haplogroup' column displays data in red if the result is 'Predicted' or green if the test is 'Confirmed'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

@@ -237,7 +237,7 @@ if ($map['key'] && $isConnected) {
 tng_header($headline, $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h1><br clear="left">
 <?php
 $logstring = "<a href=\"" . $_SERVER['REQUEST_URI'] . "\">" . xmlcharacters($headline . " $querystring") . "</a>";
 writelog($logstring);
@@ -245,7 +245,7 @@ preparebookmark($logstring);
 
 echo "<p class=\"normal\">{$text['places']} $querystring (" . number_format($numrows) . ")</p>";
 
-$uniquePlaces = array();
+$uniquePlaces = [];
 while ($row = tng_fetch_assoc($result)) {
   $key = $row['latitude'] . "_" . $row['longitude'];
   if (!isset($uniquePlaces[$key])) {
@@ -528,11 +528,11 @@ if ($markermap) {
 <?php
 if ($markermap) {
   ?>
-    <br/>
-    <div id="inline-actions">
-        <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item"/>
-        <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
-    </div>
+  <br>
+  <div id="inline-actions">
+    <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item">
+    <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
+  </div>
   <?php
 }
 ?>

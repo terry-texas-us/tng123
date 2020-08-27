@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "快速＆nbsp;突变";
     $text['alltypes'] = "所有类型";
     $text['allgroups'] = "所有群组";
-    $text['Ydna_LITbox_info'] = "与此人相关的测试不是必然由这个人采取。<br />'单倍组'专栏 如果结果为\"预测\"，则以红色显示数据，如果测试结果为绿色则显示数据是'确认";
+    $text['Ydna_LITbox_info'] = "与此人相关的测试不是必然由这个人采取。<br>'单倍组'专栏 如果结果为\"预测\"，则以红色显示数据，如果测试结果为绿色则显示数据是'确认";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

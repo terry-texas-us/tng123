@@ -37,27 +37,27 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 <div class="databack normal" style="margin:10px;border:0px" id="editcollection">
     <p class="subhead"><strong><?php echo $admtext['editcoll']; ?></strong> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
+      <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
 
-    <form action="admin_updatecollection.php" method="post" name="collform" id="collform" onsubmit="return updateCollection(this);">
-        <table border="0" cellpadding="2" class="normal">
-            <tr>
-                <td><?php echo $admtext['collid']; ?>:</td>
-                <td><?php echo $mediatypeID; ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['collexpas']; ?>:</td>
-                <td><input type="text" name="exportas" id="exportas" class="veryshortfield" value="<?php echo $exportas; ?>"/></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['colldisplay']; ?>:</td>
-                <td><input type="text" name="display" size="30" value="<?php echo $row['display']; ?>"></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['collpath']; ?>:</td>
-                <td><input type="text" name="path" size="50" value="<?php echo $row['path']; ?>"></td>
-            </tr>
-            <tr>
+  <form action="admin_updatecollection.php" method="post" name="collform" id="collform" onsubmit="return updateCollection(this);">
+    <table border="0" cellpadding="2" class="normal">
+      <tr>
+        <td><?php echo $admtext['collid']; ?>:</td>
+        <td><?php echo $mediatypeID; ?></td>
+      </tr>
+      <tr>
+        <td><?php echo $admtext['collexpas']; ?>:</td>
+        <td><input type="text" name="exportas" id="exportas" class="veryshortfield" value="<?php echo $exportas; ?>"></td>
+      </tr>
+      <tr>
+        <td><?php echo $admtext['colldisplay']; ?>:</td>
+        <td><input type="text" name="display" size="30" value="<?php echo $row['display']; ?>"></td>
+      </tr>
+      <tr>
+        <td><?php echo $admtext['collpath']; ?>:</td>
+        <td><input type="text" name="path" size="50" value="<?php echo $row['path']; ?>"></td>
+      </tr>
+      <tr>
                 <td>&nbsp;</td>
                 <td><input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="if(document.collform.path.value){makeFolder('newcoll',document.collform.path.value);}"> <span id="msg_newcoll"></span></td>
             </tr>

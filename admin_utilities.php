@@ -67,17 +67,17 @@ if (!isset($message)) {
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['backuprestore'], $flags);
 ?>
-<SCRIPT language="JavaScript" type="text/javascript">
-    function toggleAll(flag) {
-        for (var i = 0; i < document.form1.elements.length; i++) {
-            if (document.form1.elements[i].type == "checkbox") {
-                if (flag)
-                    document.form1.elements[i].checked = true;
-                else
-                    document.form1.elements[i].checked = false;
-            }
-        }
+<script language="JavaScript" type="text/javascript">
+  function toggleAll(flag) {
+    for (var i = 0; i < document.form1.elements.length; i++) {
+      if (document.form1.elements[i].type == "checkbox") {
+        if (flag)
+          document.form1.elements[i].checked = true;
+        else
+          document.form1.elements[i].checked = false;
+      }
     }
+  }
 
     function startUtility(sel) {
         if (sel.selectedIndex < 1) return false;
@@ -116,67 +116,67 @@ tng_adminheader($admtext['backuprestore'], $flags);
             }
         } else {
             alert('<?php echo $admtext['seltable']; ?>');
-            sel.selectedIndex = 0;
+          sel.selectedIndex = 0;
         }
-        return false;
+      return false;
     }
 
-    function startBackup(table) {
-        var params = {table: table};
-        jQuery('#msg_' + table).html('<img src="img/spinner.gif" />');
-        jQuery.ajax({
-            url: 'admin_backup.php',
-            data: params,
-            dataType: 'html',
-            success: function (req) {
-                var pairs = req.split('&');
-                var table = pairs[0];
-                var timestamp = pairs[1];
-                var size = pairs[2];
-                var message = pairs[3];
+  function startBackup(table) {
+    var params = {table: table};
+    jQuery('#msg_' + table).html('<img src="img/spinner.gif">');
+    jQuery.ajax({
+      url: 'admin_backup.php',
+      data: params,
+      dataType: 'html',
+      success: function (req) {
+        var pairs = req.split('&');
+        var table = pairs[0];
+        var timestamp = pairs[1];
+        var size = pairs[2];
+        var message = pairs[3];
                 jQuery('#msg_' + table).html(message);
                 jQuery('#msg_' + table).effect('highlight', {}, 500);
                 jQuery('#time_' + table).html(timestamp);
                 jQuery('#time_' + table).effect('highlight', {}, 500);
-                jQuery('#size_' + table).html(size);
-                jQuery('#size_' + table).effect('highlight', {}, 500);
-                jQuery('#rst_' + table).css('visibility', 'visible');
-            }
-        });
-        return false;
-    }
+        jQuery('#size_' + table).html(size);
+        jQuery('#size_' + table).effect('highlight', {}, 500);
+        jQuery('#rst_' + table).css('visibility', 'visible');
+      }
+    });
+    return false;
+  }
 
-    function startOptimize(table) {
-        var params = {table: table};
-        jQuery('#msg_' + table).html('<img src="img/spinner.gif" />');
-        jQuery.ajax({
-            url: 'admin_optimize.php',
-            data: params,
-            dataType: 'html',
-            success: function (req) {
-                var pairs = req.split('&');
-                var table = pairs[0];
-                var message = pairs[1];
-                jQuery('#msg_' + table).html(message);
-                jQuery('#msg_' + table).effect('highlight', {}, 500);
-            }
-        });
-        return false;
-    }
+  function startOptimize(table) {
+    var params = {table: table};
+    jQuery('#msg_' + table).html('<img src="img/spinner.gif">');
+    jQuery.ajax({
+      url: 'admin_optimize.php',
+      data: params,
+      dataType: 'html',
+      success: function (req) {
+        var pairs = req.split('&');
+        var table = pairs[0];
+        var message = pairs[1];
+        jQuery('#msg_' + table).html(message);
+        jQuery('#msg_' + table).effect('highlight', {}, 500);
+      }
+    });
+    return false;
+  }
 
-    function startRestore(table) {
-        var params = {table: table};
-        jQuery('#msg_' + table).html('<img src="img/spinner.gif" />');
-        jQuery.ajax({
-            url: 'admin_restore.php',
-            data: params,
-            dataType: 'html',
-            success: function (req) {
-                var pairs = req.split('&');
-                var table = pairs[0];
-                var message = pairs[1];
-                jQuery('#msg_' + table).html(message);
-                jQuery('#msg_' + table).effect('highlight', {}, 500);
+  function startRestore(table) {
+    var params = {table: table};
+    jQuery('#msg_' + table).html('<img src="img/spinner.gif">');
+    jQuery.ajax({
+      url: 'admin_restore.php',
+      data: params,
+      dataType: 'html',
+      success: function (req) {
+        var pairs = req.split('&');
+        var table = pairs[0];
+        var message = pairs[1];
+        jQuery('#msg_' + table).html(message);
+        jQuery('#msg_' + table).effect('highlight', {}, 500);
             }
         });
         return false;

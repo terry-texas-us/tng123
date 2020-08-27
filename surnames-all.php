@@ -14,10 +14,10 @@ preparebookmark($logstring);
 
 tng_header("{$text['surnamelist']} - {$text['allsurnames']}", $flags);
 ?>
-    <a id="top"></a>
-    <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist']; ?></h1><br class="clearleft"/>
+  <a id="top"></a>
+  <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist']; ?></h1><br class="clearleft">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'surnames-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($tree) {
   $wherestr = "WHERE gedcom = \"$tree\"";
@@ -61,20 +61,20 @@ if ($result) {
 }
 ?>
 
-    <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['surnamesstarting']; ?></strong></p>
-        <p class="firstchars"><?php echo $linkstr; ?></p>
-        <br/><?php echo "<a href=\"$surnames_noargs_url\">{$text['mainsurnamepage']}</a>"; ?>
-    </div>
+  <div class="titlebox normal">
+    <p class="subhead"><strong><?php echo $text['surnamesstarting']; ?></strong></p>
+    <p class="firstchars"><?php echo $linkstr; ?></p>
+    <br><?php echo "<a href=\"$surnames_noargs_url\">{$text['mainsurnamepage']}</a>"; ?>
+  </div>
 
-    <br/>
+  <br>
 <?php
 for ($scount = 1; $scount < $initialchar; $scount++) {
   echo "<a id=\"char$scount\"></a>\n";
   $urlfirstchar = addslashes($firstchars[$scount]);
   ?>
-    <div class="titlebox">
-        <p class="header"><strong><?php echo $firstchars[$scount]; ?></strong></p>
+  <div class="titlebox">
+    <p class="header"><strong><?php echo $firstchars[$scount]; ?></strong></p>
         <table class="sntable">
             <tr>
                 <td class="sncol">
@@ -99,7 +99,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                     while ($surname = tng_fetch_assoc($result)) {
                       $surname2 = urlencode($surname['lastname']);
                       $name = $surname['lastname'] ? "<a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$text['nosurname']}</a>";
-                      echo "$snnum. $name ({$surname['lncount']})<br/>\n";
+                      echo "$snnum. $name ({$surname['lncount']})<br>\n";
                       $snnum++;
                       $num_in_col_ctr++;
                       if ($num_in_col_ctr == $num_in_col) {
@@ -113,9 +113,9 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                 </td>
             </tr>
         </table>
-    </div>
+  </div>
 
-    <br/><p class="normal"><a href="#top"><?php echo $text['backtotop']; ?></a></p><br/>
+  <br><p class="normal"><a href="#top"><?php echo $text['backtotop']; ?></a></p><br>
   <?php
 }
 tng_footer("");

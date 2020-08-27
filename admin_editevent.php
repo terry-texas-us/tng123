@@ -35,27 +35,27 @@ header("Content-type:text/html; charset=" . $session_charset);
     <form action="" method="post" name="form1" id="form1" onSubmit="return updateEvent(this);">
         <table border="0" cellpadding="2" class="normal">
             <tr>
-                <td><?php echo $admtext['eventtype']; ?>:</td>
-                <td><?php echo "{$row['tag']} $display"; ?></td>
+              <td><?php echo $admtext['eventtype']; ?>:</td>
+              <td><?php echo "{$row['tag']} $display"; ?></td>
             </tr>
-            <tr>
-                <td><?php echo $admtext['eventdate']; ?>:</td>
-                <td><input type="text" name="eventdate" id="eventdate" value="<?php echo $row['eventdate']; ?>" onBlur="checkDate(this);"> <span class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['eventplace']; ?>:</td>
-                <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40" value="<?php echo $row['eventplace']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                    <a href="#" onclick="return openFindPlaceForm('eventplace');"><img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" <?php echo $dims; ?> /></a></td>
-            </tr>
-            <tr>
-                <td valign="top"><?php echo $admtext['detail']; ?>:</td>
-                <td><textarea name="info" rows="4" cols="40"><?php echo $row['info']; ?></textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong><?php echo $admtext['dupfor']; ?>:</strong></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['id']; ?>:</td>
+          <tr>
+            <td><?php echo $admtext['eventdate']; ?>:</td>
+            <td><input type="text" name="eventdate" id="eventdate" value="<?php echo $row['eventdate']; ?>" onBlur="checkDate(this);"> <span class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
+          </tr>
+          <tr>
+            <td><?php echo $admtext['eventplace']; ?>:</td>
+            <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40" value="<?php echo $row['eventplace']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+              <a href="#" onclick="return openFindPlaceForm('eventplace');"><img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" <?php echo $dims; ?> ></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><?php echo $admtext['detail']; ?>:</td>
+            <td><textarea name="info" rows="4" cols="40"><?php echo $row['info']; ?></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong><?php echo $admtext['dupfor']; ?>:</strong></td>
+          </tr>
+          <tr>
+            <td><?php echo $admtext['id']; ?>:</td>
                 <td>
                     <table class="normal" cellpadding="0">
                         <tr>
@@ -72,11 +72,11 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
         </table>
       <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
-        <br/>
-        <div id="more" style="display:none">
-            <table border="0" cellpadding="2" class="normal">
-                <tr>
-                    <td><?php echo $admtext['age']; ?>:</td>
+      <br>
+      <div id="more" style="display:none">
+        <table border="0" cellpadding="2" class="normal">
+          <tr>
+            <td><?php echo $admtext['age']; ?>:</td>
                     <td><input type="text" name="age" size="12" maxlength="12" value="<?php echo $row['age']; ?>"></td>
                 </tr>
                 <tr>
@@ -123,14 +123,14 @@ header("Content-type:text/html; charset=" . $session_charset);
                     <td><?php echo $admtext['website']; ?>:</td>
                     <td><input type="text" name="www" size="50" value="<?php echo $row['www']; ?>"></td>
                 </tr>
-            </table>
-            <br/>
-        </div>
-        <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
+        </table>
+        <br>
+      </div>
+      <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
         <input type="hidden" name="eventID" value="<?php echo $eventID; ?>">
         <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
         <input type="submit" class="btn" name="submit" value="<?php echo $admtext['save']; ?>">
         <input type="button" class="btn" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();">
     </form>
-    <br/>
+  <br>
 </div>

@@ -28,10 +28,10 @@ preparebookmark($logstring);
 tng_header($text['placelist'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist']; ?></h1><br class="clearleft"/>
+  <h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist']; ?></h1><br class="clearleft">
 <?php
 if (!$tngconfig['places1tree']) {
-  echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'places', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+  echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'places', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 }
 
 $linkstr = "";
@@ -85,8 +85,8 @@ if ($result) {
       $specificcount = $countrow['placecount'];
       tng_free_result($result2);
 
-      $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"\" width=\"9\" height=\"9\" /></a>" : "";
-      $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(array("<", ">"), array("&lt;", "&gt;"), $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
+      $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
+      $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
       if (($count - 1) % $collen == 0) {
         $col++;
       }
@@ -108,26 +108,26 @@ if ($result) {
       echo $formstr;
       ?>
       <?php
-      echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\" />\n";
+      echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\">\n";
       if ($tree && !$tngconfig['places1tree']) {
-        echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+        echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
       }
-      echo "<input type=\"hidden\" name=\"stretch\" value=\"1\" />\n";
-      echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\" />\n";
+      echo "<input type=\"hidden\" name=\"stretch\" value=\"1\">\n";
+      echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\">\n";
       ?>
-        </form>
+      </form>
 
-        <br/><?php echo "<a href=\"$places_all_url" . "$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"$heatmap_url{$treestr2}\" class=\"snlink\">{$text['heatmap']}</a>"; ?>
+      <br><?php echo "<a href=\"$places_all_url" . "$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"$heatmap_url{$treestr2}\" class=\"snlink\">{$text['heatmap']}</a>"; ?>
     </div>
-    <br/>
+  <br>
 
-    <div class="titlebox">
-        <table class="table-top30">
-            <tr>
-                <td colspan="5">
-                    <p class="subhead"><strong><?php echo "{$text['top30places']} ({$text['totalplaces']}):"; ?></strong></p>
-                </td>
-            </tr>
+  <div class="titlebox">
+    <table class="table-top30">
+      <tr>
+        <td colspan="5">
+          <p class="subhead"><strong><?php echo "{$text['top30places']} ({$text['totalplaces']}):"; ?></strong></p>
+        </td>
+      </tr>
             <tr>
               <?php
               for ($i = 0; $i < $cols; $i++) {
@@ -152,18 +152,18 @@ if ($result) {
                   $formstr = getFORM("places100", "get", "", "");
                   echo $formstr;
                   echo $text['showtop'];
-                  echo " <input type=\"text\" name=\"topnum\" value=\"100\" size=\"4\" maxlength=\"4\" /> {$text['byoccurrence']}\n";
+                  echo " <input type=\"text\" name=\"topnum\" value=\"100\" size=\"4\" maxlength=\"4\"> {$text['byoccurrence']}\n";
                   if ($tree && !$tngconfig['places1tree']) {
-                    echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+                    echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
                   }
-                  echo "<input type=\"submit\" value=\"{$text['go']}\" /></form>\n";
+                  echo "<input type=\"submit\" value=\"{$text['go']}\"></form>\n";
                   ?>
                 </td>
             </tr>
 
-        </table>
-    </div>
-    <br/>
+    </table>
+  </div>
+  <br>
 <?php
 tng_footer("");
 ?>

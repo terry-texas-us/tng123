@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Etuliite";
     $admtext['chkdel'] = "Rastita tyhjä ruutu poistaaksesi vasemmanpuoleisen kohteen";
     //added in 9.0.0
-    $admtext['choosedef'] = "Valitse<br/>oletus<br/>kuva"; //has to fit in a small box
+    $admtext['choosedef'] = "Valitse<br>oletus<br>kuva"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Konfirmaatio aika (LDS)";
     $admtext['confplace'] = "Konfirmaatio paikka (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Pakollinen. Tämän tulisi vastata tiedoston nimeä ja sijaintia <em>kuvat-kansiossa</em> tiedoston siirron jälkeen. Esim. jos kuvat-kansiosi nimi on <em>kuvat</em> ja haluat tiedoston nimen olevan <em>kuvani.jpg</em> ja sijaitsevan alihakemistossa nimeltä <em>uudetkuvat</em>, syötä <em>uudetkuvat/kuvani.jpg</em> tähän kentään.";
     $admtext['leaveblankphoto'] = "Jätä tämä kenttä tyhjäksi, jos kuva on jo ladattu kuvahakemistoosi.";
     $admtext['thumbconflicts'] = "Peukalokuvia ei luotu virheellisen polun, oikeuksien tai tiedostonimen vuoksi.";
-    $admtext['showmap'] = "Näytä hautausmaan kartta ja valokuva aina kun tämä kuva näytetään";
-    $admtext['bodytext'] = "<strong>TAI</strong><br/>Leipäteksti";
-    $admtext['usenl'] = "Muuta rivinvaihdot html-muotoon";
+  $admtext['showmap'] = "Näytä hautausmaan kartta ja valokuva aina kun tämä kuva näytetään";
+  $admtext['bodytext'] = "<strong>TAI</strong><br>Leipäteksti";
+  $admtext['usenl'] = "Muuta rivinvaihdot html-muotoon";
     $admtext['newwin'] = "Avaa uuteen ikkunaan";
     $admtext['modifymedia'] = "Muokkaa mediatiedostoa";
     $admtext['addnewmedia'] = "Lisää uusi mediatiedsoto";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Jos syntymäpäivää ei ole annettu, arvaa se";
     $admtext['persliving'] = "Henkilö on elossa";
     $admtext['persdead'] = "Henkilö on kuollut";
-    $admtext['nodeathdate'] = "Jos kuolinpäivämäärää ei ole annettu,<br />oleta kuolleeksi, jos vanhempi kuin";
+    $admtext['nodeathdate'] = "Jos kuolinpäivämäärää ei ole annettu,<br>oleta kuolleeksi, jos vanhempi kuin";
     $admtext['pedconfigsettings'] = "Sukupuu asetukset";
     $admtext['usepopups'] = "Oletusnäyttö";
     $admtext['maxpedgens'] = "Sukupuun maksimi sukupolvet";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Yhdistä paikat";
     $admtext['findmerge'] = "Etsi mahdollisesti yhdistettävät paikat";
     $admtext['selectplacemerge'] = "Valitse yhdistettävät paikat";
-    $admtext['mcol1'] = "Yhdistä<br/>nämä tiedot<br/>(poista)";
-    $admtext['mcol2'] = "näihin<br/>tietoihin<br/>(pidä)";
+    $admtext['mcol1'] = "Yhdistä<br>nämä tiedot<br>(poista)";
+    $admtext['mcol2'] = "näihin<br>tietoihin<br>(pidä)";
     $admtext['pmsucc'] = "Paikkojen yhdistäminen onnistui";
     $admtext['nomerge'] = "Ei yhdistettäviä paikkoja";
     $admtext['enterkeep'] = "Valitse kohde, johon yhdistetään";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Valitse tapahtuma ja toimenpide";
     $admtext['suggested'] = "Ehdotettu";
-    $admtext['usernotes'] = "Ehdotettujen<br />muutoksien tiedot<br />(ei tallenneta)";
+    $admtext['usernotes'] = "Ehdotettujen<br>muutoksien tiedot<br>(ei tallenneta)";
     $admtext['postdate'] = "Lähetetty";
     $admtext['savedel'] = "Tallenna ja poista";
     $admtext['postpone'] = "Lykkää";

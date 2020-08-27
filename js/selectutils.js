@@ -279,7 +279,7 @@ function addNote(form) {
                 newnotetbl.border = 0;
                 var newtr = newnotetbl.insertRow(0);
                 newtr.id = "row_" + vars.id;
-                insertCell(newtr, 0, "dragarea", '<img src="img/admArrowUp.gif" alt=""><br/><img src="img/admArrowDown.gif" alt="">');
+              insertCell(newtr, 0, "dragarea", '<img src="img/admArrowUp.gif" alt=""><br><img src="img/admArrowDown.gif" alt="">');
                 var cell1 = insertCell(newtr, 1, "lightback", getActionButtons(vars, 'Note'));
                 cell1.width = "80";
                 var cell2 = insertCell(newtr, 2, "lightback", vars.display)
@@ -435,8 +435,8 @@ function addCitation(form) {
                 newcitetbl.cellSpacing = 1;
                 newcitetbl.border = 0;
                 var newtr = newcitetbl.insertRow(0);
-                newtr.id = "row_" + vars.id;
-                insertCell(newtr, 0, "dragarea", '<img src="img/admArrowUp.gif" alt=""><br/><img src="img/admArrowDown.gif" alt="">');
+              newtr.id = "row_" + vars.id;
+              insertCell(newtr, 0, "dragarea", '<img src="img/admArrowUp.gif" alt=""><br><img src="img/admArrowDown.gif" alt="">');
                 var cell1 = insertCell(newtr, 1, "lightback", getActionButtons(vars, 'Citation'));
                 cell1.width = "70";
                 var cell2 = insertCell(newtr, 2, "lightback", vars.display)
@@ -884,7 +884,7 @@ function retItem(id, place) {
     var returntext = jQuery('#item_' + id).text();
     if (itemIDField == "children") {
         var childcount = parseInt(jQuery('#childcount').html()) + 1;
-        returntext += "| - " + id + "<br />" + jQuery('#birth_' + id).html();
+      returntext += "| - " + id + "<br>" + jQuery('#birth_' + id).html();
 
         var params = {personID: id, display: returntext, familyID: persfamID, tree: tree, order: childcount, action: 'addchild'};
         jQuery.ajax({
@@ -910,7 +910,7 @@ function retItem(id, place) {
         var y2 = y1 + current.height();
 
         var maptree = jQuery('#maptree').val();
-        var area = '<area coords=\"' + x1 + ',' + y1 + ',' + x2 + ',' + y2 + '\" href=\"' + getperson_url + 'personID=' + id + '&amp;tree=' + maptree + '\" title=\"' + returntext.replace(/\"/g, "'") + '\" />';
+      var area = '<area coords=\"' + x1 + ',' + y1 + ',' + x2 + ',' + y2 + '\" href=\"' + getperson_url + 'personID=' + id + '&amp;tree=' + maptree + '\" title=\"' + returntext.replace(/\"/g, "'") + '\">';
         jQuery('#imagemap').val(jQuery('#imagemap').val() + area);
 
         current.remove();

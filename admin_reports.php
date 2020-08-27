@@ -129,9 +129,9 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                             </td>
                         </tr>
                     </table>
-                    <input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;
@@ -173,7 +173,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                     echo "<tr id=\"row_{$row['reportID']}\"><td class=\"lightback\" valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
                     echo "<td class=\"lightback\" valign=\"top\">&nbsp;{$row['ranking']}</td>\n";
                     echo "<td class=\"lightback\" valign=\"top\">&nbsp;$id&nbsp;</td>\n";
-                    echo "<td class=\"lightback\" valign=\"top\">&nbsp;<u>$name</u><br />&nbsp;{$row['reportdesc']}</span></td>\n";
+                    echo "<td class=\"lightback\" valign=\"top\">&nbsp;<u>$name</u><br>&nbsp;{$row['reportdesc']}</span></td>\n";
                     echo "<td class=\"lightback\" valign=\"top\" align=\"center\">&nbsp;$active</td></tr>\n";
                   }
                   ?>

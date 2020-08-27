@@ -66,28 +66,28 @@ tng_adminheader($admtext['sortmedia'], $flags);
 <?php
 $albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
 $albumtabs[1] = array($allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum");
-$albumtabs[2] = array($allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums");
+$albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#sort');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_orderalbums.php" method="post" name="find" onsubmit="return validateSortForm();">
-                <span class="subhead"><strong><?php echo $admtext['sortalbumind']; ?></strong></span><br/><br/>
-                <table cellspacing="2">
-                    <tr>
-                        <td class="normal"><?php echo $admtext['tree']; ?></td>
-                        <td class="normal"><?php echo $admtext['linktype']; ?></td>
-                        <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select name="tree1">
-                              <?php
-                              $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_orderalbums.php" method="post" name="find" onsubmit="return validateSortForm();">
+        <span class="subhead"><strong><?php echo $admtext['sortalbumind']; ?></strong></span><br><br>
+        <table cellspacing="2">
+          <tr>
+            <td class="normal"><?php echo $admtext['tree']; ?></td>
+            <td class="normal"><?php echo $admtext['linktype']; ?></td>
+            <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
+          </tr>
+          <tr>
+            <td>
+              <select name="tree1">
+                <?php
+                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                               while ($treerow = tng_fetch_assoc($treeresult)) {
                                 echo "	<option value=\"{$treerow['gedcom']}\"";
                                 if ($treerow['gedcom'] == $tree) {

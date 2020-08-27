@@ -54,7 +54,7 @@ function showDivs($type) {
       $mediatext .= ">$imgsrc</a>\n";
       $mediatext .= "</div>\n";
     }
-    $mediatext .= "<span><strong>{$row['mwtitle']}</strong></span><br /><br />";
+    $mediatext .= "<span><strong>{$row['mwtitle']}</strong></span><br><br>";
     $mediatext .= "<div style=\"margin:0px;\">{$row['mwdesc']}</div>";
 
     $mediatext .= "<div class=\"mwperson\">\n";
@@ -87,22 +87,22 @@ function showDivs($type) {
   return $mediatext;
 }
 
-$flags = array();
+$flags = [];
 tng_header($text['mostwanted'], $flags);
 
 $flags['imgprev'] = true;
 ?>
 
-    <h1 class="header"><span class="headericon" id="mw-hdr-icon"></span><?php echo $text['mostwanted']; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="mw-hdr-icon"></span><?php echo $text['mostwanted']; ?></h1><br clear="left">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'mostwanted', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'mostwanted', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 echo "<div class=\"titlebox mwblock\">\n";
 echo "<p class=\"subhead\">&nbsp;<strong>" . $text['mysperson'] . "</strong></p>\n";
 echo showDivs("person");
 echo "</div>\n";
 
-echo "<br />\n";
+echo "<br>\n";
 
 echo "<div class=\"titlebox mwblock\">\n";
 echo "<p class=\"subhead\">&nbsp;<strong>" . $text['mysphoto'] . "</strong></p>\n";

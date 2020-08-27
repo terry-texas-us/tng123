@@ -188,7 +188,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                 }
                                 $ret .= "</select>\n";
                                 tng_free_result($treeresult);
-                                $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\"/>\n";
+                                $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                                 echo $ret;
                               }
                               echo $admtext['test_type'] . ": ";
@@ -210,26 +210,26 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     } ?>><?php echo $admtext['xdna_test']; ?></option>
                                 </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;
                               <?php echo $text['testgroup']; ?>:
-                                <select name="test_group" id="test_group" onchange="jQuery('#treespinner3').show();document.form1.submit();">
-                                  <?php
-                                  echo get_test_groups($test_type, $test_group);
-                                  ?>
-                                </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner3" alt="" class="spinner">
+                              <select name="test_group" id="test_group" onchange="jQuery('#treespinner3').show();document.form1.submit();">
+                                <?php
+                                echo get_test_groups($test_type, $test_group);
+                                ?>
+                              </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner3" alt="" class="spinner">
                             </td>
                         </tr>
-                        <tr>
-                            <td><br/><?php echo $admtext['searchfor']; ?>:
-                                <input type="text" name="searchstring" value="<?php echo $originalstring; ?>">&nbsp;
-                                <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="aligntop">&nbsp;&nbsp;
-                                <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="aligntop"
-                                       onclick="document.form1.searchstring.value='';document.form1.tree.selectedIndex=0;document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
-                            </td>
-                        </tr>
+                      <tr>
+                        <td><br><?php echo $admtext['searchfor']; ?>:
+                          <input type="text" name="searchstring" value="<?php echo $originalstring; ?>">&nbsp;
+                          <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="aligntop">&nbsp;&nbsp;
+                          <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="aligntop"
+                                 onclick="document.form1.searchstring.value='';document.form1.tree.selectedIndex=0;document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
+                        </td>
+                      </tr>
                     </table>
 
-                    <input type="hidden" name="findtest" value="1"><input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="findtest" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
               <?php
               $numrowsplus = $numrows + $offset;
               if (!$numrowsplus) {
@@ -311,7 +311,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                         if ($dbname) {
                           echo "<td class=\"lightback\">" . $dbname . "</td>\n";
                         } else {
-                          echo "<td class=\"lightback\">" . $row['person_name'] . "<br />&nbsp;" . $admtext['person_name'] . "</td>\n";
+                          echo "<td class=\"lightback\">" . $row['person_name'] . "<br>&nbsp;" . $admtext['person_name'] . "</td>\n";
                         }
 
                         $mdanc_namestr = "";
@@ -324,7 +324,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                           $ancrow['allow_living'] = $dprights['living'];
                           $ancrow['allow_private'] = $dprights['private'];
                           $vitalinfo = getBirthInfo($ancrow);
-                          $mdanc_namestr = getName($ancrow) . "<br />" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
+                          $mdanc_namestr = getName($ancrow) . "<br>" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
 
                           tng_free_result($dna_anc_result);
                         }
@@ -335,7 +335,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                             $ancrow = tng_fetch_assoc($dna_anc_result);
                             $ancrow['allow_living'] = $ancrow['allow_private'] = 1;
                             $vitalinfo = getBirthInfo($ancrow);
-                            $mrcanc_namestr = getName($ancrow) . "<br />" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
+                            $mrcanc_namestr = getName($ancrow) . "<br>" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
 
                             tng_free_result($dna_anc_result);
                           } else {
@@ -348,7 +348,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                               $ancrow['allow_living'] = $ancrow['allow_private'] = 1;
 
                               $famname = getFamilyName($ancrow);
-                              $fammarried = "<br />&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $ancrow['marrdate'];
+                              $fammarried = "<br>&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $ancrow['marrdate'];
                               $mrcanc_namestr = $famname . $fammarried;
                             }
                           }

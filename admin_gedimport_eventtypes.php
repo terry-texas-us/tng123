@@ -55,7 +55,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         if ($fp === false) {
           die ($admtext['cannotopen'] . " $remotefile");
         }
-        echo "$remotefile {$admtext['opened']}<br/>\n";
+        echo "$remotefile {$admtext['opened']}<br>\n";
         $savestate['filename'] = $remotefile;
       } else {
         if ($database) {
@@ -64,7 +64,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
           if (!$fp) {
             die ($admtext['cannotopen'] . " r=$rootpath, g=$gedpath, l=$localfile");
           }
-          echo "$database {$admtext['opened']}<br/>\n";
+          echo "$database {$admtext['opened']}<br>\n";
           $savestate['filename'] = $localfile;
         }
       }
@@ -208,13 +208,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
       }
       @fclose($fp);
       ?>
-        <span class="normal">
-<br/><br/>
+      <span class="normal">
+<br><br>
 <?php
 adminwritelog($admtext['datamaint'] . ": $eventctr " . $admtext['eventtypes']);
-echo $admtext['finishedimporting'] . "<br/>$eventctr " . $admtext['eventtypes'];
+echo $admtext['finishedimporting'] . "<br>$eventctr " . $admtext['eventtypes'];
 ?>
-<br/>
+<br>
 </span>
 
       <?php

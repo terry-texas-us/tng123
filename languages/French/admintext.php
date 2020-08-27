@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pour les D�p�ts...";
     $admtext['noevtypes'] = "Il n'existe pas de type d'�v�nement.";
     $admtext['DESI'] = "Int�r�t des descendants";
-    $admtext['allnone'] = "Veuillez saisir un message � afficher pour chaque langue,<br />ou ne rien inscrire et saisir un message dans le champ Affichage ci-dessus.";
+    $admtext['allnone'] = "Veuillez saisir un message � afficher pour chaque langue,<br>ou ne rien inscrire et saisir un message dans le champ Affichage ci-dessus.";
     $admtext['assocwith'] = "Associ� �";
     $admtext['BAPM'] = "Bapt�me";
     $admtext['umps'] = "Votre fichier GEDCOM est peut-�tre plus grand que la taille maximale sp�cifi�e dans la configuration de PHP. Vous pouvez demander � votre h�bergeur d'augmenter la valeur de la variable 'upload_max_filesize', ou vous pouvez t�l�charger votre fichier dans le dossier 'gedcom' sur votre site et l'importer de cet endroit.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Pr�fixe";
     $admtext['chkdel'] = "Cocher la case vide pour supprimer l'�l�ment � gauche";
     //added in 9.0.0
-    $admtext['choosedef'] = "S�lectionner la photo par<br/>d�faut<br/>"; //has to fit in a small box
+    $admtext['choosedef'] = "S�lectionner la photo par<br>d�faut<br>"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Date de confirmation (SDJ)";
     $admtext['confplace'] = "Lieu de confirmation (SDJ)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Requis. Ceci doit correspondre au nom et emplacement de votre fichier <em>dans le dossier photos</em> une fois le fichier charg�. Exemple : si votre dossier photos s'appelle <em>photos</em>, et que votre fichier doit s'appeler <em>maphoto.jpg</em> et aller dans un sous-dossier de photos nomm� <em>nouvphotos</em>, vous devrez saisir <em>nouvphotos/maphoto.jpg</em> dans ce champ.";
     $admtext['leaveblankphoto'] = "Laissez ce champ vide si le fichier a d�j� �t� charg� dans votre dossier photos.";
     $admtext['thumbconflicts'] = "Les vignettes n'ont pas �t� cr��es, en raison de probl�mes de chemin, de permissions ou de nom de fichier";
-    $admtext['showmap'] = "Afficher le plan";
-    $admtext['bodytext'] = "<strong>OU</strong><br/>Texte Principal";
-    $admtext['usenl'] = "Convertir les retours � la ligne en affichage HTML";
+  $admtext['showmap'] = "Afficher le plan";
+  $admtext['bodytext'] = "<strong>OU</strong><br>Texte Principal";
+  $admtext['usenl'] = "Convertir les retours � la ligne en affichage HTML";
     $admtext['newwin'] = "Ouvrez dans une nouvelle fen�tre";
     $admtext['modifymedia'] = "Modifier un m�dia existant";
     $admtext['addnewmedia'] = "Ajouter un nouveau m�dia";
@@ -1108,7 +1108,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Si pas de date de naissance, assumer que";
     $admtext['persliving'] = "La personne est en vie";
     $admtext['persdead'] = "La personne est d�c�d�e";
-    $admtext['nodeathdate'] = "Si pas de date de d�c�s, assumer que la personne <br />est d�c�d�e si plus �g�e que";
+    $admtext['nodeathdate'] = "Si pas de date de d�c�s, assumer que la personne <br>est d�c�d�e si plus �g�e que";
     $admtext['pedconfigsettings'] = "Configuration des arbres";
     $admtext['usepopups'] = "Affichage initial";
     $admtext['maxpedgens'] = "Maximum de g�n�rations";
@@ -1269,7 +1269,7 @@ switch ($textpart) {
     $admtext['usedefthumbs'] = "Utiliser les vignettes par d�faut";
     $admtext['autogeo'] = "G�ocoder tous les nouveaux lieux";
     $admtext['revmail'] = "Notifier les soumissions r�visables";
-    $admtext['assumepriv'] = "Consid�rer comme confidentiel si non d�c�d� <br />depuis de nombreuses ann�es";
+    $admtext['assumepriv'] = "Consid�rer comme confidentiel si non d�c�d� <br>depuis de nombreuses ann�es";
     $admtext['calstart'] = "Premier jour de la semaine";
     $admtext['edit_timeout'] = "�diter le d�lai de temporisation (minutes)";
     $admtext['shownamespr'] = "Montrer les noms des individus marqu�s confidentiels";
@@ -1383,8 +1383,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Fusionner les Lieux";
     $admtext['findmerge'] = "Rechercher des doublons �ventuels � fusionner";
     $admtext['selectplacemerge'] = "Selectionner les Lieux � fusionner";
-    $admtext['mcol1'] = "Fusionner<br/>ceux-ci<br/>(supprimer)";
-    $admtext['mcol2'] = "avec<br/>celui-ci<br/>(conserver)";
+    $admtext['mcol1'] = "Fusionner<br>ceux-ci<br>(supprimer)";
+    $admtext['mcol2'] = "avec<br>celui-ci<br>(conserver)";
     $admtext['pmsucc'] = "la fusion des lieux a r�ussi";
     $admtext['nomerge'] = "rien � fusionner";
     $admtext['enterkeep'] = "S�lectionnez une cible pour la fusion.";
@@ -1461,7 +1461,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Veuillez saisir un nom de langue.";
     $admtext['enterlangfolder'] = "Veuillez saisir le nom du dossier contenant les fichiers de cette langue.";
     $admtext['newlanguageinfo'] = "Info nouvelle Langue";
-    $admtext['langdisplay'] = "Nom de langue<br />affich� pour les visiteurs";
+    $admtext['langdisplay'] = "Nom de langue<br>affich� pour les visiteurs";
     $admtext['createlanguage'] = "Cr�e un enregistrement pour une nouvelle langue";
     $admtext['nolanguages'] = "Aucun enregistrement de langue";
     $admtext['conflangdelete'] = "�tes-vous certain de vouloir supprimer cette langue ?";
@@ -1643,7 +1643,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Selectionnez l'�v�nement et l'action";
     $admtext['suggested'] = "Sugg�r�";
-    $admtext['usernotes'] = "Notes concernant<br />une suggestion<br />(ne sera pas enregistr�)";
+    $admtext['usernotes'] = "Notes concernant<br>une suggestion<br>(ne sera pas enregistr�)";
     $admtext['postdate'] = "Envoy� le";
     $admtext['savedel'] = "Enregistrer et Supprimer";
     $admtext['postpone'] = "Remettre � plus tard";
@@ -2300,7 +2300,7 @@ $admtext['unlink'] = "S�parer";
 $admtext['privateonly'] = "Confidentiel seulement";
 $admtext['dna_links'] = "Liens ADN";
 $admtext['dataval'] = "Validation de donn�es";
-$admtext['norels'] = "D�sactiver les informations<br />li�es aux relations de parent�";
+$admtext['norels'] = "D�sactiver les informations<br>li�es aux relations de parent�";
 //added in 12.0.0
 $admtext['templates'] = "Th�mes";
 $admtext['findciteid'] = "Trouver l'ID de la citation";

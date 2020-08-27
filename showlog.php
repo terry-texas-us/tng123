@@ -30,7 +30,7 @@ $owner = $sitename ? $sitename : $dbowner;
 tng_header("$loglines {$text['mostrecentactions']}", $flags);
 ?>
 
-    <h1 class="header"><?php echo "$loglines {$text['mostrecentactions']}"; ?></h1><br clear="all"/>
+  <h1 class="header"><?php echo "$loglines {$text['mostrecentactions']}"; ?></h1><br clear="all">
 <?php
 if (isset($autorefresh)) {
   echo "<p class=\"normal\"><a href=\"$showlog_url" . "autorefresh=0\">{$text['refreshoff']}</a></p>\n";
@@ -39,15 +39,15 @@ if (isset($autorefresh)) {
 }
 ?>
 
-    <div align="left" class="normal" id="content">
-      <?php
+  <div align="left" class="normal" id="content">
+    <?php
       if (empty($autorefresh)) {
         $lines = file($logfile);
         foreach ($lines as $line) {
           if (strpos($line, "<script") === false) {
-            echo "$line<br/>\n";
+            echo "$line<br>\n";
           } else {
-            echo htmlspecialchars($line) . "<strong>Please investigate this access</strong> <br/>\n";
+            echo htmlspecialchars($line) . "<strong>Please investigate this access</strong> <br>\n";
           }
         }
       }

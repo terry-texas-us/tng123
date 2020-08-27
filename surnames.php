@@ -14,13 +14,13 @@ preparebookmark($logstring);
 
 tng_header($text['surnamelist'], $flags);
 ?>
-    <link href="css/c3.css" rel="stylesheet">
-    <script src="js/d3.min.js"></script>
-    <script src="js/c3.min.js"></script>
+  <link href="css/c3.css" rel="stylesheet">
+  <script src="js/d3.min.js"></script>
+  <script src="js/c3.min.js"></script>
 
-    <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist']; ?></h1><br class="clearleft"/>
+  <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist']; ?></h1><br class="clearleft">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'surnames', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 $linkstr = "";
 $linkstr2col1 = "";
 $linkstr2col2 = "";
@@ -106,20 +106,20 @@ if ($result) {
 }
 ?>
 
-    <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['surnamesstarting']; ?></strong></p>
-        <p class="firstchars"><?php echo $linkstr; ?></p>
-        <br/><?php echo "<a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a> ({$text['sortedalpha']})"; ?>
-    </div>
+  <div class="titlebox normal">
+    <p class="subhead"><strong><?php echo $text['surnamesstarting']; ?></strong></p>
+    <p class="firstchars"><?php echo $linkstr; ?></p>
+    <br><?php echo "<a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a> ({$text['sortedalpha']})"; ?>
+  </div>
 
-    <br/>
-    <div class="titlebox">
-        <div style="display:inline-block; margin-right:50px">
-            <table class="table-top30">
-                <tr>
-                    <td colspan="5">
-                        <p class="subhead"><strong><?php echo "{$top30text} ({$text['totalnames']}):"; ?></strong></p>
-                    </td>
+  <br>
+  <div class="titlebox">
+    <div style="display:inline-block; margin-right:50px">
+      <table class="table-top30">
+        <tr>
+          <td colspan="5">
+            <p class="subhead"><strong><?php echo "{$top30text} ({$text['totalnames']}):"; ?></strong></p>
+          </td>
                 </tr>
                 <tr>
                   <?php
@@ -139,36 +139,36 @@ if ($result) {
                   }
                   ?>
                 </tr>
-                <tr>
-                    <td colspan="5">
-                      <?php
-                      $formstr = getFORM("surnames100", "get", "", "");
-                      echo $formstr;
-                      echo $text['showtop'];
+        <tr>
+          <td colspan="5">
+            <?php
+            $formstr = getFORM("surnames100", "get", "", "");
+            echo $formstr;
+            echo $text['showtop'];
 
-                      $top20text = preg_replace("/xxx/", $pietotal, $text['top30']);
-                      $justtop = preg_replace("/xxx/", $pietotal, $text['justtop']);
-                      ?>
-                        <input type="text" name="topnum" value="100" size="4" maxlength="4"/> <?php echo $text['byoccurrence']; ?> <input type="hidden" name="tree" value="<?php echo $tree; ?>"/><input type="submit"
-                                                                                                                                                                                                         value="<?php echo $text['go']; ?>"/></form>
-                    </td>
-                </tr>
+            $top20text = preg_replace("/xxx/", $pietotal, $text['top30']);
+            $justtop = preg_replace("/xxx/", $pietotal, $text['justtop']);
+            ?>
+            <input type="text" name="topnum" value="100" size="4" maxlength="4"> <?php echo $text['byoccurrence']; ?> <input type="hidden" name="tree" value="<?php echo $tree; ?>"><input type="submit"
+                                                                                                                                                                                           value="<?php echo $text['go']; ?>"></form>
+          </td>
+        </tr>
 
-            </table>
-            <br/><br/>
-        </div>
-        <div id="charts" style="display:inline-block; width:400px; vertical-align:top;text-align:center">
-            <p class="subhead"><strong><?php echo "{$top20text}<br/>{$text['amongall']}"; ?></strong></p>
-            <div id="whole_chart"></div>
-            <br/><br/>
-            <p class="subhead"><strong><?php echo $justtop; ?></strong></p>
-            <div id="focus_chart"></div>
-        </div>
-      <?php
-      $query = "SELECT count(*) as total_names FROM $people_table $wherestr";
-      $result = tng_query($query);
-      $row = tng_fetch_assoc($result);
-      $total_names = $row['total_names'];
+      </table>
+      <br><br>
+    </div>
+    <div id="charts" style="display:inline-block; width:400px; vertical-align:top;text-align:center">
+      <p class="subhead"><strong><?php echo "{$top20text}<br>{$text['amongall']}"; ?></strong></p>
+      <div id="whole_chart"></div>
+      <br><br>
+      <p class="subhead"><strong><?php echo $justtop; ?></strong></p>
+      <div id="focus_chart"></div>
+    </div>
+    <?php
+    $query = "SELECT count(*) as total_names FROM $people_table $wherestr";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $total_names = $row['total_names'];
       tng_free_result($result);
       ?>
         <script type="text/javascript">
@@ -239,8 +239,8 @@ if ($result) {
             });
         </script>
 
-    </div>
-    <br/>
+  </div>
+  <br>
 <?php
 tng_footer("");
 ?>

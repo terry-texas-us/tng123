@@ -56,9 +56,9 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
                     <td><span class="normal"><strong><?php echo $admtext['branch']; ?>:</strong></span></td>
                     <td><span class="normal"><?php echo $brow['description']; ?></span></td>
                 </tr>
-                <tr>
-                    <td colspan="2">
-			<span class="normal"><br/>
+              <tr>
+                <td colspan="2">
+			<span class="normal"><br>
 <?php
 echo "<p class=\"adminnav\"><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class=\"snlink\">{$admtext['labelbranches']}</a></p>\n";
 while ($row = tng_fetch_assoc($brresult)) {
@@ -66,15 +66,15 @@ while ($row = tng_fetch_assoc($brresult)) {
   $row['allow_living'] = $rights['living'];
   $row['allow_private'] = $rights['private'];
 
-  echo "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getNameRev($row) . " ({$row['personID']})</a><br />\n";
+  echo "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getNameRev($row) . " ({$row['personID']})</a><br>\n";
 }
 tng_free_result($brresult);
 ?>				
 			</span>
-                    </td>
-                </tr>
+                </td>
+              </tr>
             </table>
-            <br/>
+          <br>
         </td>
     </tr>
 </table>

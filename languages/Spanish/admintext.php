@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informaci�n de Cementerio Existente";
     $admtext['newceminfo'] = "Informaci�n de Nuevo Cementerio";
     $admtext['maptoupload'] = "Imagen del mapa para subir";
-    $admtext['mapfilenamefolder'] = "Nombre de Archivo del Mapa<br />dentro de la carpeta de L�pidas";
+    $admtext['mapfilenamefolder'] = "Nombre de Archivo del Mapa<br>dentro de la carpeta de L�pidas";
     $admtext['ifmapuploaded'] = "Dejar este campo en blanco si el archivo ya ha sido subido a la carpeta de l�pidas.";
     $admtext['requiredmap'] = "Requerido si usted est� usando un mapa. Esto debe coincidir con el nombre y la ubicaci�n de su archivo <em>dentro de la carpeta de l�pidas</em> luego que su archivo sea subido. Por ejemplo, si su carpeta de l�pidas se llama <em>lapidas</em>, y usted desea llamar a su archivo <em>mapa.jpg</em> y colocarlo en una sub-carpeta de l�pidas llamada <em>mismapas</em>, usted ingresar� en �ste campo <em>mismapas/mapa.jpg</em>.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "A�adido";
     $admtext['enternew'] = "Ingresar nuevo";
     $admtext['pleaseenter'] = "Por favor, ingrese un ";
-    $admtext['netscapereload'] = "Usuarios de Netscape: <br />Debe recargar la p�gina Cementerios para ver el nuevo";
+    $admtext['netscapereload'] = "Usuarios de Netscape: <br>Debe recargar la p�gina Cementerios para ver el nuevo";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Importando GEDCOM...<br />(esta operaci�n puede tardar varios minutos)";
+    $admtext['importinggedcom'] = "Importando GEDCOM...<br>(esta operaci�n puede tardar varios minutos)";
     $admtext['ifimportfails'] = "Si el proceso de importaci�n no puede completarse,";
     $admtext['opened'] = "abierto...";
     $admtext['toresume'] = "para reanudar la importaci�n";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Para Repositorios...";
     $admtext['noevtypes'] = "No existe ning�n tipo de evento.";
     $admtext['DESI'] = "Descendiente de Inter�s";
-    $admtext['allnone'] = "Ingrese un mensaje a mostrar para cada idioma,<br />o deje todo en blanco e ingrese un mensaje arriba para mostrar.";
+    $admtext['allnone'] = "Ingrese un mensaje a mostrar para cada idioma,<br>o deje todo en blanco e ingrese un mensaje arriba para mostrar.";
     $admtext['assocwith'] = "Asociado con";
     $admtext['BAPM'] = "Bautismo";
     $admtext['umps'] = "Su archivo GEDCOM podr�a ser mayor que el tama�o m�ximo admitido por su instalaci�n de PHP. Usted puede solicitar a su proveedor de hosting que aumente el valor 'upload_max_filesize', o puede copiar el archivo en la carpeta 'gedcom' de su sitio web e importarlo desde all�.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefijo";
     $admtext['chkdel'] = "Marque el box vac�o para eliminar el �tem a la izquierda";
     //added in 9.0.0
-    $admtext['choosedef'] = "Elegir<br/>foto<br/>por defecto"; //has to fit in a small box
+    $admtext['choosedef'] = "Elegir<br>foto<br>por defecto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Fecha de Confirmaci�n (LDS)";
     $admtext['confplace'] = "Lugar de Confirmaci�n (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Requerido. Esto debe coincidir con el nombre y la ubicaci�n de su archivo <em>dentro de la carpeta de fotos</em> una vez que el archivo ha sido subido. Por ejemplo, si su carpeta de fotos se llama <em>fotos</em>, y usted desea llamar a su archivo <em>mifoto.jpg</em> y colocarlo en una sub-carpeta llamada <em>nuevasfotos</em>, deber� ingresar <em>nuevasfotos/mifoto.jpg</em> en este campo.";
     $admtext['leaveblankphoto'] = "Dejar este campo en blanco si el archivo ya ha sido subido a la carpeta de fotos.";
     $admtext['thumbconflicts'] = "No se han generado miniaturas debido a problemas con la ruta, los permisos, el tama�o o el nombre de archivo";
-    $admtext['showmap'] = "Mostrar mapa y medios del cementerio siempre que se visualice este �tem.";
-    $admtext['bodytext'] = "<strong>O</strong><br/>Texto del Cuerpo";
-    $admtext['usenl'] = "Convertir saltos de l�nea a HTML al mostrar";
+  $admtext['showmap'] = "Mostrar mapa y medios del cementerio siempre que se visualice este �tem.";
+  $admtext['bodytext'] = "<strong>O</strong><br>Texto del Cuerpo";
+  $admtext['usenl'] = "Convertir saltos de l�nea a HTML al mostrar";
     $admtext['newwin'] = "Abrir en nueva ventana";
     $admtext['modifymedia'] = "Editar Medios Existentes";
     $admtext['addnewmedia'] = "A�adir Nuevo Medio";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Sin fecha de nacimiento, se presume que";
     $admtext['persliving'] = "La persona a�n vive";
     $admtext['persdead'] = "La persona ha fallecido";
-    $admtext['nodeathdate'] = "Sin fecha de muerte, presumir fallecido<br />si es mayor de";
+    $admtext['nodeathdate'] = "Sin fecha de muerte, presumir fallecido<br>si es mayor de";
     $admtext['pedconfigsettings'] = "Configuraci�n de Gr�ficos";
     $admtext['usepopups'] = "Muestra Inicial";
     $admtext['maxpedgens'] = "M�x. de Generaciones";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Fusionar Lugares";
     $admtext['findmerge'] = "Buscar Posibles Fusiones";
     $admtext['selectplacemerge'] = "Seleccionar Lugares para Fusionar";
-    $admtext['mcol1'] = "Fusionar<br />estos<br />(eliminar)";
-    $admtext['mcol2'] = "con<br />este<br />(conservar)";
+    $admtext['mcol1'] = "Fusionar<br>estos<br>(eliminar)";
+    $admtext['mcol2'] = "con<br>este<br>(conservar)";
     $admtext['pmsucc'] = "Fusi�n de lugares exitosa";
     $admtext['nomerge'] = "Nada para fusionar";
     $admtext['enterkeep'] = "Por favor, seleccione un objetivo de fusi�n";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Por favor, ingrese el nombre con que se mostrara este idioma.";
     $admtext['enterlangfolder'] = "Por favor, ingrese el nombre de la carpeta en la que se guardar�n los archivos para este idioma.";
     $admtext['newlanguageinfo'] = "Informaci�n de Nuevo Idioma";
-    $admtext['langdisplay'] = "Nombre del idioma<br />tal como se mostrar� a los visitantes";
+    $admtext['langdisplay'] = "Nombre del idioma<br>tal como se mostrar� a los visitantes";
     $admtext['createlanguage'] = "Crear registro para un nuevo idioma";
     $admtext['nolanguages'] = "No existe registro de idioma";
     $admtext['conflangdelete'] = "�Est� seguro que quiere eliminar este idioma?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Seleccione Evento y Acci�n";
     $admtext['suggested'] = "Sugerido";
-    $admtext['usernotes'] = "Notas respecto al<br />cambio sugerido<br />(no se guardar�n)";
+    $admtext['usernotes'] = "Notas respecto al<br>cambio sugerido<br>(no se guardar�n)";
     $admtext['postdate'] = "Publicado el";
     $admtext['savedel'] = "Guardar y Eliminar";
     $admtext['postpone'] = "Postergar";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "Comprobar";
 $admtext['generate'] = "Generar";
 $admtext['update'] = "Actualizar";
 $admtext['confdeleteevent'] = "�Est� seguro que quiere eliminar este evento?";
-$admtext['existinglinks'] = "Enlaces existentes:<br />(marcar para borrar)";
+$admtext['existinglinks'] = "Enlaces existentes:<br>(marcar para borrar)";
 $admtext['lowersortfirst'] = "Los n�meros m�s bajos se ponen primero. Tambi�n puede usar n�meros decimales.";
 $admtext['personsname'] = "Nombre de la Persona";
 $admtext['tablecreation'] = "Creaci�n de Tablas";
@@ -2241,7 +2241,7 @@ $admtext['confdeletefile'] = "�Est� seguro que desea eliminar este archivo?"
 //changed in 8.0.0
 $admtext['datenote'] = "<strong>Atenci�n:</strong> Para ingresar las fechas utilice el formato geneal�gico est�ndar DD MMM AAAA. Por ejemplo, 10 Abr 2004.";
 $admtext['oriental'] = "Apellidos primero (sin comas)";
-$admtext['langfolder'] = "Carpeta en la que se guardar�n<br />los archivos de idioma";
+$admtext['langfolder'] = "Carpeta en la que se guardar�n<br>los archivos de idioma";
 //moved here in 8.0.0
 $admtext['repoid'] = "ID de Repositorio";
 $admtext['whatsnew'] = "Novedades";

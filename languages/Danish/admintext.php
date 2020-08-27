@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "For arkiver...";
     $admtext['noevtypes'] = "Der findes ingen begivenhedstype.";
     $admtext['DESI'] = "Efterkommerinteresse";
-    $admtext['allnone'] = "Indtast en meddelelse for hvert sprog,<br />eller lad alle felter v�re tomme og indtast en meddelelse ovenover.";
+    $admtext['allnone'] = "Indtast en meddelelse for hvert sprog,<br>eller lad alle felter v�re tomme og indtast en meddelelse ovenover.";
     $admtext['assocwith'] = "Knyttet til";
     $admtext['BAPM'] = "D�b";
     $admtext['umps'] = "Din GEDCOM-fil er muligvis st�rre end den maksimalt tilladte st�rrelse iht. din PHP-installation. Du kan bede din leverand�r om at �ge den tilladte st�rrelse, eller du kan kopiere din fil til 'gedcom'-mappen p� din hjemmeside og importere filen derfra i stedet for.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Pr�fiks";
     $admtext['chkdel'] = "Kryds af i det tomme felt for at slette emnet til venstre";
     //added in 9.0.0
-    $admtext['choosedef'] = "V�lg<br/>standard<br/>foto"; //has to fit in a small box
+    $admtext['choosedef'] = "V�lg<br>standard<br>foto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Bekr�ftelsesdato (SDH)";
     $admtext['confplace'] = "Bekr�ftelsessted (SDH)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "N�dvendigt. Dette skal svare til navn og placering for din fil <em>i billedmappen,</em> n�r filen er uploadet. For eksempel, hvis billedmappen hedder <em>fotografier</em>, og du vil kalde din fil <em>mitbillede.jpg</em> og l�gge den i en undermappe, der hedder <em>nyefotografier</em>, skal du indtaste <em>nyefotografier/mitbillede.jpg</em> i dette felt.";
     $admtext['leaveblankphoto'] = "Lad dette felt v�re tomt, hvis filen allerede er uploaded til din billedmappe.";
     $admtext['thumbconflicts'] = "Thumbnails ikke oprettet p� grund af sti-, tilladelses- eller filnavnproblemer";
-    $admtext['showmap'] = "Vis kort";
-    $admtext['bodytext'] = "<strong>OR</strong><br/>Br�dtekst";
-    $admtext['usenl'] = "Omdan linjeskift til HTML p� sk�rmen";
+  $admtext['showmap'] = "Vis kort";
+  $admtext['bodytext'] = "<strong>OR</strong><br>Br�dtekst";
+  $admtext['usenl'] = "Omdan linjeskift til HTML p� sk�rmen";
     $admtext['newwin'] = "�bn i nyt vindue";
     $admtext['modifymedia'] = "Redig�r nuv�rende billede";
     $admtext['addnewmedia'] = "Tilf�j nyt billede";
@@ -1125,7 +1125,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Hvis der ikke er nogen f�dselsdato, antag";
     $admtext['persliving'] = "Personen lever";
     $admtext['persdead'] = "Personen er d�d";
-    $admtext['nodeathdate'] = "Hvis der ikke er nogen d�dsdato, s� antag afd�d<br />hvis personen er �ldre end";
+    $admtext['nodeathdate'] = "Hvis der ikke er nogen d�dsdato, s� antag afd�d<br>hvis personen er �ldre end";
     $admtext['pedconfigsettings'] = "Indstillinger for tavler";
     $admtext['usepopups'] = "Indledende visning";
     $admtext['maxpedgens'] = "Maks. antal generationer";
@@ -1400,8 +1400,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Flet steder";
     $admtext['findmerge'] = "Find mulige steddubletter";
     $admtext['selectplacemerge'] = "V�lg steder, der skal flettes";
-    $admtext['mcol1'] = "Flet<br/>disse<br/>(slet)";
-    $admtext['mcol2'] = "ind i<br/>dette<br/>(behold)";
+    $admtext['mcol1'] = "Flet<br>disse<br>(slet)";
+    $admtext['mcol2'] = "ind i<br>dette<br>(behold)";
     $admtext['pmsucc'] = "Fletning lykkedes";
     $admtext['nomerge'] = "Intet at flette";
     $admtext['enterkeep'] = "V�lg venligst et m�l for fletningen.";
@@ -1660,7 +1660,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "V�lg begivenhed og handling";
     $admtext['suggested'] = "Foresl�et";
-    $admtext['usernotes'] = "Notater ang�ende<br />foresl�et �ndring<br />(bliver ikke gemt)";
+    $admtext['usernotes'] = "Notater ang�ende<br>foresl�et �ndring<br>(bliver ikke gemt)";
     $admtext['postdate'] = "Sendt den";
     $admtext['savedel'] = "Gem og slet";
     $admtext['postpone'] = "Uds�t";

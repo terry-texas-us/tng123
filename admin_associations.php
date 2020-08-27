@@ -32,24 +32,24 @@ $assoccount = tng_num_rows($assocresult);
 <div class="databack ajaxwindow" id="associations"<?php if (!$assoccount) {
   echo " style=\"display:none\"";
 } ?>>
-    <form name="assocform">
-        <p class="subhead"><strong><?php echo $admtext['associations'] . ": $namestr"; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php');"><?php echo $admtext['help']; ?></a></p>
-        <p>
-          <?php if ($allow_add) { ?>
-              <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.newassocform1.reset();assocType='I';gotoSection('associations','addassociation');"/>&nbsp;
-          <?php } ?>
-            <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();"/>
-        </p>
-        <table id="associationstbl" width="95%" class="normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$assoccount) {
-          echo " style=\"display:none\"";
-        } ?>>
-            <tbody id="associationstblbody">
-            <tr>
-                <td class="fieldnameback fieldname">
-                    <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
-                </td>
-                <td class="fieldnameback fieldname" width="85%">
+  <form name="assocform">
+    <p class="subhead"><strong><?php echo $admtext['associations'] . ": $namestr"; ?></strong> |
+      <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php');"><?php echo $admtext['help']; ?></a></p>
+    <p>
+      <?php if ($allow_add) { ?>
+        <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.newassocform1.reset();assocType='I';gotoSection('associations','addassociation');">&nbsp;
+      <?php } ?>
+      <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
+    </p>
+    <table id="associationstbl" width="95%" class="normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$assoccount) {
+      echo " style=\"display:none\"";
+    } ?>>
+      <tbody id="associationstblbody">
+      <tr>
+        <td class="fieldnameback fieldname">
+          <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
+        </td>
+        <td class="fieldnameback fieldname" width="85%">
                     <nobr>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</nobr>
                 </td>
             </tr>
@@ -95,40 +95,40 @@ $assoccount = tng_num_rows($assocresult);
 <div class="databack ajaxwindow"<?php if ($assoccount) {
   echo " style=\"display:none\"";
 } ?> id="addassociation">
-    <p class="subhead"><strong><?php echo $admtext['addnewassoc']; ?></strong> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
+  <p class="subhead"><strong><?php echo $admtext['addnewassoc']; ?></strong> |
+    <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
 
-    <form action="" name="newassocform1" onSubmit="return addAssociation(this);">
-        <table width="95%" border="0" cellpadding="2" class="normal">
-            <tr>
-                <td colspan="2">
-                    <input type="radio" name="reltype" value="I" checked="checked" onclick="activateAssocType('I');"/> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
-                    <input type="radio" name="reltype" value="F" onclick="activateAssocType('F');"/> <?php echo $admtext['family']; ?>
-                </td>
-            </tr>
-            <tr>
-                <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none"><?php echo $admtext['familyid']; ?></span>:</td>
-                <td valign="top"><input type="text" name="passocID" id="passocID"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                    <a href="#" onclick="return findItem(assocType,'passocID',null,'<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>"><img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>"
-                                                                                                                                                                                           alt="<?php echo $admtext['find']; ?>"
-                                                                                                                                                                                           class="alignmiddle" <?php echo $dims; ?>></a></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['relationship']; ?>:</td>
-                <td><input type="text" name="relationship" size="60"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="checkbox" name="revassoc" value="1"> <?php echo $admtext['revassoc']; ?>:</td>
-            </tr>
-            </tr>
-        </table>
-        <input type="hidden" name="personID" value="<?php echo $personID; ?>"/>
-        <input type="hidden" name="orgreltype" value="<?php echo $orgreltype; ?>"/>
-        <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
-        <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>"/>
-        <input type="button" name="cancel" class="btn" value="<?php echo $text['cancel']; ?>" onclick="gotoSection('addassociation','associations');"/>
-    </form>
-    <br/>
+  <form action="" name="newassocform1" onSubmit="return addAssociation(this);">
+    <table width="95%" border="0" cellpadding="2" class="normal">
+      <tr>
+        <td colspan="2">
+          <input type="radio" name="reltype" value="I" checked="checked" onclick="activateAssocType('I');"> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
+          <input type="radio" name="reltype" value="F" onclick="activateAssocType('F');"> <?php echo $admtext['family']; ?>
+        </td>
+      </tr>
+      <tr>
+        <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none"><?php echo $admtext['familyid']; ?></span>:</td>
+        <td valign="top"><input type="text" name="passocID" id="passocID"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+          <a href="#" onclick="return findItem(assocType,'passocID',null,'<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>"><img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>"
+                                                                                                                                                                                 alt="<?php echo $admtext['find']; ?>"
+                                                                                                                                                                                 class="alignmiddle" <?php echo $dims; ?>></a></td>
+      </tr>
+      <tr>
+        <td><?php echo $admtext['relationship']; ?>:</td>
+        <td><input type="text" name="relationship" size="60"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="checkbox" name="revassoc" value="1"> <?php echo $admtext['revassoc']; ?>:</td>
+      </tr>
+      </tr>
+    </table>
+    <input type="hidden" name="personID" value="<?php echo $personID; ?>">
+    <input type="hidden" name="orgreltype" value="<?php echo $orgreltype; ?>">
+    <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+    <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+    <input type="button" name="cancel" class="btn" value="<?php echo $text['cancel']; ?>" onclick="gotoSection('addassociation','associations');">
+  </form>
+  <br>
 </div>
 
 <div class="databack ajaxwindow" style="display:none;" id="editassociation">

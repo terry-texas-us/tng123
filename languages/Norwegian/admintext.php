@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "For arkiver...";
     $admtext['noevtypes'] = "Ingen hendelsestyper finnes.";
     $admtext['DESI'] = "Etterkommerinteresse";
-    $admtext['allnone'] = "Skriv en melding for hvert spr�k,<br />eller la alle v�re blanke og skriv en melding.";
+    $admtext['allnone'] = "Skriv en melding for hvert spr�k,<br>eller la alle v�re blanke og skriv en melding.";
     $admtext['assocwith'] = "Assosiert med";
     $admtext['BAPM'] = "D�p";
     $admtext['umps'] = "GEDCOM filen kan v�re st�rre enn hva som er maksimum for din PHP installasjon. Du kan be din nettstedleverand�r om � �ke 'upload_max_filesize' verdien, eller du kan kopiere GEDCOM filen til din 'gedcom' mappe p� vertsmaskinen, og importere derfra.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefiks";
     $admtext['chkdel'] = "Sett hake i boksen for � slette elementet p� venstre side";
     //added in 9.0.0
-    $admtext['choosedef'] = "Velg<br/>standard<br/>foto"; //has to fit in a small box
+    $admtext['choosedef'] = "Velg<br>standard<br>foto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Konfirmasjonsdato (LDS)";
     $admtext['confplace'] = "Konfirmasjonssted (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Viktig. Dette m� stemme overens med navn og plassering av filen <em>innen bildemappen </em> n�r filen er lastet opp. F.eks., dersom din mappe for bilder heter <em>photos</em>, og du �nsker � kalle filen <em>myphoto.jpg</em> og plassere den i en undermappe kallt <em>newphotos</em>, m� du skrive <em>newphotos/myphoto.jpg</em> i dette feltet.";
     $admtext['leaveblankphoto'] = "La feltet v�re blankt hvis filen allerede har blitt lastet opp til din bildemappe.";
     $admtext['thumbconflicts'] = "Miniatyrbilde ble ikke generert p.g.a. sti-, rettighets- eller filnavn- problemer";
-    $admtext['showmap'] = "Vis kirkeg�rdskart og bilder n�r dette bildet blir vist";
-    $admtext['bodytext'] = "<strong>ELLER</strong><br/>Hovedtekst";
-    $admtext['usenl'] = "Konverter linjeskift til HTML ved visning";
+  $admtext['showmap'] = "Vis kirkeg�rdskart og bilder n�r dette bildet blir vist";
+  $admtext['bodytext'] = "<strong>ELLER</strong><br>Hovedtekst";
+  $admtext['usenl'] = "Konverter linjeskift til HTML ved visning";
     $admtext['newwin'] = "�pne i nytt vindu";
     $admtext['modifymedia'] = "Endre eksisterende media";
     $admtext['addnewmedia'] = "Legg til nytt media";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Dersom f�dselsdato ikke er angitt, anta";
     $admtext['persliving'] = "Personen lever";
     $admtext['persdead'] = "Personen er d�d";
-    $admtext['nodeathdate'] = "Dersom d�dsdato ikke er angitt, anta d�d <br />dersom eldre enn";
+    $admtext['nodeathdate'] = "Dersom d�dsdato ikke er angitt, anta d�d <br>dersom eldre enn";
     $admtext['pedconfigsettings'] = "Diagrammer";
     $admtext['usepopups'] = "Initiell visning";
     $admtext['maxpedgens'] = "Maksimum generasjoner";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Sl� sammen steder";
     $admtext['findmerge'] = "Finn mulige duplikater";
     $admtext['selectplacemerge'] = "Velg steder som skal sammensl�s";
-    $admtext['mcol1'] = "Sl� sammen<br/>disse<br/>(slett)";
-    $admtext['mcol2'] = "med<br/>denne<br/>(behold)";
+    $admtext['mcol1'] = "Sl� sammen<br>disse<br>(slett)";
+    $admtext['mcol2'] = "med<br>denne<br>(behold)";
     $admtext['pmsucc'] = "Sammensl�ing sted fullf�rt";
     $admtext['nomerge'] = "Ingenting � sl� sammen";
     $admtext['enterkeep'] = "Velg m�l for sammensl�ingen.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Velg hendelse og handling";
     $admtext['suggested'] = "Forslag";
-    $admtext['usernotes'] = "Notater vedr�rende<br />foresl�tte endring<br />(vil ikke bli lagret)";
+    $admtext['usernotes'] = "Notater vedr�rende<br>foresl�tte endring<br>(vil ikke bli lagret)";
     $admtext['postdate'] = "Postet p�";
     $admtext['savedel'] = "Lagre og slett";
     $admtext['postpone'] = "Utsett";
@@ -2239,7 +2239,7 @@ $admtext['idexists'] = "denne ID eksisterer allerede. G� til forrige side og v
 $admtext['notdeleted'] = "Filen kunne ikke slettes. Sjekk filrettigheter.";
 $admtext['confdeletefile'] = "Er du sikker du vil slette denne filen?";
 //changed in 8.0.0
-$admtext['datenote'] = "<strong>NB!</strong> N�r du skriver datoer, m� du bruke standardformatet for slektsforskning (DD MMM YYYY).<br />For eksempel: 10 Apr 2004.";
+$admtext['datenote'] = "<strong>NB!</strong> N�r du skriver datoer, m� du bruke standardformatet for slektsforskning (DD MMM YYYY).<br>For eksempel: 10 Apr 2004.";
 $admtext['oriental'] = "Etternavn f�rst (uten komma)";
 $admtext['langfolder'] = "Mappen hvor spr�kfilene blir lagret";
 //moved here in 8.0.0

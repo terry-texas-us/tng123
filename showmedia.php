@@ -261,7 +261,7 @@ if ($noneliving || $imgrow['alwayson']) {
   if ((isset($mediatypes_like['histories']) && !in_array($mediatypeID, $mediatypes_like['histories'])) || !$imgrow['bodytext']) {
     echo $mapnote;
     showMediaSource($imgrow);
-    echo "<br /><br />";
+    echo "<br><br>";
     $show_on_top = true;
   }
 
@@ -269,7 +269,7 @@ if ($noneliving || $imgrow['alwayson']) {
   if ($notes) {
     echo "<p class=\"normal\">$notes</p>\n";
   } else {
-    echo "<br /><br />";
+    echo "<br><br>";
   }
 
   if (!$show_on_top) {
@@ -287,15 +287,15 @@ if ($noneliving || $imgrow['alwayson']) {
     }
     if ($imgrow['plot']) {
       if ($imgrow['status']) {
-        echo "<br/>";
+        echo "<br>";
       }
       echo "<b>{$text['plot']}:</b> " . nl2br($imgrow['plot']);
     }
     echo "</p>";
   } elseif (!$tngconfig['imgviewer'] || in_array($mediatypeID, $mediatypes_like[$tngconfig['imgviewer']])) {
-    echo "<br />\n";
+    echo "<br>\n";
   } else {
-    echo "<br />\n";
+    echo "<br>\n";
   }
 
   $medialinktext = getMediaLinkText($mediaID, $ioffset);
@@ -309,7 +309,7 @@ if ($noneliving || $imgrow['alwayson']) {
   }
 
   if (!$tngprint) {
-    echo "<br/><p class=\"normal\">$pagenav$sscontrols</p><br/>\n";
+    echo "<br><p class=\"normal\">$pagenav$sscontrols</p><br>\n";
   }
 } else {
   ?>
@@ -347,7 +347,7 @@ if (!$tngprint && !$tngconfig['ssdisabled']) {
   $flags['more'] .= "}\n";
   $flags['more'] .= "//]]>\n</script>\n";
 }
-echo "<br/><br/>\n";
+echo "<br><br>\n";
 
 tng_footer($flags);
 ?>

@@ -4,33 +4,33 @@ global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $med
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicback">
 
 <div class="center">
-    <table class="page">
-        <tr>
-            <td colspan="4" class="line"></td>
-        </tr>
-        <tr>
-            <td class="menuback">
-                <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
-                <form action="<?php echo $cms['tngpath']; ?>search.php" method="get">
-                    <table class="menuback">
-                        <tr>
-                            <td><span class="fieldname"><?php echo $text['mnufirstname']; ?>:<br/><input type="text" name="myfirstname" class="searchbox" size="14"/></span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="fieldname"><?php echo $text['mnulastname']; ?>: <br/><input type="text" name="mylastname" class="searchbox" size="14"/></span></td>
-                        </tr>
-                        <tr>
-                            <td><input type="hidden" name="mybool" value="AND"/><input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>" class="small"/></td>
-                        </tr>
-                    </table>
-                </form>
-                <table class="menuback">
-                    <tr>
-                        <td>
-                            <div class="fieldname">
-                                <ul>
-                                    <li><a href="<?php echo $cms['tngpath'] ?>searchform.php" class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
-                                    <li><a href="<?php echo $cms['tngpath'] ?>surnames.php" class="lightlink"><?php echo $text['mnulastnames']; ?></a></li>
+  <table class="page">
+    <tr>
+      <td colspan="4" class="line"></td>
+    </tr>
+    <tr>
+      <td class="menuback">
+        <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
+        <form action="<?php echo $cms['tngpath']; ?>search.php" method="get">
+          <table class="menuback">
+            <tr>
+              <td><span class="fieldname"><?php echo $text['mnufirstname']; ?>:<br><input type="text" name="myfirstname" class="searchbox" size="14"></span></td>
+            </tr>
+            <tr>
+              <td><span class="fieldname"><?php echo $text['mnulastname']; ?>: <br><input type="text" name="mylastname" class="searchbox" size="14"></span></td>
+            </tr>
+            <tr>
+              <td><input type="hidden" name="mybool" value="AND"><input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>" class="small"></td>
+            </tr>
+          </table>
+        </form>
+        <table class="menuback">
+          <tr>
+            <td>
+              <div class="fieldname">
+                <ul>
+                  <li><a href="<?php echo $cms['tngpath'] ?>searchform.php" class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                  <li><a href="<?php echo $cms['tngpath'] ?>surnames.php" class="lightlink"><?php echo $text['mnulastnames']; ?></a></li>
                                 </ul>
                               <?php
                               if ($currentuser) {
@@ -93,16 +93,16 @@ global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $med
 
                           if ($tmp['t4_titlechoice'] == "text") {
                             ?>
-                              <div>
+                            <div>
 
-                                  <span class="titletop"><?php echo getTemplateMessage('t4_headtitle1'); ?></span><br/>
-                                  <span class="titlebottom">&nbsp;<?php echo getTemplateMessage('t4_headtitle2'); ?></span>
+                              <span class="titletop"><?php echo getTemplateMessage('t4_headtitle1'); ?></span><br>
+                              <span class="titlebottom">&nbsp;<?php echo getTemplateMessage('t4_headtitle2'); ?></span>
 
-                              </div>
+                            </div>
                             <?php
                           } else {
                             ?>
-                              <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_titleimg']; ?>" alt="" class="banner" width="468" height="100"/>
+                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_titleimg']; ?>" alt="" class="banner" width="468" height="100">
                             <?php
                           }
                           //end TITLE IMAGE
@@ -114,15 +114,15 @@ global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $med
                       //Actual file name has been replaced with t4_headimg variable, configurable from Template Settings. Default name of actual image is "smallphoto.jpg"
                       //You can replace the t4_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                       ?>
-                        <td><img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto"/></td>
+                      <td><img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto"></td>
                       <?php
                       //end HEADER IMAGE
                       ?>
                     </tr>
-                    <tr>
-                        <td colspan="2" class="line"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="normal" style="border-collapse:separate"><br/>
-                                <!-- topmenu for template 4 -->
+                  <tr>
+                    <td colspan="2" class="line"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="normal" style="border-collapse:separate"><br>
+                        <!-- topmenu for template 4 -->

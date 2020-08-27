@@ -53,7 +53,7 @@ if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
   <?php
 }
 ?>
-<hr/>
+<hr>
 <?php
 if ($allow_edit && $allow_add && $allow_delete && !$assignedbranch) {
   ?>
@@ -72,17 +72,17 @@ if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
     <?php
   }
   ?>
-    <a href="admin_eventtypes.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['customeventtypes']; ?></a>
-    <a href="admin_reports.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['reports']; ?></a>
-    <a href="admin_dna_tests.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['dna_tests']; ?></a>
-    <a href="admin_languages.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['languages']; ?></a>
-    <a href="admin_utilities.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['backuprestore']; ?></a>
-    <a href="admin_modhandler.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['modmgr']; ?></a>
+  <a href="admin_eventtypes.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['customeventtypes']; ?></a>
+  <a href="admin_reports.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['reports']; ?></a>
+  <a href="admin_dna_tests.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['dna_tests']; ?></a>
+  <a href="admin_languages.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['languages']; ?></a>
+  <a href="admin_utilities.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['backuprestore']; ?></a>
+  <a href="admin_modhandler.php" class="lightlink2 leftlink" target="main"><?php echo $admtext['modmgr']; ?></a>
   <?php
 }
 ?>
 <strong><a href="<?php echo $home_url; ?>" class="lightlink2 leftlink" target="main"><?php echo $admtext['publichome']; ?>
-        <br/><span class="smaller"><?php echo $admtext['inframe']; ?></span></a></strong>
+    <br><span class="smaller"><?php echo $admtext['inframe']; ?></span></a></strong>
 
 </body>
 </html>

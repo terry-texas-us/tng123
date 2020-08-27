@@ -64,7 +64,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informacije o postojećem groblju";
     $admtext['newceminfo'] = "Informacije o novom groblju";
     $admtext['maptoupload'] = "Mapa groblja za spuštanje";
-    $admtext['mapfilenamefolder'] = "Ime fajla sa mapom<br/>u podskupu spominici";
+    $admtext['mapfilenamefolder'] = "Ime fajla sa mapom<br>u podskupu spominici";
     $admtext['ifmapuploaded'] = "Ostavi ovo polje prazno ako je fajl vec spušten u vaš podskup za spomenike.";
     $admtext['requiredmap'] = "Neophodno. Ovo bi trebalo da odgovara imenu foldera i lokaciji fajla <em>folderu nadgrobnih spomenika</em> kad se fajl otpremi. Na primer: Ako se vaš podskup za spomenike zove <em>headstones</em>,	i vi hoćete da se Vaš fajl zove <em>map.jpg</em> i da bude upisan u podskup koji se zove <em>mymaps</em>, upisaćete <em>mymaps/map.jpg</em> u ovo polje.";
 
@@ -80,7 +80,7 @@ switch ($textpart) {
     $admtext['added'] = "Dodato";
     $admtext['enternew'] = "Upiši novo";
     $admtext['pleaseenter'] = "Upišite ";
-    $admtext['netscapereload'] = "Netscape korisnici: <br/>Morate ponovo učitati stranicu sa grobljima, da biste videli groblje koje ste upravo dodali";
+    $admtext['netscapereload'] = "Netscape korisnici: <br>Morate ponovo učitati stranicu sa grobljima, da biste videli groblje koje ste upravo dodali";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -113,7 +113,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Preuzima GEDCOM podatke...<br/>(ovo može da potraje par minuta)";
+    $admtext['importinggedcom'] = "Preuzima GEDCOM podatke...<br>(ovo može da potraje par minuta)";
     $admtext['ifimportfails'] = "Ako uvoz podataka ne uspe da se završi,";
     $admtext['opened'] = "otvoren...";
     $admtext['toresume'] = "nastaviti uvoz podataka";  //cannot open to resume import
@@ -211,7 +211,7 @@ switch ($textpart) {
     $admtext['forrepos'] = " Za dosije...";
     $admtext['noevtypes'] = "Ne postoji ni jedan tip podataka.";
     $admtext['DESI'] = "Potomsko zanimanje/interesovanje";
-    $admtext['allnone'] = "Unesite prikaz poruke za svako pismo/jezik,<br/>ili ostavite sve prazno za unos jedne poruke za sve.";
+    $admtext['allnone'] = "Unesite prikaz poruke za svako pismo/jezik,<br>ili ostavite sve prazno za unos jedne poruke za sve.";
     $admtext['assocwith'] = "Povezano sa";
     $admtext['BAPM'] = "Krštenje";
     $admtext['umps'] = "Vaš GEDCOM fajl može biti veći od maksimuma dozvoljenog PHP instalacijom. Možete zamoliti vašeg provajdera da poveća 'upload_max_filesize' rednost, ili da kopirate vaš GEDCOM fajl u 'gedcom' folder na sajtu i uvesti podatke odatle.;";
@@ -333,7 +333,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefiks";
     $admtext['chkdel'] = "Proverite prazni CheckBox da izbrišete stavku na levo";
     //added in 9.0.0
-    $admtext['choosedef'] = "Izaberi<br/>podrazumevanu/glavnu<br/>fotografiju"; //has to fit in a small box
+    $admtext['choosedef'] = "Izaberi<br>podrazumevanu/glavnu<br>fotografiju"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Potvrda Datuma (LDS)";
     $admtext['confplace'] = "Potvrda Mesta (LDS)";
@@ -398,9 +398,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Generiši sličicu";
     $admtext['genthumbsdesc'] = "Automatski generisati manje verzije svih fotografija ali bez postojećih sličica (thumbnails).";
     $admtext['thumbsgenerated'] = "Sličice generisane";
-    $admtext['makedefault'] = "Postavi kao podrazumevano(Default)";
-    $admtext['filewithinhs'] = "Putanja sa folderom nadgrobnih spomenika <br/>(podfolder i ime fajla)";
-    $admtext['recsupdated'] = "Zapisi ažurirani";
+  $admtext['makedefault'] = "Postavi kao podrazumevano(Default)";
+  $admtext['filewithinhs'] = "Putanja sa folderom nadgrobnih spomenika <br>(podfolder i ime fajla)";
+  $admtext['recsupdated'] = "Zapisi ažurirani";
     $admtext['removedef'] = "Ukloni podrazumevanu fotografiju";
     $admtext['numlinkhs'] = "Broj osoba koji su povezani sa ovim Nadgrobnim spomenikom";
     $admtext['sortheadstones'] = "Sortiraj Nadgrobne spomenike";
@@ -445,9 +445,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Obavezno. Ovo bi trebalo da odgovara imenu i lokaciji vašeg fajla <em>u folderu fotografija</em> kad jedno otpremite fajl. Na primer, ako se vaš folder sa fotografijama zove <em>photos</em>, i želite da se fajl zove <em>mojafotka.jpg</em> i ide u podfolder sa fotografijama pod nazivom <em>newphotos</em>, morate uneti <em>newphotos/mojafotka.jpg</em> u ovo polje.";
     $admtext['leaveblankphoto'] = "Ostavite ovo polje prazno ako se fajl već otpremio/poslat u folder sa fotografijama.";
     $admtext['thumbconflicts'] = "Sličica nije generisana zbog loše putanje, pravom ili sa problemom u imenu.";
-    $admtext['showmap'] = "Prikaži mapu groblja i forografije kad god se pojavi ova slika.";
-    $admtext['bodytext'] = "<strong>ILI</strong><br/>Telo teksta";
-    $admtext['usenl'] = "Pretvori liniju pauze u HTML na prikazu";
+  $admtext['showmap'] = "Prikaži mapu groblja i forografije kad god se pojavi ova slika.";
+  $admtext['bodytext'] = "<strong>ILI</strong><br>Telo teksta";
+  $admtext['usenl'] = "Pretvori liniju pauze u HTML na prikazu";
     $admtext['newwin'] = "Otvori novi prozor";
     $admtext['modifymedia'] = "Izmena postojećeg Medija";
     $admtext['addnewmedia'] = "Dodaj Novi Medij";
@@ -1134,7 +1134,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Ako nema datuma rođenja, pretpostavite";
     $admtext['persliving'] = "Osoba je živa";
     $admtext['persdead'] = "Osoba je preminula";
-    $admtext['nodeathdate'] = "Ako nema datuma smrti, pretpostavite da je umrli<br/>ako je stariji od";
+    $admtext['nodeathdate'] = "Ako nema datuma smrti, pretpostavite da je umrli<br>ako je stariji od";
     $admtext['pedconfigsettings'] = "Podešavanja Grafikona";
     $admtext['usepopups'] = "Inicijalni Prikaz";
     $admtext['maxpedgens'] = "Maksimalni broj Generacija";
@@ -1409,8 +1409,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Spoji Mesta";
     $admtext['findmerge'] = "Pronađi Kandidate za Spajanje";
     $admtext['selectplacemerge'] = "Izaberite Mesta za Spajanje";
-    $admtext['mcol1'] = "Spojiti<br/>ove<br/>(izbrisati)";
-    $admtext['mcol2'] = "u<br/>ovo<br/>(zadržati)";
+    $admtext['mcol1'] = "Spojiti<br>ove<br>(izbrisati)";
+    $admtext['mcol2'] = "u<br>ovo<br>(zadržati)";
     $admtext['pmsucc'] = "Mesto spajanja je uspelo";
     $admtext['nomerge'] = "Ništa za spajanje";
     $admtext['enterkeep'] = "Izaberite cilj spajanja.";
@@ -1487,7 +1487,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Unesite naziv za prikaz jezika.";
     $admtext['enterlangfolder'] = "Unesite naziv foldera u kojoj će se čuvati fajlovi za ovaj jezik.";
     $admtext['newlanguageinfo'] = "Informacije o novom jeziku";
-    $admtext['langdisplay'] = "Ime za ovaj jezik<br/>on će biti prikazan za posetioce";
+    $admtext['langdisplay'] = "Ime za ovaj jezik<br>on će biti prikazan za posetioce";
     $admtext['createlanguage'] = "Napravite zapis za novi jezik";
     $admtext['nolanguages'] = "Ne postoje jezički zapisi";
     $admtext['conflangdelete'] = "Jeste li sigurni da želite izbrisati ovaj jezik?";
@@ -1669,7 +1669,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Izaberite Događaj i Aktivnost";
     $admtext['suggested'] = "Predloženo";
-    $admtext['usernotes'] = "Napomene u vezi<br />predložene izmene<br />(neće biti sačuvana)";
+    $admtext['usernotes'] = "Napomene u vezi<br>predložene izmene<br>(neće biti sačuvana)";
     $admtext['postdate'] = "Objavljeno";
     $admtext['savedel'] = "Sačuvaj i Izbriši";
     $admtext['postpone'] = "Odložiti";
@@ -2017,7 +2017,7 @@ $admtext['check'] = "Proverava";
 $admtext['generate'] = "Generisati";
 $admtext['update'] = "Ažurirati";
 $admtext['confdeleteevent'] = "Da li ste sigurni da želite da obrišete izabrano?";
-$admtext['existinglinks'] = "Postojeći linkovi:<br/>(provera brisanja)";
+$admtext['existinglinks'] = "Postojeći linkovi:<br>(provera brisanja)";
 $admtext['lowersortfirst'] = "Niži brojevi sortiraju prvo. Decimalni brojevi se takođe mogu koristiti.";
 $admtext['personsname'] = "Ime osobe";
 $admtext['tablecreation'] = "Kreiranje tabele";

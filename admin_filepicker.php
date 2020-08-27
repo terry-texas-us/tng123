@@ -84,19 +84,19 @@ function frmFiles() {
 
   frmFilesHdFt($columns, $nCurrentPage, $nPages);
   ?>
-    <span class="normal">&nbsp;<?php echo "<b>{$admtext['folder']}:</b> $tngpath/" . stripslashes($subdir); ?></span><br/>
-    <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
-    <tr class="fieldnameback">
-        <td align="left" width="60"><span class="fieldname"><b><?php echo $admtext['action']; ?></b></span></td>
-        <td nowrap><span
-                    class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'name') . "\" class=\"lightlink\">{$admtext['filename']} <img src=\"{$cms['tngpath']}img/tng_sort_{$namedir}.gif\" width=\"15\" height=\"8\" border=\"0\" alt=\"\" /></a>"; ?></b></span>
-        </td>
-        <td align="center"><span
-                    class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'date') . "\" class=\"lightlink\">{$admtext['date']} <img src=\"{$cms['tngpath']}img/tng_sort_{$datedir}.gif\" width=\"15\" height=\"8\" border=\"0\" alt=\"\" /></a>"; ?></b></span>
-        </td>
-        <td align="center"><span class="fieldname"><b><?php echo $admtext['size']; ?></b></span></td>
-        <td align="center"><span class="fieldname"><b><?php echo $admtext['dimensions']; ?></b></span></td>
-    </tr>
+  <span class="normal">&nbsp;<?php echo "<b>{$admtext['folder']}:</b> $tngpath/" . stripslashes($subdir); ?></span><br>
+  <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
+  <tr class="fieldnameback">
+    <td align="left" width="60"><span class="fieldname"><b><?php echo $admtext['action']; ?></b></span></td>
+    <td nowrap><span
+          class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'name') . "\" class=\"lightlink\">{$admtext['filename']} <img src=\"{$cms['tngpath']}img/tng_sort_{$namedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
+    </td>
+    <td align="center"><span
+          class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'date') . "\" class=\"lightlink\">{$admtext['date']} <img src=\"{$cms['tngpath']}img/tng_sort_{$datedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
+    </td>
+    <td align="center"><span class="fieldname"><b><?php echo $admtext['size']; ?></b></span></td>
+    <td align="center"><span class="fieldname"><b><?php echo $admtext['dimensions']; ?></b></span></td>
+  </tr>
   <?php
   $nImageNr = 0;
   $nImageShowed = 0;
@@ -310,8 +310,8 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
     if ($firstNear > 1 || $lastNear < $nPages - 2) {
       $nextPageStr = "jQuery('#gotopage').prev('.tngpage').val()-1";
       echo "<span class=\"snlink\">\n";
-      echo "<input type=\"text\" class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"/> ";
-      echo "<input type=\"button\" id=\"gotopage\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"" . mfpGetUrl($nextPageStr) . "\"/>\n";
+      echo "<input type=\"text\" class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"> ";
+      echo "<input type=\"button\" id=\"gotopage\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"" . mfpGetUrl($nextPageStr) . "\">\n";
       echo "</span>";
     }
     echo "</div>\n";

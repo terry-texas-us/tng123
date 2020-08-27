@@ -38,7 +38,7 @@ switch ($textpart) {
     $text['email'] = "Váš email";
     $text['suggestchange'] = "Navrhnúť zmenu";
     $text['yourname'] = "Vaše meno";
-    $text['comments'] = "Popis <br />navrhovaných zmien";
+    $text['comments'] = "Popis <br>navrhovaných zmien";
     $text['comments2'] = "Komentáre";
     $text['submitsugg'] = "Odoslať návrh";
     $text['proposed'] = "Navrhovaná zmena";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Rýchle mutovanie";
     $text['alltypes'] = "Všetky typy";
     $text['allgroups'] = "Všetky skupiny";
-    $text['Ydna_LITbox_info'] = "Testy spojené s touto osobou nemuseli byť nutne absolvované touto osobou.<br />V stĺpci 'Haploskupina' sa zobrazia údaje červenou farbou, ak výsledok je 'Predpovedaný', alebo zelenou farbou, ak test je 'Potvrdený'";
+    $text['Ydna_LITbox_info'] = "Testy spojené s touto osobou nemuseli byť nutne absolvované touto osobou.<br>V stĺpci 'Haploskupina' sa zobrazia údaje červenou farbou, ak výsledok je 'Predpovedaný', alebo zelenou farbou, ak test je 'Potvrdený'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

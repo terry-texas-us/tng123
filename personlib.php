@@ -20,7 +20,7 @@ function getBirthInfo($thisperson, $noicon = null) {
   $birthstring = "";
 
   if (!$noicon) {
-    $icon = "<img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\" />";
+    $icon = "<img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\">";
 
     $treestr = !empty($tngconfig['places1tree']) ? "" : "tree=$tree&amp;";
 
@@ -118,7 +118,7 @@ function getCitations($persfamID, $shortcite = 1) {
         } else {
           $mediaoutput .= "<td></td>";
         }
-        $mediaoutput .= "<td valign=\"top\">{$item['name']}<br />" . nl2br($item['description']) . "</td>\n";
+        $mediaoutput .= "<td valign=\"top\">{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
         $mediaoutput .= "</tr>\n";
       }
       $mediaoutput .= "</table>";
@@ -182,13 +182,13 @@ function getCitations($persfamID, $shortcite = 1) {
     $newstring .= substr($newstring, -1) == "." ? "" : ".";
     if ($citrow['citetext']) {
       if ($newstring) {
-        $newstring .= "<br />\n";
+        $newstring .= "<br>\n";
       }
       $newstring .= nl2br(insertLinks($citrow['citetext']));
     }
     if ($citrow['note']) {
       if ($newstring) {
-        $newstring .= "<br />\n";
+        $newstring .= "<br>\n";
       }
       $xarr = checkXNote($citrow['note']);
       $citrow['note'] = insertLinks($xarr[0]);
@@ -405,10 +405,10 @@ function buildNotes($notearray, $entity) {
   foreach ($notearray as $key => $note) {
     if ($note['title'] != $lasttitle) {
       if ($notes) {
-        $notes .= "</ul>\n<br/>\n";
+        $notes .= "</ul>\n<br>\n";
       }
       if ($note['title']) {
-        $notes .= "<a name=\"$key\"><span class=\"normal\">{$note['title']}:</span></a><br/>\n";
+        $notes .= "<a name=\"$key\"><span class=\"normal\">{$note['title']}:</span></a><br>\n";
       }
     }
     $cite = reorderCitation($entity . "_" . $note['cite']);
@@ -442,10 +442,10 @@ function buildGenNotes($notearray, $entity, $eventlist) {
         if (strtok($key, "_") == $event) {
           if ($note['title'] != $lasttitle && $eventctr) {
             if ($notes) {
-              $notes .= "</ul>\n<br/>\n";
+              $notes .= "</ul>\n<br>\n";
             }
             if ($note['title']) {
-              $notes .= "<a name=\"$key\"><span class=\"normal\">{$note['title']}:</span></a><br/>\n";
+              $notes .= "<a name=\"$key\"><span class=\"normal\">{$note['title']}:</span></a><br>\n";
             }
           }
           $cite = reorderCitation($entity . "_" . $note['cite']);
@@ -651,7 +651,7 @@ function showEvent($data) {
       $output .= ">" . $data['place'];
       if (!isset($data['np'])) {
         $treestr = !empty($tngconfig['places1tree']) ? "" : "&amp;tree=$tree";
-        $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\" /></a>$cite&nbsp;</td>\n";
+        $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
       } else {
         $output .= "</td>\n";
       }
@@ -747,7 +747,7 @@ function showEvent($data) {
         } else {
           $mediaoutput .= "<td valign=\"top\" class=\"databack\">&nbsp;</td>";
         }
-        $mediaoutput .= "<td valign=\"top\" class=\"databack\">{$item['name']}<br />" . nl2br($item['description']) . "</td>\n";
+        $mediaoutput .= "<td valign=\"top\" class=\"databack\">{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
         $mediaoutput .= "</tr>\n";
       }
     }
@@ -762,9 +762,9 @@ function showEvent($data) {
   }
 
   if ($output) {
-    $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" border=\"0\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}',{width:500,height:500});\" class=\"fakelink\" />" : "";
+    $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}',{width:500,height:500});\" class=\"fakelink\">" : "";
     if (!empty($data['collapse']) && $rows > 1) {
-      $toggleicon = "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"t{$eventcounter}\" title=\"{$text['expand']}\"/>";
+      $toggleicon = "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
       $num_collapsed++;
     } else {
       $toggleicon = "";
@@ -823,7 +823,7 @@ function doMediaSection($entity, $medialist, $albums) {
     $newmedia = writeMedia($medialist, $mediatypeID);
     if ($newmedia) {
       if ($media) {
-        $media .= "<br/>\n";
+        $media .= "<br>\n";
       }
       $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
       $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
@@ -833,7 +833,7 @@ function doMediaSection($entity, $medialist, $albums) {
   $albumtext = writeAlbums($albums);
   if ($albumtext) {
     if ($media) {
-      $media .= "<br/>\n";
+      $media .= "<br>\n";
     }
     $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
@@ -994,7 +994,7 @@ function writeAlbums($albums_array) {
         } else {
           $albumrows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
         }
-        $albumrows .= "<span class=\"normal\">{$item['name']}<br/>" . nl2br($item['description']) . "</span></td></tr>\n";
+        $albumrows .= "<span class=\"normal\">{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
         $albumcount++;
       }
       $albumtext .= "<tr>\n";
@@ -1079,13 +1079,13 @@ function getMedia($entity, $linktype, $all = false) {
       }
 
       /*if( $medialink['status'] ) {
-        if($thismedia['description']) $thismedia['description'] .= "<br/>";
+        if($thismedia['description']) $thismedia['description'] .= "<br>";
         $status = $medialink['status'];
         $thismedia['description'] .= "<strong>" . $text['status'] . ":</strong> " . $text[$status];
       }*/
       if ($medialink['plot']) {
         if ($thismedia['description']) {
-          $thismedia['description'] .= "<br/>";
+          $thismedia['description'] .= "<br>";
         }
         $thismedia['description'] .= "<strong>" . $text['plot'] . ": </strong>" . $medialink['plot'];
       }
@@ -1184,7 +1184,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
           } else {
             $mediarows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
           }
-          $mediarows .= "<span class=\"normal\">{$item['name']}<br/>" . nl2br($item['description']) . "</span></td></tr>\n";
+          $mediarows .= "<span class=\"normal\">{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
         }
         $mediacount++;
       }
@@ -1193,7 +1193,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
         if ($hidemedia) {
           $titlemsg .= " style=\"display:none\"";
         }
-        $titlemsg .= "><br /><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
+        $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
       }
       $mediatext .= "<tr>\n";
       $toggleicon = $hidemedia ? "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"m{$prefix}{$mediatypeID}\" title=\"{$text['expand']}\"/>" : "";
@@ -1308,7 +1308,7 @@ function getAlbumPhoto($albumID, $albumname) {
       if (function_exists('imageJpeg')) {
         $imgsrc .= " class=\"media-preview\" id=\"img-{$trow['mediaID']}-0-" . urlencode("$tusefolder/{$trow['path']}") . "\"";
       }
-      $imgsrc .= "><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" border=\"0\" class=\"thumb\" $size[3] alt=\"$albumname\" /></a>";
+      $imgsrc .= "><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" class=\"thumb\" $size[3] alt=\"$albumname\"></a>";
     }
   }
   return $imgsrc;
@@ -1334,40 +1334,40 @@ function getFact($row) {
     $addrresults = tng_query($query);
     $addr = tng_fetch_assoc($addrresults);
     if ($addr['address1']) {
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['address1'];
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['address1'];
     }
     if ($addr['address2']) {
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['address2'];
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['address2'];
     }
     if ($addr['city']) {
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['city'];
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['city'];
     }
     if ($addr['state']) {
       if ($addr['city']) {
         $fact[$i] .= ", " . $addr['state'];
       } else {
-        $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['state'];
+        $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['state'];
       }
     }
     if ($addr['zip']) {
       if ($addr['city'] || $addr['state']) {
         $fact[$i] .= " " . $addr['zip'];
       } else {
-        $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['zip'];
+        $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['zip'];
       }
     }
     if ($addr['country']) {
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['country'];
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['country'];
     }
     if ($addr['phone']) {
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . $addr['phone'];
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . $addr['phone'];
     }
     if ($addr['email']) {
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . "<a href=\"mailto:{$addr['email']}\">{$addr['email']}</a>";
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . "<a href=\"mailto:{$addr['email']}\">{$addr['email']}</a>";
     }
     if ($addr['www']) {
       $link = strpos($addr['www'], "http") !== 0 ? "http://" . $addr['www'] : $addr['www'];
-      $fact[$i] .= ($fact[$i] ? "<br />" : "") . "<a href=\"$link\">{$addr['www']}</a>";
+      $fact[$i] .= ($fact[$i] ? "<br>" : "") . "<a href=\"$link\">{$addr['www']}</a>";
     }
   }
   return $fact;

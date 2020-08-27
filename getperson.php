@@ -178,7 +178,7 @@ if (!empty($tng_extras)) {
   $media = doMediaSection($personID, $indmedia, $indalbums);
   if ($media) {
     $persontext .= beginSection("media");
-    $persontext .= $media . "<br/>\n";
+    $persontext .= $media . "<br>\n";
     $persontext .= endSection("media");
   }
 }
@@ -282,7 +282,7 @@ if ($row['changedate'] || ($allow_edit && $rightbranch)) {
 }
 
 $persontext .= "</table>\n";
-$persontext .= "<br/>\n";
+$persontext .= "<br>\n";
 
 if (empty($tngconfig['hidedna']) && $rights['both']) {
   include "dna_test_results_lib.php";
@@ -443,7 +443,7 @@ if ($parents && tng_num_rows($parents)) {
 
     $persontext .= showEvent(array("text" => $text['familyid'], "date" => $parent['familyID'], "place" => "<a href=\"$familygroup_url" . "familyID={$parent['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='{$familychart_url}familyID={$parent['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1));
     $persontext .= "</table>\n";
-    $persontext .= "<br/>\n";
+    $persontext .= "<br>\n";
   }
   tng_free_result($parents);
 }
@@ -626,7 +626,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
   }
   $persontext .= showEvent(array("text" => $text['familyid'], "date" => $marriagerow['familyID'], "place" => "<a href=\"$familygroup_url" . "familyID={$marriagerow['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='{$familychart_url}familyID={$marriagerow['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1));
   $persontext .= "</table>\n";
-  $persontext .= "<br />\n";
+  $persontext .= "<br>\n";
 }
 tng_free_result($marriages);
 
@@ -640,7 +640,7 @@ if ($map['key'] && $locations2map) {
   $persontext .= "<td class=\"databack\">\n";
   $persontext .= "<div id=\"map\" class=\"rounded10\" style=\"width: {$map['indw']}; height: {$map['indh']};\">";
   if ($map['pstartoff']) {
-    $persontext .= "<a href=\"#\" onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">{$text['loadmap']}<br/><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" border=\"0\"></div></a>";
+    $persontext .= "<a href=\"#\" onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">{$text['loadmap']}<br><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" ></div></a>";
   }
   $persontext .= "</div>\n";
   $persontext .= "</td>\n";
@@ -682,9 +682,9 @@ if ($map['key'] && $locations2map) {
         if ($map['showallpins'] || !in_array($place, $usedplaces)) {
           $markerIcon++;
           $usedplaces[] = $place;
-          $savedplaces[] = array("place" => $place, "key" => $key);
-          $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px\"><strong>{$val['fixedplace']}</strong><br /><br />" . addslashes($event) . ": $dateforlocalballoon";
-          $locations2map[$key]['htmlcontent'] .= "<br /><br /><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
+          $savedplaces[] = ["place" => $place, "key" => $key];
+          $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
+          $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
           $thismarker = $markerIcon;
         } else {
           $total = count($usedplaces);
@@ -692,12 +692,12 @@ if ($map['key'] && $locations2map) {
             if ($savedplaces[$i]['place'] == $place) {
               $thismarker = $i + 1;
               $thiskey = $savedplaces[$i]['key'];
-              $locations2map[$thiskey]['htmlcontent'] = str_replace("</div>", "<br/>$event: $dateforlocalballoon</div>", $locations2map[$thiskey]['htmlcontent']);
+              $locations2map[$thiskey]['htmlcontent'] = str_replace("</div>", "<br>$event: $dateforlocalballoon</div>", $locations2map[$thiskey]['htmlcontent']);
               break;
             }
           }
         }
-        $persontext .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target= \"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$thismarker\" alt=\"{$text['googlemaplink']}\" border=\"0\" width= \"20\" height=\"34\" /></a>";
+        $persontext .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target= \"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$thismarker\" alt=\"{$text['googlemaplink']}\" width= \"20\" height=\"34\"></a>";
         $map['pins']++;
       } else {
         $persontext .= "&nbsp;";
@@ -707,25 +707,25 @@ if ($map['key'] && $locations2map) {
         $persontext .= " - $description";
       }
       $persontext .= " - $dateforeventtable - $place</span></td>\n";
-      $persontext .= "<td class=\"databack\" valign=\"middle\"><a href=\"{$cms['tngpath']}googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"{$cms['tngpath']}img/earth.gif\" border=\"0\" alt=\"{$text['googleearthlink']}\" width=\"15\" height=\"15\" /></a></td></tr>\n";
+      $persontext .= "<td class=\"databack\" valign=\"middle\"><a href=\"{$cms['tngpath']}googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"{$cms['tngpath']}img/earth.gif\" alt=\"{$text['googleearthlink']}\" width=\"15\" height=\"15\"></a></td></tr>\n";
       if ($val['notes']) {
-        $locations2map[$key]['htmlcontent'] = str_replace("</div>", "<br /><br />" . tng_real_escape_string($val['notes']) . "</div>", $locations2map[$key]['htmlcontent']);
+        $locations2map[$key]['htmlcontent'] = str_replace("</div>", "<br><br>" . tng_real_escape_string($val['notes']) . "</div>", $locations2map[$key]['htmlcontent']);
       }
     }
   }
   $persontext .= "</table></div>\n<table>";
-  $persontext .= "<tr><td><span class=\"smaller\"><img src=\"{$cms['tngpath']}img/earth.gif\" border=\"0\" alt=\"\" width=\"15\" height=\"15\" align=\"left\" />&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
+  $persontext .= "<tr><td><span class=\"smaller\"><img src=\"{$cms['tngpath']}img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
   $persontext .= "</td>\n</tr>\n";
   if ($nonzeroplaces) {
     $persontext .= "<tr valign=\"top\"><td class=\"fieldnameback\"><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
     $persontext .= "<td colspan=\"2\" class=\"databack\"><span class=\"smaller\">";
     for ($i = 1; $i < 7; $i++)
       $persontext .= "<img src=\"{$cms['tngpath']}img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
-    $persontext .= "<img src=\"{$cms['tngpath']}img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class=\"aligntop\"/>&nbsp;: {$admtext['level0']}</span></td>\n";
+    $persontext .= "<img src=\"{$cms['tngpath']}img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class=\"aligntop\">&nbsp;: {$admtext['level0']}</span></td>\n";
     $persontext .= "</tr>\n";
   }
   $persontext .= "</table>\n";
-  $persontext .= "<br />\n";
+  $persontext .= "<br>\n";
   $persontext .= endSection("eventmap");
 }
 
@@ -733,7 +733,7 @@ if (empty($tng_extras)) {
   $media = doMediaSection($personID, $indmedia, $indalbums);
   if ($media) {
     $persontext .= beginSection("media");
-    $persontext .= $media . "<br/>\n";
+    $persontext .= $media . "<br>\n";
     $persontext .= endSection("media");
   }
 }
@@ -754,7 +754,7 @@ if ($notestogether != 1) {
     $persontext .= "<td valign=\"top\" class=\"databack\">$notes</td>\n";
     $persontext .= "</tr>\n";
     $persontext .= "</table>\n";
-    $persontext .= "<br />\n";
+    $persontext .= "<br>\n";
     $persontext .= endSection("notes");
   }
 }
@@ -773,9 +773,9 @@ if ($citedispctr) {
   $citectr = 0;
   $count = count($citestring);
   foreach ($citestring as $cite) {
-    $persontext .= "<li class=\"normal\"><a name=\"cite" . ++$citectr . "\"></a>$cite<br />";
+    $persontext .= "<li class=\"normal\"><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
     if ($citectr < $count) {
-      $persontext .= "<br />";
+      $persontext .= "<br>";
     }
     $persontext .= "</li>\n";
   }
@@ -784,7 +784,7 @@ if ($citedispctr) {
     $persontext .= "</div>";
   }
   $persontext .= "</td>\n</tr>\n</table>\n";
-  $persontext .= "<br />\n";
+  $persontext .= "<br>\n";
   $persontext .= endSection("citations");
 }
 $persontext .= "</ul>\n";
@@ -881,8 +881,8 @@ echo tng_menu("I", "person", $personID, $innermenu);
 <?php
 echo $persontext;
 ?>
-    </div>
-    <br/>
+  </div>
+  <br>
 
 <?php
 if (!isset($flags['more'])) {

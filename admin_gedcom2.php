@@ -1639,7 +1639,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         <p class="normal">
           <?php
           adminwritelog($admtext['export'] . ": $tree");
-          echo "{$admtext['finishedexporting']} <br/>{$savestate['icount']} {$admtext['people']}, {$savestate['fcount']} {$admtext['families']}, {$savestate['scount']} {$admtext['sources']}, {$savestate['rcount']} {$admtext['repositories']}, {$savestate['ncount']} {$admtext['notes']}, {$savestate['mcount']} {$admtext['media']}, {$savestate['pcount']} {$admtext['places']}";
+          echo "{$admtext['finishedexporting']} <br>{$savestate['icount']} {$admtext['people']}, {$savestate['fcount']} {$admtext['families']}, {$savestate['scount']} {$admtext['sources']}, {$savestate['rcount']} {$admtext['repositories']}, {$savestate['ncount']} {$admtext['notes']}, {$savestate['mcount']} {$admtext['media']}, {$savestate['pcount']} {$admtext['places']}";
           ?>
         </p>
 

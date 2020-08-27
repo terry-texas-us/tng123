@@ -112,34 +112,34 @@ include_once "eventlib.php";
 <form action="" onsubmit="return updateFamily(this,<?php echo $slot; ?>,'admin_updatefamily.php');" method="post" name="famform1" id="famform1">
     <table width="100%" border="0" cellpadding="10" cellspacing="0">
         <tr class="databack">
-            <td class="tngbotshadow">
-                <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
-                <table cellpadding="0" cellspacing="0" class="normal">
-                    <tr>
-                        <td valign="top">
-                            <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
-                              echo "display:none";
-                            } ?>"><?php echo $photo; ?></div>
-                        </td>
-                        <td>
-                            <span class="plainheader"><?php echo $namestr; ?></span><br/>
-                            <div class="topbuffer bottombuffer smallest">
-                              <?php
-                              if ($editconflict) {
-                                echo "<br /><p>{$admtext['editconflict']}</p>";
-                              } else {
-                                $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
-                                $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
-                                $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
-                                echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                echo "<a href=\"#\" onclick=\"return showNotes('', '$familyID');\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+          <td class="tngbotshadow">
+            <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+            <table cellpadding="0" cellspacing="0" class="normal">
+              <tr>
+                <td valign="top">
+                  <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
+                    echo "display:none";
+                  } ?>"><?php echo $photo; ?></div>
+                </td>
+                <td>
+                  <span class="plainheader"><?php echo $namestr; ?></span><br>
+                  <div class="topbuffer bottombuffer smallest">
+                    <?php
+                    if ($editconflict) {
+                      echo "<br><p>{$admtext['editconflict']}</p>";
+                    } else {
+                      $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
+                      $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
+                      $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
+                      echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+                      echo "<a href=\"#\" onclick=\"return showNotes('', '$familyID');\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
                                 echo "<a href=\"#\" onclick=\"return showCitations('', '$familyID');\" class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
                                 echo "<a href=\"#\" onclick=\"return showAssociations('$familyID','F');\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
                               }
                               ?>
-                                <br clear="all"/>
-                            </div>
-                            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+                    <br clear="all">
+                  </div>
+                  <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
@@ -246,7 +246,7 @@ include_once "eventlib.php";
                                   $totbranches = 2;
                                 }
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
-                                $select = $totbranches >= 8 ? "{$admtext['scrollbranch']}<br/>" : "";
+                                $select = $totbranches >= 8 ? "{$admtext['scrollbranch']}<br>" : "";
                                 $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") {
@@ -256,7 +256,7 @@ include_once "eventlib.php";
 
                                 $select .= "$options</select>\n";
 
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                   <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                                     <?php
@@ -344,7 +344,7 @@ include_once "eventlib.php";
                               echo ">\n";
                               echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                               echo "<td class=\"dragarea normal\">";
-                              echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+                              echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
                               echo "</td>\n";
                               echo "<td class=\"lightback normal childblock\">\n";
 
@@ -362,8 +362,8 @@ include_once "eventlib.php";
                                   }
                                 }
 
-                                  echo getName($child);
-                                echo " - {$child['pID']}<br />$birthstring";
+                                echo getName($child);
+                                echo " - {$child['pID']}<br>$birthstring";
                               } else {
                                 echo $admtext['living'] . " - " . $child['pID'];
                               }

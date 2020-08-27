@@ -63,11 +63,11 @@ function updateMostWanted(form) {
                     var newcontent = '<div class="sortrow" id="order' + vars.mwtype + 'divs_' + vars.ID + '" style="clear:both" onmouseover="showEditDelete(\'' + vars.ID + '\');" onmouseout="hideEditDelete(\'' + vars.ID + '\');">\n';
                     newcontent += '<table width="100%" cellpadding="5" cellspacing="1"><tr id="row_' + vars.ID + '">\n';
                     newcontent += '<td class="dragarea normal">\n';
-                    newcontent += '<img src="img/admArrowUp.gif" alt=""><br/>' + drag + '<br/><img src="img/admArrowDown.gif" alt="">\n';
+                    newcontent += '<img src="img/admArrowUp.gif" alt=""><br>' + drag + '<br><img src="img/admArrowDown.gif" alt="">\n';
                     newcontent += '</td>\n';
                     newcontent += '<td class="lightback" style="width:' + thumbwidth + 'px;text-align:center;">\n';
                     if (vars.thumbpath)
-                        newcontent += '<img src="' + vars.thumbpath + '" border="0" width="' + vars.width + '" height="' + vars.height + '" id="img_' + vars.ID + '" alt="' + vars.description + '" />\n';
+                        newcontent += '<img src="' + vars.thumbpath + '" width="' + vars.width + '" height="' + vars.height + '" id="img_' + vars.ID + '" alt="' + vars.description + '">\n';
                     else
                         newcontent += "&nbsp;";
 
@@ -77,7 +77,7 @@ function updateMostWanted(form) {
                         newcontent += '<a href="#" onclick="return openMostWanted(\'' + vars.mwtype + '\',\'' + vars.ID + '\');" id="title_' + vars.ID + '">' + vars.title + '</a>\n';
                     else
                         newcontent += '<u id="title_' + vars.ID + '">' + vars.title + '</u>\n';
-                    newcontent += '<br /><span id="desc_' + vars.ID + '">' + vars.description + '</span><br />\n';
+                    newcontent += '<br><span id="desc_' + vars.ID + '">' + vars.description + '</span><br>\n';
                     newcontent += '<div id="del_' + vars.ID + '" class="smaller" style="color:gray;visibility:hidden">\n';
                     if (vars.edit) {
                         newcontent += '<a href="#" onclick="return openMostWanted(\'' + vars.mwtype + '\',\'' + vars.ID + '\');">' + edittext + '</a>\n';

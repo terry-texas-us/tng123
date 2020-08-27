@@ -122,9 +122,9 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                         </tr>
                     </table>
 
-                    <input type="hidden" name="finduser" value="1"><input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="finduser" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;
@@ -203,7 +203,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                         echo "<td class=\"lightback\" valign=\"top\">&nbsp;{$row['description']}&nbsp;</td>\n";
                         echo "<td class=\"lightback\" valign=\"top\">&nbsp;" . $row['realname'];
                         if ($row['realname'] && $row['email']) {
-                          echo "<br />&nbsp;";
+                          echo "<br>&nbsp;";
                         }
                         $rolestr = 'usr' . ($row['role'] ? $row['role'] : 'custom');
                         echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a>&nbsp;</td>\n";

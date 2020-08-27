@@ -203,9 +203,9 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                         </tr>
                     </table>
                     <input type="hidden" name="type" value="<?php echo $type; ?>">
-                    <input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;

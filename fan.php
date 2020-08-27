@@ -168,15 +168,6 @@ foreach ($fan_line_height as $k => $v) {
   $lineHeight .= "fan_line_height[$k]=$v;\n";
 }
 
-
-/*
-echo "<pre>";
-print_r($perName);
-echo "<hr>";
-print_r($perID);
-echo "</pre>";
-*/
-
 $getperson_url = getURL("getperson", 1);
 $ahnentafel_url = getURL("ahnentafel", 1);
 $pedigree_url = getURL("pedigree", 1);

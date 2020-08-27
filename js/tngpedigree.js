@@ -144,7 +144,7 @@ function getGenderIcon(gender) {
         if (gender == "M") genderstr = "male";
         else if (gender == "F") genderstr = "female";
         if (genderstr)
-            icon = " <img src=\"" + cmstngpath + "img/tng_" + genderstr + ".gif\" width=\"11\" height=\"11\" border=\"0\" alt=\"" + genderstr + "\" style=\"vertical-align: " + valign + "px;\"/>";
+            icon = " <img src=\"" + cmstngpath + "img/tng_" + genderstr + ".gif\" width=\"11\" height=\"11\" alt=\"" + genderstr + "\" style=\"vertical-align: " + valign + "px;\">";
     }
 
     return icon;
@@ -231,14 +231,14 @@ function FillSlot(slot, currperson, lastperson) {
             toggleLines(slot, slotperson.famc, 'visible');
         }
         if (slotperson.photosrc && slotperson.photosrc != "-1") {
-            content = '<img src="' + slotperson.photosrc + '" id="img' + slot + '" border="0"' + ' class="smallimg" />';
+            content = '<img src="' + slotperson.photosrc + '" id="img' + slot + '"' + ' class="smallimg">';
             if (slotperson.photolink && slotperson.photolink != "-1")
                 content = '<a href="' + slotperson.photolink + '">' + content + '</a>';
             content = '<td class="lefttop">' + content + '</td>';
         }
         content += '<td class="pboxname" id="td' + slot + '">' + namepad + '<a href="' + getperson_url + 'personID=' + slotperson.personID + '&amp;tree=' + slotperson.tree + '" id="tdlink' + slot + '">' + slotperson.name + '</a>';
         if (display == "standard")
-            content += '<br/>' + getGenderIcon(slotperson.gender) + ' <span class="pedyears">' + slotperson.years + ' </span>';
+            content += '<br>' + getGenderIcon(slotperson.gender) + ' <span class="pedyears">' + slotperson.years + ' </span>';
         else
             content += getGenderIcon(slotperson.gender);
 
@@ -419,7 +419,7 @@ function getBackPopup() {
                     var spchild = children[j];
 
                     kidlink = '<a href="javascript:getBackPerson(' + "'" + spchild.childID + "'" + ')">';
-                    popupcontent += '<tr><td ' + tdclasstxt + ' id="popabbrleft">' + kidlink + '<img src="' + cmstngpath + 'img/ArrowLeft.gif" width="10" height="16" border="0"></a></td>';
+                    popupcontent += '<tr><td ' + tdclasstxt + ' id="popabbrleft">' + kidlink + '<img src="' + cmstngpath + 'img/ArrowLeft.gif" width="10" height="16"></a></td>';
                     popupcontent += '<td ' + tdclasstxt + ' id="popleft">' + kidlink + spchild.name + '</a></td></tr>';
                 }
             }
@@ -540,7 +540,7 @@ function getPopup(slot) {
 
 function editIcon(type, slot, personID, familyID, gender) {
     var iconlink;
-    var editicon = '<img src="' + cmstngpath + 'img/tng_edit2.gif" width="10" height="10" border="0"/>';
+    var editicon = '<img src="' + cmstngpath + 'img/tng_edit2.gif" width="10" height="10">';
 
     if (type == "P")
         iconlink = ' <a href="#" onclick="return editPerson(\'' + personID + '\',' + slot + ',\'' + gender + '\');" title="' + txt_editperson + '">' + editicon + '</a>';

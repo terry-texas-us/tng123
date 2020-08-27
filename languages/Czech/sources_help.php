@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Prameny");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="families_help.php" class="lightlink">&laquo; N�pov�da: Rodiny</a> &nbsp; | &nbsp;
-                <a href="repositories_help.php" class="lightlink">N�pov�da: �lo�i�t� pramen� &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Prameny</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Slou�it</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="families_help.php" class="lightlink">&laquo; N�pov�da: Rodiny</a> &nbsp; | &nbsp;
+        <a href="repositories_help.php" class="lightlink">N�pov�da: �lo�i�t� pramen� &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Prameny</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#merge" class="lightlink">Slou�it</a>
             </p>
         </td>
     </tr>
@@ -67,34 +67,34 @@ echo help_header("N�pov�da: Prameny");
                 Chcete-li zajistit, �e zobrazen� ID ��slo nen� n�rokov�no jin�m u�ivatelem, zat�mco vy zapisujete data, klikn�te na tla��tko <strong>Zamknout</strong>.</p>
 
             <p><strong>POZN.</strong>: Pou��v�te-li tento program spolu s genealogick�m programem pracuj�c�m na platform�ch PC nebo Mac, kter� u nov�ch pramen� vytv��� tak� ID ��sla,
-                D�RAZN� DOPORU�UJEME v�echna tato ��sla v�dy mezi t�mito programy synchronizovat. V�sledkem zanedb�n� t�to �innosti mohou b�t kolize a nepou�itelnost
-                odkaz� na va�e m�dia. Pokud v� prim�rn� program vytv��� ID ��sla, kter� neodpov�daj� tradi�n�m standard�m (nap�.
-                <strong>S</strong> je na konci a ne na za��tku), m��ete konvence, kter� TNG pou��v�, zm�nit v Z�kladn�m nastaven�.</p>
+              D�RAZN� DOPORU�UJEME v�echna tato ��sla v�dy mezi t�mito programy synchronizovat. V�sledkem zanedb�n� t�to �innosti mohou b�t kolize a nepou�itelnost
+              odkaz� na va�e m�dia. Pokud v� prim�rn� program vytv��� ID ��sla, kter� neodpov�daj� tradi�n�m standard�m (nap�.
+              <strong>S</strong> je na konci a ne na za��tku), m��ete konvence, kter� TNG pou��v�, zm�nit v Z�kladn�m nastaven�.</p>
 
-            <span class="optionhead">Kr�tk� n�zev</span>
-            <p>Zkr�cen� n�zev pramenu.</p>
+          <span class="optionhead">Kr�tk� n�zev</span>
+          <p>Zkr�cen� n�zev pramenu.</p>
 
-            <span class="optionhead">Dlouh� n�zev</span>
-            <p>Dlouh� n�zev pramene.</p>
+          <span class="optionhead">Dlouh� n�zev</span>
+          <p>Dlouh� n�zev pramene.</p>
 
-            <span class="optionhead">Autor, archiva�n� ��slo, vydavatel</span><br/>
-            <p>Dal�� informace spojen� s pramenem (pokud existuj�).</p>
+          <span class="optionhead">Autor, archiva�n� ��slo, vydavatel</span><br>
+          <p>Dal�� informace spojen� s pramenem (pokud existuj�).</p>
 
-            <span class="optionhead">�lo�i�t� pramen�</span><br/>
-            <p>Vyberte �lo�i�t� pramen�, ve kter�m se pramen nach�z� (je-li tato skute�nost zn�ma). Pokud dan� �lo�i�t� pramen� je�t� v datab�zi neexistuje, jd�te na Administrace/�lo�i�t� pramen� a
-                kde jej zalo�te, pak se vra�te a zde jej vyberte.</p>
+          <span class="optionhead">�lo�i�t� pramen�</span><br>
+          <p>Vyberte �lo�i�t� pramen�, ve kter�m se pramen nach�z� (je-li tato skute�nost zn�ma). Pokud dan� �lo�i�t� pramen� je�t� v datab�zi neexistuje, jd�te na Administrace/�lo�i�t� pramen� a
+            kde jej zalo�te, pak se vra�te a zde jej vyberte.</p>
 
-            <span class="optionhead">Vlastn� text</span><br/>
-            <p>Citace z materi�lu pramene (voliteln�).</p>
+          <span class="optionhead">Vlastn� text</span><br>
+          <p>Citace z materi�lu pramene (voliteln�).</p>
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="edit"><p class="subheadbold">Upravit existuj�c� prameny</p></a>
-            <p>Chcete-li upravit existuj�c� pramen, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� pramenu, a pot� klikn�te na ikonu Upravit vedle pramenu.</p>
+      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <a name="edit"><p class="subheadbold">Upravit existuj�c� prameny</p></a>
+      <p>Chcete-li upravit existuj�c� pramen, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� pramenu, a pot� klikn�te na ikonu Upravit vedle pramenu.</p>
 
             <span class="optionhead">Pozn�mky</span>
             <p>Pozn�mky lze p�ipojit k ud�lostem nebo pramenu obecn� kliknut�m na ikonu Pozn�mky v horn� ��sti str�nky
@@ -146,37 +146,37 @@ echo help_header("N�pov�da: Prameny");
             <p><em>Odm�tnout pr�zdn�</em> znamen�, �e pr�zdn� pole nebudou br�na v potaz. Nap�. pramen s kr�tk�m n�zvem, ale bez titulu
                 nebude br�n jako shodn� s jin�m z�znamem, pokud je titul mezi vybran�mi krit�rii.</p>
 
-            <p><em>Slou�it pozn�mky</em> znamen�, �e pozn�mky z pramene 2 budou p�id�ny k pozn�mk�m
-                pramenu 1 u v�ech slu�ovan�ch pol�. Nen�-li tato volba vybr�na a pole pramenu 2 je za�krtnuto, pozn�mky pramenu 2 k tomuto poli budou p�eps�ny
-                z�znamy z odpov�daj�c�ho pole pramenu 1.</p>
+          <p><em>Slou�it pozn�mky</em> znamen�, �e pozn�mky z pramene 2 budou p�id�ny k pozn�mk�m
+            pramenu 1 u v�ech slu�ovan�ch pol�. Nen�-li tato volba vybr�na a pole pramenu 2 je za�krtnuto, pozn�mky pramenu 2 k tomuto poli budou p�eps�ny
+            z�znamy z odpov�daj�c�ho pole pramenu 1.</p>
 
-            <p><em>Slou�it m�dia</em> znamen�, �e m�dia z pramenu 2 budou zachov�na a p�id�na k ji� existuj�c�m
-                u pramenu 1, pokud budou tyto dva prameny slou�eny. Nen�-li tato volba vybr�na, v�echny odkazy na m�dia pramenu 2 budou po slou�en� odstran�ny.</p>
+          <p><em>Slou�it m�dia</em> znamen�, �e m�dia z pramenu 2 budou zachov�na a p�id�na k ji� existuj�c�m
+            u pramenu 1, pokud budou tyto dva prameny slou�eny. Nen�-li tato volba vybr�na, v�echny odkazy na m�dia pramenu 2 budou po slou�en� odstran�ny.</p>
 
-            <p><span class="optionhead">Varov�n�!</span> Pokud prob�hlo slou�en�, nelze jej vz�t zp�t! <em>P�ed zah�jen�m operace slu�ov�n� proto v�dy zaz�lohujte sv� datab�zov� tabulky</em>
-                pro p��pad, �e byste dva prameny slou�ili omylem.</p>
+          <p><span class="optionhead">Varov�n�!</span> Pokud prob�hlo slou�en�, nelze jej vz�t zp�t! <em>P�ed zah�jen�m operace slu�ov�n� proto v�dy zaz�lohujte sv� datab�zov� tabulky</em>
+            pro p��pad, �e byste dva prameny slou�ili omylem.</p>
 
-            <span class="optionhead">Dal�� shoda</span><br/>
-            <p>Najde dal�� mo�n� porovn�n�, kter� nezahrne pramen 1. TNG postoup� seznamem mo�n�ch pramen� v t��d�n� podle ID ��sla v textov�m form�tu.
-                Znamen� to, �e "10" bude po "1", ale p�ed "2".</p>
+          <span class="optionhead">Dal�� shoda</span><br>
+          <p>Najde dal�� mo�n� porovn�n�, kter� nezahrne pramen 1. TNG postoup� seznamem mo�n�ch pramen� v t��d�n� podle ID ��sla v textov�m form�tu.
+            Znamen� to, �e "10" bude po "1", ale p�ed "2".</p>
 
-            <span class="optionhead">Dal�� duplicita</span><br/>
-            <p>Najde dal�� mo�nou duplicitu k pramenu 1. Pokud v�sledkem nen� z�znam, kter� byl zobrazen u pramenu 2, znamen� to, �e duplicita nebyla nalezena.</p>
+          <span class="optionhead">Dal�� duplicita</span><br>
+          <p>Najde dal�� mo�nou duplicitu k pramenu 1. Pokud v�sledkem nen� z�znam, kter� byl zobrazen u pramenu 2, znamen� to, �e duplicita nebyla nalezena.</p>
 
-            <span class="optionhead">Porovnat/Obnovit</span><br/>
-            <p>Porovn�n� pramenu 1 a pramenu 2. Je-li toto porovn�n� ji� zobrazeno, kliknut� na toto tla��tko zp�sob� obnoven� str�nky.</p>
+          <span class="optionhead">Porovnat/Obnovit</span><br>
+          <p>Porovn�n� pramenu 1 a pramenu 2. Je-li toto porovn�n� ji� zobrazeno, kliknut� na toto tla��tko zp�sob� obnoven� str�nky.</p>
 
-            <span class="optionhead">Prohodit</span><br/>
-            <p>Pramen 1 se stane pramenem 2 a naopak.</p>
+          <span class="optionhead">Prohodit</span><br>
+          <p>Pramen 1 se stane pramenem 2 a naopak.</p>
 
-            <span class="optionhead">Slou�it</span><br/>
-            <p>Pramen 2 bude slou�en s pramenem 1. ID ��slo pramene 1 bude zachov�no, stejn� jako ostatn� �daje pramenu 1, pokud nejsou za�krtnuta odpov�daj�c� pol��ka
-                u pramenu 2. Nap�. pokud je u pramenu 2 za�krtnuto pol��ko vedle autora, bude b�hem slou�en� �daj z tohoto pole zkop�rov�n ze z�znamu pramenu 2 do z�znamu pramenu 1.
-                Odpov�daj�c� �daj pramenu 1 bude smaz�n. Pol��ka u pramenu 2 jsou automaticky za�krtnuta, pokud u pramenu 1 nejsou odpov�daj�c� �daje. Nen�-li
-                pole zobrazeno ani u jednoho pramenu, pak v tomto poli neexistuje ��dn� �daj.</p>
+          <span class="optionhead">Slou�it</span><br>
+          <p>Pramen 2 bude slou�en s pramenem 1. ID ��slo pramene 1 bude zachov�no, stejn� jako ostatn� �daje pramenu 1, pokud nejsou za�krtnuta odpov�daj�c� pol��ka
+            u pramenu 2. Nap�. pokud je u pramenu 2 za�krtnuto pol��ko vedle autora, bude b�hem slou�en� �daj z tohoto pole zkop�rov�n ze z�znamu pramenu 2 do z�znamu pramenu 1.
+            Odpov�daj�c� �daj pramenu 1 bude smaz�n. Pol��ka u pramenu 2 jsou automaticky za�krtnuta, pokud u pramenu 1 nejsou odpov�daj�c� �daje. Nen�-li
+            pole zobrazeno ani u jednoho pramenu, pak v tomto poli neexistuje ��dn� �daj.</p>
 
-            <span class="optionhead">Upravit</span><br/>
-            <p>�prava z�znamu pramenu v nov�m okn�. Po proveden� zm�n mus�te kliknout na Porovnat/Obnovit, aby se zm�ny projevily na obrazovce Slou�en�.</p>
+          <span class="optionhead">Upravit</span><br>
+          <p>�prava z�znamu pramenu v nov�m okn�. Po proveden� zm�n mus�te kliknout na Porovnat/Obnovit, aby se zm�ny projevily na obrazovce Slou�en�.</p>
 
         </td>
     </tr>

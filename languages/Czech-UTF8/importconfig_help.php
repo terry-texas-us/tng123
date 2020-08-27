@@ -4,27 +4,27 @@ echo help_header("Nápověda: Nastavení importu dat");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="logconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení protokolování</a> &nbsp; | &nbsp;
-                <a href="mapconfig_help.php" class="lightlink">Nápověda: Nastavení mapy &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Nastavení importu dat</span>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="optionhead">Složka souboru GEDCOM (Import/Export)</span>
-            <p>Název složky, ze které bude TNG importovat soubory GEDCOM a místo, kam bude TNG ukládat exportované soubory GEDCOM.</p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="logconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení protokolování</a> &nbsp; | &nbsp;
+        <a href="mapconfig_help.php" class="lightlink">Nápověda: Nastavení mapy &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Nastavení importu dat</span>
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="optionhead">Složka souboru GEDCOM (Import/Export)</span>
+      <p>Název složky, ze které bude TNG importovat soubory GEDCOM a místo, kam bude TNG ukládat exportované soubory GEDCOM.</p>
 
             <span class="optionhead">Uložit stav importu</span>
             <p>Pokud import nebo export z nějakého důvodu selže a nebude dokončen, vyberte tuto možnost a spusťte import/export znovu. Pokud proces

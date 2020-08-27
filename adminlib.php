@@ -193,10 +193,10 @@ function deleteNote($noteID, $flag) {
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
   global $admtext;
 
-  $rval = "<span class=\"subhead\"><a href=\"#\" onclick=\"return toggleSection('$target','$id');\" class=\"togglehead\" style=\"color:black\"><img src=\"img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "\" title=\"{$admtext['toggle']}\" alt=\"{$admtext['toggle']}\" width=\"15\" height=\"15\" border=\"0\" id=\"$id\">";
-  $rval .= "<strong class=\"th-indent\">$headline</strong></a> $append</span><br />\n";
+  $rval = "<span class=\"subhead\"><a href=\"#\" onclick=\"return toggleSection('$target','$id');\" class=\"togglehead\" style=\"color:black\"><img src=\"img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "\" title=\"{$admtext['toggle']}\" alt=\"{$admtext['toggle']}\" width=\"15\" height=\"15\" id=\"$id\">";
+  $rval .= "<strong class=\"th-indent\">$headline</strong></a> $append</span><br>\n";
   if ($subhead) {
-    $rval .= "<span class=\"normal tsh-indent\"><i>$subhead</i></span><br />\n";
+    $rval .= "<span class=\"normal tsh-indent\"><i>$subhead</i></span><br>\n";
   }
 
   return $rval;
@@ -204,11 +204,11 @@ function displayToggle($id, $state, $target, $headline, $subhead, $append = "") 
 
 function displayHeadline($headline, $icon, $menu, $message) {
   $rval = "<div class=\"lightback\">\n<div class=\"pad5\">\n";
-  $rval .= "<img src=\"$icon\" width=\"40\" height=\"40\" align=\"left\" title=\"$headline\" alt=\"$headline\" style=\"margin-right:10px\"><span class=\"plainheader\">$headline</span></div><br />\n";
+  $rval .= "<img src=\"$icon\" width=\"40\" height=\"40\" align=\"left\" title=\"$headline\" alt=\"$headline\" style=\"margin-right:10px\"><span class=\"plainheader\">$headline</span></div><br>\n";
   if ($message) {
     $rval .= "<p class=\"normal red\">&nbsp;<em>" . urldecode(stripslashes($message)) . "</em></p>\n";
   } else {
-    $rval .= "<br />\n";
+    $rval .= "<br>\n";
   }
   $rval .= "$menu\n</div>\n";
 

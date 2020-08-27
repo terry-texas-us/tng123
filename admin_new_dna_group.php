@@ -82,10 +82,10 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['addgroup'
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['groupid']; ?>:</td>
-                        <td><input type="text" name="dna_group" size="20" maxlength="20"/></td>
+                      <td><input type="text" name="dna_group" size="20" maxlength="20"></td>
                     </tr>
-                    <tr>
-                        <td><?php echo $admtext['test_type']; ?>:</td>
+                  <tr>
+                    <td><?php echo $admtext['test_type']; ?>:</td>
                         <td>
                             <select name="test_type">
                                 <option value=""></option>
@@ -98,12 +98,12 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['addgroup'
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['description']; ?>:</td>
-                        <td><input type="text" name="description" size="60"></td>
+                      <td><input type="text" name="description" size="60"></td>
                     </tr>
 
                 </table>
-                <br/>
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+              <br>
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
             </form>
         </td>
     </tr>

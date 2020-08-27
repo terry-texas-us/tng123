@@ -22,28 +22,28 @@ tng_adminheader($admtext['places'], $flags);
 <?php
 $placetabs[0] = array(1, "admin_places.php", $admtext['search'], "findplace");
 $placetabs[1] = array($allow_add, "admin_newplace.php", $admtext['addnew'], "addplace");
-$placetabs[2] = array($allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge");
-$placetabs[3] = array($allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo");
+$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
+$placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($placetabs, "geo", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "img/places_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="subhead"><strong><?php echo $admtext['geoexpl']; ?></strong></span><br/><br/>
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="subhead"><strong><?php echo $admtext['geoexpl']; ?></strong></span><br><br>
 
-            <form action="admin_geocode.php" method="post" name="form1">
-              <?php
-              if ($tngconfig['places1tree']) {
-                echo "<input type=\"hidden\" name=\"tree1\" value=\"\" />\n";
-              }
-              ?>
-                <table class="normal">
-                  <?php
-                  if (!$tngconfig['places1tree']) {
-                    ?>
+      <form action="admin_geocode.php" method="post" name="form1">
+        <?php
+        if ($tngconfig['places1tree']) {
+          echo "<input type=\"hidden\" name=\"tree1\" value=\"\">\n";
+        }
+        ?>
+        <table class="normal">
+          <?php
+          if (!$tngconfig['places1tree']) {
+            ?>
                       <tr>
                           <td><?php echo $admtext['tree']; ?>:</td>
                           <td>
@@ -87,22 +87,22 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
                                 <option value=""><?php echo $admtext['nolimit']; ?></option>
                             </select>
                         </td>
-                        <td>
-                            &nbsp; &nbsp; <input type="checkbox" value="1" name="resetignore"> <?php echo $admtext['reset']; ?>
-                        </td>
+                      <td>
+                        &nbsp; &nbsp; <input type="checkbox" value="1" name="resetignore"> <?php echo $admtext['reset']; ?>
+                      </td>
                     </tr>
-                </table>
-                <div class="normal">
-                    <p><?php echo $admtext['multchoice']; ?></p>
-                    <p>
-                        <input type="radio" name="multiples" value="0" checked="checked"/> <?php echo $admtext['ignoreall']; ?> &nbsp;&nbsp;
-                        <input type="radio" name="multiples" value="1"/> <?php echo $admtext['usefirst']; ?>
-                    </p>
-                    <input type="submit" accesskey="s" class="btn" value="<?php echo $admtext['geocode']; ?>"/>
-                </div>
-            </form>
-        </td>
-    </tr>
+        </table>
+        <div class="normal">
+          <p><?php echo $admtext['multchoice']; ?></p>
+          <p>
+            <input type="radio" name="multiples" value="0" checked="checked"> <?php echo $admtext['ignoreall']; ?> &nbsp;&nbsp;
+            <input type="radio" name="multiples" value="1"> <?php echo $admtext['usefirst']; ?>
+          </p>
+          <input type="submit" accesskey="s" class="btn" value="<?php echo $admtext['geocode']; ?>">
+        </div>
+      </form>
+    </td>
+  </tr>
 </table>
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
 </body>

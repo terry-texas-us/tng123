@@ -50,13 +50,13 @@ if ($motherID && ($matfamilyID = $personID == $motherID && $familyID ? $familyID
 if ($personID && $familyID) {    #comment if directed to another family
   $temp = getChild($family, $personID);
   $name = $personID == $fatherID ? $family['husband']['displayname'] : ($personID == $motherID ? $family['wife']['displayname'] : $temp['displayname']);
-  list($frel, $mrel) = getResult(tng_query("select frel,mrel from $children_table where personID='$personID' and familyID='$familyID' and gedcom='$tree'"), 1);
+  [$frel, $mrel] = getResult(tng_query("select frel,mrel from $children_table where personID='$personID' and familyID='$familyID' and gedcom='$tree'"), 1);
   $type = strtolower($frel ? $frel : ($mrel ? $mrel : 'birth'));
   echo $text['parentfamily'] . " " . ($name ? " {$text['of']} $name " : " {$text['shown']} ") . " {$text['isthe']} $admtext[$type] {$text['family']}.";
 }
 
-list($patorder, $patsize, $patgrand) = familyorder($patfamily, $fatherID);
-list($matorder, $matsize, $matgrand) = familyorder($matfamily, $motherID);
+[$patorder, $patsize, $patgrand] = familyorder($patfamily, $fatherID);
+[$matorder, $matsize, $matgrand] = familyorder($matfamily, $motherID);
 $famsize = is_array($family['children']) ? count($family['children']) : 0;
 $parentorder = !$patgrand ? $matorder : (!$matgrand ? $patorder : min($patorder, $matorder));
 if ($famsize + $parentorder + 1 > max($patsize, $matsize))  #minimize overall height
@@ -78,13 +78,13 @@ $vsep = $familychart['boxVsep'];
 $hpad = $familychart['chartHpad'];
 $vpad = $familychart['chartVpad'];
 $pheight = $boxheight + $vsep;
-$downarrow = "<img src='{$cms['tngpath']}img/ArrowDown.gif' class='famdownarrow' alt='' />";
-$uparrow = "<img src='{$cms['tngpath']}img/admArrowUp.gif' class='famuparrow' alt='' />";
+$downarrow = "<img src='{$cms['tngpath']}img/ArrowDown.gif' class='famdownarrow' alt=''>";
+$uparrow = "<img src='{$cms['tngpath']}img/admArrowUp.gif' class='famuparrow' alt=''>";
 
 $famx = $hpad + floor(($boxwidth + $hsep) / 2); #position of parent boxes
 $famy = $vpad + $boxheight + $parentorder * $pheight + 2 * $familychart['halfgenheight'];
 $chartheight = 2 * ($vpad + $boxheight + $familychart['halfgenheight']) - $vsep
-        + $pheight * max($patsize, $matsize, $famsize + $parentorder);
+    + $pheight * max($patsize, $matsize, $famsize + $parentorder);
 if ($chartheight < 300) {
   $chartheight = 300;
 }
@@ -191,7 +191,7 @@ function getresult($result, $multiple = 0) {
 /*
 function doUpArrow($left,$top,$person) {
 	global $family_url, $tree;
-	echo "<div style='position:absolute;left:" . ($left-7) . "px;top:" . ($top-14) . "px'><a href=\"{$family_url}personID={$person['personID']}&amp;tree=$tree\" style=\"padding:4px\"><img src=\"img/ArrowUp.gif\" /></a></div>";
+	echo "<div style='position:absolute;left:" . ($left-7) . "px;top:" . ($top-14) . "px'><a href=\"{$family_url}personID={$person['personID']}&amp;tree=$tree\" style=\"padding:4px\"><img src=\"img/ArrowUp.gif\"></a></div>";
 }
 */
 
@@ -303,12 +303,12 @@ function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
     $death = $person['death'] ? $person['death'] : ' ';
     $life = $birth == ' ' && $death == ' ' ? ' ' : "($birth-$death)";
     if ($person['living'] && $familychart['livingsymbol'] && $familychart['livingalways']) {
-      $life .= "<img src='{$cms['tngpath']}img/alive.png' height='15' width='15' title='{$text['living']}' alt='' />";
+      $life .= "<img src='{$cms['tngpath']}img/alive.png' height='15' width='15' title='{$text['living']}' alt=''>";
     }
   } elseif ($familychart['livingsymbol'] && !$_SESSION['logged_in']) {
-    $life = "<a href='{$cms['tngpath']}login.php' title='{$text['fcmlogin']}'><img src='{$cms['tngpath']}img/alive.png' height='15' width='15' title='{$text['living']}' alt='' /></a>";
+    $life = "<a href='{$cms['tngpath']}login.php' title='{$text['fcmlogin']}'><img src='{$cms['tngpath']}img/alive.png' height='15' width='15' title='{$text['living']}' alt=''></a>";
   }
-  $details = "<br /><span class=\"smaller\">$gender $life</span>";
+  $details = "<br><span class=\"smaller\">$gender $life</span>";
   $andtree = '&amp;tree=' . $person['gedcom'];
   $thisPersonID = $person['personID'];
   $getperson_url = getURL('getperson', 1);
@@ -338,7 +338,7 @@ function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
             ($top + $familychart['boxheight'] - 15) . "px;'><img src='img/family_small_icon.gif' onclick='toggle(\"$thisPersonID\");' alt='{$text['otherfamilies']}' title='{$text['otherfamilies']}' >
 		<div id='$thisPersonID' class='rounded10 popup hiddenbox'>\n";
     while ($other = array_shift($others))
-      echo "\t<a href='{$family_url}familyID={$other['familyID']}&amp;personID=$thisPersonID$andtree'>{$other['text']}</a><br/>\n";
+      echo "\t<a href='{$family_url}familyID={$other['familyID']}&amp;personID=$thisPersonID$andtree'>{$other['text']}</a><br>\n";
     echo "</div></div>\n";
   }
 }
@@ -359,7 +359,7 @@ function doOtherSpouses(&$person, $spouse, $left, $top, $reverse) {
 
   if ($otherfamilies = getfamilyID($person, 'other')) {
     echo "<div class='more' style='left:{$left}px;top:{$top}px'>
-		<img src='{$cms['tngpath']}img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}' />
+		<img src='{$cms['tngpath']}img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
 		<div id='$spouse' class='rounded10 popup hiddenbox'>";
     $tree = $person['gedcom'];
     $rev = $reverse ? '&amp;rev=1' : '';
@@ -392,7 +392,7 @@ function doOtherSpouses(&$person, $spouse, $left, $top, $reverse) {
       $spousename = getName($spouserow);
       tng_free_result($spresult);
 
-      echo "<a href='{$family_url}familyID=$fam&amp;tree=$tree$rev'>{$text['familywith']} $spousename</a><br />\n";
+      echo "<a href='{$family_url}familyID=$fam&amp;tree=$tree$rev'>{$text['familywith']} $spousename</a><br>\n";
     }
     echo "</div></div>\n";
   }

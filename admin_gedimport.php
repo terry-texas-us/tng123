@@ -187,7 +187,7 @@ if (isset($remotefile) && $remotefile && $remotefile != "none") {
       $savestate['filename'] = $gedfilename;
       $clearedtogo = "true";
       if (!empty($old)) {
-        echo "<strong>$remotefile {$admtext['opened']}</strong><br/>\n";
+        echo "<strong>$remotefile {$admtext['opened']}</strong><br>\n";
       }
     }
   } else {
@@ -208,7 +208,7 @@ if (isset($remotefile) && $remotefile && $remotefile != "none") {
     $savestate['filename'] = $gedfilename;
     $clearedtogo = "true";
     if (!empty($old)) {
-      echo "<strong>$database {$admtext['opened']}</strong><br/>\n";
+      echo "<strong>$database {$admtext['opened']}</strong><br>\n";
     }
   }
 } elseif (!empty($resuming) && !$resuming) {
@@ -368,32 +368,32 @@ if (!empty($old)) {
                 var nc = jQuery(idivs[ilen]).find('#nc');
                 if (nc.length) ncount.innerHTML = nc.html();
 
-                var mc = jQuery(idivs[ilen]).find('#mc');
-                if (mc.length) mcount.innerHTML = mc.html();
+              var mc = jQuery(idivs[ilen]).find('#mc');
+              if (mc.length) mcount.innerHTML = mc.html();
 
-                var pc = jQuery(idivs[ilen]).find('#pc');
-                if (pc.length) pcount.innerHTML = pc.html();
+              var pc = jQuery(idivs[ilen]).find('#pc');
+              if (pc.length) pcount.innerHTML = pc.html();
             }
-            if (!parent.done)
-                timeoutID = setTimeout(updateCount, <?php echo $readmsecs; ?>);
-            else if (!parent.suspended) {
-                msgdiv.innerHTML = "<?php echo $admtext['finishedimporting']; ?>" + ' &nbsp;<img src="img/tng_check.gif"/>';
-                showCloseMenu();
-            }
+          if (!parent.done)
+            timeoutID = setTimeout(updateCount, <?php echo $readmsecs; ?>);
+          else if (!parent.suspended) {
+            msgdiv.innerHTML = "<?php echo $admtext['finishedimporting']; ?>" + ' &nbsp;<img src="img/tng_check.gif">';
+            showCloseMenu();
+          }
         }
 
         function showCloseMenu() {
-            var closemsg = '<a href="#" onclick="tnglitbox.remove();return false;"><img src="img/tng_close.gif" border="0" align="left" style="margin-right:5px"/>' + "<?php echo $text['closewindow']; ?>" + '</a>';
-            if (parent.started)
-                parent.document.getElementById('implinks').innerHTML = '<span id="toremove"><a href="#" onclick="return removeFile(\'<?php echo $gedfilename; ?>\');">' + "<?php echo $admtext['removeged']; ?>" + '</a></span><p>' + closemsg + ' | <a href="admin_secondmenu.php">' + "<?php echo $admtext['moreoptions']; ?>" + '</a></p>';
-            else
-                parent.document.getElementById('implinks').innerHTML = '<p>' + closemsg + '</p>';
+          var closemsg = '<a href="#" onclick="tnglitbox.remove();return false;"><img src="img/tng_close.gif" align="left" style="margin-right:5px">' + "<?php echo $text['closewindow']; ?>" + '</a>';
+          if (parent.started)
+            parent.document.getElementById('implinks').innerHTML = '<span id="toremove"><a href="#" onclick="return removeFile(\'<?php echo $gedfilename; ?>\');">' + "<?php echo $admtext['removeged']; ?>" + '</a></span><p>' + closemsg + ' | <a href="admin_secondmenu.php">' + "<?php echo $admtext['moreoptions']; ?>" + '</a></p>';
+          else
+            parent.document.getElementById('implinks').innerHTML = '<p>' + closemsg + '</p>';
         }
 
         var msgdiv = parent.document.getElementById('importmsg');
         if (parent.started) {
-            parent.document.getElementById('impdata').style.visibility = "visible";
-            timeoutID = setTimeout(updateCount, <?php echo $readmsecs; ?>);
+          parent.document.getElementById('impdata').style.visibility = "visible";
+          timeoutID = setTimeout(updateCount, <?php echo $readmsecs; ?>);
         } else
             showCloseMenu();
         msgdiv.innerHTML = "<?php echo $openmsg; ?>";
@@ -496,7 +496,7 @@ if ($fp !== false) {
   $treemsg = $tree ? ", " . $admtext['tree'] . ": $tree/" : "";
   adminwritelog("{$admtext['gedimport']}: " . basename($admtext['filename']) . ":{$savestate['filename']}$treemsg; {$savestate['icount']} {$admtext['people']}, {$savestate['fcount']} {$admtext['families']}, {$savestate['scount']} {$admtext['sources']}, {$savestate['ncount']} {$admtext['notes']}, {$savestate['mcount']} {$admtext['media']}, {$savestate['pcount']} {$admtext['places']}");
   if (!empty($old)) {
-    echo "<p>{$admtext['finishedimporting']}<br/>" . number_format($savestate['icount']) . " {$admtext['people']} &nbsp; " . number_format($savestate['fcount']) . " {$admtext['families']} &nbsp; " . number_format($savestate['scount']) . " {$admtext['sources']} &nbsp; " . number_format($savestate['ncount']) . " {$admtext['notes']} &nbsp; " . number_format($savestate['mcount']) . " {$admtext['media']} &nbsp; " . number_format($savestate['pcount']) . " {$admtext['places']}</p>";
+    echo "<p>{$admtext['finishedimporting']}<br>" . number_format($savestate['icount']) . " {$admtext['people']} &nbsp; " . number_format($savestate['fcount']) . " {$admtext['families']} &nbsp; " . number_format($savestate['scount']) . " {$admtext['sources']} &nbsp; " . number_format($savestate['ncount']) . " {$admtext['notes']} &nbsp; " . number_format($savestate['mcount']) . " {$admtext['media']} &nbsp; " . number_format($savestate['pcount']) . " {$admtext['places']}</p>";
   } else {
     echo "<div class=\"impc\"><span id=\"pr\">500</span><span id=\"ic\">" . $savestate['icount'] . "</span><span id=\"fc\">" . $savestate['fcount'] . "</span><span id=\"sc\">" . $savestate['scount'] . "</span><span id=\"nc\">" . $savestate['ncount'] . "</span><span id=\"mc\">" . $savestate['mcount'] . "</span><span id=\"pc\">" . $savestate['pcount'] . "</span></div>\n";
     ?>

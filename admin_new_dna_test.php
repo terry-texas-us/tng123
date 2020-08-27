@@ -44,11 +44,11 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
             <td class="tngshadow">
               <?php echo displayToggle("plus0", 1, "testinfo", $admtext['testinfo'], $admtext['uplsel']); ?>
 
-                <div id="testinfo">
-                    <br/>
-                    <table class="normal">
-                        <tr>
-                            <td><?php echo $admtext['test_type']; ?>:</td>
+              <div id="testinfo">
+                <br>
+                <table class="normal">
+                  <tr>
+                    <td><?php echo $admtext['test_type']; ?>:</td>
                             <td>
                                 <select name="test_type" id="test_type">
                                     <option value=""></option>
@@ -85,26 +85,26 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
                             <td><strong><?php echo $admtext['privatetest']; ?>:</strong>&nbsp;</td>
                             <td>
                                 <select name="private_test">
-                                    <option value="0"<?php if (!$row['private_test']) {
-                                      echo " selected";
-                                    } ?>><?php echo $admtext['no']; ?></option>
-                                    <option value="1"<?php if ($row['private_test']) {
-                                      echo " selected";
-                                    } ?>><?php echo $admtext['yes']; ?></option>
+                                  <option value="0"<?php if (!$row['private_test']) {
+                                    echo " selected";
+                                  } ?>><?php echo $admtext['no']; ?></option>
+                                  <option value="1"<?php if ($row['private_test']) {
+                                    echo " selected";
+                                  } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="2"><br/><strong><?php echo $admtext['test_taker']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['tree']; ?>:</td>
-                            <td>
-                                <select name="mynewgedcom">
-                                    <option value=""></option>
-                                  <?php
-                                  $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-                                  $treeresult = tng_query($query);
+                  <tr>
+                    <td colspan="2"><br><strong><?php echo $admtext['test_taker']; ?></strong></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['tree']; ?>:</td>
+                    <td>
+                      <select name="mynewgedcom">
+                        <option value=""></option>
+                        <?php
+                        $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
+                        $treeresult = tng_query($query);
 
                                   while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
@@ -113,23 +113,23 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td><?php echo "{$admtext['personid']} "; ?>:</td>
-                            <td>
+                      <tr>
+                        <td><?php echo "{$admtext['personid']} "; ?>:</td>
+                        <td>
 
-                                <input type="text" name="personID" id="personID" size="20" maxlength="22"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                                <a href="#" onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
-                                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0" hspace="2">
-                                </a>
-                                <span id="deststrfield"><?php echo $takername; ?></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo "{$admtext['text_or']} {$admtext['person_name']} "; ?></td>
-                            <td>
-                                <input type="text" name="person_name" value="<?php echo $row['person_name']; ?>" id="person_name" size="40" maxlength="100"></td>
-                        </tr>
-                        <tr>
+                          <input type="text" name="personID" id="personID" size="20" maxlength="22"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                          <a href="#" onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
+                            <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" style="margin-left:2px;margin-bottom:4px;">
+                          </a>
+                          <span id="deststrfield"><?php echo $takername; ?></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><?php echo "{$admtext['text_or']} {$admtext['person_name']} "; ?></td>
+                        <td>
+                          <input type="text" name="person_name" value="<?php echo $row['person_name']; ?>" id="person_name" size="40" maxlength="100"></td>
+                      </tr>
+                      <tr>
                             <td>&nbsp;<strong><?php echo $text['keep_name_private']; ?>:</strong>&nbsp;<input type="checkbox" name="private_dna" value="1"></td>
                         </tr>
                         <tr>

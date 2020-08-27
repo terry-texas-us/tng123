@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Ud�losti");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="citations_help.php" class="lightlink">&laquo; N�pov�da: Citace</a> &nbsp; | &nbsp;
-                <a href="more_help.php" class="lightlink">N�pov�da: V�ce &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Ud�losti</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Standardn� a vlastn�</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#citations" class="lightlink">Citace</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="citations_help.php" class="lightlink">&laquo; N�pov�da: Citace</a> &nbsp; | &nbsp;
+        <a href="more_help.php" class="lightlink">N�pov�da: V�ce &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Ud�losti</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Standardn� a vlastn�</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+        <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#citations" class="lightlink">Citace</a>
             </p>
         </td>
     </tr>
@@ -69,26 +69,26 @@ echo help_header("N�pov�da: Ud�losti");
             <span class="optionhead">M�sto ud�losti</span>
             <p>M�sto, kde ud�lost prob�hla. Zapi�te n�zev m�sta nebo klikn�te na ikonu Naj�t (lupa).</p>
 
-            <span class="optionhead">Podrobnosti</span>
-            <p>Dal�� podrobnosti popisuj�c� ud�lost. Pokud s ud�lost� nen� spojeno ��dn� datum ani m�sto, m��e pole Podrobnosti obsahovat �daje, kter� tuto ud�lost definuj�.</p>
+          <span class="optionhead">Podrobnosti</span>
+          <p>Dal�� podrobnosti popisuj�c� ud�lost. Pokud s ud�lost� nen� spojeno ��dn� datum ani m�sto, m��e pole Podrobnosti obsahovat �daje, kter� tuto ud�lost definuj�.</p>
 
-            <span class="optionhead">Duplikovat pro (ID):</span>
-            <p>Chcete-li tuto ud�lost duplikovat pro v�ce osob nebo rodin, zapi�te sem ��sla ID t�chto osob nebo rodin. Vkl�d�te-li v�ce ��sel ID, odd�lte je ��rkou.
-                Pokud ��slo ID nezn�te, klikn�te na ikonu "Naj�t" vpravo od tohoto pole a m��ete je vyhledat podle jm�na. Po kliknut� na tla��tko "Ulo�it" bude tato ud�lost nakop�rov�na
-                t�mto osob�m (rodin�m). Pokud znovu otev�ete okno s �pravou ud�lolsti, toto pole bude pr�zdn�. V�echny zm�ny, kter� od tohoto okam�iku v t�to ud�losti
-                provedete, <b>nebudou</b> prom�tnuty do d��ve vytvo�en�ch duplik�t�.</p>
+          <span class="optionhead">Duplikovat pro (ID):</span>
+          <p>Chcete-li tuto ud�lost duplikovat pro v�ce osob nebo rodin, zapi�te sem ��sla ID t�chto osob nebo rodin. Vkl�d�te-li v�ce ��sel ID, odd�lte je ��rkou.
+            Pokud ��slo ID nezn�te, klikn�te na ikonu "Naj�t" vpravo od tohoto pole a m��ete je vyhledat podle jm�na. Po kliknut� na tla��tko "Ulo�it" bude tato ud�lost nakop�rov�na
+            t�mto osob�m (rodin�m). Pokud znovu otev�ete okno s �pravou ud�lolsti, toto pole bude pr�zdn�. V�echny zm�ny, kter� od tohoto okam�iku v t�to ud�losti
+            provedete, <b>nebudou</b> prom�tnuty do d��ve vytvo�en�ch duplik�t�.</p>
 
-            <span class="optionhead">V�ce</span><br/>
-            <p>Kliknut�m na "V�ce" m��ete pro ka�dou ud�lost zapsat n�kter� m�n� b�n� �daje. Objev� se dal�� pole.
-                Tato pole lze skr�t op�tovn�m kliknut�m na "V�ce". Skryt� pol� neznamen� vymaz�n� jejich obsahu. Tato pole obsahuj�:</p>
+          <span class="optionhead">V�ce</span><br>
+          <p>Kliknut�m na "V�ce" m��ete pro ka�dou ud�lost zapsat n�kter� m�n� b�n� �daje. Objev� se dal�� pole.
+            Tato pole lze skr�t op�tovn�m kliknut�m na "V�ce". Skryt� pol� neznamen� vymaz�n� jejich obsahu. Tato pole obsahuj�:</p>
 
-            <p><span class="optionhead">V�k</span>: V�k osoby v dob� ud�losti.</p>
+          <p><span class="optionhead">V�k</span>: V�k osoby v dob� ud�losti.</p>
 
-            <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
+          <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
 
-            <p><span class="optionhead">P���ina</span>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
+          <p><span class="optionhead">P���ina</span>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
 
-            <p><span class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</span>: Adresa a ostatn� kontaktn� �daje spojen� s ud�lost�.</p>
+          <p><span class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</span>: Adresa a ostatn� kontaktn� �daje spojen� s ud�lost�.</p>
 
             <span class="optionhead">Povinn� pole:</span>
             <p>Vybrat mus�te typ ud�losti a nejm�n� do jednoho z n�sleduj�c�ch pol� mus�te n�co vlo�it: <strong>Datum ud�losti</strong>, <strong>M�sto ud�losti</strong>,

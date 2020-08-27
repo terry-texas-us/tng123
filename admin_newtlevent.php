@@ -77,17 +77,17 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtleve
                                   <option value="1"><?php echo $dates['JAN']; ?></option>
                                   <option value="2"><?php echo $dates['FEB']; ?></option>
                                   <option value="3"><?php echo $dates['MAR']; ?></option>
-                                  <option value="4"><?php echo $dates['APR']; ?></option>
-                                  <option value="5"><?php echo $dates['MAY']; ?></option>
-                                  <option value="6"><?php echo $dates['JUN']; ?></option>
-                                  <option value="7"><?php echo $dates['JUL']; ?></option>
-                                  <option value="8"><?php echo $dates['AUG']; ?></option>
-                                  <option value="9"><?php echo $dates['SEP']; ?></option>
-                                  <option value="10"><?php echo $dates['OCT']; ?></option>
-                                  <option value="11"><?php echo $dates['NOV']; ?></option>
-                                  <option value="12"><?php echo $dates['DEC']; ?></option>
+                                <option value="4"><?php echo $dates['APR']; ?></option>
+                                <option value="5"><?php echo $dates['MAY']; ?></option>
+                                <option value="6"><?php echo $dates['JUN']; ?></option>
+                                <option value="7"><?php echo $dates['JUL']; ?></option>
+                                <option value="8"><?php echo $dates['AUG']; ?></option>
+                                <option value="9"><?php echo $dates['SEP']; ?></option>
+                                <option value="10"><?php echo $dates['OCT']; ?></option>
+                                <option value="11"><?php echo $dates['NOV']; ?></option>
+                                <option value="12"><?php echo $dates['DEC']; ?></option>
                               </select>
-                              <input type="text" name="<?php echo $yearname; ?>" size="4"/> <span class="normal"><?php echo $help; ?></span>
+                            <input type="text" name="<?php echo $yearname; ?>" size="4"> <span class="normal"><?php echo $help; ?></span>
                           </td>
                       </tr>
                     <?php
@@ -98,15 +98,15 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtleve
                   ?>
                     <tr>
                         <td><?php echo $admtext['evtitle']; ?>:</td>
-                        <td><input type="text" name="evtitle" width="100"/></td>
+                      <td><input type="text" name="evtitle" width="100"></td>
                     </tr>
-                    <tr>
-                        <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
-                        <td><textarea cols="80" rows="8" name="evdetail"></textarea></td>
+                  <tr>
+                    <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
+                      <td><textarea cols="80" rows="8" name="evdetail"></textarea></td>
                     </tr>
                 </table>
-                <br/>&nbsp;
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+              <br>&nbsp;
+              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
         </td>
     </tr>
 

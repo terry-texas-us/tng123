@@ -18,20 +18,20 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <p class="subhead"><strong><?php echo $admtext['findpersonid']; ?></strong></p>
+  <p class="subhead"><strong><?php echo $admtext['findpersonid']; ?></strong></p>
 
-    <form action="" name="findform1" id="findform1" onsubmit="return openFind(this,'findperson2.php');">
-        <span class="normal">(<?php echo $subtitle; ?>)</span><br/>
+  <form action="" name="findform1" id="findform1" onsubmit="return openFind(this,'findperson2.php');">
+    <span class="normal">(<?php echo $subtitle; ?>)</span><br>
 
-        <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-      <?php if ($formname == "") {
-        $formname = "form1";
-      } ?>
-        <input type="hidden" name="formname" value="<?php echo $formname; ?>">
-      <?php if ($field == "") {
-        $field = "personID";
-      } ?>
-        <input type="hidden" name="field" value="<?php echo $field; ?>">
+    <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+    <?php if ($formname == "") {
+      $formname = "form1";
+    } ?>
+    <input type="hidden" name="formname" value="<?php echo $formname; ?>">
+    <?php if ($field == "") {
+      $field = "personID";
+    } ?>
+    <input type="hidden" name="field" value="<?php echo $field; ?>">
       <?php if ($type == "") {
         $type = "text";
       } ?>
@@ -52,11 +52,11 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['personid']; ?>: </span></td>
-                <td><input type="text" name="personID"></td>
+              <td><input type="text" name="personID"></td>
             </tr>
         </table>
-        <br/>
-        <input type="submit" value="<?php echo $admtext['search']; ?>"> <img src="img/spinner.gif" id="findspin" style="display:none">
+    <br>
+    <input type="submit" value="<?php echo $admtext['search']; ?>"> <img src="img/spinner.gif" id="findspin" style="display:none">
     </form>
 
 </div>

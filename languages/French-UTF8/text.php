@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "la demi-soeur de ";
     $text['halfsibling'] = "demi frère/soeur de";
     //changed in 8.0.0
-    $text['gencheck'] = "Générations max <br />à investiguer";
+    $text['gencheck'] = "Générations max <br>à investiguer";
     $text['mcousin'] = "le xxx cousin yyy de";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "la xxx cousine yyy de";  //female cousin
     $text['cousin'] = "le xxx cousin yyy de";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Mutation rapide";
     $text['alltypes'] = "Tous les types";
     $text['allgroups'] = "Tous les groupes";
-    $text['Ydna_LITbox_info'] = "Les tests ADN associés à cette personne n'ont pas été nécessairement réalisés par cette personne.<br />La colonne 'Haplogroupe' affiche le résultat en rouge s'il s'agit d'une 'estimation' ou en vert si le test est 'confirmé'";
+    $text['Ydna_LITbox_info'] = "Les tests ADN associés à cette personne n'ont pas été nécessairement réalisés par cette personne.<br>La colonne 'Haplogroupe' affiche le résultat en rouge s'il s'agit d'une 'estimation' ou en vert si le test est 'confirmé'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Comparer les tests d'ADNmt sélectionnés";
     $text['dnatestscompare_atdna'] = "Comparer les tests d'ADNat sélectionnés";

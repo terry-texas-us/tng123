@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "de halfzuster van";
     $text['halfsibling'] = "de halfbroer of halfzuster van";
     //changed in 8.0.0
-    $text['gencheck'] = "Max. aantal te<br />controleren generaties";
+    $text['gencheck'] = "Max. aantal te<br>controleren generaties";
     $text['mcousin'] = "de xxx neef yyy van";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "de xxx nicht yyy van";  //female cousin
     $text['cousin'] = "de xxx neef/nicht yyy van";
@@ -285,9 +285,9 @@ switch ($textpart) {
     $text['lessthanequal'] = "minder dan of gelijk aan";
     $text['greaterthanequal'] = "groter dan of gelijk aan";
     $text['equalto'] = "gelijk aan";
-    $text['tryagain'] = "Probeer het nog eens";
-    $text['joinwith'] = "Bovenstaande<br />onderling<br />verbinden met";
-    $text['cap_and'] = "EN";
+  $text['tryagain'] = "Probeer het nog eens";
+  $text['joinwith'] = "Bovenstaande<br>onderling<br>verbinden met";
+  $text['cap_and'] = "EN";
     $text['cap_or'] = "OF";
     $text['showspouse'] = "Laat partner zien (laat dubbelen zien indien van de persoon meerdere partners bekend zijn)";
     $text['submitquery'] = "Zoek op";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Snel Bewerken";
     $text['alltypes'] = "Alle Types";
     $text['allgroups'] = "Alle Groepen";
-    $text['Ydna_LITbox_info'] = "Test(en) gelinked aan deze persoon zijn niet noodzakelijk ook ondergaan door deze persoon.<br />De 'Haplogroep' kolom toont data in rood als het resultaat is 'voorspelt' of groen al de test is 'bevestigd'";
+    $text['Ydna_LITbox_info'] = "Test(en) gelinked aan deze persoon zijn niet noodzakelijk ook ondergaan door deze persoon.<br>De 'Haplogroep' kolom toont data in rood als het resultaat is 'voorspelt' of groen al de test is 'bevestigd'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

@@ -73,16 +73,16 @@ tng_adminheader($admtext['addnewfamily'], $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<SCRIPT language="JavaScript" type="text/javascript">
-    var persfamID = "";
-    var allow_cites = false;
-    var allow_notes = false;
+<script language="JavaScript" type="text/javascript">
+  var persfamID = "";
+  var allow_cites = false;
+  var allow_notes = false;
 
-    function toggleAll(display) {
-        toggleSection('spouses', 'plus0', display);
-        toggleSection('events', 'plus1', display);
-        return false;
-    }
+  function toggleAll(display) {
+    toggleSection('spouses', 'plus0', display);
+    toggleSection('events', 'plus1', display);
+    return false;
+  }
 
     <?php
     if (!$assignedtree && !$assignedbranch) {
@@ -223,7 +223,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                           echo "<span id=\"branchlist\"></span>";
                           if (!$assignedbranch) {
                           if ($numbranches > 8) {
-                            $select = $admtext['scrollbranch'] . "<br/>";
+                            $select = $admtext['scrollbranch'] . "<br>";
                           }
                           $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"8\">\n";
                           $select .= "	<option value=\"\"";
@@ -233,7 +233,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                           $select .= ">{$admtext['nobranch']}</option>\n";
 
                           $select .= "$options</select>\n";
-                          echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                          echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                           ?>
                             <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                               <?php
@@ -340,7 +340,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
     </table>
 </form>
 
-<SCRIPT language="JavaScript" type="text/javascript">
+<script language="JavaScript" type="text/javascript">
   <?php
   echo $swapbranches;
   echo "tree = \"$firsttree\";\n";

@@ -4,27 +4,27 @@ echo help_header("Nápověda: Manažer módů");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
-                <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Manažer módů
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
+        <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Manažer módů
         </span>
-            <p class="smaller menu">
-                <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
-                <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-                <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-                <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
+      <p class="smaller menu">
+        <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
+        <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
+        <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
+        <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
                 <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
                 <a href="#batch" class="lightlink">Dávková instalace</a> &nbsp; | &nbsp;
                 <a href="#options" class="lightlink">Možnosti</a>

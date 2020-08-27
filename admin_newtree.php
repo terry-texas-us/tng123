@@ -15,15 +15,14 @@ if( !$allow_add ) {
 
 $helplang = findhelp("trees_help.php");
 
-if($beforeimport) {
+if ($beforeimport) {
 	header("Content-type:text/html; charset=" . $session_charset);
 ?>
-<div class="databack ajaxwindow" id="newtree">
-<p class="subhead"><strong><?php echo $admtext['addnewtree']; ?></strong> |
+  <div class="databack ajaxwindow" id="newtree">
+  <p class="subhead"><strong><?php echo $admtext['addnewtree']; ?></strong> |
 	<a href="#" onclick="return openHelp('<?php echo $helplang; ?>/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
 <?php
-}
-else {
+} else {
 	$flags['tabs'] = $tngconfig['tabs'];
 	tng_adminheader( $admtext['addnewtree'], $flags );
 ?>
@@ -56,8 +55,8 @@ function alphaNumericCheck(string){
 
 <?php
 	$allow_add_tree = $assignedtree ? 0 : $allow_add;
-	$treetabs[0] = array(1,"admin_trees.php",$admtext['search'],"findtree");
-	$treetabs[1] = array($allow_add_tree,"admin_newtree.php",$admtext['addnew'],"addtree");
+	$treetabs[0] = [1,"admin_trees.php",$admtext['search'],"findtree"];
+	$treetabs[1] = [$allow_add_tree,"admin_newtree.php",$admtext['addnew'],"addtree"];
 	$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/trees_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 	$menu = doMenu($treetabs,"addtree",$innermenu);
 	echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['addnewtree'],"img/trees_icon.gif",$menu,$message);
@@ -82,10 +81,10 @@ function alphaNumericCheck(string){
 		<tr><td><?php echo $admtext['phone']; ?>:</td><td><input type="text" name="phone" size="50" value="<?php echo $phone; ?>"></td></tr>
 	</table>
 	<span class="normal">
-	<input type="checkbox" name="private" value="1"<?php if( $private ) {echo " checked=\"checked\"";} ?>> <?php echo $admtext['keepprivate']; ?><br/>
-	<input type="checkbox" name="disallowgedcreate" value="1"<?php if( $disallowgedcreate ) {echo " checked=\"checked\"";} ?>> <?php echo $admtext['gedcomextraction']; ?><br/>
+	<input type="checkbox" name="private" value="1"<?php if( $private ) {echo " checked=\"checked\"";} ?>> <?php echo $admtext['keepprivate']; ?><br>
+	<input type="checkbox" name="disallowgedcreate" value="1"<?php if( $disallowgedcreate ) {echo " checked=\"checked\"";} ?>> <?php echo $admtext['gedcomextraction']; ?><br>
 	<input type="checkbox" name="disallowpdf" value="1"<?php if( $disallowpdf ) {echo " checked=\"checked\"";} ?>> <?php echo $admtext['nopdf']; ?>
-	<br/><br/></span>
+	<br><br></span>
 	<input type="hidden" name="beforeimport" value="<?php echo $beforeimport; ?>">
 	<input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"> <span id="treemsg" class="normal msgapproved"></span>
 	</form>

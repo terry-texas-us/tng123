@@ -19,19 +19,19 @@ preparebookmark($logstring);
 tng_header($text['databasestatistics'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="stats-hdr-icon"></span><?php echo $text['databasestatistics']; ?></h1><br clear="left"/>
-    <link href="css/c3.css" rel="stylesheet">
-    <script src="js/d3.min.js"></script>
-    <script src="js/c3.min.js"></script>
-    <div style="display:inline-block">
-      <?php
-      echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'statistics', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+  <h1 class="header"><span class="headericon" id="stats-hdr-icon"></span><?php echo $text['databasestatistics']; ?></h1><br clear="left">
+  <link href="css/c3.css" rel="stylesheet">
+  <script src="js/d3.min.js"></script>
+  <script src="js/c3.min.js"></script>
+  <div style="display:inline-block">
+    <?php
+    echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'statistics', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
-      $header = "";
-      $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-      $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
+    $header = "";
+    $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
+    $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
-      if ($sitever != "standard") {
+    if ($sitever != "standard") {
         if ($tabletype == "toggle") {
           $tabletype = "columntoggle";
         }
@@ -276,8 +276,8 @@ tng_header($text['databasestatistics'], $flags);
         echo "<td class=\"databack\" align=\"right\"><span class=\"normal\">" . displayDate($importdate) . " &nbsp;</span></td></tr>\n";
       }
       ?>
-        </table>
-        <br/>
+      </table>
+      <br>
       <?php
       echo $header;
       ?>
@@ -336,7 +336,7 @@ tng_header($text['databasestatistics'], $flags);
       }
       echo "</table>\n";
 
-      echo "<br/><br/>\n";
+      echo "<br><br>\n";
       $width = $sitever == "standard" ? "500px" : "100%";
       echo "<table style=\"width:$width\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n";
       echo "<tr><td  valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\"><sup><font size=\"1\">1</font></sup>&nbsp;</span></td>";
@@ -345,12 +345,12 @@ tng_header($text['databasestatistics'], $flags);
       tng_free_result($result);
 
       if ($tree && !$treerow['secret']) {
-        echo "<br/>\n";
+        echo "<br>\n";
         echo "<span class=\"normal\"><a href=\"$showtree_url" . "tree=$tree\">{$text['treedetail']}</a></span>\n";
-        echo "<br/>\n";
+        echo "<br>\n";
       }
 
-      echo "<br/>\n";
+      echo "<br>\n";
       ?>
     </div>
     <div id="charts" style="display:inline-block; width:400px; vertical-align:top">

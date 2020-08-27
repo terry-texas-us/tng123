@@ -24,28 +24,28 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <p class="subhead"><strong><?php echo $admtext['modifyassoc']; ?></strong> |
-    <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
+  <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
 
 <form action="" name="findassocform1" onSubmit="return updateAssociation(this);">
-    <table width="100%" border="0" cellpadding="2" class="normal">
-        <tr>
-            <td colspan="2">
-                <input type="radio" name="reltype" value="I"<?php if ($row['reltype'] == "I") {
-                  echo " checked=\"checked\"";
-                } ?> onclick="activateAssocType('I');"/> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
-                <input type="radio" name="reltype" value="F"<?php if ($row['reltype'] == "F") {
-                  echo " checked=\"checked\"";
-                } ?> onclick="activateAssocType('F');"/> <?php echo $admtext['family']; ?>
-            </td>
-        </tr>
-        <tr>
-            <td>
+  <table width="100%" border="0" cellpadding="2" class="normal">
+    <tr>
+      <td colspan="2">
+        <input type="radio" name="reltype" value="I"<?php if ($row['reltype'] == "I") {
+          echo " checked=\"checked\"";
+        } ?> onclick="activateAssocType('I');"> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
+        <input type="radio" name="reltype" value="F"<?php if ($row['reltype'] == "F") {
+          echo " checked=\"checked\"";
+        } ?> onclick="activateAssocType('F');"> <?php echo $admtext['family']; ?>
+      </td>
+    </tr>
+    <tr>
+      <td>
                 <span id="person_label"<?php if ($row['reltype'] == "F") {
                   echo " style=\"display:none\"";
                 } ?>><?php echo $admtext['personid']; ?></span>
-                <span id="family_label"<?php if ($row['reltype'] == "I") {
-                  echo " style=\"display:none\"";
-                } ?>><?php echo $admtext['familyid']; ?></span>:
+        <span id="family_label"<?php if ($row['reltype'] == "I") {
+          echo " style=\"display:none\"";
+        } ?>><?php echo $admtext['familyid']; ?></span>:
             </td>
             <td valign="top"><input type="text" name="passocID" value="<?php echo $row['passocID']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                 <a href="#" onclick="return findItem(assocType,'passocID','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');"><img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"

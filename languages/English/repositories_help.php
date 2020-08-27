@@ -6,21 +6,21 @@ echo help_header("Help: Repositories");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="sources_help.php" class="lightlink">&laquo; Help: Sources</a> &nbsp; | &nbsp;
-                <a href="assoc_help.php" class="lightlink">Help: Associations &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Repositories</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Merge</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="sources_help.php" class="lightlink">&laquo; Help: Sources</a> &nbsp; | &nbsp;
+        <a href="assoc_help.php" class="lightlink">Help: Associations &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Repositories</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+        <a href="#merge" class="lightlink">Merge</a>
             </p>
         </td>
     </tr>
@@ -66,27 +66,27 @@ echo help_header("Help: Repositories");
                 An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may enter your own ID if desired.
                 To check if the ID you have entered is unique, click the <strong>Check</strong> button. A message will appear to tell you if the ID is in use or not.
                 To generate the next sequential unique ID, click <strong>Generate</strong>. This will locate the highest number in your database and add 1.
-                To ensure that the displayed ID is not claimed by another user while you're entering the data, click the <strong>Lock</strong> button.</p>
+              To ensure that the displayed ID is not claimed by another user while you're entering the data, click the <strong>Lock</strong> button.</p>
 
-            <p><strong>NOTE</strong>: If you are using this software in conjunction with a PC/Mac-based genealogy program which also creates IDs for new sources,
-                it is HIGHLY RECOMMENDED that keep all IDs in sync between the two programs at all times. Failure to do this may result in collisions and may also cause
-                your media links to become unusable. If your desktop program creates IDs that do not conform to traditional standards (for example, the
-                <strong>R</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
+          <p><strong>NOTE</strong>: If you are using this software in conjunction with a PC/Mac-based genealogy program which also creates IDs for new sources,
+            it is HIGHLY RECOMMENDED that keep all IDs in sync between the two programs at all times. Failure to do this may result in collisions and may also cause
+            your media links to become unusable. If your desktop program creates IDs that do not conform to traditional standards (for example, the
+            <strong>R</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
 
-            <span class="optionhead">Name</span>
-            <p>An short title for the repository.</p>
+          <span class="optionhead">Name</span>
+          <p>An short title for the repository.</p>
 
-            <span class="optionhead">Address 1, Address 2, City, State/Province, Zip/Postal Code, Country</span><br/>
-            <p>The repository's location (if applicable; all parts are optional).</p>
+          <span class="optionhead">Address 1, Address 2, City, State/Province, Zip/Postal Code, Country</span><br>
+          <p>The repository's location (if applicable; all parts are optional).</p>
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
-            <a name="edit"><p class="subheadbold">Editing Existing Repositories</p></a>
-            <p>To make changes to an existing repository, use the <a href="#search">Search</a> tab to locate the repository, then click on the Edit icon next to that repository.</p>
+      <p style="float:right"><a href="#top">Top</a></p>
+      <a name="edit"><p class="subheadbold">Editing Existing Repositories</p></a>
+      <p>To make changes to an existing repository, use the <a href="#search">Search</a> tab to locate the repository, then click on the Edit icon next to that repository.</p>
 
             <span class="optionhead">Notes</span>
             <p>Notes may be linked to events or to the repository in general by clicking on the Notes icon at the top of the page

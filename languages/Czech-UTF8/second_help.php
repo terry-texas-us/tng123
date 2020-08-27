@@ -4,27 +4,27 @@ echo help_header("Nápověda: Druhotné procesy");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="data_help.php" class="lightlink">&laquo; Nápověda: Import / Export</a> &nbsp; | &nbsp;
-                <a href="setup_help.php" class="lightlink">Nápověda: Nastavení &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Druhotné procesy</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Co to je?</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="data_help.php" class="lightlink">&laquo; Nápověda: Import / Export</a> &nbsp; | &nbsp;
+        <a href="setup_help.php" class="lightlink">Nápověda: Nastavení &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Druhotné procesy</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Co to je?</a>
+      </p>
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <a name="what"><p class="subheadbold">Co jsou to druhotné procesy?</p></a>

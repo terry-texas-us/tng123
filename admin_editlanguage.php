@@ -24,11 +24,11 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifylanguage'], $flags);
 ?>
 <script type="text/javascript" src="js/admin.js"></script>
-<SCRIPT language="JavaScript" type="text/javascript">
-    function validateForm() {
-        var rval = true;
-        if (document.form1.folder.value.length == 0) {
-            alert("<?php echo $admtext['enterlangfolder']; ?>");
+<script language="JavaScript" type="text/javascript">
+  function validateForm() {
+    var rval = true;
+    if (document.form1.folder.value.length == 0) {
+      alert("<?php echo $admtext['enterlangfolder']; ?>");
             rval = false;
         } else if (document.form1.display.value.length == 0) {
             alert("<?php echo $admtext['enterlangdisplay']; ?>");
@@ -109,8 +109,8 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylang
                         </td>
                     </tr>
                 </table>
-                <br/>
-                <input type="hidden" name="languageID" value="<?php echo "$languageID"; ?>">
+              <br>
+              <input type="hidden" name="languageID" value="<?php echo "$languageID"; ?>">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
         </td>
     </tr>

@@ -6,21 +6,21 @@ echo help_header("Help: Albums");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp; | &nbsp;
-                <a href="cemeteries_help.php" class="lightlink">Help: Cemeteries &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Albums</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Sort</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp; | &nbsp;
+        <a href="cemeteries_help.php" class="lightlink">Help: Cemeteries &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Albums</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+        <a href="#sort" class="lightlink">Sort</a>
             </p>
         </td>
     </tr>
@@ -46,40 +46,40 @@ echo help_header("Help: Albums");
         </td>
     </tr>
     <tr class="databack">
-        <td class="tngshadow">
+      <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
-            <a name="add"><p class="subheadbold">Adding New Albums</p></a>
-            <p>An <strong>Album</strong> in TNG is a grouping of media. An Album can include any number of media, and any particular media item can belong to multiple albums.
-                Like individual media, Albums can be linked to people, families, sources, repositories or places.</p>
+        <p style="float:right"><a href="#top">Top</a></p>
+        <a name="add"><p class="subheadbold">Adding New Albums</p></a>
+        <p>An <strong>Album</strong> in TNG is a grouping of media. An Album can include any number of media, and any particular media item can belong to multiple albums.
+          Like individual media, Albums can be linked to people, families, sources, repositories or places.</p>
 
-            <p>To add a new Album, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the media to include and
-                links to people, families and other entities, can be added after saving the record. Take note of the following:</p>
+        <p>To add a new Album, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the media to include and
+          links to people, families and other entities, can be added after saving the record. Take note of the following:</p>
 
-            <p><span class="optionhead">Album Name</span><br/>
-                The name of your album.</p>
+        <p><span class="optionhead">Album Name</span><br>
+          The name of your album.</p>
 
-            <p><span class="optionhead">Description</span><br/>
-                A short description of the album or the items contained in it.</p>
+        <p><span class="optionhead">Description</span><br>
+          A short description of the album or the items contained in it.</p>
 
-            <p><span class="optionhead">Keywords</span><br/>
-                Any number of keywords outside the Album Name or Description that can be used to locate this album when searching.</p>
+        <p><span class="optionhead">Keywords</span><br>
+          Any number of keywords outside the Album Name or Description that can be used to locate this album when searching.</p>
 
-            <p><span class="optionhead">Active</span><br/>
-                If an album is flagged as "Active", it will show on the public listing of all albums on your site. If the Active flag is set to "No", then visitors to your
-                site will not see it.</p>
+        <p><span class="optionhead">Active</span><br>
+          If an album is flagged as "Active", it will show on the public listing of all albums on your site. If the Active flag is set to "No", then visitors to your
+          site will not see it.</p>
 
-            <p><span class="optionhead">Always viewable</span><br/>
-                If an active album is flagged as "Always viewable" and is linked to a person, family, source or repository, it will always show on the pages for those entities, even if it is
-                linked to a living person or family. Normally, active albums and other media linked to living individuals are hidden from visitors who do not have rights to view living data.
-            </p>
+        <p><span class="optionhead">Always viewable</span><br>
+          If an active album is flagged as "Always viewable" and is linked to a person, family, source or repository, it will always show on the pages for those entities, even if it is
+          linked to a living person or family. Normally, active albums and other media linked to living individuals are hidden from visitors who do not have rights to view living data.
+        </p>
 
-            <p><span class="optionhead">Required fields:</span> Album Name is the only required field, but it is in your best interest to fill in the other fields as well.</p>
+        <p><span class="optionhead">Required fields:</span> Album Name is the only required field, but it is in your best interest to fill in the other fields as well.</p>
 
-        </td>
+      </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Top</a></p>
             <a name="edit"><p class="subheadbold">Editing Existing Albums</p></a>

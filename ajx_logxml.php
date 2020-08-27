@@ -9,5 +9,5 @@ include $cms['tngpath'] . "checklogin.php";
 header("Content-type:text/html; charset=" . $session_charset);
 $lines = file($logfile);
 foreach ($lines as $line) {
-  echo "$line<br/>\n";
+  echo "$line<br>\n";
 }

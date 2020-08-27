@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Voor vindplaatsen...";
     $admtext['noevtypes'] = "Geen bestaande gebeurtenis-typen.";
     $admtext['DESI'] = "Nakomelingen-interesse";
-    $admtext['allnone'] = "Geef voor iedere gebruikte taal een taalspecifieke boodschap,<br />of laat onderstaande velden blanco en geef hierboven ��n, bij iedere taal, weer te geven boodschap.<br />in het veld 'Weergeven' (eerst op het minteken klikken).";
+    $admtext['allnone'] = "Geef voor iedere gebruikte taal een taalspecifieke boodschap,<br>of laat onderstaande velden blanco en geef hierboven ��n, bij iedere taal, weer te geven boodschap.<br>in het veld 'Weergeven' (eerst op het minteken klikken).";
     $admtext['assocwith'] = "Verbonden met";
     $admtext['BAPM'] = "Doop";
     $admtext['umps'] = "Mogelijk is uw GEDCOM-bestand groter als door uw PHP-installatie is toegestaan. Vraag uw provider om de 'upload_max_filesize'-waarde te verhogen, of kopieer het GEDCOM-bestand naar de 'gedcom'-map op uw site en importeer het bestand van daar uit.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Voorvoegsel";
     $admtext['chkdel'] = "Selecteer het lege hokje om het onderdeel links te verwijderen";
     //added in 9.0.0
-    $admtext['choosedef'] = "Kies<br/>standaard<br/>foto"; //has to fit in a small box
+    $admtext['choosedef'] = "Kies<br>standaard<br>foto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Datum Bevestiging (LDS)";
     $admtext['confplace'] = "Plaats Bevestiging (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Verplicht. De inhoud van dit veld moet overeenkomen met de naam en plaats van uw bestand <em>in de mediamap</em> nadat het bestand is ge-upload. Bijv, als uw mediamap <em>media</em> heet, en u wilt uw bestand <em>mijnfoto.jpg</em> noemen en u wilt die plaatsen in een ondermap van <em>media</em>, <em>nieuwmedia</em> genaamd, dan zou u <em>nieuwmedia/mijnfoto.jpg</em> moeten invullen in dit veld.";
     $admtext['leaveblankphoto'] = "Laat dit veld leeg als de bestanden reeds ge-upload zijn.";
     $admtext['thumbconflicts'] = "Klikplaatjes niet gegenereerd i.v.m. het pad, permissies of bestandsnaam problemen";
-    $admtext['showmap'] = "Laat altijd de plattegrond en media van deze begraafplaats zien als dit item wordt weergegeven";
-    $admtext['bodytext'] = "<strong>OF</strong><br/>kale tekst";
-    $admtext['usenl'] = "Converteer harde returns in de tekst naar HTML-regelafbrekingen, zodat deze ook op het scherm weergegeven worden";
+  $admtext['showmap'] = "Laat altijd de plattegrond en media van deze begraafplaats zien als dit item wordt weergegeven";
+  $admtext['bodytext'] = "<strong>OF</strong><br>kale tekst";
+  $admtext['usenl'] = "Converteer harde returns in de tekst naar HTML-regelafbrekingen, zodat deze ook op het scherm weergegeven worden";
     $admtext['newwin'] = "Openen in een nieuw venster";
     $admtext['modifymedia'] = "Wijzig bestaande medium";
     $admtext['addnewmedia'] = "Voeg nieuwe medium toe";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Bij geen geboortedatum, neem aan";
     $admtext['persliving'] = "Persoon leeft nog";
     $admtext['persdead'] = "Persoon is overleden";
-    $admtext['nodeathdate'] = "Bij geen overlijdensdatum, neem overleden aan<br />indien ouder dan";
+    $admtext['nodeathdate'] = "Bij geen overlijdensdatum, neem overleden aan<br>indien ouder dan";
     $admtext['pedconfigsettings'] = "Overzicht instellingen";
     $admtext['usepopups'] = "Standaard weergave";
     $admtext['maxpedgens'] = "Maximum aantal generaties";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Voeg plaatsen samen";
     $admtext['findmerge'] = "Zoek samenvoeg kandidaten";
     $admtext['selectplacemerge'] = "Selecteer de plaatsen die samengevoegd moeten worden";
-    $admtext['mcol1'] = "Voeg<br/>deze<br/>(wissen)";
-    $admtext['mcol2'] = "samen<br/>met<br/>(houden)";
+    $admtext['mcol1'] = "Voeg<br>deze<br>(wissen)";
+    $admtext['mcol2'] = "samen<br>met<br>(houden)";
     $admtext['pmsucc'] = "Samenvoegen van plaatsen succesvol";
     $admtext['nomerge'] = "Niets om samen te voegen";
     $admtext['enterkeep'] = "Selecteer aub een samenvoeg-doel.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Selecteer een wijzigingsvoorstel en actie";
     $admtext['suggested'] = "Voorstel";
-    $admtext['usernotes'] = "Aantekeningen mbt<br />voorgestelde wijziging<br />(worden niet bewaard)";
+    $admtext['usernotes'] = "Aantekeningen mbt<br>voorgestelde wijziging<br>(worden niet bewaard)";
     $admtext['postdate'] = "Ingediend op";
     $admtext['savedel'] = "Verwerk & verwijder";
     $admtext['postpone'] = "Uitstellen";

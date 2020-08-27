@@ -68,7 +68,7 @@ function toggleSection(section, img, display) {
 }
 
 function makeFolder(folder, name) {
-    jQuery('#msg_' + folder).html('<img src="img/spinner.gif" />');
+    jQuery('#msg_' + folder).html('<img src="img/spinner.gif">');
     var params = {folder: name};
     jQuery.ajax({
         url: cmstngpath + 'admin_makefolder.php',

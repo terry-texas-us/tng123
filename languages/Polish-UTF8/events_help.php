@@ -6,21 +6,21 @@ echo help_header("Pomoc: Wydarzenia");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="citations_help.php" class="lightlink">&laquo; Pomoc: Cytaty</a> &nbsp; | &nbsp;
-                <a href="more_help.php" class="lightlink">Pomoc: Więcej &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Wydarzenia</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-                <a href="#citations" class="lightlink">Cytaty</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="citations_help.php" class="lightlink">&laquo; Pomoc: Cytaty</a> &nbsp; | &nbsp;
+        <a href="more_help.php" class="lightlink">Pomoc: Więcej &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Wydarzenia</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
+        <a href="#del" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+        <a href="#citations" class="lightlink">Cytaty</a>
             </p>
         </td>
     </tr>
@@ -59,26 +59,26 @@ echo help_header("Pomoc: Wydarzenia");
             <p>Wybierz rodzaj wydarzenia (nie można zmienić rodzaju wydarzenia dla istniejącego wydarzenia). Jeśli potrzebnego rodzaju wydarzenia nie ma w polu wyboru, przejdź najpierw do
                 Administracja / Niestandardowe rodzaje wydarzeń i ustaw rodzaj wydarzenia, a następnie powrócić na tę kartę, aby je wybrać.</p>
 
-            <span class="optionhead">Data wydarzenia</span>
-            <p>Rzeczywista lub zbliżona data związana z wydarzeniem.</p>
+          <span class="optionhead">Data wydarzenia</span>
+          <p>Rzeczywista lub zbliżona data związana z wydarzeniem.</p>
 
-            <span class="optionhead">Miejsce wydarzenia</span>
-            <p>Miejsce, gdzie nastąpiło wydarzenie. Podaj nazwę miejsca lub kliknij ikonkę "Znajdź" (lupka), aby zlokalizować wprowadzone wcześniej miejsce.</p>
+          <span class="optionhead">Miejsce wydarzenia</span>
+          <p>Miejsce, gdzie nastąpiło wydarzenie. Podaj nazwę miejsca lub kliknij ikonkę "Znajdź" (lupka), aby zlokalizować wprowadzone wcześniej miejsce.</p>
 
-            <span class="optionhead">Szczegóły</span>
-            <p>Wszelkie dodatkowe wyjaśnienia w przypadku, jeśli jest to konieczne. Jeśli nie ma miejsca lub daty związanych z wydarzeniem, pole "szczegóły" powinno zawierać informacje dotyczące tych brakujących danych.</p>
+          <span class="optionhead">Szczegóły</span>
+          <p>Wszelkie dodatkowe wyjaśnienia w przypadku, jeśli jest to konieczne. Jeśli nie ma miejsca lub daty związanych z wydarzeniem, pole "szczegóły" powinno zawierać informacje dotyczące tych brakujących danych.</p>
 
-            <span class="optionhead">Więcej</span><br/>
-            <p>Więcej rzadziej używanych informacji można dodać do każdego wydarzenia klikając na napis "Więcej" lub strzałkę obok niego. W ten sposób pojawią dodatkowe pola. Pola te możesz ukryć przez ponowne kliknięcie
-                na napis lub strzałkę. Ukrywanie pól nie usuwa zapisanych informacji. Te dodatkowe pola to:</p>
+          <span class="optionhead">Więcej</span><br>
+          <p>Więcej rzadziej używanych informacji można dodać do każdego wydarzenia klikając na napis "Więcej" lub strzałkę obok niego. W ten sposób pojawią dodatkowe pola. Pola te możesz ukryć przez ponowne kliknięcie
+            na napis lub strzałkę. Ukrywanie pól nie usuwa zapisanych informacji. Te dodatkowe pola to:</p>
 
-            <p><span class="optionhead">Wiek</span>: Wiek osoby w czasie wydarzenia.</p>
+          <p><span class="optionhead">Wiek</span>: Wiek osoby w czasie wydarzenia.</p>
 
-            <p><span class="optionhead">Urząd</span>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
+          <p><span class="optionhead">Urząd</span>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
 
-            <p><span class="optionhead">Przyczyna</span>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
+          <p><span class="optionhead">Przyczyna</span>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
 
-            <p><span class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</span>: Adres oraz inne informacje kontaktowe związane z wydarzeniem..</p>
+          <p><span class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</span>: Adres oraz inne informacje kontaktowe związane z wydarzeniem..</p>
 
             <span class="optionhead">Wymagane pola:</span>
             <p>Musisz wybrać rodzaj wydarzenia i wpisać coś w co najmniej jednym z następujących pól: <strong>data wydarzenia</strong>, <strong>miejsce wydarzenia</strong>,

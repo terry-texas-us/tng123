@@ -30,17 +30,17 @@ function checkFile(form) {
                 popup += uploading + ' ' + form.remotefile.value;
             else
                 popup += opening + ' ' + form.database.value;
-            popup += '... &nbsp;<img src="img/spinner.gif" /></span></strong></div>\n';
-            popup += '<div id="impdata" style="visibility:hidden">\n';
+            popup += '... &nbsp;<img src="img/spinner.gif"></span></strong></div>\n';
+          popup += '<div id="impdata" style="visibility:hidden">\n';
             popup += '<p id="recordcount">\n<span class="imp">&nbsp;<span class="implabel">' + peoplelbl + ': </span><span id="personcount" class="impctr">0</span></span>\n';
             popup += '<div class="imp">&nbsp;<span class="implabel">' + familieslbl + ': </span><span id="familycount" class="impctr">0</span></div>\n';
             popup += '<div class="imp">&nbsp;<span class="implabel">' + sourceslbl + ': </span><span id="sourcecount" class="impctr">0</span></div>\n';
             popup += '<div class="imp">&nbsp;<span class="implabel">' + noteslbl + ': </span><span id="notecount" class="impctr">0</span></div>\n';
             popup += '<div class="imp">&nbsp;<span class="implabel">' + medialbl + ': </span><span id="mediacount" class="impctr">0</span></div>\n';
-            popup += '<div class="imp">&nbsp;<span class="implabel">' + placeslbl + ': </span><span id="placecount" class="impctr">0</span></div>\n</p><br/><br/>';
-            popup += '<div class="progcontainer tngshadow"><div id="progress" class="emptybar">\n<div id="bar" class="colorbar"></div>\n</div>\n</div>\n';
-            popup += '</div>\n';
-            popup += '<br/><div id="implinks" class="subhead"><a href="#" onclick="return suspendimport();">' + stopmsg + '</a>';
+          popup += '<div class="imp">&nbsp;<span class="implabel">' + placeslbl + ': </span><span id="placecount" class="impctr">0</span></div>\n</p><br><br>';
+          popup += '<div class="progcontainer tngshadow"><div id="progress" class="emptybar">\n<div id="bar" class="colorbar"></div>\n</div>\n</div>\n';
+          popup += '</div>\n';
+          popup += '<br><div id="implinks" class="subhead"><a href="#" onclick="return suspendimport();">' + stopmsg + '</a>';
             if (saveimport == "1") {
                 treeval = treeselect.options[treeselect.selectedIndex].value;
                 popup += ' |  <a href="admin_gedimport.php?tree=' + treeval + '&resuming=1" id="resumelink" target="results" onclick="resumeimport();">' + resumemsg + '</a>';

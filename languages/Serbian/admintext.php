@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informacije o postojecem groblju";
     $admtext['newceminfo'] = "Informacije o novom groblju";
     $admtext['maptoupload'] = "Mapa groblja za spu�tanje";
-    $admtext['mapfilenamefolder'] = "Ime fajla sa mapom<br/>u podskupu spominici";
+    $admtext['mapfilenamefolder'] = "Ime fajla sa mapom<br>u podskupu spominici";
     $admtext['ifmapuploaded'] = "Ostavi ovo polje prazno ako je fajl vec spu�ten u va� podskup za spomenike.";
     $admtext['requiredmap'] = "Neophodno. This should correspond to the name and location of your file <em>within the headstones folder</em> once the file is uploaded. Na primer, ako se vac podskup za spomenike zove <em>headstones</em>,	i vi hocete da se va� fajl zove <em>map.jpg</em> i da bude upisan u podskup koji se zove <em>mymaps</em>, upisacete <em>mymaps/map.jpg</em> u ovo polje.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Dodato";
     $admtext['enternew'] = "Upi�i novo";
     $admtext['pleaseenter'] = "Upi�ite ";
-    $admtext['netscapereload'] = "Netscape korisnici: <br/>You must reload the Cemeteries page to see your new";
+    $admtext['netscapereload'] = "Netscape korisnici: <br>You must reload the Cemeteries page to see your new";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Preuzima GEDCOM podatke...<br/>(ovo mo�e da potraje par minuta)";
+    $admtext['importinggedcom'] = "Preuzima GEDCOM podatke...<br>(ovo mo�e da potraje par minuta)";
     $admtext['ifimportfails'] = "If the import fails to run to completion,";
     $admtext['opened'] = "opened...";
     $admtext['toresume'] = "to resume import";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = " Za dosijee...";
     $admtext['noevtypes'] = "Ne postoji ni jedan tip podataka.";
     $admtext['DESI'] = "Descendant Interest";
-    $admtext['allnone'] = "Enter a display message for each language,<br />or leave all blank and enter one display message above.";
+    $admtext['allnone'] = "Enter a display message for each language,<br>or leave all blank and enter one display message above.";
     $admtext['assocwith'] = "Associated with";
     $admtext['BAPM'] = "Baptism";
     $admtext['umps'] = "Your GEDCOM file may be larger than the maximum size allowed by your PHP installation. You can ask your provider to increase the 'upload_max_filesize' value, or you can copy your file to the 'gedcom' folder on your site and import it from there instead.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefix";
     $admtext['chkdel'] = "Check empty box to delete item at left";
     //added in 9.0.0
-    $admtext['choosedef'] = "Choose<br/>default<br/>photo"; //has to fit in a small box
+    $admtext['choosedef'] = "Choose<br>default<br>photo"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Confirmation Date (LDS)";
     $admtext['confplace'] = "Confirmation Place (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Generate Thumbnails";
     $admtext['genthumbsdesc'] = "Automatically generate smaller versions of all photos without existing thumbnails.";
     $admtext['thumbsgenerated'] = "Thumbnails generated";
-    $admtext['makedefault'] = "Make Default";
-    $admtext['filewithinhs'] = "Path within headstones folder <br/>(subfolder and file name)";
-    $admtext['recsupdated'] = "Records updated";
+  $admtext['makedefault'] = "Make Default";
+  $admtext['filewithinhs'] = "Path within headstones folder <br>(subfolder and file name)";
+  $admtext['recsupdated'] = "Records updated";
     $admtext['removedef'] = "Remove default photo";
     $admtext['numlinkhs'] = "Number of people to link to this headstone";
     $admtext['sortheadstones'] = "Sort Headstones";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Required. This should correspond to the name and location of your file <em>within the photos folder</em> once the file is uploaded. For example, if your photos folder is called <em>photos</em>, and you want your file to be called <em>myphoto.jpg</em> and go in a subfolder of photos called <em>newphotos</em>, you would enter <em>newphotos/myphoto.jpg</em> in this field.";
     $admtext['leaveblankphoto'] = "Leave this field blank if the file has already been uploaded to your photos folder.";
     $admtext['thumbconflicts'] = "Thumbnails not generated due to path, permissions or file name problems";
-    $admtext['showmap'] = "Show cemetery map and photos whenever this image is displayed";
-    $admtext['bodytext'] = "<strong>OR</strong><br/>Body Text";
-    $admtext['usenl'] = "Convert line breaks to HTML on display";
+  $admtext['showmap'] = "Show cemetery map and photos whenever this image is displayed";
+  $admtext['bodytext'] = "<strong>OR</strong><br>Body Text";
+  $admtext['usenl'] = "Convert line breaks to HTML on display";
     $admtext['newwin'] = "Open in new window";
     $admtext['modifymedia'] = "Modify Existing Media";
     $admtext['addnewmedia'] = "Add New Media";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "If no birth date, assume";
     $admtext['persliving'] = "Person is living";
     $admtext['persdead'] = "Person is deceased";
-    $admtext['nodeathdate'] = "If no death date, assume deceased<br />if older than";
+    $admtext['nodeathdate'] = "If no death date, assume deceased<br>if older than";
     $admtext['pedconfigsettings'] = "Pedigree Settings";
     $admtext['usepopups'] = "Initial Display";
     $admtext['maxpedgens'] = "Max Pedigree Generations";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Merge Places";
     $admtext['findmerge'] = "Find Merge Candidates";
     $admtext['selectplacemerge'] = "Select Places to Merge";
-    $admtext['mcol1'] = "Merge<br/>these<br/>(delete)";
-    $admtext['mcol2'] = "into<br/>this<br/>(keep)";
+    $admtext['mcol1'] = "Merge<br>these<br>(delete)";
+    $admtext['mcol2'] = "into<br>this<br>(keep)";
     $admtext['pmsucc'] = "Place merge successful";
     $admtext['nomerge'] = "Nothing to merge";
     $admtext['enterkeep'] = "Please select a merge target.";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Please enter a language display name.";
     $admtext['enterlangfolder'] = "Please enter the name of the folder where files for this language will be stored.";
     $admtext['newlanguageinfo'] = "New Language Information";
-    $admtext['langdisplay'] = "Name for this language<br/>as it will be displayed for visitors";
+    $admtext['langdisplay'] = "Name for this language<br>as it will be displayed for visitors";
     $admtext['createlanguage'] = "Create a record for a new language";
     $admtext['nolanguages'] = "No language records exist";
     $admtext['conflangdelete'] = "Jeste li sigurni da hocete da obri�ete language?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Select Event and Action";
     $admtext['suggested'] = "Suggested";
-    $admtext['usernotes'] = "Notes regarding<br />suggested change<br />(will not be saved)";
+    $admtext['usernotes'] = "Notes regarding<br>suggested change<br>(will not be saved)";
     $admtext['postdate'] = "Posted on";
     $admtext['savedel'] = "Save and Delete";
     $admtext['postpone'] = "Postpone";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "Check";
 $admtext['generate'] = "Generate";
 $admtext['update'] = "Update";
 $admtext['confdeleteevent'] = "Jeste li sigurni da hocete da obri�ete event?";
-$admtext['existinglinks'] = "Existing Links:<br/>(check to delete)";
+$admtext['existinglinks'] = "Existing Links:<br>(check to delete)";
 $admtext['lowersortfirst'] = "Lower numbers sort first. Decimal numbers may also be used.";
 $admtext['personsname'] = "Person's Name";
 $admtext['tablecreation'] = "Table Creation";
@@ -2241,7 +2241,7 @@ $admtext['confdeletefile'] = "Are you sure you want to delete this file?";
 //changed in 8.0.0
 $admtext['datenote'] = "<strong>Note:</strong> When entering dates, please use the standard genealogical format DD MMM YYYY. For example, 10 Apr 2004.";
 $admtext['oriental'] = "Surname first";
-$admtext['langfolder'] = "Folder where language files<br/>will be stored";
+$admtext['langfolder'] = "Folder where language files<br>will be stored";
 //moved here in 8.0.0
 $admtext['repoid'] = "Repository ID";
 $admtext['whatsnew'] = "What's New";

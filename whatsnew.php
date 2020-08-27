@@ -71,20 +71,20 @@ tng_free_result($result);
 if ($sitever != "mobile") {
   ?>
     <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
-    <script type="text/javascript">
-        // <![CDATA[
-        var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
-        var ajx_fampreview = '<?php echo getURL("ajx_fampreview", 0);?>';
-        // ]]>
-    </script>
+  <script type="text/javascript">
+    // <![CDATA[
+    var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
+    var ajx_fampreview = '<?php echo getURL("ajx_fampreview", 0);?>';
+    // ]]>
+  </script>
   <?php
 }
 ?>
 
-    <h1 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h1><br clear="left">
 <?php
 $numtrees = 0;
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true]);
 
 $nametitle = $sitever == "mobile" ? $text['name'] : $text['lastfirst'];
 
@@ -164,18 +164,18 @@ $query = "SELECT p.personID, lastname, lnprefix, firstname, birthdate, prefix, s
 $result = tng_query($query);
 if (tng_num_rows($result)) {
   ?>
-    <div class="titlebox">
-        <span class="subhead"><b><?php echo $text['individuals']; ?></b></span><br/><br/>
+  <div class="titlebox">
+    <span class="subhead"><b><?php echo $text['individuals']; ?></b></span><br><br>
+    <?php
+    echo $saveheader;
+    ?>
+    <thead>
+    <tr>
+      <th data-tablesaw-priority="persist" class="fieldnameback idcol fieldname">&nbsp;<?php echo $text['id']; ?>&nbsp;</th>
+      <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $nametitle; ?>&nbsp;</th>
+      <th data-tablesaw-priority="2" class="fieldnameback fieldname">&nbsp;<?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?>&nbsp;</th>
+      <th data-tablesaw-priority="3" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th>
       <?php
-      echo $saveheader;
-      ?>
-        <thead>
-        <tr>
-            <th data-tablesaw-priority="persist" class="fieldnameback idcol fieldname">&nbsp;<?php echo $text['id']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $nametitle; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname">&nbsp;<?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?>&nbsp;</th>
-            <th data-tablesaw-priority="3" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th>
-          <?php
           if ($numtrees > 1) {
             ?>
               <th data-tablesaw-priority="3" class="fieldnameback fieldname">&nbsp;<b><?php echo $text['tree']; ?><?php if ($numbranches) {
@@ -191,7 +191,7 @@ if (tng_num_rows($result)) {
 
       <?php
       $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-      $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" alt=\"\" $imageSize[3] />";
+      $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" alt=\"\" $imageSize[3]>";
       while ($row = tng_fetch_assoc($result)) {
         $rights = determineLivingPrivateRights($row);
         $row['allow_living'] = $rights['living'];
@@ -204,7 +204,7 @@ if (tng_num_rows($result)) {
           if (!$tngconfig['places1tree']) {
             $birthplacestr .= "tree={$row['gedcom']}&amp;";
           }
-          $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\" /></a>";
+          $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
         }
         echo "<tr><td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a>&nbsp;</td>";
         echo "<td class=\"databack\">\n";
@@ -222,9 +222,9 @@ if (tng_num_rows($result)) {
       }
       tng_free_result($result);
       ?>
-        </table>
-    </div>
-    <br/>
+    </table>
+  </div>
+  <br>
   <?php
 }
 
@@ -254,18 +254,18 @@ $query = "SELECT familyID, husband, wife, marrdate, $families_table.gedcom as ge
 $famresult = tng_query($query);
 if (tng_num_rows($famresult)) {
   ?>
-    <div class="titlebox">
-        <span class="subhead"><b><?php echo $text['families']; ?></b></span><br/>
-      <?php
-      echo $saveheader;
-      ?>
-        <thead>
-        <tr>
-            <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;<?php echo $text['id']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['husbid']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['husbname']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['wifeid']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['wifename']; ?>&nbsp;</th>
+  <div class="titlebox">
+    <span class="subhead"><b><?php echo $text['families']; ?></b></span><br>
+    <?php
+    echo $saveheader;
+    ?>
+    <thead>
+    <tr>
+      <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;<?php echo $text['id']; ?>&nbsp;</th>
+      <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['husbid']; ?>&nbsp;</th>
+      <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['husbname']; ?>&nbsp;</th>
+      <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['wifeid']; ?>&nbsp;</th>
+      <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['wifename']; ?>&nbsp;</th>
             <th data-tablesaw-priority="2" class="fieldnameback fieldname">&nbsp;<?php echo $text['married']; ?>&nbsp;</th>
           <?php
           if ($numtrees > 1) {
@@ -341,9 +341,9 @@ if (tng_num_rows($famresult)) {
       }
       tng_free_result($famresult);
       ?>
-        </table>
-    </div>
-    <br/><br/>
+    </table>
+  </div>
+  <br><br>
   <?php
 }
 tng_footer($flags);

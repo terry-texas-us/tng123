@@ -16,12 +16,12 @@ function doNoteSearch($instance, $pagenav) {
 
   $str = "<div class=\"normal\">\n";
   $str .= getFORM("browsenotes", "get", "notesearch$instance", "");
-  $str .= "<input type=\"text\" name=\"notesearch\" value=\"$notesearch\" /> <input type=\"submit\" value=\"{$text['search']}\" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $str .= "<input type=\"text\" name=\"notesearch\" value=\"$notesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   if ($notesearch) {
     $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsenotes_noargs_url\">{$text['browseallnotes']}</a>";
   }
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
   $str .= "</form></div>\n";
 
   return $str;
@@ -81,9 +81,9 @@ preparebookmark($logstring);
 tng_header($text['notes'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h1><br clear="left">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'browsenotes', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsenotes', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
   echo "<p class=\"normal\">{$text['matches']} " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . "</p>";
@@ -91,7 +91,7 @@ if ($totrows) {
 
 $pagenav = get_browseitems_nav($totrows, $browsenotes_url . "notesearch=$notesearch&amp;offset", $maxsearchresults, $max_browsenote_pages);
 echo doNoteSearch(1, $pagenav);
-echo "<br />\n";
+echo "<br>\n";
 
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
@@ -155,7 +155,7 @@ while ($nrow = tng_fetch_assoc($result)) {
         $noneliving = 0;
       }
 
-      $notelinktext .= "<a href=\"getperson.php?personID={$row2['personID']}&tree={$row2['gedcom']}\">" . getNameRev($row2) . " ({$row2['personID']})</a>\n<br/>\n";
+      $notelinktext .= "<a href=\"getperson.php?personID={$row2['personID']}&tree={$row2['gedcom']}\">" . getNameRev($row2) . " ({$row2['personID']})</a>\n<br>\n";
       tng_free_result($result2);
     }
   }
@@ -176,7 +176,7 @@ while ($nrow = tng_fetch_assoc($result)) {
         $noneliving = 0;
       }
 
-      $notelinktext .= "<a href=\"familygroup.php?familyID={$row2['familyID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['family']} {$row2['familyID']}</a>\n<br/>\n";
+      $notelinktext .= "<a href=\"familygroup.php?familyID={$row2['familyID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['family']} {$row2['familyID']}</a>\n<br>\n";
       tng_free_result($result2);
     }
   }
@@ -186,7 +186,7 @@ while ($nrow = tng_fetch_assoc($result)) {
     $result2 = tng_query($query);
     if (tng_num_rows($result2) == 1) {
       $row2 = tng_fetch_assoc($result2);
-      $notelinktext .= "<a href=\"showsource.php?sourceID={$row2['sourceID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['source']} $sourcetext ({$row2['sourceID']})</a>\n<br/>\n";
+      $notelinktext .= "<a href=\"showsource.php?sourceID={$row2['sourceID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['source']} $sourcetext ({$row2['sourceID']})</a>\n<br>\n";
       tng_free_result($result2);
     }
   }
@@ -196,7 +196,7 @@ while ($nrow = tng_fetch_assoc($result)) {
     $result2 = tng_query($query);
     if (tng_num_rows($result2) == 1) {
       $row2 = tng_fetch_assoc($result2);
-      $notelinktext .= "<a href=\"showrepo.php?repoID={$row2['repoID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['repository']} $sourcetext ({$row2['repoID']})</a>\n<br/>\n";
+      $notelinktext .= "<a href=\"showrepo.php?repoID={$row2['repoID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['repository']} $sourcetext ({$row2['repoID']})</a>\n<br>\n";
       tng_free_result($result2);
     }
   }
@@ -214,11 +214,11 @@ while ($nrow = tng_fetch_assoc($result)) {
 }
 tng_free_result($result);
 ?>
-    </table><br/>
+  </table><br>
 <?php
 if ($pagenav || $notesearch) {
   echo doNoteSearch(2, $pagenav);
-  echo "<br />";
+  echo "<br>";
 }
 tng_footer("");
 ?>

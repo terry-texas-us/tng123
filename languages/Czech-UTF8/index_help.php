@@ -4,27 +4,27 @@ echo help_header("Nápověda: Administrace");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="modmanager_help.php" class="lightlink">&laquo; Nápověda: Manažer módů</a> &nbsp; | &nbsp;
-                <a href="people_help.php" class="lightlink">Nápověda: Osoby &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Začínáme</span>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Začínáme</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Poznámky</a> &nbsp; | &nbsp;
-                <a href="#otherresources" class="lightlink">Jiné zdroje</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="modmanager_help.php" class="lightlink">&laquo; Nápověda: Manažer módů</a> &nbsp; | &nbsp;
+        <a href="people_help.php" class="lightlink">Nápověda: Osoby &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Začínáme</span>
+      <p class="smaller menu">
+        <a href="#gettingstarted" class="lightlink">Začínáme</a> &nbsp; | &nbsp;
+        <a href="#notes" class="lightlink">Poznámky</a> &nbsp; | &nbsp;
+        <a href="#otherresources" class="lightlink">Jiné zdroje</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
@@ -72,22 +72,22 @@ echo help_header("Nápověda: Administrace");
                         o programových aktualizacích a vydaných opravách. </p></li>
                 <li><p>Uživatelský mailový seznam: <a href="mailto:tngusers2@lythgoes.net">tngusers2@lythgoes.net</a>. Přijímat a posílat maily na
                         <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. Tento seznam se používá pro diskuze mezi uživateli TNG. </p></li>
-                <li><p>Uživatelské fórum: <a href="https://tng.community" target="_blank">https://tng.community</a>.</p></li>
-                <li><p>TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">https://tng.lythgoes.net/wiki</a>. Stránka MediaWiki, která obsahuje:</p>
-                    <ul>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">Průvodce uvodem do TNG</a>. Jak nastavit vaše stránky a vytvořit uživatelské stránky.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">Průvodce pro návštěvníky TNG</a>. Jak se mohou návštěvníci pohybovat po vašich stránkách.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">Průvodce pro registrované uživatele TNG</a>. Jak využít možnosti TNG jako registrovaný uživatel nebo Administrátor.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">Průvodce pro administrátora TNG</a>. Poskytne informace pro administrátora webových stránek TNG.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">Průvodce pro programátora TNG</a>. Pomůže porozumět, jak TNG pracuje, a pro programátory, jak vytvořit změny v TNG.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">Seznam termínů TNG</a>. Slova a věty použité v TNG, které souvisí s genealogií, počítačovou technikou a organizací archivace.</li>
-                    </ul>
-                    <br/>
-                </li>
-                <li><p>Odkazy PHP: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
-                <li><p>Odkazy MySQL: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
-                <li><p>Odkazy HTML: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
-                <li><p>Kontakt přímo na autora: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
+              <li><p>Uživatelské fórum: <a href="https://tng.community" target="_blank">https://tng.community</a>.</p></li>
+              <li><p>TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">https://tng.lythgoes.net/wiki</a>. Stránka MediaWiki, která obsahuje:</p>
+                <ul>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">Průvodce uvodem do TNG</a>. Jak nastavit vaše stránky a vytvořit uživatelské stránky.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">Průvodce pro návštěvníky TNG</a>. Jak se mohou návštěvníci pohybovat po vašich stránkách.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">Průvodce pro registrované uživatele TNG</a>. Jak využít možnosti TNG jako registrovaný uživatel nebo Administrátor.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">Průvodce pro administrátora TNG</a>. Poskytne informace pro administrátora webových stránek TNG.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">Průvodce pro programátora TNG</a>. Pomůže porozumět, jak TNG pracuje, a pro programátory, jak vytvořit změny v TNG.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">Seznam termínů TNG</a>. Slova a věty použité v TNG, které souvisí s genealogií, počítačovou technikou a organizací archivace.</li>
+                </ul>
+                <br>
+              </li>
+              <li><p>Odkazy PHP: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
+              <li><p>Odkazy MySQL: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
+              <li><p>Odkazy HTML: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
+              <li><p>Kontakt přímo na autora: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
             </ol>
         </td>
     </tr>

@@ -172,7 +172,7 @@ if ($enttype) {
   tng_header($headline, $flags);
   ?>
 
-    <h1 class="header"><span class="headericon" id="contact-hdr-icon"></span><?php echo $headline; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="contact-hdr-icon"></span><?php echo $headline; ?></h1><br clear="left">
   <?php
   $buttontext = $text['sendmsg'];
 }
@@ -187,7 +187,7 @@ if ($message) {
 }
 
 if ($enttype) {
-  echo "<span class=\"subhead\"><b>$headline</b></span><br /><br />\n";
+  echo "<span class=\"subhead\"><b>$headline</b></span><br><br>\n";
 }
 ?>
 
@@ -198,61 +198,61 @@ $formstr = getFORM("tngsendmail", "post\" onsubmit=\"return validateForm();", "s
 echo $formstr;
 if ($typestr) {
   ?>
-    <input type="hidden" name="<?php echo $typestr; ?>ID" value="<?php echo $ID; ?>"/>
+  <input type="hidden" name="<?php echo $typestr; ?>ID" value="<?php echo $ID; ?>">
   <?php
 }
 ?>
-    <table border="0" cellspacing="1" cellpadding="4" class="whiteback normal">
-        <tr>
-            <td class="fieldnameback" width="20%"><span class="fieldname"><?php echo $text['yourname']; ?>:&nbsp; </span></td>
-            <td class="databack" width="80%"><input type="text" name="<?php echo $_SESSION['tng_yourname']; ?>" class="longfield"/></td>
-        </tr>
-        <tr>
-            <td class="fieldnameback"><span class="fieldname"><?php echo $text['email']; ?>:&nbsp; </span></td>
-            <td class="databack"><input type="text" name="<?php echo $_SESSION['tng_email']; ?>" class="longfield" value="<?php echo $preemail; ?>"/></td>
-        </tr>
-        <tr>
-            <td class="fieldnameback"><span class="fieldname"><?php echo $text['emailagain']; ?>:&nbsp; </span></td>
-            <td class="databack"><input type="text" name="em2" class="longfield" value="<?php echo $preemail; ?>"/></td>
-        </tr>
-      <?php
-      if ($page) {
-        ?>
-          <tr>
-              <td class="fieldnameback"><span class="fieldname"><?php echo $text['subject']; ?>:&nbsp; </span></td>
-              <td class="databack"><?php echo stripslashes($page); ?></td>
-          </tr>
-        <?php
-      }
+  <table border="0" cellspacing="1" cellpadding="4" class="whiteback normal">
+    <tr>
+      <td class="fieldnameback" width="20%"><span class="fieldname"><?php echo $text['yourname']; ?>:&nbsp; </span></td>
+      <td class="databack" width="80%"><input type="text" name="<?php echo $_SESSION['tng_yourname']; ?>" class="longfield"></td>
+    </tr>
+    <tr>
+      <td class="fieldnameback"><span class="fieldname"><?php echo $text['email']; ?>:&nbsp; </span></td>
+      <td class="databack"><input type="text" name="<?php echo $_SESSION['tng_email']; ?>" class="longfield" value="<?php echo $preemail; ?>"></td>
+    </tr>
+    <tr>
+      <td class="fieldnameback"><span class="fieldname"><?php echo $text['emailagain']; ?>:&nbsp; </span></td>
+      <td class="databack"><input type="text" name="em2" class="longfield" value="<?php echo $preemail; ?>"></td>
+    </tr>
+    <?php
+    if ($page) {
       ?>
-        <tr>
-            <td class="fieldnameback" valign="top"><span class="fieldname"><?php echo $comments; ?>:&nbsp; </span></td>
-            <td class="databack">
-                <textarea style="width:95%" rows="10" name="<?php echo $_SESSION['tng_comments']; ?>"></textarea>
-            </td>
-        </tr>
-    </table>
-    <input type="hidden" name="enttype" value="<?php echo $enttype; ?>"/>
-    <input type="hidden" name="ID" value="<?php echo $ID; ?>"/>
-    <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
-    <input type="hidden" name="page" value="<?php echo $page; ?>"/>
+      <tr>
+        <td class="fieldnameback"><span class="fieldname"><?php echo $text['subject']; ?>:&nbsp; </span></td>
+        <td class="databack"><?php echo stripslashes($page); ?></td>
+      </tr>
+      <?php
+    }
+    ?>
+    <tr>
+      <td class="fieldnameback" valign="top"><span class="fieldname"><?php echo $comments; ?>:&nbsp; </span></td>
+      <td class="databack">
+        <textarea style="width:95%" rows="10" name="<?php echo $_SESSION['tng_comments']; ?>"></textarea>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="enttype" value="<?php echo $enttype; ?>">
+  <input type="hidden" name="ID" value="<?php echo $ID; ?>">
+  <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+  <input type="hidden" name="page" value="<?php echo $page; ?>">
 <?php
 if ($tngconfig['askconsent']) {
   ?>
-    <br/>
-    <input type="checkbox" name="tng_user_consent" value="1">
+  <br>
+  <input type="checkbox" name="tng_user_consent" value="1">
   <?php
   echo $text['consent'];
 }
 if ($tngconfig['dataprotect']) {
   $dataprotect_url = getURL("data_protection_policy", 0);
-  echo "<br/><a href=\"{$dataprotect_url}\" target=\"_blank\">{$text['dataprotect']}</a>\n";
+  echo "<br><a href=\"{$dataprotect_url}\" target=\"_blank\">{$text['dataprotect']}</a>\n";
 }
 ?>
-    <br/><br/>
-    <input type="submit" class="btn" id="submitbtn" value="<?php echo $buttontext; ?>"/>
-    </form>
-    <br/>
+  <br><br>
+  <input type="submit" class="btn" id="submitbtn" value="<?php echo $buttontext; ?>">
+  </form>
+  <br>
 <?php
 tng_footer("");
 ?>

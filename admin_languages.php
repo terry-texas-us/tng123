@@ -86,7 +86,7 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;

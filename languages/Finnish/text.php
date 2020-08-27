@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "sisarpuoli";
     $text['halfsibling'] = "sisaruspuoli";
     //changed in 8.0.0
-    $text['gencheck'] = "Selvitett�vien<br />sukulaisuussuhteiden maksimim��r�";
+    $text['gencheck'] = "Selvitett�vien<br>sukulaisuussuhteiden maksimim��r�";
     $text['mcousin'] = "xxx serkku yyy";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "xxx serkku yyy";  //female cousin
     $text['cousin'] = "xxx serkku yyy";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Nopeasti mutatoivat";
     $text['alltypes'] = "Kaikki tyypit";
     $text['allgroups'] = "Kaikki ryhm�t";
-    $text['Ydna_LITbox_info'] = "Henkil��n linkitetyt testi(t) eiv�t v�ltt�m�tt� ole henkil�n itsens� suorittamia.<br />'Haploryhm�' sarake n�ytt�� datan punaisella, jos tulos on  'Ennustettu' tai vihre�ll�, jos testi on 'Vahvistettu'";
+    $text['Ydna_LITbox_info'] = "Henkil��n linkitetyt testi(t) eiv�t v�ltt�m�tt� ole henkil�n itsens� suorittamia.<br>'Haploryhm�' sarake n�ytt�� datan punaisella, jos tulos on  'Ennustettu' tai vihre�ll�, jos testi on 'Vahvistettu'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

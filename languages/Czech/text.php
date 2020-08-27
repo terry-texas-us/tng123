@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Rychl� mutace";
     $text['alltypes'] = "V�echny typy";
     $text['allgroups'] = "V�echny skupiny";
-    $text['Ydna_LITbox_info'] = "Test(y) p�ipojen� k t�to osob� nemus� nutn� od t�to osoby poch�zet.<br />Ve sloupci 'Haploskupina' se zobraz� data �erven�, pokud je v�sledek 'P�edpov�zen', nebo zelen�, pokud je test 'Potvrzen'";
+    $text['Ydna_LITbox_info'] = "Test(y) p�ipojen� k t�to osob� nemus� nutn� od t�to osoby poch�zet.<br>Ve sloupci 'Haploskupina' se zobraz� data �erven�, pokud je v�sledek 'P�edpov�zen', nebo zelen�, pokud je test 'Potvrzen'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Porovnat vybran� testy mtDNA";
     $text['dnatestscompare_atdna'] = "Porovnat vybran� testy atDNA";

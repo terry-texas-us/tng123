@@ -33,7 +33,7 @@ function showAction($entityID, $num = null) {
     if (!$gotit) {
       $lines .= "display:none";
     }
-    $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" $dims /><div id=\"sdef_" . urlencode($entityID) . "\"></div>";
+    $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" $dims><div id=\"sdef_" . urlencode($entityID) . "\"></div>";
   } else {
     $lines .= "\"><a href=\"#\" onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
   }

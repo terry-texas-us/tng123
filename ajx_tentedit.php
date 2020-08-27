@@ -61,7 +61,7 @@ if ($type == "I" || $type == "C") {
 
   $persfamID = $familyID;
   $plus = $hname && $wname ? " + " : "";
-  $name = $text['family'] . " $familyID<br />$hname$plus$wname";
+  $name = $text['family'] . " $familyID<br>$hname$plus$wname";
 }
 
 if (is_numeric($event)) {
@@ -216,19 +216,19 @@ header("Content-type:text/html; charset=" . $session_charset);
         echo "<tr><td colspan=\"2\">&nbsp;</td></tr>\n";
       }
       ?>
-        <tr>
-            <td valign="top"><span class="normal"><?php echo $text['notes']; ?>: </span></td>
-            <td valign="top"><textarea cols="40" rows="3" name="usernote"></textarea></td>
-        </tr>
+      <tr>
+        <td valign="top"><span class="normal"><?php echo $text['notes']; ?>: </span></td>
+        <td valign="top"><textarea cols="40" rows="3" name="usernote"></textarea></td>
+      </tr>
     </table>
-    <br/>
-    <input type="submit" value="<?php echo $text['savechanges']; ?>"> <span id="tspinner" style="display:none"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif"/></span>
-    </form>
+  <br>
+  <input type="submit" value="<?php echo $text['savechanges']; ?>"> <span id="tspinner" style="display:none"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif"></span>
+  </form>
 
 </div>
 
 <div class="databack" style="margin:10px;border:0px;display:none" id="finished">
-    <p class="header"><?php echo $text['thanks']; ?></p>
-    <p class="normal"><?php echo $text['received']; ?><br/><br/>
-        <a href="#" onclick="tnglitbox.remove();"><?php echo $text['closewindow']; ?></a></p>
+  <p class="header"><?php echo $text['thanks']; ?></p>
+  <p class="normal"><?php echo $text['received']; ?><br><br>
+    <a href="#" onclick="tnglitbox.remove();"><?php echo $text['closewindow']; ?></a></p>
 </div>

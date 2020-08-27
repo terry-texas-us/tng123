@@ -8,10 +8,10 @@
 <td class="table-gutter">&nbsp;&nbsp;</td>
 </tr>
 <tr>
-    <td colspan="4" class="line"></td>
+  <td colspan="4" class="line"></td>
 </tr>
 </table>
-<br/>
+<br>
 <div class="footer">
   <?php
   $flags['basicfooter'] = true;

@@ -398,7 +398,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
       ?>
     </table>
 </div>
-<br/>
+<br>
 <?php
 tng_footer("");
 ?>

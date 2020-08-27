@@ -130,42 +130,42 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </td>
                     </tr>
 
-                    <tr>
-                        <td valign="top" colspan="2"><br/><?php echo $admtext['mapdimsind']; ?>:</td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['mapwidth']; ?>:</td>
-                        <td><input type="text" value="<?php echo $map['indw']; ?>" name="mapindw" onblur="this.value = validateWidth(this.value)"></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['mapheight']; ?>:</td>
-                        <td><input type="text" value="<?php echo $map['indh']; ?>" name="mapindh" onblur="this.value = validateHeight(this.value)"></td>
-                    </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><br><?php echo $admtext['mapdimsind']; ?>:</td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['mapwidth']; ?>:</td>
+                    <td><input type="text" value="<?php echo $map['indw']; ?>" name="mapindw" onblur="this.value = validateWidth(this.value)"></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['mapheight']; ?>:</td>
+                    <td><input type="text" value="<?php echo $map['indh']; ?>" name="mapindh" onblur="this.value = validateHeight(this.value)"></td>
+                  </tr>
 
-                    <tr>
-                        <td valign="top" colspan="2"><br/><?php echo $admtext['mapdimshst']; ?>:</td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['mapwidth']; ?>:</td>
-                        <td><input type="text" value="<?php echo $map['hstw']; ?>" name="maphstw" onblur="this.value = validateWidth(this.value)"></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['mapheight']; ?>:</td>
-                        <td><input type="text" value="<?php echo $map['hsth']; ?>" name="maphsth" onblur="this.value = validateHeight(this.value)"></td>
-                    </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><br><?php echo $admtext['mapdimshst']; ?>:</td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['mapwidth']; ?>:</td>
+                    <td><input type="text" value="<?php echo $map['hstw']; ?>" name="maphstw" onblur="this.value = validateWidth(this.value)"></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['mapheight']; ?>:</td>
+                    <td><input type="text" value="<?php echo $map['hsth']; ?>" name="maphsth" onblur="this.value = validateHeight(this.value)"></td>
+                  </tr>
 
-                    <tr>
-                        <td valign="top" colspan="2"><br/><?php echo $admtext['mapdimsadm']; ?>:</td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['mapwidth']; ?>:</td>
-                        <td><input type="text" value="<?php echo $map['admw']; ?>" name="mapadmw" onblur="this.value = validateWidth(this.value)"></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['mapheight']; ?>:</td>
-                        <td><input type="text" value="<?php echo $map['admh']; ?>" name="mapadmh" onblur="this.value = validateHeight(this.value)"></td>
-                    </tr>
-                    <tr>
+                  <tr>
+                    <td valign="top" colspan="2"><br><?php echo $admtext['mapdimsadm']; ?>:</td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['mapwidth']; ?>:</td>
+                    <td><input type="text" value="<?php echo $map['admw']; ?>" name="mapadmw" onblur="this.value = validateWidth(this.value)"></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['mapheight']; ?>:</td>
+                    <td><input type="text" value="<?php echo $map['admh']; ?>" name="mapadmh" onblur="this.value = validateHeight(this.value)"></td>
+                  </tr>
+                  <tr>
                         <td><?php echo $admtext['startoff']; ?>:</td>
                         <td>
                             <select name="startoff">
@@ -192,11 +192,11 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </td>
                     </tr>
 
-                    <tr>
-                        <td valign="top" colspan="2"><br/></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['conslpins']; ?>:</td>
+                  <tr>
+                    <td valign="top" colspan="2"><br></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['conslpins']; ?>:</td>
                         <td>
                             <select name="showallpins">
                                 <option value="0"<?php if (!$map['showallpins']) {
@@ -207,10 +207,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 } ?>><?php echo $admtext['no']; ?></option>
                             </select>
                         </td>
-                    </tr>
+                  </tr>
                 </table>
-                <br/>
-                <input type="hidden" name="pinplacelevel0" value="<?php echo $pinplacelevel0; ?>">
+              <br>
+              <input type="hidden" name="pinplacelevel0" value="<?php echo $pinplacelevel0; ?>">
                 <input type="hidden" name="pinplacelevel1" value="<?php echo $pinplacelevel1; ?>">
                 <input type="hidden" name="pinplacelevel2" value="<?php echo $pinplacelevel2; ?>">
                 <input type="hidden" name="pinplacelevel3" value="<?php echo $pinplacelevel3; ?>">

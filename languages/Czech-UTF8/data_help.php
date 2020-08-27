@@ -4,27 +4,27 @@ echo help_header("Nápověda: Import dat");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
-                <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Import / Export</span>
-            <p class="smaller menu">
-                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
-                <a href="#export" class="lightlink">GEDCOM Export</a>
-            </p>
-        </td>
-    </tr>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
+        <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Import / Export</span>
+      <p class="smaller menu">
+        <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+        <a href="#export" class="lightlink">GEDCOM Export</a>
+      </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
 
@@ -48,27 +48,27 @@ echo help_header("Nápověda: Import dat");
                 souborů, ale tyto nejsou z vaší složky GEDCOM, máte zřejmě problém s umístěním souborů. Ověřte svoji kořenovou složku (Admin/Nastavení/Základní nastavení) a vaši složku GEDCOM (Admin/Nastavení/Nastavení importu).</p>
 
             <span class="optionhead">Přijmout data pro všechny vlastní typy událostí</span>
-            <p>Váš soubor GEDCOM může obsahovat události, které bude TNG považovat za "vlastní" události. Normálně jsou vlastní typy událostí, které soubor GEDCOM obsahuje, vloženy do databáze, ale
-                ale je nastaveno, aby data byla ignorována. Stav vlastních typů událostí můžete změnit na "přijmout", aby události tohoto typu byly naimportovány (jinými slovy,
-                abyste nemuseli váš soubor importovat dvakrát). Pokud tuto volbu zaškrtnete, TNG automaticky nastaví všechny nové vlastní typy událostí na "přijmout" a všechny vaše události
-                budou importovány napoprvé.</p>
+          <p>Váš soubor GEDCOM může obsahovat události, které bude TNG považovat za "vlastní" události. Normálně jsou vlastní typy událostí, které soubor GEDCOM obsahuje, vloženy do databáze, ale
+            ale je nastaveno, aby data byla ignorována. Stav vlastních typů událostí můžete změnit na "přijmout", aby události tohoto typu byly naimportovány (jinými slovy,
+            abyste nemuseli váš soubor importovat dvakrát). Pokud tuto volbu zaškrtnete, TNG automaticky nastaví všechny nové vlastní typy událostí na "přijmout" a všechny vaše události
+            budou importovány napoprvé.</p>
 
-            <span class="optionhead">Importovat pouze vlastní typy událostí (nebudou vloženy, nahrazeny nebo přidány žádné údaje)</span>
-            <p>Zaškrtnutí této volby způsobí, že budou naimportovány pouze vlastní typy událostí (viz Admin/Vlastní typy událostí). Všechny další údaje budou ignorovány. To je ideální možnost
-                jak sestavit vaše výchozího nastavení, protože vám umožní vidět, které vlastní události vás soubor GEDCOM obsahuje. Můžete poté zvolit, které události
-                před importem vaší celé databáze přijmout a které odmítnout.</p>
+          <span class="optionhead">Importovat pouze vlastní typy událostí (nebudou vloženy, nahrazeny nebo přidány žádné údaje)</span>
+          <p>Zaškrtnutí této volby způsobí, že budou naimportovány pouze vlastní typy událostí (viz Admin/Vlastní typy událostí). Všechny další údaje budou ignorovány. To je ideální možnost
+            jak sestavit vaše výchozího nastavení, protože vám umožní vidět, které vlastní události vás soubor GEDCOM obsahuje. Můžete poté zvolit, které události
+            před importem vaší celé databáze přijmout a které odmítnout.</p>
 
-            <span class="optionhead">Cílový strom</span><br/>
-            <p>Vyberte strom, do kterého chcete importovat data (povinné). Pokud strom, kam mají data přijít, ještě neexistuje, klikněte na tlačítko "Přidat nový strom" a vytvořte jej.
-                Objeví se malé okno, které vám umožní zadat informace o novém stromu.</p>
+          <span class="optionhead">Cílový strom</span><br>
+          <p>Vyberte strom, do kterého chcete importovat data (povinné). Pokud strom, kam mají data přijít, ještě neexistuje, klikněte na tlačítko "Přidat nový strom" a vytvořte jej.
+            Objeví se malé okno, které vám umožní zadat informace o novém stromu.</p>
 
-            <span class="optionhead">Nahradit všechna aktuální data</span>
-            <p>Zvolíte-li tuto možnost, všechny vaše dřívější údaje ze souboru GEDCOM (osoby, rodiny, děti, prameny, úložiště pramenů, události, poznámky, spojení a citace; ne média a cokoli jiného)
-                budou před importem vymazána.
-                <strong>POZN.</strong>: Odkazy na média budou zachovány, pokud se ID čísla osoby/rodiny/pramenu/úložiště pramenů ve vašem novém souboru GEDCOM budou shodovat s ID čísly vašich dosavadních dat.
-                Většina genealogických programů přiřazují stálá ID čísla každé osobě/rodině/pramenu/úložišti pramenů, ale některé ne. Pokud máte k datům připojeny nějaké položky médií, před importem, prosím, zkontrolujte,
-                zda se ID čísla ve vašem novém souboru GEDCOM shodují, bez ohledu na to, kterou z těchto možností máte vybránu. Je také vhodné vytvořit před importem zálohu vašich tabulek
-                (viz Admin/Obslužné programy o vytvoření zálohy).</p>
+          <span class="optionhead">Nahradit všechna aktuální data</span>
+          <p>Zvolíte-li tuto možnost, všechny vaše dřívější údaje ze souboru GEDCOM (osoby, rodiny, děti, prameny, úložiště pramenů, události, poznámky, spojení a citace; ne média a cokoli jiného)
+            budou před importem vymazána.
+            <strong>POZN.</strong>: Odkazy na média budou zachovány, pokud se ID čísla osoby/rodiny/pramenu/úložiště pramenů ve vašem novém souboru GEDCOM budou shodovat s ID čísly vašich dosavadních dat.
+            Většina genealogických programů přiřazují stálá ID čísla každé osobě/rodině/pramenu/úložišti pramenů, ale některé ne. Pokud máte k datům připojeny nějaké položky médií, před importem, prosím, zkontrolujte,
+            zda se ID čísla ve vašem novém souboru GEDCOM shodují, bez ohledu na to, kterou z těchto možností máte vybránu. Je také vhodné vytvořit před importem zálohu vašich tabulek
+            (viz Admin/Obslužné programy o vytvoření zálohy).</p>
 
             <span class="optionhead">Nahradit pouze odpovídající záznamy</span>
             <p>S touto volbou jsou přidány nové záznamy a odpovídající záznamy jsou nahrazeny (shoda je podmíněna pouze ID čísly). Staré údaje nejsou odstraněny.</p>

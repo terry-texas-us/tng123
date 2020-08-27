@@ -12,7 +12,7 @@ $ref = "tngbookmarks_$newroot";
 tng_header($text['bookmarks'], $flags);
 ?>
 <!-- DED added alt='' & changed span to div in next line-->
-<h1 class="header"><span class="headericon" id="bookmarks-hdr-icon"></span><?php echo $text['bookmarks']; ?></h1><br clear="left"/>
+<h1 class="header"><span class="headericon" id="bookmarks-hdr-icon"></span><?php echo $text['bookmarks']; ?></h1><br clear="left">
 <?php
 echo "<p class=\"normal\">" . $text['bkmkvis'] . "</p>";
 
@@ -29,6 +29,6 @@ if (isset($_COOKIE[$ref])) {
 } else {
   echo "<li>0 {$text['bookmarks']}</li>";
 }
-echo "</ul><br />\n";
+echo "</ul><br>\n";
 tng_footer("");
 ?>

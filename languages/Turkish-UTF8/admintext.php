@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Mevcut Mezarlık Bilgileri";
     $admtext['newceminfo'] = "Yeni Mezarlık Bilgileri";
     $admtext['maptoupload'] = "Yüklenecek harita resmi";
-    $admtext['mapfilenamefolder'] = "Harita Dosyası Adı<br/>Mezar Taşları klasörü içinde";
+    $admtext['mapfilenamefolder'] = "Harita Dosyası Adı<br>Mezar Taşları klasörü içinde";
     $admtext['ifmapuploaded'] = "Dosya, mezar taşları klasörünüze önceden yüklenmişse, bu alanı boş bırakın.";
     $admtext['requiredmap'] = "Bir harita kullanıyorsanız gereklidir. Bu, dosya yüklendikten sonra <em>mezar taşları klasöründeki</em> dosyanızın adına ve konumuna karşılık gelmelidir. Örneğin, mezar taşı klasörünüz <em>mezar taşları</em>,	olarak adlandırılıyorsa ve dosyanızın <em>harita.jpg</em> olarak adlandırılmasını ve <em>benim haritalarım</em> adlı bir mezar taşı alt klasörüne gitmesini istiyorsanız bu alana <em>benim haritalarım/harita.jpg</em> yazarsınız.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Eklendi";
     $admtext['enternew'] = "Yeni gir";
     $admtext['pleaseenter'] = "Lütfen girin ";
-    $admtext['netscapereload'] = "Netscape kullanıcıları: <br/>Yeniliğinizi görmek için Mezarlıklar sayfasını yeniden yüklemelisiniz";
+    $admtext['netscapereload'] = "Netscape kullanıcıları: <br>Yeniliğinizi görmek için Mezarlıklar sayfasını yeniden yüklemelisiniz";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "GEDCOM içe aktarılıyor...<br/>(bu birkaç dakika sürebilir)";
+    $admtext['importinggedcom'] = "GEDCOM içe aktarılıyor...<br>(bu birkaç dakika sürebilir)";
     $admtext['ifimportfails'] = "İçe aktarma tamamlanamadığında,";
     $admtext['opened'] = "açılıyor...";
     $admtext['toresume'] = "içe aktarmaya devam etmek için";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Depolar İçin...";
     $admtext['noevtypes'] = "Hiçbir etkinlik türü mevcut değil.";
     $admtext['DESI'] = "Nesilden Çıkar";
-    $admtext['allnone'] = "Her dil için bir ekran mesajı girin,<br />veya hepsini boş bırakın ve yukarıdaki bir ekran mesajını girin.";
+    $admtext['allnone'] = "Her dil için bir ekran mesajı girin,<br>veya hepsini boş bırakın ve yukarıdaki bir ekran mesajını girin.";
     $admtext['assocwith'] = "İlişkili";
     $admtext['BAPM'] = "Ad Verildi";
     $admtext['umps'] = "GEDCOM dosyanız PHP kurulumunuzun izin verdiği maksimum boyuttan büyük olabilir. Sağlayıcınızdan 'upload_max_filesize' değerini artırmasını isteyebilir veya onun yerine dosyanızı sitenizdeki 'gedcom' klasörüne kopyalayıp oradan içe aktarabilirsiniz.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Önek";
     $admtext['chkdel'] = "Soldaki öğeyi silmek için boş kutuyu işaretleyin";
     //added in 9.0.0
-    $admtext['choosedef'] = "<br/>Varsayılan<br/>fotoğrafını seç"; //has to fit in a small box
+    $admtext['choosedef'] = "<br>Varsayılan<br>fotoğrafını seç"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Onay Tarihi (LDS)";
     $admtext['confplace'] = "Onay Yeri (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Minik Resimler Oluştur";
     $admtext['genthumbsdesc'] = "Mevcut minik resimler olmadan otomatik olarak tüm fotoğrafların daha küçük sürümlerini oluşturun.";
     $admtext['thumbsgenerated'] = "Minik resimler oluşturuldu";
-    $admtext['makedefault'] = "Varsayılan Yap";
-    $admtext['filewithinhs'] = "Mezar taşı klasöründeki yol <br/>(alt klasör ve dosya adı)";
-    $admtext['recsupdated'] = "Kayıtlar güncellendi";
+  $admtext['makedefault'] = "Varsayılan Yap";
+  $admtext['filewithinhs'] = "Mezar taşı klasöründeki yol <br>(alt klasör ve dosya adı)";
+  $admtext['recsupdated'] = "Kayıtlar güncellendi";
     $admtext['removedef'] = "Varsayılan fotoğrafı kaldır";
     $admtext['numlinkhs'] = "Bu mezar taşına bağlanacak kişi sayısı";
     $admtext['sortheadstones'] = "Mezar Taşlarını Sırala";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Gereklidir. Bu, dosya yüklendikten sonra <em>koleksiyon klasöründeki</em> dosyanızın adına ve konumuna karşılık gelmelidir. Örneğin, bir fotoğraf yüklediğinizi ve fotoğraf klasörünüzün <em>fotoğraflar</em> olarak adlandırıldığını varsayalım. Dosyanızın <em>fotoğrafım.jpg</em> olarak adlandırılmasını ve <em>yeni fotoğraflar</em> adlı bir fotoğraf alt klasörüne girmesini istiyorsanız, bu alana: <em>yeni fotoğraflar/fotoğrafım.jpg</em> girersiniz.";
     $admtext['leaveblankphoto'] = "Dosya zaten yüklenmişse bu alanı boş bırakın.";
     $admtext['thumbconflicts'] = "Yol, izinler, boyut veya dosya adı sorunları nedeniyle minik resimler oluşturulmadı";
-    $admtext['showmap'] = "Bu öğe görüntülendiğinde mezarlık haritasını ve medyayı göster";
-    $admtext['bodytext'] = "<strong>VEYA</strong><br/>Gövde Metni";
-    $admtext['usenl'] = "Satır sonlarını ekranda HTML'ye dönüştür";
+  $admtext['showmap'] = "Bu öğe görüntülendiğinde mezarlık haritasını ve medyayı göster";
+  $admtext['bodytext'] = "<strong>VEYA</strong><br>Gövde Metni";
+  $admtext['usenl'] = "Satır sonlarını ekranda HTML'ye dönüştür";
     $admtext['newwin'] = "Yeni pencerede aç";
     $admtext['modifymedia'] = "Mevcut Medyayı Düzenle";
     $admtext['addnewmedia'] = "Yeni Medya Ekle";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Varsayalım, doğum tarihi yoksa";
     $admtext['persliving'] = "Kişi yaşıyor";
     $admtext['persdead'] = "Kişi vefat etti";
-    $admtext['nodeathdate'] = "Varsayalım, vefat tarihi yoksa,<br />daha eskiden vefat etmişse";
+    $admtext['nodeathdate'] = "Varsayalım, vefat tarihi yoksa,<br>daha eskiden vefat etmişse";
     $admtext['pedconfigsettings'] = "Grafik Ayarları";
     $admtext['usepopups'] = "İlk Görüntüleme";
     $admtext['maxpedgens'] = "Maksimum Nesiller";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Yerleri Birleştirme";
     $admtext['findmerge'] = "Birleştirme Adaylarını Bul";
     $admtext['selectplacemerge'] = "Birleştirilecek Yerleri Seçin";
-    $admtext['mcol1'] = "Birleştir<br/>bunları<br/>(sil)";
-    $admtext['mcol2'] = "bunun<br/>içine<br/>(devam et)";
+    $admtext['mcol1'] = "Birleştir<br>bunları<br>(sil)";
+    $admtext['mcol2'] = "bunun<br>içine<br>(devam et)";
     $admtext['pmsucc'] = "Yer birleştirme işlemi başarılı";
     $admtext['nomerge'] = "Birleştirilecek bir şey yok";
     $admtext['enterkeep'] = "Lütfen bir birleştirme hedefi seçin.";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Lütfen bir dil görüntüleme adı girin.";
     $admtext['enterlangfolder'] = "Lütfen bu dilin dosyalarının saklanacağı klasörün adını girin.";
     $admtext['newlanguageinfo'] = "Yeni Dil Bilgisi";
-    $admtext['langdisplay'] = "Bu dilin adı<br/>ziyaretçiler için görüntüleneceği şekliyle";
+    $admtext['langdisplay'] = "Bu dilin adı<br>ziyaretçiler için görüntüleneceği şekliyle";
     $admtext['createlanguage'] = "Yeni bir dil için bir kayıt oluşturun";
     $admtext['nolanguages'] = "Dil kaydı yok";
     $admtext['conflangdelete'] = "Bu dili silmek istediğinizden emin misiniz?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Etkinlik ve Eylem seçin";
     $admtext['suggested'] = "Önerildi";
-    $admtext['usernotes'] = "<br />Önerilen değişiklik<br /> ile ilgili notlar(kaydedilmeyecek)";
+    $admtext['usernotes'] = "<br>Önerilen değişiklik<br> ile ilgili notlar(kaydedilmeyecek)";
     $admtext['postdate'] = "Yayınlanan";
     $admtext['savedel'] = "Kaydet ve Sil";
     $admtext['postpone'] = "Ertelenen";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "Kontrol Et";
 $admtext['generate'] = "Oluştur";
 $admtext['update'] = "Güncelle";
 $admtext['confdeleteevent'] = "Bu etkinliği silmek istediğinizden emin misiniz?";
-$admtext['existinglinks'] = "Mevcut Bağlantılar:<br/>(silmek için işaretleyin)";
+$admtext['existinglinks'] = "Mevcut Bağlantılar:<br>(silmek için işaretleyin)";
 $admtext['lowersortfirst'] = "İlk önce düşük sayıları sıralayın. Ondalık sayılar da kullanılabilir.";
 $admtext['personsname'] = "Kişinin Adı";
 $admtext['tablecreation'] = "Tablo Oluşturma";

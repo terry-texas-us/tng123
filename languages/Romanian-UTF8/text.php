@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "the half sister of";
     $text['halfsibling'] = "the half sibling of";
     //changed in 8.0.0
-    $text['gencheck'] = "Maxim generatii <br />verificate";
+    $text['gencheck'] = "Maxim generatii <br>verificate";
     $text['mcousin'] = "varul de gradul xxx a yyy lui";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "vara de gradul xxx a yyy lui";  //female cousin
     $text['cousin'] = "varul de gard xxx a yyy lui";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Fast&nbsp;Mutating";
     $text['alltypes'] = "All Types";
     $text['allgroups'] = "All Groups";
-    $text['Ydna_LITbox_info'] = "Test(s) linked to this person were not necessarily taken by this person.<br />The 'Haplogroup' column displays data in red if the result is 'Predicted' or green if the test is 'Confirmed'";
+    $text['Ydna_LITbox_info'] = "Test(s) linked to this person were not necessarily taken by this person.<br>The 'Haplogroup' column displays data in red if the result is 'Predicted' or green if the test is 'Confirmed'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

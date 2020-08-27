@@ -18,7 +18,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-	<span class="subhead"><strong><?php echo $admtext['addmedia']; ?></strong><br/>
+	<span class="subhead"><strong><?php echo $admtext['addmedia']; ?></strong><br>
 	<form name="find2" onsubmit="getNewMedia(this,1); return false;">
 	<table>
 		<tr>
@@ -60,7 +60,7 @@ tng_free_result($treeresult);
 			</td>
 			<td>
 				<input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-				<span id="spinner1" style="display:none"><img src="img/spinner.gif"/></span>
+				<span id="spinner1" style="display:none"><img src="img/spinner.gif"></span>
 			</td>
 		</tr>
 	</table>
@@ -101,6 +101,6 @@ while ($cemrow = tng_fetch_assoc($cemresult)) {
 	</table>
 
 	</form>
-	<div id="newmedia" style="width:720px;height:430px;overflow:auto"></div><br/>
+	<div id="newmedia" style="width:720px;height:430px;overflow:auto"></div><br>
 
 </div>

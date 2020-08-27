@@ -171,9 +171,9 @@ if ($lines) {
     //Log entries have to start with a date.  This test is necessary because some old log entries
     //contain
     if (preg_match("/^\w{3} \d{2} \w{3} \d{4} \d{2}:\d{2}:\d{2} \w{2}/i", $line, $matches)) {
-      //New log entries have a <br /> more than 20 characters from the end,
+      //New log entries have a <br> more than 20 characters from the end,
       //and less than 150 characters from the beginning
-      $br = strpos($line, "<br />");
+      $br = strpos($line, "<br>");
       if ($br !== false) {
         if (strlen($line) - $br > 20 || $br < 150) {
           $newLogFormat = true;
@@ -189,7 +189,7 @@ if ($lines) {
       }
       $actionCount++;
       //Suppress any <hr> elements in the first line of the log entry.
-      $heading = str_replace("<hr />", "", substr($line, 0, $br));
+      $heading = str_replace("<hr>", "", substr($line, 0, $br));
       //The rest of the log entry goes into the details.
       $logEntryDetails = substr($line, $br + 6);
       $type1Or2EntryIsActive = true;
@@ -232,11 +232,11 @@ if ($lines) {
         //Couldn't parse the alternate pattern - treat this as an unrecognizable entry
         if ($type3EntryIsActive) {
           //Add the unrecognized entry at the beginning of existing details
-          $logEntryDetails = "$line</span><br />\n$logEntryDetails"; //add </span> to close a chronically unclosed span in the log.
+          $logEntryDetails = "$line</span><br>\n$logEntryDetails"; //add </span> to close a chronically unclosed span in the log.
         } else {
           if ($type1Or2EntryIsActive) {
             //Add the unrecognized entry at the end of the existing details
-            $logEntryDetails .= "<br />$line";
+            $logEntryDetails .= "<br>$line";
           } else {
             //There's no outstanding log entry to add this to. Just display it without any compression controls
             echo "<tr><td class=\"databack mmpadleft\" colspan=\"$nColumns\"><b>?? </b>$line</td></tr>\n";

@@ -147,26 +147,26 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             </div>
                         </div>
 
-                        <div class="cleared"></div>
+                      <div class="cleared"></div>
                     </div>
-                    <div class="art-layout-cell art-content">
-                        <div class="art-post">
-                            <div class="art-post-body">
-                                <div class="art-post-inner art-article">
-                                    <h2 class="art-postheader"><?php echo getTemplateMessage('t9_welcome'); ?></h2>
-                                    <div class="cleared"></div>
-                                    <div class="art-postcontent">
+                  <div class="art-layout-cell art-content">
+                    <div class="art-post">
+                      <div class="art-post-body">
+                        <div class="art-post-inner art-article">
+                          <h2 class="art-postheader"><?php echo getTemplateMessage('t9_welcome'); ?></h2>
+                          <div class="cleared"></div>
+                          <div class="art-postcontent">
 
-                                        <img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t9_mainimage']; ?>" alt="" style="float:left;" class="temppreview"/>
-                                      <?php
-                                      if ($chooselang) {
-                                        $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
-                                        $result = tng_query($query);
-                                        $numlangs = tng_num_rows($result);
+                            <img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t9_mainimage']; ?>" alt="" style="float:left;" class="temppreview">
+                            <?php
+                            if ($chooselang) {
+                              $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
+                              $result = tng_query($query);
+                              $numlangs = tng_num_rows($result);
 
-                                        if ($numlangs > 1) {
-                                          echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                          echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                              if ($numlangs > 1) {
+                                echo getFORM("savelanguage2", "get", "tngmenu3", "");
+                                echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
 
                                           while ($row = tng_fetch_assoc($result)) {
                                             echo "<option value=\"{$row['languageID']}\"";
@@ -176,7 +176,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                             echo ">{$row['display']}</option>\n";
                                           }
                                           echo "</select>\n";
-                                          echo "<input type=\"hidden\" name=\"instance\" value=\"3\" /></form>\n";
+                                echo "<input type=\"hidden\" name=\"instance\" value=\"3\"></form>\n";
                                         }
 
                                         tng_free_result($result);
@@ -199,20 +199,20 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                           echo "<p class=\"subhead\">$loginContent</p>\n";
                                         }
                                       }
-                                      echo getTemplateMessage('t9_mainpara');
-                                      ?>
-                                        <h4><?php echo $text['contactus']; ?></h4>
-                                        <p><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image" class="emailimg"/><?php echo $text['contactus_long']; ?></p>
+                            echo getTemplateMessage('t9_mainpara');
+                            ?>
+                            <h4><?php echo $text['contactus']; ?></h4>
+                            <p><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?></p>
 
-                                    </div>
-                                    <div class="cleared"></div>
-                                </div>
-
-                                <div class="cleared"></div>
-                            </div>
+                          </div>
+                          <div class="cleared"></div>
                         </div>
 
                         <div class="cleared"></div>
+                      </div>
+                    </div>
+
+                    <div class="cleared"></div>
                     </div>
                     <div class="art-layout-cell art-sidebar2">
                         <div class="art-block">
@@ -237,29 +237,29 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <div class="art-blockcontent-bl"></div>
                                     <div class="art-blockcontent-br"></div>
                                     <div class="art-blockcontent-tc"></div>
-                                    <div class="art-blockcontent-bc"></div>
-                                    <div class="art-blockcontent-cl"></div>
-                                    <div class="art-blockcontent-cr"></div>
-                                    <div class="art-blockcontent-cc"></div>
-                                    <div class="art-blockcontent-body">
-                                        <div>
-                                            <form method="get" name="searchform" action="search.php">
-                                                <label for="myfirstname"><?php echo $text['firstname']; ?></label>
-                                                <input type="text" value="" name="myfirstname" style="width: 95%;"/>
-                                                <label for="mylastname"><?php echo $text['lastname']; ?></label>
-                                                <input type="text" value="" name="mylastname" style="width: 95%;"/>
-                                                <input type="hidden" name="mybool" value="AND"/>
-                                                <input type="submit" style="margin-top:5px; margin-bottom:5px" value="<?php echo $text['search']; ?>"/>
-                                            </form>
-                                            <ul class="home-menus">
-                                                <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
-                                                <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="cleared"></div>
+                                  <div class="art-blockcontent-bc"></div>
+                                  <div class="art-blockcontent-cl"></div>
+                                  <div class="art-blockcontent-cr"></div>
+                                  <div class="art-blockcontent-cc"></div>
+                                  <div class="art-blockcontent-body">
+                                    <div>
+                                      <form method="get" name="searchform" action="search.php">
+                                        <label for="myfirstname"><?php echo $text['firstname']; ?></label>
+                                        <input type="text" value="" name="myfirstname" style="width: 95%;">
+                                        <label for="mylastname"><?php echo $text['lastname']; ?></label>
+                                        <input type="text" value="" name="mylastname" style="width: 95%;">
+                                        <input type="hidden" name="mybool" value="AND">
+                                        <input type="submit" style="margin-top:5px; margin-bottom:5px" value="<?php echo $text['search']; ?>">
+                                      </form>
+                                      <ul class="home-menus">
+                                        <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
+                                        <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                                      </ul>
                                     </div>
+                                    <div class="cleared"></div>
+                                  </div>
                                 </div>
-                                <div class="cleared"></div>
+                              <div class="cleared"></div>
                             </div>
                         </div>
                         <div class="art-block">
@@ -360,14 +360,14 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                       echo tng_footer($flags);
                       ?>
                     </div>
-                    <div class="cleared"></div>
+                  <div class="cleared"></div>
                 </div>
             </div>
-            <div class="cleared"></div>
+          <div class="cleared"></div>
         </div>
     </div>
-    <div class="cleared"></div>
-    <br/><br/>
+  <div class="cleared"></div>
+  <br><br>
 </div>
 
 </body>

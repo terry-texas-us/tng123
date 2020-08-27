@@ -28,16 +28,16 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($text['tree'] . ": " . $row['treename'], $flags);
 ?>
 
-    <h1 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h1><br clear="all"/>
+  <h1 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h1><br clear="all">
 
-    <table border="0" cellspacing="1" cellpadding="4" class="whiteback normal">
-      <?php
-      if ($row['treename']) {
-        showFact($text['treename'], $row['treename']);
-      }
-      if ($row['description']) {
-        showFact($text['description'], $row['description']);
-      }
+  <table border="0" cellspacing="1" cellpadding="4" class="whiteback normal">
+    <?php
+    if ($row['treename']) {
+      showFact($text['treename'], $row['treename']);
+    }
+    if ($row['description']) {
+      showFact($text['description'], $row['description']);
+    }
 
       showFact($text['individuals'], $row['pcount'], true);
 
@@ -81,11 +81,11 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
       }
       ?>
     </table>
-    <br/>
+  <br>
 <?php
 echo "<a href=\"$statistics_url\">{$text['morestats']}</a>\n";
 ?>
-    <br/><br/>
+  <br><br>
 
 <?php
 tng_footer("");

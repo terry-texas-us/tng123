@@ -24,7 +24,7 @@ if (!isset($debug)) {
   $debug = false;
 }
 
-list($query, $numtrees, $treenum, $trees, $treename) = getOrderedTreesList2($assignedtree, $trees_table);
+[$query, $numtrees, $treenum, $trees, $treename] = getOrderedTreesList2($assignedtree, $trees_table);
 
 $helplang = findhelp("data_help.php");
 
@@ -99,40 +99,40 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
 ?>
 
 <form action="admin_gedimport.php" target="results" name="form1" method="post" ENCTYPE="multipart/form-data" onsubmit="return checkFile(this);">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <div class="normal">
-                    <em><?php echo $admtext['addreplacedata']; ?></em><br/><br/>
+  <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <div class="normal">
+          <em><?php echo $admtext['addreplacedata']; ?></em><br><br>
 
-                    <p class="subhead"><strong><?php echo $admtext['importgedcom']; ?>:</strong></p>
-                    <table border="0" cellpadding="1" class="normal">
-                        <tr>
-                            <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
-                            <td><input type="file" name="remotefile" size="50"></td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;&nbsp;<strong><?php echo $admtext['text_or']; ?></strong> &nbsp;<?php echo $admtext['onwebserver']; ?>:</td>
-                            <td><input type="text" name="database" id="database" size="50"><input type="hidden" id="database_org" value=""><input type="hidden" id="database_last" value=""> <input type="button"
-                                                                                                                                                                                                    value="<?php echo $admtext['select'] . "..."; ?>"
-                                                                                                                                                                                                    name="gedselect" onclick="FilePicker('database','gedcom');">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><br/>
-                                <input type="checkbox" name="allevents" value="yes"
-                                       onclick="if(document.form1.allevents.checked && document.form1.eventsonly.checked) {document.form1.eventsonly.checked ='';toggleSections(false)}"/> <?php echo $admtext['allevents']; ?>&nbsp;&nbsp;
-                                <input type="checkbox" name="eventsonly" value="yes" onclick="toggleSections(this.checked);"/> <?php echo $admtext['eventsonly']; ?>
-                            </td>
-                        </tr>
-                    </table>
-            </td>
-        </tr>
-        <tr class="databack">
-            <td class="tngshadow" id="desttree">
-                <p class="subhead"><strong><?php echo $admtext['selectexisting']; ?>:</strong></p>
-                <table border="0" cellpadding="1" class="normal">
-                    <tr id="desttree2">
+          <p class="subhead"><strong><?php echo $admtext['importgedcom']; ?>:</strong></p>
+          <table border="0" cellpadding="1" class="normal">
+            <tr>
+              <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
+              <td><input type="file" name="remotefile" size="50"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<strong><?php echo $admtext['text_or']; ?></strong> &nbsp;<?php echo $admtext['onwebserver']; ?>:</td>
+              <td><input type="text" name="database" id="database" size="50"><input type="hidden" id="database_org" value=""><input type="hidden" id="database_last" value=""> <input type="button"
+                                                                                                                                                                                      value="<?php echo $admtext['select'] . "..."; ?>"
+                                                                                                                                                                                      name="gedselect" onclick="FilePicker('database','gedcom');">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><br>
+                <input type="checkbox" name="allevents" value="yes"
+                       onclick="if(document.form1.allevents.checked && document.form1.eventsonly.checked) {document.form1.eventsonly.checked ='';toggleSections(false)}"> <?php echo $admtext['allevents']; ?>&nbsp;&nbsp;
+                <input type="checkbox" name="eventsonly" value="yes" onclick="toggleSections(this.checked);"> <?php echo $admtext['eventsonly']; ?>
+              </td>
+            </tr>
+          </table>
+      </td>
+    </tr>
+    <tr class="databack">
+      <td class="tngshadow" id="desttree">
+        <p class="subhead"><strong><?php echo $admtext['selectexisting']; ?>:</strong></p>
+        <table border="0" cellpadding="1" class="normal">
+          <tr id="desttree2">
                         <td>&nbsp;&nbsp;<?php echo $admtext['desttree']; ?>:</td>
                         <td>
                             <select name="tree1" id="tree1" onchange="getBranches(this,this.selectedIndex);">
@@ -181,50 +181,50 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             <input type="radio" name="del" value="yes"<?php if ($tngimpcfg['defimpopt'] == 1) {
                               echo " checked=\"checked\"";
                             } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['allcurrentdata']; ?> &nbsp;
-                            <input type="radio" name="del" value="match"<?php if (!$tngimpcfg['defimpopt']) {
-                              echo " checked=\"checked\"";
-                            } ?> onclick="toggleNorecalcdiv(1); toggleAppenddiv(0);"> <?php echo $admtext['matchingonly']; ?> &nbsp;
-                            <input type="radio" name="del" value="no"<?php if ($tngimpcfg['defimpopt'] == 2) {
-                              echo " checked=\"checked\"";
-                            } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['donotreplace']; ?> &nbsp;
-                            <input type="radio" name="del" value="append"<?php if ($tngimpcfg['defimpopt'] == 3) {
-                              echo " checked=\"checked\"";
-                            } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(1);"> <?php echo $admtext['appendall']; ?><br/><br/>
-                            <span class="smaller"><em><?php echo $admtext['imphints']; ?></em></span>
+                          <input type="radio" name="del" value="match"<?php if (!$tngimpcfg['defimpopt']) {
+                            echo " checked=\"checked\"";
+                          } ?> onclick="toggleNorecalcdiv(1); toggleAppenddiv(0);"> <?php echo $admtext['matchingonly']; ?> &nbsp;
+                          <input type="radio" name="del" value="no"<?php if ($tngimpcfg['defimpopt'] == 2) {
+                            echo " checked=\"checked\"";
+                          } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['donotreplace']; ?> &nbsp;
+                          <input type="radio" name="del" value="append"<?php if ($tngimpcfg['defimpopt'] == 3) {
+                            echo " checked=\"checked\"";
+                          } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(1);"> <?php echo $admtext['appendall']; ?><br><br>
+                          <span class="smaller"><em><?php echo $admtext['imphints']; ?></em></span>
                         </td>
                     </tr>
-                    <tr id="ioptions">
-                        <td valign="top">
-                            <br/>
-                            <div><input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
-                            <div id="norecalcdiv"<?php if ($tngimpcfg['defimpopt']) {
-                              echo " style=\"display:none\"";
-                            } ?>>
-                                <input type="checkbox" name="norecalc" value="1"> <?php echo $admtext['norecalc']; ?><br>
-                                <input type="checkbox" name="neweronly" value="1"> <?php echo $admtext['neweronly']; ?><br>
-                            </div>
-                            <div><input type="checkbox" name="importmedia" value="1"> <?php echo $admtext['importmedia']; ?></div>
-                            <div><input type="checkbox" name="importlatlong" value="1"> <?php echo $admtext['importlatlong']; ?></div>
-                        </td>
-                        <td valign="top">
-                            <br/>
-                            <div id="appenddiv"<?php if ($tngimpcfg['defimpopt'] != 3) {
-                              echo " style=\"display:none;\"";
-                            } ?>>
-                                <input type="radio" name="offsetchoice" value="auto" checked> <?php echo $admtext['autooffset']; ?>&nbsp;<br/>
-                                <input type="radio" name="offsetchoice" value="user"> <?php echo $admtext['useroffset']; ?>&nbsp;<input type="text" name="useroffset" size="10" maxlength="9">
-                            </div>
-                        </td>
-                    </tr>
+                  <tr id="ioptions">
+                    <td valign="top">
+                      <br>
+                      <div><input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
+                      <div id="norecalcdiv"<?php if ($tngimpcfg['defimpopt']) {
+                        echo " style=\"display:none\"";
+                      } ?>>
+                        <input type="checkbox" name="norecalc" value="1"> <?php echo $admtext['norecalc']; ?><br>
+                        <input type="checkbox" name="neweronly" value="1"> <?php echo $admtext['neweronly']; ?><br>
+                      </div>
+                      <div><input type="checkbox" name="importmedia" value="1"> <?php echo $admtext['importmedia']; ?></div>
+                      <div><input type="checkbox" name="importlatlong" value="1"> <?php echo $admtext['importlatlong']; ?></div>
+                    </td>
+                    <td valign="top">
+                      <br>
+                      <div id="appenddiv"<?php if ($tngimpcfg['defimpopt'] != 3) {
+                        echo " style=\"display:none;\"";
+                      } ?>>
+                        <input type="radio" name="offsetchoice" value="auto" checked> <?php echo $admtext['autooffset']; ?>&nbsp;<br>
+                        <input type="radio" name="offsetchoice" value="user"> <?php echo $admtext['useroffset']; ?>&nbsp;<input type="text" name="useroffset" size="10" maxlength="9">
+                      </div>
+                    </td>
+                  </tr>
                 </table>
-                <br/>
-                <div style="float:right" class="normal">
-                    <input type="checkbox" name="old" id="old" value="1" onclick="toggleTarget(document.form1);"/> <?php echo $admtext['oldimport']; ?>
-                </div>
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['importdata']; ?>">
+              <br>
+              <div style="float:right" class="normal">
+                <input type="checkbox" name="old" id="old" value="1" onclick="toggleTarget(document.form1);"> <?php echo $admtext['oldimport']; ?>
+              </div>
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['importdata']; ?>">
             </td>
         </tr>
-    </table>
+  </table>
 </form>
 <iframe id="results" height="<?php if ($debug) {
   echo "30";

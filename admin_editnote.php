@@ -44,8 +44,8 @@ header("Content-type:text/html; charset=" . $session_charset);
             </td>
         </tr>
     </table>
-    <br/>
-    <input type="hidden" name="xID" value="<?php echo $row['xID']; ?>">
+  <br>
+  <input type="hidden" name="xID" value="<?php echo $row['xID']; ?>">
     <input type="hidden" name="ID" value="<?php echo $noteID; ?>">
     <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
     <input type="hidden" name="persfamID" value="<?php echo $row['persfamID']; ?>">

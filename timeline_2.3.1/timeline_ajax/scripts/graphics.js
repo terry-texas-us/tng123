@@ -54,7 +54,7 @@ SimileAjax.Graphics.createTranslucentImage = SimileAjax.Graphics.pngIsTranslucen
 SimileAjax.Graphics._createTranslucentImageHTML1 = function (url, verticalAlign) {
     return "<img src=\"" + url + "\"" +
         (verticalAlign != null ? " style=\"vertical-align: " + verticalAlign + ";\"" : "") +
-        " />";
+        ">";
 };
 SimileAjax.Graphics._createTranslucentImageHTML2 = function (url, verticalAlign) {
     var style =
@@ -62,7 +62,7 @@ SimileAjax.Graphics._createTranslucentImageHTML2 = function (url, verticalAlign)
         "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + url + "', sizingMethod='image');" +
         (verticalAlign != null ? " vertical-align: " + verticalAlign + ";" : "");
 
-    return "<img src='" + url + "' style=\"" + style + "\" />";
+  return "<img src='" + url + "' style=\"" + style + "\">";
 };
 
 /**

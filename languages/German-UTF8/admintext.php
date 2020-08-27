@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Für Aufbewahrungsorte...";
     $admtext['noevtypes'] = "Keine Ereignistypen vorhanden.";
     $admtext['DESI'] = "Interessent an Nachkommen";
-    $admtext['allnone'] = "Geben Sie für jede Sprache einen Anzeigetext ein,<br />oder lassen Sie alle Felder leer und geben Sie oben einen einzigen Anzeigetext ein.";
+    $admtext['allnone'] = "Geben Sie für jede Sprache einen Anzeigetext ein,<br>oder lassen Sie alle Felder leer und geben Sie oben einen einzigen Anzeigetext ein.";
     $admtext['assocwith'] = "Verbunden mit";
     $admtext['BAPM'] = "Taufe";
     $admtext['umps'] = "Die Größe Ihrer hochzuladenden GEDCOM-Datei überschreitet das in Ihrer PHP-Installation erlaubte Maximum. Sie können Ihren Provider bitten, den Wert 'upload_max_filesize' zu erhöhen. Alternativ können Sie Ihre Datei in das 'gedcom'-Verzeichnis Ihrer Website hochladen von dort aus importieren.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Präfix";
     $admtext['chkdel'] = "Kästchen ankreuzen, um Element auf der linken Seite zu löschen";
     //added in 9.0.0
-    $admtext['choosedef'] = "Standard<br />-Foto<br />auswählen"; //has to fit in a small box
+    $admtext['choosedef'] = "Standard<br>-Foto<br>auswählen"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Datum der Konfirmation (LDS)";
     $admtext['confplace'] = "Ort der Konfirmation (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Erforderlich. Muss mit dem Pfad- und Dateinamen einer Datei <em>im Foto-Verzeichnis</em> übereinstimmen. Falls Ihr Foto-Verzeichnis z.B. <em>photos</em> heißt und die Datei <em>MeinFoto.jpg</em> in einem Unterverzeichnis <em>NeueFotos</em> gespeichert werden soll, tragen Sie <em>NeueFotos/MeinFoto.jpg</em> in dieses Feld ein.";
     $admtext['leaveblankphoto'] = "Lassen Sie dieses Feld leer, falls die Dateien bereits in das Foto-Verzeichnis hochgeladen wurden.";
     $admtext['thumbconflicts'] = "Vorschaubild wurde aufgrund von Problemen mit Pfad, Berechtigungen oder Dateinamen nicht erzeugt";
-    $admtext['showmap'] = "Zeige stets Friedhofskarte und -fotos, wenn dieses Bild angezeigt wird";
-    $admtext['bodytext'] = "<strong>ODER</strong><br/>Haupt-Text";
-    $admtext['usenl'] = "Zeilenumbrüche bei der Anzeige nach HTML konvertieren";
+  $admtext['showmap'] = "Zeige stets Friedhofskarte und -fotos, wenn dieses Bild angezeigt wird";
+  $admtext['bodytext'] = "<strong>ODER</strong><br>Haupt-Text";
+  $admtext['usenl'] = "Zeilenumbrüche bei der Anzeige nach HTML konvertieren";
     $admtext['newwin'] = "In neuem Fenster öffnen";
     $admtext['modifymedia'] = "Medium bearbeiten";
     $admtext['addnewmedia'] = "Neues Medium hinzufügen";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Bei fehlendem Geburtsdatum";
     $admtext['persliving'] = "Person als lebend behandeln";
     $admtext['persdead'] = "Person als verstorben behandeln";
-    $admtext['nodeathdate'] = "Bei fehlendem Sterbedatum die Person<br />als verstorben behandeln, sofern älter als";
+    $admtext['nodeathdate'] = "Bei fehlendem Sterbedatum die Person<br>als verstorben behandeln, sofern älter als";
     $admtext['pedconfigsettings'] = "Stammbaum-Einstellungen";
     $admtext['usepopups'] = "Standard-Anzeige";
     $admtext['maxpedgens'] = "Max. Generationenanzahl";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Orte verschmelzen";
     $admtext['findmerge'] = "Suche nach zu verschmelzenden Orten";
     $admtext['selectplacemerge'] = "Auswahl der zu verschmelzenden Orte";
-    $admtext['mcol1'] = "Führe<br/>zusammen<br/>von<br/>(lösche)";
-    $admtext['mcol2'] = "<br/><br/>nach<br/>(belasse)";
+    $admtext['mcol1'] = "Führe<br>zusammen<br>von<br>(lösche)";
+    $admtext['mcol2'] = "<br><br>nach<br>(belasse)";
     $admtext['pmsucc'] = "Verschmelzen der Orte war erfolgreich";
     $admtext['nomerge'] = "Nichts zum Verschmelzen";
     $admtext['enterkeep'] = "Bitte wählen Sie ein Verschmelzungs-Ziel.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Auswahl von Ereignis und Aktion";
     $admtext['suggested'] = "Vorgeschlagen";
-    $admtext['usernotes'] = "Bemerkungen<br />zu vorgeschlagener Änderung<br />(werden nicht gespeichert)";
+    $admtext['usernotes'] = "Bemerkungen<br>zu vorgeschlagener Änderung<br>(werden nicht gespeichert)";
     $admtext['postdate'] = "Vorgeschlagen am";
     $admtext['savedel'] = "Vorschlag akzeptieren";
     $admtext['postpone'] = "Später entscheiden";

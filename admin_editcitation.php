@@ -31,18 +31,18 @@ header("Content-type:text/html; charset=" . $session_charset);
       <?php
       if ($row['sourceID']) {
         ?>
-          <tr>
-              <td valign="top"><?php echo $admtext['source']; ?>:</td>
-              <td>
-                  <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"/> &nbsp;<?php echo $admtext['text_or']; ?> &nbsp;
-                  <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
-                  <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return initNewItem('source', document.newsourceform.sourceID, 'sourceID2', 'sourceTitle2', 'editcitation','newsource');">
-              </td>
-          </tr>
-          <tr>
-              <td></td>
-              <td id="sourceTitle2"><?php echo $row['title']; ?></td>
-          </tr>
+        <tr>
+          <td valign="top"><?php echo $admtext['source']; ?>:</td>
+          <td>
+            <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"> &nbsp;<?php echo $admtext['text_or']; ?> &nbsp;
+            <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
+            <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return initNewItem('source', document.newsourceform.sourceID, 'sourceID2', 'sourceTitle2', 'editcitation','newsource');">
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="sourceTitle2"><?php echo $row['title']; ?></td>
+        </tr>
         <?php
       } else {
         echo "<tr><td>{$admtext['description']}:</td><td><input type=\"text\" name=\"description\" value=\"{$row['description']}\"><input type=\"hidden\" name=\"sourceID\" value=\"\"></td>\n";

@@ -160,11 +160,11 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                   ?>
                     <tr>
                         <td valign="top"><?php echo $admtext['notes']; ?>:</td>
-                        <td><textarea wrap cols="50" rows="5" name="notes"></textarea></td>
+                      <td><textarea wrap cols="50" rows="5" name="notes"></textarea></td>
                     </tr>
                 </table>
-                <br/>&nbsp;
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+              <br>&nbsp;
+              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
         </td>
     </tr>
 

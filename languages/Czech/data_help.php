@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Import dat");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp; | &nbsp;
-                <a href="second_help.php" class="lightlink">N�pov�da: Druhotn� procesy &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Import / Export</span>
-            <p class="smaller menu">
-                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
-                <a href="#export" class="lightlink">GEDCOM Export</a>
-            </p>
-        </td>
-    </tr>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp; | &nbsp;
+        <a href="second_help.php" class="lightlink">N�pov�da: Druhotn� procesy &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Import / Export</span>
+      <p class="smaller menu">
+        <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+        <a href="#export" class="lightlink">GEDCOM Export</a>
+      </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
 
@@ -48,27 +48,27 @@ echo help_header("N�pov�da: Import dat");
                 soubor�, ale tyto nejsou z va�� slo�ky GEDCOM, m�te z�ejm� probl�m s um�st�n�m soubor�. Ov��te svoji ko�enovou slo�ku (Admin/Nastaven�/Z�kladn� nastaven�) a va�i slo�ku GEDCOM (Admin/Nastaven�/Nastaven� importu).</p>
 
             <span class="optionhead">P�ijmout data pro v�echny vlastn� typy ud�lost�</span>
-            <p>V� soubor GEDCOM m��e obsahovat ud�losti, kter� bude TNG pova�ovat za "vlastn�" ud�losti. Norm�ln� jsou vlastn� typy ud�lost�, kter� soubor GEDCOM obsahuje, vlo�eny do datab�ze, ale
-                ale je nastaveno, aby data byla ignorov�na. Stav vlastn�ch typ� ud�lost� m��ete zm�nit na "p�ijmout", aby ud�losti tohoto typu byly naimportov�ny (jin�mi slovy,
-                abyste nemuseli v� soubor importovat dvakr�t). Pokud tuto volbu za�krtnete, TNG automaticky nastav� v�echny nov� vlastn� typy ud�lost� na "p�ijmout" a v�echny va�e ud�losti
-                budou importov�ny napoprv�.</p>
+          <p>V� soubor GEDCOM m��e obsahovat ud�losti, kter� bude TNG pova�ovat za "vlastn�" ud�losti. Norm�ln� jsou vlastn� typy ud�lost�, kter� soubor GEDCOM obsahuje, vlo�eny do datab�ze, ale
+            ale je nastaveno, aby data byla ignorov�na. Stav vlastn�ch typ� ud�lost� m��ete zm�nit na "p�ijmout", aby ud�losti tohoto typu byly naimportov�ny (jin�mi slovy,
+            abyste nemuseli v� soubor importovat dvakr�t). Pokud tuto volbu za�krtnete, TNG automaticky nastav� v�echny nov� vlastn� typy ud�lost� na "p�ijmout" a v�echny va�e ud�losti
+            budou importov�ny napoprv�.</p>
 
-            <span class="optionhead">Importovat pouze vlastn� typy ud�lost� (nebudou vlo�eny, nahrazeny nebo p�id�ny ��dn� �daje)</span>
-            <p>Za�krtnut� t�to volby zp�sob�, �e budou naimportov�ny pouze vlastn� typy ud�lost� (viz Admin/Vlastn� typy ud�lost�). V�echny dal�� �daje budou ignorov�ny. To je ide�ln� mo�nost
-                jak sestavit va�e v�choz�ho nastaven�, proto�e v�m umo�n� vid�t, kter� vlastn� ud�losti v�s soubor GEDCOM obsahuje. M��ete pot� zvolit, kter� ud�losti
-                p�ed importem va�� cel� datab�ze p�ijmout a kter� odm�tnout.</p>
+          <span class="optionhead">Importovat pouze vlastn� typy ud�lost� (nebudou vlo�eny, nahrazeny nebo p�id�ny ��dn� �daje)</span>
+          <p>Za�krtnut� t�to volby zp�sob�, �e budou naimportov�ny pouze vlastn� typy ud�lost� (viz Admin/Vlastn� typy ud�lost�). V�echny dal�� �daje budou ignorov�ny. To je ide�ln� mo�nost
+            jak sestavit va�e v�choz�ho nastaven�, proto�e v�m umo�n� vid�t, kter� vlastn� ud�losti v�s soubor GEDCOM obsahuje. M��ete pot� zvolit, kter� ud�losti
+            p�ed importem va�� cel� datab�ze p�ijmout a kter� odm�tnout.</p>
 
-            <span class="optionhead">C�lov� strom</span><br/>
-            <p>Vyberte strom, do kter�ho chcete importovat data (povinn�). Pokud strom, kam maj� data p�ij�t, je�t� neexistuje, klikn�te na tla��tko "P�idat nov� strom" a vytvo�te jej.
-                Objev� se mal� okno, kter� v�m umo�n� zadat informace o nov�m stromu.</p>
+          <span class="optionhead">C�lov� strom</span><br>
+          <p>Vyberte strom, do kter�ho chcete importovat data (povinn�). Pokud strom, kam maj� data p�ij�t, je�t� neexistuje, klikn�te na tla��tko "P�idat nov� strom" a vytvo�te jej.
+            Objev� se mal� okno, kter� v�m umo�n� zadat informace o nov�m stromu.</p>
 
-            <span class="optionhead">Nahradit v�echna aktu�ln� data</span>
-            <p>Zvol�te-li tuto mo�nost, v�echny va�e d��v�j�� �daje ze souboru GEDCOM (osoby, rodiny, d�ti, prameny, �lo�i�t� pramen�, ud�losti, pozn�mky, spojen� a citace; ne m�dia a cokoli jin�ho)
-                budou p�ed importem vymaz�na.
-                <strong>POZN.</strong>: Odkazy na m�dia budou zachov�ny, pokud se ID ��sla osoby/rodiny/pramenu/�lo�i�t� pramen� ve va�em nov�m souboru GEDCOM budou shodovat s ID ��sly va�ich dosavadn�ch dat.
-                V�t�ina genealogick�ch program� p�i�azuj� st�l� ID ��sla ka�d� osob�/rodin�/pramenu/�lo�i�ti pramen�, ale n�kter� ne. Pokud m�te k dat�m p�ipojeny n�jak� polo�ky m�di�, p�ed importem, pros�m, zkontrolujte,
-                zda se ID ��sla ve va�em nov�m souboru GEDCOM shoduj�, bez ohledu na to, kterou z t�chto mo�nost� m�te vybr�nu. Je tak� vhodn� vytvo�it p�ed importem z�lohu va�ich tabulek
-                (viz Admin/Obslu�n� programy o vytvo�en� z�lohy).</p>
+          <span class="optionhead">Nahradit v�echna aktu�ln� data</span>
+          <p>Zvol�te-li tuto mo�nost, v�echny va�e d��v�j�� �daje ze souboru GEDCOM (osoby, rodiny, d�ti, prameny, �lo�i�t� pramen�, ud�losti, pozn�mky, spojen� a citace; ne m�dia a cokoli jin�ho)
+            budou p�ed importem vymaz�na.
+            <strong>POZN.</strong>: Odkazy na m�dia budou zachov�ny, pokud se ID ��sla osoby/rodiny/pramenu/�lo�i�t� pramen� ve va�em nov�m souboru GEDCOM budou shodovat s ID ��sly va�ich dosavadn�ch dat.
+            V�t�ina genealogick�ch program� p�i�azuj� st�l� ID ��sla ka�d� osob�/rodin�/pramenu/�lo�i�ti pramen�, ale n�kter� ne. Pokud m�te k dat�m p�ipojeny n�jak� polo�ky m�di�, p�ed importem, pros�m, zkontrolujte,
+            zda se ID ��sla ve va�em nov�m souboru GEDCOM shoduj�, bez ohledu na to, kterou z t�chto mo�nost� m�te vybr�nu. Je tak� vhodn� vytvo�it p�ed importem z�lohu va�ich tabulek
+            (viz Admin/Obslu�n� programy o vytvo�en� z�lohy).</p>
 
             <span class="optionhead">Nahradit pouze odpov�daj�c� z�znamy</span>
             <p>S touto volbou jsou p�id�ny nov� z�znamy a odpov�daj�c� z�znamy jsou nahrazeny (shoda je podm�n�na pouze ID ��sly). Star� �daje nejsou odstran�ny.</p>

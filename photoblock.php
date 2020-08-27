@@ -9,16 +9,16 @@ include $cms['tngpath'] . "checklogin.php";
 
 <html>
 <head>
-    <link href="genstyle.css" rel="stylesheet" type="text/css">
-    <link href="mytngstyle.css" rel="stylesheet" type="text/css">
+  <link href="genstyle.css" rel="stylesheet" type="text/css">
+  <link href="mytngstyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 <h1>Random Photo Block</h1>
 
 <p>This page displays a random photo from your database. You can move this functionality to any other TNG page
-    by copying the PHP code from this page to your destination.</p>
-<br clear="all"/>
+  by copying the PHP code from this page to your destination.</p>
+<br clear="all">
 
 <?php
 //COPY EVERYTHING IN THIS BLOCK
@@ -65,22 +65,22 @@ if ($maxheight) {
 }
 
 echo "<table $width $height>\n";
-echo "<tr><td align=\"center\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\"><img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" border=\"0\" width=\"$photowtouse\" height=\"$photohtouse\" alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a></td></tr>\n";
+echo "<tr><td align=\"center\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\"><img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a></td></tr>\n";
 echo "<tr><td align=\"center\"><span class=\"normal\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></span></td></tr>";
 echo "</table>";
 ?>
 
-<br clear="all"/>
+<br clear="all">
 <p>If you want to use this on a PHP page you created from scratch, you will need to include the PHP block
-    at the top of this page as well.</p>
+  at the top of this page as well.</p>
 
-<p>Notes:<br/>
-    1) To simplify matters here, all photos attached to living individuals have been removed.
-    No check is done, however, to see if the photo is attached to a source cited for a living individual or
-    a family flagged as living.<br/>
-    2) To restrict a photo to certain dimensions, fill in the "maxwidth" and/or "maxheight" variables in the code.
-    Please note that although this will resize the display dimensions, the file size and bandwidth requirements will
-    not be affected. If you want to show random thumbnails instead, change each occurence of "path" above to "thumbpath" (lines 31, 40 and 59).</p>
+<p>Notes:<br>
+  1) To simplify matters here, all photos attached to living individuals have been removed.
+  No check is done, however, to see if the photo is attached to a source cited for a living individual or
+  a family flagged as living.<br>
+  2) To restrict a photo to certain dimensions, fill in the "maxwidth" and/or "maxheight" variables in the code.
+  Please note that although this will resize the display dimensions, the file size and bandwidth requirements will
+  not be affected. If you want to show random thumbnails instead, change each occurence of "path" above to "thumbpath" (lines 31, 40 and 59).</p>
 
 </body>
 </html>

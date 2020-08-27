@@ -71,8 +71,8 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                         </td>
                     </tr>
                 </table>
-                <br/>
-                <input type="hidden" name="ID" value="<?php echo $row['nID']; ?>">
+              <br>
+              <input type="hidden" name="ID" value="<?php echo $row['nID']; ?>">
                 <input type="hidden" name="xID" value="<?php echo $ID; ?>">
                 <input type="hidden" name="gedcom" value="<?php echo $row['gedcom']; ?>">
                 <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">

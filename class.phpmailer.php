@@ -3933,6 +3933,6 @@ class phpmailerException extends Exception
    * @return string
    */
   public function errorMessage() {
-    return '<strong>' . $this->getMessage() . "</strong><br />\n";
+    return '<strong>' . $this->getMessage() . "</strong><br>\n";
   }
 }

@@ -126,7 +126,7 @@ echo "</form>\n";
         <div class="float-right"><?php echo $detail_link; ?></div>
       <?php
       //do self
-      echo "<span class=\"subhead\"><strong>{$text['generation']}: 1</strong></span><br/><br />\n";
+      echo "<span class=\"subhead\"><strong>{$text['generation']}: 1</strong></span><br><br>\n";
       echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
       echo "<li>";
       echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\" ><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
@@ -138,7 +138,7 @@ echo "</form>\n";
       if ($rights['both'] && $pedigree['regnotes']) {
         $notes = buildRegNotes(getRegNotes($row['personID'], "I"));
         if ($notes) {
-          echo "<p>{$text['notes']}:<br/>";
+          echo "<p>{$text['notes']}:<br>";
           echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>\n";
         }
       } else {
@@ -169,7 +169,7 @@ echo "</form>\n";
           if ($famrights['both']) {
             $notes = buildRegNotes(getRegNotes($spouserow['familyID'], "F"));
             if ($notes) {
-              echo "<p>{$text['notes']}:<br/>";
+              echo "<p>{$text['notes']}:<br>";
               echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>\n";
             }
           }
@@ -197,7 +197,7 @@ echo "</form>\n";
         }
       }
       echo "</td></tr></table>";
-      echo "<br clear=\"all\" /></li>\n</ol>\n";
+      echo "<br clear=\"all\"></li>\n</ol>\n";
 
 
       //push famc (family of parents) to nextgen
@@ -236,7 +236,7 @@ echo "</form>\n";
       //while there's one to pop and we're less than maxgen
       while (count($currgen) && $generation <= $generations) {
 
-          echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br /><br />\n";
+        echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
 
           echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
         while ($nextfamily = array_shift($currgen)) {
@@ -275,7 +275,7 @@ echo "</form>\n";
                   if ($frights['both'] && $pedigree['regnotes']) {
                     $notes = buildRegNotes(getRegNotes($fathrow['personID'], "I"));
                     if ($notes) {
-                      echo "<p>{$text['notes']}:<br />";
+                      echo "<p>{$text['notes']}:<br>";
                       echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>\n";
                     }
                   } else {
@@ -328,8 +328,8 @@ echo "</form>\n";
                     }
                     echo " [<a href=\"$familygroup_url" . "familyID=$nextfamily&amp;tree=$tree\">{$text['groupsheet']}</a>]</p>\n";
 
-                      echo "</td></tr></table>";
-                    echo "<br clear=\"all\" /></li>\n";
+                    echo "</td></tr></table>";
+                    echo "<br clear=\"all\"></li>\n";
                   }
 
                   echo "<li>";
@@ -343,7 +343,7 @@ echo "</form>\n";
                   if ($mrights['both'] && $pedigree['regnotes']) {
                     $notes = buildRegNotes(getRegNotes($mothrow['personID'], "I"));
                     if ($notes) {
-                      echo "<p>{$text['notes']}:<br />";
+                      echo "<p>{$text['notes']}:<br>";
                       echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>\n";
                     }
                   } else {
@@ -366,7 +366,7 @@ echo "</form>\n";
                 if ($prights['both']) {
                   $notes = buildRegNotes(getRegNotes($nextfamily, "F"));
                   if ($notes) {
-                    echo "<p>{$text['notes']}:<br />";
+                    echo "<p>{$text['notes']}:<br>";
                     echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>\n";
                   }
                 }
@@ -376,7 +376,7 @@ echo "</form>\n";
             //get children
             $result2 = getChildrenData($tree, $nextfamily);
             if ($result2 && tng_num_rows($result2)) {
-              echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>{$text['children']}:<br />\n<ol class=\"ahnblock\">\n";
+              echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>{$text['children']}:<br>\n<ol class=\"ahnblock\">\n";
               while ($childrow = tng_fetch_assoc($result2)) {
                 $crights = determineLivingPrivateRights($childrow, $righttree);
                 $childrow['allow_living'] = $crights['living'];
@@ -397,7 +397,7 @@ echo "</form>\n";
               tng_free_result($result2);
             }
             echo "</td></tr></table>";
-            echo "<br clear=\"all\" /></li>\n";
+            echo "<br clear=\"all\"></li>\n";
           }
         }
 
@@ -408,7 +408,7 @@ echo "</form>\n";
         $nextgen = array();
         $lastgen = array();
         $generation++;
-        echo "</ol>\n<br />\n";
+        echo "</ol>\n<br>\n";
       }
       ?>
     </div>

@@ -6,21 +6,21 @@ echo help_header("Help: General Settings");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
-                <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
-            </p>
-            <span class="largeheader">Help: General Settings</span>
-            <p class="smaller menu">
-                <a href="#data" class="lightlink">Database</a> &nbsp; | &nbsp;
-                <a href="#table" class="lightlink">Tables</a> &nbsp; | &nbsp;
-                <a href="#path" class="lightlink">Paths+Folders</a> &nbsp; | &nbsp;
-                <a href="#site" class="lightlink">Site</a> &nbsp; | &nbsp;
-                <a href="#media" class="lightlink">Media</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
+        <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
+      </p>
+      <span class="largeheader">Help: General Settings</span>
+      <p class="smaller menu">
+        <a href="#data" class="lightlink">Database</a> &nbsp; | &nbsp;
+        <a href="#table" class="lightlink">Tables</a> &nbsp; | &nbsp;
+        <a href="#path" class="lightlink">Paths+Folders</a> &nbsp; | &nbsp;
+        <a href="#site" class="lightlink">Site</a> &nbsp; | &nbsp;
+        <a href="#media" class="lightlink">Media</a> &nbsp; | &nbsp;
                 <a href="#lang" class="lightlink">Language</a> &nbsp; | &nbsp;
                 <a href="#priv" class="lightlink">Privacy</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Names</a> &nbsp; | &nbsp;
@@ -442,38 +442,38 @@ echo help_header("Help: General Settings");
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
-            <a name="mobile"><p class="subheadbold">Mobile</p></a>
+      <p style="float:right"><a href="#top">Top</a></p>
+      <a name="mobile"><p class="subheadbold">Mobile</p></a>
 
-            <p>The Mobile section allows you to control how TNG is displayed on smart phones and tablets.</p>
+      <p>The Mobile section allows you to control how TNG is displayed on smart phones and tablets.</p>
 
-            <span class="optionhead">Enable Responsive Tables</span>
-            <p>If this option is set to yes, the Tablesaw jQuery plugin that enables the Responsive Tables will be activated.<br/>If set to no, then the Tablesaw jQuery plugin options will be bypassed.</p>
+      <span class="optionhead">Enable Responsive Tables</span>
+      <p>If this option is set to yes, the Tablesaw jQuery plugin that enables the Responsive Tables will be activated.<br>If set to no, then the Tablesaw jQuery plugin options will be bypassed.</p>
 
-            <span class="optionhead">Responsive Table Type</span>
-            <p>The Responsive Table Type can be set to
-            <ul>
-                <li><strong>Toggle</strong>, which is the default, displays data columns based on the screen width and priority assigned. Rotating the smart phone or tablet screen from portrait to landscape orientation will display additional data columns.
-                </li>
+      <span class="optionhead">Responsive Table Type</span>
+      <p>The Responsive Table Type can be set to
+      <ul>
+        <li><strong>Toggle</strong>, which is the default, displays data columns based on the screen width and priority assigned. Rotating the smart phone or tablet screen from portrait to landscape orientation will display additional data columns.
+        </li>
 
-                <li><strong>Stack</strong>, which stacks the table headers to a two column layout with headers on the left when the viewport width is less than 40em (640px).</li>
+        <li><strong>Stack</strong>, which stacks the table headers to a two column layout with headers on the left when the viewport width is less than 40em (640px).</li>
 
-                <li><strong>Swipe</strong>, which allows the user to use the swipe gesture (or use the left and right buttons) to navigate the columns.</li>
-            </ul>
-            <br/>
-            <span class="optionhead">Enable Responsive Tables Mode Switcher:</span>
-            <p>The Mode Switcher option allows the user to switch between toggle, stack, or swipe table column displays.</p>
+        <li><strong>Swipe</strong>, which allows the user to use the swipe gesture (or use the left and right buttons) to navigate the columns.</li>
+      </ul>
+      <br>
+      <span class="optionhead">Enable Responsive Tables Mode Switcher:</span>
+      <p>The Mode Switcher option allows the user to switch between toggle, stack, or swipe table column displays.</p>
 
-            <span class="optionhead">Enable Responsive Tables Mini Map</span>
-            <p>Use data-tablesaw-minimap to add a series of small dots to show which columns are currently visible and which are hidden.
-                Only available on swipe and toggle options. </p>
+      <span class="optionhead">Enable Responsive Tables Mini Map</span>
+      <p>Use data-tablesaw-minimap to add a series of small dots to show which columns are currently visible and which are hidden.
+        Only available on swipe and toggle options. </p>
 
-        </td>
-    </tr>
-    <tr class="databack">
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Top</a></p>

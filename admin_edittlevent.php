@@ -108,17 +108,17 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytleve
                                   <option value="9"<?php if ($row[$monthname] == 9) {
                                     echo " selected";
                                   } ?>><?php echo $dates['SEP']; ?></option>
-                                  <option value="10"<?php if ($row[$monthname] == 10) {
-                                    echo " selected";
-                                  } ?>><?php echo $dates['OCT']; ?></option>
-                                  <option value="11"<?php if ($row[$monthname] == 11) {
-                                    echo " selected";
-                                  } ?>><?php echo $dates['NOV']; ?></option>
-                                  <option value="12"<?php if ($row[$monthname] == 12) {
-                                    echo " selected";
-                                  } ?>><?php echo $dates['DEC']; ?></option>
+                                <option value="10"<?php if ($row[$monthname] == 10) {
+                                  echo " selected";
+                                } ?>><?php echo $dates['OCT']; ?></option>
+                                <option value="11"<?php if ($row[$monthname] == 11) {
+                                  echo " selected";
+                                } ?>><?php echo $dates['NOV']; ?></option>
+                                <option value="12"<?php if ($row[$monthname] == 12) {
+                                  echo " selected";
+                                } ?>><?php echo $dates['DEC']; ?></option>
                               </select>
-                              <input type="text" name="<?php echo $yearname; ?>" size="4" value="<?php echo $row[$yearname]; ?>"/> <span class="normal"><?php echo $help; ?></span>
+                            <input type="text" name="<?php echo $yearname; ?>" size="4" value="<?php echo $row[$yearname]; ?>"> <span class="normal"><?php echo $help; ?></span>
                           </td>
                       </tr>
                     <?php
@@ -127,30 +127,30 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytleve
                   doEventRow($admtext['startdt'], $row, "evday", "evmonth", "evyear", $admtext['yrreq']);
                   doEventRow($admtext['enddt'], $row, "endday", "endmonth", "endyear", "");
                   ?>
-                    <tr>
-                        <td><?php echo $admtext['evtitle']; ?>:</td>
-                        <td><input type="text" name="evtitle" width="100" value="<?php echo $row['evtitle']; ?>"/></td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['evdetail']; ?>:</span></td>
-                        <td colspan="2"><textarea cols="80" rows="8" name="evdetail"><?php echo $row['evdetail']; ?></textarea></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
+                  <tr>
+                    <td><?php echo $admtext['evtitle']; ?>:</td>
+                    <td><input type="text" name="evtitle" width="100" value="<?php echo $row['evtitle']; ?>"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><span class="normal"><?php echo $admtext['evdetail']; ?>:</span></td>
+                    <td colspan="2"><textarea cols="80" rows="8" name="evdetail"><?php echo $row['evdetail']; ?></textarea></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
 		<span class="normal">
 <?php
-echo $admtext['onsave'] . ":<br/>";
-echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br/>\n";
+echo $admtext['onsave'] . ":<br>";
+echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
 if ($tng_search_tlevents) {
   echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
 }
 ?>
 		</span>
-                        </td>
-                    </tr>
+                    </td>
+                  </tr>
                 </table>
-                <br/>&nbsp;
-                <input type="hidden" name="tleventID" value="<?php echo $tleventID; ?>">
+              <br>&nbsp;
+              <input type="hidden" name="tleventID" value="<?php echo $tleventID; ?>">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
         </td>
     </tr>

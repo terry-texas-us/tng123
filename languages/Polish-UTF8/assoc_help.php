@@ -6,21 +6,21 @@ echo help_header("Pomoc: Związki");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="repositories_help.php" class="lightlink">&laquo; Pomoc: Repozytoria</a> &nbsp; | &nbsp;
-                <a href="notes_help.php" class="lightlink">Pomoc: Notatki &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Związki</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Co to są związki?</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj/Edycja/Usuń</a>
-            </p>
-        </td>
-    </tr>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="repositories_help.php" class="lightlink">&laquo; Pomoc: Repozytoria</a> &nbsp; | &nbsp;
+        <a href="notes_help.php" class="lightlink">Pomoc: Notatki &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Związki</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Co to są związki?</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Dodaj/Edycja/Usuń</a>
+      </p>
+    </td>
+  </tr>
 
     <tr class="databack">
         <td class="tngshadow">

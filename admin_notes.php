@@ -50,24 +50,24 @@ $notecount = tng_num_rows($notelinks);
 <div class="databack ajaxwindow" id="notelist"<?php if (!$notecount) {
   echo " style=\"display:none\"";
 } ?>>
-    <form name="form1">
-        <p class="subhead"><strong><?php echo "{$admtext['notes']}: $eventtypedesc"; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
-        <p>
-          <?php if ($allow_add) { ?>
-              <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.form2.reset();gotoSection('notelist','addnote');"/>&nbsp;
-          <?php } ?>
-            <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();"/>
-        </p>
-        <table id="notestbl" class="fieldname normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$notecount) {
-          echo " style=\"display:none\"";
-        } ?>>
-            <tbody id="notestblbody">
-            <tr>
-                <td class="fieldnameback" width="50"><b><?php echo $admtext['text_sort']; ?></b></td>
-                <td class="fieldnameback" width="80"><b><?php echo $admtext['action']; ?></b></td>
-                <td class="fieldnameback" width="435"><b><?php echo $admtext['note']; ?></b></td>
-            </tr>
+  <form name="form1">
+    <p class="subhead"><strong><?php echo "{$admtext['notes']}: $eventtypedesc"; ?></strong> |
+      <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
+    <p>
+      <?php if ($allow_add) { ?>
+        <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.form2.reset();gotoSection('notelist','addnote');">&nbsp;
+      <?php } ?>
+      <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
+    </p>
+    <table id="notestbl" class="fieldname normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$notecount) {
+      echo " style=\"display:none\"";
+    } ?>>
+      <tbody id="notestblbody">
+      <tr>
+        <td class="fieldnameback" width="50"><b><?php echo $admtext['text_sort']; ?></b></td>
+        <td class="fieldnameback" width="80"><b><?php echo $admtext['action']; ?></b></td>
+        <td class="fieldnameback" width="435"><b><?php echo $admtext['note']; ?></b></td>
+      </tr>
             </tbody>
         </table>
         <div id="notes" width="460">
@@ -93,7 +93,7 @@ $notecount = tng_num_rows($notelinks);
               echo "<div class=\"sortrow\" id=\"notes_{$note['ID']}\">";
               echo "<table class=\"normal\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\">";
               echo "<tr id=\"row_{$note['ID']}\">";
-              echo "<td class=\"dragarea\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br/><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
+              echo "<td class=\"dragarea\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
               echo "<td class=\"lightback\" width=\"80\">$actionstr</td>";
               echo "<td class=\"lightback\" width=\"435\">$truncated</td>";
               echo "</tr></table></div>\n";
@@ -117,19 +117,19 @@ $notecount = tng_num_rows($notelinks);
             <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
 
         <table border="0" cellpadding="2" class="normal">
-            <tr>
-                <td valign="top"><?php echo $admtext['note']; ?>:</td>
-                <td><textarea wrap cols="60" rows="25" name="note"></textarea></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td><input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?></td>
-            </tr>
+          <tr>
+            <td valign="top"><?php echo $admtext['note']; ?>:</td>
+            <td><textarea wrap cols="60" rows="25" name="note"></textarea></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?></td>
+          </tr>
         </table>
-        <br/>
-        <input type="hidden" name="persfamID" value="<?php echo $persfamID; ?>"/>
-        <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
-        <input type="hidden" name="eventID" value="<?php echo $eventID; ?>"/>
+      <br>
+      <input type="hidden" name="persfamID" value="<?php echo $persfamID; ?>">
+      <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+      <input type="hidden" name="eventID" value="<?php echo $eventID; ?>">
     </form>
 </div>
 

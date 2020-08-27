@@ -6,21 +6,21 @@ echo help_header("Pomoc: Albumy");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="collections_help.php" class="lightlink">&laquo; Pomoc: Kolekcje</a> &nbsp; | &nbsp;
-                <a href="cemeteries_help.php" class="lightlink">Pomoc: Cmentrze &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Albumy</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowy</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edytuj istniejący</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Sortuj</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="collections_help.php" class="lightlink">&laquo; Pomoc: Kolekcje</a> &nbsp; | &nbsp;
+        <a href="cemeteries_help.php" class="lightlink">Pomoc: Cmentrze &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Albumy</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Dodaj nowy</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edytuj istniejący</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+        <a href="#sort" class="lightlink">Sortuj</a>
             </p>
         </td>
     </tr>
@@ -39,33 +39,33 @@ echo help_header("Pomoc: Albumy");
         </td>
     </tr>
     <tr class="databack">
-        <td class="tngshadow">
+      <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
-            <a name="add"><p class="subheadbold">Dodawanie nowych albumów</p></a>
-            <p><strong>Album</strong> w TNG jest grupą mediów. Album może zawierać dowolną liczbę mediów, pojedyncze media mogą należeć do wielu albumów.
-                Podobnie jak poszczególne media, albumy mogą być połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami.</p>
+        <p style="float:right"><a href="#top">Wróć</a></p>
+        <a name="add"><p class="subheadbold">Dodawanie nowych albumów</p></a>
+        <p><strong>Album</strong> w TNG jest grupą mediów. Album może zawierać dowolną liczbę mediów, pojedyncze media mogą należeć do wielu albumów.
+          Podobnie jak poszczególne media, albumy mogą być połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami.</p>
 
-            <p>Aby dodać nowy album, kliknij przycisk <strong>Dodaj nowe</strong> , a następnie wypełnić formularz. Informacje dotyczące mediów i łącza
-                do osób, rodzin i innych podmiotów, mogą zostać dodane dopiero po naciśnięciu przycisku "zapisz i kontynuuj". Do dyspozycji są następujące pola:</p>
+        <p>Aby dodać nowy album, kliknij przycisk <strong>Dodaj nowe</strong> , a następnie wypełnić formularz. Informacje dotyczące mediów i łącza
+          do osób, rodzin i innych podmiotów, mogą zostać dodane dopiero po naciśnięciu przycisku "zapisz i kontynuuj". Do dyspozycji są następujące pola:</p>
 
-            <p><span class="optionhead">Nazwa albumu</span><br/>
-                Nazwa Twojego albumu.</p>
+        <p><span class="optionhead">Nazwa albumu</span><br>
+          Nazwa Twojego albumu.</p>
 
-            <p><span class="optionhead">Opis</span><br/>
-                Krótki opis albumu lub elementów w nim zawartych.</p>
+        <p><span class="optionhead">Opis</span><br>
+          Krótki opis albumu lub elementów w nim zawartych.</p>
 
-            <p><span class="optionhead">Słowa kluczowe</span><br/>
-                Pewna ilość słów kluczowych poza nazwą albumu lub opis, który może być użyty w celu zlokalizowania tego albumu podczas wyszukiwania.</p>
+        <p><span class="optionhead">Słowa kluczowe</span><br>
+          Pewna ilość słów kluczowych poza nazwą albumu lub opis, który może być użyty w celu zlokalizowania tego albumu podczas wyszukiwania.</p>
 
-            <p><span class="optionhead">Pola wymagane:</span> Tylko nazwa albumu jest wymagana, ale powinno być w Twoim interesie wypełnić również pozostałe pola.</p>
+        <p><span class="optionhead">Pola wymagane:</span> Tylko nazwa albumu jest wymagana, ale powinno być w Twoim interesie wypełnić również pozostałe pola.</p>
 
-        </td>
+      </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right"><a href="#top">Wróć</a></p>
             <a name="edit"><p class="subheadbold">Edycja istniejących albumów</p></a>
             <p>Aby wprowadzić zmiany do istniejącego albumu, należy nacisnąć przycisk <a href="#search">Szukaj</a> aby znaleźć album, a następnie kliknąć na ikonkę Edycja obok tego albumu.
                 Następujących elementów nie ma na karcie "dodaj nowy album ":</p>

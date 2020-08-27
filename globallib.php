@@ -201,7 +201,7 @@ function getGenderIcon($gender, $valign) {
       $genderstr = "female";
     }
     if ($genderstr) {
-      $icon = "<img src=\"{$cms['tngpath']}img/tng_$genderstr.gif\" width=\"11\" height=\"11\" border=\"0\" alt=\"" . $text[$genderstr] . "\" style=\"vertical-align: " . $valign . "px;\"/>";
+      $icon = "<img src=\"{$cms['tngpath']}img/tng_$genderstr.gif\" width=\"11\" height=\"11\" alt=\"" . $text[$genderstr] . "\" style=\"vertical-align: " . $valign . "px;\">";
     }
   }
   return $icon;
@@ -258,16 +258,16 @@ function getFORM($action, $method, $name, $id, $onsubmit = null) {
 
   if ($cms['support']) {
     if ($cms['support'] == "joomla") {
-      $formstr .= "<input type=\"hidden\" name=\"option\" value= \"com_tngbridge\" />\n";
-      $formstr .= "<input type=\"hidden\" name=\"Itemid\" value=\"39\" /> \n";
-      $formstr .= "<input type=\"hidden\" name=\"url\" value=\"$action\" /> \n";
+      $formstr .= "<input type=\"hidden\" name=\"option\" value= \"com_tngbridge\">\n";
+      $formstr .= "<input type=\"hidden\" name=\"Itemid\" value=\"39\"> \n";
+      $formstr .= "<input type=\"hidden\" name=\"url\" value=\"$action\"> \n";
     } elseif ($cms['support'] == "zikula") {
-      $formstr .= "<input type=\"hidden\" name=\"module\" value=\"{$cms['module']}\" />\n";
-      $formstr .= "<input type=\"hidden\" name=\"show\" value=\"$action\" />\n";
+      $formstr .= "<input type=\"hidden\" name=\"module\" value=\"{$cms['module']}\">\n";
+      $formstr .= "<input type=\"hidden\" name=\"show\" value=\"$action\">\n";
     } else {
-      $formstr .= "<input type=\"hidden\" name=\"op\" value=\"modload\" />\n";
-      $formstr .= "<input type=\"hidden\" name=\"name\" value=\"{$cms['module']}\" />\n";
-      $formstr .= "<input type=\"hidden\" name=\"file\" value=\"$action\" />\n";
+      $formstr .= "<input type=\"hidden\" name=\"op\" value=\"modload\">\n";
+      $formstr .= "<input type=\"hidden\" name=\"name\" value=\"{$cms['module']}\">\n";
+      $formstr .= "<input type=\"hidden\" name=\"file\" value=\"$action\">\n";
     }
   }
 
@@ -631,7 +631,7 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     }
   }
   if ($firstlink || $lastlink) {
-    $gotolink = " <span class=\"snlink\"><input type=\"text\" class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"/> <input type=\"button\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"goToPage(this,'$address','$orgtree',$perpage);\"/></span>";
+    $gotolink = " <span class=\"snlink\"><input type=\"text\" class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> <input type=\"button\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"goToPage(this,'$address','$orgtree',$perpage);\"></span>";
   } else {
     $gotolink = "";
   }
@@ -1114,7 +1114,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
     } else {
       $photowtouse = intval($photohtouse * $photoinfo[0] / $photoinfo[1]);
     }
-    $photo = "$prefix<img src=\"$photoref\" border=\"$border\" alt=\"" . str_replace("\"", "&#34;", $alttext) . "\" width=\"$photowtouse\" height=\"$photohtouse\" class=\"smallimg\"{$align}/>$suffix";
+    $photo = "$prefix<img src=\"$photoref\" style=\"border-width:{$border}px;border-style:solid;\" alt=\"" . str_replace("\"", "&#34;", $alttext) . "\" width=\"$photowtouse\" height=\"$photohtouse\" class=\"smallimg\"{$align}>$suffix";
   }
   tng_free_result($result);
 
@@ -1124,7 +1124,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
 function placeImage($place) {
   global $placesearch_url, $cms;
 
-  return "<a href=\"$placesearch_url" . "psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"/></a>";
+  return "<a href=\"$placesearch_url" . "psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
 }
 
 function checkMaintenanceMode($area) {

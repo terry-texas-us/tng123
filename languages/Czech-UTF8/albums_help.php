@@ -4,27 +4,27 @@ echo help_header("Nápověda: Alba");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="collections_help.php" class="lightlink">&laquo; Nápověda: Kolekce</a> &nbsp; | &nbsp;
-                <a href="cemeteries_help.php" class="lightlink">Nápověda: Hřbitovy &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Alba</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Třídit</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="collections_help.php" class="lightlink">&laquo; Nápověda: Kolekce</a> &nbsp; | &nbsp;
+        <a href="cemeteries_help.php" class="lightlink">Nápověda: Hřbitovy &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Alba</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#sort" class="lightlink">Třídit</a>
             </p>
         </td>
     </tr>
@@ -43,40 +43,40 @@ echo help_header("Nápověda: Alba");
         </td>
     </tr>
     <tr class="databack">
-        <td class="tngshadow">
+      <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidání nových alb</p></a>
-            <p><strong>Album</strong> v TNG je skupina médií. Album může obsahovat jakýkoli počet médií a konkrétní médium může být součástí více alb.
-                Podobně jako jednotlivé médium může být album připojeno k osobě, rodině, pramenu, úložišti pramenů nebo místu.</p>
+        <p style="float:right"><a href="#top">Nahoru</a></p>
+        <a name="add"><p class="subheadbold">Přidání nových alb</p></a>
+        <p><strong>Album</strong> v TNG je skupina médií. Album může obsahovat jakýkoli počet médií a konkrétní médium může být součástí více alb.
+          Podobně jako jednotlivé médium může být album připojeno k osobě, rodině, pramenu, úložišti pramenů nebo místu.</p>
 
-            <p>Chcete-li přidat nové album, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako média, která má album obsahovat, a
-                odkazy na osobu, rodinu a jiné entity, můžete přidat po uložení záznamu. Význam jednotlivých polí je následující:</p>
+        <p>Chcete-li přidat nové album, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako média, která má album obsahovat, a
+          odkazy na osobu, rodinu a jiné entity, můžete přidat po uložení záznamu. Význam jednotlivých polí je následující:</p>
 
-            <p><span class="optionhead">Název alba</span><br/>
-                Název vašeho alba.</p>
+        <p><span class="optionhead">Název alba</span><br>
+          Název vašeho alba.</p>
 
-            <p><span class="optionhead">Popis</span><br/>
-                Krátký popis alba nebo položek, které obsahuje.</p>
+        <p><span class="optionhead">Popis</span><br>
+          Krátký popis alba nebo položek, které obsahuje.</p>
 
-            <p><span class="optionhead">Klíčová slova</span><br/>
-                Jakýkoli počet klíčových slov mimo název alba a popis, která mají být použita při vyhledávání tohoto alba.</p>
+        <p><span class="optionhead">Klíčová slova</span><br>
+          Jakýkoli počet klíčových slov mimo název alba a popis, která mají být použita při vyhledávání tohoto alba.</p>
 
-            <p><span class="optionhead">Aktivní</span><br/>
-                Je-li album označeno jako "Aktivní", bude zobrazeno na vašich stránkách ve veřejném seznamu. Je-li příznak Aktivní nastaven na "Ne", návštěvníci vašich stránek
-                toto album vidět nebudou.</p>
+        <p><span class="optionhead">Aktivní</span><br>
+          Je-li album označeno jako "Aktivní", bude zobrazeno na vašich stránkách ve veřejném seznamu. Je-li příznak Aktivní nastaven na "Ne", návštěvníci vašich stránek
+          toto album vidět nebudou.</p>
 
-            <p><span class="optionhead">Vždy viditelné</span><br/>
-                Je-li aktivní album označeno jako "Vždy viditelné" a je připojeno k osobě, rodině, pramenu nebo úložišti pramenů, bude na stránkách u těchto entit vždy viditelné, i když je
-                připojeno k žijící osobě nebo rodině. Jinak jsou aktivní alba nebo média, která jsou připojená k žijícím osobám, skryta pro návštěvníky, kteří nemají oprávnění prohlížet data žijících osob.
-            </p>
+        <p><span class="optionhead">Vždy viditelné</span><br>
+          Je-li aktivní album označeno jako "Vždy viditelné" a je připojeno k osobě, rodině, pramenu nebo úložišti pramenů, bude na stránkách u těchto entit vždy viditelné, i když je
+          připojeno k žijící osobě nebo rodině. Jinak jsou aktivní alba nebo média, která jsou připojená k žijícím osobám, skryta pro návštěvníky, kteří nemají oprávnění prohlížet data žijících osob.
+        </p>
 
-            <p><span class="optionhead">Pole, která musí být vyplněna:</span> Název alba je jediné pole, které je nutné vyplnit, ale je ve vašem zájmu vyplnit i ostatní pole.</p>
+        <p><span class="optionhead">Pole, která musí být vyplněna:</span> Název alba je jediné pole, které je nutné vyplnit, ale je ve vašem zájmu vyplnit i ostatní pole.</p>
 
-        </td>
+      </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Úprava existujícího alba</p></a>

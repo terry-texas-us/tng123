@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pro �lo�i�t� pramen�...";
     $admtext['noevtypes'] = "��dn� typ ud�losti neexistuje.";
     $admtext['DESI'] = "�rove� z�jmu o potomka";
-    $admtext['allnone'] = "Pro ka�d� jazyk zadejte text, kter� se bude zobrazovat, <br />nebo nechte pole pr�zdn� a zadejte pouze jednu zpr�vu naho�e.";
+    $admtext['allnone'] = "Pro ka�d� jazyk zadejte text, kter� se bude zobrazovat, <br>nebo nechte pole pr�zdn� a zadejte pouze jednu zpr�vu naho�e.";
     $admtext['assocwith'] = "Spojeno s";
     $admtext['BAPM'] = "K�est";
     $admtext['umps'] = "V� soubor GEDCOM je z�ejm� v�t�� ne� je maxim�ln� velikost povolen� ve va�� instalaci PHP. Po��dejte va�eho providera, aby zv�t�il hodnotu prom�nn� 'upload_max_filesize' nebo m��ete nakop�rovat v� soubor do slo�ky 'gedcom' na va�ich str�nk�ch a naimportovat jej odtud.;";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Povinn�. Mus� odpov�dat n�zvu a um�st�n� va�eho souboru <em>ve slo�ce fotografi�</em> po nahr�n� souboru. Nap�. pokud se slo�ka fotografi� jmenuje <em>photos</em>, a vy chcete soubor pojmenovat <em>mojefoto.jpg</em> a um�stit tento soubor do podslo�ky fotografi� nazvan� <em>novefoto</em>, zadejte do tohoto pole <em>novefoto/mojefoto.jpg</em>.";
     $admtext['leaveblankphoto'] = "Toto pole nevypl�ujte, pokud byl soubor ji� nahr�n.";
     $admtext['thumbconflicts'] = "N�hledy nebyly vytvo�eny, proto�e byl probl�m s n�zvem souboru, slo�ky nebo p��stupov�ch pr�v";
-    $admtext['showmap'] = "Uk�zat mapu h�bitova a m�dium, kdykoliv bude tato polo�ka zobrazena";
-    $admtext['bodytext'] = "<strong>NEBO</strong><br/>Z�kladn� text";
-    $admtext['usenl'] = "P�ev�st konce ��dk� na HTML pro zobrazen�";
+  $admtext['showmap'] = "Uk�zat mapu h�bitova a m�dium, kdykoliv bude tato polo�ka zobrazena";
+  $admtext['bodytext'] = "<strong>NEBO</strong><br>Z�kladn� text";
+  $admtext['usenl'] = "P�ev�st konce ��dk� na HTML pro zobrazen�";
     $admtext['newwin'] = "Otev��t v nov�m okn�";
     $admtext['modifymedia'] = "Upravit existuj�c� m�dium";
     $admtext['addnewmedia'] = "P�idat nov� m�dium";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Pokud chyb� datum narozen�, p�edpokl�dat, �e";
     $admtext['persliving'] = "Osoba �ije";
     $admtext['persdead'] = "Osoba zem�ela";
-    $admtext['nodeathdate'] = "Pokud chyb� datum �mrt�, p�edpokl�dat, �e<br />osoba zem�ela, je-li star�� ne�";
+    $admtext['nodeathdate'] = "Pokud chyb� datum �mrt�, p�edpokl�dat, �e<br>osoba zem�ela, je-li star�� ne�";
     $admtext['pedconfigsettings'] = "Nastaven� sch�mat";
     $admtext['usepopups'] = "V�choz� zobrazen�";
     $admtext['maxpedgens'] = "Maxim�ln� po�et generac�";
@@ -1287,7 +1287,7 @@ switch ($textpart) {
     $admtext['usedefthumbs'] = "Pou��t v�choz� n�hledy";
     $admtext['autogeo'] = "Geok�dovat v�echna nov� m�sta";
     $admtext['revmail'] = "Upozornit na n�vrhy k p�ezkoum�n�";
-    $admtext['assumepriv'] = "Osoba je neve�ejn�, pokud zem�ela<br />p�ed m�n� ne� tolika lety";
+    $admtext['assumepriv'] = "Osoba je neve�ejn�, pokud zem�ela<br>p�ed m�n� ne� tolika lety";
     $admtext['calstart'] = "Prvn� den v t�dnu";
     $admtext['edit_timeout'] = "Upravit prodlevu (v minut�ch)";
     $admtext['shownamespr'] = "Zobrazit jm�na osob ozna�en�ch jako neve�ejn�";
@@ -1343,7 +1343,7 @@ switch ($textpart) {
     //$admtext['mhconfidence'] = "Minimum confidence level";
     //$admtext['mhmatchtype'] = "Match type";
     $admtext['hidedna'] = "Skr�t v�echny str�nky a �daje k DNA";
-    $admtext['assumeliving'] = "Osoba je �ij�c�, pokud zem�ela<br />p�ed m�n� ne� tolika lety";
+    $admtext['assumeliving'] = "Osoba je �ij�c�, pokud zem�ela<br>p�ed m�n� ne� tolika lety";
     //changed in 11.0.2
     $admtext['mapkey'] = "Kl�� k map�";
     //added in 12.0
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Slou�it m�sta";
     $admtext['findmerge'] = "Naj�t kandid�ty pro slou�en�";
     $admtext['selectplacemerge'] = "Vybrat m�sta na slou�en�";
-    $admtext['mcol1'] = "Slou�it<br/>tyto<br/>(vymazat)";
-    $admtext['mcol2'] = "do<br/>t�chto<br/>(ponechat)";
+    $admtext['mcol1'] = "Slou�it<br>tyto<br>(vymazat)";
+    $admtext['mcol2'] = "do<br>t�chto<br>(ponechat)";
     $admtext['pmsucc'] = "Slou�en� m�st prob�hlo �sp�n�";
     $admtext['nomerge'] = "Nic na slou�en�";
     $admtext['enterkeep'] = "Zvolte pros�m c�l (z�znam) na slou�en�.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Zvolte ud�lost a akci";
     $admtext['suggested'] = "Doporu�eno/navr�eno";
-    $admtext['usernotes'] = "Pozn�mky ohledn�<br />navr�en� zm�ny<br />(nebudou ulo�eny)";
+    $admtext['usernotes'] = "Pozn�mky ohledn�<br>navr�en� zm�ny<br>(nebudou ulo�eny)";
     $admtext['postdate'] = "Zaznamen�no/odesl�no";
     $admtext['savedel'] = "Ulo�it a vymazat";
     $admtext['postpone'] = "Odlo�it";

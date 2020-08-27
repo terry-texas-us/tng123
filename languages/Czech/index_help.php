@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Administrace");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="modmanager_help.php" class="lightlink">&laquo; N�pov�da: Mana�er m�d�</a> &nbsp; | &nbsp;
-                <a href="people_help.php" class="lightlink">N�pov�da: Osoby &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Za��n�me</span>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp; | &nbsp;
-                <a href="#otherresources" class="lightlink">Jin� zdroje</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="modmanager_help.php" class="lightlink">&laquo; N�pov�da: Mana�er m�d�</a> &nbsp; | &nbsp;
+        <a href="people_help.php" class="lightlink">N�pov�da: Osoby &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Za��n�me</span>
+      <p class="smaller menu">
+        <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp; | &nbsp;
+        <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp; | &nbsp;
+        <a href="#otherresources" class="lightlink">Jin� zdroje</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
@@ -72,22 +72,22 @@ echo help_header("N�pov�da: Administrace");
                         o programov�ch aktualizac�ch a vydan�ch oprav�ch. </p></li>
                 <li><p>U�ivatelsk� mailov� seznam: <a href="mailto:tngusers2@lythgoes.net">tngusers2@lythgoes.net</a>. P�ij�mat a pos�lat maily na
                         <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. Tento seznam se pou��v� pro diskuze mezi u�ivateli TNG. </p></li>
-                <li><p>U�ivatelsk� f�rum: <a href="https://tng.community" target="_blank">https://tng.community</a>.</p></li>
-                <li><p>TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">https://tng.lythgoes.net/wiki</a>. Str�nka MediaWiki, kter� obsahuje:</p>
-                    <ul>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">Pr�vodce uvodem do TNG</a>. Jak nastavit va�e str�nky a vytvo�it u�ivatelsk� str�nky.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">Pr�vodce pro n�v�t�vn�ky TNG</a>. Jak se mohou n�v�t�vn�ci pohybovat po va�ich str�nk�ch.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">Pr�vodce pro registrovan� u�ivatele TNG</a>. Jak vyu��t mo�nosti TNG jako registrovan� u�ivatel nebo Administr�tor.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">Pr�vodce pro administr�tora TNG</a>. Poskytne informace pro administr�tora webov�ch str�nek TNG.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">Pr�vodce pro program�tora TNG</a>. Pom��e porozum�t, jak TNG pracuje, a pro program�tory, jak vytvo�it zm�ny v TNG.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">Seznam term�n� TNG</a>. Slova a v�ty pou�it� v TNG, kter� souvis� s genealogi�, po��ta�ovou technikou a organizac� archivace.</li>
-                    </ul>
-                    <br/>
-                </li>
-                <li><p>Odkazy PHP: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
-                <li><p>Odkazy MySQL: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
-                <li><p>Odkazy HTML: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
-                <li><p>Kontakt p��mo na autora: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
+              <li><p>U�ivatelsk� f�rum: <a href="https://tng.community" target="_blank">https://tng.community</a>.</p></li>
+              <li><p>TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">https://tng.lythgoes.net/wiki</a>. Str�nka MediaWiki, kter� obsahuje:</p>
+                <ul>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">Pr�vodce uvodem do TNG</a>. Jak nastavit va�e str�nky a vytvo�it u�ivatelsk� str�nky.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">Pr�vodce pro n�v�t�vn�ky TNG</a>. Jak se mohou n�v�t�vn�ci pohybovat po va�ich str�nk�ch.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">Pr�vodce pro registrovan� u�ivatele TNG</a>. Jak vyu��t mo�nosti TNG jako registrovan� u�ivatel nebo Administr�tor.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">Pr�vodce pro administr�tora TNG</a>. Poskytne informace pro administr�tora webov�ch str�nek TNG.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">Pr�vodce pro program�tora TNG</a>. Pom��e porozum�t, jak TNG pracuje, a pro program�tory, jak vytvo�it zm�ny v TNG.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">Seznam term�n� TNG</a>. Slova a v�ty pou�it� v TNG, kter� souvis� s genealogi�, po��ta�ovou technikou a organizac� archivace.</li>
+                </ul>
+                <br>
+              </li>
+              <li><p>Odkazy PHP: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
+              <li><p>Odkazy MySQL: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
+              <li><p>Odkazy HTML: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
+              <li><p>Kontakt p��mo na autora: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
             </ol>
         </td>
     </tr>

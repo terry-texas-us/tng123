@@ -189,13 +189,13 @@ if ($sourcelinktext) {
 }
 
 $sourcetext .= "</table>\n";
-$sourcetext .= "<br/>\n";
+$sourcetext .= "<br>\n";
 $sourcetext .= endSection("info");
 
 $media = doMediaSection($sourceID, $srcmedia, $srcalbums);
 if ($media) {
   $sourcetext .= beginSection("media");
-  $sourcetext .= $media . "<br/>\n";
+  $sourcetext .= $media . "<br>\n";
   $sourcetext .= endSection("media");
 }
 
@@ -209,7 +209,7 @@ if ($notes) {
   $sourcetext .= "<td valign=\"top\" class=\"databack\">$notes</td>\n";
   $sourcetext .= "</tr>\n";
   $sourcetext .= "</table>\n";
-  $sourcetext .= "<br/>\n";
+  $sourcetext .= "<br>\n";
   $sourcetext .= endSection("notes");
 }
 $sourcetext .= "</ul>\n";
@@ -288,7 +288,7 @@ echo tng_menu("S", "source", $sourceID, $innermenu);
 <?php
 echo $sourcetext;
 ?>
-    <br/>
+  <br>
 
 <?php
 tng_footer($flags);

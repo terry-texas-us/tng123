@@ -42,12 +42,12 @@ function modify($dir, $file) {
         unlink("$dir/cust_text.bak");
       }
       if (!rename("$dir/cust_text.php", "$dir/cust_text.bak")) {
-        echo "Can't make backup of $dir/cust_text.php. <br/>\n";
+        echo "Can't make backup of $dir/cust_text.php. <br>\n";
       }
       if (!file_put_contents("$dir/cust_text.php", $a)) {
-        echo "Can't create new $dir/cust_text.php. <br/>\n";
+        echo "Can't create new $dir/cust_text.php. <br>\n";
       } else {
-        echo "changed $dir <br/>\n";
+        echo "changed $dir <br>\n";
       }
       $modded++;
     }
@@ -65,16 +65,16 @@ echo "<h3>Updating cust_text.php files with standard comments</h3>\n";
 
 scan("languages");
 if ($modded) {
-  echo "Modified $modded files. <br/>\n";
+  echo "Modified $modded files. <br>\n";
 } else {
-  echo "No changes required. <br/>\n";
+  echo "No changes required. <br>\n";
 }
 $eol = "\r\n";
 if (file_exists("languages/Greek-UTF8") && !file_exists("languages/Greek-UTF8/cust_text.php")) {
   file_put_contents("languages/Greek-UTF8/cust_text.php", "<?php$eol$insert$eol$key$eol$newm$mess$eol$eol?>");
-  echo "Created languages/Greek-UTF8 <br/>\n";
+  echo "Created languages/Greek-UTF8 <br>\n";
 }
-echo "All cust_text.php files are now up to v{$tng_version} standard. <br/>\n";
+echo "All cust_text.php files are now up to v{$tng_version} standard. <br>\n";
 echo "The originals of files that have been changed are at cust_text.bak in the original directory. <br>\n";
 
 // admin_cust_text_update.php created from cust_text_update.php  by Ken Roy 

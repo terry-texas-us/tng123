@@ -233,7 +233,7 @@ msgid "Map image to upload"
 msgstr "Kartendatei zum Hochladen"
 
 # $admtext['mapfilenamefolder'] = "Name der Kartendatei im<br>Grabstein-Verzeichnis";
-msgid "Map File Name<br/>within Headstones folder"
+msgid "Map File Name<br>within Headstones folder"
 msgstr "Name der Kartendatei im<br>Grabstein-Verzeichnis"
 
 # $admtext['ifmapuploaded'] = "Lassen Sie dieses Feld leer, falls die Dateien bereits auf den Webserver in das Grabstein-Verzeichnis hochgeladen wurden.";
@@ -273,7 +273,7 @@ msgid "Please enter a "
 msgstr "Bitte eingeben "
 
 # $admtext['netscapereload'] = "Netscape-Anwender:<br>Bitte Seite aktualisieren";
-msgid "Netscape users: <br/>You must reload the Cemeteries page to see your new"
+msgid "Netscape users: <br>You must reload the Cemeteries page to see your new"
 msgstr "Netscape-Anwender:<br>Bitte Seite aktualisieren"
 
 # $admtext['deletingnote'] = "Notiz wird gelöscht...";
@@ -345,7 +345,7 @@ msgid "Duplicate for"
 msgstr "Duplikat für"
 
 # $admtext['importinggedcom'] = "GEDCOM-Datei wird importiert...<br>(kann einige Minuten dauern)";
-msgid "Importing GEDCOM...<br/>(this may take several minutes)"
+msgid "Importing GEDCOM...<br>(this may take several minutes)"
 msgstr "GEDCOM-Datei wird importiert...<br>(kann einige Minuten dauern)"
 
 # $admtext['ifimportfails'] = "Wenn der Import fehlschlägt, zur Vervollständigung";
@@ -720,9 +720,9 @@ msgstr "Keine Ereignistypen vorhanden."
 msgid "Descendant Interest"
 msgstr "Interessent an Nachkommen"
 
-# $admtext['allnone'] = "Geben Sie für jede Sprache einen Anzeigetext ein,<br />oder lassen Sie alle Felder leer und geben Sie oben einen einzigen Anzeigetext ein.";
-msgid "Enter a display message for each language,<br />or leave all blank and enter one display message above."
-msgstr "Geben Sie für jede Sprache einen Anzeigetext ein,<br />oder lassen Sie alle Felder leer und geben Sie oben einen einzigen Anzeigetext ein."
+# $admtext['allnone'] = "Geben Sie für jede Sprache einen Anzeigetext ein,<br>oder lassen Sie alle Felder leer und geben Sie oben einen einzigen Anzeigetext ein.";
+msgid "Enter a display message for each language,<br>or leave all blank and enter one display message above."
+msgstr "Geben Sie für jede Sprache einen Anzeigetext ein,<br>oder lassen Sie alle Felder leer und geben Sie oben einen einzigen Anzeigetext ein."
 
 # $admtext['assocwith'] = "Verbunden mit";
 msgid "Associated with"
@@ -1156,9 +1156,9 @@ msgstr "Präfix"
 msgid "Check empty box to delete item at left"
 msgstr "Kästchen ankreuzen, um Element auf der linken Seite zu löschen"
 
-# $admtext['choosedef'] = "Standard<br />-Foto<br />auswählen";
-msgid "Choose<br/>default<br/>photo"
-msgstr "Standard<br />-Foto<br />auswählen"
+# $admtext['choosedef'] = "Standard<br>-Foto<br>auswählen";
+msgid "Choose<br>default<br>photo"
+msgstr "Standard<br>-Foto<br>auswählen"
 
 # $admtext['confdate'] = "Datum der Konfirmation (LDS)";
 msgid "Confirmation Date (LDS)"
@@ -1385,7 +1385,7 @@ msgid "Make Default"
 msgstr "Als Standard setzen."
 
 # $admtext['filewithinhs'] = "Dateiname im Grabstein-Verzeichnis <br>(Unterverzeichnis- und Dateiname)";
-msgid "Path within headstones folder <br/>(subfolder and file name)"
+msgid "Path within headstones folder <br>(subfolder and file name)"
 msgstr "Dateiname im Grabstein-Verzeichnis <br>(Unterverzeichnis- und Dateiname)"
 
 # $admtext['recsupdated'] = "Datensatz aktualisiert";
@@ -1552,9 +1552,9 @@ msgstr "Vorschaubild wurde aufgrund von Problemen mit Pfad, Berechtigungen oder 
 msgid "Show cemetery map and media whenever this item is displayed"
 msgstr "Zeige stets Friedhofskarte und -fotos, wenn dieses Bild angezeigt wird"
 
-# $admtext['bodytext'] = "<strong>ODER</strong><br/>Haupt-Text";
-msgid "<strong>OR</strong><br/>Body Text"
-msgstr "<strong>ODER</strong><br/>Haupt-Text"
+# $admtext['bodytext'] = "<strong>ODER</strong><br>Haupt-Text";
+msgid "<strong>OR</strong><br>Body Text"
+msgstr "<strong>ODER</strong><br>Haupt-Text"
 
 # $admtext['usenl'] = "Zeilenumbrüche bei der Anzeige nach HTML konvertieren";
 msgid "Convert line breaks to HTML on display"
@@ -4100,9 +4100,9 @@ msgstr "Person als lebend behandeln"
 msgid "Person is deceased"
 msgstr "Person als verstorben behandeln"
 
-# $admtext['nodeathdate'] = "Bei fehlendem Sterbedatum die Person<br />als verstorben behandeln, sofern älter als";
-msgid "If no death date, assume deceased<br />if older than"
-msgstr "Bei fehlendem Sterbedatum die Person<br />als verstorben behandeln, sofern älter als"
+# $admtext['nodeathdate'] = "Bei fehlendem Sterbedatum die Person<br>als verstorben behandeln, sofern älter als";
+msgid "If no death date, assume deceased<br>if older than"
+msgstr "Bei fehlendem Sterbedatum die Person<br>als verstorben behandeln, sofern älter als"
 
 # $admtext['pedconfigsettings'] = "Stammbaum-Einstellungen";
 msgid "Chart Settings"
@@ -5112,13 +5112,13 @@ msgstr "Suche nach zu verschmelzenden Orten"
 msgid "Select Places to Merge"
 msgstr "Auswahl der zu verschmelzenden Orte"
 
-# $admtext['mcol1'] = "Führe<br/>zusammen<br/>von<br/>(lösche)";
-msgid "Merge<br/>these<br/>(delete)"
-msgstr "Führe<br/>zusammen<br/>von<br/>(lösche)"
+# $admtext['mcol1'] = "Führe<br>zusammen<br>von<br>(lösche)";
+msgid "Merge<br>these<br>(delete)"
+msgstr "Führe<br>zusammen<br>von<br>(lösche)"
 
-# $admtext['mcol2'] = "<br/><br/>nach<br/>(belasse)";
-msgid "into<br/>this<br/>(keep)"
-msgstr "<br/><br/>nach<br/>(belasse)"
+# $admtext['mcol2'] = "<br><br>nach<br>(belasse)";
+msgid "into<br>this<br>(keep)"
+msgstr "<br><br>nach<br>(belasse)"
 
 # $admtext['pmsucc'] = "Verschmelzen der Orte war erfolgreich";
 msgid "Place merge successful"
@@ -5349,7 +5349,7 @@ msgid "New Language Information"
 msgstr "Angaben über neue Sprache"
 
 # $admtext['langdisplay'] = "Anzeigename für diese Sprache, <br>wie für Benutzer sichtbar";
-msgid "Name for this language<br/>as it will be displayed for visitors"
+msgid "Name for this language<br>as it will be displayed for visitors"
 msgstr "Anzeigename für diese Sprache, <br>wie für Benutzer sichtbar"
 
 # $admtext['createlanguage'] = "Neue Sprache hinzufügen";
@@ -5964,9 +5964,9 @@ msgstr "Auswahl von Ereignis und Aktion"
 msgid "Suggested"
 msgstr "Vorgeschlagen"
 
-# $admtext['usernotes'] = "Bemerkungen<br />zu vorgeschlagener Änderung<br />(werden nicht gespeichert)";
-msgid "Notes regarding<br />suggested change<br />(will not be saved)"
-msgstr "Bemerkungen<br />zu vorgeschlagener Änderung<br />(werden nicht gespeichert)"
+# $admtext['usernotes'] = "Bemerkungen<br>zu vorgeschlagener Änderung<br>(werden nicht gespeichert)";
+msgid "Notes regarding<br>suggested change<br>(will not be saved)"
+msgstr "Bemerkungen<br>zu vorgeschlagener Änderung<br>(werden nicht gespeichert)"
 
 # $admtext['postdate'] = "Vorgeschlagen am";
 msgid "Posted on"
@@ -7257,7 +7257,7 @@ msgid "Are you sure you want to delete this event?"
 msgstr "Sind Sie sicher, dass Sie dieses Ereignis löschen möchten?"
 
 # $admtext['existinglinks'] = "Bestehende Verknüpfung:<br>(Zum Löschen markieren)";
-msgid "Existing Links:<br/>(check to delete)"
+msgid "Existing Links:<br>(check to delete)"
 msgstr "Bestehende Verknüpfung:<br>(Zum Löschen markieren)"
 
 # $admtext['lowersortfirst'] = "Kleinere Zahlen zuerst (Dezimalzahlen erlaubt).";

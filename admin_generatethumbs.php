@@ -80,7 +80,7 @@ while ($row = tng_fetch_assoc($result)) {
         if (ceil(filesize($path) / 1000) > $maxsizeallowed) {
           $needsupdate = 0;
           $conflicts++;
-          $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . $admtext['thumbsize'] . "<br />\n";  //file is too big
+          $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . $admtext['thumbsize'] . "<br>\n";  //file is too big
         } else {
           if (function_exists('imageJpeg') && image_createThumb($path, $newthumbpath, $thumbmaxw, $thumbmaxh, $thumbquality)) {
             if (strtoupper($destInfo['extension']) == "GIF") {
@@ -92,13 +92,13 @@ while ($row = tng_fetch_assoc($result)) {
           } else {
             $needsupdate = 0;
             $conflicts++;
-            $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $newthumbpath . " " . $admtext['thumbinv'] . "<br />\n";  //thumb couldn't be created
+            $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $newthumbpath . " " . $admtext['thumbinv'] . "<br>\n";  //thumb couldn't be created
           }
         }
       } else {
         $needsupdate = 0;
         $conflicts++;
-        $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . $admtext['thumblost'] . "<br />\n";  //original doesn't exist
+        $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . $admtext['thumblost'] . "<br>\n";  //original doesn't exist
       }
     }
   }
@@ -113,7 +113,7 @@ tng_free_result($result);
 
 adminwritelog("{$admtext['genthumbs']}: {$admtext['thumbsgenerated']}: $count; {$admtext['recsupdated']}: $updated; {$admtext['thumbconflicts']}: $conflicts");
 
-echo "<p><strong>{$admtext['thumbsgenerated']}:</strong> $count<br /><strong>{$admtext['recsupdated']}:</strong> $updated</p>";
+echo "<p><strong>{$admtext['thumbsgenerated']}:</strong> $count<br><strong>{$admtext['recsupdated']}:</strong> $updated</p>";
 if ($conflicts) {
   echo "<p><strong>" . $admtext['thumbconflicts'] . ":</strong> $conflicts</p><p style=\"line-height:1.5\">$conflictstr</p>";
 }

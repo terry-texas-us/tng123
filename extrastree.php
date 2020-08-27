@@ -54,12 +54,12 @@ function displayIndividual($key, $generation, $slot, $column) {
         if (!isset($columns[$column][$generation])) {
           $gentext = "gen$generation";
           $genmsg = isset($text[$gentext]) ? $text[$gentext] : $text['generation'] . ": $generation";
-          $columns[$column][$generation] = "<span class=\"normal\">$genmsg<br/></span>\n<ul>\n";
+          $columns[$column][$generation] = "<span class=\"normal\">$genmsg<br></span>\n<ul>\n";
         }
         $namestr = getNameRev($row);
         $columns[$column][$generation] .= "<li><span class=\"normal\"><a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\">$namestr</a> " . trim(getYears($row));
         if ($mediarow['mediacount']) {
-          $columns[$column][$generation] .= " <a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\" title=\"{$text['mediaavail']}\"><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" border=\"0\" alt=\"{$text['mediaavail']}\" /></a>";
+          $columns[$column][$generation] .= " <a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\" title=\"{$text['mediaavail']}\"><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"></a>";
         }
         $columns[$column][$generation] .= "</span></li>\n";
       }
@@ -190,7 +190,7 @@ echo "</form>\n";
 echo "<p class=\"subhead\"><strong>{$text['media']}: {$text['familyof']} $pedname</strong></p>";
 
 if ($showall) {
-  echo "<p><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" border=\"0\" alt=\"{$text['mediaavail']}\" /> {$text['extrasexpl']}</p>";
+  echo "<p><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"> {$text['extrasexpl']}</p>";
 }
 $slot = 1;
 displayIndividual($personID, 1, $slot, 0);
@@ -203,7 +203,7 @@ displayIndividual($personID, 1, $slot, 0);
               for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {
                 if ($columns[1][$nextgen]) {
                   echo $columns[1][$nextgen];
-                  echo "</ul>\n<br/>\n";
+                  echo "</ul>\n<br>\n";
                 }
               }
               ?>
@@ -215,7 +215,7 @@ displayIndividual($personID, 1, $slot, 0);
               for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {
                 if ($columns[2][$nextgen]) {
                   echo $columns[2][$nextgen];
-                  echo "</ul>\n<br/>\n";
+                  echo "</ul>\n<br>\n";
                 }
               }
               ?>

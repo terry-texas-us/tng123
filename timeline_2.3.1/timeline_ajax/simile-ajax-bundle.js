@@ -3319,7 +3319,7 @@ SimileAjax.DOM.appendClassName = function (C, D) {
 };
 SimileAjax.DOM.createInputElement = function (A) {
     var B = document.createElement("div");
-    B.innerHTML = "<input type='" + A + "' />";
+    B.innerHTML = "<input type='" + A + "'>";
     return B.firstChild;
 };
 SimileAjax.DOM.createDOMFromTemplate = function (B) {
@@ -3478,11 +3478,11 @@ SimileAjax.Graphics._createTranslucentImage2 = function (A, C) {
 };
 SimileAjax.Graphics.createTranslucentImage = SimileAjax.Graphics.pngIsTranslucent ? SimileAjax.Graphics._createTranslucentImage1 : SimileAjax.Graphics._createTranslucentImage2;
 SimileAjax.Graphics._createTranslucentImageHTML1 = function (A, B) {
-    return '<img src="' + A + '"' + (B != null ? ' style="vertical-align: ' + B + ';"' : "") + " />";
+    return '<img src="' + A + '"' + (B != null ? ' style="vertical-align: ' + B + ';"' : "") + ">";
 };
 SimileAjax.Graphics._createTranslucentImageHTML2 = function (A, C) {
     var B = "width: 1px; height: 1px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + A + "', sizingMethod='image');" + (C != null ? " vertical-align: " + C + ";" : "");
-    return "<img src='" + A + "' style=\"" + B + '" />';
+    return "<img src='" + A + "' style=\"" + B + '">';
 };
 SimileAjax.Graphics.createTranslucentImageHTML = SimileAjax.Graphics.pngIsTranslucent ? SimileAjax.Graphics._createTranslucentImageHTML1 : SimileAjax.Graphics._createTranslucentImageHTML2;
 SimileAjax.Graphics.setOpacity = function (B, A) {

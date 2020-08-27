@@ -262,7 +262,7 @@ if ($row['type'] == "I") {
   $hmsg = $admtext['families'];
   $peopletabs[0] = array(1, "admin_families.php", $admtext['search'], "findperson");
   $peopletabs[1] = array($allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily");
-  $peopletabs[2] = array($allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review");
+  $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review"];
 }
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#review');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "review", $innermenu);
@@ -270,20 +270,20 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="subhead"><strong><?php echo "$persfamID: $name</strong> $teststr $editstr"; ?></span><br/><br/>
-            <div class="normal">
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="subhead"><strong><?php echo "$persfamID: $name</strong> $teststr $editstr"; ?></span><br><br>
+      <div class="normal">
 
-                <form action="admin_savereview.php" method="post" name="form1">
-                    <table class="normal">
-                        <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
-                            <td><span class="normal"><?php echo $treerow['treename']; ?></span></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">&nbsp;</td>
-                        </tr>
+        <form action="admin_savereview.php" method="post" name="form1">
+          <table class="normal">
+            <tr>
+              <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+              <td><span class="normal"><?php echo $treerow['treename']; ?></span></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
                         <tr>
                             <td valign="top"><span class="subhead"><strong><?php echo $admtext['event']; ?>:</strong></span></td>
                             <td><span class="subhead"><strong><?php echo $displayval; ?></strong></span></td>
@@ -338,20 +338,20 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             <td valign="top"><?php echo $admtext['postdate']; ?>:</td>
                             <td><?php echo "{$row['postdate']} ({$row['user']})"; ?></td>
                         </tr>
-                    </table>
-                    <br/>
-                    <input type="hidden" name="tempID" value="<?php echo $tempID; ?>">
+          </table>
+          <br>
+          <input type="hidden" name="tempID" value="<?php echo $tempID; ?>">
                     <input type="hidden" name="type" value="<?php echo $row['type']; ?>">
                     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                     <input type="hidden" name="choice" value="<?php echo $admtext['savedel']; ?>">
                     <input type="submit" class="btn" value="<?php echo $admtext['savedel']; ?>">
                     <input type="submit" class="btn" value="<?php echo $admtext['postpone']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['postpone']; ?>';">
                     <input type="submit" class="btn" value="<?php echo $admtext['igndel']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['igndel']; ?>';">
-                    <br/>
-                </form>
-            </div>
-        </td>
-    </tr>
+          <br>
+        </form>
+      </div>
+    </td>
+  </tr>
 
 </table>
 

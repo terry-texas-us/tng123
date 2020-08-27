@@ -41,7 +41,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($headline, $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $headline; ?></h1><br class="clearleft"/>
+  <h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $headline; ?></h1><br class="clearleft">
 <?php
 $dnatext = "";
 $dnatext .= "<ul class=\"nopad\">\n";
@@ -342,7 +342,7 @@ if ($dnalinktext) {
 }
 
 $dnatext .= "</table>\n";
-$dnatext .= "<br/>\n";
+$dnatext .= "<br>\n";
 $dnatext .= endSection("info");
 
 $dnatext .= "</ul>\n";
@@ -356,7 +356,7 @@ echo tng_menu("D", "dna", $testID, $innermenu);
 <?php
 echo $dnatext;
 ?>
-    <br/>
+  <br>
 
 <?php
 tng_footer($flags);

@@ -40,28 +40,28 @@ tng_adminheader($admtext['users'], $flags);
 $usertabs[0] = array(1, "admin_users.php", $admtext['search'], "finduser");
 $usertabs[1] = array($allow_add, "admin_newuser.php", $admtext['addnew'], "adduser");
 $usertabs[2] = array($allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review");
-$usertabs[3] = array(1, "admin_mailusers.php", $admtext['email'], "mail");
+$usertabs[3] = [1, "admin_mailusers.php", $admtext['email'], "mail"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/users_help.php#addreg');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($usertabs, "review", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img/users_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
-                <em><?php echo $admtext['editnewusers']; ?></em><br/><br/>
-              <?php
-              echo "<p>{$admtext['matches']}: <span class=\"restotal\">$numrows</span></p>";
-              ?>
-                <form action="admin_deleteselected.php" method="post" name="form2">
-                  <?php
-                  if ($allow_delete) {
-                    ?>
-                      <p>
-                          <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                          <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                          <input type="submit" name="xruseraction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
+        <em><?php echo $admtext['editnewusers']; ?></em><br><br>
+        <?php
+        echo "<p>{$admtext['matches']}: <span class=\"restotal\">$numrows</span></p>";
+        ?>
+        <form action="admin_deleteselected.php" method="post" name="form2">
+          <?php
+          if ($allow_delete) {
+            ?>
+            <p>
+              <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
+              <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
+              <input type="submit" name="xruseraction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                       </p>
                     <?php
                   }
@@ -115,7 +115,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
                         echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$row['description']}&nbsp;</span></td>\n";
                         echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$row['realname']}";
                         if ($row['realname'] && $row['email']) {
-                          echo "<br />";
+                          echo "<br>";
                         }
                         echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a>&nbsp;</span></td>\n";
                         echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$row['dt_registered_fmt']}&nbsp;</span></td>\n";

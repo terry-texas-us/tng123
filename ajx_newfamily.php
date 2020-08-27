@@ -57,22 +57,22 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="famform1" id="famform1" onsubmit="return validateFamily(this,'<?php echo $slot; ?>');">
-    <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
-    <table width="100%" border="0" cellpadding="10" cellspacing="0">
-        <tr class="databack">
-            <td class="tngbotshadow">
-                <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
-                <span class="subhead togglehead"><strong><?php echo $admtext['addnewfamily']; ?></strong></span><br/><br/>
+  <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
+  <table width="100%" border="0" cellpadding="10" cellspacing="0">
+    <tr class="databack">
+      <td class="tngbotshadow">
+        <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+        <span class="subhead togglehead"><strong><?php echo $admtext['addnewfamily']; ?></strong></span><br><br>
 
-                <table class="normal">
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="normal"><?php echo $admtext['familyid']; ?>:</span></td>
-                        <td>
-                            <input type="text" name="familyID" id="familyID" value="<?php echo $newID; ?>" size="10" onblur="this.value=this.value.toUpperCase()">
-                            <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('family','familyID');">
+        <table class="normal">
+          <tr>
+            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
+          </tr>
+          <tr>
+            <td><span class="normal"><?php echo $admtext['familyid']; ?>:</span></td>
+            <td>
+              <input type="text" name="familyID" id="familyID" value="<?php echo $newID; ?>" size="10" onblur="this.value=this.value.toUpperCase()">
+              <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('family','familyID');">
 
                             <input type="button" value="<?php echo $admtext['check']; ?>" onClick="checkIDajax(jQuery('#familyID').val(),'family','checkmsg');">
                             <span id="checkmsg" class="normal"></span>
@@ -132,7 +132,7 @@ include_once "eventlib.php";
                               echo "<span id=\"fbranchlist\"></span>";
                               if (!$assignedbranch) {
                               if ($numbranches > 8) {
-                                $select = "{$admtext['scrollbranch']}<br/>";
+                                $select = "{$admtext['scrollbranch']}<br>";
                               }
                               $select .= "<select name=\"branch[]\" id=\"fbranch\" multiple size=\"8\">\n";
                               $select .= "	<option value=\"\"";
@@ -142,7 +142,7 @@ include_once "eventlib.php";
                               $select .= ">{$admtext['nobranch']}</option>\n";
 
                               $select .= "$options</select>\n";
-                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                               ?>
                                 <div id="fbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">
                                   <?php

@@ -42,9 +42,9 @@ class RecentPeopleCard
 
     $content = "";
     if (tng_num_rows($result)) {
-      $content .= "<div class=\"titlebox tablediv\"><span class=\"subhead\"><b>{$title}</b></span><br/><br/>";
+      $content .= "<div class=\"titlebox tablediv\"><span class=\"subhead\"><b>{$title}</b></span><br><br>";
       $imageSize = @GetImageSize("{$this->path}img/Chart.gif");
-      $chartlink = "<img src=\"{$this->path}img/Chart.gif\" alt=\"\" $imageSize[3] />";
+      $chartlink = "<img src=\"{$this->path}img/Chart.gif\" alt=\"\" $imageSize[3]>";
       while ($row = tng_fetch_assoc($result)) {
         $rights = determineLivingPrivateRights($row);
         $row['allow_living'] = $rights['living'];
@@ -55,11 +55,11 @@ class RecentPeopleCard
         $content .= "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>";
         $content .= "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a>";
         if ($birthdate || $birthplace) {
-          $content .= "<br/>";
+          $content .= "<br>";
           if ($birthdate) {
             $content .= "$birthdate";
             if ($birthplace) {
-              $content .= "<br/>";
+              $content .= "<br>";
             }
           }
           if ($birthplace) {

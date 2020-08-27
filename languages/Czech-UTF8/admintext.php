@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pro úložiště pramenů...";
     $admtext['noevtypes'] = "Žádný typ události neexistuje.";
     $admtext['DESI'] = "Úroveň zájmu o potomka";
-    $admtext['allnone'] = "Pro každý jazyk zadejte text, který se bude zobrazovat, <br />nebo nechte pole prázdná a zadejte pouze jednu zprávu nahoře.";
+    $admtext['allnone'] = "Pro každý jazyk zadejte text, který se bude zobrazovat, <br>nebo nechte pole prázdná a zadejte pouze jednu zprávu nahoře.";
     $admtext['assocwith'] = "Spojeno s";
     $admtext['BAPM'] = "Křest";
     $admtext['umps'] = "Váš soubor GEDCOM je zřejmě větší než je maximální velikost povolená ve vaší instalaci PHP. Požádejte vašeho providera, aby zvětšil hodnotu proměnné 'upload_max_filesize' nebo můžete nakopírovat váš soubor do složky 'gedcom' na vašich stránkách a naimportovat jej odtud.;";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Povinné. Musí odpovídat názvu a umístění vašeho souboru <em>ve složce fotografií</em> po nahrání souboru. Např. pokud se složka fotografií jmenuje <em>photos</em>, a vy chcete soubor pojmenovat <em>mojefoto.jpg</em> a umístit tento soubor do podsložky fotografií nazvané <em>novefoto</em>, zadejte do tohoto pole <em>novefoto/mojefoto.jpg</em>.";
     $admtext['leaveblankphoto'] = "Toto pole nevyplňujte, pokud byl soubor již nahrán.";
     $admtext['thumbconflicts'] = "Náhledy nebyly vytvořeny, protože byl problém s názvem souboru, složky nebo přístupových práv";
-    $admtext['showmap'] = "Ukázat mapu hřbitova a médium, kdykoliv bude tato položka zobrazena";
-    $admtext['bodytext'] = "<strong>NEBO</strong><br/>Základní text";
-    $admtext['usenl'] = "Převést konce řádků na HTML pro zobrazení";
+  $admtext['showmap'] = "Ukázat mapu hřbitova a médium, kdykoliv bude tato položka zobrazena";
+  $admtext['bodytext'] = "<strong>NEBO</strong><br>Základní text";
+  $admtext['usenl'] = "Převést konce řádků na HTML pro zobrazení";
     $admtext['newwin'] = "Otevřít v novém okně";
     $admtext['modifymedia'] = "Upravit existující médium";
     $admtext['addnewmedia'] = "Přidat nové médium";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Pokud chybí datum narození, předpokládat, že";
     $admtext['persliving'] = "Osoba žije";
     $admtext['persdead'] = "Osoba zemřela";
-    $admtext['nodeathdate'] = "Pokud chybí datum úmrtí, předpokládat, že<br />osoba zemřela, je-li starší než";
+    $admtext['nodeathdate'] = "Pokud chybí datum úmrtí, předpokládat, že<br>osoba zemřela, je-li starší než";
     $admtext['pedconfigsettings'] = "Nastavení schémat";
     $admtext['usepopups'] = "Výchozí zobrazení";
     $admtext['maxpedgens'] = "Maximální počet generací";
@@ -1287,7 +1287,7 @@ switch ($textpart) {
     $admtext['usedefthumbs'] = "Použít výchozí náhledy";
     $admtext['autogeo'] = "Geokódovat všechna nová místa";
     $admtext['revmail'] = "Upozornit na návrhy k přezkoumání";
-    $admtext['assumepriv'] = "Osoba je neveřejná, pokud zemřela<br />před méně než tolika lety";
+    $admtext['assumepriv'] = "Osoba je neveřejná, pokud zemřela<br>před méně než tolika lety";
     $admtext['calstart'] = "První den v týdnu";
     $admtext['edit_timeout'] = "Upravit prodlevu (v minutách)";
     $admtext['shownamespr'] = "Zobrazit jména osob označených jako neveřejné";
@@ -1343,7 +1343,7 @@ switch ($textpart) {
     //$admtext['mhconfidence'] = "Minimum confidence level";
     //$admtext['mhmatchtype'] = "Match type";
     $admtext['hidedna'] = "Skrýt všechny stránky a údaje k DNA";
-    $admtext['assumeliving'] = "Osoba je žijící, pokud zemřela<br />před méně než tolika lety";
+    $admtext['assumeliving'] = "Osoba je žijící, pokud zemřela<br>před méně než tolika lety";
     //changed in 11.0.2
     $admtext['mapkey'] = "Klíč k mapě";
     //added in 12.0
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Sloučit místa";
     $admtext['findmerge'] = "Najít kandidáty pro sloučení";
     $admtext['selectplacemerge'] = "Vybrat místa na sloučení";
-    $admtext['mcol1'] = "Sloučit<br/>tyto<br/>(vymazat)";
-    $admtext['mcol2'] = "do<br/>těchto<br/>(ponechat)";
+    $admtext['mcol1'] = "Sloučit<br>tyto<br>(vymazat)";
+    $admtext['mcol2'] = "do<br>těchto<br>(ponechat)";
     $admtext['pmsucc'] = "Sloučení míst proběhlo úspěšně";
     $admtext['nomerge'] = "Nic na sloučení";
     $admtext['enterkeep'] = "Zvolte prosím cíl (záznam) na sloučení.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Zvolte událost a akci";
     $admtext['suggested'] = "Doporučeno/navrženo";
-    $admtext['usernotes'] = "Poznámky ohledně<br />navržené změny<br />(nebudou uloženy)";
+    $admtext['usernotes'] = "Poznámky ohledně<br>navržené změny<br>(nebudou uloženy)";
     $admtext['postdate'] = "Zaznamenáno/odesláno";
     $admtext['savedel'] = "Uložit a vymazat";
     $admtext['postpone'] = "Odložit";

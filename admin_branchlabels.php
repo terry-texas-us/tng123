@@ -443,7 +443,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
         }
       }
       if ($counter || $fcounter) {
-        echo "<br/><br/>";
+        echo "<br><br>";
       }
       echo "<span class=\"normal\">{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</span>";
 

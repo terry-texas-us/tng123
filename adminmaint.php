@@ -19,7 +19,7 @@ tng_adminheader($admtext['maintmode'], '');
         <p class="plainheader"><?php echo $admtext['maintmode']; ?></p>
 
         <p class="normal"><?php echo $admtext['maintexp']; ?>
-        </p><br/><br/>
+        </p><br><br>
     </div>
 </div>
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>

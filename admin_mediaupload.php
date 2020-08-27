@@ -109,27 +109,27 @@ tng_adminheader($admtext['sortmedia'], $flags);
     }
 
     jQuery(document).ready(function () {
-        jQuery('#linker').click(function (e) {
-            e.preventDefault();
-            if (jQuery('#newlink1').val()) {
-                var medialist = "";
+      jQuery('#linker').click(function (e) {
+        e.preventDefault();
+        if (jQuery('#newlink1').val()) {
+          var medialist = "";
 
-                jQuery('.mediacheck:checked').each(function () {
-                    medialist += (medialist ? "," + this.id : this.id);
-                });
-                if (medialist) {
-                    var linkermsg = jQuery('#linkermsg');
-                    linkermsg.html('&nbsp;<img src="img/spinner.gif" />');
+          jQuery('.mediacheck:checked').each(function () {
+            medialist += (medialist ? "," + this.id : this.id);
+          });
+          if (medialist) {
+            var linkermsg = jQuery('#linkermsg');
+            linkermsg.html('&nbsp;<img src="img/spinner.gif">');
 
-                    var params = jQuery('#linkerform').serialize();
-                    params += "&medialist=" + medialist + "&action=masslink";
-                    jQuery.ajax({
-                        url: cmstngpath + 'ajx_updateorder.php',
-                        data: params,
-                        dataType: 'html',
-                        success: function (req) {
-                            linkermsg.html('<span class="green">' + req + '</span>');
-                            linkermsg.effect("highlight", {}, 2500);
+            var params = jQuery('#linkerform').serialize();
+            params += "&medialist=" + medialist + "&action=masslink";
+            jQuery.ajax({
+              url: cmstngpath + 'ajx_updateorder.php',
+              data: params,
+              dataType: 'html',
+              success: function (req) {
+                linkermsg.html('<span class="green">' + req + '</span>');
+                linkermsg.effect("highlight", {}, 2500);
                         },
                         error: function (req) {
                             linkermsg.html("An error has occurred. Please try again.");
@@ -159,28 +159,28 @@ $mediatabs[0] = array(1, "admin_media.php", $admtext['search'], "findmedia");
 $mediatabs[1] = array($allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia");
 $mediatabs[2] = array($allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia");
 $mediatabs[3] = array($allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs");
-$mediatabs[4] = array($allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import");
-$mediatabs[5] = array($allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload");
+$mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
+$mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#upload');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "upload", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img/photos_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow normal">
-            <span class="subhead"><strong><?php echo $admtext['mediaupl']; ?></strong></span><br/><br/>
+  <tr class="databack">
+    <td class="tngshadow normal">
+      <span class="subhead"><strong><?php echo $admtext['mediaupl']; ?></strong></span><br><br>
 
-            <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
-                <!-- Redirect browsers with JavaScript disabled to the origin page -->
-              <?php echo $admtext['mediatype']; ?>:
-                <select name="mediatypeID" id="mediatypeID" onchange="changeCollection(this);">
-                  <?php
-                  foreach ($mediatypes as $mediatype) {
-                    $msgID = $mediatype['ID'];
-                    echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
-                  }
-                  ?>
+      <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+        <?php echo $admtext['mediatype']; ?>:
+        <select name="mediatypeID" id="mediatypeID" onchange="changeCollection(this);">
+          <?php
+          foreach ($mediatypes as $mediatype) {
+            $msgID = $mediatype['ID'];
+            echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
+          }
+          ?>
                 </select>
                 &nbsp;
               <?php
@@ -217,49 +217,49 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
               $folder = $mediatypes_assoc[$mediatypeID];
               echo $admtext['folder'] . ": <span id=\"folderlabel\">$folder</span>/";
               ?>
-                <input type="text" id="folder" name="folder" class="medfield"/> <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" name="folderselect" onclick="FilePicker('folder',jQuery('#mediatypeID').val(),1);">
-                <br/><br/>
+        <input type="text" id="folder" name="folder" class="medfield"> <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" name="folderselect" onclick="FilePicker('folder',jQuery('#mediatypeID').val(),1);">
+        <br><br>
 
-                <noscript><input type="hidden" name="redirect" value="{$http}://blueimp.github.com/jQuery-File-Upload/"></noscript>
-                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                <div class="row fileupload-buttonbar" style="float:left">
-                    <div class="span7">
-                        <!-- The fileinput-button span is used to style the file input field as button -->
-                        <span class="btn fileinput-button">
+        <noscript><input type="hidden" name="redirect" value="{$http}://blueimp.github.com/jQuery-File-Upload/"></noscript>
+        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+        <div class="row fileupload-buttonbar" style="float:left">
+          <div class="span7">
+            <!-- The fileinput-button span is used to style the file input field as button -->
+            <span class="btn fileinput-button">
 		            	<span><?php echo $admtext['addfiles']; ?></span>
 		                <input type="file" name="files[]" multiple>
 		            </span>&nbsp;
-                        <input type="submit" class="btn start" value="<?php echo $admtext['startupl']; ?>"/>
-                        <input type="reset" class="btn cancel" value="<?php echo $admtext['cancelupl']; ?>">
-                    </div>
-                </div>
-                <!-- The global progress information -->
-                <div class="span5 fileupload-progress fade">
-                    <!-- The global progress bar -->
-                    <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                        <div class="bar" style="width:0%;"></div>
-                    </div>
-                    <!-- The extended global progress information -->
-                    <div class="progress-extended">&nbsp;</div>
-                </div>
-                <br clear="all"/>
-                <!-- The loading indicator is shown during file processing -->
-                <div class="fileupload-loading"></div>
-                <br>
-                <div id="uploadarea">
-                    <!-- The table listing the files available for upload/download -->
-                    <table role="presentation" class="table table-striped normal">
-                        <tbody class="files"></tbody>
-                    </table>
-                </div>
-            </form>
+            <input type="submit" class="btn start" value="<?php echo $admtext['startupl']; ?>">
+            <input type="reset" class="btn cancel" value="<?php echo $admtext['cancelupl']; ?>">
+          </div>
+        </div>
+        <!-- The global progress information -->
+        <div class="span5 fileupload-progress fade">
+          <!-- The global progress bar -->
+          <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            <div class="bar" style="width:0%;"></div>
+          </div>
+          <!-- The extended global progress information -->
+          <div class="progress-extended">&nbsp;</div>
+        </div>
+        <br clear="all">
+        <!-- The loading indicator is shown during file processing -->
+        <div class="fileupload-loading"></div>
+        <br>
+        <div id="uploadarea">
+          <!-- The table listing the files available for upload/download -->
+          <table role="presentation" class="table table-striped normal">
+            <tbody class="files"></tbody>
+          </table>
+        </div>
+      </form>
 
-            <br/>
+      <br>
 
-            <form action="admin_ordermedia.php" method="get" name="find" id="linkerform" onsubmit="return validateForm();">
-                <table cellspacing="2" class="normal">
-                    <tr>
-                        <td><?php echo $admtext['tree']; ?></td>
+      <form action="admin_ordermedia.php" method="get" name="find" id="linkerform" onsubmit="return validateForm();">
+        <table cellspacing="2" class="normal">
+          <tr>
+            <td><?php echo $admtext['tree']; ?></td>
                         <td><?php echo $admtext['linktype']; ?></td>
                         <td colspan="3"><?php echo $admtext['id']; ?></td>
                     </tr>
@@ -292,26 +292,26 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                         <td><a href="#"
                                onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                        <td>
-                            <input type="button" class="toggle" value="<?php echo $admtext['selectall']; ?>">
-                            <input type="submit" id="linker" value="<?php echo $admtext['linksel']; ?>"> &nbsp; <span id="linkermsg"></span>
-                        </td>
+                      <td>
+                        <input type="button" class="toggle" value="<?php echo $admtext['selectall']; ?>">
+                        <input type="submit" id="linker" value="<?php echo $admtext['linksel']; ?>"> &nbsp; <span id="linkermsg"></span>
+                      </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">&nbsp;</td>
-                        <td colspan="2">
-                            <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"/> <?php echo $admtext['eventlink']; ?></span><br/>
-                            <select name="event1" id="eventrow1" style="display:none">
-                                <option value=""></option>
-                            </select>
-                        </td>
-                        <td class="normal" valign="top">&nbsp;</td>
-                    </tr>
-                </table>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2">
+              <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
+              <select name="event1" id="eventrow1" style="display:none">
+                <option value=""></option>
+              </select>
+            </td>
+            <td class="normal" valign="top">&nbsp;</td>
+          </tr>
+        </table>
 
-            </form>
+      </form>
 
-        </td>
+    </td>
     </tr>
 
 </table>
@@ -363,7 +363,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                 <img src="{%=file.thumbnail_url%}" class="thumb">
             {% } %}</td>
 			<td>
-				<?php echo $admtext['title'] . "<hr/>\n" . $admtext['description']; ?><br/><br/>
+				<?php echo $admtext['title'] . "<hr>\n" . $admtext['description']; ?><br><br>
 				<button class="savebutton" id="q{%=file.mediaID%}" disabled="disabled">
 					<span style="display:none"><?php echo $admtext['save']; ?></span><img src="img/tng_check.gif" alt="" id="ch{%=file.mediaID%}" />
 				</button> &nbsp;
@@ -371,7 +371,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
 			</td>
             <td class="name">
             	<form id="f{%=file.mediaID%}">
-            		<input type="text" id="t{%=file.mediaID%}" value="{%=file.name%}" name="title" class="uploadfield" onkeypress="enableSave('{%=file.mediaID%}');" onpaste="enableSave('{%=file.mediaID%}');"/><br/>
+            		<input type="text" id="t{%=file.mediaID%}" value="{%=file.name%}" name="title" class="uploadfield" onkeypress="enableSave('{%=file.mediaID%}');" onpaste="enableSave('{%=file.mediaID%}');"/><br>
             		<textarea id="d{%=file.mediaID%}" name="description" rows="3" class="uploadfield" onkeypress="enableSave('{%=file.mediaID%}');" onpaste="enableSave('{%=file.mediaID%}');"></textarea>
 					<input type="hidden" id="mediaID" name="mediaID" value="{%=file.mediaID%}" />
 					<table class="uploadmore">
@@ -389,9 +389,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
             <td class="size">
             	<button class="linksbutton" id="l{%=file.mediaID%}">
             		<span class="nw"><?php echo $admtext['medialinks']; ?></span>
-            	</button><br/><br/>
-            	<span>&nbsp;{%=file.dims%}</span><br/>
-            	<span>&nbsp;{%=o.formatFileSize(file.size)%}</span><br/><br/>
+            	</button><br><br>
+            	<span>&nbsp;{%=file.dims%}</span><br>
+            	<span>&nbsp;{%=o.formatFileSize(file.size)%}</span><br><br>
 				<span>&nbsp;<a href="admin_editmedia.php?mediaID={%=file.mediaID%}" target="_blank"><?php echo $admtext['edit']; ?></a>
             </td>
             <td>&nbsp;</td>
@@ -399,7 +399,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
         <td class="delete">
             <button class="delbutton" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}"{% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %} onclick="return confirmDelete(event);">
                 <span><?php echo $admtext['text_delete']; ?></span>
-            </button><br/><br/>
+            </button><br><br>
             &nbsp;<?php echo $admtext['select']; ?>: <input type="checkbox" name="delete" value="1" class="mediacheck" id="{%=file.mediaID%}">
 
         </td>

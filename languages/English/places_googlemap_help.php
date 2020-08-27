@@ -6,43 +6,43 @@ echo help_header("Help: Google Maps");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp; | &nbsp;
-                <a href="tlevents_help.php" class="lightlink">Help: Timeline Events &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Google Maps</span>
-            <p class="smaller menu">
-                <a href="#show" class="lightlink">Show/Hide</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
-                <a href="#help" class="lightlink">Help</a>
-            </p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp; | &nbsp;
+        <a href="tlevents_help.php" class="lightlink">Help: Timeline Events &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Google Maps</span>
+      <p class="smaller menu">
+        <a href="#show" class="lightlink">Show/Hide</a> &nbsp; | &nbsp;
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
+        <a href="#help" class="lightlink">Help</a>
+      </p>
         </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-                }
-            </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <p><span class="subheadbold">Show/Hide Clickable Map</span><br/><br/>
-                Click the "Show/Hide Clickable Map" button to show the Google Map and search for a Geocode
-                Location, or to hide the map when finished. The default initial setting is specified in Admin/Setup/Map Settings.</p>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
+      <div id="google_translate_element" style="float:right"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <p><span class="subheadbold">Show/Hide Clickable Map</span><br><br>
+        Click the "Show/Hide Clickable Map" button to show the Google Map and search for a Geocode
+        Location, or to hide the map when finished. The default initial setting is specified in Admin/Setup/Map Settings.</p>
 
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <a name="show"><p class="subheadbold">Search</p></a>
-            <p>The Google Map Geocoder interface allows you to locate the latitude and longitude for a place name using the Geocode place input field.
+      <a name="show"><p class="subheadbold">Search</p></a>
+      <p>The Google Map Geocoder interface allows you to locate the latitude and longitude for a place name using the Geocode place input field.
                 Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) can also be used to look up coordinates.</p>
 
             <span class="optionhead">Geocode Location</span>

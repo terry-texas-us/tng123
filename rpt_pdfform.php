@@ -96,7 +96,7 @@ function doFontOptions($field, $default = 'helvetica') {
 function doFontSizeOptions($field, $options, $default) {
   if (count($options) == 1) {
     echo "<span class=\"normal\">$options[0] pt</span>";
-    echo "<input type=\"hidden\" name=\"$field\" value=\"$options[0]\" />";
+    echo "<input type=\"hidden\" name=\"$field\" value=\"$options[0]\">";
   } else {
     echo "<select name=\"$field\">";
     foreach ($options as $size) {
@@ -161,10 +161,10 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <span class="subhead"><strong><?php echo $text['pdfgen']; ?></strong></span><br/>
+  <span class="subhead"><strong><?php echo $text['pdfgen']; ?></strong></span><br>
 
-    <br/>
-    <p class="subhead"><span class="normal" style="padding-bottom:3px"><?php echo $text[$titleidx]; ?></span><br/><?php echo $titletext; ?></p>
+  <br>
+  <p class="subhead"><span class="normal" style="padding-bottom:3px"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></p>
   <?php
   if (count($font_list) == 0) {
     echo "ERROR: There are no fonts installed to support character set $session_charset.";
@@ -199,9 +199,9 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td class="ws">
                     <span class="normal"><?php echo $text['startnum']; ?>:</span>
                 </td>
-                <td>
-                    <input type="text" name="startnum" value="1" size="4"/>
-                </td>
+              <td>
+                <input type="text" name="startnum" value="1" size="4">
+              </td>
             </tr>
           <?php
         }
@@ -214,40 +214,40 @@ header("Content-type:text/html; charset=" . $session_charset);
   // draw the blank form checkbox
   if ($allow_blank) {
     ?>
-      <div class="pdfblock normal"><input type="checkbox" id="blankform" name="blankform" value="1"/> <?php echo $text['blank']; ?></div>
+    <div class="pdfblock normal"><input type="checkbox" id="blankform" name="blankform" value="1"> <?php echo $text['blank']; ?></div>
     <?php
   }
 
   // draw the citations checkbox
   if ($allow_cite) {
     ?>
-      <div class="pdfblock normal"><input type="checkbox" id="citesources" name="citesources" value="1" checked="1"/> <?php echo $text['inclsrcs']; ?></div>
+    <div class="pdfblock normal"><input type="checkbox" id="citesources" name="citesources" value="1" checked="1"> <?php echo $text['inclsrcs']; ?></div>
     <?php
   }
   if ($pdftype == "fam") {
-    echo "<input type=\"hidden\" name=\"familyID\" value=\"$familyID\"/>\n";
+    echo "<input type=\"hidden\" name=\"familyID\" value=\"$familyID\">\n";
   } else {
-    echo "<input type=\"hidden\" name=\"personID\" value=\"$personID\"/>\n";
+    echo "<input type=\"hidden\" name=\"personID\" value=\"$personID\">\n";
   }
   ?>
-    <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
+  <input type="hidden" name="tree" value="<?php echo $tree; ?>">
 
   <?php
   // options specific to certain report types
   if ($pdftype == "desc") {
     ?>
-      <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" border="0"
-                                                                                                                                 id="dispicon"/> <?php echo $text['dispopts']; ?></a></div>
-      <div style="display:none" id="dispopts">
-          <table id="display" cellpadding="3" class="normal">
-              <tr>
-                  <td>
-                      <span class="normal"><?php echo $text['datesloc']; ?>:&nbsp;</span>
-                  </td>
-                  <td>
-                      <select name="getPlace">
-                          <option value="1" selected="selected"><?php echo $text['borchr']; ?></option>
-                          <option value="2"><?php echo $text['nobd']; ?></option>
+    <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
+      </a></div>
+    <div style="display:none" id="dispopts">
+      <table id="display" cellpadding="3" class="normal">
+        <tr>
+          <td>
+            <span class="normal"><?php echo $text['datesloc']; ?>:&nbsp;</span>
+          </td>
+          <td>
+            <select name="getPlace">
+              <option value="1" selected="selected"><?php echo $text['borchr']; ?></option>
+              <option value="2"><?php echo $text['nobd']; ?></option>
                           <option value="3"><?php echo $text['bcdb']; ?></option>
                       </select>
                   </td>
@@ -264,26 +264,26 @@ header("Content-type:text/html; charset=" . $session_charset);
                       <option value="4"><?php echo $text['devnums']; ?></option>
                   </select>
               </td>
-              <tr>
-          </table>
-          <br/>
-      </div>
+        <tr>
+      </table>
+      <br>
+    </div>
     <?php
   }
   ?>
 
-    <!-- Font section -->
-    <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('font','fonticon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" border="0" id="fonticon"> <?php echo $text['fonts']; ?>
-        </a></div>
-    <div style="display:none" id="font">
-        <table cellpadding="3" class="normal">
-            <tr>
-                <td><?php echo $text['family']; ?></td>
-                <td>
-                  <?php doFontOptions('rptFont'); ?>
-                </td>
-            </tr>
-          <?php
+  <!-- Font section -->
+  <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('font','fonticon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="fonticon"> <?php echo $text['fonts']; ?>
+    </a></div>
+  <div style="display:none" id="font">
+    <table cellpadding="3" class="normal">
+      <tr>
+        <td><?php echo $text['family']; ?></td>
+        <td>
+          <?php doFontOptions('rptFont'); ?>
+        </td>
+      </tr>
+      <?php
           // header fonts
           if (count($hdrFontSizes) > 1) {
             ?>
@@ -330,31 +330,30 @@ header("Content-type:text/html; charset=" . $session_charset);
         </table>
       <?php
       if (count($hdrFontSizes) == 1) {
-        echo "<input type=\"hidden\" name=\"hdrFontSize\" value=\"$hdrFontSizes[0]\" />";
+        echo "<input type=\"hidden\" name=\"hdrFontSize\" value=\"$hdrFontSizes[0]\">";
       }
       if (count($lblFontSizes) == 1) {
-        echo "<input type=\"hidden\" name=\"lblFontSize\" value=\"$lblFontSizes[0]\" />";
+        echo "<input type=\"hidden\" name=\"lblFontSize\" value=\"$lblFontSizes[0]\">";
       }
       if (count($rptFontSizes) == 1) {
-        echo "<input type=\"hidden\" name=\"rptFontSize\" value=\"$rptFontSizes[0]\" />";
+        echo "<input type=\"hidden\" name=\"rptFontSize\" value=\"$rptFontSizes[0]\">";
       }
       ?>
-        <br/>
-    </div>
+    <br>
+  </div>
 
-    <!-- Page setup section -->
-    <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('pgsetup','pgicon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" border="0"
-                                                                                                                            id="pgicon"> <?php echo $text['pgsetup']; ?></a></div>
-    <div style="display:none" id="pgsetup">
-        <table cellpadding="3" class="normal">
-            <tr>
-                <td>
-                    <span class="normal"><?php echo $text['pgsize']; ?>:&nbsp;</span>
-                </td>
-                <td>
-                    <select name="pagesize">
-                        <option value="a3"<?php if ($pagesize == "a3") {
-                          echo "selected=\"selected\"";
+  <!-- Page setup section -->
+  <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('pgsetup','pgicon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="pgicon"> <?php echo $text['pgsetup']; ?></a></div>
+  <div style="display:none" id="pgsetup">
+    <table cellpadding="3" class="normal">
+      <tr>
+        <td>
+          <span class="normal"><?php echo $text['pgsize']; ?>:&nbsp;</span>
+        </td>
+        <td>
+          <select name="pagesize">
+            <option value="a3"<?php if ($pagesize == "a3") {
+              echo "selected=\"selected\"";
                         } ?>>A3
                         </option>
                         <option value="a4"<?php if ($pagesize == "a4") {
@@ -389,40 +388,40 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td>
                     <span class="normal"><?php echo $text['tmargin']; ?>:&nbsp;</span>
                 </td>
-                <td>
-                    <input type="text" value="0.5" name="topmrg" size="5"/>
-                </td>
+              <td>
+                <input type="text" value="0.5" name="topmrg" size="5">
+              </td>
             </tr>
-            <tr>
-                <td>
-                    <span class="normal"><?php echo $text['bmargin']; ?>:&nbsp;</span>
-                </td>
-                <td>
-                    <input type="text" value="0.5" name="botmrg" size="5"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="normal"><?php echo $text['lmargin']; ?>:&nbsp;</span>
-                </td>
-                <td>
-                    <input type="text" value="0.5" name="lftmrg" size="5"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="normal"><?php echo $text['rmargin']; ?>:&nbsp;</span>
-                </td>
-                <td>
-                    <input type="text" value="0.5" name="rtmrg" size="5"/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <br/>
-    <input type="submit" onclick="this.form.target='_blank'" class="btn" value="<?php echo $text['createch']; ?>"/>
+      <tr>
+        <td>
+          <span class="normal"><?php echo $text['bmargin']; ?>:&nbsp;</span>
+        </td>
+        <td>
+          <input type="text" value="0.5" name="botmrg" size="5">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="normal"><?php echo $text['lmargin']; ?>:&nbsp;</span>
+        </td>
+        <td>
+          <input type="text" value="0.5" name="lftmrg" size="5">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="normal"><?php echo $text['rmargin']; ?>:&nbsp;</span>
+        </td>
+        <td>
+          <input type="text" value="0.5" name="rtmrg" size="5">
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <input type="submit" onclick="this.form.target='_blank'" class="btn" value="<?php echo $text['createch']; ?>">
 
-    </form>
+  </form>
 
 
 </div>

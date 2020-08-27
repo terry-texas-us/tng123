@@ -65,8 +65,8 @@ function addDnaLink(form) {
                     newtr.id = 'alink_' + linkID;
                     newtr.setAttribute('style', 'display:none');
 
-                    var actionbuttons = '<a href="#" title="' + remove_text + '" onclick="return deleteDnaLink(' + linkID + ');"><img src="img/tng_delete.gif" alt="' + remove_text + '" ' + 'class="smallicon admin-delete-icon"/></a>';
-                    var td0 = insertCell(newtr, 0, "lightback normal", actionbuttons);
+                    var actionbuttons = '<a href="#" title="' + remove_text + '" onclick="return deleteDnaLink(' + linkID + ');"><img src="img/tng_delete.gif" alt="' + remove_text + '" ' + 'class="smallicon admin-delete-icon"></a>';
+                  var td0 = insertCell(newtr, 0, "lightback normal", actionbuttons);
                     td0.setAttribute('align', 'center');
                     insertCell(newtr, 1, "lightback normal", name + displayID);
                     insertCell(newtr, 2, "lightback normal", treename + '&nbsp;');

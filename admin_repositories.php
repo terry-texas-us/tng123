@@ -168,9 +168,9 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findrepo" value="1"><input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="findrepo" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;

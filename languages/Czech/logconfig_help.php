@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Nastaven� protokolov�n�");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="pedconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� sch�mat</a> &nbsp; | &nbsp;
-                <a href="importconfig_help.php" class="lightlink">N�pov�da: Nastaven� importu &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Nastaven� protokolov�n�</span>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="optionhead">N�zev souboru protokolu</span>
-            <p>N�zev souboru protokolu je soubor, kam jsou zaznamen�v�ny akce n�v�t�vn�k�. P�vodn� n�zev "genlog.txt" byste nem�li m�nit.</p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="pedconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� sch�mat</a> &nbsp; | &nbsp;
+        <a href="importconfig_help.php" class="lightlink">N�pov�da: Nastaven� importu &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Nastaven� protokolov�n�</span>
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="optionhead">N�zev souboru protokolu</span>
+      <p>N�zev souboru protokolu je soubor, kam jsou zaznamen�v�ny akce n�v�t�vn�k�. P�vodn� n�zev "genlog.txt" byste nem�li m�nit.</p>
 
             <span class="optionhead">Maxim�ln� po�et ��dk� v protokolu</span>
             <p>Maxim�ln� po�et ��dk� v protokolu ur�uje, kolik akc� by m�l protokol aktu�ln� uchov�vat.

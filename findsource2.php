@@ -17,22 +17,22 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findrepodiv">
-    <table border="0" cellpadding="0">
-        <tr>
-            <td valign="top">
-                <span class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></span><br/>
-                <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br/>
-            </td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td>
-                <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onClick="reopenFindSourceForm();"></form>
-            </td>
-        </tr>
-    </table>
-    <br/>
-    <table border="0" cellspacing="1" cellpadding="3">
-        <tr>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['sourceid']; ?></b>&nbsp;</span></td>
+  <table border="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <span class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></span><br>
+        <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td>
+        <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onClick="reopenFindSourceForm();"></form>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['sourceid']; ?></b>&nbsp;</span></td>
             <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['name']; ?></b>&nbsp;</span></td>
         </tr>
       <?php

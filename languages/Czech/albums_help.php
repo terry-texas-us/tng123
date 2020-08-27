@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Alba");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="collections_help.php" class="lightlink">&laquo; N�pov�da: Kolekce</a> &nbsp; | &nbsp;
-                <a href="cemeteries_help.php" class="lightlink">N�pov�da: H�bitovy &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Alba</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">T��dit</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="collections_help.php" class="lightlink">&laquo; N�pov�da: Kolekce</a> &nbsp; | &nbsp;
+        <a href="cemeteries_help.php" class="lightlink">N�pov�da: H�bitovy &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Alba</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#sort" class="lightlink">T��dit</a>
             </p>
         </td>
     </tr>
@@ -43,40 +43,40 @@ echo help_header("N�pov�da: Alba");
         </td>
     </tr>
     <tr class="databack">
-        <td class="tngshadow">
+      <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">P�id�n� nov�ch alb</p></a>
-            <p><strong>Album</strong> v TNG je skupina m�di�. Album m��e obsahovat jak�koli po�et m�di� a konkr�tn� m�dium m��e b�t sou��st� v�ce alb.
-                Podobn� jako jednotliv� m�dium m��e b�t album p�ipojeno k osob�, rodin�, pramenu, �lo�i�ti pramen� nebo m�stu.</p>
+        <p style="float:right"><a href="#top">Nahoru</a></p>
+        <a name="add"><p class="subheadbold">P�id�n� nov�ch alb</p></a>
+        <p><strong>Album</strong> v TNG je skupina m�di�. Album m��e obsahovat jak�koli po�et m�di� a konkr�tn� m�dium m��e b�t sou��st� v�ce alb.
+          Podobn� jako jednotliv� m�dium m��e b�t album p�ipojeno k osob�, rodin�, pramenu, �lo�i�ti pramen� nebo m�stu.</p>
 
-            <p>Chcete-li p�idat nov� album, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako m�dia, kter� m� album obsahovat, a
-                odkazy na osobu, rodinu a jin� entity, m��ete p�idat po ulo�en� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
+        <p>Chcete-li p�idat nov� album, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako m�dia, kter� m� album obsahovat, a
+          odkazy na osobu, rodinu a jin� entity, m��ete p�idat po ulo�en� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-            <p><span class="optionhead">N�zev alba</span><br/>
-                N�zev va�eho alba.</p>
+        <p><span class="optionhead">N�zev alba</span><br>
+          N�zev va�eho alba.</p>
 
-            <p><span class="optionhead">Popis</span><br/>
-                Kr�tk� popis alba nebo polo�ek, kter� obsahuje.</p>
+        <p><span class="optionhead">Popis</span><br>
+          Kr�tk� popis alba nebo polo�ek, kter� obsahuje.</p>
 
-            <p><span class="optionhead">Kl��ov� slova</span><br/>
-                Jak�koli po�et kl��ov�ch slov mimo n�zev alba a popis, kter� maj� b�t pou�ita p�i vyhled�v�n� tohoto alba.</p>
+        <p><span class="optionhead">Kl��ov� slova</span><br>
+          Jak�koli po�et kl��ov�ch slov mimo n�zev alba a popis, kter� maj� b�t pou�ita p�i vyhled�v�n� tohoto alba.</p>
 
-            <p><span class="optionhead">Aktivn�</span><br/>
-                Je-li album ozna�eno jako "Aktivn�", bude zobrazeno na va�ich str�nk�ch ve ve�ejn�m seznamu. Je-li p��znak Aktivn� nastaven na "Ne", n�v�t�vn�ci va�ich str�nek
-                toto album vid�t nebudou.</p>
+        <p><span class="optionhead">Aktivn�</span><br>
+          Je-li album ozna�eno jako "Aktivn�", bude zobrazeno na va�ich str�nk�ch ve ve�ejn�m seznamu. Je-li p��znak Aktivn� nastaven na "Ne", n�v�t�vn�ci va�ich str�nek
+          toto album vid�t nebudou.</p>
 
-            <p><span class="optionhead">V�dy viditeln�</span><br/>
-                Je-li aktivn� album ozna�eno jako "V�dy viditeln�" a je p�ipojeno k osob�, rodin�, pramenu nebo �lo�i�ti pramen�, bude na str�nk�ch u t�chto entit v�dy viditeln�, i kdy� je
-                p�ipojeno k �ij�c� osob� nebo rodin�. Jinak jsou aktivn� alba nebo m�dia, kter� jsou p�ipojen� k �ij�c�m osob�m, skryta pro n�v�t�vn�ky, kte�� nemaj� opr�vn�n� prohl�et data �ij�c�ch osob.
-            </p>
+        <p><span class="optionhead">V�dy viditeln�</span><br>
+          Je-li aktivn� album ozna�eno jako "V�dy viditeln�" a je p�ipojeno k osob�, rodin�, pramenu nebo �lo�i�ti pramen�, bude na str�nk�ch u t�chto entit v�dy viditeln�, i kdy� je
+          p�ipojeno k �ij�c� osob� nebo rodin�. Jinak jsou aktivn� alba nebo m�dia, kter� jsou p�ipojen� k �ij�c�m osob�m, skryta pro n�v�t�vn�ky, kte�� nemaj� opr�vn�n� prohl�et data �ij�c�ch osob.
+        </p>
 
-            <p><span class="optionhead">Pole, kter� mus� b�t vypln�na:</span> N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu vyplnit i ostatn� pole.</p>
+        <p><span class="optionhead">Pole, kter� mus� b�t vypln�na:</span> N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu vyplnit i ostatn� pole.</p>
 
-        </td>
+      </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">�prava existuj�c�ho alba</p></a>

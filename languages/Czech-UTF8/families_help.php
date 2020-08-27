@@ -4,27 +4,27 @@ echo help_header("Nápověda: Rodiny");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
-                <a href="sources_help.php" class="lightlink">Nápověda: Prameny &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Rodiny</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Přezkoumat</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
+        <a href="sources_help.php" class="lightlink">Nápověda: Prameny &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Rodiny</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#review" class="lightlink">Přezkoumat</a>
             </p>
         </td>
     </tr>
@@ -88,27 +88,27 @@ echo help_header("Nápověda: Rodiny");
             <p>Pokud jeden z partnerů ľije nebo si přejete omezit přístup k údajům této rodiny pouze na uľivatele, kteří jsou přihláąeni a mají práva zobrazovat data ľijících osob,
                 zaąkrtněte toto políčko.</p>
 
-            <span class="optionhead">Neveřejné</span>
-            <p>Bez ohledu na to, zda je tato rodina označena jako ®ijící, můľete přístupová práva k údajům této osoby omezit zaąkrtnutím této volby.
-                Informace spojené s "neveřejnou" rodinou budou moci vidět pouze uľivatelé s právy zobrazovat neveřejná data.</p>
+          <span class="optionhead">Neveřejné</span>
+          <p>Bez ohledu na to, zda je tato rodina označena jako ®ijící, můľete přístupová práva k údajům této osoby omezit zaąkrtnutím této volby.
+            Informace spojené s "neveřejnou" rodinou budou moci vidět pouze uľivatelé s právy zobrazovat neveřejná data.</p>
 
-            <span class="optionhead">Události</span>
-            <p>Zapiąte data a místa k zobrazeným standardním událostem (pokud je znáte). Daląí události lze přidat po uloľení a zamknutí záznamu. Data vľdy zapisujte
-                ve standardním genealogickém formátu DD MMM RRRR (např. <em>18 Úno 2008</em>). Informaci o místě řaďte za sebou od místního po obecnou a oddělujte kaľdý údaj čárkou
-                (např. <em>Bludov, ©umperk, Olomoucký kraj, Česká republika</em>), nebo kliknutím na ikonu "Najít" vyberte existující místo (lupa).
-                Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapiąte část místa. Vąechny výsledky budou obsahovat to, co jste zapsali jako název místa.</p>
+          <span class="optionhead">Události</span>
+          <p>Zapiąte data a místa k zobrazeným standardním událostem (pokud je znáte). Daląí události lze přidat po uloľení a zamknutí záznamu. Data vľdy zapisujte
+            ve standardním genealogickém formátu DD MMM RRRR (např. <em>18 Úno 2008</em>). Informaci o místě řaďte za sebou od místního po obecnou a oddělujte kaľdý údaj čárkou
+            (např. <em>Bludov, ©umperk, Olomoucký kraj, Česká republika</em>), nebo kliknutím na ikonu "Najít" vyberte existující místo (lupa).
+            Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapiąte část místa. Vąechny výsledky budou obsahovat to, co jste zapsali jako název místa.</p>
 
-            <p><span class="optionhead">Údaje CJKSpd (Pečetění s partnerem)</span><br/>
-                Tato událost jsou spojena s obřadem prováděným Církví Jeľíąe Krista Svatých posledních dní (mormonská církev, která vytvořila standard GEDCOM).
-                <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto moľnost vypněte (je třeba se pak odhlásit a znovu přihlásit).</p>
+          <p><span class="optionhead">Údaje CJKSpd (Pečetění s partnerem)</span><br>
+            Tato událost jsou spojena s obřadem prováděným Církví Jeľíąe Krista Svatých posledních dní (mormonská církev, která vytvořila standard GEDCOM).
+            <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto moľnost vypněte (je třeba se pak odhlásit a znovu přihlásit).</p>
 
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Upravit existující rodinu</p></a>
             <p>Chcete-li upravit existující rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu Upravit vedle této osoby.</p>
 
@@ -118,27 +118,27 @@ echo help_header("Nápověda: Rodiny");
                 na odpovídající ikoně bude v horním pravém rohu zelená tečka. Chcete-li znát více informací o kaľdé kategorii, jděte na odkazy nápovědy,
                 které budou viditelné po kliknutí na tyto ikony.</p>
 
-            <span class="optionhead">Jiné události</span>
-            <p>Chcete-li přidat daląí události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a href="events_help.php">Nápověda</a> pro více
-                informací o přidání nových událostí. Po přidání události se pod tlačítkem "Přidat nové" zobrazí v tabulce krátké shrnutí. Tlačítka akcí
-                pro kaľdou událost vám umoľní událost upravit nebo odstranit, nebo přidat poznámky nebo citace. Pořadí, ve kterém se události zobrazí, závisí na datu (je-li zapsáno)
-                a prioritě, kterou má daný typ události (není-li připojeno datum). Při úpravě typu události můľete prioritu změnit.
+      <span class="optionhead">Jiné události</span>
+      <p>Chcete-li přidat daląí události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a href="events_help.php">Nápověda</a> pro více
+        informací o přidání nových událostí. Po přidání události se pod tlačítkem "Přidat nové" zobrazí v tabulce krátké shrnutí. Tlačítka akcí
+        pro kaľdou událost vám umoľní událost upravit nebo odstranit, nebo přidat poznámky nebo citace. Pořadí, ve kterém se události zobrazí, závisí na datu (je-li zapsáno)
+        a prioritě, kterou má daný typ události (není-li připojeno datum). Při úpravě typu události můľete prioritu změnit.
 
-            <p><strong>Poznámka</strong>: Poznámky, citace pramenů, "jiné" události a "více" informací se ukládá u standardních automaticky. Jiné změny (např.
-                standardní události) se uloľí kliknutím na tlačítko Uloľit na konci stránky nebo kliknutím na ikonu Uloľit na stránce nahoře. Strom a
-                ID číslo osoby nelze změnit.</p>
+      <p><strong>Poznámka</strong>: Poznámky, citace pramenů, "jiné" události a "více" informací se ukládá u standardních automaticky. Jiné změny (např.
+        standardní události) se uloľí kliknutím na tlačítko Uloľit na konci stránky nebo kliknutím na ikonu Uloľit na stránce nahoře. Strom a
+        ID číslo osoby nelze změnit.</p>
 
-            <p><span class="optionhead">Děti</span><br/>
-            <p>Kliknutím na "Najít..." vyberte existující osoby, které by měly být v této rodině dětmi, nebo kliknutím na "Vytvořit"
-                vytvořte nové dítě. Pokud jste zvolili Vytvořit, budete moci vloľit údaje o nové osobě bez toho, abyste museli opustit aktuální stránku.
-                Po výběru nebo vytvoření osoby se v seznamu dětí jméno, ID číslo a datum narození osoby (nelze upravit přímo). Tento seznam nelze
-                upravovat přímo, ale pro odstranění dítěte ze seznamu můľete pouľít odkaz "Odstranit" (viditelný, kdyľ přesunete kurzor myąi nad kaľdé dítě). Pouľít
-                můľete také odkaz "Vymazat" pro úplné vymazání dítěte z databáze. Můľete pouľít tlačítko "Vymazat" pro vymazání dítěte z databáze
-                nebo tlačítko "Upravit" pro úpravu záznamu dítěte.</p>
+      <p><span class="optionhead">Děti</span><br>
+      <p>Kliknutím na "Najít..." vyberte existující osoby, které by měly být v této rodině dětmi, nebo kliknutím na "Vytvořit"
+        vytvořte nové dítě. Pokud jste zvolili Vytvořit, budete moci vloľit údaje o nové osobě bez toho, abyste museli opustit aktuální stránku.
+        Po výběru nebo vytvoření osoby se v seznamu dětí jméno, ID číslo a datum narození osoby (nelze upravit přímo). Tento seznam nelze
+        upravovat přímo, ale pro odstranění dítěte ze seznamu můľete pouľít odkaz "Odstranit" (viditelný, kdyľ přesunete kurzor myąi nad kaľdé dítě). Pouľít
+        můľete také odkaz "Vymazat" pro úplné vymazání dítěte z databáze. Můľete pouľít tlačítko "Vymazat" pro vymazání dítěte z databáze
+        nebo tlačítko "Upravit" pro úpravu záznamu dítěte.</p>
 
-            <span class="optionhead">Pořadí dětí</span>
-            <p>Pokud existuje více dětí,
-                můľete jejich pořadí změnit "přetaľením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myąí na tlačítko "Táhnout", toto tlačítko podrľte, a vaąi myą přesuňte na stránce nahoru
+      <span class="optionhead">Pořadí dětí</span>
+      <p>Pokud existuje více dětí,
+        můľete jejich pořadí změnit "přetaľením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myąí na tlačítko "Táhnout", toto tlačítko podrľte, a vaąi myą přesuňte na stránce nahoru
                 nebo dolů. Po přesunu bloku do poľadované pozice tlačítko pus»te. Změny pořadí budou automaticky uloľeny.</p>
 
 
@@ -155,26 +155,26 @@ echo help_header("Nápověda: Rodiny");
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="review"><p class="subheadbold">Předběľné prohlédnutí úprav</p></a>
-            Chcete-li si předběľně prohlédnout změny provedené ostatními uľivateli, klikněte na záloľku "Přezkoumat". Můľete se pak rozhodnout, zda tyto navrhované změny uloľíte nebo odstraníte.
-            Změny můľete prohlédnout podle stromu nebo podle uľivatele nebo podle obojího. Po uloľení navrhovaných změn není zaslán ľádný mail, ale pokud nové změny existují, na záloľce Přezkoumat se objeví hvězdička (*).</p>
+      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <a name="review"><p class="subheadbold">Předběľné prohlédnutí úprav</p></a>
+      Chcete-li si předběľně prohlédnout změny provedené ostatními uľivateli, klikněte na záloľku "Přezkoumat". Můľete se pak rozhodnout, zda tyto navrhované změny uloľíte nebo odstraníte.
+      Změny můľete prohlédnout podle stromu nebo podle uľivatele nebo podle obojího. Po uloľení navrhovaných změn není zaslán ľádný mail, ale pokud nové změny existují, na záloľce Přezkoumat se objeví hvězdička (*).</p>
 
-            <span class="optionhead">Vybrat událost a akci</span><br/>
-            <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můľete zúľit výběrem uľivatele (osoba
-                odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z moľných akcí nalevo od tohoto řádku. Chcete-li změny přezkoumat a
-                případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
+      <span class="optionhead">Vybrat událost a akci</span><br>
+      <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můľete zúľit výběrem uľivatele (osoba
+        odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z moľných akcí nalevo od tohoto řádku. Chcete-li změny přezkoumat a
+        případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
 
-            <span class="optionhead">Přezkoumat</span><br/>
-            <p>Na obrazovce Přezkoumat můľete provést daląí potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uloľit a vymazat" pro
-                uloľení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můľete rovněľ odstranit dočasný záznam, aniľ byste jej uloľili,
-                nebo můľete své rozhodnutí odloľit na pozdějąí dobu kliknutím na "Odloľit".</p>
+      <span class="optionhead">Přezkoumat</span><br>
+      <p>Na obrazovce Přezkoumat můľete provést daląí potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uloľit a vymazat" pro
+        uloľení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můľete rovněľ odstranit dočasný záznam, aniľ byste jej uloľili,
+        nebo můľete své rozhodnutí odloľit na pozdějąí dobu kliknutím na "Odloľit".</p>
 
-        </td>
-    </tr>
+    </td>
+  </tr>
 
 </table>
 </body>

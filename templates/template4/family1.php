@@ -40,17 +40,17 @@ tng_header("Your Feature 1 Story Title", $flags);
 <p>You can use tables or css classes to format the layout of your page</p>
 <h2>Multi-language pages</h2>
 <p>
-    If you are creating a story that you will translate and want to display in the language the user has selected when viewing your site, then you can place the content that starts with the heading 1 (< h1 >) line to everything in the line before the
-    tng_footer.php function call in your language folder and use a PHP
+  If you are creating a story that you will translate and want to display in the language the user has selected when viewing your site, then you can place the content that starts with the heading 1 (< h1 >) line to everything in the line before the
+  tng_footer.php function call in your language folder and use a PHP
 </p>
 <p>
-    include $mylanguage/family1.php to include the content from you language folder for each language you support on your site.
-    <br/>
-    For additional information see the TNG Wiki article on creating User Pages or histories using the historytemplate.php file at http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Getting_Started and
-    http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Multi-Language
+  include $mylanguage/family1.php to include the content from you language folder for each language you support on your site.
+  <br>
+  For additional information see the TNG Wiki article on creating User Pages or histories using the historytemplate.php file at http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Getting_Started and
+  http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Multi-Language
 </p>
 <p>
-    This family1.php file was created from the historytemplate.php and saved in the histories folder as an example of how to create such a file.
+  This family1.php file was created from the historytemplate.php and saved in the histories folder as an example of how to create such a file.
 </p>
 
 <?php tng_footer(""); ?>

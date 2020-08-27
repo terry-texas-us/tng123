@@ -77,7 +77,7 @@ $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'mar
                           </td>
                       </tr>
                   </table>
-              </form><br/>
+              </form><br>
             <?php
           }
           ?>

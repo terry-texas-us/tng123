@@ -78,9 +78,9 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                         </td>
                     </tr>
                 </table>
-                <br/>
-                <input type="hidden" name="start" value="1"/>
-                <input type="submit" class="btn" value="<?php echo $admtext['renumber']; ?>"<?php if (!$tngconfig['maint']) {
+              <br>
+              <input type="hidden" name="start" value="1">
+              <input type="submit" class="btn" value="<?php echo $admtext['renumber']; ?>"<?php if (!$tngconfig['maint']) {
                   echo " disabled";
                 } ?>>
               <?php
@@ -88,7 +88,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                 echo "<span class=\"normal\">{$admtext['needmaint']}</span>";
               }
               ?>
-                <br/><br/>
+              <br><br>
               <?php echo "<p class=\"normal\">*{$admtext['niprefix']}</p>\n"; ?>
             </form>
         </td>

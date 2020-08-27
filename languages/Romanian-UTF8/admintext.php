@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informatii cimitir existent";
     $admtext['newceminfo'] = "Informatii cimitir nou";
     $admtext['maptoupload'] = "Imagine harta de incarcat";
-    $admtext['mapfilenamefolder'] = "Nume fisier harta<br/>in dosar pietre funerare";
+    $admtext['mapfilenamefolder'] = "Nume fisier harta<br>in dosar pietre funerare";
     $admtext['ifmapuploaded'] = "Lasa acest ca camp necompletat daca fisierul a fost deja incarcat in dosar pietre funerare.";
     $admtext['requiredmap'] = "Obligatoriu daca folosest o harta. Acesta trebuie sa corespunda la nume si locatie din fisierul dumneavoastra <em> in dosar pietre funerare </em> o data ce aceasta a fost incarcat. De exemplu: daca dosarul pietre funerare se numeste <em>headstones</em>, si doresti ca fisierul sa se numeasca <em>map.jpg</em> si duce in sub-dosarul lui headstones numit, <em>mymaps</em>, dumneavoastra ve-ti introduce <em>mymaps/map.jpg</em> in acest camp.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Adaugata";
     $admtext['enternew'] = "Introduce nou";
     $admtext['pleaseenter'] = "Va rugam introduce-ti un";
-    $admtext['netscapereload'] = "Utilizatori Nescape: <br/>Trebuie sa reincarcati pagina cimitirii pentru a  vizualiza noutatile proprii";
+    $admtext['netscapereload'] = "Utilizatori Nescape: <br>Trebuie sa reincarcati pagina cimitirii pentru a  vizualiza noutatile proprii";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Importare GEDCOM...<br/>(acesta poate lua multe minute)";
+    $admtext['importinggedcom'] = "Importare GEDCOM...<br>(acesta poate lua multe minute)";
     $admtext['ifimportfails'] = "Daca importul esueaza,";
     $admtext['opened'] = "desfasurare...";
     $admtext['toresume'] = "reincearca import";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pentru magazii...";
     $admtext['noevtypes'] = "Tipuri eveniment inexist.";
     $admtext['DESI'] = "Avantaj urmas";
-    $admtext['allnone'] = "Intruduce-ti un mesaj afisat pentru fiecare limba,<br />sau lasati toate necompletate si introduce-ti un mesaj  afisaj mai sus.";
+    $admtext['allnone'] = "Intruduce-ti un mesaj afisat pentru fiecare limba,<br>sau lasati toate necompletate si introduce-ti un mesaj  afisaj mai sus.";
     $admtext['assocwith'] = "Asociat cu with";
     $admtext['BAPM'] = "Botez";
     $admtext['umps'] = "Fiesierul dumneavoastra GEDCOM poate fi mai larg ca maximul dimensiunii permise de configuratia dumneavoastra PHP. Pute-ti sa intrebati furnizorul sa creasca valoarea  'upload_max_filesize', sau puteti sa copiati fisierul in dosarul 'gedcom' pe siteul dumneavoastra si il importanti de acolo mai repede.;";
@@ -251,7 +251,7 @@ switch ($textpart) {
     $admtext['genfamily'] = "Familie in general";
     $admtext['marriagetype'] = "Tip casatorie";
     $admtext['reviewfamilies'] = "Accepta sau refuza tentativa schimbarilor la familii";
-    $admtext['fevslater'] = "Nota: Evenimente aditionale la fel si note si citate pentru evenimente specifice,<br />mai poate fi adaugat dupa ce noua familie a fost salvata.";
+    $admtext['fevslater'] = "Nota: Evenimente aditionale la fel si note si citate pentru evenimente specifice,<br>mai poate fi adaugat dupa ce noua familie a fost salvata.";
     $admtext['husbid'] = "ID sot";  //husband ID
     $admtext['wifeid'] = "ID Sotie";
     $admtext['enternamepart'] = "introduceti o parte din prenume sau/si nume familie";
@@ -321,7 +321,7 @@ switch ($textpart) {
     $admtext['updatingassoc'] = "Actualizare asociere...";
     $admtext['addnewassoc'] = "Adauga asociere noua";
     $admtext['modifyassoc'] = "Modifica asocieri existente";
-    $admtext['pevslater'] = "Nota: Evenimente aditionale la fel si evenimente-specifice note si instiintari,<br />pot fi adaugate dupa ce noua persoana a fost salvata.";
+    $admtext['pevslater'] = "Nota: Evenimente aditionale la fel si evenimente-specifice note si instiintari,<br>pot fi adaugate dupa ce noua persoana a fost salvata.";
     $admtext['ashusband'] = "ca sot";
     $admtext['aswife'] = "ca sotie";
     $admtext['pevslater2'] = "Note: Additional events, plus event-specific notes and citations, may be added later.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefix";
     $admtext['chkdel'] = "Check empty box to delete item at left";
     //added in 9.0.0
-    $admtext['choosedef'] = "Choose<br/>default<br/>photo"; //has to fit in a small box
+    $admtext['choosedef'] = "Choose<br>default<br>photo"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Confirmation Date (LDS)";
     $admtext['confplace'] = "Confirmation Place (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Miniaturi in general";
     $admtext['genthumbsdesc'] = "Generaza automat versiunea miniatura a micsorata a tuturor imaginilor fara miniatura.";
     $admtext['thumbsgenerated'] = "Miniaturi generate";
-    $admtext['makedefault'] = "Utilizeaza implicit";
-    $admtext['filewithinhs'] = "Cale in dosar pietre funerare <br/>(nume fisier si subdosar)";
-    $admtext['recsupdated'] = "Inregistrari actualizate";
+  $admtext['makedefault'] = "Utilizeaza implicit";
+  $admtext['filewithinhs'] = "Cale in dosar pietre funerare <br>(nume fisier si subdosar)";
+  $admtext['recsupdated'] = "Inregistrari actualizate";
     $admtext['removedef'] = "Sterge imagine implicita";
     $admtext['numlinkhs'] = "Nummar de persoane asociate la aceasta piatra funerara";
     $admtext['sortheadstones'] = "Sorteaza pietre funerare";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Obligatoriu. Acesta trebuie sa corespunda la numele si locatia fisierului dumneavoastra <em>in colectia dumneavoastra</em> daca fisierul este incarcat. De exemplu, presupunem incarcati o imagine si dosarul imaginilor dumneavoastra se numeste <em>imagini</em>. Daca doriti ca fisierul sa se numeasca <em>imagineamea.jpg</em> si duce in subdirectorul lui imagini numit  <em>imaginenoua</em>, trebuie sa introduceti <em>imagininoua/imagineamea.jpg</em> in acest camp.";
     $admtext['leaveblankphoto'] = "Lasati acest camp necompletat daca fisierul a fost deja incarcat.";
     $admtext['thumbconflicts'] = "Miniaturi ne generate din cauza unei probleme la cale, permisiuni, marime sau nume fisier";
-    $admtext['showmap'] = "Arata harta cimitir si media oricand acest obiect este afisat";
-    $admtext['bodytext'] = "<strong>SAU</strong><br/>Text mesaj";
-    $admtext['usenl'] = "Converteste intreruperile linie in HTML la afisare";
+  $admtext['showmap'] = "Arata harta cimitir si media oricand acest obiect este afisat";
+  $admtext['bodytext'] = "<strong>SAU</strong><br>Text mesaj";
+  $admtext['usenl'] = "Converteste intreruperile linie in HTML la afisare";
     $admtext['newwin'] = "Deschide in fereastra noua";
     $admtext['modifymedia'] = "Modifica media existenta";
     $admtext['addnewmedia'] = "Adauga media nou";
@@ -1127,7 +1127,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Daca data nastere nedefinita, presupune";
     $admtext['persliving'] = "Persoana traieste";
     $admtext['persdead'] = "Persoana a decedat";
-    $admtext['nodeathdate'] = "If no death date, assume deceased<br />if older than";
+    $admtext['nodeathdate'] = "If no death date, assume deceased<br>if older than";
     $admtext['pedconfigsettings'] = "Setari grafic";
     $admtext['usepopups'] = "Afisaj initial";
     $admtext['maxpedgens'] = "Numar maxim generatii";
@@ -1402,8 +1402,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Uneste locatii/localitati";
     $admtext['findmerge'] = "Gaseste/Uneste candidati";
     $admtext['selectplacemerge'] = "Selecteaza locatii pentru unificat";
-    $admtext['mcol1'] = "Uneste<br/>acestea<br/>(sterge)";
-    $admtext['mcol2'] = "in<br/>aceasta<br/>(pastreaza)";
+    $admtext['mcol1'] = "Uneste<br>acestea<br>(sterge)";
+    $admtext['mcol2'] = "in<br>aceasta<br>(pastreaza)";
     $admtext['pmsucc'] = "Locatie unita cu succes";
     $admtext['nomerge'] = "Nimic de unificat";
     $admtext['enterkeep'] = "va rugam selectati o tinta pentru unificare.";
@@ -1480,7 +1480,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Va rugam introduceti un nume afisat pentru limba.";
     $admtext['enterlangfolder'] = "Va rugam introduceti numele dosarului unde fisierele de limba for fi memorate.";
     $admtext['newlanguageinfo'] = "Informatii limba noua";
-    $admtext['langdisplay'] = "Nume pentru aceasta limba<br/>care va fi afisat pentru vizitatori";
+    $admtext['langdisplay'] = "Nume pentru aceasta limba<br>care va fi afisat pentru vizitatori";
     $admtext['createlanguage'] = "Creaza o inregistrare pentru o limba nou";
     $admtext['nolanguages'] = "Nu exista inregistrari limba";
     $admtext['conflangdelete'] = "Sunteti sigur ca doriti sa stergeti aceasta limba?";
@@ -1662,7 +1662,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Selecteaza eveniment si modifica";
     $admtext['suggested'] = "Propus";
-    $admtext['usernotes'] = "Note: Cu privire la <br />schimbarea sugerata<br />(nu va fi salvata)";
+    $admtext['usernotes'] = "Note: Cu privire la <br>schimbarea sugerata<br>(nu va fi salvata)";
     $admtext['postdate'] = "Publicat pe";
     $admtext['savedel'] = "Salveaza si sterge";
     $admtext['postpone'] = "Amanare";
@@ -2010,7 +2010,7 @@ $admtext['check'] = "Verifica";
 $admtext['generate'] = "Generare";
 $admtext['update'] = "Actualizare";
 $admtext['confdeleteevent'] = "Sunteti sigur ca doriti sa sergeti eveniment?";
-$admtext['existinglinks'] = "Legaturi existente:<br/>(verifica la stergere)";
+$admtext['existinglinks'] = "Legaturi existente:<br>(verifica la stergere)";
 $admtext['lowersortfirst'] = "Sorteaza primele numerele mici. Numere zecimale pot si utilizate.";
 $admtext['personsname'] = "Nume persoane";
 $admtext['tablecreation'] = "Creaza tabel";
@@ -2240,9 +2240,9 @@ $admtext['idexists'] = "Nu poate fi adaugat deoarece acest ID exista deja. Va ru
 $admtext['notdeleted'] = "File could not be deleted. Please check file permissions.";
 $admtext['confdeletefile'] = "Are you sure you want to delete this file?";
 //changed in 8.0.0
-$admtext['datenote'] = "<strong>Nota:</strong> Cand introduceti date, va rugam utilizati formatul genealogic standard DD MMM AAAA.<br />De exemplu, 10 Apr 2004.";
+$admtext['datenote'] = "<strong>Nota:</strong> Cand introduceti date, va rugam utilizati formatul genealogic standard DD MMM AAAA.<br>De exemplu, 10 Apr 2004.";
 $admtext['oriental'] = "Numele de familie primul";
-$admtext['langfolder'] = "Dosar unde fisierele de limba<br/> vor fi memorate";
+$admtext['langfolder'] = "Dosar unde fisierele de limba<br> vor fi memorate";
 //moved here in 8.0.0
 $admtext['repoid'] = "ID depozit";
 $admtext['whatsnew'] = "Ce este nou/ Noutati";

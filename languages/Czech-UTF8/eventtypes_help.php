@@ -4,57 +4,57 @@ echo help_header("Nápověda: Vlastní typy událostí");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp; | &nbsp;
-                <a href="reports_help.php" class="lightlink">Nápověda: Reporty &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Vlastní typy událostí</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
-                <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp; | &nbsp;
+        <a href="reports_help.php" class="lightlink">Nápověda: Reporty &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Vlastní typy událostí</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
+        <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a>
+      </p>
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících vlastních typů událostí vyhledáním celého nebo části <strong>Tagu, Typu/popisu (pro události EVEN)</strong> nebo <strong>Zobrazit</strong>.
-                Pro zúžení vašeho hledání vyberte <strong>Spojeno s</strong> nebo zvolte jednu z dalších možností.
-                Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech vlastních typů událostí ve vaší databázi. Možnosti výběru jsou následující:</p>
+      <a name="search"><p class="subheadbold">Hledat</p></a>
+      <p>Nalezení existujících vlastních typů událostí vyhledáním celého nebo části <strong>Tagu, Typu/popisu (pro události EVEN)</strong> nebo <strong>Zobrazit</strong>.
+        Pro zúžení vašeho hledání vyberte <strong>Spojeno s</strong> nebo zvolte jednu z dalších možností.
+        Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech vlastních typů událostí ve vaší databázi. Možnosti výběru jsou následující:</p>
 
-            <p><span class="optionhead">Spojeno s</span><br/>
-                Pro omezení výběru zvolte z tohoto rozbalovacího seznamu vlastní typy událostí spojené s osobami, rodinami, prameny nebo úložišti pramenů.</p>
+      <p><span class="optionhead">Spojeno s</span><br>
+        Pro omezení výběru zvolte z tohoto rozbalovacího seznamu vlastní typy událostí spojené s osobami, rodinami, prameny nebo úložišti pramenů.</p>
 
-            <p><span class="optionhead">Přijmout/Odmítnout/Vše</span><br/>
-                Výběrem jedné z těchto voleb omezíte výběr vlastních typů událostí na ty, které jsou <strong>přijaty</strong>, nebo na ty,
-                které jsou <strong>odmítnuty</strong>. Volba <strong>Vše</strong> neomezí výsledek výběru.</p>
+      <p><span class="optionhead">Přijmout/Odmítnout/Vše</span><br>
+        Výběrem jedné z těchto voleb omezíte výběr vlastních typů událostí na ty, které jsou <strong>přijaty</strong>, nebo na ty,
+        které jsou <strong>odmítnuty</strong>. Volba <strong>Vše</strong> neomezí výsledek výběru.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+      <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
 
-            <p><span class="optionhead">Smazat/Přijmout/Odmítnout/Sbalit vybrané</span><br/>
-                Klikněte na zaškrtávací políčko vedle jednoho nebo více typů událostí, a poté použijte tato tlačítka k provedení akce na všech vybraných typech událostí najednou.</p>
+      <p><span class="optionhead">Smazat/Přijmout/Odmítnout/Sbalit vybrané</span><br>
+        Klikněte na zaškrtávací políčko vedle jednoho nebo více typů událostí, a poté použijte tato tlačítka k provedení akce na všech vybraných typech událostí najednou.</p>
 
-            <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit nebo odstranit tento výsledek. Chcete-li najednou odstranit více záznamů, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, který má být odstraněn a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
-                můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
+      <span class="optionhead">Akce</span>
+      <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit nebo odstranit tento výsledek. Chcete-li najednou odstranit více záznamů, zaškrtněte políčko ve sloupci
+        <strong>Vybrat</strong> u každého záznamu, který má být odstraněn a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+        můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
-        </td>
-    </tr>
-    <tr class="databack">
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Nahoru</a></p>

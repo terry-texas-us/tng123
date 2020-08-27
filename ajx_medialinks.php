@@ -26,7 +26,7 @@ if (!$allow_media_edit && !$allow_media_add) {
   exit;
 }
 
-list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, $trees_table);
+[$tree, $trees, $treename, $treequery] = getOrderedTreesList($assignedtree, $trees_table);
 
 $query = "SELECT $medialinks_table.medialinkID as mlinkID, $medialinks_table.personID as personID, eventID, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, people.nameorder as nameorder, altdescription, altnotes, $medialinks_table.gedcom as gedcom, people.branch as branch, treename,
 	familyID, people.personID as personID2, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder,
@@ -47,12 +47,12 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="0">
-    <tr class="databack">
-        <td>
-            <span class="subhead"><strong><?php echo $admtext['medialinks']; ?></strong></span><br/><br/>
-            <form action="" name="form1" id="form1">
-              <?php include "micro_medialinks.php"; ?>
-            </form>
-        </td>
-    </tr>
+  <tr class="databack">
+    <td>
+      <span class="subhead"><strong><?php echo $admtext['medialinks']; ?></strong></span><br><br>
+      <form action="" name="form1" id="form1">
+        <?php include "micro_medialinks.php"; ?>
+      </form>
+    </td>
+  </tr>
 </table>

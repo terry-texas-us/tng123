@@ -42,10 +42,10 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
           $success = tng_affected_rows();
 
             if ($success) {
-            echo "success<br/>\n";
+            echo "success<br>\n";
             $totalImported++;
           } else {
-            echo "<strong>failed (duplicate)</strong><br/>\n";
+              echo "<strong>failed (duplicate)</strong><br>\n";
           }
         }
       } elseif ($needsubdirs && is_dir($filename) && $filename != '..' && $filename != '.') {

@@ -4,57 +4,57 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="branches_help.php" class="lightlink">&laquo; N�pov�da: V�tve</a> &nbsp; | &nbsp;
-                <a href="reports_help.php" class="lightlink">N�pov�da: Reporty &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Vlastn� typy ud�lost�</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-                <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="branches_help.php" class="lightlink">&laquo; N�pov�da: V�tve</a> &nbsp; | &nbsp;
+        <a href="reports_help.php" class="lightlink">N�pov�da: Reporty &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Vlastn� typy ud�lost�</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+        <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a>
+      </p>
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezen� existuj�c�ch vlastn�ch typ� ud�lost� vyhled�n�m cel�ho nebo ��sti <strong>Tagu, Typu/popisu (pro ud�losti EVEN)</strong> nebo <strong>Zobrazit</strong>.
-                Pro z��en� va�eho hled�n� vyberte <strong>Spojeno s</strong> nebo zvolte jednu z dal��ch mo�nost�.
-                V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech vlastn�ch typ� ud�lost� ve va�� datab�zi. Mo�nosti v�b�ru jsou n�sleduj�c�:</p>
+      <a name="search"><p class="subheadbold">Hledat</p></a>
+      <p>Nalezen� existuj�c�ch vlastn�ch typ� ud�lost� vyhled�n�m cel�ho nebo ��sti <strong>Tagu, Typu/popisu (pro ud�losti EVEN)</strong> nebo <strong>Zobrazit</strong>.
+        Pro z��en� va�eho hled�n� vyberte <strong>Spojeno s</strong> nebo zvolte jednu z dal��ch mo�nost�.
+        V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech vlastn�ch typ� ud�lost� ve va�� datab�zi. Mo�nosti v�b�ru jsou n�sleduj�c�:</p>
 
-            <p><span class="optionhead">Spojeno s</span><br/>
-                Pro omezen� v�b�ru zvolte z tohoto rozbalovac�ho seznamu vlastn� typy ud�lost� spojen� s osobami, rodinami, prameny nebo �lo�i�ti pramen�.</p>
+      <p><span class="optionhead">Spojeno s</span><br>
+        Pro omezen� v�b�ru zvolte z tohoto rozbalovac�ho seznamu vlastn� typy ud�lost� spojen� s osobami, rodinami, prameny nebo �lo�i�ti pramen�.</p>
 
-            <p><span class="optionhead">P�ijmout/Odm�tnout/V�e</span><br/>
-                V�b�rem jedn� z t�chto voleb omez�te v�b�r vlastn�ch typ� ud�lost� na ty, kter� jsou <strong>p�ijaty</strong>, nebo na ty,
-                kter� jsou <strong>odm�tnuty</strong>. Volba <strong>V�e</strong> neomez� v�sledek v�b�ru.</p>
+      <p><span class="optionhead">P�ijmout/Odm�tnout/V�e</span><br>
+        V�b�rem jedn� z t�chto voleb omez�te v�b�r vlastn�ch typ� ud�lost� na ty, kter� jsou <strong>p�ijaty</strong>, nebo na ty,
+        kter� jsou <strong>odm�tnuty</strong>. Volba <strong>V�e</strong> neomez� v�sledek v�b�ru.</p>
 
-            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
+      <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
 
-            <p><span class="optionhead">Smazat/P�ijmout/Odm�tnout/Sbalit vybran�</span><br/>
-                Klikn�te na za�krt�vac� pol��ko vedle jednoho nebo v�ce typ� ud�lost�, a pot� pou�ijte tato tla��tka k proveden� akce na v�ech vybran�ch typech ud�lost� najednou.</p>
+      <p><span class="optionhead">Smazat/P�ijmout/Odm�tnout/Sbalit vybran�</span><br>
+        Klikn�te na za�krt�vac� pol��ko vedle jednoho nebo v�ce typ� ud�lost�, a pot� pou�ijte tato tla��tka k proveden� akce na v�ech vybran�ch typech ud�lost� najednou.</p>
 
-            <span class="optionhead">Akce</span>
-            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit nebo odstranit tento v�sledek. Chcete-li najednou odstranit v�ce z�znam�, za�krtn�te pol��ko ve sloupci
-                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t odstran�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
-                m��ete pou��t tla��tka <strong>Vybrat v�e</strong> nebo <strong>Vy�istit v�e</strong>.</p>
+      <span class="optionhead">Akce</span>
+      <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit nebo odstranit tento v�sledek. Chcete-li najednou odstranit v�ce z�znam�, za�krtn�te pol��ko ve sloupci
+        <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t odstran�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
+        m��ete pou��t tla��tka <strong>Vybrat v�e</strong> nebo <strong>Vy�istit v�e</strong>.</p>
 
-        </td>
-    </tr>
-    <tr class="databack">
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Nahoru</a></p>

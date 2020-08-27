@@ -38,7 +38,7 @@ switch ($textpart) {
     $text['email'] = "Vaša E-mail adresa";
     $text['suggestchange'] = "Predlog za izmenu ili dopunu podataka";
     $text['yourname'] = "Vaše ime i prezime";
-    $text['comments'] = "Opis <br />predloženih izmena";
+    $text['comments'] = "Opis <br>predloženih izmena";
     $text['comments2'] = "Vaš komentar";
     $text['submitsugg'] = "Pošalji sugestiju";
     $text['proposed'] = "Predložena izmena";
@@ -667,7 +667,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Brze&nbsp;Mutacije";
     $text['alltypes'] = "Svi Tipovi";
     $text['allgroups'] = "Sve Grupe";
-    $text['Ydna_LITbox_info'] = "Testo(vi) koji su povezani sa ovom osobom nisu obavezno preuzeti od ove osobe.<br />'Haplogroupa' prikazuje podatke u crvenoj boji ako je rezultat 'Predviđen unapred' ili zelen ako je test 'Potvrđen'";
+    $text['Ydna_LITbox_info'] = "Testo(vi) koji su povezani sa ovom osobom nisu obavezno preuzeti od ove osobe.<br>'Haplogroupa' prikazuje podatke u crvenoj boji ako je rezultat 'Predviđen unapred' ili zelen ako je test 'Potvrđen'";
 
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Uporedite izabrane mtDNA Testove";

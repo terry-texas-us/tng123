@@ -4,27 +4,27 @@ echo help_header("Nápověda: Prameny");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="families_help.php" class="lightlink">&laquo; Nápověda: Rodiny</a> &nbsp; | &nbsp;
-                <a href="repositories_help.php" class="lightlink">Nápověda: Úložiště pramenů &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Prameny</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Sloučit</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="families_help.php" class="lightlink">&laquo; Nápověda: Rodiny</a> &nbsp; | &nbsp;
+        <a href="repositories_help.php" class="lightlink">Nápověda: Úložiště pramenů &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Prameny</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#merge" class="lightlink">Sloučit</a>
             </p>
         </td>
     </tr>
@@ -67,34 +67,34 @@ echo help_header("Nápověda: Prameny");
                 Chcete-li zajistit, že zobrazení ID číslo není nárokováno jiným uživatelem, zatímco vy zapisujete data, klikněte na tlačítko <strong>Zamknout</strong>.</p>
 
             <p><strong>POZN.</strong>: Používáte-li tento program spolu s genealogickým programem pracujícím na platformách PC nebo Mac, který u nových pramenů vytváří také ID čísla,
-                DŮRAZNĚ DOPORUČUJEME všechna tato čísla vždy mezi těmito programy synchronizovat. Výsledkem zanedbání této činnosti mohou být kolize a nepoužitelnost
-                odkazů na vaše média. Pokud váš primární program vytváří ID čísla, která neodpovídají tradičním standardům (např.
-                <strong>S</strong> je na konci a ne na začátku), můžete konvence, které TNG používá, změnit v Základním nastavení.</p>
+              DŮRAZNĚ DOPORUČUJEME všechna tato čísla vždy mezi těmito programy synchronizovat. Výsledkem zanedbání této činnosti mohou být kolize a nepoužitelnost
+              odkazů na vaše média. Pokud váš primární program vytváří ID čísla, která neodpovídají tradičním standardům (např.
+              <strong>S</strong> je na konci a ne na začátku), můžete konvence, které TNG používá, změnit v Základním nastavení.</p>
 
-            <span class="optionhead">Krátký název</span>
-            <p>Zkrácený název pramenu.</p>
+          <span class="optionhead">Krátký název</span>
+          <p>Zkrácený název pramenu.</p>
 
-            <span class="optionhead">Dlouhý název</span>
-            <p>Dlouhý název pramene.</p>
+          <span class="optionhead">Dlouhý název</span>
+          <p>Dlouhý název pramene.</p>
 
-            <span class="optionhead">Autor, archivační číslo, vydavatel</span><br/>
-            <p>Další informace spojené s pramenem (pokud existují).</p>
+          <span class="optionhead">Autor, archivační číslo, vydavatel</span><br>
+          <p>Další informace spojené s pramenem (pokud existují).</p>
 
-            <span class="optionhead">Úložiště pramenů</span><br/>
-            <p>Vyberte úložiště pramenů, ve kterém se pramen nachází (je-li tato skutečnost známa). Pokud dané úložiště pramenů ještě v databázi neexistuje, jděte na Administrace/Úložiště pramenů a
-                kde jej založte, pak se vraťte a zde jej vyberte.</p>
+          <span class="optionhead">Úložiště pramenů</span><br>
+          <p>Vyberte úložiště pramenů, ve kterém se pramen nachází (je-li tato skutečnost známa). Pokud dané úložiště pramenů ještě v databázi neexistuje, jděte na Administrace/Úložiště pramenů a
+            kde jej založte, pak se vraťte a zde jej vyberte.</p>
 
-            <span class="optionhead">Vlastní text</span><br/>
-            <p>Citace z materiálu pramene (volitelné).</p>
+          <span class="optionhead">Vlastní text</span><br>
+          <p>Citace z materiálu pramene (volitelné).</p>
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="edit"><p class="subheadbold">Upravit existující prameny</p></a>
-            <p>Chcete-li upravit existující pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Upravit vedle pramenu.</p>
+      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <a name="edit"><p class="subheadbold">Upravit existující prameny</p></a>
+      <p>Chcete-li upravit existující pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Upravit vedle pramenu.</p>
 
             <span class="optionhead">Poznámky</span>
             <p>Poznámky lze připojit k událostem nebo pramenu obecně kliknutím na ikonu Poznámky v horní části stránky
@@ -146,37 +146,37 @@ echo help_header("Nápověda: Prameny");
             <p><em>Odmítnout prázdné</em> znamená, že prázdná pole nebudou brána v potaz. Např. pramen s krátkým názvem, ale bez titulu
                 nebude brán jako shodný s jiným záznamem, pokud je titul mezi vybranými kritérii.</p>
 
-            <p><em>Sloučit poznámky</em> znamená, že poznámky z pramene 2 budou přidány k poznámkám
-                pramenu 1 u všech slučovaných polí. Není-li tato volba vybrána a pole pramenu 2 je zaškrtnuto, poznámky pramenu 2 k tomuto poli budou přepsány
-                záznamy z odpovídajícího pole pramenu 1.</p>
+          <p><em>Sloučit poznámky</em> znamená, že poznámky z pramene 2 budou přidány k poznámkám
+            pramenu 1 u všech slučovaných polí. Není-li tato volba vybrána a pole pramenu 2 je zaškrtnuto, poznámky pramenu 2 k tomuto poli budou přepsány
+            záznamy z odpovídajícího pole pramenu 1.</p>
 
-            <p><em>Sloučit média</em> znamená, že média z pramenu 2 budou zachována a přidána k již existujícím
-                u pramenu 1, pokud budou tyto dva prameny sloučeny. Není-li tato volba vybrána, všechny odkazy na média pramenu 2 budou po sloučení odstraněny.</p>
+          <p><em>Sloučit média</em> znamená, že média z pramenu 2 budou zachována a přidána k již existujícím
+            u pramenu 1, pokud budou tyto dva prameny sloučeny. Není-li tato volba vybrána, všechny odkazy na média pramenu 2 budou po sloučení odstraněny.</p>
 
-            <p><span class="optionhead">Varování!</span> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy zazálohujte své databázové tabulky</em>
-                pro případ, že byste dva prameny sloučili omylem.</p>
+          <p><span class="optionhead">Varování!</span> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy zazálohujte své databázové tabulky</em>
+            pro případ, že byste dva prameny sloučili omylem.</p>
 
-            <span class="optionhead">Další shoda</span><br/>
-            <p>Najde další možné porovnání, která nezahrne pramen 1. TNG postoupí seznamem možných pramenů v třídění podle ID čísla v textovém formátu.
-                Znamená to, že "10" bude po "1", ale před "2".</p>
+          <span class="optionhead">Další shoda</span><br>
+          <p>Najde další možné porovnání, která nezahrne pramen 1. TNG postoupí seznamem možných pramenů v třídění podle ID čísla v textovém formátu.
+            Znamená to, že "10" bude po "1", ale před "2".</p>
 
-            <span class="optionhead">Další duplicita</span><br/>
-            <p>Najde další možnou duplicitu k pramenu 1. Pokud výsledkem není záznam, který byl zobrazen u pramenu 2, znamená to, že duplicita nebyla nalezena.</p>
+          <span class="optionhead">Další duplicita</span><br>
+          <p>Najde další možnou duplicitu k pramenu 1. Pokud výsledkem není záznam, který byl zobrazen u pramenu 2, znamená to, že duplicita nebyla nalezena.</p>
 
-            <span class="optionhead">Porovnat/Obnovit</span><br/>
-            <p>Porovnání pramenu 1 a pramenu 2. Je-li toto porovnání již zobrazeno, kliknutí na toto tlačítko způsobí obnovení stránky.</p>
+          <span class="optionhead">Porovnat/Obnovit</span><br>
+          <p>Porovnání pramenu 1 a pramenu 2. Je-li toto porovnání již zobrazeno, kliknutí na toto tlačítko způsobí obnovení stránky.</p>
 
-            <span class="optionhead">Prohodit</span><br/>
-            <p>Pramen 1 se stane pramenem 2 a naopak.</p>
+          <span class="optionhead">Prohodit</span><br>
+          <p>Pramen 1 se stane pramenem 2 a naopak.</p>
 
-            <span class="optionhead">Sloučit</span><br/>
-            <p>Pramen 2 bude sloučen s pramenem 1. ID číslo pramene 1 bude zachováno, stejně jako ostatní údaje pramenu 1, pokud nejsou zaškrtnuta odpovídající políčka
-                u pramenu 2. Např. pokud je u pramenu 2 zaškrtnuto políčko vedle autora, bude během sloučení údaj z tohoto pole zkopírován ze záznamu pramenu 2 do záznamu pramenu 1.
-                Odpovídající údaj pramenu 1 bude smazán. Políčka u pramenu 2 jsou automaticky zaškrtnuta, pokud u pramenu 1 nejsou odpovídající údaje. Není-li
-                pole zobrazeno ani u jednoho pramenu, pak v tomto poli neexistuje žádný údaj.</p>
+          <span class="optionhead">Sloučit</span><br>
+          <p>Pramen 2 bude sloučen s pramenem 1. ID číslo pramene 1 bude zachováno, stejně jako ostatní údaje pramenu 1, pokud nejsou zaškrtnuta odpovídající políčka
+            u pramenu 2. Např. pokud je u pramenu 2 zaškrtnuto políčko vedle autora, bude během sloučení údaj z tohoto pole zkopírován ze záznamu pramenu 2 do záznamu pramenu 1.
+            Odpovídající údaj pramenu 1 bude smazán. Políčka u pramenu 2 jsou automaticky zaškrtnuta, pokud u pramenu 1 nejsou odpovídající údaje. Není-li
+            pole zobrazeno ani u jednoho pramenu, pak v tomto poli neexistuje žádný údaj.</p>
 
-            <span class="optionhead">Upravit</span><br/>
-            <p>Úprava záznamu pramenu v novém okně. Po provedení změn musíte kliknout na Porovnat/Obnovit, aby se změny projevily na obrazovce Sloučení.</p>
+          <span class="optionhead">Upravit</span><br>
+          <p>Úprava záznamu pramenu v novém okně. Po provedení změn musíte kliknout na Porovnat/Obnovit, aby se změny projevily na obrazovce Sloučení.</p>
 
         </td>
     </tr>

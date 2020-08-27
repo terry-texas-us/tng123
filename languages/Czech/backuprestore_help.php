@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Obslu�n� programy");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="languages_help.php" class="lightlink">&laquo; N�pov�da: Jazyky</a> &nbsp; | &nbsp;
-                <a href="modmanager_help.php" class="lightlink">N�pov�da: Mana�er m�d� &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Obslu�n� programy</span>
-            <p class="smaller menu">
-                <a href="#tables" class="lightlink">Z�loha - Obnova - Optimalizace</a> &nbsp; | &nbsp;
-                <a href="#structure" class="lightlink">Z�loha struktury tabulek</a> &nbsp; | &nbsp;
-                <a href="#ids" class="lightlink">P�e��slov�n� ID ��sel</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="languages_help.php" class="lightlink">&laquo; N�pov�da: Jazyky</a> &nbsp; | &nbsp;
+        <a href="modmanager_help.php" class="lightlink">N�pov�da: Mana�er m�d� &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Obslu�n� programy</span>
+      <p class="smaller menu">
+        <a href="#tables" class="lightlink">Z�loha - Obnova - Optimalizace</a> &nbsp; | &nbsp;
+        <a href="#structure" class="lightlink">Z�loha struktury tabulek</a> &nbsp; | &nbsp;
+        <a href="#ids" class="lightlink">P�e��slov�n� ID ��sel</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

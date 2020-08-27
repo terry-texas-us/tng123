@@ -27,50 +27,50 @@ if ($sitever == "mobile") {
 
         </td>
     </tr>
-    <tr>
-        <td class="titlemid">
+  <tr>
+    <td class="titlemid">
 
-          <?php
-          //begin HEADER IMAGE (default: small ancestor collage under title). Size is width=559px, height=60px
-          //Actual file name has been replaced with t6_headimg variable, configurable from Template Settings. Default name of actual image is "titlebottom.jpg"
-          //You can replace the t6_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-          ?>
-            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt=""/>
-          <?php
-          //end HEADER IMAGE
-          ?>
+      <?php
+      //begin HEADER IMAGE (default: small ancestor collage under title). Size is width=559px, height=60px
+      //Actual file name has been replaced with t6_headimg variable, configurable from Template Settings. Default name of actual image is "titlebottom.jpg"
+      //You can replace the t6_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
+      ?>
+      <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt="">
+      <?php
+      //end HEADER IMAGE
+      ?>
 
-        </td>
-    </tr>
-    <tr class="tablebkground">
-    <td colspan="4" class="padding" style="border-collapse:separate">
+    </td>
+  </tr>
+  <tr class="tablebkground">
+  <td colspan="4" class="padding" style="border-collapse:separate">
   <?php
 }
 ?>
 
-    <table width="100%" border="0" cellspacing="0" cellpadding="5">
-        <tr>
-            <td class="section">
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_welcome.gif" width="200" height="50" alt=""/><br/>
-                <span class="normal">
+  <table width="100%" border="0" cellspacing="0" cellpadding="5">
+    <tr>
+      <td class="section">
+        <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_welcome.gif" width="200" height="50" alt=""><br>
+        <span class="normal">
 
 <?php
 //begin WELCOME PARAGRAPH (default text: "This is where you can welcome the user to your site.")
 //Configurable from Template Settings. You can also replace the t6_mainpara PHP block below with the desired text if you prefer that to using the Template Settings.
 ?>
 
-                  <?php echo getTemplateMessage('t6_mainpara'); ?>
+          <?php echo getTemplateMessage('t6_mainpara'); ?>
 
-                  <?php
-                  //end WELCOME PARAGRAPH
-                  ?>
+          <?php
+          //end WELCOME PARAGRAPH
+          ?>
 
-	<br/>
-	<br/>
-	<br/>
+	<br>
+	<br>
+	<br>
 	</span>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_search.gif" width="200" height="50" alt=""/><br/>
-                <span class="normal">
+        <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_search.gif" width="200" height="50" alt=""><br>
+        <span class="normal">
 
 <?php
 //begin SEARCH PARAGRAPH (default text: "To search the genealogy database, enter a name below. You will find many families!")
@@ -84,52 +84,52 @@ if ($sitever == "mobile") {
 ?>
 
 	</span>
-                <br/><br/>
-                <form id="form1" method="get" action="<?php echo $cms['tngpath']; ?>search.php">
-                    <div><input type="hidden" value="AND" name="mybool"/>
-                        <table width="297" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td><?php echo $text['firstname']; ?>:</td>
-                                <td class="searchbox"><input name="myfirstname" type="text" id="myfirstname"/></td>
+        <br><br>
+        <form id="form1" method="get" action="<?php echo $cms['tngpath']; ?>search.php">
+          <div><input type="hidden" value="AND" name="mybool">
+            <table width="297" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><?php echo $text['firstname']; ?>:</td>
+                <td class="searchbox"><input name="myfirstname" type="text" id="myfirstname"></td>
 
-                            </tr>
-                            <tr>
-                                <td class="normal"><?php echo $text['lastname']; ?>:</td>
-                                <td class="searchbox"><input name="mylastname" type="text" id="mylastname"/></td>
-                                <td rowspan="2"><input type="image" name="imageField" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/searchbutton.gif"/></td>
-                            </tr>
-                        </table>
-                    </div>
-                </form>    <!-- <div added for strict KCR -->
-                <p class="center">[<a href="<?php echo $cms['tngpath']; ?>surnames.php"><?php echo $text['mnulastnames']; ?></a>] [<a href="<?php echo $cms['tngpath']; ?>searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]<br/>
-                    [<a href="http://www.gendexnetwork.org">GenDex Network</a>]<br/>[<a href="http://www.familytreeseeker.com">FamilyTreeSeeker.com</a>]</p>
-            </td>
-            <td class="section">
+              </tr>
+              <tr>
+                <td class="normal"><?php echo $text['lastname']; ?>:</td>
+                <td class="searchbox"><input name="mylastname" type="text" id="mylastname"></td>
+                <td rowspan="2"><input type="image" name="imageField" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/searchbutton.gif"></td>
+              </tr>
+            </table>
+          </div>
+        </form>    <!-- <div added for strict KCR -->
+        <p class="center">[<a href="<?php echo $cms['tngpath']; ?>surnames.php"><?php echo $text['mnulastnames']; ?></a>] [<a href="<?php echo $cms['tngpath']; ?>searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]<br>
+          [<a href="http://www.gendexnetwork.org">GenDex Network</a>]<br>[<a href="http://www.familytreeseeker.com">FamilyTreeSeeker.com</a>]</p>
+      </td>
+      <td class="section">
 
-                <!-- RANDOM PHOTO CODE STARTS HERE -->
-                <!-- If you don't want to have a random photo displayed, just remove this section down to 'RANDOM PHOTO CODE ENDS HERE' -->
+        <!-- RANDOM PHOTO CODE STARTS HERE -->
+        <!-- If you don't want to have a random photo displayed, just remove this section down to 'RANDOM PHOTO CODE ENDS HERE' -->
 
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""/><br/>
-                <!--	<center> ** removed since there is not a good way to center images -->
-              <?php
-              include "randomphoto.php";
-              ?>
-                <p class="center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo $text['viewphotos']; ?></a>]</p>
-                <!--	</center> ** removed since there is not a good way to center images -->
+        <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""><br>
+        <!--	<center> ** removed since there is not a good way to center images -->
+        <?php
+        include "randomphoto.php";
+        ?>
+        <p class="center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo $text['viewphotos']; ?></a>]</p>
+        <!--	</center> ** removed since there is not a good way to center images -->
 
-                <!-- RANDOM PHOTO CODE ENDS HERE -->
+        <!-- RANDOM PHOTO CODE ENDS HERE -->
 
-                <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_famhist.gif" width="200" height="50" alt=""/><br/>
+        <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_famhist.gif" width="200" height="50" alt=""><br>
 
-                  <?php
-                  //begin FAMILY HISTORIES PARAGRAPH (default text: "You can use this section to link to some of your more interesting family histories.")
-                  //Configurable from Template Settings. You can also replace the t6_fhpara PHP block below with the desired text if you prefer that to using the Template Settings.
-                  ?>
+          <?php
+          //begin FAMILY HISTORIES PARAGRAPH (default text: "You can use this section to link to some of your more interesting family histories.")
+          //Configurable from Template Settings. You can also replace the t6_fhpara PHP block below with the desired text if you prefer that to using the Template Settings.
+          ?>
 
-                  <?php echo getTemplateMessage('t6_fhpara'); ?>
+          <?php echo getTemplateMessage('t6_fhpara'); ?>
 
-                  <?php
-                  //end FAMILY HISTORIES PARAGRAPH
+          <?php
+          //end FAMILY HISTORIES PARAGRAPH
                   ?>
 
                 </p>
@@ -183,7 +183,7 @@ if ($sitever == "mobile") {
                           <?php
                           //begin FAMILY HISTORIES LINKS ("HIS")
                           //Configurable from Template Settings. You can also replace the t6_fhlinkshis PHP block below with the desired text if you prefer that to using the Template Settings.
-                          //Example: <a href="extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1">Person's Name</a><br/>
+                          //Example: <a href="extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1">Person's Name</a><br>
                           //(Replace "I1" with a personID from your database; replace "T0001" with that person's tree ID)
                           ?>
 
@@ -198,7 +198,7 @@ if ($sitever == "mobile") {
                           <?php
                           //begin FAMILY HISTORIES LINKS ("HIS")
                           //Configurable from Template Settings. You can also replace the t6_fhlinkshis PHP block below with the desired text if you prefer that to using the Template Settings.
-                          //Example: <a href="extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1">Person's Name</a><br/>
+                          //Example: <a href="extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1">Person's Name</a><br>
                           //(Replace "I1" with a personID from your database; replace "T0001" with that person's tree ID)
                           ?>
 
@@ -210,37 +210,37 @@ if ($sitever == "mobile") {
                         </td>
                     </tr>
 
-                    <!-- EDIT LINKS TO PARTICULAR INDIVIDUAL HISTORIES YOU WANT TO LINK TO ABOVE -->
+                  <!-- EDIT LINKS TO PARTICULAR INDIVIDUAL HISTORIES YOU WANT TO LINK TO ABOVE -->
 
                 </table>
-                <p>&nbsp;</p></td>
-            <td class="section">
-                <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt=""/></p>
+        <p>&nbsp;</p></td>
+      <td class="section">
+        <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt=""></p>
 
-              <?php
-              //begin "MOST WANTED" PARAGRAPH (default text: "Use this section to display information about individuals you are actively researching.")
-              //Configurable from Template Settings. You can also replace the t6_mwpara PHP block below with the desired text if you prefer that to using the Template Settings.
-              ?>
+        <?php
+        //begin "MOST WANTED" PARAGRAPH (default text: "Use this section to display information about individuals you are actively researching.")
+        //Configurable from Template Settings. You can also replace the t6_mwpara PHP block below with the desired text if you prefer that to using the Template Settings.
+        ?>
 
-              <?php echo getTemplateMessage('t6_mwpara'); ?>
+        <?php echo getTemplateMessage('t6_mwpara'); ?>
 
-              <?php
-              //end "MOST WANTED" PARAGRAPH
-              ?>
+        <?php
+        //end "MOST WANTED" PARAGRAPH
+        ?>
 
 
-                <p class="center">[<a href="<?php echo $cms['tngpath']; ?>mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
-                <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_resources.gif" width="200" height="50" alt=""/></p>
+        <p class="center">[<a href="<?php echo $cms['tngpath']; ?>mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
+        <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_resources.gif" width="200" height="50" alt=""></p>
 
-              <?php
-              //begin RESOURCES PARAGRAPH (default text: "List resources here that you would like to share with others.")
-              //Configurable from Template Settings. You can also replace the t6_respara PHP block below with the desired text if you prefer that to using the Template Settings.
-              ?>
+        <?php
+        //begin RESOURCES PARAGRAPH (default text: "List resources here that you would like to share with others.")
+        //Configurable from Template Settings. You can also replace the t6_respara PHP block below with the desired text if you prefer that to using the Template Settings.
+        ?>
 
-              <?php echo getTemplateMessage('t6_respara'); ?>
+        <?php echo getTemplateMessage('t6_respara'); ?>
 
-              <?php
-              //end RESOURCES PARAGRAPH
+        <?php
+        //end RESOURCES PARAGRAPH
               ?>
 
 
@@ -249,7 +249,7 @@ if ($sitever == "mobile") {
                   <?php
                   //begin RESOURCE LINKS (whatever you want)
                   //Configurable from Template Settings. You can also replace the t6_reslinks PHP block below with the desired text if you prefer that to using the Template Settings.
-                  //Example: <a href="http://lythgoes.net/genealogy/software.php" target="_blank">TNG Software</a><br/>
+                  //Example: <a href="http://lythgoes.net/genealogy/software.php" target="_blank">TNG Software</a><br>
                   ?>
 
                   <?php echo $tmp['t6_reslinks']; ?>

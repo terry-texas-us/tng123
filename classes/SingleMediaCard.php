@@ -40,7 +40,7 @@ class SingleMediaCard
     $mediaresult = tng_query($query);
 
     $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-    $header = "<div class=\"titlebox tablediv\"><span class=\"subhead\"><b>$titlemsg</b></span><br /><br /><div>\n";
+    $header = "<div class=\"titlebox tablediv\"><span class=\"subhead\"><b>$titlemsg</b></span><br><br><div>\n";
 
     $content = "";
     $thumbcount = 0;
@@ -107,7 +107,7 @@ class SingleMediaCard
           $description = $text['livingphoto'];
           $notes = "";
         } else {
-          $notes = $notes ? $notes . "<br />({$text['livingphoto']})" : "({$text['livingphoto']})";
+          $notes = $notes ? $notes . "<br>({$text['livingphoto']})" : "({$text['livingphoto']})";
         }
         $href = "";
       }
@@ -125,7 +125,7 @@ class SingleMediaCard
         $content .= "</div>\n";
         $thumbcount++;
       }
-      $content .= "<div>$description<br />$notes&nbsp;</div>\n";
+      $content .= "<div>$description<br>$notes&nbsp;</div>\n";
       $content .= "<div style=\"clear:both;\"></div>\n";
       $content .= "</div>\n";
       $content .= "<div style=\"clear:both;\"></div>\n";
@@ -134,6 +134,6 @@ class SingleMediaCard
     $content .= "</div>\n";
     $content .= "</div>\n";
 
-    return $content ? $header . $content . "<br />\n" : "";
+    return $content ? $header . $content . "<br>\n" : "";
   }
 }

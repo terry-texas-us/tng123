@@ -110,7 +110,7 @@ if (file_exists($arrrtpath)) {
   $offpageimg = @GetImageSize($arrrtpath);
   $offpageimgw = $offpageimg[0];
   $offpageimgh = $offpageimg[1];
-  $pedigree['offpagelink'] = "<img border=\"0\" src=\"{$cms['tngpath']}" . "img/ArrowRight.gif\" $offpageimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\" />";
+  $pedigree['offpagelink'] = "<img src=\"{$cms['tngpath']}" . "img/ArrowRight.gif\" $offpageimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
   $pedigree['offpagelink'] = "<b>&gt;</b>";
 }
@@ -120,7 +120,7 @@ if (file_exists($arrltpath)) {
   $leftarrowimg = @GetImageSize($arrltpath);
   $leftarrowimgw = $leftarrowimg[0];
   $leftarrowimgh = $leftarrowimg[1];
-  $pedigree['leftarrowlink'] = "<img border=\"0\" src=\"{$cms['tngpath']}" . "img/ArrowLeft.gif\" $leftarrowimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\" />";
+  $pedigree['leftarrowlink'] = "<img src=\"{$cms['tngpath']}" . "img/ArrowLeft.gif\" $leftarrowimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
   $pedigree['leftarrowlink'] = "<b>&lt;</b>";
 }
@@ -128,7 +128,7 @@ if (file_exists($arrltpath)) {
 // see if chart link image is present
 if (file_exists($rootpath . $endrootpath . "img/Chart.gif")) {
   $imageSize = @GetImageSize($rootpath . $endrootpath . "img/Chart.gif");
-  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}" . "img/Chart.gif\" border=\"0\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\" />";
+  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}" . "img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
   $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
 }
@@ -393,7 +393,7 @@ function showBox($generation, $slot) {
   $cancelt = $pedigree['event'] == "over" ? " onmouseout=\"cancelTimer($slot)\"" : "";
   $boxes .= "<div class=\"downarrow\" id=\"downarrow$slot\" onmouse{$pedigree['event']}=\"setPopup($slot, $offsetV,$boxheighttouse)\"$cancelt style=\"width:{$pedigree['boxwidth']}" . "px; text-align:center; top:" . ($offsetV + $boxheighttouse + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 1) . "px;left:" . ($offsetH - 1) . "px;\">\n";
 
-  $boxes .= "<img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" border=\"0\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\"  alt=\"\" /></div>\n";
+  $boxes .= "<img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\"  alt=\"\"></div>\n";
 
   if ($pedigree['usepopups_real']) {
     //start the block
@@ -570,7 +570,7 @@ echo "</form>\n";
 if (!$tngprint) {
   echo "<span class=\"normal\">(" . $text['scrollnote'];
   if ($pedigree['usepopups_real']) {
-    echo ($pedigree['downarrow'] ? " <img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\" />" : " <a href=\"#\"><span class=\"normal\"><B>V</B></span></a>") . $text['popupnote1'];
+    echo ($pedigree['downarrow'] ? " <img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><span class=\"normal\"><B>V</B></span></a>") . $text['popupnote1'];
     if ($pedigree['popupchartlinks']) {
       echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . $text['popupnote2'];
     }
@@ -578,19 +578,19 @@ if (!$tngprint) {
   echo ")</span>";
 }
 ?>
-    <br/>
-    <div align="left" style="position:relative;margin-top:8px;margin-bottom:16px;height:<?php echo(20 + $pedigree['borderwidth'] + ($pedigree['maxheight'] - $pedigree['boxVsep']) + $pedigree['shadowoffset']); ?>px;" id="outer">
-        <div id="loading"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif" alt=""/> <?php echo $text['loading']; ?></div>
-      <?php
-      echo $boxes;
-      ?>
-    </div>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
-    <script type="text/javascript">
-        //<![CDATA[
-        for (var c = 1; c < slotceiling; c++) {
-            var slot = document.getElementById('box' + c);
-            slot.oldcolor = slot.style.backgroundColor;
+  <br>
+  <div align="left" style="position:relative;margin-top:8px;margin-bottom:16px;height:<?php echo(20 + $pedigree['borderwidth'] + ($pedigree['maxheight'] - $pedigree['boxVsep']) + $pedigree['shadowoffset']); ?>px;" id="outer">
+    <div id="loading"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif" alt=""> <?php echo $text['loading']; ?></div>
+    <?php
+    echo $boxes;
+    ?>
+  </div>
+  <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+    for (var c = 1; c < slotceiling; c++) {
+      var slot = document.getElementById('box' + c);
+      slot.oldcolor = slot.style.backgroundColor;
         }
         getNewChart(personID, generations, parentset);
 

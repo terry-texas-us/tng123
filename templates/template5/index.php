@@ -49,36 +49,36 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                         <td colspan="2" class="boxback">
 
                             <!--EDIT MENU LINKS BELOW HERE.  EDITS ABOVE THIS LINE WILL AFFECT THE PAGE DESIGN STRUCTURE-->
-                            <div id="menubar">
-                                <a href="whatsnew.php" class="lightlink2"><?php echo $text['mnuwhatsnew']; ?></a>
-                              <?php
-                              foreach ($mediatypes as $mediatype) {
-                                if (!$mediatype['disabled']) {
-                                  echo "| <a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\" class=\"lightlink2\">{$mediatype['display']}</a>\n";
-                                }
+                          <div id="menubar">
+                            <a href="whatsnew.php" class="lightlink2"><?php echo $text['mnuwhatsnew']; ?></a>
+                            <?php
+                            foreach ($mediatypes as $mediatype) {
+                              if (!$mediatype['disabled']) {
+                                echo "| <a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\" class=\"lightlink2\">{$mediatype['display']}</a>\n";
                               }
+                            }
+                            ?>
+                            | <a href="browsealbums.php" class="lightlink2"><?php echo $text['albums']; ?></a>
+                            | <a href="browsemedia.php" class="lightlink2"><?php echo $text['allmedia']; ?></a><br>
+
+                            <!-- SECOND LINE OF LINKS-->
+
+                            <a href="mostwanted.php" class="lightlink2"><?php echo $text['mostwanted']; ?></a>
+                            | <a href="reports.php" class="lightlink2"><?php echo $text['mnureports']; ?></a>
+                            | <a href="cemeteries.php" class="lightlink2"><?php echo $text['mnucemeteries']; ?></a>
+                            | <a href="anniversaries.php" class="lightlink2"><?php echo $text['anniversaries']; ?></a>
+                            | <a href="calendar.php" class="lightlink2"><?php echo $text['calendar']; ?></a>
+                            | <a href="places.php" class="lightlink2"><?php echo $text['places']; ?></a><br>
+
+                            <!-- THIRD LINE OF LINKS-->
+
+                            <a href="browsenotes.php" class="lightlink2"><?php echo $text['notes']; ?></a>
+                            | <a href="browsesources.php" class="lightlink2"><?php echo $text['mnusources']; ?></a>
+                            | <a href="browserepos.php" class="lightlink2"><?php echo $text['repositories']; ?></a>
+                            <?php
+                            if (!$tngconfig['hidedna']) {
                               ?>
-                                | <a href="browsealbums.php" class="lightlink2"><?php echo $text['albums']; ?></a>
-                                | <a href="browsemedia.php" class="lightlink2"><?php echo $text['allmedia']; ?></a><br/>
-
-                                <!-- SECOND LINE OF LINKS-->
-
-                                <a href="mostwanted.php" class="lightlink2"><?php echo $text['mostwanted']; ?></a>
-                                | <a href="reports.php" class="lightlink2"><?php echo $text['mnureports']; ?></a>
-                                | <a href="cemeteries.php" class="lightlink2"><?php echo $text['mnucemeteries']; ?></a>
-                                | <a href="anniversaries.php" class="lightlink2"><?php echo $text['anniversaries']; ?></a>
-                                | <a href="calendar.php" class="lightlink2"><?php echo $text['calendar']; ?></a>
-                                | <a href="places.php" class="lightlink2"><?php echo $text['places']; ?></a><br/>
-
-                                <!-- THIRD LINE OF LINKS-->
-
-                                <a href="browsenotes.php" class="lightlink2"><?php echo $text['notes']; ?></a>
-                                | <a href="browsesources.php" class="lightlink2"><?php echo $text['mnusources']; ?></a>
-                                | <a href="browserepos.php" class="lightlink2"><?php echo $text['repositories']; ?></a>
-                              <?php
-                              if (!$tngconfig['hidedna']) {
-                                ?>
-                                  | <a href="browse_dna_tests.php" class="lightlink2"><?php echo $text['dna_tests']; ?></a>
+                              | <a href="browse_dna_tests.php" class="lightlink2"><?php echo $text['dna_tests']; ?></a>
                                 <?php
                               }
                               ?>
@@ -138,58 +138,58 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     </ul>
                                 </div>
 
-                                <!--EDIT PARAGRAPH TEXT ABOVE HERE.  EDITS BELOW THIS LINE WILL AFFECT THE PAGE DESIGN STRUCTURE-->
+                              <!--EDIT PARAGRAPH TEXT ABOVE HERE.  EDITS BELOW THIS LINE WILL AFFECT THE PAGE DESIGN STRUCTURE-->
 
                             </div>
-                            <div class="rightcontent">
-                              <?php
-                              //begin MAIN IMAGE (default: medium-sized picture of a couple on the right). Size is width=160px, height=121px
-                              //Actual file name has been replaced with t5_mainimage variable, configurable from Template Settings. Default name of actual image is "mediumphoto.jpg"
-                              //You can replace the t5_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-                              ?>
-                                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t5_mainimage']; ?>" alt="" class="indexphoto"/><br/><br/>
-                              <?php
-                              //end MAIN IMAGE
-                              ?>
-                                <span class="right" style="margin-right:8px"><?php echo $text['whichbranch']; ?></span>
-                            </div>
-                            <div class="rightcontent">
-                                <form action="search.php" method="get">
-                                    <table class="indexbox rounded4" id="searchbox">
-                                        <tr>
-                                            <td class="padding"><span class="boxback"><?php echo $text['mnufirstname']; ?>:<br/>
-							<input type="text" name="myfirstname" class="searchbox" size="14"/></span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="padding"><span class="boxback"><?php echo $text['mnulastname']; ?>:<br/>
-							<input type="text" name="mylastname" class="searchbox" size="14"/></span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="padding"><span class="normal"><input type="hidden" name="mybool" value="AND"/>
-						<input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>" class="small"/><br/><br/>
+                          <div class="rightcontent">
+                            <?php
+                            //begin MAIN IMAGE (default: medium-sized picture of a couple on the right). Size is width=160px, height=121px
+                            //Actual file name has been replaced with t5_mainimage variable, configurable from Template Settings. Default name of actual image is "mediumphoto.jpg"
+                            //You can replace the t5_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
+                            ?>
+                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t5_mainimage']; ?>" alt="" class="indexphoto"><br><br>
+                            <?php
+                            //end MAIN IMAGE
+                            ?>
+                            <span class="right" style="margin-right:8px"><?php echo $text['whichbranch']; ?></span>
+                          </div>
+                          <div class="rightcontent">
+                            <form action="search.php" method="get">
+                              <table class="indexbox rounded4" id="searchbox">
+                                <tr>
+                                  <td class="padding"><span class="boxback"><?php echo $text['mnufirstname']; ?>:<br>
+							<input type="text" name="myfirstname" class="searchbox" size="14"></span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="padding"><span class="boxback"><?php echo $text['mnulastname']; ?>:<br>
+							<input type="text" name="mylastname" class="searchbox" size="14"></span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="padding"><span class="normal"><input type="hidden" name="mybool" value="AND">
+						<input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>" class="small"><br><br>
 						<?php
-                        echo "<a href=\"surnames.php\" class=\"lightlink2\">{$text['mnulastnames']}</a><br />\n";
-                        echo "<a href=\"searchform.php\" class=\"lightlink2\">{$text['mnuadvancedsearch']}</a>\n";
-                        ?></span>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </div>
+            echo "<a href=\"surnames.php\" class=\"lightlink2\">{$text['mnulastnames']}</a><br>\n";
+            echo "<a href=\"searchform.php\" class=\"lightlink2\">{$text['mnuadvancedsearch']}</a>\n";
+            ?></span>
+                                  </td>
+                                </tr>
+                              </table>
+                            </form>
+                          </div>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <tr>
-            <td colspan="4" class="row12"></td>
-        </tr>
+      <tr>
+        <td colspan="4" class="row12"></td>
+      </tr>
     </table>
-    <br/>
-    <div class="footer small">
-      <?php
+  <br>
+  <div class="footer small">
+    <?php
       $flags['basicfooter'] = true;
       echo tng_footer($flags);
       ?>

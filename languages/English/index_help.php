@@ -6,21 +6,21 @@ echo help_header("Help: Administration");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="modmanager_help.php" class="lightlink">&laquo; Help: Mod Manager</a> &nbsp; | &nbsp;
-                <a href="people_help.php" class="lightlink">Help: People &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Getting Started</span>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Getting Started</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
-                <a href="#otherresources" class="lightlink">Other Resources</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="modmanager_help.php" class="lightlink">&laquo; Help: Mod Manager</a> &nbsp; | &nbsp;
+        <a href="people_help.php" class="lightlink">Help: People &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Getting Started</span>
+      <p class="smaller menu">
+        <a href="#gettingstarted" class="lightlink">Getting Started</a> &nbsp; | &nbsp;
+        <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
+        <a href="#otherresources" class="lightlink">Other Resources</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
@@ -76,24 +76,24 @@ echo help_header("Help: Administration");
                         software updates and related issues. </p></li>
                 <li><p>Users mailing list: <a href="mailto:tngusers2@lythgoes.net">tngusers2@lythgoes.net</a>. To subscribe, send a message to
                         <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. This list may be used for all discussion among TNG users. </p></li>
-                <li><p>Users forum: <a href="https://tng.community" target="_blank">https://tng.community</a>.</p></li>
-                <li><p>TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">https://tng.lythgoes.net/wiki</a> A MediaWiki site that contains:</p>
-                    <ul>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">TNG Getting Started Guide</a>. How to customize your site and create user pages.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">TNG Guest Visitors Guide</a>. How visitors might navigate your site.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">TNG Registered Users Guide</a>. How to use the capabilities of TNG as a Registered User or Administrator.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">TNG Administrators Guide</a>. Provides information for the administator of a TNG web site.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">TNG Programmers Guide</a>. Help understanding how TNG works, and for programmers making changes to TNG.</li>
-                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">TNG Glossary of Terms</a> Words and phrases used in TNG relating to genealogy, computing and archival organization.</li>
-                    </ul>
-                    <br/>
-                </li>
-                <li><p>PHP Reference: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
-                <li><p>MySQL Reference: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
-                <li><p>HTML Reference: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
-                <li><p>Contact the author directly: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
+              <li><p>Users forum: <a href="https://tng.community" target="_blank">https://tng.community</a>.</p></li>
+              <li><p>TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">https://tng.lythgoes.net/wiki</a> A MediaWiki site that contains:</p>
+                <ul>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">TNG Getting Started Guide</a>. How to customize your site and create user pages.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">TNG Guest Visitors Guide</a>. How visitors might navigate your site.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">TNG Registered Users Guide</a>. How to use the capabilities of TNG as a Registered User or Administrator.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">TNG Administrators Guide</a>. Provides information for the administator of a TNG web site.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">TNG Programmers Guide</a>. Help understanding how TNG works, and for programmers making changes to TNG.</li>
+                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">TNG Glossary of Terms</a> Words and phrases used in TNG relating to genealogy, computing and archival organization.</li>
+                </ul>
+                <br>
+              </li>
+              <li><p>PHP Reference: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
+              <li><p>MySQL Reference: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
+              <li><p>HTML Reference: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
+              <li><p>Contact the author directly: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
             </ol>
-            <p>Need research help? Try <a href="https://legacytree.com/tng" target="_blank">LegacyTree Genealogists</a>.</p>
+          <p>Need research help? Try <a href="https://legacytree.com/tng" target="_blank">LegacyTree Genealogists</a>.</p>
         </td>
     </tr>
 

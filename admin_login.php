@@ -118,55 +118,55 @@ if (!empty($reset)) {
                 <div class="altab" style="float:left">
                     <form action="processlogin.php" name="form1" method="post">
                         <table>
-                            <tr>
-                                <td><span class="normal"><?php echo $admtext['username']; ?>:</span></td>
-                                <td><input type="text" class="loginfont medfield" name="tngusername" size="20"/></td>
-                            </tr>
-                            <tr>
-                                <td><span class="normal"><?php echo $admtext['password']; ?>:</span></td>
-                                <td><input type="password" class="loginfont medfield" name="tngpassword" size="20"/></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td><span class="normal"><input type="checkbox" name="remember" value="1"/> <?php echo $admtext['rempass']; ?></span></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td><input type="submit" class="btn medfield" value="<?php echo $admtext['login']; ?>"/></td>
-                            </tr>
+                          <tr>
+                            <td><span class="normal"><?php echo $admtext['username']; ?>:</span></td>
+                            <td><input type="text" class="loginfont medfield" name="tngusername" size="20"></td>
+                          </tr>
+                          <tr>
+                            <td><span class="normal"><?php echo $admtext['password']; ?>:</span></td>
+                            <td><input type="password" class="loginfont medfield" name="tngpassword" size="20"></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><span class="normal"><input type="checkbox" name="remember" value="1"> <?php echo $admtext['rempass']; ?></span></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><input type="submit" class="btn medfield" value="<?php echo $admtext['login']; ?>"></td>
+                          </tr>
                         </table>
-                        <p class="normal"><a href="<?php echo $home_url; ?>"><img src="img/tng_home.gif" border="0" align="left" width="16" height="15" alt=""/><?php echo $admtext['publichome']; ?></a></p>
-                        <input type="hidden" name="admin_login" value="1"/>
-                        <input type="hidden" name="continue" value="<?php echo $continue; ?>"/>
+                      <p class="normal"><a href="<?php echo $home_url; ?>"><img src="img/tng_home.gif" align="left" width="16" height="15" alt=""><?php echo $admtext['publichome']; ?></a></p>
+                      <input type="hidden" name="admin_login" value="1">
+                      <input type="hidden" name="continue" value="<?php echo $continue; ?>">
                     </form>
                 </div>
-                <div class="altab" style="float:left; width:50px;">&nbsp;&nbsp;&nbsp;</div>
-                <div class="altab">
-                    <form action="admin_login.php" name="form2" method="post">
-                        <table style="max-width:400px">
-                            <tr>
-                                <td colspan="2"><span class="normal"><?php echo $text['forgot1']; ?></span></td>
-                            </tr>
-                            <tr>
-                                <td nowrap><span class="normal"><?php echo $admtext['email']; ?>:</span></td>
-                                <td><input type="text" name="email"> <input type="submit" value="<?php echo $admtext['go']; ?>"/></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><span class="normal"><br/><?php echo $text['forgot2']; ?></span></td>
-                            </tr>
-                            <tr>
-                                <td nowrap><span class="normal"><?php echo $admtext['username']; ?>:</span></td>
-                                <td><input type="text" name="username"> <input type="submit" value="<?php echo $admtext['go']; ?>"/></td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
+              <div class="altab" style="float:left; width:50px;">&nbsp;&nbsp;&nbsp;</div>
+              <div class="altab">
+                <form action="admin_login.php" name="form2" method="post">
+                  <table style="max-width:400px">
+                    <tr>
+                      <td colspan="2"><span class="normal"><?php echo $text['forgot1']; ?></span></td>
+                    </tr>
+                    <tr>
+                      <td nowrap><span class="normal"><?php echo $admtext['email']; ?>:</span></td>
+                      <td><input type="text" name="email"> <input type="submit" value="<?php echo $admtext['go']; ?>"></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><span class="normal"><br><?php echo $text['forgot2']; ?></span></td>
+                    </tr>
+                    <tr>
+                      <td nowrap><span class="normal"><?php echo $admtext['username']; ?>:</span></td>
+                      <td><input type="text" name="username"> <input type="submit" value="<?php echo $admtext['go']; ?>"></td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
             </div>
         </td>
     </tr>
 </table>
 <script language="JavaScript" type="text/javascript">
-    document.form1.tngusername.focus();
+  document.form1.tngusername.focus();
 </script>
 </body>
 </html>

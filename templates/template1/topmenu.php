@@ -8,19 +8,19 @@
 
 if ($tmp['t1_titlechoice'] == "text") {
   ?>
-    <div style="float:left;"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header-image.gif" alt="" width="93" height="72" border="0"/></div>
-    <div>
-        <em><a href="index.php" class="toptitle">
+  <div style="float:left;"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header-image.gif" alt="" width="93" height="72"></div>
+  <div>
+    <em><a href="index.php" class="toptitle">
 
-            <?php echo getTemplateMessage('t1_maintitle'); ?>
+        <?php echo getTemplateMessage('t1_maintitle'); ?>
 
-            </a></em>
-    </div>
-    <br/>
+      </a></em>
+  </div>
+  <br>
   <?php
 } else {
   ?>
-    <a href="<?php echo $cms['tngpath']; ?>index.php"><img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_headimgplustitle']; ?>" alt="" border="0"/></a>
+  <a href="<?php echo $cms['tngpath']; ?>index.php"><img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_headimgplustitle']; ?>" alt=""></a>
   <?php
 }
 //end HEADER IMAGE
@@ -29,5 +29,5 @@ if ($tmp['t1_titlechoice'] == "text") {
 <!--
 -->
 
-<br/>
+<br>
 <!-- end of topmenu.php for template 1 -->

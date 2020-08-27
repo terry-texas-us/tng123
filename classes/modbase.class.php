@@ -293,7 +293,7 @@ class modbase
 
     protected function add_logevent($string)
     {
-        $this->eventlog .= "<br />&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;" . $string;
+        $this->eventlog .= "<br>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;" . $string;
     }
 
     private function create_logfile()

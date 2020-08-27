@@ -6,21 +6,21 @@ echo help_header("Help: Data Import");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp; | &nbsp;
-                <a href="second_help.php" class="lightlink">Help: Secondary Processes &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Import / Export</span>
-            <p class="smaller menu">
-                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
-                <a href="#export" class="lightlink">GEDCOM Export</a>
-            </p>
-        </td>
-    </tr>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp; | &nbsp;
+        <a href="second_help.php" class="lightlink">Help: Secondary Processes &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Import / Export</span>
+      <p class="smaller menu">
+        <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+        <a href="#export" class="lightlink">GEDCOM Export</a>
+      </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right"></div>
@@ -50,27 +50,27 @@ echo help_header("Help: Data Import");
                 of files but they are not from your GEDCOM folder, you likely have a path problem. Check your Root Path (Admin/Setup/General Settings) and your GEDCOM path (Admin/Setup/Import Settings).</p>
 
             <span class="optionhead">Accept data for all new Custom Event Types</span>
-            <p>Your GEDCOM file might contain events that TNG considers as "Custom" events. Normally, new Custom Event Types included in a GEDCOM file are entered into the database, but
-                the data is set to be ignored. You would need to change the status of a Custom Event Type to "Accept" in order for events of that type to be imported (in other words,
-                you would need to import your file twice). If you check this option, TNG will automatically set all new Custom Event Types to "Accept", and all your events
-                will be imported the first time.</p>
+          <p>Your GEDCOM file might contain events that TNG considers as "Custom" events. Normally, new Custom Event Types included in a GEDCOM file are entered into the database, but
+            the data is set to be ignored. You would need to change the status of a Custom Event Type to "Accept" in order for events of that type to be imported (in other words,
+            you would need to import your file twice). If you check this option, TNG will automatically set all new Custom Event Types to "Accept", and all your events
+            will be imported the first time.</p>
 
-            <span class="optionhead">Import Custom Event Types Only (no data is added, replaced or appended)</span>
-            <p>Checking this option will cause only Custom Event Types to be imported (see Admin/Custom Event Types). All other data is ignored. This is an ideal
-                option to select during your initial setup, as it will allow you to see which custom events you have in your gedcom. You can then select which ones
-                to accept and which ones to ignore before importing your entire database.</p>
+          <span class="optionhead">Import Custom Event Types Only (no data is added, replaced or appended)</span>
+          <p>Checking this option will cause only Custom Event Types to be imported (see Admin/Custom Event Types). All other data is ignored. This is an ideal
+            option to select during your initial setup, as it will allow you to see which custom events you have in your gedcom. You can then select which ones
+            to accept and which ones to ignore before importing your entire database.</p>
 
-            <span class="optionhead">Destination Tree</span><br/>
-            <p>Select a Tree to receive the imported data (required). If the tree to receive the data does not yet exist, click on the "Add New Tree" button to create it.
-                A small popup box will appear and allow you to enter the information for the new tree.</p>
+          <span class="optionhead">Destination Tree</span><br>
+          <p>Select a Tree to receive the imported data (required). If the tree to receive the data does not yet exist, click on the "Add New Tree" button to create it.
+            A small popup box will appear and allow you to enter the information for the new tree.</p>
 
-            <span class="optionhead">Replace all current data</span>
-            <p>If you choose this option, all your previous GEDCOM data (people, families, children, sources, repositories, events, notes, associations and citations; not media or anything else)
-                will be deleted prior to the import.
-                <strong>NOTE</strong>: Links to media will be preserved as long as the people/family/source/repository IDs in your new GEDCOM match the IDs in your existing data.
-                Most desktop genealogy programs assign permanent IDs to each person/family/source/repository, but a few do not. If you have linked in any media items, please check
-                your new GEDCOM to make sure the IDs match before you import, no matter which of these import options you select. It might also be a good idea to backup your tables before
-                performing an import (see Admin/Utilities to perform a backup).</p>
+          <span class="optionhead">Replace all current data</span>
+          <p>If you choose this option, all your previous GEDCOM data (people, families, children, sources, repositories, events, notes, associations and citations; not media or anything else)
+            will be deleted prior to the import.
+            <strong>NOTE</strong>: Links to media will be preserved as long as the people/family/source/repository IDs in your new GEDCOM match the IDs in your existing data.
+            Most desktop genealogy programs assign permanent IDs to each person/family/source/repository, but a few do not. If you have linked in any media items, please check
+            your new GEDCOM to make sure the IDs match before you import, no matter which of these import options you select. It might also be a good idea to backup your tables before
+            performing an import (see Admin/Utilities to perform a backup).</p>
 
             <span class="optionhead">Replace matching records only</span>
             <p>With this option, new records are added and matching records are replaced (matches are determined by ID only). Old data is not deleted.</p>

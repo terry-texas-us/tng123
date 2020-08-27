@@ -525,8 +525,8 @@ if ($csv) {
   tng_header($rrow['reportname'], $flags);
   ?>
 
-    <h1 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo "{$text['report']}: {$rrow['reportname']}"; ?></h1>
-    <p><span class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text['description'] . ": " . nl2br($rrow['reportdesc']); ?></span></p><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo "{$text['report']}: {$rrow['reportname']}"; ?></h1>
+  <p><span class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text['description'] . ": " . nl2br($rrow['reportdesc']); ?></span></p><br clear="left">
 
   <?php
   if ($test) {
@@ -534,18 +534,18 @@ if ($csv) {
   }
 
   if (!$rrow['sqlselect']) {
-    $hiddenfields[] = array('name' => 'reportID', 'value' => $reportID);
-    echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'showreport', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+    $hiddenfields[] = ['name' => 'reportID', 'value' => $reportID];
+    echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showreport', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
   }
 }
 
 if (!$result) {
   ?>
 
-    <p class="normal"><?php echo "<b>{$text['error']}:</b> {$text['reportsyntax']} (ID: {$rrow['reportID']}) {$text['wasincorrect']} "; ?>
-      <?php echo "<a href=\"mailto:$emailaddr\">$emailaddr</a>"; ?>.</p>
-    <p><?php echo $text['query'] . ": $query <br/>{$text['errormessage']}:"; ?>
-      <?php echo tng_error(); ?></p>
+  <p class="normal"><?php echo "<b>{$text['error']}:</b> {$text['reportsyntax']} (ID: {$rrow['reportID']}) {$text['wasincorrect']} "; ?>
+    <?php echo "<a href=\"mailto:$emailaddr\">$emailaddr</a>"; ?>.</p>
+  <p><?php echo $text['query'] . ": $query <br>{$text['errormessage']}:"; ?>
+    <?php echo tng_error(); ?></p>
 
   <?php
 } else {
@@ -662,7 +662,7 @@ if (!$result) {
                   } else {
                     $data = nl2br($row[$thisfield]);
                     if (strpos($thisfield, "place") && $data && !$csv) {
-                      $data .= " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($data) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"\" width=\"9\" height=\"9\" /></a>";
+                      $data .= " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($data) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
                     }
                   }
                 } else {
@@ -687,11 +687,11 @@ if (!$result) {
   tng_free_result($result);
   if (!$csv) {
     ?>
-      </table>
-      <br/><br/>
+    </table>
+    <br><br>
     <?php
     echo $pagenav;
-    echo "<br /><br />\n";
+    echo "<br><br>\n";
   }
 }
 

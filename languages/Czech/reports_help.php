@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Reporty");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="eventtypes_help.php" class="lightlink">&laquo; N�pov�da: Vlastn� typy ud�lost�</a> &nbsp; | &nbsp;
-                <a href="dna_help.php" class="lightlink">N�pov�da: Testy DNA &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Reporty</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="eventtypes_help.php" class="lightlink">&laquo; N�pov�da: Vlastn� typy ud�lost�</a> &nbsp; | &nbsp;
+        <a href="dna_help.php" class="lightlink">N�pov�da: Testy DNA &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Reporty</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
@@ -86,52 +86,52 @@ echo help_header("N�pov�da: Reporty");
                 NE. Po�ad� je indikov�no pomoc� z�vorek.</p>
 
             <p>P��kaz za�n�te v�b�rem n�zvu pole z horn�ho lev�ho r�mce a p�idejte jej do prav�ho r�mce. Prov�st to m��ete
-                v�b�rem pole a kliknut�m na sousedn� tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev pole (pouze IE).</p>
+              v�b�rem pole a kliknut�m na sousedn� tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev pole (pouze IE).</p>
 
-            <p><strong>POZN.</strong>: V�echna datov� pole mimo Datum posledn� aktualizace se chovaj� jako �et�zce a ne jako
-                skute�n� data POKUD NEJSOU ozna�ena jako 'True'. Porovn�n� dat, kter� pou��vaj� textov� nebo �et�zcov� pole, se nejl�pe provede porovn�n�m komponent data,
-                jako je pouze rok nebo pouze den. Chcete-li t�mto zp�sobem izolovat komponentu data, vyberte nejd��ve <em>M�s�c pouze</em>,
-                <em>Den pouze</em> nebo <em>Rok pouze</em>, a pak vyberte pole data, ze kter�ho tato komponenta poch�z�.</p>
+          <p><strong>POZN.</strong>: V�echna datov� pole mimo Datum posledn� aktualizace se chovaj� jako �et�zce a ne jako
+            skute�n� data POKUD NEJSOU ozna�ena jako 'True'. Porovn�n� dat, kter� pou��vaj� textov� nebo �et�zcov� pole, se nejl�pe provede porovn�n�m komponent data,
+            jako je pouze rok nebo pouze den. Chcete-li t�mto zp�sobem izolovat komponentu data, vyberte nejd��ve <em>M�s�c pouze</em>,
+            <em>Den pouze</em> nebo <em>Rok pouze</em>, a pak vyberte pole data, ze kter�ho tato komponenta poch�z�.</p>
 
-            <p>P�i pr�ci se skute�n�mi datov�mi poli (jako Datum posledn� aktualizace) m��ete porovnat pole p��mo s jin�m skute�n�m datem
-                nebo skute�n�mi datov�mi poli. P�eddefinovan� skute�n� datum, kter� m��ete pou��t jako oper�tor, je 'Dnes'. P�i porovn�v�n� dvou skute�n�ch dat m��ete tak� pou��t
-                oper�tor 'P�ev�st na dny'. Nap�. pro nalezen� v�ech z�znam�, u kter�ch je Datum posledn� aktualizace men�� ne� 30 dn�,
-                m��ete zvolit toto krit�rium:<br/><br/>
+          <p>P�i pr�ci se skute�n�mi datov�mi poli (jako Datum posledn� aktualizace) m��ete porovnat pole p��mo s jin�m skute�n�m datem
+            nebo skute�n�mi datov�mi poli. P�eddefinovan� skute�n� datum, kter� m��ete pou��t jako oper�tor, je 'Dnes'. P�i porovn�v�n� dvou skute�n�ch dat m��ete tak� pou��t
+            oper�tor 'P�ev�st na dny'. Nap�. pro nalezen� v�ech z�znam�, u kter�ch je Datum posledn� aktualizace men�� ne� 30 dn�,
+            m��ete zvolit toto krit�rium:<br><br>
 
-                <i>P�ev�st na dny<br/>
-                    Dnes (true)<br/>
-                    -<br/>
-                    P�ev�st na dny<br/>
-                    Datum posledn� aktualizace<br/>
-                    <=<br/>
-                    30</i></p>
+            <i>P�ev�st na dny<br>
+              Dnes (true)<br>
+              -<br>
+              P�ev�st na dny<br>
+              Datum posledn� aktualizace<br>
+              <=<br>
+              30</i></p>
 
-            <p>Po v�b�ru n�zvu pole zvolte d�le ze seznamu <em>Oper�tory &amp; Speci�ln� hodnoty</em> porovn�vac� oper�tor. Jsou to "=, !=, < > <=, >=, obsahuje, za��n� na, kon�� na". Oper�tor
-                zkop�rujte do prav� ��sti jeho v�b�rem a kliknut�m na sousedn� tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev oper�tora (pouze IE).</p>
+          <p>Po v�b�ru n�zvu pole zvolte d�le ze seznamu <em>Oper�tory &amp; Speci�ln� hodnoty</em> porovn�vac� oper�tor. Jsou to "=, !=, < > <=, >=, obsahuje, za��n� na, kon�� na". Oper�tor
+            zkop�rujte do prav� ��sti jeho v�b�rem a kliknut�m na sousedn� tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev oper�tora (pouze IE).</p>
 
-            <p>P��kaz zakon�ete v�b�rem pole nebo hodnoty pro porovn�n� s va��m p�vodn�m polem. M��ete tak� zvolit n�kterou ze speci�ln�ch hodnot: <em>Aktu�ln� m�s�c, aktu�ln� rok</em> nebo
-                <em>aktu�ln� den</em>. Chcete-li vybrat hodnotu konstantn�ho �et�zce, zadejte do pole <em>Konstantn� �et�zec</em> hodnotu �et�zce bez uvozovek a klikn�te na sousedn� tla��tko <em>P�idat >></em>.
-                Chcete-li p�idat pr�zdn� �et�zec, nechte p�ed kliknut�m na toto tla��tko pole pr�zdn�. Pokud chcete zvolit hodnotu ��seln� konstanty, zadejte do pole <em>��seln� konstanta</em> ��slo a klikn�te na sousedn�
-                tla��tko <em>P�idat >></em>.</p>
+          <p>P��kaz zakon�ete v�b�rem pole nebo hodnoty pro porovn�n� s va��m p�vodn�m polem. M��ete tak� zvolit n�kterou ze speci�ln�ch hodnot: <em>Aktu�ln� m�s�c, aktu�ln� rok</em> nebo
+            <em>aktu�ln� den</em>. Chcete-li vybrat hodnotu konstantn�ho �et�zce, zadejte do pole <em>Konstantn� �et�zec</em> hodnotu �et�zce bez uvozovek a klikn�te na sousedn� tla��tko <em>P�idat >></em>.
+            Chcete-li p�idat pr�zdn� �et�zec, nechte p�ed kliknut�m na toto tla��tko pole pr�zdn�. Pokud chcete zvolit hodnotu ��seln� konstanty, zadejte do pole <em>��seln� konstanta</em> ��slo a klikn�te na sousedn�
+            tla��tko <em>P�idat >></em>.</p>
 
-            <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem na polo�ku (pouze IE).
-                Chcete-li zm�nit po�ad� polo�ek v seznamu, vyberte polo�ku a p�esu�te ji nahoru nebo dol� kliknut�m na tla��tka <em>Posunout nahoru</em> nebo <em>Posunout dol�</em>.</p>
+          <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem na polo�ku (pouze IE).
+            Chcete-li zm�nit po�ad� polo�ek v seznamu, vyberte polo�ku a p�esu�te ji nahoru nebo dol� kliknut�m na tla��tka <em>Posunout nahoru</em> nebo <em>Posunout dol�</em>.</p>
 
-            <span class="optionhead">Vybrat t��d�n�</span>
-            <p>V�b�rem jednoho nebo v�ce pol� ur��te, jak maj� b�t odpov�daj�c� z�znamy t��d�ny.
-                Pokud nelze ur�it po�ad� z�znam� podle prvn�ho pole v seznamu, bude pou�ito druh� pole ze seznamu, a tak d�le. Nen�-li ur�eno ��dn� t��d�n�, odpov�daj�c�
-                z�znamy budou zobrazeny v po�ad�, v jak�m byly p�id�ny do datab�ze.
-                Pole, podle kter�ch m� b�t t��d�no, vyberte zkop�rov�n�m z lev� ��sti do prav�. Prov�st to m��ete v�b�rem pole a kliknut�m na tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev pole (pouze IE).
+          <span class="optionhead">Vybrat t��d�n�</span>
+          <p>V�b�rem jednoho nebo v�ce pol� ur��te, jak maj� b�t odpov�daj�c� z�znamy t��d�ny.
+            Pokud nelze ur�it po�ad� z�znam� podle prvn�ho pole v seznamu, bude pou�ito druh� pole ze seznamu, a tak d�le. Nen�-li ur�eno ��dn� t��d�n�, odpov�daj�c�
+            z�znamy budou zobrazeny v po�ad�, v jak�m byly p�id�ny do datab�ze.
+            Pole, podle kter�ch m� b�t t��d�no, vyberte zkop�rov�n�m z lev� ��sti do prav�. Prov�st to m��ete v�b�rem pole a kliknut�m na tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev pole (pouze IE).
 
-            <p>V�echna pole se obvykle t��d� ve vzestupn�m po�ad� (nap�. A-Z nebo 0-9). Chcete-li pole t��dit v sestupn�m po�ad�, pou�ijte pseudopole 'Sestupn� (P�edchoz�)'.
-                V�raz 'P�edchoz�' v z�vorce znamen�, �e tento v�raz mus� <i>n�sledovat</i> za polem, kter� upravuje. Jin�mi slovy,
-                pokud chcete t��dit podle P��jmen�, zvolte va�e t��d�ni takto:<br/><br/>
+          <p>V�echna pole se obvykle t��d� ve vzestupn�m po�ad� (nap�. A-Z nebo 0-9). Chcete-li pole t��dit v sestupn�m po�ad�, pou�ijte pseudopole 'Sestupn� (P�edchoz�)'.
+            V�raz 'P�edchoz�' v z�vorce znamen�, �e tento v�raz mus� <i>n�sledovat</i> za polem, kter� upravuje. Jin�mi slovy,
+            pokud chcete t��dit podle P��jmen�, zvolte va�e t��d�ni takto:<br><br>
 
-                <i>P��jmen�<br/>
-                    Sestupn� (P�edchoz�)</i></p>
+            <i>P��jmen�<br>
+              Sestupn� (P�edchoz�)</i></p>
 
-            <span class="optionhead">R�zn�</span>
-            <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem na polo�ku (pouze IE).
+          <span class="optionhead">R�zn�</span>
+          <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem na polo�ku (pouze IE).
                 Chcete-li zm�nit po�ad� polo�ek v seznamu, vyberte polo�ku a p�esu�te ji nahoru nebo dol� kliknut�m na tla��tka <em>Posunout nahoru</em> nebo <em>Posunout dol�</em>.</p>
 
             <span class="optionhead">Vlastn� SQL dotaz</span>

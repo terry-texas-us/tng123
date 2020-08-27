@@ -343,25 +343,25 @@ function getRegNotes($persfamID, $flag) {
     switch ($type) {
       case 0:
         if ($gennotes[$currevent]['text']) {
-          $gennotes[$currevent]['text'] .= "<br/><br/>";
+          $gennotes[$currevent]['text'] .= "<br><br>";
         }
         $gennotes[$currevent]['text'] .= nl2br($note['note']) . "\n";
         break;
       case 1:
         if ($precustnotes[$currevent]['text']) {
-          $precustnotes[$currevent]['text'] .= "<br/><br/>";
+          $precustnotes[$currevent]['text'] .= "<br><br>";
         }
         $precustnotes[$currevent]['text'] .= nl2br($note['note']) . "\n";
         break;
       case 2:
         if ($custnotes[$key]['text']) {
-          $custnotes[$key]['text'] .= "<br/><br/>";
+          $custnotes[$key]['text'] .= "<br><br>";
         }
         $custnotes[$key]['text'] .= nl2br($note['note']) . "\n";
         break;
       case 3:
         if ($postcustnotes[$currevent]['text']) {
-          $postcustnotes[$currevent]['text'] .= "<br/><br/>";
+          $postcustnotes[$currevent]['text'] .= "<br><br>";
         }
         $postcustnotes[$currevent]['text'] .= nl2br($note['note']) . "\n";
         break;
@@ -377,10 +377,10 @@ function buildRegNotes($notearray) {
   $notes = "";
   foreach ($notearray as $key => $note) {
     if ($notes) {
-      $notes .= "<br/><br/>\n";
+      $notes .= "<br><br>\n";
     }
     if ($note['title']) {
-      $notes .= $note['title'] . ":<br/>\n";
+      $notes .= $note['title'] . ":<br>\n";
     }
     $notes .= $note['text'] . "\n";
   }

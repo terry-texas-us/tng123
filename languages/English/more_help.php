@@ -6,21 +6,21 @@ echo help_header("Help: More");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="events_help.php" class="lightlink">&laquo; Help: Events</a> &nbsp; | &nbsp;
-                <a href="media_help.php" class="lightlink">Help: Media &raquo;</a>
-            </p>
-            <span class="largeheader">Help: More</span>
-            <p class="smaller menu">
-                <a href="#more" class="lightlink">More Information</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="events_help.php" class="lightlink">&laquo; Help: Events</a> &nbsp; | &nbsp;
+        <a href="media_help.php" class="lightlink">Help: Media &raquo;</a>
+      </p>
+      <span class="largeheader">Help: More</span>
+      <p class="smaller menu">
+        <a href="#more" class="lightlink">More Information</a>
+      </p>
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right"></div>
             <script type="text/javascript">

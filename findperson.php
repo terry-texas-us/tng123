@@ -47,21 +47,21 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findpersonresdiv">
-    <table border="0" cellpadding="0">
-        <tr>
-            <td>
-                <p class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></p>
-                <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br/>
-            </td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td valign="top">
-                <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindForm()"></form>
-            </td>
-        </tr>
-    </table>
-    <br/>
-    <table border="0" cellspacing="0" cellpadding="2">
-      <?php
+  <table border="0" cellpadding="0">
+    <tr>
+      <td>
+        <p class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></p>
+        <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td valign="top">
+        <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindForm()"></form>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" cellspacing="0" cellpadding="2">
+    <?php
       while ($row = tng_fetch_assoc($result)) {
         $birthdate = $deathdate = "";
         $row['allow_living'] = determineLivingRights($row);
@@ -87,7 +87,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         $name = getName($row);
         if ($fieldtype == "select") {
-          $namestr = addslashes($name) . "| - {$row['personID']}<br />$birthdate";
+          $namestr = addslashes($name) . "| - {$row['personID']}<br>$birthdate";
         } elseif ($textchange) {
           $birthdatestr = displayDate($birthdate);
           $namestr = addslashes(preg_replace('/\"/', "&#34;", getName($row) . ($birthdatestr ? " (" . displayDate($birthdate) . ")" : "") . " - {$row['personID']}"));
@@ -101,7 +101,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         $jsnamestr = str_replace("&#34;", "&lsquo;", $namestr);
         $jsnamestr = str_replace("\\\"", "&lsquo;", $namestr);
-        echo "<tr><td valign=\"top\"><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">{$row['personID']}</a></span></td><td><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">$name</a><br/>$birthdate $deathdate</span></td></tr>\n";
+        echo "<tr><td valign=\"top\"><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">{$row['personID']}</a></span></td><td><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td></tr>\n";
       }
       tng_free_result($result);
       ?>

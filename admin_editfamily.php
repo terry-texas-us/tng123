@@ -289,35 +289,35 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
 
 <form action="admin_updatefamily.php" method="post" name="form1" id="form1">
     <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table cellpadding="0" cellspacing="0" class="normal">
-                    <tr>
-                        <td valign="top">
-                            <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
-                              echo "display:none";
-                            } ?>"><?php echo $photo; ?></div>
-                        </td>
-                        <td>
-                            <span class="plainheader"><?php echo $namestr; ?></span><br/>
-                            <div class="topbuffer bottombuffer smallest">
-                              <?php
-                              if ($editconflict) {
-                                echo "<br /><p>{$admtext['editconflict']}</p>\n";
-                                echo "<p class=\"normal\"><strong><a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
-                              } else {
-                                $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
-                                $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
-                                $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
-                                echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+      <tr class="databack">
+        <td class="tngshadow">
+          <table cellpadding="0" cellspacing="0" class="normal">
+            <tr>
+              <td valign="top">
+                <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
+                  echo "display:none";
+                } ?>"><?php echo $photo; ?></div>
+              </td>
+              <td>
+                <span class="plainheader"><?php echo $namestr; ?></span><br>
+                <div class="topbuffer bottombuffer smallest">
+                  <?php
+                  if ($editconflict) {
+                    echo "<br><p>{$admtext['editconflict']}</p>\n";
+                    echo "<p class=\"normal\"><strong><a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
+                  } else {
+                    $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
+                    $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
+                    $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
+                    echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
                                 echo "<a href=\"#\" onclick=\"return showNotes('', '$familyID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
                                 echo "<a href=\"#\" onclick=\"return showCitations('', '$familyID');\" id=\"citesicon\" class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
                                 echo "<a href=\"#\" onclick=\"return showAssociations('$familyID','F');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
                               }
                               ?>
-                                <br/><br/>
-                            </div>
-                            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+                  <br><br>
+                </div>
+                <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
@@ -428,7 +428,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                   $totbranches = 2;
                                 }
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
-                                $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br/>" : "";
+                                $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
                                 $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") {
@@ -437,7 +437,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                   <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                                     <?php
@@ -482,11 +482,11 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         echo showEventRow('divdate', 'divplace', 'DIV', $familyID);
                         ?>
                       </table>
-                      <br/>
-                      <table class="normal">
-                          <tr>
-                              <td valign="top">
-                                  <strong class="subhead" style="color:black"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
+                    <br>
+                    <table class="normal">
+                      <tr>
+                        <td valign="top">
+                          <strong class="subhead" style="color:black"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
                                 <?php
                                 echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('F','$familyID','$tree');\"></p>\n";
                                 ?>
@@ -535,7 +535,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                               echo ">\n";
                               echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                               echo "<td class=\"dragarea normal\">";
-                              echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                              echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                               echo "</td>\n";
                               echo "<td class=\"lightback normal childblock\">\n";
 
@@ -564,7 +564,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 if ($birthstring && $deathstring) {
                                   $deathstring = ", " . $deathstring;
                                 }
-                                echo "<a href=\"#\" onclick=\"EditChild('{$child['pID']}');\">" . getName($child) . "</a> - {$child['pID']}<br />$birthstring$deathstring";
+                                echo "<a href=\"#\" onclick=\"EditChild('{$child['pID']}');\">" . getName($child) . "</a> - {$child['pID']}<br>$birthstring$deathstring";
                               } else {
                                 echo $admtext['living'] . " - " . $child['pID'];
                               }
@@ -576,37 +576,37 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         ?>
                       </div>
 
-                      <input type="hidden" name="media" id="newmedia" value=""/>
-                      <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
-                      <p class="normal"><?php echo $admtext['newchildren']; ?>:
-                          <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return findItem('I','children',null,'<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');"/>
-                          <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return openCreatePersonForm('','','child','',document.form1.husband.value);"/>
-                          <input type="hidden" name="familyID" value="<?php echo "$familyID"; ?>"/>
-                      </p>
+                    <input type="hidden" name="media" id="newmedia" value="">
+                    <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+                    <p class="normal"><?php echo $admtext['newchildren']; ?>:
+                      <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return findItem('I','children',null,'<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
+                      <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return openCreatePersonForm('','','child','',document.form1.husband.value);">
+                      <input type="hidden" name="familyID" value="<?php echo "$familyID"; ?>">
+                    </p>
                   </div>
               </td>
           </tr>
-          <tr class="databack">
-              <td class="tngshadow normal">
-                <?php
-                echo $admtext['onsave'] . ":<br/>";
-                echo "<input type=\"radio\" name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br/>\n";
-                if ($cw) {
-                  echo "<input type=\"radio\" name=\"newfamily\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
-                } else {
-                  echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
-                }
-                ?>
-                  <br/><br/><input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
-                <?php if (!$rights['lds']) { ?>
-                    <input type="hidden" value="<?php echo $row['sealdate']; ?>" name="sealdate">
-                    <input type="hidden" name="sealsrc" value="<?php echo $row['sealsrc']; ?>">
-                    <input type="hidden" value="<?php echo $row['sealplace']; ?>" name="sealplace">
-                <?php } ?>
-                  <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                  </span>
-              </td>
-          </tr>
+        <tr class="databack">
+          <td class="tngshadow normal">
+            <?php
+            echo $admtext['onsave'] . ":<br>";
+            echo "<input type=\"radio\" name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+            if ($cw) {
+              echo "<input type=\"radio\" name=\"newfamily\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
+            } else {
+              echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
+            }
+            ?>
+            <br><br><input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
+            <?php if (!$rights['lds']) { ?>
+              <input type="hidden" value="<?php echo $row['sealdate']; ?>" name="sealdate">
+              <input type="hidden" name="sealsrc" value="<?php echo $row['sealsrc']; ?>">
+              <input type="hidden" value="<?php echo $row['sealplace']; ?>" name="sealplace">
+            <?php } ?>
+            <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+            </span>
+          </td>
+        </tr>
         <?php
       } //end of the editconflict conditional
       ?>

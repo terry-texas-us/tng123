@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Postoje�a informacija o groblju";
     $admtext['newceminfo'] = "Nova informacija o groblju";
     $admtext['maptoupload'] = "Map image za upload";
-    $admtext['mapfilenamefolder'] = "Map File Name<br/>sa folderom nadgrobnog spomenika";
+    $admtext['mapfilenamefolder'] = "Map File Name<br>sa folderom nadgrobnog spomenika";
     $admtext['ifmapuploaded'] = "Ostavi ovo polje prazno ako je datoteka ve� upload-irana u va� folder nadgrobnih spomenika.";
     $admtext['requiredmap'] = "Potrebno ako koristite mapu. To treba korespondirati s nazivom i lokacijom va�e datoteke <em>unutar foldera nadgrobnih spomenika</em> kada je datoteka upload-irana. Npr. ako je va� folder nadgrobnih spomenika zove <em>headstones</em>,	i ako �elite da se va�a datoteka zove <em>map.jpg</em> i ako odete u subfolder od nadgrobnih spomenika koji se zove <em>mymaps</em>, mo�ete unijeti <em>mymaps/map.jpg</em> u ovom polju.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Dodano";
     $admtext['enternew'] = "Unesi novi";
     $admtext['pleaseenter'] = "Molim unesi ";
-    $admtext['netscapereload'] = "Netscape korisnici: <br/>Mora� ponovno u�itati stranicu s grobljima da biste vidjeli va� novi unos";
+    $admtext['netscapereload'] = "Netscape korisnici: <br>Mora� ponovno u�itati stranicu s grobljima da biste vidjeli va� novi unos";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "uvozim GEDCOM...<br/>(ovo mo�e potrajati nekoliko minuta)";
+    $admtext['importinggedcom'] = "uvozim GEDCOM...<br>(ovo mo�e potrajati nekoliko minuta)";
     $admtext['ifimportfails'] = "Ako uvoz ne uspije izavr�iti do kraja,";
     $admtext['opened'] = "otvoreno...";
     $admtext['toresume'] = "za nastavak uvoza";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "For Repositories...";
     $admtext['noevtypes'] = "Tip doga�aja ne postoji.";
     $admtext['DESI'] = "Descendant Interest";
-    $admtext['allnone'] = "Unesi display poruku za svaki jezik,<br />ili ostavi sve prazno pa unesi jednu display poruku gore.";
+    $admtext['allnone'] = "Unesi display poruku za svaki jezik,<br>ili ostavi sve prazno pa unesi jednu display poruku gore.";
     $admtext['assocwith'] = "Asocirano sa";
     $admtext['BAPM'] = "Kr�tenje";
     $admtext['umps'] = "Va�a GEDCOM datoteka mo�e biti ve�a od maksimalne veli�ine dozvoljene s ovom PHP instalacijom. Mo�ete pitati va�eg provider-a da pove�a vrijednost 'upload_max_filesize' ili mo�ete kopirati va�u datoteku u 'gedcom' folder-u na va�em site-u i uvesti od tamo.;";
@@ -321,7 +321,7 @@ switch ($textpart) {
     $admtext['updatingassoc'] = "A�uriranje asocijacije...";
     $admtext['addnewassoc'] = "Dodaj novu asocijacijuj";
     $admtext['modifyassoc'] = "Modificiraj postoje�u asocijaiju";
-    $admtext['pevslater'] = "Note: Additional events, as well as event-specific notes and citations,<br />may be added after the new person has been saved.";
+    $admtext['pevslater'] = "Note: Additional events, as well as event-specific notes and citations,<br>may be added after the new person has been saved.";
     $admtext['ashusband'] = "kao mu�";
     $admtext['aswife'] = "kao �ena";
     $admtext['pevslater2'] = "Note: Additional events, plus event-specific notes and citations, may be added later.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefix";
     $admtext['chkdel'] = "Check empty box to delete item at left";
     //added in 9.0.0
-    $admtext['choosedef'] = "Choose<br/>default<br/>photo"; //has to fit in a small box
+    $admtext['choosedef'] = "Choose<br>default<br>photo"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Confirmation Date (LDS)";
     $admtext['confplace'] = "Confirmation Place (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Generate Thumbnails";
     $admtext['genthumbsdesc'] = "Automatically generate smaller versions of all photos without existing thumbnails.";
     $admtext['thumbsgenerated'] = "Thumbnails generated";
-    $admtext['makedefault'] = "Make Default";
-    $admtext['filewithinhs'] = "Path within headstones folder <br/>(subfolder and file name)";
-    $admtext['recsupdated'] = "Records updated";
+  $admtext['makedefault'] = "Make Default";
+  $admtext['filewithinhs'] = "Path within headstones folder <br>(subfolder and file name)";
+  $admtext['recsupdated'] = "Records updated";
     $admtext['removedef'] = "Remove default photo";
     $admtext['numlinkhs'] = "Number of people to link to this headstone";
     $admtext['sortheadstones'] = "Sort Headstones";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Required. This should correspond to the name and location of your file <em>within the collection folder</em> once the file is uploaded. For example, suppose you are uploading a photo and your photos folder is called <em>photos</em>. If you want your file to be called <em>myphoto.jpg</em> and go in a subfolder of photos called <em>newphotos</em>, you would enter <em>newphotos/myphoto.jpg</em> in this field.";
     $admtext['leaveblankphoto'] = "Leave this field blank if the file has already been uploaded.";
     $admtext['thumbconflicts'] = "Thumbnails not generated due to path, permissions, size or file name problems";
-    $admtext['showmap'] = "Show cemetery map and media whenever this item is displayed";
-    $admtext['bodytext'] = "<strong>OR</strong><br/>Body Text";
-    $admtext['usenl'] = "Convert line breaks to HTML on display";
+  $admtext['showmap'] = "Show cemetery map and media whenever this item is displayed";
+  $admtext['bodytext'] = "<strong>OR</strong><br>Body Text";
+  $admtext['usenl'] = "Convert line breaks to HTML on display";
     $admtext['newwin'] = "Open in new window";
     $admtext['modifymedia'] = "Modify Existing Media";
     $admtext['addnewmedia'] = "Add New Media";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "If no birth date, assume";
     $admtext['persliving'] = "Person is living";
     $admtext['persdead'] = "Person is deceased";
-    $admtext['nodeathdate'] = "If no death date, assume deceased<br />if older than";
+    $admtext['nodeathdate'] = "If no death date, assume deceased<br>if older than";
     $admtext['pedconfigsettings'] = "Chart Settings";
     $admtext['usepopups'] = "Initial Display";
     $admtext['maxpedgens'] = "Max Generations";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Merge Places";
     $admtext['findmerge'] = "Find Merge Candidates";
     $admtext['selectplacemerge'] = "Select Places to Merge";
-    $admtext['mcol1'] = "Merge<br/>these<br/>(delete)";
-    $admtext['mcol2'] = "into<br/>this<br/>(keep)";
+    $admtext['mcol1'] = "Merge<br>these<br>(delete)";
+    $admtext['mcol2'] = "into<br>this<br>(keep)";
     $admtext['pmsucc'] = "Place merge successful";
     $admtext['nomerge'] = "Nothing to merge";
     $admtext['enterkeep'] = "Please select a merge target.";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Please enter a language display name.";
     $admtext['enterlangfolder'] = "Please enter the name of the folder where files for this language will be stored.";
     $admtext['newlanguageinfo'] = "New Language Information";
-    $admtext['langdisplay'] = "Name for this language<br/>as it will be displayed for visitors";
+    $admtext['langdisplay'] = "Name for this language<br>as it will be displayed for visitors";
     $admtext['createlanguage'] = "Create a record for a new language";
     $admtext['nolanguages'] = "No language records exist";
     $admtext['conflangdelete'] = "Are you sure you want to delete this language?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Ozna�i doga�aj i akciju";
     $admtext['suggested'] = "Predlo�eno";
-    $admtext['usernotes'] = "Zapis u vezi<br />predlo�ene promjene<br />(ne�e bit pohranjeno)";
+    $admtext['usernotes'] = "Zapis u vezi<br>predlo�ene promjene<br>(ne�e bit pohranjeno)";
     $admtext['postdate'] = "Poslano na";
     $admtext['savedel'] = "Pohrani i obri�i";
     $admtext['postpone'] = "Odgodi";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "Check";
 $admtext['generate'] = "Generiraj";
 $admtext['update'] = "Update";
 $admtext['confdeleteevent'] = "Da li si siguran da �eli� obrisati ovaj doga�aj?";
-$admtext['existinglinks'] = "Postoje�i linkovi:<br/>(oza�i za obrisati)";
+$admtext['existinglinks'] = "Postoje�i linkovi:<br>(oza�i za obrisati)";
 $admtext['lowersortfirst'] = "Lower numbers sort first. Decimal numbers may also be used.";
 $admtext['personsname'] = "Ime osobe";
 $admtext['tablecreation'] = "Tabla kreirana";
@@ -2241,7 +2241,7 @@ $admtext['confdeletefile'] = "Are you sure you want to delete this file?";
 //changed in 8.0.0
 $admtext['datenote'] = "<strong>Note:</strong> kada unosi� datume, modlim koristi standardni genealogical format DD MMM GGGG. Na primjer, 10 Apr 2004.";
 $admtext['oriental'] = "Prezime prvo";
-$admtext['langfolder'] = "Folder where language files<br/>will be stored";
+$admtext['langfolder'] = "Folder where language files<br>will be stored";
 //moved here in 8.0.0
 $admtext['repoid'] = "Repository ID";
 $admtext['whatsnew'] = "What's New";

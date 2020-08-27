@@ -37,7 +37,7 @@ $search_url = getURL("search", 1);
             while ($surname = tng_fetch_assoc($result)) {
               $surname2 = urlencode($surname['lastname']);
               $name = $surname['lastname'] ? "<a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"$search_url" . "mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$text['nosurname']}</a>";
-              echo "$counter. $name ({$surname['lncount']})<br/>\n";
+              echo "$counter. $name ({$surname['lncount']})<br>\n";
               $counter++;
               $num_in_col_ctr++;
               if ($num_in_col_ctr == $num_in_col) {

@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informação de Cemitério existente";
     $admtext['newceminfo'] = "Informação de novo Cemitério";
     $admtext['maptoupload'] = "Imagem de mapa para transferir";
-    $admtext['mapfilenamefolder'] = "Nome do Arquivo de Mapa<br/>dentro da pasta de lápides";
+    $admtext['mapfilenamefolder'] = "Nome do Arquivo de Mapa<br>dentro da pasta de lápides";
     $admtext['ifmapuploaded'] = "Deixar este campo em branco se o arquivo já foi transferido para a pasta de lápides.";
     $admtext['requiredmap'] = "Obrigatório. Deve coincidir com o nome e a localização de seu arquivo <em>dentro da pasta de lápides</em> depois que o arquivo tenha sido transferido. Por exemplo, se sua pasta de lápides se chama <em>lápides</em>, e você deseja chamar seu arquivo <em>mapa.jpg</em> e colocá-lo em uma sub-pasta chamada <em>meusmapas</em>, deverá escrever <em>meusmapas/mapa.jpg</em> neste campo.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Incluido";
     $admtext['enternew'] = "Incluir novo";
     $admtext['pleaseenter'] = "Por favor, informe um";
-    $admtext['netscapereload'] = "Usuários do Netscape: <br/> Devem recarregar a página de Cemitérios para ver o incluído";
+    $admtext['netscapereload'] = "Usuários do Netscape: <br> Devem recarregar a página de Cemitérios para ver o incluído";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Importando GEDCOM...<br/>(isto pode levar vários minutos)";
+    $admtext['importinggedcom'] = "Importando GEDCOM...<br>(isto pode levar vários minutos)";
     $admtext['ifimportfails'] = "Se a importação falhar antes de ser completada,";
     $admtext['opened'] = "aberto...";
     $admtext['toresume'] = "para recomeçar a importação";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Para Repositórios...";
     $admtext['noevtypes'] = "Não existem tipos de eventos.";
     $admtext['DESI'] = "Descendentes procurados";
-    $admtext['allnone'] = "Entre um texto para cada idioma,<br />ou deixe todos em branco e entre texto acima.";
+    $admtext['allnone'] = "Entre um texto para cada idioma,<br>ou deixe todos em branco e entre texto acima.";
     $admtext['assocwith'] = "Associado com";
     $admtext['BAPM'] = "Batismo";
     $admtext['umps'] = "Seu GEDCOM pode ser maior que o admitido por seu provedor. Você pode solicitar ao seu provedor que ele aumenta o valor de 'upload_max_filesize', ou você pode copiar o arquivo para a pasta 'gedcom' em seu site e importá-lo de lá.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefixo";
     $admtext['chkdel'] = "Marque a caixa vazia para excluir item à esquerda";
     //added in 9.0.0
-    $admtext['choosedef'] = "Escolha<br/>foto<br/>padrão"; //has to fit in a small box
+    $admtext['choosedef'] = "Escolha<br>foto<br>padrão"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Data de confirmação (SUD)";
     $admtext['confplace'] = "Local de confirmação (SUD)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Obrigatório. Deve corresponder ao nome e localização de seu arquivo <em>dentro da pasta de fotos</em> após carregado o arquivo. Por exemplo, se sua pasta de fotos chama-se <em>fotos</em>, e você queira chamar seu arquivo <em>minhafoto.jpg</em> e colocar numa sub-pasta de fotos chamada <em>novasfotos</em>,  deve informar <em>novasfotos/minhafoto.jpg</em> neste campo.";
     $admtext['leaveblankphoto'] = "Deixar este campo em branco se o arquivo já foi carregado para a sua pasta de fotos.";
     $admtext['thumbconflicts'] = "Miniaturas não geradas devido a problemas de caminho, permissões ou nome-de-arquivo";
-    $admtext['showmap'] = "Mostar o mapa e as fotos do cemitério sempre que for exibida esta imagem";
-    $admtext['bodytext'] = "<strong>OU</strong><br/>Texto da Página";
-    $admtext['usenl'] = "Converter mudanças de linhas em HTML ao exibir";
+  $admtext['showmap'] = "Mostar o mapa e as fotos do cemitério sempre que for exibida esta imagem";
+  $admtext['bodytext'] = "<strong>OU</strong><br>Texto da Página";
+  $admtext['usenl'] = "Converter mudanças de linhas em HTML ao exibir";
     $admtext['newwin'] = "Abrir em nova janela";
     $admtext['modifymedia'] = "Modificar mídia existente";
     $admtext['addnewmedia'] = "Adicionar Nova Mídia";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Se não houver data de nascimento, presumir que";
     $admtext['persliving'] = "A pessoa ainda está viva";
     $admtext['persdead'] = "A pessoa já faleceu";
-    $admtext['nodeathdate'] = "Se falta a data de falecimento, presumir que a pessoa já faleceu<br /> se tiver mais de";
+    $admtext['nodeathdate'] = "Se falta a data de falecimento, presumir que a pessoa já faleceu<br> se tiver mais de";
     $admtext['pedconfigsettings'] = "Configuração de Árvore Genealógica";
     $admtext['usepopups'] = "Exibir Inicial";
     $admtext['maxpedgens'] = "Nº Máximo de Gerações na Árvore de Ascendentes";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Mesclar Lugares";
     $admtext['findmerge'] = "Buscar possíveis duplicatas";
     $admtext['selectplacemerge'] = "Selecionar os Lugares para Mesclar";
-    $admtext['mcol1'] = "Mesclar<br/>estes<br/>(excluir)";
-    $admtext['mcol2'] = "com<br/>este<br/>(manter)";
+    $admtext['mcol1'] = "Mesclar<br>estes<br>(excluir)";
+    $admtext['mcol2'] = "com<br>este<br>(manter)";
     $admtext['pmsucc'] = "Mescla de lugares bem sucedida";
     $admtext['nomerge'] = "Nada para mesclar";
     $admtext['enterkeep'] = "Por favor, selecione um objeto para mesclar.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Selecione o Evento e a Ação a Realizar";
     $admtext['suggested'] = "Sugerido";
-    $admtext['usernotes'] = "As notas referentes à <br />mudança sugerida<br />não serão salvas";
+    $admtext['usernotes'] = "As notas referentes à <br>mudança sugerida<br>não serão salvas";
     $admtext['postdate'] = "Publicado em";
     $admtext['savedel'] = "Salvar e Excluir";
     $admtext['postpone'] = "Postergar";

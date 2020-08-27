@@ -4,27 +4,27 @@ echo help_header("N�pov�da: V�tve");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="trees_help.php" class="lightlink">&laquo; N�pov�da: Stromy</a> &nbsp; | &nbsp;
-                <a href="eventtypes_help.php" class="lightlink">N�pov�da: Vlastn� typy ud�lost� &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: V�tve</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#label" class="lightlink">Ozna�it</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="trees_help.php" class="lightlink">&laquo; N�pov�da: Stromy</a> &nbsp; | &nbsp;
+        <a href="eventtypes_help.php" class="lightlink">N�pov�da: Vlastn� typy ud�lost� &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: V�tve</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#label" class="lightlink">Ozna�it</a>
             </p>
         </td>
     </tr>

@@ -114,20 +114,20 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     </tr>
                 </table>
 
-                <br/>
+              <br>
 
-                <input type="checkbox" name="exliving" id="exliving" value="1"> <label for="exliving"><?php echo $admtext['exliving']; ?></label> &nbsp;&nbsp;
-                <input type="checkbox" name="exprivate" id="exprivate" value="1"> <label for="exprivate"><?php echo $admtext['exprivate']; ?></label> <br/><br/>
+              <input type="checkbox" name="exliving" id="exliving" value="1"> <label for="exliving"><?php echo $admtext['exliving']; ?></label> &nbsp;&nbsp;
+              <input type="checkbox" name="exprivate" id="exprivate" value="1"> <label for="exprivate"><?php echo $admtext['exprivate']; ?></label> <br><br>
 
-                <input type="checkbox" name="exportmedia" id="exportmedia" value="1" onClick="toggleStuff();"> <label for="exportmedia"><?php echo $admtext['exportmedia']; ?></label>
+              <input type="checkbox" name="exportmedia" id="exportmedia" value="1" onClick="toggleStuff();"> <label for="exportmedia"><?php echo $admtext['exportmedia']; ?></label>
 
-                <br/>
+              <br>
 
-                <div style="display:none" id="exprows">
-                    <table class="normal" cellspacing="10">
-                        <tr>
-                            <td><?php echo $admtext['select']; ?></td>
-                            <td><?php echo $admtext['mediatypes']; ?></td>
+              <div style="display:none" id="exprows">
+                <table class="normal" cellspacing="10">
+                  <tr>
+                    <td><?php echo $admtext['select']; ?></td>
+                    <td><?php echo $admtext['mediatypes']; ?></td>
                             <td><?php echo $admtext['exppaths']; ?>:</td>
                         </tr>
                       <?php
@@ -154,13 +154,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             }
                             break;
                         }
-                        echo "<tr><td><input type=\"checkbox\" name=\"incl_$msgID\" value=\"1\" checked=\"checked\" /></td>\n<td>" . $mediatype['display'] . ":</td>\n<td><input type=\"text\" value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td></tr>\n";
+                        echo "<tr><td><input type=\"checkbox\" name=\"incl_$msgID\" value=\"1\" checked=\"checked\"></td>\n<td>" . $mediatype['display'] . ":</td>\n<td><input type=\"text\" value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td></tr>\n";
                       }
                       ?>
-                    </table>
-                </div>
-                <br/>
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['export']; ?>"></form>
+                </table>
+              </div>
+              <br>
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['export']; ?>"></form>
         </td>
     </tr>
 

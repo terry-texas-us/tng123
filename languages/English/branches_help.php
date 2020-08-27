@@ -6,21 +6,21 @@ echo help_header("Help: Branches");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="trees_help.php" class="lightlink">&laquo; Help: Trees</a> &nbsp; | &nbsp;
-                <a href="eventtypes_help.php" class="lightlink">Help: Custom Event Types &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Branches</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#label" class="lightlink">Label</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="trees_help.php" class="lightlink">&laquo; Help: Trees</a> &nbsp; | &nbsp;
+        <a href="eventtypes_help.php" class="lightlink">Help: Custom Event Types &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Branches</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+        <a href="#label" class="lightlink">Label</a>
             </p>
         </td>
     </tr>

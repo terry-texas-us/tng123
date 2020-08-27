@@ -65,11 +65,11 @@ function doMediaSearch($instance, $pagenav) {
   global $text, $mediasearch, $orgmediatypeID, $browsemedia_url, $tree, $tnggallery;
 
   $str = getFORM("browsemedia", "get", "MediaSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\" /> <input type=\"submit\" value=\"{$text['search']}\" /> <input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsemedia_url" . "mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\" />&nbsp;&nbsp;&nbsp;";
-  $str .= "<input type=\"hidden\" name=\"mediatypeID\" value=\"$orgmediatypeID\" />\n";
+  $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\"> <input type=\"submit\" value=\"{$text['search']}\"> <input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsemedia_url" . "mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
+  $str .= "<input type=\"hidden\" name=\"mediatypeID\" value=\"$orgmediatypeID\">\n";
   $str .= $pagenav;
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
-  $str .= "<input type=\"hidden\" name=\"tnggallery\" value=\"$tnggallery\" />\n";
+  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+  $str .= "<input type=\"hidden\" name=\"tnggallery\" value=\"$tnggallery\">\n";
   $str .= "</form>\n";
 
   return $str;
@@ -128,7 +128,7 @@ preparebookmark($logstring);
 tng_header($titlestr, $flags);
 if ($orgmediatypeID) {
   if ($mediatypes_icons[$mediatypeID]) {
-    $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width=\"20\" height=\"20\" alt=\"\" class=\"headericon\"/>";
+    $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width=\"20\" height=\"20\" alt=\"\" class=\"headericon\">";
   } else {
     $icon = "<span class=\"headericon\" id=\"{$mediatypeID}-hdr-icon\"></span>";
   }
@@ -137,11 +137,11 @@ if ($orgmediatypeID) {
 }
 ?>
 
-    <h1 class="header"><?php echo $icon . $titlestr; ?></h1><br clear="all"/>
+  <h1 class="header"><?php echo $icon . $titlestr; ?></h1><br clear="all">
 <?php
-$hiddenfields[0] = array('name' => 'mediatypeID', 'value' => $orgmediatypeID);
-$hiddenfields[1] = array('name' => 'tnggallery', 'value' => $tnggallery);
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'browsemedia', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+$hiddenfields[0] = ['name' => 'mediatypeID', 'value' => $orgmediatypeID];
+$hiddenfields[1] = ['name' => 'tnggallery', 'value' => $tnggallery];
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsemedia', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
 $toplinks = "<p class=\"normal\">";
 if ($totrows) {
@@ -151,7 +151,7 @@ $toplinks .= "$gallerymsg";
 
 $pagenav = get_browseitems_nav($totrows, $browsemedia_url . "mediasearch=$mediasearch&amp;tnggallery=$tnggallery&amp;mediatypeID=$orgmediatypeID&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 $preheader = doMediaSearch(1, $pagenav);
-$preheader .= "<br />\n";
+$preheader .= "<br>\n";
 
 if ($tnggallery) {
   $preheader .= "<div class=\"titlebox\">\n";
@@ -373,7 +373,7 @@ while ($row = tng_fetch_assoc($result)) {
       $notes = "";
     } else {
       $description = $row['description'];
-      $notes = $notes ? $notes . "<br />({$text['livingphoto']})" : "({$text['livingphoto']})";
+      $notes = $notes ? $notes . "<br>({$text['livingphoto']})" : "({$text['livingphoto']})";
     }
   }
 
@@ -409,12 +409,12 @@ while ($row = tng_fetch_assoc($result)) {
       $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
     }
 
-    $mediatext .= "$description<br/>$notes&nbsp;</td>";
+    $mediatext .= "$description<br>$notes&nbsp;</td>";
     if ($orgmediatypeID == "headstones") {
       if (!$row['cemname']) {
         $row['cemname'] = $row['city'];
       }
-      $plotstr = $row['plot'] ? "<br />" . nl2br($row['plot']) : "";
+      $plotstr = $row['plot'] ? "<br>" . nl2br($row['plot']) : "";
       $mediatext .= "<td valign=\"top\" class=\"databack\" width=\"30%\"><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
       $mediatext .= "<td valign=\"top\" class=\"databack nw\">{$row['status']}&nbsp;</td>";
       $mediatext .= "<td valign=\"top\" class=\"databack\" width=\"30%\">\n";
@@ -447,11 +447,11 @@ if ($tnggallery) {
   echo "</div>\n";
 }
 
-echo "<br/>\n";
+echo "<br>\n";
 
 if ($totrows && ($pagenav || $mediasearch)) {
   echo doMediaSearch(2, $pagenav);
-  echo "<br />";
+  echo "<br>";
 }
 tng_footer($flags);
 ?>

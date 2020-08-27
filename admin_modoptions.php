@@ -476,7 +476,7 @@ echo ">{$admtext['no']}</option>
 		</td></tr>
 		<tr class=\"databack tngshadow\">
 			<td class=\"tngshadow\">
-            <input type=\"submit\" name=\"submit\" accesskey=\"s\" value=\"{$admtext['save']}\" />
+            <input type=\"submit\" name=\"submit\" accesskey=\"s\" value=\"{$admtext['save']}\">
 			</td>
 		</tr>
 		</table>

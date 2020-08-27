@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Rychlé mutace";
     $text['alltypes'] = "Všechny typy";
     $text['allgroups'] = "Všechny skupiny";
-    $text['Ydna_LITbox_info'] = "Test(y) připojené k této osobě nemusí nutně od této osoby pocházet.<br />Ve sloupci 'Haploskupina' se zobrazí data červeně, pokud je výsledek 'Předpovězen', nebo zeleně, pokud je test 'Potvrzen'";
+    $text['Ydna_LITbox_info'] = "Test(y) připojené k této osobě nemusí nutně od této osoby pocházet.<br>Ve sloupci 'Haploskupina' se zobrazí data červeně, pokud je výsledek 'Předpovězen', nebo zeleně, pokud je test 'Potvrzen'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Porovnat vybrané testy mtDNA";
     $text['dnatestscompare_atdna'] = "Porovnat vybrané testy atDNA";

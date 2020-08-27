@@ -477,9 +477,9 @@ function showMediaSource($imgrow, $ss = false) {
   if ($imgrow['path']) {
     if ($imgrow['abspath']) {
       if ($imgrow['newwindow']) {
-        echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"/></form>\n";
+        echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
       } else {
-        echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"/></form>\n";
+        echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
       }
     } else {
       if (!$imgrow['form']) {
@@ -531,7 +531,7 @@ function showMediaSource($imgrow, $ss = false) {
           $heightstr = "height=\"$height\"";
         }
         if ($ss) {  //slideshow
-          $img = "<img src=\"$mediasrc\" border=\"0\" $mapstr alt=\"$description\" />";
+          $img = "<img src=\"$mediasrc\" $mapstr alt=\"$description\">";
           echo "<div id=\"slidearea\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border=\"0\" title=\"{$text['moreinfo']}\">$img</a></div>\n";
         } else {
           $imgviewer = $tngconfig['imgviewer'];
@@ -540,7 +540,7 @@ function showMediaSource($imgrow, $ss = false) {
             $calcHeight = $maxvh ? ($height > $maxvh ? $maxvh : $height) : 1;
             echo "<div id=\"loadingdiv2\" class=\"rounded10\" style=\"position:static;\">{$text['loading']}</div><iframe name=\"iframe1\" id=\"iframe1\" src=\"" . getURL("img_viewer", 1) . "mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width=\"100%\" height=\"1\" onload=\"calcHeight($calcHeight)\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\"></iframe>";
           } else {
-            echo "<div class=\"titlebox mediaalign\" id=\"imgdiv\"><img src=\"$mediasrc\" id=\"theimage\" border=\"0\" $mapstr alt=\"$description\" /></div>\n";
+            echo "<div class=\"titlebox mediaalign\" id=\"imgdiv\"><img src=\"$mediasrc\" id=\"theimage\" $mapstr alt=\"$description\"></div>\n";
           }
         }
       } elseif (in_array($imgrow['form'], $videotypes) || in_array($imgrow['form'], $recordingtypes)) {
@@ -555,9 +555,9 @@ function showMediaSource($imgrow, $ss = false) {
           echo "<a href=\"$mediasrc\"";
           echo "style=\"display:block;width:{$flvwidth}px;height:{$flvheight}px;\" id=\"videoplayer\">";
           if (file_exists(str_replace("%20", " ", $preview_img))) {
-            echo "<img src='$preview_img'style=\"display:block;width:{$flvwidth}px;height:{$flvheight}px;\" alt=\"Click here to play this video...\" />";
+            echo "<img src='$preview_img'style=\"display:block;width:{$flvwidth}px;height:{$flvheight}px;\" alt=\"Click here to play this video...\">";
           } elseif (file_exists("flvsupport/flvicon.png")) {
-            echo "<img src='flvsupport/flvicon.png' alt='Click here to play this video...' />";
+            echo "<img src='flvsupport/flvicon.png' alt='Click here to play this video...'>";
           }
           echo "</a>";
           echo "<script type=\"text/javascript\">flowplayer('videoplayer','flvsupport/flowplayer-3.2.9.swf');</script>";
@@ -574,16 +574,16 @@ function showMediaSource($imgrow, $ss = false) {
         }
       } else {
         if ($imgrow['newwindow']) {
-          echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"/></form>\n";
+          echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
         } else {
-          echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"/></form>\n";
+          echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
         }
       }
     }
   }
   if ($imgrow['bodytext']) {
     if ($imgrow['path']) {
-      echo "<br/><br/>\n";
+      echo "<br><br>\n";
     }
     echo "<div class=\"normal\">" . ($imgrow['usenl'] ? nl2br($imgrow['bodytext']) : $imgrow['bodytext']) . "</div>";
   }
@@ -686,7 +686,7 @@ function doCemPlusMap($imgrow, $tree) {
   if ($imgrow['showmap']) {
     if ($cemetery['maplink'] && file_exists("$rootpath$headstonepath/" . $cemetery['maplink'])) {
       $mapsize = @GetImageSize("$rootpath$headstonepath/" . $cemetery['maplink']);
-      echo "<img src=\"$headstonepath/{$cemetery['maplink']}\" border=\"0\" $mapsize[3] alt=\"{$cemetery['cemname']}\" /><br/><br/>\n";
+      echo "<img src=\"$headstonepath/{$cemetery['maplink']}\" $mapsize[3] alt=\"{$cemetery['cemname']}\"><br><br>\n";
     }
   }
 
@@ -695,7 +695,7 @@ function doCemPlusMap($imgrow, $tree) {
   if (tng_num_rows($hsresult)) {
     $i = 1;
     echo "<div class=\"titlebox\">\n";
-    echo "<span class=\"subhead\"><b>{$text['cemphotos']}</b></span><br /><br />";
+    echo "<span class=\"subhead\"><b>{$text['cemphotos']}</b></span><br><br>";
 
     echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\" width=\"100%\">\n";
     echo "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
@@ -722,7 +722,7 @@ function doCemPlusMap($imgrow, $tree) {
       echo $imgsrc ? "<a href=\"$href\"$targettext>$imgsrc</a>" : "&nbsp;";
       echo "</td>\n";
       echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\">";
-      echo "<a href=\"$href\">$description</a><br/>$notes&nbsp;</span></td></tr>\n";
+      echo "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
       $i++;
     }
     echo "</table>\n</div>\n";

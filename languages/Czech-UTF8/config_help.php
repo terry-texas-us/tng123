@@ -4,27 +4,27 @@ echo help_header("Nápověda: Základní nastavení");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
-                <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Základní nastavení</span>
-            <p class="smaller menu">
-                <a href="#data" class="lightlink">Databáze</a> &nbsp; | &nbsp;
-                <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
-                <a href="#path" class="lightlink">Umístění a složky</a> &nbsp; | &nbsp;
-                <a href="#site" class="lightlink">Stránka</a> &nbsp; | &nbsp;
-                <a href="#media" class="lightlink">Média</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
+        <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Základní nastavení</span>
+      <p class="smaller menu">
+        <a href="#data" class="lightlink">Databáze</a> &nbsp; | &nbsp;
+        <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
+        <a href="#path" class="lightlink">Umístění a složky</a> &nbsp; | &nbsp;
+        <a href="#site" class="lightlink">Stránka</a> &nbsp; | &nbsp;
+        <a href="#media" class="lightlink">Média</a> &nbsp; | &nbsp;
                 <a href="#lang" class="lightlink">Jazyk</a> &nbsp; | &nbsp;
                 <a href="#priv" class="lightlink">Ochrana údajů</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Jména</a> &nbsp; | &nbsp;
@@ -431,37 +431,37 @@ echo help_header("Nápověda: Základní nastavení");
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
-            <a name="mobile"><p class="subheadbold">Mobil</p></a>
+      <p style="float:right"><a href="#top">Top</a></p>
+      <a name="mobile"><p class="subheadbold">Mobil</p></a>
 
-            <p>Sekce Mobil vám umožní určit, jak se bude TNG zobrazovat na chytrých telefonech a tabletech.</p>
+      <p>Sekce Mobil vám umožní určit, jak se bude TNG zobrazovat na chytrých telefonech a tabletech.</p>
 
-            <span class="optionhead">Povolit responzivní tabulky</span>
-            <p>Je-li tato volba nastavena na Ano, bbude aktivován plugin Tablesaw jQuery, který umožňuje responzivní tabulky.<br/>Je-li volba nastavena na Ne, plugin Tablesaw jQuery nebude aktivní.</p>
+      <span class="optionhead">Povolit responzivní tabulky</span>
+      <p>Je-li tato volba nastavena na Ano, bbude aktivován plugin Tablesaw jQuery, který umožňuje responzivní tabulky.<br>Je-li volba nastavena na Ne, plugin Tablesaw jQuery nebude aktivní.</p>
 
-            <span class="optionhead">Typ responzivní tabulky</span>
-            <p>Typ responzivní tabulky může být nastaven na
-            <ul>
-                <li><strong>Toggle</strong>, který je výchozí, a zobrazí data ve sloupcích založených na šířce displeje a přiřazené prioritě. Otočením displeje chytrého telefonu nebo tabletu na šířku budou zobrazeny další sloupce dat.</li>
+      <span class="optionhead">Typ responzivní tabulky</span>
+      <p>Typ responzivní tabulky může být nastaven na
+      <ul>
+        <li><strong>Toggle</strong>, který je výchozí, a zobrazí data ve sloupcích založených na šířce displeje a přiřazené prioritě. Otočením displeje chytrého telefonu nebo tabletu na šířku budou zobrazeny další sloupce dat.</li>
 
-                <li><strong>Stack</strong>, který shrne záhlaví tabulky do dvousloupcového návrhu se záhlavím nalevo, je-li šířka výřezu menší než 40em (640px).</li>
+        <li><strong>Stack</strong>, který shrne záhlaví tabulky do dvousloupcového návrhu se záhlavím nalevo, je-li šířka výřezu menší než 40em (640px).</li>
 
-                <li><strong>Swipe</strong>, který umožní uživateli k navigaci sloupců použít gesto posunu (nebo použít levé a pravé tlačítko).</li>
-            </ul>
-            <br/>
-            <span class="optionhead">Povolit přepínač módů responzivních tabulek:</span>
-            <p>Volba přepínače módů umožní uživateli přepínat mezi jednotlivými typy zobrazení sloupců tabulek: toggle, stack nebo swipe.</p>
+        <li><strong>Swipe</strong>, který umožní uživateli k navigaci sloupců použít gesto posunu (nebo použít levé a pravé tlačítko).</li>
+      </ul>
+      <br>
+      <span class="optionhead">Povolit přepínač módů responzivních tabulek:</span>
+      <p>Volba přepínače módů umožní uživateli přepínat mezi jednotlivými typy zobrazení sloupců tabulek: toggle, stack nebo swipe.</p>
 
-            <span class="optionhead">Povolit minimapu responzivních tabulek</span>
-            <p>Použití minimapy přidá sérii malých teček ukazujících, které sloupce jsou aktuálně viditelné a které jsou skryté.
-                K dispozici pouze v módu swipe a toggle. </p>
+      <span class="optionhead">Povolit minimapu responzivních tabulek</span>
+      <p>Použití minimapy přidá sérii malých teček ukazujících, které sloupce jsou aktuálně viditelné a které jsou skryté.
+        K dispozici pouze v módu swipe a toggle. </p>
 
-        </td>
-    </tr>
-    <tr class="databack">
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Top</a></p>

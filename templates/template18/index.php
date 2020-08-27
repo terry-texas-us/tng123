@@ -98,38 +98,38 @@ $momlabel = getTemplateMessage('t18_momside');
 
           echo "</ul>\n";
           ?>
-            <br/>
-            </article>
-            </li>
-            <li class="linkcol">
-                <article class="post">
-                    <h2 class="entry-title"><?php echo $text['search']; ?></h2>
-                    <form method="get" name="searchform" action="search.php" class="entry-content" id="home-search-box">
-                        <div style="display:inline-block;">
-                            <label for="myfirstname"><?php echo $text['firstname']; ?></label><br/>
-                            <input type="text" value="" name="myfirstname"/>
-                            <br/><br/>
-                            <label for="mylastname"><?php echo $text['lastname']; ?></label><br/>
-                            <input type="text" value="" name="mylastname"/>
-                            <br/>
-                            <input type="hidden" name="mybool" value="AND"/>
-                        </div>
-                        <div style="display:inline-block;vertical-align:top;padding:15px">
-                            <input type="submit" id="search-submit" class="btn" value="<?php echo $text['search']; ?>"/>
-                            <br/><br/>
-                            <ul class="home-menus">
-                                <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
-                                <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
-                            </ul>
-                        </div>
-                    </form>
+          <br>
+          </article>
+          </li>
+          <li class="linkcol">
+            <article class="post">
+              <h2 class="entry-title"><?php echo $text['search']; ?></h2>
+              <form method="get" name="searchform" action="search.php" class="entry-content" id="home-search-box">
+                <div style="display:inline-block;">
+                  <label for="myfirstname"><?php echo $text['firstname']; ?></label><br>
+                  <input type="text" value="" name="myfirstname">
+                  <br><br>
+                  <label for="mylastname"><?php echo $text['lastname']; ?></label><br>
+                  <input type="text" value="" name="mylastname">
+                  <br>
+                  <input type="hidden" name="mybool" value="AND">
+                </div>
+                <div style="display:inline-block;vertical-align:top;padding:15px">
+                  <input type="submit" id="search-submit" class="btn" value="<?php echo $text['search']; ?>">
+                  <br><br>
+                  <ul class="home-menus">
+                    <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
+                    <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                  </ul>
+                </div>
+              </form>
 
-                  <?php
-                  if ($chooselang) {
+              <?php
+              if ($chooselang) {
                     ?>
-                      <div class="left-indent">
-                          <br/>
-                        <?php
+                    <div class="left-indent">
+                      <br>
+                      <?php
                         $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
                         $result = tng_query($query);
                         $numlangs = tng_num_rows($result);
@@ -146,29 +146,29 @@ $momlabel = getTemplateMessage('t18_momside');
                             echo ">{$row['display']}</option>\n";
                           }
                           echo "</select>\n";
-                          echo "<input type=\"hidden\" name=\"instance\" value=\"3\" /></form>\n";
+                          echo "<input type=\"hidden\" name=\"instance\" value=\"3\"></form>\n";
                         }
 
-                        tng_free_result($result);
-                        ?>
-                      </div>
-                    <?php
-                  }
-                  ?>
-
-                    <div class="left-indent">
-                        <h3 class="entry-title"><?php echo $text['contactus']; ?></h3>
-                        <p class="entry-content"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image" class="emailimg"/><?php echo $text['contactus_long']; ?></p>
+                      tng_free_result($result);
+                      ?>
                     </div>
-                </article>
-            </li>
-            <li class="linkcol">
-                <article class="post">
-                    <header class="entry-header">
-                        <a href="<?php echo $tmp['t18_featurelink1']; ?>" title="" class="alignnone"><h2 class="entry-title"><?php echo getTemplateMessage('t18_featuretitle1'); ?></h2></a>
-                    </header>
-                    <div class="entry-content">
-                      <?php
+                <?php
+              }
+              ?>
+
+              <div class="left-indent">
+                <h3 class="entry-title"><?php echo $text['contactus']; ?></h3>
+                <p class="entry-content"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?></p>
+              </div>
+            </article>
+          </li>
+          <li class="linkcol">
+            <article class="post">
+              <header class="entry-header">
+                <a href="<?php echo $tmp['t18_featurelink1']; ?>" title="" class="alignnone"><h2 class="entry-title"><?php echo getTemplateMessage('t18_featuretitle1'); ?></h2></a>
+              </header>
+              <div class="entry-content">
+                <?php
                       echo getTemplateMessage('t18_featurepara1');
                       $tl1 = getTemplateMessage('t18_featurelink1');
                       if ($tl1) {
@@ -186,9 +186,9 @@ $momlabel = getTemplateMessage('t18_momside');
 </div>
 <div class="tblock" id="big-block-3">
     <h2><a href="<?php echo $tmp['t18_featurelink2']; ?>" title=""><?php echo getTemplateMessage('t18_featuretitle2'); ?></a></h2>
-    <div class="left-indent mainsection">
-        <br/>
-        <div class="two-cols"><img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t18_featurethumb2']; ?>" alt="Lorem Ipsum" title="">
+  <div class="left-indent mainsection">
+    <br>
+    <div class="two-cols"><img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t18_featurethumb2']; ?>" alt="Lorem Ipsum" title="">
           <?php
           echo getTemplateMessage('t18_featurepara2');
           $tl2 = getTemplateMessage('t18_featurelink2');

@@ -38,7 +38,7 @@ switch ($textpart) {
     $text['email'] = "E-Posta adresiniz";
     $text['suggestchange'] = "Şununla ilgili bir değişiklik önerin";
     $text['yourname'] = "Adınız";
-    $text['comments'] = "<br />Önerilen değişikliklerin açıklaması";
+    $text['comments'] = "<br>Önerilen değişikliklerin açıklaması";
     $text['comments2'] = "Yorumlar";
     $text['submitsugg'] = "Öneri Gönder";
     $text['proposed'] = "Önerilen Değişiklik";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Hızlı&nbsp;Mutasyon";
     $text['alltypes'] = "Tüm Türler";
     $text['allgroups'] = "Tüm Gruplar";
-    $text['Ydna_LITbox_info'] = "Bu kişiye bağlı test(ler) mutlaka bu kişi tarafından alınmamıştır.<br />'Haplogroup' sütunu; sonuç 'Tahmin Edilirse' verileri kırmızı veya test 'Onaylanırsa' yeşil olarak görüntüler";
+    $text['Ydna_LITbox_info'] = "Bu kişiye bağlı test(ler) mutlaka bu kişi tarafından alınmamıştır.<br>'Haplogroup' sütunu; sonuç 'Tahmin Edilirse' verileri kırmızı veya test 'Onaylanırsa' yeşil olarak görüntüler";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Seçilen mtDNA Testlerini Karşılaştır";
     $text['dnatestscompare_atdna'] = "Seçilen atDNA Testlerini Karşılaştır";

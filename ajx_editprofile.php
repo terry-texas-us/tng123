@@ -97,74 +97,74 @@ $allow_user_change = true;
                               <?php
                               if ($allow_user_change) {
                                 ?>
-                                  <input type="text" name="username" size="20" maxlength="100" value="<?php echo $row['username']; ?>" onblur="checkNewUser(this,document.editprofile.orguser);"/>
-                                  <span id="checkmsg" class="normal"></span>
+                                <input type="text" name="username" size="20" maxlength="100" value="<?php echo $row['username']; ?>" onblur="checkNewUser(this,document.editprofile.orguser);">
+                                <span id="checkmsg" class="normal"></span>
                                 <?php
                               } else {
                                 echo "<strong>" . $row['username'] . "</strong>\n";
                                 ?>
-                                  <input type="hidden" name="username" value="<?php echo $row['username']; ?>"/>
+                                <input type="hidden" name="username" value="<?php echo $row['username']; ?>">
                                 <?php
                               }
                               ?>
                             </td>
                         </tr>
-                        <tr>
-                            <td><?php echo $text['password']; ?>*:</td>
-                            <td><input type="password" name="password" size="20" maxlength="100" value="<?php echo $row['password']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['pwdagain']; ?>*:</td>
-                            <td><input type="password" name="password2" size="20" maxlength="100" value="<?php echo $row['password']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['realname']; ?>*:</td>
-                            <td><input type="text" name="realname" size="50" maxlength="50" value="<?php echo $row['realname']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['phone']; ?>:</td>
-                            <td><input type="text" name="phone" size="30" maxlength="30" value="<?php echo $row['phone']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['email']; ?>*:</td>
-                            <td><input type="text" name="email" size="50" maxlength="100" value="<?php echo $row['email']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['emailagain']; ?>*:</td>
-                            <td><input type="text" name="em2" size="50" maxlength="100" value="<?php echo $row['email']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['website']; ?>:</td>
-                            <td><input type="text" name="website" size="50" maxlength="128" value="<?php echo $row['website']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['address']; ?>:</td>
-                            <td><input type="text" name="address" size="50" maxlength="100" value="<?php echo $row['address']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['city']; ?>:</td>
-                            <td><input type="text" name="city" size="50" maxlength="64" value="<?php echo $row['city']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['state']; ?>:</td>
-                            <td><input type="text" name="state" size="50" maxlength="64" value="<?php echo $row['state']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['zip']; ?>:</td>
-                            <td><input type="text" name="zip" size="20" maxlength="10" value="<?php echo $row['zip']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $text['country']; ?>:</td>
-                            <td><input type="text" name="country" size="50" maxlength="64" value="<?php echo $row['country']; ?>"/></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['preflang']; ?>:</td>
-                            <td>
-                                <select name="preflang">
-                                    <option value=""></option>
-                                  <?php
-                                  $query = "SELECT languageID, display FROM $languages_table ORDER BY display";
-                                  $langresult = tng_query($query);
+                      <tr>
+                        <td><?php echo $text['password']; ?>*:</td>
+                        <td><input type="password" name="password" size="20" maxlength="100" value="<?php echo $row['password']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['pwdagain']; ?>*:</td>
+                        <td><input type="password" name="password2" size="20" maxlength="100" value="<?php echo $row['password']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['realname']; ?>*:</td>
+                        <td><input type="text" name="realname" size="50" maxlength="50" value="<?php echo $row['realname']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['phone']; ?>:</td>
+                        <td><input type="text" name="phone" size="30" maxlength="30" value="<?php echo $row['phone']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['email']; ?>*:</td>
+                        <td><input type="text" name="email" size="50" maxlength="100" value="<?php echo $row['email']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['emailagain']; ?>*:</td>
+                        <td><input type="text" name="em2" size="50" maxlength="100" value="<?php echo $row['email']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['website']; ?>:</td>
+                        <td><input type="text" name="website" size="50" maxlength="128" value="<?php echo $row['website']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['address']; ?>:</td>
+                        <td><input type="text" name="address" size="50" maxlength="100" value="<?php echo $row['address']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['city']; ?>:</td>
+                        <td><input type="text" name="city" size="50" maxlength="64" value="<?php echo $row['city']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['state']; ?>:</td>
+                        <td><input type="text" name="state" size="50" maxlength="64" value="<?php echo $row['state']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['zip']; ?>:</td>
+                        <td><input type="text" name="zip" size="20" maxlength="10" value="<?php echo $row['zip']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $text['country']; ?>:</td>
+                        <td><input type="text" name="country" size="50" maxlength="64" value="<?php echo $row['country']; ?>"></td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $admtext['preflang']; ?>:</td>
+                        <td>
+                          <select name="preflang">
+                            <option value=""></option>
+                            <?php
+                            $query = "SELECT languageID, display FROM $languages_table ORDER BY display";
+                            $langresult = tng_query($query);
 
                                   while ($langrow = tng_fetch_assoc($langresult)) {
                                     echo "	<option value=\"{$langrow['languageID']}\"";
@@ -173,17 +173,17 @@ $allow_user_change = true;
                                     }
                                     echo ">{$langrow['display']}</option>\n";
                                   }
-                                  ?>
-                                </select>
-                            </td>
-                        </tr>
+                            ?>
+                          </select>
+                        </td>
+                      </tr>
                     </table>
-                    <br/>
-                    <p>*<?php echo $text['required']; ?></p>
-                    <input type="hidden" name="orguser" value="<?php echo $row['username']; ?>"/>
-                    <input type="hidden" name="orgpwd" value="<?php echo $row['password']; ?>"/>
-                    <input type="hidden" name="ajax" value="1"/>
-                    <input type="submit" name="saveprofile" class="btn" id="saveprofile" value="<?php echo $text['savechanges']; ?>"/>
+                  <br>
+                  <p>*<?php echo $text['required']; ?></p>
+                  <input type="hidden" name="orguser" value="<?php echo $row['username']; ?>">
+                  <input type="hidden" name="orgpwd" value="<?php echo $row['password']; ?>">
+                  <input type="hidden" name="ajax" value="1">
+                  <input type="submit" name="saveprofile" class="btn" id="saveprofile" value="<?php echo $text['savechanges']; ?>">
                 </td>
             </tr>
         </table>

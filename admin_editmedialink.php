@@ -120,7 +120,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           }
           ?>
         </table>
-        <br/>
+      <br>
       <?php
       if ($type != "album") {
         ?>

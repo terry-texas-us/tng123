@@ -4,27 +4,27 @@ echo help_header("N�pov�da: H�bitovy");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="albums_help.php" class="lightlink">&laquo; N�pov�da: Alba</a> &nbsp; | &nbsp;
-                <a href="places_help.php" class="lightlink">N�pov�da: M�sta &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: H�bitovy</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="albums_help.php" class="lightlink">&laquo; N�pov�da: Alba</a> &nbsp; | &nbsp;
+        <a href="places_help.php" class="lightlink">N�pov�da: M�sta &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: H�bitovy</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

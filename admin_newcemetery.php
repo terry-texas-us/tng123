@@ -137,30 +137,29 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                               }
                               ?>
                             </select>
-                            <input type="button" name="addnewcountry" value="<?php echo $admtext['addnew']; ?>" onclick="tnglitbox = new LITBox('admin_newentity.php?entity=country',{width:350,height:120});$('#newitem').focus();">
-                            <input type="button" name="deletecountry" value="<?php echo $admtext['deleteselected']; ?>" onclick="attemptDelete(document.form1.country,'country');">
+                          <input type="button" name="addnewcountry" value="<?php echo $admtext['addnew']; ?>" onclick="tnglitbox = new LITBox('admin_newentity.php?entity=country',{width:350,height:120});$('#newitem').focus();">
+                          <input type="button" name="deletecountry" value="<?php echo $admtext['deleteselected']; ?>" onclick="attemptDelete(document.form1.country,'country');">
                         </td>
                     </tr>
-                    <tr>
-                        <td><?php echo $admtext['linkplace']; ?>:</td>
-                        <td><input type="text" name="place" id="place" class="longfield" onblur="fillCemetery(this.value);"> <a href="#" onclick="return openFindPlaceForm('place');"><img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>"
-                                                                                                                                                                                           alt="<?php echo $admtext['find']; ?>" width="20" height="20"
-                                                                                                                                                                                           class="alignmiddle"/></a>
-                            <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);"/></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><input type="checkbox" name="usecoords" value="1" checked="checked"/> <?php echo $admtext['usecemcoords']; ?></td>
-                    </tr>
+                  <tr>
+                    <td><?php echo $admtext['linkplace']; ?>:</td>
+                    <td><input type="text" name="place" id="place" class="longfield" onblur="fillCemetery(this.value);"> <a href="#" onclick="return openFindPlaceForm('place');">
+                        <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20" class="alignmiddle"></a>
+                      <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);"></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="checkbox" name="usecoords" value="1" checked="checked"> <?php echo $admtext['usecemcoords']; ?></td>
+                  </tr>
                   <?php
                   if ($map['key']) {
                     ?>
-                      <tr>
-                          <td colspan="2">
-                              <div style="padding:10px">
-                                <?php
-                                // draw the map here
-                                include "googlemapdrawthemap.php";
+                    <tr>
+                      <td colspan="2">
+                        <div style="padding:10px">
+                          <?php
+                          // draw the map here
+                          include "googlemapdrawthemap.php";
                                 ?>
                               </div>
                           </td>
@@ -186,15 +185,15 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                     <?php
                   }
                   ?>
-                    <tr>
-                        <td valign="top"><?php echo $admtext['notes']; ?>:</td>
-                        <td><textarea wrap cols="60" rows="8" name="notes"></textarea></td>
-                    </tr>
+                  <tr>
+                    <td valign="top"><?php echo $admtext['notes']; ?>:</td>
+                    <td><textarea wrap cols="60" rows="8" name="notes"></textarea></td>
+                  </tr>
                 </table>
-                <br/>&nbsp;
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-                <p class="normal">*<?php echo $admtext['ifmapuploaded']; ?><br/>
-                    **<?php echo $admtext['requiredmap']; ?></p>
+              <br>&nbsp;
+              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+              <p class="normal">*<?php echo $admtext['ifmapuploaded']; ?><br>
+                **<?php echo $admtext['requiredmap']; ?></p>
             </td>
         </tr>
     </table>

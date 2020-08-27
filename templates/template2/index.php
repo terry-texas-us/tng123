@@ -50,17 +50,17 @@ $title = getTemplateMessage('t2_maintitle');
                         <?php
                       } else {
                         ?>
-                          <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443" height="114" class="noimgborder rounded10"/>
+                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443" height="114" class="noimgborder rounded10">
                         <?php
                       }
                       //end TITLE IMAGE
                       $mainpara = getTemplateMessage('t2_mainpara');
                       ?>
 
-                        <br/>
+                      <br>
                       <?php
                       if ($mainpara) {
-                        echo "<div style=\"max-width:390px;padding-left:20px\">$mainpara</div><br/>\n";
+                        echo "<div style=\"max-width:390px;padding-left:20px\">$mainpara</div><br>\n";
                       }
                       ?>
 
@@ -76,13 +76,13 @@ $title = getTemplateMessage('t2_maintitle');
                         -->
                         <a href="extrastree.php?personID=<?php echo $tmp['t2_phhistperson']; ?>&amp;tree=<?php echo $tmp['t2_phhisttree']; ?>" class="mainlink smalltitle">&#8226; <?php echo $text['photoshistories']; ?></a>
 
-                        <div id="linktable">
-                            <br/><br/>
-                            <table cellspacing="4" cellpadding="0">
-                                <tr>
-                                    <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
-                                    <td valign="top">
-                                      <?php
+                      <div id="linktable">
+                        <br><br>
+                        <table cellspacing="4" cellpadding="0">
+                          <tr>
+                            <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
+                            <td valign="top">
+                              <?php
                                       if ($currentuser) {
                                         echo "<a href=\"{$cms['tngpath']}logout.php\" class=\"sidelink\">" . strtoupper($text['mnulogout']) . "</a>\n";
                                       } else {
@@ -153,52 +153,52 @@ $title = getTemplateMessage('t2_maintitle');
                                 <?php
                               }
                               ?>
-                            </table>
-                        </div>
-                        <br/>
+                        </table>
+                      </div>
+                      <br>
 
-                        <form action="search.php" method="get" name="searchform" id="form1">
-                            <div id="searchblock">
-                                <div id="searchtitleblock">
-                                    <span class="smalltitle"><?php echo $text['search']; ?></span>
-                                    <table cellspacing="6" cellpadding="0">
-                                        <tr>
-                                            <td align="center"><a href="<?php echo $cms['tngpath']; ?>searchform.php" class="sidelink"><?php echo $text['mnuadvancedsearch']; ?></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center"><a href="<?php echo $cms['tngpath']; ?>surnames.php" class="sidelink"><?php echo $text['mnulastnames']; ?></a></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div id="searchformblock">
-									<span class="small"><?php echo $text['firstname']; ?>:<br/>
-									<input type="text" name="myfirstname" class="searchbox"/><br/>
-									<img src="<?php echo $cms['tngpath']; ?>img/spacer.gif" alt="" width="1" height="4" class="noimgborder"/><br/><?php echo $text['lastname']; ?>:<br/>
-									<input type="text" name="mylastname" class="searchbox"/><br/>
-									<input type="hidden" name="mybool" value="AND"/>
+                      <form action="search.php" method="get" name="searchform" id="form1">
+                        <div id="searchblock">
+                          <div id="searchtitleblock">
+                            <span class="smalltitle"><?php echo $text['search']; ?></span>
+                            <table cellspacing="6" cellpadding="0">
+                              <tr>
+                                <td align="center"><a href="<?php echo $cms['tngpath']; ?>searchform.php" class="sidelink"><?php echo $text['mnuadvancedsearch']; ?></a></td>
+                              </tr>
+                              <tr>
+                                <td align="center"><a href="<?php echo $cms['tngpath']; ?>surnames.php" class="sidelink"><?php echo $text['mnulastnames']; ?></a></td>
+                              </tr>
+                            </table>
+                          </div>
+                          <div id="searchformblock">
+									<span class="small"><?php echo $text['firstname']; ?>:<br>
+									<input type="text" name="myfirstname" class="searchbox"><br>
+									<img src="<?php echo $cms['tngpath']; ?>img/spacer.gif" alt="" width="1" height="4" class="noimgborder"><br><?php echo $text['lastname']; ?>:<br>
+									<input type="text" name="mylastname" class="searchbox"><br>
+									<input type="hidden" name="mybool" value="AND">
 									</span>
-                                </div>
-                                <div id="searcharrowblock"><input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button.jpg" class="indexsubmit" style="border:none" alt=""/></div>
-                            </div>
-                        </form>
+                          </div>
+                          <div id="searcharrowblock"><input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button.jpg" class="indexsubmit" style="border:none" alt=""></div>
+                        </div>
+                      </form>
                     </div>
-                    <div style="display:inline">
-                      <?php
-                      //begin MAIN IMAGE (default: the large picture of the girl on the right side of the page)
-                      //Actual file name has been replaced with t2_mainimage variable, configurable from Template Settings. Default name of actual image is "mainphoto.jpg"
-                      //You can replace the t2_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-                      ?>
-                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327" style="max-height:460px" class="noimgborder rounded10" id="mainphoto"/><br/><br/>
-                      <?php
-                      //end MAIN IMAGE
-                      ?>
-                    </div>
-                    <div style="clear:left"></div>
+                  <div style="display:inline">
+                    <?php
+                    //begin MAIN IMAGE (default: the large picture of the girl on the right side of the page)
+                    //Actual file name has been replaced with t2_mainimage variable, configurable from Template Settings. Default name of actual image is "mainphoto.jpg"
+                    //You can replace the t2_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
+                    ?>
+                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327" style="max-height:460px" class="noimgborder rounded10" id="mainphoto"><br><br>
+                    <?php
+                    //end MAIN IMAGE
+                    ?>
+                  </div>
+                  <div style="clear:left"></div>
                 </div>
             </td>
         </tr>
     </table>
-    <div class="footer">
+  <div class="footer">
         <p><a href="changelanguage.php" class="footer"><?php echo $text['mnulanguage']; ?></a></p>
 
       <?php

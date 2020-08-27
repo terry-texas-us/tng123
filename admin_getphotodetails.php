@@ -31,7 +31,7 @@ header("Content-type:text/html; charset=" . $session_charset);
               $photohtouse = 50;
               $photowtouse = intval(50 * $photoinfo[0] / $photoinfo[1]);
             }
-            echo "<img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" border=\"0\" width=\"$photowtouse\" height=\"$photohtouse\" id=\"img_$ID\" alt=\"{$row['mtitle']}\" />";
+            echo "<img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" id=\"img_$ID\" alt=\"{$row['mtitle']}\">";
           } else {
             echo "&nbsp;";
           }
@@ -40,6 +40,6 @@ header("Content-type:text/html; charset=" . $session_charset);
           $truncated = strlen($row['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['notes'];
           ?>
         </td>
-        <td class="lightback normal" id="mwdetails"><?php echo "<u>" . xmlcharacters($row['description']) . "</u><br />" . $truncated; ?>&nbsp;</td>
+      <td class="lightback normal" id="mwdetails"><?php echo "<u>" . xmlcharacters($row['description']) . "</u><br>" . $truncated; ?>&nbsp;</td>
     </tr>
 </table>

@@ -42,12 +42,12 @@ function doTestSearch($instance, $pagenav) {
 
   $str = "<span class=\"normal\">\n";
   $str .= getFORM("browse_dna_tests", "get", "TestSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"testsearch\" value=\"$testsearch\" /> <input type=\"submit\" value=\"{$text['search']}\" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $str .= "<input type=\"text\" name=\"testsearch\" value=\"$testsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   if ($testsearch) {
     $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browse_dna_tests_noargs_url\">{$text['browsealltests']}</a>";
   }
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
   $str .= "</form></span>\n";
 
   return $str;
@@ -158,17 +158,17 @@ preparebookmark($logstring);
 tng_header($admtext['dna_tests'], $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $test_hdr; ?></h1><br clear="left"/>
+<h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $test_hdr; ?></h1><br clear="left">
 <?php
 echo "<div class=\"normal\">\n";
 ?>
 
 <form action="browse_dna_tests.php" method="post" name="form1" id="form1">
-    <table class="normal">
-        <tr>
-            <td>
-              <?php
-              if (!$requirelogin || !$treerestrict || !$assignedtree) {
+  <table class="normal">
+    <tr>
+      <td>
+        <?php
+        if (!$requirelogin || !$treerestrict || !$assignedtree) {
                 $wherestr = $allow_admin ? "" : "WHERE secret != 2";
                 $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
                 $treeresult = tng_query($query);
@@ -192,7 +192,7 @@ echo "<div class=\"normal\">\n";
                   }
                   $ret .= "</select>\n";
                   tng_free_result($treeresult);
-                  $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\"/>\n";
+                  $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                   echo $ret;
                 }
               }
@@ -224,7 +224,7 @@ echo "<div class=\"normal\">\n";
                   ?>
                 </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner3" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
                 <input type="submit" name="reset" value="<?php echo $text['tng_reset']; ?>" onclick="document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
-                <br/>
+              <br>
             </td>
         </tr>
     </table>
@@ -242,7 +242,7 @@ if ($totrows) {
 $pagenav = get_browseitems_nav($totrows, $browse_dna_tests_url . "testsearch=$testsearch&amp;offset", $maxsearchresults, $max_browse_test_pages);
 if ($pagenav || $testsearch) {
   echo doTestSearch(1, $pagenav);
-  echo "<br />\n";
+  echo "<br>\n";
 }
 
 $header = "";
@@ -334,7 +334,7 @@ if ($test_type == "mtDNA") {
       echo "<td valign=\"top\" class=\"databack\"><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";
       if ($allow_edit || $showtestnumbers) {
         if ($row['private_test']) {
-          $privtest = "<br />&nbsp;(" . $admtext['text_private'] . ")";
+          $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
         } else {
           $privtest = "";
         }
@@ -357,7 +357,7 @@ if ($test_type == "mtDNA") {
       }
       if ($row['test_type'] == "atDNA") {
         if ($row['ydna_haplogroup']) {
-          $haplogroup = "Y = " . $row['ydna_haplogroup'] . "<br />";
+          $haplogroup = "Y = " . $row['ydna_haplogroup'] . "<br>";
         }
         if ($row['mtdna_haplogroup']) {
           $haplogroup .= "mt = " . $row['mtdna_haplogroup'];
@@ -383,7 +383,7 @@ if ($test_type == "mtDNA") {
       if ($dbname) {
         //$dna_namestr .= " ({$row['personID']})";
         $vitalinfo = $dprights['both'] ? getBirthInfo($dprow) : "";
-        $dna_namestr = "<a href=\"$getperson_url" . "personID={$row['personID']}&tree={$row['gedcom']}\">$dna_namestr</a>$privacy<br />" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
+        $dna_namestr = "<a href=\"$getperson_url" . "personID={$row['personID']}&tree={$row['gedcom']}\">$dna_namestr</a>$privacy<br>" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
       } else {
         $dna_namestr = $person_name . $privacy;
       }
@@ -408,7 +408,7 @@ if ($test_type == "mtDNA") {
       while ($prow = tng_fetch_assoc($presult)) {
         if ($prow['personID'] != $row['personID'] || $prow['gedcom'] != $row['gedcom']) {
           if ($dnalinktext) {
-            $dnalinktext .= "<br/>\n";
+            $dnalinktext .= "<br>\n";
           }
           $righttree = checktree($prow['gedcom']);
           $rightbranch = $righttree ? checkbranch($prow['branch']) : false;
@@ -422,7 +422,7 @@ if ($test_type == "mtDNA") {
             $prow['allow_living'] = $rights['living'];
             $prow['allow_private'] = $rights['private'];
             $vitalinfo = $rights['both'] ? getBirthInfo($prow) : "";
-            $name .= "<a href=\"$getperson_url" . "personID={$prow['personID']}&amp;tree={$prow['gedcom']}\">" . getName($prow) . "</a><br />" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
+            $name .= "<a href=\"$getperson_url" . "personID={$prow['personID']}&amp;tree={$prow['gedcom']}\">" . getName($prow) . "</a><br>" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
           }
           $counter++;
           $dnalinktext .= $name;
@@ -431,8 +431,8 @@ if ($test_type == "mtDNA") {
       tng_free_result($presult);
 
       if ($dnalinktext) {
-        $more = "<a href=\"#\" onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" alt=\"{$text['more']}\" /></a> ";
-        $morediv = "<div style=\"display:none\" id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"/><strong>{$text['indlinked']}:</strong><br/>$dnalinktext</div>";
+        $more = "<a href=\"#\" onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
+        $morediv = "<div style=\"display:none\" id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
       } else {
         $more = $morediv = "";
       }
@@ -449,7 +449,7 @@ if ($test_type == "mtDNA") {
         $ancrow['allow_private'] = $dprights['private'];
         $vitalinfo = getBirthInfo($ancrow);
         $anc_namestr = getName($ancrow);
-        $mdanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MD_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>" . "<br />" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
+        $mdanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MD_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>" . "<br>" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
 
         tng_free_result($dna_anc_result);
       }
@@ -465,7 +465,7 @@ if ($test_type == "mtDNA") {
           $ancrow['allow_private'] = $dprights['private'];
           $vitalinfo = getBirthInfo($ancrow);
           $anc_namestr = getName($ancrow);
-          $mrcanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>" . "<br />" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
+          $mrcanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>" . "<br>" . str_replace(', ', '  -', trim(ltrim($vitalinfo, ",  ")));
           tng_free_result($dna_anc_result);
         } else {
           if ($row['MRC_ancestorID'][0] == "F") {
@@ -481,7 +481,7 @@ if ($test_type == "mtDNA") {
             $famrow['allow_private'] = $rights['private'];
 
             $famname = getFamilyName($famrow);
-            $fammarried = "<br />&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $famrow['marrdate'];
+            $fammarried = "<br>&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $famrow['marrdate'];
             $mrcanc_namestr = "<a href=\"$familygroup_url" . "familyID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$famname</a>" . $fammarried;
           }
         }
@@ -500,11 +500,11 @@ if ($test_type == "mtDNA") {
   ?>
 </form>
 </table>
-<br/>
+<br>
 </div>
 <?php
 if ($pagenav || $testsearch) {
-  echo doTestSearch(2, $pagenav) . "<br />\n";
+  echo doTestSearch(2, $pagenav) . "<br>\n";
 }
 
 tng_footer("");

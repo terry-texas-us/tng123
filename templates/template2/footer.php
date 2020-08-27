@@ -9,19 +9,19 @@
 
 
 <tr>
-    <td colspan="4" class="tablebottomedge"></td>
+  <td colspan="4" class="tablebottomedge"></td>
 </tr>
 <tr>
-    <td colspan="4">
-        <div class="footer">
-            <br/>
-          <?php
+  <td colspan="4">
+    <div class="footer">
+      <br>
+      <?php
           $flags['basicfooter'] = true;
           echo tng_footer($flags);
           ?>
-            <br/>
-        </div>
-    </td>
+      <br>
+    </div>
+  </td>
 </tr>
 </table>
 <!-- end footer.php for template 2 -->

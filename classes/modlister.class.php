@@ -59,7 +59,7 @@ class modlister extends modparser
 
   public $filter = self::F_ALL;
   public $fbox_checked = false;
-  public $modlist = array();
+  public $modlist = [];
 
   protected $parameters = 0;
   protected $num_errors = 0;
@@ -89,7 +89,7 @@ class modlister extends modparser
     }
 
     // APPROVED LIST OF MODFILES PASSED BY FILTER FOR DISPLAY
-    $selected_mods = array();
+    $selected_mods = [];
     if (!empty($this->modlist)) {
       foreach ($this->modlist as $modfile) {
         $selected_mods[] = pathinfo($modfile, PATHINFO_BASENAME);
@@ -125,7 +125,7 @@ class modlister extends modparser
         $cbchecked = $this->fbox_checked ? "checked" : "";
       }
       $lockit .= "
-            {$this->admtext['stayon']}&nbsp;&nbsp;<input type=\"checkbox\" id=\"stayon\" $cbchecked/>";
+            {$this->admtext['stayon']}&nbsp;&nbsp;<input type=\"checkbox\" id=\"stayon\" $cbchecked>";
 
       $selectboxes = "
          <button type=\"button\" id=\"selectAll\">
@@ -161,7 +161,7 @@ class modlister extends modparser
             <option $s4 value=" . self::F_BADCFG . ">{$this->admtext['cantinst']}</option>
             <option $s5 value=" . self::F_SELECT . ">{$this->admtext['choose']}</option>
          </select>
-         <input type=\"submit\" name=\"newlist\" value=\"{$this->admtext['go']}\" />
+         <input type=\"submit\" name=\"newlist\" value=\"{$this->admtext['go']}\">
          &nbsp;&nbsp;$lockit&nbsp;&nbsp;$selectboxes &nbsp;&nbsp; $btnline
          </div>
     </td>
@@ -184,19 +184,18 @@ class modlister extends modparser
       $sysmsg = "{$this->admtext['nomods']} - " . rtrim($this->modspath, "/");
     }
 
-
     // CONFIGURE COLUMN HEADER SORT ICONS
     $filesort = $namesort = '';
     if ($this->sortby == self::NAMECOL) {
       $filesort = "<a href=\"admin_modhandler.php?sort=" . self::FILECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\" /></a>";
+            width=\"15\" height=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
       $namesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border=\"0\" alt=\"\" />";
+            width=\"15\" height=\"8\" border=\"0\" alt=\"\">";
     } else {
       $namesort = "<a href=\"admin_modhandler.php?sort=" . self::NAMECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" eight=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\" /></a>";
+            width=\"15\" eight=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
       $filesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" eight=\"8\" border=\"0\" alt=\"\" />";
+            width=\"15\" eight=\"8\" border=\"0\" alt=\"\">";
     }
 
     /*******************************************************************
@@ -257,7 +256,7 @@ class modlister extends modparser
       $this->status_string = '';
       $this->description = $this->note = $this->private = $this->wikipage = $wikilink = '';
       $istarget = false;
-      $authors = array();
+      $authors = [];
 
       // statistics
       $this->num_required = 0;
@@ -276,14 +275,14 @@ class modlister extends modparser
       $this->init_status();
 
       // init data array for affected_files_listing() function
-      $aff_files = array(
-              'afchange' => array(),
-              'afcopy' => array(),
-              'afcopy2' => array(),
-              'afcreate' => array()
-      );
+      $aff_files = [
+          'afchange' => [],
+          'afcopy' => [],
+          'afcopy2' => [],
+          'afcreate' => []
+      ];
 
-        $tags = $this->parse($this->cfgpath);
+      $tags = $this->parse($this->cfgpath);
       $istarget = false;
 
       // PROCESS THE PARSE TABLE USING WHILE LOOP
@@ -294,17 +293,17 @@ class modlister extends modparser
          *************************************************************/
         // REQUIRED TAGS
         if (false === $this->find_tagname_value($tags,
-                        'name', 'name')) {
+                'name', 'name')) {
           $this->parse_error['line'] = '0';
           $this->parse_error['tag'] = '%name:';
           $this->parse_error['text'] = self::REQTAG; // index into admtext[]
         } elseif (false === $this->find_tagname_value($tags,
-                        'name', 'version')) {
+                'name', 'version')) {
           $this->parse_error['line'] = '0';
           $this->parse_error['tag'] = '%version:';
           $this->parse_error['text'] = self::REQTAG; // index into admtext[]
         } elseif (false === $this->find_tagname_value($tags,
-                        'name', 'description')) {
+                'name', 'description')) {
           $this->parse_error['line'] = '0';
           $this->parse_error['tag'] = '%description:';
           $this->parse_error['text'] = self::NOCOMPS; // index into admtext[]
@@ -334,9 +333,9 @@ class modlister extends modparser
               continue 2; // DO NOT CONTINUE PROCESSING THIS TAG
             case 'author':
               $authors[] = !empty($tags[$j]['arg2']) ?
-                      "<a href=\"{$tags[$j]['arg2']}\" target=\"_blank\">
+                  "<a href=\"{$tags[$j]['arg2']}\" target=\"_blank\">
                            {$tags[$j]['arg1']}</a>"
-                      : $tags[$j]['arg1'];
+                  : $tags[$j]['arg1'];
               $this->authors = $authors;
               continue 2; // DO NOT CONTINUE PROCESSING THIS TAG
             case 'desc':
@@ -382,7 +381,7 @@ class modlister extends modparser
 
             // SPECIAL NOTE ASSOCIATED WITH THIS TARGET?
             if (!empty($tags[$j]['arg3'])) {
-              $notestr = "<div class=\"target-note\">{$tags[$j]['arg3']}</div><br />";
+              $notestr = "<div class=\"target-note\">{$tags[$j]['arg3']}</div><br>";
             } else {
               $notestr = '';
             }
@@ -395,7 +394,7 @@ class modlister extends modparser
             // GET CODE FROM TARGET FILE INTO BUFFER FOR EXAMINATION
             // function increases global error count if unable to read
             $target_file_contents = $this->read_file_buffer(
-                    $tags[$j]['arg1'], $flag);
+                $tags[$j]['arg1'], $flag);
 
             // NOTE FILE RETRIEVAL ERRORS IF ANY
             if (is_numeric($target_file_contents)) {
@@ -484,9 +483,8 @@ class modlister extends modparser
             // SPECIAL NOTE ASSOCIATED WITH THIS LOCATION?
             $notestr = '';
 
-
             if (!empty($tags[$j]['arg3'])) {
-              $notestr = "<span class=\"location-note\">{$tags[$j]['arg3']}</span><br />";
+              $notestr = "<span class=\"location-note\">{$tags[$j]['arg3']}</span><br>";
             } else {
               $notestr = '';
             }
@@ -543,7 +541,7 @@ class modlister extends modparser
 
             // SET GLOBAL STATUS STRING FOR THIS LOCATION
             $this->validate_location($target_file_contents,
-                    $tngcode, $newcode, $optag, $statstring);
+                $tngcode, $newcode, $optag, $statstring);
             continue; // TO NEXT TAG
           } // location
           /**********************************************************
@@ -594,22 +592,21 @@ class modlister extends modparser
       $status = '';
       $error = '';
 
-
 //Debug statistics
       /*
-      echo __LINE__,'<br />';
-      echo 'num_errors = ', $this->num_errors,'<br />';
-      echo 'num_required = ', $this->num_required,'<br />';
-      echo 'num_installed = ', $this->num_installed,'<br />';
-      echo 'mods_required = ', $this->mods_required,'<br />';
-      echo 'mods_installed = ', $this->mods_installed,'<br />';
-      echo 'newdirs_required = ', $this->newdirs_required,'<br />';
-      echo 'newdirs_installed = ', $this->newdirs_installed,'<br />';
-      echo 'copies_required = ', $this->copies_required,'<br />';
-      echo 'copies_installed = ', $this->copies_installed,'<br />';
-      echo 'newfiles_required = ', $this->newfiles_required,'<br />';
-      echo 'newfiles_installed = ', $this->newfiles_installed,'<br />';
-      echo 'provisional_errors = ', $this->provisional_errors,'<br />';
+      echo __LINE__,'<br>';
+      echo 'num_errors = ', $this->num_errors,'<br>';
+      echo 'num_required = ', $this->num_required,'<br>';
+      echo 'num_installed = ', $this->num_installed,'<br>';
+      echo 'mods_required = ', $this->mods_required,'<br>';
+      echo 'mods_installed = ', $this->mods_installed,'<br>';
+      echo 'newdirs_required = ', $this->newdirs_required,'<br>';
+      echo 'newdirs_installed = ', $this->newdirs_installed,'<br>';
+      echo 'copies_required = ', $this->copies_required,'<br>';
+      echo 'copies_installed = ', $this->copies_installed,'<br>';
+      echo 'newfiles_required = ', $this->newfiles_required,'<br>';
+      echo 'newfiles_installed = ', $this->newfiles_installed,'<br>';
+      echo 'provisional_errors = ', $this->provisional_errors,'<br>';
       exit;
       */
 
@@ -619,7 +616,7 @@ class modlister extends modparser
         $this->num_errors++;
         $this->description = $this->admtext['cannotinstall'] . ". " . $this->admtext['needmodupdate'] . '.';
         $error .= "{$this->admtext['line']} {$this->parse_error['line']}: {$this->parse_error['tag']} <span class=\"msgerror\">
-               {$this->admtext[$this->parse_error['text']]}</span><br />";
+               {$this->admtext[$this->parse_error['text']]}</span><br>";
         $this->set_status($error);
         $status_header = self::CANTINST;
         $error = '';
@@ -636,8 +633,8 @@ class modlister extends modparser
 
         // Mod installed
         if ($this->num_installed > 0 && (
-                        $this->num_installed < $this->num_required ||
-                        $this->provisional_errors > 0)) {
+                $this->num_installed < $this->num_required ||
+                $this->provisional_errors > 0)) {
           $this->num_errors += $this->provisional_errors;
           $status_header = self::PARTINST;
         } // INSTALLED OR OK TO INSTALL - NO ERRORS
@@ -690,15 +687,15 @@ class modlister extends modparser
       // SET STYLES PER STATUS TYPE
       if ($status_header == self::PARTINST) {
         $status = str_replace(
-                array("NINST", "NCOPY", "NCREATE"),
-                array("hilight", "hilight", "hilight"),
-                $status
+            ["NINST", "NCOPY", "NCREATE"],
+            ["hilight", "hilight", "hilight"],
+            $status
         );
       } else {
         $status = str_replace(
-                array("NINST", "NCOPY", "NCREATE"),
-                array("none", "none", "none"),
-                $status
+            ["NINST", "NCOPY", "NCREATE"],
+            ["none", "none", "none"],
+            $status
         );
       }
 
@@ -713,7 +710,7 @@ class modlister extends modparser
         foreach ($authors as $author) {
           $author_str .= $author . ' & ';
         }
-        $author_str = rtrim($author_str, ' &') . '<br />';
+        $author_str = rtrim($author_str, ' &') . '<br>';
       }
 
       // CONSTRUCT THE FOLDING STATUS DISPLAY
@@ -747,8 +744,8 @@ class modlister extends modparser
         echo "
 		<td class=\"mmcell $dbclass\">
          <div class=\"mminner center checkpad\">
-            <input class=\"sbox\" type=\"checkbox\" name=\"mods[$ix][selected]\" value=\"1\" />
-            <input type=\"hidden\" name=\"mods[$ix][file]\" value=\"$this->cfgfile\" target=\"_blank\" />
+            <input class=\"sbox\" type=\"checkbox\" name=\"mods[$ix][selected]\" value=\"1\">
+            <input type=\"hidden\" name=\"mods[$ix][file]\" value=\"$this->cfgfile\" target=\"_blank\">
          </div>
       </td>";
         $ix++;
@@ -804,7 +801,7 @@ class modlister extends modparser
    </tr><!--databack-->
    </table><!--mmlist-->
 </form>";
-    return isset($tags) ? $tags : array();
+    return isset($tags) ? $tags : [];
   } // FUNCTION LIST MODS
 
   /**********************************************************************
@@ -815,7 +812,7 @@ class modlister extends modparser
   }
 
   public function set_modfile($modfile) {
-    $this->modlist = array($modfile);
+    $this->modlist = [$modfile];
   }
 
   public function get_last_status() {
@@ -1194,16 +1191,16 @@ class modlister extends modparser
       </table>";
 
     }
-    // add <br /> tag to end of $string before finalizing it
+    // add <br> tag to end of $string before finalizing it
     // code that closed the status line div is now above the copyfile source path table
     if (substr($string, 0, 4) != '<div') {
-      $string .= '<br />';
+      $string .= '<br>';
     }
     $this->status_string .= $string;
   }
 
   protected function get_status() {
-    $retstr = "<br style=\"line-height:6px\" /><strong><i><div style=\"padding-bottom:3px;border-bottom:1px solid #000;\">flags:<br />@&nbsp;&nbsp;{$this->admtext['optional']}<br />^&nbsp;&nbsp;{$this->admtext['provisional']}<br />~&nbsp;&nbsp;protected</div></i></strong><br style=\"line-height:6px\" />";
+    $retstr = "<br style=\"line-height:6px\"><strong><i><div style=\"padding-bottom:3px;border-bottom:1px solid #000;\">flags:<br>@&nbsp;&nbsp;{$this->admtext['optional']}<br>^&nbsp;&nbsp;{$this->admtext['provisional']}<br>~&nbsp;&nbsp;protected</div></i></strong><br style=\"line-height:6px\">";
     return $retstr . $this->status_string;
   }
 
@@ -1216,8 +1213,8 @@ class modlister extends modparser
     $btn_install = "<button class=\"msgapproved\" type=\"button\" onclick='window.location.href=\"?a=" . self::INSTALL . "&m=$this->cfgfile\"'>{$this->admtext['install']}</button>";
 
     $confirm = empty($this->delete_support) ?
-            $this->admtext['confdelmod1'] :
-            $this->admtext['confdelmod'];
+        $this->admtext['confdelmod1'] :
+        $this->admtext['confdelmod'];
 
     // javascript messages must contain a single quote character
     $confirm = str_replace("'", "\'", $confirm);
@@ -1293,7 +1290,7 @@ class modlister extends modparser
     }
 
     if ($this->num_required > 0) {
-      $summary = "<hr />
+      $summary = "<hr>
                <ul class=\"results fieldnameback fieldname\">
                   <li>{$this->admtext['modsreq']}: $this->mods_required; {$this->admtext['modified']}: $this->mods_installed</li>
                   <li>{$this->admtext['copiesreq']}: $this->copies_required; {$this->admtext['copied']}: $this->copies_installed</li>
@@ -1305,7 +1302,6 @@ class modlister extends modparser
       $summary = '';
     }
 
-
     return "<div class=\"$style\">
             <span class=\"modlink closed\" id=\"link{$id}\">
                $status_header
@@ -1313,7 +1309,7 @@ class modlister extends modparser
          </div>
          <div class=\"moddiv $style\" id=\"link{$id}div\" style=\"display:none;padding:5px;\">
             $buttons
-            <hr />
+            <hr>
             $author_str
             $this->description
             $error
@@ -1327,7 +1323,7 @@ class modlister extends modparser
     $retstr = "
          <div class=\"descpop1 nw imgcenter\" title=\"\">
 
-            <img border=\"0\" src=\"img/tng_more.gif\" width=\"16\" alt=\"\" />
+            <img src=\"img/tng_more.gif\" width=\"16\" alt=\"\">
 
             <div>
                <table class=\"mmpopuptable\">
@@ -1372,7 +1368,7 @@ class modlister extends modparser
         continue;
       }
       $retstr .= "
-                        $listing<br />";
+                        $listing<br>";
     }
     $retstr .= "
                      </td>

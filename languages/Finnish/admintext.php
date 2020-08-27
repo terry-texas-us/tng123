@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Etuliite";
     $admtext['chkdel'] = "Rastita tyhj� ruutu poistaaksesi vasemmanpuoleisen kohteen";
     //added in 9.0.0
-    $admtext['choosedef'] = "Valitse<br/>oletus<br/>kuva"; //has to fit in a small box
+    $admtext['choosedef'] = "Valitse<br>oletus<br>kuva"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Konfirmaatio aika (LDS)";
     $admtext['confplace'] = "Konfirmaatio paikka (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Pakollinen. T�m�n tulisi vastata tiedoston nime� ja sijaintia <em>kuvat-kansiossa</em> tiedoston siirron j�lkeen. Esim. jos kuvat-kansiosi nimi on <em>kuvat</em> ja haluat tiedoston nimen olevan <em>kuvani.jpg</em> ja sijaitsevan alihakemistossa nimelt� <em>uudetkuvat</em>, sy�t� <em>uudetkuvat/kuvani.jpg</em> t�h�n kent��n.";
     $admtext['leaveblankphoto'] = "J�t� t�m� kentt� tyhj�ksi, jos kuva on jo ladattu kuvahakemistoosi.";
     $admtext['thumbconflicts'] = "Peukalokuvia ei luotu virheellisen polun, oikeuksien tai tiedostonimen vuoksi.";
-    $admtext['showmap'] = "N�yt� hautausmaan kartta ja valokuva aina kun t�m� kuva n�ytet��n";
-    $admtext['bodytext'] = "<strong>TAI</strong><br/>Leip�teksti";
-    $admtext['usenl'] = "Muuta rivinvaihdot html-muotoon";
+  $admtext['showmap'] = "N�yt� hautausmaan kartta ja valokuva aina kun t�m� kuva n�ytet��n";
+  $admtext['bodytext'] = "<strong>TAI</strong><br>Leip�teksti";
+  $admtext['usenl'] = "Muuta rivinvaihdot html-muotoon";
     $admtext['newwin'] = "Avaa uuteen ikkunaan";
     $admtext['modifymedia'] = "Muokkaa mediatiedostoa";
     $admtext['addnewmedia'] = "Lis�� uusi mediatiedosto";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Jos syntym�p�iv�� ei ole annettu, arvaa se";
     $admtext['persliving'] = "Henkil� on elossa";
     $admtext['persdead'] = "Henkil� on kuollut";
-    $admtext['nodeathdate'] = "Jos kuolinp�iv�m��r�� ei ole annettu,<br />oleta kuolleeksi, jos vanhempi kuin";
+    $admtext['nodeathdate'] = "Jos kuolinp�iv�m��r�� ei ole annettu,<br>oleta kuolleeksi, jos vanhempi kuin";
     $admtext['pedconfigsettings'] = "Sukupuu asetukset";
     $admtext['usepopups'] = "Oletusn�ytt�";
     $admtext['maxpedgens'] = "Sukupuun maksimi sukupolvet";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Yhdist� paikat";
     $admtext['findmerge'] = "Etsi mahdollisesti yhdistett�v�t paikat";
     $admtext['selectplacemerge'] = "Valitse yhdistett�v�t paikat";
-    $admtext['mcol1'] = "Yhdist�<br/>n�m� tiedot<br/>(poista)";
-    $admtext['mcol2'] = "n�ihin<br/>tietoihin<br/>(pid�)";
+    $admtext['mcol1'] = "Yhdist�<br>n�m� tiedot<br>(poista)";
+    $admtext['mcol2'] = "n�ihin<br>tietoihin<br>(pid�)";
     $admtext['pmsucc'] = "Paikkojen yhdist�minen onnistui";
     $admtext['nomerge'] = "Ei yhdistett�vi� paikkoja";
     $admtext['enterkeep'] = "Valitse kohde, johon yhdistet��n";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Valitse tapahtuma ja toimenpide";
     $admtext['suggested'] = "Ehdotettu";
-    $admtext['usernotes'] = "Ehdotettujen<br />muutoksien tiedot<br />(ei tallenneta)";
+    $admtext['usernotes'] = "Ehdotettujen<br>muutoksien tiedot<br>(ei tallenneta)";
     $admtext['postdate'] = "L�hetetty";
     $admtext['savedel'] = "Tallenna ja poista";
     $admtext['postpone'] = "Lykk��";

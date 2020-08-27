@@ -107,7 +107,7 @@ if ($table == "struct") {
       if ($dothistable) {
         $msg = restore($table);
         if ($msg) {
-          $message = $message ? $message . "<br />" . $msg : $msg;
+          $message = $message ? $message . "<br>" . $msg : $msg;
         }
       }
     }

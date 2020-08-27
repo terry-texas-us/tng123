@@ -55,24 +55,24 @@ foreach ($events as $event)
 			</span>
                 </td>
             </tr>
-            <tr>
-                <td><?php echo $admtext['eventdate']; ?>:</td>
-                <td><input type="text" name="eventdate" onBlur="checkDate(this);"> <span class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['eventplace']; ?>:</td>
-                <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                    <a href="#" onclick="return openFindPlaceForm('eventplace');"><img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" <?php echo $dims; ?> /></a></td>
-            </tr>
-            <tr>
-                <td valign="top"><?php echo $admtext['detail']; ?>:</td>
-                <td><textarea name="info" rows="4" cols="40"></textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong><?php echo $admtext['dupfor']; ?>:</strong></td>
-            </tr>
-            <tr>
-                <td><?php echo $admtext['id']; ?>:</td>
+          <tr>
+            <td><?php echo $admtext['eventdate']; ?>:</td>
+            <td><input type="text" name="eventdate" onBlur="checkDate(this);"> <span class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
+          </tr>
+          <tr>
+            <td><?php echo $admtext['eventplace']; ?>:</td>
+            <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+              <a href="#" onclick="return openFindPlaceForm('eventplace');"><img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" <?php echo $dims; ?>></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><?php echo $admtext['detail']; ?>:</td>
+            <td><textarea name="info" rows="4" cols="40"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong><?php echo $admtext['dupfor']; ?>:</strong></td>
+          </tr>
+          <tr>
+            <td><?php echo $admtext['id']; ?>:</td>
                 <td>
                     <table class="normal" cellpadding="0">
                         <tr>
@@ -88,11 +88,11 @@ foreach ($events as $event)
             </tr>
         </table>
       <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
-        <br/>
-        <div id="more" style="display:none">
-            <table border="0" cellpadding="2" class="normal">
-                <tr>
-                    <td><?php echo $admtext['age']; ?>:</td>
+      <br>
+      <div id="more" style="display:none">
+        <table border="0" cellpadding="2" class="normal">
+          <tr>
+            <td><?php echo $admtext['age']; ?>:</td>
                     <td><input type="text" name="age" size="12" maxlength="12"></td>
                 </tr>
                 <tr>
@@ -137,15 +137,15 @@ foreach ($events as $event)
                 </tr>
                 <tr>
                     <td><?php echo $admtext['website']; ?>:</td>
-                    <td><input type="text" name="www" size="50"></td>
+                  <td><input type="text" name="www" size="50"></td>
                 </tr>
-            </table>
-            <br/>
-        </div>
-        <input type="hidden" name="persfamID" value="<?php echo $persfamID; ?>">
+        </table>
+        <br>
+      </div>
+      <input type="hidden" name="persfamID" value="<?php echo $persfamID; ?>">
         <input type="hidden" name="tree" value="<?php echo $tree; ?>">
         <input type="submit" class="btn" name="submit" value="<?php echo $admtext['save']; ?>">
         <input type="button" class="btn" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();">
     </form>
-    <br/>
+  <br>
 </div>

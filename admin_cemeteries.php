@@ -130,9 +130,9 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findcemetery" value="1"><input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="findcemetery" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
               <?php
               $numrowsplus = $numrows + $offset;
               if (!$numrowsplus) {
@@ -245,13 +245,13 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                           }
                           if ($row['longitude']) {
                             if ($geo) {
-                              $geo .= "<br />";
+                              $geo .= "<br>";
                             }
                             $geo .= "&nbsp;{$admtext['longitude']}: " . number_format($row['longitude'], 3);
                           }
                           if ($row['zoom']) {
                             if ($geo) {
-                              $geo .= "<br />";
+                              $geo .= "<br>";
                             }
                             $geo .= "&nbsp;{$admtext['zoom']}: " . $row['zoom'];
                           }

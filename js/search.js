@@ -37,7 +37,7 @@ function showPersonPreview(personID, tree, event) {
         entitystr += "_" + event;
     jQuery('#prev' + entitystr).css('visibility', 'visible');
     if (!jQuery('#prev' + entitystr).html()) {
-        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0px" alt="" /> ' + loadingmsg + '</div>');
+        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0px" alt="" > ' + loadingmsg + '</div>');
 
         var params = {personID: personID, tree: tree};
         jQuery.ajax({

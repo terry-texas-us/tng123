@@ -418,7 +418,7 @@ var nicEditorInstance = bkClass.extend({
     }, init: function () {
         this.elm.setAttribute("contentEditable", "true");
         if (this.getContent() == "") {
-            this.setContent("<br />")
+            this.setContent("<br>")
         }
         this.instanceDoc = document.defaultView;
         this.elm.addEvent("mousedown", this.selected.closureListener(this)).addEvent("keypress", this.keyDown.closureListener(this)).addEvent("focus", this.selected.closure(this)).addEvent("blur", this.blur.closure(this)).addEvent("keyup", this.selected.closure(this));
@@ -520,9 +520,9 @@ var nicEditorInstance = bkClass.extend({
 var nicEditorIFrameInstance = nicEditorInstance.extend({
     savedStyles: [], init: function () {
         var B = this.elm.innerHTML.replace(/^\s+|\s+$/g, "");
-        this.elm.innerHTML = "";
-        (!B) ? B = "<br />" : B;
-        this.initialContent = B;
+    this.elm.innerHTML = "";
+    (!B) ? B = "<br>" : B;
+    this.initialContent = B;
         this.elmFrame = new bkElement("iframe").setAttributes({src: "javascript:;", frameBorder: 0, allowTransparency: "true", scrolling: "no"}).setStyle({height: "100px", width: "100%"}).addClass("frame").appendTo(this.elm);
         if (this.copyElm) {
             this.elmFrame.setStyle({width: (this.elm.offsetWidth - 4) + "px"})

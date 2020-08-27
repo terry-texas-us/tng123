@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Aggiunta";
     $admtext['enternew'] = "Entrare nuovo";
     $admtext['pleaseenter'] = "Volete entrare uno ";
-    $admtext['netscapereload'] = "Utenti di netscape: <br />Dovete attualizzare la pagina cimiteri per pubblicare il nuovo";
+    $admtext['netscapereload'] = "Utenti di netscape: <br>Dovete attualizzare la pagina cimiteri per pubblicare il nuovo";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Importazione GEDCOM... <br />(pu� prendere molti minuti)";
+    $admtext['importinggedcom'] = "Importazione GEDCOM... <br>(pu� prendere molti minuti)";
     $admtext['ifimportfails'] = "Se lo importazione fallisce di terminare,";
     $admtext['opened'] = "Aperto...";
     $admtext['toresume'] = "per riprendere lo importazione";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Per i depositi...";
     $admtext['noevtypes'] = "Non esistono tipi di eventi.";
     $admtext['DESI'] = "Interesse del Discendente";
-    $admtext['allnone'] = "Fornisca un messaggio dell'esposizione per ogni lingua,<br />o lasci tutti in bianco ed entri in un messaggio dell'esposizione qui sopra.";
+    $admtext['allnone'] = "Fornisca un messaggio dell'esposizione per ogni lingua,<br>o lasci tutti in bianco ed entri in un messaggio dell'esposizione qui sopra.";
     $admtext['assocwith'] = "Connesso con";
     $admtext['BAPM'] = "Battesimo";
     $admtext['umps'] = "IL vostro file di GEDCOM pu� essere pi� grande del formato massimo permesso tramite la vostra installazione di PHP. Potete chiedere al vostro fornitore di aumentare 'upload_max_filesize' il valore, o voi pu� copiare il vostro file al 'gedcom' al dispositivo di piegatura sul vostro sito ed importarlo da l� preferibilmente.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefisso";
     $admtext['chkdel'] = "Selezionare la casella vuota per eliminare l'elemento a sinistra";
     //added in 9.0.0
-    $admtext['choosedef'] = "Scegli <br/> predefinita <br/> foto"; //has to fit in a small box
+    $admtext['choosedef'] = "Scegli <br> predefinita <br> foto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Confirmation Date (LDS)";
     $admtext['confplace'] = "Confirmation Place (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Richiesti. Questo deve corrispondere al nome e posizione del vostro archivio nella cartella fotografie una volta l'archivio caricato. Esempio: se la vostra cartella fotografie si chiama fotografie, e che il vostro archivio deve chiamarsi miafoto.jpg ed andare in una sotto-cartella di fotografie nominata nuovfoto, dovrete afferrare nouvfoto/miafoto.jpg in questo campo.";
     $admtext['leaveblankphoto'] = "Lasciate questo campo vuoto se l'archivio � stato gi� caricato nella vostra cartella fotografie.";
     $admtext['thumbconflicts'] = "Le etichette non sono state create, a causa di problemi di cammino, di permessi o di nome d'archivio";
-    $admtext['showmap'] = "Pubblicare il piano";
-    $admtext['bodytext'] = "<strong>O</strong><br/>Testo Principale";
-    $admtext['usenl'] = "Convertire i ritorni alla linea in visualizzazione HTML";
+  $admtext['showmap'] = "Pubblicare il piano";
+  $admtext['bodytext'] = "<strong>O</strong><br>Testo Principale";
+  $admtext['usenl'] = "Convertire i ritorni alla linea in visualizzazione HTML";
     $admtext['newwin'] = "Aprite in una nuova finestra";
     $admtext['modifymedia'] = "Modifichi I Mezzi Attuali";
     $admtext['addnewmedia'] = "Aggiunga I Nuovi Mezzi";

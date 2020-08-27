@@ -10,7 +10,7 @@ et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit 
 $tmp['t1_headimgplustitle'] = "img/header-title.gif";
 $tmp['t2_mainimage'] = "img/mainphoto.jpg";
 $tmp['t2_titlechoice'] = "text";
-$tmp['t2_maintitle'] = "Our Family<br />Genealogy Pages";
+$tmp['t2_maintitle'] = "Our Family<br>Genealogy Pages";
 $tmp['t2_titleimage'] = "img/homeheader.gif";
 $tmp['t2_mainpara'] = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
 volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
@@ -78,18 +78,18 @@ $tmp['t6_searchpara'] = "To search the genealogy database, enter a name below. Y
 $tmp['t6_fhpara'] = "You can use this section to link to some of your more interesting family histories.";
 $tmp['t6_hisside'] = "His Side";
 $tmp['t6_herside'] = "Her Side";
-$tmp['t6_fhlinkshis'] = "<a href=\"extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1\">Individual 1</a><br/>
-<a href=\"extrastree.php?personID=I2&amp;tree=T0001&amp;showall=1\">Individual 2</a><br/>";
-$tmp['t6_fhlinkshers'] = "<a href=\"extrastree.php?personID=I3&amp;tree=T0001&amp;showall=1\">Individual 3</a><br/>
-<a href=\"extrastree.php?personID=I4&amp;tree=T0001&amp;showall=1\">Individual 4</a><br/>";
+$tmp['t6_fhlinkshis'] = "<a href=\"extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1\">Individual 1</a><br>
+<a href=\"extrastree.php?personID=I2&amp;tree=T0001&amp;showall=1\">Individual 2</a><br>";
+$tmp['t6_fhlinkshers'] = "<a href=\"extrastree.php?personID=I3&amp;tree=T0001&amp;showall=1\">Individual 3</a><br>
+<a href=\"extrastree.php?personID=I4&amp;tree=T0001&amp;showall=1\">Individual 4</a><br>";
 $tmp['t6_mwpara'] = "Use this section to display information about individuals you are actively researching.";
 $tmp['t6_respara'] = "List resources here that you would like to share with others.";
-$tmp['t6_reslinks'] = "<a href=\"http://www.ancestry.com\" target=\"_blank\">Ancestry.com</a><br />
-<a href=\"http://www.fold3.com\" target=\"_blank\">Fold3.com</a><br />
+$tmp['t6_reslinks'] = "<a href=\"http://www.ancestry.com\" target=\"_blank\">Ancestry.com</a><br>
+<a href=\"http://www.fold3.com\" target=\"_blank\">Fold3.com</a><br>
 <a href=\"http://lythgoes.net/genealogy/software.php\" target=\"_blank\">TNG Software</a>";
 $tmp['t7_mainimage'] = "img/bigphoto.jpg";
 $tmp['t7_titlechoice'] = "image";
-$tmp['t7_maintitle'] = "Our Family<br />History";
+$tmp['t7_maintitle'] = "Our Family<br>History";
 $tmp['t7_titleimg'] = "img/logo.jpg";
 $tmp['t7_photocaption'] = "Mt. Pleasant, Utah, about 1915";
 $tmp['t7_headline'] = "Main Feature";
@@ -100,8 +100,8 @@ et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit 
 $tmp['t7_newstext'] = "This section can be used for brief news announcements";
 $tmp['t8_headimg'] = "img/titletop.jpg";
 $tmp['t8_mainpara'] = "This is where you can welcome a user to your site.  You might also give them some basic information on navigating and links to any help or FAQ pages you may have.";
-$tmp['t8_latestnews'] = "<b>5 Jan 2009</b> - Added a whole new look to my site.<br/><br/>
-<b>25 Dec 2008</b> - Put years and years of work into my family research.<br/><br/>";
+$tmp['t8_latestnews'] = "<b>5 Jan 2009</b> - Added a whole new look to my site.<br><br>
+<b>25 Dec 2008</b> - Put years and years of work into my family research.<br><br>";
 $tmp['t8_featurespara'] = "<p><a href=\"mostwanted.php\">Most Wanted</a> - I am looking for information about these ancestors.  Can you help?</p>
 <p><a href=\"whatsnew.php\">What's New</a> - View the latest updates made to the site.</p>";
 $tmp['t8_menutitle'] = "Site Menu";

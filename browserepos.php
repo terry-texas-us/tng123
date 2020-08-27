@@ -14,12 +14,12 @@ function doRepoSearch($instance, $pagenav) {
 
   $str = "<span class=\"normal\">\n";
   $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"reposearch\" value=\"$reposearch\" /> <input type=\"submit\" value=\"{$text['search']}\" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $str .= "<input type=\"text\" name=\"reposearch\" value=\"$reposearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   if ($reposearch) {
     $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browserepos_noargs_url\">{$text['browseallrepos']}</a>";
   }
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
   $str .= "</form></span>\n";
 
   return $str;
@@ -79,11 +79,11 @@ preparebookmark($logstring);
 tng_header($text['repositories'], $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h1><br clear="left"/>
+<h1 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h1><br clear="left">
 <?php
 echo "<div class=\"normal\">\n";
 
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'browserepos', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browserepos', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
   echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
@@ -92,7 +92,7 @@ if ($totrows) {
 $pagenav = get_browseitems_nav($totrows, $browserepos_url . "reposearch=$reposearch&amp;offset", $maxsearchresults, $max_browserepo_pages);
 if ($pagenav || $reposearch) {
   echo doRepoSearch(1, $pagenav);
-  echo "<br />\n";
+  echo "<br>\n";
 }
 
 $header = "";
@@ -136,11 +136,11 @@ while ($row = tng_fetch_assoc($result)) {
 tng_free_result($result);
 ?>
 </table>
-<br/>
+<br>
 </div>
 <?php
 if ($pagenav || $reposearch) {
-  echo doRepoSearch(2, $pagenav) . "<br />\n";
+  echo doRepoSearch(2, $pagenav) . "<br>\n";
 }
 
 tng_footer("");

@@ -81,13 +81,13 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
   //show photo & name
   $indtext .= "<tr><td colspan=\"$totcols\">";
-  $indtext .= "<span class=\"normal\">$label | $sex</span><br/><span class=\"subhead\"><b>";
+  $indtext .= "<span class=\"normal\">$label | $sex</span><br><span class=\"subhead\"><b>";
   if ($ind['haskids']) {
     $indtext .= "> ";
   }
   $indtext .= "$namestr</b>";
 
-  $indtext .= "<br/></span>\n";
+  $indtext .= "<br></span>\n";
   $indtext .= "</td></tr>\n";
 
   $event = array();

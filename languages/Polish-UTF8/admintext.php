@@ -63,9 +63,9 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informacje o istniejących cmentarzach";
     $admtext['newceminfo'] = "Informacje o nowym cmentarzu";
     $admtext['maptoupload'] = "Zdjęcie cmentarza do załadowania";
-    $admtext['mapfilenamefolder'] = "Nazwa pliku cmentarza<br/>w folderze Cmentarze";
+    $admtext['mapfilenamefolder'] = "Nazwa pliku cmentarza<br>w folderze Cmentarze";
     $admtext['ifmapuploaded'] = "Jeśli ten plik znajduje się już w folderze cmentarze, pozostaw to pole wolne.";
-    $admtext['requiredmap'] = "Wymagane jeśli używasz mapy.<br/> Powinno odpowiadać nazwie i lokalizacji Twojego pliku w folderze <em><font color=\"#0000ff\" size=\"2\"> nagrobków </font></em>, jeśli plik  jest załadowany. <br/>Na przykład: jeśli Twój folder nagrobków nazwany jest <em><font color=\"#0000ff\" size=\"2\">nagrobki</font> </em> i chcesz, by Twój plik został nazwany <b><em><font color=\"#ff00ff\" size=\"2\"> mapa.jpg</font> </em></b> <br/>i miał zostać wprowadzony do podfoldera <font color=\"#0000ff\" size=\"2\">nagrobków</font> nazwanego <em><font color=\"#ff00ff\" size=\"2\"> <b>mymaps</b></font></em>,<br/> wpisz w tym polu <b><em><font color=\"#ff00ff\" size=\"2\"> mymaps/mapa.jpg</font> </em></b>.";
+    $admtext['requiredmap'] = "Wymagane jeśli używasz mapy.<br> Powinno odpowiadać nazwie i lokalizacji Twojego pliku w folderze <em><font color=\"#0000ff\" size=\"2\"> nagrobków </font></em>, jeśli plik  jest załadowany. <br>Na przykład: jeśli Twój folder nagrobków nazwany jest <em><font color=\"#0000ff\" size=\"2\">nagrobki</font> </em> i chcesz, by Twój plik został nazwany <b><em><font color=\"#ff00ff\" size=\"2\"> mapa.jpg</font> </em></b> <br>i miał zostać wprowadzony do podfoldera <font color=\"#0000ff\" size=\"2\">nagrobków</font> nazwanego <em><font color=\"#ff00ff\" size=\"2\"> <b>mymaps</b></font></em>,<br> wpisz w tym polu <b><em><font color=\"#ff00ff\" size=\"2\"> mymaps/mapa.jpg</font> </em></b>.";
     //added in 8.0.0
     $admtext['linkplace'] = "Miejsce linkowane";
     $admtext['fillplace'] = "Wypełnij Miejsce";
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Dodano";
     $admtext['enternew'] = "Podaj nowe";
     $admtext['pleaseenter'] = "Podaj ";
-    $admtext['netscapereload'] = "Użytkownicy Netscape : <br/>musisz załadować stronę cmentarze na nowo";
+    $admtext['netscapereload'] = "Użytkownicy Netscape : <br>musisz załadować stronę cmentarze na nowo";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Import GEDCOM-u...<br/>(może potrwać kilka minut)";
+    $admtext['importinggedcom'] = "Import GEDCOM-u...<br>(może potrwać kilka minut)";
     $admtext['ifimportfails'] = "Jeśli nie można zakończyć importu,";
     $admtext['opened'] = "otwarty...";
     $admtext['toresume'] = "aby wznowić import";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Do archiwum...";
     $admtext['noevtypes'] = "Brak rodzajów wydarzeń.";
     $admtext['DESI'] = "Procent potomków";
-    $admtext['allnone'] = "Wpisz w okienku hasło dla danego języka,<br />albo zostaw puste i przejdź do okienka powyżej.";
+    $admtext['allnone'] = "Wpisz w okienku hasło dla danego języka,<br>albo zostaw puste i przejdź do okienka powyżej.";
     $admtext['assocwith'] = "Powiązane z";
     $admtext['BAPM'] = "Chrzest kościelny";
     $admtext['umps'] = "Twój plik GEDCOM może być większy niż pozwala na to Twoja instalacja PHP. Możesz poprosić Twojego operatora o zwiększenie wartości  upload_max_filesize, lub skopiować Twój plik do foldera gedcom na serwerze i importować to stamtąd.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Przedrostek";
     $admtext['chkdel'] = "Zaznacz to pole aby usunąć pozycję po lewej";
     //added in 9.0.0
-    $admtext['choosedef'] = "Wybierz<br/>domyślne<br/>zdjęcie"; //has to fit in a small box
+    $admtext['choosedef'] = "Wybierz<br>domyślne<br>zdjęcie"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Data konfirmacji (LDS)";
     $admtext['confplace'] = "Miejsce konfirmacji (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Twórz miniaturki";
     $admtext['genthumbsdesc'] = "Automatycznie twórz brakujące miniaturki.";
     $admtext['thumbsgenerated'] = "Miniaturki utworzone";
-    $admtext['makedefault'] = "Jako standard";
-    $admtext['filewithinhs'] = "Nazwa zdjęcia w folderze Nagrobki <br/>(folder podrzędny i nazwa pliku)";
-    $admtext['recsupdated'] = "Zapisy zaktualizowane";
+  $admtext['makedefault'] = "Jako standard";
+  $admtext['filewithinhs'] = "Nazwa zdjęcia w folderze Nagrobki <br>(folder podrzędny i nazwa pliku)";
+  $admtext['recsupdated'] = "Zapisy zaktualizowane";
     $admtext['removedef'] = "Usuń zdjęcie standardowe";
     $admtext['numlinkhs'] = "Liczba osób, które zostaną połączone z tym nagrobkiem";
     $admtext['sortheadstones'] = "Sortuj nagrobki";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Wymagane. Musi być zgodne ze ścieżką i nazwą pliku <em>w folderze kolekcji</em>. Jeżeli Twój folder zdjęć nazywa się  <em><font color=\"#0000ff\" size=\"2\">Zdjecia</font></em> a plik <em><font color=\"#ff00ff\" size=\"2\"> <strong>mojezdjecie.jpg</strong></font></em> ma zostac zapisany w folderze podrzednym nazwanym <em><font color=\"#0000ff\" size=\"2\">NoweZdjecia</font></em>, wpisz w tym polu <em><font color=\"#ff00ff\" size=\"2\"> <strong>nowezdjecia/mojezdjecie.jpg</strong></font></em>.";
     $admtext['leaveblankphoto'] = "Jeśli ten plik znajduje się już w folderze <em><font color=\"#ff00ff\" size=\"2\">Zdjęcia</font></em>, pozostaw to pole wolne.";
     $admtext['thumbconflicts'] = "Nie można wygenerować miniaturki z powodu problemu dot. łącza, uprawnień, wielkości lub formatu zdjęcia";
-    $admtext['showmap'] = "Pokaż mapę cmentarza i media za każdym razem, kiedy ta pozycja zostanie wybrana";
-    $admtext['bodytext'] = "<strong>ALBO</strong><br/>Tekst główny";
-    $admtext['usenl'] = "Konwertuj nowe linie do HTML ";
+  $admtext['showmap'] = "Pokaż mapę cmentarza i media za każdym razem, kiedy ta pozycja zostanie wybrana";
+  $admtext['bodytext'] = "<strong>ALBO</strong><br>Tekst główny";
+  $admtext['usenl'] = "Konwertuj nowe linie do HTML ";
     $admtext['newwin'] = "Otwórz w nowym oknie";
     $admtext['modifymedia'] = "Modyfikuj istniejące media";
     $admtext['addnewmedia'] = "Dodaj media";
@@ -509,9 +509,9 @@ switch ($textpart) {
     $admtext['nolinks'] = "Nie zawiera jeszcze żadnych łączy";
     $admtext['thumbsize'] = "(oryginał jest zbyt duży)";
     $admtext['thumbinv'] = "(Ten plik jest niewłaściwy lub nie ma odpowiednich uprawnień)";
-    $admtext['thumblost'] = "(nie znaleziono oryginału)";
-    $admtext['uplsel'] = "Załaduj plik z Twojego komputera lub wybierz istniejący z Twojej strony.<b><br/><U>UWAGA!</U> <br/><font color=\"#800000\" size=\"3\">W  nazwie pliku mediów <U>nie może być przerw między wyrazami, przecinków, kropek ani polskich znaków</U>.<br/>Na przykład zamiast: Władysław.Józef,Jagiełło.jpg  należy napisać <b><font color=\"red\" size=\"3\">Jagiello_Wladyslaw_Jozef.jpg</font></b><br/>Format pliku ma być:<br/>Rezolucja=<font color=\"red\">max. 92  dots/inch</font><br/>Wysokość zdjęcia=<font color=\"red\">max. 500 pixels</font><br/>Szerokość zdjęcia=<font color=\"red\">max. 750 pixels</font><br/><U>Pliki  których nazwa lub format nie spełniają wymagań będą usunięte.</U></font><br/></b>";
-    $admtext['alblater'] = "Uwaga: Na kolejnej stronie możesz do tego albumu dodać media jak również utworzyć dla niego łącza z osobami lub rodzinami.";
+  $admtext['thumblost'] = "(nie znaleziono oryginału)";
+  $admtext['uplsel'] = "Załaduj plik z Twojego komputera lub wybierz istniejący z Twojej strony.<b><br><U>UWAGA!</U> <br><font color=\"#800000\" size=\"3\">W  nazwie pliku mediów <U>nie może być przerw między wyrazami, przecinków, kropek ani polskich znaków</U>.<br>Na przykład zamiast: Władysław.Józef,Jagiełło.jpg  należy napisać <b><font color=\"red\" size=\"3\">Jagiello_Wladyslaw_Jozef.jpg</font></b><br>Format pliku ma być:<br>Rezolucja=<font color=\"red\">max. 92  dots/inch</font><br>Wysokość zdjęcia=<font color=\"red\">max. 500 pixels</font><br>Szerokość zdjęcia=<font color=\"red\">max. 750 pixels</font><br><U>Pliki  których nazwa lub format nie spełniają wymagań będą usunięte.</U></font><br></b>";
+  $admtext['alblater'] = "Uwaga: Na kolejnej stronie możesz do tego albumu dodać media jak również utworzyć dla niego łącza z osobami lub rodzinami.";
     $admtext['medlater'] = "Uwaga: Na kolejnej stronie możesz dodać dla tego elementu dalsze informacje jak również utworzyć dla niego łącza z osobami lub  rodzinami.";
     $admtext['minfosubt'] = "Edycja tytułu, opisu i innych podstawowych danych dla tego medium";
     $admtext['defphoto'] = "Zdjęcie standardowe";
@@ -529,9 +529,9 @@ switch ($textpart) {
     $admtext['entercollpath'] = "Podaj nazwę folderu kolekcji.";
     $admtext['entercollicon'] = "Podaj nazwę ikony pliku kolekcji.";
     $admtext['editcoll'] = "Edycja kolekcji";
-    $admtext['confmtdelete'] = "Jesteś pewny, że chcesz usunąć ten rodzaj medium?";
-    $admtext['histlimit'] = "<font color=\"#ff0000\"><strong>Uwaga:</strong></font> <br/>Większość wyszukiwarek ogranicza ilość danych przesyłanych przy pomocy formularzy w internecie do 64 kB.  <br/>Jeśli chcesz w pole przeznaczone dla tekstu zasadniczego wpisać lub wprowadzić z pamięci podręcznej obszerny tekst, powinieneś wziąć pod uwagę skorzystanie z  <font color=\"#ff00ff\" size=\"2\"><b>historytemplate.php</b></font>. <br/>Dalsze informacje na ten temat w pomocy online.";
-    $admtext['repath'] = "Regeneruj nazwę ścieżki pliku miniaturki jeśli plik nie istnieje";
+  $admtext['confmtdelete'] = "Jesteś pewny, że chcesz usunąć ten rodzaj medium?";
+  $admtext['histlimit'] = "<font color=\"#ff0000\"><strong>Uwaga:</strong></font> <br>Większość wyszukiwarek ogranicza ilość danych przesyłanych przy pomocy formularzy w internecie do 64 kB.  <br>Jeśli chcesz w pole przeznaczone dla tekstu zasadniczego wpisać lub wprowadzić z pamięci podręcznej obszerny tekst, powinieneś wziąć pod uwagę skorzystanie z  <font color=\"#ff00ff\" size=\"2\"><b>historytemplate.php</b></font>. <br>Dalsze informacje na ten temat w pomocy online.";
+  $admtext['repath'] = "Regeneruj nazwę ścieżki pliku miniaturki jeśli plik nie istnieje";
     $admtext['sortalbumind'] = "Sortuj albumy osób, rodzin, źródeł, repozytoriów lub miejsc";
     $admtext['cidexists'] = "Podany ID kolekcji jest już zajęty.";
     $admtext['phalltrees'] = "Opcjonalne. Pozostaw puste aby zdjęcia były widoczne we wszystkich drzewach..";
@@ -912,7 +912,7 @@ switch ($textpart) {
     $admtext['configuration'] = "Konfiguracja";
     $admtext['entersysvars'] = "Podaj wartości dla zmiennych systemowych.";
     $admtext['createdbtables'] = "Tworzenie tabel bazy danych dla Twoich zbiorów informacji.";
-    $admtext['tcwarning'] = "<font color=\"#ff0000\" size=\"2\"><strong>Ostrzeżenie!</strong></font> <br/>Korzystaj z tej opcji <B>TYLKO</B> przy pierwszej instalacji. <font color=\"#ff0000\" size=\"2\"><strong><br/>Wszystkie tabele wraz z  informacjami na temat zdjęć, historii, nagrobków i cmentarzy zostaną usunięte!</strong></font>";
+    $admtext['tcwarning'] = "<font color=\"#ff0000\" size=\"2\"><strong>Ostrzeżenie!</strong></font> <br>Korzystaj z tej opcji <B>TYLKO</B> przy pierwszej instalacji. <font color=\"#ff0000\" size=\"2\"><strong><br>Wszystkie tabele wraz z  informacjami na temat zdjęć, historii, nagrobków i cmentarzy zostaną usunięte!</strong></font>";
     $admtext['conftabledelete'] = "Czy na pewno chcesz usnąć WSZYSTKIE dane!! Jesteś pewien, że chcesz kontynuować?";
     $admtext['performdatamaint'] = "Wykonaj konserwację danych i zarządaj zdjęciami, historiami i innymi elementami.";
     $admtext['createtables'] = "Twórz tabele";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Scalaj Miejsca";
     $admtext['findmerge'] = "Znajdż kandydatów do scalenia";
     $admtext['selectplacemerge'] = "Wybierz Miejsca do scalenia";
-    $admtext['mcol1'] = "Scal<br/>te<br/>(usuń)";
-    $admtext['mcol2'] = "Do<br/>tego<br/>(zachowaj)";
+    $admtext['mcol1'] = "Scal<br>te<br>(usuń)";
+    $admtext['mcol2'] = "Do<br>tego<br>(zachowaj)";
     $admtext['pmsucc'] = "Scalono miejsca";
     $admtext['nomerge'] = "Nic do scalania";
     $admtext['enterkeep'] = "Wybierz obiekt do scalenia.";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Podaj nazwę języka.";
     $admtext['enterlangfolder'] = "Podaj nazwę folderu w którym będą zapisywane pliki języków.";
     $admtext['newlanguageinfo'] = "Informacje o nowym języku";
-    $admtext['langdisplay'] = "Nazwa języka<br/>tak, jak będzie ona czytana przez odwiedzających";
+    $admtext['langdisplay'] = "Nazwa języka<br>tak, jak będzie ona czytana przez odwiedzających";
     $admtext['createlanguage'] = "Utwórz nowy język";
     $admtext['nolanguages'] = "Brak zapisów języków";
     $admtext['conflangdelete'] = "Na pewno chcesz usunąć ten język?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Wybierz zdarzenie i czynność";
     $admtext['suggested'] = "Sugerowany";
-    $admtext['usernotes'] = "Odnośnie notatek<br />sugerowane zmiany<br />(nie zostanie zapisane)";
+    $admtext['usernotes'] = "Odnośnie notatek<br>sugerowane zmiany<br>(nie zostanie zapisane)";
     $admtext['postdate'] = "Wysłano do";
     $admtext['savedel'] = "Zapisz i usuń";
     $admtext['postpone'] = "Odłóż";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "Sprawdź";
 $admtext['generate'] = "Twórz";
 $admtext['update'] = "Aktualizacja";
 $admtext['confdeleteevent'] = "Na pewno chcesz usunąć to wydarzenie?";
-$admtext['existinglinks'] = "Istniejące łącza:<br/>(sprawdź przed usunięciem)";
+$admtext['existinglinks'] = "Istniejące łącza:<br>(sprawdź przed usunięciem)";
 $admtext['lowersortfirst'] = "Najpierw wybierz liczbę. Mozesz używać systemu dziesiętnego.";
 $admtext['personsname'] = "Nazwisko osoby";
 $admtext['tablecreation'] = "Tworzenie tabel";
@@ -2239,9 +2239,9 @@ $admtext['idexists'] = "nie może być dodane ponieważ to ID już istnieje.";
 $admtext['notdeleted'] = "Plik nie może być usunięty. Sprawdź kod pozwolenia dla pliku.";
 $admtext['confdeletefile'] = "Czy jesteś pewnien, że chcesz usunąć ten plik?";
 //changed in 8.0.0
-$admtext['datenote'] = "<font color=\"#800000\" size=\"3\"><strong>Ważne:</strong> Przy zapisie daty używaj formatu: <strong><font  color=\"red\">DD/MM/RRRR</font></strong>, lub standardowego formatu genealogcznego DD MMM RRRR.<br />Np. 10 Apr 2004.(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug,  Sep, Oct, Nov, Dec)<br/> Dla <strong><font color=\"black\">daty nieznanej</font></strong> wpisz <strong><font color=\"red\">Y</font></strong><br/> Przed datą dla '<strong><font color=\"black\">przed</font></strong>' wpisz <strong><font color=\"red\">bef</font></strong>, dla '<strong><font color=\"black\">po</font></strong>' wpisz <strong><font color=\"red\">aft</font></strong>, dla '<strong><font color=\"black\">około</font></strong>': wpisz  <strong><font color=\"red\">abt</font></strong>, dla '<strong><font color=\"black\">pomiędzy</font></strong>' wpisz <strong><font color=\"red\">bet 1910 - 1920</font></strong>.<br/> Dla <strong><font color=\"black\">nieznanego nazwiska</font></strong> wpisz <strong><font color=\"red\">NN</font></strong></font>";
+$admtext['datenote'] = "<font color=\"#800000\" size=\"3\"><strong>Ważne:</strong> Przy zapisie daty używaj formatu: <strong><font  color=\"red\">DD/MM/RRRR</font></strong>, lub standardowego formatu genealogcznego DD MMM RRRR.<br>Np. 10 Apr 2004.(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug,  Sep, Oct, Nov, Dec)<br> Dla <strong><font color=\"black\">daty nieznanej</font></strong> wpisz <strong><font color=\"red\">Y</font></strong><br> Przed datą dla '<strong><font color=\"black\">przed</font></strong>' wpisz <strong><font color=\"red\">bef</font></strong>, dla '<strong><font color=\"black\">po</font></strong>' wpisz <strong><font color=\"red\">aft</font></strong>, dla '<strong><font color=\"black\">około</font></strong>': wpisz  <strong><font color=\"red\">abt</font></strong>, dla '<strong><font color=\"black\">pomiędzy</font></strong>' wpisz <strong><font color=\"red\">bet 1910 - 1920</font></strong>.<br> Dla <strong><font color=\"black\">nieznanego nazwiska</font></strong> wpisz <strong><font color=\"red\">NN</font></strong></font>";
 $admtext['oriental'] = "Pierwsze nazwisko";
-$admtext['langfolder'] = "Folder w którym języki<br/>zostaną zapisane";
+$admtext['langfolder'] = "Folder w którym języki<br>zostaną zapisane";
 //moved here in 8.0.0
 $admtext['repoid'] = "ID repozytorium";
 $admtext['whatsnew'] = "Co nowego";

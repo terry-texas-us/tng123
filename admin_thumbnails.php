@@ -50,47 +50,47 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
   if (!$assignedtree) {
     if (function_exists('imageJpeg')) {
       ?>
-        <tr class="databack">
-            <td class="tngshadow normal">
-              <?php echo displayToggle("plus1", 1, "thumbs", $admtext['genthumbs'], $admtext['genthumbsdesc']); ?>
+      <tr class="databack">
+        <td class="tngshadow normal">
+          <?php echo displayToggle("plus1", 1, "thumbs", $admtext['genthumbs'], $admtext['genthumbsdesc']); ?>
 
-                <div id="thumbs">
-                    <br/>
-                    <form action="admin_generatethumbs.php" method="post" onsubmit="return generateThumbs(this);">
-                        <input type="checkbox" name="regenerate" value="1"> <?php echo $admtext['regenerate']; ?><br/>
-                        <input type="checkbox" name="repath" value="1"> <?php echo $admtext['repath']; ?><br/><br/>
-                        <input type="submit" name="submit" class="btn" value="<?php echo $admtext['generate']; ?>"> <img src="img/spinner.gif" id="thumbspin" style="display:none">
-                        </span>
-                    </form>
+          <div id="thumbs">
+            <br>
+            <form action="admin_generatethumbs.php" method="post" onsubmit="return generateThumbs(this);">
+              <input type="checkbox" name="regenerate" value="1"> <?php echo $admtext['regenerate']; ?><br>
+              <input type="checkbox" name="repath" value="1"> <?php echo $admtext['repath']; ?><br><br>
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['generate']; ?>"> <img src="img/spinner.gif" id="thumbspin" style="display:none">
+              </span>
+            </form>
 
-                    <div id="thumbresults" style="display:none">
-                    </div>
+            <div id="thumbresults" style="display:none">
+            </div>
 
-                </div>
-            </td>
-        </tr>
+          </div>
+        </td>
+      </tr>
       <?php
     }
     ?>
 
-      <tr class="databack">
-          <td class="tngshadow normal">
-            <?php echo displayToggle("plus2", 1, "defaults", $admtext['assigndefs'], $admtext['assigndefsdesc']); ?>
+    <tr class="databack">
+      <td class="tngshadow normal">
+        <?php echo displayToggle("plus2", 1, "defaults", $admtext['assigndefs'], $admtext['assigndefsdesc']); ?>
 
-              <div id="defaults">
-                  <br/>
-                  <form action="defphotos.php" method="post" onsubmit="return assignDefaults(this);">
-                      <input type="checkbox" name="overwritedefs" value="1"> <?php echo $admtext['overwritedefs']; ?><br/><br/>
-                    <?php echo $admtext['tree']; ?>: <select name="tree">
-                      <?php
-                      $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
-                      $result = tng_query($query);
-                      while ($row = tng_fetch_assoc($result)) {
-                        echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
-                      }
-                      ?>
-                      </select><br/><br/>
-                      <input type="submit" name="submit" class="btn" value="<?php echo $admtext['assign']; ?>"> <img src="img/spinner.gif" id="defspin" style="display:none">
+        <div id="defaults">
+          <br>
+          <form action="defphotos.php" method="post" onsubmit="return assignDefaults(this);">
+            <input type="checkbox" name="overwritedefs" value="1"> <?php echo $admtext['overwritedefs']; ?><br><br>
+            <?php echo $admtext['tree']; ?>: <select name="tree">
+              <?php
+              $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
+              $result = tng_query($query);
+              while ($row = tng_fetch_assoc($result)) {
+                echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
+              }
+              ?>
+            </select><br><br>
+            <input type="submit" name="submit" class="btn" value="<?php echo $admtext['assign']; ?>"> <img src="img/spinner.gif" id="defspin" style="display:none">
                       </span>
                   </form>
 

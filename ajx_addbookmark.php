@@ -32,10 +32,10 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="bkmkdiv">
-    <span class="subhead"><img src="<?php echo $cms['tngpath']; ?>img/tng_bmk.gif" width="20" height="20" align="left" alt="" vspace="0"/>&nbsp;<strong><?php echo $text['bookmarked']; ?></strong></span><br/><br/>
-    <form>
-        <input type="button" onclick="tnglitbox.remove();return false;" value="<?php echo $text['closewindow']; ?>"/>
-        <input type="button" onclick="window.location.href='<?php echo $bookmarks_url ?>';" value="<?php echo $text['mngbookmarks']; ?>"/>
-    </form>
+  <span class="subhead"><img src="<?php echo $cms['tngpath']; ?>img/tng_bmk.gif" width="20" height="20" align="left" alt="" vspace="0">&nbsp;<strong><?php echo $text['bookmarked']; ?></strong></span><br><br>
+  <form>
+    <input type="button" onclick="tnglitbox.remove();return false;" value="<?php echo $text['closewindow']; ?>">
+    <input type="button" onclick="window.location.href='<?php echo $bookmarks_url ?>';" value="<?php echo $text['mngbookmarks']; ?>">
+  </form>
 
 </div>

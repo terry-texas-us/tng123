@@ -31,21 +31,21 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="persform1" id="persform1" onSubmit="return validatePerson(this);">
-    <table width="100%" border="0" cellpadding="10" cellspacing="0">
-        <tr class="databack">
-            <td class="tngbotshadow">
-                <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
-                <span class="subhead togglehead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br/><br/>
+  <table width="100%" border="0" cellpadding="10" cellspacing="0">
+    <tr class="databack">
+      <td class="tngbotshadow">
+        <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+        <span class="subhead togglehead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br><br>
 
-                <table class="normal">
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
-                        <td>
-                            <input type="text" name="personID" id="personID" size="10" onBlur="this.value=this.value.toUpperCase()">
-                            <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('person','personID');">
+        <table class="normal">
+          <tr>
+            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
+          </tr>
+          <tr>
+            <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
+            <td>
+              <input type="text" name="personID" id="personID" size="10" onBlur="this.value=this.value.toUpperCase()">
+              <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('person','personID');">
                             <input type="button" value="<?php echo $admtext['check']; ?>" onClick="checkIDajax(document.persform1.personID.value,'person','pcheckmsg');">
                             <span id="pcheckmsg" class="normal"></span>
                         </td>
@@ -137,7 +137,7 @@ include_once "eventlib.php";
                               echo "<span id=\"pbranchlist\"></span>";
                               if (!$assignedbranch) {
                               if ($numbranches > 8) {
-                                $select = "{$admtext['scrollbranch']}<br/>";
+                                $select = "{$admtext['scrollbranch']}<br>";
                               }
                               $select .= "<select name=\"branch[]\" id=\"pbranch\" multiple size=\"8\">\n";
                               $select .= "	<option value=\"\"";
@@ -147,7 +147,7 @@ include_once "eventlib.php";
                               $select .= ">{$admtext['nobranch']}</option>\n";
 
                               $select .= "$options</select>\n";
-                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                               ?>
                                 <div id="pbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('pbranch','pbranchedit','pbranchlist');">
                                   <?php

@@ -58,7 +58,7 @@ if (file_exists($arrdnpath)) {
   $downarrow = @GetImageSize($arrdnpath);
   $pedigree['downarroww'] = $downarrow[0];
   $pedigree['downarrowh'] = $downarrow[1];
-  $pedigree['downarrow'] = "<img src=\"" . $cms['tngpath'] . $templatepath . "img/ArrowDown.gif\" border=\"0\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\" />";
+  $pedigree['downarrow'] = "<img src=\"" . $cms['tngpath'] . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">";
 } else {
   $pedigree['downarrow'] = "";
 }
@@ -66,7 +66,7 @@ if (file_exists($arrdnpath)) {
 $arrrtpath = $rootpath . $endrootpath . "img/ArrowRight.gif";
 if (file_exists($arrrtpath)) {
   $offpageimg = @GetImageSize($arrrtpath);
-  $pedigree['offpagelink'] = "<img border=\"0\" src=\"" . $cms['tngpath'] . "img/ArrowRight.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\" />";
+  $pedigree['offpagelink'] = "<img src=\"" . $cms['tngpath'] . "img/ArrowRight.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\">";
   $pedigree['offpageimgw'] = $offpageimg[0];
   $pedigree['offpageimgh'] = $offpageimg[1];
 } else {
@@ -78,7 +78,7 @@ if (file_exists($arrltpath)) {
   $leftarrowimg = @GetImageSize($arrltpath);
   $pedigree['leftarrowimgw'] = $leftarrowimg[0];
   $pedigree['leftarrowimgh'] = $leftarrowimg[1];
-  $pedigree['leftarrowlink'] = "<img border=\"0\" src=\"" . $cms['tngpath'] . "img/ArrowLeft.gif\" $leftarrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\"/>";
+  $pedigree['leftarrowlink'] = "<img src=\"" . $cms['tngpath'] . "img/ArrowLeft.gif\" $leftarrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\">";
   $pedigree['leftindent'] += $pedigree['leftarrowimgw'] + $pedigree['shadowoffset'] + 6;
 } else {
   $pedigree['leftarrowlink'] = "<b>&lt;</b>";
@@ -116,7 +116,7 @@ if ($display == "compact") {
   $slinkstyle = "3";
   if (file_exists($cms['tngpath'] . "img/Chart.gif")) {
     $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
+    $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
   } else {
     $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
   }
@@ -183,7 +183,7 @@ function getParents($personID) {
       if ($display == "compact") {
         $extra = " " . getGenderIcon("M", $pedigree['gendalign']);
       } else {
-        $extra = "<br/>" . getGenderIcon("M", $pedigree['gendalign']) . " " . justYears($husband);
+        $extra = "<br>" . getGenderIcon("M", $pedigree['gendalign']) . " " . justYears($husband);
       }
       $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['husband']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class=\"normal\">{$husband['name']}</span></a>{$extra}</td></tr>\n";
       tng_free_result($presult);
@@ -199,7 +199,7 @@ function getParents($personID) {
       if ($display == "compact") {
         $extra = " " . getGenderIcon("F", $pedigree['gendalign']);
       } else {
-        $extra = "<br/>" . getGenderIcon("F", $pedigree['gendalign']) . " " . justYears($wife);
+        $extra = "<br>" . getGenderIcon("F", $pedigree['gendalign']) . " " . justYears($wife);
       }
       $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['wife']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class=\"normal\">{$wife['name']}</span></a>{$extra}</td></tr>\n";
       tng_free_result($presult);
@@ -212,7 +212,7 @@ function getParents($personID) {
 
 function getNewChart($personID) {
   global $tree, $generations, $cms, $text, $descend_url, $display;
-  return $kidsflag ? "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\" border=\"0\"/></a>" : "";
+  return $kidsflag ? "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\"></a>" : "";
 }
 
 function doBox($level, $person, $spouseflag, $kidsflag) {
@@ -275,7 +275,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
     $photohtouse = $pedigree['boxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
     $photoInfo = getPhotoSrc($person['personID'], $person['allow_living'] && $person['allow_private'], $person['sex']);
     if ($photoInfo['ref']) {
-      $imagestr = "<img src=\"{$photoInfo['ref']}\" border=\"0\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\" />";
+      $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\">";
       if ($photoInfo['link']) {
         $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
       }
@@ -288,7 +288,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
     if ($display == "compact") {
       $extra = " " . getGenderIcon($person['sex'], $pedigree['gendalign']) . getNewChart($person['personID']);
     } else {
-      $extra = "<br/>" . getGenderIcon($person['sex'], $pedigree['gendalign']) . " " . justYears($person) . getNewChart($person['personID']);
+      $extra = "<br>" . getGenderIcon($person['sex'], $pedigree['gendalign']) . " " . justYears($person) . getNewChart($person['personID']);
     }
 
     $boxstr .= "<td class=\"pboxname\" align=\"{$pedigree['boxalign']}\"><span style=\"font-size:{$pedigree['boxnamesize']}" . "pt;\">{$pedigree['spacer']}<a href=\"$getperson_url" . "personID={$person['personID']}&amp;tree=$tree" . "\">{$person['name']}</a>{$extra}</span></td></tr></table></div>\n";
@@ -741,7 +741,7 @@ echo "</form>\n";
     <p class="normal">
         (<?php echo $text['scrollnote'];
       if ($pedigree['usepopups_real']) {
-        echo ($pedigree['downarrow'] ? " <img src=\"" . $cms['tngpath'] . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\" />" : " <a href=\"#\"><b>V</b></a>") . $text['popupnote1'];
+        echo ($pedigree['downarrow'] ? " <img src=\"" . $cms['tngpath'] . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><b>V</b></a>") . $text['popupnote1'];
       }
       ?>)
     </p>

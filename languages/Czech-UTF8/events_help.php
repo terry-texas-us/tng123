@@ -4,27 +4,27 @@ echo help_header("Nápověda: Události");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="citations_help.php" class="lightlink">&laquo; Nápověda: Citace</a> &nbsp; | &nbsp;
-                <a href="more_help.php" class="lightlink">Nápověda: Více &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Události</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Standardní a vlastní</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#citations" class="lightlink">Citace</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="citations_help.php" class="lightlink">&laquo; Nápověda: Citace</a> &nbsp; | &nbsp;
+        <a href="more_help.php" class="lightlink">Nápověda: Více &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Události</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Standardní a vlastní</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+        <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#citations" class="lightlink">Citace</a>
             </p>
         </td>
     </tr>
@@ -69,26 +69,26 @@ echo help_header("Nápověda: Události");
             <span class="optionhead">Místo události</span>
             <p>Místo, kde událost proběhla. Zapište název místa nebo klikněte na ikonu Najít (lupa).</p>
 
-            <span class="optionhead">Podrobnosti</span>
-            <p>Další podrobnosti popisující událost. Pokud s událostí není spojeno žádné datum ani místo, může pole Podrobnosti obsahovat údaje, které tuto událost definují.</p>
+          <span class="optionhead">Podrobnosti</span>
+          <p>Další podrobnosti popisující událost. Pokud s událostí není spojeno žádné datum ani místo, může pole Podrobnosti obsahovat údaje, které tuto událost definují.</p>
 
-            <span class="optionhead">Duplikovat pro (ID):</span>
-            <p>Chcete-li tuto událost duplikovat pro více osob nebo rodin, zapište sem čísla ID těchto osob nebo rodin. Vkládáte-li více čísel ID, oddělte je čárkou.
-                Pokud číslo ID neznáte, klikněte na ikonu "Najít" vpravo od tohoto pole a můžete je vyhledat podle jména. Po kliknutí na tlačítko "Uložit" bude tato událost nakopírována
-                těmto osobám (rodinám). Pokud znovu otevřete okno s úpravou událolsti, toto pole bude prázdné. Všechny změny, které od tohoto okamžiku v této události
-                provedete, <b>nebudou</b> promítnuty do dříve vytvořených duplikátů.</p>
+          <span class="optionhead">Duplikovat pro (ID):</span>
+          <p>Chcete-li tuto událost duplikovat pro více osob nebo rodin, zapište sem čísla ID těchto osob nebo rodin. Vkládáte-li více čísel ID, oddělte je čárkou.
+            Pokud číslo ID neznáte, klikněte na ikonu "Najít" vpravo od tohoto pole a můžete je vyhledat podle jména. Po kliknutí na tlačítko "Uložit" bude tato událost nakopírována
+            těmto osobám (rodinám). Pokud znovu otevřete okno s úpravou událolsti, toto pole bude prázdné. Všechny změny, které od tohoto okamžiku v této události
+            provedete, <b>nebudou</b> promítnuty do dříve vytvořených duplikátů.</p>
 
-            <span class="optionhead">Více</span><br/>
-            <p>Kliknutím na "Více" můžete pro každou událost zapsat některé méně běžné údaje. Objeví se další pole.
-                Tato pole lze skrýt opětovným kliknutím na "Více". Skrytí polí neznamená vymazání jejich obsahu. Tato pole obsahují:</p>
+          <span class="optionhead">Více</span><br>
+          <p>Kliknutím na "Více" můžete pro každou událost zapsat některé méně běžné údaje. Objeví se další pole.
+            Tato pole lze skrýt opětovným kliknutím na "Více". Skrytí polí neznamená vymazání jejich obsahu. Tato pole obsahují:</p>
 
-            <p><span class="optionhead">Věk</span>: Věk osoby v době události.</p>
+          <p><span class="optionhead">Věk</span>: Věk osoby v době události.</p>
 
-            <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
+          <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
 
-            <p><span class="optionhead">Příčina</span>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
+          <p><span class="optionhead">Příčina</span>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
 
-            <p><span class="optionhead">Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</span>: Adresa a ostatní kontaktní údaje spojené s událostí.</p>
+          <p><span class="optionhead">Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</span>: Adresa a ostatní kontaktní údaje spojené s událostí.</p>
 
             <span class="optionhead">Povinná pole:</span>
             <p>Vybrat musíte typ události a nejméně do jednoho z následujících polí musíte něco vložit: <strong>Datum události</strong>, <strong>Místo události</strong>,

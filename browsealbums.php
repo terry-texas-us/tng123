@@ -18,10 +18,10 @@ function doMediaSearch($instance, $pagenav) {
   global $text, $mediasearch, $browsealbums_noargs_url, $tree;
 
   $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\" />\n";
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
-  $str .= "<input type=\"submit\" value=\"{$text['search']}\" />\n";
-  $str .= "<input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\" />&nbsp;&nbsp;&nbsp;";
+  $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\">\n";
+  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+  $str .= "<input type=\"submit\" value=\"{$text['search']}\">\n";
+  $str .= "<input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   $str .= "</form>\n";
 
@@ -76,9 +76,9 @@ preparebookmark($logstring);
 tng_header($text['albums'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h1><br clear="all"/>
+  <h1 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h1><br clear="all">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'browsealbums', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsealbums', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
   echo "<p class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
@@ -86,7 +86,7 @@ if ($totrows) {
 
 $pagenav = get_browseitems_nav($totrows, $browsealbums_url . "mediasearch=$mediasearch&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 echo doMediaSearch(1, $pagenav);
-echo "<br />\n";
+echo "<br>\n";
 
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
@@ -231,7 +231,7 @@ while ($row = tng_fetch_assoc($result)) {
     $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td>";
   }
 
-  $albumtext .= "<td class=\"databack\" valign=\"top\"><span class=\"normal\">$alblink<br />$description&nbsp;</span></td>\n";
+  $albumtext .= "<td class=\"databack\" valign=\"top\"><span class=\"normal\">$alblink<br>$description&nbsp;</span></td>\n";
   $albumtext .= "<td class=\"databack\" valign=\"top\" align=\"center\"><span class=\"normal\">{$arow['acount']}&nbsp;</span></td>\n";
   $albumtext .= "<td valign=\"top\" class=\"databack\" width=\"200\"><span class=\"normal\">\n$medialinktext&nbsp;</span></td>\n";
   $albumtext .= "</tr>\n";
@@ -245,11 +245,11 @@ if (!$thumbcount) {
 }
 echo $header . $albumtext;
 ?>
-    </table><br/>
+  </table><br>
 <?php
 if ($totrows && ($pagenav || $mediasearch)) {
   echo doMediaSearch(2, $pagenav);
-  echo "<br />";
+  echo "<br>";
 }
 tng_footer("");
 ?>

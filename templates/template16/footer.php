@@ -2,12 +2,12 @@
 
 </div>
 </div>
-<hr size="1"/>
+<hr>
 <?php
 $flags['basicfooter'] = true;
 echo tng_footer($flags);
 ?>
-<br/>
+<br>
 </div>
 </div>
 </div>

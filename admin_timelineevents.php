@@ -82,7 +82,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                     <input type="hidden" name="findtlevent" value="1"><input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop"></form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;

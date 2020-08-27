@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
-                <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Nastaven� sch�mat</span>
-            <p class="smaller menu">
-                <a href="#ped" class="lightlink">P�edkov�</a> &nbsp; | &nbsp;
-                <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-                <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
-                <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
-                <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
+        <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Nastaven� sch�mat</span>
+      <p class="smaller menu">
+        <a href="#ped" class="lightlink">P�edkov�</a> &nbsp; | &nbsp;
+        <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
+        <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
+        <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
+        <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
                 <a href="#thumb" class="lightlink">N�hledy</a>
             </p>
         </td>

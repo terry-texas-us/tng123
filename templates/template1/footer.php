@@ -1,9 +1,9 @@
 <?php global $text, $currentuser, $mylanguage, $cms, $tmp, $tng_version, $flags; ?>
 
-<hr size="1"/>
+<hr>
 <?php
 $flags['basicfooter'] = true;
 echo tng_footer($flags);
 ?>
-<br/>
+<br>
 <!-- end of footer.php for template 1 -->

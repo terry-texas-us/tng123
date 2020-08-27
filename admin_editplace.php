@@ -116,27 +116,27 @@ if ($map['key'] && $isConnected) {
         //ajax to add
         var place = '<?php echo urlencode($row['place']); ?>';
         var params = {cemeteryID: cemeteryID, place: place, action: 'addcemlink'};
-        jQuery.ajax({
-            url: 'ajx_updateorder.php',
-            data: params,
-            dataType: 'json',
-            success: function (vars) {
-                //add new table row
-                var cemtbl = document.getElementById('cemeteries');
-                var newtr = cemtbl.insertRow(cemtbl.rows.length);
-                newtr.id = "row_" + cemeteryID;
-                var actionstr = '<a href="#" onclick="return deleteCemLink(\'' + cemeteryID + '\');" title="' + delmsg + '"  class="smallicon admin-delete-icon"></a>';
-                actionstr += '<a href="#" onclick="return copyGeoInfo(\'' + cemeteryID + '\');\"><img src="img/earth.gif" id="geo' + cemeteryID + '" title="<?php echo $admtext['geocopy']; ?>" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"/></a>';
-                insertCell(newtr, 0, "nw", actionstr);
-                insertCell(newtr, 1, "nw", vars.location);
-                tnglitbox.remove();
-                var tds = jQuery('tr#row_' + cemeteryID + ' td');
-                jQuery.each(tds, function (index, item) {
-                    item.effect('highlight', {}, 1400);
-                })
-            }
-        });
-        return false;
+      jQuery.ajax({
+        url: 'ajx_updateorder.php',
+        data: params,
+        dataType: 'json',
+        success: function (vars) {
+          //add new table row
+          var cemtbl = document.getElementById('cemeteries');
+          var newtr = cemtbl.insertRow(cemtbl.rows.length);
+          newtr.id = "row_" + cemeteryID;
+          var actionstr = '<a href="#" onclick="return deleteCemLink(\'' + cemeteryID + '\');" title="' + delmsg + '"  class="smallicon admin-delete-icon"></a>';
+          actionstr += '<a href="#" onclick="return copyGeoInfo(\'' + cemeteryID + '\');\"><img src="img/earth.gif" id="geo' + cemeteryID + '" title="<?php echo $admtext['geocopy']; ?>" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"></a>';
+          insertCell(newtr, 0, "nw", actionstr);
+          insertCell(newtr, 1, "nw", vars.location);
+          tnglitbox.remove();
+          var tds = jQuery('tr#row_' + cemeteryID + ' td');
+          jQuery.each(tds, function (index, item) {
+            item.effect('highlight', {}, 1400);
+          })
+        }
+      });
+      return false;
     }
 </script>
 <?php
@@ -296,15 +296,15 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                     }
                                     $actionstr = $allow_delete ? "<a href=\"#\" onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "&nbsp;";
                                     if ($allow_edit) {
-                                      $actionstr .= "<a href=\"#\" onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"/></a>";
+                                      $actionstr .= "<a href=\"#\" onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"></a>";
                                     }
                                     echo "<tr id=\"row_{$cemrow['cemeteryID']}\"><td class=\"nw\">$actionstr</td><td class=\"nw\">$location</td></tr>\n";
                                   }
                                   ?>
                                   </tbody>
                               </table>
-                              <input type="button" value="<?php echo $admtext['linkcem']; ?>" onclick="pickCemetery();"/>
-                              <img src="img/earth.gif" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"/> = <?php echo $admtext['geocopy']; ?>
+                            <input type="button" value="<?php echo $admtext['linkcem']; ?>" onclick="pickCemetery();">
+                            <img src="img/earth.gif" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"> = <?php echo $admtext['geocopy']; ?>
                           </td>
                       </tr>
                     <?php
@@ -323,25 +323,25 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     <?php
                   }
                   ?>
-                    <tr>
-                        <td valign="top" colspan="2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                          <?php
-                          echo $admtext['onsave'] . ":<br/>";
-                          echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br/>\n";
-                          if ($cw) {
-                            echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
-                          } else {
-                            echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
-                          }
-                          ?>
-                        </td>
-                    </tr>
+                  <tr>
+                    <td valign="top" colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <?php
+                      echo $admtext['onsave'] . ":<br>";
+                      echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                      if ($cw) {
+                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                      } else {
+                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                      }
+                      ?>
+                    </td>
+                  </tr>
                 </table>
-                <br/>&nbsp;
-                <input type="hidden" name="ID" value="<?php echo "$ID"; ?>">
+              <br>&nbsp;
+              <input type="hidden" name="ID" value="<?php echo "$ID"; ?>">
                 <input type="hidden" name="orgplace" value="<?php echo $row['place']; ?>">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
         </td>

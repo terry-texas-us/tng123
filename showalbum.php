@@ -118,7 +118,7 @@ if ($albumlinktext) {
   $albumlinktext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" width=\"100\">{$text['indlinked']}</td>\n";
   $albumlinktext .= "<td class=\"databack\" width=\"90%\">$altext</td>\n";
   $albumlinktext .= "</tr>\n";
-  $albumlinktext .= "</table>\n<br/>";
+  $albumlinktext .= "</table>\n<br>";
 }
 
 if (!$thumbmaxw) {
@@ -204,7 +204,7 @@ tng_header($text['albums'] . ": $albumname", $flags);
 $imgsrc = getAlbumPhoto($albumID, $albumname);
 if (!$imgsrc) {
   ?>
-    <h1 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $albumname; ?><br/><span class="normal"><?php echo $description; ?></span></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $albumname; ?><br><span class="normal"><?php echo $description; ?></span></h1><br clear="left">
   <?php
 } else {
   echo tng_DrawHeading($imgsrc, $albumname, $description);
@@ -367,7 +367,7 @@ while ($row = tng_fetch_assoc($result)) {
     $description = $showAlbumInfo ? "<a href=\"$href\">{$row['description']}</a>" : $row['description'];
     $notes = nl2br(truncateIt(getXrefNotes($row['notes']), $tngconfig['maxnoteprev']));
     if (!$showAlbumInfo) {
-      $notes .= "<br />({$text['livingphoto']})";
+      $notes .= "<br>({$text['livingphoto']})";
     }
   } else {
     $description = $text['living'];
@@ -409,7 +409,7 @@ while ($row = tng_fetch_assoc($result)) {
       $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
     }
 
-    $mediatext .= "<span class=\"normal\">$description<br/>$notes&nbsp;</span></td>";
+    $mediatext .= "<span class=\"normal\">$description<br>$notes&nbsp;</span></td>";
     $mediatext .= "<td valign=\"top\" class=\"databack\">\n";
     $mediatext .= $medialinktext;
     $mediatext .= "&nbsp;</td></tr>\n";
@@ -440,12 +440,12 @@ if ($tnggallery) {
   echo "</div>\n";
 }
 
-echo "<br/>\n";
+echo "<br>\n";
 if ($pagenav) {
   echo $pagenav;
-  echo "<br />";
+  echo "<br>";
 }
-echo "<br />";
+echo "<br>";
 echo $albumlinktext;
 
 tng_footer($flags);

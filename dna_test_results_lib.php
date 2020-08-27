@@ -9,8 +9,8 @@ $query = "SELECT $dna_tests_table.testID, $dna_tests_table.personID as tpersonID
 $dna_results = tng_query($query);
 $num_tests = tng_num_rows($dna_results);
 if ($debug) {
-  echo "Allow Private - $allow_private<br />";
-  echo "Number of DNA Tests - $num_tests<br />";
+  echo "Allow Private - $allow_private<br>";
+  echo "Number of DNA Tests - $num_tests<br>";
 }
 
 // following query added to check if this is a Private Test
@@ -22,7 +22,7 @@ $priv_results = tng_query($pquery);
 $dnarow = tng_fetch_assoc($priv_results);    // added for Private Test check
 $num_private = tng_num_rows($priv_results);    // added for Private Test check
 if ($debug) {
-  echo "Number of Private DNA Tests - $num_private<br />";
+  echo "Number of Private DNA Tests - $num_private<br>";
 }
 
 $totnum_tests = $num_tests;
@@ -31,10 +31,10 @@ if (!$allow_private) {
   $totnum_tests = ($num_tests - $num_private);
 }
 if ($debug) {
-  echo "Number of total DNA Tests - $totnum_tests<br />";
+  echo "Number of total DNA Tests - $totnum_tests<br>";
 }
 if ($totnum_tests) {
-  $toggleicon = "<img border=\"0\" src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon2\" style=\"cursor:pointer; float:right; padding-top:4px;\" title=\"{$text['expand']}\" alt=\"\" onclick=\"togglednaicon(); \" />";
+  $toggleicon = "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon2\" style=\"cursor:pointer; float:right; padding-top:4px;\" title=\"{$text['expand']}\" alt=\"\" onclick=\"togglednaicon(); \">";
   $displaystyle = "display:none";
   $displayclass = "dnatest";
 
@@ -62,7 +62,7 @@ if ($totnum_tests) {
 
   $persontext .= "<tr>\n";
   $persontext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
-  $persontext .= "<td colspan=\"4\" class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;<a href=\"#\" title=\"{$text['dna_info_head']}\"><img border=\"0\" src=\"{$cms['tngpath']}img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php',{overlay:false,width:620,height:200}); return false\"/></a></td></tr><tr id=\"dnatest\" class=\"$displayclass\" style=\"$displaystyle\">\n";
+  $persontext .= "<td colspan=\"4\" class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;<a href=\"#\" title=\"{$text['dna_info_head']}\"><img src=\"{$cms['tngpath']}img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php',{overlay:false,width:620,height:200}); return false\"/></a></td></tr><tr id=\"dnatest\" class=\"$displayclass\" style=\"$displaystyle\">\n";
   $persontext .= "<th valign=\"top\" class=\"fieldnameback fieldname\">{$text['test_type']}</th><th valign=\"top\" class=\"fieldnameback fieldname\">{$text['takenby']}</a></th><th valign=\"top\" class=\"fieldnameback fieldname\">{$text['haplogroup']}&nbsp;</th><th valign=\"top\" class=\"fieldnameback fieldname\">{$text['test_info']}</th></tr><tr class=\"$displayclass\" style=\"$displaystyle\">\n";
 
   //for each test, do a row
@@ -110,7 +110,7 @@ if ($totnum_tests) {
       }
       if ($dna_test['test_type'] == "atDNA") {
         if ($dna_test['ydna_haplogroup']) {
-          $haplogroup = "Y = " . $dna_test['ydna_haplogroup'] . "<br />";
+          $haplogroup = "Y = " . $dna_test['ydna_haplogroup'] . "<br>";
         }
         if ($dna_test['mtdna_haplogroup']) {
           $haplogroup .= "mt = " . $dna_test['mtdna_haplogroup'];
@@ -181,7 +181,7 @@ if ($totnum_tests) {
             $ancrow['allow_living'] = $ancrights['living'];
             $ancrow['allow_private'] = $ancrights['private'];
             $famname = getFamilyName($ancrow);
-            $fammarried = "<br />&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $ancrow['marrdate'];
+            $fammarried = "<br>&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $ancrow['marrdate'];
             $mrcanc_namestr = $text['family'] . ": " . "<a href=\"$familygroup_url" . "familyID={$dna_test['MRC_ancestorID']}&tree={$dna_test['tgedcom']}\">$famname</a>" . $fammarried;
           }
         }
@@ -218,88 +218,88 @@ if ($totnum_tests) {
       $persontext .= "<td class=\"databack resultscol\">";
       if ($GEDmatchID) {
         $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target=\"_blank\">$GEDmatchID</a>";
-        $persontext .= "<strong>{$admtext['gedmatchID']}</strong> =  $GEDmatch_str <br /><br />";
+        $persontext .= "<strong>{$admtext['gedmatchID']}</strong> =  $GEDmatch_str <br><br>";
       }
       if ($mdanc_namestr) {
-        $persontext .= "<strong>" . $admtext['mda'] . ":</strong><br />" . $mdanc_namestr . "<br /><br />";
+        $persontext .= "<strong>" . $admtext['mda'] . ":</strong><br>" . $mdanc_namestr . "<br><br>";
       }
       if ($mrcanc_namestr) {
-        $persontext .= "<strong>" . $admtext['mrca'] . ":</strong><br />" . $mrcanc_namestr . "<br />";
+        $persontext .= "<strong>" . $admtext['mrca'] . ":</strong><br>" . $mrcanc_namestr . "<br>";
       }
       if ($dna_test['markeropt']) {
-        $persontext .= $y_results ? "<br /><strong>" . $dna_test['markers'] . "&nbsp;" . $admtext['marker_values'] . ":</strong><br />" . $y_results . "<br />" : "";
+        $persontext .= $y_results ? "<br><strong>" . $dna_test['markers'] . "&nbsp;" . $admtext['marker_values'] . ":</strong><br>" . $y_results . "<br>" : "";
         if ($test_type == "mtDNA") {
           if ($ref_seq) {
-            $persontext .= "<br /><strong>" . $admtext['ref_seq'] . ":</strong><br />";
+            $persontext .= "<br><strong>" . $admtext['ref_seq'] . ":</strong><br>";
             if ($ref_seq == "rsrs") {
               $persontext .= "{$admtext['rsrs']}";
             }
             if ($ref_seq == "rcrs") {
               $persontext .= "{$admtext['rcrs']}";
             }
-            $persontext .= "<br />";
+            $persontext .= "<br>";
           }
           if ($hvr1_results || $hvr2_results) {
-            $persontext .= "<br /><strong>" . $admtext['hvr_values'] . ":</strong><br />";
+            $persontext .= "<br><strong>" . $admtext['hvr_values'] . ":</strong><br>";
             if ($hvr1_results) {
-              $persontext .= "{$text['hvr1']} = $hvr1_results<br />";
+              $persontext .= "{$text['hvr1']} = $hvr1_results<br>";
             }
             if ($hvr2_results) {
-              $persontext .= "<div>" . nl2br($text['hvr2']) . " = $hvr2_results<br /></div>";
+              $persontext .= "<div>" . nl2br($text['hvr2']) . " = $hvr2_results<br></div>";
             }
           }
-          $persontext .= $xtra_mut ? "<div><br /><strong>" . nl2br($admtext['xtra_mut']) . ":</strong><br />$xtra_mut</div>" : "";
-          $persontext .= $allow_admin && $coding_reg ? "<div><br /><strong>" . nl2br($admtext['coding_reg']) . ":</strong><br />" . $coding_reg . "</div>" : "";
+          $persontext .= $xtra_mut ? "<div><br><strong>" . nl2br($admtext['xtra_mut']) . ":</strong><br>$xtra_mut</div>" : "";
+          $persontext .= $allow_admin && $coding_reg ? "<div><br><strong>" . nl2br($admtext['coding_reg']) . ":</strong><br>" . $coding_reg . "</div>" : "";
         }
         if ($test_type == "atDNA") {
           if ($shared_cMs) {
-            $persontext .= "<br /><strong>{$text['shared_dna']}:</strong><br />";
+            $persontext .= "<br><strong>{$text['shared_dna']}:</strong><br>";
             $total_shared = $admtext['shared centimorgans'] . " " . $shared_cMs;
             if ($shared_segments) {
               $total_shared .= " | $shared_segments {$admtext['shared_segments']} ";
             } else {
               $total_shared .= " ";
             }
-            $persontext .= $admtext['shared_dna'] . " =  $total_shared <br />";
+            $persontext .= $admtext['shared_dna'] . " =  $total_shared <br>";
           }
           if ($chromosome && $centiMorgans) {
             $segment = "{$admtext['chromosome']} $chromosome | $centiMorgans {$admtext['centiMorgans']} ";
-            $persontext .= $admtext['largest_segment'] . " =  $segment <br />";
+            $persontext .= $admtext['largest_segment'] . " =  $segment <br>";
           }
           if ($segment_start) {
-            $persontext .= $admtext['segment_start'] . " =  $segment_start <br />";
+            $persontext .= $admtext['segment_start'] . " =  $segment_start <br>";
           }
           if ($segment_end) {
-            $persontext .= $admtext['segment_end'] . " =  $segment_end <br />";
+            $persontext .= $admtext['segment_end'] . " =  $segment_end <br>";
           }
           if ($matching_SNPs) {
-            $persontext .= $admtext['matchingSNPs'] . " =  $matching_SNPs <br />";
+            $persontext .= $admtext['matchingSNPs'] . " =  $matching_SNPs <br>";
           }
           if ($x_match) {
-            $persontext .= $admtext['xmatch'] . " =  {$admtext['yes']} <br />";
+            $persontext .= $admtext['xmatch'] . " =  {$admtext['yes']} <br>";
           }
           if ($relationship_range || $suggested_relationship || $actual_relationship || $related_side) {
-            $persontext .= "</div><br /><strong>{$admtext['relationship_section']}:</strong><br /><div>";
+            $persontext .= "</div><br><strong>{$admtext['relationship_section']}:</strong><br><div>";
           }
           if ($relationship_range) {
-            $persontext .= $admtext['relationship_range'] . " =  $relationship_range <br />";
+            $persontext .= $admtext['relationship_range'] . " =  $relationship_range <br>";
           }
           if ($suggested_relationship) {
-            $persontext .= $admtext['suggested_relationship'] . " =  $suggested_relationship <br />";
+            $persontext .= $admtext['suggested_relationship'] . " =  $suggested_relationship <br>";
           }
           if ($actual_relationship) {
-            $persontext .= $admtext['actual_relationship'] . " =  $actual_relationship <br />";
+            $persontext .= $admtext['actual_relationship'] . " =  $actual_relationship <br>";
           }
           if ($related_side) {
-            $persontext .= $admtext['related_side'] . " =  $related_side <br />";
+            $persontext .= $admtext['related_side'] . " =  $related_side <br>";
           }
         }
       }
-      $persontext .= $dna_test['surnamesopt'] && $surnames ? "<br /><strong>" . $admtext['ancestral_surnames'] . ":</strong><br />" . $surnames . "<br />" : "";
-      $persontext .= $dna_test['linksopt'] && $urls ? "<br /><strong>" . $text['relevant_links'] . ": </strong>" . $urls : "";
-      $persontext .= $medialinks ? "<br /><strong>" . $admtext['medialinks'] . ": </strong>" . $medialinks : "";
-      $persontext .= $dna_test['notesopt'] && $dna_notes ? "<br /><strong>" . $text['notes'] . ":</strong><br />" . $dna_notes . "<br />" : "";
-      $persontext .= $allow_admin && $dna_test['admin_notes'] ? "<br /><strong>" . $admtext['admin_notes'] . ":</strong><br />" . $admin_notes . "<br />" : "";
+      $persontext .= $dna_test['surnamesopt'] && $surnames ? "<br><strong>" . $admtext['ancestral_surnames'] . ":</strong><br>" . $surnames . "<br>" : "";
+      $persontext .= $dna_test['linksopt'] && $urls ? "<br><strong>" . $text['relevant_links'] . ": </strong>" . $urls : "";
+      $persontext .= $medialinks ? "<br><strong>" . $admtext['medialinks'] . ": </strong>" . $medialinks : "";
+      $persontext .= $dna_test['notesopt'] && $dna_notes ? "<br><strong>" . $text['notes'] . ":</strong><br>" . $dna_notes . "<br>" : "";
+      $persontext .= $allow_admin && $dna_test['admin_notes'] ? "<br><strong>" . $admtext['admin_notes'] . ":</strong><br>" . $admin_notes . "<br>" : "";
       $persontext .= "</td>\n";
 
       $persontext .= "</td>\n";
@@ -309,6 +309,6 @@ if ($totnum_tests) {
   }
 
   $persontext .= "</table>\n";
-  $persontext .= "<br/>\n";
+  $persontext .= "<br>\n";
 }
 tng_free_result($dna_results);

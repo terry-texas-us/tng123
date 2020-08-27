@@ -11,36 +11,36 @@ $title = getTemplateMessage('t1_maintitle');
 ?>
 
 
-<br/>
+<br>
 <div align="center">
-    <table class="indexpage">
-        <tr>
-            <td colspan="3">
+  <table class="indexpage">
+    <tr>
+      <td colspan="3">
 
-              <?php
-              //begin MAIN IMAGE (default: picture of the Henefer, Utah cemetery)
-              //Actual file name has been replaced with t1_mainimage variable, configurable from Template Settings. Default name of actual image is "home-image.jpg"
-              //You can replace the t1_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-              ?>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="" border="0" align="left" id="mainphoto"/>
-              <?php
-              //end MAIN IMAGE
-              ?>
+        <?php
+        //begin MAIN IMAGE (default: picture of the Henefer, Utah cemetery)
+        //Actual file name has been replaced with t1_mainimage variable, configurable from Template Settings. Default name of actual image is "home-image.jpg"
+        //You can replace the t1_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
+        ?>
+        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="" align="left" id="mainphoto">
+        <?php
+        //end MAIN IMAGE
+        ?>
 
-              <?php
-              //begin TITLE IMAGE (default: "Our Family History")
-              //Actual file name has been replaced with t1_titleimage variable, configurable from Template Settings. Default name of actual image is "home-title.gif"
-              //You can replace the t1_titleimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
+        <?php
+        //begin TITLE IMAGE (default: "Our Family History")
+        //Actual file name has been replaced with t1_titleimage variable, configurable from Template Settings. Default name of actual image is "home-title.gif"
+        //You can replace the t1_titleimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
 
-              if ($tmp['t1_titlechoice'] == "text" || $sitever == "mobile") {
+        if ($tmp['t1_titlechoice'] == "text" || $sitever == "mobile") {
                 ?>
                   <em class="maintitle"><?php echo $title; ?></em>
                 <?php
               } else {
-                ?>
-                  <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="" hspace="10" border="0"/>
-                <?php
-              }
+          ?>
+          <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="" hspace="10">
+          <?php
+        }
               //end MAIN IMAGE
               ?>
 
@@ -52,35 +52,35 @@ $title = getTemplateMessage('t1_maintitle');
 	</em>
 -->
 
-                <br/>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" class="normal">
-              <?php
-              if ($currentuser) {
-                echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
-              }
-              ?>
-                <h2><?php echo $text['mnusearchfornames']; ?></h2>
-                <!-- Do not change the form action or field names! -->
-                <form method="get" name="searchform" action="search.php">
-                    <label for="myfirstname"><?php echo $text['firstname']; ?></label><br/>
-                    <input type="text" value="" name="myfirstname"/><br/>
-                    <label for="mylastname"><?php echo $text['lastname']; ?></label><br/>
-                    <input type="text" value="" name="mylastname"/><br/>
-                    <input type="hidden" name="mybool" value="AND"/>
-                    <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>"/>
-                </form>
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="normal">
+        <?php
+        if ($currentuser) {
+          echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
+        }
+        ?>
+        <h2><?php echo $text['mnusearchfornames']; ?></h2>
+        <!-- Do not change the form action or field names! -->
+        <form method="get" name="searchform" action="search.php">
+          <label for="myfirstname"><?php echo $text['firstname']; ?></label><br>
+          <input type="text" value="" name="myfirstname"><br>
+          <label for="mylastname"><?php echo $text['lastname']; ?></label><br>
+          <input type="text" value="" name="mylastname"><br>
+          <input type="hidden" name="mybool" value="AND">
+          <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>">
+        </form>
 
-                <br/>
-              <?php
-              if ($chooselang) {
-                $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
-                $result = tng_query($query);
-                $numlangs = tng_num_rows($result);
+        <br>
+        <?php
+        if ($chooselang) {
+          $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
+          $result = tng_query($query);
+          $numlangs = tng_num_rows($result);
 
-                if ($numlangs > 1) {
+          if ($numlangs > 1) {
                   echo getFORM("savelanguage2", "get", "tngmenu3", "");
                   echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
 
@@ -92,7 +92,7 @@ $title = getTemplateMessage('t1_maintitle');
                     echo ">{$row['display']}</option>\n";
                   }
                   echo "</select>\n";
-                  echo "<input type=\"hidden\" name=\"instance\" value=\"3\" /></form>\n";
+            echo "<input type=\"hidden\" name=\"instance\" value=\"3\"></form>\n";
                 }
 
                 tng_free_result($result);
@@ -172,14 +172,14 @@ $title = getTemplateMessage('t1_maintitle');
                               echo "<li><a href=\"suggest.php?page=$title\">{$text['contactus']}</a></li>\n";
                               ?>
                             </ul>
-                            <br/>
+                          <br>
                         </td>
                     </tr>
                 </table>
             </td>
-        </tr>
-    </table>
-    <hr size="1"/>
+    </tr>
+  </table>
+  <hr>
   <?php
   $flags['basicfooter'] = true;
   echo tng_footer($flags);

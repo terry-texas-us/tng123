@@ -7,7 +7,7 @@ $flags['noicons'] = 0;
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 if ($sitever == "standard") {
   ?>
-    <br clear="all"><br/>
+  <br clear="all"><br>
   <?php
 }
 ?>
@@ -107,7 +107,7 @@ if ($sitever == "standard") {
         </section>
     </aside>
 </div>
-<br clear="both"/>
+<br clear="both">
 
 <?php
 echo tng_footer($flags);

@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "导入GEDCOM...<br/>可能需要几分钟";
+    $admtext['importinggedcom'] = "导入GEDCOM...<br>可能需要几分钟";
     $admtext['ifimportfails'] = "如果导入无法完成";
     $admtext['opened'] = "打开...";
     $admtext['toresume'] = "继续导入";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "...的文献";
     $admtext['noevtypes'] = "不存在事件类型";
     $admtext['DESI'] = "后代兴趣";
-    $admtext['allnone'] = "输入语言的显示消息, <br/> 或保留所有空白并在上面输入一个显示消息";
+    $admtext['allnone'] = "输入语言的显示消息, <br> 或保留所有空白并在上面输入一个显示消息";
     $admtext['assocwith'] = "关联";
     $admtext['BAPM'] = "洗礼";
     $admtext['umps'] = "您的GEDCOM 文件可能大于您的 php 安装所允许的最大大小。您可以要求提供程序增加 upload_max_filesize值, 也可以将文件复制到站点上的gedcom文件夹中, 然后从该位置导入。";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "前缀";
     $admtext['chkdel'] = "删除左边，检查空格";
     //added in 9.0.0
-    $admtext['choosedef'] = "选择缺省照片";  //Choose<br/>default<br/>photo; //has to fit in a small box
+    $admtext['choosedef'] = "选择缺省照片";  //Choose<br>default<br>photo; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "认可日期（LDS）";
     $admtext['confplace'] = "认可地点（LDS）";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "生成缩略图";
     $admtext['genthumbsdesc'] = "自动生成不带现有缩略图的所有照片的版本";
     $admtext['thumbsgenerated'] = "生成缩略图";
-    $admtext['makedefault'] = "设置缺省";
-    $admtext['filewithinhs'] = "墓碑文件夹中的路径 <br/> (子文件和文件名)";
-    $admtext['recsupdated'] = "记录更新";
+  $admtext['makedefault'] = "设置缺省";
+  $admtext['filewithinhs'] = "墓碑文件夹中的路径 <br> (子文件和文件名)";
+  $admtext['recsupdated'] = "记录更新";
     $admtext['removedef'] = "删除默认照片";
     $admtext['numlinkhs'] = "关联此墓碑上的人数";
     $admtext['sortheadstones'] = "选择墓碑";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "需要；这应该对应于文件上载后在 <em>收藏夹</em> 中的文件的名称和位置。例如, 如果您的照片文件夹称为 <em> photos/em>, 并且您希望您的文件被称为 <em> myphoto.jpg </em> 并建一个子文件夹为 <em> newphotos </em>, 您要在空白处输入 <em> newphotos/myphoto.jpg </em>。";
     $admtext['leaveblankphoto'] = "如果文件已上载, 请将此字段留空";
     $admtext['thumbconflicts'] = "由于路径、权限、大小或文件名问题而不生成缩略图";
-    $admtext['showmap'] = "每当这个项目被显示，显示墓地地图和媒体";
-    $admtext['bodytext'] = "<strong> 或 </strong> <br/> 正文文本 ";
-    $admtext['usenl'] = "将换行符转换为HTML显示 ";
+  $admtext['showmap'] = "每当这个项目被显示，显示墓地地图和媒体";
+  $admtext['bodytext'] = "<strong> 或 </strong> <br> 正文文本 ";
+  $admtext['usenl'] = "将换行符转换为HTML显示 ";
     $admtext['newwin'] = "打开新窗口";
     $admtext['modifymedia'] = "编辑现有的媒体";
     $admtext['addnewmedia'] = "添加新媒体";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "选择事件和动作";
     $admtext['suggested'] = "建议";
-    $admtext['usernotes'] = "关于<br />建议更改的注意事项<br />（不会保存）";
+    $admtext['usernotes'] = "关于<br>建议更改的注意事项<br>（不会保存）";
     $admtext['postdate'] = "发表于";
     $admtext['savedel'] = "保存并删除";
     $admtext['postpone'] = "推迟";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "检查";
 $admtext['generate'] = "创建";
 $admtext['update'] = "更新";
 $admtext['confdeleteevent'] = "您确定要删除此事件吗？";
-$admtext['existinglinks'] = "现有的链接：<br/>（检查删除）";
+$admtext['existinglinks'] = "现有的链接：<br>（检查删除）";
 $admtext['lowersortfirst'] = "较低的数字排序，也可以使用十进制数字";
 $admtext['personsname'] = "个人名字";
 $admtext['tablecreation'] = "创建表";

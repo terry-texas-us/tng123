@@ -68,28 +68,28 @@ $mediatabs[1] = array($allow_media_add, "admin_newmedia.php", $admtext['addnew']
 $mediatabs[2] = array($allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia");
 $mediatabs[3] = array($allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs");
 $mediatabs[4] = array($allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import");
-$mediatabs[5] = array($allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload");
+$mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#sort');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "sortmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "img/photos_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_ordermedia.php" method="get" name="find" onsubmit="return validateForm();">
-                <span class="subhead"><strong><?php echo $admtext['sortmediaind']; ?></strong></span><br/><br/>
-                <table cellspacing="2">
-                    <tr>
-                        <td class="normal"><?php echo $admtext['tree']; ?></td>
-                        <td class="normal"><?php echo $admtext['linktype']; ?></td>
-                        <td class="normal"><?php echo $admtext['mediatype']; ?></td>
-                        <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
-                    </tr>
-                    <tr>
-                        <td valign="top">
-                            <select name="tree1">
-                              <?php
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_ordermedia.php" method="get" name="find" onsubmit="return validateForm();">
+        <span class="subhead"><strong><?php echo $admtext['sortmediaind']; ?></strong></span><br><br>
+        <table cellspacing="2">
+          <tr>
+            <td class="normal"><?php echo $admtext['tree']; ?></td>
+            <td class="normal"><?php echo $admtext['linktype']; ?></td>
+            <td class="normal"><?php echo $admtext['mediatype']; ?></td>
+            <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <select name="tree1">
+                <?php
                               $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                               while ($treerow = tng_fetch_assoc($treeresult)) {
                                 echo "	<option value=\"{$treerow['gedcom']}\"";
@@ -125,27 +125,27 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                               ?>
                             </select>
                         </td>
-                        <td><input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>" onblur="toggleEventRow(document.find.eventlink1.checked);"></td>
-                        <td><a href="#"
-                               onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                               title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                        <td><input type="submit" value="<?php echo $admtext['text_continue']; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">&nbsp;</td>
-                        <td colspan="2">
-                            <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"/> <?php echo $admtext['eventlink']; ?></span><br/>
-                            <select name="event1" id="eventrow1" style="display:none">
-                                <option value=""></option>
-                            </select>
-                        </td>
-                        <td class="normal" valign="top">&nbsp;</td>
-                    </tr>
-                </table>
+            <td><input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>" onblur="toggleEventRow(document.find.eventlink1.checked);"></td>
+            <td><a href="#"
+                   onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
+                   title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+            <td><input type="submit" value="<?php echo $admtext['text_continue']; ?>"></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+            <td colspan="2">
+              <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
+              <select name="event1" id="eventrow1" style="display:none">
+                <option value=""></option>
+              </select>
+            </td>
+            <td class="normal" valign="top">&nbsp;</td>
+          </tr>
+        </table>
 
-            </form>
+      </form>
 
-        </td>
+    </td>
     </tr>
 
 </table>

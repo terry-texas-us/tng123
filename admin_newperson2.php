@@ -49,17 +49,17 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="newperson">
-    <span class="subhead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br/>
+  <span class="subhead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br>
 
-    <form method="post" name="npform"<?php if ($needped) {
-      echo " action=\"admin_addperson2.php\"";
-    } else {
-      echo " action=\"\" onsubmit=\"return saveNewPerson(this);\"";
-    } ?> style="margin-top:10px">
-        <table border="0" cellpadding="2" class="normal">
-            <tr>
-                <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
-            </tr>
+  <form method="post" name="npform"<?php if ($needped) {
+    echo " action=\"admin_addperson2.php\"";
+  } else {
+    echo " action=\"\" onsubmit=\"return saveNewPerson(this);\"";
+  } ?> style="margin-top:10px">
+    <table border="0" cellpadding="2" class="normal">
+      <tr>
+        <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
+      </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
                 <td>
@@ -143,7 +143,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                   echo "<span id=\"branchlist2\"></span>";
                   if (!$assignedbranch) {
                   if ($numbranches > 8) {
-                    $select = $admtext['scrollbranch'] . "<br/>";
+                    $select = $admtext['scrollbranch'] . "<br>";
                   }
                   $select .= "<select name=\"branch[]\" id=\"branch2\" multiple size=\"8\">\n";
                   $select .= "	<option value=\"\"";
@@ -153,7 +153,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                   $select .= ">{$admtext['nobranch']}</option>\n";
 
                   $select .= "$options</select>\n";
-                  echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\"><img src=\"img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                  echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                   ?>
                     <div id="branchedit2" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch2','branchedit2','branchlist2');">
                       <?php
@@ -185,7 +185,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           }
           echo showEventRow('deathdate', 'deathplace', 'DEAT', '');
           echo showEventRow('burialdate', 'burialplace', 'BURI', '');
-          echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"/> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
+          echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
           if (determineLDSRights()) {
             echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
             echo showEventRow('confdate', 'confplace', 'CONL', '');
@@ -197,7 +197,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
       <?php
       if ($type == "child") {
-        echo "<br/>\n";
+        echo "<br>\n";
         echo $admtext['relationship'] . " ({$admtext['father']}): " . relateSelect("father") . "&nbsp;&nbsp;";
         echo $admtext['relationship'] . " ({$admtext['mother']}): " . relateSelect("mother");
       }

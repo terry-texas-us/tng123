@@ -61,32 +61,32 @@ echo getFORM("relationship", "get", "form1", "form1", "$('calcbtn').className='f
 $maxupgen = $pedigree['maxupgen'] ? $pedigree['maxupgen'] : 15;
 $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
 ?>
-    <span class="subhead"><strong><?php echo $text['findrel']; ?></strong></span><br/>
-    <p><span class="normal"><?php echo $newstr; ?></span></p>
-    <table class="normal">
-        <tr>
-            <td valign="top">
-                <table>
-                    <tr>
-                        <td><span class="normal"><strong><?php echo $text['person1']; ?> </strong></span></td>
-                        <td>
-                            <div id="name1" class="normal"><?php echo $namestr; ?></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span class="normal"><?php echo $text['changeto']; ?> </span></td>
-                        <td><span class="normal">
-						<input type="text" name="altprimarypersonID" id="altprimarypersonID" size="10"/>  <input type="button" name="find1" value="<?php echo $text['find']; ?>" onclick="findItem('I','altprimarypersonID','name1','<?php echo $tree; ?>');"/>
+  <span class="subhead"><strong><?php echo $text['findrel']; ?></strong></span><br>
+  <p><span class="normal"><?php echo $newstr; ?></span></p>
+  <table class="normal">
+    <tr>
+      <td valign="top">
+        <table>
+          <tr>
+            <td><span class="normal"><strong><?php echo $text['person1']; ?> </strong></span></td>
+            <td>
+              <div id="name1" class="normal"><?php echo $namestr; ?></div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="normal"><?php echo $text['changeto']; ?> </span></td>
+            <td><span class="normal">
+						<input type="text" name="altprimarypersonID" id="altprimarypersonID" size="10">  <input type="button" name="find1" value="<?php echo $text['find']; ?>" onclick="findItem('I','altprimarypersonID','name1','<?php echo $tree; ?>');">
 					</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td><span class="normal"><strong><?php echo $text['person2']; ?> </strong></span></td>
-                        <td>
-                          <?php
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><span class="normal"><strong><?php echo $text['person2']; ?> </strong></span></td>
+            <td>
+              <?php
                           if ($relatepersonID && $relatetreeID == $tree) {
                             $query = "SELECT firstname, lastname, lnprefix, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"$relatepersonID\" AND gedcom = \"$tree\"";
                             $result2 = tng_query($query);
@@ -105,20 +105,20 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                               tng_free_result($result2);
                             }
                           }
-                          echo "<div id=\"name2\" class=\"normal\">$namestr2</div><input type=\"hidden\" name=\"savedpersonID\" value=\"$relatepersonID\" /></td></tr>\n";
-                          echo "<tr><td><span class=\"normal\">{$text['changeto']} </span></td><td>";
-                          ?>
-                            <input type="text" name="secondpersonID" id="secondpersonID" size="10"/> <input type="button" name="find2" value="<?php echo $text['find']; ?>" onclick="findItem('I','secondpersonID','name2','<?php echo $tree; ?>');"/>
-                        </td>
-                    </tr>
-                </table>
+              echo "<div id=\"name2\" class=\"normal\">$namestr2</div><input type=\"hidden\" name=\"savedpersonID\" value=\"$relatepersonID\"></td></tr>\n";
+              echo "<tr><td><span class=\"normal\">{$text['changeto']} </span></td><td>";
+              ?>
+              <input type="text" name="secondpersonID" id="secondpersonID" size="10"> <input type="button" name="find2" value="<?php echo $text['find']; ?>" onclick="findItem('I','secondpersonID','name2','<?php echo $tree; ?>');">
             </td>
-            <td valign="top">
-                <div class="searchsidebar">
-                    <table>
-                        <tr>
-                            <td><?php echo $text['maxrels']; ?>:</td>
-                            <td valign="bottom">
+          </tr>
+        </table>
+      </td>
+      <td valign="top">
+        <div class="searchsidebar">
+          <table>
+            <tr>
+              <td><?php echo $text['maxrels']; ?>:</td>
+              <td valign="bottom">
                                 <select name="maxrels">
                                   <?php
                                   $initrels = $pedigree['initrels'] ? $pedigree['initrels'] : 1;
@@ -179,19 +179,19 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                                 </select> <?php //echo $text['sometimes']; ?>
                             </td>
                         </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-    </table>
-    <br/>
-    <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
-    <input type="hidden" name="primarypersonID" id="primarypersonID" value="<?php echo $primaryID; ?>"/>
-    <input type="submit" value="<?php echo $text['calculate']; ?>" id="calcbtn" class="btn" <?php if (!$relatepersonID) {
-      echo "onclick=\"if( form1.secondpersonID.value.length == 0 ) {alert('{$text['select2inds']}'); return false;}\"";
-    } ?> />
-    <br/><br/>
-    </form>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+  <input type="hidden" name="primarypersonID" id="primarypersonID" value="<?php echo $primaryID; ?>">
+  <input type="submit" value="<?php echo $text['calculate']; ?>" id="calcbtn" class="btn" <?php if (!$relatepersonID) {
+    echo "onclick=\"if( form1.secondpersonID.value.length == 0 ) {alert('{$text['select2inds']}'); return false;}\"";
+  } ?> >
+  <br><br>
+  </form>
 <?php
 tng_footer("");
 ?>

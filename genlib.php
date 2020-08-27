@@ -190,7 +190,7 @@ function tng_header($title, $flags) {
     } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
       $class = !empty($flags['homeclass']) ? $flags['homeclass'] : "publicbody";
       echo "<body class=\"{$class}\">\n";
-      echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"{$cms['tngpath']}img/backtotop.png\" alt=\"\" /></a></div>\n";
+      echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"{$cms['tngpath']}img/backtotop.png\" alt=\"\"></a></div>\n";
     }
   }
   if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
@@ -201,7 +201,7 @@ function tng_header($title, $flags) {
   if (!$cms['support'] && $sitever == "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
     $ttitle = "t{$templatenum}_maintitle";
     if ($tmp[$ttitle]) {
-      $mtitle = str_replace(array("<br />", "<br>"), " ", getTemplateMessage($ttitle));
+      $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
     } else {
       $ttitle = "t{$templatenum}_headtitle";
       $i = 1;
@@ -212,12 +212,12 @@ function tng_header($title, $flags) {
       }
     }
     if ($mtitle) {
-      echo "<h3 class=\"mmaintitle\">" . $mtitle . "</h3><hr class=\"mtitlehr\"/><br/>\n";
+      echo "<h3 class=\"mmaintitle\">" . $mtitle . "</h3><hr class=\"mtitlehr\"/><br>\n";
     }
   }
 
   if ($tngconfig['maint']) {
-    echo "<span class=\"fieldnameback yellow\" style=\"padding:3px\"><strong>{$text['mainton']}</strong></span><br /><br />\n";
+    echo "<span class=\"fieldnameback yellow\" style=\"padding:3px\"><strong>{$text['mainton']}</strong></span><br><br>\n";
   }
 }
 
@@ -240,7 +240,7 @@ function tng_footer($flags) {
       }
       $printfooter .= $text['maintby'] . " <a href=\"$suggest_url\" class=\"footer\" title=\"{$text['contactus']}\">$dbowner</a>.{$data_protection_link}";
     }
-    echo "<p class=\"smaller\">" . $printfooter . "<br/>\n$tngdomain</p>";
+    echo "<p class=\"smaller\">" . $printfooter . "<br>\n$tngdomain</p>";
   } else {
     if ($sitever == "mobile") {
       echo tng_basicfooter($flags);
@@ -296,7 +296,7 @@ function tng_basicfooter($flags) {
     }
     $footer .= "<p class=\"smaller center\">\n";
     $footer .= "<a href=\"$thispage{$con}sitever=$gotover\" class=\"fieldnameback lightlink2 rounded4\">&nbsp;{$message}&nbsp;</a>\n";
-    $footer .= "</p><br/>\n";
+    $footer .= "</p><br>\n";
   }
   include $cms['tngpath'] . "stdsitecredit.php";
   $footer .= $sitecredit;
@@ -378,7 +378,7 @@ function getSmallPhoto($medialink) {
   }
   $altmsg = $medialink['allow_living'] ? str_replace("\"", "'", $medialink['description']) : "";
   $cleantitle = $tnggallery ? $altmsg : "";
-  return "<img src=\"$thumb\" border=\"0\" $dimensions alt=\"$altmsg\" title=\"$cleantitle\"$class />";
+  return "<img src=\"$thumb\" $dimensions alt=\"$altmsg\" title=\"$cleantitle\"$class>";
 }
 
 function tng_DrawHeading($photostr, $namestr, $years) {
@@ -388,10 +388,10 @@ function tng_DrawHeading($photostr, $namestr, $years) {
   } else {
     $outputstr = "<h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px\">$namestr</h1>";
     if ($years) {
-      $outputstr .= "<span class=\"normal\">$years</span><br />\n";
+      $outputstr .= "<span class=\"normal\">$years</span><br>\n";
     }
   }
-  $outputstr .= "<br clear=\"all\" /><br />\n";
+  $outputstr .= "<br clear=\"all\"><br>\n";
   if (empty($tngconfig['webmatches'])) {
     echo "<div id=\"mhmatches\"></div>\n";
   }
@@ -512,7 +512,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
     $menu .= "</div>\n";
     $menu .= "<div id=\"pub-innermenu\" class=\"fieldnameback fieldname smaller rounded4\">\n";
     $menu .= $innermenu;
-    $menu .= "</div><br/>\n";
+    $menu .= "</div><br>\n";
 
     if ($flags['tabs'] == "tngtabs1.css") {
       $more = "";
@@ -740,7 +740,7 @@ function tng_getLanguageSelect($instance) {
         $menu .= ">{$row['display']}</option>\n";
       }
       $menu .= "</select>\n";
-      $menu .= "<input type=\"hidden\" name=\"instance\" value=\"$instance\" /></form>\n";
+      $menu .= "<input type=\"hidden\" name=\"instance\" value=\"$instance\"></form>\n";
       $menu .= "</li>\n";
     }
 
@@ -926,13 +926,13 @@ function tng_icons($instance, $title = "") {
       $outermenu .= "<ul class=\"tngdd $iconalign\" id=\"tngdd\">\n";
 
       if ($tngconfig['menu'] != 1) {
-        $outermenu .= "<li class=\"langmenu stubmenu\"><br/></li>\n";
+        $outermenu .= "<li class=\"langmenu stubmenu\"><br></li>\n";
       }
 
       $outermenu .= $menu;
 
       if ($tngconfig['menu'] == 1) {
-        $outermenu .= "<li class=\"langmenu stubmenu-rt\"><br/></li>\n";
+        $outermenu .= "<li class=\"langmenu stubmenu-rt\"><br></li>\n";
       }
 
       $outermenu .= "</ul>\n";
@@ -960,14 +960,14 @@ function tng_icons($instance, $title = "") {
         $searchsite_url = getURL("searchsite", 0);
 
         $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
-        $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" border=\"0\" alt=\"\"/></a>";
-        $fullmenu .= "<span class=\"subhead\"><strong>{$text['search']}</strong> | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></span><br/><br/>";
+        $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" alt=\"\"/></a>";
+        $fullmenu .= "<span class=\"subhead\"><strong>{$text['search']}</strong> | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></span><br><br>";
         $fullmenu .= getFORM("search", "get", "", "") . "\n";
         $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
         $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type=\"text\" name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
         $fullmenu .= "<label for=\"searchid\">{$text['id']}: </label><input type=\"text\" class=\"veryshortfield\" name=\"mypersonid\" id=\"searchid\"/> &nbsp;\n";
-        $fullmenu .= "<input type=\"hidden\" name=\"idqualify\" value=\"equals\"/>\n";
-        $fullmenu .= "<input type=\"submit\" value=\"{$text['search']}\"/></form></div>";
+        $fullmenu .= "<input type=\"hidden\" name=\"idqualify\" value=\"equals\">\n";
+        $fullmenu .= "<input type=\"submit\" value=\"{$text['search']}\"></form></div>";
       }
     }
 
@@ -999,7 +999,7 @@ function tng_icons($instance, $title = "") {
       $fullmenu .= "</div>\n";
 
       if ($tngconfig['menu'] == 1) {
-        $fullmenu .= "<br style=\"clear:both\" /><br />\n";
+        $fullmenu .= "<br style=\"clear:both\"><br>\n";
       }
     }
 
@@ -1024,7 +1024,7 @@ function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
   } else {
     $ddrow = "<li><a href=\"$link\">";
     if ($thumb) {
-      $ddrow .= "<img src=\"{$cms['tngpath']}$thumb\" class=\"menu-icon\" alt=\"\" />";
+      $ddrow .= "<img src=\"{$cms['tngpath']}$thumb\" class=\"menu-icon\" alt=\"\">";
     } else {
       $ddrow .= "<span class=\"menu-icon\" id=\"$id\"></span>";
     }
@@ -1050,15 +1050,15 @@ function treeDropdown($forminfo) {
       }
       $ret .= "<span class=\"normal\">{$text['tree']}: </span>";
       $ret .= treeSelect($treeresult, $forminfo['name']);
-      $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\"/>\n";
+      $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
       if (isset($forminfo['hidden']) && is_array($forminfo['hidden'])) {
         foreach ($forminfo['hidden'] as $hidden)
-          $ret .= "<input type=\"hidden\" name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\" />\n";
+          $ret .= "<input type=\"hidden\" name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\">\n";
       }
       if ($forminfo['endform']) {
-        $ret .= "</form><br/>\n";
+        $ret .= "</form><br>\n";
       } else {
-        $ret .= "<br/><br/>\n";
+        $ret .= "<br><br>\n";
       }
       $treeresult = tng_query($query);
       if ($tree) {
@@ -1258,9 +1258,9 @@ function showMediaLinks($linkList) {
     $usefolder = $thumbrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
     $thumb = $cms['tngpath'] . "$usefolder/" . str_replace("%2F", "/", rawurlencode($thumbrow['thumbpath']));
     $title = !empty($thumbrow['altdescription']) ? $thumbrow['altdescription'] : $thumbrow['description'];
-    $imgsrc = "<img src=\"$thumb\" border=\"0\" alt=\"$title\" title=\"$title\" class=\"thumb\" />";
+    $imgsrc = "<img src=\"$thumb\" alt=\"$title\" title=\"$title\" class=\"thumb\">";
     $href = getMediaHREF($thumbrow, 0);
-    $finishedmedList .= "<br /><a href=\"$href\" title=\"$title\" target=\"_blank\">" . $imgsrc . "</a>&nbsp;<a href=\"$href\" title=\"$title\" target=\"_blank\" style=\"vertical-align:top;\">$title</a><br />";
+    $finishedmedList .= "<br><a href=\"$href\" title=\"$title\" target=\"_blank\">" . $imgsrc . "</a>&nbsp;<a href=\"$href\" title=\"$title\" target=\"_blank\" style=\"vertical-align:top;\">$title</a><br>";
   }
   return $finishedmedList;
 }

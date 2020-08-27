@@ -77,14 +77,14 @@ $displaychar = $decodedfirstchar ? $decodedfirstchar : $text['all'];
 tng_header($text['placelist'] . ": $displaychar", $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": $displaychar"; ?></h1><br class="clearleft"/>
+<h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": $displaychar"; ?></h1><br class="clearleft">
 <?php
 
-$hiddenfields[] = array('name' => 'firstchar', 'value' => $firstchar);
-$hiddenfields[] = array('name' => 'psearch', 'value' => $psearch);
-$hiddenfields[] = array('name' => 'offset', 'value' => $offsetorg);
+$hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];
+$hiddenfields[] = ['name' => 'psearch', 'value' => $psearch];
+$hiddenfields[] = ['name' => 'offset', 'value' => $offsetorg];
 if ($tree && !$tngconfig['places1tree']) {
-  echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'places-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+  echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'places-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 }
 
 $formstr = getFORM("places-oneletter", "get", "", "");
@@ -92,24 +92,24 @@ echo $formstr;
 ?>
 <div class="titlebox">
   <?php
-  echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\" />\n";
+  echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\">\n";
   if ($tree && !$tngconfig['places1tree']) {
-    echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+    echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
   }
-  echo "<input type=\"hidden\" name=\"stretch\" value=\"1\" />\n";
-  echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\" />\n";
+  echo "<input type=\"hidden\" name=\"stretch\" value=\"1\">\n";
+  echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\">\n";
   ?>
-    <br/><br/><?php echo "<a href=\"$places_url" . "{$treestr2}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$places_all_url" . "{$treestr2}\">{$text['showallplaces']}</a>"; ?>
+  <br><br><?php echo "<a href=\"$places_url" . "{$treestr2}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$places_all_url" . "{$treestr2}\">{$text['showallplaces']}</a>"; ?>
 </div>
 </form>
 
-<br/>
+<br>
 <div class="titlebox">
-    <div>
-        <p class="subhead"><b>
-            <?php
-            echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
-            if (isset($_GET['offset'])) {
+  <div>
+    <p class="subhead"><b>
+        <?php
+        echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
+        if (isset($_GET['offset'])) {
               echo " ({$text['numoccurrences']}):";
             }
             ?>
@@ -154,7 +154,7 @@ echo $formstr;
                     $specificcount = $countrow['placecount'];
                     tng_free_result($result2);
 
-                    $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\" /></a>" : "";
+                    $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
                     if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                       $name = "<a href=\"$places_oneletter_url" . $poffset;
                       if ($tree && !$tngconfig['places1tree']) {
@@ -165,9 +165,9 @@ echo $formstr;
                       $name .= $place['myplace'];
                       $name .= "</a>";
 
-                      echo "$snnum. $name ({$place['placecount']})$searchlink<br/>\n";
+                      echo "$snnum. $name ({$place['placecount']})$searchlink<br>\n";
                     } else {
-                      echo "$snnum. $placetitle$searchlink<br/>\n";
+                      echo "$snnum. $placetitle$searchlink<br>\n";
                     }
                     $snnum++;
                     $num_in_col_ctr++;
@@ -184,7 +184,7 @@ echo $formstr;
         </tr>
     </table>
 </div>
-<br/>
+<br>
 <?php
 tng_footer("");
 ?>

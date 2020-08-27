@@ -6,21 +6,21 @@ echo help_header("Help: Miscellaneous");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="notes2_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
-                <a href="mostwanted_help.php" class="lightlink">Help: Most Wanted &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Miscellaneous</span>
-            <p class="smaller menu">
-                <a href="#whatsnew" class="lightlink">What's New</a> &nbsp; | &nbsp;
-                <a href="#mostwanted" class="lightlink">Most Wanted</a> &nbsp; | &nbsp;
-                <a href="#validation" class="lightlink">Data Validation</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="notes2_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
+        <a href="mostwanted_help.php" class="lightlink">Help: Most Wanted &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Miscellaneous</span>
+      <p class="smaller menu">
+        <a href="#whatsnew" class="lightlink">What's New</a> &nbsp; | &nbsp;
+        <a href="#mostwanted" class="lightlink">Most Wanted</a> &nbsp; | &nbsp;
+        <a href="#validation" class="lightlink">Data Validation</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

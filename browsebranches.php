@@ -79,9 +79,9 @@ preparebookmark($logstring);
 tng_header($text['branches'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="branches-hdr-icon"></span><?php echo $text['branches']; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="branches-hdr-icon"></span><?php echo $text['branches']; ?></h1><br clear="left">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'browsebranches', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsebranches', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
   echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";

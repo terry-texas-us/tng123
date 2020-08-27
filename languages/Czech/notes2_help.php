@@ -6,21 +6,21 @@ echo help_header("N�pov�da: Pozn�mky");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="tlevents_help.php" class="lightlink">&laquo; N�pov�da: Ud�losti �asov� osy</a> &nbsp; | &nbsp;
-                <a href="misc_help.php" class="lightlink">N�pov�da: R�zn� &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Pozn�mky</span>
-            <p class="smaller menu">
-                <a href="#notes" class="lightlink">Pozn�mky</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="tlevents_help.php" class="lightlink">&laquo; N�pov�da: Ud�losti �asov� osy</a> &nbsp; | &nbsp;
+        <a href="misc_help.php" class="lightlink">N�pov�da: R�zn� &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Pozn�mky</span>
+      <p class="smaller menu">
+        <a href="#notes" class="lightlink">Pozn�mky</a>
+      </p>
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Nahoru</a></p>

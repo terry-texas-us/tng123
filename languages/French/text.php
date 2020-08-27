@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "la demi-soeur de ";
     $text['halfsibling'] = "demi fr�re/soeur de";
     //changed in 8.0.0
-    $text['gencheck'] = "G�n�rations max <br />� investiguer";
+    $text['gencheck'] = "G�n�rations max <br>� investiguer";
     $text['mcousin'] = "le xxx cousin yyy de";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "la xxx cousine yyy de";  //female cousin
     $text['cousin'] = "le xxx cousin yyy de";
@@ -656,7 +656,7 @@ switch ($textpart) {
     $text['dna_info_head'] = "Info test ADN";
     $text['alltypes'] = "Tous les types";
     $text['allgroups'] = "Tous les groupes";
-    $text['Ydna_LITbox_info'] = "Les tests ADN associ�s � cette personne n'ont pas �t� n�cessairement r�alis�s par cette personne.<br />La colonne 'Haplogroupe' affiche le r�sultat en rouge s'il s'agit d'une 'estimation' ou en vert si le test est 'confirm�'";
+    $text['Ydna_LITbox_info'] = "Les tests ADN associ�s � cette personne n'ont pas �t� n�cessairement r�alis�s par cette personne.<br>La colonne 'Haplogroupe' affiche le r�sultat en rouge s'il s'agit d'une 'estimation' ou en vert si le test est 'confirm�'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Comparer les tests d'ADNmt s�lectionn�s";
     $text['dnatestscompare_atdna'] = "Comparer les tests d'ADNat s�lectionn�s";

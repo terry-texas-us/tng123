@@ -11,7 +11,7 @@ if ($requirelogin && !$currentuser) {
 tng_header($text['searchnames'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h1><br clear="all"/>
+  <h1 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h1><br clear="all">
 <?php
 if ($msg) {
   echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
@@ -23,40 +23,40 @@ $onsubmit = "return searchGoogleWebSite('" . $_SERVER['HTTP_HOST'] . dirname($_S
 $formstr = getFORM("", "GET", "searchsite", "", $onsubmit);
 echo $formstr;
 ?>
-    <div class="searchformbox">
-        <table cellspacing="1" cellpadding="4" class="normal">
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['searchfor']; ?>:</td>
-                <td class="databack">
-                    <input type="text" name="s" id="GoogleText" type="search" class="<?php echo $fieldclass; ?>"/>
-                </td>
-            </tr>
-        </table>
+  <div class="searchformbox">
+    <table cellspacing="1" cellpadding="4" class="normal">
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['searchfor']; ?>:</td>
+        <td class="databack">
+          <input type="text" name="s" id="GoogleText" type="search" class="<?php echo $fieldclass; ?>">
+        </td>
+      </tr>
+    </table>
 
-      <?php
-      if ($sitever != "mobile") {
-        echo "<br /><br />\n";
-      }
-      ?>
-        <p style="max-width:400px"><?php echo $text['searchnote']; ?></p>
-    </div>
+    <?php
+    if ($sitever != "mobile") {
+      echo "<br><br>\n";
+    }
+    ?>
+    <p style="max-width:400px"><?php echo $text['searchnote']; ?></p>
+  </div>
 
-    <div class="searchsidebar">
-        <p class="normal">
-            <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>"/>
-            <input type="reset" id="resetbtn" class="btn" value="<?php echo $text['tng_reset']; ?>"/>
-        </p>
-        <br/><br/>
-        <p>
-            <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
-            <a href="<?php echo $cms['tngpath']; ?>famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
-        </p>
-    </div>
+  <div class="searchsidebar">
+    <p class="normal">
+      <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>">
+      <input type="reset" id="resetbtn" class="btn" value="<?php echo $text['tng_reset']; ?>">
+    </p>
+    <br><br>
+    <p>
+      <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
+      <a href="<?php echo $cms['tngpath']; ?>famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
+    </p>
+  </div>
 
 
-    </form>
-    <div style="height:200px"></div>
-    <br clear="all"/>
+  </form>
+  <div style="height:200px"></div>
+  <br clear="all">
 <?php
 tng_footer("");
 ?>

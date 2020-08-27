@@ -195,7 +195,7 @@ function setPersonLabel($personID) {
       $rights = determineLivingPrivateRights($row, true, true);
       $row['allow_living'] = $rights['living'];
       $row['allow_private'] = $rights['private'];
-      $names .= "<a href=\"admin_editperson.php?personID={$personID}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">" . getName($row) . " ($personID)</a><br/>\n";
+      $names .= "<a href=\"admin_editperson.php?personID={$personID}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">" . getName($row) . " ($personID)</a><br>\n";
     }
 
     if ($branchaction == "clear" || $branchaction == "delete") {
@@ -235,7 +235,7 @@ function setFamilyLabel($personID, $gender) {
     while ($row = tng_fetch_assoc($result)) {
       $oldbranch = trim($row['branch']);
       if (!in_array($row['familyID'], $fdone)) {
-        $famnames .= "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getFamilyName($row) . "</a><br/>\n";
+        $famnames .= "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getFamilyName($row) . "</a><br>\n";
       }
       if ($branchaction == "delete") {
         $familyID = $row['familyID'];

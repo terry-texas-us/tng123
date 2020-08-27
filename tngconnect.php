@@ -138,8 +138,8 @@ function tng_execute_only($stmt, $query, $params) {
   call_user_func_array(array($stmt, 'bind_param'), $params);
   if (!mysqli_stmt_execute($stmt)) {
     $error = mysqli_error($link);
-    $errorstr = $error ? "<br/><br/>$error" : "";
-    echo $text['problem'] . "<br><br>{$text['query']}: $query<br/>" . implode(" | ", $params) . " " . $errorstr;
+    $errorstr = $error ? "<br><br>$error" : "";
+    echo $text['problem'] . "<br><br>{$text['query']}: $query<br>" . implode(" | ", $params) . " " . $errorstr;
     exit;
   }
   $affected_rows = tng_stmt_affected_rows($stmt);
@@ -163,7 +163,7 @@ function tng_query($query) {
   $result = mysqli_query($link, $query);
   if (!$result) {
     $error = mysqli_error($link);
-    $errorstr = $error ? "<br/><br/>$error" : "";
+    $errorstr = $error ? "<br><br>$error" : "";
     echo $text['problem'] . "<br><br>{$text['query']}: $query$errorstr";
     exit;
   }

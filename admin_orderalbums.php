@@ -99,7 +99,7 @@ if (file_exists("$rootpath$photoref")) {
     $photohtouse = $thumbmaxh;
     $photowtouse = intval($thumbmaxh * $photoinfo[0] / $photoinfo[1]);
   }
-  $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" border=\"1\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"margin-right:10px\">";
+  $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"border-width:1;border-style:solid;margin-right:10px\">";
   $photofound = 1;
 }
 
@@ -120,8 +120,8 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($sortstr, $flags);
 
 ?>
-<SCRIPT language="JavaScript" type="text/javascript">
-    var entity = "<?php echo $personID; ?>";
+<script language="JavaScript" type="text/javascript">
+  var entity = "<?php echo $personID; ?>";
     var album = "<?php echo $albumID; ?>";
     var tree = "<?php echo $tree; ?>";
     var orderaction = "alborder";
@@ -135,29 +135,29 @@ tng_adminheader($sortstr, $flags);
 
 <?php
 $albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
-$albumtabs[1] = array($allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum");
-$albumtabs[2] = array($allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums");
+$albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
+$albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#sort');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, "");
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left\">$photo</div><strong>$sortstr<br/>$namestr</strong>"; ?></span><br/><br clear="left">
-            <br/>
-            <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" border="0" class="fieldname normal">
-                <tr>
-                    <td class="fieldnameback" style="width:102px">&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</td>
-                    <td class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</td>
-                    <td class="fieldnameback">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
-                </tr>
-            </table>
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
+      <br>
+      <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" border="0" class="fieldname normal">
+        <tr>
+          <td class="fieldnameback" style="width:102px">&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</td>
+          <td class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</td>
+          <td class="fieldnameback">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
+        </tr>
+      </table>
 
-            <form name="form1">
-                <div id="orderdivs">
-                  <?php
+      <form name="form1">
+        <div id="orderdivs">
+          <?php
                   $result = tng_query($query);
                   $count = 1;
                   while ($row = tng_fetch_assoc($result)) {
@@ -167,12 +167,12 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                     echo "<div class=\"sortrow\" id=\"orderdivs_{$row['alinkID']}\" style=\"clear:both;position:relative\" onmouseover=\"jQuery('#md_{$row['albumID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['albumID']}').css('visibility','hidden');\">";
                     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                     echo "<td class=\"dragarea normal\">";
-                    echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                    echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                     echo "</td>\n";
 
                     echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center\">";
-                    echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\" border=\"0\"><br/>{$text['top']}</a></div>\n";
-                    echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\" />\n";
+                    echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
+                    echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\">\n";
                     echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                     echo "</td>\n";
 
@@ -187,13 +187,13 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
 
                     if ($trow['thumbpath'] && file_exists("$rootpath$tusefolder/" . $trow['thumbpath'])) {
                       $size = @GetImageSize("$rootpath$tusefolder/" . $trow['thumbpath']);
-                      echo "<a href=\"admin_editalbum.php?albumID={$row['albumID']}\"><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" border=\"0\" $size[3] alt=\"{$row['albumname']}\"></a>";
+                      echo "<a href=\"admin_editalbum.php?albumID={$row['albumID']}\"><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" $size[3] alt=\"{$row['albumname']}\"></a>";
                     } else {
                       echo "&nbsp;";
                     }
                     echo "</td>\n";
                     $checked = $row['defphoto'] ? " checked" : "";
-                    echo "<td class=\"lightback normal\"><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br/>$truncated<br/>";
+                    echo "<td class=\"lightback normal\"><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br>$truncated<br>";
                     echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden\"><a href=\"#\" onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
                     echo "</tr></table>";
                     echo "</div>\n";

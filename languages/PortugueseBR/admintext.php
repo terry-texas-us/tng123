@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Informa��o de Cemit�rio existente";
     $admtext['newceminfo'] = "Informa��o de novo Cemit�rio";
     $admtext['maptoupload'] = "Imagem de mapa para transferir";
-    $admtext['mapfilenamefolder'] = "Nome do Arquivo de Mapa<br/>dentro da pasta de l�pides";
+    $admtext['mapfilenamefolder'] = "Nome do Arquivo de Mapa<br>dentro da pasta de l�pides";
     $admtext['ifmapuploaded'] = "Deixar este campo em branco se o arquivo j� foi transferido para a pasta de l�pides.";
     $admtext['requiredmap'] = "Obrigat�rio. Deve coincidir com o nome e a localiza��o de seu arquivo <em>dentro da pasta de l�pides</em> depois que o arquivo tenha sido transferido. Por exemplo, se sua pasta de l�pides se chama <em>l�pides</em>, e voc� deseja chamar seu arquivo <em>mapa.jpg</em> e coloc�-lo em uma sub-pasta chamada <em>meusmapas</em>, dever� escrever <em>meusmapas/mapa.jpg</em> neste campo.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Incluido";
     $admtext['enternew'] = "Incluir novo";
     $admtext['pleaseenter'] = "Por favor, informe um";
-    $admtext['netscapereload'] = "Usu�rios do Netscape: <br/> Devem recarregar a p�gina de Cemit�rios para ver o inclu�do";
+    $admtext['netscapereload'] = "Usu�rios do Netscape: <br> Devem recarregar a p�gina de Cemit�rios para ver o inclu�do";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Importando GEDCOM...<br/>(isto pode levar v�rios minutos)";
+    $admtext['importinggedcom'] = "Importando GEDCOM...<br>(isto pode levar v�rios minutos)";
     $admtext['ifimportfails'] = "Se a importa��o falhar antes de ser completada,";
     $admtext['opened'] = "aberto...";
     $admtext['toresume'] = "para recome�ar a importa��o";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Para Reposit�rios...";
     $admtext['noevtypes'] = "N�o existem tipos de eventos.";
     $admtext['DESI'] = "Descendentes procurados";
-    $admtext['allnone'] = "Entre um texto para cada idioma,<br />ou deixe todos em branco e entre texto acima.";
+    $admtext['allnone'] = "Entre um texto para cada idioma,<br>ou deixe todos em branco e entre texto acima.";
     $admtext['assocwith'] = "Associado com";
     $admtext['BAPM'] = "Batismo";
     $admtext['umps'] = "Seu GEDCOM pode ser maior que o admitido por seu provedor. Voc� pode solicitar ao seu provedor que ele aumenta o valor de 'upload_max_filesize', ou voc� pode copiar o arquivo para a pasta 'gedcom' em seu site e import�-lo de l�.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefixo";
     $admtext['chkdel'] = "Marque a caixa vazia para excluir item � esquerda";
     //added in 9.0.0
-    $admtext['choosedef'] = "Escolha<br/>foto<br/>padr�o"; //has to fit in a small box
+    $admtext['choosedef'] = "Escolha<br>foto<br>padr�o"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Data de confirma��o (SUD)";
     $admtext['confplace'] = "Local de confirma��o (SUD)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Obrigat�rio. Deve corresponder ao nome e localiza��o de seu arquivo <em>dentro da pasta de fotos</em> ap�s carregado o arquivo. Por exemplo, se sua pasta de fotos chama-se <em>fotos</em>, e voc� queira chamar seu arquivo <em>minhafoto.jpg</em> e colocar numa sub-pasta de fotos chamada <em>novasfotos</em>,  deve informar <em>novasfotos/minhafoto.jpg</em> neste campo.";
     $admtext['leaveblankphoto'] = "Deixar este campo em branco se o arquivo j� foi carregado para a sua pasta de fotos.";
     $admtext['thumbconflicts'] = "Miniaturas n�o geradas devido a problemas de caminho, permiss�es ou nome-de-arquivo";
-    $admtext['showmap'] = "Mostar o mapa e as fotos do cemit�rio sempre que for exibida esta imagem";
-    $admtext['bodytext'] = "<strong>OU</strong><br/>Texto da P�gina";
-    $admtext['usenl'] = "Converter mudan�as de linhas em HTML ao exibir";
+  $admtext['showmap'] = "Mostar o mapa e as fotos do cemit�rio sempre que for exibida esta imagem";
+  $admtext['bodytext'] = "<strong>OU</strong><br>Texto da P�gina";
+  $admtext['usenl'] = "Converter mudan�as de linhas em HTML ao exibir";
     $admtext['newwin'] = "Abrir em nova janela";
     $admtext['modifymedia'] = "Modificar m�dia existente";
     $admtext['addnewmedia'] = "Adicionar Nova M�dia";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Se n�o houver data de nascimento, presumir que";
     $admtext['persliving'] = "A pessoa ainda est� viva";
     $admtext['persdead'] = "A pessoa j� faleceu";
-    $admtext['nodeathdate'] = "Se falta a data de falecimento, presumir que a pessoa j� faleceu<br /> se tiver mais de";
+    $admtext['nodeathdate'] = "Se falta a data de falecimento, presumir que a pessoa j� faleceu<br> se tiver mais de";
     $admtext['pedconfigsettings'] = "Configura��o de �rvore Geneal�gica";
     $admtext['usepopups'] = "Exibir Inicial";
     $admtext['maxpedgens'] = "N� M�ximo de Gera��es na �rvore de Ascendentes";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Mesclar Lugares";
     $admtext['findmerge'] = "Buscar poss�veis duplicatas";
     $admtext['selectplacemerge'] = "Selecionar os Lugares para Mesclar";
-    $admtext['mcol1'] = "Mesclar<br/>estes<br/>(excluir)";
-    $admtext['mcol2'] = "com<br/>este<br/>(manter)";
+    $admtext['mcol1'] = "Mesclar<br>estes<br>(excluir)";
+    $admtext['mcol2'] = "com<br>este<br>(manter)";
     $admtext['pmsucc'] = "Mescla de lugares bem sucedida";
     $admtext['nomerge'] = "Nada para mesclar";
     $admtext['enterkeep'] = "Por favor, selecione um objeto para mesclar.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Selecione o Evento e a A��o a Realizar";
     $admtext['suggested'] = "Sugerido";
-    $admtext['usernotes'] = "As notas referentes � <br />mudan�a sugerida<br />n�o ser�o salvas";
+    $admtext['usernotes'] = "As notas referentes � <br>mudan�a sugerida<br>n�o ser�o salvas";
     $admtext['postdate'] = "Publicado em";
     $admtext['savedel'] = "Salvar e Excluir";
     $admtext['postpone'] = "Postergar";

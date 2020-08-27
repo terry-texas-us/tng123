@@ -336,7 +336,7 @@ while ($tlrow = tng_fetch_assoc($tlresult)) {
   }
   if ($tlrow['evtitle']) {
     $evtitle = $tlrow['evtitle'];
-    $evdetail = $tlrow['evdetail'] ? "<br />" . $tlrow['evdetail'] : "";
+    $evdetail = $tlrow['evdetail'] ? "<br>" . $tlrow['evdetail'] : "";
   } else {
     $evtitle = $tlrow['evdetail'];
     $evdetail = "";
@@ -405,12 +405,12 @@ echo tng_DrawHeading($photostr, $namestr, getYears($row));
 echo getFORM("timeline", "post", "form1", "form1");
 
 $innermenu = $text['chartwidth'] . ": &nbsp;";
-$innermenu .= "<input type=\"text\" name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength=\"4\" size=\"4\" /> &nbsp;&nbsp; ";
+$innermenu .= "<input type=\"text\" name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength=\"4\" size=\"4\"> &nbsp;&nbsp; ";
 $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit();\">{$text['refresh']}</a>\n";
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);
 
-echo "<span class=\"subhead\"><strong>{$text['timeline']}</strong></span><br/><br/>\n";
+echo "<span class=\"subhead\"><strong>{$text['timeline']}</strong></span><br><br>\n";
 
 if ($pedigree['simile']) {
   echo "<div id=\"tngtimeline\" style=\"height: {$pedigree['tcheight']}px;\"></div>\n";
@@ -469,7 +469,7 @@ foreach ($tlevents as $key => $value) {
 
 $enddiv = "</div>";
 
-echo "<span class=\"normal\"><br/><br/>\n";
+echo "<span class=\"normal\"><br><br>\n";
 if (count($timeline) > 1) {
   echo $text['text_delete'];
 } else {
@@ -488,7 +488,7 @@ foreach ($keeparray as $timeentry) {
   if ($timeentry['personID'] == $primaryID && $timeentry['tree'] == $tree) {
     echo "&nbsp;";
   } else {
-    echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value=\"1\" />\n";
+    echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value=\"1\">\n";
   }
   echo "</div>\n";
 
@@ -503,27 +503,27 @@ foreach ($keeparray as $timeentry) {
   echo "$eventinfo</td></tr></table></div>\n";
 }
 if ($highestll == 1) {
-  echo "<br/><br/>";
+  echo "<br><br>";
 } elseif ($highestll == 2) {
-  echo "<br/><br/><br/>";
+  echo "<br><br><br>";
 }
 echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$top" . "px\"><tr><td>&nbsp;</td></tr></table>";
 ?>
 
-    <br/><br/>
-    <input type="button" name="lines" class="btn" value="<?php echo $text['togglelines']; ?>" onclick="toggleLines();"/>
-    <input type="button" name="addmore" class="btn" value="<?php echo $text['timelineinstr']; ?>" onclick="toggleAddMore();"/>
-    <input type="submit" class="btn" value="<?php echo $text['refresh']; ?>"/>
-    <div id="addmorediv" style="display:none;">
-      <?php
-      echo "<span class=\"normal\"><br/><br/>";
-      $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
-      $treeresult = tng_query($query);
-      $numrows = tng_num_rows($treeresult);
-      $newtime = time();
-      for ($x = 2; $x < 6; $x++) {
-        echo $text['addperson'] . ": ";
-        if ($numrows > 1) {
+  <br><br>
+  <input type="button" name="lines" class="btn" value="<?php echo $text['togglelines']; ?>" onclick="toggleLines();">
+  <input type="button" name="addmore" class="btn" value="<?php echo $text['timelineinstr']; ?>" onclick="toggleAddMore();">
+  <input type="submit" class="btn" value="<?php echo $text['refresh']; ?>">
+  <div id="addmorediv" style="display:none;">
+    <?php
+    echo "<span class=\"normal\"><br><br>";
+    $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
+    $treeresult = tng_query($query);
+    $numrows = tng_num_rows($treeresult);
+    $newtime = time();
+    for ($x = 2; $x < 6; $x++) {
+      echo $text['addperson'] . ": ";
+      if ($numrows > 1) {
           echo "<select name=\"nexttree$x\">\n";
           while ($treerow = tng_fetch_assoc($treeresult)) {
             echo "	<option value=\"{$treerow['gedcom']}\"";
@@ -534,24 +534,24 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
           }
           echo "</select>\n";
           $treestr = "document.form1.nexttree$x.options[document.form1.nexttree$x.selectedIndex].value";
-        } else {
-          echo "<input type=\"hidden\" name=\"nexttree$x\" value=\"$tree\" />";
-          $treestr = "'" . $tree . "'";
-        }
-        echo "<input type=\"text\" name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\" />  <input type=\"button\" name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\" /><br/>\n";
-        if ($x < 5) {
-          $treeresult = tng_query($query);
-        }
+      } else {
+        echo "<input type=\"hidden\" name=\"nexttree$x\" value=\"$tree\">";
+        $treestr = "'" . $tree . "'";
       }
-      ?>
-        <input type="hidden" name="tree" value="<?php echo $tree; ?>"/>
-        <input type="hidden" name="primaryID" value="<?php echo $primaryID; ?>"/>
-        <br/>
-        </span>
-    </div>
-    <br/>
-    </div>
-    </form><br/>
+      echo "<input type=\"text\" name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type=\"button\" name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
+      if ($x < 5) {
+        $treeresult = tng_query($query);
+      }
+    }
+    ?>
+    <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+    <input type="hidden" name="primaryID" value="<?php echo $primaryID; ?>">
+    <br>
+    </span>
+  </div>
+  <br>
+  </div>
+  </form><br>
 
 <?php
 if ($counter) {
@@ -574,7 +574,7 @@ if ($counter) {
         echo "</tr>\n";
       }
       ?>
-    </table><br/>
+    </table><br>
   <?php
 }
 ?>

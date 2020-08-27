@@ -6,21 +6,21 @@ echo help_header("Pomoc: Kolekcje");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="media_help.php" class="lightlink">&laquo; Pomoc: Media</a> &nbsp; | &nbsp;
-                <a href="albums_help.php" class="lightlink">Pomoc: Albumy &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Kolekcje</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Co to jest kolekcja?</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj/Eytuj/Usuń</a>
-            </p>
-        </td>
-    </tr>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="media_help.php" class="lightlink">&laquo; Pomoc: Media</a> &nbsp; | &nbsp;
+        <a href="albums_help.php" class="lightlink">Pomoc: Albumy &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Kolekcje</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Co to jest kolekcja?</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Dodaj/Eytuj/Usuń</a>
+      </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
 

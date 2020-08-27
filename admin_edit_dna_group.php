@@ -97,9 +97,9 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['modifygro
                     </tr>
 
                 </table>
-                <span class="normal">
-	<br/></span>
-                <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+              <span class="normal">
+	<br></span>
+              <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                 <input type="hidden" name="dna_group" value="<?php echo $dna_group; ?>">
                 <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
             </form>

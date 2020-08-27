@@ -2,13 +2,13 @@
 
 <html>
 <head>
-    <title>Switch Tab Color</title>
-    <script language="JavaScript" src="js/popupwindow.js"></script>
-    <script language="JavaScript" src="js/anchorposition.js"></script>
-    <script language="JavaScript" src="js/colorpicker2.js"></script>
-    <SCRIPT language="JavaScript" type="text/javascript">
-        var cp = new ColorPicker('window');
-    </script>
+  <title>Switch Tab Color</title>
+  <script language="JavaScript" src="js/popupwindow.js"></script>
+  <script language="JavaScript" src="js/anchorposition.js"></script>
+  <script language="JavaScript" src="js/colorpicker2.js"></script>
+  <script language="JavaScript" type="text/javascript">
+    var cp = new ColorPicker('window');
+  </script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 <p>Enter the tab color in hex RGB format (for example, #FF0000) in the box below, or click the palette icon to select.</p>
 <p>To make the tab colors match the colors used on your TNG web site:</p>
 <ol>
-    <li>Edit your genstyle.css file (in your main TNG folder).</li>
+  <li>Edit your genstyle.css file (in your main TNG folder).</li>
     <li>Find the "fieldnameback" section and the "background-color" within that section.</li>
     <li>Copy the 6-character string between the "#" and the ";" and paste it in the field below. The tab displayed will be your "active" tab.</li>
     <li>Next, find the "databack" section in genstyle.css, and again notice the "background-color" within that section.</li>

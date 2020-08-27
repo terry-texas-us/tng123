@@ -29,11 +29,11 @@ preparebookmark($logstring);
 
 tng_header($text['placelist'] . ": " . $text['allplaces'], $flags);
 ?>
-    <a id="top"></a>
-    <h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": " . $text['allplaces']; ?></h1><br class="clearleft"/>
+  <a id="top"></a>
+  <h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": " . $text['allplaces']; ?></h1><br class="clearleft">
 <?php
 if (!$tngconfig['places1tree']) {
-  echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'places-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+  echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'places-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 }
 
 $offset = 1;
@@ -67,24 +67,24 @@ if ($result) {
       echo $formstr;
       ?>
       <?php
-      echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\" />\n";
+      echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\">\n";
       if ($tree && !$tngconfig['places1tree']) {
-        echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+        echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
       }
-      echo "<input type=\"hidden\" name=\"stretch\" value=\"1\" />\n";
-      echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\" />\n";
+      echo "<input type=\"hidden\" name=\"stretch\" value=\"1\">\n";
+      echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\">\n";
       ?>
-        </form>
+      </form>
 
-        <br/><?php echo "<a href=\"$places_url" . "$treestr2\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$heatmap_url{$treestr2}\">{$text['heatmap']}</a>"; ?>
+      <br><?php echo "<a href=\"$places_url" . "$treestr2\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$heatmap_url{$treestr2}\">{$text['heatmap']}</a>"; ?>
     </div>
-    <br/>
+  <br>
 
-    <p class="smaller"><?php echo $text['showmatchingplaces']; ?></p>
+  <p class="smaller"><?php echo $text['showmatchingplaces']; ?></p>
 <?php
 for ($scount = 1; $scount < $initialchar; $scount++) {
   ?>
-    <div class="titlebox">
+  <div class="titlebox">
   <?php
   $urlfirstchar = addslashes($firstchars[$scount]);
   if ($urlfirstchar) {
@@ -129,16 +129,16 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                     $specificcount = $countrow['placecount'];
                     tng_free_result($result2);
 
-                    $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\" /></a>" : "";
+                    $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
                     if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                       $name = "<a href=\"$places_oneletter_url" . $poffset;
                       if ($tree && !$tngconfig['places1tree']) {
                         $name .= "tree={$place['gedcom']}&";
                       }
                       $name .= "psearch=$place2\">" . str_replace(array("<", ">"), array("&lt;", "&gt;"), $place['myplace']) . "</a>";
-                      echo "$snnum. $name ({$place['placecount']})$searchlink<br />\n";
+                      echo "$snnum. $name ({$place['placecount']})$searchlink<br>\n";
                     } else {
-                      echo "$snnum. $placetitle$searchlink<br />\n";
+                      echo "$snnum. $placetitle$searchlink<br>\n";
                     }
                     $snnum++;
                     $num_in_col_ctr++;
@@ -153,9 +153,9 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
               </td>
           </tr>
       </table>
-      </div>
+    </div>
 
-      <br/><p class="normal"><a href="#top"><?php echo $text['backtotop']; ?></a></p><br/>
+    <br><p class="normal"><a href="#top"><?php echo $text['backtotop']; ?></a></p><br>
     <?php
   }
 }

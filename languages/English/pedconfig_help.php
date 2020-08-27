@@ -6,21 +6,21 @@ echo help_header("Help: Chart Settings");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
-                <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Chart Settings</span>
-            <p class="smaller menu">
-                <a href="#ped" class="lightlink">Pedigree</a> &nbsp; | &nbsp;
-                <a href="#desc" class="lightlink">Descendancy</a> &nbsp; | &nbsp;
-                <a href="#rel" class="lightlink">Relationship</a> &nbsp; | &nbsp;
-                <a href="#time" class="lightlink">Timeline</a> &nbsp; | &nbsp;
-                <a href="#common" class="lightlink">Common Elements</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
+        <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Chart Settings</span>
+      <p class="smaller menu">
+        <a href="#ped" class="lightlink">Pedigree</a> &nbsp; | &nbsp;
+        <a href="#desc" class="lightlink">Descendancy</a> &nbsp; | &nbsp;
+        <a href="#rel" class="lightlink">Relationship</a> &nbsp; | &nbsp;
+        <a href="#time" class="lightlink">Timeline</a> &nbsp; | &nbsp;
+        <a href="#common" class="lightlink">Common Elements</a> &nbsp; | &nbsp;
                 <a href="#thumb" class="lightlink">Thumbnails</a>
             </p>
         </td>
@@ -115,27 +115,27 @@ echo help_header("Help: Chart Settings");
             <span class="optionhead">Max Generations</span>
             <p>The maximum number of generations you will allow visitors to request at one time.</p>
 
-            <span class="optionhead">Initial Generations</span>
-            <p>The number of generations that will be displayed to start with. If nothing is specified here, then this value will default to four.</p>
+          <span class="optionhead">Initial Generations</span>
+          <p>The number of generations that will be displayed to start with. If nothing is specified here, then this value will default to four.</p>
 
-            <span class="optionhead">Start Descendancy</span>
-            <p>Choose to start the text-based descendancy chart with all generations expanded or collapsed. The user will always have the option
-                to expand or collapse individual families.</p>
+          <span class="optionhead">Start Descendancy</span>
+          <p>Choose to start the text-based descendancy chart with all generations expanded or collapsed. The user will always have the option
+            to expand or collapse individual families.</p>
 
-            <span class="optionhead">Show Notes on Register</span>
-            <p>Indicates whether notes for individuals and families will be displayed on the Register page.</p>
+          <span class="optionhead">Show Notes on Register</span>
+          <p>Indicates whether notes for individuals and families will be displayed on the Register page.</p>
 
-            <span class="optionhead">Register Generations</strong><br/>
+          <span class="optionhead">Register Generations</strong><br>
 		Choose to always show each person when displaying a generation, or avoid redundancy by electing to "Remove individuals
 		with no family." That option will only display those individuals when they appear as children. They will not be
 		redisplayed when their entire generation is outlined later in the report.</p>
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right"><a href="#top">Top</a></p>
             <a name="rel"><p class="subheadbold">Relationship Chart</p></a>
             <span class="optionhead">Initial Relationships</span>
             <p>When a new Relationship chart is requested, this is how many relationships TNG will try to find. As soon as that many

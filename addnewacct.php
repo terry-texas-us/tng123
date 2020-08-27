@@ -121,7 +121,7 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
 
 tng_header($text['regnewacct'], $flags);
 
-echo "<p class=\"header\">{$text['regnewacct']}</span></p><br />\n";
+echo "<p class=\"header\">{$text['regnewacct']}</span></p><br>\n";
 echo "<span class=\"normal\">\n";
 if ($success > 0) {
   echo "<p>{$text['success']}</p>";

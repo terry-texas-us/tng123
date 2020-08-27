@@ -6,36 +6,36 @@ echo help_header("Pomoc: Mapy Google");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="places_help.php" class="lightlink">&laquo; Pomoc: Miejsca</a> &nbsp; | &nbsp;
-                <a href="tlevents_help.php" class="lightlink">Pomoc: Linia czasu wydarzeń &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Mapy Google</span>
-            <p class="smaller menu">
-                <a href="#show" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
-                <a href="#help" class="lightlink">Pomoc</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <p><span class="subheadbold">Pokaż/ukryj mapę Google</span><br/><br/>
-                Kliknij przycisk "Pokaż /ukryj mapę Google", aby pokazać mapę Google i szukać szerokości i długości geograficznej lokalizacji oraz zoomu, lub ukryć mapę po
-                zakończeniu. Domyślnie jest ustawienie początkowe określone w Administrator /Ustawienia i konfiguracja / Ustawienia mapy.</p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="places_help.php" class="lightlink">&laquo; Pomoc: Miejsca</a> &nbsp; | &nbsp;
+        <a href="tlevents_help.php" class="lightlink">Pomoc: Linia czasu wydarzeń &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Mapy Google</span>
+      <p class="smaller menu">
+        <a href="#show" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
+        <a href="#help" class="lightlink">Pomoc</a>
+      </p>
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
+      <p><span class="subheadbold">Pokaż/ukryj mapę Google</span><br><br>
+        Kliknij przycisk "Pokaż /ukryj mapę Google", aby pokazać mapę Google i szukać szerokości i długości geograficznej lokalizacji oraz zoomu, lub ukryć mapę po
+        zakończeniu. Domyślnie jest ustawienie początkowe określone w Administrator /Ustawienia i konfiguracja / Ustawienia mapy.</p>
 
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+    </td>
+  </tr>
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <a name="show"><p class="subheadbold">Szukanie</p></a>
-            <p>Interfejs Google Map Geocoder pozwala na zlokalizowanie szerokości i długości geograficznej miejsca za pomocą wywołania poprzez kliknięcie w wybrany punkt.
+      <a name="show"><p class="subheadbold">Szukanie</p></a>
+      <p>Interfejs Google Map Geocoder pozwala na zlokalizowanie szerokości i długości geograficznej miejsca za pomocą wywołania poprzez kliknięcie w wybrany punkt.
                 Możesz również skorzystać z StreetMap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) aby odnaleźć współrzędne w Anglii, lub z Mapy Szukacza (<a href="http://mapa.szukacz.pl" target="_blank">http://mapa.szukacz.pl</a>)
                 w Polsce.</p>
 

@@ -100,7 +100,7 @@ function doMedia($mediatypeID) {
   $mediaresult = tng_query($query);
 
   $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-  $mediaheader = "<div class=\"titlebox\"><span class=\"subhead\"><b>$titlemsg</b></span><br /><br />\n" . $header;
+  $mediaheader = "<div class=\"titlebox\"><span class=\"subhead\"><b>$titlemsg</b></span><br><br>\n" . $header;
 
   $mediatext = "";
   $thumbcount = 0;
@@ -220,7 +220,7 @@ function doMedia($mediatypeID) {
         $description = $text['livingphoto'];
         $notes = "";
       } else {
-        $notes = $notes ? $notes . "<br />({$text['livingphoto']})" : "({$text['livingphoto']})";
+        $notes = $notes ? $notes . "<br>({$text['livingphoto']})" : "({$text['livingphoto']})";
       }
       $href = "";
     }
@@ -247,14 +247,14 @@ function doMedia($mediatypeID) {
       $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
     }
 
-    $mediatext .= "$description<br />$notes&nbsp;</td>";
+    $mediatext .= "$description<br>$notes&nbsp;</td>";
     if ($mediatypeID == "headstones") {
       if (!$row['cemname']) {
         $row['cemname'] = $row['city'];
       }
       $mediatext .= "<td valign=\"top\" class=\"databack\"><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
       if ($row['plot']) {
-        $mediatext .= "<br />";
+        $mediatext .= "<br>";
       }
       $mediatext .= nl2br($row['plot']) . "&nbsp;</td>";
       $mediatext .= "<td valign=\"top\" class=\"databack\">{$row['status']}&nbsp;</td>";
@@ -276,5 +276,5 @@ function doMedia($mediatypeID) {
     $mediatext = str_replace("<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">", "<td valign=\"top\" class=\"databack\">", $mediatext);
   }
   tng_free_result($mediaresult);
-  return $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br />\n" : "";
+  return $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br>\n" : "";
 }

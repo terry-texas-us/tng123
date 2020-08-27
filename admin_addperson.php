@@ -232,7 +232,7 @@ if ($type == "child") {
   $rval .= " onmouseover=\"$('unlinkc_$personID').style.visibility='visible';\" onmouseout=\"$('unlinkc_$personID').style.visibility='hidden';\">\n";
   $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
   $rval .= "<td class=\"dragarea normal\">";
-  $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+  $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
   $rval .= "</td>\n";
   $rval .= "<td class=\"lightback normal childblock\">\n";
 
@@ -241,7 +241,7 @@ if ($type == "child") {
   if ($newperson != "ajax") {
     $personlink = "<a href=\"#\" onclick=\"EditChild('$personID');\">$personlink</a>";
   }
-  $rval .= "$personlink - $personID<br />$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
+  $rval .= "$personlink - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
   echo $rval;
 } elseif ($type == "spouse") {
   $name = $session_charset == "UTF-8" ? getName($row) : utf8_encode(getName($row));

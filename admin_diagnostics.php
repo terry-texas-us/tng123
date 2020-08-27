@@ -55,8 +55,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
               }
               echo 'PHP ' . phpversion();
               ?>
-                <br/>
-                <a href="admin_phpinfo.php"><?php echo $admtext['phpinf']; ?></a>
+              <br>
+              <a href="admin_phpinfo.php"><?php echo $admtext['phpinf']; ?></a>
             </td>
         </tr>
         <tr>
@@ -244,17 +244,17 @@ tng_adminheader($admtext['diagnostics'], $flags);
               ?>
             </td>
         </tr>
-        <tr>
-            <td colspan="2" class="tngshadow databack">
-                <p><img src="img/tng_check.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
-                <p><img src="img/orange.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['restricted']; ?></p>
-                <p><img src="img/tng_close.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
-                <br/><?php echo $admtext['yourbrowser'] . $_SERVER['HTTP_USER_AGENT']; ?></td>
-        </tr>
+      <tr>
+        <td colspan="2" class="tngshadow databack">
+          <p><img src="img/tng_check.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
+          <p><img src="img/orange.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['restricted']; ?></p>
+          <p><img src="img/tng_close.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
+          <br><?php echo $admtext['yourbrowser'] . $_SERVER['HTTP_USER_AGENT']; ?></td>
+      </tr>
     </table>
     <?php echo "<div align=\"right\" class=\"normal\">$tng_title, v.$tng_version</div>"; ?>
     </body>
-    </html>
+  </html>
 <?php
 function fileReadWrite($myuserid, $mygroupid, $fileref) {
   $rval = false;

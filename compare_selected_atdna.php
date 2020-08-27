@@ -43,7 +43,7 @@ $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--
 
 $menu = doMenu($comptabs, "", $innermenu);
 ?>
-<h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_atdna']; ?></h1><br clear="left"/>
+<h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_atdna']; ?></h1><br clear="left">
 <?php
 echo $menu;
 if ($_SESSION["ttree"]) {
@@ -163,7 +163,7 @@ echo $header;
           echo "<tr><td valign=\"top\" class=\"$databack\">$i</td>\n";
           if ($allow_edit || $showtestnumbers) {
             if ($row['private_test']) {
-              $privtest = "<br />&nbsp;(" . $admtext['text_private'] . ")";
+              $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
             } else {
               $privtest = "";
             }
@@ -296,7 +296,7 @@ echo $header;
       ?>
     </table>
 </div>
-<br/>
+<br>
 <?php
 tng_footer("");
 ?>

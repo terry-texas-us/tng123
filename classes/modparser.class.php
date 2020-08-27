@@ -761,13 +761,13 @@ class modparser extends modbase
 
     if (!empty($this->parse_error)) {
       echo "<h3>{$this->admtext['parsererror']} {$this->cfgpath}</h3>
-<p class=\"parse-error\">line:{$this->parse_error['line']} {$this->parse_error['tag']} {$this->admtext[$this->parse_error['text']]}</p><br />";
+<p class=\"parse-error\">line:{$this->parse_error['line']} {$this->parse_error['tag']} {$this->admtext[$this->parse_error['text']]}</p><br>";
       return true;
     }
     if (!empty($tags)) {
       echo "
    <h3>" . $this->find_tagname_value($tags, 'name', 'name') . "&nbsp;&nbsp;&nbsp;(<a href=\"showcfg.php?mod={$this->cfgpath}\" target=\"_blank\">{$this->cfgpath}</a>)&nbsp;&nbsp;&nbsp;" . $this->find_tagname_value($tags, 'name', 'version') . "</h3>
-	  ", $this->show_table_rows($tags), "<br />";
+	  ", $this->show_table_rows($tags), "<br>";
 
     }
   }

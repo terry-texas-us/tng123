@@ -284,7 +284,7 @@ if ($pedigree['inclphotos'] && (trim($photopath) == "" || trim($photosext) == ""
 }
 if (file_exists($cms['tngpath'] . "img/Chart.gif")) {
   $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
+  $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
 } else {
   $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
 }
@@ -376,7 +376,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
     }
     $row['birthdatetr'] = $row['altbirthdatetr'] = "0000-00-00"; //this is to suppress the age calculation on the chart
     $pedigree['namelink'] = "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree=$tree\">$nameinfo</a>";
-    $pedigree['namelink'] .= "<br/><span class=\"pedyears\">" . getYears($row) . "</span>";
+    $pedigree['namelink'] .= "<br><span class=\"pedyears\">" . getYears($row) . "</span>";
 
     $newoffset = $spouseflag ? $gens->offsetV : $gens->offsetV + $pedigree['puboxheight'] + 2 * $pedigree['boxVsep'];
     $gens->offsetV = $gens->offsetV == -1 ? 0 : $newoffset;
@@ -400,7 +400,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
       $photohtouse = $pedigree['puboxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
       $photoInfo = getPhotoSrc($row['personID'], $rights['both'], $row['sex']);
       if ($photoInfo['ref']) {
-        $imagestr = "<img src=\"{$photoInfo['ref']}\" border=\"0\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\" />";
+        $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\">";
         if ($photoInfo['link']) {
           $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
         }
@@ -443,7 +443,7 @@ function finishRelationship($couple) {
   global $pedigree, $totalRelationships, $needmore, $gens, $maxrels, $session_norels;
 
   if ($totalRelationships) {
-    echo "<hr/><br/><br/>\n";
+    echo "<hr><br><br>\n";
   }
 
   echo "<div id=\"tngchart\" align=\"left\" style=\"position:relative;\">\n";
@@ -826,13 +826,13 @@ $innermenu .= "<a href=\"$relate_url" . "primaryID=$primarypersonID&amp;tree=$tr
 
 echo getFORM("relationship2", "get", "form1", "form1");
 echo tng_menu("I", "relate", $primarypersonID, $innermenu);
-echo "<input type=\"hidden\" name=\"primarypersonID\" value=\"$primarypersonID\" />\n";
-echo "<input type=\"hidden\" name=\"savedpersonID\" value=\"$secondpersonID\" />\n";
-echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+echo "<input type=\"hidden\" name=\"primarypersonID\" value=\"$primarypersonID\">\n";
+echo "<input type=\"hidden\" name=\"savedpersonID\" value=\"$secondpersonID\">\n";
+echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
 echo "</form>\n";
 ?>
-    <div id="searching"><img src="img/spinner.gif" alt=""/> <?php echo $text['searching']; ?></div>
-    <span class="subhead"><strong><?php echo $text['relateto'] . " $namestr2"; ?></strong></span><br/><br/>
+  <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo $text['searching']; ?></div>
+  <span class="subhead"><strong><?php echo $text['relateto'] . " $namestr2"; ?></strong></span><br><br>
 <?php
 if ($error) {
   echo "<p>$error {$text['notvalid']}</p>\n";

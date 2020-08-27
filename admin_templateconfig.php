@@ -62,33 +62,33 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
     }
 
     function insertLangRow(rowID, type) {
-        var language = jQuery('#lang_' + rowID);
-        var langVal = language.val();
-        if (langVal && !jQuery('#form_' + rowID + '_' + langVal).length) {
-            var row = document.getElementById(rowID);
-            var langElem = language[0];
-            var langDisplay = langElem.options[langElem.selectedIndex].innerHTML;
-            var table = row.parentNode;
-            var newtr = table.insertRow(row.rowIndex + 1);
-            var label = "&nbsp;&nbsp;" + jQuery('#' + rowID + ' :first-child').html();
-            insertCell(newtr, 0, label + "<br/>&nbsp;&nbsp;&nbsp;(" + langDisplay + ")");
-            var inputstr = type == "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows=\"3\" cols=\"80\"></textarea>" : "<input type=\"text\" class=\"longfield\" name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\"/>";
-            insertCell(newtr, 1, inputstr);
-            insertCell(newtr, 2, "");
-        }
-        return false;
+      var language = jQuery('#lang_' + rowID);
+      var langVal = language.val();
+      if (langVal && !jQuery('#form_' + rowID + '_' + langVal).length) {
+        var row = document.getElementById(rowID);
+        var langElem = language[0];
+        var langDisplay = langElem.options[langElem.selectedIndex].innerHTML;
+        var table = row.parentNode;
+        var newtr = table.insertRow(row.rowIndex + 1);
+        var label = "&nbsp;&nbsp;" + jQuery('#' + rowID + ' :first-child').html();
+        insertCell(newtr, 0, label + "<br>&nbsp;&nbsp;&nbsp;(" + langDisplay + ")");
+        var inputstr = type == "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows=\"3\" cols=\"80\"></textarea>" : "<input type=\"text\" class=\"longfield\" name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
+        insertCell(newtr, 1, inputstr);
+        insertCell(newtr, 2, "");
+      }
+      return false;
     }
 
     function showUploadBox(key, folder) {
-        jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"/> <?php echo $admtext['text_or']; ?> <input type=\"button\" value=\"<?php echo $admtext['select']; ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" />");
-        jQuery('#div_' + key).toggle();
-        return false;
+      jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"> <?php echo $admtext['text_or']; ?> <input type=\"button\" value=\"<?php echo $admtext['select']; ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" >");
+      jQuery('#div_' + key).toggle();
+      return false;
     }
 
     function populateFileName(source, dest) {
-        var temp = source.value.replace(/\\/g, "/");
-        var lastslash = temp.lastIndexOf("/") + 1;
-        dest.val(lastslash > 0 ? 'img/' + source.value.slice(lastslash) : 'img/' + source.value);
+      var temp = source.value.replace(/\\/g, "/");
+      var lastslash = temp.lastIndexOf("/") + 1;
+      dest.val(lastslash > 0 ? 'img/' + source.value.slice(lastslash) : 'img/' + source.value);
     }
 
     function preview(sFileName) {
@@ -190,26 +190,26 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                 <button id="previewbtn"><span class="prevmsg"><?php echo $admtext['showprev']; ?></span><span class="prevmsg" style="display:none"><?php echo $admtext['hideprev']; ?></span></button>
             </form>
 
-            <div style="display:none;" id="previewscroll" class="scroller">
-                <br/>
-                <div style="position:absolute">
-                  <?php
+          <div style="display:none;" id="previewscroll" class="scroller">
+            <br>
+            <div style="position:absolute">
+              <?php
                   foreach ($entries as $i) {
                     $newtemplatepfx = is_numeric($i) ? "template" : "";
                     echo "<div class=\"prevdiv\" id=\"prev$i\"><span class=\"prevnum\">$i:</span>";
                     if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview1sm.jpg")) {
-                      echo "<img src=\"templates/$newtemplatepfx$i/img/preview1sm.jpg\" id=\"preview-$i\" hspace=\"2\" class=\"temppreview\" />";
+                      echo "<img src=\"templates/$newtemplatepfx$i/img/preview1sm.jpg\" id=\"preview-$i\" hspace=\"2\" class=\"temppreview\">";
                     }
                     if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview2sm.jpg")) {
-                      echo "<img src=\"templates/$newtemplatepfx$i/img/preview2sm.jpg\" id=\"preview-$i\" hspace=\"2\" class=\"temppreview\" /> &nbsp;&nbsp;\n";
+                      echo "<img src=\"templates/$newtemplatepfx$i/img/preview2sm.jpg\" id=\"preview-$i\" hspace=\"2\" class=\"temppreview\"> &nbsp;&nbsp;\n";
                     }
                     echo "</div>\n";
                   }
                   ?>
-                </div>
             </div>
+          </div>
 
-            <br/><br/>
+          <br><br>
           <?php
           $textareas = array('mainpara', 'searchpara', 'fhpara', 'fhlinkshis', 'fhlinkshers', 'mwpara', 'featurepara', 'respara', 'featurelinks', 'reslinks', 'headtitle', 'headsubtitle', 'latestnews', 'featurepara1', 'featurepara2', 'featurepara3', 'featurepara4', 'featurepara5', 'featurepara6', 'featurepara7', 'featurepara8', 'photocaption', 'newstext', 'featurespara', 'textpara1', 'textpara2', 'textpara3', 'photocaptionl', 'photocaptionr', 'snipinfoone', 'snipinfotwo', 'quote');
           //needtrans: these fields can be duplicated in another language
@@ -240,7 +240,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             }
             $sections[$n] .= "<td$align>";
             $sections[$n] .= isset($parts[2]) ? "&nbsp;&nbsp;{$admtext[$label]}{$index}:" : "{$admtext[$label]}{$index}:";
-            $sections[$n] .= isset($parts[2]) ? "<br/>&nbsp;&nbsp;&nbsp;&nbsp;(" . $languageArray[$parts[2]] . ")" : "";
+            $sections[$n] .= isset($parts[2]) ? "<br>&nbsp;&nbsp;&nbsp;&nbsp;(" . $languageArray[$parts[2]] . ")" : "";
             $sections[$n] .= "</td>\n";
             $sections[$n] .= "<td>";
             if ($type == "textarea") {
@@ -267,9 +267,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               }
               $sections[$n] .= "> <label for=\"form_{$key}_text\">{$admtext['ttitletext']}</label> &nbsp;";
             } else {
-              $sections[$n] .= "<input type=\"text\" class=\"longfield\" name=\"form_$key\" id=\"form_$key\" value=\"$value\"/>\n";
+              $sections[$n] .= "<input type=\"text\" class=\"longfield\" name=\"form_$key\" id=\"form_$key\" value=\"$value\">\n";
               if (strpos($key, "img") !== false || strpos($key, "image") !== false || strpos($key, "thumb") !== false || strpos($key, "photol") !== false || strpos($key, "photor") !== false) {
-                $sections[$n] .= " <input type=\"button\" onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"{$admtext['preview']}\" /> <input type=\"button\" onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"{$admtext['change']}\" />\n";
+                $sections[$n] .= " <input type=\"button\" onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"{$admtext['preview']}\"> <input type=\"button\" onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"{$admtext['change']}\" >\n";
                 $size = @GetImageSize($rootpath . "templates/{$folders[$n]}/$value");
                 if ($size) {
                   $imagesize1 = $size[0];
@@ -280,15 +280,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               } elseif (substr($label, -6) == "person") {
                 $treefield = str_replace("person", "tree", $key);
                 $sections[$n] .= "<a href=\"#\" onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
-                $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class=\"alignmiddle\" width=\"20\" height=\"20\" border=\"0\" vspace=\"0\" hspace=\"2\">\n";
+                $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class=\"alignmiddle\" width=\"20\" height=\"20\" style=\"margin-left:2px; margin-bottom:4px;\">\n";
                 $sections[$n] .= "</a>\n";
               }
             }
             if ($languageList && !isset($parts[2]) && in_array($label, $needtrans)) {
               if ($type == "textarea") {
-                $sections[$n] .= "<br />";
+                $sections[$n] .= "<br>";
               }
-              $sections[$n] .= "{$admtext['createcopy']}: \n<select id=\"lang_$key\">\n$languageList\n</select> <input type=\"button\" value=\"{$admtext['go']}\" onclick=\"return insertLangRow('$key','$type');\" />\n";
+              $sections[$n] .= "{$admtext['createcopy']}: \n<select id=\"lang_$key\">\n$languageList\n</select> <input type=\"button\" value=\"{$admtext['go']}\" onclick=\"return insertLangRow('$key','$type');\" >\n";
             }
             $sections[$n] .= "</td>\n</tr>\n";
           }
@@ -303,20 +303,20 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               $newtemplatepfx = is_numeric($i) ? "template" : "";
               $imagetext = "";
               if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview1.jpg")) {
-                $imagetext .= "<img src=\"templates/$newtemplatepfx$i/img/preview1.jpg\" id=\"preview1\" hspace=\"2\" class=\"temppreview\" /> ";
+                $imagetext .= "<img src=\"templates/$newtemplatepfx$i/img/preview1.jpg\" id=\"preview1\" hspace=\"2\" class=\"temppreview\"> ";
               }
               if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview2.jpg")) {
-                $imagetext .= " &nbsp; <img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id=\"preview2\" hspace=\"2\" class=\"temppreview\" />\n";
+                $imagetext .= " &nbsp; <img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id=\"preview2\" hspace=\"2\" class=\"temppreview\">\n";
               }
               if ($imagetext) {
-                echo "$imagetext<br />";
+                echo "$imagetext<br>";
               }
               echo "<p><input type=\"submit\" name=\"submittop\" accesskey=\"s\" value=\"{$admtext['save']}\"></p>\n";
               echo "<p><strong>{$admtext['folder']}: templates/" . $folders['t' . $i] . "</strong></p>";
               echo "$section</table>\n";
-              echo "<br/><input type=\"submit\" name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
-              echo "<input type=\"hidden\" name=\"form_templateswitching\" value=\"\"/>\n";
-              echo "<input type=\"hidden\" name=\"form_templatenum\" value=\"\"/>\n";
+              echo "<br><input type=\"submit\" name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
+              echo "<input type=\"hidden\" name=\"form_templateswitching\" value=\"\">\n";
+              echo "<input type=\"hidden\" name=\"form_templatenum\" value=\"\">\n";
               echo "</form>\n";
               echo "</div>\n";
             }

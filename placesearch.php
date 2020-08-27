@@ -52,15 +52,15 @@ $numtrees = $treerow['treecount'];
 tng_free_result($treeresult);
 
 if ($order == "name") {
-  $namesort = "<a href=\"$placesearch_url$currargs&amp;order=nameup\" class=\"lightlink\">xxx <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" width=\"15\" height=\"8\" border=\"0\" alt=\"\" /></a>";
+  $namesort = "<a href=\"$placesearch_url$currargs&amp;order=nameup\" class=\"lightlink\">xxx <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 } else {
-  $namesort = "<a href=\"$placesearch_url$currargs&amp;order=name\" class=\"lightlink\">xxx <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" width=\"15\" height=\"8\" border=\"0\" alt=\"\" /></a>";
+  $namesort = "<a href=\"$placesearch_url$currargs&amp;order=name\" class=\"lightlink\">xxx <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 }
 
 if ($order == "date") {
-  $datesort = "<a href=\"$placesearch_url$currargs&amp;order=dateup\" class=\"lightlink\">yyy <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" width=\"15\" height=\"8\" border=\"0\" alt=\"\" /></a>";
+  $datesort = "<a href=\"$placesearch_url$currargs&amp;order=dateup\" class=\"lightlink\">yyy <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 } else {
-  $datesort = "<a href=\"$placesearch_url$currargs&amp;order=date\" class=\"lightlink\">yyy <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" width=\"15\" height=\"8\" border=\"0\" alt=\"\" /></a>";
+  $datesort = "<a href=\"$placesearch_url$currargs&amp;order=date\" class=\"lightlink\">yyy <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 }
 
 function processEvents($prefix, $stdevents, $displaymsgs) {
@@ -185,8 +185,8 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
     }
 
     if ($numrows) {
-      echo "<br/>\n<div class=\"titlebox\">\n";
-      echo "<span class=\"subhead\"><strong>" . $placetxt . "</strong></span><br />";
+      echo "<br>\n<div class=\"titlebox\">\n";
+      echo "<span class=\"subhead\"><strong>" . $placetxt . "</strong></span><br>";
       $numrowsplus = $numrows + $offset;
       $successcount++;
 
@@ -218,7 +218,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
           <?php
           $i = $offsetplus;
           $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-          $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" border=\"0\" $imageSize[3] alt=\"\" />";
+          $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] alt=\"\">";
           while ($row = tng_fetch_assoc($result)) {
             $rights = determineLivingPrivateRights($row);
             $row['allow_living'] = $rights['living'];
@@ -255,7 +255,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 
       <?php
       if ($pagenav) {
-        echo "<p>$pagenav</p><br />";
+        echo "<p>$pagenav</p><br>";
       }
       echo "</div>\n";
     }
@@ -320,16 +320,16 @@ while ($prow = tng_fetch_assoc($presult)) {
   $foundtree = $prow['gedcom'];
   if ($prow['notes'] || $prow['latitude'] || $prow['longitude']) {
     if (($prow['latitude'] || $prow['longitude']) && $map['key'] && !$mapdrawn) {
-      echo "<br /><div id=\"map\" style=\"width: {$map['hstw']}; height: {$map['hsth']}; margin-bottom:20px;\" class=\"rounded10\"></div>\n";
+      echo "<br><div id=\"map\" style=\"width: {$map['hstw']}; height: {$map['hsth']}; margin-bottom:20px;\" class=\"rounded10\"></div>\n";
       $usedplaces = array();
       $mapdrawn = true;
     }
     if (!$tngconfig['places1tree'] && $numtrees > 1) {
-      echo "<br /><span><strong>{$text['tree']}:</strong> {$prow['treename']}</span><br />\n";
+      echo "<br><span><strong>{$text['tree']}:</strong> {$prow['treename']}</span><br>\n";
     }
     if ($prow['notes']) {
       $notes = nl2br(truncateIt(getXrefNotes($prow['notes'], $prow['gedcom']), $tngconfig['maxnoteprev']));
-      echo "<span><strong>{$text['notes']}:</strong> $notes</span><br />";
+      echo "<span><strong>{$text['notes']}:</strong> $notes</span><br>";
     }
 
     if ($map['key']) {
@@ -340,23 +340,23 @@ while ($prow = tng_fetch_assoc($presult)) {
       $pinplacelevel = ${"pinplacelevel" . $placelevel};
       $placeleveltext = $placelevel != "0" ? $admtext['level' . $placelevel] . "&nbsp;:&nbsp;" : "";
       $codedplace = @htmlspecialchars(str_replace($banish, $banreplace, $psearchns), ENT_QUOTES, $session_charset);
-      $codednotes = $prow['notes'] ? "<br /><br />" . tng_real_escape_string($text['notes'] . ": " . $prow['notes']) : "";
+      $codednotes = $prow['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $prow['notes']) : "";
       // add external link to Google Maps for Directions in the balloon
-      echo "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"{$cms['tngpath']}img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br /><br />"; // add external link to Google Maps for Directions in the balloon
-      $codednotes .= "<br /><br /><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
+      echo "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"{$cms['tngpath']}img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
+      $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
       if ($lat && $long) {
         $uniqueplace = $psearch . $lat . $long;
         if ($map['showallpins'] || !in_array($uniqueplace, $usedplaces)) {
           $usedplaces[] = $uniqueplace;
-          $locations2map[$l2mCount] = array("pinplacelevel" => $pinplacelevel, "lat" => $lat, "long" => $long, "zoom" => $zoom, "htmlcontent" => "<div class=\"mapballoon normal\">$placeleveltext<br />$codedplace$codednotes</div>");
+          $locations2map[$l2mCount] = ["pinplacelevel" => $pinplacelevel, "lat" => $lat, "long" => $long, "zoom" => $zoom, "htmlcontent" => "<div class=\"mapballoon normal\">$placeleveltext<br>$codedplace$codednotes</div>"];
           $l2mCount++;
         }
       }
 
-      echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\" border=\"0\" /></a><strong>$placeleveltext</strong><span class=\"normal\"><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br /><br />";
+      echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class=\"normal\"><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
       $map['pins']++;
     } elseif ($prow['latitude'] || $prow['longitude']) {
-      echo "<span><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br /><br />";
+      echo "<span><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
     }
   }
 }
@@ -369,8 +369,8 @@ $placemedia = getMedia($psearch, "L");
 $placealbums = getAlbums($psearch, "L");
 $media = doMediaSection($psearch, $placemedia, $placealbums);
 if ($media) {
-  echo "<br/>\n<div class=\"titlebox\">\n";
-  echo "<span class=\"subhead\"><strong>{$text['media']}</strong></span><br/><br/>";
+  echo "<br>\n<div class=\"titlebox\">\n";
+  echo "<span class=\"subhead\"><strong>{$text['media']}</strong></span><br><br>";
   echo "$media\n";
   echo "</div>\n";
 }
@@ -405,8 +405,8 @@ while ($prow = tng_fetch_assoc($presult)) {
 }
 
 if ($cemdata) {
-  echo "<br/>\n<div class=\"titlebox\">\n";
-  echo "<span class=\"subhead\"><strong>{$text['cemeteries']}</strong></span><br/><br/>";
+  echo "<br>\n<div class=\"titlebox\">\n";
+  echo "<span class=\"subhead\"><strong>{$text['cemeteries']}</strong></span><br><br>";
   echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n";
   echo "<tr>\n";
   echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;</span></td>\n";

@@ -176,8 +176,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <td><input type="text" value="<?php echo $tngimpcfg['privnote']; ?>" name="privnote" size="5"></td>
                     </tr>
                 </table>
-                <br/>&nbsp;
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+              <br>&nbsp;
+              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
             </form>
             <p class="normal">*<?php echo $admtext['commas']; ?></p>
         </td>

@@ -4,27 +4,27 @@ echo help_header("Nápověda: Citace");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="notes_help.php" class="lightlink">&laquo; Nápověda: Poznámky</a> &nbsp; | &nbsp;
-                <a href="events_help.php" class="lightlink">Nápověda: Události &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Citace</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
-            </p>
-        </td>
-    </tr>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="notes_help.php" class="lightlink">&laquo; Nápověda: Poznámky</a> &nbsp; | &nbsp;
+        <a href="events_help.php" class="lightlink">Nápověda: Události &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Citace</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
+      </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
 

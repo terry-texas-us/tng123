@@ -114,21 +114,21 @@ include_once "eventlib.php";
 <form action="" method="post" name="form1" id="form1" onsubmit="return updatePerson(this, <?php echo $slot; ?>);">
     <table width="100%" border="0" cellpadding="10" cellspacing="0">
         <tr class="databack">
-            <td class="tngbotshadow">
-                <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
-                <table cellpadding="0" cellspacing="0" class="normal">
-                    <tr>
-                        <td valign="top">
-                            <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
-                              echo "display:none";
-                            } ?>"><?php echo $photo; ?></div>
-                        </td>
-                        <td>
-				<span class="plainheader"><?php echo "$namestr ($personID)</span><br/>" . getYears($row); ?>
+          <td class="tngbotshadow">
+            <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+            <table cellpadding="0" cellspacing="0" class="normal">
+              <tr>
+                <td valign="top">
+                  <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
+                    echo "display:none";
+                  } ?>"><?php echo $photo; ?></div>
+                </td>
+                <td>
+				<span class="plainheader"><?php echo "$namestr ($personID)</span><br>" . getYears($row); ?>
 				<div class="topbuffer bottombuffer smallest">
 <?php
 if ($editconflict) {
-  echo "<br /><p>{$admtext['editconflict']}</p>";
+  echo "<br><p>{$admtext['editconflict']}</p>";
 } else {
   $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
   $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
@@ -139,7 +139,7 @@ if ($editconflict) {
   echo "<a href=\"#\" onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
 }
 ?>
-                <br clear="all"/>
+                <br clear="all">
 				</div>
 				<span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
@@ -173,23 +173,23 @@ if ($editconflict) {
                             echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px\"></td>\n";
                           }
                           ?>
-                            <td><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35"></td>
-                            <td>
-                              <?php
-                              $notesicon = $cms['tngpath'] . "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
-                              $citesicon = $cms['tngpath'] . "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
-                              echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\"><img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" $dims id=\"notesiconNAME\" class=\"smallicon\"/></a>\n";
-                              echo "<a href=\"#\" onclick=\"return showCitations('NAME','$personID');\"><img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" $dims id=\"citesiconNAME\" class=\"smallicon\"/></a>\n";
-                              ?>
-                            </td>
+                          <td><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35"></td>
+                          <td>
+                            <?php
+                            $notesicon = $cms['tngpath'] . "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
+                            $citesicon = $cms['tngpath'] . "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
+                            echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\"><img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" $dims id=\"notesiconNAME\" class=\"smallicon\"></a>\n";
+                            echo "<a href=\"#\" onclick=\"return showCitations('NAME','$personID');\"><img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" $dims id=\"citesiconNAME\" class=\"smallicon\"></a>\n";
+                            ?>
+                          </td>
                         </tr>
                     </table>
-                    <table class="normal topmarginsmall">
-                        <tr>
-                            <td><?php echo $admtext['sex']; ?></td>
-                            <td><?php echo $admtext['nickname']; ?></td>
-                            <td><?php echo $admtext['title']; ?></td>
-                            <td><?php echo $admtext['prefix']; ?></td>
+                  <table class="normal topmarginsmall">
+                    <tr>
+                      <td><?php echo $admtext['sex']; ?></td>
+                      <td><?php echo $admtext['nickname']; ?></td>
+                      <td><?php echo $admtext['title']; ?></td>
+                      <td><?php echo $admtext['prefix']; ?></td>
                             <td><?php echo $admtext['suffix']; ?></td>
                             <td><?php echo $admtext['nameorder']; ?></td>
                         </tr>
@@ -264,7 +264,7 @@ if ($editconflict) {
                                 $totbranches = 2;
                               }
                               $selectnum = $totbranches < 8 ? $totbranches : 8;
-                              $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br/>" : "";
+                              $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
                               $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
                               $select .= "	<option value=\"\"";
                               if ($row['branch'] == "") {
@@ -273,7 +273,7 @@ if ($editconflict) {
                               $select .= ">{$admtext['nobranch']}</option>\n";
 
                               $select .= "$options</select>\n";
-                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                               ?>
                                 <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                                   <?php
@@ -311,7 +311,7 @@ if ($editconflict) {
                       echo showEventRow('deathdate', 'deathplace', 'DEAT', $personID);
                       echo showEventRow('burialdate', 'burialplace', 'BURI', $personID);
                       $checked = $row['burialtype'] == 1 ? " checked=\"checked\"" : "";
-                      echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"$checked/> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
+                      echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"$checked> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
                       if ($rights['lds']) {
                         echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
                         echo showEventRow('confdate', 'confplace', 'CONL', $personID);
@@ -365,8 +365,8 @@ if ($editconflict) {
             <td class="tngbotshadow">
               <?php echo displayToggle("plus2", 0, "parents", $admtext['parents'] . " (<span id=\"parentcount\">$parentcount</span>)", ""); ?>
 
-                <div id="parents" style="display:none"><br/>
-                  <?php
+              <div id="parents" style="display:none"><br>
+                <?php
                   while ($parent = tng_fetch_assoc($parents))
                   {
                   $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, prefix, suffix, nameorder, $people_table.living, $people_table.private, $people_table.branch FROM ($people_table, $families_table) WHERE $people_table.personID = $families_table.husband AND $families_table.familyID = \"{$parent['familyID']}\" AND $people_table.gedcom = \"$tree\" AND $families_table.gedcom = \"$tree\"";
@@ -376,7 +376,7 @@ if ($editconflict) {
                   echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                   if ($parentcount > 1) {
                     echo "<td class=\"dragarea normal\">";
-                    echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+                    echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
                     echo "</td>\n";
                   }
                   echo "<td class=\"lightback normal\">\n";
@@ -477,8 +477,8 @@ if ($editconflict) {
       echo "<td valign=\"top\" class=\"nw\" style=\"width:110px\">" . $admtext['SLGC'] . ":</td>\n";
       echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
       echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
-      echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\"><img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" $dims class=\"smallicon\"/></a></td>\n";
-      echo "<td><a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\"><img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" $dims id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\"/></a></td>\n";
+      echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\"><img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" $dims class=\"smallicon\"></a></td>\n";
+      echo "<td><a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\"><img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" $dims id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\"></a></td>\n";
       echo "</tr>\n</table>\n";
     } else {
       ?>
@@ -515,7 +515,7 @@ if ($editconflict) {
         <td class="tngbotshadow">
       <?php echo displayToggle("plus3", 0, "spouses", $admtext['spouses'] . " (<span id=\"marrcount\">$marrcount</span>)", ""); ?>
 
-        <div id="spouses" style="display:none"><br/>
+      <div id="spouses" style="display:none"><br>
       <?php
       if ($marriages && tng_num_rows($marriages)) {
         while ($marriagerow = tng_fetch_assoc($marriages)) {
@@ -534,7 +534,7 @@ if ($editconflict) {
           echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
           if ($marrcount > 1) {
             echo "<td class=\"dragarea normal\">";
-            echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+            echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
             echo "</td>\n";
           }
           echo "<td class=\"lightback normal\">\n";

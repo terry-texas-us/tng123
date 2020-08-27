@@ -38,7 +38,7 @@ switch ($textpart) {
     $text['email'] = "بريدك الإلكتروني";
     $text['suggestchange'] = "اقترح تغييرات";
     $text['yourname'] = "اسمك";
-    $text['comments'] = " وصف <br /> التغييرات المقترحة";
+    $text['comments'] = " وصف <br> التغييرات المقترحة";
     $text['comments2'] = "تعليقات";
     $text['submitsugg'] = "ارسال المقترحات";
     $text['proposed'] = "التغيير المقترح";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "سريع ومتطور";
     $text['alltypes'] = "كافة الأنواع";
     $text['allgroups'] = "كافة المجموعات";
-    $text['Ydna_LITbox_info'] = " ليس من الضرورة أن تكون الاختبارات المرتبطة بهذا الفرد قد تم إجراءها من قبله.<br /> قائمة 'السلالة العرقية Haplogroup' تظهر البيانات باللون الأحمر إذا كانت النتائج 'متوقعة' أو باللون الأخضر لو كان الاختبار 'مؤكدا'";
+    $text['Ydna_LITbox_info'] = " ليس من الضرورة أن تكون الاختبارات المرتبطة بهذا الفرد قد تم إجراءها من قبله.<br> قائمة 'السلالة العرقية Haplogroup' تظهر البيانات باللون الأحمر إذا كانت النتائج 'متوقعة' أو باللون الأخضر لو كان الاختبار 'مؤكدا'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

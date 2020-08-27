@@ -157,7 +157,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                     if ($trow['thumbpath'] && file_exists("$rootpath$tusefolder/" . $trow['thumbpath'])) {
                       $size = @GetImageSize("$rootpath$tusefolder/" . $trow['thumbpath']);
-                      echo "<a href=\"admin_editalbum.php?albumID={$row['albumID']}\"><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" border=\"0\" $size[3] alt=\"{$row['albumname']}\"></a>";
+                      echo "<a href=\"admin_editalbum.php?albumID={$row['albumID']}\"><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" $size[3] alt=\"{$row['albumname']}\"></a>";
                     } else {
                       echo "&nbsp;";
                     }
@@ -172,7 +172,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     $editlink = "admin_editalbum.php?albumID={$row['albumID']}";
                     $albumname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['albumname'] . "</a>" : "<u>" . $row['albumname'] . "</u>";
 
-                    echo "<td class=\"lightback normal\" valign=\"top\">$albumname<br />" . strip_tags($row['description']) . "&nbsp;</td>\n";
+                    echo "<td class=\"lightback normal\" valign=\"top\">$albumname<br>" . strip_tags($row['description']) . "&nbsp;</td>\n";
                     echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$acount&nbsp;</td>\n";
                     $active = $row['active'] ? $admtext['yes'] : $admtext['no'];
                     echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$active</td>\n";

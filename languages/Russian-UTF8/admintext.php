@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Информация о существующем кладбище";
     $admtext['newceminfo'] = "Информация о новом кладбище";
     $admtext['maptoupload'] = "Загрузить изображение карты";
-    $admtext['mapfilenamefolder'] = "Название файла с картой<br/>в папке надгробий";
+    $admtext['mapfilenamefolder'] = "Название файла с картой<br>в папке надгробий";
     $admtext['ifmapuploaded'] = "Оставить это поле пустым, если этот файл уже есть в папке надгробий.";
     $admtext['requiredmap'] = "Обязательно к заполнению, если Вы используете карту. Содержимое поля должно совпадать с названием и местом Вашего файла в папке надгробий  после того, как файл загружен. Например, если Ваша папка надгробий называется <em>&#171;Надгробия&#187;</em>,  и Вы хотите Ваш файл назвать <em>&#171;Карта.jpg&#187;</em> и поместить в подкаталог, названный <em>&#171;Мои карты&#187;</em>, тогда Вы должны записать это так: <em>&#171;Мои карты/Карта.jpg&#187;</em> в этом поле.";
     //added in 8.0.0
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Для мест находки...";
     $admtext['noevtypes'] = "Несуществующий тип событий.";
     $admtext['DESI'] = "Потомки-интересы";
-    $admtext['allnone'] = "Введите отображаемое сообщение для каждого языка,<br />или оставьте все пустым и введите одно отображаемое сообщение выше.";
+    $admtext['allnone'] = "Введите отображаемое сообщение для каждого языка,<br>или оставьте все пустым и введите одно отображаемое сообщение выше.";
     $admtext['assocwith'] = "Связано с";
     $admtext['BAPM'] = "Крещение";
     $admtext['umps'] = "Возможно, что Ваш GEDCOM-файл больше, чем позволяет Ваши параметры PHP. Попросите Вашего провайдера увеличить параметр &#171;upload_max_filesize&#187;, или скопируйте GEDCOM-файл в папку &#171;gedcom&#187; на Вашем сайте и импортируйте файл оттуда.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Префикс";
     $admtext['chkdel'] = "Установите пустой флажок, чтобы удалить элемент слева";
     //added in 9.0.0
-    $admtext['choosedef'] = "Выберете фото <br/>по умолчанию<br/>"; //has to fit in a small box
+    $admtext['choosedef'] = "Выберете фото <br>по умолчанию<br>"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Дата конфирмации (СПД)";
     $admtext['confplace'] = "Место конфирмации (СПД)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Обязательно. После того, как файл загружен, содержание этого поля должно соответствовать названию и месту файла <em>в папке с медиафайлами (коллекцией)</em>. Например, если Ваша коллекция называется <em>&#171;Мультимедиа&#187;</em>, и Вы хотите назвать Ваш файл <em>&#171;Моя фотография.jpg&#187;</em> и хотите поместить его в подпапку <em>&#171;Новые фотографии&#187;</em>, тогда Вы должны ввести в этом поле <em>&#171;Новые фотографии/Моя фотография.jpg&#187;</em>.";
     $admtext['leaveblankphoto'] = "Оставьте это поле пустым, если файл уже загружен.";
     $admtext['thumbconflicts'] = "Миниатюры не были созданы из-за путей, разрешений, проблем с размерами или именами файлов";
-    $admtext['showmap'] = "Показывать карту кладбища и фото всякий раз, когда отображается этот элемент";
-    $admtext['bodytext'] = "<strong>ИЛИ</strong><br/>только текст";
-    $admtext['usenl'] = "Заменить концы строк в тексте на концы строк в HTML-кодировке, чтобы их можно было увидеть на экране";
+  $admtext['showmap'] = "Показывать карту кладбища и фото всякий раз, когда отображается этот элемент";
+  $admtext['bodytext'] = "<strong>ИЛИ</strong><br>только текст";
+  $admtext['usenl'] = "Заменить концы строк в тексте на концы строк в HTML-кодировке, чтобы их можно было увидеть на экране";
     $admtext['newwin'] = "Открывать в новом окне";
     $admtext['modifymedia'] = "Изменить существующий снимок";
     $admtext['addnewmedia'] = "Добавить новый медиафайл";
@@ -776,18 +776,18 @@ switch ($textpart) {
 
   case "templates":
     $admtext['templatenum'] = "Номер шаблона";
-    $admtext['mainimage'] = "Основное изображение<br/>на домашней странице"; //1, 2, 3, 4, 5, 7
-    $admtext['titleimage'] = "Изображение заголовка<br/>на домашней странице"; //1, 2, 3
+    $admtext['mainimage'] = "Основное изображение<br>на домашней странице"; //1, 2, 3, 4, 5, 7
+    $admtext['titleimage'] = "Изображение заголовка<br>на домашней странице"; //1, 2, 3
     $admtext['headline'] = "Шапка"; //4, 7
-    $admtext['mainpara'] = "Текст блока<br/>&#171;Добро пожаловать&#187;";  //1, 4, 6, 7, 8
-    $admtext['headimgplustitle'] = "Изображение в шапке<br/>(включая название)"; //1
+    $admtext['mainpara'] = "Текст блока<br>&#171;Добро пожаловать&#187;";  //1, 4, 6, 7, 8
+    $admtext['headimgplustitle'] = "Изображение в шапке<br>(включая название)"; //1
     $admtext['pedperson'] = "ID члена родословной"; //2
     $admtext['pedtree'] = "ID генеалогического древа"; //2
     $admtext['phhistperson'] = "Фотографии и истории члена с ID"; //2
     $admtext['phhisttree'] = "Фотографии и истории генеалогического древа с ID"; //2
     $admtext['headimg'] = "Изображение в шапке"; //2, 3, 4, 5, 6, 8
     $admtext['headtitleimg'] = "Файл изображения"; //2, 3
-    $admtext['titleimg'] = "Изображения в заголовке<br/>на всех страницах"; //4, 7
+    $admtext['titleimg'] = "Изображения в заголовке<br>на всех страницах"; //4, 7
     $admtext['searchpara'] = "Раздел поиска"; //6
     $admtext['fhpara'] = "Раздел семейных историй"; //6
     $admtext['fhlinkshis'] = "Ссылки на семейные истории (Его)"; //6
@@ -803,7 +803,7 @@ switch ($textpart) {
     $admtext['momside'] = "Название стороны матери"; //8
     $admtext['dadside'] = "Название стороны отца"; //8
     $admtext['momperson'] = "ID человека стороны матери"; //8
-    $admtext['momtree'] = "ID генеалогического древа<br/>стороны матери"; //8
+    $admtext['momtree'] = "ID генеалогического древа<br>стороны матери"; //8
     $admtext['dadperson'] = "ID человека стороны отца"; //8
     $admtext['dadtree'] = "ID дерево стороны отца"; //8
     $admtext['featurethumb1'] = "Миниатюра 1-го блока"; //4
@@ -822,8 +822,8 @@ switch ($textpart) {
     $admtext['featurelink4'] = "Ссылка 4-го блока"; //4
     $admtext['featuretitle4'] = "Название 4-го блока"; //4
     $admtext['featurepara4'] = "Содержимое 4-го блока"; //4
-    $admtext['photocaption'] = "Подпись<br/>основного изображения"; //4
-    $admtext['maintitle'] = "Заголовок<br/>домашней страницы"; //5
+    $admtext['photocaption'] = "Подпись<br>основного изображения"; //4
+    $admtext['maintitle'] = "Заголовок<br>домашней страницы"; //5
     $admtext['hisside'] = "Ярлык его стороны"; //5
     $admtext['herside'] = "Ярлык её стороны"; //5
     $admtext['newstext'] = "Текст новостей"; //5
@@ -834,7 +834,7 @@ switch ($textpart) {
     $admtext['createcopy'] = "Создать копию в";  //as in, "create copy in Dutch"
     $admtext['featurelinks'] = "Тематические ссылки"; //9, 10
     $admtext['featurepara'] = "Раздел блоков"; //9, 10
-    $admtext['welcome'] = "Заголовок блока<br/>&#171;Добро пожаловать&#187;"; //9, 10
+    $admtext['welcome'] = "Заголовок блока<br>&#171;Добро пожаловать&#187;"; //9, 10
     //added in 9.0.3
     $admtext['momsidenames'] = "Имена стороны матери"; //8
     $admtext['dadsidenames'] = "Имена стороны отца"; //8
@@ -843,12 +843,12 @@ switch ($textpart) {
     $admtext['menutitle'] = "Название меню";
     $admtext['titlechoice'] = "Параметры названия";
     $admtext['photol'] = "Изображение слева";
-    $admtext['phototitlel'] = "Заголовок<br/>изображения слева";
-    $admtext['photocaptionl'] = "Подпись<br/>изображения слева";
+    $admtext['phototitlel'] = "Заголовок<br>изображения слева";
+    $admtext['photocaptionl'] = "Подпись<br>изображения слева";
     $admtext['photor'] = "Изображение справа";
-    $admtext['phototitler'] = "Заголовок<br/>изображения справа";
-    $admtext['photocaptionr'] = "Подпись<br/>изображения справа";
-    $admtext['topsurnames'] = "Надпись<br/>&#171;Топ 100 фамилий&#187;";
+    $admtext['phototitler'] = "Заголовок<br>изображения справа";
+    $admtext['photocaptionr'] = "Подпись<br>изображения справа";
+    $admtext['topsurnames'] = "Надпись<br>&#171;Топ 100 фамилий&#187;";
     $admtext['headimg2'] = "Изображение заголовка 2"; //14
     $admtext['headimg3'] = "Изображение заголовка 3"; //14
     $admtext['showprev'] = "Предпросмотр";
@@ -870,9 +870,9 @@ switch ($textpart) {
     $admtext['featurethumb8'] = "Миниатюра 8-го блока"; //15
     $admtext['featurelink8'] = "Ссылка 8-го блока"; //15
     $admtext['featurepara8'] = "Содержимое 8-го блока"; //15
-    $admtext['sidebarhead1'] = "Заголовок 1-й<br/>боковой панели"; //15
-    $admtext['sidebarhead2'] = "Заголовок 2-й<br/>боковой панели"; //15
-    $admtext['sidebarhead3'] = "Заголовок 3-й<br/>боковой панели"; //15
+    $admtext['sidebarhead1'] = "Заголовок 1-й<br>боковой панели"; //15
+    $admtext['sidebarhead2'] = "Заголовок 2-й<br>боковой панели"; //15
+    $admtext['sidebarhead3'] = "Заголовок 3-й<br>боковой панели"; //15
     $admtext['texttitle1'] = "Название 1-го текста"; //15
     $admtext['textlink1'] = "Ссылка 1-го текста"; //15
     $admtext['textpara1'] = "Содержимое 1-го текста"; //15
@@ -881,8 +881,8 @@ switch ($textpart) {
     $admtext['textpara2'] = "Содержимое 2-го текста"; //15
     $admtext['texttitle3'] = "Название 3-го текста"; //15
     $admtext['textpara3'] = "Содержимое 3-го текста"; //15
-    $admtext['subhead1'] = "Заголовок 1-го<br/>раздела блоков"; //15
-    $admtext['subhead2'] = "Заголовок 2-го<br/>раздела блоков"; //15
+    $admtext['subhead1'] = "Заголовок 1-го<br>раздела блоков"; //15
+    $admtext['subhead2'] = "Заголовок 2-го<br>раздела блоков"; //15
     //added in 12.2
     $admtext['quotehead'] = "Заголовок цитат";
     $admtext['quotesubhead'] = "Подзаголовок цитат";
@@ -979,7 +979,7 @@ switch ($textpart) {
     $admtext['change_cutoff'] = "Количество дней в &#171;Что нового&#187;";
     $admtext['change_limit'] = "Максимальное количество топиков в &#171;Что нового&#187;";
     $admtext['photosext'] = "Увеличение фото";
-    $admtext['defaulttree'] = "Генеалогическое древо<br/>по умолчанию";
+    $admtext['defaulttree'] = "Генеалогическое древо<br>по умолчанию";
     $admtext['requirelogin'] = "Требовать вход";
     $admtext['defaultdontrequire'] = "Стандартно : Не требуется";
     $admtext['ldsdefault'] = "Показать данные СПД";
@@ -1066,10 +1066,10 @@ switch ($textpart) {
     $admtext['emptycolor'] = "Отсутствие цвета";
     $admtext['bordercolor'] = "Цвет границы";
     $admtext['shadowcolor'] = "Цвет тени";
-    $admtext['boxwidth'] = "Ширина прямоугольника<br/>(без всплывающих окон)";
-    $admtext['boxheight'] = "Высота прямоугольника<br/>(без всплывающих окон)";
-    $admtext['boxalign'] = "Выравнивание прямоугольника<br/>(без всплывающих окон)";
-    $admtext['boxheightshift'] = "Изменение высоты прямоугольника<br/>(без всплывающих окон)";
+    $admtext['boxwidth'] = "Ширина прямоугольника<br>(без всплывающих окон)";
+    $admtext['boxheight'] = "Высота прямоугольника<br>(без всплывающих окон)";
+    $admtext['boxalign'] = "Выравнивание прямоугольника<br>(без всплывающих окон)";
+    $admtext['boxheightshift'] = "Изменение высоты прямоугольника<br>(без всплывающих окон)";
     $admtext['boxHsep'] = "Горизонтальное разделение в прямоугольнике";
     $admtext['boxVsep'] = "Вертикальное разделение в прямоугольнике";
     $admtext['shadowoffset'] = "Смещение тени";
@@ -1080,10 +1080,10 @@ switch ($textpart) {
     $admtext['popupinfosizeshift'] = "Изменение размера всплывающего окна справки";
     $admtext['popuptimer'] = "Всплывающее окно таймера (мс)";
     $admtext['pedevent'] = "Всплывающее окно события";
-    $admtext['puboxwidth'] = "Ширина прямоугольника<br/>(с всплывающим окном)";
-    $admtext['puboxheight'] = "Высота прямоугольника<br/>(с всплывающим окном)";
-    $admtext['puboxalign'] = "Выравнивание прямоугольника<br/>(с всплывающим окном)";
-    $admtext['puboxheightshift'] = "Изменение высоты прямоугольника<br/>(с всплывающим окном)";
+    $admtext['puboxwidth'] = "Ширина прямоугольника<br>(с всплывающим окном)";
+    $admtext['puboxheight'] = "Высота прямоугольника<br>(с всплывающим окном)";
+    $admtext['puboxalign'] = "Выравнивание прямоугольника<br>(с всплывающим окном)";
+    $admtext['puboxheightshift'] = "Изменение высоты прямоугольника<br>(с всплывающим окном)";
     $admtext['popupspouses'] = "Всплывающие окна супругов";
     $admtext['popupkids'] = "Всплывающие окна детей";
     $admtext['popupchartlinks'] = "Всплывающие окна для ссылок";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Принимать при отсутствии даты рождения";
     $admtext['persliving'] = "Человек ещё жив";
     $admtext['persdead'] = "Человека нет в живых";
-    $admtext['nodeathdate'] = "Принимать при отсутствии даты смерти <br />если старше, чем";
+    $admtext['nodeathdate'] = "Принимать при отсутствии даты смерти <br>если старше, чем";
     $admtext['pedconfigsettings'] = "Настройки диаграмм";
     $admtext['usepopups'] = "Начальный вид";
     $admtext['maxpedgens'] = "Максимальное количество поколений";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Объединить места";
     $admtext['findmerge'] = "Найти места для объединения";
     $admtext['selectplacemerge'] = "Выбрать места для объединения";
-    $admtext['mcol1'] = "Добавить<br/>это<br/>(стереть)";
-    $admtext['mcol2'] = "вместе<br/>с<br/>(держать)";
+    $admtext['mcol1'] = "Добавить<br>это<br>(стереть)";
+    $admtext['mcol2'] = "вместе<br>с<br>(держать)";
     $admtext['pmsucc'] = "Объединение мест произошло успешно";
     $admtext['nomerge'] = "Нечего объединить";
     $admtext['enterkeep'] = "Выберите, пожалуйста, цель объединения.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Выберите предложенное изменение и действие";
     $admtext['suggested'] = "Предложение";
-    $admtext['usernotes'] = "Примечания в отношении<br />предложенного изменения<br />(не будут сохранены)";
+    $admtext['usernotes'] = "Примечания в отношении<br>предложенного изменения<br>(не будут сохранены)";
     $admtext['postdate'] = "Введено";
     $admtext['savedel'] = "Обработать & удалить";
     $admtext['postpone'] = "Отложить";

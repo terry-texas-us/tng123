@@ -305,9 +305,9 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
       <span class=\"mmfilenmfont\">$modfile</span>&nbsp;&nbsp;
       <a href=\"#\" id=\"{$id}link\" onclick=\"return toggleSection('$id');\">
          {$admtext['show']}&nbsp;{$admtext['modifications']}
-      </a><br />
+      </a><br>
       <div id=\"{$id}div\" style=\"display:none\">
-      <br />";
+      <br>";
   for ($i = 1; isset($sections[$i]); $i++) {
     $target_file = trim(preg_replace("#([^%]*)%.*#s", "\${1}", $sections[$i]));
     if (trim($target_file) == trim($mtarget)) {
@@ -315,10 +315,10 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
       for ($j = 1; isset($locations[$j]); $j++) {
         $locations[$j] = substr($locations[$j], 0, strripos($locations[$j], '%end:%'));
         $locations[$j] = str_replace("%end:%", "</strong>%end:%", $locations[$j]);
-        $locations[$j] .= "%end:%<br />";
+        $locations[$j] .= "%end:%<br>";
         $locations[$j] = preg_replace("@((%location|%end|%trim|%insert|%replace)[^%]*%)@i", "<span class=\"mmkeyword\">$1</span>", $locations[$j]);
         echo "
-         <span class=\"mmlochdr\">// Location $j</span><br />
+         <span class=\"mmlochdr\">// Location $j</span><br>
          <span class=\"mmkeyword\">%location:%</span><strong>
          {$locations[$j]}";
       }

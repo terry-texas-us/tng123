@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "die half-suster van";
     $text['halfsibling'] = "Die half-broer/-suster van";
     //changed in 8.0.0
-    $text['gencheck'] = "Maksimum aantal generasies<br />om na te gaan";
+    $text['gencheck'] = "Maksimum aantal generasies<br>om na te gaan";
     $text['mcousin'] = "die xxx neef yyy van";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "die xxx nig yyy van";  //female cousin
     $text['cousin'] = "die xxx suster-/broerskind yyy van";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "vinnige evolueering";
     $text['alltypes'] = "Alle Tipes";
     $text['allgroups'] = "Alle Groepe";
-    $text['Ydna_LITbox_info'] = "Toets(e) wat aan hierdie persoon gekoppel is, is nie noodwendig deur hierdie persoon geneem nie. <br /> Die kolom 'Haplogroup' vertoon data in rooi as die resultaat 'Voorspel' of groen is as die toets 'Bevestig'";
+    $text['Ydna_LITbox_info'] = "Toets(e) wat aan hierdie persoon gekoppel is, is nie noodwendig deur hierdie persoon geneem nie. <br> Die kolom 'Haplogroup' vertoon data in rooi as die resultaat 'Voorspel' of groen is as die toets 'Bevestig'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

@@ -37,7 +37,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
       $wherestr = "";
       if ($secaction == $admtext['sortchildren']) {
         echo "<p>" . $admtext['sortingchildren'] . "</p>";
-        echo $admtext['families'] . ":<br/>\n";
+        echo $admtext['families'] . ":<br>\n";
         $fcount = 0;
         if ($tree != "--all--") {
           $wherestr = "WHERE $families_table.gedcom = \"$tree\"";
@@ -64,11 +64,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         }
         tng_free_result($result);
 // TODO text ['finishedsort'] was not defined in any language. Manually added here.
-        echo "<br/><br/>" . _('finished sort') . "<br/>";
+        echo "<br><br>" . _('finished sort') . "<br>";
       } elseif ($secaction == $admtext['sortspouses']) {
 
         echo "<p>" . $admtext['sortingspouses'] . "</p>";
-        echo $admtext['people'] . ":<br/>\n";
+        echo $admtext['people'] . ":<br>\n";
         $fcount = 0;
         if ($tree != "--all--") {
           $wherestr = " AND $families_table.gedcom = \"$tree\"";
@@ -117,7 +117,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         }
         tng_free_result($result);
 // TODO text ['finishedsort'] was not defined in any language. Manually added here.
-        echo "<br/><br/>" . _('finished sort') . "<br/>";
+        echo "<br><br>" . _('finished sort') . "<br>";
       } elseif ($secaction == $admtext['creategendex']) {
         //create gendex file
         function getVitals($person) {
@@ -180,19 +180,19 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         }
         tng_free_result($result);
         ?>
-          <br><br>
+        <br><br>
         <?php
-        echo "<p class=\"normal\">" . $admtext['finishedgendex'] . "<br />\n";
+        echo "<p class=\"normal\">" . $admtext['finishedgendex'] . "<br>\n";
         echo $admtext['filename'] . ": $gendexURL</p>\n";
         ?>
-          <p class="normal"><?php echo $admtext['postgdx']; ?>:<br/>
-              &raquo; <a href="http://www.gendexnetwork.org" target="_blank">GenDexNetwork</a><br/>
-              &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
-          </p>
+        <p class="normal"><?php echo $admtext['postgdx']; ?>:<br>
+          &raquo; <a href="http://www.gendexnetwork.org" target="_blank">GenDexNetwork</a><br>
+          &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
+        </p>
         <?php
       } elseif ($secaction == $admtext['tracklines']) {
         echo "<p class=\"normal\">" . $admtext['trackinglines'] . "</p>";
-        echo $admtext['families'] . ":<br/>\n";
+        echo $admtext['families'] . ":<br>\n";
 
         $query = "UPDATE $children_table SET haskids = 0";
         if ($tree != "--all--") {
@@ -221,7 +221,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           }
         }
         tng_free_result($result);
-        echo "<br/><br/>{$admtext['finishedtracking']}<br/>";
+        echo "<br><br>{$admtext['finishedtracking']}<br>";
       } elseif ($secaction == $admtext['relabelbranches']) {
         $fcount = 0;
         echo "<p>" . $admtext['relabeling'] . "</p>";
@@ -302,11 +302,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           }
           $query3 = "UPDATE $mediatypes_table SET disabled=\"$disabled\" where mediatypeID=\"{$row['mediatypeID']}\"";
           $result3 = @tng_query($query3);
-          echo "<br/>\n";
+          echo "<br>\n";
           tng_free_result($result2);
         }
         tng_free_result($result);
-        echo "<br/><br/>{$admtext['finished']}<br/>";
+        echo "<br><br>{$admtext['finished']}<br>";
       } elseif ($secaction == $admtext['refreshliving']) {
         $changedToLiving = $changedToDeceased = $counted = 0;
 
@@ -384,7 +384,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           }
         }
         tng_free_result($result);
-        echo "<br/><br/>{$admtext['finished']}<br/>$changedToDeceased {$admtext['chtodeceased']}, $changedToLiving {$admtext['chtoliving']}.";
+        echo "<br><br>{$admtext['finished']}<br>$changedToDeceased {$admtext['chtodeceased']}, $changedToLiving {$admtext['chtoliving']}.";
       } elseif ($secaction == $admtext['makeprivate']) {
         if ($tngimpcfg['maxprivyrs']) {
           $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
@@ -423,7 +423,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         if (!$peopleMadePrivate) {
           $peopleMadePrivate = "0";
         }
-        echo "<br/><br/>{$admtext['finished']}<br/>$peopleMadePrivate {$admtext['chtoprivate']}.";
+        echo "<br><br>{$admtext['finished']}<br>$peopleMadePrivate {$admtext['chtoprivate']}.";
       }
 
       adminwritelog($admtext['secondary'] . ": $secaction");

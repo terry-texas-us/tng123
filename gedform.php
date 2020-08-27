@@ -46,7 +46,7 @@ $innermenu = "&nbsp; \n";
 
 echo tng_menu("I", "gedcom", $personID, $innermenu);
 
-echo "<span class=\"subhead\"><b>{$text['creategedfor']}</b></span><br /><br />\n";
+echo "<span class=\"subhead\"><b>{$text['creategedfor']}</b></span><br><br>\n";
 
 if ($currentuser) {
   $formstr = getFORM("gedcom", "GET", "gedform", "");
@@ -103,10 +103,10 @@ if ($currentuser) {
   echo "<input type=\"hidden\" name=\"email\" value=\"$currentuserdesc\">";
 }
 ?>
-    <br/>
-    <input type="submit" class="btn" value="<?php echo $text['buildged']; ?>">
-    </form>
-    <br/>
+  <br>
+  <input type="submit" class="btn" value="<?php echo $text['buildged']; ?>">
+  </form>
+  <br>
 <?php
 tng_footer("");
 ?>

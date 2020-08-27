@@ -24,17 +24,17 @@ tng_adminheader($admtext['modifypedsettings'], $flags);
 <script language="JavaScript" src="js/popupwindow.js"></script>
 <script language="JavaScript" src="js/anchorposition.js"></script>
 <script language="JavaScript" src="js/colorpicker2.js"></script>
-<SCRIPT language="JavaScript" type="text/javascript">
-    var cp = new ColorPicker('window');
+<script language="JavaScript" type="text/javascript">
+  var cp = new ColorPicker('window');
 
-    function toggleAll(display) {
-        toggleSection('ped', 'plus0', display);
-        toggleSection('desc', 'plus1', display);
-        toggleSection('rel', 'plus2', display);
-        toggleSection('time', 'plus3', display);
-        toggleSection('peddesc', 'plus4', display);
-        return false;
-    }
+  function toggleAll(display) {
+    toggleSection('ped', 'plus0', display);
+    toggleSection('desc', 'plus1', display);
+    toggleSection('rel', 'plus2', display);
+    toggleSection('time', 'plus3', display);
+    toggleSection('peddesc', 'plus4', display);
+    return false;
+  }
 </script>
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
@@ -395,20 +395,20 @@ if (!isset($pedigree['vfontsize'])) {
                                     <tr>
                                         <td><?php echo $admtext['emptycolor']; ?>:</td>
                                         <td><input type="text" value="<?php echo $pedigree['emptycolor']; ?>" name="emptycolor" id="emptycolor" size="8"> <A HREF="#" onClick="cp.select(document.form1.emptycolor,'pick2');return false;" NAME="pick2"
-                                                                                                                                                             ID="pick2"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17" border="0"></A></td>
+                                                                                                                                                             ID="pick2"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17"></A></td>
                                     </tr>
-                                    <tr>
-                                        <td><?php echo $admtext['bordercolor']; ?>:</td>
+                                  <tr>
+                                    <td><?php echo $admtext['bordercolor']; ?>:</td>
                                         <td><input type="text" value="<?php echo $pedigree['bordercolor']; ?>" name="bordercolor" id="bordercolor" size="8"> <A HREF="#" onClick="cp.select(document.form1.bordercolor,'pick3');return false;" NAME="pick3"
-                                                                                                                                                                ID="pick3"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17" border="0"></A></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $admtext['shadowcolor']; ?>:</td>
+                                                                                                                                                                ID="pick3"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17"></A></td>
+                                  </tr>
+                                  <tr>
+                                    <td><?php echo $admtext['shadowcolor']; ?>:</td>
                                         <td><input type="text" value="<?php echo $pedigree['shadowcolor']; ?>" name="shadowcolor" id="shadowcolor" size="8"> <A HREF="#" onClick="cp.select(document.form1.shadowcolor,'pick4');return false;" NAME="pick4"
-                                                                                                                                                                ID="pick4"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17" border="0"></A></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $admtext['shadowoffset']; ?>:</td>
+                                                                                                                                                                ID="pick4"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17"></A></td>
+                                  </tr>
+                                  <tr>
+                                    <td><?php echo $admtext['shadowoffset']; ?>:</td>
                                         <td><input type="text" value="<?php echo $pedigree['shadowoffset']; ?>" name="shadowoffset" size="10"></td>
                                     </tr>
                                     <tr>
@@ -460,10 +460,10 @@ if (!isset($pedigree['vfontsize'])) {
                                     <tr>
                                         <td valign="top"><span class="normal"><?php echo $admtext['popupcolor']; ?>:</span></td>
                                         <td><input type="text" value="<?php echo $pedigree['popupcolor']; ?>" name="popupcolor" id="popupcolor" size="8"> <A HREF="#" onClick="cp.select(document.form1.popupcolor,'pick5');return false;" NAME="pick5"
-                                                                                                                                                             ID="pick5"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17" border="0"></A></td>
+                                                                                                                                                             ID="pick5"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17"></A></td>
                                     </tr>
-                                    <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['popupinfosize']; ?>:</span></td>
+                                  <tr>
+                                    <td valign="top"><span class="normal"><?php echo $admtext['popupinfosize']; ?>:</span></td>
                                         <td><input type="text" value="<?php echo $pedigree['popupinfosize']; ?>" name="popupinfosize" size="10"></td>
                                     </tr>
                                     <tr>

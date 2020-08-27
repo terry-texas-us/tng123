@@ -1,5 +1,5 @@
 <?php global $text, $currentuser, $mylanguage, $cms, $tmp, $tng_version, $flags; ?>
-<br/>
+<br>
 </div>
 <div id="subfooter">
   <?php

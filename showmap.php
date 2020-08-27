@@ -95,16 +95,16 @@ if ($map['key'] && $isConnected) {
 tng_header($location, $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $location; ?></h1><br clear="all"/>
+  <h1 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $location; ?></h1><br clear="all">
 <?php
-$hiddenfields[] = array('name' => 'cemeteryID', 'value' => $cemeteryID);
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'showmap', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+$hiddenfields[] = ['name' => 'cemeteryID', 'value' => $cemeteryID];
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showmap', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
 $infoblock = "";
 $body = "";
 if ($cemeteryID) {
   if ($cemetery['maplink']) {
-    $infoblock .= "<img src=\"$headstonepath/{$cemetery['maplink']}\" border=\"0\" $size[3] alt=\"{$cemetery['cemname']}\" /><br/><br/>\n";
+    $infoblock .= "<img src=\"$headstonepath/{$cemetery['maplink']}\" $size[3] alt=\"{$cemetery['cemname']}\"><br><br>\n";
   }
 
   if ($allow_admin && $allow_edit) {
@@ -112,7 +112,7 @@ if ($cemeteryID) {
   }
 
   if ($cemetery['notes']) {
-    $infoblock .= "<p><strong>{$text['notes']}:</strong><br />\n" . nl2br(insertLinks($cemetery['notes'])) . "</p>";
+    $infoblock .= "<p><strong>{$text['notes']}:</strong><br>\n" . nl2br(insertLinks($cemetery['notes'])) . "</p>";
   }
 
   if (!$map['key'] && ($cemetery['latitude'] || $cemetery['longitude'])) {
@@ -136,12 +136,12 @@ if ($cemeteryID) {
       $localballooncemeteryname = @htmlspecialchars($cemetery['cemname'], ENT_QUOTES, $session_charset);
       $localballooncemeteryplace = @htmlspecialchars($cemeteryplace, ENT_QUOTES, $session_charset);
       $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
-      $codednotes = $cemetery['notes'] ? "<br /><br />" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
-      $codednotes .= "<br /><br /><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
-      $locations2map[$l2mCount] = array("zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "htmlcontent" => "<div class=\"mapballoon normal\">$localballooncemeteryname<br />$localballooncemeteryplace$codednotes</div>");
+      $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
+      $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
+      $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "htmlcontent" => "<div class=\"mapballoon normal\">$localballooncemeteryname<br>$localballooncemeteryplace$codednotes</div>"];
       $cemcoords = true;
-      $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"{$cms['tngpath']}img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br /><br />"; // add external link to Google Maps for Directions in the balloon
-      $body .= "<div style=\"padding-bottom:15px\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\" border=\"0\" /></a>";
+      $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"{$cms['tngpath']}img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
+      $body .= "<div style=\"padding-bottom:15px\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
       $map['pins']++;
       $body .= "<span><strong>{$text['latitude']}:</strong> $lat, <strong>{$text['longitude']}:</strong> $long</span></div>";
     }
@@ -149,7 +149,7 @@ if ($cemeteryID) {
 }
 
 if ($infoblock) {
-  $body .= "<div class=\"titlebox\">$infoblock</div>\n<br/>\n";
+  $body .= "<div class=\"titlebox\">$infoblock</div>\n<br>\n";
 }
 
 $query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow from $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = \"1\") ORDER BY description";
@@ -191,11 +191,11 @@ if (tng_num_rows($hsresult)) {
 
     $body .= "</td>\n";
     $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">";
-    $body .= "<a href=\"$href\">$description</a><br/>$notes&nbsp;</span></td></tr>\n";
+    $body .= "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
     $i++;
   }
   $body .= "</table>\n";
-  $body .= "</div>\n<br/>\n";
+  $body .= "</div>\n<br>\n";
 }
 tng_free_result($hsresult);
 
@@ -214,7 +214,7 @@ $hsresult = tng_query($query);
 $numrows = tng_num_rows($hsresult);
 if ($numrows) {
   $body .= "<div class=\"titlebox\">\n";
-  $body .= "<span class=\"subhead\"><b>{$text['headstone']}</b></span><br /><br />\n";
+  $body .= "<span class=\"subhead\"><b>{$text['headstone']}</b></span><br><br>\n";
 
   if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $query = "SELECT count(DISTINCT $media_table.mediaID) as hscount FROM $media_table LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != \"1\"";
@@ -325,7 +325,7 @@ if ($numrows) {
         $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
         $hslinktext .= "<a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}";
       }
-      $hslinktext .= "</a>$hstext\n<br />\n";
+      $hslinktext .= "</a>$hstext\n<br>\n";
     }
     tng_free_result($presult);
 
@@ -351,12 +351,12 @@ if ($numrows) {
 
     $body .= "</td>\n";
 
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$href\">{$hs['description']}</a><br />$notes&nbsp;</span></td>\n";
+    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$href\">{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
     $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$hs['status']}&nbsp;</span></td>\n";
     $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . nl2br($hs['plot']);
     if ($hs['latitude'] || $hs['longitude']) {
       if ($hs['plot']) {
-        $body .= "<br />";
+        $body .= "<br>";
       }
       $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
     }
@@ -377,8 +377,8 @@ if ($cemetery['place']) {
   $query = "SELECT * FROM ($people_table, $trees_table) WHERE burialplace = \"" . addslashes($cemetery['place']) . "\" and $people_table.gedcom = $trees_table.gedcom $treestr ORDER BY lastname, firstname";
   $result = tng_query($query);
   if (tng_num_rows($result)) {
-    $body .= "<br/><div class=\"titlebox\">\n";
-    $body .= "<span class=\"subhead\"><b>{$text['allburials']}</b></span><br /><br />\n";
+    $body .= "<br><div class=\"titlebox\">\n";
+    $body .= "<span class=\"subhead\"><b>{$text['allburials']}</b></span><br><br>\n";
 
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
@@ -418,7 +418,7 @@ if ($cemetery['place']) {
       $body .= "<tr><td class=\"databack\">$i.</td>\n";
       $body .= "<td class=\"databack\"><a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
 
-      $placetxt = $row['burialplace'] . " <a href=\"$placesearch_url" . "tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+      $placetxt = $row['burialplace'] . " <a href=\"$placesearch_url" . "tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
 
       $deathdate = $row['burialdate'] ? $row['burialdate'] : $row['deathdate'];
       if ($row['burialdate']) {

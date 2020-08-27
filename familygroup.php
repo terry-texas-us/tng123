@@ -13,7 +13,7 @@ $showalbum_url = getURL("showalbum", 1);
 $pdfform_url = getUrl("rpt_pdfform", 1);
 
 $placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"$placesearch_url" . "psearch=" : "<a href=\"$placesearch_url" . "tree=$tree&amp;psearch=";
-$placelinkend = "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" border=\"0\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+$placelinkend = "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
 
 $firstsection = 0;
 $tableid = "";
@@ -66,7 +66,7 @@ function showDatePlace($event) {
   }
 
   $dptext .= "<tr>\n";
-  $editicon = $tentative_edit ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" border=\"0\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}',{width:500,height:500});\" class=\"fakelink\" />" : "";
+  $editicon = $tentative_edit ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}',{width:500,height:500});\" class=\"fakelink\" />" : "";
   $dptext .= "<td valign=\"top\" class=\"fieldnameback\"$cellid><span class=\"fieldname\">" . $event['text'] . "&nbsp;$editicon</span></td>\n";
   $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
   $dptext .= "<td valign=\"top\" class=\"databack\"";
@@ -85,7 +85,7 @@ function showDatePlace($event) {
       $event['type'] = $event['type2'];
       $event['ID'] = $event['ID2'];
     }
-    $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" border=\"0\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}',{width:500,height:500});\" class=\"fakelink\" />" : "";
+    $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}',{width:500,height:500});\" class=\"fakelink\">" : "";
     $dptext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
     $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$event['ldsplace']}&nbsp;";
@@ -137,7 +137,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
   //show photo & name
   $indtext .= "<tr><td>";
   $indtext .= showSmallPhoto($ind['personID'], $namestr, $rights['both'], 0, false, $ind['sex']);
-  $indtext .= "<span class=\"normal\">$label | $sex</span><br/><span class=\"subhead\"><b>";
+  $indtext .= "<span class=\"normal\">$label | $sex</span><br><span class=\"subhead\"><b>";
   if ($ind['haskids']) {
     $indtext .= "+ ";
   }
@@ -146,10 +146,10 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
   if ($allow_edit && $rightbranch) {
     $indtext .= " | <a href=\"{$cms['tngpath']}" . "admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
   }
-  $indtext .= "<br/></span>\n";
-  $indtext .= "</td></tr>\n</table>\n<br/>\n";
+  $indtext .= "<br></span>\n";
+  $indtext .= "</td></tr>\n</table>\n<br>\n";
 
-  $event = array();
+  $event = [];
 
   $indtext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
   $indtext .= "<col class=\"labelcol\"/><col class=\"eventdatecol\"><col/>";
@@ -362,7 +362,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $motherlink .= $mothername ? "<a href=\"$familygroup_url" . "familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
     $indtext .= showFact($text['mother'], $motherlink);
   }
-  $indtext .= "</table>\n</div>\n<br/>\n";
+  $indtext .= "</table>\n</div>\n<br>\n";
 
   return $indtext;
 }
@@ -482,7 +482,7 @@ if ($rights['both']) {
     $famtext .= "<div class=\"titlebox\">\n";
     $famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" style=\"width:100%\" class=\"whiteback\">\n";
     $famtext .= "$assoctext\n";
-    $famtext .= "</table>\n</div>\n<br/>\n";
+    $famtext .= "</table>\n</div>\n<br>\n";
     $famtext .= endSection("assoc");
   }
 }
@@ -490,7 +490,7 @@ if ($rights['both']) {
 $media = doMediaSection($familyID, $fammedia, $famalbums);
 if ($media) {
   $famtext .= beginSection("media");
-  $famtext .= "<div class=\"titlebox\">\n$media\n</div>\n<br/>\n";
+  $famtext .= "<div class=\"titlebox\">\n$media\n</div>\n<br>\n";
   $famtext .= endSection("media");
 }
 
@@ -505,7 +505,7 @@ if ($rights['both']) {
     $famtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\" style=\"width:100px\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
     $famtext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\">$notes</td>\n";
     $famtext .= "</tr>\n";
-    $famtext .= "</table>\n</div>\n<br/>\n";
+    $famtext .= "</table>\n</div>\n<br>\n";
     $famtext .= endSection("notes");
   }
   if ($citedispctr) {
@@ -518,15 +518,15 @@ if ($rights['both']) {
     $citectr = 0;
     $count = count($citestring);
     foreach ($citestring as $cite) {
-      $famtext .= "<li class=\"normal\"><a name=\"cite" . ++$citectr . "\"></a>$cite<br />";
+      $famtext .= "<li class=\"normal\"><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
       if ($citectr < $count) {
-        $famtext .= "<br />";
+        $famtext .= "<br>";
       }
       $famtext .= "</li>\n";
     }
     $famtext .= "</ol></td>\n";
     $famtext .= "</tr>\n";
-    $famtext .= "</table>\n</div>\n<br/>\n";
+    $famtext .= "</table>\n</div>\n<br>\n";
     $famtext .= endSection("citations");
   }
 } elseif ($rights['both']) {
@@ -537,7 +537,7 @@ if ($rights['both']) {
   $famtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\" style=\"width:100px\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
   $famtext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class=\"normal\">{$text['livingnote']}</span></td>\n";
   $famtext .= "</tr>\n";
-  $famtext .= "</table>\n</div>\n<br/>\n";
+  $famtext .= "</table>\n</div>\n<br>\n";
   $famtext .= endSection("notes");
   $notes = true;
 }
@@ -645,7 +645,7 @@ echo tng_menu("F", "family", $familyID, $innermenu);
 <?php
 echo $famtext;
 ?>
-    <br/>
+  <br>
 
 <?php
 $flags['more'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/rpt_utils.js\"></script>\n";

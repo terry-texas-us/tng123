@@ -81,38 +81,38 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
           <?php
           if ($sub == "configuration") {
             ?>
-              <span class="normal"><i><?php echo $admtext['entersysvars']; ?></i></span><br/><br/>
+            <span class="normal"><i><?php echo $admtext['entersysvars']; ?></i></span><br><br>
 
-              <table cellspacing="0" border="0">
-                  <tr>
-                      <td>
-                          <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15" border="0"/> <a href="admin_genconfig.php"><b><?php echo $admtext['configsettings']; ?></b></a></p>
-                          <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15" border="0"/> <a href="admin_pedconfig.php"><b><?php echo $admtext['pedconfigsettings']; ?></b></a></p>
-                      </td>
-                      <td style="width:50px">&nbsp;</td>
-                      <td>
-                          <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15" border="0"/> <a href="admin_logconfig.php"><b><?php echo $admtext['logconfigsettings']; ?></b></a></p>
-                          <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15" border="0"/> <a href="admin_importconfig.php"><b><?php echo $admtext['importconfigsettings']; ?></b></a></p>
-                      </td>
-                      <td style="width:50px">&nbsp;</td>
-                      <td>
-                          <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15" border="0"/> <a href="admin_mapconfig.php"><b><?php echo $admtext['mapconfigsettings']; ?></b></a></p>
-                          <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15" border="0"/> <a href="admin_templateconfig.php"><b><?php echo $admtext['templateconfigsettings']; ?></b></a></p>
-                      </td>
-                  </tr>
-              </table>
-              <br/>
-              <p class="normal"><em><?php echo $admtext['custvars']; ?></em></p>
+            <table cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_genconfig.php"><b><?php echo $admtext['configsettings']; ?></b></a></p>
+                  <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_pedconfig.php"><b><?php echo $admtext['pedconfigsettings']; ?></b></a></p>
+                </td>
+                <td style="width:50px">&nbsp;</td>
+                <td>
+                  <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_logconfig.php"><b><?php echo $admtext['logconfigsettings']; ?></b></a></p>
+                  <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_importconfig.php"><b><?php echo $admtext['importconfigsettings']; ?></b></a></p>
+                </td>
+                <td style="width:50px">&nbsp;</td>
+                <td>
+                  <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mapconfig.php"><b><?php echo $admtext['mapconfigsettings']; ?></b></a></p>
+                  <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_templateconfig.php"><b><?php echo $admtext['templateconfigsettings']; ?></b></a></p>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <p class="normal"><em><?php echo $admtext['custvars']; ?></em></p>
             <?php
           } elseif ($sub == "tablecreation") {
             ?>
-              <span class="normal"><i><?php echo $admtext['createdbtables']; ?></i></span><br/>
+            <span class="normal"><i><?php echo $admtext['createdbtables']; ?></i></span><br>
 
-              <p class="normal"><em><?php echo $admtext['tcwarning']; ?></em></p>
-              <form action="">
-                <?php echo $admtext['collation']; ?>: <input type="text" name="collation" value="utf8_general_ci"/> <?php echo $admtext['collationexpl']; ?><br/><br/>
-                  <input type="button" value="<?php echo $admtext['createtables']; ?>" onClick="if( confirm( '<?php echo $admtext['conftabledelete']; ?>' ) ) window.location.href = 'admin_tablecreate.php';">
-              </form>
+            <p class="normal"><em><?php echo $admtext['tcwarning']; ?></em></p>
+            <form action="">
+              <?php echo $admtext['collation']; ?>: <input type="text" name="collation" value="utf8_general_ci"> <?php echo $admtext['collationexpl']; ?><br><br>
+              <input type="button" value="<?php echo $admtext['createtables']; ?>" onClick="if( confirm( '<?php echo $admtext['conftabledelete']; ?>' ) ) window.location.href = 'admin_tablecreate.php';">
+            </form>
             <?php
           }
           ?>

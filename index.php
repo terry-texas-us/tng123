@@ -25,17 +25,17 @@ if ($currentuser) {
 <h2><?php echo $text['mnusearchfornames']; ?></h2>
 <!-- Do not change the form action or field names! -->
 <form action="search.php" method="get">
-    <table border="0" cellspacing="5" cellpadding="0">
-        <tr>
-            <td><span class="normal"><?php echo $text['mnulastname']; ?>: </span><br/><input type="text" name="mylastname" size="14"></td>
-        </tr>
-        <tr>
-            <td><span class="normal"><?php echo $text['mnufirstname']; ?>:</span><br/><input type="text" name="myfirstname" size="14"></td>
-        </tr>
-        <tr>
-            <td><input type="hidden" name="mybool" value="AND"/><input type="hidden" name="offset" value="0"/><input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>"/></td>
-        </tr>
-    </table>
+  <table border="0" cellspacing="5" cellpadding="0">
+    <tr>
+      <td><span class="normal"><?php echo $text['mnulastname']; ?>: </span><br><input type="text" name="mylastname" size="14"></td>
+    </tr>
+    <tr>
+      <td><span class="normal"><?php echo $text['mnufirstname']; ?>:</span><br><input type="text" name="myfirstname" size="14"></td>
+    </tr>
+    <tr>
+      <td><input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0"><input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>"></td>
+    </tr>
+  </table>
 </form>
 
 <h2><?php echo $text['mnufeatures']; ?></h2>

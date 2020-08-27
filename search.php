@@ -97,9 +97,9 @@ $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
 if ($order == "birth") {
   $orderstr = "IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr), p.lastname, p.firstname";
-  $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birthup\" class=\"lightlink\">$birthlabel <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\" /></a>";
+  $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birthup\" class=\"lightlink\">$birthlabel <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
 } else {
-  $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birth\" class=\"lightlink\">$birthlabel <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\" /></a>";
+  $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birth\" class=\"lightlink\">$birthlabel <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\"></a>";
   if ($order == "birthup") {
     $orderstr = "IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr) DESC, p.lastname, p.firstname";
   }
@@ -107,9 +107,9 @@ if ($order == "birth") {
 
 if ($order == "death") {
   $orderstr = "IF(p.deathdatetr, p.deathdatetr, p.burialdatetr), p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
-  $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=deathup\" class=\"lightlink\">{$text['diedburied']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\" /></a>";
+  $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=deathup\" class=\"lightlink\">{$text['diedburied']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-  $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=death\" class=\"lightlink\">{$text['diedburied']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\" /></a>";
+  $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=death\" class=\"lightlink\">{$text['diedburied']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
   if ($order == "deathup") {
     $orderstr = "IF(p.deathdatetr, p.deathdatetr, p.burialdatetr) DESC, p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
   }
@@ -118,9 +118,9 @@ if ($order == "death") {
 $nametitle = $sitever == "mobile" ? $text['name'] : $text['lastfirst'];
 if ($order == "name") {
   $orderstr = "p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
-  $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=nameup\" class=\"lightlink\">$nametitle <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\" /></a>";
+  $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=nameup\" class=\"lightlink\">$nametitle <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
 } else {
-  $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=name\" class=\"lightlink\">$nametitle <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\" /></a>";
+  $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=name\" class=\"lightlink\">$nametitle <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\"></a>";
   if ($order == "nameup") {
     $orderstr = "p.lastname DESC, p.firstname DESC, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
   }
@@ -362,17 +362,17 @@ tng_header($text['searchresults'], $flags);
 <?php
 if ($sitever != "mobile") {
   ?>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
-    <script type="text/javascript">
-        // <![CDATA[
-        var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
-        // ]]>
-    </script>
+  <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
+  <script type="text/javascript">
+    // <![CDATA[
+    var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
+    // ]]>
+  </script>
   <?php
 }
 ?>
 
-    <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h1><br clear="left">
 <?php
 $logstring = "<a href=\"$search_url" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
@@ -467,7 +467,7 @@ echo $header;
     </thead>
 <?php
 $i = $offsetplus;
-$chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" class=\"chartimg\" alt=\"\" />";
+$chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" class=\"chartimg\" alt=\"\">";
 while ($row = tng_fetch_assoc($result)) {
   $rights = determineLivingPrivateRights($row);
   $row['allow_living'] = $rights['living'];
@@ -615,6 +615,6 @@ tng_free_result($result);
     </table>
 
 <?php
-echo "<p>$pagenav$heatmap</p>\n<br />\n";
+echo "<p>$pagenav$heatmap</p>\n<br>\n";
 tng_footer("");
 ?>

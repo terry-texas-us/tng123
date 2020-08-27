@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Rodiny");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="people_help.php" class="lightlink">&laquo; N�pov�da: Osoby</a> &nbsp; | &nbsp;
-                <a href="sources_help.php" class="lightlink">N�pov�da: Prameny &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Rodiny</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">P�ezkoumat</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="people_help.php" class="lightlink">&laquo; N�pov�da: Osoby</a> &nbsp; | &nbsp;
+        <a href="sources_help.php" class="lightlink">N�pov�da: Prameny &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Rodiny</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#review" class="lightlink">P�ezkoumat</a>
             </p>
         </td>
     </tr>
@@ -88,27 +88,27 @@ echo help_header("N�pov�da: Rodiny");
             <p>Pokud jeden z partner� �ije nebo si p�ejete omezit p��stup k �daj�m t�to rodiny pouze na u�ivatele, kte�� jsou p�ihl�eni a maj� pr�va zobrazovat data �ij�c�ch osob,
                 za�krtn�te toto pol��ko.</p>
 
-            <span class="optionhead">Neve�ejn�</span>
-            <p>Bez ohledu na to, zda je tato rodina ozna�ena jako �ij�c�, m��ete p��stupov� pr�va k �daj�m t�to osoby omezit za�krtnut�m t�to volby.
-                Informace spojen� s "neve�ejnou" rodinou budou moci vid�t pouze u�ivatel� s pr�vy zobrazovat neve�ejn� data.</p>
+          <span class="optionhead">Neve�ejn�</span>
+          <p>Bez ohledu na to, zda je tato rodina ozna�ena jako �ij�c�, m��ete p��stupov� pr�va k �daj�m t�to osoby omezit za�krtnut�m t�to volby.
+            Informace spojen� s "neve�ejnou" rodinou budou moci vid�t pouze u�ivatel� s pr�vy zobrazovat neve�ejn� data.</p>
 
-            <span class="optionhead">Ud�losti</span>
-            <p>Zapi�te data a m�sta k zobrazen�m standardn�m ud�lostem (pokud je zn�te). Dal�� ud�losti lze p�idat po ulo�en� a zamknut� z�znamu. Data v�dy zapisujte
-                ve standardn�m genealogick�m form�tu DD MMM RRRR (nap�. <em>18 �no 2008</em>). Informaci o m�st� �a�te za sebou od m�stn�ho po obecnou a odd�lujte ka�d� �daj ��rkou
-                (nap�. <em>Bludov, �umperk, Olomouck� kraj, �esk� republika</em>), nebo kliknut�m na ikonu "Naj�t" vyberte existuj�c� m�sto (lupa).
-                Chcete-li omezit po�et nalezen�ch v�sledk�, p�ed kliknut�m na ikonu Naj�t zapi�te ��st m�sta. V�echny v�sledky budou obsahovat to, co jste zapsali jako n�zev m�sta.</p>
+          <span class="optionhead">Ud�losti</span>
+          <p>Zapi�te data a m�sta k zobrazen�m standardn�m ud�lostem (pokud je zn�te). Dal�� ud�losti lze p�idat po ulo�en� a zamknut� z�znamu. Data v�dy zapisujte
+            ve standardn�m genealogick�m form�tu DD MMM RRRR (nap�. <em>18 �no 2008</em>). Informaci o m�st� �a�te za sebou od m�stn�ho po obecnou a odd�lujte ka�d� �daj ��rkou
+            (nap�. <em>Bludov, �umperk, Olomouck� kraj, �esk� republika</em>), nebo kliknut�m na ikonu "Naj�t" vyberte existuj�c� m�sto (lupa).
+            Chcete-li omezit po�et nalezen�ch v�sledk�, p�ed kliknut�m na ikonu Naj�t zapi�te ��st m�sta. V�echny v�sledky budou obsahovat to, co jste zapsali jako n�zev m�sta.</p>
 
-            <p><span class="optionhead">�daje CJKSpd (Pe�et�n� s partnerem)</span><br/>
-                Tato ud�lost jsou spojena s ob�adem prov�d�n�m C�rkv� Je��e Krista Svat�ch posledn�ch dn� (mormonsk� c�rkev, kter� vytvo�ila standard GEDCOM).
-                <strong>Pozn.:</strong> Nechcete-li vid�t pole spojen� s CJKSpd, jd�te na Nastaven�/Z�kladn� nastaven� a zde tuto mo�nost vypn�te (je t�eba se pak odhl�sit a znovu p�ihl�sit).</p>
+          <p><span class="optionhead">�daje CJKSpd (Pe�et�n� s partnerem)</span><br>
+            Tato ud�lost jsou spojena s ob�adem prov�d�n�m C�rkv� Je��e Krista Svat�ch posledn�ch dn� (mormonsk� c�rkev, kter� vytvo�ila standard GEDCOM).
+            <strong>Pozn.:</strong> Nechcete-li vid�t pole spojen� s CJKSpd, jd�te na Nastaven�/Z�kladn� nastaven� a zde tuto mo�nost vypn�te (je t�eba se pak odhl�sit a znovu p�ihl�sit).</p>
 
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Upravit existuj�c� rodinu</p></a>
             <p>Chcete-li upravit existuj�c� rodinu, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� rodiny, a pot� klikn�te na ikonu Upravit vedle t�to osoby.</p>
 
@@ -118,27 +118,27 @@ echo help_header("N�pov�da: Rodiny");
                 na odpov�daj�c� ikon� bude v horn�m prav�m rohu zelen� te�ka. Chcete-li zn�t v�ce informac� o ka�d� kategorii, jd�te na odkazy n�pov�dy,
                 kter� budou viditeln� po kliknut� na tyto ikony.</p>
 
-            <span class="optionhead">Jin� ud�losti</span>
-            <p>Chcete-li p�idat dal�� ud�losti, klikn�te na tla��tko "P�idat nov�" vedle <strong>Jin� ud�losti</strong>. Viz odkaz <a href="events_help.php">N�pov�da</a> pro v�ce
-                informac� o p�id�n� nov�ch ud�lost�. Po p�id�n� ud�losti se pod tla��tkem "P�idat nov�" zobraz� v tabulce kr�tk� shrnut�. Tla��tka akc�
-                pro ka�dou ud�lost v�m umo�n� ud�lost upravit nebo odstranit, nebo p�idat pozn�mky nebo citace. Po�ad�, ve kter�m se ud�losti zobraz�, z�vis� na datu (je-li zaps�no)
-                a priorit�, kterou m� dan� typ ud�losti (nen�-li p�ipojeno datum). P�i �prav� typu ud�losti m��ete prioritu zm�nit.
+      <span class="optionhead">Jin� ud�losti</span>
+      <p>Chcete-li p�idat dal�� ud�losti, klikn�te na tla��tko "P�idat nov�" vedle <strong>Jin� ud�losti</strong>. Viz odkaz <a href="events_help.php">N�pov�da</a> pro v�ce
+        informac� o p�id�n� nov�ch ud�lost�. Po p�id�n� ud�losti se pod tla��tkem "P�idat nov�" zobraz� v tabulce kr�tk� shrnut�. Tla��tka akc�
+        pro ka�dou ud�lost v�m umo�n� ud�lost upravit nebo odstranit, nebo p�idat pozn�mky nebo citace. Po�ad�, ve kter�m se ud�losti zobraz�, z�vis� na datu (je-li zaps�no)
+        a priorit�, kterou m� dan� typ ud�losti (nen�-li p�ipojeno datum). P�i �prav� typu ud�losti m��ete prioritu zm�nit.
 
-            <p><strong>Pozn�mka</strong>: Pozn�mky, citace pramen�, "jin�" ud�losti a "v�ce" informac� se ukl�d� u standardn�ch automaticky. Jin� zm�ny (nap�.
-                standardn� ud�losti) se ulo�� kliknut�m na tla��tko Ulo�it na konci str�nky nebo kliknut�m na ikonu Ulo�it na str�nce naho�e. Strom a
-                ID ��slo osoby nelze zm�nit.</p>
+      <p><strong>Pozn�mka</strong>: Pozn�mky, citace pramen�, "jin�" ud�losti a "v�ce" informac� se ukl�d� u standardn�ch automaticky. Jin� zm�ny (nap�.
+        standardn� ud�losti) se ulo�� kliknut�m na tla��tko Ulo�it na konci str�nky nebo kliknut�m na ikonu Ulo�it na str�nce naho�e. Strom a
+        ID ��slo osoby nelze zm�nit.</p>
 
-            <p><span class="optionhead">D�ti</span><br/>
-            <p>Kliknut�m na "Naj�t..." vyberte existuj�c� osoby, kter� by m�ly b�t v t�to rodin� d�tmi, nebo kliknut�m na "Vytvo�it"
-                vytvo�te nov� d�t�. Pokud jste zvolili Vytvo�it, budete moci vlo�it �daje o nov� osob� bez toho, abyste museli opustit aktu�ln� str�nku.
-                Po v�b�ru nebo vytvo�en� osoby se v seznamu d�t� jm�no, ID ��slo a datum narozen� osoby (nelze upravit p��mo). Tento seznam nelze
-                upravovat p��mo, ale pro odstran�n� d�t�te ze seznamu m��ete pou��t odkaz "Odstranit" (viditeln�, kdy� p�esunete kurzor my�i nad ka�d� d�t�). Pou��t
-                m��ete tak� odkaz "Vymazat" pro �pln� vymaz�n� d�t�te z datab�ze. M��ete pou��t tla��tko "Vymazat" pro vymaz�n� d�t�te z datab�ze
-                nebo tla��tko "Upravit" pro �pravu z�znamu d�t�te.</p>
+      <p><span class="optionhead">D�ti</span><br>
+      <p>Kliknut�m na "Naj�t..." vyberte existuj�c� osoby, kter� by m�ly b�t v t�to rodin� d�tmi, nebo kliknut�m na "Vytvo�it"
+        vytvo�te nov� d�t�. Pokud jste zvolili Vytvo�it, budete moci vlo�it �daje o nov� osob� bez toho, abyste museli opustit aktu�ln� str�nku.
+        Po v�b�ru nebo vytvo�en� osoby se v seznamu d�t� jm�no, ID ��slo a datum narozen� osoby (nelze upravit p��mo). Tento seznam nelze
+        upravovat p��mo, ale pro odstran�n� d�t�te ze seznamu m��ete pou��t odkaz "Odstranit" (viditeln�, kdy� p�esunete kurzor my�i nad ka�d� d�t�). Pou��t
+        m��ete tak� odkaz "Vymazat" pro �pln� vymaz�n� d�t�te z datab�ze. M��ete pou��t tla��tko "Vymazat" pro vymaz�n� d�t�te z datab�ze
+        nebo tla��tko "Upravit" pro �pravu z�znamu d�t�te.</p>
 
-            <span class="optionhead">Po�ad� d�t�</span>
-            <p>Pokud existuje v�ce d�t�,
-                m��ete jejich po�ad� zm�nit "p�eta�en�m" blok� nahoru nebo dol�. Chcete-li blok p�et�hnout, klikn�te my�� na tla��tko "T�hnout", toto tla��tko podr�te, a va�i my� p�esu�te na str�nce nahoru
+      <span class="optionhead">Po�ad� d�t�</span>
+      <p>Pokud existuje v�ce d�t�,
+        m��ete jejich po�ad� zm�nit "p�eta�en�m" blok� nahoru nebo dol�. Chcete-li blok p�et�hnout, klikn�te my�� na tla��tko "T�hnout", toto tla��tko podr�te, a va�i my� p�esu�te na str�nce nahoru
                 nebo dol�. Po p�esunu bloku do po�adovan� pozice tla��tko pus�te. Zm�ny po�ad� budou automaticky ulo�eny.</p>
 
 
@@ -155,26 +155,26 @@ echo help_header("N�pov�da: Rodiny");
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="review"><p class="subheadbold">P�edb�n� prohl�dnut� �prav</p></a>
-            Chcete-li si p�edb�n� prohl�dnout zm�ny proveden� ostatn�mi u�ivateli, klikn�te na z�lo�ku "P�ezkoumat". M��ete se pak rozhodnout, zda tyto navrhovan� zm�ny ulo��te nebo odstran�te.
-            Zm�ny m��ete prohl�dnout podle stromu nebo podle u�ivatele nebo podle oboj�ho. Po ulo�en� navrhovan�ch zm�n nen� zasl�n ��dn� mail, ale pokud nov� zm�ny existuj�, na z�lo�ce P�ezkoumat se objev� hv�zdi�ka (*).</p>
+      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <a name="review"><p class="subheadbold">P�edb�n� prohl�dnut� �prav</p></a>
+      Chcete-li si p�edb�n� prohl�dnout zm�ny proveden� ostatn�mi u�ivateli, klikn�te na z�lo�ku "P�ezkoumat". M��ete se pak rozhodnout, zda tyto navrhovan� zm�ny ulo��te nebo odstran�te.
+      Zm�ny m��ete prohl�dnout podle stromu nebo podle u�ivatele nebo podle oboj�ho. Po ulo�en� navrhovan�ch zm�n nen� zasl�n ��dn� mail, ale pokud nov� zm�ny existuj�, na z�lo�ce P�ezkoumat se objev� hv�zdi�ka (*).</p>
 
-            <span class="optionhead">Vybrat ud�lost a akci</span><br/>
-            <p>V tabulce, kter� popisuje ud�losti, kter� si p�ejete p�ezkoumat nebo odstranit, vyberte ��dek. Seznam v�sledk� m��ete z��it v�b�rem u�ivatele (osoba
-                odpov�dn� za navrhovan� zm�ny) a/nebo strom. Po zobrazen� v�sledk� klikn�te na jednu z mo�n�ch akc� nalevo od tohoto ��dku. Chcete-li zm�ny p�ezkoumat a
-                p��padn� za�lenit do datab�ze, vyberte <em>P�ezkoumat</em>. Chcete-li navrhovan� zm�ny zam�tnout, vyberte <em>Odstranit</em>.</p>
+      <span class="optionhead">Vybrat ud�lost a akci</span><br>
+      <p>V tabulce, kter� popisuje ud�losti, kter� si p�ejete p�ezkoumat nebo odstranit, vyberte ��dek. Seznam v�sledk� m��ete z��it v�b�rem u�ivatele (osoba
+        odpov�dn� za navrhovan� zm�ny) a/nebo strom. Po zobrazen� v�sledk� klikn�te na jednu z mo�n�ch akc� nalevo od tohoto ��dku. Chcete-li zm�ny p�ezkoumat a
+        p��padn� za�lenit do datab�ze, vyberte <em>P�ezkoumat</em>. Chcete-li navrhovan� zm�ny zam�tnout, vyberte <em>Odstranit</em>.</p>
 
-            <span class="optionhead">P�ezkoumat</span><br/>
-            <p>Na obrazovce P�ezkoumat m��ete prov�st dal�� pot�ebn� zm�ny, v�etn� pozn�mek a pramen�, a pot� klikn�te na "Ulo�it a vymazat" pro
-                ulo�en� do datab�ze a odstran�n� do�asn�ho z�znamu. Kliknut�m na "Odm�tnout a vymazat" m��ete rovn� odstranit do�asn� z�znam, ani� byste jej ulo�ili,
-                nebo m��ete sv� rozhodnut� odlo�it na pozd�j�� dobu kliknut�m na "Odlo�it".</p>
+      <span class="optionhead">P�ezkoumat</span><br>
+      <p>Na obrazovce P�ezkoumat m��ete prov�st dal�� pot�ebn� zm�ny, v�etn� pozn�mek a pramen�, a pot� klikn�te na "Ulo�it a vymazat" pro
+        ulo�en� do datab�ze a odstran�n� do�asn�ho z�znamu. Kliknut�m na "Odm�tnout a vymazat" m��ete rovn� odstranit do�asn� z�znam, ani� byste jej ulo�ili,
+        nebo m��ete sv� rozhodnut� odlo�it na pozd�j�� dobu kliknut�m na "Odlo�it".</p>
 
-        </td>
-    </tr>
+    </td>
+  </tr>
 
 </table>
 </body>

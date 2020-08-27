@@ -60,7 +60,7 @@ $numrowsplus = $numrows + $offset;
 tng_header($text['browsealltrees'], $flags);
 ?>
 
-<span class="header"><?php echo $text['browsealltrees']; ?></span><br clear="all"/>
+<span class="header"><?php echo $text['browsealltrees']; ?></span><br clear="all">
 
 <?php
 if ($totrows) {
@@ -96,10 +96,10 @@ if ($pagenav || $treesearch) {
   tng_free_result($result);
   ?>
 </table>
-<br/>
+<br>
 <?php
 if ($pagenav || $treesearch) {
-  echo doTreeSearch(2, $pagenav) . "<br />\n";
+  echo doTreeSearch(2, $pagenav) . "<br>\n";
 }
 
 tng_footer("");

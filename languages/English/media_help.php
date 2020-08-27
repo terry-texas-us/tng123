@@ -6,21 +6,21 @@ echo help_header("Help: Media");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="more_help.php" class="lightlink">&laquo; Help: More</a> &nbsp; | &nbsp;
-                <a href="collections_help.php" class="lightlink">Help: Collections &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Media</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#convert" class="lightlink">Convert</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="more_help.php" class="lightlink">&laquo; Help: More</a> &nbsp; | &nbsp;
+        <a href="collections_help.php" class="lightlink">Help: Collections &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Media</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+        <a href="#convert" class="lightlink">Convert</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">Add to Album</a> &nbsp; | &nbsp;
                 <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
                 <a href="#thumbs" class="lightlink">Thumbnails</a> &nbsp; | &nbsp;

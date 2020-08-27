@@ -16,25 +16,25 @@
             <a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=documents" class="lightlink" target="_top"><?php echo $text['documents']; ?></a>&nbsp;|&nbsp;
             <a href="<?php echo $cms['tngpath']; ?>cemeteries.php" class="lightlink" target="_top"><?php echo $text['mnucemeteries']; ?></a>&nbsp;|&nbsp;
             <a href="<?php echo $cms['tngpath']; ?>places.php" class="lightlink" target="_top"><?php echo $text['places']; ?></a>&nbsp;|&nbsp;
-            <a href="<?php echo $cms['tngpath']; ?>anniversaries.php" class="lightlink" target="_top"><?php echo $text['dates']; ?></a>&nbsp;|&nbsp;
-            <a href="<?php echo $cms['tngpath']; ?>reports.php" class="lightlink" target="_top"><?php echo $text['mnureports']; ?></a>&nbsp;|&nbsp;
-            <a href="<?php echo $cms['tngpath']; ?>browsesources.php" class="lightlink" target="_top"><?php echo $text['mnusources']; ?></a>
+          <a href="<?php echo $cms['tngpath']; ?>anniversaries.php" class="lightlink" target="_top"><?php echo $text['dates']; ?></a>&nbsp;|&nbsp;
+          <a href="<?php echo $cms['tngpath']; ?>reports.php" class="lightlink" target="_top"><?php echo $text['mnureports']; ?></a>&nbsp;|&nbsp;
+          <a href="<?php echo $cms['tngpath']; ?>browsesources.php" class="lightlink" target="_top"><?php echo $text['mnusources']; ?></a>
 
-            <!--EDIT BOTTOM LINK MENU ABOVE HERE-->
+          <!--EDIT BOTTOM LINK MENU ABOVE HERE-->
 
         </div> <!-- end of topmenu div -->
     </td>
 </tr>
 <tr>
-    <td class="tableheader"><img src="<?php echo $cms['tngpath']; ?>img/spacer.gif" width="25" height="25" alt=""/></td>
+  <td class="tableheader"><img src="<?php echo $cms['tngpath']; ?>img/spacer.gif" width="25" height="25" alt=""></td>
 </tr></table>
-<br/>
+<br>
 <div class="footer small">
   <?php
   $flags['basicfooter'] = true;
   echo tng_footer($flags);
   ?>
-    <br/><br/>
+  <br><br>
 </div> <!-- end of footer div -->
 </div> <!-- end of center div -->
 <!-- end footer.php for template 5-->

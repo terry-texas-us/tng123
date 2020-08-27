@@ -16,7 +16,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div style="margin:10px">
-    <span class="subhead"><strong><?php echo $admtext['showpeople']; ?></strong></span><br/><br/>
+  <span class="subhead"><strong><?php echo $admtext['showpeople']; ?></strong></span><br><br>
   <?php
   $query = "SELECT personID, firstname, lastname, lnprefix, prefix, suffix, branch, gedcom, nameorder, living, private FROM $people_table WHERE gedcom = \"$tree\" and branch LIKE \"%$branch%\" ORDER BY lastname, firstname";
   $brresult = tng_query($query);
@@ -29,7 +29,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
 
-    $names .= "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getName($row) . " ({$row['personID']})</a><br />\n";
+    $names .= "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getName($row) . " ({$row['personID']})</a><br>\n";
     $counter++;
   }
   tng_free_result($brresult);
@@ -39,14 +39,14 @@ header("Content-type:text/html; charset=" . $session_charset);
   $numfresults = tng_num_rows($brresult);
 
   if ($numresults) {
-    $names .= "<br/>\n";
+    $names .= "<br>\n";
   }
   while ($row = tng_fetch_assoc($brresult)) {
     $rights = determineLivingPrivateRights($row, true, true);
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
 
-    $names .= "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getFamilyName($row) . "</a><br />\n";
+    $names .= "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getFamilyName($row) . "</a><br>\n";
     $fcounter++;
   }
   tng_free_result($brresult);

@@ -82,45 +82,45 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['branchid']; ?>:</td>
-                        <td><input type="text" name="branch" size="20" maxlength="20"/></td>
+                      <td valign="top"><?php echo $admtext['branchid']; ?>:</td>
+                      <td><input type="text" name="branch" size="20" maxlength="20"></td>
                     </tr>
-                    <tr>
-                        <td valign="top"><?php echo $admtext['description']; ?>:</td>
-                        <td><input type="text" name="description" size="60"></td>
-                    </tr>
+                  <tr>
+                    <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                    <td><input type="text" name="description" size="60"></td>
+                  </tr>
 
-                    <tr>
-                        <td colspan="2">
-                            <div id="startind1"><br/><strong><?php echo $text['startingind']; ?>:</strong></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="startind2">&nbsp;&nbsp;<?php echo $admtext['personid']; ?>:</div>
-                        </td>
-                        <td>
-                            <table id="startind3" class="normal">
-                                <tr>
-                                    <td><input type="text" name="personID" id="personID" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
-                                    <td><a href="#" onclick="return findItem('I','personID','',getTree(document.getElementById('tree1')),'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div id="numgens1"><br/><strong><?php echo $admtext['numgenerations']; ?>:</strong></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="numgens2">&nbsp;&nbsp;<?php echo $admtext['ancestors']; ?>:</div>
-                        </td>
-                        <td>
-                            <div id="numgens3"><input type="text" name="agens" size="3" maxlength="3" value="0"> &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
-                                <select name="dagens">
-                                    <option value="0">0</option>
+                  <tr>
+                    <td colspan="2">
+                      <div id="startind1"><br><strong><?php echo $text['startingind']; ?>:</strong></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div id="startind2">&nbsp;&nbsp;<?php echo $admtext['personid']; ?>:</div>
+                    </td>
+                    <td>
+                      <table id="startind3" class="normal">
+                        <tr>
+                          <td><input type="text" name="personID" id="personID" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
+                          <td><a href="#" onclick="return findItem('I','personID','',getTree(document.getElementById('tree1')),'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div id="numgens1"><br><strong><?php echo $admtext['numgenerations']; ?>:</strong></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div id="numgens2">&nbsp;&nbsp;<?php echo $admtext['ancestors']; ?>:</div>
+                    </td>
+                    <td>
+                      <div id="numgens3"><input type="text" name="agens" size="3" maxlength="3" value="0"> &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
+                        <select name="dagens">
+                          <option value="0">0</option>
                                     <option value="1" selected="selected">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -140,8 +140,8 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                         </td>
                     </tr>
                 </table>
-                <br/>
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+              <br>
+              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
                 <input type="submit" name="submitx" class="btn" value="<?php echo $admtext['saveexit']; ?>">
             </form>
         </td>

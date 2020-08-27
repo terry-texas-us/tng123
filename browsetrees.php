@@ -64,14 +64,14 @@ tng_header($text['trees'], $flags);
 
 if ($totrows > 1) {
   ?>
-    <link href="css/c3.css" rel="stylesheet">
-    <script src="js/d3.min.js"></script>
-    <script src="js/c3.min.js"></script>
+  <link href="css/c3.css" rel="stylesheet">
+  <script src="js/d3.min.js"></script>
+  <script src="js/c3.min.js"></script>
   <?php
 }
 ?>
 
-<h1 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h1><br clear="left"/>
+<h1 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h1><br clear="left">
 
 <?php
 if ($totrows) {
@@ -156,8 +156,8 @@ if ($sitever != "standard") {
   }
   tng_free_result($result);
   ?>
-    </table>
-    <br/><br/>
+  </table>
+  <br><br>
 </div>
 <?php
 if ($totrows > 1) {
@@ -208,7 +208,7 @@ if ($totrows > 1) {
 }
 ?>
 
-<br/>
+<br>
 <?php
 tng_footer("");
 ?>

@@ -22,21 +22,21 @@ echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $t
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Aide : Utilités</a> &nbsp; | &nbsp;
-                <a href="people_help.php" class="lightlink">Aide : Personnes &raquo;</a>
-            </p>
-            <span class="largeheader">Aide : Mise en route</span>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Mise en route</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
-                <a href="#otherresources" class="lightlink">Autres ressources</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="backuprestore_help.php" class="lightlink">&laquo; Aide : Utilités</a> &nbsp; | &nbsp;
+        <a href="people_help.php" class="lightlink">Aide : Personnes &raquo;</a>
+      </p>
+      <span class="largeheader">Aide : Mise en route</span>
+      <p class="smaller menu">
+        <a href="#gettingstarted" class="lightlink">Mise en route</a> &nbsp; | &nbsp;
+        <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
+        <a href="#otherresources" class="lightlink">Autres ressources</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

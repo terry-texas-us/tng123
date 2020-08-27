@@ -191,64 +191,63 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                         <td valign="top"><span class="normal"><?php echo $admtext['description']; ?>:</span></td>
                         <td><textarea cols="50" rows="3" name="reportdesc"></textarea></td>
                     </tr>
-                    <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['rankpriority']; ?>:</span></td>
-                        <td><input type="text" name="ranking" size="3" maxlength="3" value="1"></td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['active']; ?>:</span></td>
-                        <td><span class="normal"><input type="radio" name="active" value="1"> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="active" value="0" checked> <?php echo $admtext['no']; ?></span></td>
-                    </tr>
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><br/>
-	<img src="img/tng_right.gif" width="17" height="15" border="0" align="middle"> = <?php echo $admtext['add']; ?> &nbsp;&nbsp;
-	<img src="img/tng_left.gif" width="17" height="15" border="0" align="middle"> = <?php echo $admtext['remove']; ?> &nbsp;&nbsp;
-	<img src="img/tng_up.gif" width="17" height="15" border="0" align="middle"> = <?php echo $admtext['moveup']; ?> &nbsp;&nbsp;
-	<img src="img/tng_down.gif" width="17" height="15" border="0" align="middle"> = <?php echo $admtext['movedown']; ?> &nbsp;&nbsp;</span><br/><br/>
-                            <p class="subhead"><b><?php echo $admtext['choosedisplay']; ?>:</b></p></td>
-                    </tr>
-                    <tr>
-                        <td valign="top" colspan="2">
-                            <table border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td valign="top">
-                                        <select name="availfields" size="15" class="reportcol" onDblClick="AddtoDisplay(document.form1.availfields,document.form1.displayfields);">
-                                          <?php
-                                          foreach ($dfields as $key => $value)
-                                            echo "<option value=\"$key\">{$admtext[$value]}</option>\n";
+                  <tr>
+                    <td valign="top"><span class="normal"><?php echo $admtext['rankpriority']; ?>:</span></td>
+                    <td><input type="text" name="ranking" size="3" maxlength="3" value="1"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><span class="normal"><?php echo $admtext['active']; ?>:</span></td>
+                    <td><span class="normal"><input type="radio" name="active" value="1"> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="active" value="0" checked> <?php echo $admtext['no']; ?></span></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><span class="normal"><br>
+	                        <img src="img/tng_right.gif" width="17" height="15" align="middle"> = <?php echo $admtext['add']; ?> &nbsp;&nbsp;
+	                        <img src="img/tng_left.gif" width="17" height="15" align="middle"> = <?php echo $admtext['remove']; ?> &nbsp;&nbsp;
+	                        <img src="img/tng_up.gif" width="17" height="15" align="middle"> = <?php echo $admtext['moveup']; ?> &nbsp;&nbsp;
+	                        <img src="img/tng_down.gif" width="17" height="15" align="middle"> = <?php echo $admtext['movedown']; ?> &nbsp;&nbsp;</span><br><br>
+                      <p class="subhead"><b><?php echo $admtext['choosedisplay']; ?>:</b></p></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2">
+                      <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td valign="top">
+                            <select name="availfields" size="15" class="reportcol" onDblClick="AddtoDisplay(document.form1.availfields,document.form1.displayfields);">
+                              <?php
+                              foreach ($dfields as $key => $value)
+                                echo "<option value=\"$key\">{$admtext[$value]}</option>\n";
                                           //now do custom event types
-                                          foreach ($cetypes as $cerow) {
-                                            $displaymsg = getEventDisplay($cerow['display']);
-                                            echo "<option value=\"ce_dt_{$cerow['eventtypeID']}\">$displaymsg: {$admtext['rptdate']}</option>\n";
-                                            echo "<option value=\"ce_pl_{$cerow['eventtypeID']}\">$displaymsg: {$admtext['place']}</option>\n";
-                                            echo "<option value=\"ce_fa_{$cerow['eventtypeID']}\">$displaymsg: {$admtext['fact']}</option>\n";
-                                          }
-                                          ?>
-                                        </select>
-                                    </td>
-                                    <td width="40" align="center">
-                                        &nbsp;<a href="javascript:AddtoDisplay(document.form1.availfields,document.form1.displayfields);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"
-                                                                                                                                               border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:RemovefromDisplay(document.form1.displayfields);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
-                                    <td valign="top">
-                                        <select name="displayfields" size="15" class="reportcol" onDblClick="RemovefromDisplay(document.form1.displayfields);">
-                                        </select><br/><br/>
-                                    </td>
-                                    <td>
-                                        &nbsp;&nbsp;&nbsp;<a href="javascript:Move(document.form1.displayfields,1);"><img src="img/tng_up.gif" alt="<?php echo $admtext['moveup']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;&nbsp;&nbsp;<a href="javascript:RemovefromDisplay(document.form1.displayfields);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;&nbsp;&nbsp;<a href="javascript:Move(document.form1.displayfields,0);"><img src="img/tng_down.gif" alt="<?php echo $admtext['movedown']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" colspan="2"><p class="subhead"><b><?php echo $admtext['choosecriteria']; ?>:</b></p></td>
-                    </tr>
-                    <tr>
-                        <td valign="top" colspan="2">
+                              foreach ($cetypes as $cerow) {
+                                $displaymsg = getEventDisplay($cerow['display']);
+                                echo "<option value=\"ce_dt_{$cerow['eventtypeID']}\">$displaymsg: {$admtext['rptdate']}</option>\n";
+                                echo "<option value=\"ce_pl_{$cerow['eventtypeID']}\">$displaymsg: {$admtext['place']}</option>\n";
+                                echo "<option value=\"ce_fa_{$cerow['eventtypeID']}\">$displaymsg: {$admtext['fact']}</option>\n";
+                              }
+                              ?>
+                            </select>
+                          </td>
+                          <td width="40" align="center">
+                            &nbsp;<a href="javascript:AddtoDisplay(document.form1.availfields,document.form1.displayfields);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                            &nbsp;<a href="javascript:RemovefromDisplay(document.form1.displayfields);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15"></a>&nbsp;
+                          </td>
+                          <td valign="top">
+                            <select name="displayfields" size="15" class="reportcol" onDblClick="RemovefromDisplay(document.form1.displayfields);">
+                            </select><br><br>
+                          </td>
+                          <td>
+                            &nbsp;&nbsp;&nbsp;<a href="javascript:Move(document.form1.displayfields,1);"><img src="img/tng_up.gif" alt="<?php echo $admtext['moveup']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                            &nbsp;&nbsp;&nbsp;<a href="javascript:RemovefromDisplay(document.form1.displayfields);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                            &nbsp;&nbsp;&nbsp;<a href="javascript:Move(document.form1.displayfields,0);"><img src="img/tng_down.gif" alt="<?php echo $admtext['movedown']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><p class="subhead"><b><?php echo $admtext['choosecriteria']; ?>:</b></p></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2">
                             <table border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td valign="top">
@@ -275,72 +274,71 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                                           ?>
                                         </select>
                                     </td>
-                                    <td width="40" align="center">
-                                        &nbsp;<a href="javascript:AddtoDisplay(document.form1.availcriteria,document.form1.finalcriteria);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"
-                                                                                                                                                 border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalcriteria);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
-                                    <td valign="top" rowspan="4">
-                                        <select name="finalcriteria" size="28" class="reportcol" onDblClick="RemovefromDisplay(document.form1.finalcriteria);">
-                                        </select>
-                                    </td>
-                                    <td width="40" align="center" rowspan="4">
-                                        &nbsp;<a href="javascript:Move(document.form1.finalcriteria,1);"><img src="img/tng_up.gif" alt="<?php echo $admtext['moveup']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalcriteria);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:Move(document.form1.finalcriteria,0);"><img src="img/tng_down.gif" alt="<?php echo $admtext['movedown']; ?>" width="17" height="15"
-                                                                                                              border="0"></a>&nbsp;<br/><br/><br/><br/><br/><br/><br/><br/>
-                                    </td>
+                                  <td width="40" align="center">
+                                    &nbsp;<a href="javascript:AddtoDisplay(document.form1.availcriteria,document.form1.finalcriteria);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"
+                                                                                                                                             border="0"></a>&nbsp;<br><br>
+                                    &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalcriteria);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15"></a>&nbsp;
+                                  </td>
+                                  <td valign="top" rowspan="4">
+                                    <select name="finalcriteria" size="28" class="reportcol" onDblClick="RemovefromDisplay(document.form1.finalcriteria);">
+                                    </select>
+                                  </td>
+                                  <td width="40" align="center" rowspan="4">
+                                    &nbsp;<a href="javascript:Move(document.form1.finalcriteria,1);"><img src="img/tng_up.gif" alt="<?php echo $admtext['moveup']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                                    &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalcriteria);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                                    &nbsp;<a href="javascript:Move(document.form1.finalcriteria,0);"><img src="img/tng_down.gif" alt="<?php echo $admtext['movedown']; ?>" width="17" height="15"></a>&nbsp;<br><br><br><br><br><br><br><br>
+                                  </td>
                                 </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <span class="normal"><?php echo $admtext['operators']; ?>:<br/></span>
-                                        <select name="availoperators" size="8" class="reportcol" onDblClick="AddtoDisplay(document.form1.availoperators,document.form1.finalcriteria);">
-                                            <option value="eq">=</option>
-                                            <option value="neq">!=</option>
-                                            <option value="gt">&gt;</option>
-                                            <option value="gte">&gt;=</option>
-                                            <option value="lt">&lt;</option>
-                                            <option value="lte">&lt;=</option>
-                                          <?php
-                                          foreach ($ofields as $key => $value)
-                                            echo "<option value=\"$key\">{$admtext[$value]}</option>\n";
+                              <tr>
+                                <td valign="top">
+                                  <span class="normal"><?php echo $admtext['operators']; ?>:<br></span>
+                                  <select name="availoperators" size="8" class="reportcol" onDblClick="AddtoDisplay(document.form1.availoperators,document.form1.finalcriteria);">
+                                    <option value="eq">=</option>
+                                    <option value="neq">!=</option>
+                                    <option value="gt">&gt;</option>
+                                    <option value="gte">&gt;=</option>
+                                    <option value="lt">&lt;</option>
+                                    <option value="lte">&lt;=</option>
+                                    <?php
+                                    foreach ($ofields as $key => $value)
+                                      echo "<option value=\"$key\">{$admtext[$value]}</option>\n";
                                           ?>
-                                            <option value="(">(</option>
-                                            <option value=")">)</option>
-                                            <option value="+">+</option>
-                                            <option value="-">-</option>
-                                        </select>
-                                    </td>
-                                    <td width="40" align="center">
-                                        &nbsp;<a href="javascript:AddtoDisplay(document.form1.availoperators,document.form1.finalcriteria);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <span class="normal"><?php echo $admtext['constantstring']; ?>:*<br/></span>
-                                        <input type="text" name="constantstring" size="20">
-                                    </td>
-                                    <td width="40" align="center"><br/>
-                                        &nbsp;<a href="javascript:AddConstant(document.form1.constantstring,document.form1.finalcriteria,1);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <span class="normal"><?php echo $admtext['constantvalue']; ?>:<br/></span>
-                                        <input type="text" name="constantvalue" size="20">
-                                    </td>
-                                    <td width="40" align="center"><br/>
-                                        &nbsp;<a href="javascript:AddConstant(document.form1.constantvalue,document.form1.finalcriteria,0);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
-                                </tr>
+                                    <option value="(">(</option>
+                                    <option value=")">)</option>
+                                    <option value="+">+</option>
+                                    <option value="-">-</option>
+                                  </select>
+                                </td>
+                                <td width="40" align="center">
+                                  &nbsp;<a href="javascript:AddtoDisplay(document.form1.availoperators,document.form1.finalcriteria);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"></a>&nbsp;
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">
+                                  <span class="normal"><?php echo $admtext['constantstring']; ?>:*<br></span>
+                                  <input type="text" name="constantstring" size="20">
+                                </td>
+                                <td width="40" align="center"><br>
+                                  &nbsp;<a href="javascript:AddConstant(document.form1.constantstring,document.form1.finalcriteria,1);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"></a>&nbsp;
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">
+                                  <span class="normal"><?php echo $admtext['constantvalue']; ?>:<br></span>
+                                  <input type="text" name="constantvalue" size="20">
+                                </td>
+                                <td width="40" align="center"><br>
+                                  &nbsp;<a href="javascript:AddConstant(document.form1.constantvalue,document.form1.finalcriteria,0);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"></a>&nbsp;
+                                </td>
+                              </tr>
                             </table>
-                            <span class="normal">*<?php echo $admtext['foremptystring']; ?></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" colspan="2"><br/>
-                            <p class="subhead"><b><?php echo $admtext['choosesort']; ?>:</b></p></td>
-                    </tr>
+                      <span class="normal">*<?php echo $admtext['foremptystring']; ?></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><br>
+                      <p class="subhead"><b><?php echo $admtext['choosesort']; ?>:</b></p></td>
+                  </tr>
                     <tr>
                         <td valign="top" colspan="2">
                             <table border="0" cellspacing="0" cellpadding="0">
@@ -361,35 +359,35 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                                           ?>
                                         </select>
                                     </td>
-                                    <td width="40" align="center">
-                                        &nbsp;<a href="javascript:AddtoDisplay(document.form1.availsort,document.form1.finalsort);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalsort);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
-                                    <td valign="top">
-                                        <select name="finalsort" size="10" class="reportcol" onDblClick="RemovefromDisplay(document.form1.finalsort);">
-                                        </select>
-                                    </td>
-                                    <td width="40" align="center">
-                                        &nbsp;<a href="javascript:Move(document.form1.finalsort,1);"><img src="img/tng_up.gif" alt="<?php echo $admtext['moveup']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalsort);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15" border="0"></a>&nbsp;<br/><br/>
-                                        &nbsp;<a href="javascript:Move(document.form1.finalsort,0);"><img src="img/tng_down.gif" alt="<?php echo $admtext['movedown']; ?>" width="17" height="15" border="0"></a>&nbsp;
-                                    </td>
+                                  <td width="40" align="center">
+                                    &nbsp;<a href="javascript:AddtoDisplay(document.form1.availsort,document.form1.finalsort);"><img src="img/tng_right.gif" alt="<?php echo $admtext['add']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                                    &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalsort);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15"></a>&nbsp;
+                                  </td>
+                                  <td valign="top">
+                                    <select name="finalsort" size="10" class="reportcol" onDblClick="RemovefromDisplay(document.form1.finalsort);">
+                                    </select>
+                                  </td>
+                                  <td width="40" align="center">
+                                    &nbsp;<a href="javascript:Move(document.form1.finalsort,1);"><img src="img/tng_up.gif" alt="<?php echo $admtext['moveup']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                                    &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalsort);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17" height="15"></a>&nbsp;<br><br>
+                                    &nbsp;<a href="javascript:Move(document.form1.finalsort,0);"><img src="img/tng_down.gif" alt="<?php echo $admtext['movedown']; ?>" width="17" height="15"></a>&nbsp;
+                                  </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><br/><b><?php echo $admtext['altreport']; ?>:</b><br/></span></td>
-                    </tr>
-                    <tr>
-                        <td valign="top" colspan="2"><textarea cols="60" rows="4" name="sqlselect"></textarea></td>
-                    </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><span class="normal"><br><b><?php echo $admtext['altreport']; ?>:</b><br></span></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2"><textarea cols="60" rows="4" name="sqlselect"></textarea></td>
+                  </tr>
                 </table>
-                <br/>
-                <input type="hidden" name="display" value="">
-                <input type="hidden" name="criteria" value="">
-                <input type="hidden" name="orderby" value="">
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['savereport']; ?>">
+              <br>
+              <input type="hidden" name="display" value="">
+              <input type="hidden" name="criteria" value="">
+              <input type="hidden" name="orderby" value="">
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['savereport']; ?>">
                 <input type="submit" name="submitx" class="btn" value="<?php echo $admtext['saveexit']; ?>">
             </form>
         </td>

@@ -6,21 +6,21 @@ echo help_header("Help: Mod Manager");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
-                <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Mod Manager</span>
-            <p class="smaller menu">
-                <a href="#overview" class="lightlink">Overview</a> &nbsp; | &nbsp;
-                <a href="#operation" class="lightlink">Operation</a> &nbsp; | &nbsp;
-                <a href="#status" class="lightlink">Status</a> &nbsp; | &nbsp;
-                <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp; | &nbsp;
-                <a href="#files" class="lightlink">Config Files</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
+        <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Mod Manager</span>
+      <p class="smaller menu">
+        <a href="#overview" class="lightlink">Overview</a> &nbsp; | &nbsp;
+        <a href="#operation" class="lightlink">Operation</a> &nbsp; | &nbsp;
+        <a href="#status" class="lightlink">Status</a> &nbsp; | &nbsp;
+        <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp; | &nbsp;
+        <a href="#files" class="lightlink">Config Files</a> &nbsp; | &nbsp;
                 <a href="#batch" class="lightlink">Batch Operations</a> &nbsp; | &nbsp;
                 <a href="#options" class="lightlink">Options</a> &nbsp; | &nbsp;
                 <a href="#analyze" class="lightlink">Analyze TNG Files</a> &nbsp; | &nbsp;

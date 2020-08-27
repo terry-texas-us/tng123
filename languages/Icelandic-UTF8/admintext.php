@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Upplýsingar um kirkjugarð";
     $admtext['newceminfo'] = "Upplýsingar um nýjan kirkjugarð";
     $admtext['maptoupload'] = "Kortamynd til að hlaða inn";
-    $admtext['mapfilenamefolder'] = "Skráarnafn korts<br/>innan legsteinamöppu";
+    $admtext['mapfilenamefolder'] = "Skráarnafn korts<br>innan legsteinamöppu";
     $admtext['ifmapuploaded'] = "Skildu þetta svæði eftir autt ef skránni hefur þegar verið hlaðið inn í legsteinamöppuna.";
     $admtext['requiredmap'] = "Required if you are using a map. This should correspond to the name and location of your file <em>within the headstones folder</em> once the file is uploaded. For example, if your headstones folder is called <em>headstones</em>,	and you want your file to be called <em>map.jpg</em> and go in a subfolder of headstones called <em>mymaps</em>, you would enter <em>mymaps/map.jpg</em> in this field.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Bætt við";
     $admtext['enternew'] = "Sláðu inn nýtt";
     $admtext['pleaseenter'] = "Vinsamlegast sláðu inn ";
-    $admtext['netscapereload'] = "Notendur Netscape: <br/>You must reload the Cemeteries page to see your new";
+    $admtext['netscapereload'] = "Notendur Netscape: <br>You must reload the Cemeteries page to see your new";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Innset GEDCOM skýrslu...<br/>(þetta getur tekið nokkrar mínútur)";
+    $admtext['importinggedcom'] = "Innset GEDCOM skýrslu...<br>(þetta getur tekið nokkrar mínútur)";
     $admtext['ifimportfails'] = "If the import fails to run to completion,";
     $admtext['opened'] = "opnað...";
     $admtext['toresume'] = "to resume import";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Fyrir heimildasöfn...";
     $admtext['noevtypes'] = "Engin tegund atburða er til.";
     $admtext['DESI'] = "Descendant Interest";
-    $admtext['allnone'] = "Sláðu inn þann texta sem þú vilt að sjáist fyrir hvert tungumál,<br />eða skildu eftir autt og sláðu inn einn texta hér fyrir ofan.";
+    $admtext['allnone'] = "Sláðu inn þann texta sem þú vilt að sjáist fyrir hvert tungumál,<br>eða skildu eftir autt og sláðu inn einn texta hér fyrir ofan.";
     $admtext['assocwith'] = "Tengt við";
     $admtext['BAPM'] = "Skírn";
     $admtext['umps'] = "GEDCOM skýrslan getur verið stærri heldur en leyfð hámarksstærð. You can ask your provider to increase the 'upload_max_filesize' value, or you can copy your file to the 'gedcom' folder on your site and import it from there instead.;";
@@ -251,7 +251,7 @@ switch ($textpart) {
     $admtext['genfamily'] = "General Family";
     $admtext['marriagetype'] = "Tegund hjónabands";
     $admtext['reviewfamilies'] = "Accept or decline tentative changes to families";
-    $admtext['fevslater'] = "Ath: Hægt er að bæta fleiri atburðum, athugasemdum og heimildum,<br />eftir að þessi nýja fjölskylda hefur verið vistuð.";
+    $admtext['fevslater'] = "Ath: Hægt er að bæta fleiri atburðum, athugasemdum og heimildum,<br>eftir að þessi nýja fjölskylda hefur verið vistuð.";
     $admtext['husbid'] = "Nr. eiginmanns";  //husband ID
     $admtext['wifeid'] = "Nr. eiginkonu";
     $admtext['enternamepart'] = "sláðu inn hluta af for- og/eða eftirnafni";
@@ -321,7 +321,7 @@ switch ($textpart) {
     $admtext['updatingassoc'] = "Uppfæri samband...";
     $admtext['addnewassoc'] = "Bæta við nýju sambandi";
     $admtext['modifyassoc'] = "Modify Existing Association";
-    $admtext['pevslater'] = "Note: Additional events, as well as event-specific notes and citations,<br />may be added after the new person has been saved.";
+    $admtext['pevslater'] = "Note: Additional events, as well as event-specific notes and citations,<br>may be added after the new person has been saved.";
     $admtext['ashusband'] = "sem eiginmann";
     $admtext['aswife'] = "sem eiginkonu";
     $admtext['pevslater2'] = "Ath: Hægt er að bæta við fleiri atburðum, athugasemdum og heimildum, síðar.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Forskeyti";
     $admtext['chkdel'] = "Check empty box to delete item at left";
     //added in 9.0.0
-    $admtext['choosedef'] = "Choose<br/>default<br/>photo"; //has to fit in a small box
+    $admtext['choosedef'] = "Choose<br>default<br>photo"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Confirmation Date (LDS)";
     $admtext['confplace'] = "Confirmation Place (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Búa til smámyndir";
     $admtext['genthumbsdesc'] = "Búa sjálfkrafa til minni útgáfur af öllum myndum sem ekki hafa smámynd.";
     $admtext['thumbsgenerated'] = "Smámyndir búnar til";
-    $admtext['makedefault'] = "Gera sjálfgefið";
-    $admtext['filewithinhs'] = "Path within headstones folder <br/>(subfolder and file name)";
-    $admtext['recsupdated'] = "Records updated";
+  $admtext['makedefault'] = "Gera sjálfgefið";
+  $admtext['filewithinhs'] = "Path within headstones folder <br>(subfolder and file name)";
+  $admtext['recsupdated'] = "Records updated";
     $admtext['removedef'] = "Fjarlægja sjálgefna mynd";
     $admtext['numlinkhs'] = "Fjöldi einstaklinga sem tengja á við þennan legstein";
     $admtext['sortheadstones'] = "Raða legsteinum";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Required. This should correspond to the name and location of your file <em>within the collection folder</em> once the file is uploaded. For example, suppose you are uploading a photo and your photos folder is called <em>photos</em>. If you want your file to be called <em>myphoto.jpg</em> and go in a subfolder of photos called <em>newphotos</em>, you would enter <em>newphotos/myphoto.jpg</em> in this field.";
     $admtext['leaveblankphoto'] = "Skiljið þennan reit eftir auðan ef skýrslunni hefur þegar verið hlaðið upp.";
     $admtext['thumbconflicts'] = "Thumbnails not generated due to path, permissions, size or file name problems";
-    $admtext['showmap'] = "Show cemetery map and media whenever this item is displayed";
-    $admtext['bodytext'] = "<strong>EÐA</strong><br/>Body Text";
-    $admtext['usenl'] = "Convert line breaks to HTML on display";
+  $admtext['showmap'] = "Show cemetery map and media whenever this item is displayed";
+  $admtext['bodytext'] = "<strong>EÐA</strong><br>Body Text";
+  $admtext['usenl'] = "Convert line breaks to HTML on display";
     $admtext['newwin'] = "Opna í nýjum glugga";
     $admtext['modifymedia'] = "Modify Existing Media";
     $admtext['addnewmedia'] = "Bæta við nýrri margmiðlun";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Sameina staði";
     $admtext['findmerge'] = "Finna staði sem mögulega er hægt að sameina";
     $admtext['selectplacemerge'] = "Velja staði til að sameina";
-    $admtext['mcol1'] = "Sameina<br/>þessa<br/>(delete)";
-    $admtext['mcol2'] = "í<br/>þennan<br/>(keep)";
+    $admtext['mcol1'] = "Sameina<br>þessa<br>(delete)";
+    $admtext['mcol2'] = "í<br>þennan<br>(keep)";
     $admtext['pmsucc'] = "Place merge successful";
     $admtext['nomerge'] = "Ekkert að sameina";
     $admtext['enterkeep'] = "Please select a merge target.";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Please enter a language display name.";
     $admtext['enterlangfolder'] = "Please enter the name of the folder where files for this language will be stored.";
     $admtext['newlanguageinfo'] = "New Language Information";
-    $admtext['langdisplay'] = "Heiti þessa tungumáls<br/>eins og það verður sýnt notendum";
+    $admtext['langdisplay'] = "Heiti þessa tungumáls<br>eins og það verður sýnt notendum";
     $admtext['createlanguage'] = "Create a record for a new language";
     $admtext['nolanguages'] = "No language records exist";
     $admtext['conflangdelete'] = "Ertu viss um að þú viljir eyða þessu tungumáli?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Select Event and Action";
     $admtext['suggested'] = "Suggested";
-    $admtext['usernotes'] = "Notes regarding<br />suggested change<br />(will not be saved)";
+    $admtext['usernotes'] = "Notes regarding<br>suggested change<br>(will not be saved)";
     $admtext['postdate'] = "Posted on";
     $admtext['savedel'] = "Vista og eyða";
     $admtext['postpone'] = "Fresta";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "Prófa";
 $admtext['generate'] = "Búa til";
 $admtext['update'] = "Uppfæra";
 $admtext['confdeleteevent'] = "Ertu viss um að þú viljir eyða þessum atburði?";
-$admtext['existinglinks'] = "Existing Links:<br/>(check to delete)";
+$admtext['existinglinks'] = "Existing Links:<br>(check to delete)";
 $admtext['lowersortfirst'] = "Lower numbers sort first. Decimal numbers may also be used.";
 $admtext['personsname'] = "Nafn einstaklings";
 $admtext['tablecreation'] = "Table Creation";
@@ -2239,9 +2239,9 @@ $admtext['idexists'] = "gat ekki verið bætt við þar sem þetta nr. er þegar
 $admtext['notdeleted'] = "Ekki var hægt að eyða skýrslunni.  Athugaðu skýrslu heimildir.";
 $admtext['confdeletefile'] = "Ertu viss um að þú viljir eyða þessari skýrslu?";
 //changed in 8.0.0
-$admtext['datenote'] = "<strong>Ath:</strong> Vinsamlegast sláið dagsetningar inn á forminu DD MMM ÁÁÁÁ - notið <strong>ekki</strong> punkta. Mánuður er skammstafaður á ensku, þannig að t.d. ágúst er Aug.<br />Dæmi um dagsetningu: 10 Apr 2004.";
+$admtext['datenote'] = "<strong>Ath:</strong> Vinsamlegast sláið dagsetningar inn á forminu DD MMM ÁÁÁÁ - notið <strong>ekki</strong> punkta. Mánuður er skammstafaður á ensku, þannig að t.d. ágúst er Aug.<br>Dæmi um dagsetningu: 10 Apr 2004.";
 $admtext['oriental'] = "Eftirnafn fyrst";
-$admtext['langfolder'] = "Mappa þar sem tungumálaskýrslur<br/>verða geymdar";
+$admtext['langfolder'] = "Mappa þar sem tungumálaskýrslur<br>verða geymdar";
 //moved here in 8.0.0
 $admtext['repoid'] = "Nr. heimildasafns";
 $admtext['whatsnew'] = "Hvað er nýtt";

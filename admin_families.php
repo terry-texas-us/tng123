@@ -235,9 +235,9 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findfamily" value="1"><input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="findfamily" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;
@@ -344,7 +344,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         echo "</tr>\n";
                       }
                       ?>
-                    </table><br/>
+                    </table><br>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";

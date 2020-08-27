@@ -129,7 +129,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                           echo "<span id=\"branchlist\"></span>";
                           if (!$assignedbranch) {
                           if ($numbranches > 8) {
-                            $select = $admtext['scrollbranch'] . "<br/>";
+                            $select = $admtext['scrollbranch'] . "<br>";
                           }
                           $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"8\">\n";
                           $select .= "	<option value=\"\"";
@@ -139,7 +139,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                           $select .= ">{$admtext['nobranch']}</option>\n";
 
                           $select .= "$options</select>\n";
-                          echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" border=\"0\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br />";
+                          echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
                           ?>
                             <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                               <?php
@@ -253,7 +253,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                       }
                       echo showEventRow('deathdate', 'deathplace', 'DEAT', '');
                       echo showEventRow('burialdate', 'burialplace', 'BURI', '');
-                      echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"/> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
+                      echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
                       if ($allow_lds) {
                         echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
                         echo showEventRow('confdate', 'confplace', 'CONL', '');
@@ -281,7 +281,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
     </table>
 </form>
 
-<SCRIPT language="JavaScript" type="text/javascript">
+<script language="JavaScript" type="text/javascript">
   <?php
   echo $swapbranches;
   echo "tree = \"$firsttree\";\n";

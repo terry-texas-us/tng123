@@ -149,15 +149,15 @@ if ($map['key'] && $isConnected) {
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
-      if ($location) {
-        echo " {$text['in']} $location";
-      } ?></h1><br clear="all"/>
+  <h1 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
+    if ($location) {
+      echo " {$text['in']} $location";
+    } ?></h1><br clear="all">
 <?php
-$hiddenfields[] = array('name' => 'country', 'value' => $country);
-$hiddenfields[] = array('name' => 'state', 'value' => $state);
-$hiddenfields[] = array('name' => 'county', 'value' => $county);
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'headstones', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+$hiddenfields[] = ['name' => 'country', 'value' => $country];
+$hiddenfields[] = ['name' => 'state', 'value' => $state];
+$hiddenfields[] = ['name' => 'county', 'value' => $county];
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'headstones', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
 if ($tree) {
   $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
@@ -171,7 +171,7 @@ $cemcount = 0;
 $gotImageJpeg = function_exists('imageJpeg');
 while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
   if ($cemcount) {
-    $body .= "<br />\n";
+    $body .= "<br>\n";
   }
   $body .= "<div class=\"titlebox\">\n";
   $thiscem = $subquery ? $cemetery['cemeteryID'] : "";
@@ -239,11 +239,11 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
       $localballooncemeteryname = @htmlspecialchars($cemetery['cemname'], ENT_QUOTES, $session_charset);
       $localballooncemeteryplace = @htmlspecialchars($cemeteryplace, ENT_QUOTES, $session_charset);
       $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
-      $codednotes = $cemetery['notes'] ? "<br /><br />" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
-      $codednotes .= "<br /><br /><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
-      $locations2map[$l2mCount] = array("zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br />$localballooncemeteryplace$codednotes</div>");
+      $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
+      $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
+      $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br>$localballooncemeteryplace$codednotes</div>"];
       $l2mCount++;
-      $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" border=\"0\" align=\"left\" style=\"padding-right:5px\" /></a>";
+      $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px\" ></a>";
       $map['pins']++;
     }
   }
@@ -312,7 +312,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         }
         $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
       } elseif ($prow['familyID'] != NULL) {
-        $hslinktext .= "<a href=\"$familygroup_url" . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}<br />}\">{$text['family']}: " . getFamilyName($prow);
+        $hslinktext .= "<a href=\"$familygroup_url" . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}<br>}\">{$text['family']}: " . getFamilyName($prow);
       } elseif ($prow['sourceID'] != NULL) {
         $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
         $hslinktext .= "<a href=\"$showsource_url" . "sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
@@ -323,7 +323,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
         $hslinktext .= "<a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}";
       }
-      $hslinktext .= "</a>$hstext\n<br />\n";
+      $hslinktext .= "</a>$hstext\n<br>\n";
     }
     tng_free_result($presult);
 
@@ -349,12 +349,12 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
     $body .= "</td>\n";
 
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$href\">{$hs['description']}</a><br />{$hs['notes']}&nbsp;</span></td>\n";
+    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$href\">{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
     $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$hs['status']}&nbsp;</span></td>\n";
     $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . nl2br($hs['plot']);
     if ($hs['latitude'] || $hs['longitude']) {
       if ($hs['plot']) {
-        $body .= "<br />";
+        $body .= "<br>";
       }
       $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
     }
@@ -365,9 +365,9 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
   $cemcount++;
   $body .= "</table>\n";
   if ($pagenav) {
-    $body .= "<br/>$pagenav";
+    $body .= "<br>$pagenav";
   }
-  $body .= "</div>\n<br />\n";
+  $body .= "</div>\n<br>\n";
 
   if ($subquery == "done") {
     break;

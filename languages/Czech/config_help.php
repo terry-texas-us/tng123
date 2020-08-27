@@ -4,27 +4,27 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
-                <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
-            </p>
-            <span class="largeheader">N�pov�da: Z�kladn� nastaven�</span>
-            <p class="smaller menu">
-                <a href="#data" class="lightlink">Datab�ze</a> &nbsp; | &nbsp;
-                <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
-                <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp; | &nbsp;
-                <a href="#site" class="lightlink">Str�nka</a> &nbsp; | &nbsp;
-                <a href="#media" class="lightlink">M�dia</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
+        <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
+      </p>
+      <span class="largeheader">N�pov�da: Z�kladn� nastaven�</span>
+      <p class="smaller menu">
+        <a href="#data" class="lightlink">Datab�ze</a> &nbsp; | &nbsp;
+        <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
+        <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp; | &nbsp;
+        <a href="#site" class="lightlink">Str�nka</a> &nbsp; | &nbsp;
+        <a href="#media" class="lightlink">M�dia</a> &nbsp; | &nbsp;
                 <a href="#lang" class="lightlink">Jazyk</a> &nbsp; | &nbsp;
                 <a href="#priv" class="lightlink">Ochrana �daj�</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Jm�na</a> &nbsp; | &nbsp;
@@ -431,37 +431,37 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+  <tr class="databack">
+    <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
-            <a name="mobile"><p class="subheadbold">Mobil</p></a>
+      <p style="float:right"><a href="#top">Top</a></p>
+      <a name="mobile"><p class="subheadbold">Mobil</p></a>
 
-            <p>Sekce Mobil v�m umo�n� ur�it, jak se bude TNG zobrazovat na chytr�ch telefonech a tabletech.</p>
+      <p>Sekce Mobil v�m umo�n� ur�it, jak se bude TNG zobrazovat na chytr�ch telefonech a tabletech.</p>
 
-            <span class="optionhead">Povolit responzivn� tabulky</span>
-            <p>Je-li tato volba nastavena na Ano, bbude aktivov�n plugin Tablesaw jQuery, kter� umo��uje responzivn� tabulky.<br/>Je-li volba nastavena na Ne, plugin Tablesaw jQuery nebude aktivn�.</p>
+      <span class="optionhead">Povolit responzivn� tabulky</span>
+      <p>Je-li tato volba nastavena na Ano, bbude aktivov�n plugin Tablesaw jQuery, kter� umo��uje responzivn� tabulky.<br>Je-li volba nastavena na Ne, plugin Tablesaw jQuery nebude aktivn�.</p>
 
-            <span class="optionhead">Typ responzivn� tabulky</span>
-            <p>Typ responzivn� tabulky m��e b�t nastaven na
-            <ul>
-                <li><strong>Toggle</strong>, kter� je v�choz�, a zobraz� data ve sloupc�ch zalo�en�ch na ���ce displeje a p�i�azen� priorit�. Oto�en�m displeje chytr�ho telefonu nebo tabletu na ���ku budou zobrazeny dal�� sloupce dat.</li>
+      <span class="optionhead">Typ responzivn� tabulky</span>
+      <p>Typ responzivn� tabulky m��e b�t nastaven na
+      <ul>
+        <li><strong>Toggle</strong>, kter� je v�choz�, a zobraz� data ve sloupc�ch zalo�en�ch na ���ce displeje a p�i�azen� priorit�. Oto�en�m displeje chytr�ho telefonu nebo tabletu na ���ku budou zobrazeny dal�� sloupce dat.</li>
 
-                <li><strong>Stack</strong>, kter� shrne z�hlav� tabulky do dvousloupcov�ho n�vrhu se z�hlav�m nalevo, je-li ���ka v��ezu men�� ne� 40em (640px).</li>
+        <li><strong>Stack</strong>, kter� shrne z�hlav� tabulky do dvousloupcov�ho n�vrhu se z�hlav�m nalevo, je-li ���ka v��ezu men�� ne� 40em (640px).</li>
 
-                <li><strong>Swipe</strong>, kter� umo�n� u�ivateli k navigaci sloupc� pou��t gesto posunu (nebo pou��t lev� a prav� tla��tko).</li>
-            </ul>
-            <br/>
-            <span class="optionhead">Povolit p�ep�na� m�d� responzivn�ch tabulek:</span>
-            <p>Volba p�ep�na�e m�d� umo�n� u�ivateli p�ep�nat mezi jednotliv�mi typy zobrazen� sloupc� tabulek: toggle, stack nebo swipe.</p>
+        <li><strong>Swipe</strong>, kter� umo�n� u�ivateli k navigaci sloupc� pou��t gesto posunu (nebo pou��t lev� a prav� tla��tko).</li>
+      </ul>
+      <br>
+      <span class="optionhead">Povolit p�ep�na� m�d� responzivn�ch tabulek:</span>
+      <p>Volba p�ep�na�e m�d� umo�n� u�ivateli p�ep�nat mezi jednotliv�mi typy zobrazen� sloupc� tabulek: toggle, stack nebo swipe.</p>
 
-            <span class="optionhead">Povolit minimapu responzivn�ch tabulek</span>
-            <p>Pou�it� minimapy p�id� s�rii mal�ch te�ek ukazuj�c�ch, kter� sloupce jsou aktu�ln� viditeln� a kter� jsou skryt�.
-                K dispozici pouze v m�du swipe a toggle. </p>
+      <span class="optionhead">Povolit minimapu responzivn�ch tabulek</span>
+      <p>Pou�it� minimapy p�id� s�rii mal�ch te�ek ukazuj�c�ch, kter� sloupce jsou aktu�ln� viditeln� a kter� jsou skryt�.
+        K dispozici pouze v m�du swipe a toggle. </p>
 
-        </td>
-    </tr>
-    <tr class="databack">
+    </td>
+  </tr>
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Top</a></p>

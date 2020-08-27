@@ -167,9 +167,9 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                         </tr>
                     </table>
 
-                    <input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
 
               <?php
               $numrowsplus = $numrows + $offset;

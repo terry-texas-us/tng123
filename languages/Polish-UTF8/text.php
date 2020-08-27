@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "przyrodnia siostra";
     $text['halfsibling'] = "przyrodnie rodzeństwo";
     //changed in 8.0.0
-    $text['gencheck'] = "Maksymalna liczba pokoleń<br />do sprawdzenia";
+    $text['gencheck'] = "Maksymalna liczba pokoleń<br>do sprawdzenia";
     $text['mcousin'] = "xxx kuzynem";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "xxx kuzynką";  //female cousin
     $text['cousin'] = "xxx kuzynem/kuzynką";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Szybka mutacja";
     $text['alltypes'] = "Rodzaje";
     $text['allgroups'] = "Grupy";
-    $text['Ydna_LITbox_info'] = "Testy powiązane z tą osobą niekoniecznie zostały wykonane przez tę osobę.<br />Kolumna 'Haplogroup' wyświetla dane na czerwono, jeśli wynik jest 'Przewidywany' lub na zielono jeśli test jest 'Potwierdzony'";
+    $text['Ydna_LITbox_info'] = "Testy powiązane z tą osobą niekoniecznie zostały wykonane przez tę osobę.<br>Kolumna 'Haplogroup' wyświetla dane na czerwono, jeśli wynik jest 'Przewidywany' lub na zielono jeśli test jest 'Potwierdzony'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
     $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";

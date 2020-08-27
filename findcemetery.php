@@ -96,11 +96,11 @@ tng_adminheader($admtext['modifycemetery'], "");
 
 <body background="img/background.gif">
 <div class="center">
-    <table width="100%" border="0" cellpadding="5" class="lightback">
-        <tr class="fieldnameback">
-            <td>
-                <img src="cemeteries_icon.gif" width="40" height="40" border="1" align="right">
-                <span class="whiteheader"><font size="5"><?php echo $admtext['modifycemetery']; ?></font></span>
+  <table width="100%" border="0" cellpadding="5" class="lightback">
+    <tr class="fieldnameback">
+      <td>
+        <img src="cemeteries_icon.gif" width="40" height="40" style="border-width=1px;border-style=solid;" align="right">
+        <span class="whiteheader"><font size="5"><?php echo $admtext['modifycemetery']; ?></font></span>
             </td>
         </tr>
       <?php
@@ -108,30 +108,30 @@ tng_adminheader($admtext['modifycemetery'], "");
         ?>
           <tr>
               <td>
-                  <font color="#FF0000"><span class="normal"><em><?php echo urldecode($message); ?></em>
+                <font color="#FF0000"><span class="normal"><em><?php echo urldecode($message); ?></em>
 	</span></font>
               </td>
           </tr>
         <?php
       }
       ?>
-        <tr class="databack">
-            <td>
+    <tr class="databack">
+      <td>
                 <span class="subhead"><strong><?php echo $admtext['selectcemaction']; ?></strong>  | <a href="#"
-                                                                                                        onclick="return openHelp('<?php echo $helplang; ?>/cemeteries_help.html#find', 'newwindow', 'height=500,width=600,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></span><br/><br/>
-                <span class="normal">
-	&nbsp;&nbsp;<img src="img/tng_edit.gif" alt="<?php echo $admtext['edit']; ?>" width="16" height="16" border="0" align="middle"> = <?php echo $admtext['edit']; ?> &nbsp;&nbsp;
-	<img src="img/tng_delete.gif" alt="<?php echo $admtext['text_delete']; ?>" width="16" height="16" border="0" align="middle"> = <?php echo $admtext['text_delete']; ?>
-	<br/>
+                                                                                                        onclick="return openHelp('<?php echo $helplang; ?>/cemeteries_help.html#find', 'newwindow', 'height=500,width=600,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></span><br><br>
+        <span class="normal">
+	&nbsp;&nbsp;<img src="img/tng_edit.gif" alt="<?php echo $admtext['edit']; ?>" width="16" height="16" align="middle"> = <?php echo $admtext['edit']; ?> &nbsp;&nbsp;
+	<img src="img/tng_delete.gif" alt="<?php echo $admtext['text_delete']; ?>" width="16" height="16" align="middle"> = <?php echo $admtext['text_delete']; ?>
+	<br>
 <?php
 echo "<p>{$admtext['matches']}: $numrows</p>";
 ?>
 	</span>
-                <table cellpadding="3" cellspacing="1" border="0">
-                    <tr>
-                        <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
-                        <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</nobr></span></td>
-                        <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['cemetery']; ?></b>&nbsp;</nobr></span></td>
+        <table cellpadding="3" cellspacing="1" border="0">
+          <tr>
+            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
+            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</nobr></span></td>
+            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['cemetery']; ?></b>&nbsp;</nobr></span></td>
                         <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['location']; ?></b>&nbsp;</nobr></span></td>
                     </tr>
 
@@ -139,10 +139,10 @@ echo "<p>{$admtext['matches']}: $numrows</p>";
                   $rowcount = 0;
                   $actionstr = "";
                   if ($allow_edit) {
-                    $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\"><img src=\"tng_edit.gif\" alt=\"{$admtext['edit']}\" width=\"16\" height=\"16\" border=\"0\" vspace=0 hspace=2></a>";
+                    $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\"><img src=\"tng_edit.gif\" alt=\"{$admtext['edit']}\" width=\"16\" height=\"16\" vspace=0 hspace=2></a>";
                   }
                   if ($allow_delete) {
-                    $actionstr .= "<a href=\"deletecemetery.php?cemeteryID=xxx\" onClick=\"return confirm('{$admtext['confdeletecem']}' );\"><img src=\"tng_delete.gif\" alt=\"{$admtext['text_delete']}\" width=\"16\" height=\"16\" border=\"0\" vspace=0 hspace=2></a>";
+                    $actionstr .= "<a href=\"deletecemetery.php?cemeteryID=xxx\" onClick=\"return confirm('{$admtext['confdeletecem']}' );\"><img src=\"tng_delete.gif\" alt=\"{$admtext['text_delete']}\" width=\"16\" height=\"16\" vspace=0 hspace=2></a>";
                   }
 
                   while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {

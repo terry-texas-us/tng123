@@ -4,27 +4,27 @@ echo help_header("Nápověda: Google Maps");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
-                <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Google Maps</span>
-            <p class="smaller menu">
-                <a href="#show" class="lightlink">Zobrazit</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp; | &nbsp;
-                <a href="#help" class="lightlink">Nápověda</a>
-            </p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
+        <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Google Maps</span>
+      <p class="smaller menu">
+        <a href="#show" class="lightlink">Zobrazit</a> &nbsp; | &nbsp;
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp; | &nbsp;
+        <a href="#help" class="lightlink">Nápověda</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">

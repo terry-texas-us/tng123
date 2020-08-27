@@ -41,17 +41,17 @@ $helplang = findhelp("eventtypes_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyeventtype'], $flags);
 ?>
-<SCRIPT language="JavaScript" type="text/javascript" src="js/eventtypes.js"></script>
-<SCRIPT language="JavaScript" type="text/javascript">
-    var display = "";
+<script language="JavaScript" type="text/javascript" src="js/eventtypes.js"></script>
+<script language="JavaScript" type="text/javascript">
+  var display = "";
 
-    function addToDisplay(lang, newdisplay) {
-        if (display) display += "|";
-        display += lang + "|" + newdisplay;
-    }
+  function addToDisplay(lang, newdisplay) {
+    if (display) display += "|";
+    display += lang + "|" + newdisplay;
+  }
 
-    function validateForm() {
-        var rval = true;
+  function validateForm() {
+    var rval = true;
 
       <?php
       $dispvalues = explode("|", $row['display']);
@@ -187,23 +187,23 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                   <?php
                   if ($displayrows) {
                     ?>
-                      <tr>
-                          <td valign="top" colspan="2">
-                              <br/>
-                              <hr align="left" width="400" size="1">
-                            <?php echo displayToggle("plus0", 0, "otherlangs", $admtext['othlangs'], ''); ?>
-                              <table id="otherlangs"<?php echo $otherlangsstyle; ?> class="normal">
-                                  <tr>
-                                      <td valign="top" colspan="2"><br/><b><?php echo $admtext['allnone']; ?></b><br/><br/></td>
-                                  </tr>
-                                <?php
-                                echo $displayrows;
-                                ?>
-                              </table>
-                              <hr align="left" width="400" size="1">
-                              <br/>
-                          </td>
-                      </tr>
+                    <tr>
+                      <td valign="top" colspan="2">
+                        <br>
+                        <hr style="margin-left:0; width:400px">
+                        <?php echo displayToggle("plus0", 0, "otherlangs", $admtext['othlangs'], ''); ?>
+                        <table id="otherlangs"<?php echo $otherlangsstyle; ?> class="normal">
+                          <tr>
+                            <td valign="top" colspan="2"><br><b><?php echo $admtext['allnone']; ?></b><br><br></td>
+                          </tr>
+                          <?php
+                          echo $displayrows;
+                          ?>
+                        </table>
+                        <hr style="margin-left:0; width:400px">
+                        <br>
+                      </td>
+                    </tr>
                     <?php
                   }
                   ?>
@@ -236,11 +236,11 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                           } ?>> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="ldsevent" value="0" <?php if ($row['ldsevent'] != 1) {
                             echo "checked";
                           } ?>> <?php echo $admtext['no']; ?></td>
-                        <td></td>
+                      <td></td>
                     </tr>
                 </table>
-                <br/>
-                <input type="hidden" name="eventtypeID" value="<?php echo $eventtypeID; ?>"><input type="hidden" name="display" value="">
+              <br>
+              <input type="hidden" name="eventtypeID" value="<?php echo $eventtypeID; ?>"><input type="hidden" name="display" value="">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['savechanges']; ?>"></form>
             <p class="normal">*<?php echo $admtext['typerequired']; ?></p>
         </td>
@@ -248,8 +248,8 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
 
 </table>
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
-<SCRIPT language="JavaScript" type="text/javascript">
-    populateTags(<?php echo "\"{$row['type']}\",\"{$row['tag']}\""; ?>);
+<script language="JavaScript" type="text/javascript">
+  populateTags(<?php echo "\"{$row['type']}\",\"{$row['tag']}\""; ?>);
 </script>
 </body>
 </html>

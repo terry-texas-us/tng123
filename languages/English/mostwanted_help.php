@@ -6,21 +6,21 @@ echo help_header("Help: Most Wanted");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="misc_help.php" class="lightlink">&laquo; Help: Miscellaneous</a> &nbsp; | &nbsp;
-                <a href="data_help.php" class="lightlink">Help: Import / Export &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Most Wanted</span>
-            <p class="smaller menu">
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a>
-            </p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="misc_help.php" class="lightlink">&laquo; Help: Miscellaneous</a> &nbsp; | &nbsp;
+        <a href="data_help.php" class="lightlink">Help: Import / Export &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Most Wanted</span>
+      <p class="smaller menu">
+        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+        <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">

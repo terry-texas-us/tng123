@@ -4,27 +4,27 @@ echo help_header("Nápověda: Média");
 ?>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="more_help.php" class="lightlink">&laquo; Nápověda: Více</a> &nbsp; | &nbsp;
-                <a href="collections_help.php" class="lightlink">Nápověda: Kolekce &raquo;</a>
-            </p>
-            <span class="largeheader">Nápověda: Média</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#convert" class="lightlink">Převést</a> &nbsp; | &nbsp;
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="more_help.php" class="lightlink">&laquo; Nápověda: Více</a> &nbsp; | &nbsp;
+        <a href="collections_help.php" class="lightlink">Nápověda: Kolekce &raquo;</a>
+      </p>
+      <span class="largeheader">Nápověda: Média</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Přidat</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Upravit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+        <a href="#convert" class="lightlink">Převést</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">Přidat do alba</a> &nbsp; | &nbsp;
                 <a href="#sort" class="lightlink">Seřadit</a> &nbsp; | &nbsp;
                 <a href="#thumbs" class="lightlink">Náhledy</a> &nbsp; | &nbsp;

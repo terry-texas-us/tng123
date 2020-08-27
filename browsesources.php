@@ -16,9 +16,9 @@ function doSourceSearch($instance, $pagenav) {
 
   $str = "<div class=\"normal\">\n";
   $str .= getFORM("browsesources", "get", "SourceSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"sourcesearch\" value=\"$sourcesearch\" /> <input type=\"submit\" value=\"{$text['search']}\" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $str .= "<input type=\"text\" name=\"sourcesearch\" value=\"$sourcesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\" />\n";
+  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
   if ($sourcesearch) {
     $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsesources_noargs_url\">{$text['browseallsources']}</a>";
   }
@@ -81,9 +81,9 @@ preparebookmark($logstring);
 tng_header($text['sources'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="sources-hdr-icon"></span><?php echo $text['sources']; ?></h1><br clear="left"/>
+  <h1 class="header"><span class="headericon" id="sources-hdr-icon"></span><?php echo $text['sources']; ?></h1><br clear="left">
 <?php
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'browsesources', 'method' => 'get', 'name' => 'form1', 'id' => 'form1'));
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsesources', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
   echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
@@ -92,10 +92,10 @@ if ($totrows) {
 $pagenav = get_browseitems_nav($totrows, $browsesources_url . "sourcesearch=$sourcesearch&amp;offset", $maxsearchresults, $max_browsesource_pages);
 if ($pagenav || $sourcesearch) {
   echo doSourceSearch(1, $pagenav);
-  echo "<br />\n";
+  echo "<br>\n";
 }
 ?>
-    <br/>
+  <br>
 <?php
 $header = $headerr = "";
 $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
@@ -130,7 +130,7 @@ while ($row = tng_fetch_assoc($result)) {
   $sourcetitle = $row['title'] ? $row['title'] : $row['shorttitle'];
   echo "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>\n";
   echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
-  echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br/>{$row['author']}&nbsp;</span></td>";
+  echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
   if ($numtrees > 1) {
     echo "<td valign=\"top\" class=\"databack nw\"><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
   }
@@ -139,11 +139,11 @@ while ($row = tng_fetch_assoc($result)) {
 }
 tng_free_result($result);
 ?>
-    </table>
-    <br/>
+  </table>
+  <br>
 <?php
 if ($pagenav || $sourcesearch) {
-  echo doSourceSearch(2, $pagenav) . "<br />\n";
+  echo doSourceSearch(2, $pagenav) . "<br>\n";
 }
 
 tng_footer("");

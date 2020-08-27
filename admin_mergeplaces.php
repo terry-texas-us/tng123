@@ -73,28 +73,28 @@ tng_adminheader($admtext['mergeplaces'], $flags);
 <?php
 $placetabs[0] = array(1, "admin_places.php", $admtext['search'], "findplace");
 $placetabs[1] = array($allow_add, "admin_newplace.php", $admtext['addnew'], "addplace");
-$placetabs[2] = array($allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge");
-$placetabs[3] = array($allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo");
+$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
+$placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($placetabs, "merge", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces'], "img/places_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="subhead"><strong>1. <?php echo $admtext['findmerge']; ?></strong></span><br/><br/>
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="subhead"><strong>1. <?php echo $admtext['findmerge']; ?></strong></span><br><br>
 
-            <form action="admin_mergeplaces.php" method="post" name="form1" onSubmit="return validateForm1();">
-                <table class="normal">
+      <form action="admin_mergeplaces.php" method="post" name="form1" onSubmit="return validateForm1();">
+        <table class="normal">
+          <?php
+          if (!$tngconfig['places1tree']) {
+            ?>
+            <tr>
+              <td><?php echo $admtext['tree']; ?>:</td>
+              <td>
+                <select name="tree">
                   <?php
-                  if (!$tngconfig['places1tree']) {
-                    ?>
-                      <tr>
-                          <td><?php echo $admtext['tree']; ?>:</td>
-                          <td>
-                              <select name="tree">
-                                <?php
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                   echo "		<option value=\"{$treerow['gedcom']}\"";
@@ -119,17 +119,17 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                         <td><?php echo $admtext['text_or']; ?>:</td>
                         <td><input type="text" name="place2" size="50" value="<?php echo htmlspecialchars(stripslashes($place2)); ?>"></td>
                     </tr>
-                </table>
-                <br/>
-                <input type="submit" name="submit" value="<?php echo $admtext['text_continue']; ?>">
+        </table>
+        <br>
+        <input type="submit" name="submit" value="<?php echo $admtext['text_continue']; ?>">
                 <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" onclick="return resetFields()">
             </form>
           <?php
           if ($place && $numrows) {
             ?>
-              <br/><br/>
+            <br><br>
 
-              <p class="subhead"><strong>2. <?php echo $admtext['selectplacemerge']; ?></strong></p>
+            <p class="subhead"><strong>2. <?php echo $admtext['selectplacemerge']; ?></strong></p>
 
               <form action="" method="post" onSubmit="return validateForm2(this);" name="form2">
                   <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none">
@@ -159,8 +159,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                     tng_free_result($result);
                     ?>
                   </table>
-                  <br/>
-                  <input type="submit" value="<?php echo $admtext['mergeplaces']; ?>">
+                <br>
+                <input type="submit" value="<?php echo $admtext['mergeplaces']; ?>">
                   <span id="successmsg2" class="normal msgapproved"></span>
               </form>
             <?php

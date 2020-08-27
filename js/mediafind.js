@@ -265,37 +265,37 @@ function addMedia2EntityLink(form, newEntityID, num) {
                     var linktext = form.linktype1.options[form.linktype1.selectedIndex].text;
 
                     if (jQuery('#linkcount').length) {
-                        linkcount = linkcount + 1;
-                        jQuery('#linkcount').html(linkcount);
+                      linkcount = linkcount + 1;
+                      jQuery('#linkcount').html(linkcount);
                     }
 
-                    var linktable = document.getElementById('linktable');
-                    //var newtr = linktable.insertRow(linktable.rows.length);
-                    var newtr = linktable.insertRow(1);
-                    newtr.id = 'alink_' + linkID;
-                    newtr.setAttribute('style', 'display:none');
+                  var linktable = document.getElementById('linktable');
+                  //var newtr = linktable.insertRow(linktable.rows.length);
+                  var newtr = linktable.insertRow(1);
+                  newtr.id = 'alink_' + linkID;
+                  newtr.setAttribute('style', 'display:none');
 
-                    var actionbuttons = '<a href="#" title="' + edit_text + '" onclick="return editMedia2EntityLink(' + linkID + ');"><img src="img/tng_aedit.gif" alt="' + edit_text + '" ' + 'class="smallicon admin-edit-icon"/></a>';
-                    actionbuttons += '<a href="#" title="' + remove_text + '" onclick="return deleteMedia2EntityLink(' + linkID + ');"><img src="img/tng_delete.gif" alt="' + remove_text + '" ' + 'class="smallicon admin-delete-icon"/></a>';
-                    var td0 = insertCell(newtr, 0, "lightback normal", actionbuttons);
-                    td0.setAttribute('align', 'center');
-                    insertCell(newtr, 1, "lightback normal", linktext);
-                    var sortlink = type != "album" && linktype != "C" ? ' (<a href="admin_ordermedia.php?tree1=' + treeID + '&linktype1=' + linktype + '&mediatypeID=' + mediatypeID + '&newlink1=' + entityID + '&event1=">' + sortmsg + '</a>)' : '';
-                    insertCell(newtr, 2, "lightback normal", name + displayID + sortlink);
-                    insertCell(newtr, 3, "lightback normal", treename + '&nbsp;');
+                  var actionbuttons = '<a href="#" title="' + edit_text + '" onclick="return editMedia2EntityLink(' + linkID + ');"><img src="img/tng_aedit.gif" alt="' + edit_text + '" ' + 'class="smallicon admin-edit-icon"></a>';
+                  actionbuttons += '<a href="#" title="' + remove_text + '" onclick="return deleteMedia2EntityLink(' + linkID + ');"><img src="img/tng_delete.gif" alt="' + remove_text + '" ' + 'class="smallicon admin-delete-icon"></a>';
+                  var td0 = insertCell(newtr, 0, "lightback normal", actionbuttons);
+                  td0.setAttribute('align', 'center');
+                  insertCell(newtr, 1, "lightback normal", linktext);
+                  var sortlink = type != "album" && linktype != "C" ? ' (<a href="admin_ordermedia.php?tree1=' + treeID + '&linktype1=' + linktype + '&mediatypeID=' + mediatypeID + '&newlink1=' + entityID + '&event1=">' + sortmsg + '</a>)' : '';
+                  insertCell(newtr, 2, "lightback normal", name + displayID + sortlink);
+                  insertCell(newtr, 3, "lightback normal", treename + '&nbsp;');
 
-                    var td4 = insertCell(newtr, 4, "lightback normal", '&nbsp;')
-                    td4.id = 'event_' + linkID;
+                  var td4 = insertCell(newtr, 4, "lightback normal", '&nbsp;')
+                  td4.id = 'event_' + linkID;
 
                     if (type == "media") {
                         var td5 = insertCell(newtr, 5, "lightback normal", '&nbsp;')
                         td5.id = 'alt_' + linkID;
                         //var defphoto = vars[2] == "1" ? yestext : "";
-                        var makedefmsg = linktype == "C" ? "" : '<input type="checkbox" name="defc' + linkID + '" id="defc' + linkID + '" onclick="toggleDefault(this,\'' + tree + '\',\'' + entityID + '\');" value="1"/>';
-                        var td6 = insertCell(newtr, 6, "lightback normal", makedefmsg);
+                      var makedefmsg = linktype == "C" ? "" : '<input type="checkbox" name="defc' + linkID + '" id="defc' + linkID + '" onclick="toggleDefault(this,\'' + tree + '\',\'' + entityID + '\');" value="1">';
+                      var td6 = insertCell(newtr, 6, "lightback normal", makedefmsg);
                         td6.id = 'def_' + linkID;
                         td6.setAttribute('align', 'center');
-                        var td7 = insertCell(newtr, 7, "lightback normal", '<input type="checkbox" name="show' + linkID + '" id="show' + linkID + '" onclick="toggleShow(this);" value="1" checked="checked"/>');
+                      var td7 = insertCell(newtr, 7, "lightback normal", '<input type="checkbox" name="show' + linkID + '" id="show' + linkID + '" onclick="toggleShow(this);" value="1" checked="checked">');
                         td7.id = 'show_' + linkID;
                         td7.setAttribute('align', 'center');
                     }

@@ -6,21 +6,21 @@ echo help_header("Help: Custom Event Types");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="branches_help.php" class="lightlink">&laquo; Help: Branches</a> &nbsp; | &nbsp;
-                <a href="reports_help.php" class="lightlink">Help: Reports &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Custom Event Types</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-                <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a>
-            </p>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="branches_help.php" class="lightlink">&laquo; Help: Branches</a> &nbsp; | &nbsp;
+        <a href="reports_help.php" class="lightlink">Help: Reports &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Custom Event Types</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+        <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
@@ -28,37 +28,37 @@ echo help_header("Help: Custom Event Types");
             <div id="google_translate_element" style="float:right"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
                 }
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
-            <p>Locate existing Custom Event Types by searching for all or part of the <strong>Tag, Type/Description (for EVEN events)</strong> or <strong>Display</strong>.
-                Select an <strong>Associated with</strong> type or check one of the other options to further narrow your search.
-                Searching with no options selected and no value in the search box will find all Custom Event Types in your database. Search options include:</p>
+          <a name="search"><p class="subheadbold">Search</p></a>
+          <p>Locate existing Custom Event Types by searching for all or part of the <strong>Tag, Type/Description (for EVEN events)</strong> or <strong>Display</strong>.
+            Select an <strong>Associated with</strong> type or check one of the other options to further narrow your search.
+            Searching with no options selected and no value in the search box will find all Custom Event Types in your database. Search options include:</p>
 
-            <p><span class="optionhead">Associated with</span><br/>
-                Choose an option from this dropdown box to limit the search to Custom Event Types associated with
-                individuals, families, sources or repositories.</p>
+          <p><span class="optionhead">Associated with</span><br>
+            Choose an option from this dropdown box to limit the search to Custom Event Types associated with
+            individuals, families, sources or repositories.</p>
 
-            <p><span class="optionhead">Accept/Ignore/All</span><br/>
-                Select one of these options to limit the search to Custom Event Types that are being <strong>accepted</strong> or those
-                that are being <strong>ignored</strong>. Choosing <strong>All</strong> will not restrict the search results.</p>
+          <p><span class="optionhead">Accept/Ignore/All</span><br>
+            Select one of these options to limit the search to Custom Event Types that are being <strong>accepted</strong> or those
+            that are being <strong>ignored</strong>. Choosing <strong>All</strong> will not restrict the search results.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+          <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
 
-            <p><span class="optionhead">Delete/Accept/Ignore/Collapse Selected</span><br/>
-                Click the checkbox next to one or more event types, then use these buttons to perform the action on all selected event types at once.</p>
+          <p><span class="optionhead">Delete/Accept/Ignore/Collapse Selected</span><br>
+            Click the checkbox next to one or more event types, then use these buttons to perform the action on all selected event types at once.</p>
 
-            <span class="optionhead">Actions</span>
-            <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one record at a time, click the box in the
-                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
-                buttons to toggle all select boxes at once.</p>
+          <span class="optionhead">Actions</span>
+          <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one record at a time, click the box in the
+            <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
+            buttons to toggle all select boxes at once.</p>
 
         </td>
     </tr>
-    <tr class="databack">
+  <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Top</a></p>

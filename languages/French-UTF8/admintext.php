@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pour les Dépôts...";
     $admtext['noevtypes'] = "Il n'existe pas de type d'évènement.";
     $admtext['DESI'] = "Intérêt des descendants";
-    $admtext['allnone'] = "Veuillez saisir un message à afficher pour chaque langue,<br />ou ne rien inscrire et saisir un message dans le champ Affichage ci-dessus.";
+    $admtext['allnone'] = "Veuillez saisir un message à afficher pour chaque langue,<br>ou ne rien inscrire et saisir un message dans le champ Affichage ci-dessus.";
     $admtext['assocwith'] = "Associé à";
     $admtext['BAPM'] = "Baptême";
     $admtext['umps'] = "Votre fichier GEDCOM est peut-être plus grand que la taille maximale spécifiée dans la configuration de PHP. Vous pouvez demander à votre hébergeur d'augmenter la valeur de la variable 'upload_max_filesize', ou vous pouvez télécharger votre fichier dans le dossier 'gedcom' sur votre site et l'importer de cet endroit.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Préfixe";
     $admtext['chkdel'] = "Cocher la case vide pour supprimer l'élément à gauche";
     //added in 9.0.0
-    $admtext['choosedef'] = "Sélectionner la photo par<br/>défaut<br/>"; //has to fit in a small box
+    $admtext['choosedef'] = "Sélectionner la photo par<br>défaut<br>"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Date de confirmation (SDJ)";
     $admtext['confplace'] = "Lieu de confirmation (SDJ)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Requis. Ceci doit correspondre au nom et emplacement de votre fichier <em>dans le dossier photos</em> une fois le fichier chargé. Exemple : si votre dossier photos s'appelle <em>photos</em>, et que votre fichier doit s'appeler <em>maphoto.jpg</em> et aller dans un sous-dossier de photos nommé <em>nouvphotos</em>, vous devrez saisir <em>nouvphotos/maphoto.jpg</em> dans ce champ.";
     $admtext['leaveblankphoto'] = "Laissez ce champ vide si le fichier a déjà été chargé dans votre dossier photos.";
     $admtext['thumbconflicts'] = "Les vignettes n'ont pas été créées, en raison de problèmes de chemin, de permissions ou de nom de fichier";
-    $admtext['showmap'] = "Afficher le plan";
-    $admtext['bodytext'] = "<strong>OU</strong><br/>Texte Principal";
-    $admtext['usenl'] = "Convertir les retours à la ligne en affichage HTML";
+  $admtext['showmap'] = "Afficher le plan";
+  $admtext['bodytext'] = "<strong>OU</strong><br>Texte Principal";
+  $admtext['usenl'] = "Convertir les retours à la ligne en affichage HTML";
     $admtext['newwin'] = "Ouvrez dans une nouvelle fenêtre";
     $admtext['modifymedia'] = "Modifier un média existant";
     $admtext['addnewmedia'] = "Ajouter un nouveau média";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Si pas de date de naissance, assumer que";
     $admtext['persliving'] = "La personne est en vie";
     $admtext['persdead'] = "La personne est décédée";
-    $admtext['nodeathdate'] = "Si pas de date de décès, assumer que la personne <br />est décédée si plus âgée que";
+    $admtext['nodeathdate'] = "Si pas de date de décès, assumer que la personne <br>est décédée si plus âgée que";
     $admtext['pedconfigsettings'] = "Configuration des arbres";
     $admtext['usepopups'] = "Affichage initial";
     $admtext['maxpedgens'] = "Maximum de générations";
@@ -1287,7 +1287,7 @@ switch ($textpart) {
     $admtext['usedefthumbs'] = "Utiliser les vignettes par défaut";
     $admtext['autogeo'] = "Géocoder tous les nouveaux lieux";
     $admtext['revmail'] = "Notifier les soumissions révisables";
-    $admtext['assumepriv'] = "Considérer comme confidentiel si non décédé <br />depuis de nombreuses années";
+    $admtext['assumepriv'] = "Considérer comme confidentiel si non décédé <br>depuis de nombreuses années";
     $admtext['calstart'] = "Premier jour de la semaine";
     $admtext['edit_timeout'] = "Éditer le délai de temporisation (minutes)";
     $admtext['shownamespr'] = "Montrer les noms des individus marqués confidentiels";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Fusionner les Lieux";
     $admtext['findmerge'] = "Rechercher des doublons éventuels à fusionner";
     $admtext['selectplacemerge'] = "Selectionner les Lieux à fusionner";
-    $admtext['mcol1'] = "Fusionner<br/>ceux-ci<br/>(supprimer)";
-    $admtext['mcol2'] = "avec<br/>celui-ci<br/>(conserver)";
+    $admtext['mcol1'] = "Fusionner<br>ceux-ci<br>(supprimer)";
+    $admtext['mcol2'] = "avec<br>celui-ci<br>(conserver)";
     $admtext['pmsucc'] = "la fusion des lieux a réussi";
     $admtext['nomerge'] = "rien à fusionner";
     $admtext['enterkeep'] = "Sélectionnez une cible pour la fusion.";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Veuillez saisir un nom de langue.";
     $admtext['enterlangfolder'] = "Veuillez saisir le nom du dossier contenant les fichiers de cette langue.";
     $admtext['newlanguageinfo'] = "Info nouvelle Langue";
-    $admtext['langdisplay'] = "Nom de langue<br />affiché pour les visiteurs";
+    $admtext['langdisplay'] = "Nom de langue<br>affiché pour les visiteurs";
     $admtext['createlanguage'] = "Crée un enregistrement pour une nouvelle langue";
     $admtext['nolanguages'] = "Aucun enregistrement de langue";
     $admtext['conflangdelete'] = "Êtes-vous certain de vouloir supprimer cette langue ?";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Selectionnez l'évènement et l'action";
     $admtext['suggested'] = "Suggéré";
-    $admtext['usernotes'] = "Notes concernant<br />une suggestion<br />(ne sera pas enregistré)";
+    $admtext['usernotes'] = "Notes concernant<br>une suggestion<br>(ne sera pas enregistré)";
     $admtext['postdate'] = "Envoyé le";
     $admtext['savedel'] = "Enregistrer et Supprimer";
     $admtext['postpone'] = "Remettre à plus tard";
@@ -2318,7 +2318,7 @@ $admtext['unlink'] = "Séparer";
 $admtext['privateonly'] = "Confidentiel seulement";
 $admtext['dna_links'] = "Liens ADN";
 $admtext['dataval'] = "Validation de données";
-$admtext['norels'] = "Désactiver les informations<br />liées aux relations de parenté";
+$admtext['norels'] = "Désactiver les informations<br>liées aux relations de parenté";
 //added in 12.0.0
 $admtext['templates'] = "Thèmes";
 $admtext['findciteid'] = "Trouver l'ID de la citation";

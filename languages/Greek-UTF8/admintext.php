@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Για αποθετήρια...";
     $admtext['noevtypes'] = "Δέν υπάρχουν τύποι γεγονότων.";
     $admtext['DESI'] = "Descendant Interest";
-    $admtext['allnone'] = "Enter a display message for each language,<br />or leave all blank and enter one display message above.";
+    $admtext['allnone'] = "Enter a display message for each language,<br>or leave all blank and enter one display message above.";
     $admtext['assocwith'] = "Associated with";
     $admtext['BAPM'] = "Baptism";
     $admtext['umps'] = "Your GEDCOM file may be larger than the maximum size allowed by your PHP installation. You can ask your provider to increase the 'upload_max_filesize' value, or you can copy your file to the 'gedcom' folder on your site and import it from there instead.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefix";
     $admtext['chkdel'] = "Check empty box to delete item at left";
     //added in 9.0.0
-    $admtext['choosedef'] = "Choose<br/>default<br/>photo"; //has to fit in a small box
+    $admtext['choosedef'] = "Choose<br>default<br>photo"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Confirmation Date (LDS)";
     $admtext['confplace'] = "Confirmation Place (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Απαραίτητο. Αυτό πρέπει να σχετίζεται με το όνομα και την τοποθεσία του αρχείου <em>μέσα στον κατάλογο φωτογραφιών</em> αφού ολοκληρωθεί η αποστολή του αρχείου. Για παράδειγμα, εάν ο κατάλογος φωτογραφιών ονομάζεται <em>photos</em>, και θέλετε το αρχείο σας να ονομάζεται <em>myphoto.jpg</em> και να τοποθετηθεί σε υποκατάλογο με την ονομασία <em>newphotos</em>, θα πρέπει να εισάγετε <em>newphotos/myphoto.jpg</em> στο πεδίο αυτό.";
     $admtext['leaveblankphoto'] = "Αφήστε το πεδίο αυτό κενό εάν το αρχείο έχει ήδη τοποθετηθεί στο κατάλογο φωτογραφιών.";
     $admtext['thumbconflicts'] = "Αρχεία Σμίκρυνσης δεν δημιουργήθηκαν λόγω προβλήματος με path, permissions ή file name";
-    $admtext['showmap'] = "Εμφάνιση χάρτη νεκροταφείου και φωτογραφιών όταν απεικονίζεται η εικόνα αυτή";
-    $admtext['bodytext'] = "<strong>OR</strong><br/>Κείμενο";
-    $admtext['usenl'] = "Μετατροπή line breaks σε HTML κατά την απεικόνιση";
+  $admtext['showmap'] = "Εμφάνιση χάρτη νεκροταφείου και φωτογραφιών όταν απεικονίζεται η εικόνα αυτή";
+  $admtext['bodytext'] = "<strong>OR</strong><br>Κείμενο";
+  $admtext['usenl'] = "Μετατροπή line breaks σε HTML κατά την απεικόνιση";
     $admtext['newwin'] = "Άνοιγμα σε νέο παράθυρο";
     $admtext['modifymedia'] = "Modify Existing Media";
     $admtext['addnewmedia'] = "Add New Media";
@@ -1125,7 +1125,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Εάν δεν υπάρχει ημερομηνία γέννησης, θεωρείστε";
     $admtext['persliving'] = "Άτομο εν ζωή";
     $admtext['persdead'] = "Άτομο έχει πεθάνει";
-    $admtext['nodeathdate'] = "Εάν δεν υπάρχει ημερομηνία θανάτου, θεωρείστε νεκρό<br />εάν μεγαλύτερος/η από";
+    $admtext['nodeathdate'] = "Εάν δεν υπάρχει ημερομηνία θανάτου, θεωρείστε νεκρό<br>εάν μεγαλύτερος/η από";
     $admtext['pedconfigsettings'] = "Παράμετροι Pedigree";
     $admtext['usepopups'] = "Αρχική Εικόνα";
     $admtext['maxpedgens'] = "Μέγιστος Αριθμός Προγόνων";
@@ -1400,8 +1400,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Συγχώνευση Τοποθεσιών";
     $admtext['findmerge'] = "Εύρεση Υποψηφίων προς Συγχώνευση";
     $admtext['selectplacemerge'] = "Επιλέξτε Τοποθεσίες για Συγχώνευση";
-    $admtext['mcol1'] = "Συγχώνευση<br/>αυτών<br/>(διαγραφή)";
-    $admtext['mcol2'] = "σε<br/>αυτό<br/>(keep)";
+    $admtext['mcol1'] = "Συγχώνευση<br>αυτών<br>(διαγραφή)";
+    $admtext['mcol2'] = "σε<br>αυτό<br>(keep)";
     $admtext['pmsucc'] = "Επιτυχής συγχώνευση Τοποθεσιών";
     $admtext['nomerge'] = "Τίποτε προς συγχώνευση";
     $admtext['enterkeep'] = "Παρακαλώ επιλέξετε στόχο συγχώνευσης.";
@@ -1660,7 +1660,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Επιλέξετε Γεγονός και Ενέργεια";
     $admtext['suggested'] = "Προτινόμενο";
-    $admtext['usernotes'] = "Σημειώσεις σχετικέ με<br />προτινόμενες αλλαγές<br />(δεν θα αποθηκευθούν)";
+    $admtext['usernotes'] = "Σημειώσεις σχετικέ με<br>προτινόμενες αλλαγές<br>(δεν θα αποθηκευθούν)";
     $admtext['postdate'] = "Υποβλήθηκε στις";
     $admtext['savedel'] = "Αποθήκευση και Διαγραφή";
     $admtext['postpone'] = "Αναβολή";

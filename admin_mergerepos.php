@@ -31,10 +31,10 @@ function doRow($field, $textmsg, $boxname) {
     if ($r1row[$field]) {
       $r1field = "";
       if ($r1row['address1']) {
-        $r1field .= $r1row['address1'] . "<br/>";
+        $r1field .= $r1row['address1'] . "<br>";
       }
       if ($r1row['address2']) {
-        $r1field .= $r1row['address2'] . "<br/>";
+        $r1field .= $r1row['address2'] . "<br>";
       }
       if ($r1row['city']) {
         $r1field .= $r1row['city'];
@@ -58,10 +58,10 @@ function doRow($field, $textmsg, $boxname) {
     if (isset($r2row[$field])) {
       $r2field = "";
       if ($r2row['address1']) {
-        $r2field .= $r2row['address1'] . "<br/>";
+        $r2field .= $r2row['address1'] . "<br>";
       }
       if ($r2row['address2']) {
-        $r2field .= $r2row['address2'] . "<br/>";
+        $r2field .= $r2row['address2'] . "<br>";
       }
       if ($r2row['city']) {
         $r2field .= $r2row['city'];
@@ -147,7 +147,7 @@ function getEvent($event) {
   if ($eventstr2 && $event['info']) {
     $eventstr2 .= ". ";
   }
-  $eventstr2 .= $event['info'] . "<br/>\n";
+  $eventstr2 .= $event['info'] . "<br>\n";
   $eventstr .= $eventstr2;
 
   return $eventstr;
@@ -388,28 +388,28 @@ tng_adminheader($admtext['merge'], $flags);
 <?php
 $repotabs['0'] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
 $repotabs['1'] = array($allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo");
-$repotabs['3'] = array($allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge");
+$repotabs['3'] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($repotabs, "merge", $innermenu);
 echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge'], "img/repos_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow"
-        "">
-        <div class="normal"><em><?php echo $admtext['choosemergerepos']; ?></em><br/><br/>
-            <form action="admin_mergerepos.php" method="post" name="form1" id="form1">
-                <table>
-                    <tr>
-                        <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
-                        <td>
-                            <select name="tree">
-                              <?php
-                              $trees = "";
-                              while ($treerow = tng_fetch_assoc($treeresult)) {
-                                $trees .= "			<option value=\"{$treerow['gedcom']}\"";
-                                if ($treerow['gedcom'] == $tree) {
+  <tr class="databack">
+    <td class="tngshadow"
+    "">
+    <div class="normal"><em><?php echo $admtext['choosemergerepos']; ?></em><br><br>
+      <form action="admin_mergerepos.php" method="post" name="form1" id="form1">
+        <table>
+          <tr>
+            <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+            <td>
+              <select name="tree">
+                <?php
+                $trees = "";
+                while ($treerow = tng_fetch_assoc($treeresult)) {
+                  $trees .= "			<option value=\"{$treerow['gedcom']}\"";
+                  if ($treerow['gedcom'] == $tree) {
                                   $trees .= " selected";
                                 }
                                 $trees .= ">{$treerow['treename']}</option>\n";
@@ -417,18 +417,18 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                               echo $trees;
                               $mergeclass = $repoID1 && $repoID2 ? "class=\"btn\"" : "class=\"disabled\" disabled";
                               ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </table>
-                <br/>
-                <table class="normal">
-                    <tr>
-                        <td>
-                            <div style="float:left"><?php echo $admtext['repoid']; ?> 1: <input type="text" name="repoID1" id="repoID1" size="10" value="<?php echo $repoID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <br>
+        <table class="normal">
+          <tr>
+            <td>
+              <div style="float:left"><?php echo $admtext['repoid']; ?> 1: <input type="text" name="repoID1" id="repoID1" size="10" value="<?php echo $repoID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
                             <a href="#" onclick="return findItem('R','repoID1','reponame1',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                         <td width="80">&nbsp;</td>
                         <td>
@@ -444,34 +444,34 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                             echo truncateIt($r2row['reponame'], 75);
                           } ?></td>
                     </tr>
-                </table>
-                <br/>
-                <table>
-                    <tr>
-                        <td colspan="3"><span class="normal"><strong><?php echo $admtext['otheroptions']; ?></strong></span></td>
-                    </tr>
-                    <tr>
-                        <td>
+        </table>
+        <br>
+        <table>
+          <tr>
+            <td colspan="3"><span class="normal"><strong><?php echo $admtext['otheroptions']; ?></strong></span></td>
+          </tr>
+          <tr>
+            <td>
 				<span class="normal">
 				<input type="checkbox" name="ccombinenotes" value="yes"<?php if ($ccombinenotes == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['combinenotesonly']; ?><br/>
+          echo " checked";
+        } ?>> <?php echo $admtext['combinenotesonly']; ?><br>
 				<input type="checkbox" name="ccombineextras" value="yes"<?php if ($ccombineextras == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['combineextras']; ?>
+          echo " checked";
+        } ?>> <?php echo $admtext['combineextras']; ?>
 				</span>
-                        </td>
-                    </tr>
-                </table>
-                <br/>
-                <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
-                <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
-                <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
+            </td>
+          </tr>
+        </table>
+        <br>
+        <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
+        <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
+        <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
                 <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction" onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchrepositories();">
                 <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
-                <br/><br/>
-                <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
-                  <?php
+        <br><br>
+        <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
+          <?php
                   if (is_array($r1row)) {
                     $eventlist = array();
                     echo "<tr>\n";
@@ -533,8 +533,8 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
               <?php
               if ($repoID1 || $repoID2) {
                 ?>
-                  <br/>
-                  <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
+                <br>
+                <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
                   <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
                   <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
                   <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction" onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchrepositories();">

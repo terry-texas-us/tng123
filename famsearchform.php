@@ -138,15 +138,15 @@ tng_header($text['searchfams'], $flags);
           }
           tng_free_result($etresult);
           ?>
-            window.location.href = "<?php echo $famsearch_url; ?>" + URL;
+          window.location.href = "<?php echo $famsearch_url; ?>" + URL;
 
-            return false;
+          return false;
         }
 
         //]]>
     </script>
 
-    <h1 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchfams']; ?></h1><br clear="all"/>
+  <h1 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchfams']; ?></h1><br clear="all">
 <?php
 if ($msg) {
   echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
@@ -155,8 +155,8 @@ if ($msg) {
 $formstr = getFORM("famsearch", "", "famsearch", "", "$('searchbtn').className='fieldnamebacksave';return makeURL();");
 echo $formstr;
 ?>
-    <div class="searchformbox">
-        <table cellspacing="1" cellpadding="4" class="normal">
+  <div class="searchformbox">
+    <table cellspacing="1" cellpadding="4" class="normal">
           <?php
           if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) {
             ?>
@@ -177,7 +177,7 @@ echo $formstr;
                 <td class="databack">
                     <select name="ffnqualify" class="mediumfield">
                       <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"));
+                      $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"]];
                       foreach ($item_array as $item) {
                         echo "<option value=\"$item[1]\"";
                         if ($ffnqualify == $item[1]) {
@@ -187,208 +187,208 @@ echo $formstr;
                       }
                       ?>
                     </select>
-                    <input type="text" name="myffirstname" value="<?php echo $myffirstname; ?>"/>
+                  <input type="text" name="myffirstname" value="<?php echo $myffirstname; ?>">
                 </td>
             </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['lastname']; ?>:</td>
-                <td class="databack">
-                    <select name="flnqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"), array($text['metaphoneof'], "metaphoneof"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($flnqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="myflastname" value="<?php echo $myflastname; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong><?php echo $text['mothername']; ?></strong></td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['firstname']; ?>:</td>
-                <td class="databack">
-                    <select name="mfnqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($mfnqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mymfirstname" value="<?php echo $mymfirstname; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['lastname']; ?>:</td>
-                <td class="databack">
-                    <select name="mlnqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"), array($text['metaphoneof'], "metaphoneof"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($mlnqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mymlastname" value="<?php echo $mymlastname; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['familyid']; ?>:</td>
-                <td class="databack">
-                    <select name="fidqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['equals'], "equals"), array($text['contains'], "contains"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($fidqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="myfamilyid" value="<?php echo $myfamilyid; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['marrplace']; ?>:</td>
-                <td class="databack">
-                    <select name="mpqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($mpqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mymarrplace" value="<?php echo $mymarrplace; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['marrdatetr']; ?>:</td>
-                <td class="databack">
-                    <select name="myqualify" class="mediumfield">
-                      <?php
-                      $item2_array = array(array($text['equals'], ""), array($text['plusminus2'], "pm2"), array($text['plusminus5'], "pm5"), array($text['plusminus10'], "pm10"), array($text['lessthan'], "lt"), array($text['greaterthan'], "gt"), array($text['lessthanequal'], "lte"), array($text['greaterthanequal'], "gte"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
-                      foreach ($item2_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($myqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mymarryear" value="<?php echo $mymarryear; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['divplace']; ?>:</td>
-                <td class="databack">
-                    <select name="dvpqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($dvpqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mydivplace" value="<?php echo $mydivplace; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['divdatetr']; ?>:</td>
-                <td class="databack">
-                    <select name="dvyqualify" class="mediumfield">
-                      <?php
-                      $item2_array = array(array($text['equals'], ""), array($text['plusminus2'], "pm2"), array($text['plusminus5'], "pm5"), array($text['plusminus10'], "pm10"), array($text['lessthan'], "lt"), array($text['greaterthan'], "gt"), array($text['lessthanequal'], "lte"), array($text['greaterthanequal'], "gte"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
-                      foreach ($item2_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($dvyqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mydivyear" value="<?php echo $mydivyear; ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['marrtype']; ?>:</td>
-                <td class="databack">
-                    <select name="mtqualify" class="mediumfield">
-                      <?php
-                      $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
-                      foreach ($item_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($mtqualify == $item[1]) {
-                          echo " selected=\"selected\"";
-                        }
-                        echo ">$item[0]</option>\n";
-                      }
-                      ?>
-                    </select>
-                    <input type="text" name="mymarrtype" value="<?php echo $mymarrtype; ?>"/>
-                </td>
-            </tr>
-        </table>
-        <input type="hidden" name="offset" value="0"/>
-
-        <br/>
-        <hr size="1"/>
-        <span class="subhead"><strong><?php echo $text['otherevents']; ?></strong></span><br/>
-        <ul id="descendantchart" class="normal">
-            <li id="expand" class="othersearch"><a href="#" onclick="return toggleSection(1);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" alt="" width="15" height="15" border="0"
-                                                                                                                        class="exp-cont"/><?php echo $text['clickdisplay']; ?></a></li>
-            <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_collapse.gif" alt="" width="15" height="15" border="0"
-                                                                                                                                                class="exp-cont"/><?php echo $text['clickhide']; ?></a></li>
-        </ul>
-        <table style="display:none" id="otherevents">
-            <tr>
-                <td colspan="3">&nbsp;</td>
-            </tr>
-          <?php
-          $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep=\"1\" AND type=\"F\" ORDER BY display";
-          $result = tng_query($query);
-          $eventtypes = array();
-          while ($row = tng_fetch_assoc($result)) {
-            if (!in_array($row['tag'], $dontdo)) {
-              $row['displaymsg'] = getEventDisplay($row['display']);
-              $displaymsg = strtoupper($row['displaymsg']) . "_" . $row['eventtypeID'];
-              $eventtypes[$displaymsg] = $row;
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['lastname']; ?>:</td>
+        <td class="databack">
+          <select name="flnqualify" class="mediumfield">
+            <?php
+            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($flnqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
             }
-          }
-          tng_free_result($result);
+            ?>
+          </select>
+          <input type="text" name="myflastname" value="<?php echo $myflastname; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><strong><?php echo $text['mothername']; ?></strong></td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['firstname']; ?>:</td>
+        <td class="databack">
+          <select name="mfnqualify" class="mediumfield">
+            <?php
+            $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"));
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($mfnqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mymfirstname" value="<?php echo $mymfirstname; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['lastname']; ?>:</td>
+        <td class="databack">
+          <select name="mlnqualify" class="mediumfield">
+            <?php
+            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($mlnqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mymlastname" value="<?php echo $mymlastname; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['familyid']; ?>:</td>
+        <td class="databack">
+          <select name="fidqualify" class="mediumfield">
+            <?php
+            $item_array = array(array($text['equals'], "equals"), array($text['contains'], "contains"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"));
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($fidqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="myfamilyid" value="<?php echo $myfamilyid; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['marrplace']; ?>:</td>
+        <td class="databack">
+          <select name="mpqualify" class="mediumfield">
+            <?php
+            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($mpqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mymarrplace" value="<?php echo $mymarrplace; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['marrdatetr']; ?>:</td>
+        <td class="databack">
+          <select name="myqualify" class="mediumfield">
+            <?php
+            $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+            foreach ($item2_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($myqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mymarryear" value="<?php echo $mymarryear; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['divplace']; ?>:</td>
+        <td class="databack">
+          <select name="dvpqualify" class="mediumfield">
+            <?php
+            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($dvpqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mydivplace" value="<?php echo $mydivplace; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['divdatetr']; ?>:</td>
+        <td class="databack">
+          <select name="dvyqualify" class="mediumfield">
+            <?php
+            $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+            foreach ($item2_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($dvyqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mydivyear" value="<?php echo $mydivyear; ?>">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="fieldnameback fieldname"><?php echo $text['marrtype']; ?>:</td>
+        <td class="databack">
+          <select name="mtqualify" class="mediumfield">
+            <?php
+            $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
+            foreach ($item_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($mtqualify == $item[1]) {
+                echo " selected=\"selected\"";
+              }
+              echo ">$item[0]</option>\n";
+            }
+            ?>
+          </select>
+          <input type="text" name="mymarrtype" value="<?php echo $mymarrtype; ?>">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="offset" value="0">
+
+    <br>
+    <hr>
+    <span class="subhead"><strong><?php echo $text['otherevents']; ?></strong></span><br>
+    <ul id="descendantchart" class="normal">
+      <li id="expand" class="othersearch"><a href="#" onclick="return toggleSection(1);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" alt="" width="15" height="15" class="exp-cont"><?php echo $text['clickdisplay']; ?>
+        </a></li>
+      <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_collapse.gif" alt="" width="15" height="15"
+                                                                                                                                          class="exp-cont"><?php echo $text['clickhide']; ?></a></li>
+    </ul>
+    <table style="display:none" id="otherevents">
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <?php
+      $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep=\"1\" AND type=\"F\" ORDER BY display";
+      $result = tng_query($query);
+      $eventtypes = [];
+      while ($row = tng_fetch_assoc($result)) {
+        if (!in_array($row['tag'], $dontdo)) {
+          $row['displaymsg'] = getEventDisplay($row['display']);
+          $displaymsg = strtoupper($row['displaymsg']) . "_" . $row['eventtypeID'];
+          $eventtypes[$displaymsg] = $row;
+        }
+      }
+      tng_free_result($result);
           ksort($eventtypes);
 
           foreach ($eventtypes as $row) {
@@ -404,7 +404,7 @@ echo $formstr;
             }
             echo "</select>\n";
             echo "</td>\n";
-            echo "<td><input type=\"text\" name=\"cef{$row['eventtypeID']}\" value=\"\" /></td>\n";
+            echo "<td><input type=\"text\" name=\"cef{$row['eventtypeID']}\" value=\"\"></td>\n";
             echo "</tr>\n";
 
             echo "<tr>\n";
@@ -417,7 +417,7 @@ echo $formstr;
             }
             echo "</select>\n";
             echo "</td>\n";
-            echo "<td><input type=\"text\" name=\"cep{$row['eventtypeID']}\" value=\"\" /></td>\n";
+            echo "<td><input type=\"text\" name=\"cep{$row['eventtypeID']}\" value=\"\"></td>\n";
             echo "</tr>\n";
 
             echo "<tr>\n";
@@ -433,30 +433,30 @@ echo $formstr;
 
             echo "</select>\n";
             echo "</td>\n";
-            echo "<td><input type=\"text\" name=\"cey$row[eventtypeID]\" value=\"\" /></td>\n";
+            echo "<td><input type=\"text\" name=\"cey$row[eventtypeID]\" value=\"\"></td>\n";
             echo "</tr>\n";
           }
           ?>
-            <tr class="secondsearch">
-                <td colspan="3"><br/>
-                    <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();"/> <input type="button" value="<?php echo $text['resetall']; ?>" onclick="resetValues();"/>
-                </td>
-            </tr>
-        </table>
-        <hr size="1"/>
-    </div>
+        <tr class="secondsearch">
+          <td colspan="3"><br>
+            <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();"> <input type="button" value="<?php echo $text['resetall']; ?>" onclick="resetValues();">
+          </td>
+        </tr>
+    </table>
+    <hr>
+  </div>
 
-    <div class="searchsidebar">
-        <table>
-            <tr>
-                <td><span class="normal"><?php echo $text['joinwith']; ?>:</span></td>
-                <td>
-                    <select name="mybool">
-                      <?php
-                      $item3_array = array(array($text['cap_and'], "AND"), array($text['cap_or'], "OR"));
-                      foreach ($item3_array as $item) {
-                        echo "<option value=\"$item[1]\"";
-                        if ($mybool == $item[1]) {
+  <div class="searchsidebar">
+    <table>
+      <tr>
+        <td><span class="normal"><?php echo $text['joinwith']; ?>:</span></td>
+        <td>
+          <select name="mybool">
+            <?php
+            $item3_array = [[$text['cap_and'], "AND"], [$text['cap_or'], "OR"]];
+            foreach ($item3_array as $item) {
+              echo "<option value=\"$item[1]\"";
+              if ($mybool == $item[1]) {
                           echo " selected=\"selected\"";
                         }
                         echo ">$item[0]</option>\n";
@@ -486,18 +486,18 @@ echo $formstr;
             </tr>
         </table>
         <p></p>
-        <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>"/>
-        <input type="button" id="resetbtn" class="btn" value="<?php echo $text['tng_reset']; ?>" onclick="resetValues();"/>
-        </p>
-        <br/><br/>
-        <p>
-            <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
-            <a href="<?php echo $cms['tngpath']; ?>searchsite.php" class="snlink">&raquo; <?php echo $text['searchsitemenu']; ?></a>
-        </p>
-    </div>
+        <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>">
+    <input type="button" id="resetbtn" class="btn" value="<?php echo $text['tng_reset']; ?>" onclick="resetValues();">
+    </p>
+    <br><br>
+    <p>
+      <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
+      <a href="<?php echo $cms['tngpath']; ?>searchsite.php" class="snlink">&raquo; <?php echo $text['searchsitemenu']; ?></a>
+    </p>
+  </div>
 
-    </form>
-    <br clear="all"/>
+  </form>
+  <br clear="all">
 <?php
 tng_footer("");
 ?>

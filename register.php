@@ -111,7 +111,7 @@ echo "</form>\n";
         <div class="float-right"><?php echo $detail_link; ?></div>
       <?php
       while (count($currgen) && $generation <= $generations) {
-        echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br/><br />\n";
+        echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
         echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
         while ($row = array_shift($currgen)) {
           echo "<li>";
@@ -120,14 +120,14 @@ echo "</form>\n";
           echo showSmallPhoto($row['personID'], $row['name'], $row['allow_living'] && $row['allow_private'], 0, false, $row['sex']);
           echo "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree=$tree\" name=\"p{$row['personID']}\" id=\"p{$row['personID']}\">{$row['name']}</a>";
           if ($row['genlist']) {
-            echo " <a href=\"$desctracker_url" . "trail={$row['trail']}&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\" border=\"0\"/></a> ({$row['genlist']})";
+            echo " <a href=\"$desctracker_url" . "trail={$row['trail']}&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> ({$row['genlist']})";
           }
           echo getVitalDates($row);
           echo getOtherEvents($row);
           if ($row['allow_living'] && $row['allow_private'] && $pedigree['regnotes']) {
             $notes = buildRegNotes(getRegNotes($row['personID'], "I"));
             if ($notes) {
-              echo "<p>{$text['notes']}:<br/>";
+              echo "<p>{$text['notes']}:<br>";
               echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>\n";
             }
           } else {
@@ -164,7 +164,7 @@ echo "</form>\n";
               if ($famrights['both']) {
                 $notes = buildRegNotes(getRegNotes($spouserow['familyID'], "F"));
                 if ($notes) {
-                  echo "<p>{$text['notes']}:<br/>";
+                  echo "<p>{$text['notes']}:<br>";
                   echo "<blockquote class=\"blocknote\">\n$notes</blockquote>\n</p>";
                 }
               }
@@ -172,7 +172,7 @@ echo "</form>\n";
 
             $result2 = getChildrenData($tree, $spouserow['familyID']);
             if ($result2 && tng_num_rows($result2)) {
-              echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>{$text['children']}:<br/>\n<ol>\n";
+              echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>{$text['children']}:<br>\n<ol>\n";
               while ($childrow = tng_fetch_assoc($result2)) {
                 $childID = $childrow['personID'];
                 if ($nextgen[$childID]) {
@@ -195,20 +195,20 @@ echo "</form>\n";
                     $nextgen[$childID] = $childrow;
                   }
                 }
-                echo "<li style=\"list-style-type:lower-roman\">$displaycount. <a href=\"#\" onclick=\"if(jQuery('#p$childID').length) {jQuery('html, body').animate({scrollTop: jQuery('#p$childID').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID=$childID&amp;tree=$tree';} return false;\">$name</a> &nbsp;<a href=\"$desctracker_url" . "trail={$childrow['trail']}&amp;tree=$tree\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\" border=\"0\"/></a> $vitaldates</li>\n";
+                echo "<li style=\"list-style-type:lower-roman\">$displaycount. <a href=\"#\" onclick=\"if(jQuery('#p$childID').length) {jQuery('html, body').animate({scrollTop: jQuery('#p$childID').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID=$childID&amp;tree=$tree';} return false;\">$name</a> &nbsp;<a href=\"$desctracker_url" . "trail={$childrow['trail']}&amp;tree=$tree\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitaldates</li>\n";
               }
               echo "</ol>\n</td></tr></table>\n";
               tng_free_result($result2);
             }
           }
           echo "</td></tr></table>";
-          echo "<br clear=\"all\"/></li>\n";
+          echo "<br clear=\"all\"></li>\n";
         }
         $currgen = $nextgen;
         unset($nextgen);
         $nextgen = array();
         $generation++;
-        echo "</ol>\n<br/>\n";
+        echo "</ol>\n<br>\n";
       }
       ?>
 

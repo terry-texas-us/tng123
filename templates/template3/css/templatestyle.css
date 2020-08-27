@@ -136,7 +136,7 @@ a.topmenu:hover {
     background-color: #D0BC91;
     border-collapse: collapse;
     border-color: black;
-    margin-bottom: 15px; /* added to replace <br /> after table */
+    margin-bottom: 15px; /* added to replace <br> after table */
 }
 
 /* footer added to replace <font face="Arial,Helvetica,sans-serif" size="1"> */

@@ -137,7 +137,7 @@ function getEvent($event) {
   if ($eventstr2 && $event['info']) {
     $eventstr2 .= ". ";
   }
-  $eventstr2 .= $event['info'] . "<br/>\n";
+  $eventstr2 .= $event['info'] . "<br>\n";
   $eventstr .= $eventstr2;
 
   return $eventstr;
@@ -156,17 +156,17 @@ function getSpouse($marriage, $spouse) {
     $spouserow['allow_living'] = $srights['living'];
     $spouserow['allow_private'] = $srights['private'];
 
-    $spousestr .= getName($spouserow) . " - " . $spouserow['personID'] . " ({$marriage['familyID']})<br/>\n";
+    $spousestr .= getName($spouserow) . " - " . $spouserow['personID'] . " ({$marriage['familyID']})<br>\n";
     tng_free_result($gotspouse);
   } else {
-    $spousestr = "({$marriage['familyID']})<br/>\n";
+    $spousestr = "({$marriage['familyID']})<br>\n";
   }
   if ($marriage['marrdate'] || $marriage['marrplace']) {
     $spousestr .= "<strong>{$admtext['MARR']}</strong>: {$marriage['marrdate']}";
     if ($marriage['marrdate'] && $marriage['marrplace']) {
       $spousestr .= ", ";
     }
-    $spousestr .= "{$marriage['marrplace']}<br/>\n";
+    $spousestr .= "{$marriage['marrplace']}<br>\n";
   }
   if ($ldsOK) {
     if ($marriage['sealdate'] || $marriage['sealplace']) {
@@ -174,7 +174,7 @@ function getSpouse($marriage, $spouse) {
       if ($marriage['sealdate'] && $marriage['sealplace']) {
         $spousestr .= ", ";
       }
-      $spousestr .= "{$marriage['sealplace']}<br/>\n";
+      $spousestr .= "{$marriage['sealplace']}<br>\n";
     }
   }
 
@@ -195,7 +195,7 @@ function getParents($parent) {
     $fathrow['allow_living'] = $frights['living'];
     $fathrow['allow_private'] = $frights['private'];
 
-    $parentstr .= getName($fathrow) . " - " . $fathrow['personID'] . "<br/>\n";
+    $parentstr .= getName($fathrow) . " - " . $fathrow['personID'] . "<br>\n";
     tng_free_result($gotfather);
   }
 
@@ -209,7 +209,7 @@ function getParents($parent) {
     $mothrow['allow_living'] = $mrights['living'];
     $mothrow['allow_private'] = $mrights['private'];
 
-    $parentstr .= getName($mothrow) . " - " . $mothrow['personID'] . "<br/>\n";
+    $parentstr .= getName($mothrow) . " - " . $mothrow['personID'] . "<br>\n";
     tng_free_result($gotmother);
   }
   if ($ldsOK) {
@@ -218,7 +218,7 @@ function getParents($parent) {
       if ($parent['sealdate'] && $parent['sealplace']) {
         $parentstr .= ", ";
       }
-      $parentstr .= "{$parent['sealplace']}<br/>\n";
+      $parentstr .= "{$parent['sealplace']}<br>\n";
     }
   }
 
@@ -770,29 +770,29 @@ tng_adminheader($admtext['merge'], $flags);
 <?php
 $peopletabs['0'] = array(1, "admin_people.php", $admtext['search'], "findperson");
 $peopletabs['1'] = array($allow_add, "admin_newperson.php", $admtext['addnew'], "addperson");
-$peopletabs['2'] = array($allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review");
-$peopletabs['3'] = array($allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge");
+$peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
+$peopletabs['3'] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "merge", $innermenu);
 echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img/people_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <span class="subhead"><strong><?php echo $admtext['findmatches']; ?></strong></span><br/><br/>
-            <div class="normal"><em><?php echo $admtext['choosemerge']; ?></em><br/><br/>
-                <form action="admin_merge.php" method="post" name="form1" id="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
-                            <td>
-                                <select name="tree">
-                                  <?php
-                                  $trees = "";
-                                  while ($treerow = tng_fetch_assoc($treeresult)) {
-                                    $trees .= "			<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
+  <tr class="databack">
+    <td class="tngshadow">
+      <span class="subhead"><strong><?php echo $admtext['findmatches']; ?></strong></span><br><br>
+      <div class="normal"><em><?php echo $admtext['choosemerge']; ?></em><br><br>
+        <form action="admin_merge.php" method="post" name="form1" id="form1">
+          <table>
+            <tr>
+              <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+              <td>
+                <select name="tree">
+                  <?php
+                  $trees = "";
+                  while ($treerow = tng_fetch_assoc($treeresult)) {
+                    $trees .= "			<option value=\"{$treerow['gedcom']}\"";
+                    if ($treerow['gedcom'] == $tree) {
                                       $trees .= " selected";
                                     }
                                     $trees .= ">{$treerow['treename']}</option>\n";
@@ -800,18 +800,18 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                                   echo $trees;
                                   $mergeclass = $personID1 && $personID2 ? "class=\"btn\"" : "class=\"disabled\" disabled";
                                   ?>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </table>
-                    <br/>
-                    <table class="normal">
-                        <tr>
-                            <td>
-                                <div style="float:left"><?php echo $admtext['personid']; ?> 1: <input type="text" name="personID1" id="personID1" size="10" value="<?php echo $personID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+          </table>
+          <br>
+          <table class="normal">
+            <tr>
+              <td>
+                <div style="float:left"><?php echo $admtext['personid']; ?> 1: <input type="text" name="personID1" id="personID1" size="10" value="<?php echo $personID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
                                 <a href="#" onclick="return findItem('I','personID1','name1',document.form1.tree.options[document.form1.tree.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>"
                                    class="smallicon admin-find-icon"></a></td>
                             <td width="80">&nbsp;</td>
@@ -831,81 +831,81 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                                 echo truncateIt($r2row['reponame'], 75);
                               } ?></td>
                         </tr>
-                    </table>
-                    <br/>
-                    <table>
-                        <tr>
-                            <td colspan="5"><span class="normal"><strong><?php echo $admtext['matchthese']; ?></strong></span></td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td colspan="3"><span class="normal"><strong><?php echo $admtext['otheroptions']; ?></strong></span></td>
-                        </tr>
-                        <tr>
-                            <td>
+          </table>
+          <br>
+          <table>
+            <tr>
+              <td colspan="5"><span class="normal"><strong><?php echo $admtext['matchthese']; ?></strong></span></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td colspan="3"><span class="normal"><strong><?php echo $admtext['otheroptions']; ?></strong></span></td>
+            </tr>
+            <tr>
+              <td>
 				<span class="normal">
 				<input type="checkbox" name="cfirstname" value="yes"<?php if ($cfirstname) {
-                  echo " checked";
-                } ?>> <?php echo $admtext['firstname']; ?><br/>
+          echo " checked";
+        } ?>> <?php echo $admtext['firstname']; ?><br>
 				<input type="checkbox" name="clastname" value="yes"<?php if ($clastname) {
-                  echo " checked";
-                } ?>> <?php echo $admtext['lastname']; ?>
+          echo " checked";
+        } ?>> <?php echo $admtext['lastname']; ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td>
 				<span class="normal">
 				<input type="checkbox" name="cbirthdate" value="yes"<?php if ($cbirthdate == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['birthdate']; ?><br/>
+          echo " checked";
+        } ?>> <?php echo $admtext['birthdate']; ?><br>
 				<input type="checkbox" name="cbirthplace" value="yes"<?php if ($cbirthplace == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['birthplace']; ?>
+          echo " checked";
+        } ?>> <?php echo $admtext['birthplace']; ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td>
 				<span class="normal">
 				<input type="checkbox" name="cdeathdate" value="yes"<?php if ($cdeathdate == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['deathdate']; ?><br/>
+          echo " checked";
+        } ?>> <?php echo $admtext['deathdate']; ?><br>
 				<input type="checkbox" name="cdeathplace" value="yes"<?php if ($cdeathplace == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['deathplace']; ?>
+          echo " checked";
+        } ?>> <?php echo $admtext['deathplace']; ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>
 				<span class="normal">
 				<input type="checkbox" name="cignoreblanks" value="yes"<?php if ($cignoreblanks == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['ignoreblanks']; ?><br/>
+          echo " checked";
+        } ?>> <?php echo $admtext['ignoreblanks']; ?><br>
 				<input type="checkbox" name="csoundex" value="yes"<?php if ($csoundex == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['usesoundex']; ?>*
+          echo " checked";
+        } ?>> <?php echo $admtext['usesoundex']; ?>*
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td>
 				<span class="normal">
 				<input type="checkbox" name="ccombinenotes" value="yes"<?php if ($ccombinenotes == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['combinenotes']; ?><br/>
+          echo " checked";
+        } ?>> <?php echo $admtext['combinenotes']; ?><br>
 				<input type="checkbox" name="ccombineextras" value="yes"<?php if ($ccombineextras == "yes") {
-                  echo " checked";
-                } ?>> <?php echo $admtext['combineextras']; ?>
+          echo " checked";
+        } ?>> <?php echo $admtext['combineextras']; ?>
 				</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <br/>
-                    <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
-                    <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
-                    <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction" id="compref">
+              </td>
+            </tr>
+          </table>
+          <br>
+          <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
+          <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
+          <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction" id="compref">
                     <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction" onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchpeople();">
                     <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
-                    <br/><br/>
-                    <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
-                      <?php
-                      if (is_array($p1row)) {
+          <br><br>
+          <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
+            <?php
+            if (is_array($p1row)) {
                         $parentsets = array();
                         $spouses = array();
                         $eventlist = array();
@@ -1088,10 +1088,10 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                         echo "<tr><td><span class=\"normal\">{$admtext['nomatches']}</span></td></tr>";
                       }
                       ?>
-                    </table>
-                    <br/>
-                  <?php
-                  if ($personID1 || $personID2) {
+          </table>
+          <br>
+          <?php
+          if ($personID1 || $personID2) {
                     ?>
                       <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
                       <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
@@ -1101,9 +1101,9 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                     <?php
                   }
                   ?>
-                </form>
-                <br/>
-                <span style="font-size: 8pt;">*<?php echo $admtext['sdxdisclaimer']; ?></span>
+        </form>
+        <br>
+        <span style="font-size: 8pt;">*<?php echo $admtext['sdxdisclaimer']; ?></span>
             </div>
         </td>
     </tr>

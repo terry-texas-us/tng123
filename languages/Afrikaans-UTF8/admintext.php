@@ -63,7 +63,7 @@ switch ($textpart) {
     $admtext['existingceminfo'] = "Bestaande Begraafplaas-inligting";
     $admtext['newceminfo'] = "Nuwe Begraafplaas-inligting";
     $admtext['maptoupload'] = "Kaart Grafikalêer om op te laai";
-    $admtext['mapfilenamefolder'] = "Kaartlêernaam<br/>in die grafstene vouer";
+    $admtext['mapfilenamefolder'] = "Kaartlêernaam<br>in die grafstene vouer";
     $admtext['ifmapuploaded'] = "Los hierdie veld leeg as die lêer al reeds opgelaai is na jou grafstene vouer.";
     $admtext['requiredmap'] = "Verplig as jy 'n vouer gebruik. Dit moet ooreenstem met die naam en lokasie van jou lêer <em>in die grafsteen vouer</em> as die lêer eers opgelaai is. Byvoorbeeld, as jou grafstene-vouer <em>grafstene</em> genoem word, en jy wil hê die lêer moet <em>kaart.jpg</em> genoem word en dit moet bewaar word in 'n subvouer van grafstene genaamd <em>mykaarte</em>, dan sal jy invul: <em>mykaarte/kaart.jpg</em> in hierdie veld.";
     //added in 8.0.0
@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "Bygevoeg";
     $admtext['enternew'] = "Vul nuwe in";
     $admtext['pleaseenter'] = "Vul asseblief in";
-    $admtext['netscapereload'] = "Netscape gebruikers: <br/>Jy sal die Begraafplaasbladsy moet herlaai om nuwes te sien";
+    $admtext['netscapereload'] = "Netscape gebruikers: <br>Jy sal die Begraafplaasbladsy moet herlaai om nuwes te sien";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "Importeer GEDCOM...<br/>(dit mag etlike minute duur)";
+    $admtext['importinggedcom'] = "Importeer GEDCOM...<br>(dit mag etlike minute duur)";
     $admtext['ifimportfails'] = "As die importering faal vóór voltooiing,";
     $admtext['opened'] = "geopen...";
     $admtext['toresume'] = "om importering te hervat";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Vir Bewaarplekke...";
     $admtext['noevtypes'] = "Geen Gebeurtenissoorte bestaan nie.";
     $admtext['DESI'] = "Belang van Afstammeling";
-    $admtext['allnone'] = "Vul 'n boodskap vir elke taal,<br />of laat alles leeg en vul een boodskap hierbo in.";
+    $admtext['allnone'] = "Vul 'n boodskap vir elke taal,<br>of laat alles leeg en vul een boodskap hierbo in.";
     $admtext['assocwith'] = "Geassosieer met";
     $admtext['BAPM'] = "Baptisme";
     $admtext['umps'] = "Jou GEDCOM lêer is moontlik groter dan die maksimum toegestaan deur jou PHP-installasie. Vra aan jou leweransier om die waarde van 'upload_max_filesize' te vergroot, of anders kopieer jou lêer na die 'gedcom'-vouer en doen die importering van daaruit.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Voorvoegsel";
     $admtext['chkdel'] = "Merk leë aanvinkvak om item op links te verwyder";
     //added in 9.0.0
-    $admtext['choosedef'] = "Kies<br/>standard<br/>foto"; //has to fit in a small box
+    $admtext['choosedef'] = "Kies<br>standard<br>foto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Aanneming Datum (LDS)";
     $admtext['confplace'] = "Aanneming Plek (LDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "Genereer Duimnaelsketse";
     $admtext['genthumbsdesc'] = "Genereer outomaties kleiner weergawes van alle foto's sonder bestaande duimnaelsketse.";
     $admtext['thumbsgenerated'] = "Duimnaelsketse gegenereer";
-    $admtext['makedefault'] = "Maak Verstekwaarde";
-    $admtext['filewithinhs'] = "Adres in grafstenevouer <br/>(subvouer en lêernaam)";
-    $admtext['recsupdated'] = "Rekords opgedateer";
+  $admtext['makedefault'] = "Maak Verstekwaarde";
+  $admtext['filewithinhs'] = "Adres in grafstenevouer <br>(subvouer en lêernaam)";
+  $admtext['recsupdated'] = "Rekords opgedateer";
     $admtext['removedef'] = "Verwyder verstek foto";
     $admtext['numlinkhs'] = "Aantal mense wat aan hierdie grafsteen gekoppel moet word";
     $admtext['sortheadstones'] = "Sorteer Grafstene";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Verpligtend. Dit moet ooreenstem met die naam en ligging van jou lêer <em>in die foto-vouer</em> as die lêer eers opgelaai is. Byvoorbeeld, as jou foto-vouer genoem word <em>fotos</em>, en jy wil jou lêer <em>myfoto.jpg</em> noem, en jy wil dit in 'n sub-vouer van fotos bewaar genaamd <em>nuwefotos</em>, sal jy die volgende intoets in hierdie veld: <em>nuwefotos/myfoto.jpg</em>.";
     $admtext['leaveblankphoto'] = "Los hierdie veld skoon as die lêer alreeds opgelaai is in die foto-vouer.";
     $admtext['thumbconflicts'] = "Duimnaelsketse nie gegenereer nie a.g.v. lokasie, regte, lêergrootte of -naam probleme";
-    $admtext['showmap'] = "Wys begraafplaaskaart en foto's wanneer hierdie afbeelding ookal vertoon word";
-    $admtext['bodytext'] = "<strong>OF</strong><br/>Teksinhoud";
-    $admtext['usenl'] = "Verander 'ENTERs' na HTML wanneer teks vertoon word";
+  $admtext['showmap'] = "Wys begraafplaaskaart en foto's wanneer hierdie afbeelding ookal vertoon word";
+  $admtext['bodytext'] = "<strong>OF</strong><br>Teksinhoud";
+  $admtext['usenl'] = "Verander 'ENTERs' na HTML wanneer teks vertoon word";
     $admtext['newwin'] = "Maak 'n nuwe venster oop";
     $admtext['modifymedia'] = "Verander Bestaande Media";
     $admtext['addnewmedia'] = "Voeg Nuwe Media toe";
@@ -1127,7 +1127,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "As geen geboortedatum beskikbaar, neem aan";
     $admtext['persliving'] = "Persoon is lewend";
     $admtext['persdead'] = "Persoon is dood";
-    $admtext['nodeathdate'] = "Indien geen sterfdatum, aanvaar sterfte <br />indien ouer as";
+    $admtext['nodeathdate'] = "Indien geen sterfdatum, aanvaar sterfte <br>indien ouer as";
     $admtext['pedconfigsettings'] = "Stamboominstellings";
     $admtext['usepopups'] = "Aanvanklike Vertoon";
     $admtext['maxpedgens'] = "Maksimum Stamboom Generasies";
@@ -1402,8 +1402,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Verenig Plekke";
     $admtext['findmerge'] = "Soek Kandidate vir vereniging van data";
     $admtext['selectplacemerge'] = "Kies Plekke om in een rekord te verenig";
-    $admtext['mcol1'] = "Verenig hierdie<br/>saam<br/>(verwyder)";
-    $admtext['mcol2'] = "in<br/>hierdie<br/>(hou)";
+    $admtext['mcol1'] = "Verenig hierdie<br>saam<br>(verwyder)";
+    $admtext['mcol2'] = "in<br>hierdie<br>(hou)";
     $admtext['pmsucc'] = "Vereniging van Plekke suksesvol";
     $admtext['nomerge'] = "Niks om saam te verenig nie";
     $admtext['enterkeep'] = "Kies asseblief 'n teiken.";
@@ -1480,7 +1480,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "Vul 'n taalnaam in om te vertoon.";
     $admtext['enterlangfolder'] = "Vul die naam in van die vouer waar lêers vir hierdie taal bewaar gaan word.";
     $admtext['newlanguageinfo'] = "Nuwe Taal Inligting";
-    $admtext['langdisplay'] = "Naam vir hierdie taal<br/>soos dit aan besoekers vertoon gaan word";
+    $admtext['langdisplay'] = "Naam vir hierdie taal<br>soos dit aan besoekers vertoon gaan word";
     $admtext['createlanguage'] = "Skep 'n rekord vir 'n nuwe taal";
     $admtext['nolanguages'] = "Geen taalrekords bestaan nie";
     $admtext['conflangdelete'] = "Is jy seker jy wil hierdie taal verwyder?";
@@ -1662,7 +1662,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Kies Gebeurtenis en Aksie";
     $admtext['suggested'] = "Voorgestelde";
-    $admtext['usernotes'] = "Notas rakende <br />voorgestelde verandering<br /> (sal nie bewaar word nie)";
+    $admtext['usernotes'] = "Notas rakende <br>voorgestelde verandering<br> (sal nie bewaar word nie)";
     $admtext['postdate'] = "Gepos op";
     $admtext['savedel'] = "Bewaar en Verwyder";
     $admtext['postpone'] = "Stel uit";
@@ -2010,7 +2010,7 @@ $admtext['check'] = "Merk";
 $admtext['generate'] = "Genereer";
 $admtext['update'] = "Opdateer";
 $admtext['confdeleteevent'] = "Is jy seker jy wil hierdie Gebeurtenis verwyder?";
-$admtext['existinglinks'] = "Bestaande Skakels:<br/>(merk om te verwyder)";
+$admtext['existinglinks'] = "Bestaande Skakels:<br>(merk om te verwyder)";
 $admtext['lowersortfirst'] = "Laer getalle sorteer eerste. Desimale getalle kan ook gebruik word.";
 $admtext['personsname'] = "Persoon se Naam";
 $admtext['tablecreation'] = "Skep Tabel";

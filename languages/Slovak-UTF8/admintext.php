@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "Pre archívy...";
     $admtext['noevtypes'] = "Žiadny typ udalosti neexistuje.";
     $admtext['DESI'] = "Záujem o potomka";
-    $admtext['allnone'] = "Pre každý jazyk zadajte text, ktorý sa bude zobrazovať, <br />alebo nechajte tieto polia prázdne a na zobrazenie zadajte len jeden text hore.";
+    $admtext['allnone'] = "Pre každý jazyk zadajte text, ktorý sa bude zobrazovať, <br>alebo nechajte tieto polia prázdne a na zobrazenie zadajte len jeden text hore.";
     $admtext['assocwith'] = "Spojené s";
     $admtext['BAPM'] = "Krst";
     $admtext['umps'] = "Váš súbor GEDCOM je zrejme väčší ako je maximálna veľkosť povolená vo vašej inštalácii PHP. Požiadajte vášho poskytovateľa internetu, aby zväčšil hodnotu premennej 'upload_max_filesize' alebo môžete nakopírovať váš súbor do adresára 'gedcom' na vašich stránkach a naimportovať ho odtiaľ.;";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Povinné. Obsah tohto poľa musí odpovedať názvu a miestu vášho súboru <em>v priečinku kolekcie</em> po nahraní súboru na web. Napr. predpokladajme, že nahrávate fotografiu a váš priečinok fotografií na webe sa nazýva <em>photos</em>. Ak chcete, aby sa váš súbor nazýval <em>mojafotka.jpg</em> a išiel do podpriečinka <em>novéfotky</em> v priečinku <em>photos</em>, potom mali by ste do tohto poľa zadať <em>novéfotky/mojafotka.jpg</em>.";
     $admtext['leaveblankphoto'] = "Toto pole nevyplňujte, ak súbor už bol nahraný.";
     $admtext['thumbconflicts'] = "Miniatúry neboli vytvorené, pretože bol problém s názvom súboru, priečinka alebo prístupových práv";
-    $admtext['showmap'] = "Ukázať mapu cintorína a médium vždy, keď bude táto položka zobrazená";
-    $admtext['bodytext'] = "<strong>ALEBO</strong><br/>Základný text";
-    $admtext['usenl'] = "Previesť konce riadkov na HTML na zobrazenie";
+  $admtext['showmap'] = "Ukázať mapu cintorína a médium vždy, keď bude táto položka zobrazená";
+  $admtext['bodytext'] = "<strong>ALEBO</strong><br>Základný text";
+  $admtext['usenl'] = "Previesť konce riadkov na HTML na zobrazenie";
     $admtext['newwin'] = "Otvoriť v novom okne";
     $admtext['modifymedia'] = "Upraviť existujúce médium";
     $admtext['addnewmedia'] = "Pridať nové médium";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Ak chýba dátum narodenia, predpokladať, že";
     $admtext['persliving'] = "Osoba žije";
     $admtext['persdead'] = "Osoba zomrela";
-    $admtext['nodeathdate'] = "Ak chýba dátum úmrtia, predpokladať, že<br />osoba zomrela, ak je staršia ako";
+    $admtext['nodeathdate'] = "Ak chýba dátum úmrtia, predpokladať, že<br>osoba zomrela, ak je staršia ako";
     $admtext['pedconfigsettings'] = "Nastavenie schém";
     $admtext['usepopups'] = "Východzie zobrazenie";
     $admtext['maxpedgens'] = "Maximálny počet generácií";
@@ -1287,7 +1287,7 @@ switch ($textpart) {
     $admtext['usedefthumbs'] = "Použiť východzie miniatúry";
     $admtext['autogeo'] = "Geokódovať všetky nové miesta";
     $admtext['revmail'] = "Upozorniť na návrhy na bádanie";
-    $admtext['assumepriv'] = "Osoba je neverejná, ak zomrela<br />pred menej ako toľkými rokmi";
+    $admtext['assumepriv'] = "Osoba je neverejná, ak zomrela<br>pred menej ako toľkými rokmi";
     $admtext['calstart'] = "Prvý deň v týždni";
     $admtext['edit_timeout'] = "Upraviť časový limit (v minútach)";
     $admtext['shownamespr'] = "Zobraziť mená osôb označených ako neverejné";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Zlúčiť miesta";
     $admtext['findmerge'] = "Nájsť kandidátov na zlúčenie";
     $admtext['selectplacemerge'] = "Vybrať miesta na zlúčenie";
-    $admtext['mcol1'] = "Zlúčiť<br/>tieto<br/>(vymazať)";
-    $admtext['mcol2'] = "do<br/>týchto<br/>(ponechať)";
+    $admtext['mcol1'] = "Zlúčiť<br>tieto<br>(vymazať)";
+    $admtext['mcol2'] = "do<br>týchto<br>(ponechať)";
     $admtext['pmsucc'] = "Zlučovanie miest prebehlo úspešne";
     $admtext['nomerge'] = "Nič nie je na zlúčenie";
     $admtext['enterkeep'] = "Zvoľte, prosím, cieľ (záznam) na zlúčenie.";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Zvoľte udalosť a akciu";
     $admtext['suggested'] = "Odporúčané/navrhnuté";
-    $admtext['usernotes'] = "Poznámky ohľadom<br />navrhovanej zmeny<br />(nebudú uložené)";
+    $admtext['usernotes'] = "Poznámky ohľadom<br>navrhovanej zmeny<br>(nebudú uložené)";
     $admtext['postdate'] = "Zaznamenané/odoslané";
     $admtext['savedel'] = "Uložiť a odstrániť";
     $admtext['postpone'] = "Odložiť";

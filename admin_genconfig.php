@@ -140,27 +140,27 @@ tng_adminheader($admtext['modifysettings'], $flags);
             data: options,
             type: 'GET',
             dataType: 'html',
-            success: function (req) {
-                jQuery('#' + command + 'expl').html(req);
-            }
+          success: function (req) {
+            jQuery('#' + command + 'expl').html(req);
+          }
         });
 
-        return false;
+      return false;
     }
 
     function convertMedia(select) {
-        var options = {action: select.val()};
-        jQuery('#mediaexpl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0px;vertical-align:middle;"/>');
+      var options = {action: select.val()};
+      jQuery('#mediaexpl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0px;vertical-align:middle;">');
 
-        jQuery.ajax({
-            url: 'ajx_mediaconvert.php',
-            data: options,
-            type: 'GET',
-            dataType: 'html',
-            success: function (req) {
-                jQuery('#mediaexpl').html(req);
-            }
-        });
+      jQuery.ajax({
+        url: 'ajx_mediaconvert.php',
+        data: options,
+        type: 'GET',
+        dataType: 'html',
+        success: function (req) {
+          jQuery('#mediaexpl').html(req);
+        }
+      });
 
         return false;
     }
@@ -255,13 +255,13 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
               <?php echo displayToggle("plus1", 0, "tables", $admtext['tablesection'], ""); ?>
 
-                <div id="tables" style="display:none"><br/>
-                    <table border="0" cellspacing="0" cellpadding="0" class="normal">
+              <div id="tables" style="display:none"><br>
+                <table border="0" cellspacing="0" cellpadding="0" class="normal">
+                  <tr>
+                    <td>
+                      <table class="normal">
                         <tr>
-                            <td>
-                                <table class="normal">
-                                    <tr>
-                                        <td><?php echo $admtext['people']; ?>:</td>
+                          <td><?php echo $admtext['people']; ?>:</td>
                                         <td><input type="text" value="<?php echo $people_table; ?>" name="people_table" size="20"></td>
                                     </tr>
                                     <tr>
@@ -890,24 +890,24 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['mediatrees']; ?>:</td>
-                            <td>
-                                <select name="tng_mediatrees" id="tng_mediatrees">
-                                    <option value="0"<?php if (!$tngconfig['mediatrees']) {
-                                      echo " selected=\"selected\"";
-                                    } ?>><?php echo $admtext['no']; ?></option>
-                                    <option value="1"<?php if ($tngconfig['mediatrees']) {
-                                      echo " selected=\"selected\"";
-                                    } ?>><?php echo $admtext['yes']; ?></option>
-                                </select>
-                                <input type="button" value="<?php echo $admtext['convert']; ?>" id="convertmedia" onclick="convertMedia(jQuery('#tng_mediatrees'));"/>
-                                <div id="mediaexpl" style="display:inline-block"></div>
-                            </td>
+                          <td><?php echo $admtext['mediatrees']; ?>:</td>
+                          <td>
+                            <select name="tng_mediatrees" id="tng_mediatrees">
+                              <option value="0"<?php if (!$tngconfig['mediatrees']) {
+                                echo " selected=\"selected\"";
+                              } ?>><?php echo $admtext['no']; ?></option>
+                              <option value="1"<?php if ($tngconfig['mediatrees']) {
+                                echo " selected=\"selected\"";
+                              } ?>><?php echo $admtext['yes']; ?></option>
+                            </select>
+                            <input type="button" value="<?php echo $admtext['convert']; ?>" id="convertmedia" onclick="convertMedia(jQuery('#tng_mediatrees'));">
+                            <div id="mediaexpl" style="display:inline-block"></div>
+                          </td>
                         </tr>
-                        <tr>
-                            <td>Favicon:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['favicon']; ?>" name="favicon" size="20"></td>
-                        </tr>
+                      <tr>
+                        <td>Favicon:</td>
+                        <td><input type="text" value="<?php echo $tngconfig['favicon']; ?>" name="favicon" size="20"></td>
+                      </tr>
                     </table>
                 </div>
 
@@ -1214,27 +1214,27 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="2"><?php echo $admtext['detectpfx']; ?>:</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;&nbsp;<?php echo $admtext['lnpfxnum']; ?>:</td>
-                            <td><input type="text" value="<?php echo $lnpfxnum; ?>" name="lnpfxnum" size="5"/></td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;&nbsp;<?php echo $admtext['specpfx']; ?>*:</td>
-                            <td><input type="text" value="<?php echo stripslashes($specpfx); ?>" name="specpfx" class="verylongfield"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">*<?php echo $admtext['commas']; ?></td>
-                        </tr>
+                      <tr>
+                        <td colspan="2"><?php echo $admtext['detectpfx']; ?>:</td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;&nbsp;<?php echo $admtext['lnpfxnum']; ?>:</td>
+                        <td><input type="text" value="<?php echo $lnpfxnum; ?>" name="lnpfxnum" size="5"></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;&nbsp;<?php echo $admtext['specpfx']; ?>*:</td>
+                        <td><input type="text" value="<?php echo stripslashes($specpfx); ?>" name="specpfx" class="verylongfield"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">*<?php echo $admtext['commas']; ?></td>
+                      </tr>
                     </table>
                 </div>
 
             </td>
         </tr>
 
-        <tr class="databack tngshadow">
+      <tr class="databack tngshadow">
             <td class="tngshadow">
               <?php echo displayToggle("plus8", 0, "cemeteries", $admtext['cemeteries'], ""); ?>
 
@@ -1616,19 +1616,19 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td><?php echo $admtext['excludefromancsn']; ?>*:</td>
-                            <td><input type="text" value="<?php echo stripslashes($surnameexcl); ?>" name="surnameexcl" class="longfield"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">*<?php echo $admtext['commas']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><strong><?php echo $admtext['dnatestscomparecolors']; ?></strong>
-                        </tr>
+                      <tr>
+                        <td><?php echo $admtext['excludefromancsn']; ?>*:</td>
+                        <td><input type="text" value="<?php echo stripslashes($surnameexcl); ?>" name="surnameexcl" class="longfield"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">*<?php echo $admtext['commas']; ?></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><strong><?php echo $admtext['dnatestscomparecolors']; ?></strong>
+                      </tr>
                       <?php
                       $mainclass = $bgmain ? 'center' : 'fieldnameback center';
                       $txtmain = $txtmain ? $txtmain : '#FFFFFF';
@@ -1875,36 +1875,36 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['places1tree']; ?>:</td>
-                            <td>
-                                <select name="places1tree" id="places1tree" onchange="flipPlaces(this);">
-                                    <option value="0"<?php if (!$tngconfig['places1tree']) {
-                                      echo " selected=\"selected\"";
-                                    } ?>><?php echo $admtext['yes']; ?></option>
-                                    <option value="1"<?php if ($tngconfig['places1tree']) {
-                                      echo " selected=\"selected\"";
-                                    } ?>><?php echo $admtext['no']; ?></option>
-                                </select>
-                                <input type="button" value="<?php echo $admtext['merge']; ?>" id="merge" onclick="convertPlaces('merge');" style="display:none"/>
-                                <span id="mergeexpl" style="display:none"><?php echo $admtext['mergeexpl']; ?></span>
-                                <select name="placetree" id="placetree" style="display:none">
-                                  <?php
-                                  foreach ($treeList as $treerow) {
-                                    echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
-                                  }
-                                  ?>
-                                </select>
-                                <input type="button" value="<?php echo $admtext['convert']; ?>" id="convert" onclick="convertPlaces('convert');" style="display:none"/>
-                                <span id="convertexpl" style="display:none"><?php echo $admtext['convexpl']; ?></span>
-                            </td>
+                          <td><?php echo $admtext['places1tree']; ?>:</td>
+                          <td>
+                            <select name="places1tree" id="places1tree" onchange="flipPlaces(this);">
+                              <option value="0"<?php if (!$tngconfig['places1tree']) {
+                                echo " selected=\"selected\"";
+                              } ?>><?php echo $admtext['yes']; ?></option>
+                              <option value="1"<?php if ($tngconfig['places1tree']) {
+                                echo " selected=\"selected\"";
+                              } ?>><?php echo $admtext['no']; ?></option>
+                            </select>
+                            <input type="button" value="<?php echo $admtext['merge']; ?>" id="merge" onclick="convertPlaces('merge');" style="display:none">
+                            <span id="mergeexpl" style="display:none"><?php echo $admtext['mergeexpl']; ?></span>
+                            <select name="placetree" id="placetree" style="display:none">
+                              <?php
+                              foreach ($treeList as $treerow) {
+                                echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
+                              }
+                              ?>
+                            </select>
+                            <input type="button" value="<?php echo $admtext['convert']; ?>" id="convert" onclick="convertPlaces('convert');" style="display:none">
+                            <span id="convertexpl" style="display:none"><?php echo $admtext['convexpl']; ?></span>
+                          </td>
                         </tr>
-                        <tr>
-                            <td><?php echo $admtext['autogeo']; ?>:</td>
-                            <td>
-                                <select name="autogeo">
-                                    <option value="0"<?php if (!$tngconfig['autogeo']) {
-                                      echo " selected=\"selected\"";
-                                    } ?>><?php echo $admtext['no']; ?></option>
+                      <tr>
+                        <td><?php echo $admtext['autogeo']; ?>:</td>
+                        <td>
+                          <select name="autogeo">
+                            <option value="0"<?php if (!$tngconfig['autogeo']) {
+                              echo " selected=\"selected\"";
+                            } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['autogeo']) {
                                       echo " selected=\"selected\"";
                                     } ?>><?php echo $admtext['yes']; ?></option>

@@ -6,21 +6,21 @@ echo help_header("Pomoc: Cmentarze");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="albums_help.php" class="lightlink">&laquo; Pomoc: Albumy</a> &nbsp; | &nbsp;
-                <a href="places_help.php" class="lightlink">Pomoc: Miejsca &raquo;</a>
-            </p>
-            <span class="largeheader">Pomoc: Cmentarze</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj lub edytuj</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="albums_help.php" class="lightlink">&laquo; Pomoc: Albumy</a> &nbsp; | &nbsp;
+        <a href="places_help.php" class="lightlink">Pomoc: Miejsca &raquo;</a>
+      </p>
+      <span class="largeheader">Pomoc: Cmentarze</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Dodaj lub edytuj</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Usuń</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

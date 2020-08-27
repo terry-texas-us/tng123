@@ -13,12 +13,12 @@ $maintenance_mode = true;
 tng_header($text['sitemaint'], $flags);
 ?>
 
-<h1 class="header"><?php echo $text['sitemaint']; ?></h1><br clear="all"/>
+<h1 class="header"><?php echo $text['sitemaint']; ?></h1><br clear="all">
 
 <?php
 echo tng_coreicons();
 
-echo "<p class=\"normal\">" . $text['standby'] . "</p><br /><br />";
+echo "<p class=\"normal\">" . $text['standby'] . "</p><br><br>";
 
 tng_footer("");
 ?>

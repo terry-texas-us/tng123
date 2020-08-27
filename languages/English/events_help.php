@@ -6,21 +6,21 @@ echo help_header("Help: Events");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="citations_help.php" class="lightlink">&laquo; Help: Citations</a> &nbsp; | &nbsp;
-                <a href="more_help.php" class="lightlink">Help: More &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Events</span>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Standard vs. Custom</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#citations" class="lightlink">Citations</a>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="citations_help.php" class="lightlink">&laquo; Help: Citations</a> &nbsp; | &nbsp;
+        <a href="more_help.php" class="lightlink">Help: More &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Events</span>
+      <p class="smaller menu">
+        <a href="#what" class="lightlink">Standard vs. Custom</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+        <a href="#del" class="lightlink">Delete</a> &nbsp; | &nbsp;
+        <a href="#citations" class="lightlink">Citations</a>
             </p>
         </td>
     </tr>
@@ -70,27 +70,27 @@ echo help_header("Help: Events");
             <p>The actual or approximated date associated with the event.</p>
 
             <span class="optionhead">Event Place</span>
-            <p>The place where the event occurred. Enter the place name or click the Find icon (the magnifying glass) to locate the event as you entered it previously.</p>
+          <p>The place where the event occurred. Enter the place name or click the Find icon (the magnifying glass) to locate the event as you entered it previously.</p>
 
-            <span class="optionhead">Detail</span>
-            <p>Any additional explanation of the event, if necessary. If no date or place is associated with the event, the Detail field should contain some defining information.</p>
+          <span class="optionhead">Detail</span>
+          <p>Any additional explanation of the event, if necessary. If no date or place is associated with the event, the Detail field should contain some defining information.</p>
 
-            <span class="optionhead">Duplicate for (ID):</span>
-            <p>To duplicate this event for one or more other people or families, enter the ID(s) for those people or families here. If more than one ID is entered, separate each pair with a comma.
-                If an ID is unknown, click the "Find" icon to the right of the field to look it up by name. The event will then be duplicated with the "Save" button is clicked. When the Edit Event box
-                is re-opened, this field will be blank. Any changes made to the event at that point will <b>not</b> be propagated to the duplicates made earlier.</p>
+          <span class="optionhead">Duplicate for (ID):</span>
+          <p>To duplicate this event for one or more other people or families, enter the ID(s) for those people or families here. If more than one ID is entered, separate each pair with a comma.
+            If an ID is unknown, click the "Find" icon to the right of the field to look it up by name. The event will then be duplicated with the "Save" button is clicked. When the Edit Event box
+            is re-opened, this field will be blank. Any changes made to the event at that point will <b>not</b> be propagated to the duplicates made earlier.</p>
 
-            <span class="optionhead">More</span><br/>
-            <p>More less commonly used information can be added for each event by clicking on the "More" heading or the arrow next to it. Doing so will cause these fields
-                to appear. The fields can be hidden by again clicking on the heading or arrow. Hiding the fields does not remove any information entered there. Those fields include:</p>
+          <span class="optionhead">More</span><br>
+          <p>More less commonly used information can be added for each event by clicking on the "More" heading or the arrow next to it. Doing so will cause these fields
+            to appear. The fields can be hidden by again clicking on the heading or arrow. Hiding the fields does not remove any information entered there. Those fields include:</p>
 
-            <p><span class="optionhead">Age</span>: The age of the individual at the time of the event.</p>
+          <p><span class="optionhead">Age</span>: The age of the individual at the time of the event.</p>
 
-            <p><span class="optionhead">Agency</span>: The institution or individual having authority and/or responsibility at the time of the event.</p>
+          <p><span class="optionhead">Agency</span>: The institution or individual having authority and/or responsibility at the time of the event.</p>
 
-            <p><span class="optionhead">Cause</span>: The cause of the event (most often used with Death).</p>
+          <p><span class="optionhead">Cause</span>: The cause of the event (most often used with Death).</p>
 
-            <p><span class="optionhead">Address 1/Address 2/City/State/Province/Zip/Postal Code/Country/Phone/E-mail/Web Site</span>: The address and other contact information associated with the event.</p>
+          <p><span class="optionhead">Address 1/Address 2/City/State/Province/Zip/Postal Code/Country/Phone/E-mail/Web Site</span>: The address and other contact information associated with the event.</p>
 
             <span class="optionhead">Required fields:</span>
             <p>You must choose an Event Type, and you must enter something in at least one of the following fields: <strong>Event Date</strong>, <strong>Event Place</strong>,

@@ -65,9 +65,9 @@ if ($imgrow['abspath'] || substr($imgrow['path'], 0, 4) == "http" || substr($img
 
 // get image info
 if (substr($imgrow['path'], 0, 4) == "http") {
-  list($width, $height) = @getimagesize($imgrow['path']);
+  [$width, $height] = @getimagesize($imgrow['path']);
 } else {
-  list($width, $height) = @getimagesize("$rootpath$usefolder/$treestr" . $imgrow['path']);
+  [$width, $height] = @getimagesize("$rootpath$usefolder/$treestr" . $imgrow['path']);
 }
 
 $maxw = $tngconfig['imgmaxw'];
@@ -86,11 +86,11 @@ if ($maxh && ($height > $maxh)) {
 $float = strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 7") > 0 ? " style=\"float:left\"" : "";
 ?>
 <div id="imgviewer" width="100%"<?php echo $float; ?>>
-    <map name="imgMapViewer" id="imgMapViewer"><?php echo $imgrow['map']; ?></map>
+  <map name="imgMapViewer" id="imgMapViewer"><?php echo $imgrow['map']; ?></map>
   <?php
   // clean up the description
-  $imgrow['description'] = str_replace("\r\n", "<br/>", $imgrow['description']);
-  $imgrow['description'] = str_replace("\n", "<br/>", $imgrow['description']);
+  $imgrow['description'] = str_replace("\r\n", "<br>", $imgrow['description']);
+  $imgrow['description'] = str_replace("\n", "<br>", $imgrow['description']);
 
   // if running in standalone mode we need to display the title and notes info
   if (isset($_GET['sa'])) {

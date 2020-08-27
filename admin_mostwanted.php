@@ -44,12 +44,12 @@ function showDiv($type) {
     echo "<div class=\"sortrow\" id=\"order{$lrow['mwtype']}" . "divs_{$lrow['mwID']}\" style=\"clear:both\" onmouseover=\"showEditDelete('{$lrow['mwID']}');\" onmouseout=\"hideEditDelete('{$lrow['mwID']}');\">";
     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr id=\"row_{$lrow['mwID']}\">\n";
     echo "<td class=\"dragarea normal\">";
-    echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br/>" . $admtext['drag'] . "<br/><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+    echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
     echo "</td>\n";
     echo "<td class=\"lightback\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
     if ($lrow['thumbpath'] && file_exists("$rootpath$usefolder/" . $lrow['thumbpath'])) {
       $size = @GetImageSize("$rootpath$usefolder/" . $lrow['thumbpath']);
-      echo "<img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" border=\"0\" $size[3]} id=\"img_{$lrow['mwID']}\" alt=\"{$lrow['mtitle']}\" />";
+      echo "<img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" $size[3]} id=\"img_{$lrow['mwID']}\" alt=\"{$lrow['mtitle']}\">";
     } else {
       echo "&nbsp;";
     }
@@ -60,7 +60,7 @@ function showDiv($type) {
     } else {
       echo "<u id=\"title_{$lrow['mwID']}\">{$lrow['title']}</u>";
     }
-    echo "<br /><span id=\"desc_{$lrow['mwID']}\">$truncated</span><br />";
+    echo "<br><span id=\"desc_{$lrow['mwID']}\">$truncated</span><br>";
     echo "<div id=\"del_{$lrow['mwID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden\">";
     if ($allow_edit) {
       echo "<a href=\"#\" onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['edit']}</a>";
@@ -120,14 +120,14 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "
         <td class="tngshadow">
           <?php
           echo displayToggle("plus0", 1, "personarea", $admtext['mysperson'], "");
-          echo "<div id=\"personarea\">\n<br/>\n";
+          echo "<div id=\"personarea\">\n<br>\n";
           showDiv('person');
-          echo "<br /></div>\n";
+          echo "<br></div>\n";
 
-          echo "<br />\n";
+          echo "<br>\n";
 
           echo displayToggle("plus1", 1, "photoarea", $admtext['mysphoto'], "");
-          echo "<div id=\"photoarea\">\n<br/>\n";
+          echo "<div id=\"photoarea\">\n<br>\n";
           showDiv('photo');
           echo "</div>\n";
           ?>

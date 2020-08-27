@@ -123,7 +123,7 @@ switch ($textpart) {
     $text['halfsister'] = "halvs�ster til";
     $text['halfsibling'] = "halvs�skende til";
     //changed in 8.0.0
-    $text['gencheck'] = "Maks. antal generationer,<br />der skal tjekkes";
+    $text['gencheck'] = "Maks. antal generationer,<br>der skal tjekkes";
     $text['mcousin'] = "xxx f�tter/kusine yyy til";  //male cousin; xxx = cousin number, yyy = times removed
     $text['fcousin'] = "xxx f�tter/kusine yyy til";  //female cousin
     $text['cousin'] = "xxx f�tter/kusine yyy til";
@@ -653,7 +653,7 @@ switch ($textpart) {
     $text['fastmutating'] = "Hurtigmuterende";
     $text['alltypes'] = "Alle typer";
     $text['allgroups'] = "Alle grupper";
-    $text['Ydna_LITbox_info'] = "Test(s) knyttet til denne person blev ikke n�dvendigvis taget af denne person.<br />Kolonnen 'Haplogroup' viser data i r�dt, hvis resultatet er 'Forudset' eller gr�nt, hvis testen er 'Bekr�ftet'";
+    $text['Ydna_LITbox_info'] = "Test(s) knyttet til denne person blev ikke n�dvendigvis taget af denne person.<br>Kolonnen 'Haplogroup' viser data i r�dt, hvis resultatet er 'Forudset' eller gr�nt, hvis testen er 'Bekr�ftet'";
     //added in 12.1.0
     $text['dnatestscompare_mtdna'] = "Sammenlign valgte mtDNA-tests";
     $text['dnatestscompare_atdna'] = "Sammenlign valgte atDNA-tests";

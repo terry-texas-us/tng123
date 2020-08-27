@@ -232,9 +232,9 @@ msgstr "New Cemetery Information"
 msgid "Map image to upload"
 msgstr "Map image to upload"
 
-# $admtext['mapfilenamefolder'] = "Map File Name<br/>within Headstones folder";
-msgid "Map File Name<br/>within Headstones folder"
-msgstr "Map File Name<br/>within Headstones folder"
+# $admtext['mapfilenamefolder'] = "Map File Name<br>within Headstones folder";
+msgid "Map File Name<br>within Headstones folder"
+msgstr "Map File Name<br>within Headstones folder"
 
 # $admtext['ifmapuploaded'] = "Leave this field blank if the file has already been uploaded to your headstones folder.";
 msgid "Leave this field blank if the file has already been uploaded to your headstones folder."
@@ -272,9 +272,9 @@ msgstr "Enter new"
 msgid "Please enter a "
 msgstr "Please enter a "
 
-# $admtext['netscapereload'] = "Netscape users: <br/>You must reload the Cemeteries page to see your new";
-msgid "Netscape users: <br/>You must reload the Cemeteries page to see your new"
-msgstr "Netscape users: <br/>You must reload the Cemeteries page to see your new"
+# $admtext['netscapereload'] = "Netscape users: <br>You must reload the Cemeteries page to see your new";
+msgid "Netscape users: <br>You must reload the Cemeteries page to see your new"
+msgstr "Netscape users: <br>You must reload the Cemeteries page to see your new"
 
 # $admtext['deletingnote'] = "Deleting Note...";
 msgid "Deleting Note..."
@@ -344,9 +344,9 @@ msgstr "More Information"
 msgid "Duplicate for"
 msgstr "Duplicate for"
 
-# $admtext['importinggedcom'] = "Importing GEDCOM...<br/>(this may take several minutes)";
-msgid "Importing GEDCOM...<br/>(this may take several minutes)"
-msgstr "Importing GEDCOM...<br/>(this may take several minutes)"
+# $admtext['importinggedcom'] = "Importing GEDCOM...<br>(this may take several minutes)";
+msgid "Importing GEDCOM...<br>(this may take several minutes)"
+msgstr "Importing GEDCOM...<br>(this may take several minutes)"
 
 # $admtext['ifimportfails'] = "If the import fails to run to completion,";
 msgid "If the import fails to run to completion,"
@@ -720,9 +720,9 @@ msgstr "No event types exist."
 msgid "Descendant Interest"
 msgstr "Descendant Interest"
 
-# $admtext['allnone'] = "Enter a display message for each language,<br />or leave all blank and enter one display message above.";
-msgid "Enter a display message for each language,<br />or leave all blank and enter one display message above."
-msgstr "Enter a display message for each language,<br />or leave all blank and enter one display message above."
+# $admtext['allnone'] = "Enter a display message for each language,<br>or leave all blank and enter one display message above.";
+msgid "Enter a display message for each language,<br>or leave all blank and enter one display message above."
+msgstr "Enter a display message for each language,<br>or leave all blank and enter one display message above."
 
 # $admtext['assocwith'] = "Associated with";
 msgid "Associated with"
@@ -1156,9 +1156,9 @@ msgstr "Prefix"
 msgid "Check empty box to delete item at left"
 msgstr "Check empty box to delete item at left"
 
-# $admtext['choosedef'] = "Choose<br/>default<br/>photo";
-msgid "Choose<br/>default<br/>photo"
-msgstr "Choose<br/>default<br/>photo"
+# $admtext['choosedef'] = "Choose<br>default<br>photo";
+msgid "Choose<br>default<br>photo"
+msgstr "Choose<br>default<br>photo"
 
 # $admtext['confdate'] = "Confirmation Date (LDS)";
 msgid "Confirmation Date (LDS)"
@@ -1384,9 +1384,9 @@ msgstr "Thumbnails generated"
 msgid "Make Default"
 msgstr "Make Default"
 
-# $admtext['filewithinhs'] = "Path within headstones folder <br/>(subfolder and file name)";
-msgid "Path within headstones folder <br/>(subfolder and file name)"
-msgstr "Path within headstones folder <br/>(subfolder and file name)"
+# $admtext['filewithinhs'] = "Path within headstones folder <br>(subfolder and file name)";
+msgid "Path within headstones folder <br>(subfolder and file name)"
+msgstr "Path within headstones folder <br>(subfolder and file name)"
 
 # $admtext['recsupdated'] = "Records updated";
 msgid "Records updated"
@@ -1552,9 +1552,9 @@ msgstr "Thumbnails not generated due to path, permissions, size or file name pro
 msgid "Show cemetery map and media whenever this item is displayed"
 msgstr "Show cemetery map and media whenever this item is displayed"
 
-# $admtext['bodytext'] = "<strong>OR</strong><br/>Body Text";
-msgid "<strong>OR</strong><br/>Body Text"
-msgstr "<strong>OR</strong><br/>Body Text"
+# $admtext['bodytext'] = "<strong>OR</strong><br>Body Text";
+msgid "<strong>OR</strong><br>Body Text"
+msgstr "<strong>OR</strong><br>Body Text"
 
 # $admtext['usenl'] = "Convert line breaks to HTML on display";
 msgid "Convert line breaks to HTML on display"
@@ -4100,9 +4100,9 @@ msgstr "Person is living"
 msgid "Person is deceased"
 msgstr "Person is deceased"
 
-# $admtext['nodeathdate'] = "If no death date, assume deceased<br />if older than";
-msgid "If no death date, assume deceased<br />if older than"
-msgstr "If no death date, assume deceased<br />if older than"
+# $admtext['nodeathdate'] = "If no death date, assume deceased<br>if older than";
+msgid "If no death date, assume deceased<br>if older than"
+msgstr "If no death date, assume deceased<br>if older than"
 
 # $admtext['pedconfigsettings'] = "Chart Settings";
 msgid "Chart Settings"
@@ -5112,13 +5112,13 @@ msgstr "Find Merge Candidates"
 msgid "Select Places to Merge"
 msgstr "Select Places to Merge"
 
-# $admtext['mcol1'] = "Merge<br/>these<br/>(delete)";
-msgid "Merge<br/>these<br/>(delete)"
-msgstr "Merge<br/>these<br/>(delete)"
+# $admtext['mcol1'] = "Merge<br>these<br>(delete)";
+msgid "Merge<br>these<br>(delete)"
+msgstr "Merge<br>these<br>(delete)"
 
-# $admtext['mcol2'] = "into<br/>this<br/>(keep)";
-msgid "into<br/>this<br/>(keep)"
-msgstr "into<br/>this<br/>(keep)"
+# $admtext['mcol2'] = "into<br>this<br>(keep)";
+msgid "into<br>this<br>(keep)"
+msgstr "into<br>this<br>(keep)"
 
 # $admtext['pmsucc'] = "Place merge successful";
 msgid "Place merge successful"
@@ -5348,9 +5348,9 @@ msgstr "Please enter the name of the folder where files for this language will b
 msgid "New Language Information"
 msgstr "New Language Information"
 
-# $admtext['langdisplay'] = "Name for this language<br/>as it will be displayed for visitors";
-msgid "Name for this language<br/>as it will be displayed for visitors"
-msgstr "Name for this language<br/>as it will be displayed for visitors"
+# $admtext['langdisplay'] = "Name for this language<br>as it will be displayed for visitors";
+msgid "Name for this language<br>as it will be displayed for visitors"
+msgstr "Name for this language<br>as it will be displayed for visitors"
 
 # $admtext['createlanguage'] = "Create a record for a new language";
 msgid "Create a record for a new language"
@@ -5964,9 +5964,9 @@ msgstr "Select Event and Action"
 msgid "Suggested"
 msgstr "Suggested"
 
-# $admtext['usernotes'] = "Notes regarding<br />suggested change<br />(will not be saved)";
-msgid "Notes regarding<br />suggested change<br />(will not be saved)"
-msgstr "Notes regarding<br />suggested change<br />(will not be saved)"
+# $admtext['usernotes'] = "Notes regarding<br>suggested change<br>(will not be saved)";
+msgid "Notes regarding<br>suggested change<br>(will not be saved)"
+msgstr "Notes regarding<br>suggested change<br>(will not be saved)"
 
 # $admtext['postdate'] = "Posted on";
 msgid "Posted on"
@@ -7256,9 +7256,9 @@ msgstr "Update"
 msgid "Are you sure you want to delete this event?"
 msgstr "Are you sure you want to delete this event?"
 
-# $admtext['existinglinks'] = "Existing Links:<br/>(check to delete)";
-msgid "Existing Links:<br/>(check to delete)"
-msgstr "Existing Links:<br/>(check to delete)"
+# $admtext['existinglinks'] = "Existing Links:<br>(check to delete)";
+msgid "Existing Links:<br>(check to delete)"
+msgstr "Existing Links:<br>(check to delete)"
 
 # $admtext['lowersortfirst'] = "Lower numbers sort first. Decimal numbers may also be used.";
 msgid "Lower numbers sort first. Decimal numbers may also be used."

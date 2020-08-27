@@ -6,21 +6,21 @@ echo help_header("Help: Reports");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="eventtypes_help.php" class="lightlink">&laquo; Help: Custom Event Types</a> &nbsp; | &nbsp;
-                <a href="dna_help.php" class="lightlink">Help: DNA Tests &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Reports</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="eventtypes_help.php" class="lightlink">&laquo; Help: Custom Event Types</a> &nbsp; | &nbsp;
+        <a href="dna_help.php" class="lightlink">Help: DNA Tests &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Reports</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
@@ -88,52 +88,52 @@ echo help_header("Help: Reports");
                 OR statement. Precedence is indicated by using parentheses.</p>
 
             <p>Begin any statement by choosing a field name from the upper lefthand box and adding it to the righthand box. You can do this by
-                selecting a field and then clicking the adjacent <em>Add >></em> button, or by simply double-clicking on the field name (IE only). </p>
+              selecting a field and then clicking the adjacent <em>Add >></em> button, or by simply double-clicking on the field name (IE only). </p>
 
-            <p><strong>NOTE</strong>: All date fields except Last Modified Date are treated as strings and not
-                as true dates UNLESS they are labeled as 'True'. Comparing dates using text or string fields is best done by comparing date components,
-                such as the year only or the day only. To isolate a date component in this manner, first select <em>Month Only From:</em>,
-                <em>Day Only From:</em> or <em>Year Only From:</em>, and then select the date field from which the component will come.</p>
+          <p><strong>NOTE</strong>: All date fields except Last Modified Date are treated as strings and not
+            as true dates UNLESS they are labeled as 'True'. Comparing dates using text or string fields is best done by comparing date components,
+            such as the year only or the day only. To isolate a date component in this manner, first select <em>Month Only From:</em>,
+            <em>Day Only From:</em> or <em>Year Only From:</em>, and then select the date field from which the component will come.</p>
 
-            <p>When working with a true date field (like Last Modified Date), you may compare the field directly to other true dates
-                or true date fields. A predefined true date you may use is the Operator 'Today'. You may also use the operator 'Convert
-                to Days' when relating two true dates. For example, find all records in which the Last Modified Date is less than 30 days old,
-                you could choose for your criteria:<br/><br/>
+          <p>When working with a true date field (like Last Modified Date), you may compare the field directly to other true dates
+            or true date fields. A predefined true date you may use is the Operator 'Today'. You may also use the operator 'Convert
+            to Days' when relating two true dates. For example, find all records in which the Last Modified Date is less than 30 days old,
+            you could choose for your criteria:<br><br>
 
-                <i>Convert to Days<br/>
-                    Today (true date)<br/>
-                    -<br/>
-                    Convert to Days<br/>
-                    Last Modified Date<br/>
-                    <=<br/>
-                    30</i></p>
+            <i>Convert to Days<br>
+              Today (true date)<br>
+              -<br>
+              Convert to Days<br>
+              Last Modified Date<br>
+              <=<br>
+              30</i></p>
 
-            <p>After choosing a field name, next choose a comparision operator from the <em>Operators &amp; Special Values</em> box. These include "=, !=, < > <=, >=, contains, starts with, ends with". Copy
-                the operator to the righthand box by selecting it and then clicking the adjacent <em>Add >></em> button, or by simply double-clicking on the operator name (IE only).</p>
+          <p>After choosing a field name, next choose a comparision operator from the <em>Operators &amp; Special Values</em> box. These include "=, !=, < > <=, >=, contains, starts with, ends with". Copy
+            the operator to the righthand box by selecting it and then clicking the adjacent <em>Add >></em> button, or by simply double-clicking on the operator name (IE only).</p>
 
-            <p>Finally, complete the statement by selecting a field or value to compare to your original field. You may also select one of the following Special Values: <em>Current Month, Current Year</em> or
-                <em>Current Day</em>. To select a constant string value, enter the string without quotes in the <em>Constant String</em> field and click the adjacent <em>Add >></em> button.
-                To add a blank string, leave the field blank before clicking the button. To select a constant numeric value, enter the number in the <em>Constant Value</em> field and click the adjacent
-                <em>Add >></em> button.</p>
+          <p>Finally, complete the statement by selecting a field or value to compare to your original field. You may also select one of the following Special Values: <em>Current Month, Current Year</em> or
+            <em>Current Day</em>. To select a constant string value, enter the string without quotes in the <em>Constant String</em> field and click the adjacent <em>Add >></em> button.
+            To add a blank string, leave the field blank before clicking the button. To select a constant numeric value, enter the number in the <em>Constant Value</em> field and click the adjacent
+            <em>Add >></em> button.</p>
 
-            <p>You can remove any item from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply double-clicking on the item (IE only).
-                To change the order of the items in the list, select the item and move it up or down within the list by clicking on the <em>Move Up</em> and <em>Move Down</em> buttons.</p>
+          <p>You can remove any item from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply double-clicking on the item (IE only).
+            To change the order of the items in the list, select the item and move it up or down within the list by clicking on the <em>Move Up</em> and <em>Move Down</em> buttons.</p>
 
-            <span class="optionhead">Choose Sort Order</span>
-            <p>Indicate how the matching records should be sorted by choosing one or more fields to determine a sort order.
-                If the first field in the list can not determine the order of any two matching records, the next field in the list will be used, and so forth. If no sort order is indicated, matching
-                records will be displayed in the order they were added to the database.
-                Select fields to be in the sort order by copying them from the lefthand box to the right. You can do this by selecting a field and then clicking the <em>Add >></em> button, or by simply double-clicking on the field name (IE only).</p>
+          <span class="optionhead">Choose Sort Order</span>
+          <p>Indicate how the matching records should be sorted by choosing one or more fields to determine a sort order.
+            If the first field in the list can not determine the order of any two matching records, the next field in the list will be used, and so forth. If no sort order is indicated, matching
+            records will be displayed in the order they were added to the database.
+            Select fields to be in the sort order by copying them from the lefthand box to the right. You can do this by selecting a field and then clicking the <em>Add >></em> button, or by simply double-clicking on the field name (IE only).</p>
 
-            <p>By default, all fields sort in ascending order (i.e., A-Z or 0-9). To sort a field in descending order, use the pseudo-field 'Descending (Prev)'.
-                The 'Prev' in parentheses means that this designation must <i>follow</i> the field it modifies. In other words,
-                if you want to sort by Last Name, choose this for your sort order:<br/><br/>
+          <p>By default, all fields sort in ascending order (i.e., A-Z or 0-9). To sort a field in descending order, use the pseudo-field 'Descending (Prev)'.
+            The 'Prev' in parentheses means that this designation must <i>follow</i> the field it modifies. In other words,
+            if you want to sort by Last Name, choose this for your sort order:<br><br>
 
-                <i>Last Name<br/>
-                    Descending (Prev)</i></p>
+            <i>Last Name<br>
+              Descending (Prev)</i></p>
 
-            <span class="optionhead">Miscellaneous</span>
-            <p>You can remove any field from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply double-clicking on the field name (IE only).
+          <span class="optionhead">Miscellaneous</span>
+          <p>You can remove any field from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply double-clicking on the field name (IE only).
                 To change the order of the fields in the list, select a field and move it up or down within the list by clicking on the <em>Move Up</em> and <em>Move Down</em> buttons.</p>
 
             <span class="optionhead">Custom SQL Query</span>

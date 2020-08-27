@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "För arkiv...";
     $admtext['noevtypes'] = "Det finns inga händelsetyper.";
     $admtext['DESI'] = "Intresse för ättlingar";
-    $admtext['allnone'] = "Skriv in ett meddelande för varje språk,<br />eller lämna blankt och skriv in ett meddelande ovan.";
+    $admtext['allnone'] = "Skriv in ett meddelande för varje språk,<br>eller lämna blankt och skriv in ett meddelande ovan.";
     $admtext['assocwith'] = "Associerad med";
     $admtext['BAPM'] = "Dop";
     $admtext['umps'] = "Din GEDCOM-fil kan vara större än vad som är maximalt tillåtet i din PHP-installation. Du kan be din internetleverantör att öka värdet för 'upload_max_filesize', eller så kan du kopiera din fil till 'gedcom'-mappen på din sajt och importera den därifrån istället.;";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "Prefix";
     $admtext['chkdel'] = "Kryssa den tomma rutan för att radera enheten till vänster";
     //added in 9.0.0
-    $admtext['choosedef'] = "Valj<br/>standard-<br/>foto"; //has to fit in a small box
+    $admtext['choosedef'] = "Valj<br>standard-<br>foto"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "Konfirmationsdatum (LDS)";
     $admtext['confplace'] = "Konfirmationplats (LDS)";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = "Obligatoriskt fält. Filens namn och plats <em>inom fotomappen</em> när den blivit uppladdad. Till exempel, om Din fotomapp kallas <em>photos</em>, och din fil heter <em>myphoto.jpg</em> och läggs i en undermapp till photos som heter <em>newphotos</em>, ska Du skriva in <em>newphotos/myphoto.jpg</em> i detta fält.";
     $admtext['leaveblankphoto'] = "Lämna detta fält blankt om filen redan laddats upp till fotomappen.";
     $admtext['thumbconflicts'] = "Frimärksbilder skapades ej pga problem med sökväg, rättigheter eller problem med filnamn";
-    $admtext['showmap'] = "Visa karta och foton för begravningsplatsen när denna bild visas";
-    $admtext['bodytext'] = "<strong>ELLER</strong><br/>Brödtext";
-    $admtext['usenl'] = "Konvertera radbrytning till HTML vid visning";
+  $admtext['showmap'] = "Visa karta och foton för begravningsplatsen när denna bild visas";
+  $admtext['bodytext'] = "<strong>ELLER</strong><br>Brödtext";
+  $admtext['usenl'] = "Konvertera radbrytning till HTML vid visning";
     $admtext['newwin'] = "Öppna i nytt fönster";
     $admtext['modifymedia'] = "Ändra befintlig Media";
     $admtext['addnewmedia'] = "Lägg till Media";
@@ -1127,7 +1127,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "Om födelsedatum saknas, antag att";
     $admtext['persliving'] = "Personen är levande";
     $admtext['persdead'] = "Personen är avliden";
-    $admtext['nodeathdate'] = "Om dödsdatum saknas, antag avliden<br />om äldre än";
+    $admtext['nodeathdate'] = "Om dödsdatum saknas, antag avliden<br>om äldre än";
     $admtext['pedconfigsettings'] = "Inställningar för antavlor";
     $admtext['usepopups'] = "Ursprunglig visning";
     $admtext['maxpedgens'] = "Max generationer";
@@ -1402,8 +1402,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "Slå samman platser";
     $admtext['findmerge'] = "Hitta möjliga sammanslagningar";
     $admtext['selectplacemerge'] = "Välj platser att slå samman";
-    $admtext['mcol1'] = "Slå samman<br/>dessa<br/>(radera)";
-    $admtext['mcol2'] = "till<br/>denna<br/>(behåll)";
+    $admtext['mcol1'] = "Slå samman<br>dessa<br>(radera)";
+    $admtext['mcol2'] = "till<br>denna<br>(behåll)";
     $admtext['pmsucc'] = "Sammanslagningen av platser har lyckats";
     $admtext['nomerge'] = "Inget att slå samman";
     $admtext['enterkeep'] = "Välj mål för sammanslagningen.";
@@ -1662,7 +1662,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "Välj händelse och åtgärd";
     $admtext['suggested'] = "Föreslagen";
-    $admtext['usernotes'] = "Noteringar om<br />föreslagen ändring<br />(sparas ej)";
+    $admtext['usernotes'] = "Noteringar om<br>föreslagen ändring<br>(sparas ej)";
     $admtext['postdate'] = "Skickad den";
     $admtext['savedel'] = "Spara och radera";
     $admtext['postpone'] = "Senarelägg";

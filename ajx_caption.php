@@ -26,7 +26,7 @@ if ($title) {
   $title = "<strong>$title</strong>";
 }
 $desc = truncateIt(isset($imgrow['altnotes']) && $imgrow['altnotes'] ? $imgrow['altnotes'] : $imgrow['notes'], 200);
-$caption = $title && $desc ? $title . "<br/>" . $desc : $title . $desc;
+$caption = $title && $desc ? $title . "<br>" . $desc : $title . $desc;
 tng_free_result($result);
 
 header("Content-type:text/html; charset=" . $session_charset);

@@ -104,7 +104,7 @@ if ($repolinktext) {
 }
 
 $repotext .= "</table>\n";
-$repotext .= "<br/>\n";
+$repotext .= "<br>\n";
 $repotext .= endSection("info");
 
 $media = doMediaSection($repoID, $repomedia, $repoalbums);
@@ -124,7 +124,7 @@ if ($notes) {
   $repotext .= "<td valign=\"top\" class=\"databack\">$notes</td>\n";
   $repotext .= "</tr>\n";
   $repotext .= "</table>\n";
-  $repotext .= "<br/>\n";
+  $repotext .= "<br>\n";
   $repotext .= endSection("notes");
 }
 $repotext .= "</ul>\n";
@@ -204,7 +204,7 @@ echo tng_menu("R", "repo", $repoID, $innermenu);
 <?php
 echo $repotext;
 ?>
-    <br/>
+  <br>
 
 <?php
 tng_footer($flags);

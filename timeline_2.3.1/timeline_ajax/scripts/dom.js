@@ -203,7 +203,7 @@ SimileAjax.DOM.appendClassName = function (elmt, className) {
 
 SimileAjax.DOM.createInputElement = function (type) {
     var div = document.createElement("div");
-    div.innerHTML = "<input type='" + type + "' />";
+    div.innerHTML = "<input type='" + type + "'>";
 
     return div.firstChild;
 };

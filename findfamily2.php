@@ -55,21 +55,21 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findfamilyresdiv">
-    <table border="0" cellpadding="0">
-        <tr>
-            <td valign="top">
-                <span class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></span><br/>
-                <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br/>
-            </td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td>
-                <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onClick="reopenFindForm();"></form>
-            </td>
-        </tr>
-    </table>
-    <br/>
-    <table border="0" cellspacing="0" cellpadding="2">
-      <?php
+  <table border="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <span class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></span><br>
+        <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td>
+        <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onClick="reopenFindForm();"></form>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" cellspacing="0" cellpadding="2">
+    <?php
       while ($row = tng_fetch_assoc($result)) {
         $thisfamily = "";
         if ($row['hpersonID']) {
@@ -86,7 +86,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         if ($row['wpersonID']) {
           if ($thisfamily) {
-            $thisfamily .= "<br/>";
+            $thisfamily .= "<br>";
           }
           $person['firstname'] = $row['wfirstname'];
           $person['lnprefix'] = $row['wlnprefix'];

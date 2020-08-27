@@ -15,7 +15,7 @@ if (!$allow_edit) {
   exit;
 }
 
-list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, $trees_table);
+[$tree, $trees, $treename, $treequery] = getOrderedTreesList($assignedtree, $trees_table);
 
 $query = "SELECT * FROM $dna_tests_table WHERE testID = \"$testID\"";
 $result = tng_query($query);
@@ -172,11 +172,11 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
             <td class="tngshadow">
               <?php echo displayToggle("plus0", 1, "testinfo", $admtext['testinfo'], $admtext['uplsel']); ?>
 
-                <div id="testinfo">
-                    <br/>
-                    <table class="normal">
-                        <tr>
-                            <td><?php echo $admtext['test_type']; ?>:</td>
+              <div id="testinfo">
+                <br>
+                <table class="normal">
+                  <tr>
+                    <td><?php echo $admtext['test_type']; ?>:</td>
                             <td>
                                 <select name="test_type" id="test_type">
                                     <option value=""></option>
@@ -221,27 +221,27 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                             <td><strong><?php echo $admtext['privatetest']; ?>:</strong>&nbsp;</td>
                             <td>
                                 <select name="private_test">
-                                    <option value="0"<?php if (!$row['private_test']) {
-                                      echo " selected";
-                                    } ?>><?php echo $admtext['no']; ?></option>
-                                    <option value="1"<?php if ($row['private_test']) {
-                                      echo " selected";
-                                    } ?>><?php echo $admtext['yes']; ?></option>
+                                  <option value="0"<?php if (!$row['private_test']) {
+                                    echo " selected";
+                                  } ?>><?php echo $admtext['no']; ?></option>
+                                  <option value="1"<?php if ($row['private_test']) {
+                                    echo " selected";
+                                  } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="2"><br/><strong><?php echo $admtext['test_taker']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td>
-                              <?php echo $admtext['tree']; ?>:
-                            </td>
-                            <td>
-                                <select name="mynewgedcom">
-                                    <option value=""></option>
-                                  <?php
-                                  for ($j = 1; $j <= $treenum; $j++) {
+                  <tr>
+                    <td colspan="2"><br><strong><?php echo $admtext['test_taker']; ?></strong></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <?php echo $admtext['tree']; ?>:
+                    </td>
+                    <td>
+                      <select name="mynewgedcom">
+                        <option value=""></option>
+                        <?php
+                        for ($j = 1; $j <= $treenum; $j++) {
                                     echo "	<option value=\"{$trees[$j]}\"";
                                     if ($trees[$j] == $row['gedcom']) {
                                       echo " selected";
@@ -252,23 +252,23 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td><?php echo "{$admtext['text_and']} {$admtext['personid']} "; ?>:</td>
-                            <td>
-                                <input type="text" name="personID" value="<?php echo $row['personID']; ?>" id="personID" size="20" maxlength="22"> &nbsp;<span><?php echo $takername; ?></span>&nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                                <a href="#" onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
-                                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0" hspace="2">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo "{$admtext['text_or']} {$admtext['person_name']} "; ?></td>
-                            <td>
-                                <input type="text" name="person_name" value="<?php echo $row['person_name']; ?>" id="person_name" size="40" maxlength="100"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><strong><?php echo $text['keep_name_private']; ?>:</strong>&nbsp;<input type="checkbox" name="private_dna" value="1"<?php if ($row['private_dna']) {
-                                echo " checked=\"$checked\"";
+                      <tr>
+                        <td><?php echo "{$admtext['text_and']} {$admtext['personid']} "; ?>:</td>
+                        <td>
+                          <input type="text" name="personID" value="<?php echo $row['personID']; ?>" id="personID" size="20" maxlength="22"> &nbsp;<span><?php echo $takername; ?></span>&nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                          <a href="#" onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
+                            <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><?php echo "{$admtext['text_or']} {$admtext['person_name']} "; ?></td>
+                        <td>
+                          <input type="text" name="person_name" value="<?php echo $row['person_name']; ?>" id="person_name" size="40" maxlength="100"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><strong><?php echo $text['keep_name_private']; ?>:</strong>&nbsp;<input type="checkbox" name="private_dna" value="1"<?php if ($row['private_dna']) {
+                            echo " checked=\"$checked\"";
                               } ?>></td>
                         </tr>
                         <tr>
@@ -300,14 +300,14 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                             <td colspan="2">&nbsp;</td>
                         </tr>
                       <?php if ($row['test_type'] == "Y-DNA") { ?>
-                          <tr>
-                              <td><?php echo $admtext['markers']; ?>:</td>
-                              <td><input type="text" name="markers" value="<?php echo $row['markers']; ?>" class="medfield"></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['marker_values']; ?>:<br/><?php echo $admtext['separate']; ?>:<br/><?php echo $admtext['multivalues']; ?></td>
-                              <td><textarea cols="90" rows="3" name="y_results"><?php echo $row['y_results']; ?></textarea></td>
-                          </tr>
+                        <tr>
+                          <td><?php echo $admtext['markers']; ?>:</td>
+                          <td><input type="text" name="markers" value="<?php echo $row['markers']; ?>" class="medfield"></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['marker_values']; ?>:<br><?php echo $admtext['separate']; ?>:<br><?php echo $admtext['multivalues']; ?></td>
+                          <td><textarea cols="90" rows="3" name="y_results"><?php echo $row['y_results']; ?></textarea></td>
+                        </tr>
                       <?php } ?>
                       <?php if ($row['test_type'] == "mtDNA" || $row['test_type'] == "atDNA") {
                         $mt_checkedstr = ($row['mtdna_confirmed']) ? "checked" : ""; ?>
@@ -376,59 +376,59 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                           </tr>
                       <?php } ?>
                       <?php if ($row['test_type'] == "atDNA") { ?>
-                          <tr>
-                              <td colspan="2">&nbsp;</td>
-                          </tr>
-                          <tr>
-                              <td colspan="2"><br/><strong><?php echo $admtext['shared_dna']; ?></strong></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['shared centimorgans']; ?>:</td>
-                              <td><input type="text" name="shared_cMs" value="<?php echo $row['shared_cMs']; ?>" id="shared_cMs" size="20" maxlength="22"></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['shared_segments']; ?>:</td>
-                              <td><input type="text" name="shared_segments" value="<?php echo $row['shared_segments']; ?>" id="shared_segments" size="20" maxlength="22"></td>
-                          </tr>
+                        <tr>
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><br><strong><?php echo $admtext['shared_dna']; ?></strong></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['shared centimorgans']; ?>:</td>
+                          <td><input type="text" name="shared_cMs" value="<?php echo $row['shared_cMs']; ?>" id="shared_cMs" size="20" maxlength="22"></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['shared_segments']; ?>:</td>
+                          <td><input type="text" name="shared_segments" value="<?php echo $row['shared_segments']; ?>" id="shared_segments" size="20" maxlength="22"></td>
+                        </tr>
 
-                          <tr>
-                              <td colspan="2"><br/><strong><?php echo $admtext['largest_segment']; ?></strong></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['chromosome']; ?>:</td>
-                              <td><input type="text" name="chromosome" value="<?php echo $row['chromosome']; ?>" id="chromosome" size="20" maxlength="22"></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['segment_start']; ?>:</td>
-                              <td><input type="text" name="segment_start" value="<?php echo $row['segment_start']; ?>" id="segment_start" size="20" maxlength="22"></td>
-                          </tr>
-                          <tr>
+                        <tr>
+                          <td colspan="2"><br><strong><?php echo $admtext['largest_segment']; ?></strong></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['chromosome']; ?>:</td>
+                          <td><input type="text" name="chromosome" value="<?php echo $row['chromosome']; ?>" id="chromosome" size="20" maxlength="22"></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['segment_start']; ?>:</td>
+                          <td><input type="text" name="segment_start" value="<?php echo $row['segment_start']; ?>" id="segment_start" size="20" maxlength="22"></td>
+                        </tr>
+                        <tr>
                               <td><?php echo $admtext['segment_end']; ?>:</td>
                               <td><input type="text" name="segment_end" value="<?php echo $row['segment_end']; ?>" id="segment_end" size="20" maxlength="22"></td>
                           </tr>
                           <tr>
                               <td><?php echo $admtext['centiMorgans']; ?>:</td>
-                              <td><input type="text" name="centiMorgans" value="<?php echo $row['centiMorgans']; ?>" id="centiMorgans" size="20" maxlength="22"></td>
+                            <td><input type="text" name="centiMorgans" value="<?php echo $row['centiMorgans']; ?>" id="centiMorgans" size="20" maxlength="22"></td>
                           </tr>
-                          <tr>
-                              <td><?php echo $admtext['matchingSNPs']; ?>:</td>
-                              <td><input type="text" name="matching_SNPs" value="<?php echo $row['matching_SNPs']; ?>" id="matching_SNPs" size="20" maxlength="22"></td>
-                          </tr>
-                          <tr>
-                              <td colspan="2">&nbsp;</td>
-                          </tr>
-                          <tr>
-                              <td colspan="2"><br/><strong><?php echo $admtext['relationship_section']; ?></strong></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['relationship_range']; ?>:</td>
-                              <td><input type="text" name="relationship_range" value="<?php echo $row['relationship_range']; ?>" id="relationship_range" size="80" maxlength="80"></td>
-                          </tr>
-                          <tr>
-                              <td><?php echo $admtext['suggested_relationship']; ?>:</td>
-                              <td><input type="text" name="suggested_relationship" value="<?php echo $row['suggested_relationship']; ?>" id="suggested_relationship" size="80" maxlength="80"></td>
-                          </tr>
-                          <tr>
+                        <tr>
+                          <td><?php echo $admtext['matchingSNPs']; ?>:</td>
+                          <td><input type="text" name="matching_SNPs" value="<?php echo $row['matching_SNPs']; ?>" id="matching_SNPs" size="20" maxlength="22"></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><br><strong><?php echo $admtext['relationship_section']; ?></strong></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['relationship_range']; ?>:</td>
+                          <td><input type="text" name="relationship_range" value="<?php echo $row['relationship_range']; ?>" id="relationship_range" size="80" maxlength="80"></td>
+                        </tr>
+                        <tr>
+                          <td><?php echo $admtext['suggested_relationship']; ?>:</td>
+                          <td><input type="text" name="suggested_relationship" value="<?php echo $row['suggested_relationship']; ?>" id="suggested_relationship" size="80" maxlength="80"></td>
+                        </tr>
+                        <tr>
                               <td><?php echo $admtext['actual_relationship']; ?>:</td>
                               <td><input type="text" name="actual_relationship" value="<?php echo $row['actual_relationship']; ?>" id="actual_relationship" size="40" maxlength="40"></td>
                           </tr>
@@ -452,41 +452,41 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                   </select>
                               </td>
                           </tr>
-                          <tr>
-                              <td colspan="2">&nbsp;</td>
-                          </tr>
+                        <tr>
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
                       <?php } ?>
-                        <tr>
-                            <td colspan="2"><br/><strong><?php echo $admtext['mdaID']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['personid']; ?>:</td>
-                            <td><input type="text" name="MD_ancestorID" value="<?php echo $row['MD_ancestorID']; ?>" id="MD_ancestorID" size="20" maxlength="22"><span>&nbsp;<?php echo $mdancestorname; ?></span>&nbsp;&nbsp;<?php echo $admtext['text_or']; ?>
-                                &nbsp;
-                                <a href="#" onclick="return findItem('I','MD_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
-                                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0" hspace="2">
-                                </a>
-                            </td>
-                        </tr>
+                  <tr>
+                    <td colspan="2"><br><strong><?php echo $admtext['mdaID']; ?></strong></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['personid']; ?>:</td>
+                    <td><input type="text" name="MD_ancestorID" value="<?php echo $row['MD_ancestorID']; ?>" id="MD_ancestorID" size="20" maxlength="22"><span>&nbsp;<?php echo $mdancestorname; ?></span>&nbsp;&nbsp;<?php echo $admtext['text_or']; ?>
+                      &nbsp;
+                      <a href="#" onclick="return findItem('I','MD_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
+                        <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                      </a>
+                    </td>
+                  </tr>
 
-                        <tr>
-                            <td colspan="2"><br/><strong><?php echo $admtext['mrcaID']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['searchfor']; ?></td>
-                            <td><input type="radio" name="mrcatype" value="I" checked="checked" onclick="activateMrcaType('I');"/> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
-                                <input type="radio" name="mrcatype" value="F" onclick="activateMrcaType('F');"/> <?php echo $admtext['family']; ?>
-                            </td>
-                        </tr>
+                  <tr>
+                    <td colspan="2"><br><strong><?php echo $admtext['mrcaID']; ?></strong></td>
+                  </tr>
+                  <tr>
+                    <td><?php echo $admtext['searchfor']; ?></td>
+                    <td><input type="radio" name="mrcatype" value="I" checked="checked" onclick="activateMrcaType('I');"> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
+                      <input type="radio" name="mrcatype" value="F" onclick="activateMrcaType('F');"> <?php echo $admtext['family']; ?>
+                    </td>
+                  </tr>
 
-                        <tr>
-                            <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none"><?php echo $admtext['familyid']; ?></span>:</td>
-                            <td valign="top"><input type="text" name="MRC_ancestorID" value="<?php echo $row['MRC_ancestorID']; ?>" id="MRC_ancestorID"> &nbsp;<?php echo $mrcancestorname; ?></span>&nbsp;&nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                                <a href="#" onclick="return findItem(mrcaType,'MRC_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                                   title="<?php echo $admtext['find']; ?>"><img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0"
-                                                                                hspace="2"></a>
-                            </td>
-                        </tr>
+                  <tr>
+                    <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none"><?php echo $admtext['familyid']; ?></span>:</td>
+                    <td valign="top"><input type="text" name="MRC_ancestorID" value="<?php echo $row['MRC_ancestorID']; ?>" id="MRC_ancestorID"> &nbsp;<?php echo $mrcancestorname; ?></span>&nbsp;&nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                      <a href="#" onclick="return findItem(mrcaType,'MRC_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
+                        <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                      </a>
+                    </td>
+                      </tr>
 
                       <?php
                       if ((!$row['surnames'] && $row['test_type'] != "atDNA") && $autofillancsurnames && $row['personID']) {
@@ -562,31 +562,31 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
             </td>
         </tr>
 
-        <tr class="databack">
-            <td class="tngshadow normal">
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                <input type="hidden" value="<?php echo $row['testID']; ?>" name="testID">
-                <input type="hidden" value="<?php echo $row['personID']; ?>" name="personID_org">
-              <?php
-              echo $admtext['onsave'] . ":<br/>";
-              echo "<input type=\"radio\" name=\"newtest\" value=\"return\"> {$admtext['savereturn']}<br/>\n";
-              if ($cw) {
-                echo "<input type=\"radio\" name=\"newtest\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
-              } else {
-                echo "<input type=\"radio\" name=\"newtest\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
-              }
-              ?>
-                <br/><br/><input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
-            </td>
-        </tr>
+      <tr class="databack">
+        <td class="tngshadow normal">
+          <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+          <input type="hidden" value="<?php echo $row['testID']; ?>" name="testID">
+          <input type="hidden" value="<?php echo $row['personID']; ?>" name="personID_org">
+          <?php
+          echo $admtext['onsave'] . ":<br>";
+          echo "<input type=\"radio\" name=\"newtest\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+          if ($cw) {
+            echo "<input type=\"radio\" name=\"newtest\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
+          } else {
+            echo "<input type=\"radio\" name=\"newtest\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
+          }
+          ?>
+          <br><br><input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
+        </td>
+      </tr>
 
     </table>
 </form>
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript">
-    var tree = "<?php echo $tree; ?>";
-    var tnglitbox;
-    <?php
+  var tree = "<?php echo $tree; ?>";
+  var tnglitbox;
+  <?php
     echo "var linkcount = $numlinks;\n";
     echo "var confdellink = \"{$admtext['confdellink']}\";\n";
     echo "var remove_text = \"{$admtext['removelink']}\";\n";

@@ -78,7 +78,7 @@ switch ($textpart) {
     $admtext['added'] = "مضاف";
     $admtext['enternew'] = "إدخال جديد";
     $admtext['pleaseenter'] = "فضلا أدخل  ";
-    $admtext['netscapereload'] = "لمستخدمي نتسكيب:  <br/>عليك إعادة تحميل صفحة المقابر لرؤية الجديد";
+    $admtext['netscapereload'] = "لمستخدمي نتسكيب:  <br>عليك إعادة تحميل صفحة المقابر لرؤية الجديد";
     break;
 
   //addnote.php, deletenote.php, updatenote.php, newnote.php
@@ -111,7 +111,7 @@ switch ($textpart) {
 
   //gedimport.php
   case "gedimport":
-    $admtext['importinggedcom'] = "جاري استيراد ملف بصيغة جيدكوم...<br/>(قد تستغرق هذه العملية عدة دقائق)";
+    $admtext['importinggedcom'] = "جاري استيراد ملف بصيغة جيدكوم...<br>(قد تستغرق هذه العملية عدة دقائق)";
     $admtext['ifimportfails'] = "إذا فشلت عملية الاستيراد، ";
     $admtext['opened'] = "تم الفتح...";
     $admtext['toresume'] = "لاستئناف الاستيراد";  //cannot open to resume import
@@ -209,7 +209,7 @@ switch ($textpart) {
     $admtext['forrepos'] = "للمستودعات...";
     $admtext['noevtypes'] = "لا توجد أنواع أحداث";
     $admtext['DESI'] = "اهتمامات السلالة";
-    $admtext['allnone'] = " أدخل الرسالة المطلوب عرضها لكل لغة،<br /> أو اتركه فارغا وأدخل رسالة واحدة أعلاه.";
+    $admtext['allnone'] = " أدخل الرسالة المطلوب عرضها لكل لغة،<br> أو اتركه فارغا وأدخل رسالة واحدة أعلاه.";
     $admtext['assocwith'] = "مقترن بـ";
     $admtext['BAPM'] = "تعميد";
     $admtext['umps'] = " قد يفوق مقاس ملف جيدكوم الخاص بك الحد الأقصى المسموح به من قبل بنية PHP. بإمكانك التواصل مع مزود الخدمة الخاص بك لطلب زيادة قيمة 'upload_max_filesize'، أو يمكنك نسخ ملف جيدكوم الخاص بك إلى مجلد في موقعك ومن ثم استيراده إلى النظام من هناك.";
@@ -330,7 +330,7 @@ switch ($textpart) {
     $admtext['prefix'] = "بادئة";
     $admtext['chkdel'] = "اختر الصندوق الفارغ لحذف البند المجاور";
     //added in 9.0.0
-    $admtext['choosedef'] = " اختر<br/>الصورة<br/>الافتراضية"; //has to fit in a small box
+    $admtext['choosedef'] = " اختر<br>الصورة<br>الافتراضية"; //has to fit in a small box
     //added in 10.0.0
     $admtext['confdate'] = "تاريخ التأكيد (نصارىLDS)";
     $admtext['confplace'] = "مكان التأكيد (نصارىLDS)";
@@ -394,9 +394,9 @@ switch ($textpart) {
     $admtext['genthumbs'] = "ولد الصورة المصغرة";
     $admtext['genthumbsdesc'] = "التوليد التلقائي الآلي لنسخ مصغرة لكافة الصور.";
     $admtext['thumbsgenerated'] = "تم توليد الصور المصغرة";
-    $admtext['makedefault'] = "اجعله الخيار الافتراضي";
-    $admtext['filewithinhs'] = " المسار داخل مجلد مواقع المقابر <br/>(المتكون من اسم المجلد الفرعي واسم الملف)";
-    $admtext['recsupdated'] = "تم تحديث السجلات";
+  $admtext['makedefault'] = "اجعله الخيار الافتراضي";
+  $admtext['filewithinhs'] = " المسار داخل مجلد مواقع المقابر <br>(المتكون من اسم المجلد الفرعي واسم الملف)";
+  $admtext['recsupdated'] = "تم تحديث السجلات";
     $admtext['removedef'] = "حذف الصورة الافتراضية";
     $admtext['numlinkhs'] = "عدد الأفراد المطلوب ربطهم بموقع القبر هذا";
     $admtext['sortheadstones'] = "صنف مواقع القبور";
@@ -441,9 +441,9 @@ switch ($textpart) {
     $admtext['requiredphoto'] = " مطلوب. عليه أن يتوافق مع اسم وموقع ملفك <em>داخل مجلد المجموعات</em> بعد تحميل الملف. على سبيل المثال، لو كنت تقوم بتحميل صورة وكان اسم مجلد الصور الخاص بك هو<em>photos</em>، وتريد تسمية الملف الخاص بك<em>myphoto.jpg</em> مع تخزينه في مجلد فرعي جديد من المجلد آنف الذكر اسمه <em>newphotos</em>، فإنك ستكتب<em>newphotos/myphoto.jpg</em> في هذا الحقل.";
     $admtext['leaveblankphoto'] = "اترك حذا الحقل فارغا لو كان قد تم تحميل الملف";
     $admtext['thumbconflicts'] = "لم يتم توليد الصورة المصغرة لوجود خطأ في المسار أو الصلاحيات أو المقاس أو الاسم.";
-    $admtext['showmap'] = "أظهر خارطة المقبرة والوسائط كلما تم عرض هذا العنصر";
-    $admtext['bodytext'] = "<strong>أو</strong><br/>صلب النص";
-    $admtext['usenl'] = "تحويل فواصل الأسطر إلى صيغة HTML عند العرض";
+  $admtext['showmap'] = "أظهر خارطة المقبرة والوسائط كلما تم عرض هذا العنصر";
+  $admtext['bodytext'] = "<strong>أو</strong><br>صلب النص";
+  $admtext['usenl'] = "تحويل فواصل الأسطر إلى صيغة HTML عند العرض";
     $admtext['newwin'] = "افتح في نافذة جديدة";
     $admtext['modifymedia'] = "تعديل الوسائط الحالية";
     $admtext['addnewmedia'] = "إضافة وسائط جديدة";
@@ -1126,7 +1126,7 @@ switch ($textpart) {
     $admtext['nobirthdate'] = "عند غياب تاريخ الميلاد، افترض";
     $admtext['persliving'] = "الفرد على قيد الحياة";
     $admtext['persdead'] = "الفرد متوفي";
-    $admtext['nodeathdate'] = "عند غياب تاريخ الوفاة، افترض الوفاة<br />لو زاد العمر عن";
+    $admtext['nodeathdate'] = "عند غياب تاريخ الوفاة، افترض الوفاة<br>لو زاد العمر عن";
     $admtext['pedconfigsettings'] = "إعدادات الرسومات البيانية";
     $admtext['usepopups'] = "شاشة العرض الأولى";
     $admtext['maxpedgens'] = "أقصى عدد من الأجيال";
@@ -1401,8 +1401,8 @@ switch ($textpart) {
     $admtext['mergeplaces'] = "دمج المناطق";
     $admtext['findmerge'] = "البحث عن مرشحين للدمج";
     $admtext['selectplacemerge'] = "اختر المكان للدمج";
-    $admtext['mcol1'] = "أدمج<br/>هؤلاء<br/>(حذف)";
-    $admtext['mcol2'] = "في<br/>هذا<br/>(احتفاظ)";
+    $admtext['mcol1'] = "أدمج<br>هؤلاء<br>(حذف)";
+    $admtext['mcol2'] = "في<br>هذا<br>(احتفاظ)";
     $admtext['pmsucc'] = "نجاح دمج المناطق";
     $admtext['nomerge'] = "لا يوجد شيء للدمج";
     $admtext['enterkeep'] = "فضلا اختر هدفا للدمج";
@@ -1479,7 +1479,7 @@ switch ($textpart) {
     $admtext['enterlangdisplay'] = "فضلا أدخل اسما للعرض للغة";
     $admtext['enterlangfolder'] = "فضلا أدخل اسم المجلد حيث سيتم تخزين ملفات هذه اللغة";
     $admtext['newlanguageinfo'] = "معلومات لغة جديدة";
-    $admtext['langdisplay'] = "اسم هذه اللغة<br/>كما سيتم إظهاره للزائرين.";
+    $admtext['langdisplay'] = "اسم هذه اللغة<br>كما سيتم إظهاره للزائرين.";
     $admtext['createlanguage'] = "إنشاء سجل للغة جديدة";
     $admtext['nolanguages'] = "لا توجد سجلات للغات";
     $admtext['conflangdelete'] = "هل أنت واثق أنك تريد حذف هذه اللغة؟";
@@ -1661,7 +1661,7 @@ switch ($textpart) {
   case "review":
     $admtext['selectevaction'] = "اختر الحدث والإجراء";
     $admtext['suggested'] = "مقترح";
-    $admtext['usernotes'] = "ملاحظات تخص<br />تغييرات مقترحة<br />(لن يتم حفظها)";
+    $admtext['usernotes'] = "ملاحظات تخص<br>تغييرات مقترحة<br>(لن يتم حفظها)";
     $admtext['postdate'] = "مقدم في";
     $admtext['savedel'] = "الحفظ والحذف";
     $admtext['postpone'] = "تأجيل";
@@ -2009,7 +2009,7 @@ $admtext['check'] = "تحقق";
 $admtext['generate'] = "ولد";
 $admtext['update'] = "حدّث";
 $admtext['confdeleteevent'] = "هل أنت متأكد أنك تريد حذف هذا الحدث؟";
-$admtext['existinglinks'] = "روابط قائمة:<br/>(اخترها لتحذفها)";
+$admtext['existinglinks'] = "روابط قائمة:<br>(اخترها لتحذفها)";
 $admtext['lowersortfirst'] = "الأرقام الدنيا تصنف أولا. كما يمكن استخدام الأرقام العشرية";
 $admtext['personsname'] = "اسم الفرد";
 $admtext['tablecreation'] = "إنشاء جدول";

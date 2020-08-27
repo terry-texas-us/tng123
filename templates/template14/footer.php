@@ -27,6 +27,6 @@
     </div>
 </div>
 <div class="cleared reset-box"></div>
-<br/>
+<br>
 
 </div>

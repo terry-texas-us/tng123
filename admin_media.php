@@ -243,27 +243,27 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                               $wherestr = $newwherestr;
                               ?>
                                 <input type="text" name="searchstring" value="<?php echo $originalstring; ?>" class="longfield">
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="aligntop">
+                              <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                              <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="aligntop">
                             </td>
                         </tr>
-                        <tr>
-                            <td><?php echo $admtext['fileext']; ?>:</td>
-                            <td>
-                                <input type="text" name="fileext" value="<?php echo $fileext; ?>" size="3">
-                                &nbsp;&nbsp;<input type="checkbox" name="unlinked" value="1"<?php if ($unlinked) {
-                                echo " checked";
-                              } ?> /> <?php echo $admtext['unlinked']; ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['mediatype']; ?>:</td>
-                            <td>
-                                <select name="mediatypeID" onchange="toggleHeadstoneCriteria(this.options[this.selectedIndex].value)">
+                      <tr>
+                        <td><?php echo $admtext['fileext']; ?>:</td>
+                        <td>
+                          <input type="text" name="fileext" value="<?php echo $fileext; ?>" size="3">
+                          &nbsp;&nbsp;<input type="checkbox" name="unlinked" value="1"<?php if ($unlinked) {
+                            echo " checked";
+                          } ?> > <?php echo $admtext['unlinked']; ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><?php echo $admtext['mediatype']; ?>:</td>
+                        <td>
+                          <select name="mediatypeID" onchange="toggleHeadstoneCriteria(this.options[this.selectedIndex].value)">
 
-                                  <?php
-                                  echo "<option value=\"\">{$admtext['all']}</option>\n";
-                                  foreach ($mediatypes as $mediatype) {
+                            <?php
+                            echo "<option value=\"\">{$admtext['all']}</option>\n";
+                            foreach ($mediatypes as $mediatype) {
                                     $msgID = $mediatype['ID'];
                                     echo "	<option value=\"$msgID\"";
                                     if ($msgID == $mediatypeID) {
@@ -335,9 +335,9 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findmedia" value="1"><input type="hidden" name="newsearch" value="1">
+                  <input type="hidden" name="findmedia" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-                <br/>
+              <br>
               <?php
               $numrowsplus = $numrows + $offset;
               if (!$numrowsplus) {
@@ -473,7 +473,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                         }
                         echo "</td>\n";
                         $description = $allow_edit || $allow_media_edit ? "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a>" : $row['description'];
-                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">$description<br />" . truncateIt(getXrefNotes($row['notes']), $maxnoteprev) . "</span></td>\n";
+                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">$description<br>" . truncateIt(getXrefNotes($row['notes']), $maxnoteprev) . "</span></td>\n";
                         if ($map['key']) {
                           echo "<td nowrap class=\"lightback\" valign=\"top\"><span class=\"normal\">";
                           $geo = "";
@@ -482,13 +482,13 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                           }
                           if ($row['longitude']) {
                             if ($geo) {
-                              $geo .= "<br />";
+                              $geo .= "<br>";
                             }
                             $geo .= $admtext['longitude'] . ": " . number_format($row['longitude'], 3);
                           }
                           if ($row['zoom']) {
                             if ($geo) {
-                              $geo .= "<br />";
+                              $geo .= "<br>";
                             }
                             $geo .= $admtext['zoom'] . ": " . $row['zoom'];
                           }

@@ -19,18 +19,18 @@ preparebookmark($logstring);
 tng_header($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h1><br class="clearleft"/>
+  <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h1><br class="clearleft">
 <?php
-$hiddenfields[] = array('name' => 'firstchar', 'value' => $firstchar);
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'firstnames-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+$hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnames-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 ?>
 
-    <div class="titlebox">
-        <div>
-            <p class="subhead"><b><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></b></p>
-            <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
-        </div>
-        <table class="sntable">
+  <div class="titlebox">
+    <div>
+      <p class="subhead"><b><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></b></p>
+      <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
+    </div>
+    <table class="sntable">
             <tr>
                 <td class="sncol">
                   <?php
@@ -63,7 +63,7 @@ echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'fir
                     while ($firstname = tng_fetch_assoc($result)) {
                       $firstname2 = urlencode($firstname['firstname']);
                       $name = $firstname['firstname'] ? "<a href=\"$search_url" . "myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : $text['nofirstname'];
-                      echo "$snnum. $name ({$firstname['lncount']})<br/>\n";
+                      echo "$snnum. $name ({$firstname['lncount']})<br>\n";
                       $snnum++;
                       $num_in_col_ctr++;
                       if ($num_in_col_ctr == $num_in_col) {
@@ -78,7 +78,7 @@ echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'fir
             </tr>
         </table>
     </div>
-    <br/>
+  <br>
 <?php
 tng_footer("");
 ?>

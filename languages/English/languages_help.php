@@ -6,21 +6,21 @@ echo help_header("Help: Languages");
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br/>
-                <a href="dna_help.php" class="lightlink">&laquo; Help: DNA Tests</a> &nbsp; | &nbsp;
-                <a href="backuprestore_help.php" class="lightlink">Help: Utilities &raquo;</a>
-            </p>
-            <span class="largeheader">Help: Languages</span>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a>
-            </p>
-        </td>
+  <tr class="fieldnameback">
+    <td class="tngshadow">
+      <p style="float:right; text-align:right" class="smaller menu">
+        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+        <a href="dna_help.php" class="lightlink">&laquo; Help: DNA Tests</a> &nbsp; | &nbsp;
+        <a href="backuprestore_help.php" class="lightlink">Help: Utilities &raquo;</a>
+      </p>
+      <span class="largeheader">Help: Languages</span>
+      <p class="smaller menu">
+        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+        <a href="#delete" class="lightlink">Delete</a>
+      </p>
+    </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

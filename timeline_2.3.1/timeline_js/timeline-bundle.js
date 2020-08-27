@@ -4182,10 +4182,10 @@ Timeline._Impl.prototype._initialize = function () {
     D.containerDiv.className = "timeline-message-container";
     H.appendChild(D.containerDiv);
     D.contentDiv.className = "timeline-message";
-    D.contentDiv.innerHTML = "<img src='" + Timeline.urlPrefix + "images/progress-running.gif' /> Loading...";
-    this.showLoadingMessage = function () {
-        D.containerDiv.style.display = "block";
-    };
+  D.contentDiv.innerHTML = "<img src='" + Timeline.urlPrefix + "images/progress-running.gif'> Loading...";
+  this.showLoadingMessage = function () {
+    D.containerDiv.style.display = "block";
+  };
     this.hideLoadingMessage = function () {
         D.containerDiv.style.display = "none";
     };
