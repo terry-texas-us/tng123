@@ -120,13 +120,13 @@ $menu = doMenu($branchtabs, "edit", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranch'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatebranch.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-                <table class="normal">
-                    <tr>
-                        <td valign="top"><?php echo $admtext['tree']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updatebranch.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+        <table class="normal">
+          <tr>
+            <td valign="top"><?php echo $admtext['tree']; ?>:</td>
                         <td><?php echo $treerow['treename']; ?></td>
                     </tr>
                     <tr>

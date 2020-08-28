@@ -125,7 +125,7 @@ a.footer:hover {
 }
 
 /* additional styles added for XHTML 1.0 Strict validation */
-/* featureimg defined to replace width="40" height="45" border="1" hspace="8" align="left" in index.php for feature images */
+/* featureimg defined to replace width="40" height="45" hspace="8" align="left" in index.php for feature images */
 .featureimg {
     width: 40px;
     height: 45px;
@@ -137,7 +137,7 @@ a.footer:hover {
     border-style: solid;
 }
 
-/* emailimg added to replace width="40" height="26" border="0" align="left" hspace="8" vspace="2" for email.gif */
+/* emailimg added to replace width="40" height="26" align="left" hspace="8" vspace="2" for email.gif */
 .emailimg {
     width: 40px;
     height: 26px;
@@ -149,7 +149,7 @@ a.footer:hover {
     border: 0px;
 }
 
-/* searchimg added to replace width="109" height="35" vspace="0" border="0" search4.gif */
+/* searchimg added to replace width="109" height="35" vspace="0" search4.gif */
 a.searchimg {
     padding-left: 7px;
     border: 0px;
@@ -162,14 +162,14 @@ a.searchimg {
     filter: dropshadow(color=#000000, offx=1, offy=1);
 }
 
-/* banner added to replace width="468" height="100" vspace="5" border="0" align="left" for title.gif */
+/* banner added to replace width="468" height="100" vspace="5" align="left" for title.gif */
 .banner {
     text-align: left;
     margin-top: 5px;
     border: 0px;
 }
 
-/* smallphoto added to replace width="71" height="100" vspace="5" border="0" align="right" for smallphoto.jpg */
+/* smallphoto added to replace width="71" height="100" vspace="5" align="right" for smallphoto.jpg */
 
 .smallphoto {
     float: right;
@@ -214,7 +214,7 @@ a.searchimg {
     vertical-align: top;
 }
 
-/* indexpage defined to replace bgcolor="#FFFFFF" sytle="text-align:left" "border="0" cellspacing="0" cellpadding="0" in index.php */
+/* indexpage defined to replace bgcolor="#FFFFFF" sytle="text-align:left" cellspacing="0" cellpadding="0" in index.php */
 .indexpage {
     background-color: #FFFFFF;
     margin-top: 0px;
@@ -227,7 +227,7 @@ a.searchimg {
     width: 90%; /* total width of all the columns */
 }
 
-/* bigphoto defined to replace width="300" height="172" border="0" in index.php */
+/* bigphoto defined to replace width="300" height="172" in index.php */
 .bigphoto {
     border: 0px;
     width: 100%;

@@ -7,21 +7,21 @@ echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $t
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-    <title>Aide : Administration</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Aide : Administration</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <?php
   include $relpath . "adminmeta.php";
   ?>
-    <style>
-        p {
-            margin-top: 0px;
-        }
-    </style>
+  <style>
+      p {
+          margin-top: 0px;
+      }
+  </style>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
       <p style="float:right; text-align:right" class="smaller menu">

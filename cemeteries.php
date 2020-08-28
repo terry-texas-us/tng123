@@ -23,7 +23,7 @@ $logstring = "<a href=\"$cemeteries_url" . "tree=$tree\">{$text['cemeteriesheads
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/cemeteries.css\" rel=\"stylesheet\" type=\"text/css\" />\n";
+$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/cemeteries.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>

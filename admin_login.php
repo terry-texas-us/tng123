@@ -95,10 +95,10 @@ if (!empty($reset)) {
 ?>
 <body background="img/background.gif">
 
-<table width="100%" border="0" cellpadding="10" bgcolor="#FFFFFF" class="rounded10">
-    <tr>
-        <td class="fieldnameback rounded10">
-            <span class="whiteheader"><font size="6"><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></font></span>
+<table width="100%" cellpadding="10" bgcolor="#FFFFFF" class="rounded10">
+  <tr>
+    <td class="fieldnameback rounded10">
+      <span class="whiteheader"><font size="6"><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></font></span>
         </td>
     </tr>
   <?php

@@ -27,7 +27,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <form action="" method="post" name="findciteform1" id="findciteform1" onsubmit="return <?php echo $applyfilter; ?>">
     <p class="subhead"><strong><?php echo $admtext['findciteid']; ?></strong><br>
       <span class="normal">(<?php echo $admtext['entersourcepart']; ?>)</span></p>
-    <table border="0" cellspacing="0" cellpadding="2" class="normal">
+    <table cellspacing="0" cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['title']; ?>:</td>
         <td><input type="text" name="mytitle" id="mytitle" class="longfield" onkeyup="filterChanged(event, {form:'findciteform1',fieldId:'mytitle',type:'C',tree:'<?php echo $tree; ?>',destdiv:'citeresults'<?php echo $mediaoption; ?>});"></td>

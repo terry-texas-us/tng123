@@ -46,10 +46,10 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'], "img
 $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead');
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <p class="subhead"><strong><?php echo $admtext['dataval']; ?></strong></p>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <p class="subhead"><strong><?php echo $admtext['dataval']; ?></strong></p>
 
           <?php
           if (!$assignedtree) {
@@ -81,10 +81,10 @@ $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'mar
             <?php
           }
           ?>
-            <table cellpadding="5" cellspacing="1" border="0" class="normal">
-                <tr>
-                    <td class="fieldnameback fieldname">&nbsp;<b>#</b>&nbsp;</td>
-                    <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['report']; ?></b>&nbsp;</td>
+      <table cellpadding="5" cellspacing="1" class="normal">
+        <tr>
+          <td class="fieldnameback fieldname">&nbsp;<b>#</b>&nbsp;</td>
+          <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['report']; ?></b>&nbsp;</td>
                 </tr>
               <?php
               for ($i = 1; $i <= count($reports); $i++) {

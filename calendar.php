@@ -27,7 +27,7 @@ function substr_unicode($str, $start, $len = null) {
           preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY), $start, $len));
 }
 
-$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/calendar.css\" rel=\"stylesheet\" type=\"text/css\" />\n";
+$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/calendar.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 $flags['scripting'] .= "
 <script language=\"javascript\">\n
 function redisplay(key) {\n

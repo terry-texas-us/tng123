@@ -45,7 +45,7 @@ $menu = doMenu($mediatabs, "thumbs", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <?php
   if (!$assignedtree) {
     if (function_exists('imageJpeg')) {

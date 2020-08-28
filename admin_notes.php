@@ -116,9 +116,9 @@ $notecount = tng_num_rows($notelinks);
         <p class="subhead"><strong><?php echo $admtext['addnewnote']; ?></strong> |
             <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
 
-        <table border="0" cellpadding="2" class="normal">
-          <tr>
-            <td valign="top"><?php echo $admtext['note']; ?>:</td>
+      <table cellpadding="2" class="normal">
+        <tr>
+          <td valign="top"><?php echo $admtext['note']; ?>:</td>
             <td><textarea wrap cols="60" rows="25" name="note"></textarea></td>
           </tr>
           <tr>

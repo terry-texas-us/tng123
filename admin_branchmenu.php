@@ -114,11 +114,11 @@ $menu = doMenu($branchtabs, "label", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <form action="admin_branchlabels.php" method="post" id="form1" name="form1" onSubmit="return validateForm();">
-        <table border="0" cellpadding="1" class="normal">
+        <table cellpadding="1" class="normal">
           <tr>
             <td><strong><?php echo $admtext['tree']; ?>:</strong></td>
             <td><?php echo $row['treename']; ?><input type="hidden" name="tree" value="<?php echo $tree; ?>"></td>

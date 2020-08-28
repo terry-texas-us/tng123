@@ -57,9 +57,9 @@ echo $formstr;
 ?>
     <input type="hidden" name="personID" value="<?php echo $personID; ?>">
     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-    <table border="0" cellspacing="1" cellpadding="4" class="whiteback">
-        <tr>
-            <td class="fieldnameback" width="30%"><span class="fieldname"><?php echo $text['gedstartfrom']; ?>:&nbsp; </span></td>
+  <table cellspacing="1" cellpadding="4" class="whiteback">
+    <tr>
+      <td class="fieldnameback" width="30%"><span class="fieldname"><?php echo $text['gedstartfrom']; ?>:&nbsp; </span></td>
             <td class="databack" width="70%"><span class="normal"><?php echo $name; ?></span></td>
         </tr>
       <?php

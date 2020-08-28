@@ -396,7 +396,7 @@ if ($pedigree['simile']) {
   $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . $cms['tngpath'] . "js/timeline.js\"></script>\n";
   $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . $cms['tngpath'] . "timeline_2.3.1/timeline_js/timeline-api.js\"></script>\n";
 }
-$flags['scripting'] .= "<link href=\"{$cms['tngpath']}css/timeline.css\" rel=\"stylesheet\" type=\"text/css\" />\n";
+$flags['scripting'] .= "<link href=\"{$cms['tngpath']}css/timeline.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 tng_header($text['timeline'] . ": $namestr", $flags);
 
 $photostr = showSmallPhoto($primaryID, $namestr, $rights['both'], 0, false, $row['sex']);
@@ -556,11 +556,11 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
 <?php
 if ($counter) {
   ?>
-    <a name="events" id="events"></a>
-    <table cellpadding="3" cellspacing="1" border="0" width="100%" class="whiteback">
-        <tr>
-            <td class="fieldnameback" width="20">&nbsp;</td>
-            <td class="fieldnameback" width="50"><span class="fieldname"><strong>&nbsp;<?php echo $text['date']; ?></strong></span></td>
+  <a name="events" id="events"></a>
+  <table cellpadding="3" cellspacing="1" width="100%" class="whiteback">
+    <tr>
+      <td class="fieldnameback" width="20">&nbsp;</td>
+      <td class="fieldnameback" width="50"><span class="fieldname"><strong>&nbsp;<?php echo $text['date']; ?></strong></span></td>
             <td class="fieldnameback"><span class="fieldname"><strong>&nbsp;<?php echo $text['event']; ?></strong></span></td>
         </tr>
       <?php

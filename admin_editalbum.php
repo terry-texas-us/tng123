@@ -148,7 +148,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 ?>
 
 <form action="admin_updatealbum.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-  <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
       <td class="tngshadow">
         <div>
@@ -213,9 +213,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     </p>
 
                     <p class="normal">&nbsp;<strong><?php echo $admtext['inclmedia']; ?>:</strong> <?php echo $admtext['emoptions']; ?></p>
-                    <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" border="0" class="fieldname normal">
-                        <tr>
-                            <td class="fieldnameback" style="width:102px">&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</td>
+                  <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
+                    <tr>
+                      <td class="fieldnameback" style="width:102px">&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</td>
                             <td class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</td>
                             <td class="fieldnameback">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
                             <td class="fieldnameback" style="width:154px">&nbsp;<b><?php echo $admtext['date']; ?></b>&nbsp;</td>

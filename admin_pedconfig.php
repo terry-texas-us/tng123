@@ -66,10 +66,10 @@ if (!isset($pedigree['vfontsize'])) {
 ?>
 
 <form action="admin_updatepedconfig.php" method="post" name="form1">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-              <?php echo displayToggle("plus0", 0, "ped", $admtext['pedchart'], ""); ?>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <?php echo displayToggle("plus0", 0, "ped", $admtext['pedchart'], ""); ?>
 
                 <div id="ped" style="display:none">
                     <table class="normal">

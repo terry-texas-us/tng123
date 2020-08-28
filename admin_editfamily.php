@@ -288,13 +288,13 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
 ?>
 
 <form action="admin_updatefamily.php" method="post" name="form1" id="form1">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-      <tr class="databack">
-        <td class="tngshadow">
-          <table cellpadding="0" cellspacing="0" class="normal">
-            <tr>
-              <td valign="top">
-                <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table cellpadding="0" cellspacing="0" class="normal">
+          <tr>
+            <td valign="top">
+              <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                   echo "display:none";
                 } ?>"><?php echo $photo; ?></div>
               </td>
@@ -507,10 +507,10 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                 echo displayToggle("plus2", 1, "children", $admtext['children'] . " (<span id=\"childcount\">$kidcount</span>)", "");
                 ?>
 
-                  <div id="children" style="padding-top:10px">
-                      <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1" border="0" class="normal">
-                          <tr>
-                              <td class="fieldnameback" style="width:55px"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</nobr></span></td>
+                <div id="children" style="padding-top:10px">
+                  <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1" class="normal">
+                    <tr>
+                      <td class="fieldnameback" style="width:55px"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</nobr></span></td>
                               <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['child']; ?></b>&nbsp;</nobr></span></td>
                           </tr>
                       </table>

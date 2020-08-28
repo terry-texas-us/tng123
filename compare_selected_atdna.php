@@ -97,10 +97,10 @@ echo $header;
 ?>
 
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" border="0" width="100%" class="whiteback normal">
-        <thead>
-        <tr>
-          <?php
+  <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <thead>
+    <tr>
+      <?php
           if ($allow_edit || $showtestnumbers) { ?>
               <th colspan="4" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
             <?php

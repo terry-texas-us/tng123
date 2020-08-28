@@ -25,7 +25,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
 
   <form action="admin_addcollection.php" method="post" name="collform" id="collform" onsubmit="return addCollection(this);">
-    <table border="0" cellpadding="2" class="normal">
+    <table cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['collid']; ?>:</td>
         <td><input type="text" name="collid" class="veryshortfield" onblur="if(!$('exportas').value) $('exportas').value = this.value.toUpperCase();"></td>

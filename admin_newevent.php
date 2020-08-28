@@ -22,10 +22,10 @@ header("Content-type:text/html; charset=" . $session_charset);
     <?php
   }
   ?>
-    <form action="" method="post" name="form1" id="form1" onSubmit="return addEvent(this);">
-        <table border="0" cellpadding="2" class="normal">
-            <tr>
-                <td valign="top"><span class="normal"><?php echo $admtext['eventtype']; ?>:</span></td>
+  <form action="" method="post" name="form1" id="form1" onSubmit="return addEvent(this);">
+    <table cellpadding="2" class="normal">
+      <tr>
+        <td valign="top"><span class="normal"><?php echo $admtext['eventtype']; ?>:</span></td>
                 <td>
 			<span class="normal">
 			<select name="eventtypeID" id="eventtypeID">
@@ -88,11 +88,11 @@ foreach ($events as $event)
             </tr>
         </table>
       <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
-      <br>
-      <div id="more" style="display:none">
-        <table border="0" cellpadding="2" class="normal">
-          <tr>
-            <td><?php echo $admtext['age']; ?>:</td>
+    <br>
+    <div id="more" style="display:none">
+      <table cellpadding="2" class="normal">
+        <tr>
+          <td><?php echo $admtext['age']; ?>:</td>
                     <td><input type="text" name="age" size="12" maxlength="12"></td>
                 </tr>
                 <tr>

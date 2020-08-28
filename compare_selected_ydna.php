@@ -185,10 +185,10 @@ $mainstyle = "background-color:$bgmain; color:$txtmain;";
 $modestyle = "background-color:$bgmode; color:$txtmode;";
 ?>
 <div class="overflowauto">
-  <table cellpadding="0" cellspacing="1" border="0" width="100%" class="whiteback normal">
+  <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
     <thead>
-        <tr>
-          <?php
+    <tr>
+      <?php
           $col_span = ($allow_edit || $showtestnumbers) ? 4 : 3;
           $style12 = "background-color:$bg1_12; color:$txt1_12;";
           $style25 = "background-color:$bg13_25; color:$txt13_25;";

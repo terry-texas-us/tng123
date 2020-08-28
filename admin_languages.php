@@ -75,13 +75,13 @@ $menu = doMenu($langtabs, "findlang", $innermenu);
 echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
 
-                <form action="admin_languages.php" name="form1">
-                  <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+        <form action="admin_languages.php" name="form1">
+          <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
                     <input type="hidden" name="findlang" value="1"><input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
@@ -98,10 +98,10 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
               echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
               ?>
 
-                <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                    <tr>
-                        <td class="fieldnameback fieldname">
-                            <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
+        <table cellpadding="3" cellspacing="1" class="normal">
+          <tr>
+            <td class="fieldnameback fieldname">
+              <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
                         </td>
                         <td class="fieldnameback fieldname">
                             <nobr>&nbsp;<b><?php echo $admtext['display']; ?></b>&nbsp;</nobr>

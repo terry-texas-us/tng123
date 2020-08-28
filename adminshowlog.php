@@ -24,9 +24,9 @@ tng_adminheader($admtext['adminlogfile'], "");
 <div width="100%" class="lightback">
     <div style="padding:10px" class="databack normal">
         <p class="plainheader"><?php echo "$loglines " . $admtext['mostrecentactions']; ?></p>
-        <table cellpadding="3" cellspacing="1" border="0" class="normal">
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $admtext['mostrecentactions']; ?></td>
+      <table cellpadding="3" cellspacing="1" class="normal">
+        <tr>
+          <td class="fieldnameback fieldname"><?php echo $admtext['mostrecentactions']; ?></td>
             </tr>
           <?php
           $lines = file($adminlogfile);

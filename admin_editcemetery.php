@@ -100,7 +100,7 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['modifycem
 ?>
 
 <form action="admin_updatecemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onSubmit="return validateForm();">
-  <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
       <td class="tngshadow">
         <table class="normal" width="100%">

@@ -17,7 +17,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findreporesdiv">
-  <table border="0" cellpadding="0">
+  <table cellpadding="0">
     <tr>
       <td valign="top">
         <span class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></span><br>
@@ -29,7 +29,7 @@ header("Content-type:text/html; charset=" . $session_charset);
       </td>
     </tr>
   </table>
-  <table border="0" cellspacing="1" cellpadding="3">
+  <table cellspacing="1" cellpadding="3">
     <tr>
       <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['repoid']; ?></b>&nbsp;</span></td>
             <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['name']; ?></b>&nbsp;</span></td>

@@ -27,8 +27,8 @@ header("Content-type:text/html; charset=" . $session_charset);
     <p class="subhead"><strong><?php echo $admtext['modifycite']; ?></strong> |
         <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
 
-    <table border="0" cellpadding="2" class="normal">
-      <?php
+  <table cellpadding="2" class="normal">
+    <?php
       if ($row['sourceID']) {
         ?>
         <tr>

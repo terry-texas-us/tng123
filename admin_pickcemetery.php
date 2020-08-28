@@ -17,13 +17,13 @@ $result = tng_query($query);
     ?>
       <h1 class="subhead"><strong><?php echo $admtext['choosecem']; ?></strong></h1>
       <p><?php echo $admtext['cemsavail']; ?></p>
-      <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
-          <table border="0" cellspacing="0" cellpadding="2">
-              <tr>
-                  <td>
-                      <select name="cemeteryID" id="cemeteryID">
-                          <option value=""></option>
-                        <?php
+    <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
+      <table cellspacing="0" cellpadding="2">
+        <tr>
+          <td>
+            <select name="cemeteryID" id="cemeteryID">
+              <option value=""></option>
+              <?php
                         while ($cemrow = tng_fetch_assoc($result)) {
                           $location = $cemrow['country'];
                           if ($cemrow['state']) {

@@ -39,7 +39,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <p class="subhead"><strong><?php echo $admtext['mostwanted'] . ": " . $typemsg; ?></strong> |
     <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/mostwanted_help.php');"><?php echo $admtext['help']; ?></a></p>
   <form action="" name="editmostwanted" onsubmit="return updateMostWanted(this);">
-    <table border="0" cellpadding="2" class="normal">
+    <table cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['title']; ?>:</td>
         <td><input type="text" name="title" size="60" maxlength="128" value="<?php echo $row['title']; ?>" style="width:500px"></td>
@@ -80,7 +80,7 @@ header("Content-type:text/html; charset=" . $session_charset);
       <tr>
         <td><?php echo $admtext['person']; ?>:</td>
         <td>
-          <table cellpadding="0" cellspacing="0" border="0" class="normal">
+          <table cellpadding="0" cellspacing="0" class="normal">
             <tr>
               <td>
                 <input type="text" name="personID" id="personID" size="22" maxlength="22" value="<?php echo $row['personID']; ?>" class="shortfield"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;

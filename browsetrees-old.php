@@ -72,10 +72,10 @@ if ($pagenav || $treesearch) {
   echo doTreeSearch(1, $pagenav);
 }
 ?>
-<table cellpadding="3" cellspacing="1" border="0" class="whiteback">
-    <tr>
-        <td class="fieldnameback">&nbsp;</td>
-        <td class="fieldnameback" nowrap><span class="fieldname">&nbsp;<strong><?php echo $text['treename']; ?></strong>&nbsp;</span></td>
+<table cellpadding="3" cellspacing="1" class="whiteback">
+  <tr>
+    <td class="fieldnameback">&nbsp;</td>
+    <td class="fieldnameback" nowrap><span class="fieldname">&nbsp;<strong><?php echo $text['treename']; ?></strong>&nbsp;</span></td>
         <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<strong><?php echo $text['description']; ?></strong>&nbsp;</nobr></span></td>
         <td class="fieldnameback" nowrap><span class="fieldname">&nbsp;<strong><?php echo $text['individuals']; ?></strong>&nbsp;</span></td>
     </tr>

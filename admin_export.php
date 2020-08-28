@@ -65,13 +65,13 @@ $menu = doMenu($datatabs, "export", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback normal">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_gedcom2.php" method="post" name="form1">
-                <table class="normal">
-                    <tr>
-                        <td><?php echo $admtext['tree']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_gedcom2.php" method="post" name="form1">
+        <table class="normal">
+          <tr>
+            <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
                             <select name="tree" id="treeselect" onchange="swapBranches(document.form1);">
                               <?php

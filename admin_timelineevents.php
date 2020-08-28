@@ -73,12 +73,12 @@ $menu = doMenu($timelinetabs, "findtimeline", $innermenu);
 echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
-                <form action="admin_timelineevents.php" name="form1">
-                  <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
+        <form action="admin_timelineevents.php" name="form1">
+          <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                     <input type="hidden" name="findtlevent" value="1"><input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop"></form>
@@ -105,9 +105,9 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                     <?php
                   }
                   ?>
-                    <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                        <tr>
-                            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
+                  <table cellpadding="3" cellspacing="1" class="normal">
+                    <tr>
+                      <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
                           <?php
                           if ($allow_delete) {
                             ?>

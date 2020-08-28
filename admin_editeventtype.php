@@ -136,13 +136,13 @@ $menu = doMenu($evtabs, "edit", $innermenu);
 echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['modifyeventtype'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updateeventtype.php" method="post" name="form1" onsubmit="return validateForm();">
-                <table class="normal">
-                    <tr>
-                        <td valign="top"><?php echo $admtext['assocwith']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updateeventtype.php" method="post" name="form1" onsubmit="return validateForm();">
+        <table class="normal">
+          <tr>
+            <td valign="top"><?php echo $admtext['assocwith']; ?>:</td>
                         <td>
                             <select name="type" onChange="populateTags(this.options[this.selectedIndex].value,'');">
                                 <option value="I"<?php if ($row['type'] == "I") {

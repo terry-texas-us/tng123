@@ -77,10 +77,10 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     <input type="hidden" name="link_personID" value="<?php echo $personID; ?>">
     <input type="hidden" name="link_tree" value="<?php echo $tree; ?>">
     <input type="hidden" name="link_linktype" value="<?php echo $linktype; ?>">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-              <?php echo displayToggle("plus0", 1, "mediafile", $admtext['imagefile'], $admtext['uplsel']); ?>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <?php echo displayToggle("plus0", 1, "mediafile", $admtext['imagefile'], $admtext['uplsel']); ?>
 
               <div id="mediafile">
                 <br>

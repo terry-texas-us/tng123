@@ -363,13 +363,13 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
 ?>
 
 <form action="admin_updateperson.php" method="post" name="form1" id="form1">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback normal">
-      <tr class="databack">
-        <td class="tngshadow">
-          <table cellpadding="0" cellspacing="0" class="normal">
-            <tr>
-              <td valign="top">
-                <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table cellpadding="0" cellspacing="0" class="normal">
+          <tr>
+            <td valign="top">
+              <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                   echo "display:none";
                 } ?>"><?php echo $photo; ?></div>
               </td>

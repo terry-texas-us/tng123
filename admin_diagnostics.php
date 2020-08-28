@@ -37,10 +37,10 @@ tng_adminheader($admtext['diagnostics'], $flags);
     echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'], "img/setup_icon.gif", $menu, "");
     ?>
 
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback normal">
-        <tr>
-            <td class="tngshadow databack" valign="top" colspan="2">
-                <em><?php echo $admtext['sysinfo']; ?></em>
+    <table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
+      <tr>
+        <td class="tngshadow databack" valign="top" colspan="2">
+          <em><?php echo $admtext['sysinfo']; ?></em>
             </td>
         </tr>
         <tr>

@@ -178,13 +178,13 @@ $menu = doMenu($reporttabs, "addreport", $innermenu);
 echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport'], "img/reports_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_addreport.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-                <table>
-                    <tr>
-                        <td><span class="normal"><?php echo $admtext['reportname']; ?>:</span></td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_addreport.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+        <table>
+          <tr>
+            <td><span class="normal"><?php echo $admtext['reportname']; ?>:</span></td>
                         <td><input type="text" name="reportname" size="50" maxlength="80"></td>
                     </tr>
                     <tr>
@@ -209,7 +209,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                   </tr>
                   <tr>
                     <td valign="top" colspan="2">
-                      <table border="0" cellspacing="0" cellpadding="0">
+                      <table cellspacing="0" cellpadding="0">
                         <tr>
                           <td valign="top">
                             <select name="availfields" size="15" class="reportcol" onDblClick="AddtoDisplay(document.form1.availfields,document.form1.displayfields);">
@@ -248,11 +248,11 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                   </tr>
                   <tr>
                     <td valign="top" colspan="2">
-                            <table border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td valign="top">
-                                        <select name="availcriteria" size="12" class="reportcol" onDblClick="AddtoDisplay(document.form1.availcriteria,document.form1.finalcriteria);">
-                                          <?php
+                      <table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td valign="top">
+                            <select name="availcriteria" size="12" class="reportcol" onDblClick="AddtoDisplay(document.form1.availcriteria,document.form1.finalcriteria);">
+                              <?php
                                           foreach ($cfields as $key => $value) {
                                             if ($key != "desc") {
                                               echo "<option value=\"$key\">{$admtext[$value]}</option>\n";
@@ -339,13 +339,13 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                     <td valign="top" colspan="2"><br>
                       <p class="subhead"><b><?php echo $admtext['choosesort']; ?>:</b></p></td>
                   </tr>
-                    <tr>
-                        <td valign="top" colspan="2">
-                            <table border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td valign="top">
-                                        <select name="availsort" size="10" class="reportcol" onDblClick="AddtoDisplay(document.form1.availsort,document.form1.finalsort);">
-                                          <?php
+          <tr>
+            <td valign="top" colspan="2">
+              <table cellspacing="0" cellpadding="0">
+                <tr>
+                  <td valign="top">
+                    <select name="availsort" size="10" class="reportcol" onDblClick="AddtoDisplay(document.form1.availsort,document.form1.finalsort);">
+                      <?php
                                           foreach ($cfields as $key => $value)
                                             echo "<option value=\"$key\">{$admtext[$value]}</option>\n";
                                           //now do custom event types, prefix with "ce_"

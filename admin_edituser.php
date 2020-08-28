@@ -103,13 +103,13 @@ $menu = doMenu($usertabs, "edit", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback normal">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updateuser.php" method="post" name="form1" onSubmit="return validateForm();">
-                <table class="normal">
-                    <tr>
-                        <td><?php echo $admtext['description']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updateuser.php" method="post" name="form1" onSubmit="return validateForm();">
+        <table class="normal">
+          <tr>
+            <td><?php echo $admtext['description']; ?>:</td>
                         <td><input type="text" name="description" size="50" maxlength="50" value="<?php echo $row['description']; ?>"></td>
                     </tr>
                     <tr>

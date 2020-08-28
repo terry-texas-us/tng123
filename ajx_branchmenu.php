@@ -24,7 +24,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <span class="subhead"><strong><?php echo $admtext['addlabels']; ?></strong></span><br>
 
   <form action="#" method="post" id="form2" name="form2" onsubmit="return addLabels();">
-    <table border="0" cellpadding="1" class="normal">
+    <table cellpadding="1" class="normal">
       <tr>
         <td colspan="2"><br><strong><?php echo $admtext['action']; ?>:</strong></td>
       </tr>
@@ -50,18 +50,21 @@ header("Content-type:text/html; charset=" . $session_charset);
         <td>
           <div><br>
             <select name="overwrite" id="overwrite">
-              <?php
-              $action = $brow['action'] ? $brow['action'] : 2;
-              ?>
+              <?php $action = $brow['action'] ? $brow['action'] : 2; ?>
               <option value="2" <?php if ($action == 2) {
                 echo " selected=\"selected\"";
-              } ?>><?php echo $admtext['append']; ?></option>
-                            <option value="1" <?php if ($action == 1) {
-                              echo " selected=\"selected\"";
-                            } ?>><?php echo $admtext['overwrite']; ?></option>
+              } ?>>
+                <?php echo $admtext['append']; ?>
+              </option>
+              <option value="1" <?php if ($action == 1) {
+                echo " selected=\"selected\"";
+              } ?>>
+                <?php echo $admtext['overwrite']; ?>
+              </option>
               <option value="0" <?php if ($action == 0) {
                 echo " selected=\"selected\"";
-              } ?>"><?php echo $admtext['leave']; ?></option>
+              } ?>>
+                <?php echo $admtext['leave']; ?></option>
             </select>
           </div>
         </td>

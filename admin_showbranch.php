@@ -44,12 +44,12 @@ $menu = doMenu($branchtabs, "label", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <table border="0" cellpadding="1">
-                <tr>
-                    <td><span class="normal"><strong><?php echo $admtext['tree']; ?>:</strong></span></td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <table cellpadding="1">
+        <tr>
+          <td><span class="normal"><strong><?php echo $admtext['tree']; ?>:</strong></span></td>
                     <td><span class="normal"><?php echo $row['treename']; ?></span></td>
                 </tr>
                 <tr>

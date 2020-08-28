@@ -269,7 +269,7 @@ $menu = doMenu($peopletabs, "review", $innermenu);
 echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <span class="subhead"><strong><?php echo "$persfamID: $name</strong> $teststr $editstr"; ?></span><br><br>

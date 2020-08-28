@@ -179,12 +179,12 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
 
 <form action="admin_addfamily.php" method="post" name="form1" onSubmit="return validateFamily(this);">
     <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table class="normal">
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table class="normal">
+          <tr>
+            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
                     </tr>
                     <tr>
                         <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>

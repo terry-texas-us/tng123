@@ -44,13 +44,13 @@ $menu = doMenu($usertabs, "mail", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['emailmessage'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_sendmailusers.php" method="post" name="form1" onSubmit="return validateForm();">
-              <table>
-                <tr>
-                  <td valign="top"><span class="normal"><?php echo $admtext['subject']; ?>:</span></td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_sendmailusers.php" method="post" name="form1" onSubmit="return validateForm();">
+        <table>
+          <tr>
+            <td valign="top"><span class="normal"><?php echo $admtext['subject']; ?>:</span></td>
                   <td><span class="normal"><input type="text" name="subject" size="50" maxlength="50"></span></td>
                 </tr>
                 <tr>

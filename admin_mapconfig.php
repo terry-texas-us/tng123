@@ -61,13 +61,13 @@ $menu = doMenu($setuptabs, "map", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['mapconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="normal lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatemapconfig.php" method="post" name="form1">
-                <table class="normal">
-                    <tr>
-                        <td><?php echo $admtext['mapkey']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="normal lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updatemapconfig.php" method="post" name="form1">
+        <table class="normal">
+          <tr>
+            <td><?php echo $admtext['mapkey']; ?>:</td>
                         <td><input type="text" value="<?php echo $map['key']; ?>" name="mapkey" size="80"></td>
                     </tr>
                     <tr>

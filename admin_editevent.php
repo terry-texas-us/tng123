@@ -32,10 +32,10 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow">
     <p class="subhead"><strong><?php echo $admtext['modifyevent']; ?></strong> |
         <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/events_help.php');"><?php echo $admtext['help']; ?></a></p>
-    <form action="" method="post" name="form1" id="form1" onSubmit="return updateEvent(this);">
-        <table border="0" cellpadding="2" class="normal">
-            <tr>
-              <td><?php echo $admtext['eventtype']; ?>:</td>
+  <form action="" method="post" name="form1" id="form1" onSubmit="return updateEvent(this);">
+    <table cellpadding="2" class="normal">
+      <tr>
+        <td><?php echo $admtext['eventtype']; ?>:</td>
               <td><?php echo "{$row['tag']} $display"; ?></td>
             </tr>
           <tr>
@@ -72,11 +72,11 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
         </table>
       <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
-      <br>
-      <div id="more" style="display:none">
-        <table border="0" cellpadding="2" class="normal">
-          <tr>
-            <td><?php echo $admtext['age']; ?>:</td>
+    <br>
+    <div id="more" style="display:none">
+      <table cellpadding="2" class="normal">
+        <tr>
+          <td><?php echo $admtext['age']; ?>:</td>
                     <td><input type="text" name="age" size="12" maxlength="12" value="<?php echo $row['age']; ?>"></td>
                 </tr>
                 <tr>

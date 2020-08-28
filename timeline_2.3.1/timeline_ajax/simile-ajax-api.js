@@ -85,7 +85,7 @@ if (typeof SimileAjax == "undefined") {
     SimileAjax.includeCssFile = function (doc, url) {
         if (doc.body == null) {
             try {
-                doc.write("<link rel='stylesheet' href='" + url + "' type='text/css'/>");
+                doc.write("<link rel='stylesheet' href='" + url + "' type='text/css'>");
                 return;
             } catch (e) {
                 // fall through

@@ -47,7 +47,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findpersonresdiv">
-  <table border="0" cellpadding="0">
+  <table cellpadding="0">
     <tr>
       <td>
         <p class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></p>
@@ -60,7 +60,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     </tr>
   </table>
   <br>
-  <table border="0" cellspacing="0" cellpadding="2">
+  <table cellspacing="0" cellpadding="2">
     <?php
       while ($row = tng_fetch_assoc($result)) {
         $birthdate = $deathdate = "";

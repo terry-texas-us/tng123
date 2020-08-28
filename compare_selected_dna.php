@@ -131,10 +131,10 @@ $mainstyle = "background-color:$bgmain; color:$txtmain;";
 $modestyle = "background-color:$bgmode; color:$txtmode;";
 ?>
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" border="0" width="100%" class="whiteback normal">
-        <thead>
-        <tr>
-          <?php if ($allow_edit || $showtestnumbers) { ?>
+  <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <thead>
+    <tr>
+      <?php if ($allow_edit || $showtestnumbers) { ?>
               <th class="fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
           <?php } ?>
             <th class="fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>

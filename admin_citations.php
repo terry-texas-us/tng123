@@ -113,7 +113,7 @@ $citationcount = tng_num_rows($citresult);
       <p class="subhead"><strong><?php echo $admtext['addnewcite']; ?></strong> |
         <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
 
-      <table border="0" cellpadding="2" class="normal">
+      <table cellpadding="2" class="normal">
         <tr>
           <td><?php echo $admtext['sourceid']; ?>:</td>
           <td>
@@ -181,7 +181,7 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
   <form action="" method="post" name="findsourceform1" id="findsourceform1" onsubmit="return <?php echo $applyfilter; ?>">
     <p class="subhead"><strong><?php echo $admtext['findsourceid']; ?></strong><br>
       <span class="normal">(<?php echo $admtext['entersourcepart']; ?>)</span></p>
-    <table border="0" cellspacing="0" cellpadding="2" class="normal">
+    <table cellspacing="0" cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['title']; ?>:</td>
         <td><input type="text" name="mytitle" id="mytitle" onkeyup="filterChanged(event, {form:'findsourceform1', fieldId:'mytitle', type:'S', tree:'<?php echo $tree; ?>', destdiv:'sourceresults'});"></td>
@@ -210,7 +210,7 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
     <p class="subhead"><strong><?php echo $admtext['addnewsource']; ?></strong> |
       <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/sources_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
     <span class="normal"><strong><?php echo $admtext['prefixsourceid']; ?></strong></span><br>
-    <table border="0" cellspacing="0" cellpadding="2" class="normal">
+    <table cellspacing="0" cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['sourceid']; ?>:</td>
         <td>

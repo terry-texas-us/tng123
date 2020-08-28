@@ -30,7 +30,7 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
 
   <h1 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h1><br clear="all">
 
-  <table border="0" cellspacing="1" cellpadding="4" class="whiteback normal">
+  <table cellspacing="1" cellpadding="4" class="whiteback normal">
     <?php
     if ($row['treename']) {
       showFact($text['treename'], $row['treename']);

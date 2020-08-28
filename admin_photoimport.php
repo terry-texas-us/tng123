@@ -59,13 +59,13 @@ $menu = doMenu($mediatabs, "import", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_photoimporter.php" method="post" name="form1">
-                <table>
-                    <tr>
-                        <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_photoimporter.php" method="post" name="form1">
+        <table>
+          <tr>
+            <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
                         <td>
                             <select name="mediatypeID" onChange="switchOnType(this.options[this.selectedIndex].value)">
                               <?php

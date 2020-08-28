@@ -225,7 +225,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 }
 
 /* tableborder to replace hard-coded style in topmenu.php */
-/* bgcolor="#FAF4E6" border="2" bordercolor="#000000" style="border-collapse: collapse" */
+/* bgcolor="#FAF4E6" bordercolor="#000000" style="border-collapse: collapse" */
 .tableborder {
     background-color: #FAF4E6;
     border-collapse: collapse;
@@ -339,7 +339,7 @@ a.footer:hover {
     width: 280px;
 }
 
-/* bigphoto defined to replace width="300" height="172" border="0" in index.php */
+/* bigphoto defined to replace width="300" height="172" in index.php */
 .bigphoto {
     width: 300px;
     height: 172px;

@@ -155,7 +155,7 @@ tng_adminheader($admtext['administration'], "");
 </head>
 
 <body background="img/background.gif" class="mainback">
-<table border="0" cellspacing="0" cellpadding="0" class="mainbox">
+<table cellspacing="0" cellpadding="0" class="mainbox">
   <?php
   //no users?
   $messages = "";

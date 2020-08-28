@@ -6,13 +6,13 @@ if (!$cms['support']) {
 }
 
 //No index only
-$NOI = "<meta name=\"robots\" content=\"noindex\" />\n";
+$NOI = "<meta name=\"robots\" content=\"noindex\">\n";
 
 //No follow only
-$NOF = "<meta name=\"robots\" content=\"nofollow\" />\n";
+$NOF = "<meta name=\"robots\" content=\"nofollow\">\n";
 
 //No index AND no follow
-$NOINOF = "<meta name=\"robots\" content=\"noindex,nofollow\" />\n";
+$NOINOF = "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
 
 //each "case" is the name of the script file without the ".php" at the end
 if ($tngprint) {

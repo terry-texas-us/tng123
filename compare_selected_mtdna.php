@@ -96,12 +96,12 @@ echo $header;
 ?>
 
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" border="0" width="100%" class="whiteback normal">
-        <thead>
-        <tr>
-            <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
+  <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <thead>
+    <tr>
+      <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
 
-          <?php
+      <?php
           if ($allow_edit || $showtestnumbers) { ?>
               <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
             <?php

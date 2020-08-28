@@ -77,7 +77,7 @@ $menu = doMenu($treetabs, "edit", $innermenu);
 echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['modifytree'], "img/trees_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <form action="admin_updatetree.php" method="post" name="form1" onSubmit="return validateForm();">

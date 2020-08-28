@@ -167,7 +167,7 @@ a.topmenu:hover {
     text-align: left;
 }
 
-/* titleimg added to replace width="630" height="93" hspace="10" border="0" in index.php for title.gif */
+/* titleimg added to replace width="630" height="93" hspace="10" in index.php for title.gif */
 .titleimg {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -176,19 +176,19 @@ a.topmenu:hover {
     border: 0px;
 }
 
-/* mainimg added to replace width="530" height="303" border="0" in index.php for mainstreet.jpg */
+/* mainimg added to replace width="530" height="303" in index.php for mainstreet.jpg */
 .mainimg {
     margin: 0 0 0 0;
     border: 0px;
 }
 
-/* mainimg added to replace width="186" height="110" border="0" in topmenu for headerphoto.jpg */
+/* mainimg added to replace width="186" height="110" in topmenu for headerphoto.jpg */
 .headerphoto {
     margin: 0 0 0 0;
     border: 0px;
 }
 
-/* menutitle added to replace width="565" height="86" border="0" in topmenu for title.gif */
+/* menutitle added to replace width="565" height="86" in topmenu for title.gif */
 .menutitle {
     margin: 0 0 0 0;
     width: 565px;

@@ -99,14 +99,14 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
 ?>
 
 <form action="admin_gedimport.php" target="results" name="form1" method="post" ENCTYPE="multipart/form-data" onsubmit="return checkFile(this);">
-  <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
       <td class="tngshadow">
         <div class="normal">
           <em><?php echo $admtext['addreplacedata']; ?></em><br><br>
 
           <p class="subhead"><strong><?php echo $admtext['importgedcom']; ?>:</strong></p>
-          <table border="0" cellpadding="1" class="normal">
+          <table cellpadding="1" class="normal">
             <tr>
               <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
               <td><input type="file" name="remotefile" size="50"></td>
@@ -131,9 +131,9 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
     <tr class="databack">
       <td class="tngshadow" id="desttree">
         <p class="subhead"><strong><?php echo $admtext['selectexisting']; ?>:</strong></p>
-        <table border="0" cellpadding="1" class="normal">
+        <table cellpadding="1" class="normal">
           <tr id="desttree2">
-                        <td>&nbsp;&nbsp;<?php echo $admtext['desttree']; ?>:</td>
+            <td>&nbsp;&nbsp;<?php echo $admtext['desttree']; ?>:</td>
                         <td>
                             <select name="tree1" id="tree1" onchange="getBranches(this,this.selectedIndex);">
                               <?php
@@ -164,20 +164,20 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                         <td>&nbsp;&nbsp;<?php echo $admtext['destbranch']; ?>:</td>
                         <td>
                             <div id="branch1div">
-                                <select name="branch1" id="branch1">
-                                </select>
+                              <select name="branch1" id="branch1">
+                              </select>
                             </div>
                         </td>
                     </tr>
-                </table>
-            </td>
-        </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-                <table border="0" cellpadding="1" class="normal">
-                    <tr id="replace">
-                        <td colspan="2">
-                            <p class="subhead"><strong><?php echo $admtext['replace']; ?>:</strong></p>
+        </table>
+      </td>
+    </tr>
+    <tr class="databack">
+      <td class="tngshadow">
+        <table cellpadding="1" class="normal">
+          <tr id="replace">
+            <td colspan="2">
+              <p class="subhead"><strong><?php echo $admtext['replace']; ?>:</strong></p>
                             <input type="radio" name="del" value="yes"<?php if ($tngimpcfg['defimpopt'] == 1) {
                               echo " checked=\"checked\"";
                             } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['allcurrentdata']; ?> &nbsp;

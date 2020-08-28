@@ -55,12 +55,12 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource
 ?>
 
 <form action="admin_addsource.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table class="normal">
-                    <tr>
-                        <td colspan="2"><strong><?php echo $admtext['prefixsourceid']; ?></strong></td>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table class="normal">
+          <tr>
+            <td colspan="2"><strong><?php echo $admtext['prefixsourceid']; ?></strong></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['tree']; ?></td>

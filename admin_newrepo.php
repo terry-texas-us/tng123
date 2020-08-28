@@ -58,12 +58,12 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
 ?>
 
 <form action="admin_addrepo.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table>
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixrepoid']; ?></strong></span></td>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table>
+          <tr>
+            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixrepoid']; ?></strong></span></td>
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>

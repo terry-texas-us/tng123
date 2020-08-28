@@ -84,10 +84,10 @@ echo tng_coreicons();
 if (!$tngconfig['disallowreg']) {
   echo "<p class=\"normal\"><strong>*{$text['required']}</strong></p>\n";
   ?>
-  <table border="0" cellpadding="0" cellspacing="2">
+  <table cellpadding="0" cellspacing="2">
     <tr>
-            <td>
-              <?php
+      <td>
+        <?php
               $onsubmit = $ucount ? "return validateForm(this);" : "alert('{$text['nousers']}');return false;";
               $formstr = getFORM("addnewacct", "post", "form1", "", $onsubmit);
               echo $formstr;

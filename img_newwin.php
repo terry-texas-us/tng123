@@ -12,7 +12,7 @@ echo $tngconfig['doctype'] ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PU
 <head>
   <?php @include $custommeta;
   if ($session_charset) {
-    echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\" />\n";
+    echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
   }
   $title = $_GET['title'];
   $siteprefix = $sitename ? htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";

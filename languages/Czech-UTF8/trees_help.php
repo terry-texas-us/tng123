@@ -1,32 +1,33 @@
 <?php
+
 include "../../helplib.php";
 echo help_header("Nápověda: Stromy");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
       <p style="float:right; text-align:right" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="users_help.php" class="lightlink">&laquo; Nápověda: Uživatelé</a> &nbsp; | &nbsp;
-        <a href="branches_help.php" class="lightlink">Nápověda: Větve &raquo;</a>
+          <a href="users_help.php" class="lightlink">&laquo; Nápověda: Uživatelé</a> &nbsp; | &nbsp;
+          <a href="branches_help.php" class="lightlink">Nápověda: Větve &raquo;</a>
       </p>
-      <span class="largeheader">Nápověda: Stromy</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#clear" class="lightlink">Vyčistit</a>
-      </p>
-        </td>
-    </tr>
+        <span class="largeheader">Nápověda: Stromy</span>
+        <p class="smaller menu">
+            <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+            <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
+            <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <a href="#clear" class="lightlink">Vyčistit</a>
+        </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
 
@@ -47,7 +48,8 @@ echo help_header("Nápověda: Stromy");
             <p style="float:right"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nový / Upravit existující stromy</p></a>
             <p><strong>Strom</strong> v TNG je zásobník samostatného souboru rodinných údajů. TNG umožňuje na vašich stránkách podporu více stromů, ale protože
-                jsou stromy samostatné, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jiného stromu. Z tohoto důvodu by měly být osoby, které jsou nebo by měly být navzájem spojeny,
+                jsou stromy samostatné, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jiného stromu. Z tohoto důvodu by měly být osoby, které jsou nebo by měly být navzájem
+                spojeny,
                 udržovány ve stejném stromě.</p>
 
             <p><strong>POZN.: Strom musíte přidat před tím, než budete zadávat nebo importovat data</strong> osob, rodin, pramenů nebo úložiště pramenů. Pokud jste aktualizovali z nižší verze,
@@ -104,9 +106,10 @@ echo help_header("Nápověda: Stromy");
         <td class="tngshadow">
 
             <p style="float:right"><a href="#top">Nahoru</a></p>
-            <a name="clear"><p class="subheadbold">Vyčištění stromů</p>
-                Chcete-li strom "vyčistit" (vymazat všechny údaje, ale strom samotný ponechat), použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vyčistit vedle záznamu tohoto stromu.
-                <em>Všechny údaje spojené s tímto stromem (včetně osob, rodin, pramenů, úložišť pramenů, médií a větví) budou odstraněny</em>.</p>
+            <a name="clear"><p class="subheadbold">Vyčištění stromů</p></a>
+            Chcete-li strom "vyčistit" (vymazat všechny údaje, ale strom samotný ponechat), použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vyčistit
+            vedle záznamu tohoto stromu.
+            <em>Všechny údaje spojené s tímto stromem (včetně osob, rodin, pramenů, úložišť pramenů, médií a větví) budou odstraněny</em>.</p>
 
         </td>
     </tr>

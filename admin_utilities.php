@@ -196,10 +196,10 @@ $headline = $sub == "tables" ? $admtext['backuprestore'] . " &gt;&gt; " . $admte
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-          <?php
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <?php
           if ($sub == "tables") {
             ?>
               <p class="normal"><i><?php echo $admtext['brinstructions']; ?></i></p>
@@ -223,10 +223,10 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                           <input type="submit" name="go" value="<?php echo $admtext['go']; ?>">
                       </p>
 
-                      <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                          <tr>
-                              <td class="fieldnameback fieldname">
-                                  <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
+                    <table cellpadding="3" cellspacing="1" class="normal">
+                      <tr>
+                        <td class="fieldnameback fieldname">
+                          <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
                               </td>
                               <td class="fieldnameback fieldname">
                                   <nobr>&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</nobr>
@@ -292,10 +292,10 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
               <p class="normal"><i><?php echo $admtext['brinstructions2']; ?></i></p>
 
               <p class="subhead"><strong><?php echo $admtext['backupstruct']; ?></strong></p>
-              <div class="normal">
-                  <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                      <tr>
-                          <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
+            <div class="normal">
+              <table cellpadding="3" cellspacing="1" class="normal">
+                <tr>
+                  <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
                           <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['lastbackup']; ?></b>&nbsp;</nobr></span></td>
                           <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['backupfilesize']; ?></b>&nbsp;</nobr></span></td>
                       </tr>

@@ -41,9 +41,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         echo "<input type=\"hidden\" name=\"nameplusid\" value=\"$nameplusid\">";
       }
       ?>
-        <table border="0" cellspacing="0" cellpadding="2">
-            <tr>
-                <td><span class="normal"><?php echo $admtext['firstname']; ?>: </span></td>
+    <table cellspacing="0" cellpadding="2">
+      <tr>
+        <td><span class="normal"><?php echo $admtext['firstname']; ?>: </span></td>
                 <td><input type="text" name="myfirstname" id="myfirstname"></td>
             </tr>
             <tr>

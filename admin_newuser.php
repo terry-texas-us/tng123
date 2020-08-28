@@ -85,7 +85,7 @@ $menu = doMenu($usertabs, "adduser", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <form action="admin_adduser.php" method="post" name="form1" onSubmit="return validateForm(this);">

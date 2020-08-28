@@ -97,15 +97,15 @@ $menu = doMenu($usertabs, "finduser", $innermenu);
 echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
 
-                <form action="admin_users.php" name="form1">
-                    <table class="normal">
-                        <tr>
-                            <td><?php echo $admtext['searchfor']; ?>:</td>
+        <form action="admin_users.php" name="form1">
+          <table class="normal">
+            <tr>
+              <td><?php echo $admtext['searchfor']; ?>:</td>
                             <td><input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield"></td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -148,9 +148,9 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                   }
                   ?>
 
-                    <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                        <tr>
-                            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
+                  <table cellpadding="3" cellspacing="1" class="normal">
+                    <tr>
+                      <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
                           <?php
                           if ($allow_delete) {
                             ?>

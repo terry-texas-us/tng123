@@ -35,10 +35,10 @@ $headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <p class="normal"><?php echo $admtext['reseqwarn']; ?></p>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <p class="normal"><?php echo $admtext['reseqwarn']; ?></p>
 
             <p class="subhead"><strong><?php echo $admtext['renumber']; ?></strong></p>
             <form action="admin_renumber.php" method="post" name="form1">

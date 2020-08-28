@@ -25,7 +25,7 @@ if ($currentuser) {
 <h2><?php echo $text['mnusearchfornames']; ?></h2>
 <!-- Do not change the form action or field names! -->
 <form action="search.php" method="get">
-  <table border="0" cellspacing="5" cellpadding="0">
+  <table cellspacing="5" cellpadding="0">
     <tr>
       <td><span class="normal"><?php echo $text['mnulastname']; ?>: </span><br><input type="text" name="mylastname" size="14"></td>
     </tr>

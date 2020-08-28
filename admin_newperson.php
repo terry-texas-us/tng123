@@ -86,12 +86,12 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
 ?>
 
 <form action="admin_addperson.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table class="normal">
-                    <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table class="normal">
+          <tr>
+            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
                     </tr>
                     <tr>
                         <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>

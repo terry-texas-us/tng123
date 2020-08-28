@@ -96,7 +96,7 @@ tng_adminheader($admtext['modifycemetery'], "");
 
 <body background="img/background.gif">
 <div class="center">
-  <table width="100%" border="0" cellpadding="5" class="lightback">
+  <table width="100%" cellpadding="5" class="lightback">
     <tr class="fieldnameback">
       <td>
         <img src="cemeteries_icon.gif" width="40" height="40" style="border-width=1px;border-style=solid;" align="right">

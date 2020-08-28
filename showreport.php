@@ -585,10 +585,10 @@ if (!$result) {
   } else {
     ?>
 
-      <table cellpadding="3" cellspacing="1" border="0" class="whiteback">
-      <tr>
-          <td class="fieldnameback"><span class="fieldname">#</span></td>
-        <?php
+    <table cellpadding="3" cellspacing="1" class="whiteback">
+    <tr>
+      <td class="fieldnameback"><span class="fieldname">#</span></td>
+      <?php
         //Column headings print here
         echo $displaytext;
         ?>

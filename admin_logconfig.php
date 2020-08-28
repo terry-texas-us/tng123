@@ -41,13 +41,13 @@ $menu = doMenu($setuptabs, "log", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['logconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatelogconfig.php" method="post" name="form1">
-                <table>
-                    <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['logfilename'] . " " . $admtext['text_public']; ?>:</span></td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updatelogconfig.php" method="post" name="form1">
+        <table>
+          <tr>
+            <td valign="top"><span class="normal"><?php echo $admtext['logfilename'] . " " . $admtext['text_public']; ?>:</span></td>
                         <td><input type="text" value="<?php echo $logname; ?>" name="logname" size="20"></td>
                     </tr>
                     <tr>

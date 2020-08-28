@@ -47,10 +47,10 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 <div class="databack ajaxwindow" id="changetree">
     <p class="subhead"><strong><?php echo $admtext['changetree']; ?></strong>
-        <form action="admin_changetree.php" name="changetree" id="changetree" onsubmit="return onChangeTree(this);">
-            <table border="0" cellpadding="2" class="normal">
-                <tr>
-                    <td><?php echo $admtext['currtree']; ?>:</td>
+      <form action="admin_changetree.php" name="changetree" id="changetree" onsubmit="return onChangeTree(this);">
+        <table cellpadding="2" class="normal">
+          <tr>
+            <td><?php echo $admtext['currtree']; ?>:</td>
                     <td><?php echo $currenttree; ?></td>
                 <tr>
                     <td><?php echo $admtext['newtree']; ?>:</td>

@@ -1,30 +1,31 @@
 <?php
+
 include "../../helplib.php";
 echo help_header("Help: Chart Settings");
 ?>
 
 <body class="helpbody">
 <a name="top"></a>
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
       <p style="float:right; text-align:right" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
-        <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
+          <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
+          <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
       </p>
-      <span class="largeheader">Help: Chart Settings</span>
-      <p class="smaller menu">
-        <a href="#ped" class="lightlink">Pedigree</a> &nbsp; | &nbsp;
-        <a href="#desc" class="lightlink">Descendancy</a> &nbsp; | &nbsp;
-        <a href="#rel" class="lightlink">Relationship</a> &nbsp; | &nbsp;
-        <a href="#time" class="lightlink">Timeline</a> &nbsp; | &nbsp;
-        <a href="#common" class="lightlink">Common Elements</a> &nbsp; | &nbsp;
-                <a href="#thumb" class="lightlink">Thumbnails</a>
-            </p>
-        </td>
-    </tr>
+        <span class="largeheader">Help: Chart Settings</span>
+        <p class="smaller menu">
+            <a href="#ped" class="lightlink">Pedigree</a> &nbsp; | &nbsp;
+            <a href="#desc" class="lightlink">Descendancy</a> &nbsp; | &nbsp;
+            <a href="#rel" class="lightlink">Relationship</a> &nbsp; | &nbsp;
+            <a href="#time" class="lightlink">Timeline</a> &nbsp; | &nbsp;
+            <a href="#common" class="lightlink">Common Elements</a> &nbsp; | &nbsp;
+            <a href="#thumb" class="lightlink">Thumbnails</a>
+        </p>
+    </td>
+  </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right"></div>
@@ -39,7 +40,8 @@ echo help_header("Help: Chart Settings");
 
             <span class="optionhead">Initial Display</span>
             <p>This option determines which pedigree format is initially displayed. When Standard is selected, all birth, marriage, and death/burial dates
-                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e., ArrowDown.gif) will be placed below the bottom center of the pedigree boxes wherever information
+                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e., ArrowDown.gif) will be placed below the bottom
+                center of the pedigree boxes wherever information
                 is available, and the popup box will appear beneath the pedigree box when the Popup Event is triggered. The Compact format is
                 similar to Standard, but the box size is greatly reduced, and no photos are displayed. When Box is selected,
                 the standard information will appear in the pedigree boxes at all times. When Text Only is selected, a text-based version of the pedigree chart (no boxes or popup windows)
@@ -106,7 +108,8 @@ echo help_header("Help: Chart Settings");
 
             <span class="optionhead">Initial Display</span>
             <p>This option determines which descendancy format is initially displayed. When Standard is selected, all birth and death/burial dates
-                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e., ArrowDown.gif) will be placed below the bottom center of the pedigree boxes wherever information
+                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e., ArrowDown.gif) will be placed below the bottom
+                center of the pedigree boxes wherever information
                 is available, and the popup box will appear beneath the descendancy box when the Popup Event is triggered. The Compact format is
                 similar to Standard, but the box size is greatly reduced, and no photos are displayed. When Text Only is selected, a text-based version
                 of the descendancy chart (no boxes or popup windows) will be shown first. The Register format shows the same information in a narrative
@@ -115,27 +118,27 @@ echo help_header("Help: Chart Settings");
             <span class="optionhead">Max Generations</span>
             <p>The maximum number of generations you will allow visitors to request at one time.</p>
 
-          <span class="optionhead">Initial Generations</span>
-          <p>The number of generations that will be displayed to start with. If nothing is specified here, then this value will default to four.</p>
+            <span class="optionhead">Initial Generations</span>
+            <p>The number of generations that will be displayed to start with. If nothing is specified here, then this value will default to four.</p>
 
-          <span class="optionhead">Start Descendancy</span>
-          <p>Choose to start the text-based descendancy chart with all generations expanded or collapsed. The user will always have the option
-            to expand or collapse individual families.</p>
+            <span class="optionhead">Start Descendancy</span>
+            <p>Choose to start the text-based descendancy chart with all generations expanded or collapsed. The user will always have the option
+                to expand or collapse individual families.</p>
 
-          <span class="optionhead">Show Notes on Register</span>
-          <p>Indicates whether notes for individuals and families will be displayed on the Register page.</p>
+            <span class="optionhead">Show Notes on Register</span>
+            <p>Indicates whether notes for individuals and families will be displayed on the Register page.</p>
 
-          <span class="optionhead">Register Generations</strong><br>
-		Choose to always show each person when displaying a generation, or avoid redundancy by electing to "Remove individuals
-		with no family." That option will only display those individuals when they appear as children. They will not be
-		redisplayed when their entire generation is outlined later in the report.</p>
+            <span class="optionhead">Register Generations</strong></span>
+            Choose to always show each person when displaying a generation, or avoid redundancy by electing to "Remove individuals
+            with no family." That option will only display those individuals when they appear as children. They will not be
+            redisplayed when their entire generation is outlined later in the report.</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right"><a href="#top">Top</a></p>
             <a name="rel"><p class="subheadbold">Relationship Chart</p></a>
             <span class="optionhead">Initial Relationships</span>
             <p>When a new Relationship chart is requested, this is how many relationships TNG will try to find. As soon as that many
@@ -252,11 +255,13 @@ echo help_header("Help: Chart Settings");
             <span class="optionhead">Popup Timer</span>
             <p>If popups are being used, the number of milliseconds a popup should remain visible. Default value is 500 (1/2 second). There are two conditions
                 that can modify the duration of a popup display. First, if another popup is requested, any previously visible popup is removed. Second, while the cursor is present over a visible
-                popup, the timer defined here will not be used until the cursor is moved "out of" the popup. By this means, one can explicitly keep a popup visible for an indefinite period of time.</p>
+                popup, the timer defined here will not be used until the cursor is moved "out of" the popup. By this means, one can explicitly keep a popup visible for an indefinite period of
+                time.</p>
 
             <span class="optionhead">Popup Event</span>
             <p>The mouse event required to display the popup. This event is associated with the arrow indicating that additional information is available. If
-                Mouse Down is selected, clicking on the arrow will display the popup. If Mouse Over is selected, the popup will be displayed when the mouse pointer is positioned over the arrow.</p>
+                Mouse Down is selected, clicking on the arrow will display the popup. If Mouse Over is selected, the popup will be displayed when the mouse pointer is positioned over the
+                arrow.</p>
 
             <span class="optionhead">Box Width (w/popups)</span>
             <p>Fixed width of all pedigree boxes (in pixels) when popup boxes are in use. Default value is 151. If a number less than 21 is entered, 21 will
@@ -289,19 +294,28 @@ echo help_header("Help: Chart Settings");
             <a name="thumb"><p class="subheadbold">Notes About Including Thumbnail Photos</p></a>
 
             <ul>
-                <li>To designate a photo to represent an individual on the pedigree chart, edit the photo (must be one with a thumbnail) and check the box marked <span class="emphasis">Make Default</span> under the link to the desired individual and save
-                    the page. The existing thumbnail will then be used on the pedigree and other charts. The action of selecting <span class="choice">Make Default</span> used to copy the existing thumbnail to a new location, with the copied file being
-                    named <span class="emphasis">Mtreename.###.ext</span>, where <span class="emphasis">treename</span> was the name of the tree to which the person belonged, <span class="emphasis">###</span> was the GEDCOM person ID and ext was the Photos
-                    Extension defined above (i.e., <span class="example">MLythgoe.I567.jpg</span>). This convention is no longer used, but existing thumbnails created in that manner will still be used and will take precedence. <span
-                            class="emphasis">NOTE:</span> You can still create default thumbnails manually in this manner if you don't want the default photo to be derived from any other photo linked to the individual.
+                <li>To designate a photo to represent an individual on the pedigree chart, edit the photo (must be one with a thumbnail) and check the box marked <span class="emphasis">Make Default</span>
+                    under the link to the desired individual and save
+                    the page. The existing thumbnail will then be used on the pedigree and other charts. The action of selecting <span class="choice">Make Default</span> used to copy the existing
+                    thumbnail to a new location, with the copied file being
+                    named <span class="emphasis">Mtreename.###.ext</span>, where <span class="emphasis">treename</span> was the name of the tree to which the person belonged, <span
+                            class="emphasis">###</span> was the GEDCOM person ID and ext was the Photos
+                    Extension defined above (i.e., <span class="example">MLythgoe.I567.jpg</span>). This convention is no longer used, but existing thumbnails created in that manner will still be
+                    used and will take precedence. <span
+                            class="emphasis">NOTE:</span> You can still create default thumbnails manually in this manner if you don't want the default photo to be derived from any other photo
+                    linked to the individual.
                 </li>
 
-                <li>If an image is located using the foregoing convention, the size may be scaled downward, if necessary, to fit within the height of the associated pedigree box. <span class="emphasis">Upward</span> scaling is not done, however, so that
-                    picture quality is not compromised. It should also be noted that any downward scaling of the display does not affect the size of the photo file. In other words, just because the picture looks smaller does not mean it will download any
-                    quicker than it would if it were displayed in its normal size. Therefore, large photos should definitely not be used for pedigree images as the download time of the entire page would be severely affected.
+                <li>If an image is located using the foregoing convention, the size may be scaled downward, if necessary, to fit within the height of the associated pedigree box. <span
+                            class="emphasis">Upward</span> scaling is not done, however, so that
+                    picture quality is not compromised. It should also be noted that any downward scaling of the display does not affect the size of the photo file. In other words, just because
+                    the picture looks smaller does not mean it will download any
+                    quicker than it would if it were displayed in its normal size. Therefore, large photos should definitely not be used for pedigree images as the download time of the entire page
+                    would be severely affected.
                 </li>
 
-                <li>The inclusion of photos will affect the space remaining in pedigree boxes for names and other information. As such, it may be advisable to <span class="emphasis">tune</span> box and font sizes using previously described configuration
+                <li>The inclusion of photos will affect the space remaining in pedigree boxes for names and other information. As such, it may be advisable to <span class="emphasis">tune</span>
+                    box and font sizes using previously described configuration
                     options, or to select the <span class="choice">overflow</span> option described above.
                 </li>
             </ul>

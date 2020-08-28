@@ -5,7 +5,7 @@ echo help_header("Help: Events");
 
 <body class="helpbody">
 <a name="top"></a>
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
       <p style="float:right; text-align:right" class="smaller menu">
@@ -112,9 +112,9 @@ echo help_header("Help: Events");
         <td class="tngshadow">
 
             <a name="citations"><p class="subheadbold">Notes and Citations</p>
-                To add or edit notes or citations for an event, first save the event, then click the appropriate icon next to that event record in the current list of events.
-                For more information on notes, please see <a href="notes_help.php">Help: Notes</a>.
-                For more information on citations, please see <a href="citations_help.php">Help: Citations</a>.</p>
+                <p>To add or edit notes or citations for an event, first save the event, then click the appropriate icon next to that event record in the current list of events.
+                    For more information on notes, please see <a href="notes_help.php">Help: Notes</a>.
+                    For more information on citations, please see <a href="citations_help.php">Help: Citations</a>.</p>
 
         </td>
     </tr>

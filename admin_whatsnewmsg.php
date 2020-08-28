@@ -46,11 +46,11 @@ $menu = doMenu($misctabs, "whatsnew", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "img/misc_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-      <td class="tngshadow">
-        <form action="admin_savewhatsnewmsg.php" method="post" name="form1">
-          <p class="subhead"><strong><?php echo $admtext['wnmsg']; ?>:</strong></p>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_savewhatsnewmsg.php" method="post" name="form1">
+        <p class="subhead"><strong><?php echo $admtext['wnmsg']; ?>:</strong></p>
           <p class="normal" id="savedmsg" style="<?php if ($color) {
             echo "color:$color;";
           } else echo "display:none;" ?>"><i><?php echo $message; ?></i></p>

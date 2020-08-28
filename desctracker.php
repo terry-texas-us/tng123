@@ -344,13 +344,13 @@ echo getFORM("descend", "GET", "form1", "form1");
 echo tng_menu("I", "descend", $personID, $innermenu);
 echo "</form>\n";
 ?>
-    <br clear="left">
+  <br clear="left">
 
-    <div width="100%" style="overflow:auto">
-        <table border="0" cellspacing="0" cellpadding="0">
-            <tr>
-                <td align="center">
-                  <?php
+  <div width="100%" style="overflow:auto">
+    <table cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center">
+          <?php
                   $more = count($items);
                   if ($nextperson) {
                     echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr>\n";

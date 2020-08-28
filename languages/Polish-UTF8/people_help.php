@@ -5,7 +5,7 @@ echo help_header("Pomoc: Osoby");
 
 <body class="helpbody">
 <a name="top"></a>
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
       <p style="float:right; text-align:right" class="smaller menu">

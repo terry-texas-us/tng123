@@ -110,10 +110,10 @@ include_once "eventlib.php";
 ?>
 
 <form action="" onsubmit="return updateFamily(this,<?php echo $slot; ?>,'admin_updatefamily.php');" method="post" name="famform1" id="famform1">
-    <table width="100%" border="0" cellpadding="10" cellspacing="0">
-        <tr class="databack">
-          <td class="tngbotshadow">
-            <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+  <table width="100%" cellpadding="10" cellspacing="0">
+    <tr class="databack">
+      <td class="tngbotshadow">
+        <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
             <table cellpadding="0" cellspacing="0" class="normal">
               <tr>
                 <td valign="top">

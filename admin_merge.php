@@ -777,7 +777,7 @@ $menu = doMenu($peopletabs, "merge", $innermenu);
 echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img/people_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <span class="subhead"><strong><?php echo $admtext['findmatches']; ?></strong></span><br><br>
@@ -903,7 +903,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                     <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction" onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchpeople();">
                     <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
           <br><br>
-          <table cellpadding="3" cellspacing="1" border="0" width="100%" class="normal">
+          <table cellpadding="3" cellspacing="1" width="100%" class="normal">
             <?php
             if (is_array($p1row)) {
                         $parentsets = array();

@@ -196,7 +196,7 @@ a.footer:hover {
 
 /* additional classes added for strict validation */
 
-/* indexsubmit added to replace hspace="0" vspace="0" width="74" height="76" border="0" in index.php for button.jpg */
+/* indexsubmit added to replace hspace="0" vspace="0" width="74" height="76" in index.php for button.jpg */
 .indexsubmit {
     margin-top: 0px;
     margin-left: 0px;
@@ -204,7 +204,7 @@ a.footer:hover {
     height: 76px;
 }
 
-/* menusubmit added to replace align="right" "hspace="0" vspace="0" width="55" height="54" border="0" in topmenu */
+/* menusubmit added to replace align="right" "hspace="0" vspace="0" width="55" height="54" in topmenu */
 .menusubmit {
     float: right;
     margin-top: 0px;
@@ -213,7 +213,7 @@ a.footer:hover {
     height: 54px;
 }
 
-/* searchimg added to replace width="100" height="38" vspace="5" border="0" for search.gif in index.php */
+/* searchimg added to replace width="100" height="38" vspace="5" for search.gif in index.php */
 .indexsearch {
     width: 100px;
     height: 38px;
@@ -222,7 +222,7 @@ a.footer:hover {
     margin-bottom: 5px;
 }
 
-/* menusearch added to replace width="67" height="24" vspace="5" border="0" for search.gif in topmenu */
+/* menusearch added to replace width="67" height="24" vspace="5" for search.gif in topmenu */
 .menusearch {
     width: 67px;
     height: 24px;
@@ -231,7 +231,7 @@ a.footer:hover {
     margin-bottom: 5px;
 }
 
-/* headerimg added to replace width="70" height="99" hspace="0" vspace="3" border="0" in topmenu for headerphoto.jpg */
+/* headerimg added to replace width="70" height="99" hspace="0" vspace="3" in topmenu for headerphoto.jpg */
 .headerimg {
     margin-top: 5px; /* replaces vspace="3" */
     margin-bottom: 5px; /* replaces vspace="3" */

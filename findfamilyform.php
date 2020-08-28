@@ -27,7 +27,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <form action="" method="post" name="findform1" id="findform1" onsubmit="return <?php echo $applyfilter; ?>">
     <p class="subhead"><strong><?php echo $admtext['findfamilyid']; ?></strong><br>
       <span class="normal">(<?php echo $admtext['enternamepart']; ?>)</span></p>
-    <table border="0" cellspacing="0" cellpadding="2" class="normal">
+    <table cellspacing="0" cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['husbname']; ?></td>
         <td><?php echo $admtext['wifename']; ?></td>

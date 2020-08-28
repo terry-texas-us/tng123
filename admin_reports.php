@@ -102,15 +102,15 @@ $menu = doMenu($reporttabs, "findreport", $innermenu);
 echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
 
-                <form action="admin_reports.php" name="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
+        <form action="admin_reports.php" name="form1">
+          <table>
+            <tr>
+              <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td><input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield"></td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -143,9 +143,9 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
               echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
               ?>
 
-                <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                    <tr>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+        <table cellpadding="3" cellspacing="1" class="normal">
+          <tr>
+            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
                         <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['rank']; ?></b>&nbsp;</td>
                         <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</td>
                         <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['name'] . ", " . $admtext['description']; ?></b>&nbsp;</td>

@@ -302,9 +302,9 @@ echo getFORM("pedigree", "", "form1", "form1");
 echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 ?>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tr>
-          <?php
+  <table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <?php
           $slot = 1;
           displayIndividual($personID, 1, $slot);
           ?>

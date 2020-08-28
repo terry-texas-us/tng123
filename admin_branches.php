@@ -114,15 +114,15 @@ $menu = doMenu($branchtabs, "findbranch", $innermenu);
 echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
 
-                <form action="admin_branches.php" name="form1" id="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
+        <form action="admin_branches.php" name="form1" id="form1">
+          <table>
+            <tr>
+              <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
                                 <select name="tree">
                                   <?php
@@ -174,10 +174,10 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                     <?php
                   }
                   ?>
-                    <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                        <tr class="fieldnameback fieldname nw" r>
-                            <td>
-                                <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
+                  <table cellpadding="3" cellspacing="1" class="normal">
+                    <tr class="fieldnameback fieldname nw" r>
+                      <td>
+                        <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
                             </td>
                           <?php
                           if ($allow_delete) {

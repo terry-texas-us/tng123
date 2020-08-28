@@ -40,7 +40,7 @@ header("Content-type:text/html; charset=" . $session_charset);
       <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
 
   <form action="admin_updatecollection.php" method="post" name="collform" id="collform" onsubmit="return updateCollection(this);">
-    <table border="0" cellpadding="2" class="normal">
+    <table cellpadding="2" class="normal">
       <tr>
         <td><?php echo $admtext['collid']; ?>:</td>
         <td><?php echo $mediatypeID; ?></td>

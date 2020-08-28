@@ -115,10 +115,10 @@ $menu = doMenu($misctabs, "mostwanted", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "img/misc_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-          <?php
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <?php
           echo displayToggle("plus0", 1, "personarea", $admtext['mysperson'], "");
           echo "<div id=\"personarea\">\n<br>\n";
           showDiv('person');

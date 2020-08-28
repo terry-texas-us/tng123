@@ -45,10 +45,10 @@ $menu = doMenu($datatabs, "second", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondary'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_secondary.php" method="post" name="form1">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_secondary.php" method="post" name="form1">
 	<span class="normal"><?php echo $admtext['tree']; ?>: <select name="tree">
 <?php
 if (!$assignedtree) {

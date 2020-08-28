@@ -133,11 +133,11 @@ $menu = doMenu($setuptabs, "template", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['templateconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form name="formtop1">
-                <label for="form_templateswitching"><?php echo $admtext['templateswitching']; ?>:</label>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form name="formtop1">
+        <label for="form_templateswitching"><?php echo $admtext['templateswitching']; ?>:</label>
                 <select name="form_templateswitching" id="form_templateswitching">
                     <option value="0"<?php if (!$templateswitching) {
                       echo " selected";

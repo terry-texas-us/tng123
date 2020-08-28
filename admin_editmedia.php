@@ -157,7 +157,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 ?>
 
 <form action="admin_updatemedia.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
-  <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
       <td class="tngshadow">
         <table cellpadding="0" cellspacing="0" class="normal">
@@ -529,7 +529,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
             <br>
             <p><?php echo $admtext['mapinstr3']; ?></p>
 
-            <table border="0" cellspacing="0" cellpadding="2" class="normal">
+            <table cellspacing="0" cellpadding="2" class="normal">
               <tr>
                 <td><?php echo $admtext['tree']; ?>:</td>
                 <td>

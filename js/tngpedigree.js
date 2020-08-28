@@ -259,7 +259,7 @@ function FillSlot(slot, currperson, lastperson) {
         }
         if (display == "box") {
             var bmd = doBMD(slot, slotperson);
-            if (bmd) content += '<table border="0" cellpadding="0" cellspacing="0">' + bmd + '</table>';
+            if (bmd) content += '<table cellpadding="0" cellspacing="0">' + bmd + '</table>';
         }
         content += '</td>';
         currentBox.style.backgroundColor = currentBox.oldcolor;
@@ -294,7 +294,7 @@ function FillSlot(slot, currperson, lastperson) {
             popup.html("");
         }
     }
-    currentBox.innerHTML = content ? icons + '<table border="0" class="pedboxtable" cellpadding="' + pedcellpad + '" cellspacing="0" align="' + pedboxalign + '"><tr>' + content + '</tr></table>' : "";
+    currentBox.innerHTML = content ? icons + '<table class="pedboxtable" cellpadding="' + pedcellpad + '" cellspacing="0" align="' + pedboxalign + '"><tr>' + content + '</tr></table>' : "";
 
     var nextslot = slot * 2;
     if (slotperson.famc != -1 && families[slotperson.famc]) {
@@ -372,7 +372,7 @@ function needspouses(nextfamily) {
 
 var tdclasstxt = 'class="normal pboxpopup" valign="top"';
 var divtxt = '<div class="pboxpopupdiv">\n<table cellspacing="0" cellpadding="1" border="0" width="100%">\n';
-var tabletxt = '<table cellspacing="0" cellpadding="1" border="0" width="100%">\n';
+var tabletxt = '<table cellspacing="0" cellpadding="1" width="100%">\n';
 
 function doRow(slot, slotabbr, slotevent1, slotevent2) {
     var rstr = "";

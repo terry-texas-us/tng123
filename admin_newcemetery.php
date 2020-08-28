@@ -86,12 +86,12 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
 ?>
 
 <form action="admin_addcemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table class="normal" width="100%">
-                    <tr>
-                        <td><?php echo $admtext['cemeteryname']; ?>:</td>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <table class="normal" width="100%">
+          <tr>
+            <td><?php echo $admtext['cemeteryname']; ?>:</td>
                         <td width="80%"><input type="text" name="cemname" id="cemname" size="40"></td>
                     </tr>
                     <tr>

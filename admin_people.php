@@ -237,15 +237,15 @@ if (!isset($message)) {
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <div class="normal">
 
-                <form action="admin_people.php" name="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
+        <form action="admin_people.php" name="form1">
+          <table>
+            <tr>
+              <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
                               <?php
                               include "treequery.php";
@@ -311,9 +311,9 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                   }
                   ?>
 
-                    <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                        <tr>
-                            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
+                  <table cellpadding="3" cellspacing="1" class="normal">
+                    <tr>
+                      <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
                           <?php
                           if ($allow_delete) {
                             ?>

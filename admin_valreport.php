@@ -214,18 +214,18 @@ if (!$numrowsplus) {
 }
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow normal">
-            <p class="subhead"><strong><?php echo $admtext[$report]; ?></strong></p>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow normal">
+      <p class="subhead"><strong><?php echo $admtext[$report]; ?></strong></p>
           <?php
           echo displayListLocation($offsetplus, $numrowsplus, $totrows);
           $pagenav = get_browseitems_nav($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 5);
           echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
           ?>
-            <table cellpadding="5" cellspacing="1" border="0" class="normal">
-                <tr>
-                  <?php
+      <table cellpadding="5" cellspacing="1" class="normal">
+        <tr>
+          <?php
                   //show headers
                   for ($i = 0; $i < count($display); $i++) {
                     $header = $admtext[$display[$i]];

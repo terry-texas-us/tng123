@@ -76,7 +76,7 @@ $menu = doMenu($treetabs, "findtree", $innermenu);
 echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <div class="normal">
@@ -97,7 +97,7 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
         $pagenav = get_browseitems_nav($totrows, "admin_trees.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
         echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
         ?>
-        <table cellpadding="3" cellspacing="1" border="0" class="normal">
+        <table cellpadding="3" cellspacing="1" class="normal">
           <tr>
             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</td>

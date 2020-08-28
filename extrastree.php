@@ -195,10 +195,10 @@ if ($showall) {
 $slot = 1;
 displayIndividual($personID, 1, $slot, 0);
 ?>
-    <table border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <td valign="top">
-                <p class="subhead"><strong><?php echo "$col1fam {$text['side']}"; ?></strong></p>
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <p class="subhead"><strong><?php echo "$col1fam {$text['side']}"; ?></strong></p>
               <?php
               for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {
                 if ($columns[1][$nextgen]) {

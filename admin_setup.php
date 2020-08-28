@@ -75,10 +75,10 @@ $menu = doMenu($setuptabs, $sub, $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-          <?php
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <?php
           if ($sub == "configuration") {
             ?>
             <span class="normal"><i><?php echo $admtext['entersysvars']; ?></i></span><br><br>

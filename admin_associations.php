@@ -99,7 +99,7 @@ $assoccount = tng_num_rows($assocresult);
     <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
 
   <form action="" name="newassocform1" onSubmit="return addAssociation(this);">
-    <table width="95%" border="0" cellpadding="2" class="normal">
+    <table width="95%" cellpadding="2" class="normal">
       <tr>
         <td colspan="2">
           <input type="radio" name="reltype" value="I" checked="checked" onclick="activateAssocType('I');"> <?php echo $admtext['person']; ?> &nbsp;&nbsp;

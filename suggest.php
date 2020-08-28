@@ -202,7 +202,7 @@ if ($typestr) {
   <?php
 }
 ?>
-  <table border="0" cellspacing="1" cellpadding="4" class="whiteback normal">
+  <table cellspacing="1" cellpadding="4" class="whiteback normal">
     <tr>
       <td class="fieldnameback" width="20%"><span class="fieldname"><?php echo $text['yourname']; ?>:&nbsp; </span></td>
       <td class="databack" width="80%"><input type="text" name="<?php echo $_SESSION['tng_yourname']; ?>" class="longfield"></td>

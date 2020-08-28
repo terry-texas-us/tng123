@@ -43,10 +43,10 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['addnewalbum']
 ?>
 
 <form action="admin_addalbum.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-              <?php echo displayToggle("plus0", 1, "details", $admtext['existingalbuminfo'], $admtext['infosubt']); ?>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <?php echo displayToggle("plus0", 1, "details", $admtext['existingalbuminfo'], $admtext['infosubt']); ?>
 
                 <div id="details" class="topbuffer">
                     <table class="normal">

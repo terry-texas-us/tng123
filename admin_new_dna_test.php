@@ -39,10 +39,10 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
 ?>
 
 <form action="admin_add_dna_test.php" method="post" name="form1" id="form1" onsubmit="return validateForm();">
-    <table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-              <?php echo displayToggle("plus0", 1, "testinfo", $admtext['testinfo'], $admtext['uplsel']); ?>
+  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <tr class="databack">
+      <td class="tngshadow">
+        <?php echo displayToggle("plus0", 1, "testinfo", $admtext['testinfo'], $admtext['uplsel']); ?>
 
               <div id="testinfo">
                 <br>

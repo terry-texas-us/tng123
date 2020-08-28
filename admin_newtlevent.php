@@ -52,12 +52,12 @@ $menu = doMenu($timelinetabs, "addtlevent", $innermenu);
 echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtlevent'], "img/tlevents_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_addtlevent.php" method="post" name="form1" onSubmit="return validateForm();">
-                <table class="normal">
-                  <?php
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_addtlevent.php" method="post" name="form1" onSubmit="return validateForm();">
+        <table class="normal">
+          <?php
                   function doEventRow($label, $dayname, $monthname, $yearname, $help) {
                     global $dates;
                     ?>

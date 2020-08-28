@@ -80,7 +80,7 @@ $menu = doMenu($placetabs, "merge", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces'], "img/places_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <span class="subhead"><strong>1. <?php echo $admtext['findmerge']; ?></strong></span><br><br>
@@ -133,10 +133,10 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
 
               <form action="" method="post" onSubmit="return validateForm2(this);" name="form2">
                   <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none">
-                      <span id="successmsg1" class="normal msgapproved"></span></p>
-                  <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                      <tr>
-                          <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><b><?php echo $admtext['mcol1']; ?></b></span></td>
+                    <span id="successmsg1" class="normal msgapproved"></span></p>
+                <table cellpadding="3" cellspacing="1" class="normal">
+                  <tr>
+                    <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><b><?php echo $admtext['mcol1']; ?></b></span></td>
                           <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><b><?php echo $admtext['mcol2']; ?></b></span></td>
                           <td class="fieldnameback" valign="bottom"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['place']; ?></b>&nbsp;</nobr></span></td>
                           <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['latitude']; ?></b>&nbsp;</nobr></span></td>

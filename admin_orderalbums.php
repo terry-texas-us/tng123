@@ -142,12 +142,12 @@ $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
   <tr class="databack">
     <td class="tngshadow">
       <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
       <br>
-      <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" border="0" class="fieldname normal">
+      <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
         <tr>
           <td class="fieldnameback" style="width:102px">&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</td>
           <td class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</td>

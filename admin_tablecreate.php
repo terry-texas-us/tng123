@@ -42,9 +42,9 @@ $menu = doMenu($setuptabs, "tablecreation", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['tablecreation'], "img/setup_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow"><span class="normal"><p>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow"><span class="normal"><p>
 <?php
 if ($badtables) {
     echo "Tables not created: $badtables";

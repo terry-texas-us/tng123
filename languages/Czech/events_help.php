@@ -4,12 +4,12 @@ echo help_header("N�pov�da: Ud�losti");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="tblback normal">
+<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
       <p style="float:right; text-align:right" class="smaller menu">
@@ -101,7 +101,8 @@ echo help_header("N�pov�da: Ud�losti");
 
             <a name="del"><p class="subheadbold">Vymazat ud�lost</p></a>
 
-            <p>Chcete-li vymazat existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Vymazat vedle t�to ud�losti. Ud�lost bude vymaz�na bez ohledu na to, zda ostatn� �daje na str�nce jsou ulo�eny.</p>
+            <p>Chcete-li vymazat existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Vymazat vedle t�to ud�losti. Ud�lost bude vymaz�na bez ohledu na to, zda ostatn� �daje na str�nce jsou
+                ulo�eny.</p>
 
         </td>
     </tr>
@@ -109,9 +110,10 @@ echo help_header("N�pov�da: Ud�losti");
         <td class="tngshadow">
 
             <a name="citations"><p class="subheadbold">Pozn�mky a citace</p>
-                Chcete-li p�idat nebo upravit pozn�mky nebo citace u ud�losti, ud�lost nejd��ve ulo�te, a pot� klikn�te na p��slu�nou ikonu vedle z�znamu t�to ud�losti v aktu�ln�m seznamu ud�lost�.
-                V�ce informac� o pozn�mk�ch naleznete zde: <a href="notes_help.php">N�pov�da: Pozn�mky</a>.
-                V�ce informac� o citac�ch naleznete zde: <a href="citations_help.php">N�pov�da: Citace</a>.</p>
+                <p>Chcete-li p�idat nebo upravit pozn�mky nebo citace u ud�losti, ud�lost nejd��ve ulo�te, a pot� klikn�te na p��slu�nou ikonu vedle z�znamu t�to ud�losti v aktu�ln�m seznamu
+                    ud�lost�.
+                    V�ce informac� o pozn�mk�ch naleznete zde: <a href="notes_help.php">N�pov�da: Pozn�mky</a>.
+                    V�ce informac� o citac�ch naleznete zde: <a href="citations_help.php">N�pov�da: Citace</a>.</p>
 
         </td>
     </tr>

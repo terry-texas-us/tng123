@@ -87,10 +87,10 @@ $menu = doMenu($mediatabs, "import", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow normal">
-          <?php
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow normal">
+      <?php
           $subdirs = importFrom($tngpath, '', 1);
           foreach ($subdirs as $subdir) {
             chdir("$rootpath$tngpath/$subdir");

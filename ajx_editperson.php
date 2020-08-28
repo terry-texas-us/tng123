@@ -112,10 +112,10 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="form1" id="form1" onsubmit="return updatePerson(this, <?php echo $slot; ?>);">
-    <table width="100%" border="0" cellpadding="10" cellspacing="0">
-        <tr class="databack">
-          <td class="tngbotshadow">
-            <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+  <table width="100%" cellpadding="10" cellspacing="0">
+    <tr class="databack">
+      <td class="tngbotshadow">
+        <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
             <table cellpadding="0" cellspacing="0" class="normal">
               <tr>
                 <td valign="top">

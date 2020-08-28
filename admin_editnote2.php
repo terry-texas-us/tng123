@@ -49,13 +49,13 @@ $menu = doMenu($misctabs, "edit", $innermenu);
 echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatenote2.php" name="form2" method="post" onSubmit="return validateForm(this);">
-                <table border="0" cellpadding="2" class="normal">
-                    <tr>
-                        <td valign="top"><?php echo $admtext['note']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updatenote2.php" name="form2" method="post" onSubmit="return validateForm(this);">
+        <table cellpadding="2" class="normal">
+          <tr>
+            <td valign="top"><?php echo $admtext['note']; ?>:</td>
                         <td><textarea wrap cols="80" rows="30" name="note"><?php echo $row['note']; ?></textarea></td>
                     </tr>
                     <tr>

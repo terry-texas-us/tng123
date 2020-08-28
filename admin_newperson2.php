@@ -56,7 +56,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   } else {
     echo " action=\"\" onsubmit=\"return saveNewPerson(this);\"";
   } ?> style="margin-top:10px">
-    <table border="0" cellpadding="2" class="normal">
+    <table cellpadding="2" class="normal">
       <tr>
         <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
       </tr>

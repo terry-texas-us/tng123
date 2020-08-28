@@ -189,8 +189,8 @@ header("Content-type:text/html; charset=" . $session_charset);
     <input type="hidden" name="familyID" value="<?php echo $familyID; ?>">
     <input type="hidden" name="eventID" value="<?php echo $event; ?>">
     <input type="hidden" name="type" value="<?php echo $type; ?>">
-    <table border="0" cellspacing="0" cellpadding="2">
-      <?php
+  <table cellspacing="0" cellpadding="2">
+    <?php
       if ($datefield) {
         echo "<tr><td valign=\"top\"><span class=\"normal\">{$text['date']}: </span></td><td valign=\"top\"><span class=\"normal\">$row[$datefield]</span></td></tr>\n";
         echo "<tr><td valign=\"top\"><span class=\"normal\">{$text['suggested']}: </span></td><td valign=\"top\"><input type=\"text\" name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td></tr>\n";

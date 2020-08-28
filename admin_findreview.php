@@ -147,10 +147,10 @@ $menu = doMenu($peopletabs, "review", $innermenu);
 echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <p class="subhead"><strong><?php echo $admtext['selectevaction']; ?></strong></p>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <p class="subhead"><strong><?php echo $admtext['selectevaction']; ?></strong></p>
             <div class="normal">
                 <form action="admin_findreview.php" name="form1">
                     <table>
@@ -216,10 +216,10 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
               $pagenav = get_browseitems_nav($totrows, "admin_findreview.php?type=$type&amp;reviewuser=$reviewuser&amp;offset", $maxsearchresults, 5);
               echo " &nbsp; $pagenav</p>";
               ?>
-                <table cellpadding="3" cellspacing="1" border="0" class="normal">
-                    <tr>
-                        <td class="fieldnameback fieldname">
-                            <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
+              <table cellpadding="3" cellspacing="1" class="normal">
+                <tr>
+                  <td class="fieldnameback fieldname">
+                    <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
                         </td>
                         <td class="fieldnameback fieldname">
                             <nobr>&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</nobr>

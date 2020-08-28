@@ -53,13 +53,13 @@ $menu = doMenu($setuptabs, "import", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['importconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" border="0" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updateimportconfig.php" method="post" name="form1">
-                <table class="normal">
-                    <tr>
-                        <td><?php echo $admtext['gedpath']; ?>:</td>
+<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+  <tr class="databack">
+    <td class="tngshadow">
+      <form action="admin_updateimportconfig.php" method="post" name="form1">
+        <table class="normal">
+          <tr>
+            <td><?php echo $admtext['gedpath']; ?>:</td>
                         <td><input type="text" value="<?php echo $gedpath; ?>" name="gedpath" size="50">
                             <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('gedcom',document.form1.gedpath.value);"> <span id="msg_gedcom"></td>
                     </tr>

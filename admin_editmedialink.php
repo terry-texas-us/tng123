@@ -79,10 +79,10 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 <div class="databack ajaxwindow">
     <p class="subhead"><strong><?php echo $headline; ?></strong></p>
-    <form action="" method="post" name="editlinkform" id="editlinkform" onsubmit="return updateMedia2EntityLink(this);">
-        <table border="0" cellpadding="2" class="normal">
-            <tr>
-                <td valign="top"><?php echo $admtext['event']; ?>:</td>
+  <form action="" method="post" name="editlinkform" id="editlinkform" onsubmit="return updateMedia2EntityLink(this);">
+    <table cellpadding="2" class="normal">
+      <tr>
+        <td valign="top"><?php echo $admtext['event']; ?>:</td>
                 <td>
                     <select name="eventID" id="eventID">
                       <?php echo $options; ?>

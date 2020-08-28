@@ -29,27 +29,27 @@ function tng_adminheader($title, $flags) {
     echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
   }
   if ($sitever == "mobile") {
-    echo "<meta name=\"MobileOptimized\" content=\"320\" />\n";
-    echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\" />\n";
+    echo "<meta name=\"MobileOptimized\" content=\"320\">\n";
+    echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\">\n";
   }
 
   if (!$tng_version) {
     $tng_version = "12.0.1";
   }
-  echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+  echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   if (isset($flags['modmgr'])) {
     echo "<link href=\"{$cms['tngpath']}css/modmanager.css\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
   if ($sitever == "mobile") {
-    echo "<link href=\"{$cms['tngpath']}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+    echo "<link href=\"{$cms['tngpath']}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
   if (isset($flags['tabs'])) {
     echo "<link href=\"{$cms['tngpath']}{$templatepath}css/{$flags['tabs']}\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
-  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
-  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   if ($sitever != "mobile" && $sitever != "tablet") {
-    echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\"/>\n";
+    echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
   }
   echo "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
   include "adminmeta.php";

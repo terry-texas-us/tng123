@@ -71,56 +71,56 @@ function tng_header($title, $flags) {
   $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
   $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
   echo "<title>$title$siteprefix</title>\n";
-  echo "<meta name=\"Keywords\" content=\"$site_desc\" />\n";
+  echo "<meta name=\"Keywords\" content=\"$site_desc\">\n";
 
-    echo "<meta name=\"Description\" content=\"" . $title . $siteprefix . "\" />\n";
+  echo "<meta name=\"Description\" content=\"" . $title . $siteprefix . "\">\n";
 
   if ($fbOGimage) {
-    echo "<meta property=\"og:title\" content=\"" . $sitename . "\"/>\n";
-    echo "<meta property=\"og:description\" content=\"" . $title . "\"/>\n";
-    echo "<meta property=\"og:url\" content=\"" . $tngdomain . "/" . $pageURL . "\" />\n";
+    echo "<meta property=\"og:title\" content=\"" . $sitename . "\">\n";
+    echo "<meta property=\"og:description\" content=\"" . $title . "\">\n";
+    echo "<meta property=\"og:url\" content=\"" . $tngdomain . "/" . $pageURL . "\">\n";
     echo $fbOGimage . "\n";
   }
 
   if ($session_charset) {
-    echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\" />\n";
+    echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
   }
   if (isset($flags['norobots'])) {
     echo $flags['norobots'];
   }
   if (isset($flags['autorefresh']) && $flags['autorefresh'] == 1) {
-    echo "<meta http-equiv=\"refresh\" content=\"30\" />\n";
+    echo "<meta http-equiv=\"refresh\" content=\"30\">\n";
   }
   if ($sitever == "mobile" || $sitever == "tablet") {
-    echo "<meta name=\"HandheldFriendly\" content=\"True\" />\n";
-    echo "<meta name=\"MobileOptimized\" content=\"320\" />\n";
-    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
-    echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n";
-    echo "<meta http-equiv=\"cleartype\" content=\"on\" />\n";
+    echo "<meta name=\"HandheldFriendly\" content=\"True\">\n";
+    echo "<meta name=\"MobileOptimized\" content=\"320\">\n";
+    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
+    echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n";
+    echo "<meta http-equiv=\"cleartype\" content=\"on\">\n";
 
-    echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"$tngdomain/img/tng-apple-icon-144.png\"/>\n";
-    echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"$tngdomain/img/tng-apple-icon-114.png\"/>\n";
-    echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"$tngdomain/img/tng-apple-icon-72.png\"/>\n";
-    echo "<link rel=\"apple-touch-icon-precomposed\" href=\"$tngdomain/img/tng-apple-icon.png\"/>\n";
-    echo "<link rel=\"shortcut icon\" href=\"$tngdomain/img/tng-apple-icon.png\"/>\n";
+    echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"$tngdomain/img/tng-apple-icon-144.png\">\n";
+    echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"$tngdomain/img/tng-apple-icon-114.png\">\n";
+    echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"$tngdomain/img/tng-apple-icon-72.png\">\n";
+    echo "<link rel=\"apple-touch-icon-precomposed\" href=\"$tngdomain/img/tng-apple-icon.png\">\n";
+    echo "<link rel=\"shortcut icon\" href=\"$tngdomain/img/tng-apple-icon.png\">\n";
   } elseif ($tngconfig['favicon']) {
-    echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\"/>\n";
+    echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
   }
 
   if (!$tng_version) {
     $tng_version = "12.0.0";
   }
   if ($sitever != "standard" && $responsivetables) {
-    echo "<link href=\"{$cms['tngpath']}css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\" />\n";
+    echo "<link href=\"{$cms['tngpath']}css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
-  echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+  echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   if (isset($flags['tabs'])) {
-    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/{$flags['tabs']}?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/{$flags['tabs']}?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
-  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   if ($sitever == "mobile") {
-    echo "<link href=\"{$cms['tngpath']}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
-    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+    echo "<link href=\"{$cms['tngpath']}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
 
   if ($isConnected) {
@@ -135,7 +135,7 @@ function tng_header($title, $flags) {
   if (isset($flags['scripting'])) {
     echo $flags['scripting'];
   }
-  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\" />\n";
+  echo "<link href=\"{$cms['tngpath']}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
 
   if (!empty($tngconfig['showshare']) && $isConnected && $sitever != "mobile") {
     $w = $http == "https" ? "ws" : "w";
@@ -162,7 +162,7 @@ function tng_header($title, $flags) {
     echo "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "&message={$flags['error']}');});\n";
   }
   echo "</script>\n";
-  echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"{$cms['tngpath']}tngrss.php\" />\n";
+  echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"{$cms['tngpath']}tngrss.php\">\n";
 
   if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
     include $cms['tngpath'] . "cookie_approval.php";
@@ -170,7 +170,7 @@ function tng_header($title, $flags) {
 
   @include $custommeta;
   if ($tngprint) {
-    echo "<link href=\"{$cms['tngpath']}css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\" />\n";
+    echo "<link href=\"{$cms['tngpath']}css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\">\n";
   }
   echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
 
