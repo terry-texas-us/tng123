@@ -2,41 +2,6 @@
 
 /* Created by Artisteer v4.0.0.58475 */
 
-#url
-
-(
-.. /img/ page.png
-
-)
-{
-    margin: 0 auto
-;
-    font-size: 12px
-;
-    font-family: Arial, Helvetica, Sans-Serif
-;
-    font-weight: normal
-;
-    font-style: normal
-;
-    text-align: justify
-;
-    position: relative
-;
-    width: 100%
-;
-    min-height: 100%
-;
-    left: 0
-;
-    top: 0
-;
-    cursor: default
-;
-/*overflow:hidden;*/
-    height: 100%
-;
-}
 
 ul.cb-hmenu {
     font-size: 12px;
@@ -384,7 +349,6 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
 
 
 .cb-footer .layout-item-0 {
-    background: ;
 }
 
 .ie7 .post .layout-cell {

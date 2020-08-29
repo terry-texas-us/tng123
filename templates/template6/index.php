@@ -86,10 +86,10 @@ if ($sitever == "mobile") {
 	</span>
         <br><br>
         <form id="form1" method="get" action="<?php echo $cms['tngpath']; ?>search.php">
-          <div><input type="hidden" value="AND" name="mybool">
-            <table width="297" cellspacing="0" cellpadding="0">
-              <tr>
-                <td><?php echo $text['firstname']; ?>:</td>
+            <div><input type="hidden" value="AND" name="mybool">
+                <table width="297" cellspacing="0">
+                    <tr>
+                        <td><?php echo $text['firstname']; ?>:</td>
                 <td class="searchbox"><input name="myfirstname" type="text" id="myfirstname"></td>
 
               </tr>
@@ -134,14 +134,14 @@ if ($sitever == "mobile") {
 
         </p>
 
-        <table width="250" cellspacing="0" cellpadding="0">
-          <tr>
+          <table width="250" cellspacing="0">
+              <tr>
 
-            <!-- CHANGE 'His side' AND 'Her size' TO THE TWO BRANCHES YOU WILL LIST HISTORIES FOR BELOW -->
+                  <!-- CHANGE 'His side' AND 'Her size' TO THE TWO BRANCHES YOU WILL LIST HISTORIES FOR BELOW -->
 
-            <td class="emphasis">
+                  <td class="emphasis">
 
-              <?php
+                      <?php
                           //begin "HIS SIDE" LABEL (default text: "His Side")
                           //Configurable from Template Settings. You can also replace the t6_hisside PHP block below with the desired text if you prefer that to using the Template Settings.
                           ?>

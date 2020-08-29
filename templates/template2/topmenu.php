@@ -1,12 +1,12 @@
 <?php global $text, $subroot, $tmp; ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
-<table cellspacing="0" cellpadding="0" class="page" width="100%">
-  <tr>
-    <td>&nbsp;</td>
-    <td valign="top">
+<table cellspacing="0" class="page" width="100%">
+    <tr>
+        <td>&nbsp;</td>
+        <td valign="top">
 
-      <?php
+            <?php
       //begin HEADER IMAGE (default: small picture of the girl at the top left)
       //Actual file name has been replaced with t2_headimg variable, configurable from Template Settings. Default name of actual image is "headerphoto.jpg"
       //You can replace the t2_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
@@ -16,11 +16,11 @@
       //end HEADER IMAGE
       ?>
 
-    </td>
-    <td align="center" valign="top">
-      <table cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="center"><a href="<?php echo $cms['tngpath']; ?>index.php" class="toptitle">
+        </td>
+        <td align="center" valign="top">
+            <table cellspacing="0">
+                <tr>
+                    <td align="center"><a href="<?php echo $cms['tngpath']; ?>index.php" class="toptitle">
               <?php
               //begin HEADER TITLE IMAGE (default: "Our Family Genealogy Pages")
               //Actual file name has been replaced with t2_headtitleimg variable, configurable from Template Settings. Default name of actual image is "headertitle.gif"
@@ -61,14 +61,14 @@
 						</span>
           </td>
         </tr>
-      </table>
-    </td>
-    <td valign="top" align="right">
-      <form action="search.php" method="get" id="topsearch" style="margin:0px">
-        <table cellspacing="0" cellpadding="0">
-          <tr>
-            <td class="topmenu">
-              <span class="headertitle"><?php echo $text['search']; ?></span><br>
+            </table>
+        </td>
+        <td valign="top" align="right">
+            <form action="search.php" method="get" id="topsearch" style="margin:0px">
+                <table cellspacing="0">
+                    <tr>
+                        <td class="topmenu">
+                            <span class="headertitle"><?php echo $text['search']; ?></span><br>
               <?php echo $text['firstname']; ?>:<br><input type="text" name="myfirstname" class="searchbox" size="10"><br>
               <img src="<?php echo $cms['tngpath']; ?>img/spacer.gif" alt="" width="100%" height="3"><br>
               <?php echo $text['lastname']; ?>: <br><input type="text" name="mylastname" size="10" class="searchbox"><br>

@@ -172,7 +172,7 @@ a.admincell:hover, a.leftlink:hover {
 /* New style definitions added in 7.0.0  */
 /* to replace hard-coded styles in topmenu.php or footer.php */
 
-/* page: is defined to override the body bgcolor=#3E331D; width="100%" align="center" cellpadding="0" cellspacing="0" in the top table for the page */
+/* page: is defined to override the body bgcolor=#3E331D; width="100%" align="center" cellspacing="0" in the top table for the page */
 .page {
     background-color: #3E331D;
     padding: 0;

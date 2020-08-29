@@ -175,10 +175,10 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                           ?>
                   </div>
                 </div>
-                <div class="rightsection"><br>
-                  <table cellspacing="0" cellpadding="0">
-                    <tr>
-                      <td valign="top"><span class="normal"><b><?php echo $text['featarts']; ?></b></span></td>
+                  <div class="rightsection"><br>
+                      <table cellspacing="0">
+                          <tr>
+                              <td valign="top"><span class="normal"><b><?php echo $text['featarts']; ?></b></span></td>
                             </tr>
                             <tr>
                                 <td valign="top" class="line"></td>

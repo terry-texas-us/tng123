@@ -76,13 +76,13 @@ $title = getTemplateMessage('t2_maintitle');
                         -->
                         <a href="extrastree.php?personID=<?php echo $tmp['t2_phhistperson']; ?>&amp;tree=<?php echo $tmp['t2_phhisttree']; ?>" class="mainlink smalltitle">&#8226; <?php echo $text['photoshistories']; ?></a>
 
-                      <div id="linktable">
-                        <br><br>
-                        <table cellspacing="4" cellpadding="0">
-                          <tr>
-                            <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
-                            <td valign="top">
-                              <?php
+                        <div id="linktable">
+                            <br><br>
+                            <table cellspacing="4">
+                                <tr>
+                                    <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
+                                    <td valign="top">
+                                        <?php
                                       if ($currentuser) {
                                         echo "<a href=\"{$cms['tngpath']}logout.php\" class=\"sidelink\">" . strtoupper($text['mnulogout']) . "</a>\n";
                                       } else {
@@ -161,9 +161,9 @@ $title = getTemplateMessage('t2_maintitle');
                         <div id="searchblock">
                           <div id="searchtitleblock">
                             <span class="smalltitle"><?php echo $text['search']; ?></span>
-                            <table cellspacing="6" cellpadding="0">
-                              <tr>
-                                <td align="center"><a href="<?php echo $cms['tngpath']; ?>searchform.php" class="sidelink"><?php echo $text['mnuadvancedsearch']; ?></a></td>
+                              <table cellspacing="6">
+                                  <tr>
+                                      <td align="center"><a href="<?php echo $cms['tngpath']; ?>searchform.php" class="sidelink"><?php echo $text['mnuadvancedsearch']; ?></a></td>
                               </tr>
                               <tr>
                                 <td align="center"><a href="<?php echo $cms['tngpath']; ?>surnames.php" class="sidelink"><?php echo $text['mnulastnames']; ?></a></td>

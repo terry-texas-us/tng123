@@ -13,9 +13,9 @@ if (!$cms['support'] && $sitever != "mobile") {
 ?>
 
 <div>
-  <table cellspacing="0" cellpadding="0" id="headertable">
-    <tr>
-      <?php
+    <table cellspacing="0" id="headertable">
+        <tr>
+            <?php
       //begin TITLE IMAGE (default: "Our Family History")
       //Actual file name has been replaced with t7_titleimg variable, configurable from Template Settings. Default name of actual image is "logo.jpg"
       //You can replace the t7_titleimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
@@ -55,31 +55,31 @@ if (!$cms['support'] && $sitever != "mobile") {
           ?>
         </div>
       </td>
-    </tr>
-  </table>
-  <form action="search.php" method="get" style="margin:0px">
-    <table width="100%" cellspacing="0" cellpadding="0">
-      <tr class="strip">
-        <td class="fieldnameback">
+        </tr>
+    </table>
+    <form action="search.php" method="get" style="margin:0px">
+        <table width="100%" cellspacing="0">
+            <tr class="strip">
+                <td class="fieldnameback">
 								<span class="fieldname">
 									&nbsp;<span class="nw"><?php echo $text['mnufirstname']; ?>: <input type="text" name="myfirstname" size="18"></span>
 									&nbsp;<span class="nw"><?php echo $text['mnulastname']; ?>: <input type="text" name="mylastname" size="18"></span>
 									<input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0"><input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>">
 								</span>
-        </td>
-      </tr>
-    </table>
-  </form>
+                </td>
+            </tr>
+        </table>
+    </form>
 
-  <table cellspacing="0" cellpadding="0" class="page" width="100%">
-    <tr>
-      <td class="section">
+    <table cellspacing="0" class="page" width="100%">
+        <tr>
+            <td class="section">
 
-        <table width="193" cellspacing="0" cellpadding="0">
-          <tr>
-            <td class="tableheader"></td>
-            <td class="fieldname">
-              <?php
+                <table width="193" cellspacing="0">
+                    <tr>
+                        <td class="tableheader"></td>
+                        <td class="fieldname">
+                            <?php
               if ($currentuser) {
                 echo "<a href=\"logout.php\" class=\"lightlink\">{$text['mnulogout']}</a><br>\n";
               } else {
@@ -121,23 +121,23 @@ if (!$cms['support'] && $sitever != "mobile") {
                 echo "<a href=\"newacctform.php\" class=\"lightlink\">{$text['mnuregister']}</a><br>\n";
               }
               ?>
-            </td>
-          </tr>
+                        </td>
+                    </tr>
 
-        </table>
-      </td>
-      <td valign="top">
-        <table cellspacing="0" cellpadding="0" class="bodytable">
-          <tr>
-            <td colspan="2"></td>
-          </tr>
-          <tr>
-            <td class="spacercol">&nbsp;&nbsp;&nbsp;</td>
+                </table>
+            </td>
             <td valign="top">
-              <table cellspacing="0" cellpadding="0" class="bodytable">
-                <tr>
-                  <td class="maincontent"><br>
-                    <?php
+                <table cellspacing="0" class="bodytable">
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="spacercol">&nbsp;&nbsp;&nbsp;</td>
+                        <td valign="top">
+                            <table cellspacing="0" class="bodytable">
+                                <tr>
+                                    <td class="maincontent"><br>
+                                        <?php
                     //begin MAIN IMAGE (default: large picture of Main Street, Mt. Pleasant, Utah, ca. 1915)
                     //Actual file name has been replaced with t7_mainimage variable, configurable from Template Settings. Default name of actual image is "bigphoto.jpg"
                     //You can replace the t7_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
@@ -177,12 +177,12 @@ if (!$cms['support'] && $sitever != "mobile") {
                       ?>
 
                     </div> <!-- end of normal div -->
-                  </td>
-                  <td class="middlecol">&nbsp;&nbsp;&nbsp;</td>
-                  <td class="rightcontent"><br>
-                    <table width="200" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td valign="top"><span class="emphasis"><?php echo $text['latupdates']; ?></span></td>
+                                    </td>
+                                    <td class="middlecol">&nbsp;&nbsp;&nbsp;</td>
+                                    <td class="rightcontent"><br>
+                                        <table width="200" cellspacing="0">
+                                            <tr>
+                                                <td valign="top"><span class="emphasis"><?php echo $text['latupdates']; ?></span></td>
                       </tr>
                       <tr>
                         <td colspan="4" class="line"></td>
