@@ -515,8 +515,8 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                     <div id="children" style="padding-top:10px">
                         <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1" class="normal">
                             <tr>
-                                <td class="fieldnameback" style="width:55px"><span class="fieldname">&nbsp;<b><?php echo $admtext['text_sort']; ?></b>&nbsp;</span></td>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['child']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback" style="width:55px"><span class="fieldname"><?php echo $admtext['text_sort']; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['child']; ?></span></th>
                             </tr>
                         </table>
                         <div id="childrenlist">

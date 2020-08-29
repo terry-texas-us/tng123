@@ -61,9 +61,9 @@ $_SESSION['tng_search_marrtype'] = cleanIt($mymarrtype);
 $_SESSION['tng_search_fbool'] = $mybool;
 $_SESSION['tng_nr'] = $nr;
 if ($order) {
-  $_SESSION['tng_search_forder'] = $order;
+    $_SESSION['tng_search_forder'] = $order;
 } else {
-  $order = isset($_SESSION['tng_search_forder']) ? $_SESSION['tng_search_forder'] : "fname";
+    $order = isset($_SESSION['tng_search_forder']) ? $_SESSION['tng_search_forder'] : "fname";
 }
 
 $marrsort = "marr";
@@ -75,157 +75,157 @@ $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_S
 $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
 if ($order == "marr") {
-  $orderstr = "marrdatetr, marrplace, father.lastname, father.firstname";
-  $marrsort = "<a href=\"$search_url$currargs&order=marrup\" class=\"lightlink\">{$text['married']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $orderstr = "marrdatetr, marrplace, father.lastname, father.firstname";
+    $marrsort = "<a href=\"$search_url$currargs&order=marrup\" class=\"lightlink\">{$text['married']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-  $marrsort = "<a href=\"$search_url$currargs&order=marr\" class=\"lightlink\">{$text['married']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
-  if ($order == "marrup") {
-    $orderstr = "marrdatetr DESC, marrplace DESC, father.lastname, father.firstname";
-  }
+    $marrsort = "<a href=\"$search_url$currargs&order=marr\" class=\"lightlink\">{$text['married']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    if ($order == "marrup") {
+        $orderstr = "marrdatetr DESC, marrplace DESC, father.lastname, father.firstname";
+    }
 }
 
 if ($order == "div") {
-  $orderstr = "divdatetr, divplace, father.lastname, father.firstname, marrdatetr";
-  $divsort = "<a href=\"$search_url$currargs&order=divup\" class=\"lightlink\">{$text['divorced']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $orderstr = "divdatetr, divplace, father.lastname, father.firstname, marrdatetr";
+    $divsort = "<a href=\"$search_url$currargs&order=divup\" class=\"lightlink\">{$text['divorced']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-  $divsort = "<a href=\"$search_url$currargs&order=div\" class=\"lightlink\">{$text['divorced']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
-  if ($order == "divup") {
-    $orderstr = "divdatetr DESC, divplace DESC, father.lastname, father.firstname, marrdatetr";
-  }
+    $divsort = "<a href=\"$search_url$currargs&order=div\" class=\"lightlink\">{$text['divorced']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    if ($order == "divup") {
+        $orderstr = "divdatetr DESC, divplace DESC, father.lastname, father.firstname, marrdatetr";
+    }
 }
 
 if ($order == "fname") {
-  $orderstr = "father.lastname, father.firstname, marrdatetr";
-  $fnamesort = "<a href=\"$search_url$currargs&order=fnameup\" class=\"lightlink\">{$text['fathername']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $orderstr = "father.lastname, father.firstname, marrdatetr";
+    $fnamesort = "<a href=\"$search_url$currargs&order=fnameup\" class=\"lightlink\">{$text['fathername']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-  $fnamesort = "<a href=\"$search_url$currargs&order=fname\" class=\"lightlink\">{$text['fathername']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
-  if ($order == "fnameup") {
-    $orderstr = "father.lastname DESC, father.firstname DESC, marrdatetr";
-  }
+    $fnamesort = "<a href=\"$search_url$currargs&order=fname\" class=\"lightlink\">{$text['fathername']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    if ($order == "fnameup") {
+        $orderstr = "father.lastname DESC, father.firstname DESC, marrdatetr";
+    }
 }
 
 if ($order == "mname") {
-  $orderstr = "mother.lastname, mother.firstname, marrdatetr";
-  $mnamesort = "<a href=\"$search_url$currargs&order=mnameup\" class=\"lightlink\">{$text['mothername']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $orderstr = "mother.lastname, mother.firstname, marrdatetr";
+    $mnamesort = "<a href=\"$search_url$currargs&order=mnameup\" class=\"lightlink\">{$text['mothername']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-  $mnamesort = "<a href=\"$search_url$currargs&order=mname\" class=\"lightlink\">{$text['mothername']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
-  if ($order == "mnameup") {
-    $orderstr = "mother.lastname DESC, mother.firstname DESC, marrdatetr";
-  }
+    $mnamesort = "<a href=\"$search_url$currargs&order=mname\" class=\"lightlink\">{$text['mothername']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    if ($order == "mnameup") {
+        $orderstr = "mother.lastname DESC, mother.firstname DESC, marrdatetr";
+    }
 }
 
 function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $textstr) {
-  global $lnprefixes, $criteria_limit, $criteria_count;
+    global $lnprefixes, $criteria_limit, $criteria_count;
 
-  if ($qualifier == "exists" || $qualifier == "dnexist") {
-    $value = $usevalue = "";
-  } else {
-    $value = urldecode(trim($value));
-    $usevalue = addslashes($value);
-  }
+    if ($qualifier == "exists" || $qualifier == "dnexist") {
+        $value = $usevalue = "";
+    } else {
+        $value = urldecode(trim($value));
+        $usevalue = addslashes($value);
+    }
 
-  if ($column == "father.lastname" && $lnprefixes) {
-    $column = "TRIM(CONCAT_WS(' ',father.lnprefix,father.lastname))";
-  } elseif ($column == "mother.lastname") {
-    $column = "TRIM(CONCAT_WS(' ',mother.lnprefix,mother.lastname))";
-  }
+    if ($column == "father.lastname" && $lnprefixes) {
+        $column = "TRIM(CONCAT_WS(' ',father.lnprefix,father.lastname))";
+    } elseif ($column == "mother.lastname") {
+        $column = "TRIM(CONCAT_WS(' ',mother.lnprefix,mother.lastname))";
+    }
 
-  $criteria_count++;
-  if ($criteria_count >= $criteria_limit) {
-    die("sorry");
-  }
-  $criteria = "";
-  $returnarray = buildColumn($qualifier, $column, $usevalue);
-  $criteria .= $returnarray['criteria'];
-  $qualifystr = $returnarray['qualifystr'];
+    $criteria_count++;
+    if ($criteria_count >= $criteria_limit) {
+        die("sorry");
+    }
+    $criteria = "";
+    $returnarray = buildColumn($qualifier, $column, $usevalue);
+    $criteria .= $returnarray['criteria'];
+    $qualifystr = $returnarray['qualifystr'];
 
-  addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value);
+    addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value);
 }
 
 $querystring = "";
 $allwhere = "";
 
 if ($myflastname || $flnqualify == "exists" || $flnqualify == "dnexist") {
-  if ($myflastname == $text['nosurname']) {
-    addtoQuery("lastname", "myflastname", "father.lastname = \"\"", "flnqualify", $text['equals'], $text['equals'], $myflastname);
-  } else {
-    buildCriteria("father.lastname", "myflastname", "flnqualify", $flnqualify, $myflastname, $text['lastname']);
-  }
+    if ($myflastname == $text['nosurname']) {
+        addtoQuery("lastname", "myflastname", "father.lastname = \"\"", "flnqualify", $text['equals'], $text['equals'], $myflastname);
+    } else {
+        buildCriteria("father.lastname", "myflastname", "flnqualify", $flnqualify, $myflastname, $text['lastname']);
+    }
 }
 if ($myffirstname || $ffnqualify == "exists" || $ffnqualify == "dnexist") {
-  buildCriteria("father.firstname", "myffirstname", "ffnqualify", $ffnqualify, $myffirstname, $text['firstname']);
+    buildCriteria("father.firstname", "myffirstname", "ffnqualify", $ffnqualify, $myffirstname, $text['firstname']);
 }
 
 if ($mymlastname || $mlnqualify == "exists" || $mlnqualify == "dnexist") {
-  if ($mymlastname == $text['nosurname']) {
-    addtoQuery("lastname", "mymlastname", "mother.lastname = \"\"", "mlnqualify", $text['equals'], $text['equals'], $mymlastname);
-  } else {
-    buildCriteria("mother.lastname", "mymlastname", "mlnqualify", $mlnqualify, $mymlastname, $text['lastname']);
-  }
+    if ($mymlastname == $text['nosurname']) {
+        addtoQuery("lastname", "mymlastname", "mother.lastname = \"\"", "mlnqualify", $text['equals'], $text['equals'], $mymlastname);
+    } else {
+        buildCriteria("mother.lastname", "mymlastname", "mlnqualify", $mlnqualify, $mymlastname, $text['lastname']);
+    }
 }
 if ($mymfirstname || $mfnqualify == "exists" || $mfnqualify == "dnexist") {
-  buildCriteria("mother.firstname", "mymfirstname", "mfnqualify", $mfnqualify, $mymfirstname, $text['firstname']);
+    buildCriteria("mother.firstname", "mymfirstname", "mfnqualify", $mfnqualify, $mymfirstname, $text['firstname']);
 }
 
 if ($myfamilyid) {
-  $myfamilyid = strtoupper($myfamilyid);
-  if ($fidqualify == "equals" && is_numeric($myfamilyid)) {
-    $myfamilyid = $familyprefix . $myfamilyid . $familysuffix;
-  }
-  buildCriteria("familyID", "myfamilyid", "fidqualify", $fidqualify, $myfamilyid, $text['familyid']);
+    $myfamilyid = strtoupper($myfamilyid);
+    if ($fidqualify == "equals" && is_numeric($myfamilyid)) {
+        $myfamilyid = $familyprefix . $myfamilyid . $familysuffix;
+    }
+    buildCriteria("familyID", "myfamilyid", "fidqualify", $fidqualify, $myfamilyid, $text['familyid']);
 }
 if ($mymarrplace || $mpqualify == "exists" || $mpqualify == "dnexist") {
-  buildCriteria("marrplace", "mymarrplace", "mpqualify", $mpqualify, $mymarrplace, $text['marrplace']);
+    buildCriteria("marrplace", "mymarrplace", "mpqualify", $mpqualify, $mymarrplace, $text['marrplace']);
 }
 if ($mymarryear || $myqualify == "exists" || $myqualify == "dnexist") {
-  buildYearCriteria("marrdatetr", "mymarryear", "myqualify", "", $myqualify, $mymarryear, $text['marrdatetr']);
+    buildYearCriteria("marrdatetr", "mymarryear", "myqualify", "", $myqualify, $mymarryear, $text['marrdatetr']);
 }
 if ($mydivplace || $dvpqualify == "exists" || $dvpqualify == "dnexist") {
-  buildCriteria("divplace", "mydivplace", "dvpqualify", $dvpqualify, $mydivplace, $text['divplace']);
+    buildCriteria("divplace", "mydivplace", "dvpqualify", $dvpqualify, $mydivplace, $text['divplace']);
 }
 if ($mydivyear || $dvyqualify == "exists" || $dvyqualify == "dnexist") {
-  buildYearCriteria("divdatetr", "mydivyear", "dvyqualify", "", $dvyqualify, $mydivyear, $text['divdatetr']);
+    buildYearCriteria("divdatetr", "mydivyear", "dvyqualify", "", $dvyqualify, $mydivyear, $text['divdatetr']);
 }
 if ($mymarrtype || $mtqualify == "exists" || $mtqualify == "dnexist") {
-  buildCriteria("marrtype", "mymarrtype", "mtqualify", $mtqualify, $mymarrtype, $text['marrtype']);
+    buildCriteria("marrtype", "mymarrtype", "mtqualify", $mtqualify, $mymarrtype, $text['marrtype']);
 }
 
 $dontdo = array("MARR", "DIV");
 $cejoin = doCustomEvents("F");
 
 if ($tree) {
-  if ($urlstring) {
-    $urlstring .= "&amp;";
-  }
-  $urlstring .= "tree=$tree";
+    if ($urlstring) {
+        $urlstring .= "&amp;";
+    }
+    $urlstring .= "tree=$tree";
 
-  if ($querystring) {
-    $querystring .= " AND ";
-  }
+    if ($querystring) {
+        $querystring .= " AND ";
+    }
 
-  require_once "./admin/trees.php";
-  $treerow = getTree($trees_table, $tree);
+    require_once "./admin/trees.php";
+    $treerow = getTree($trees_table, $tree);
 
-  $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
+    $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
 
-  if ($allwhere) {
-    $allwhere = "($allwhere) AND";
-  }
-  $allwhere .= " f.gedcom=\"$tree\"";
+    if ($allwhere) {
+        $allwhere = "($allwhere) AND";
+    }
+    $allwhere .= " f.gedcom=\"$tree\"";
 
-  if ($branch) {
-    $urlstring .= "&amp;branch=$branch";
-    $querystring .= " {$text['cap_and']} ";
+    if ($branch) {
+        $urlstring .= "&amp;branch=$branch";
+        $querystring .= " {$text['cap_and']} ";
 
-    $query = "SELECT description FROM $branches_table WHERE gedcom = \"$tree\" AND branch = \"$branch\"";
-    $branchresult = tng_query($query);
-    $branchrow = tng_fetch_assoc($branchresult);
-    tng_free_result($branchresult);
+        $query = "SELECT description FROM $branches_table WHERE gedcom = \"$tree\" AND branch = \"$branch\"";
+        $branchresult = tng_query($query);
+        $branchrow = tng_fetch_assoc($branchresult);
+        tng_free_result($branchresult);
 
-    $querystring .= $text['branch'] . " {$text['equals']} {$branchrow['description']}";
+        $querystring .= $text['branch'] . " {$text['equals']} {$branchrow['description']}";
 
-    $allwhere .= " AND f.branch like \"%$branch%\"";
-  }
+        $allwhere .= " AND f.branch like \"%$branch%\"";
+    }
 }
 
 $treequery = "SELECT count(gedcom) as treecount FROM $trees_table";
@@ -238,27 +238,27 @@ $gotInput = $mymarrplace || $mydivplace || $mymarryear || $mydivyear || $ecount;
 $more = getLivingPrivateRestrictions("f", false, $gotInput);
 
 if ($more) {
-  if ($allwhere) {
-    $allwhere = $tree ? "$allwhere AND " : "($allwhere) AND ";
-  }
-  $allwhere .= $more;
+    if ($allwhere) {
+        $allwhere = $tree ? "$allwhere AND " : "($allwhere) AND ";
+    }
+    $allwhere .= $more;
 }
 
 if ($allwhere) {
-  $allwhere = "WHERE " . $allwhere . " AND ";
-  $querystring = "{$text['text_for']} $querystring";
+    $allwhere = "WHERE " . $allwhere . " AND ";
+    $querystring = "{$text['text_for']} $querystring";
 } else {
-  $allwhere = "WHERE ";
+    $allwhere = "WHERE ";
 }
 
 $max_browsesearch_pages = 5;
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $page = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $page = 1;
 }
 
 //left join to people table twice, once for husband and for wife
@@ -281,36 +281,36 @@ $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
-  $countrow = tng_fetch_assoc($result2);
-  $totrows = $countrow['fcount'];
-  tng_free_result($result2);
+    $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+    $countrow = tng_fetch_assoc($result2);
+    $totrows = $countrow['fcount'];
+    tng_free_result($result2);
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 if (!$numrows) {
-  $msg = $text['noresults'] . " $querystring. " . $text['tryagain'] . ".";
-  header("Location: " . "$searchform_url" . "msg=" . urlencode($msg));
-  exit;
+    $msg = $text['noresults'] . " $querystring. " . $text['tryagain'] . ".";
+    header("Location: " . "$searchform_url" . "msg=" . urlencode($msg));
+    exit;
 }
 
 tng_header($text['searchresults'], $flags);
 ?>
 <?php
 if ($sitever != "mobile") {
-  ?>
-  <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
-  <script type="text/javascript">
-    // <![CDATA[
-    var ajx_fampreview = '<?php echo getURL("ajx_fampreview", 0);?>';
-    // ]]>
-  </script>
-  <?php
+    ?>
+    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
+    <script type="text/javascript">
+        // <![CDATA[
+        var ajx_fampreview = '<?php echo getURL("ajx_fampreview", 0);?>';
+        // ]]>
+    </script>
+    <?php
 }
 ?>
 
-  <h1 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h1><br clear="left">
+    <h1 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h1><br clear="left">
 <?php
 $logstring = "<a href=\"$search_url" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
@@ -325,51 +325,47 @@ echo "<p class=\"normal\">$pagenav</p>";
 
 $header = $headerr = "";
 if ($enablemodeswitch) {
-  $headerr = "data-tablesaw-mode-switch>\n";
+    $headerr = "data-tablesaw-mode-switch>\n";
 } else {
-  $headerr = ">\n" . $header;
+    $headerr = ">\n" . $header;
 }
 
 if ($enableminimap) {
-  $headerr = " data-tablesaw-minimap " . $headerr;
+    $headerr = " data-tablesaw-minimap " . $headerr;
 } else {
-  $headerr = $headerr;
+    $headerr = $headerr;
 }
 
 if ($sitever != "standard") {
-  if ($tabletype == "toggle") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
-  } elseif ($tabletype == "stack") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
-  } elseif ($tabletype == "swipe") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
-  }
+    if ($tabletype == "toggle") {
+        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
+    } elseif ($tabletype == "stack") {
+        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
+    } elseif ($tabletype == "swipe") {
+        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
+    }
 } else {
-  $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n" . $header;
+    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n" . $header;
 }
 echo $header;
 ?>
     <thead>
     <tr>
-        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
-        <th data-tablesaw-priority="3" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $text['familyid']; ?></b>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $fnamesort; ?></b>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $mnamesort; ?></b>&nbsp;</th>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $marrsort; ?>&nbsp;</th>
-        <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th>
-      <?php
-      if ($mydivplace || $mydivyear) {
-        ?>
-          <th data-tablesaw-priority="3" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $divsort; ?></b>&nbsp;</th>
-          <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th>
-        <?php
-      }
-      if ($numtrees > 1) {
-        ?>
-          <th data-tablesaw-priority="5" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
-        <?php
-      }
-      ?>
+        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname"># </span></th>
+        <th data-tablesaw-priority="3" class="fieldnameback fieldname nw"><?php echo $text['familyid']; ?></th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw"><?php echo $fnamesort; ?></th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw"><?php echo $mnamesort; ?></th>
+        <th data-tablesaw-priority="2" class="fieldnameback fieldname nw"><?php echo $marrsort; ?></th>
+        <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+        <?php if ($mydivplace || $mydivyear) { ?>
+            <th data-tablesaw-priority="3" class="fieldnameback fieldname nw"><?php echo $divsort; ?></th>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <?php
+        }
+        if ($numtrees > 1) {
+            ?>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname nw"><?php echo $text['tree']; ?></th>
+        <?php } ?>
     </tr>
     </thead>
 <?php
@@ -377,66 +373,66 @@ $i = $offsetplus;
 
 $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" class=\"chartimg\">";
 while ($row = tng_fetch_assoc($result)) {
-  //assemble frow and mrow, override family living flag if allow_living for either of these is no
-  $frow = array(
-          "firstname" => $row['ffirstname'],
-          "lnprefix" => $row['flnprefix'],
-          "lastname" => $row['flastname'],
-          "living" => $row['fliving'],
-          "private" => $row['fprivate'],
-          "branch" => $row['fbranch']
-  );
-  $rights = determineLivingPrivateRights($frow);
-  $frow['allow_living'] = $rights['living'];
-  $frow['allow_private'] = $rights['private'];
+    //assemble frow and mrow, override family living flag if allow_living for either of these is no
+    $frow = array(
+        "firstname" => $row['ffirstname'],
+        "lnprefix" => $row['flnprefix'],
+        "lastname" => $row['flastname'],
+        "living" => $row['fliving'],
+        "private" => $row['fprivate'],
+        "branch" => $row['fbranch']
+    );
+    $rights = determineLivingPrivateRights($frow);
+    $frow['allow_living'] = $rights['living'];
+    $frow['allow_private'] = $rights['private'];
 
-  $mrow = array(
-          "firstname" => $row['mfirstname'],
-          "lnprefix" => $row['mlnprefix'],
-          "lastname" => $row['mlastname'],
-          "living" => $row['mliving'],
-          "branch" => $row['mbranch'],
-          "private" => $row['mprivate']
-  );
-  $rights = determineLivingPrivateRights($mrow);
-  $mrow['allow_living'] = $rights['living'];
-  $mrow['allow_private'] = $rights['private'];
+    $mrow = array(
+        "firstname" => $row['mfirstname'],
+        "lnprefix" => $row['mlnprefix'],
+        "lastname" => $row['mlastname'],
+        "living" => $row['mliving'],
+        "branch" => $row['mbranch'],
+        "private" => $row['mprivate']
+    );
+    $rights = determineLivingPrivateRights($mrow);
+    $mrow['allow_living'] = $rights['living'];
+    $mrow['allow_private'] = $rights['private'];
 
-  $rights = determineLivingPrivateRights($row);
-  if ($rights['both']) {
-    $marrdate = $row['marrdate'] ? displayDate($row['marrdate']) : "";
-    $marrplace = $row['marrplace'] ? $row['marrplace'] . " " . placeImage($row['marrplace']) : "";
-    $divdate = $row['divdate'] ? displayDate($row['divdate']) : "";
-    $divplace = $row['divplace'] ? $row['divplace'] . " " . placeImage($row['divplace']) : "";
-  } else {
-    $marrdate = $marrplace = $divdate = $divplace = $livingOK = "";
-  }
+    $rights = determineLivingPrivateRights($row);
+    if ($rights['both']) {
+        $marrdate = $row['marrdate'] ? displayDate($row['marrdate']) : "";
+        $marrplace = $row['marrplace'] ? $row['marrplace'] . " " . placeImage($row['marrplace']) : "";
+        $divdate = $row['divdate'] ? displayDate($row['divdate']) : "";
+        $divplace = $row['divplace'] ? $row['divplace'] . " " . placeImage($row['divplace']) : "";
+    } else {
+        $marrdate = $marrplace = $divdate = $divplace = $livingOK = "";
+    }
 
-  $fname = getNameRev($frow);
-  $mname = getNameRev($mrow);
+    $fname = getNameRev($frow);
+    $mname = getNameRev($mrow);
 
-  $famidstr = "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
+    $famidstr = "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
 
-  echo "<tr>";
-  echo "<td class=\"databack\" valign=\"top\">$i</td>\n";
-  $i++;
+    echo "<tr>";
+    echo "<td class=\"databack\" valign=\"top\">$i</td>\n";
+    $i++;
 
-  echo "<td class=\"databack\">$famidstr";
-  if ($sitever != "mobile") {
-    echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div></div>\n";
-  }
-  echo "&nbsp;</td>";
-  echo "<td class=\"databack\">$fname&nbsp;</td><td class=\"databack\">$mname&nbsp;</td>";
-  echo "<td class=\"databack\">$marrdate&nbsp;</td><td class=\"databack\">$marrplace&nbsp;</td>";
-  if ($mydivyear || $mydivplace) {
-    echo "<td class=\"databack\">$divdate </td><td class=\"databack\">$divplace&nbsp;</td>";
-  }
+    echo "<td class=\"databack\">$famidstr";
+    if ($sitever != "mobile") {
+        echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div></div>\n";
+    }
+    echo "&nbsp;</td>";
+    echo "<td class=\"databack\">$fname&nbsp;</td><td class=\"databack\">$mname&nbsp;</td>";
+    echo "<td class=\"databack\">$marrdate&nbsp;</td><td class=\"databack\">$marrplace&nbsp;</td>";
+    if ($mydivyear || $mydivplace) {
+        echo "<td class=\"databack\">$divdate </td><td class=\"databack\">$divplace&nbsp;</td>";
+    }
 
-  if ($numtrees > 1) {
-    echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
-  }
+    if ($numtrees > 1) {
+        echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+    }
 
-  echo "</tr>\n";
+    echo "</tr>\n";
 }
 tng_free_result($result);
 ?>

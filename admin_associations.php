@@ -46,8 +46,8 @@ $assoccount = tng_num_rows($assocresult);
       } ?>>
           <tbody id="associationstblbody">
           <tr>
-              <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-              <td class="fieldnameback fieldname" width="85%">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
+              <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+              <th class="fieldnameback fieldname" width="85%"><?php echo $admtext['description']; ?></th>
           </tr>
           <?php
           if ($assocresult && $assoccount) {

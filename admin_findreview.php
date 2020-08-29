@@ -219,12 +219,12 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                 ?>
                 <table cellpadding="3" cellspacing="1" class="normal">
                     <tr>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['name']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['event']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['postdate']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['id']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['name']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['event']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['postdate']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['tree']; ?></th>
                     </tr>
 
                     <?php

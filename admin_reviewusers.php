@@ -69,14 +69,14 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['username']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['dtregistered']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['username']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['description']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['dtregistered']; ?></th>
                         </tr>
 
                         <?php

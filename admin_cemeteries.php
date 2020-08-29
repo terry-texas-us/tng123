@@ -157,17 +157,17 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['cemetery']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['location']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['cemetery']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['location']; ?></th>
                             <?php if ($map['key']) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['googleplace']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['googleplace']; ?></th>
                             <?php } else { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['latitude']; ?></b>&nbsp;</td>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['longitude']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['latitude']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['longitude']; ?></th>
                             <?php } ?>
                         </tr>
 

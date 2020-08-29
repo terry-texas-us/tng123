@@ -263,31 +263,31 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</span></td>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['husbid']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['id']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['husbid']; ?></span></th>
                             <?php
                             if ($spousename == "husband") {
-                                echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>{$admtext['husbname']}</b>&nbsp;</span></td>\n";
+                                echo "<th class=\"fieldnameback\"><span class=\"fieldname\">{$admtext['husbname']}</span></th>\n";
                             }
                             ?>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['wifeid']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['wifeid']; ?></span></th>
                             <?php
                             if ($spousename == "wife") {
-                                echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>{$admtext['wifename']}</b>&nbsp;</span></td>\n";
+                                echo "<th class=\"fieldnameback\"><span class=\"fieldname\">{$admtext['wifename']}</span></th>\n";
                             }
                             ?>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['marrdate']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['marrdate']; ?></span></th>
                             <?php if ($numtrees > 1) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
                                 <?php
                             }
                             if ($numusers > 1) {
                                 ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['lastmodified']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['lastmodified']; ?></span></th>
                             <?php } ?>
                         </tr>
 

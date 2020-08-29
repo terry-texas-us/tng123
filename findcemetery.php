@@ -129,10 +129,10 @@ echo "<p>{$admtext['matches']}: $numrows</p>";
 	</span>
           <table cellpadding="3" cellspacing="1" border="0">
               <tr>
-                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
-                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</span></td>
-                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['cemetery']; ?></b>&nbsp;</span></td>
-                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['location']; ?></b>&nbsp;</span></td>
+                  <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
+                  <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['id']; ?></span></th>
+                  <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['cemetery']; ?></span></th>
+                  <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['location']; ?></span></th>
               </tr>
 
               <?php

@@ -195,15 +195,15 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['note']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['note']; ?></th>
                             <?php if (!$tree) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['tree']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['linkedto']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['linkedto']; ?></th>
                         </tr>
                         <?php
                         if ($numrows) {

@@ -197,14 +197,14 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['repoid']; ?></b>&nbsp;</span></td>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['name']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['repoid']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['name']; ?></span></th>
                             <?php if ($numtrees > 1) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
                             <?php } ?>
                         </tr>
                         <?php

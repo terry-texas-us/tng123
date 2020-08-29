@@ -300,23 +300,23 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['place']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['place']; ?></th>
                             <?php if ($map['key']) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['placelevel']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['placelevel']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['latitude']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['longitude']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['latitude']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['longitude']; ?></th>
                             <?php if ($map['key']) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['zoom']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['zoom']; ?></th>
                                 <?php
                             }
                             if (!$tngconfig['places1tree']) {
                                 ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['tree']; ?></th>
                             <?php } ?>
                         </tr>
                         <?php

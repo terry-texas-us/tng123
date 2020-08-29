@@ -47,61 +47,62 @@ $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'mar
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <p class="subhead"><strong><?php echo $admtext['dataval']; ?></strong></p>
+    <tr class="databack">
+        <td class="tngshadow">
+            <p class="subhead"><strong><?php echo $admtext['dataval']; ?></strong></p>
 
-          <?php
-          if (!$assignedtree) {
-            ?>
-              <form action="admin_people.php" name="form1">
-                  <table>
-                      <tr>
-                          <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
-                          <td>
-                            <?php
-                            echo "<select name=\"tree\" id=\"treequeryselect\">";
-                            if (!$assignedtree) {
-                              echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                            }
-                            $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                            while ($treerow = tng_fetch_assoc($treeresult)) {
-                              echo "	<option value=\"{$treerow['gedcom']}\"";
-                              if ($treerow['gedcom'] == $tree) {
-                                echo " selected";
-                              }
-                              echo ">{$treerow['treename']}</option>\n";
-                            }
-                            tng_free_result($treeresult);
-                            ?>
-                          </td>
-                      </tr>
-                  </table>
-              </form><br>
             <?php
-          }
-          ?>
-      <table cellpadding="5" cellspacing="1" class="normal">
-        <tr>
-          <td class="fieldnameback fieldname">&nbsp;<b>#</b>&nbsp;</td>
-          <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['report']; ?></b>&nbsp;</td>
-                </tr>
-              <?php
-              for ($i = 1; $i <= count($reports); $i++) {
-                $this_report = $reports[$i - 1];
+            if (!$assignedtree) {
                 ?>
-                  <tr>
-                      <td class="lightback" align="right">&nbsp;<?php echo $i; ?></td>
-                      <td class="lightback">&nbsp;<a href="admin_valreport.php?report=<?php echo $this_report; ?>&amp;tree=<?php echo $assignedtree; ?>" class="valreport"><?php echo $admtext[$this_report]; ?></a></td>
-                  </tr>
+                <form action="admin_people.php" name="form1">
+                    <table>
+                        <tr>
+                            <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
+                            <td>
+                                <?php
+                                echo "<select name=\"tree\" id=\"treequeryselect\">";
+                                if (!$assignedtree) {
+                                    echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
+                                }
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    echo "	<option value=\"{$treerow['gedcom']}\"";
+                                    if ($treerow['gedcom'] == $tree) {
+                                        echo " selected";
+                                    }
+                                    echo ">{$treerow['treename']}</option>\n";
+                                }
+                                tng_free_result($treeresult);
+                                ?>
+                            </td>
+                        </tr>
+                    </table>
+                </form><br>
                 <?php
-              }
-              ?>
+            }
+            ?>
+            <table cellpadding="5" cellspacing="1" class="normal">
+                <tr>
+                    <th class="fieldnameback fieldname">#</th>
+                    <th class="fieldnameback fieldname"><?php echo $admtext['report']; ?></th>
+                </tr>
+                <?php
+                for ($i = 1; $i <= count($reports); $i++) {
+                    $this_report = $reports[$i - 1];
+                    ?>
+                    <tr>
+                        <td class="lightback" align="right">&nbsp;<?php echo $i; ?></td>
+                        <td class="lightback">&nbsp;<a href="admin_valreport.php?report=<?php echo $this_report; ?>&amp;tree=<?php echo $assignedtree; ?>"
+                                                       class="valreport"><?php echo $admtext[$this_report]; ?></a></td>
+                    </tr>
+                    <?php
+                }
+                ?>
             </table>
 
-          <?php
+            <?php
 
-          ?>
+            ?>
         </td>
     </tr>
 

@@ -151,23 +151,23 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['username']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['branch']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['role']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['living']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['text_private']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b>GED</b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b>PDF</b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['lds']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['lastlogin']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['disabled']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['username']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['description']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['tree']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['branch']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['role']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['living']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['text_private']; ?></th>
+                            <th class="fieldnameback fieldname nw">GED</th>
+                            <th class="fieldnameback fieldname nw">PDF</th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['lds']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['lastlogin']; ?></th>
+                            <th class="fieldnameback fieldname nw"><?php echo $admtext['disabled']; ?></th>
                         </tr>
 
                         <?php

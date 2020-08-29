@@ -402,21 +402,21 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo "{$admtext['title']}, {$admtext['description']}"; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['thumb']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo "{$admtext['title']}, {$admtext['description']}"; ?></th>
                             <?php if ($map['key']) { ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['googleplace']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['googleplace']; ?></th>
                                 <?php
                             }
                             if (!$mediatypeID) {
                                 ?>
-                                <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['mediatype']; ?></b>&nbsp;</td>
+                                <th class="fieldnameback fieldname"><?php echo $admtext['mediatype']; ?></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['linkedto']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['linkedto']; ?></th>
                         </tr>
                         <?php
                         if ($numrows) {

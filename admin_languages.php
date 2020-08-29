@@ -100,10 +100,10 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
 
                 <table cellpadding="3" cellspacing="1" class="normal">
                     <tr>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['display']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['folder']; ?></b>&nbsp;</td>
-                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['charset']; ?></b>&nbsp;</td>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['display']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['folder']; ?></th>
+                        <th class="fieldnameback fieldname"><?php echo $admtext['charset']; ?></th>
                     </tr>
 
                     <?php

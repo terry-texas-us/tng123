@@ -176,30 +176,26 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                   ?>
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr class="fieldnameback fieldname nw" r>
-                            <td>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-                            <?php
-                            if ($allow_delete) {
-                                ?>
-                                <td><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
-                                <?php
-                            }
-                            ?>
-                            <td>&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $text['startingind']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['people']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['families']; ?></b>&nbsp;</td>
+                            <th><?php echo $admtext['action']; ?></th>
+                            <?php if ($allow_delete) { ?>
+                                <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
+                            <?php } ?>
+                            <th><?php echo $admtext['id']; ?></th>
+                            <th><?php echo $admtext['description']; ?></th>
+                            <th><?php echo $admtext['tree']; ?></th>
+                            <th><?php echo $text['startingind']; ?></th>
+                            <th><?php echo $admtext['people']; ?></th>
+                            <th><?php echo $admtext['families']; ?></th>
                         </tr>
 
-                      <?php
-                      if ($numrows) {
-                      $actionstr = "";
-                      if ($allow_edit) {
-                        $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
-                      }
-                      if ($allow_delete) {
-                        if (!$assignedtree) {
+                        <?php
+                        if ($numrows) {
+                        $actionstr = "";
+                        if ($allow_edit) {
+                            $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                        }
+                        if ($allow_delete) {
+                            if (!$assignedtree) {
                           $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                       }

@@ -128,11 +128,11 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
 ?>
     <table cellpadding="3" cellspacing="1" width="705" class="normal">
         <tr>
-            <td class="fieldnameback" width="50"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</span></td>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</span></td>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['date']; ?></b>&nbsp;</span></td>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['mediatype']; ?></b>&nbsp;</span></td>
+            <th class="fieldnameback" width="50"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
+            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['thumb']; ?></span></th>
+            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['description']; ?></span></th>
+            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['date']; ?></span></th>
+            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['mediatype']; ?></span></th>
         </tr>
         <?php
         while ($row = tng_fetch_assoc($result)) {

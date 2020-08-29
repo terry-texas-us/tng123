@@ -169,15 +169,15 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                     ?>
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr class="fieldnameback fieldname nw" r>
-                            <td>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <th><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
-                                <td><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <td>&nbsp;<b><?php echo $admtext['groupid']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['test_type']; ?></b>&nbsp;</td>
-                            <td>&nbsp;<b><?php echo $admtext['dna_tests']; ?></b>&nbsp;</td>
+                            <th><?php echo $admtext['groupid']; ?></th>
+                            <th><?php echo $admtext['description']; ?></th>
+                            <th><?php echo $admtext['tree']; ?></th>
+                            <th><?php echo $admtext['test_type']; ?></th>
+                            <th><?php echo $admtext['dna_tests']; ?></th>
                         </tr>
 
                         <?php

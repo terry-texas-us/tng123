@@ -107,14 +107,14 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                     ?>
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['evyear']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['enddt']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['evtitle']; ?></b>&nbsp;</td>
-                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['evdetail']; ?></b>&nbsp;</td>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['evyear']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['enddt']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['evtitle']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo $admtext['evdetail']; ?></th>
                         </tr>
                         <?php
                         if ($numrows) {

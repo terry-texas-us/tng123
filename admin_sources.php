@@ -208,19 +208,19 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['sourceid']; ?></b>&nbsp;</span></td>
-                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['title']; ?></b>&nbsp;</span></td>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['sourceid']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['title']; ?></span></th>
                             <?php if ($numtrees > 1) { ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
                                 <?php
                             }
                             if ($numusers > 1) {
                                 ?>
-                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['lastmodified']; ?></b>&nbsp;</span></td>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['lastmodified']; ?></span></th>
                             <?php } ?>
                         </tr>
                         <?php
