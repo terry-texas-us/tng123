@@ -1880,8 +1880,8 @@ switch ($textpart) {
     $admtext['verified'] = "bevestig";
     $admtext['provisional'] = "(Voorlopige) moet beskikbaar wees";
     $admtext['backtoprevious'] = "Blaai terug";
-    $admtext['reasontoupdate'] = "As jy nie die cust_text_update.php geskrif uitgevoer het as deel van die TNG v12 opgradering nie, moet jy die cust_text.php file as volg opdateer, <ul><li> plaas 'n nuwe lyn by die file en as ook </li><li> om die bestaande ou line in die cust_text.php file te vervang </li></ ul> wat nie vervang was tydens TNG opgradering nie.";
-    $admtext['newanchor'] = "Moenie die nuwe kommentaar lyn in die taal file vertaal nie, sodat dit as 'n anker kan gebruik word deur die mod ontwikkelaars.";
+      $admtext['reasontoupdate'] = "As jy nie die cust_text_update.php geskrif uitgevoer het as deel van die TNG v12 opgradering nie, moet jy die cust_text.php file as volg opdateer, <ul><li> plaas 'n nuwe lyn by die file en as ook </li><li> om die bestaande ou line in die cust_text.php file te vervang </li></ul> wat nie vervang was tydens TNG opgradering nie.";
+      $admtext['newanchor'] = "Moenie die nuwe kommentaar lyn in die taal file vertaal nie, sodat dit as 'n anker kan gebruik word deur die mod ontwikkelaars.";
     $admtext['translateissue'] = "Die installeering van hierdie mod sal misluk as die \"Comment\" lyn vertaal word.";
     $admtext['privatemod'] = "Privaat Mod";
     $admtext['protected'] = "beskermd - verwyder hierdie file per hand";

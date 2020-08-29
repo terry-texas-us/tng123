@@ -1879,8 +1879,8 @@ switch ($textpart) {
     $admtext['verified'] = "bekræftet";
     $admtext['provisional'] = "(foreløbig) skal være tilgængelig";
     $admtext['backtoprevious'] = "Tilbage til forrige side";
-    $admtext['reasontoupdate'] = "Hvis man ikke har kørt cust_text_update.php scriptet som en del af TNG v12 opgraderingen, så skal man opdatere cust_text.php filer til <ul> <li>tilføj en ny linje til filerne og </li><li>også opdatere out-of-date linjen i eksisterende cust_text.php filer,</ li></ ul> som ikke bliver udskiftes under TNG-opgraderinger.";
-    $admtext['newanchor'] = "Den nye kommentarlinje bør ikke oversættes i sprogfilerne, så den kan bruges som et anker for at indsætte brugerdefineret tekst før denne nye kommentarlinje af MOD-udviklerne.";
+      $admtext['reasontoupdate'] = "Hvis man ikke har kørt cust_text_update.php scriptet som en del af TNG v12 opgraderingen, så skal man opdatere cust_text.php filer til <ul> <li>tilføj en ny linje til filerne og </li><li>også opdatere out-of-date linjen i eksisterende cust_text.php filer,</li></ul> som ikke bliver udskiftes under TNG-opgraderinger.";
+      $admtext['newanchor'] = "Den nye kommentarlinje bør ikke oversættes i sprogfilerne, så den kan bruges som et anker for at indsætte brugerdefineret tekst før denne nye kommentarlinje af MOD-udviklerne.";
     $admtext['translateissue'] = "Hvis man oversætter den nye kommentarlinje, vil MOD installationer mislykkes.";
     $admtext['privatemod'] = "Privat MOD";
     $admtext['protected'] = "beskyttet - fjern fil manuelt";

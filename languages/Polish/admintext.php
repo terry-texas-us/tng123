@@ -1879,8 +1879,8 @@ switch ($textpart) {
     $admtext['verified'] = "zweryfikowany";
     $admtext['provisional'] = "(tymczasowy) musi by� dost�pny";
     $admtext['backtoprevious'] = "Powr�� do poprzedniej strony";
-    $admtext['reasontoupdate'] = "Je�li nie uruchomi�e� skryptu cust_text_update.php w ramach aktualizacji TNG v12, musisz zaktualizowa� pliki cust_text.php do <ul> <li> dodaj now� lini� do plik�w i </ li> <li> r�wnie� zaktualizuj nieaktualn� lini� w istniej�cych plikach cust_text.php </ li> </ ul>, kt�re nie s� zast�powane podczas aktualizacji TNG.";
-    $admtext['newanchor'] = "Nowa linia komentarza nie powinna by� t�umaczona na pliki j�zykowe, aby mog�a zosta� u�yta jako kotwica do wstawienia niestandardowego tekstu przed t� now� lini� komentarza przez tw�rc�w mod�w.";
+      $admtext['reasontoupdate'] = "Je�li nie uruchomi�e� skryptu cust_text_update.php w ramach aktualizacji TNG v12, musisz zaktualizowa� pliki cust_text.php do <ul> <li> dodaj now� lini� do plik�w i </li> <li> r�wnie� zaktualizuj nieaktualn� lini� w istniej�cych plikach cust_text.php </li> </ul>, kt�re nie s� zast�powane podczas aktualizacji TNG.";
+      $admtext['newanchor'] = "Nowa linia komentarza nie powinna by� t�umaczona na pliki j�zykowe, aby mog�a zosta� u�yta jako kotwica do wstawienia niestandardowego tekstu przed t� now� lini� komentarza przez tw�rc�w mod�w.";
     $admtext['translateissue'] = "Je�li przet�umaczysz now� lini� komentarza, instalacje Modowe zawiod�.";
     $admtext['privatemod'] = "Prywatny Mod";
     $admtext['protected'] = "bezpiecznie-usu� plik r�cznie";

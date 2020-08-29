@@ -99,11 +99,11 @@ a.topmenu:Active {
 
 /* tabletopedge is defined to replace the bgcolor=#FFFFFF; and background=edge.gif in topmenu */
 .tabletopedge {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background-color: #FFFFFF;
     background-image: url(../img/edge.gif);
-    border: 0px;
+    border: 0;
     border-bottom-color: white;
     width: 100%;
     height: 15px;
@@ -111,11 +111,11 @@ a.topmenu:Active {
 
 /* tablebottomedge is defined to replace the bgcolor=#FFFFFF; and background=edge.gif in topmenu */
 .tablebottomedge {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background-color: #FFFFFF;
     background-image: url(../img/edge-bottom.gif);
-    border: 0px;
+    border: 0;
     width: 100%;
     height: 15px;
 }
@@ -125,7 +125,7 @@ a.topmenu:Active {
 }
 
 .noimgborder {
-    border: 0px;
+    border: 0;
 }
 
 
@@ -167,7 +167,7 @@ a.topmenu:Active {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 100%; /* width of image used so it will center */
     height: 100%;
 }
@@ -198,8 +198,8 @@ a.footer:hover {
 
 /* indexsubmit added to replace hspace="0" vspace="0" width="74" height="76" in index.php for button.jpg */
 .indexsubmit {
-    margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-left: 0;
     width: 74px;
     height: 76px;
 }
@@ -207,8 +207,8 @@ a.footer:hover {
 /* menusubmit added to replace align="right" "hspace="0" vspace="0" width="55" height="54" in topmenu */
 .menusubmit {
     float: right;
-    margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-left: 0;
     width: 55px;
     height: 54px;
 }
@@ -217,7 +217,7 @@ a.footer:hover {
 .indexsearch {
     width: 100px;
     height: 38px;
-    border: 0px;
+    border: 0;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -226,7 +226,7 @@ a.footer:hover {
 .menusearch {
     width: 67px;
     height: 24px;
-    border: 0px;
+    border: 0;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -235,9 +235,9 @@ a.footer:hover {
 .headerimg {
     margin-top: 5px; /* replaces vspace="3" */
     margin-bottom: 5px; /* replaces vspace="3" */
-    margin-left: 0px;
-    margin-right: 0px;
-    border: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    border: 0;
 }
 
 /* page: is defined to replace the bgcolor=#676037; */

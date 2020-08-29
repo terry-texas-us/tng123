@@ -13,27 +13,27 @@ $helplang = findhelp("mostwanted_help.php");
 function showDiv($type) {
   global $thumbmaxw, $admtext, $mostwanted_table, $media_table, $people_table, $mediatypes_assoc, $mediapath, $allow_add, $allow_delete, $allow_edit, $rootpath;
 
-  if ($allow_add) {
-    echo "<form action=\"\" style=\"margin:0px;padding-bottom:5px\" method=\"post\" name=\"form$type\" id=\"form$type\">\n";
-    echo "<input type=\"button\" value=\"" . $admtext['addnew'] . "\" onclick=\"return openMostWanted('$type','');\">\n";
-    echo "</form>\n";
-  }
+    if ($allow_add) {
+        echo "<form action=\"\" style=\"margin:0;padding-bottom:5px\" method=\"post\" name=\"form$type\" id=\"form$type\">\n";
+        echo "<input type=\"button\" value=\"" . $admtext['addnew'] . "\" onclick=\"return openMostWanted('$type','');\">\n";
+        echo "</form>\n";
+    }
 
-  echo "<div id=\"order$type" . "divs\">\n";
-  echo "<table id=\"order$type" . "tbl\" width=\"100%\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"normal\">\n";
-  echo "<tr>\n";
-  echo "<td class=\"fieldnameback\" style=\"width:55px\"><span class=\"fieldname\"><nobr>&nbsp;<b>" . $admtext['text_sort'] . "</b>&nbsp;</nobr></span></td>\n";
-  echo "<td class=\"fieldnameback\" style=\"width:" . ($thumbmaxw + 10) . "px\"><span class=\"fieldname\"><nobr>&nbsp;<b>" . $admtext['thumb'] . "</b>&nbsp;</nobr></span></td>\n";
-  echo "<td class=\"fieldnameback\"><span class=\"fieldname\"><nobr>&nbsp;<b>" . $admtext['description'] . "</b>&nbsp;</nobr></span></td>\n";
-  echo "</tr>\n";
-  echo "</table>\n";
+    echo "<div id=\"order$type" . "divs\">\n";
+    echo "<table id=\"order$type" . "tbl\" width=\"100%\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"normal\">\n";
+    echo "<tr>\n";
+    echo "<td class=\"fieldnameback\" style=\"width:55px\"><span class=\"fieldname\">&nbsp;<b>" . $admtext['text_sort'] . "</b>&nbsp;</span></td>\n";
+    echo "<td class=\"fieldnameback\" style=\"width:" . ($thumbmaxw + 10) . "px\"><span class=\"fieldname\">&nbsp;<b>" . $admtext['thumb'] . "</b>&nbsp;</span></td>\n";
+    echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>" . $admtext['description'] . "</b>&nbsp;</span></td>\n";
+    echo "</tr>\n";
+    echo "</table>\n";
 
 
-  $query = "SELECT $mostwanted_table.ID as mwID, mwtype, thumbpath, usecollfolder, mediatypeID, $media_table.description as mtitle, $mostwanted_table.description as mwdesc, $mostwanted_table.title as title FROM $mostwanted_table
+    $query = "SELECT $mostwanted_table.ID as mwID, mwtype, thumbpath, usecollfolder, mediatypeID, $media_table.description as mtitle, $mostwanted_table.description as mwdesc, $mostwanted_table.title as title FROM $mostwanted_table
 		LEFT JOIN $media_table ON $mostwanted_table.mediaID = $media_table.mediaID
 		LEFT JOIN $people_table ON $mostwanted_table.personID = $people_table.personID AND $mostwanted_table.gedcom = $people_table.gedcom
 		WHERE mwtype = \"$type\" ORDER BY ordernum";
-  $result = tng_query($query);
+    $result = tng_query($query);
 
   while ($lrow = tng_fetch_assoc($result)) {
     $lmediatypeID = $lrow['mediatypeID'];

@@ -279,8 +279,8 @@ div.mminner {
 
 /* modlister */
 .checkpad {
-    padding-left: 0px;
-    padding-top: 0px;
+    padding-left: 0;
+    padding-top: 0;
 }
 
 /* modlister - affected files */

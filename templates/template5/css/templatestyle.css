@@ -13,7 +13,7 @@
 }
 
 .theader {
-    padding: 0px;
+    padding: 0;
 }
 
 /* body: describes page background color and all non-table text not governed by any other style */
@@ -92,7 +92,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 /* banner: heading text replaces td width="585" class="header" style="font-size:30 px" */
 .banner {
-    margin-top: 0px;
+    margin-top: 0;
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 30px;
     color: #665544;
@@ -309,8 +309,8 @@ a.footer:hover {
     border-collapse: collapse; /* replace cellpadding */
     border-color: black;
     border-style: solid;
-    margin: 0px;
-    padding: 0px 0px 0px 0px; /*  top right bottom left */
+    margin: 0;
+    padding: 0 0 0 0; /*  top right bottom left */
 }
 
 /* innertable added to replace hard-coded style in topmenu and index.php   style="border-collapse: collapse" bordercolor="#111111" cellpadding="5" cellspacing="0" width="100%"  */
@@ -401,7 +401,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #CBE9ED, #9BB9BD);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #CBE9ED, #9BB9BD);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 
@@ -475,7 +475,7 @@ ul.tngdd .topline {
     #searchbox {
         width: 100%;
         float: none;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     #menubar {

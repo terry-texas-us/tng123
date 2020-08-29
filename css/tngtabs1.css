@@ -32,8 +32,8 @@
 
 /*main method*/
 ul#tngnav {
-    margin: 0 0px 0px;
-    padding: 0 0 0 0px;
+    margin: 0 0 0;
+    padding: 0 0 0 0;
     list-style: none;
     border: none;
 }

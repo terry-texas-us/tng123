@@ -105,7 +105,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #c2c2c2, #a2a2a2);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #c2c2c2, #a2a2a2);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #c2c2c2, #a2a2a2);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 

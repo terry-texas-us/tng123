@@ -67,7 +67,7 @@ function drawBox($person, $box) {
   echo "<div class=\"popup trackerbox\" style=\"width:{$boxwidth}px; height:{$boxheight}px; background-color:$bgcolor; padding: {$pedigree['cellpad']}px; overflow:hidden\">\n";
 
   //inner table
-  echo "<table cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0px\">\n<tr><td valign=\"top\">";
+  echo "<table cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0\">\n<tr><td valign=\"top\">";
   $name = getName($person);
   $nameinfo = "<a href=\"$getperson_url" . "personID={$person['personID']}&amp;tree=$tree\"><span style=\"font-size:11pt\">$name</span></a>";
   if ($person['personID'] && $pedigree['inclphotos']) {

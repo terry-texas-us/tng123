@@ -34,12 +34,12 @@
 }
 
 #big-block-1, #big-block-3 {
-    margin: 0px;
+    margin: 0;
     background-color: #8fc1e3;
 }
 
 .homebody, .theader {
-    margin: 0px;
+    margin: 0;
     background-color: #31708E;
 }
 
@@ -133,11 +133,11 @@
 }
 
 .theader h1, .tblock h2, .tfooter h2, .linkcol h2 {
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 .tblock {
-    margin: 0px;
+    margin: 0;
 }
 
 #big-block-2, #tfooter {
@@ -163,14 +163,14 @@
 }
 
 #linkarea ul {
-    margin-left: 0px;
-    padding-left: 0px;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .fancy_list {
     list-style: none;
-    padding-left: 0px;
-    margin-left: 0px;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .fancy_list li {
@@ -325,8 +325,8 @@ ul.tngdd .topline {
 }
 
 ul.home-menus, ul.fancy_list {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     line-height: 1.5;
 }
@@ -334,9 +334,9 @@ ul.home-menus, ul.fancy_list {
 .emailimg {
     width: 40px;
     height: 26px;
-    margin: 0px 8px 0px 0px;
+    margin: 0 8px 0 0;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 .fambackground {

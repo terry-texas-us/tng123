@@ -55,7 +55,7 @@ function showDivs($type) {
       $mediatext .= "</div>\n";
     }
     $mediatext .= "<span><strong>{$row['mwtitle']}</strong></span><br><br>";
-    $mediatext .= "<div style=\"margin:0px;\">{$row['mwdesc']}</div>";
+      $mediatext .= "<div style=\"margin:0;\">{$row['mwdesc']}</div>";
 
     $mediatext .= "<div class=\"mwperson\">\n";
     if ($type == "person") {

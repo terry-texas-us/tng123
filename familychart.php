@@ -523,7 +523,7 @@ function famStylesheet() {
 	background-color: {$familychart['boxcolor']};
 	box-shadow: 5px 5px 5px {$familychart['shadowcolor']};
 	border-radius: 10px;
-	padding: 0px; overflow:hidden;
+	padding: 0; overflow:hidden;
 	text-align: center;
 }
 .mfambox {
@@ -537,7 +537,7 @@ function famStylesheet() {
 .bare, .smallpic {
 	width: {$b}px;
 	height: {$bh}px;
-	padding: 0px;
+	padding: 0;
 	border-collapse: collapse;
 	text-align: center;
 }

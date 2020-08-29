@@ -91,7 +91,7 @@ ul#tngnav {
 }
 
 #tngnav a:hover {
-    background-position: 0% -42px;
+    background-position: 0 -42px;
 }
 
 #tngnav a:hover span {
@@ -99,7 +99,7 @@ ul#tngnav {
 }
 
 #tngnav a.here {
-    background-position: 0% -42px;
+    background-position: 0 -42px;
 }
 
 #tngnav a.here span {

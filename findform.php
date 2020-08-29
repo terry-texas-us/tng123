@@ -10,18 +10,18 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-  <span class="subhead"><strong><?php echo $admtext['addlinks']; ?></strong></span><br>
-  <form name="find2" id="find2" style="margin-top:0px" onsubmit="return getPotentialLinks('<?php echo $linktype; ?>');">
-    <?php
-    if ($linktype == "I") {
-      ?>
-      <table cellspacing="2" id="findformI">
-        <tr>
-          <td colspan="2" class="normal"><br><strong><?php echo $admtext['findpersonid']; ?></strong> <span class="smaller">(<?php echo $admtext['enterinamepart']; ?>)</span></td>
-        </tr>
-        <tr>
-          <td class="normal"><?php echo $admtext['lastname']; ?></td>
-          <td class="normal"><?php echo $admtext['firstname']; ?></td>
+    <span class="subhead"><strong><?php echo $admtext['addlinks']; ?></strong></span><br>
+    <form name="find2" id="find2" style="margin-top:0" onsubmit="return getPotentialLinks('<?php echo $linktype; ?>');">
+        <?php
+        if ($linktype == "I") {
+            ?>
+            <table cellspacing="2" id="findformI">
+                <tr>
+                    <td colspan="2" class="normal"><br><strong><?php echo $admtext['findpersonid']; ?></strong> <span class="smaller">(<?php echo $admtext['enterinamepart']; ?>)</span></td>
+                </tr>
+                <tr>
+                    <td class="normal"><?php echo $admtext['lastname']; ?></td>
+                    <td class="normal"><?php echo $admtext['firstname']; ?></td>
         </tr>
         <tr>
           <td><input type="text" name="mylastname" id="mylastname"></td>

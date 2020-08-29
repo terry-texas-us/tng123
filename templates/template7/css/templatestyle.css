@@ -214,7 +214,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 /* line: is defined to replace the bgcolor="#999966" used with a line gif image (khaki.gif in template 7)*/
 .line {
     color: #999966;
-    margin-top: 0px;
+    margin-top: 0;
     background-image: url(../img/khaki.gif);
     height: 1px;
 }
@@ -275,7 +275,7 @@ a.footer:hover {
 /* strip replaces  align="right" valign="middle" height="20"  */
 .strip {
     color: #999966;
-    margin-top: 0px;
+    margin-top: 0;
     background-image: url(../img/khaki.gif);
     height: 27px;
     text-align: right;
@@ -309,8 +309,8 @@ a.footer:hover {
 /* menuback: background color for left nav menu same as fieldname background-color: #f2f2e9 but no border width="120" */
 .menuback {
     background-color: #f2f2e9;
-    border-right: 0px;
-    border-bottom: 0px;
+    border-right: 0;
+    border-bottom: 0;
     width: 120px;
 }
 
@@ -343,7 +343,7 @@ a.footer:hover {
 .bigphoto {
     width: 300px;
     height: 172px;
-    border: 0px;
+    border: 0;
 }
 
 /* middlecol added to replace td width="103" */

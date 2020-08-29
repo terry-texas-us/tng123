@@ -124,44 +124,44 @@ tng_adminheader($admtext['modifysettings'], $flags);
       //change to YES
       jQuery('#convert').show();
       jQuery('#convertexpl').show();
-      jQuery('#placetree').show();
-      jQuery('#merge').hide();
-      jQuery('#mergeexpl').hide();
+        jQuery('#placetree').show();
+        jQuery('#merge').hide();
+        jQuery('#mergeexpl').hide();
     }
   }
 
   function convertPlaces(command) {
-    var options = {action: command};
-    if (command == "convert")
-      options.placetree = jQuery('#placetree').val();
-    jQuery('#' + command + 'expl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0px;vertical-align:middle;">');
+      var options = {action: command};
+      if (command == "convert")
+          options.placetree = jQuery('#placetree').val();
+      jQuery('#' + command + 'expl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0;vertical-align:middle;">');
 
-    jQuery.ajax({
-      url: 'ajx_placeconvert.php',
-      data: options,
-      type: 'GET',
-      dataType: 'html',
-      success: function (req) {
-        jQuery('#' + command + 'expl').html(req);
-      }
-    });
+      jQuery.ajax({
+          url: 'ajx_placeconvert.php',
+          data: options,
+          type: 'GET',
+          dataType: 'html',
+          success: function (req) {
+              jQuery('#' + command + 'expl').html(req);
+          }
+      });
 
-    return false;
+      return false;
   }
 
   function convertMedia(select) {
-    var options = {action: select.val()};
-    jQuery('#mediaexpl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0px;vertical-align:middle;">');
+      var options = {action: select.val()};
+      jQuery('#mediaexpl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0;vertical-align:middle;">');
 
-    jQuery.ajax({
-      url: 'ajx_mediaconvert.php',
-      data: options,
-      type: 'GET',
-      dataType: 'html',
-      success: function (req) {
-        jQuery('#mediaexpl').html(req);
-      }
-    });
+      jQuery.ajax({
+          url: 'ajx_mediaconvert.php',
+          data: options,
+          type: 'GET',
+          dataType: 'html',
+          success: function (req) {
+              jQuery('#mediaexpl').html(req);
+          }
+      });
 
     return false;
   }

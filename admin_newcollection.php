@@ -20,8 +20,8 @@ initMediaTypes();
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div class="databack normal" style="margin:10px;border:0px" id="newcollection">
-  <p class="subhead"><strong><?php echo $admtext['addnewcoll']; ?></strong> |
+<div class="databack normal" style="margin:10px;border:0" id="newcollection">
+    <p class="subhead"><strong><?php echo $admtext['addnewcoll']; ?></strong> |
     <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
 
   <form action="admin_addcollection.php" method="post" name="collform" id="collform" onsubmit="return addCollection(this);">

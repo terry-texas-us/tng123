@@ -64,7 +64,7 @@
             </table>
         </td>
         <td valign="top" align="right">
-            <form action="search.php" method="get" id="topsearch" style="margin:0px">
+            <form action="search.php" method="get" id="topsearch" style="margin:0">
                 <table cellspacing="0">
                     <tr>
                         <td class="topmenu">

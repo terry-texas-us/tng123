@@ -28,12 +28,12 @@ $title = getTemplateMessage('t2_maintitle');
 </script>
 
 <div class="center">
-    <table class="indexpage rounded10" style="padding:0px">
+    <table class="indexpage rounded10" style="padding:0">
         <tr>
             <td valign="top">
                 <div class="databack rounded10">
                     <div style="float:left;display:inline">
-                      <?php
+                        <?php
                       //begin TITLE IMAGE (default: "Our Family Genealogy Pages")
                       //Actual file name has been replaced with t1_titleimage variable, configurable from Template Settings. Default name of actual image is "homeheader.gif"
                       //You can replace the t1_titleimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.

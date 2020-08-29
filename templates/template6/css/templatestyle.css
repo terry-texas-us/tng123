@@ -33,10 +33,10 @@
 /* overrides replace bgcolor="#3E331D" leftmargin=0 topmargin=0 rightmargin=0 bottommargin=0 marginwidth=0 in topmenu.php */
 .templatebody {
     background-color: #3E331D;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }
 
 /* header: heading text */
@@ -111,7 +111,7 @@ a.admincell:hover, a.leftlink:hover {
 #navcontainer ul {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     margin-left: 3px;
-    padding-left: 0px;
+    padding-left: 0;
     list-style-type: none;
     font-size: 10px;
 }
@@ -156,16 +156,16 @@ a.admincell:hover, a.leftlink:hover {
 
 #mnav li { /* all list items */
     background: #3e331d; /*same as "databack" background color */
-    border-bottom: 0px solid #777;
-    border-right: 0px solid #777;
-    border-top: 0px solid #e0e0f7; /*same as "databack" background color */
-    border-left: 0px solid #e0e0f7; /*same as "databack" background color */
+    border-bottom: 0 solid #777;
+    border-right: 0 solid #777;
+    border-top: 0 solid #e0e0f7; /*same as "databack" background color */
+    border-left: 0 solid #e0e0f7; /*same as "databack" background color */
 }
 
 #mnav li:hover, #mnav li.sfhover { /* lists nested under hovered list items */
     background-color: #3e331d;
-    border-top: 0px solid #aaa;
-    border-left: 0px solid #aaa;
+    border-top: 0 solid #aaa;
+    border-left: 0 solid #aaa;
 }
 
 
@@ -221,7 +221,7 @@ a.admincell:hover, a.leftlink:hover {
 /* row is defined to replace the height="60" in <tr> */
 .row60 {
     height: 60px;
-    padding: 0px;
+    padding: 0;
 }
 
 /* row5 is defined to replace the height="5" in <tr> */
@@ -233,9 +233,9 @@ a.admincell:hover, a.leftlink:hover {
 .titlemid {
     height: 58px;
     text-align: left;
-    margin-top: 0px;
+    margin-top: 0;
     background-image: url(../img/titlemid.jpg);
-    padding: 0px;
+    padding: 0;
 }
 
 /* footer added to replace <font size="1" color="#cccc99"> in footer */

@@ -1879,8 +1879,8 @@ switch ($textpart) {
     $admtext['verified'] = "verificado";
     $admtext['provisional'] = "(provisional) debe estar disponible";
     $admtext['backtoprevious'] = "Regrese a la pagina anterior";
-    $admtext['reasontoupdate'] = "Si no ha ejecutado el script cust_text_update.php como parte de la actualizaci�n de TNG v12, debe actualizar sus archivos cust_text.php para <ul> <li> agregar una nueva l�nea a los archivos y </ li> <li> tambi�n actualice la l�nea out-of-date en sus archivos cust_text.php existentes </ li> </ ul> que no son reemplazados durante las actualizacion de TNG.";
-    $admtext['newanchor'] = "La nueva l�nea de comentarios no se debe traducir en los archivos de idioma para que pueda usarse como delimitador para insertar texto personalizado, antes de esta nueva l�nea de comentarios por los desarrolladores de mods.";
+      $admtext['reasontoupdate'] = "Si no ha ejecutado el script cust_text_update.php como parte de la actualizaci�n de TNG v12, debe actualizar sus archivos cust_text.php para <ul> <li> agregar una nueva l�nea a los archivos y </li> <li> tambi�n actualice la l�nea out-of-date en sus archivos cust_text.php existentes </li> </ul> que no son reemplazados durante las actualizacion de TNG.";
+      $admtext['newanchor'] = "La nueva l�nea de comentarios no se debe traducir en los archivos de idioma para que pueda usarse como delimitador para insertar texto personalizado, antes de esta nueva l�nea de comentarios por los desarrolladores de mods.";
     $admtext['translateissue'] = "Si usted traduce la nueva linea de comentarios, el mod instalado va a fallar.";
     $admtext['privatemod'] = "Mod Privado";
     $admtext['protected'] = "Quite manualmente archivos protegidos";

@@ -27,33 +27,33 @@ body {
     height: 34px;
     background: #EEE;
     border: solid 1px #000;
-    padding: 0px;
+    padding: 0;
     position: relative;
     z-index: 100000;
 }
 
 .controllerText {
     vertical-align: bottom;
-    margin: 5px 0px 0px 5px;
+    margin: 5px 0 0 5px;
     font-family: Trebuchet MS, Verdana, sans-serif;
     font-size: 10pt;
 }
 
 .controllerButton {
-    margin: 5px 5px 0px 5px;
+    margin: 5px 5px 0 5px;
     font-family: Trebuchet MS, Verdana, sans-serif;
     font-size: 8pt;
     vertical-align: bottom;
 }
 
 .controllerPan {
-    margin: 5px 5px 0px 5px;
+    margin: 5px 5px 0 5px;
     border: solid 1px #EEE;
     vertical-align: bottom;
 }
 
 .controllerPanSelected {
-    margin: 5px 5px 0px 5px;
+    margin: 5px 5px 0 5px;
     vertical-align: bottom;
     background: #DDD;
     border-left: solid 1px #111;
@@ -69,12 +69,12 @@ body {
 
 .controllerMag {
     border: solid 1px #EEE;
-    margin: 5px 5px 0px 10px;
+    margin: 5px 5px 0 10px;
     vertical-align: bottom;
 }
 
 .controllerMagSelected {
-    margin: 5px 5px 0px 10px;
+    margin: 5px 5px 0 10px;
     background: #DDD;
     border-left: solid 1px #111;
     border-top: solid 1px #111;
@@ -84,7 +84,7 @@ body {
 }
 
 .controllerImage {
-    margin: 5px 0px 0px 5px;
+    margin: 5px 0 0 5px;
     background: #EEE;
     vertical-align: bottom;
 }
@@ -92,7 +92,7 @@ body {
 .zoomSelector {
     font-family: Trebuchet MS, Verdana, sans-serif;
     font-size: 8pt;
-    margin: 5px 0px 0px 5px;
+    margin: 5px 0 0 5px;
     vertical-align: bottom;
 }
 

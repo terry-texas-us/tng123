@@ -57,9 +57,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         </table>
     <br>
     <input type="submit" value="<?php echo $admtext['search']; ?>"> <img src="img/spinner.gif" id="findspin" style="display:none">
-    </form>
+  </form>
 
 </div>
 
-<div class="databack" style="display:none;border:0px" id="findresults">
+<div class="databack" style="display:none;border:0" id="findresults">
 </div>

@@ -8,78 +8,78 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_delete || ($assignedtree && $assignedtree != $tree)) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 function getGroupCount($tree, $group, $table) {
-  $query = "SELECT count(dna_group) as count FROM $table WHERE gedcom = \"$tree\" and dna_group = \"$group\"";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $count = $row['count'];
-  if (!$count) {
-    $count = "0";
-  }
-  tng_free_result($result);
+    $query = "SELECT count(dna_group) as count FROM $table WHERE gedcom = \"$tree\" and dna_group = \"$group\"";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $count = $row['count'];
+    if (!$count) {
+        $count = "0";
+    }
+    tng_free_result($result);
 
-  return $count;
+    return $count;
 }
 
 $tng_search_groups = $_SESSION['tng_search_groups'] = 1;
 if ($newsearch) {
-  $exptime = 05;
-  setcookie("tng_search_groups_post[tree]", $tree, $exptime);
-  setcookie("tng_search_groups_post[tngpage]", 1, $exptime);
-  setcookie("tng_search_groups_post[offset]", 0, $exptime);
+    $exptime = 05;
+    setcookie("tng_search_groups_post[tree]", $tree, $exptime);
+    setcookie("tng_search_groups_post[tngpage]", 1, $exptime);
+    setcookie("tng_search_groups_post[offset]", 0, $exptime);
 } else {
-  if (!$tree) {
-    $tree = $_COOKIE['tng_search_groups_post']['tree'];
-  }
-  if (!isset($offset)) {
-    $tngpage = $_COOKIE['tng_search_groups_post']['tngpage'];
-    $offset = $_COOKIE['tng_search_groups_post']['offset'];
-  } else {
-    $exptime = 0;
-    setcookie("tng_search_groups_post[tngpage]", $tngpage, $exptime);
-    setcookie("tng_search_groups_post[offset]", $offset, $exptime);
-  }
+    if (!$tree) {
+        $tree = $_COOKIE['tng_search_groups_post']['tree'];
+    }
+    if (!isset($offset)) {
+        $tngpage = $_COOKIE['tng_search_groups_post']['tngpage'];
+        $offset = $_COOKIE['tng_search_groups_post']['offset'];
+    } else {
+        $exptime = 0;
+        setcookie("tng_search_groups_post[tngpage]", $tngpage, $exptime);
+        setcookie("tng_search_groups_post[offset]", $offset, $exptime);
+    }
 }
 
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $tngpage = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $tngpage = 1;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $tree = $assignedtree;
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $orgtree = $tree;
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
 $wherestr = "";
 if ($tree) {
-  $wherestr .= "WHERE $dna_groups_table.gedcom = \"$tree\"";
+    $wherestr .= "WHERE $dna_groups_table.gedcom = \"$tree\"";
 }
 $query = "SELECT $dna_groups_table.gedcom as gedcom, dna_group, $dna_groups_table.description as description, test_type, treename FROM $dna_groups_table LEFT JOIN $trees_table ON $trees_table.gedcom = $dna_groups_table.gedcom $wherestr ORDER BY $dna_groups_table.description LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(dna_group) as gcount FROM $dna_groups_table LEFT JOIN $trees_table ON $trees_table.gedcom = $dna_groups_table.gedcom $wherestr";
-  $result2 = tng_query($query);
-  $row = tng_fetch_assoc($result2);
-  $totrows = $row['gcount'];
-  tng_free_result($result2);
+    $query = "SELECT count(dna_group) as gcount FROM $dna_groups_table LEFT JOIN $trees_table ON $trees_table.gedcom = $dna_groups_table.gedcom $wherestr";
+    $result2 = tng_query($query);
+    $row = tng_fetch_assoc($result2);
+    $totrows = $row['gcount'];
+    tng_free_result($result2);
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $helplang = findhelp("dna_help.php");
@@ -109,30 +109,30 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <div class="normal">
+    <tr class="databack">
+        <td class="tngshadow">
+            <div class="normal">
 
-        <form action="admin_dna_groups.php" name="form1" id="form1">
-          <table>
-            <tr>
-              <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
+                <form action="admin_dna_groups.php" name="form1" id="form1">
+                    <table>
+                        <tr>
+                            <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
                             <td>
                                 <select name="tree">
-                                  <?php
-                                  if (!$assignedtree) {
-                                    echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                                  }
-                                  $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                                  while ($treerow = tng_fetch_assoc($treeresult)) {
-                                    echo "	<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
-                                      echo " selected";
+                                    <?php
+                                    if (!$assignedtree) {
+                                        echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
                                     }
-                                    echo ">{$treerow['treename']}</option>\n";
-                                  }
-                                  tng_free_result($treeresult);
-                                  ?>
+                                    $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                    while ($treerow = tng_fetch_assoc($treeresult)) {
+                                        echo "	<option value=\"{$treerow['gedcom']}\"";
+                                        if ($treerow['gedcom'] == $tree) {
+                                            echo " selected";
+                                        }
+                                        echo ">{$treerow['treename']}</option>\n";
+                                    }
+                                    tng_free_result($treeresult);
+                                    ?>
                                 </select>
                             </td>
                             <td>
@@ -142,43 +142,37 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         </tr>
                     </table>
 
-                  <input type="hidden" name="findgroup" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findgroup" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
-              <br>
+                <br>
 
-              <?php
-              $numrowsplus = $numrows + $offset;
-              if (!$numrowsplus) {
-                $offsetplus = 0;
-              }
-              echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-              $pagenav = get_browseitems_nav($totrows, "admin_dna_groups.php?offset", $maxsearchresults, 5);
-              echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
-              ?>
+                <?php
+                $numrowsplus = $numrows + $offset;
+                if (!$numrowsplus) {
+                    $offsetplus = 0;
+                }
+                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                $pagenav = get_browseitems_nav($totrows, "admin_dna_groups.php?offset", $maxsearchresults, 5);
+                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                ?>
                 <form action="admin_updateselectedgroup.php" method="post" name="form2">
-                  <?php
-                  if ($allow_delete) {
-                    ?>
-                      <p class="nw">
-                          <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                          <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                          <input type="submit" name="xdnagroupaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
-                      </p>
                     <?php
-                  }
-                  ?>
-                  <table cellpadding="3" cellspacing="1" class="normal">
-                    <tr class="fieldnameback fieldname nw" r>
-                      <td>
-                        <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
-                            </td>
-                          <?php
-                          if ($allow_delete) {
-                            ?>
-                              <td><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</nobr></span></td>
-                            <?php
-                          }
-                          ?>
+                    if ($allow_delete) {
+                        ?>
+                        <p class="nw">
+                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
+                            <input type="submit" name="xdnagroupaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                        </p>
+                        <?php
+                    }
+                    ?>
+                    <table cellpadding="3" cellspacing="1" class="normal">
+                        <tr class="fieldnameback fieldname nw" r>
+                            <td>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                            <?php if ($allow_delete) { ?>
+                                <td><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                            <?php } ?>
                             <td>&nbsp;<b><?php echo $admtext['groupid']; ?></b>&nbsp;</td>
                             <td>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
                             <td>&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
@@ -186,46 +180,46 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             <td>&nbsp;<b><?php echo $admtext['dna_tests']; ?></b>&nbsp;</td>
                         </tr>
 
-                      <?php
-                      if ($numrows) {
-                      $actionstr = "";
-                      if ($allow_edit) {
-                        $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
-                      }
-                      if ($allow_delete) {
-                        if (!$assignedtree) {
-                          $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        <?php
+                        if ($numrows) {
+                        $actionstr = "";
+                        if ($allow_edit) {
+                            $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
-                      }
-
-                      while ($row = tng_fetch_assoc($result)) {
-                        $newactionstr = preg_replace("/xxx/", $row['dna_group'], $actionstr);
-                        $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
-                        $newactionstr = preg_replace("/zzz/", $row['test_type'], $newactionstr);
-                        echo "<tr id=\"row_{$row['dna_group']}\"><td class=\"lightback\"><div>$newactionstr</div></td>\n";
                         if ($allow_delete) {
-                          echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value=\"1\"></td>";
+                            if (!$assignedtree) {
+                                $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            }
                         }
-                        $editlink = "admin_edit_dna_group.php?dna_group={$row['dna_group']}&tree={$row['gedcom']}";
-                        $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['dna_group'] . "</a>" : $row['dna_group'];
 
-                        echo "<td class=\"lightback\" nowrap>&nbsp;{$row['dna_group']}</td>\n";
-                        echo "<td class=\"lightback\">&nbsp;{$row['description']}</td>\n";
-                        echo "<td class=\"lightback\">&nbsp;{$row['treename']}&nbsp;</td>\n";
-                        echo "<td class=\"lightback\">{$row['test_type']}&nbsp;</td>\n";
-                        $pcount = getGroupCount($row['gedcom'], $row['dna_group'], $dna_tests_table);
-                        echo "<td class=\"lightback\" style=\"text-align:right\">$pcount&nbsp;</td>\n";
-                        echo "</tr>\n";
-                      }
-                      tng_free_result($result);
-                      ?>
+                        while ($row = tng_fetch_assoc($result)) {
+                            $newactionstr = preg_replace("/xxx/", $row['dna_group'], $actionstr);
+                            $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
+                            $newactionstr = preg_replace("/zzz/", $row['test_type'], $newactionstr);
+                            echo "<tr id=\"row_{$row['dna_group']}\"><td class=\"lightback\"><div>$newactionstr</div></td>\n";
+                            if ($allow_delete) {
+                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value=\"1\"></td>";
+                            }
+                            $editlink = "admin_edit_dna_group.php?dna_group={$row['dna_group']}&tree={$row['gedcom']}";
+                            $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['dna_group'] . "</a>" : $row['dna_group'];
+
+                            echo "<td class=\"lightback\" nowrap>&nbsp;{$row['dna_group']}</td>\n";
+                            echo "<td class=\"lightback\">&nbsp;{$row['description']}</td>\n";
+                            echo "<td class=\"lightback\">&nbsp;{$row['treename']}&nbsp;</td>\n";
+                            echo "<td class=\"lightback\">{$row['test_type']}&nbsp;</td>\n";
+                            $pcount = getGroupCount($row['gedcom'], $row['dna_group'], $dna_tests_table);
+                            echo "<td class=\"lightback\" style=\"text-align:right\">$pcount&nbsp;</td>\n";
+                            echo "</tr>\n";
+                        }
+                        tng_free_result($result);
+                        ?>
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 }
                 else {
-                  echo $admtext['notrees'];
+                    echo $admtext['notrees'];
                 }
                 ?>
 

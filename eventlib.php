@@ -8,31 +8,31 @@ function showCustEvents($id) {
 		FROM $events_table, $eventtypes_table 
 		WHERE parenttag = \"\" AND persfamID = \"$id\" AND gedcom = \"$tree\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID 
 		ORDER BY eventdatetr, ordernum";
-  $evresult = tng_query($query);
-  $eventcount = tng_num_rows($evresult);
+    $evresult = tng_query($query);
+    $eventcount = tng_num_rows($evresult);
 
-  echo "<table id=\"custeventstbl\" class=\"normal\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\"";
-  if (!$eventcount) {
-    echo " style=\"display:none\"";
-  }
-  echo ">";
-  echo "<tbody id=\"custeventstblbody\">\n";
-  echo "<tr>\n";
-  echo "<td class=\"fieldnameback fieldname\" width=\"98\"><nobr>&nbsp;<b>" . $admtext['action'] . "</b>&nbsp;</nobr></td>\n";
-  echo "<td class=\"fieldnameback fieldname\"><nobr>&nbsp;<b>" . $admtext['event'] . "</b>&nbsp;</nobr></td>\n";
-  echo "<td class=\"fieldnameback fieldname\"><nobr>&nbsp;<b>" . $admtext['eventdate'] . "</b>&nbsp;&nbsp;&nbsp;</nobr></td>\n";
-  echo "<td class=\"fieldnameback fieldname\"><nobr>&nbsp;<b>" . $admtext['eventplace'] . "</b>&nbsp;</nobr></td>\n";
-  echo "<td class=\"fieldnameback fieldname\"><nobr>&nbsp;<b>" . $admtext['detail'] . "</b>&nbsp;</nobr></td>\n";
-  echo "</tr>\n";
+    echo "<table id=\"custeventstbl\" class=\"normal\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\"";
+    if (!$eventcount) {
+        echo " style=\"display:none\"";
+    }
+    echo ">";
+    echo "<tbody id=\"custeventstblbody\">\n";
+    echo "<tr>\n";
+    echo "<td class=\"fieldnameback fieldname\" width=\"98\">&nbsp;<b>" . $admtext['action'] . "</b>&nbsp;</td>\n";
+    echo "<td class=\"fieldnameback fieldname\">&nbsp;<b>" . $admtext['event'] . "</b>&nbsp;</td>\n";
+    echo "<td class=\"fieldnameback fieldname\">&nbsp;<b>" . $admtext['eventdate'] . "</b>&nbsp;&nbsp;&nbsp;</td>\n";
+    echo "<td class=\"fieldnameback fieldname\">&nbsp;<b>" . $admtext['eventplace'] . "</b>&nbsp;</td>\n";
+    echo "<td class=\"fieldnameback fieldname\">&nbsp;<b>" . $admtext['detail'] . "</b>&nbsp;</td>\n";
+    echo "</tr>\n";
 
-  if ($evresult && $eventcount) {
-    while ($event = tng_fetch_assoc($evresult)) {
-      $dispvalues = explode("|", $event['display']);
-      $numvalues = count($dispvalues);
-      if ($numvalues > 1) {
-        $displayval = "";
-        for ($i = 0; $i < $numvalues; $i += 2) {
-          $lang = $dispvalues[$i];
+    if ($evresult && $eventcount) {
+        while ($event = tng_fetch_assoc($evresult)) {
+            $dispvalues = explode("|", $event['display']);
+            $numvalues = count($dispvalues);
+            if ($numvalues > 1) {
+                $displayval = "";
+                for ($i = 0; $i < $numvalues; $i += 2) {
+                    $lang = $dispvalues[$i];
           if ($mylanguage == $languages_path . $lang) {
             $displayval = $dispvalues[$i + 1];
             break;

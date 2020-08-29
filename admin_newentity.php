@@ -15,7 +15,7 @@ if (!$allow_add) {
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div class="databack normal" style="margin:10px;border:0px" id="newentity">
+<div class="databack normal" style="margin:10px;border:0" id="newentity">
     <p class="subhead"><strong><?php echo $admtext['enternew'] . " " . $admtext[$entity]; ?></strong></p>
 
     <form action="admin_addentity.php" method="post" name="entityform" id="entityform" onsubmit="return addEntity(this);">

@@ -1879,8 +1879,8 @@ switch ($textpart) {
     $admtext['verified'] = "ov��eno";
     $admtext['provisional'] = "(prozat�mn�) mus� b�t k dispozici";
     $admtext['backtoprevious'] = "N�vrat k p�edchoz� str�nce";
-    $admtext['reasontoupdate'] = "Pokud jste nespustili skript cust_text_update.php jako sou��st aktualizace TNG v12, je t�eba aktualizovat va�e soubory cust_text.php a <ul> <li> p�idat do soubor� nov� ��dek a </ li> <li> tak� aktualizovat zastaral� ��dek ve st�vaj�c�ch souborech cust_text.php </ li> </ ul>, kter� nebyl b�hem upgradu TNG nahrazen.";
-    $admtext['newanchor'] = "Nov� ��dek koment��e by nem�l b�t v jazykov�ch souborech p�elo�en, aby mohl b�t v�voj��i m�d� pou�it jako kotva pro vlo�en� vlastn�ho textu p�ed tento nov� ��dek koment��e.";
+      $admtext['reasontoupdate'] = "Pokud jste nespustili skript cust_text_update.php jako sou��st aktualizace TNG v12, je t�eba aktualizovat va�e soubory cust_text.php a <ul> <li> p�idat do soubor� nov� ��dek a </li> <li> tak� aktualizovat zastaral� ��dek ve st�vaj�c�ch souborech cust_text.php </li> </ul>, kter� nebyl b�hem upgradu TNG nahrazen.";
+      $admtext['newanchor'] = "Nov� ��dek koment��e by nem�l b�t v jazykov�ch souborech p�elo�en, aby mohl b�t v�voj��i m�d� pou�it jako kotva pro vlo�en� vlastn�ho textu p�ed tento nov� ��dek koment��e.";
     $admtext['translateissue'] = "Pokud p�elo��te nov� ��dek koment��e, instalace mod� se nezda��.";
     $admtext['privatemod'] = "Neve�ejn� m�d";
     $admtext['protected'] = "chr�n�no-odstra�te soubor ru�n�";

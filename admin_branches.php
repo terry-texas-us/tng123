@@ -171,21 +171,19 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                           <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                           <input type="submit" name="xbranchaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                       </p>
-                    <?php
+                      <?php
                   }
                   ?>
-                  <table cellpadding="3" cellspacing="1" class="normal">
-                    <tr class="fieldnameback fieldname nw" r>
-                      <td>
-                        <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
-                            </td>
-                          <?php
-                          if ($allow_delete) {
-                            ?>
-                              <td><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</nobr></span></td>
+                    <table cellpadding="3" cellspacing="1" class="normal">
+                        <tr class="fieldnameback fieldname nw" r>
+                            <td>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
                             <?php
-                          }
-                          ?>
+                            if ($allow_delete) {
+                                ?>
+                                <td><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                                <?php
+                            }
+                            ?>
                             <td>&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</td>
                             <td>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
                             <td>&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>

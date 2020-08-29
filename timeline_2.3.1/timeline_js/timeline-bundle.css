@@ -273,8 +273,8 @@
 
 .timeline-copyright {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
     z-index: 1000;
     cursor: pointer;
 }

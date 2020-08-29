@@ -16,12 +16,12 @@ $title = getTemplateMessage('t17_maintitle');
 
 <style>
     body {
-        margin: 0px;
+        margin: 0;
         background-color: #272727;
     }
 
     #mcontent {
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     #big-block-1 {

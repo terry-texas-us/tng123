@@ -127,7 +127,7 @@ echo "</form>\n";
       <?php
       //do self
       echo "<span class=\"subhead\"><strong>{$text['generation']}: 1</strong></span><br><br>\n";
-      echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
+      echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
       echo "<li>";
       echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\" ><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
       echo "$personcount.&nbsp;&nbsp;</td><td>";
@@ -238,7 +238,7 @@ echo "</form>\n";
 
         echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
 
-          echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
+          echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
         while ($nextfamily = array_shift($currgen)) {
           $parents = getFamilyData($tree, $nextfamily);
           if ($parents) {

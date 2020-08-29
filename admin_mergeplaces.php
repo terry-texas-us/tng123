@@ -129,28 +129,28 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
             ?>
             <br><br>
 
-            <p class="subhead"><strong>2. <?php echo $admtext['selectplacemerge']; ?></strong></p>
+              <p class="subhead"><strong>2. <?php echo $admtext['selectplacemerge']; ?></strong></p>
 
               <form action="" method="post" onSubmit="return validateForm2(this);" name="form2">
                   <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none">
-                    <span id="successmsg1" class="normal msgapproved"></span></p>
-                <table cellpadding="3" cellspacing="1" class="normal">
-                  <tr>
-                    <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><b><?php echo $admtext['mcol1']; ?></b></span></td>
+                      <span id="successmsg1" class="normal msgapproved"></span></p>
+                  <table cellpadding="3" cellspacing="1" class="normal">
+                      <tr>
+                          <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><b><?php echo $admtext['mcol1']; ?></b></span></td>
                           <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><b><?php echo $admtext['mcol2']; ?></b></span></td>
-                          <td class="fieldnameback" valign="bottom"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['place']; ?></b>&nbsp;</nobr></span></td>
-                          <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['latitude']; ?></b>&nbsp;</nobr></span></td>
-                          <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['longitude']; ?></b>&nbsp;</nobr></span></td>
+                          <td class="fieldnameback" valign="bottom"><span class="fieldname">&nbsp;<b><?php echo $admtext['place']; ?></b>&nbsp;</span></td>
+                          <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname">&nbsp;<b><?php echo $admtext['latitude']; ?></b>&nbsp;</span></td>
+                          <td class="fieldnameback" valign="bottom" align="center"><span class="fieldname">&nbsp;<b><?php echo $admtext['longitude']; ?></b>&nbsp;</span></td>
                       </tr>
 
-                    <?php
-                    while ($row = tng_fetch_assoc($result)) {
-                      echo "<tr class=\"mergerows\" id=\"row_{$row['ID']}\">\n";
-                      echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"checkbox\" class=\"mc\" name=\"mc{$row['ID']}\" onclick=\"handleCheck({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
-                      echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"radio\" name=\"keep\" id=\"r{$row['ID']}\" onclick=\"handleRadio({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
-                      $display = $row['place'];
-                      $display = preg_replace("/</", "&lt;", $display);
-                      $display = preg_replace("/>/", "&gt;", $display);
+                      <?php
+                      while ($row = tng_fetch_assoc($result)) {
+                          echo "<tr class=\"mergerows\" id=\"row_{$row['ID']}\">\n";
+                          echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"checkbox\" class=\"mc\" name=\"mc{$row['ID']}\" onclick=\"handleCheck({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
+                          echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"radio\" name=\"keep\" id=\"r{$row['ID']}\" onclick=\"handleRadio({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
+                          $display = $row['place'];
+                          $display = preg_replace("/</", "&lt;", $display);
+                          $display = preg_replace("/>/", "&gt;", $display);
                       echo "<td class=\"lightback\" valign=\"top\">$display&nbsp;</td>\n";
                       echo "<td class=\"lightback\" valign=\"top\" id=\"lat_{$row['ID']}\">{$row['latitude']}&nbsp;</td>\n";
                       echo "<td class=\"lightback\" valign=\"top\" id=\"long_{$row['ID']}\">{$row['longitude']}&nbsp;</td>\n";

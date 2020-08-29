@@ -1247,7 +1247,7 @@ div.art-block img {
     font-size: 13px;
     line-height: 125%;
     color: #CAD2D3;
-    margin: 0px;
+    margin: 0;
     padding: 0 0 0 16px;
     background-image: url('../img/blockcontentbullets.png');
     background-repeat: no-repeat;
@@ -1381,7 +1381,7 @@ a img {
 
 .art-article img, img.art-article, .art-block img, .art-footer img {
     border: solid 0 #65787B;
-    margin: 0px 12px 7px 2px;
+    margin: 0 12px 7px 2px;
 }
 
 .art-metadata-icons img {
@@ -1721,8 +1721,8 @@ ul.tngdd .topline {
 }
 
 ul.home-menus {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .emailimg {
@@ -1733,7 +1733,7 @@ ul.home-menus {
     margin-top: 2px;
     margin-bottom: 2px;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 td.calDay, td.calToday, table.calendar {

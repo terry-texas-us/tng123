@@ -13,8 +13,8 @@ function help_header($helptitle) {
   $header .= "<link href=\"{$relpath}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   $header .= "<link href=\"{$relpath}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
   $header .= file_get_contents($relpath . "adminmeta.php");
-  $header .= "<style>p {margin-top: 0px;}</style>\n";
-  $header .= "</head>\n";
+    $header .= "<style>p {margin-top: 0;}</style>\n";
+    $header .= "</head>\n";
 
   return $header;
 }

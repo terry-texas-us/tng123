@@ -1141,7 +1141,7 @@ a:link, a:active, div.icons a {
 /*to keep older browsers happy*/
 #tabs div {
     margin: 0 1px 0 0;
-    padding: 0em 0em .3em 0px;
+    padding: 0 0 .3em 0;
 }
 
 #tngnav a {

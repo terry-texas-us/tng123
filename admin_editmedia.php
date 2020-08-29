@@ -482,10 +482,10 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
             <?php
             if ($map['key']) {
               ?>
-              <tr>
-                <td colspan="2">
-                  <div style="padding:0px 10px 10px 0px">
-                    <?php
+                <tr>
+                    <td colspan="2">
+                        <div style="padding:0 10px 10px 0">
+                            <?php
                     // draw the map here
                     include "googlemapdrawthemap.php";
                     ?>

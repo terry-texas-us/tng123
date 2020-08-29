@@ -120,29 +120,29 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 $numrowsplus = $numrows + $offset;
 if (!$numrowsplus) {
-  $offsetplus = 0;
+    $offsetplus = 0;
 }
 echo "<p class=\"normal\">{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
 $pagenav = get_album_nav($totrows, $maxsearchresults, 5);
 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
 ?>
-  <table cellpadding="3" cellspacing="1" width="705" class="normal">
-    <tr>
-      <td class="fieldnameback" width="50"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</nobr></span></td>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</nobr></span></td>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</nobr></span></td>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['date']; ?></b>&nbsp;</nobr></span></td>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['mediatype']; ?></b>&nbsp;</nobr></span></td>
+    <table cellpadding="3" cellspacing="1" width="705" class="normal">
+        <tr>
+            <td class="fieldnameback" width="50"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['thumb']; ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['date']; ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['mediatype']; ?></b>&nbsp;</span></td>
         </tr>
-      <?php
-      while ($row = tng_fetch_assoc($result)) {
-        $mtypeID = $row['mediatypeID'];
-        $label = $mediatypes_display[$mtypeID] ? $mediatypes_display[$mtypeID] : $text[$mtypeID];
-        $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
-        $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
-        echo "<tr id=\"addrow_{$row['mediaID']}\"><td class=\"lightback\" align=\"center\">";
-        echo "<div id=\"add_{$row['mediaID']}\" class=\"normal\"";
-        $gotit = in_array($row['mediaID'], $alreadygot);
+        <?php
+        while ($row = tng_fetch_assoc($result)) {
+            $mtypeID = $row['mediatypeID'];
+            $label = $mediatypes_display[$mtypeID] ? $mediatypes_display[$mtypeID] : $text[$mtypeID];
+            $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
+            $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
+            echo "<tr id=\"addrow_{$row['mediaID']}\"><td class=\"lightback\" align=\"center\">";
+            echo "<div id=\"add_{$row['mediaID']}\" class=\"normal\"";
+            $gotit = in_array($row['mediaID'], $alreadygot);
         if ($gotit) {
           echo " style=\"display:none\"";
         }

@@ -250,14 +250,14 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 </div>
             </div>
         </div>
-    </div>
+  </div>
 
-    <div class="art-nav" style="margin-top:0px">
+    <div class="art-nav" style="margin-top:0">
         <div class="art-nav-outer">
             <div class="art-nav-wrapper">
                 <div class="art-nav-inner">
                     <div class="t tngfooter">
-                      <?php
+                        <?php
                       $flags['basicfooter'] = true;
                       echo tng_footer($flags);
                       ?>

@@ -52,28 +52,28 @@ $title = getTemplateMessage('t11_maintitle');
             <div class="art-content-layout-row">
               <div class="art-layout-cell art-content">
                 <div class="art-post">
-                  <div class="art-post-body">
-                    <div class="art-post-inner art-article">
-                      <div class="art-postcontent">
+                    <div class="art-post-body">
+                        <div class="art-post-inner art-article">
+                            <div class="art-postcontent">
 
-                        <div class="left-indent">
-                          <div class="center">
-                            <br>
-                            <img alt="" class="rounded10" src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t11_mainimage']; ?>" id="mainphoto">
-                          </div>
-                          <p class="big-header">
-                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/greenvine1.png" style="margin:0 0px 0px 10px; float:left;" alt="" class="greenvine">
-                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/greenvine2.png" style="margin:0 10px 0px 0px; float:right;" alt="" class="greenvine">
-                            <?php echo $title; ?>
-                          </p>
-                        </div>
-                        <table class="art-article">
-                          <tbody>
-                          <tr class="even">
-                            <td>
-                              <div class="left-indent">
-                                <?php
-                                echo getTemplateMessage('t11_mainpara');
+                                <div class="left-indent">
+                                    <div class="center">
+                                        <br>
+                                        <img alt="" class="rounded10" src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t11_mainimage']; ?>" id="mainphoto">
+                                    </div>
+                                    <p class="big-header">
+                                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/greenvine1.png" style="margin:0 0 0 10px; float:left;" alt="" class="greenvine">
+                                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/greenvine2.png" style="margin:0 10px 0 0; float:right;" alt="" class="greenvine">
+                                        <?php echo $title; ?>
+                                    </p>
+                                </div>
+                                <table class="art-article">
+                                    <tbody>
+                                    <tr class="even">
+                                        <td>
+                                            <div class="left-indent">
+                                                <?php
+                                                echo getTemplateMessage('t11_mainpara');
                                 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
                                 ?>
                                 <h4><?php echo $text['contactus']; ?></h4>

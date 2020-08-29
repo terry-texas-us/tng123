@@ -119,7 +119,7 @@ tng_adminheader($admtext['modifycemetery'], "");
       <td>
                 <span class="subhead"><strong><?php echo $admtext['selectcemaction']; ?></strong>  | <a href="#"
                                                                                                         onclick="return openHelp('<?php echo $helplang; ?>/cemeteries_help.html#find', 'newwindow', 'height=500,width=600,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></span><br><br>
-        <span class="normal">
+          <span class="normal">
 	&nbsp;&nbsp;<img src="img/tng_edit.gif" alt="<?php echo $admtext['edit']; ?>" width="16" height="16" align="middle"> = <?php echo $admtext['edit']; ?> &nbsp;&nbsp;
 	<img src="img/tng_delete.gif" alt="<?php echo $admtext['text_delete']; ?>" width="16" height="16" align="middle"> = <?php echo $admtext['text_delete']; ?>
 	<br>
@@ -127,22 +127,22 @@ tng_adminheader($admtext['modifycemetery'], "");
 echo "<p>{$admtext['matches']}: $numrows</p>";
 ?>
 	</span>
-        <table cellpadding="3" cellspacing="1" border="0">
-          <tr>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</nobr></span></td>
-            <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['cemetery']; ?></b>&nbsp;</nobr></span></td>
-                        <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['location']; ?></b>&nbsp;</nobr></span></td>
-                    </tr>
+          <table cellpadding="3" cellspacing="1" border="0">
+              <tr>
+                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['id']; ?></b>&nbsp;</span></td>
+                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['cemetery']; ?></b>&nbsp;</span></td>
+                  <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['location']; ?></b>&nbsp;</span></td>
+              </tr>
 
-                  <?php
-                  $rowcount = 0;
-                  $actionstr = "";
-                  if ($allow_edit) {
-                    $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\"><img src=\"tng_edit.gif\" alt=\"{$admtext['edit']}\" width=\"16\" height=\"16\" vspace=0 hspace=2></a>";
-                  }
-                  if ($allow_delete) {
-                    $actionstr .= "<a href=\"deletecemetery.php?cemeteryID=xxx\" onClick=\"return confirm('{$admtext['confdeletecem']}' );\"><img src=\"tng_delete.gif\" alt=\"{$admtext['text_delete']}\" width=\"16\" height=\"16\" vspace=0 hspace=2></a>";
+              <?php
+              $rowcount = 0;
+              $actionstr = "";
+              if ($allow_edit) {
+                  $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\"><img src=\"tng_edit.gif\" alt=\"{$admtext['edit']}\" width=\"16\" height=\"16\" vspace=0 hspace=2></a>";
+              }
+              if ($allow_delete) {
+                  $actionstr .= "<a href=\"deletecemetery.php?cemeteryID=xxx\" onClick=\"return confirm('{$admtext['confdeletecem']}' );\"><img src=\"tng_delete.gif\" alt=\"{$admtext['text_delete']}\" width=\"16\" height=\"16\" vspace=0 hspace=2></a>";
                   }
 
                   while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
@@ -168,7 +168,7 @@ echo "<p>{$admtext['matches']}: $numrows</p>";
                     }
 
                     $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
-                    echo "<tr><td class=\"lightback\" valign=\"top\"><span class=\"normal\"><nobr>$newactionstr</nobr></span></td><td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;{$row['cemeteryID']}&nbsp;</span></td><td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$row['cemname']}&nbsp;</span></td><td class=\"lightback\" valign=\"top\"><span class=\"normal\">$location&nbsp;</span></td></tr>\n";
+                      echo "<tr><td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$newactionstr}</span></td><td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;{$row['cemeteryID']}&nbsp;</span></td><td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$row['cemname']}&nbsp;</span></td><td class=\"lightback\" valign=\"top\"><span class=\"normal\">$location&nbsp;</span></td></tr>\n";
                   }
                   tng_free_result($result);
 

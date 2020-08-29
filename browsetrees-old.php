@@ -69,24 +69,24 @@ if ($totrows) {
 
 $pagenav = get_browseitems_nav($totrows, $browsetrees_url . "treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);
 if ($pagenav || $treesearch) {
-  echo doTreeSearch(1, $pagenav);
+    echo doTreeSearch(1, $pagenav);
 }
 ?>
 <table cellpadding="3" cellspacing="1" class="whiteback">
-  <tr>
-    <td class="fieldnameback">&nbsp;</td>
-    <td class="fieldnameback" nowrap><span class="fieldname">&nbsp;<strong><?php echo $text['treename']; ?></strong>&nbsp;</span></td>
-        <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<strong><?php echo $text['description']; ?></strong>&nbsp;</nobr></span></td>
+    <tr>
+        <td class="fieldnameback">&nbsp;</td>
+        <td class="fieldnameback" nowrap><span class="fieldname">&nbsp;<strong><?php echo $text['treename']; ?></strong>&nbsp;</span></td>
+        <td class="fieldnameback"><span class="fieldname">&nbsp;<strong><?php echo $text['description']; ?></strong>&nbsp;</span></td>
         <td class="fieldnameback" nowrap><span class="fieldname">&nbsp;<strong><?php echo $text['individuals']; ?></strong>&nbsp;</span></td>
     </tr>
-  <?php
-  $i = $offsetplus;
-  while ($row = tng_fetch_assoc($result)) {
-    echo "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>\n";
-    echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
-    echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$row['description']}&nbsp;</span></td>";
-    if ($row['pcount']) {
-      echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class=\"normal\"><a href=\"$search_url" . "tree={$row['gedcom']}\">{$row['pcount']}</a>&nbsp;</span></td>";
+    <?php
+    $i = $offsetplus;
+    while ($row = tng_fetch_assoc($result)) {
+        echo "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>\n";
+        echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+        echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$row['description']}&nbsp;</span></td>";
+        if ($row['pcount']) {
+            echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class=\"normal\"><a href=\"$search_url" . "tree={$row['gedcom']}\">{$row['pcount']}</a>&nbsp;</span></td>";
     } else {
       echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class=\"normal\">{$row['pcount']}&nbsp;</span></td>";
     }

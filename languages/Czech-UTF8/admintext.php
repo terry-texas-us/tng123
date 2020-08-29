@@ -1879,8 +1879,8 @@ switch ($textpart) {
     $admtext['verified'] = "ověřeno";
     $admtext['provisional'] = "(prozatímní) musí být k dispozici";
     $admtext['backtoprevious'] = "Návrat k předchozí stránce";
-    $admtext['reasontoupdate'] = "Pokud jste nespustili skript cust_text_update.php jako součást aktualizace TNG v12, je třeba aktualizovat vaše soubory cust_text.php a <ul> <li> přidat do souborů nový řádek a </ li> <li> také aktualizovat zastaralý řádek ve stávajících souborech cust_text.php </ li> </ ul>, který nebyl během upgradu TNG nahrazen.";
-    $admtext['newanchor'] = "Nový řádek komentáře by neměl být v jazykových souborech přeložen, aby mohl být vývojáři módů použit jako kotva pro vložení vlastního textu před tento nový řádek komentáře.";
+      $admtext['reasontoupdate'] = "Pokud jste nespustili skript cust_text_update.php jako součást aktualizace TNG v12, je třeba aktualizovat vaše soubory cust_text.php a <ul> <li> přidat do souborů nový řádek a </li> <li> také aktualizovat zastaralý řádek ve stávajících souborech cust_text.php </li> </ul>, který nebyl během upgradu TNG nahrazen.";
+      $admtext['newanchor'] = "Nový řádek komentáře by neměl být v jazykových souborech přeložen, aby mohl být vývojáři módů použit jako kotva pro vložení vlastního textu před tento nový řádek komentáře.";
     $admtext['translateissue'] = "Pokud přeložíte nový řádek komentáře, instalace modů se nezdaří.";
     $admtext['privatemod'] = "Neveřejný mód";
     $admtext['protected'] = "chráněno-odstraňte soubor ručně";

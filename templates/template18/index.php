@@ -15,12 +15,12 @@ $momlabel = getTemplateMessage('t18_momside');
 
 <style>
     body {
-        margin: 0px;
+        margin: 0;
         background-color: #31708E;
     }
 
     #mcontent {
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     #big-block-1 {

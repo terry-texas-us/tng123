@@ -260,7 +260,7 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     left: 12px;
     margin-left: -1px;
     position: absolute;
-    top: 0px;
+    top: 0;
     width: 196px;
     height: 97px;
     z-index: 0;
@@ -342,7 +342,7 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     transform: rotate(0deg);
     overflow: hidden;
     background-color: transparent;
-    background-position: 0px 0px;
+    background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 101;
 }
@@ -872,8 +872,8 @@ td.cb-searchtext table tbody tr td input[type="submit"] {
     -moz-border-radius: 2px;
     border-radius: 2px;
     border: 1px solid transparent;
-    padding: 0px 5px 5px 0px;
-    margin: 0px 15px 0px 15px;
+    padding: 0 5px 5px 0;
+    margin: 0 15px 0 15px;
 }
 
 a img {
@@ -1101,7 +1101,7 @@ input.cb-search-button {
     border-collapse: separate;
     border-radius: 20px;
     margin: 7px 20px 5px 20px;
-    padding: 0px 10px 10px 10px;
+    padding: 0 10px 10px 10px;
 }
 
 /* styles for home page surname cloud post */
@@ -1376,7 +1376,7 @@ ul.tngdd .topline {
 }
 
 .tngsmallicon3 {
-    padding: .1em 10px 0px 0px;
+    padding: .1em 10px 0 0;
 }
 
 td.highlightedchild {
@@ -1424,7 +1424,7 @@ a.admincell:hover, a.leftlink:hover {
     }
 
     .cb-content .cb-postcontent-0 .layout-item-1 {
-        padding-top: 0px;
+        padding-top: 0;
     }
 
 }

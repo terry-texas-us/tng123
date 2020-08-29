@@ -477,9 +477,9 @@ div.art-block img {
 }
 
 .art-sidebar1 img {
-    -moz-box-shadow: 7px 7px 8px 0px #444;
-    -webkit-box-shadow: 7px 7px 8px 0px #444;
-    box-shadow: 7px 7px 8px 0px #444;
+    -moz-box-shadow: 7px 7px 8px 0 #444;
+    -webkit-box-shadow: 7px 7px 8px 0 #444;
+    box-shadow: 7px 7px 8px 0 #444;
 }
 
 /* end LayoutCell, content */
@@ -556,7 +556,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e2b993, #b28963);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e2b993, #b28963);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #e2b993, #b28963);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 
@@ -607,17 +607,17 @@ ul.tngdd .topline {
 }
 
 ul.home-menus, ul.fancy_list {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
 .emailimg {
     width: 40px;
     height: 26px;
-    margin: 0px 8px 0px 0px;
+    margin: 0 8px 0 0;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 td.calDay, td.calToday, table.calendar {
@@ -629,7 +629,7 @@ td.calDay, td.calToday, table.calendar {
     font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
     font-size: 48pt;
     font-weight: normal;
-    margin: 0px;
+    margin: 0;
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(140, 140, 140, 4);
 }
@@ -647,7 +647,7 @@ h2.site-head {
 .subheader {
     font-family: "Arial Black", Arial, "Sans Serif";
     color: #825953;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 h2.subheader {
@@ -662,9 +662,9 @@ h3.subheader {
 
 .vignette {
     float: right;
-    -moz-box-shadow: 4px 4px 6px 0px #444;
-    -webkit-box-shadow: 4px 4px 6px 0px #444;
-    box-shadow: 4px 4px 6px 0px #444;
+    -moz-box-shadow: 4px 4px 6px 0 #444;
+    -webkit-box-shadow: 4px 4px 6px 0 #444;
+    box-shadow: 4px 4px 6px 0 #444;
     margin: 0 5px;
 }
 
@@ -672,14 +672,14 @@ h3.subheader {
     float: left;
     padding-right: 10px;
     padding-top: 3px;
-    border: 0px;
+    border: 0;
 }
 
 .big-header {
     color: #aa0000;
     font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
     font-size: 54pt;
-    margin: 0px;
+    margin: 0;
     font-weight: normal;
     text-shadow: 2px 2px 5px rgba(140, 140, 140, 4);
 }
@@ -726,18 +726,18 @@ h3.subheader {
 }
 
 .tngfooter p {
-    margin: 0px;
+    margin: 0;
 }
 
 .titlebox, .pboxpopupdiv, td.highlightedchild {
     background-color: #FCF0DC;
-    -moz-box-shadow: 4px 4px 6px 0px #777;
-    -webkit-box-shadow: 4px 4px 6px 0px #777;
-    box-shadow: 4px 4px 6px 0px #777;
+    -moz-box-shadow: 4px 4px 6px 0 #777;
+    -webkit-box-shadow: 4px 4px 6px 0 #777;
+    box-shadow: 4px 4px 6px 0 #777;
 }
 
 hr {
-    height: 0px;
+    height: 0;
     border: 1px solid rgb(114, 60, 1);
 }
 
@@ -778,7 +778,7 @@ hr {
     }
 
     .art-content-layout .art-sidebar1 {
-        padding: 0px;
+        padding: 0;
         width: 100%;
     }
 
@@ -795,7 +795,7 @@ hr {
 
     .art-nav, .art-sheet {
         min-width: 0;
-        margin: 0px;
+        margin: 0;
     }
 
     #mainphoto {
@@ -814,16 +814,16 @@ hr {
     }
 
     h2.subheader {
-        padding-left: 0px;
+        padding-left: 0;
         font-size: 14px;
     }
 
     .left-indent {
-        padding-left: 0px;
+        padding-left: 0;
     }
 
     .art-post-body {
-        padding: 10px 0px;
+        padding: 10px 0;
     }
 
     #tsearchbox {
@@ -838,7 +838,7 @@ hr {
 
     #mainphoto {
         width: 100%;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
 }

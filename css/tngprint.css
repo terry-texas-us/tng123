@@ -1,6 +1,6 @@
 a, a:link, a:active, a:visited {
     text-decoration: none;
-    color #000;
+    color: #000;
 }
 
 /* body: describes page background color and all non-table text not governed by any other style */
@@ -33,7 +33,7 @@ body {
 }
 
 .whiteback {
-    border-spacing: 0px;
+    border-spacing: 0;
     border-collapse: collapse;
 }
 

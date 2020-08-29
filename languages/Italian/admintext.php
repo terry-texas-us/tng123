@@ -1228,8 +1228,8 @@ switch ($textpart) {
     $admtext['palldata'] = "Mostra tutti gli eventi e media";
     $admtext['servertime'] = "Tempo Server �";
     $admtext['sitetime'] = "e il tempo sito";
-    $admtext['srexpl'] = "Opzionale. Utilizzare un nome di percorso assoluto, come quello che vedete nel Percorso Root, quindi spostare i seguenti file al percorso Config <strong> immediatamente </ strong> dopo il salvataggio e renderli scrivibili(664 permissions): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
-    $admtext['mapstzm'] = "Iniziazione Zumare";
+      $admtext['srexpl'] = "Opzionale. Utilizzare un nome di percorso assoluto, come quello che vedete nel Percorso Root, quindi spostare i seguenti file al percorso Config <strong> immediatamente </strong> dopo il salvataggio e renderli scrivibili(664 permissions): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+      $admtext['mapstzm'] = "Iniziazione Zumare";
     $admtext['mapfoundzm'] = "Localizzazione Zumari";
     $admtext['rrnum'] = "Numero di identificazione";
     $admtext['progint'] = "Intervallo(ms)";

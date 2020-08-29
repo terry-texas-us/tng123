@@ -912,8 +912,8 @@ switch ($textpart) {
     $admtext['configuration'] = "配置";
     $admtext['entersysvars'] = "输入系统变量的值";
     $admtext['createdbtables'] = "创建数据库表以容纳您的信息";
-    $admtext['tcwarning'] = "<strong>警告！</ strong>仅在您首次设置网站时选择此选项。<strong>所有现有数据，包括照片，历史记录，墓碑和公墓信息，将被删除！";
-    $admtext['conftabledelete'] = "这将删除所有你现有的数据!!你确定要继续吗？";
+      $admtext['tcwarning'] = "<strong>警告！</strong>仅在您首次设置网站时选择此选项。<strong>所有现有数据，包括照片，历史记录，墓碑和公墓信息，将被删除！";
+      $admtext['conftabledelete'] = "这将删除所有你现有的数据!!你确定要继续吗？";
     $admtext['performdatamaint'] = "执行数据维护和管理照片，历史和其他组件";
     $admtext['createtables'] = "创建表";
     $admtext['configsettings'] = "常规设置";
@@ -1878,9 +1878,9 @@ switch ($textpart) {
     $admtext['compressnames'] = "在模式列表中删除空格";
     $admtext['verified'] = "已证实";
     $admtext['provisional'] = "（临时）必须可用";
-    $admtext['backtoprevious'] = "返回上一页";
-    $admtext['reasontoupdate'] = "如果你还没有运行cust_text_update.php脚本作为TNG v12升级的一部分，您需要将您的cust_text.php文件更新为<ul> <li>向该文件添加新行 文件和</ li> <li>也会更新现有的过时cust_text.php文件</ li> </ ul>，这些文件在TNG期间不会被替换 升级";
-    $admtext['newanchor'] = "在语言文件中不应该翻译新的注释行，以便模板开发者自定义文本前可以用作插入的锚点";
+      $admtext['backtoprevious'] = "返回上一页";
+      $admtext['reasontoupdate'] = "如果你还没有运行cust_text_update.php脚本作为TNG v12升级的一部分，您需要将您的cust_text.php文件更新为<ul> <li>向该文件添加新行 文件和</li> <li>也会更新现有的过时cust_text.php文件</li> </ul>，这些文件在TNG期间不会被替换 升级";
+      $admtext['newanchor'] = "在语言文件中不应该翻译新的注释行，以便模板开发者自定义文本前可以用作插入的锚点";
     $admtext['translateissue'] = "如果你翻译新的注释行，安装模板将失败";
     $admtext['privatemod'] = "私人模板";
     $admtext['protected'] = "保护--手动删除文件";

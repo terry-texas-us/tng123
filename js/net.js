@@ -73,8 +73,8 @@ net.ContentLoader.prototype.defaultError = function () {
 function showPreview(mediaID, medialinkID, path, entitystr, sitever) {
     if (jQuery('#prev' + entitystr).html() == "") {
       var caption_div = sitever != "mobile" ? '<div class=\"prev-caption\" id=\"capt' + entitystr + '\"></div>' : '<div class=\"prev-close\"><img id=\"close-' + entitystr + '\" src=' + cmstngpath + '"img/tng_close.gif"></div>';
-      jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0px"> ' + loadingmsg + '</div><a href="' + cmstngpath + 'showmedia.php?mediaID=' + mediaID + '&medialinkID=' + medialinkID + '"><img src="' + smallimage_url + 'mediaID=' + mediaID + '&path=' + encodeURIComponent(path) + '" style="display:none" onload="jQuery(\'#ld\'+\'' + entitystr + '\').hide(); this.style.display=\'\';"></a>' + caption_div);
-      pageWidth = jQuery(window).width();
+      jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0"> ' + loadingmsg + '</div><a href="' + cmstngpath + 'showmedia.php?mediaID=' + mediaID + '&medialinkID=' + medialinkID + '"><img src="' + smallimage_url + 'mediaID=' + mediaID + '&path=' + encodeURIComponent(path) + '" style="display:none" onload="jQuery(\'#ld\'+\'' + entitystr + '\').hide(); this.style.display=\'\';"></a>' + caption_div);
+        pageWidth = jQuery(window).width();
       parent = jQuery('#prev' + entitystr).parent();
       currX = parent.position().left;
       if (sitever == "mobile")

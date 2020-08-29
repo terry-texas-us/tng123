@@ -3,11 +3,11 @@
 /* body: describes page background color and all non-table text not governed by any other style */
 .templatebody {
     background: #211a16;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding: 0px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
     font-family: Calibri, Arial, Helvetica, sans-serif;
 }
 
@@ -108,7 +108,7 @@ a.admincell:hover, a.leftlink:hover {
 #navcontainer ul {
     font-family: Calibri, Arial, Helvetica, sans-serif;
     margin-left: 3px;
-    padding-left: 0px;
+    padding-left: 0;
     list-style-type: none;
     font-size: 10px;
 }
@@ -151,9 +151,9 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #hs1 {
-    -moz-border-radius: 10px 0px 0px 10px;
-    -webkit-border-radius: 10px 0px 0px 10px;
-    border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
 }
 
 .latest_news {
@@ -166,8 +166,8 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 .home_table {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     border-collapse: collapse;
 }
 
@@ -185,7 +185,7 @@ a.admincell:hover, a.leftlink:hover {
     text-align: left;
     vertical-align: top;
     width: 100px;
-    padding: 15px 10px 0px 10px;
+    padding: 15px 10px 0 10px;
     background-color: #211a16;
     font-size: 13px;
 }

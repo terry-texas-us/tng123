@@ -10,34 +10,34 @@ include "version.php";
 
 $tng_search_tlevents = $_SESSION['tng_search_tlevents'] = 1;
 if ($newsearch) {
-  $exptime = 0;
-  $searchstring = stripslashes(trim($searchstring));
-  setcookie("tng_search_tlevents_post[search]", $searchstring, $exptime);
-  setcookie("tng_search_tlevents_post[tngpage]", 1, $exptime);
-  setcookie("tng_search_tlevents_post[offset]", 0, $exptime);
-} else {
-  if (!$searchstring) {
-    $searchstring = stripslashes($_COOKIE['tng_search_tlevents_post']['search']);
-  }
-  if (!isset($offset)) {
-    $tngpage = $_COOKIE['tng_search_tlevents_post']['tngpage'];
-    $offset = $_COOKIE['tng_search_tlevents_post']['offset'];
-  } else {
     $exptime = 0;
-    setcookie("tng_search_tlevents_post[tngpage]", $tngpage, $exptime);
-    setcookie("tng_search_tlevents_post[offset]", $offset, $exptime);
-  }
+    $searchstring = stripslashes(trim($searchstring));
+    setcookie("tng_search_tlevents_post[search]", $searchstring, $exptime);
+    setcookie("tng_search_tlevents_post[tngpage]", 1, $exptime);
+    setcookie("tng_search_tlevents_post[offset]", 0, $exptime);
+} else {
+    if (!$searchstring) {
+        $searchstring = stripslashes($_COOKIE['tng_search_tlevents_post']['search']);
+    }
+    if (!isset($offset)) {
+        $tngpage = $_COOKIE['tng_search_tlevents_post']['tngpage'];
+        $offset = $_COOKIE['tng_search_tlevents_post']['offset'];
+    } else {
+        $exptime = 0;
+        setcookie("tng_search_tlevents_post[tngpage]", $tngpage, $exptime);
+        setcookie("tng_search_tlevents_post[offset]", $offset, $exptime);
+    }
 }
 $searchstring_noquotes = preg_replace("/\"/", "&#34;", $searchstring);
 $searchstring = addslashes($searchstring);
 
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $tngpage = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $tngpage = 1;
 }
 
 $wherestr = $searchstring ? "WHERE evyear LIKE \"%$searchstring%\" OR evtitle LIKE \"%$searchstring%\" OR evdetail LIKE \"%$searchstring%\"" : "";
@@ -46,13 +46,13 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(tleventID) as tlcount FROM $tlevents_table $wherestr";
-  $result2 = tng_query($query);
-  $row = tng_fetch_assoc($result2);
-  $totrows = $row['tlcount'];
-  tng_free_result($result2);
+    $query = "SELECT count(tleventID) as tlcount FROM $tlevents_table $wherestr";
+    $result2 = tng_query($query);
+    $row = tng_fetch_assoc($result2);
+    $totrows = $row['tlcount'];
+    tng_free_result($result2);
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $helplang = findhelp("tlevents_help.php");
@@ -74,89 +74,77 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <div class="normal">
-        <form action="admin_timelineevents.php" name="form1">
-          <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+    <tr class="databack">
+        <td class="tngshadow">
+            <div class="normal">
+                <form action="admin_timelineevents.php" name="form1">
+                    <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                     <input type="hidden" name="findtlevent" value="1"><input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop"></form>
-              <br>
+                <br>
 
-              <?php
-              $numrowsplus = $numrows + $offset;
-              if (!$numrowsplus) {
-                $offsetplus = 0;
-              }
-              echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-              $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-              echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
-              ?>
+                <?php
+                $numrowsplus = $numrows + $offset;
+                if (!$numrowsplus) {
+                    $offsetplus = 0;
+                }
+                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
+                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                  <?php
-                  if ($allow_delete) {
-                    ?>
-                      <p>
-                          <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                          <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                          <input type="submit" name="xtimeaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
-                      </p>
                     <?php
-                  }
-                  ?>
-                  <table cellpadding="3" cellspacing="1" class="normal">
-                    <tr>
-                      <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr></span></td>
-                          <?php
-                          if ($allow_delete) {
-                            ?>
-                              <td class="fieldnameback"><span class="fieldname"><nobr>&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</nobr></span></td>
-                            <?php
-                          }
-                          ?>
-                            <td class="fieldnameback fieldname">
-                                <nobr>&nbsp;<b><?php echo $admtext['evyear']; ?></b>&nbsp;</nobr>
-                            </td>
-                            <td class="fieldnameback fieldname">
-                                <nobr>&nbsp;<b><?php echo $admtext['enddt']; ?></b>&nbsp;</nobr>
-                            </td>
-                            <td class="fieldnameback fieldname">
-                                <nobr>&nbsp;<b><?php echo $admtext['evtitle']; ?></b>&nbsp;</nobr>
-                            </td>
-                            <td class="fieldnameback fieldname">
-                                <nobr>&nbsp;<b><?php echo $admtext['evdetail']; ?></b>&nbsp;</nobr>
-                            </td>
+                    if ($allow_delete) {
+                        ?>
+                        <p>
+                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
+                            <input type="submit" name="xtimeaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                        </p>
+                        <?php
+                    }
+                    ?>
+                    <table cellpadding="3" cellspacing="1" class="normal">
+                        <tr>
+                            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</span></td>
+                            <?php if ($allow_delete) { ?>
+                                <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['select']; ?></b>&nbsp;</span></td>
+                            <?php } ?>
+                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['evyear']; ?></b>&nbsp;</td>
+                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['enddt']; ?></b>&nbsp;</td>
+                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['evtitle']; ?></b>&nbsp;</td>
+                            <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['evdetail']; ?></b>&nbsp;</td>
                         </tr>
-                      <?php
-                      if ($numrows) {
-                      $actionstr = "";
-                      if ($allow_edit) {
-                        $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
-                      }
-                      if ($allow_delete) {
-                        $actionstr .= "<a href=\"#\" onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
-                      }
-
-                      while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
-                        $newactionstr = preg_replace("/xxx/", $row['tleventID'], $actionstr);
-                        echo "<tr id=\"row_{$row['tleventID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
-                        if ($allow_delete) {
-                          echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['tleventID']}\" value=\"1\"></td>";
+                        <?php
+                        if ($numrows) {
+                        $actionstr = "";
+                        if ($allow_edit) {
+                            $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
-                        echo "<td class=\"lightback\" align=\"center\">{$row['evyear']}&nbsp;</td>\n";
-                        echo "<td class=\"lightback\" align=\"center\">{$row['endyear']}&nbsp;</td>";
-                        echo "<td class=\"lightback\" valign=\"top\">{$row['evtitle']}&nbsp;</td>";
-                        echo "<td class=\"lightback\" valign=\"top\">{$row['evdetail']}&nbsp;</td></tr>\n";
-                      }
-                      ?>
+                        if ($allow_delete) {
+                            $actionstr .= "<a href=\"#\" onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        }
+
+                        while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
+                            $newactionstr = preg_replace("/xxx/", $row['tleventID'], $actionstr);
+                            echo "<tr id=\"row_{$row['tleventID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            if ($allow_delete) {
+                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['tleventID']}\" value=\"1\"></td>";
+                            }
+                            echo "<td class=\"lightback\" align=\"center\">{$row['evyear']}&nbsp;</td>\n";
+                            echo "<td class=\"lightback\" align=\"center\">{$row['endyear']}&nbsp;</td>";
+                            echo "<td class=\"lightback\" valign=\"top\">{$row['evtitle']}&nbsp;</td>";
+                            echo "<td class=\"lightback\" valign=\"top\">{$row['evdetail']}&nbsp;</td></tr>\n";
+                        }
+                        ?>
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 }
                 else {
-                  echo $admtext['norecords'];
+                    echo $admtext['norecords'];
                 }
                 tng_free_result($result);
                 ?>

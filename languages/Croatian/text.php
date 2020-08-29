@@ -543,7 +543,7 @@ switch ($textpart) {
     $text['newpassword'] = "Nova zaporka";
     $text['resetpass'] = "Resetiraj svoju zaporku";
     $text['nousers'] = "Ova forma ne mo�e biti kori�tena sve dok postoji najmanje jedan korisnik. Ako ste vlasnik site-a, molim vas da kreirate va� Administrator account iz Admin/Users.";
-    $text['noregs'] = "�ao nam je, ali mi ne prihva�amo nove korisni�ke registracije u ovom trenutku.  Molimo <a href=\"suggest.php\"> kontaktirajte nas </ a> direktno ako imate komentare ili pitanja u vezi s bilo �to na ovom mjestu. ";
+    $text['noregs'] = "�ao nam je, ali mi ne prihva�amo nove korisni�ke registracije u ovom trenutku.  Molimo <a href=\"suggest.php\"> kontaktirajte nas </a> direktno ako imate komentare ili pitanja u vezi s bilo �to na ovom mjestu. ";
     //changed in 8.0.0
     $text['emailmsg'] = "Primili ste novi zahtjev za otvaranje TNG korisni�kog account-a. Molimo da se logirate na va� TNG Admin account i dodijelite odgovaraju�e ovlasti novom account-u. Ako odobrite ovu registraciju, molim da obavjestite aplikanta na na�in da odgovorite na ovu poruku.";
     $text['accactive'] = "Korisni�ki ra�un je aktiviran, ali korisnik ne�e imati posebna prava dok ih ne dodijeliti.";

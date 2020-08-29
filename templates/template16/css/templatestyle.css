@@ -289,9 +289,9 @@ a.size0:visited {
 .emailimg {
     width: 40px;
     height: 26px;
-    margin: 0px 8px 0px 0px;
+    margin: 0 8px 0 0;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 .vmenu {
@@ -307,7 +307,7 @@ a.size0:visited {
 
 .mainsection p {
     margin: 0 0 10px;
-    padding: 0px;
+    padding: 0;
     font-size: 12pt;
     line-height: 1.5em;
 }

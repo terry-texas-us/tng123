@@ -115,10 +115,10 @@ body {
 
 .mhead ul {
     border-top: 30px solid #2d2214;
-    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
-    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .4);
     -ms-box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
     -moz-border-radius: 0 0 8px 8px;
     -webkit-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
@@ -128,7 +128,7 @@ body {
     top: 50px;
     z-index: -1;
     list-style: none outside none;
-    margin-left: 0px;
+    margin-left: 0;
     -webkit-transition: all 400ms cubic-bezier(0.250, 0.250, 0.530, 1); /* older webkit */
     -webkit-transition: all 400ms cubic-bezier(0.250, 0.250, 0.530, 1.265);
     -moz-transition: all 400ms cubic-bezier(0.250, 0.250, 0.530, 1.265);
@@ -192,11 +192,11 @@ body {
 
 .mobileicon {
     height: 15px;
-    padding: .1em 0px 0px 18px;
+    padding: .1em 0 0 18px;
     text-decoration: none;
     display: block;
     line-height: 1.2;
-    margin-right: 0px;
+    margin-right: 0;
 }
 
 ul#mcoremenu.on, ul#mfindmenu.on, ul#mmediamenu.on, ul#minfomenu.on, ul#mlangmenu.on, ul#mcustmenu.on {

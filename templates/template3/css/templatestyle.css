@@ -87,7 +87,7 @@ a.admincell:hover, a.leftlink:hover {
 
 .newspaper2 p {
     margin: 0 0 10px;
-    padding: 0px;
+    padding: 0;
 }
 
 /* page:  */
@@ -169,23 +169,23 @@ a.topmenu:hover {
 
 /* titleimg added to replace width="630" height="93" hspace="10" in index.php for title.gif */
 .titleimg {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 10px; /* replaces hspace="10" */
     margin-right: 10px; /* replaces hspace="10" */
-    border: 0px;
+    border: 0;
 }
 
 /* mainimg added to replace width="530" height="303" in index.php for mainstreet.jpg */
 .mainimg {
     margin: 0 0 0 0;
-    border: 0px;
+    border: 0;
 }
 
 /* mainimg added to replace width="186" height="110" in topmenu for headerphoto.jpg */
 .headerphoto {
     margin: 0 0 0 0;
-    border: 0px;
+    border: 0;
 }
 
 /* menutitle added to replace width="565" height="86" in topmenu for title.gif */
@@ -193,7 +193,7 @@ a.topmenu:hover {
     margin: 0 0 0 0;
     width: 565px;
     height: 86px;
-    border: 0px;
+    border: 0;
 }
 
 .snlink {
@@ -242,7 +242,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #E8D5A9, #B8A579);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #E8D5A9, #B8A579);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #E8D5A9, #B8A579);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 

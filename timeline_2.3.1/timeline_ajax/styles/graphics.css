@@ -1,14 +1,14 @@
 div.simileAjax-bubble-container {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     border: none;
     position: absolute;
     z-index: 1000;
 }
 
 div.simileAjax-bubble-innerContainer {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     border: none;
     position: relative;
     width: 100%;
@@ -17,12 +17,12 @@ div.simileAjax-bubble-innerContainer {
 }
 
 div.simileAjax-bubble-contentContainer {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     border: none;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -32,7 +32,7 @@ div.simileAjax-bubble-contentContainer {
 div.simileAjax-bubble-border-left {
     position: absolute;
     left: -50px;
-    top: 0px;
+    top: 0;
     width: 50px;
     height: 100%;
 }
@@ -44,7 +44,7 @@ div.simileAjax-bubble-border-left-pngTranslucent {
 div.simileAjax-bubble-border-right {
     position: absolute;
     right: -50px;
-    top: 0px;
+    top: 0;
     width: 50px;
     height: 100%;
 }
@@ -56,7 +56,7 @@ div.simileAjax-bubble-border-right {
 div.simileAjax-bubble-border-top {
     position: absolute;
     top: -50px;
-    left: 0px;
+    left: 0;
     width: 100%;
     height: 50px;
 }
@@ -68,7 +68,7 @@ div.simileAjax-bubble-border-top {
 div.simileAjax-bubble-border-bottom {
     position: absolute;
     bottom: -50px;
-    left: 0px;
+    left: 0;
     width: 100%;
     height: 50px;
 }

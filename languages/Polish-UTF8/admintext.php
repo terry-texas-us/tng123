@@ -1879,8 +1879,8 @@ switch ($textpart) {
     $admtext['verified'] = "zweryfikowany";
     $admtext['provisional'] = "(tymczasowy) musi być dostępny";
     $admtext['backtoprevious'] = "Powróć do poprzedniej strony";
-    $admtext['reasontoupdate'] = "Jeśli nie uruchomiłeś skryptu cust_text_update.php w ramach aktualizacji TNG v12, musisz zaktualizować pliki cust_text.php do <ul> <li> dodaj nową linię do plików i </ li> <li> również zaktualizuj nieaktualną linię w istniejących plikach cust_text.php </ li> </ ul>, które nie są zastępowane podczas aktualizacji TNG.";
-    $admtext['newanchor'] = "Nowa linia komentarza nie powinna być tłumaczona na pliki językowe, aby mogła zostać użyta jako kotwica do wstawienia niestandardowego tekstu przed tą nową linią komentarza przez twórców modów.";
+      $admtext['reasontoupdate'] = "Jeśli nie uruchomiłeś skryptu cust_text_update.php w ramach aktualizacji TNG v12, musisz zaktualizować pliki cust_text.php do <ul> <li> dodaj nową linię do plików i </li> <li> również zaktualizuj nieaktualną linię w istniejących plikach cust_text.php </li> </ul>, które nie są zastępowane podczas aktualizacji TNG.";
+      $admtext['newanchor'] = "Nowa linia komentarza nie powinna być tłumaczona na pliki językowe, aby mogła zostać użyta jako kotwica do wstawienia niestandardowego tekstu przed tą nową linią komentarza przez twórców modów.";
     $admtext['translateissue'] = "Jeśli przetłumaczysz nową linię komentarza, instalacje Modowe zawiodą.";
     $admtext['privatemod'] = "Prywatny Mod";
     $admtext['protected'] = "bezpiecznie-usuń plik ręcznie";

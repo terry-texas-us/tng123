@@ -73,11 +73,11 @@ a.admincell:hover, a.leftlink:hover {
 /* page: is defined to replace the bgcolor=#FFFFFF; in the top table for the page */
 .page {
     background-color: #FFFFFF;
-    margin-top: 0px;
+    margin-top: 0;
     text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
-    margin-right: 0px;
+    margin-right: 0;
     border-collapse: collapse;
-    padding: 0px;
+    padding: 0;
     width: 100%; /* to center, change to 900px or 90% */
 }
 
@@ -86,9 +86,9 @@ a.admincell:hover, a.leftlink:hover {
     background-image: url(../img/khaki.gif);
     height: 1px;
     border-style: none;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 
@@ -113,8 +113,8 @@ a.footer:hover {
 /* menuback: left nav menu background color with no right and bottom border */
 .menuback {
     background-color: #990000;
-    border-right: 0px;
-    border-bottom: 0px;
+    border-right: 0;
+    border-bottom: 0;
     width: 170px;
     padding: 5px;
     vertical-align: top;
@@ -146,13 +146,13 @@ a.footer:hover {
     margin-top: 2px;
     margin-bottom: 2px;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 /* searchimg added to replace width="109" height="35" vspace="0" search4.gif */
 a.searchimg {
     padding-left: 7px;
-    border: 0px;
+    border: 0;
     font-size: 20pt;
     font-family: Georgia, Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -166,7 +166,7 @@ a.searchimg {
 .banner {
     text-align: left;
     margin-top: 5px;
-    border: 0px;
+    border: 0;
 }
 
 /* smallphoto added to replace width="71" height="100" vspace="5" align="right" for smallphoto.jpg */
@@ -175,7 +175,7 @@ a.searchimg {
     float: right;
     margin-top: 8px;
     margin-bottom: 8px;
-    border: 0px;
+    border: 0;
 }
 
 .imgright {
@@ -191,7 +191,7 @@ a.searchimg {
 /*  home page sections replaces valign="top" width="300" */
 .leftsection, .rightsection {
     width: 45%;
-    border-spacing: 0px;
+    border-spacing: 0;
     border-collapse: collapse;
     margin: 10px;
     vertical-align: top;
@@ -217,19 +217,19 @@ a.searchimg {
 /* indexpage defined to replace bgcolor="#FFFFFF" sytle="text-align:left" cellspacing="0" in index.php */
 .indexpage {
     background-color: #FFFFFF;
-    margin-top: 0px;
+    margin-top: 0;
     text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
-    border: 0px;
+    border: 0;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px;
+    padding: 0;
     width: 90%; /* total width of all the columns */
 }
 
 /* bigphoto defined to replace width="300" height="172" in index.php */
 .bigphoto {
-    border: 0px;
+    border: 0;
     width: 100%;
 }
 
@@ -283,7 +283,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #E5E5B1, #C5C591);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #E5E5B1, #C5C591);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #E5E5B1, #C5C591);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 

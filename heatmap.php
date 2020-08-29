@@ -453,7 +453,7 @@ if ($markermap) {
                         people += " (" + place.people[i].birthdate + ")";
                     people += "<br>";
                 }
-                var infoHtml = '<div class="info"><h4 style="margin-top:0px"><a href="' + cmstngpath + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
+                var infoHtml = '<div class="info"><h4 style="margin-top:0"><a href="' + cmstngpath + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
                 if (people != "")
                     infoHtml += '<div class="info-body">' + people + '</div>';
                 if (place.notes != "")

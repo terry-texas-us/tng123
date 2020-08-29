@@ -1878,8 +1878,8 @@ switch ($textpart) {
     $admtext['verified'] = "bekr�ftet";
     $admtext['provisional'] = "(forel�big) skal v�re tilg�ngelig";
     $admtext['backtoprevious'] = "Tilbage til forrige side";
-    $admtext['reasontoupdate'] = "Hvis man ikke har k�rt cust_text_update.php scriptet som en del af TNG v12 opgraderingen, s� skal man opdatere cust_text.php filer til <ul> <li>tilf�j en ny linje til filerne og </li><li>ogs� opdatere out-of-date linjen i eksisterende cust_text.php filer,</ li></ ul> som ikke bliver udskiftes under TNG-opgraderinger.";
-    $admtext['newanchor'] = "Den nye kommentarlinje b�r ikke overs�ttes i sprogfilerne, s� den kan bruges som et anker for at inds�tte brugerdefineret tekst f�r denne nye kommentarlinje af MOD-udviklerne.";
+      $admtext['reasontoupdate'] = "Hvis man ikke har k�rt cust_text_update.php scriptet som en del af TNG v12 opgraderingen, s� skal man opdatere cust_text.php filer til <ul> <li>tilf�j en ny linje til filerne og </li><li>ogs� opdatere out-of-date linjen i eksisterende cust_text.php filer,</li></ul> som ikke bliver udskiftes under TNG-opgraderinger.";
+      $admtext['newanchor'] = "Den nye kommentarlinje b�r ikke overs�ttes i sprogfilerne, s� den kan bruges som et anker for at inds�tte brugerdefineret tekst f�r denne nye kommentarlinje af MOD-udviklerne.";
     $admtext['translateissue'] = "Hvis man overs�tter den nye kommentarlinje, vil MOD installationer mislykkes.";
     $admtext['privatemod'] = "Privat MOD";
     $admtext['protected'] = "beskyttet - fjern fil manuelt";

@@ -112,7 +112,7 @@ echo "</form>\n";
       <?php
       while (count($currgen) && $generation <= $generations) {
         echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
-        echo "<ol style=\"list-style-type:none; padding:0px; margin:0px;\">";
+          echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
         while ($row = array_shift($currgen)) {
           echo "<li>";
           echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";

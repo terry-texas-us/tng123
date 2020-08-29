@@ -8,38 +8,38 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if ($assignedtree) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $tng_search_langs = $_SESSION['tng_search_langs'] = 1;
 if ($newsearch) {
-  $exptime = 0;
-  setcookie("tng_search_langs_post[search]", $searchstring, $exptime);
-  setcookie("tng_search_langs_post[tngpage]", 1, $exptime);
-  setcookie("tng_search_langs_post[offset]", 0, $exptime);
-} else {
-  if (!$searchstring) {
-    $searchstring = stripslashes($_COOKIE['tng_search_langs_post']['search']);
-  }
-  if (!isset($offset)) {
-    $tngpage = $_COOKIE['tng_search_langs_post']['tngpage'];
-    $offset = $_COOKIE['tng_search_langs_post']['offset'];
-  } else {
     $exptime = 0;
-    setcookie("tng_search_langs_post[tngpage]", $tngpage, $exptime);
-    setcookie("tng_search_langs_post[offset]", $offset, $exptime);
-  }
+    setcookie("tng_search_langs_post[search]", $searchstring, $exptime);
+    setcookie("tng_search_langs_post[tngpage]", 1, $exptime);
+    setcookie("tng_search_langs_post[offset]", 0, $exptime);
+} else {
+    if (!$searchstring) {
+        $searchstring = stripslashes($_COOKIE['tng_search_langs_post']['search']);
+    }
+    if (!isset($offset)) {
+        $tngpage = $_COOKIE['tng_search_langs_post']['tngpage'];
+        $offset = $_COOKIE['tng_search_langs_post']['offset'];
+    } else {
+        $exptime = 0;
+        setcookie("tng_search_langs_post[tngpage]", $tngpage, $exptime);
+        setcookie("tng_search_langs_post[offset]", $offset, $exptime);
+    }
 }
 
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $tngpage = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $tngpage = 1;
 }
 
 $wherestr = $searchstring ? "WHERE display LIKE \"%$searchstring%\" OR folder LIKE \"%$searchstring%\"" : "";
@@ -48,13 +48,13 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(languageID) as lcount FROM $languages_table $wherestr";
-  $result2 = tng_query($query);
-  $row = tng_fetch_assoc($result2);
-  $totrows = $row['lcount'];
-  tng_free_result($result2);
+    $query = "SELECT count(languageID) as lcount FROM $languages_table $wherestr";
+    $result2 = tng_query($query);
+    $row = tng_fetch_assoc($result2);
+    $totrows = $row['lcount'];
+    tng_free_result($result2);
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $helplang = findhelp("languages_help.php");
@@ -76,72 +76,64 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <div class="normal">
+    <tr class="databack">
+        <td class="tngshadow">
+            <div class="normal">
 
-        <form action="admin_languages.php" name="form1">
-          <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                <form action="admin_languages.php" name="form1">
+                    <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
                     <input type="hidden" name="findlang" value="1"><input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
                 </form>
-              <br>
+                <br>
 
-              <?php
-              $numrowsplus = $numrows + $offset;
-              if (!$numrowsplus) {
-                $offsetplus = 0;
-              }
-              echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-              $pagenav = get_browseitems_nav($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-              echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
-              ?>
+                <?php
+                $numrowsplus = $numrows + $offset;
+                if (!$numrowsplus) {
+                    $offsetplus = 0;
+                }
+                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                $pagenav = get_browseitems_nav($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
+                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                ?>
 
-        <table cellpadding="3" cellspacing="1" class="normal">
-          <tr>
-            <td class="fieldnameback fieldname">
-              <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
-                        </td>
-                        <td class="fieldnameback fieldname">
-                            <nobr>&nbsp;<b><?php echo $admtext['display']; ?></b>&nbsp;</nobr>
-                        </td>
-                        <td class="fieldnameback fieldname">
-                            <nobr>&nbsp;<b><?php echo $admtext['folder']; ?></b>&nbsp;</nobr>
-                        </td>
-                        <td class="fieldnameback fieldname">
-                            <nobr>&nbsp;<b><?php echo $admtext['charset']; ?></b>&nbsp;</nobr>
-                        </td>
+                <table cellpadding="3" cellspacing="1" class="normal">
+                    <tr>
+                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['display']; ?></b>&nbsp;</td>
+                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['folder']; ?></b>&nbsp;</td>
+                        <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['charset']; ?></b>&nbsp;</td>
                     </tr>
 
-                  <?php
-                  if ($numrows) {
-                    $actionstr = "";
-                    if ($allow_edit) {
-                      $actionstr .= "<a href=\"admin_editlanguage.php?languageID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                    <?php
+                    if ($numrows) {
+                        $actionstr = "";
+                        if ($allow_edit) {
+                            $actionstr .= "<a href=\"admin_editlanguage.php?languageID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                        }
+                        if ($allow_delete) {
+                            $actionstr .= "<a href=\"#\" onclick=\"if(confirm('{$admtext['conflangdelete']}' )){deleteIt('language',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        }
+                        while ($row = tng_fetch_assoc($result)) {
+                            $newactionstr = preg_replace("/xxx/", $row['languageID'], $actionstr);
+                            echo "<tr id=\"row_{$row['languageID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<td class=\"lightback\">{$row['display']}&nbsp;</td>\n";
+                            echo "<td class=\"lightback\">{$row['folder']}&nbsp;</td>\n";
+                            echo "<td class=\"lightback\">{$row['charset']}&nbsp;</td></tr>\n";
+                        }
                     }
-                    if ($allow_delete) {
-                      $actionstr .= "<a href=\"#\" onclick=\"if(confirm('{$admtext['conflangdelete']}' )){deleteIt('language',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
-                    }
-                    while ($row = tng_fetch_assoc($result)) {
-                      $newactionstr = preg_replace("/xxx/", $row['languageID'], $actionstr);
-                      echo "<tr id=\"row_{$row['languageID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
-                      echo "<td class=\"lightback\">{$row['display']}&nbsp;</td>\n";
-                      echo "<td class=\"lightback\">{$row['folder']}&nbsp;</td>\n";
-                      echo "<td class=\"lightback\">{$row['charset']}&nbsp;</td></tr>\n";
-                    }
-                  }
-                  ?>
+                    ?>
                 </table>
-              <?php
-              if ($numrows) {
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
-              } else {
-                echo $admtext['norecords'];
-              }
-              tng_free_result($result);
-              ?>
+                <?php
+                if ($numrows) {
+                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                    echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                } else {
+                    echo $admtext['norecords'];
+                }
+                tng_free_result($result);
+                ?>
 
             </div>
         </td>

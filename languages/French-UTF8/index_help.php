@@ -12,19 +12,19 @@ echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $t
   <?php
   include $relpath . "adminmeta.php";
   ?>
-  <style>
-      p {
-          margin-top: 0px;
-      }
-  </style>
+    <style>
+        p {
+            margin-top: 0;
+        }
+    </style>
 </head>
 
 <body class="helpbody">
 <a name="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="backuprestore_help.php" class="lightlink">&laquo; Aide : Utilités</a> &nbsp; | &nbsp;

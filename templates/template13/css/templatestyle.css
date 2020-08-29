@@ -569,7 +569,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #eeeef3, #ceced3);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #eeeef3, #ceced3);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #eeeef3, #ceced3);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 
@@ -620,17 +620,17 @@ ul.tngdd .topline {
 }
 
 ul.home-menus, ul.fancy_list {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
 .emailimg {
     width: 40px;
     height: 26px;
-    margin: 0px 8px 0px 0px;
+    margin: 0 8px 0 0;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 td.calDay, td.calToday, table.calendar {
@@ -657,7 +657,7 @@ h2.site-head, h2.site-head a {
     float: left;
     padding-right: 10px;
     padding-top: 5px;
-    border: 0px;
+    border: 0;
 }
 
 .big-header {
@@ -707,11 +707,11 @@ h2.site-head, h2.site-head a {
 
 .newspaper2 p {
     margin: 0 0 10px;
-    padding: 0px;
+    padding: 0;
 }
 
 #globe {
-    margin: 8px 30px 0px 0px;
+    margin: 8px 30px 0 0;
     float: left;
 }
 
@@ -729,14 +729,14 @@ h2.site-head, h2.site-head a {
     }
 
     .photo-container {
-        margin-left: 0px;
+        margin-left: 0;
     }
 }
 
 @media (max-width: 740px) {
     .art-nav, .art-sheet {
         min-width: 0;
-        margin: 0px;
+        margin: 0;
         width: 95%
     }
 
@@ -779,23 +779,23 @@ h2.site-head, h2.site-head a {
     }
 
     h2.site-head {
-        padding-left: 0px;
+        padding-left: 0;
         font-size: 18pt;
     }
 
     .left-indent {
-        padding-left: 0px;
+        padding-left: 0;
     }
 
     .art-post-body {
-        padding: 10px 0px;
+        padding: 10px 0;
     }
 
     .newspaper2 {
         -moz-column-count: 1; /* Firefox */
         -webkit-column-count: 1; /* Safari and Chrome */
         column-count: 1;
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     #tsearchbox input[type="text"] {
@@ -803,6 +803,6 @@ h2.site-head, h2.site-head a {
     }
 
     .art-sheet-body {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 }

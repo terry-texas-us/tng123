@@ -1,7 +1,7 @@
 /*new method*/
 ul#tngnav {
-    margin: 0 0px 0px 10px;
-    padding: 0 0 0 0px;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 0;
     list-style: none;
     border: none;
 }
@@ -24,9 +24,9 @@ ul#tngnav {
     border-right: 1px solid #444;
     position: relative;
     font: 11px arial, helvetica, sans-serif;
-    -moz-border-radius: 4px 4px 0px 0px;
-    -webkit-border-radius: 4px 4px 0px 0px;
-    border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
 }
 
 /*active tab*/
@@ -50,7 +50,7 @@ ul#tngnav {
     margin: 0 1px 0 0;
     position: relative;
     float: left;
-    padding: 0em 0em .3em 0px;
+    padding: 0 0 .3em 0;
 }
 
 #tabs .divhere {

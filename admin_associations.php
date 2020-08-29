@@ -36,32 +36,28 @@ $assoccount = tng_num_rows($assocresult);
     <p class="subhead"><strong><?php echo $admtext['associations'] . ": $namestr"; ?></strong> |
       <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php');"><?php echo $admtext['help']; ?></a></p>
     <p>
-      <?php if ($allow_add) { ?>
-        <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.newassocform1.reset();assocType='I';gotoSection('associations','addassociation');">&nbsp;
-      <?php } ?>
-      <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
+        <?php if ($allow_add) { ?>
+            <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.newassocform1.reset();assocType='I';gotoSection('associations','addassociation');">&nbsp;
+        <?php } ?>
+        <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
     </p>
-    <table id="associationstbl" width="95%" class="normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$assoccount) {
-      echo " style=\"display:none\"";
-    } ?>>
-      <tbody id="associationstblbody">
-      <tr>
-        <td class="fieldnameback fieldname">
-          <nobr>&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</nobr>
-        </td>
-        <td class="fieldnameback fieldname" width="85%">
-                    <nobr>&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</nobr>
-                </td>
-            </tr>
-            <?php
-            if ($assocresult && $assoccount) {
+      <table id="associationstbl" width="95%" class="normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$assoccount) {
+          echo " style=\"display:none\"";
+      } ?>>
+          <tbody id="associationstblbody">
+          <tr>
+              <td class="fieldnameback fieldname">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+              <td class="fieldnameback fieldname" width="85%">&nbsp;<b><?php echo $admtext['description']; ?></b>&nbsp;</td>
+          </tr>
+          <?php
+          if ($assocresult && $assoccount) {
               while ($assoc = tng_fetch_assoc($assocresult)) {
-                //run query for name or family
-                $assoc['allow_living'] = 1;
-                if ($assoc['reltype'] == "I") {
-                  $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, living, private, branch FROM $people_table WHERE personID=\"{$assoc['passocID']}\" AND gedcom=\"$tree\"";
-                  $nameresult = tng_query($query);
-                  $row = tng_fetch_assoc($nameresult);
+                  //run query for name or family
+                  $assoc['allow_living'] = 1;
+                  if ($assoc['reltype'] == "I") {
+                      $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, living, private, branch FROM $people_table WHERE personID=\"{$assoc['passocID']}\" AND gedcom=\"$tree\"";
+                      $nameresult = tng_query($query);
+                      $row = tng_fetch_assoc($nameresult);
                   $rights = determineLivingPrivateRights($row);
                   $row['allow_living'] = $rights['living'];
                   $row['allow_private'] = $rights['private'];
