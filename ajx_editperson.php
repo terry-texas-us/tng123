@@ -103,8 +103,6 @@ while ($more = tng_fetch_assoc($morelinks)) {
   $gotmore[$more['parenttag']] = "*";
 }
 
-$reltypes = array("adopted", "birth", "foster", "sealing", "step", "putative");
-
 $photo = showSmallPhoto($personID, $namestr, 1, 0, false, $row['sex']);
 header("Content-type:text/html; charset=" . $session_charset);
 
@@ -408,7 +406,7 @@ if ($editconflict) {
                 <select name="frel<?php echo $parent['familyID']; ?>">
                     <option value=""></option>
                   <?php
-                  foreach ($reltypes as $reltype) {
+                  foreach (PARENT_CHILD_RELATIONSHIP_TYPES as $reltype) {
                     echo "<option value=\"$reltype\"";
                     $lowerrel = strtolower($parent['frel']);
                     if ($lowerrel == $reltype || $lowerrel == $admtext[$reltype]) {
@@ -449,7 +447,7 @@ if ($editconflict) {
                 <select name="mrel<?php echo $parent['familyID']; ?>">
                     <option value=""></option>
                   <?php
-                  foreach ($reltypes as $reltype) {
+                  foreach (PARENT_CHILD_RELATIONSHIP_TYPES as $reltype) {
                     echo "<option value=\"$reltype\"";
                     $lowerrel = strtolower($parent['frel']);
                     if ($lowerrel == $reltype || $lowerrel == $admtext[$reltype]) {

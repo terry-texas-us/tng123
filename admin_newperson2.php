@@ -32,8 +32,7 @@ function relateSelect($label) {
   $pout = "<select name=\"$fieldname\">\n";
   $pout .= "<option value=\"\"></option>\n";
 
-  $reltypes = array("adopted", "birth", "foster", "sealing", "step", "putative");
-  foreach ($reltypes as $reltype) {
+  foreach (PARENT_CHILD_RELATIONSHIP_TYPES as $reltype) {
     $pout .= "<option value=\"$reltype\"";
     if ($parent[$fieldname] == $reltype || $parent[$fieldname] == $admtext[$reltype]) {
       $pout .= " selected";
