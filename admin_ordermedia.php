@@ -130,7 +130,7 @@ if (file_exists("$rootpath$photoref")) {
     $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"border-width:1;border-style:solid;margin-right:10px\">";
 }
 ?>
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
     var entity = "<?php echo $personID; ?>";
     var tree = "<?php echo $tree; ?>";
     var album = "";

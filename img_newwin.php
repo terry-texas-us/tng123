@@ -19,7 +19,7 @@ echo $tngconfig['doctype'] ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PU
   $title = htmlspecialchars($title, ENT_QUOTES, $session_charset);
   ?>
     <link href="<?php echo $cms['tngpath']; ?>css/img_viewer.css" rel="stylesheet" type="text/css">
-    <script language="JavaScript" type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/img_viewer.js"></script>
+    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/img_viewer.js"></script>
     <title><?php echo $title; ?></title>
 </head>
 

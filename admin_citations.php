@@ -19,20 +19,7 @@ $eventtypes = tng_query($query);
 $eventtype = tng_fetch_assoc($eventtypes);
 
 if ($eventtype['display']) {
-  $dispvalues = explode("|", $eventtype['display']);
-  $numvalues = count($dispvalues);
-  if ($numvalues > 1) {
-    $displayval = "";
-    for ($i = 0; $i < $numvalues; $i += 2) {
-      $lang = $dispvalues[$i];
-      if ($mylanguage == $languages_path . $lang) {
-        $eventtypedesc = $dispvalues[$i + 1];
-        break;
-      }
-    }
-  } else {
-    $eventtypedesc = $eventtype['display'];
-  }
+    $eventtypedesc = getEventDisplayText($eventtype);
 } elseif ($eventtype['tag']) {
   $eventtypedesc = $eventtype['tag'];
 } elseif ($eventID) {

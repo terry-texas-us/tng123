@@ -390,7 +390,7 @@ echo "</select>\n";
 <?php
 if ($row['ucount']) {
   ?>
-  <script language="JavaScript" type="text/javascript">
+  <script type="text/javascript">
     var tree = getTree();
     if (tree) {
       <?php

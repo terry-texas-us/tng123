@@ -114,10 +114,10 @@ function getfamily($tree, $familyID, $personID) {
       $familyID = getresult(getChildFamily($tree, $personID, 'parentorder'));
     }
   }
-  $query = "SELECT distinct a.gedcom gedcom,a.familyID familyID,husband,wife, c.personID, c.firstname,c.lastname,c.sex,IF(birthdatetr!='0000-00-00',year(birthdatetr),year(altbirthdatetr)) as birth,IF(deathdatetr !='0000-00-00',year(deathdatetr),year(burialdatetr)) death, marrdate, c.living living, c.private private, c.branch branch, nameorder, lnprefix, title, prefix, suffix, ordernum
-FROM $families_table a left join $children_table b on a.familyID=b.familyID and a.gedcom=b.gedcom join $people_table c on c.personID in (a.husband,a.wife,b.personID) and a.gedcom=c.gedcom
-WHERE a.familyID='$familyID' and a.gedcom='$tree'
-order by b.ordernum";
+  $query = "SELECT distinct a.gedcom gedcom,a.familyID familyID,husband,wife, c.personID, c.firstname,c.lastname,c.sex,IF(birthdatetr!='0000-00-00',year(birthdatetr),year(altbirthdatetr)) as birth,IF(deathdatetr !='0000-00-00',year(deathdatetr),year(burialdatetr)) death, marrdate, c.living living, c.private private, c.branch branch, nameorder, lnprefix, title, prefix, suffix, ordernum ";
+  $query .= "FROM $families_table a left join $children_table b on a.familyID=b.familyID and a.gedcom=b.gedcom join $people_table c on c.personID in (a.husband,a.wife,b.personID) and a.gedcom=c.gedcom ";
+  $query .= "WHERE a.familyID='$familyID' and a.gedcom='$tree' ";
+  $query .= "ORDER BY b.ordernum";
   $result = tng_query($query);
   if (tng_num_rows($result) == 0) {
     return '';

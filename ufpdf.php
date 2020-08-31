@@ -292,10 +292,10 @@ if (!class_exists('UFPDF')) {
       $l = strlen($txt);
       $out = $bom ? "\xFE\xFF" : '';
       for ($i = 0; $i < $l; ++$i) {
-        $c = ord($txt{$i});
+        $c = ord($txt[$i]);
         // ASCII
         if ($c < 0x80) {
-          $out .= "\x00" . $txt{$i};
+          $out .= "\x00" . $txt[$i];
         } // Lost continuation byte
         else {
           if ($c < 0xC0) {
@@ -314,7 +314,7 @@ if (!class_exists('UFPDF')) {
                 } // 5/6 byte sequences not possible for Unicode.
                 else {
                   $out .= "\xFF\xFD";
-                  while (ord($txt{$i + 1}) >= 0x80 && ord($txt{$i + 1}) < 0xC0) {
+                  while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
                     ++$i;
                   }
                   continue;
@@ -324,9 +324,9 @@ if (!class_exists('UFPDF')) {
 
             $q = array($c);
             // Fetch rest of sequence
-            while (ord($txt{$i + 1}) >= 0x80 && ord($txt{$i + 1}) < 0xC0) {
+            while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
               ++$i;
-              $q[] = ord($txt{$i});
+              $q[] = ord($txt[$i]);
             }
 
             // Check length
@@ -398,10 +398,10 @@ if (!class_exists('UFPDF')) {
       $l = strlen($txt);
       $out = array();
       for ($i = 0; $i < $l; ++$i) {
-        $c = ord($txt{$i});
+        $c = ord($txt[$i]);
         // ASCII
         if ($c < 0x80) {
-          $out[] = ord($txt{$i});
+          $out[] = ord($txt[$i]);
         } // Lost continuation byte
         else {
           if ($c < 0xC0) {
@@ -420,7 +420,7 @@ if (!class_exists('UFPDF')) {
                 } // 5/6 byte sequences not possible for Unicode.
                 else {
                   $out[] = 0xFFFD;
-                  while (ord($txt{$i + 1}) >= 0x80 && ord($txt{$i + 1}) < 0xC0) {
+                  while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
                     ++$i;
                   }
                   continue;
@@ -430,9 +430,9 @@ if (!class_exists('UFPDF')) {
 
             $q = array($c);
             // Fetch rest of sequence
-            while (ord($txt{$i + 1}) >= 0x80 && ord($txt{$i + 1}) < 0xC0) {
+            while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
               ++$i;
-              $q[] = ord($txt{$i});
+              $q[] = ord($txt[$i]);
             }
 
             // Check length

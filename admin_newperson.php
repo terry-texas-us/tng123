@@ -66,7 +66,7 @@ include_once "eventlib_js.php";
         return rval;
     }
 </script>
-<script language="JavaScript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body background="img/background.gif" onload="generateID('person',document.form1.personID,document.form1.tree1);">
@@ -281,7 +281,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
     </table>
 </form>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
   <?php
   echo $swapbranches;
   echo "tree = \"$firsttree\";\n";

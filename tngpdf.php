@@ -120,7 +120,7 @@ if (!class_exists('TNGPDF')) {
       $nl = 1;
       while ($i < $nb) {
         //Get next character
-        $c = $s{$i};
+        $c = $s[$i];
         if ($c == "\n") {
           //Explicit line break
           $this->Cell($w, $h, substr($s, $j, $i - $j), 0, 2, '', 0, $link);
@@ -215,7 +215,7 @@ if (!class_exists('TNGPDF')) {
         if ($i % 2 == 0) {
           $this->WriteLongIndent($height, $e, '', $indent, $rows, $textheight);
         } else {
-          if ($e{0} == '/') {
+          if ($e[0] == '/') {
             $tag = strtoupper(substr($e, 1));
             $this->CloseTag($tag);
             if ($tag == 'SUP') {

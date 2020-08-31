@@ -54,7 +54,10 @@ if ($linktype == "I") {
 }
 
 //now call up custom events linked to passed in entity
-$query = "SELECT display, eventdate, eventplace, info, eventID FROM $events_table, $eventtypes_table WHERE persfamID = \"$persfamID\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"$tree\" AND keep = \"1\" AND parenttag = \"\" ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
+$query = "SELECT display, eventdate, eventplace, info, eventID ";
+$query .= "FROM {$events_table} as events, {$eventtypes_table} as eventtypes ";
+$query .= "WHERE persfamID = \"{$persfamID}\" AND events.eventtypeID = eventtypes.eventtypeID AND gedcom = \"{$tree}\" AND keep = \"1\" AND parenttag = \"\" ";
+$query .= "ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
 $custevents = tng_query($query);
 while ($custevent = tng_fetch_assoc($custevents)) {
   $displayval = getEventDisplay($custevent['display']);

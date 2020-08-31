@@ -9,6 +9,8 @@ include "checklogin.php";
 include "version.php";
 require "adminlog.php";
 
+require_once "./public/events.php";
+
 if (!$allow_edit || !$allow_delete) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -76,39 +78,6 @@ function doRow($field, $textmsg, $boxname) {
     }
     echo "</tr>\n";
   }
-}
-
-function getEvent($event) {
-  global $mylanguage, $languages_path;
-
-  $dispvalues = explode("|", $event['display']);
-  $numvalues = count($dispvalues);
-  if ($numvalues > 1) {
-    $displayval = "";
-    for ($i = 0; $i < $numvalues; $i += 2) {
-      $lang = $dispvalues[$i];
-      if ($mylanguage == $languages_path . $lang) {
-        $displayval = $dispvalues[$i + 1];
-        break;
-      }
-    }
-  } else {
-    $displayval = $event['display'];
-  }
-
-  $eventstr = "<strong>$displayval</strong>: ";
-  $eventstr2 = $event['eventdate'];
-  if ($eventstr2 && $event['eventplace']) {
-    $eventstr2 .= ", ";
-  }
-  $eventstr2 .= $event['eventplace'];
-  if ($eventstr2 && $event['info']) {
-    $eventstr2 .= ". ";
-  }
-  $eventstr2 .= $event['info'] . "<br>\n";
-  $eventstr .= $eventstr2;
-
-  return $eventstr;
 }
 
 function addCriteria($row) {

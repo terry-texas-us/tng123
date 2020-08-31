@@ -73,7 +73,7 @@ tng_adminheader($admtext['addnewfamily'], $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
   var persfamID = "";
   var allow_cites = false;
   var allow_notes = false;
@@ -340,7 +340,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
     </table>
 </form>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
   <?php
   echo $swapbranches;
   echo "tree = \"$firsttree\";\n";

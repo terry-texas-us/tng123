@@ -165,7 +165,7 @@ if (!empty($reset)) {
         </td>
     </tr>
 </table>
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
   document.form1.tngusername.focus();
 </script>
 </body>

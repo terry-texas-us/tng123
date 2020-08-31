@@ -19,7 +19,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewlanguage'], $flags);
 ?>
 <script type="text/javascript" src="js/admin.js"></script>
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
   function validateForm() {
     var rval = true;
     if (document.form1.folder.value.length == 0) {

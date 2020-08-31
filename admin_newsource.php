@@ -27,7 +27,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewsource'], $flags);
 ?>
 <script type="text/javascript" src="js/selectutils.js"></script>
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
     function validateForm() {
         var rval = true;
 

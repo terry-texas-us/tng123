@@ -578,7 +578,7 @@ if ($counter) {
   <?php
 }
 ?>
-    <script language="JavaScript" type="text/javascript">
+    <script type="text/javascript">
         var lastpopup = "";
         var tnglitbox;
         for (var h = 1; h <= <?php echo $numlines; ?>; h++) {

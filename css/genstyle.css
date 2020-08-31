@@ -2017,7 +2017,7 @@ ul.tngdd ul li a .menu-icon {
 
 /* styles for home page surname cloud post */
 .surnames-cloud, .surnames-cloud a {
-    font-family: Verdana, Tahoma, Arial;
+    font-family: Verdana, Tahoma, Arial, sans-serif;
     padding: 2px 2px 2px 2px;
     letter-spacing: 0.0em;
     word-spacing: 0.0em;

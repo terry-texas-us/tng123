@@ -1,7 +1,10 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/associations.php";
 require_once "./admin/trees.php";
+require_once "./public/people.php";
+require_once "./public/families.php";
 
 if (!$familyID) {
     die("no args");
@@ -30,16 +33,7 @@ function getBirth($row) {
     }
     return $birthdate;
 }
-
-$familyID = ucfirst($familyID);
-$query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
-$result = tng_query($query);
-$row = tng_fetch_assoc($result);
-tng_free_result($result);
-$row['marrplace'] = preg_replace("/\"/", "&#34;", $row['marrplace']);
-$row['sealplace'] = preg_replace("/\"/", "&#34;", $row['sealplace']);
-$row['divplace'] = preg_replace("/\"/", "&#34;", $row['divplace']);
-$row['notes'] = preg_replace("/\"/", "&#34;", $row['notes']);
+$row = fetchAndCleanFamilyRow($familyID, $families_table, $tree);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
     $message = $admtext['norights'];
@@ -80,12 +74,7 @@ while ($cite = tng_fetch_assoc($citresult)) {
     }
     $gotcites[$cite['eventID']] = "*";
 }
-
-$assocquery = "SELECT count(assocID) as acount FROM $assoc_table WHERE personID = \"$familyID\" AND gedcom = \"$tree\"";
-$assocresult = tng_query($assocquery) or die ($admtext['cannotexecutequery'] . ": $assocquery");
-$assocrow = tng_fetch_assoc($assocresult);
-$gotassoc = $assocrow['acount'] ? "*" : "";
-tng_free_result($assocresult);
+$gotassoc = checkForAssociations($familyID, $tree);
 
 $query = "SELECT parenttag FROM $events_table WHERE persfamID=\"$familyID\" AND gedcom =\"$tree\"";
 $morelinks = tng_query($query);
@@ -360,15 +349,7 @@ include_once "eventlib.php";
                                             echo "<div id=\"unlinkc_{$child['pID']}\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";
                                         }
                                         if ($crights['both']) {
-                                            if ($child['birthdate']) {
-                                                $birthstring = $admtext['birthabbr'] . " " . displayDate($child['birthdate']);
-                                            } else {
-                                                if ($child['altbirthdate']) {
-                                                    $birthstring = $admtext['chrabbr'] . " " . displayDate($child['altbirthdate']);
-                                                } else {
-                                                    $birthstring = $admtext['nobirthinfo'];
-                                                }
-                                            }
+                                            $birthstring = getBirthText($child);
 
                                             echo getName($child);
                                             echo " - {$child['pID']}<br>$birthstring";

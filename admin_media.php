@@ -569,7 +569,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 </table>
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
 </body>
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
     toggleHeadstoneCriteria('<?php echo $mediatypeID; ?>');
 </script>
 </html>

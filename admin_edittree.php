@@ -53,7 +53,7 @@ $helplang = findhelp("trees_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytree'], $flags);
 ?>
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
   function validateForm() {
     var rval = true;
     if (document.form1.treename.value.length == 0) {

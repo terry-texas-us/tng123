@@ -12,8 +12,8 @@ $helplang = findhelp("users_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['emailusers'], $flags);
 ?>
-<script language="JavaScript" src="js/selectutils.js"></script>
-<script language="JavaScript" type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script type="text/javascript">
   <?php
   include "branchlibjs.php";
   ?>

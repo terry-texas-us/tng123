@@ -9,6 +9,8 @@ include "checklogin.php";
 include "version.php";
 require "adminlog.php";
 
+require_once "./public/events.php";
+
 if (!$allow_edit || !$allow_delete) {
   $message = $admtext['norights'];
   header("Location: admin_login.php?message=" . urlencode($message));
@@ -110,39 +112,6 @@ function doRow($field, $textmsg, $boxname) {
   }
 }
 
-function getEvent($event) {
-  global $mylanguage, $languages_path;
-
-  $dispvalues = explode("|", $event['display']);
-  $numvalues = count($dispvalues);
-  if ($numvalues > 1) {
-    $displayval = "";
-    for ($i = 0; $i < $numvalues; $i += 2) {
-      $lang = $dispvalues[$i];
-      if ($mylanguage == $languages_path . $lang) {
-        $displayval = $dispvalues[$i + 1];
-        break;
-      }
-    }
-  } else {
-    $displayval = $event['display'];
-  }
-
-  $eventstr = "<strong>$displayval</strong>: ";
-  $eventstr2 = $event['eventdate'];
-  if ($eventstr2 && $event['eventplace']) {
-    $eventstr2 .= ", ";
-  }
-  $eventstr2 .= $event['eventplace'];
-  if ($eventstr2 && $event['info']) {
-    $eventstr2 .= ". ";
-  }
-  $eventstr2 .= $event['info'] . "<br>\n";
-  $eventstr .= $eventstr2;
-
-  return $eventstr;
-}
-
 function getSpouse($marriage, $spouse) {
   global $people_table, $admtext, $tree, $ldsOK, $righttree;
 
@@ -185,7 +154,9 @@ function getParents($parent) {
   global $people_table, $families_table, $admtext, $tree, $righttree, $ldsOK;
 
   $parentstr = "";
-  $query = "SELECT personID, lastname, firstname, prefix, suffix, nameorder FROM $people_table, $families_table WHERE $people_table.personID = $families_table.husband AND $families_table.familyID = \"{$parent['familyID']}\" AND $people_table.gedcom = \"$tree\" AND $families_table.gedcom = \"$tree\"";
+  $query = "SELECT personID, lastname, firstname, prefix, suffix, nameorder ";
+  $query .= "FROM {$people_table} as people, {$families_table} as families ";
+  $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
   $gotfather = tng_query($query);
 
   if ($gotfather) {
@@ -199,7 +170,9 @@ function getParents($parent) {
     tng_free_result($gotfather);
   }
 
-  $query = "SELECT personID, lastname, firstname, prefix, suffix, nameorder FROM $people_table, $families_table WHERE $people_table.personID = $families_table.wife AND $families_table.familyID = \"{$parent['familyID']}\" AND $people_table.gedcom = \"$tree\" AND $families_table.gedcom = \"$tree\"";
+  $query = "SELECT personID, lastname, firstname, prefix, suffix, nameorder ";
+  $query .= "FROM {$people_table} as people, {$families_table} as families ";
+  $query .= "WHERE people.personID = families.wife AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
   $gotmother = tng_query($query);
 
   if ($gotmother) {

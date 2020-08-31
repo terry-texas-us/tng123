@@ -53,7 +53,7 @@ if ($map['key'] && $isConnected) {
   echo "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 ?>
-<script language="JavaScript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 <script type="text/javascript">
     function validateForm() {
         var rval = true;

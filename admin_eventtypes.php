@@ -237,20 +237,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                                     $type = $admtext['repository'];
                                     break;
                             }
-                            $dispvalues = explode("|", $row['display']);
-                            $numvalues = count($dispvalues);
-                            if ($numvalues > 1) {
-                                $displayval = "";
-                                for ($i = 0; $i < $numvalues; $i += 2) {
-                                    $lang = $dispvalues[$i];
-                                    if ($mylanguage == $languages_path . $lang) {
-                                        $displayval = $dispvalues[$i + 1];
-                                        break;
-                                    }
-                                }
-                            } else {
-                                $displayval = $row['display'];
-                            }
+                            $displayval = getEventDisplay($row);
                             $newactionstr = preg_replace("/xxx/", $row['eventtypeID'], $actionstr);
                             echo "<tr id=\"row_{$row['eventtypeID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete || $allow_edit) {

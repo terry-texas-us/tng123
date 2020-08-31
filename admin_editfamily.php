@@ -1,22 +1,18 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/associations.php";
 require_once "./admin/trees.php";
+require_once "./public/families.php";
+require_once "./public/people.php";
 
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 include "version.php";
-$familyID = ucfirst($familyID);
-$query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
-$result = tng_query($query);
-$row = tng_fetch_assoc($result);
-tng_free_result($result);
-$row['marrplace'] = preg_replace("/\"/", "&#34;", $row['marrplace']);
-$row['sealplace'] = preg_replace("/\"/", "&#34;", $row['sealplace']);
-$row['divplace'] = preg_replace("/\"/", "&#34;", $row['divplace']);
-$row['notes'] = preg_replace("/\"/", "&#34;", $row['notes']);
+
+$row = fetchAndCleanFamilyRow($familyID, $families_table, $tree);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
     $message = $admtext['norights'];
@@ -89,11 +85,7 @@ while ($cite = tng_fetch_assoc($citresult)) {
     $gotcites[$cite['eventID']] = "*";
 }
 
-$assocquery = "SELECT count(assocID) as acount FROM $assoc_table WHERE personID = \"$familyID\" AND gedcom = \"$tree\"";
-$assocresult = tng_query($assocquery) or die ($admtext['cannotexecutequery'] . ": $assocquery");
-$assocrow = tng_fetch_assoc($assocresult);
-$gotassoc = $assocrow['acount'] ? "*" : "";
-tng_free_result($assocresult);
+$gotassoc = checkForAssociations($familyID, $tree);
 
 $query = "SELECT parenttag FROM $events_table WHERE persfamID=\"$familyID\" AND gedcom =\"$tree\"";
 $morelinks = tng_query($query);
@@ -267,7 +259,7 @@ include_once "eventlib_js.php";
     }
     ?>
 </script>
-<script language="JavaScript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body background="img/background.gif">
@@ -548,27 +540,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                             echo "<div id=\"unlinkc_{$child['pID']}\" $hidecode><a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";
                                         }
                                         if ($crights['both']) {
-                                            if ($child['birthdate']) {
-                                                $birthstring = $admtext['birthabbr'] . " " . displayDate($child['birthdate']);
-                                            } else {
-                                                if ($child['altbirthdate']) {
-                                                    $birthstring = $admtext['chrabbr'] . " " . displayDate($child['altbirthdate']);
-                                                } else {
-                                                    $birthstring = $admtext['nobirthinfo'];
-                                                }
-                                            }
-                                            if ($child['deathdate']) {
-                                                $deathstring = $admtext['deathabbr'] . " " . displayDate($child['deathdate']);
-                                            } else {
-                                                if ($child['burialdate']) {
-                                                    $deathstring = $admtext['burialabbr'] . " " . displayDate($child['burialdate']);
-                                                } else {
-                                                    $deathstring = "";
-                                                }
-                                            }
-                                            if ($birthstring && $deathstring) {
-                                                $deathstring = ", " . $deathstring;
-                                            }
+                                            list($birthstring, $deathstring) = getVitalsText($child);
                                             echo "<a href=\"#\" onclick=\"EditChild('{$child['pID']}');\">" . getName($child) . "</a> - {$child['pID']}<br>$birthstring$deathstring";
                                         } else {
                                             echo $admtext['living'] . " - " . $child['pID'];

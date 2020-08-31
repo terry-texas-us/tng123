@@ -29,7 +29,7 @@ function substr_unicode($str, $start, $len = null) {
 
 $flags['scripting'] = "<link href=\"{$cms['tngpath']}css/calendar.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 $flags['scripting'] .= "
-<script language=\"javascript\">\n
+<script>\n
 function redisplay(key) {\n
 	window.location.href = jQuery('#' + key).attr('href');\n
 }\n
@@ -283,7 +283,7 @@ if (!empty($where)) {
       // Ugh... who did this happen to?
       $isFam = 0;
 
-      if ($row['persfamID']{0} == 'I') {
+      if ($row['persfamID'][0] == 'I') {
         $sql = "SELECT * FROM $people_table WHERE personID = '" . $row['persfamID'] . "'";
         if ($showLiving == '1') {
           $sql .= ' AND living = 1';
@@ -309,7 +309,7 @@ if (!empty($where)) {
         }
         $longname = htmlentities(getName(tng_fetch_assoc($result2)), ENT_QUOTES);
 
-      } elseif ($row['persfamID']{0} == 'F') {
+      } elseif ($row['persfamID'][0] == 'F') {
         $sql = "SELECT * FROM $families_table WHERE familyID = '" . $row['persfamID'] . "'";
         if ($showLiving == '1') {
           $sql .= ' AND living = 1';

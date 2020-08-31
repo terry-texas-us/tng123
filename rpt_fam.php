@@ -416,7 +416,9 @@ function displayIndividual($personID, $showparents, $showmarriage) {
   if ($showparents) {
     //show parents (for hus&wif)
     $cite1 = $cite2 = "";
-    $query = "SELECT YEAR(birthdatetr) AS birthyear, YEAR(deathdatetr) AS deathyear, familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living, $people_table.private, $people_table.branch FROM ($families_table, $people_table) WHERE $families_table.familyID = \"{$ind['famc']}\" AND $families_table.gedcom = \"$tree\" AND $people_table.personID = $families_table.husband AND $people_table.gedcom = \"$tree\"";
+    $query = "SELECT YEAR(birthdatetr) AS birthyear, YEAR(deathdatetr) AS deathyear, familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch ";
+    $query .= "FROM {$families_table} as families, {$people_table} as people ";
+    $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = \"{$tree}\" AND people.personID = families.husband AND people.gedcom = \"{$tree}\"";
     $presult = tng_query($query);
     $parent = tng_fetch_assoc($presult);
 
@@ -433,7 +435,9 @@ function displayIndividual($personID, $showparents, $showmarriage) {
       $cite1 = reorderCitation($fatherID . "_NAME", 0);
     }
 
-    $query = "SELECT YEAR(birthdatetr) AS birthyear, YEAR(deathdatetr) AS deathyear, familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living, $people_table.private, $people_table.branch FROM ($families_table, $people_table) WHERE $families_table.familyID = \"{$ind['famc']}\" AND $families_table.gedcom = \"$tree\" AND $people_table.personID = $families_table.wife AND $people_table.gedcom = \"$tree\"";
+    $query = "SELECT YEAR(birthdatetr) AS birthyear, YEAR(deathdatetr) AS deathyear, familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch ";
+    $query .= "FROM {$families_table} as families, {$people_table} as people ";
+    $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = \"{$tree}\" AND people.personID = families.wife AND people.gedcom = \"{$tree}\"";
     $presult = tng_query($query);
     $parent = tng_fetch_assoc($presult);
 

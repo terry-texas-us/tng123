@@ -21,10 +21,10 @@ $helplang = findhelp("pedconfig_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifypedsettings'], $flags);
 ?>
-<script language="JavaScript" src="js/popupwindow.js"></script>
-<script language="JavaScript" src="js/anchorposition.js"></script>
-<script language="JavaScript" src="js/colorpicker2.js"></script>
-<script language="JavaScript" type="text/javascript">
+<script src="js/popupwindow.js"></script>
+<script src="js/anchorposition.js"></script>
+<script src="js/colorpicker2.js"></script>
+<script type="text/javascript">
   var cp = new ColorPicker('window');
 
   function toggleAll(display) {

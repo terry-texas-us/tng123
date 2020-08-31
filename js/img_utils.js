@@ -1,4 +1,4 @@
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
     var browser;
     if (parseInt(navigator.appVersion) > 3
     )

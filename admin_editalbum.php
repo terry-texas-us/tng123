@@ -130,8 +130,8 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
 
     -->
 </script>
-<script language="JavaScript" src="js/albums.js"></script>
-<script language="JavaScript" src="js/admin.js"></script>
+<script src="js/albums.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body background="img/background.gif" onload="startMediaSort()">

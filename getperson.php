@@ -889,7 +889,7 @@ if (!isset($flags['more'])) {
   $flags['more'] = "";
 }
 if ($map['key'] && $locations2map && $tngconfig['istart']) {
-  $flags['more'] .= "\n<script language=\"JavaScript\" type=\"text/javascript\">";
+  $flags['more'] .= "\n<script type=\"text/javascript\">";
   $flags['more'] .= "window.onload = function() {\$('#eventmap').hide();};\n";
   $flags['more'] .= "</script>\n";
 }

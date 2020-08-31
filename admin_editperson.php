@@ -1,6 +1,7 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./admin/associations.php";
 require_once "./admin/branches.php";
 require_once "./admin/trees.php";
 require_once "./public/people.php";
@@ -27,24 +28,7 @@ function initNotesOrCites() {
     return $notes;
 }
 
-$personID = ucfirst($personID);
-$query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $people_table WHERE personID = \"$personID\" and gedcom = \"$tree\"";
-$result = tng_query($query);
-$row = tng_fetch_assoc($result);
-tng_free_result($result);
-$row['firstname'] = preg_replace("/\"/", "&#34;", $row['firstname']);
-$row['lastname'] = preg_replace("/\"/", "&#34;", $row['lastname']);
-$row['nickname'] = preg_replace("/\"/", "&#34;", $row['nickname']);
-$row['suffix'] = preg_replace("/\"/", "&#34;", $row['suffix']);
-$row['title'] = preg_replace("/\"/", "&#34;", $row['title']);
-$row['birthplace'] = preg_replace("/\"/", "&#34;", $row['birthplace']);
-$row['altbirthplace'] = preg_replace("/\"/", "&#34;", $row['altbirthplace']);
-$row['deathplace'] = preg_replace("/\"/", "&#34;", $row['deathplace']);
-$row['burialplace'] = preg_replace("/\"/", "&#34;", $row['burialplace']);
-$row['baptplace'] = preg_replace("/\"/", "&#34;", $row['baptplace']);
-$row['confplace'] = preg_replace("/\"/", "&#34;", $row['confplace']);
-$row['initplace'] = preg_replace("/\"/", "&#34;", $row['initplace']);
-$row['endlplace'] = preg_replace("/\"/", "&#34;", $row['endlplace']);
+$row = fetchAndCleanPersonRow($personID, $people_table, $tree);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
     $message = $admtext['norights'];
@@ -116,11 +100,7 @@ while ($cite = tng_fetch_assoc($citresult)) {
 }
 tng_free_result($citresult);
 
-$assocquery = "SELECT count(assocID) as acount FROM $assoc_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
-$assocresult = tng_query($assocquery) or die ($admtext['cannotexecutequery'] . ": $assocquery");
-$assocrow = tng_fetch_assoc($assocresult);
-$gotassoc = $assocrow['acount'] ? "*" : "";
-tng_free_result($assocresult);
+$gotassoc = checkForAssociations($personID, $tree);
 
 $query = "SELECT parenttag FROM $events_table WHERE persfamID=\"$personID\" AND gedcom =\"$tree\"";
 $morelinks = tng_query($query);
@@ -133,7 +113,9 @@ function parentRow($parent, $spouse, $label) {
     global $people_table, $families_table, $admtext, $tree, $righttree, $cw;
 
     $pout = "";
-    $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, sex, $people_table.living, $people_table.private FROM $people_table, $families_table WHERE $people_table.personID = $families_table.$spouse AND $families_table.familyID = \"{$parent['familyID']}\" AND $people_table.gedcom = \"$tree\" AND $families_table.gedcom = \"$tree\"";
+    $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, sex, people.living, people.private ";
+    $query .= "FROM {$people_table} as people, {$families_table} as families ";
+    $query .= "WHERE people.personID = families.{$spouse} AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
     $gotparent = tng_query($query);
 
     if ($gotparent) {
@@ -151,7 +133,7 @@ function parentRow($parent, $spouse, $label) {
         $pout .= "<td>" . $admtext[$label] . ":</td>\n";
         $pout .= "<td colspan=\"4\">";
         if ($prow['personID']) {
-            $pout .= "<a href=\"admin_editperson.php?personID={$prow['personID']}&amp;tree=$tree&amp;cw=$cw\">" . getName($prow) . " - {$prow['personID']}</a>$birthinfo";
+            $pout .= "<a href=\"admin_editperson.php?personID={$prow['personID']}&amp;tree={$tree}&amp;cw={$cw}\">" . getName($prow) . " - {$prow['personID']}</a>{$birthinfo}";
         }
         $pout .= "</td>\n";
         $pout .= "</tr>\n";
@@ -311,8 +293,9 @@ include_once "eventlib_js.php";
     }
     ?>
 </script>
-<script language="JavaScript" src="js/admin.js"></script>
-</head>
+<script src="js/admin.js"></script>
+
+<?php echo "</head>"; ?>
 
 <body background="img/background.gif" onload="startSort()">
 
@@ -378,12 +361,12 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                     <div id="names">
                         <table class="normal topmarginsmall">
                             <tr>
-                                <td><?php echo $admtext['firstgivennames']; ?></td>
+                                <th><?php echo $admtext['firstgivennames']; ?></th>
                                 <?php if ($lnprefixes) {
-                                    echo "<td>{$admtext['lnprefix']}</td>\n";
+                                    echo "<th>{$admtext['lnprefix']}</th>\n";
                                 } ?>
-                                <td><?php echo $admtext['lastsurname']; ?></td>
-                                <td>&nbsp;</td>
+                                <th><?php echo $admtext['lastsurname']; ?></th>
+                                <th>&nbsp;</th>
                             </tr>
                             <tr>
                                 <td><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35"></td>
@@ -404,12 +387,12 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                         </table>
                         <table class="normal topmarginsmall">
                             <tr>
-                                <td><?php echo $admtext['sex']; ?></td>
-                                <td><?php echo $admtext['nickname']; ?></td>
-                                <td><?php echo $admtext['title']; ?></td>
-                                <td><?php echo $admtext['prefix']; ?></td>
-                                <td><?php echo $admtext['suffix']; ?></td>
-                                <td><?php echo $admtext['nameorder']; ?></td>
+                                <th><?php echo $admtext['sex']; ?></th>
+                                <th><?php echo $admtext['nickname']; ?></th>
+                                <th><?php echo $admtext['title']; ?></th>
+                                <th><?php echo $admtext['prefix']; ?></th>
+                                <th><?php echo $admtext['suffix']; ?></th>
+                                <th><?php echo $admtext['nameorder']; ?></th>
                             </tr>
                             <tr>
                                 <td>
@@ -518,7 +501,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                 </td>
             </tr>
             <?php
-            $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"$personID\" AND gedcom = \"$tree\" ORDER BY parentorder";
+            $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"{$personID}\" AND gedcom = \"{$tree}\" ORDER BY parentorder";
             $parents = tng_query($query);
             $parentcount = tng_num_rows($parents);
             ?>
@@ -689,27 +672,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                                                                         } else {
                                                                                             echo getName($child) . " - " . $child['pID'];
                                                                                         }
-                                                                                        if ($child['birthdate']) {
-                                                                                            $birthstring = $admtext['birthabbr'] . " " . displayDate($child['birthdate']);
-                                                                                        } else {
-                                                                                            if ($child['altbirthdate']) {
-                                                                                                $birthstring = $admtext['chrabbr'] . " " . displayDate($child['altbirthdate']);
-                                                                                            } else {
-                                                                                                $birthstring = $admtext['nobirthinfo'];
-                                                                                            }
-                                                                                        }
-                                                                                        if ($child['deathdate']) {
-                                                                                            $deathstring = $admtext['deathabbr'] . " " . displayDate($child['deathdate']);
-                                                                                        } else {
-                                                                                            if ($child['burialdate']) {
-                                                                                                $deathstring = $admtext['burialabbr'] . " " . displayDate($child['burialdate']);
-                                                                                            } else {
-                                                                                                $deathstring = "";
-                                                                                            }
-                                                                                        }
-                                                                                        if ($birthstring && $deathstring) {
-                                                                                            $deathstring = ", " . $deathstring;
-                                                                                        }
+                                                                                        list($birthstring, $deathstring) = getVitalsText($child);
 
                                                                                         if ($birthstring || $deathstring) {
                                                                                             echo " ($birthstring$deathstring)";
@@ -770,21 +733,8 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                     <input type="hidden" name="added" value="<?php echo $added; ?>">
                     <input type="hidden" name="personID" value="<?php echo "$personID"; ?>">
                     <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
-                    <?php
-                    if (!$lnprefixes) {
-                        echo "<input type=\"hidden\" name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
-                    }
-                    if (!$rights['lds']) {
-                        ?>
-                        <input type="hidden" value="<?php echo $row['baptdate']; ?>" name="baptdate">
-                        <input type="hidden" value="<?php echo $row['baptplace']; ?>" name="baptplace">
-                        <input type="hidden" value="<?php echo $row['confdate']; ?>" name="confdate">
-                        <input type="hidden" value="<?php echo $row['confplace']; ?>" name="confplace">
-                        <input type="hidden" value="<?php echo $row['initdate']; ?>" name="initdate">
-                        <input type="hidden" value="<?php echo $row['initplace']; ?>" name="initplace">
-                        <input type="hidden" value="<?php echo $row['endldate']; ?>" name="endldate">
-                        <input type="hidden" value="<?php echo $row['endlplace']; ?>" name="endlplace">
-                    <?php } ?>
+                    <?php if (!$lnprefixes) {echo "<input type=\"hidden\" name=\"lnprefix\" value=\"{$row['lnprefix']}\">";} ?>
+                    <?php defineLdsHiddenFields($rights['lds'], $row); ?>
                     <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
                 </td>
             </tr>
@@ -794,4 +744,5 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
 
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
 </body>
-</html>
+
+<?php echo "</html>"; ?>

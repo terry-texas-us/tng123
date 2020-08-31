@@ -120,7 +120,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($sortstr, $flags);
 
 ?>
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
     var entity = "<?php echo $personID; ?>";
     var album = "<?php echo $albumID; ?>";
     var tree = "<?php echo $tree; ?>";

@@ -3,10 +3,10 @@
 <html>
 <head>
   <title>Switch Tab Color</title>
-  <script language="JavaScript" src="js/popupwindow.js"></script>
-  <script language="JavaScript" src="js/anchorposition.js"></script>
-  <script language="JavaScript" src="js/colorpicker2.js"></script>
-  <script language="JavaScript" type="text/javascript">
+  <script src="js/popupwindow.js"></script>
+  <script src="js/anchorposition.js"></script>
+  <script src="js/colorpicker2.js"></script>
+  <script type="text/javascript">
     var cp = new ColorPicker('window');
   </script>
 </head>

@@ -2272,10 +2272,10 @@ class tFPDF
     $l = strlen($txt);
     $out = array();
     for ($i = 0; $i < $l; ++$i) {
-      $c = ord($txt{$i});
+      $c = ord($txt[$i]);
       // ASCII
       if ($c < 0x80) {
-        $out[] = ord($txt{$i});
+        $out[] = ord($txt[$i]);
       } // Lost continuation byte
       else {
         if ($c < 0xC0) {
@@ -2294,7 +2294,7 @@ class tFPDF
               } // 5/6 byte sequences not possible for Unicode.
               else {
                 $out[] = 0xFFFD;
-                while (ord($txt{$i + 1}) >= 0x80 && ord($txt{$i + 1}) < 0xC0) {
+                while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
                   ++$i;
                 }
                 continue;
@@ -2304,9 +2304,9 @@ class tFPDF
 
           $q = array($c);
           // Fetch rest of sequence
-          while (ord($txt{$i + 1}) >= 0x80 && ord($txt{$i + 1}) < 0xC0) {
+          while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
             ++$i;
-            $q[] = ord($txt{$i});
+            $q[] = ord($txt[$i]);
           }
 
           // Check length

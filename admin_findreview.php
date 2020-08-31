@@ -240,20 +240,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             $evrow = tng_fetch_assoc($evresult);
 
                             if ($evrow['display']) {
-                                $dispvalues = explode("|", $evrow['display']);
-                                $numvalues = count($dispvalues);
-                                if ($numvalues > 1) {
-                                    $displayval = "";
-                                    for ($i = 0; $i < $numvalues; $i += 2) {
-                                        $lang = $dispvalues[$i];
-                                        if ($mylanguage == $languages_path . $lang) {
-                                            $displayval = $dispvalues[$i + 1];
-                                            break;
-                                        }
-                                    }
-                                } else {
-                                    $displayval = $evrow['display'];
-                                }
+                                $displayval = getEventDisplay($evrow);
                             } elseif ($evrow['tag']) {
                                 $displayval = $eventtype['tag'];
                             } else {

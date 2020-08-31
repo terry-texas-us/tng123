@@ -102,20 +102,7 @@ if (is_numeric($eventID)) {
   $evtrow = tng_fetch_assoc($evresult);
 
   if ($evtrow['display']) {
-    $dispvalues = explode("|", $evtrow['display']);
-    $numvalues = count($dispvalues);
-    if ($numvalues > 1) {
-      $displayval = "";
-      for ($i = 0; $i < $numvalues; $i += 2) {
-        $lang = $dispvalues[$i];
-        if ($mylanguage == $languages_path . $lang) {
-          $displayval = $dispvalues[$i + 1];
-          break;
-        }
-      }
-    } else {
-      $displayval = $evtrow['display'];
-    }
+      $displayval = getEventDisplay($evtrow);
   } elseif ($evtrow['tag']) {
     $displayval = $eventtype['tag'];
   } else {

@@ -213,7 +213,9 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
   //show parents (for hus&wif)
   if ($familyID) {
-    $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living, $people_table.private, $people_table.branch, $people_table.gedcom FROM $families_table, $people_table WHERE $families_table.familyID = \"{$ind['famc']}\" AND $families_table.gedcom = \"$tree\" AND $people_table.personID = $families_table.husband AND $people_table.gedcom = \"$tree\"";
+    $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
+    $query .= "FROM {$families_table} as families, {$people_table} as people ";
+    $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = \"{$tree}\" AND people.personID = families.husband AND people.gedcom = \"{$tree}\"";
     $presult = tng_query($query);
     $parent = tng_fetch_assoc($presult);
     $prights = determineLivingPrivateRights($parent, $righttree);
@@ -224,7 +226,9 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $fatherlink = $fathername ? "$fathername | " . $parent['familyID'] : "";
     $indtext .= showFact($text['father'], $fatherlink);
 
-    $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living, $people_table.private, $people_table.branch, $people_table.gedcom FROM $families_table, $people_table WHERE $families_table.familyID = \"{$ind['famc']}\" AND $families_table.gedcom = \"$tree\" AND $people_table.personID = $families_table.wife AND $people_table.gedcom = \"$tree\"";
+    $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
+    $query .= "FROM {$families_table} as families, {$people_table} as people ";
+    $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = \"{$tree}\" AND people.personID = families.wife AND people.gedcom = \"{$tree}\"";
     $presult = tng_query($query);
     $parent = tng_fetch_assoc($presult);
     $prights = determineLivingPrivateRights($parent, $righttree);

@@ -309,16 +309,15 @@ if ($offset) {
 
 if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexist") {
   $gstring = $mygender == "F" ? "p.personID = wife AND spouse.personID = husband" : "p.personID = husband AND spouse.personID = wife";
-  $query = "SELECT p.ID, spouse.personID as spersonID, p.personID, p.lastname, p.lnprefix, p.firstname, p.nickname, p.living, p.private,
-		p.branch, p.suffix, p.prefix, p.nameorder, p.title, p.birthplace, p.birthdate, p.deathplace, p.deathdate,
-		p.altbirthdate, p.altbirthplace, p.burialdate, p.burialplace, p.gedcom, treename
-		FROM ($people_table as p, $families_table, $people_table as spouse, $trees_table) $cejoin
-		$allwhere AND (p.gedcom = $trees_table.gedcom AND p.gedcom=$families_table.gedcom AND spouse.gedcom=$families_table.gedcom AND $gstring)
-		$orderstr LIMIT $newoffset" . $maxsearchresults;
+  $query = "SELECT p.ID, spouse.personID as spersonID, p.personID, p.lastname, p.lnprefix, p.firstname, p.nickname, p.living, p.private, p.branch, p.suffix, p.prefix, p.nameorder, p.title, p.birthplace, p.birthdate, p.deathplace, p.deathdate, p.altbirthdate, p.altbirthplace, p.burialdate, p.burialplace, p.gedcom, treename ";
+  $query .= "FROM ($people_table as p, $families_table, $people_table as spouse, $trees_table) $cejoin ";
+  $query .= "$allwhere AND (p.gedcom = $trees_table.gedcom AND p.gedcom=$families_table.gedcom AND spouse.gedcom=$families_table.gedcom AND $gstring) ";
+  $query .= "$orderstr ";
+  $query .= "LIMIT $newoffset" . $maxsearchresults;
   $showspouse = "yess";
-  $query2 = "SELECT count(p.ID) as pcount
-        FROM ($people_table as p, $families_table, $people_table as spouse) $cejoin
-		$allwhere AND (p.gedcom=$families_table.gedcom AND spouse.gedcom=$families_table.gedcom AND $gstring)";
+  $query2 = "SELECT count(p.ID) as pcount ";
+  $query2 .= "FROM ($people_table as p, $families_table, $people_table as spouse) $cejoin ";
+  $query2 .= "$allwhere AND (p.gedcom=$families_table.gedcom AND spouse.gedcom=$families_table.gedcom AND $gstring)";
 } else {
   if ($showspouse == "yes") {
     $families_join = "LEFT JOIN $families_table AS families1 ON (p.gedcom = families1.gedcom AND p.personID = families1.husband ) LEFT JOIN $families_table AS families2 ON (p.gedcom = families2.gedcom AND p.personID = families2.wife ) ";  // added IDF Apr 03

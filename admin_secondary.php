@@ -74,7 +74,9 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           $wherestr = " AND $families_table.gedcom = \"$tree\"";
         }
         //first do husbands
-        $query = "SELECT personID, $families_table.gedcom as gedcom FROM $families_table, $people_table WHERE $people_table.personID = $families_table.husband AND $people_table.gedcom = $families_table.gedcom $wherestr";
+        $query = "SELECT personID, families.gedcom as gedcom ";
+        $query .= "FROM {$families_table} as families, {$people_table} as people ";
+        $query .= "WHERE people.personID = families.husband AND people.gedcom = families.gedcom $wherestr";
         $result = tng_query($query);
         while ($husband = tng_fetch_assoc($result)) {
           $query = "SELECT ID FROM $families_table 
@@ -96,7 +98,9 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         tng_free_result($result);
 
         //now do wives
-        $query = "SELECT personID, $families_table.gedcom as gedcom FROM $families_table, $people_table WHERE $people_table.personID = $families_table.wife AND $people_table.gedcom = $families_table.gedcom $wherestr";
+        $query = "SELECT personID, families.gedcom as gedcom ";
+        $query .= "FROM {$families_table} as families, {$people_table} as people ";
+        $query .= "WHERE people.personID = families.wife AND people.gedcom = families.gedcom $wherestr";
         $result = tng_query($query);
         while ($wife = tng_fetch_assoc($result)) {
           $query = "SELECT ID FROM $families_table 
