@@ -1,8 +1,8 @@
 <?php
-$assignedtree = isset($_SESSION['assignedtree']) ? $_SESSION['assignedtree'] : '';
-$assignedbranch = isset($_SESSION['assignedbranch']) ? $_SESSION['assignedbranch'] : '';
-$currentuser = isset($_SESSION['currentuser']) ? $_SESSION['currentuser'] : '';
-$currentuserdesc = isset($_SESSION['currentuserdesc']) ? $_SESSION['currentuserdesc'] : '';
+$assignedtree = $_SESSION['assignedtree'] ?? '';
+$assignedbranch = $_SESSION['assignedbranch'] ?? '';
+$currentuser = $_SESSION['currentuser'] ?? '';
+$currentuserdesc = $_SESSION['currentuserdesc'] ?? '';
 $thispage = getScriptName(false);
 
 global $admin_login;

@@ -64,7 +64,7 @@ if ($row['sex'] == "M") {
     }
 }
 
-$tng_search_people = isset($_SESSION['tng_search_people']) ? $_SESSION['tng_search_people'] : '';
+$tng_search_people = $_SESSION['tng_search_people'] ?? '';
 
 $getperson_url = getURL("getperson", 1);
 

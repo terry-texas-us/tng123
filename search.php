@@ -79,7 +79,7 @@ $_SESSION['tng_nr'] = $nr;
 if ($order) {
   $_SESSION['tng_search_order'] = $order;
 } else {
-  $order = isset($_SESSION['tng_search_order']) ? $_SESSION['tng_search_order'] : "name";
+  $order = $_SESSION['tng_search_order'] ?? "name";
   if (!$showdeath && ($order == "death" || $order == "deathup")) {
     $order = "name";
   }

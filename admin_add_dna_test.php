@@ -53,6 +53,6 @@ if ($success) {
   header("Location: admin_edit_dna_test.php?testID=$testID&newtest=1&added=1");
 } else {
   // TODO text ['testnotadded'] was not defined in any language. Manually added here.
-  $message = _('DNA test could not added');
+  $message = _todo_('DNA test could not added');
   header("Location: admin_dna_tests.php?message=" . urlencode($message));
 }

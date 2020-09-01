@@ -2,7 +2,6 @@
 include "begin.php";
 include $cms['tngpath'] . "genlib.php";
 
-
 session_start();
 
 $query = "SELECT display, folder, charset, norels FROM $languages_table WHERE languageID = \"$newlanguage\"";

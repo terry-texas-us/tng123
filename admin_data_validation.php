@@ -15,7 +15,7 @@ list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, 
 
 $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
-tng_adminheader(_('Validation'), $flags);
+tng_adminheader(_todo_('Validation'), $flags);
 ?>
 <script type="text/javascript" src="js/admin.js"></script>
 <script type="text/javascript">

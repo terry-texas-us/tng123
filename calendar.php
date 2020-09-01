@@ -75,7 +75,7 @@ $lastMonth = date('n', strtotime($dateString . " -1 month"));
 $lastMonthYear = $lastMonth == 12 ? $thisYear - 1 : $thisYear;
 $lastYear = $thisYear - 1;
 
-$showLiving = $allow_living ? (isset($_GET['living']) ? $_GET['living'] : 2) : 0;
+$showLiving = $allow_living ? ($_GET['living'] ?? 2) : 0;
 $hideEvents = isset($_GET['hide']) ? explode(',', $_GET['hide']) : $defaultHide;
 
 $thisTree = $tree;

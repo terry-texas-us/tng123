@@ -16,7 +16,7 @@ if (!empty($admin_login)) {
   $dest_url = isset($_SESSION['destinationpage8']) && $continue ? $_SESSION['destinationpage8'] : $home_url;
 } else {
   $home_url = $homepage;
-  $dest_url = isset($_SESSION['destinationpage8']) ? $_SESSION['destinationpage8'] : $home_url;
+  $dest_url = $_SESSION['destinationpage8'] ?? $home_url;
   $login_url = $requirelogin || !isset($_SESSION['destinationpage8']) || strpos($_SESSION['destinationpage8'], $home_url) !== false || substr($_SESSION['destinationpage8'], -1) == "/" ? getURL("login", 1) . "message=loginfailed" : $dest_url;
 }
 

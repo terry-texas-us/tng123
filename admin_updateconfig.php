@@ -6,25 +6,25 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
-  header("Location: admin_main.php");
-  exit;
+    header("Location: admin_main.php");
+    exit;
 }
 
 if (!$safety) {
-  header("Location: admin_login.php");
-  exit;
+    header("Location: admin_login.php");
+    exit;
 }
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  include "version.php";
+    $admin_login = 1;
+    include "checklogin.php";
+    include "version.php";
 
-  if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    if ($assignedtree || !$allow_edit) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 }
 
 $sitename = stripslashes($sitename);
@@ -43,13 +43,13 @@ require "adminlog.php";
 
 $fp = @fopen($subroot . "config.php", "w", 1);
 if (!$fp) {
-  die ($admtext['cannotopen'] . " config.php");
+    die ($admtext['cannotopen'] . " config.php");
 }
 
 flock($fp, LOCK_EX);
 
 if ($new_database_username) {
-  $tng_notinstalled = "";
+    $tng_notinstalled = "";
 }
 
 fwrite($fp, "<?php\n");
@@ -110,7 +110,7 @@ fwrite($fp, "\$dna_groups_table = \"$dna_groups_table\";\n");
 fwrite($fp, "\$templates_table = \"$templates_table\";\n");
 fwrite($fp, "\n");
 if ($rootpath != $newrootpath) {
-  $_SESSION['session_rp'] = $newrootpath;
+    $_SESSION['session_rp'] = $newrootpath;
 }
 fwrite($fp, "\$rootpath = \"$newrootpath\";\n");
 fwrite($fp, "\$templatenum = \"$templatenum\";\n");
@@ -121,7 +121,7 @@ fwrite($fp, "\$sitename = \"$sitename\";\n");
 fwrite($fp, "\$site_desc = \"$site_desc\";\n");
 fwrite($fp, "\$tngconfig['doctype'] = \"$doctype\";\n");
 if (!$target) {
-  $target = "_self";
+    $target = "_self";
 }
 fwrite($fp, "\$target = \"$target\";\n");
 fwrite($fp, "\$language = \"$language\";\n");
@@ -184,10 +184,10 @@ fwrite($fp, "\$livedefault = \"$livedefault\";\n");
 fwrite($fp, "\$ldsdefault = \"$ldsdefault\";\n");
 fwrite($fp, "\$chooselang = \"$chooselang\";\n");
 if (!$chooselang) {
-  $session_language = $_SESSION['session_language'] = $language;
-  $session_charset = $_SESSION['session_charset'] = $charset;
-  setcookie("tnglangfolder", $language, time() + 31536000, "/");
-  setcookie("tngcharset", $charset, time() + 31536000, "/");
+    $session_language = $_SESSION['session_language'] = $language;
+    $session_charset = $_SESSION['session_charset'] = $charset;
+    setcookie("tnglangfolder", $language, time() + 31536000, "/");
+    setcookie("tngcharset", $charset, time() + 31536000, "/");
 }
 fwrite($fp, "\$nonames = \"$nonames\";\n");
 fwrite($fp, "\$tngconfig['nnpriv'] = \"$nnpriv\";\n");
@@ -299,14 +299,14 @@ fclose($fp);
 
 $fp = @fopen("subroot.php", "w", 1);
 if ($fp) {
-  flock($fp, LOCK_EX);
-  fwrite($fp, "<?php\n");
-  fwrite($fp, "error_reporting(E_ERROR);\n");
-  fwrite($fp, "\$tngconfig = array();\n");
-  fwrite($fp, "\$tngconfig['subroot'] = \"$newsubroot\";\n");
-  fwrite($fp, "\$subroot = \$tngconfig['subroot'] ? \$tngconfig['subroot'] : \"\";\n");
-  flock($fp, LOCK_UN);
-  fclose($fp);
+    flock($fp, LOCK_EX);
+    fwrite($fp, "<?php\n");
+    fwrite($fp, "error_reporting(E_ERROR);\n");
+    fwrite($fp, "\$tngconfig = array();\n");
+    fwrite($fp, "\$tngconfig['subroot'] = \"$newsubroot\";\n");
+    fwrite($fp, "\$subroot = \$tngconfig['subroot'] ? \$tngconfig['subroot'] : \"\";\n");
+    flock($fp, LOCK_UN);
+    fclose($fp);
 }
 adminwritelog($admtext['modifysettings']);
 

@@ -690,7 +690,7 @@ class UploadHandler
   }
 
   protected function get_media_id_param() {
-    return isset($_GET['mediaID']) ? $_GET['mediaID'] : null;
+    return $_GET['mediaID'] ?? null;
   }
 
   protected function get_file_type($file_path) {

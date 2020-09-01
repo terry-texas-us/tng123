@@ -33,7 +33,7 @@ $whatsnew = 0;
 if ($order) {
   $_SESSION['tng_psearch_order'] = $order;
 } else {
-  $order = isset($_SESSION['tng_psearch_order']) ? $_SESSION['tng_psearch_order'] : "name";
+  $order = $_SESSION['tng_psearch_order'] ?? "name";
 }
 
 if ($order != "name" && $order != "nameup" && $order != "date" && $order != "dateup") {

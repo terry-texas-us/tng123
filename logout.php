@@ -1,8 +1,8 @@
 <?php
 include "begin.php";
 if (!empty($cms['events'])) {
-  include 'cmsevents.php';
-  cms_logout();
+    include 'cmsevents.php';
+    cms_logout();
 }
 session_start();
 $session_language = $_SESSION['session_language'];
@@ -20,9 +20,9 @@ session_start();
 $_SESSION['session_language'] = $session_language;
 $_SESSION['session_charset'] = $session_charset;
 if ($_GET['admin_login']) {
-  header("Location: admin_login.php");
+    header("Location: admin_login.php");
 } elseif ($requirelogin || !isset($_SERVER["HTTP_REFERER"])) {
-  header("Location: $homepage");
+    header("Location: $homepage");
 } else {
-  header("Location: " . $_SERVER["HTTP_REFERER"]);
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
 }

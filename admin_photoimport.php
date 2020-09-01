@@ -24,7 +24,7 @@ $helplang = findhelp("data_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['phimport'] was not defined in any language. Manually added here.
-tng_adminheader(_('Photo Import'), $flags);
+tng_adminheader(_todo_('Photo Import'), $flags);
 
 $standardtypes = array();
 $moptions = "";

@@ -63,7 +63,7 @@ $_SESSION['tng_nr'] = $nr;
 if ($order) {
     $_SESSION['tng_search_forder'] = $order;
 } else {
-    $order = isset($_SESSION['tng_search_forder']) ? $_SESSION['tng_search_forder'] : "fname";
+    $order = $_SESSION['tng_search_forder'] ?? "fname";
 }
 
 $marrsort = "marr";

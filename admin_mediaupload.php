@@ -41,7 +41,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
     //var formname = "find";
     var findform = "find";
     // TODO text ['reshere'] was not defined in any language. Manually added here.
-    var resheremsg = '<span class="normal">' + "<?php echo _('reshere'); ?>" + '</span>';
+    var resheremsg = '<span class="normal">' + "<?php echo _todo_('reshere'); ?>" + '</span>';
     var tng_thumbmaxw = <?php echo($thumbmaxw ? $thumbmaxw : "80"); ?>;
     var tng_thumbmaxh = <?php echo($thumbmaxh ? $thumbmaxh : "80"); ?>;
     var links_url = cmstngpath + "ajx_medialinks.php";

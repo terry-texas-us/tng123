@@ -35,7 +35,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var type = "album";
     var formname = "find";
     // TODO text ['reshere'] was not defined in any language. Manually added here.
-    var resheremsg = '<span class="normal">' + "<?php echo _('reshere'); ?>" + '</span>';
+    var resheremsg = '<span class="normal">' + "<?php echo _todo_('reshere'); ?>" + '</span>';
     ;
 
     function validateSortForm() {

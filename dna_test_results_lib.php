@@ -1,8 +1,8 @@
 <?php
 //dna tests
-$debug = isset($_GET['debug']) ? $_GET['debug'] : false;  //get URL debug parameter
+$debug = $_GET['debug'] ?? false;  //get URL debug parameter
 //search for dna tests, if any found do the following
-$query = "SELECT $dna_tests_table.testID, $dna_tests_table.personID as tpersonID, $dna_tests_table.gedcom as tgedcom, test_type, test_number, test_date, match_date, markers, mtdna_haplogroup, ydna_haplogroup, hvr1_results, hvr2_results, y_results, person_name, mtdna_confirmed, ydna_confirmed, notes, markeropt, notesopt, linksopt, surnamesopt, private_dna,urls, surnames, MD_ancestorID, MRC_ancestorID, admin_notes, medialinks, ref_seq, xtra_mut, coding_reg, shared_cMs, shared_segments, chromosome, segment_start, segment_end, centiMorgans, matching_SNPs, x_match, relationship_range, suggested_relationship, actual_relationship, related_side, GEDmatchID, private_test
+$query = "SELECT $dna_tests_table.testID, $dna_tests_table.personID as tpersonID, $dna_tests_table.gedcom as tgedcom, test_type, test_number, test_date, match_date, markers, mtdna_haplogroup, ydna_haplogroup, hvr1_results, hvr2_results, y_results, person_name, mtdna_confirmed, ydna_confirmed, notes, markeropt, notesopt, linksopt, surnamesopt, private_dna,urls, surnames, MD_ancestorID, MRC_ancestorID, admin_notes, medialinks, ref_seq, xtra_mut, coding_reg, shared_cMs, shared_segments, chromosome, segment_start, segment_end, centiMorgans, matching_SNPs, x_match, relationship_range, suggested_relationship, actual_relationship, related_side, GEDmatchID, private_test 
 			FROM $dna_tests_table, $dna_links_table
 			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID
 			ORDER BY match_date DESC, test_type ASC, markers * 1 ASC,  test_number * 1 ASC";

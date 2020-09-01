@@ -35,5 +35,5 @@ $tleventID = tng_insert_id();
 adminwritelog($admtext['addnewtlevent'] . ": $tleventID - $evdetail");
 
 // TODO text ['tlevent'] was not defined in any language. Manually added here.
-$message = _('Timeline Event') . " $tleventID {$admtext['succadded']}.";
+$message = _todo_('Timeline Event') . " $tleventID {$admtext['succadded']}.";
 header("Location: admin_timelineevents.php?message=" . urlencode($message));
