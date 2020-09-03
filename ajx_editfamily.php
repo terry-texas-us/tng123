@@ -2,6 +2,9 @@
 include "begin.php";
 include "adminlib.php";
 require_once "./admin/associations.php";
+require_once "./admin/citations.php";
+require_once "./admin/events.php";
+require_once "./admin/notelinks.php";
 require_once "./admin/trees.php";
 require_once "./public/people.php";
 require_once "./public/families.php";
@@ -55,33 +58,10 @@ $namestr = getFamilyName($row);
 
 $treerow = getTree($trees_table, $tree);
 
-$query = "SELECT DISTINCT eventID as eventID FROM $notelinks_table WHERE persfamID=\"$familyID\" AND gedcom =\"$tree\"";
-$notelinks = tng_query($query);
-$gotnotes = array();
-while ($note = tng_fetch_assoc($notelinks)) {
-    if (!$note['eventID']) {
-        $note['eventID'] = "general";
-    }
-    $gotnotes[$note['eventID']] = "*";
-}
-
-$citquery = "SELECT DISTINCT eventID FROM $citations_table WHERE persfamID = \"$familyID\" AND gedcom = \"$tree\"";
-$citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
-$gotcites = array();
-while ($cite = tng_fetch_assoc($citresult)) {
-    if (!$cite['eventID']) {
-        $cite['eventID'] = "general";
-    }
-    $gotcites[$cite['eventID']] = "*";
-}
+$gotnotes = checkForNoteLinks($familyID, $tree);
+$gotcites = checkForCitations($familyID, $tree);
 $gotassoc = checkForAssociations($familyID, $tree);
-
-$query = "SELECT parenttag FROM $events_table WHERE persfamID=\"$familyID\" AND gedcom =\"$tree\"";
-$morelinks = tng_query($query);
-$gotmore = array();
-while ($more = tng_fetch_assoc($morelinks)) {
-    $gotmore[$more['parenttag']] = "*";
-}
+$gotmore = checkForEvents($familyID, $tree);
 
 $query = "SELECT $people_table.personID as pID, firstname, lastname, lnprefix, prefix, suffix, nameorder, birthdate, altbirthdate, living, private, branch FROM $people_table, $children_table WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"$familyID\" AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\" ORDER BY ordernum";
 $children = tng_query($query);

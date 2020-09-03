@@ -10,9 +10,9 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $query = "SELECT * FROM $branches_table WHERE gedcom = \"$tree\" AND branch = \"$branch\"";
@@ -31,7 +31,7 @@ tng_adminheader($admtext['modifytree'], $flags);
 <script type="text/javascript" src="js/selectutils.js"></script>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         var form = document.form1;
 
         if (form1.description.value.length == 0) {
@@ -53,13 +53,17 @@ tng_adminheader($admtext['modifytree'], $flags);
             alert("<?php echo $admtext['gensnumeric']; ?>");
         } else {
             var args = "&personID=" + form.personID.value + "&agens=" + form.agens.value + "&dagens=" + form.dagens.value + "&dgens=" + form.dgens.value + "&dospouses=" + form.dospouses.value;
-            tnglitbox = new LITBox('ajx_branchmenu.php?branch=<?php echo $branch; ?>&tree=<?php echo $tree; ?>' + args, {width: 420, height: 420});
+            tnglitbox = new LITBox('ajx_branchmenu.php?branch=<?php echo $branch; ?>&tree=<?php echo $tree; ?>' + args, {
+                width: 420, height: 420
+            });
         }
         return false;
     }
 
     function showBranchPeople() {
-        tnglitbox = new LITBox('ajx_showbranch.php?branch=<?php echo $branch; ?>&tree=<?php echo $tree; ?>', {width: 420, height: 420});
+        tnglitbox = new LITBox('ajx_showbranch.php?branch=<?php echo $branch; ?>&tree=<?php echo $tree; ?>', {
+            width: 420, height: 420
+        });
         return false;
     }
 
@@ -121,87 +125,89 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_updatebranch.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-        <table class="normal">
-          <tr>
-            <td valign="top"><?php echo $admtext['tree']; ?>:</td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_updatebranch.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+                <table class="normal">
+                    <tr>
+                        <td valign="top"><?php echo $admtext['tree']; ?>:</td>
                         <td><?php echo $treerow['treename']; ?></td>
                     </tr>
                     <tr>
-                      <td valign="top"><?php echo $admtext['branchid']; ?>:</td>
-                      <td><?php echo $branch; ?></td>
+                        <td valign="top"><?php echo $admtext['branchid']; ?>:</td>
+                        <td><?php echo $branch; ?></td>
                     </tr>
-                  <tr>
-                    <td valign="top"><?php echo $admtext['description']; ?>:</td>
-                    <td><input type="text" name="description" size="60" value="<?php echo $row['description']; ?>"></td>
-                  </tr>
+                    <tr>
+                        <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                        <td><input type="text" name="description" size="60" value="<?php echo $row['description']; ?>"></td>
+                    </tr>
 
-                  <tr>
-                    <td colspan="2">
-                      <div id="startind1"><br><strong><?php echo $text['startingind']; ?>:</strong></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div id="startind2">&nbsp;&nbsp;<?php echo $admtext['personid']; ?>:</div>
-                    </td>
-                    <td>
-                      <table id="startind3" class="normal">
-                        <tr>
-                          <td><input type="text" name="personID" id="personID" value="<?php echo $row['personID']; ?>" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
-                          <td><a href="#" onclick="return findItem('I','personID','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">
-                      <div id="numgens1"><br><strong><?php echo $admtext['numgenerations']; ?>:</strong></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div id="numgens2">&nbsp;&nbsp;<?php echo $admtext['ancestors']; ?>:</div>
-                    </td>
-                    <td>
-                      <div id="numgens3"><input type="text" name="agens" size="3" maxlength="3" value="<?php echo $row['agens'] ? $row['agens'] : 0; ?>"> &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
-                        <select name="dagens" id="dagens">
-                          <?php
-                          $dagens = $row['dagens'] != "" ? $row['dagens'] : 1;
-                          for ($i = 0; $i < 6; $i++) {
-                            echo "<option value=\"$i\"";
-                            if ($i == $dagens) {
-                              echo " selected=\"selected\"";
-                            }
-                            echo ">$i</option>";
-                          }
-                          ?>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div id="numgens4">&nbsp;&nbsp;<?php echo $admtext['descendants']; ?>:</div>
-                    </td>
-                    <td>
-                      <div id="numgens5"><input type="text" name="dgens" size="3" maxlength="3" value="<?php echo $row['dgens'] ? $row['dgens'] : 0; ?>"> &nbsp;&nbsp;
-                        <input type="checkbox" name="dospouses" id="dospouses"<?php if ($row['inclspouses']) {
-                          echo " checked=\"checked\"";
-                        } ?> value="1"> <?php echo $admtext['inclspouses']; ?>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="startind1"><br><strong><?php echo $text['startingind']; ?>:</strong></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="startind2">&nbsp;&nbsp;<?php echo $admtext['personid']; ?>:</div>
+                        </td>
+                        <td>
+                            <table id="startind3" class="normal">
+                                <tr>
+                                    <td><input type="text" name="personID" id="personID" value="<?php echo $row['personID']; ?>" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
+                                    <td><a href="#" onclick="return findItem('I','personID','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>"
+                                           class="smallicon admin-find-icon"></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="numgens1"><br><strong><?php echo $admtext['numgenerations']; ?>:</strong></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="numgens2">&nbsp;&nbsp;<?php echo $admtext['ancestors']; ?>:</div>
+                        </td>
+                        <td>
+                            <div id="numgens3"><input type="text" name="agens" size="3" maxlength="3" value="<?php echo $row['agens'] ? $row['agens'] : 0; ?>">
+                                &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
+                                <select name="dagens" id="dagens">
+                                    <?php
+                                    $dagens = $row['dagens'] != "" ? $row['dagens'] : 1;
+                                    for ($i = 0; $i < 6; $i++) {
+                                        echo "<option value=\"$i\"";
+                                        if ($i == $dagens) {
+                                            echo " selected=\"selected\"";
+                                        }
+                                        echo ">$i</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="numgens4">&nbsp;&nbsp;<?php echo $admtext['descendants']; ?>:</div>
+                        </td>
+                        <td>
+                            <div id="numgens5"><input type="text" name="dgens" size="3" maxlength="3" value="<?php echo $row['dgens'] ? $row['dgens'] : 0; ?>"> &nbsp;&nbsp;
+                                <input type="checkbox" name="dospouses" id="dospouses"<?php if ($row['inclspouses']) {
+                                    echo " checked=\"checked\"";
+                                } ?> value="1"> <?php echo $admtext['inclspouses']; ?>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
-              <span class="normal">
+                <span class="normal">
 	<br></span>
-              <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-              <input type="hidden" name="branch" value="<?php echo $branch; ?>">
-              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-              <input type="submit" name="submitx" accesskey="s" class="btn" value="<?php echo $admtext['saveexit']; ?>">
-              <input type="button" class="btn" value="<?php echo $admtext['addlabels']; ?>" onclick="return startLabels(document.forms.form1);">
+                <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+                <input type="hidden" name="branch" value="<?php echo $branch; ?>">
+                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+                <input type="submit" name="submitx" accesskey="s" class="btn" value="<?php echo $admtext['saveexit']; ?>">
+                <input type="button" class="btn" value="<?php echo $admtext['addlabels']; ?>" onclick="return startLabels(document.forms.form1);">
                 <input type="button" class="btn" value="<?php echo $admtext['showpeople']; ?>" onclick="return showBranchPeople();">
             </form>
         </td>

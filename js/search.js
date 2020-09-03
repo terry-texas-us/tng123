@@ -1,10 +1,10 @@
 var searchtimer;
 jQuery(document).ready(function () {
     jQuery('a.pers').each(function (index, item) {
-        var matches = /p(\w*)_t(\w*):*(\w*)/.exec(item.id);
-        var personID = matches[1];
-        var tree = matches[2];
-        var event = matches[3];
+        let matches = /p(\w*)_t([\w-]*):*(\w*)/.exec(item.id);
+        let personID = matches[1];
+        let tree = matches[2];
+        let event = matches[3];
         item.onmouseover = function () {
             searchtimer = setTimeout('showPersonPreview(\'' + personID + '\',\'' + tree + '\',\'' + event + '\')', 1000);
         };
@@ -16,9 +16,9 @@ jQuery(document).ready(function () {
         };
     });
     jQuery('a.fam').each(function (index, item) {
-        var matches = /f(\w*)_t(\w*)/.exec(item.id);
-        var familyID = matches[1];
-        var tree = matches[2];
+        let matches = /f(\w*)_t([\w-]*)/.exec(item.id);
+        let familyID = matches[1];
+        let tree = matches[2];
         item.onmouseover = function () {
             searchtimer = setTimeout('showFamilyPreview(\'' + familyID + '\',\'' + tree + '\')', 1000);
         };
@@ -32,14 +32,15 @@ jQuery(document).ready(function () {
 });
 
 function showPersonPreview(personID, tree, event) {
-    var entitystr = tree + '_' + personID;
+    let entitystr = tree + '_' + personID;
     if (event)
         entitystr += "_" + event;
-    jQuery('#prev' + entitystr).css('visibility', 'visible');
-    if (!jQuery('#prev' + entitystr).html()) {
-        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0" alt="" > ' + loadingmsg + '</div>');
+    let $personSelection = jQuery('#prev' + entitystr);
+    $personSelection.css('visibility', 'visible');
+    if (!$personSelection.html()) {
+        $personSelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0" alt="" > ' + loadingmsg + '</div>');
 
-        var params = {personID: personID, tree: tree};
+        const params = {personID: personID, tree: tree};
         jQuery.ajax({
             url: ajx_perspreview,
             data: params,
@@ -54,7 +55,7 @@ function showPersonPreview(personID, tree, event) {
 
 function closePersonPreview(personID, tree, event) {
     clearTimeout(searchtimer);
-    var entitystr = tree + '_' + personID;
+    let entitystr = tree + '_' + personID;
     if (event)
         entitystr += "_" + event;
     //new Effect.Fade('prev'+entitystr,{duration:.01});
@@ -62,11 +63,12 @@ function closePersonPreview(personID, tree, event) {
 }
 
 function showFamilyPreview(familyID, tree) {
-    var entitystr = tree + "_" + familyID;
-    jQuery('#prev' + entitystr).css('visibility', 'visible');
-    if (!jQuery('#prev' + entitystr).html()) {
-        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0"> ' + loadingmsg + '</div>');
-        var params = {familyID: familyID, tree: tree};
+    let entitystr = tree + "_" + familyID;
+    let $familySelection = jQuery('#prev' + entitystr);
+    $familySelection.css('visibility', 'visible');
+    if (!$familySelection.html()) {
+        $familySelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0"> ' + loadingmsg + '</div>');
+        const params = {familyID: familyID, tree: tree};
         jQuery.ajax({
             url: ajx_fampreview,
             data: params,
@@ -81,6 +83,6 @@ function showFamilyPreview(familyID, tree) {
 
 function closeFamilyPreview(familyID, tree) {
     clearTimeout(searchtimer);
-    var entitystr = tree + '_' + familyID;
+    let entitystr = tree + '_' + familyID;
     jQuery('#prev' + entitystr).css('visibility', 'hidden');
 }

@@ -156,7 +156,7 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
     var tnglitbox;
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
 //req: test number, test type
         var frm = document.form1;

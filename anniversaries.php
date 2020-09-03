@@ -77,9 +77,9 @@ if ($sitever != "mobile") {
         }
 
         function validateForm(form) {
-            var rval = true;
+            let rval = true;
 
-          if (form.tngdaymonth.selectedIndex == 0 && form.tngmonth.selectedIndex == 0 && form.tngyear.value.length == 0 && form.tngkeywords.value.length == 0) {
+            if (form.tngdaymonth.selectedIndex == 0 && form.tngmonth.selectedIndex == 0 && form.tngyear.value.length == 0 && form.tngkeywords.value.length == 0) {
             alert("<?php echo $text['enterdate']; ?>");
             rval = false;
           }

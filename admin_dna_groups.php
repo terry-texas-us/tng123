@@ -66,14 +66,19 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $wherestr = "";
 if ($tree) {
-    $wherestr .= "WHERE $dna_groups_table.gedcom = \"$tree\"";
+    $wherestr .= "WHERE dna_groups.gedcom = \"{$tree}\"";
 }
-$query = "SELECT $dna_groups_table.gedcom as gedcom, dna_group, $dna_groups_table.description as description, test_type, treename FROM $dna_groups_table LEFT JOIN $trees_table ON $trees_table.gedcom = $dna_groups_table.gedcom $wherestr ORDER BY $dna_groups_table.description LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT dna_groups.gedcom AS gedcom, dna_group, dna_groups.description AS description, test_type, treename ";
+$query .= "FROM {$dna_groups_table} dna_groups ";
+$query .= "LEFT JOIN {$trees_table} trees ON trees.gedcom = dna_groups.gedcom ";
+$query .= "$wherestr ";
+$query .= "ORDER BY dna_groups.description ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(dna_group) as gcount FROM $dna_groups_table LEFT JOIN $trees_table ON $trees_table.gedcom = $dna_groups_table.gedcom $wherestr";
+    $query = "SELECT count(dna_group) as gcount FROM {$dna_groups_table} dna_groups LEFT JOIN {$trees_table} trees ON trees.gedcom = dna_groups.gedcom $wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['gcount'];

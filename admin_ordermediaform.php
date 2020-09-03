@@ -40,7 +40,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var resheremsg = '<span class="normal">' + "<?php echo _todo_('reshere'); ?>" + '</span>';
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         if (document.find.newlink1.value.length == 0) {
             alert("<?php echo $admtext['enterid']; ?>");

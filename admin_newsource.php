@@ -29,7 +29,7 @@ tng_adminheader($admtext['addnewsource'], $flags);
 <script type="text/javascript" src="js/selectutils.js"></script>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         document.form1.sourceID.value = TrimString(document.form1.sourceID.value);
         if (document.form1.sourceID.value.length == 0) {

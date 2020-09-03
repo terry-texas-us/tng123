@@ -42,7 +42,7 @@ $reporow = tng_fetch_assoc($reporesult);
 $rcount = number_format($reporow['rcount']);
 tng_free_result($reporesult);
 
-$query = "SELECT count(noteID) as ncount FROM $xnotes_table WHERE gedcom = \"{$row['gedcom']}\"";
+$query = "SELECT count(noteID) as ncount FROM {$xnotes_table} WHERE gedcom = \"{$row['gedcom']}\"";
 $nresult = tng_query($query);
 $nrow = tng_fetch_assoc($nresult);
 $ncount = number_format($nrow['ncount']);
@@ -55,8 +55,8 @@ tng_adminheader($admtext['modifytree'], $flags);
 ?>
 <script type="text/javascript">
   function validateForm() {
-    var rval = true;
-    if (document.form1.treename.value.length == 0) {
+      let rval = true;
+      if (document.form1.treename.value.length == 0) {
       alert("<?php echo $admtext['entertreename']; ?>");
       rval = false;
     }

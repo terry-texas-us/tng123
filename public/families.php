@@ -23,3 +23,19 @@ function fetchAndCleanFamilyRow(?string &$familyID, string $families_table, stri
     return $row;
 }
 
+/**
+ * @param string $families_table
+ * @param $passocID
+ * @param string $tree
+ * @return string
+ */
+function fetchFamilyName(string $families_table, $passocID, string $tree): string {
+    $query = "SELECT husband, wife, gedcom, familyID FROM $families_table ";
+    $query .= "WHERE familyID=\"{$passocID}\" AND gedcom=\"{$tree}\"";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $name = getFamilyName($row);
+    tng_free_result($result);
+    return $name;
+}
+

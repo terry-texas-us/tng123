@@ -161,7 +161,7 @@ tng_adminheader($admtext['modifyreport'], $flags);
 <script src="js/reports.js"></script>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         if (document.form1.reportname.value.length == 0) {
             alert("<?php echo $admtext['enterreportname']; ?>");
             rval = false;

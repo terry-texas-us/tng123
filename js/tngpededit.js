@@ -11,7 +11,9 @@ function editPerson(personID, slot, gender) {
         else if (gender == "F")
             spouseorder = "wifeorder";
         persfamID = personID;
-        tnglitbox = new LITBox(editperson_url + 'personID=' + personID + '&tree=' + tree + '&slot=' + slot, {width: 820, height: 750});
+        tnglitbox = new LITBox(editperson_url + 'personID=' + personID + '&tree=' + tree + '&slot=' + slot, {
+            width: 820, height: 750
+        });
         startSortPerson();
     }
     return false;
@@ -25,7 +27,9 @@ function newPerson(gender, type, father, familyID) {
     allow_cites = false;
     allow_notes = false;
     newpersongender = gender;
-    nplitbox = new LITBox(cmstngpath + 'ajx_newperson.php?tree=' + tree + '&gender=' + gender + '&type=' + type + '&father=' + father + '&familyID=' + familyID, {width: 790, height: 600});
+    nplitbox = new LITBox(cmstngpath + 'ajx_newperson.php?tree=' + tree + '&gender=' + gender + '&type=' + type + '&father=' + father + '&familyID=' + familyID, {
+        width: 790, height: 600
+    });
     generateIDajax('person', 'personID');
     jQuery('#firstname').focus();
     return false;
@@ -112,7 +116,9 @@ function editFamily(familyID, slot, lastperson) {
     allow_cites = true;
     allow_notes = true;
     persfamID = familyID;
-    tnglitbox = new LITBox(cmstngpath + 'ajx_editfamily.php?familyID=' + familyID + '&tree=' + tree + '&lastperson=' + lastperson + '&slot=' + slot, {width: 790, height: 540});
+    tnglitbox = new LITBox(cmstngpath + 'ajx_editfamily.php?familyID=' + familyID + '&tree=' + tree + '&lastperson=' + lastperson + '&slot=' + slot, {
+        width: 790, height: 540
+    });
     startSortFamily();
     return false;
 }
@@ -120,7 +126,9 @@ function editFamily(familyID, slot, lastperson) {
 function newFamily(slot, child) {
     allow_cites = false;
     allow_notes = false;
-    tnglitbox = new LITBox(cmstngpath + 'ajx_newfamily.php?tree=' + tree + '&child=' + child + '&slot=' + slot, {width: 740, height: 460});
+    tnglitbox = new LITBox(cmstngpath + 'ajx_newfamily.php?tree=' + tree + '&child=' + child + '&slot=' + slot, {
+        width: 740, height: 460
+    });
     generateIDajax('family', 'familyID');
     return false;
 }

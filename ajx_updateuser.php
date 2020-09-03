@@ -30,7 +30,7 @@ $country = addslashes($country);
 
 $proceed = true;
 //first validate the original login
-$query = "SELECT password FROM $users_table WHERE username = \"$currentuser\" AND password = \"$orgpwd\"";
+$query = "SELECT password FROM {$users_table} WHERE username = \"{$currentuser}\" AND password = \"{$orgpwd}\"";
 $result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");
 
 if (!$result || tng_num_rows($result) == 0) {

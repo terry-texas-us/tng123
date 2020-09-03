@@ -1,5 +1,5 @@
 function validateForm1() {
-    var rval = true;
+    let rval = true;
     if (document.form1.place.value.length == 0) {
         alert(enterplace);
         rval = false;
@@ -8,7 +8,7 @@ function validateForm1() {
 }
 
 function validateForm2(form) {
-    var rval = false;
+    let rval = false;
     var keepid = "";
 
     blankMsg();

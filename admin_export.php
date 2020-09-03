@@ -9,7 +9,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_ged && $assignedtree) {
-  $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = \"$assignedtree\"";
+  $query = "SELECT disallowgedcreate FROM {$trees_table} WHERE gedcom = \"{$assignedtree}\"";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);
   $disallowgedcreate = $row['disallowgedcreate'];

@@ -38,7 +38,7 @@ if ($map['key'] && $isConnected) {
 ?>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         if (document.form1.place.value.length == 0) {
             alert("<?php echo $admtext['enterplace']; ?>");
             rval = false;

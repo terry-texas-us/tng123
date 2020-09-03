@@ -51,7 +51,7 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
   }
 
   function validateForm() {
-    var rval = true;
+      let rval = true;
 
       <?php
       $dispvalues = explode("|", $row['display']);

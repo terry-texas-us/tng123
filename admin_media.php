@@ -277,7 +277,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
                                     ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
-                                           onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID',{width:600,height:340});">
+                                           onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
                                     <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
                                            onclick="editMediatype(document.form1.mediatypeID);">
                                     <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"

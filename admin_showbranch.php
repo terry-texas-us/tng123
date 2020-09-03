@@ -23,7 +23,10 @@ $result = tng_query($query);
 $brow = tng_fetch_assoc($result);
 tng_free_result($result);
 
-$query = "SELECT personID, firstname, lastname, lnprefix, prefix, suffix, branch, gedcom, nameorder, living, private FROM $people_table WHERE gedcom = \"$tree\" and branch LIKE \"%$branch%\" ORDER BY lastname, firstname";
+$query = "SELECT personID, firstname, lastname, lnprefix, prefix, suffix, branch, gedcom, nameorder, living, private ";
+$query .= "FROM {$people_table} ";
+$query .= "WHERE gedcom = \"{$tree}\" and branch LIKE \"%$branch%\" ";
+$query .= "ORDER BY lastname, firstname";
 $brresult = tng_query($query);
 
 $helplang = findhelp("branches_help.php");

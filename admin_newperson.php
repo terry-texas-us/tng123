@@ -56,7 +56,7 @@ include_once "eventlib_js.php";
     ?>
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         document.form1.personID.value = TrimString(document.form1.personID.value);
         if (document.form1.personID.value.length == 0) {

@@ -73,11 +73,12 @@ if ($row['MRC_ancestorID']) {
   $mrcancestorname = $admtext['mrcaiorf'];
 }
 
-$query = "SELECT $dna_links_table.ID as mlinkID, $dna_links_table.personID as personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, $dna_links_table.gedcom as gedcom, branch, treename, living, private
-	FROM $dna_links_table
-	LEFT JOIN $trees_table as trees ON $dna_links_table.gedcom = trees.gedcom
-	LEFT JOIN $people_table AS people ON $dna_links_table.personID = people.personID AND $dna_links_table.gedcom = people.gedcom
-	WHERE testID = \"$testID\" ORDER BY $dna_links_table.ID DESC";
+$query = "SELECT dna_links.ID as mlinkID, dna_links.personID as personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, dna_links.gedcom as gedcom, branch, treename, living, private ";
+$query .= "FROM $dna_links_table dna_links ";
+$query .= "LEFT JOIN $trees_table trees ON dna_links.gedcom = trees.gedcom ";
+$query .= "LEFT JOIN $people_table people ON dna_links.personID = people.personID AND dna_links.gedcom = people.gedcom ";
+$query .= "WHERE testID = \"$testID\" ";
+$query .= "ORDER BY dna_links.ID DESC";
 $result2 = tng_query($query);
 $numlinks = tng_num_rows($result2);
 
@@ -107,7 +108,10 @@ $pass1 = true;
 function get_ancestor_surnames($personID, $tree, $type) {
   global $surnamesarr, $surnamesexc, $pass1;
 
-  $select = "SELECT p.lastname, p.famc, f.husband, f.wife FROM tng_people AS p LEFT JOIN tng_families AS f ON (p.famc = f.familyID AND p.gedcom = f.gedcom) WHERE p.personID = '" . $personID . "' AND p.gedcom = '" . $tree . "'";
+  $select = "SELECT people.lastname, people.famc, family.husband, family.wife ";
+  $select .= "FROM tng_people people ";
+  $select .= "LEFT JOIN tng_families family ON (people.famc = family.familyID AND people.gedcom = family.gedcom) ";
+  $select .= "WHERE people.personID = '" . $personID . "' AND people.gedcom = '" . $tree . "'";
   $result = tng_query($select);
   while ($surrow = tng_fetch_assoc($result)) {
     $father = ($type != "mtDNA") ? $surrow['husband'] : "";
@@ -593,7 +597,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
     ?>
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
 //req: test number, test type
         var frm = document.form1;

@@ -20,17 +20,18 @@ class SingleMediaCard
     global $thumbmaxw, $altstr, $tngconfig;
 
     if ($tree) {
-      $wherestr = "($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\") AND ";
-      $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+      $wherestr = "(media.gedcom = \"{$tree}\" || media.gedcom = \"\") AND ";
+      $wherestr2 = " AND medialinks.gedcom = \"{$tree}\"";
     } else {
       $wherestr = $wherestr2 = "";
     }
 
-    $query = "SELECT distinct $media_table.mediaID as mediaID, description $altstr, $media_table.notes, thumbpath, path, form, mediatypeID, $media_table.gedcom as gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%e %b %Y') as changedatef, changedby, status, plot, abspath, newwindow FROM $media_table";
+    $query = "SELECT distinct media.mediaID as mediaID, description $altstr, media.notes, thumbpath, path, form, mediatypeID, media.gedcom as gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%e %b %Y') as changedatef, changedby, status, plot, abspath, newwindow ";
+    $query .= "FROM {$media_table} media";
     if ($wherestr2) {
-      $query .= " LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID";
+      $query .= " LEFT JOIN {$medialinks_table} medialinks ON media.mediaID = medialinks.mediaID";
     }
-    $query .= " WHERE $wherestr mediatypeID = \"$mediatypeID\" ORDER BY ";
+    $query .= " WHERE $wherestr mediatypeID = \"{$mediatypeID}\" ORDER BY ";
     if (strpos($_SERVER['SCRIPT_NAME'], "placesearch") !== FALSE) {
       $query .= "ordernum";
     } else {
@@ -48,13 +49,11 @@ class SingleMediaCard
     while ($row = tng_fetch_assoc($mediaresult)) {
       $mediatypeID = $row['mediatypeID'];
 
-      $query = "SELECT medialinkID, $medialinks_table.personID as personID, familyID, people.living as living, people.private as private, people.branch as branch,
-			$families_table.branch as fbranch, $families_table.living as fliving, $families_table.private as fprivate, 
-			$medialinks_table.gedcom as gedcom, linktype
-			FROM $medialinks_table
-			LEFT JOIN $people_table AS people ON ($medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom)
-			LEFT JOIN $families_table ON ($medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom)
-			WHERE mediaID = \"{$row['mediaID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, $medialinks_table.personID";
+      $query = "SELECT medialinkID, medialinks.personID as personID, familyID, people.living as living, people.private as private, people.branch as branch, families.branch as fbranch, families.living as fliving, families.private as fprivate, medialinks.gedcom as gedcom, linktype ";
+      $query .= "FROM {$medialinks_table} medialinks ";
+      $query .= "LEFT JOIN {$people_table} people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
+      $query .= "LEFT JOIN {$families_table} families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
+      $query .= "WHERE mediaID = \"{$row['mediaID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, medialinks.personID";
       $presult = tng_query($query);
       $foundliving = 0;
       $foundprivate = 0;
@@ -69,9 +68,9 @@ class SingleMediaCard
           $prow['private'] = $prow['fprivate'];
         }
         if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-          $query = "SELECT count(personID) as ccount FROM $citations_table, $people_table
-					WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
-					AND (living = '1' OR private = '1')";
+          $query = "SELECT count(personID) as ccount ";
+          $query .= "FROM {$citations_table} citations, {$people_table} people ";
+          $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
           $presult2 = tng_query($query);
           $prow2 = tng_fetch_assoc($presult2);
           if ($prow2['ccount']) {

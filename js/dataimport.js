@@ -11,7 +11,7 @@ var submitted = false;
 var restarts_left = 15;
 
 function checkFile(form) {
-    var rval = true;
+    let rval = true;
     var treeselect = document.form1.tree1;
     if (form.remotefile.value.length == 0 && form.database.value.length == 0) {
         alert(selectimportfile);

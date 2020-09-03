@@ -518,7 +518,9 @@ switch ($action) {
         tng_free_result($result);
         break;
       case "C":
-        $query = "SELECT title FROM $sources_table as s, $citations_table as c WHERE citationID = \"$entityID\" AND c.gedcom = s.gedcom AND c.sourceID = s.sourceID";
+        $query = "SELECT title ";
+        $query .= "FROM {$sources_table} sources, {$citations_table} citations ";
+        $query .= "WHERE citationID = \"{$entityID}\" AND citations.gedcom = sources.gedcom AND citations.sourceID = sources.sourceID";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $name = $row['title'];

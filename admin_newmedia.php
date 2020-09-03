@@ -8,28 +8,28 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_media_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if (!$tree) {
-  if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
-    $tree = $assignedtree;
-  } else {
-    $wherestr = "";
-    $tree = isset($_COOKIE['tng_tree']) ? $_COOKIE['tng_tree'] : "";
-  }
+    if ($assignedtree) {
+        $wherestr = "WHERE gedcom = \"$assignedtree\"";
+        $tree = $assignedtree;
+    } else {
+        $wherestr = "";
+        $tree = isset($_COOKIE['tng_tree']) ? $_COOKIE['tng_tree'] : "";
+    }
 }
 
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
 $treenum = 0;
 while ($treerow = tng_fetch_assoc($treeresult)) {
-  $treenum++;
-  $trees[$treenum] = $treerow['gedcom'];
-  $treename[$treenum] = $treerow['treename'];
+    $treenum++;
+    $trees[$treenum] = $treerow['gedcom'];
+    $treename[$treenum] = $treerow['treename'];
 }
 tng_free_result($treeresult);
 
@@ -43,16 +43,16 @@ $standardtypes = array();
 $moptions = "";
 $likearray = "var like = new Array();\n";
 foreach ($mediatypes as $mediatype) {
-  if (!$mediatype['type']) {
-    $standardtypes[] = "\"" . $mediatype['ID'] . "\"";
-  }
-  $msgID = $mediatype['ID'];
-  $moptions .= "	<option value=\"$msgID\"";
-  if ($lastcoll == $msgID) {
-    $moptions .= " selected";
-  }
-  $moptions .= ">" . $mediatype['display'] . "</option>\n";
-  $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
+    if (!$mediatype['type']) {
+        $standardtypes[] = "\"" . $mediatype['ID'] . "\"";
+    }
+    $msgID = $mediatype['ID'];
+    $moptions .= "	<option value=\"$msgID\"";
+    if ($lastcoll == $msgID) {
+        $moptions .= " selected";
+    }
+    $moptions .= ">" . $mediatype['display'] . "</option>\n";
+    $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
 }
 $sttypestr = implode(",", $standardtypes);
 ?>
@@ -77,48 +77,50 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     <input type="hidden" name="link_personID" value="<?php echo $personID; ?>">
     <input type="hidden" name="link_tree" value="<?php echo $tree; ?>">
     <input type="hidden" name="link_linktype" value="<?php echo $linktype; ?>">
-  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-      <td class="tngshadow">
-        <?php echo displayToggle("plus0", 1, "mediafile", $admtext['imagefile'], $admtext['uplsel']); ?>
+    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <?php echo displayToggle("plus0", 1, "mediafile", $admtext['imagefile'], $admtext['uplsel']); ?>
 
-              <div id="mediafile">
-                <br>
-                <table>
-                  <tr>
-                    <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
+                <div id="mediafile">
+                    <br>
+                    <table>
+                        <tr>
+                            <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
                             <td>
                                 <select name="mediatypeID" onChange="switchOnType(this.options[this.selectedIndex].value)">
-                                  <?php
-                                  echo $moptions;
-                                  ?>
+                                    <?php
+                                    echo $moptions;
+                                    ?>
                                 </select>
-                              <?php
-                              if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
-                                ?>
-                                  <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop" onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID',{width:600,height:340});">
-                                  <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none" onclick="editMediatype(document.form1.mediatypeID);">
-                                <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none" onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
-                                <?php
-                              }
-                              ?>
+                                <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
+                                    <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
+                                           onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
+                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
+                                           onclick="editMediatype(document.form1.mediatypeID);">
+                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"
+                                           onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
+                                <?php } ?>
                             </td>
-                  </tr>
-                  <tr>
-                    <td valign="top" colspan="2"><input type="checkbox" name="abspath" value="1" onClick="toggleMediaURL();"><span class="normal"> <?php echo $admtext['abspath']; ?></span></td>
-                  </tr>
-                  <tr>
-                    <td colspan="2"><span class="normal"><strong><br><?php echo $admtext['imagefile']; ?></strong></span></td>
-                  </tr>
-                  <tr id="imgrow">
-                    <td><span class="normal"><?php echo $admtext['imagefiletoupload']; ?>*:</span></td>
-                    <td><input type="file" name="newfile" size="60" onchange="populatePath(document.form1.newfile,document.form1.path);"></td>
-                  </tr>
-                  <tr id="pathrow">
-                    <td><span class="normal"><?php echo $admtext['pathwithinphotos']; ?>**:</span></td>
-                    <td><input type="text" name="path" id="path" size="60"><input type="hidden" id="path_org"><input type="hidden" id="path_last"> <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" name="photoselect"
-                                                                                                                                                          onclick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('path',folder);">
-                    </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" colspan="2"><input type="checkbox" name="abspath" value="1" onClick="toggleMediaURL();"><span class="normal"> <?php echo $admtext['abspath']; ?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><span class="normal"><strong><br><?php echo $admtext['imagefile']; ?></strong></span></td>
+                        </tr>
+                        <tr id="imgrow">
+                            <td><span class="normal"><?php echo $admtext['imagefiletoupload']; ?>*:</span></td>
+                            <td><input type="file" name="newfile" size="60" onchange="populatePath(document.form1.newfile,document.form1.path);"></td>
+                        </tr>
+                        <tr id="pathrow">
+                            <td><span class="normal"><?php echo $admtext['pathwithinphotos']; ?>**:</span></td>
+                            <td><input type="text" name="path" id="path" size="60"><input type="hidden" id="path_org"><input type="hidden" id="path_last"> <input type="button"
+                                                                                                                                                                  value="<?php echo $admtext['select'] . "..."; ?>"
+                                                                                                                                                                  name="photoselect"
+                                                                                                                                                                  onclick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('path',folder);">
+                            </td>
                         </tr>
                         <tr id="abspathrow" style="display:none">
                             <td valign="top"><span class="normal"><?php echo $admtext['mediaurl']; ?>:</span></td>
@@ -131,57 +133,60 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             <td valign="top"><textarea wrap cols="100" rows="12" name="bodytext" id="bodytext"></textarea></td>
                         </tr>
 
-                      <?php
-                      if (function_exists("imageJpeg")) {
-                        ?>
-                        <tr>
-                          <td valign="top"><span class="normal"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
-                          <td valign="top"><span class="normal"><br>
-			<input type="radio" name="thumbcreate" value="specify" checked onClick="document.form1.newthumb.style.visibility='visible'; document.form1.thumbselect.style.visibility='visible';"> <?php echo $admtext['specifyimg']; ?> &nbsp;
+                        <?php
+                        if (function_exists("imageJpeg")) {
+                            ?>
+                            <tr>
+                                <td valign="top"><span class="normal"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
+                                <td valign="top"><span class="normal"><br>
+			<input type="radio" name="thumbcreate" value="specify" checked
+                   onClick="document.form1.newthumb.style.visibility='visible'; document.form1.thumbselect.style.visibility='visible';"> <?php echo $admtext['specifyimg']; ?> &nbsp;
 			<input type="radio" name="thumbcreate" value="auto"
-             onClick="document.form1.newthumb.style.visibility='hidden'; document.form1.thumbselect.style.visibility='hidden'; prepopulateThumb(); document.form1.abspath.checked=false;"> <?php echo $admtext['autoimg']; ?></span></td>
-                        </tr>
-                        <?php
-                      } else {
+                   onClick="document.form1.newthumb.style.visibility='hidden'; document.form1.thumbselect.style.visibility='hidden'; prepopulateThumb(); document.form1.abspath.checked=false;"> <?php echo $admtext['autoimg']; ?></span>
+                                </td>
+                            </tr>
+                            <?php
+                        } else {
+                            ?>
+                            <tr>
+                                <td colspan="2"><strong><span class="normal"><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
+                            </tr>
+                            <?php
+                        }
                         ?>
-                        <tr>
-                          <td colspan="2"><strong><span class="normal"><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
-                        </tr>
-                        <?php
-                      }
-                      ?>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['imagefiletoupload']; ?>*:</span></td>
-                          <td><input type="file" name="newthumb" size="60" onChange="populatePath(document.form1.newthumb,document.form1.thumbpath);"></td>
+                            <td><input type="file" name="newthumb" size="60" onChange="populatePath(document.form1.newthumb,document.form1.thumbpath);"></td>
                         </tr>
-                  <tr>
-                    <td><span class="normal"><?php echo $admtext['pathwithinphotos']; ?>**:</span></td>
-                    <td><input type="text" name="thumbpath" id="thumbpath" size="60"><input type="hidden" id="thumbpath_org"><input type="hidden" id="thumbpath_last"> <input type="button" value="<?php echo $admtext['select'] . "..."; ?>"
-                                                                                                                                                                              name="thumbselect"
-                                                                                                                                                                              OnClick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('thumbpath',folder);">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><span class="normal"><strong><br><?php echo $admtext['put_in']; ?></strong></span></td>
-                    <td valign="top"><span class="normal"><br>
+                        <tr>
+                            <td><span class="normal"><?php echo $admtext['pathwithinphotos']; ?>**:</span></td>
+                            <td><input type="text" name="thumbpath" id="thumbpath" size="60"><input type="hidden" id="thumbpath_org"><input type="hidden" id="thumbpath_last"> <input type="button"
+                                                                                                                                                                                      value="<?php echo $admtext['select'] . "..."; ?>"
+                                                                                                                                                                                      name="thumbselect"
+                                                                                                                                                                                      OnClick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('thumbpath',folder);">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><span class="normal"><strong><br><?php echo $admtext['put_in']; ?></strong></span></td>
+                            <td valign="top"><span class="normal"><br>
 			<input type="radio" name="usecollfolder" value="0"> <?php echo $admtext['usemedia']; ?> &nbsp;
 			<input type="radio" name="usecollfolder" value="1" checked> <?php echo $admtext['usecollect']; ?></span>
-                    </td>
-                  </tr>
-                  <tr id="vidrow1">
-                    <td valign="top"><span class="normal"><?php echo $admtext['width']; ?>:</span></td>
-                    <td><input type="text" name="width" size="40"></td>
-                  </tr>
-                  <tr id="vidrow2">
-                    <td valign="top"><span class="normal"><?php echo $admtext['height']; ?>:</span></td>
+                            </td>
+                        </tr>
+                        <tr id="vidrow1">
+                            <td valign="top"><span class="normal"><?php echo $admtext['width']; ?>:</span></td>
+                            <td><input type="text" name="width" size="40"></td>
+                        </tr>
+                        <tr id="vidrow2">
+                            <td valign="top"><span class="normal"><?php echo $admtext['height']; ?>:</span></td>
                             <td><input type="text" name="height" size="40"><span class="normal"> (<?php echo $admtext['controller']; ?>)</span></td>
                         </tr>
                     </table>
                     <p class="smaller">
-                      <?php
-                      echo "*{$admtext['leaveblankphoto']}<br>\n";
-                      echo "**{$admtext['requiredphoto']}\n";
-                      ?>
+                        <?php
+                        echo "*{$admtext['leaveblankphoto']}<br>\n";
+                        echo "**{$admtext['requiredphoto']}\n";
+                        ?>
                     </p>
                 </div>
             </td>
@@ -189,13 +194,13 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
 
         <tr class="databack">
             <td class="tngshadow">
-              <?php echo displayToggle("plus1", 1, "details", $admtext['newmediainfo'], $admtext['minfosubt']); ?>
+                <?php echo displayToggle("plus1", 1, "details", $admtext['newmediainfo'], $admtext['minfosubt']); ?>
 
-              <div id="details">
-                <br>
-                <table class="normal">
-                  <tr>
-                    <td valign="top"><?php echo $admtext['title']; ?>:</td>
+                <div id="details">
+                    <br>
+                    <table class="normal">
+                        <tr>
+                            <td valign="top"><?php echo $admtext['title']; ?>:</td>
                             <td><textarea wrap cols="70" rows="3" name="description"></textarea></td>
                         </tr>
                         <tr>
@@ -214,19 +219,19 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             <td><?php echo $admtext['tree']; ?>:</td>
                             <td>
 
-                              <?php
-                              echo "<select name=\"tree\">";
-                              echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                              $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                              while ($treerow = tng_fetch_assoc($treeresult)) {
-                                echo "	<option value=\"{$treerow['gedcom']}\"";
-                                if ($treerow['gedcom'] == $tree) {
-                                  echo " selected";
+                                <?php
+                                echo "<select name=\"tree\">";
+                                echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    echo "	<option value=\"{$treerow['gedcom']}\"";
+                                    if ($treerow['gedcom'] == $tree) {
+                                        echo " selected";
+                                    }
+                                    echo ">{$treerow['treename']}</option>\n";
                                 }
-                                echo ">{$treerow['treename']}</option>\n";
-                              }
-                              tng_free_result($treeresult);
-                              ?>
+                                tng_free_result($treeresult);
+                                ?>
                                 </select>
                             </td>
                         </tr>
@@ -239,14 +244,14 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                                 <div id="cemselect" style="display:none">
                                     <select name="cemeteryID">
                                         <option selected></option>
-                                      <?php
-                                      $query = "SELECT cemname, cemeteryID, city, county, state, country FROM $cemeteries_table ORDER BY country, state, county, city, cemname";
-                                      $cemresult = tng_query($query);
-                                      while ($cemrow = tng_fetch_assoc($cemresult)) {
-                                        $cemetery = "{$cemrow['country']}, {$cemrow['state']}, {$cemrow['county']}, {$cemrow['city']}, {$cemrow['cemname']}";
-                                        echo "		<option value=\"{$cemrow['cemeteryID']}\">$cemetery</option>\n";
-                                      }
-                                      ?>
+                                        <?php
+                                        $query = "SELECT cemname, cemeteryID, city, county, state, country FROM $cemeteries_table ORDER BY country, state, county, city, cemname";
+                                        $cemresult = tng_query($query);
+                                        while ($cemrow = tng_fetch_assoc($cemresult)) {
+                                            $cemetery = "{$cemrow['country']}, {$cemrow['state']}, {$cemrow['county']}, {$cemrow['city']}, {$cemrow['cemname']}";
+                                            echo "		<option value=\"{$cemrow['cemeteryID']}\">$cemetery</option>\n";
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </td>
@@ -294,8 +299,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
         <tr class="databack">
             <td class="tngshadow">
                 <p class="normal"><strong><?php echo $admtext['medlater']; ?></strong></p>
-              <input type="hidden" name="usenl" value="0">
-              <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                <input type="hidden" name="usenl" value="0">
+                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
                 <input type="hidden" name="numlinks" value="1"><input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
             </td>
         </tr>
@@ -311,8 +316,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     var selectmsg = "<?php echo $admtext['selecttree']; ?>";
     <?php
     for ($i = 1; $i <= $treenum; $i++) {
-      echo "trees[$i] = \"$trees[$i]\";\n";
-      echo "treename[$i] = \"$treename[$i]\";\n";
+        echo "trees[$i] = \"$trees[$i]\";\n";
+        echo "treename[$i] = \"$treename[$i]\";\n";
     }
     echo "var thumbprefix = \"$thumbprefix\";\n";
     echo "var thumbsuffix = \"$thumbsuffix\";\n";
@@ -344,7 +349,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     var allow_delete = <?php echo($allow_delete ? "1" : "0"); ?>;
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         var frm = document.form1;
         var selectedType = frm.mediatypeID.options[frm.mediatypeID.selectedIndex].value;

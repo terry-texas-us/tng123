@@ -39,8 +39,7 @@ $endrootpath = "";
 $languages_path = "languages/";
 include $cms['tngpath'] . "getlang.php";
 
-
-include "./admin/locale.php";
+// include "./admin/locale.php";
 
 function _todo_($text) {
     return $text;

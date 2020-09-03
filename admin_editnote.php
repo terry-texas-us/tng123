@@ -6,8 +6,9 @@ include "$mylanguage/admintext.php";
 
 include $cms['tngpath'] . "checklogin.php";
 
-$query = "SELECT $xnotes_table.note as note, $xnotes_table.ID as xID, secret, $notelinks_table.gedcom as gedcom, persfamID, eventID FROM $notelinks_table,  $xnotes_table
-	WHERE $notelinks_table.xnoteID = $xnotes_table.ID AND $notelinks_table.gedcom = $xnotes_table.gedcom AND $notelinks_table.ID = \"$noteID\"";
+$query = "SELECT xnotes.note as note, xnotes.ID as xID, secret, notelinks.gedcom as gedcom, persfamID, eventID ";
+$query .= "FROM {$notelinks_table} notelinks,  {$xnotes_table} xnotes ";
+$query .= "WHERE notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom AND notelinks.ID = \"{$noteID}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -26,26 +27,26 @@ header("Content-type:text/html; charset=" . $session_charset);
     <p class="subhead"><strong><?php echo $admtext['modifynote']; ?></strong> |
         <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
 
-  <table cellpadding="2" class="normal">
-    <tr>
-      <td valign="top"><?php echo $admtext['note']; ?>:</td>
+    <table cellpadding="2" class="normal">
+        <tr>
+            <td valign="top"><?php echo $admtext['note']; ?>:</td>
             <td><textarea wrap cols="60" rows="25" name="note"><?php echo $row['note']; ?></textarea></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td>
-              <?php
-              echo "<input type=\"checkbox\" name=\"private\" value=\"1\"";
-              if ($row['secret']) {
-                echo " checked";
-              }
-              echo "> " . $admtext['text_private'];
-              ?>
+                <?php
+                echo "<input type=\"checkbox\" name=\"private\" value=\"1\"";
+                if ($row['secret']) {
+                    echo " checked";
+                }
+                echo "> " . $admtext['text_private'];
+                ?>
             </td>
         </tr>
     </table>
-  <br>
-  <input type="hidden" name="xID" value="<?php echo $row['xID']; ?>">
+    <br>
+    <input type="hidden" name="xID" value="<?php echo $row['xID']; ?>">
     <input type="hidden" name="ID" value="<?php echo $noteID; ?>">
     <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
     <input type="hidden" name="persfamID" value="<?php echo $row['persfamID']; ?>">

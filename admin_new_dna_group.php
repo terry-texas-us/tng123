@@ -31,7 +31,7 @@ tng_adminheader($admtext['addgroup'], $flags);
 <script type="text/javascript" src="js/selectutils.js"></script>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         document.form1.dna_group.value = document.form1.dna_group.value.replace(/[^a-zA-Z0-9-_]+/g, "");
         if (document.form1.dna_group.value.length == 0) {

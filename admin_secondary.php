@@ -75,7 +75,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         }
         //first do husbands
         $query = "SELECT personID, families.gedcom as gedcom ";
-        $query .= "FROM {$families_table} as families, {$people_table} as people ";
+        $query .= "FROM {$families_table} families, {$people_table} people ";
         $query .= "WHERE people.personID = families.husband AND people.gedcom = families.gedcom $wherestr";
         $result = tng_query($query);
         while ($husband = tng_fetch_assoc($result)) {
@@ -99,7 +99,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
         //now do wives
         $query = "SELECT personID, families.gedcom as gedcom ";
-        $query .= "FROM {$families_table} as families, {$people_table} as people ";
+        $query .= "FROM {$families_table} families, {$people_table} people ";
         $query .= "WHERE people.personID = families.wife AND people.gedcom = families.gedcom $wherestr";
         $result = tng_query($query);
         while ($wife = tng_fetch_assoc($result)) {
@@ -147,7 +147,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           $gendexout = $tree ? "$rootpath$gendexfile/$tree.txt" : "$rootpath$gendexfile/blanktree.txt";
           $gendexURL = $tree ? "$tngdomain/$gendexfile/$tree.txt" : "$tngdomain/$gendexfile/blanktree.txt";
         }
-        $query = "SELECT personID, firstname, lnprefix, lastname, living, private, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, deathplace, burialdate, burialplace, gedcom FROM $people_table $wherestr ORDER BY lastname, firstname";
+        $query = "SELECT personID, firstname, lnprefix, lastname, living, private, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, deathplace, burialdate, burialplace, gedcom ";
+        $query .= "FROM {$people_table} {$wherestr} ORDER BY lastname, firstname";
         $result = tng_query($query);
         if ($result) {
           //open file (overwrite any contents)

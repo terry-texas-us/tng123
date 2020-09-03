@@ -76,10 +76,11 @@ $logstring = "<a href=\"$browserepos_url" . "tree=$tree&amp;offset=$offset&amp;r
 writelog($logstring);
 preparebookmark($logstring);
 
+$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top}</style>\n";
 tng_header($text['repositories'], $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h1><br clear="left">
+<h1 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h1><br>
 <?php
 echo "<div class=\"normal\">\n";
 
@@ -101,14 +102,14 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if ($sitever != "standard") {
   if ($tabletype == "toggle") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+    $header = "<table style=\"width: 100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
   } elseif ($tabletype == "stack") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+    $header = "<table style=\"width: 100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
   } elseif ($tabletype == "swipe") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+    $header = "<table style=\"width: 100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
   }
 } else {
-  $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback normal\">";
+  $header = "<table class=\"whiteback normal\">";
 }
 echo $header;
 ?>
@@ -122,26 +123,25 @@ echo $header;
 </tr>
 </thead>
 <?php
+echo "<tbody>\n";
 $i = $offsetplus;
 while ($row = tng_fetch_assoc($result)) {
-  echo "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>\n";
-  echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
-  echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
+  echo "<tr>\n";
+  echo "<td class=\"databack\"><span class=\"normal\">$i</span></td>\n";
+  echo "<td class=\"databack\"><span class=\"normal\"><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
+  echo "<td class=\"databack\"><span class=\"normal\"><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
   if ($numtrees > 1) {
-    echo "<td valign=\"top\" class=\"databack nw\"><span class=\"normal\">{$row['treename']}&nbsp;</span></td>";
+    echo "<td class=\"databack nw\"><span class=\"normal\">{$row['treename']}&nbsp;</span></td>";
   }
   echo "</tr>\n";
   $i++;
 }
 tng_free_result($result);
-?>
-</table>
-<br>
-</div>
-<?php
+echo "</tbody>\n";
+echo "</table><br>\n";
+echo "</div>\n";
 if ($pagenav || $reposearch) {
   echo doRepoSearch(2, $pagenav) . "<br>\n";
 }
-
 tng_footer("");
 ?>

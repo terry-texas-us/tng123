@@ -80,7 +80,7 @@ tng_adminheader($admtext['labelbranches'], $flags);
     }
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
         var option = true;
 
         if (jQuery('#labelsub').val() == "<?php echo $admtext['text_delete']; ?>")

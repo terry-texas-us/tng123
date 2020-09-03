@@ -31,7 +31,7 @@ tng_adminheader($admtext['addnewbranch'], $flags);
 <script type="text/javascript" src="js/selectutils.js"></script>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         document.form1.branch.value = document.form1.branch.value.replace(/[^a-zA-Z0-9-_]+/g, "");
         if (document.form1.branch.value.length == 0) {

@@ -182,7 +182,7 @@ tng_adminheader($admtext['places'], $flags);
 ?>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         if (document.form1.searchstring.value.length == 0) {
             alert("<?php echo $admtext['entersearchvalue']; ?>");
             rval = false;

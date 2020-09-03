@@ -19,7 +19,7 @@ tng_adminheader($admtext['emailusers'], $flags);
   ?>
 
   function validateForm() {
-      var rval = true;
+      let rval = true;
       if (document.form1.subject.value.length == 0) {
           alert("<?php echo $admtext['entersubject']; ?>");
           rval = false;

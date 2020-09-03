@@ -1,4 +1,5 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
 $textpart = "photos";
@@ -155,7 +156,7 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
         if (!$gotit) {
           echo " style=\"display:none\">";
         } else {
-          echo "><img src=\"img/tng_test.gif\" alt=\"\" $dims class=\"smallicon\">";
+          echo "><img src=\"img/tng_test.gif\" alt=\"\" width=\"20\" height=\"20\" class=\"smallicon\">";
         }
         echo "</div>";
         echo "&nbsp;</td>";

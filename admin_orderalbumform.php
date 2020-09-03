@@ -39,7 +39,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
     ;
 
     function validateSortForm() {
-        var rval = true;
+        let rval = true;
 
         if (document.find.newlink1.value.length == 0) {
             alert("<?php echo $admtext['enterid']; ?>");

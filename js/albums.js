@@ -1,5 +1,5 @@
 function validateForm() {
-    var rval = true;
+    let rval = true;
     if (document.form1.albumname.value.length == 0) {
         alert("<?php echo $admtext[enteralbumname]; ?>");
         rval = false;

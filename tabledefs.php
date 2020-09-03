@@ -1,12 +1,12 @@
 <?php
 function performQuery($query, $table = null) {
-  global $badtables;
+    global $badtables;
 
-  $result = @tng_query($query);
-  if (!$result && $table) {
-    $badtables .= $badtables ? ",$table" : $table;
-  }
-  return $result;
+    $result = @tng_query($query);
+    if (!$result && $table) {
+        $badtables .= $badtables ? ",$table" : $table;
+    }
+    return $result;
 }
 
 $collationstr = $collation ? "COLLATE $collation" : "";
@@ -722,19 +722,19 @@ include $subroot . "templateconfig.php";
 $query = "INSERT IGNORE INTO $templates_table (template,ordernum,keyname,language,value) VALUES ";
 $values = "";
 foreach ($tmp as $key => $value) {
-  $keyparts = explode("_", $key);
-  $template = substr($keyparts[0], 1);
-  if (!isset($orders[$template])) {
-    $orders[$template] = 1;
-  } else {
-    $orders[$template]++;
-  }
-  $keyname = $keyparts[1];
-  $num_keyparts = count($keyparts);
-  if ($values) {
-    $values .= ", ";
-  }
-  $values .= "(\"$template\",\"{$orders[$template]}\",\"$keyname\",\"\",\"" . addslashes($value) . "\")";
+    $keyparts = explode("_", $key);
+    $template = substr($keyparts[0], 1);
+    if (!isset($orders[$template])) {
+        $orders[$template] = 1;
+    } else {
+        $orders[$template]++;
+    }
+    $keyname = $keyparts[1];
+    $num_keyparts = count($keyparts);
+    if ($values) {
+        $values .= ", ";
+    }
+    $values .= "(\"$template\",\"{$orders[$template]}\",\"$keyname\",\"\",\"" . addslashes($value) . "\")";
 }
 $query .= $values;
 $result = tng_query($query);
@@ -825,9 +825,9 @@ $query = "CREATE TABLE $users_table (
 ) ENGINE = MYISAM $collationstr";
 $result = performQuery($query, $users_table);
 
-$query = "DROP TABLE IF EXISTS $xnotes_table";
+$query = "DROP TABLE IF EXISTS {$xnotes_table}";
 $result = performQuery($query);
-$query = "CREATE TABLE $xnotes_table (
+$query = "CREATE TABLE {$xnotes_table} (
 	ID INT(11) NOT NULL AUTO_INCREMENT,
 	noteID VARCHAR(22) NOT NULL,
 	gedcom VARCHAR(20) NOT NULL,

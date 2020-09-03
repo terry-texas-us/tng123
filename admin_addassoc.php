@@ -1,6 +1,9 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require "./admin/associations.php";
+
 $textpart = "people";
 include "$mylanguage/admintext.php";
 
@@ -8,12 +11,12 @@ include "checklogin.php";
 require "adminlog.php";
 
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  exit;
+    $message = $admtext['norights'];
+    exit;
 }
 
 if ($session_charset != "UTF-8") {
-  $relationship = tng_utf8_decode($relationship);
+    $relationship = tng_utf8_decode($relationship);
 }
 
 $template = "sssss";
@@ -23,34 +26,16 @@ tng_execute($query, $params);
 $assocID = tng_insert_id();
 
 if ($revassoc) {
-  $params = array(&$template, &$tree, &$passocID, &$personID, &$relationship, &$orgreltype);
-  tng_execute($query, $params);
+    $params = array(&$template, &$tree, &$passocID, &$personID, &$relationship, &$orgreltype);
+    tng_execute($query, $params);
 }
 
 adminwritelog($admtext['addnewassoc'] . ": $assocID/$tree/$personID::$passocID ($relationship)");
 
 //get name
-if ($reltype == "I") {
-  $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix FROM $people_table
-		WHERE personID=\"$passocID\" AND gedcom=\"$tree\"";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $righttree = checktree($tree);
-  $rightbranch = $righttree ? checkbranch($row['branch']) : false;
-  $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
-  $row['allow_living'] = $rights['living'];
-  $row['allow_private'] = $rights['private'];
-  $name = getName($row) . " ($passocID)";
-} else {
-  $query = "SELECT husband, wife, gedcom, familyID FROM $families_table
-		WHERE familyID=\"$passocID\" AND gedcom=\"$tree\"";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $name = getFamilyName($row);
-}
 
+$name = getPersonOrFamilyAssociatedName($reltype, $passocID, $tree);
 $namestr = cleanIt($name . ": " . stripslashes($relationship));
 $namestr = truncateIt($namestr, 75);
-tng_free_result($result);
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"id\":\"$assocID\",\"persfamID\":\"$personID\",\"tree\":\"$tree\",\"display\":\"$namestr\",\"allow_edit\":$allow_edit,\"allow_delete\":$allow_delete}";

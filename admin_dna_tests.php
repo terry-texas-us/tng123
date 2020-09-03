@@ -85,9 +85,9 @@ $originalstring = preg_replace("/\"/", "&#34;", $searchstring);
 $searchstring = addslashes($searchstring);
 $wherestr = $searchstring ? "(test_number LIKE \"%$searchstring%\" OR vendor LIKE \"%$searchstring%\" OR urls LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR dna_group LIKE \"%$searchstring%\" OR dna_group_desc LIKE \"%$searchstring%\" OR surnames LIKE \"%$searchstring%\" OR ydna_haplogroup LIKE \"%$searchstring%\" OR mtdna_haplogroup LIKE \"%$searchstring%\")" : "";
 if ($assignedtree) {
-    $wherestr .= $wherestr ? " AND ($dna_tests_table.gedcom = \"$tree\" || $dna_tests_table.gedcom = \"\")" : "($dna_tests_table.gedcom = \"$tree\" || $dna_tests_table.gedcom = \"\")";
+    $wherestr .= $wherestr ? " AND (dna_tests.gedcom = \"$tree\" || dna_tests.gedcom = \"\")" : "(dna_tests.gedcom = \"$tree\" || dna_tests.gedcom = \"\")";
 } elseif ($tree) {
-    $wherestr .= $wherestr ? " AND $dna_tests_table.gedcom = \"$tree\"" : "$dna_tests_table.gedcom = \"$tree\"";
+    $wherestr .= $wherestr ? " AND dna_tests.gedcom = \"$tree\"" : "dna_tests.gedcom = \"$tree\"";
 }
 if ($test_type) {
     $wherestr .= $wherestr ? " AND test_type = \"$test_type\"" : "test_type = \"$test_type\"";
@@ -99,10 +99,12 @@ if ($wherestr) {
     $wherestr = "WHERE $wherestr";
 }
 
-$query = "SELECT testID, test_type, test_date, match_date, ydna_haplogroup, mtdna_haplogroup, $dna_tests_table.personID, $dna_tests_table.gedcom, test_number, firstname, lastname, lnprefix, nameorder, suffix, prefix, title, person_name, mtdna_confirmed, ydna_confirmed, markeropt, notesopt, linksopt, surnamesopt, private_dna, private_test, dna_group, dna_group_desc, surnames, MD_ancestorID, MRC_ancestorID
-	FROM $dna_tests_table
-	LEFT JOIN $people_table ON $people_table.personID = $dna_tests_table.personID AND $people_table.gedcom = $dna_tests_table.gedcom
-	$wherestr ORDER BY match_date DESC, test_number ASC LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT testID, test_type, test_date, match_date, ydna_haplogroup, mtdna_haplogroup, dna_tests.personID, dna_tests.gedcom, test_number, firstname, lastname, lnprefix, nameorder, suffix, prefix, title, person_name, mtdna_confirmed, ydna_confirmed, markeropt, notesopt, linksopt, surnamesopt, private_dna, private_test, dna_group, dna_group_desc, surnames, MD_ancestorID, MRC_ancestorID ";
+$query .= "FROM {$dna_tests_table} dna_tests ";
+$query .= "LEFT JOIN $people_table people ON people.personID = dna_tests.personID AND people.gedcom = dna_tests.gedcom ";
+$query .= "$wherestr ";
+$query .= "ORDER BY match_date DESC, test_number ASC ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);

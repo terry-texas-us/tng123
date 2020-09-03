@@ -22,7 +22,7 @@ tng_adminheader($admtext['modifytlevent'], $flags);
 ?>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         if (document.form1.evyear.value.length == 0) {
             alert("<?php echo $admtext['enterevyear']; ?>");
             rval = false;

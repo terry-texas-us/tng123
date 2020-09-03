@@ -21,8 +21,8 @@ tng_adminheader($admtext['addnewlanguage'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 <script type="text/javascript">
   function validateForm() {
-    var rval = true;
-    if (document.form1.folder.value.length == 0) {
+      let rval = true;
+      if (document.form1.folder.value.length == 0) {
       alert("<?php echo $admtext['enterlangfolder']; ?>");
             rval = false;
         } else if (document.form1.display.value.length == 0) {

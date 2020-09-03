@@ -26,7 +26,7 @@ if ($action == "convert") {
     $result = tng_query($query);
 
     while ($row = tng_fetch_assoc($result)) {
-      $query = "SELECT * FROM $places_table WHERE place = \"" . addslashes($row['place']) . "\" AND gedcom = \"\"";
+      $query = "SELECT * FROM {$places_table} WHERE place = \"" . addslashes($row['place']) . "\" AND gedcom = \"\"";
       $result2 = tng_query($query);
 
       if (tng_num_rows($result2)) {
@@ -43,7 +43,7 @@ if ($action == "convert") {
           $query = "UPDATE $places_table SET longitude = \"$newlongitude\", latitude = \"$newlatitude\", zoom = \"$newzoom\", placelevel = \"$newplacelevel\", temple = \"$newtemple\", notes = \"" . addslashes($newnotes) . "\" WHERE ID = \"" . addslashes($row2['ID']) . "\"";
           $result3 = tng_query($query);
         }
-        $query = "DELETE FROM $places_table WHERE ID = \"" . addslashes($row['ID']) . "\"";
+        $query = "DELETE FROM {$places_table} WHERE ID = \"" . addslashes($row['ID']) . "\"";
         $result3 = tng_query($query);
       } else {
         $query = "UPDATE $places_table SET gedcom = \"\" WHERE ID = \"" . addslashes($row['ID']) . "\"";

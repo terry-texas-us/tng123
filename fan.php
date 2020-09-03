@@ -197,7 +197,8 @@ $innermenu .= "<a href=\"$fan_url" . "personID=$personID&amp;tree=$tree&amp;pare
 $innermenu .= "<a href=\"$extrastree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\">{$text['media']}</a>\n";
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 if ($generations <= 6 && $allowpdf) {
-  $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations',{width:350,height:350});return false;\">PDF</a>\n";
+  $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+  $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width:350, height:350}); return false;\">PDF</a>\n";
 }
 
 echo getFORM("pedigree", "", "form1", "form1");

@@ -12,12 +12,13 @@ function updatePhotoOrder(event, ui) {
 }
 
 function updateMostWantedOrder(mwtype) {
-    if (mwtype == "person")
-        var linklist = removePrefixFromArray(jQuery('#orderpersondivs').sortable('toArray'), 'orderpersondivs_');
+    let linklist;
+    if (mwtype === "person")
+        linklist = removePrefixFromArray(jQuery('#orderpersondivs').sortable('toArray'), 'orderpersondivs_');
     else
-        var linklist = removePrefixFromArray(jQuery('#orderphotodivs').sortable('toArray'), 'orderphotodivs_');
+        linklist = removePrefixFromArray(jQuery('#orderphotodivs').sortable('toArray'), 'orderphotodivs_');
 
-    var params = {sequence: linklist.join(','), mwtype: mwtype, action: 'mworder'};
+    let params = {sequence: linklist.join(','), mwtype: mwtype, action: 'mworder'};
     jQuery.ajax({
         url: cmstngpath + 'ajx_updateorder.php',
         data: params,
@@ -36,9 +37,9 @@ function openMostWantedMediaFind(tree) {
 }
 
 function updateMostWanted(form) {
-    if (form.title.value.length == 0)
+    if (form.title.value.length === 0)
         alert(entertitle);
-    else if (form.description.value.length == 0)
+    else if (form.description.value.length === 0)
         alert(enterdesc);
     else {
         var params = jQuery(form).serialize();
@@ -54,20 +55,22 @@ function updateMostWanted(form) {
                     jQuery('#desc_' + vars.ID).html(vars.description);
                     //update thumbnail if necessary
                     if (vars.thumbpath) {
-                        jQuery('#img_' + vars.ID).attr('src', vars.thumbpath);
-                        jQuery('#img_' + vars.ID).css('width', vars.width + 'px');
-                        jQuery('#img_' + vars.ID).css('height', vars.height + 'px');
+                        let $imageSelection = jQuery('#img_' + vars.ID);
+                        $imageSelection.attr('src', vars.thumbpath);
+                        $imageSelection.css('width', vars.width + 'px');
+                        $imageSelection.css('height', vars.height + 'px');
                     }
                 } else {
                     //if it's new, then insert row at bottom
                     var newcontent = '<div class="sortrow" id="order' + vars.mwtype + 'divs_' + vars.ID + '" style="clear:both" onmouseover="showEditDelete(\'' + vars.ID + '\');" onmouseout="hideEditDelete(\'' + vars.ID + '\');">\n';
-                    newcontent += '<table width="100%" cellpadding="5" cellspacing="1"><tr id="row_' + vars.ID + '">\n';
-                    newcontent += '<td class="dragarea normal">\n';
+                    newcontent += '<table>\n';
+                    newcontent += '<tr id="row_' + vars.ID + '">\n';
+                    newcontent += '<td class="dragarea normal" style="width: 4em">\n';
                     newcontent += '<img src="img/admArrowUp.gif" alt=""><br>' + drag + '<br><img src="img/admArrowDown.gif" alt="">\n';
                     newcontent += '</td>\n';
-                    newcontent += '<td class="lightback" style="width:' + thumbwidth + 'px;text-align:center;">\n';
+                    newcontent += '<td class="lightback" style="width:' + thumbwidth + 'px;">\n';
                     if (vars.thumbpath)
-                        newcontent += '<img src="' + vars.thumbpath + '" width="' + vars.width + '" height="' + vars.height + '" id="img_' + vars.ID + '" alt="' + vars.description + '">\n';
+                        newcontent += '<img class="thumb-center" src="' + vars.thumbpath + '" width="' + vars.width + '" height="' + vars.height + '" id="img_' + vars.ID + '" alt="' + vars.description + '">\n';
                     else
                         newcontent += "&nbsp;";
 
@@ -85,10 +88,15 @@ function updateMostWanted(form) {
                             newcontent += ' | ';
                     }
                     if (vars.del)
-                        newcontent += '<a href="#" onclick="return removeFromMostWanted(\'' + vars.mwtype + '\',\'' + vars.ID + '\');">' + deltext + '</a>\n';
-                    newcontent += '</div>\n</td>\n</tr></table>\n</div>\n';
-                    jQuery('#order' + vars.mwtype + 'divs').html(newcontent + jQuery('#order' + vars.mwtype + 'divs').html());
-                    if (vars.mwtype == 'person')
+                        newcontent += '<a href="#" onclick="return removeFromMostWanted(\'' + vars.mwtype + '\',\'' + vars.ID + '\');">' + deletetext + '</a>\n';
+                    newcontent += '</div>\n';
+                    newcontent += '</td>\n';
+                    newcontent += '</tr>\n';
+                    newcontent += '</table>\n';
+                    newcontent += '</div>\n';
+                    let $orderSelection = jQuery('#order' + vars.mwtype + 'divs');
+                    $orderSelection.html(newcontent + $orderSelection.html());
+                    if (vars.mwtype === 'person')
                         jQuery('#orderpersondivs').sortable({dropOnEmpty: true, tag: 'div', connectWith: '#orderphotodivs', update: updatePersonOrder});
                     else
                         jQuery('#orderphotodivs').sortable({dropOnEmpty: true, tag: 'div', connectWith: '#orderpersondivs', update: updatePhotoOrder});
@@ -115,7 +123,7 @@ function removeFromMostWanted(type, id) {
             success: function () {
                 jQuery('#order' + type + 'divs_' + id).fadeOut(400, function () {
                     jQuery('#order' + type + 'divs_' + id).remove();
-                    if (type == 'person')
+                    if (type === 'person')
                         jQuery('#orderpersondivs').sortable({dropOnEmpty: true, tag: 'div', connectWith: '#orderphotodivs', update: updatePersonOrder});
                     else
                         jQuery('#orderphotodivs').sortable({dropOnEmpty: true, tag: 'div', connectWith: '#orderpersondivs', update: updatePhotoOrder});
@@ -127,17 +135,18 @@ function removeFromMostWanted(type, id) {
 }
 
 function showEditDelete(id) {
-    if (jQuery('#del_' + id).length)
-        jQuery('#del_' + id).css('visibility', 'visible');
+    let $deleteSelection = jQuery('#del_' + id);
+    if ($deleteSelection.length)
+        $deleteSelection.css('visibility', 'visible');
 }
 
 function hideEditDelete(id) {
-    if (jQuery('#del_' + id).length)
-        jQuery('#del_' + id).css('visibility', 'hidden');
+    let $deleteSelection = jQuery('#del_' + id);
+    if ($deleteSelection.length)
+        $deleteSelection.css('visibility', 'hidden');
 }
 
 function getNewMwMedia(form) {
-    var hsstring;
     var searchstring = form.searchstring.value;
 
     doSpinner(1);
@@ -181,7 +190,7 @@ function showMedia(req) {
 
 function doSpinner(id) {
     lastspinner = jQuery('#spinner' + id);
-    jQuery('#spinner' + id).show();
+    lastspinner.show();
 }
 
 function selectMedia(mediaID) {

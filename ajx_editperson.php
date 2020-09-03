@@ -1,8 +1,12 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
 
 require_once "./admin/associations.php";
+require_once "./admin/citations.php";
+require_once "./admin/events.php";
+require_once "./admin/notelinks.php";
 require_once "./admin/trees.php";
 require_once "./public/people.php";
 
@@ -56,36 +60,10 @@ $namestr = getName($row);
 
 $treerow = getTree($trees_table, $tree);
 
-$query = "SELECT DISTINCT eventID as eventID FROM $notelinks_table WHERE persfamID=\"$personID\" AND gedcom =\"$tree\"";
-$notelinks = tng_query($query);
-$gotnotes = array();
-while ($note = tng_fetch_assoc($notelinks)) {
-    if (!$note['eventID']) {
-        $note['eventID'] = "general";
-    }
-    $gotnotes[$note['eventID']] = "*";
-}
-tng_free_result($notelinks);
-
-$citquery = "SELECT DISTINCT eventID FROM $citations_table WHERE persfamID = \"$personID\" AND gedcom = \"$tree\"";
-$citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
-$gotcites = array();
-while ($cite = tng_fetch_assoc($citresult)) {
-    if (!$cite['eventID']) {
-        $cite['eventID'] = "general";
-    }
-    $gotcites[$cite['eventID']] = "*";
-}
-tng_free_result($citresult);
-
+$gotnotes = checkForNoteLinks($personID, $tree);
+$gotcites = checkForCitations($personID, $tree);
 $gotassoc = checkForAssociations($personID, $tree);
-
-$query = "SELECT parenttag FROM $events_table WHERE persfamID=\"$personID\" AND gedcom =\"$tree\"";
-$morelinks = tng_query($query);
-$gotmore = array();
-while ($more = tng_fetch_assoc($morelinks)) {
-    $gotmore[$more['parenttag']] = "*";
-}
+$gotmore = checkForEvents($personID, $tree);
 
 $photo = showSmallPhoto($personID, $namestr, 1, 0, false, $row['sex']);
 header("Content-type:text/html; charset=" . $session_charset);
@@ -94,10 +72,12 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="form1" id="form1" onsubmit="return updatePerson(this, <?php echo $slot; ?>);">
-    <table width="100%" cellpadding="10" cellspacing="0">
+    <table width="100%" cellpadding="10" cellspacing="2">
         <tr class="databack">
             <td class="tngbotshadow">
-                <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+                <div style="float:right">
+                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
+                </div>
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
                         <td valign="top">
@@ -106,33 +86,30 @@ include_once "eventlib.php";
                             } ?>"><?php echo $photo; ?></div>
                         </td>
                         <td>
-				<span class="plainheader"><?php echo "$namestr ($personID)</span><br>" . getYears($row); ?>
-				<div class="topbuffer bottombuffer smallest">
-<?php
-if ($editconflict) {
-    echo "<br><p>{$admtext['editconflict']}</p>";
-} else {
-    $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
-    $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
-    $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
-    echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-    echo "<a href=\"#\" onclick=\"return showNotes('', '$personID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
-    echo "<a href=\"#\" onclick=\"return showCitations('', '$personID');\" id=\"citesicon\" class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
-    echo "<a href=\"#\" onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
-}
-?>
-                <br clear="all">
-				</div>
-				<span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+				            <span class="plainheader"><?php echo "$namestr ($personID)</span><br>" . getYears($row); ?>
+				            <div class="topbuffer bottombuffer smallest">
+                                <?php
+                                if ($editconflict) {
+                                    echo "<br><p>{$admtext['editconflict']}</p>";
+                                } else {
+                                    $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
+                                    $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
+                                    $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
+                                    echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+                                    echo "<a href=\"#\" onclick=\"return showNotes('', '$personID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+                                    echo "<a href=\"#\" onclick=\"return showCitations('', '$personID');\" id=\"citesicon\" class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
+                                    echo "<a href=\"#\" onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
+                                }
+                                ?>
+                                <br clear="all">
+				            </div>
+				            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <?php
-
-        if (!$editconflict) {
-        ?>
+        <?php if (!$editconflict) { ?>
         <tr class="databack">
             <td class="tngbotshadow">
                 <?php echo displayToggle("plus0", 1, "names", $admtext['name'], ""); ?>
@@ -161,8 +138,12 @@ if ($editconflict) {
                                 <?php
                                 $notesicon = $cms['tngpath'] . "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
                                 $citesicon = $cms['tngpath'] . "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
-                                echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\"><img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" $dims id=\"notesiconNAME\" class=\"smallicon\"></a>\n";
-                                echo "<a href=\"#\" onclick=\"return showCitations('NAME','$personID');\"><img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" $dims id=\"citesiconNAME\" class=\"smallicon\"></a>\n";
+                                echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\">\n";
+                                echo "<img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" width=\"20\" height=\"20\" id=\"notesiconNAME\" class=\"smallicon\">\n";
+                                echo "</a>\n";
+                                echo "<a href=\"#\" onclick=\"return showCitations('NAME','$personID');\">\n";
+                                echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width=\"20\" height=\"20\" id=\"citesiconNAME\" class=\"smallicon\">\n";
+                                echo "</a>\n";
                                 ?>
                             </td>
                         </tr>
@@ -347,7 +328,7 @@ if ($editconflict) {
                     while ($parent = tng_fetch_assoc($parents))
                     {
                     $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, prefix, suffix, nameorder, people.living, people.private, people.branch ";
-                    $query .= "FROM {$people_table} as people, {$families_table} as families ";
+                    $query .= "FROM {$people_table} people, {$families_table} families ";
                     $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
                     $gotfather = tng_query($query);
 
@@ -404,7 +385,7 @@ if ($editconflict) {
     }
 
     $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, prefix, suffix, nameorder, people.living, people.private, people.branch ";
-    $query .= "FROM {$people_table} as people, {$families_table} as families ";
+    $query .= "FROM {$people_table} people, {$families_table} families ";
     $query .= "WHERE people.personID = families.wife AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
     $gotmother = tng_query($query);
 
@@ -458,8 +439,16 @@ if ($editconflict) {
         echo "<td valign=\"top\" class=\"nw\" style=\"width:110px\">" . $admtext['SLGC'] . ":</td>\n";
         echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
         echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
-        echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\"><img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" $dims class=\"smallicon\"></a></td>\n";
-        echo "<td><a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\"><img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" $dims id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\"></a></td>\n";
+        echo "<td>\n";
+        echo "<a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
+        echo "<img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width=\"20\" height=\"20\" class=\"smallicon\">\n";
+        echo "</a>\n";
+        echo "</td>\n";
+        echo "<td>\n";
+        echo "<a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\">\n";
+        echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width=\"20\" height=\"20\" id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
+        echo "</a>\n";
+        echo "</td>\n";
         echo "</tr>\n</table>\n";
     } else {
         ?>

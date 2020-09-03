@@ -324,7 +324,7 @@ tng_adminheader($admtext['merge'], $flags);
     var tnglitbox;
 
     function validateForm() {
-        var rval = true;
+        let rval = true;
 
         if (document.form1.repoID1.value == '' || document.form1.repoID2.value == '' || document.form1.repoID1.value == document.form1.repoID2.value)
             rval = false;

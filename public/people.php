@@ -54,6 +54,28 @@ function fetchAndCleanPersonRow(?string &$personID, string $people_table, string
 }
 
 /**
+ * @param string $people_table
+ * @param $passocID
+ * @param array $tree
+ * @return string
+ */
+function fetchPersonNameWithRights(string $people_table, $passocID, array $tree): string {
+    $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, living, private, branch ";
+    $query .= "FROM {$people_table} ";
+    $query .= "WHERE personID=\"{$passocID}\" AND gedcom=\"{$tree}\"";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $righttree = checktree($tree);
+    $rightbranch = $righttree ? checkbranch($row['branch']) : false;
+    $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
+    $row['allow_living'] = $rights['living'];
+    $row['allow_private'] = $rights['private'];
+    $name = getName($row) . " ($passocID)";
+    tng_free_result($result);
+    return $name;
+}
+
+/**
  * @param bool $both true if user has both living and private rights to person information
  * @param array $person
  * @return array

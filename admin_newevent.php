@@ -1,4 +1,5 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
 $textpart = "events";
@@ -14,18 +15,18 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow">
     <p class="subhead"><strong><?php echo $admtext['addnewevent']; ?></strong> |
         <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/events_help.php');"><?php echo $admtext['help']; ?></a></p>
-  <?php
-  if ($message) {
-    ?>
-      <span class="normal red"><em><?php echo urldecode($message); ?></em>
-	</span>
     <?php
-  }
-  ?>
-  <form action="" method="post" name="form1" id="form1" onSubmit="return addEvent(this);">
-    <table cellpadding="2" class="normal">
-      <tr>
-        <td valign="top"><span class="normal"><?php echo $admtext['eventtype']; ?>:</span></td>
+    if ($message) {
+        ?>
+        <span class="normal red"><em><?php echo urldecode($message); ?></em>
+	</span>
+        <?php
+    }
+    ?>
+    <form action="" method="post" name="form1" id="form1" onSubmit="return addEvent(this);">
+        <table cellpadding="2" class="normal">
+            <tr>
+                <td valign="top"><span class="normal"><?php echo $admtext['eventtype']; ?>:</span></td>
                 <td>
 			<span class="normal">
 			<select name="eventtypeID" id="eventtypeID">
@@ -36,48 +37,52 @@ $evresult = tng_query($query);
 
 $events = array();
 while ($eventtype = tng_fetch_assoc($evresult)) {
-  $display = getEventDisplay($eventtype['display']);
-  $option = $display . ($eventtype['tag'] != "EVEN" ? " ({$eventtype['tag']})" : "");
-  $optionlen = strlen($option);
-  $option = substr($option, 0, 40);
-  if ($optionlen > strlen($option)) {
-    $option .= "&hellip;";
-  }
-  $events[$display] = "<option value=\"{$eventtype['eventtypeID']}\">$option</option>\n";
+    $display = getEventDisplay($eventtype['display']);
+    $option = $display . ($eventtype['tag'] != "EVEN" ? " ({$eventtype['tag']})" : "");
+    $optionlen = strlen($option);
+    $option = substr($option, 0, 40);
+    if ($optionlen > strlen($option)) {
+        $option .= "&hellip;";
+    }
+    $events[$display] = "<option value=\"{$eventtype['eventtypeID']}\">$option</option>\n";
 }
 tng_free_result($evresult);
 
 ksort($events);
 foreach ($events as $event)
-  echo $event;
+    echo $event;
 ?>
 			</select>
 			</span>
                 </td>
             </tr>
-          <tr>
-            <td><?php echo $admtext['eventdate']; ?>:</td>
-            <td><input type="text" name="eventdate" onBlur="checkDate(this);"> <span class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
-          </tr>
-          <tr>
-            <td><?php echo $admtext['eventplace']; ?>:</td>
-            <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-              <a href="#" onclick="return openFindPlaceForm('eventplace');"><img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" <?php echo $dims; ?>></a></td>
-          </tr>
-          <tr>
-            <td valign="top"><?php echo $admtext['detail']; ?>:</td>
-            <td><textarea name="info" rows="4" cols="40"></textarea></td>
-          </tr>
-          <tr>
-            <td colspan="2"><strong><?php echo $admtext['dupfor']; ?>:</strong></td>
-          </tr>
-          <tr>
-            <td><?php echo $admtext['id']; ?>:</td>
+            <tr>
+                <td><?php echo $admtext['eventdate']; ?>:</td>
+                <td><input type="text" name="eventdate" onBlur="checkDate(this);"> <span class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
+            </tr>
+            <tr>
+                <td><?php echo $admtext['eventplace']; ?>:</td>
+                <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                    <a href="#" onclick="return openFindPlaceForm('eventplace');">
+                        <img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top"><?php echo $admtext['detail']; ?>:</td>
+                <td><textarea name="info" rows="4" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong><?php echo $admtext['dupfor']; ?>:</strong></td>
+            </tr>
+            <tr>
+                <td><?php echo $admtext['id']; ?>:</td>
                 <td>
                     <table class="normal" cellpadding="0">
                         <tr>
                             <td><input type="text" name="dupIDs" id="dupIDs" class="medfield"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
-                            <td><a href="#" onclick="return findItem('<?php echo $prefix; ?>','dupIDs','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+                            <td><a href="#" onclick="return findItem('<?php echo $prefix; ?>','dupIDs','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');"
+                                   title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                         </tr>
                     </table>
                 </td>
@@ -87,12 +92,12 @@ foreach ($events as $event)
                 <td>(<?php echo $admtext['commas']; ?>)</td>
             </tr>
         </table>
-      <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
-    <br>
-    <div id="more" style="display:none">
-      <table cellpadding="2" class="normal">
-        <tr>
-          <td><?php echo $admtext['age']; ?>:</td>
+        <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
+        <br>
+        <div id="more" style="display:none">
+            <table cellpadding="2" class="normal">
+                <tr>
+                    <td><?php echo $admtext['age']; ?>:</td>
                     <td><input type="text" name="age" size="12" maxlength="12"></td>
                 </tr>
                 <tr>
@@ -137,15 +142,15 @@ foreach ($events as $event)
                 </tr>
                 <tr>
                     <td><?php echo $admtext['website']; ?>:</td>
-                  <td><input type="text" name="www" size="50"></td>
+                    <td><input type="text" name="www" size="50"></td>
                 </tr>
-        </table>
-        <br>
-      </div>
-      <input type="hidden" name="persfamID" value="<?php echo $persfamID; ?>">
+            </table>
+            <br>
+        </div>
+        <input type="hidden" name="persfamID" value="<?php echo $persfamID; ?>">
         <input type="hidden" name="tree" value="<?php echo $tree; ?>">
         <input type="submit" class="btn" name="submit" value="<?php echo $admtext['save']; ?>">
         <input type="button" class="btn" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();">
     </form>
-  <br>
+    <br>
 </div>

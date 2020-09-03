@@ -95,7 +95,7 @@ tng_adminheader($admtext['notes'], $flags);
 ?>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         if (document.form1.searchstring.value.length == 0) {
             alert("<?php echo $admtext['entersearchvalue']; ?>");
             rval = false;
@@ -120,7 +120,7 @@ tng_adminheader($admtext['notes'], $flags);
 <body background="img/background.gif">
 
 <?php
-$misctabs[0] = array(1, "admin_notelist.php", $admtext['notes'], "notes");
+$misctabs[0] = [1, "admin_notelist.php", $admtext['notes'], "notes"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/notes2_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($misctabs, "notes", $innermenu);
 echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);

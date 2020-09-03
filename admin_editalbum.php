@@ -27,22 +27,20 @@ $query2 = "SELECT albumlinkID, thumbpath, $media_table.mediaID as mediaID, useco
 $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
 $numrows = tng_num_rows($result2);
 
-$query3 = "SELECT alinkID, entityID, eventID, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.suffix as suffix, people.nameorder as nameorder, ate.gedcom, treename,
-	familyID, people.personID as personID, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder,
-	husbpeople.personID as hpersonID, husbpeople.firstname as hfirstname, husbpeople.lnprefix as hlnprefix, husbpeople.lastname as hlastname, husbpeople.prefix as hprefix, husbpeople.suffix as hsuffix, husbpeople.nameorder as hnameorder,
-	sourceID, sources.title, repositories.repoID as repoID, reponame, linktype
-	FROM ($album2entities_table as ate, $trees_table)
-	LEFT JOIN $people_table AS people ON ate.entityID = people.personID AND ate.gedcom = people.gedcom
-	LEFT JOIN $families_table ON ate.entityID = $families_table.familyID AND ate.gedcom = $families_table.gedcom
-	LEFT JOIN $sources_table AS sources ON ate.entityID = sources.sourceID AND ate.gedcom = sources.gedcom
-	LEFT JOIN $repositories_table AS repositories ON ate.entityID = repositories.repoID AND ate.gedcom = repositories.gedcom
-	LEFT JOIN $people_table AS husbpeople ON $families_table.husband = husbpeople.personID AND $families_table.gedcom = husbpeople.gedcom
-	LEFT JOIN $people_table AS wifepeople ON $families_table.wife = wifepeople.personID AND $families_table.gedcom = wifepeople.gedcom
-	WHERE albumID = \"$albumID\" AND ate.gedcom = $trees_table.gedcom 
-	UNION
-	SELECT alinkID, entityID, eventID, null, null, null, null, null, gedcom, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, linktype 
-	FROM $album2entities_table WHERE albumID = \"$albumID\" AND gedcom=\"\"
-	ORDER BY alinkID DESC";
+$query3 = "SELECT alinkID, entityID, eventID, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.suffix as suffix, people.nameorder as nameorder, ate.gedcom, treename, familyID, people.personID as personID, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder, husbpeople.personID as hpersonID, husbpeople.firstname as hfirstname, husbpeople.lnprefix as hlnprefix, husbpeople.lastname as hlastname, husbpeople.prefix as hprefix, husbpeople.suffix as hsuffix, husbpeople.nameorder as hnameorder, sourceID, sources.title, repositories.repoID as repoID, reponame, linktype ";
+$query3 .= "FROM ($album2entities_table as ate, $trees_table trees) ";
+$query3 .= "LEFT JOIN $people_table people ON ate.entityID = people.personID AND ate.gedcom = people.gedcom ";
+$query3 .= "LEFT JOIN $families_table families ON ate.entityID = families.familyID AND ate.gedcom = families.gedcom ";
+$query3 .= "LEFT JOIN $sources_table sources ON ate.entityID = sources.sourceID AND ate.gedcom = sources.gedcom ";
+$query3 .= "LEFT JOIN $repositories_table repositories ON ate.entityID = repositories.repoID AND ate.gedcom = repositories.gedcom ";
+$query3 .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
+$query3 .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
+$query3 .= "WHERE albumID = \"$albumID\" AND ate.gedcom = trees.gedcom ";
+$query3 .= "UNION ";
+$query3 .= "SELECT alinkID, entityID, eventID, null, null, null, null, null, gedcom, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, linktype ";
+$query3 .= "FROM $album2entities_table ";
+$query3 .= "WHERE albumID = \"$albumID\" AND gedcom=\"\" ";
+$query3 .= "ORDER BY alinkID DESC";
 $result3 = tng_query($query3) or die ($admtext['cannotexecutequery'] . ": $query3");
 $numlinks = tng_num_rows($result3);
 

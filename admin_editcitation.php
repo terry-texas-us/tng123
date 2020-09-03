@@ -6,7 +6,9 @@ include "$mylanguage/admintext.php";
 
 include $cms['tngpath'] . "checklogin.php";
 
-$query = "SELECT $citations_table.sourceID as sourceID, description, page, quay, citedate, citetext, note, title, $citations_table.gedcom as gedcom FROM $citations_table LEFT JOIN $sources_table on $citations_table.sourceID = $sources_table.sourceID AND $sources_table.gedcom = $citations_table.gedcom WHERE citationID = \"$citationID\"";
+$query = "SELECT citations.sourceID AS sourceID, description, page, quay, citedate, citetext, note, title, citations.gedcom AS gedcom ";
+$query .= "FROM $citations_table citations ";
+$query .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom WHERE citationID = \"$citationID\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -21,33 +23,36 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 <form action="" name="citeform3" onsubmit="return updateCitation(this);">
     <div style="float:right;text-align:center">
-        <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+        <input class="btn" name="submit" type="submit" value="<?php echo $admtext['save']; ?>">
         <p><a href="#" onclick="return gotoSection('editcitation','citations');"><?php echo $text['cancel']; ?></a></p>
     </div>
     <p class="subhead"><strong><?php echo $admtext['modifycite']; ?></strong> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></p>
+        <a href="#"
+           onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
+    </p>
 
-  <table cellpadding="2" class="normal">
-    <?php
-      if ($row['sourceID']) {
-        ?>
-        <tr>
-          <td valign="top"><?php echo $admtext['source']; ?>:</td>
-          <td>
-            <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"> &nbsp;<?php echo $admtext['text_or']; ?> &nbsp;
-            <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
-            <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return initNewItem('source', document.newsourceform.sourceID, 'sourceID2', 'sourceTitle2', 'editcitation','newsource');">
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td id="sourceTitle2"><?php echo $row['title']; ?></td>
-        </tr>
+    <table cellpadding="2" class="normal">
         <?php
-      } else {
-        echo "<tr><td>{$admtext['description']}:</td><td><input type=\"text\" name=\"description\" value=\"{$row['description']}\"><input type=\"hidden\" name=\"sourceID\" value=\"\"></td>\n";
-      }
-      ?>
+        if ($row['sourceID']) {
+            ?>
+            <tr>
+                <td valign="top"><?php echo $admtext['source']; ?>:</td>
+                <td>
+                    <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"> &nbsp;<?php echo $admtext['text_or']; ?> &nbsp;
+                    <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
+                    <input type="button" value="<?php echo $admtext['create']; ?>"
+                           onclick="return initNewItem('source', document.newsourceform.sourceID, 'sourceID2', 'sourceTitle2', 'editcitation','newsource');">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="sourceTitle2"><?php echo $row['title']; ?></td>
+            </tr>
+            <?php
+        } else {
+            echo "<tr><td>{$admtext['description']}:</td><td><input type=\"text\" name=\"description\" value=\"{$row['description']}\"><input type=\"hidden\" name=\"sourceID\" value=\"\"></td>\n";
+        }
+        ?>
         <tr>
             <td valign="top"><?php echo $admtext['page']; ?>:</td>
             <td><input type="text" name="citepage" value="<?php echo $row['page']; ?>" size="60"></td>
@@ -58,19 +63,19 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <select name="quay">
                     <option value=""></option>
                     <option value="0"<?php if ($row['quay'] == "0") {
-                      echo " selected";
+                        echo " selected";
                     } ?>>0
                     </option>
                     <option value="1"<?php if ($row['quay'] == "1") {
-                      echo " selected";
+                        echo " selected";
                     } ?>>1
                     </option>
                     <option value="2"<?php if ($row['quay'] == "2") {
-                      echo " selected";
+                        echo " selected";
                     } ?>>2
                     </option>
                     <option value="3"<?php if ($row['quay'] == "3") {
-                      echo " selected";
+                        echo " selected";
                     } ?>>3
                     </option>
                 </select> <span class="normal">(<?php echo $admtext['relyexplain']; ?>)</span>

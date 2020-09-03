@@ -31,7 +31,7 @@ tng_adminheader($admtext['modifygroup'], $flags);
 <script type="text/javascript" src="js/selectutils.js"></script>
 <script type="text/javascript">
     function validateForm() {
-        var rval = true;
+        let rval = true;
         var form = document.form1;
 
         if (form1.description.value.length == 0) {

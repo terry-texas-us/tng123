@@ -13,15 +13,17 @@ include $cms['tngpath'] . "log.php";
 header("Content-Type: application/json; charset=" . $session_charset);
 
 //get family
-$query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+$query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch ";
+$query .= "FROM {$families_table} ";
+$query .= "WHERE familyID = \"{$familyID}\" AND gedcom = \"{$tree}\"";
 $result = tng_query($query);
 $famrow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
-  tng_free_result($result);
-  echo "{\"error\":\"No one in database with that ID and tree\"}";
-  exit;
+    tng_free_result($result);
+    echo "{\"error\":\"No one in database with that ID and tree\"}";
+    exit;
 } else {
-  tng_free_result($result);
+    tng_free_result($result);
 }
 
 echo "{\n";
@@ -41,77 +43,81 @@ writelog($logstring);
 $family = "\"id\":\"{$famrow['familyID']}\",\"tree\":\"{$famrow['gedcom']}\"";
 //get husband & spouses
 if ($famrow['husband']) {
-  $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"$tree\"";
-  $result = tng_query($query);
-  $husbrow = tng_fetch_assoc($result);
+    $query = "SELECT * ";
+    $query .= "FROM {$people_table} ";
+    $query .= "WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"{$tree}\"";
+    $result = tng_query($query);
+    $husbrow = tng_fetch_assoc($result);
 
-  $hrights = determineLivingPrivateRights($husbrow, $righttree);
-  $husbrow['allow_living'] = $hrights['living'];
-  $husbrow['allow_private'] = $hrights['private'];
+    $hrights = determineLivingPrivateRights($husbrow, $righttree);
+    $husbrow['allow_living'] = $hrights['living'];
+    $husbrow['allow_private'] = $hrights['private'];
 
-  $events = array();
-  $family .= ",\"father\":{" . api_person($husbrow, $fullevents) . "}";
-  tng_free_result($result);
+    $events = [];
+    $family .= ",\"father\":{" . api_person($husbrow, $fullevents) . "}";
+    tng_free_result($result);
 }
 
 //get wife & spouses
 if ($famrow['wife']) {
-  $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"$tree\"";
-  $result = tng_query($query);
-  $wiferow = tng_fetch_assoc($result);
+    $query = "SELECT * ";
+    $query .= "FROM {$people_table} ";
+    $query .= "WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"{$tree}\"";
+    $result = tng_query($query);
+    $wiferow = tng_fetch_assoc($result);
 
-  $wrights = determineLivingPrivateRights($wiferow, $righttree);
-  $wiferow['allow_living'] = $wrights['living'];
-  $wiferow['allow_private'] = $wrights['private'];
+    $wrights = determineLivingPrivateRights($wiferow, $righttree);
+    $wiferow['allow_living'] = $wrights['living'];
+    $wiferow['allow_private'] = $wrights['private'];
 
-  $events = array();
-  $family .= ",\"mother\":{" . api_person($wiferow, $fullevents) . "}";
-  tng_free_result($result);
+    $events = [];
+    $family .= ",\"mother\":{" . api_person($wiferow, $fullevents) . "}";
+    tng_free_result($result);
 }
 
-$events = array();
+$events = [];
 if ($rights['both']) {
-  setMinEvent(array("date" => $famrow['marrdate'], "place" => $famrow['marrplace'], "event" => "MARR"), $famrow['marrdatetr']);
-  setMinEvent(array("date" => $famrow['divdate'], "place" => $famrow['divplace'], "event" => "DIV"), $famrow['divdatetr']);
+    setMinEvent(["date" => $famrow['marrdate'], "place" => $famrow['marrplace'], "event" => "MARR"], $famrow['marrdatetr']);
+    setMinEvent(["date" => $famrow['divdate'], "place" => $famrow['divplace'], "event" => "DIV"], $famrow['divdatetr']);
 
-  if ($fullevents && $rights['lds']) {
-    setMinEvent(array("date" => $famrow['sealdate'], "place" => $famrow['sealplace'], "event" => "SLGS"), $famrow['sealdatetr']);
-  }
+    if ($fullevents && $rights['lds']) {
+        setMinEvent(["date" => $famrow['sealdate'], "place" => $famrow['sealplace'], "event" => "SLGS"], $famrow['sealdatetr']);
+    }
 
-  if ($fullevents) {
-    doCustomEvents($familyID, "F");
-  }
+    if ($fullevents) {
+        doCustomEvents($familyID, "F");
+    }
 }
 $eventstr = processEvents($events);
 if ($eventstr) {
-  $family .= "," . $eventstr;
+    $family .= "," . $eventstr;
 }
 
 //for each child
 $query = "SELECT $people_table.personID as personID, branch, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, famc, sex, birthdate, birthplace,
-	altbirthdate, altbirthplace, haskids, deathdate, deathplace, burialdate, burialplace, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace, sealdate, sealplace
-	FROM $people_table, $children_table
-	WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"{$famrow['familyID']}\" AND $people_table.gedcom = \"$tree\" AND
-	$children_table.gedcom = \"$tree\" ORDER BY ordernum";
+	altbirthdate, altbirthplace, haskids, deathdate, deathplace, burialdate, burialplace, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace, sealdate, sealplace ";
+$query .= "FROM {$people_table} people, {$children_table} children";
+$query .= "WHERE people.personID = children.personID AND children.familyID = \"{$famrow['familyID']}\" AND people.gedcom = \"{$tree}\" AND children.gedcom = \"{$tree}\" ";
+$query .= "ORDER BY ordernum";
 $children = tng_query($query);
 
 if ($children && tng_num_rows($children)) {
-  $childcount = 0;
-  $family .= ",\"children\":[";
-  while ($childrow = tng_fetch_assoc($children)) {
-    if ($childcount) {
-      $family .= ",";
+    $childcount = 0;
+    $family .= ",\"children\":[";
+    while ($childrow = tng_fetch_assoc($children)) {
+        if ($childcount) {
+            $family .= ",";
+        }
+        $childcount++;
+
+        $crights = determineLivingPrivateRights($childrow, $righttree);
+        $childrow['allow_living'] = $crights['living'];
+        $childrow['allow_private'] = $crights['private'];
+
+        $events = [];
+        $family .= "{" . api_person($childrow, $fullevents) . "}";
     }
-    $childcount++;
-
-    $crights = determineLivingPrivateRights($childrow, $righttree);
-    $childrow['allow_living'] = $crights['living'];
-    $childrow['allow_private'] = $crights['private'];
-
-    $events = array();
-    $family .= "{" . api_person($childrow, $fullevents) . "}";
-  }
-  $family .= "]";
+    $family .= "]";
 }
 tng_free_result($children);
 

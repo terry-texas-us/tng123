@@ -64,7 +64,8 @@ function tng_header($title, $flags) {
     header("Content-type:text/html;charset=" . $session_charset);
     echo !empty($tngconfig['doctype']) ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
     if (!$cms['support']) {
-        echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n";
+        echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+        echo "<head>\n";
     } else {
         echo $cms['credits'];
     }
@@ -588,7 +589,7 @@ function tng_getLeftIcons() {
             $editprofile_url = getURL("ajx_editprofile", 1);
             $profilelink = tng_smallIcon(array('label' => ($sitever == "mobile" ? $text['editprofile'] : "({$text['editprofile']}: $currentuser)"),
                 'class' => "tngsmallicon3", 'id' => "profile",
-                'onclick' => "tnglitbox = new LITBox('{$editprofile_url}p=" . urlencode($cms['tngpath']) . "',{width:520,height:560}); return false"));
+                'onclick' => "tnglitbox = new LITBox('{$editprofile_url}p=" . urlencode($cms['tngpath']) . "',{width:520, height:560}); return false"));
             $tngconfig['menucount']++;
         } else {
             $userparen = " ($currentuser)";
@@ -633,7 +634,7 @@ function tng_getRightIcons() {
     }
 
     if (empty($tngconfig['showbmarks']) && $gotlastpage) {
-        $right_icons .= tng_smallIcon(array('label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('{$addbookmark_url}p=" . urlencode($cms['tngpath']) . "',{width:350,height:100}); return false;"));
+        $right_icons .= tng_smallIcon(array('label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('{$addbookmark_url}p=" . urlencode($cms['tngpath']) . "', {width:350, height:100}); return false;"));
         $tngconfig['menucount']++;
     }
 

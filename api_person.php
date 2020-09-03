@@ -12,16 +12,17 @@ include $cms['tngpath'] . "log.php";
 
 header("Content-Type: application/json; charset=" . $session_charset);
 
-$query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate
-	FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+$query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate ";
+$query .= "FROM {$people_table} ";
+$query .= "WHERE personID = \"{$personID}\" AND gedcom = \"{$tree}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
-  tng_free_result($result);
-  echo "{\"error\":\"No one in database with that ID and tree\"}";
-  exit;
+    tng_free_result($result);
+    echo "{\"error\":\"No one in database with that ID and tree\"}";
+    exit;
 } else {
-  tng_free_result($result);
+    tng_free_result($result);
 }
 
 echo "{\n";

@@ -8,15 +8,15 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_media_add || $assignedtree) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
@@ -30,16 +30,16 @@ $standardtypes = array();
 $moptions = "";
 $likearray = "var like = new Array();\n";
 foreach ($mediatypes as $mediatype) {
-  if (!$mediatype['type']) {
-    $standardtypes[] = "\"" . $mediatype['ID'] . "\"";
-  }
-  $msgID = $mediatype['ID'];
-  $moptions .= "	<option value=\"$msgID\"";
-  if ($msgID == $mediatypeID) {
-    $moptions .= " selected";
-  }
-  $moptions .= ">" . $mediatype['display'] . "</option>\n";
-  $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
+    if (!$mediatype['type']) {
+        $standardtypes[] = "\"" . $mediatype['ID'] . "\"";
+    }
+    $msgID = $mediatype['ID'];
+    $moptions .= "	<option value=\"$msgID\"";
+    if ($msgID == $mediatypeID) {
+        $moptions .= " selected";
+    }
+    $moptions .= ">" . $mediatype['display'] . "</option>\n";
+    $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
 }
 $sttypestr = implode(",", $standardtypes);
 ?>
@@ -60,30 +60,33 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_photoimporter.php" method="post" name="form1">
-        <table>
-          <tr>
-            <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_photoimporter.php" method="post" name="form1">
+                <table>
+                    <tr>
+                        <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
                         <td>
                             <select name="mediatypeID" onChange="switchOnType(this.options[this.selectedIndex].value)">
-                              <?php
-                              foreach ($mediatypes as $mediatype) {
-                                $msgID = $mediatype['ID'];
-                                echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
-                              }
-                              ?>
+                                <?php
+                                foreach ($mediatypes as $mediatype) {
+                                    $msgID = $mediatype['ID'];
+                                    echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
+                                }
+                                ?>
                             </select>
-                          <?php
-                          if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
-                            ?>
-                              <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop" onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID',{width:600,height:340});">
-                              <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none" onclick="editMediatype(document.form1.mediatypeID);">
-                              <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none" onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                             <?php
-                          }
-                          ?>
+                            if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
+                                ?>
+                                <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
+                                       onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
+                                <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
+                                       onclick="editMediatype(document.form1.mediatypeID);">
+                                <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"
+                                       onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
+                                <?php
+                            }
+                            ?>
                         </td>
                     </tr>
                     <tr>
@@ -91,17 +94,17 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
                         <td>
                             <select name="tree">
                                 <option value=""></option>
-                              <?php
-                              $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                              while ($treerow = tng_fetch_assoc($treeresult)) {
-                                echo "	<option value=\"{$treerow['gedcom']}\"";
-                                if ($treerow['gedcom'] == $tree) {
-                                  echo " selected";
+                                <?php
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    echo "	<option value=\"{$treerow['gedcom']}\"";
+                                    if ($treerow['gedcom'] == $tree) {
+                                        echo " selected";
+                                    }
+                                    echo ">{$treerow['treename']}</option>\n";
                                 }
-                                echo ">{$treerow['treename']}</option>\n";
-                              }
-                              tng_free_result($treeresult);
-                              ?>
+                                tng_free_result($treeresult);
+                                ?>
                             </select>
                         </td>
                     </tr>
