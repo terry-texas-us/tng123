@@ -2,9 +2,9 @@
 function countChildren($tree, $familyID) {
   global $children_table;
 
-  $query = "SELECT count(ID) as ccount
+  $query = "SELECT count(ID) AS ccount
         FROM $children_table 
-        WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+        WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
 
   return tng_query($query);
 }
@@ -13,9 +13,9 @@ function countChildren($tree, $familyID) {
 function getChildrenMinimal($tree, $familyID) {
   global $children_table;
 
-  $query = "SELECT UPPER(personID) as personID
+  $query = "SELECT UPPER(personID) AS personID
         FROM $children_table
-        WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"
+        WHERE familyID = '$familyID' AND gedcom = \"$tree\"
         ORDER BY ordernum";
 
   return tng_query($query);
@@ -25,9 +25,9 @@ function getChildrenMinimal($tree, $familyID) {
 function getChildrenMinimalExcept($tree, $familyID, $personID) {
   global $children_table;
 
-  $query = "SELECT UPPER(personID) as personID
+  $query = "SELECT UPPER(personID) AS personID
         FROM $children_table
-        WHERE familyID = \"$familyID\" AND personID != \"$personID\" AND gedcom = \"$tree\"
+        WHERE familyID = '$familyID' AND personID != \"$personID\" AND gedcom = \"$tree\"
         ORDER BY ordernum";
 
   return tng_query($query);
@@ -37,9 +37,9 @@ function getChildrenMinimalExcept($tree, $familyID, $personID) {
 function getChildrenMinimalPlusGender($tree, $familyID) {
   global $children_table, $people_table;
 
-  $query = "SELECT $children_table.personID as personID, sex
+  $query = "SELECT $children_table.personID AS personID, sex
         FROM ($children_table, $people_table)
-        WHERE familyID = \"$familyID\" AND $children_table.personID = $people_table.personID AND $children_table.gedcom = \"$tree\" AND $people_table.gedcom = \"$tree\"
+        WHERE familyID = '$familyID' AND $children_table.personID = $people_table.personID AND $children_table.gedcom = \"$tree\" AND $people_table.gedcom = \"$tree\"
         ORDER BY ordernum";
 
   return tng_query($query);
@@ -49,9 +49,9 @@ function getChildrenMinimalPlusGender($tree, $familyID) {
 function getChildrenSimple($tree, $familyID) {
   global $children_table, $people_table;
 
-  $query = "SELECT $people_table.personID as pID, $people_table.personID as personID, $people_table.gedcom as gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch
+  $query = "SELECT $people_table.personID AS pID, $people_table.personID AS personID, $people_table.gedcom AS gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch
         FROM ($children_table, $people_table)
-        WHERE familyID = \"$familyID\" AND $children_table.personID = $people_table.personID AND $children_table.gedcom = \"$tree\" AND $people_table.gedcom = \"$tree\"
+        WHERE familyID = '$familyID' AND $children_table.personID = $people_table.personID AND $children_table.gedcom = \"$tree\" AND $people_table.gedcom = \"$tree\"
         ORDER BY ordernum";
 
   return tng_query($query);
@@ -61,11 +61,11 @@ function getChildrenSimple($tree, $familyID) {
 function getChildrenData($tree, $familyID) {
   global $children_table, $people_table;
 
-  $query = "SELECT $people_table.personID as personID, $people_table.gedcom as gedcom, firstname, lnprefix, lastname, prefix, suffix, title, nameorder, 
+  $query = "SELECT $people_table.personID AS personID, $people_table.gedcom AS gedcom, firstname, lnprefix, lastname, prefix, suffix, title, nameorder, 
         birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, 
         haskids, sex, living, private, branch, frel, mrel
         FROM ($people_table, $children_table)
-        WHERE familyID = \"$familyID\" AND $people_table.personID = $children_table.personID AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\"
+        WHERE familyID = '$familyID' AND $people_table.personID = $children_table.personID AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\"
 		ORDER BY ordernum";
 
   return tng_query($query);
@@ -75,10 +75,10 @@ function getChildrenData($tree, $familyID) {
 function getChildrenDataPlusDates($tree, $familyID) {
   global $children_table, $people_table;
 
-  $query = "SELECT $people_table.personID as personID, $people_table.gedcom as gedcom, firstname, lnprefix, lastname, prefix, suffix, title, nameorder, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, burialdate, sex, living, private, branch, ordernum,
+  $query = "SELECT $people_table.personID AS personID, $people_table.gedcom AS gedcom, firstname, lnprefix, lastname, prefix, suffix, title, nameorder, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, burialdate, sex, living, private, branch, ordernum,
 			IF(birthdate!='',YEAR(birthdatetr),YEAR(altbirthdatetr)) as birth, IF(deathdate!='',YEAR(deathdatetr),YEAR(burialdatetr)) as death
 		FROM ($children_table, $people_table)
-		WHERE familyID = \"$familyID\" AND $children_table.personID = $people_table.personID AND $children_table.gedcom = \"$tree\" AND $people_table.gedcom = \"$tree\"
+		WHERE familyID = '$familyID' AND $children_table.personID = $people_table.personID AND $children_table.gedcom = \"$tree\" AND $people_table.gedcom = \"$tree\"
    		ORDER BY ordernum";
 
   return tng_query($query);
@@ -111,7 +111,7 @@ function getChildParentsFamily($tree, $personID) {
 function getChildParentsFamilyData($tree, $personID) {
   global $children_table, $families_table;
 
-  $query = "SELECT husband, wife, marrdate, marrdatetr, marrplace, divdate, divdatetr, divplace, $families_table.familyID as familyID
+  $query = "SELECT husband, wife, marrdate, marrdatetr, marrplace, divdate, divdatetr, divplace, $families_table.familyID AS familyID
         FROM ($families_table, $children_table)
         WHERE personID = \"$personID\" AND $children_table.gedcom = \"$tree\" AND $children_table.familyID = $families_table.familyID
         AND $children_table.gedcom = $families_table.gedcom";
@@ -123,7 +123,7 @@ function getChildParentsFamilyData($tree, $personID) {
 function getChildParentsFamilyMinimal($tree, $personID) {
   global $children_table, $families_table;
 
-  $query = "SELECT husband, wife, $families_table.familyID as familyID
+  $query = "SELECT husband, wife, $families_table.familyID AS familyID
         FROM ($families_table, $children_table)
 		WHERE personID = \"$personID\" AND $children_table.gedcom = \"$tree\" AND $children_table.familyID = $families_table.familyID
 		AND $children_table.gedcom = $families_table.gedcom";
@@ -136,7 +136,7 @@ function getParentData($tree, $familyID, $spouse) {
   global $people_table, $families_table;
 
   $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, title, nameorder, birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, marrdate, marrplace, people.living, people.private, people.branch, sex ";
-  $query .= "FROM ({$people_table} as people, {$families_table} as families) ";
+  $query .= "FROM ($people_table people, $families_table families) ";
   $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
 
   return tng_query($query);
@@ -146,8 +146,8 @@ function getParentData($tree, $familyID, $spouse) {
 function getParentDataCrossPlusDates($tree, $familyID, $spouse1, $spouse1ID, $spouse2) {
   global $people_table, $families_table;
 
-  $query = "SELECT people.gedcom, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, sex, people.living, people.private, people.branch, IF(birthdate!='',YEAR(birthdatetr),YEAR(altbirthdatetr)) as birth, IF(deathdate!='',YEAR(deathdatetr),YEAR(burialdatetr)) as death, people.gedcom ";
-  $query .= "FROM ({$families_table} as families, {$people_table} as people) ";
+  $query = "SELECT people.gedcom, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, sex, people.living, people.private, people.branch, IF(birthdate!='',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdate!='',YEAR(deathdatetr),YEAR(burialdatetr)) AS death, people.gedcom ";
+  $query .= "FROM ($families_table families, $people_table people) ";
   $query .= "WHERE {$spouse1} = \"{$spouse1ID}\" AND personID = {$spouse2} AND familyID = \"{$familyID}\" AND families.gedcom = \"{$tree}\" AND people.gedcom = \"{$tree}\"";
 
   return tng_query($query);
@@ -158,7 +158,7 @@ function getParentSimple($tree, $familyID, $spouse) {
   global $people_table, $families_table;
 
   $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, people.living, people.private, people.branch ";
-  $query .= "FROM ({$people_table} as people, {$families_table} as families) ";
+  $query .= "FROM ($people_table people, $families_table families) ";
   $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND families.gedcom = \"{$tree}\" AND people.gedcom = \"{$tree}\"";
 
   return tng_query($query);
@@ -168,8 +168,8 @@ function getParentSimple($tree, $familyID, $spouse) {
 function getParentSimplePlusDates($tree, $familyID, $spouse) {
   global $people_table, $families_table;
 
-  $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, YEAR(birthdatetr) as birthyear, deathdate, YEAR(deathdatetr) as deathyear, people.living, people.private, people.branch ";
-  $query .= "FROM ({$people_table} as people, {$families_table} as families) ";
+  $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, YEAR(birthdatetr) AS birthyear, deathdate, YEAR(deathdatetr) AS deathyear, people.living, people.private, people.branch ";
+  $query .= "FROM ($people_table people, $families_table families) ";
   $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND families.gedcom = \"{$tree}\" AND people.gedcom = \"{$tree}\"";
 
   return tng_query($query);
@@ -179,9 +179,9 @@ function getParentSimplePlusDates($tree, $familyID, $spouse) {
 function getFamilyMinimal($tree, $familyID) {
   global $families_table;
 
-  $query = "SELECT UPPER(husband) as husband, UPPER(wife) as wife
+  $query = "SELECT UPPER(husband) AS husband, UPPER(wife) AS wife
         FROM $families_table
-        WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+        WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
 
   return tng_query($query);
 }
@@ -192,7 +192,7 @@ function getFamilyData($tree, $familyID) {
 
   $query = "SELECT gedcom, husband, wife, living, private, branch, marrdate, marrdatetr, marrplace, divdate, divdatetr, divplace, familyID
         FROM $families_table
-        WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+        WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
 
   return tng_query($query);
 }
@@ -227,7 +227,7 @@ function getSpouseFamilyMinimalUnion($tree, $spouse1ID) {
 function getSpouseFamilyMinimalExcept($tree, $spouse1, $spouse1ID, $spouse2, $spouse2ID) {
   global $families_table;
 
-  $query = "SELECT familyID, UPPER(husband) as husband, UPPER(wife) as wife
+  $query = "SELECT familyID, UPPER(husband) AS husband, UPPER(wife) AS wife
         FROM $families_table
         WHERE $spouse1 = \"$spouse1ID\" AND $spouse2 != \"$spouse2ID\" AND gedcom = \"$tree\"";
 
@@ -295,7 +295,7 @@ function getSpouseFamilyDataUnionPlusDates($tree, $spouse1ID) {
 function getSpouseFamilyFull($tree, $spouse1, $spouse1ID, $spouseorder) {
   global $families_table;
 
-  $query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate
+  $query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") AS changedate
         FROM $families_table
         WHERE $spouse1 = \"$spouse1ID\" AND gedcom = \"$tree\"
         ORDER BY $spouseorder";
@@ -307,11 +307,11 @@ function getSpouseFamilyFull($tree, $spouse1, $spouse1ID, $spouseorder) {
 function getSpouseFamilyFullUnion($tree, $spouse1ID) {
   global $families_table;
 
-  $query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate, husborder as sporder
+  $query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") AS changedate, husborder AS sporder
         FROM $families_table
         WHERE husband = \"$spouse1ID\" AND gedcom = \"$tree\"
         UNION
-            SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate, wifeorder as sporder
+            SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") AS changedate, wifeorder AS sporder
             FROM $families_table
             WHERE wife = \"$spouse1ID\" AND gedcom = \"$tree\"
         ORDER BY sporder";
@@ -323,11 +323,11 @@ function getSpouseFamilyFullUnion($tree, $spouse1ID) {
 function getSpousesSimple($tree, $spouse1, $spouse1ID, $spouse2, $spouseorder) {
   global $families_table, $people_table;
 
-  $query = "SELECT UPPER($spouse2) as $spouse2, familyID, sex
-        FROM $families_table
-        LEFT JOIN $people_table ON $people_table.personID = $spouse2 AND $people_table.gedcom = \"$tree\"
-        WHERE $spouse1 = \"$spouse1ID\" AND $families_table.gedcom = \"$tree\"
-        ORDER BY $spouseorder";
+  $query = "SELECT UPPER($spouse2) AS $spouse2, familyID, sex ";
+  $query .= "FROM $families_table families ";
+  $query .= "LEFT JOIN $people_table people ON people.personID = $spouse2 AND people.gedcom = \"$tree\" ";
+  $query .= "WHERE $spouse1 = \"$spouse1ID\" AND families.gedcom = \"$tree\" ";
+  $query .= "ORDER BY $spouseorder";
 
   return tng_query($query);
 }
@@ -336,7 +336,7 @@ function getSpousesSimple($tree, $spouse1, $spouse1ID, $spouse2, $spouseorder) {
 function getPersonData($tree, $personID) {
   global $people_table;
 
-  $query = "SELECT UPPER(personID) as personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, title, nickname, sex, nameorder, living, private, branch,
+  $query = "SELECT UPPER(personID) AS personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, title, nickname, sex, nameorder, living, private, branch,
             birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, famc, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace
         FROM $people_table
         WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
@@ -362,7 +362,7 @@ function getPersonDataPlusDates($tree, $personID) {
 function getPersonFullPlusDates($tree, $personID) {
   global $people_table;
 
-  $query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate,
+  $query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") AS changedate,
         IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) as birth,
         IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) as death
         FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
@@ -374,7 +374,7 @@ function getPersonFullPlusDates($tree, $personID) {
 function getPersonGender($tree, $personID) {
   global $people_table;
 
-  $query = "SELECT sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+  $query = "SELECT sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
 
   return tng_query($query);
 }
@@ -394,7 +394,7 @@ function getPersonSimple($tree, $personID) {
 function getTreeSimple($tree) {
   global $trees_table;
 
-  $query = "SELECT gedcom, treename, disallowgedcreate, disallowpdf FROM $trees_table WHERE gedcom = \"$tree\"";
+  $query = "SELECT gedcom, treename, disallowgedcreate, disallowpdf FROM $trees_table WHERE gedcom = '$tree'";
 
   return tng_query($query);
 }
@@ -403,7 +403,7 @@ function getTreeSimple($tree) {
 function getBranchesSimple($tree, $branch) {
   global $branches_table;
 
-  $query = "SELECT description FROM $branches_table WHERE branch = \"$branch\" and gedcom = \"$tree\"";
+  $query = "SELECT description FROM $branches_table WHERE branch = \"$branch\" and gedcom = '$tree'";
 
   return tng_query($query);
 }
@@ -412,7 +412,7 @@ function getBranchesSimple($tree, $branch) {
 function getAssociations($tree, $personID) {
   global $assoc_table;
 
-  $query = "SELECT passocID, relationship, reltype FROM $assoc_table WHERE gedcom = \"$tree\" AND personID = \"$personID\"";
+  $query = "SELECT passocID, relationship, reltype FROM $assoc_table WHERE gedcom = '$tree' AND personID = \"$personID\"";
 
   return tng_query($query);
 }

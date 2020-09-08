@@ -8,7 +8,7 @@ echo help_header("Help: Branches");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="trees_help.php" class="lightlink">&laquo; Help: Trees</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Branches");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -47,7 +47,7 @@ echo help_header("Help: Branches");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="search"><p class="subheadbold">Search</p></a>
             <p>Locate existing Branches by searching for all or part of the <strong>Branch ID</strong> or <strong>Description</strong>. Select a Tree to further narrow your search.
                 Searching with no options selected and no value in the search box will find all Branches in your database.</p>
@@ -64,7 +64,7 @@ echo help_header("Help: Branches");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Add New / Edit Existing Branches</p></a>
             <p>To add a new Branch, click on the <strong>Add New</strong> tab, then fill out the form.
                 Take note of the following:</p>
@@ -91,7 +91,7 @@ echo help_header("Help: Branches");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Branches</p></a>
             <p>To delete a Branch, use the <a href="#search">Search</a> tab to locate the Branch, then click on the Delete icon next to that Branch record. The row will
                 change color and then vanish as the Branch is deleted. To delete more than one Branch at a time, check the box in the Select column next to each Branch to be
@@ -102,7 +102,7 @@ echo help_header("Help: Branches");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="label"><p class="subheadbold">Labeling Branches</p></a>
             <p>To assign a branch label to individuals in your database, click on the <strong>Add labels</strong> button at the bottom of the Edit Branch page,
                 then follow the instructions in the window you see next. After selecting options, click the "Add labels" button at the bottom. Options on that page include:</p>

@@ -80,9 +80,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
                                 ?>
                                 <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                        onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
-                                <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
+                                <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                        onclick="editMediatype(document.form1.mediatypeID);">
-                                <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"
+                                <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                        onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                                 <?php
                             }
@@ -121,11 +121,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
 <script type="text/javascript">
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
-    var entercollid = "<?php echo $admtext['entercollid']; ?>";
-    var entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
-    var entercollipath = "<?php echo $admtext['entercollpath']; ?>";
-    var entercollicon = "<?php echo $admtext['entercollicon']; ?>";
-    var confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
+    const entercollid = "<?php echo $admtext['entercollid']; ?>";
+    const entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
+    const entercollipath = "<?php echo $admtext['entercollpath']; ?>";
+    const entercollicon = "<?php echo $admtext['entercollicon']; ?>";
+    const confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
     var stmediatypes = new Array(<?php echo $sttypestr; ?>);
     var allow_edit = <?php echo($allow_edit ? "1" : "0"); ?>;
     var allow_delete = <?php echo($allow_delete ? "1" : "0"); ?>;

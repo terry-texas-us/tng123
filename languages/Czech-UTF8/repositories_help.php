@@ -12,7 +12,7 @@ echo help_header("Nápověda: Úložiště pramenů");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="sources_help.php" class="lightlink">&laquo; Nápověda: Prameny</a> &nbsp; | &nbsp;
@@ -48,7 +48,7 @@ echo help_header("Nápověda: Úložiště pramenů");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nové úložiště pramenů</p></a>
             <p><strong>Úložiště pramenů</strong> je archív, sborník či kolekce pramenů, fyzická či jiná.</p>
 
@@ -81,7 +81,7 @@ echo help_header("Nápověda: Úložiště pramenů");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="edit"><p class="subheadbold">Upravit existující úložiště pramenů</p></a>
       <p>Chcete-li upravit existující úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté klikněte na ikonu Upravit vedle úložiště.</p>
 
@@ -106,7 +106,7 @@ echo help_header("Nápověda: Úložiště pramenů");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat úložiště pramenů</p></a>
             <p>Chcete-li odstranit úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté klikněte na ikonu Vymazat vedle tohoto úložiště. Tento řádek změní
                 barvu a poté po odstranění úložiště zmizí. Chcete-li najednou odstranit více úložišť pramenů, zaškrtněte políčko ve sloupci Vybrat vedle každého úložiště, který
@@ -117,7 +117,7 @@ echo help_header("Nápověda: Úložiště pramenů");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
 
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit úložiště pramenů, která jsou lehce odlišná, ale odkazují na stejný materiál.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>

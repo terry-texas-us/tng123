@@ -10,6 +10,7 @@ include "checklogin.php";
 include "version.php";
 $orgtree = $tree;
 $exptime = 0;
+
 if ($newsearch) {
     $searchstring = trim($searchstring);
     setcookie("tng_search_places_post[search]", $searchstring, $exptime);
@@ -67,14 +68,12 @@ if ($assignedtree && !$tngconfig['places1tree']) {
 }
 
 function addCriteria($field, $value, $operator) {
-    $criteria = "";
 
     if ($operator == "=") {
         $criteria = " OR $field $operator \"$value\"";
     } else {
         $criteria = " OR $field $operator \"%$value%\"";
     }
-
     return $criteria;
 }
 
@@ -86,46 +85,42 @@ if ($tree) {
 }
 
 if ($noevents) {
-    $allwhere .= " AND place
-		IN ( SELECT pl.place FROM $places_table AS pl
-			LEFT JOIN
-			(
-				SELECT birthplace AS place FROM $people_table
-				UNION
-				SELECT altbirthplace FROM $people_table
-				UNION
-				SELECT baptplace FROM $people_table
-				UNION
-				SELECT deathplace FROM $people_table
-				UNION
-				SELECT burialplace FROM $people_table
-				UNION ";
+    $allwhere .= " AND place IN (SELECT places.place ";
+    $allwhere .= "FROM $places_table places ";
+    $allwhere .= "LEFT JOIN ";
+    $allwhere .= "(SELECT birthplace AS place FROM $people_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT altbirthplace FROM $people_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT baptplace FROM $people_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT deathplace FROM $people_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT burialplace FROM $people_table ";
+    $allwhere .= "UNION ";
     if ($ldsdefault != "1") {
-        $allwhere .= " SELECT initplace FROM $people_table
-					UNION
-					SELECT confplace FROM $people_table
-					UNION
-					SELECT endlplace FROM $people_table
-					UNION
-					SELECT sealplace FROM $children_table
-					UNION
-					SELECT sealplace FROM $families_table
-					UNION ";
+        $allwhere .= "SELECT initplace FROM $people_table ";
+        $allwhere .= "UNION ";
+        $allwhere .= "SELECT confplace FROM $people_table ";
+        $allwhere .= "UNION ";
+        $allwhere .= "SELECT endlplace FROM $people_table ";
+        $allwhere .= "UNION ";
+        $allwhere .= "SELECT sealplace FROM $children_table ";
+        $allwhere .= "UNION ";
+        $allwhere .= "SELECT sealplace FROM $families_table ";
+        $allwhere .= "UNION ";
     }
-    $allwhere .= "	SELECT marrplace FROM $families_table
-				UNION
-				SELECT divplace FROM $families_table
-				UNION
-				SELECT eventplace FROM $events_table
-				UNION
-				SELECT place FROM $cemeteries_table
-				UNION
-				SELECT personID FROM $medialinks_table
-				WHERE linktype = \"L\"
-				) AS p
-				USING ( place )
-				WHERE  isnull( p.place ) ) 
-		";
+    $allwhere .= "SELECT marrplace FROM $families_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT divplace FROM $families_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT eventplace FROM $events_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT place FROM $cemeteries_table ";
+    $allwhere .= "UNION ";
+    $allwhere .= "SELECT personID FROM $medialinks_table ";
+    $allwhere .= "WHERE linktype = \"L\") AS p USING (place) ";
+    $allwhere .= "WHERE ISNULL(p.place))";
 }
 
 if ($nocoords) {
@@ -134,7 +129,6 @@ if ($nocoords) {
 if ($nolevel) {
     $allwhere .= " AND (placelevel IS NULL OR placelevel = \"\" OR placelevel = \"0\")";
 }
-
 
 if ($temples) {
     $allwhere .= " AND temple = 1";
@@ -157,16 +151,18 @@ $treename = $tngconfig['places1tree'] ? "" : ", treename";
 $query = "SET SQL_BIG_SELECTS=1";
 $result = tng_query($query);
 
-$query = "SELECT ID, place, placelevel, longitude, latitude, zoom, $places_table.gedcom as gedcom $treename 
-	FROM $places_table";
+$query = "SELECT ID, place, placelevel, longitude, latitude, zoom, places.gedcom AS gedcom $treename ";
+$query .= "FROM $places_table places";
 if (!$tngconfig['places1tree']) {
-    $query .= " LEFT JOIN $trees_table ON $places_table.gedcom = $trees_table.gedcom";
+    $query .= " LEFT JOIN $trees_table trees ON places.gedcom = trees.gedcom";
 }
-$query .= " WHERE $allwhere ORDER BY place, $places_table.gedcom, ID LIMIT $newoffset" . $maxsearchresults;
+$query .= " WHERE $allwhere ";
+$query .= "ORDER BY place, places.gedcom, ID ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(ID) as pcount FROM $places_table WHERE $allwhere";
+    $query = "SELECT count(ID) AS pcount FROM $places_table WHERE $allwhere";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['pcount'];

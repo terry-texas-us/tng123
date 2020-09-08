@@ -58,7 +58,7 @@ if ($result2) {
       $id = " ($entityID)";
 
       //look up title from source table
-      $query = "SELECT title FROM $sources_table as s, $citations_table as c WHERE citationID = \"$entityID\" AND c.gedcom = s.gedcom AND c.sourceID = s.sourceID";
+      $query = "SELECT title FROM $sources_table AS s, $citations_table AS c WHERE citationID = \"$entityID\" AND c.gedcom = s.gedcom AND c.sourceID = s.sourceID";
       $resultc = tng_query($query);
       $rowc = tng_fetch_assoc($resultc);
       tng_free_result($resultc);
@@ -106,7 +106,7 @@ if ($result2) {
   tng_free_result($result2);
 }
 ?>
-<div id="links" style="margin:0;padding-top:12px">
+<div id="links" style="margin:0;padding-top:12px;">
     <table cellspacing="2">
         <tr>
             <td class="normal"><?php echo $admtext['tree']; ?></td>
@@ -166,7 +166,7 @@ if ($result2) {
         ?>
         </tbody>
     </table>
-    <div id="nolinks" class="normal" style="margin-left:3px">
+    <div id="nolinks" class="normal" style="margin-left:3px;">
       <?php
       if (!$oldlinks) {
         echo $admtext['nolinks'];

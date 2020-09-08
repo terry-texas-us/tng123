@@ -8,7 +8,7 @@ echo help_header("Help: Users");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="templateconfig_help.php" class="lightlink">&laquo; Help: Template Settings</a> &nbsp; | &nbsp;
@@ -28,7 +28,7 @@ echo help_header("Help: Users");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -53,7 +53,7 @@ echo help_header("Help: Users");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding New Users</p></a>
             <p>Setting up user records for your visitors allows you to give them special rights that they can enjoy only after logging in with their username and password. The
                 first user you create should be the administrator (someone who has all rights and is not restricted to any tree, usually yourself). If you don't give yourself (the administrator)
@@ -103,7 +103,7 @@ echo help_header("Help: Users");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Users</p></a>
             <p>To delete a user, use the <a href="#search">Search</a> tab to locate the user, then click on the Delete icon next to that user record. The row will
                 change color and then vanish as the user is deleted.</p>
@@ -113,7 +113,7 @@ echo help_header("Help: Users");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="review"><p class="subheadbold">Review</p></a>
 
             <p>Click on the "Review" tab to manage new user registrations. These user records will not become active until they are edited and saved the first time. Once a record becomes
@@ -131,7 +131,7 @@ echo help_header("Help: Users");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="rights"><p class="subheadbold">Roles and Rights</p></a>
 
             <p>A "Right" is something a user may do when they are logged in. A "Role" is a predefined set of rights, so the
@@ -199,7 +199,7 @@ echo help_header("Help: Users");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="limits"><p class="subheadbold">Access Limits</p></a>
 
             <p>These define the limits of a user's rights. All users (including anonymous visitors) may view information for deceased individuals at any time. No rights or access
@@ -224,7 +224,7 @@ echo help_header("Help: Users");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="email"><p class="subheadbold">E-mail</p></a>
             <p>This tab allows you to send e-mail to all users, or all users assigned to a particular tree/branch combination.</p>
 

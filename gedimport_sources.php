@@ -207,7 +207,7 @@ function getSourceRecord($sourceID, $prevlevel) {
   $success = tng_affected_rows();
   if (!$success && $savestate['del'] != "no") {
     if ($savestate['neweronly'] && $inschangedt) {
-      $query = "SELECT changedate FROM $sources_table WHERE sourceID=\"$sourceID\" AND gedcom = \"$tree\"";
+      $query = "SELECT changedate FROM $sources_table WHERE sourceID=\"$sourceID\" AND gedcom = '$tree'";
       $result = @tng_query($query);
       $srcrow = tng_fetch_assoc($result);
       $goahead = $inschangedt > $srcrow['changedate'] ? 1 : 0;
@@ -372,7 +372,7 @@ function getRepoRecord($repoID, $prevlevel) {
   $success = tng_affected_rows();
   if (!$success && $savestate['del'] != "no") {
     if ($savestate['neweronly'] && $inschangedt) {
-      $query = "SELECT changedate FROM $repositories_table WHERE repoID=\"$repoID\" AND gedcom = \"$tree\"";
+      $query = "SELECT changedate FROM $repositories_table WHERE repoID=\"$repoID\" AND gedcom = '$tree'";
       $result = @tng_query($query);
       $reporow = tng_fetch_assoc($result);
       $goahead = $inschangedt > $reporow['changedate'] ? 1 : 0;

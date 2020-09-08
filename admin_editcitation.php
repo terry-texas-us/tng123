@@ -8,7 +8,8 @@ include $cms['tngpath'] . "checklogin.php";
 
 $query = "SELECT citations.sourceID AS sourceID, description, page, quay, citedate, citetext, note, title, citations.gedcom AS gedcom ";
 $query .= "FROM $citations_table citations ";
-$query .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom WHERE citationID = \"$citationID\"";
+$query .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
+$query .= "WHERE citationID = \"$citationID\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -22,7 +23,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <form action="" name="citeform3" onsubmit="return updateCitation(this);">
-    <div style="float:right;text-align:center">
+    <div style="float:right;text-align:center;">
         <input class="btn" name="submit" type="submit" value="<?php echo $admtext['save']; ?>">
         <p><a href="#" onclick="return gotoSection('editcitation','citations');"><?php echo $text['cancel']; ?></a></p>
     </div>

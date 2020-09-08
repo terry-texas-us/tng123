@@ -109,7 +109,7 @@ switch ($action) {
     $count = count($clinks);
     for ($i = 0; $i < $count; $i++) {
       $order = $i + 1;
-      $query = "UPDATE $children_table SET ordernum=\"$order\" WHERE familyID = \"$familyID\" AND personID = \"{$clinks[$i]}\" AND gedcom = \"$tree\"";
+      $query = "UPDATE $children_table SET ordernum=\"$order\" WHERE familyID = '$familyID' AND personID = \"{$clinks[$i]}\" AND gedcom = \"$tree\"";
       $result2 = @tng_query($query);
     }
     break;
@@ -152,7 +152,7 @@ switch ($action) {
     }
     break;
   case "spouseunlink":
-    $query = "SELECT husband, wife FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+    $query = "SELECT husband, wife FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
     $marriage = tng_query($query);
     $marriagerow = tng_fetch_assoc($marriage);
 
@@ -167,24 +167,24 @@ switch ($action) {
       }
     }
     if ($delspousestr) {
-      $query = "UPDATE $families_table SET $delspousestr WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+      $query = "UPDATE $families_table SET $delspousestr WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
       $spouseresult = @tng_query($query);
     }
     break;
   case "parentunlink":
-    $query = "DELETE FROM $children_table WHERE familyID = \"$familyID\" AND personID = \"$personID\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $children_table WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = \"$tree\"";
     $result2 = @tng_query($query);
 
-    $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = \"$tree\" AND famc=\"$familyID\"";
+    $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = \"$tree\" AND famc='$familyID'";
     $result2 = tng_query($query);
     break;
   case "addchild":
     $haskids = getHasKids($tree, $personID);
 
-    $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,mrel,frel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (\"$familyID\",\"$personID\",$order,\"$tree\",\"\",\"\",$haskids,0,\"\",\"0000-00-00\",\"\")";
+    $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,mrel,frel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES ('$familyID',\"$personID\",$order,\"$tree\",\"\",\"\",$haskids,0,\"\",\"0000-00-00\",\"\")";
     $result = @tng_query($query);
 
-    $query = "SELECT husband,wife FROM $families_table WHERE familyID=\"$familyID\" AND gedcom=\"$tree\"";
+    $query = "SELECT husband,wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";
     $result = @tng_query($query);
     $famrow = tng_fetch_assoc($result);
     if ($famrow['husband']) {
@@ -197,7 +197,7 @@ switch ($action) {
     }
     tng_free_result($result);
 
-    $query = "UPDATE $people_table SET famc=\"$familyID\" WHERE personID = \"$personID\" AND gedcom = \"$tree\" and famc = \"\"";
+    $query = "UPDATE $people_table SET famc='$familyID' WHERE personID = \"$personID\" AND gedcom = \"$tree\" and famc = \"\"";
     $result = @tng_query($query);
 
     $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;\"";
@@ -351,7 +351,7 @@ switch ($action) {
     break;
   case "add":
     //add photo to album at end
-    $query2 = "SELECT max(ordernum) as maxordernum FROM $albumlinks_table WHERE albumID = \"$album\" GROUP BY albumID";
+    $query2 = "SELECT max(ordernum) AS maxordernum FROM $albumlinks_table WHERE albumID = \"$album\" GROUP BY albumID";
     $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
     $row2 = tng_fetch_assoc($result2);
     $count = $row2['maxordernum'] + 1;
@@ -370,7 +370,7 @@ switch ($action) {
     if ($type == "album") {
       $query = "SELECT entityID, gedcom FROM $album2entities_table WHERE alinkID=\"$linkID\"";
     } else {
-      $query = "SELECT personID as entityID, $medialinks_table.gedcom as gedcom, eventID, mediatypeID FROM ($medialinks_table, $media_table) WHERE medialinkID=\"$linkID\" and $medialinks_table.mediaID = $media_table.mediaID";
+      $query = "SELECT personID AS entityID, $medialinks_table.gedcom AS gedcom, eventID, mediatypeID FROM ($medialinks_table, $media_table) WHERE medialinkID=\"$linkID\" and $medialinks_table.mediaID = $media_table.mediaID";
     }
     $result = @tng_query($query);
     $row = tng_fetch_assoc($result);
@@ -385,16 +385,16 @@ switch ($action) {
     }
     $result = @tng_query($query);
 
-    $query2 = "SELECT personID from $people_table WHERE personID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query2 = "SELECT personID FROM $people_table WHERE personID = \"$entityID\" AND gedcom = '$tree'";
     reorderMedia($query2, $row);
 
-    $query2 = "SELECT familyID as personID from $families_table WHERE familyID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query2 = "SELECT familyID AS personID FROM $families_table WHERE familyID = \"$entityID\" AND gedcom = '$tree'";
     reorderMedia($query2, $row);
 
-    $query2 = "SELECT sourceID as personID from $sources_table WHERE sourceID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query2 = "SELECT sourceID AS personID FROM $sources_table WHERE sourceID = \"$entityID\" AND gedcom = '$tree'";
     reorderMedia($query2, $row);
 
-    $query2 = "SELECT repoID as personID from $repositories_table WHERE repoID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query2 = "SELECT repoID AS personID FROM $repositories_table WHERE repoID = \"$entityID\" AND gedcom = '$tree'";
     reorderMedia($query2, $row);
 
     $rval = $linkID . "&" . $entityID;
@@ -432,9 +432,9 @@ switch ($action) {
     }
 
     if ($type == "album") {
-      $query = "SELECT count(alinkID) as count FROM $album2entities_table WHERE entityID = \"$entityID\"$treestr";
+      $query = "SELECT count(alinkID) AS count FROM $album2entities_table WHERE entityID = \"$entityID\"$treestr";
     } else {
-      $query = "SELECT count(medialinkID) as count FROM $medialinks_table WHERE personID = \"$entityID\"$treestr";
+      $query = "SELECT count(medialinkID) AS count FROM $medialinks_table WHERE personID = \"$entityID\"$treestr";
     }
     $result = @tng_query($query);
     if ($result) {
@@ -448,7 +448,7 @@ switch ($action) {
     $numrows = 0;
     switch ($linktype) {
       case "I":
-        $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, title, living, private, nameorder, gedcom, branch FROM $people_table WHERE gedcom = \"$tree\" AND personID = \"$entityID\"";
+        $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, title, living, private, nameorder, gedcom, branch FROM $people_table WHERE gedcom = '$tree' AND personID = \"$entityID\"";
         $result = @tng_query($query);
         $row = tng_fetch_assoc($result);
         $rights = determineLivingPrivateRights($row);
@@ -460,11 +460,11 @@ switch ($action) {
         tng_free_result($result);
         break;
       case "F":
-        $joinonwife = "LEFT JOIN $people_table AS wifepeople ON $families_table.wife = wifepeople.personID AND $families_table.gedcom = wifepeople.gedcom";
-        $joinonhusb = "LEFT JOIN $people_table AS husbpeople ON $families_table.husband = husbpeople.personID AND $families_table.gedcom = husbpeople.gedcom";
-        $query = "SELECT wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder, wifepeople.branch as wbranch,
-					husbpeople.personID as hpersonID, husbpeople.firstname as hfirstname, husbpeople.lnprefix as hlnprefix, husbpeople.lastname as hlastname, husbpeople.prefix as hprefix, husbpeople.suffix as hsuffix, husbpeople.nameorder as hnameorder, husbpeople.branch as hbranch
-					FROM $families_table $joinonwife $joinonhusb WHERE $families_table.gedcom = \"$tree\" AND familyID = \"$entityID\"";
+        $joinonwife = "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom";
+        $joinonhusb = "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom";
+        $query = "SELECT wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, wifepeople.branch AS wbranch, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, husbpeople.branch AS hbranch ";
+        $query .= "FROM $families_table families $joinonwife $joinonhusb ";
+        $query .= "WHERE families.gedcom = \"$tree\" AND familyID = \"$entityID\"";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $name = "";
@@ -508,7 +508,7 @@ switch ($action) {
         tng_free_result($result);
         break;
       case "S":
-        $query = "SELECT title FROM $sources_table WHERE gedcom = \"$tree\" AND sourceID = \"$entityID\"";
+        $query = "SELECT title FROM $sources_table WHERE gedcom = '$tree' AND sourceID = \"$entityID\"";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $name = $row['title'];
@@ -519,7 +519,7 @@ switch ($action) {
         break;
       case "C":
         $query = "SELECT title ";
-        $query .= "FROM {$sources_table} sources, {$citations_table} citations ";
+        $query .= "FROM $sources_table sources, $citations_table citations ";
         $query .= "WHERE citationID = \"{$entityID}\" AND citations.gedcom = sources.gedcom AND citations.sourceID = sources.sourceID";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
@@ -530,7 +530,7 @@ switch ($action) {
         tng_free_result($result);
         break;
       case "R":
-        $query = "SELECT reponame FROM $repositories_table WHERE gedcom = \"$tree\" AND repoID = \"$entityID\"";
+        $query = "SELECT reponame FROM $repositories_table WHERE gedcom = '$tree' AND repoID = \"$entityID\"";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $name = $row['reponame'];
@@ -591,7 +591,7 @@ switch ($action) {
       $treestr = " AND gedcom = \"$tree\"";
     }
 
-    $query = "SELECT count(medialinkID) as count FROM $medialinks_table WHERE personID = \"$entityID\"$treestr";
+    $query = "SELECT count(medialinkID) AS count FROM $medialinks_table WHERE personID = \"$entityID\"$treestr";
     $result = @tng_query($query);
     if ($result) {
       $row = tng_fetch_assoc($result);
@@ -634,7 +634,7 @@ switch ($action) {
     $rval = $linkID;
     break;
   case "adddnalink":
-    $query = "SELECT count(ID) as count FROM $dna_links_table WHERE personID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query = "SELECT count(ID) AS count FROM $dna_links_table WHERE personID = \"$entityID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
     if ($result) {
       $row = tng_fetch_assoc($result);
@@ -645,7 +645,7 @@ switch ($action) {
     }
 
     $numrows = 0;
-    $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, title, living, private, nameorder, gedcom, branch FROM $people_table WHERE gedcom = \"$tree\" AND personID = \"$entityID\"";
+    $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, title, living, private, nameorder, gedcom, branch FROM $people_table WHERE gedcom = '$tree' AND personID = \"$entityID\"";
     $result = @tng_query($query);
     $row = tng_fetch_assoc($result);
     $rights = determineLivingPrivateRights($row);

@@ -11,7 +11,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 <div class="databack ajaxwindow" id="finddiv">
     <span class="subhead"><strong><?php echo $admtext['addlinks']; ?></strong></span><br>
-    <form name="find2" id="find2" style="margin-top:0" onsubmit="return getPotentialLinks('<?php echo $linktype; ?>');">
+    <form name="find2" id="find2" style="margin-top:0;" onsubmit="return getPotentialLinks('<?php echo $linktype; ?>');">
         <?php
         if ($linktype == "I") {
             ?>
@@ -28,7 +28,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           <td>
             <input type="text" name="myfirstname" id="myfirstname">
             <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-            <span id="spinnerfind" style="display:none"><img src="img/spinner.gif"></span>
+            <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
           </td>
         </tr>
       </table>
@@ -48,7 +48,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           <td>
             <input type="text" name="mywifename" id="mywifename">
             <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-            <span id="spinnerfind" style="display:none"><img src="img/spinner.gif"></span>
+            <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
           </td>
         </tr>
       </table>
@@ -66,7 +66,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           <td>
             <input type="text" name="mysourcetitle" id="mysourcetitle">
             <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-            <span id="spinnerfind" style="display:none"><img src="img/spinner.gif"></span>
+            <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
           </td>
         </tr>
       </table>
@@ -84,7 +84,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           <td>
             <input type="text" name="myrepotitle" id="myrepotitle">
             <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-            <span id="spinnerfind" style="display:none"><img src="img/spinner.gif"></span>
+            <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
           </td>
         </tr>
       </table>
@@ -102,7 +102,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           <td>
             <input type="text" name="myplace" id="myplace">
             <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-            <span id="spinnerfind" style="display:none"><img src="img/spinner.gif" width="16" height="16"></span>
+            <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif" width="16" height="16"></span>
           </td>
         </tr>
       </table>
@@ -110,6 +110,6 @@ header("Content-type:text/html; charset=" . $session_charset);
       }
       ?>
   </form>
-  <div id="newlines" style="width:605px;height:390px;overflow:auto"></div>
+  <div id="newlines" style="width:605px;height:390px;overflow:auto;"></div>
   <br>
 </div>

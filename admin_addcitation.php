@@ -33,7 +33,7 @@ $_SESSION['lastcite'] = $tree . "|" . $citationID;
 
 adminwritelog($admtext['addnewcite'] . ": $citationID/$tree/$persfamID/$eventID/$sourceID");
 
-$query = "SELECT title FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = \"$tree\"";
+$query = "SELECT title FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = '$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 

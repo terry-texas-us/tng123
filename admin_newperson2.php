@@ -17,7 +17,7 @@ if (!$allow_add) {
 $treerow = getTree($trees_table, $tree);
 
 if ($father) {
-  $query = "SELECT lnprefix, lastname, branch FROM $people_table WHERE gedcom=\"$tree\" AND personID=\"$father\"";
+  $query = "SELECT lnprefix, lastname, branch FROM $people_table WHERE gedcom='$tree' AND personID=\"$father\"";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);
   tng_free_result($result);
@@ -54,7 +54,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     echo " action=\"admin_addperson2.php\"";
   } else {
     echo " action=\"\" onsubmit=\"return saveNewPerson(this);\"";
-  } ?> style="margin-top:10px">
+  } ?> style="margin-top:10px;">
     <table cellpadding="2" class="normal">
       <tr>
         <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
@@ -83,7 +83,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td><input type="text" name="firstname" id="firstname" size="30"></td>
               <?php
               if ($lnprefixes) {
-                echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px\" value=\"" . $row['lnprefix'] . "\"></td>\n";
+                echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
               }
               ?>
                 <td><input type="text" name="lastname" size="30" value="<?php echo $row['lastname']; ?>"></td>
@@ -125,7 +125,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
                 <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
                   <?php
-                  $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"$tree\" ORDER BY description";
+                  $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
                   $branchresult = tng_query($query);
                   $numbranches = tng_num_rows($branchresult);
                   $branchlist = explode(",", $row['branch']);
@@ -152,7 +152,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                   $select .= ">{$admtext['nobranch']}</option>\n";
 
                   $select .= "$options</select>\n";
-                  echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
+                  echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                   ?>
                     <div id="branchedit2" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch2','branchedit2','branchlist2');">
                       <?php
@@ -167,7 +167,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
         </table>
 
-        <p class="normal topmarginsmall" style="margin-bottom:8px"><?php echo $admtext['datenote']; ?></p>
+        <p class="normal topmarginsmall" style="margin-bottom:8px;"><?php echo $admtext['datenote']; ?></p>
         <table class="normal">
             <tr>
                 <td>&nbsp;</td>
@@ -214,6 +214,6 @@ header("Content-type:text/html; charset=" . $session_charset);
         echo "<input type=\"hidden\" name=\"lnprefix\" value=\"\">";
       }
       ?>
-        <p class="normal" style="margin-top:15px;margin-left:4px"><input type="submit" name="submit" value="<?php echo $admtext['save']; ?>"> &nbsp; <strong><?php echo $admtext['pevslater2']; ?></strong></p>
+        <p class="normal" style="margin-top:15px;margin-left:4px;"><input type="submit" name="submit" value="<?php echo $admtext['save']; ?>"> &nbsp; <strong><?php echo $admtext['pevslater2']; ?></strong></p>
         <div id="errormsg" class="red" style="display:none;"></div>
     </form>

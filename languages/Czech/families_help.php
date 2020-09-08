@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Rodiny");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="people_help.php" class="lightlink">&laquo; N�pov�da: Osoby</a> &nbsp; | &nbsp;
@@ -48,7 +48,7 @@ echo help_header("N�pov�da: Rodiny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat novou rodinu</p></a>
             <p>V�razem <strong>Rodina</strong> se v tomto programu rozum� ka�d� spojen� mezi "otcem" a "matkou" (d�ti zde mohou nebo nemus� b�t obsa�eny). Pokud byla osoba v�ckr�t sezd�na
                 nebo m� d�ti s v�ce partnery, m�li byste pro ka�d� p�r man�el� nebo partner� vytvo�it novou rodinu.</p>
@@ -108,7 +108,7 @@ echo help_header("N�pov�da: Rodiny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Upravit existuj�c� rodinu</p></a>
             <p>Chcete-li upravit existuj�c� rodinu, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� rodiny, a pot� klikn�te na ikonu Upravit vedle t�to osoby.</p>
 
@@ -147,7 +147,7 @@ echo help_header("N�pov�da: Rodiny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat rodinu</p></a>
             <p>Chcete-li odstranit rodinu, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� rodiny, a pot� klikn�te na ikonu Odstranit vedle t�to rodiny. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� rodiny zmiz� (partne�i a d�ti nebudou odstran�ni, ale vztah bude rozpojen). Chcete-li najednou odstranit v�ce rodin, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d� rodiny, kterou
@@ -158,7 +158,7 @@ echo help_header("N�pov�da: Rodiny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="review"><p class="subheadbold">P�edb�n� prohl�dnut� �prav</p></a>
       Chcete-li si p�edb�n� prohl�dnout zm�ny proveden� ostatn�mi u�ivateli, klikn�te na z�lo�ku "P�ezkoumat". M��ete se pak rozhodnout, zda tyto navrhovan� zm�ny ulo��te nebo odstran�te.
       Zm�ny m��ete prohl�dnout podle stromu nebo podle u�ivatele nebo podle oboj�ho. Po ulo�en� navrhovan�ch zm�n nen� zasl�n ��dn� mail, ale pokud nov� zm�ny existuj�, na z�lo�ce P�ezkoumat se objev� hv�zdi�ka (*).</p>

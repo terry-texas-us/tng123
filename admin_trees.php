@@ -43,12 +43,12 @@ if ($assignedtree) {
     $wherestr .= $wherestr ? " AND gedcom = \"$assignedtree\"" : "WHERE gedcom = \"$assignedtree\"";
 }
 
-$query = "SELECT gedcom, treename, description, owner, DATE_FORMAT(lastimportdate,\"%d %b %Y %H:%i:%s\") as lastimportdate, importfilename FROM $trees_table $wherestr ORDER BY treename LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT gedcom, treename, description, owner, DATE_FORMAT(lastimportdate,\"%d %b %Y %H:%i:%s\") AS lastimportdate, importfilename FROM $trees_table $wherestr ORDER BY treename LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(gedcom) as tcount FROM $trees_table $wherestr";
+    $query = "SELECT count(gedcom) AS tcount FROM $trees_table $wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['tcount'];
@@ -127,7 +127,7 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         $editlink = "admin_edittree.php?tree={$row['gedcom']}";
                         $gedcom = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['gedcom'] . "</a>" : $row['gedcom'];
 
-                        $query = "SELECT count(personID) as pcount FROM $people_table WHERE gedcom = \"{$row['gedcom']}\"";
+                        $query = "SELECT count(personID) AS pcount FROM $people_table WHERE gedcom = \"{$row['gedcom']}\"";
                         $result2 = tng_query($query);
                         $prow = tng_fetch_assoc($result2);
                         $pcount = number_format($prow['pcount']);

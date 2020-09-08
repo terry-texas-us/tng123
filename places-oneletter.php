@@ -53,10 +53,10 @@ if ($wherestr) {
 
 //if doing a locality search, link directly to placesearch
 if ($stretch) {
-  $query = "SELECT distinct place as myplace, place as wholeplace, count( place ) as placecount, gedcom FROM $places_table $wherestr GROUP BY myplace ORDER by myplace";
+  $query = "SELECT distinct place AS myplace, place AS wholeplace, count( place ) AS placecount, gedcom FROM $places_table $wherestr GROUP BY myplace ORDER by myplace";
   $places_oneletter_url = getURL("placesearch", 1);
 } else {
-  $query = "SELECT distinct trim(substring_index(place,',',-$offset)) as myplace, trim(place) as wholeplace, count(place) as placecount, gedcom FROM $places_table $wherestr GROUP BY myplace ORDER by myplace";
+  $query = "SELECT distinct trim(substring_index(place,',',-$offset)) AS myplace, trim(place) AS wholeplace, count(place) AS placecount, gedcom FROM $places_table $wherestr GROUP BY myplace ORDER by myplace";
   $places_oneletter_url = getURL("places-oneletter", 1);
 }
 
@@ -148,7 +148,7 @@ echo $formstr;
                       $placetitle = $place['myplace'];
                     }
 
-                    $query = "SELECT count(place) as placecount FROM $places_table WHERE place = \"$place3\" $wherestr2";
+                    $query = "SELECT count(place) AS placecount FROM $places_table WHERE place = \"$place3\" $wherestr2";
                     $result2 = tng_query($query);
                     $countrow = tng_fetch_assoc($result2);
                     $specificcount = $countrow['placecount'];

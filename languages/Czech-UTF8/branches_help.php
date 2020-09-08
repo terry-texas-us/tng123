@@ -12,7 +12,7 @@ echo help_header("Nápověda: Větve");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="trees_help.php" class="lightlink">&laquo; Nápověda: Stromy</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("Nápověda: Větve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="search"><p class="subheadbold">Hledat</p></a>
             <p>Nalezení existujících větví vyhledáním celého nebo části <strong>ID čísla větve</strong> nebo <strong>Popisu</strong>. Pro zúžení vašeho hledání vyberte strom.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech větví ve vaší databázi.</p>
@@ -61,7 +61,7 @@ echo help_header("Nápověda: Větve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat novou / Upravit existující větve</p></a>
             <p>Chcete-li přidat novou větev, klikněte na záložku <strong>Přidat nový</strong> a pak vyplňte formulář.
                 Význam polí je následující:</p>
@@ -94,7 +94,7 @@ echo help_header("Nápověda: Větve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazání větve</p></a>
             <p>Chcete-li odstranit větev, použijte záložku <a href="#search">Hledat</a> k nalezení větve, a poté klikněte na ikonku Vymazat vedle záznamu této větve. Tento řádek změní
                 barvu a poté po odstranění položky větev zmizí. Chcete-li najednou odstranit více větví, zaškrtněte tlačítko ve sloupci Vybrat vedle každé větve, která má být
@@ -105,7 +105,7 @@ echo help_header("Nápověda: Větve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="label"><p class="subheadbold">Označení větví</p></a>
             <p>Chcete-li značku větve připojit k osobám ve své databázi, klikněte na tlačítko <strong>Přidat značku</strong> ve spodní části stránky Upravit větev,
                 a pokračujte podle instrukcí v okně, které se objeví. Po provedení výběru klikněte na tlačítko "Přidat značku" ve spodní části. Možnosti na této stránce jsou následující:</p>

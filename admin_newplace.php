@@ -114,7 +114,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                     ?>
                       <tr>
                           <td colspan="2">
-                              <div style="padding:10px">
+                              <div style="padding:10px;">
                                 <?php
                                 // draw the map here
                                 include "googlemapdrawthemap.php";

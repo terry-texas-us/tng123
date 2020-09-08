@@ -105,7 +105,7 @@ $title = getTemplateMessage('t17_maintitle');
           <li class="linkcol">
             <article class="post">
               <h2 class="entry-title"><?php echo $text['search']; ?></h2>
-              <form method="get" name="searchform" action="search.php" class="entry-content" style="border:1px solid #e2c2a9;padding:10px">
+              <form method="get" name="searchform" action="search.php" class="entry-content" style="border:1px solid #e2c2a9;padding:10px;">
                 <div style="display:inline-block;">
                   <label for="myfirstname"><?php echo $text['firstname']; ?></label><br>
                   <input type="text" value="" name="myfirstname">
@@ -115,7 +115,7 @@ $title = getTemplateMessage('t17_maintitle');
                   <br>
                   <input type="hidden" name="mybool" value="AND">
                 </div>
-                <div style="display:inline-block;vertical-align:top;padding:15px">
+                <div style="display:inline-block;vertical-align:top;padding:15px;">
                   <input type="submit" id="search-submit" class="btn" value="<?php echo $text['search']; ?>">
                   <br><br>
                   <ul class="home-menus">
@@ -183,7 +183,7 @@ $title = getTemplateMessage('t17_maintitle');
             </li>
         </ul>
     </div>
-    <div style="clear:left"></div>
+    <div style="clear:left;"></div>
 </div>
 <div class="tblock" id="big-block-3">
     <h2><a href="<?php echo $tmp['t17_featurelink2']; ?>" title=""><?php echo getTemplateMessage('t17_featuretitle2'); ?></a></h2>
@@ -201,7 +201,7 @@ $title = getTemplateMessage('t17_maintitle');
           ?>
         </div>
     </div>
-    <div style="clear:left"></div>
+    <div style="clear:left;"></div>
 </div>
 <div id="tfooter">
     <div class="other-features">
@@ -247,7 +247,7 @@ $title = getTemplateMessage('t17_maintitle');
           ?>
         </ul>
     </div>
-    <div style="clear:left"></div>
+    <div style="clear:left;"></div>
 </div>
 <div id="subfooter">
   <?php

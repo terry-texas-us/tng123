@@ -16,10 +16,10 @@ $search_url = getURL("search", 1);
           $topnum = $topnum ? $topnum : 100;
           $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
           if ($tngconfig['ucsurnames']) {
-            $surnamestr = "ucase($surnamestr)";
+            $surnamestr = "UCASE($surnamestr)";
           }
           $wherestr .= $wherestr ? " AND lastname != \"\"" : "WHERE lastname != \"\"";
-          $query = "SELECT ucase( $binary $surnamestr ) as lastname, $surnamestr as lowername, count( ucase($binary lastname) ) as lncount FROM $people_table $wherestr GROUP BY lowername ORDER by lncount DESC, lastname LIMIT $topnum";
+          $query = "SELECT UCASE( $binary $surnamestr ) AS lastname, $surnamestr AS lowername, count( UCASE($binary lastname) ) AS lncount FROM $people_table $wherestr GROUP BY lowername ORDER by lncount DESC, lastname LIMIT $topnum";
 
           $result = tng_query($query);
           $topnum = tng_num_rows($result);

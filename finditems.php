@@ -30,10 +30,10 @@ if (!isset($mediaID)) {
 }
 
 if ($albumID) {
-    $mediaquery = "SELECT entityID, gedcom FROM $album2entities_table WHERE gedcom = \"$tree\" AND albumID = \"$albumID\" AND linktype = \"$type\"";
+    $mediaquery = "SELECT entityID, gedcom FROM $album2entities_table WHERE gedcom = '$tree' AND albumID = \"$albumID\" AND linktype = \"$type\"";
 } else {
     if ($mediaID) {
-        $mediaquery = "SELECT personID as entityID, gedcom FROM $medialinks_table WHERE gedcom = \"$tree\" AND mediaID = \"$mediaID\" AND linktype = \"$type\"";
+        $mediaquery = "SELECT personID AS entityID, gedcom FROM $medialinks_table WHERE gedcom = '$tree' AND mediaID = \"$mediaID\" AND linktype = \"$type\"";
     }
 }
 
@@ -208,7 +208,7 @@ switch ($type) {
             $allwhere2 = "AND $allwhere2";
         }
 
-        $query = "SELECT familyID, wifepeople.personID AS wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, wifepeople.living AS wliving, wifepeople.private AS wprivate, wifepeople.branch AS wbranch, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, husbpeople.living AS hliving, husbpeople.private AS hprivate, husbpeople.branch AS hbranch ";
+        $query = "SELECT familyID, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, wifepeople.living AS wliving, wifepeople.private AS wprivate, wifepeople.branch AS wbranch, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, husbpeople.living AS hliving, husbpeople.private AS hprivate, husbpeople.branch AS hbranch ";
         $query .= "FROM $families_table families";
         $query .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
         $query .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
@@ -279,7 +279,7 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class=\"fieldnameback fieldname nw\" style=\"width:100px\">" . $admtext['sourceid'] . "</th>\n";
+            $lines .= "<th class=\"fieldnameback fieldname nw\" style=\"width:100px;\">" . $admtext['sourceid'] . "</th>\n";
             $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['title'] . "</th>\n";
             $lines .= "</tr>\n";
 
@@ -309,7 +309,7 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class=\"fieldnameback fieldname nw\" style=\"width:100px\">" . $admtext['id'] . "</th>\n";
+            $lines .= "<th class=\"fieldnameback fieldname nw\" style=\"width:100px;\">" . $admtext['id'] . "</th>\n";
             $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['sourceid'] . "</th>\n";
             $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['title'] . "</th>\n";
             $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['page'] . "</th>\n";
@@ -334,13 +334,13 @@ switch ($type) {
         }
         break;
     case "R":
-        $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = \"$tree\" AND reponame LIKE \"$f$criteria%\" ORDER BY reponame LIMIT " . MODAL_FIND_RESULTS_LIMIT;
+        $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = '$tree' AND reponame LIKE \"$f$criteria%\" ORDER BY reponame LIMIT " . MODAL_FIND_RESULTS_LIMIT;
         $result = tng_query($query);
 
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class=\"fieldnameback fieldname nw\" style=\"width:100px\">" . $admtext['repoid'] . "</td>\n";
+            $lines .= "<td class=\"fieldnameback fieldname nw\" style=\"width:100px;\">" . $admtext['repoid'] . "</td>\n";
             $lines .= "<td class=\"fieldnameback fieldname nw\">" . $admtext['title'] . "</td>\n";
             $lines .= "</tr>\n";
 
@@ -390,7 +390,7 @@ switch ($type) {
 }
 
 if (tng_num_rows($result)) {
-    echo "<table class=\"normal\"  style=\"width: 100%\">\n$lines\n</table>\n";
+    echo "<table class=\"normal\"  style=\"width: 100%;\">\n$lines\n</table>\n";
 } else {
     echo $admtext['noresults'];
 }

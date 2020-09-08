@@ -32,7 +32,7 @@ function fetchAndCleanPersonRow(?string &$personID, string $people_table, string
     $row = [];
     if ($personID) {
         $personID = ucfirst($personID);
-        $query = "SELECT *, DATE_FORMAT(changedate, \"%d %b %Y %H:%i:%s\") as changedate FROM {$people_table} WHERE personID = \"{$personID}\" and gedcom = \"{$tree}\"";
+        $query = "SELECT *, DATE_FORMAT(changedate, \"%d %b %Y %H:%i:%s\") AS changedate FROM $people_table WHERE personID = \"{$personID}\" and gedcom = \"{$tree}\"";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
@@ -61,7 +61,7 @@ function fetchAndCleanPersonRow(?string &$personID, string $people_table, string
  */
 function fetchPersonNameWithRights(string $people_table, $passocID, array $tree): string {
     $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, living, private, branch ";
-    $query .= "FROM {$people_table} ";
+    $query .= "FROM $people_table ";
     $query .= "WHERE personID=\"{$passocID}\" AND gedcom=\"{$tree}\"";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);

@@ -31,7 +31,7 @@ function checkFile(form) {
             else
                 popup += opening + ' ' + form.database.value;
             popup += '... &nbsp;<img src="img/spinner.gif"></span></strong></div>\n';
-          popup += '<div id="impdata" style="visibility:hidden">\n';
+          popup += '<div id="impdata" style="visibility:hidden;">\n';
             popup += '<p id="recordcount">\n<span class="imp">&nbsp;<span class="implabel">' + peoplelbl + ': </span><span id="personcount" class="impctr">0</span></span>\n';
             popup += '<div class="imp">&nbsp;<span class="implabel">' + familieslbl + ': </span><span id="familycount" class="impctr">0</span></div>\n';
             popup += '<div class="imp">&nbsp;<span class="implabel">' + sourceslbl + ': </span><span id="sourcecount" class="impctr">0</span></div>\n';

@@ -36,11 +36,11 @@ $eventdatetr = convertDate($eventdate);
 
 if ($choice == $admtext['savedel']) {
   if (is_numeric($eventID)) {
-    $query = "UPDATE $events_table SET eventdate=\"$eventdate\", eventdatetr=\"$eventdatetr\", eventplace=\"$eventplace\", info=\"$info\" WHERE eventID=\"$eventID\"";
+    $query = "UPDATE $events_table SET eventdate=\"$eventdate\", eventdatetr=\"$eventdatetr\", eventplace=\"$eventplace\", info=\"$info\" WHERE eventID = '$eventID'";
     $result = tng_query($query);
 
     if ($row['type'] == "F") {
-      $query = "UPDATE $families_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+      $query = "UPDATE $families_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
     } else {
       $query = "UPDATE $people_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
     }
@@ -127,11 +127,11 @@ if ($choice == $admtext['savedel']) {
     }
 
     if ($needfamilies) {
-      $query = "UPDATE $families_table SET $fieldstr WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+      $query = "UPDATE $families_table SET $fieldstr WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
     } elseif ($needchildren) {
       $query = "UPDATE $people_table SET changedate = \"$changedate\", changedby=\"{$row['user']}\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
       $result = tng_query($query);
-      $query = "UPDATE $children_table SET $fieldstr WHERE familyID = \"$familyID\" AND personID = \"$personID\" AND gedcom = \"$tree\"";
+      $query = "UPDATE $children_table SET $fieldstr WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = \"$tree\"";
     } else {
       $query = "UPDATE $people_table SET $fieldstr WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
     }

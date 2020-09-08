@@ -12,7 +12,7 @@ echo help_header("N�pov�da: U�ivatel�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="templateconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� �ablony</a> &nbsp; | &nbsp;
@@ -49,7 +49,7 @@ echo help_header("N�pov�da: U�ivatel�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�id�n� nov�ho u�ivatele</p></a>
             <p>Nastaven� u�ivatelsk�ch z�znam� pro va�e n�v�t�vn�ky v�m umo�n� p�id�lit jim zvl�tn� p��stupov� pr�va, kter� vstoup� v platnost jejich p�ihl�en�m pomoc� u�ivatelsk�ho jm�na a hesla.
                 Prvn� u�ivatel, kter�ho vytvo��te, by m�l b�t administr�tor (n�kdo, kdo m� v�echna pr�va a nen� omezen ��dn�m stromem, obvykle to jste vy). Pokud si nep�id�l�te dostate�n� (administr�torsk�) opr�vn�n�,
@@ -98,7 +98,7 @@ echo help_header("N�pov�da: U�ivatel�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� u�ivatel�</p></a>
             <p>Chcete-li odstranit u�ivatele, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� u�ivatele, a pot� klikn�te na ikonku Vymazat vedle z�znamu tohoto u�ivatele. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky u�ivatel zmiz�.</p>
@@ -108,7 +108,7 @@ echo help_header("N�pov�da: U�ivatel�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="review"><p class="subheadbold">P�ezkoumat</p></a>
 
             <p>Kliknut�m na z�lo�ku "P�ezkoumat" m��ete spravovat nov� u�ivatelsk� registrace. Tyto u�ivatelsk� z�znamy nebudou aktivn�, dokud je nejd��v neuprav�te a neulo��te. Pot�, co se stane
@@ -126,7 +126,7 @@ echo help_header("N�pov�da: U�ivatel�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="rights"><p class="subheadbold">Role a p��stupov� pr�va</p></a>
 
             <p>"P��stupov� pr�vo" je to, co m��e u�ivatel d�lat pot�, co se p�ihl�s�. "Role" je p�eddefinovan� sada p��stupov�ch pr�v, tak�e
@@ -193,7 +193,7 @@ echo help_header("N�pov�da: U�ivatel�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="rights"><p class="subheadbold">Omezen� p��stupu</p></a>
 
             <p>Toto definuje omezen� u�ivatelsk�ch pr�v. V�ichni u�ivatel� (v�etn� anonymn�ch n�v�t�vn�k�) mohou v�dy vid�t �daje zesnul�ch osob. Zde nejsou nutn� ��dn� pr�va

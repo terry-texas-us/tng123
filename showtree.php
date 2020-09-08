@@ -16,7 +16,11 @@ function showFact($text, $fact, $numflag = 0) {
   echo "</tr>\n";
 }
 
-$query = "SELECT count(personID) as pcount, $trees_table.gedcom, treename, description, owner, secret, address, email, city, state, zip, country, phone FROM $trees_table LEFT JOIN $people_table on $trees_table.gedcom = $people_table.gedcom WHERE $trees_table.gedcom = \"$tree\" GROUP BY $trees_table.gedcom";
+$query = "SELECT count(personID) AS pcount, trees.gedcom, treename, description, owner, secret, address, email, city, state, zip, country, phone ";
+$query .= "FROM $trees_table trees ";
+$query .= "LEFT JOIN $people_table people ON trees.gedcom = people.gedcom ";
+$query .= "WHERE trees.gedcom = \"$tree\" ";
+$query .= "GROUP BY trees.gedcom";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -41,13 +45,13 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
 
       showFact($text['individuals'], $row['pcount'], true);
 
-      $query = "SELECT count(familyID) as fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
+      $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
       $famresult = tng_query($query);
       $famrow = tng_fetch_assoc($famresult);
       tng_free_result($famresult);
       showFact($text['families'], $famrow['fcount'], true);
 
-      $query = "SELECT count(sourceID) as scount FROM $sources_table WHERE gedcom = \"{$row['gedcom']}\"";
+      $query = "SELECT count(sourceID) AS scount FROM $sources_table WHERE gedcom = \"{$row['gedcom']}\"";
       $srcresult = tng_query($query);
       $srcrow = tng_fetch_assoc($srcresult);
       tng_free_result($srcresult);

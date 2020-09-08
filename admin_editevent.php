@@ -7,9 +7,10 @@ include "$mylanguage/admintext.php";
 
 include $cms['tngpath'] . "checklogin.php";
 
-$query = "SELECT display, events.eventtypeID AS eventtypeID, eventdate, eventplace, age, agency, cause, events.gedcom as gedcom, events.addressID, address1, address2, city, state, zip, country, info, phone, email, www, type ";
+$query = "SELECT display, events.eventtypeID AS eventtypeID, eventdate, eventplace, age, agency, cause, events.gedcom AS gedcom, events.addressID, address1, address2, city, state, zip, country, info, phone, email, www, type ";
 $query .= "FROM ($events_table events, $eventtypes_table eventtypes) ";
-$query .= "LEFT JOIN $address_table address ON events.addressID = address.addressID WHERE eventID = \"$eventID\" AND events.eventtypeID = eventtypes.eventtypeID";
+$query .= "LEFT JOIN $address_table address ON events.addressID = address.addressID ";
+$query .= "WHERE eventID = \"$eventID\" AND events.eventtypeID = eventtypes.eventtypeID";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -81,7 +82,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         </table>
         <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
         <br>
-        <div id="more" style="display:none">
+        <div id="more" style="display:none;">
             <table cellpadding="2" class="normal">
                 <tr>
                     <td><?php echo $admtext['age']; ?>:</td>

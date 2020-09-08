@@ -15,11 +15,11 @@ if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div style="margin:10px">
+<div style="margin:10px;">
   <span class="subhead"><strong><?php echo $admtext['showpeople']; ?></strong></span><br><br>
   <?php
   $query = "SELECT personID, firstname, lastname, lnprefix, prefix, suffix, branch, gedcom, nameorder, living, private ";
-  $query .= "FROM {$people_table} ";
+  $query .= "FROM $people_table ";
   $query .= "WHERE gedcom = \"{$tree}\" and branch LIKE \"%$branch%\" ";
   $query .= "ORDER BY lastname, firstname";
   $brresult = tng_query($query);
@@ -37,7 +37,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   }
   tng_free_result($brresult);
 
-  $query = "SELECT familyID, husband, wife, gedcom, branch, living, private FROM $families_table WHERE gedcom = \"$tree\" AND branch LIKE \"%$branch%\" ORDER BY familyID";
+  $query = "SELECT familyID, husband, wife, gedcom, branch, living, private FROM $families_table WHERE gedcom = '$tree' AND branch LIKE \"%$branch%\" ORDER BY familyID";
   $brresult = tng_query($query);
   $numfresults = tng_num_rows($brresult);
 

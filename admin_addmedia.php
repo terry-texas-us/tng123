@@ -129,7 +129,7 @@ if ($affected_rows == 1) {
   $mediaID = tng_insert_id();
 
   if ($link_personID) {
-    $query = "SELECT count(medialinkID) as count FROM $medialinks_table WHERE personID = \"$link_personID\" AND gedcom = \"$link_tree\"";
+    $query = "SELECT count(medialinkID) AS count FROM $medialinks_table WHERE personID = \"$link_personID\" AND gedcom = \"$link_tree\"";
     $result = @tng_query($query);
     if ($result) {
       $row = tng_fetch_assoc($result);
@@ -140,16 +140,6 @@ if ($affected_rows == 1) {
     }
 
     $defval = "";
-    /*
-    if($mediatypeID == "photos" && $thumbpath) {
-      $query = "SELECT medialinkID FROM $medialinks_table WHERE personID = \"$link_personID\" AND gedcom = \"$link_tree\" AND defphoto = \"1\"";
-      $result = @tng_query($query);
-      if( $result ) {
-        $defval = 1;
-        tng_free_result($result);
-      }
-    }
-    */
 
     $template = "ssssss";
     $query = "INSERT IGNORE INTO $medialinks_table (personID,mediaID,ordernum,gedcom,linktype,eventID,defphoto) VALUES (?,?,?,?,?,'',?)";

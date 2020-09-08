@@ -189,7 +189,7 @@ echo "</form>\n";
                         $childrow['firstname'] = $text['living'];
                     }
 
-                    echo "<li style=\"list-style-type:lower-roman\"><a href=\"$getperson_url" . "personID={$childrow['personID']}&amp;tree=$tree\">{$childrow['name']}</a>";
+                    echo "<li style=\"list-style-type:lower-roman;\"><a href=\"$getperson_url" . "personID={$childrow['personID']}&amp;tree=$tree\">{$childrow['name']}</a>";
                     echo getVitalDates($childrow);
                     echo "</li>\n";
                 }
@@ -384,7 +384,7 @@ echo "</form>\n";
                             $childrow['allow_private'] = $crights['private'];
                             $childrow['name'] = getName($childrow);
 
-                            echo "<li style=\"list-style-type:lower-roman\">";
+                            echo "<li style=\"list-style-type:lower-roman;\">";
                             if ($lastlastgen[$childrow['personID']]) {
                                 echo $lastlastgen[$childrow['personID']] . ". ";
                                 echo "<a href=\"#\" onclick=\"jQuery('html, body').animate({scrollTop: jQuery('#p{$childrow['personID']}').offset().top-10},'slow'); return false;\">{$childrow['name']}</a>";

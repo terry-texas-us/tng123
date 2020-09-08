@@ -8,7 +8,7 @@ echo help_header("Pomoc: Źródła");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="families_help.php" class="lightlink">&laquo; Pomoc: Rodziny</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("Pomoc: Źródła");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróc</a></p>
+            <p style="float:right;"><a href="#top">Wróc</a></p>
             <a name="add"><p class="subheadbold">Dodawanie nowego źródła</p></a>
             <p><strong>Źródło</strong> jest formą ewidencji cytatów przeznaczonych do udowodnienia lub uzasadnienia jakiegoś elementu danych. To samo źródło może być cytowane w treści dokumentu wielokrotnie na wielu osób,
                 rodzin lub wydarzeń.</p>
@@ -88,7 +88,7 @@ echo help_header("Pomoc: Źródła");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="edit"><p class="subheadbold">Edycja istniejących źródeł</p></a>
       <p>Aby wprowadzić zmiany dotyczące istniejącego źródła, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranego źródła.</p>
 
@@ -115,7 +115,7 @@ echo help_header("Pomoc: Źródła");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie źródeł</p></a>
             <p>Aby usunąć jedno źródło, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego źródła. Wiersz zmieni kolor,
                 a następnie zniknie. Źródło zostało usunięte. Aby usunąć więcej niż jedno źródło naraz, zaznacz pole w kolumnie Wybierz obok każdego źródła, które
@@ -126,7 +126,7 @@ echo help_header("Pomoc: Źródła");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="merge"><p class="subheadbold">Scalanie</p></a>
             <p>Aby znaleźć i scalić dwa powtarzające się źródła, które mogą być nieco inne, lecz odnoszą się do tego samego materiału, kliknij na przycisk "Scalanie".
                 Użytkownik decyduje, czy dwa zapisy są identyczne, czy też nie.</p>

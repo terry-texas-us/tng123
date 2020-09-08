@@ -56,9 +56,9 @@ tng_adminheader($admtext['mergeplaces'], $flags);
 ?>
 <script type="text/javascript" src="js/mergeplaces.js"></script>
 <script type="text/javascript">
-    var enterplace = "<?php echo $admtext['enterplace']; ?>";
-    var enterkeep = "<?php echo $admtext['enterkeep']; ?>";
-    var successmsg = "<?php echo $admtext['pmsucc']; ?>";
+    const enterplace = "<?php echo $admtext['enterplace']; ?>";
+    const enterkeep = "<?php echo $admtext['enterkeep']; ?>";
+    const successmsg = "<?php echo $admtext['pmsucc']; ?>";
 
     function resetFields() {
         document.form1.place.value = "";
@@ -132,7 +132,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                 <p class="subhead"><strong>2. <?php echo $admtext['selectplacemerge']; ?></strong></p>
 
                 <form action="" method="post" onSubmit="return validateForm2(this);" name="form2">
-                    <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none">
+                    <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none;">
                         <span id="successmsg1" class="normal msgapproved"></span></p>
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>

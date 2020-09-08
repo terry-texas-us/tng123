@@ -35,6 +35,7 @@ function tng_adminheader($title, $flags) {
     if (!$tng_version) {
         $tng_version = "12.0.1";
     }
+//    echo "<link href=\"{$cms['tngpath']}css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     if (isset($flags['modmgr'])) {
         echo "<link href=\"{$cms['tngpath']}css/modmanager.css\" rel=\"stylesheet\" type=\"text/css\">\n";
@@ -85,9 +86,9 @@ function getNewNumericID($type, $field, $table) {
     eval("\$suffix = \$tngconfig['{$type}suffix'];");
     if ($prefix) {
         $prefixlen = strlen($prefix) + 1;
-        $query = "SELECT MAX(0+SUBSTRING($field" . "ID,$prefixlen)) as newID FROM $table WHERE gedcom = \"$tree\" AND $field" . "ID LIKE \"$prefix%\"";
+        $query = "SELECT MAX(0+SUBSTRING($field" . "ID,$prefixlen)) AS newID FROM $table WHERE gedcom = '$tree' AND $field" . "ID LIKE \"$prefix%\"";
     } else {
-        $query = "SELECT MAX(0+SUBSTRING_INDEX($field" . "ID,'$suffix',1)) as newID FROM $table WHERE gedcom = \"$tree\"";
+        $query = "SELECT MAX(0+SUBSTRING_INDEX($field" . "ID,'$suffix',1)) AS newID FROM $table WHERE gedcom = '$tree'";
     }
 
     $result = tng_query($query);
@@ -158,7 +159,7 @@ function checkReview($type) {
     if ($assignedbranch) {
         $revwhere .= " AND branch LIKE \"%$assignedbranch%\"";
     }
-    $revquery = "SELECT count(tempID) as tcount FROM ($table, $temp_events_table) WHERE $revwhere";
+    $revquery = "SELECT count(tempID) AS tcount FROM ($table, $temp_events_table) WHERE $revwhere";
     $revresult = tng_query($revquery) or die ($admtext['cannotexecutequery'] . ": $revquery");
     $revrow = tng_fetch_assoc($revresult);
     tng_free_result($revresult);
@@ -174,13 +175,13 @@ function deleteNote($noteID, $flag) {
     $nrow = tng_fetch_assoc($result);
     tng_free_result($result);
 
-    $query = "SELECT count(ID) as xcount FROM $notelinks_table WHERE xnoteID=\"{$nrow['xnoteID']}\"";
+    $query = "SELECT count(ID) AS xcount FROM $notelinks_table WHERE xnoteID=\"{$nrow['xnoteID']}\"";
     $result = tng_query($query);
     $xrow = tng_fetch_assoc($result);
     tng_free_result($result);
 
     if ($xrow['xcount'] == 1) {
-        $query = "DELETE FROM {$xnotes_table} WHERE ID=\"{$nrow['xnoteID']}\"";
+        $query = "DELETE FROM $xnotes_table WHERE ID=\"{$nrow['xnoteID']}\"";
         $result = tng_query($query);
     }
     if ($flag) {
@@ -192,7 +193,7 @@ function deleteNote($noteID, $flag) {
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
     global $admtext;
 
-    $rval = "<span class=\"subhead\"><a href=\"#\" onclick=\"return toggleSection('$target','$id');\" class=\"togglehead\" style=\"color:black\"><img src=\"img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "\" title=\"{$admtext['toggle']}\" alt=\"{$admtext['toggle']}\" width=\"15\" height=\"15\" id=\"$id\">";
+    $rval = "<span class=\"subhead\"><a href=\"#\" onclick=\"return toggleSection('$target','$id');\" class=\"togglehead\" style=\"color:black;\"><img src=\"img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "\" title=\"{$admtext['toggle']}\" alt=\"{$admtext['toggle']}\" width=\"15\" height=\"15\" id=\"$id\">";
     $rval .= "<strong class=\"th-indent\">$headline</strong></a> $append</span><br>\n";
     if ($subhead) {
         $rval .= "<span class=\"normal tsh-indent\"><i>$subhead</i></span><br>\n";
@@ -203,7 +204,7 @@ function displayToggle($id, $state, $target, $headline, $subhead, $append = "") 
 
 function displayHeadline($headline, $icon, $menu, $message) {
     $rval = "<div class=\"lightback\">\n<div class=\"pad5\">\n";
-    $rval .= "<img src=\"$icon\" width=\"40\" height=\"40\" align=\"left\" title=\"$headline\" alt=\"$headline\" style=\"margin-right:10px\"><span class=\"plainheader\">$headline</span></div><br>\n";
+    $rval .= "<img src=\"$icon\" width=\"40\" height=\"40\" align=\"left\" title=\"$headline\" alt=\"$headline\" style=\"margin-right:10px;\"><span class=\"plainheader\">$headline</span></div><br>\n";
     if ($message) {
         $rval .= "<p class=\"normal red\">&nbsp;<em>" . urldecode(stripslashes($message)) . "</em></p>\n";
     } else {
@@ -291,11 +292,11 @@ function getHasKids($tree, $personID) {
     global $families_table, $children_table;
 
     $haskids = 0;
-    $query = "SELECT familyID FROM $families_table WHERE husband=\"$personID\" AND gedcom=\"$tree\" UNION
-		SELECT familyID FROM $families_table WHERE wife=\"$personID\" AND gedcom=\"$tree\"";
+    $query = "SELECT familyID FROM $families_table WHERE husband=\"$personID\" AND gedcom='$tree' UNION
+		SELECT familyID FROM $families_table WHERE wife=\"$personID\" AND gedcom='$tree'";
     $fresult = @tng_query($query);
     while ($famrow = tng_fetch_assoc($fresult)) {
-        $query = "SELECT personID FROM $children_table WHERE familyID=\"{$famrow['familyID']}\" AND gedcom=\"$tree\"";
+        $query = "SELECT personID FROM $children_table WHERE familyID=\"{$famrow['familyID']}\" AND gedcom='$tree'";
         $cresult = @tng_query($query);
         $ccount = tng_num_rows($cresult);
         tng_free_result($cresult);

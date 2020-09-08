@@ -95,9 +95,11 @@ function getCitations($persfamID, $shortcite = 1) {
     global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay, $showsource_url;
 
     $actualtext = $shortcite ? "" : ", actualtext";
-    $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, $citations_table.note as note, $citations_table.sourceID, description, eventID{$actualtext}
-		FROM $citations_table LEFT JOIN $sources_table on $citations_table.sourceID = $sources_table.sourceID AND $sources_table.gedcom = $citations_table.gedcom
-		WHERE persfamID = \"$persfamID\" AND $citations_table.gedcom = \"$tree\" ORDER BY ordernum, citationID";
+    $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, citations.note AS note, citations.sourceID, description, eventID{$actualtext} ";
+    $citquery .= "FROM $citations_table citations ";
+    $citquery .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
+    $citquery .= "WHERE persfamID = \"$persfamID\" AND citations.gedcom = \"$tree\" ";
+    $citquery .= "ORDER BY ordernum, citationID";
     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
 
     while ($citrow = tng_fetch_assoc($citresult)) {
@@ -263,12 +265,13 @@ function getNotes($persfamID, $flag) {
     }
 
     $secretstr = $allow_private ? "" : " AND secret != \"1\"";
-    $query = "SELECT display, $xnotes_table.note as note, $notelinks_table.eventID as eventID, $notelinks_table.xnoteID as xnoteID, $notelinks_table.ID as ID, noteID FROM $notelinks_table
-		LEFT JOIN  $xnotes_table on $notelinks_table.xnoteID = $xnotes_table.ID AND $notelinks_table.gedcom = $xnotes_table.gedcom
-		LEFT JOIN $events_table ON $notelinks_table.eventID = $events_table.eventID
-		LEFT JOIN $eventtypes_table on $eventtypes_table.eventtypeID = $events_table.eventtypeID
-		WHERE $notelinks_table.persfamID=\"$persfamID\" AND $notelinks_table.gedcom=\"$tree\" $secretstr
-		ORDER BY eventdatetr, $eventtypes_table.ordernum, tag, $notelinks_table.ordernum, ID";
+    $query = "SELECT display, xnotes.note AS note, notelinks.eventID AS eventID, notelinks.xnoteID AS xnoteID, notelinks.ID AS ID, noteID ";
+    $query .= "FROM $notelinks_table notelinks ";
+    $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
+    $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
+    $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
+    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" $secretstr ";
+    $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
     $notelinks = tng_query($query);
 
     $currevent = "";
@@ -478,7 +481,7 @@ function checkXnote($fact) {
     $newfact = array();
     preg_match("/^@(\S+)@/", $fact, $matches);
     if (isset($matches[1])) {
-        $query = "SELECT note, ID from {$xnotes_table} WHERE noteID = \"$matches[1]\" AND gedcom=\"{$tree}\"";
+        $query = "SELECT note, ID FROM $xnotes_table WHERE noteID = \"$matches[1]\" AND gedcom=\"{$tree}\"";
         $xnoteres = @tng_query($query);
         if ($xnoteres) {
             $xnote = tng_fetch_assoc($xnoteres);
@@ -604,7 +607,7 @@ function showEvent($data) {
     }
     $dateplace = !empty($data['date']) || !empty($data['place']) ? 1 : 0;
     $eventcounter += 1;
-    $toggle = !empty($data['collapse']) ? " style=\"display:none\"" : "";
+    $toggle = !empty($data['collapse']) ? " style=\"display:none;\"" : "";
     if (!isset($notearray)) {
         $notearray = array();
     }
@@ -787,9 +790,10 @@ function showBreak($breaksize) {
 function doCustomEvents($entityID, $type, $nomap = 0) {
     global $events_table, $eventtypes_table, $tree, $tngprint, $allow_lds;
 
-    $query = "SELECT display, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, tag, description, eventID, collapse, ldsevent FROM ($events_table, $eventtypes_table) 
-		WHERE persfamID = \"$entityID\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"$tree\" AND keep = \"1\" AND parenttag = \"\" 
-		ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
+    $query = "SELECT display, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, tag, description, eventID, collapse, ldsevent ";
+    $query .= "FROM ($events_table events, $eventtypes_table eventtypes) ";
+    $query .= "WHERE persfamID = '$entityID' AND events.eventtypeID = eventtypes.eventtypeID AND gedcom = '$tree' AND keep = '1' AND parenttag = '' ";
+    $query .= "ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
     $custevents = tng_query($query);
     while ($custevent = tng_fetch_assoc($custevents)) {
         $xnote = '';
@@ -826,7 +830,7 @@ function doMediaSection($entity, $medialist, $albums) {
                 $media .= "<br>\n";
             }
             $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-            $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
+            $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
             $media .= "$newmedia\n</table>\n";
         }
     }
@@ -836,7 +840,7 @@ function doMediaSection($entity, $medialist, $albums) {
             $media .= "<br>\n";
         }
         $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-        $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
+        $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
         $media .= "$albumtext\n</table>\n";
     }
     return $media;
@@ -902,12 +906,11 @@ function getAlbums($entity, $linktype) {
         $eventID = $albumlink['eventID'] && $entity['allow_living'] && $entity['allow_private'] ? $albumlink['eventID'] : "-x--general--x-";
 
         //check to see if we have rights to view this album
-        $query = "SELECT $album2entities_table.entityID as personID, people.living as living, people.private as private, people.branch as branch, families.branch as fbranch, families.living as fliving, families.private as fprivate, $album2entities_table.gedcom,
-			familyID, people.personID as personID2
-			FROM $album2entities_table
-			LEFT JOIN $people_table AS people ON $album2entities_table.entityID = people.personID AND $album2entities_table.gedcom = people.gedcom
-			LEFT JOIN $families_table AS families ON $album2entities_table.entityID = families.familyID AND $album2entities_table.gedcom = families.gedcom
-			WHERE albumID = \"{$albumlink['albumID']}\"";
+        $query = "SELECT album2entities.entityID AS personID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, album2entities.gedcom, familyID, people.personID AS personID2 ";
+        $query .= "FROM $album2entities_table album2entities ";
+        $query .= "LEFT JOIN $people_table people ON album2entities.entityID = people.personID AND album2entities.gedcom = people.gedcom ";
+        $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
+        $query .= "WHERE albumID = \"{$albumlink['albumID']}\"";
         $presult = tng_query($query);
         $foundliving = 0;
         $foundprivate = 0;
@@ -942,7 +945,7 @@ function getAlbums($entity, $linktype) {
         tng_free_result($presult);
 
         //putting this count in the albums table would make this faster
-        $query = "SELECT count($albumlinks_table.albumlinkID) as acount FROM $albumlinks_table WHERE albumID = \"{$albumlink['albumID']}\"";
+        $query = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = \"{$albumlink['albumID']}\"";
         $result2 = tng_query($query);
         $arow = tng_fetch_assoc($result2);
         tng_free_result($result2);
@@ -989,10 +992,10 @@ function writeAlbums($albums_array) {
                     $albumrows .= "<tr>";
                 }
                 if ($item['imgsrc']) {
-                    $albumrows .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:$datewidth" . "px\">{$item['imgsrc']}</td><td valign=\"top\" class=\"databack\">";
+                    $albumrows .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td><td valign=\"top\" class=\"databack\">";
                     $thumbcount++;
                 } else {
-                    $albumrows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
+                    $albumrows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px;\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
                 }
                 $albumrows .= "<span class=\"normal\">{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
                 $albumcount++;
@@ -1001,7 +1004,7 @@ function writeAlbums($albums_array) {
             $albumtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\"$cellid rowspan=\"$totalalbums\"><span class=\"fieldname\">{$text['albums']}</span></td>\n";
 
             if (!$thumbcount) {
-                $albumrows = str_replace("/<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px\">&nbsp;<\/td><td valign=\"top\" class=\"databack\">/", "<td valign=\"top\" class=\"databack\" colspan=\"2\">", $albumrows);
+                $albumrows = str_replace("/<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px;\">&nbsp;<\/td><td valign=\"top\" class=\"databack\">/", "<td valign=\"top\" class=\"databack\" colspan=\"2\">", $albumrows);
             }
             $albumtext .= $albumrows;
         }
@@ -1021,7 +1024,7 @@ function getMedia($entity, $linktype, $all = false) {
     $always = $misc['always'];
     $mlflag = ($linktype == "C" || !$linktype) ? 0 : 1;
 
-    $query = "SELECT medialinkID, description, notes, altdescription, altnotes, usecollfolder, mediatypeID, personID, $medialinks_table.mediaID as mediaID, thumbpath, status, plot, eventID, alwayson, path, form, abspath, newwindow
+    $query = "SELECT medialinkID, description, notes, altdescription, altnotes, usecollfolder, mediatypeID, personID, $medialinks_table.mediaID AS mediaID, thumbpath, status, plot, eventID, alwayson, path, form, abspath, newwindow
 		FROM ($medialinks_table, $media_table)
 		WHERE $medialinks_table.personID=\"$personID\"
 		AND $media_table.mediaID = $medialinks_table.mediaID and dontshow != 1";
@@ -1062,7 +1065,7 @@ function getMedia($entity, $linktype, $all = false) {
                     if ($linktype != "C") {
                         $thismedia['imgsrc'] .= "_$medialinkID";
                     }
-                    $thismedia['imgsrc'] .= "\" style=\"display:none\"></div>";
+                    $thismedia['imgsrc'] .= "\" style=\"display:none;\"></div>";
                     $thismedia['imgsrc'] .= "</div>\n";
                     $thismedia['imgsrc'] .= "<a href=\"{$thismedia['href']}\"";
                     if ($gotImageJpeg && isPhoto($medialink) && checkMediaFileSize("$rootpath$usefolder/" . $medialink['path'])) {
@@ -1174,15 +1177,15 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                         //only do this next line for mediarows
                         $mediarows .= "<tr class=\"m{$prefix}{$mediatypeID}\"";
                         if ($hidemedia) {
-                            $mediarows .= " style=\"display:none\"";
+                            $mediarows .= " style=\"display:none;\"";
                         }
                         $mediarows .= ">";
                     }
                     if ($item['imgsrc']) {
-                        $mediarows .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:$datewidth" . "px\">{$item['imgsrc']}</td><td valign=\"top\" class=\"databack\">";
+                        $mediarows .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td><td valign=\"top\" class=\"databack\">";
                         $thumbcount++;
                     } else {
-                        $mediarows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
+                        $mediarows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px;\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
                     }
                     $mediarows .= "<span class=\"normal\">{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
                 }
@@ -1191,7 +1194,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             if (empty($tngconfig['ssdisabled']) && $mediacount >= 3 && $slidelink && $sitever != "mobile") {
                 $titlemsg .= "<div id=\"ssm{$prefix}{$mediatypeID}\"";
                 if ($hidemedia) {
-                    $titlemsg .= " style=\"display:none\"";
+                    $titlemsg .= " style=\"display:none;\"";
                 }
                 $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
             }
@@ -1208,7 +1211,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             $mediatext .= "<span class=\"fieldname\">$titlemsg</span></td>\n";
 
             if (!$thumbcount) {
-                $mediarows = str_replace("<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px\">&nbsp;</td><td valign=\"top\" class=\"databack\">", "<td valign=\"top\" class=\"databack\" colspan=\"2\">", $mediarows);
+                $mediarows = str_replace("<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px;\">&nbsp;</td><td valign=\"top\" class=\"databack\">", "<td valign=\"top\" class=\"databack\" colspan=\"2\">", $mediarows);
             }
 
             $mediatext .= $countrow;
@@ -1216,7 +1219,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             //throw in the $thumbdivs
             if ($thumbdivs) {
                 if ($hidemedia) {
-                    $mediatext .= "</tr><tr class=\"m{$prefix}{$mediatypeID}\" style=\"display:none\">";
+                    $mediatext .= "</tr><tr class=\"m{$prefix}{$mediatypeID}\" style=\"display:none;\">";
                 }
                 $mediatext .= "<td class=\"databack\" colspan=\"2\">$thumbdivs</td></tr>\n";
             }
@@ -1232,10 +1235,9 @@ function getAlbumPhoto($albumID, $albumname) {
     global $livedefault, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
     global $mediatypes_assoc, $mediapath, $showalbum_url, $tree;
 
-    $wherestr2 = $tree ? " AND $medialinks_table.gedcom = \"$tree\"" : "";
-
-    $query2 = "SELECT path, thumbpath, usecollfolder, mediatypeID, $albumlinks_table.mediaID as mediaID, alwayson FROM ($media_table, $albumlinks_table)
-		WHERE albumID = \"$albumID\" AND $media_table.mediaID = $albumlinks_table.mediaID AND defphoto=\"1\"";
+    $query2 = "SELECT path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson ";
+    $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
+    $query2 .= "WHERE albumID = '$albumID' AND media.mediaID = albumlinks.mediaID AND defphoto = '1'";
     $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
     $trow = tng_fetch_assoc($result2);
     $mediaID = $trow['mediaID'];
@@ -1248,11 +1250,14 @@ function getAlbumPhoto($albumID, $albumname) {
         $foundliving = 0;
         $foundprivate = 0;
         if (!$trow['alwayson'] && $livedefault != 2) {
-            $query = "SELECT people.living as living, people.private as private, people.branch as branch, $families_table.branch as fbranch, $families_table.living as fliving, $families_table.private as fprivate, linktype, $medialinks_table.gedcom as gedcom
-				FROM $medialinks_table
-				LEFT JOIN $people_table AS people ON $medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom
-				LEFT JOIN $families_table ON $medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom
-				WHERE mediaID = \"$mediaID\"$wherestr2";
+            $query = "SELECT people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, linktype, medialinks.gedcom AS gedcom ";
+            $query .= "FROM $medialinks_table medialinks ";
+            $query .= "LEFT JOIN $people_table people ON medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom ";
+            $query .= "LEFT JOIN $families_table families ON medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom ";
+            $query .= "WHERE mediaID = '$mediaID'";
+            if ($tree) {
+                $query .= " AND medialinks.gedcom = '$tree'";
+            }
             $presult = tng_query($query);
             while ($prow = tng_fetch_assoc($presult)) {
                 if ($prow['fbranch'] != NULL) {
@@ -1271,7 +1276,7 @@ function getAlbumPhoto($albumID, $albumname) {
 
                 //if living still null, must be a source
                 if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-                    $query = "SELECT count(personID) as ccount FROM $citations_table, $people_table
+                    $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
 						WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 						AND living = '1'";
                     $presult2 = tng_query($query);
@@ -1281,7 +1286,7 @@ function getAlbumPhoto($albumID, $albumname) {
                     }
                     tng_free_result($presult2);
                 } elseif ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
-                    $query = "SELECT count(familyID) as ccount FROM $citations_table, $families_table
+                    $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
 						WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom
 						AND living = '1'";
                     $presult2 = tng_query($query);
@@ -1302,7 +1307,7 @@ function getAlbumPhoto($albumID, $albumname) {
         if (!$foundliving && !$foundprivate) {
             $size = @GetImageSize("$rootpath$tusefolder/{$trow['thumbpath']}");
             $imgsrc = "<div class=\"media-img\">";
-            $imgsrc .= "<div class=\"media-prev\" id=\"prev{$trow['mediaID']}\" style=\"display:none\"></div>";
+            $imgsrc .= "<div class=\"media-prev\" id=\"prev{$trow['mediaID']}\" style=\"display:none;\"></div>";
             $imgsrc .= "</div>\n";
             $imgsrc .= "<a href=\"$showalbum_url" . "albumID=$albumID\" title=\"{$text['albclicksee']}\"";
             if (function_exists('imageJpeg')) {
@@ -1377,7 +1382,7 @@ function getStdExtras($persfamID) {
     global $tree, $events_table;
 
     $stdex = array();
-    $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = \"$tree\" AND parenttag != \"\" ORDER BY parenttag";
+    $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
     $stdextras = tng_query($query);
     while ($stdextra = tng_fetch_assoc($stdextras)) {
         $stdex[$stdextra['parenttag']] = getFact($stdextra);
@@ -1391,7 +1396,7 @@ function formatAssoc($assoc) {
     $assocstr = $namestr = "";
 
     if ($assoc['reltype'] == "I" || $assoc['reltype'] == "") {
-        $query = "SELECT firstname, lastname, lnprefix, prefix, suffix, nameorder, living, private, branch, gedcom FROM $people_table WHERE personID = \"{$assoc['passocID']}\" AND gedcom = \"$tree\"";
+        $query = "SELECT firstname, lastname, lnprefix, prefix, suffix, nameorder, living, private, branch, gedcom FROM $people_table WHERE personID = \"{$assoc['passocID']}\" AND gedcom = '$tree'";
         $result = tng_query($query);
 
         $row = tng_fetch_assoc($result);
@@ -1406,7 +1411,7 @@ function formatAssoc($assoc) {
         }
         $assocstr = "<a href=\"$getperson_url" . "personID={$assoc['passocID']}&amp;tree=$tree\">$assocstr</a>";
     } elseif ($assoc['reltype'] == "F") {
-        $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch, gedcom FROM $families_table WHERE familyID = \"{$assoc['passocID']}\" AND gedcom = \"$tree\"";
+        $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch, gedcom FROM $families_table WHERE familyID = \"{$assoc['passocID']}\" AND gedcom = '$tree'";
         $result = tng_query($query);
 
         $row = tng_fetch_assoc($result);

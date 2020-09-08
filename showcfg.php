@@ -48,12 +48,11 @@ div {
   $line_nr = 1;
   foreach ($lines as $line) {
     $line = htmlspecialchars($line);
-    echo "
-<div style=\"display:table-row\">
-<div style=\"display:table-cell;color:gray;\">";
+    echo "<div style=\"display:table-row;\">";
+    echo "<div style=\"display:table-cell;color:gray;\">";
     echo sprintf('%04d', $line_nr), ':&nbsp;';
     echo '</div>';
-    echo "<div style=\"display:table-cell\">";
+    echo "<div style=\"display:table-cell;\">";
     echo "<pre>", $line, "</pre>";
     echo "</div>";
     echo "</div>";

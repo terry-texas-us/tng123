@@ -73,7 +73,7 @@ if ($xsrcaction) {
     $id = "cemeteryID";
     $location = "admin_cemeteries.php";
 } elseif ($xnoteaction) {
-    $query = "DELETE FROM {$xnotes_table} WHERE 1=0";
+    $query = "DELETE FROM $xnotes_table WHERE 1=0";
     $modmsg = "notes";
     $id = "ID";
     $location = "admin_notelist.php";
@@ -103,10 +103,10 @@ foreach (array_keys($_POST) as $key) {
             $tree = $row['gedcom'];
             $items[] = $row['gedcom'] . "/" . $row['familyID'];
 
-            $fquery = "DELETE FROM $children_table WHERE familyID=\"$familyID\" AND gedcom = \"$tree\"";
+            $fquery = "DELETE FROM $children_table WHERE familyID='$familyID' AND gedcom = \"$tree\"";
             $result = @tng_query($fquery);
 
-            $pquery = "UPDATE $people_table SET famc=\"\" WHERE gedcom = \"$tree\" AND famc=\"$familyID\"";
+            $pquery = "UPDATE $people_table SET famc=\"\" WHERE gedcom = \"$tree\" AND famc='$familyID'";
             $result = tng_query($pquery);
 
             updateHasKidsFamily($familyID);

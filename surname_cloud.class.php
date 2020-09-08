@@ -46,8 +46,11 @@ class surname_cloud
 
     // Get all unique surnames
     $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
-    $query = "SELECT ucase( binary $surnamestr ) as surnameuc, $surnamestr as surname, count( ucase( binary lastname ) ) as count, lastname
-					FROM $people_table $wherestr GROUP BY surname   ORDER by lastname";
+    $query = "SELECT UCASE(binary $surnamestr) AS surnameuc, $surnamestr AS surname, count(UCASE(binary lastname)) AS count, lastname ";
+    $query .= "FROM $people_table ";
+    $query .= "$wherestr ";
+    $query .= "GROUP BY surname ";
+    $query .= "ORDER by lastname";
     $result = tng_query($query) or die ("{$text['cannotexecutequery']}: $query");
 
     if (!$result) {

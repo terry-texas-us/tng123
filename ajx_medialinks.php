@@ -28,19 +28,17 @@ if (!$allow_media_edit && !$allow_media_add) {
 
 [$tree, $trees, $treename, $treequery] = getOrderedTreesList($assignedtree, $trees_table);
 
-$query = "SELECT $medialinks_table.medialinkID as mlinkID, $medialinks_table.personID as personID, eventID, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, people.nameorder as nameorder, altdescription, altnotes, $medialinks_table.gedcom as gedcom, people.branch as branch, treename,
-	familyID, people.personID as personID2, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder,
-	husbpeople.personID as hpersonID, husbpeople.firstname as hfirstname, husbpeople.lnprefix as hlnprefix, husbpeople.lastname as hlastname, husbpeople.prefix as hprefix, husbpeople.suffix as hsuffix, husbpeople.nameorder as hnameorder,
-	sourceID, sources.title, repositories.repoID as repoID, reponame, defphoto, linktype, dontshow, people.living, people.private, $families_table.living as fliving, $families_table.private as fprivate
-	FROM $medialinks_table
-	LEFT JOIN $trees_table as trees ON $medialinks_table.gedcom = trees.gedcom
-	LEFT JOIN $people_table AS people ON $medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom
-	LEFT JOIN $families_table ON $medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom
-	LEFT JOIN $sources_table AS sources ON $medialinks_table.personID = sources.sourceID AND $medialinks_table.gedcom = sources.gedcom
-	LEFT JOIN $repositories_table AS repositories ON $medialinks_table.personID = repositories.repoID AND $medialinks_table.gedcom = repositories.gedcom
-	LEFT JOIN $people_table AS husbpeople ON $families_table.husband = husbpeople.personID AND $families_table.gedcom = husbpeople.gedcom
-	LEFT JOIN $people_table AS wifepeople ON $families_table.wife = wifepeople.personID AND $families_table.gedcom = wifepeople.gedcom
-	WHERE mediaID = \"$mediaID\" ORDER BY $medialinks_table.medialinkID DESC";
+$query = "SELECT medialinks.medialinkID AS mlinkID, medialinks.personID AS personID, eventID, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, people.nameorder AS nameorder, altdescription, altnotes, medialinks.gedcom AS gedcom, people.branch AS branch, treename, familyID, people.personID AS personID2, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, sourceID, sources.title, repositories.repoID AS repoID, reponame, defphoto, linktype, dontshow, people.living, people.private, families.living AS fliving, families.private AS fprivate ";
+$query .= "FROM $medialinks_table medialinks ";
+$query .= "LEFT JOIN $trees_table trees ON medialinks.gedcom = trees.gedcom ";
+$query .= "LEFT JOIN $people_table people ON medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom ";
+$query .= "LEFT JOIN $families_table families ON medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom ";
+$query .= "LEFT JOIN $sources_table sources ON medialinks.personID = sources.sourceID AND medialinks.gedcom = sources.gedcom ";
+$query .= "LEFT JOIN $repositories_table repositories ON medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom ";
+$query .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
+$query .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
+$query .= "WHERE mediaID = \"$mediaID\" ";
+$query .= "ORDER BY medialinks.medialinkID DESC";
 $result2 = tng_query($query);
 
 header("Content-type:text/html; charset=" . $session_charset);

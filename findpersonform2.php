@@ -56,10 +56,10 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
         </table>
     <br>
-    <input type="submit" value="<?php echo $admtext['search']; ?>"> <img src="img/spinner.gif" id="findspin" style="display:none">
+    <input type="submit" value="<?php echo $admtext['search']; ?>"> <img src="img/spinner.gif" id="findspin" style="display:none;">
   </form>
 
 </div>
 
-<div class="databack" style="display:none;border:0" id="findresults">
+<div class="databack" style="display:none;border:0;" id="findresults">
 </div>

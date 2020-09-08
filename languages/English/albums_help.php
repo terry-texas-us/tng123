@@ -8,7 +8,7 @@ echo help_header("Help: Albums");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Albums");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -48,7 +48,7 @@ echo help_header("Help: Albums");
     <tr class="databack">
       <td class="tngshadow">
 
-        <p style="float:right"><a href="#top">Top</a></p>
+        <p style="float:right;"><a href="#top">Top</a></p>
         <a name="add"><p class="subheadbold">Adding New Albums</p></a>
         <p>An <strong>Album</strong> in TNG is a grouping of media. An Album can include any number of media, and any particular media item can belong to multiple albums.
           Like individual media, Albums can be linked to people, families, sources, repositories or places.</p>
@@ -81,7 +81,7 @@ echo help_header("Help: Albums");
   <tr class="databack">
     <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="edit"><p class="subheadbold">Editing Existing Albums</p></a>
             <p>To make changes to an existing Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Edit icon next to that Album.
                 Take note of the following items that are not on the "Add New Album" page:</p>
@@ -124,7 +124,7 @@ echo help_header("Help: Albums");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Albums</p></a>
             <p>To delete an Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Delete icon next to that Album. The row will
                 change color and then vanish as the item is deleted.</p>
@@ -134,7 +134,7 @@ echo help_header("Help: Albums");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="sort"><p class="subheadbold">Sorting Albums</p></a>
             <p>By default, Albums linked to a Person, Family, Source, Repository or Place are sorted by the order in which they were linked to that entity. To change that
                 order, you must indicate a new order on the Album/Sort tab.</p>

@@ -8,7 +8,7 @@ echo help_header("Help: Repositories");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="sources_help.php" class="lightlink">&laquo; Help: Sources</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Repositories");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -51,7 +51,7 @@ echo help_header("Help: Repositories");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding New Repositories</p></a>
             <p>A <strong>Repository</strong> is any collection of sources, physical or otherwise.</p>
 
@@ -84,7 +84,7 @@ echo help_header("Help: Repositories");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="edit"><p class="subheadbold">Editing Existing Repositories</p></a>
       <p>To make changes to an existing repository, use the <a href="#search">Search</a> tab to locate the repository, then click on the Edit icon next to that repository.</p>
 
@@ -108,7 +108,7 @@ echo help_header("Help: Repositories");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Repositories</p></a>
             <p>To delete one repository, use the <a href="#search">Search</a> tab to locate the repository, then click on the Delete icon next to that repository. The row will
                 change color and then vanish as the repository is deleted.
@@ -120,7 +120,7 @@ echo help_header("Help: Repositories");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="merge"><p class="subheadbold">Merge</p></a>
             <p>Click on this tab to review and merge repositories that may be slightly different but refer to the same material.
                 You will decide whether multiple records are the same or not.</p>

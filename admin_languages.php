@@ -48,7 +48,7 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(languageID) as lcount FROM $languages_table $wherestr";
+    $query = "SELECT count(languageID) AS lcount FROM $languages_table $wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['lcount'];

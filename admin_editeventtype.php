@@ -66,11 +66,11 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
 
       if (count($disppairs) > 1) {
         $defdisplay = "";
-        $displaytrstyle = " style=\"display:none\"";
+        $displaytrstyle = " style=\"display:none;\"";
         $otherlangsstyle = "";
       } else {
         $displaytrstyle = "";
-        $otherlangsstyle = " style=\"display:none\"";
+        $otherlangsstyle = " style=\"display:none;\"";
         if (count($disppairs) == 1) {
           $defdisplay = $dispvalues[1];
         } else {
@@ -190,7 +190,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                     <tr>
                       <td valign="top" colspan="2">
                         <br>
-                        <hr style="margin-left:0; width:400px">
+                        <hr style="margin-left:0; width:400px;">
                         <?php echo displayToggle("plus0", 0, "otherlangs", $admtext['othlangs'], ''); ?>
                         <table id="otherlangs"<?php echo $otherlangsstyle; ?> class="normal">
                           <tr>
@@ -200,7 +200,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                           echo $displayrows;
                           ?>
                         </table>
-                        <hr style="margin-left:0; width:400px">
+                        <hr style="margin-left:0; width:400px;">
                         <br>
                       </td>
                     </tr>

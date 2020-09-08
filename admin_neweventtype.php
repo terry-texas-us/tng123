@@ -120,15 +120,15 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                         <tr>
                             <td valign="top" colspan="2">
                                 <br>
-                                <hr style="margin-left:0; width:400px">
+                                <hr style="margin-left:0; width:400px;">
                                 <?php echo displayToggle("plus0", 0, "otherlangs", $admtext['othlangs'], ''); ?>
-                                <table style="display:none" id="otherlangs" class="normal">
+                                <table style="display:none;" id="otherlangs" class="normal">
                                     <tr>
                                         <td valign="top" colspan="2"><br><b><?php echo $admtext['allnone']; ?></b><br><br></td>
                                     </tr>
                                     <?php echo $displayrows; ?>
                                 </table>
-                                <hr style="margin-left:0; width:400px">
+                                <hr style="margin-left:0; width:400px;">
                                 <br>
                             </td>
                         </tr>

@@ -10,7 +10,7 @@ if ($session_charset != "UTF-8") {
     $mytitle = tng_utf8_decode($mytitle);
 }
 
-$query = "SELECT sourceID, title FROM $sources_table WHERE gedcom = \"$tree\" AND title LIKE \"%$mytitle%\" ORDER BY title LIMIT 250";
+$query = "SELECT sourceID, title FROM $sources_table WHERE gedcom = '$tree' AND title LIKE \"%$mytitle%\" ORDER BY title LIMIT 250";
 $result = tng_query($query);
 
 header("Content-type:text/html; charset=" . $session_charset);
@@ -38,7 +38,10 @@ header("Content-type:text/html; charset=" . $session_charset);
         <?php
         while ($row = tng_fetch_assoc($result)) {
             $fixedtitle = addslashes($row['title']);
-            echo "<tr><td valign=\"top\" class=\"lightback\"><span class=\"normal\"><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">{$row['sourceID']}</a></span></td><td class=\"lightback\"><span class=\"normal\"><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">" . truncateIt($row['title'], 75) . "</a>&nbsp;</span></td></tr>\n";
+            echo "<tr>\n";
+            echo "<td valign=\"top\" class=\"lightback\"><span class=\"normal\"><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">{$row['sourceID']}</a></span></td>\n";
+            echo "<td class=\"lightback\"><span class=\"normal\"><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">" . truncateIt($row['title'], 75) . "</a>&nbsp;</span></td>\n";
+            echo "</tr>\n";
         }
         tng_free_result($result);
         ?>

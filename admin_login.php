@@ -106,7 +106,7 @@ if (!empty($reset)) {
     ?>
       <tr>
           <td>
-              <span class="normal" style="color:#FF0000"><em><?php echo $message; ?></em></span>
+              <span class="normal" style="color:#f00;"><em><?php echo $message; ?></em></span>
           </td>
       </tr>
     <?php
@@ -114,8 +114,8 @@ if (!empty($reset)) {
   ?>
     <tr>
         <td class="databack tngshadow rounded10">
-            <div id="admlogintable" style="position:relative">
-                <div class="altab" style="float:left">
+            <div id="admlogintable" style="position:relative;">
+                <div class="altab" style="float:left;">
                     <form action="processlogin.php" name="form1" method="post">
                         <table>
                           <tr>
@@ -143,7 +143,7 @@ if (!empty($reset)) {
               <div class="altab" style="float:left; width:50px;">&nbsp;&nbsp;&nbsp;</div>
               <div class="altab">
                 <form action="admin_login.php" name="form2" method="post">
-                  <table style="max-width:400px">
+                  <table style="max-width:400px;">
                     <tr>
                       <td colspan="2"><span class="normal"><?php echo $text['forgot1']; ?></span></td>
                     </tr>

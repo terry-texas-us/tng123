@@ -283,9 +283,9 @@
 <body>
 <h1>TNG Installation Instructions</h1>
 
-<table style="height:100%">
+<table style="height:100%;">
     <tr>
-        <td width="250" valign="top" style="background-color:#f9f9f9; border:1px solid silver; padding:5px">
+        <td width="250" valign="top" style="background-color:#f9f9f9; border:1px solid silver; padding:5px;">
             <ul style="list-style: none; margin-left: 0; padding-left: 0;">
                 <li><p><a href="javascript: startAt('s0');"><strong>Welcome / Begin Installation</strong></a></p></li>
                 <li><a href="javascript: startAt('s1');"><strong>More Information</strong></a></li>
@@ -342,9 +342,9 @@
                 <li><img src="img/spacer.gif" width="9" height="9" alt=""> <a href="javascript: startAt('s26');"><strong>Final Notes</strong></a><br></li>
             </ul>
 
-            <p style="font-size:10pt"><a href="javascript: showAll();">Single-page guide (show everything at once)</a> | <a href="javascript: hideAll();startAt('s0');">Hide all</a></p>
+            <p style="font-size:10pt;"><a href="javascript: showAll();">Single-page guide (show everything at once)</a> | <a href="javascript: hideAll();startAt('s0');">Hide all</a></p>
 
-            <span style="font-size:10pt">TNG Support: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a><br>
+            <span style="font-size:10pt;">TNG Support: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a><br>
 			TNG Forum: <a href="https://tng.community" target="_blank">http://tng.community</a><br>
 			TNG Wiki: <a href="https://tng.lythgoes.net/wiki" target="_blank">http://tng.lythgoes.net/wiki</a><br>
 			TNG info: <a href="https://tngsitebuilding.com" target="_blank">http://www.tngsitebuilding.com</a><br>
@@ -390,7 +390,7 @@
                             <table>
                                 <tr>
                                     <td valign="top">
-                                        <form action="setperms" method="get" style="margin:0">
+                                        <form action="setperms" method="get" style="margin:0;">
                                             <input name="perms" type="button" value="Set Permissions" onclick="doPerms('permMsgEx')">
                                         </form>
                                     </td>
@@ -406,7 +406,7 @@
                                 <tr>
                                     <td><span class="normal">Backups Folder:</span></td>
                                     <td>
-                                        <form action="" method="get" style="margin:0" name="backupsfrmEx" id="backupsfrmEx"
+                                        <form action="" method="get" style="margin:0;" name="backupsfrmEx" id="backupsfrmEx"
                                               onsubmit="if( document.backupsfrmEx.foldername.value != '' ) {doFolder('backuppath',document.backupsfrmEx,'buFolderMsgEx');} return false;">
                                             <input type="text" value="backups" name="foldername" size="30"><input type="hidden" value="backups" name="oldname">
                                             <input type="submit" value="Rename Folder">
@@ -419,7 +419,7 @@
                                 <tr>
                                     <td><span class="normal">GEDCOM Folder:</span></td>
                                     <td>
-                                        <form action="" method="get" style="margin:0" name="gedcomfrmEx" id="gedcomfrmEx"
+                                        <form action="" method="get" style="margin:0;" name="gedcomfrmEx" id="gedcomfrmEx"
                                               onsubmit="if( document.gedcomfrmEx.foldername.value != '' ) {doFolder('gedpath',document.gedcomfrmEx,'gedFolderMsgEx');} return false;">
                                             <input type="text" value="gedcom" name="foldername" size="30"><input type="hidden" value="gedcom" name="oldname">
                                             <input type="submit" value="Rename Folder">
@@ -460,7 +460,7 @@
                         <li><p><b>Establish a connection to your database:</b><br>
                             If you don't know this information, ask your web host. They may want you to create the database yourself, but they can show you how. Most people will not need to enter
                             anything for the Port or Socket.
-                            <form action="setdbparams" method="get" style="margin:0" name="dbparamsfrmEx" onsubmit="return doDBParams(document.dbparamsfrmEx,'dbMsgEx');">
+                            <form action="setdbparams" method="get" style="margin:0;" name="dbparamsfrmEx" onsubmit="return doDBParams(document.dbparamsfrmEx,'dbMsgEx');">
                                 <table>
                                     <tr>
                                         <td><span class="normal">Host Name:</span></td>
@@ -501,7 +501,7 @@
                             utf8_unicode_ci or similar. If you're not using UTF-8, latin_swedish_ci is a common choice. If you're not sure,
                             <a href="https://www.google.com/search?q=what+mysql+database+collation+should+i+use" target="_blank">look here</a>, or
                             blank out the box below to use the default assigned to your database by your host.
-                            <form action="createtables" method="get" style="margin:0" name="tablesfrm">
+                            <form action="createtables" method="get" style="margin:0;" name="tablesfrm">
                                 <table class="normal">
                                     <tr>
                                         <td>Database Collation:</td>
@@ -620,7 +620,7 @@
 
                     <p>TNG is now installed and ready to use! Before you dive in, you might benefit by visiting the
                         <a href="javascript: startAt('s1');">More Information</a> section and reviewing the following topics:</p>
-                    <ul style="list-style:disc">
+                    <ul style="list-style:disc;">
                         <li><a href="javascript: startAt('s12');"><strong>Other Settings</strong></a></li>
                         <li><a href="javascript: startAt('s14');"><strong>Your Data</strong></a></li>
                         <li><a href="javascript: startAt('s22');"><strong>Customizing Your TNG Pages</strong></a></li>
@@ -777,7 +777,7 @@
                     <table>
                         <tr>
                             <td valign="top">
-                                <form action="setperms" method="get" style="margin:0">
+                                <form action="setperms" method="get" style="margin:0;">
                                     <input name="perms" type="button" value="Set Permissions" onclick="doPerms('permMsg')">
                                 </form>
                             </td>
@@ -847,7 +847,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Multimedia Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="mediafrm" id="mediafrm"
+                                <form action="" method="get" style="margin:0;" name="mediafrm" id="mediafrm"
                                       onsubmit="if( document.mediafrm.foldername.value != '' ) {doFolder('mediapath',document.mediafrm,'mediaFolderMsg');} return false">
                                     <input type="text" value="media" name="foldername" size="30"><input type="hidden" value="media" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -860,7 +860,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Photos Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="photosfrm" id="photosfrm"
+                                <form action="" method="get" style="margin:0;" name="photosfrm" id="photosfrm"
                                       onsubmit="if( document.photosfrm.foldername.value != '' ) {doFolder('photopath',document.photosfrm,'phFolderMsg');} return false;">
                                     <input type="text" value="photos" name="foldername" size="30"><input type="hidden" value="photos" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -873,7 +873,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Documents Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="documentsfrm" id="documentsfrm"
+                                <form action="" method="get" style="margin:0;" name="documentsfrm" id="documentsfrm"
                                       onsubmit="if( document.documentsfrm.foldername.value != '' ) {doFolder('documentpath',document.documentsfrm,'docFolderMsg');} return false;">
                                     <input type="text" value="documents" name="foldername" size="30"><input type="hidden" value="documents" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -886,7 +886,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Histories Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="historiesfrm" id="historiesfrm"
+                                <form action="" method="get" style="margin:0;" name="historiesfrm" id="historiesfrm"
                                       onsubmit="if( document.historiesfrm.foldername.value != '' ) {doFolder('historypath',document.historiesfrm,'histFolderMsg');} return false;">
                                     <input type="text" value="histories" name="foldername" size="30"><input type="hidden" value="histories" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -899,7 +899,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Headstones Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="headstonesfrm" id="headstonesfrm"
+                                <form action="" method="get" style="margin:0;" name="headstonesfrm" id="headstonesfrm"
                                       onsubmit="if( document.headstonesfrm.foldername.value != '' ) {doFolder('headstonepath',document.headstonesfrm,'hsFolderMsg');} return false;">
                                     <input type="text" value="headstones" name="foldername" size="30"><input type="hidden" value="headstones" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -912,7 +912,7 @@
                         <tr>
                             <td valign="top"><span class="normal">GENDEX Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="gendexfrm" id="gendexfrm"
+                                <form action="" method="get" style="margin:0;" name="gendexfrm" id="gendexfrm"
                                       onsubmit="if( document.gendexfrm.foldername.value != '' ) {doFolder('gendexfile',document.gendexfrm,'gendexFolderMsg');} return false;">
                                     <input type="text" value="gendex" name="foldername" size="30"><input type="hidden" value="gendex" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -925,7 +925,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Backups Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="backupsfrm" id="backupsfrm"
+                                <form action="" method="get" style="margin:0;" name="backupsfrm" id="backupsfrm"
                                       onsubmit="if( document.backupsfrm.foldername.value != '' ) {doFolder('backuppath',document.backupsfrm,'buFolderMsg');} return false;">
                                     <input type="text" value="backups" name="foldername" size="30"><input type="hidden" value="backups" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -938,7 +938,7 @@
                         <tr>
                             <td valign="top"><span class="normal">GEDCOM Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="gedcomfrm" id="gedcomfrm"
+                                <form action="" method="get" style="margin:0;" name="gedcomfrm" id="gedcomfrm"
                                       onsubmit="if( document.gedcomfrm.foldername.value != '' ) {doFolder('gedpath',document.gedcomfrm,'gedFolderMsg');} return false;">
                                     <input type="text" value="gedcom" name="foldername" size="30"><input type="hidden" value="gedcom" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -951,7 +951,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Mods Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="modsfrm" id="modsfrm"
+                                <form action="" method="get" style="margin:0;" name="modsfrm" id="modsfrm"
                                       onsubmit="if( document.modsfrm.foldername.value != '' ) {doFolder('modspath',document.modsfrm,'modsFolderMsg');} return false;">
                                     <input type="text" value="mods" name="foldername" size="30"><input type="hidden" value="mods" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -964,7 +964,7 @@
                         <tr>
                             <td valign="top"><span class="normal">Extensions Folder:</span></td>
                             <td>
-                                <form action="" method="get" style="margin:0" name="extensionsfrm" id="extensionsfrm"
+                                <form action="" method="get" style="margin:0;" name="extensionsfrm" id="extensionsfrm"
                                       onsubmit="if( document.extensionsfrm.foldername.value != '' ) {doFolder('extspath',document.extensionsfrm,'extsFolderMsg');} return false;">
                                     <input type="text" value="extensions" name="foldername" size="30"><input type="hidden" value="extensions" name="oldname">
                                     <input type="submit" value="Rename Folder">
@@ -1068,7 +1068,7 @@
                     <p>More information on these parameters is available on <a href="http://tng.lythgoes.net/wiki/index.php?title=Setup_-_Database" target="_blank">this page</a> on the TNG Wiki.
 
                     <p>Enter your information here, then click "Save and Verify" below:</p>
-                    <form action="setdbparams" method="get" style="margin:0" name="dbparamsfrm" onsubmit="return doDBParams(document.dbparamsfrm,'dbMsg');">
+                    <form action="setdbparams" method="get" style="margin:0;" name="dbparamsfrm" onsubmit="return doDBParams(document.dbparamsfrm,'dbMsg');">
                         <table>
                             <tr>
                                 <td valign="top"><span class="normal">Host Name:</span></td>
@@ -1135,7 +1135,7 @@
 
                     <p><b>IMPORTANT:</b> If you created the tables previously, doing this will erase ALL of your existing TNG data!</p>
 
-                    <form action="createtables" method="get" style="margin:0" name="tablesfrm2" onsubmit="return doTables(document.tablesfrm2,'tableMsg');">
+                    <form action="createtables" method="get" style="margin:0;" name="tablesfrm2" onsubmit="return doTables(document.tablesfrm2,'tableMsg');">
                         <table>
                             <tr>
                                 <td valign="top">

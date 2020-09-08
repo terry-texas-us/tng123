@@ -12,7 +12,7 @@ echo help_header("N�pov�da: M�dia");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="more_help.php" class="lightlink">&laquo; N�pov�da: V�ce</a> &nbsp; | &nbsp;
@@ -75,7 +75,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� m�dium</p></a>
 
             <p>Chcete-li p�idat nov� m�dium, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako obr�zek mapy, informace o m�st� a
@@ -194,7 +194,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Upravit existuj�c� m�dium</p></a>
             <p>Chcete-li upravit existuj�c� m�dium, k nalezen� polo�ky pou�ijte z�lo�ku <a href="#search">Hledat</a>, a pot� klikn�te na ikonu Upravit vedle t�to polo�ky.
                 V�znam pol�, kter� nejsou na str�nce "P�idat nov� m�dium", je n�sleduj�c�:</p>
@@ -264,7 +264,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Vymazat m�dium</p></a>
 
             <p>Chcete-li odstranit jednu medi�ln� polo�ku, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� dan� polo�ky, a pot� klikn�te na ikonu Vymazat vedle t�to polo�ky. Tento ��dek zm�n�
@@ -276,7 +276,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="convert"><p class="subheadbold">P�ev�st m�dium z jedn� kolekce do jin�</p></a>
             Chcete-li p�ev�st medi�ln� polo�ky z jednoho typu m�dia nebo "kolekce" do jin�, za�krtn�te na z�lo�ce <a href="#search">Hledat</a> pol��ko vedle t�chto polo�ek,
             pot� z rozbalovac�ho seznamu v horn� ��sti str�nky vedle tla��tka "P�ev�st vybran� na" vyberte novou kolekci. Na z�v�r klikn�te na tla��tko "P�ev�st vybran� na".
@@ -287,7 +287,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="album"><p class="subheadbold">P�idat m�dium do alba</p></a>
             Chcete-li m�dium p�idat do alba, za�krtn�te pol��ko Vybrat vedle polo�ek, kter� maj� b�t p�id�ny, pot� z rozbalovac�ho seznamu v horn� ��sti str�nky
             vedle tla��tka "P�idat do alba" vyberte album. Na z�v�r klikn�te na tla��tko "P�idat do alba". M�dia m��ete do alba p�idat tak� z Admin/Alba.</p>
@@ -297,7 +297,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="sort"><p class="subheadbold">Se�adit m�dia</p></a>
             <p>Standardn� jsou m�dia spojen� s osobou, rodinou, pramenem, �lo�i�t�m pramen� nebo m�stem se�azena v po�ad�, ve kter�m byla k tomuto subjektu p�ipojena. Toto po�ad�
                 m��ete zm�nit na z�lo�ce Media/Se�adit.</p>
@@ -336,7 +336,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="thumbs"><p class="subheadbold">N�hledy</p></a>
 
             <span class="optionhead">Vytvo�it n�hledy</span>
@@ -360,7 +360,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="import"><p class="subheadbold">Import m�di�</p></a>
 
             <span class="optionhead">C�l</span>
@@ -377,7 +377,7 @@ echo help_header("N�pov�da: M�dia");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="upload"><p class="subheadbold">Nahr�n� m�di�</p></a>
 
             <span class="optionhead">C�l</span>

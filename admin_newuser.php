@@ -14,7 +14,7 @@ if ($assignedtree || !$allow_add) {
     exit;
 }
 
-$query = "SELECT count(userID) as ucount FROM $users_table";
+$query = "SELECT count(userID) AS ucount FROM $users_table";
 $result = @tng_query($query);
 if ($result) {
     $row = tng_fetch_assoc($result);
@@ -22,7 +22,7 @@ if ($result) {
     $row['ucount'] = 0;
 }
 
-$revquery = "SELECT count(userID) as ucount FROM $users_table WHERE allow_living = \"-1\"";
+$revquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
 $revresult = tng_query($revquery) or die ($admtext['cannotexecutequery'] . ": $revquery");
 $revrow = tng_fetch_assoc($revresult);
 $revstar = $revrow['ucount'] ? " *" : "";
@@ -368,7 +368,7 @@ echo "</select>\n";
                             </table>
                         </div>
                         <input type="radio" name="administrator" value="2" onclick="handleAdmin('allow_multiple');"> <?php echo $admtext['mult_trees']; ?><br>
-                        <div style="margin-left: 30px;display:none" id="multiple">
+                        <div style="margin-left: 30px;display:none;" id="multiple">
                             <select multiple="yes" name="gedcom_mult[]" id="treeselect2">
                                 <?php
                                 $treeresult = tng_query($treequery);
@@ -391,7 +391,7 @@ echo "</select>\n";
                     <br>
                     <input type="checkbox" name="notify" value="1" onClick="replaceText();"> <?php echo $admtext['notify']; ?><br>
                     <textarea name="welcome" rows="5" cols="50"
-                              style="display:none"><?php echo "{$admtext['hello']} xxx,\r\n\r\n{$admtext['activated']} {$admtext['infois']}:\r\n\r\n{$admtext['username']}: yyy\r\n{$admtext['password']}: zzz\r\n\r\n$dbowner\r\n$tngdomain"; ?></textarea><br><br>
+                              style="display:none;"><?php echo "{$admtext['hello']} xxx,\r\n\r\n{$admtext['activated']} {$admtext['infois']}:\r\n\r\n{$admtext['username']}: yyy\r\n{$admtext['password']}: zzz\r\n\r\n$dbowner\r\n$tngdomain"; ?></textarea><br><br>
                     <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
             </form>
             <br>

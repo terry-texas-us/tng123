@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "./core/sql/extractWhereClause.php";
+
 $textpart = "eventtypes";
 include "$mylanguage/admintext.php";
 
@@ -49,34 +51,44 @@ if ($offset) {
     $tngpage = 1;
 }
 
-$wherestr = $searchstring ? "(tag LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR display LIKE \"%$searchstring%\")" : "";
+$query = "SELECT eventtypes.eventtypeID, tag, description, display, type, keep, collapse, ordernum, count(eventID) AS total_events ";
+$query .= "FROM $eventtypes_table eventtypes ";
+$query .= "LEFT JOIN $events_table events ON eventtypes.eventtypeID = events.eventtypeID ";
+
+$restrictions = [];
+if ($searchstring) {
+    array_push($restrictions, "(tag LIKE '%$searchstring%' OR description LIKE '%$searchstring%' OR display LIKE '%$searchstring%')");
+}
 if ($etype) {
-    $wherestr .= $wherestr ? " AND type = \"$etype\"" : "type = \"$etype\"";
+    array_push($restrictions, "type = '$etype'");
 }
 if ($onimport || $onimport === "0") {
-    $wherestr .= $wherestr ? " AND keep = \"$onimport\"" : "keep = \"$onimport\"";
+    array_push($restrictions, "keep = '$onimport'");
 }
-if ($wherestr) {
-    $wherestr = "WHERE $wherestr";
+if (!empty($restrictions)) {
+    $query .= "WHERE " . implode(" AND ", $restrictions) . " ";
 }
-$eventsort = $stype == "E" ? "total_events DESC, " : "";
-
-$query = "SELECT $eventtypes_table.eventtypeID, tag, description, display, type, keep, collapse, ordernum, count(eventID) as total_events 
-	FROM $eventtypes_table LEFT JOIN $events_table on $eventtypes_table.eventtypeID = $events_table.eventtypeID 
-	$wherestr GROUP BY eventtypeID ORDER BY {$eventsort}tag, description LIMIT $newoffset" . $maxsearchresults;
+$query .= "GROUP BY eventtypeID ";
+$query .= "ORDER BY ";
+if ($stype == "E") {
+    $query .= "total_events DESC, ";
+}
+$query .= "tag, description ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(eventtypeID) as ecount FROM $eventtypes_table $wherestr";
-    $result2 = tng_query($query);
+    $query2 = "SELECT count(eventtypeID) AS ecount ";
+    $query2 .= "FROM $eventtypes_table ";
+    $query2 .= extractWhereClause($query, ["GROUP BY"]);
+    $result2 = tng_query($query2);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['ecount'];
     tng_free_result($result2);
 } else {
     $totrows = $numrows;
 }
-
 $helplang = findhelp("eventtypes_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
@@ -101,12 +113,10 @@ $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/eventtypes_help
 $menu = doMenu($evtabs, "findevent", $innermenu);
 echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>
-
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
-
                 <form action="admin_eventtypes.php" name="form1">
                     <table class="normal">
                         <tr>
@@ -163,7 +173,6 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     <input type="hidden" name="findeventtype" value="1"><input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
-
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) {
@@ -177,22 +186,18 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     <p>
                         <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                         <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
-                        <?php
-                        if ($allow_delete) {
-                            ?>
+                        <?php if ($allow_delete) { ?>
                             <input type="submit" name="cetaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                             <?php
                         }
                         if ($allow_edit) {
                         ?>
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['acceptselected']; ?>">
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['ignoreselected']; ?>">
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['collapseselected']; ?>">
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['expselected']; ?>">
+                            <input type="submit" name="cetaction" value="<?php echo $admtext['acceptselected']; ?>">
+                            <input type="submit" name="cetaction" value="<?php echo $admtext['ignoreselected']; ?>">
+                            <input type="submit" name="cetaction" value="<?php echo $admtext['collapseselected']; ?>">
+                            <input type="submit" name="cetaction" value="<?php echo $admtext['expselected']; ?>">
                     </p>
-                    <?php
-                    }
-                    ?>
+                        <?php } ?>
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>
@@ -219,7 +224,6 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-
                         while ($row = tng_fetch_assoc($result)) {
                             $keep = $row['keep'] ? $admtext['accept'] : $admtext['ignore'];
                             $collapse = $row['collapse'] ? $admtext['yes'] : $admtext['no'];
@@ -237,15 +241,21 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                                     $type = $admtext['repository'];
                                     break;
                             }
-                            $displayval = getEventDisplay($row);
+                            $displayval = getEventDisplay($row['display']);
                             $newactionstr = preg_replace("/xxx/", $row['eventtypeID'], $actionstr);
-                            echo "<tr id=\"row_{$row['eventtypeID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['eventtypeID']}\">\n";
+                            echo "<td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete || $allow_edit) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"et{$row['eventtypeID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"et{$row['eventtypeID']}\" value=\"1\"></td>\n";
                             }
-                            echo "<td class=\"lightback\">&nbsp;{$row['tag']}&nbsp;</td><td class=\"lightback\">&nbsp;{$row['description']}&nbsp;</td><td class=\"lightback\">&nbsp;$displayval&nbsp;</td>";
-                            echo "<td class=\"lightback\">{$row['ordernum']}</td><td class=\"lightback\">&nbsp;$type&nbsp;</td><td class=\"lightback\">&nbsp;$keep&nbsp;</td><td class=\"lightback\">&nbsp;$collapse&nbsp;</td>";
-                            echo "<td class=\"lightback\" style=\"text-align:right\">&nbsp;" . number_format($row['total_events']) . "&nbsp;</td>";
+                            echo "<td class='lightback'>&nbsp;{$row['tag']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;$displayval&nbsp;</td>\n";
+                            echo "<td class='lightback'>{$row['ordernum']}</td>";
+                            echo "<td class='lightback'>&nbsp;$type&nbsp;</td>";
+                            echo "<td class='lightback'>&nbsp;$keep&nbsp;</td>";
+                            echo "<td class='lightback'>&nbsp;$collapse&nbsp;</td>";
+                            echo "<td class='lightback' style=\"text-align:right;\">&nbsp;" . number_format($row['total_events']) . "&nbsp;</td>";
                             echo "</tr>\n";
                         }
                         ?>
@@ -260,11 +270,9 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                 tng_free_result($result);
                 ?>
                 </form>
-
             </div>
         </td>
     </tr>
-
 </table>
 <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
 </body>

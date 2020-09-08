@@ -41,8 +41,8 @@ if (trim($eventplace)) {
   $template = "sss";
   $placetree = $tngconfig['places1tree'] ? "" : $tree;
   $temple = strlen($eventplace) == 5 && $eventplace == strtoupper($eventplace) ? 1 : 0;
-  $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,\"0\",\"0\",\"0\",?)";
-  $params = array(&$template, &$placetree, &$eventplace, &$temple);
+  $query = "INSERT IGNORE INTO $places_table (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?, ?, \"0\", \"0\", \"0\", ?)";
+  $params = [&$template, &$placetree, &$eventplace, &$temple];
   tng_execute($query, $params);
   if ($tngconfig['autogeo'] && tng_affected_rows()) {
     $ID = tng_insert_id();
@@ -53,8 +53,8 @@ if (trim($eventplace)) {
 if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
   $template = "ssssssssss";
   $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www) 
-		VALUES(?,?,?,?,?,?,?,?,?,?)";
-  $params = array(&$template, &$address1, &$address2, &$city, &$state, &$zip, &$country, &$tree, &$phone, &$email, &$www);
+		VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  $params = [&$template, &$address1, &$address2, &$city, &$state, &$zip, &$country, &$tree, &$phone, &$email, &$www];
   tng_execute($query, $params);
   $addressID = tng_insert_id();
 } else {
@@ -63,14 +63,14 @@ if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $
 
 $template = "sssssssssss";
 $query = "INSERT INTO $events_table (eventtypeID, persfamID, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, gedcom, parenttag) 
-	VALUES(?,?,?,?,?,?,?,?,?,?,?, \"\")";
-$params = array(&$template, &$eventtypeID, &$persfamID, &$eventdate, &$eventdatetr, &$eventplace, &$age, &$agency, &$cause, &$addressID, &$info, &$tree);
+	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \"\")";
+$params = [&$template, &$eventtypeID, &$persfamID, &$eventdate, &$eventdatetr, &$eventplace, &$age, &$agency, &$cause, &$addressID, &$info, &$tree];
 tng_execute($query, $params);
 $eventID = tng_insert_id();
 
 if ($dupIDs) {
   $ids = explode(",", $dupIDs);
-  $params = array(&$template, &$eventtypeID, &$id, &$eventdate, &$eventdatetr, &$eventplace, &$age, &$agency, &$cause, &$addressID, &$info, &$tree);
+  $params = [&$template, &$eventtypeID, &$id, &$eventdate, &$eventdatetr, &$eventplace, &$age, &$agency, &$cause, &$addressID, &$info, &$tree];
   foreach ($ids as $id) {
     tng_execute($query, $params);
   }
@@ -78,7 +78,7 @@ if ($dupIDs) {
 
 adminwritelog($admtext['addnewevent'] . ": $eventtypeID/$tree/$persfamID");
 
-$query = "SELECT display FROM $eventtypes_table WHERE eventtypeID = \"$eventtypeID\"";
+$query = "SELECT display FROM $eventtypes_table WHERE eventtypeID = '$eventtypeID'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 

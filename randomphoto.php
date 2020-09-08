@@ -71,7 +71,7 @@ if (strpos($rp_maxwidth, "%") !== FALSE) {
 
 echo "<div class=\"indexphototable\">\n";
 echo "<a href=\"{$showmedia_url}mediaID={$imgrow['mediaID']}\"><img class=\"indexphoto rounded4\" src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" {$dimensions} alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a>";
-echo "<div style=\"padding: 5px\">\n";
+echo "<div style=\"padding: 5px;\">\n";
 echo "<em><a href=\"{$showmedia_url}mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></em>\n";
 echo "</div>\n";
 echo "</div>\n";

@@ -152,7 +152,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 <?php
                 //end MAIN IMAGE
                 ?>
-                <span class="right" style="margin-right:8px"><?php echo $text['whichbranch']; ?></span>
+                <span class="right" style="margin-right:8px;"><?php echo $text['whichbranch']; ?></span>
               </div>
               <div class="rightcontent">
                 <form action="search.php" method="get">

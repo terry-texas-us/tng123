@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Hled� se");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="misc_help.php" class="lightlink">&laquo; N�pov�da: R�zn�</a> &nbsp; | &nbsp;
@@ -30,7 +30,7 @@ echo help_header("N�pov�da: Hled� se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�id�n� nov�ch z�pis�</p></a>
             <p>Funkce <strong>Hled� se</strong> v�m umo�n� vytvo�it seznam kritick�ch osob nebo fotografi�, se kter�mi m�te ve sv�m b�d�n� probl�my.
                 Tento seznam je rozd�len do dvou kategori�, <strong>Hledan� osoby</strong> a <strong>Tajemn� fotografie</strong>. Chcete-li do n�jak� kategorie p�idat nov� z�pis,
@@ -61,7 +61,7 @@ echo help_header("N�pov�da: Hled� se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">�prava existuj�c�ch z�pis�</p></a>
             <p>Chcete-li existuj�c� z�pis upravit, p�esu�te kursor my�i nad z�znam, kter� chcete upravit. Pod t�mto z�pisem by se m�ly objevit odkazy "Upravit" a "Vymazat". Kliknut�m
                 na odkaz "Upravit" se zobraz� formul��, ve kter�m m��ete prov�st sv� zm�ny. Pole ve formul��i jsou stejn� jako jsou pops�na v��e v odstavci "P�id�n� nov�ch z�pis�".</p>
@@ -71,7 +71,7 @@ echo help_header("N�pov�da: Hled� se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="sort"><p class="subheadbold">T��d�n� z�pis�</p></a>
             <p>Chcete-li zm�nit po�ad� z�pis�, kter� jste vytvo�ili v sekci Hled� se, chytn�te je a p�et�hn�te na po�adovan� m�sto (klikn�te na oblast "T�hnout", podr�te tla��tko my�i,
                 dokud nep�esunete ukazov�tko na po�adovan� m�sto a pak my� uvoln�te). </p>
@@ -83,7 +83,7 @@ echo help_header("N�pov�da: Hled� se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� existuj�c�ch z�pis�</p></a>
             <p>Chcete-li existuj�c� z�pis vymazat, p�esu�te kursor my�i nad z�znam, kter� chcete vymazat. Pod t�mto z�pisem by se m�ly objevit odkazy "Upravit" a "Vymazat". Kliknut�m
                 na odkaz "Vymazat" z�pis odstran�te (p�ed t�m budete po��d�ni o potvrzen� t�to akce).</p>

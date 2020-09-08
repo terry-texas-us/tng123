@@ -43,7 +43,7 @@ switch ($entity) {
         $query = "DELETE FROM $children_table WHERE gedcom=\"$oldtree\" AND personID=\"$entityID\"";
         $result = tng_query($query);
 
-        $query = "DELETE FROM {$assoc_table} WHERE gedcom=\"{$oldtree}\" AND (personID=\"{$entityID}\" OR passocID=\"{$entityID}\")";
+        $query = "DELETE FROM $assoc_table WHERE gedcom=\"{$oldtree}\" AND (personID=\"{$entityID}\" OR passocID=\"{$entityID}\")";
         $result = tng_query($query);
 
         break;
@@ -89,7 +89,7 @@ $result = tng_query($query);
 $query = "SELECT xnoteID FROM $notelinks_table WHERE gedcom=\"$oldtree\" AND persfamID=\"$entityID\" AND xnoteID!=\"\"";
 $result = tng_query($query);
 while ($row = tng_fetch_assoc($result)) {
-    $query = "UPDATE {$xnotes_table} SET gedcom=\"$newtree\" WHERE ID=\"{$row['xnoteID']}\"";
+    $query = "UPDATE $xnotes_table SET gedcom=\"$newtree\" WHERE ID=\"{$row['xnoteID']}\"";
     $result2 = tng_query($query);
 }
 tng_free_result($result);

@@ -80,7 +80,7 @@ $endldatetr = convertDate($endldate);
 
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
-$query = "SELECT personID FROM $people_table WHERE personID = \"$personID\" and gedcom = \"$tree\"";
+$query = "SELECT personID FROM $people_table WHERE personID = \"$personID\" and gedcom = '$tree'";
 $result = tng_query($query);
 
 //delete all notes & citations linked to this person
@@ -179,7 +179,7 @@ if ($result && tng_num_rows($result)) {
 
   if ($type == "child") {
     if ($familyID) {
-      $query = "SELECT personID FROM $children_table WHERE familyID=\"$familyID\" AND gedcom=\"$tree\"";
+      $query = "SELECT personID FROM $children_table WHERE familyID='$familyID' AND gedcom='$tree'";
       $result = @tng_query($query);
       $order = tng_num_rows($result) + 1;
       tng_free_result($result);
@@ -189,7 +189,7 @@ if ($result && tng_num_rows($result)) {
       $params = array(&$template, &$familyID, &$personID, &$order, &$tree, &$frel, &$mrel);
       tng_execute($query, $params);
 
-      $query = "SELECT husband,wife FROM $families_table WHERE familyID=\"$familyID\" AND gedcom=\"$tree\"";
+      $query = "SELECT husband, wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";
       $result = @tng_query($query);
       $famrow = tng_fetch_assoc($result);
       if ($famrow['husband']) {
@@ -213,7 +213,7 @@ if ($result && tng_num_rows($result)) {
       }
     }
 
-    $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none\"";
+    $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
     $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
     $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
     $rval .= "<td class=\"dragarea normal\">";

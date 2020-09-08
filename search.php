@@ -255,7 +255,7 @@ if ($tree) {
     $urlstring .= "&amp;branch=$branch";
     $querystring .= " {$text['cap_and']} ";
 
-    $query = "SELECT description FROM $branches_table WHERE gedcom = \"$tree\" AND branch = \"$branch\"";
+    $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = \"$branch\"";
     $branchresult = tng_query($query);
     $branchrow = tng_fetch_assoc($branchresult);
     tng_free_result($branchresult);
@@ -266,13 +266,13 @@ if ($tree) {
   }
 }
 
-$treequery = "SELECT count(gedcom) as treecount FROM $trees_table";
+$treequery = "SELECT count(gedcom) AS treecount FROM $trees_table";
 $treeresult = tng_query($treequery);
 $treerow = tng_fetch_assoc($treeresult);
 $numtrees = $treerow['treecount'];
 tng_free_result($treeresult);
 
-$branchquery = "SELECT count(branch) as branchcount FROM $branches_table";
+$branchquery = "SELECT count(branch) AS branchcount FROM $branches_table";
 $branchresult = tng_query($branchquery);
 $branchrow = tng_fetch_assoc($branchresult);
 $numbranches = $branchrow['branchcount'];
@@ -309,29 +309,42 @@ if ($offset) {
 
 if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexist") {
   $gstring = $mygender == "F" ? "p.personID = wife AND spouse.personID = husband" : "p.personID = husband AND spouse.personID = wife";
-  $query = "SELECT p.ID, spouse.personID as spersonID, p.personID, p.lastname, p.lnprefix, p.firstname, p.nickname, p.living, p.private, p.branch, p.suffix, p.prefix, p.nameorder, p.title, p.birthplace, p.birthdate, p.deathplace, p.deathdate, p.altbirthdate, p.altbirthplace, p.burialdate, p.burialplace, p.gedcom, treename ";
-  $query .= "FROM ($people_table as p, $families_table, $people_table as spouse, $trees_table) $cejoin ";
-  $query .= "$allwhere AND (p.gedcom = $trees_table.gedcom AND p.gedcom=$families_table.gedcom AND spouse.gedcom=$families_table.gedcom AND $gstring) ";
+  $query = "SELECT p.ID, spouse.personID AS spersonID, p.personID, p.lastname, p.lnprefix, p.firstname, p.nickname, p.living, p.private, p.branch, p.suffix, p.prefix, p.nameorder, p.title, p.birthplace, p.birthdate, p.deathplace, p.deathdate, p.altbirthdate, p.altbirthplace, p.burialdate, p.burialplace, p.gedcom, treename ";
+  $query .= "FROM ($people_table p, $families_table families, $people_table spouse, $trees_table trees) ";
+  $query .= "$cejoin ";
+  $query .= "$allwhere AND (p.gedcom = trees.gedcom AND p.gedcom = families.gedcom AND spouse.gedcom = families.gedcom AND $gstring) ";
   $query .= "$orderstr ";
   $query .= "LIMIT $newoffset" . $maxsearchresults;
   $showspouse = "yess";
-  $query2 = "SELECT count(p.ID) as pcount ";
-  $query2 .= "FROM ($people_table as p, $families_table, $people_table as spouse) $cejoin ";
-  $query2 .= "$allwhere AND (p.gedcom=$families_table.gedcom AND spouse.gedcom=$families_table.gedcom AND $gstring)";
+
+  $query2 = "SELECT count(p.ID) AS pcount ";
+  $query2 .= "FROM ($people_table p, $families_table families, $people_table spouse) ";
+  $query2. "$cejoin ";
+  $query2 .= "$allwhere AND (p.gedcom = families.gedcom AND spouse.gedcom = families.gedcom AND $gstring)";
 } else {
   if ($showspouse == "yes") {
-    $families_join = "LEFT JOIN $families_table AS families1 ON (p.gedcom = families1.gedcom AND p.personID = families1.husband ) LEFT JOIN $families_table AS families2 ON (p.gedcom = families2.gedcom AND p.personID = families2.wife ) ";  // added IDF Apr 03
-    $huswife = ", families1.wife as wife, families2.husband as husband";                                                                                                                       // added IDF Apr 03
+    $families_join = "LEFT JOIN $families_table families1 ON (p.gedcom = families1.gedcom AND p.personID = families1.husband ) ";
+    $families_join .= "LEFT JOIN $families_table families2 ON (p.gedcom = families2.gedcom AND p.personID = families2.wife ) ";
+    $huswife = ", families1.wife as wife, families2.husband as husband";
   } else {
     $families_join = "";
     $huswife = "";
   }
 
-  $query = "SELECT p.ID, p.personID, lastname, lnprefix, firstname, p.living, p.private, p.branch, nickname, prefix, suffix, nameorder, title, birthplace, birthdate, deathplace, deathdate, altbirthdate, altbirthplace, burialdate, burialplace, p.gedcom, treename $huswife
-		FROM $people_table AS p $families_join
-		LEFT JOIN $trees_table on p.gedcom = $trees_table.gedcom $cejoin $allwhere
-		$orderstr LIMIT $newoffset" . $maxsearchresults;
-  $query2 = "SELECT count(p.ID) as pcount FROM $people_table AS p $families_join $cejoin $allwhere";
+  $query = "SELECT p.ID, p.personID, lastname, lnprefix, firstname, p.living, p.private, p.branch, nickname, prefix, suffix, nameorder, title, birthplace, birthdate, deathplace, deathdate, altbirthdate, altbirthplace, burialdate, burialplace, p.gedcom, treename $huswife ";
+  $query .= "FROM $people_table p ";
+  $query .= "$families_join ";
+  $query .= "LEFT JOIN $trees_table trees ON p.gedcom = trees.gedcom ";
+  $query .= "$cejoin ";
+  $query .= "$allwhere ";
+  $query .= "$orderstr ";
+  $query .= "LIMIT $newoffset" . $maxsearchresults;
+
+  $query2 = "SELECT count(p.ID) AS pcount ";
+  $query2 .= "FROM $people_table AS p ";
+  $query2 .= "$families_join ";
+  $query2 .= "$cejoin ";
+  $query2 .= "$allwhere";
 }
 $result = tng_query($query);
 $numrows = tng_num_rows($result);

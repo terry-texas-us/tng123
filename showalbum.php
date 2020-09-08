@@ -32,19 +32,17 @@ function getAlbumLinkText($albumID) {
     $ioffsetstr = "";
     $newioffset = "";
   }
-  $query = "SELECT $album2entities_table.alinkID, $album2entities_table.entityID as personID, people.living as living, people.private as private, people.branch as branch, $album2entities_table.eventID,
-		$families_table.branch as fbranch, $families_table.living as fliving, $families_table.private as fprivate, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, people.nameorder, $album2entities_table.gedcom,
-		familyID, people.personID as personID2, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname,
-		wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, husbpeople.personID as hpersonID, husbpeople.firstname as hfirstname, husbpeople.lnprefix as hlnprefix, husbpeople.lastname as hlastname,
-		husbpeople.prefix as hprefix, husbpeople.suffix as hsuffix, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID, reponame
-		FROM $album2entities_table
-		LEFT JOIN $people_table AS people ON $album2entities_table.entityID = people.personID AND $album2entities_table.gedcom = people.gedcom
-		LEFT JOIN $families_table ON $album2entities_table.entityID = $families_table.familyID AND $album2entities_table.gedcom = $families_table.gedcom
-		LEFT JOIN $people_table AS husbpeople ON $families_table.husband = husbpeople.personID AND $families_table.gedcom = husbpeople.gedcom
-		LEFT JOIN $people_table AS wifepeople ON $families_table.wife = wifepeople.personID AND $families_table.gedcom = wifepeople.gedcom
-		LEFT JOIN $sources_table ON $album2entities_table.entityID = $sources_table.sourceID AND $album2entities_table.gedcom = $sources_table.gedcom
-		LEFT JOIN $repositories_table ON ($album2entities_table.entityID = $repositories_table.repoID AND $album2entities_table.gedcom = $repositories_table.gedcom)
-		WHERE albumID = \"$albumID\"$wherestr2 ORDER BY people.lastname, people.lnprefix, people.firstname, hlastname, hlnprefix, hfirstname  LIMIT $ioffsetstr" . ($maxsearchresults + 1);
+  $query = "SELECT album2entities.alinkID, album2entities.entityID AS personID, people.living AS living, people.private AS private, people.branch AS branch, album2entities.eventID, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, people.nameorder, album2entities.gedcom, familyID, people.personID AS personID2, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, sources.title, sources.sourceID, repositories.repoID, reponame ";
+  $query .= "FROM $album2entities_table album2entities ";
+  $query .= "LEFT JOIN $people_table people ON album2entities.entityID = people.personID AND album2entities.gedcom = people.gedcom ";
+  $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
+  $query .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
+  $query .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
+  $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
+  $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
+  $query .= "WHERE albumID = \"$albumID\"$wherestr2 ";
+  $query .= "ORDER BY people.lastname, people.lnprefix, people.firstname, hlastname, hlnprefix, hfirstname ";
+  $query .= "LIMIT $ioffsetstr" . ($maxsearchresults + 1);
   $presult = tng_query($query);
   $numrows = tng_num_rows($presult);
   $medialinktext = "";
@@ -93,7 +91,7 @@ function getAlbumLinkText($albumID) {
       $links .= "<a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">" . $prow['personID'] . "</a>";
     }
     if ($prow['eventID']) {
-      $query = "SELECT description from $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
+      $query = "SELECT description FROM $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
       $eresult = tng_query($query);
       $erow = tng_fetch_assoc($eresult);
       $event = $erow['description'] ? $erow['description'] : $prow['eventID'];
@@ -168,23 +166,26 @@ if (!$noneliving && !$noneprivate) {
 }
 
 if ($tree) {
-  $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
-  $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+  $wherestr = " AND (media.gedcom = '$tree' || media.gedcom = '')";
+  $wherestr2 = " AND medialinks.gedcom = '$tree'";
 } else {
   $wherestr = $wherestr2 = "";
 }
 
-$query = "SELECT DISTINCT $media_table.mediaID, albumlinkID, $media_table.description, $media_table.notes, thumbpath, alwayson, usecollfolder, mediatypeID, path, form, abspath, newwindow, $media_table.gedcom
-	FROM ($albumlinks_table, $media_table) LEFT JOIN $medialinks_table
-	ON $media_table.mediaID = $medialinks_table.mediaID
-	WHERE albumID = \"$albumID\" AND $albumlinks_table.mediaID = $media_table.mediaID $wherestr
-	ORDER BY $albumlinks_table.ordernum, description LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT DISTINCT media.mediaID, albumlinkID, media.description, media.notes, thumbpath, alwayson, usecollfolder, mediatypeID, path, form, abspath, newwindow, media.gedcom ";
+$query .= "FROM ($albumlinks_table albumlinks, $media_table media) ";
+$query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
+$query .= "WHERE albumID = \"$albumID\" AND albumlinks.mediaID = media.mediaID $wherestr ";
+$query .= "ORDER BY albumlinks.ordernum, description ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(distinct $media_table.mediaID) as mcount FROM ($albumlinks_table, $media_table) LEFT JOIN $medialinks_table
-		ON $media_table.mediaID = $medialinks_table.mediaID WHERE albumID = \"$albumID\" AND $albumlinks_table.mediaID = $media_table.mediaID $wherestr";
+  $query = "SELECT count(distinct media.mediaID) AS mcount ";
+  $query .= "FROM ($albumlinks_table albumlinks, $media_table media) ";
+  $query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
+  $query .= "WHERE albumID = \"$albumID\" AND albumlinks.mediaID = media.mediaID $wherestr";
   $result2 = tng_query($query);
   $row = tng_fetch_assoc($result2);
   tng_free_result($result2);
@@ -246,15 +247,15 @@ $gotImageJpeg = function_exists('imageJpeg');
 while ($row = tng_fetch_assoc($result)) {
   $mediatypeID = $row['mediatypeID'];
   $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
-  $query = "SELECT $medialinks_table.mediaID, $medialinks_table.personID as personID, people.personID as personID2, people.living as living, people.private, people.branch as branch, $families_table.branch as fbranch,
-		$families_table.living as fliving, familyID, husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, nameorder,
-		$medialinks_table.gedcom, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID, reponame, deathdate, burialdate, linktype
-		FROM $medialinks_table
-		LEFT JOIN $people_table AS people ON $medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom
-		LEFT JOIN $families_table ON $medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom
-		LEFT JOIN $sources_table ON $medialinks_table.personID = $sources_table.sourceID AND $medialinks_table.gedcom = $sources_table.gedcom
-		LEFT JOIN $repositories_table ON ($medialinks_table.personID = $repositories_table.repoID AND $medialinks_table.gedcom = $repositories_table.gedcom)
-		WHERE mediaID = \"{$row['mediaID']}\" $wherestr2 ORDER BY lastname, lnprefix, firstname, personID LIMIT $maxplus";
+  $query = "SELECT medialinks.mediaID, medialinks.personID AS personID, people.personID AS personID2, people.living AS living, people.private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom, sources.title, sources.sourceID, repositories.repoID, reponame, deathdate, burialdate, linktype ";
+  $query .= "FROM $medialinks_table medialinks ";
+  $query .= "LEFT JOIN $people_table people ON medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom ";
+  $query .= "LEFT JOIN $families_table families ON medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom ";
+  $query .= "LEFT JOIN $sources_table sources ON medialinks.personID = sources.sourceID AND medialinks.gedcom = sources.gedcom ";
+  $query .= "LEFT JOIN $repositories_table repositories ON (medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom) ";
+  $query .= "WHERE mediaID = \"{$row['mediaID']}\" $wherestr2 ";
+  $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
+  $query .= "LIMIT $maxplus";
   $presult = tng_query($query);
   $numrows = tng_num_rows($presult);
   $medialinktext = "";
@@ -273,7 +274,7 @@ while ($row = tng_fetch_assoc($result)) {
     }
     //if living still null, must be a source
     if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == "I") {
-      $query = "SELECT count(personID) as ccount FROM $citations_table, $people_table
+      $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
 				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 				AND (living = '1' OR private = '1')";
       $presult2 = tng_query($query);
@@ -284,7 +285,7 @@ while ($row = tng_fetch_assoc($result)) {
       tng_free_result($presult2);
     }
     if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == "F") {
-      $query = "SELECT count(familyID) as ccount FROM $citations_table, $families_table
+      $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
 				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom
 				AND living = '1'";
       $presult2 = tng_query($query);
@@ -392,7 +393,7 @@ while ($row = tng_fetch_assoc($result)) {
     $mediatext .= "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>";
     if ($imgsrc) {
       $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">";
-      $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none\"></div></div>\n";
+      $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
       if ($href) {
         $mediatext .= "<a href=\"$href\"";
         $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";

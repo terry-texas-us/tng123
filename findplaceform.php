@@ -62,5 +62,5 @@ header("Content-type:text/html; charset=" . $session_charset);
   <br>
   <span class="normal"><strong><?php echo $admtext['searchresults']; ?></strong> (<?php echo $admtext['clicktoselect']; ?>)</span>
 
-    <div id="placeresults" style="width:605px;height:385px;overflow:auto"></div>
+    <div id="placeresults" style="width:605px;height:385px;overflow:auto;"></div>
 </div>

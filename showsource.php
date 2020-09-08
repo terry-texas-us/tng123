@@ -23,7 +23,9 @@ $firstsectionsave = "";
 $tableid = "";
 $cellnumber = 0;
 
-$query = "SELECT sourceID, title, shorttitle, author, publisher, actualtext, reponame, $sources_table.repoID as repoID, callnum, other FROM $sources_table LEFT JOIN $repositories_table on $sources_table.repoID = $repositories_table.repoID AND $sources_table.gedcom = $repositories_table.gedcom WHERE $sources_table.sourceID = \"$sourceID\" AND $sources_table.gedcom = \"$tree\"";
+$query = "SELECT sourceID, title, shorttitle, author, publisher, actualtext, reponame, sources.repoID AS repoID, callnum, other ";
+$query .= "FROM $sources_table sources ";
+$query .= "LEFT JOIN $repositories_table repositories ON sources.repoID = repositories.repoID AND sources.gedcom = repositories.gedcom WHERE sources.sourceID = \"$sourceID\" AND sources.gedcom = \"$tree\"";
 $result = tng_query($query);
 $srcrow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
@@ -33,7 +35,7 @@ if (!tng_num_rows($result)) {
 }
 tng_free_result($result);
 
-$query = "SELECT count(personID) as ccount FROM $citations_table, $people_table
+$query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
 	WHERE $citations_table.sourceID = '$sourceID' AND $citations_table.gedcom = \"$tree\" AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 	AND (living = '1' OR private = '1')";
 $sresult = tng_query($query);
@@ -68,7 +70,7 @@ $sourcetext = "";
 $sourcetext .= "<ul class=\"nopad\">\n";
 $sourcetext .= beginSection("info");
 $sourcetext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-$sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
+$sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($srcrow['title']) {
   $sourcetext .= showEvent(array("text" => $text['title'], "fact" => $srcrow['title']));
 }
@@ -119,7 +121,7 @@ if ($foffset) {
   $newfoffset = 0;
 }
 
-$query = "SELECT DISTINCT $citations_table.persfamID, $citations_table.gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch FROM $citations_table, $people_table WHERE $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom AND $citations_table.gedcom = \"$tree\" AND $citations_table.sourceID = '$sourceID' ORDER BY lastname, firstname LIMIT $ioffsetstr" . ($maxsearchresults + 1);
+$query = "SELECT DISTINCT $citations_table.persfamID, $citations_table.gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch FROM $citations_table, $people_table WHERE $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom AND $citations_table.gedcom = '$tree' AND $citations_table.sourceID = '$sourceID' ORDER BY lastname, firstname LIMIT $ioffsetstr" . ($maxsearchresults + 1);
 $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $sourcelinktext = "";
@@ -157,7 +159,7 @@ if ($numrows > $maxsearchresults) {
 }
 tng_free_result($sresult);
 
-$query = "SELECT DISTINCT $citations_table.persfamID, $citations_table.gedcom, familyID, husband, wife, living, private, branch FROM $citations_table, $families_table WHERE $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom AND $citations_table.gedcom = \"$tree\" AND $citations_table.sourceID = '$sourceID' ORDER BY familyID LIMIT $foffsetstr" . ($maxsearchresults + 1);
+$query = "SELECT DISTINCT $citations_table.persfamID, $citations_table.gedcom, familyID, husband, wife, living, private, branch FROM $citations_table, $families_table WHERE $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom AND $citations_table.gedcom = '$tree' AND $citations_table.sourceID = '$sourceID' ORDER BY familyID LIMIT $foffsetstr" . ($maxsearchresults + 1);
 $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $noneliving = $noneprivate = 1;
@@ -215,7 +217,7 @@ if ($notes) {
 $sourcetext .= "</ul>\n";
 
 $tng_alink = $tng_plink = "lightlink";
-$innermenu = $num_collapsed ? "<div style=\"float:right\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
+$innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
 if ($notes || $media) {
   if ($tngconfig['istart']) {
     $tng_plink = "lightlink3";

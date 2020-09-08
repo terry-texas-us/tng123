@@ -10,7 +10,7 @@ $admin_login = true;
 include "checklogin.php";
 include "version.php";
 
-$query = "SELECT *, DATE_FORMAT(postdate,\"%d %b %Y %H:%i:%s\") as postdate FROM $temp_events_table WHERE tempID = \"$tempID\"";
+$query = "SELECT *, DATE_FORMAT(postdate,\"%d %b %Y %H:%i:%s\") AS postdate FROM $temp_events_table WHERE tempID = \"$tempID\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -27,7 +27,7 @@ if ($row['type'] == "I" || $row['type'] == "C") {
   $reviewmsg = $admtext['reviewpeople'];
   $getperson_url = getURL("getperson", 1);
 
-  $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+  $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
   $result = tng_query($query);
   $prow = tng_fetch_assoc($result);
   tng_free_result($result);
@@ -44,12 +44,12 @@ if ($row['type'] == "I" || $row['type'] == "C") {
 } elseif ($row['type'] == "F") {
   $familygroup_url = getURL("familygroup", 1);
 
-  $query = "SELECT husband, wife FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+  $query = "SELECT husband, wife FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
   $result = tng_query($query);
   $frow = tng_fetch_assoc($result);
   $hname = $wname = "";
   if ($frow['husband']) {
-    $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"{$frow['husband']}\" AND gedcom = \"$tree\"";
+    $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"{$frow['husband']}\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $prow = tng_fetch_assoc($result);
     $rightbranch = $righttree ? checkbranch($prow['branch']) : false;
@@ -60,7 +60,7 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $hname = getName($prow);
   }
   if ($frow['wife']) {
-    $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"{$frow['wife']}\" AND gedcom = \"$tree\"";
+    $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"{$frow['wife']}\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $prow = tng_fetch_assoc($result);
     $rightbranch = $righttree ? checkbranch($prow['branch']) : false;
@@ -97,12 +97,14 @@ if (is_numeric($eventID)) {
   $evrow = tng_fetch_assoc($result);
   tng_free_result($result);
 
-  $query = "SELECT display, tag FROM $eventtypes_table, $events_table WHERE eventID = $eventID AND $eventtypes_table.eventtypeID = $events_table.eventtypeID";
+  $query = "SELECT display, tag ";
+  $query .= "FROM $eventtypes_table eventtypes, $events_table events ";
+  $query .= "WHERE eventID = $eventID AND eventtypes.eventtypeID = events.eventtypeID";
   $evresult = tng_query($query);
   $evtrow = tng_fetch_assoc($evresult);
 
   if ($evtrow['display']) {
-      $displayval = getEventDisplay($evtrow);
+      $displayval = getEventDisplay($evtrow['display']);
   } elseif ($evtrow['tag']) {
     $displayval = $eventtype['tag'];
   } else {
@@ -189,17 +191,17 @@ if (is_numeric($eventID)) {
   }
 
   if ($needfamilies) {
-    $query = "SELECT $fieldstr FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+    $query = "SELECT $fieldstr FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
   } elseif ($needchildren) {
-    $query = "SELECT $fieldstr FROM $children_table WHERE familyID = \"$familyID\" AND personID = \"$personID\" AND gedcom = \"$tree\"";
+    $query = "SELECT $fieldstr FROM $children_table WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = '$tree'";
   } else {
-    $query = "SELECT $fieldstr FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+    $query = "SELECT $fieldstr FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
   }
   $result = tng_query($query);
   $evrow = tng_fetch_assoc($result);
   tng_free_result($result);
 
-  $query = "SELECT count(eventID) as evcount FROM $events_table WHERE persfamID=\"$persfamID\" AND gedcom =\"$tree\" AND eventID =\"$eventID\"";
+  $query = "SELECT count(eventID) AS evcount FROM $events_table WHERE persfamID=\"$persfamID\" AND gedcom ='$tree' AND eventID =\"$eventID\"";
   $morelinks = tng_query($query);
   $more = tng_fetch_assoc($morelinks);
   $gotmore = $more['evcount'] ? "*" : "";
@@ -210,13 +212,13 @@ if (is_numeric($eventID)) {
 
 $treerow = getTree($trees_table, $tree);
 
-$query = "SELECT count(ID) as notecount FROM $notelinks_table WHERE persfamID=\"$persfamID\" AND gedcom =\"$tree\" AND eventID =\"$eventID\"";
+$query = "SELECT count(ID) AS notecount FROM $notelinks_table WHERE persfamID=\"$persfamID\" AND gedcom ='$tree' AND eventID =\"$eventID\"";
 $notelinks = tng_query($query);
 $note = tng_fetch_assoc($notelinks);
 $gotnotes = $note['notecount'] ? "*" : "";
 tng_free_result($notelinks);
 
-$citequery = "SELECT count(citationID) as citecount FROM $citations_table WHERE persfamID=\"$persfamID\" AND gedcom =\"$tree\" AND eventID = \"$eventID\"";
+$citequery = "SELECT count(citationID) AS citecount FROM $citations_table WHERE persfamID=\"$persfamID\" AND gedcom ='$tree' AND eventID = \"$eventID\"";
 $citeresult = tng_query($citequery) or die ($admtext['cannotexecutequery'] . ": $citequery");
 $cite = tng_fetch_assoc($citeresult);
 $gotcites = $cite['citecount'] ? "*" : "";

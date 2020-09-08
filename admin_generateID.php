@@ -18,9 +18,9 @@ function getNewID($type, $table) {
   if ($tngconfig['oldids']) {
     if ($prefix) {
       $prefixlen = strlen($prefix) + 1;
-      $query = "SELECT MAX(0+SUBSTRING($type" . "ID,$prefixlen)) as newID FROM $table WHERE gedcom = \"$tree\" AND $type" . "ID LIKE \"$prefix%\"";
+      $query = "SELECT MAX(0+SUBSTRING($type" . "ID,$prefixlen)) AS newID FROM $table WHERE gedcom = '$tree' AND $type" . "ID LIKE \"$prefix%\"";
     } else {
-      $query = "SELECT MAX(0+SUBSTRING_INDEX($type" . "ID,'$suffix',1)) as newID FROM $table WHERE gedcom = \"$tree\"";
+      $query = "SELECT MAX(0+SUBSTRING_INDEX($type" . "ID,'$suffix',1)) AS newID FROM $table WHERE gedcom = '$tree'";
     }
 
     $result = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
@@ -57,7 +57,7 @@ function getNewID($type, $table) {
     $nextone = 0;
     $newnum = "";
     do {
-      $query = "SELECT $typestr FROM $table WHERE gedcom = \"$tree\" $wherestr
+      $query = "SELECT $typestr FROM $table WHERE gedcom = '$tree' $wherestr
 				ORDER BY $numpart
 				LIMIT $nextone, $maxrows";
       $result = tng_query($query);

@@ -8,7 +8,7 @@ echo help_header("Help: Mod Manager");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
@@ -28,7 +28,7 @@ echo help_header("Help: Mod Manager");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -57,7 +57,7 @@ echo help_header("Help: Mod Manager");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="operation"><p class="subheadbold">Operation</p></a>
 
             <p>The Mod Manager examines the mods folder and reads each <strong>cfg</strong> file that it finds. The <strong>cfg</strong> files are directive files that describe the mod, the files and locations to be modified, and the code that is used in
@@ -80,7 +80,7 @@ echo help_header("Help: Mod Manager");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="status"><p class="subheadbold">Status</p></a>
             <p>The Mod Manager returns the following status:
             <ul>
@@ -100,7 +100,7 @@ echo help_header("Help: Mod Manager");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="syntax"><p class="subheadbold">Mod Syntax</p></a>
             <p>The Mod Manager syntax basically includes:
             <p><strong>Header section</strong> that includes</p>
@@ -126,7 +126,7 @@ echo help_header("Help: Mod Manager");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="files"><p class="subheadbold">Config Files</p></a>
 
             <span class="optionhead">Installing Mods</span>
@@ -146,7 +146,7 @@ echo help_header("Help: Mod Manager");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="batch"><p class="subheadbold">Batch Updates</p></a>
 
             <p>The Batch Updates allows specific actions on multiple mods using the Select Filter. You must choose from the status filter list and click Go to display the available controls for the specific status selected. Note that Delete is not
@@ -177,7 +177,7 @@ echo help_header("Help: Mod Manager");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="options"><p class="subheadbold">Options</p></a>
 
             <p>The Options allows you to specify some of the Mod Manager behavior for the

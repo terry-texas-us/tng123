@@ -63,5 +63,5 @@ global $text, $cms, $subroot, $tmp;
         </td>
     </tr>
     <tr class="tablebkground">
-        <td colspan="4" class="padding" style="border-collapse:separate">
+        <td colspan="4" class="padding" style="border-collapse:separate;">
             <!-- end topmenu template 6 -->

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Uživatelé");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="templateconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení šablony</a> &nbsp; | &nbsp;
@@ -49,7 +49,7 @@ echo help_header("Nápověda: Uživatelé");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidání nového uživatele</p></a>
             <p>Nastavení uživatelských záznamů pro vaše návštěvníky vám umožní přidělit jim zvláštní přístupová práva, která vstoupí v platnost jejich přihlášením pomocí uživatelského jména a hesla.
                 První uživatel, kterého vytvoříte, by měl být administrátor (někdo, kdo má všechna práva a není omezen žádným stromem, obvykle to jste vy). Pokud si nepřidělíte dostatečná (administrátorská) oprávnění,
@@ -98,7 +98,7 @@ echo help_header("Nápověda: Uživatelé");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazání uživatelů</p></a>
             <p>Chcete-li odstranit uživatele, použijte záložku <a href="#search">Hledat</a> k nalezení uživatele, a poté klikněte na ikonku Vymazat vedle záznamu tohoto uživatele. Tento řádek změní
                 barvu a poté po odstranění položky uživatel zmizí.</p>
@@ -108,7 +108,7 @@ echo help_header("Nápověda: Uživatelé");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="review"><p class="subheadbold">Přezkoumat</p></a>
 
             <p>Kliknutím na záložku "Přezkoumat" můžete spravovat nové uživatelské registrace. Tyto uživatelské záznamy nebudou aktivní, dokud je nejdřív neupravíte a neuložíte. Poté, co se stane
@@ -126,7 +126,7 @@ echo help_header("Nápověda: Uživatelé");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="rights"><p class="subheadbold">Role a přístupová práva</p></a>
 
             <p>"Přístupové právo" je to, co může uživatel dělat poté, co se přihlásí. "Role" je předdefinovaná sada přístupových práv, takže
@@ -193,7 +193,7 @@ echo help_header("Nápověda: Uživatelé");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="rights"><p class="subheadbold">Omezení přístupu</p></a>
 
             <p>Toto definuje omezení uživatelských práv. Všichni uživatelé (včetně anonymních návštěvníků) mohou vždy vidět údaje zesnulých osob. Zde nejsou nutná žádná práva

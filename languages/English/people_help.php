@@ -8,7 +8,7 @@ echo help_header("Help: People");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="index_help.php" class="lightlink">&laquo; Help: Getting Started</a> &nbsp; | &nbsp;
@@ -27,7 +27,7 @@ echo help_header("Help: People");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -51,7 +51,7 @@ echo help_header("Help: People");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding New People</p></a>
             <p>To add a new person, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations, associations and
                 additional events) can be added after saving or locking the record. Take note of the following:</p>
@@ -111,7 +111,7 @@ echo help_header("Help: People");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="edit"><p class="subheadbold">Editing Existing People</p></a>
             <p>To make changes to an existing person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Edit icon next to that individual.</p>
 
@@ -172,7 +172,7 @@ echo help_header("Help: People");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting People</p></a>
             <p>To delete one person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Delete icon next to that individual. The row will
                 change color and then vanish as the person is deleted. To delete more than one person at a time, check the box in the Select column next to each person to be
@@ -183,7 +183,7 @@ echo help_header("Help: People");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="review"><p class="subheadbold">Reviewing Tentative Edits</p></a>
       To review tentative edits made by other users, click on the "Review" tab. You will decide whether to keep or delete these proposed changes. Choose to review by tree, by user or both.
       No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are present.</p>
@@ -203,7 +203,7 @@ echo help_header("Help: People");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="merge"><p class="subheadbold">Merging People</p></a>
       To review and merge duplicate records, click on the "Merge" tab. You will decide whether two records are the same or not.</p>
 

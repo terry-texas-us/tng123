@@ -164,7 +164,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <span class="subhead"><strong><?php echo $text['pdfgen']; ?></strong></span><br>
 
   <br>
-  <p class="subhead"><span class="normal" style="padding-bottom:3px"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></p>
+  <p class="subhead"><span class="normal" style="padding-bottom:3px;"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></p>
   <?php
   if (count($font_list) == 0) {
     echo "ERROR: There are no fonts installed to support character set $session_charset.";
@@ -225,7 +225,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <?php
   }
   if ($pdftype == "fam") {
-    echo "<input type=\"hidden\" name=\"familyID\" value=\"$familyID\">\n";
+    echo "<input type=\"hidden\" name=\"familyID\" value='$familyID'>\n";
   } else {
     echo "<input type=\"hidden\" name=\"personID\" value=\"$personID\">\n";
   }
@@ -238,7 +238,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     ?>
     <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
       </a></div>
-    <div style="display:none" id="dispopts">
+    <div style="display:none;" id="dispopts">
       <table id="display" cellpadding="3" class="normal">
         <tr>
           <td>
@@ -275,7 +275,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <!-- Font section -->
   <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('font','fonticon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="fonticon"> <?php echo $text['fonts']; ?>
     </a></div>
-  <div style="display:none" id="font">
+  <div style="display:none;" id="font">
     <table cellpadding="3" class="normal">
       <tr>
         <td><?php echo $text['family']; ?></td>
@@ -344,7 +344,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
   <!-- Page setup section -->
   <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('pgsetup','pgicon','');" class="pdftoggle"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="pgicon"> <?php echo $text['pgsetup']; ?></a></div>
-  <div style="display:none" id="pgsetup">
+  <div style="display:none;" id="pgsetup">
     <table cellpadding="3" class="normal">
       <tr>
         <td>

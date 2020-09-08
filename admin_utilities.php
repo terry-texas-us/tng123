@@ -230,7 +230,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                                 <th class="fieldnameback fieldname"><?php echo $admtext['table']; ?></th>
                                 <th class="fieldnameback fieldname"><?php echo $admtext['lastbackup']; ?></th>
                                 <th class="fieldnameback fieldname"><?php echo $admtext['backupfilesize']; ?></th>
-                                <th class="fieldnameback fieldname" style="width:200px"><?php echo $admtext['msg']; ?></th>
+                                <th class="fieldnameback fieldname" style="width:200px;"><?php echo $admtext['msg']; ?></th>
                             </tr>
                             <?php
                             doRow($address_table, $admtext['addresstable']);

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Nastavení schémat");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="config_help.php" class="lightlink">&laquo; Nápověda: Základní nastavení</a> &nbsp; | &nbsp;
@@ -102,7 +102,7 @@ echo help_header("Nápověda: Nastavení schémat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="desc"><p class="subheadbold">Potomci</p></a>
 
             <span class="optionhead">Výchozí zobrazení</span>
@@ -136,7 +136,7 @@ echo help_header("Nápověda: Nastavení schémat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="rel"><p class="subheadbold">Schéma příbuzenských vztahů</p></a>
             <span class="optionhead">Výchozí počet vztahů</span>
             <p>Tato hodnota udává počet příbuzenských vztahů, které bude TNG hledat při prvním spuštění schématu příbuzenských vztahů. Po nalezení tohoto
@@ -158,7 +158,7 @@ echo help_header("Nápověda: Nastavení schémat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="time"><p class="subheadbold">Schéma časové osy</p></a>
             <span class="optionhead">Výchozí šířka schématu</span>
             <p>Výchozí šířka schématu délky života v pixelech. Návštěvníci si mohou šířku změnit na horním okraji obrazovky.</p>
@@ -200,7 +200,7 @@ echo help_header("Nápověda: Nastavení schémat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="common"><p class="subheadbold">Společné prvky</p></a>
 
             <span class="optionhead">Odsazení zleva</span>
@@ -301,7 +301,7 @@ echo help_header("Nápověda: Nastavení schémat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="thumb"><p class="subheadbold">Poznámky k vložení náhledů fotografií</p></a>
 
             <ul>

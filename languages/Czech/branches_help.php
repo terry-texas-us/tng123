@@ -12,7 +12,7 @@ echo help_header("N�pov�da: V�tve");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="trees_help.php" class="lightlink">&laquo; N�pov�da: Stromy</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("N�pov�da: V�tve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="search"><p class="subheadbold">Hledat</p></a>
             <p>Nalezen� existuj�c�ch v�tv� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla v�tve</strong> nebo <strong>Popisu</strong>. Pro z��en� va�eho hled�n� vyberte strom.
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech v�tv� ve va�� datab�zi.</p>
@@ -61,7 +61,7 @@ echo help_header("N�pov�da: V�tve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat novou / Upravit existuj�c� v�tve</p></a>
             <p>Chcete-li p�idat novou v�tev, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pak vypl�te formul��.
                 V�znam pol� je n�sleduj�c�:</p>
@@ -94,7 +94,7 @@ echo help_header("N�pov�da: V�tve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� v�tve</p></a>
             <p>Chcete-li odstranit v�tev, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� v�tve, a pot� klikn�te na ikonku Vymazat vedle z�znamu t�to v�tve. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky v�tev zmiz�. Chcete-li najednou odstranit v�ce v�tv�, za�krtn�te tla��tko ve sloupci Vybrat vedle ka�d� v�tve, kter� m� b�t
@@ -105,7 +105,7 @@ echo help_header("N�pov�da: V�tve");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="label"><p class="subheadbold">Ozna�en� v�tv�</p></a>
             <p>Chcete-li zna�ku v�tve p�ipojit k osob�m ve sv� datab�zi, klikn�te na tla��tko <strong>P�idat zna�ku</strong> ve spodn� ��sti str�nky Upravit v�tev,
                 a pokra�ujte podle instrukc� v okn�, kter� se objev�. Po proveden� v�b�ru klikn�te na tla��tko "P�idat zna�ku" ve spodn� ��sti. Mo�nosti na t�to str�nce jsou n�sleduj�c�:</p>

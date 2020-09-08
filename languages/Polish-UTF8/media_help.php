@@ -8,7 +8,7 @@ echo help_header("Pomoc: Media");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="more_help.php" class="lightlink">&laquo; Pomoc: Więcej</a> &nbsp; | &nbsp;
@@ -68,7 +68,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="add"><p class="subheadbold">Dodawanie nowych mediów</p></a>
             <p>Aby dodać nowe media, kliknij przycisk <strong>Dodaj nowe</strong> a następnie wypełnić formularz. Niektóre informacje, w tym Mapa zdjęcia, informacje o lokalizacji, oraz łącza do osób, rodzin i itp. mogą zostać dodane
                 dopiero po kliknięciu na "Zapisz i kontynuuj". Do dyspozycji są następujące pola:</p>
@@ -180,7 +180,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="edit"><p class="subheadbold">Edycja istniejących mediów</p></a>
             <p>Aby wprowadzić zmiany do istniejących mediów, kliknij przycisk <a href="#search">Szukaj</a> w celu znalezienia medium a następnie kliknij na ikonkę Edycja obok tego elementu.
                 Oto elementy, których nie ma w "Dodaj nowe":</p>
@@ -234,7 +234,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie mediów</p></a>
             <p>Aby usunąć jedno medium, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego medium. Wiersz zmieni kolor,
                 a następnie zniknie. Medium zostało usunięte. Aby usunąć więcej niż jedno medium naraz, zaznacz pole w kolumnie Wybierz obok każdego medium, które ma zostać usunięte, a następnie kliknąć
@@ -245,7 +245,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="convert"><p class="subheadbold">Konwertowanie mediów z jednej kolekcji do drugiej</p></a>
             Aby przekonwertować media z jednej "Kolekcji" do innej, zaznacz odpowiednie pozycje w polu "Wybierz" na karcie Szukaj a następnie wybierz nową kolekcję z rozwijanej listy u góry strony
             obok "Konwertuj wybrane do ". Po dokonaniu wyboru kliknij przycisk "Konwertuj wybrane do". Strona zostanie otwarta ponownie i ukaże się czerwony napis informujący o statusie operacji.</p>
@@ -255,7 +255,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="album"><p class="subheadbold">Dodawanie mediów do albumów</p></a>
             Aby dołączyć media do albumu, zaznacz odpowiednie pozycje w polu "Wybierz" na karcie Szukaj a następnie wybierz album z rozwijanej listy u góry strony obok "Dodaj do albumu". Po dokonaniu
             wyboru kliknij przycisk "Dodaj do albumu". Media mogą być także dodane do albumów w Administracja / Albumy.</p>
@@ -265,7 +265,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="sort"><p class="subheadbold">Sortowanie mediów</p></a>
             <p>Domyślnie media połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami są sortowane według kolejności, w jakiej zostały utworzone łącza. Aby zmienić tę kolejność, możesz na karcie
                 Media / Sortuj przesuwać media według życzenia.</p>
@@ -295,7 +295,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="thumbs"><p class="subheadbold">Miniaturki</p></a>
 
             <span class="optionhead">Generowanie miniaturek</span>
@@ -315,7 +315,7 @@ echo help_header("Pomoc: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="import"><p class="subheadbold">Import zdjęć</p></a>
 
             <p>Ta funkcja tworzy zapis medium dla każdego pliku w dowolnym Twoim folderze mediów TNG z tytułem takim jak nazwa pliku. Do przeprowadzenia importu wybierz najpierw Kolekcję (lub wcześniej utwórz nową kolekcję) oraz drzewo

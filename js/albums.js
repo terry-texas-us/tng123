@@ -101,15 +101,15 @@ function finishAddToAlbum(req) {
   newrow += '<img src="img/admArrowUp.gif" alt=""><br>' + dragmsg + '<br><img src="img/admArrowDown.gif" alt="">\n';
   newrow += '</td>\n';
 
-  newrow += '<td class="lightback smaller" style="width:35px;text-align:center\">';
-  newrow += '<div style=\"padding-bottom:5px\"><a href="#" onclick="return moveItemInList(\'' + albumlink + '\',1);" title="' + movetopmsg + '"><img src="img/admArrowUp.gif" alt=""><br>Top</a></div>\n';
-  newrow += '<input style="width:30px" class="movefields" name="move' + albumlink + '" id="move' + albumlink + '" value="' + newnum + '" onkeypress="return handleMediaEnter(\'' + albumlink + '\',jQuery(\'#move' + albumlink + '\').val(),event);">\n';
+  newrow += '<td class="lightback smaller" style="width:35px;text-align:center;\">';
+  newrow += '<div style=\"padding-bottom:5px;\"><a href="#" onclick="return moveItemInList(\'' + albumlink + '\',1);" title="' + movetopmsg + '"><img src="img/admArrowUp.gif" alt=""><br>Top</a></div>\n';
+  newrow += '<input style="width:30px;" class="movefields" name="move' + albumlink + '" id="move' + albumlink + '" value="' + newnum + '" onkeypress="return handleMediaEnter(\'' + albumlink + '\',jQuery(\'#move' + albumlink + '\').val(),event);">\n';
   newrow += '<a href="#" onclick="return moveItemInList(\'' + albumlink + '\',jQuery(\'#move' + albumlink + '\').val());" title="' + movetopmsg + '">Go</a>';
     newrow += '</td>\n';
 
     newrow += '<td class="lightback" style="width:' + (thumbmaxw + 6) + 'px;text-align:center;">' + jQuery('#thumbcell_' + media).html() + '</td>\n';
     newrow += '<td class="lightback normal">' + jQuery('#desc_' + media).html();
-    newrow += '<div id="del_' + albumlink + '" class="smaller" style="color:gray;visibility:hidden">';
+    newrow += '<div id="del_' + albumlink + '" class="smaller" style="color:gray;visibility:hidden;">';
     if (jQuery('#thumbcell_' + media).html() != "&nbsp;") {
         newrow += '<input type="radio" name="rthumbs" value="r' + media + '" onclick="makeDefault(this);">' + mkdefaultmsg;
         newrow += ' &nbsp;|&nbsp; ';

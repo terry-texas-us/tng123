@@ -27,7 +27,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
 } else {
     $flags['tabs'] = $tngconfig['tabs'];
     tng_adminheader($admtext['addnewtree'], $flags);
-    echo "</head>\n";
+    echo "</head>";
     echo "<body background=\"img/background.gif\">\n";
     $allow_add_tree = $assignedtree ? 0 : $allow_add;
     $treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];

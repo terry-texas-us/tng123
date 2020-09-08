@@ -10,7 +10,7 @@ $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
 $treeresult = tng_query($query);
 $numtrees = tng_num_rows($treeresult);
 
-$query = "SELECT count(userID) as ucount FROM $users_table";
+$query = "SELECT count(userID) AS ucount FROM $users_table";
 $userresult = tng_query($query);
 $row = tng_fetch_assoc($userresult);
 $ucount = $row['ucount'];

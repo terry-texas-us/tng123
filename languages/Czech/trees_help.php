@@ -13,7 +13,7 @@ echo help_header("N�pov�da: Stromy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
           <a href="users_help.php" class="lightlink">&laquo; N�pov�da: U�ivatel�</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("N�pov�da: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� stromy</p></a>
             <p><strong>Strom</strong> v TNG je z�sobn�k samostatn�ho souboru rodinn�ch �daj�. TNG umo��uje na va�ich str�nk�ch podporu v�ce strom�, ale proto�e
                 jsou stromy samostatn�, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jin�ho stromu. Z tohoto d�vodu by m�ly b�t osoby, kter� jsou nebo by m�ly b�t navz�jem
@@ -94,7 +94,7 @@ echo help_header("N�pov�da: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� strom�</p></a>
             <p>Chcete-li odstranit strom, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� stromu, a pot� klikn�te na ikonku Vymazat vedle z�znamu tohoto stromu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky strom zmiz�. <em>V�echna data spojen� s t�mto stromem (v�etn� osob, rodin,
@@ -105,7 +105,7 @@ echo help_header("N�pov�da: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="clear"><p class="subheadbold">Vy�i�t�n� strom�</p></a>
             <p>Chcete-li strom "vy�istit" (vymazat v�echny �daje, ale strom samotn� ponechat), pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� stromu, a pot� klikn�te na ikonku Vy�istit
                 vedle z�znamu tohoto stromu.

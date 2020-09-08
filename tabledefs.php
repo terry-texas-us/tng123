@@ -825,9 +825,9 @@ $query = "CREATE TABLE $users_table (
 ) ENGINE = MYISAM $collationstr";
 $result = performQuery($query, $users_table);
 
-$query = "DROP TABLE IF EXISTS {$xnotes_table}";
+$query = "DROP TABLE IF EXISTS $xnotes_table";
 $result = performQuery($query);
-$query = "CREATE TABLE {$xnotes_table} (
+$query = "CREATE TABLE $xnotes_table (
 	ID INT(11) NOT NULL AUTO_INCREMENT,
 	noteID VARCHAR(22) NOT NULL,
 	gedcom VARCHAR(20) NOT NULL,

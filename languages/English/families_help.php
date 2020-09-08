@@ -8,7 +8,7 @@ echo help_header("Help: Families");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="people_help.php" class="lightlink">&laquo; Help: People</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Families");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -52,7 +52,7 @@ echo help_header("Help: Families");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
           <a name="add"><p class="subheadbold">Adding New Families</p></a>
           <p>A <strong>Family</strong> is needed for every relationship between a "Father" and a "Mother" (children may or may not be included). If a person is married multiple times
             or has children with multiple partners, you should create a new Family for each set of spouses or partners.</p>
@@ -111,7 +111,7 @@ echo help_header("Help: Families");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="edit"><p class="subheadbold">Editing Existing Families</p></a>
             <p>To make changes to an existing family, use the <a href="#search">Search</a> tab to locate the family, then click on the Edit icon next to that family.</p>
 
@@ -149,7 +149,7 @@ echo help_header("Help: Families");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Families</p></a>
             <p>To delete one family, use the <a href="#search">Search</a> tab to locate the individual, then click on the Delete icon next to that family. The row will
                 change color and then vanish as the family is deleted (the spouses and children will not be deleted, but the relationship will be disssolved).
@@ -161,7 +161,7 @@ echo help_header("Help: Families");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="review"><p class="subheadbold">Reviewing Tentative Edits</p></a>
       To review tentative edits made by other users, click on the "Review" tab. You will decide whether to keep or delete these proposed changes. Choose to review by tree, by user or both.
       No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are present.</p>

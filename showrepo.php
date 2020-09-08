@@ -21,7 +21,7 @@ $firstsectionsave = "";
 $tableid = "";
 $cellnumber = 0;
 
-$query = "SELECT * FROM $repositories_table WHERE repoID = \"$repoID\" AND gedcom = \"$tree\"";
+$query = "SELECT * FROM $repositories_table WHERE repoID = \"$repoID\" AND gedcom = '$tree'";
 $result = tng_query($query);
 $reporow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
@@ -52,7 +52,7 @@ $repotext = "";
 $repotext .= "<ul class=\"nopad\">\n";
 $repotext .= beginSection("info");
 $repotext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-$repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col/>\n";
+$repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($reporow['reponame']) {
   $repotext .= showEvent(array("text" => $text['name'], "fact" => $reporow['reponame']));
 }
@@ -83,7 +83,7 @@ if ($soffset) {
   $newsoffset = 0;
 }
 
-$query = "SELECT sourceID, title, shorttitle FROM $sources_table WHERE gedcom = \"$tree\" AND repoID = '$repoID' ORDER BY title LIMIT $soffsetstr" . ($maxsearchresults + 1);
+$query = "SELECT sourceID, title, shorttitle FROM $sources_table WHERE gedcom = '$tree' AND repoID = '$repoID' ORDER BY title LIMIT $soffsetstr" . ($maxsearchresults + 1);
 $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $repolinktext = "";
@@ -130,7 +130,7 @@ if ($notes) {
 $repotext .= "</ul>\n";
 
 $tng_alink = $tng_plink = "lightlink";
-$innermenu = $num_collapsed ? "<div style=\"float:right\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
+$innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
 if ($media || $notes) {
   if ($tngconfig['istart']) {
     $tng_plink = "lightlink3";

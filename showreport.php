@@ -201,7 +201,7 @@ if ($rrow['sqlselect']) {
         $displayfields[$i] = "treename";
       } elseif ($tngprefix == "ce") {
         $eventtypeID = substr($dfield, 6);
-        $query = "SELECT display FROM $eventtypes_table WHERE eventtypeID=\"$eventtypeID\"";
+        $query = "SELECT display FROM $eventtypes_table WHERE eventtypeID = '$eventtypeID'";
         $evresult = tng_query($query);
         $evrow = tng_fetch_assoc($evresult);
         tng_free_result($evresult);
@@ -483,7 +483,8 @@ if ($rrow['sqlselect']) {
   }
 
   if ($need_families) {
-    $families_join = "LEFT JOIN $families_table AS families1 ON ($people_table.gedcom = families1.gedcom AND $people_table.personID = families1.husband ) LEFT JOIN $families_table AS families2 ON ($people_table.gedcom = families2.gedcom AND $people_table.personID = families2.wife ) ";
+    $families_join = "LEFT JOIN $families_table AS families1 ON ($people_table.gedcom = families1.gedcom AND $people_table.personID = families1.husband) ";
+    $families_join .= "LEFT JOIN $families_table AS families2 ON ($people_table.gedcom = families2.gedcom AND $people_table.personID = families2.wife) ";
   } else {
     $families_join = "";
   }
@@ -554,14 +555,14 @@ if (!$result) {
     if ($numrows == $maxsearchresults || $offsetplus > 1) {
       if ($rrow['sqlselect']) {
         if ($gotpersonid) {
-          $query = "SELECT count( $people_table.personID ) as rcount $from";
+          $query = "SELECT count( $people_table.personID ) AS rcount $from";
         } else {
           $result2 = tng_query($query);
           $totrows = tng_num_rows($result2);
           $query = "";
         }
       } else {
-        $query = "SELECT count($people_table.personID) as rcount FROM ($people_table $trees_join) $families_join $children_join $cejoin $criteriastr $treestr";
+        $query = "SELECT count($people_table.personID) AS rcount FROM ($people_table $trees_join) $families_join $children_join $cejoin $criteriastr $treestr";
       }
       if ($query) {
         $result2 = tng_query($query);

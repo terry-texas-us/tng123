@@ -7,22 +7,22 @@ include "$mylanguage/admintext.php";
 include $cms['tngpath'] . "checklogin.php";
 
 if ($type == "person") {
-  $query = "SELECT personID FROM $people_table WHERE personID = \"$checkID\" AND gedcom = \"$tree\"";
+  $query = "SELECT personID FROM $people_table WHERE personID = \"$checkID\" AND gedcom = '$tree'";
   $prefix = $tngconfig['personprefix'];
   $suffix = $tngconfig['personsuffix'];
 } else {
   if ($type == "family") {
-    $query = "SELECT familyID FROM $families_table WHERE familyID = \"$checkID\" AND gedcom = \"$tree\"";
+    $query = "SELECT familyID FROM $families_table WHERE familyID = \"$checkID\" AND gedcom = '$tree'";
     $prefix = $tngconfig['familyprefix'];
     $suffix = $tngconfig['familysuffix'];
   } else {
     if ($type == "source") {
-      $query = "SELECT sourceID FROM $sources_table WHERE sourceID = \"$checkID\" AND gedcom = \"$tree\"";
+      $query = "SELECT sourceID FROM $sources_table WHERE sourceID = \"$checkID\" AND gedcom = '$tree'";
       $prefix = $tngconfig['sourceprefix'];
       $suffix = $tngconfig['sourcesuffix'];
     } else {
       if ($type == "repo") {
-        $query = "SELECT repoID FROM $repositories_table WHERE repoID = \"$checkID\" AND gedcom = \"$tree\"";
+        $query = "SELECT repoID FROM $repositories_table WHERE repoID = \"$checkID\" AND gedcom = '$tree'";
         $prefix = $tngconfig['repoprefix'];
         $suffix = $tngconfig['reposuffix'];
       }

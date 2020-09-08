@@ -22,13 +22,15 @@ tng_free_result($result);
 $row['description'] = preg_replace("/\"/", "&#34;", $row['description']);
 $row['keywords'] = preg_replace("/\"/", "&#34;", $row['keywords']);
 
-$query2 = "SELECT albumlinkID, thumbpath, $media_table.mediaID as mediaID, usecollfolder, mediatypeID, notes, description, datetaken, placetaken, defphoto, $media_table.gedcom FROM ($media_table, $albumlinks_table)
-	WHERE albumID = \"$albumID\" AND $media_table.mediaID = $albumlinks_table.mediaID order by ordernum, description";
+$query2 = "SELECT albumlinkID, thumbpath, media.mediaID AS mediaID, usecollfolder, mediatypeID, notes, description, datetaken, placetaken, defphoto, media.gedcom ";
+$query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
+$query2 .= "WHERE albumID = \"$albumID\" AND media.mediaID = albumlinks.mediaID ";
+$query2 .= "ORDER BY ordernum, description";
 $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
 $numrows = tng_num_rows($result2);
 
-$query3 = "SELECT alinkID, entityID, eventID, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.suffix as suffix, people.nameorder as nameorder, ate.gedcom, treename, familyID, people.personID as personID, wifepeople.personID as wpersonID, wifepeople.firstname as wfirstname, wifepeople.lnprefix as wlnprefix, wifepeople.lastname as wlastname, wifepeople.prefix as wprefix, wifepeople.suffix as wsuffix, wifepeople.nameorder as wnameorder, husbpeople.personID as hpersonID, husbpeople.firstname as hfirstname, husbpeople.lnprefix as hlnprefix, husbpeople.lastname as hlastname, husbpeople.prefix as hprefix, husbpeople.suffix as hsuffix, husbpeople.nameorder as hnameorder, sourceID, sources.title, repositories.repoID as repoID, reponame, linktype ";
-$query3 .= "FROM ($album2entities_table as ate, $trees_table trees) ";
+$query3 = "SELECT alinkID, entityID, eventID, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.suffix AS suffix, people.nameorder AS nameorder, ate.gedcom, treename, familyID, people.personID AS personID, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, sourceID, sources.title, repositories.repoID AS repoID, reponame, linktype ";
+$query3 .= "FROM ($album2entities_table ate, $trees_table trees) ";
 $query3 .= "LEFT JOIN $people_table people ON ate.entityID = people.personID AND ate.gedcom = people.gedcom ";
 $query3 .= "LEFT JOIN $families_table families ON ate.entityID = families.familyID AND ate.gedcom = families.gedcom ";
 $query3 .= "LEFT JOIN $sources_table sources ON ate.entityID = sources.sourceID AND ate.gedcom = sources.gedcom ";
@@ -63,8 +65,9 @@ tng_adminheader($admtext['modifyalbum'], $flags);
 
 $photo = "";
 
-$query = "SELECT alwayson, thumbpath, $media_table.mediaID as mediaID, usecollfolder, mediatypeID, albumlinkID, $media_table.gedcom FROM ($media_table, $albumlinks_table)
-	WHERE albumID = \"$albumID\" AND $media_table.mediaID = $albumlinks_table.mediaID AND defphoto = '1'";
+$query = "SELECT alwayson, thumbpath, media.mediaID AS mediaID, usecollfolder, mediatypeID, albumlinkID, media.gedcom ";
+$query .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
+$query .= "WHERE albumID = \"$albumID\" AND media.mediaID = albumlinks.mediaID AND defphoto = '1'";
 $defresult = tng_query($query);
 if ($defresult) {
     $drow = tng_fetch_assoc($defresult);
@@ -99,23 +102,23 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
     var tree = "";
     var type = "album";
     var thumbmaxw = parseInt("<?php echo $thumbmaxw; ?>");
-    var dragmsg = "<?php echo $admtext['drag']; ?>";
-    var remove_text = "<?php echo $admtext['remove']; ?>";
-    var edit_text = "<?php echo $admtext['edit']; ?>";
+    const dragmsg = "<?php echo $admtext['drag']; ?>";
+    const remove_text = "<?php echo $admtext['remove']; ?>";
+    const edit_text = "<?php echo $admtext['edit']; ?>";
     var mediacount = <?php echo $numrows; ?>;
     var linkcount = <?php echo $numlinks; ?>;
-    var selectmsg = "<?php echo $admtext['selecttree']; ?>";
-    var linkmsg = "<?php echo $admtext['enterid']; ?>";
-    var duplinkmsg = "<?php echo $admtext['duplinkmsg']; ?>";
-    var invlinkmsg = "<?php echo $admtext['invlinkmsg']; ?>";
-    var mkdefaultmsg = "<?php echo $admtext['makedefault']; ?>";
-    var searchmsg = "<?php echo $admtext['entersearchvalue']; ?>";
-    var sortmsg = "<?php echo $admtext['text_sort']; ?>";
-    var confdellink = "<?php echo $admtext['confdellink']; ?>";
-    var confremmedia = "<?php echo $admtext['confremmedia']; ?>";
-    var movetopmsg = "<?php echo $admtext['movetop']; ?>";
+    const selectmsg = "<?php echo $admtext['selecttree']; ?>";
+    const linkmsg = "<?php echo $admtext['enterid']; ?>";
+    const duplinkmsg = "<?php echo $admtext['duplinkmsg']; ?>";
+    const invlinkmsg = "<?php echo $admtext['invlinkmsg']; ?>";
+    const mkdefaultmsg = "<?php echo $admtext['makedefault']; ?>";
+    const searchmsg = "<?php echo $admtext['entersearchvalue']; ?>";
+    const sortmsg = "<?php echo $admtext['text_sort']; ?>";
+    const confdellink = "<?php echo $admtext['confdellink']; ?>";
+    const confremmedia = "<?php echo $admtext['confremmedia']; ?>";
+    const movetopmsg = "<?php echo $admtext['movetop']; ?>";
     var topmsg = "<?php echo $text['top']; ?>";
-    var gomsg = "<?php echo $admtext['go']; ?>";
+    const gomsg = "<?php echo $admtext['go']; ?>";
     var findopen;
     var orderaction = "order";
 
@@ -168,7 +171,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
             <td class="tngshadow">
                 <?php echo displayToggle("plus0", 0, "details", $admtext['existingalbuminfo'], $admtext['infosubt']); ?>
 
-                <div id="details" style="display:none">
+                <div id="details" style="display:none;">
                     <br>
                     <table class="normal">
                         <tr>
@@ -206,7 +209,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                 <?php echo displayToggle("plus1", 1, "addmedia", $admtext['albmedia'] . " (<span id=\"mediacount\">$numrows</span>)", $admtext['mediasubt']); ?>
 
                 <div id="addmedia">
-                    <p class="normal" style="padding-top:12px">
+                    <p class="normal" style="padding-top:12px;">
                         <input type="button" value="<?php echo $admtext['addmedia']; ?>"
                                onclick="return openAlbumMediaFind();"> <?php echo $admtext['selmedia'] . " (<a href=\"admin_newmedia.php\" target=\"_blank\">" . $admtext['uploadfirst'] . "</a>)"; ?>
                     </p>
@@ -214,11 +217,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     <p class="normal">&nbsp;<strong><?php echo $admtext['inclmedia']; ?>:</strong> <?php echo $admtext['emoptions']; ?></p>
                     <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
                         <tr>
-                            <th class="fieldnameback" style="width:102px"><?php echo $admtext['text_sort']; ?></th>
-                            <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px"><?php echo $admtext['thumb']; ?></th>
+                            <th class="fieldnameback" style="width:102px;"><?php echo $admtext['text_sort']; ?></th>
+                            <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px;"><?php echo $admtext['thumb']; ?></th>
                             <th class="fieldnameback"><?php echo $admtext['description']; ?></th>
-                            <th class="fieldnameback" style="width:154px"><?php echo $admtext['date']; ?></th>
-                            <th class="fieldnameback" style="width:105px"><?php echo $admtext['mediatype']; ?></th>
+                            <th class="fieldnameback" style="width:154px;"><?php echo $admtext['date']; ?></th>
+                            <th class="fieldnameback" style="width:105px;"><?php echo $admtext['mediatype']; ?></th>
                         </tr>
                     </table>
 
@@ -233,15 +236,15 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 
                             $truncated = substr($lrow['notes'], 0, 90);
                             $truncated = strlen($lrow['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $lrow['notes'];
-                            echo "<div class=\"sortrow\" id=\"orderdivs_{$lrow['albumlinkID']}\" style=\"clear:both;position:relative\" onmouseover=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','hidden');\">";
+                            echo "<div class=\"sortrow\" id=\"orderdivs_{$lrow['albumlinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','hidden');\">";
                             echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                             echo "<td class=\"dragarea normal\">";
                             echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                             echo "</td>\n";
 
-                            echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center\">";
-                            echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>Top</a></div>\n";
-                            echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$lrow['albumlinkID']}\" id=\"move{$lrow['albumlinkID']}\" value=\"$count\" onkeypress=\"return handleMediaEnter('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val(),event);\">\n";
+                            echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center;\">";
+                            echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>Top</a></div>\n";
+                            echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$lrow['albumlinkID']}\" id=\"move{$lrow['albumlinkID']}\" value=\"$count\" onkeypress=\"return handleMediaEnter('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val(),event);\">\n";
                             echo "<a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val());\" title=\"{$admtext['movetop']}\">Go</a>\n";
                             echo "</td>\n";
 
@@ -257,7 +260,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             echo "</td>\n";
                             $checked = $lrow['defphoto'] ? " checked" : "";
                             echo "<td class=\"lightback normal\"><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br>" . strip_tags($truncated) . "<br>";
-                            echo "<div id=\"del_{$lrow['albumlinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden\">";
+                            echo "<div id=\"del_{$lrow['albumlinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
                             if ($foundthumb) {
                                 echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
                                 echo " &nbsp;|&nbsp; ";
@@ -274,7 +277,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         tng_free_result($result2);
                         ?>
                     </div>
-                    <div id="nomedia" class="normal" style="margin-left:3px">
+                    <div id="nomedia" class="normal" style="margin-left:3px;">
                         <?php
                         if (!$numrows) {
                             echo $admtext['nomedia'];
@@ -289,7 +292,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                 <?php echo displayToggle("plus2", 1, "albumlinks", $admtext['albumlinks'] . " (<span id=\"linkcount\">$numlinks</span>)", $admtext['linkssubt']); ?>
 
                 <div id="albumlinks">
-                    <table cellspacing="2" style="padding-top:12px">
+                    <table cellspacing="2" style="padding-top:12px;">
                         <tr>
                             <td class="normal"><?php echo $admtext['tree']; ?></td>
                             <td class="normal"><?php echo $admtext['linktype']; ?></td>
@@ -420,7 +423,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         ?>
                         </tbody>
                     </table>
-                    <div id="nolinks" class="normal" style="margin-left:3px">
+                    <div id="nolinks" class="normal" style="margin-left:3px;">
                         <?php
                         if (!$oldlinks) {
                             echo $admtext['nolinks'];

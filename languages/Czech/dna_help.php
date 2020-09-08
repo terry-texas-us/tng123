@@ -8,7 +8,7 @@ echo help_header("N�pov�da: Testy DNA");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="reports_help.php" class="lightlink">&laquo; N�pov�da: Reporty</a> &nbsp; | &nbsp;
@@ -46,7 +46,7 @@ echo help_header("N�pov�da: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-          <p style="float:right"><a href="#top">Nahoru</a></p>
+          <p style="float:right;"><a href="#top">Nahoru</a></p>
           <a name="add"><p class="subheadbold">P�id�n� nov�ch test�</p></a>
           <p>Chcete-li p�idat nov� test, klikn�te na z�lo�ku <strong>P�idat nov�</strong>, a vypl�te formul��. Po ulo�en� m��e b�t test p�ipojen k osob� v datab�zi.</p>
           <p>Pole mohou z�stat pr�zdn� a nebudou ve v�t�in� p��pad� zobrazeny.</p>
@@ -102,7 +102,7 @@ echo help_header("N�pov�da: Testy DNA");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="ydna"><p class="subheadbold">Pole v�sledk� test� Y-DNA</p></a>
 
       <p>Otcovskou linii dan�ho mu�e lze stopovat prost�ednictv�m DNA obsa�en� v jeho chromoz�mu Y (Y-DNA). Test Y-DNA spo��v� v anal�ze segment� DNA chromoz�mu Y (p��tomn�m pouze u mu��), zvan�ch kr�tk� tandemov� repetice (STR z anglick�ho Short
@@ -134,7 +134,7 @@ echo help_header("N�pov�da: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="mtdna"><p class="subheadbold">Pole v�sledk� test� mtDNA</p></a>
 
             <p>Mate�skou linii p�edk� lze stopovat pomoc� <span class="optionhead">mitochondri�ln� DNA (mtDNA)</span>. Dle sou�asn�ch konvenc� je mtDNA rozd�lena do t�� oblast�. T�mi jsou k�duj�c� oblast a dv� hypervariabiln� oblasti (HVR1 a HVR2)
@@ -167,7 +167,7 @@ echo help_header("N�pov�da: Testy DNA");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="atdna"><p class="subheadbold">Pole v�sledk� test� atDNA</p></a>
 
       <p><span class="optionhead">Autozom�ln� DNA (atDNA) </span> testuje va�e autozom�ln� chromoz�my, co� je dal��ch 22 p�r� za pohlavn�mi chromozomy X a Y. Testy autozom�ln� DNA mohou pomoci identifikovat p��buzn�, kte�� sd�lej� ned�vn� p�edky. ��m
@@ -209,7 +209,7 @@ echo help_header("N�pov�da: Testy DNA");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="common"><p class="subheadbold">Spole�n� pole v�sledk� test�</p></a>
 
       <p>N�sleduj�c� pole jsou spole�n� pro v�echny typy test�</p>
@@ -256,7 +256,7 @@ echo help_header("N�pov�da: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">�prava existuj�c�ch test�</p></a>
             <p>Chcete-li upravit existuj�c� test, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� testu, a pot� klikn�te na ikonu Upravit vedle tohoto testu.</p>
 
@@ -272,7 +272,7 @@ echo help_header("N�pov�da: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� existuj�c�ch test�</p></a>
             <p>Chcete-li odstranit test, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� testu, a pot� klikn�te na ikonu Vymazat vedle tohoto testu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� m�sta zmiz�. Chcete-li najednou odstranit v�c test�, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�ho testu, kter�

@@ -1,42 +1,42 @@
 <?php
-$query = "DELETE from $people_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $people_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $families_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $families_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $children_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $children_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $assoc_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $assoc_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $address_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $address_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $sources_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $sources_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $repositories_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $repositories_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $events_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $events_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $notelinks_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $notelinks_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from {$xnotes_table} WHERE gedcom = \"{$tree}\"";
+$query = "DELETE FROM $xnotes_table WHERE gedcom = \"{$tree}\"";
 $result = tng_query($query);
 
-$query = "DELETE from $citations_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $citations_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE from $places_table WHERE gedcom = \"$tree\"";
+$query = "DELETE FROM $places_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
 if ($tree) {
-    $query = "SELECT mediaID from $media_table WHERE gedcom = \"$tree\"";
+    $query = "SELECT mediaID FROM $media_table WHERE gedcom = '$tree'";
     $result = tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
         $delquery = "DELETE FROM $albumlinks_table WHERE mediaID=\"{$row['mediaID']}\"";
@@ -44,10 +44,10 @@ if ($tree) {
     }
     tng_free_result($result);
 
-    $query = "DELETE from $media_table WHERE gedcom = \"$tree\"";
+    $query = "DELETE FROM $media_table WHERE gedcom = \"$tree\"";
     $result = tng_query($query);
 
-    $query = "DELETE from $medialinks_table WHERE gedcom = \"$tree\"";
+    $query = "DELETE FROM $medialinks_table WHERE gedcom = \"$tree\"";
     $result = tng_query($query);
 }
 
@@ -57,6 +57,6 @@ $result = tng_query($query);
 $query = "UPDATE $families_table SET branch=\"\" WHERE gedcom=\"$tree\" AND branch = \"$branch\"";
 $result = tng_query($query);
 
-$query = "DELETE from $branchlinks_table WHERE branch = \"$branch\" AND gedcom = \"$tree\"";
+$query = "DELETE FROM $branchlinks_table WHERE branch = \"$branch\" AND gedcom = \"$tree\"";
 $result = tng_query($query);
 

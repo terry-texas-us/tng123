@@ -8,7 +8,7 @@ echo help_header("Pomoc: Cmentarze");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="albums_help.php" class="lightlink">&laquo; Pomoc: Albumy</a> &nbsp; | &nbsp;
@@ -41,7 +41,7 @@ echo help_header("Pomoc: Cmentarze");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="add"><p class="subheadbold">Dodawanie nowych / Edycja istniejących cmentarzy</p></a>
             <p>TNG pozwala na grupowanie nagrobków i wyświetlanie przy danym cmentarzu. Aby to zrobić, należy utworzyć nowy cmentarz dla każdej lokalizacji. Zapisy dotyczące cmentarzy w TNG nie są związane z zapisami miejsc
                 pogrzebu i w pliku GEDCOM nie mają odwołania do cmentarzy. Jeśli więc nawet plik GEDCOM zawiera nazwy miejsc pogrzebów, nazwy te nie będą połączone z nazwami cmentarzy i po imporcie pliku GEDCOM łącza te muszą być utworzone w TNG.</p>
@@ -96,7 +96,7 @@ echo help_header("Pomoc: Cmentarze");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie cmentarzy</p></a>
             <p>Aby usunąć jeden cmentarz, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego cmentarza. Wiersz zmieni kolor,
                 a następnie zniknie. Cmentarz został usunięty. Aby usunąć więcej niż jeden cmentarz naraz, zaznacz pole w kolumnie Wybierz obok każdego cmentarza, który ma zostać usunięty, a następnie kliknij

@@ -103,7 +103,7 @@ echo "
 
 echo "
             <form action=\"\">
-               <input class=\"button space\" style=\"color:green;font-weight:bold\" type=\"button\" value=\"{$admtext['update']}\" onClick=\"if( confirm('{$admtext['confirmupdcusttext']}'))window.open('admin_cust_text_update.php','_blank');\">
+               <input class=\"button space\" style=\"color:green;font-weight:bold;\" type=\"button\" value=\"{$admtext['update']}\" onClick=\"if( confirm('{$admtext['confirmupdcusttext']}'))window.open('admin_cust_text_update.php','_blank');\">
             </form>
          </td>
       </tr>

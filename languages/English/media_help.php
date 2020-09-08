@@ -8,7 +8,7 @@ echo help_header("Help: Media");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="more_help.php" class="lightlink">&laquo; Help: More</a> &nbsp; | &nbsp;
@@ -31,7 +31,7 @@ echo help_header("Help: Media");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -79,7 +79,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding New Media</p></a>
             <p>To add new media, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the image map, location information, and
                 links to people, families and other entities, can be added after saving or locking the record. Take note of the following:</p>
@@ -198,7 +198,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="edit"><p class="subheadbold">Editing Existing Media</p></a>
             <p>To make changes to existing media, use the <a href="#search">Search</a> tab to locate the item, then click on the Edit icon next to that item.
                 Take note of the following items that are not on the "Add New Media" page:</p>
@@ -269,7 +269,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Media</p></a>
             <p>To delete one media item, use the <a href="#search">Search</a> tab to locate the item, then click on the Delete icon next to that item. The row will
                 change color and then vanish as the item is deleted. To delete multiple media at a time, check the box in the Select column next to each item to be
@@ -280,7 +280,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="convert"><p class="subheadbold">Converting Media From One Collection to Another</p></a>
             To convert media items from one media type or "Collection" to another, check the Select box next to those items on the <a href="#search">Search</a> tab,
             then select a new Collection from the dropdown box at the top of the page next to the "Convert Selected to" button. Finally, click the "Convert Selected to" button.
@@ -291,7 +291,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="album"><p class="subheadbold">Adding Media to Albums</p></a>
             To add media to an Album, check the Select box next to the items to be added, then select an Album from the dropdown box
             at the top of the page next to the "Add to Album" button. Finally, click the "Add to Album" button. Media can also be added to Albums from Admin/Albums.</p>
@@ -301,7 +301,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="sort"><p class="subheadbold">Sorting Media</p></a>
             <p>By default, media linked to a Person, Family, Source, Repository or Place are sorted by the order in which they were linked to that entity. To change that
                 order, you must indicate a new order on the Media/Sort tab.</p>
@@ -340,7 +340,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="thumbs"><p class="subheadbold">Thumbnails</p></a>
 
             <span class="optionhead">Generate Thumbnails</span>
@@ -364,7 +364,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="import"><p class="subheadbold">Importing Media</p></a>
 
             <span class="optionhead">Purpose</span>
@@ -381,7 +381,7 @@ echo help_header("Help: Media");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="upload"><p class="subheadbold">Uploading Media</p></a>
 
             <span class="optionhead">Purpose</span>

@@ -38,7 +38,7 @@ echo $formstr;
       echo "<br><br>\n";
     }
     ?>
-    <p style="max-width:400px"><?php echo $text['searchnote']; ?></p>
+    <p style="max-width:400px;"><?php echo $text['searchnote']; ?></p>
   </div>
 
   <div class="searchsidebar">
@@ -55,7 +55,7 @@ echo $formstr;
 
 
   </form>
-  <div style="height:200px"></div>
+  <div style="height:200px;"></div>
   <br clear="all">
 <?php
 tng_footer("");

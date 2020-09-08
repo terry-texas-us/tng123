@@ -4,7 +4,7 @@ $eventID = $plink['eventID'];
 $eventstr = $admtext[$eventID] ? $admtext[$eventID] : "";
 if ($eventID && !$eventstr) {
     $query = "SELECT display, eventdate, eventplace, info ";
-    $query .= "FROM {$events_table} as events, {$eventtypes_table} as eventtypes ";
+    $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
     $query .= "WHERE eventID = \"{$plink['eventID']}\" AND events.eventtypeID = eventtypes.eventtypeID";
     $custevents = tng_query($query);
     $custevent = tng_fetch_assoc($custevents);

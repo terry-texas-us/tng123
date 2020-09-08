@@ -2,7 +2,7 @@
 function deleteNoteLinks($id, $tree) {
   global $notelinks_table;
 
-  $query = "SELECT ID FROM $notelinks_table WHERE persfamID=\"$id\" AND gedcom = \"$tree\"";
+  $query = "SELECT ID FROM $notelinks_table WHERE persfamID=\"$id\" AND gedcom = '$tree'";
   $nresult = @tng_query($query);
 
   while ($nrow = tng_fetch_assoc($nresult))
@@ -77,12 +77,12 @@ function deletePersonPlus($personID, $tree, $gender) {
   deleteAssociations($personID, $tree);
 
   if ($gender == "M") {
-    $query = "SELECT familyID FROM $families_table WHERE husband = \"$personID\" AND gedcom = \"$tree\"";
+    $query = "SELECT familyID FROM $families_table WHERE husband = \"$personID\" AND gedcom = '$tree'";
   } else {
     if ($gender == "F") {
-      $query = "SELECT familyID FROM $families_table WHERE wife = \"$personID\" AND gedcom = \"$tree\"";
+      $query = "SELECT familyID FROM $families_table WHERE wife = \"$personID\" AND gedcom = '$tree'";
     } else {
-      $query = "SELECT familyID FROM $families_table WHERE gedcom = \"$tree\" AND (husband = \"$personID\" OR wife = \"$personID\")";
+      $query = "SELECT familyID FROM $families_table WHERE gedcom = '$tree' AND (husband = \"$personID\" OR wife = \"$personID\")";
     }
   }
 
@@ -104,11 +104,11 @@ function deletePersonPlus($personID, $tree, $gender) {
 function updateHasKids($spouseID, $spousestr) {
   global $families_table, $children_table, $tree;
 
-  $query = "SELECT familyID FROM $families_table WHERE $spousestr = \"$spouseID\" AND gedcom = \"$tree\"";
+  $query = "SELECT familyID FROM $families_table WHERE $spousestr = \"$spouseID\" AND gedcom = '$tree'";
   $result = @tng_query($query);
   $numkids = 0;
   while (!$numkids && $row = tng_fetch_assoc($result)) {
-    $query = "SELECT count(ID) as ccount FROM $children_table WHERE familyID = \"{$row['familyID']}\" AND gedcom=\"$tree\"";
+    $query = "SELECT count(ID) AS ccount FROM $children_table WHERE familyID = \"{$row['familyID']}\" AND gedcom='$tree'";
     $result2 = @tng_query($query);
     $crow = tng_fetch_assoc($result2);
     $numkids = $crow['ccount'];
@@ -124,7 +124,7 @@ function updateHasKids($spouseID, $spousestr) {
 function updateHasKidsFamily($familyID) {
   global $families_table, $tree;
 
-  $query = "SELECT husband, wife FROM $families_table WHERE familyID=\"$familyID\" AND gedcom=\"$tree\"";
+  $query = "SELECT husband, wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";
   $result = @tng_query($query);
   $famrow = tng_fetch_assoc($result);
   tng_free_result($result);

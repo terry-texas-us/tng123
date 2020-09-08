@@ -8,7 +8,7 @@ echo help_header("Pomoc: Rodziny");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="people_help.php" class="lightlink">&laquo; Pomoc: Osoby</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("Pomoc: Rodziny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
           <a name="add"><p class="subheadbold">Dodawanie nowych rodzin</p></a>
           <p><strong>Rodzina</strong> Rodzina jest potrzebna dla każdego związku między "Ojcem" i "Matką" (dzieci mogą ale nie muszą zostać dodane). Jeżeli dana osoba jest zamężna/żonata
             i ma dzieci z wieloma partnerami, należy utworzyć nową rodzinę dla każdej pary małżonków lub partnerów.</p>
@@ -99,7 +99,7 @@ echo help_header("Pomoc: Rodziny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="edit"><p class="subheadbold">Edycja istniejących rodzin</p></a>
             <p>Aby wprowadzić zmiany dotyczące istniejącej rodziny, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranej rodziny.</p>
 
@@ -136,7 +136,7 @@ echo help_header("Pomoc: Rodziny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie rodzin</p></a>
             <p>Aby usunąć jedną rodzinę, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tej rodziny. Wiersz zmieni kolor,
                 a następnie zniknie. (małżonkowie i dzieci nie zostaną usunięci z bazy danych, ale małżeństwo zostanie rozwiązane). Aby usunąć więcej niż jedną rodzinę naraz,
@@ -147,7 +147,7 @@ echo help_header("Pomoc: Rodziny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="review"><p class="subheadbold">Przegląd zmian</p></a>
       <p>Aby sprawdzić propozycje zmian dokonane przez innych użytkowników, kliknij na przycisk "Przegląd zmian". Jeśli są tam jakieś wpisy, w polu "Propozycje zmian" pojawi się gwiazdka (*).
         Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika lub oba.</p>

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Manažer módů");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
@@ -56,7 +56,7 @@ echo help_header("Nápověda: Manažer módů");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="operation">
@@ -83,7 +83,7 @@ echo help_header("Nápověda: Manažer módů");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="status">
@@ -106,7 +106,7 @@ echo help_header("Nápověda: Manažer módů");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="syntax">
@@ -133,7 +133,7 @@ echo help_header("Nápověda: Manažer módů");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="files">
@@ -164,7 +164,7 @@ echo help_header("Nápověda: Manažer módů");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="batch"><p class="subheadbold">Dávková instalace</p></a>
 
             <p>Dávková instalace umožní provést specifické akce týkající se několika módů pomocí výběru filtru. Z filtru seznamu stavů vyberte požadovaný stav a kliknutím na Provést zobrazíte
@@ -197,7 +197,7 @@ echo help_header("Nápověda: Manažer módů");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="options"><p class="subheadbold">Možnosti</p></a>
 
             <p>Možnosti vám umožní specifikovat chování manažeru módů v případě

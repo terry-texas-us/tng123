@@ -16,7 +16,7 @@ function ClearData($tree) {
           $xnotes_table
   );
 
-  $query = "SELECT COUNT(*) as trees FROM $trees_table";
+  $query = "SELECT COUNT(*) AS trees FROM $trees_table";
   if (!($result = tng_query($query))) {
     die ($admtext['cannotexecutequery'] . ": $query");
   }
@@ -33,10 +33,10 @@ function ClearData($tree) {
     }
   } // End for
 
-  $query = "DELETE from $events_table WHERE gedcom = \"$tree\" AND persfamID != \"XXX\"";
+  $query = "DELETE FROM $events_table WHERE gedcom = \"$tree\" AND persfamID != \"XXX\"";
   $result = tng_query($query);
 
-  $query = "DELETE from $places_table WHERE gedcom = \"$tree\" AND (latitude is null OR latitude = \"\") AND (longitude is null OR longitude = \"\") AND (notes is null OR notes = \"\")";
+  $query = "DELETE FROM $places_table WHERE gedcom = \"$tree\" AND (latitude is null OR latitude = \"\") AND (longitude is null OR longitude = \"\") AND (notes is null OR notes = \"\")";
   $result = tng_query($query);
 }
 

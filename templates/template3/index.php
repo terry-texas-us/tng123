@@ -11,7 +11,7 @@ $title = getTemplateMessage('t3_maintitle');
 ?>
 
 <div class="center">
-    <div class="indexpage" style="display: table">
+    <div class="indexpage" style="display: table;">
       <?php
       //begin TITLE IMAGE (default: "Our Family Genealogy Pages")
       //Actual file name has been replaced with t3_titleimage variable, configurable from Template Settings. Default name of actual image is "title.gif"
@@ -19,7 +19,7 @@ $title = getTemplateMessage('t3_maintitle');
 
       if ($tmp['t3_titlechoice'] == "text" || $sitever == "mobile") {
         ?>
-          <div style="padding:10px">
+          <div style="padding:10px;">
               <em class="maintitle">
 
                 <?php echo $title; ?>
@@ -91,7 +91,7 @@ $title = getTemplateMessage('t3_maintitle');
   <?php
   $mainpara = getTemplateMessage('t3_mainpara');
   if ($mainpara) {
-    echo "<br><div class=\"tcontainer\"><div style=\"display:inline-block;max-width:700px;text-align:left\">$mainpara</div></div>\n";
+    echo "<br><div class=\"tcontainer\"><div style=\"display:inline-block;max-width:700px;text-align:left;\">$mainpara</div></div>\n";
   }
 
   if ($sitever != "mobile") {
@@ -154,7 +154,7 @@ $title = getTemplateMessage('t3_maintitle');
     <?php
   }
   ?>
-  <div class="footer" style="text-align: center">
+  <div class="footer" style="text-align: center;">
     <br><br>
 
     <?php

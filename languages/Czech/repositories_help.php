@@ -12,7 +12,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="sources_help.php" class="lightlink">&laquo; N�pov�da: Prameny</a> &nbsp; | &nbsp;
@@ -48,7 +48,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� �lo�i�t� pramen�</p></a>
             <p><strong>�lo�i�t� pramen�</strong> je arch�v, sborn�k �i kolekce pramen�, fyzick� �i jin�.</p>
 
@@ -81,7 +81,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="edit"><p class="subheadbold">Upravit existuj�c� �lo�i�t� pramen�</p></a>
       <p>Chcete-li upravit existuj�c� �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot� klikn�te na ikonu Upravit vedle �lo�i�t�.</p>
 
@@ -106,7 +106,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat �lo�i�t� pramen�</p></a>
             <p>Chcete-li odstranit �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot� klikn�te na ikonu Vymazat vedle tohoto �lo�i�t�. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� �lo�i�t� zmiz�. Chcete-li najednou odstranit v�ce �lo�i�� pramen�, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�ho �lo�i�t�, kter�
@@ -117,7 +117,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
 
             <p>Kliknut�m na tuto z�lo�ku lze p�ezkoumat a slou�it �lo�i�t� pramen�, kter� jsou lehce odli�n�, ale odkazuj� na stejn� materi�l.
                 Mus�te rozhodnout, zda jsou tyto z�znamy toto�n� nebo ne.</p>

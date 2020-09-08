@@ -59,11 +59,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
             <form action="admin_generatethumbs.php" method="post" onsubmit="return generateThumbs(this);">
               <input type="checkbox" name="regenerate" value="1"> <?php echo $admtext['regenerate']; ?><br>
               <input type="checkbox" name="repath" value="1"> <?php echo $admtext['repath']; ?><br><br>
-              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['generate']; ?>"> <img src="img/spinner.gif" id="thumbspin" style="display:none">
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['generate']; ?>"> <img src="img/spinner.gif" id="thumbspin" style="display:none;">
               </span>
             </form>
 
-            <div id="thumbresults" style="display:none">
+            <div id="thumbresults" style="display:none;">
             </div>
 
           </div>
@@ -90,11 +90,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
               }
               ?>
             </select><br><br>
-            <input type="submit" name="submit" class="btn" value="<?php echo $admtext['assign']; ?>"> <img src="img/spinner.gif" id="defspin" style="display:none">
+            <input type="submit" name="submit" class="btn" value="<?php echo $admtext['assign']; ?>"> <img src="img/spinner.gif" id="defspin" style="display:none;">
                       </span>
                   </form>
 
-                  <div id="defresults" style="display:none">
+                  <div id="defresults" style="display:none;">
                   </div>
 
               </div>

@@ -47,16 +47,16 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var links_url = cmstngpath + "ajx_medialinks.php";
     var findform;
     <?php
-    echo "var altdescmsg = \"{$admtext['alttitle']}\";\n";
-    echo "var altnotesmsg = \"{$admtext['altdesc']}\";\n";
-    echo "var makedefaultmsg = \"{$admtext['makedefault']}\";\n";
-    echo "var eventlinkmsg = \"{$admtext['eventlink']}\";\n";
-    echo "var eventmsg = \"{$admtext['event']}\";\n";
-    echo "var sortmsg = \"{$admtext['text_sort']}\";\n";
-    echo "var confdellink = \"{$admtext['confdellink']}\";\n";
-    echo "var remove_text = \"{$admtext['removelink']}\";\n";
-    echo "var edit_text = \"{$admtext['edit']}\";\n";
-    echo "var yesmsg = \"{$admtext['yes']}\";\n";
+    echo "const altdescmsg = \"{$admtext['alttitle']}\";\n";
+    echo "const altnotesmsg = \"{$admtext['altdesc']}\";\n";
+    echo "const makedefaultmsg = \"{$admtext['makedefault']}\";\n";
+    echo "const eventlinkmsg = \"{$admtext['eventlink']}\";\n";
+    echo "const eventmsg = \"{$admtext['event']}\";\n";
+    echo "const sortmsg = \"{$admtext['text_sort']}\";\n";
+    echo "const confdellink = \"{$admtext['confdellink']}\";\n";
+    echo "const remove_text = \"{$admtext['removelink']}\";\n";
+    echo "const edit_text = \"{$admtext['edit']}\";\n";
+    echo "const yesmsg = \"{$admtext['yes']}\";\n";
     ?>
 
     function enableSave(savebuttonid) {
@@ -222,7 +222,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
 
         <noscript><input type="hidden" name="redirect" value="{$http}://blueimp.github.com/jQuery-File-Upload/"></noscript>
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-        <div class="row fileupload-buttonbar" style="float:left">
+        <div class="row fileupload-buttonbar" style="float:left;">
           <div class="span7">
             <!-- The fileinput-button span is used to style the file input field as button -->
             <span class="btn fileinput-button">
@@ -301,7 +301,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
             <td colspan="2">&nbsp;</td>
             <td colspan="2">
               <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
-              <select name="event1" id="eventrow1" style="display:none">
+              <select name="event1" id="eventrow1" style="display:none;">
                 <option value=""></option>
               </select>
             </td>
@@ -365,7 +365,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
 			<td>
 				<?php echo $admtext['title'] . "<hr>\n" . $admtext['description']; ?><br><br>
 				<button class="savebutton" id="q{%=file.mediaID%}" disabled="disabled">
-					<span style="display:none"><?php echo $admtext['save']; ?></span><img src="img/tng_check.gif" alt="" id="ch{%=file.mediaID%}" />
+					<span style="display:none;"><?php echo $admtext['save']; ?></span><img src="img/tng_check.gif" alt="" id="ch{%=file.mediaID%}" />
 				</button> &nbsp;
 				<span id="spin{%=file.mediaID%}" style="visibility:hidden"><img src="img/spinner.gif" /></span>
 			</td>

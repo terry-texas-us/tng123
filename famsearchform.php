@@ -373,12 +373,12 @@ echo $formstr;
       <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_collapse.gif" alt="" width="15" height="15"
                                                                                                                                           class="exp-cont"><?php echo $text['clickhide']; ?></a></li>
     </ul>
-    <table style="display:none" id="otherevents">
+    <table style="display:none;" id="otherevents">
       <tr>
         <td colspan="3">&nbsp;</td>
       </tr>
       <?php
-      $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep=\"1\" AND type=\"F\" ORDER BY display";
+      $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type='F' ORDER BY display";
       $result = tng_query($query);
       $eventtypes = [];
       while ($row = tng_fetch_assoc($result)) {

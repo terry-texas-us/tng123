@@ -21,7 +21,7 @@ $sortstr = preg_replace("/xxx/", $text[$mediatypeID], $admtext['sortmedia']);
 
 switch ($linktype) {
     case "I":
-        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $person['allow_living'] = 1;
@@ -32,7 +32,7 @@ switch ($linktype) {
         $testID = "personID";
         break;
     case "F":
-        $query = "SELECT branch FROM $families_table WHERE familyID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT branch FROM $families_table WHERE familyID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['family']}: $personID";
@@ -41,7 +41,7 @@ switch ($linktype) {
         $testID = "familyID";
         break;
     case "S":
-        $query = "SELECT title FROM $sources_table WHERE sourceID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT title FROM $sources_table WHERE sourceID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['source']}: $personID";
@@ -54,7 +54,7 @@ switch ($linktype) {
         $testID = "sourceID";
         break;
     case "R":
-        $query = "SELECT reponame FROM $repositories_table WHERE repoID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT reponame FROM $repositories_table WHERE repoID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['repository']}: $personID";
@@ -84,7 +84,7 @@ adminwritelog("<a href=\"admin_ordermedia.php?personID=$personID&amp;tree=$tree\
 
 $photo = "";
 
-$query = "SELECT alwayson, thumbpath, $media_table.mediaID as mediaID, usecollfolder, mediatypeID, medialinkID, $media_table.gedcom FROM ($media_table, $medialinks_table)
+$query = "SELECT alwayson, thumbpath, $media_table.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID, $media_table.gedcom FROM ($media_table, $medialinks_table)
 	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
 $result = tng_query($query);
 if ($result) {
@@ -93,7 +93,7 @@ if ($result) {
 $thismediatypeID = $row['mediatypeID'];
 tng_free_result($result);
 
-$query = "SELECT * FROM ($medialinks_table, $media_table) WHERE $medialinks_table.personID=\"$personID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND eventID = \"$eventID\" AND mediatypeID = \"$mediatypeID\" ORDER BY ordernum";
+$query = "SELECT * FROM ($medialinks_table, $media_table) WHERE $medialinks_table.personID=\"$personID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND eventID = \"$eventID\" AND mediatypeID = \"$mediatypeID\" ORDER BY ordernum";
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
@@ -159,21 +159,21 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
+            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
             <?php
             echo "<p class=\"smaller\" id=\"removedefault\"";
             if (!$photo) {
-                echo " style=\"display:none\"";
+                echo " style=\"display:none;\"";
             }
             echo "><a href=\"#\" onclick=\"return removeDefault();\">{$admtext['removedef']}</a></p>\n";
             ?>
             <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
                 <tr>
-                    <th class="fieldnameback" style="width:102px"><?php echo $admtext['text_sort']; ?></th>
-                    <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px"><?php echo $admtext['thumb']; ?></th>
+                    <th class="fieldnameback" style="width:102px;"><?php echo $admtext['text_sort']; ?></th>
+                    <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px;"><?php echo $admtext['thumb']; ?></th>
                     <th class="fieldnameback"><?php echo $admtext['description']; ?></th>
                     <th class="fieldnameback" style="width:49px;"><?php echo $admtext['show']; ?></th>
-                    <th class="fieldnameback" style="width:155px"><?php echo $admtext['datetaken']; ?></th>
+                    <th class="fieldnameback" style="width:155px;"><?php echo $admtext['datetaken']; ?></th>
                 </tr>
             </table>
 
@@ -187,15 +187,15 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
                         $truncated = substr($row['notes'], 0, 90);
                         $truncated = strlen($row['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['notes'];
-                        echo "<div class=\"sortrow\" id=\"orderdivs_{$row['medialinkID']}\" style=\"clear:both;position:relative\" onmouseover=\"jQuery('#md_{$row['medialinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['medialinkID']}').css('visibility','hidden');\">";
+                        echo "<div class=\"sortrow\" id=\"orderdivs_{$row['medialinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['medialinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['medialinkID']}').css('visibility','hidden');\">";
                         echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
 
-                        echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center\">";
-                        echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$row['medialinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
-                        echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$row['medialinkID']}\" id=\"move{$row['medialinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val(),event);\">\n";
+                        echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center;\">";
+                        echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$row['medialinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
+                        echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['medialinkID']}\" id=\"move{$row['medialinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val(),event);\">\n";
                         echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
 
@@ -209,12 +209,12 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
                         echo "<td class=\"lightback normal\"><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated<br>\n";
-                        echo "<span id=\"md_{$row['medialinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden\">\n";
+                        echo "<span id=\"md_{$row['medialinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">\n";
                         echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$row['mediaID']}\"$checked onclick=\"makeDefault(this);\">{$admtext['makedefault']}\n";
                         echo " &nbsp;|&nbsp; ";
                         echo "<a href=\"#\" onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";
                         echo "</span>&nbsp;</td>\n";
-                        echo "<td class=\"lightback normal\" style=\"width:45px;text-align:center;vertical-align:top\">";
+                        echo "<td class=\"lightback normal\" style=\"width:45px;text-align:center;vertical-align:top;\">";
                         $checked = $row['dontshow'] ? "" : " checked=\"checked\"";
                         echo "<input type=\"checkbox\" name=\"show{$row['medialinkID']}\" onclick=\"toggleShow(this);\" value=\"1\"$checked>&nbsp;</td>\n";
                         echo "<td class=\"lightback normal\" style=\"width:150px;\">{$row['datetaken']}&nbsp;</td>\n";

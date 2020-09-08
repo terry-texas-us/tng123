@@ -62,10 +62,10 @@ function updateMostWanted(form) {
                     }
                 } else {
                     //if it's new, then insert row at bottom
-                    var newcontent = '<div class="sortrow" id="order' + vars.mwtype + 'divs_' + vars.ID + '" style="clear:both" onmouseover="showEditDelete(\'' + vars.ID + '\');" onmouseout="hideEditDelete(\'' + vars.ID + '\');">\n';
+                    var newcontent = '<div class="sortrow" id="order' + vars.mwtype + 'divs_' + vars.ID + '" style="clear:both;" onmouseover="showEditDelete(\'' + vars.ID + '\');" onmouseout="hideEditDelete(\'' + vars.ID + '\');">\n';
                     newcontent += '<table>\n';
                     newcontent += '<tr id="row_' + vars.ID + '">\n';
-                    newcontent += '<td class="dragarea normal" style="width: 4em">\n';
+                    newcontent += '<td class="dragarea normal" style="width: 4em;">\n';
                     newcontent += '<img src="img/admArrowUp.gif" alt=""><br>' + drag + '<br><img src="img/admArrowDown.gif" alt="">\n';
                     newcontent += '</td>\n';
                     newcontent += '<td class="lightback" style="width:' + thumbwidth + 'px;">\n';
@@ -81,7 +81,7 @@ function updateMostWanted(form) {
                     else
                         newcontent += '<u id="title_' + vars.ID + '">' + vars.title + '</u>\n';
                     newcontent += '<br><span id="desc_' + vars.ID + '">' + vars.description + '</span><br>\n';
-                    newcontent += '<div id="del_' + vars.ID + '" class="smaller" style="color:gray;visibility:hidden">\n';
+                    newcontent += '<div id="del_' + vars.ID + '" class="smaller" style="color:gray; visibility:hidden;">\n';
                     if (vars.edit) {
                         newcontent += '<a href="#" onclick="return openMostWanted(\'' + vars.mwtype + '\',\'' + vars.ID + '\');">' + edittext + '</a>\n';
                         if (vars.del)

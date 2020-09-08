@@ -96,9 +96,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                                 <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                            onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
-                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
+                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                            onclick="editMediatype(document.form1.mediatypeID);">
-                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"
+                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                            onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                                 <?php } ?>
                             </td>
@@ -122,7 +122,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                                                                                                                                                                   onclick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('path',folder);">
                             </td>
                         </tr>
-                        <tr id="abspathrow" style="display:none">
+                        <tr id="abspathrow" style="display:none;">
                             <td valign="top"><span class="normal"><?php echo $admtext['mediaurl']; ?>:</span></td>
                             <td><input type="text" name="mediaurl" size="60"></td>
                         </tr>
@@ -241,7 +241,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             <td><?php echo $admtext['cemetery']; ?>:</td>
                             <td>
                                 <div id="cemchoice"><a href="#" onclick="return toggleCemSelect();"><?php echo $admtext['select']; ?></a></div>
-                                <div id="cemselect" style="display:none">
+                                <div id="cemselect" style="display:none;">
                                     <select name="cemeteryID">
                                         <option selected></option>
                                         <?php
@@ -313,7 +313,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     var tnglitbox;
     var trees = new Array();
     var treename = new Array();
-    var selectmsg = "<?php echo $admtext['selecttree']; ?>";
+    const selectmsg = "<?php echo $admtext['selecttree']; ?>";
     <?php
     for ($i = 1; $i <= $treenum; $i++) {
         echo "trees[$i] = \"$trees[$i]\";\n";
@@ -321,29 +321,29 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     }
     echo "var thumbprefix = \"$thumbprefix\";\n";
     echo "var thumbsuffix = \"$thumbsuffix\";\n";
-    echo "var treemsg = \"{$admtext['tree']}\";\n";
-    echo "var personmsg = \"{$admtext['person']}\";\n";
-    echo "var idmsg = \"{$admtext['id']}\";";
-    echo "var familymsg = \"{$admtext['family']}\";\n";
-    echo "var sourcemsg = \"{$admtext['source']}\";\n";
-    echo "var repositorymsg = \"{$admtext['repository']}\";\n";
-    echo "var placemsg = \"{$admtext['place']}\";\n";
-    echo "var findmsg = \"{$admtext['find']}\";\n";
-    echo "var altdescmsg = \"{$admtext['alttitle']}\";\n";
-    echo "var altnotesmsg = \"{$admtext['altdesc']}\";\n";
-    echo "var makedefaultmsg = \"{$admtext['makedefault']}\";\n";
-    echo "var eventlinkmsg = \"{$admtext['eventlink']}\";\n";
-    echo "var eventmsg = \"{$admtext['event']}\";\n";
+    echo "const treemsg = \"{$admtext['tree']}\";\n";
+    echo "const personmsg = \"{$admtext['person']}\";\n";
+    echo "const idmsg = \"{$admtext['id']}\";";
+    echo "const familymsg = \"{$admtext['family']}\";\n";
+    echo "const sourcemsg = \"{$admtext['source']}\";\n";
+    echo "const repositorymsg = \"{$admtext['repository']}\";\n";
+    echo "const placemsg = \"{$admtext['place']}\";\n";
+    echo "const findmsg = \"{$admtext['find']}\";\n";
+    echo "const altdescmsg = \"{$admtext['alttitle']}\";\n";
+    echo "const altnotesmsg = \"{$admtext['altdesc']}\";\n";
+    echo "const makedefaultmsg = \"{$admtext['makedefault']}\";\n";
+    echo "const eventlinkmsg = \"{$admtext['eventlink']}\";\n";
+    echo "const eventmsg = \"{$admtext['event']}\";\n";
     echo "var manage = 0;\n";
     echo $likearray;
     ?>
     var linkcount = 1;
-    var entercollid = "<?php echo $admtext['entercollid']; ?>";
-    var entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
-    var entercollipath = "<?php echo $admtext['entercollpath']; ?>";
-    var entercollicon = "<?php echo $admtext['entercollicon']; ?>";
-    var confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
-    var confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
+    const entercollid = "<?php echo $admtext['entercollid']; ?>";
+    const entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
+    const entercollipath = "<?php echo $admtext['entercollpath']; ?>";
+    const entercollicon = "<?php echo $admtext['entercollicon']; ?>";
+    const confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
+    const confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
     var stmediatypes = new Array(<?php echo $sttypestr; ?>);
     var allow_edit = <?php echo($allow_edit ? "1" : "0"); ?>;
     var allow_delete = <?php echo($allow_delete ? "1" : "0"); ?>;

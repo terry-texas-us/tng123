@@ -37,7 +37,7 @@ if ($allwhere) {
 
 $linkstr = "";
 $nosurname = urlencode($text['nosurname']);
-$query = "SELECT ucase(left(lastname,1)) as firstchar, ucase( $binary left(lastname,1) ) as binfirstchar FROM $people_table $wherestr GROUP BY binfirstchar ORDER by binfirstchar";
+$query = "SELECT UCASE(left(lastname, 1)) AS firstchar, UCASE($binary left(lastname,1)) AS binfirstchar FROM $people_table $wherestr GROUP BY binfirstchar ORDER by binfirstchar";
 $result = tng_query($query);
 if ($result) {
   $initialchar = 1;
@@ -81,9 +81,13 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                   <?php
                   $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
                   if ($tngconfig['ucsurnames']) {
-                    $surnamestr = "ucase($surnamestr)";
+                    $surnamestr = "UCASE($surnamestr)";
                   }
-                  $query = "SELECT ucase( $binary $surnamestr ) as lastname, $surnamestr as lowername, ucase($binary lastname) as binlast, count( ucase($binary lastname) ) as lncount FROM $people_table WHERE ucase($binary TRIM(lastname)) LIKE \"$urlfirstchar%\" $wherestr2 GROUP BY lowername ORDER by binlast";
+                  $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, UCASE($binary lastname) AS binlast, count(UCASE($binary lastname)) AS lncount ";
+                  $query .= "FROM $people_table ";
+                  $query .= "WHERE UCASE($binary TRIM(lastname)) LIKE \"$urlfirstchar%\" $wherestr2 ";
+                  $query .= "GROUP BY lowername ";
+                  $query .= "ORDER by binlast";
                   $result = tng_query($query);
                   $topnum = tng_num_rows($result);
                   if ($result) {

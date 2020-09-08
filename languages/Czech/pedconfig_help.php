@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
@@ -102,7 +102,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="desc"><p class="subheadbold">Potomci</p></a>
 
             <span class="optionhead">V�choz� zobrazen�</span>
@@ -136,7 +136,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="rel"><p class="subheadbold">Sch�ma p��buzensk�ch vztah�</p></a>
             <span class="optionhead">V�choz� po�et vztah�</span>
             <p>Tato hodnota ud�v� po�et p��buzensk�ch vztah�, kter� bude TNG hledat p�i prvn�m spu�t�n� sch�matu p��buzensk�ch vztah�. Po nalezen� tohoto
@@ -158,7 +158,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="time"><p class="subheadbold">Sch�ma �asov� osy</p></a>
             <span class="optionhead">V�choz� ���ka sch�matu</span>
             <p>V�choz� ���ka sch�matu d�lky �ivota v pixelech. N�v�t�vn�ci si mohou ���ku zm�nit na horn�m okraji obrazovky.</p>
@@ -200,7 +200,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="common"><p class="subheadbold">Spole�n� prvky</p></a>
 
             <span class="optionhead">Odsazen� zleva</span>
@@ -301,7 +301,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="thumb"><p class="subheadbold">Pozn�mky k vlo�en� n�hled� fotografi�</p></a>
 
             <ul>

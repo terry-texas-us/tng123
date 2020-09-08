@@ -8,7 +8,7 @@ echo help_header("Pomoc: Repozytoria");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="sources_help.php" class="lightlink">&laquo; Pomoc: Źródła</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("Pomoc: Repozytoria");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="add"><p class="subheadbold">Dodaj nowe repozytoria</p></a>
             <p><strong>Repozytorium</strong> jest zbiorem źródeł.</p>
 
@@ -77,7 +77,7 @@ echo help_header("Pomoc: Repozytoria");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="edit"><p class="subheadbold">Edycja istniejących repozytoriów</p></a>
       <p>Aby wprowadzić zmiany dotyczące istniejącego repozytorium, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranego repozytorium.</p>
 
@@ -103,7 +103,7 @@ echo help_header("Pomoc: Repozytoria");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie repozytoriów</p></a>
             <p>Aby usunąć jedno repozytorium, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego repozytorium. Wiersz zmieni kolor,
                 a następnie zniknie. Repozytorium zostało usunięte. Aby usunąć więcej niż jedno repozytorium naraz, zaznacz pole w kolumnie Wybierz obok każdego repozytorium, które
@@ -114,7 +114,7 @@ echo help_header("Pomoc: Repozytoria");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="merge"><p class="subheadbold">Scalanie</p></a>
             <p>Aby znaleźć i scalić dwa powtarzające się repozytoria, które mogą być nieco inne, lecz odnoszą się do tego samego materiału, kliknij na przycisk "Scalanie".
                 Użytkownik decyduje, czy dwa zapisy są identyczne, czy też nie.</p>

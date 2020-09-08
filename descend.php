@@ -275,7 +275,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         $photohtouse = $pedigree['boxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
         $photoInfo = getPhotoSrc($person['personID'], $person['allow_living'] && $person['allow_private'], $person['sex']);
         if ($photoInfo['ref']) {
-            $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\">";
+            $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px;\" alt=\"\" class=\"smallimg\">";
             if ($photoInfo['link']) {
                 $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
             }
@@ -309,13 +309,13 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
     }
 
     if (!$spouseflag && $person['personID'] != $personID) {
-        $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left - intval($pedigree['boxHsep'] / 2)) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($pedigree['boxHsep'] / 2) + 2) . "px;z-index:3;overflow:hidden\"></div>\n";
+        $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left - intval($pedigree['boxHsep'] / 2)) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($pedigree['boxHsep'] / 2) + 2) . "px;z-index:3;overflow:hidden;\"></div>\n";
     }
     if ($spouseflag) {
-        $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left - intval($spouseoffset / 2)) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($spouseoffset / 2) + 2) . "px;z-index:3;overflow:hidden\"></div>\n";
+        $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left - intval($spouseoffset / 2)) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($spouseoffset / 2) + 2) . "px;z-index:3;overflow:hidden;\"></div>\n";
         if ($kidsflag) {
             if ($level < $generations) {
-                $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left + $pedigree['boxwidth']) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($pedigree['boxHsep'] / 2) + 1) . "px;z-index:3;overflow:hidden\"></div>\n";
+                $boxstr .= "<div class=\"boxborder\" style=\"top:" . ($top + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($left + $pedigree['boxwidth']) . "px;height:" . $pedigree['linewidth'] . "px;width:" . (intval($pedigree['boxHsep'] / 2) + 1) . "px;z-index:3;overflow:hidden;\"></div>\n";
             } else {
                 $boxstr .= "<div style=\"position: absolute; top:" . ($top + $pedigree['borderwidth'] + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2) + 1) . "px;left:" . ($left + $pedigree['boxwidth'] + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 3) . "px;z-index:5\">\n";
                 $boxstr .= "<a href=\"$descend_url" . "personID=$spouseflag&amp;tree=$tree&amp;generations=$generations&amp;display=$display\" title=\"{$text['popupnote3']}\">{$pedigree['offpagelink']}</a></div>\n";
@@ -403,7 +403,7 @@ function doIndividual($person, $level) {
                 }
 
                 if ($vheight && ($famrow[$spouse] || $numkids > 1 || $marrtot > 1)) {
-                    $chart .= "<div class=\"boxborder\" style=\"top:" . ($starttop[$level + 1] + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($childleft - intval($pedigree['boxHsep'] / 2)) . "px;height:" . $vheight . "px;width:" . $pedigree['linewidth'] . "px;z-index:3\"></div>\n";
+                    $chart .= "<div class=\"boxborder\" style=\"top:" . ($starttop[$level + 1] + intval($pedigree['boxheight'] / 2) - intval($pedigree['linewidth'] / 2)) . "px;left:" . ($childleft - intval($pedigree['boxHsep'] / 2)) . "px;height:" . $vheight . "px;width:" . $pedigree['linewidth'] . "px;z-index:3;\"></div>\n";
                 }
                 tng_free_result($result2);
                 setTopMarker($level, $starttop[$level + 1] + intval($vheight / 2), "increasing, half of box height, 356");
@@ -454,10 +454,10 @@ function doIndividual($person, $level) {
         }
 
         if ($famrow[$spouse] || $marrtot > 1) {
-            $chart .= "<div class=\"boxborder\" style=\"top:" . ($thistop + $pedigree['boxheight']) . "px;left:" . ($childleft + intval($spouseoffset / 2)) . "px;height:" . $vheight . "px;width:" . $pedigree['linewidth'] . "px;z-index:3\"></div>\n";
+            $chart .= "<div class=\"boxborder\" style=\"top:" . ($thistop + $pedigree['boxheight']) . "px;left:" . ($childleft + intval($spouseoffset / 2)) . "px;height:" . $vheight . "px;width:" . $pedigree['linewidth'] . "px;z-index:3;\"></div>\n";
         } else {
             if ($level < $generations) {
-                $chart .= "<div class=\"boxborder\" style=\"top:" . ($thistop + $pedigree['boxheight'] / 2) . "px;left:" . ($childleft + $pedigree['boxwidth']) . "px;height:" . $pedigree['linewidth'] . "px;width:" . ($spouseoffset + $pedigree['boxHsep'] / 2) . "px;z-index:3\"></div>\n";
+                $chart .= "<div class=\"boxborder\" style=\"top:" . ($thistop + $pedigree['boxheight'] / 2) . "px;left:" . ($childleft + $pedigree['boxwidth']) . "px;height:" . $pedigree['linewidth'] . "px;width:" . ($spouseoffset + $pedigree['boxHsep'] / 2) . "px;z-index:3;\"></div>\n";
             }
         }
 

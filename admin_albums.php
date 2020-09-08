@@ -49,22 +49,18 @@ if ($assignedtree) {
 
 $showalbum_url = getURL("showalbum", 1);
 
-$wherestr = $searchstring ? "WHERE albumname LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR keywords LIKE \"%$searchstring%\"" : "";
-
-if ($assignedtree) {
-    $wherestr2 = " AND $album2entities_table.gedcom = \"$assignedtree\"";
-} elseif ($tree) {
-    $wherestr2 = " AND $album2entities_table.gedcom = \"$tree\"";
-} else {
-    $wherestr2 = "";
-}
-
-$query = "SELECT * FROM $albums_table $wherestr ORDER BY albumname LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT * ";
+$query .= "FROM $albums_table ";
+$query .= $searchstring ? "WHERE albumname LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR keywords LIKE \"%$searchstring%\"" : "";
+$query .= "ORDER BY albumname ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
-
 $numrows = tng_num_rows($result);
+
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(albumID) as acount FROM $albums_table $wherestr";
+    $query = "SELECT count(albumID) AS acount ";
+    $query .= "FROM $albums_table ";
+    $query .= $searchstring ? "WHERE albumname LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR keywords LIKE \"%$searchstring%\"" : "";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['acount'];
@@ -79,8 +75,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['albums'], $flags);
 ?>
 <script type="text/javascript" src="js/admin.js"></script>
-</head>
-
+<?php echo "</head>"; ?>
 <body background="img/background.gif">
 
 <?php
@@ -144,11 +139,15 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);
-                        echo "<tr id=\"row_{$row['albumID']}\"><td class=\"lightback\" valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                        echo "<tr id=\"row_{$row['albumID']}\">\n";
+                        echo "<td class=\"lightback\" valign=\"top\">\n";
+                        echo "<div class=\"action-btns\">$newactionstr</div>\n";
+                        echo "</td>\n";
                         echo "<td class=\"lightback normal\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;vertical-align:top\">";
 
-                        $query2 = "SELECT thumbpath, usecollfolder, mediatypeID FROM ({$media_table}, {$albumlinks_table}) ";
-                        $query2 .= "WHERE albumID = \"{$row['albumID']}\" AND {$media_table}.mediaID = {$albumlinks_table}.mediaID AND defphoto=\"1\"";
+                        $query2 = "SELECT thumbpath, usecollfolder, mediatypeID ";
+                        $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
+                        $query2 .= "WHERE albumID = \"{$row['albumID']}\" AND media.mediaID = albumlinks.mediaID AND defphoto=\"1\"";
                         $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
                         $trow = tng_fetch_assoc($result2);
                         $tmediatypeID = $trow['mediatypeID'];
@@ -158,13 +157,15 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                         if ($trow['thumbpath'] && file_exists("$rootpath$tusefolder/" . $trow['thumbpath'])) {
                             $size = @GetImageSize("$rootpath$tusefolder/" . $trow['thumbpath']);
-                            echo "<a href=\"admin_editalbum.php?albumID={$row['albumID']}\"><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" $size[3] alt=\"{$row['albumname']}\"></a>";
+                            echo "<a href=\"admin_editalbum.php?albumID={$row['albumID']}\">\n";
+                            echo "<img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" $size[3] alt=\"{$row['albumname']}\">\n";
+                            echo "</a>\n";
                         } else {
                             echo "&nbsp;";
                         }
                         echo "</td>\n";
 
-                        $query = "SELECT count(albumlinkID) as acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
+                        $query = "SELECT count(albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
                         $cresult = tng_query($query);
                         $crow = tng_fetch_assoc($cresult);
                         $acount = $crow['acount'];
@@ -173,19 +174,25 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $editlink = "admin_editalbum.php?albumID={$row['albumID']}";
                         $albumname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['albumname'] . "</a>" : "<u>" . $row['albumname'] . "</u>";
 
-                        echo "<td class=\"lightback normal\" valign=\"top\">$albumname<br>" . strip_tags($row['description']) . "&nbsp;</td>\n";
-                        echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$acount&nbsp;</td>\n";
+                        echo "<td class=\"lightback normal\" valign=\"top\">$albumname<br>" . strip_tags($row['description']) . "</td>\n";
+                        echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$acount</td>\n";
                         $active = $row['active'] ? $admtext['yes'] : $admtext['no'];
                         echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$active</td>\n";
 
-                        $query = "SELECT people.personID as personID2, familyID, husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, nameorder,
-				$album2entities_table.entityID as personID, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID, reponame
-				FROM $album2entities_table
-				LEFT JOIN $people_table AS people ON $album2entities_table.entityID = people.personID AND $album2entities_table.gedcom = people.gedcom
-				LEFT JOIN $families_table ON $album2entities_table.entityID = $families_table.familyID AND $album2entities_table.gedcom = $families_table.gedcom
-				LEFT JOIN $sources_table ON $album2entities_table.entityID = $sources_table.sourceID AND $album2entities_table.gedcom = $sources_table.gedcom
-				LEFT JOIN $repositories_table ON ($album2entities_table.entityID = $repositories_table.repoID AND $album2entities_table.gedcom = $repositories_table.gedcom)
-				WHERE albumID = \"{$row['albumID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, personID LIMIT 10";
+                        $query = "SELECT people.personID AS personID2, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.entityID AS personID, sources.title, sources.sourceID, repositories.repoID, reponame ";
+                        $query .= "FROM $album2entities_table album2entities ";
+                        $query .= "LEFT JOIN $people_table people ON album2entities.entityID = people.personID AND album2entities.gedcom = people.gedcom ";
+                        $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
+                        $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
+                        $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
+                        $query .= "WHERE albumID = '{$row['albumID']}' ";
+                        if ($assignedtree) {
+                            $query .= "AND album2entities.gedcom = \"$assignedtree\" ";
+                        } elseif ($tree) {
+                            $query .= "AND album2entities.gedcom = \"$tree\" ";
+                        }
+                        $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
+                        $query .= "LIMIT 10";
                         $presult = tng_query($query);
                         $alinktext = "";
                         while ($prow = tng_fetch_assoc($presult)) {
@@ -206,7 +213,8 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                         }
                         $alinktext = $alinktext ? "<ul>\n$alinktext\n</ul>\n" : "&nbsp;";
-                        echo "<td class=\"lightback normal\" valign=\"top\">$alinktext</td>\n</tr>\n";
+                        echo "<td class=\"lightback normal\" valign=\"top\">$alinktext</td>\n";
+                        echo "</tr>\n";
                     }
                     ?>
                 </table>

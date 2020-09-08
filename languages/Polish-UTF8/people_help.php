@@ -8,7 +8,7 @@ echo help_header("Pomoc: Osoby");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="index_help.php" class="lightlink">&laquo; Pomoc: Pierwsze kroki</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("Pomoc: Osoby");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="add"><p class="subheadbold">Dodawanie nowej osoby</p></a>
             <p>Aby dodać nową osobę, kliknij na <strong>Dodaj nowe</strong>, a następnie wypełnij formularz. Niektóre informacje (notatki, cytaty, związki i dodatkowe wydarzenia)
                 mogą być dodane dopiero po kliknięciu na przycisk <strong>Zapisz i kontynuuj</strong>. Do dyspozycji są następujące pola:</p>
@@ -101,7 +101,7 @@ echo help_header("Pomoc: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="edit"><p class="subheadbold">Edycja istniejących osób</p></a>
             <p>Aby wprowadzić zmiany dotyczące istniejącej osoby, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranej osoby.</p>
 
@@ -143,7 +143,7 @@ echo help_header("Pomoc: Osoby");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie osób</p></a>
             <p>Aby usunąć jedną osobę, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tej osoby. Wiersz zmieni kolor,
                 a następnie zniknie. Osoba została usunięta. Aby usunąć więcej niż jedną osobę naraz, zaznacz pole w kolumnie Wybierz obok każdej osoby, która
@@ -154,7 +154,7 @@ echo help_header("Pomoc: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="review"><p class="subheadbold">Przegląd zmian</p></a>
       <p>Aby sprawdzić propozycje zmian dokonane przez innych użytkowników, kliknij na przycisk "Przegląd zmian". Jeśli są tam jakieś wpisy, w polu "Propozycje zmian" pojawi się gwiazdka (*).
         Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika lub oba.</p>
@@ -174,7 +174,7 @@ echo help_header("Pomoc: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
       <a name="merge"><p class="subheadbold">Scalanie osób</p></a>
       Aby znaleźć i scalić dwa powtarzające się zapisy, kliknij na przycisk "Scalanie". Użytkownik decyduje, czy dwa zapisy są identyczne, czy też nie.</p>
 

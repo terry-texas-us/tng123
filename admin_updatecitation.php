@@ -40,7 +40,7 @@ adminwritelog($admtext['modifycite'] . ": $citationID/$sourceID");
 
 //if sourceID, get title
 if ($sourceID) {
-  $query = "SELECT title, shorttitle FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = \"$tree\"";
+  $query = "SELECT title, shorttitle FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = '$tree'";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);
   $title = $row['title'] ? $row['title'] : $row['shorttitle'];

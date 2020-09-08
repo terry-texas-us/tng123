@@ -10,7 +10,7 @@ require "datelib.php";
 
 include "geocodelib.php";
 
-$query = "SELECT branch, edituser, edittime FROM $people_table WHERE personID = \"$personID\" and gedcom = \"$tree\"";
+$query = "SELECT branch, edituser, edittime FROM $people_table WHERE personID = \"$personID\" and gedcom = '$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -131,7 +131,7 @@ if (!$editconflict) {
     }
   }
 
-  $query = "SELECT familyID FROM $children_table WHERE personID = \"$personID\" AND gedcom = \"$tree\" ORDER BY parentorder";
+  $query = "SELECT familyID FROM $children_table WHERE personID = \"$personID\" AND gedcom = '$tree' ORDER BY parentorder";
   $parents = tng_query($query);
 
   $famc = "";
@@ -183,19 +183,19 @@ if (!$editconflict) {
   }
 
   if ($self) {
-    $query = "SELECT familyID, husband, wife FROM $families_table WHERE $families_table.$self = \"$personID\" AND gedcom = \"$tree\" ORDER BY $spouseorder";
+    $query = "SELECT familyID, husband, wife FROM $families_table WHERE $families_table.$self = \"$personID\" AND gedcom = '$tree' ORDER BY $spouseorder";
   } else {
-    $query = "SELECT familyID, husband, wife FROM $families_table WHERE ($families_table.husband = \"$personID\" OR $families_table.wife = \"$personID\") AND gedcom = \"$tree\"";
+    $query = "SELECT familyID, husband, wife FROM $families_table WHERE ($families_table.husband = \"$personID\" OR $families_table.wife = \"$personID\") AND gedcom = '$tree'";
   }
   $marriages = tng_query($query);
 
   if ($marriages && tng_num_rows($marriages)) {
     while ($marriagerow = tng_fetch_assoc($marriages)) {
       if ($personID == $marriagerow['husband']) {
-        $spquery = "SELECT living, private FROM $people_table WHERE personID = \"{$marriagerow['wife']}\" AND gedcom = \"$tree\"";
+        $spquery = "SELECT living, private FROM $people_table WHERE personID = \"{$marriagerow['wife']}\" AND gedcom = '$tree'";
       } else {
         if ($personID == $marriagerow['wife']) {
-          $spquery = "SELECT living, private FROM $people_table WHERE personID = \"{$marriagerow['husband']}\" AND gedcom = \"$tree\"";
+          $spquery = "SELECT living, private FROM $people_table WHERE personID = \"{$marriagerow['husband']}\" AND gedcom = '$tree'";
         } else {
           $spquery = "";
         }

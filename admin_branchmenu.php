@@ -17,12 +17,12 @@ if (!$allow_edit || $assignedbranch) {
 
 $row = getTree($trees_table, $tree);
 
-$query = "SELECT description FROM $branches_table WHERE gedcom = \"$tree\" and branch = \"$branch\"";
+$query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' and branch = \"$branch\"";
 $result = tng_query($query);
 $brow = tng_fetch_assoc($result);
 tng_free_result($result);
 
-$query = "SELECT count(persfamID) as pcount FROM $branchlinks_table WHERE gedcom = \"$tree\" AND branch = \"$branch\"";
+$query = "SELECT count(persfamID) AS pcount FROM $branchlinks_table WHERE gedcom = '$tree' AND branch = \"$branch\"";
 $result = tng_query($query);
 $prow = tng_fetch_assoc($result);
 $pcount = $prow['pcount'];
@@ -139,7 +139,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
           </tr>
           <tr>
             <td colspan="2">
-              <div id="allpart" style="display:none">
+              <div id="allpart" style="display:none;">
                 &nbsp;&nbsp;<input type="radio" name="set" value="all" onClick="toggleAll();"> <?php echo $admtext['all']; ?>
                 &nbsp;&nbsp;<input type="radio" name="set" value="partial" checked onClick="togglePartial();"> <?php echo $admtext['partial']; ?>
               </div>

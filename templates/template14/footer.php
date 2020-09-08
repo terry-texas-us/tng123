@@ -12,7 +12,7 @@
 </div>
 </div>
 
-<div class="art-nav" style="margin-top:0">
+<div class="art-nav" style="margin-top:0;">
     <div class="art-nav-outer">
         <div class="art-nav-wrapper">
             <div class="art-nav-inner">

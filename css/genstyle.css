@@ -31,7 +31,7 @@ p.footer {
     padding: 0;
     font-size: 22px;
     font-weight: bold;
-    color: #333366;
+    color: #336;
     line-height: 22px;
 }
 
@@ -44,13 +44,13 @@ p.footer {
 
 /* whiteheader: heading text used on dark backgrounds (usually fieldnameback) */
 .whiteheader {
-    color: #FFFFFF;
+    color: #fff;
     margin-top: 0;
     font-size: 16px;
 }
 
 .whitetext {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /* subhead: subheading text */
@@ -61,27 +61,28 @@ p.footer {
 
 /* body: describes page background color and all non-table text not governed by any other style */
 body {
-    background-color: #FFFFFF;
-    color: #000000;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
     -webkit-print-color-adjust: exact;
 }
 
 /* link: normal links, active: links in use */
 a:link, a:active, div.icons a {
-    color: #333399;
+    color: #339;
 }
 
 /* visited: previously visited links */
 a:visited {
-    color: #666666;
+    color: #666;
 }
 
 /* fieldnameback: background color for column and row title sections */
 .fieldnameback,
 .tablesaw-cell-label {
-    background-color: #333366;
+    background-color: #336;
     /*these 2 lines added in 5.0*/
     border-right: 1px solid #777;
     border-bottom: 1px solid #777;
@@ -97,7 +98,7 @@ a:visited {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #CACAF1;
+    background-color: #cacaf1;
     border-right: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
 }
@@ -113,8 +114,8 @@ a:visited {
 
 /*background for pedigree popups*/
 .pboxpopupdiv {
-    border-top: 1px solid #bbbbbb;
-    border-left: 1px solid #bbbbbb;
+    border-top: 1px solid #bbb;
+    border-left: 1px solid #bbb;
     background-color: #f9f9f9;
     padding: 7px;
 }
@@ -157,7 +158,7 @@ a:visited {
 .pedboxtable {
     height: 100%;
     width: 100%;
-    float: left
+    float: left;
 }
 
 
@@ -200,28 +201,28 @@ ul.nopad {
 /* Added in 4.0.0 */
 /* For links on dark background */
 .lightlink:link, .lightlink:visited {
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 
 .lightlink:hover, .lightlink:active {
-    color: #FFCC33;
+    color: #fc3;
     text-decoration: none;
 }
 
 /* For white-only links on dark background */
 .lightlink2:link, .lightlink2:visited {
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 
 .lightlink2:hover, .lightlink2:active {
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 
 .lightback {
-    background-color: #FFFFFF;
+    background-color: #fff;
     /*these 2 lines added in 6.0.0*/
     border-right: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
@@ -229,7 +230,7 @@ ul.nopad {
 
 /* sideback: background color for side and top frames */
 .sideback {
-    background-color: #333366;
+    background-color: #336;
     margin: 6px;
 }
 
@@ -240,7 +241,7 @@ ul.nopad {
 
 .mainbox {
     border: 1px solid silver;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 1px;
 }
 
@@ -256,12 +257,12 @@ ul.nopad {
 }
 
 .whitesubhead {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .adminsubmsg,
 .admintotal {
-    color: #DDDDDD;
+    color: #ddd;
 }
 
 .admintotal {
@@ -284,7 +285,7 @@ ul.nopad {
 /*added in 5.0.0*/
 /*for active secondary tab link*/
 a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
-    color: #FFCC33;
+    color: #fc3;
     text-decoration: none;
 }
 
@@ -558,7 +559,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 .togglehead {
     text-decoration: none;
-    color: #000000;
+    color: #000;
 }
 
 .togglehead img {
@@ -579,7 +580,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 }
 
 .red {
-    color: #FF0000;
+    color: #f00;
 }
 
 .green {
@@ -587,7 +588,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 }
 
 input:hover, textarea:hover, select:hover {
-    border-color: #FFCC33;
+    border-color: #fc3;
 }
 
 textarea {
@@ -623,13 +624,13 @@ select {
 }
 
 input[type="button"], input[type="submit"], input[type="reset"], button {
-    background-color: #dddddd;
+    background-color: #ddd;
 }
 
 input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, button:active {
     color: white;
-    border: 1px solid #FFCC00;
-    background-color: #cccccc;
+    border: 1px solid #fc0;
+    background-color: #ccc;
 }
 
 .btn, .disabled, input[type="button"].btn, input[type="submit"].btn, input[type="submit"].disabled, input[type="reset"].btn {
@@ -795,7 +796,7 @@ input.minibutton {
 }
 
 .smallimg {
-    border-color: #000000;
+    border-color: #000;
     margin-right: 6px;
 }
 
@@ -861,7 +862,7 @@ p a.snlink {
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #333366; /*same as "fieldnameback" background color */
+    background-color: #336; /*same as "fieldnameback" background color */
     color: #fff;
 }
 
@@ -880,8 +881,8 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 .LB_window {
     position: absolute;
     background: #e0e0f7; /*same as "databack" background color */
-    border: 2px solid #333366; /*same as "fieldnameback" background color */
-    color: #000000;
+    border: 2px solid #336; /*same as "fieldnameback" background color */
+    color: #000;
     display: none;
     z-index: 500;
     padding-top: 28px;
@@ -908,7 +909,7 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
     padding: 1px 0 2px 0;
     position: absolute;
     top: 0;
-    background-color: #333366; /*same as "fieldnameback" background color */
+    background-color: #336; /*same as "fieldnameback" background color */
     -moz-border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
@@ -939,7 +940,7 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 /* largeheader: heading text used on dark backgrounds (usually fieldnameback) in Help screens */
 .largeheader {
     font-size: 32px;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /* optionhead: added to replace <strong> on option heading */
@@ -953,17 +954,17 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 }
 
 .tblback {
-    background-color: #FFFFFF;
+    background-color: #fff;
 }
 
 .tngmsgarea .adminsubhead,
 .yellow {
-    color: #FFCC33;
+    color: #fc3;
 }
 
 td.highlightedchild {
     padding: 2px;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
 }
 
 td.unhighlightedchild {
@@ -1078,7 +1079,7 @@ td.unhighlightedchild {
 
 /* big save button */
 .bigsave {
-    background: #FFFFFF;
+    background: #fff;
     font-size: 21px;
 }
 
@@ -1092,7 +1093,7 @@ td.unhighlightedchild {
 }
 
 .othersearch {
-    margin: 2px 0 0 -15px
+    margin: 2px 0 0 -15px;
 }
 
 form {
@@ -1104,7 +1105,7 @@ form {
     vertical-align: top;
     text-align: left;
     width: 10px;
-    padding-right: 0
+    padding-right: 0;
 }
 
 .floverlr {
@@ -1126,12 +1127,12 @@ form {
 
 .whiteback {
     border: 1px solid silver;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .bar {
     height: 16px;
-    background-color: #333366;
+    background-color: #336;
 }
 
 .rightround {
@@ -1156,7 +1157,7 @@ form {
     padding: 10px;
     font-size: 14pt;
     border: 1px solid black;
-    margin-right: 15%
+    margin-right: 15%;
 }
 
 #loading {
@@ -1171,21 +1172,21 @@ form {
     background-color: white;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 /* white buttons with rounded corners (FF only) */
 .whitebuttonlink {
     background-color: white;
     padding: 3px 7px 3px 7px;
-    text-decoration: none
+    text-decoration: none;
 }
 
 /* help pages */
 p.menu {
     margin-top: 8px;
     margin-bottom: 0;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .blocknote {
@@ -1214,7 +1215,7 @@ p.menu {
 
 .spaceonleft {
     padding-left: 20px;
-    padding-top: 5px
+    padding-top: 5px;
 }
 
 .reportcol {
@@ -1264,7 +1265,7 @@ p.menu {
 
 div.tngmsgarea,
 a.admincell {
-    color: #FFFFFF;
+    color: #fff;
     padding: 8px;
     margin: 2px 3px 4px 3px;
     display: block;
@@ -1280,19 +1281,19 @@ a.admincell {
 */
 
 .tngmsgarea {
-    background-color: #999999;
-    color: #FFFFFF;
+    background-color: #999;
+    color: #fff;
     border-right: 1px solid #444;
     border-bottom: 1px solid #444;
 }
 
 .tngmsgarea a, .tngmsgarea a:active, .tngmsgarea a:link, .tngmsgarea a:visited {
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 
 .tngmsgarea a:hover {
-    color: #FFCC33;
+    color: #fc3;
 }
 
 .leftlink {
@@ -1305,8 +1306,8 @@ a.admincell {
 
 .tngmsgarea,
 a.admincell, .leftlink, .whiteheader, .whitetext {
-    text-shadow: 1px 1px 1px #000000;
-    filter: dropshadow(color=#000000, offx=1, offy=1);
+    text-shadow: 1px 1px 1px #000;
+    filter: dropshadow(color=#000, offx=1, offy=1);
 }
 
 a.admincell:hover, a.leftlink:hover {
@@ -1385,7 +1386,7 @@ a.admincell:hover, a.leftlink:hover {
     border: solid 1px black;
     margin-bottom: 8px;
     margin-right: 10px;
-    margin-top: 8px
+    margin-top: 8px;
 }
 
 .mapballoon {
@@ -1548,7 +1549,7 @@ ul.tngdd {
     padding: 0;
     margin-left: 0;
     font-size: 11px;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd * {
@@ -1607,9 +1608,9 @@ ul.tngdd ul li {
 ul.tngdd ul li a {
     display: block;
     padding: 6px 4px 6px;
-    background-color: #eeeeee;
+    background-color: #eee;
     font-size: 12px;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #fff;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -1628,12 +1629,12 @@ ul.tngdd ul li:last-child, ul.tngdd ul li:last-child a {
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd ul ul {
     left: 158px;
-    top: -1px
+    top: -1px;
 }
 
 ul.tngdd .menulink {
@@ -1653,8 +1654,8 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
-    background: #333366 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    color: #fff;
+    background: #336 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 ul.tngdd .langmenu {
@@ -1685,7 +1686,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat
+    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 .headericon, .menu-icon {
@@ -2077,20 +2078,20 @@ a.size0 {
 
 .msgerror {
     font-weight: bold;
-    color: #990000;
+    color: #900;
 }
 
 .msgapproved {
     font-weight: bold;
-    color: #009900;
+    color: #090;
 }
 
 .bselected {
-    border: 1px #FF0000 dashed;
+    border: 1px #f00 dashed;
 }
 
 .bunselected {
-    border: 1px #CCC dashed;
+    border: 1px #ccc dashed;
 }
 
 .mlbox {
@@ -2118,7 +2119,7 @@ a.size0 {
     height: 30px;
     padding: 8px;
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     background-color: #444;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
@@ -2207,11 +2208,11 @@ a.famlink:hover {
 }
 
 .fambackground {
-    background-color: #AAC;
+    background-color: #aac;
 }
 
 .cgray {
-    background-color: #cccccc;
+    background-color: #ccc;
 }
 
 /* Added for Responsive Tables mod to correct the header centering issues */
@@ -2263,52 +2264,52 @@ thead th {
 }
 
 .compareback {
-    background-color: #414E68;
-    color: #ffffff;
+    background-color: #414e68;
+    color: #fff;
 }
 
 .modeback {
-    background-color: #E6E6E6;
-    color: #000000;
+    background-color: #e6e6e6;
+    color: #000;
 }
 
 .markerback12 {
-    background-color: #414E68;
-    color: #ffffff;
+    background-color: #414e68;
+    color: #fff;
 }
 
 .markerback25 {
-    background-color: #41678A;
-    color: #ffffff;
+    background-color: #41678a;
+    color: #fff;
 }
 
 .markerback37 {
-    background-color: #2E8899;
-    color: #ffffff;
+    background-color: #2e8899;
+    color: #fff;
 }
 
 .markerback67 {
-    background-color: #44A1B8;
-    color: #ffffff;
+    background-color: #44a1b8;
+    color: #fff;
 }
 
 .markerback111 {
-    background-color: #05B8CC;
-    color: #ffffff;
+    background-color: #05b8cc;
+    color: #fff;
 }
 
 .fastmuteback {
-    background-color: #69001A;
-    color: #ffffff;
+    background-color: #69001a;
+    color: #fff;
 }
 
 .deviationback {
-    background-color: #FFACAC;
-    color: #000000;
+    background-color: #ffacac;
+    color: #000;
 }
 
 .blackchars {
-    color: #000000;
+    color: #000;
 }
 
 .overflowauto {
@@ -2412,12 +2413,12 @@ sup {
 .cc_container .cc_btn {
     background-color: #e4e4e4 !important;
     color: #000 !important;
-    border: 1px solid #999999;
+    border: 1px solid #999;
 }
 
 .cc_container {
-    background: #ffffff !important;
-    color: #000000 !important;
+    background: #fff !important;
+    color: #000 !important;
 }
 
 .cc_container a {

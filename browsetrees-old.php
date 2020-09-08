@@ -41,13 +41,18 @@ if ($treesearch) {
   $wherestr = "";
 }
 
-$query = "SELECT count(personID) as pcount, $trees_table.gedcom, treename, description FROM $trees_table LEFT JOIN $people_table on $trees_table.gedcom = $people_table.gedcom GROUP BY $trees_table.gedcom ORDER BY treename LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT count(personID) AS pcount, trees.gedcom, treename, description ";
+$query .= "FROM $trees_table trees ";
+$query .= "LEFT JOIN $people_table people ON trees.gedcom = people.gedcom ";
+$query .= "GROUP BY trees.gedcom ";
+$query .= "ORDER BY treename ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(gedcom) as treecount FROM $trees_table";
+  $query = "SELECT count(gedcom) AS treecount FROM $trees_table";
   $result2 = tng_query($query);
   $countrow = tng_fetch_assoc($result2);
   $totrows = $countrow['treecount'];

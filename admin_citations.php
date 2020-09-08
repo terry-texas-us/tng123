@@ -12,17 +12,17 @@ if (!isset($tree)) {
     $tree = "";
 }
 
-$wherestr = "WHERE gedcom = \"{$tree}\"";
+$wherestr = "WHERE gedcom = '$tree'";
 
 $query = "SELECT eventtypes.eventtypeID, tag, display ";
-$query .= "FROM {$events_table} events ";
-$query .= "LEFT JOIN {$eventtypes_table} eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
-$query .= "WHERE eventID=\"{$eventID}\"";
+$query .= "FROM $events_table events ";
+$query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
+$query .= "WHERE eventID = '$eventID'";
 $eventtypes = tng_query($query);
 $eventtype = tng_fetch_assoc($eventtypes);
 
 if ($eventtype['display']) {
-    $eventtypedesc = getEventDisplayText($eventtype);
+    $eventtypedesc = getEventDisplay($eventtype['display']);
 } elseif ($eventtype['tag']) {
     $eventtypedesc = $eventtype['tag'];
 } elseif ($eventID) {
@@ -38,8 +38,8 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 $xnotestr = $noteID ? " OR persfamID = \"$noteID\"" : "";
 $query = "SELECT citationID, citations.sourceID AS sourceID, description, title, shorttitle ";
-$query .= "FROM {$citations_table} citations ";
-$query .= "LEFT JOIN {$sources_table} sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
+$query .= "FROM $citations_table citations ";
+$query .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
 $query .= "WHERE citations.gedcom = \"{$tree}\" AND ((persfamID = \"$persfamID\" AND eventID = \"$eventID\")$xnotestr) ";
 $query .= "ORDER BY ordernum, citationID";
 $citresult = tng_query($query);
@@ -47,7 +47,7 @@ $citationcount = tng_num_rows($citresult);
 ?>
 
 <div class="databack ajaxwindow" id="citations"<?php if (!$citationcount) {
-    echo " style=\"display:none\"";
+    echo " style=\"display:none;\"";
 } ?>>
     <form name="citeform">
         <p class="subhead"><strong><?php echo $admtext['citations'] . ": $eventtypedesc"; ?></strong> |
@@ -59,7 +59,7 @@ $citationcount = tng_num_rows($citresult);
             <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="if(subpage){gotoSection('citationslist','notelist');subpage=false;}else{tnglitbox.remove();}">
         </p>
         <table id="citationstbl" class="fieldname normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$citationcount) {
-            echo " style=\"display:none\"";
+            echo " style=\"display:none;\"";
         } ?>>
             <tbody id="citationstblbody">
             <tr>
@@ -95,10 +95,10 @@ $citationcount = tng_num_rows($citresult);
 </div>
 
 <div class="databack ajaxwindow"<?php if ($citationcount) {
-    echo " style=\"display:none\"";
+    echo " style=\"display:none;\"";
 } ?> id="addcitation">
     <form action="" name="citeform2" onSubmit="return addCitation(this);">
-        <div style="float:right;text-align:center">
+        <div style="float:right;text-align:center;">
             <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
             <p><a href="#" onclick="return gotoSection('addcitation','citations');"><?php echo $text['cancel']; ?></a></p>
         </div>
@@ -120,7 +120,7 @@ $citationcount = tng_num_rows($citresult);
                         $parts = explode("|", $_SESSION['lastcite']);
                         if ($parts[0] == $tree) {
                             echo "<input type=\"button\" value=\"{$admtext['copylast']}\" onclick=\"return copylast(document.citeform2,'{$parts[1]}');\">";
-                            echo "&nbsp; <img src=\"img/spinner.gif\" id=\"lastspinner\" style=\"vertical-align:-3px; display:none\">";
+                            echo "&nbsp; <img src=\"img/spinner.gif\" id=\"lastspinner\" style=\"vertical-align:-3px; display:none;\">";
                         }
                     }
                     ?>
@@ -196,12 +196,12 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
 
     <p><strong><?php echo $admtext['searchresults']; ?></strong> (<?php echo $admtext['clicktoselect']; ?>)</p>
 
-    <div id="sourceresults" style="width:605px;height:380px;overflow:auto"></div>
+    <div id="sourceresults" style="width:605px;height:380px;overflow:auto;"></div>
 </div>
 
 <div class="databack ajaxwindow" style="display:none;" id="newsource">
     <form action="" method="post" name="newsourceform" id="newsourceform" onsubmit="return saveSource(this);">
-        <div style="float:right;text-align:center">
+        <div style="float:right;text-align:center;">
             <input type="submit" name="submit" class="bigsave" accesskey="s" value="<?php echo $admtext['save']; ?>">
             <p><a href="#" onclick="gotoSection('newsource',prevsection);"><?php echo $text['cancel']; ?></a></p>
         </div>

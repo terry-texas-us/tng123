@@ -12,8 +12,8 @@ include $cms['tngpath'] . "log.php";
 
 header("Content-Type: application/json; charset=" . $session_charset);
 
-$query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") as changedate ";
-$query .= "FROM {$people_table} ";
+$query = "SELECT *, DATE_FORMAT(changedate,\"%e %b %Y\") AS changedate ";
+$query .= "FROM $people_table ";
 $query .= "WHERE personID = \"{$personID}\" AND gedcom = \"{$tree}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);

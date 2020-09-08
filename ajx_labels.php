@@ -37,7 +37,7 @@ function getGender($personID) {
   global $tree, $people_table, $husbgender, $wifegender;
 
   $info = array();
-  $query = "SELECT firstname, lastname, sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+  $query = "SELECT firstname, lastname, sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
   $result = tng_query($query);
   if ($result) {
     $row = tng_fetch_assoc($result);
@@ -66,7 +66,7 @@ function clearBranch($table, $branch) {
   $result = tng_query($query);
   $counter = tng_affected_rows();
 
-  $query = "SELECT branch, ID FROM $table WHERE gedcom=\"$tree\" AND branch LIKE \"%$branch%\"";
+  $query = "SELECT branch, ID FROM $table WHERE gedcom='$tree' AND branch LIKE \"%$branch%\"";
   $result = tng_query($query);
   while ($row = tng_fetch_assoc($result)) {
     $oldbranch = trim($row['branch']);
@@ -92,7 +92,7 @@ function deleteBranch($table, $branch) {
 
   $counter = 0;
   if ($table == $people_table) {
-    $query = "SELECT ID, personID, branch, sex FROM $table WHERE gedcom=\"$tree\" AND branch LIKE \"%$branch%\"";
+    $query = "SELECT ID, personID, branch, sex FROM $table WHERE gedcom='$tree' AND branch LIKE \"%$branch%\"";
     $result = tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
       $branches = explode(",", trim($row['branch']));
@@ -105,16 +105,16 @@ function deleteBranch($table, $branch) {
     }
     tng_free_result($result);
   } else {
-    $query = "SELECT ID, familyID, branch FROM $table WHERE gedcom=\"$tree\" AND branch LIKE \"%$branch%\"";
+    $query = "SELECT ID, familyID, branch FROM $table WHERE gedcom='$tree' AND branch LIKE \"%$branch%\"";
     $result = tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
       $branches = explode(",", trim($row['branch']));
       if (in_array($branch, $branches)) {
         $familyID = $row['familyID'];
-        $query = "DELETE FROM $children_table WHERE ID=\"$familyID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE ID='$familyID' AND gedcom = \"$tree\"";
         $result2 = @tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = \"$familyID\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = \"$tree\"";
         $result2 = tng_query($query);
 
         deleteEvents($familyID, $tree);
@@ -141,7 +141,7 @@ function setPersonLabel($personID) {
   if ($personID) {
     $row = "";
     if ($branchaction == "delete") {
-      $query = "SELECT firstname, lastname, lnprefix, nameorder, living, private, suffix, title, sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+      $query = "SELECT firstname, lastname, lnprefix, nameorder, living, private, suffix, title, sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
       $result = @tng_query($query);
       $row = tng_fetch_assoc($result);
       tng_free_result($result);
@@ -153,7 +153,7 @@ function setPersonLabel($personID) {
       deletePersonPlus($personID, $tree, $row['sex']);
       doICounter();
     } elseif (!in_array($personID, $done)) {
-      $query = "SELECT firstname, lastname, lnprefix, nameorder, living, private, suffix, title, branch FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+      $query = "SELECT firstname, lastname, lnprefix, nameorder, living, private, suffix, title, branch FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       tng_free_result($result);
@@ -230,7 +230,7 @@ function setFamilyLabel($personID, $gender) {
   global $tree, $families_table, $branch, $overwrite, $branchlinks_table, $branchaction, $people_table, $fdone, $famnames, $children_table;
 
   if ($gender['self']) {
-    $query = "SELECT branch, familyID, husband, wife, gedcom, living, private FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = \"$tree\"";
+    $query = "SELECT branch, familyID, husband, wife, gedcom, living, private FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
       $oldbranch = trim($row['branch']);
@@ -239,14 +239,14 @@ function setFamilyLabel($personID, $gender) {
       }
       if ($branchaction == "delete") {
         $familyID = $row['familyID'];
-        $query = "DELETE FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $families_table WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
         $result2 = tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = \"$familyID\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = \"$tree\"";
         $result2 = tng_query($query);
 
         //also delete children, events, medialinks, citations, notes
-        $query = "DELETE FROM $children_table WHERE ID=\"$familyID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE ID='$familyID' AND gedcom = \"$tree\"";
         $result2 = @tng_query($query);
 
         deleteEvents($familyID, $tree);
@@ -308,7 +308,7 @@ function setSpousesLabel($personID, $gender) {
 
   setFamilyLabel($personID, $gender);
   if ($gender['self']) {
-    $query = "SELECT {$gender['spouse']}, familyID FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = \"$tree\" ORDER BY {$gender['spouseorder']}";
+    $query = "SELECT {$gender['spouse']}, familyID FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = '$tree' ORDER BY {$gender['spouseorder']}";
     $spouseresult = tng_query($query);
     while ($spouserow = tng_fetch_assoc($spouseresult))
       setPersonLabel($spouserow[$gender['spouse']]);
@@ -326,12 +326,12 @@ function doAncestors($personID, $gender, $gen) {
 
   $spouses = array();
   if ($gen <= $agens) {
-    $query = "SELECT $children_table.familyID as familyID, husband, wife FROM ($children_table, $families_table) WHERE $children_table.familyID = $families_table.familyID AND personID = \"$personID\" AND $children_table.gedcom = \"$tree\" AND $families_table.gedcom = \"$tree\"";
+    $query = "SELECT $children_table.familyID AS familyID, husband, wife FROM ($children_table, $families_table) WHERE $children_table.familyID = $families_table.familyID AND personID = \"$personID\" AND $children_table.gedcom = '$tree' AND $families_table.gedcom = '$tree'";
     $familyresult = tng_query($query);
 
     while ($familyrow = tng_fetch_assoc($familyresult)) {
       if ($dagens) {
-        $query = "SELECT personID FROM $children_table WHERE familyID = \"{$familyrow['familyID']}\" AND gedcom = \"$tree\" AND personID != \"$personID\"";
+        $query = "SELECT personID FROM $children_table WHERE familyID = \"{$familyrow['familyID']}\" AND gedcom = '$tree' AND personID != \"$personID\"";
         $childresult = tng_query($query);
         while ($childrow = tng_fetch_assoc($childresult)) {
           $newgender = getGender($childrow['personID']);
@@ -359,14 +359,14 @@ function doDescendants($personID, $gender, $gen, $maxgen) {
   global $tree, $families_table, $children_table, $dospouses;
 
   if ($gender['spouseorder']) {
-    $query = "SELECT familyID FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = \"$tree\" ORDER BY {$gender['spouseorder']}";
+    $query = "SELECT familyID FROM $families_table WHERE {$gender['self']} = \"$personID\" AND gedcom = '$tree' ORDER BY {$gender['spouseorder']}";
   } else {
-    $query = "SELECT familyID FROM $families_table WHERE gedcom = \"$tree\" AND (husband = \"$personID\" OR wife = \"$personID\")";
+    $query = "SELECT familyID FROM $families_table WHERE gedcom = '$tree' AND (husband = \"$personID\" OR wife = \"$personID\")";
   }
   $spouseresult = tng_query($query);
   while ($spouserow = tng_fetch_assoc($spouseresult)) {
     //setPersonLabel( $spouserow[$gender['spouse']] );
-    $query = "SELECT personID FROM $children_table WHERE familyID = \"{$spouserow['familyID']}\" AND gedcom = \"$tree\" ORDER BY ordernum";
+    $query = "SELECT personID FROM $children_table WHERE familyID = \"{$spouserow['familyID']}\" AND gedcom = '$tree' ORDER BY ordernum";
     $childresult = tng_query($query);
     while ($childrow = tng_fetch_assoc($childresult)) {
       $newgender = getGender($childrow['personID']);

@@ -88,7 +88,7 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
             <td>
               <?php
                           if ($relatepersonID && $relatetreeID == $tree) {
-                            $query = "SELECT firstname, lastname, lnprefix, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"$relatepersonID\" AND gedcom = \"$tree\"";
+                            $query = "SELECT firstname, lastname, lnprefix, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"$relatepersonID\" AND gedcom = '$tree'";
                             $result2 = tng_query($query);
                             if ($result2) {
                               $row2 = tng_fetch_assoc($result2);

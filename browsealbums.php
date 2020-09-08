@@ -39,7 +39,7 @@ if ($offset) {
 }
 
 if ($tree) {
-  $wherestr2 = " AND $album2entities_table.gedcom = \"$tree\"";
+  $wherestr2 = " AND album2entities.gedcom = \"$tree\"";
 } else {
   $wherestr2 = "";
 }
@@ -54,7 +54,7 @@ $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count($albums_table.albumID) as acount FROM $albums_table";
+  $query = "SELECT count($albums_table.albumID) AS acount FROM $albums_table";
   $result2 = tng_query($query);
   $row = tng_fetch_assoc($result2);
   tng_free_result($result2);
@@ -115,23 +115,23 @@ $maxplus = $maxsearchresults + 1;
 $thumbcount = 0;
 while ($row = tng_fetch_assoc($result)) {
   if ($tree) {
-    $query2 = "SELECT count($albumlinks_table.albumlinkID) as acount FROM $albumlinks_table, $media_table WHERE albumID = \"{$row['albumID']}\" AND $albumlinks_table.mediaID = $media_table.mediaID AND ($media_table.gedcom = \"$tree\" OR $media_table.gedcom = \"\")";
+    $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table, $media_table WHERE albumID = \"{$row['albumID']}\" AND $albumlinks_table.mediaID = $media_table.mediaID AND ($media_table.gedcom = '$tree' OR $media_table.gedcom = \"\")";
   } else {
-    $query2 = "SELECT count($albumlinks_table.albumlinkID) as acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
+    $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
   }
   $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
   $arow = tng_fetch_assoc($result2);
   tng_free_result($result2);
 
-  $query = "SELECT $album2entities_table.entityID as personID, people.personID as personID2, people.living as living, people.private as private, people.branch as branch, $families_table.branch as fbranch,
-		$families_table.living as fliving, $families_table.private as fprivate, familyID, husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, nameorder,
-		$album2entities_table.gedcom, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID, reponame, deathdate, burialdate, linktype
-		FROM $album2entities_table
-		LEFT JOIN $people_table AS people ON $album2entities_table.entityID = people.personID AND $album2entities_table.gedcom = people.gedcom
-		LEFT JOIN $families_table ON $album2entities_table.entityID = $families_table.familyID AND $album2entities_table.gedcom = $families_table.gedcom
-		LEFT JOIN $sources_table ON $album2entities_table.entityID = $sources_table.sourceID AND $album2entities_table.gedcom = $sources_table.gedcom
-		LEFT JOIN $repositories_table ON ($album2entities_table.entityID = $repositories_table.repoID AND $album2entities_table.gedcom = $repositories_table.gedcom)
-		WHERE albumID = \"{$row['albumID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, personID LIMIT $maxplus";
+  $query = "SELECT album2entities.entityID AS personID, people.personID AS personID2, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.gedcom, sources.title, sources.sourceID, repositories.repoID, reponame, deathdate, burialdate, linktype ";
+  $query .= "FROM $album2entities_table album2entities ";
+  $query .= "LEFT JOIN $people_table people ON album2entities.entityID = people.personID AND album2entities.gedcom = people.gedcom ";
+  $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
+  $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
+  $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
+  $query .= "WHERE albumID = \"{$row['albumID']}\"$wherestr2 ";
+  $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
+  $query .= "LIMIT $maxplus";
   $presult = tng_query($query);
   $numrows = tng_num_rows($presult);
   $medialinktext = "";
@@ -150,7 +150,7 @@ while ($row = tng_fetch_assoc($result)) {
     }
     //if living still null, must be a source
     if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-      $query = "SELECT count(personID) as ccount FROM $citations_table, $people_table
+      $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
 				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 				AND (living = '1' OR private = '1')";
       $presult2 = tng_query($query);
@@ -161,7 +161,7 @@ while ($row = tng_fetch_assoc($result)) {
       tng_free_result($presult2);
     }
     if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
-      $query = "SELECT count(familyID) as ccount FROM $citations_table, $families_table
+      $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
 				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom
 				AND living = '1'";
       $presult2 = tng_query($query);
@@ -225,7 +225,7 @@ while ($row = tng_fetch_assoc($result)) {
   }
 
   if ($imgsrc) {
-    $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:{$thumbmaxw}px\">$imgsrc</td>";
+    $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
     $thumbcount++;
   } else {
     $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td>";

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Události časové osy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="places_googlemap_help.php" class="lightlink">&laquo; Nápověda: Google Maps</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("Nápověda: Události časové osy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat novou / Upravit existující události časové osy</p></a>
             <p>TNG umožňuje zobrazení schématu časové osy pro porovnání rozsahu života osob ve vaší databázi.
                 Rozšířit souvislosti těchto schémat můžete také vytvořením událostí časové osy. Pokud roky, které pokrývá
@@ -73,7 +73,7 @@ echo help_header("Nápověda: Události časové osy");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="delete"><p class="subheadbold">Vymazat události časové osy</p></a>
       <p>Chcete-li odstranit událost časové osy, použijte záložku <a href="#search">Hledat</a> pro nalezení události, a poté klikněte na ikonu Vymazat vedle tohoto záznamu události. Tento řádek změní
                 barvu a poté po odstranění události zmizí. Chcete-li najednou odstranit více událostí, zaškrtněte políčko ve sloupci Vybrat vedle každé události, kterou

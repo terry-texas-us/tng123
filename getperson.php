@@ -185,7 +185,7 @@ if (!empty($tng_extras)) {
 
 $persontext .= beginSection("info");
 $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-$persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col />\n";
+$persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
 resetEvents();
 if ($rights['both']) {
     $persontext .= showEvent(array("text" => $text['name'], "fact" => getName($row, true), "event" => "NAME", "entity" => $personID, "type" => "I"));
@@ -294,7 +294,7 @@ $parents = getChildParentsFamily($tree, $personID);
 if ($parents && tng_num_rows($parents)) {
     while ($parent = tng_fetch_assoc($parents)) {
         $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-        $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col />\n";
+        $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
         $tableid = "fam" . $parent['familyID'] . "_";
         $cellnumber = 0;
         resetEvents();
@@ -454,7 +454,7 @@ $marrcount = 1;
 
 while ($marriagerow = tng_fetch_assoc($marriages)) {
     $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-    $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col />\n";
+    $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
     $tableid = "fam" . $marriagerow['familyID'] . "_";
     $cellnumber = 0;
     $famnotes = getNotes($marriagerow['familyID'], "F");
@@ -565,7 +565,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         $persontext .= "<td colspan=\"2\" class=\"databack\">\n";
 
         $kidcount = 1;
-        $persontext .= "<table cellpadding = \"0\" cellspacing = \"0\" style=\"width:100%\">\n";
+        $persontext .= "<table cellpadding = \"0\" cellspacing = \"0\" style=\"width:100%;\">\n";
         while ($child = tng_fetch_assoc($children)) {
             $childID = $child['personID'];
             $child['gedcom'] = $tree;
@@ -683,7 +683,7 @@ if ($map['key'] && $locations2map) {
                     $markerIcon++;
                     $usedplaces[] = $place;
                     $savedplaces[] = ["place" => $place, "key" => $key];
-                    $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
+                    $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
                     $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
                     $thismarker = $markerIcon;
                 } else {
@@ -800,7 +800,7 @@ if (!empty($media) || $notes || $citedispctr || $map['key']) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu = $num_collapsed ? "<div style=\"float:right\"><a href=\"#\" onclick=\"{$showdnatest}return toggleCollapsed(0)\" class=\"lightlink\">{$text['expandall']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"{$hidednatest}return toggleCollapsed(1)\" class=\"lightlink\">{$text['collapseall']}</a> &nbsp;</div>" : "";
+    $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"{$showdnatest}return toggleCollapsed(0)\" class=\"lightlink\">{$text['expandall']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"{$hidednatest}return toggleCollapsed(1)\" class=\"lightlink\">{$text['collapseall']}</a> &nbsp;</div>" : "";
     $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['persinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if (!empty($media)) {
         $innermenu .= "<a href=\"#\" class=\"$tng_mlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";

@@ -1200,7 +1200,7 @@ class modlister extends modparser
   }
 
   protected function get_status() {
-    $retstr = "<br style=\"line-height:6px\"><strong><i><div style=\"padding-bottom:3px;border-bottom:1px solid #000;\">flags:<br>@&nbsp;&nbsp;{$this->admtext['optional']}<br>^&nbsp;&nbsp;{$this->admtext['provisional']}<br>~&nbsp;&nbsp;protected</div></i></strong><br style=\"line-height:6px\">";
+    $retstr = "<br style=\"line-height:6px;\"><strong><i><div style=\"padding-bottom:3px;border-bottom:1px solid #000;\">flags:<br>@&nbsp;&nbsp;{$this->admtext['optional']}<br>^&nbsp;&nbsp;{$this->admtext['provisional']}<br>~&nbsp;&nbsp;protected</div></i></strong><br style=\"line-height:6px;\">";
     return $retstr . $this->status_string;
   }
 

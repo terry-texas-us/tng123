@@ -8,7 +8,7 @@ echo help_header("Help: Timeline Events");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="places_googlemap_help.php" class="lightlink">&laquo; Help: Google Maps</a> &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ echo help_header("Help: Timeline Events");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -48,7 +48,7 @@ echo help_header("Help: Timeline Events");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Add New / Edit Existing Timeline Events</p></a>
             <p>TNG allows you to display timeline charts to compare the lifespans of people in your database.
                 You can also create Timeline Events to provide additional context for these charts. When the years
@@ -75,7 +75,7 @@ echo help_header("Help: Timeline Events");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="delete"><p class="subheadbold">Deleting Timeline Events</p></a>
       <p>To delete one timeline event, use the <a href="#search">Search</a> tab to locate the event, then click on the Delete icon next to that event record. The row will
                 change color and then vanish as the event is deleted. To delete more than one event at a time, check the box in the Select column next to each event to be

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Základní nastavení");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
@@ -62,7 +62,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="table"><p class="subheadbold">Názvy tabulek</p></a>
 
             <span class="optionhead">Názvy tabulek</span>
@@ -74,7 +74,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="path"><p class="subheadbold">Umístění a složky</p></a>
 
             <span class="optionhead">Kořenová složka</span>
@@ -106,7 +106,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="site"><p class="subheadbold">Vzhled a definice stránek</p></a>
 
             <span class="optionhead">Domovská stránka</span>
@@ -178,7 +178,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="media"><p class="subheadbold">Média</p></a>
 
             <span class="optionhead">Typ souborů fotografií</span>
@@ -259,7 +259,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="lang"><p class="subheadbold">Jazyk</p></a>
 
             <span class="optionhead">Jazyk</span>
@@ -278,7 +278,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="priv"><p class="subheadbold">Ochrana údajů</p></a>
 
             <span class="optionhead">Vyžadovat přihlášení</span>
@@ -341,7 +341,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="name"><p class="subheadbold">Jména</p></a>
 
             <span class="optionhead">Pořadí jména a příjmení</span>
@@ -369,7 +369,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="cem"><p class="subheadbold">Hřbitovy</p></a>
 
             <span class="optionhead">Maximální počet řádků ve sloupci (prům.)</span>
@@ -385,7 +385,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="mail"><p class="subheadbold">Mail a registrace</p></a>
 
             <span class="optionhead">Emailová adresa</span>
@@ -434,7 +434,7 @@ echo help_header("Nápověda: Základní nastavení");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="mobile"><p class="subheadbold">Mobil</p></a>
 
       <p>Sekce Mobil vám umožní určit, jak se bude TNG zobrazovat na chytrých telefonech a tabletech.</p>
@@ -464,7 +464,7 @@ echo help_header("Nápověda: Základní nastavení");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="pref"><p class="subheadbold">Předpony a přípony</p></a>
 
             <p>Tato písmena ve spojení s číslicí tvoří identifikační čísla (ID čísla) osob, rodin, pramenů, úložišť a poznámek ve vaší databázi. Většina genealogických
@@ -476,7 +476,7 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="misc"><p class="subheadbold">Různé</p></a>
 
             <span class="optionhead">Maximální počet výsledků hledání</span>

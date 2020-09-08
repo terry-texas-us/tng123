@@ -79,7 +79,7 @@ if ($assignedtree) {
 }
 $orgtree = $tree;
 
-$uquery = "SELECT count(userID) as ucount FROM $users_table WHERE allow_living = \"-1\"";
+$uquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
 $uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquery");
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
@@ -109,12 +109,12 @@ function addCriteria($field, $value, $operator) {
 
 $getperson_url = getURL("getperson", 1);
 if ($tree) {
-    $allwhere = "$people_table.gedcom = \"$tree\" AND $people_table.gedcom = $trees_table.gedcom ";
+    $allwhere = "people.gedcom = \"$tree\" AND people.gedcom = trees.gedcom ";
 } else {
-    $allwhere = "$people_table.gedcom = $trees_table.gedcom ";
+    $allwhere = "people.gedcom = trees.gedcom ";
 }
 if ($assignedbranch) {
-    $allwhere .= " AND $people_table.branch LIKE \"%$assignedbranch%\"";
+    $allwhere .= " AND people.branch LIKE \"%$assignedbranch%\"";
 }
 
 if ($searchstring) {
@@ -125,43 +125,43 @@ if ($searchstring) {
         $frontmod = "LIKE";
     }
 
-    $allwhere .= addCriteria("$people_table.personID", $searchstring, $frontmod);
+    $allwhere .= addCriteria("people.personID", $searchstring, $frontmod);
     $allwhere .= addCriteria("CONCAT_WS(' ',TRIM(firstname)" . ($lnprefixes ? ",TRIM(lnprefix)" : "") . ",TRIM(lastname))", $searchstring, $frontmod);
     $allwhere .= ")";
 }
 if ($living == "yes") {
-    $allwhere .= " AND $people_table.living = \"1\"";
+    $allwhere .= " AND people.living = \"1\"";
 }
 if ($private == "yes") {
-    $allwhere .= " AND $people_table.private = \"1\"";
+    $allwhere .= " AND people.private = \"1\"";
 }
 
 if ($noparents) {
-    $noparentjoin = "LEFT JOIN $children_table as noparents ON $people_table.personID = noparents.personID AND $people_table.gedcom = noparents.gedcom";
+    $noparentjoin = "LEFT JOIN $children_table noparents ON people.personID = noparents.personID AND people.gedcom = noparents.gedcom";
     $allwhere .= " AND noparents.familyID is NULL";
 } else {
     $noparentjoin = "";
 }
 
 if ($nospouse) {
-    $nospousejoin = "LEFT JOIN $families_table as nospousef ON $people_table.personID = nospousef.husband AND $people_table.gedcom = nospousef.gedcom ";
-    $nospousejoin .= "LEFT JOIN $families_table as nospousem ON $people_table.personID = nospousem.wife AND $people_table.gedcom = nospousem.gedcom";
+    $nospousejoin = "LEFT JOIN $families_table nospousef ON people.personID = nospousef.husband AND people.gedcom = nospousef.gedcom ";
+    $nospousejoin .= "LEFT JOIN $families_table nospousem ON people.personID = nospousem.wife AND people.gedcom = nospousem.gedcom";
     $allwhere .= " AND nospousef.familyID is NULL AND nospousem.familyID is NULL";
 } else {
     $nospousejoin = "";
 }
 
 if ($nokids) {
-    $nokidjoin = "LEFT OUTER JOIN $families_table AS familiesH ON $people_table.gedcom=familiesH.gedcom AND $people_table.personID=familiesH.husband ";
-    $nokidjoin .= "LEFT OUTER JOIN $families_table AS familiesW ON $people_table.gedcom=familiesW.gedcom AND $people_table.personID=familiesW.wife ";
-    $nokidjoin .= "LEFT OUTER JOIN $children_table AS childrenH ON familiesH.gedcom=childrenH.gedcom AND familiesH.familyID=childrenH.familyID ";
+    $nokidjoin = "LEFT OUTER JOIN $families_table familiesH ON people.gedcom=familiesH.gedcom AND people.personID=familiesH.husband ";
+    $nokidjoin .= "LEFT OUTER JOIN $families_table familiesW ON people.gedcom=familiesW.gedcom AND people.personID=familiesW.wife ";
+    $nokidjoin .= "LEFT OUTER JOIN $children_table childrenH ON familiesH.gedcom=childrenH.gedcom AND familiesH.familyID=childrenH.familyID ";
     $nokidjoin .= "LEFT OUTER JOIN $children_table AS childrenW ON familiesW.gedcom=childrenW.gedcom AND familiesW.familyID=childrenW.familyID ";
     $nokidhaving = "HAVING ChildrenCount = 0 ";
-    $nokidgroup = "GROUP BY $people_table.personID, $people_table.lastname, $people_table.firstname, $people_table.firstname, $people_table.lnprefix, ";
-    $nokidgroup .= "$people_table.prefix, $people_table.suffix, $people_table.nameorder, $people_table.birthdate, birthyear, $people_table.birthplace, $people_table.altbirthdate, altbirthyear, ";
-    $nokidgroup .= "$people_table.altbirthplace, $people_table.gedcom, $trees_table.treename ";
+    $nokidgroup = "GROUP BY people.personID, people.lastname, people.firstname, people.firstname, people.lnprefix, ";
+    $nokidgroup .= "people.prefix, people.suffix, people.nameorder, people.birthdate, birthyear, people.birthplace, people.altbirthdate, altbirthyear, ";
+    $nokidgroup .= "people.altbirthplace, people.gedcom, trees.treename ";
     $nokidselect = ", SUM((childrenH.familyID is not NULL) + (childrenW.familyID is not NULL)) AS ChildrenCount ";
-    $nokidgroup2 = "GROUP BY $people_table.personID, $people_table.lastname, $people_table.firstname, $people_table.firstname, $people_table.lnprefix ";
+    $nokidgroup2 = "GROUP BY people.personID, people.lastname, people.firstname, people.firstname, people.lnprefix ";
 } else {
     $nokidjoin = "";
     $nokidhaving = "";
@@ -172,19 +172,25 @@ if ($nokids) {
 $query = "SET SQL_BIG_SELECTS=1";
 $result = tng_query($query);
 
-$query = "SELECT $people_table.ID, $people_table.personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, birthdate, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') as birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') as altbirthyear, altbirthplace, $people_table.gedcom as gedcom, treename, $people_table.changedby, DATE_FORMAT($people_table.changedate,\"%d %b %Y\") as changedate $nokidselect
-	FROM ($people_table, $trees_table) $nokidjoin $noparentjoin $nospousejoin WHERE $allwhere $nokidgroup $nokidhaving ORDER BY lastname, lnprefix, firstname, birthyear, altbirthyear LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT people.ID, people.personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, birthdate, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate,\"%d %b %Y\") AS changedate $nokidselect ";
+$query .= "FROM ($people_table people, $trees_table trees) $nokidjoin $noparentjoin $nospousejoin ";
+$query .= "WHERE $allwhere $nokidgroup $nokidhaving ";
+$query .= "ORDER BY lastname, lnprefix, firstname, birthyear, altbirthyear ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
     if ($nokids) {
-        $query = "SELECT $people_table.ID, $people_table.personID, lastname, firstname, lnprefix $nokidselect
-			FROM ($people_table, $trees_table) $nokidjoin $noparentjoin $nospousejoin WHERE $allwhere $nokidgroup2 $nokidhaving";
+        $query = "SELECT people.ID, people.personID, lastname, firstname, lnprefix $nokidselect ";
+        $query .= "FROM ($people_table people, $trees_table trees) $nokidjoin $noparentjoin $nospousejoin ";
+        $query .= "WHERE $allwhere $nokidgroup2 $nokidhaving";
         $result2 = tng_query($query);
         $totrows = tng_num_rows($result2);
     } else {
-        $query = "SELECT count($people_table.personID) as pcount FROM ($people_table, $trees_table) $noparentjoin $nospousejoin WHERE $allwhere";
+        $query = "SELECT count(people.personID) AS pcount ";
+        $query .= "FROM ($people_table people, $trees_table trees) $noparentjoin $nospousejoin ";
+        $query .= "WHERE $allwhere";
         $result2 = tng_query($query);
         $row = tng_fetch_assoc($result2);
         $totrows = $row['pcount'];

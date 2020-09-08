@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Google Maps");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="places_help.php" class="lightlink">&laquo; N�pov�da: M�sta</a> &nbsp; | &nbsp;
@@ -38,7 +38,7 @@ echo help_header("N�pov�da: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="search"><p class="subheadbold">Hledat</p></a>
             <p>Google Map Geocoder v�m umo�n� nal�zt sou�adnice zem�pisn� ���ky a d�lky pro n�zev m�sta p�i pou�it� pole Geok�dovat um�st�n� jako vstupn�ho pole.
                 Pro vyhled�n� sou�adnic m��ete tak� vyu��t aplikaci Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>).</p>
@@ -93,7 +93,7 @@ echo help_header("N�pov�da: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="controls"><p class="subheadbold">Ovl�dac� prvky Google Maps</p></a>
 
             <span class="optionhead">Bod / Klik</span>
@@ -113,7 +113,7 @@ echo help_header("N�pov�da: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="help"><p class="subheadbold">N�pov�da Google Maps</p></a>
 
             <p>Dal�� n�pov�du najdete na <a href="http://www.google.com/apis/maps/documentation/" target="_blank">Google Maps API</a>.</p>

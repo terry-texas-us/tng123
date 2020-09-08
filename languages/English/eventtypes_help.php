@@ -8,7 +8,7 @@ echo help_header("Help: Custom Event Types");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="branches_help.php" class="lightlink">&laquo; Help: Branches</a> &nbsp; | &nbsp;
@@ -25,7 +25,7 @@ echo help_header("Help: Custom Event Types");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -61,7 +61,7 @@ echo help_header("Help: Custom Event Types");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding or Editing Custom Event Types</p></a>
 
             <p>The more common or "Standard" event types, such as Birth, Death, Marriage and a few others, are managed directly on the main People, Families, Sources and Repositories pages.
@@ -120,7 +120,7 @@ echo help_header("Help: Custom Event Types");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="accept"><p class="subheadbold">Accept Selected / Ignore Selected</p></a>
             <p>To flag multiple custom event types as <strong>Accept</strong> or <strong>Ignore</strong> at the same time, check the Select box next to each Custom Event Type
                 to be updated, then click either the "Accept Selected" or "Ignore Selected" button at the top of the page.</p>
@@ -130,7 +130,7 @@ echo help_header("Help: Custom Event Types");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Custom Event Types</p></a>
             <p>To delete one Custom Event Type, use the <a href="#search">Search</a> tab to locate the item, then click on the Delete icon next to that record. The row will
                 change color and then vanish as the Custom Event Type is deleted. To delete more than one record at a time, check the box in the Select column next to each record to be

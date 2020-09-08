@@ -433,7 +433,7 @@ for ($i = $lineoffset; $i <= ($lineoffset + $chartwidth); $i += ($chartwidth / $
     echo $displayyear;
   }
   echo "</div>\n";
-  echo "<div class=\"vertlines cgray\" style=\"left:$i" . "px;height:$spanheight" . "px\"></div>\n";
+  echo "<div class=\"vertlines cgray\" style=\"left:$i" . "px;height:$spanheight" . "px;\"></div>\n";
   $year += $totalspan * .2;
   $displayyear = intval($year + .5);
 }
@@ -463,7 +463,7 @@ foreach ($tlevents as $key => $value) {
   $linkpos = $linkoffset + $spanheight;
   $eadj = $yearoffset - 3;
   $counter++;
-  echo "<div class=\"vertlines dgray\" style=\"left:$yearoffset" . "px; height:$spanheight" . "px\"></div>\n";
+  echo "<div class=\"vertlines dgray\" style=\"left:$yearoffset" . "px; height:$spanheight" . "px;\"></div>\n";
   echo "<div class=\"footnote\" style=\"top:$linkpos" . "px;left:$eadj" . "px;\"><a href=\"#events\" title=\"$key:\n$value\">$counter</a></div>\n";
 }
 
@@ -493,7 +493,10 @@ foreach ($keeparray as $timeentry) {
   echo "</div>\n";
 
   echo "<div id=\"bar$numlines\"  class=\"tlbar\" style=\"top:$top" . "px;left:$spanleft" . "px;width:$spanwidth" . "px;\" onmouse{$pedigree['event']}=\"setTimerShow($numlines,'{$pedigree['event']}');\" onmouseout=\"setTimerHide($numlines)\">\n";
-  echo "<table cellspacing=\"0\" cellpadding=\"0\"><tr><td class=\"nw\"><span class=\"normal\">{$timeentry['name']}</span></td></tr><tr><td><div class=\"fieldnameback\" style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3\"></div></td></tr></table>\n";
+  echo "<table cellspacing=\"0\" cellpadding=\"0\">";
+  echo "<tr><td class=\"nw\"><span class=\"normal\">{$timeentry['name']}</span></td></tr>";
+  echo "<tr><td><div class=\"fieldnameback\" style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
+  echo "</table>\n";
   echo "</div>\n";
 
   echo "<div id=\"popup$numlines\" class=\"popup\" style=\"background-color:{$pedigree['popupcolor']}; top:" . ($top + 25) . "px; left:" . ($spanleft - 5) . "px;\" onmouseover=\"cancelTimer($numlines)\" onmouseout=\"setTimer($numlines)\">\n";
@@ -507,7 +510,7 @@ if ($highestll == 1) {
 } elseif ($highestll == 2) {
   echo "<br><br><br>";
 }
-echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$top" . "px\"><tr><td>&nbsp;</td></tr></table>";
+echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$top" . "px;\"><tr><td>&nbsp;</td></tr></table>";
 ?>
 
   <br><br>

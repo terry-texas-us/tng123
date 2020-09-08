@@ -8,7 +8,7 @@ echo help_header("Pomoc: Miejsca");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="cemeteries_help.php" class="lightlink">&laquo; Pomoc: Cmentarze</a> &nbsp; | &nbsp;
@@ -43,7 +43,7 @@ echo help_header("Pomoc: Miejsca");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="add"><p class="subheadbold">Dodaj nowe / Edytuj istniejące miejsca</p></a>
 
             <p>TNG automatycznie dodaje nowy rekord Miejsca za każdym razem, gdy są dodawane nowe miejsca w Administracja / Osoby, Administracja / Rodziny oraz jako część niestandardowe wydarzenia.
@@ -91,7 +91,7 @@ echo help_header("Pomoc: Miejsca");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie miejsc</p></a>
             <p>Aby usunąć jedno miejsce, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego miejsca. Wiersz zmieni kolor,
                 a następnie zniknie. Miejsce zostało usunięte. Aby usunąć więcej niż jedno miejsce naraz, zaznacz pole w kolumnie Wybierz obok każdego miejsca, które ma zostać usunięte, a następnie kliknij
@@ -102,7 +102,7 @@ echo help_header("Pomoc: Miejsca");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="merge"><p class="subheadbold">Scalanie miejsc</p></a>
             Aby dokonać scalenia nazw miejsc, które mogą być nieco inne, lecz odnosić się do tej samej lokalizacji, kliknij na "Scalanie".
             Użytkownik decyduje, czy dwa zapisy są takie same, czy też nie.</p>

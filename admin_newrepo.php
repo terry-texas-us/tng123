@@ -42,7 +42,7 @@ tng_adminheader($admtext['addnewrepo'], $flags);
         return rval;
     }
 
-    var selecttree = "<?php echo $admtext['selecttree']; ?>";
+    const selecttree = "<?php echo $admtext['selecttree']; ?>";
 </script>
 </head>
 

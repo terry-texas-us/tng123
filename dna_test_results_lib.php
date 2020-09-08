@@ -2,7 +2,7 @@
 //dna tests
 $debug = $_GET['debug'] ?? false;  //get URL debug parameter
 //search for dna tests, if any found do the following
-$query = "SELECT $dna_tests_table.testID, $dna_tests_table.personID as tpersonID, $dna_tests_table.gedcom as tgedcom, test_type, test_number, test_date, match_date, markers, mtdna_haplogroup, ydna_haplogroup, hvr1_results, hvr2_results, y_results, person_name, mtdna_confirmed, ydna_confirmed, notes, markeropt, notesopt, linksopt, surnamesopt, private_dna,urls, surnames, MD_ancestorID, MRC_ancestorID, admin_notes, medialinks, ref_seq, xtra_mut, coding_reg, shared_cMs, shared_segments, chromosome, segment_start, segment_end, centiMorgans, matching_SNPs, x_match, relationship_range, suggested_relationship, actual_relationship, related_side, GEDmatchID, private_test 
+$query = "SELECT $dna_tests_table.testID, $dna_tests_table.personID AS tpersonID, $dna_tests_table.gedcom AS tgedcom, test_type, test_number, test_date, match_date, markers, mtdna_haplogroup, ydna_haplogroup, hvr1_results, hvr2_results, y_results, person_name, mtdna_confirmed, ydna_confirmed, notes, markeropt, notesopt, linksopt, surnamesopt, private_dna,urls, surnames, MD_ancestorID, MRC_ancestorID, admin_notes, medialinks, ref_seq, xtra_mut, coding_reg, shared_cMs, shared_segments, chromosome, segment_start, segment_end, centiMorgans, matching_SNPs, x_match, relationship_range, suggested_relationship, actual_relationship, related_side, GEDmatchID, private_test 
 			FROM $dna_tests_table, $dna_links_table
 			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID
 			ORDER BY match_date DESC, test_type ASC, markers * 1 ASC,  test_number * 1 ASC";
@@ -14,7 +14,7 @@ if ($debug) {
 }
 
 // following query added to check if this is a Private Test
-$pquery = "SELECT $dna_tests_table.testID, $dna_tests_table.personID as tpersonID, $dna_tests_table.gedcom as tgedcom,private_test
+$pquery = "SELECT $dna_tests_table.testID, $dna_tests_table.personID AS tpersonID, $dna_tests_table.gedcom AS tgedcom,private_test
 			FROM $dna_tests_table, $dna_links_table
 			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.private_test = \"1\"
 			ORDER BY test_type, markers * 1 ASC, test_date, test_number * 1 ASC";
@@ -58,7 +58,7 @@ if ($totnum_tests) {
         $linkedstr = $num_links > 1 ? $admtext['dna_tests'] : $text['dna_test'];
     }
     $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-    $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
+    $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
 
     $persontext .= "<tr>\n";
     $persontext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
@@ -100,7 +100,7 @@ if ($totnum_tests) {
             tng_free_result($dna_pers_result);
 
             if ($testnum) {
-                $persontext .= "</tr>\n<tr class=\"dnatest\" style=\"display:none\">\n";
+                $persontext .= "</tr>\n<tr class=\"dnatest\" style=\"display:none;\">\n";
             }
             $markercount = ($dna_test['test_type'] == "Y-DNA") ? "-{$dna_test['markers']}" : "";
             $persontext .= "<td valign=\"top\" class=\"databack\"><a href=\"$dna_test_url" . "testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";

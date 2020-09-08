@@ -12,7 +12,7 @@ echo help_header("Nápověda: Média");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="more_help.php" class="lightlink">&laquo; Nápověda: Více</a> &nbsp; | &nbsp;
@@ -75,7 +75,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nové médium</p></a>
 
             <p>Chcete-li přidat nové médium, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako obrázek mapy, informace o místě a
@@ -194,7 +194,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Upravit existující médium</p></a>
             <p>Chcete-li upravit existující médium, k nalezení položky použijte záložku <a href="#search">Hledat</a>, a poté klikněte na ikonu Upravit vedle této položky.
                 Význam polí, která nejsou na stránce "Přidat nové médium", je následující:</p>
@@ -264,7 +264,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Vymazat médium</p></a>
 
             <p>Chcete-li odstranit jednu mediální položku, použijte záložku <a href="#search">Hledat</a> pro nalezení dané položky, a poté klikněte na ikonu Vymazat vedle této položky. Tento řádek změní
@@ -276,7 +276,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="convert"><p class="subheadbold">Převést médium z jedné kolekce do jiné</p></a>
             Chcete-li převést mediální položky z jednoho typu média nebo "kolekce" do jiné, zaškrtněte na záložce <a href="#search">Hledat</a> políčko vedle těchto položek,
             poté z rozbalovacího seznamu v horní části stránky vedle tlačítka "Převést vybrané na" vyberte novou kolekci. Na závěr klikněte na tlačítko "Převést vybrané na".
@@ -287,7 +287,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="album"><p class="subheadbold">Přidat médium do alba</p></a>
             Chcete-li médium přidat do alba, zaškrtněte políčko Vybrat vedle položek, které mají být přidány, poté z rozbalovacího seznamu v horní části stránky
             vedle tlačítka "Přidat do alba" vyberte album. Na závěr klikněte na tlačítko "Přidat do alba". Média můžete do alba přidat také z Admin/Alba.</p>
@@ -297,7 +297,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="sort"><p class="subheadbold">Seřadit média</p></a>
             <p>Standardně jsou média spojená s osobou, rodinou, pramenem, úložištěm pramenů nebo místem seřazena v pořadí, ve kterém byla k tomuto subjektu připojena. Toto pořadí
                 můžete změnit na záložce Media/Seřadit.</p>
@@ -336,7 +336,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="thumbs"><p class="subheadbold">Náhledy</p></a>
 
             <span class="optionhead">Vytvořit náhledy</span>
@@ -360,7 +360,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="import"><p class="subheadbold">Import médií</p></a>
 
             <span class="optionhead">Cíl</span>
@@ -377,7 +377,7 @@ echo help_header("Nápověda: Média");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="upload"><p class="subheadbold">Nahrání médií</p></a>
 
             <span class="optionhead">Cíl</span>

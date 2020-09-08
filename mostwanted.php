@@ -28,13 +28,12 @@ function showDivs($type) {
 
   $mediatext = "<table class=\"whiteback\" cellpadding=\"8\" cellspacing=\"2\" width=\"100%\">\n";
 
-  $query = "SELECT $mostwanted_table.ID as mwID, mwtype, thumbpath, abspath, form, usecollfolder, mediatypeID, path, $media_table.description as mtitle,
-		$mostwanted_table.personID, $mostwanted_table.gedcom, $mostwanted_table.mediaID, $mostwanted_table.description as mwdesc, $mostwanted_table.title as mwtitle,
-		lastname, firstname, lnprefix, suffix, prefix, $people_table.title as title, living, private, nameorder, branch
-		FROM $mostwanted_table
-		LEFT JOIN $media_table ON $mostwanted_table.mediaID = $media_table.mediaID
-		LEFT JOIN $people_table ON $mostwanted_table.personID = $people_table.personID AND $mostwanted_table.gedcom = $people_table.gedcom
-		WHERE mwtype = \"$type\"$wherestr ORDER BY ordernum";
+  $query = "SELECT mostwanted.ID AS mwID, mwtype, thumbpath, abspath, form, usecollfolder, mediatypeID, path, media.description AS mtitle, mostwanted.personID, mostwanted.gedcom, mostwanted.mediaID, mostwanted.description as mwdesc, mostwanted.title as mwtitle, lastname, firstname, lnprefix, suffix, prefix, people.title as title, living, private, nameorder, branch ";
+  $query .= "FROM $mostwanted_table mostwanted ";
+  $query .= "LEFT JOIN $media_table media ON mostwanted.mediaID = media.mediaID ";
+  $query .= "LEFT JOIN $people_table people ON mostwanted.personID = people.personID AND mostwanted.gedcom = people.gedcom ";
+  $query .= "WHERE mwtype = \"$type\"$wherestr ";
+  $query .= "ORDER BY ordernum";
   $result = tng_query($query);
 
   while ($row = tng_fetch_assoc($result)) {

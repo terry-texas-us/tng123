@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Jazyky");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="dna_help.php" class="lightlink">&laquo; N�pov�da: Testy DNA</a> &nbsp; | &nbsp;
@@ -44,7 +44,7 @@ echo help_header("N�pov�da: Jazyky");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� jazyky</p></a>
             <p>TNG zobrazuje programov� v�razy, kter� byly p�elo�eny do n�kolika r�zn�ch jazyk�. Chcete-li umo�nit n�v�t�vn�k�m va�ich str�nek zobrazit str�nky mimo va�eho v�choz�ho jazyka
                 tak� v jin�ch jazyc�ch, mus�te zde pro ka�d� jazyk, kter� m� b�t podporov�n, p�idat z�znam, <strong>v�etn�</strong> sv�ho v�choz�ho jazyka. Nap�.
@@ -74,7 +74,7 @@ echo help_header("N�pov�da: Jazyky");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� jazyk�</p></a>
             <p>Chcete-li odstranit jazyk, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� jazyku, a pot� klikn�te na ikonku Vymazat vedle tohoto z�znamu jazyku. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� jazyku zmiz�. <strong>Pozn.</strong>: P��slu�n� slo�ka jazyku nebude z va�ich str�nek vymaz�na.</p>

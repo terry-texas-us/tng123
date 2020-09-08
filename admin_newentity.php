@@ -15,13 +15,13 @@ if (!$allow_add) {
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div class="databack normal" style="margin:10px;border:0" id="newentity">
+<div class="databack normal" style="margin:10px;border:0;" id="newentity">
     <p class="subhead"><strong><?php echo $admtext['enternew'] . " " . $admtext[$entity]; ?></strong></p>
 
     <form action="admin_addentity.php" method="post" name="entityform" id="entityform" onsubmit="return addEntity(this);">
         <input type="hidden" name="entity" value="<?php echo "$entity"; ?>">
         &nbsp;<input type="text" name="newitem" id="newitem"> <input type="submit" value="<?php echo $admtext['add']; ?>">
       <br>
-      <div class="normal" id="entitymsg" style="color:green"></div>
+      <div class="normal" id="entitymsg" style="color:green;"></div>
     </form>
 </div>

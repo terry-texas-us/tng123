@@ -15,8 +15,12 @@ $search_url = getURL("search", 1);
 
           $topnum = $topnum ? $topnum : 100;
           $wherestr .= $wherestr ? " AND firstname != \"\"" : "WHERE firstname != \"\"";
-          $query = "SELECT ucase( SUBSTRING_INDEX( firstname, ' ', 1 ) ) as firstname, SUBSTRING_INDEX( firstname, ' ', 1 ) as lowername, count( ucase( SUBSTRING_INDEX( firstname, ' ', 1 ) ) ) as lncount 
-	FROM $people_table $wherestr GROUP BY lowername ORDER by lncount DESC, firstname LIMIT $topnum";
+          $query = "SELECT UCASE(SUBSTRING_INDEX(firstname, ' ', 1 )) AS firstname, SUBSTRING_INDEX(firstname, ' ', 1 ) AS lowername, count(UCASE(SUBSTRING_INDEX(firstname, ' ', 1 ))) AS lncount ";
+          $query .= "FROM $people_table ";
+          $query .= "$wherestr ";
+          $query .= "GROUP BY lowername ";
+          $query .= "ORDER by lncount DESC, firstname ";
+          $query .= "LIMIT $topnum";
 
           $result = tng_query($query);
           $topnum = tng_num_rows($result);

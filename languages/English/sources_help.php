@@ -8,7 +8,7 @@ echo help_header("Help: Sources");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="families_help.php" class="lightlink">&laquo; Help: Families</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Sources");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -51,7 +51,7 @@ echo help_header("Help: Sources");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding New Sources</p></a>
             <p>A <strong>Source</strong> is any form of evidence cited to prove or substantiate any part of your data. The same source may be cited multiple times
                 for multiple individuals, families or events.</p>
@@ -95,7 +95,7 @@ echo help_header("Help: Sources");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="edit"><p class="subheadbold">Editing Existing Sources</p></a>
       <p>To make changes to an existing source, use the <a href="#search">Search</a> tab to locate the source, then click on the Edit icon next to that source.</p>
 
@@ -119,7 +119,7 @@ echo help_header("Help: Sources");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Sources</p></a>
             <p>To delete one source, use the <a href="#search">Search</a> tab to locate the source, then click on the Delete icon next to that source. The row will
                 change color and then vanish as the source is deleted (all associated citations will also be deleted).
@@ -131,7 +131,7 @@ echo help_header("Help: Sources");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="merge"><p class="subheadbold">Merge</p></a>
             <p>Click on this tab to review and merge sources that may be slightly different but refer to the same material.
                 You will decide whether multiple records are the same or not.</p>

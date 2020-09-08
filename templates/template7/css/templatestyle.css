@@ -416,11 +416,11 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu, .databack {
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat
+    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 ul.tngdd .topline {
-    border-top: 1px solid #777
+    border-top: 1px solid #777;
 }
 
 .whitetext {
@@ -474,6 +474,6 @@ ul.tngdd .topline {
 
     .logo {
         display: inline-block;
-        width: 100%
+        width: 100%;
     }
 }

@@ -30,26 +30,28 @@ function doMedia($mediatypeID) {
 
     if ($mediatypeID == "headstones") {
         $hsfields = ", $media_table.cemeteryID, cemname";
-        $hsjoin = "LEFT JOIN $cemeteries_table ON $media_table.cemeteryID = $cemeteries_table.cemeteryID";
+        $hsjoin = "LEFT JOIN $cemeteries_table cemeteries ON media.cemeteryID = cemeteries.cemeteryID ";
     } else {
         $hsfields = $hsjoin = "";
     }
 
-    $query = "SELECT distinct $media_table.mediaID as mediaID, description, $media_table.notes, thumbpath, path, form, mediatypeID, $media_table.gedcom as gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%a, %d %b %Y %T') as changedatef, status, abspath, newwindow $hsfields
-		FROM $media_table $hsjoin";
-    $query .= " WHERE $cutoffstr $wherestr AND mediatypeID = \"$mediatypeID\" ORDER BY changedate DESC, description LIMIT $change_limit";
+    $query = "SELECT distinct media.mediaID AS mediaID, description, media.notes, thumbpath, path, form, mediatypeID, media.gedcom AS gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%a, %d %b %Y %T') AS changedatef, status, abspath, newwindow $hsfields ";
+    $query .= "FROM $media_table media ";
+    $query .= "$hsjoin";
+    $query .= "WHERE $cutoffstr $wherestr AND mediatypeID = \"$mediatypeID\" ";
+    $query .= "ORDER BY changedate DESC, description ";
+    $query .= "LIMIT $change_limit";
     $mediaresult = tng_query($query);
 
     while ($row = tng_fetch_assoc($mediaresult)) {
-        $query = "SELECT medialinkID, $medialinks_table.personID as personID, $medialinks_table.eventID, people.personID as personID2, familyID, people.living as living, people.private as private, people.branch as branch,
-			$families_table.branch as fbranch, $families_table.living as fliving, $families_table.private as fprivate, husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname,
-			people.suffix as suffix, nameorder, $medialinks_table.gedcom as gedcom, treename, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID,reponame, deathdate, burialdate, linktype
-			FROM ($medialinks_table, $trees_table)
-			LEFT JOIN $people_table AS people ON ($medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom)
-			LEFT JOIN $families_table ON ($medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom)
-			LEFT JOIN $sources_table ON ($medialinks_table.personID = $sources_table.sourceID AND $medialinks_table.gedcom = $sources_table.gedcom)
-			LEFT JOIN $repositories_table ON ($medialinks_table.personID = $repositories_table.repoID AND $medialinks_table.gedcom = $repositories_table.gedcom)
-			WHERE mediaID = \"{$row['mediaID']}\" AND $medialinks_table.gedcom = $trees_table.gedcom$wherestr2 ORDER BY lastname, lnprefix, firstname, $medialinks_table.personID";
+        $query = "SELECT medialinkID, medialinks.personID AS personID, medialinks.eventID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
+        $query .= "FROM ($medialinks_table medialinks, $trees_table trees) ";
+        $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
+        $query .= "LEFT JOIN $families_table families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
+        $query .= "LEFT JOIN $sources_table sources ON (medialinks.personID = sources.sourceID AND medialinks.gedcom = sources.gedcom) ";
+        $query .= "LEFT JOIN $repositories_table repositories ON (medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom) ";
+        $query .= "WHERE mediaID = \"{$row['mediaID']}\" AND medialinks.gedcom = trees.gedcom$wherestr2 ";
+        $query .= "ORDER BY lastname, lnprefix, firstname, medialinks.personID";
         $presult = tng_query($query);
         $foundliving = 0;
         $foundprivate = 0;
@@ -65,7 +67,7 @@ function doMedia($mediatypeID) {
                 $prow['private'] = $prow['fprivate'];
             }
             if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-                $query = "SELECT count(personID) as ccount FROM $citations_table, $people_table
+                $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
 					WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 					AND (living = '1' OR private = '1')";
                 $presult2 = tng_query($query);
@@ -112,7 +114,7 @@ function doMedia($mediatypeID) {
                 $mediatext = $prow['personID'];
             }
             if ($prow['eventID']) {
-                $query = "SELECT description from $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
+                $query = "SELECT description FROM $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
                 $eresult = tng_query($query) or die ("{$text['cannotexecutequery']}: $query");
                 $erow = tng_fetch_assoc($eresult);
                 $event = $erow['description'] ? $erow['description'] : $prow['eventID'];
@@ -224,21 +226,23 @@ if (!$personID && !$familyID) {             // only feed the changes when not mo
 $cutoffstr .= " AND";
 
 if ($tree) {
-    $allwhere = "AND p.gedcom = \"$tree\"";
+    $allwhere = "AND people.gedcom = \"$tree\"";
 } else {
     $allwhere = "";
 }
 
-$more = getLivingPrivateRestrictions("p", false, false);
+$more = getLivingPrivateRestrictions("people", false, false);
 if ($more) {
     $allwhere .= " AND " . $more;
 }
 
 if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a personID or the What's New
 //select from people where date later than cutoff, order by changedate descending, limit = 10
-    $query = "SELECT p.personID, lastname, lnprefix, firstname, birthdate, prefix, suffix, nameorder, living, private, branch, DATE_FORMAT(changedate,'%e %b %Y') as changedatef, changedby, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') as birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') as altbirthyear, altbirthplace, p.gedcom as gedcom, treename
-	FROM $people_table as p, $trees_table WHERE $cutoffstr p.gedcom = $trees_table.gedcom $allwhere
-	ORDER BY changedate DESC, lastname, firstname, birthyear, altbirthyear LIMIT $change_limit";
+    $query = "SELECT people.personID, lastname, lnprefix, firstname, birthdate, prefix, suffix, nameorder, living, private, branch, DATE_FORMAT(changedate,'%e %b %Y') AS changedatef, changedby, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, people.gedcom AS gedcom, treename ";
+    $query .= "FROM $people_table people, $trees_table trees ";
+    $query .= "WHERE $cutoffstr people.gedcom = trees.gedcom $allwhere ";
+    $query .= "ORDER BY changedate DESC, lastname, firstname, birthyear, altbirthyear ";
+    $query .= "LIMIT $change_limit";
     $result = tng_query($query);
     $numrows = tng_num_rows($result);
     if ($numrows) {
@@ -291,7 +295,7 @@ if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a p
 }
 
 if ($familyID) {
-    $whereclause = "WHERE $families_table.familyID = \"$familyID\"$privacystr ORDER BY changedate LIMIT $change_limit";
+    $whereclause = "WHERE $families_table.familyID = '$familyID'$privacystr ORDER BY changedate LIMIT $change_limit";
 } else {
     $whereclause = $change_cutoff ? "WHERE TO_DAYS(NOW()) - TO_DAYS($families_table.changedate) <= $change_cutoff$privacystr" : "WHERE 1=1$privacystr";
     $whereclause .= " ORDER BY changedate DESC LIMIT $change_limit";
@@ -299,7 +303,7 @@ if ($familyID) {
 
 if (!$personID) {
 //select husband, wife from families where date later than cutoff, order by changedate descending, limit = 10
-    $query = "SELECT familyID, husband, wife, marrdate, marrplace, gedcom, branch, living, private, DATE_FORMAT(changedate,'%a, %d %b %Y %T') as changedatef FROM $families_table $whereclause";
+    $query = "SELECT familyID, husband, wife, marrdate, marrplace, gedcom, branch, living, private, DATE_FORMAT(changedate,'%a, %d %b %Y %T') AS changedatef FROM $families_table $whereclause";
     $famresult = tng_query($query);
     $numrows = tng_num_rows($famresult);
     if ($numrows) {

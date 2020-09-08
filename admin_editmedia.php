@@ -102,7 +102,7 @@ if ($row['thumbpath'] && file_exists("$rootpath$usefolder/" . $row['thumbpath'])
         $photohtouse = 50;
         $photowtouse = intval(50 * $photoinfo[0] / $photoinfo[1]);
     }
-    $photo = "<img border=0 src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" style=\"border-color:#000000;margin-right:6px\"></span>\n";
+    $photo = "<img border=0 src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" style=\"border-color:#000000;margin-right:6px;\"></span>\n";
 } else {
     $photo = "";
 }
@@ -209,9 +209,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                     ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                            onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
-                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
+                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                            onclick="editMediatype(document.form1.mediatypeID);">
-                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"
+                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                            onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                                     <?php
                                 }
@@ -241,7 +241,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                                                                                                                  onclick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('path',folder);">
                             </td>
                         </tr>
-                        <tr id="abspathrow" style="display:none">
+                        <tr id="abspathrow" style="display:none;">
                             <td><?php echo $admtext['mediaurl']; ?>:</td>
                             <td><input type="text" value="<?php if ($row['abspath']) {
                                     echo $row['path'];
@@ -384,10 +384,10 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             <td><?php echo $admtext['cemetery']; ?>:</td>
                             <td>
                                 <div id="cemchoice"<?php if ($row['cemeteryID'] || $mediatypeID == "headstones") {
-                                    echo " style=\"display:none\"";
+                                    echo " style=\"display:none;\"";
                                 } ?>><a href="#" onclick="return toggleCemSelect();"><?php echo $admtext['select']; ?></a></div>
                                 <div id="cemselect"<?php if (!$row['cemeteryID'] && $mediatypeID != "headstones") {
-                                    echo " style=\"display:none\"";
+                                    echo " style=\"display:none;\"";
                                 } ?>>
                                     <select name="cemeteryID">
                                         <option selected></option>
@@ -477,12 +477,12 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <?php echo displayToggle("plus3", $placeopen, "placeinfo", $admtext['placetaken'], ""); ?>
 
                 <div id="placeinfo"<?php if (!$placeopen) {
-                    echo " style=\"display:none\"";
+                    echo " style=\"display:none;\"";
                 } ?>>
                     <table class="topbuffer normal" width="100%">
                         <tr>
                             <td width="150"><?php echo $admtext['placetaken']; ?>:</td>
-                            <td><input type="text" name="place" id="place" value="<?php echo $row['placetaken']; ?>" size="40" style="float:left"><a href="#"
+                            <td><input type="text" name="place" id="place" value="<?php echo $row['placetaken']; ?>" size="40" style="float:left;"><a href="#"
                                                                                                                                                      onclick="return openFindPlaceForm('place');"
                                                                                                                                                      title="<?php echo $admtext['find']; ?>"
                                                                                                                                                      class="smallicon admin-find-icon dn2px"></a>
@@ -493,7 +493,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             ?>
                             <tr>
                                 <td colspan="2">
-                                    <div style="padding:0 10px 10px 0">
+                                    <div style="padding:0 10px 10px 0;">
                                         <?php
                                         // draw the map here
                                         include "googlemapdrawthemap.php";
@@ -534,7 +534,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <td class="tngshadow">
                     <?php echo displayToggle("plus4", 0, "imagemapdiv", $admtext['imgmap'], $admtext['mapinstr2']); ?>
 
-                    <div id="imagemapdiv" class="normal" style="display:none">
+                    <div id="imagemapdiv" class="normal" style="display:none;">
                         <br>
                         <p><?php echo $admtext['mapinstr3']; ?></p>
 
@@ -576,7 +576,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
                         ?>
                         <br>
-                        <div id="imgholder" style="position:relative">
+                        <div id="imgholder" style="position:relative;">
                             <img id="myimg" src="<?php echo "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['path'])); ?>" <?php echo "$widthstr $heightstr"; ?>
                                  alt="<?php echo $admtext['circleinstr']; ?>"
                                  style="cursor:crosshair;">
@@ -626,24 +626,24 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     echo "var media = \"$mediaID\";\n";
     echo "var thumbprefix = \"$thumbprefix\";\n";
     echo "var thumbsuffix = \"$thumbsuffix\";\n";
-    echo "var treemsg = \"{$admtext['tree']}\";\n";
-    echo "var personmsg = \"{$admtext['person']}\";\n";
-    echo "var idmsg = \"{$admtext['id']}\";\n";
-    echo "var familymsg = \"{$admtext['family']}\";\n";
-    echo "var sourcemsg = \"{$admtext['source']}\";\n";
-    echo "var repositorymsg = \"{$admtext['repository']}\";\n";
-    echo "var placemsg = \"{$admtext['place']}\";\n";
-    echo "var findmsg = \"{$admtext['find']}\";\n";
-    echo "var altdescmsg = \"{$admtext['alttitle']}\";\n";
-    echo "var altnotesmsg = \"{$admtext['altdesc']}\";\n";
-    echo "var makedefaultmsg = \"{$admtext['makedefault']}\";\n";
-    echo "var eventlinkmsg = \"{$admtext['eventlink']}\";\n";
-    echo "var eventmsg = \"{$admtext['event']}\";\n";
-    echo "var sortmsg = \"{$admtext['text_sort']}\";\n";
-    echo "var confdellink = \"{$admtext['confdellink']}\";\n";
-    echo "var remove_text = \"{$admtext['removelink']}\";\n";
-    echo "var edit_text = \"{$admtext['edit']}\";\n";
-    echo "var yesmsg = \"{$admtext['yes']}\";\n";
+    echo "const treemsg = \"{$admtext['tree']}\";\n";
+    echo "const personmsg = \"{$admtext['person']}\";\n";
+    echo "const idmsg = \"{$admtext['id']}\";\n";
+    echo "const familymsg = \"{$admtext['family']}\";\n";
+    echo "const sourcemsg = \"{$admtext['source']}\";\n";
+    echo "const repositorymsg = \"{$admtext['repository']}\";\n";
+    echo "const placemsg = \"{$admtext['place']}\";\n";
+    echo "const findmsg = \"{$admtext['find']}\";\n";
+    echo "const altdescmsg = \"{$admtext['alttitle']}\";\n";
+    echo "const altnotesmsg = \"{$admtext['altdesc']}\";\n";
+    echo "const makedefaultmsg = \"{$admtext['makedefault']}\";\n";
+    echo "const eventlinkmsg = \"{$admtext['eventlink']}\";\n";
+    echo "const eventmsg = \"{$admtext['event']}\";\n";
+    echo "const sortmsg = \"{$admtext['text_sort']}\";\n";
+    echo "const confdellink = \"{$admtext['confdellink']}\";\n";
+    echo "const remove_text = \"{$admtext['removelink']}\";\n";
+    echo "const edit_text = \"{$admtext['edit']}\";\n";
+    echo "const yesmsg = \"{$admtext['yes']}\";\n";
     echo "var linkcount = $numlinks;\n";
     echo "var manage = 0;\n";
     echo "var assignedbranch = \"$assignedbranch\";\n";
@@ -654,17 +654,17 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     }
     echo $likearray;
     ?>
-    var entercollid = "<?php echo $admtext['entercollid']; ?>";
-    var entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
-    var entercollipath = "<?php echo $admtext['entercollpath']; ?>";
-    var entercollicon = "<?php echo $admtext['entercollicon']; ?>";
-    var confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
-    var yestext = "<?php echo $admtext['yes']; ?>";
+    const entercollid = "<?php echo $admtext['entercollid']; ?>";
+    const entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
+    const entercollipath = "<?php echo $admtext['entercollpath']; ?>";
+    const entercollicon = "<?php echo $admtext['entercollicon']; ?>";
+    const confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
+    const yestext = "<?php echo $admtext['yes']; ?>";
     var stmediatypes = new Array(<?php echo $sttypestr; ?>);
     var allow_edit = <?php echo($allow_edit ? "1" : "0"); ?>;
     var allow_delete = <?php echo($allow_delete ? "1" : "0"); ?>;
-    var linkmsg = "<?php echo $admtext['enterid']; ?>";
-    var confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
+    const linkmsg = "<?php echo $admtext['enterid']; ?>";
+    const confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
 
     function validateForm() {
         let rval = true;

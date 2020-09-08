@@ -364,11 +364,11 @@ ul.tngdd .menulink:hover, ul.tngdd .menuhover {
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat
+    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 ul.tngdd .topline {
-    border-top: 1px solid #777
+    border-top: 1px solid #777;
 }
 
 #search-submit {

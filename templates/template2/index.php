@@ -28,11 +28,11 @@ $title = getTemplateMessage('t2_maintitle');
 </script>
 
 <div class="center">
-    <table class="indexpage rounded10" style="padding:0">
+    <table class="indexpage rounded10" style="padding:0;">
         <tr>
             <td valign="top">
                 <div class="databack rounded10">
-                    <div style="float:left;display:inline">
+                    <div style="float:left;display:inline;">
                         <?php
                       //begin TITLE IMAGE (default: "Our Family Genealogy Pages")
                       //Actual file name has been replaced with t1_titleimage variable, configurable from Template Settings. Default name of actual image is "homeheader.gif"
@@ -60,7 +60,7 @@ $title = getTemplateMessage('t2_maintitle');
                       <br>
                       <?php
                       if ($mainpara) {
-                        echo "<div style=\"max-width:390px;padding-left:20px\">$mainpara</div><br>\n";
+                        echo "<div style=\"max-width:390px;padding-left:20px;\">$mainpara</div><br>\n";
                       }
                       ?>
 
@@ -178,22 +178,22 @@ $title = getTemplateMessage('t2_maintitle');
 									<input type="hidden" name="mybool" value="AND">
 									</span>
                           </div>
-                          <div id="searcharrowblock"><input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button.jpg" class="indexsubmit" style="border:none" alt=""></div>
+                          <div id="searcharrowblock"><input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button.jpg" class="indexsubmit" style="border:none;" alt=""></div>
                         </div>
                       </form>
                     </div>
-                  <div style="display:inline">
+                  <div style="display:inline;">
                     <?php
                     //begin MAIN IMAGE (default: the large picture of the girl on the right side of the page)
                     //Actual file name has been replaced with t2_mainimage variable, configurable from Template Settings. Default name of actual image is "mainphoto.jpg"
                     //You can replace the t2_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                     ?>
-                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327" style="max-height:460px" class="noimgborder rounded10" id="mainphoto"><br><br>
+                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327" style="max-height:460px;" class="noimgborder rounded10" id="mainphoto"><br><br>
                     <?php
                     //end MAIN IMAGE
                     ?>
                   </div>
-                  <div style="clear:left"></div>
+                  <div style="clear:left;"></div>
                 </div>
             </td>
         </tr>

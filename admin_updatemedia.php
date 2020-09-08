@@ -185,19 +185,19 @@ if ($mediatypeID != $mediatypeID_org) {
   $result2 = tng_query($query);
   if ($result2) {
     while ($plink = tng_fetch_assoc($result2)) {
-      $query = "SELECT personID from $people_table WHERE personID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
+      $query = "SELECT personID FROM $people_table WHERE personID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
       reorderMedia($query, $plink, $mediatypeID_org);
       reorderMedia($query, $plink, $mediatypeID);
 
-      $query = "SELECT familyID as personID from $families_table WHERE familyID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
+      $query = "SELECT familyID AS personID FROM $families_table WHERE familyID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
       reorderMedia($query, $plink, $mediatypeID_org);
       reorderMedia($query, $plink, $mediatypeID);
 
-      $query = "SELECT sourceID as personID from $sources_table WHERE sourceID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
+      $query = "SELECT sourceID AS personID FROM $sources_table WHERE sourceID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
       reorderMedia($query, $plink, $mediatypeID_org);
       reorderMedia($query, $plink, $mediatypeID);
 
-      $query = "SELECT repoID as personID from $repositories_table WHERE repoID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
+      $query = "SELECT repoID AS personID FROM $repositories_table WHERE repoID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
       reorderMedia($query, $plink, $mediatypeID_org);
       reorderMedia($query, $plink, $mediatypeID);
     }

@@ -23,7 +23,7 @@ $pedigree_url = getURL("pedigree", 1);
 
 $flags['imgprev'] = true;
 
-$treequery = "SELECT count(gedcom) as treecount FROM $trees_table";
+$treequery = "SELECT count(gedcom) AS treecount FROM $trees_table";
 $treeresult = tng_query($treequery);
 $treerow = tng_fetch_assoc($treeresult);
 $numtrees = $treerow['treecount'];
@@ -141,7 +141,7 @@ if ($cemeteryID) {
       $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "htmlcontent" => "<div class=\"mapballoon normal\">$localballooncemeteryname<br>$localballooncemeteryplace$codednotes</div>"];
       $cemcoords = true;
       $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"{$cms['tngpath']}img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
-      $body .= "<div style=\"padding-bottom:15px\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
+      $body .= "<div style=\"padding-bottom:15px;\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
       $map['pins']++;
       $body .= "<span><strong>{$text['latitude']}:</strong> $lat, <strong>{$text['longitude']}:</strong> $long</span></div>";
     }
@@ -152,7 +152,7 @@ if ($infoblock) {
   $body .= "<div class=\"titlebox\">$infoblock</div>\n<br>\n";
 }
 
-$query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow from $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = \"1\") ORDER BY description";
+$query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow FROM $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = \"1\") ORDER BY description";
 $hsresult = tng_query($query);
 $gotImageJpeg = function_exists('imageJpeg');
 if (tng_num_rows($hsresult)) {
@@ -179,7 +179,7 @@ if (tng_num_rows($hsresult)) {
     $body .= "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>";
     $body .= "<td valign=\"top\" class=\"databack\" width=\"$thumbmaxw\">";
     if ($imgsrc) {
-      $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none\"></div></div>\n";
+      $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $body .= "<a href=\"$href\"";
       if ($gotImageJpeg && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
         $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
@@ -200,15 +200,18 @@ if (tng_num_rows($hsresult)) {
 tng_free_result($hsresult);
 
 if ($tree) {
-  $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
-  $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+  $wherestr = " AND (media.gedcom = \"$tree\" || media.gedcom = \"\")";
+  $wherestr2 = " AND medialinks.gedcom = \"$tree\"";
 } else {
   $wherestr = $wherestr2 = "";
 }
 
-$query = "SELECT DISTINCT $media_table.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, mediatypeID, latitude, longitude, form, abspath, newwindow
-	FROM $media_table LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID
-	WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND mediatypeID = \"headstones\" AND linktocem != \"1\" ORDER BY description LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, mediatypeID, latitude, longitude, form, abspath, newwindow ";
+$query .= "FROM $media_table media ";
+$query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
+$query .= "WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND mediatypeID = \"headstones\" AND linktocem != \"1\" ";
+$query .= "ORDER BY description ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $hsresult = tng_query($query);
 
 $numrows = tng_num_rows($hsresult);
@@ -217,7 +220,7 @@ if ($numrows) {
   $body .= "<span class=\"subhead\"><b>{$text['headstone']}</b></span><br><br>\n";
 
   if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(DISTINCT $media_table.mediaID) as hscount FROM $media_table LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != \"1\"";
+    $query = "SELECT count(DISTINCT $media_table.mediaID) AS hscount FROM $media_table LEFT JOIN $medialinks_table ON $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != \"1\"";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['hscount'];
@@ -264,15 +267,14 @@ if ($numrows) {
       $hs['status'] = $text[$status];
     }
 
-    $query = "SELECT medialinkID, $medialinks_table.personID as personID, people.personID as personID2, familyID, people.living as living, people.private as private, people.branch as branch,
-			$families_table.branch as fbranch, $families_table.living as fliving, $families_table.private as fprivate, husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname,
-			people.prefix as prefix, people.suffix as suffix, nameorder, $medialinks_table.gedcom as gedcom, treename, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID,reponame, deathdate, burialdate, linktype
-			FROM ($medialinks_table, $trees_table)
-			LEFT JOIN $people_table AS people ON ($medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom)
-			LEFT JOIN $families_table ON ($medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom)
-			LEFT JOIN $sources_table ON ($medialinks_table.personID = $sources_table.sourceID AND $medialinks_table.gedcom = $sources_table.gedcom)
-			LEFT JOIN $repositories_table ON ($medialinks_table.personID = $repositories_table.repoID AND $medialinks_table.gedcom = $repositories_table.gedcom)
-			WHERE mediaID = \"{$hs['mediaID']}\" AND $medialinks_table.gedcom = $trees_table.gedcom $wherestr2 ORDER BY lastname, lnprefix, firstname, $medialinks_table.personID";
+    $query = "SELECT medialinkID, medialinks.personID AS personID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
+    $query .= "FROM ($medialinks_table medialinks, $trees_table trees) ";
+    $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
+    $query .= "LEFT JOIN $families_table families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
+    $query .= "LEFT JOIN $sources_table sources ON (medialinks.personID = sources.sourceID AND medialinks.gedcom = sources.gedcom) ";
+    $query .= "LEFT JOIN $repositories_table repositories ON (medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom) ";
+    $query .= "WHERE mediaID = \"{$hs['mediaID']}\" AND medialinks.gedcom = trees.gedcom $wherestr2 ";
+    $query .= "ORDER BY lastname, lnprefix, firstname, medialinks.personID";
     $presult = tng_query($query);
     $hslinktext = "";
     $noneliving = $noneprivate = 1;
@@ -332,14 +334,14 @@ if ($numrows) {
     $description = $hs['description'];
     $notes = nl2br($hs['notes']);
 
-    $body .= "<tr><td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:$thumbmaxw" . "px\">";
+    $body .= "<tr><td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:$thumbmaxw" . "px;\">";
     $hs['allow_living'] = $noneliving;
     $hs['allow_private'] = $noneprivate;
     $imgsrc = getSmallPhoto($hs);
     $href = getMediaHREF($hs, 3);
 
     if ($imgsrc) {
-      $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none\"></div></div>\n";
+      $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $body .= "<a href=\"$href\"";
       if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
         $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";

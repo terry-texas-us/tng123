@@ -8,7 +8,7 @@ echo help_header("Nápověda: Testy DNA");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="reports_help.php" class="lightlink">&laquo; Nápověda: Reporty</a> &nbsp; | &nbsp;
@@ -46,7 +46,7 @@ echo help_header("Nápověda: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-          <p style="float:right"><a href="#top">Nahoru</a></p>
+          <p style="float:right;"><a href="#top">Nahoru</a></p>
           <a name="add"><p class="subheadbold">Přidání nových testů</p></a>
           <p>Chcete-li přidat nový test, klikněte na záložku <strong>Přidat nový</strong>, a vyplňte formulář. Po uložení může být test připojen k osobě v databázi.</p>
           <p>Pole mohou zůstat prázdné a nebudou ve většině případů zobrazeny.</p>
@@ -102,7 +102,7 @@ echo help_header("Nápověda: Testy DNA");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="ydna"><p class="subheadbold">Pole výsledků testů Y-DNA</p></a>
 
       <p>Otcovskou linii daného muže lze stopovat prostřednictvím DNA obsažené v jeho chromozómu Y (Y-DNA). Test Y-DNA spočívá v analýze segmentů DNA chromozómu Y (přítomném pouze u mužů), zvaných krátká tandemová repetice (STR z anglického Short
@@ -134,7 +134,7 @@ echo help_header("Nápověda: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="mtdna"><p class="subheadbold">Pole výsledků testů mtDNA</p></a>
 
             <p>Mateřskou linii předků lze stopovat pomocí <span class="optionhead">mitochondriální DNA (mtDNA)</span>. Dle současných konvencí je mtDNA rozdělena do tří oblastí. Těmi jsou kódující oblast a dvě hypervariabilní oblasti (HVR1 a HVR2)
@@ -167,7 +167,7 @@ echo help_header("Nápověda: Testy DNA");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="atdna"><p class="subheadbold">Pole výsledků testů atDNA</p></a>
 
       <p><span class="optionhead">Autozomální DNA (atDNA) </span> testuje vaše autozomální chromozómy, což je dalších 22 párů za pohlavními chromozomy X a Y. Testy autozomální DNA mohou pomoci identifikovat příbuzné, kteří sdílejí nedávné předky. Čím
@@ -209,7 +209,7 @@ echo help_header("Nápověda: Testy DNA");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="common"><p class="subheadbold">Společná pole výsledků testů</p></a>
 
       <p>Následující pole jsou společná pro všechny typy testů</p>
@@ -256,7 +256,7 @@ echo help_header("Nápověda: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Úprava existujících testů</p></a>
             <p>Chcete-li upravit existující test, použijte záložku <a href="#search">Hledat</a> pro nalezení testu, a poté klikněte na ikonu Upravit vedle tohoto testu.</p>
 
@@ -272,7 +272,7 @@ echo help_header("Nápověda: Testy DNA");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazání existujících testů</p></a>
             <p>Chcete-li odstranit test, použijte záložku <a href="#search">Hledat</a> pro nalezení testu, a poté klikněte na ikonu Vymazat vedle tohoto testu. Tento řádek změní
                 barvu a poté po odstranění místa zmizí. Chcete-li najednou odstranit víc testů, zaškrtněte políčko ve sloupci Vybrat vedle každého testu, který

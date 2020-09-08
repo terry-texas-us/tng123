@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="languages_help.php" class="lightlink">&laquo; N�pov�da: Jazyky</a> &nbsp; | &nbsp;
@@ -79,7 +79,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="structure"><p class="subheadbold">Z�lohov�n� struktury tabulek</p></a>
             <p>Chcete-li z�lohovat strukturu va�ich TNG tabulek, klikn�te v t�to sekci na ikonu Z�lohovat. Pokud byla operace �sp�n�, str�nka bude znovu zobrazena s �ervenou zpr�vou naho�e.
                 Vypln�n bude tak� obsah sloupce Posledn� z�loha, stejn� jako velikost v�sledn�ho souboru. Z�loha struktury va�ich tabulek v�m umo�n� sn�ze obnovit va�e data
@@ -91,7 +91,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="ids"><p class="subheadbold">P�e��slov�n� ID ��sel</p></a>
             <p>Pomoc� t�to funkce m��ete ke v�em va�im osob�m, rodin�m, pramen�m a/nebo �lo�i�t�m pramen� p�i�adit nov�, po sob� jdouc� ID ��sla. V p��pad� t�to operace mus�te b�t re�imu �dr�by.
                 Chcete-li spustit re�im �dr�by, jd�te do Admin/Nastaven�/Z�kladn� nastaven� a v sekci "Datab�ze" vyberte volbu Re�im �dr�by.</p>

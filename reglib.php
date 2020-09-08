@@ -238,7 +238,10 @@ function getOtherEvents($row) {
 
   $otherEvents = "";
   if ($pedigree['regnotes'] && $row['allow_living'] && $row['allow_private']) {
-    $query = "SELECT display, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, tag, description, eventID FROM ($events_table, $eventtypes_table) WHERE persfamID = \"{$row['personID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"$tree\" AND keep = \"1\" AND parenttag = \"\" ORDER BY eventdatetr, ordernum, tag, description, info, eventID";
+    $query = "SELECT display, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, tag, description, eventID ";
+    $query .= "FROM ($events_table events, $eventtypes_table eventtypes) ";
+    $query .= "WHERE persfamID = \"{$row['personID']}\" AND events.eventtypeID = eventtypes.eventtypeID AND gedcom = '$tree' AND keep = '1' AND parenttag = '' ";
+    $query .= "ORDER BY eventdatetr, ordernum, tag, description, info, eventID";
     $custevents = tng_query($query);
     while ($custevent = tng_fetch_assoc($custevents)) {
       $displayval = getEventDisplay($custevent['display']);
@@ -299,12 +302,13 @@ function getRegNotes($persfamID, $flag) {
     $postcusttitles = array();
   }
 
-  $query = "SELECT display, $xnotes_table.note as note, $notelinks_table.eventID as eventID, $notelinks_table.ID as ID FROM $notelinks_table
-		LEFT JOIN  $xnotes_table on $notelinks_table.xnoteID = $xnotes_table.ID AND $notelinks_table.gedcom = $xnotes_table.gedcom
-		LEFT JOIN $events_table ON $notelinks_table.eventID = $events_table.eventID
-		LEFT JOIN $eventtypes_table on $eventtypes_table.eventtypeID = $events_table.eventtypeID
-		WHERE $notelinks_table.persfamID=\"$persfamID\" AND $notelinks_table.gedcom=\"$tree\" AND secret!=\"1\"
-		ORDER BY eventdatetr, $eventtypes_table.ordernum, tag, $notelinks_table.ordernum, ID";
+  $query = "SELECT display, xnotes.note AS note, notelinks.eventID AS eventID, notelinks.ID AS ID ";
+  $query .= "FROM $notelinks_table notelinks ";
+  $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
+  $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
+  $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
+  $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" AND secret!=\"1\" ";
+  $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
   $notelinks = tng_query($query);
 
   $currevent = "";

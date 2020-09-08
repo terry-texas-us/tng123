@@ -41,7 +41,7 @@ function displayIndividual($key, $generation, $slot, $column) {
                 }
             }
 
-            $mediaquery = "SELECT count($medialinks_table.medialinkID) as mediacount FROM ($medialinks_table, $media_table) WHERE $medialinks_table.mediaID = $media_table.mediaID AND personID = \"$key\" AND $medialinks_table.gedcom = \"$tree\"";
+            $mediaquery = "SELECT count($medialinks_table.medialinkID) AS mediacount FROM ($medialinks_table, $media_table) WHERE $medialinks_table.mediaID = $media_table.mediaID AND personID = \"$key\" AND $medialinks_table.gedcom = '$tree'";
             $mediaresult = tng_query($mediaquery) or die ($text['cannotexecutequery'] . ": $mediaquery");
             if ($mediaresult) {
                 $mediarow = tng_fetch_assoc($mediaresult);

@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
@@ -62,7 +62,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="table"><p class="subheadbold">N�zvy tabulek</p></a>
 
             <span class="optionhead">N�zvy tabulek</span>
@@ -74,7 +74,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="path"><p class="subheadbold">Um�st�n� a slo�ky</p></a>
 
             <span class="optionhead">Ko�enov� slo�ka</span>
@@ -106,7 +106,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="site"><p class="subheadbold">Vzhled a definice str�nek</p></a>
 
             <span class="optionhead">Domovsk� str�nka</span>
@@ -178,7 +178,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="media"><p class="subheadbold">M�dia</p></a>
 
             <span class="optionhead">Typ soubor� fotografi�</span>
@@ -259,7 +259,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="lang"><p class="subheadbold">Jazyk</p></a>
 
             <span class="optionhead">Jazyk</span>
@@ -278,7 +278,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="priv"><p class="subheadbold">Ochrana �daj�</p></a>
 
             <span class="optionhead">Vy�adovat p�ihl�en�</span>
@@ -341,7 +341,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="name"><p class="subheadbold">Jm�na</p></a>
 
             <span class="optionhead">Po�ad� jm�na a p��jmen�</span>
@@ -369,7 +369,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="cem"><p class="subheadbold">H�bitovy</p></a>
 
             <span class="optionhead">Maxim�ln� po�et ��dk� ve sloupci (pr�m.)</span>
@@ -385,7 +385,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="mail"><p class="subheadbold">Mail a registrace</p></a>
 
             <span class="optionhead">Emailov� adresa</span>
@@ -434,7 +434,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="mobile"><p class="subheadbold">Mobil</p></a>
 
       <p>Sekce Mobil v�m umo�n� ur�it, jak se bude TNG zobrazovat na chytr�ch telefonech a tabletech.</p>
@@ -464,7 +464,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="pref"><p class="subheadbold">P�edpony a p��pony</p></a>
 
             <p>Tato p�smena ve spojen� s ��slic� tvo�� identifika�n� ��sla (ID ��sla) osob, rodin, pramen�, �lo�i�� a pozn�mek ve va�� datab�zi. V�t�ina genealogick�ch
@@ -476,7 +476,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="misc"><p class="subheadbold">R�zn�</p></a>
 
             <span class="optionhead">Maxim�ln� po�et v�sledk� hled�n�</span>

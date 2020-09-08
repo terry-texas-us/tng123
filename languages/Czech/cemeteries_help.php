@@ -12,7 +12,7 @@ echo help_header("N�pov�da: H�bitovy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="albums_help.php" class="lightlink">&laquo; N�pov�da: Alba</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("N�pov�da: H�bitovy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� h�bitovy</p></a>
             <p>TNG v�m umo�n� t��dit a zobrazit va�e fotografie n�hrobk� podle h�bitov�. Aby toto fungovalo, mus�te pro ka�d� m�sto nastavit nov� z�znam h�bitova. Z�znamy
                 h�bitov� v TNG se nevztahuj� k z�znam�m m�st a pro h�itovy neexistuje konvence GEDCOM, tak�e pokud v� soubor GEDCOM obsehuje v n�kter�ch m�stech poh�b�
@@ -108,7 +108,7 @@ echo help_header("N�pov�da: H�bitovy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat h�bitovy</p></a>
 
             <p>Chcete-li odstranit h�bitov, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� h�bitova, a pot� klikn�te na ikonu Vymazat vedle tohoto z�znamu h�bitova. Tento ��dek zm�n�

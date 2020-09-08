@@ -97,7 +97,7 @@ $mcharsetstr = "&amp;oe=$session_charset";
             return true;
     }
 
-    var notfound = "<?php echo $admtext['notfound'] ?>";
+    const notfound = "<?php echo $admtext['notfound'] ?>";
 
     function getNewZoomLevel() {
         jQuery('#zoombox').val(map.getZoom());

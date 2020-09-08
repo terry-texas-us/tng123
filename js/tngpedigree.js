@@ -251,7 +251,7 @@ function FillSlot(slot, currperson, lastperson) {
             if (display != "box") {
                 var w = parseInt(currentBox.style.width) - 35;
                 var h = parseInt(currentBox.style.height) - 15;
-                icons = '<div class="floverlr" id="ic' + slot + '" style="left:' + w + 'px;top:' + h + 'px;display:none;background-color:' + currentBox.oldcolor + '">' + icons + '</div>';
+                icons = '<div class="floverlr" id="ic' + slot + '" style="left:' + w + 'px;top:' + h + 'px;display:none;background-color:' + currentBox.oldcolor + ';">' + icons + '</div>';
             } else {
                 content += icons;
                 icons = "";

@@ -24,7 +24,7 @@ if (!isset($debug)) {
     $debug = false;
 }
 
-[$query, $numtrees, $treenum, $trees, $treename] = getOrderedTreesList2($assignedtree, $trees_table);
+[$numtrees, $treenum, $trees, $treenames] = getOrderedTreesList2($assignedtree, $trees_table);
 
 $helplang = findhelp("data_help.php");
 
@@ -35,30 +35,30 @@ tng_adminheader($admtext['datamaint'], $flags);
 <script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
 <script type="text/javascript" src="js/dataimport.js?v<?php echo $tng_version; ?>"></script>
 <script type="text/javascript">
-    var opening = "<?php echo $admtext['opening']; ?>";
-    var uploading = "<?php echo $admtext['uploading']; ?>";
-    var peoplelbl = "<?php echo $admtext['people']; ?>";
-    var familieslbl = "<?php echo $admtext['families']; ?>";
-    var sourceslbl = "<?php echo $admtext['sources']; ?>";
-    var noteslbl = "<?php echo $admtext['notes']; ?>";
-    var medialbl = "<?php echo $admtext['media']; ?>";
-    var placeslbl = "<?php echo $admtext['places']; ?>";
-    var stopmsg = "<?php echo $admtext['stop']; ?>";
-    var stoppedmsg = "<?php echo $admtext['stopped']; ?>";
-    var resumemsg = "<?php echo $admtext['resume']; ?>";
-    var reopenmsg = "<?php echo $admtext['reopen']; ?>";
+    const opening = "<?php echo $admtext['opening']; ?>";
+    const uploading = "<?php echo $admtext['uploading']; ?>";
+    const peoplelbl = "<?php echo $admtext['people']; ?>";
+    const familieslbl = "<?php echo $admtext['families']; ?>";
+    const sourceslbl = "<?php echo $admtext['sources']; ?>";
+    const noteslbl = "<?php echo $admtext['notes']; ?>";
+    const medialbl = "<?php echo $admtext['media']; ?>";
+    const placeslbl = "<?php echo $admtext['places']; ?>";
+    const stopmsg = "<?php echo $admtext['stop']; ?>";
+    const stoppedmsg = "<?php echo $admtext['stopped']; ?>";
+    const resumemsg = "<?php echo $admtext['resume']; ?>";
+    const reopenmsg = "<?php echo $admtext['reopen']; ?>";
     var saveimport = "<?php echo $saveimport; ?>";
     var checksecs = <?php if (isset($checksecs)) {
         echo $checksecs * 1000;
     } else {
         echo "10000";
     } ?>;
-    var selectimportfile = "<?php echo $admtext['selectimportfile']; ?>";
-    var selectdesttree = "<?php echo $admtext['selectdesttree']; ?>";
-    var entertreeid = "<?php echo $admtext['entertreeid']; ?>";
-    var alphanum = "<?php echo $admtext['alphanum']; ?>";
-    var entertreename = "<?php echo $admtext['entertreename']; ?>";
-    var confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
+    const selectimportfile = "<?php echo $admtext['selectimportfile']; ?>";
+    const selectdesttree = "<?php echo $admtext['selectdesttree']; ?>";
+    const entertreeid = "<?php echo $admtext['entertreeid']; ?>";
+    const alphanum = "<?php echo $admtext['alphanum']; ?>";
+    const entertreename = "<?php echo $admtext['entertreename']; ?>";
+    const confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
 
     var branches = new Array();
     var branchcounts = new Array();
@@ -81,7 +81,7 @@ tng_adminheader($admtext['datamaint'], $flags);
 <?php
 $allow_export = 1;
 if (!$allow_ged && $assignedtree) {
-    $query = "SELECT disallowgedcreate FROM {$trees_table} WHERE gedcom = \"{$assignedtree}\"";
+    $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = '$assignedtree'";
     $disresult = tng_query($query);
     $row = tng_fetch_assoc($disresult);
     if ($row['disallowgedcreate']) {
@@ -148,7 +148,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                                     if (!empty($newtree) && $newtree == $trees[$treectr]) {
                                         echo " selected";
                                     }
-                                    echo ">{$treename[$treectr]}</option>\n";
+                                    echo ">{$treenames[$treectr]}</option>\n";
                                     $treectr++;
                                 }
                                 ?>
@@ -163,7 +163,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             ?>
                         </td>
                     </tr>
-                    <tr id="destbranch" style="display:none">
+                    <tr id="destbranch" style="display:none;">
                         <td>&nbsp;&nbsp;<?php echo $admtext['destbranch']; ?>:</td>
                         <td>
                             <div id="branch1div">
@@ -201,7 +201,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             <br>
                             <div><input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
                             <div id="norecalcdiv"<?php if ($tngimpcfg['defimpopt']) {
-                                echo " style=\"display:none\"";
+                                echo " style=\"display:none;\"";
                             } ?>>
                                 <input type="checkbox" name="norecalc" value="1"> <?php echo $admtext['norecalc']; ?><br>
                                 <input type="checkbox" name="neweronly" value="1"> <?php echo $admtext['neweronly']; ?><br>
@@ -221,7 +221,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                     </tr>
                 </table>
                 <br>
-                <div style="float:right" class="normal">
+                <div style="float:right;" class="normal">
                     <input type="checkbox" name="old" id="old" value="1" onclick="toggleTarget(document.form1);"> <?php echo $admtext['oldimport']; ?>
                 </div>
                 <input type="submit" name="submit" class="btn" value="<?php echo $admtext['importdata']; ?>">

@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="branches_help.php" class="lightlink">&laquo; N�pov�da: V�tve</a> &nbsp; | &nbsp;
@@ -57,7 +57,7 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nebo upravit vlastn� typy ud�lost�</p></a>
 
             <p>Nejobvyklej�� neboli "Standardn�" typy ud�lost�, jako jsou Narozen�, �mrt�, S�atek n�kolik dal��ch, jsou spravov�ny p��mo na str�nk�ch osoby, rodiny, pramenu nebo �lo�i�ti pramen�.
@@ -115,7 +115,7 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="accept"><p class="subheadbold">P�ijmout vybran� / Odm�tnout vybran�</p></a>
             <p>Chcete-li najednou ozna�it vlastn� typy ud�lost� jako <strong>P�ijmout</strong> nebo <strong>Odm�tnout</strong>, za�krtn�te pol��ko Vybrat vedle ka�d�ho vlastn�ho typu ud�losti,
                 kter� chcete zm�nit, a pot� klikn�te na tla��tko "P�ijmout vybran�" nebo "Odm�tnout vybran�" v horn� ��sti str�nky.</p>
@@ -125,7 +125,7 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat vlastn� typy ud�lost�</p></a>
             <p>Chcete-li odstranit vlastn� typ ud�losti, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� polo�ky, a pot� klikn�te na ikonku Vymazat vedle tohoto z�znamu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� vlastn�ho typu ud�losti zmiz�. Chcete-li najednou odstranit v�ce z�znam�, za�krtn�te tla��tko ve sloupci Vybrat vedle ka�d�ho z�znamu, kter� m� b�t

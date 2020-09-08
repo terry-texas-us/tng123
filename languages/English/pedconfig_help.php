@@ -9,7 +9,7 @@ echo help_header("Help: Chart Settings");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
           <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
@@ -28,7 +28,7 @@ echo help_header("Help: Chart Settings");
   </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -103,7 +103,7 @@ echo help_header("Help: Chart Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="desc"><p class="subheadbold">Descendancy Chart</p></a>
 
             <span class="optionhead">Initial Display</span>
@@ -138,7 +138,7 @@ echo help_header("Help: Chart Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="rel"><p class="subheadbold">Relationship Chart</p></a>
             <span class="optionhead">Initial Relationships</span>
             <p>When a new Relationship chart is requested, this is how many relationships TNG will try to find. As soon as that many
@@ -160,7 +160,7 @@ echo help_header("Help: Chart Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="time"><p class="subheadbold">Timeline Chart</p></a>
             <span class="optionhead">Starting chart width</span>
             <p>The initial width in pixels of the lifespan timeline. Visitors can change the width for themselves only at the top
@@ -187,7 +187,7 @@ echo help_header("Help: Chart Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="common"><p class="subheadbold">Common Elements</p></a>
 
             <span class="optionhead">Left Indent</span>
@@ -290,7 +290,7 @@ echo help_header("Help: Chart Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="thumb"><p class="subheadbold">Notes About Including Thumbnail Photos</p></a>
 
             <ul>

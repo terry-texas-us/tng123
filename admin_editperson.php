@@ -86,7 +86,7 @@ function parentRow($parent, $spouse, $label) {
 
     $pout = "";
     $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, sex, people.living, people.private ";
-    $query .= "FROM {$people_table} people, {$families_table} families ";
+    $query .= "FROM $people_table people, $families_table families ";
     $query .= "WHERE people.personID = families.{$spouse} AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
     $gotparent = tng_query($query);
 
@@ -267,7 +267,6 @@ include_once "eventlib_js.php";
     ?>
 </script>
 <script src="js/admin.js"></script>
-
 <?php echo "</head>"; ?>
 
 <body background="img/background.gif" onload="startSort()">
@@ -334,17 +333,17 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                     <div id="names">
                         <table class="normal topmarginsmall">
                             <tr>
-                                <th><?php echo $admtext['firstgivennames']; ?></th>
+                                <td><?php echo $admtext['firstgivennames']; ?></td>
                                 <?php if ($lnprefixes) {
-                                    echo "<th>{$admtext['lnprefix']}</th>\n";
+                                    echo "<td>{$admtext['lnprefix']}</td>\n";
                                 } ?>
-                                <th><?php echo $admtext['lastsurname']; ?></th>
-                                <th>&nbsp;</th>
+                                <td><?php echo $admtext['lastsurname']; ?></td>
+                                <td>&nbsp;</td>
                             </tr>
                             <tr>
                                 <td><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35"></td>
                                 <?php if ($lnprefixes) {
-                                    echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width: 80px\"></td>\n";
+                                    echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width: 80px;\"></td>\n";
                                 }
                                 ?>
                                 <td><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35"></td>
@@ -360,12 +359,12 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                         </table>
                         <table class="normal topmarginsmall">
                             <tr>
-                                <th><?php echo $admtext['sex']; ?></th>
-                                <th><?php echo $admtext['nickname']; ?></th>
-                                <th><?php echo $admtext['title']; ?></th>
-                                <th><?php echo $admtext['prefix']; ?></th>
-                                <th><?php echo $admtext['suffix']; ?></th>
-                                <th><?php echo $admtext['nameorder']; ?></th>
+                                <td><?php echo $admtext['sex']; ?></td>
+                                <td><?php echo $admtext['nickname']; ?></td>
+                                <td><?php echo $admtext['title']; ?></td>
+                                <td><?php echo $admtext['prefix']; ?></td>
+                                <td><?php echo $admtext['suffix']; ?></td>
+                                <td><?php echo $admtext['nameorder']; ?></td>
                             </tr>
                             <tr>
                                 <td>
@@ -414,8 +413,8 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                 </td>
                                 <td class="spaceonleft">
                                     <?php echo $admtext['tree'] . ": " . $treerow['treename']; ?>
-                                    <a href="#" onclick="return openChangeTree('person',' <?php echo $tree; ?>', '<?php echo $personID; ?>');">
-                                        (<img src="img/ArrowDown.gif" style="margin-left: -4px; margin-right: -2px"><?php echo $admtext['edit']; ?>)
+                                    <a href="#" onclick="return openChangeTree('person', '<?php echo $tree; ?>', '<?php echo $personID; ?>');">
+                                        (<img src="img/ArrowDown.gif" style="margin-left: -4px; margin-right: -2px;"><?php echo $admtext['edit']; ?>)
                                     </a>
                                 </td>
                                 <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
@@ -488,7 +487,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                     <div id="parents"><br>
                         <?php
                         while ($parent = tng_fetch_assoc($parents)) {
-                            echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
+                            echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
                                 echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
                                     echo "<tr>\n";
                                         if ($parentcount > 1) {
@@ -497,7 +496,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                             echo "</td>\n";
                                         }
                                         echo "<td class=\"lightback normal\">\n";
-                                            echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none\"><a href=\"#\" onclick=\"return unlinkChild('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
+                                            echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkChild('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
                                             echo "<table class=\"normal\">";
                                                 echo "<tr>";
                                                     echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
@@ -511,7 +510,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
 
                                                 $parent['sealplace'] = preg_replace("/\"/", "&#34;", $parent['sealplace']);
                                                 if ($rights['lds']) {
-                                                    $citquery = "SELECT citationID FROM $citations_table WHERE persfamID = \"$personID" . "::" . "{$parent['familyID']}\" AND gedcom = \"$tree\"";
+                                                    $citquery = "SELECT citationID FROM $citations_table WHERE persfamID = \"$personID" . "::" . "{$parent['familyID']}\" AND gedcom = '$tree'";
                                                     $citresult = tng_query($citquery) or die ($admtext['cannotexecutequery'] . ": $citquery");
                                                     $citesicon = tng_num_rows($citresult) ? "admin-cite-on-icon" : "admin-cite-off-icon";
                                                     tng_free_result($citresult);
@@ -523,7 +522,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                                         echo "<td colspan=\"2\">&nbsp;</td>";
                                                     echo "</tr>\n";
                                                     echo "<tr>\n";
-                                                        echo "<td valign=\"top\" class=\"nw\" style=\"width:110px\">" . $admtext['SLGC'] . ":</td>\n";
+                                                        echo "<td valign=\"top\" class=\"nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
                                                         echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
                                                         echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
                                                         echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "',1);\" title=\"{$admtext['find']}\" class=\"smallicon admin-temp-icon\"></a></td>\n";
@@ -548,7 +547,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
             </tr>
             <?php
             $sortclause = $self ? " ORDER BY $spouseorder" : "";
-            $query = "SELECT husband, wife, familyID, marrdate FROM $families_table WHERE ($families_table.husband = \"$personID\" OR $families_table.wife = \"$personID\") AND gedcom = \"$tree\"$sortclause";
+            $query = "SELECT husband, wife, familyID, marrdate FROM $families_table WHERE ($families_table.husband = \"$personID\" OR $families_table.wife = \"$personID\") AND gedcom = '$tree'$sortclause";
             $marriages = tng_query($query);
             $marrcount = tng_num_rows($marriages);
 
@@ -556,7 +555,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
             <tr class="databack"> <!-- Collapsible section - Spouses -->
                 <td class="tngshadow">
                     <?php
-                    $display = !$row['sex'] || $row['sex'] == "U" ? " style=\"display:none\"" : "";
+                    $display = !$row['sex'] || $row['sex'] == "U" ? " style=\"display:none;\"" : "";
                     $newspouse = $allow_add && (!$assignedtree || $assignedtree == $tree) ? "&nbsp; <input type=\"button\"$display id=\"addnewspouse\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"return addNewFamily('$self','$self=$personID&tree=$tree&cw=$cw');\">\n" : "";
                     echo displayToggle("plus3", 1, "spouses", $admtext['spouses'] . " (<span id=\"marrcount\">$marrcount</span>)", "", $newspouse);
                     ?>
@@ -575,7 +574,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                     }
                                 }
 
-                                echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
+                                echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
                                     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
                                         echo "<tr>\n";
                                             if ($marrcount > 1) {
@@ -588,14 +587,14 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                                     echo "<tr>";
                                                         echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                                                         echo "<td valign=\"top\" width=\"94%\">\n";
-                                                            echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none\">";
+                                                            echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\">";
                                                                 echo "<a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a>";
                                                             echo "</div>\n";
                                                             echo "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=$cw\">{$marriagerow['familyID']}</a>\n";
                                                         echo "</td>";
                                                     echo "</tr>";
                                                     if ($marriagerow[$spouse]) {
-                                                        $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, living, private FROM $people_table WHERE personID = \"{$marriagerow[$spouse]}\" AND gedcom = \"$tree\"";
+                                                        $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, living, private FROM $people_table WHERE personID = \"{$marriagerow[$spouse]}\" AND gedcom = '$tree'";
                                                         $spouseresult = tng_query($query);
                                                         $spouserow = tng_fetch_assoc($spouseresult);
 
@@ -618,7 +617,10 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                                     <?php
                                                     }
 
-                                                    $query = "SELECT $people_table.personID as pID, firstname, lnprefix, lastname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, haskids, living, private, branch, prefix, suffix, nameorder, frel, mrel FROM ($people_table, $children_table) WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"{$marriagerow['familyID']}\" AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\" ORDER BY ordernum";
+                                                    $query = "SELECT people.personID AS pID, firstname, lnprefix, lastname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, haskids, living, private, branch, prefix, suffix, nameorder, frel, mrel ";
+                                                    $query .= "FROM ($people_table people, $children_table children) ";
+                                                    $query .= "WHERE people.personID = children.personID AND children.familyID = \"{$marriagerow['familyID']}\" AND people.gedcom = '$tree' AND children.gedcom = '$tree' ";
+                                                    $query .= "ORDER BY ordernum";
                                                     $children = tng_query($query);
 
                                                     if ($children && tng_num_rows($children)) {

@@ -51,16 +51,26 @@ if ($tree) {
   $join = "LEFT JOIN";
 }
 
-$query = "SELECT repoID, reponame, $repositories_table.gedcom as gedcom, treename FROM $repositories_table $join $trees_table on $repositories_table.gedcom = $trees_table.gedcom $wherestr ORDER BY reponame LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT repoID, reponame, repositories.gedcom AS gedcom, treename ";
+$query .= "FROM $repositories_table repositories ";
+$query .= "$join $trees_table trees ON repositories.gedcom = trees.gedcom ";
+$query .= "$wherestr ";
+$query .= "ORDER BY reponame ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
   if ($tree) {
-    $query = "SELECT count(repoID) as scount FROM $repositories_table LEFT JOIN $trees_table on $repositories_table.gedcom = $trees_table.gedcom $wherestr";
+    $query = "SELECT count(repoID) AS scount ";
+    $query .= "FROM $repositories_table repositories ";
+    $query .= "LEFT JOIN $trees_table trees ON repositories.gedcom = trees.gedcom ";
+    $query .= "$wherestr";
   } else {
-    $query = "SELECT count(repoID) as scount FROM $repositories_table $wherestr";
+    $query = "SELECT count(repoID) AS scount ";
+    $query .= "FROM $repositories_table repositories ";
+    $query .= "$wherestr";
   }
   $result2 = tng_query($query);
   $row = tng_fetch_assoc($result2);
@@ -76,7 +86,7 @@ $logstring = "<a href=\"$browserepos_url" . "tree=$tree&amp;offset=$offset&amp;r
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top}</style>\n";
+$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top;}</style>\n";
 tng_header($text['repositories'], $flags);
 ?>
 
@@ -102,11 +112,11 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if ($sitever != "standard") {
   if ($tabletype == "toggle") {
-    $header = "<table style=\"width: 100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+    $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
   } elseif ($tabletype == "stack") {
-    $header = "<table style=\"width: 100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+    $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
   } elseif ($tabletype == "swipe") {
-    $header = "<table style=\"width: 100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+    $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
   }
 } else {
   $header = "<table class=\"whiteback normal\">";

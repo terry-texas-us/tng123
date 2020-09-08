@@ -81,8 +81,8 @@ global $text, $currentuser, $cms, $allow_admin, $subroot, $tmp;
 <?php
 # this allows two different classes for the main index page and regular TNG pages
 if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false) {
-  echo "<td class=\"mainbg\" colspan=\"3\" style=\"border-collapse:separate\">";
+  echo "<td class=\"mainbg\" colspan=\"3\" style=\"border-collapse:separate;\">";
 } else {
-  echo "<td colspan=\"3\" style=\"border-collapse:separate\">";
+  echo "<td colspan=\"3\" style=\"border-collapse:separate;\">";
 }
 ?>

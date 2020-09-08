@@ -10,7 +10,7 @@ include "checklogin.php";
 include "version.php";
 
 if ($ID) {
-    $query = "SELECT mostwanted.title as title, mostwanted.personID as personID, mostwanted.description as description, mostwanted.mediaID as mediaID, mostwanted.gedcom as gedcom, mwtype, thumbpath, usecollfolder, media.description as mtitle, media.notes as mdesc, mediatypeID ";
+    $query = "SELECT mostwanted.title AS title, mostwanted.personID AS personID, mostwanted.description AS description, mostwanted.mediaID AS mediaID, mostwanted.gedcom AS gedcom, mwtype, thumbpath, usecollfolder, media.description AS mtitle, media.notes AS mdesc, mediatypeID ";
     $query .= "FROM $mostwanted_table mostwanted ";
     $query .= "LEFT JOIN $media_table media ON mostwanted.mediaID = media.mediaID ";
     $query .= "LEFT JOIN $people_table people ON mostwanted.personID = people.personID ";
@@ -42,11 +42,11 @@ header("Content-type:text/html; charset=" . $session_charset);
         <table class="normal">
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>
-                <td><input type="text" name="title" size="60" maxlength="128" value="<?php echo $row['title']; ?>" style="width: 100%"></td>
+                <td><input type="text" name="title" size="60" maxlength="128" value="<?php echo $row['title']; ?>" style="width: 100%;"></td>
             </tr>
             <tr>
                 <td><?php echo $admtext['description']; ?>:</td>
-                <td><textarea name="description" rows="4" cols="60" style="width: 100%"><?php echo $row['description']; ?></textarea></td>
+                <td><textarea name="description" rows="4" cols="60" style="width: 100%;"><?php echo $row['description']; ?></textarea></td>
             </tr>
             <tr>
                 <td><?php echo $admtext['tree']; ?>:</td>
@@ -81,10 +81,10 @@ header("Content-type:text/html; charset=" . $session_charset);
             <tr>
                 <td><?php echo $admtext['person']; ?>:</td>
                 <td>
-                    <div style="float: left">
+                    <div style="float: left;">
                         <input id="personID" name="personID" type="text" value="<?php echo $row['personID']; ?>" placeholder="<?php echo $admtext['enterpersonid']; ?>">
-                        <span style="padding: 0.5em"><?php echo $admtext['text_or']; ?></span>
-                        <a href="#" class="smallicon admin-find-icon" title="<?php echo $admtext['find']; ?>" style="float: right"
+                        <span style="padding: 0.5em;"><?php echo $admtext['text_or']; ?></span>
+                        <a href="#" class="smallicon admin-find-icon" title="<?php echo $admtext['find']; ?>" style="float: right;"
                            onclick="return findItem('I', 'personID', '', document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value, '<?php echo $assignedbranch; ?>');"></a>
                     </div>
 
@@ -94,7 +94,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         <br><input type="button" value="<?php echo $admtext['selphoto']; ?>"
                    onclick="return openMostWantedMediaFind(document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value);">
         <div id="mwphoto">
-            <table style="padding-top:6px">
+            <table style="padding-top:6px;">
                 <tr>
                     <td class="lightback" id="mwthumb" style="width:<?php echo($thumbmaxw + 6); ?>px;height:<?php echo($thumbmaxh + 6); ?>px;text-align:center;">
                         <?php

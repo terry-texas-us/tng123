@@ -8,7 +8,7 @@ echo help_header("Pomoc: Albumy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="collections_help.php" class="lightlink">&laquo; Pomoc: Kolekcje</a> &nbsp; | &nbsp;
@@ -41,7 +41,7 @@ echo help_header("Pomoc: Albumy");
     <tr class="databack">
       <td class="tngshadow">
 
-        <p style="float:right"><a href="#top">Wróć</a></p>
+        <p style="float:right;"><a href="#top">Wróć</a></p>
         <a name="add"><p class="subheadbold">Dodawanie nowych albumów</p></a>
         <p><strong>Album</strong> w TNG jest grupą mediów. Album może zawierać dowolną liczbę mediów, pojedyncze media mogą należeć do wielu albumów.
           Podobnie jak poszczególne media, albumy mogą być połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami.</p>
@@ -65,7 +65,7 @@ echo help_header("Pomoc: Albumy");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Wróć</a></p>
+      <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="edit"><p class="subheadbold">Edycja istniejących albumów</p></a>
             <p>Aby wprowadzić zmiany do istniejącego albumu, należy nacisnąć przycisk <a href="#search">Szukaj</a> aby znaleźć album, a następnie kliknąć na ikonkę Edycja obok tego albumu.
                 Następujących elementów nie ma na karcie "dodaj nowy album ":</p>
@@ -102,7 +102,7 @@ echo help_header("Pomoc: Albumy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="delete"><p class="subheadbold">Usuwanie albumów</p></a>
             <p>Aby usunąć album, wybierz kartę <a href="#search">Szukaj</a> w celu lokalizacji albumu, a następnie kliknij ikonę "Usuń" obok wybranego albumu.
                 Wiersz zmieni kolor, a następnie zostanie usunięty.</p>
@@ -112,7 +112,7 @@ echo help_header("Pomoc: Albumy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Wróć</a></p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
             <a name="sort"><p class="subheadbold">Sortowanie albumów</p></a>
             <p>Domyślnie albumy połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami są sortowane według kolejności, w jakiej zostały połączone z danym podmiotem.
                 Aby zmienić tę kolejność, należy przejść na kartę "Sortuj".</p>

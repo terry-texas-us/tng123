@@ -79,7 +79,7 @@ $today = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $dt_consented = $tng_user_consent ? $today : "";
 
 if ($tngconfig['autotree']) {
-  $query = "SELECT MAX(0+SUBSTRING(gedcom,5)) as oldID FROM $trees_table WHERE gedcom LIKE \"tree%\"";
+  $query = "SELECT MAX(0+SUBSTRING(gedcom,5)) AS oldID FROM $trees_table WHERE gedcom LIKE \"tree%\"";
   $result = tng_query($query);
   if (tng_num_rows($result)) {
     $maxrow = tng_fetch_array($result);

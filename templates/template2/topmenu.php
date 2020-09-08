@@ -64,7 +64,7 @@
             </table>
         </td>
         <td valign="top" align="right">
-            <form action="search.php" method="get" id="topsearch" style="margin:0">
+            <form action="search.php" method="get" id="topsearch" style="margin:0;">
                 <table cellspacing="0">
                     <tr>
                         <td class="topmenu">
@@ -74,7 +74,7 @@
               <?php echo $text['lastname']; ?>: <br><input type="text" name="mylastname" size="10" class="searchbox"><br>
               <input type="hidden" name="mybool" value="AND">
             </td>
-            <td><br><br><input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button-header.jpg" style="border:none" class="menusubmit"></td>
+            <td><br><br><input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button-header.jpg" style="border:none;" class="menusubmit"></td>
           </tr>
         </table>
       </form>

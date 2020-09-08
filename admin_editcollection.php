@@ -35,7 +35,7 @@ initMediaTypes();
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div class="databack normal" style="margin:10px;border:0" id="editcollection">
+<div class="databack normal" style="margin:10px;border:0;" id="editcollection">
     <p class="subhead"><strong><?php echo $admtext['editcoll']; ?></strong> |
       <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
 

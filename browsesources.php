@@ -53,22 +53,29 @@ if ($tree) {
   $join = "LEFT JOIN";
 }
 
-$query = "SELECT sourceID, title, shorttitle, author, $sources_table.gedcom as gedcom, treename FROM $sources_table $join $trees_table on $sources_table.gedcom = $trees_table.gedcom $wherestr ORDER BY title LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT sourceID, title, shorttitle, author, sources.gedcom AS gedcom, treename ";
+$query .= "FROM $sources_table sources ";
+$query .= "$join $trees_table trees ON sources.gedcom = trees.gedcom ";
+$query .= "$wherestr ";
+$query .= "ORDER BY title ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  if ($tree) {
-    $query = "SELECT count(sourceID) as scount FROM $sources_table LEFT JOIN $trees_table on $sources_table.gedcom = $trees_table.gedcom $wherestr";
-  } else {
-    $query = "SELECT count(sourceID) as scount FROM $sources_table $wherestr";
-  }
-  $result2 = tng_query($query);
-  $row = tng_fetch_assoc($result2);
-  $totrows = $row['scount'];
+
+    $query = "SELECT count(sourceID) AS scount ";
+    $query .= "FROM $sources_table sources ";
+    if ($tree) {
+        $query .= "LEFT JOIN $trees_table trees ON sources.gedcom = trees.gedcom ";
+    }
+    $query .= "$wherestr";
+    $result2 = tng_query($query);
+    $row = tng_fetch_assoc($result2);
+    $totrows = $row['scount'];
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $numrowsplus = $numrows + $offset;
@@ -103,11 +110,11 @@ $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
 
 if ($sitever != "standard") {
   if ($tabletype == "toggle") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
+    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
   } elseif ($tabletype == "stack") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
+    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
   } elseif ($tabletype == "swipe") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
+    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
   }
 } else {
   $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n" . $header;

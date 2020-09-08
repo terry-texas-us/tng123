@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp; | &nbsp;
@@ -56,7 +56,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="operation">
@@ -83,7 +83,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="status">
@@ -106,7 +106,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="syntax">
@@ -133,7 +133,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right">
+            <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
             <a name="files">
@@ -164,7 +164,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="batch"><p class="subheadbold">D�vkov� instalace</p></a>
 
             <p>D�vkov� instalace umo�n� prov�st specifick� akce t�kaj�c� se n�kolika m�d� pomoc� v�b�ru filtru. Z filtru seznamu stav� vyberte po�adovan� stav a kliknut�m na Prov�st zobraz�te
@@ -197,7 +197,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="options"><p class="subheadbold">Mo�nosti</p></a>
 
             <p>Mo�nosti v�m umo�n� specifikovat chov�n� mana�eru m�d� v p��pad�

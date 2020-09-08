@@ -61,10 +61,11 @@ if ($addressID) {
   $addressID = tng_insert_id();
 }
 
-$query = "UPDATE $events_table SET eventdate=\"$eventdate\", eventdatetr=\"$eventdatetr\", eventplace=\"$eventplace\", age=\"$age\", agency=\"$agency\", cause=\"$cause\", addressID=\"$addressID\", info=\"$info\" WHERE eventID=\"$eventID\"";
+$query = "UPDATE $events_table SET eventdate=\"$eventdate\", eventdatetr=\"$eventdatetr\", eventplace=\"$eventplace\", age=\"$age\", agency=\"$agency\", cause=\"$cause\", addressID=\"$addressID\", info=\"$info\" WHERE eventID = '$eventID'";
 $result = tng_query($query);
 
-$query = "SELECT display, $events_table.eventtypeID as eventtypeID, addressID FROM $eventtypes_table, $events_table WHERE $eventtypes_table.eventtypeID = $events_table.eventtypeID AND eventID = \"$eventID\"";
+$query = "SELECT display, events.eventtypeID AS eventtypeID, addressID ";
+$query .= "FROM $eventtypes_table eventtypes, $events_table events WHERE eventtypes.eventtypeID = events.eventtypeID AND eventID = '$eventID'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);

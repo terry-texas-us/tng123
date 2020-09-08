@@ -94,7 +94,7 @@ foreach ($events as $event)
         </table>
         <?php echo displayToggle("plus9", 0, "more", $admtext['more'], ""); ?>
         <br>
-        <div id="more" style="display:none">
+        <div id="more" style="display:none;">
             <table cellpadding="2" class="normal">
                 <tr>
                     <td><?php echo $admtext['age']; ?>:</td>

@@ -22,7 +22,7 @@ tng_adminheader($admtext['adminlogfile'], "");
 
 <body background="img/background.gif">
 <div width="100%" class="lightback">
-    <div style="padding:10px" class="databack normal">
+    <div style="padding:10px;" class="databack normal">
         <p class="plainheader"><?php echo "$loglines " . $admtext['mostrecentactions']; ?></p>
       <table cellpadding="3" cellspacing="1" class="normal">
         <tr>

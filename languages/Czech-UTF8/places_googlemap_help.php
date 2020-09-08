@@ -12,7 +12,7 @@ echo help_header("Nápověda: Google Maps");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
@@ -38,7 +38,7 @@ echo help_header("Nápověda: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="search"><p class="subheadbold">Hledat</p></a>
             <p>Google Map Geocoder vám umožní nalézt souřadnice zeměpisné šířky a délky pro název místa při použití pole Geokódovat umístění jako vstupního pole.
                 Pro vyhledání souřadnic můžete také využít aplikaci Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>).</p>
@@ -93,7 +93,7 @@ echo help_header("Nápověda: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="controls"><p class="subheadbold">Ovládací prvky Google Maps</p></a>
 
             <span class="optionhead">Bod / Klik</span>
@@ -113,7 +113,7 @@ echo help_header("Nápověda: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="help"><p class="subheadbold">Nápověda Google Maps</p></a>
 
             <p>Další nápovědu najdete na <a href="http://www.google.com/apis/maps/documentation/" target="_blank">Google Maps API</a>.</p>

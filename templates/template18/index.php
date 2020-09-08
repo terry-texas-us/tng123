@@ -114,7 +114,7 @@ $momlabel = getTemplateMessage('t18_momside');
                   <br>
                   <input type="hidden" name="mybool" value="AND">
                 </div>
-                <div style="display:inline-block;vertical-align:top;padding:15px">
+                <div style="display:inline-block;vertical-align:top;padding:15px;">
                   <input type="submit" id="search-submit" class="btn" value="<?php echo $text['search']; ?>">
                   <br><br>
                   <ul class="home-menus">
@@ -182,7 +182,7 @@ $momlabel = getTemplateMessage('t18_momside');
             </li>
         </ul>
     </div>
-    <div style="clear:left"></div>
+    <div style="clear:left;"></div>
 </div>
 <div class="tblock" id="big-block-3">
     <h2><a href="<?php echo $tmp['t18_featurelink2']; ?>" title=""><?php echo getTemplateMessage('t18_featuretitle2'); ?></a></h2>
@@ -200,7 +200,7 @@ $momlabel = getTemplateMessage('t18_momside');
           ?>
         </div>
     </div>
-    <div style="clear:left"></div>
+    <div style="clear:left;"></div>
 </div>
 <div id="tfooter">
     <div class="other-features">
@@ -246,7 +246,7 @@ $momlabel = getTemplateMessage('t18_momside');
           ?>
         </ul>
     </div>
-    <div style="clear:left"></div>
+    <div style="clear:left;"></div>
 </div>
 <div id="subfooter">
   <?php

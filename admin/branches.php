@@ -11,7 +11,7 @@
 function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $row, string $assignedbranch): string {
     global $admtext;
 
-    $query = "SELECT branch, description FROM {$branches_table} WHERE gedcom = \"{$tree}\" ORDER BY description";
+    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"{$tree}\" ORDER BY description";
     $branchresult = tng_query($query);
     $branchlist = explode(",", $row['branch']);
 
@@ -34,7 +34,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         }
         $selectnum = $totbranches < 8 ? $totbranches : 8;
         $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
-        $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
+        $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
         $select .= "	<option value=\"\"";
         if ($row == "") {
             $select .= " selected";
@@ -42,7 +42,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         $select .= ">{$admtext['nobranch']}</option>\n";
 
         $select .= "$options</select>\n";
-        $html .= " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">{$admtext['edit']}</a> )</span><br>";
+        $html .= " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">{$admtext['edit']}</a> )</span><br>";
         $html .= "<div id=\"branchedit\" class=\"lightback pad5\" style=\"position:absolute;display:none;\" onmouseover=\"clearTimeout(branchtimer);\" onmouseout=\"closeBranchEdit('branch','branchedit','branchlist');\">";
         $html .= $select;
         $html .= "</div>\n";

@@ -115,5 +115,5 @@ adminwritelog("{$admtext['genthumbs']}: {$admtext['thumbsgenerated']}: $count; {
 
 echo "<p><strong>{$admtext['thumbsgenerated']}:</strong> $count<br><strong>{$admtext['recsupdated']}:</strong> $updated</p>";
 if ($conflicts) {
-  echo "<p><strong>" . $admtext['thumbconflicts'] . ":</strong> $conflicts</p><p style=\"line-height:1.5\">$conflictstr</p>";
+  echo "<p><strong>" . $admtext['thumbconflicts'] . ":</strong> $conflicts</p><p style=\"line-height:1.5;\">$conflictstr</p>";
 }

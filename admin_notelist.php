@@ -2,12 +2,14 @@
 include "begin.php";
 include $subroot . "mapconfig.php";
 include "adminlib.php";
+require_once "./core/sql/extractWhereClause.php";
 $textpart = "notes";
 include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
+
 $orgtree = $tree;
 $exptime = 0;
 
@@ -49,38 +51,36 @@ if ($offset) {
     $tngpage = 1;
 }
 
+$treequery = "SELECT gedcom, treename ";
+$treequery .= "FROM $trees_table ";
 if ($assignedtree) {
-    $tree = $assignedtree;
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
-} else {
-    $wherestr = "";
+    $treequery .= "WHERE gedcom = '$assignedtree' ";
 }
-$treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
+$treequery .= "ORDER BY treename";
 
-$wherestr = "WHERE $xnotes_table.ID = $notelinks_table.xnoteID";
-
+$query = "SELECT xnotes.ID AS ID, xnotes.note AS note, xnotes.gedcom AS gedcom ";
+$query .= "FROM $xnotes_table xnotes, $notelinks_table notelinks ";
+$query .= "WHERE xnotes.ID = notelinks.xnoteID ";
 if ($tree) {
-    $wherestr .= " AND $xnotes_table.gedcom = \"$tree\"";
+    $query .= "AND xnotes.gedcom = '$tree' ";
 }
-
 if ($private) {
-    $wherestr .= " AND $notelinks_table.secret != 0";
+    $query .= "AND notelinks.secret != 0 ";
 }
-
 if ($searchstring) {
-    $wherestr .= $wherestr ? " AND" : "WHERE";
-    $wherestr .= " ($xnotes_table.note LIKE '%" . $searchstring . "%')";
+    $query .= "AND (xnotes.note LIKE '%$searchstring%') ";
 }
-
-$query = "SELECT $xnotes_table.ID as ID, $xnotes_table.note as note, $xnotes_table.gedcom as gedcom
-	FROM ($xnotes_table, $notelinks_table)" . $wherestr . " ORDER BY note LIMIT $newoffset" . $maxsearchresults;
+$query .= "ORDER BY note ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count($xnotes_table.ID) as scount FROM ($xnotes_table, $notelinks_table) " . $wherestr;
-    $result2 = tng_query($query);
+    $query2 = "SELECT count(xnotes.ID) AS scount ";
+    $query2 .= "FROM ($xnotes_table xnotes, $notelinks_table notelinks) ";
+    $query2 .= extractWhereClause($query);
+    $result2 = tng_query($query2);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['scount'];
     tng_free_result($result2);
@@ -96,7 +96,7 @@ tng_adminheader($admtext['notes'], $flags);
 <script type="text/javascript">
     function validateForm() {
         let rval = true;
-        if (document.form1.searchstring.value.length == 0) {
+        if (document.form1.searchstring.value.length === 0) {
             alert("<?php echo $admtext['entersearchvalue']; ?>");
             rval = false;
         }
@@ -115,7 +115,7 @@ tng_adminheader($admtext['notes'], $flags);
     }
 </script>
 <script type="text/javascript" src="js/admin.js"></script>
-</head>
+<?php echo "</head>"; ?>
 
 <body background="img/background.gif">
 
@@ -222,7 +222,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                 echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
 
-                            $query = "SELECT $notelinks_table.ID, $notelinks_table.persfamID as personID, $notelinks_table.gedcom, secret
+                            $query = "SELECT $notelinks_table.ID, $notelinks_table.persfamID AS personID, $notelinks_table.gedcom, secret
 				FROM $notelinks_table
 				WHERE $notelinks_table.xnoteID = \"{$row['ID']}\" ";
 

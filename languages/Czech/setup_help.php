@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Nastaven�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="second_help.php" class="lightlink">&laquo; N�pov�da: Druhotn� procesy</a> &nbsp; | &nbsp;
@@ -38,7 +38,7 @@ echo help_header("N�pov�da: Nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="diag"><p class="subheadbold">Diagnostika</p></a>
 
             <span class="optionhead">Spustit diagnostiku</span>
@@ -54,7 +54,7 @@ echo help_header("N�pov�da: Nastaven�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="diag"><p class="subheadbold">Vytvo�en� tabulek</p></a>
 
             <span class="optionhead">Vytvo�it tabulky</span>

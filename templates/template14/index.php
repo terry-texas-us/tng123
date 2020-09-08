@@ -198,11 +198,11 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
 
                         <div id="linkarea">
                             <ul class="left-indent">
-                                <li class="linkcol" id="otherarea" style="width:25%">
+                                <li class="linkcol" id="otherarea" style="width:25%;">
                                     <h2 class="site-head"><?php echo $text['mnufeatures']; ?></h2>
                                   <hr class="bottomhr">
                                 </li>
-                              <li class="linkcol" style="width:75%">
+                              <li class="linkcol" style="width:75%;">
                                 <ul class="fancy_list">
                                   <li><a href="whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a></li>
                                         <li><a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a></li>
@@ -252,7 +252,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
         </div>
   </div>
 
-    <div class="art-nav" style="margin-top:0">
+    <div class="art-nav" style="margin-top:0;">
         <div class="art-nav-outer">
             <div class="art-nav-wrapper">
                 <div class="art-nav-inner">

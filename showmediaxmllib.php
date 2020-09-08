@@ -2,7 +2,7 @@
 if ($medialinkID) {
   //look up media & medialinks joined
   //get info for linked person/family/source/repo
-  $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom as gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
+  $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom AS gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);
   $personID = $row['personID'];
@@ -18,7 +18,7 @@ if ($medialinkID) {
   $eventID = $row['eventID'];
 } else {
   if ($albumlinkID) {
-    $query = "SELECT albumname, description, ordernum, $albums_table.albumID as albumID FROM ($albums_table, $albumlinks_table)
+    $query = "SELECT albumname, description, ordernum, $albums_table.albumID AS albumID FROM ($albums_table, $albumlinks_table)
 			WHERE albumlinkID = \"$albumlinkID\" AND $albumlinks_table.albumID = $albums_table.albumID";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);

@@ -18,7 +18,7 @@ include $subroot . "importconfig.php";
 require "adminlog.php";
 
 if (!$allow_ged && $assignedtree) {
-    $query = "SELECT disallowgedcreate FROM {$trees_table} WHERE gedcom = \"{$assignedtree}\"";
+    $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = '$assignedtree}'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $disallowgedcreate = $row['disallowgedcreate'];
@@ -242,13 +242,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         function getNotes($id) {
             global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $xnotes;
 
-            $query = "SELECT $notelinks_table.ID as ID, secret, $xnotes_table.note as note, $xnotes_table.noteID as noteID, $notelinks_table.eventID
-		FROM $notelinks_table
-		LEFT JOIN  $xnotes_table on $notelinks_table.xnoteID = $xnotes_table.ID AND $notelinks_table.gedcom = $xnotes_table.gedcom
-		LEFT JOIN $events_table ON $notelinks_table.eventID = $events_table.eventID
-		LEFT JOIN $eventtypes_table on $eventtypes_table.eventtypeID = $events_table.eventtypeID
-		WHERE $notelinks_table.persfamID=\"$id\" AND $notelinks_table.gedcom =\"$tree\"
-		ORDER BY eventdatetr, $eventtypes_table.ordernum, tag, $notelinks_table.ordernum, ID";
+            $query = "SELECT notelinks.ID AS ID, secret, xnotes.note AS note, xnotes.noteID AS noteID, notelinks.eventID ";
+            $query .= "FROM $notelinks_table notelinks ";
+            $query .= "LEFT JOIN $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
+            $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
+            $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
+            $query .= "WHERE notelinks.persfamID=\"$id\" AND notelinks.gedcom =\"$tree\" ";
+            $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
             $notelinks = tng_query($query);
             $notearray = array();
             while ($notelink = tng_fetch_assoc($notelinks)) {
@@ -374,7 +374,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 if ($xnotes) {
                     $xnoteinfo = "";
                     foreach ($xnotes as $xnote) {
-                        $query = "SELECT note, noteID FROM {$xnotes_table} WHERE gedcom =\"$tree\" AND noteID = \"$xnote\" ORDER BY noteID";
+                        $query = "SELECT note, noteID FROM $xnotes_table WHERE gedcom =\"$tree\" AND noteID = \"$xnote\" ORDER BY noteID";
                         $xnotearray = tng_query($query);
                         $xnotetxt = tng_fetch_assoc($xnotearray);
                         $xnotestr .= writeXNote($xnotetxt);
@@ -384,7 +384,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             } else {
                 $prefixlen = strlen($tngconfig['noteprefix']) + 1;
 
-                $query = "SELECT note, noteID, (0+SUBSTRING(noteID,$prefixlen)) as num FROM {$xnotes_table} ";
+                $query = "SELECT note, noteID, (0+SUBSTRING(noteID,$prefixlen)) AS num FROM $xnotes_table ";
                 $query .= "WHERE gedcom =\"{$tree}\" AND noteID != \"\" {$savestate['wherestr']} ORDER BY num";
                 $xnotearray = tng_query($query);
                 while ($xnotetxt = tng_fetch_assoc($xnotearray)) {
@@ -674,13 +674,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 }
                 //if $doit still false, loop through children to see if sealing needs to be done for any of them
                 if (!$doit) {
-                    $query = "SELECT personID, sealdate, sealplace from $children_table WHERE gedcom = \"$tree\" AND familyID = \"{$spouse['familyID']}\"";
+                    $query = "SELECT personID, sealdate, sealplace FROM $children_table WHERE gedcom = \"$tree\" AND familyID = \"{$spouse['familyID']}\"";
                     $children = tng_query($query);
                     if ($children) {
                         while (!$doit && $child = tng_fetch_assoc($children)) {
                             if (!$child['sealdate'] && !$child['sealplace']) {
                                 //make sure child is eligible
-                                $query = "SELECT birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdatetr, burialdatetr from $people_table WHERE gedcom = \"$tree\" AND personID = \"{$child['personID']}\"$exlivingstr$exprivatestr";
+                                $query = "SELECT birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdatetr, burialdatetr FROM $people_table WHERE gedcom = \"$tree\" AND personID = \"{$child['personID']}\"$exlivingstr$exprivatestr";
                                 $childresult = tng_query($query);
                                 $childind = tng_fetch_assoc($childresult);
                                 $doit = getEligibility($childind);
@@ -694,9 +694,10 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             tng_free_result($result2);
 
             $childdata = "";
-            $query = "SELECT sealdate, sealplace, $people_table.personID as personID, familyID, $people_table.gedcom as gedcom 
-		FROM $children_table, $people_table 
-		WHERE $children_table.gedcom = \"$tree\" AND $children_table.personID = \"{$ind['personID']}\" AND $children_table.gedcom = $people_table.gedcom AND $children_table.personID = $people_table.personID$branchstr ORDER BY parentorder";
+            $query = "SELECT sealdate, sealplace, $people_table.personID AS personID, familyID, $people_table.gedcom AS gedcom ";
+            $query .= "FROM $children_table, $people_table ";
+            $query .= "WHERE $children_table.gedcom = \"$tree\" AND $children_table.personID = \"{$ind['personID']}\" AND $children_table.gedcom = $people_table.gedcom AND $children_table.personID = $people_table.personID$branchstr ";
+            $query .= "ORDER BY parentorder";
             $children = tng_query($query);
             if ($children) {
                 while ($child = tng_fetch_assoc($children)) {
@@ -1137,7 +1138,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     $numstr = "(0+SUBSTRING_INDEX(sourceID,\"{\$tngconfig['sourcesuffix']}\",1))";
                 }
 
-                $srcquery = "SELECT *, $numstr as num FROM $sources_table WHERE gedcom = \"$tree\" {$savestate['wherestr']} ORDER BY num";
+                $srcquery = "SELECT *, $numstr AS num FROM $sources_table WHERE gedcom = \"$tree\" {$savestate['wherestr']} ORDER BY num";
                 $srcresult = tng_query($srcquery) or die ($admtext['cannotexecutequery'] . ": $query");
                 while ($source = tng_fetch_assoc($srcresult)) {
                     $sourcestr .= writeSource($source);
@@ -1240,7 +1241,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     $numstr = "(0+SUBSTRING_INDEX(repoID,\"{\$tngconfig['reposuffix']}\",1))";
                 }
 
-                $repoquery = "SELECT *, $numstr as num FROM $repositories_table WHERE gedcom = \"$tree\" {$savestate['wherestr']} ORDER BY num";
+                $repoquery = "SELECT *, $numstr AS num FROM $repositories_table WHERE gedcom = \"$tree\" {$savestate['wherestr']} ORDER BY num";
                 $reporesult = tng_query($repoquery) or die ($admtext['cannotexecutequery'] . ": $query");
 
                 while ($repo = tng_fetch_assoc($reporesult)) {
@@ -1335,7 +1336,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 }
                 tng_free_result($result);
 
-                $query = "SELECT $medialinks_table.personID as place, $places_table.notes as notes, latitude, longitude
+                $query = "SELECT $medialinks_table.personID AS place, $places_table.notes AS notes, latitude, longitude
 	        FROM ($places_table, $medialinks_table)
 	        WHERE linktype = \"L\" $treestr AND $places_table.place = $medialinks_table.personID $jtreestr";
                 $result = @tng_query($query) or die($admtext['cannotexecutequery'] . ": $query");
@@ -1405,7 +1406,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         //if saving is enabled and URL flag is set, check the db table to see if a record exists
         if ($saveimport) {
             if ($resume) {
-                $checksql = "SELECT filename, offset, lasttype, lastid, icount, fcount, scount, ncount, rcount, mcount, pcount, media from $saveimport_table WHERE gedcom = \"$tree\"";
+                $checksql = "SELECT filename, offset, lasttype, lastid, icount, fcount, scount, ncount, rcount, mcount, pcount, media FROM $saveimport_table WHERE gedcom = \"$tree\"";
                 $result = @tng_query($checksql) or die ($admtext['cannotexecutequery'] . ": $checksql");
                 $found = tng_num_rows($result);
                 if ($found) {
@@ -1460,7 +1461,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 }
                 tng_free_result($result);
             } else {
-                $query = "DELETE from $saveimport_table WHERE gedcom = \"$tree\"";
+                $query = "DELETE FROM $saveimport_table WHERE gedcom = \"$tree\"";
                 $result = tng_query($query);
 
                 $sql = "INSERT INTO $saveimport_table (filename, offset, gedcom, media)  VALUES(\"$filename\", 0, \"$tree\", \"$exportmedia\")";
@@ -1542,7 +1543,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     $numstr = "(0+SUBSTRING_INDEX(personID,\"" . $tngconfig['personsuffix'] . "\",1))";
                 }
 
-                $query = "SELECT personID, $numstr as num, lastname, lnprefix, firstname, sex, title, prefix, suffix, nickname, birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace, famc, living, private, branch, DATE_FORMAT(changedate,\"%d %b %Y\") as changedate FROM $people_table
+                $query = "SELECT personID, $numstr AS num, lastname, lnprefix, firstname, sex, title, prefix, suffix, nickname, birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace, famc, living, private, branch, DATE_FORMAT(changedate,\"%d %b %Y\") AS changedate FROM $people_table
 			WHERE gedcom = \"$tree\"$branchstr$exlivingstr$exprivatestr {$savestate['wherestr']} ORDER BY num LIMIT $nextone, $largechunk";
                 $result = tng_query($query);
                 if ($result) {
@@ -1579,7 +1580,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     $numstr = "(0+SUBSTRING_INDEX(familyID,\"{\$tngconfig['familyprefix']}\",1))";
                 }
 
-                $query = "SELECT *, (0+SUBSTRING(familyID,$prefixlen)) as num, DATE_FORMAT(changedate,\"%d %b %Y\") as changedate FROM $families_table
+                $query = "SELECT *, (0+SUBSTRING(familyID,$prefixlen)) AS num, DATE_FORMAT(changedate,\"%d %b %Y\") AS changedate FROM $families_table
 			WHERE gedcom = \"$tree\"$branchstr {$savestate['wherestr']}$exlivingstr$exprivatestr ORDER BY num LIMIT $nextone, $largechunk";
                 $result = tng_query($query);
                 if ($result) {
@@ -1634,7 +1635,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         @chmod($filename, 0644);
 
         if ($saveimport) {
-            $sql = "DELETE from $saveimport_table WHERE gedcom = \"$tree\"";
+            $sql = "DELETE FROM $saveimport_table WHERE gedcom = \"$tree\"";
             $result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $query");
         }
         ?>

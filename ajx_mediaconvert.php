@@ -32,7 +32,7 @@ function createFolder($base, $dest) {
 }
 
 foreach ($mediatypes_assoc as $type => $path) {
-  $query = "SELECT path, abspath, thumbpath, usecollfolder, gedcom from $media_table 
+  $query = "SELECT path, abspath, thumbpath, usecollfolder, gedcom FROM $media_table 
         WHERE mediatypeID = \"$type\" AND gedcom != \"\" AND (path != \"\" OR thumbpath != \"\") 
         ORDER BY gedcom";
   $result = @tng_query($query);

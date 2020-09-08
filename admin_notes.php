@@ -6,14 +6,15 @@ include "$mylanguage/admintext.php";
 
 include $cms['tngpath'] . "checklogin.php";
 
-$query = "SELECT $eventtypes_table.eventtypeID, tag, display FROM $events_table 
-	LEFT JOIN  $eventtypes_table on $eventtypes_table.eventtypeID = $events_table.eventtypeID 
-	WHERE eventID=\"$eventID\"";
+$query = "SELECT eventtypes.eventtypeID, tag, display ";
+$query .= "FROM $events_table events ";
+$query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
+$query .= "WHERE eventID = '$eventID'";
 $eventtypes = tng_query($query);
 $eventtype = tng_fetch_assoc($eventtypes);
 
 if ($eventtype['display']) {
-    $eventtypedesc = getEventDisplayText($eventtype);
+    $eventtypedesc = getEventDisplay($eventtype['display']);
 } elseif ($eventtype['tag']) {
     $eventtypedesc = $eventtype['tag'];
 } elseif ($eventID) {
@@ -27,8 +28,8 @@ $helplang = findhelp("notes_help.php");
 
 header("Content-type:text/html; charset=" . $session_charset);
 
-$query = "SELECT notelinks.ID as ID, xnotes.note as note, noteID, secret ";
-$query .= "FROM ({$notelinks_table} notelinks, {$xnotes_table} xnotes) ";
+$query = "SELECT notelinks.ID AS ID, xnotes.note AS note, noteID, secret ";
+$query .= "FROM ($notelinks_table notelinks, $xnotes_table xnotes) ";
 $query .= "WHERE notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom AND persfamID=\"{$persfamID}\" AND notelinks.gedcom =\"{$tree}\" AND eventID = \"{$eventID}\" ";
 $query .= "ORDER BY ordernum, ID";
 $notelinks = tng_query($query);
@@ -36,7 +37,7 @@ $notecount = tng_num_rows($notelinks);
 ?>
 
 <div class="databack ajaxwindow" id="notelist"<?php if (!$notecount) {
-    echo " style=\"display:none\"";
+    echo " style=\"display:none;\"";
 } ?>>
     <form name="form1">
         <p class="subhead"><strong><?php echo "{$admtext['notes']}: $eventtypedesc"; ?></strong> |
@@ -48,7 +49,7 @@ $notecount = tng_num_rows($notelinks);
             <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
         </p>
         <table id="notestbl" class="fieldname normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$notecount) {
-            echo " style=\"display:none\"";
+            echo " style=\"display:none;\"";
         } ?>>
             <tbody id="notestblbody">
             <tr>
@@ -63,7 +64,7 @@ $notecount = tng_num_rows($notelinks);
             if ($notelinks && $notecount) {
 
                 while ($note = tng_fetch_assoc($notelinks)) {
-                    $citquery = "SELECT citationID FROM $citations_table WHERE gedcom = \"$tree\" AND ";
+                    $citquery = "SELECT citationID FROM $citations_table WHERE gedcom = '$tree' AND ";
                     if ($note['noteID']) {
                         $citquery .= "((persfamID = \"$persfamID\" AND eventID = \"N{$note['ID']}\") OR persfamID = \"{$note['noteID']}\")";
                     } else {
@@ -94,10 +95,10 @@ $notecount = tng_num_rows($notelinks);
 </div>
 
 <div class="databack ajaxwindow"<?php if ($notecount) {
-    echo " style=\"display:none\"";
+    echo " style=\"display:none;\"";
 } ?> id="addnote">
     <form action="" name="form2" onSubmit="return addNote(this);">
-        <div style="float:right;text-align:center">
+        <div style="float:right;text-align:center;">
             <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
             <p><a href="#" onclick="gotoSection('addnote','notelist');"><?php echo $text['cancel']; ?></a></p>
         </div>

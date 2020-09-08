@@ -124,5 +124,5 @@ global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $med
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <div class="normal" style="border-collapse:separate"><br>
+                      <div class="normal" style="border-collapse:separate;"><br>
                         <!-- topmenu for template 4 -->

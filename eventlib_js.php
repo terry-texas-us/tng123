@@ -5,22 +5,22 @@
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
     var tree = "<?php echo $tree; ?>";
-    var entereventtype = "<?php echo $admtext['entereventtype']; ?>";
-    var entereventinfo = "<?php echo $admtext['entereventinfo']; ?>";
-    var confdeleteevent = "<?php echo $admtext['confdeleteevent']; ?>";
+    const entereventtype = "<?php echo $admtext['entereventtype']; ?>";
+    const entereventinfo = "<?php echo $admtext['entereventinfo']; ?>";
+    const confdeleteevent = "<?php echo $admtext['confdeleteevent']; ?>";
 
-    var enternote = "<?php echo $admtext['enternote']; ?>";
-    var confdeletenote = "<?php echo $admtext['confdeletenote']; ?>";
+    const enternote = "<?php echo $admtext['enternote']; ?>";
+    const confdeletenote = "<?php echo $admtext['confdeletenote']; ?>";
 
-    var selectsource = "<?php echo $admtext['selectsource']; ?>";
-    var confdeletecite = "<?php echo $admtext['confdeletecite']; ?>";
+    const selectsource = "<?php echo $admtext['selectsource']; ?>";
+    const confdeletecite = "<?php echo $admtext['confdeletecite']; ?>";
 
-    var enterpassoc = "<?php echo $admtext['enterpassoc']; ?>";
-    var enterrela = "<?php echo $admtext['enterrela']; ?>";
-    var confdeleteassoc = "<?php echo $admtext['confdeleteassoc']; ?>";
+    const enterpassoc = "<?php echo $admtext['enterpassoc']; ?>";
+    const enterrela = "<?php echo $admtext['enterrela']; ?>";
+    const confdeleteassoc = "<?php echo $admtext['confdeleteassoc']; ?>";
 
-    var editmsg = "<?php echo $admtext['edit']; ?>";
-    var delmsg = "<?php echo $admtext['text_delete']; ?>";
-    var notemsg = "<?php echo $admtext['notes']; ?>";
-    var citemsg = "<?php echo $admtext['sources']; ?>";
+    const editmsg = "<?php echo $admtext['edit']; ?>";
+    const delmsg = "<?php echo $admtext['text_delete']; ?>";
+    const notemsg = "<?php echo $admtext['notes']; ?>";
+    const citemsg = "<?php echo $admtext['sources']; ?>";
 </script>

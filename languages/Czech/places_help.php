@@ -12,7 +12,7 @@ echo help_header("N�pov�da: M�sta");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="cemeteries_help.php" class="lightlink">&laquo; N�pov�da: H�bitovy</a> &nbsp; | &nbsp;
@@ -51,7 +51,7 @@ echo help_header("N�pov�da: M�sta");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� m�sta</p></a>
 
             <p>TNG automaticky p�id� z�znam nov�ho m�sta poka�d�, kdy� zap�ete nov� m�sto v Admin/Osoba, v Admin/Rodiny nebo jako sou��st n�jak� vlastn� ud�losti.
@@ -114,7 +114,7 @@ echo help_header("N�pov�da: M�sta");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat m�sta</p></a>
             <p>Chcete-li odstranit m�sto, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� m�sta, a pot� klikn�te na ikonu Vymazat vedle tohoto z�znamu m�sta. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� m�sta zmiz�. Chcete-li najednou odstranit v�ce m�st, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�ho m�sta, kter�
@@ -125,7 +125,7 @@ echo help_header("N�pov�da: M�sta");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="merge"><p class="subheadbold">Slou�it m�sta</p></a>
             <p>Kliknut�m na tuto z�lo�ku lze p�ezkoumat a slou�it n�zvy m�st, kter� jsou lehce odli�n�, ale odkazuj� na stejn� m�sto.
                 Mus�te rozhodnout, zda jsou tyto z�znamy toto�n� nebo ne.</p>
@@ -156,7 +156,7 @@ echo help_header("N�pov�da: M�sta");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="geo"><p class="subheadbold">Geok�dovat</p></a>
             <p>N�stroj Geok�dov�n� lze pou��t k nalezen� a ulo�en� sou�adnic zem�pisn� ���ky a d�lky pro m�sta, kter� tyto �daje neobsahuj�.</p>
 

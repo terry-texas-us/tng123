@@ -100,7 +100,7 @@ if ($wherestr) {
 }
 
 $query = "SELECT testID, test_type, test_date, match_date, ydna_haplogroup, mtdna_haplogroup, dna_tests.personID, dna_tests.gedcom, test_number, firstname, lastname, lnprefix, nameorder, suffix, prefix, title, person_name, mtdna_confirmed, ydna_confirmed, markeropt, notesopt, linksopt, surnamesopt, private_dna, private_test, dna_group, dna_group_desc, surnames, MD_ancestorID, MRC_ancestorID ";
-$query .= "FROM {$dna_tests_table} dna_tests ";
+$query .= "FROM $dna_tests_table dna_tests ";
 $query .= "LEFT JOIN $people_table people ON people.personID = dna_tests.personID AND people.gedcom = dna_tests.gedcom ";
 $query .= "$wherestr ";
 $query .= "ORDER BY match_date DESC, test_number ASC ";
@@ -109,7 +109,7 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count($dna_tests_table.testID) as tcount FROM $dna_tests_table $wherestr";
+    $query = "SELECT count($dna_tests_table.testID) AS tcount FROM $dna_tests_table $wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['tcount'];

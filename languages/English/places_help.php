@@ -8,7 +8,7 @@ echo help_header("Help: Places");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="cemeteries_help.php" class="lightlink">&laquo; Help: Cemeteries</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Places");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -54,7 +54,7 @@ echo help_header("Help: Places");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Add New / Edit Existing Places</p></a>
 
             <p>TNG automatically adds a new Place record every time you enter a new place in Admin/People, in Admin/Families, or as part of any Custom Event.
@@ -118,7 +118,7 @@ echo help_header("Help: Places");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Places</p></a>
             <p>To delete one Place, use the <a href="#search">Search</a> tab to locate the Place, then click on the Delete icon next to that Place record. The row will
                 change color and then vanish as the Place is deleted. To delete more than one Place at a time, check the box in the Select column next to each Place to be
@@ -129,7 +129,7 @@ echo help_header("Help: Places");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="merge"><p class="subheadbold">Merging Places</p></a>
             To review and merge place names that may be slightly different but refer to the same location, click on the "Merge" tab. You will decide whether two
             records are the same or not.</p>
@@ -160,7 +160,7 @@ echo help_header("Help: Places");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="geo"><p class="subheadbold">Geocode</p></a>
             <p>The Geocode tool may be used to find and store latitude and longitude coordinates for Places that do not already have that information.</p>
 

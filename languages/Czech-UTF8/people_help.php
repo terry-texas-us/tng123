@@ -12,7 +12,7 @@ echo help_header("Nápověda: Osoby");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="index_help.php" class="lightlink">&laquo; Nápověda: Začínáme</a> &nbsp; | &nbsp;
@@ -52,7 +52,7 @@ echo help_header("Nápověda: Osoby");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat novou osobu</p></a>
             <p>Chcete-li přidat novou osobu, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako poznámky, citace, spojení a
                 další události, můžete přidat po uložení nebo zamknutí záznamu. Význam jednotlivých polí je následující:</p>
@@ -112,7 +112,7 @@ echo help_header("Nápověda: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="edit"><p class="subheadbold">Upravit existující osobu</p></a>
             <p>Chcete-li upravit existující osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení osoby, a poté klikněte na ikonu Upravit vedle této osoby.</p>
 
@@ -169,7 +169,7 @@ echo help_header("Nápověda: Osoby");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat osobu</p></a>
             <p>Chcete-li odstranit osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení dané osoby, a poté klikněte na ikonu Vymazat vedle této osoby. Tento řádek změní
                 barvu a poté po odstranění položky zmizí. Chcete-li najednou odstranit více osob, zaškrtněte políčko ve sloupci Vybrat vedle každé osoby, kterou
@@ -180,7 +180,7 @@ echo help_header("Nápověda: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="review"><p class="subheadbold">Předběžné prohlédnutí úprav</p></a>
       Chcete-li si předběžně prohlédnout změny provedené ostatními uživateli, klikněte na záložku "Přezkoumat". Můžete se pak rozhodnout, zda tyto navrhované změny uložíte nebo odstraníte.
       Změny můžete prohlédnout podle stromu nebo podle uživatele nebo podle obojího. Po uložení navrhovaných změn není zaslán žádný mail, ale pokud nové změny existují, na záložce Přezkoumat se objeví hvězdička (*).</p>
@@ -200,7 +200,7 @@ echo help_header("Nápověda: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="merge"><p class="subheadbold">Sloučení osob</p></a>
       Chcete-li přezkoumat a sloučit duplicitní záznamy, klikněte na záložku "Sloučit". Zde rozhodnete, zda jsou dva záznamy totožné nebo ne.</p>
 

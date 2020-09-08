@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp; | &nbsp;
@@ -83,7 +83,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="operation"><p class="subheadbold">Operace</p></a>
             <p>Mana�er m�d� prozkoum� slo�ku m�d� a p�e�te ka�d� soubor <strong>cfg</strong>, kter� najde. Soubory <strong>cfg</strong> jsou direktivn� soubory, kter� popisuj� m�d, soubory a um�st�n�, kter� m� b�t modifikov�no, a k�d, kter� je p�i
                 modifikaci pou�it.
@@ -107,7 +107,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="status"><p class="subheadbold">Stav</p></a>
             <p>Mana�er m�d� vrac� n�sleduj�c� stavy:
             <ul>
@@ -129,7 +129,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="syntax"><p class="subheadbold">Syntaxe m�d�</p></a>
             <p>Syntaxe mana�era m�d� v z�sad� zahrnuje:
             <p><strong>Sekci z�hlav�</strong>, kter� obsahuje</p>
@@ -153,7 +153,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="files"><p class="subheadbold">Konfigura�n� soubory</p></a>
 
             <span class="optionhead">Instalov�n� m�d�</span>
@@ -172,7 +172,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 
     <tr class="databack">
         <td class="tngshadow">
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="batch"><p class="subheadbold">D�vkov� operace</p></a>
 
             <p>Funkce D�vkov� operace, v TNG 10.0.3 p�edstaven� jako D�vkov� instalace, je nyn� sou��st� Seznamu m�d� a umo�n� prov�st specifick� akce t�kaj�c� se v�ce m�d� pomoc� v�b�ru filtru.
@@ -222,7 +222,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="options"><p class="subheadbold">Mo�nosti</p></a>
 
             <p>Mo�nosti v�m umo�n� specifikovat chov�n� mana�eru m�d�.
@@ -283,7 +283,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="analyze"><p class="subheadbold">Anal�za soubor� TNG</p></a>
 
             <p>Tento n�stroj na z�lo�ce <strong>Anal�za soubor� TNG</strong>, kter� vytvo�il Rick Bisbee, existoval d��ve jako opravn� m�d. Anal�za soubor� TNG umo��uje v�voj���m zkoumat p�soben� m�d� navz�jem. Situace, kdy dva m�dy m�n� stejn� �sek
@@ -301,7 +301,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="parser"><p class="subheadbold">Tabulka parseru</p></a>
             <p>Tento n�stroj je ur�en hlavn� pro v�voj��e. Tabulka parseru ukazuje, jak Mana�er m�d� zanalyzoval konfigura�n� soubor m�du (.cfg) zapracov�n�m jeho komponent do tabulky, kter� pak proch�z� do dal��ch skript� Mana�eru m�d� pro dal��
                 zpracov�n�. Pokud se vyskytne probl�m s m�dem, prvn� m�sto, kter� je t�eba zkontrolovat, je tabulka parseru, aby se zjistilo, zda jsou spr�vn� zachyceny v�echny p��kazy a argumenty m�du.</p>
@@ -316,7 +316,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="custtext"><p class="subheadbold">Doporu�en� aktualizace</p></a>
             <p>Z�lo�ka Doporu�en� aktualizace je voliteln� z�lo�ka, kter� m��e b�t povolena na obrazovce Mo�nosti, a umo�n� v�m aktualizovat soubory cust_text.php, pokud jste tak neu�inili jako sou��st aktualizace TNG.</p>
             <p>Pou�it� z�lo�ky se p�edpokl�d� v p��pad�, �e m�d nem��e b�t nainstalov�n, proto�e hled� nov� koment��ov� �et�zec v horn� ��sti soubor� cust_text.php po��naje TNG v12. Tato volba bude vypnuta po kliknut� na tla��tko Aktualizovat a zm�n�

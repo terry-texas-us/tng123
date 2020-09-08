@@ -8,7 +8,7 @@ echo help_header("Help: Languages");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="dna_help.php" class="lightlink">&laquo; Help: DNA Tests</a> &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ echo help_header("Help: Languages");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -46,7 +46,7 @@ echo help_header("Help: Languages");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Add New / Edit Existing Languages</p></a>
             <p>The TNG display messages have been translated into several different languages. To allow visitors to your site to view the site in any language besides
                 your default language, you must add a record here for each language you support, <strong>including</strong> your default language. For example,
@@ -79,7 +79,7 @@ echo help_header("Help: Languages");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Languages</p></a>
             <p>To delete a Language, use the <a href="#search">Search</a> tab to locate the Language, then click on the Delete icon next to that Language record. The row will
                 change color and then vanish as the Language is deleted. <strong>Note</strong>: The associated folder on your site will not be deleted.</p>

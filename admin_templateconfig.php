@@ -187,12 +187,12 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                   }
                   ?>
                 </select>
-                <button id="previewbtn"><span class="prevmsg"><?php echo $admtext['showprev']; ?></span><span class="prevmsg" style="display:none"><?php echo $admtext['hideprev']; ?></span></button>
+                <button id="previewbtn"><span class="prevmsg"><?php echo $admtext['showprev']; ?></span><span class="prevmsg" style="display:none;"><?php echo $admtext['hideprev']; ?></span></button>
             </form>
 
           <div style="display:none;" id="previewscroll" class="scroller">
             <br>
-            <div style="position:absolute">
+            <div style="position:absolute;">
               <?php
                   foreach ($entries as $i) {
                     $newtemplatepfx = is_numeric($i) ? "template" : "";
@@ -276,7 +276,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                   $imagesize2 = $size[1];
                   $sections[$n] .= " &nbsp; $imagesize1 x $imagesize2 px\n";
                 }
-                $sections[$n] .= "<div id=\"div_$key\" style=\"display:none\"></div>";
+                $sections[$n] .= "<div id=\"div_$key\" style=\"display:none;\"></div>";
               } elseif (substr($label, -6) == "person") {
                 $treefield = str_replace("person", "tree", $key);
                 $sections[$n] .= "<a href=\"#\" onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
@@ -296,7 +296,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
           foreach ($entries as $i) {
             $section = $sections['t' . $i];
             if ($section) {
-              $dispstr = $templatenum != $i ? " style=\"display:none\"" : "";
+              $dispstr = $templatenum != $i ? " style=\"display:none;\"" : "";
               echo "<div$dispstr class=\"tsection\" id=\"t$i\">\n";
               echo "<form action=\"admin_updatetemplateconfig.php\" method=\"post\" name=\"form$i\" ENCTYPE=\"multipart/form-data\" onsubmit=\"getTopValues(this.form_templateswitching,this.form_templatenum);\">\n";
               echo "<table class=\"tstable normal\">\n";

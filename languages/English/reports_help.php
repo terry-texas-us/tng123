@@ -8,7 +8,7 @@ echo help_header("Help: Reports");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="eventtypes_help.php" class="lightlink">&laquo; Help: Custom Event Types</a> &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ echo help_header("Help: Reports");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -48,7 +48,7 @@ echo help_header("Help: Reports");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Adding or Editing Reports</p></a>
 
             <p>A TNG Report is a custom-built listing of people in your database. You decide which fields to display, which people to put in the report, and how to sort them.
@@ -151,7 +151,7 @@ echo help_header("Help: Reports");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Reports</p></a>
             <p>To delete a Report, use the <a href="#search">Search</a> tab to locate the Report, then click on the Delete icon next to that Report record. The row will
                 change color and then vanish as the Report is deleted.</p>

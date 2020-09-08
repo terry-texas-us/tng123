@@ -23,7 +23,7 @@ $sourceID = ucfirst($sourceID);
 
 $treerow = getTree($trees_table, $tree);
 
-$query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = \"$tree\"";
+$query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = '$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -37,7 +37,7 @@ $row['actualtext'] = preg_replace("/\"/", "&#34;", $row['actualtext']);
 $sourcename = $row['title'] ? $row['title'] : $row['shorttitle'];
 $row['allow_living'] = 1;
 
-$query = "SELECT DISTINCT eventID as eventID FROM $notelinks_table WHERE persfamID=\"$sourceID\" AND gedcom =\"$tree\"";
+$query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfamID=\"$sourceID\" AND gedcom ='$tree'";
 $notelinks = tng_query($query);
 $gotnotes = array();
 while ($note = tng_fetch_assoc($notelinks)) {
@@ -114,7 +114,7 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
               <td><?php echo $admtext['tree']; ?>:</td>
               <td>
                 <?php echo $treerow['treename']; ?>
-                &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img src="img/ArrowDown.gif" style="margin-left:-4px;margin-right:-2px"><?php echo $admtext['edit']; ?>
+                &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img src="img/ArrowDown.gif" style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
                 </a> )
               </td>
             </tr>
@@ -144,7 +144,7 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
                             <select name="repoID">
                                 <option value=""></option>
                               <?php
-                              $query = "SELECT repoID, reponame, gedcom FROM $repositories_table WHERE gedcom = \"$tree\" ORDER BY reponame";
+                              $query = "SELECT repoID, reponame, gedcom FROM $repositories_table WHERE gedcom = '$tree' ORDER BY reponame";
                               $reporesult = tng_query($query);
                               while ($reporow = tng_fetch_assoc($reporesult)) {
                                 echo "		<option value=\"{$reporow['repoID']}\"";
@@ -171,7 +171,7 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
           <table class="normal">
             <tr>
               <td valign="top">
-                <strong class="subhead" style="color:black"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
+                <strong class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
                           <?php
                           echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
                           ?>

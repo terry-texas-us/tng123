@@ -11,7 +11,7 @@ $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
 $result = tng_query($query);
 $numtrees = tng_num_rows($result);
 
-$branchquery = "SELECT count(branch) as branchcount FROM $branches_table";
+$branchquery = "SELECT count(branch) AS branchcount FROM $branches_table";
 $branchresult = tng_query($branchquery);
 $branchrow = tng_fetch_assoc($branchresult);
 $numbranches = $branchrow['branchcount'];
@@ -370,7 +370,7 @@ echo $formstr;
             </td>
           </tr>
           <tr<?php if ($tngconfig['hidechr']) {
-            echo " style=\"display:none\"";
+            echo " style=\"display:none;\"";
           } ?>>
             <td class="fieldnameback fieldname"><?php echo $text['altbirthplace']; ?>:</td>
             <td class="databack">
@@ -389,7 +389,7 @@ echo $formstr;
             </td>
           </tr>
           <tr<?php if ($tngconfig['hidechr']) {
-            echo " style=\"display:none\"";
+            echo " style=\"display:none;\"";
           } ?>>
             <td class="fieldnameback fieldname"><?php echo $text['altbirthdatetr']; ?>:</td>
             <td class="databack">
@@ -511,7 +511,7 @@ echo $formstr;
         <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_collapse.gif" alt="" width="15" height="15"
                                                                                                                                             class="exp-cont"><?php echo $text['clickhide']; ?></a></li>
       </ul>
-      <table style="display:none" id="otherevents">
+      <table style="display:none;" id="otherevents">
         <tr>
           <td colspan="3">&nbsp;</td>
         </tr>

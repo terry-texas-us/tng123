@@ -17,7 +17,7 @@ if (!$allow_add) {
 require "adminlog.php";
 
 $thumbpath = stripslashes($thumbpath);
-
+// TODO sql field description in dna_groups table is reserved word in mysql 8.0.4 +
 $descquery = "SELECT description FROM $dna_groups_table WHERE dna_group=\"$dna_group\"";
 $descresult = tng_query($descquery);
 $descrow = tng_fetch_assoc($descresult);

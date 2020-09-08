@@ -306,7 +306,7 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
       <a href=\"#\" id=\"{$id}link\" onclick=\"return toggleSection('$id');\">
          {$admtext['show']}&nbsp;{$admtext['modifications']}
       </a><br>
-      <div id=\"{$id}div\" style=\"display:none\">
+      <div id=\"{$id}div\" style=\"display:none;\">
       <br>";
   for ($i = 1; isset($sections[$i]); $i++) {
     $target_file = trim(preg_replace("#([^%]*)%.*#s", "\${1}", $sections[$i]));

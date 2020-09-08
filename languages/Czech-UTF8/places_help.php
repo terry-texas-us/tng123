@@ -12,7 +12,7 @@ echo help_header("Nápověda: Místa");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="cemeteries_help.php" class="lightlink">&laquo; Nápověda: Hřbitovy</a> &nbsp; | &nbsp;
@@ -51,7 +51,7 @@ echo help_header("Nápověda: Místa");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nové / Upravit existující místa</p></a>
 
             <p>TNG automaticky přidá záznam nového místa pokaždé, když zapíšete nové místo v Admin/Osoba, v Admin/Rodiny nebo jako součást nějaké vlastní události.
@@ -114,7 +114,7 @@ echo help_header("Nápověda: Místa");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat místa</p></a>
             <p>Chcete-li odstranit místo, použijte záložku <a href="#search">Hledat</a> pro nalezení místa, a poté klikněte na ikonu Vymazat vedle tohoto záznamu místa. Tento řádek změní
                 barvu a poté po odstranění místa zmizí. Chcete-li najednou odstranit více míst, zaškrtněte políčko ve sloupci Vybrat vedle každého místa, který
@@ -125,7 +125,7 @@ echo help_header("Nápověda: Místa");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="merge"><p class="subheadbold">Sloučit místa</p></a>
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit názvy míst, které jsou lehce odlišné, ale odkazují na stejné místo.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
@@ -156,7 +156,7 @@ echo help_header("Nápověda: Místa");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="geo"><p class="subheadbold">Geokódovat</p></a>
             <p>Nástroj Geokódování lze použít k nalezení a uložení souřadnic zeměpisné šířky a délky pro místa, která tyto údaje neobsahují.</p>
 

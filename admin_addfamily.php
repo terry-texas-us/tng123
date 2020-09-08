@@ -42,7 +42,7 @@ $sealdatetr = convertDate($sealdate);
 
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
-$query = "SELECT familyID FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+$query = "SELECT familyID FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
 $result = tng_query($query);
 
 if ($result && tng_num_rows($result)) {
@@ -83,12 +83,12 @@ foreach ($places as $place) {
 //get living from husband, wife
 $husband = ucfirst(trim($husband));
 if ($husband) {
-  $spquery = "SELECT living FROM $people_table WHERE personID = \"$husband\" AND gedcom = \"$tree\"";
+  $spquery = "SELECT living FROM $people_table WHERE personID = \"$husband\" AND gedcom = '$tree'";
   $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
   $spouserow = tng_fetch_assoc($spouselive);
   $husbliving = $spouserow['living'];
 
-  $query = "SELECT husborder FROM $families_table WHERE gedcom = \"$tree\" AND husband = \"$husband\" ORDER BY husborder DESC";
+  $query = "SELECT husborder FROM $families_table WHERE gedcom = '$tree' AND husband = \"$husband\" ORDER BY husborder DESC";
   $husbresult = tng_query($query);
   $husbrow = tng_fetch_assoc($husbresult);
   tng_free_result($husbresult);
@@ -101,12 +101,12 @@ if ($husband) {
 
 $wife = ucfirst(trim($wife));
 if ($wife) {
-  $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = \"$tree\"";
+  $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = '$tree'";
   $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
   $spouserow = tng_fetch_assoc($spouselive);
   $wifeliving = $spouserow['living'];
 
-  $query = "SELECT wifeorder FROM $families_table WHERE gedcom = \"$tree\" AND wife = \"$wife\" ORDER BY wifeorder DESC";
+  $query = "SELECT wifeorder FROM $families_table WHERE gedcom = '$tree' AND wife = \"$wife\" ORDER BY wifeorder DESC";
   $wiferesult = tng_query($query);
   $wiferow = tng_fetch_assoc($wiferesult);
   tng_free_result($wiferesult);

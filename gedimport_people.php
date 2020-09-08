@@ -292,7 +292,7 @@ function getIndividualRecord($personID, $prevlevel) {
               $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             }
             if (isset($info['SLGC']['SOUR'])) {
-              $query = "DELETE from $citations_table WHERE persfamID = \"$personID" . "::" . $info['SLGC']['FAMC'] . "\" AND gedcom = \"$tree\"";
+              $query = "DELETE FROM $citations_table WHERE persfamID = \"$personID" . "::" . $info['SLGC']['FAMC'] . "\" AND gedcom = \"$tree\"";
               $result = @tng_query($query);
               processCitations($personID . "::" . $famc, "SLGC", $info['SLGC']['SOUR']);
             }
@@ -340,7 +340,7 @@ function getIndividualRecord($personID, $prevlevel) {
               $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             }
             if (isset($info['SLGC']['SOUR'])) {
-              $query = "DELETE from $citations_table WHERE persfamID = \"$personID" . "::" . $info['SLGC']['FAMC'] . "\" AND gedcom = \"$tree\"";
+              $query = "DELETE FROM $citations_table WHERE persfamID = \"$personID" . "::" . $info['SLGC']['FAMC'] . "\" AND gedcom = \"$tree\"";
               $result = @tng_query($query);
               processCitations($personID . "::" . $info['SLGC']['FAMC'], "SLGC", $info['SLGC']['SOUR']);
             }
@@ -548,7 +548,7 @@ function getIndividualRecord($personID, $prevlevel) {
       $inschangedt = "";
     }
     if ($savestate['neweronly'] && $inschangedt) {
-      $query = "SELECT changedate FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+      $query = "SELECT changedate FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
       $result = @tng_query($query);
       $indrow = tng_fetch_assoc($result);
       $goahead = $inschangedt > $indrow['changedate'] ? 1 : 0;
@@ -629,13 +629,13 @@ function getIndividualRecord($personID, $prevlevel) {
         }
         if ($info['SEX'] == "M") {
           $uspousestr = "husband = \"$personID\", husborder = \"$spousectr\"";
-          $query = "INSERT IGNORE INTO $families_table (familyID, husborder, living, private, gedcom, changedby) VALUES(\"$familyID\", \"$spousectr\", \"$living\", \"$private\", \"$tree\", \"$currentuser\" )";
+          $query = "INSERT IGNORE INTO $families_table (familyID, husborder, living, private, gedcom, changedby) VALUES('$familyID', \"$spousectr\", \"$living\", \"$private\", \"$tree\", \"$currentuser\" )";
         } elseif ($info['SEX'] == "F") {
           $uspousestr = "wife = \"$personID\", wifeorder = \"$spousectr\"";
-          $query = "INSERT IGNORE INTO $families_table (familyID, wifeorder, living, private, gedcom, changedby) VALUES(\"$familyID\", \"$spousectr\", \"$living\", \"$private\", \"$tree\", \"$currentuser\" )";
+          $query = "INSERT IGNORE INTO $families_table (familyID, wifeorder, living, private, gedcom, changedby) VALUES('$familyID', \"$spousectr\", \"$living\", \"$private\", \"$tree\", \"$currentuser\" )";
         } else {
           $uspousestr = "";
-          $query = "INSERT IGNORE INTO $families_table (familyID, gedcom, changedby) VALUES(\"$familyID\", \"$tree\", \"$currentuser\" )";
+          $query = "INSERT IGNORE INTO $families_table (familyID, gedcom, changedby) VALUES('$familyID', \"$tree\", \"$currentuser\" )";
         }
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $success = tng_affected_rows();
@@ -643,7 +643,7 @@ function getIndividualRecord($personID, $prevlevel) {
           if ($uspousestr && $famlivingstr) {
             $famlivingstr .= ",";
           }
-          $query = "UPDATE $families_table SET $famlivingstr $uspousestr, changedby=\"$currentuser\" WHERE familyID=\"$familyID\" AND gedcom = \"$tree\"";
+          $query = "UPDATE $families_table SET $famlivingstr $uspousestr, changedby=\"$currentuser\" WHERE familyID='$familyID' AND gedcom = \"$tree\"";
           $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         }
       }

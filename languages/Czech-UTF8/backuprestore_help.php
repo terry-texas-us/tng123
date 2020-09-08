@@ -12,7 +12,7 @@ echo help_header("Nápověda: Obslužné programy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="languages_help.php" class="lightlink">&laquo; Nápověda: Jazyky</a> &nbsp; | &nbsp;
@@ -79,7 +79,7 @@ echo help_header("Nápověda: Obslužné programy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="structure"><p class="subheadbold">Zálohování struktury tabulek</p></a>
             <p>Chcete-li zálohovat strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Zálohovat. Pokud byla operace úspěšná, stránka bude znovu zobrazena s červenou zprávou nahoře.
                 Vyplněn bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru. Záloha struktury vašich tabulek vám umožní snáze obnovit vaše data
@@ -91,7 +91,7 @@ echo help_header("Nápověda: Obslužné programy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="ids"><p class="subheadbold">Přečíslování ID čísel</p></a>
             <p>Pomocí této funkce můžete ke všem vašim osobám, rodinám, pramenům a/nebo úložištím pramenů přiřadit nová, po sobě jdoucí ID čísla. V případě této operace musíte být režimu údržby.
                 Chcete-li spustit režim údržby, jděte do Admin/Nastavení/Základní nastavení a v sekci "Databáze" vyberte volbu Režim údržby.</p>

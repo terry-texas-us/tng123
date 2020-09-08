@@ -73,7 +73,7 @@ if ($row['MRC_ancestorID']) {
   $mrcancestorname = $admtext['mrcaiorf'];
 }
 
-$query = "SELECT dna_links.ID as mlinkID, dna_links.personID as personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, dna_links.gedcom as gedcom, branch, treename, living, private ";
+$query = "SELECT dna_links.ID AS mlinkID, dna_links.personID AS personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, dna_links.gedcom AS gedcom, branch, treename, living, private ";
 $query .= "FROM $dna_links_table dna_links ";
 $query .= "LEFT JOIN $trees_table trees ON dna_links.gedcom = trees.gedcom ";
 $query .= "LEFT JOIN $people_table people ON dna_links.personID = people.personID AND dna_links.gedcom = people.gedcom ";
@@ -106,11 +106,11 @@ $surnamesexc = explode(',', $surnameexcl);
 $pass1 = true;
 
 function get_ancestor_surnames($personID, $tree, $type) {
-  global $surnamesarr, $surnamesexc, $pass1;
+  global $people_table, $families_table, $surnamesarr, $surnamesexc, $pass1;
 
   $select = "SELECT people.lastname, people.famc, family.husband, family.wife ";
-  $select .= "FROM tng_people people ";
-  $select .= "LEFT JOIN tng_families family ON (people.famc = family.familyID AND people.gedcom = family.gedcom) ";
+  $select .= "FROM $people_table people ";
+  $select .= "LEFT JOIN $families_table family ON (people.famc = family.familyID AND people.gedcom = family.gedcom) ";
   $select .= "WHERE people.personID = '" . $personID . "' AND people.gedcom = '" . $tree . "'";
   $result = tng_query($select);
   while ($surrow = tng_fetch_assoc($result)) {
@@ -484,7 +484,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                   </tr>
 
                   <tr>
-                    <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none"><?php echo $admtext['familyid']; ?></span>:</td>
+                    <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none;"><?php echo $admtext['familyid']; ?></span>:</td>
                     <td valign="top"><input type="text" name="MRC_ancestorID" value="<?php echo $row['MRC_ancestorID']; ?>" id="MRC_ancestorID"> &nbsp;<?php echo $mrcancestorname; ?></span>&nbsp;&nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                       <a href="#" onclick="return findItem(mrcaType,'MRC_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
                         <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
@@ -592,8 +592,8 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
   var tnglitbox;
   <?php
     echo "var linkcount = $numlinks;\n";
-    echo "var confdellink = \"{$admtext['confdellink']}\";\n";
-    echo "var remove_text = \"{$admtext['removelink']}\";\n";
+    echo "const confdellink = \"{$admtext['confdellink']}\";\n";
+    echo "const remove_text = \"{$admtext['removelink']}\";\n";
     ?>
 
     function validateForm() {

@@ -156,7 +156,7 @@ $title = getTemplateMessage('t10_maintitle');
                         <div class="cleared"></div>
                     </div>
                     <div class="art-layout-cell art-content">
-                        <div class="art-post" style="min-height:582px">
+                        <div class="art-post" style="min-height:582px;">
                             <div class="art-post-body">
                                 <div class="art-post-inner art-article">
                                     <h2 class="art-postheader"><?php echo getTemplateMessage('t10_welcome'); ?></h2>
@@ -255,7 +255,7 @@ $title = getTemplateMessage('t10_maintitle');
                                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
                                                 <input type="text" value="" name="mylastname" style="width: 95%;">
                                                 <input type="hidden" name="mybool" value="AND">
-                                                <input type="submit" style="margin-top:5px; margin-bottom:5px" value="<?php echo $text['search']; ?>">
+                                                <input type="submit" style="margin-top:5px; margin-bottom:5px;" value="<?php echo $text['search']; ?>">
                                             </form>
                                             <ul class="home-menus">
                                                 <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>

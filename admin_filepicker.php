@@ -278,7 +278,7 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
     global $text;
 
     if ($nPages > 1) {
-        echo "<div class=\"normal\" style=\"float:right;padding:10px\">\n";
+        echo "<div class=\"normal\" style=\"float:right;padding:10px;\">\n";
 
         $nCPage = $nCurrentPage + 1; //current page display
 

@@ -88,7 +88,7 @@ switch ($t) {
         $query = "DELETE FROM $notelinks_table WHERE xnoteID=\"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE FROM {$xnotes_table} WHERE ID=\"{$id}\"";
+        $query = "DELETE FROM $xnotes_table WHERE ID=\"{$id}\"";
         $result = @tng_query($query);
 
         $logmsg = $admtext['note'] . " $id {$admtext['succdeleted']}";
@@ -121,10 +121,10 @@ switch ($t) {
         $query = "DELETE FROM $families_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE FROM $children_table WHERE familyID=\"$familyID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND gedcom = \"$tree\"";
         $result = @tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = \"$familyID\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = \"$tree\"";
         $result = tng_query($query);
 
         updateHasKidsFamily($familyID);
@@ -260,44 +260,44 @@ switch ($t) {
         $logmsg = $admtext['deleted'] . ": $entity: $delitem";
         break;
     case "tree":
-        $query = "DELETE from $people_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $people_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $families_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $families_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $children_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $children_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $sources_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $sources_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $repositories_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $repositories_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $events_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $events_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $notelinks_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $notelinks_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from {$xnotes_table} WHERE gedcom = \"{$id}\"";
+        $query = "DELETE FROM $xnotes_table WHERE gedcom = \"{$id}\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $citations_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $citations_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $places_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $places_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $assoc_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $assoc_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $address_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $address_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
         if ($id) {
-            $query = "SELECT mediaID from $media_table WHERE gedcom = \"$id\"";
+            $query = "SELECT mediaID FROM $media_table WHERE gedcom = \"$id\"";
             $result = @tng_query($query);
             while ($row = tng_fetch_assoc($result)) {
                 $delquery = "DELETE FROM $albumlinks_table WHERE mediaID=\"{$row['mediaID']}\"";
@@ -305,20 +305,20 @@ switch ($t) {
             }
             tng_free_result($result);
 
-            $query = "DELETE from $media_table WHERE gedcom = \"$id\"";
+            $query = "DELETE FROM $media_table WHERE gedcom = \"$id\"";
             $result = @tng_query($query);
 
-            $query = "DELETE from $medialinks_table WHERE gedcom = \"$id\"";
+            $query = "DELETE FROM $medialinks_table WHERE gedcom = \"$id\"";
             $result = @tng_query($query);
         }
 
         $query = "DELETE FROM $trees_table WHERE gedcom=\"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $branches_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $branches_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE from $branchlinks_table WHERE gedcom = \"$id\"";
+        $query = "DELETE FROM $branchlinks_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
         $query = "UPDATE $users_table SET allow_living=\"-1\" WHERE gedcom = \"$id\" AND username != \"$currentuser\"";
@@ -327,7 +327,7 @@ switch ($t) {
         $logmsg = $admtext['deleted'] . " $id {$admtext['succdeleted']}.";
         break;
     case "child_unlink":
-        $query = "DELETE FROM $children_table WHERE familyID=\"$familyID\" AND personID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND personID=\"$personID\" AND gedcom = \"$tree\"";
         $result = @tng_query($query);
 
         $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
@@ -338,7 +338,7 @@ switch ($t) {
         $logmsg = $admtext['chunlinked'] . ": $personID/$familyID ($tree).";
         break;
     case "child_delete":
-        $query = "SELECT sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
         $row = tng_fetch_assoc($result);
         tng_free_result($result);

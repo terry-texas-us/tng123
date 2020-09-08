@@ -54,7 +54,7 @@ if ($assignedtree) {
 }
 $orgtree = $tree;
 
-$uquery = "SELECT count(userID) as ucount FROM $users_table WHERE allow_living = \"-1\"";
+$uquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
 $uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquery");
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
@@ -107,12 +107,12 @@ if ($searchstring) {
     $allwhere .= ")";
 }
 
-$query = "SELECT sourceID, shorttitle, title, $sources_table.gedcom as gedcom, treename, ID, changedby, DATE_FORMAT(changedate,\"%d %b %Y\") as changedate FROM ($sources_table, $trees_table) WHERE $allwhere ORDER BY shorttitle, title LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT sourceID, shorttitle, title, $sources_table.gedcom AS gedcom, treename, ID, changedby, DATE_FORMAT(changedate,\"%d %b %Y\") AS changedate FROM ($sources_table, $trees_table) WHERE $allwhere ORDER BY shorttitle, title LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(sourceID) as scount FROM ($sources_table, $trees_table) WHERE $allwhere";
+    $query = "SELECT count(sourceID) AS scount FROM ($sources_table, $trees_table) WHERE $allwhere";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['scount'];

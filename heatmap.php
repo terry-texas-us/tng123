@@ -169,7 +169,7 @@ if ($psearch) {
       $urlstring .= "&amp;branch=$branch";
       $querystring .= " {$text['cap_and']} ";
 
-      $query = "SELECT description FROM $branches_table WHERE gedcom = \"$tree\" AND branch = \"$branch\"";
+      $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = \"$branch\"";
       $branchresult = tng_query($query);
       $branchrow = tng_fetch_assoc($branchresult);
       tng_free_result($branchresult);
@@ -453,7 +453,7 @@ if ($markermap) {
                         people += " (" + place.people[i].birthdate + ")";
                     people += "<br>";
                 }
-                var infoHtml = '<div class="info"><h4 style="margin-top:0"><a href="' + cmstngpath + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
+                var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + cmstngpath + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
                 if (people != "")
                     infoHtml += '<div class="info-body">' + people + '</div>';
                 if (place.notes != "")

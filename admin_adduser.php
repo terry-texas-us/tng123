@@ -70,8 +70,12 @@ $today = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $dt_consent = $consented == 1 ? $today : "";
 
 $duplicate = false;
-$emailstr = $email ? " OR LOWER(email) = LOWER(\"$email\")" : "";
-$query = "SELECT username FROM $users_table WHERE LOWER(username) = LOWER(\"$username\")$emailstr";
+
+$query = "SELECT username FROM $users_table ";
+$query .= "WHERE LOWER(username) = LOWER(\"$username\")";
+if ($email) {
+    $query .= " OR LOWER(email) = LOWER(\"$email\")";
+}
 $result = tng_query($query);
 
 if ($result && tng_num_rows($result)) {

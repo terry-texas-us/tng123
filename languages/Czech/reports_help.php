@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Reporty");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="eventtypes_help.php" class="lightlink">&laquo; N�pov�da: Vlastn� typy ud�lost�</a> &nbsp; | &nbsp;
@@ -46,7 +46,7 @@ echo help_header("N�pov�da: Reporty");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�id�n� nebo �prava reportu</p></a>
 
             <p>Reportem se v TNG rozum� u�ivatelsk� seznam osob z va�� datab�ze. Vy rozhodnete, kter� pole maj� b�t zobrazena, kter� osoby maj� b�t do reportu vlo�eny a jak maj� b�t se�azeny.
@@ -148,7 +148,7 @@ echo help_header("N�pov�da: Reporty");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymaz�n� reportu</p></a>
             <p>Chcete-li odstranit report, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� reportu, a pot� klikn�te na ikonku Vymazat vedle tohoto z�znamu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� reportu zmiz�.</p>

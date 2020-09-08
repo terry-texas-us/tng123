@@ -71,7 +71,7 @@ if (!isset($pedigree['vfontsize'])) {
       <td class="tngshadow">
         <?php echo displayToggle("plus0", 0, "ped", $admtext['pedchart'], ""); ?>
 
-                <div id="ped" style="display:none">
+                <div id="ped" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -202,7 +202,7 @@ if (!isset($pedigree['vfontsize'])) {
             <td class="tngshadow">
               <?php echo displayToggle("plus1", 0, "desc", $admtext['descchart'], ""); ?>
 
-                <div id="desc" style="display:none">
+                <div id="desc" style="display:none;">
                     <table>
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -283,7 +283,7 @@ if (!isset($pedigree['vfontsize'])) {
             <td class="tngshadow">
               <?php echo displayToggle("plus2", 0, "rel", $admtext['relchart'], ""); ?>
 
-                <div id="rel" style="display:none">
+                <div id="rel" style="display:none;">
                     <table>
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -310,7 +310,7 @@ if (!isset($pedigree['vfontsize'])) {
             <td class="tngshadow">
               <?php echo displayToggle("plus3", 0, "time", $admtext['timechart'], ""); ?>
 
-                <div id="time" style="display:none">
+                <div id="time" style="display:none;">
                     <table>
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -334,7 +334,7 @@ if (!isset($pedigree['vfontsize'])) {
                         </tr>
                     </table>
                     <table<?php if (!$pedigree['simile']) {
-                      echo " style=\"display:none\"";
+                      echo " style=\"display:none;\"";
                     } ?> id="simileTable">
                         <tr>
                             <td><span class="normal"><?php echo $admtext['tcheight']; ?>:</span></td>
@@ -363,7 +363,7 @@ if (!isset($pedigree['vfontsize'])) {
             <td class="tngshadow">
               <?php echo displayToggle("plus4", 0, "peddesc", $admtext['pedanddesc'], ""); ?>
 
-                <div id="peddesc" style="display:none">
+                <div id="peddesc" style="display:none;">
                     <table>
                         <tr>
                             <td colspan="3">&nbsp;</td>

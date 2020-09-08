@@ -18,31 +18,31 @@ if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
 
 $row = getTree($trees_table, $tree);
 
-$query = "SELECT count(personID) as pcount FROM $people_table WHERE gedcom = \"$tree\"";
+$query = "SELECT count(personID) AS pcount FROM $people_table WHERE gedcom = '$tree'";
 $result = tng_query($query);
 $prow = tng_fetch_assoc($result);
 $pcount = number_format($prow['pcount']);
 tng_free_result($result);
 
-$query = "SELECT count(familyID) as fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
+$query = "SELECT count(familyID) AS fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
 $famresult = tng_query($query);
 $famrow = tng_fetch_assoc($famresult);
 $fcount = number_format($famrow['fcount']);
 tng_free_result($famresult);
 
-$query = "SELECT count(sourceID) as scount FROM $sources_table WHERE gedcom = \"{$row['gedcom']}\"";
+$query = "SELECT count(sourceID) AS scount FROM $sources_table WHERE gedcom = \"{$row['gedcom']}\"";
 $srcresult = tng_query($query);
 $srcrow = tng_fetch_assoc($srcresult);
 $scount = number_format($srcrow['scount']);
 tng_free_result($srcresult);
 
-$query = "SELECT count(repoID) as rcount FROM $repositories_table WHERE gedcom = \"{$row['gedcom']}\"";
+$query = "SELECT count(repoID) AS rcount FROM $repositories_table WHERE gedcom = \"{$row['gedcom']}\"";
 $reporesult = tng_query($query);
 $reporow = tng_fetch_assoc($reporesult);
 $rcount = number_format($reporow['rcount']);
 tng_free_result($reporesult);
 
-$query = "SELECT count(noteID) as ncount FROM {$xnotes_table} WHERE gedcom = \"{$row['gedcom']}\"";
+$query = "SELECT count(noteID) AS ncount FROM $xnotes_table WHERE gedcom = \"{$row['gedcom']}\"";
 $nresult = tng_query($query);
 $nrow = tng_fetch_assoc($nresult);
 $ncount = number_format($nrow['ncount']);

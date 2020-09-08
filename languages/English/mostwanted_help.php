@@ -8,7 +8,7 @@ echo help_header("Help: Most Wanted");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="misc_help.php" class="lightlink">&laquo; Help: Miscellaneous</a> &nbsp; | &nbsp;
@@ -25,7 +25,7 @@ echo help_header("Help: Most Wanted");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -63,7 +63,7 @@ echo help_header("Help: Most Wanted");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="edit"><p class="subheadbold">Editing Existing Entries</p></a>
             <p>To edit an existing entry, hold your mouse pointer over the entry to be edited. Links for "Edit" and "Delete" should appear for that entry. Click
                 the "Edit" link to bring up the form where you can make your changes. All the fields are the same as the ones described above under "Adding New Entries".</p>
@@ -73,7 +73,7 @@ echo help_header("Help: Most Wanted");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="sort"><p class="subheadbold">Sorting Entries</p></a>
             <p>To change the order of the Most Wanted entries you've created, just drag and drop them to the desired location (click on the "Drag" area, then hold the mouse down
                 as you move your pointer to the desired location, then release the mouse button). </p>
@@ -85,7 +85,7 @@ echo help_header("Help: Most Wanted");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Existing Entries</p></a>
             <p>To delete an existing entry, hold your mouse pointer over the entry to be deleted. Links for "Edit" and "Delete" should appear for that entry. Click
                 the "Delete" link to remove the entry (you will be asked to confirm your deletion before it is made final).</p>

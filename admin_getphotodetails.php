@@ -14,7 +14,7 @@ tng_free_result($result);
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<table width="95%" cellpadding="5" cellspacing="1" style="padding-top:6px">
+<table width="95%" cellpadding="5" cellspacing="1" style="padding-top:6px;">
     <tr>
         <td class="lightback" id="mwthumb" style="width:<?php echo($thumbmaxw + 6); ?>px;height:<?php echo($thumbmaxh + 6); ?>px;text-align:center;">
           <?php

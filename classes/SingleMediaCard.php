@@ -26,10 +26,10 @@ class SingleMediaCard
       $wherestr = $wherestr2 = "";
     }
 
-    $query = "SELECT distinct media.mediaID as mediaID, description $altstr, media.notes, thumbpath, path, form, mediatypeID, media.gedcom as gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%e %b %Y') as changedatef, changedby, status, plot, abspath, newwindow ";
-    $query .= "FROM {$media_table} media";
+    $query = "SELECT distinct media.mediaID AS mediaID, description $altstr, media.notes, thumbpath, path, form, mediatypeID, media.gedcom AS gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%e %b %Y') AS changedatef, changedby, status, plot, abspath, newwindow ";
+    $query .= "FROM $media_table media";
     if ($wherestr2) {
-      $query .= " LEFT JOIN {$medialinks_table} medialinks ON media.mediaID = medialinks.mediaID";
+      $query .= " LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID";
     }
     $query .= " WHERE $wherestr mediatypeID = \"{$mediatypeID}\" ORDER BY ";
     if (strpos($_SERVER['SCRIPT_NAME'], "placesearch") !== FALSE) {
@@ -49,10 +49,10 @@ class SingleMediaCard
     while ($row = tng_fetch_assoc($mediaresult)) {
       $mediatypeID = $row['mediatypeID'];
 
-      $query = "SELECT medialinkID, medialinks.personID as personID, familyID, people.living as living, people.private as private, people.branch as branch, families.branch as fbranch, families.living as fliving, families.private as fprivate, medialinks.gedcom as gedcom, linktype ";
-      $query .= "FROM {$medialinks_table} medialinks ";
-      $query .= "LEFT JOIN {$people_table} people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
-      $query .= "LEFT JOIN {$families_table} families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
+      $query = "SELECT medialinkID, medialinks.personID AS personID, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, medialinks.gedcom AS gedcom, linktype ";
+      $query .= "FROM $medialinks_table medialinks ";
+      $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
+      $query .= "LEFT JOIN $families_table families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
       $query .= "WHERE mediaID = \"{$row['mediaID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, medialinks.personID";
       $presult = tng_query($query);
       $foundliving = 0;
@@ -68,8 +68,8 @@ class SingleMediaCard
           $prow['private'] = $prow['fprivate'];
         }
         if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-          $query = "SELECT count(personID) as ccount ";
-          $query .= "FROM {$citations_table} citations, {$people_table} people ";
+          $query = "SELECT count(personID) AS ccount ";
+          $query .= "FROM $citations_table citations, $people_table people ";
           $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
           $presult2 = tng_query($query);
           $prow2 = tng_fetch_assoc($presult2);
@@ -115,7 +115,7 @@ class SingleMediaCard
       $row['mediatypeID'] = $mediatypeID;
       $imgsrc = getSmallPhoto($row);
       if ($imgsrc) {
-        $content .= "<div style=\"float:left;margin-right:10px;width:{$thumbmaxw}px;text-align:center\">\n";
+        $content .= "<div style=\"float:left;margin-right:10px;width:{$thumbmaxw}px;text-align:center;\">\n";
         if ($href && $row['allow_living']) {
           $content .= "<a href=\"$href\">$imgsrc</a>\n";
         } else {

@@ -40,24 +40,25 @@ if ($offset) {
 
 $branchsearch = cleanIt(trim($branchsearch));
 if ($branchsearch) {
-  $wherestr = " AND (branch LIKE \"%$branchsearch%\" OR b.description LIKE \"%$branchsearch%\")";
+  $wherestr = " AND (branch LIKE \"%$branchsearch%\" OR branches.description LIKE \"%$branchsearch%\")";
 } else {
   $wherestr = "";
 }
 if ($tree) {
-  $wherestr .= " AND b.gedcom = \"$tree\"";
+  $wherestr .= " AND branches.gedcom = \"$tree\"";
 }
 
-$query = "SELECT b.branch, b.gedcom, b.description, treename, personID
-	FROM ($branches_table as b, $trees_table as t)
-	WHERE b.gedcom = t.gedcom $wherestr
-	ORDER BY b.description LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT branches.branch, branches.gedcom, branches.description, treename, personID ";
+$query .= "FROM ($branches_table branches, $trees_table trees) ";
+$query .= "WHERE branches.gedcom = trees.gedcom $wherestr ";
+$query .= "ORDER BY branches.description ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(branch) as branchcount FROM $branches_table";
+  $query = "SELECT count(branch) AS branchcount FROM $branches_table";
   $result2 = tng_query($query);
   $countrow = tng_fetch_assoc($result2);
   $totrows = $countrow['branchcount'];
@@ -67,7 +68,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $numrowsplus = $numrows + $offset;
 
-$treequery = "SELECT count(gedcom) as treecount FROM $trees_table";
+$treequery = "SELECT count(gedcom) AS treecount FROM $trees_table";
 $treeresult = tng_query($treequery);
 $treerow = tng_fetch_assoc($treeresult);
 $numtrees = $treerow['treecount'];
@@ -134,12 +135,12 @@ if ($familywhere) {
 }
 
 while ($row = tng_fetch_assoc($result)) {
-  $query = "SELECT count(familyID) as fcount FROM $families_table WHERE branch LIKE \"%{$row['branch']}%\" $familywhere";
+  $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE branch LIKE \"%{$row['branch']}%\" $familywhere";
   $famresult = tng_query($query);
   $famrow = tng_fetch_assoc($famresult);
   tng_free_result($famresult);
 
-  $query = "SELECT count(personID) as pcount FROM $people_table WHERE branch LIKE \"%{$row['branch']}%\" $peoplewhere";
+  $query = "SELECT count(personID) AS pcount FROM $people_table WHERE branch LIKE \"%{$row['branch']}%\" $peoplewhere";
   $indresult = tng_query($query);
   $indrow = tng_fetch_assoc($indresult);
   tng_free_result($indresult);

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Hledá se");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="misc_help.php" class="lightlink">&laquo; Nápověda: Různé</a> &nbsp; | &nbsp;
@@ -30,7 +30,7 @@ echo help_header("Nápověda: Hledá se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidání nových zápisů</p></a>
             <p>Funkce <strong>Hledá se</strong> vám umožní vytvořit seznam kritických osob nebo fotografií, se kterými máte ve svém bádání problémy.
                 Tento seznam je rozdělen do dvou kategorií, <strong>Hledané osoby</strong> a <strong>Tajemné fotografie</strong>. Chcete-li do nějaké kategorie přidat nový zápis,
@@ -61,7 +61,7 @@ echo help_header("Nápověda: Hledá se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Úprava existujících zápisů</p></a>
             <p>Chcete-li existující zápis upravit, přesuňte kursor myši nad záznam, který chcete upravit. Pod tímto zápisem by se měly objevit odkazy "Upravit" a "Vymazat". Kliknutím
                 na odkaz "Upravit" se zobrazí formulář, ve kterém můžete provést své změny. Pole ve formuláři jsou stejná jako jsou popsána výše v odstavci "Přidání nových zápisů".</p>
@@ -71,7 +71,7 @@ echo help_header("Nápověda: Hledá se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="sort"><p class="subheadbold">Třídění zápisů</p></a>
             <p>Chcete-li změnit pořadí zápisů, které jste vytvořili v sekci Hledá se, chytněte je a přetáhněte na požadované místo (klikněte na oblast "Táhnout", podržte tlačítko myši,
                 dokud nepřesunete ukazovátko na požadované místo a pak myš uvolněte). </p>
@@ -83,7 +83,7 @@ echo help_header("Nápověda: Hledá se");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazání existujících zápisů</p></a>
             <p>Chcete-li existující zápis vymazat, přesuňte kursor myši nad záznam, který chcete vymazat. Pod tímto zápisem by se měly objevit odkazy "Upravit" a "Vymazat". Kliknutím
                 na odkaz "Vymazat" zápis odstraníte (před tím budete požádáni o potvrzení této akce).</p>

@@ -75,7 +75,7 @@ include_once "eventlib.php";
     <table width="100%" cellpadding="10" cellspacing="2">
         <tr class="databack">
             <td class="tngbotshadow">
-                <div style="float:right">
+                <div style="float:right;">
                     <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
                 </div>
                 <table cellpadding="0" cellspacing="0" class="normal">
@@ -130,7 +130,7 @@ include_once "eventlib.php";
                             <td><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35"></td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px\"></td>\n";
+                                echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px;\"></td>\n";
                             }
                             ?>
                             <td><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35"></td>
@@ -206,7 +206,7 @@ include_once "eventlib.php";
                             <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
 
                                 <?php
-                                $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"$tree\" ORDER BY description";
+                                $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
                                 $branchresult = tng_query($query);
                                 $branchlist = explode(",", $row['branch']);
 
@@ -229,7 +229,7 @@ include_once "eventlib.php";
                                 }
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
                                 $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
-                                $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
+                                $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") {
                                     $select .= " selected";
@@ -237,7 +237,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                      onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -313,7 +313,7 @@ include_once "eventlib.php";
             </td>
         </tr>
         <?php
-        $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"$personID\" AND gedcom = \"$tree\" ORDER BY parentorder";
+        $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"$personID\" AND gedcom = '$tree' ORDER BY parentorder";
         $parents = tng_query($query);
         $parentcount = tng_num_rows($parents);
 
@@ -323,16 +323,16 @@ include_once "eventlib.php";
             <td class="tngbotshadow">
                 <?php echo displayToggle("plus2", 0, "parents", $admtext['parents'] . " (<span id=\"parentcount\">$parentcount</span>)", ""); ?>
 
-                <div id="parents" style="display:none"><br>
+                <div id="parents" style="display:none;"><br>
                     <?php
                     while ($parent = tng_fetch_assoc($parents))
                     {
                     $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, prefix, suffix, nameorder, people.living, people.private, people.branch ";
-                    $query .= "FROM {$people_table} people, {$families_table} families ";
+                    $query .= "FROM $people_table people, $families_table families ";
                     $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
                     $gotfather = tng_query($query);
 
-                    echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
+                    echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
                     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                     if ($parentcount > 1) {
                         echo "<td class=\"dragarea normal\">";
@@ -340,7 +340,7 @@ include_once "eventlib.php";
                         echo "</td>\n";
                     }
                     echo "<td class=\"lightback normal\">\n";
-                    echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none\"><a href=\"#\" onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
+                    echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
                     echo "<table class=\"normal\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td valign=\"top\" colspan=\"4\">\n";
 
@@ -385,7 +385,7 @@ include_once "eventlib.php";
     }
 
     $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, prefix, suffix, nameorder, people.living, people.private, people.branch ";
-    $query .= "FROM {$people_table} people, {$families_table} families ";
+    $query .= "FROM $people_table people, $families_table families ";
     $query .= "WHERE people.personID = families.wife AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
     $gotmother = tng_query($query);
 
@@ -429,14 +429,14 @@ include_once "eventlib.php";
 
     $parent['sealplace'] = preg_replace("/\"/", "&#34;", $parent['sealplace']);
     if ($rights['lds']) {
-        $citquery = "SELECT citationID FROM $citations_table WHERE persfamID = \"$personID" . "::" . "{$parent['familyID']}\" AND gedcom = \"$tree\"";
+        $citquery = "SELECT citationID FROM $citations_table WHERE persfamID = \"$personID" . "::" . "{$parent['familyID']}\" AND gedcom = '$tree'";
         $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
         $citesicon = $cms['tngpath'] . "img/" . (tng_num_rows($citresult) ? "tng_cite_on.gif" : "tng_cite.gif");
         tng_free_result($citresult);
 
         echo "<table><tr><td>&nbsp;</td><td>" . $admtext['date'] . "</td><td>" . $admtext['place'] . "</td><td colspan=\"2\">&nbsp;</td></tr>\n";
         echo "<tr>\n";
-        echo "<td valign=\"top\" class=\"nw\" style=\"width:110px\">" . $admtext['SLGC'] . ":</td>\n";
+        echo "<td valign=\"top\" class=\"nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
         echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
         echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
         echo "<td>\n";
@@ -472,9 +472,9 @@ include_once "eventlib.php";
 
     if ($row['sex']) {
         if ($self) {
-            $query = "SELECT $spouse, familyID, marrdate FROM $families_table WHERE $families_table.$self = \"$personID\" AND gedcom = \"$tree\" ORDER BY $spouseorder";
+            $query = "SELECT $spouse, familyID, marrdate FROM $families_table WHERE $families_table.$self = \"$personID\" AND gedcom = '$tree' ORDER BY $spouseorder";
         } else {
-            $query = "SELECT husband, wife, familyID, marrdate FROM $families_table WHERE ($families_table.husband = \"$personID\" OR $families_table.wife = \"$personID\") AND gedcom = \"$tree\"";
+            $query = "SELECT husband, wife, familyID, marrdate FROM $families_table WHERE ($families_table.husband = \"$personID\" OR $families_table.wife = \"$personID\") AND gedcom = '$tree'";
         }
         $marriages = tng_query($query);
         $marrcount = tng_num_rows($marriages);
@@ -485,7 +485,7 @@ include_once "eventlib.php";
             <td class="tngbotshadow">
             <?php echo displayToggle("plus3", 0, "spouses", $admtext['spouses'] . " (<span id=\"marrcount\">$marrcount</span>)", ""); ?>
 
-            <div id="spouses" style="display:none"><br>
+            <div id="spouses" style="display:none;"><br>
             <?php
             if ($marriages && tng_num_rows($marriages)) {
                 while ($marriagerow = tng_fetch_assoc($marriages)) {
@@ -500,7 +500,7 @@ include_once "eventlib.php";
                         }
                         $spouse = "husband";
                     }
-                    echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
+                    echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
                     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";
@@ -510,11 +510,11 @@ include_once "eventlib.php";
                     echo "<td class=\"lightback normal\">\n";
                     echo "<table class=\"normal\" width=\"100%\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td valign=\"top\" width=\"94%\">\n";
-                    echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none\"><a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
+                    echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
 
                     echo $marriagerow['familyID'] . "\n</td></tr>";
                     if ($marriagerow[$spouse]) {
-                        $query = "SELECT personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch FROM $people_table WHERE personID = \"{$marriagerow[$spouse]}\" AND gedcom = \"$tree\"";
+                        $query = "SELECT personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch FROM $people_table WHERE personID = \"{$marriagerow[$spouse]}\" AND gedcom = '$tree'";
                         $spouseresult = tng_query($query);
                         $spouserow = tng_fetch_assoc($spouseresult);
                         $srights = determineLivingPrivateRights($spouserow, $righttree);
@@ -542,7 +542,7 @@ include_once "eventlib.php";
                         <?php
                     }
 
-                    $query = "SELECT $people_table.personID as pID, firstname, lnprefix, lastname, haskids, living, private, branch, prefix, suffix, nameorder FROM ($people_table, $children_table) WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"{$marriagerow['familyID']}\" AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\" ORDER BY ordernum";
+                    $query = "SELECT $people_table.personID AS pID, firstname, lnprefix, lastname, haskids, living, private, branch, prefix, suffix, nameorder FROM ($people_table, $children_table) WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"{$marriagerow['familyID']}\" AND $people_table.gedcom = '$tree' AND $children_table.gedcom = '$tree' ORDER BY ordernum";
                     $children = tng_query($query);
 
                     if ($children && tng_num_rows($children)) {

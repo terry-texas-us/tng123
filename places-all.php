@@ -39,7 +39,7 @@ if (!$tngconfig['places1tree']) {
 $offset = 1;
 
 $linkstr = "";
-$query = "SELECT distinct ucase(left(trim(substring_index(place,',',-$offset)),1)) as firstchar FROM $places_table $wherestr GROUP BY firstchar ORDER by firstchar";
+$query = "SELECT distinct ucase(left(trim(substring_index(place,',',-$offset)),1)) AS firstchar FROM $places_table $wherestr GROUP BY firstchar ORDER by firstchar";
 $result = tng_query($query);
 if ($result) {
   $initialchar = 1;
@@ -94,7 +94,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
           <tr>
               <td class="plcol">
                 <?php
-                $query = "SELECT trim(substring_index(place,',',-$offset)) as myplace, count(place) as placecount, gedcom FROM $places_table WHERE trim(substring_index(place,',',-$offset)) LIKE \"$urlfirstchar%\" $wherestr2 GROUP BY myplace ORDER by myplace";
+                $query = "SELECT trim(substring_index(place,',',-$offset)) AS myplace, count(place) AS placecount, gedcom FROM $places_table WHERE trim(substring_index(place,',',-$offset)) LIKE \"$urlfirstchar%\" $wherestr2 GROUP BY myplace ORDER by myplace";
                 $result = tng_query($query);
                 $topnum = tng_num_rows($result);
                 if ($result) {
@@ -123,7 +123,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                       $placetitle = $place['myplace'];
                     }
 
-                    $query = "SELECT count(place) as placecount FROM $places_table WHERE place = \"$place3\" $wherestr2";
+                    $query = "SELECT count(place) AS placecount FROM $places_table WHERE place = \"$place3\" $wherestr2";
                     $result2 = tng_query($query);
                     $countrow = tng_fetch_assoc($result2);
                     $specificcount = $countrow['placecount'];

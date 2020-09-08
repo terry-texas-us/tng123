@@ -12,7 +12,7 @@ echo help_header("Nápověda: Hřbitovy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="albums_help.php" class="lightlink">&laquo; Nápověda: Alba</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("Nápověda: Hřbitovy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nový / Upravit existující hřbitovy</p></a>
             <p>TNG vám umožní třídit a zobrazit vaše fotografie náhrobků podle hřbitovů. Aby toto fungovalo, musíte pro každé místo nastavit nový záznam hřbitova. Záznamy
                 hřbitovů v TNG se nevztahují k záznamům míst a pro hřitovy neexistuje konvence GEDCOM, takže pokud váš soubor GEDCOM obsehuje v některých místech pohřbů
@@ -108,7 +108,7 @@ echo help_header("Nápověda: Hřbitovy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat hřbitovy</p></a>
 
             <p>Chcete-li odstranit hřbitov, použijte záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Vymazat vedle tohoto záznamu hřbitova. Tento řádek změní

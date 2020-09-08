@@ -8,7 +8,7 @@ echo help_header("Help: DNA Tests");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="reports_help.php" class="lightlink">&laquo; Help: Reports</a> &nbsp; | &nbsp;
@@ -29,7 +29,7 @@ echo help_header("Help: DNA Tests");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -53,7 +53,7 @@ echo help_header("Help: DNA Tests");
     <tr class="databack">
         <td class="tngshadow">
 
-          <p style="float:right"><a href="#top">Top</a></p>
+          <p style="float:right;"><a href="#top">Top</a></p>
           <a name="add"><p class="subheadbold">Adding New Tests</p></a>
           <p>To add a new test, click on the <strong>Add New</strong> tab, then fill out the form. The test can be linked to people in the database after it has been saved.</p>
           <p>Note that fields can be left empty and will not be displayed in most cases.</p>
@@ -110,7 +110,7 @@ echo help_header("Help: DNA Tests");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="ydna"><p class="subheadbold">Y-DNA Test Result Fields</p></a>
 
       <p>Your Y-chromosome DNA (Y-DNA) can trace your father, his father, his father’s father, and so forth using STR markers, which are places where your genetic code has a variable number of repeated parts.</p>
@@ -140,7 +140,7 @@ echo help_header("Help: DNA Tests");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="mtdna"><p class="subheadbold">mtDNA Test Result Fields</p></a>
 
             <p><span class="optionhead">Mitochondrial DNA (mtDNA) </span> traces your ancestry from your mother to her mother, her mother's mother, and so forth and has two major parts, the control region and the coding region. The control region is often
@@ -174,7 +174,7 @@ echo help_header("Help: DNA Tests");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="atdna"><p class="subheadbold">atDNA Test Result Fields</p></a>
 
       <p><span class="optionhead">Autosomal DNA (atDNA) </span> checks your autosomal chromosomes, that is the other 22 pairs beyond the sex-linked X and Y chromosomes. Autosomal DNA tests may help identify relatives who share recent ancestors. The
@@ -216,7 +216,7 @@ echo help_header("Help: DNA Tests");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="common"><p class="subheadbold">Common Test Result Fields</p></a>
 
       <p>The following fields are common to all test types>/p>
@@ -264,7 +264,7 @@ echo help_header("Help: DNA Tests");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="edit"><p class="subheadbold">Editing Existing Tests</p></a>
             <p>To make changes to an existing test, use the <a href="#search">Search</a> tab to locate the test, then click on the Edit icon next to that test.</p>
 
@@ -280,7 +280,7 @@ echo help_header("Help: DNA Tests");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Existing Tests</p></a>
             <p>To delete a test, use the <a href="#search">Search</a> tab to locate the test, then click on the Delete icon next to that test. The row will
                 change color and then vanish as the test is deleted. To delete more than one test at a time, check the box in the Select column next to each test to be

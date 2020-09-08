@@ -12,7 +12,7 @@ echo help_header("Nápověda: Vlastní typy událostí");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp; | &nbsp;
@@ -57,7 +57,7 @@ echo help_header("Nápověda: Vlastní typy událostí");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nebo upravit vlastní typy událostí</p></a>
 
             <p>Nejobvyklejší neboli "Standardní" typy událostí, jako jsou Narození, Úmrtí, Sňatek několik dalších, jsou spravovány přímo na stránkách osoby, rodiny, pramenu nebo úložišti pramenů.
@@ -115,7 +115,7 @@ echo help_header("Nápověda: Vlastní typy událostí");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="accept"><p class="subheadbold">Přijmout vybrané / Odmítnout vybrané</p></a>
             <p>Chcete-li najednou označit vlastní typy událostí jako <strong>Přijmout</strong> nebo <strong>Odmítnout</strong>, zaškrtněte políčko Vybrat vedle každého vlastního typu události,
                 který chcete změnit, a poté klikněte na tlačítko "Přijmout vybrané" nebo "Odmítnout vybrané" v horní části stránky.</p>
@@ -125,7 +125,7 @@ echo help_header("Nápověda: Vlastní typy událostí");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat vlastní typy událostí</p></a>
             <p>Chcete-li odstranit vlastní typ události, použijte záložku <a href="#search">Hledat</a> k nalezení položky, a poté klikněte na ikonku Vymazat vedle tohoto záznamu. Tento řádek změní
                 barvu a poté po odstranění vlastního typu události zmizí. Chcete-li najednou odstranit více záznamů, zaškrtněte tlačítko ve sloupci Vybrat vedle každého záznamu, který má být

@@ -64,7 +64,7 @@ if ($assignedtree) {
 }
 $orgtree = $tree;
 
-$uquery = "SELECT count(userID) as ucount FROM $users_table WHERE allow_living = \"-1\"";
+$uquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
 $uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquery");
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
@@ -147,12 +147,12 @@ if ($living == "yes") {
     $allwhere .= " AND $families_table.living = \"1\"";
 }
 
-$query = "SELECT $families_table.ID as ID, familyID, husband, wife, marrdate, $families_table.gedcom as gedcom, treename, $families_table.changedby, DATE_FORMAT($families_table.changedate,\"%d %b %Y\") as changedate $otherfields FROM ($families_table, $trees_table $people_join) WHERE $allwhere ORDER BY $sortstr familyID LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT $families_table.ID AS ID, familyID, husband, wife, marrdate, $families_table.gedcom AS gedcom, treename, $families_table.changedby, DATE_FORMAT($families_table.changedate,\"%d %b %Y\") AS changedate $otherfields FROM ($families_table, $trees_table $people_join) WHERE $allwhere ORDER BY $sortstr familyID LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count($families_table.ID) as fcount FROM ($families_table, $trees_table $people_join) WHERE $allwhere";
+    $query = "SELECT count($families_table.ID) AS fcount FROM ($families_table, $trees_table $people_join) WHERE $allwhere";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['fcount'];

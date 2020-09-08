@@ -39,7 +39,7 @@ tng_adminheader($admtext['addnewsource'], $flags);
         return rval;
     }
 
-    var selecttree = "<?php echo $admtext['selecttree']; ?>";
+    const selecttree = "<?php echo $admtext['selecttree']; ?>";
 </script>
 </head>
 

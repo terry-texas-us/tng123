@@ -14,7 +14,7 @@ if (!$allow_delete || ($assignedtree && $assignedtree != $tree)) {
 }
 
 function getGroupCount($tree, $group, $table) {
-    $query = "SELECT count(dna_group) as count FROM $table WHERE gedcom = \"$tree\" and dna_group = \"$group\"";
+    $query = "SELECT count(dna_group) AS count FROM $table WHERE gedcom = '$tree' and dna_group = \"$group\"";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $count = $row['count'];
@@ -69,8 +69,8 @@ if ($tree) {
     $wherestr .= "WHERE dna_groups.gedcom = \"{$tree}\"";
 }
 $query = "SELECT dna_groups.gedcom AS gedcom, dna_group, dna_groups.description AS description, test_type, treename ";
-$query .= "FROM {$dna_groups_table} dna_groups ";
-$query .= "LEFT JOIN {$trees_table} trees ON trees.gedcom = dna_groups.gedcom ";
+$query .= "FROM $dna_groups_table dna_groups ";
+$query .= "LEFT JOIN $trees_table trees ON trees.gedcom = dna_groups.gedcom ";
 $query .= "$wherestr ";
 $query .= "ORDER BY dna_groups.description ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
@@ -78,7 +78,10 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(dna_group) as gcount FROM {$dna_groups_table} dna_groups LEFT JOIN {$trees_table} trees ON trees.gedcom = dna_groups.gedcom $wherestr";
+    $query = "SELECT count(dna_group) AS gcount ";
+    $query .= "FROM $dna_groups_table dna_groups ";
+    $query .= "LEFT JOIN $trees_table trees ON trees.gedcom = dna_groups.gedcom ";
+    $query .= "$wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['gcount'];
@@ -213,7 +216,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             echo "<td class=\"lightback\">&nbsp;{$row['treename']}&nbsp;</td>\n";
                             echo "<td class=\"lightback\">{$row['test_type']}&nbsp;</td>\n";
                             $pcount = getGroupCount($row['gedcom'], $row['dna_group'], $dna_tests_table);
-                            echo "<td class=\"lightback\" style=\"text-align:right\">$pcount&nbsp;</td>\n";
+                            echo "<td class=\"lightback\" style=\"text-align:right;\">$pcount&nbsp;</td>\n";
                             echo "</tr>\n";
                         }
                         tng_free_result($result);

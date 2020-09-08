@@ -89,7 +89,7 @@ if ($chartheight < 300) {
     $chartheight = 300;
 }
 
-echo "<div align='left' id='outer' style='position:relative;padding-top:8px;width:100%;height:{$chartheight}px'>\n";
+echo "<div align='left' id='outer' style='position:relative;padding-top:8px;width:100%;height:{$chartheight}px;'>\n";
 $famfx = $fammx = $hpad;
 if ($reverse) {
     $famfx += 2 * $colsep;
@@ -114,7 +114,7 @@ function getfamily($tree, $familyID, $personID) {
             $familyID = getresult(getChildFamily($tree, $personID, 'parentorder'));
         }
     }
-    $query = "SELECT distinct a.gedcom gedcom,a.familyID familyID,husband,wife, c.personID, c.firstname,c.lastname,c.sex,IF(birthdatetr!='0000-00-00',year(birthdatetr),year(altbirthdatetr)) as birth,IF(deathdatetr !='0000-00-00',year(deathdatetr),year(burialdatetr)) death, marrdate, c.living living, c.private private, c.branch branch, nameorder, lnprefix, title, prefix, suffix, ordernum ";
+    $query = "SELECT distinct a.gedcom gedcom,a.familyID familyID,husband,wife, c.personID, c.firstname,c.lastname,c.sex,IF(birthdatetr!='0000-00-00',year(birthdatetr),year(altbirthdatetr)) AS birth,IF(deathdatetr !='0000-00-00',year(deathdatetr),year(burialdatetr)) death, marrdate, c.living living, c.private private, c.branch branch, nameorder, lnprefix, title, prefix, suffix, ordernum ";
     $query .= "FROM $families_table a left join $children_table b on a.familyID=b.familyID and a.gedcom=b.gedcom join $people_table c on c.personID in (a.husband,a.wife,b.personID) and a.gedcom=c.gedcom ";
     $query .= "WHERE a.familyID='$familyID' and a.gedcom='$tree' ";
     $query .= "ORDER BY b.ordernum";
@@ -325,7 +325,7 @@ function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
 
     echo "\t<div class='$class' style='left:{$left}px;top:{$top}px;'>\n<table class='bare'><tbody><tr>";
     if ($familychart['inclphotos'] && $imagestr = getPhoto($person, $name, $familychart['boxheight'] - 4)) {
-        echo "<td class='smallpic' style='padding-left:5px'>$imagestr</td>";
+        echo "<td class='smallpic' style='padding-left:5px;'>$imagestr</td>";
     }
     if (($imagestr && strlen($name) > $familychart['boxwidth'] / 4.5) || strlen($name) > $familychart['boxwidth'] / 3.2) {
         $name = "<small>$name</small>";
@@ -358,24 +358,24 @@ function doOtherSpouses(&$person, $spouse, $left, $top, $reverse) {
     global $cms, $text, $families_table, $people_table, $family_url, $tree;
 
     if ($otherfamilies = getfamilyID($person, 'other')) {
-        echo "<div class='more' style='left:{$left}px;top:{$top}px'>
+        echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
 		<img src='{$cms['tngpath']}img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
 		<div id='$spouse' class='rounded10 popup hiddenbox'>";
         $tree = $person['gedcom'];
         $rev = $reverse ? '&amp;rev=1' : '';
         $sp = 0;
         while ($fam = $otherfamilies[$sp++]) {
-            $query = "SELECT personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living as living, $people_table.private as private 
+            $query = "SELECT personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living AS living, $people_table.private AS private 
 				FROM $families_table ";
             if ($spouse == "husband") {
-                $query .= "LEFT JOIN $people_table on $families_table.husband = $people_table.personID AND $families_table.gedcom = $people_table.gedcom 
+                $query .= "LEFT JOIN $people_table ON $families_table.husband = $people_table.personID AND $families_table.gedcom = $people_table.gedcom 
 					WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\" ORDER BY husborder";
             } else {
                 if ($spouse == "wife") {
-                    $query .= "LEFT JOIN $people_table on $families_table.wife = $people_table.personID AND $families_table.gedcom = $people_table.gedcom 
+                    $query .= "LEFT JOIN $people_table ON $families_table.wife = $people_table.personID AND $families_table.gedcom = $people_table.gedcom 
 					WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\" ORDER BY wifeorder";
                 } else {
-                    $query .= "LEFT JOIN $people_table on ($families_table.husband = $people_table.personID OR $families_table.wife = $people_table.personID) AND $families_table.gedcom = $people_table.gedcom WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\"";
+                    $query .= "LEFT JOIN $people_table ON ($families_table.husband = $people_table.personID OR $families_table.wife = $people_table.personID) AND $families_table.gedcom = $people_table.gedcom WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\"";
                 }
             }
             $spresult = tng_query($query);

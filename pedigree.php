@@ -489,12 +489,12 @@ $flags['scripting'] .= "var tngprint = $tngprint;\n";
 if ($allow_edit) {
     $flags['scripting'] .= "var allow_cites = true;\n";
     $flags['scripting'] .= "var allow_notes = true;\n";
-    $flags['scripting'] .= "var confdeletepers = \"{$admtext['confdeletepers']}\";\n";
-    $flags['scripting'] .= "var confremchild = \"{$admtext['confremchild']}\";\n";
-    $flags['scripting'] .= "var confunlink = \"{$admtext['confunlink']}\";\n";
-    $flags['scripting'] .= "var confunlinkc = \"{$admtext['confunlinkc']}\";\n";
-    $flags['scripting'] .= "var enterfamilyid = \"{$admtext['enterfamilyid']}\";\n";
-    $flags['scripting'] .= "var enterpersonid = \"{$admtext['enterpersonid']}\";\n";
+    $flags['scripting'] .= "const confdeletepers = \"{$admtext['confdeletepers']}\";\n";
+    $flags['scripting'] .= "const confremchild = \"{$admtext['confremchild']}\";\n";
+    $flags['scripting'] .= "const confunlink = \"{$admtext['confunlink']}\";\n";
+    $flags['scripting'] .= "const confunlinkc = \"{$admtext['confunlinkc']}\";\n";
+    $flags['scripting'] .= "const enterfamilyid = \"{$admtext['enterfamilyid']}\";\n";
+    $flags['scripting'] .= "const enterpersonid = \"{$admtext['enterpersonid']}\";\n";
 }
 
 $flags['scripting'] .= "var unknown = '{$text['unknownlit']}';\n";

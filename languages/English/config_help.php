@@ -8,7 +8,7 @@ echo help_header("Help: General Settings");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
@@ -34,7 +34,7 @@ echo help_header("Help: General Settings");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -66,7 +66,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="table"><p class="subheadbold">Table Names</p></a>
 
             <span class="optionhead">Table Names</span>
@@ -78,7 +78,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="path"><p class="subheadbold">Paths and Folders</p></a>
 
             <span class="optionhead">Root Path</span>
@@ -110,7 +110,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="site"><p class="subheadbold">Site Design and Definition</p></a>
 
             <span class="optionhead">Home Page</span>
@@ -183,7 +183,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="media"><p class="subheadbold">Media</p></a>
 
             <span class="optionhead">Photos Extension</span>
@@ -266,7 +266,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="lang"><p class="subheadbold">Language</p></a>
 
             <span class="optionhead">Language</span>
@@ -285,7 +285,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="priv"><p class="subheadbold">Privacy</p></a>
 
             <span class="optionhead">Require Login</span>
@@ -351,7 +351,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="name"><p class="subheadbold">Names</p></a>
 
             <span class="optionhead">Name Order</span>
@@ -379,7 +379,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="cem"><p class="subheadbold">Cemeteries</p></a>
 
             <span class="optionhead">Max lines per column (approx.)</span>
@@ -395,7 +395,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="mail"><p class="subheadbold">Mail and Registration</p></a>
 
             <span class="optionhead">Email Address</span>
@@ -445,7 +445,7 @@ echo help_header("Help: General Settings");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Top</a></p>
+      <p style="float:right;"><a href="#top">Top</a></p>
       <a name="mobile"><p class="subheadbold">Mobile</p></a>
 
       <p>The Mobile section allows you to control how TNG is displayed on smart phones and tablets.</p>
@@ -476,7 +476,7 @@ echo help_header("Help: General Settings");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="pref"><p class="subheadbold">Prefixes and Suffixes</p></a>
 
             <p>These letters are combined with a number to form IDs for the people, families, sources, repositories and notes in your database. Most genealogy
@@ -488,7 +488,7 @@ echo help_header("Help: General Settings");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="misc"><p class="subheadbold">Miscellaneous</p></a>
 
             <span class="optionhead">Max Search Results</span>

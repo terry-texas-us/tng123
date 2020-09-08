@@ -9,7 +9,7 @@ echo help_header("Help: Trees");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
           <a href="users_help.php" class="lightlink">&laquo; Help: Users</a> &nbsp; | &nbsp;
@@ -26,7 +26,7 @@ echo help_header("Help: Trees");
   </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -48,7 +48,7 @@ echo help_header("Help: Trees");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Add New / Edit Existing Trees</p></a>
             <p>A <strong>Tree</strong> in TNG is a container for any independent set of family data. TNG allows you to support multiple Trees on your site, but since
                 Trees are independent, you cannot link a person in one tree to any person or family in another tree. For that reason, any people that are or could be linked
@@ -96,7 +96,7 @@ echo help_header("Help: Trees");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Trees</p></a>
             <p>To delete a Tree, use the <a href="#search">Search</a> tab to locate the Tree, then click on the Delete icon next to that Tree record. The row will
                 change color and then vanish as the Tree is deleted. <em>All data associated with the Tree (including people, families,
@@ -107,7 +107,7 @@ echo help_header("Help: Trees");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="clear"><p class="subheadbold">Clearing Trees</p></a>
             <p>To "clear" a tree (delete all data but leave the Tree itself), use the <a href="#search">Search</a> tab to locate the Tree, then click on the Clear icon next to that Tree record.
                 <em>All data associated with the tree (including people, families, sources, repositories, media and branches) will all be deleted</em>.</p>

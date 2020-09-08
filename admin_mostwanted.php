@@ -17,20 +17,20 @@ function showDiv(string $type) {
     global $thumbmaxw, $admtext, $mostwanted_table, $media_table, $people_table, $mediatypes_assoc, $mediapath, $allow_add, $allow_delete, $allow_edit, $rootpath;
 
     if ($allow_add) {
-        echo "<form action=\"\" style=\"margin:0;padding-bottom:5px\" method=\"post\" name=\"form$type\" id=\"form$type\">\n";
+        echo "<form action=\"\" style=\"margin:0;padding-bottom:5px;\" method=\"post\" name=\"form$type\" id=\"form$type\">\n";
         echo "<input type=\"button\" value=\"" . $admtext['addnew'] . "\" onclick=\"return openMostWanted('$type','');\">\n";
         echo "</form>\n";
     }
     echo "<div id=\"order$type" . "divs\">\n";
     echo "<table class=\"normal\" id=\"order$type" . "tbl\">\n";
     echo "<tr>\n";
-    echo "<th class=\"fieldnameback\" style=\"width: 4em\"><span class=\"fieldname\">" . $admtext['text_sort'] . "</span></th>\n";
-    echo "<th class=\"fieldnameback\" style=\"width: {$thumbmaxw}px\"><span class=\"fieldname\">" . $admtext['thumb'] . "</span></th>\n";
+    echo "<th class=\"fieldnameback\" style=\"width: 4em;\"><span class=\"fieldname\">" . $admtext['text_sort'] . "</span></th>\n";
+    echo "<th class=\"fieldnameback\" style=\"width: {$thumbmaxw}px;\"><span class=\"fieldname\">" . $admtext['thumb'] . "</span></th>\n";
     echo "<th class=\"fieldnameback\"><span class=\"fieldname\">" . $admtext['description'] . "</span></th>\n";
     echo "</tr>\n";
     echo "</table>\n";
 
-    $query = "SELECT mostwanted.ID as mwID, mwtype, thumbpath, usecollfolder, mediatypeID, media.description as mtitle, mostwanted.description as mwdesc, mostwanted.title as title ";
+    $query = "SELECT mostwanted.ID AS mwID, mwtype, thumbpath, usecollfolder, mediatypeID, media.description AS mtitle, mostwanted.description AS mwdesc, mostwanted.title AS title ";
     $query .= "FROM $mostwanted_table mostwanted ";
     $query .= "LEFT JOIN $media_table media ON mostwanted.mediaID = media.mediaID ";
     $query .= "LEFT JOIN $people_table people ON mostwanted.personID = people.personID AND mostwanted.gedcom = people.gedcom ";
@@ -46,10 +46,10 @@ function showDiv(string $type) {
         echo "<div class=\"sortrow\" id=\"order{$lrow['mwtype']}" . "divs_{$lrow['mwID']}\" style=\"clear:both\" onmouseover=\"showEditDelete('{$lrow['mwID']}');\" onmouseout=\"hideEditDelete('{$lrow['mwID']}');\">";
         echo "<table>\n";
         echo "<tr id=\"row_{$lrow['mwID']}\">\n";
-        echo "<td class=\"dragarea normal\" style=\"width: 4em\">";
+        echo "<td class=\"dragarea normal\" style=\"width: 4em;\">";
         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
         echo "</td>\n";
-        echo "<td class=\"lightback\" style=\"width: {$thumbmaxw}px\">";
+        echo "<td class=\"lightback\" style=\"width: {$thumbmaxw}px;\">";
         if ($lrow['thumbpath'] && file_exists("$rootpath$usefolder/" . $lrow['thumbpath'])) {
             $size = @GetImageSize("$rootpath$usefolder/" . $lrow['thumbpath']);
             echo "<img class=\"thumb-center\" src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" $size[3]} id=\"img_{$lrow['mwID']}\" alt=\"{$lrow['mtitle']}\">";
@@ -64,7 +64,7 @@ function showDiv(string $type) {
             echo "<u id=\"title_{$lrow['mwID']}\">{$lrow['title']}</u>";
         }
         echo "<br><span id=\"desc_{$lrow['mwID']}\">$truncated</span><br>";
-        echo "<div id=\"del_{$lrow['mwID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden\">";
+        echo "<div id=\"del_{$lrow['mwID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
         if ($allow_edit) {
             echo "<a href=\"#\" onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['edit']}</a>";
             if ($allow_delete) {
@@ -94,7 +94,7 @@ tng_adminheader($admtext['mostwanted'], $flags);
     var tnglitbox;
     const entertitle = "<?php echo $admtext['entertitle']; ?>";
     const enterdesc = "<?php echo $admtext['enterdesc']; ?>";
-    var drag = "<?php echo $admtext['drag']; ?>";
+    const drag = "<?php echo $admtext['drag']; ?>";
     var thumbwidth = <?php echo($thumbmaxw + 6); ?>;
     const edittext = "<?php echo $admtext['edit']; ?>";
     const deletetext = "<?php echo $admtext['delete']; ?>";
@@ -108,7 +108,7 @@ tng_adminheader($admtext['mostwanted'], $flags);
     table th, table td {padding: 4px;}
     .thumb-center {display: block; margin-left: auto; margin-right: auto;}
 </style>
-<?php echo "</head>\n"; ?>
+<?php echo "</head>"; ?>
 
 <body onLoad="startMostWanted()">
 
@@ -140,6 +140,6 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "
         </td>
     </tr>
 </table>
-<div style="text-align: right"><span class="normal"><?php echo "$tng_title, v.$tng_version"; ?></span></div>
+<div style="text-align: right;"><span class="normal"><?php echo "$tng_title, v.$tng_version"; ?></span></div>
 </body>
 <?php echo "</html>\n"; ?>

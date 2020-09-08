@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="places_googlemap_help.php" class="lightlink">&laquo; N�pov�da: Google Maps</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat novou / Upravit existuj�c� ud�losti �asov� osy</p></a>
             <p>TNG umo��uje zobrazen� sch�matu �asov� osy pro porovn�n� rozsahu �ivota osob ve va�� datab�zi.
                 Roz���it souvislosti t�chto sch�mat m��ete tak� vytvo�en�m ud�lost� �asov� osy. Pokud roky, kter� pokr�v�
@@ -73,7 +73,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="delete"><p class="subheadbold">Vymazat ud�losti �asov� osy</p></a>
       <p>Chcete-li odstranit ud�lost �asov� osy, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� ud�losti, a pot� klikn�te na ikonu Vymazat vedle tohoto z�znamu ud�losti. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� ud�losti zmiz�. Chcete-li najednou odstranit v�ce ud�lost�, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d� ud�losti, kterou

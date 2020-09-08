@@ -20,7 +20,7 @@ initMediaTypes();
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div class="databack normal" style="margin:10px;border:0" id="newcollection">
+<div class="databack normal" style="margin:10px;border:0;" id="newcollection">
     <p class="subhead"><strong><?php echo $admtext['addnewcoll']; ?></strong> |
     <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
 
@@ -83,6 +83,6 @@ foreach ($mediatypes as $mediatype) {
 
     <input type="hidden" name="field" value="<?php echo "$field"; ?>">
     <input type="submit" value="<?php echo $admtext['save']; ?>">
-    <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();"> <span id="cerrormsg" style="color:#CC0000;display:none"><?php echo $admtext['cidexists']; ?></span>
+    <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();"> <span id="cerrormsg" style="color:#CC0000;display:none;"><?php echo $admtext['cidexists']; ?></span>
   </form>
 </div>

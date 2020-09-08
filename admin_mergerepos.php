@@ -142,7 +142,7 @@ function doNotes($persfam1, $persfam2, $varname) {
   }
 
   if ($ccombinenotes != "yes") {
-    $query = "DELETE from $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = \"$tree\" $wherestr";
+    $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = \"$tree\" $wherestr";
     $noteresult = tng_query($query);
   }
   $query = "UPDATE $notelinks_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = \"$tree\" $wherestr";
@@ -151,7 +151,10 @@ function doNotes($persfam1, $persfam2, $varname) {
 
 $r1row = $r2row = "";
 if ($repoID1) {
-  $query = "SELECT reponame, repoID, $repositories_table.addressID as addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $repositories_table LEFT JOIN $address_table on $repositories_table.addressID = $address_table.addressID WHERE repoID = \"$repoID1\" AND $repositories_table.gedcom = \"$tree\"";
+  $query = "SELECT reponame, repoID, repositories.addressID AS addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
+  $query .= "FROM $repositories_table repositories ";
+  $query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
+  $query .= "WHERE repoID = \"$repoID1\" AND repositories.gedcom = \"$tree\"";
   $result = tng_query($query);
   if ($result && tng_num_rows($result)) {
     $r1row = tng_fetch_assoc($result);
@@ -178,14 +181,14 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
       $nextone = $nextchunk + 1;
       $nextchunk += $largechunk;
 
-      $query = "SELECT * FROM $repositories_table WHERE gedcom = \"$tree\" $wherestr ORDER BY repoID LIMIT $nextone, $largechunk";
+      $query = "SELECT * FROM $repositories_table WHERE gedcom = '$tree' $wherestr ORDER BY repoID LIMIT $nextone, $largechunk";
       $result = tng_query($query);
       $numrows = tng_num_rows($result);
       if ($result && $numrows) {
         while ($still_looking && $row = tng_fetch_assoc($result)) {
           $wherestr2 = addCriteria($row);
 
-          $query = "SELECT * FROM $repositories_table WHERE repoID > \"{$row['repoID']}\" AND gedcom = \"$tree\" $wherestr2 ORDER BY repoID";
+          $query = "SELECT * FROM $repositories_table WHERE repoID > \"{$row['repoID']}\" AND gedcom = '$tree' $wherestr2 ORDER BY repoID";
           $result2 = tng_query($query);
           if ($result2 && tng_num_rows($result2)) {
             //set repoID1, repoID2
@@ -208,7 +211,7 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
     $wherestr2 = $repoID2 ? " AND repoID > \"$repoID2\"" : "";
     $wherestr2 .= addCriteria($r1row);
 
-    $query = "SELECT * FROM $repositories_table WHERE repoID != \"{$r1row['repoID']}\" AND gedcom = \"$tree\" $wherestr2 ORDER BY repoID LIMIT 1";
+    $query = "SELECT * FROM $repositories_table WHERE repoID != \"{$r1row['repoID']}\" AND gedcom = '$tree' $wherestr2 ORDER BY repoID LIMIT 1";
     $result2 = tng_query($query);
     if ($result2 && tng_num_rows($result2)) {
       $r2row = tng_fetch_assoc($result2);
@@ -219,7 +222,10 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
     }
   }
 } elseif ($repoID2) {
-  $query = "SELECT reponame, repoID, $repositories_table.addressID as addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $repositories_table LEFT JOIN $address_table on $repositories_table.addressID = $address_table.addressID WHERE repoID = \"$repoID2\" AND $repositories_table.gedcom = \"$tree\"";
+  $query = "SELECT reponame, repoID, repositories.addressID AS addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
+  $query .= "FROM $repositories_table repositories ";
+  $query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
+  $query .= "WHERE repoID = \"$repoID2\" AND repositories.gedcom = \"$tree\"";
   $result2 = tng_query($query);
   if ($result2 && tng_num_rows($result2) && $repoID1 != $repoID2) {
     $r2row = tng_fetch_assoc($result2);
@@ -246,11 +252,11 @@ if ($mergeaction == $admtext['merge']) {
         if (strpos($key, "::")) {
           $halves = explode("::", substr($key, 5));
           $varname = substr(strstr($halves[0], "_"), 1);
-          $query = "DELETE from $events_table WHERE persfamID = \"$repoID1\" AND gedcom = \"$tree\" and eventID = \"$varname\"";
+          $query = "DELETE FROM $events_table WHERE persfamID = \"$repoID1\" AND gedcom = \"$tree\" and eventID = \"$varname\"";
           $evresult = tng_query($query);
           $varname = substr(strstr($halves[1], "_"), 1);
 
-          $query = "SELECT eventID FROM $events_table WHERE persfamID = \"$repoID2\" AND  gedcom = \"$tree\" and eventID = \"$varname\"";
+          $query = "SELECT eventID FROM $events_table WHERE persfamID = \"$repoID2\" AND  gedcom = '$tree' and eventID = \"$varname\"";
           $evresult = tng_query($query);
           while ($evrow = tng_fetch_assoc($evresult))
             doNotes($repoID1, $repoID2, $evrow['eventID']);
@@ -278,14 +284,14 @@ if ($mergeaction == $admtext['merge']) {
     $combresult = tng_query($query);
   }
 
-  $query = "DELETE from $repositories_table WHERE repoID = \"$repoID2\" AND gedcom = \"$tree\"";
+  $query = "DELETE FROM $repositories_table WHERE repoID = \"$repoID2\" AND gedcom = \"$tree\"";
   $combresult = tng_query($query);
 
   //delete remaining notes & events for repo 2
-  $query = "DELETE from $events_table WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
+  $query = "DELETE FROM $events_table WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
   $combresult = tng_query($query);
 
-  $query = "DELETE from $notelinks_table WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
+  $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
   $combresult = tng_query($query);
 
   //point sources for r2 to r1
@@ -397,11 +403,11 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
         <table class="normal">
           <tr>
             <td>
-              <div style="float:left"><?php echo $admtext['repoid']; ?> 1: <input type="text" name="repoID1" id="repoID1" size="10" value="<?php echo $repoID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
+              <div style="float:left;"><?php echo $admtext['repoid']; ?> 1: <input type="text" name="repoID1" id="repoID1" size="10" value="<?php echo $repoID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
                             <a href="#" onclick="return findItem('R','repoID1','reponame1',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                         <td width="80">&nbsp;</td>
                         <td>
-                            <div style="float:left"><?php echo $admtext['repoid']; ?> 2: <input type="text" name="repoID2" id="repoID2" size="10" value="<?php echo $repoID2; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
+                            <div style="float:left;"><?php echo $admtext['repoid']; ?> 2: <input type="text" name="repoID2" id="repoID2" size="10" value="<?php echo $repoID2; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</div>
                             <a href="#" onclick="return findItem('R','repoID2','reponame2',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                     </tr>
                     <tr>
@@ -448,7 +454,10 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     if (is_array($r2row)) {
                       echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['repository']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r2row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
 
-                      $query = "SELECT display, eventdate, eventplace, info, $events_table.eventtypeID as eventtypeID, $events_table.eventID as eventID FROM $events_table, $eventtypes_table WHERE persfamID = \"{$r2row['repoID']}\" AND gedcom = \"$tree\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID ORDER BY ordernum";
+                      $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
+                      $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
+                      $query .= "WHERE persfamID = \"{$r2row['repoID']}\" AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
+                      $query .= "ORDER BY ordernum";
                       $evresult = tng_query($query);
                       $eventcount = tng_num_rows($evresult);
 
@@ -470,7 +479,10 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     doRow("repoID", "repoid", "");
                     doRow("reponame", "name", "r2reponame");
                     doRow("addressID", "address", "r2addressID");
-                    $query = "SELECT display, eventdate, eventplace, info, $events_table.eventtypeID as eventtypeID, $events_table.eventID as eventID FROM $events_table, $eventtypes_table WHERE persfamID = \"{$r1row['repoID']}\" AND gedcom = \"$tree\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID ORDER BY ordernum";
+                    $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
+                    $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
+                    $query .= "WHERE persfamID = \"{$r1row['repoID']}\" AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
+                    $query .= "ORDER BY ordernum";
                     $evresult = tng_query($query);
                     $eventcount = tng_num_rows($evresult);
 

@@ -13,7 +13,7 @@ if ($assignedtree || !$allow_edit) {
   exit;
 }
 
-$query = "SELECT *, DATE_FORMAT(lastlogin,\"%d %b %Y %H:%i:%s\") as lastlogin, dt_registered, DATE_FORMAT(dt_registered,\"%d %b %Y %H:%i:%s\") as dt_registered_fmt, DATE_FORMAT(dt_activated,\"%d %b %Y %H:%i:%s\") as dt_activated, dt_consented, DATE_FORMAT(dt_consented,\"%d %b %Y %H:%i:%s\") as dt_consented_fmt FROM $users_table WHERE userID = \"$userID\"";
+$query = "SELECT *, DATE_FORMAT(lastlogin,\"%d %b %Y %H:%i:%s\") AS lastlogin, dt_registered, DATE_FORMAT(dt_registered,\"%d %b %Y %H:%i:%s\") AS dt_registered_fmt, DATE_FORMAT(dt_activated,\"%d %b %Y %H:%i:%s\") AS dt_activated, dt_consented, DATE_FORMAT(dt_consented,\"%d %b %Y %H:%i:%s\") AS dt_consented_fmt FROM $users_table WHERE userID = \"$userID\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -43,7 +43,7 @@ if ($row['languageID']) {
   }
 }
 
-$revquery = "SELECT count(userID) as ucount FROM $users_table WHERE allow_living = \"-1\"";
+$revquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
 $revresult = tng_query($revquery) or die ($admtext['cannotexecutequery'] . ": $revquery");
 $revrow = tng_fetch_assoc($revresult);
 $revstar = $revrow['ucount'] ? " *" : "";
@@ -431,8 +431,8 @@ echo "</select>\n";
               <input type="radio" name="administrator" value="2" <?php if ($adminaccess == 2) {
                 echo "checked=\"checked\"";
               } ?> onclick="handleAdmin('allow_multiple');"> <?php echo $admtext['mult_trees']; ?><br>
-              <div style="margin-left: 30px<?php if ($adminaccess != 2) {
-                echo ";display: none;";
+              <div style="margin-left: 30px;<?php if ($adminaccess != 2) {
+                echo "display: none;";
               } ?>" id="multiple">
                 <select multiple="yes" name="gedcom_mult[]" id="treeselect2">
                   <?php

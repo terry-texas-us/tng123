@@ -15,7 +15,7 @@ if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
   exit;
 }
 
-$query = "SELECT * FROM $dna_groups_table WHERE gedcom = \"$tree\" AND dna_group = \"$dna_group\"";
+$query = "SELECT * FROM $dna_groups_table WHERE gedcom = '$tree' AND dna_group = \"$dna_group\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 $row['description'] = preg_replace("/\"/", "&#34;", $row['description']);

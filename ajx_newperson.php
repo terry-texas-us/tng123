@@ -17,7 +17,7 @@ if (!$allow_add) {
 $treerow = getTree($trees_table, $tree);
 
 if ($father) {
-  $query = "SELECT lnprefix, lastname, branch FROM $people_table WHERE gedcom=\"$tree\" AND personID=\"$father\"";
+  $query = "SELECT lnprefix, lastname, branch FROM $people_table WHERE gedcom='$tree' AND personID=\"$father\"";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);
   tng_free_result($result);
@@ -34,7 +34,7 @@ include_once "eventlib.php";
   <table width="100%" cellpadding="10" cellspacing="0">
     <tr class="databack">
       <td class="tngbotshadow">
-        <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+        <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
         <span class="subhead togglehead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br><br>
 
         <table class="normal">
@@ -72,7 +72,7 @@ include_once "eventlib.php";
                             <td><input type="text" name="firstname" size="30" id="firstname"></td>
                           <?php
                           if ($lnprefixes) {
-                            echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px\" value=\"" . $row['lnprefix'] . "\"></td>\n";
+                            echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
                           }
                           ?>
                             <td><input type="text" name="lastname" size="30" value="<?php echo $row['lastname']; ?>"></td>
@@ -122,9 +122,9 @@ include_once "eventlib.php";
                             </td>
                             <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
                             <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?></td>
-                            <td style="height:2em">
+                            <td style="height:2em;">
                               <?php
-                              $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"$tree\" ORDER BY description";
+                              $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
                               $branchresult = tng_query($query);
                               $numbranches = tng_num_rows($branchresult);
                               $branchlist = explode(",", $row['branch']);
@@ -147,7 +147,7 @@ include_once "eventlib.php";
                               $select .= ">{$admtext['nobranch']}</option>\n";
 
                               $select .= "$options</select>\n";
-                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
+                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                               ?>
                                 <div id="pbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('pbranch','pbranchedit','pbranchlist');">
                                   <?php

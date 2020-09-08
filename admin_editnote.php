@@ -6,8 +6,8 @@ include "$mylanguage/admintext.php";
 
 include $cms['tngpath'] . "checklogin.php";
 
-$query = "SELECT xnotes.note as note, xnotes.ID as xID, secret, notelinks.gedcom as gedcom, persfamID, eventID ";
-$query .= "FROM {$notelinks_table} notelinks,  {$xnotes_table} xnotes ";
+$query = "SELECT xnotes.note AS note, xnotes.ID AS xID, secret, notelinks.gedcom AS gedcom, persfamID, eventID ";
+$query .= "FROM $notelinks_table notelinks, $xnotes_table xnotes ";
 $query .= "WHERE notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom AND notelinks.ID = \"{$noteID}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
@@ -20,7 +20,7 @@ $helplang = findhelp("notes_help.php");
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 <form action="" name="form3" onSubmit="return updateNote(this);">
-    <div style="float:right;text-align:center">
+    <div style="float:right;text-align:center;">
         <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
         <p><a href="#" onclick="gotoSection('editnote','notelist');"><?php echo $text['cancel']; ?></a></p>
     </div>

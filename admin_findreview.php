@@ -88,16 +88,24 @@ if ($reviewuser != "") {
 
 if ($type == "I") {
     $allwhere .= " AND $people_table.personID = $temp_events_table.personID AND $people_table.gedcom = $temp_events_table.gedcom AND (type = \"I\" OR type = \"C\")";
-    $query = "SELECT tempID, $temp_events_table.personID as personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, treename, eventID, DATE_FORMAT(postdate,\"%d %b %Y %H:%i:%s\") as postdate, living, private, $people_table.gedcom, branch
-		FROM $people_table, $trees_table, $temp_events_table WHERE $allwhere ORDER BY postdate DESC";
+    $query = "SELECT tempID, $temp_events_table.personID AS personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, treename, eventID, DATE_FORMAT(postdate,\"%d %b %Y %H:%i:%s\") AS postdate, living, private, $people_table.gedcom, branch ";
+    $query .= "FROM $people_table, $trees_table, $temp_events_table ";
+    $query .= "WHERE $allwhere ";
+    $query .= "ORDER BY postdate DESC";
     $returnpage = "people.php";
-    $totquery = "SELECT count(tempID) as tcount FROM $people_table, $trees_table, $temp_events_table WHERE $allwhere";
+    $totquery = "SELECT count(tempID) AS tcount ";
+    $totquery .= "FROM $people_table, $trees_table, $temp_events_table ";
+    $totquery .= "WHERE $allwhere";
 } elseif ($type == "F") {
     $allwhere .= " AND $families_table.familyID = $temp_events_table.familyID AND $families_table.gedcom = $temp_events_table.gedcom AND type = \"F\"";
-    $query = "SELECT tempID, $temp_events_table.familyID as familyID, $families_table.gedcom as gedcom, husband, wife, treename, eventID, DATE_FORMAT(postdate,\"%d %b %Y %H:%i:%s\") as postdate
-		FROM $families_table, $trees_table, $temp_events_table WHERE $allwhere ORDER BY postdate DESC";
+    $query = "SELECT tempID, $temp_events_table.familyID AS familyID, $families_table.gedcom AS gedcom, husband, wife, treename, eventID, DATE_FORMAT(postdate,\"%d %b %Y %H:%i:%s\") AS postdate ";
+    $query .= "FROM $families_table, $trees_table, $temp_events_table ";
+    $query .= "WHERE $allwhere ";
+    $query .= "ORDER BY postdate DESC";
     $returnpage = "families.php";
-    $totquery = "SELECT count(tempID) as tcount FROM $families_table, $trees_table, $temp_events_table WHERE $allwhere";
+    $totquery = "SELECT count(tempID) AS tcount ";
+    $totquery .= "FROM $families_table, $trees_table, $temp_events_table ";
+    $totquery .= "WHERE $allwhere";
 }
 $result = tng_query($query);
 
@@ -235,12 +243,14 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 
                     while ($row = tng_fetch_assoc($result)) {
                         if (is_numeric($row['eventID'])) {
-                            $query = "SELECT display, $eventtypes_table.eventtypeID as eventtypeID, tag FROM $eventtypes_table, $events_table WHERE eventID = {$row['eventID']} AND $eventtypes_table.eventtypeID = $events_table.eventtypeID";
+                            $query = "SELECT display, eventtypes.eventtypeID AS eventtypeID, tag ";
+                            $query .= "FROM $eventtypes_table eventtypes, $events_table events ";
+                            $query .= "WHERE eventID = {$row['eventID']} AND eventtypes.eventtypeID = events.eventtypeID";
                             $evresult = tng_query($query);
                             $evrow = tng_fetch_assoc($evresult);
 
                             if ($evrow['display']) {
-                                $displayval = getEventDisplay($evrow);
+                                $displayval = getEventDisplay($evrow['display']);
                             } elseif ($evrow['tag']) {
                                 $displayval = $eventtype['tag'];
                             } else {

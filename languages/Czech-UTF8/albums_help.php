@@ -12,7 +12,7 @@ echo help_header("Nápověda: Alba");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="collections_help.php" class="lightlink">&laquo; Nápověda: Kolekce</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("Nápověda: Alba");
     <tr class="databack">
       <td class="tngshadow">
 
-        <p style="float:right"><a href="#top">Nahoru</a></p>
+        <p style="float:right;"><a href="#top">Nahoru</a></p>
         <a name="add"><p class="subheadbold">Přidání nových alb</p></a>
         <p><strong>Album</strong> v TNG je skupina médií. Album může obsahovat jakýkoli počet médií a konkrétní médium může být součástí více alb.
           Podobně jako jednotlivé médium může být album připojeno k osobě, rodině, pramenu, úložišti pramenů nebo místu.</p>
@@ -78,7 +78,7 @@ echo help_header("Nápověda: Alba");
   <tr class="databack">
     <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Úprava existujícího alba</p></a>
             <p>Chcete-li upravit existující album, použijte záložku <a href="#search">Hledat</a> pro vyhledání alba a poté klikněte na ikonu Upravit vedle tohoto alba.
                 Význam následujících polí, která nejsou na stránce "Přidat nové album":</p>
@@ -121,7 +121,7 @@ echo help_header("Nápověda: Alba");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat alba</p></a>
             <p>Chcete-li album odstranit, použijte záložku <a href="#search">Hledat</a> pro nalezení alba, a poté klikněte na ikonu Vymazat vedle tohoto alba. Tento řádek změní
                 barvu a poté po odstranění položky zmizí.</p>
@@ -131,7 +131,7 @@ echo help_header("Nápověda: Alba");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="sort"><p class="subheadbold">Třídění alb</p></a>
             <p>Standardně jsou alba, která jsou propojena s osobou, rodinou, pramenem, úložištěm pramenů nebo místem, seřazena v pořadí, ve kterém byla k této entitě připojena. Chcete-li
                 toto pořadí změnit, nové pořadí nastavíte na záložce Album/Třídit.</p>

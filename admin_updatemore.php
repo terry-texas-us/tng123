@@ -64,10 +64,10 @@ if ($addressID) {
 if ($eventID) {
   //if nothing, then delete the event
   if ($age || $agency || $cause || $addressID || $info) {
-    $query = "UPDATE $events_table SET age=\"$age\", agency=\"$agency\", cause=\"$cause\", addressID=\"$addressID\", info=\"$info\" WHERE eventID=\"$eventID\"";
+    $query = "UPDATE $events_table SET age=\"$age\", agency=\"$agency\", cause=\"$cause\", addressID=\"$addressID\", info=\"$info\" WHERE eventID = '$eventID'";
     $rval = 1;
   } else {
-    $query = "DELETE FROM $events_table WHERE eventID=\"$eventID\"";
+    $query = "DELETE FROM $events_table WHERE eventID = '$eventID'";
   }
   $result = tng_query($query);
   adminwritelog($admtext['modifyevent'] . ": $eventID");

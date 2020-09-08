@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, branch, living, private, gedcom ";
-$query .= "FROM {$people_table} ";
+$query .= "FROM $people_table ";
 $query .= "WHERE personID=\"{$personID}\" AND gedcom=\"{$tree}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
@@ -26,14 +26,14 @@ $helplang = findhelp("assoc_help.php");
 header("Content-type:text/html; charset=" . $session_charset);
 
 $query = "SELECT assocID, passocID, relationship, reltype ";
-$query .= "FROM {$assoc_table} ";
+$query .= "FROM $assoc_table ";
 $query .= "WHERE personID=\"{$personID}\" AND gedcom=\"{$tree}\"";
 $assocresult = tng_query($query);
 $assoccount = tng_num_rows($assocresult);
 ?>
 
 <div class="databack ajaxwindow" id="associations"<?php if (!$assoccount) {
-    echo " style=\"display:none\"";
+    echo " style=\"display:none;\"";
 } ?>>
     <form name="assocform">
         <p class="subhead"><strong><?php echo $admtext['associations'] . ": $namestr"; ?></strong> |
@@ -45,7 +45,7 @@ $assoccount = tng_num_rows($assocresult);
             <input type="button" value="<?php echo $admtext['finish']; ?>" onclick="tnglitbox.remove();">
         </p>
         <table id="associationstbl" width="95%" class="normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$assoccount) {
-            echo " style=\"display:none\"";
+            echo " style=\"display:none;\"";
         } ?>>
             <tbody id="associationstblbody">
             <tr>
@@ -59,7 +59,7 @@ $assoccount = tng_num_rows($assocresult);
                     $assoc['allow_living'] = 1;
                     if ($assoc['reltype'] == "I") {
                         $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, living, private, branch ";
-                        $query .= "FROM {$people_table} ";
+                        $query .= "FROM $people_table ";
                         $query .= "WHERE personID=\"{$assoc['passocID']}\" AND gedcom=\"{$tree}\"";
                         $nameresult = tng_query($query);
                         $row = tng_fetch_assoc($nameresult);
@@ -70,7 +70,7 @@ $assoccount = tng_num_rows($assocresult);
                         tng_free_result($nameresult);
                     } else {
                         $query = "SELECT husband, wife, gedcom, familyID, living, private ";
-                        $query .= "FROM {$families_table} ";
+                        $query .= "FROM $families_table ";
                         $query .= "WHERE familyID=\"{$assoc['passocID']}\" AND gedcom=\"{$tree}\"";
                         $nameresult = tng_query($query);
                         $row = tng_fetch_assoc($nameresult);
@@ -96,7 +96,7 @@ $assoccount = tng_num_rows($assocresult);
 </div>
 
 <div class="databack ajaxwindow"<?php if ($assoccount) {
-    echo " style=\"display:none\"";
+    echo " style=\"display:none;\"";
 } ?> id="addassociation">
     <p class="subhead"><strong><?php echo $admtext['addnewassoc']; ?></strong> |
         <a href="#"
@@ -112,7 +112,7 @@ $assoccount = tng_num_rows($assocresult);
                 </td>
             </tr>
             <tr>
-                <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none"><?php echo $admtext['familyid']; ?></span>:</td>
+                <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none;"><?php echo $admtext['familyid']; ?></span>:</td>
                 <td valign="top"><input type="text" name="passocID" id="passocID"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                     <a href="#" onclick="return findItem(assocType,'passocID',null,'<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
                         <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20">

@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Prameny");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="families_help.php" class="lightlink">&laquo; N�pov�da: Rodiny</a> &nbsp; | &nbsp;
@@ -48,7 +48,7 @@ echo help_header("N�pov�da: Prameny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat nov� pramen</p></a>
             <p><strong>Pramen</strong> je n�jak� forma d�kazu, kter� slou�� k prok�z�n� nebo dolo�en� �daj� ve va�� datab�zi. Stejn� pramen m��e b�t citov�n v�cekr�t
                 u v�ce osob, rodin nebo ud�lost�.</p>
@@ -92,7 +92,7 @@ echo help_header("N�pov�da: Prameny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="edit"><p class="subheadbold">Upravit existuj�c� prameny</p></a>
       <p>Chcete-li upravit existuj�c� pramen, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� pramenu, a pot� klikn�te na ikonu Upravit vedle pramenu.</p>
 
@@ -116,7 +116,7 @@ echo help_header("N�pov�da: Prameny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat prameny</p></a>
             <p>Chcete-li odstranit pramen, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� pramenu, a pot� klikn�te na ikonu Vymazat vedle tohoto pramenu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� pramenu zmiz� (v�echny p�ipojen� citace budou tak� vymaz�ny). Chcete-li najednou odstranit v�ce pramen�, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�ho pramenu, kter�
@@ -127,7 +127,7 @@ echo help_header("N�pov�da: Prameny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="merge"><p class="subheadbold">Slou�it</p></a>
             <p>Kliknut�m na tuto z�lo�ku lze p�ezkoumat a slou�it prameny, kter� jsou lehce odli�n�, ale odkazuj� na stejn� materi�l.
                 Mus�te rozhodnout, zda jsou tyto z�znamy toto�n� nebo ne.</p>

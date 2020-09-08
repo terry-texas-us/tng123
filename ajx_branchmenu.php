@@ -12,7 +12,7 @@ if (!$allow_edit || $assignedbranch) {
   exit;
 }
 
-$query = "SELECT action FROM $branches_table WHERE gedcom = \"$tree\" and branch = \"$branch\"";
+$query = "SELECT action FROM $branches_table WHERE gedcom = '$tree' and branch = \"$branch\"";
 $result = tng_query($query);
 $brow = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -20,7 +20,7 @@ tng_free_result($result);
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<div style="margin:10px">
+<div style="margin:10px;">
   <span class="subhead"><strong><?php echo $admtext['addlabels']; ?></strong></span><br>
 
   <form action="#" method="post" id="form2" name="form2" onsubmit="return addLabels();">
@@ -37,7 +37,7 @@ header("Content-type:text/html; charset=" . $session_charset);
       </tr>
       <tr>
         <td colspan="2">
-          <div id="allpart" style="display:none">
+          <div id="allpart" style="display:none;">
             &nbsp;&nbsp;<input type="radio" name="set" value="all"> <?php echo $admtext['all']; ?>
             &nbsp;&nbsp;<input type="radio" name="set" value="partial" checked> <?php echo $admtext['partial']; ?>
           </div>
@@ -72,7 +72,7 @@ header("Content-type:text/html; charset=" . $session_charset);
       <tr>
         <td colspan="2">
           <br><input type="submit" id="labelsub" value="<?php echo $admtext['addlabels']; ?>">
-          &nbsp; <img src="<?php echo $cms['tngpath']; ?>img/spinner.gif" style="display:none" id="labelspinner">
+          &nbsp; <img src="<?php echo $cms['tngpath']; ?>img/spinner.gif" style="display:none;" id="labelspinner">
         </td>
       </tr>
     </table>

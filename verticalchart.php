@@ -111,9 +111,10 @@ function get_details(&$gens, $generation, $max_generations) {
     $delete_variables = array('firstname', 'lnprefix', 'lastname', 'title', 'prefix', 'suffix', 'nameorder', 'allow_living', 'allow_private');
     foreach ($gens[$generation] as $num => $g) {
         if ($g) {
-            $query = "SELECT personID, firstname, lnprefix, lastname, title, prefix, suffix, nameorder, sex, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, deathdatetr, burialdate, burialdatetr, birthplace, altbirthplace, deathplace, burialplace, husband AS father, wife AS mother, {$people_table}.living, {$people_table}.private, {$people_table}.branch, {$people_table}.gedcom ";
-            $query .= "FROM {$people_table} LEFT JOIN {$families_table} ON {$people_table}.famc={$families_table}.familyID AND {$people_table}.gedcom={$families_table}.gedcom ";
-            $query .= "WHERE personID='{$g}' AND {$people_table}.gedcom='{$gedcom}'";
+            $query = "SELECT personID, firstname, lnprefix, lastname, title, prefix, suffix, nameorder, sex, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, deathdatetr, burialdate, burialdatetr, birthplace, altbirthplace, deathplace, burialplace, husband AS father, wife AS mother, people.living, people.private, people.branch, people.gedcom ";
+            $query .= "FROM $people_table people ";
+            $query .= "LEFT JOIN $families_table families ON people.famc = families.familyID AND people.gedcom = families.gedcom ";
+            $query .= "WHERE personID = '{$g}' AND people.gedcom = '{$gedcom}'";
             $result = tng_query($query);
             if ($result && tng_num_rows($result)) {
                 $result = tng_fetch_assoc($result);
@@ -386,13 +387,13 @@ function do_chart($gens, $output = false) {
                     $bio .= $person['burialplace'];
                 }
                 if ($spacer_ypos > 0 && (isset($gens[$gen_num + 1][($num * 2) - 1]['name']))) {
-                    $row [$rows - $gen_num] .= "\t\t<div class=\"ascender father\" style=\"left:" . ($person['xpos'] - (($person['spacer_xwidth'] - $width) / 2)) . "px;top:{$spacer_ypos}px;width:" . ($person['spacer_xwidth'] / 2) . "px\"></div>\r\n";
+                    $row [$rows - $gen_num] .= "\t\t<div class=\"ascender father\" style=\"left:" . ($person['xpos'] - (($person['spacer_xwidth'] - $width) / 2)) . "px;top:{$spacer_ypos}px;width:" . ($person['spacer_xwidth'] / 2) . "px;\"></div>\r\n";
                 }
                 if ($spacer_ypos > 0 && (isset($gens[$gen_num + 1][$num * 2]['name']))) {
-                    $row [$rows - $gen_num] .= "\t\t<div class=\"ascender mother\" style=\"left:" . ($person['xpos'] + ($width) / 2) . "px;top:" . ($ypos - $spacing) . "px;width:" . ($person['spacer_xwidth'] / 2) . "px\"></div>\r\n";
+                    $row [$rows - $gen_num] .= "\t\t<div class=\"ascender mother\" style=\"left:" . ($person['xpos'] + ($width) / 2) . "px;top:" . ($ypos - $spacing) . "px;width:" . ($person['spacer_xwidth'] / 2) . "px;\"></div>\r\n";
                 }
                 if (!$ignore || $gen_num > 1) {
-                    $row [$rows - $gen_num] .= "\t\t<div class=\"box\" style=\"left:{$person['xpos']}px;top:{$ypos}px;width:{$width}px\">\r\n\t\t\t<div class=\"inner databack\">\r\n\t\t\t\t<div>\r\n\t\t\t\t\t";
+                    $row [$rows - $gen_num] .= "\t\t<div class=\"box\" style=\"left:{$person['xpos']}px;top:{$ypos}px;width:{$width}px;\">\r\n\t\t\t<div class=\"inner databack\">\r\n\t\t\t\t<div>\r\n\t\t\t\t\t";
                     $url = htmlentities("getperson.php?personID={$person['personID']}&tree={$_GET['tree']}");
                     $row [$rows - $gen_num] .= "<a" . ($person['display'] ? " title=\"{$bio}\"" : "") . " href=\"{$url}\">{$person['name']}</a><br>" . getGenderIcon($person['sex'], -2);
                     if ($person['display']) {
@@ -403,7 +404,7 @@ function do_chart($gens, $output = false) {
                     $row[$rows - $gen_num] .= "\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n";
                 }
                 if ($gen_num > 1) {
-                    $row[$rows - $gen_num] .= "\t\t<div class=\"descender_container\" style=\"left:{$person['xpos']}px;top:{$line_ypos}px;height:{$spacing}px\">\r\n";
+                    $row[$rows - $gen_num] .= "\t\t<div class=\"descender_container\" style=\"left:{$person['xpos']}px;top:{$line_ypos}px;height:{$spacing}px;\">\r\n";
                     $row[$rows - $gen_num] .= "\t\t\t<div class=\"descender {$type}\"></div>\r\n";
                     $row[$rows - $gen_num] .= "\t\t</div>\r\n";
                 }

@@ -14,7 +14,7 @@ if ($assignedbranch) {
 }
 
 function getBranchCount($tree, $branch, $table) {
-    $query = "SELECT count(ID) as count FROM $table WHERE gedcom = \"$tree\" and branch LIKE \"%$branch%\"";
+    $query = "SELECT count(ID) AS count FROM $table WHERE gedcom = '$tree' and branch LIKE \"%$branch%\"";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $count = $row['count'];
@@ -69,15 +69,15 @@ if ($assignedtree) {
     $wherestr = "";
 }
 $orgtree = $tree;
-$treequery = "SELECT gedcom, treename FROM {$trees_table} $wherestr ORDER BY treename";
+$treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
 $wherestr = $searchstring ? "WHERE (branch LIKE \"%$searchstring%\" OR branches.description LIKE \"%$searchstring%\")" : "";
 if ($tree) {
     $wherestr .= $wherestr ? " AND branches.gedcom = \"{$tree}\"" : "WHERE branches.gedcom = \"{$tree}\"";
 }
-$query = "SELECT branches.gedcom as gedcom, branch, branches.description as description, personID, treename ";
-$query .= "FROM {$branches_table} branches ";
-$query .= "LEFT JOIN {$trees_table} trees ON trees.gedcom = branches.gedcom ";
+$query = "SELECT branches.gedcom AS gedcom, branch, branches.description AS description, personID, treename ";
+$query .= "FROM $branches_table branches ";
+$query .= "LEFT JOIN $trees_table trees ON trees.gedcom = branches.gedcom ";
 $query .= "$wherestr ";
 $query .= "ORDER BY branches.description ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
@@ -85,7 +85,9 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(branch) as bcount FROM {$branches_table} branches LEFT JOIN {$trees_table} trees ON trees.gedcom = branches.gedcom $wherestr";
+    $query = "SELECT count(branch) AS bcount FROM $branches_table branches ";
+    $query .= "LEFT JOIN $trees_table trees ON trees.gedcom = branches.gedcom ";
+    $query .= "$wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['bcount'];
@@ -224,8 +226,8 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                             $fcount = getBranchCount($row['gedcom'], $row['branch'], $families_table);
 
                             echo "<td class=\"lightback\">{$row['personID']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" style=\"text-align:right\">$pcount&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" style=\"text-align:right\">$fcount&nbsp;</td>\n";
+                            echo "<td class=\"lightback\" style='text-align: right;'>$pcount&nbsp;</td>\n";
+                            echo "<td class=\"lightback\" style='text-align: right;'>$fcount&nbsp;</td>\n";
                             echo "</tr>\n";
                         }
                         tng_free_result($result);

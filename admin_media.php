@@ -68,11 +68,11 @@ if ($offset) {
 
 if ($assignedtree) {
     $wherestr = "WHERE gedcom = \"$assignedtree\"";
-    $wherestr2 = " AND $medialinks_table.gedcom = \"$assignedtree\"";
+    $wherestr2 = " AND medialinks.gedcom = \"$assignedtree\"";
 } else {
     $wherestr = "";
     if ($tree) {
-        $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+        $wherestr2 = " AND medialinks.gedcom = \"$tree\"";
     }
 }
 $orgwherestr = $wherestr;
@@ -104,7 +104,7 @@ if ($cemeteryID) {
     $wherestr .= $wherestr ? " AND cemeteryID = \"$cemeteryID\"" : "cemeteryID = \"$cemeteryID\"";
 }
 if ($unlinked) {
-    $join = "LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID";
+    $join = "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID";
     $medialinkID = "medialinkID,";
     $wherestr .= $wherestr ? " AND medialinkID is NULL" : "medialinkID is NULL";
 }
@@ -112,14 +112,19 @@ if ($wherestr) {
     $wherestr = "WHERE $wherestr";
 }
 
-$query = "SELECT $media_table.mediaID as mediaID, $medialinkID description, notes, thumbpath, mediatypeID, usecollfolder, latitude, longitude, zoom, $media_table.gedcom 
-	FROM $media_table $join $wherestr 
-	ORDER BY description LIMIT $newoffset" . $maxsearchresults;
+$query = "SELECT media.mediaID AS mediaID, $medialinkID description, notes, thumbpath, mediatypeID, usecollfolder, latitude, longitude, zoom, media.gedcom ";
+$query .= "FROM $media_table media $join ";
+$query .= "$wherestr ";
+$query .= "ORDER BY description ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count($media_table.mediaID) as mcount FROM $media_table $join $wherestr";
+    $query = "SELECT count(media.mediaID) AS mcount ";
+    $query .= "FROM $media_table media ";
+    $query .= "$join ";
+    $query .= "$wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['mcount'];
@@ -144,11 +149,11 @@ $sttypestr = implode(",", $standardtypes);
 <script type="text/javascript" src="js/mediautils.js"></script>
 <script type="text/javascript">
     var tnglitbox;
-    var entercollid = "<?php echo $admtext['entercollid']; ?>";
-    var entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
-    var entercollipath = "<?php echo $admtext['entercollpath']; ?>";
-    var entercollicon = "<?php echo $admtext['entercollicon']; ?>";
-    var confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
+    const entercollid = "<?php echo $admtext['entercollid']; ?>";
+    const entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
+    const entercollipath = "<?php echo $admtext['entercollpath']; ?>";
+    const entercollicon = "<?php echo $admtext['entercollicon']; ?>";
+    const confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
     var stmediatypes = new Array(<?php echo $sttypestr; ?>);
     var manage = 1;
     var allow_media_edit = <?php echo($allow_media_edit ? "1" : "0"); ?>;
@@ -278,9 +283,9 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                            onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
-                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none"
+                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                            onclick="editMediatype(document.form1.mediatypeID);">
-                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none"
+                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                            onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                                     <?php
                                 }
@@ -382,7 +387,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 $numalbums = tng_num_rows($albumresult);
                                 if ($numalbums) {
                                     echo "<input type=\"submit\" name=\"xphaction\" value=\"{$admtext['addtoalbum']}\">\n";
-                                    echo "<select name=\"albumID\" style=\"vertical-align:top\">\n";
+                                    echo "<select name=\"albumID\" style=\"vertical-align:top;\">\n";
                                     while ($albumrow = tng_fetch_assoc($albumresult)) {
                                         echo "	<option value=\"{$albumrow['albumID']}\"";
                                         if ($albumrow['albumID'] == $albumID) {
@@ -481,14 +486,15 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 echo "<td nowrap class=\"lightback normal\" valign=\"top\">&nbsp;" . $label . "&nbsp;</td>\n";
                             }
 
-                            $query = "SELECT people.personID as personID2, familyID, husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname, people.prefix as prefix, people.suffix as suffix, nameorder,
-				$medialinks_table.personID as personID, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID, reponame, linktype, $families_table.gedcom as gedcom
-				FROM $medialinks_table
-				LEFT JOIN $people_table AS people ON $medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom
-				LEFT JOIN $families_table ON $medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom
-				LEFT JOIN $sources_table ON $medialinks_table.personID = $sources_table.sourceID AND $medialinks_table.gedcom = $sources_table.gedcom
-				LEFT JOIN $repositories_table ON ($medialinks_table.personID = $repositories_table.repoID AND $medialinks_table.gedcom = $repositories_table.gedcom)
-				WHERE mediaID = \"{$row['mediaID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, personID LIMIT 10";
+                            $query = "SELECT people.personID AS personID2, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.personID AS personID, sources.title, sources.sourceID, repositories.repoID, reponame, linktype, families.gedcom AS gedcom ";
+                            $query .= "FROM $medialinks_table medialinks ";
+                            $query .= "LEFT JOIN $people_table people ON medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom ";
+                            $query .= "LEFT JOIN $families_table families ON medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom ";
+                            $query .= "LEFT JOIN $sources_table sources ON medialinks.personID = sources.sourceID AND medialinks.gedcom = sources.gedcom ";
+                            $query .= "LEFT JOIN $repositories_table repositories ON (medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom) ";
+                            $query .= "WHERE mediaID = \"{$row['mediaID']}\"$wherestr2 ";
+                            $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
+                            $query .= "LIMIT 10";
                             $presult = tng_query($query);
                             $medialinktext = "";
                             $citelinks = array();
@@ -507,7 +513,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 } elseif ($prow['familyID'] != NULL) {
                                     $medialinktext .= "<li>{$admtext['family']}: " . getFamilyName($prow) . "</li>\n";
                                 } elseif (!$prow['linktype'] || $prow['linktype'] == "C") {
-                                    $query = "SELECT persfamID, sourceID, gedcom from $citations_table WHERE citationID = \"{$prow['personID']}\"";
+                                    $query = "SELECT persfamID, sourceID, gedcom FROM $citations_table WHERE citationID = \"{$prow['personID']}\"";
                                     $cresult = tng_query($query);
                                     if ($cresult) {
                                         $crow = tng_fetch_assoc($cresult);

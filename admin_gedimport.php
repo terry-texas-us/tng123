@@ -81,9 +81,9 @@ function getMediaLinksToSave() {
   global $events_table, $tree, $medialinks_table;
 
   $medialinks = array();
-  $query = "SELECT medialinkID, mediaID, $medialinks_table.eventID, persfamID, eventtypeID, eventdate, eventplace, info
-		FROM ($medialinks_table,$events_table)
-		WHERE $medialinks_table.gedcom = \"$tree\" AND $medialinks_table.eventID != \"\" AND $medialinks_table.eventID = $events_table.eventID";
+  $query = "SELECT medialinkID, mediaID, $medialinks_table.eventID, persfamID, eventtypeID, eventdate, eventplace, info ";
+  $query .= "FROM ($medialinks_table, $events_table) ";
+  $query .= "WHERE $medialinks_table.gedcom = '$tree' AND $medialinks_table.eventID != '' AND $medialinks_table.eventID = $events_table.eventID";
   $result = @tng_query($query);
   while ($row = tng_fetch_assoc($result)) {
     $key = $row['persfamID'] . "::" . $row['eventtypeID'] . "::" . $row['eventdate'] . "::" . substr($row['eventplace'], 0, 40) . "::" . substr($row['info'], 0, 40);
@@ -98,9 +98,9 @@ function getAlbumLinksToSave() {
   global $events_table, $tree, $album2entities_table;
 
   $albumlinks = array();
-  $query = "SELECT alinkID, albumID, $album2entities_table.eventID, entityID, eventtypeID, eventdate, eventplace, info
-		FROM ($album2entities_table,$events_table)
-		WHERE $album2entities_table.gedcom = \"$tree\" AND $album2entities_table.eventID != \"\" AND $album2entities_table.eventID = $events_table.eventID";
+  $query = "SELECT alinkID, albumID, album2entities.eventID, entityID, eventtypeID, eventdate, eventplace, info ";
+  $query .= "FROM ($album2entities_table album2entities, $events_table events) ";
+  $query .= "WHERE album2entities.gedcom = '$tree' AND album2entities.eventID != '' AND album2entities.eventID = events.eventID";
   $result = @tng_query($query);
   while ($row = tng_fetch_assoc($result)) {
     $key = $row['entityID'] . "::" . $row['eventtypeID'] . "::" . $row['eventdate'] . "::" . substr($row['eventplace'], 0, 40) . "::" . substr($row['info'], 0, 40);
@@ -127,8 +127,8 @@ if (!empty($old)) {
   $menu = doMenu($datatabs, "import", $innermenu);
   echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, $message);
 
-  echo "<div class=\"lightback\" style=\"padding:2px\">\n";
-  echo "<div class=\"databack normal\" style=\"padding:5px\">\n";
+  echo "<div class=\"lightback\" style=\"padding:2px;\">\n";
+  echo "<div class=\"databack normal\" style=\"padding:5px;\">\n";
 }
 ?>
 
@@ -267,7 +267,7 @@ if ($savestate['filename']) {
   $mll = $savestate['media'] * 10 + $savestate['latlong'];
 
   if ($saveimport) {
-    $query = "DELETE from $saveimport_table";
+    $query = "DELETE FROM $saveimport_table";
     $result = @tng_query($query);
 
     $sql = "INSERT INTO $saveimport_table (filename, icount, ioffset, fcount, foffset, scount, soffset, mcount, pcount, ncount, noffset, roffset, offset, delvar, ucaselast, norecalc, neweronly, allevents, media, gedcom, branch)  
@@ -275,7 +275,7 @@ if ($savestate['filename']) {
     $result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $sql");
   }
 } elseif ($saveimport && !$openmsg) {
-  $checksql = "SELECT filename, icount, ioffset, fcount, foffset, scount, soffset, mcount, pcount, ncount, noffset, roffset, offset, ucaselast, norecalc, neweronly, allevents, media, branch, delvar from $saveimport_table WHERE gedcom = \"$tree\"";
+  $checksql = "SELECT filename, icount, ioffset, fcount, foffset, scount, soffset, mcount, pcount, ncount, noffset, roffset, offset, ucaselast, norecalc, neweronly, allevents, media, branch, delvar FROM $saveimport_table WHERE gedcom = '$tree'";
   $result = @tng_query($checksql) or die ($admtext['cannotexecutequery'] . ": $checksql");
   $found = tng_num_rows($result);
   if ($found) {

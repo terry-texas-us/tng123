@@ -3,10 +3,10 @@
 function showCustEvents($id) {
     global $tree, $admtext, $events_table, $eventtypes_table, $allow_edit, $allow_delete, $gotnotes, $gotcites;
 
-    echo "<div id=\"custevents\" style=\"margin-bottom: 5px\">\n";
+    echo "<div id=\"custevents\" style=\"margin-bottom: 5px;\">\n";
 
-    $query = "SELECT display, eventdate, eventplace, info, events.eventID as eventID ";
-    $query .= "FROM {$events_table} as events, {$eventtypes_table} as eventtypes ";
+    $query = "SELECT display, eventdate, eventplace, info, events.eventID AS eventID ";
+    $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
     $query .= "WHERE parenttag = \"\" AND persfamID = \"{$id}\" AND gedcom = \"{$tree}\" AND events.eventtypeID = eventtypes.eventtypeID ";
     $query .= "ORDER BY eventdatetr, ordernum";
     $evresult = tng_query($query);
@@ -14,7 +14,7 @@ function showCustEvents($id) {
 
     echo "<table id=\"custeventstbl\" class=\"normal\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\"";
     if (!$eventcount) {
-        echo " style=\"display:none\"";
+        echo " style=\"display:none;\"";
     }
     echo ">";
     echo "<tbody id=\"custeventstblbody\">\n";

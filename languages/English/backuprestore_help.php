@@ -8,7 +8,7 @@ echo help_header("Help: Utilities");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="languages_help.php" class="lightlink">&laquo; Help: Languages</a> &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ echo help_header("Help: Utilities");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -83,7 +83,7 @@ echo help_header("Help: Utilities");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="structure"><p class="subheadbold">Back up Table Structure</p></a>
             <p>To back up your TNG table structure, click on the Backup icon in this section. If the operation is successful, the page will be redisplayed with a red message at the top
                 detailing the action taken. The Last Backup column will also be populated, as will the size of the file. Having a backup of your table structure will enable you to easily restore your data
@@ -96,7 +96,7 @@ echo help_header("Help: Utilities");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="ids"><p class="subheadbold">Resequence IDs</p></a>
             <p>This feature allows you to assign new, sequential ID numbers to all of your people, families, sources and/or repositories. You must be in Maintenance Mode
                 to run this utility. To enter Maintenance Mode, go to Admin/Setup/General Settings and select the Maintenance Mode option in the "Database" section.</p>

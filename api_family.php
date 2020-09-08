@@ -14,7 +14,7 @@ header("Content-Type: application/json; charset=" . $session_charset);
 
 //get family
 $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch ";
-$query .= "FROM {$families_table} ";
+$query .= "FROM $families_table ";
 $query .= "WHERE familyID = \"{$familyID}\" AND gedcom = \"{$tree}\"";
 $result = tng_query($query);
 $famrow = tng_fetch_assoc($result);
@@ -44,7 +44,7 @@ $family = "\"id\":\"{$famrow['familyID']}\",\"tree\":\"{$famrow['gedcom']}\"";
 //get husband & spouses
 if ($famrow['husband']) {
     $query = "SELECT * ";
-    $query .= "FROM {$people_table} ";
+    $query .= "FROM $people_table ";
     $query .= "WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"{$tree}\"";
     $result = tng_query($query);
     $husbrow = tng_fetch_assoc($result);
@@ -61,7 +61,7 @@ if ($famrow['husband']) {
 //get wife & spouses
 if ($famrow['wife']) {
     $query = "SELECT * ";
-    $query .= "FROM {$people_table} ";
+    $query .= "FROM $people_table ";
     $query .= "WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"{$tree}\"";
     $result = tng_query($query);
     $wiferow = tng_fetch_assoc($result);
@@ -94,9 +94,9 @@ if ($eventstr) {
 }
 
 //for each child
-$query = "SELECT $people_table.personID as personID, branch, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, famc, sex, birthdate, birthplace,
+$query = "SELECT $people_table.personID AS personID, branch, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, famc, sex, birthdate, birthplace,
 	altbirthdate, altbirthplace, haskids, deathdate, deathplace, burialdate, burialplace, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace, sealdate, sealplace ";
-$query .= "FROM {$people_table} people, {$children_table} children";
+$query .= "FROM $people_table people, {$children_table} children";
 $query .= "WHERE people.personID = children.personID AND children.familyID = \"{$famrow['familyID']}\" AND people.gedcom = \"{$tree}\" AND children.gedcom = \"{$tree}\" ";
 $query .= "ORDER BY ordernum";
 $children = tng_query($query);

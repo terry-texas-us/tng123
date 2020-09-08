@@ -8,7 +8,7 @@ echo help_header("Help: Setup");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="second_help.php" class="lightlink">&laquo; Help: Secondary Processes</a> &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ echo help_header("Help: Setup");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -41,7 +41,7 @@ echo help_header("Help: Setup");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="diag"><p class="subheadbold">Diagnostics</p></a>
 
             <span class="optionhead">Run Diagnostics</span>
@@ -57,7 +57,7 @@ echo help_header("Help: Setup");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="tables"><p class="subheadbold">Table Creation</p></a>
 
             <span class="optionhead">Create Tables</span>

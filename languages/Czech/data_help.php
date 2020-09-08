@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Import dat");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp; | &nbsp;
@@ -124,7 +124,7 @@ echo help_header("N�pov�da: Import dat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="export"><p class="subheadbold">GEDCOM Export</p></a>
             <p>Tato str�nka v�m umo�n� exportovat sv� data z ur�it�ho stromu do standardn�ho souboru GEDCOM 5.5. Soubor bude ulo�en ve va�� slo�ce
                 GEDCOM (ur�ena v Nastaven� importu) a bude pojmenov�n n�zvem stromu a p��ponou ".ged".</p>

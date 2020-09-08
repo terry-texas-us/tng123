@@ -35,7 +35,7 @@ $cemeteryID = preg_replace("/[^0-9]/", '', $cemeteryID);
 if ($medialinkID) {
     //look up media & medialinks joined
     //get info for linked person/family/source/repo
-    $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom as gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
+    $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom AS gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $personID = $row['personID'];
@@ -51,7 +51,7 @@ if ($medialinkID) {
     $eventID = $row['eventID'];
 } else {
     if ($albumlinkID) {
-        $query = "SELECT albumname, description, ordernum, $albums_table.albumID as albumID FROM ($albums_table, $albumlinks_table)
+        $query = "SELECT albumname, description, ordernum, $albums_table.albumID AS albumID FROM ($albums_table, $albumlinks_table)
 			WHERE albumlinkID = \"$albumlinkID\" AND $albumlinks_table.albumID = $albums_table.albumID";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
@@ -105,13 +105,13 @@ if ($personID && !$albumlinkID) {
         $rightbranch = 1;
     } else {
         if ($linktype == "F") {
-            $query = "SELECT familyID, husband, wife, living, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "SELECT familyID, husband, wife, living, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"$personID\" AND gedcom = '$tree'";
         } elseif ($linktype == "S") {
-            $query = "SELECT title FROM $sources_table WHERE sourceID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "SELECT title FROM $sources_table WHERE sourceID = \"$personID\" AND gedcom = '$tree'";
         } elseif ($linktype == "R") {
-            $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$personID\" AND gedcom = '$tree'";
         } elseif ($linktype == "I") {
-            $query = "SELECT lastname, firstname, prefix, suffix, title, lnprefix, living, private, branch, $people_table.gedcom, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, deathdatetr, burialdate, burialdatetr, sex, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) as birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) as death
+            $query = "SELECT lastname, firstname, prefix, suffix, title, lnprefix, living, private, branch, $people_table.gedcom, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, deathdatetr, burialdate, burialdatetr, sex, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) AS death
 				FROM $people_table, $trees_table WHERE personID = \"$personID\" AND $people_table.gedcom = \"$tree\" AND $people_table.gedcom = $trees_table.gedcom";
         }
         $result2 = tng_query($query);
@@ -254,7 +254,7 @@ if (!$tngprint) {
 }
 tng_free_result($result);
 
-echo "<p class=\"normal\" style=\"margin-top:2.5em\">$pagenav$sscontrols</p>";
+echo "<p class=\"normal\" style=\"margin-top:2.5em;\">$pagenav$sscontrols</p>";
 
 if ($noneliving || $imgrow['alwayson']) {
     $show_on_top = false;
@@ -313,7 +313,7 @@ if ($noneliving || $imgrow['alwayson']) {
     }
 } else {
     ?>
-    <div style="border:1px solid black;padding:5px;width:<?php echo $size['0']; ?>px;height:<?php echo $adjheight; ?>px">
+    <div style="border:1px solid black;padding:5px;width:<?php echo $size['0']; ?>px;height:<?php echo $adjheight; ?>px;">
         <strong><span class="normal"><?php echo $livinginfo['private'] ? $admtext['text_private'] : $text['living']; ?></span></strong>
     </div>
     <?php

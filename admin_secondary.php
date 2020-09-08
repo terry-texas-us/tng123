@@ -46,7 +46,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         $query = "SELECT familyID, gedcom FROM $families_table $wherestr";
         $result = tng_query($query);
         while ($family = tng_fetch_assoc($result)) {
-          $query = "SELECT $children_table.ID as ID, IF(birthdatetr !='0000-00-00',birthdatetr,altbirthdatetr) as birth FROM $children_table, $people_table 
+          $query = "SELECT $children_table.ID AS ID, IF(birthdatetr !='0000-00-00',birthdatetr,altbirthdatetr) AS birth FROM $children_table, $people_table 
 			WHERE $children_table.familyID = \"{$family['familyID']}\" AND $people_table.personID = $children_table.personID AND $people_table.gedcom = $children_table.gedcom $wherestr2
 			ORDER BY birth, ordernum";
           $fresult = tng_query($query);
@@ -74,8 +74,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           $wherestr = " AND $families_table.gedcom = \"$tree\"";
         }
         //first do husbands
-        $query = "SELECT personID, families.gedcom as gedcom ";
-        $query .= "FROM {$families_table} families, {$people_table} people ";
+        $query = "SELECT personID, families.gedcom AS gedcom ";
+        $query .= "FROM $families_table families, $people_table people ";
         $query .= "WHERE people.personID = families.husband AND people.gedcom = families.gedcom $wherestr";
         $result = tng_query($query);
         while ($husband = tng_fetch_assoc($result)) {
@@ -98,8 +98,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         tng_free_result($result);
 
         //now do wives
-        $query = "SELECT personID, families.gedcom as gedcom ";
-        $query .= "FROM {$families_table} families, {$people_table} people ";
+        $query = "SELECT personID, families.gedcom AS gedcom ";
+        $query .= "FROM $families_table families, $people_table people ";
         $query .= "WHERE people.personID = families.wife AND people.gedcom = families.gedcom $wherestr";
         $result = tng_query($query);
         while ($wife = tng_fetch_assoc($result)) {
@@ -148,7 +148,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
           $gendexURL = $tree ? "$tngdomain/$gendexfile/$tree.txt" : "$tngdomain/$gendexfile/blanktree.txt";
         }
         $query = "SELECT personID, firstname, lnprefix, lastname, living, private, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, deathplace, burialdate, burialplace, gedcom ";
-        $query .= "FROM {$people_table} {$wherestr} ORDER BY lastname, firstname";
+        $query .= "FROM $people_table {$wherestr} ORDER BY lastname, firstname";
         $result = tng_query($query);
         if ($result) {
           //open file (overwrite any contents)
@@ -209,7 +209,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         if ($tree != "--all--") {
           $wherestr = "AND $families_table.gedcom = \"$tree\"";
         }
-        $query = "SELECT distinct ($families_table.familyID), husband, wife, $families_table.gedcom as gedcom FROM ($children_table, $families_table) WHERE $families_table.familyID = $children_table.familyID AND $families_table.gedcom = $children_table.gedcom $wherestr";
+        $query = "SELECT distinct ($families_table.familyID), husband, wife, $families_table.gedcom AS gedcom FROM ($children_table, $families_table) WHERE $families_table.familyID = $children_table.familyID AND $families_table.gedcom = $children_table.gedcom $wherestr";
         $result = tng_query($query);
         while ($family = tng_fetch_assoc($result)) {
           if ($family['husband'] != "") {
@@ -294,7 +294,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         $result = @tng_query($query);
 
         while ($row = tng_fetch_assoc($result)) {
-          $query2 = "SELECT count(*) as counter FROM $media_table WHERE mediatypeID = \"{$row['mediatypeID']}\"";
+          $query2 = "SELECT count(*) AS counter FROM $media_table WHERE mediatypeID = \"{$row['mediatypeID']}\"";
           $result2 = @tng_query($query2);
           $row2 = tng_fetch_assoc($result2);
           $display = $row['display'] ? $row['display'] : $admtext[$row['mediatypeID']];

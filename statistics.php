@@ -23,7 +23,7 @@ tng_header($text['databasestatistics'], $flags);
   <link href="css/c3.css" rel="stylesheet">
   <script src="js/d3.min.js"></script>
   <script src="js/c3.min.js"></script>
-  <div style="display:inline-block">
+  <div style="display:inline-block;">
     <?php
     echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'statistics', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
@@ -35,7 +35,7 @@ tng_header($text['databasestatistics'], $flags);
         if ($tabletype == "toggle") {
           $tabletype = "columntoggle";
         }
-        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"maxwidth: 350px; width:100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"maxwidth: 350px; width:100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
       } else {
         $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"500\" class=\"whiteback normal\">";
       }
@@ -48,7 +48,7 @@ tng_header($text['databasestatistics'], $flags);
         </tr>
         </thead>
       <?php
-      $query = "SELECT lastimportdate, treename, secret FROM $trees_table WHERE gedcom = \"$tree\"";
+      $query = "SELECT lastimportdate, treename, secret FROM $trees_table WHERE gedcom = '$tree'";
       $result = tng_query($query);
       $treerow = tng_fetch_array($result, 'assoc');
       $lastimportdate = $treerow['lastimportdate'];
@@ -61,19 +61,19 @@ tng_header($text['databasestatistics'], $flags);
         $wherestr2 = "";
       }
 
-      $query = "SELECT count(id) as pcount FROM $people_table $wherestr";
+      $query = "SELECT count(id) AS pcount FROM $people_table $wherestr";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       $totalpeople = $row['pcount'];
       tng_free_result($result);
 
-      $query = "SELECT count(id) as fcount FROM $families_table $wherestr";
+      $query = "SELECT count(id) AS fcount FROM $families_table $wherestr";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       $totalfamilies = $row['fcount'];
       tng_free_result($result);
 
-      $query = "SELECT count(DISTINCT ucase(lastname)) as lncount
+      $query = "SELECT count(DISTINCT UCASE(lastname)) AS lncount
    FROM $people_table $wherestr";
       $result = tng_query($query);
       $row = tng_fetch_array($result);
@@ -84,10 +84,10 @@ tng_header($text['databasestatistics'], $flags);
       foreach ($mediatypes as $mediatype) {
         $mediatypeID = $mediatype['ID'];
         if ($tree) {
-          $query = "SELECT count(distinct mediaID) as mcount FROM $media_table
+          $query = "SELECT count(distinct mediaID) AS mcount FROM $media_table
 	    WHERE mediatypeID = \"$mediatypeID\" AND (gedcom = \"$tree\" OR gedcom = \"\")";
         } else {
-          $query = "SELECT count(mediaID) as mcount FROM $media_table WHERE mediatypeID = \"$mediatypeID\"";
+          $query = "SELECT count(mediaID) AS mcount FROM $media_table WHERE mediatypeID = \"$mediatypeID\"";
         }
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
@@ -95,19 +95,19 @@ tng_header($text['databasestatistics'], $flags);
         tng_free_result($result);
       }
 
-      $query = "SELECT count(id) as scount FROM $sources_table $wherestr";
+      $query = "SELECT count(id) AS scount FROM $sources_table $wherestr";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       $totalsources = number_format($row['scount']);
       tng_free_result($result);
 
-      $query = "SELECT count(id) as pcount FROM $people_table WHERE sex = 'M' $wherestr2";
+      $query = "SELECT count(id) AS pcount FROM $people_table WHERE sex = 'M' $wherestr2";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       $males = $row['pcount'];
       tng_free_result($result);
 
-      $query = "SELECT count(id) as pcount FROM $people_table WHERE sex = 'F' $wherestr2";
+      $query = "SELECT count(id) AS pcount FROM $people_table WHERE sex = 'F' $wherestr2";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       $females = $row['pcount'];
@@ -115,7 +115,7 @@ tng_header($text['databasestatistics'], $flags);
 
       $unknownsex = $totalpeople - $males - $females;
 
-      $query = "SELECT count(id) as pcount FROM $people_table WHERE living != 0 $wherestr2";
+      $query = "SELECT count(id) AS pcount FROM $people_table WHERE living != 0 $wherestr2";
       $result = tng_query($query);
       $row = tng_fetch_assoc($result);
       $living = $row['pcount'];
@@ -338,7 +338,7 @@ tng_header($text['databasestatistics'], $flags);
 
       echo "<br><br>\n";
       $width = $sitever == "standard" ? "500px" : "100%";
-      echo "<table style=\"width:$width\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n";
+      echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n";
       echo "<tr><td  valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\"><sup><font size=\"1\">1</font></sup>&nbsp;</span></td>";
       echo "<td class=\"databack\"><span class=\"normal\">{$text['agedisclaimer']}</span></td></tr>";
       echo "</table>\n";
@@ -353,7 +353,7 @@ tng_header($text['databasestatistics'], $flags);
       echo "<br>\n";
       ?>
     </div>
-    <div id="charts" style="display:inline-block; width:400px; vertical-align:top">
+    <div id="charts" style="display:inline-block; width:400px; vertical-align:top;">
         <div id="gender_chart"></div>
         <div id="living_chart"></div>
         <div id="media_chart"></div>

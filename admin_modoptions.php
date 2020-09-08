@@ -153,7 +153,7 @@ echo "
 
 echo displayToggle("plus0", 0, "log", $admtext['logoptions'], "");
 echo "
-	<div id=\"log\" style=\"display:none\">
+	<div id=\"log\" style=\"display:none;\">
 		<table class=\"normal\">
 		    <tr>
                   <td width=\"270px\">
@@ -231,7 +231,7 @@ echo ">{$admtext['no']}</option>
          <td class=\"tngshadow\">";
 echo displayToggle("plus1", 0, "display", $admtext['displayoptions'], "");
 echo "
-	<div id=\"display\" style=\"display:none\">
+	<div id=\"display\" style=\"display:none;\">
 	            <table class=\"normal\">
 		         <tr>
          			<td width=\"270px\">{$admtext['sortlistby']}:</td>
@@ -409,7 +409,7 @@ echo ">{$admtext['no']}</option>
          <td class=\"tngshadow\">";
 echo displayToggle("plus2", 0, "other", $admtext['othermmoptions'], "");
 echo "
-	<div id=\"other\" style=\"display:none\">
+	<div id=\"other\" style=\"display:none;\">
 	    <table class=\"normal\">
          		<tr>
          			<td width=\"270px\">{$admtext['allowdeletepartial']}:</td>

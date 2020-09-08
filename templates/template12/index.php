@@ -9,7 +9,7 @@ $tngconfig['showbmarks'] = 1;
 
 if ($sitever != "mobile") {
   ?>
-    <div class="cb-tng-area" style="height:24px">
+    <div class="cb-tng-area" style="height:24px;">
         <div style="margin-left: 10px; margin-right: 10px;">
           <?php
           $title = getTemplateMessage('t12_maintitle');

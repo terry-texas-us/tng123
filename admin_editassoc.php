@@ -13,7 +13,7 @@ if (!$allow_edit) {
 }
 
 $query = "SELECT passocID, relationship, reltype, gedcom ";
-$query .= "FROM {$assoc_table} ";
+$query .= "FROM $assoc_table ";
 $query .= "WHERE assocID = \"{$assocID}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
@@ -44,10 +44,10 @@ header("Content-type:text/html; charset=" . $session_charset);
         <tr>
             <td>
                 <span id="person_label"<?php if ($row['reltype'] == "F") {
-                    echo " style=\"display:none\"";
+                    echo " style=\"display:none;\"";
                 } ?>><?php echo $admtext['personid']; ?></span>
                 <span id="family_label"<?php if ($row['reltype'] == "I") {
-                    echo " style=\"display:none\"";
+                    echo " style=\"display:none;\"";
                 } ?>><?php echo $admtext['familyid']; ?></span>:
             </td>
             <td valign="top">

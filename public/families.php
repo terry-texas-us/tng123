@@ -11,7 +11,7 @@ function fetchAndCleanFamilyRow(?string &$familyID, string $families_table, stri
     $row = [];
     if ($familyID) {
         $familyID = ucfirst($familyID);
-        $query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+        $query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = '$tree'";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
@@ -30,7 +30,8 @@ function fetchAndCleanFamilyRow(?string &$familyID, string $families_table, stri
  * @return string
  */
 function fetchFamilyName(string $families_table, $passocID, string $tree): string {
-    $query = "SELECT husband, wife, gedcom, familyID FROM $families_table ";
+    $query = "SELECT husband, wife, gedcom, familyID ";
+    $query .= "FROM $families_table ";
     $query .= "WHERE familyID=\"{$passocID}\" AND gedcom=\"{$tree}\"";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);

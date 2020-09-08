@@ -82,7 +82,7 @@ if ($subquery) {
   $numrows = tng_num_rows($cemresult);
 
   if ($numrows == $max_cemeteries || $cemoffsetplus > 1) {
-    $query = "SELECT count(cemeteryID) as ccount FROM $cemeteries_table $subquery";
+    $query = "SELECT count(cemeteryID) AS ccount FROM $cemeteries_table $subquery";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     tng_free_result($result2);
@@ -175,9 +175,12 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
   }
   $body .= "<div class=\"titlebox\">\n";
   $thiscem = $subquery ? $cemetery['cemeteryID'] : "";
-  $query = "SELECT DISTINCT $media_table.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, form, mediatypeID, abspath, newwindow, latitude, longitude
-		FROM $media_table LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID
-		WHERE mediatypeID = \"headstones\" AND cemeteryID = \"$thiscem\" $wherestr ORDER BY description LIMIT $newoffset" . $maxsearchresults;
+  $query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, form, mediatypeID, abspath, newwindow, latitude, longitude ";
+  $query .= "FROM $media_table media ";
+  $query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
+  $query .= "WHERE mediatypeID = \"headstones\" AND cemeteryID = \"$thiscem\" $wherestr ";
+  $query .= "ORDER BY description ";
+  $query .= "LIMIT $newoffset" . $maxsearchresults;
   if (!$subquery) {
     $cemetery = array();
     $cemetery['cemname'] = $text['nocemetery'];
@@ -187,7 +190,10 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
   $numrows = tng_num_rows($hsresult);
   if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(DISTINCT $media_table.mediaID) as hscount FROM $media_table LEFT JOIN $medialinks_table on $media_table.mediaID = $medialinks_table.mediaID WHERE mediatypeID = \"headstones\" AND cemeteryID = \"$thiscem\" $wherestr";
+    $query = "SELECT count(DISTINCT media.mediaID) AS hscount ";
+    $query .= "FROM $media_table media ";
+    $query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
+    $query .= "WHERE mediatypeID = \"headstones\" AND cemeteryID = \"$thiscem\" $wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['hscount'];
@@ -243,7 +249,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
       $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
       $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br>$localballooncemeteryplace$codednotes</div>"];
       $l2mCount++;
-      $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px\" ></a>";
+      $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px;\" ></a>";
       $map['pins']++;
     }
   }
@@ -267,7 +273,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback normal\">";
   }
   $body .= $header;
-  $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px\">&nbsp;{$text['thumb']}</th>";
+  $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
   $body .= "<th data-tablesaw-priority=\"1\" class=\"fieldnameback fieldname\">&nbsp;{$text['description']}</th>";
   $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}</th>";
   $body .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
@@ -283,15 +289,14 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
       $hs['status'] = $text[$status];
     }
 
-    $query = "SELECT medialinkID, $medialinks_table.personID as personID, people.personID as personID2, familyID, people.living as living, people.private as private, people.branch as branch,
-			husband, wife, people.lastname as lastname, people.lnprefix as lnprefix, people.firstname as firstname,
-			people.prefix as prefix, people.suffix as suffix, nameorder, $medialinks_table.gedcom as gedcom, treename, $sources_table.title, $sources_table.sourceID, $repositories_table.repoID,reponame, deathdate, burialdate, linktype
-			FROM ($medialinks_table, $trees_table)
-			LEFT JOIN $people_table AS people ON ($medialinks_table.personID = people.personID AND $medialinks_table.gedcom = people.gedcom)
-			LEFT JOIN $families_table ON ($medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom)
-			LEFT JOIN $sources_table ON ($medialinks_table.personID = $sources_table.sourceID AND $medialinks_table.gedcom = $sources_table.gedcom)
-			LEFT JOIN $repositories_table ON ($medialinks_table.personID = $repositories_table.repoID AND $medialinks_table.gedcom = $repositories_table.gedcom)
-			WHERE mediaID = \"{$hs['mediaID']}\" AND $medialinks_table.gedcom = $trees_table.gedcom $wherestr2 ORDER BY lastname, lnprefix, firstname, $medialinks_table.personID";
+    $query = "SELECT medialinkID, medialinks.personID AS personID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
+    $query .= "FROM ($medialinks_table medialinks, $trees_table trees) ";
+    $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
+    $query .= "LEFT JOIN $families_table families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
+    $query .= "LEFT JOIN $sources_table sources ON (medialinks.personID = sources.sourceID AND medialinks.gedcom = sources.gedcom) ";
+    $query .= "LEFT JOIN $repositories_table repositories ON (medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom) ";
+    $query .= "WHERE mediaID = \"{$hs['mediaID']}\" AND medialinks.gedcom = trees.gedcom $wherestr2 ";
+    $query .= "ORDER BY lastname, lnprefix, firstname, medialinks.personID";
 
     $presult = tng_query($query);
     $hslinktext = "";
@@ -330,14 +335,14 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $description = $hs['description'];
     $notes = $hs['notes'];
 
-    $body .= "<tr><td valign=\"top\" class=\"databack center\" style=\"width:$thumbmaxw" . "px\">";
+    $body .= "<tr><td valign=\"top\" class=\"databack center\" style=\"width:$thumbmaxw" . "px;\">";
     $hs['mediatypeID'] = "headstones";
     $hs['allow_living'] = 1;
     $imgsrc = getSmallPhoto($hs);
     $href = getMediaHREF($hs, 3);
 
     if ($imgsrc) {
-      $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none\"></div></div>\n";
+      $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $body .= "<a href=\"$href\"";
       if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
         $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";

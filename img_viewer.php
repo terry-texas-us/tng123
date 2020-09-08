@@ -5,7 +5,7 @@ include "tng_begin.php";
 include $cms['tngpath'] . "functions.php";
 
 if ($medialinkID) {
-  $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom as gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
+  $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom AS gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
   $result = tng_query($query);
   $row = tng_fetch_assoc($result);
   $personID = $row['personID'];
@@ -49,7 +49,7 @@ $flags['noicons'] = 1;
 $flags['nobody'] = 1;
 $flags['nomobile'] = 1;
 tng_header($imgrow['description'], $flags);
-echo '<body style="background-image: none">';
+echo '<body style="background-image: none;">';
 
 $usefolder = $imgrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 $treestr = $tngconfig['mediatrees'] && $imgrow['gedcom'] ? $imgrow['gedcom'] . "/" : "";

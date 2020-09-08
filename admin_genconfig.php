@@ -189,7 +189,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus0", 0, "db", $admtext['dbsection'], ""); ?>
 
-                <div id="db" style="display:none">
+                <div id="db" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -219,7 +219,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td><input type="text" value="<?php echo $database_socket; ?>" name="new_database_socket" size="20"></td>
                         </tr>
                         <?php
-                        $query = "SELECT count(userID) as ucount FROM $users_table";
+                        $query = "SELECT count(userID) AS ucount FROM $users_table";
                         $uresult = @tng_query($query);
                         if ($uresult) {
                             $urow = tng_fetch_assoc($uresult);
@@ -256,7 +256,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus1", 0, "tables", $admtext['tablesection'], ""); ?>
 
-                <div id="tables" style="display:none"><br>
+                <div id="tables" style="display:none;"><br>
                     <table cellspacing="0" cellpadding="0" class="normal">
                         <tr>
                             <td>
@@ -428,7 +428,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus2", 0, "folders", $admtext['foldersection'], ""); ?>
 
-                <div id="folders" style="display:none">
+                <div id="folders" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -505,7 +505,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus3", 0, "site", $admtext['sitesection'], ""); ?>
 
-                <div id="site" style="display:none">
+                <div id="site" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -720,7 +720,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus4", 0, "media", $admtext['media'], ""); ?>
 
-                <div id="media" style="display:none">
+                <div id="media" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -908,7 +908,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                                 <input type="button" value="<?php echo $admtext['convert']; ?>" id="convertmedia" onclick="convertMedia(jQuery('#tng_mediatrees'));">
-                                <div id="mediaexpl" style="display:inline-block"></div>
+                                <div id="mediaexpl" style="display:inline-block;"></div>
                             </td>
                         </tr>
                         <tr>
@@ -925,7 +925,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus5", 0, "lang", $admtext['language'], ""); ?>
 
-                <div id="lang" style="display:none">
+                <div id="lang" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -1017,7 +1017,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus6", 0, "priv", $admtext['privsection'], ""); ?>
 
-                <div id="priv" style="display:none">
+                <div id="priv" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -1038,10 +1038,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <tr>
                             <td><?php echo $admtext['treerestrict']; ?>: &nbsp;&nbsp;</td>
                             <td><span id="trdisabled"<?php if ($requirelogin) {
-                                    echo " style=\"display:none\"";
+                                    echo " style=\"display:none;\"";
                                 } ?>><?php echo $admtext['reqloginset']; ?></span>
                                 <select name="treerestrict" id="treerestrict"<?php if (!$requirelogin) {
-                                    echo " style=\"display:none\"";
+                                    echo " style=\"display:none;\"";
                                 } ?>>
                                     <option value="0"<?php if (!$treerestrict) {
                                         echo " selected";
@@ -1173,7 +1173,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus7", 0, "names", $admtext['namesection'], ""); ?>
 
-                <div id="names" style="display:none">
+                <div id="names" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -1245,7 +1245,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus8", 0, "cemeteries", $admtext['cemeteries'], ""); ?>
 
-                <div id="cemeteries" style="display:none">
+                <div id="cemeteries" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -1276,7 +1276,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus9", 0, "mailreg", $admtext['mailreg'], ""); ?>
 
-                <div id="mailreg" style="display:none">
+                <div id="mailreg" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['emailaddress']; ?>:</td>
@@ -1422,7 +1422,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus10", 0, "pref", $admtext['prefsection'], ""); ?>
 
-                <div id="pref" style="display:none">
+                <div id="pref" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['personprefix']; ?>:</td>
@@ -1473,7 +1473,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus11", 0, "mobile", $admtext['mobilesection'], ""); ?>
 
-                <div id="mobile" style="display:none">
+                <div id="mobile" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['responsivetables']; ?>:</td>
@@ -1545,7 +1545,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
         <tr class="databack tngshadow">
             <td class="tngshadow">
                 <?php echo displayToggle("plus12", 0, "dna", $text['dna_tests'], ""); ?>
-                <div id="dna" style="display:none">
+                <div id="dna" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['hidedna']; ?>:</td>
@@ -1737,7 +1737,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <?php echo displayToggle("plus13", 0, "misc", $admtext['miscsection'], ""); ?>
 
-                <div id="misc" style="display:none">
+                <div id="misc" style="display:none;">
                     <table class="normal">
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -1902,17 +1902,17 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                         echo " selected=\"selected\"";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
-                                <input type="button" value="<?php echo $admtext['merge']; ?>" id="merge" onclick="convertPlaces('merge');" style="display:none">
-                                <span id="mergeexpl" style="display:none"><?php echo $admtext['mergeexpl']; ?></span>
-                                <select name="placetree" id="placetree" style="display:none">
+                                <input type="button" value="<?php echo $admtext['merge']; ?>" id="merge" onclick="convertPlaces('merge');" style="display:none;">
+                                <span id="mergeexpl" style="display:none;"><?php echo $admtext['mergeexpl']; ?></span>
+                                <select name="placetree" id="placetree" style="display:none;">
                                     <?php
                                     foreach ($treeList as $treerow) {
                                         echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
                                     }
                                     ?>
                                 </select>
-                                <input type="button" value="<?php echo $admtext['convert']; ?>" id="convert" onclick="convertPlaces('convert');" style="display:none">
-                                <span id="convertexpl" style="display:none"><?php echo $admtext['convexpl']; ?></span>
+                                <input type="button" value="<?php echo $admtext['convert']; ?>" id="convert" onclick="convertPlaces('convert');" style="display:none;">
+                                <span id="convertexpl" style="display:none;"><?php echo $admtext['convexpl']; ?></span>
                             </td>
                         </tr>
                         <tr>

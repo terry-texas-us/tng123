@@ -18,7 +18,7 @@ if ($result2) {
   tng_free_result($result2);
 }
 ?>
-<div id="links" style="margin:0;padding-top:12px">
+<div id="links" style="margin:0;padding-top:12px;">
     <table cellspacing="2">
         <tr>
             <td class="normal"><?php echo $admtext['tree']; ?></td>
@@ -59,7 +59,7 @@ if ($result2) {
         ?>
         </tbody>
     </table>
-    <div id="nolinks" class="normal" style="margin-left:3px">
+    <div id="nolinks" class="normal" style="margin-left:3px;">
       <?php
       if (!$oldlinks) {
         echo $admtext['nolinks'];

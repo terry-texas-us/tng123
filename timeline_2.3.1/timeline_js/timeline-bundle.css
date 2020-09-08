@@ -141,7 +141,7 @@
 }
 
 .timeline-horizontal .timeline-date-label-em {
-    height: 2em
+    height: 2em;
 }
 
 /* vertical */
@@ -154,7 +154,7 @@
 }
 
 .timeline-vertical .timeline-date-label-em {
-    width: 7em
+    width: 7em;
 }
 
 
@@ -204,19 +204,19 @@
 }
 
 .timeline-band-0 .timeline-ether-bg {
-    background-color: #eee
+    background-color: #eee;
 }
 
 .timeline-band-1 .timeline-ether-bg {
-    background-color: #ddd
+    background-color: #ddd;
 }
 
 .timeline-band-2 .timeline-ether-bg {
-    background-color: #ccc
+    background-color: #ccc;
 }
 
 .timeline-band-3 .timeline-ether-bg {
-    background-color: #aaa
+    background-color: #aaa;
 }
 
 .timeline-duration-event {

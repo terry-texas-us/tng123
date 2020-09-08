@@ -3,6 +3,7 @@ $textpart = "notes";
 include "tng_begin.php";
 
 include $cms['tngpath'] . "functions.php";
+require_once "./core/sql/extractWhereClause.php";
 
 $browsenotes_url = getURL("browsenotes", 1);
 $showsource_url = getURL("showsource", 1);
@@ -16,13 +17,14 @@ function doNoteSearch($instance, $pagenav) {
 
     $str = "<div class=\"normal\">\n";
     $str .= getFORM("browsenotes", "get", "notesearch$instance", "");
-    $str .= "<input type=\"text\" name=\"notesearch\" value=\"$notesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type=\"text\" name=\"notesearch\" value=\"$notesearch\"> <input type=\"submit\" value=\"{$text['search']}\"> ";
     $str .= $pagenav;
     if ($notesearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsenotes_noargs_url\">{$text['browseallnotes']}</a>";
+        $str .= "<a href=\"$browsenotes_noargs_url\">{$text['browseallnotes']}</a>";
     }
     $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
-    $str .= "</form></div>\n";
+    $str .= "</form>\n";
+    $str .= "</div>\n";
 
     return $str;
 }
@@ -37,36 +39,31 @@ if ($offset) {
     $newoffset = "";
     $page = 1;
 }
-
-$wherestr = "WHERE xnotes.ID = notelinks.xnoteID";
+$query = "SELECT xnotes.ID AS ID, xnotes.note AS note, notelinks.persfamID AS personID, xnotes.gedcom AS gedcom ";
+$query .= "FROM ($xnotes_table xnotes, $notelinks_table notelinks) ";
+$query .= "WHERE xnotes.ID = notelinks.xnoteID ";
 if ($tree) {
-    $wherestr .= " AND xnotes.gedcom = \"{$tree}\"";
+    $query .= "AND xnotes.gedcom = '$tree' ";
 }
 if (!$allow_private) {
-    $wherestr .= " AND notelinks.secret != \"1\"";
+    $query .= "AND notelinks.secret != '1' ";
 }
 if ($notesearch) {
     $notesearch2 = addslashes($notesearch);
     $notesearch = cleanIt(stripslashes($notesearch));
-
-    $wherestr .= $wherestr ? " AND" : "WHERE";
-    $wherestr .= " match(xnotes.note) against( \"{$notesearch2}*\" in boolean mode)";
+    $query .= "AND match(xnotes.note) against( \"{$notesearch2}*\" in boolean mode) ";
 }
-
-$query = "SELECT xnotes.ID AS ID, xnotes.note AS note, notelinks.persfamID AS personID, xnotes.gedcom AS gedcom ";
-$query .= "FROM ({$xnotes_table} xnotes, {$notelinks_table} notelinks) ";
-$query .= "$wherestr ";
 $query .= "ORDER BY note LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(xnotes.ID) AS scount ";
-    $query .= "FROM ({$xnotes_table} xnotes, {$notelinks_table} notelinks) ";
-    $query .= "LEFT JOIN {$trees_table} trees ON xnotes.gedcom = trees.gedcom ";
-    $query .= "$wherestr";
-    $result2 = tng_query($query);
+    $query2 = "SELECT count(xnotes.ID) AS scount ";
+    $query2 .= "FROM ($xnotes_table xnotes, $notelinks_table notelinks) ";
+    $query2 .= "LEFT JOIN $trees_table trees ON xnotes.gedcom = trees.gedcom ";
+    $query2 .= extractWhereClause($query);
+    $result2 = tng_query($query2);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['scount'];
 } else {
@@ -80,7 +77,7 @@ $logstring = "<a href=\"$browsenotes_url" . "tree=$tree&amp;offset=$offset&amp;n
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top}</style>\n";
+$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top;}</style>\n";
 tng_header($text['notes'], $flags);
 ?>
     <h1 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h1><br>
@@ -95,19 +92,22 @@ $pagenav = get_browseitems_nav($totrows, $browsenotes_url . "notesearch=$notesea
 echo doNoteSearch(1, $pagenav);
 echo "<br>\n";
 
-$header = "";
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
 if ($sitever != "standard") {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }
-    $header = "<table class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    $tableStartTag = "<table class = 'tablesaw whiteback normal' data-tablesaw-mode = '$tabletype'";
+    if ($enableminimap) {
+        $tableStartTag .= " data-tablesaw-minimap";
+    }
+    if ($enablemodeswitch){
+        $tableStartTag .= " data-tablesaw-mode-switch";
+    }
+    $tableStartTag .= ">";
 } else {
-    $header = "<table class=\"whiteback normal\">";
+    $tableStartTag = "<table class = 'whiteback normal'>";
 }
-echo $header;
+echo $tableStartTag;
 ?>
     <thead>
     <tr>
@@ -129,14 +129,14 @@ while ($nrow = tng_fetch_assoc($result)) {
         $nrow['private'] = 1;
     }
     if (!$notelinktext) {
-        $query = "SELECT * FROM {$people_table} WHERE personID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
+        $query = "SELECT * FROM $people_table WHERE personID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
         $result2 = tng_query($query);
         if (tng_num_rows($result2) == 1) {
             $row2 = tng_fetch_assoc($result2);
 
             if (!$row2['living'] || !$row2['private']) {
-                $query = "SELECT count(personID) as ccount ";
-                $query .= "FROM {$citations_table} citations, {$people_table} people ";
+                $query = "SELECT count(personID) AS ccount ";
+                $query .= "FROM $citations_table citations, $people_table people ";
                 $query .= "WHERE citations.sourceID = '{$nrow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
                 $nresult2 = tng_query($query);
                 $nrow2 = tng_fetch_assoc($nresult2);
@@ -178,14 +178,12 @@ while ($nrow = tng_fetch_assoc($result)) {
             if (!$row2['allow_living']) {
                 $noneliving = 0;
             }
-
             $notelinktext .= "<a href=\"familygroup.php?familyID={$row2['familyID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['family']} {$row2['familyID']}</a>\n<br>\n";
             tng_free_result($result2);
         }
     }
-
     if (!$notelinktext) {
-        $query = "SELECT * FROM {$sources_table} WHERE sourceID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
+        $query = "SELECT * FROM $sources_table WHERE sourceID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
         $result2 = tng_query($query);
         if (tng_num_rows($result2) == 1) {
             $row2 = tng_fetch_assoc($result2);
@@ -193,9 +191,8 @@ while ($nrow = tng_fetch_assoc($result)) {
             tng_free_result($result2);
         }
     }
-
     if (!$notelinktext) {
-        $query = "SELECT * FROM {$repositories_table} WHERE repoID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
+        $query = "SELECT * FROM $repositories_table WHERE repoID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
         $result2 = tng_query($query);
         if (tng_num_rows($result2) == 1) {
             $row2 = tng_fetch_assoc($result2);
@@ -212,7 +209,7 @@ while ($nrow = tng_fetch_assoc($result)) {
         echo $text['livingnote'];
     }
     echo "</td>\n";
-    echo "<td class=\"databack\" style=\"width: 175px\">$notelinktext</td>\n";
+    echo "<td class=\"databack\" style=\"width: 175px;\">$notelinktext</td>\n";
     echo "</tr>\n";
     $i++;
 }

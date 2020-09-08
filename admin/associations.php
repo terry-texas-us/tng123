@@ -8,8 +8,8 @@
 function checkForAssociations(string $id, string $tree): string {
     global $admtext, $assoc_table;
 
-    $query = "SELECT count(assocID) as acount ";
-    $query .= "FROM {$assoc_table} ";
+    $query = "SELECT count(assocID) AS acount ";
+    $query .= "FROM $assoc_table ";
     $query .= "WHERE personID = \"{$id}\" AND gedcom = \"{$tree}\"";
     $result = tng_query($query) or die ($admtext . ": $query");
     $row = tng_fetch_assoc($result);
@@ -27,7 +27,7 @@ function getPersonOrFamilyAssociatedName($reltype, $passocID, array $tree): stri
     global $people_table, $families_table;
     if ($reltype == "I") {
         $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix ";
-        $query .= "FROM {$people_table} ";
+        $query .= "FROM $people_table ";
         $query .= "WHERE personID=\"$passocID\" AND gedcom=\"{$tree}\"";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
@@ -40,7 +40,7 @@ function getPersonOrFamilyAssociatedName($reltype, $passocID, array $tree): stri
         tng_free_result($result);
     } else {
         $query = "SELECT husband, wife, gedcom, familyID ";
-        $query .= "FROM {$families_table} ";
+        $query .= "FROM $families_table ";
         $query .= "WHERE familyID=\"$passocID\" AND gedcom=\"{$tree}\"";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);

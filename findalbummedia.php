@@ -60,16 +60,16 @@ tng_free_result($treeresult);
 			</td>
 			<td>
 				<input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-				<span id="spinner1" style="display:none"><img src="img/spinner.gif"></span>
+				<span id="spinner1" style="display:none;"><img src="img/spinner.gif"></span>
 			</td>
 		</tr>
 	</table>
 	<table>
-		<tr id="hsstatrow" style="display:none">
+		<tr id="hsstatrow" style="display:none;">
 			<td><span class="normal"><?php echo $admtext['status']; ?>: </span></td>
 			<td><span class="normal"><?php echo $admtext['cemetery']; ?>: </span></td>
 		</tr>
-		<tr id="cemrow" style="display:none">
+		<tr id="cemrow" style="display:none;">
 			<td>
 				<select name="hsstat" onchange="getNewMedia(document.find2,0)">
 					<option value="">&nbsp;</option>
@@ -81,7 +81,7 @@ tng_free_result($treeresult);
 				</select>
 			</td>
 			<td>
-			<select name="cemeteryID" onchange="getNewMedia(document.find2,0)" style="width:380px">
+			<select name="cemeteryID" onchange="getNewMedia(document.find2,0)" style="width:380px;">
 				<option selected></option>
 <?php
 $query = "SELECT cemname, cemeteryID, city, county, state, country FROM $cemeteries_table ORDER BY country, state, county, city, cemname";
@@ -101,6 +101,6 @@ while ($cemrow = tng_fetch_assoc($cemresult)) {
 	</table>
 
 	</form>
-	<div id="newmedia" style="width:720px;height:430px;overflow:auto"></div><br>
+	<div id="newmedia" style="width:720px;height:430px;overflow:auto;"></div><br>
 
 </div>

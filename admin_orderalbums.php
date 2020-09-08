@@ -21,7 +21,7 @@ $sortstr = preg_replace("/xxx/", $admtext['albums'], $admtext['sortmedia']);
 
 switch ($linktype) {
     case "I":
-        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $person['allow_living'] = 1;
@@ -29,14 +29,14 @@ switch ($linktype) {
         tng_free_result($result2);
         break;
     case "F":
-        $query = "SELECT branch FROM $families_table WHERE familyID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT branch FROM $families_table WHERE familyID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['family']}: $personID";
         tng_free_result($result2);
         break;
     case "S":
-        $query = "SELECT title FROM $sources_table WHERE sourceID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT title FROM $sources_table WHERE sourceID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['source']}: $personID";
@@ -47,7 +47,7 @@ switch ($linktype) {
         tng_free_result($result2);
         break;
     case "R":
-        $query = "SELECT reponame FROM $repositories_table WHERE repoID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "SELECT reponame FROM $repositories_table WHERE repoID=\"$personID\" AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['repository']}: $personID";
@@ -74,7 +74,7 @@ adminwritelog("<a href=\"admin_ordermedia.php?personID=$personID&amp;tree=$tree\
 $photofound = 0;
 $photo = "";
 
-$query = "SELECT alwayson, thumbpath, $media_table.mediaID as mediaID, usecollfolder, mediatypeID, medialinkID FROM ($media_table, $medialinks_table)
+$query = "SELECT alwayson, thumbpath, $media_table.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID FROM ($media_table, $medialinks_table)
 	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
 $result = tng_query($query);
 if ($result) {
@@ -103,7 +103,7 @@ if (file_exists("$rootpath$photoref")) {
     $photofound = 1;
 }
 
-$query = "SELECT * FROM ($album2entities_table, $albums_table) WHERE $album2entities_table.entityID=\"$personID\" AND $album2entities_table.gedcom = \"$tree\" AND $albums_table.albumID = $album2entities_table.albumID ORDER BY ordernum";
+$query = "SELECT * FROM ($album2entities_table, $albums_table) WHERE $album2entities_table.entityID=\"$personID\" AND $album2entities_table.gedcom = '$tree' AND $albums_table.albumID = $album2entities_table.albumID ORDER BY ordernum";
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
@@ -145,12 +145,12 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
+            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
             <br>
             <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
                 <tr>
-                    <th class="fieldnameback" style="width:102px"><?php echo $admtext['text_sort']; ?></th>
-                    <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px"><?php echo $admtext['thumb']; ?></th>
+                    <th class="fieldnameback" style="width:102px;"><?php echo $admtext['text_sort']; ?></th>
+                    <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px;"><?php echo $admtext['thumb']; ?></th>
                     <th class="fieldnameback"><?php echo $admtext['description']; ?></th>
                 </tr>
             </table>
@@ -164,15 +164,15 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
                         $truncated = substr($row['description'], 0, 90);
                         $truncated = strlen($row['description']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['description'];
-                        echo "<div class=\"sortrow\" id=\"orderdivs_{$row['alinkID']}\" style=\"clear:both;position:relative\" onmouseover=\"jQuery('#md_{$row['albumID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['albumID']}').css('visibility','hidden');\">";
+                        echo "<div class=\"sortrow\" id=\"orderdivs_{$row['alinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['albumID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['albumID']}').css('visibility','hidden');\">";
                         echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
 
-                        echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center\">";
-                        echo "<div style=\"padding-bottom:5px\"><a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
-                        echo "<input style=\"width:30px\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\">\n";
+                        echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center;\">";
+                        echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
+                        echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\">\n";
                         echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
 
@@ -194,7 +194,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
                         echo "<td class=\"lightback normal\"><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br>$truncated<br>";
-                        echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden\"><a href=\"#\" onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
+                        echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden;\"><a href=\"#\" onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
                         echo "</tr></table>";
                         echo "</div>\n";
                         $count++;

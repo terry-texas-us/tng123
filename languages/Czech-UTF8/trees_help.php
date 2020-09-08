@@ -13,7 +13,7 @@ echo help_header("Nápověda: Stromy");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
           <a href="users_help.php" class="lightlink">&laquo; Nápověda: Uživatelé</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("Nápověda: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nový / Upravit existující stromy</p></a>
             <p><strong>Strom</strong> v TNG je zásobník samostatného souboru rodinných údajů. TNG umožňuje na vašich stránkách podporu více stromů, ale protože
                 jsou stromy samostatné, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jiného stromu. Z tohoto důvodu by měly být osoby, které jsou nebo by měly být navzájem
@@ -94,7 +94,7 @@ echo help_header("Nápověda: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazání stromů</p></a>
             <p>Chcete-li odstranit strom, použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vymazat vedle záznamu tohoto stromu. Tento řádek změní
                 barvu a poté po odstranění položky strom zmizí. <em>Všechna data spojená s tímto stromem (včetně osob, rodin,
@@ -105,7 +105,7 @@ echo help_header("Nápověda: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="clear"><p class="subheadbold">Vyčištění stromů</p></a>
             Chcete-li strom "vyčistit" (vymazat všechny údaje, ale strom samotný ponechat), použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vyčistit
             vedle záznamu tohoto stromu.

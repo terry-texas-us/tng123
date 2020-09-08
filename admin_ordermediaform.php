@@ -135,7 +135,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
             <td colspan="3">&nbsp;</td>
             <td colspan="2">
               <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
-              <select name="event1" id="eventrow1" style="display:none">
+              <select name="event1" id="eventrow1" style="display:none;">
                 <option value=""></option>
               </select>
             </td>

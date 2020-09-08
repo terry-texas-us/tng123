@@ -25,11 +25,11 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
   $menu .= "<a href=\"{$destination}\" class=\"lightlink2 admincell fieldnameback\">\n";
   $menu .= $iconstr;
   if ($number) {
-    $menu .= "<div class=\"admintotal\" style=\"float:right\"><strong>" . number_format($number) . "</strong></div>\n";
+    $menu .= "<div class=\"admintotal\" style=\"float:right;\"><strong>" . number_format($number) . "</strong></div>\n";
   }
   $menu .= "<div class=\"adminsubhead\"><strong>$label</strong></div>\n";
   $menu .= $msgstr;
-  $menu .= "<div style=\"clear:both\"></div>\n";
+  $menu .= "<div style=\"clear:both;\"></div>\n";
   $menu .= "</a>\n";
 
   return $menu;
@@ -51,7 +51,7 @@ function getTotal($table, $where = "") {
       }
     }
 
-    $query = "SELECT count(*) as num FROM $table";
+    $query = "SELECT count(*) AS num FROM $table";
     if ($where) {
       $query .= " WHERE $where";
     }
@@ -241,7 +241,7 @@ tng_adminheader($admtext['administration'], "");
             <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0">
             <strong class="th-indent adminsubhead"><?php echo $admtext['tasks']; ?></strong>
           </a>
-          <div id="msgs" style="display:none">
+          <div id="msgs" style="display:none;">
             <hr>
             <?php echo $messages; ?>
           </div>

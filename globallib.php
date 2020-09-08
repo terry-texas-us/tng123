@@ -240,6 +240,7 @@ function getFORM($action, $method, $name, $id, $onsubmit = null) {
         $url = "modules.php";
     }          // backwards compatibility
 
+    $url = $action ? $cms['tngpath'] . $action . ".php" : "";
     $formstr = "<form action=\"$url\"";
     if ($method) {
         $formstr .= " method=\"$method\"";
@@ -291,10 +292,14 @@ function isPhoto($row) {
     }
 }
 
-function getEventDisplay($displaystr) {
+/**
+ * @param string $display list of event names separated by '|', one value for each language
+ * @return string event name to display for current language
+ */
+function getEventDisplay(string $display): string {
     global $mylanguage, $languages_path;
 
-    $dispvalues = explode("|", $displaystr);
+    $dispvalues = explode("|", $display);
     $numvalues = count($dispvalues);
     if ($numvalues > 1) {
         $displayval = "";
@@ -306,9 +311,8 @@ function getEventDisplay($displaystr) {
             }
         }
     } else {
-        $displayval = $displaystr;
+        $displayval = $display;
     }
-
     return $displayval;
 }
 
@@ -521,7 +525,7 @@ function checkLivingLinks($itemID) {
 
     if ($icriteria) {
         // Now find Living individuals linked to the media that fit the criteria set above.
-        $query = "SELECT count(*) as pcount
+        $query = "SELECT count(*) AS pcount
 			FROM ($medialinks_table, $people_table)
 			WHERE $medialinks_table.personID = $people_table.personID
 				AND $medialinks_table.gedcom = $people_table.gedcom
@@ -536,7 +540,7 @@ function checkLivingLinks($itemID) {
     }
 
     if ($fcriteria) {
-        $query = "SELECT count(*) as pcount
+        $query = "SELECT count(*) AS pcount
 			FROM ($medialinks_table, $families_table)
 			WHERE $medialinks_table.personID = $families_table.familyID
 				AND $medialinks_table.gedcom = $families_table.gedcom
@@ -780,7 +784,7 @@ function getXrefNotes($noteref, $tree = "") {
 
     preg_match("/^@(\S+)@/", $noteref, $matches);
     if (isset($matches[1])) {
-        $query = "SELECT note from {$xnotes_table} WHERE noteID = \"$matches[1]\" AND gedcom=\"{$tree}\"";
+        $query = "SELECT note FROM $xnotes_table WHERE noteID = \"$matches[1]\" AND gedcom=\"{$tree}\"";
         $xnoteres = @tng_query($query);
         if ($xnoteres) {
             $xnote = tng_fetch_assoc($xnoteres);
@@ -1091,7 +1095,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
             tng_free_result($result2);
             if ($numphotos) {
                 //if photos exist, show box with link to sort page where they can pick a default
-                $photo = "<a href=\"admin_ordermedia.php?newlink1=$persfamID&tree1=$tree&mediatypeID=photos&linktype1=$type\" class=\"smaller\" style=\"display:block;padding:8px;border:1px solid black;margin-right:6px;text-align:center\">{$admtext['choosedef']}</a>";
+                $photo = "<a href=\"admin_ordermedia.php?newlink1=$persfamID&tree1=$tree&mediatypeID=photos&linktype1=$type\" class='smaller' style=\"display:block; padding:8px; border:1px solid black; margin-right:6px; text-align:center;\">{$admtext['choosedef']}</a>";
             }
         } elseif ($gender && !empty($tngconfig['usedefthumbs'])) {
             if ($gender == "M") {

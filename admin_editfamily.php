@@ -73,7 +73,10 @@ $gotcites = checkForCitations($familyID, $tree);
 $gotassoc = checkForAssociations($familyID, $tree);
 $gotmore = checkForEvents($familyID, $tree);
 
-$query = "SELECT $people_table.personID as pID, firstname, lastname, lnprefix, prefix, suffix, nameorder, birthdate, altbirthdate, deathdate, burialdate, living, private, branch, $people_table.gedcom FROM $people_table, $children_table WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"$familyID\" AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\" ORDER BY ordernum";
+$query = "SELECT people.personID AS pID, firstname, lastname, lnprefix, prefix, suffix, nameorder, birthdate, altbirthdate, deathdate, burialdate, living, private, branch, people.gedcom ";
+$query .= "FROM $people_table people, $children_table children ";
+$query .= "WHERE people.personID = children.personID AND children.familyID = '$familyID' AND people.gedcom = '$tree' AND children.gedcom = '$tree' ";
+$query .= "ORDER BY ordernum";
 $children = tng_query($query);
 
 $kidcount = tng_num_rows($children);
@@ -302,7 +305,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         <table class="normal topmarginsmall">
                             <?php
                             if ($row['husband']) {
-                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, altbirthdate, deathdate, burialdate FROM $people_table WHERE personID = \"{$row['husband']}\" AND gedcom = \"$tree\"";
+                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, altbirthdate, deathdate, burialdate FROM $people_table WHERE personID = \"{$row['husband']}\" AND gedcom = '$tree'";
                                 $spouseresult = tng_query($query);
                                 $spouserow = tng_fetch_assoc($spouseresult);
                                 tng_free_result($spouseresult);
@@ -332,7 +335,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             </tr>
                             <?php
                             if ($row['wife']) {
-                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, altbirthdate, deathdate, burialdate FROM $people_table WHERE personID = \"{$row['wife']}\" AND gedcom = \"$tree\"";
+                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, altbirthdate, deathdate, burialdate FROM $people_table WHERE personID = \"{$row['wife']}\" AND gedcom = '$tree'";
                                 $spouseresult = tng_query($query);
                                 $spouserow = tng_fetch_assoc($spouseresult);
                                 tng_free_result($spouseresult);
@@ -378,7 +381,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
 
                                     <?php
-                                    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"$tree\" ORDER BY description";
+                                    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
                                     $branchresult = tng_query($query);
                                     $branchlist = explode(",", $row['branch']);
 
@@ -401,7 +404,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                     }
                                     $selectnum = $totbranches < 8 ? $totbranches : 8;
                                     $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
-                                    $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
+                                    $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                     $select .= "	<option value=\"\"";
                                     if ($row['branch'] == "") {
                                         $select .= " selected";
@@ -409,7 +412,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                     $select .= ">{$admtext['nobranch']}</option>\n";
 
                                     $select .= "$options</select>\n";
-                                    echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
+                                    echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                     ?>
                                     <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                          onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -446,7 +449,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             ?>
                             <tr>
                                 <td><?php echo $admtext['marriagetype']; ?>:</td>
-                                <td colspan="6"><input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px" maxlength="50"></td>
+                                <td colspan="6"><input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50"></td>
                             </tr>
                             <?php
                             if ($rights['lds']) {
@@ -459,7 +462,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         <table class="normal">
                             <tr>
                                 <td valign="top">
-                                    <strong class="subhead" style="color:black"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
+                                    <strong class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
                                     <?php
                                     echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('F','$familyID','$tree');\"></p>\n";
                                     ?>
@@ -480,10 +483,10 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                     echo displayToggle("plus2", 1, "children", $admtext['children'] . " (<span id=\"childcount\">$kidcount</span>)", "");
                     ?>
 
-                    <div id="children" style="padding-top:10px">
+                    <div id="children" style="padding-top:10px;">
                         <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1" class="normal">
                             <tr>
-                                <th class="fieldnameback" style="width:55px"><span class="fieldname"><?php echo $admtext['text_sort']; ?></span></th>
+                                <th class="fieldnameback" style="width:55px;"><span class="fieldname"><?php echo $admtext['text_sort']; ?></span></th>
                                 <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['child']; ?></span></th>
                             </tr>
                         </table>

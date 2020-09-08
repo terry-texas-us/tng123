@@ -12,7 +12,7 @@ echo help_header("Nápověda: Import dat");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
@@ -124,7 +124,7 @@ echo help_header("Nápověda: Import dat");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="export"><p class="subheadbold">GEDCOM Export</p></a>
             <p>Tato stránka vám umožní exportovat svá data z určitého stromu do standardního souboru GEDCOM 5.5. Soubor bude uložen ve vaší složce
                 GEDCOM (určena v Nastavení importu) a bude pojmenován názvem stromu a příponou ".ged".</p>

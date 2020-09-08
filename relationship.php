@@ -400,7 +400,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
       $photohtouse = $pedigree['puboxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
       $photoInfo = getPhotoSrc($row['personID'], $rights['both'], $row['sex']);
       if ($photoInfo['ref']) {
-        $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px\" alt=\"\" class=\"smallimg\">";
+        $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px;\" alt=\"\" class=\"smallimg\">";
         if ($photoInfo['link']) {
           $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
         }
@@ -409,7 +409,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
     }
 
     // name info
-    echo "<td align=\"{$pedigree['puboxalign']}\" class=\"pboxname\" style=\"height:$tableheight\">{$pedigree['begnamefont']}" . $pedigree['namelink'] . $pedigree['endfont'];
+    echo "<td align=\"{$pedigree['puboxalign']}\" class=\"pboxname\" style=\"height:$tableheight;\">{$pedigree['begnamefont']}" . $pedigree['namelink'] . $pedigree['endfont'];
 
     echo "</td></tr></table></div>\n";
     //end box
@@ -471,7 +471,7 @@ function finishRelationship($couple) {
   if ($gens->split || $gens->multparents) {
     $maxheight += $pedigree['borderwidth'] + (2 * $pedigree['boxVsep']);
   }
-  echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:{$maxwidth}px; height:{$maxheight}px\"><tr><td></td></tr></table>\n";
+  echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:{$maxwidth}px; height:{$maxheight}px;\"><tr><td></td></tr></table>\n";
 
   //if they're not spouses of each other, draw the rest of the boxes
   $downarray = array_reverse($downarray);

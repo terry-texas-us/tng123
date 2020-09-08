@@ -8,7 +8,7 @@ echo help_header("Help: Cemeteries");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="albums_help.php" class="lightlink">&laquo; Help: Albums</a> &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ echo help_header("Help: Cemeteries");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <div id="google_translate_element" style="float:right"></div>
+            <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -48,7 +48,7 @@ echo help_header("Help: Cemeteries");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="add"><p class="subheadbold">Add New / Edit Existing Cemeteries</p></a>
             <p>TNG allows you to categorize and display your headstone photos by cemetery. To do that, you must set up a new cemetery record for each location. Cemetery
                 records in TNG are not related to place records and there is no GEDCOM convention for cemeteries, so even if your GEDCOM file contains cemetery names in some
@@ -115,7 +115,7 @@ echo help_header("Help: Cemeteries");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Top</a></p>
+            <p style="float:right;"><a href="#top">Top</a></p>
             <a name="delete"><p class="subheadbold">Deleting Cemeteries</p></a>
             <p>To delete one cemetery, use the <a href="#search">Search</a> tab to locate the cemetery, then click on the Delete icon next to that cemetery record. The row will
                 change color and then vanish as the cemetery is deleted. To delete more than one cemetery at a time, check the box in the Select column next to each cemetery to be

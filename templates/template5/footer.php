@@ -3,7 +3,7 @@
 </td></tr></table></td></tr>
 <tr>
     <td class="tablesubheader" align="center">
-        <div class="topmenu" style="text-align:center">
+        <div class="topmenu" style="text-align:center;">
 
             <!--EDIT BOTTOM LINK MENU BELOW HERE-->
 

@@ -109,7 +109,7 @@ $title = getTemplateMessage('t1_maintitle');
               }
               ?>
                 <h2><?php echo $text['mnufeatures']; ?></h2>
-                <table style="font-size:12pt" width="100%">
+                <table style="font-size:12pt;" width="100%">
                     <tr>
                         <td valign="top" width="30%">
                             <ul>

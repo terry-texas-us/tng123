@@ -44,10 +44,14 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames
 
                   $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
                   if ($tngconfig['ucsurnames']) {
-                    $surnamestr = "ucase($surnamestr)";
+                    $surnamestr = "UCASE($surnamestr)";
                   }
                   $firstchar = $firstchar == "\"" ? "\\\"" : $firstchar;
-                  $query = "SELECT ucase( $binary $surnamestr ) as lastname, $surnamestr as lowername, ucase($binary lastname) as binlast, count( ucase($binary lastname) ) as lncount FROM $people_table WHERE ucase($binary TRIM(lastname)) LIKE \"$firstchar%\" $wherestr GROUP BY lowername ORDER by binlast";
+                  $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, UCASE($binary lastname) AS binlast, count(UCASE($binary lastname)) AS lncount ";
+                  $query .= "FROM $people_table ";
+                  $query .= "WHERE UCASE($binary TRIM(lastname)) LIKE \"$firstchar%\" $wherestr ";
+                  $query .= "GROUP BY lowername ";
+                  $query .= "ORDER by binlast";
                   $result = tng_query($query);
                   $topnum = tng_num_rows($result);
                   if ($result) {

@@ -12,7 +12,7 @@ echo help_header("Nápověda: Prameny");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="families_help.php" class="lightlink">&laquo; Nápověda: Rodiny</a> &nbsp; | &nbsp;
@@ -48,7 +48,7 @@ echo help_header("Nápověda: Prameny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat nový pramen</p></a>
             <p><strong>Pramen</strong> je nějaká forma důkazu, která slouží k prokázání nebo doložení údajů ve vaší databázi. Stejný pramen může být citován vícekrát
                 u více osob, rodin nebo událostí.</p>
@@ -92,7 +92,7 @@ echo help_header("Nápověda: Prameny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="edit"><p class="subheadbold">Upravit existující prameny</p></a>
       <p>Chcete-li upravit existující pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Upravit vedle pramenu.</p>
 
@@ -116,7 +116,7 @@ echo help_header("Nápověda: Prameny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat prameny</p></a>
             <p>Chcete-li odstranit pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Vymazat vedle tohoto pramenu. Tento řádek změní
                 barvu a poté po odstranění pramenu zmizí (všechny připojené citace budou také vymazány). Chcete-li najednou odstranit více pramenů, zaškrtněte políčko ve sloupci Vybrat vedle každého pramenu, který
@@ -127,7 +127,7 @@ echo help_header("Nápověda: Prameny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="merge"><p class="subheadbold">Sloučit</p></a>
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit prameny, které jsou lehce odlišné, ale odkazují na stejný materiál.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>

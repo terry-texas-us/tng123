@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Osoby");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="index_help.php" class="lightlink">&laquo; N�pov�da: Za��n�me</a> &nbsp; | &nbsp;
@@ -52,7 +52,7 @@ echo help_header("N�pov�da: Osoby");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">P�idat novou osobu</p></a>
             <p>Chcete-li p�idat novou osobu, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako pozn�mky, citace, spojen� a
                 dal�� ud�losti, m��ete p�idat po ulo�en� nebo zamknut� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
@@ -112,7 +112,7 @@ echo help_header("N�pov�da: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="edit"><p class="subheadbold">Upravit existuj�c� osobu</p></a>
             <p>Chcete-li upravit existuj�c� osobu, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� osoby, a pot� klikn�te na ikonu Upravit vedle t�to osoby.</p>
 
@@ -169,7 +169,7 @@ echo help_header("N�pov�da: Osoby");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat osobu</p></a>
             <p>Chcete-li odstranit osobu, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� dan� osoby, a pot� klikn�te na ikonu Vymazat vedle t�to osoby. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky zmiz�. Chcete-li najednou odstranit v�ce osob, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d� osoby, kterou
@@ -180,7 +180,7 @@ echo help_header("N�pov�da: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="review"><p class="subheadbold">P�edb�n� prohl�dnut� �prav</p></a>
       Chcete-li si p�edb�n� prohl�dnout zm�ny proveden� ostatn�mi u�ivateli, klikn�te na z�lo�ku "P�ezkoumat". M��ete se pak rozhodnout, zda tyto navrhovan� zm�ny ulo��te nebo odstran�te.
       Zm�ny m��ete prohl�dnout podle stromu nebo podle u�ivatele nebo podle oboj�ho. Po ulo�en� navrhovan�ch zm�n nen� zasl�n ��dn� mail, ale pokud nov� zm�ny existuj�, na z�lo�ce P�ezkoumat se objev� hv�zdi�ka (*).</p>
@@ -200,7 +200,7 @@ echo help_header("N�pov�da: Osoby");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="merge"><p class="subheadbold">Slou�en� osob</p></a>
       Chcete-li p�ezkoumat a slou�it duplicitn� z�znamy, klikn�te na z�lo�ku "Slou�it". Zde rozhodnete, zda jsou dva z�znamy toto�n� nebo ne.</p>
 

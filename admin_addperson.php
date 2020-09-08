@@ -83,7 +83,7 @@ $endldatetr = convertDate($endldate);
 
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
-$query = "SELECT personID FROM {$people_table} WHERE personID = \"{$personID}\" and gedcom = \"{$tree}\"";
+$query = "SELECT personID FROM $people_table WHERE personID = \"{$personID}\" and gedcom = \"{$tree}\"";
 $result = tng_query($query);
 
 if ($result && tng_num_rows($result)) {
@@ -161,7 +161,7 @@ if (!$burialtype) {
     $burialtype = 0;
 }
 $meta = metaphone($lnprefix . $lastname);
-$query = "INSERT INTO {$people_table} (personID, firstname, lnprefix, lastname, nickname, prefix, suffix, title, nameorder, living, private, birthdate, birthdatetr, birthplace, sex, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptdatetr, baptplace, confdate, confdatetr, confplace, initdate, initdatetr, initplace, endldate, endldatetr, endlplace, changedate, gedcom, branch, changedby, famc, metaphone, edituser, edittime) ";
+$query = "INSERT INTO $people_table (personID, firstname, lnprefix, lastname, nickname, prefix, suffix, title, nameorder, living, private, birthdate, birthdatetr, birthplace, sex, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptdatetr, baptplace, confdate, confdatetr, confplace, initdate, initdatetr, initplace, endldate, endldatetr, endlplace, changedate, gedcom, branch, changedby, famc, metaphone, edituser, edittime) ";
 $query .= "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",?,\"\",\"0\")";
 $template = "ssssssssssssssssssssssssssssssssssssssssss";
 $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$pnameorder, &$living, &$private, &$birthdate, &$birthdatetr,
@@ -171,7 +171,7 @@ $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickna
 tng_execute($query, $params);
 $ID = tng_insert_id();
 
-$query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, prefix, suffix, nameorder FROM {$people_table} WHERE ID=\"{$ID}\"";
+$query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, prefix, suffix, nameorder FROM $people_table WHERE ID=\"{$ID}\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 $row['allow_living'] = $row['allow_private'] = 1;
@@ -189,7 +189,7 @@ adminwritelog("<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\
 
 if ($type == "child") {
     if ($familyID) {
-        $query = "SELECT personID FROM $children_table WHERE familyID=\"$familyID\" AND gedcom=\"$tree\"";
+        $query = "SELECT personID FROM $children_table WHERE familyID='$familyID' AND gedcom='$tree'";
         $result = @tng_query($query);
         $order = tng_num_rows($result);
         tng_free_result($result);
@@ -199,7 +199,7 @@ if ($type == "child") {
         $params = array(&$template, &$familyID, &$personID, &$order, &$tree);
         tng_execute($query, $params);
 
-        $query = "SELECT husband,wife FROM $families_table WHERE familyID=\"$familyID\" AND gedcom=\"$tree\"";
+        $query = "SELECT husband, wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";
         $result = @tng_query($query);
         $famrow = tng_fetch_assoc($result);
         $template = "ss";
@@ -226,7 +226,7 @@ if ($type == "child") {
         }
     }
 
-    $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none\"";
+    $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
     $rval .= " onmouseover=\"$('unlinkc_$personID').style.visibility='visible';\" onmouseout=\"$('unlinkc_$personID').style.visibility='hidden';\">\n";
     $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
     $rval .= "<td class=\"dragarea normal\">";

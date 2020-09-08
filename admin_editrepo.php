@@ -21,7 +21,10 @@ $repoID = ucfirst($repoID);
 
 $treerow = getTree($trees_table, $tree);
 
-$query = "SELECT reponame, changedby, $repositories_table.addressID, address1, address2, city, state, zip, country, phone, email, www, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") as changedate FROM $repositories_table LEFT JOIN $address_table on $repositories_table.addressID = $address_table.addressID WHERE repoID = \"$repoID\" AND $repositories_table.gedcom = \"$tree\"";
+$query = "SELECT reponame, changedby, repositories.addressID, address1, address2, city, state, zip, country, phone, email, www, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
+$query .= "FROM $repositories_table repositories";
+$query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
+$query .= "WHERE repoID = \"$repoID\" AND repositories.gedcom = \"$tree\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -29,7 +32,7 @@ $row['reponame'] = preg_replace("/\"/", "&#34;", $row['reponame']);
 
 $row['allow_living'] = 1;
 
-$query = "SELECT DISTINCT eventID as eventID FROM $notelinks_table WHERE persfamID=\"$repoID\" AND gedcom =\"$tree\"";
+$query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfamID=\"$repoID\" AND gedcom ='$tree'";
 $notelinks = tng_query($query);
 $gotnotes = array();
 while ($note = tng_fetch_assoc($notelinks)) {
@@ -105,7 +108,7 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$repoID');\" id=\"notesicon\
               <td><?php echo $admtext['tree']; ?>:</td>
               <td>
                 <?php echo $treerow['treename']; ?>
-                &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img src="img/ArrowDown.gif" style="margin-left:-4px;margin-right:-2px"><?php echo $admtext['edit']; ?>
+                &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img src="img/ArrowDown.gif" style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
                 </a> )
               </td>
             </tr>

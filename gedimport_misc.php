@@ -397,30 +397,30 @@ function getContinued() {
 function deleteLinksOnMatch($entityID) {
     global $tree, $events_table, $notelinks_table, $citations_table, $xnotes_table, $address_table, $assoc_table;
 
-    $query = "SELECT addressID from $events_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query = "SELECT addressID FROM $events_table WHERE persfamID = \"$entityID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
-        $query = "DELETE from $address_table WHERE addressID = \"{$row['addressID']}\"";
+        $query = "DELETE FROM $address_table WHERE addressID = \"{$row['addressID']}\"";
         $result2 = @tng_query($query);
     }
     tng_free_result($result);
 
-    $query = "DELETE from $events_table WHERE gedcom = \"$tree\" AND persfamID = \"$entityID\"";
+    $query = "DELETE FROM $events_table WHERE gedcom = \"$tree\" AND persfamID = \"$entityID\"";
     $result = @tng_query($query);
 
-    $query = "DELETE from $assoc_table WHERE personID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $assoc_table WHERE personID = \"$entityID\" AND gedcom = \"$tree\"";
     $result = @tng_query($query);
 
-    $query = "SELECT xnoteID from $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query = "SELECT xnoteID FROM $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
-        $query = "DELETE from {$xnotes_table} WHERE ID = \"{$row['xnoteID']}\"";
+        $query = "DELETE FROM $xnotes_table WHERE ID = \"{$row['xnoteID']}\"";
         $result2 = @tng_query($query);
     }
     tng_free_result($result);
-    $query = "DELETE from $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
     $result = @tng_query($query);
-    $query = "DELETE from $citations_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $citations_table WHERE persfamID = \"$entityID\" AND gedcom = \"$tree\"";
     $result = @tng_query($query);
 }
 
@@ -947,7 +947,7 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
             incrCounter("M");
         } else {
             //update if necessary
-            $query = "SELECT mediaID, changedate FROM $media_table WHERE gedcom = \"$tree\" AND mediakey = \"{$mm['OBJE']}\"";
+            $query = "SELECT mediaID, changedate FROM $media_table WHERE gedcom = '$tree' AND mediakey = \"{$mm['OBJE']}\"";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             $row = tng_fetch_assoc($result);
             $mediaID = $row['mediaID'];
@@ -975,7 +975,7 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
             }
         }
         //get ordernum according to collection/mediatypeID
-        $query = "SELECT count(medialinkID) as count from ($medialinks_table, $media_table) WHERE $media_table.mediaID = $medialinks_table.mediaID AND $medialinks_table.gedcom = \"$tree\" AND personID = \"$persfamID\" AND mediatypeID = \"{$mm['mediatypeID']}\"";
+        $query = "SELECT count(medialinkID) AS count FROM ($medialinks_table, $media_table) WHERE $media_table.mediaID = $medialinks_table.mediaID AND $medialinks_table.gedcom = '$tree' AND personID = \"$persfamID\" AND mediatypeID = \"{$mm['mediatypeID']}\"";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $row = tng_fetch_assoc($result);
         $orderctr = $row['count'] ? $row['count'] + 1 : 1;
@@ -987,7 +987,7 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
         $psuccess = tng_affected_rows();
         if (!$psuccess && $savestate['del'] != "no") {
             $defphotostr = $mm['defphoto'] ? ", defphoto = \"1\"" : "";
-            $query = "UPDATE $medialinks_table SET altdescription=\"{$mm['TITL']}\", altnotes=\"{$mm['NOTE']}\"$defphotostr WHERE gedcom = \"$tree\" AND personID = \"$persfamID\" AND mediaID = \"$mediaID\" AND eventID=\"$eventID\"";
+            $query = "UPDATE $medialinks_table SET altdescription=\"{$mm['TITL']}\", altnotes=\"{$mm['NOTE']}\"$defphotostr WHERE gedcom = \"$tree\" AND personID = \"$persfamID\" AND mediaID = \"$mediaID\" AND eventID = '$eventID'";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         }
         if ($mm['defphoto']) {
@@ -1189,7 +1189,7 @@ function getMultimediaRecord($objectID, $prevlevel) {
 
             $success = tng_affected_rows();
             if (!$success) {
-                $query = "SELECT mediatypeID FROM $media_table WHERE gedcom = \"$tree\" AND mediakey = \"{$mminfo['ID']}\"";
+                $query = "SELECT mediatypeID FROM $media_table WHERE gedcom = '$tree' AND mediakey = \"{$mminfo['ID']}\"";
                 $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                 $row = tng_fetch_assoc($result);
                 tng_free_result($result);
@@ -1238,7 +1238,7 @@ function saveNote($persfamID, $eventID, $note) {
 
     $found = 0;
     if ($note['XNOTE']) {
-        $query = "SELECT ID FROM {$xnotes_table} WHERE noteID = \"{$note['XNOTE']}\" AND gedcom = \"{$tree}\"";
+        $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$note['XNOTE']}\" AND gedcom = \"{$tree}\"";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $row = tng_fetch_assoc($result);
         if (tng_num_rows($result)) {
@@ -1252,7 +1252,7 @@ function saveNote($persfamID, $eventID, $note) {
             $note['NOTE'] = mb_strimwidth((isset($note['NOTE']) ? $note['NOTE'] : ""), 0, $max_note_length, "", $session_charset);
             $note['XNOTE'] = mb_strimwidth((isset($note['XNOTE']) ? $note['XNOTE'] : ""), 0, $max_note_length, "", $session_charset);
         }
-        $query = "INSERT INTO {$xnotes_table} (noteID, gedcom, note)  VALUES(\"{$note['XNOTE']}\", \"$tree\", \"{$note['NOTE']}\")";
+        $query = "INSERT INTO $xnotes_table (noteID, gedcom, note)  VALUES(\"{$note['XNOTE']}\", \"$tree\", \"{$note['NOTE']}\")";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $xnoteID = tng_insert_id();
         incrCounter("N");
@@ -1298,7 +1298,7 @@ function getNoteRecord($noteID, $prevlevel) {
         $notesource[$notectr] = handleSource($noteID, $lineinfo['level']);
     }
 
-    $query = "SELECT ID FROM {$xnotes_table} WHERE noteID = \"{$noteID}\" AND gedcom = \"{$tree}\"";
+    $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$noteID}\" AND gedcom = \"{$tree}\"";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     $row = tng_fetch_assoc($result);
     if (function_exists('mb_strimwidth')) {
@@ -1306,10 +1306,10 @@ function getNoteRecord($noteID, $prevlevel) {
     }
     if (tng_num_rows($result) && $savestate['del'] != "no") {
         $ID = $row['ID'];
-        $query = "UPDATE {$xnotes_table} SET note=\"{$note}\" WHERE noteID=\"{$noteID}\" AND gedcom = \"{$tree}\"";
+        $query = "UPDATE $xnotes_table SET note=\"{$note}\" WHERE noteID=\"{$noteID}\" AND gedcom = \"{$tree}\"";
         $xresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     } else {
-        $query = "INSERT INTO {$xnotes_table} (noteID, gedcom, note)  VALUES(\"$noteID\", \"$tree\", \"$note\")";
+        $query = "INSERT INTO $xnotes_table (noteID, gedcom, note)  VALUES(\"$noteID\", \"$tree\", \"$note\")";
         $xresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $ID = tng_insert_id();
         incrCounter($prefix);
@@ -1324,7 +1324,7 @@ function getNoteRecord($noteID, $prevlevel) {
 
     if ($notectr) {
         if ($savestate['del'] == "match") {
-            $query = "DELETE from $citations_table WHERE persfamID = \"$noteID\" and gedcom = \"$tree\"";
+            $query = "DELETE FROM $citations_table WHERE persfamID = \"$noteID\" and gedcom = \"$tree\"";
             $result2 = @tng_query($query);
         }
         processCitations($noteID, "", $notesource);

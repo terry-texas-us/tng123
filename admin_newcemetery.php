@@ -34,10 +34,10 @@ if ($map['key'] && $isConnected) {
 <script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
 <script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
 <script type="text/javascript">
-    var nothingtodelete = "<?php echo $admtext['nothingtodelete']; ?>";
-    var confdeleteentity = "<?php echo $admtext['confdeleteentity']; ?>";
-    var pleaseenter = "<?php echo $admtext['pleaseenter']; ?>";
-    var confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
+    const nothingtodelete = "<?php echo $admtext['nothingtodelete']; ?>";
+    const confdeleteentity = "<?php echo $admtext['confdeleteentity']; ?>";
+    const pleaseenter = "<?php echo $admtext['pleaseenter']; ?>";
+    const confdeletefile = "<?php echo $admtext['confdeletefile']; ?>";
     var tnglitbox;
     var tree = "";
 
@@ -162,7 +162,7 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                         ?>
                         <tr>
                             <td colspan="2">
-                                <div style="padding:10px">
+                                <div style="padding:10px;">
                                     <?php
                                     // draw the map here
                                     include "googlemapdrawthemap.php";

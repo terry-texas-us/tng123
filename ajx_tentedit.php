@@ -160,11 +160,11 @@ if (is_numeric($event)) {
     }
 
     if ($needfamilies) {
-      $query = "SELECT $fieldstr FROM $families_table WHERE familyID = \"$familyID\" AND gedcom = \"$tree\"";
+      $query = "SELECT $fieldstr FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
     } elseif ($needchildren) {
-      $query = "SELECT $fieldstr FROM $children_table WHERE familyID = \"$familyID\" AND personID = \"$personID\" AND gedcom = \"$tree\"";
+      $query = "SELECT $fieldstr FROM $children_table WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = '$tree'";
     } else {
-      $query = "SELECT $fieldstr FROM $people_table WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+      $query = "SELECT $fieldstr FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     }
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
@@ -222,12 +222,12 @@ header("Content-type:text/html; charset=" . $session_charset);
       </tr>
     </table>
   <br>
-  <input type="submit" value="<?php echo $text['savechanges']; ?>"> <span id="tspinner" style="display:none"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif"></span>
+  <input type="submit" value="<?php echo $text['savechanges']; ?>"> <span id="tspinner" style="display:none;"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif"></span>
     </form>
 
 </div>
 
-<div class="databack" style="margin:10px;border:0;display:none" id="finished">
+<div class="databack" style="margin:10px;border:0;display:none;" id="finished">
     <p class="header"><?php echo $text['thanks']; ?></p>
   <p class="normal"><?php echo $text['received']; ?><br><br>
     <a href="#" onclick="tnglitbox.remove();"><?php echo $text['closewindow']; ?></a></p>

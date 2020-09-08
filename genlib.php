@@ -111,6 +111,7 @@ function tng_header($title, $flags) {
     if (!$tng_version) {
         $tng_version = "12.0.0";
     }
+//    echo "<link href=\"{$cms['tngpath']}css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever != "standard" && $responsivetables) {
         echo "<link href=\"{$cms['tngpath']}css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
@@ -185,7 +186,7 @@ function tng_header($title, $flags) {
     }
 
     if (!$cms['support']) {
-        echo "</head>\n";
+        echo "</head>";
         if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
             include $templatepath . $customheader;
         } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
@@ -218,7 +219,7 @@ function tng_header($title, $flags) {
     }
 
     if ($tngconfig['maint']) {
-        echo "<span class=\"fieldnameback yellow\" style=\"padding:3px\"><strong>{$text['mainton']}</strong></span><br><br>\n";
+        echo "<span class=\"fieldnameback yellow\" style=\"padding:3px;\"><strong>{$text['mainton']}</strong></span><br><br>\n";
     }
 }
 
@@ -385,9 +386,9 @@ function getSmallPhoto($medialink) {
 function tng_DrawHeading($photostr, $namestr, $years) {
     global $tngconfig;
     if ($photostr) {
-        $outputstr = "<div style=\"float:left; padding-right:5px\">$photostr</div><h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px\">$namestr</h1><span class=\"normal\">$years</span>\n";
+        $outputstr = "<div style=\"float:left; padding-right:5px;\">$photostr</div><h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px;\">$namestr</h1><span class=\"normal\">$years</span>\n";
     } else {
-        $outputstr = "<h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px\">$namestr</h1>";
+        $outputstr = "<h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px;\">$namestr</h1>";
         if ($years) {
             $outputstr .= "<span class=\"normal\">$years</span><br>\n";
         }
@@ -866,7 +867,7 @@ function tng_icons($instance, $title = "") {
 
     $fullmenu = "";
     if ($tngprint) {
-        $fullmenu .= "<div style=\"float:right\"><b><a href=\"javascript:{document.getElementById('printlink').style.visibility='hidden'; window.print();}\" style=\"text-decoration:underline\" id=\"printlink\">&gt;&gt; {$text['tngprint']} &lt;&lt;</a></b></div>\n";
+        $fullmenu .= "<div style=\"float:right;\"><b><a href=\"javascript:{document.getElementById('printlink').style.visibility='hidden'; window.print();}\" style=\"text-decoration:underline;\" id=\"printlink\">&gt;&gt; {$text['tngprint']} &lt;&lt;</a></b></div>\n";
     } else {
 
         if ($tngconfig['menu'] == 1) {
@@ -961,7 +962,7 @@ function tng_icons($instance, $title = "") {
                 $searchsite_url = getURL("searchsite", 0);
 
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
-                $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" alt=\"\"/></a>";
+                $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" alt=\"\"/></a>";
                 $fullmenu .= "<span class=\"subhead\"><strong>{$text['search']}</strong> | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></span><br><br>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
@@ -978,7 +979,7 @@ function tng_icons($instance, $title = "") {
 
         $sharemenu = "";
         if (!empty($tngconfig['showshare']) && $sitever != "mobile") {
-            $sharemenu .= "<div id=\"shareicons\" style=\"display:none\">\n";
+            $sharemenu .= "<div id=\"shareicons\" style=\"display:none;\">\n";
             $sharemenu .= "<span class='st_facebook_hcount' displayText='Facebook'></span>\n";
             $sharemenu .= "<span class='st_twitter_hcount' displayText='Tweet'></span>\n";
             $sharemenu .= "<span class='st_pinterest_hcount' displayText='Pinterest'></span>\n";
@@ -1000,7 +1001,7 @@ function tng_icons($instance, $title = "") {
             $fullmenu .= "</div>\n";
 
             if ($tngconfig['menu'] == 1) {
-                $fullmenu .= "<br style=\"clear:both\"><br>\n";
+                $fullmenu .= "<br style=\"clear:both;\"><br>\n";
             }
         }
 

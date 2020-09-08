@@ -12,7 +12,7 @@ echo help_header("Nápověda: Rodiny");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
@@ -48,7 +48,7 @@ echo help_header("Nápověda: Rodiny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="add"><p class="subheadbold">Přidat novou rodinu</p></a>
             <p>Výrazem <strong>Rodina</strong> se v tomto programu rozumí kaľdé spojení mezi "otcem" a "matkou" (děti zde mohou nebo nemusí být obsaľeny). Pokud byla osoba víckrát sezdána
                 nebo má děti s více partnery, měli byste pro kaľdý pár manľelů nebo partnerů vytvořit novou rodinu.</p>
@@ -108,7 +108,7 @@ echo help_header("Nápověda: Rodiny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">Upravit existující rodinu</p></a>
             <p>Chcete-li upravit existující rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu Upravit vedle této osoby.</p>
 
@@ -147,7 +147,7 @@ echo help_header("Nápověda: Rodiny");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat rodinu</p></a>
             <p>Chcete-li odstranit rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu Odstranit vedle této rodiny. Tento řádek změní
                 barvu a poté po odstranění rodiny zmizí (partneři a děti nebudou odstraněni, ale vztah bude rozpojen). Chcete-li najednou odstranit více rodin, zaąkrtněte políčko ve sloupci Vybrat vedle kaľdé rodiny, kterou
@@ -158,7 +158,7 @@ echo help_header("Nápověda: Rodiny");
   <tr class="databack">
     <td class="tngshadow">
 
-      <p style="float:right"><a href="#top">Nahoru</a></p>
+      <p style="float:right;"><a href="#top">Nahoru</a></p>
       <a name="review"><p class="subheadbold">Předběľné prohlédnutí úprav</p></a>
       Chcete-li si předběľně prohlédnout změny provedené ostatními uľivateli, klikněte na záloľku "Přezkoumat". Můľete se pak rozhodnout, zda tyto navrhované změny uloľíte nebo odstraníte.
       Změny můľete prohlédnout podle stromu nebo podle uľivatele nebo podle obojího. Po uloľení navrhovaných změn není zaslán ľádný mail, ale pokud nové změny existují, na záloľce Přezkoumat se objeví hvězdička (*).</p>

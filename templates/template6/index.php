@@ -43,7 +43,7 @@ if ($sitever == "mobile") {
     </td>
   </tr>
   <tr class="tablebkground">
-  <td colspan="4" class="padding" style="border-collapse:separate">
+  <td colspan="4" class="padding" style="border-collapse:separate;">
   <?php
 }
 ?>

@@ -863,7 +863,7 @@ Timeline.CompactEventPainter.prototype.paintStackedPreciseInstantEvents = functi
     A.style.top = Y + "px";
     A.style.width = d + "px";
     A.style.height = W + "px";
-    A.innerHTML = "<div style='position: relative'></div>";
+    A.innerHTML = "<div style='position: relative;'></div>";
     this._eventLayer.appendChild(A);
     var J = this;
     var Q = function (s) {

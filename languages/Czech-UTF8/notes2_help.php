@@ -8,7 +8,7 @@ echo help_header("Nápověda: Poznámky");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="tlevents_help.php" class="lightlink">&laquo; Nápověda: Události časové osy</a> &nbsp; | &nbsp;
@@ -23,7 +23,7 @@ echo help_header("Nápověda: Poznámky");
   <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="notes"><p class="subheadbold">Poznámky</p></a>
             <p>Ze stránky <strong>Poznámky</strong> můžete poznámky vyhledat přímo na základě jejich obsahu. Nemusíte vědět, s kým nebo k čemu
                 jsou poznámky připojeny. Po nalezení hledané poznámky můžete kliknout na ikonu Upravit vedle tohoto řádku

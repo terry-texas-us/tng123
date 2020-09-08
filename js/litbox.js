@@ -112,7 +112,7 @@ LITBox.prototype = {
         this.close.d2 = this.d2;
         this.close.href = '#';
         this.close.onclick = this.remove;
-        this.close.innerHTML = '<img src="' + closeimg + '">';
+        this.close.innerHTML = '<img src="' + closeimg + '" border="0">';
         this.close.id = 'LB_close';
         this.close.onremove = this.options.onremove;
         this.d3text = document.createElement('div');

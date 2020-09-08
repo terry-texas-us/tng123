@@ -112,7 +112,7 @@ if ($map['key'] && $isConnected) {
         return cell;
     }
 
-    var delmsg = "<?php echo $admtext['text_delete']; ?>";
+    const delmsg = "<?php echo $admtext['text_delete']; ?>";
 
     function addCemLink(cemeteryID) {
         //ajax to add
@@ -216,7 +216,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                         ?>
                         <tr>
                             <td colspan="2">
-                                <div style="padding:10px">
+                                <div style="padding:10px;">
                                     <?php
                                     // draw the map here
                                     include "googlemapdrawthemap.php";

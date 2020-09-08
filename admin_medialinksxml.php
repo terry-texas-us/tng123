@@ -8,9 +8,9 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 if ($albumID) {
-    $query2 = "SELECT entityID, gedcom FROM $album2entities_table WHERE gedcom = \"$tree\" AND albumID = \"$albumID\" AND linktype = \"$linktype\"";
+    $query2 = "SELECT entityID, gedcom FROM $album2entities_table WHERE gedcom = '$tree' AND albumID = \"$albumID\" AND linktype = \"$linktype\"";
 } else {
-    $query2 = "SELECT personID as entityID, gedcom FROM $medialinks_table WHERE gedcom = \"$tree\" AND mediaID = \"$mediaID\" AND linktype = \"$linktype\"";
+    $query2 = "SELECT personID AS entityID, gedcom FROM $medialinks_table WHERE gedcom = '$tree' AND mediaID = \"$mediaID\" AND linktype = \"$linktype\"";
 }
 $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
 $alreadygot = array();
@@ -72,7 +72,7 @@ function doPeople($firstname, $lastname) {
     }
 
     $query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, deathdate, burialdate, prefix, suffix, nameorder ";
-    $query .= "FROM {$people_table} ";
+    $query .= "FROM $people_table ";
     $query .= "WHERE {$allwhere} ";
     $query .= "ORDER BY lastname, lnprefix, firstname LIMIT {$maxsearchresults}";
     $result = tng_query($query);
@@ -121,10 +121,10 @@ function doFamilies($husbname, $wifename) {
     $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['wifename'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
-    $allwhere = "$families_table.gedcom = \"$tree\"";
+    $allwhere = "families.gedcom = \"$tree\"";
     $joinon = "";
     if ($assignedbranch) {
-        $allwhere .= " AND $families_table.branch LIKE \"%$assignedbranch%\"";
+        $allwhere .= " AND families.branch LIKE \"%$assignedbranch%\"";
     }
 
     $allwhere2 = "";
@@ -147,18 +147,15 @@ function doFamilies($husbname, $wifename) {
             }
             $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE \"%$term%\"";
         }
-    } else {
-        $joinonhusb = "";
     }
-
     if ($allwhere2) {
         $allwhere2 = "AND $allwhere2";
     }
 
-    $joinonwife = "LEFT JOIN $people_table AS wifepeople ON $families_table.wife = wifepeople.personID AND $families_table.gedcom = wifepeople.gedcom";
-    $joinonhusb = "LEFT JOIN $people_table AS husbpeople ON $families_table.husband = husbpeople.personID AND $families_table.gedcom = husbpeople.gedcom";
     $query = "SELECT familyID, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder ";
-    $query .= "FROM $families_table $joinonwife $joinonhusb ";
+    $query .= "FROM $families_table families ";
+    $query .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
+    $query .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
     $query .= "WHERE $allwhere $allwhere2 ";
     $query .= "ORDER BY hlastname, hlnprefix, hfirstname ";
     $query .= "LIMIT $maxsearchresults";
@@ -204,7 +201,7 @@ function doSources($title) {
     $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
-    $query = "SELECT sourceID, title FROM $sources_table WHERE gedcom = \"$tree\" AND title LIKE \"%$title%\" ORDER BY title LIMIT $maxsearchresults";
+    $query = "SELECT sourceID, title FROM $sources_table WHERE gedcom = '$tree' AND title LIKE \"%$title%\" ORDER BY title LIMIT $maxsearchresults";
     $result = tng_query($query);
 
     while ($row = tng_fetch_assoc($result)) {
@@ -227,7 +224,7 @@ function doRepos($title) {
     $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
-    $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = \"$tree\" AND reponame LIKE \"%$title%\" ORDER BY reponame LIMIT $maxsearchresults";
+    $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = '$tree' AND reponame LIKE \"%$title%\" ORDER BY reponame LIMIT $maxsearchresults";
     $result = tng_query($query);
 
     while ($row = tng_fetch_assoc($result)) {

@@ -65,5 +65,5 @@ global $text, $cms, $subroot, $tmp;
             <td>
                 <table width="100%" cellspacing="0" cellpadding="7" border="0">
                     <tr>
-                        <td style="border-collapse:separate">
+                        <td style="border-collapse:separate;">
                             <!-- end topmenu.php for template 5 -->

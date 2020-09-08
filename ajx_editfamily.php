@@ -63,7 +63,7 @@ $gotcites = checkForCitations($familyID, $tree);
 $gotassoc = checkForAssociations($familyID, $tree);
 $gotmore = checkForEvents($familyID, $tree);
 
-$query = "SELECT $people_table.personID as pID, firstname, lastname, lnprefix, prefix, suffix, nameorder, birthdate, altbirthdate, living, private, branch FROM $people_table, $children_table WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"$familyID\" AND $people_table.gedcom = \"$tree\" AND $children_table.gedcom = \"$tree\" ORDER BY ordernum";
+$query = "SELECT $people_table.personID AS pID, firstname, lastname, lnprefix, prefix, suffix, nameorder, birthdate, altbirthdate, living, private, branch FROM $people_table, $children_table WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = '$familyID' AND $people_table.gedcom = '$tree' AND $children_table.gedcom = '$tree' ORDER BY ordernum";
 $children = tng_query($query);
 
 $kidcount = tng_num_rows($children);
@@ -82,7 +82,7 @@ include_once "eventlib.php";
     <table width="100%" cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
-                <div style="float:right"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+                <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
                         <td valign="top">
@@ -125,7 +125,7 @@ include_once "eventlib.php";
                         <table class="normal topmarginsmall">
                             <?php
                             if ($row['husband']) {
-                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"{$row['husband']}\" AND gedcom = \"$tree\"";
+                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"{$row['husband']}\" AND gedcom = '$tree'";
                                 $spouseresult = tng_query($query);
                                 $spouserow = tng_fetch_assoc($spouseresult);
                                 tng_free_result($spouseresult);
@@ -154,7 +154,7 @@ include_once "eventlib.php";
                             </tr>
                             <?php
                             if ($row['wife']) {
-                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"{$row['wife']}\" AND gedcom = \"$tree\"";
+                                $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, living, private, branch, birthdate, altbirthdate FROM $people_table WHERE personID = \"{$row['wife']}\" AND gedcom = '$tree'";
                                 $spouseresult = tng_query($query);
                                 $spouserow = tng_fetch_assoc($spouseresult);
                                 tng_free_result($spouseresult);
@@ -200,7 +200,7 @@ include_once "eventlib.php";
                                 <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
 
                                     <?php
-                                    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"$tree\" ORDER BY description";
+                                    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
                                     $branchresult = tng_query($query);
                                     $branchlist = explode(",", $row['branch']);
 
@@ -223,7 +223,7 @@ include_once "eventlib.php";
                                     }
                                     $selectnum = $totbranches < 8 ? $totbranches : 8;
                                     $select = $totbranches >= 8 ? "{$admtext['scrollbranch']}<br>" : "";
-                                    $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto\">\n";
+                                    $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                     $select .= "	<option value=\"\"";
                                     if ($row['branch'] == "") {
                                         $select .= " selected";
@@ -232,7 +232,7 @@ include_once "eventlib.php";
 
                                     $select .= "$options</select>\n";
 
-                                    echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px\">" . $admtext['edit'] . "</a> )</span><br>";
+                                    echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                     ?>
                                     <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                          onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -269,7 +269,7 @@ include_once "eventlib.php";
                             ?>
                             <tr>
                                 <td><?php echo $admtext['marriagetype']; ?>:</td>
-                                <td colspan="6"><input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px" maxlength="50"></td>
+                                <td colspan="6"><input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50"></td>
                             </tr>
                             <?php
                             if ($rights['lds']) {
@@ -299,10 +299,10 @@ include_once "eventlib.php";
                 <td class="tngbotshadow">
                     <?php echo displayToggle("plus2", 1, "children", $admtext['children'] . " (<span id=\"childcount\">$kidcount</span>)", ""); ?>
 
-                    <div id="children" style="padding-top:10px">
+                    <div id="children" style="padding-top:10px;">
                         <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1">
                             <tr>
-                                <th class="fieldnameback" style="width:55px"><span class="fieldname"><?php echo $admtext['text_sort']; ?></span></th>
+                                <th class="fieldnameback" style="width:55px;"><span class="fieldname"><?php echo $admtext['text_sort']; ?></span></th>
                                 <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['child']; ?></span></th>
                             </tr>
                         </table>

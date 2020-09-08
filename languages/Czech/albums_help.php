@@ -12,7 +12,7 @@ echo help_header("N�pov�da: Alba");
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
   <tr class="fieldnameback">
     <td class="tngshadow">
-      <p style="float:right; text-align:right" class="smaller menu">
+      <p style="float:right; text-align:right;" class="smaller menu">
         <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
         <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
         <a href="collections_help.php" class="lightlink">&laquo; N�pov�da: Kolekce</a> &nbsp; | &nbsp;
@@ -45,7 +45,7 @@ echo help_header("N�pov�da: Alba");
     <tr class="databack">
       <td class="tngshadow">
 
-        <p style="float:right"><a href="#top">Nahoru</a></p>
+        <p style="float:right;"><a href="#top">Nahoru</a></p>
         <a name="add"><p class="subheadbold">P�id�n� nov�ch alb</p></a>
         <p><strong>Album</strong> v TNG je skupina m�di�. Album m��e obsahovat jak�koli po�et m�di� a konkr�tn� m�dium m��e b�t sou��st� v�ce alb.
           Podobn� jako jednotliv� m�dium m��e b�t album p�ipojeno k osob�, rodin�, pramenu, �lo�i�ti pramen� nebo m�stu.</p>
@@ -78,7 +78,7 @@ echo help_header("N�pov�da: Alba");
   <tr class="databack">
     <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="edit"><p class="subheadbold">�prava existuj�c�ho alba</p></a>
             <p>Chcete-li upravit existuj�c� album, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro vyhled�n� alba a pot� klikn�te na ikonu Upravit vedle tohoto alba.
                 V�znam n�sleduj�c�ch pol�, kter� nejsou na str�nce "P�idat nov� album":</p>
@@ -121,7 +121,7 @@ echo help_header("N�pov�da: Alba");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="delete"><p class="subheadbold">Vymazat alba</p></a>
             <p>Chcete-li album odstranit, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� alba, a pot� klikn�te na ikonu Vymazat vedle tohoto alba. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky zmiz�.</p>
@@ -131,7 +131,7 @@ echo help_header("N�pov�da: Alba");
     <tr class="databack">
         <td class="tngshadow">
 
-            <p style="float:right"><a href="#top">Nahoru</a></p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="sort"><p class="subheadbold">T��d�n� alb</p></a>
             <p>Standardn� jsou alba, kter� jsou propojena s osobou, rodinou, pramenem, �lo�i�t�m pramen� nebo m�stem, se�azena v po�ad�, ve kter�m byla k t�to entit� p�ipojena. Chcete-li
                 toto po�ad� zm�nit, nov� po�ad� nastav�te na z�lo�ce Album/T��dit.</p>

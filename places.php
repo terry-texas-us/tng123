@@ -45,7 +45,7 @@ $cols = $sitever == "mobile" ? 2 : 3;
 $offsetorg = $offset;
 $offset = $offset ? $offset + 1 : 1;
 
-$query = "SELECT ucase(left(trim(substring_index(place,',',-$offset)),1)) as firstchar, count(ucase(left(trim(substring_index(place,',',-$offset)),1))) as placecount FROM $places_table WHERE trim(substring_index(place,',',-$offset)) != \"\" $wherestr GROUP BY firstchar ORDER by firstchar";
+$query = "SELECT ucase(left(trim(substring_index(place,',',-$offset)),1)) AS firstchar, count(ucase(left(trim(substring_index(place,',',-$offset)),1))) AS placecount FROM $places_table WHERE trim(substring_index(place,',',-$offset)) != \"\" $wherestr GROUP BY firstchar ORDER by firstchar";
 $result = tng_query($query);
 if ($result) {
   $initialchar = 1;
@@ -64,7 +64,7 @@ if ($result) {
   tng_free_result($result);
 }
 
-$query = "SELECT trim(substring_index(place,',',-$offset)) as myplace, count(place) as placecount FROM $places_table WHERE trim(substring_index(place,',',-$offset)) != \"\" $wherestr GROUP BY myplace ORDER by placecount DESC LIMIT 30";
+$query = "SELECT trim(substring_index(place,',',-$offset)) AS myplace, count(place) AS placecount FROM $places_table WHERE trim(substring_index(place,',',-$offset)) != \"\" $wherestr GROUP BY myplace ORDER by placecount DESC LIMIT 30";
 $result = tng_query($query);
 $maxcount = 0;
 if ($result) {
@@ -79,7 +79,7 @@ if ($result) {
       $tally = $place['placecount'];
       $tally_fmt = number_format($tally);
       $thiswidth = floor($tally / $maxcount * 100);
-      $query = "SELECT count(place) as placecount FROM $places_table WHERE place = \"" . addslashes($place['myplace']) . "\" $wherestr";
+      $query = "SELECT count(place) AS placecount FROM $places_table WHERE place = \"" . addslashes($place['myplace']) . "\" $wherestr";
       $result2 = tng_query($query);
       $countrow = tng_fetch_assoc($result2);
       $specificcount = $countrow['placecount'];

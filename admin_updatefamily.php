@@ -11,7 +11,7 @@ require "datelib.php";
 
 include "geocodelib.php";
 
-$query = "SELECT ID, branch, edituser, edittime FROM $families_table WHERE familyID = \"$familyID\" and gedcom = \"$tree\"";
+$query = "SELECT ID, branch, edituser, edittime FROM $families_table WHERE familyID = '$familyID' and gedcom = '$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -44,7 +44,7 @@ if (!$editconflict) {
     //get living from husband, wife
     $husband = ucfirst(trim($husband));
     if ($husband) {
-        $spquery = "SELECT living FROM $people_table WHERE personID = \"$husband\" AND gedcom = \"$tree\"";
+        $spquery = "SELECT living FROM $people_table WHERE personID = \"$husband\" AND gedcom = '$tree'";
         $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
         $spouserow = tng_fetch_assoc($spouselive);
         $husbliving = $spouserow['living'];
@@ -54,7 +54,7 @@ if (!$editconflict) {
 
     $wife = ucfirst(trim($wife));
     if ($wife) {
-        $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = \"$tree\"";
+        $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = '$tree'";
         $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
         $spouserow = tng_fetch_assoc($spouselive);
         $wifeliving = $spouserow['living'];
@@ -83,13 +83,13 @@ if (!$editconflict) {
         $oldbranches = explode(",", $orgbranch);
         foreach ($oldbranches as $b) {
             if ($b && !in_array($b, $branch)) {
-                $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$familyID\" AND gedcom = \"$tree\" AND branch = \"$b\"";
+                $query = "DELETE FROM $branchlinks_table WHERE persfamID = '$familyID' AND gedcom = \"$tree\" AND branch = \"$b\"";
                 $result = tng_query($query);
             }
         }
         foreach ($branch as $b) {
             if ($b && !in_array($b, $oldbranches)) {
-                $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(\"$b\",\"$tree\",\"$familyID\")";
+                $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(\"$b\",\"$tree\",'$familyID')";
                 $result = tng_query($query);
             }
         }
@@ -115,7 +115,7 @@ if (!$editconflict) {
         }
     }
 
-    $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\" WHERE familyID=\"$familyID\" AND gedcom = \"$tree\"";
+    $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\" WHERE familyID='$familyID' AND gedcom = \"$tree\"";
     $result = tng_query($query);
 
     adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree&cw=$cw\">{$admtext['modifyfamily']}: $tree/$familyID</a>");

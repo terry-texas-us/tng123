@@ -48,7 +48,7 @@ global $text, $currentuser, $cms, $allow_admin, $subroot, $tmp, $mediatypes;
                         </td>
                     </tr>
                 </table>
-                <form action="<?php echo $cms['tngpath']; ?>search.php" method="get" style="margin:0">
+                <form action="<?php echo $cms['tngpath']; ?>search.php" method="get" style="margin:0;">
                     <table width="100%" cellspacing="0">
                         <tr class="strip">
                             <td class="fieldnameback">
