@@ -28,7 +28,7 @@ $psearchns = $psearch;
 $psearch = addslashes($psearch);
 
 $querystring = $psearchns;
-$cutoffstr = "personID = \"$psearch\"";
+$cutoffstr = "personID = '$psearch'";
 $whatsnew = 0;
 
 if ($order) {
@@ -64,24 +64,23 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
     global $eventtypes_table, $text, $tree, $people_table, $families_table, $trees_table, $offset, $page, $psearch, $maxsearchresults, $numtrees;
     global $placesearch_url, $psearchns, $urlstring, $cms, $familygroup_url, $pedigree_url, $getperson_url, $events_table, $showtree_url, $order, $namesort, $datesort;
 
-    if ($prefix !== "I" || $prefix !== "F") {
-        return 0;
-    }
-
-    $successcount = 0;
     if ($prefix === "I") {
         $table = $people_table;
         $alias = "people";
         $idfield = "personID";
         $idtext = "personid";
         $namefield = "lastfirst";
-    } else {
+    } elseif ($prefix === "F") {
         $table = $families_table;
         $alias = "families";
         $idfield = "familyID";
         $idtext = "familyid";
         $namefield = "family";
+    } else {
+        return 0;
     }
+    $successcount = 0;
+
     $allwhere = "$alias.gedcom = trees.gedcom";
     if ($tree) {
         $allwhere .= " AND $alias.gedcom = '$tree'";
@@ -199,22 +198,16 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
             $namestr = preg_replace("/xxx/", $text[$namefield], $namesort);
             $datestr = preg_replace("/yyy/", $placetxt, $datesort);
             ?>
-
             <table cellpadding="3" cellspacing="1" width="100%" class="whiteback">
                 <tr>
                     <td class="fieldnameback"><span class="fieldname">&nbsp;</span></td>
                     <td class="fieldnameback"><span class="fieldname nw">&nbsp;<b><?php echo $namestr; ?></b>&nbsp;</span></td>
                     <td class="fieldnameback" colspan="2"><span class="fieldname">&nbsp;<b><?php echo $datestr; ?></b>&nbsp;</span></td>
                     <td class="fieldnameback"><span class="fieldname nw">&nbsp;<b><?php echo $text[$idtext]; ?></b>&nbsp;</span></td>
-                    <?php
-                    if ($numtrees > 1) {
-                        ?>
+                    <?php if ($numtrees > 1) { ?>
                         <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $text['tree']; ?></b>&nbsp;</span></td>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                 </tr>
-
                 <?php
                 $i = $offsetplus;
                 $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
@@ -230,10 +223,9 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         $dateval = $placetxt = "";
                     }
                     echo "<tr>";
-
-                    echo "<td class=\"databack\"><span class=\"normal\">$i</span></td>\n";
+                    echo "<td class='databack'><span class=\"normal\">$i</span></td>\n";
                     $i++;
-                    echo "<td class=\"databack\"><span class=\"normal\">";
+                    echo "<td class='databack'><span class=\"normal\">";
                     if ($prefix == "F") {
                         echo "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\">{$row['p1lastname']} / {$row['p2lastname']}</a>";
                     } elseif ($prefix == "I") {
@@ -241,10 +233,11 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         echo "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
                     }
                     echo "&nbsp;</span></td>";
-                    echo "<td class=\"databack\"><span class=\"normal\">&nbsp;" . displayDate($dateval) . "</span></td><td class=\"databack\"><span class=\"normal\">$placetxt&nbsp;</span></td>";
-                    echo "<td class=\"databack\"><span class=\"normal\">{$row[$idfield]} </span></td>";
+                    echo "<td class='databack'><span class=\"normal\">&nbsp;" . displayDate($dateval) . "</span></td>";
+                    echo "<td class='databack'><span class=\"normal\">$placetxt&nbsp;</span></td>";
+                    echo "<td class='databack'><span class=\"normal\">{$row[$idfield]} </span></td>";
                     if ($numtrees > 1) {
-                        echo "<td class=\"databack\"><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+                        echo "<td class='databack'><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
                     }
                     echo "</tr>\n";
                 }
@@ -380,7 +373,7 @@ if ($media) {
     echo "</div>\n";
 }
 
-$pquery = "SELECT cemname, city, county, state, country, cemeteryID FROM $cemeteries_table WHERE place = \"$psearch\"";
+$pquery = "SELECT cemname, city, county, state, country, cemeteryID FROM $cemeteries_table WHERE place = '$psearch'";
 $presult = tng_query($pquery) or die ($text['cannotexecutequery'] . ": $pquery");
 $cemdata = "";
 $i = 1;
@@ -405,7 +398,11 @@ while ($prow = tng_fetch_assoc($presult)) {
     } else {
         $location = $country;
     }
-    $cemdata .= "<tr><td class=\"databack\">$i.</td><td class=\"databack\"><a href=\"$showmap_url" . "cemeteryID={$prow['cemeteryID']}\">{$prow['cemname']}</a></td><td class=\"databack\">$location</td></tr>\n";
+    $cemdata .= "<tr>\n";
+    $cemdata .= "<td class='databack'>$i.</td>\n";
+    $cemdata .= "<td class='databack'><a href=\"$showmap_url" . "cemeteryID={$prow['cemeteryID']}\">{$prow['cemname']}</a></td>\n";
+    $cemdata .= "<td class='databack'>$location</td>\n";
+    $cemdata .= "</tr>\n";
     $i++;
 }
 

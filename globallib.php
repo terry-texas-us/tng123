@@ -497,12 +497,12 @@ function checkLivingLinks($itemID) {
         // Viewer can see some media of Living individuals, now figure if there are some the viewer should not see
         if ($assignedtree && $livedefault != 2) {
             // Should not be able to see Living individuals in other Trees, so narrow search to those other Trees
-            $icriteria = "$people_table.gedcom != \"$assignedtree\"";
-            $fcriteria = "$families_table.gedcom != \"$assignedtree\"";
+            $icriteria = "people.gedcom != '$assignedtree'";
+            $fcriteria = "families.gedcom != '$assignedtree'";
 
             if ($assignedbranch) { // Note: must have a Tree selected to have a Branch
                 // Should not be able to see Living individuals in other Branches either, so need to check for those too.
-                $bcriteria = "OR !(branch LIKE \"%$assignedbranch%\")";
+                $bcriteria = "OR !(branch LIKE '%$assignedbranch%')";
                 $icriteria = "($icriteria $bcriteria)";
                 $fcriteria = "($fcriteria $bcriteria)";
             }
@@ -525,12 +525,9 @@ function checkLivingLinks($itemID) {
 
     if ($icriteria) {
         // Now find Living individuals linked to the media that fit the criteria set above.
-        $query = "SELECT count(*) AS pcount
-			FROM ($medialinks_table, $people_table)
-			WHERE $medialinks_table.personID = $people_table.personID
-				AND $medialinks_table.gedcom = $people_table.gedcom
-				AND $medialinks_table.mediaID = '$itemID'
-				$icriteria";
+        $query = "SELECT COUNT(*) AS pcount ";
+        $query .= "FROM ($medialinks_table medialinks, $people_table people) ";
+        $query .= "WHERE medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom AND medialinks.mediaID = '$itemID' $icriteria";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
@@ -540,12 +537,8 @@ function checkLivingLinks($itemID) {
     }
 
     if ($fcriteria) {
-        $query = "SELECT count(*) AS pcount
-			FROM ($medialinks_table, $families_table)
-			WHERE $medialinks_table.personID = $families_table.familyID
-				AND $medialinks_table.gedcom = $families_table.gedcom
-				AND $medialinks_table.mediaID = '$itemID'
-				$fcriteria";
+        $query = "SELECT COUNT(*) AS pcount ";
+        $query .= "FROM ($medialinks_table medialinks, $families_table families) WHERE medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom AND medialinks.mediaID = '$itemID' $fcriteria";
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
@@ -1058,8 +1051,9 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
     $photo = "";
     $photocheck = "";
 
-    $query = "SELECT $media_table.mediaID, medialinkID, alwayson, thumbpath, mediatypeID, usecollfolder, newwindow, $media_table.gedcom FROM ($media_table, $medialinks_table)
-		WHERE personID = \"$persfamID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
+    $query = "SELECT media.mediaID, medialinkID, alwayson, thumbpath, mediatypeID, usecollfolder, newwindow, media.gedcom ";
+    $query .= "FROM ($media_table media, $medialinks_table medialinks) ";
+    $query .= "WHERE personID = '$persfamID' AND medialinks.gedcom = '$tree' AND media.mediaID = medialinks.mediaID AND defphoto = '1'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
 
@@ -1088,8 +1082,9 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
     $gotfile = $photocheck ? file_exists("$rootpath$photocheck") : false;
     if (!$gotfile) {
         if ($type) {
-            $query = "SELECT medialinkID FROM ($media_table, $medialinks_table)
-				WHERE personID = \"$persfamID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND mediatypeID = \"photos\" AND thumbpath != \"\"";
+            $query = "SELECT medialinkID ";
+            $query .= "FROM ($media_table media, $medialinks_table medialinks) ";
+            $query .= "WHERE personID = '$persfamID' AND medialinks.gedcom = '$tree' AND media.mediaID = medialinks.mediaID AND mediatypeID = 'photos' AND thumbpath != ''";
             $result2 = tng_query($query);
             $numphotos = tng_num_rows($result2);
             tng_free_result($result2);
