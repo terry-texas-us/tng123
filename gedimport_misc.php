@@ -1238,7 +1238,7 @@ function saveNote($persfamID, $eventID, $note) {
 
     $found = 0;
     if ($note['XNOTE']) {
-        $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$note['XNOTE']}\" AND gedcom = \"{$tree}\"";
+        $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$note['XNOTE']}\" AND gedcom = '$tree'";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $row = tng_fetch_assoc($result);
         if (tng_num_rows($result)) {
@@ -1298,7 +1298,7 @@ function getNoteRecord($noteID, $prevlevel) {
         $notesource[$notectr] = handleSource($noteID, $lineinfo['level']);
     }
 
-    $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$noteID}\" AND gedcom = \"{$tree}\"";
+    $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$noteID}\" AND gedcom = '$tree'";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     $row = tng_fetch_assoc($result);
     if (function_exists('mb_strimwidth')) {
@@ -1306,7 +1306,7 @@ function getNoteRecord($noteID, $prevlevel) {
     }
     if (tng_num_rows($result) && $savestate['del'] != "no") {
         $ID = $row['ID'];
-        $query = "UPDATE $xnotes_table SET note=\"{$note}\" WHERE noteID=\"{$noteID}\" AND gedcom = \"{$tree}\"";
+        $query = "UPDATE $xnotes_table SET note=\"{$note}\" WHERE noteID=\"{$noteID}\" AND gedcom = '$tree'";
         $xresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     } else {
         $query = "INSERT INTO $xnotes_table (noteID, gedcom, note)  VALUES(\"$noteID\", \"$tree\", \"$note\")";

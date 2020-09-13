@@ -385,7 +385,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 $prefixlen = strlen($tngconfig['noteprefix']) + 1;
 
                 $query = "SELECT note, noteID, (0+SUBSTRING(noteID,$prefixlen)) AS num FROM $xnotes_table ";
-                $query .= "WHERE gedcom =\"{$tree}\" AND noteID != \"\" {$savestate['wherestr']} ORDER BY num";
+                $query .= "WHERE gedcom ='$tree' AND noteID != \"\" {$savestate['wherestr']} ORDER BY num";
                 $xnotearray = tng_query($query);
                 while ($xnotetxt = tng_fetch_assoc($xnotearray)) {
                     $xnotestr .= writeXNote($xnotetxt);

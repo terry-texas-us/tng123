@@ -20,7 +20,7 @@ header("Content-type:text/html; charset=" . $session_charset);
   <?php
   $query = "SELECT personID, firstname, lastname, lnprefix, prefix, suffix, branch, gedcom, nameorder, living, private ";
   $query .= "FROM $people_table ";
-  $query .= "WHERE gedcom = \"{$tree}\" and branch LIKE \"%$branch%\" ";
+  $query .= "WHERE gedcom = '$tree' and branch LIKE \"%$branch%\" ";
   $query .= "ORDER BY lastname, firstname";
   $brresult = tng_query($query);
   $numresults = tng_num_rows($brresult);

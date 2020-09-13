@@ -8,7 +8,7 @@ include "$mylanguage/admintext.php";
 include "checklogin.php";
 $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, branch, living, private, gedcom ";
 $query .= "FROM $people_table ";
-$query .= "WHERE personID=\"{$personID}\" AND gedcom=\"{$tree}\"";
+$query .= "WHERE personID=\"{$personID}\" AND gedcom='$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 
@@ -27,7 +27,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 $query = "SELECT assocID, passocID, relationship, reltype ";
 $query .= "FROM $assoc_table ";
-$query .= "WHERE personID=\"{$personID}\" AND gedcom=\"{$tree}\"";
+$query .= "WHERE personID=\"{$personID}\" AND gedcom='$tree'";
 $assocresult = tng_query($query);
 $assoccount = tng_num_rows($assocresult);
 ?>
@@ -60,7 +60,7 @@ $assoccount = tng_num_rows($assocresult);
                     if ($assoc['reltype'] == "I") {
                         $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, living, private, branch ";
                         $query .= "FROM $people_table ";
-                        $query .= "WHERE personID=\"{$assoc['passocID']}\" AND gedcom=\"{$tree}\"";
+                        $query .= "WHERE personID=\"{$assoc['passocID']}\" AND gedcom='$tree'";
                         $nameresult = tng_query($query);
                         $row = tng_fetch_assoc($nameresult);
                         $rights = determineLivingPrivateRights($row);
@@ -71,7 +71,7 @@ $assoccount = tng_num_rows($assocresult);
                     } else {
                         $query = "SELECT husband, wife, gedcom, familyID, living, private ";
                         $query .= "FROM $families_table ";
-                        $query .= "WHERE familyID=\"{$assoc['passocID']}\" AND gedcom=\"{$tree}\"";
+                        $query .= "WHERE familyID=\"{$assoc['passocID']}\" AND gedcom='$tree'";
                         $nameresult = tng_query($query);
                         $row = tng_fetch_assoc($nameresult);
                         $rights = determineLivingPrivateRights($row);

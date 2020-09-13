@@ -10,7 +10,7 @@ function checkForEvents(string $id, string $tree): array {
 
     $query = "SELECT parenttag ";
     $query .= "FROM $events_table ";
-    $query .= "WHERE persfamID=\"{$id}\" AND gedcom =\"{$tree}\"";
+    $query .= "WHERE persfamID=\"{$id}\" AND gedcom ='$tree'";
     $result = tng_query($query);
 
     $gotmore = [];

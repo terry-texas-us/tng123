@@ -32,7 +32,7 @@ function fetchAndCleanFamilyRow(?string &$familyID, string $families_table, stri
 function fetchFamilyName(string $families_table, $passocID, string $tree): string {
     $query = "SELECT husband, wife, gedcom, familyID ";
     $query .= "FROM $families_table ";
-    $query .= "WHERE familyID=\"{$passocID}\" AND gedcom=\"{$tree}\"";
+    $query .= "WHERE familyID=\"{$passocID}\" AND gedcom='$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $name = getFamilyName($row);

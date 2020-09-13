@@ -7,7 +7,7 @@ function showCustEvents($id) {
 
     $query = "SELECT display, eventdate, eventplace, info, events.eventID AS eventID ";
     $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
-    $query .= "WHERE parenttag = \"\" AND persfamID = \"{$id}\" AND gedcom = \"{$tree}\" AND events.eventtypeID = eventtypes.eventtypeID ";
+    $query .= "WHERE parenttag = \"\" AND persfamID = \"{$id}\" AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
     $query .= "ORDER BY eventdatetr, ordernum";
     $evresult = tng_query($query);
     $eventcount = tng_num_rows($evresult);

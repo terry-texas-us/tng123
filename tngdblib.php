@@ -137,7 +137,7 @@ function getParentData($tree, $familyID, $spouse) {
 
   $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, title, nameorder, birthdate, birthdatetr, birthplace, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, marrdate, marrplace, people.living, people.private, people.branch, sex ";
   $query .= "FROM ($people_table people, $families_table families) ";
-  $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
+  $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND people.gedcom = '$tree' AND families.gedcom = '$tree'";
 
   return tng_query($query);
 }
@@ -148,7 +148,7 @@ function getParentDataCrossPlusDates($tree, $familyID, $spouse1, $spouse1ID, $sp
 
   $query = "SELECT people.gedcom, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, sex, people.living, people.private, people.branch, IF(birthdate!='',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdate!='',YEAR(deathdatetr),YEAR(burialdatetr)) AS death, people.gedcom ";
   $query .= "FROM ($families_table families, $people_table people) ";
-  $query .= "WHERE {$spouse1} = \"{$spouse1ID}\" AND personID = {$spouse2} AND familyID = \"{$familyID}\" AND families.gedcom = \"{$tree}\" AND people.gedcom = \"{$tree}\"";
+  $query .= "WHERE {$spouse1} = \"{$spouse1ID}\" AND personID = {$spouse2} AND familyID = \"{$familyID}\" AND families.gedcom = '$tree' AND people.gedcom = '$tree'";
 
   return tng_query($query);
 }
@@ -159,7 +159,7 @@ function getParentSimple($tree, $familyID, $spouse) {
 
   $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, people.living, people.private, people.branch ";
   $query .= "FROM ($people_table people, $families_table families) ";
-  $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND families.gedcom = \"{$tree}\" AND people.gedcom = \"{$tree}\"";
+  $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND families.gedcom = '$tree' AND people.gedcom = '$tree'";
 
   return tng_query($query);
 }
@@ -170,7 +170,7 @@ function getParentSimplePlusDates($tree, $familyID, $spouse) {
 
   $query = "SELECT people.gedcom, personID, lastname, lnprefix, firstname, prefix, suffix, nameorder, birthdate, YEAR(birthdatetr) AS birthyear, deathdate, YEAR(deathdatetr) AS deathyear, people.living, people.private, people.branch ";
   $query .= "FROM ($people_table people, $families_table families) ";
-  $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND families.gedcom = \"{$tree}\" AND people.gedcom = \"{$tree}\"";
+  $query .= "WHERE personID = {$spouse} AND familyID = \"{$familyID}\" AND families.gedcom = '$tree' AND people.gedcom = '$tree'";
 
   return tng_query($query);
 }

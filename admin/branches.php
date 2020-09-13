@@ -11,7 +11,7 @@
 function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $row, string $assignedbranch): string {
     global $admtext;
 
-    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = \"{$tree}\" ORDER BY description";
+    $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
     $branchresult = tng_query($query);
     $branchlist = explode(",", $row['branch']);
 

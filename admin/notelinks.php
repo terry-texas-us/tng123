@@ -11,7 +11,7 @@ function checkForNoteLinks(string $id, string $tree): array {
     $gotnotes = [];
     $query = "SELECT DISTINCT eventID AS eventID ";
     $query .= "FROM $notelinks_table ";
-    $query .= "WHERE persfamID=\"{$id}\" AND gedcom =\"{$tree}\"";
+    $query .= "WHERE persfamID=\"{$id}\" AND gedcom ='$tree'";
     $notelinks = tng_query($query);
 
     while ($notelink = tng_fetch_assoc($notelinks)) {

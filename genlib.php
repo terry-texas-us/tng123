@@ -111,7 +111,7 @@ function tng_header($title, $flags) {
     if (!$tng_version) {
         $tng_version = "12.0.0";
     }
-//    echo "<link href=\"{$cms['tngpath']}css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"{$cms['tngpath']}css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever != "standard" && $responsivetables) {
         echo "<link href=\"{$cms['tngpath']}css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     }

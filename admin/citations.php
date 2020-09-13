@@ -10,7 +10,7 @@ function checkForCitations(string $id, string $tree): array {
 
     $query = "SELECT DISTINCT eventID ";
     $query .= "FROM $citations_table ";
-    $query .= "WHERE persfamID = \"{$id}\" AND gedcom = \"{$tree}\"";
+    $query .= "WHERE persfamID = \"{$id}\" AND gedcom = '$tree'";
     $result = tng_query($query) or die ($text . ": $query");
     $citations = [];
     while ($citation = tng_fetch_assoc($result)) {

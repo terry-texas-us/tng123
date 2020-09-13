@@ -26,7 +26,7 @@ $result = tng_query($query);
 $query = "DELETE FROM $notelinks_table WHERE gedcom = \"$tree\"";
 $result = tng_query($query);
 
-$query = "DELETE FROM $xnotes_table WHERE gedcom = \"{$tree}\"";
+$query = "DELETE FROM $xnotes_table WHERE gedcom = '$tree'";
 $result = tng_query($query);
 
 $query = "DELETE FROM $citations_table WHERE gedcom = \"$tree\"";

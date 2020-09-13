@@ -20,8 +20,8 @@ class SingleMediaCard
     global $thumbmaxw, $altstr, $tngconfig;
 
     if ($tree) {
-      $wherestr = "(media.gedcom = \"{$tree}\" || media.gedcom = \"\") AND ";
-      $wherestr2 = " AND medialinks.gedcom = \"{$tree}\"";
+      $wherestr = "(media.gedcom = '$tree' || media.gedcom = \"\") AND ";
+      $wherestr2 = " AND medialinks.gedcom = '$tree'";
     } else {
       $wherestr = $wherestr2 = "";
     }

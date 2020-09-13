@@ -156,7 +156,7 @@ function getParents($parent) {
     $parentstr = "";
     $query = "SELECT personID, lastname, firstname, prefix, suffix, nameorder ";
     $query .= "FROM $people_table people, $families_table families ";
-    $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
+    $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = '$tree' AND families.gedcom = '$tree'";
     $gotfather = tng_query($query);
 
     if ($gotfather) {
@@ -172,7 +172,7 @@ function getParents($parent) {
 
     $query = "SELECT personID, lastname, firstname, prefix, suffix, nameorder ";
     $query .= "FROM $people_table people, $families_table families ";
-    $query .= "WHERE people.personID = families.wife AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
+    $query .= "WHERE people.personID = families.wife AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = '$tree' AND families.gedcom = '$tree'";
     $gotmother = tng_query($query);
 
     if ($gotmother) {
@@ -282,7 +282,7 @@ function delAssociations($entity) {
     $query = "DELETE FROM $assoc_table WHERE personID = \"$entity\" AND gedcom = \"$tree\"";
     $assocresult = tng_query($query);
 
-    $query = "DELETE FROM $assoc_table WHERE passocID = \"{$entity}\" AND gedcom = \"{$tree}\"";
+    $query = "DELETE FROM $assoc_table WHERE passocID = \"{$entity}\" AND gedcom = '$tree'";
     $assocresult = tng_query($query);
 }
 
@@ -330,7 +330,7 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
 
             $query = "SELECT * ";
             $query .= "FROM $people_table ";
-            $query .= "WHERE gedcom = \"{$tree}\" $branchstr $wherestr ";
+            $query .= "WHERE gedcom = '$tree' $branchstr $wherestr ";
             $query .= "ORDER BY LENGTH(personID), personID, lastname, firstname ";
             $query .= "LIMIT $nextone, $largechunk";
             $result = tng_query($query);
@@ -341,7 +341,7 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
 
                     $query = "SELECT * ";
                     $query .= "FROM $people_table ";
-                    $query .= "WHERE personID > \"{$row['personID']}\" AND gedcom = \"{$tree}\" {$branchstr} {$wherestr2} ";
+                    $query .= "WHERE personID > \"{$row['personID']}\" AND gedcom = '$tree' {$branchstr} {$wherestr2} ";
                     $query .= "ORDER BY LENGTH(personID), personID, lastname, firstname ";
                     $query .= "LIMIT 1";
                     $result2 = tng_query($query);

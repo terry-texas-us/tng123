@@ -73,7 +73,7 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $wherestr = $searchstring ? "WHERE (branch LIKE \"%$searchstring%\" OR branches.description LIKE \"%$searchstring%\")" : "";
 if ($tree) {
-    $wherestr .= $wherestr ? " AND branches.gedcom = \"{$tree}\"" : "WHERE branches.gedcom = \"{$tree}\"";
+    $wherestr .= $wherestr ? " AND branches.gedcom = '$tree'" : "WHERE branches.gedcom = '$tree'";
 }
 $query = "SELECT branches.gedcom AS gedcom, branch, branches.description AS description, personID, treename ";
 $query .= "FROM $branches_table branches ";

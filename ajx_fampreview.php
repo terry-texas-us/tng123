@@ -221,7 +221,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     if ($familyID) {
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
         $query .= "FROM $families_table families, $people_table people ";
-        $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = \"{$tree}\" AND people.personID = families.husband AND people.gedcom = \"{$tree}\"";
+        $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = '$tree' AND people.personID = families.husband AND people.gedcom = '$tree'";
         $presult = tng_query($query);
         $parent = tng_fetch_assoc($presult);
         $prights = determineLivingPrivateRights($parent, $righttree);
@@ -234,7 +234,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
         $query .= "FROM $families_table families, $people_table people ";
-        $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = \"{$tree}\" AND people.personID = families.wife AND people.gedcom = \"{$tree}\"";
+        $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = '$tree' AND people.personID = families.wife AND people.gedcom = '$tree'";
         $presult = tng_query($query);
         $parent = tng_fetch_assoc($presult);
         $prights = determineLivingPrivateRights($parent, $righttree);

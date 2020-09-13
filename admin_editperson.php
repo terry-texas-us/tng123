@@ -87,7 +87,7 @@ function parentRow($parent, $spouse, $label) {
     $pout = "";
     $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, sex, people.living, people.private ";
     $query .= "FROM $people_table people, $families_table families ";
-    $query .= "WHERE people.personID = families.{$spouse} AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = \"{$tree}\" AND families.gedcom = \"{$tree}\"";
+    $query .= "WHERE people.personID = families.{$spouse} AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = '$tree' AND families.gedcom = '$tree'";
     $gotparent = tng_query($query);
 
     if ($gotparent) {
@@ -473,7 +473,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                 </td>
             </tr>
             <?php
-            $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"{$personID}\" AND gedcom = \"{$tree}\" ORDER BY parentorder";
+            $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"{$personID}\" AND gedcom = '$tree' ORDER BY parentorder";
             $parents = tng_query($query);
             $parentcount = tng_num_rows($parents);
             ?>

@@ -66,7 +66,7 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $wherestr = "";
 if ($tree) {
-    $wherestr .= "WHERE dna_groups.gedcom = \"{$tree}\"";
+    $wherestr .= "WHERE dna_groups.gedcom = '$tree'";
 }
 $query = "SELECT dna_groups.gedcom AS gedcom, dna_group, dna_groups.description AS description, test_type, treename ";
 $query .= "FROM $dna_groups_table dna_groups ";

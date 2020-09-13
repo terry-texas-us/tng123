@@ -30,7 +30,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 $query = "SELECT notelinks.ID AS ID, xnotes.note AS note, noteID, secret ";
 $query .= "FROM ($notelinks_table notelinks, $xnotes_table xnotes) ";
-$query .= "WHERE notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom AND persfamID=\"{$persfamID}\" AND notelinks.gedcom =\"{$tree}\" AND eventID = \"{$eventID}\" ";
+$query .= "WHERE notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom AND persfamID=\"{$persfamID}\" AND notelinks.gedcom ='$tree' AND eventID = \"{$eventID}\" ";
 $query .= "ORDER BY ordernum, ID";
 $notelinks = tng_query($query);
 $notecount = tng_num_rows($notelinks);

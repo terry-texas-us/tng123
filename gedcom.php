@@ -319,7 +319,7 @@ function doXNotes() {
     if ($xnotes) {
         $xnoteinfo = "";
         foreach ($xnotes as $xnote) {
-            $query = "SELECT note FROM $xnotes_table WHERE gedcom =\"{$tree}\" AND noteID = \"{$xnote}\" ORDER BY noteID";
+            $query = "SELECT note FROM $xnotes_table WHERE gedcom ='$tree' AND noteID = \"{$xnote}\" ORDER BY noteID";
             $xnotearray = tng_query($query);
             $xnotetxt = tng_fetch_assoc($xnotearray);
             echo "0 @$xnote@ NOTE$lineending";
