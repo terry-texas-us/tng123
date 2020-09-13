@@ -411,7 +411,7 @@ function buildNotes($notearray, $entity) {
                 $notes .= "</ul>\n<br>\n";
             }
             if ($note['title']) {
-                $notes .= "<a name=\"$key\"><span class=\"normal\">{$note['title']}:</span></a><br>\n";
+                $notes .= "<a name=\"$key\"><span class='normal'>{$note['title']}:</span></a><br>\n";
             }
         }
         $cite = reorderCitation($entity . "_" . $note['cite']);
@@ -423,7 +423,7 @@ function buildNotes($notearray, $entity) {
             $cite = " [$cite]";
         }
         if ($note['title'] != $lasttitle) {
-            $notes .= "<ul class=\"normal\">\n";
+            $notes .= "<ul class='normal'>\n";
             $lasttitle = $note['title'];
         }
         $notes .= $note['text'] . "$cite</li>\n";
@@ -448,7 +448,7 @@ function buildGenNotes($notearray, $entity, $eventlist) {
                             $notes .= "</ul>\n<br>\n";
                         }
                         if ($note['title']) {
-                            $notes .= "<a name=\"$key\"><span class=\"normal\">{$note['title']}:</span></a><br>\n";
+                            $notes .= "<a name=\"$key\"><span class='normal'>{$note['title']}:</span></a><br>\n";
                         }
                     }
                     $cite = reorderCitation($entity . "_" . $note['cite']);
@@ -460,7 +460,7 @@ function buildGenNotes($notearray, $entity, $eventlist) {
                         $cite = " [$cite]";
                     }
                     if ($note['title'] != $lasttitle) {
-                        $notes .= "<ul class=\"normal\">\n";
+                        $notes .= "<ul class='normal'>\n";
                         $lasttitle = $note['title'];
                     }
                     $notes .= $note['text'] . "$cite</li>\n";
@@ -997,7 +997,7 @@ function writeAlbums($albums_array) {
                 } else {
                     $albumrows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px;\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
                 }
-                $albumrows .= "<span class=\"normal\">{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
+                $albumrows .= "<span class='normal'>{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
                 $albumcount++;
             }
             $albumtext .= "<tr>\n";
@@ -1187,7 +1187,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                     } else {
                         $mediarows .= "<td valign=\"top\" class=\"databack\" style=\"width:$datewidth" . "px;\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
                     }
-                    $mediarows .= "<span class=\"normal\">{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
+                    $mediarows .= "<span class='normal'>{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
                 }
                 $mediacount++;
             }

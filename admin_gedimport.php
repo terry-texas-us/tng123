@@ -127,8 +127,8 @@ if (!empty($old)) {
   $menu = doMenu($datatabs, "import", $innermenu);
   echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, $message);
 
-  echo "<div class=\"lightback\" style=\"padding:2px;\">\n";
-  echo "<div class=\"databack normal\" style=\"padding:5px;\">\n";
+  echo "<div class='lightback' style=\"padding:2px;\">\n";
+    echo "<div class=\"databack normal\" style=\"padding:5px;\">\n";
 }
 ?>
 
@@ -331,9 +331,9 @@ if ($savestate['filename']) {
 }
 
 if (!empty($old)) {
-  echo "<p class=\"normal\">$openmsg</p>\n";
+    echo "<p class='normal'>$openmsg</p>\n";
   if ($clearedtogo == "true" && $saveimport && (!$remotefile || $remotefile == "none")) {
-    echo "<p class=\"normal\">{$admtext['ifimportfails']} <a href=\"admin_gedimport.php?tree=$tree&amp;old=1\">{$admtext['clickresume']}</a>.</p>\n";
+      echo "<p class='normal'>{$admtext['ifimportfails']} <a href=\"admin_gedimport.php?tree=$tree&amp;old=1\">{$admtext['clickresume']}</a>.</p>\n";
   }
 } else {
   ?>
@@ -510,8 +510,8 @@ if ($fp !== false) {
 if (!empty($old)) {
   echo "<p><a href=\"admin_secondary.php?secaction={$admtext['tracklines']}&tree=$tree\">{$admtext['tracklines']}</a></p>";
   echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>\n";
-  echo "</div></div>\n";
-  echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>";
+    echo "</div></div>\n";
+    echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
 }
 ?>
 </body>

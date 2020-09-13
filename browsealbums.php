@@ -76,12 +76,12 @@ preparebookmark($logstring);
 tng_header($text['albums'], $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h1><br clear="all">
+    <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h2><br clear="all">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsealbums', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
-  echo "<p class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
+    echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browsealbums_url . "mediasearch=$mediasearch&amp;offset", $maxsearchresults, $max_browsemedia_pages);
@@ -207,7 +207,7 @@ while ($row = tng_fetch_assoc($result)) {
 
   $showAlbumInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
 
-  $albumtext .= "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>";
+    $albumtext .= "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>";
 
   $description = $row['description'];
   if ($showAlbumInfo) {
@@ -224,18 +224,18 @@ while ($row = tng_fetch_assoc($result)) {
     }
   }
 
-  if ($imgsrc) {
-    $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
-    $thumbcount++;
-  } else {
-    $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td>";
-  }
+    if ($imgsrc) {
+        $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
+        $thumbcount++;
+    } else {
+        $albumtext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td>";
+    }
 
-  $albumtext .= "<td class=\"databack\" valign=\"top\"><span class=\"normal\">$alblink<br>$description&nbsp;</span></td>\n";
-  $albumtext .= "<td class=\"databack\" valign=\"top\" align=\"center\"><span class=\"normal\">{$arow['acount']}&nbsp;</span></td>\n";
-  $albumtext .= "<td valign=\"top\" class=\"databack\" width=\"200\"><span class=\"normal\">\n$medialinktext&nbsp;</span></td>\n";
-  $albumtext .= "</tr>\n";
-  $i++;
+    $albumtext .= "<td class=\"databack\" valign=\"top\"><span class='normal'>$alblink<br>$description&nbsp;</span></td>\n";
+    $albumtext .= "<td class=\"databack\" valign=\"top\" align=\"center\"><span class='normal'>{$arow['acount']}&nbsp;</span></td>\n";
+    $albumtext .= "<td valign=\"top\" class=\"databack\" width=\"200\"><span class='normal'>\n$medialinktext&nbsp;</span></td>\n";
+    $albumtext .= "</tr>\n";
+    $i++;
 }
 tng_free_result($result);
 

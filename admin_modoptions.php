@@ -154,10 +154,10 @@ echo "
 echo displayToggle("plus0", 0, "log", $admtext['logoptions'], "");
 echo "
 	<div id=\"log\" style=\"display:none;\">
-		<table class=\"normal\">
+		<table class='normal'>
 		    <tr>
                   <td width=\"270px\">
-                     <span class=\"normal\">{$admtext['mmlogfilename']}:</span>
+                     <span class='normal'>{$admtext['mmlogfilename']}:</span>
                   </td>
                   <td>
                      <input type=\"text\" value=\"{$options['modlogfile']}\" name=\"options[modlogfile]\" size=\"20\">
@@ -165,7 +165,7 @@ echo "
                </tr>
 		         <tr>
                   <td>
-                     <span class=\"normal\">{$admtext['mmmaxloglines']}:</span>
+                     <span class='normal'>{$admtext['mmmaxloglines']}:</span>
                   </td>
                   <td>
                      <input type=\"text\" value=\"{$options['maxloglines']}\" name=\"options[maxloglines]\" size=\"5\">
@@ -232,7 +232,7 @@ echo ">{$admtext['no']}</option>
 echo displayToggle("plus1", 0, "display", $admtext['displayoptions'], "");
 echo "
 	<div id=\"display\" style=\"display:none;\">
-	            <table class=\"normal\">
+	            <table class='normal'>
 		         <tr>
          			<td width=\"270px\">{$admtext['sortlistby']}:</td>
          			<td>
@@ -410,7 +410,7 @@ echo ">{$admtext['no']}</option>
 echo displayToggle("plus2", 0, "other", $admtext['othermmoptions'], "");
 echo "
 	<div id=\"other\" style=\"display:none;\">
-	    <table class=\"normal\">
+	    <table class='normal'>
          		<tr>
          			<td width=\"270px\">{$admtext['allowdeletepartial']}:</td>
          			<td>
@@ -550,7 +550,7 @@ if ($sitever != 'mobile' && $options['adjust_headers']) {
 
 echo "
 <div align=\"right\">
-   <span class=\"normal\">$tng_title, v.$tng_version</span>
+   <span class='normal'>$tng_title, v.$tng_version</span>
 </div>
 </body>
 </html>";

@@ -4,7 +4,7 @@ if ($p && !$cms['support']) {
 }
 ?>
 
-<h1 class="header"><span class="headericon" id="unlock-hdr-icon"></span><?php echo $text['login']; ?></h1>
+<h2 class="header"><span class="headericon" id="unlock-hdr-icon"></span><?php echo $text['login']; ?></h2>
 
 <?php
 if ($message) {
@@ -57,7 +57,7 @@ echo $formstr;
 </div>
 <?php
 if (!$tngconfig['disallowreg']) {
-    echo "<p class=\"normal\">{$text['nologin']} <a href=\"{$cms['tngpath']}newacctform.php\">{$text['regnewacct']}</a></p>";
+    echo "<p class='normal'>{$text['nologin']} <a href=\"{$cms['tngpath']}newacctform.php\">{$text['regnewacct']}</a></p>";
 }
 ?>
 </form>

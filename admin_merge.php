@@ -71,11 +71,11 @@ function doRow($field, $textmsg, $boxname) {
     if ($p1field || $p2field) {
         echo "<tr>\n";
         echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>{$admtext[$textmsg]}:</strong></span></td>";
-        echo "<td valign=\"top\" width=\"31%\" class=\"lightback\"><span class=\"normal\">$p1field&nbsp;</span></td>";
+        echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>$p1field&nbsp;</span></td>";
         if (is_array($p2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
             echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>{$admtext[$textmsg]}:</strong></span></td>";
-            echo "<td valign=\"top\" width=\"5\" class=\"lightback\"><span class=\"normal\">";
+            echo "<td valign=\"top\" width=\"5\" class='lightback'><span class='normal'>";
             //if it's a spouse and they're equal, do a hidden field for p1 & p2 and don't do the checkbox
             if ($textmsg == "spouse") {
                 if ($p1field && $p2field) {
@@ -101,12 +101,12 @@ function doRow($field, $textmsg, $boxname) {
             if (!$p2field) {
                 $p2field = "<span class=\"msgerror\">&laquo; " . $admtext['chkdel'] . "</span>";
             }
-            echo "<td valign=\"top\" width=\"31%\" class=\"lightback\"><span class=\"normal\">$p2field&nbsp;</span></td>";
+            echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>$p2field&nbsp;</span></td>";
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
             echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>{$admtext[$textmsg]}:</strong></span></td>";
-            echo "<td valign=\"top\" width=\"5\" class=\"lightback\"><span class=\"normal\">&nbsp;</span></td>";
-            echo "<td valign=\"top\" width=\"31%\" class=\"lightback\"><span class=\"normal\">&nbsp;</span></td>";
+            echo "<td valign=\"top\" width=\"5\" class='lightback'><span class='normal'>&nbsp;</span></td>";
+            echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>&nbsp;</span></td>";
         }
         echo "</tr>\n";
     }
@@ -903,9 +903,9 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                             $spouses = array();
                             $eventlist = array();
                             echo "<tr>\n";
-                            echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['person']} 1 | <a href=\"\" onclick=\"return deepOpen('admin_editperson.php?personID={$p1row['personID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['person']} 1 | <a href=\"\" onclick=\"return deepOpen('admin_editperson.php?personID={$p1row['personID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($p2row)) {
-                                echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['person']} 2 | <a href=\"\" onclick=\"return deepOpen('admin_editperson.php?personID={$p2row['personID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                                echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['person']} 2 | <a href=\"\" onclick=\"return deepOpen('admin_editperson.php?personID={$p2row['personID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
 
                                 $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                                 $query .= "FROM $events_table events_table, $eventtypes_table eventtypes ";
@@ -1090,7 +1090,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                                 doRow($mname, "spouse", $inputname);
                             }
                         } else {
-                            echo "<tr><td><span class=\"normal\">{$admtext['nomatches']}</span></td></tr>";
+                            echo "<tr><td><span class='normal'>{$admtext['nomatches']}</span></td></tr>";
                         }
                         ?>
                     </table>
@@ -1117,6 +1117,6 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
 </table>
 </div>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

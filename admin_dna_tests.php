@@ -291,26 +291,26 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['testID'], $actionstr);
-                            echo "<tr id=\"row_{$row['testID']}\"><td class=\"lightback\" valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['testID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_delete) {
-                                echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value=\"1\"></td>";
                             }
                             $rights = determineLivingPrivateRights($row);
                             $row['allow_living'] = $rights['living'];
                             $row['allow_private'] = $rights['private'];
-                            echo "<td class=\"lightback\">&nbsp;{$row['test_type']}</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['test_number']}</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['test_type']}</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['test_number']}</td>\n";
                             if ($row['match_date'] && $row['match_date'] != "0000-00-00") {
                                 $match_date = formatInternalDate($row['match_date']);
-                                echo "<td class=\"lightback\">&nbsp;$match_date</td>\n";
+                                echo "<td class='lightback'>&nbsp;$match_date</td>\n";
                             } else {
-                                echo "<td class=\"lightback\">&nbsp;</td>\n";
+                                echo "<td class='lightback'>&nbsp;</td>\n";
                             }
                             $dbname = getName($row);
                             if ($dbname) {
-                                echo "<td class=\"lightback\">" . $dbname . "</td>\n";
+                                echo "<td class='lightback'>" . $dbname . "</td>\n";
                             } else {
-                                echo "<td class=\"lightback\">" . $row['person_name'] . "<br>&nbsp;" . $admtext['person_name'] . "</td>\n";
+                                echo "<td class='lightback'>" . $row['person_name'] . "<br>&nbsp;" . $admtext['person_name'] . "</td>\n";
                             }
 
                             $mdanc_namestr = "";
@@ -359,12 +359,12 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                             $descrow = tng_fetch_assoc($descresult);
                             tng_free_result($descresult);
                             $group = $row['dna_group'] ? $descrow['description'] : $text['none'];
-                            echo "<td class=\"lightback\">" . $mdanc_namestr . "</td>\n";
-                            echo "<td class=\"lightback\">" . $mrcanc_namestr . "</td>\n";
-                            echo "<td class=\"lightback\">" . $privtest . "</td>\n";
-                            echo "<td class=\"lightback\">" . $privacy . "</td>\n";
-                            echo "<td class=\"lightback\">" . $group . "</td>\n";
-                            echo "<td class=\"lightback\">" . $row['gedcom'] . "</td>\n";
+                            echo "<td class='lightback'>" . $mdanc_namestr . "</td>\n";
+                            echo "<td class='lightback'>" . $mrcanc_namestr . "</td>\n";
+                            echo "<td class='lightback'>" . $privtest . "</td>\n";
+                            echo "<td class='lightback'>" . $privacy . "</td>\n";
+                            echo "<td class='lightback'>" . $group . "</td>\n";
+                            echo "<td class='lightback'>" . $row['gedcom'] . "</td>\n";
 
                             echo "</tr>\n";
                         }
@@ -385,6 +385,6 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

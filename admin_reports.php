@@ -170,11 +170,11 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                         $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['reportID'] . "</a>" : $row['reportID'];
                         $name = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['reportname'] . "</a>" : $row['reportname'];
 
-                        echo "<tr id=\"row_{$row['reportID']}\"><td class=\"lightback\" valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\">&nbsp;{$row['ranking']}</td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\">&nbsp;$id&nbsp;</td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\">&nbsp;<u>$name</u><br>&nbsp;{$row['reportdesc']}</span></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\" align=\"center\">&nbsp;$active</td></tr>\n";
+                        echo "<tr id=\"row_{$row['reportID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                        echo "<td class='lightback' valign=\"top\">&nbsp;{$row['ranking']}</td>\n";
+                        echo "<td class='lightback' valign=\"top\">&nbsp;$id&nbsp;</td>\n";
+                        echo "<td class='lightback' valign=\"top\">&nbsp;<u>$name</u><br>&nbsp;{$row['reportdesc']}</span></td>\n";
+                        echo "<td class='lightback' valign=\"top\" align=\"center\">&nbsp;$active</td></tr>\n";
                     }
                     ?>
                 </table>
@@ -194,6 +194,6 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
 
 </table>
 </div>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

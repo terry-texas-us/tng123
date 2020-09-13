@@ -37,7 +37,7 @@ function showFact($text, $fact) {
     global $factcols;
     $facttext = "<tr>\n";
     $facttext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">" . $text . "&nbsp;</span></td>\n";
-    $facttext .= "<td valign=\"top\" colspan=\"$factcols\" class=\"databack\"><span class=\"normal\">$fact&nbsp;</span></td>\n";
+    $facttext .= "<td valign=\"top\" colspan=\"$factcols\" class=\"databack\"><span class='normal'>$fact&nbsp;</span></td>\n";
     $facttext .= "</tr>\n";
 
     return $facttext;
@@ -60,22 +60,22 @@ function showDatePlace($event) {
         $citekey = $familyID . "_" . $event['event'];
         $cite = reorderCitation($citekey);
         if ($cite) {
-            $dcitestr = $event['date'] ? "&nbsp; <span class=\"normal\">[$cite]</span>" : "";
-            $pcitestr = $event['place'] ? "&nbsp; <span class=\"normal\">[$cite]</span>" : "";
+            $dcitestr = $event['date'] ? "&nbsp; <span class='normal'>[$cite]</span>" : "";
+            $pcitestr = $event['place'] ? "&nbsp; <span class='normal'>[$cite]</span>" : "";
         }
     }
 
     $dptext .= "<tr>\n";
     $editicon = $tentative_edit ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
     $dptext .= "<td valign=\"top\" class=\"fieldnameback\"$cellid><span class=\"fieldname\">" . $event['text'] . "&nbsp;$editicon</span></td>\n";
-    $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
+    $dptext .= "<td valign=\"top\" class=\"databack\"><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td valign=\"top\" class=\"databack\"";
     if ($allow_lds_this && $event['ldstext']) {
         if ($event['eventlds'] == "div") {
             $dptext .= " colspan=\"4\"";
         }
     }
-    $dptext .= "><span class=\"normal\">{$event['place']}$pcitestr&nbsp;";
+    $dptext .= "><span class='normal'>{$event['place']}$pcitestr&nbsp;";
     if ($event['place']) {
         $dptext .= $placelinkbegin . urlencode($event['place']) . $placelinkend;
     }
@@ -87,8 +87,8 @@ function showDatePlace($event) {
         }
         $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         $dptext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
-        $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
-        $dptext .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$event['ldsplace']}&nbsp;";
+        $dptext .= "<td valign=\"top\" class=\"databack\"><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
+        $dptext .= "<td valign=\"top\" class=\"databack\"><span class='normal'>{$event['ldsplace']}&nbsp;";
         if ($event['ldsplace'] && $event['ldsplace'] != $text['place']) {
             $dptext .= $placelinkbegin . urlencode($event['ldsplace']) . $placelinkend;
         }
@@ -137,7 +137,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     //show photo & name
     $indtext .= "<tr><td>";
     $indtext .= showSmallPhoto($ind['personID'], $namestr, $rights['both'], 0, false, $ind['sex']);
-    $indtext .= "<span class=\"normal\">$label | $sex</span><br><span class=\"subhead\"><b>";
+    $indtext .= "<span class='normal'>$label | $sex</span><br><span class='subhead'><b>";
     if ($ind['haskids']) {
         $indtext .= "+ ";
     }
@@ -425,7 +425,7 @@ if ($rights['both']) {
     $citekey = $familyID . "_";
     $cite = reorderCitation($citekey);
     if ($cite) {
-        $namestr .= "<sup class=\"normal\">&nbsp; [$cite]&nbsp;</sup>";
+        $namestr .= "<sup class='normal'>&nbsp; [$cite]&nbsp;</sup>";
     }
 }
 
@@ -528,7 +528,7 @@ if ($rights['both']) {
         $citectr = 0;
         $count = count($citestring);
         foreach ($citestring as $cite) {
-            $famtext .= "<li class=\"normal\"><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
+            $famtext .= "<li class='normal'><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
             if ($citectr < $count) {
                 $famtext .= "<br>";
             }
@@ -545,7 +545,7 @@ if ($rights['both']) {
     $famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
     $famtext .= "<tr>\n";
     $famtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\" style=\"width:100px;\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-    $famtext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class=\"normal\">{$text['livingnote']}</span></td>\n";
+    $famtext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class='normal'>{$text['livingnote']}</span></td>\n";
     $famtext .= "</tr>\n";
     $famtext .= "</table>\n</div>\n<br>\n";
     $famtext .= endSection("notes");

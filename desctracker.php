@@ -54,9 +54,9 @@ function drawBox($person, $box) {
       echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height=\"1\" hspace=\"0\" vspace=\"0\" ><br>";
     }
     if ($box['lineinto'] == 1) {
-      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" >";
+      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" >";
     } else {
-      echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" >";
     }
   } else {
     echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"21\" hspace=\"0\" vspace=\"0\" >";
@@ -86,7 +86,7 @@ function drawBox($person, $box) {
       $nameinfo .= "<br>" . getYears($person);
     }
   }
-  echo "</td>\n<td width=\"100%\" align=\"center\" class=\"normal\">$nameinfo";
+    echo "</td>\n<td width=\"100%\" align=\"center\" class='normal'>$nameinfo";
   //end inner table
   echo "</td>\n</tr></table>\n";
 
@@ -95,9 +95,9 @@ function drawBox($person, $box) {
 
   //bottom border
   if ($more && $box['lineoutof']) {
-    echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" ><br>";
+      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" ><br>";
   } else {
-    echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" ><br>";
+      echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" ><br>";
   }
 
   if ($more) {
@@ -131,8 +131,8 @@ function drawEmpty($top, $middle, $bottom) {
 
   echo "<td align=\"center\">";
   if ($top) {
-    echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"5\" height=\"1\" hspace=\"0\" vspace=\"0\" ><br>";
-    echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" >";
+      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"5\" height=\"1\" hspace=\"0\" vspace=\"0\" ><br>";
+      echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" >";
   } else {
     echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"21\" hspace=\"0\" vspace=\"0\" >";
   }
@@ -144,8 +144,8 @@ function drawEmpty($top, $middle, $bottom) {
   echo "</td></tr></table>";
 
   if ($bottom && $more) {
-    echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" ><br>";
-    echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"5\" height=\"1\" hspace=\"0\" vspace=\"0\" >";
+      echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" ><br>";
+      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"5\" height=\"1\" hspace=\"0\" vspace=\"0\" >";
   } else {
     echo "<img src=\"{$cms['tngpath']}img/spacer.gif\" width=\"1\" height=\"21\" hspace=\"0\" vspace=\"0\" >";
   }
@@ -367,7 +367,7 @@ echo "</form>\n";
                     doNextPerson($row, $items, $nextperson, $box);
                     echo "</tr>\n</table>\n";
                     if ($more) {
-                      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" ><br>";
+                        echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" ><br>";
                     }
                   }
                   while ($more) {
@@ -413,7 +413,7 @@ echo "</form>\n";
                       echo "</tr>\n</table>";
                     }
                     if ($more) {
-                      echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height=\"20\" hspace=\"0\" vspace=\"0\" ><br>";
+                        echo "<img src=\"{$cms['tngpath']}img/black.gif\" width=\"1\" height='20' hspace=\"0\" vspace=\"0\" ><br>";
                     }
                     tng_free_result($result2);
                   }

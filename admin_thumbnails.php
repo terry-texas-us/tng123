@@ -94,16 +94,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
                       </span>
                   </form>
 
-                  <div id="defresults" style="display:none;">
-                  </div>
+            <div id="defresults" style="display:none;">
+            </div>
 
-              </div>
-          </td>
-      </tr>
-    <?php
+        </div>
+      </td>
+    </tr>
+      <?php
   }
   ?>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

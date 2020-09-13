@@ -65,27 +65,27 @@ tng_header($text['regnewacct'], $flags);
           ?>
         else
             if (!form.tng_user_consent.checked) {
-              alert("<?php echo $text['consentreq']; ?>");
-              return false;
+                alert("<?php echo $text['consentreq']; ?>");
+                return false;
             }
-          <?php
-          }
-          ?>
-          return rval;
+            <?php
+            }
+            ?>
+            return rval;
         }
     </script>
 
-  <h1 class="header"><img src="<?php echo $cms['tngpath']; ?>img/tng_log2.gif" width="20" height="20" alt="" class="headericon">&nbsp;<?php echo $text['regnewacct']; ?></h1><br clear="left">
+    <h2 class="header"><img src="<?php echo $cms['tngpath']; ?>img/tng_log2.gif" width="20" height="20" alt="" class="headericon">&nbsp;<?php echo $text['regnewacct']; ?></h2><br clear="left">
 <?php
 echo tng_coreicons();
 
 @include $cms['tngpath'] . "TNG_captcha.php";
 
 if (!$tngconfig['disallowreg']) {
-  echo "<p class=\"normal\"><strong>*{$text['required']}</strong></p>\n";
-  ?>
-  <table cellpadding="0" cellspacing="2">
-    <tr>
+    echo "<p class='normal'><strong>*{$text['required']}</strong></p>\n";
+    ?>
+    <table cellpadding="0" cellspacing="2">
+        <tr>
       <td>
         <?php
               $onsubmit = $ucount ? "return validateForm(this);" : "alert('{$text['nousers']}');return false;";
@@ -190,7 +190,7 @@ if (!$tngconfig['disallowreg']) {
   </table>
   <?php
 } else {
-  echo "<p class=\"normal\">{$text['noregs']}</p>\n";
+    echo "<p class='normal'>{$text['noregs']}</p>\n";
 }
 
 tng_footer("");

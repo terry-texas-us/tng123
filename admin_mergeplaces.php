@@ -146,14 +146,14 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                         <?php
                         while ($row = tng_fetch_assoc($result)) {
                             echo "<tr class=\"mergerows\" id=\"row_{$row['ID']}\">\n";
-                            echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"checkbox\" class=\"mc\" name=\"mc{$row['ID']}\" onclick=\"handleCheck({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
-                            echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"radio\" name=\"keep\" id=\"r{$row['ID']}\" onclick=\"handleRadio({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
+                            echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" class=\"mc\" name=\"mc{$row['ID']}\" onclick=\"handleCheck({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
+                            echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"radio\" name=\"keep\" id=\"r{$row['ID']}\" onclick=\"handleRadio({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
                             $display = $row['place'];
                             $display = preg_replace("/</", "&lt;", $display);
                             $display = preg_replace("/>/", "&gt;", $display);
-                            echo "<td class=\"lightback\" valign=\"top\">$display&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" valign=\"top\" id=\"lat_{$row['ID']}\">{$row['latitude']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" valign=\"top\" id=\"long_{$row['ID']}\">{$row['longitude']}&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\">$display&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\" id=\"lat_{$row['ID']}\">{$row['latitude']}&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\" id=\"long_{$row['ID']}\">{$row['longitude']}&nbsp;</td>\n";
                             echo "</tr>\n";
                         }
                         tng_free_result($result);
@@ -170,6 +170,6 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

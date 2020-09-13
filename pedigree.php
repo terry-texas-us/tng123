@@ -130,7 +130,7 @@ if (file_exists($rootpath . $endrootpath . "img/Chart.gif")) {
     $imageSize = @GetImageSize($rootpath . $endrootpath . "img/Chart.gif");
     $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}" . "img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
-    $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
+    $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
 }
 
 if ($display == "standard") {
@@ -569,9 +569,9 @@ echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 
 if (!$tngprint) {
-    echo "<span class=\"normal\">(" . $text['scrollnote'];
+    echo "<span class='normal'>(" . $text['scrollnote'];
     if ($pedigree['usepopups_real']) {
-        echo ($pedigree['downarrow'] ? " <img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><span class=\"normal\"><B>V</B></span></a>") . $text['popupnote1'];
+        echo ($pedigree['downarrow'] ? " <img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><span class='normal'><B>V</B></span></a>") . $text['popupnote1'];
         if ($pedigree['popupchartlinks']) {
             echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . $text['popupnote2'];
         }

@@ -523,20 +523,20 @@ if ($csv) {
   $truncname = str_replace(" ", "-", strtolower($rrow['reportname']));
   header("Content-Disposition: attachment; filename={$truncname}.csv\n\n");
 } else {
-  tng_header($rrow['reportname'], $flags);
-  ?>
+    tng_header($rrow['reportname'], $flags);
+    ?>
 
-  <h1 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo "{$text['report']}: {$rrow['reportname']}"; ?></h1>
-  <p><span class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text['description'] . ": " . nl2br($rrow['reportdesc']); ?></span></p><br clear="left">
+    <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo "{$text['report']}: {$rrow['reportname']}"; ?></h2>
+    <p><span class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text['description'] . ": " . nl2br($rrow['reportdesc']); ?></span></p><br clear="left">
 
-  <?php
-  if ($test) {
-    echo "<p class=\"normal\"><strong>SQL:</strong> $query</p>\n";
-  }
+    <?php
+    if ($test) {
+        echo "<p class='normal'><strong>SQL:</strong> $query</p>\n";
+    }
 
-  if (!$rrow['sqlselect']) {
-    $hiddenfields[] = ['name' => 'reportID', 'value' => $reportID];
-    echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showreport', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
+    if (!$rrow['sqlselect']) {
+        $hiddenfields[] = ['name' => 'reportID', 'value' => $reportID];
+        echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showreport', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
   }
 }
 
@@ -610,8 +610,8 @@ if (!$result) {
     $row['allow_private'] = $rights['private'];
 
     if (!$csv) {
-      echo "<tr>\n";
-      echo "<td class=\"databack\"><span class=\"normal\">$rowcount</span></td>\n";
+        echo "<tr>\n";
+        echo "<td class=\"databack\"><span class='normal'>$rowcount</span></td>\n";
     }
     $datastr = "";
     for ($i = 0; $i < count($displayfields) - 1; $i++) {
@@ -677,7 +677,7 @@ if (!$result) {
       if ($csv) {
         $data = str_replace("\"", "\"\"", $data);
       }
-      $datastr .= $csv ? ($datastr ? ",\"$data\"" : "\"$data\"") : "<td class=\"databack\"><span class=\"normal\">$data&nbsp;</span></td>\n";
+        $datastr .= $csv ? ($datastr ? ",\"$data\"" : "\"$data\"") : "<td class=\"databack\"><span class='normal'>$data&nbsp;</span></td>\n";
     }
     echo $datastr . $lineending;
 

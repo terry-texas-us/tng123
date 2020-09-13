@@ -185,16 +185,16 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$repoID');\" id=\"notesicon\
             ?>
           </p>
           <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-          <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
-          <input type="hidden" name="repoID" value="<?php echo "$repoID"; ?>">
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
-            </td>
-        </tr>
+            <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
+            <input type="hidden" name="repoID" value="<?php echo "$repoID"; ?>">
+            <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+            <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
+        </td>
+      </tr>
 
-    </table>
+  </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

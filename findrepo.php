@@ -36,8 +36,11 @@ header("Content-type:text/html; charset=" . $session_charset);
         </tr>
       <?php
       while ($row = tng_fetch_assoc($result)) {
-        $fixedtitle = addslashes($row['reponame']);
-        echo "<tr><td valign=\"top\" class=\"lightback\"><span class=\"normal\"><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">{$row['repoID']}</a></span></td><td class=\"lightback\"><span class=\"normal\"><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">" . truncateIt($row['reponame'], 75) . "</a></span></td></tr>\n";
+          $fixedtitle = addslashes($row['reponame']);
+          echo "<tr>\n";
+          echo "<td valign=\"top\" class='lightback'><span class='normal'><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">{$row['repoID']}</a></span></td>\n";
+          echo "<td class='lightback'><span class='normal'><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">" . truncateIt($row['reponame'], 75) . "</a></span></td>\n";
+          echo "</tr>\n";
       }
       tng_free_result($result);
       ?>

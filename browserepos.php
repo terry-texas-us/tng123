@@ -12,8 +12,8 @@ function doRepoSearch($instance, $pagenav) {
 
   $browserepos_noargs_url = getURL("browserepos", 0);
 
-  $str = "<span class=\"normal\">\n";
-  $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
+  $str = "<span class='normal'>\n";
+    $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
   $str .= "<input type=\"text\" name=\"reposearch\" value=\"$reposearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   if ($reposearch) {
@@ -90,14 +90,14 @@ $flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 
 tng_header($text['repositories'], $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h1><br>
+<h2 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h2><br>
 <?php
-echo "<div class=\"normal\">\n";
+echo "<div class='normal'>\n";
 
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browserepos', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
-  echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
+    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browserepos_url . "reposearch=$reposearch&amp;offset", $maxsearchresults, $max_browserepo_pages);
@@ -136,15 +136,15 @@ echo $header;
 echo "<tbody>\n";
 $i = $offsetplus;
 while ($row = tng_fetch_assoc($result)) {
-  echo "<tr>\n";
-  echo "<td class=\"databack\"><span class=\"normal\">$i</span></td>\n";
-  echo "<td class=\"databack\"><span class=\"normal\"><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
-  echo "<td class=\"databack\"><span class=\"normal\"><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
-  if ($numtrees > 1) {
-    echo "<td class=\"databack nw\"><span class=\"normal\">{$row['treename']}&nbsp;</span></td>";
-  }
-  echo "</tr>\n";
-  $i++;
+    echo "<tr>\n";
+    echo "<td class=\"databack\"><span class='normal'>$i</span></td>\n";
+    echo "<td class=\"databack\"><span class='normal'><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
+    echo "<td class=\"databack\"><span class='normal'><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
+    if ($numtrees > 1) {
+        echo "<td class=\"databack nw\"><span class='normal'>{$row['treename']}&nbsp;</span></td>";
+    }
+    echo "</tr>\n";
+    $i++;
 }
 tng_free_result($result);
 echo "</tbody>\n";

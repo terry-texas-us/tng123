@@ -94,16 +94,16 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
         </table>
         <div class="normal">
           <p><?php echo $admtext['multchoice']; ?></p>
-          <p>
-            <input type="radio" name="multiples" value="0" checked="checked"> <?php echo $admtext['ignoreall']; ?> &nbsp;&nbsp;
-            <input type="radio" name="multiples" value="1"> <?php echo $admtext['usefirst']; ?>
-          </p>
-          <input type="submit" accesskey="s" class="btn" value="<?php echo $admtext['geocode']; ?>">
+            <p>
+                <input type="radio" name="multiples" value="0" checked="checked"> <?php echo $admtext['ignoreall']; ?> &nbsp;&nbsp;
+                <input type="radio" name="multiples" value="1"> <?php echo $admtext['usefirst']; ?>
+            </p>
+            <input type="submit" accesskey="s" class="btn" value="<?php echo $admtext['geocode']; ?>">
         </div>
       </form>
     </td>
   </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

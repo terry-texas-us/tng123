@@ -84,24 +84,24 @@ if ($result2) {
 
     include "eventmicro.php";
 
-    $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class=\"lightback\" align=\"center\">";
-    $linkrows .= "<a href=\"#\" title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
-    $linkrows .= "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>";
-    $linkrows .= "</td>\n";
-    $linkrows .= "<td class=\"lightback normal\">" . $admtext[$type] . "</td><td class=\"lightback normal\">$name$id";
-    if ($linktype != "C") {
-      $linkrows .= " (<a href=\"admin_ordermedia.php?tree1={$plink['gedcom']}&linktype1=$linktype&mediatypeID=$mediatypeID&newlink1=$entityID&event1=$eventID\">{$admtext['text_sort']}</a>)";
-    }
-    $linkrows .= "&nbsp;</td>\n";
-    $linkrows .= "<td class=\"lightback normal\">{$plink['treename']}</td>\n";
-    $linkrows .= "<td class=\"lightback normal\" id=\"event_{$plink['mlinkID']}\">$eventstr&nbsp;</td>\n";
-    $linkrows .= "<td class=\"lightback normal\" align=\"center\" id=\"alt_{$plink['mlinkID']}\">$alttext</td>\n";
-    $linkrows .= "<td class=\"lightback normal\" align=\"center\" id=\"def_{$plink['mlinkID']}\">";
-    if ($linktype != "C") {
-      $linkrows .= "<input type=\"checkbox\" name=\"defc{$plink['mlinkID']}\" id=\"defc{$plink['mlinkID']}\" onclick=\"toggleDefault(this,'{$plink['gedcom']}','$entityID');\" value=\"1\"$dchecked\">";
-    }
-    $linkrows .= "</td>\n";
-    $linkrows .= "<td class=\"lightback normal\" align=\"center\" id=\"show_{$plink['mlinkID']}\"><input type=\"checkbox\" name=\"show{$plink['mlinkID']}\" id=\"show{$plink['mlinkID']}\" onclick=\"toggleShow(this);\" value=\"1\"$schecked\"></td></tr>\n";
+      $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class='lightback' align=\"center\">";
+      $linkrows .= "<a href=\"#\" title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+      $linkrows .= "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>";
+      $linkrows .= "</td>\n";
+      $linkrows .= "<td class='lightback normal'>" . $admtext[$type] . "</td><td class='lightback normal'>$name$id";
+      if ($linktype != "C") {
+          $linkrows .= " (<a href=\"admin_ordermedia.php?tree1={$plink['gedcom']}&linktype1=$linktype&mediatypeID=$mediatypeID&newlink1=$entityID&event1=$eventID\">{$admtext['text_sort']}</a>)";
+      }
+      $linkrows .= "&nbsp;</td>\n";
+      $linkrows .= "<td class='lightback normal'>{$plink['treename']}</td>\n";
+      $linkrows .= "<td class='lightback normal' id=\"event_{$plink['mlinkID']}\">$eventstr&nbsp;</td>\n";
+      $linkrows .= "<td class='lightback normal' align=\"center\" id=\"alt_{$plink['mlinkID']}\">$alttext</td>\n";
+      $linkrows .= "<td class='lightback normal' align=\"center\" id=\"def_{$plink['mlinkID']}\">";
+      if ($linktype != "C") {
+          $linkrows .= "<input type=\"checkbox\" name=\"defc{$plink['mlinkID']}\" id=\"defc{$plink['mlinkID']}\" onclick=\"toggleDefault(this,'{$plink['gedcom']}','$entityID');\" value=\"1\"$dchecked\">";
+      }
+      $linkrows .= "</td>\n";
+      $linkrows .= "<td class='lightback normal' align=\"center\" id=\"show_{$plink['mlinkID']}\"><input type=\"checkbox\" name=\"show{$plink['mlinkID']}\" id=\"show{$plink['mlinkID']}\" onclick=\"toggleShow(this);\" value=\"1\"$schecked\"></td></tr>\n";
   }
   tng_free_result($result2);
 }

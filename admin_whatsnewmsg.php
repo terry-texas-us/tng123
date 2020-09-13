@@ -47,28 +47,28 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "im
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_savewhatsnewmsg.php" method="post" name="form1">
-        <p class="subhead"><strong><?php echo $admtext['wnmsg']; ?>:</strong></p>
-          <p class="normal" id="savedmsg" style="<?php if ($color) {
-            echo "color:$color;";
-          } else echo "display:none;" ?>"><i><?php echo $message; ?></i></p>
-          <textarea cols="150" rows="20" name="whatsnewmsg" id="whatsnewmsg"><?php if (is_array($contents)) {
-              foreach ($contents as $line) {
-                echo $line;
-              }
-            } ?></textarea><br>
-          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-        </form>
-      </td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_savewhatsnewmsg.php" method="post" name="form1">
+                <p class="subhead"><strong><?php echo $admtext['wnmsg']; ?>:</strong></p>
+                <p class="normal" id="savedmsg" style="<?php if ($color) {
+                    echo "color:$color;";
+                } else echo "display:none;" ?>"><em><?php echo $message; ?></em></p>
+                <textarea cols="150" rows="20" name="whatsnewmsg" id="whatsnewmsg"><?php if (is_array($contents)) {
+                        foreach ($contents as $line) {
+                            echo $line;
+                        }
+                    } ?></textarea><br>
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+            </form>
+        </td>
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript" src="js/nicedit.js"></script>
 <script type="text/javascript">
-  //<![CDATA[
+    //<![CDATA[
     bkLib.onDomLoaded(function () {
         new nicEditor({fullPanel: true}).panelInstance('whatsnewmsg');
     });

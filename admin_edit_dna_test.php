@@ -577,20 +577,20 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
           if ($cw) {
             echo "<input type=\"radio\" name=\"newtest\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
           } else {
-            echo "<input type=\"radio\" name=\"newtest\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
+              echo "<input type=\"radio\" name=\"newtest\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
           }
           ?>
-          <br><br><input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
+            <br><br><input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
         </td>
       </tr>
 
-    </table>
+  </table>
 </form>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript">
-  var tree = "<?php echo $tree; ?>";
-  var tnglitbox;
-  <?php
+    var tree = "<?php echo $tree; ?>";
+    var tnglitbox;
+    <?php
     echo "var linkcount = $numlinks;\n";
     echo "const confdellink = \"{$admtext['confdellink']}\";\n";
     echo "const remove_text = \"{$admtext['removelink']}\";\n";

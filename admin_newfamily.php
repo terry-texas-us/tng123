@@ -349,6 +349,6 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
     ?>
 </script>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

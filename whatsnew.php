@@ -77,8 +77,8 @@ tng_free_result($result);
         // ]]>
     </script>
 <?php } ?>
-<h1 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h1>
-<br>
+    <h2 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h2>
+    <br>
 <?php
 $numtrees = 0;
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true]);

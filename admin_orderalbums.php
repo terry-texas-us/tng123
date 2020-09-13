@@ -176,7 +176,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
 
-                        echo "<td class=\"lightback\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
+                        echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
 
                         $query2 = "SELECT thumbpath, usecollfolder, mediatypeID FROM ($albumlinks_table, $media_table) WHERE albumID=\"{$row['albumID']}\" AND defphoto = \"1\" AND $albumlinks_table.mediaID = $media_table.mediaID";
                         $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
@@ -193,7 +193,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         }
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
-                        echo "<td class=\"lightback normal\"><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br>$truncated<br>";
+                        echo "<td class='lightback normal'><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br>$truncated<br>";
                         echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden;\"><a href=\"#\" onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
                         echo "</tr></table>";
                         echo "</div>\n";
@@ -208,6 +208,6 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

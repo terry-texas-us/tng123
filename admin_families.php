@@ -313,25 +313,25 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             $editlink = "admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['familyID'] . "</a>" : $row['familyID'];
 
-                            echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;$id&nbsp;</span></td>\n";
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['husband']}&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;$id&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;{$row['husband']}&nbsp;</span></td>\n";
                             if ($spousename == "husband") {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
                             }
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['wife']}&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;{$row['wife']}&nbsp;</span></td>\n";
                             if ($spousename == "wife") {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
                             }
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['marrdate']}&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;{$row['marrdate']}&nbsp;</span></td>\n";
                             if ($numtrees > 1) {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['treename']}&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['treename']}&nbsp;</span></td>\n";
                             }
                             if ($numusers > 1) {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
                             }
                             echo "</tr>\n";
                         }
@@ -352,6 +352,6 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

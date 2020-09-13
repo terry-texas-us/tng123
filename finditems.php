@@ -49,8 +49,8 @@ function showAction($entityID, $num = null) {
     global $alreadygot, $admtext, $albumID, $mediaID;
 
     $id = $num ? $num : $entityID;
-    $lines = "<td class=\"lightback\">";
-    $lines .= "<div id=\"link_$id\" class=\"normal\" style=\"text-align:center;width:50px;";
+    $lines = "<td class='lightback'>";
+    $lines .= "<div id=\"link_$id\" class='normal' style=\"text-align:center;width:50px;";
     if ($albumID || $mediaID) {
         $gotit = in_array($entityID, $alreadygot);
         if ($gotit) {
@@ -61,7 +61,7 @@ function showAction($entityID, $num = null) {
         if (!$gotit) {
             $lines .= "display:none";
         }
-        $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width=\"20\" height=\"20\">";
+        $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
         $lines .= "\"><a href=\"#\" onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
@@ -156,10 +156,10 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['personID']);
                 }
-                $lines .= "<td class=\"lightback\">{$row['personID']}</td>\n";
-                $lines .= "<td class=\"lightback\"><a href=\"#\" onclick=\"return retItem('{$row['personID']}');\" id=\"item_{$row['personID']}\">$namestr</a></td>\n";
-                $lines .= "<td class=\"lightback\"><span id=\"birth_{$row['personID']}\">$birthdate</span></td>\n";
-                $lines .= "<td class=\"lightback\">$deathdate</td>\n";
+                $lines .= "<td class='lightback'>{$row['personID']}</td>\n";
+                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['personID']}');\" id=\"item_{$row['personID']}\">$namestr</a></td>\n";
+                $lines .= "<td class='lightback'><span id=\"birth_{$row['personID']}\">$birthdate</span></td>\n";
+                $lines .= "<td class='lightback'>$deathdate</td>\n";
                 $lines .= "</tr>\n";
             }
         }
@@ -262,9 +262,9 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['familyID']);
                 }
-                $lines .= "<td class=\"lightback\">" . $row['familyID'] . "</td>\n";
-                $lines .= "<td class=\"lightback\"><a href=\"#\" onclick=\"return retItem('{$row['familyID']}');\" id=\"item_{$row['familyID']}\">$thishusb</a></td>\n";
-                $lines .= "<td class=\"lightback\">$thiswife</td></tr>\n";
+                $lines .= "<td class='lightback'>" . $row['familyID'] . "</td>\n";
+                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['familyID']}');\" id=\"item_{$row['familyID']}\">$thishusb</a></td>\n";
+                $lines .= "<td class='lightback'>$thiswife</td></tr>\n";
             }
         }
         break;
@@ -288,9 +288,9 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['sourceID']);
                 }
-                $lines .= "<td class=\"lightback\">" . $row['sourceID'] . "</td>\n";
+                $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
-                $lines .= "<td class=\"lightback\"><a href=\"#\" onclick=\"return retItem('{$row['sourceID']}');\" id=\"item_{$row['sourceID']}\">" . truncateIt($title, 100) . "</a></td>\n";
+                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['sourceID']}');\" id=\"item_{$row['sourceID']}\">" . truncateIt($title, 100) . "</a></td>\n";
                 $lines .= "</tr>\n";
             }
         }
@@ -322,13 +322,13 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['citationID']);
                 }
-                $lines .= "<td class=\"lightback\">" . $row['citationID'] . "</td>\n";
+                $lines .= "<td class='lightback'>" . $row['citationID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
-                $lines .= "<td class=\"lightback\">" . $row['sourceID'] . "</td>\n";
-                $lines .= "<td class=\"lightback\"><a href=\"#\" onclick=\"return retItem('{$row['citationID']}');\" id=\"item_{$row['citationID']}\">" . truncateIt($title, 100) . "</a></td>\n";
-                $lines .= "<td class=\"lightback\">" . $row['page'] . "</td>\n";
-                $lines .= "<td class=\"lightback\">" . $row['persfamID'] . "</td>\n";
-                $lines .= "<td class=\"lightback\">" . $row['eventID'] . "</td>\n";
+                $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
+                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['citationID']}');\" id=\"item_{$row['citationID']}\">" . truncateIt($title, 100) . "</a></td>\n";
+                $lines .= "<td class='lightback'>" . $row['page'] . "</td>\n";
+                $lines .= "<td class='lightback'>" . $row['persfamID'] . "</td>\n";
+                $lines .= "<td class='lightback'>" . $row['eventID'] . "</td>\n";
                 $lines .= "</tr>\n";
             }
         }
@@ -349,8 +349,8 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['repoID']);
                 }
-                $lines .= "<td class=\"lightback\">" . $row['repoID'] . "</td>\n";
-                $lines .= "<td class=\"lightback\"><a href=\"#\" onclick=\"return retItem('{$row['repoID']}');\" id=\"item_{$row['repoID']}\">" . truncateIt($row['reponame'], 75) . "</a></td>\n";
+                $lines .= "<td class='lightback'>" . $row['repoID'] . "</td>\n";
+                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['repoID']}');\" id=\"item_{$row['repoID']}\">" . truncateIt($row['reponame'], 75) . "</a></td>\n";
                 $lines .= "</tr>\n";
             }
         }
@@ -381,7 +381,7 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['place'], $num);
                 }
-                $lines .= "<td class=\"lightback\"><a href=\"#\" onclick='return retItem(\"{$row['ID']}\",true);' class=\"rplace\" id=\"item_{$row['ID']}\">{$row['place']}</a>$notes</td>\n";
+                $lines .= "<td class='lightback'><a href=\"#\" onclick='return retItem(\"{$row['ID']}\",true);' class=\"rplace\" id=\"item_{$row['ID']}\">{$row['place']}</a>$notes</td>\n";
                 $lines .= "</tr>\n";
                 $num++;
             }
@@ -390,7 +390,7 @@ switch ($type) {
 }
 
 if (tng_num_rows($result)) {
-    echo "<table class=\"normal\"  style=\"width: 100%;\">\n$lines\n</table>\n";
+    echo "<table class='normal'  style=\"width: 100%;\">\n$lines\n</table>\n";
 } else {
     echo $admtext['noresults'];
 }

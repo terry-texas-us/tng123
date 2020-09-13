@@ -247,7 +247,7 @@ if (!$numrowsplus) {
                     } else {
                       $value = $row[$values[$i]];
                     }
-                    echo "<td class=\"lightback\">&nbsp;{$value}&nbsp;</td>\n";
+                    echo "<td class='lightback'>&nbsp;{$value}&nbsp;</td>\n";
                   }
                   echo "</tr>\n";
                 }
@@ -259,15 +259,15 @@ if (!$numrowsplus) {
               }
               tng_free_result($result);
               ?>
-            </table>
+      </table>
 
-          <?php
+        <?php
 
-          ?>
-        </td>
-    </tr>
+        ?>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

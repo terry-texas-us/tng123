@@ -139,16 +139,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                 <option value=""></option>
               </select>
             </td>
-            <td class="normal" valign="top">&nbsp;</td>
+              <td class="normal" valign="top">&nbsp;</td>
           </tr>
         </table>
 
       </form>
 
     </td>
-    </tr>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

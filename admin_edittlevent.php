@@ -148,14 +148,14 @@ if ($tng_search_tlevents) {
 		</span>
                     </td>
                   </tr>
-                </table>
-              <br>&nbsp;
-              <input type="hidden" name="tleventID" value="<?php echo $tleventID; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
-        </td>
-    </tr>
+        </table>
+          <br>&nbsp;
+          <input type="hidden" name="tleventID" value="<?php echo $tleventID; ?>">
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

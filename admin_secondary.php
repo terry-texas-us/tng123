@@ -187,8 +187,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         ?>
         <br><br>
         <?php
-        echo "<p class=\"normal\">" . $admtext['finishedgendex'] . "<br>\n";
-        echo $admtext['filename'] . ": $gendexURL</p>\n";
+        echo "<p class='normal'>" . $admtext['finishedgendex'] . "<br>\n";
+          echo $admtext['filename'] . ": $gendexURL</p>\n";
         ?>
         <p class="normal"><?php echo $admtext['postgdx']; ?>:<br>
           &raquo; <a href="http://www.gendexnetwork.org" target="_blank">GenDexNetwork</a><br>
@@ -196,8 +196,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         </p>
         <?php
       } elseif ($secaction == $admtext['tracklines']) {
-        echo "<p class=\"normal\">" . $admtext['trackinglines'] . "</p>";
-        echo $admtext['families'] . ":<br>\n";
+          echo "<p class='normal'>" . $admtext['trackinglines'] . "</p>";
+          echo $admtext['families'] . ":<br>\n";
 
         $query = "UPDATE $children_table SET haskids = 0";
         if ($tree != "--all--") {
@@ -439,6 +439,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
     </div>
 </div>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

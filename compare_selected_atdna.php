@@ -43,14 +43,14 @@ $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--
 
 $menu = doMenu($comptabs, "", $innermenu);
 ?>
-<h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_atdna']; ?></h1><br clear="left">
+<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_atdna']; ?></h2><br clear="left">
 <?php
 echo $menu;
 if ($_SESSION["ttree"]) {
-  $wherestr = "WHERE $dna_tests_table.gedcom = \"{$_SESSION["ttree"]}\"";
-  $join = "INNER JOIN";
+    $wherestr = "WHERE $dna_tests_table.gedcom = \"{$_SESSION["ttree"]}\"";
+    $join = "INNER JOIN";
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $join = "LEFT JOIN";
 
@@ -76,7 +76,7 @@ $logstring = "<a href=\"$compare_selected_atdna_url" . "tree=$tree&amp;&amp;test
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<div class=\"normal\">\n";
+echo "<div class='normal'>\n";
 
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";

@@ -79,21 +79,21 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                     </tr>
                 </table>
               <br>
-              <input type="hidden" name="start" value="1">
-              <input type="submit" class="btn" value="<?php echo $admtext['renumber']; ?>"<?php if (!$tngconfig['maint']) {
-                  echo " disabled";
+                <input type="hidden" name="start" value="1">
+                <input type="submit" class="btn" value="<?php echo $admtext['renumber']; ?>"<?php if (!$tngconfig['maint']) {
+                    echo " disabled";
                 } ?>>
-              <?php
-              if (!$tngconfig['maint']) {
-                echo "<span class=\"normal\">{$admtext['needmaint']}</span>";
-              }
-              ?>
-              <br><br>
-              <?php echo "<p class=\"normal\">*{$admtext['niprefix']}</p>\n"; ?>
+                <?php
+                if (!$tngconfig['maint']) {
+                    echo "<span class='normal'>{$admtext['needmaint']}</span>";
+                }
+                ?>
+                <br><br>
+                <?php echo "<p class='normal'>*{$admtext['niprefix']}</p>\n"; ?>
             </form>
-        </td>
-    </tr>
+    </td>
+  </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

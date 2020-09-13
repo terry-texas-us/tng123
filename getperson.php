@@ -165,7 +165,7 @@ if ($rights['both']) {
     $citekey = $personID . "_";
     $cite = reorderCitation($citekey);
     if ($cite) {
-        $namestr .= "<sup><span class=\"normal\">[$cite]</span></sup>";
+        $namestr .= "<sup><span class='normal'>[$cite]</span></sup>";
     }
 }
 echo "<div class=\"vcard\">\n";
@@ -428,7 +428,7 @@ if ($parents && tng_num_rows($parents)) {
                     if ($famnotes2) {
                         $persontext .= "<tr>\n";
                         $persontext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-                        $persontext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class=\"normal\"><div class=\"notearea\">$famnotes2</div></span></td>\n";
+                        $persontext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
                         $persontext .= "</tr>\n";
                     }
 
@@ -550,7 +550,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         if ($famnotes2) {
             $persontext .= "<tr>\n";
             $persontext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-            $persontext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class=\"normal\"><div class=\"notearea\">$famnotes2</div></span></td>\n";
+            $persontext .= "<td valign=\"top\" class=\"databack\" colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
             $persontext .= "</tr>\n";
         }
     }
@@ -576,7 +576,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             $child['allow_private'] = $crights['private'];
             if ($child['firstname'] || $child['lastname']) {
                 $childname = getName($child);
-                $persontext .= "<tr><td valign=\"top\" width=\"10\">$ifkids</td><td onmouseover=\"highlightChild(1,'$childID');\" onmouseout=\"highlightChild(0,'$childID');\" class=\"unhighlightedchild\" id=\"child$childID\"><span class=\"normal\">$kidcount. <a href=\"$getperson_url" . "personID=$childID&amp;tree=$tree\">$childname</a>";
+                $persontext .= "<tr><td valign=\"top\" width=\"10\">$ifkids</td><td onmouseover=\"highlightChild(1,'$childID');\" onmouseout=\"highlightChild(0,'$childID');\" class=\"unhighlightedchild\" id=\"child$childID\"><span class='normal'>$kidcount. <a href=\"$getperson_url" . "personID=$childID&amp;tree=$tree\">$childname</a>";
                 if ($crights['both']) {
                     $persontext .= $birthinfo;
                     $age = age($child);
@@ -773,7 +773,7 @@ if ($citedispctr) {
     $citectr = 0;
     $count = count($citestring);
     foreach ($citestring as $cite) {
-        $persontext .= "<li class=\"normal\"><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
+        $persontext .= "<li class='normal'><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
         if ($citectr < $count) {
             $persontext .= "<br>";
         }

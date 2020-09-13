@@ -22,8 +22,8 @@ function showAction($entityID, $num = null) {
     global $alreadygot, $admtext, $albumID, $mediaID;
 
     $id = $num ? $num : $entityID;
-    $lines = "<tr id=\"linkrow_$id\"><td class=\"lightback\">";
-    $lines .= "<div id=\"link_$id\" class=\"normal\" style=\"text-align:center;width:50px;";
+    $lines = "<tr id=\"linkrow_$id\"><td class='lightback'>";
+    $lines .= "<div id=\"link_$id\" class='normal' style=\"text-align:center;width:50px;";
     if ($albumID || $mediaID) {
         $gotit = in_array($entityID, $alreadygot);
         if ($gotit) {
@@ -34,7 +34,7 @@ function showAction($entityID, $num = null) {
         if (!$gotit) {
             $lines .= "display:none";
         }
-        $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width=\"20\" height=\"20\">";
+        $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
         $lines .= "\"><a href=\"#\" onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
@@ -101,10 +101,10 @@ function doPeople($firstname, $lastname) {
         $name = getName($row);
         $jsnamestr = preg_replace("/&#34;/", "&lsquo;", addslashes("$name"));
         $lines .= showAction($row['personID']);
-        $lines .= "<td class=\"lightback normal\">" . $row['personID'] . "&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">$name&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">$birthdate&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">$deathdate&nbsp;</td></tr>\n";
+        $lines .= "<td class='lightback normal'>" . $row['personID'] . "&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>$name&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>$birthdate&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>$deathdate&nbsp;</td></tr>\n";
     }
     tng_free_result($result);
 
@@ -183,9 +183,9 @@ function doFamilies($husbname, $wifename) {
             $thiswife = getName($person);
         }
         $lines .= showAction($row['familyID']);
-        $lines .= "<td class=\"lightback normal\">" . $row['familyID'] . "&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">$thishusb&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">$thiswife&nbsp;</td></tr>\n";
+        $lines .= "<td class='lightback normal'>" . $row['familyID'] . "&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>$thishusb&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>$thiswife&nbsp;</td></tr>\n";
     }
     tng_free_result($result);
 
@@ -207,8 +207,8 @@ function doSources($title) {
     while ($row = tng_fetch_assoc($result)) {
         $fixedtitle = addslashes($row['title']);
         $lines .= showAction($row['sourceID']);
-        $lines .= "<td class=\"lightback normal\">" . $row['sourceID'] . "&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">" . $row['title'] . "&nbsp;</td></tr>\n";
+        $lines .= "<td class='lightback normal'>" . $row['sourceID'] . "&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>" . $row['title'] . "&nbsp;</td></tr>\n";
     }
     tng_free_result($result);
 
@@ -230,8 +230,8 @@ function doRepos($title) {
     while ($row = tng_fetch_assoc($result)) {
         $fixedtitle = addslashes($row['reponame']);
         $lines .= showAction($row['repoID']);
-        $lines .= "<td class=\"lightback normal\">" . $row['repoID'] . "&nbsp;</td>\n";
-        $lines .= "<td class=\"lightback normal\">" . $row['reponame'] . "&nbsp;</td></tr>\n";
+        $lines .= "<td class='lightback normal'>" . $row['repoID'] . "&nbsp;</td>\n";
+        $lines .= "<td class='lightback normal'>" . $row['reponame'] . "&nbsp;</td></tr>\n";
     }
     tng_free_result($result);
 
@@ -256,7 +256,7 @@ function doPlaces($place) {
     $num = 1;
     while ($row = tng_fetch_assoc($result)) {
         $lines .= showAction($row['place'], $num);
-        $lines .= "<td class=\"lightback normal\">" . $row['place'] . "&nbsp;</td></tr>\n";
+        $lines .= "<td class='lightback normal'>" . $row['place'] . "&nbsp;</td></tr>\n";
         $num++;
     }
     tng_free_result($result);
@@ -301,4 +301,4 @@ switch ($linktype) {
 }
 
 header("Content-type:text/html; charset=" . $session_charset);
-echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"585\" class=\"normal\">\n$lines\n</table>\n";
+echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"585\" class='normal'>\n$lines\n</table>\n";

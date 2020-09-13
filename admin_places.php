@@ -336,24 +336,24 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                                 $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
                             }
                             $newactionstr = preg_replace("/zzz/", urlencode($row['place']), $newactionstr);
-                            echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
                             $display = $row['place'];
                             $display = preg_replace("/</", "&lt;", $display);
                             $display = preg_replace("/>/", "&gt;", $display);
-                            echo "<td class=\"lightback\">&nbsp;$display&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;$display&nbsp;</td>\n";
                             if ($map['key']) {
-                                echo "<td class=\"lightback\">&nbsp;{$row['placelevel']}&nbsp;</td>\n";
+                                echo "<td class='lightback'>&nbsp;{$row['placelevel']}&nbsp;</td>\n";
                             }
-                            echo "<td class=\"lightback\">&nbsp;{$row['latitude']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['longitude']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['latitude']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['longitude']}&nbsp;</td>\n";
                             if ($map['key']) {
-                                echo "<td class=\"lightback\">&nbsp;{$row['zoom']}&nbsp;</td>\n";
+                                echo "<td class='lightback'>&nbsp;{$row['zoom']}&nbsp;</td>\n";
                             }
                             if (!$tngconfig['places1tree']) {
-                                echo "<td class=\"lightback\">&nbsp;{$row['treename']}&nbsp;</td>\n";
+                                echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
                             }
                             echo "</tr>\n";
                         }
@@ -374,6 +374,6 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

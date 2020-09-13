@@ -280,8 +280,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               } elseif (substr($label, -6) == "person") {
                 $treefield = str_replace("person", "tree", $key);
                 $sections[$n] .= "<a href=\"#\" onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
-                $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class=\"alignmiddle\" width=\"20\" height=\"20\" style=\"margin-left:2px; margin-bottom:4px;\">\n";
-                $sections[$n] .= "</a>\n";
+                  $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class=\"alignmiddle\" width='20' height='20' style=\"margin-left:2px; margin-bottom:4px;\">\n";
+                  $sections[$n] .= "</a>\n";
               }
             }
             if ($languageList && !isset($parts[2]) && in_array($label, $needtrans)) {
@@ -317,8 +317,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               echo "<br><input type=\"submit\" name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
               echo "<input type=\"hidden\" name=\"form_templateswitching\" value=\"\">\n";
               echo "<input type=\"hidden\" name=\"form_templatenum\" value=\"\">\n";
-              echo "</form>\n";
-              echo "</div>\n";
+                echo "</form>\n";
+                echo "</div>\n";
             }
           }
           ?>
@@ -327,6 +327,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 
 </table>
 </form>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

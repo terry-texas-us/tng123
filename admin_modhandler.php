@@ -461,7 +461,7 @@ echo "
 
 echo "
 <div align=\"center\">
-   <span class=\"normal\">
+   <span class='normal'>
       $tng_title, v.$tng_version
    </span>
 </div>

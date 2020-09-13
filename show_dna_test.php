@@ -41,7 +41,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($headline, $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $headline; ?></h1><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $headline; ?></h2><br class="clearleft">
 <?php
 $dnatext = "";
 $dnatext .= "<ul class=\"nopad\">\n";
@@ -50,7 +50,7 @@ $dnatext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed
 $dnatext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 
 if ($dnarow['test_type'] == "atDNA") {
-  $test_type = "atDNA (Autosomal)";
+    $test_type = "atDNA (Autosomal)";
 } elseif ($dnarow['test_type'] == "mtDNA") {
   $test_type = "mtDNA (Mitochondrial)";
 } else {

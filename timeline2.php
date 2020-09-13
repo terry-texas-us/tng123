@@ -226,8 +226,8 @@ function getEvents($person) {
   ksort($events);
   foreach ($events as $event) {
     $eventstr .= "<div class=\"tlevent\" style=\"margin-left:{$event['left']}px;\">\n";
-    $eventstr .= "<table border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td class=\"pboxpopup nw\"><span class=\"normal\">&gt; ";
-    $eventstr .= "{$event['year']} - {$event['text']} {$event['date']} &nbsp;</span></td></tr></table></div>\n";
+      $eventstr .= "<table border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td class=\"pboxpopup nw\"><span class='normal'>&gt; ";
+      $eventstr .= "{$event['year']} - {$event['text']} {$event['date']} &nbsp;</span></td></tr></table></div>\n";
   }
 
   return $eventstr;
@@ -410,14 +410,14 @@ $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);
 
-echo "<span class=\"subhead\"><strong>{$text['timeline']}</strong></span><br><br>\n";
+echo "<span class='subhead'><strong>{$text['timeline']}</strong></span><br><br>\n";
 
 if ($pedigree['simile']) {
   echo "<div id=\"tngtimeline\" style=\"height: {$pedigree['tcheight']}px;\"></div>\n";
 }
 
 if ($tng_message) {
-  echo "<p><span class=\"normal\"><strong>$tng_message</strong></span></p>";
+    echo "<p><span class='normal'><strong>$tng_message</strong></span></p>";
   $tng_message = $_SESSION['tng_message'] = "";
 }
 echo "<div id=\"tngchart\">";
@@ -469,7 +469,7 @@ foreach ($tlevents as $key => $value) {
 
 $enddiv = "</div>";
 
-echo "<span class=\"normal\"><br><br>\n";
+echo "<span class='normal'><br><br>\n";
 if (count($timeline) > 1) {
   echo $text['text_delete'];
 } else {
@@ -493,9 +493,9 @@ foreach ($keeparray as $timeentry) {
   echo "</div>\n";
 
   echo "<div id=\"bar$numlines\"  class=\"tlbar\" style=\"top:$top" . "px;left:$spanleft" . "px;width:$spanwidth" . "px;\" onmouse{$pedigree['event']}=\"setTimerShow($numlines,'{$pedigree['event']}');\" onmouseout=\"setTimerHide($numlines)\">\n";
-  echo "<table cellspacing=\"0\" cellpadding=\"0\">";
-  echo "<tr><td class=\"nw\"><span class=\"normal\">{$timeentry['name']}</span></td></tr>";
-  echo "<tr><td><div class=\"fieldnameback\" style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
+    echo "<table cellspacing=\"0\" cellpadding=\"0\">";
+    echo "<tr><td class=\"nw\"><span class='normal'>{$timeentry['name']}</span></td></tr>";
+    echo "<tr><td><div class=\"fieldnameback\" style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
   echo "</table>\n";
   echo "</div>\n";
 
@@ -519,7 +519,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
   <input type="submit" class="btn" value="<?php echo $text['refresh']; ?>">
   <div id="addmorediv" style="display:none;">
     <?php
-    echo "<span class=\"normal\"><br><br>";
+    echo "<span class='normal'><br><br>";
     $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
     $treeresult = tng_query($query);
     $numrows = tng_num_rows($treeresult);
@@ -569,12 +569,12 @@ if ($counter) {
       <?php
       $counter = 0;
       foreach ($tlevents2 as $key => $value) {
-        $counter++;
-        echo "<tr>\n";
-        echo "<td class=\"databack\" valign=\"top\" align=\"right\"><span class=\"normal\">$counter&nbsp;</span></td>";
-        echo "<td class=\"databack\" valign=\"top\"><span class=\"normal\">$key&nbsp;</span></td>";
-        echo "<td class=\"databack\" valign=\"top\"><ul class=\"normal\">$value</ul></td>";
-        echo "</tr>\n";
+          $counter++;
+          echo "<tr>\n";
+          echo "<td class=\"databack\" valign=\"top\" align=\"right\"><span class='normal'>$counter&nbsp;</span></td>";
+          echo "<td class=\"databack\" valign=\"top\"><span class='normal'>$key&nbsp;</span></td>";
+          echo "<td class=\"databack\" valign=\"top\"><ul class='normal'>$value</ul></td>";
+          echo "</tr>\n";
       }
       ?>
     </table><br>

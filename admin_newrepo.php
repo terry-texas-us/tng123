@@ -144,15 +144,15 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
                 </table>
             </td>
         </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-                <p class="normal"><strong><?php echo $admtext['revslater']; ?></strong></p>
-                <input type="submit" name="save" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
-            </td>
-        </tr>
-    </table>
+      <tr class="databack">
+          <td class="tngshadow">
+              <p class="normal"><strong><?php echo $admtext['revslater']; ?></strong></p>
+              <input type="submit" name="save" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+          </td>
+      </tr>
+  </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -244,24 +244,24 @@ tng_adminheader($admtext['diagnostics'], $flags);
               ?>
             </td>
         </tr>
-      <tr>
-        <td colspan="2" class="tngshadow databack">
-          <p><img src="img/tng_check.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
-          <p><img src="img/orange.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['restricted']; ?></p>
-          <p><img src="img/tng_close.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
-          <br><?php echo $admtext['yourbrowser'] . $_SERVER['HTTP_USER_AGENT']; ?></td>
-      </tr>
+        <tr>
+            <td colspan="2" class="tngshadow databack">
+                <p><img src="img/tng_check.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
+                <p><img src="img/orange.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['restricted']; ?></p>
+                <p><img src="img/tng_close.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
+                <br><?php echo $admtext['yourbrowser'] . $_SERVER['HTTP_USER_AGENT']; ?></td>
+        </tr>
     </table>
-    <?php echo "<div align=\"right\" class=\"normal\">$tng_title, v.$tng_version</div>"; ?>
+    <?php echo "<div align=\"right\" class='normal'>$tng_title, v.$tng_version</div>"; ?>
     </body>
-  </html>
+    </html>
 <?php
 function fileReadWrite($myuserid, $mygroupid, $fileref) {
-  $rval = false;
+    $rval = false;
 
-  $userid = fileowner($fileref);
-  $groupid = filegroup($fileref);
-  $perms = readPerms(fileperms($fileref));
+    $userid = fileowner($fileref);
+    $groupid = filegroup($fileref);
+    $perms = readPerms(fileperms($fileref));
 
   if ($myuserid == $userid) {
     if (substr($perms, 2, 1) == 'w') {

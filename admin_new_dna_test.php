@@ -140,17 +140,17 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
             </td>
         </tr>
 
-        <tr class="databack">
-            <td class="tngshadow">
-                <p class="normal"><strong><?php echo $admtext['dnalater']; ?></strong></p>
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                <input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
-            </td>
-        </tr>
+      <tr class="databack">
+          <td class="tngshadow">
+              <p class="normal"><strong><?php echo $admtext['dnalater']; ?></strong></p>
+              <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+              <input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+          </td>
+      </tr>
 
-    </table>
+  </table>
 </form>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript">
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;

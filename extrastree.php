@@ -54,10 +54,10 @@ function displayIndividual($key, $generation, $slot, $column) {
                 if (!isset($columns[$column][$generation])) {
                     $gentext = "gen$generation";
                     $genmsg = isset($text[$gentext]) ? $text[$gentext] : $text['generation'] . ": $generation";
-                    $columns[$column][$generation] = "<span class=\"normal\">$genmsg<br></span>\n<ul>\n";
+                    $columns[$column][$generation] = "<span class='normal'>$genmsg<br></span>\n<ul>\n";
                 }
                 $namestr = getNameRev($row);
-                $columns[$column][$generation] .= "<li><span class=\"normal\"><a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\">$namestr</a> " . trim(getYears($row));
+                $columns[$column][$generation] .= "<li><span class='normal'><a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\">$namestr</a> " . trim(getYears($row));
                 if ($mediarow['mediacount']) {
                     $columns[$column][$generation] .= " <a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\" title=\"{$text['mediaavail']}\"><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"></a>";
                 }
@@ -188,7 +188,7 @@ echo getFORM("pedigree", "", "form1", "form1");
 echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 
-echo "<p class=\"subhead\"><strong>{$text['media']}: {$text['familyof']} $pedname</strong></p>";
+echo "<p class='subhead'><strong>{$text['media']}: {$text['familyof']} $pedname</strong></p>";
 
 if ($showall) {
     echo "<p><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"> {$text['extrasexpl']}</p>";

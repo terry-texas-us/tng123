@@ -37,16 +37,16 @@ echo displayHeadline($admtext['misc'], "img/misc_icon.gif", $menu, $message);
     <td class="tngshadow">
       <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_whatsnewmsg.php"><b><?php echo $admtext['whatsnew']; ?></b></a><br>
         <span class="normal miscmenu"><?php echo $admtext['whatsnewblurb']; ?></span></p>
-      <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mostwanted.php"><b><?php echo $admtext['mostwanted']; ?></b></a><br>
-        <span class="normal miscmenu"><?php echo $admtext['mwblurb']; ?></span></p>
-      <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_data_validation.php"><b><?php echo $admtext['dataval']; ?></b></a><br>
-        <span class="normal miscmenu"><?php echo $admtext['dvblurb']; ?></span></p>
-      <br><br><br><br><br><br>
+        <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mostwanted.php"><b><?php echo $admtext['mostwanted']; ?></b></a><br>
+            <span class="normal miscmenu"><?php echo $admtext['mwblurb']; ?></span></p>
+        <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_data_validation.php"><b><?php echo $admtext['dataval']; ?></b></a><br>
+            <span class="normal miscmenu"><?php echo $admtext['dvblurb']; ?></span></p>
+        <br><br><br><br><br><br>
     </td>
   </tr>
 
 </table>
 </div>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

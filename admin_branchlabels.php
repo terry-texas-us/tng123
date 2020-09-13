@@ -445,7 +445,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
       if ($counter || $fcounter) {
         echo "<br><br>";
       }
-      echo "<span class=\"normal\">{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</span>";
+      echo "<span class='normal'>{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</span>";
 
       adminwritelog($admtext['labelbranches'] . ": $tree/$branch ($branchaction/$set)");
       ?>
@@ -454,6 +454,6 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
 
     </div>
 </div>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

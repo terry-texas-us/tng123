@@ -325,7 +325,7 @@ if ($sitever != 'mobile' && $options['adjust_headers']) {
 </script>";
 }
 echo "
-<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>
+<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>
 </body>
 </html>";
 ?>

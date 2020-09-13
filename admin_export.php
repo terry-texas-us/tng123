@@ -159,12 +159,12 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                       ?>
                 </table>
               </div>
-              <br>
-              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['export']; ?>"></form>
-        </td>
-    </tr>
+          <br>
+          <input type="submit" name="submit" class="btn" value="<?php echo $admtext['export']; ?>"></form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

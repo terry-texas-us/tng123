@@ -350,6 +350,6 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

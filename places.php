@@ -26,7 +26,7 @@ preparebookmark($logstring);
 tng_header($text['placelist'], $flags);
 ?>
 
-    <h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist']; ?></h1><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist']; ?></h2><br class="clearleft">
 <?php
 if (!$tngconfig['places1tree']) {
     echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'places', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);

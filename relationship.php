@@ -286,7 +286,7 @@ if (file_exists($cms['tngpath'] . "img/Chart.gif")) {
   $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
   $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
 } else {
-  $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
+  $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
 }
 $pedigree['phototree'] = $tree;
 if ($tree) {

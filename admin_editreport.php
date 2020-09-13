@@ -480,16 +480,16 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
               <input type="hidden" name="criteria" value="">
               <input type="hidden" name="orderby" value="">
               <input type="hidden" name="reportID" value="<?php echo $reportID; ?>">
-              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['savereport']; ?>">
-              <input type="submit" name="submitx" class="btn" value="<?php echo $admtext['saveexit']; ?>">
-              &nbsp;&nbsp;
-              <input type="checkbox" name="savecopy" value="1"> <?php echo $admtext['savecopy']; ?>
-            </form>
-        </td>
-    </tr>
+          <input type="submit" name="submit" class="btn" value="<?php echo $admtext['savereport']; ?>">
+          <input type="submit" name="submitx" class="btn" value="<?php echo $admtext['saveexit']; ?>">
+          &nbsp;&nbsp;
+          <input type="checkbox" name="savecopy" value="1"> <?php echo $admtext['savecopy']; ?>
+      </form>
+    </td>
+  </tr>
 
 </table>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

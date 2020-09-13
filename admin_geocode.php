@@ -65,16 +65,16 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
                   echo "<br>\n$count. $display ... &nbsp; ";
                   echo geocode($address, $multiples, $id);
                 } else {
-                  echo "<br>\n$count. " . $admtext['blankplace'] . " &nbsp; <strong>" . $admtext['nogeocode'] . "</strong>";
+                    echo "<br>\n$count. " . $admtext['blankplace'] . " &nbsp; <strong>" . $admtext['nogeocode'] . "</strong>";
                 }
               }
-              tng_free_result($result);
-              ?>
-            </div>
-            <p><a href="admin_geocodeform.php"><?php echo $admtext['backgeo']; ?></a></p>
-        </td>
-    </tr>
+        tng_free_result($result);
+        ?>
+      </div>
+        <p><a href="admin_geocodeform.php"><?php echo $admtext['backgeo']; ?></a></p>
+    </td>
+  </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -13,8 +13,8 @@ function doTreeSearch($instance, $pagenav) {
 
   $browsetrees_noargs_url = getURL("browsetrees-old", 0);
 
-  $str = "<span class=\"normal\">\n";
-  $str .= getFORM("browsetrees", "GET", "TreeSearch$instance", "");
+  $str = "<span class='normal'>\n";
+    $str .= getFORM("browsetrees", "GET", "TreeSearch$instance", "");
   $str .= "<input type=\"text\" name=\"treesearch\" value=\"$treesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   if ($docsearch) {
@@ -69,7 +69,7 @@ tng_header($text['browsealltrees'], $flags);
 
 <?php
 if ($totrows) {
-  echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
+    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browsetrees_url . "treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);
@@ -87,17 +87,17 @@ if ($pagenav || $treesearch) {
     <?php
     $i = $offsetplus;
     while ($row = tng_fetch_assoc($result)) {
-        echo "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>\n";
-        echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
-        echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$row['description']}&nbsp;</span></td>";
+        echo "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>\n";
+        echo "<td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+        echo "<td valign=\"top\" class=\"databack\"><span class='normal'>{$row['description']}&nbsp;</span></td>";
         if ($row['pcount']) {
-            echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class=\"normal\"><a href=\"$search_url" . "tree={$row['gedcom']}\">{$row['pcount']}</a>&nbsp;</span></td>";
-    } else {
-      echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class=\"normal\">{$row['pcount']}&nbsp;</span></td>";
+            echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class='normal'><a href=\"$search_url" . "tree={$row['gedcom']}\">{$row['pcount']}</a>&nbsp;</span></td>";
+        } else {
+            echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class='normal'>{$row['pcount']}&nbsp;</span></td>";
+        }
+        echo "</tr>\n";
+        $i++;
     }
-    echo "</tr>\n";
-    $i++;
-  }
   tng_free_result($result);
   ?>
 </table>

@@ -374,17 +374,17 @@ tng_header($text['searchresults'], $flags);
 <?php
 if ($sitever != "mobile") {
   ?>
-  <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
-  <script type="text/javascript">
-    // <![CDATA[
-    var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
-    // ]]>
-  </script>
-  <?php
+    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
+    <script type="text/javascript">
+        // <![CDATA[
+        var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
+        // ]]>
+    </script>
+    <?php
 }
 ?>
 
-  <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h2><br clear="left">
 <?php
 $logstring = "<a href=\"$search_url" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
@@ -392,14 +392,14 @@ preparebookmark($logstring);
 
 $numrowsplus = $numrows + $offset;
 
-echo "<p class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} " . number_format($totrows) . " $querystring</p>";
+echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} " . number_format($totrows) . " $querystring</p>";
 
 $pagenav = get_browseitems_nav($totrows, "$search_url" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
 $heatmap = !$cejoin ? "<a href=\"$heatmap_url" . $_SERVER['QUERY_STRING'] . "\" class=\"snlink\">{$text['heatmap']}</a>" : "";
 if ($pagenav && !$cejoin) {
   $heatmap = " | " . $heatmap;
 }
-echo "<p class=\"normal\">$pagenav$heatmap</p>";
+echo "<p class='normal'>$pagenav$heatmap</p>";
 
 $header = $headerr = "";
 if ($enablemodeswitch) {

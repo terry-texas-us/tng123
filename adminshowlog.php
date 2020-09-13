@@ -32,13 +32,13 @@ tng_adminheader($admtext['adminlogfile'], "");
           $lines = file($adminlogfile);
 
           foreach ($lines as $line) {
-            echo "<tr><td class=\"lightback\">$line</td></tr>\n";
+              echo "<tr><td class='lightback'>$line</td></tr>\n";
           }
           ?>
-        </table>
+      </table>
     </div>
 </div>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

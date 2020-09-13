@@ -107,6 +107,6 @@ $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'mar
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -96,12 +96,12 @@ while ($treerow = tng_fetch_assoc($treeresult)) {
             echo "**{$admtext['branchmailmsg']}<br>\n";
             ?>
           </p>
-        </td>
-    </tr>
+    </td>
+  </tr>
 
 </table>
 
 <?php
-echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

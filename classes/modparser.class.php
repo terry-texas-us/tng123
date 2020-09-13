@@ -813,7 +813,7 @@ class modparser extends modbase
 
     if (!empty($table)) {
       echo "
-   <table class=\"normal\" style=\"width:100%;\">
+   <table class='normal' style=\"width:100%;\">
       <tr>";
       foreach ($hdrs as $hdr => $width) {
         echo "

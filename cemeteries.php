@@ -52,12 +52,12 @@ tng_header($text['cemeteriesheadstones'], $flags);
     minus.src = "<?php echo $cms['tngpath'] ?>img/tng_collapse.gif";
 
     function swap(x, y) {
-      jQuery('#' + x).attr('title', y == "minus" ? collapsemsg : expandmsg);
-      document.images[x].src = eval(y + '.src');
+        jQuery('#' + x).attr('title', y == "minus" ? collapsemsg : expandmsg);
+        document.images[x].src = eval(y + '.src');
     }
 </script>
 
-<h1 class="header"><span class="headericon" id="cemeteries-hdr-icon"></span><?php echo $text['cemeteriesheadstones']; ?></h1><br clear="all">
+<h2 class="header"><span class="headericon" id="cemeteries-hdr-icon"></span><?php echo $text['cemeteriesheadstones']; ?></h2><br clear="all">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'cemeteries', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 

@@ -19,17 +19,17 @@ preparebookmark($logstring);
 tng_header($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h1><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h2><br class="clearleft">
 <?php
 $hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnames-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 ?>
 
-  <div class="titlebox">
-    <div>
-      <p class="subhead"><b><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></b></p>
-      <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
-    </div>
+    <div class="titlebox">
+        <div>
+            <p class="subhead"><b><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></b></p>
+            <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
+        </div>
     <table class="sntable">
             <tr>
                 <td class="sncol">

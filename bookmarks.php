@@ -12,17 +12,17 @@ $ref = "tngbookmarks_$newroot";
 tng_header($text['bookmarks'], $flags);
 ?>
 <!-- DED added alt='' & changed span to div in next line-->
-<h1 class="header"><span class="headericon" id="bookmarks-hdr-icon"></span><?php echo $text['bookmarks']; ?></h1><br clear="left">
+<h2 class="header"><span class="headericon" id="bookmarks-hdr-icon"></span><?php echo $text['bookmarks']; ?></h2><br clear="left">
 <?php
-echo "<p class=\"normal\">" . $text['bkmkvis'] . "</p>";
+echo "<p class='normal'>" . $text['bkmkvis'] . "</p>";
 
-echo "<ul class=\"normal\">\n";
+echo "<ul class='normal'>\n";
 if (isset($_COOKIE[$ref])) {
-  $bcount = 0;
-  $bookmarks = explode("|", $_COOKIE[$ref]);
-  foreach ($bookmarks as $bookmark) {
-    if (trim($bookmark)) {
-      echo "<li>" . stripslashes($bookmark) . " | <a href=\"$deletebookmark_url" . "idx=$bcount\">{$text['remove']}</a></li>\n";
+    $bcount = 0;
+    $bookmarks = explode("|", $_COOKIE[$ref]);
+    foreach ($bookmarks as $bookmark) {
+        if (trim($bookmark)) {
+            echo "<li>" . stripslashes($bookmark) . " | <a href=\"$deletebookmark_url" . "idx=$bcount\">{$text['remove']}</a></li>\n";
       $bcount++;
     }
   }

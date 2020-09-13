@@ -291,7 +291,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
                 }
             }
         }
-        $pagenav .= "<span class=\"normal\">$prevlink $firstlink $numlinks $lastlink $nextlink</span>";
+        $pagenav .= "<span class='normal'>$prevlink $firstlink $numlinks $lastlink $nextlink</span>";
     }
 
     return $pagenav;
@@ -588,7 +588,7 @@ function showMediaSource($imgrow, $ss = false) {
         if ($imgrow['path']) {
             echo "<br><br>\n";
         }
-        echo "<div class=\"normal\">" . ($imgrow['usenl'] ? nl2br($imgrow['bodytext']) : $imgrow['bodytext']) . "</div>";
+        echo "<div class='normal'>" . ($imgrow['usenl'] ? nl2br($imgrow['bodytext']) : $imgrow['bodytext']) . "</div>";
     }
     if ($ss) {
         echo "</div>\n";
@@ -654,7 +654,7 @@ function doCemPlusMap($imgrow, $tree) {
     $cemetery = tng_fetch_assoc($cemresult);
     tng_free_result($cemresult);
 
-    echo "<p><span class=\"subhead\">\n";
+    echo "<p><span class='subhead'>\n";
     $location = $cemetery['cemname'];
     if ($cemetery['city']) {
         if ($location) {
@@ -700,7 +700,7 @@ function doCemPlusMap($imgrow, $tree) {
     if (tng_num_rows($hsresult)) {
         $i = 1;
         echo "<div class=\"titlebox\">\n";
-        echo "<span class=\"subhead\"><b>{$text['cemphotos']}</b></span><br><br>";
+        echo "<span class='subhead'><b>{$text['cemphotos']}</b></span><br><br>";
 
         echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\" width=\"100%\">\n";
         echo "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
@@ -722,11 +722,11 @@ function doCemPlusMap($imgrow, $tree) {
             }
 
             $targettext = $hs['newwindow'] ? " target=\"_blank\"" : "";
-            echo "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>";
+            echo "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>";
             echo "<td valign=\"top\" class=\"databack\" width=\"$thumbmaxw\">";
             echo $imgsrc ? "<a href=\"$href\"$targettext>$imgsrc</a>" : "&nbsp;";
             echo "</td>\n";
-            echo "<td valign=\"top\" class=\"databack\"><span class=\"normal\">";
+            echo "<td valign=\"top\" class=\"databack\"><span class='normal'>";
             echo "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
             $i++;
         }

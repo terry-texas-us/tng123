@@ -90,13 +90,13 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['addnewlang
                             </select>
                         </td>
                     </tr>
-                </table>
-              <br>
-              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
-        </td>
-    </tr>
+        </table>
+          <br>
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -528,14 +528,14 @@ if (!isset($pedigree['vfontsize'])) {
             </td>
         </tr>
 
-        <tr class="databack tngshadow">
-            <td class="tngshadow">
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-            </td>
-        </tr>
+      <tr class="databack tngshadow">
+          <td class="tngshadow">
+              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+          </td>
+      </tr>
 
-    </table>
+  </table>
 </form>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

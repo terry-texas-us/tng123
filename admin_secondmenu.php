@@ -65,16 +65,16 @@ while ($row = tng_fetch_assoc($result)) {
               <input type="submit" name="secaction" value="<?php echo $admtext['relabelbranches']; ?>">
               <input type="submit" name="secaction" value="<?php echo $admtext['creategendex']; ?>">
               <input type="submit" name="secaction" value="<?php echo $admtext['evalmedia']; ?>">
-              <input type="submit" name="secaction" value="<?php echo $admtext['refreshliving']; ?>">
-              <input type="submit" name="secaction" value="<?php echo $admtext['makeprivate']; ?>">
-            </form>
-          <p class="normal"><?php echo $admtext['postgdx']; ?>:<br>
+          <input type="submit" name="secaction" value="<?php echo $admtext['refreshliving']; ?>">
+          <input type="submit" name="secaction" value="<?php echo $admtext['makeprivate']; ?>">
+      </form>
+        <p class="normal"><?php echo $admtext['postgdx']; ?>:<br>
             &raquo; <a href="http://gendexnetwork.org" target="_blank">GenDex Network</a><br>
             &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
-          </p>
-        </td>
-    </tr>
+        </p>
+    </td>
+  </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

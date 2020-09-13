@@ -136,27 +136,27 @@ tng_header($text['searchfams'], $flags);
           <?php
           }
           }
-          tng_free_result($etresult);
-          ?>
-          window.location.href = "<?php echo $famsearch_url; ?>" + URL;
+            tng_free_result($etresult);
+            ?>
+            window.location.href = "<?php echo $famsearch_url; ?>" + URL;
 
-          return false;
+            return false;
         }
 
         //]]>
     </script>
 
-  <h1 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchfams']; ?></h1><br clear="all">
+    <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchfams']; ?></h2><br clear="all">
 <?php
 if ($msg) {
-  echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
+    echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
 }
 
 $formstr = getFORM("famsearch", "", "famsearch", "", "$('searchbtn').className='fieldnamebacksave';return makeURL();");
 echo $formstr;
 ?>
-  <div class="searchformbox">
-    <table cellspacing="1" cellpadding="4" class="normal">
+    <div class="searchformbox">
+        <table cellspacing="1" cellpadding="4" class="normal">
           <?php
           if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) {
             ?>
@@ -392,11 +392,11 @@ echo $formstr;
           ksort($eventtypes);
 
           foreach ($eventtypes as $row) {
-            echo "<tr><td colspan=\"3\"><span class=\"normal\">{$row['displaymsg']}</span></td></tr>\n";
+              echo "<tr><td colspan=\"3\"><span class='normal'>{$row['displaymsg']}</span></td></tr>\n";
 
-            echo "<tr>\n";
-            echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";
-            echo "<td>\n";
+              echo "<tr>\n";
+              echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";
+              echo "<td>\n";
             echo "<select name=\"cfq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
             foreach ($item_array as $item) {
               echo "<option value=\"$item[1]\"";
@@ -407,9 +407,9 @@ echo $formstr;
             echo "<td><input type=\"text\" name=\"cef{$row['eventtypeID']}\" value=\"\"></td>\n";
             echo "</tr>\n";
 
-            echo "<tr>\n";
-            echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['place']}:</span></td>\n";
-            echo "<td>\n";
+              echo "<tr>\n";
+              echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['place']}:</span></td>\n";
+              echo "<td>\n";
             echo "<select name=\"cpq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
             foreach ($item_array as $item) {
               echo "<option value=\"$item[1]\"";
@@ -420,9 +420,9 @@ echo $formstr;
             echo "<td><input type=\"text\" name=\"cep{$row['eventtypeID']}\" value=\"\"></td>\n";
             echo "</tr>\n";
 
-            echo "<tr>\n";
-            echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['year']}:</span></td>\n";
-            echo "<td>\n";
+              echo "<tr>\n";
+              echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['year']}:</span></td>\n";
+              echo "<td>\n";
             echo "<select name=\"cyq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
 
             $item2_array = array(array($text['equals'], ""), array($text['plusminus2'], "pm2"), array($text['plusminus5'], "pm5"), array($text['plusminus10'], "pm10"), array($text['lessthan'], "lt"), array($text['greaterthan'], "gt"), array($text['lessthanequal'], "lte"), array($text['greaterthanequal'], "gte"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));

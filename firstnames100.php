@@ -17,17 +17,17 @@ preparebookmark($logstring);
 tng_header($text['firstnamelist'] . ": {$text['top30first']}", $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['top30first']}"; ?></h1><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['top30first']}"; ?></h2><br class="clearleft">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnames100', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 $formstr = getFORM("firstnames100", "get", "", "");
 echo $formstr;
 ?>
-  <div class="titlebox">
-    <?php echo $text['showtop']; ?>&nbsp;
-    <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="5" maxlength="5"> <?php echo $text['byoccurrence']; ?>&nbsp;
-    <input type="submit" value="<?php echo $text['go']; ?>">
+    <div class="titlebox">
+        <?php echo $text['showtop']; ?>&nbsp;
+        <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="5" maxlength="5"> <?php echo $text['byoccurrence']; ?>&nbsp;
+        <input type="submit" value="<?php echo $text['go']; ?>">
   </div>
   </form>
   <br>

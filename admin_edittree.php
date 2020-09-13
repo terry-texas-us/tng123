@@ -145,16 +145,16 @@ echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['modifytree'], 
   } ?>> <?php echo $admtext['keepprivate']; ?><br>
 	<input type="checkbox" name="disallowgedcreate" value="1"<?php if ($row['disallowgedcreate']) {
     echo " checked=\"checked\"";
-  } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
+    } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
 	<input type="checkbox" name="disallowpdf" value="1"<?php if ($row['disallowpdf']) {
-    echo " checked=\"checked\"";
-  } ?>> <?php echo $admtext['nopdf']; ?>
+        echo " checked=\"checked\"";
+    } ?>> <?php echo $admtext['nopdf']; ?>
 	<br><br></span>
-        <input type="hidden" name="tree" value="<?php echo "$tree"; ?>"><input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+          <input type="hidden" name="tree" value="<?php echo "$tree"; ?>"><input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
     </td>
   </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

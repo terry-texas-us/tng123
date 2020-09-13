@@ -15,7 +15,7 @@ function doNoteSearch($instance, $pagenav) {
 
     $browsenotes_noargs_url = getURL("browsenotes", 0);
 
-    $str = "<div class=\"normal\">\n";
+    $str = "<div class='normal'>\n";
     $str .= getFORM("browsenotes", "get", "notesearch$instance", "");
     $str .= "<input type=\"text\" name=\"notesearch\" value=\"$notesearch\"> <input type=\"submit\" value=\"{$text['search']}\"> ";
     $str .= $pagenav;
@@ -80,12 +80,12 @@ preparebookmark($logstring);
 $flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top;}</style>\n";
 tng_header($text['notes'], $flags);
 ?>
-    <h1 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h1><br>
+    <h2 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h2><br>
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsenotes', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
-    echo "<p class=\"normal\">{$text['matches']} " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . "</p>";
+    echo "<p class='normal'>{$text['matches']} " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . "</p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browsenotes_url . "notesearch=$notesearch&amp;offset", $maxsearchresults, $max_browsenote_pages);

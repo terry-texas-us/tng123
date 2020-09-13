@@ -282,13 +282,13 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                         </tr>
                       <?php
                       if ($datefield) {
-                        echo "<tr><td>{$admtext['eventdate']}: </span></td><td valign=\"top\"><span class=\"normal\">{$evrow[$datefield]}</td></tr>\n";
-                        echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td colspan=\"2\"><input type=\"text\" name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td></tr>\n";
+                        echo "<tr><td>{$admtext['eventdate']}: </span></td><td valign=\"top\"><span class='normal'>{$evrow[$datefield]}</td></tr>\n";
+                          echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td colspan=\"2\"><input type=\"text\" name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td></tr>\n";
                       }
                       if ($placefield) {
                         $row['eventplace'] = preg_replace("/\"/", "&#34;", $row['eventplace']);
-                        echo "<tr><td>{$admtext['eventplace']}:</td><td valign=\"top\"><span class=\"normal\">{$evrow[$placefield]}</td></tr>\n";
-                        echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td valign=\"top\"><input type=\"text\" name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
+                          echo "<tr><td>{$admtext['eventplace']}:</td><td valign=\"top\"><span class='normal'>{$evrow[$placefield]}</td></tr>\n";
+                          echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td valign=\"top\"><input type=\"text\" name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
                         echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('newplace');\" title=\"{$admtext['find']}\" class=\"smallicon admin-find-icon\"></a></td></tr>\n";
                       }
                       if ($factfield) {
@@ -334,9 +334,9 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                     <input type="hidden" name="choice" value="<?php echo $admtext['savedel']; ?>">
                     <input type="submit" class="btn" value="<?php echo $admtext['savedel']; ?>">
-                    <input type="submit" class="btn" value="<?php echo $admtext['postpone']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['postpone']; ?>';">
-                    <input type="submit" class="btn" value="<?php echo $admtext['igndel']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['igndel']; ?>';">
-          <br>
+            <input type="submit" class="btn" value="<?php echo $admtext['postpone']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['postpone']; ?>';">
+            <input type="submit" class="btn" value="<?php echo $admtext['igndel']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['igndel']; ?>';">
+            <br>
         </form>
       </div>
     </td>
@@ -344,6 +344,6 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 
 </table>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

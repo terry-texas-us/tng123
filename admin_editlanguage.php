@@ -115,6 +115,6 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylang
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 <?php echo "</html>";

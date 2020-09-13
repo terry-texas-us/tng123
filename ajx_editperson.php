@@ -139,10 +139,10 @@ include_once "eventlib.php";
                                 $notesicon = $cms['tngpath'] . "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
                                 $citesicon = $cms['tngpath'] . "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
                                 echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\">\n";
-                                echo "<img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" width=\"20\" height=\"20\" id=\"notesiconNAME\" class=\"smallicon\">\n";
+                                echo "<img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" width='20' height='20' id=\"notesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
                                 echo "<a href=\"#\" onclick=\"return showCitations('NAME','$personID');\">\n";
-                                echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width=\"20\" height=\"20\" id=\"citesiconNAME\" class=\"smallicon\">\n";
+                                echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
                                 ?>
                             </td>
@@ -339,9 +339,9 @@ include_once "eventlib.php";
                         echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
-                    echo "<td class=\"lightback normal\">\n";
+                    echo "<td class='lightback normal'>\n";
                     echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
-                    echo "<table class=\"normal\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
+                    echo "<table class='normal'><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td valign=\"top\" colspan=\"4\">\n";
 
                     echo $parent['familyID'] . "\n</td></tr>";
@@ -441,12 +441,12 @@ include_once "eventlib.php";
         echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
         echo "<td>\n";
         echo "<a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
-        echo "<img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width=\"20\" height=\"20\" class=\"smallicon\">\n";
+        echo "<img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "<td>\n";
         echo "<a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\">\n";
-        echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width=\"20\" height=\"20\" id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
+        echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "</tr>\n</table>\n";
@@ -507,8 +507,8 @@ include_once "eventlib.php";
                         echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
-                    echo "<td class=\"lightback normal\">\n";
-                    echo "<table class=\"normal\" width=\"100%\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
+                    echo "<td class='lightback normal'>\n";
+                    echo "<table class='normal' width=\"100%\"><tr><td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td valign=\"top\" width=\"94%\">\n";
                     echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
 
@@ -559,7 +559,7 @@ while ($child = tng_fetch_assoc($children)) {
     $child['allow_living'] = $crights['living'];
     $child['allow_private'] = $crights['private'];
     if ($child['firstname'] || $child['lastname']) {
-        echo "<tr><td>$ifkids</td><td><span class=\"normal\">$kidcount. ";
+        echo "<tr><td>$ifkids</td><td><span class='normal'>$kidcount. ";
         if ($crights['both']) {
 
             echo getName($child) . " - {$child['pID']}";

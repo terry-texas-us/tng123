@@ -204,19 +204,19 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             $newactionstr = preg_replace("/xxx/", $row['dna_group'], $actionstr);
                             $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
                             $newactionstr = preg_replace("/zzz/", $row['test_type'], $newactionstr);
-                            echo "<tr id=\"row_{$row['dna_group']}\"><td class=\"lightback\"><div>$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['dna_group']}\"><td class='lightback'><div>$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value=\"1\"></td>";
                             }
                             $editlink = "admin_edit_dna_group.php?dna_group={$row['dna_group']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['dna_group'] . "</a>" : $row['dna_group'];
 
-                            echo "<td class=\"lightback\" nowrap>&nbsp;{$row['dna_group']}</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['description']}</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['treename']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">{$row['test_type']}&nbsp;</td>\n";
+                            echo "<td class='lightback' nowrap>&nbsp;{$row['dna_group']}</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['description']}</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>{$row['test_type']}&nbsp;</td>\n";
                             $pcount = getGroupCount($row['gedcom'], $row['dna_group'], $dna_tests_table);
-                            echo "<td class=\"lightback\" style=\"text-align:right;\">$pcount&nbsp;</td>\n";
+                            echo "<td class='lightback' style=\"text-align:right;\">$pcount&nbsp;</td>\n";
                             echo "</tr>\n";
                         }
                         tng_free_result($result);
@@ -236,6 +236,6 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

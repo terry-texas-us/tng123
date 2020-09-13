@@ -217,9 +217,9 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['ID'], $actionstr);
-                            echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
 
                             $query = "SELECT $notelinks_table.ID, $notelinks_table.persfamID AS personID, $notelinks_table.gedcom, secret
@@ -295,9 +295,9 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             } else {
                                 $notetext = $admtext['text_private'];
                             }
-                            echo "<td valign=\"top\" class=\"lightback\">$notetext</td>\n";
+                            echo "<td valign=\"top\" class='lightback'>$notetext</td>\n";
                             echo $treetext;
-                            echo "<td valign=\"top\" nowrap class=\"lightback\">\n<ul>\n$notelinktext\n</ul>\n</td></tr>\n";
+                            echo "<td valign=\"top\" nowrap class='lightback'>\n<ul>\n$notelinktext\n</ul>\n</td></tr>\n";
                         }
                         ?>
                     </table>
@@ -316,6 +316,6 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

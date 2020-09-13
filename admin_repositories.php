@@ -225,12 +225,12 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                             $editlink = "admin_editrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['repoID'] . "</a>" : $row['repoID'];
 
-                            echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
-                            echo "<td class=\"lightback\">&nbsp;$id&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['reponame']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['reponame']}&nbsp;</td>\n";
                             if ($numtrees > 1) {
                                 echo "<td class=\"lightback nw\">&nbsp;{$row['treename']}&nbsp;</td>\n";
                             }
@@ -255,6 +255,6 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
 
 </table>
 </div>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

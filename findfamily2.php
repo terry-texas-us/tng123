@@ -100,7 +100,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           $person['allow_living'] = determineLivingRights($person);
           $thisfamily .= getName($person);
         }
-        echo "<tr><td valign=\"top\"><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td><td><span class=\"normal\"><a href=\"#\" onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td></tr>\n";
+        echo "<tr><td valign=\"top\"><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td><td><span class='normal'><a href=\"#\" onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td></tr>\n";
       }
       tng_free_result($result);
       ?>

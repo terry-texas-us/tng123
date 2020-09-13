@@ -118,7 +118,7 @@ if ($display == "compact") {
         $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
         $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
     } else {
-        $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
+        $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
     }
 }
 
@@ -185,7 +185,7 @@ function getParents($personID) {
             } else {
                 $extra = "<br>" . getGenderIcon("M", $pedigree['gendalign']) . " " . justYears($husband);
             }
-            $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['husband']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class=\"normal\">{$husband['name']}</span></a>{$extra}</td></tr>\n";
+            $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['husband']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class='normal'>{$husband['name']}</span></a>{$extra}</td></tr>\n";
             tng_free_result($presult);
         }
         if ($parents['wife']) {
@@ -201,7 +201,7 @@ function getParents($personID) {
             } else {
                 $extra = "<br>" . getGenderIcon("F", $pedigree['gendalign']) . " " . justYears($wife);
             }
-            $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['wife']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class=\"normal\">{$wife['name']}</span></a>{$extra}</td></tr>\n";
+            $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['wife']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class='normal'>{$wife['name']}</span></a>{$extra}</td></tr>\n";
             tng_free_result($presult);
         }
     }

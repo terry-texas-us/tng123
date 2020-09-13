@@ -26,7 +26,7 @@ header("Content-type:text/html; charset=" . $session_charset);
           include "showmediaxmllib.php";
 
           echo "<p class=\"adminnav topmargin\">$pagenav</p>";
-          echo "<p class=\"subhead\"><strong>" . truncateIt($description, 100) . "</strong></p>\n";
+          echo "<p class='subhead'><strong>" . truncateIt($description, 100) . "</strong></p>\n";
 
           if ($noneliving || $imgrow['alwayson']) {
             showMediaSource($imgrow, true);

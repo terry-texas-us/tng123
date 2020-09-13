@@ -238,18 +238,18 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                           } ?>> <?php echo $admtext['no']; ?></td>
                       <td></td>
                     </tr>
-                </table>
-              <br>
-              <input type="hidden" name="eventtypeID" value="<?php echo $eventtypeID; ?>"><input type="hidden" name="display" value="">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['savechanges']; ?>"></form>
-            <p class="normal">*<?php echo $admtext['typerequired']; ?></p>
-        </td>
-    </tr>
+        </table>
+          <br>
+          <input type="hidden" name="eventtypeID" value="<?php echo $eventtypeID; ?>"><input type="hidden" name="display" value="">
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['savechanges']; ?>"></form>
+        <p class="normal">*<?php echo $admtext['typerequired']; ?></p>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript">
-  populateTags(<?php echo "\"{$row['type']}\",\"{$row['tag']}\""; ?>);
+    populateTags(<?php echo "\"{$row['type']}\",\"{$row['tag']}\""; ?>);
 </script>
 </body>
 </html>

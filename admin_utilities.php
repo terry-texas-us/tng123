@@ -39,7 +39,7 @@ function doRow($table_name, $display_name) {
     global $admtext, $rootpath, $backuppath, $fileflag;
 
     echo "<tr>\n";
-    echo "<td class=\"lightback\"><div class=\"action-btns\"><a href=\"#\" onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
+    echo "<td class='lightback'><div class=\"action-btns\"><a href=\"#\" onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
     echo "<a href=\"#\" onclick=\"return startBackup('$table_name');\" title=\"{$admtext['backup']}\" class=\"smallicon admin-save-icon\"></a>";
     $fileflag = $table_name && file_exists("$rootpath$backuppath/$table_name.bak");
     echo "<a href=\"#\" id=\"rst_$table_name\" onclick=\"if( confirm('{$admtext['surerestore']}') ) {startRestore('$table_name') ;} return false;\" title=\"{$admtext['restore']}\" class=\"smallicon admin-rest-icon\"";
@@ -48,11 +48,11 @@ function doRow($table_name, $display_name) {
     }
     echo "></a>";
     echo "</div></td>";
-    echo "<td class=\"lightback normal\" align=\"center\"><input type=\"checkbox\" class=\"tablechecks\" name=\"$table_name\" value=\"1\" style=\"margin: 0; padding: 0;\"></td>\n";
-    echo "<td class=\"lightback normal\">$display_name &nbsp;</td>\n";
-    echo "<td class=\"lightback normal\"><span id=\"time_$table_name\">" . getfiletime("$rootpath$backuppath/$table_name.bak") . "</span>&nbsp;</td>\n";
-    echo "<td class=\"lightback normal\" align=\"right\"><span id=\"size_$table_name\">" . getfilesize("$rootpath$backuppath/$table_name.bak") . "</span>&nbsp;</td>\n";
-    echo "<td class=\"lightback normal\"><span id=\"msg_$table_name\"></span>&nbsp;</td>\n";
+    echo "<td class='lightback normal' align=\"center\"><input type=\"checkbox\" class=\"tablechecks\" name=\"$table_name\" value=\"1\" style=\"margin: 0; padding: 0;\"></td>\n";
+    echo "<td class='lightback normal'>$display_name &nbsp;</td>\n";
+    echo "<td class='lightback normal'><span id=\"time_$table_name\">" . getfiletime("$rootpath$backuppath/$table_name.bak") . "</span>&nbsp;</td>\n";
+    echo "<td class='lightback normal' align=\"right\"><span id=\"size_$table_name\">" . getfilesize("$rootpath$backuppath/$table_name.bak") . "</span>&nbsp;</td>\n";
+    echo "<td class='lightback normal'><span id=\"msg_$table_name\"></span>&nbsp;</td>\n";
     echo "</tr>\n";
 }
 
@@ -202,7 +202,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
             <?php
             if ($sub == "tables") {
                 ?>
-                <p class="normal"><i><?php echo $admtext['brinstructions']; ?></i></p>
+                <p class="normal"><em><?php echo $admtext['brinstructions']; ?></em></p>
 
                 <p class="subhead"><strong><?php echo $admtext['backuprestoretables']; ?></strong></p>
                 <p class="normal"><?php echo $admtext['backupnote']; ?></p>
@@ -277,7 +277,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                 <?php
             } elseif ($sub == "structure") {
                 ?>
-                <p class="normal"><i><?php echo $admtext['brinstructions2']; ?></i></p>
+                <p class="normal"><em><?php echo $admtext['brinstructions2']; ?></em></p>
 
                 <p class="subhead"><strong><?php echo $admtext['backupstruct']; ?></strong></p>
                 <div class="normal">
@@ -305,11 +305,11 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                             </td>
                             <?php
                             if ($fileflag) {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;" . getfiletime("$rootpath$backuppath/tng_tablestructure.bak") . "&nbsp;</span></td>\n";
-                                echo "<td class=\"lightback\" align=\"right\"><span class=\"normal\">&nbsp;" . getfilesize("$rootpath$backuppath/tng_tablestructure.bak") . "&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;" . getfiletime("$rootpath$backuppath/tng_tablestructure.bak") . "&nbsp;</span></td>\n";
+                                echo "<td class='lightback' align=\"right\"><span class='normal'>&nbsp;" . getfilesize("$rootpath$backuppath/tng_tablestructure.bak") . "&nbsp;</span></td>\n";
                             } else {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;</span></td>\n";
-                                echo "<td class=\"lightback\" align=\"right\"><span class=\"normal\">&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;</span></td>\n";
+                                echo "<td class='lightback' align=\"right\"><span class='normal'>&nbsp;</span></td>\n";
                             }
                             ?>
                         </tr>
@@ -322,6 +322,6 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

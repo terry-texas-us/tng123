@@ -26,7 +26,7 @@ preparebookmark($logstring);
 tng_header($text['placelist'] . ": " . $text['allplaces'], $flags);
 ?>
     <a id="top"></a>
-    <h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": " . $text['allplaces']; ?></h1><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": " . $text['allplaces']; ?></h2><br class="clearleft">
 <?php
 if (!$tngconfig['places1tree']) {
     echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'places-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
@@ -90,7 +90,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
     <?php
     $urlfirstchar = addslashes($firstchars[$scount]);
     if ($urlfirstchar) {
-        echo "<p class=\"header\"><a id=\"char$scount\"><strong>{$firstchars[$scount]}</strong></a></p>\n";
+        echo "<p class='header'><a id=\"char$scount\"><strong>{$firstchars[$scount]}</strong></a></p>\n";
         ?>
         <table class="sntable">
             <tr>

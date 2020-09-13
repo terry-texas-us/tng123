@@ -66,7 +66,7 @@ if ($maxheight) {
 
 echo "<table $width $height>\n";
 echo "<tr><td align=\"center\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\"><img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a></td></tr>\n";
-echo "<tr><td align=\"center\"><span class=\"normal\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></span></td></tr>";
+echo "<tr><td align=\"center\"><span class='normal'><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></span></td></tr>";
 echo "</table>";
 ?>
 

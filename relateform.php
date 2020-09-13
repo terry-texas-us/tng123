@@ -95,28 +95,29 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                               $rights2 = determineLivingPrivateRights($row2, $righttree);
                               $row2['allow_living'] = $rights2['living'];
                               $row2['allow_private'] = $rights2['private'];
-                              if ($row2['allow_living']) {
-                                $birthdate = $row2['birthdate'] ? $row2['birthdate'] : $row2['altbirthdate'];
-                                $birthdate = " ($birthdate)";
-                              } else {
-                                $birthdate = "";
-                              }
-                              $namestr2 = getName($row2) . "$birthdate - $relatepersonID";
-                              tng_free_result($result2);
+                                if ($row2['allow_living']) {
+                                    $birthdate = $row2['birthdate'] ? $row2['birthdate'] : $row2['altbirthdate'];
+                                    $birthdate = " ($birthdate)";
+                                } else {
+                                    $birthdate = "";
+                                }
+                                $namestr2 = getName($row2) . "$birthdate - $relatepersonID";
+                                tng_free_result($result2);
                             }
                           }
-              echo "<div id=\"name2\" class=\"normal\">$namestr2</div><input type=\"hidden\" name=\"savedpersonID\" value=\"$relatepersonID\"></td></tr>\n";
-              echo "<tr><td><span class=\"normal\">{$text['changeto']} </span></td><td>";
+              echo "<div id=\"name2\" class='normal'>$namestr2</div><input type=\"hidden\" name=\"savedpersonID\" value=\"$relatepersonID\"></td></tr>\n";
+              echo "<tr><td><span class='normal'>{$text['changeto']} </span></td><td>";
               ?>
-              <input type="text" name="secondpersonID" id="secondpersonID" size="10"> <input type="button" name="find2" value="<?php echo $text['find']; ?>" onclick="findItem('I','secondpersonID','name2','<?php echo $tree; ?>');">
+                <input type="text" name="secondpersonID" id="secondpersonID" size="10"> <input type="button" name="find2" value="<?php echo $text['find']; ?>"
+                                                                                               onclick="findItem('I','secondpersonID','name2','<?php echo $tree; ?>');">
             </td>
           </tr>
         </table>
       </td>
-      <td valign="top">
-        <div class="searchsidebar">
-          <table>
-            <tr>
+        <td valign="top">
+            <div class="searchsidebar">
+                <table>
+                    <tr>
               <td><?php echo $text['maxrels']; ?>:</td>
               <td valign="bottom">
                                 <select name="maxrels">

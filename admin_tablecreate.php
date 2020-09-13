@@ -54,9 +54,9 @@ if ($badtables) {
 ?>
 </p>
 			<p><a href="admin_setup.php"><?php echo $admtext['backtosetup']; ?></a>.</p></span>
-        </td>
-    </tr>
+    </td>
+  </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

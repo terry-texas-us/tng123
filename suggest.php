@@ -167,14 +167,14 @@ if ($enttype) {
   echo tng_menu($enttype, "suggest", $ID, $innermenu);
   $buttontext = $text['submitsugg'];
 } else {
-  $headline = $text['contactus'];
-  $comments = $text['comments2'];
-  tng_header($headline, $flags);
-  ?>
+    $headline = $text['contactus'];
+    $comments = $text['comments2'];
+    tng_header($headline, $flags);
+    ?>
 
-  <h1 class="header"><span class="headericon" id="contact-hdr-icon"></span><?php echo $headline; ?></h1><br clear="left">
-  <?php
-  $buttontext = $text['sendmsg'];
+    <h2 class="header"><span class="headericon" id="contact-hdr-icon"></span><?php echo $headline; ?></h2><br clear="left">
+    <?php
+    $buttontext = $text['sendmsg'];
 }
 
 if ($message) {
@@ -183,11 +183,11 @@ if ($message) {
     $newmessage = preg_replace("/xxx/", $sowner, $newmessage);
     $newmessage = preg_replace("/yyy/", $ssendemail, $newmessage);
   }
-  echo "<p class=\"normal\"><strong><font color=\"red\">$newmessage</font></strong></p>\n";
+    echo "<p class='normal'><strong><font color=\"red\">$newmessage</font></strong></p>\n";
 }
 
 if ($enttype) {
-  echo "<span class=\"subhead\"><b>$headline</b></span><br><br>\n";
+    echo "<span class='subhead'><b>$headline</b></span><br><br>\n";
 }
 ?>
 

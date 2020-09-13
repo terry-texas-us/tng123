@@ -3,17 +3,17 @@ $linkrows = "";
 if ($result2) {
   $oldlinks = 0;
   while ($plink = tng_fetch_assoc($result2)) {
-    $oldlinks++;
-    $rights = determineLivingPrivateRights($plink);
-    $plink['allow_living'] = $rights['living'];
-    $plink['allow_private'] = $rights['private'];
-    $name = getName($plink);
+      $oldlinks++;
+      $rights = determineLivingPrivateRights($plink);
+      $plink['allow_living'] = $rights['living'];
+      $plink['allow_private'] = $rights['private'];
+      $name = getName($plink);
 
-    $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class=\"lightback\" align=\"center\">";
-    $linkrows .= "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteDnaLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>";
-    $linkrows .= "</td>\n";
-    $linkrows .= "<td class=\"lightback normal\">$name ({$plink['personID']})&nbsp;</td>\n";
-    $linkrows .= "<td class=\"lightback normal\">{$plink['treename']}</td></tr>\n";
+      $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class='lightback' align=\"center\">";
+      $linkrows .= "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteDnaLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>";
+      $linkrows .= "</td>\n";
+      $linkrows .= "<td class='lightback normal'>$name ({$plink['personID']})&nbsp;</td>\n";
+      $linkrows .= "<td class='lightback normal'>{$plink['treename']}</td></tr>\n";
   }
   tng_free_result($result2);
 }

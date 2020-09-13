@@ -307,7 +307,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                 <?php
                                 if ($editconflict) {
                                     echo "<br><p>{$admtext['editconflict']}</p>\n";
-                                    echo "<p class=\"normal\"><strong><a href=\"admin_editperson.php?personID=$personID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
+                                    echo "<p class='normal'><strong><a href=\"admin_editperson.php?personID=$personID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
                                 } else {
                                     $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                     $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
@@ -495,10 +495,10 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                                 echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                             echo "</td>\n";
                                         }
-                                        echo "<td class=\"lightback normal\">\n";
-                                            echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkChild('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
-                                            echo "<table class=\"normal\">";
-                                                echo "<tr>";
+                        echo "<td class='lightback normal'>\n";
+                        echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkChild('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
+                        echo "<table class='normal'>";
+                        echo "<tr>";
                                                     echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
                                                     echo "<td valign=\"top\" colspan=\"4\">\n";
                                                         echo "<a href=\"admin_editfamily.php?familyID={$parent['familyID']}&amp;tree=$tree&amp;cw=$cw\">{$parent['familyID']}</a>\n";
@@ -574,26 +574,26 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                     }
                                 }
 
-                                echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
-                                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
-                                        echo "<tr>\n";
-                                            if ($marrcount > 1) {
-                                                echo "<td class=\"dragarea normal\">";
-                                                    echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
-                                                echo "</td>\n";
-                                            }
-                                            echo "<td class=\"lightback normal\">\n";
-                                                echo "<table class=\"normal\" width=\"100%\">";
-                                                    echo "<tr>";
-                                                        echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
-                                                        echo "<td valign=\"top\" width=\"94%\">\n";
-                                                            echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\">";
-                                                                echo "<a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a>";
-                                                            echo "</div>\n";
-                                                            echo "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=$cw\">{$marriagerow['familyID']}</a>\n";
-                                                        echo "</td>";
-                                                    echo "</tr>";
-                                                    if ($marriagerow[$spouse]) {
+                        echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
+                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
+                        echo "<tr>\n";
+                        if ($marrcount > 1) {
+                            echo "<td class=\"dragarea normal\">";
+                            echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                            echo "</td>\n";
+                        }
+                        echo "<td class='lightback normal'>\n";
+                        echo "<table class='normal' width=\"100%\">";
+                        echo "<tr>";
+                        echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
+                        echo "<td valign=\"top\" width=\"94%\">\n";
+                        echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\">";
+                        echo "<a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a>";
+                        echo "</div>\n";
+                        echo "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=$cw\">{$marriagerow['familyID']}</a>\n";
+                        echo "</td>";
+                        echo "</tr>";
+                        if ($marriagerow[$spouse]) {
                                                         $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, burialdate, prefix, suffix, nameorder, living, private FROM $people_table WHERE personID = \"{$marriagerow[$spouse]}\" AND gedcom = '$tree'";
                                                         $spouseresult = tng_query($query);
                                                         $spouserow = tng_fetch_assoc($spouseresult);
@@ -639,8 +639,8 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                                                                         if ($child['firstname'] || $child['lastname']) {
                                                                             echo "<tr>";
                                                                                 echo "<td>$ifkids</td>";
-                                                                                echo "<td>";
-                                                                                    echo "<span class=\"normal\">$kidcount. ";
+                                                                            echo "<td>";
+                                                                            echo "<span class='normal'>$kidcount. ";
                                                                                     if ($crights['both']) {
                                                                                         if ($rightbranch) {
                                                                                             echo "<a href=\"admin_editperson.php?personID={$child['pID']}&amp;tree=$tree&amp;cw=$cw\">" . getName($child) . " - {$child['pID']}</a>";
@@ -708,16 +708,18 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                     <input type="hidden" name="added" value="<?php echo $added; ?>">
                     <input type="hidden" name="personID" value="<?php echo "$personID"; ?>">
                     <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
-                    <?php if (!$lnprefixes) {echo "<input type=\"hidden\" name=\"lnprefix\" value=\"{$row['lnprefix']}\">";} ?>
+                    <?php if (!$lnprefixes) {
+                        echo "<input type=\"hidden\" name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
+                    } ?>
                     <?php defineLdsHiddenFields($rights['lds'], $row); ?>
                     <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
                 </td>
             </tr>
-        <?php } ?> <!-- end of the editconflict conditional -->
+    <?php } ?> <!-- end of the editconflict conditional -->
     </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 
 <?php echo "</html>"; ?>

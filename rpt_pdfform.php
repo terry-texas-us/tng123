@@ -95,8 +95,8 @@ function doFontOptions($field, $default = 'helvetica') {
 
 function doFontSizeOptions($field, $options, $default) {
   if (count($options) == 1) {
-    echo "<span class=\"normal\">$options[0] pt</span>";
-    echo "<input type=\"hidden\" name=\"$field\" value=\"$options[0]\">";
+    echo "<span class='normal'>$options[0] pt</span>";
+      echo "<input type=\"hidden\" name=\"$field\" value=\"$options[0]\">";
   } else {
     echo "<select name=\"$field\">";
     foreach ($options as $size) {

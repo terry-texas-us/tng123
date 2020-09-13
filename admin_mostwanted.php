@@ -22,7 +22,7 @@ function showDiv(string $type) {
         echo "</form>\n";
     }
     echo "<div id=\"order$type" . "divs\">\n";
-    echo "<table class=\"normal\" id=\"order$type" . "tbl\">\n";
+    echo "<table class='normal' id=\"order$type" . "tbl\">\n";
     echo "<tr>\n";
     echo "<th class=\"fieldnameback\" style=\"width: 4em;\"><span class=\"fieldname\">" . $admtext['text_sort'] . "</span></th>\n";
     echo "<th class=\"fieldnameback\" style=\"width: {$thumbmaxw}px;\"><span class=\"fieldname\">" . $admtext['thumb'] . "</span></th>\n";
@@ -49,7 +49,7 @@ function showDiv(string $type) {
         echo "<td class=\"dragarea normal\" style=\"width: 4em;\">";
         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
         echo "</td>\n";
-        echo "<td class=\"lightback\" style=\"width: {$thumbmaxw}px;\">";
+        echo "<td class='lightback' style=\"width: {$thumbmaxw}px;\">";
         if ($lrow['thumbpath'] && file_exists("$rootpath$usefolder/" . $lrow['thumbpath'])) {
             $size = @GetImageSize("$rootpath$usefolder/" . $lrow['thumbpath']);
             echo "<img class=\"thumb-center\" src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" $size[3]} id=\"img_{$lrow['mwID']}\" alt=\"{$lrow['mtitle']}\">";
@@ -57,7 +57,7 @@ function showDiv(string $type) {
             echo "&nbsp;";
         }
         echo "</td>\n";
-        echo "<td class=\"lightback normal\">";
+        echo "<td class='lightback normal'>";
         if ($allow_edit) {
             echo "<a href=\"#\" onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\" id=\"title_{$lrow['mwID']}\">{$lrow['title']}</a>";
         } else {

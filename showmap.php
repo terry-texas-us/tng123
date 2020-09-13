@@ -90,12 +90,12 @@ preparebookmark($logstring);
 $size = @GetImageSize("$rootpath$headstonepath/" . $cemetery['maplink']);
 
 if ($map['key'] && $isConnected) {
-  $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 tng_header($location, $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $location; ?></h1><br clear="all">
+    <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $location; ?></h2><br clear="all">
 <?php
 $hiddenfields[] = ['name' => 'cemeteryID', 'value' => $cemeteryID];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showmap', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
@@ -103,9 +103,9 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showmap'
 $infoblock = "";
 $body = "";
 if ($cemeteryID) {
-  if ($cemetery['maplink']) {
-    $infoblock .= "<img src=\"$headstonepath/{$cemetery['maplink']}\" $size[3] alt=\"{$cemetery['cemname']}\"><br><br>\n";
-  }
+    if ($cemetery['maplink']) {
+        $infoblock .= "<img src=\"$headstonepath/{$cemetery['maplink']}\" $size[3] alt=\"{$cemetery['cemname']}\"><br><br>\n";
+    }
 
   if ($allow_admin && $allow_edit) {
     $infoblock .= "<p><a href=\"{$cms['tngpath']}" . "admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target=\"_blank\" class=\"snlink\">{$text['editcem']}</a></p>\n";
@@ -157,8 +157,8 @@ $hsresult = tng_query($query);
 $gotImageJpeg = function_exists('imageJpeg');
 if (tng_num_rows($hsresult)) {
   $i = 1;
-  $body .= "<div class=\"titlebox\">\n";
-  $body .= "<p class=\"subhead\"><b>{$text['cemphotos']}</b></p>\n";
+    $body .= "<div class=\"titlebox\">\n";
+    $body .= "<p class='subhead'><b>{$text['cemphotos']}</b></p>\n";
 
   $body .= "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\" width=\"100%\">\n";
   $body .= "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
@@ -176,8 +176,8 @@ if (tng_num_rows($hsresult)) {
     $imgsrc = getSmallPhoto($hs);
     $href = getMediaHREF($hs, 3);
 
-    $body .= "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>";
-    $body .= "<td valign=\"top\" class=\"databack\" width=\"$thumbmaxw\">";
+      $body .= "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>";
+      $body .= "<td valign=\"top\" class=\"databack\" width=\"$thumbmaxw\">";
     if ($imgsrc) {
       $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $body .= "<a href=\"$href\"";
@@ -189,9 +189,9 @@ if (tng_num_rows($hsresult)) {
       $body .= "&nbsp;";
     }
 
-    $body .= "</td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">";
-    $body .= "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
+      $body .= "</td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>";
+      $body .= "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
     $i++;
   }
   $body .= "</table>\n";
@@ -216,8 +216,8 @@ $hsresult = tng_query($query);
 
 $numrows = tng_num_rows($hsresult);
 if ($numrows) {
-  $body .= "<div class=\"titlebox\">\n";
-  $body .= "<span class=\"subhead\"><b>{$text['headstone']}</b></span><br><br>\n";
+    $body .= "<div class=\"titlebox\">\n";
+    $body .= "<span class='subhead'><b>{$text['headstone']}</b></span><br><br>\n";
 
   if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $query = "SELECT count(DISTINCT $media_table.mediaID) AS hscount FROM $media_table LEFT JOIN $medialinks_table ON $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != \"1\"";
@@ -343,28 +343,28 @@ if ($numrows) {
     if ($imgsrc) {
       $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $body .= "<a href=\"$href\"";
-      if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
-        $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
-      }
-      $body .= ">$imgsrc</a>\n";
+        if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
+            $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
+        }
+        $body .= ">$imgsrc</a>\n";
     } else {
-      $body .= "&nbsp;";
+        $body .= "&nbsp;";
     }
 
-    $body .= "</td>\n";
+      $body .= "</td>\n";
 
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$href\">{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$hs['status']}&nbsp;</span></td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . nl2br($hs['plot']);
-    if ($hs['latitude'] || $hs['longitude']) {
-      if ($hs['plot']) {
-        $body .= "<br>";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>" . nl2br($hs['plot']);
+      if ($hs['latitude'] || $hs['longitude']) {
+          if ($hs['plot']) {
+              $body .= "<br>";
+          }
+          $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
       }
-      $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
-    }
-    $body .= "&nbsp;</span></td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">$hslinktext&nbsp;</span></td>\n";
-    $body .= "</tr>\n";
+      $body .= "&nbsp;</span></td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>$hslinktext&nbsp;</span></td>\n";
+      $body .= "</tr>\n";
   }
   $body .= "</table>\n";
   if ($pagenav) {
@@ -379,8 +379,8 @@ if ($cemetery['place']) {
   $query = "SELECT * FROM ($people_table, $trees_table) WHERE burialplace = \"" . addslashes($cemetery['place']) . "\" and $people_table.gedcom = $trees_table.gedcom $treestr ORDER BY lastname, firstname";
   $result = tng_query($query);
   if (tng_num_rows($result)) {
-    $body .= "<br><div class=\"titlebox\">\n";
-    $body .= "<span class=\"subhead\"><b>{$text['allburials']}</b></span><br><br>\n";
+      $body .= "<br><div class=\"titlebox\">\n";
+      $body .= "<span class='subhead'><b>{$text['allburials']}</b></span><br><br>\n";
 
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
@@ -430,9 +430,9 @@ if ($cemetery['place']) {
       }
       $burialdate = $deathdate ? "$abbrev " . displayDate($deathdate) : "";
 
-      $body .= "<td class=\"databack\">&nbsp;" . $burialdate . "</span></td>\n";
-      $body .= "<td class=\"databack\"><span class=\"normal\">$placetxt&nbsp;</span></td>";
-      $body .= "<td class=\"databack\">{$row['personID']}</td>\n";
+        $body .= "<td class=\"databack\">&nbsp;" . $burialdate . "</span></td>\n";
+        $body .= "<td class=\"databack\"><span class='normal'>$placetxt&nbsp;</span></td>";
+        $body .= "<td class=\"databack\">{$row['personID']}</td>\n";
       if ($numtrees > 1) {
         $body .= "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>\n";
       }

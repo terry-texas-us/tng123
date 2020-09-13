@@ -278,16 +278,16 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
             </td>
         </tr>
 
-    </table>
+  </table>
 </form>
 
 <script type="text/javascript">
-  <?php
-  echo $swapbranches;
-  echo "tree = \"$firsttree\";\n";
-  ?>
+    <?php
+    echo $swapbranches;
+    echo "tree = \"$firsttree\";\n";
+    ?>
 </script>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

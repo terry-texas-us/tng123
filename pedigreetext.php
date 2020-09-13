@@ -29,10 +29,10 @@ if (isset($parentset)) {
 }
 
 function showBlank($pedborder) {
-    echo "<td $pedborder><span class=\"normal\">&nbsp;</span></td>\n";
-    echo "<td class=\"nw\"><span class=\"normal\">&nbsp;</span></td>\n</tr>\n";
-    echo "<tr>\n<td $pedborder><span class=\"normal\">&nbsp;</span></td>\n";
-    echo "<td class=\"nw\"><span class=\"normal\">&nbsp;</span></td>\n</tr>\n";
+    echo "<td $pedborder><span class='normal'>&nbsp;</span></td>\n";
+    echo "<td class=\"nw\"><span class='normal'>&nbsp;</span></td>\n</tr>\n";
+    echo "<tr>\n<td $pedborder><span class='normal'>&nbsp;</span></td>\n";
+    echo "<td class=\"nw\"><span class='normal'>&nbsp;</span></td>\n</tr>\n";
 }
 
 function displayIndividual($key, $generation, $slot) {
@@ -93,11 +93,11 @@ function displayIndividual($key, $generation, $slot) {
     echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
     echo "<tr>\n";
     $pedborder = $slot % 2 && $slot != 1 ? "class=\"nw pedborderleft\"" : "";
-    echo "<td colspan=\"2\" $pedborder><span class=\"normal\">&nbsp;$slot. <a href=\"$getperson_url" . "personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
+    echo "<td colspan=\"2\" $pedborder><span class='normal'>&nbsp;$slot. <a href=\"$getperson_url" . "personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
 
     //arrow goes here in own cell
     if ($nextslot >= $pedmax && $row['famc']) {
-        echo "<td><span class=\"normal\"><a href=\"$pedigree_url" . "personID=$key&amp;tree=$tree&amp;display=textonly\" title=\"{$text['popupnote2']}\">=&gt;</a></span></td>\n";
+        echo "<td><span class='normal'><a href=\"$pedigree_url" . "personID=$key&amp;tree=$tree&amp;display=textonly\" title=\"{$text['popupnote2']}\">=&gt;</a></span></td>\n";
     }
 
     echo "</tr>\n";
@@ -113,39 +113,39 @@ function displayIndividual($key, $generation, $slot) {
             $dataflag = 0;
         }
         if ($row['altbirthdate'] && !$row['birthdate']) {
-            echo "<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capaltbirthabbr']}:</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">" . displayDate($row['altbirthdate']) . "&nbsp;</span></td>\n</tr>\n";
-            echo "<tr>\n<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">{$row['altbirthplace']}&nbsp;</span></td>\n</tr>\n";
+            echo "<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capaltbirthabbr']}:</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>" . displayDate($row['altbirthdate']) . "&nbsp;</span></td>\n</tr>\n";
+            echo "<tr>\n<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>{$row['altbirthplace']}&nbsp;</span></td>\n</tr>\n";
         } elseif ($dataflag) {
-            echo "<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capbirthabbr']}:</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">" . displayDate($row['birthdate']) . "&nbsp;</span></td></tr>\n";
-            echo "<tr>\n<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">{$row['birthplace']}&nbsp;</span></td>\n</tr>\n";
+            echo "<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capbirthabbr']}:</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>" . displayDate($row['birthdate']) . "&nbsp;</span></td></tr>\n";
+            echo "<tr>\n<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>{$row['birthplace']}&nbsp;</span></td>\n</tr>\n";
         } else {
             showBlank($pedborder);
         }
         if ($slot % 2 == 0) {
             if ($dataflag) {
-                echo "<tr>\n<td valign=\"top\" class=\"pedborderleft\"><span class=\"normal\">&nbsp;{$text['capmarrabbr']}:</span></td>\n";
-                echo "<td valign=\"top\"><span class=\"normal\">" . displayDate($marrdate[$slot]) . "&nbsp;</span></td>\n</tr>\n";
-                echo "<tr>\n<td valign=\"top\" class=\"pedborderleft\"><span class=\"normal\">&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
-                echo "<td valign=\"top\"><span class=\"normal\">{$marrplace[$slot]}&nbsp;</span></td>\n</tr>\n";
+                echo "<tr>\n<td valign=\"top\" class=\"pedborderleft\"><span class='normal'>&nbsp;{$text['capmarrabbr']}:</span></td>\n";
+                echo "<td valign=\"top\"><span class='normal'>" . displayDate($marrdate[$slot]) . "&nbsp;</span></td>\n</tr>\n";
+                echo "<tr>\n<td valign=\"top\" class=\"pedborderleft\"><span class='normal'>&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
+                echo "<td valign=\"top\"><span class='normal'>{$marrplace[$slot]}&nbsp;</span></td>\n</tr>\n";
             } else {
                 echo "<tr>\n";
                 showBlank($pedborder);
             }
         }
         if ($row['burialdate'] && !$row['deathdate']) {
-            echo "<tr>\n<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capburialabbr']}:</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">" . displayDate($row['burialdate']) . "&nbsp;</span></td>\n</tr>\n";
-            echo "<tr>\n<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">{$row['burialplace']}&nbsp;</span></td>\n</tr>\n</table>\n";
+            echo "<tr>\n<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capburialabbr']}:</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>" . displayDate($row['burialdate']) . "&nbsp;</span></td>\n</tr>\n";
+            echo "<tr>\n<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>{$row['burialplace']}&nbsp;</span></td>\n</tr>\n</table>\n";
         } elseif ($dataflag) {
-            echo "<tr>\n<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capdeathabbr']}:</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">" . displayDate($row['deathdate']) . "&nbsp;</span></td></tr>\n";
-            echo "<tr>\n<td valign=\"top\" $pedborder><span class=\"normal\">&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
-            echo "<td valign=\"top\"><span class=\"normal\">{$row['deathplace']}&nbsp;</span></td>\n</tr>\n</table>\n";
+            echo "<tr>\n<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capdeathabbr']}:</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>" . displayDate($row['deathdate']) . "&nbsp;</span></td></tr>\n";
+            echo "<tr>\n<td valign=\"top\" $pedborder><span class='normal'>&nbsp;{$text['capplaceabbr']}:&nbsp;</span></td>\n";
+            echo "<td valign=\"top\"><span class='normal'>{$row['deathplace']}&nbsp;</span></td>\n</tr>\n</table>\n";
         } else {
             echo "<tr>\n";
             showBlank($pedborder);

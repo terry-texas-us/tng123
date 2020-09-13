@@ -101,16 +101,16 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtleve
                       <td><input type="text" name="evtitle" width="100"></td>
                     </tr>
                   <tr>
-                    <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
+                      <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
                       <td><textarea cols="80" rows="8" name="evdetail"></textarea></td>
-                    </tr>
-                </table>
-              <br>&nbsp;
-              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
-        </td>
-    </tr>
+                  </tr>
+        </table>
+          <br>&nbsp;
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -37,7 +37,7 @@ echo "mediaID=$nextmediaID&medialinkID=$nextmedialinkID&albumlinkID=$nextalbumli
 tng_free_result($result);
 
 echo "<p class=\"adminnav topmargin\">$pagenav</p>";
-echo "<p class=\"subhead\"><strong>" . truncateIt($description, 100) . "</strong></p>\n";
+echo "<p class='subhead'><strong>" . truncateIt($description, 100) . "</strong></p>\n";
 
 if ($noneliving || $imgrow['alwayson']) {
   showMediaSource($imgrow, true);

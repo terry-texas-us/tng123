@@ -205,6 +205,6 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
     </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

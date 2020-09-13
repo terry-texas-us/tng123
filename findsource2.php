@@ -39,8 +39,8 @@ header("Content-type:text/html; charset=" . $session_charset);
         while ($row = tng_fetch_assoc($result)) {
             $fixedtitle = addslashes($row['title']);
             echo "<tr>\n";
-            echo "<td valign=\"top\" class=\"lightback\"><span class=\"normal\"><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">{$row['sourceID']}</a></span></td>\n";
-            echo "<td class=\"lightback\"><span class=\"normal\"><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">" . truncateIt($row['title'], 75) . "</a>&nbsp;</span></td>\n";
+            echo "<td valign=\"top\" class='lightback'><span class='normal'><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">{$row['sourceID']}</a></span></td>\n";
+            echo "<td class='lightback'><span class='normal'><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">" . truncateIt($row['title'], 75) . "</a>&nbsp;</span></td>\n";
             echo "</tr>\n";
         }
         tng_free_result($result);

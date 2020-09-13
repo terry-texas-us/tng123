@@ -45,7 +45,7 @@ tng_adminheader($admtext['administration'], "");
                 $result = tng_query($query);
                 echo "<form action=\"{$cms['tngpath']}switchtree.php\" target=\"_parent\" name=\"newtreeform\" style=\"display:inline-block;\">\n";
                 echo "<input type=\"hidden\" name=\"ret\" value=\"admin.php\">\n";
-                echo "<select name=\"newtree\" class=\"normal\" onChange=\"document.newtreeform.submit();\">\n";
+                  echo "<select name=\"newtree\" class='normal' onChange=\"document.newtreeform.submit();\">\n";
                 while ($row = tng_fetch_assoc($result)) {
                   echo "<option value=\"{$row['gedcom']}\"";
                   if ($assignedtree == $row['gedcom']) {
@@ -62,8 +62,8 @@ tng_adminheader($admtext['administration'], "");
               $result = @tng_query($query);
 
               if ($result && tng_num_rows($result)) {
-                echo "<form action=\"{$cms['tngpath']}admin_savelanguage.php\" method=\"GET\" target=\"_parent\" name=\"language\" style=\"display:inline-block;\">\n";
-                echo " &nbsp;<select name=\"newlanguage\" class=\"normal\" onChange=\"document.language.submit();\">\n";
+                  echo "<form action=\"{$cms['tngpath']}admin_savelanguage.php\" method=\"GET\" target=\"_parent\" name=\"language\" style=\"display:inline-block;\">\n";
+                  echo " &nbsp;<select name=\"newlanguage\" class='normal' onChange=\"document.language.submit();\">\n";
 
                 while ($row = tng_fetch_assoc($result)) {
                   echo "<option value=\"{$row['languageID']}\"";

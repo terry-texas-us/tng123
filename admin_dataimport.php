@@ -234,6 +234,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
 } ?>0" width="<?php if ($debug) {
     echo "40";
 } ?>0" frameborder="0" name="results" onload="iframeLoaded();"/>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

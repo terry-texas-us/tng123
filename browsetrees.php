@@ -16,7 +16,7 @@ function doTreeSearch($instance, $pagenav) {
 
     $browsetrees_noargs_url = getURL("browsetrees", 0);
 
-    $str = "<span class=\"normal\">\n";
+    $str = "<span class='normal'>\n";
     $str .= getFORM("browsetrees", "GET", "TreeSearch$instance", "");
     $str .= "<input type=\"text\" name=\"treesearch\" value=\"$treesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
@@ -77,11 +77,11 @@ if ($totrows > 1) {
 }
 ?>
 
-<h1 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h1><br clear="left">
+<h2 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2><br clear="left">
 
 <?php
 if ($totrows) {
-    echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
+    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browsetrees_url . "treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);

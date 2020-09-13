@@ -16,17 +16,17 @@ preparebookmark($logstring);
 tng_header($text['reports'], $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo $text['reports']; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo $text['reports']; ?></h2><br clear="left">
 <?php
 if (!$numrows) {
-  echo $text['noreports'];
+    echo $text['noreports'];
 } else {
-  $header = "";
-  $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-  $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
+    $header = "";
+    $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
+    $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
-  if ($sitever != "standard") {
-    if ($tabletype == "toggle") {
+    if ($sitever != "standard") {
+        if ($tabletype == "toggle") {
       $tabletype = "columntoggle";
     }
     $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
@@ -45,7 +45,7 @@ if (!$numrows) {
   <?php
   $count = 1;
   while ($row = tng_fetch_assoc($result)) {
-    echo "<tr><td class=\"databack\"><span class=\"normal\">$count.</span></td><td class=\"databack\"><span class=\"normal\">&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td><td class=\"databack\"><span class=\"normal\">{$row['reportdesc']}&nbsp;</span></td></tr>\n";
+      echo "<tr><td class=\"databack\"><span class='normal'>$count.</span></td><td class=\"databack\"><span class='normal'>&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td><td class=\"databack\"><span class='normal'>{$row['reportdesc']}&nbsp;</span></td></tr>\n";
     $count++;
   }
   tng_free_result($result);

@@ -472,16 +472,16 @@ echo "</select>\n";
               <input type="hidden" name="newuser" value="<?php echo "$newuser"; ?>">
               <input type="hidden" name="orgpwd" value="<?php echo $row['password']; ?>">
               <input type="submit" name="submit" class="btn" value="<?php echo $admtext['savechanges']; ?>"></form>
-          <p style="font-size: 8pt;">
+        <p style="font-size: 8pt;">
             <?php
             echo "*{$admtext['treemsg']}<br>\n";
             echo "**{$admtext['branchmsg']}<br>\n";
             ?>
-          </p>
-        </td>
-    </tr>
+        </p>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

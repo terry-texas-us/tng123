@@ -144,15 +144,15 @@ writelog($logstring);
 preparebookmark($logstring);
 
 if ($map['key'] && $isConnected) {
-  $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
-    if ($location) {
-      echo " {$text['in']} $location";
-    } ?></h1><br clear="all">
+    <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
+        if ($location) {
+            echo " {$text['in']} $location";
+        } ?></h2><br clear="all">
 <?php
 $hiddenfields[] = ['name' => 'country', 'value' => $country];
 $hiddenfields[] = ['name' => 'state', 'value' => $state];
@@ -160,8 +160,8 @@ $hiddenfields[] = ['name' => 'county', 'value' => $county];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'headstones', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
 if ($tree) {
-  $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
-  $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+    $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
+    $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
 } else {
   $wherestr = $wherestr2 = "";
 }
@@ -201,7 +201,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $totrows = $numrows;
   }
 
-  $body .= "<div><p class=\"subhead\"><strong>\n";
+    $body .= "<div><p class='subhead'><strong>\n";
   if ($cemetery['cemname'] == $text['nocemetery']) {
     $location = $cemetery['cemname'];
   } else {
@@ -344,28 +344,28 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if ($imgsrc) {
       $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $body .= "<a href=\"$href\"";
-      if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
-        $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
-      }
-      $body .= ">$imgsrc</a>\n";
+        if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
+            $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
+        }
+        $body .= ">$imgsrc</a>\n";
     } else {
-      $body .= "&nbsp;";
+        $body .= "&nbsp;";
     }
 
-    $body .= "</td>\n";
+      $body .= "</td>\n";
 
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\"><a href=\"$href\">{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">{$hs['status']}&nbsp;</span></td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">" . nl2br($hs['plot']);
-    if ($hs['latitude'] || $hs['longitude']) {
-      if ($hs['plot']) {
-        $body .= "<br>";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>" . nl2br($hs['plot']);
+      if ($hs['latitude'] || $hs['longitude']) {
+          if ($hs['plot']) {
+              $body .= "<br>";
+          }
+          $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
       }
-      $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
-    }
-    $body .= "&nbsp;</span></td>\n";
-    $body .= "<td valign=\"top\" class=\"databack\"><span class=\"normal\">$hslinktext&nbsp;</span></td>\n";
-    $body .= "</tr>\n";
+      $body .= "&nbsp;</span></td>\n";
+      $body .= "<td valign=\"top\" class=\"databack\"><span class='normal'>$hslinktext&nbsp;</span></td>\n";
+      $body .= "</tr>\n";
   }
   $cemcount++;
   $body .= "</table>\n";

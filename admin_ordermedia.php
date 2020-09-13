@@ -199,7 +199,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
 
-                        echo "<td class=\"lightback\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
+                        echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
                         if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                             $size = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);
                             echo "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\"><img src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" $size[3] alt=\"{$row['description']}\"></a>";
@@ -208,16 +208,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         }
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
-                        echo "<td class=\"lightback normal\"><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated<br>\n";
+                        echo "<td class='lightback normal'><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated<br>\n";
                         echo "<span id=\"md_{$row['medialinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">\n";
                         echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$row['mediaID']}\"$checked onclick=\"makeDefault(this);\">{$admtext['makedefault']}\n";
                         echo " &nbsp;|&nbsp; ";
                         echo "<a href=\"#\" onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";
                         echo "</span>&nbsp;</td>\n";
-                        echo "<td class=\"lightback normal\" style=\"width:45px;text-align:center;vertical-align:top;\">";
+                        echo "<td class='lightback normal' style=\"width:45px;text-align:center;vertical-align:top;\">";
                         $checked = $row['dontshow'] ? "" : " checked=\"checked\"";
                         echo "<input type=\"checkbox\" name=\"show{$row['medialinkID']}\" onclick=\"toggleShow(this);\" value=\"1\"$checked>&nbsp;</td>\n";
-                        echo "<td class=\"lightback normal\" style=\"width:150px;\">{$row['datetaken']}&nbsp;</td>\n";
+                        echo "<td class='lightback normal' style=\"width:150px;\">{$row['datetaken']}&nbsp;</td>\n";
                         echo "</tr></table>";
                         echo "</div>\n";
                         $count++;
@@ -231,6 +231,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

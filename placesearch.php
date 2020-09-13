@@ -184,7 +184,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
         if ($numrows) {
             echo "<br>\n";
             echo "<div class=\"titlebox\">\n";
-            echo "<span class=\"subhead\"><strong>" . $placetxt . "</strong></span>\n";
+            echo "<span class='subhead'><strong>" . $placetxt . "</strong></span>\n";
             echo "<br>\n";
             $numrowsplus = $numrows + $offset;
             $successcount++;
@@ -223,9 +223,9 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         $dateval = $placetxt = "";
                     }
                     echo "<tr>";
-                    echo "<td class='databack'><span class=\"normal\">$i</span></td>\n";
+                    echo "<td class='databack'><span class='normal'>$i</span></td>\n";
                     $i++;
-                    echo "<td class='databack'><span class=\"normal\">";
+                    echo "<td class='databack'><span class='normal'>";
                     if ($prefix == "F") {
                         echo "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\">{$row['p1lastname']} / {$row['p2lastname']}</a>";
                     } elseif ($prefix == "I") {
@@ -233,11 +233,11 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         echo "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
                     }
                     echo "&nbsp;</span></td>";
-                    echo "<td class='databack'><span class=\"normal\">&nbsp;" . displayDate($dateval) . "</span></td>";
-                    echo "<td class='databack'><span class=\"normal\">$placetxt&nbsp;</span></td>";
-                    echo "<td class='databack'><span class=\"normal\">{$row[$idfield]} </span></td>";
+                    echo "<td class='databack'><span class='normal'>&nbsp;" . displayDate($dateval) . "</span></td>";
+                    echo "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
+                    echo "<td class='databack'><span class='normal'>{$row[$idfield]} </span></td>";
                     if ($numtrees > 1) {
-                        echo "<td class='databack'><span class=\"normal\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+                        echo "<td class='databack'><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
                     }
                     echo "</tr>\n";
                 }
@@ -351,7 +351,7 @@ while ($prow = tng_fetch_assoc($presult)) {
                 }
             }
 
-            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class=\"normal\"><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
+            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class='normal'><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
             $map['pins']++;
         } elseif ($prow['latitude'] || $prow['longitude']) {
             echo "<span><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
@@ -368,7 +368,7 @@ $placealbums = getAlbums($psearch, "L");
 $media = doMediaSection($psearch, $placemedia, $placealbums);
 if ($media) {
     echo "<br>\n<div class=\"titlebox\">\n";
-    echo "<span class=\"subhead\"><strong>{$text['media']}</strong></span><br><br>";
+    echo "<span class='subhead'><strong>{$text['media']}</strong></span><br><br>";
     echo "$media\n";
     echo "</div>\n";
 }
@@ -408,7 +408,7 @@ while ($prow = tng_fetch_assoc($presult)) {
 
 if ($cemdata) {
     echo "<br>\n<div class=\"titlebox\">\n";
-    echo "<span class=\"subhead\"><strong>{$text['cemeteries']}</strong></span><br><br>";
+    echo "<span class='subhead'><strong>{$text['cemeteries']}</strong></span><br><br>";
     echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n";
     echo "<tr>\n";
     echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;</span></td>\n";

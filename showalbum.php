@@ -204,9 +204,9 @@ tng_header($text['albums'] . ": $albumname", $flags);
 
 $imgsrc = getAlbumPhoto($albumID, $albumname);
 if (!$imgsrc) {
-  ?>
-  <h1 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $albumname; ?><br><span class="normal"><?php echo $description; ?></span></h1><br clear="left">
-  <?php
+    ?>
+    <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $albumname; ?><br><span class="normal"><?php echo $description; ?></span></h2><br clear="left">
+    <?php
 } else {
   echo tng_DrawHeading($imgsrc, $albumname, $description);
 }
@@ -214,7 +214,7 @@ if (!$imgsrc) {
 $hiddenfields[0] = array('name' => 'albumID', 'value' => $albumID);
 echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'showalbum', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
 
-$toplinks = "<p class=\"normal\">";
+$toplinks = "<p class='normal'>";
 $toplinks .= $totrows ? "{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp;&nbsp; " : "";
 $toplinks .= $gallerymsg;
 $toplinks .= $allow_admin && $allow_edit ? "<a href=\"{$cms['tngpath']}" . "admin_editalbum.php?albumID=$albumID&amp;cw=1\" target=\"_blank\" class=\"snlink\">&raquo; {$text['editalbum']}</a> " : "";
@@ -390,7 +390,7 @@ while ($row = tng_fetch_assoc($result)) {
       $i++;
     }
   } else {
-    $mediatext .= "<tr><td valign=\"top\" class=\"databack\"><span class=\"normal\">$i</span></td>";
+      $mediatext .= "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>";
     if ($imgsrc) {
       $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">";
       $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
@@ -410,8 +410,8 @@ while ($row = tng_fetch_assoc($result)) {
       $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
     }
 
-    $mediatext .= "<span class=\"normal\">$description<br>$notes&nbsp;</span></td>";
-    $mediatext .= "<td valign=\"top\" class=\"databack\">\n";
+      $mediatext .= "<span class='normal'>$description<br>$notes&nbsp;</span></td>";
+      $mediatext .= "<td valign=\"top\" class=\"databack\">\n";
     $mediatext .= $medialinktext;
     $mediatext .= "&nbsp;</td></tr>\n";
     $i++;

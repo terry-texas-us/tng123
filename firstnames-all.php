@@ -15,7 +15,7 @@ preparebookmark($logstring);
 tng_header("{$text['firstnamelist']} - {$text['allfirstnames']}", $flags);
 ?>
     <a id="top"></a>
-    <h1 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist']; ?></h1><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist']; ?></h2><br class="clearleft">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnames-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 

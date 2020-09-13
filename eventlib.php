@@ -12,7 +12,7 @@ function showCustEvents($id) {
     $evresult = tng_query($query);
     $eventcount = tng_num_rows($evresult);
 
-    echo "<table id=\"custeventstbl\" class=\"normal\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\"";
+    echo "<table id=\"custeventstbl\" class='normal' cellpadding=\"3\" cellspacing=\"1\" border=\"0\"";
     if (!$eventcount) {
         echo " style=\"display:none;\"";
     }
@@ -45,10 +45,10 @@ function showCustEvents($id) {
             }
             echo "<tr id=\"row_{$event['eventID']}\">\n";
             echo "<td class=\"lightback nw\">$actionstr</td>\n";
-            echo "<td class=\"lightback\">$displayval</td>\n";
-            echo "<td class=\"lightback\">{$event['eventdate']}</td>\n";
-            echo "<td class=\"lightback\">{$event['eventplace']}</td>\n";
-            echo "<td class=\"lightback\">$info</td>\n";
+            echo "<td class='lightback'>$displayval</td>\n";
+            echo "<td class='lightback'>{$event['eventdate']}</td>\n";
+            echo "<td class='lightback'>{$event['eventplace']}</td>\n";
+            echo "<td class='lightback'>$info</td>\n";
             echo "</tr>\n";
         }
         tng_free_result($evresult);

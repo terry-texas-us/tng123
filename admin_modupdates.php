@@ -89,13 +89,13 @@ echo "
 	<h4>{$admtext['updcusttext']}</h4>";
 
 echo "
-		<table class=\"normal\">
+		<table class='normal'>
 		    <tr>
                   <td>
-                     <p class=\"normal\">{$admtext['custtextfixes']}</p>
-                     <p class=\"normal\">{$admtext['reasontoupdate']}</p>
-                     <p class=\"normal\">{$admtext['newanchor']}</p>
-                     <p class=\"normal\">{$admtext['translateissue']}</p>
+                     <p class='normal'>{$admtext['custtextfixes']}</p>
+                     <p class='normal'>{$admtext['reasontoupdate']}</p>
+                     <p class='normal'>{$admtext['newanchor']}</p>
+                     <p class='normal'>{$admtext['translateissue']}</p>
                   </td>
                </tr>
 		         <tr>
@@ -108,27 +108,7 @@ echo "
          </td>
       </tr>
       </table>";
-/*
-echo "
-		<table class=\"normal\">
-		    <tr>
-                  <td>
-                     <span class=\"normal\">{$admtext['custtextfixes']}</span>
-                  </td>
-               </tr>
-		         <tr>
-                  <td>
-                     <input class=\"button space\" type=\"submit\" style=\"color:green;font-weight:bold\" value=\"{$admtext['updcusttext']}\" onclick=\"window.open('admin_cust_text_update.php','_blank')\" >
-                  </td>
-               </tr>
-			</table>
-      </table>
-	</form>";
-*/
-echo "
-<div align=\"right\">
-   <span class=\"normal\">$tng_title, v.$tng_version</span>
-</div>";
+echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
 
 /*************************************************************************
  * FUNCTIONS

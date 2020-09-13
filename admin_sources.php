@@ -242,17 +242,17 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                             $editlink = "admin_editsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['sourceID'] . "</a>" : $row['sourceID'];
 
-                            echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
-                            echo "<td class=\"lightback\">&nbsp;$id&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">$title&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
+                            echo "<td class='lightback'>$title&nbsp;</td>\n";
                             if ($numtrees > 1) {
                                 echo "<td class=\"lightback nw\">&nbsp;{$row['treename']}&nbsp;</td>\n";
                             }
                             if ($numusers > 1) {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
                             }
                             echo "</tr>\n";
                         }
@@ -274,6 +274,6 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
     </tr>
 </table>
 </div>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

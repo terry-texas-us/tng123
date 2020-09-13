@@ -417,18 +417,18 @@ if ($set == "all") {
     setPersonLabel($personID);
     setFamilyLabel($personID, $gender);
     if ($dospouses) {
-      setSpousesLabel($personID, $gender);
+        setSpousesLabel($personID, $gender);
     }
   }
-  if ($dagens > $dgens) {
-    $dgens = $dagens;
-  }
-  if ($dgens > 0) {
-    doDescendants($personID, $gender, 1, $dgens);
-  }
+    if ($dagens > $dgens) {
+        $dgens = $dagens;
+    }
+    if ($dgens > 0) {
+        doDescendants($personID, $gender, 1, $dgens);
+    }
 }
-echo "<p class=\"normal\">{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</p>\n";
-echo "<p class=\"normal\">$names</p>\n";
-echo "<p class=\"normal\">$famnames</p>\n";
+echo "<p class='normal'>{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</p>\n";
+echo "<p class='normal'>$names</p>\n";
+echo "<p class='normal'>$famnames</p>\n";
 
 adminwritelog($admtext['labelbranches'] . ": $tree/$branch ($branchaction/$set)");

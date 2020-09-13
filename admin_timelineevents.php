@@ -128,14 +128,14 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
 
                         while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['tleventID'], $actionstr);
-                            echo "<tr id=\"row_{$row['tleventID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['tleventID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['tleventID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['tleventID']}\" value=\"1\"></td>";
                             }
-                            echo "<td class=\"lightback\" align=\"center\">{$row['evyear']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" align=\"center\">{$row['endyear']}&nbsp;</td>";
-                            echo "<td class=\"lightback\" valign=\"top\">{$row['evtitle']}&nbsp;</td>";
-                            echo "<td class=\"lightback\" valign=\"top\">{$row['evdetail']}&nbsp;</td></tr>\n";
+                            echo "<td class='lightback' align=\"center\">{$row['evyear']}&nbsp;</td>\n";
+                            echo "<td class='lightback' align=\"center\">{$row['endyear']}&nbsp;</td>";
+                            echo "<td class='lightback' valign=\"top\">{$row['evtitle']}&nbsp;</td>";
+                            echo "<td class='lightback' valign=\"top\">{$row['evdetail']}&nbsp;</td></tr>\n";
                         }
                         ?>
                     </table>
@@ -154,6 +154,6 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

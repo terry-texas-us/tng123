@@ -117,10 +117,10 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                         }
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['languageID'], $actionstr);
-                            echo "<tr id=\"row_{$row['languageID']}\"><td class=\"lightback\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
-                            echo "<td class=\"lightback\">{$row['display']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">{$row['folder']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">{$row['charset']}&nbsp;</td></tr>\n";
+                            echo "<tr id=\"row_{$row['languageID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<td class='lightback'>{$row['display']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>{$row['folder']}&nbsp;</td>\n";
+                            echo "<td class='lightback'>{$row['charset']}&nbsp;</td></tr>\n";
                         }
                     }
                     ?>
@@ -140,6 +140,6 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

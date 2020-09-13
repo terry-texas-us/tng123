@@ -38,7 +38,7 @@ function redisplay(key) {\n
 tng_header($text['calendar'], $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="calendar-hdr-icon"></span><?php echo $text['calendar']; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="calendar-hdr-icon"></span><?php echo $text['calendar']; ?></h2><br clear="left">
 
 <?php
 include_once $cms['tngpath'] . "calsettings.php";

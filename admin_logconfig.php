@@ -81,15 +81,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     <td valign="top"><span class="normal"><?php echo $admtext['msgcontains']; ?>*:</span></td>
                     <td><input type="text" value="<?php echo $msg_exclude; ?>" name="msg_exclude" size="80"></td>
                   </tr>
-                </table>
-              <br>&nbsp;
-              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-            </form>
-            <p><span class="normal">*<?php echo $admtext['commas']; ?></span></p>
-        </td>
-    </tr>
+        </table>
+          <br>&nbsp;
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+      </form>
+        <p><span class="normal">*<?php echo $admtext['commas']; ?></span></p>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

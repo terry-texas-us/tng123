@@ -111,28 +111,28 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
   }
   $password_type = PasswordType();
   $template = "sssssssssssssssssss";
-  $query = "INSERT INTO $users_table (description,username,password,password_type,realname,phone,email,website,address,city,state,zip,country,languageID,notes,gedcom,role,allow_living,dt_registered,dt_consented) 
+    $query = "INSERT INTO $users_table (description,username,password,password_type,realname,phone,email,website,address,city,state,zip,country,languageID,notes,gedcom,role,allow_living,dt_registered,dt_consented) 
 		VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'guest',?,?,?)";
-  $params = array(&$template, &$realname, &$username, &$password, &$password_type, &$realname, &$phone, &$email, &$website, &$address, &$city, &$state, &$zip, &$country, &$preflang, &$notes, &$gedcom, &$allow_living_val, &$today, &$dt_consented);
-  $success = tng_execute_noerror($query, $params);
+    $params = array(&$template, &$realname, &$username, &$password, &$password_type, &$realname, &$phone, &$email, &$website, &$address, &$city, &$state, &$zip, &$country, &$preflang, &$notes, &$gedcom, &$allow_living_val, &$today, &$dt_consented);
+    $success = tng_execute_noerror($query, $params);
 } else {
-  $success = 0;
+    $success = 0;
 }
 
 tng_header($text['regnewacct'], $flags);
 
-echo "<p class=\"header\">{$text['regnewacct']}</span></p><br>\n";
-echo "<span class=\"normal\">\n";
+echo "<p class='header'>{$text['regnewacct']}</span></p><br>\n";
+echo "<span class='normal'>\n";
 if ($success > 0) {
-  echo "<p>{$text['success']}</p>";
-  if ($emailaddr) {
-    $emailtouse = $tngconfig['fromadmin'] == 1 ? $emailaddr : $email;
-    $message = "{$deftext['name']}: $realname\n{$deftext['username']}: $username\n\n{$deftext['emailmsg']} $moreinfo\n\n{$text['administration']}: $tngdomain/admin.php";
-    $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
-    tng_sendmail($owner, $emailtouse, $dbowner, $emailaddr, $deftext['emailsubject'], $message, $emailaddr, $email);
+    echo "<p>{$text['success']}</p>";
+    if ($emailaddr) {
+        $emailtouse = $tngconfig['fromadmin'] == 1 ? $emailaddr : $email;
+        $message = "{$deftext['name']}: $realname\n{$deftext['username']}: $username\n\n{$deftext['emailmsg']} $moreinfo\n\n{$text['administration']}: $tngdomain/admin.php";
+        $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
+        tng_sendmail($owner, $emailtouse, $dbowner, $emailaddr, $deftext['emailsubject'], $message, $emailaddr, $email);
 
-    $welcome = "";
-    if ($tngconfig['autoapp']) {
+        $welcome = "";
+        if ($tngconfig['autoapp']) {
       // send email to user saying they're ready to go
       // include password if that feature not turned off
       $welcome = $admtext['hello'] . " $realname,\r\n\r\n{$admtext['activated']}";

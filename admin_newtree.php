@@ -22,7 +22,7 @@ $helplang = findhelp("trees_help.php");
 if ($beforeimport == "yes") { // ajax html excludes html and body tags
     header("Content-type:text/html; charset=" . $session_charset);
     echo "<div class=\"databack ajaxwindow\" id=\"newtree\">\n";
-    echo "<p class=\"subhead\"><strong>{$admtext['addnewtree']}</strong> |\n";
+    echo "<p class='subhead'><strong>{$admtext['addnewtree']}</strong> |\n";
     echo "<a href=\"#\" onclick=\"return openHelp('{$helplang}/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['help']}></a></p>";
 } else {
     $flags['tabs'] = $tngconfig['tabs'];
@@ -38,7 +38,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
 }
 ?>
 
-    <table cellpadding="10" cellspacing="2" <?php echo !$beforeimport ? " width=\"100%\" class=\"lightback\"" : "" ?>>
+    <table cellpadding="10" cellspacing="2" <?php echo !$beforeimport ? " width=\"100%\" class='lightback'" : "" ?>>
         <tr class="databack">
             <td<?php echo !$beforeimport ? " class=\"tngshadow\"" : "" ?>>
                 <form action="admin_addtree.php" method="post" name="treeform"
@@ -115,7 +115,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
 <?php if ($beforeimport) {
     echo "</div>\n";
 } else {
-    echo "<div align=\"right\"><span class=\"normal\">{$tng_title}, v . {$tng_version}</span></div>\n";
+    echo "<div align=\"right\"><span class='normal'>{$tng_title}, v . {$tng_version}</span></div>\n";
     ?>
     <script type="text/javascript">
         function validateTreeForm(form) {

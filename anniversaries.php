@@ -89,7 +89,7 @@ if ($sitever != "mobile") {
 
         //]]>
     </script>
-    <h1 class="header"><span class="headericon" id="dates-hdr-icon"></span><?php echo $text['anniversaries']; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="dates-hdr-icon"></span><?php echo $text['anniversaries']; ?></h2><br clear="left">
 <?php
 $js = "\" onsubmit=\"return validateForm(this);";
 echo getFORM("anniversaries2", "get", "form1", "form1$js");
@@ -453,7 +453,7 @@ if ($tngneedresults) {
 
         if ($numrows) {
             echo "<div class=\"titlebox\">\n";
-            echo "<span class=\"subhead\"><strong>$datetxt</strong></span>";
+            echo "<span class='subhead'><strong>$datetxt</strong></span>";
             $numrowsplus = $numrows + $offset;
             $successcount++;
 

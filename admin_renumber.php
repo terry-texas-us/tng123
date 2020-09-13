@@ -231,9 +231,9 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
       }
       tng_free_result($result);
 
-      echo "<p class=\"normal\">{$admtext['finreseq']}: $count {$admtext['recsreseq']}</p>\n";
+      echo "<p class='normal'>{$admtext['finreseq']}: $count {$admtext['recsreseq']}</p>\n";
       echo "</div></div>\n";
-      echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>";
+      echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
       ?>
 </body>
 </html>

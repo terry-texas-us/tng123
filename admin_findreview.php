@@ -293,12 +293,12 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             $persfamID = $row['familyID'];
                         }
                         $newactionstr = preg_replace("/xxx/", $row['tempID'], $actionstr);
-                        echo "<tr id=\"row_{$row['tempID']}\"><td class=\"lightback\" valign=\"top\"><span class=\"normal\">{$newactionstr}</span></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;$persfamID&nbsp;</span></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;$name&nbsp;</span></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;$displayval&nbsp;</span></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;{$row['postdate']}&nbsp;</span></td>\n";
-                        echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\">&nbsp;{$row['treename']}&nbsp;</span></td></tr>\n";
+                        echo "<tr id=\"row_{$row['tempID']}\"><td class='lightback' valign=\"top\"><span class='normal'>{$newactionstr}</span></td>\n";
+                        echo "<td class='lightback' valign=\"top\"><span class='normal'>&nbsp;$persfamID&nbsp;</span></td>\n";
+                        echo "<td class='lightback' valign=\"top\"><span class='normal'>&nbsp;$name&nbsp;</span></td>\n";
+                        echo "<td class='lightback' valign=\"top\"><span class='normal'>&nbsp;$displayval&nbsp;</span></td>\n";
+                        echo "<td class='lightback' valign=\"top\"><span class='normal'>&nbsp;{$row['postdate']}&nbsp;</span></td>\n";
+                        echo "<td class='lightback' valign=\"top\"><span class='normal'>&nbsp;{$row['treename']}&nbsp;</span></td></tr>\n";
                     }
                     tng_free_result($result);
 
@@ -314,6 +314,6 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 
 </table>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

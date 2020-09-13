@@ -198,16 +198,16 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
             }
             ?>
           </p>
-          <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-          <input type="hidden" name="sourceID" value="<?php echo "$sourceID"; ?>">
-          <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                <input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
-            </td>
-        </tr>
+            <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+            <input type="hidden" name="sourceID" value="<?php echo "$sourceID"; ?>">
+            <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+            <input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
+        </td>
+      </tr>
 
-    </table>
+  </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

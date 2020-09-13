@@ -24,23 +24,23 @@ $showlog_url = getURL("showlog", 1);
 $logxml_url = getURL("ajx_logxml", 0);
 
 if (isset($autorefresh)) {
-  $flags['scripting'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/net.js\"></script>\n";
+    $flags['scripting'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/net.js\"></script>\n";
 }
 $owner = $sitename ? $sitename : $dbowner;
 tng_header("$loglines {$text['mostrecentactions']}", $flags);
 ?>
 
-  <h1 class="header"><?php echo "$loglines {$text['mostrecentactions']}"; ?></h1><br clear="all">
+    <h2 class="header"><?php echo "$loglines {$text['mostrecentactions']}"; ?></h2><br clear="all">
 <?php
 if (isset($autorefresh)) {
-  echo "<p class=\"normal\"><a href=\"$showlog_url" . "autorefresh=0\">{$text['refreshoff']}</a></p>\n";
+    echo "<p class='normal'><a href=\"$showlog_url" . "autorefresh=0\">{$text['refreshoff']}</a></p>\n";
 } else {
-  echo "<p class=\"normal\"><a href=\"$showlog_url" . "autorefresh=1\">{$text['autorefresh']}</a></p>\n";
+    echo "<p class='normal'><a href=\"$showlog_url" . "autorefresh=1\">{$text['autorefresh']}</a></p>\n";
 }
 ?>
 
-  <div align="left" class="normal" id="content">
-    <?php
+    <div align="left" class="normal" id="content">
+        <?php
       if (empty($autorefresh)) {
         $lines = file($logfile);
         foreach ($lines as $line) {

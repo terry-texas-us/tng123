@@ -140,10 +140,10 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);
                         echo "<tr id=\"row_{$row['albumID']}\">\n";
-                        echo "<td class=\"lightback\" valign=\"top\">\n";
+                        echo "<td class='lightback' valign=\"top\">\n";
                         echo "<div class=\"action-btns\">$newactionstr</div>\n";
                         echo "</td>\n";
-                        echo "<td class=\"lightback normal\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;vertical-align:top\">";
+                        echo "<td class='lightback normal' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;vertical-align:top\">";
 
                         $query2 = "SELECT thumbpath, usecollfolder, mediatypeID ";
                         $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
@@ -174,10 +174,10 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $editlink = "admin_editalbum.php?albumID={$row['albumID']}";
                         $albumname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['albumname'] . "</a>" : "<u>" . $row['albumname'] . "</u>";
 
-                        echo "<td class=\"lightback normal\" valign=\"top\">$albumname<br>" . strip_tags($row['description']) . "</td>\n";
-                        echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$acount</td>\n";
+                        echo "<td class='lightback normal' valign=\"top\">$albumname<br>" . strip_tags($row['description']) . "</td>\n";
+                        echo "<td class='lightback normal' valign=\"top\" align=\"center\">$acount</td>\n";
                         $active = $row['active'] ? $admtext['yes'] : $admtext['no'];
-                        echo "<td class=\"lightback normal\" valign=\"top\" align=\"center\">$active</td>\n";
+                        echo "<td class='lightback normal' valign=\"top\" align=\"center\">$active</td>\n";
 
                         $query = "SELECT people.personID AS personID2, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.entityID AS personID, sources.title, sources.sourceID, repositories.repoID, reponame ";
                         $query .= "FROM $album2entities_table album2entities ";
@@ -213,7 +213,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                         }
                         $alinktext = $alinktext ? "<ul>\n$alinktext\n</ul>\n" : "&nbsp;";
-                        echo "<td class=\"lightback normal\" valign=\"top\">$alinktext</td>\n";
+                        echo "<td class='lightback normal' valign=\"top\">$alinktext</td>\n";
                         echo "</tr>\n";
                     }
                     ?>
@@ -233,6 +233,6 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

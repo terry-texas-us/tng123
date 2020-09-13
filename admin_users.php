@@ -189,16 +189,16 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $form_allow_pdf = $row['allow_pdf'] ? $admtext['yes'] : "";
                             $form_disabled = $row['disabled'] ? $admtext['yes'] : "";
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
-                            echo "<tr id=\"row_{$row['userID']}\"><td class=\"lightback\" valign=\"top\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value=\"1\"></td>";
                             }
                             $editlink = "admin_edituser.php?userID={$row['userID']}";
                             $username = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['username'] . "</a>" : $row['username'];
 
-                            echo "<td class=\"lightback\" valign=\"top\" nowrap>&nbsp;$username&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" valign=\"top\">&nbsp;{$row['description']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" valign=\"top\">&nbsp;" . $row['realname'];
+                            echo "<td class='lightback' valign=\"top\" nowrap>&nbsp;$username&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\">&nbsp;{$row['description']}&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\">&nbsp;" . $row['realname'];
                             if ($row['realname'] && $row['email']) {
                                 echo "<br>&nbsp;";
                             }
@@ -235,6 +235,6 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

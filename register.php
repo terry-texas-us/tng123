@@ -112,7 +112,7 @@ echo "</form>\n";
         <div class="float-right"><?php echo $detail_link; ?></div>
         <?php
         while (count($currgen) && $generation <= $generations) {
-            echo "<span class=\"subhead\"><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
+            echo "<span class='subhead'><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
             echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
             while ($row = array_shift($currgen)) {
                 echo "<li>";

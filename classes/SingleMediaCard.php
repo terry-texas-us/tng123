@@ -41,7 +41,7 @@ class SingleMediaCard
     $mediaresult = tng_query($query);
 
     $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-    $header = "<div class=\"titlebox tablediv\"><span class=\"subhead\"><b>$titlemsg</b></span><br><br><div>\n";
+      $header = "<div class=\"titlebox tablediv\"><span class='subhead'><b>$titlemsg</b></span><br><br><div>\n";
 
     $content = "";
     $thumbcount = 0;

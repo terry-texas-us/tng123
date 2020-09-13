@@ -40,7 +40,7 @@ function doTestSearch($instance, $pagenav) {
 
     $browse_dna_tests_noargs_url = getURL("browse_dna_tests", 0);
 
-    $str = "<span class=\"normal\">\n";
+    $str = "<span class='normal'>\n";
     $str .= getFORM("browse_dna_tests", "get", "TestSearch$instance", "");
     $str .= "<input type=\"text\" name=\"testsearch\" value=\"$testsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
@@ -163,9 +163,9 @@ preparebookmark($logstring);
 tng_header($admtext['dna_tests'], $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $test_hdr; ?></h1><br clear="left">
+<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $test_hdr; ?></h2><br clear="left">
 <?php
-echo "<div class=\"normal\">\n";
+echo "<div class='normal'>\n";
 ?>
 
 <form action="browse_dna_tests.php" method="post" name="form1" id="form1">
@@ -180,7 +180,7 @@ echo "<div class=\"normal\">\n";
                     $numtrees = tng_num_rows($treeresult);
                     if ($numtrees > 1) {
                         $ret = "";
-                        $ret .= "<span class=\"normal\">{$text['tree']}: </span>";
+                        $ret .= "<span class='normal'>{$text['tree']}: </span>";
                         $ret .= "<select name=\"tree\" id=\"treeselect\" onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                         $ret .= "<option value=\"-x--all--x-\" ";
                         if (!$tree) {
@@ -241,7 +241,7 @@ $_SESSION["tgroup"] = $test_group;
 $_SESSION["tsearch"] = $testsearch;
 
 if ($totrows) {
-    echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
+    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browse_dna_tests_url . "testsearch=$testsearch&amp;offset", $maxsearchresults, $max_browse_test_pages);

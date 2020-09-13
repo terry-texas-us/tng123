@@ -231,23 +231,23 @@ $numrows = tng_num_rows($result);
 //we'll then construct a large JS object to feed into the code below
 
 if ($map['key'] && $isConnected) {
-  $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
+    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
 }
 
 tng_header($headline, $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h2><br clear="left">
 <?php
 $logstring = "<a href=\"" . $_SERVER['REQUEST_URI'] . "\">" . xmlcharacters($headline . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<p class=\"normal\">{$text['places']} $querystring (" . number_format($numrows) . ")</p>";
+echo "<p class='normal'>{$text['places']} $querystring (" . number_format($numrows) . ")</p>";
 
 $uniquePlaces = [];
 while ($row = tng_fetch_assoc($result)) {
-  $key = $row['latitude'] . "_" . $row['longitude'];
+    $key = $row['latitude'] . "_" . $row['longitude'];
   if (!isset($uniquePlaces[$key])) {
     $item = new stdClass();
     $item->latitude = $row['latitude'];

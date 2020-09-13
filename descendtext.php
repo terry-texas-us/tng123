@@ -82,7 +82,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                 $divname = "fc$divctr";
                 $divctr++;
                 $rval .= str_repeat("  ", ($level - 1) * 8 - 4) . "<li><img src='{$cms['tngpath']}" . "img/$excolimg.gif' width='9' height='9' hspace='0' vspace='0' border='0' title='$imgtitle' id='plusminus$divname' onclick=\"return toggleDescSection('$divname');\" class=\"fakelink\" alt=\"\"> $spousestr";
-                $rval .= str_repeat("  ", ($level - 1) * 8 - 2) . "<ul id=\"$divname\" class=\"normal\" style=\"display:$display;\">\n";
+                $rval .= str_repeat("  ", ($level - 1) * 8 - 2) . "<ul id=\"$divname\" class='normal' style=\"display:$display;\">\n";
 
                 while ($crow = tng_fetch_assoc($result2)) {
                     $childcounter++;
@@ -97,7 +97,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                     if ($level < $generations) {
                         $ind = getIndividual($crow['personID'], $crow['sex'], $level + 1, $newtrail, $newdab);
                         if ($ind) {
-                            $rval .= str_repeat("  ", ($level - 1) * 8 + 2) . "<ul class=\"normal\">\n$ind";
+                            $rval .= str_repeat("  ", ($level - 1) * 8 + 2) . "<ul class='normal'>\n$ind";
                             $rval .= str_repeat("  ", ($level - 1) * 8 + 2) . "</ul>\n";
                         }
                     } else {
@@ -289,7 +289,7 @@ echo "</form>\n";
             if ($generations > 1) {
                 $ind = getIndividual($key, $row['sex'], $level + 1, $personID, "1");
                 if ($ind) {
-                    echo "<ul class=\"normal\">$ind\n";
+                    echo "<ul class='normal'>$ind\n";
                     echo "</ul>\n";
                 }
             }

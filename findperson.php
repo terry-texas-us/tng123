@@ -91,17 +91,20 @@ header("Content-type:text/html; charset=" . $session_charset);
         } elseif ($textchange) {
           $birthdatestr = displayDate($birthdate);
           $namestr = addslashes(preg_replace('/\"/', "&#34;", getName($row) . ($birthdatestr ? " (" . displayDate($birthdate) . ")" : "") . " - {$row['personID']}"));
-          $nameplusid = $textchange;
+            $nameplusid = $textchange;
         } elseif ($nameplusid == 1) {
-          $namestr = addslashes("$name");
+            $namestr = addslashes("$name");
         } elseif ($nameplusid) {
-          $namestr = addslashes("$name - {$row['personID']}");
+            $namestr = addslashes("$name - {$row['personID']}");
         } else {
-          $namestr = addslashes("$name");
+            $namestr = addslashes("$name");
         }
-        $jsnamestr = str_replace("&#34;", "&lsquo;", $namestr);
-        $jsnamestr = str_replace("\\\"", "&lsquo;", $namestr);
-        echo "<tr><td valign=\"top\"><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">{$row['personID']}</a></span></td><td><span class=\"normal\"><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td></tr>\n";
+          $jsnamestr = str_replace("&#34;", "&lsquo;", $namestr);
+          $jsnamestr = str_replace("\\\"", "&lsquo;", $namestr);
+          echo "<tr>\n";
+          echo "<td valign=\"top\"><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">{$row['personID']}</a></span></td>\n";
+          echo "<td><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td>\n";
+          echo "</tr>\n";
       }
       tng_free_result($result);
       ?>

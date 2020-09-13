@@ -218,18 +218,18 @@ if ($personID) {
     echo tng_menu($linktype, $type, $personID, "&nbsp;");
 } else {
     if ($albumlinkID) {
-        $mediastr = "<span class=\"headericon\" id=\"albums-hdr-icon\"></span>\n";
+        $mediastr = "<span class='headericon' id=\"albums-hdr-icon\"></span>\n";
         $slideshowheader = $albumname;
         echo tng_DrawHeading($mediastr, $albumname, $albdesc);
     } else {
         $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
         $icon = $mediatypes_icons[$mediatypeID];
         if ($mediatypes_icons[$mediatypeID]) {
-            $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width=\"20\" height=\"20\" alt=\"\" class=\"headericon\"/>";
+            $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width='20' height='20' alt=\"\" class='headericon'/>";
         } else {
-            $icon = "<span class=\"headericon\" id=\"{$mediatypeID}-hdr-icon\"></span>";
+            $icon = "<span class='headericon' id=\"{$mediatypeID}-hdr-icon\"></span>";
         }
-        echo "<h1 class=\"header\">$icon$titlemsg</h1>\n";
+        echo "<h1 class='header'>$icon$titlemsg</h1>\n";
 
         $slideshowheader = $titlemsg;
     }
@@ -254,7 +254,7 @@ if (!$tngprint) {
 }
 tng_free_result($result);
 
-echo "<p class=\"normal\" style=\"margin-top:2.5em;\">$pagenav$sscontrols</p>";
+echo "<p class='normal' style=\"margin-top:2.5em;\">$pagenav$sscontrols</p>";
 
 if ($noneliving || $imgrow['alwayson']) {
     $show_on_top = false;
@@ -265,9 +265,9 @@ if ($noneliving || $imgrow['alwayson']) {
         $show_on_top = true;
     }
 
-    echo "<p class=\"subhead\"><strong>$description</strong></p>\n";
+    echo "<p class='subhead'><strong>$description</strong></p>\n";
     if ($notes) {
-        echo "<p class=\"normal\">$notes</p>\n";
+        echo "<p class='normal'>$notes</p>\n";
     } else {
         echo "<br><br>";
     }
@@ -277,7 +277,7 @@ if ($noneliving || $imgrow['alwayson']) {
     }
 
     if ($mediatypeID == "headstones" && ($imgrow['status'] || $imgrow['plot'])) {
-        echo "<p class=\"normal\">";
+        echo "<p class='normal'>";
         if ($imgrow['status']) {
             $status = $imgrow['status'];
             if ($status && $text[$status]) {
@@ -309,7 +309,7 @@ if ($noneliving || $imgrow['alwayson']) {
     }
 
     if (!$tngprint) {
-        echo "<br><p class=\"normal\">$pagenav$sscontrols</p><br>\n";
+        echo "<br><p class='normal'>$pagenav$sscontrols</p><br>\n";
     }
 } else {
     ?>

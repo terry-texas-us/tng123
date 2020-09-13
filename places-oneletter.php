@@ -75,7 +75,7 @@ $displaychar = $decodedfirstchar ? $decodedfirstchar : $text['all'];
 tng_header($text['placelist'] . ": $displaychar", $flags);
 ?>
 
-<h1 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": $displaychar"; ?></h1><br class="clearleft">
+<h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": $displaychar"; ?></h2><br class="clearleft">
 <?php
 
 $hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];

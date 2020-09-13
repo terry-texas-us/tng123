@@ -16,8 +16,8 @@ function doBranchSearch($instance, $pagenav) {
 
   $browsebranches_noargs_url = getURL("browsebranches", 0);
 
-  $str = "<span class=\"normal\">\n";
-  $str .= getFORM("browsebranches", "GET", "BranchSearch$instance", "");
+  $str = "<span class='normal'>\n";
+    $str .= getFORM("browsebranches", "GET", "BranchSearch$instance", "");
   $str .= "<input type=\"text\" name=\"branchsearch\" value=\"$branchsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   if ($branchsearch) {
@@ -80,17 +80,17 @@ preparebookmark($logstring);
 tng_header($text['branches'], $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="branches-hdr-icon"></span><?php echo $text['branches']; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="branches-hdr-icon"></span><?php echo $text['branches']; ?></h2><br clear="left">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsebranches', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($totrows) {
-  echo "<p><span class=\"normal\">{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
+    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
 $pagenav = get_browseitems_nav($totrows, $browsebranches_url . "branchsearch=$branchsearch&amp;offset", $maxsearchresults, $max_browsebranch_pages);
 if ($pagenav || $branchsearch) {
-  echo doBranchSearch(1, $pagenav);
+    echo doBranchSearch(1, $pagenav);
 }
 
 $header = "";

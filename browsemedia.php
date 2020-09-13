@@ -122,22 +122,22 @@ preparebookmark($logstring);
 tng_header($titlestr, $flags);
 if ($orgmediatypeID) {
     if ($mediatypes_icons[$mediatypeID]) {
-        $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width=\"20\" height=\"20\" alt=\"\" class=\"headericon\">";
+        $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width='20' height='20' alt=\"\" class='headericon'>";
     } else {
-        $icon = "<span class=\"headericon\" id=\"{$mediatypeID}-hdr-icon\"></span>";
+        $icon = "<span class='headericon' id=\"{$mediatypeID}-hdr-icon\"></span>";
     }
 } else {
-    $icon = "<span class=\"headericon\" id=\"media-hdr-icon\"></span>";
+    $icon = "<span class='headericon' id=\"media-hdr-icon\"></span>";
 }
 ?>
 
-    <h1 class="header"><?php echo $icon . $titlestr; ?></h1><br clear="all">
+    <h2 class="header"><?php echo $icon . $titlestr; ?></h2><br clear="all">
 <?php
 $hiddenfields[0] = ['name' => 'mediatypeID', 'value' => $orgmediatypeID];
 $hiddenfields[1] = ['name' => 'tnggallery', 'value' => $tnggallery];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsemedia', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
-$toplinks = "<p class=\"normal\">";
+$toplinks = "<p class='normal'>";
 if ($totrows) {
     $toplinks .= $text['matches'] . " " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . " &nbsp;&nbsp;&nbsp; ";
 }

@@ -139,15 +139,15 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                                 <input type="checkbox" name="dospouses" checked="checked" value="1"> <?php echo $admtext['inclspouses']; ?></div>
                         </td>
                     </tr>
-                </table>
-              <br>
-              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-                <input type="submit" name="submitx" class="btn" value="<?php echo $admtext['saveexit']; ?>">
-            </form>
-        </td>
-    </tr>
+        </table>
+          <br>
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+          <input type="submit" name="submitx" class="btn" value="<?php echo $admtext['saveexit']; ?>">
+      </form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

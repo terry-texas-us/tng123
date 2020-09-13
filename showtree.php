@@ -32,16 +32,16 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($text['tree'] . ": " . $row['treename'], $flags);
 ?>
 
-  <h1 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h1><br clear="all">
+    <h2 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h2><br clear="all">
 
-  <table cellspacing="1" cellpadding="4" class="whiteback normal">
-    <?php
-    if ($row['treename']) {
-      showFact($text['treename'], $row['treename']);
-    }
-    if ($row['description']) {
-      showFact($text['description'], $row['description']);
-    }
+    <table cellspacing="1" cellpadding="4" class="whiteback normal">
+        <?php
+        if ($row['treename']) {
+            showFact($text['treename'], $row['treename']);
+        }
+        if ($row['description']) {
+            showFact($text['description'], $row['description']);
+        }
 
       showFact($text['individuals'], $row['pcount'], true);
 

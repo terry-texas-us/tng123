@@ -4,17 +4,17 @@ include "tng_begin.php";
 
 //if required login, redirect to search people?
 if ($requirelogin && !$currentuser) {
-  header("Location:" . getURL("searchform", 0));
-  exit;
+    header("Location:" . getURL("searchform", 0));
+    exit;
 }
 
 tng_header($text['searchnames'], $flags);
 ?>
 
-  <h1 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h1><br clear="all">
+    <h2 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h2><br clear="all">
 <?php
 if ($msg) {
-  echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
+    echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
 }
 
 $fieldclass = $sitever == "mobile" ? "medfield" : "longfield";

@@ -102,7 +102,7 @@ function doMedia($mediatypeID) {
   $mediaresult = tng_query($query);
 
   $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-  $mediaheader = "<div class=\"titlebox\"><span class=\"subhead\"><b>$titlemsg</b></span><br><br>\n" . $header;
+    $mediaheader = "<div class=\"titlebox\"><span class='subhead'><b>$titlemsg</b></span><br><br>\n" . $header;
 
   $mediatext = "";
   $thumbcount = 0;

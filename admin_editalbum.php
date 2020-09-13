@@ -248,7 +248,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             echo "<a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val());\" title=\"{$admtext['movetop']}\">Go</a>\n";
                             echo "</td>\n";
 
-                            echo "<td class=\"lightback\" style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
+                            echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
                             if ($lrow['thumbpath'] && file_exists("$rootpath$usefolder/$treestr2" . $lrow['thumbpath'])) {
                                 $size = @GetImageSize("$rootpath$usefolder/$treestr2" . $lrow['thumbpath']);
                                 echo "<a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\"><img src=\"$usefolder/$treestr2" . str_replace("%2F", "/", rawurlencode($lrow['thumbpath'])) . "\" $size[3] alt=\"" . htmlentities($lrow['description'], ENT_QUOTES) . " \"></a>";
@@ -259,7 +259,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             }
                             echo "</td>\n";
                             $checked = $lrow['defphoto'] ? " checked" : "";
-                            echo "<td class=\"lightback normal\"><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br>" . strip_tags($truncated) . "<br>";
+                            echo "<td class='lightback normal'><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br>" . strip_tags($truncated) . "<br>";
                             echo "<div id=\"del_{$lrow['albumlinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
                             if ($foundthumb) {
                                 echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
@@ -267,8 +267,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             }
                             echo "<a href=\"#\" onclick=\"return removeFromAlbum('{$lrow['mediaID']}','{$lrow['albumlinkID']}');\">{$admtext['remove']}</a>";
                             echo "</div></td>\n";
-                            echo "<td class=\"lightback normal\" style=\"width:150px;\" valign=\"top\">{$lrow['datetaken']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback normal\" style=\"width:100px;\" valign=\"top\">" . $label . "&nbsp;</td>\n";
+                            echo "<td class='lightback normal' style=\"width:150px;\" valign=\"top\">{$lrow['datetaken']}&nbsp;</td>\n";
+                            echo "<td class='lightback normal' style=\"width:100px;\" valign=\"top\">" . $label . "&nbsp;</td>\n";
                             echo "</tr></table>";
                             echo "</div>\n";
                             $count++;
@@ -406,16 +406,16 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 
                                 include "eventmicro.php";
 
-                                echo "<tr id=\"alink_{$plink['alinkID']}\"><td class=\"lightback\" align=\"center\">\n";
+                                echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='lightback' align=\"center\">\n";
                                 if ($type != "place") {
                                     echo "<a href=\"#\" title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                                 }
                                 echo "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>\n";
                                 echo "</td>\n";
-                                echo "<td class=\"lightback  normal\">" . $type . "</td>\n";
-                                echo "<td class=\"lightback  normal\">$name$id&nbsp;</td>\n";
-                                echo "<td class=\"lightback  normal\">{$plink['treename']}</td>\n";
-                                echo "<td class=\"lightback normal\" id=\"event_{$plink['alinkID']}\">$eventstr&nbsp;</td>\n";
+                                echo "<td class='lightback normal'>" . $type . "</td>\n";
+                                echo "<td class='lightback normal'>$name$id&nbsp;</td>\n";
+                                echo "<td class='lightback normal'>{$plink['treename']}</td>\n";
+                                echo "<td class='lightback normal' id=\"event_{$plink['alinkID']}\">$eventstr&nbsp;</td>\n";
                                 echo "</tr>\n";
                             }
                             tng_free_result($result3);
@@ -456,7 +456,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
     </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript">
     var findform = document.form1;
 </script>

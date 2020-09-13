@@ -96,16 +96,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
             chdir("$rootpath$tngpath/$subdir");
             importFrom($tngpath, $subdir, 0);
           }
-          if ($totalImported) {
-            $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
-            $result = @tng_query($query);
-          }
-          ?>
-        </td>
-    </tr>
+      if ($totalImported) {
+          $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
+          $result = @tng_query($query);
+      }
+      ?>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 
 </body>
 </html>

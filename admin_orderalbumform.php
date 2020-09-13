@@ -113,15 +113,15 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         <td><a href="#"
                                onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                    </tr>
-                </table>
+          </tr>
+        </table>
 
-            </form>
+      </form>
 
-        </td>
-    </tr>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

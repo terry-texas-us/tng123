@@ -52,11 +52,11 @@ function doRow($field, $textmsg, $boxname) {
     if ($s1field || $s2field) {
         echo "<tr>\n";
         echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-        echo "<td valign=\"top\" width=\"31%\" class=\"lightback\"><span class=\"normal\">$s1field&nbsp;</span></td>";
+        echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>$s1field&nbsp;</span></td>";
         if (is_array($s2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
             echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td valign=\"top\" width=\"5\" class=\"lightback\"><span class=\"normal\">";
+            echo "<td valign=\"top\" width=\"5\" class='lightback'><span class='normal'>";
             if ($boxname) {
                 if ($s2field) {
                     echo "<input type=\"checkbox\" name=\"$boxname\" value=\"$field\"";
@@ -69,12 +69,12 @@ function doRow($field, $textmsg, $boxname) {
                 echo "&nbsp;";
             }
             echo "</span></td>";
-            echo "<td valign=\"top\" width=\"31%\" class=\"lightback\"><span class=\"normal\">$s2field&nbsp;</span></td>";
+            echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>$s2field&nbsp;</span></td>";
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
             echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td valign=\"top\" width=\"5\" class=\"lightback\"><span class=\"normal\">&nbsp;</span></td>";
-            echo "<td valign=\"top\" width=\"31%\" class=\"lightback\"><span class=\"normal\">&nbsp;</span></td>";
+            echo "<td valign=\"top\" width=\"5\" class='lightback'><span class='normal'>&nbsp;</span></td>";
+            echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>&nbsp;</span></td>";
         }
         echo "</tr>\n";
     }
@@ -486,9 +486,9 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                         if (is_array($s1row)) {
                             $eventlist = array();
                             echo "<tr>\n";
-                            echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['source']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($s2row)) {
-                                echo "<td colspan=\"3\"><strong class=\"subhead\">{$admtext['source']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                                echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
 
                                 $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                                 $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
@@ -548,7 +548,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                             }
 
                         } else {
-                            echo "<tr><td><span class=\"normal\"{$admtext['nomatches']}</span></td></tr>";
+                            echo "<tr><td><span class='normal'{$admtext['nomatches']}</span></td></tr>";
                         }
                         ?>
                     </table>
@@ -572,6 +572,6 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
 
 </table>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

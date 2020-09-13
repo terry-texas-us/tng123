@@ -102,15 +102,15 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource
                 </table>
             </td>
         </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-                <p class="normal"><strong><?php echo $admtext['sevslater']; ?></strong></p>
-                <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
-            </td>
-        </tr>
-    </table>
+      <tr class="databack">
+          <td class="tngshadow">
+              <p class="normal"><strong><?php echo $admtext['sevslater']; ?></strong></p>
+              <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+          </td>
+      </tr>
+  </table>
 </form>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

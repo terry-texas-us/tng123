@@ -275,7 +275,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 <?php
                                 if ($editconflict) {
                                     echo "<br><p>{$admtext['editconflict']}</p>\n";
-                                    echo "<p class=\"normal\"><strong><a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
+                                    echo "<p class='normal'><strong><a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
                                 } else {
                                     $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                     $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
@@ -570,6 +570,6 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
 </form>
 </div>
 
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -212,9 +212,9 @@ tng_header($text['searchnames'], $flags);
           if($branch) {
           ?>
             jQuery('#branch').val('<?php echo $branch; ?>');
-          <?php
-          }
-          ?>
+            <?php
+            }
+            ?>
         });
         <?php
         }
@@ -222,10 +222,10 @@ tng_header($text['searchnames'], $flags);
         //]]>
     </script>
 
-  <h1 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchnames']; ?></h1><br clear="all">
+    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchnames']; ?></h2><br clear="all">
 <?php
 if ($msg) {
-  echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
+    echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
 }
 
 $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches(document.search);";
@@ -601,10 +601,10 @@ echo $formstr;
         ksort($eventtypes);
 
         foreach ($eventtypes as $row) {
-            echo "<tr><td colspan=\"3\"><span class=\"normal\">{$row['displaymsg']}</span></td></tr>\n";
+            echo "<tr><td colspan=\"3\"><span class='normal'>{$row['displaymsg']}</span></td></tr>\n";
 
             echo "<tr>\n";
-            echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";
+            echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";
             echo "<td>\n";
             echo "<select name=\"cfq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
             foreach ($item_array as $item) {
@@ -617,7 +617,7 @@ echo $formstr;
             echo "</tr>\n";
 
             echo "<tr>\n";
-            echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['place']}:</span></td>\n";
+            echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['place']}:</span></td>\n";
             echo "<td>\n";
             echo "<select name=\"cpq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
           foreach ($item_array as $item) {
@@ -630,7 +630,7 @@ echo $formstr;
             echo "</tr>\n";
 
             echo "<tr>\n";
-            echo "<td><span class=\"normal\">&nbsp;&nbsp;&nbsp;{$text['year']}:</span></td>\n";
+            echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['year']}:</span></td>\n";
             echo "<td>\n";
             echo "<select name=\"cyq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
 

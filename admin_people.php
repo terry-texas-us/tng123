@@ -373,19 +373,19 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                             } else {
                                 $id = $row['personID'];
                             }
-                            echo "<tr id=\"row_{$row['ID']}\"><td class=\"lightback\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
                             }
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;$id&nbsp;</span></td>\n";
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;$birthdate&nbsp;</span></td>\n";
-                            echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;$birthplace&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;$id&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;$birthdate&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>&nbsp;$birthplace&nbsp;</span></td>\n";
                             if ($numtrees > 1) {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['treename']}&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['treename']}&nbsp;</span></td>\n";
                             }
                             if ($numusers > 1) {
-                                echo "<td class=\"lightback\"><span class=\"normal\">&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
+                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
                             }
                             echo "</tr>\n";
                         }
@@ -406,6 +406,6 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

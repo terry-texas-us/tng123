@@ -42,7 +42,7 @@ class RecentPeopleCard
 
         $content = "";
         if (tng_num_rows($result)) {
-            $content .= "<div class=\"titlebox tablediv\"><span class=\"subhead\"><b>{$title}</b></span><br><br>";
+            $content .= "<div class=\"titlebox tablediv\"><span class='subhead'><b>{$title}</b></span><br><br>";
             $imageSize = @GetImageSize("{$this->path}img/Chart.gif");
             $chartlink = "<img src=\"{$this->path}img/Chart.gif\" alt=\"\" $imageSize[3]>";
             while ($row = tng_fetch_assoc($result)) {

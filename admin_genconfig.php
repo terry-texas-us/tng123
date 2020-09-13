@@ -2025,6 +2025,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 
     </table>
 </form>
-<?php echo "<div align=\"right\" class=\"normal\">$tng_title, v.$tng_version</div>"; ?>
+<?php echo "<div align=\"right\" class='normal'>$tng_title, v.$tng_version</div>"; ?>
 </body>
 </html>

@@ -255,6 +255,6 @@ if ($cw) {
         </table>
     </form>
 
-    <?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+    <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
     </body>
 <?php echo "</html>\n";

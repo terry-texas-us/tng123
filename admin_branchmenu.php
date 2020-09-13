@@ -209,13 +209,13 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
             </td>
           </tr>
         </table>
-        <br><input type="submit" id="labelsub" value="<?php echo $admtext['addlabels']; ?>"> <input type="button" value="<?php echo $admtext['showpeople']; ?>"
-                                                                                                    onclick="window.location.href='admin_showbranch.php?tree=<?php echo $tree; ?>&branch=<?php echo $branch; ?>';">
+          <br><input type="submit" id="labelsub" value="<?php echo $admtext['addlabels']; ?>"> <input type="button" value="<?php echo $admtext['showpeople']; ?>"
+                                                                                                      onclick="window.location.href='admin_showbranch.php?tree=<?php echo $tree; ?>&branch=<?php echo $branch; ?>';">
       </form>
-      <p class="normal">*<?php echo $admtext['branchdiscl']; ?></p>
+        <p class="normal">*<?php echo $admtext['branchdiscl']; ?></p>
     </td>
   </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -204,17 +204,17 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                             }
 
                             $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
-                            echo "<tr id=\"row_{$row['cemeteryID']}\"><td class=\"lightback\" valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['cemeteryID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['cemeteryID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['cemeteryID']}\" value=\"1\"></td>";
                             }
                             $editlink = "admin_editcemetery.php?cemeteryID={$row['cemeteryID']}";
                             $cemname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['cemname'] . "</a>" : $row['cemname'];
 
-                            echo "<td class=\"lightback\" valign=\"top\">&nbsp;$cemname&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" valign=\"top\">&nbsp;$location&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\">&nbsp;$cemname&nbsp;</td>\n";
+                            echo "<td class='lightback' valign=\"top\">&nbsp;$location&nbsp;</td>\n";
                             if ($map['key']) {
-                                echo "<td nowrap class=\"lightback\" valign=\"top\">";
+                                echo "<td nowrap class='lightback' valign=\"top\">";
                                 $geo = "";
                                 if ($row['latitude']) {
                                     $geo .= "&nbsp;{$admtext['latitude']}: " . number_format($row['latitude'], 3);
@@ -233,8 +233,8 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                                 }
                                 echo "$geo&nbsp;</td>\n";
                             } else {
-                                echo "<td class=\"lightback\" valign=\"top\">&nbsp;{$row['latitude']}&nbsp;</td>\n";
-                                echo "<td class=\"lightback\" valign=\"top\">&nbsp;{$row['longitude']}&nbsp;</td></tr>\n";
+                                echo "<td class='lightback' valign=\"top\">&nbsp;{$row['latitude']}&nbsp;</td>\n";
+                                echo "<td class='lightback' valign=\"top\">&nbsp;{$row['longitude']}&nbsp;</td></tr>\n";
                             }
                         }
                         ?>
@@ -254,6 +254,6 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

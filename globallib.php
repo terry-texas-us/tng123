@@ -632,7 +632,7 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     } else {
         $gotolink = "";
     }
-    $pagenav = "<span class=\"normal\">$prevlink $firstlink $pagenav $lastlink $nextlink$gotolink</span>";
+    $pagenav = "<span class='normal'>$prevlink $firstlink $pagenav $lastlink $nextlink$gotolink</span>";
 
     return $pagenav;
 }

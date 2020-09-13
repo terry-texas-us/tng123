@@ -81,7 +81,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
             <?php
             if ($sub == "configuration") {
                 ?>
-                <span class="normal"><i><?php echo $admtext['entersysvars']; ?></i></span><br><br>
+                <span class="normal"><em><?php echo $admtext['entersysvars']; ?></em></span><br><br>
 
                 <table cellspacing="0" border="0">
                     <tr>
@@ -107,7 +107,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
                 <?php
             } elseif ($sub == "tablecreation") {
                 ?>
-                <span class="normal"><i><?php echo $admtext['createdbtables']; ?></i></span><br>
+                <span class="normal"><em><?php echo $admtext['createdbtables']; ?></em></span><br>
 
                 <p class="normal"><em><?php echo $admtext['tcwarning']; ?></em></p>
                 <form action="">
@@ -121,6 +121,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

@@ -101,14 +101,14 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['addgroup'
                       <td><input type="text" name="description" size="60"></td>
                     </tr>
 
-                </table>
-              <br>
-              <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-            </form>
-        </td>
-    </tr>
+        </table>
+          <br>
+          <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+      </form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

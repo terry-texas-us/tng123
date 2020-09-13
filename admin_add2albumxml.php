@@ -57,7 +57,7 @@ function get_album_nav($total, $perpage, $pagenavpages) {
             }
         }
     }
-    $pagenav = "<span class=\"normal\">$prevlink $firstlink $pagenav $lastlink $nextlink</span>";
+    $pagenav = "<span class='normal'>$prevlink $firstlink $pagenav $lastlink $nextlink</span>";
 
     return $pagenav;
 }
@@ -124,7 +124,7 @@ $numrowsplus = $numrows + $offset;
 if (!$numrowsplus) {
     $offsetplus = 0;
 }
-echo "<p class=\"normal\">{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
+echo "<p class='normal'>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
 $pagenav = get_album_nav($totrows, $maxsearchresults, 5);
 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
 ?>
@@ -142,7 +142,7 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             $label = $mediatypes_display[$mtypeID] ? $mediatypes_display[$mtypeID] : $text[$mtypeID];
             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
             $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
-            echo "<tr id=\"addrow_{$row['mediaID']}\"><td class=\"lightback\" align=\"center\">";
+            echo "<tr id=\"addrow_{$row['mediaID']}\"><td class='lightback' align=\"center\">";
             echo "<div id=\"add_{$row['mediaID']}\" class=\"normal\"";
             $gotit = in_array($row['mediaID'], $alreadygot);
             if ($gotit) {
@@ -157,11 +157,11 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             if (!$gotit) {
                 echo " style=\"display:none;\">";
             } else {
-                echo "><img src=\"img/tng_test.gif\" alt=\"\" width=\"20\" height=\"20\" class=\"smallicon\">";
+                echo "><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20' class=\"smallicon\">";
             }
             echo "</div>";
             echo "&nbsp;</td>";
-            echo "<td valign=\"top\" class=\"lightback\" style=\"text-align:center;\" id=\"thumbcell_{$row['mediaID']}\">";
+            echo "<td valign=\"top\" class='lightback' style=\"text-align:center;\" id=\"thumbcell_{$row['mediaID']}\">";
             if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                 $size = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);
                 echo "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\" target=\"_blank\"><img border=0 src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" $size[3]></a>\n";
@@ -171,14 +171,14 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             echo "</td>\n";
             $truncated = substr($row['notes'], 0, 90);
             $truncated = strlen($row['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['notes'];
-            echo "<td class=\"lightback normal\" valign=\"top\" id=\"desc_{$row['mediaID']}\"><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated &nbsp;</td>";
-            echo "<td class=\"lightback normal\" style=\"width:100px;\" valign=\"top\" id=\"date_{$row['mediaID']}\">{$row['datetaken']}&nbsp;</td>\n";
-            echo "<td class=\"lightback\" valign=\"top\"><span class=\"normal\" id=\"mtype_{$row['mediaID']}\">" . $label . "&nbsp;</span></td>\n";
+            echo "<td class='lightback normal' valign=\"top\" id=\"desc_{$row['mediaID']}\"><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated &nbsp;</td>";
+            echo "<td class='lightback normal' style=\"width:100px;\" valign=\"top\" id=\"date_{$row['mediaID']}\">{$row['datetaken']}&nbsp;</td>\n";
+            echo "<td class='lightback' valign=\"top\"><span class='normal' id=\"mtype_{$row['mediaID']}\">" . $label . "&nbsp;</span></td>\n";
             echo "</tr>\n";
         }
         ?>
     </table>
 <?php
-echo "<p class=\"normal\">{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
+echo "<p class='normal'>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
 ?>

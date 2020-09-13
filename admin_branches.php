@@ -211,23 +211,23 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['branch'], $actionstr);
                             $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
-                            echo "<tr id=\"row_{$row['branch']}\"><td class=\"lightback\"><div>$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['branch']}\"><td class='lightback'><div>$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class=\"lightback\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['branch']}&{$row['gedcom']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['branch']}&{$row['gedcom']}\" value=\"1\"></td>";
                             }
                             $editlink = "admin_editbranch.php?branch={$row['branch']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['branch'] . "</a>" : $row['branch'];
 
-                            echo "<td class=\"lightback\" nowrap>&nbsp;$id&nbsp;</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['description']}</td>\n";
-                            echo "<td class=\"lightback\">&nbsp;{$row['treename']}&nbsp;</td>\n";
+                            echo "<td class='lightback' nowrap>&nbsp;$id&nbsp;</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['description']}</td>\n";
+                            echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
 
                             $pcount = getBranchCount($row['gedcom'], $row['branch'], $people_table);
                             $fcount = getBranchCount($row['gedcom'], $row['branch'], $families_table);
 
-                            echo "<td class=\"lightback\">{$row['personID']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" style='text-align: right;'>$pcount&nbsp;</td>\n";
-                            echo "<td class=\"lightback\" style='text-align: right;'>$fcount&nbsp;</td>\n";
+                            echo "<td class='lightback'>{$row['personID']}&nbsp;</td>\n";
+                            echo "<td class='lightback' style='text-align: right;'>$pcount&nbsp;</td>\n";
+                            echo "<td class='lightback' style='text-align: right;'>$fcount&nbsp;</td>\n";
                             echo "</tr>\n";
                         }
                         tng_free_result($result);
@@ -247,6 +247,6 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

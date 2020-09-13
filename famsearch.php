@@ -311,7 +311,7 @@ if ($sitever != "mobile") {
 }
 ?>
 
-    <h1 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h1><br clear="left">
+    <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h2><br clear="left">
 <?php
 $logstring = "<a href=\"$search_url" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
@@ -319,10 +319,10 @@ preparebookmark($logstring);
 
 $numrowsplus = $numrows + $offset;
 
-echo "<p class=\"normal\">" . $text['matches'] . " $offsetplus " . $text['to'] . " $numrowsplus " . $text['of'] . " " . number_format($totrows) . " $querystring</p>";
+echo "<p class='normal'>" . $text['matches'] . " $offsetplus " . $text['to'] . " $numrowsplus " . $text['of'] . " " . number_format($totrows) . " $querystring</p>";
 
 $pagenav = get_browseitems_nav($totrows, "$search_url" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-echo "<p class=\"normal\">$pagenav</p>";
+echo "<p class='normal'>$pagenav</p>";
 
 $header = $headerr = "";
 if ($enablemodeswitch) {

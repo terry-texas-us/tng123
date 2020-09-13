@@ -386,11 +386,13 @@ function getSmallPhoto($medialink) {
 function tng_DrawHeading($photostr, $namestr, $years) {
     global $tngconfig;
     if ($photostr) {
-        $outputstr = "<div style=\"float:left; padding-right:5px;\">$photostr</div><h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px;\">$namestr</h1><span class=\"normal\">$years</span>\n";
+        $outputstr = "<div style=\"float: left; padding-right: 5px;\">$photostr</div>\n";
+        $outputstr .= "<h1 class=\"header fn\" id=\"nameheader\">$namestr</h1>\n";
+        $outputstr .= "<span class='normal'>$years</span>\n";
     } else {
-        $outputstr = "<h1 class=\"header fn\" id=\"nameheader\" style=\"margin-bottom:5px;\">$namestr</h1>";
+        $outputstr = "<h1 class=\"header fn\" id=\"nameheader\">$namestr</h1>\n";
         if ($years) {
-            $outputstr .= "<span class=\"normal\">$years</span><br>\n";
+            $outputstr .= "<span class='normal'>$years</span><br>\n";
         }
     }
     $outputstr .= "<br clear=\"all\"><br>\n";
@@ -963,7 +965,7 @@ function tng_icons($instance, $title = "") {
 
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
                 $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" alt=\"\"/></a>";
-                $fullmenu .= "<span class=\"subhead\"><strong>{$text['search']}</strong> | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></span><br><br>";
+                $fullmenu .= "<span class='subhead'><strong>{$text['search']}</strong> | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></span><br><br>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
                 $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type=\"text\" name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
@@ -1050,7 +1052,7 @@ function treeDropdown($forminfo) {
             if ($forminfo['startform']) {
                 $ret .= getFORM($forminfo['action'], $forminfo['method'], $forminfo['name'], $forminfo['id']);
             }
-            $ret .= "<span class=\"normal\">{$text['tree']}: </span>";
+            $ret .= "<span class='normal'>{$text['tree']}: </span>";
             $ret .= treeSelect($treeresult, $forminfo['name']);
             $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
             if (isset($forminfo['hidden']) && is_array($forminfo['hidden'])) {
@@ -1084,7 +1086,7 @@ function treeDropdown($forminfo) {
                     $importtime += ($time_offset * 3600);
                 }
                 $importdate = strtoupper(substr(PHP_OS, 0, 3)) == 'WIN' ? strftime("%#d %b %Y %H:%M:%S", $importtime) : strftime("%e %b %Y %H:%M:%S", $importtime);
-                echo "<p class=\"normal\">{$text['lastimportdate']}: " . displayDate($importdate) . "</p>";
+                echo "<p class='normal'>{$text['lastimportdate']}: " . displayDate($importdate) . "</p>";
             }
         }
         tng_free_result($treeresult);

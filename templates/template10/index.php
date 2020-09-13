@@ -189,7 +189,7 @@ $title = getTemplateMessage('t10_maintitle');
                                         }
 
                                         if ($currentuser) {
-                                            echo "<p class=\"subhead\"><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href=\"logout.php\">{$text['mnulogout']}</a></p>\n";
+                                            echo "<p class='subhead'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href=\"logout.php\">{$text['mnulogout']}</a></p>\n";
                                         } else {
                                             $loginContent = "";
                                             if (!$tngconfig['showlogin']) {
@@ -202,7 +202,7 @@ $title = getTemplateMessage('t10_maintitle');
                                                 $loginContent .= "<a href=\"newacctform.php\">{$text['mnuregister']}</a>";
                                             }
                                             if ($loginContent) {
-                                                echo "<p class=\"subhead\">$loginContent</p>\n";
+                                                echo "<p class='subhead'>$loginContent</p>\n";
                                             }
                                         }
                                         echo getTemplateMessage('t10_mainpara');

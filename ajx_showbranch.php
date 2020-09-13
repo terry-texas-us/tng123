@@ -57,8 +57,8 @@ header("Content-type:text/html; charset=" . $session_charset);
   if (!$names) {
     echo "<p>{$admtext['norecords']}</p>";
   } else {
-    echo "<p class=\"normal\">{$admtext['existlabels']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</p>\n";
-    echo $names;
+    echo "<p class='normal'>{$admtext['existlabels']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</p>\n";
+      echo $names;
   }
   ?>
 </div>

@@ -213,16 +213,16 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               <input type="hidden" name="pinplacelevel0" value="<?php echo $pinplacelevel0; ?>">
                 <input type="hidden" name="pinplacelevel1" value="<?php echo $pinplacelevel1; ?>">
                 <input type="hidden" name="pinplacelevel2" value="<?php echo $pinplacelevel2; ?>">
-                <input type="hidden" name="pinplacelevel3" value="<?php echo $pinplacelevel3; ?>">
-                <input type="hidden" name="pinplacelevel4" value="<?php echo $pinplacelevel4; ?>">
-                <input type="hidden" name="pinplacelevel5" value="<?php echo $pinplacelevel5; ?>">
-                <input type="hidden" name="pinplacelevel6" value="<?php echo $pinplacelevel6; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-            </form>
-        </td>
-    </tr>
+          <input type="hidden" name="pinplacelevel3" value="<?php echo $pinplacelevel3; ?>">
+          <input type="hidden" name="pinplacelevel4" value="<?php echo $pinplacelevel4; ?>">
+          <input type="hidden" name="pinplacelevel5" value="<?php echo $pinplacelevel5; ?>">
+          <input type="hidden" name="pinplacelevel6" value="<?php echo $pinplacelevel6; ?>">
+          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+      </form>
+    </td>
+  </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class=\"normal\">$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>
