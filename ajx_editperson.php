@@ -434,7 +434,13 @@ include_once "eventlib.php";
         $citesicon = $cms['tngpath'] . "img/" . (tng_num_rows($citresult) ? "tng_cite_on.gif" : "tng_cite.gif");
         tng_free_result($citresult);
 
-        echo "<table><tr><td>&nbsp;</td><td>" . $admtext['date'] . "</td><td>" . $admtext['place'] . "</td><td colspan=\"2\">&nbsp;</td></tr>\n";
+        echo "<table>";
+        echo "<tr>";
+        echo "<td>&nbsp;</td>";
+        echo "<td>" . $admtext['date'] . "</td>";
+        echo "<td>" . $admtext['place'] . "</td>";
+        echo "<td colspan=\"2\">&nbsp;</td>";
+        echo "</tr>\n";
         echo "<tr>\n";
         echo "<td valign=\"top\" class=\"nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
         echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
@@ -449,7 +455,8 @@ include_once "eventlib.php";
         echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
-        echo "</tr>\n</table>\n";
+        echo "</tr>\n";
+        echo "</table>\n";
     } else {
         ?>
         <input type="hidden" name="sealpdate<?php echo $parent['familyID']; ?>" value="<?php echo $parent['sealdate']; ?>">
@@ -541,8 +548,10 @@ include_once "eventlib.php";
                         </tr>
                         <?php
                     }
-
-                    $query = "SELECT $people_table.personID AS pID, firstname, lnprefix, lastname, haskids, living, private, branch, prefix, suffix, nameorder FROM ($people_table, $children_table) WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"{$marriagerow['familyID']}\" AND $people_table.gedcom = '$tree' AND $children_table.gedcom = '$tree' ORDER BY ordernum";
+                    $query = "SELECT people.personID AS pID, firstname, lnprefix, lastname, haskids, living, private, branch, prefix, suffix, nameorder ";
+                    $query .= "FROM ($people_table people, $children_table children) ";
+                    $query .= "WHERE people.personID = children.personID AND children.familyID = \"{$marriagerow['familyID']}\" AND people.gedcom = '$tree' AND children.gedcom = '$tree' ";
+                    $query .= "ORDER BY ordernum";
                     $children = tng_query($query);
 
                     if ($children && tng_num_rows($children)) {
@@ -550,28 +559,30 @@ include_once "eventlib.php";
                         <tr>
                             <td valign="top"><span class="normal"><?php echo $admtext['children']; ?>:</span></td>
                             <td valign="top"><span class="normal">
-<?php
-$kidcount = 1;
-echo "<table cellpadding = \"0\" cellspacing = \"0\">\n";
-while ($child = tng_fetch_assoc($children)) {
-    $ifkids = $child['haskids'] ? "&gt" : "&nbsp;";
-    $crights = determineLivingPrivateRights($child, $righttree);
-    $child['allow_living'] = $crights['living'];
-    $child['allow_private'] = $crights['private'];
-    if ($child['firstname'] || $child['lastname']) {
-        echo "<tr><td>$ifkids</td><td><span class='normal'>$kidcount. ";
-        if ($crights['both']) {
-
-            echo getName($child) . " - {$child['pID']}";
-        } else {
-            echo $admtext['living'] . " - " . $child['pID'];
-        }
-        echo "</span></td></tr>\n";
-    }
-    $kidcount++;
-}
-echo "</table>\n";
-?>
+                        <?php
+                        $kidcount = 1;
+                        echo "<table cellpadding = \"0\" cellspacing = \"0\">\n";
+                        while ($child = tng_fetch_assoc($children)) {
+                            $ifkids = $child['haskids'] ? "&gt" : "&nbsp;";
+                            $crights = determineLivingPrivateRights($child, $righttree);
+                            $child['allow_living'] = $crights['living'];
+                            $child['allow_private'] = $crights['private'];
+                            if ($child['firstname'] || $child['lastname']) {
+                                echo "<tr>";
+                                echo "<td>$ifkids</td>";
+                                echo "<td><span class='normal'>$kidcount. ";
+                                if ($crights['both']) {
+                                    echo getName($child) . " - {$child['pID']}";
+                                } else {
+                                    echo $admtext['living'] . " - " . $child['pID'];
+                                }
+                                echo "</span></td>";
+                                echo "</tr>\n";
+                            }
+                            $kidcount++;
+                        }
+                        echo "</table>\n";
+                        ?>
                             </td>
                         </tr>
                         <?php

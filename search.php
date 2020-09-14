@@ -521,9 +521,9 @@ while ($row = tng_fetch_assoc($result)) {
   if ($row['nickname'] && ($row['allow_living'] || !$nonames) && ($row['allow_private'] || !$tngconfig['nnpriv'])) {
     $name .= " \"{$row['nickname']}\"";
   }
-  echo "<td class=\"databack\" valign=\"top\">$i</td>\n";
+  echo "<td class='databack' valign=\"top\">$i</td>\n";
   $i++;
-  echo "<td class=\"databack nw\" valign=\"top\">";
+    echo "<td class='databack nw' valign=\"top\">";
   if ($sitever != "mobile") {
     echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div></div>\n";
   }
@@ -532,7 +532,7 @@ while ($row = tng_fetch_assoc($result)) {
 
   echo "</td>";
   if ($sitever != "mobile") {
-    echo "<td class=\"databack\">{$row['personID']} </td>";
+      echo "<td class='databack'>{$row['personID']} </td>";
   }
 
   if ($showspouse) {
@@ -561,33 +561,35 @@ while ($row = tng_fetch_assoc($result)) {
 
   if ($sitever != "mobile") {
     if ($myprefix) {
-      echo "<td class=\"databack\">$prefix &nbsp;</td>";
+        echo "<td class='databack'>$prefix &nbsp;</td>";
     }
     if ($mysuffix) {
-      echo "<td class=\"databack\">$suffix &nbsp;</td>";
+        echo "<td class='databack'>$suffix &nbsp;</td>";
     }
-    if ($mytitle) {
-      echo "<td class=\"databack\">$title &nbsp;</td>";
-    }
-    if ($mynickname) {
-      echo "<td class=\"databack\">$nickname &nbsp;</td>";
-    }
+      if ($mytitle) {
+          echo "<td class='databack'>$title &nbsp;</td>";
+      }
+      if ($mynickname) {
+          echo "<td class='databack'>$nickname &nbsp;</td>";
+      }
 
   }
-  echo "<td class=\"databack\">&nbsp;$birthdate </td><td class=\"databack\">$birthplace &nbsp;</td>";
-  if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) {
-    echo "<td class=\"databack\">$deathdate &nbsp;</td><td class=\"databack\">$deathplace &nbsp;</td>";
-  }
+    echo "<td class='databack'>&nbsp;$birthdate </td>";
+    echo "<td class='databack'>$birthplace &nbsp;</td>";
+    if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) {
+        echo "<td class='databack'>$deathdate &nbsp;</td>";
+        echo "<td class='databack'>$deathplace &nbsp;</td>";
+    }
 
-  if ($showspouse) {
-    echo "<td class=\"databack\">$spousestr</td>";
-  }
+    if ($showspouse) {
+        echo "<td class='databack'>$spousestr</td>";
+    }
 
-  if ($sitever == "mobile") {
-    echo "<td class=\"databack\">{$row['personID']} </td>";
+    if ($sitever == "mobile") {
+        echo "<td class='databack'>{$row['personID']} </td>";
   }
   if ($numtrees > 1 || $numbranches) {
-    echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>";
+      echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>";
     if ($row['branch']) {
       $branches = explode(",", $row['branch']);
       echo " | ";

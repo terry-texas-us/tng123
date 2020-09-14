@@ -246,21 +246,24 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                             <td><?php echo $admtext['place']; ?></td>
                             <td colspan="4">&nbsp;</td>
                         </tr>
-                      <?php
-                      echo showEventRow('birthdate', 'birthplace', 'BIRT', '');
-                      if (!$tngconfig['hidechr']) {
-                        echo showEventRow('altbirthdate', 'altbirthplace', 'CHR', '');
-                      }
-                      echo showEventRow('deathdate', 'deathplace', 'DEAT', '');
-                      echo showEventRow('burialdate', 'burialplace', 'BURI', '');
-                      echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
-                      if ($allow_lds) {
-                        echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
-                        echo showEventRow('confdate', 'confplace', 'CONL', '');
-                        echo showEventRow('initdate', 'initplace', 'INIT', '');
-                        echo showEventRow('endldate', 'endlplace', 'ENDL', '');
-                      }
-                      ?>
+                        <?php
+                        echo showEventRow('birthdate', 'birthplace', 'BIRT', '');
+                        if (!$tngconfig['hidechr']) {
+                            echo showEventRow('altbirthdate', 'altbirthplace', 'CHR', '');
+                        }
+                        echo showEventRow('deathdate', 'deathplace', 'DEAT', '');
+                        echo showEventRow('burialdate', 'burialplace', 'BURI', '');
+                        echo "<tr>";
+                        echo "<td></td>";
+                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "</tr>\n";
+                        if ($allow_lds) {
+                            echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
+                            echo showEventRow('confdate', 'confplace', 'CONL', '');
+                            echo showEventRow('initdate', 'initplace', 'INIT', '');
+                            echo showEventRow('endldate', 'endlplace', 'ENDL', '');
+                        }
+                        ?>
                     </table>
                 </div>
             </td>

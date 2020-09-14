@@ -85,7 +85,10 @@ $assoccount = tng_num_rows($assocresult);
                     $truncated = truncateIt($assocname, 75);
                     $actionstr = $allow_edit ? "<a href=\"#\" onclick=\"return editAssociation({$assoc['assocID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>" : "";
                     $actionstr .= $allow_delete ? "<a href=\"#\" onclick=\"return deleteAssociation({$assoc['assocID']},'$personID','$tree');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "";
-                    echo "<tr id=\"row_{$assoc['assocID']}\"><td class='lightback'>$actionstr</td><td class='lightback'>$truncated</td></tr>\n";
+                    echo "<tr id=\"row_{$assoc['assocID']}\">";
+                    echo "<td class='lightback'>$actionstr</td>";
+                    echo "<td class='lightback'>$truncated</td>";
+                    echo "</tr>\n";
                 }
                 tng_free_result($assocresult);
             }

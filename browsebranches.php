@@ -143,26 +143,26 @@ while ($row = tng_fetch_assoc($result)) {
   $query = "SELECT count(personID) AS pcount FROM $people_table WHERE branch LIKE \"%{$row['branch']}%\" $peoplewhere";
   $indresult = tng_query($query);
   $indrow = tng_fetch_assoc($indresult);
-  tng_free_result($indresult);
+    tng_free_result($indresult);
 
-  $presult = getPersonSimple($row['gedcom'], $row['personID']);
-  $prow = tng_fetch_assoc($presult);
-  tng_free_result($presult);
-  $prights = determineLivingPrivateRights($prow);
-  $prow['allow_living'] = $prights['living'];
-  $prow['allow_private'] = $prights['private'];
-  $namestr = getName($prow);
+    $presult = getPersonSimple($row['gedcom'], $row['personID']);
+    $prow = tng_fetch_assoc($presult);
+    tng_free_result($presult);
+    $prights = determineLivingPrivateRights($prow);
+    $prow['allow_living'] = $prights['living'];
+    $prow['allow_private'] = $prights['private'];
+    $namestr = getName($prow);
 
-  echo "<tr><td valign=\"top\" class=\"databack\">$i</td>\n";
-  echo "<td valign=\"top\" class=\"databack\">{$row['description']}&nbsp;</td>";
-  if ($numtrees > 1) {
-    echo "<td valign=\"top\" class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
-  }
-  echo "<td valign=\"top\" class=\"databack\"><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>&nbsp;</td>";
-  echo "<td valign=\"top\" class=\"databack\" align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($indrow['pcount']) . "</a>&nbsp;</td>";
-  echo "<td valign=\"top\" class=\"databack\" align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
-  echo "</tr>\n";
-  $i++;
+    echo "<tr><td valign=\"top\" class='databack'>$i</td>\n";
+    echo "<td valign=\"top\" class='databack'>{$row['description']}&nbsp;</td>";
+    if ($numtrees > 1) {
+        echo "<td valign=\"top\" class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+    }
+    echo "<td valign=\"top\" class='databack'><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>&nbsp;</td>";
+    echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($indrow['pcount']) . "</a>&nbsp;</td>";
+    echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
+    echo "</tr>\n";
+    $i++;
 }
 tng_free_result($result);
 ?>

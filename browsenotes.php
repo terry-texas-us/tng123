@@ -201,15 +201,15 @@ while ($nrow = tng_fetch_assoc($result)) {
         }
     }
     echo "<tr>\n";
-    echo "<td class=\"databack\">$i</td>\n";
-    echo "<td class=\"databack\">\n";
+    echo "<td class='databack'>$i</td>\n";
+    echo "<td class='databack'>\n";
     if ($noneliving && $noneprivate) {
         echo nl2br($nrow['note']);
     } else {
         echo $text['livingnote'];
     }
     echo "</td>\n";
-    echo "<td class=\"databack\" style=\"width: 175px;\">$notelinktext</td>\n";
+    echo "<td class='databack' style=\"width: 175px;\">$notelinktext</td>\n";
     echo "</tr>\n";
     $i++;
 }

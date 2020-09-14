@@ -206,11 +206,14 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     </tr>
                     <?php
                     if (determineLDSRights()) {
-                        echo "<tr><td>&nbsp;</td><td><input type=\"checkbox\" name=\"temple\" value=\"1\"";
+                        echo "<tr>";
+                        echo "<td>&nbsp;</td>";
+                        echo "<td><input type=\"checkbox\" name=\"temple\" value=\"1\"";
                         if ($row['temple']) {
                             echo " checked=\"checked\"";
                         }
-                        echo "> {$admtext['istemple']}</td></tr>\n";
+                        echo "> {$admtext['istemple']}</td>";
+                        echo "</tr>\n";
                     }
                     if ($map['key']) {
                         ?>
@@ -300,7 +303,10 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                         if ($allow_edit) {
                                             $actionstr .= "<a href=\"#\" onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"></a>";
                                         }
-                                        echo "<tr id=\"row_{$cemrow['cemeteryID']}\"><td class=\"nw\">$actionstr</td><td class=\"nw\">$location</td></tr>\n";
+                                        echo "<tr id=\"row_{$cemrow['cemeteryID']}\">";
+                                        echo "<td class=\"nw\">$actionstr</td>";
+                                        echo "<td class=\"nw\">$location</td>";
+                                        echo "</tr>\n";
                                     }
                                     ?>
                                     </tbody>

@@ -415,22 +415,25 @@ while ($row = tng_fetch_assoc($result)) {
     $famidstr = "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
 
     echo "<tr>";
-    echo "<td class=\"databack\" valign=\"top\">$i</td>\n";
+    echo "<td class='databack' valign=\"top\">$i</td>\n";
     $i++;
 
-    echo "<td class=\"databack\">$famidstr";
+    echo "<td class='databack'>$famidstr";
     if ($sitever != "mobile") {
         echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div></div>\n";
     }
     echo "&nbsp;</td>";
-    echo "<td class=\"databack\">$fname&nbsp;</td><td class=\"databack\">$mname&nbsp;</td>";
-    echo "<td class=\"databack\">$marrdate&nbsp;</td><td class=\"databack\">$marrplace&nbsp;</td>";
+    echo "<td class='databack'>$fname&nbsp;</td>";
+    echo "<td class='databack'>$mname&nbsp;</td>";
+    echo "<td class='databack'>$marrdate&nbsp;</td>";
+    echo "<td class='databack'>$marrplace&nbsp;</td>";
     if ($mydivyear || $mydivplace) {
-        echo "<td class=\"databack\">$divdate </td><td class=\"databack\">$divplace&nbsp;</td>";
+        echo "<td class='databack'>$divdate </td>";
+        echo "<td class='databack'>$divplace&nbsp;</td>";
     }
 
     if ($numtrees > 1) {
-        echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+        echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
     }
 
     echo "</tr>\n";

@@ -67,8 +67,10 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
                       $snnum++;
                       $num_in_col_ctr++;
                       if ($num_in_col_ctr == $num_in_col) {
-                        echo "</td>\n<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n<td class=\"sncol\">";
-                        $num_in_col_ctr = 0;
+                          echo "</td>\n";
+                          echo "<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n";
+                          echo "<td class=\"sncol\">";
+                          $num_in_col_ctr = 0;
                       }
                     }
                     tng_free_result($result);

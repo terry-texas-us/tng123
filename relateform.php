@@ -106,17 +106,19 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                             }
                           }
               echo "<div id=\"name2\" class='normal'>$namestr2</div><input type=\"hidden\" name=\"savedpersonID\" value=\"$relatepersonID\"></td></tr>\n";
-              echo "<tr><td><span class='normal'>{$text['changeto']} </span></td><td>";
+              echo "<tr>";
+              echo "<td><span class='normal'>{$text['changeto']} </span></td>";
+              echo "<td>";
               ?>
                 <input type="text" name="secondpersonID" id="secondpersonID" size="10"> <input type="button" name="find2" value="<?php echo $text['find']; ?>"
                                                                                                onclick="findItem('I','secondpersonID','name2','<?php echo $tree; ?>');">
             </td>
           </tr>
-        </table>
-      </td>
-        <td valign="top">
-            <div class="searchsidebar">
-                <table>
+                </table>
+            </td>
+            <td valign="top">
+                <div class="searchsidebar">
+                    <table>
                     <tr>
               <td><?php echo $text['maxrels']; ?>:</td>
               <td valign="bottom">

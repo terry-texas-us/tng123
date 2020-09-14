@@ -87,13 +87,13 @@ if ($pagenav || $treesearch) {
     <?php
     $i = $offsetplus;
     while ($row = tng_fetch_assoc($result)) {
-        echo "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>\n";
-        echo "<td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
-        echo "<td valign=\"top\" class=\"databack\"><span class='normal'>{$row['description']}&nbsp;</span></td>";
+        echo "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>\n";
+        echo "<td valign=\"top\" class='databack'><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+        echo "<td valign=\"top\" class='databack'><span class='normal'>{$row['description']}&nbsp;</span></td>";
         if ($row['pcount']) {
-            echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class='normal'><a href=\"$search_url" . "tree={$row['gedcom']}\">{$row['pcount']}</a>&nbsp;</span></td>";
+            echo "<td valign=\"top\" class='databack' align=\"right\"><span class='normal'><a href=\"$search_url" . "tree={$row['gedcom']}\">{$row['pcount']}</a>&nbsp;</span></td>";
         } else {
-            echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class='normal'>{$row['pcount']}&nbsp;</span></td>";
+            echo "<td valign=\"top\" class='databack' align=\"right\"><span class='normal'>{$row['pcount']}&nbsp;</span></td>";
         }
         echo "</tr>\n";
         $i++;

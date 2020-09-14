@@ -81,7 +81,7 @@ echo "
 */
 echo "
       <table id=\"m2table\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"2\" class=\"lightback $tableclass\" style=\"padding: 0;\">
-      <tr class=\"databack\">
+      <tr class='databack'>
          <td class=\"tngshadow\">";
 
 echo "

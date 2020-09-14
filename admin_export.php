@@ -144,17 +144,21 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             $value = strtok($locimppath['documents'], ",");
                             break;
                           case "headstones":
-                            $value = strtok($locimppath['headstones'], ",");
-                            break;
-                          default:
-                            if (isset($locimppath[$msgID])) {
-                              $value = strtok($locimppath[$msgID], ",");
-                            } else {
-                              $value = strtok($locimppath['other'], ",");
-                            }
-                            break;
+                              $value = strtok($locimppath['headstones'], ",");
+                              break;
+                            default:
+                                if (isset($locimppath[$msgID])) {
+                                    $value = strtok($locimppath[$msgID], ",");
+                                } else {
+                                    $value = strtok($locimppath['other'], ",");
+                                }
+                                break;
                         }
-                        echo "<tr><td><input type=\"checkbox\" name=\"incl_$msgID\" value=\"1\" checked=\"checked\"></td>\n<td>" . $mediatype['display'] . ":</td>\n<td><input type=\"text\" value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td></tr>\n";
+                          echo "<tr>";
+                          echo "<td><input type=\"checkbox\" name=\"incl_$msgID\" value=\"1\" checked=\"checked\"></td>\n";
+                          echo "<td>" . $mediatype['display'] . ":</td>\n";
+                          echo "<td><input type=\"text\" value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td>";
+                          echo "</tr>\n";
                       }
                       ?>
                 </table>

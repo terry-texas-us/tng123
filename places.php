@@ -109,7 +109,11 @@ if ($result) {
                 $col++;
             }
             $chartstr = $col ? "" : "<td width=\"400\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\"><a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\" title=\"{$place['myplace']} ($tally_fmt)\"></a></div></td>";
-            $linkstr2col[$col] .= "<tr><td class=\"snlink\" align=\"right\">$count.</td><td>$name$searchlink</td>$chartstr</tr>\n";
+            $linkstr2col[$col] .= "<tr>";
+            $linkstr2col[$col] .= "<td class=\"snlink\" align=\"right\">$count.</td>";
+            $linkstr2col[$col] .= "<td>$name$searchlink</td>";
+            $linkstr2col[$col] .= "$chartstr";
+            $linkstr2col[$col] .= "</tr>\n";
             $count++;
         }
     }

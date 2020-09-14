@@ -214,34 +214,34 @@ tng_header($text['databasestatistics'], $flags);
       $fmt_unknownsex = number_format($unknownsex);
       $fmt_numdeceased = number_format($numdeceased);
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totindividuals']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$totalpeople &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totindividuals']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$totalpeople &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totmales']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$fmt_males ($percentmales%) &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totmales']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$fmt_males ($percentmales%) &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totfemales']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$fmt_females ($percentfemales%) &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totfemales']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$fmt_females ($percentfemales%) &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totunknown']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$fmt_unknownsex ($percentunknownsex%) &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totunknown']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$fmt_unknownsex ($percentunknownsex%) &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totliving']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$numliving &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totliving']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$numliving &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totfamilies']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$totalfamilies &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totfamilies']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$totalfamilies &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totuniquesn']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$uniquesurnames &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totuniquesn']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$uniquesurnames &nbsp;</span></td></tr>\n";
 
       $media_data = $media_names = array();
       $index = 0;
       foreach ($mediatypes as $mediatype) {
           $mediatypeID = $mediatype['ID'];
           $titlestr = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-          echo "<tr><td class=\"databack\"><span class='normal'>{$text['total']} $titlestr</span></td>\n";
-          echo "<td class=\"databack\" align=\"right\"><span class='normal'>" . number_format($totalmedia[$mediatypeID]) . " &nbsp;</span></td></tr>\n";
+          echo "<tr><td class='databack'><span class='normal'>{$text['total']} $titlestr</span></td>\n";
+          echo "<td class='databack' align=\"right\"><span class='normal'>" . number_format($totalmedia[$mediatypeID]) . " &nbsp;</span></td></tr>\n";
           array_push($media_data, $totalmedia[$mediatypeID]);
           array_push($media_names, $titlestr);
           if ($index < 16) {
@@ -251,21 +251,21 @@ tng_header($text['databasestatistics'], $flags);
           }
       }
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['totsources']}</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$totalsources &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['totsources']}</span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$totalsources &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>{$text['avglifespan']}<sup><font size=\"1\">1</font></sup></span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>$avgyears {$text['years']}, $avgdays {$text['days']} &nbsp;</span></td></tr>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['avglifespan']}<sup><font size=\"1\">1</font></sup></span></td>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>$avgyears {$text['years']}, $avgdays {$text['days']} &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class=\"databack\"><span class='normal'>" . $text['earliestbirth'];
+      echo "<tr><td class='databack'><span class='normal'>" . $text['earliestbirth'];
       if ($firstallowed) {
           echo " (<a href=\"$getperson_url" . "personID=$firstbirthpersonid&amp;tree=$firstbirthgedcom\">$firstbirthfirstname $firstbirthlnprefix $firstbirthlastname</a>)";
       }
       echo "&nbsp;</span></td>\n";
-      echo "<td class=\"databack\" align=\"right\"><span class='normal'>" . displayDate($firstbirthdate) . " &nbsp;</span></td></tr>\n";
+      echo "<td class='databack' align=\"right\"><span class='normal'>" . displayDate($firstbirthdate) . " &nbsp;</span></td></tr>\n";
 
       if ($tngconfig['lastimport'] && $treerow['treename'] && $lastimportdate) {
-          echo "<tr><td class=\"databack\"><span class='normal'>" . $text['lastimportdate'] . "</span></td>\n";
+          echo "<tr><td class='databack'><span class='normal'>" . $text['lastimportdate'] . "</span></td>\n";
 
         $importtime = strtotime($lastimportdate);
         if (substr($lastimport, 11, 8) != "00:00:00") {
@@ -273,7 +273,7 @@ tng_header($text['databasestatistics'], $flags);
         }
         $importdate = strftime("%d %b %Y %H:%M:%S", $importtime);
 
-          echo "<td class=\"databack\" align=\"right\"><span class='normal'>" . displayDate($importdate) . " &nbsp;</span></td></tr>\n";
+          echo "<td class='databack' align=\"right\"><span class='normal'>" . displayDate($importdate) . " &nbsp;</span></td></tr>\n";
       }
       ?>
       </table>
@@ -322,10 +322,10 @@ tng_header($text['databasestatistics'], $flags);
             $daysold = 365 + $daysold;
           }
         }
-          echo "<tr><td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$getperson_url" . "personID=$personid&amp;tree=$gedcom\">";
+          echo "<tr><td valign=\"top\" class='databack'><span class='normal'><a href=\"$getperson_url" . "personID=$personid&amp;tree=$gedcom\">";
           echo getName($line);
           echo "</a></span></td>\n";
-          echo "<td valign=\"top\" class=\"databack\" align=\"right\"><span class='normal'>";
+          echo "<td valign=\"top\" class='databack' align=\"right\"><span class='normal'>";
         if ($yearsold) {
           echo number_format($yearsold) . " " . $text['years'];
         }
@@ -340,7 +340,7 @@ tng_header($text['databasestatistics'], $flags);
       $width = $sitever == "standard" ? "500px" : "100%";
       echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n";
       echo "<tr><td  valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\"><sup><font size=\"1\">1</font></sup>&nbsp;</span></td>";
-      echo "<td class=\"databack\"><span class='normal'>{$text['agedisclaimer']}</span></td></tr>";
+      echo "<td class='databack'><span class='normal'>{$text['agedisclaimer']}</span></td></tr>";
       echo "</table>\n";
       tng_free_result($result);
 

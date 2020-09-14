@@ -204,7 +204,7 @@ class modlister extends modparser
     // uses bounding table to eliminate jumping during page load
     echo "
 <table id=\"mmgrid\" class=\"lightback $mmlistclass\">
-<tr class=\"databack\">
+<tr class='databack'>
 <td class=\"tngshadow\">
 
 <table class=\"tfixed normal\">
@@ -1359,10 +1359,10 @@ class modlister extends modparser
     if (empty($file_array)) {
       return $retstr;
     }
-    $retstr .= "
+      $retstr .= "
                   <tr>
                      <td class=\"normal fieldnameback fieldname aligntop nw\">$label</td>
-                     <td class=\"normal databack w100 mmpadleft\">";
+                     <td class='normal databack w100 mmpadleft'>";
     foreach ($file_array as $listing) {
       if ($listing == 'files') {
         continue;

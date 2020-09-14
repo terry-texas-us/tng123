@@ -179,10 +179,10 @@ class modeditor extends modparser
 <form method=\"post\" action=\"\">
 <table class=\"normal tfixed\">
 <tr>
-   <td class=\"databack edpanel mmleftcol\">
+   <td class='databack edpanel mmleftcol'>
       {$params[$i]['label']}
    </td>
-   <td class=\"databack edpanel mmrightcol\">
+   <td class='databack edpanel mmrightcol'>
       <div>$relpath: {$params[$i]['param']}</div>
       <textarea class=\"w100\" name=\"param[val]\">{$params[$i]['val']}</textarea>
       <input type=\"hidden\" name=\"param[mod]\" value=\"$this->modname\">

@@ -142,14 +142,14 @@ if ($sitever != "standard") {
         $srcrow = tng_fetch_assoc($srcresult);
         tng_free_result($srcresult);
 
-        echo "<tr><td valign=\"top\" class=\"databack\">$i</td>\n";
-        echo "<td valign=\"top\" class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
-        echo "<td valign=\"top\" class=\"databack\">{$row['description']}&nbsp;</td>";
-        echo "<td valign=\"top\" class=\"databack\" align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}\">" . number_format($row['pcount']) . "</a>&nbsp;</td>";
-        echo "<td valign=\"top\" class=\"databack\" align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
-        echo "<td valign=\"top\" class=\"databack\" align=\"right\"><a href=\"$browsesources_url" . "tree={$row['gedcom']}\">" . number_format($srcrow['scount']) . "</a>&nbsp;</td>";
+        echo "<tr><td valign=\"top\" class='databack'>$i</td>\n";
+        echo "<td valign=\"top\" class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+        echo "<td valign=\"top\" class='databack'>{$row['description']}&nbsp;</td>";
+        echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}\">" . number_format($row['pcount']) . "</a>&nbsp;</td>";
+        echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
+        echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$browsesources_url" . "tree={$row['gedcom']}\">" . number_format($srcrow['scount']) . "</a>&nbsp;</td>";
         if ($numtrees > 1) {
-            echo "<td valign=\"top\" class=\"databack\" align=\"right\">";
+            echo "<td valign=\"top\" class='databack' align=\"right\">";
             if ($row['gedcom'] == $assignedtree) {
                 echo $admtext['active'];
             } elseif (in_array($row['gedcom'], $trees)) {

@@ -184,7 +184,7 @@ if ($lines) {
     if ($newLogFormat) {
       //This is a one-physical-line log entry.
       if ($logEntryDetails) {
-        echo "<tr class=\"databack mmpadleft moddetails\" $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
+        echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
         $type3EntryIsActive = false;
       }
       $actionCount++;
@@ -219,14 +219,14 @@ if ($lines) {
       if ($match) {
         //It looks like this is the beginning of an old multiple-physical-line log entry.
         if ($logEntryDetails) {
-          echo "<tr class=\"databack mmpadleft moddetails\" $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
+            echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
           $type1Or2EntryIsActive = false;
           $logEntryDetails = "";
         }
         $actionCount++;
         $modFilename = $matches[2]; //I'm not using this variable now, but hope to later.
-        echo "<tr class=\"databack mmpadleft\">";
-        echo "<td class=\"action\" id=\"action$actionCount\">$actionCount. $line</td></tr>";
+          echo "<tr class='databack mmpadleft'>";
+          echo "<td class=\"action\" id=\"action$actionCount\">$actionCount. $line</td></tr>";
         $type3EntryIsActive = true;
       } else {
         //Couldn't parse the alternate pattern - treat this as an unrecognizable entry
@@ -239,7 +239,7 @@ if ($lines) {
             $logEntryDetails .= "<br>$line";
           } else {
             //There's no outstanding log entry to add this to. Just display it without any compression controls
-            echo "<tr><td class=\"databack mmpadleft\" colspan=\"$nColumns\"><b>?? </b>$line</td></tr>\n";
+              echo "<tr><td class='databack mmpadleft' colspan=\"$nColumns\"><b>?? </b>$line</td></tr>\n";
           }
         }
       }
@@ -248,7 +248,7 @@ if ($lines) {
 }
 // Are any details left over from the very last log entry?
 if ($logEntryDetails) {
-  echo "<tr class=\"databack mmpadleft moddetails\" $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
+    echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
 }
 
 echo "

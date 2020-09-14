@@ -196,21 +196,22 @@ if (tng_num_rows($result)) {
                 $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
             }
             echo "<tr>\n";
-            echo "<td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
-            echo "<td class=\"databack\">\n";
+            echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
+            echo "<td class='databack'>\n";
             if ($sitever != "mobile") {
                 echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
                 echo "<div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
                 echo "</div>\n";
             }
             echo "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
-            echo "<td class=\"databack nw\">$birthdate&nbsp;</td><td class=\"databack\">&nbsp;$birthplacestr&nbsp;</td>";
+            echo "<td class='databack nw'>$birthdate&nbsp;</td>";
+            echo "<td class='databack'>&nbsp;$birthplacestr&nbsp;</td>";
             if ($numtrees > 1) {
-                echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
             }
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class=\"databack nw\">" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
+            echo "<td class='databack nw'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
             echo "</tr>\n";
         }
         tng_free_result($result);
@@ -292,7 +293,7 @@ if (tng_num_rows($famresult)) {
             $wname = getName($row);
 
             echo "<tr>\n";
-            echo "<td class=\"databack\">\n";
+            echo "<td class='databack'>\n";
             echo "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']}</a>\n";
             if ($sitever != "mobile") {
                 echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
@@ -300,11 +301,11 @@ if (tng_num_rows($famresult)) {
                 echo "</div>\n";
             }
             echo "</td>";
-            echo "</span></td><td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['husband']}&amp;tree={$row['gedcom']}\">{$row['husband']}</a></td>\n";
-            echo "<td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['husband']}&amp;tree={$row['gedcom']}\">$hname</a>&nbsp;</td>\n";
-            echo "<td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['wife']}&amp;tree={$row['gedcom']}\">{$row['wife']}</a>&nbsp;</td>\n";
-            echo "<td class=\"databack\"><a href=\"$getperson_url" . "personID={$row['wife']}&amp;tree={$row['gedcom']}\">$wname</a>&nbsp;</td>\n";
-            echo "<td class=\"databack\">";
+            echo "</span></td><td class='databack'><a href=\"$getperson_url" . "personID={$row['husband']}&amp;tree={$row['gedcom']}\">{$row['husband']}</a></td>\n";
+            echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['husband']}&amp;tree={$row['gedcom']}\">$hname</a>&nbsp;</td>\n";
+            echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['wife']}&amp;tree={$row['gedcom']}\">{$row['wife']}</a>&nbsp;</td>\n";
+            echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['wife']}&amp;tree={$row['gedcom']}\">$wname</a>&nbsp;</td>\n";
+            echo "<td class='databack'>";
             if ($rights['both']) {
                 $row['branch'] = $row['fbranch'];
                 $row['living'] = $row['fliving'];
@@ -318,11 +319,11 @@ if (tng_num_rows($famresult)) {
             }
             echo "&nbsp;</td>\n";
             if ($numtrees > 1) {
-                echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
             }
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class=\"databack nw\">" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
+            echo "<td class='databack nw'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
         }
         tng_free_result($famresult);
         echo "</table>\n";

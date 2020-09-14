@@ -128,7 +128,7 @@ if (!empty($old)) {
   echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, $message);
 
   echo "<div class='lightback' style=\"padding:2px;\">\n";
-    echo "<div class=\"databack normal\" style=\"padding:5px;\">\n";
+    echo "<div class='databack normal' style=\"padding:5px;\">\n";
 }
 ?>
 

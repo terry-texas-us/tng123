@@ -6,7 +6,7 @@
  * @return array
  */
 function getTree($trees_table, $tree): array {
-    $query = "SELECT treename FROM $trees_table WHERE gedcom = '$tree'";
+    $query = "SELECT gedcom, treename FROM $trees_table WHERE gedcom = '$tree'";
     $treeresult = tng_query($query);
     $treerow = tng_fetch_assoc($treeresult);
     tng_free_result($treeresult);

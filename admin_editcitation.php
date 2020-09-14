@@ -33,9 +33,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     </h3>
 
     <table cellpadding="2" class="normal">
-        <?php
-        if ($row['sourceID']) {
-            ?>
+        <?php if ($row['sourceID']) { ?>
             <tr>
                 <td valign="top"><?php echo $admtext['source']; ?>:</td>
                 <td>
@@ -51,7 +49,10 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <?php
         } else {
-            echo "<tr><td>{$admtext['description']}:</td><td><input type=\"text\" name=\"description\" value=\"{$row['description']}\"><input type=\"hidden\" name=\"sourceID\" value=\"\"></td>\n";
+            echo "<tr>";
+            echo "<td>{$admtext['description']}:</td>";
+            echo "<td><input type=\"text\" name=\"description\" value=\"{$row['description']}\"><input type=\"hidden\" name=\"sourceID\" value=\"\"></td>\n";
+            echo "</tr>";
         }
         ?>
         <tr>

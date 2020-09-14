@@ -596,7 +596,7 @@ function showMediaSource($imgrow, $ss = false) {
 }
 
 function tableRow($label, $fact) {
-    return "<tr><td style=\"width:100px;\" class=\"fieldnameback fieldname\">$label</td><td class=\"databack\">" . insertLinks($fact) . "</td></tr>\n";
+    return "<tr><td style=\"width:100px;\" class=\"fieldnameback fieldname\">$label</td><td class='databack'>" . insertLinks($fact) . "</td></tr>\n";
 }
 
 function showTable($imgrow, $medialinktext, $albumlinktext) {
@@ -722,11 +722,11 @@ function doCemPlusMap($imgrow, $tree) {
             }
 
             $targettext = $hs['newwindow'] ? " target=\"_blank\"" : "";
-            echo "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>";
-            echo "<td valign=\"top\" class=\"databack\" width=\"$thumbmaxw\">";
+            echo "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>";
+            echo "<td valign=\"top\" class='databack' width=\"$thumbmaxw\">";
             echo $imgsrc ? "<a href=\"$href\"$targettext>$imgsrc</a>" : "&nbsp;";
             echo "</td>\n";
-            echo "<td valign=\"top\" class=\"databack\"><span class='normal'>";
+            echo "<td valign=\"top\" class='databack'><span class='normal'>";
             echo "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
             $i++;
         }

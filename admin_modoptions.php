@@ -148,7 +148,7 @@ echo "
 
 echo "
       <table id=\"m2table\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"2\" class=\"lightback $tableclass\" style=\"padding: 0;\">
-      <tr class=\"databack\">
+      <tr class='databack'>
          <td class=\"tngshadow\">";
 
 echo displayToggle("plus0", 0, "log", $admtext['logoptions'], "");
@@ -227,7 +227,7 @@ echo ">{$admtext['no']}</option>
             </div>
 			</td>
 		</tr>
-      <tr class=\"databack tngshadow\">
+      <tr class='databack tngshadow'>
          <td class=\"tngshadow\">";
 echo displayToggle("plus1", 0, "display", $admtext['displayoptions'], "");
 echo "
@@ -405,7 +405,7 @@ echo ">{$admtext['no']}</option>
             </div>
          </td>
       </tr>
-     <tr class=\"databack tngshadow\">
+     <tr class='databack tngshadow'>
          <td class=\"tngshadow\">";
 echo displayToggle("plus2", 0, "other", $admtext['othermmoptions'], "");
 echo "
@@ -474,7 +474,7 @@ echo ">{$admtext['no']}</option>
 			</table>
 			</div>
 		</td></tr>
-		<tr class=\"databack tngshadow\">
+		<tr class='databack tngshadow'>
 			<td class=\"tngshadow\">
             <input type=\"submit\" name=\"submit\" accesskey=\"s\" value=\"{$admtext['save']}\">
 			</td>

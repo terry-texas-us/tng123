@@ -208,8 +208,8 @@ if ($notes) {
   $sourcetext .= "<col class=\"labelcol\"/><col/>\n";
   $sourcetext .= "<tr>\n";
   $sourcetext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
-  $sourcetext .= "<td valign=\"top\" class=\"databack\">$notes</td>\n";
-  $sourcetext .= "</tr>\n";
+    $sourcetext .= "<td valign=\"top\" class='databack'>$notes</td>\n";
+    $sourcetext .= "</tr>\n";
   $sourcetext .= "</table>\n";
   $sourcetext .= "<br>\n";
   $sourcetext .= endSection("notes");

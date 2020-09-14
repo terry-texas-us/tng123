@@ -611,7 +611,7 @@ if (!$result) {
 
     if (!$csv) {
         echo "<tr>\n";
-        echo "<td class=\"databack\"><span class='normal'>$rowcount</span></td>\n";
+        echo "<td class='databack'><span class='normal'>$rowcount</span></td>\n";
     }
     $datastr = "";
     for ($i = 0; $i < count($displayfields) - 1; $i++) {
@@ -677,7 +677,7 @@ if (!$result) {
       if ($csv) {
         $data = str_replace("\"", "\"\"", $data);
       }
-        $datastr .= $csv ? ($datastr ? ",\"$data\"" : "\"$data\"") : "<td class=\"databack\"><span class='normal'>$data&nbsp;</span></td>\n";
+        $datastr .= $csv ? ($datastr ? ",\"$data\"" : "\"$data\"") : "<td class='databack'><span class='normal'>$data&nbsp;</span></td>\n";
     }
     echo $datastr . $lineending;
 

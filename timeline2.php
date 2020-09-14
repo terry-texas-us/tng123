@@ -571,9 +571,9 @@ if ($counter) {
       foreach ($tlevents2 as $key => $value) {
           $counter++;
           echo "<tr>\n";
-          echo "<td class=\"databack\" valign=\"top\" align=\"right\"><span class='normal'>$counter&nbsp;</span></td>";
-          echo "<td class=\"databack\" valign=\"top\"><span class='normal'>$key&nbsp;</span></td>";
-          echo "<td class=\"databack\" valign=\"top\"><ul class='normal'>$value</ul></td>";
+          echo "<td class='databack' valign=\"top\" align=\"right\"><span class='normal'>$counter&nbsp;</span></td>";
+          echo "<td class='databack' valign=\"top\"><span class='normal'>$key&nbsp;</span></td>";
+          echo "<td class='databack' valign=\"top\"><ul class='normal'>$value</ul></td>";
           echo "</tr>\n";
       }
       ?>

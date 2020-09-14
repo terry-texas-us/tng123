@@ -45,8 +45,12 @@ if (!$numrows) {
   <?php
   $count = 1;
   while ($row = tng_fetch_assoc($result)) {
-      echo "<tr><td class=\"databack\"><span class='normal'>$count.</span></td><td class=\"databack\"><span class='normal'>&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td><td class=\"databack\"><span class='normal'>{$row['reportdesc']}&nbsp;</span></td></tr>\n";
-    $count++;
+      echo "<tr>";
+      echo "<td class='databack'><span class='normal'>$count.</span></td>";
+      echo "<td class='databack'><span class='normal'>&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td>";
+      echo "<td class='databack'><span class='normal'>{$row['reportdesc']}&nbsp;</span></td>";
+      echo "</tr>\n";
+      $count++;
   }
   tng_free_result($result);
   ?>

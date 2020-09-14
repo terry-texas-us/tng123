@@ -504,9 +504,9 @@ if ($tngneedresults) {
             $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
             while ($row = tng_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td class=\"databack\">$i</td>\n";
+                echo "<td class='databack'>$i</td>\n";
                 $i++;
-                echo "<td class=\"databack\">\n";
+                echo "<td class='databack'>\n";
 
                 $personIDstr = $namestr = $hboth = $wboth = "";
                 if ($needfamilies) {
@@ -589,10 +589,11 @@ if ($tngneedresults) {
                 }
                 echo "</td>\n";
 
-                echo "<td class=\"databack\">&nbsp;" . displayDate($dateval) . "</td><td class=\"databack\">$placetxt&nbsp;</td>";
-                echo "<td class=\"databack\">$personIDstr </td>";
+                echo "<td class='databack'>&nbsp;" . displayDate($dateval) . "</td>";
+                echo "<td class='databack'>$placetxt&nbsp;</td>";
+                echo "<td class='databack'>$personIDstr </td>";
                 if ($numtrees > 1) {
-                    echo "<td class=\"databack\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
             }

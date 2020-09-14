@@ -114,8 +114,8 @@ if ($albumlinktext) {
   $albumlinktext = "<table cellpadding=\"4\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n";
   $albumlinktext .= "<tr>\n";
   $albumlinktext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" width=\"100\">{$text['indlinked']}</td>\n";
-  $albumlinktext .= "<td class=\"databack\" width=\"90%\">$altext</td>\n";
-  $albumlinktext .= "</tr>\n";
+    $albumlinktext .= "<td class='databack' width=\"90%\">$altext</td>\n";
+    $albumlinktext .= "</tr>\n";
   $albumlinktext .= "</table>\n<br>";
 }
 
@@ -384,16 +384,16 @@ while ($row = tng_fetch_assoc($result)) {
 
   if ($tnggallery) {
     if ($imgsrc) {
-      $mediatext .= "<div class=\"databack gallery\" align=\"center\">";
-      $mediatext .= $href ? "<a href=\"$href\">$imgsrc</a>\n" : "$imgsrc\n";
+        $mediatext .= "<div class='databack gallery' align=\"center\">";
+        $mediatext .= $href ? "<a href=\"$href\">$imgsrc</a>\n" : "$imgsrc\n";
       $mediatext .= "</div>";
       $i++;
     }
   } else {
-      $mediatext .= "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>";
+      $mediatext .= "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>";
     if ($imgsrc) {
-      $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">";
-      $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
+        $mediatext .= "<td valign=\"top\" class='databack' align=\"center\">";
+        $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
       if ($href) {
         $mediatext .= "<a href=\"$href\"";
         $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
@@ -404,15 +404,16 @@ while ($row = tng_fetch_assoc($result)) {
       } else {
         $mediatext .= $imgsrc;
       }
-      $mediatext .= "</td><td valign=\"top\" class=\"databack\">";
-      $thumbcount++;
+        $mediatext .= "</td><td valign=\"top\" class='databack'>";
+        $thumbcount++;
     } else {
-      $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
+        $mediatext .= "<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td>";
+        $mediatext .= "<td valign=\"top\" class='databack'>";
     }
 
       $mediatext .= "<span class='normal'>$description<br>$notes&nbsp;</span></td>";
-      $mediatext .= "<td valign=\"top\" class=\"databack\">\n";
-    $mediatext .= $medialinktext;
+      $mediatext .= "<td valign=\"top\" class='databack'>\n";
+      $mediatext .= $medialinktext;
     $mediatext .= "&nbsp;</td></tr>\n";
     $i++;
   }
@@ -424,8 +425,8 @@ if ($tnggallery) {
   }
 } else {
   if (!$thumbcount) {
-    $header = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
-    $mediatext = str_replace("<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">", "<td valign=\"top\" class=\"databack\">", $mediatext);
+      $header = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
+      $mediatext = str_replace("<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td><td valign=\"top\" class='databack'>", "<td valign=\"top\" class='databack'>", $mediatext);
   }
 }
 

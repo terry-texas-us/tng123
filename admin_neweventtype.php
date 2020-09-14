@@ -34,7 +34,10 @@ tng_adminheader($admtext['addnewevtype'], $flags);
                 $lang = $langrow['folder'];
                 $display = $admtext['display'] . " ({$langrow['display']})";
                 $displayname = "display" . $langrow['languageID'];
-                $displayrows .= "<tr><td valign=\"top\"><span class='normal'>$display</span></td><td><input type=\"text\" name=\"$displayname\" size=\"40\" value=\"\" onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td></tr>\n";
+                $displayrows .= "<tr>";
+                $displayrows .= "<td valign=\"top\"><span class='normal'>$display</span></td>";
+                $displayrows .= "<td><input type=\"text\" name=\"$displayname\" size=\"40\" value=\"\" onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td>";
+                $displayrows .= "</tr>\n";
                 echo "if( document.form1.$displayname.value ) display = display + \"$lang\" + \"|\" + document.form1.$displayname.value + \"|\";\n";
             }
         } else {

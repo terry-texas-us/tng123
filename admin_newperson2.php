@@ -175,26 +175,29 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td><?php echo $admtext['place']; ?></td>
                 <td colspan="4">&nbsp;</td>
             </tr>
-          <?php
-          $noclass = true;
-          $currentform = "document.npform";
-          echo showEventRow('birthdate', 'birthplace', 'BIRT', '');
-          if (!$tngconfig['hidechr']) {
-            echo showEventRow('altbirthdate', 'altbirthplace', 'CHR', '');
-          }
-          echo showEventRow('deathdate', 'deathplace', 'DEAT', '');
-          echo showEventRow('burialdate', 'burialplace', 'BURI', '');
-          echo "<tr><td></td><td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td></tr>\n";
-          if (determineLDSRights()) {
-            echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
-            echo showEventRow('confdate', 'confplace', 'CONL', '');
-            echo showEventRow('initdate', 'initplace', 'INIT', '');
-            echo showEventRow('endldate', 'endlplace', 'ENDL', '');
-          }
-          ?>
+            <?php
+            $noclass = true;
+            $currentform = "document.npform";
+            echo showEventRow('birthdate', 'birthplace', 'BIRT', '');
+            if (!$tngconfig['hidechr']) {
+                echo showEventRow('altbirthdate', 'altbirthplace', 'CHR', '');
+            }
+            echo showEventRow('deathdate', 'deathplace', 'DEAT', '');
+            echo showEventRow('burialdate', 'burialplace', 'BURI', '');
+            echo "<tr>";
+            echo "<td></td>";
+            echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+            echo "</tr>\n";
+            if (determineLDSRights()) {
+                echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
+                echo showEventRow('confdate', 'confplace', 'CONL', '');
+                echo showEventRow('initdate', 'initplace', 'INIT', '');
+                echo showEventRow('endldate', 'endlplace', 'ENDL', '');
+            }
+            ?>
         </table>
 
-      <?php
+        <?php
       if ($type == "child") {
         echo "<br>\n";
         echo $admtext['relationship'] . " ({$admtext['father']}): " . relateSelect("father") . "&nbsp;&nbsp;";

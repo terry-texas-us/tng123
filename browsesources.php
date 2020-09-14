@@ -135,11 +135,11 @@ echo $header;
 $i = $offsetplus;
 while ($row = tng_fetch_assoc($result)) {
     $sourcetitle = $row['title'] ? $row['title'] : $row['shorttitle'];
-    echo "<tr><td valign=\"top\" class=\"databack\"><span class='normal'>$i</span></td>\n";
-    echo "<td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
-    echo "<td valign=\"top\" class=\"databack\"><span class='normal'><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
+    echo "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>\n";
+    echo "<td valign=\"top\" class='databack'><span class='normal'><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
+    echo "<td valign=\"top\" class='databack'><span class='normal'><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
     if ($numtrees > 1) {
-        echo "<td valign=\"top\" class=\"databack nw\"><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+        echo "<td valign=\"top\" class='databack nw'><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
     }
     echo "</tr>\n";
     $i++;

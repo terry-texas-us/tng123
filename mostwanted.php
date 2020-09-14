@@ -42,8 +42,8 @@ function showDivs($type) {
     $row['allow_living'] = 1;
     $imgsrc = $row['mediaID'] ? getSmallPhoto($row) : "";
 
-    $mediatext .= "<tr><td class=\"databack normal\">\n";
-    $href = getMediaHREF($row, 0);
+    $mediatext .= "<tr><td class='databack normal'>\n";
+      $href = getMediaHREF($row, 0);
     if ($imgsrc) {
       $mediatext .= "<div class=\"mwimage\">\n<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
       $mediatext .= "<a href=\"$href\"";

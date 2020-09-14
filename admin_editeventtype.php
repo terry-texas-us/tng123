@@ -84,17 +84,20 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
       if (tng_num_rows($langresult)) {
         $displayrows = "";
         while ($langrow = tng_fetch_assoc($langresult)) {
-          $lang = $langrow['folder'];
-          $displayval = "";
-          if (is_array($disppairs)) {
-            $displayval = isset($disppairs[$lang]) ? $disppairs[$lang] : "";
-          } else {
+            $lang = $langrow['folder'];
             $displayval = "";
-          }
-          $display = "{$admtext['display']} ({$langrow['display']})";
-          $displayname = "display" . $langrow['languageID'];
-          $displayrows .= "<tr><td valign=\"top\">$display</td><td><input type=\"text\" name=\"$displayname\" size=\"40\" value=\"$displayval\" onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td></tr>\n";
-          echo "if( document.form1.$displayname.value ) addToDisplay('$lang',document.form1.$displayname.value);\n";
+            if (is_array($disppairs)) {
+                $displayval = isset($disppairs[$lang]) ? $disppairs[$lang] : "";
+            } else {
+                $displayval = "";
+            }
+            $display = "{$admtext['display']} ({$langrow['display']})";
+            $displayname = "display" . $langrow['languageID'];
+            $displayrows .= "<tr>";
+            $displayrows .= "<td valign=\"top\">$display</td>";
+            $displayrows .= "<td><input type=\"text\" name=\"$displayname\" size=\"40\" value=\"$displayval\" onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td>";
+            $displayrows .= "</tr>\n";
+            echo "if( document.form1.$displayname.value ) addToDisplay('$lang',document.form1.$displayname.value);\n";
         }
       } else {
         $displayrows = "";

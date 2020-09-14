@@ -90,17 +90,20 @@ header("Content-type:text/html; charset=" . $session_charset);
             $thisfamily .= "<br>";
           }
           $person['firstname'] = $row['wfirstname'];
-          $person['lnprefix'] = $row['wlnprefix'];
-          $person['lastname'] = $row['wlastname'];
-          $person['suffix'] = $row['wsuffix'];
-          $person['nameorder'] = $row['wnameorder'];
-          $person['living'] = $row['wliving'];
-          $person['private'] = $row['wprivate'];
-          $person['branch'] = $row['wbranch'];
-          $person['allow_living'] = determineLivingRights($person);
-          $thisfamily .= getName($person);
+            $person['lnprefix'] = $row['wlnprefix'];
+            $person['lastname'] = $row['wlastname'];
+            $person['suffix'] = $row['wsuffix'];
+            $person['nameorder'] = $row['wnameorder'];
+            $person['living'] = $row['wliving'];
+            $person['private'] = $row['wprivate'];
+            $person['branch'] = $row['wbranch'];
+            $person['allow_living'] = determineLivingRights($person);
+            $thisfamily .= getName($person);
         }
-        echo "<tr><td valign=\"top\"><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td><td><span class='normal'><a href=\"#\" onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td></tr>\n";
+          echo "<tr>";
+          echo "<td valign=\"top\"><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td>";
+          echo "<td><span class='normal'><a href=\"#\" onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td>";
+          echo "</tr>\n";
       }
       tng_free_result($result);
       ?>

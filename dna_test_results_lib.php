@@ -103,8 +103,8 @@ if ($totnum_tests) {
                 $persontext .= "</tr>\n<tr class=\"dnatest\" style=\"display:none;\">\n";
             }
             $markercount = ($dna_test['test_type'] == "Y-DNA") ? "-{$dna_test['markers']}" : "";
-            $persontext .= "<td valign=\"top\" class=\"databack\"><a href=\"$dna_test_url" . "testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";
-            $persontext .= "<td valign=\"top\" class=\"databack\">$dna_namestr";
+            $persontext .= "<td valign=\"top\" class='databack'><a href=\"$dna_test_url" . "testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";
+            $persontext .= "<td valign=\"top\" class='databack'>$dna_namestr";
             $test_type = $dna_test['test_type'];
             if ($dna_test['test_type'] == "Y-DNA") {
                 $haplogroup = $dna_test['ydna_haplogroup'] ? $dna_test['ydna_haplogroup'] : " ";
@@ -218,8 +218,8 @@ if ($totnum_tests) {
                     $haplogroup = "<a class=\"fakelink predicted_haplogroup\"  title = \"{$text['predicted']}\">" . $mtdna_haplogroup . "</a>";
                 }
             }
-            $persontext .= "<td valign=\"top\" class=\"databack\">$haplogroup&nbsp;</td>\n";
-            $persontext .= "<td class=\"databack resultscol\">";
+            $persontext .= "<td valign=\"top\" class='databack'>$haplogroup&nbsp;</td>\n";
+            $persontext .= "<td class='databack resultscol'>";
             if ($GEDmatchID) {
                 $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target=\"_blank\">$GEDmatchID</a>";
                 $persontext .= "<strong>{$admtext['gedmatchID']}</strong> =  $GEDmatch_str <br><br>";

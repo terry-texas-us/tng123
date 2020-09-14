@@ -232,8 +232,8 @@ function doMedia($mediatypeID) {
     $imgsrc = getSmallPhoto($row);
     if ($imgsrc) {
       $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
-      $mediatext .= "<td valign=\"top\" class=\"databack center\" style=\"width:$thumbmaxw" . "px\">";
-      $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
+        $mediatext .= "<td valign=\"top\" class='databack center' style=\"width:$thumbmaxw" . "px\">";
+        $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
       if ($href && $row['allow_living']) {
         $mediatext .= "<a href=\"$href\"";
         if ($gotImageJpeg && isPhoto($row) && checkMediaFileSize("$rootpath$usefolder/$treestr" . $row['path'])) {
@@ -243,39 +243,40 @@ function doMedia($mediatypeID) {
       } else {
         $mediatext .= $imgsrc;
       }
-      $mediatext .= "</td><td valign=\"top\" class=\"databack\">";
-      $thumbcount++;
+        $mediatext .= "</td><td valign=\"top\" class='databack'>";
+        $thumbcount++;
     } else {
-      $mediatext .= "<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">";
+        $mediatext .= "<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td>";
+        $mediatext .= "<td valign=\"top\" class='databack'>";
     }
 
     $mediatext .= "$description<br>$notes&nbsp;</td>";
     if ($mediatypeID == "headstones") {
-      if (!$row['cemname']) {
-        $row['cemname'] = $row['city'];
-      }
-      $mediatext .= "<td valign=\"top\" class=\"databack\"><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
-      if ($row['plot']) {
-        $mediatext .= "<br>";
-      }
-      $mediatext .= nl2br($row['plot']) . "&nbsp;</td>";
-      $mediatext .= "<td valign=\"top\" class=\"databack\">{$row['status']}&nbsp;</td>";
-      $mediatext .= "<td valign=\"top\" class=\"databack\">\n";
+        if (!$row['cemname']) {
+            $row['cemname'] = $row['city'];
+        }
+        $mediatext .= "<td valign=\"top\" class='databack'><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
+        if ($row['plot']) {
+            $mediatext .= "<br>";
+        }
+        $mediatext .= nl2br($row['plot']) . "&nbsp;</td>";
+        $mediatext .= "<td valign=\"top\" class='databack'>{$row['status']}&nbsp;</td>";
+        $mediatext .= "<td valign=\"top\" class='databack'>\n";
     } else {
-      $mediatext .= "<td valign=\"top\" class=\"databack\" width=\"175\">\n";
+        $mediatext .= "<td valign=\"top\" class='databack' width=\"175\">\n";
     }
     $mediatext .= $medialinktext;
     $mediatext .= "&nbsp;</td>\n";
     if ($whatsnew) {
       $changedby = $row['changedby'];
-      $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-      $mediatext .= "<td valign=\"top\" class=\"databack\">" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
+        $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
+        $mediatext .= "<td valign=\"top\" class='databack'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
     }
     //ereg if no thumbs
   }
   if (!$thumbcount) {
-    $mediaheader = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
-    $mediatext = str_replace("<td valign=\"top\" class=\"databack\" align=\"center\">&nbsp;</td><td valign=\"top\" class=\"databack\">", "<td valign=\"top\" class=\"databack\">", $mediatext);
+      $mediaheader = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
+      $mediatext = str_replace("<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td><td valign=\"top\" class='databack'>", "<td valign=\"top\" class='databack'>", $mediatext);
   }
   tng_free_result($mediaresult);
   return $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br>\n" : "";

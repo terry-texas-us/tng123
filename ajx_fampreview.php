@@ -22,7 +22,7 @@ function showFact($text, $fact) {
     if ($fact) {
         $facttext .= "<tr>\n";
         $facttext .= "<td valign=\"top\" class=\"fieldnameback nw\"><span class=\"fieldname\">&nbsp;" . $text . "&nbsp;</span></td>\n";
-        $facttext .= "<td valign=\"top\" colspan=\"$factcols\" class=\"databack\"><span class='normal'>$fact&nbsp;</span></td>\n";
+        $facttext .= "<td valign=\"top\" colspan=\"$factcols\" class='databack'><span class='normal'>$fact&nbsp;</span></td>\n";
         $facttext .= "</tr>\n";
     }
     return $facttext;
@@ -42,8 +42,8 @@ function showDatePlace($event) {
 
         $dptext .= "<tr>\n";
         $dptext .= "<td valign=\"top\" class=\"fieldnameback nw\" $cellid><span class=\"fieldname\">&nbsp;" . $event['text'] . "&nbsp;</span></td>\n";
-        $dptext .= "<td valign=\"top\" class=\"databack nw\"><span class='normal'>" . displayDate($event['date']) . "&nbsp;</span></td>\n";
-        $dptext .= "<td valign=\"top\" class=\"databack\" width=\"80%\"><span class='normal'>{$event['place']}&nbsp;</span></td>\n";
+        $dptext .= "<td valign=\"top\" class='databack nw'><span class='normal'>" . displayDate($event['date']) . "&nbsp;</span></td>\n";
+        $dptext .= "<td valign=\"top\" class='databack' width=\"80%\"><span class='normal'>{$event['place']}&nbsp;</span></td>\n";
         $dptext .= "</tr>\n";
     }
     return $dptext;
