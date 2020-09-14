@@ -12,7 +12,7 @@ function showCustEvents($id) {
     $evresult = tng_query($query);
     $eventcount = tng_num_rows($evresult);
 
-    echo "<table id=\"custeventstbl\" class='normal' cellpadding=\"3\" cellspacing=\"1\" border=\"0\"";
+    echo "<table id=\"custeventstbl\" class='normal' cellpadding=\"3\" cellspacing='1' border=\"0\"";
     if (!$eventcount) {
         echo " style=\"display:none;\"";
     }

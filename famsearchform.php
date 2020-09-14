@@ -116,7 +116,7 @@ tng_header($text['searchfams'], $flags);
             }
 
             //get eventtypeIDs from $eventtypes_table
-            $query = "SELECT eventtypeID, tag FROM $eventtypes_table WHERE keep=\"1\" AND type=\"F\"";
+            $query = "SELECT eventtypeID, tag FROM $eventtypes_table WHERE keep='1' AND type=\"F\"";
             $etresult = tng_query($query);
             while( $row = tng_fetch_assoc($etresult) ) {
             if( !in_array($row['tag'], $dontdo) ) {

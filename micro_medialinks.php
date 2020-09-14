@@ -99,10 +99,10 @@ if ($result2) {
       $linkrows .= "<td class='lightback normal' align=\"center\" id=\"alt_{$plink['mlinkID']}\">$alttext</td>\n";
       $linkrows .= "<td class='lightback normal' align=\"center\" id=\"def_{$plink['mlinkID']}\">";
       if ($linktype != "C") {
-          $linkrows .= "<input type=\"checkbox\" name=\"defc{$plink['mlinkID']}\" id=\"defc{$plink['mlinkID']}\" onclick=\"toggleDefault(this,'{$plink['gedcom']}','$entityID');\" value=\"1\"$dchecked\">";
+          $linkrows .= "<input type=\"checkbox\" name=\"defc{$plink['mlinkID']}\" id=\"defc{$plink['mlinkID']}\" onclick=\"toggleDefault(this,'{$plink['gedcom']}','$entityID');\" value='1'$dchecked\">";
       }
       $linkrows .= "</td>\n";
-      $linkrows .= "<td class='lightback normal' align=\"center\" id=\"show_{$plink['mlinkID']}\"><input type=\"checkbox\" name=\"show{$plink['mlinkID']}\" id=\"show{$plink['mlinkID']}\" onclick=\"toggleShow(this);\" value=\"1\"$schecked\"></td></tr>\n";
+      $linkrows .= "<td class='lightback normal' align=\"center\" id=\"show_{$plink['mlinkID']}\"><input type=\"checkbox\" name=\"show{$plink['mlinkID']}\" id=\"show{$plink['mlinkID']}\" onclick=\"toggleShow(this);\" value='1'$schecked\"></td></tr>\n";
   }
   tng_free_result($result2);
 }

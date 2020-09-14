@@ -422,7 +422,7 @@ function getPersonEventData($tree, $personID) {
 
   $query = "SELECT eventID, display, eventdate, eventplace, info
 		FROM ($events_table, $eventtypes_table)
-		WHERE persfamID = \"$personID\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"$tree\" AND keep = \"1\" AND parenttag = \"\"
+		WHERE persfamID = \"$personID\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"$tree\" AND keep = '1' AND parenttag = \"\"
 		ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
 
   return tng_query($query);

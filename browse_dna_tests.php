@@ -82,9 +82,9 @@ if ($tree) {
 //	only return tests not marked "keep test private" if user does not have "Allow Private" privilege
 if (!$allow_private) {
     if ($wherestr) {
-        $wherestr .= " AND $dna_tests_table.private_test != \"1\" ";
+        $wherestr .= " AND $dna_tests_table.private_test != '1' ";
     } else {
-        $wherestr .= " WHERE $dna_tests_table.private_test != \"1\" ";
+        $wherestr .= " WHERE $dna_tests_table.private_test != '1' ";
     }
 } else {
     $wherestr .= "";
@@ -256,14 +256,14 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if ($sitever != "standard") {
     if ($tabletype == "toggle") {
-        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
     }
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
 }
 echo $header;
 ?>
@@ -333,7 +333,7 @@ if ($test_type == "mtDNA") {
 
             echo "<tr><td valign=\"top\" class='databack'>$i</td>\n";
             if ($test_type && $test_type != "X-DNA") {
-                echo "<td class='databack' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value=\"1\"></td>";
+                echo "<td class='databack' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
             }
             $dash = ($row['test_type'] == "Y-DNA") ? "-" : "";
             echo "<td valign=\"top\" class='databack'><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";

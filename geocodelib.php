@@ -47,8 +47,8 @@ function geocode($address, $multiples, $id) {
 
           $message = "$lat, $lng  &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target=\"_blank\">{$admtext['edit']}</a>";
         } else {
-          $query = "UPDATE $places_table SET geoignore = \"1\" WHERE ID = \"$id\"";
-          $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query " . tng_error());
+          $query = "UPDATE $places_table SET geoignore = '1' WHERE ID = \"$id\"";
+            $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query " . tng_error());
 
           $message = "<strong>{$admtext['toomany']}</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target=\"_blank\">{$admtext['edit']}</a>";
         }
@@ -63,8 +63,8 @@ function geocode($address, $multiples, $id) {
           // failure to geocode
           $geocode_pending = false;
           if ($status != "OVER_QUERY_LIMIT") {
-            $query = "UPDATE $places_table SET geoignore = \"1\" WHERE ID = \"$id\"";
-            $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query" . tng_error());
+              $query = "UPDATE $places_table SET geoignore = '1' WHERE ID = \"$id\"";
+              $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query" . tng_error());
           }
 
           $message = "<strong>{$admtext['nogeocode']} ($status)</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target=\"_blank\">{$admtext['edit']}</a>";

@@ -183,7 +183,7 @@ tng_adminheader($admtext['administration'], "");
       }
 
       //new users to review?
-      $review_users = getTotal($users_table, "allow_living = \"-1\"");
+      $review_users = getTotal($users_table, "allow_living = '-1'");
       if ($review_users) {
         $messages .= "<li><a href=\"admin_reviewusers.php\">{$admtext['task_revusers']} ($review_users)</a></li>\n";
       }

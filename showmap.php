@@ -152,7 +152,7 @@ if ($infoblock) {
   $body .= "<div class=\"titlebox\">$infoblock</div>\n<br>\n";
 }
 
-$query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow FROM $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = \"1\") ORDER BY description";
+$query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow FROM $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = '1') ORDER BY description";
 $hsresult = tng_query($query);
 $gotImageJpeg = function_exists('imageJpeg');
 if (tng_num_rows($hsresult)) {
@@ -160,8 +160,8 @@ if (tng_num_rows($hsresult)) {
     $body .= "<div class=\"titlebox\">\n";
     $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
 
-  $body .= "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\" width=\"100%\">\n";
-  $body .= "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
+    $body .= "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\" width=\"100%\">\n";
+    $body .= "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
   $body .= "<td class=\"fieldnameback fieldname\" width=\"$thumbmaxw\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>\n";
   $body .= "<td class=\"fieldnameback fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</td>\n";
 
@@ -209,7 +209,7 @@ if ($tree) {
 $query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, mediatypeID, latitude, longitude, form, abspath, newwindow ";
 $query .= "FROM $media_table media ";
 $query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
-$query .= "WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND mediatypeID = \"headstones\" AND linktocem != \"1\" ";
+$query .= "WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND mediatypeID = \"headstones\" AND linktocem != '1' ";
 $query .= "ORDER BY description ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
 $hsresult = tng_query($query);
@@ -235,8 +235,8 @@ if ($numrows) {
 
   $header = $headerr = "";
   $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
-  $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-  $tabledef = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" ";
+    $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
+    $tabledef = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" ";
 
   if ($tabletype == "toggle") {
     $header = $tabledef . "data-tablesaw-mode=\"columntoggle\"" . $headerr;
@@ -245,14 +245,14 @@ if ($numrows) {
   } elseif ($tabletype == "swipe") {
     $header = $tabledef . "data-tablesaw-mode=\"swipe\"" . $headerr;
   } else {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n" . $header;
+      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"whiteback\">\n" . $header;
   }
 
   $body .= $header;
   $body .= "<thead><tr>\n";
-  $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['thumb']}</span></th>";
-  $body .= "<th data-tablesaw-priority=\"1\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['description']}</span></th>";
-  $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['status']}</span></th>";
+    $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['thumb']}</span></th>";
+    $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['description']}</span></th>";
+    $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['status']}</span></th>";
   $body .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['location']}</span></th>";
   $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</span></th>";
   $body .= "</tr></thead>\n";
@@ -384,8 +384,8 @@ if ($cemetery['place']) {
 
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
-    $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-    $tabledef = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" ";
+      $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
+      $tabledef = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" ";
 
     if ($tabletype == "toggle") {
       $header = $tabledef . "data-tablesaw-mode=\"columntoggle\"" . $headerr;
@@ -394,14 +394,14 @@ if ($cemetery['place']) {
     } elseif ($tabletype == "swipe") {
       $header = $tabledef . "data-tablesaw-mode=\"swipe\"" . $headerr;
     } else {
-      $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback normal\">\n" . $header;
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"whiteback normal\">\n" . $header;
     }
 
     $body .= $header;
     $body .= "<thead><tr>\n";
-    $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback nbrcol\"><span class=\"fieldname\">&nbsp;#&nbsp;</span></th>\n";
-    $body .= "<th data-tablesaw-priority=\"1\" class=\"fieldnameback\"><span class=\"fieldname nw\">&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
-    $body .= "<th data-tablesaw-priority=\"2\" colspan=\"2\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
+      $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback nbrcol\"><span class=\"fieldname\">&nbsp;#&nbsp;</span></th>\n";
+      $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback\"><span class=\"fieldname nw\">&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
+      $body .= "<th data-tablesaw-priority=\"2\" colspan=\"2\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
     $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback\"><span class=\"fieldname nw\">&nbsp;{$text['personid']}&nbsp;</span></th>\n";
     if ($numtrees > 1) {
       $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['tree']}&nbsp;</span></th>\n";

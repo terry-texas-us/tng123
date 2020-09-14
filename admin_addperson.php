@@ -204,12 +204,12 @@ if ($type == "child") {
         $famrow = tng_fetch_assoc($result);
         $template = "ss";
         if ($famrow['husband']) {
-            $query = "UPDATE $children_table SET haskids=\"1\" WHERE personID = ? AND gedcom = ?";
+            $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
             $params = array(&$template, &$famrow['husband'], &$tree);
             tng_execute($query, $params);
         }
         if ($famrow['wife']) {
-            $query = "UPDATE $children_table SET haskids=\"1\" WHERE personID = ? AND gedcom = ?";
+            $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
             $params = array(&$template, &$famrow['wife'], &$tree);
             tng_execute($query, $params);
         }
@@ -228,7 +228,7 @@ if ($type == "child") {
 
     $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
     $rval .= " onmouseover=\"$('unlinkc_$personID').style.visibility='visible';\" onmouseout=\"$('unlinkc_$personID').style.visibility='hidden';\">\n";
-    $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
+    $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
     $rval .= "<td class=\"dragarea normal\">";
     $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
     $rval .= "</td>\n";

@@ -321,7 +321,7 @@ switch ($t) {
         $query = "DELETE FROM $branchlinks_table WHERE gedcom = \"$id\"";
         $result = @tng_query($query);
 
-        $query = "UPDATE $users_table SET allow_living=\"-1\" WHERE gedcom = \"$id\" AND username != \"$currentuser\"";
+        $query = "UPDATE $users_table SET allow_living='-1' WHERE gedcom = \"$id\" AND username != \"$currentuser\"";
         $result = @tng_query($query);
 
         $logmsg = $admtext['deleted'] . " $id {$admtext['succdeleted']}.";

@@ -255,7 +255,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                         echo showEventRow('burialdate', 'burialplace', 'BURI', '');
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($allow_lds) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', '');

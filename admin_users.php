@@ -49,13 +49,13 @@ if ($offset) {
 }
 
 $wherestr = $searchstring ? " AND (username LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR realname LIKE \"%$searchstring%\" OR email LIKE \"%$searchstring%\")" : "";
-$wherestr .= $adminonly ? " AND allow_add = \"1\" AND allow_edit = \"1\" AND allow_delete = \"1\" AND gedcom = \"\"" : "";
-$query = "SELECT *, DATE_FORMAT(lastlogin,\"%d %b %Y %H:%i:%s\") AS lastlogin FROM $users_table WHERE allow_living != \"-1\" $wherestr ORDER BY description LIMIT $newoffset" . $maxsearchresults;
+$wherestr .= $adminonly ? " AND allow_add = '1' AND allow_edit = '1' AND allow_delete = '1' AND gedcom = \"\"" : "";
+$query = "SELECT *, DATE_FORMAT(lastlogin,\"%d %b %Y %H:%i:%s\") AS lastlogin FROM $users_table WHERE allow_living != '-1' $wherestr ORDER BY description LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living != \"-1\" $wherestr";
+    $query = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living != '-1' $wherestr";
     $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['ucount'];
@@ -191,7 +191,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
                             echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
                             }
                             $editlink = "admin_edituser.php?userID={$row['userID']}";
                             $username = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['username'] . "</a>" : $row['username'];

@@ -170,7 +170,7 @@ function doCustomEvents($type) {
     global $dontdo, $cejoin, $eventtypes_table, $events_table, $text, $allwhere, $mybool;
 
     $cejoin = "";
-    $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep=\"1\" AND type=\"$type\" ORDER BY display";
+    $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type=\"$type\" ORDER BY display";
     $result = tng_query($query);
     $needce = 0;
     $ecount = 0;

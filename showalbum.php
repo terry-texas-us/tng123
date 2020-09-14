@@ -111,8 +111,8 @@ function getAlbumLinkText($albumID) {
 $albumlinktext = getAlbumLinkText($albumID);
 if ($albumlinktext) {
   $altext = $albumlinktext;
-  $albumlinktext = "<table cellpadding=\"4\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n";
-  $albumlinktext .= "<tr>\n";
+    $albumlinktext = "<table cellpadding=\"4\" cellspacing='1' border=\"0\" width=\"100%\" class=\"whiteback\">\n";
+    $albumlinktext .= "<tr>\n";
   $albumlinktext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" width=\"100\">{$text['indlinked']}</td>\n";
     $albumlinktext .= "<td class='databack' width=\"90%\">$altext</td>\n";
     $albumlinktext .= "</tr>\n";
@@ -236,7 +236,7 @@ if ($tnggallery) {
   $tablewidth = " width=\"100%\"";
 }
 
-$header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" $tablewidth class=\"whiteback normal\">\n" . $header;
+$header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" $tablewidth class=\"whiteback normal\">\n" . $header;
 
 $i = $offsetplus;
 $maxplus = $maxsearchresults + 1;

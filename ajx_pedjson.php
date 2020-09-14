@@ -59,12 +59,12 @@ function xmlPerson($currperson, $backperson, $generation) {
     }
     tng_free_result($parents);
   }
-  $person .= $parentfamID ? "\"famc\":\"$parentfamID\"," : "\"famc\":\"-1\",";
+  $person .= $parentfamID ? "\"famc\":\"$parentfamID\"," : "\"famc\":'-1',";
 
     if ($display == "standard" && $pedigree['inclphotos']) {
     $person .= xmlPhoto($currperson, $rights['both'], $row['sex']) . ",";
   } else {
-    $person .= "\"photosrc\":\"-1\",\"photolink\":\"\",";
+        $person .= "\"photosrc\":'-1',\"photolink\":\"\",";
   }
 
   if ($rights['both']) {

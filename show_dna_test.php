@@ -46,7 +46,7 @@ tng_header($headline, $flags);
 $dnatext = "";
 $dnatext .= "<ul class=\"nopad\">\n";
 $dnatext .= beginSection("info");
-$dnatext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed normal\">\n";
+$dnatext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed normal\">\n";
 $dnatext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 
 if ($dnarow['test_type'] == "atDNA") {

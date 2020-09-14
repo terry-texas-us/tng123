@@ -14,7 +14,7 @@ if ($assignedtree) {
     exit;
 }
 
-$query = "SELECT userID, description, username, gedcom, branch, allow_edit, allow_add, allow_delete, allow_living, allow_lds, allow_ged, realname, email, DATE_FORMAT(dt_registered,\"%d %b %Y %H:%i:%s\") AS dt_registered_fmt FROM $users_table WHERE allow_living = \"-1\" ORDER BY dt_registered DESC";
+$query = "SELECT userID, description, username, gedcom, branch, allow_edit, allow_add, allow_delete, allow_living, allow_lds, allow_ged, realname, email, DATE_FORMAT(dt_registered,\"%d %b %Y %H:%i:%s\") AS dt_registered_fmt FROM $users_table WHERE allow_living = '-1' ORDER BY dt_registered DESC";
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
@@ -93,7 +93,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
                             echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' valign=\"top\" nowrap><span class='normal'>{$newactionstr}</span></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback' valign=\"top\" nowrap><span class='normal'>{$row['username']}&nbsp;</span></td>\n";
                             echo "<td class='lightback' valign=\"top\"><span class='normal'>{$row['description']}&nbsp;</span></td>\n";

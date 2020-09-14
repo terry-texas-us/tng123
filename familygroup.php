@@ -151,7 +151,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
     $event = [];
 
-    $indtext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $indtext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $indtext .= "<col class=\"labelcol\"/><col class=\"eventdatecol\"><col/>";
     $indtext .= $allow_lds_this ? "<col style=\"width:125px;\"/><col class=\"eventdatecol\"/><col class=\"labelcol\"/>\n" : "\n";
 
@@ -490,7 +490,7 @@ if ($rights['both']) {
     if ($assoctext) {
         $famtext .= beginSection("assoc");
         $famtext .= "<div class=\"titlebox\">\n";
-        $famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
+        $famtext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
         $famtext .= "$assoctext\n";
         $famtext .= "</table>\n</div>\n<br>\n";
         $famtext .= endSection("assoc");
@@ -510,7 +510,7 @@ if ($rights['both']) {
     if ($notes) {
         $famtext .= beginSection("notes");
         $famtext .= "<div class=\"titlebox\">\n";
-        $famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
+        $famtext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
         $famtext .= "<tr>\n";
         $famtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\" style=\"width:100px;\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
         $famtext .= "<td valign=\"top\" class='databack' colspan=\"2\">$notes</td>\n";
@@ -521,7 +521,7 @@ if ($rights['both']) {
     if ($citedispctr) {
         $famtext .= beginSection("citations");
         $famtext .= "<div class=\"titlebox\">\n";
-        $famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
+        $famtext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
         $famtext .= "<tr>\n";
         $famtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" name=\"citations1\" id=\"citations1\" style=\"width:100px;\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></td>\n";
         $famtext .= "<td valign=\"top\" class='databack' colspan=\"2\"><ol class=\"normal citeblock\">";
@@ -542,7 +542,7 @@ if ($rights['both']) {
 } elseif ($rights['both']) {
     $famtext .= beginSection("notes");
     $famtext .= "<div class=\"titlebox\">\n";
-    $famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
+    $famtext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" style=\"width:100%;\" class=\"whiteback\">\n";
     $famtext .= "<tr>\n";
     $famtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\" style=\"width:100px;\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
     $famtext .= "<td valign=\"top\" class='databack' colspan=\"2\"><span class='normal'>{$text['livingnote']}</span></td>\n";

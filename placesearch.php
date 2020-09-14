@@ -408,7 +408,7 @@ while ($prow = tng_fetch_assoc($presult)) {
 if ($cemdata) {
     echo "<br>\n<div class=\"titlebox\">\n";
     echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
-    echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n";
+    echo "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"whiteback\">\n";
     echo "<tr>\n";
     echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;</span></td>\n";
     echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>{$text['name']}</b>&nbsp;</span></td>\n";

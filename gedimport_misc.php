@@ -938,7 +938,7 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
         if (!$mm['TITL']) {
             $mm['TITL'] = $mm['FILE'];
         }
-        $query = "INSERT IGNORE INTO $media_table (gedcom, mediatypeID, mediakey, path, description, notes, form, usecollfolder, datetaken, changedate) VALUES(\"$tree\", \"{$mm['mediatypeID']}\", \"{$mm['OBJE']}\", \"{$mm['FILE']}\", \"{$mm['TITL']}\", \"{$mm['NOTE']}\", \"{$mm['FORM']}\", \"1\", \"{$mm['datetaken']}\", \"{$mm['CHAN']}\")";
+        $query = "INSERT IGNORE INTO $media_table (gedcom, mediatypeID, mediakey, path, description, notes, form, usecollfolder, datetaken, changedate) VALUES(\"$tree\", \"{$mm['mediatypeID']}\", \"{$mm['OBJE']}\", \"{$mm['FILE']}\", \"{$mm['TITL']}\", \"{$mm['NOTE']}\", \"{$mm['FORM']}\", '1', \"{$mm['datetaken']}\", \"{$mm['CHAN']}\")";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
         $success = tng_affected_rows();
@@ -1318,7 +1318,7 @@ function getNoteRecord($noteID, $prevlevel) {
     //see if private character exists
     $privlen = isset($tngimpcfg['privnote']) ? strlen($tngimpcfg['privnote']) : 0;
     if ($privlen && substr($note, 0, $privlen) == $tngimpcfg['privnote']) {
-        $query = "UPDATE $notelinks_table SET secret=\"1\" WHERE xnoteID=\"$ID\"";
+        $query = "UPDATE $notelinks_table SET secret='1' WHERE xnoteID=\"$ID\"";
         $nresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     }
 

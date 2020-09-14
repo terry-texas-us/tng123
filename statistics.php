@@ -35,9 +35,9 @@ tng_header($text['databasestatistics'], $flags);
         if ($tabletype == "toggle") {
           $tabletype = "columntoggle";
         }
-        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" style=\"maxwidth: 350px; width:100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"maxwidth: 350px; width:100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
       } else {
-        $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"500\" class=\"whiteback normal\">";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"500\" class=\"whiteback normal\">";
       }
       echo $header;
       ?>
@@ -254,7 +254,7 @@ tng_header($text['databasestatistics'], $flags);
       echo "<tr><td class='databack'><span class='normal'>{$text['totsources']}</span></td>\n";
       echo "<td class='databack' align=\"right\"><span class='normal'>$totalsources &nbsp;</span></td></tr>\n";
 
-      echo "<tr><td class='databack'><span class='normal'>{$text['avglifespan']}<sup><font size=\"1\">1</font></sup></span></td>\n";
+      echo "<tr><td class='databack'><span class='normal'>{$text['avglifespan']}<sup><font size='1'>1</font></sup></span></td>\n";
       echo "<td class='databack' align=\"right\"><span class='normal'>$avgyears {$text['years']}, $avgdays {$text['days']} &nbsp;</span></td></tr>\n";
 
       echo "<tr><td class='databack'><span class='normal'>" . $text['earliestbirth'];
@@ -329,17 +329,17 @@ tng_header($text['databasestatistics'], $flags);
         if ($yearsold) {
           echo number_format($yearsold) . " " . $text['years'];
         }
-        if ($daysold) {
-          echo " $daysold " . $text['days'];
-        }
-        echo " &nbsp;</span></td></tr>\n";
+          if ($daysold) {
+              echo " $daysold " . $text['days'];
+          }
+          echo " &nbsp;</span></td></tr>\n";
       }
       echo "</table>\n";
 
       echo "<br><br>\n";
       $width = $sitever == "standard" ? "500px" : "100%";
-      echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n";
-      echo "<tr><td  valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\"><sup><font size=\"1\">1</font></sup>&nbsp;</span></td>";
+      echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\">\n";
+      echo "<tr><td  valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\"><sup><font size='1'>1</font></sup>&nbsp;</span></td>";
       echo "<td class='databack'><span class='normal'>{$text['agedisclaimer']}</span></td></tr>";
       echo "</table>\n";
       tng_free_result($result);

@@ -226,7 +226,7 @@ function getEvents($person) {
   ksort($events);
   foreach ($events as $event) {
     $eventstr .= "<div class=\"tlevent\" style=\"margin-left:{$event['left']}px;\">\n";
-      $eventstr .= "<table border=\"0\" cellspacing=\"0\" cellpadding=\"1\"><tr><td class=\"pboxpopup nw\"><span class='normal'>&gt; ";
+      $eventstr .= "<table border=\"0\" cellspacing=\"0\" cellpadding='1'><tr><td class=\"pboxpopup nw\"><span class='normal'>&gt; ";
       $eventstr .= "{$event['year']} - {$event['text']} {$event['date']} &nbsp;</span></td></tr></table></div>\n";
   }
 
@@ -488,7 +488,7 @@ foreach ($keeparray as $timeentry) {
   if ($timeentry['personID'] == $primaryID && $timeentry['tree'] == $tree) {
     echo "&nbsp;";
   } else {
-    echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value=\"1\">\n";
+      echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value='1'>\n";
   }
   echo "</div>\n";
 
@@ -499,8 +499,8 @@ foreach ($keeparray as $timeentry) {
   echo "</table>\n";
   echo "</div>\n";
 
-  echo "<div id=\"popup$numlines\" class=\"popup\" style=\"background-color:{$pedigree['popupcolor']}; top:" . ($top + 25) . "px; left:" . ($spanleft - 5) . "px;\" onmouseover=\"cancelTimer($numlines)\" onmouseout=\"setTimer($numlines)\">\n";
-  echo "<table class=\"popuptable\" style=\"border-color: {$pedigree['bordercolor']};\" cellpadding=\"1\" cellspacing=\"0\"><tr><td>\n";
+    echo "<div id=\"popup$numlines\" class=\"popup\" style=\"background-color:{$pedigree['popupcolor']}; top:" . ($top + 25) . "px; left:" . ($spanleft - 5) . "px;\" onmouseover=\"cancelTimer($numlines)\" onmouseout=\"setTimer($numlines)\">\n";
+    echo "<table class=\"popuptable\" style=\"border-color: {$pedigree['bordercolor']};\" cellpadding='1' cellspacing=\"0\"><tr><td>\n";
 
   $eventinfo = getEvents($timeentry);
   echo "$eventinfo</td></tr></table></div>\n";

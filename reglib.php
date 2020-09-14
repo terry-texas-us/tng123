@@ -307,8 +307,8 @@ function getRegNotes($persfamID, $flag) {
   $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
   $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
   $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
-  $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" AND secret!=\"1\" ";
-  $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
+    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" AND secret!='1' ";
+    $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
   $notelinks = tng_query($query);
 
   $currevent = "";

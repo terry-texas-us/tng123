@@ -101,9 +101,9 @@ if ($sitever != "standard") {
   if ($tabletype == "toggle") {
     $tabletype = "columntoggle";
   }
-  $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+  $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
-  $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
 }
 echo $header;
 ?>

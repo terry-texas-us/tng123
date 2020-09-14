@@ -219,7 +219,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['ID'], $actionstr);
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
                             }
 
                             $query = "SELECT $notelinks_table.ID, $notelinks_table.persfamID AS personID, $notelinks_table.gedcom, secret

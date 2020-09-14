@@ -21,7 +21,7 @@ if ($gedcom) {
   }
 }
 
-$recipientquery = "SELECT realname, email FROM $users_table WHERE allow_living != \"-1\" AND email != \"\" AND (no_email is NULL or no_email != \"1\") $wherestr";
+$recipientquery = "SELECT realname, email FROM $users_table WHERE allow_living != '-1' AND email != \"\" AND (no_email is NULL or no_email != '1') $wherestr";
 $result = tng_query($recipientquery) or die ($admtext['cannotexecutequery'] . ": $recipientquery");
 $numrows = tng_num_rows($result);
 

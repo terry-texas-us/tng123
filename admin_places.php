@@ -338,7 +338,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                             $newactionstr = preg_replace("/zzz/", urlencode($row['place']), $newactionstr);
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
                             }
                             $display = $row['place'];
                             $display = preg_replace("/</", "&lt;", $display);

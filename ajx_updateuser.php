@@ -58,8 +58,8 @@ if ($proceed) {
     $pwd_str = "";
   }
 
-  $query = "UPDATE $users_table SET username=\"$username\",{$pwd_str}realname=\"$realname\",phone=\"$phone\",email=\"$email\",website=\"$website\",address=\"$address\",city=\"$city\",state=\"$state\",zip=\"$zip\",country=\"$country\",languageID=\"$preflang\" WHERE username=\"$currentuser\"";
-  $result = @tng_query($query);
+  $query = "UPDATE $users_table SET username='$username',{$pwd_str}realname=\"$realname\",phone=\"$phone\",email='$email',website=\"$website\",address=\"$address\",city=\"$city\",state=\"$state\",zip=\"$zip\",country=\"$country\",languageID=\"$preflang\" WHERE username=\"$currentuser\"";
+    $result = @tng_query($query);
 
   adminwritelog("{$admtext['modifyuser']}: $currentuser/a>");
 

@@ -416,16 +416,16 @@ if ($enableminimap) {
 
 if ($sitever != "standard") {
   if ($tabletype == "toggle") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
   } elseif ($tabletype == "stack") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
+      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
   } elseif ($tabletype == "swipe") {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
+      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
   } else {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n";
+      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\">\n";
   }
 } else {
-  $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\">\n" . $header;
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\">\n" . $header;
 }
 echo $header;
 ?>

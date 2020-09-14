@@ -43,7 +43,7 @@ if ($row['languageID']) {
   }
 }
 
-$revquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
+$revquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = '-1'";
 $revresult = tng_query($revquery) or die ($admtext['cannotexecutequery'] . ": $revquery");
 $revrow = tng_fetch_assoc($revresult);
 $revstar = $revrow['ucount'] ? " *" : "";
@@ -452,7 +452,7 @@ echo "</select>\n";
               <br>
               <?php
               if ($row['allow_living'] == -1) { //account is inactive
-                echo "<input type=\"checkbox\" name=\"notify\" value=\"1\" checked onClick=\"replaceText();\"> {$admtext['notify']}<br>\n";
+                  echo "<input type=\"checkbox\" name=\"notify\" value='1' checked onClick=\"replaceText();\"> {$admtext['notify']}<br>\n";
                 $owner = $sitename ? $sitename : $dbowner;
                 echo "<textarea name=\"welcome\" rows=\"5\" cols=\"50\">{$deftext['hello']} {$row['realname']},\r\n\r\n{$deftext['activated']}";
                 if (!$tngconfig['omitpwd']) {

@@ -72,9 +72,9 @@ $dt_consent = $consented == 1 ? $today : "";
 $duplicate = false;
 
 $query = "SELECT username FROM $users_table ";
-$query .= "WHERE LOWER(username) = LOWER(\"$username\")";
+$query .= "WHERE LOWER(username) = LOWER('$username')";
 if ($email) {
-    $query .= " OR LOWER(email) = LOWER(\"$email\")";
+    $query .= " OR LOWER(email) = LOWER('$email')";
 }
 $result = tng_query($query);
 

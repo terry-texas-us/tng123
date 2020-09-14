@@ -16,7 +16,7 @@ if ($debug) {
 // following query added to check if this is a Private Test
 $pquery = "SELECT $dna_tests_table.testID, $dna_tests_table.personID AS tpersonID, $dna_tests_table.gedcom AS tgedcom,private_test
 			FROM $dna_tests_table, $dna_links_table
-			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.private_test = \"1\"
+			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.private_test = '1'
 			ORDER BY test_type, markers * 1 ASC, test_date, test_number * 1 ASC";
 $priv_results = tng_query($pquery);
 $dnarow = tng_fetch_assoc($priv_results);    // added for Private Test check
@@ -57,7 +57,7 @@ if ($totnum_tests) {
     } else {
         $linkedstr = $num_links > 1 ? $admtext['dna_tests'] : $text['dna_test'];
     }
-    $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
 
     $persontext .= "<tr>\n";

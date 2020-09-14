@@ -154,9 +154,9 @@ if ($tnggallery) {
     $header = "";
 } else {
     $header = "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback fieldname nbrcol\">&nbsp;#&nbsp;</td>\n";
-    $header .= "<th data-tablesaw-priority=\"1\" class=\"fieldnameback fieldname center\" width=\"$thumbmaxw\">&nbsp;{$text['thumb']}&nbsp;</th>\n";
+    $header .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname center\" width=\"$thumbmaxw\">&nbsp;{$text['thumb']}&nbsp;</th>\n";
     $width = $mediatypeID == "headstones" ? "50%" : "75%";
-    $header .= "<th data-tablesaw-priority=\"1\" class=\"fieldnameback fieldname\">&nbsp;{$text['description']}&nbsp;</th>\n";
+    $header .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}&nbsp;</th>\n";
     if ($mediatypeID == "headstones") {
         $header .= "<th data-tablesaw-priority=\"2\" class=\"fieldnameback fieldname\">&nbsp;{$text['cemetery']}&nbsp;</th>\n";
         $header .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}&nbsp;</th>\n";
@@ -173,9 +173,9 @@ if ($tabletype) {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" $tablewidth class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n" . $header;
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" $tablewidth class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n" . $header;
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" $tablewidth class=\"whiteback normal\">\n" . $header;
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" $tablewidth class=\"whiteback normal\">\n" . $header;
 }
 
 $i = $offsetplus;

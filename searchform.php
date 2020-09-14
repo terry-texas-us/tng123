@@ -176,7 +176,7 @@ tng_header($text['searchnames'], $flags);
             }
 
             //get eventtypeIDs from $eventtypes_table
-            $query = "SELECT eventtypeID, tag FROM $eventtypes_table WHERE keep=\"1\" AND type=\"I\"";
+            $query = "SELECT eventtypeID, tag FROM $eventtypes_table WHERE keep='1' AND type=\"I\"";
             $etresult = tng_query($query);
             while( $row = tng_fetch_assoc($etresult) ) {
             if( !in_array($row['tag'], $dontdo) ) {
@@ -590,7 +590,7 @@ echo $formstr;
             </tr>
             <?php
             $eventtypes = [];
-            $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep=\"1\" AND type=\"I\" ORDER BY display";
+            $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type=\"I\" ORDER BY display";
             $result = tng_query($query);
             while ($row = tng_fetch_assoc($result)) {
                 if (!in_array($row['tag'], $dontdo)) {

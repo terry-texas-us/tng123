@@ -188,12 +188,12 @@ switch ($action) {
     $result = @tng_query($query);
     $famrow = tng_fetch_assoc($result);
     if ($famrow['husband']) {
-      $query = "UPDATE $children_table SET haskids=\"1\" WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"$tree\"";
-      $result2 = @tng_query($query);
+      $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"$tree\"";
+        $result2 = @tng_query($query);
     }
     if ($famrow['wife']) {
-      $query = "UPDATE $children_table SET haskids=\"1\" WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"$tree\"";
-      $result2 = @tng_query($query);
+        $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"$tree\"";
+        $result2 = @tng_query($query);
     }
     tng_free_result($result);
 
@@ -201,9 +201,9 @@ switch ($action) {
     $result = @tng_query($query);
 
     $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;\"";
-    $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
-    $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
-    $rval .= "<td class=\"dragarea normal\">";
+      $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
+      $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+      $rval .= "<td class=\"dragarea normal\">";
     $rval .= "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
     $rval .= "</td>\n";
       $rval .= "<td class='lightback normal childblock'>\n";
@@ -358,7 +358,7 @@ switch ($action) {
     tng_free_result($result2);
 
     if ($count == 1) {
-      $query = "INSERT INTO $albumlinks_table (albumID,mediaID,ordernum,defphoto) VALUES (\"$album\", \"$media\", \"$count\", \"1\")";
+        $query = "INSERT INTO $albumlinks_table (albumID,mediaID,ordernum,defphoto) VALUES (\"$album\", \"$media\", \"$count\", '1')";
     } else {
       $query = "INSERT INTO $albumlinks_table (albumID,mediaID,ordernum,defphoto) VALUES (\"$album\", \"$media\", \"$count\",\"0\")";
     }

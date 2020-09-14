@@ -186,7 +186,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo showEventRow('burialdate', 'burialplace', 'BURI', '');
             echo "<tr>";
             echo "<td></td>";
-            echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+            echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
             echo "</tr>\n";
             if (determineLDSRights()) {
                 echo showEventRow('baptdate', 'baptplace', 'BAPL', '');

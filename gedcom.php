@@ -627,7 +627,7 @@ function writeIndividual($person) {
                 $info .= $extras['BURI'];
             }
 
-            $query = "SELECT tag, description, eventdate, eventplace, age, agency, cause, addressID, info, eventID FROM $events_table, $eventtypes_table WHERE persfamID = \"$person\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND parenttag = \"\" AND gedcom = '$tree' AND keep = \"1\" ORDER BY ordernum";
+            $query = "SELECT tag, description, eventdate, eventplace, age, agency, cause, addressID, info, eventID FROM $events_table, $eventtypes_table WHERE persfamID = \"$person\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND parenttag = \"\" AND gedcom = '$tree' AND keep = '1' ORDER BY ordernum";
             $custevents = tng_query($query);
             while ($custevent = tng_fetch_assoc($custevents)) {
                 $info .= doEvent($custevent, 1);
@@ -778,7 +778,7 @@ function writeFamily($family) {
                 $info .= $extras['DIV'];
             }
 
-            $query = "SELECT tag, description, eventdate, eventplace, age, agency, cause, addressID, info, eventID FROM $events_table, $eventtypes_table WHERE persfamID = '$familyID' AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND parenttag = \"\" AND gedcom = '$tree' AND keep = \"1\" ORDER BY ordernum";
+            $query = "SELECT tag, description, eventdate, eventplace, age, agency, cause, addressID, info, eventID FROM $events_table, $eventtypes_table WHERE persfamID = '$familyID' AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND parenttag = \"\" AND gedcom = '$tree' AND keep = '1' ORDER BY ordernum";
             $custevents = tng_query($query);
             while ($custevent = tng_fetch_assoc($custevents)) {
                 $info .= doEvent($custevent, 1);
@@ -943,7 +943,7 @@ function doSources() {
                     }
                 }
 
-                $query = "SELECT tag, description, eventdate, eventplace, info FROM $events_table, $eventtypes_table WHERE persfamID = \"{$source['sourceID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND type = \"S\" AND gedcom = '$tree' AND keep = \"1\" ORDER BY ordernum";
+                $query = "SELECT tag, description, eventdate, eventplace, info FROM $events_table, $eventtypes_table WHERE persfamID = \"{$source['sourceID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND type = \"S\" AND gedcom = '$tree' AND keep = '1' ORDER BY ordernum";
                 $custevents = tng_query($query);
                 while ($custevent = tng_fetch_assoc($custevents)) {
                     echo doEvent($custevent, 1);
@@ -981,7 +981,7 @@ function doRepositories() {
                     echo getFact($repo, 1);
                 }
 
-                $query = "SELECT tag, description, eventdate, eventplace, info FROM $events_table, $eventtypes_table WHERE persfamID = \"{$repo['repoID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND type = \"R\" AND gedcom = '$tree' AND keep = \"1\" ORDER BY ordernum";
+                $query = "SELECT tag, description, eventdate, eventplace, info FROM $events_table, $eventtypes_table WHERE persfamID = \"{$repo['repoID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND type = \"R\" AND gedcom = '$tree' AND keep = '1' ORDER BY ordernum";
                 $custevents = tng_query($query);
                 while ($custevent = tng_fetch_assoc($custevents)) {
                     echo doEvent($custevent, 1);

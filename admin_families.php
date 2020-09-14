@@ -64,7 +64,7 @@ if ($assignedtree) {
 }
 $orgtree = $tree;
 
-$uquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
+$uquery = "SELECT COUNT(userID) AS ucount FROM $users_table WHERE allow_living = '-1'";
 $uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquery");
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
@@ -315,7 +315,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
 
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback'><span class='normal'>&nbsp;$id&nbsp;</span></td>\n";
                             echo "<td class='lightback'><span class='normal'>&nbsp;{$row['husband']}&nbsp;</span></td>\n";

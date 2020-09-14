@@ -12,7 +12,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow" id="dnainfo">
     <h3 class="subhead"><img src="<?php echo $cms['tngpath']; ?>img/dna_icon.gif" width="20" height="20" align="left" alt="" vspace="0">&nbsp;<?php echo $text['dna_info_head']; ?></h3>
 
-    <a><font size="2" color="#000000"><?php echo $text['Ydna_LITbox_info']; ?></font></a>
+    <a><span style="font-size: x-small; color: #000000; "><?php echo $text['Ydna_LITbox_info']; ?></span></a>
 
     <br><br>
     <form>

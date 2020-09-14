@@ -207,11 +207,11 @@ switch ($_POST['subroutine']) {
         $password = PasswordEncode($password);
         $password_type = PasswordType();
         $query = "INSERT IGNORE INTO $users_table (description,username,password,password_type,realname,phone,email,website,address,city,state,zip,country,notes,gedcom,personID,role,allow_edit,allow_add,tentative_edit,allow_delete,allow_lds,allow_living,allow_private,allow_ged,allow_pdf,allow_profile,branch,dt_activated,no_email) ";
-        $query .= "VALUES (\"Administrator\",\"$username\",\"$password\",\"$password_type\",\"$realname\",\"\",\"$email\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"admin\",\"1\",\"1\",\"0\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"\",\"$today\",\"0\")";
+        $query .= "VALUES (\"Administrator\",'$username',\"$password\",\"$password_type\",\"$realname\",\"\",'$email',\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"admin\",'1','1',\"0\",'1','1','1','1','1','1','1',\"\",\"$today\",\"0\")";
         $result = @tng_query($query);
 
         if ($result) {
-            $msg = $text['user'] . " \"$username\" " . $text['created'];
+            $msg = $text['user'] . " '$username' " . $text['created'];
             $class = "green";
             $_SESSION['currentuser'] = $username;
             $_SESSION['currentuserdesc'] = "Administrator";

@@ -51,7 +51,7 @@ echo tng_DrawHeading($photostr, $reporow['reponame'], "");
 $repotext = "";
 $repotext .= "<ul class=\"nopad\">\n";
 $repotext .= beginSection("info");
-$repotext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+$repotext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($reporow['reponame']) {
   $repotext .= showEvent(array("text" => $text['name'], "fact" => $reporow['reponame']));
@@ -116,9 +116,9 @@ if ($media) {
 
 $notes = buildNotes($reponotes, "");
 if ($notes) {
-  $repotext .= beginSection("notes");
-  $repotext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
-  $repotext .= "<col class=\"labelcol\"/><col/>\n";
+    $repotext .= beginSection("notes");
+    $repotext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $repotext .= "<col class=\"labelcol\"/><col/>\n";
   $repotext .= "<tr>\n";
   $repotext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
     $repotext .= "<td valign=\"top\" class='databack'>$notes</td>\n";

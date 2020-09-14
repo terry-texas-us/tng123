@@ -104,7 +104,7 @@ foreach ($timeline as $timeentry) {
 
   if ($rights['both']) {
     $query = "SELECT display, eventdate, eventdatetr, eventplace, info FROM ($events_table, $eventtypes_table)
-			WHERE persfamID = \"{$output['timeperson']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"{$output['timetree']}\" AND keep = \"1\" AND parenttag = \"\"
+			WHERE persfamID = \"{$output['timeperson']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND gedcom = \"{$output['timetree']}\" AND keep = '1' AND parenttag = \"\"
 			ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
     $custevents = tng_query($query);
     while ($custevent = tng_fetch_assoc($custevents)) {

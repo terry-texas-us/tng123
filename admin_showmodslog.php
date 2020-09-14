@@ -149,7 +149,7 @@ $nColumns = 1;
 echo "
 <table id=\"infobar\" class='normal lightback $ibarclass'>
    <tr>
-      <td colspan=\"1\" class=\"fieldnameback fieldname mmpadleft\">$logheader</td>
+      <td colspan='1' class=\"fieldnameback fieldname mmpadleft\">$logheader</td>
    </tr>
 </table>";
 

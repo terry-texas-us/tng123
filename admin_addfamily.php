@@ -159,13 +159,13 @@ if ($lastperson) {
 
   $template = "ss";
   if ($husband) {
-    $query = "UPDATE $children_table SET haskids=\"1\" WHERE personID = ? AND gedcom = ?";
-    $params = array(&$template, &$husband, &$tree);
+    $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
+      $params = array(&$template, &$husband, &$tree);
     tng_execute($query, $params);
   }
   if ($wife) {
-    $query = "UPDATE $children_table SET haskids=\"1\" WHERE personID = ? AND gedcom = ?";
-    $params = array(&$template, &$wife, &$tree);
+      $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
+      $params = array(&$template, &$wife, &$tree);
     tng_execute($query, $params);
   }
 

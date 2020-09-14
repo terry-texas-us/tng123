@@ -165,7 +165,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         $truncated = substr($row['description'], 0, 90);
                         $truncated = strlen($row['description']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['description'];
                         echo "<div class=\"sortrow\" id=\"orderdivs_{$row['alinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['albumID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['albumID']}').css('visibility','hidden');\">";
-                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
+                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
@@ -178,7 +178,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
 
                         echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
 
-                        $query2 = "SELECT thumbpath, usecollfolder, mediatypeID FROM ($albumlinks_table, $media_table) WHERE albumID=\"{$row['albumID']}\" AND defphoto = \"1\" AND $albumlinks_table.mediaID = $media_table.mediaID";
+                        $query2 = "SELECT thumbpath, usecollfolder, mediatypeID FROM ($albumlinks_table, $media_table) WHERE albumID=\"{$row['albumID']}\" AND defphoto = '1' AND $albumlinks_table.mediaID = $media_table.mediaID";
                         $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
                         $trow = tng_fetch_assoc($result2);
                         $tmediatypeID = $trow['mediatypeID'];

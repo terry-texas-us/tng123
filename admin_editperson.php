@@ -447,7 +447,7 @@ include_once "eventlib_js.php";
                             $checked = $row['burialtype'] == 1 ? " checked=\"checked\"" : "";
                             echo "<tr>";
                             echo "<td></td>";
-                            echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"$checked> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                            echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                             echo "</tr>\n";
                             if ($rights['lds']) {
                                 echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -488,7 +488,7 @@ include_once "eventlib_js.php";
                         <?php
                         while ($parent = tng_fetch_assoc($parents)) {
                         echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
-                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
+                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'>";
                         echo "<tr>\n";
                         if ($parentcount > 1) {
                             echo "<td class=\"dragarea normal\">";
@@ -575,7 +575,7 @@ include_once "eventlib_js.php";
                     }
 
                     echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
-                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\">";
+                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'>";
                     echo "<tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";

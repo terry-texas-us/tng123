@@ -184,7 +184,7 @@ if (!empty($tng_extras)) {
 }
 
 $persontext .= beginSection("info");
-$persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+$persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
 resetEvents();
 if ($rights['both']) {
@@ -293,7 +293,7 @@ $parents = getChildParentsFamily($tree, $personID);
 
 if ($parents && tng_num_rows($parents)) {
     while ($parent = tng_fetch_assoc($parents)) {
-        $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+        $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
         $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
         $tableid = "fam" . $parent['familyID'] . "_";
         $cellnumber = 0;
@@ -453,7 +453,7 @@ $marrtot = tng_num_rows($marriages);
 $marrcount = 1;
 
 while ($marriagerow = tng_fetch_assoc($marriages)) {
-    $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
     $tableid = "fam" . $marriagerow['familyID'] . "_";
     $cellnumber = 0;
@@ -637,7 +637,7 @@ $persontext .= endSection("info");
 
 if ($map['key'] && $locations2map) {
     $persontext .= beginSection("eventmap");
-    $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $persontext .= "<col class=\"labelcol\"/><col class=\"mapcol\"/><col />\n";
     $persontext .= "<tr valign=\"top\"><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class=\"fieldname\">{$text['gmapevent']}</span></td>\n";
     $persontext .= "<td class='databack'>\n";
@@ -750,7 +750,7 @@ if ($notestogether != 1) {
 
     if ($notes) {
         $persontext .= beginSection("notes");
-        $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+        $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
         $persontext .= "<col class=\"labelcol\"/><col />\n";
         $persontext .= "<tr>\n";
         $persontext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
@@ -764,7 +764,7 @@ if ($notestogether != 1) {
 
 if ($citedispctr) {
     $persontext .= beginSection("citations");
-    $persontext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $persontext .= "<col class=\"labelcol\"/><col />\n";
     $persontext .= "<tr>\n";
     $persontext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"citations1\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></a></td>\n";

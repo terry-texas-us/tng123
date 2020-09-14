@@ -69,7 +69,7 @@ echo tng_DrawHeading($photostr, $headtext, "");
 $sourcetext = "";
 $sourcetext .= "<ul class=\"nopad\">\n";
 $sourcetext .= beginSection("info");
-$sourcetext .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+$sourcetext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($srcrow['title']) {
   $sourcetext .= showEvent(array("text" => $text['title'], "fact" => $srcrow['title']));
@@ -203,9 +203,9 @@ if ($media) {
 
 $notes = buildNotes($srcnotes, "");
 if ($notes) {
-  $sourcetext .= beginSection("notes");
-  $sourcetext .= "<table cellspacing=\"1\" cellpadding=\"4\"  class=\"whiteback tfixed\">\n";
-  $sourcetext .= "<col class=\"labelcol\"/><col/>\n";
+    $sourcetext .= beginSection("notes");
+    $sourcetext .= "<table cellspacing='1' cellpadding=\"4\"  class=\"whiteback tfixed\">\n";
+    $sourcetext .= "<col class=\"labelcol\"/><col/>\n";
   $sourcetext .= "<tr>\n";
   $sourcetext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
     $sourcetext .= "<td valign=\"top\" class='databack'>$notes</td>\n";

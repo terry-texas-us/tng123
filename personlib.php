@@ -829,7 +829,7 @@ function doMediaSection($entity, $medialist, $albums) {
             if ($media) {
                 $media .= "<br>\n";
             }
-            $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+            $media .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
             $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
             $media .= "$newmedia\n</table>\n";
         }
@@ -839,7 +839,7 @@ function doMediaSection($entity, $medialist, $albums) {
         if ($media) {
             $media .= "<br>\n";
         }
-        $media .= "<table cellspacing=\"1\" cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+        $media .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
         $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
         $media .= "$albumtext\n</table>\n";
     }
@@ -889,7 +889,7 @@ function getAlbums($entity, $linktype) {
 
     $query = "SELECT $albums_table.albumID, albumname, description, eventID, alwayson
 		FROM ($albums_table,$album2entities_table) 
-		WHERE entityID=\"$ID\" AND gedcom=\"$tree\" AND $album2entities_table.albumID=$albums_table.albumID AND active = \"1\" 
+		WHERE entityID=\"$ID\" AND gedcom=\"$tree\" AND $album2entities_table.albumID=$albums_table.albumID AND active = '1' 
 		ORDER BY ordernum, albumname";
     $albumlinks = tng_query($query);
     if (is_array($entity)) {

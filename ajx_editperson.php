@@ -278,7 +278,7 @@ include_once "eventlib.php";
                         $checked = $row['burialtype'] == 1 ? " checked=\"checked\"" : "";
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value=\"1\"{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($rights['lds']) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -333,7 +333,7 @@ include_once "eventlib.php";
                     $gotfather = tng_query($query);
 
                     echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
-                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
+                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
                     if ($parentcount > 1) {
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
@@ -508,7 +508,7 @@ include_once "eventlib.php";
                         $spouse = "husband";
                     }
                     echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
-                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing=\"1\"><tr>\n";
+                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";

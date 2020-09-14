@@ -293,7 +293,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                             $newactionstr = preg_replace("/xxx/", $row['testID'], $actionstr);
                             echo "<tr id=\"row_{$row['testID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
                             }
                             $rights = determineLivingPrivateRights($row);
                             $row['allow_living'] = $rights['living'];

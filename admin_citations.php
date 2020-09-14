@@ -80,7 +80,7 @@ $citationcount = tng_num_rows($citresult);
                     $actionstr = $allow_edit ? "<a href=\"#\" onclick=\"return editCitation({$citation['citationID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>" : "";
                     $actionstr .= $allow_delete ? "<a href=\"#\" onclick=\"return deleteCitation({$citation['citationID']},'$persfamID','$tree','$eventID');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "";
                     echo "<div class=\"sortrow\" id=\"citations_{$citation['citationID']}\">";
-                    echo "<table class='normal' cellpadding=\"3\" cellspacing=\"1\" border=\"0\">";
+                    echo "<table class='normal' cellpadding=\"3\" cellspacing='1' border=\"0\">";
                     echo "<tr id=\"row_{$citation['citationID']}\">";
                     echo "<td class=\"dragarea\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
                     echo "<td class='lightback' width=\"70\">$actionstr</td>";

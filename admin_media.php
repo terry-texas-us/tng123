@@ -440,7 +440,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['mediaID'], $actionstr);
                             echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value=\"1\"></td>";
+                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value='1'></td>";
                             }
                             echo "<td valign=\"top\" class='lightback' align=\"center\">";
                             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";

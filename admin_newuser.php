@@ -22,7 +22,7 @@ if ($result) {
     $row['ucount'] = 0;
 }
 
-$revquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = \"-1\"";
+$revquery = "SELECT count(userID) AS ucount FROM $users_table WHERE allow_living = '1'";
 $revresult = tng_query($revquery) or die ($admtext['cannotexecutequery'] . ": $revquery");
 $revrow = tng_fetch_assoc($revresult);
 $revstar = $revrow['ucount'] ? " *" : "";

@@ -10,13 +10,13 @@ require "adminlog.php";
 include "tngmaillib.php";
 
 if ($assignedtree || !$allow_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if (is_array($gedcom_mult)) {
-  $gedcom = implode(',', $gedcom_mult);
+    $gedcom = implode(',', $gedcom_mult);
 }
 
 $description = addslashes($description);
@@ -37,51 +37,51 @@ $zip = addslashes($zip);
 $country = addslashes($country);
 
 if (($password != $orgpwd) || $newuser) {
-  $password = PasswordEncode($password);
-  $password_type = PasswordType();
-  $pwd_str = "password=\"$password\",password_type=\"$password_type\",";
+    $password = PasswordEncode($password);
+    $password_type = PasswordType();
+    $pwd_str = "password=\"$password\",password_type=\"$password_type\",";
 } else {
-  $pwd_str = "";
+    $pwd_str = "";
 }
 
 if (!$form_allow_add) {
-  $form_allow_add = 0;
+    $form_allow_add = 0;
 }
 if (!$form_allow_delete) {
-  $form_allow_delete = 0;
+    $form_allow_delete = 0;
 }
 if ($form_allow_edit == 2) {
-  $form_tentative_edit = 1;
-  $form_allow_edit = 0;
+    $form_tentative_edit = 1;
+    $form_allow_edit = 0;
 } else {
-  $form_tentative_edit = 0;
+    $form_tentative_edit = 0;
 }
 if (!$form_allow_ged) {
-  $form_allow_ged = 0;
+    $form_allow_ged = 0;
 }
 if (!$form_allow_pdf) {
-  $form_allow_pdf = 0;
+    $form_allow_pdf = 0;
 }
 if (!$form_allow_living) {
-  $form_allow_living = 0;
+    $form_allow_living = 0;
 }
 if (!$form_allow_private) {
-  $form_allow_private = 0;
+    $form_allow_private = 0;
 }
 if (!$form_allow_lds) {
-  $form_allow_lds = 0;
+    $form_allow_lds = 0;
 }
 if (!$form_allow_profile) {
-  $form_allow_profile = 0;
+    $form_allow_profile = 0;
 }
 if (!$no_email) {
-  $no_email = 0;
+    $no_email = 0;
 }
 if (!$disabled) {
-  $disabled = 0;
+    $disabled = 0;
 }
 if (!$preflang) {
-  $preflang = 0;
+    $preflang = 0;
 }
 $today = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $dt_consent = isset($consented) && $consented == 1 ? $today : "";
@@ -90,63 +90,63 @@ $dt_consent = isset($consented) && $consented == 1 ? $today : "";
 //if it exists, "duplicate"
 $duplicate = false;
 if ($username != $orguser) {
-  $query = "SELECT username FROM $users_table WHERE LOWER(username) = LOWER(\"$username\")";
-  $result = tng_query($query);
+    $query = "SELECT username FROM $users_table WHERE LOWER(username) = LOWER('$username')";
+    $result = tng_query($query);
 
-  if ($result && tng_num_rows($result)) {
-    $duplicate = true;
-  }
+    if ($result && tng_num_rows($result)) {
+        $duplicate = true;
+    }
 }
 if (!$duplicate && $email && $email != $orgemail) {
-  $query = "SELECT username FROM $users_table WHERE LOWER(email) = LOWER(\"$email\")";
-  $result = tng_query($query);
+    $query = "SELECT username FROM $users_table WHERE LOWER(email) = LOWER('$email')";
+    $result = tng_query($query);
 
-  if ($result && tng_num_rows($result)) {
-    $duplicate = true;
-  }
+    if ($result && tng_num_rows($result)) {
+        $duplicate = true;
+    }
 }
 
 if (!$duplicate) {
-  $activatedstr = $newuser ? ", dt_activated=\"$today\"" : "";
-  $consentedstr = $dt_consent ? ", dt_consented=\"$dt_consent\"" : "";
-  $query = "UPDATE $users_table SET description=\"$description\",username=\"$username\",{$pwd_str}realname=\"$realname\",phone=\"$phone\",email=\"$email\",website=\"$website\",address=\"$address\",city=\"$city\",state=\"$state\",zip=\"$zip\",country=\"$country\",languageID=\"$preflang\",notes=\"$notes\",gedcom=\"$gedcom\",mygedcom=\"$mynewgedcom\",personID=\"$personID\",role=\"$role\",allow_edit=\"$form_allow_edit\",allow_add=\"$form_allow_add\",tentative_edit=\"$form_tentative_edit\",allow_delete=\"$form_allow_delete\",allow_lds=\"$form_allow_lds\",allow_living=\"$form_allow_living\",allow_private=\"$form_allow_private\",allow_ged=\"$form_allow_ged\",allow_pdf=\"$form_allow_pdf\",allow_profile=\"$form_allow_profile\",branch='$branch'{$activatedstr}{$consentedstr},no_email=\"$no_email\",disabled=\"$disabled\"
+    $activatedstr = $newuser ? ", dt_activated=\"$today\"" : "";
+    $consentedstr = $dt_consent ? ", dt_consented=\"$dt_consent\"" : "";
+    $query = "UPDATE $users_table SET description=\"$description\",username='$username',{$pwd_str}realname=\"$realname\",phone=\"$phone\",email='$email',website=\"$website\",address=\"$address\",city=\"$city\",state=\"$state\",zip=\"$zip\",country=\"$country\",languageID=\"$preflang\",notes=\"$notes\",gedcom=\"$gedcom\",mygedcom=\"$mynewgedcom\",personID=\"$personID\",role=\"$role\",allow_edit=\"$form_allow_edit\",allow_add=\"$form_allow_add\",tentative_edit=\"$form_tentative_edit\",allow_delete=\"$form_allow_delete\",allow_lds=\"$form_allow_lds\",allow_living=\"$form_allow_living\",allow_private=\"$form_allow_private\",allow_ged=\"$form_allow_ged\",allow_pdf=\"$form_allow_pdf\",allow_profile=\"$form_allow_profile\",branch='$branch'{$activatedstr}{$consentedstr},no_email=\"$no_email\",disabled=\"$disabled\"
 		WHERE userID=\"$userID\"";
 
-  $result = @tng_query($query);
+    $result = @tng_query($query);
 
-  if ($notify && $email) {
-    $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
+    if ($notify && $email) {
+        $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
 
-    $deftext = $admtext;
-    if ($preflang) {
-      $query = "SELECT folder FROM $languages_table WHERE languageID = \"$preflang\"";
-      $result = tng_query($query) or die ("Cannot execute query: $query"); //message is hardcoded because we haven't included the text file yet
-      $langrow = tng_fetch_assoc($result);
-      tng_free_result($result);
-
-      if ($langrow['folder']) {
-        $oldtext = $admtext;
-        include $cms['tngpath'] . "$languages_path{$langrow['folder']}/admintext.php";
         $deftext = $admtext;
-        $admtext = $oldtext;
-      }
+        if ($preflang) {
+            $query = "SELECT folder FROM $languages_table WHERE languageID = \"$preflang\"";
+            $result = tng_query($query) or die ("Cannot execute query: $query"); //message is hardcoded because we haven't included the text file yet
+            $langrow = tng_fetch_assoc($result);
+            tng_free_result($result);
+
+            if ($langrow['folder']) {
+                $oldtext = $admtext;
+                include $cms['tngpath'] . "$languages_path{$langrow['folder']}/admintext.php";
+                $deftext = $admtext;
+                $admtext = $oldtext;
+            }
+        }
+        tng_sendmail($owner, $emailaddr, $realname, $email, $deftext['subjectline'], stripslashes($welcome), $emailaddr, $emailaddr);
     }
-    tng_sendmail($owner, $emailaddr, $realname, $email, $deftext['subjectline'], stripslashes($welcome), $emailaddr, $emailaddr);
-  }
 
-  adminwritelog("<a href=\"admin_edituser.php?userID=$userID\">{$admtext['modifyuser']}: $userID</a>");
+    adminwritelog("<a href=\"admin_edituser.php?userID=$userID\">{$admtext['modifyuser']}: $userID</a>");
 
-  $message = $admtext['changestouser'] . " $userID {$admtext['succsaved']}.";
+    $message = $admtext['changestouser'] . " $userID {$admtext['succsaved']}.";
 } else {
-  $message = $admtext['duplicate'];
+    $message = $admtext['duplicate'];
 }
 
 if ($newuser) {
-  if ($tngconfig['autotree'] && !$tngconfig['autoapp']) {
-    $query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate) VALUES (\"$gedcom\",\"$realname\",\"\",\"$realname\",\"$email\",\"$address\",\"$city\",\"$state\",\"$country\",\"$zip\",\"$phone\",\"0\",\"0\")";
-    $result = tng_query($query);
-  }
-  header("Location: admin_reviewusers.php?message=" . urlencode($message));
+    if ($tngconfig['autotree'] && !$tngconfig['autoapp']) {
+        $query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate) VALUES (\"$gedcom\",\"$realname\",\"\",\"$realname\",'$email',\"$address\",\"$city\",\"$state\",\"$country\",\"$zip\",\"$phone\",\"0\",\"0\")";
+        $result = tng_query($query);
+    }
+    header("Location: admin_reviewusers.php?message=" . urlencode($message));
 } else {
-  header("Location: admin_users.php?message=" . urlencode($message));
+    header("Location: admin_users.php?message=" . urlencode($message));
 }

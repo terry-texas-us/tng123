@@ -285,7 +285,7 @@ $personID = $famrow['husband'] ? $famrow['husband'] : $famrow['wife'];
 
 $famtext .= "<ul class=\"nopad\">\n";
 $famtext .= beginSection("info");
-$famtext .= "<table border=\"0\" cellspacing=\"1\" cellpadding=\"4\" width=\"100%\">\n";
+$famtext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" width=\"100%\">\n";
 
 //get husband & spouses
 if ($famrow['husband']) {

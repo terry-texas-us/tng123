@@ -52,7 +52,7 @@ tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
 //do lookups in each area
 //set $currentuser = "" if only 1
 
-$query = "SELECT username, description FROM $users_table WHERE allow_living != \"-1\" AND (allow_edit = \"1\" OR allow_add = \"1\")";
+$query = "SELECT username, description FROM $users_table WHERE allow_living != '-1' AND (allow_edit = '1' OR allow_add = '1')";
 $result = tng_query($query);
 $userlist = array();
 if (tng_num_rows($result) == 1) {

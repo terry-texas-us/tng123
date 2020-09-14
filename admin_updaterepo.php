@@ -28,11 +28,11 @@ $www = addslashes($www);
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
 if ($addressID) {
-  $query = "UPDATE $address_table SET address1=\"$address1\", address2=\"$address2\", city=\"$city\", state=\"$state\", zip=\"$zip\", country=\"$country\", phone=\"$phone\", email=\"$email\", www=\"$www\" WHERE addressID = \"$addressID\"";
-  $result = tng_query($query);
+  $query = "UPDATE $address_table SET address1=\"$address1\", address2=\"$address2\", city=\"$city\", state=\"$state\", zip=\"$zip\", country=\"$country\", phone=\"$phone\", email='$email', www=\"$www\" WHERE addressID = \"$addressID\"";
+    $result = tng_query($query);
 } elseif ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
-  $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www)  VALUES(\"$address1\", \"$address2\", \"$city\", \"$state\", \"$zip\", \"$country\", \"$tree\", \"$phone\", \"$email\", \"$www\")";
-  $result = tng_query($query);
+    $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www)  VALUES(\"$address1\", \"$address2\", \"$city\", \"$state\", \"$zip\", \"$country\", \"$tree\", \"$phone\", '$email', \"$www\")";
+    $result = tng_query($query);
   $addressID = tng_insert_id();
 }
 

@@ -35,7 +35,7 @@ if ($tree) {
 
 $query = "SELECT distinct $media_table.mediaID, path, $media_table.description, usecollfolder
 	FROM ($media_table, $medialinks_table, $people_table)
-	WHERE $media_table.mediaID = $medialinks_table.mediaID $wherestr AND $medialinks_table.gedcom = $people_table.gedcom AND $medialinks_table.personID = $people_table.personID AND mediatypeID = \"photos\" AND (living != \"1\" OR alwayson = \"1\")
+	WHERE $media_table.mediaID = $medialinks_table.mediaID $wherestr AND $medialinks_table.gedcom = $people_table.gedcom AND $medialinks_table.personID = $people_table.personID AND mediatypeID = \"photos\" AND (living != '1' OR alwayson = '1')
 	ORDER BY RAND() LIMIT 1";
 $result = tng_query($query);
 $imgrow = tng_fetch_assoc($result);

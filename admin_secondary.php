@@ -377,8 +377,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
               $changedToLiving++;
               echo "+<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">{$row['personID']}</a> ";
               //mark the family as living too
-              $query2 = "UPDATE $families_table SET living = \"1\" WHERE gedcom = \"{$row['gedcom']}\" AND (husband = \"{$row['personID']}\" OR wife = \"{$row['personID']}\")";
-              $result2 = tng_query($query2);
+              $query2 = "UPDATE $families_table SET living = '1' WHERE gedcom = \"{$row['gedcom']}\" AND (husband = \"{$row['personID']}\" OR wife = \"{$row['personID']}\")";
+                $result2 = tng_query($query2);
             } else {
               $changedToDeceased++;
               echo "-<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">{$row['personID']}</a> ";
@@ -398,8 +398,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             $wherestr = "AND gedcom = \"$tree\"";
           }
 
-          $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != \"1\" AND living != \"1\" $wherestr";
-          $result = tng_query($query);
+            $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != '1' AND living != '1' $wherestr";
+            $result = tng_query($query);
 
           $today = date('Y');
 
@@ -410,11 +410,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
             //if death is blank, skip
             if (!$row['private'] && $death != "0000-00-00" && strtotime("-{$tngimpcfg['maxprivyrs']} years") < strtotime($death)) {
-              $query2 = "UPDATE $people_table SET private = \"1\" WHERE ID = \"{$row['ID']}\"";
-              $result2 = tng_query($query2);
+                $query2 = "UPDATE $people_table SET private = '1' WHERE ID = \"{$row['ID']}\"";
+                $result2 = tng_query($query2);
 
-              $query2 = "UPDATE $families_table SET private = \"1\" WHERE gedcom = \"{$row['gedcom']}\" AND (husband = \"{$row['personID']}\" OR wife = \"{$row['personID']}\")";
-              $result2 = tng_query($query2);
+                $query2 = "UPDATE $families_table SET private = '1' WHERE gedcom = \"{$row['gedcom']}\" AND (husband = \"{$row['personID']}\" OR wife = \"{$row['personID']}\")";
+                $result2 = tng_query($query2);
 
               $peopleMadePrivate++;
             }
