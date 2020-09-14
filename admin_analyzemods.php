@@ -89,7 +89,7 @@ echo "
 </div><!--head-section-->";
 
 echo "
-<table id=\"m2table\" class=\"normal lightback $tableclass\">
+<table id=\"m2table\" class='normal lightback $tableclass'>
 <tr>
 <td class='databack mmleftcol'>";
 

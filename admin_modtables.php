@@ -137,7 +137,7 @@ if (empty($modfile)) {
   $modlist = $oParse->get_modfile_names();
   $modnum = 1;
   echo "
-<div id=\"parse-sec\" class=\"lightback parse-table\" style=$style>
+<div id=\"parse-sec\" class='lightback parse-table' style=$style>
    <h2>{$admtext['selectmod']}</h2>";
   foreach ($modlist as $modfile) {
     echo "
@@ -157,7 +157,7 @@ if (empty($modfile)) {
  *************************************************************************/
 $tags = $oParse->parse($modspath . '/' . $modfile);
 echo "
-<div id=\"parse-sec\" class=\"lightback parse-table\" style=$style>";
+<div id=\"parse-sec\" class='lightback parse-table' style=$style>";
 $oParse->show_parse_table($tags);
 
 echo "

@@ -513,7 +513,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                         echo "<td class=\"dragarea normal\">";
                                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";
-                                        echo "<td class=\"lightback normal childblock\">\n";
+                                        echo "<td class='lightback normal childblock'>\n";
 
                                         if ($allow_delete) {
                                             echo "<div id=\"unlinkc_{$child['pID']}\" $hidecode><a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";

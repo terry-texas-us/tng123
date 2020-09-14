@@ -323,7 +323,7 @@ include_once "eventlib.php";
                                         echo "<td class=\"dragarea normal\">";
                                         echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";
-                                        echo "<td class=\"lightback normal childblock\">\n";
+                                        echo "<td class='lightback normal childblock'>\n";
 
                                         if ($allow_delete) {
                                             echo "<div id=\"unlinkc_{$child['pID']}\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";

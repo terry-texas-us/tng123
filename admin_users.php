@@ -205,16 +205,16 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $rolestr = 'usr' . ($row['role'] ? $row['role'] : 'custom');
                             echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a>&nbsp;</td>\n";
 
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$row['gedcom']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$row['branch']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$admtext[$rolestr]}&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_allow_living&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_allow_private&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_allow_ged&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_allow_pdf&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_allow_lds&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;{$row['lastlogin']}&nbsp;</td>\n";
-                            echo "<td class=\"lightback nw\" valign=\"top\">&nbsp;$form_disabled&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$row['gedcom']}&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$row['branch']}&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$admtext[$rolestr]}&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_living&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_private&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_ged&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_pdf&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_lds&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$row['lastlogin']}&nbsp;</td>\n";
+                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_disabled&nbsp;</td>\n";
                             echo "</tr>\n";
                         }
                         ?>

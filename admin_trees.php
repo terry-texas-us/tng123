@@ -133,14 +133,15 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         $pcount = number_format($prow['pcount']);
                         tng_free_result($result2);
 
-                        echo "<tr id=\"row_{$row['gedcom']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
-                        echo "<td class=\"lightback nw\">&nbsp;$gedcom&nbsp;</td>\n";
+                        echo "<tr id=\"row_{$row['gedcom']}\">";
+                        echo "<td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                        echo "<td class='lightback nw'>&nbsp;$gedcom&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";
-                        echo "<td class=\"lightback nw\" align=\"right\">&nbsp;$pcount&nbsp;</td>\n";
-                        echo "<td class=\"lightback nw\">&nbsp;{$row['owner']}&nbsp;</td>\n";
-                        echo "<td class=\"lightback nw\">&nbsp;{$row['lastimportdate']}&nbsp;</td>\n";
-                        echo "<td class=\"lightback nw\">&nbsp;{$row['importfilename']}&nbsp;</td>\n";
+                        echo "<td class='lightback nw' align=\"right\">&nbsp;$pcount&nbsp;</td>\n";
+                        echo "<td class='lightback nw'>&nbsp;{$row['owner']}&nbsp;</td>\n";
+                        echo "<td class='lightback nw'>&nbsp;{$row['lastimportdate']}&nbsp;</td>\n";
+                        echo "<td class='lightback nw'>&nbsp;{$row['importfilename']}&nbsp;</td>\n";
                         echo "</tr>\n";
                     }
                     tng_free_result($result);

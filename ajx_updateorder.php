@@ -206,7 +206,7 @@ switch ($action) {
     $rval .= "<td class=\"dragarea normal\">";
     $rval .= "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
     $rval .= "</td>\n";
-    $rval .= "<td class=\"lightback normal childblock\">\n";
+      $rval .= "<td class='lightback normal childblock'>\n";
 
     $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a>";
     if ($allow_delete) {

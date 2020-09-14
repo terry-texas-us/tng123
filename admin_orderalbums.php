@@ -170,7 +170,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
 
-                        echo "<td class=\"lightback smaller\" style=\"width:35px;text-align:center;\">";
+                        echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
                         echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
                         echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\">\n";
                         echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";

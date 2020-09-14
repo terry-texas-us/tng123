@@ -147,14 +147,14 @@ $nColumns = 1;
 //Add the heading with the Mod Manager Recent Actions message
 
 echo "
-<table id=\"infobar\" class=\"normal lightback $ibarclass\">
+<table id=\"infobar\" class='normal lightback $ibarclass'>
    <tr>
       <td colspan=\"1\" class=\"fieldnameback fieldname mmpadleft\">$logheader</td>
    </tr>
 </table>";
 
 echo "
-<table id=\"mmlog\" class=\"normal lightback $mmlogclass\">";
+<table id=\"mmlog\" class='normal lightback $mmlogclass'>";
 $lines = file($options['modlogfile']);
 if ($lines) {
   $actionCount = 0; // Counts the actions, i.e. the "log entries"

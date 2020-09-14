@@ -232,7 +232,7 @@ if ($type == "child") {
     $rval .= "<td class=\"dragarea normal\">";
     $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
     $rval .= "</td>\n";
-    $rval .= "<td class=\"lightback normal childblock\">\n";
+    $rval .= "<td class='lightback normal childblock'>\n";
 
     $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
     $personlink = getName($row);

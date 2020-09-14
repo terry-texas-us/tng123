@@ -457,7 +457,7 @@ function showMediaSource($imgrow, $ss = false) {
         $imgrow['form'] = strtoupper($matches[1]);
     }
     if ($ss) {
-        echo "<div class=\"lightback slidepane rounded10\">\n";
+        echo "<div class='lightback slidepane rounded10'>\n";
     }
     if (!$ss && $imgrow['map']) {
         echo "<map name=\"tngmap_{$imgrow['mediaID']}\" id=\"tngmap_{$imgrow['mediaID']}\">{$imgrow['map']}</map>\n";
