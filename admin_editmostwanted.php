@@ -35,9 +35,9 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="more">
-    <p class="subhead"><strong><?php echo $admtext['mostwanted'] . ": " . $typemsg; ?></strong> |
+    <h3 class="subhead"><?php echo $admtext['mostwanted'] . ": " . $typemsg; ?> |
         <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/mostwanted_help.php');"><?php echo $admtext['help']; ?></a>
-    </p>
+    </h3>
     <form action="" name="editmostwanted" onsubmit="return updateMostWanted(this);">
         <table class="normal">
             <tr>

@@ -15,7 +15,7 @@ if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
     exit;
 }
 
-$query = "SELECT * FROM $branches_table WHERE gedcom = '$tree' AND branch = \"$branch\"";
+$query = "SELECT * FROM $branches_table WHERE gedcom = '$tree' AND branch = '$branch'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 $row['description'] = preg_replace("/\"/", "&#34;", $row['description']);

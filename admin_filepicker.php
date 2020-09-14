@@ -73,7 +73,7 @@ function frmFiles() {
     ?>
 
     <div class="databack ajaxwindow" id="filepicker">
-    <p class="subhead"><strong><?php echo $admtext['selectfile']; ?></strong></p>
+    <h3 class="subhead"><?php echo $admtext['selectfile']; ?></h3>
 
     <?php
     $nCurrentPage = $page ? $page : 0;

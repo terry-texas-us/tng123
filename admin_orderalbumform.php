@@ -73,20 +73,20 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_orderalbums.php" method="post" name="find" onsubmit="return validateSortForm();">
-        <span class="subhead"><strong><?php echo $admtext['sortalbumind']; ?></strong></span><br><br>
-        <table cellspacing="2">
-          <tr>
-            <td class="normal"><?php echo $admtext['tree']; ?></td>
-            <td class="normal"><?php echo $admtext['linktype']; ?></td>
-            <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
-          </tr>
-          <tr>
-            <td>
-              <select name="tree1">
-                <?php
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_orderalbums.php" method="post" name="find" onsubmit="return validateSortForm();">
+                <h3 class="subhead"><?php echo $admtext['sortalbumind']; ?></h3>
+                <table cellspacing="2">
+                    <tr>
+                        <td class="normal"><?php echo $admtext['tree']; ?></td>
+                        <td class="normal"><?php echo $admtext['linktype']; ?></td>
+                        <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="tree1">
+                                <?php
                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                               while ($treerow = tng_fetch_assoc($treeresult)) {
                                 echo "	<option value=\"{$treerow['gedcom']}\"";

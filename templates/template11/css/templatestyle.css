@@ -497,7 +497,9 @@ div.art-block img {
 /* end LayoutCell, content */
 
 /* header: heading text */
-.header, .plainheader, .subhead {
+.header,
+.plainheader,
+.subhead {
     color: #555;
 }
 

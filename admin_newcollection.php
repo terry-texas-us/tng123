@@ -21,18 +21,18 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack normal" style="margin:10px;border:0;" id="newcollection">
-    <p class="subhead"><strong><?php echo $admtext['addnewcoll']; ?></strong> |
-    <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></p>
+    <h3 class="subhead"><?php echo $admtext['addnewcoll']; ?> |
+        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/collections_help.php');"><?php echo $admtext['help']; ?></a></h3>
 
-  <form action="admin_addcollection.php" method="post" name="collform" id="collform" onsubmit="return addCollection(this);">
-    <table cellpadding="2" class="normal">
-      <tr>
-        <td><?php echo $admtext['collid']; ?>:</td>
-        <td><input type="text" name="collid" class="veryshortfield" onblur="if(!$('exportas').value) $('exportas').value = this.value.toUpperCase();"></td>
-      </tr>
-      <tr>
-        <td><?php echo $admtext['collexpas']; ?>:</td>
-        <td><input type="text" name="exportas" id="exportas" class="veryshortfield" value="PHOTO"></td>
+    <form action="admin_addcollection.php" method="post" name="collform" id="collform" onsubmit="return addCollection(this);">
+        <table cellpadding="2" class="normal">
+            <tr>
+                <td><?php echo $admtext['collid']; ?>:</td>
+                <td><input type="text" name="collid" class="veryshortfield" onblur="if(!$('exportas').value) $('exportas').value = this.value.toUpperCase();"></td>
+            </tr>
+            <tr>
+                <td><?php echo $admtext['collexpas']; ?>:</td>
+                <td><input type="text" name="exportas" id="exportas" class="veryshortfield" value="PHOTO"></td>
       </tr>
       <tr>
         <td><?php echo $admtext['colldisplay']; ?>:</td>

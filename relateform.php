@@ -61,17 +61,17 @@ echo getFORM("relationship", "get", "form1", "form1", "$('calcbtn').className='f
 $maxupgen = $pedigree['maxupgen'] ? $pedigree['maxupgen'] : 15;
 $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
 ?>
-  <span class="subhead"><strong><?php echo $text['findrel']; ?></strong></span><br>
-  <p><span class="normal"><?php echo $newstr; ?></span></p>
-  <table class="normal">
-    <tr>
-      <td valign="top">
-        <table>
-          <tr>
-            <td><span class="normal"><strong><?php echo $text['person1']; ?> </strong></span></td>
-            <td>
-              <div id="name1" class="normal"><?php echo $namestr; ?></div>
-            </td>
+    <h3 class="subhead"><?php echo $text['findrel']; ?></h3>
+    <p><span class="normal"><?php echo $newstr; ?></span></p>
+    <table class="normal">
+        <tr>
+            <td valign="top">
+                <table>
+                    <tr>
+                        <td><span class="normal"><strong><?php echo $text['person1']; ?> </strong></span></td>
+                        <td>
+                            <div id="name1" class="normal"><?php echo $namestr; ?></div>
+                        </td>
           </tr>
           <tr>
             <td><span class="normal"><?php echo $text['changeto']; ?> </span></td>

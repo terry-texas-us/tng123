@@ -158,7 +158,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <p class="subhead"><strong><?php echo $admtext['selectevaction']; ?></strong></p>
+            <h3 class="subhead"><?php echo $admtext['selectevaction']; ?></h3>
             <div class="normal">
                 <form action="admin_findreview.php" name="form1">
                     <table>

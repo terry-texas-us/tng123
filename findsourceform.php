@@ -7,10 +7,10 @@ include "$mylanguage/admintext.php";
 include $cms['tngpath'] . "checklogin.php";
 
 if ($mediaID) {
-    $mediaoption = ",mediaID:'$mediaID'";
+    $mediaoption = ", mediaID:'$mediaID'";
 } else {
     if ($albumID) {
-        $mediaoption = ",albumID:'$albumID'";
+        $mediaoption = ", albumID:'$albumID'";
     } else {
         $mediaoption = "";
     }
@@ -18,15 +18,15 @@ if ($mediaID) {
 
 $bailtext = $mediaoption ? $admtext['finish'] : $admtext['cancel'];
 
-$applyfilter = "applyFilter({form:'findsourceform1',fieldId:'mytitle',type:'S',tree:'$tree',destdiv:'sourceresults'$mediaoption});";
+$applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S', tree:'$tree', destdiv:' sourceresults'$mediaoption});";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findsourcediv">
     <form action="" method="post" name="findsourceform1" id="findsourceform1" onsubmit="return <?php echo $applyfilter; ?>">
-        <p class="subhead"><strong><?php echo $admtext['findsourceid']; ?></strong><br>
-            <span class="normal">(<?php echo $admtext['entersourcepart']; ?>)</span></p>
+        <h3 class="subhead"><?php echo $admtext['findsourceid']; ?><br>
+            <span class="normal">(<?php echo $admtext['entersourcepart']; ?>)</span></h3>
         <table cellspacing="0" cellpadding="2" class="normal">
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>

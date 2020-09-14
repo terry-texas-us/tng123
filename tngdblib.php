@@ -403,7 +403,7 @@ function getTreeSimple($tree) {
 function getBranchesSimple($tree, $branch) {
   global $branches_table;
 
-  $query = "SELECT description FROM $branches_table WHERE branch = \"$branch\" and gedcom = '$tree'";
+  $query = "SELECT description FROM $branches_table WHERE branch = '$branch' and gedcom = '$tree'";
 
   return tng_query($query);
 }

@@ -32,7 +32,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="changetree">
-    <p class="subhead"><strong><?php echo $admtext['changetree']; ?></strong></p>
+    <h3 class="subhead"><?php echo $admtext['changetree']; ?></h3>
     <form id="changetree" name="changetree" action="admin_changetree.php" onsubmit="return onChangeTree(this);">
         <table class="normal" border="0" cellpadding="2">
             <tr>

@@ -13,8 +13,8 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow">
-    <p class="subhead"><strong><?php echo $admtext['addnewevent']; ?></strong> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/events_help.php');"><?php echo $admtext['help']; ?></a></p>
+    <h3 class="subhead"><?php echo $admtext['addnewevent']; ?> |
+        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/events_help.php');"><?php echo $admtext['help']; ?></a></h3>
     <?php
     if ($message) {
         ?>

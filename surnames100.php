@@ -28,18 +28,18 @@ echo $formstr;
         <?php echo $text['showtop']; ?>&nbsp;
         <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="4" maxlength="4"> <?php echo $text['byoccurrence']; ?>&nbsp;
         <input type="submit" value="<?php echo $text['go']; ?>">
-  </div>
-  </form>
-  <br>
+    </div>
+    </form>
+    <br>
 
-  <div class="titlebox">
-    <p class="subhead"><strong><?php echo "{$text['top30']} ({$text['totalnames']}):"; ?></strong></p>
-    <p class="smaller"><?php echo $text['showmatchingsurnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$surnames_url" . "tree=$tree\">{$text['mainsurnamepage']}</a> &nbsp;|&nbsp; <a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a>"; ?></p>
-    <?php
-    include $cms['tngpath'] . "surnamestable.php";
-    ?>
-  </div>
-  <br>
+    <div class="titlebox">
+        <h3 class="subhead"><?php echo "{$text['top30']} ({$text['totalnames']}):"; ?></h3>
+        <p class="smaller"><?php echo $text['showmatchingsurnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$surnames_url" . "tree=$tree\">{$text['mainsurnamepage']}</a> &nbsp;|&nbsp; <a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a>"; ?></p>
+        <?php
+        include $cms['tngpath'] . "surnamestable.php";
+        ?>
+    </div>
+    <br>
 <?php
 tng_footer("");
 ?>

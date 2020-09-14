@@ -732,7 +732,7 @@ function findItem(type, field, titlediv, findtree, findbranch, media) {
     }
     branchstr = findbranch ? '&branch=' + findbranch : '';
     seclitbox = new LITBox(cmstngpath + newpage + '?tree=' + findtree + branchstr + mediastr, {
-        width: 645, height: 560
+        width: 645, height: 580
     });
     initFilter(null, seclitbox, field, titlediv);
     jQuery('#' + startfield).focus();

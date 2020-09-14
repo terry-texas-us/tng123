@@ -137,16 +137,16 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     //show photo & name
     $indtext .= "<tr><td>";
     $indtext .= showSmallPhoto($ind['personID'], $namestr, $rights['both'], 0, false, $ind['sex']);
-    $indtext .= "<span class='normal'>$label | $sex</span><br><span class='subhead'><b>";
+    $indtext .= "<span class='normal'>$label | $sex</span><br><h3 class='subhead'>";
     if ($ind['haskids']) {
         $indtext .= "+ ";
     }
-    $indtext .= "<a href=\"$getperson_url" . "personID={$ind['personID']}&amp;tree=$tree\">$namestr</a></b>";
+    $indtext .= "<a href=\"$getperson_url" . "personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
 
     if ($allow_edit && $rightbranch) {
         $indtext .= " | <a href=\"{$cms['tngpath']}" . "admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
     }
-    $indtext .= "<br></span>\n";
+    $indtext .= "<br></h3>\n";
     $indtext .= "</td></tr>\n</table>\n<br>\n";
 
     $event = [];

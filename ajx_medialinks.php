@@ -45,12 +45,12 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="0">
-  <tr class="databack">
-    <td>
-      <span class="subhead"><strong><?php echo $admtext['medialinks']; ?></strong></span><br><br>
-      <form action="" name="form1" id="form1">
-        <?php include "micro_medialinks.php"; ?>
-      </form>
-    </td>
-  </tr>
+    <tr class="databack">
+        <td>
+            <h3 class="subhead"><?php echo $admtext['medialinks']; ?></h3>
+            <form action="" name="form1" id="form1">
+                <?php include "micro_medialinks.php"; ?>
+            </form>
+        </td>
+    </tr>
 </table>

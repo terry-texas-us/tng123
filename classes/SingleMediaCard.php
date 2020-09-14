@@ -31,27 +31,29 @@ class SingleMediaCard
     if ($wherestr2) {
       $query .= " LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID";
     }
-    $query .= " WHERE $wherestr mediatypeID = \"{$mediatypeID}\" ORDER BY ";
-    if (strpos($_SERVER['SCRIPT_NAME'], "placesearch") !== FALSE) {
-      $query .= "ordernum";
-    } else {
-      $query .= "changedate DESC, description";
-    }
-    $query .= " LIMIT $limit";
-    $mediaresult = tng_query($query);
+      $query .= " WHERE $wherestr mediatypeID = \"{$mediatypeID}\" ORDER BY ";
+      if (strpos($_SERVER['SCRIPT_NAME'], "placesearch") !== FALSE) {
+          $query .= "ordernum";
+      } else {
+          $query .= "changedate DESC, description";
+      }
+      $query .= " LIMIT $limit";
+      $mediaresult = tng_query($query);
 
-    $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-      $header = "<div class=\"titlebox tablediv\"><span class='subhead'><b>$titlemsg</b></span><br><br><div>\n";
+      $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
+      $header = "<div class=\"titlebox tablediv\">";
+      $header .= "<h3 class='subhead'>$titlemsg</h3>";
+      $header .= "<div>\n";
 
-    $content = "";
-    $thumbcount = 0;
+      $content = "";
+      $thumbcount = 0;
 
-    while ($row = tng_fetch_assoc($mediaresult)) {
-      $mediatypeID = $row['mediatypeID'];
+      while ($row = tng_fetch_assoc($mediaresult)) {
+          $mediatypeID = $row['mediatypeID'];
 
-      $query = "SELECT medialinkID, medialinks.personID AS personID, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, medialinks.gedcom AS gedcom, linktype ";
-      $query .= "FROM $medialinks_table medialinks ";
-      $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
+          $query = "SELECT medialinkID, medialinks.personID AS personID, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, medialinks.gedcom AS gedcom, linktype ";
+          $query .= "FROM $medialinks_table medialinks ";
+          $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
       $query .= "LEFT JOIN $families_table families ON (medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom) ";
       $query .= "WHERE mediaID = \"{$row['mediaID']}\"$wherestr2 ORDER BY lastname, lnprefix, firstname, medialinks.personID";
       $presult = tng_query($query);

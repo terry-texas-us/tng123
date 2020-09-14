@@ -160,16 +160,16 @@ $result = tng_query($query);
 if (tng_num_rows($result)) {
     ?>
     <div class="titlebox">
-        <span class="subhead"><b><?php echo $text['individuals']; ?></b></span><br><br>
+        <h3 class="subhead"><?php echo $text['individuals']; ?></h3>
         <?php echo $tableStartTag; ?>
         <thead>
         <tr>
-            <th data-tablesaw-priority = "persist" class = "fieldnameback idcol fieldname"><?php echo $text['id']; ?></th>
-            <th data-tablesaw-priority = "1" class = "fieldnameback fieldname"><?php echo $nametitle; ?></th>
-            <th data-tablesaw-priority = "2" class = "fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
-            <th data-tablesaw-priority = "3" class = "fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <th data-tablesaw-priority="persist" class="fieldnameback idcol fieldname"><?php echo $text['id']; ?></th>
+            <th data-tablesaw-priority="1" class="fieldnameback fieldname"><?php echo $nametitle; ?></th>
+            <th data-tablesaw-priority="2" class="fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
+            <th data-tablesaw-priority="3" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
             <?php if ($numtrees > 1) { ?>
-                <th data-tablesaw-priority = "3" class = "fieldnameback fieldname"><b><?php echo $text['tree']; ?><?php if ($numbranches) {
+                <th data-tablesaw-priority="3" class="fieldnameback fieldname"><b><?php echo $text['tree']; ?><?php if ($numbranches) {
                             echo " | " . $text['branch'];
                         } ?></b>
                 </th>
@@ -243,7 +243,7 @@ $famresult = tng_query($query);
 if (tng_num_rows($famresult)) {
     ?>
     <div class="titlebox">
-        <span class="subhead"><b><?php echo $text['families']; ?></b></span><br>
+        <h3 class="subhead"><?php echo $text['families']; ?></h3>
         <?php echo $tableStartTag; ?>
         <thead>
         <tr>

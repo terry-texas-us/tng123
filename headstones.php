@@ -201,7 +201,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $totrows = $numrows;
   }
 
-    $body .= "<div><p class='subhead'><strong>\n";
+    $body .= "<div><h3 class='subhead'>\n";
   if ($cemetery['cemname'] == $text['nocemetery']) {
     $location = $cemetery['cemname'];
   } else {
@@ -254,9 +254,9 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     }
   }
 
-  $body .= $location;
-  $body .= "</strong></p>";
-  $pagenav = get_browseitems_nav($totrows, $headstones_url . "cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
+    $body .= $location;
+    $body .= "</h3>";
+    $pagenav = get_browseitems_nav($totrows, $headstones_url . "cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
   $body .= "<p>$pagenav</p>";
   $body .= "</div>\n";
 

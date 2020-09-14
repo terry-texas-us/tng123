@@ -187,7 +187,7 @@ if ($message) {
 }
 
 if ($enttype) {
-    echo "<span class='subhead'><b>$headline</b></span><br><br>\n";
+    echo "<h3 class='subhead'>$headline</h3>\n";
 }
 ?>
 

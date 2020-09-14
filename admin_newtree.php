@@ -22,8 +22,8 @@ $helplang = findhelp("trees_help.php");
 if ($beforeimport == "yes") { // ajax html excludes html and body tags
     header("Content-type:text/html; charset=" . $session_charset);
     echo "<div class=\"databack ajaxwindow\" id=\"newtree\">\n";
-    echo "<p class='subhead'><strong>{$admtext['addnewtree']}</strong> |\n";
-    echo "<a href=\"#\" onclick=\"return openHelp('{$helplang}/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['help']}></a></p>";
+    echo "<h3 class='subhead'>{$admtext['addnewtree']} |\n";
+    echo "<a href=\"#\" onclick=\"return openHelp('{$helplang}/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['help']}></a></h3>";
 } else {
     $flags['tabs'] = $tngconfig['tabs'];
     tng_adminheader($admtext['addnewtree'], $flags);

@@ -31,21 +31,21 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="persform1" id="persform1" onSubmit="return validatePerson(this);">
-  <table width="100%" cellpadding="10" cellspacing="0">
-    <tr class="databack">
-      <td class="tngbotshadow">
-        <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
-        <span class="subhead togglehead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br><br>
+    <table width="100%" cellpadding="10" cellspacing="0">
+        <tr class="databack">
+            <td class="tngbotshadow">
+                <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+                <h3 class="subhead togglehead"><?php echo $admtext['addnewperson']; ?></h3>
 
-        <table class="normal">
-          <tr>
-            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
-          </tr>
-          <tr>
-            <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
-            <td>
-              <input type="text" name="personID" id="personID" size="10" onBlur="this.value=this.value.toUpperCase()">
-              <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('person','personID');">
+                <table class="normal">
+                    <tr>
+                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
+                        <td>
+                            <input type="text" name="personID" id="personID" size="10" onBlur="this.value=this.value.toUpperCase()">
+                            <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('person','personID');">
                             <input type="button" value="<?php echo $admtext['check']; ?>" onClick="checkIDajax(document.persform1.personID.value,'person','pcheckmsg');">
                             <span id="pcheckmsg" class="normal"></span>
                         </td>

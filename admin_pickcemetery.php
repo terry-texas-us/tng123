@@ -14,18 +14,18 @@ $result = tng_query($query);
 <div class="databack ajaxwindow" id="cemdiv">
   <?php
   if (tng_num_rows($result)) {
-    ?>
-      <h1 class="subhead"><strong><?php echo $admtext['choosecem']; ?></strong></h1>
+      ?>
+      <h3 class="subhead"><?php echo $admtext['choosecem']; ?></h3>
       <p><?php echo $admtext['cemsavail']; ?></p>
-    <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
-      <table cellspacing="0" cellpadding="2">
-        <tr>
-          <td>
-            <select name="cemeteryID" id="cemeteryID">
-              <option value=""></option>
-              <?php
-                        while ($cemrow = tng_fetch_assoc($result)) {
-                          $location = $cemrow['country'];
+      <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
+          <table cellspacing="0" cellpadding="2">
+              <tr>
+                  <td>
+                      <select name="cemeteryID" id="cemeteryID">
+                          <option value=""></option>
+                          <?php
+                          while ($cemrow = tng_fetch_assoc($result)) {
+                              $location = $cemrow['country'];
                           if ($cemrow['state']) {
                             if ($location) {
                               $location .= ", ";

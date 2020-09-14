@@ -36,8 +36,8 @@ $assoccount = tng_num_rows($assocresult);
     echo " style=\"display:none;\"";
 } ?>>
     <form name="assocform">
-        <p class="subhead"><strong><?php echo $admtext['associations'] . ": $namestr"; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php');"><?php echo $admtext['help']; ?></a></p>
+        <h3 class="subhead"><?php echo $admtext['associations'] . ": $namestr"; ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php');"><?php echo $admtext['help']; ?></a></h3>
         <p>
             <?php if ($allow_add) { ?>
                 <input type="button" value="<?php echo $admtext['addnew']; ?>" onclick="document.newassocform1.reset();assocType='I';gotoSection('associations','addassociation');">&nbsp;
@@ -98,10 +98,10 @@ $assoccount = tng_num_rows($assocresult);
 <div class="databack ajaxwindow"<?php if ($assoccount) {
     echo " style=\"display:none;\"";
 } ?> id="addassociation">
-    <p class="subhead"><strong><?php echo $admtext['addnewassoc']; ?></strong> |
+    <h3 class="subhead"><?php echo $admtext['addnewassoc']; ?> |
         <a href="#"
            onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
-    </p>
+    </h3>
 
     <form action="" name="newassocform1" onSubmit="return addAssociation(this);">
         <table width="95%" cellpadding="2" class="normal">

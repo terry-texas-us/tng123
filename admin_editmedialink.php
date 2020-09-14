@@ -71,9 +71,9 @@ while ($custevent = tng_fetch_assoc($custevents)) {
   } elseif ($custevent['eventplace']) {
     $info = truncateIt($custevent['eventplace'], 20);
   } elseif ($custevent['info']) {
-    $info = truncateIt($custevent['info'], 20);
+      $info = truncateIt($custevent['info'], 20);
   }
-  $options .= doEvent($custevent['eventID'], $displayval, $info);
+    $options .= doEvent($custevent['eventID'], $displayval, $info);
 }
 tng_free_result($custevents);
 
@@ -81,14 +81,14 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow">
-    <p class="subhead"><strong><?php echo $headline; ?></strong></p>
-  <form action="" method="post" name="editlinkform" id="editlinkform" onsubmit="return updateMedia2EntityLink(this);">
-    <table cellpadding="2" class="normal">
-      <tr>
-        <td valign="top"><?php echo $admtext['event']; ?>:</td>
+    <h3 class="subhead"><?php echo $headline; ?></h3>
+    <form action="" method="post" name="editlinkform" id="editlinkform" onsubmit="return updateMedia2EntityLink(this);">
+        <table cellpadding="2" class="normal">
+            <tr>
+                <td valign="top"><?php echo $admtext['event']; ?>:</td>
                 <td>
                     <select name="eventID" id="eventID">
-                      <?php echo $options; ?>
+                        <?php echo $options; ?>
                     </select>
                 </td>
             </tr>

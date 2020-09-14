@@ -167,19 +167,19 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow normal">
-      <span class="subhead"><strong><?php echo $admtext['mediaupl']; ?></strong></span><br><br>
+    <tr class="databack">
+        <td class="tngshadow normal">
+            <h3 class="subhead"><?php echo $admtext['mediaupl']; ?></h3>
 
-      <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
-        <!-- Redirect browsers with JavaScript disabled to the origin page -->
-        <?php echo $admtext['mediatype']; ?>:
-        <select name="mediatypeID" id="mediatypeID" onchange="changeCollection(this);">
-          <?php
-          foreach ($mediatypes as $mediatype) {
-            $msgID = $mediatype['ID'];
-            echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
-          }
+            <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+                <!-- Redirect browsers with JavaScript disabled to the origin page -->
+                <?php echo $admtext['mediatype']; ?>:
+                <select name="mediatypeID" id="mediatypeID" onchange="changeCollection(this);">
+                    <?php
+                    foreach ($mediatypes as $mediatype) {
+                        $msgID = $mediatype['ID'];
+                        echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
+                    }
           ?>
                 </select>
                 &nbsp;

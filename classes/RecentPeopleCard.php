@@ -31,18 +31,24 @@ class RecentPeopleCard
         $birthyear = "LPAD(SUBSTRING_INDEX(birthdate, ' ', -1), 4, '0') as birthyear";
         $altbirthyear = "LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1), 4, '0') as altbirthyear";
 
-        $whereClause = $this->buildWhereClause($tables, $tree);
-
-        $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, prefix, suffix, nameorder, living, private, branch, {$changedatef}, changedby, {$birthyear}, birthplace, altbirthdate, {$altbirthyear}, altbirthplace, {$people}.gedcom AS gedcom, treename ";
-        $query .= "FROM {$people}, {$trees} ";
-        $query .= "WHERE {$whereClause} ";
+        $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, prefix, suffix, nameorder, living, private, branch, $changedatef, changedby, $birthyear, birthplace, altbirthdate, $altbirthyear, altbirthplace, people.gedcom AS gedcom, treename ";
+        $query .= "FROM $people people, $trees trees ";
+        $query .= "WHERE people.gedcom = trees.gedcom ";
+        if ($tree) {
+            $query .= "AND people.gedcom = '$tree'";
+        }
+        $livingPrivateRestrictions = getLivingPrivateRestrictions('people', false, false);
+        if ($livingPrivateRestrictions) {
+            $query .= "AND " . $livingPrivateRestrictions;
+        }
         $query .= "ORDER BY changedate DESC, lastname, firstname, birthyear, altbirthyear ";
         $query .= "LIMIT {$limit}";
         $result = tng_query($query);
 
         $content = "";
         if (tng_num_rows($result)) {
-            $content .= "<div class=\"titlebox tablediv\"><span class='subhead'><b>{$title}</b></span><br><br>";
+            $content .= "<div class='titlebox tablediv'>";
+            $content .= "<h3 class='subhead'>{$title}</h3>";
             $imageSize = @GetImageSize("{$this->path}img/Chart.gif");
             $chartlink = "<img src=\"{$this->path}img/Chart.gif\" alt=\"\" $imageSize[3]>";
             while ($row = tng_fetch_assoc($result)) {
@@ -72,24 +78,5 @@ class RecentPeopleCard
             $content .= "</div>";
         }
         return $content;
-    }
-
-    /**
-     * @param array $tables names of the 'people' and 'trees' tables
-     * @param string $tree 'tree' name to use, default = "" (all trees)
-     * @return string where clause joining the 'people' and 'trees' tables with optional restriction for 'tree' and 'living', 'private' rights
-     */
-    private function buildWhereClause(array $tables, $tree = ""): string {
-        $people = $tables['people'];
-        $trees = $tables['trees'];
-        $clause = "{$people}.gedcom = {$trees}.gedcom";
-        if ($tree) {
-            $clause .= " AND {$people}.gedcom = '$tree'";
-        }
-        $livingPrivateRestrictions = getLivingPrivateRestrictions($people, false, false);
-        if ($livingPrivateRestrictions) {
-            $clause .= " AND " . $livingPrivateRestrictions;
-        }
-        return $clause;
     }
 }

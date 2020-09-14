@@ -204,7 +204,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                 ?>
                 <p class="normal"><em><?php echo $admtext['brinstructions']; ?></em></p>
 
-                <p class="subhead"><strong><?php echo $admtext['backuprestoretables']; ?></strong></p>
+                <h3 class="subhead"><?php echo $admtext['backuprestoretables']; ?></h3>
                 <p class="normal"><?php echo $admtext['backupnote']; ?></p>
                 <div class="normal">
                     <form action="" name="form1" id="form1" onsubmit="return startUtility(document.form1.withsel);">
@@ -279,7 +279,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                 ?>
                 <p class="normal"><em><?php echo $admtext['brinstructions2']; ?></em></p>
 
-                <p class="subhead"><strong><?php echo $admtext['backupstruct']; ?></strong></p>
+                <h3 class="subhead"><?php echo $admtext['backupstruct']; ?></h3>
                 <div class="normal">
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>

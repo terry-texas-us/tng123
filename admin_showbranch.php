@@ -18,7 +18,7 @@ if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
 
 $row = getTree($trees_table, $tree);
 
-$query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' and branch = \"$branch\"";
+$query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' and branch = '$branch'";
 $result = tng_query($query);
 $brow = tng_fetch_assoc($result);
 tng_free_result($result);

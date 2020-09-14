@@ -462,7 +462,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         <table class="normal">
                             <tr>
                                 <td valign="top">
-                                    <strong class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
+                                    <h3 class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>:</h3>
                                     <?php
                                     echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('F','$familyID','$tree');\"></p>\n";
                                     ?>

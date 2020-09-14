@@ -34,11 +34,11 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow" id="more">
     <form action="" name="editmoreform" onsubmit="return updateMore(this);">
         <div style="float:right;"><input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>"></div>
-        <p class="subhead"><strong><?php echo "{$admtext['moreinfo']}: $admtext[$eventID]"; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/more_help.php');"><?php echo $admtext['help']; ?></a></p>
-      <table cellpadding="2">
-        <tr>
-          <td valign="top"><span class="normal"><?php echo $admtext['age']; ?>:</span></td>
+        <h3 class="subhead"><?php echo "{$admtext['moreinfo']}: $admtext[$eventID]"; ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/more_help.php');"><?php echo $admtext['help']; ?></a></h3>
+        <table cellpadding="2">
+            <tr>
+                <td valign="top"><span class="normal"><?php echo $admtext['age']; ?>:</span></td>
                 <td><input type="text" name="age" size="12" maxlength="12" value="<?php echo $row['age']; ?>"></td>
             </tr>
             <tr>

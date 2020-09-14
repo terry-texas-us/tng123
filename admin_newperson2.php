@@ -39,26 +39,26 @@ function relateSelect($label) {
     }
     $pout .= ">{$admtext[$reltype]}</option>\n";
   }
-  $pout .= "</select>\n";
+    $pout .= "</select>\n";
 
-  return $pout;
+    return $pout;
 }
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="newperson">
-  <span class="subhead"><strong><?php echo $admtext['addnewperson']; ?></strong></span><br>
+    <h3 class="subhead"><?php echo $admtext['addnewperson']; ?></h3>
 
-  <form method="post" name="npform"<?php if ($needped) {
-    echo " action=\"admin_addperson2.php\"";
-  } else {
-    echo " action=\"\" onsubmit=\"return saveNewPerson(this);\"";
-  } ?> style="margin-top:10px;">
-    <table cellpadding="2" class="normal">
-      <tr>
-        <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
-      </tr>
+    <form method="post" name="npform"<?php if ($needped) {
+        echo " action=\"admin_addperson2.php\"";
+    } else {
+        echo " action=\"\" onsubmit=\"return saveNewPerson(this);\"";
+    } ?> style="margin-top:10px;">
+        <table cellpadding="2" class="normal">
+            <tr>
+                <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
+            </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
                 <td>

@@ -66,9 +66,9 @@ tng_adminheader($admtext['setup'], $flags);
 <body background="img/background.gif">
 
 <?php
-$setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
-$setuptabs[1] = array(1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics");
-$setuptabs[2] = array(1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation");
+$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
 $internallink = $sub == "configuration" ? "config" : "tables";
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/setup_help.php#$internallink');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($setuptabs, $sub, $innermenu);
@@ -83,22 +83,21 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
                 ?>
                 <span class="normal"><em><?php echo $admtext['entersysvars']; ?></em></span><br><br>
 
-                <table cellspacing="0" border="0">
+                <table>
                     <tr>
                         <td>
-                            <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_genconfig.php"><b><?php echo $admtext['configsettings']; ?></b></a></p>
-                            <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_pedconfig.php"><b><?php echo $admtext['pedconfigsettings']; ?></b></a></p>
+                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_genconfig.php"><?php echo $admtext['configsettings']; ?></a></h3>
+                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_pedconfig.php"><?php echo $admtext['pedconfigsettings']; ?></a></h3>
                         </td>
                         <td style="width:50px;">&nbsp;</td>
                         <td>
-                            <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_logconfig.php"><b><?php echo $admtext['logconfigsettings']; ?></b></a></p>
-                            <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_importconfig.php"><b><?php echo $admtext['importconfigsettings']; ?></b></a></p>
+                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_logconfig.php"><?php echo $admtext['logconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_importconfig.php"><?php echo $admtext['importconfigsettings']; ?></a></h3>
                         </td>
                         <td style="width:50px;">&nbsp;</td>
                         <td>
-                            <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mapconfig.php"><b><?php echo $admtext['mapconfigsettings']; ?></b></a></p>
-                            <p class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_templateconfig.php"><b><?php echo $admtext['templateconfigsettings']; ?></b></a>
-                            </p>
+                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mapconfig.php"><?php echo $admtext['mapconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_templateconfig.php"><?php echo $admtext['templateconfigsettings']; ?></a></h3>
                         </td>
                     </tr>
                 </table>

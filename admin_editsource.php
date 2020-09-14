@@ -162,26 +162,26 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
                             </select>
                         </td>
                     </tr>
-                    <tr>
-                        <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
-                        <td><textarea cols="50" rows="5" name="actualtext"><?php echo $row['actualtext']; ?></textarea></td>
-                    </tr>
+              <tr>
+                  <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
+                  <td><textarea cols="50" rows="5" name="actualtext"><?php echo $row['actualtext']; ?></textarea></td>
+              </tr>
           </table>
-          <br>
-          <table class="normal">
-            <tr>
-              <td valign="top">
-                <strong class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>: &nbsp;</strong>
-                          <?php
-                          echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
-                          ?>
-                        </td>
-                        <td valign="top">
-                          <?php
-                          showCustEvents($sourceID);
-                          ?>
-                        </td>
-            </tr>
+            <br>
+            <table class="normal">
+                <tr>
+                    <td valign="top">
+                        <h3 class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>:</h3>
+                        <?php
+                        echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
+                        ?>
+                    </td>
+                    <td valign="top">
+                        <?php
+                        showCustEvents($sourceID);
+                        ?>
+                    </td>
+                </tr>
           </table>
         </td>
       </tr>

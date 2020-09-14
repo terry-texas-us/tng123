@@ -16,17 +16,30 @@
 .header {
     font-family: Calibri, Arial, Helvetica, sans-serif;
     font-size: 25px;
-    color: #211A16;
+    color: #211a16;
 }
 
 a.headerlink:link {
-    color: #CCCCCC;
+    color: #ccc;
     font-family: Geneva, Arial, Helvetica, sans-serif;
     font-size: 10px;
 }
 
 /* font overrides */
-.normal, .smfieldname, .whiteheader, .subhead, .pboxname, .pboxdates, .pboxpopup, .whitesubhead, .smaller, #loadingdiv, #sscontrols, .smallest, .subheadbold, .largeheader {
+.normal,
+.smfieldname,
+.whiteheader,
+.subhead,
+.pboxname,
+.pboxdates,
+.pboxpopup,
+.whitesubhead,
+.smaller,
+#loadingdiv,
+#sscontrols,
+.smallest,
+.subheadbold,
+.largeheader {
     font-family: Calibri, Arial, Helvetica, sans-serif;
 }
 
@@ -50,7 +63,7 @@ a.lightlink:link, a.lightlink:visited {
 
 a.lightlink:hover, a.lightlink:active {
     font-family: Calibri, Arial, Helvetica, sans-serif;
-    color: #F2E6CC;
+    color: #f2e6cc;
 }
 
 a.lightlink2:link, a.lightlink2:visited {
@@ -60,7 +73,7 @@ a.lightlink2:link, a.lightlink2:visited {
 /* fieldname: regular text within column or row title sections */
 .fieldname {
     font-family: Calibri, Arial, Helvetica, sans-serif;
-    color: #F2E6CC;
+    color: #f2e6cc;
 }
 
 /* fieldnameback: background color for column and row title sections */
@@ -82,7 +95,7 @@ a.lightlink2:link, a.lightlink2:visited {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #E1DECB;
+    background-color: #e1decb;
 }
 
 /* sideback: background color for side and top frames */
@@ -98,7 +111,7 @@ a.lightlink2:link, a.lightlink2:visited {
 
 /* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #C3B165;
+    background-color: #c3b165;
 }
 
 #navcontainer {
@@ -114,7 +127,7 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #navcontainer a {
-    background-color: #FFFFFF;
+    background-color: #fff;
     display: block;
     width: 100px;
     padding: 3px;
@@ -123,22 +136,22 @@ a.admincell:hover, a.leftlink:hover {
 .navtext {
     font-family: Calibri, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #3E331D;
+    color: #3e331d;
     padding-left: 7px;
 }
 
 #navcontainer a:link {
-    color: #3E331D;
+    color: #3e331d;
     text-decoration: none;
 }
 
 #navlist a:visited {
-    color: #3E331D;
+    color: #3e331d;
     text-decoration: none;
 }
 
 #navcontainer a:hover {
-    background-color: #F2E6CC;
+    background-color: #f2e6cc;
 }
 
 .home_section {
@@ -361,25 +374,25 @@ a.logintext:hover {
 /* footer added to replace <font size="1" color="#cccc99"> in footer */
 .footer {
     font-size: 11px;
-    color: #cccc99;
+    color: #cc9;
     text-align: center;
 }
 
 /* footer:link added to replace <font color="#E1B964"> in footer */
 a.footer:link {
-    color: #B99852;
+    color: #b99852;
 }
 
 a.footer:visited {
-    color: #B99852;
+    color: #b99852;
 }
 
 a.footer:hover {
-    color: #FFCC33;
+    color: #fc3;
 }
 
 .footerbold {
-    color: #FFCC33;
+    color: #fc3;
     font-weight: bold;
 }
 
@@ -413,8 +426,8 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 
 .LB_window {
     background: #f9f5f0;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.menucontainer {
@@ -445,7 +458,7 @@ ul.tngdd ul li a {
 
 ul.tngdd ul li a:hover {
     background-color: #695445;
-    color: #ffffff;
+    color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -458,7 +471,7 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border: 1px solid #211a16;
-    color: #ffffff;
+    color: #fff;
     background: #211a16 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
@@ -480,7 +493,7 @@ div.icons-rt {
 }
 
 div.icons a, div.icons-rt a {
-    color: #EBDEC5;
+    color: #ebdec5;
 }
 
 .fambackground {

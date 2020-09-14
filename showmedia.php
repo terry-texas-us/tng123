@@ -265,7 +265,7 @@ if ($noneliving || $imgrow['alwayson']) {
         $show_on_top = true;
     }
 
-    echo "<p class='subhead'><strong>$description</strong></p>\n";
+    echo "<h3 class='subhead'>$description</h3>\n";
     if ($notes) {
         echo "<p class='normal'>$notes</p>\n";
     } else {

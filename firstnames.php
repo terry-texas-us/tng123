@@ -120,7 +120,7 @@ if ($result) {
 }
 ?>
     <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['firstnamesstarting']; ?></strong></p>
+        <h3 class="subhead"><?php echo $text['firstnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
         <br><?php echo "<a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a> ({$text['sortedalpha']})"; ?>
     </div>
@@ -130,7 +130,7 @@ if ($result) {
             <table class="table-top30">
                 <tr>
                     <td colspan="5">
-                        <p class="subhead"><strong><?php echo "{$top30text} ({$text['totalnames']}):"; ?></strong></p>
+                        <h3 class="subhead"><?php echo "{$top30text} ({$text['totalnames']}):"; ?></h3>
                     </td>
                 </tr>
                 <tr>
@@ -166,10 +166,10 @@ if ($result) {
             <br><br>
         </div>
         <div id="charts" style="display:inline-block; width:400px; vertical-align:top;text-align:center;">
-            <p class="subhead"><strong><?php echo "{$top20text}<br>{$text['amongall']}"; ?></strong></p>
+            <h3 class="subhead"><?php echo "{$top20text}<br>{$text['amongall']}"; ?></h3>
             <div id="whole_chart"></div>
             <br><br>
-            <p class="subhead"><strong><?php echo $justtop; ?></strong></p>
+            <h3 class="subhead"><?php echo $justtop; ?></h3>
             <div id="focus_chart"></div>
         </div>
         <?php

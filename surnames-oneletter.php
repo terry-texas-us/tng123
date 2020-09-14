@@ -27,17 +27,17 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames
 
     <div class="titlebox">
         <div>
-            <p class="subhead"><b><?php echo "{$text['allbeginningwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></b></p>
+            <h3 class="subhead"><?php echo "{$text['allbeginningwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></h3>
             <p class="smaller"><?php echo $text['showmatchingsurnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$surnames_url" . "tree=$tree\">{$text['mainsurnamepage']}</a> &nbsp;|&nbsp; <a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a>"; ?></p>
         </div>
-    <table class="sntable">
+        <table class="sntable">
             <tr>
                 <td class="sncol">
-                  <?php
-                  $wherestr = $tree ? "AND gedcom = \"$tree\"" : "";
-                  $treestr = $orgtree ? "&amp;tree=$tree" : "";
+                    <?php
+                    $wherestr = $tree ? "AND gedcom = \"$tree\"" : "";
+                    $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
-                  $more = getLivingPrivateRestrictions($people_table, false, false);
+                    $more = getLivingPrivateRestrictions($people_table, false, false);
                   if ($more) {
                     $wherestr .= " AND " . $more;
                   }

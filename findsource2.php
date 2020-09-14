@@ -20,7 +20,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <table cellpadding="0">
         <tr>
             <td valign="top">
-                <span class="subhead"><strong><?php echo $admtext['searchresults']; ?></strong></span><br>
+                <h3 class="subhead"><?php echo $admtext['searchresults']; ?></h3><br>
                 <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>

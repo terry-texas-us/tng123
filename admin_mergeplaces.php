@@ -83,7 +83,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <span class="subhead"><strong>1. <?php echo $admtext['findmerge']; ?></strong></span><br><br>
+            <h3 class="subhead">1. <?php echo $admtext['findmerge']; ?></h3>
 
             <form action="admin_mergeplaces.php" method="post" name="form1" onSubmit="return validateForm1();">
                 <table class="normal">
@@ -129,7 +129,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                 ?>
                 <br><br>
 
-                <p class="subhead"><strong>2. <?php echo $admtext['selectplacemerge']; ?></strong></p>
+                <h3 class="subhead">2. <?php echo $admtext['selectplacemerge']; ?></h3>
 
                 <form action="" method="post" onSubmit="return validateForm2(this);" name="form2">
                     <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none;">

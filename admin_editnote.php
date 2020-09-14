@@ -24,8 +24,8 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
         <p><a href="#" onclick="gotoSection('editnote','notelist');"><?php echo $text['cancel']; ?></a></p>
     </div>
-    <p class="subhead"><strong><?php echo $admtext['modifynote']; ?></strong> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
+    <h3 class="subhead"><?php echo $admtext['modifynote']; ?> |
+        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></h3>
 
     <table cellpadding="2" class="normal">
         <tr>

@@ -452,8 +452,8 @@ if ($tngneedresults) {
         }
 
         if ($numrows) {
-            echo "<div class=\"titlebox\">\n";
-            echo "<span class='subhead'><strong>$datetxt</strong></span>";
+            echo "<div class='titlebox'>\n";
+            echo "<h3 class='subhead'>$datetxt</h3>";
             $numrowsplus = $numrows + $offset;
             $successcount++;
 

@@ -17,7 +17,7 @@ if ($assignedtree) {
 if ($gedcom) {
   $wherestr = " AND gedcom=\"$gedcom\"";
   if ($branch) {
-    $wherestr .= " AND branch=\"$branch\"";
+    $wherestr .= " AND branch='$branch'";
   }
 }
 

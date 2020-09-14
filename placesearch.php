@@ -184,8 +184,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
         if ($numrows) {
             echo "<br>\n";
             echo "<div class=\"titlebox\">\n";
-            echo "<span class='subhead'><strong>" . $placetxt . "</strong></span>\n";
-            echo "<br>\n";
+            echo "<h3 class='subhead'>" . $placetxt . "</h3>\n";
             $numrowsplus = $numrows + $offset;
             $successcount++;
 
@@ -367,8 +366,8 @@ $placemedia = getMedia($psearch, "L");
 $placealbums = getAlbums($psearch, "L");
 $media = doMediaSection($psearch, $placemedia, $placealbums);
 if ($media) {
-    echo "<br>\n<div class=\"titlebox\">\n";
-    echo "<span class='subhead'><strong>{$text['media']}</strong></span><br><br>";
+    echo "<br>\n<div class='titlebox'>\n";
+    echo "<h3 class='subhead'>{$text['media']}</h3>";
     echo "$media\n";
     echo "</div>\n";
 }
@@ -408,7 +407,7 @@ while ($prow = tng_fetch_assoc($presult)) {
 
 if ($cemdata) {
     echo "<br>\n<div class=\"titlebox\">\n";
-    echo "<span class='subhead'><strong>{$text['cemeteries']}</strong></span><br><br>";
+    echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
     echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\" class=\"whiteback\">\n";
     echo "<tr>\n";
     echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;</span></td>\n";

@@ -158,7 +158,7 @@ $gotImageJpeg = function_exists('imageJpeg');
 if (tng_num_rows($hsresult)) {
   $i = 1;
     $body .= "<div class=\"titlebox\">\n";
-    $body .= "<p class='subhead'><b>{$text['cemphotos']}</b></p>\n";
+    $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
 
   $body .= "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\" width=\"100%\">\n";
   $body .= "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
@@ -217,7 +217,7 @@ $hsresult = tng_query($query);
 $numrows = tng_num_rows($hsresult);
 if ($numrows) {
     $body .= "<div class=\"titlebox\">\n";
-    $body .= "<span class='subhead'><b>{$text['headstone']}</b></span><br><br>\n";
+    $body .= "<h3 class='subhead'>{$text['headstone']}</h3>\n";
 
   if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $query = "SELECT count(DISTINCT $media_table.mediaID) AS hscount FROM $media_table LEFT JOIN $medialinks_table ON $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != \"1\"";
@@ -380,7 +380,7 @@ if ($cemetery['place']) {
   $result = tng_query($query);
   if (tng_num_rows($result)) {
       $body .= "<br><div class=\"titlebox\">\n";
-      $body .= "<span class='subhead'><b>{$text['allburials']}</b></span><br><br>\n";
+      $body .= "<h3 class='subhead'>{$text['allburials']}</h3>\n";
 
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;

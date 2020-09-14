@@ -104,14 +104,14 @@ echo $formstr;
 <br>
 <div class="titlebox">
     <div>
-        <p class="subhead"><b>
-                <?php
-                echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
-                if (isset($_GET['offset'])) {
-                    echo " ({$text['numoccurrences']}):";
-                }
-                ?>
-            </b></p>
+        <h3 class="subhead">
+            <?php
+            echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
+            if (isset($_GET['offset'])) {
+                echo " ({$text['numoccurrences']}):";
+            }
+            ?>
+        </h3>
         <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo $heatmap_url . $treestr . $heatargs; ?>" class="snlink"><?php echo $text['heatmap']; ?></a></p>
     </div>
     <table class="sntable">

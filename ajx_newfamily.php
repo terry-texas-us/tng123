@@ -9,44 +9,44 @@ include "$mylanguage/admintext.php";
 include $cms['tngpath'] . "checklogin.php";
 
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($child) {
-  $newperson = $child;
+    $newperson = $child;
 } else {
-  if ($husband) {
-    $newperson = $husband;
-  } else {
-    if ($wife) {
-      $newperson = $wife;
+    if ($husband) {
+        $newperson = $husband;
     } else {
-      $newperson = "";
+        if ($wife) {
+            $newperson = $wife;
+        } else {
+            $newperson = "";
+        }
     }
-  }
 }
 
 if ($newperson) {
-  $query = "SELECT personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch FROM $people_table WHERE personID = \"$newperson\" AND gedcom = '$tree'";
-  $result = tng_query($query);
-  $newpersonrow = tng_fetch_assoc($result);
-  tng_free_result($result);
+    $query = "SELECT personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch FROM $people_table WHERE personID = \"$newperson\" AND gedcom = '$tree'";
+    $result = tng_query($query);
+    $newpersonrow = tng_fetch_assoc($result);
+    tng_free_result($result);
 }
 
 if ($husband) {
-  $husbstr = getName($newpersonrow) . " - $husband";
+    $husbstr = getName($newpersonrow) . " - $husband";
 } else {
-  if ($wife) {
-    $wifestr = getName($newpersonrow) . " - $wife";
-  }
+    if ($wife) {
+        $wifestr = getName($newpersonrow) . " - $wife";
+    }
 }
 if (!isset($husbstr)) {
-  $husbstr = $admtext['clickfind'];
+    $husbstr = $admtext['clickfind'];
 }
 if (!isset($wifestr)) {
-  $wifestr = $admtext['clickfind'];
+    $wifestr = $admtext['clickfind'];
 }
 
 $treerow = getTree($trees_table, $tree);
@@ -57,22 +57,22 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="famform1" id="famform1" onsubmit="return validateFamily(this,'<?php echo $slot; ?>');">
-  <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
-  <table width="100%" cellpadding="10" cellspacing="0">
-    <tr class="databack">
-      <td class="tngbotshadow">
-        <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
-        <span class="subhead togglehead"><strong><?php echo $admtext['addnewfamily']; ?></strong></span><br><br>
+    <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
+    <table width="100%" cellpadding="10" cellspacing="0">
+        <tr class="databack">
+            <td class="tngbotshadow">
+                <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+                <h3 class="subhead togglehead"><?php echo $admtext['addnewfamily']; ?></h3>
 
-        <table class="normal">
-          <tr>
-            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
-          </tr>
-          <tr>
-            <td><span class="normal"><?php echo $admtext['familyid']; ?>:</span></td>
-            <td>
-              <input type="text" name="familyID" id="familyID" value="<?php echo $newID; ?>" size="10" onblur="this.value=this.value.toUpperCase()">
-              <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('family','familyID');">
+                <table class="normal">
+                    <tr>
+                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="normal"><?php echo $admtext['familyid']; ?>:</span></td>
+                        <td>
+                            <input type="text" name="familyID" id="familyID" value="<?php echo $newID; ?>" size="10" onblur="this.value=this.value.toUpperCase()">
+                            <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('family','familyID');">
 
                             <input type="button" value="<?php echo $admtext['check']; ?>" onClick="checkIDajax(jQuery('#familyID').val(),'family','checkmsg');">
                             <span id="checkmsg" class="normal"></span>
@@ -83,7 +83,7 @@ include_once "eventlib.php";
         </tr>
         <tr class="databack">
             <td class="tngbotshadow">
-              <?php echo displayToggle("plus0", 1, "spouses", $admtext['spouses'], ""); ?>
+                <?php echo displayToggle("plus0", 1, "spouses", $admtext['spouses'], ""); ?>
 
                 <div id="spouses">
                     <table class="normal topmarginsmall">
@@ -91,7 +91,8 @@ include_once "eventlib.php";
                             <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
                             <td><input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
                                 <input type="hidden" name="husband" id="husband" value="<?php echo $husband; ?>">
-                                <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
+                                <input type="button" value="<?php echo $admtext['find']; ?>"
+                                       onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                                 <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return newPerson('M','spouse');">
                                 <input type="button" value="  <?php echo $admtext['edit']; ?>  " onclick="editPerson(document.famform1.husband.value,0,'M');">
                                 <input type="button" value="<?php echo $admtext['remove']; ?>" onclick="removeSpouse(document.famform1.husband,document.famform1.husbnameplusid);">
@@ -101,7 +102,8 @@ include_once "eventlib.php";
                             <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>
                             <td><input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
                                 <input type="hidden" name="wife" id="wife" value="<?php echo $wife; ?>">
-                                <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
+                                <input type="button" value="<?php echo $admtext['find']; ?>"
+                                       onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                                 <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return newPerson('F','spouse');">
                                 <input type="button" value="  <?php echo $admtext['edit']; ?>  " onclick="editPerson(document.famform1.wife.value,0,'F');">
                                 <input type="button" value="<?php echo $admtext['remove']; ?>" onclick="removeSpouse(document.famform1.wife,document.famform1.wifenameplusid);">
@@ -118,41 +120,42 @@ include_once "eventlib.php";
                             <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
                             <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?></td>
                             <td style="height:2em;">
-                              <?php
-                              $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
-                              $branchresult = tng_query($query);
-                              $numbranches = tng_num_rows($branchresult);
-                              $branchlist = explode(",", $row['branch']);
+                                <?php
+                                $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
+                                $branchresult = tng_query($query);
+                                $numbranches = tng_num_rows($branchresult);
+                                $branchlist = explode(",", $row['branch']);
 
-                              $descriptions = array();
-                              $options = "";
-                              while ($branchrow = tng_fetch_assoc($branchresult)) {
-                                $options .= "	<option value=\"{$branchrow['branch']}\">{$branchrow['description']}</option>\n";
-                              }
-                              echo "<span id=\"fbranchlist\"></span>";
-                              if (!$assignedbranch) {
-                              if ($numbranches > 8) {
-                                $select = "{$admtext['scrollbranch']}<br>";
-                              }
-                              $select .= "<select name=\"branch[]\" id=\"fbranch\" multiple size=\"8\">\n";
-                              $select .= "	<option value=\"\"";
-                              if ($row['branch'] == "") {
-                                $select .= " selected";
-                              }
-                              $select .= ">{$admtext['nobranch']}</option>\n";
+                                $descriptions = array();
+                                $options = "";
+                                while ($branchrow = tng_fetch_assoc($branchresult)) {
+                                    $options .= "	<option value=\"{$branchrow['branch']}\">{$branchrow['description']}</option>\n";
+                                }
+                                echo "<span id=\"fbranchlist\"></span>";
+                                if (!$assignedbranch) {
+                                if ($numbranches > 8) {
+                                    $select = "{$admtext['scrollbranch']}<br>";
+                                }
+                                $select .= "<select name=\"branch[]\" id=\"fbranch\" multiple size=\"8\">\n";
+                                $select .= "	<option value=\"\"";
+                                if ($row['branch'] == "") {
+                                    $select .= " selected";
+                                }
+                                $select .= ">{$admtext['nobranch']}</option>\n";
 
-                              $select .= "$options</select>\n";
-                              echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
-                              ?>
-                                <div id="fbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">
-                                  <?php
-                                  echo $select;
-                                  echo "</div>\n";
-                                  }
-                                  else {
-                                    echo "<input type=\"hidden\" name=\"branch\" value=\"$assignedbranch\">";
-                                  }
-                                  ?>
+                                $select .= "$options</select>\n";
+                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                ?>
+                                <div id="fbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
+                                     onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">
+                                    <?php
+                                    echo $select;
+                                    echo "</div>\n";
+                                    }
+                                    else {
+                                        echo "<input type=\"hidden\" name=\"branch\" value=\"$assignedbranch\">";
+                                    }
+                                    ?>
                             </td>
                         </tr>
                     </table>
@@ -161,7 +164,7 @@ include_once "eventlib.php";
         </tr>
         <tr class="databack">
             <td>
-              <?php echo displayToggle("plus1", 1, "events", $admtext['events'], ""); ?>
+                <?php echo displayToggle("plus1", 1, "events", $admtext['events'], ""); ?>
 
                 <div id="events">
                     <p class="smallest topmarginsmall"><?php echo $admtext['datenote']; ?></p>
@@ -172,19 +175,19 @@ include_once "eventlib.php";
                             <td><?php echo $admtext['place']; ?></td>
                             <td colspan="4">&nbsp;</td>
                         </tr>
-                      <?php
-                      echo showEventRow('marrdate', 'marrplace', 'MARR', '');
-                      ?>
+                        <?php
+                        echo showEventRow('marrdate', 'marrplace', 'MARR', '');
+                        ?>
                         <tr>
                             <td><?php echo $admtext['marriagetype']; ?>:</td>
                             <td colspan="6"><input type="text" value="" name="marrtype" style="width:494px;" maxlength="50"></td>
                         </tr>
-                      <?php
-                      if (determineLDSRights()) {
-                        echo showEventRow('sealdate', 'sealplace', 'SLGS', '');
-                      }
-                      echo showEventRow('divdate', 'divplace', 'DIV', '');
-                      ?>
+                        <?php
+                        if (determineLDSRights()) {
+                            echo showEventRow('sealdate', 'sealplace', 'SLGS', '');
+                        }
+                        echo showEventRow('divdate', 'divplace', 'DIV', '');
+                        ?>
                     </table>
 
                 </div>

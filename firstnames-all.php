@@ -59,7 +59,7 @@ if ($result) {
 ?>
 
     <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['firstnamesstarting']; ?></strong></p>
+        <h3 class="subhead"><?php echo $text['firstnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
         <br><?php echo "<a href=\"$firstnames_noargs_url\">{$text['mainfirstnamepage']}</a>"; ?>
     </div>

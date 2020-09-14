@@ -10,7 +10,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <span class="subhead"><strong><?php echo $admtext['addlinks']; ?></strong></span><br>
+    <h3 class="subhead"><?php echo $admtext['addlinks']; ?></h3><br>
     <form name="find2" id="find2" style="margin-top:0;" onsubmit="return getPotentialLinks('<?php echo $linktype; ?>');">
         <?php
         if ($linktype == "I") {

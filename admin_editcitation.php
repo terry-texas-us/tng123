@@ -27,10 +27,10 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input class="btn" name="submit" type="submit" value="<?php echo $admtext['save']; ?>">
         <p><a href="#" onclick="return gotoSection('editcitation','citations');"><?php echo $text['cancel']; ?></a></p>
     </div>
-    <p class="subhead"><strong><?php echo $admtext['modifycite']; ?></strong> |
+    <h3 class="subhead"><?php echo $admtext['modifycite']; ?> |
         <a href="#"
            onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
-    </p>
+    </h3>
 
     <table cellpadding="2" class="normal">
         <?php

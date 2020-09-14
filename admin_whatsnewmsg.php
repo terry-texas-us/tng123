@@ -9,9 +9,9 @@ include "checklogin.php";
 include "version.php";
 
 if ($assignedtree) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $file = "$rootpath/whatsnew.txt";
@@ -50,20 +50,19 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "im
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_savewhatsnewmsg.php" method="post" name="form1">
-                <p class="subhead"><strong><?php echo $admtext['wnmsg']; ?>:</strong></p>
-                <p class="normal" id="savedmsg" style="<?php if ($color) {
-                    echo "color:$color;";
-                } else echo "display:none;" ?>"><em><?php echo $message; ?></em></p>
-                <textarea cols="150" rows="20" name="whatsnewmsg" id="whatsnewmsg"><?php if (is_array($contents)) {
+                <h3 class="subhead"><?php echo $admtext['wnmsg']; ?>:</h3>
+                <p class="normal" id="savedmsg" style="<?php echo($color ? "color:$color;" : "display:none;") ?>"><em><?php echo $message; ?></em></p>
+                <textarea cols="150" rows="20" name="whatsnewmsg" id="whatsnewmsg">
+                    <?php if (is_array($contents)) {
                         foreach ($contents as $line) {
                             echo $line;
                         }
-                    } ?></textarea><br>
+                    } ?>
+                </textarea><br>
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
             </form>
         </td>
     </tr>
-
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript" src="js/nicedit.js"></script>

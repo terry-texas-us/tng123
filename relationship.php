@@ -831,18 +831,18 @@ echo "<input type=\"hidden\" name=\"savedpersonID\" value=\"$secondpersonID\">\n
 echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
 echo "</form>\n";
 ?>
-  <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo $text['searching']; ?></div>
-  <span class="subhead"><strong><?php echo $text['relateto'] . " $namestr2"; ?></strong></span><br><br>
+    <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo $text['searching']; ?></div>
+    <h3 class="subhead"><?php echo $text['relateto'] . " $namestr2"; ?></h3>
 <?php
 if ($error) {
-  echo "<p>$error {$text['notvalid']}</p>\n";
+    echo "<p>$error {$text['notvalid']}</p>\n";
 } elseif ($primarypersonID == $secondpersonID) {
-  echo "<p>{$text['sameperson']}</p>\n";
+    echo "<p>{$text['sameperson']}</p>\n";
 } else {
-  $gens = new Relationship();
+    $gens = new Relationship();
 
-  $personID1 = $secondpersonID;
-  $targetID = $secondpersonID;
+    $personID1 = $secondpersonID;
+    $targetID = $secondpersonID;
   $otherID = $primarypersonID;
 
   checkpersondown($primarypersonID);

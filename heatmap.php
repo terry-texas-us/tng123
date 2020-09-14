@@ -169,8 +169,8 @@ if ($psearch) {
       $urlstring .= "&amp;branch=$branch";
       $querystring .= " {$text['cap_and']} ";
 
-      $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = \"$branch\"";
-      $branchresult = tng_query($query);
+      $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = '$branch'";
+        $branchresult = tng_query($query);
       $branchrow = tng_fetch_assoc($branchresult);
       tng_free_result($branchresult);
 

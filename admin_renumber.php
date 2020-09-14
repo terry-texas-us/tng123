@@ -36,17 +36,17 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 <div class="lightback pad2">
     <div class="databack normal pad5">
 
-        <p class="subhead"><strong><?php echo $admtext['renumber']; ?></strong></p>
+        <h3 class="subhead"><?php echo $admtext['renumber']; ?></h3>
 
-      <?php
-      $nextnum = isset($start) ? $start : 1;
-      if (!isset($digits)) {
-        $digits = 0;
-      }
-      if (!isset($type)) {
-        $type = "person";
-      }
-      $count = 0;
+        <?php
+        $nextnum = isset($start) ? $start : 1;
+        if (!isset($digits)) {
+            $digits = 0;
+        }
+        if (!isset($type)) {
+            $type = "person";
+        }
+        $count = 0;
 
       eval("\$prefix = \$tngconfig['{$type}prefix'];");
       eval("\$suffix = \$tngconfig['{$type}suffix'];");

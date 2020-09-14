@@ -61,7 +61,7 @@ if ($result) {
 ?>
 
     <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['placesstarting']; ?></strong></p>
+        <h3 class="subhead"><?php echo $text['placesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
 
         <?php

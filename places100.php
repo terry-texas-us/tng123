@@ -63,7 +63,7 @@ echo getFORM("places100", "get", "", "");
     <br>
     <div class="titlebox">
         <div>
-            <p class="subhead"><b><?php echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']} ({$text['numoccurrences']}):"; ?></b></p>
+            <h3 class="subhead"><?php echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']} ({$text['numoccurrences']}):"; ?></h3>
             <p class="smaller"><?php echo $text['showmatchingplaces']; ?></p>
         </div>
         <table class="sntable">

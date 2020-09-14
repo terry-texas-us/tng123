@@ -11,10 +11,10 @@ if ($session_charset != "UTF-8") {
 }
 
 if ($mediaID) {
-  $mediaoption = ",mediaID:'$mediaID'";
+  $mediaoption = ", mediaID:'$mediaID'";
 } else {
   if ($albumID) {
-    $mediaoption = ",albumID:'$albumID'";
+      $mediaoption = ", albumID:'$albumID'";
   } else {
     $mediaoption = "";
   }
@@ -22,25 +22,27 @@ if ($mediaID) {
 
 $bailtext = $mediaoption ? $admtext['finish'] : $admtext['cancel'];
 
-$applyfilter = "applyFilter({form:'findform1',fieldId:'myplace', type:'L', tree:'$tree', destdiv:'placeresults', temple:getTempleCheck()$mediaoption});";
+$applyfilter = "applyFilter({form:'findform1', fieldId:'myplace', type:'L', tree:'$tree', destdiv:'placeresults', temple:getTempleCheck()$mediaoption});";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-  <form action="" method="post" name="findform1" id="findform1" onsubmit="return <?php echo $applyfilter; ?>">
-    <p class="subhead"><strong><?php echo $admtext['findplace']; ?></strong><br>
-      <span class="normal">(<?php echo $admtext['enterplacepart']; ?>)</span></p>
-    <table cellspacing="0" cellpadding="2" class="normal">
-      <tr>
-        <td><?php echo $admtext['place']; ?>:</td>
-        <td><input type="text" name="myplace" id="myplace" onkeyup="filterChanged(event, {form:'findform1',fieldId:'myplace', type:'L', tree:'<?php echo $tree; ?>', destdiv:'placeresults', temple:getTempleCheck()<?php echo $mediaoption; ?>});">
-        </td>
-        <td><input type="submit" value="<?php echo $admtext['search']; ?>"> <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);"></td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp; <input type="radio" name="filter" value="c" checked="checked"
+    <form action="" method="post" name="findform1" id="findform1" onsubmit="return <?php echo $applyfilter; ?>">
+        <h3 class="subhead"><?php echo $admtext['findplace']; ?><br>
+            <span class="normal">(<?php echo $admtext['enterplacepart']; ?>)</span></h3>
+        <table cellspacing="0" cellpadding="2" class="normal">
+            <tr>
+                <td><?php echo $admtext['place']; ?>:</td>
+                <td><input type="text" name="myplace" id="myplace"
+                           onkeyup="filterChanged(event, {form:'findform1',fieldId:'myplace', type:'L', tree:'<?php echo $tree; ?>', destdiv:'placeresults', temple:getTempleCheck()<?php echo $mediaoption; ?>});">
+                </td>
+                <td><input type="submit" value="<?php echo $admtext['search']; ?>"> <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp; <input type="radio" name="filter" value="c"
+                                                                                                                                                              checked="checked"
                                                                                                                                                     onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
         </td>
       </tr>

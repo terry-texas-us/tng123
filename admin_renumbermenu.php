@@ -36,21 +36,21 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <p class="normal"><?php echo $admtext['reseqwarn']; ?></p>
+    <tr class="databack">
+        <td class="tngshadow">
+            <p class="normal"><?php echo $admtext['reseqwarn']; ?></p>
 
-            <p class="subhead"><strong><?php echo $admtext['renumber']; ?></strong></p>
+            <h3 class="subhead"><?php echo $admtext['renumber']; ?></h3>
             <form action="admin_renumber.php" method="post" name="form1">
                 <table class="normal">
                     <tr>
                         <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
                             <select name="tree">
-                              <?php
-                              while ($row = tng_fetch_assoc($result)) {
-                                echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
-                              }
+                                <?php
+                                while ($row = tng_fetch_assoc($result)) {
+                                    echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
+                                }
                               ?>
                             </select>
                         </td>

@@ -8,27 +8,27 @@ include $cms['tngpath'] . "checklogin.php";
 
 if ($type == "map") {
   $firstfield = "personID";
-  $subtitle = $admtext['enternamepart2'];
+    $subtitle = $admtext['enternamepart2'];
 } else {
-  $firstfield = "mylastname";
-  $subtitle = $admtext['enternamepart'];
+    $firstfield = "mylastname";
+    $subtitle = $admtext['enternamepart'];
 }
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-  <p class="subhead"><strong><?php echo $admtext['findpersonid']; ?></strong></p>
+    <h3 class="subhead"><?php echo $admtext['findpersonid']; ?></h3>
 
-  <form action="" name="findform1" id="findform1" onsubmit="return openFind(this,'findperson2.php');">
-    <span class="normal">(<?php echo $subtitle; ?>)</span><br>
+    <form action="" name="findform1" id="findform1" onsubmit="return openFind(this,'findperson2.php');">
+        <span class="normal">(<?php echo $subtitle; ?>)</span><br>
 
-    <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-    <?php if ($formname == "") {
-      $formname = "form1";
-    } ?>
-    <input type="hidden" name="formname" value="<?php echo $formname; ?>">
-    <?php if ($field == "") {
+        <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+        <?php if ($formname == "") {
+            $formname = "form1";
+        } ?>
+        <input type="hidden" name="formname" value="<?php echo $formname; ?>">
+        <?php if ($field == "") {
       $field = "personID";
     } ?>
     <input type="hidden" name="field" value="<?php echo $field; ?>">

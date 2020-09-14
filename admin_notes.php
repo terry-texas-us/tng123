@@ -40,8 +40,8 @@ $notecount = tng_num_rows($notelinks);
     echo " style=\"display:none;\"";
 } ?>>
     <form name="form1">
-        <p class="subhead"><strong><?php echo "{$admtext['notes']}: $eventtypedesc"; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
+        <h3 class="subhead"><?php echo "{$admtext['notes']}: $eventtypedesc"; ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></h3>
         <p>
             <?php if ($allow_add) { ?>
                 <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.form2.reset();gotoSection('notelist','addnote');">&nbsp;
@@ -102,8 +102,8 @@ $notecount = tng_num_rows($notelinks);
             <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
             <p><a href="#" onclick="gotoSection('addnote','notelist');"><?php echo $text['cancel']; ?></a></p>
         </div>
-        <p class="subhead"><strong><?php echo $admtext['addnewnote']; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></p>
+        <h3 class="subhead"><?php echo $admtext['addnewnote']; ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></h3>
 
         <table cellpadding="2" class="normal">
             <tr>

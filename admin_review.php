@@ -264,28 +264,28 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
       <span class="subhead"><strong><?php echo "$persfamID: $name</strong> $teststr $editstr"; ?></span><br><br>
       <div class="normal">
 
-        <form action="admin_savereview.php" method="post" name="form1">
-          <table class="normal">
-            <tr>
-              <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
-              <td><span class="normal"><?php echo $treerow['treename']; ?></span></td>
-            </tr>
-            <tr>
-              <td colspan="2">&nbsp;</td>
-            </tr>
-                        <tr>
-                            <td valign="top"><span class="subhead"><strong><?php echo $admtext['event']; ?>:</strong></span></td>
-                            <td><span class="subhead"><strong><?php echo $displayval; ?></strong></span></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">&nbsp;</td>
-                        </tr>
-                      <?php
-                      if ($datefield) {
-                        echo "<tr><td>{$admtext['eventdate']}: </span></td><td valign=\"top\"><span class='normal'>{$evrow[$datefield]}</td></tr>\n";
-                          echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td colspan=\"2\"><input type=\"text\" name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td></tr>\n";
-                      }
-                      if ($placefield) {
+          <form action="admin_savereview.php" method="post" name="form1">
+              <table class="normal">
+                  <tr>
+                      <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+                      <td><span class="normal"><?php echo $treerow['treename']; ?></span></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                      <td valign="top"><h3 class="subhead"><?php echo $admtext['event']; ?>:</h3></td>
+                      <td><h3 class="subhead"><?php echo $displayval; ?></h3></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <?php
+                  if ($datefield) {
+                      echo "<tr><td>{$admtext['eventdate']}: </span></td><td valign=\"top\"><span class='normal'>{$evrow[$datefield]}</td></tr>\n";
+                      echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td colspan=\"2\"><input type=\"text\" name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td></tr>\n";
+                  }
+                  if ($placefield) {
                         $row['eventplace'] = preg_replace("/\"/", "&#34;", $row['eventplace']);
                           echo "<tr><td>{$admtext['eventplace']}:</td><td valign=\"top\"><span class='normal'>{$evrow[$placefield]}</td></tr>\n";
                           echo "<tr><td><strong>{$admtext['suggested']}:</strong></td><td valign=\"top\"><input type=\"text\" name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";

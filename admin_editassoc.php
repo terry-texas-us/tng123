@@ -25,9 +25,10 @@ $helplang = findhelp("assoc_help.php");
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<p class="subhead"><strong><?php echo $admtext['modifyassoc']; ?></strong> |
-    <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
-</p>
+<h3 class="subhead"><?php echo $admtext['modifyassoc']; ?> |
+    <a href="#"
+       onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
+</h3>
 
 <form action="" name="findassocform1" onSubmit="return updateAssociation(this);">
     <table width="100%" cellpadding="2" class="normal">

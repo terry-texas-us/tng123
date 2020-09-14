@@ -50,8 +50,8 @@ $citationcount = tng_num_rows($citresult);
     echo " style=\"display:none;\"";
 } ?>>
     <form name="citeform">
-        <p class="subhead"><strong><?php echo $admtext['citations'] . ": $eventtypedesc"; ?></strong> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php');"><?php echo $admtext['help']; ?></a></p>
+        <h3 class="subhead"><?php echo $admtext['citations'] . ": $eventtypedesc"; ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php');"><?php echo $admtext['help']; ?></a></h3>
         <p>
             <?php if ($allow_add) { ?>
                 <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.citeform2.reset();gotoSection('citations','addcitation');">&nbsp;
@@ -102,10 +102,10 @@ $citationcount = tng_num_rows($citresult);
             <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
             <p><a href="#" onclick="return gotoSection('addcitation','citations');"><?php echo $text['cancel']; ?></a></p>
         </div>
-        <p class="subhead"><strong><?php echo $admtext['addnewcite']; ?></strong> |
+        <h3 class="subhead"><?php echo $admtext['addnewcite']; ?> |
             <a href="#"
                onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
-        </p>
+        </h3>
 
         <table cellpadding="2" class="normal">
             <tr>
@@ -174,8 +174,8 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
 ?>
 <div class="databack ajaxwindow" style="display:none;" id="findsource">
     <form action="" method="post" name="findsourceform1" id="findsourceform1" onsubmit="return <?php echo $applyfilter; ?>">
-        <p class="subhead"><strong><?php echo $admtext['findsourceid']; ?></strong><br>
-            <span class="normal">(<?php echo $admtext['entersourcepart']; ?>)</span></p>
+        <h3 class="subhead"><?php echo $admtext['findsourceid']; ?><br>
+            <span class="normal">(<?php echo $admtext['entersourcepart']; ?>)</span></h3>
         <table cellspacing="0" cellpadding="2" class="normal">
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>
@@ -205,10 +205,10 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
             <input type="submit" name="submit" class="bigsave" accesskey="s" value="<?php echo $admtext['save']; ?>">
             <p><a href="#" onclick="gotoSection('newsource',prevsection);"><?php echo $text['cancel']; ?></a></p>
         </div>
-        <p class="subhead"><strong><?php echo $admtext['addnewsource']; ?></strong> |
+        <h3 class="subhead"><?php echo $admtext['addnewsource']; ?> |
             <a href="#"
                onclick="return openHelp('<?php echo $helplang; ?>/sources_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
-        </p>
+        </h3>
         <span class="normal"><strong><?php echo $admtext['prefixsourceid']; ?></strong></span><br>
         <table cellspacing="0" cellpadding="2" class="normal">
             <tr>

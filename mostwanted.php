@@ -91,20 +91,19 @@ tng_header($text['mostwanted'], $flags);
 
 $flags['imgprev'] = true;
 ?>
-
     <h2 class="header"><span class="headericon" id="mw-hdr-icon"></span><?php echo $text['mostwanted']; ?></h2><br clear="left">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'mostwanted', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 echo "<div class=\"titlebox mwblock\">\n";
-echo "<p class='subhead'>&nbsp;<strong>" . $text['mysperson'] . "</strong></p>\n";
+echo "<h3 class='subhead'>" . $text['mysperson'] . "</h3>\n";
 echo showDivs("person");
 echo "</div>\n";
 
 echo "<br>\n";
 
 echo "<div class=\"titlebox mwblock\">\n";
-echo "<p class='subhead'>&nbsp;<strong>" . $text['mysphoto'] . "</strong></p>\n";
+echo "<h3 class='subhead'>" . $text['mysphoto'] . "</h3>\n";
 echo showDivs("photo");
 echo "</div>\n";
 

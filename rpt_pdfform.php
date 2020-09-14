@@ -151,9 +151,9 @@ if ($pdftype == "fam") {
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
 
-    $pedname = getName($row);
-    tng_free_result($result);
-    $titletext = "$pedname ($personID)";
+      $pedname = getName($row);
+      tng_free_result($result);
+      $titletext = "$pedname ($personID)";
   }
 }
 
@@ -161,20 +161,19 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-  <span class="subhead"><strong><?php echo $text['pdfgen']; ?></strong></span><br>
+    <h3 class="subhead"><?php echo $text['pdfgen']; ?></h3>
+    <br>
+    <h3 class="subhead"><span class="normal" style="padding-bottom:3px;"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></h3>
+    <?php
+    if (count($font_list) == 0) {
+        echo "ERROR: There are no fonts installed to support character set $session_charset.";
+        return;
+    }
+    ?>
 
-  <br>
-  <p class="subhead"><span class="normal" style="padding-bottom:3px;"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></p>
-  <?php
-  if (count($font_list) == 0) {
-    echo "ERROR: There are no fonts installed to support character set $session_charset.";
-    return;
-  }
-  ?>
-
-  <?php
-  echo getFORM($dest, "post", "pdfform", "pdfform");
-  // determine if we need to draw a generations option
+    <?php
+    echo getFORM($dest, "post", "pdfform", "pdfform");
+    // determine if we need to draw a generations option
   if ($genmin > 0 || $genmax > 0) {
     if ($generations < $genmin) {
       $generations = $genmin;

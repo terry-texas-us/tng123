@@ -410,7 +410,7 @@ $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);
 
-echo "<span class='subhead'><strong>{$text['timeline']}</strong></span><br><br>\n";
+echo "<h3 class='subhead'>{$text['timeline']}</h3>\n";
 
 if ($pedigree['simile']) {
   echo "<div id=\"tngtimeline\" style=\"height: {$pedigree['tcheight']}px;\"></div>\n";

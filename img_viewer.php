@@ -96,7 +96,7 @@ $float = strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 7") > 0 ? " style=\"float:lef
   if (isset($_GET['sa'])) {
     $sa = 1;
     if (!empty($imgrow['description'])) {
-      echo "<p class='subhead' id=\"img_desc\"><strong>{$imgrow['description']}</strong></p>";
+      echo "<h3 class='subhead' id=\"img_desc\">{$imgrow['description']}</h3>";
     }
     if (!empty($imgrow['notes'])) {
         echo "<p class='normal' id=\"img_notes\">{$imgrow['notes']}</p>";

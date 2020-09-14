@@ -14,7 +14,7 @@ tng_header($text['searchnames'], $flags);
     <h2 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h2><br clear="all">
 <?php
 if ($msg) {
-    echo "<b id=\"errormsg\" class=\"msgerror subhead\">" . stripslashes(strip_tags($msg)) . "</b>";
+    echo "<h3 id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</h3>";
 }
 
 $fieldclass = $sitever == "mobile" ? "medfield" : "longfield";

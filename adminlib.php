@@ -55,14 +55,15 @@ function tng_adminheader($title, $flags) {
     include "adminmeta.php";
     echo "<script type=\"text/javascript\">\n";
     echo "function toggleAll(flag) {\n";
-    echo "for( var i = 0; i < document.form2.elements.length; i++ ) {\n";
-    echo "if( document.form2.elements[i].type == \"checkbox\" ) {\n";
-    echo "if( flag )\n";
+    echo "for (var i = 0; i < document.form2.elements.length; i++ ) {\n";
+    echo "if (document.form2.elements[i].type == \"checkbox\") {\n";
+    echo "if (flag)\n";
     echo "document.form2.elements[i].checked = true;\n";
     echo "else\n";
     echo "document.form2.elements[i].checked = false;\n";
     echo "}\n}\n}\n";
-    echo "var closeimg = \"img/tng_close.gif\";var cmstngpath='';";
+    echo "var closeimg = \"img/tng_close.gif\";\n";
+    echo "var cmstngpath='';\n";
     echo "var loadingmsg = \"{$text['loading']}\";\n";
     echo "</script>\n";
     if ($isConnected) {

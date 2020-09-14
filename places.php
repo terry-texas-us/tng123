@@ -117,7 +117,7 @@ if ($result) {
 }
 ?>
     <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['placesstarting']; ?></strong></p>
+        <h3 class="subhead"><?php echo $text['placesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
 
         <?php
@@ -141,7 +141,7 @@ if ($result) {
         <table class="table-top30">
             <tr>
                 <td colspan="5">
-                    <p class="subhead"><strong><?php echo "{$text['top30places']} ({$text['totalplaces']}):"; ?></strong></p>
+                    <h3 class="subhead"><?php echo "{$text['top30places']} ({$text['totalplaces']}):"; ?></h3>
                 </td>
             </tr>
             <tr>

@@ -765,7 +765,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <span class="subhead"><strong><?php echo $admtext['findmatches']; ?></strong></span><br><br>
+            <h3 class="subhead"><?php echo $admtext['findmatches']; ?></h3>
             <div class="normal"><em><?php echo $admtext['choosemerge']; ?></em><br><br>
                 <form action="admin_merge.php" method="post" name="form1" id="form1">
                     <table>

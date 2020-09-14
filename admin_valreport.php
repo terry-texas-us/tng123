@@ -206,24 +206,24 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $numrowsplus = $numrows + $offset;
 if (!$numrowsplus) {
-  $offsetplus = 0;
+    $offsetplus = 0;
 }
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow normal">
-      <p class="subhead"><strong><?php echo $admtext[$report]; ?></strong></p>
-          <?php
-          echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-          $pagenav = get_browseitems_nav($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 5);
-          echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
-          ?>
-      <table cellpadding="5" cellspacing="1" class="normal">
-        <tr>
-          <?php
-                  //show headers
-                  for ($i = 0; $i < count($display); $i++) {
+    <tr class="databack">
+        <td class="tngshadow normal">
+            <h3 class="subhead"><?php echo $admtext[$report]; ?></h3>
+            <?php
+            echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+            $pagenav = get_browseitems_nav($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 5);
+            echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+            ?>
+            <table cellpadding="5" cellspacing="1" class="normal">
+                <tr>
+                    <?php
+                    //show headers
+                    for ($i = 0; $i < count($display); $i++) {
                     $header = $admtext[$display[$i]];
                     echo "<td class=\"fieldnameback fieldname\">&nbsp;<b>$header</b>&nbsp;</td>\n";
                   }

@@ -7,10 +7,10 @@ include "$mylanguage/admintext.php";
 include $cms['tngpath'] . "checklogin.php";
 
 if ($mediaID) {
-    $mediaoption = ",mediaID:'$mediaID'";
+    $mediaoption = ", mediaID:'$mediaID'";
 } else {
     if ($albumID) {
-        $mediaoption = ",albumID:'$albumID'";
+        $mediaoption = ", albumID:'$albumID'";
     } else {
         $mediaoption = "";
     }
@@ -18,15 +18,15 @@ if ($mediaID) {
 
 $bailtext = $mediaoption ? $admtext['finish'] : $admtext['cancel'];
 
-$applyfilter = "applyFilter({form:'findrepoform1',fieldId:'mytitle',type:'R',tree:'$tree',destdiv:'reporesults'$mediaoption});";
+$applyfilter = "applyFilter({form:'findrepoform1', fieldId:'mytitle', type:'R', tree:'$tree', destdiv:'reporesults'$mediaoption});";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="findrepodiv">
     <form action="" method="post" name="findrepoform1" id="findrepoform1" onsubmit="return <?php echo $applyfilter; ?>">
-        <p class="subhead"><strong><?php echo $admtext['findrepoid']; ?></strong><br>
-            <span class="normal">(<?php echo $admtext['enterrepopart']; ?>)</span></p>
+        <h3 class="subhead"><?php echo $admtext['findrepoid']; ?><br>
+            <span class="normal">(<?php echo $admtext['enterrepopart']; ?>)</span></h3>
         <table cellspacing="0" cellpadding="2" class="normal">
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>

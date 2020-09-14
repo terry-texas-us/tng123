@@ -27,12 +27,12 @@ function updateMostWantedOrder(mwtype) {
 }
 
 function openMostWanted(mwtype, ID) {
-    mwlitbox = new LITBox('admin_editmostwanted.php?mwtype=' + mwtype + '&ID=' + ID, {width: 645, height: 440});
+    mwlitbox = new LITBox('admin_editmostwanted.php?mwtype=' + mwtype + '&ID=' + ID, {width: 660, height: 490});
     return false;
 }
 
 function openMostWantedMediaFind(tree) {
-    tnglitbox = new LITBox('admin_findmwmedia.php?tree=' + tree, {width: 640, height: 540});
+    tnglitbox = new LITBox('admin_findmwmedia.php?tree=' + tree, {width: 660, height: 560});
     return false;
 }
 

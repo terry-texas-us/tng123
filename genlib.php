@@ -156,9 +156,15 @@ function tng_header($title, $flags) {
         echo "<![endif]-->";
     }
 
-    echo "<script type=\"text/javascript\">\n" . "var tnglitbox;\nvar share = 0;\nvar closeimg = \"{$cms['tngpath']}img/tng_close.gif\";\n";
-    echo "var smallimage_url = '" . getURL("ajx_smallimage", 1) . "';\nvar cmstngpath='{$cms['tngpath']}';\nvar loadingmsg = '{$text['loading']}';\n";
-    echo "var expand_msg = \"{$text['expand']}\";\nvar collapse_msg = \"{$text['collapse']}\";\n";
+    echo "<script type=\"text/javascript\">\n";
+    echo "var tnglitbox;\n";
+    echo "var share = 0;\n";
+    echo "var closeimg = \"{$cms['tngpath']}img/tng_close.gif\";\n";
+    echo "var smallimage_url = '" . getURL("ajx_smallimage", 1) . "';\n";
+    echo "var cmstngpath='{$cms['tngpath']}';\n";
+    echo "var loadingmsg = '{$text['loading']}';\n";
+    echo "var expand_msg = \"{$text['expand']}\";\n";
+    echo "var collapse_msg = \"{$text['collapse']}\";\n";
     if (isset($flags['error']) && $flags['error']) {
         $login_url = getURL("ajx_login", 1);
         echo "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "&message={$flags['error']}');});\n";
@@ -633,11 +639,11 @@ function tng_getRightIcons() {
         } else {
             $print_url .= "?tngprint=1";
         }
-        $right_icons .= tng_smallIcon(array('label' => $text['tngprint'], 'id' => "print", 'rel' => "nofollow", 'onclick' => "newwindow=window.open('$print_url','tngprint','width=850,height=600,status=no,resizable=yes,scrollbars=yes'); newwindow.focus(); return false;"));
+        $right_icons .= tng_smallIcon(['label' => $text['tngprint'], 'id' => "print", 'rel' => "nofollow", 'onclick' => "newwindow=window.open('$print_url','tngprint','width=850,height=600,status=no,resizable=yes,scrollbars=yes'); newwindow.focus(); return false;"]);
     }
 
     if (empty($tngconfig['showbmarks']) && $gotlastpage) {
-        $right_icons .= tng_smallIcon(array('label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('{$addbookmark_url}p=" . urlencode($cms['tngpath']) . "', {width:350, height:100}); return false;"));
+        $right_icons .= tng_smallIcon(['label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('{$addbookmark_url}p=" . urlencode($cms['tngpath']) . "', {width:350, height:120}); return false;"]);
         $tngconfig['menucount']++;
     }
 
@@ -965,7 +971,7 @@ function tng_icons($instance, $title = "") {
 
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
                 $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" alt=\"\"/></a>";
-                $fullmenu .= "<span class='subhead'><strong>{$text['search']}</strong> | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></span><br><br>";
+                $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
                 $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type=\"text\" name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";

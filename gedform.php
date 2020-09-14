@@ -46,7 +46,7 @@ $innermenu = "&nbsp; \n";
 
 echo tng_menu("I", "gedcom", $personID, $innermenu);
 
-echo "<span class='subhead'><b>{$text['creategedfor']}</b></span><br><br>\n";
+echo "<h3 class='subhead'>{$text['creategedfor']}</h3>\n";
 
 if ($currentuser) {
     $formstr = getFORM("gedcom", "GET", "gedform", "");

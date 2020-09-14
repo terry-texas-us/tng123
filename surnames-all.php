@@ -61,7 +61,7 @@ if ($result) {
 }
 ?>
     <div class="titlebox normal">
-        <p class="subhead"><strong><?php echo $text['surnamesstarting']; ?></strong></p>
+        <h3 class="subhead"><?php echo $text['surnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
         <br><?php echo "<a href=\"$surnames_noargs_url\">{$text['mainsurnamepage']}</a>"; ?>
     </div>

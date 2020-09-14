@@ -76,27 +76,27 @@ $allow_user_change = true;
             }
             else if(this.email.value != this.em2.value) {
             alert("<?php echo htmlentities($text['emailsmatch'], ENT_QUOTES); ?>");
-            this.em2.focus();
-            return false;
-            }
-            if(!newuserok) {
-            return checkNewUser(document.editprofile.username,document.editprofile.orguser,true);
-            }'
+                this.em2.focus();
+                return false;
+                }
+                if(!newuserok) {
+                return checkNewUser(document.editprofile.username,document.editprofile.orguser,true);
+                }'
   >
-    <table cellspacing="0" cellpadding="2" class="normal">
-      <tr class="databack">
-        <td>
-          <p class="subhead"><strong><?php echo $text['editprofile']; ?></strong></p>
-          <table cellpadding="3" cellspacing="0" class="normal">
-            <tr>
-              <td><?php echo $text['username'];
-                if ($allow_user_change) {
-                  echo "*";
-                } ?>:
-              </td>
+      <table cellspacing="0" cellpadding="2" class="normal">
+          <tr class="databack">
               <td>
-                <?php
-                if ($allow_user_change) {
+                  <h3 class="subhead"><?php echo $text['editprofile']; ?></h3>
+                  <table cellpadding="3" cellspacing="0" class="normal">
+                      <tr>
+                          <td><?php echo $text['username'];
+                              if ($allow_user_change) {
+                                  echo "*";
+                              } ?>:
+                          </td>
+                          <td>
+                              <?php
+                              if ($allow_user_change) {
                   ?>
                   <input type="text" name="username" size="20" maxlength="100" value="<?php echo $row['username']; ?>" onblur="checkNewUser(this,document.editprofile.orguser);">
                   <span id="checkmsg" class="normal"></span>

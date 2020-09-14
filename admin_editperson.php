@@ -461,7 +461,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'
                         <table class="normal">
                             <tr>
                                 <td>
-                                    <strong class="subhead"><?php echo $admtext['otherevents']; ?>:</strong>
+                                    <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
                                     <p><input type="button" value="  <?php echo $admtext['addnew'] ?>  " onclick="newEvent('I', '<?php echo $personID ?>', '<?php echo $tree ?>');"></p>
                                 </td>
                                 <td valign="top">

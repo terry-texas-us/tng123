@@ -34,8 +34,8 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow">
-    <p class="subhead"><strong><?php echo $admtext['modifyevent']; ?></strong> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/events_help.php');"><?php echo $admtext['help']; ?></a></p>
+    <h3 class="subhead"><?php echo $admtext['modifyevent']; ?> |
+        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/events_help.php');"><?php echo $admtext['help']; ?></a></h3>
     <form action="" method="post" name="form1" id="form1" onSubmit="return updateEvent(this);">
         <table cellpadding="2" class="normal">
             <tr>

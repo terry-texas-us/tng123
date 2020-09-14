@@ -49,7 +49,7 @@ $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'mar
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <p class="subhead"><strong><?php echo $admtext['dataval']; ?></strong></p>
+            <h3 class="subhead"><?php echo $admtext['dataval']; ?></h3>
 
             <?php
             if (!$assignedtree) {

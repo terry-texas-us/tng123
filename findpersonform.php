@@ -29,15 +29,15 @@ if (!isset($branch)) {
     $branch = "";
 }
 
-$applyfilter = "applyFilter({form:'findform1',fieldId:'myflastname',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'$tree',branch:'$branch',destdiv:'findresults'$mediaoption});";
+$applyfilter = "applyFilter({form:'findform1', fieldId:'myflastname', myflastname:jQuery('#myflastname').val(), myffirstname:jQuery('#myffirstname').val(), myfpersonID:jQuery('#myfpersonID').val(), type:'I', tree:'$tree', branch:'$branch', destdiv:'findresults'$mediaoption});";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
     <form action="" method="post" name="findform1" id="findform1" onsubmit="return <?php echo $applyfilter; ?>">
-        <p class="subhead"><strong><?php echo $admtext['findpersonid']; ?></strong><br>
-            <span class="normal">(<?php echo $subtitle; ?>)</span></p>
+        <h3 class="subhead"><?php echo $admtext['findpersonid']; ?><br>
+            <span class="normal">(<?php echo $subtitle; ?>)</span></h3>
         <table cellspacing="0" cellpadding="2" class="normal">
             <tr>
                 <td><?php echo $admtext['firstname']; ?></td>

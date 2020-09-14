@@ -168,9 +168,9 @@ if (is_numeric($event)) {
     }
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
-    tng_free_result($result);
+      tng_free_result($result);
   } else {
-    $row = array();
+      $row = array();
   }
 }
 
@@ -178,12 +178,12 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="tentedit">
-    <p class="subhead"><strong><?php echo $text['editevent']; ?></strong></p>
+    <h3 class="subhead"><?php echo $text['editevent']; ?></h3>
 
     <p class="header"><?php echo "$name: $title"; ?></p>
-  <?php
-  echo getFORM("", "post", "form1\" onsubmit=\"return saveTentEdit(this);", "form1");
-  ?>
+    <?php
+    echo getFORM("", "post", "form1\" onsubmit=\"return saveTentEdit(this);", "form1");
+    ?>
     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
     <input type="hidden" name="personID" value="<?php echo $personID; ?>">
     <input type="hidden" name="familyID" value="<?php echo $familyID; ?>">

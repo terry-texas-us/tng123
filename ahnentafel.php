@@ -127,7 +127,7 @@ echo "</form>\n";
         <div class="float-right"><?php echo $detail_link; ?></div>
         <?php
         //do self
-        echo "<span class='subhead'><strong>{$text['generation']}: 1</strong></span><br><br>\n";
+        echo "<h3 class='subhead'>{$text['generation']}: 1</h3>\n";
         echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
         echo "<li>";
         echo "<table cellpadding=\"0\" cellspacing=\"0\" class=\"aligntop\" ><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
@@ -237,7 +237,7 @@ echo "</form>\n";
         //while there's one to pop and we're less than maxgen
         while (count($currgen) && $generation <= $generations) {
 
-            echo "<span class='subhead'><strong>{$text['generation']}: $generation</strong></span><br><br>\n";
+            echo "<h3 class='subhead'>{$text['generation']}: $generation</h3>\n";
 
             echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
             while ($nextfamily = array_shift($currgen)) {

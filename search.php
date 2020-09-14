@@ -255,8 +255,8 @@ if ($tree) {
     $urlstring .= "&amp;branch=$branch";
     $querystring .= " {$text['cap_and']} ";
 
-    $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = \"$branch\"";
-    $branchresult = tng_query($query);
+    $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = '$branch'";
+      $branchresult = tng_query($query);
     $branchrow = tng_fetch_assoc($branchresult);
     tng_free_result($branchresult);
 
@@ -596,8 +596,8 @@ while ($row = tng_fetch_assoc($result)) {
         $key = $row['gedcom'] . "_" . $branch;
         $branchname = $branchnames[$key];
         if (!$branchname) {
-          $query = "SELECT description FROM $branches_table WHERE gedcom = \"{$row['gedcom']}\" AND branch = \"$branch\"";
-          $brresult = tng_query($query);
+            $query = "SELECT description FROM $branches_table WHERE gedcom = \"{$row['gedcom']}\" AND branch = '$branch'";
+            $brresult = tng_query($query);
           $brrow = tng_fetch_assoc($brresult);
           $branchname = $brrow['description'];
           $branchnames[$key] = $branchname;

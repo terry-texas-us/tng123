@@ -105,7 +105,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                 <div class="normal">
                     <em><?php echo $admtext['addreplacedata']; ?></em><br><br>
 
-                    <p class="subhead"><strong><?php echo $admtext['importgedcom']; ?>:</strong></p>
+                    <h3 class="subhead"><?php echo $admtext['importgedcom']; ?>:</h3>
                     <table cellpadding="1" class="normal">
                         <tr>
                             <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
@@ -132,7 +132,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         </tr>
         <tr class="databack">
             <td class="tngshadow" id="desttree">
-                <p class="subhead"><strong><?php echo $admtext['selectexisting']; ?>:</strong></p>
+                <h3 class="subhead"><?php echo $admtext['selectexisting']; ?>:</h3>
                 <table cellpadding="1" class="normal">
                     <tr id="desttree2">
                         <td>&nbsp;&nbsp;<?php echo $admtext['desttree']; ?>:</td>
@@ -180,7 +180,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                 <table cellpadding="1" class="normal">
                     <tr id="replace">
                         <td colspan="2">
-                            <p class="subhead"><strong><?php echo $admtext['replace']; ?>:</strong></p>
+                            <h3 class="subhead"><?php echo $admtext['replace']; ?>:</h3>
                             <input type="radio" name="del" value="yes"<?php if ($tngimpcfg['defimpopt'] == 1) {
                                 echo " checked=\"checked\"";
                             } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['allcurrentdata']; ?> &nbsp;

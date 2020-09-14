@@ -188,7 +188,7 @@ echo getFORM("pedigree", "", "form1", "form1");
 echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 
-echo "<p class='subhead'><strong>{$text['media']}: {$text['familyof']} $pedname</strong></p>";
+echo "<h3 class='subhead'>{$text['media']}: {$text['familyof']} $pedname</h3>";
 
 if ($showall) {
     echo "<p><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"> {$text['extrasexpl']}</p>";
@@ -199,7 +199,7 @@ displayIndividual($personID, 1, $slot, 0);
     <table cellspacing="0" cellpadding="0">
         <tr>
             <td valign="top">
-                <p class="subhead"><strong><?php echo "$col1fam {$text['side']}"; ?></strong></p>
+                <h3 class="subhead"><?php echo "$col1fam {$text['side']}"; ?></h3>
                 <?php
                 for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {
                     if ($columns[1][$nextgen]) {
@@ -211,7 +211,7 @@ displayIndividual($personID, 1, $slot, 0);
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td valign="top">
-                <p class="subhead"><strong><?php echo "$col2fam " . $text['side']; ?></strong></p>
+                <h3 class="subhead"><?php echo "$col2fam " . $text['side']; ?></h3>
                 <?php
                 for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {
                     if ($columns[2][$nextgen]) {

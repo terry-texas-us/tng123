@@ -80,17 +80,19 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
 
     //show photo & name
-    $indtext .= "<tr><td colspan=\"$totcols\">";
-    $indtext .= "<span class='normal'>$label | $sex</span><br><span class='subhead'><b>";
+    $indtext .= "<tr>\n";
+    $indtext .= "<td colspan='$totcols'>";
+    $indtext .= "<span class='normal'>$label | $sex</span><br>";
+    $indtext .= "<h3 class='subhead'>";
     if ($ind['haskids']) {
         $indtext .= "> ";
     }
-    $indtext .= "$namestr</b>";
+    $indtext .= "$namestr";
+    $indtext .= "</h3>\n";
+    $indtext .= "</td>\n";
+    $indtext .= "</tr>\n";
 
-    $indtext .= "<br></span>\n";
-    $indtext .= "</td></tr>\n";
-
-    $event = array();
+    $event = [];
 
     $event['text'] = $text['born'];
     $event['event'] = "BIRT";
@@ -102,7 +104,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $indtext .= showDatePlace($event);
 
-    $event = array();
+    $event = [];
     $event['event'] = "CHR";
     $event['type'] = "I";
     $event['ID'] = $personID;
@@ -115,7 +117,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $indtext .= showDatePlace($event);
     }
 
-    $event = array();
+    $event = [];
     $event['text'] = $text['died'];
     $event['event'] = "DEAT";
     $event['type'] = "I";
@@ -126,7 +128,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $indtext .= showDatePlace($event);
 
-    $event = array();
+    $event = [];
     $event['text'] = $text['buried'];
     $event['event'] = "BURI";
     $event['type'] = "I";
@@ -148,8 +150,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
             $fam['allow_private'] = $frights['private'];
             tng_free_result($result);
 
-            $event = array();
-            $eventd = array();
+            $event = [];
+            $eventd = [];
             $event['text'] = $text['married'];
             $event['event'] = "MARR";
             $event['type'] = "F";

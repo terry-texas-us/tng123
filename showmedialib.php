@@ -654,7 +654,7 @@ function doCemPlusMap($imgrow, $tree) {
     $cemetery = tng_fetch_assoc($cemresult);
     tng_free_result($cemresult);
 
-    echo "<p><span class='subhead'>\n";
+    echo "<h3 class='subhead'>\n";
     $location = $cemetery['cemname'];
     if ($cemetery['city']) {
         if ($location) {
@@ -681,7 +681,7 @@ function doCemPlusMap($imgrow, $tree) {
         $location .= $cemetery['country'];
     }
     echo "<a href=\"$showmap_url" . "cemeteryID={$imgrow['cemeteryID']}&amp;tree=$tree\">$location</a>";
-    echo "</span></p>\n";
+    echo "</h3>\n";
     if ($cemetery['notes']) {
         echo "<p><strong>{$text['notes']}:</strong> " . nl2br($cemetery['notes']) . "</p>";
     }
@@ -700,7 +700,7 @@ function doCemPlusMap($imgrow, $tree) {
     if (tng_num_rows($hsresult)) {
         $i = 1;
         echo "<div class=\"titlebox\">\n";
-        echo "<span class='subhead'><b>{$text['cemphotos']}</b></span><br><br>";
+        echo "<h3 class='subhead'>{$text['cemphotos']}</h3>";
 
         echo "<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" class=\"whiteback\" width=\"100%\">\n";
         echo "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
