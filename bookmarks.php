@@ -12,7 +12,8 @@ $ref = "tngbookmarks_$newroot";
 tng_header($text['bookmarks'], $flags);
 ?>
 <!-- DED added alt='' & changed span to div in next line-->
-<h2 class="header"><span class="headericon" id="bookmarks-hdr-icon"></span><?php echo $text['bookmarks']; ?></h2><br clear="left">
+<h2 class="header"><span class="headericon" id="bookmarks-hdr-icon"></span><?php echo $text['bookmarks']; ?></h2>
+<br style="clear: left;">
 <?php
 echo "<p class='normal'>" . $text['bkmkvis'] . "</p>";
 

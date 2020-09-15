@@ -77,7 +77,8 @@ if ($totrows > 1) {
 }
 ?>
 
-<h2 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2><br clear="left">
+<h2 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2>
+<br style="clear: left;">
 
 <?php
 if ($totrows) {

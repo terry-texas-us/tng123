@@ -175,22 +175,30 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="batch"><p class="subheadbold">D�vkov� operace</p></a>
 
-            <p>Funkce D�vkov� operace, v TNG 10.0.3 p�edstaven� jako D�vkov� instalace, je nyn� sou��st� Seznamu m�d� a umo�n� prov�st specifick� akce t�kaj�c� se v�ce m�d� pomoc� v�b�ru filtru.
-                Z filtru seznamu stav� mus�te vybrat po�adovan� stav a kliknut�m na <strong>Prov�st</strong> zobraz�te dostupn� ovl�dac� tla��tka pro vybran� stav.
+            <p>Funkce D�vkov� operace, v TNG 10.0.3 p�edstaven� jako D�vkov� instalace, je nyn� sou��st� Seznamu m�d� a umo�n� prov�st specifick� akce
+                t�kaj�c� se v�ce m�d� pomoc� v�b�ru filtru.
+                Z filtru seznamu stav� mus�te vybrat po�adovan� stav a kliknut�m na <strong>Prov�st</strong> zobraz�te dostupn� ovl�dac� tla��tka pro
+                vybran� stav.
 
-                Akce <strong>Vymazat</strong> je k dispozici pouze pro stav ��ste�n� nainstalov�no, pokud povol�te p��slu�nou p�edvolbu. Doporu�ujeme ji nastavit na Ne, krom� p��pad�, kdy je pot�eba vymazat v�ce m�d� ve stavu
-                ��ste�n� nainstalov�no, jako nap�. p�edchoz� verze t�ho� m�du. Stejn� tak je zde mo�nost Vymazat instalovan� m�dy, kter� umo�n� vymaz�n� nainstalovan�ch m�d�, ani� byste je nejprve odinstalovali. Tato mo�nost byla p�id�na,
-                aby bylo mo�n� vymazat p�edchoz� verze t�ho� m�du, pokud jste je zapomn�li vymazat p�ed instalac� nov� verze. Zde op�t doporu�ujeme ponechat mo�nost jako Ne a povolit ji jen v p��pad� pot�eby.
+                Akce <strong>Vymazat</strong> je k dispozici pouze pro stav ��ste�n� nainstalov�no, pokud povol�te p��slu�nou p�edvolbu. Doporu�ujeme
+                ji nastavit na Ne, krom� p��pad�, kdy je pot�eba vymazat v�ce m�d� ve stavu
+                ��ste�n� nainstalov�no, jako nap�. p�edchoz� verze t�ho� m�du. Stejn� tak je zde mo�nost Vymazat instalovan� m�dy, kter� umo�n�
+                vymaz�n� nainstalovan�ch m�d�, ani� byste je nejprve odinstalovali. Tato mo�nost byla p�id�na,
+                aby bylo mo�n� vymazat p�edchoz� verze t�ho� m�du, pokud jste je zapomn�li vymazat p�ed instalac� nov� verze. Zde op�t doporu�ujeme
+                ponechat mo�nost jako Ne a povolit ji jen v p��pad� pot�eby.
                 Tla��tko <strong>Vymazat</strong> se zobraz� pouze v seznamu Vybrat, pokud jsou povoleny oba mo�nosti vymaz�n�.
             </p>
 
-            <p><strong><font color="red">Upozorn�n�: D�vkov� operace pou��vejte pouze tehdy, pokud m�te z�lohu va�ich webov�ch str�nek a m��ete je snadno obnovit v p��pad�, �e vlivem d�vkov�ch operac� dojde k po�kozen� va�ich str�nek, co� se m��e snadno
-                        st�t, pokud nevyma�ete p�edchoz� verze m�d�.</font>
-                    Je doporu�eno P�ed proveden�m aktualizace TNG doporu�ujeme odinstalovat v�echny nainstalovan� m�dy a pot� vy�istit v�echny ��ste�n� nainstalovan� m�dy.</strong></p>
+            <p><strong><span style="color: red; ">Upozorn�n�: D�vkov� operace pou��vejte pouze tehdy, pokud m�te z�lohu va�ich webov�ch str�nek a m��ete je snadno obnovit v p��pad�, �e vlivem d�vkov�ch operac� dojde k po�kozen� va�ich str�nek, co� se m��e snadno
+                        st�t, pokud nevyma�ete p�edchoz� verze m�d�.</span>
+                    Je doporu�eno P�ed proveden�m aktualizace TNG doporu�ujeme odinstalovat v�echny nainstalovan� m�dy a pot� vy�istit v�echny
+                    ��ste�n� nainstalovan� m�dy.</strong></p>
 
             <p>Mo�nosti v�b�rov�ho filtru jsou tyto:
             <ul>
-                <li><strong>V�e</strong> - zobraz� se �pln� seznam v�ech soubor� .cfg ze slo�ky mods. Pokud zvol�te ur�it� stav, objev� se dostupn� tla��tka jednotliv�ch akc�</li>
+                <li><strong>V�e</strong> - zobraz� se �pln� seznam v�ech soubor� .cfg ze slo�ky mods. Pokud zvol�te ur�it� stav, objev� se dostupn�
+                    tla��tka jednotliv�ch akc�
+                </li>
                 <li><strong>Lze nainstalovat</strong> - zobraz� se seznam v�ech m�d�, kter� mohou b�t</li>
                 <ul>
                     <li>Nainstalov�ny - na z�klad� va�eho v�b�ru a kliknut�m na tla��tko <strong>Instalovat</strong></li>

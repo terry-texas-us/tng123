@@ -18,17 +18,18 @@ $numrows = tng_num_rows($result);
 tng_header($text['changelanguage'], $flags);
 ?>
 
-<p class="header"><?php echo $text['changelanguage']; ?></p><br clear="all">
+<p class="header"><?php echo $text['changelanguage']; ?></p>
+<br style="clear: both;">
 
 <?php
 if ($numrows) {
-  $str .= getFORM("savelanguage", "post", "", "");
-  echo "$str";
-  ?>
-  <select name="newlanguage">
-    <?php
-    while ($row = tng_fetch_assoc($result)) {
-      echo "<option value=\"{$row['languageID']}\"";
+    $str .= getFORM("savelanguage", "post", "", "");
+    echo "$str";
+    ?>
+    <select name="newlanguage">
+        <?php
+        while ($row = tng_fetch_assoc($result)) {
+            echo "<option value=\"{$row['languageID']}\"";
         if ($row['folder'] == $mylanguage) {
           echo " selected=\"selected\"";
         }

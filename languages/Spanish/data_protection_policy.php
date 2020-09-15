@@ -1,14 +1,17 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Proteccion de Datos</h3>
-    <p>Los propietarios de este sitio toman la proteccion de sus datos personales seriamente. Nosotros tratamos los datos perosnales de manera confidencial y de acuerdo con los estatutos de proteccion de datos y politicas de privacidad.</p>
+<h3>Proteccion de Datos</h3>
+<p>Los propietarios de este sitio toman la proteccion de sus datos personales seriamente. Nosotros tratamos los datos perosnales de manera
+    confidencial y de acuerdo con los estatutos de proteccion de datos y politicas de privacidad.</p>
 
-    <p>El uso de nuestro sitio es posible sin proporcionar datos persoanles. Cuando la informacion personal es pedida (por ejemplo, nombre, correo electronico y direccion en el formulario de contacto), esta se da voluntariamente. Estos datos no seran
-        pasados a terceras personas.</p>
+<p>El uso de nuestro sitio es posible sin proporcionar datos persoanles. Cuando la informacion personal es pedida (por ejemplo, nombre, correo
+    electronico y direccion en el formulario de contacto), esta se da voluntariamente. Estos datos no seran
+    pasados a terceras personas.</p>
 
-    <p>Queremos recalcar que enviar informacion sobre la internet esta sujeta a problemas de seguridad. Completa proteccion de los datos a terceros no es posible.</p>
+<p>Queremos recalcar que enviar informacion sobre la internet esta sujeta a problemas de seguridad. Completa proteccion de los datos a terceros no es
+    posible.</p>
 
-    <h3>Cookies</h3>
+<h3>Cookies</h3>
     <p>Este sitio web usa cookies. Cookies que no da�an su computador y no contienen virus. Las cookies cumplen una importante funcion en la operaci�n de este sitio. Las Cookies son peque�os textos que no son almacenados en su computador por el
         navegador.</p>
 

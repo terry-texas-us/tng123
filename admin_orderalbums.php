@@ -145,7 +145,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
+            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br>
+            <br style="clear: left;">
             <br>
             <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
                 <tr>

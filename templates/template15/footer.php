@@ -53,7 +53,7 @@
                 <div class="">
                     <h4 class="widget-title-footer"><?php echo getTemplateMessage('t15_texttitle3'); ?></h4>
                     <div class="">
-                      <?php echo getTemplateMessage('t15_textpara3'); ?>
+                        <?php echo getTemplateMessage('t15_textpara3'); ?>
                     </div>
                 </div>
             </section>
@@ -62,11 +62,11 @@
 </div>
 <footer class="site-footer" role="contentinfo">
     <div class="wrap">
-        <br clear="all">
-      <?php
-      $flags['basicfooter'] = true;
-      echo tng_footer($flags);
-      ?>
+        <br style="clear: both;">
+        <?php
+        $flags['basicfooter'] = true;
+        echo tng_footer($flags);
+        ?>
     </div>
 </footer>
 </div>

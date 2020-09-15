@@ -1,14 +1,14 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Ochrona danych</h3>
-    <p>W�a�ciciel(e) tej strony bardzo powa�nie traktuj� ochron� Twoich danych osobowych.
-        Traktujemy Twoje dane osobowe w spos�b poufny i zgodnie z ustawowymi przepisami o ochronie danych i niniejsz� polityk� prywatno�ci.</p>
+<h3>Ochrona danych</h3>
+<p>W�a�ciciel(e) tej strony bardzo powa�nie traktuj� ochron� Twoich danych osobowych.
+    Traktujemy Twoje dane osobowe w spos�b poufny i zgodnie z ustawowymi przepisami o ochronie danych i niniejsz� polityk� prywatno�ci.</p>
 
-    <p>Korzystanie z naszej strony internetowej jest mo�liwe bez podawania danych osobowych.</br>
-        Gdy dane osobowe s� wymagane (na przyk�ad imi� i nazwisko oraz adres e-mail w formularzu kontaktowym), s� one podawane dobrowolnie.
-        Te dane nie b�d� przekazywane stronom trzecim.</p>
+<p>Korzystanie z naszej strony internetowej jest mo�liwe bez podawania danych osobowych.</br>
+    Gdy dane osobowe s� wymagane (na przyk�ad imi� i nazwisko oraz adres e-mail w formularzu kontaktowym), s� one podawane dobrowolnie.
+    Te dane nie b�d� przekazywane stronom trzecim.</p>
 
-    <p>Zwracamy uwag�, �e przesy�anie informacji przez Internet podlega kwestiom bezpiecze�stwa.
+<p>Zwracamy uwag�, �e przesy�anie informacji przez Internet podlega kwestiom bezpiecze�stwa.
         Ca�kowita ochrona danych przed dost�pem os�b trzecich nie jest mo�liwa.</p>
 
     <h3>Cookies</h3>

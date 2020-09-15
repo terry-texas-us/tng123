@@ -42,7 +42,8 @@ $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--
 $menu = doMenu($comptabs, "", $innermenu);
 ?>
 
-<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_mtdna']; ?></h2><br clear="left">
+<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_mtdna']; ?></h2>
+<br style="clear: left;">
 <?php
 echo $menu;
 if (isset($_SESSION["ttree"])) {

@@ -6,11 +6,8 @@ if ($p && !$cms['support']) {
 
 <h2 class="header"><span class="headericon" id="unlock-hdr-icon"></span><?php echo $text['login']; ?></h2>
 
-<?php
-if ($message) {
-    ?>
-    <font color="#FF0000"><span class="normal"><em><?php echo $text[$message]; ?></em>
-	</span></font>
+<?php if ($message) { ?>
+    <span class="normal" style="color: #f00;"><em><?php echo $text[$message]; ?></em></span>
     <?php
 }
 
@@ -20,7 +17,8 @@ echo $formstr;
 <div class="normal">
     <div class="nw" id="loginblock">
         <div class="loginprompt"><?php echo $text['username']; ?>:</div>
-        <input type="text" name="tngusername" class="loginfont <?php echo $loginfieldclass; ?>" id="tngusername"><br>
+        <input type="text" name="tngusername" class="loginfont <?php echo $loginfieldclass; ?>" id="tngusername">
+        <br>
 
         <div class="loginprompt"><?php echo $text['password']; ?>:</div>
         <input type="password" name="tngpassword" class="loginfont <?php echo $loginfieldclass; ?>" id="tngpassword">
@@ -40,7 +38,7 @@ echo $formstr;
     </div>
 </div>
 </form>
-<br clear="both">
+<br style="clear:both;">
 <?php
 $sendlogin_url = getURL("sendlogin", 0);
 $formstr = getFORM("", "post", "form2", "", "return sendLogin(this, '$sendlogin_url');");

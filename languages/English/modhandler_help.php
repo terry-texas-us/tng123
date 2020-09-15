@@ -175,16 +175,22 @@ echo help_header("Help: Mod Manager");
             <p style="float:right;"><a href="#top">Top</a></p>
             <a name="batch"><p class="subheadbold">Batch Operations</p></a>
 
-            <p>The Batch Operations function introduced in TNG 10.0.3 as a Batch Updates tab is now combined in the Mod List and allows specific actions on multiple mods using the Select Filter. You must choose from the status filter list pull down and
-                click <strong>Go</strong> to display the available controls for the specific status selected. <strong>Delete</strong> is only available for the Partially Installed status if you enable the Option, which we recommend that you leave as No,
-                except for when you need to delete multiple mods in the Partially Installed status, such as a prior version of the same mod. Likewise there is a Delete Installed mods option that will allow deleting installed mods without first uninstalling
-                them. This option was added to allow deleting previous versions of the same mod, if you forgot to delete them before installing the new version. Here again it is recommend that you leave the option as No and just enable it when needed. The
+            <p>The Batch Operations function introduced in TNG 10.0.3 as a Batch Updates tab is now combined in the Mod List and allows specific
+                actions on multiple mods using the Select Filter. You must choose from the status filter list pull down and
+                click <strong>Go</strong> to display the available controls for the specific status selected. <strong>Delete</strong> is only
+                available for the Partially Installed status if you enable the Option, which we recommend that you leave as No,
+                except for when you need to delete multiple mods in the Partially Installed status, such as a prior version of the same mod. Likewise
+                there is a Delete Installed mods option that will allow deleting installed mods without first uninstalling
+                them. This option was added to allow deleting previous versions of the same mod, if you forgot to delete them before installing the
+                new version. Here again it is recommend that you leave the option as No and just enable it when needed. The
                 <strong>Delete</strong> button is only shown on the Select list if both allow delete options are enabled.</p>
-            <p><strong><font color="red">Caution:You should only use Batch Operations if you have a good backup of your website and can quickly restore it if the batch operations renders your site inoperable, which can easily happen if you do not delete
-                        previous versions of the mods.</font> Note that it is recommended that you batch Uninstall all your Installed mods and then batch Clean Up all Partially Installed mods before doing a TNG upgrade.</strong></p>
+            <p><strong><span style="color: red; ">Caution:You should only use Batch Operations if you have a good backup of your website and can quickly restore it if the batch operations renders your site inoperable, which can easily happen if you do not delete
+                        previous versions of the mods.</span> Note that it is recommended that you batch Uninstall all your Installed mods and then
+                    batch Clean Up all Partially Installed mods before doing a TNG upgrade.</strong></p>
             <p>The Select Filter options are:
             <ul>
-                <li><strong>All</strong> - displays all a list of all the .cfg files in the mods folder. When you select a specific status then Action buttons will become available
+                <li><strong>All</strong> - displays all a list of all the .cfg files in the mods folder. When you select a specific status then Action
+                    buttons will become available
                 <li><strong>Ok to Install</strong> - displays a list of all the mods that can be</li>
                 <ul>
                     <li>Installed based on your selections and clicking the <strong>Install</strong> button</li>

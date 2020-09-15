@@ -87,8 +87,8 @@ preparebookmark($logstring);
 
 tng_header($text['sources'], $flags);
 ?>
-
-    <h2 class="header"><span class="headericon" id="sources-hdr-icon"></span><?php echo $text['sources']; ?></h2><br clear="left">
+    <h2 class="header"><span class="headericon" id="sources-hdr-icon"></span><?php echo $text['sources']; ?></h2>
+    <br style="clear: left;">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsesources', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 

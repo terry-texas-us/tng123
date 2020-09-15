@@ -75,7 +75,9 @@ tng_header($text['regnewacct'], $flags);
         }
     </script>
 
-    <h2 class="header"><img src="<?php echo $cms['tngpath']; ?>img/tng_log2.gif" width="20" height="20" alt="" class="headericon">&nbsp;<?php echo $text['regnewacct']; ?></h2><br clear="left">
+    <h2 class="header"><img src="<?php echo $cms['tngpath']; ?>img/tng_log2.gif" width="20" height="20" alt=""
+                            class="headericon">&nbsp;<?php echo $text['regnewacct']; ?></h2>
+    <br style="clear: left;">
 <?php
 echo tng_coreicons();
 

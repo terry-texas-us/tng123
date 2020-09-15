@@ -450,7 +450,7 @@ switch ($textpart) {
     $text['allbeginningwith'] = "Wszystkie nazwiska zaczynające się na";
     $text['numoccurrences'] = "liczba występujących w nawiasie";
     $text['placesstarting'] = "Zaczynaj od największych miejsc";
-    $text['showmatchingplaces'] = "<font color='brown'><b>Kliknij na jedną ze znalezionych pozycji, aby ograniczyć pole wyszukiwań. Kliknij na ikonę lupki, aby zobaczyć szczegóły.</b></font>";
+    $text['showmatchingplaces'] = "<span style=\"color: brown; \"><b>Kliknij na jedną ze znalezionych pozycji, aby ograniczyć pole wyszukiwań. Kliknij na ikonę lupki, aby zobaczyć szczegóły.</b></span>";
     $text['totalnames'] = "Osoby";
     $text['showallplaces'] = "Pokaż wszystkie miejsca";
     $text['totalplaces'] = "Miejsca";
@@ -928,8 +928,8 @@ $text['calendar'] = "Kalendarz";
 //changed in 9.0.0
 $text['directionsto'] = " do ";
 $text['slidestart'] = "Pokaz slajdów";
-$text['livingnote'] = "<font color=\"#FF0000\"><b>Dane osób żyjących ukryte. - Dostępne po zarejestrowaniu.</b></font>";
-$text['livingphoto'] = "<font color=\"#FF0000\"><b>Detale ukryte ponieważ przynajmniej jedna żyjąca osoba jest związana z tą informacj±. - Dostępne po zarejestrowaniu.</b></font>";
+$text['livingnote'] = "<span style=\"color: #f00; \"><b>Dane osób żyjących ukryte. - Dostępne po zarejestrowaniu.</b></span>";
+$text['livingphoto'] = "<span style=\"color: #f00; \"><b>Detale ukryte ponieważ przynajmniej jedna żyjąca osoba jest związana z tą informacj±. - Dostępne po zarejestrowaniu.</b></span>";
 $text['waschristened'] = "Chrzest";
 //added in 10.0.0
 $text['branches'] = "Gałęzie";

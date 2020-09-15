@@ -9,16 +9,16 @@ include $cms['tngpath'] . "checklogin.php";
 
 <html>
 <head>
-  <link href="genstyle.css" rel="stylesheet" type="text/css">
-  <link href="mytngstyle.css" rel="stylesheet" type="text/css">
+    <link href="genstyle.css" rel="stylesheet" type="text/css">
+    <link href="mytngstyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 <h1>Random Photo Block</h1>
 
 <p>This page displays a random photo from your database. You can move this functionality to any other TNG page
-  by copying the PHP code from this page to your destination.</p>
-<br clear="all">
+    by copying the PHP code from this page to your destination.</p>
+<br style="clear: both;">
 
 <?php
 //COPY EVERYTHING IN THIS BLOCK
@@ -29,14 +29,15 @@ $maxheight = "100";
 
 $showmedia_url = getURL("showmedia", 1);
 
+$query = "SELECT distinct media.mediaID, path, media.description, usecollfolder ";
+$query .= "FROM ($media_table media, $medialinks_table medialinks, $people_table people) ";
+$query .= "WHERE media.mediaID = medialinks.mediaID ";
 if ($tree) {
-  $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
+    $query .= "AND (media.gedcom = '$tree' || media.gedcom = '') ";
 }
-
-$query = "SELECT distinct $media_table.mediaID, path, $media_table.description, usecollfolder
-	FROM ($media_table, $medialinks_table, $people_table)
-	WHERE $media_table.mediaID = $medialinks_table.mediaID $wherestr AND $medialinks_table.gedcom = $people_table.gedcom AND $medialinks_table.personID = $people_table.personID AND mediatypeID = \"photos\" AND (living != '1' OR alwayson = '1')
-	ORDER BY RAND() LIMIT 1";
+$query .= "AND medialinks.gedcom = people.gedcom AND medialinks.personID = people.personID AND mediatypeID = 'photos' AND (living != '1' OR alwayson = '1') ";
+$query .= "ORDER BY RAND() ";
+$query .= "LIMIT 1";
 $result = tng_query($query);
 $imgrow = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -70,17 +71,17 @@ echo "<tr><td align=\"center\"><span class='normal'><a href=\"$showmedia_url" . 
 echo "</table>";
 ?>
 
-<br clear="all">
+<br style="clear: both;">
 <p>If you want to use this on a PHP page you created from scratch, you will need to include the PHP block
-  at the top of this page as well.</p>
+    at the top of this page as well.</p>
 
 <p>Notes:<br>
-  1) To simplify matters here, all photos attached to living individuals have been removed.
-  No check is done, however, to see if the photo is attached to a source cited for a living individual or
-  a family flagged as living.<br>
-  2) To restrict a photo to certain dimensions, fill in the "maxwidth" and/or "maxheight" variables in the code.
-  Please note that although this will resize the display dimensions, the file size and bandwidth requirements will
-  not be affected. If you want to show random thumbnails instead, change each occurence of "path" above to "thumbpath" (lines 31, 40 and 59).</p>
+    1) To simplify matters here, all photos attached to living individuals have been removed.
+    No check is done, however, to see if the photo is attached to a source cited for a living individual or
+    a family flagged as living.<br>
+    2) To restrict a photo to certain dimensions, fill in the "maxwidth" and/or "maxheight" variables in the code.
+    Please note that although this will resize the display dimensions, the file size and bandwidth requirements will
+    not be affected. If you want to show random thumbnails instead, change each occurence of "path" above to "thumbpath" (lines 31, 40 and 59).</p>
 
 </body>
 </html>

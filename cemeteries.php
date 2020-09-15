@@ -57,7 +57,8 @@ tng_header($text['cemeteriesheadstones'], $flags);
     }
 </script>
 
-<h2 class="header"><span class="headericon" id="cemeteries-hdr-icon"></span><?php echo $text['cemeteriesheadstones']; ?></h2><br clear="all">
+<h2 class="header"><span class="headericon" id="cemeteries-hdr-icon"></span><?php echo $text['cemeteriesheadstones']; ?></h2>
+<br style="clear: both;">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'cemeteries', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
@@ -179,7 +180,8 @@ if ($numhs) {
 
 echo "</div>\n";    //colx
 echo "</div>\n";    //container
-echo "</div>\n<br clear=\"all\">";    //wrapper
+echo "</div>\n";
+echo "<br style=\"clear: both;\">";    //wrapper
 
 tng_footer("");
 ?>

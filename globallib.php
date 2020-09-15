@@ -230,16 +230,13 @@ function getFORM($action, $method, $name, $id, $onsubmit = null) {
         $url = $action ? $cms['tngpath'] . $action . ".php" : "";
     } elseif (class_exists('TNGcms')) {
         return TNGcms::getFORM($action, $method, $name, $id, $cms);
-    } elseif ($cms['support'] == "joomla")  // backwards compatibility
-    {
+    } elseif ($cms['support'] == "joomla") { // backwards compatibility
         $url = "index.php";
-    } elseif ($cms['support'] == "zikula")  // backwards compatibility
-    {
+    } elseif ($cms['support'] == "zikula") { // backwards compatibility
         $url = "index.php";
-    } else {
+    } else { // backwards compatibility
         $url = "modules.php";
-    }          // backwards compatibility
-
+    }
     $url = $action ? $cms['tngpath'] . $action . ".php" : "";
     $formstr = "<form action=\"$url\"";
     if ($method) {

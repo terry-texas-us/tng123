@@ -1,13 +1,16 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Protection des donn�es</h3>
-    <p>Les propri�taires de ce site prennent tr�s au s�rieux la protection de vos donn�es personnelles. Nous traitons vos donn�es personnelles de mani�re confidentielle, conform�ment aux dispositions l�gales en mati�re de protection des donn�es et � la
-        pr�sente politique de protection des donn�es.</p>
+<h3>Protection des donn�es</h3>
+<p>Les propri�taires de ce site prennent tr�s au s�rieux la protection de vos donn�es personnelles. Nous traitons vos donn�es personnelles de mani�re
+    confidentielle, conform�ment aux dispositions l�gales en mati�re de protection des donn�es et � la
+    pr�sente politique de protection des donn�es.</p>
 
-    <p>L'utilisation de notre site Web est possible sans fournir de donn�es personnelles. Lorsque des renseignements personnels sont demand�s (par exemple, le nom et l'adresse courielle sur le formulaire de contact), le production de ces renseignements
-        rel�ve de votre libre arbitre et de votre responsabilit�. Ces donn�es ne seront pas transmises � d'autres personnes.</p>
+<p>L'utilisation de notre site Web est possible sans fournir de donn�es personnelles. Lorsque des renseignements personnels sont demand�s (par
+    exemple, le nom et l'adresse courielle sur le formulaire de contact), le production de ces renseignements
+    rel�ve de votre libre arbitre et de votre responsabilit�. Ces donn�es ne seront pas transmises � d'autres personnes.</p>
 
-    <p>Nous attirons votre attention sur le fait que l'envoi d'informations sur Internet peut �tre sujet � des probl�mes de s�curit�. Une protection compl�te des donn�es contre l'acc�s par des tiers pourrait ne pas �tre possible.</p>
+<p>Nous attirons votre attention sur le fait que l'envoi d'informations sur Internet peut �tre sujet � des probl�mes de s�curit�. Une protection
+    compl�te des donn�es contre l'acc�s par des tiers pourrait ne pas �tre possible.</p>
 
     <h3>Cookies</h3>
     <p>Ce site Web utilise des cookies. Les cookies n'endommagent pas votre ordinateur et ne contiennent pas de virus. Les cookies remplissent des fonctions importantes dans le fonctionnement de ce site. Les cookies sont de petits fichiers texte qui sont

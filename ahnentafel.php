@@ -197,8 +197,9 @@ echo "</form>\n";
                 tng_free_result($result2);
             }
         }
-        echo "</td></tr></table>";
-        echo "<br clear=\"all\"></li>\n</ol>\n";
+        echo "</td></tr>";
+        echo "</table>";
+        echo "<br style=\"clear: both;\"></li>\n</ol>\n";
 
 
         //push famc (family of parents) to nextgen
@@ -329,8 +330,9 @@ echo "</form>\n";
                                     }
                                     echo " [<a href=\"$familygroup_url" . "familyID=$nextfamily&amp;tree=$tree\">{$text['groupsheet']}</a>]</p>\n";
 
-                                    echo "</td></tr></table>";
-                                    echo "<br clear=\"all\"></li>\n";
+                                    echo "</td></tr>";
+                                    echo "</table>";
+                                    echo "<br style=\"clear: both;\"></li>\n";
                                 }
 
                                 echo "<li>";
@@ -397,8 +399,9 @@ echo "</form>\n";
                         echo "</ol>\n</td></tr></table>\n";
                         tng_free_result($result2);
                     }
-                    echo "</td></tr></table>";
-                    echo "<br clear=\"all\"></li>\n";
+                    echo "</td></tr>";
+                    echo "</table>";
+                    echo "<br style=\"clear: both;\"></li>\n";
                 }
             }
 

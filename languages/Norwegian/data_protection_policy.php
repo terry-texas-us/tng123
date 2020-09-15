@@ -1,13 +1,15 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Personvern</h3>
-    <p>Eieren av dette nettstedet tar personvernet ditt p� ytterste alvor. Vi behandler dine persondata konfidensielt og i samsvar med lovbestemte databeskyttelsesforskrifter og retningslinjene her p� siden.</p>
+<h3>Personvern</h3>
+<p>Eieren av dette nettstedet tar personvernet ditt p� ytterste alvor. Vi behandler dine persondata konfidensielt og i samsvar med lovbestemte
+    databeskyttelsesforskrifter og retningslinjene her p� siden.</p>
 
-    <p>Bruken av v�rt nettsted er mulig uten � gi personopplysninger. N�r det blir bedt om personlig informasjon (for eksempel navn og epost-adresse p� kontaktskjema; 'Ta kontakt'), er dette frivillig for deg. Disse dataene vil ikke sendes videre til
-        tredjepart.</p>
+<p>Bruken av v�rt nettsted er mulig uten � gi personopplysninger. N�r det blir bedt om personlig informasjon (for eksempel navn og epost-adresse p�
+    kontaktskjema; 'Ta kontakt'), er dette frivillig for deg. Disse dataene vil ikke sendes videre til
+    tredjepart.</p>
 
-    <p>Vi p�peker at sending av informasjon over Internett er underlagt sikkerhetsproblemer.
-        Fullstendig beskyttelse av dataene fra � f� tilgang til tredjeparter er ikke mulig.</p>
+<p>Vi p�peker at sending av informasjon over Internett er underlagt sikkerhetsproblemer.
+    Fullstendig beskyttelse av dataene fra � f� tilgang til tredjeparter er ikke mulig.</p>
 
     <h3>Informasjonskapsler ('Cookies')</h3>
     <p>Dette nettstedet bruker informasjonskapsler. Informasjonskapsler skader ikke datamaskinen din og inneholder ikke virus. Informasjonskapsler utf�rer viktige funksjoner

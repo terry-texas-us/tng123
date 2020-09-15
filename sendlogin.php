@@ -34,18 +34,18 @@ if ($email) {
 
     $div = "pwdmsg";
     if ($row['allow_profile']) {
-      $newpassword = generatePassword(0);
+        $newpassword = generatePassword(0);
         $query = "UPDATE $users_table SET password = '" . PasswordEncode($newpassword) . "', password_type = '" . PasswordType() . "' WHERE email = '$email' AND username = '$username' AND allow_living != '-1'";
         $result = tng_query($query);
-      $success = tng_affected_rows();
+        $success = tng_affected_rows();
 
-      if ($success) {
-        $sendmail = 1;
-        $content = $text['newpass'] . ": $newpassword";
-        $message = $text['pwdsent'];
-      } else {
-        $message = $text['loginnotsent3'];
-      }
+        if ($success) {
+            $sendmail = 1;
+            $content = $text['newpass'] . ": $newpassword";
+            $message = $text['pwdsent'];
+        } else {
+            $message = $text['loginnotsent3'];
+        }
     } else {
       $message = $text['loginnotsent'];
     }

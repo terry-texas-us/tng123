@@ -32,7 +32,7 @@ $search .= "<input type=\"submit\" name=\"search\" value=\"{$text['mnusearchforn
 $search .= "</div>\n";
 $search .= "<a href=\"searchform.php\">{$text['mnuadvancedsearch']}</a><br>\n";
 $search .= "<a href=\"surnames.php\">{$text['mnulastnames']}</a>\n";
-$search .= "<br clear=\"all\">\n";
+$search .= "<br style=\"clear: both;\">\n";
 $search .= "</form>\n";
 ?>
 

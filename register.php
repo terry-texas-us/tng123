@@ -202,8 +202,9 @@ echo "</form>\n";
                         tng_free_result($result2);
                     }
                 }
-                echo "</td></tr></table>";
-                echo "<br clear=\"all\"></li>\n";
+                echo "</td></tr>";
+                echo "</table>";
+                echo "<br style=\"clear: both;\"></li>\n";
             }
             $currgen = $nextgen;
             unset($nextgen);

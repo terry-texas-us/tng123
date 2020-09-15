@@ -1,14 +1,14 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Ochrana osobn�ch �daj�</h3>
-    <p>Majitel t�chto webov�ch str�nek pova�uje z�skan� osobn� a dal�� �daje za p��sn� d�v�rn�. P�i jejich zpracov�n� se ��d� v�emi p��slu�n�mi
-        z�konn�mi p�edpisy o ochran� osobn�ch �daj�.</p>
+<h3>Ochrana osobn�ch �daj�</h3>
+<p>Majitel t�chto webov�ch str�nek pova�uje z�skan� osobn� a dal�� �daje za p��sn� d�v�rn�. P�i jejich zpracov�n� se ��d� v�emi p��slu�n�mi
+    z�konn�mi p�edpisy o ochran� osobn�ch �daj�.</p>
 
-    <p>Vyu�it� t�chto internetov�ch str�nek je mo�n� bez poskytnut� osobn�ch �daj�. Pokud jsou po�adov�ny osobn� �daje (nap��klad jm�no a
-        e-mailov� adresa ve formul��i kontaktu), je to d�no dobrovoln�. Tyto �daje nebudou p�ed�ny t�et�m stran�m.</p>
+<p>Vyu�it� t�chto internetov�ch str�nek je mo�n� bez poskytnut� osobn�ch �daj�. Pokud jsou po�adov�ny osobn� �daje (nap��klad jm�no a
+    e-mailov� adresa ve formul��i kontaktu), je to d�no dobrovoln�. Tyto �daje nebudou p�ed�ny t�et�m stran�m.</p>
 
-    <p>Cht�li bychom zd�raznit, �e odes�l�n� informac� p�es internet je p�edm�tem bezpe�nostn�ch probl�m�.
-        �pln� ochrana �daj� p�ed p��stupem t�et�ch stran nen� mo�n�.</p>
+<p>Cht�li bychom zd�raznit, �e odes�l�n� informac� p�es internet je p�edm�tem bezpe�nostn�ch probl�m�.
+    �pln� ochrana �daj� p�ed p��stupem t�et�ch stran nen� mo�n�.</p>
 
     <h3>Cookies</h3>
     <p>Tyto internetov� str�nky pou��vaj� cookies. Cookies jsou mal� textov� soubory, kter� do va�eho po��ta�e ukl�d� v� prohl�e� internetu.

@@ -7,8 +7,8 @@ $flags['noicons'] = 0;
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 if ($sitever == "standard") {
   ?>
-  <br clear="all"><br>
-  <?php
+    <br style="clear: both;"><br>
+    <?php
 }
 ?>
 <div class="content-sidebar-wrap">
@@ -67,7 +67,7 @@ if ($sitever == "standard") {
                         <h2 class="entry-title"><a href="<?php echo $tmp['t15_featurelink4']; ?>"><?php echo getTemplateMessage('t15_featuretitle4'); ?></a></h2>
                     </header>
                   <?php echo getTemplateMessage('t15_featurepara4'); ?>
-                    <br clear="all">
+                    <br style="clear: both;">
                 </article>
                 <article class="post entry">
                     <a href="<?php echo $tmp['t15_featurelink5']; ?>" title="" class="alignleft"><img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t15_featurethumb5']; ?>" class="" alt="" height="100" width="100"></a>
@@ -75,7 +75,7 @@ if ($sitever == "standard") {
                         <h2 class="entry-title"><a href="<?php echo $tmp['t15_featurelink5']; ?>"><?php echo getTemplateMessage('t15_featuretitle5'); ?></a></h2>
                     </header>
                   <?php echo getTemplateMessage('t15_featurepara5'); ?>
-                    <br clear="all">
+                    <br style="clear: both;">
                 </article>
                 <article class="post entry">
                     <a href="<?php echo $tmp['t15_featurelink6']; ?>" title="" class="alignleft"><img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t15_featurethumb6']; ?>" class="" alt="" height="100" width="100"></a>
@@ -83,7 +83,7 @@ if ($sitever == "standard") {
                         <h2 class="entry-title"><a href="<?php echo $tmp['t15_featurelink6']; ?>"><?php echo getTemplateMessage('t15_featuretitle6'); ?></a></h2>
                     </header>
                   <?php echo getTemplateMessage('t15_featurepara6'); ?>
-                    <br clear="all">
+                    <br style="clear: both;">
                 </article>
             </div>
         </section>
@@ -107,7 +107,7 @@ if ($sitever == "standard") {
         </section>
     </aside>
 </div>
-<br clear="both">
+<br style="clear: both;">
 
 <?php
 echo tng_footer($flags);

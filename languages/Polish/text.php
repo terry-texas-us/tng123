@@ -450,7 +450,7 @@ switch ($textpart) {
     $text['allbeginningwith'] = "Wszystkie nazwiska zaczynaj�ce si� na";
     $text['numoccurrences'] = "liczba wyst�puj�cych w nawiasie";
     $text['placesstarting'] = "Zaczynaj od najwi�kszych miejsc";
-    $text['showmatchingplaces'] = "<font color='brown'><b>Kliknij na jedn� ze znalezionych pozycji, aby ograniczy� pole wyszukiwa�. Kliknij na ikon� lupki, aby zobaczy� szczeg�y.</b></font>";
+    $text['showmatchingplaces'] = "<span style=\"color: brown; \"><b>Kliknij na jedn� ze znalezionych pozycji, aby ograniczy� pole wyszukiwa�. Kliknij na ikon� lupki, aby zobaczy� szczeg�y.</b></span>";
     $text['totalnames'] = "wszystkie osoby";
     $text['showallplaces'] = "Poka� wszystkie miejsca";
     $text['totalplaces'] = "Wszystkie miejsca";
@@ -928,8 +928,8 @@ $text['calendar'] = "Kalendarz";
 //changed in 9.0.0
 $text['directionsto'] = " do ";
 $text['slidestart'] = "Pokaz slajd�w";
-$text['livingnote'] = "<font color=\"#FF0000\"><b>Dane os�b �yj�cych ukryte. - Dost�pne po zarejestrowaniu.</b></font>";
-$text['livingphoto'] = "<font color=\"#FF0000\"><b>Detale ukryte poniewa� przynajmniej jedna �yj�ca osoba jest zwi�zana z t� informacj�. - Dost�pne po zarejestrowaniu.</b></font>";
+$text['livingnote'] = "<span style=\"color: #f00; \"><b>Dane os�b �yj�cych ukryte. - Dost�pne po zarejestrowaniu.</b></span>";
+$text['livingphoto'] = "<span style=\"color: #f00; \"><b>Detale ukryte poniewa� przynajmniej jedna �yj�ca osoba jest zwi�zana z t� informacj�. - Dost�pne po zarejestrowaniu.</b></span>";
 $text['waschristened'] = "Chrzest";
 //added in 10.0.0
 $text['branches'] = "Ga��zie";

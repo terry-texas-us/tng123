@@ -21,7 +21,7 @@ $firstsectionsave = "";
 $tableid = "";
 $cellnumber = 0;
 
-$query = "SELECT * FROM $repositories_table WHERE repoID = \"$repoID\" AND gedcom = '$tree'";
+$query = "SELECT * FROM $repositories_table WHERE repoID = '$repoID' AND gedcom = '$tree'";
 $result = tng_query($query);
 $reporow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
@@ -119,13 +119,13 @@ if ($notes) {
     $repotext .= beginSection("notes");
     $repotext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $repotext .= "<col class=\"labelcol\"/><col/>\n";
-  $repotext .= "<tr>\n";
-  $repotext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
+    $repotext .= "<tr>\n";
+    $repotext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
     $repotext .= "<td valign=\"top\" class='databack'>$notes</td>\n";
     $repotext .= "</tr>\n";
-  $repotext .= "</table>\n";
-  $repotext .= "<br>\n";
-  $repotext .= endSection("notes");
+    $repotext .= "</table>\n";
+    $repotext .= "<br>\n";
+    $repotext .= endSection("notes");
 }
 $repotext .= "</ul>\n";
 

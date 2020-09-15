@@ -593,7 +593,7 @@ function getMapCoords($prevlevel) {
 
 function getLatLong($value, $negdir) {
     $value = strtoupper($value);
-    $neednegative = strpos($value, $negdir) !== false ? true : false;
+    $neednegative = strpos($value, $negdir) !== false;
     $value = preg_replace('/,/', '.', $value);
     $value = trim(preg_replace('/[^0-9. \-]+/', '', $value));
 

@@ -237,7 +237,8 @@ if ($map['key'] && $isConnected) {
 tng_header($headline, $flags);
 ?>
 
-    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h2><br clear="left">
+    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h2>
+    <br style="clear: left;">
 <?php
 $logstring = "<a href=\"" . $_SERVER['REQUEST_URI'] . "\">" . xmlcharacters($headline . " $querystring") . "</a>";
 writelog($logstring);

@@ -13,7 +13,8 @@ $maintenance_mode = true;
 tng_header($text['sitemaint'], $flags);
 ?>
 
-<h2 class="header"><?php echo $text['sitemaint']; ?></h2><br clear="all">
+<h2 class="header"><?php echo $text['sitemaint']; ?></h2>
+<br style="clear: both;">
 
 <?php
 echo tng_coreicons();

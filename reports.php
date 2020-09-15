@@ -16,7 +16,8 @@ preparebookmark($logstring);
 tng_header($text['reports'], $flags);
 ?>
 
-    <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo $text['reports']; ?></h2><br clear="left">
+    <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo $text['reports']; ?></h2>
+    <br style="clear: left;">
 <?php
 if (!$numrows) {
     echo $text['noreports'];

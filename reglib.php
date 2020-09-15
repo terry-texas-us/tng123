@@ -298,27 +298,27 @@ function getRegNotes($persfamID, $flag) {
     $precusttitles = array("MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']);
     $postcusttitles = array();
   } else {
-    $precusttitles = array("ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']);
-    $postcusttitles = array();
+      $precusttitles = array("ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']);
+      $postcusttitles = array();
   }
 
-  $query = "SELECT display, xnotes.note AS note, notelinks.eventID AS eventID, notelinks.ID AS ID ";
-  $query .= "FROM $notelinks_table notelinks ";
-  $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
-  $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
-  $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
+    $query = "SELECT display, xnotes.note AS note, notelinks.eventID AS eventID, notelinks.ID AS ID ";
+    $query .= "FROM $notelinks_table notelinks ";
+    $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
+    $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
+    $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
     $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" AND secret!='1' ";
     $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
-  $notelinks = tng_query($query);
+    $notelinks = tng_query($query);
 
-  $currevent = "";
-  $type = 0;
-  while ($note = tng_fetch_assoc($notelinks)) {
-    if (!$note['eventID']) {
-      $note['eventID'] = "--x-general-x--";
-    }
-    if ($note['eventID'] != $currevent) {
-      $currevent = $note['eventID'];
+    $currevent = "";
+    $type = 0;
+    while ($note = tng_fetch_assoc($notelinks)) {
+        if (!$note['eventID']) {
+            $note['eventID'] = "--x-general-x--";
+        }
+        if ($note['eventID'] != $currevent) {
+            $currevent = $note['eventID'];
       $currtitle = "";
     }
     if (!$currtitle) {

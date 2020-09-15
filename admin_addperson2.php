@@ -204,27 +204,27 @@ if ($result && tng_num_rows($result)) {
     }
 
     if ($row['birthdate']) {
-      $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
+        $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
     } else {
-      if ($row['altbirthdate']) {
-        $birthdate = $admtext['chrabbr'] . " " . $row['altbirthdate'];
-      } else {
-        $birthdate = "";
-      }
+        if ($row['altbirthdate']) {
+            $birthdate = $admtext['chrabbr'] . " " . $row['altbirthdate'];
+        } else {
+            $birthdate = "";
+        }
     }
 
-    $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
+      $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
       $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
       $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
       $rval .= "<td class=\"dragarea normal\">";
-    $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
-    $rval .= "</td>\n";
+      $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+      $rval .= "</td>\n";
       $rval .= "<td class='lightback normal childblock'>\n";
 
-    $name = getName($row);
-    $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
-    $rval .= "<a href=\"#\" onclick=\"EditChild('$personID');\">" . $name . "</a> - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
-    echo $rval;
+      $name = getName($row);
+      $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
+      $rval .= "<a href=\"#\" onclick=\"EditChild('$personID');\">" . $name . "</a> - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
+      echo $rval;
   } elseif ($type == "spouse") {
     $name = getName($row);
     $name = preg_replace("/\"/", "\\\"", $name);

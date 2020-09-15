@@ -159,7 +159,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br><br clear="left">
+            <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br>
+            <br style="clear: left;">
             <?php
             echo "<p class=\"smaller\" id=\"removedefault\"";
             if (!$photo) {

@@ -100,28 +100,25 @@ tng_adminheader($admtext['modifycemetery'], "");
         <tr class="fieldnameback">
             <td>
                 <img src="cemeteries_icon.gif" width="40" height="40" style="border-width=1px;border-style=solid;" align="right">
-                <span class="whiteheader"><font size="5"><?php echo $admtext['modifycemetery']; ?></font></span>
+                <span class="whiteheader" style="font-size: large; "><?php echo $admtext['modifycemetery']; ?></span>
             </td>
         </tr>
-        <?php
-        if ($message) {
-            ?>
+        <?php if ($message) { ?>
             <tr>
                 <td>
-                    <font color="#FF0000"><span class="normal"><em><?php echo urldecode($message); ?></em>
-	</span></font>
+                    <span class="normal" style="color: #f00;"><em><?php echo urldecode($message); ?></em></span>
                 </td>
             </tr>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <tr class="databack">
             <td>
                 <span class="subhead"><strong><?php echo $admtext['selectcemaction']; ?></strong>  | <a href="#"
                                                                                                         onclick="return openHelp('<?php echo $helplang; ?>/cemeteries_help.html#find', 'newwindow', 'height=500,width=600,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a></span><br><br>
                 <span class="normal">
-	&nbsp;&nbsp;<img src="img/tng_edit.gif" alt="<?php echo $admtext['edit']; ?>" width="16" height="16" align="middle"> = <?php echo $admtext['edit']; ?> &nbsp;&nbsp;
-	<img src="img/tng_delete.gif" alt="<?php echo $admtext['text_delete']; ?>" width="16" height="16" align="middle"> = <?php echo $admtext['text_delete']; ?>
+	&nbsp;&nbsp;<img src="img/tng_edit.gif" alt="<?php echo $admtext['edit']; ?>" width="16" height="16"
+                     align="middle"> = <?php echo $admtext['edit']; ?> &nbsp;&nbsp;
+	<img src="img/tng_delete.gif" alt="<?php echo $admtext['text_delete']; ?>" width="16" height="16"
+         align="middle"> = <?php echo $admtext['text_delete']; ?>
 	<br>
 <?php
 echo "<p>{$admtext['matches']}: $numrows</p>";

@@ -233,26 +233,26 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
             <input type="reset" class="btn cancel" value="<?php echo $admtext['cancelupl']; ?>">
           </div>
         </div>
-          <!-- The global progress information -->
-          <div class="span5 fileupload-progress fade">
-              <!-- The global progress bar -->
-              <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                  <div class="bar" style="width:0;"></div>
-              </div>
-              <!-- The extended global progress information -->
-              <div class="progress-extended">&nbsp;</div>
-          </div>
-          <br clear="all">
-          <!-- The loading indicator is shown during file processing -->
-          <div class="fileupload-loading"></div>
-          <br>
-          <div id="uploadarea">
-              <!-- The table listing the files available for upload/download -->
-          <table role="presentation" class="table table-striped normal">
-            <tbody class="files"></tbody>
-          </table>
-        </div>
-      </form>
+                <!-- The global progress information -->
+                <div class="span5 fileupload-progress fade">
+                    <!-- The global progress bar -->
+                    <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                        <div class="bar" style="width:0;"></div>
+                    </div>
+                    <!-- The extended global progress information -->
+                    <div class="progress-extended">&nbsp;</div>
+                </div>
+                <br style="clear: both;">
+                <!-- The loading indicator is shown during file processing -->
+                <div class="fileupload-loading"></div>
+                <br>
+                <div id="uploadarea">
+                    <!-- The table listing the files available for upload/download -->
+                    <table role="presentation" class="table table-striped normal">
+                        <tbody class="files"></tbody>
+                    </table>
+                </div>
+            </form>
 
       <br>
 

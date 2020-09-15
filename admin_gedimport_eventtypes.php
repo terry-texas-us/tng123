@@ -14,10 +14,10 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-if (!$allow_add || !$allow_add || !$allow_edit || $assignedbranch) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+if (!$allow_add || !$allow_edit || $assignedbranch) {
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 include $subroot . "importconfig.php";
@@ -29,35 +29,35 @@ $helplang = findhelp("data_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
+echo "</head>";
 ?>
-</head>
 
 <body background="img/background.gif">
 <?php
-$datatabs[0] = array(1, "admin_dataimport.php", $admtext['import'], "import");
-$datatabs[1] = array(1, "admin_export.php", $admtext['export'], "export");
-$datatabs[2] = array(1, "admin_secondmenu.php", $admtext['secondarymaint'], "second");
+$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
+$datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "import", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
 <div class="lightback pad2">
     <div class="databack normal pad5">
-      <?php
-      $pciteevents = array("NAME", "BIRT", "CHR", "SEX", "DEAT", "BURI", "BAPL", "CONL", "INIT", "ENDL", "SLGC", "NICK", "NSFX", "TITL", "CHAN", "NPFX", "NSFX", "FAMC", "FAMS", "OBJE", "IMAGE", "SOUR", "ASSO", "_LIVING");
-      $fciteevents = array("HUSB", "WIFE", "MARR", "DIV", "SLGS", "CHAN", "CHIL", "OBJE", "SOUR", "ASSO", "_LIVING");
-      $sciteevents = array("ABBR", "AUTH", "CALN", "PUBL", "TITL", "CHAN", "DATA", "TEXT", "OBJE", "REPO");
-      $rciteevents = array("NAME", "ADDR", "CHAN", "OBJE");
+        <?php
+        $pciteevents = ["NAME", "BIRT", "CHR", "SEX", "DEAT", "BURI", "BAPL", "CONL", "INIT", "ENDL", "SLGC", "NICK", "NSFX", "TITL", "CHAN", "NPFX", "NSFX", "FAMC", "FAMS", "OBJE", "IMAGE", "SOUR", "ASSO", "_LIVING"];
+        $fciteevents = ["HUSB", "WIFE", "MARR", "DIV", "SLGS", "CHAN", "CHIL", "OBJE", "SOUR", "ASSO", "_LIVING"];
+        $sciteevents = ["ABBR", "AUTH", "CALN", "PUBL", "TITL", "CHAN", "DATA", "TEXT", "OBJE", "REPO"];
+        $rciteevents = ["NAME", "ADDR", "CHAN", "OBJE"];
 
-      @set_time_limit(0);
-      if ($remotefile && $remotefile != "none") {
-        $fp = @fopen($remotefile, "r");
-        if ($fp === false) {
-          die ($admtext['cannotopen'] . " $remotefile");
-        }
-        echo "$remotefile {$admtext['opened']}<br>\n";
-        $savestate['filename'] = $remotefile;
-      } else {
+        @set_time_limit(0);
+        if ($remotefile && $remotefile != "none") {
+            $fp = @fopen($remotefile, "r");
+            if ($fp === false) {
+                die ($admtext['cannotopen'] . " $remotefile");
+            }
+            echo "$remotefile {$admtext['opened']}<br>\n";
+            $savestate['filename'] = $remotefile;
+        } else {
         if ($database) {
           $localfile = $gedpath == "admin" || $gedpath == "" ? $database : "$rootpath$gedpath/$database";
           $fp = @fopen($localfile, "r");

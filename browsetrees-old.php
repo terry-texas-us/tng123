@@ -55,9 +55,9 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
   $query = "SELECT count(gedcom) AS treecount FROM $trees_table";
   $result2 = tng_query($query);
   $countrow = tng_fetch_assoc($result2);
-  $totrows = $countrow['treecount'];
+    $totrows = $countrow['treecount'];
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $numrowsplus = $numrows + $offset;
@@ -65,7 +65,8 @@ $numrowsplus = $numrows + $offset;
 tng_header($text['browsealltrees'], $flags);
 ?>
 
-<span class="header"><?php echo $text['browsealltrees']; ?></span><br clear="all">
+<span class="header"><?php echo $text['browsealltrees']; ?></span>
+<br style="clear: both;">
 
 <?php
 if ($totrows) {

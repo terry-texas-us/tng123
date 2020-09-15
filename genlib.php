@@ -401,7 +401,7 @@ function tng_DrawHeading($photostr, $namestr, $years) {
             $outputstr .= "<span class='normal'>$years</span><br>\n";
         }
     }
-    $outputstr .= "<br clear=\"all\"><br>\n";
+    $outputstr .= "<br style=\"clear: both;\"><br>\n";
     if (empty($tngconfig['webmatches'])) {
         echo "<div id=\"mhmatches\"></div>\n";
     }

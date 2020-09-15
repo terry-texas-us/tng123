@@ -65,7 +65,7 @@ switch ($textpart) {
     $admtext['maptoupload'] = "Zdjęcie cmentarza do załadowania";
     $admtext['mapfilenamefolder'] = "Nazwa pliku cmentarza<br>w folderze Cmentarze";
     $admtext['ifmapuploaded'] = "Jeśli ten plik znajduje się już w folderze cmentarze, pozostaw to pole wolne.";
-    $admtext['requiredmap'] = "Wymagane jeśli używasz mapy.<br> Powinno odpowiadać nazwie i lokalizacji Twojego pliku w folderze <em><font color=\"#0000ff\" size=\"2\"> nagrobków </font></em>, jeśli plik  jest załadowany. <br>Na przykład: jeśli Twój folder nagrobków nazwany jest <em><font color=\"#0000ff\" size=\"2\">nagrobki</font> </em> i chcesz, by Twój plik został nazwany <b><em><font color=\"#ff00ff\" size=\"2\"> mapa.jpg</font> </em></b> <br>i miał zostać wprowadzony do podfoldera <font color=\"#0000ff\" size=\"2\">nagrobków</font> nazwanego <em><font color=\"#ff00ff\" size=\"2\"> <b>mymaps</b></font></em>,<br> wpisz w tym polu <b><em><font color=\"#ff00ff\" size=\"2\"> mymaps/mapa.jpg</font> </em></b>.";
+      $admtext['requiredmap'] = "Wymagane jeśli używasz mapy.<br> Powinno odpowiadać nazwie i lokalizacji Twojego pliku w folderze <em><font color=\"#00f\" size=\"2\"> nagrobków </font></em>, jeśli plik  jest załadowany. <br>Na przykład: jeśli Twój folder nagrobków nazwany jest <em><font color=\"#00f\" size=\"2\">nagrobki</font> </em> i chcesz, by Twój plik został nazwany <b><em><font color=\"#f0f\" size=\"2\"> mapa.jpg</font> </em></b> <br>i miał zostać wprowadzony do podfoldera <font color=\"#00f\" size=\"2\">nagrobków</font> nazwanego <em><font color=\"#f0f\" size=\"2\"> <b>mymaps</b></font></em>,<br> wpisz w tym polu <b><em><font color=\"#f0f\" size=\"2\"> mymaps/mapa.jpg</font> </em></b>.";
     //added in 8.0.0
     $admtext['linkplace'] = "Miejsce linkowane";
     $admtext['fillplace'] = "Wypełnij Miejsce";
@@ -439,7 +439,7 @@ switch ($textpart) {
     $admtext['defphotonote'] = " Miniaturka tego zdjęcia identyfikuje osobę, rodzinę lub źródło w drzewach i zestawieniach.";
     $admtext['photonotadded'] = "Ten element nie może zostać dodany, ponieważ w tej kolekcji istnieje już taki zapis.";
     $admtext['requiredphoto'] = "Wymagane. Musi być zgodne ze ścieżką i nazwą pliku <em>w folderze kolekcji</em>. Jeżeli Twój folder zdjęć nazywa się  <em><font color=\"#0000ff\" size=\"2\">Zdjecia</font></em> a plik <em><font color=\"#ff00ff\" size=\"2\"> <strong>mojezdjecie.jpg</strong></font></em> ma zostac zapisany w folderze podrzednym nazwanym <em><font color=\"#0000ff\" size=\"2\">NoweZdjecia</font></em>, wpisz w tym polu <em><font color=\"#ff00ff\" size=\"2\"> <strong>nowezdjecia/mojezdjecie.jpg</strong></font></em>.";
-    $admtext['leaveblankphoto'] = "Jeśli ten plik znajduje się już w folderze <em><font color=\"#ff00ff\" size=\"2\">Zdjęcia</font></em>, pozostaw to pole wolne.";
+    $admtext['leaveblankphoto'] = "Jeśli ten plik znajduje się już w folderze <em><span  style=\"color: #f0f; font-size: x-small; \">Zdjęcia</span></em>, pozostaw to pole wolne.";
     $admtext['thumbconflicts'] = "Nie można wygenerować miniaturki z powodu problemu dot. łącza, uprawnień, wielkości lub formatu zdjęcia";
   $admtext['showmap'] = "Pokaż mapę cmentarza i media za każdym razem, kiedy ta pozycja zostanie wybrana";
   $admtext['bodytext'] = "<strong>ALBO</strong><br>Tekst główny";

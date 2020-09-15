@@ -22,7 +22,7 @@ if ($cetaction == $admtext['ignoreselected']) {
     $query = "UPDATE $eventtypes_table SET keep='1' WHERE 1=0";
   } else {
     if ($cetaction == $admtext['collapseselected']) {
-        $query = "UPDATE $eventtypes_table SET collapse='1' WHERE 1=0";
+      $query = "UPDATE $eventtypes_table SET collapse='1' WHERE 1=0";
     } else {
       if ($cetaction == $admtext['expselected']) {
         $query = "UPDATE $eventtypes_table SET collapse=\"0\" WHERE 1=0";

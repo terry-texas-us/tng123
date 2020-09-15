@@ -22,9 +22,9 @@ $repoID = ucfirst($repoID);
 $treerow = getTree($trees_table, $tree);
 
 $query = "SELECT reponame, changedby, repositories.addressID, address1, address2, city, state, zip, country, phone, email, www, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
-$query .= "FROM $repositories_table repositories";
+$query .= "FROM $repositories_table repositories ";
 $query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
-$query .= "WHERE repoID = \"$repoID\" AND repositories.gedcom = \"$tree\"";
+$query .= "WHERE repoID = '$repoID' AND repositories.gedcom = \"$tree\"";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -32,7 +32,7 @@ $row['reponame'] = preg_replace("/\"/", "&#34;", $row['reponame']);
 
 $row['allow_living'] = 1;
 
-$query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfamID=\"$repoID\" AND gedcom ='$tree'";
+$query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfamID='$repoID' AND gedcom ='$tree'";
 $notelinks = tng_query($query);
 $gotnotes = array();
 while ($note = tng_fetch_assoc($notelinks)) {
@@ -83,19 +83,20 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                         <td valign="top">
                             <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                                 echo "display:none";
-                            } ?>"><?php echo $photo; ?></div>
+                            } ?>"><?php echo $photo; ?>
+                            </div>
                         </td>
                         <td>
-				<span class="plainheader"><?php echo $row['reponame'] . " ($repoID)</span>"; ?>
-				<div class="topbuffer bottombuffer smallest">
-<?php
-$notesicon = "img/" . ($gotnotes['general'] ? "tng_anote_on.gif" : "tng_anote.gif");
-echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-echo "<a href=\"#\" onclick=\"return showNotes('', '$repoID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
-?>
-                <br clear="all">
-				</div>
-				<span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+                            <span class="plainheader"><?php echo $row['reponame'] . " ($repoID)</span>"; ?>
+                            <div class="topbuffer bottombuffer smallest">
+                                <?php
+                                $notesicon = "img/" . ($gotnotes['general'] ? "tng_anote_on.gif" : "tng_anote.gif");
+                                echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+                                echo "<a href=\"#\" onclick=\"return showNotes('', '$repoID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+                                ?>
+                                <br style="clear: both;">
+                            </div>
+                            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
@@ -108,50 +109,72 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$repoID');\" id=\"notesicon\
                         <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
                             <?php echo $treerow['treename']; ?>
-                            &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img src="img/ArrowDown.gif"
-                                                                                                                                                 style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
+                            &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img
+                                        src="img/ArrowDown.gif"
+                                        style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
                             </a> )
                         </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['name']; ?>:</td>
-                        <td><input type="text" name="reponame" size="40" value="<?php echo $row['reponame']; ?>"> (<?php echo $admtext['required']; ?>)</td>
+                        <td>
+                            <input type="text" name="reponame" size="40" value="<?php echo $row['reponame']; ?>">
+                            (<?php echo $admtext['required']; ?>)
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['address1']; ?>:</td>
-                        <td><input type="text" name="address1" size="50" value="<?php echo $row['address1']; ?>"></td>
+                        <td>
+                            <input type="text" name="address1" size="50" value="<?php echo $row['address1']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['address2']; ?>:</td>
-                        <td><input type="text" name="address2" size="50" value="<?php echo $row['address2']; ?>"></td>
+                        <td>
+                            <input type="text" name="address2" size="50" value="<?php echo $row['address2']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['city']; ?>:</td>
-                        <td><input type="text" name="city" size="50" value="<?php echo $row['city']; ?>"></td>
+                        <td>
+                            <input type="text" name="city" size="50" value="<?php echo $row['city']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['stateprov']; ?>:</td>
-                        <td><input type="text" name="state" size="50" value="<?php echo $row['state']; ?>"></td>
+                        <td>
+                            <input type="text" name="state" size="50" value="<?php echo $row['state']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['zip']; ?>:</td>
-                        <td><input type="text" name="zip" size="20" value="<?php echo $row['zip']; ?>"></td>
+                        <td>
+                            <input type="text" name="zip" size="20" value="<?php echo $row['zip']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['countryaddr']; ?>:</td>
-                        <td><input type="text" name="country" size="50" value="<?php echo $row['country']; ?>"></td>
+                        <td>
+                            <input type="text" name="country" size="50" value="<?php echo $row['country']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['phone']; ?>:</td>
-                        <td><input type="text" name="phone" size="30" value="<?php echo $row['phone']; ?>"></td>
+                        <td>
+                            <input type="text" name="phone" size="30" value="<?php echo $row['phone']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['email']; ?>:</td>
-                        <td><input type="text" name="email" size="50" value="<?php echo $row['email']; ?>"></td>
+                        <td>
+                            <input type="text" name="email" size="50" value="<?php echo $row['email']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['website']; ?>:</td>
-                        <td><input type="text" name="www" size="50" value="<?php echo $row['www']; ?>"></td>
+                        <td>
+                            <input type="text" name="www" size="50" value="<?php echo $row['www']; ?>">
+                        </td>
                     </tr>
                 </table>
                 <br>

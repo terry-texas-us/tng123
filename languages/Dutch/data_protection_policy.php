@@ -1,13 +1,16 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Gegevensbescherming</h3>
-    <p>De eigenaren van deze site nemen het beveiligen van uw persoonlijke gegevens heel serieus. We doen er alles aan om ervoor te zorgen dat uw persoonlijke gegevens bij ons veilig zijn volgens de richtlijnen van de Algemene Verordening
-        Gegevensbescherming.</p>
+<h3>Gegevensbescherming</h3>
+<p>De eigenaren van deze site nemen het beveiligen van uw persoonlijke gegevens heel serieus. We doen er alles aan om ervoor te zorgen dat uw
+    persoonlijke gegevens bij ons veilig zijn volgens de richtlijnen van de Algemene Verordening
+    Gegevensbescherming.</p>
 
-    <p>Gebruik van onze website is mogelijk zonder dat er persoonlijke gegevens worden gevraagd. Wanneer dat wel gebeurt (bijvoorbeeld naam en email adres op het contact formulier), dan is dat vrijwillig. Deze gegevens zullen nooit aan derden worden
-        overhandigd.</p>
+<p>Gebruik van onze website is mogelijk zonder dat er persoonlijke gegevens worden gevraagd. Wanneer dat wel gebeurt (bijvoorbeeld naam en email adres
+    op het contact formulier), dan is dat vrijwillig. Deze gegevens zullen nooit aan derden worden
+    overhandigd.</p>
 
-    <p>We maken u erop attent dat het versturen van informatie over het internet altijd veiligheidsrisico's in zich draagt. Absolute zekerheid dat deze data niet voor derden toegankelijk zijn, is niet te geven.</p>
+<p>We maken u erop attent dat het versturen van informatie over het internet altijd veiligheidsrisico's in zich draagt. Absolute zekerheid dat deze
+    data niet voor derden toegankelijk zijn, is niet te geven.</p>
 
     <h3>Cookies</h3>
     <p>Deze website gebruikt cookies. Cookies zijn niet schadelijk voor uw computer en bevatten geen virussen. Cookies vervullen een belangrijke rol voor het juiste gebruik van deze website. Cookies zijn kleine tekst bestanden die op de computer worden

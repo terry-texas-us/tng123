@@ -488,22 +488,22 @@ foreach ($keeparray as $timeentry) {
   if ($timeentry['personID'] == $primaryID && $timeentry['tree'] == $tree) {
     echo "&nbsp;";
   } else {
-      echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value='1'>\n";
+    echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value='1'>\n";
   }
-  echo "</div>\n";
+    echo "</div>\n";
 
-  echo "<div id=\"bar$numlines\"  class=\"tlbar\" style=\"top:$top" . "px;left:$spanleft" . "px;width:$spanwidth" . "px;\" onmouse{$pedigree['event']}=\"setTimerShow($numlines,'{$pedigree['event']}');\" onmouseout=\"setTimerHide($numlines)\">\n";
+    echo "<div id=\"bar$numlines\"  class=\"tlbar\" style=\"top:$top" . "px;left:$spanleft" . "px;width:$spanwidth" . "px;\" onmouse{$pedigree['event']}=\"setTimerShow($numlines,'{$pedigree['event']}');\" onmouseout=\"setTimerHide($numlines)\">\n";
     echo "<table cellspacing=\"0\" cellpadding=\"0\">";
     echo "<tr><td class=\"nw\"><span class='normal'>{$timeentry['name']}</span></td></tr>";
     echo "<tr><td><div class=\"fieldnameback\" style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
-  echo "</table>\n";
-  echo "</div>\n";
+    echo "</table>\n";
+    echo "</div>\n";
 
     echo "<div id=\"popup$numlines\" class=\"popup\" style=\"background-color:{$pedigree['popupcolor']}; top:" . ($top + 25) . "px; left:" . ($spanleft - 5) . "px;\" onmouseover=\"cancelTimer($numlines)\" onmouseout=\"setTimer($numlines)\">\n";
     echo "<table class=\"popuptable\" style=\"border-color: {$pedigree['bordercolor']};\" cellpadding='1' cellspacing=\"0\"><tr><td>\n";
 
-  $eventinfo = getEvents($timeentry);
-  echo "$eventinfo</td></tr></table></div>\n";
+    $eventinfo = getEvents($timeentry);
+    echo "$eventinfo</td></tr></table></div>\n";
 }
 if ($highestll == 1) {
   echo "<br><br>";

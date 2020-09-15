@@ -130,8 +130,8 @@ if ($orgmediatypeID) {
     $icon = "<span class='headericon' id=\"media-hdr-icon\"></span>";
 }
 ?>
-
-    <h2 class="header"><?php echo $icon . $titlestr; ?></h2><br clear="all">
+    <h2 class="header"><?php echo $icon . $titlestr; ?></h2>
+    <br style="clear: both;">
 <?php
 $hiddenfields[0] = ['name' => 'mediatypeID', 'value' => $orgmediatypeID];
 $hiddenfields[1] = ['name' => 'tnggallery', 'value' => $tnggallery];

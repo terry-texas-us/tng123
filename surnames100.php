@@ -16,30 +16,25 @@ preparebookmark($logstring);
 
 tng_header($text['surnamelist'] . ": {$text['top30']}", $flags);
 ?>
-
-    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['top30']}"; ?></h2><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['top30']}"; ?></h2>
+    <br class="clearleft">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames100', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
-$formstr = getFORM("surnames100", "get", "", "");
-echo $formstr;
+echo getFORM("surnames100", "get", "", "");
 ?>
     <div class="titlebox">
         <?php echo $text['showtop']; ?>&nbsp;
         <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="4" maxlength="4"> <?php echo $text['byoccurrence']; ?>&nbsp;
         <input type="submit" value="<?php echo $text['go']; ?>">
     </div>
-    </form>
+<?php echo "</form>"; ?>
     <br>
 
     <div class="titlebox">
         <h3 class="subhead"><?php echo "{$text['top30']} ({$text['totalnames']}):"; ?></h3>
         <p class="smaller"><?php echo $text['showmatchingsurnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$surnames_url" . "tree=$tree\">{$text['mainsurnamepage']}</a> &nbsp;|&nbsp; <a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a>"; ?></p>
-        <?php
-        include $cms['tngpath'] . "surnamestable.php";
-        ?>
+        <?php include $cms['tngpath'] . "surnamestable.php"; ?>
     </div>
     <br>
-<?php
-tng_footer("");
-?>
+<?php tng_footer(""); ?>

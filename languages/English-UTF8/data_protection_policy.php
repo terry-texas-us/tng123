@@ -1,14 +1,14 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Data protection</h3>
-    <p>The owners of this site take the protection of your personal data very seriously. We treat your personal data confidentially and
-        in accordance with the statutory data protection regulations and this privacy policy.</p>
+<h3>Data protection</h3>
+<p>The owners of this site take the protection of your personal data very seriously. We treat your personal data confidentially and
+    in accordance with the statutory data protection regulations and this privacy policy.</p>
 
-    <p>The use of our website is possible without providing personal data. When personal information is requested (for example, name and
-        email address on the contact form), this is given voluntarily. This data will not be passed on to third parties.</p>
+<p>The use of our website is possible without providing personal data. When personal information is requested (for example, name and
+    email address on the contact form), this is given voluntarily. This data will not be passed on to third parties.</p>
 
-    <p>We point out that sending information over the Internet is subject to security issues.
-        Complete protection of the data from being accessed by third parties is not possible.</p>
+<p>We point out that sending information over the Internet is subject to security issues.
+    Complete protection of the data from being accessed by third parties is not possible.</p>
 
     <h3>Cookies</h3>
     <p>This website use cookies. Cookies do not harm your computer and do not contain viruses. Cookies perform important functions

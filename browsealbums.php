@@ -76,7 +76,8 @@ preparebookmark($logstring);
 tng_header($text['albums'], $flags);
 ?>
 
-    <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h2><br clear="all">
+    <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h2>
+    <br style="clear: both;">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsealbums', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 

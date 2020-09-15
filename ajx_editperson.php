@@ -101,7 +101,7 @@ include_once "eventlib.php";
                                     echo "<a href=\"#\" onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
                                 }
                                 ?>
-                                <br clear="all">
+                                <br style="clear: both;">
 				            </div>
 				            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>

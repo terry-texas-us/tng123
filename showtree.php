@@ -6,14 +6,14 @@ $showtree_url = getURL("showtree", 1);
 $statistics_url = getURL("statistics", 0);
 
 function showFact($text, $fact, $numflag = 0) {
-  echo "<tr>\n";
-  echo "<td valign=\"top\" class=\"fieldnameback\" nowrap><span class=\"fieldname\">" . $text . "&nbsp;</span></td>\n";
+    echo "<tr>\n";
+    echo "<td valign=\"top\" class=\"fieldnameback\" nowrap><span class=\"fieldname\">" . $text . "&nbsp;</span></td>\n";
     echo "<td valign=\"top\" colspan=\"2\" class='databack'";
     echo $numflag ? " align=\"right\"" : "";
-  echo ">";
-  echo $numflag ? number_format($fact) : $fact;
-  echo "&nbsp;</td>\n";
-  echo "</tr>\n";
+    echo ">";
+    echo $numflag ? number_format($fact) : $fact;
+    echo "&nbsp;</td>\n";
+    echo "</tr>\n";
 }
 
 $query = "SELECT count(personID) AS pcount, trees.gedcom, treename, description, owner, secret, address, email, city, state, zip, country, phone ";
@@ -32,7 +32,8 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($text['tree'] . ": " . $row['treename'], $flags);
 ?>
 
-    <h2 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h2><br clear="all">
+    <h2 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h2>
+    <br style="clear: both;">
 
     <table cellspacing="1" cellpadding="4" class="whiteback normal">
         <?php
@@ -43,53 +44,53 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
             showFact($text['description'], $row['description']);
         }
 
-      showFact($text['individuals'], $row['pcount'], true);
+        showFact($text['individuals'], $row['pcount'], true);
 
-      $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
-      $famresult = tng_query($query);
-      $famrow = tng_fetch_assoc($famresult);
-      tng_free_result($famresult);
-      showFact($text['families'], $famrow['fcount'], true);
+        $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
+        $famresult = tng_query($query);
+        $famrow = tng_fetch_assoc($famresult);
+        tng_free_result($famresult);
+        showFact($text['families'], $famrow['fcount'], true);
 
-      $query = "SELECT count(sourceID) AS scount FROM $sources_table WHERE gedcom = \"{$row['gedcom']}\"";
-      $srcresult = tng_query($query);
-      $srcrow = tng_fetch_assoc($srcresult);
-      tng_free_result($srcresult);
-      showFact($text['sources'], $srcrow['scount'], true);
+        $query = "SELECT count(sourceID) AS scount FROM $sources_table WHERE gedcom = \"{$row['gedcom']}\"";
+        $srcresult = tng_query($query);
+        $srcrow = tng_fetch_assoc($srcresult);
+        tng_free_result($srcresult);
+        showFact($text['sources'], $srcrow['scount'], true);
 
-      if (!$row['secret']) {
-        if ($row['owner']) {
-          showFact($text['owner'], $row['owner']);
+        if (!$row['secret']) {
+            if ($row['owner']) {
+                showFact($text['owner'], $row['owner']);
+            }
+            if ($row['address']) {
+                showFact($text['address'], $row['address']);
+            }
+            if ($row['city']) {
+                showFact($text['city'], $row['city']);
+            }
+            if ($row['state']) {
+                showFact($text['state'], $row['state']);
+            }
+            if ($row['zip']) {
+                showFact($text['zip'], $row['zip']);
+            }
+            if ($row['country']) {
+                showFact($text['country'], $row['country']);
+            }
+            if ($row['email']) {
+                showFact($text['email'], "<a href=\"mailto:{$row['email']}\">{$row['email']}</a>");
+            }
+            if ($row['phone']) {
+                showFact($text['phone'], $row['phone']);
+            }
         }
-        if ($row['address']) {
-          showFact($text['address'], $row['address']);
-        }
-        if ($row['city']) {
-          showFact($text['city'], $row['city']);
-        }
-        if ($row['state']) {
-          showFact($text['state'], $row['state']);
-        }
-        if ($row['zip']) {
-          showFact($text['zip'], $row['zip']);
-        }
-        if ($row['country']) {
-          showFact($text['country'], $row['country']);
-        }
-        if ($row['email']) {
-          showFact($text['email'], "<a href=\"mailto:{$row['email']}\">{$row['email']}</a>");
-        }
-        if ($row['phone']) {
-          showFact($text['phone'], $row['phone']);
-        }
-      }
-      ?>
+        ?>
     </table>
-  <br>
+    <br>
 <?php
 echo "<a href=\"$statistics_url\">{$text['morestats']}</a>\n";
 ?>
-  <br><br>
+    <br><br>
 
 <?php
 tng_footer("");

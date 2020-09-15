@@ -175,22 +175,30 @@ echo help_header("Nápověda: Manažer módů");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a name="batch"><p class="subheadbold">Dávkové operace</p></a>
 
-            <p>Funkce Dávkové operace, v TNG 10.0.3 představená jako Dávkové instalace, je nyní součástí Seznamu módů a umožní provést specifické akce týkající se více módů pomocí výběru filtru.
-                Z filtru seznamu stavů musíte vybrat požadovaný stav a kliknutím na <strong>Provést</strong> zobrazíte dostupná ovládací tlačítka pro vybraný stav.
+            <p>Funkce Dávkové operace, v TNG 10.0.3 představená jako Dávkové instalace, je nyní součástí Seznamu módů a umožní provést specifické akce
+                týkající se více módů pomocí výběru filtru.
+                Z filtru seznamu stavů musíte vybrat požadovaný stav a kliknutím na <strong>Provést</strong> zobrazíte dostupná ovládací tlačítka pro
+                vybraný stav.
 
-                Akce <strong>Vymazat</strong> je k dispozici pouze pro stav Částečně nainstalováno, pokud povolíte příslušnou předvolbu. Doporučujeme ji nastavit na Ne, kromě případů, kdy je potřeba vymazat více módů ve stavu
-                Částečně nainstalováno, jako např. předchozí verze téhož módu. Stejně tak je zde možnost Vymazat instalované módy, která umožní vymazání nainstalovaných módů, aniž byste je nejprve odinstalovali. Tato možnost byla přidána,
-                aby bylo možné vymazat předchozí verze téhož módu, pokud jste je zapomněli vymazat před instalací nové verze. Zde opět doporučujeme ponechat možnost jako Ne a povolit ji jen v případě potřeby.
+                Akce <strong>Vymazat</strong> je k dispozici pouze pro stav Částečně nainstalováno, pokud povolíte příslušnou předvolbu. Doporučujeme
+                ji nastavit na Ne, kromě případů, kdy je potřeba vymazat více módů ve stavu
+                Částečně nainstalováno, jako např. předchozí verze téhož módu. Stejně tak je zde možnost Vymazat instalované módy, která umožní
+                vymazání nainstalovaných módů, aniž byste je nejprve odinstalovali. Tato možnost byla přidána,
+                aby bylo možné vymazat předchozí verze téhož módu, pokud jste je zapomněli vymazat před instalací nové verze. Zde opět doporučujeme
+                ponechat možnost jako Ne a povolit ji jen v případě potřeby.
                 Tlačítko <strong>Vymazat</strong> se zobrazí pouze v seznamu Vybrat, pokud jsou povoleny oba možnosti vymazání.
             </p>
 
-            <p><strong><font color="red">Upozornění: Dávkové operace používejte pouze tehdy, pokud máte zálohu vašich webových stránek a můžete je snadno obnovit v případě, že vlivem dávkových operací dojde k poškození vašich stránek, což se může snadno
-                        stát, pokud nevymažete předchozí verze módů.</font>
-                    Je doporučeno Před provedením aktualizace TNG doporučujeme odinstalovat všechny nainstalované módy a poté vyčistit všechny částečně nainstalované módy.</strong></p>
+            <p><strong><span style="color: red; ">Upozornění: Dávkové operace používejte pouze tehdy, pokud máte zálohu vašich webových stránek a můžete je snadno obnovit v případě, že vlivem dávkových operací dojde k poškození vašich stránek, což se může snadno
+                        stát, pokud nevymažete předchozí verze módů.</span>
+                    Je doporučeno Před provedením aktualizace TNG doporučujeme odinstalovat všechny nainstalované módy a poté vyčistit všechny
+                    částečně nainstalované módy.</strong></p>
 
             <p>Možnosti výběrového filtru jsou tyto:
             <ul>
-                <li><strong>Vše</strong> - zobrazí se úplný seznam všech souborů .cfg ze složky mods. Pokud zvolíte určitý stav, objeví se dostupná tlačítka jednotlivých akcí</li>
+                <li><strong>Vše</strong> - zobrazí se úplný seznam všech souborů .cfg ze složky mods. Pokud zvolíte určitý stav, objeví se dostupná
+                    tlačítka jednotlivých akcí
+                </li>
                 <li><strong>Lze nainstalovat</strong> - zobrazí se seznam všech módů, které mohou být</li>
                 <ul>
                     <li>Nainstalovány - na základě vašeho výběru a kliknutím na tlačítko <strong>Instalovat</strong></li>

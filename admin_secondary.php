@@ -392,32 +392,32 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         echo "<br><br>{$admtext['finished']}<br>$changedToDeceased {$admtext['chtodeceased']}, $changedToLiving {$admtext['chtoliving']}.";
       } elseif ($secaction == $admtext['makeprivate']) {
         if ($tngimpcfg['maxprivyrs']) {
-          $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
+            $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
 
-          if ($tree != "--all--") {
-            $wherestr = "AND gedcom = \"$tree\"";
-          }
+            if ($tree != "--all--") {
+                $wherestr = "AND gedcom = \"$tree\"";
+            }
 
             $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != '1' AND living != '1' $wherestr";
             $result = tng_query($query);
 
-          $today = date('Y');
+            $today = date('Y');
 
-          while ($row = tng_fetch_assoc($result)) {
-            $death = $row['deathdatetr'] != "0000-00-00" ? $row['deathdatetr'] : $row['burialdatetr'];
-            $private = 0;
-            $counted++;
+            while ($row = tng_fetch_assoc($result)) {
+                $death = $row['deathdatetr'] != "0000-00-00" ? $row['deathdatetr'] : $row['burialdatetr'];
+                $private = 0;
+                $counted++;
 
-            //if death is blank, skip
-            if (!$row['private'] && $death != "0000-00-00" && strtotime("-{$tngimpcfg['maxprivyrs']} years") < strtotime($death)) {
-                $query2 = "UPDATE $people_table SET private = '1' WHERE ID = \"{$row['ID']}\"";
-                $result2 = tng_query($query2);
+                //if death is blank, skip
+                if (!$row['private'] && $death != "0000-00-00" && strtotime("-{$tngimpcfg['maxprivyrs']} years") < strtotime($death)) {
+                    $query2 = "UPDATE $people_table SET private = '1' WHERE ID = \"{$row['ID']}\"";
+                    $result2 = tng_query($query2);
 
-                $query2 = "UPDATE $families_table SET private = '1' WHERE gedcom = \"{$row['gedcom']}\" AND (husband = \"{$row['personID']}\" OR wife = \"{$row['personID']}\")";
-                $result2 = tng_query($query2);
+                    $query2 = "UPDATE $families_table SET private = '1' WHERE gedcom = \"{$row['gedcom']}\" AND (husband = \"{$row['personID']}\" OR wife = \"{$row['personID']}\")";
+                    $result2 = tng_query($query2);
 
-              $peopleMadePrivate++;
-            }
+                    $peopleMadePrivate++;
+                }
             if ($counted % 100 == 0) {
               echo "I$counted ";
             }

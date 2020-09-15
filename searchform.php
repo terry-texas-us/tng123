@@ -222,7 +222,8 @@ tng_header($text['searchnames'], $flags);
         //]]>
     </script>
 
-    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchnames']; ?></h2><br clear="all">
+    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchnames']; ?></h2>
+    <br style="clear: both;">
 <?php
 if ($msg) {
     echo "<h3 id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</h3>";
@@ -717,7 +718,7 @@ echo $formstr;
     </div>
 
     </form>
-    <br clear="all">
+    <br style="clear: both;">
 <?php
 tng_footer("");
 ?>

@@ -152,7 +152,7 @@ tng_header($text['cemeteriesheadstones'], $flags);
     <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
         if ($location) {
             echo " {$text['in']} $location";
-        } ?></h2><br clear="all">
+        } ?></h2><br style="clear: both;">
 <?php
 $hiddenfields[] = ['name' => 'country', 'value' => $country];
 $hiddenfields[] = ['name' => 'state', 'value' => $state];
@@ -264,28 +264,28 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
   $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
   $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
-  if ($sitever != "standard") {
-    if ($tabletype == "toggle") {
-      $tabletype = "columntoggle";
+    if ($sitever != "standard") {
+        if ($tabletype == "toggle") {
+            $tabletype = "columntoggle";
+        }
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    } else {
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
     }
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
-  } else {
-      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
-  }
-  $body .= $header;
+    $body .= $header;
     $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
     $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}</th>";
     $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}</th>";
-  $body .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
-  $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
+    $body .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
+    $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
 
-  while ($hs = tng_fetch_assoc($hsresult)) {
-    $mediatypeID = $hs['mediatypeID'];
-    $usefolder = $hs['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
+    while ($hs = tng_fetch_assoc($hsresult)) {
+        $mediatypeID = $hs['mediatypeID'];
+        $usefolder = $hs['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 
-    $status = $hs['status'];
-    $hs['cemeteryID'] = $cemetery['cemeteryID'];
-    if ($status && $text[$status]) {
+        $status = $hs['status'];
+        $hs['cemeteryID'] = $cemetery['cemeteryID'];
+        if ($status && $text[$status]) {
       $hs['status'] = $text[$status];
     }
 

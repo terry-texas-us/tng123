@@ -29,21 +29,21 @@ while ($imgrow = tng_fetch_assoc($result)) {
       // otherwise, let's check for living
     } else {
 
-      // this query will return rows of personIDs on the photo that are living
-      $query = "SELECT $medialinks_table.personID FROM ($medialinks_table, $people_table) WHERE $medialinks_table.personID = $people_table.personID AND $medialinks_table.gedcom = $people_table.gedcom AND $medialinks_table.mediaID = {$imgrow['mediaID']} AND ($people_table.living = '1' OR $people_table.private = '1')";
+        // this query will return rows of personIDs on the photo that are living
+        $query = "SELECT $medialinks_table.personID FROM ($medialinks_table, $people_table) WHERE $medialinks_table.personID = $people_table.personID AND $medialinks_table.gedcom = $people_table.gedcom AND $medialinks_table.mediaID = {$imgrow['mediaID']} AND ($people_table.living = '1' OR $people_table.private = '1')";
         $presult = tng_query($query);
-      $rows = tng_num_rows($presult);
-      tng_free_result($presult);
+        $rows = tng_num_rows($presult);
+        tng_free_result($presult);
 
         $query = "SELECT $medialinks_table.personID FROM ($medialinks_table, $families_table) WHERE $medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom AND $medialinks_table.mediaID = {$imgrow['mediaID']} AND ($families_table.living = '1' OR $families_table.private = '1')";
         $presult = tng_query($query);
-      $rows = $rows + tng_num_rows($presult);
-      tng_free_result($presult);
+        $rows = $rows + tng_num_rows($presult);
+        tng_free_result($presult);
 
-      // if no rows are returned, there are no living on the photo, so let's display it
-      if ($rows == 0) {
-        break;
-      }
+        // if no rows are returned, there are no living on the photo, so let's display it
+        if ($rows == 0) {
+            break;
+        }
     }
   }
 }

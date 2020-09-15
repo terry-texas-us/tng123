@@ -146,7 +146,8 @@ tng_header($text['searchfams'], $flags);
         //]]>
     </script>
 
-    <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchfams']; ?></h2><br clear="all">
+    <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchfams']; ?></h2>
+    <br style="clear: both;">
 <?php
 if ($msg) {
     echo "<b id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</b>";
@@ -501,7 +502,7 @@ echo $formstr;
     </div>
 
     </form>
-    <br clear="all">
+    <br style="clear: both;">
 <?php
 tng_footer("");
 ?>

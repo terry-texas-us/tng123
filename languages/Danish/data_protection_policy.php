@@ -1,14 +1,14 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Data beskyttelse</h3>
-    <p>Ejerne af dette websted tager beskyttelsen af personlige data meget alvorligt. Vi behandler personlige oplysninger fortroligt og
-        i overensstemmelse med de lovbestemte databeskyttelsesbestemmelser og privatlivslove.</p>
+<h3>Data beskyttelse</h3>
+<p>Ejerne af dette websted tager beskyttelsen af personlige data meget alvorligt. Vi behandler personlige oplysninger fortroligt og
+    i overensstemmelse med de lovbestemte databeskyttelsesbestemmelser og privatlivslove.</p>
 
-    <p>Brugen af vores hjemmeside er mulig uden at give personlige oplysninger. Når der kræves personlige oplysninger (for eksempel navn og
-        e-mail-adresse på kontaktformularen), gives dette frivilligt. Disse data vil ikke blive videregivet til en tredjepart.</p>
+<p>Brugen af vores hjemmeside er mulig uden at give personlige oplysninger. Når der kræves personlige oplysninger (for eksempel navn og
+    e-mail-adresse på kontaktformularen), gives dette frivilligt. Disse data vil ikke blive videregivet til en tredjepart.</p>
 
-    <p>Vi påpeger, at afsendelse af information via internettet er underlagt sikkerhedsproblemer.
-        Komplet beskyttelse af dataene fra adgang til tredjeparter er ikke mulig.</p>
+<p>Vi påpeger, at afsendelse af information via internettet er underlagt sikkerhedsproblemer.
+    Komplet beskyttelse af dataene fra adgang til tredjeparter er ikke mulig.</p>
 
     <h3>Cookies</h3>
     <p>Denne hjemmeside bruger cookies. Cookies beskadiger ikke computeren og indeholder ikke virusser. Cookies udfører vigtige funktioner

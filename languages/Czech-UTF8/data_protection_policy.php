@@ -1,14 +1,14 @@
-<h1><?php echo $text['dataprotect']; ?>
+<h1><?php echo $text['dataprotect']; ?></h1>
 
-    <h3>Ochrana osobních údajů</h3>
-    <p>Majitel těchto webových stránek považuje získané osobní a další údaje za přísně důvěrné. Při jejich zpracování se řídí všemi příslušnými
-        zákonnými předpisy o ochraně osobních údajů.</p>
+<h3>Ochrana osobních údajů</h3>
+<p>Majitel těchto webových stránek považuje získané osobní a další údaje za přísně důvěrné. Při jejich zpracování se řídí všemi příslušnými
+    zákonnými předpisy o ochraně osobních údajů.</p>
 
-    <p>Využití těchto internetových stránek je možné bez poskytnutí osobních údajů. Pokud jsou požadovány osobní údaje (například jméno a
-        e-mailová adresa ve formuláři kontaktu), je to dáno dobrovolně. Tyto údaje nebudou předány třetím stranám.</p>
+<p>Využití těchto internetových stránek je možné bez poskytnutí osobních údajů. Pokud jsou požadovány osobní údaje (například jméno a
+    e-mailová adresa ve formuláři kontaktu), je to dáno dobrovolně. Tyto údaje nebudou předány třetím stranám.</p>
 
-    <p>Chtěli bychom zdůraznit, že odesílání informací přes internet je předmětem bezpečnostních problémů.
-        Úplná ochrana údajů před přístupem třetích stran není možná.</p>
+<p>Chtěli bychom zdůraznit, že odesílání informací přes internet je předmětem bezpečnostních problémů.
+    Úplná ochrana údajů před přístupem třetích stran není možná.</p>
 
     <h3>Cookies</h3>
     <p>Tyto internetové stránky používají cookies. Cookies jsou malé textové soubory, které do vašeho počítače ukládá váš prohlížeč internetu.

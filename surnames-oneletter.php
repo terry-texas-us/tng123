@@ -18,13 +18,13 @@ preparebookmark($logstring);
 
 tng_header($text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
 ?>
-
-    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h2><br class="clearleft">
+    <h2 class="header"><span class="headericon"
+                             id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h2>
+    <br class="clearleft">
 <?php
 $hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 ?>
-
     <div class="titlebox">
         <div>
             <h3 class="subhead"><?php echo "{$text['allbeginningwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></h3>
@@ -39,27 +39,28 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames
 
                     $more = getLivingPrivateRestrictions($people_table, false, false);
                   if ($more) {
-                    $wherestr .= " AND " . $more;
+                      $wherestr .= " AND " . $more;
                   }
 
-                  $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
-                  if ($tngconfig['ucsurnames']) {
-                    $surnamestr = "UCASE($surnamestr)";
-                  }
-                  $firstchar = $firstchar == "\"" ? "\\\"" : $firstchar;
-                  $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, UCASE($binary lastname) AS binlast, count(UCASE($binary lastname)) AS lncount ";
-                  $query .= "FROM $people_table ";
-                  $query .= "WHERE UCASE($binary TRIM(lastname)) LIKE \"$firstchar%\" $wherestr ";
-                  $query .= "GROUP BY lowername ";
-                  $query .= "ORDER by binlast";
-                  $result = tng_query($query);
-                  $topnum = tng_num_rows($result);
-                  if ($result) {
-                    $snnum = 1;
-                    if ($sitever == "mobile") {
-                      $numcols = 2;
-                    } elseif (!isset($numcols) || $numcols > 5) {
-                      $numcols = 5;
+                    $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
+                    if ($tngconfig['ucsurnames']) {
+                        $surnamestr = "UCASE($surnamestr)";
+                    }
+                    $firstchar = $firstchar == "\"" ? "\\\"" : $firstchar;
+                    $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, UCASE($binary lastname) AS binlast, count(UCASE($binary lastname)) AS lncount ";
+                    $query .= "FROM $people_table ";
+                    $query .= "WHERE UCASE($binary TRIM(lastname)) LIKE \"$firstchar%\" ";
+                    $query .= "$wherestr ";
+                    $query .= "GROUP BY lowername ";
+                    $query .= "ORDER by binlast";
+                    $result = tng_query($query);
+                    $topnum = tng_num_rows($result);
+                    if ($result) {
+                        $snnum = 1;
+                        if ($sitever == "mobile") {
+                            $numcols = 2;
+                        } elseif (!isset($numcols) || $numcols > 5) {
+                            $numcols = 5;
                     }
                     $num_in_col = ceil($topnum / $numcols);
 
