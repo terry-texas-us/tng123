@@ -186,8 +186,8 @@ elseif (!empty($_GET)) {
     ${$key} = $value;
   }
   if (isset($a)) {
-    $action = isset($a) ? $a : '';
-    $cfgpath = isset($m) ? $cfgfolder . $m : '';
+    $action = $a;
+      $cfgpath = isset($m) ? $cfgfolder . $m : '';
 
     // INSTALL
     if ($action == INSTALL) {
@@ -302,9 +302,6 @@ $oModlist->templatenum = $templatenum;
 $oModlist->modlist = $modlist;
 $oModlist->list_mods();
 
-/*************************************************************************
- * SUPPORTING FUNCTIONS
- *************************************************************************/
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
   global $admtext;
 

@@ -1019,11 +1019,8 @@ pre {
 }
 
 .cb-content .cb-postcontent-0 .layout-item-1 {
-    color: #352B18;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    color: #352b18;
+    padding: 10px;
     border-radius: 4px;
 }
 
@@ -1047,12 +1044,9 @@ pre {
 .cb-content .cb-postcontent-0 .layout-item-4 {
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #CABAA0;
-    color: #352B18;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    border-bottom-color: #cabaa0;
+    color: #352b18;
+    padding: 10px;
     border-radius: 20px;
 }
 
@@ -1400,8 +1394,7 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 .fambackground {
-    background-color: #dfcebc;
-    background: url('../img/022d9.png') scroll;
+    background: #dfcebc url('../img/022d9.png') scroll;
 }
 
 @media (max-width: 975px) {

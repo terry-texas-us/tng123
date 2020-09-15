@@ -24,9 +24,7 @@ $momlabel = getTemplateMessage('t18_momside');
     }
 
     #big-block-1 {
-        background: url('<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t18_mainimage']; ?>');
-        background-repeat: no-repeat;
-        background-position: center 33%;
+        background: url('<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t18_mainimage']; ?>') no-repeat center 33%;
         background-size: 100% auto;
         height: 250px;
     }

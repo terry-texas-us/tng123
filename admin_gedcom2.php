@@ -1120,7 +1120,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                         $srcresult = tng_query($srcquery) or die ($text['cannotexecutequery'] . ": $query");
                         if ($srcresult) {
                             $source = tng_fetch_assoc($srcresult);
-                            if ($branch && trim($source['repoID'])) {
+                            if (trim($source['repoID'])) {
                                 array_push($allrepos, $source['repoID']);
                             }
                             $sourcestr .= writeSource($source);

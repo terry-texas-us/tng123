@@ -17,7 +17,7 @@ require $cms['tngpath'] . 'rpt_utils.php';
 $pdf = new TNGPDF($orient, 'in', $pagesize);
 setcookie("tng_pagesize", $pagesize, time() + 31536000, "/");
 
-$uni = $session_charset == "UTF-8" ? true : false;
+$uni = $session_charset == "UTF-8";
 
 // load fonts
 $pdf->AddFont($rptFont, '', '', $uni);

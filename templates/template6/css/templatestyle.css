@@ -32,11 +32,8 @@
 /* body: describes page background color and all non-table text not governed by any other style */
 /* overrides replace bgcolor="#3E331D" leftmargin=0 topmargin=0 rightmargin=0 bottommargin=0 marginwidth=0 in topmenu.php */
 .templatebody {
-    background-color: #3E331D;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
+    background-color: #3e331d;
+    margin: 0;
 }
 
 /* header: heading text */

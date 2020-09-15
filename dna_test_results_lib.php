@@ -52,7 +52,7 @@ if ($totnum_tests) {
         $num_tests = $totnum_tests + 2;
     }
     if ($num_utests) {
-        $linkedstr = ($num_links > 1 && $num_utests) ? $text['testsarelinked'] : $text['testislinked'];
+        $linkedstr = ($num_links > 1) ? $text['testsarelinked'] : $text['testislinked'];
         $linkedstr .= "&nbsp;" . $dnanamestr;
     } else {
         $linkedstr = $num_links > 1 ? $admtext['dna_tests'] : $text['dna_test'];

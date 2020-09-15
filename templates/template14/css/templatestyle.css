@@ -122,9 +122,8 @@ table.position {
     z-index: 10;
     left: 0;
     top: 0;
-    background: none;
     min-height: 0;
-    background-image: url('../img/spacer.gif');
+    background: url('../img/spacer.gif');
     padding: 10px 30px 30px 30px;
     margin: -10px 0 0 -30px;
 }
@@ -165,11 +164,9 @@ table.position {
     min-width: 700px;
     position: relative;
     width: 95%;
-    margin: 0 auto;
     min-height: 31px;
     z-index: 2;
-    margin-top: 15px;
-    margin-bottom: 0;
+    margin: 15px auto 0;
 }
 
 .art-nav-outer {
@@ -290,10 +287,8 @@ table.position {
 /* begin Box, Sheet */
 .art-sheet {
     position: relative;
-    margin: 0 auto;
     min-height: 1px;
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin: 10px auto 0;
     cursor: auto;
     width: 95%;
     min-width: 700px;
@@ -330,15 +325,13 @@ table.position {
 .art-content-layout {
     display: table;
     position: relative;
-    margin: 0 auto;
     table-layout: fixed;
     border-collapse: collapse;
     background-color: Transparent;
     border: none !important;
     padding: 0 !important;
     width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 .art-layout-cell, .art-content-layout-row {
@@ -443,7 +436,7 @@ div.art-block img {
     padding: 0 0 5px 20px;
     background-image: url('../img/bullet.png');
     background-repeat: no-repeat;
-    letter-spacing: .6px;
+    letter-spacing: 1px;
     font-weight: bold;
 }
 

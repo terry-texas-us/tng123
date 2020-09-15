@@ -183,9 +183,7 @@ table.tablesaw {
 }
 
 .tablesaw-bar .btn-select:after {
-    background: none;
-    background-repeat: no-repeat;
-    background-position: .25em .45em;
+    background: none no-repeat .25em .45em;
     content: "\25bc";
     font-size: .55em;
     padding-top: 1.2em;
@@ -772,10 +770,7 @@ table.tablesaw thead td {
 }
 
 .tablesaw-sortable th.tablesaw-sortable-head button {
-    padding-top: .9em;
-    padding-bottom: .7em;
-    padding-left: .6em;
-    padding-right: 1.6em;
+    padding: .9em 1.6em .7em .6em;
 }
 
 .tablesaw-sortable .tablesaw-sortable-head button {

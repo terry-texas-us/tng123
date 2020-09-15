@@ -31,9 +31,7 @@ if (!$tngneedresults) {
     if (isset($tngmonth)) {
         $tngmonth = preg_replace("/[^0-9]/", '', $tngmonth);
     }
-    if (isset($tngneedresults)) {
-        $tngneedresults = preg_replace("/[^0-9]/", '', $tngneedresults);
-    }
+    $tngneedresults = preg_replace("/[^0-9]/", '', $tngneedresults);
 }
 
 if ($tree && $tree != '-x--all--x-') {

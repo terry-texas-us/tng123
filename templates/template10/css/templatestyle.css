@@ -211,20 +211,16 @@ div#art-hmenu-bg {
 /* begin Box, Sheet */
 .art-sheet {
     position: relative;
-    margin: 0 auto;
     min-width: 35px;
     min-height: 35px;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto;
     cursor: auto;
     width: 95%;
 }
 
 .art-sheet-body {
     position: relative;
-    padding: 13px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 13px;
 }
 
 .art-sheet-tr, .art-sheet-tl, .art-sheet-br, .art-sheet-bl, .art-sheet-tc, .art-sheet-bc, .art-sheet-cr, .art-sheet-cl {
@@ -312,12 +308,10 @@ div#art-hmenu-bg {
 
 /* begin Header */
 div.art-header {
-    margin: 0 auto;
     position: relative;
     width: 100%;
     height: 150px;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 div.art-header-clip {
@@ -459,9 +453,8 @@ h2.art-logo-text a {
     z-index: 10;
     left: 0;
     top: 0;
-    background: none;
     min-height: 0;
-    background-image: url('../img/spacer.gif');
+    background: url('../img/spacer.gif');
     padding: 10px 30px 30px 30px;
     margin: -10px 0 0 -30px;
 }
@@ -500,11 +493,9 @@ h2.art-logo-text a {
 
 .art-nav {
     position: relative;
-    margin: 0 auto;
     min-height: 25px;
     z-index: 2;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 .art-nav-outer {
@@ -690,14 +681,12 @@ h2.art-logo-text a {
 .art-content-layout {
     display: table;
     position: relative;
-    margin: 0 auto;
     table-layout: fixed;
     background-color: Transparent;
     border: none !important;
     padding: 0 !important;
     width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 .art-layout-cell, .art-content-layout-row {
@@ -1728,10 +1717,7 @@ ul.home-menus {
 .emailimg {
     width: 40px;
     height: 26px;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin: 2px 8px;
     float: left;
     border: 0;
 }

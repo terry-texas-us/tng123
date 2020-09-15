@@ -681,9 +681,6 @@ class modparser extends modbase
     return $tags;
   } // END PARSE FUNCTION
 
-  /***************************************************************
-   * FUNCTIONS
-   ***************************************************************/
   protected function arrange_table($table) {
     $newtable = array();
 

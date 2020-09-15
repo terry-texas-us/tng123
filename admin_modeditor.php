@@ -102,8 +102,8 @@ elseif (!empty($_GET)) {
     ${$key} = $value;
   }
   if (isset($a)) {
-    $action = isset($a) ? $a : '';
-    $cfgfile = isset($m) ? $m : '';
+    $action = $a;
+      $cfgfile = isset($m) ? $m : '';
     $cfgpath = isset($m) ? $cfgfolder . $m : '';
   }
 }
@@ -190,9 +190,7 @@ echo "
 </body>
 </html>";
 exit;
-/*************************************************************************
- * FUNCTIONS
- *************************************************************************/
+
 function set_horizontal_tabs($show_analyzer = NO, $show_updates = NO) {
   global $admtext;
 

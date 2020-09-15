@@ -169,10 +169,7 @@ a.topmenu:hover {
 
 /* titleimg added to replace width="630" height="93" hspace="10" in index.php for title.gif */
 .titleimg {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 10px; /* replaces hspace="10" */
-    margin-right: 10px; /* replaces hspace="10" */
+    margin: 0 10px;
     border: 0;
 }
 

@@ -4,7 +4,7 @@
  * Fetches all from 'families' cleaning some text and formatting 'changedate'
  * @param string|null &$familyID ensures first character capital
  * @param string $families_table 'families' table
- * @param array $tree tree containing family
+ * @param string $tree tree containing family
  * @return array fetched row
  */
 function fetchAndCleanFamilyRow(?string &$familyID, string $families_table, string $tree): array {

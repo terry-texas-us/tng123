@@ -1,7 +1,6 @@
 #mast {
-    background: #660002;
-    background-image: url(../img/fieldbg.jpg);
-    border-top: 1px solid #A33333;
+    background: #660002 url(../img/fieldbg.jpg);
+    border-top: 1px solid #a33333;
 }
 
 .mhead ul li {

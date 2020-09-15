@@ -110,9 +110,6 @@ echo "
       </table>";
 echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
 
-/*************************************************************************
- * FUNCTIONS
- *************************************************************************/
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
   global $admtext;
 

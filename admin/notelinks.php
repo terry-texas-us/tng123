@@ -2,7 +2,7 @@
 
 /**
  * @param string $id
- * @param array $tree
+ * @param string $tree
  * @return array
  */
 function checkForNoteLinks(string $id, string $tree): array {

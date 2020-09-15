@@ -390,7 +390,7 @@ function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranc
         $row['personID'] = '';
     }
 
-    $rights = array('private' => true, 'living' => true, 'lds' => (!$ldsdefault ? true : false));
+    $rights = array('private' => true, 'living' => true, 'lds' => !$ldsdefault);
 
     $living = $livedefault == 2 ? false : $row['living'];
     $private = $row['private'];
@@ -421,7 +421,7 @@ function determineLDSRights($notree = false) {
     global $ldsdefault, $allow_lds, $tree, $assignedtree;
 
     $treeOK = !$tree || $notree || !$assignedtree || $tree == $assignedtree;
-    return !$ldsdefault || ($ldsdefault == 2 && $allow_lds && $treeOK) ? true : false;
+    return !$ldsdefault || ($ldsdefault == 2 && $allow_lds && $treeOK);
 }
 
 function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {
@@ -687,40 +687,28 @@ function printDate($date, $datetr) {
                 if ($dtprefix) {
                     $prefix = 1;
                     switch ($datepartu) {
+                        case "ABT.":
                         case "ABT":
                             $datepart = tng_strtolower($dates['ABOUT']);
                             break;
-                        case "ABT.":
-                            $datepart = tng_strtolower($dates['ABOUT']);
-                            break;
+                        case "AFT.":
                         case "AFT":
                             $datepart = tng_strtolower($dates['AFTER']);
                             break;
-                        case "AFT.":
-                            $datepart = tng_strtolower($dates['AFTER']);
-                            break;
+                        case "BEF.":
                         case "BEF":
                             $datepart = tng_strtolower($dates['BEFORE']);
                             break;
-                        case "BEF.":
-                            $datepart = tng_strtolower($dates['BEFORE']);
-                            break;
+                        case "BET.":
                         case "BET":
                             $datepart = tng_strtolower($dates['BETWEEN']);
                             break;
-                        case "BET.":
-                            $datepart = tng_strtolower($dates['BETWEEN']);
-                            break;
+                        case "CAL.":
                         case "CAL":
                             $datepart = tng_strtolower($dates['CAL']);
                             break;
-                        case "CAL.":
-                            $datepart = tng_strtolower($dates['CAL']);
-                            break;
-                        case "EST":
-                            $datepart = tng_strtolower($dates['EST']);
-                            break;
                         case "EST.":
+                        case "EST":
                             $datepart = tng_strtolower($dates['EST']);
                             break;
                         default:

@@ -156,7 +156,7 @@
     padding: 0 0 5px 20px;
     background-image: url('../img/bullet.png');
     background-repeat: no-repeat;
-    letter-spacing: .6px;
+    letter-spacing: 1px;
     font-size: 11pt;
 }
 

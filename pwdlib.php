@@ -93,7 +93,7 @@ function PasswordCheck($str, $hash, $name = null) {
 
     } else {
       // everything else
-      $check = ($hash == PasswordEncode($str, $name)) ? true : false;
+      $check = $hash == PasswordEncode($str, $name);
     }
 
     if ($check) {

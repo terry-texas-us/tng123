@@ -18,7 +18,7 @@ setcookie("tng_pagesize", $pagesize, time() + 31536000, "/");
 // define formatting defaults
 $textindent = 0.16;  // amount to move text in from the line prefix
 
-$uni = $session_charset == "UTF-8" ? true : false;
+$uni = $session_charset == "UTF-8";
 
 // load fonts
 $pdf->AddFont($rptFont, '', '', $uni);

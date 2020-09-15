@@ -164,23 +164,16 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedgroup.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
-                        <p class="nw">
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                            <input type="submit" name="xdnagroupaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
-                        </p>
-                        <?php
-                    }
-                    ?>
+                    <p class="nw">
+                        <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
+                        <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
+                        <input type="submit" name="xdnagroupaction" value="<?php echo $admtext['deleteselected']; ?>"
+                               onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                    </p>
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr class="fieldnameback fieldname nw" r>
                             <th><?php echo $admtext['action']; ?></th>
-                            <?php if ($allow_delete) { ?>
-                                <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
-                            <?php } ?>
+                            <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <th><?php echo $admtext['groupid']; ?></th>
                             <th><?php echo $admtext['description']; ?></th>
                             <th><?php echo $admtext['tree']; ?></th>
@@ -194,20 +187,17 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         if ($allow_edit) {
                             $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
-                        if ($allow_delete) {
-                            if (!$assignedtree) {
-                                $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
-                            }
+                        if (!$assignedtree) {
+                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['dna_group'], $actionstr);
                             $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
                             $newactionstr = preg_replace("/zzz/", $row['test_type'], $newactionstr);
-                            echo "<tr id=\"row_{$row['dna_group']}\"><td class='lightback'><div>$newactionstr</div></td>\n";
-                            if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value='1'></td>";
-                            }
+                            echo "<tr id=\"row_{$row['dna_group']}\">";
+                            echo "<td class='lightback'><div>$newactionstr</div></td>\n";
+                            echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value='1'></td>";
                             $editlink = "admin_edit_dna_group.php?dna_group={$row['dna_group']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['dna_group'] . "</a>" : $row['dna_group'];
 

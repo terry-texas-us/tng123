@@ -481,9 +481,7 @@ echo ">{$admtext['no']}</option>
 		</tr>
 		</table>
 	</form>";
-/*************************************************************************
- * FUNCTIONS
- *************************************************************************/
+
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
   global $admtext;
   $modtabs = array();

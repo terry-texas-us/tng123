@@ -804,9 +804,6 @@ class modlister extends modparser
         return isset($tags) ? $tags : [];
     } // FUNCTION LIST MODS
 
-    /**********************************************************************
-     * SUPPORTING FUNCTIONS
-     **********************************************************************/
     private function foldable_string($string) {
         return preg_replace('@([\./_])@', '&#8203;$1', $string);
     }
@@ -1016,7 +1013,6 @@ class modlister extends modparser
 
         $statstring .= "<span class=\"NCOPY\">{$this->admtext['notcopied']}</span>";
         $this->set_status($statstring, $relsrcpath);
-        return;
 
     } // COPYFILE STATUS CHECK
 
@@ -1095,7 +1091,6 @@ class modlister extends modparser
             $this->num_required--;
             $this->newfiles_required--;
         }
-        return;
     } // NEWFILE STATUS CHECK \
 
     protected function mkdir_status_check($tag) {
@@ -1123,7 +1118,6 @@ class modlister extends modparser
             $statstring .= "<span class=\"none\">{$this->admtext['exists']}</span>";
             $this->set_status($statstring);
         }
-        return;
     }
 
     // SHOW FILTER LINE BUTTONS

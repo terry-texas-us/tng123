@@ -195,7 +195,7 @@ function doUpArrow($left,$top,$person) {
 }
 */
 
-function setoutparentfamily(&$family, &$childID, $left, $top, $width, $height, $swap) {
+function setoutparentfamily($family, $childID, $left, $top, $width, $height, $swap) {
     #set parent family omitting the child who is the parent, which is done elsewhere
     global $familychart;
     if (!$family) {
@@ -247,7 +247,7 @@ function setoutparentfamily(&$family, &$childID, $left, $top, $width, $height, $
     }
 }
 
-function setoutmainfamily(&$family, $colsep, $order, $patorder, $matorder, $left, $top, $width, $height, $reverse) {
+function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left, $top, $width, $height, $reverse) {
     #includes parents at appropriate positions for their families
     global $familychart;
     $leftparent = $reverse ? $family['wife'] : $family['husband'];
@@ -353,7 +353,7 @@ function doConnector($side, $x1, $x2, $x3, $y1, $y2) {
     }
 }
 
-function doOtherSpouses(&$person, $spouse, $left, $top, $reverse) {
+function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     #insert html of a plus symbol with popups if other spouse(s)
     global $cms, $text, $families_table, $people_table, $family_url, $tree;
 
@@ -365,17 +365,20 @@ function doOtherSpouses(&$person, $spouse, $left, $top, $reverse) {
         $rev = $reverse ? '&amp;rev=1' : '';
         $sp = 0;
         while ($fam = $otherfamilies[$sp++]) {
-            $query = "SELECT personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, $people_table.living AS living, $people_table.private AS private 
-				FROM $families_table ";
+            $query = "SELECT personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living AS living, people.private AS private ";
+            $query .= "FROM $families_table families ";
             if ($spouse == "husband") {
-                $query .= "LEFT JOIN $people_table ON $families_table.husband = $people_table.personID AND $families_table.gedcom = $people_table.gedcom 
-					WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\" ORDER BY husborder";
+                $query .= "LEFT JOIN $people_table people ON families.husband = people.personID AND families.gedcom = people.gedcom ";
+                $query .= "WHERE familyID = '$fam' AND people.gedcom = '$tree' ";
+                $query .= "ORDER BY husborder";
             } else {
                 if ($spouse == "wife") {
-                    $query .= "LEFT JOIN $people_table ON $families_table.wife = $people_table.personID AND $families_table.gedcom = $people_table.gedcom 
-					WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\" ORDER BY wifeorder";
+                    $query .= "LEFT JOIN $people_table people ON families.wife = people.personID AND families.gedcom = people.gedcom ";
+                    $query .= "WHERE familyID = '$fam' AND people.gedcom = '$tree' ";
+                    $query .= "ORDER BY wifeorder";
                 } else {
-                    $query .= "LEFT JOIN $people_table ON ($families_table.husband = $people_table.personID OR $families_table.wife = $people_table.personID) AND $families_table.gedcom = $people_table.gedcom WHERE familyID = \"$fam\" AND $people_table.gedcom = \"$tree\"";
+                    $query .= "LEFT JOIN $people_table people ON (families.husband = people.personID OR families.wife = people.personID) AND families.gedcom = people.gedcom ";
+                    $query .= "WHERE familyID = '$fam' AND people.gedcom = '$tree'";
                 }
             }
             $spresult = tng_query($query);
@@ -398,7 +401,7 @@ function doOtherSpouses(&$person, $spouse, $left, $top, $reverse) {
     }
 }
 
-function getfamilyID(&$person, $type) {
+function getfamilyID($person, $type) {
     #gets family for type=parent (first), child or 'other', which return array of possibles
     global $families_table, $children_table;
     $partner = ($sex = $person['sex']) == 'M' ? 'husband' : 'wife';
@@ -435,7 +438,7 @@ function getOtherFamilies($tree, $personID, $familyID) {
     return $res;
 }
 
-function getChild(&$family, $personID) {
+function getChild($family, $personID) {
     #extract named child array from family structure
     if (isset($family['children'])) {
         $kids = $family['children'];
@@ -447,22 +450,22 @@ function getChild(&$family, $personID) {
     return '';
 }
 
-function getPhoto(&$person, $alt, $height) {    #backwards compatibity version
+function getPhoto($person, $alt, $height) {    #backwards compatibity version
     #returns link for default photo if visible
     $rights = getRights($person);
     return showSmallPhoto($person['personID'], $alt, $rights['both'], $height, false, $person['sex']);
 }
 
-function getRights(&$person) {
+function getRights($person) {
     #return array of rights
     $righttree = checktree($person['tree']);
     $rightbranch = $righttree ? checkbranch($person['branch']) : false;
     return determineLivingPrivateRights($person, $righttree, $rightbranch);
 }
 
-function doheader($tree, &$family) {
+function doheader($tree, $family) {
     #calls tng_header, tng_Drawheading and tng_menu
-    global $text, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames, $family_url;
+    global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames, $family_url;
     $descend_url = getURL("descend", 1);
     $pdfform_url = getURL("rpt_pdfform", 1);
 
