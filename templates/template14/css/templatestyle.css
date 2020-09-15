@@ -186,12 +186,8 @@ table.position {
     background-image: -moz-linear-gradient(top, #e2b993, #b28963);
     background-image: -ms-linear-gradient(top, #e2b993, #b28963);
     background-image: -o-linear-gradient(top, #e2b993, #b28963);
-    background-image: linear-gradient(top, #e2b993, #b28963);
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    background-image: linear-gradient(to top, #e2b993, #b28963);
     border-radius: 10px;
-    -moz-box-shadow: 1px 1px 2px 1px #333;
-    -webkit-box-shadow: 1px 1px 2px 1px #333;
     box-shadow: 1px 1px 2px 1px #333;
 }
 
@@ -307,11 +303,7 @@ table.position {
     right: 0;
     bottom: 0;
     background-color: rgba(253, 230, 184, 0.8);
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
-    -moz-box-shadow: 1px 1px 2px 1px #333;
-    -webkit-box-shadow: 1px 1px 2px 1px #333;
     box-shadow: 1px 1px 2px 1px #333;
 }
 
@@ -470,8 +462,6 @@ div.art-block img {
 }
 
 .art-sidebar1 img {
-    -moz-box-shadow: 7px 7px 8px 0 #444;
-    -webkit-box-shadow: 7px 7px 8px 0 #444;
     box-shadow: 7px 7px 8px 0 #444;
 }
 
@@ -550,7 +540,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #e2b993, #b28963);
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e2b993, #b28963);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e2b993, #b28963);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #e2b993, #b28963);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #e2b993, #b28963);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
@@ -577,7 +567,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
     background-image: -moz-linear-gradient(top, #e2b993, #b28963);
     background-image: -ms-linear-gradient(top, #e2b993, #b28963);
     background-image: -o-linear-gradient(top, #e2b993, #b28963);
-    background-image: linear-gradient(top, #e2b993, #b28963);
+    background-image: linear-gradient(to top, #e2b993, #b28963);
 }
 
 .databack {
@@ -657,8 +647,6 @@ h3.subheader {
 
 .vignette {
     float: right;
-    -moz-box-shadow: 4px 4px 6px 0 #444;
-    -webkit-box-shadow: 4px 4px 6px 0 #444;
     box-shadow: 4px 4px 6px 0 #444;
     margin: 0 5px;
 }
@@ -726,8 +714,6 @@ h3.subheader {
 
 .titlebox, .pboxpopupdiv, td.highlightedchild {
     background-color: #FCF0DC;
-    -moz-box-shadow: 4px 4px 6px 0 #777;
-    -webkit-box-shadow: 4px 4px 6px 0 #777;
     box-shadow: 4px 4px 6px 0 #777;
 }
 
@@ -780,8 +766,6 @@ hr {
     .art-sheet-cc {
         border: none;
         box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
     }
 
     #otherarea {
@@ -823,8 +807,6 @@ hr {
 
     #tsearchbox {
         box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
     }
 
     #tsearchbox input[type="text"] {

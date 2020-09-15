@@ -32,7 +32,7 @@
 
 /* header: heading text */
 .header, .plainheader {
-    color: #990000;
+    color: #900;
 }
 
 /* body: describes page background color and all non-table text not governed by any other style */
@@ -51,19 +51,19 @@ body {
 
 /* link: normal links, active: links in use */
 a:link, a:active, div.icons a {
-    color: #990000;
+    color: #900;
 }
 
 /* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #cc6666;
+    background-color: #c66;
 }
 
 /* fieldnameback: background color for column and row title sections */
 /* sideback: background color for side and top frames */
 .LB_closeAjaxWindow, .bar, .sideback, .fieldnameback,
 .tablesaw-cell-label {
-    background-color: #990000;
+    background-color: #900;
 }
 
 .sideback {
@@ -72,7 +72,7 @@ a.admincell:hover, a.leftlink:hover {
 
 /* page: is defined to replace the bgcolor=#FFFFFF; in the top table for the page */
 .page {
-    background-color: #FFFFFF;
+    background-color: #fff;
     margin-top: 0;
     text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
     margin-right: 0;
@@ -95,24 +95,24 @@ a.admincell:hover, a.leftlink:hover {
 /* footer added to replace footer fonts and links */
 .footer {
     font-size: 10px;
-    color: #000000;
+    color: #000;
 }
 
 a.footer:link {
-    color: #990000;
+    color: #900;
 }
 
 a.footer:visited {
-    color: #990000;
+    color: #900;
 }
 
 a.footer:hover {
-    color: #999900;
+    color: #990;
 }
 
 /* menuback: left nav menu background color with no right and bottom border */
 .menuback {
-    background-color: #990000;
+    background-color: #900;
     border-right: 0;
     border-bottom: 0;
     width: 170px;
@@ -153,8 +153,7 @@ a.searchimg {
     font-weight: bold;
     color: #f8f8b2;
     text-decoration: none;
-    text-shadow: 1px 1px 1px #000000;
-    filter: dropshadow(color=#000000, offx=1, offy=1);
+    text-shadow: 1px 1px 1px #000;
 }
 
 /* banner added to replace width="468" height="100" vspace="5" align="left" for title.gif */
@@ -211,7 +210,7 @@ a.searchimg {
 
 /* indexpage defined to replace bgcolor="#FFFFFF" sytle="text-align:left" cellspacing="0" in index.php */
 .indexpage {
-    background-color: #FFFFFF;
+    background-color: #fff;
     margin-top: 0;
     text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
     border: 0;
@@ -231,19 +230,19 @@ a.searchimg {
 .snlink {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
-    background-color: #CCCC99;
+    background-color: #cc9;
     color: black;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #990000;
+    background-color: #900;
     color: #fff;
 }
 
 .LB_window {
-    background: #CCCC99;
-    border: 2px solid #000000;
-    color: #000000;
+    background: #cc9;
+    border: 2px solid #000;
+    color: #000;
 }
 
 .titlebox {
@@ -255,29 +254,29 @@ div.innercontainer {
 }
 
 ul.tngdd {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd a {
-    color: #990000;
+    color: #900;
 }
 
 ul.tngdd ul li a, .slidedown {
-    background-color: #eeeecc;
+    background-color: #eec;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
-    background: #CCCC99 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E5E5B1), to(#C5C591));
-    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #E5E5B1, #C5C591);
+    background: #cc9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5e5b1), to(#c5c591));
+    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #e5e5b1, #c5c591);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
@@ -290,28 +289,28 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
-    background: #990000 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    color: #fff;
+    background: #900 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
-    background-color: #CCCC99;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FAF0F8), to(#CAC0C8));
-    background-image: -webkit-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: -moz-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: -ms-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: -o-linear-gradient(top, #E5E5B1, #C5C591);
-    background-image: linear-gradient(top, #E5E5B1, #C5C591);
+    background-color: #cc9;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#faf0f8), to(#cac0c8));
+    background-image: -webkit-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: -moz-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: -ms-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: -o-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: linear-gradient(to top, #e5e5b1, #c5c591);
 }
 
 .databack {
-    background-color: #CCCC99;
+    background-color: #cc9;
 }
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #DDDDBB;
+    background-color: #ddb;
 }
 
 ul.tngdd .sub {
@@ -323,7 +322,7 @@ ul.tngdd .topline {
 }
 
 .titletop {
-    color: #990000;
+    color: #900;
     font-size: 30px;
     line-height: 30px;
     white-space: nowrap;
@@ -332,23 +331,22 @@ ul.tngdd .topline {
 }
 
 .titlebottom {
-    color: #999966;
+    color: #996;
     font-size: 48px;
     font-weight: bold;
     white-space: nowrap;
     font-family: Georgia, Arial, sans-serif;
-    text-shadow: 1px 1px 1px #000000;
-    filter: dropshadow(color=#000000, offx=1, offy=1);
+    text-shadow: 1px 1px 1px #000;
 }
 
 .mmaintitle {
     font-family: Georgia, Arial, sans-serif;
-    color: #990000;
+    color: #900;
     opacity: 0.4;
 }
 
 .fambackground {
-    background-color: #CCCC99;
+    background-color: #cc9;
 }
 
 @media (max-width: 650px) {

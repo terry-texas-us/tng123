@@ -184,11 +184,7 @@ table.position {
 .art-nav-inner {
     margin: 0 0;
     background-image: url('../img/nav.png');
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
-    -moz-box-shadow: 1px 1px 2px 1px #666;
-    -webkit-box-shadow: 1px 1px 2px 1px #666;
     box-shadow: 1px 1px 2px 1px #666;
 }
 
@@ -306,11 +302,7 @@ table.position {
     right: 0;
     bottom: 0;
     background-color: #FFFFFF;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
-    -moz-box-shadow: 1px 1px 2px 1px #666;
-    -webkit-box-shadow: 1px 1px 2px 1px #666;
     box-shadow: 1px 1px 2px 1px #666;
 }
 
@@ -563,7 +555,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #eeeef3, #ceced3);
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #eeeef3, #ceced3);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #eeeef3, #ceced3);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #eeeef3, #ceced3);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #eeeef3, #ceced3);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
@@ -590,7 +582,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
     background-image: -moz-linear-gradient(top, #eeeef3, #ceced3);
     background-image: -ms-linear-gradient(top, #eeeef3, #ceced3);
     background-image: -o-linear-gradient(top, #eeeef3, #ceced3);
-    background-image: linear-gradient(top, #eeeef3, #ceced3);
+    background-image: linear-gradient(to top, #eeeef3, #ceced3);
 }
 
 .databack {
@@ -741,16 +733,12 @@ h2.site-head, h2.site-head a {
 
     #tsearchbox {
         box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
         width: 90%;
     }
 
     .art-sheet-cc {
         border: none;
         box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
     }
 
     #globe {

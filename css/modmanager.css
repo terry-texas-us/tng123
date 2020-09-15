@@ -426,8 +426,6 @@ div.descpop1:hover div {
 /* modlister */
 #mmgrid th, #mmgrid td, #mmgrid td div, .results {
     border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
 }
 
 /* modeditor */
@@ -446,7 +444,7 @@ div.edreturn form {
 
 .mmsubhead {
     text-align: center;
-    padding: 5;
+    padding: 5px;
     font-size: 12px;
 }
 
@@ -530,7 +528,7 @@ table.mmlist-fixed {
 
 /* m2tables - for secondary MH pages Options and Analyzer */
 table.m2table-fixed {
-    margin-top: 119px; /*from top of screen*/
+    margin-top: 148px; /*from top of screen*/
 }
 
 /* modeditor */
@@ -603,7 +601,7 @@ div.list-indent {
 .parse-table {
     position: absolute;
     min-width: 98%;
-    top: 120;
-    left: 05;
+    top: 120px;
+    left: 5px;
     padding: 5px;
 }

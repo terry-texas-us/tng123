@@ -115,12 +115,8 @@ body {
 
 .mhead ul {
     border-top: 30px solid #2d2214;
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .4);
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .4);
     -ms-box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
     box-shadow: 0 0 5px rgba(0, 0, 0, .4);
-    -moz-border-radius: 0 0 8px 8px;
-    -webkit-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
     margin-top: -30px;
     padding: 0;
@@ -166,8 +162,6 @@ body {
 }
 
 .mhead li:last-child a {
-    -moz-border-radius: 0 0 8px 8px;
-    -webkit-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
 }
 

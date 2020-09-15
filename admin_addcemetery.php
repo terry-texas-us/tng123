@@ -71,8 +71,8 @@ if ($place) {
     $params = array(&$template, &$placetree, &$place, &$latitude, &$longitude, &$zoom, &$notes);
     tng_execute($query, $params);
   } elseif (isset($usecoords)) {
-    $treestr = $tree && $tngconfig['places1tree'] ? "gedcom=\"$tree\" AND " : "";
-    $query = "UPDATE $places_table SET latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\" WHERE {$treestr}place=\"$place\"";
+    $treestr = $tree && $tngconfig['places1tree'] ? "gedcom='$tree' AND " : "";
+      $query = "UPDATE $places_table SET latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\" WHERE {$treestr}place=\"$place\"";
     $result3 = tng_query($query);
   }
   tng_free_result($result);

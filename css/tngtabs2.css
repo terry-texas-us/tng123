@@ -24,8 +24,6 @@ ul#tngnav {
     border-right: 1px solid #444;
     position: relative;
     font: 11px arial, helvetica, sans-serif;
-    -moz-border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0;
 }
 

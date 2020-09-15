@@ -97,8 +97,6 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 .t3shadow {
-    -moz-box-shadow: 1px 1px 2px 1px #666;
-    -webkit-box-shadow: 1px 1px 2px 1px #666;
     box-shadow: 1px 1px 2px 1px #666;
 }
 
@@ -163,7 +161,7 @@ a.topmenu:hover {
 .indexpage {
     margin-left: auto;
     margin-right: auto;
-    width: 800;
+    width: 800px;
     text-align: left;
 }
 
@@ -232,13 +230,13 @@ ul.tngdd ul li a:hover {
 }
 
 ul.tngdd .menulink {
-    background: #D0BC91 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E8D5A9), to(#B8A579));
-    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #E8D5A9, #B8A579);
+    background: #d0bc91 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8d5a9), to(#b8a579));
+    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #e8d5a9, #b8a579);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
@@ -257,13 +255,13 @@ ul.tngdd .menulink:hover, ul.tngdd .menuhover {
 
 /* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
-    background-color: #D0BC91;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E8D5A9), to(#B8A579));
-    background-image: -webkit-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: -moz-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: -ms-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: -o-linear-gradient(top, #E8D5A9, #B8A579);
-    background-image: linear-gradient(top, #E8D5A9, #B8A579);
+    background-color: #d0bc91;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8d5a9), to(#b8a579));
+    background-image: -webkit-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: -moz-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: -ms-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: -o-linear-gradient(top, #e8d5a9, #b8a579);
+    background-image: linear-gradient(to top, #e8d5a9, #b8a579);
 }
 
 .databack {

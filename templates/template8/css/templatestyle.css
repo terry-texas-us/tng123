@@ -161,8 +161,6 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #hs1 {
-    -moz-border-radius: 10px 0 0 10px;
-    -webkit-border-radius: 10px 0 0 10px;
     border-radius: 10px 0 0 10px;
 }
 
@@ -209,8 +207,6 @@ a.admincell:hover, a.leftlink:hover {
 .homenav li {
     background-color: #211a16;
     color: #e9cfa2;
-    -moz-border-radius: 3px 4px 4px 3px;
-    -webkit-border-radius: 3px 4px 4px 3px;
     border-radius: 3px 4px 4px 3px;
     padding: 2px 1px 2px 5px;
 }

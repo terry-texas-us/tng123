@@ -381,13 +381,13 @@ ul.tngdd ul li a:hover {
 }
 
 ul.tngdd .menulink {
-    background: #B4D1D6 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CBE9ED), to(#9BB9BD));
-    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #CBE9ED, #9BB9BD);
+    background: #b4d1d6 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cbe9ed), to(#9bb9bd));
+    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #cbe9ed, #9bb9bd);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
@@ -406,13 +406,13 @@ ul.tngdd .menulink:hover, ul.tngdd .menuhover {
 
 /* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
-    background-color: #B4D1D6;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CBE9ED), to(#9BB9BD));
-    background-image: -webkit-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: -moz-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: -ms-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: -o-linear-gradient(top, #CBE9ED, #9BB9BD);
-    background-image: linear-gradient(top, #CBE9ED, #9BB9BD);
+    background-color: #b4d1d6;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cbe9ed), to(#9bb9bd));
+    background-image: -webkit-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: -moz-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: -ms-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: -o-linear-gradient(top, #cbe9ed, #9bb9bd);
+    background-image: linear-gradient(to top, #cbe9ed, #9bb9bd);
 }
 
 ul.tngdd .sub {

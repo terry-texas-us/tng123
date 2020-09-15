@@ -673,8 +673,6 @@ h2.art-logo-text a {
     height: 12px;
     background-color: #DCD7D1;
     border: 1px solid #B1A89A;
-    -moz-border-radius: 6px 6px 6px 6px;
-    -webkit-border-radius: 6px 6px 6px 6px;
     border-radius: 6px 6px 6px 6px;
 }
 
@@ -835,8 +833,6 @@ div.art-block img {
     height: 6px;
     background-color: #EBE9E5;
     border: 1px solid #CAC3BA;
-    -moz-border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
 }
 
@@ -1360,8 +1356,6 @@ div.art-footer img {
     height: 12px;
     background-color: #DCD7D1;
     border: 1px solid #B1A89A;
-    -moz-border-radius: 6px 6px 6px 6px;
-    -webkit-border-radius: 6px 6px 6px 6px;
     border-radius: 6px 6px 6px 6px;
 }
 
@@ -1636,7 +1630,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #f5efe9, #c5bfb9);
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #f5efe9, #c5bfb9);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #f5efe9, #c5bfb9);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #f5efe9, #c5bfb9);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #f5efe9, #c5bfb9);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
@@ -1661,7 +1655,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
     background-image: -moz-linear-gradient(top, #f5efe9, #c5bfb9);
     background-image: -ms-linear-gradient(top, #f5efe9, #c5bfb9);
     background-image: -o-linear-gradient(top, #f5efe9, #c5bfb9);
-    background-image: linear-gradient(top, #f5efe9, #c5bfb9);
+    background-image: linear-gradient(to top, #f5efe9, #c5bfb9);
 }
 
 .databack {
@@ -1749,7 +1743,6 @@ td.calDay, td.calToday, table.calendar {
     h1.art-logo-name {
         font-size: 22px;
         text-shadow: 1px 1px 3px #333333;
-        filter: dropshadow(color=#333333, offx=1, offy=1);
     }
 
     h2.art-logo-text {

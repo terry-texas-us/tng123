@@ -179,8 +179,6 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 /* header-title is defined to replace the hard-coded style in topmenu.php */
-/* <span style="letter-spacing:2px;filter:dropshadow(color=#450000, OffX=3, OffY=3);color:#b99852;font-style:italic;font-size:40px;font-family:Verdana,Arial,Helvetica,sans-serif;height:28px;">  */
-/*  Note the filter:dropshadow style was left in the topmenu since it was only working in IE */
 .headertitle {
     background-color: #660000;
     letter-spacing: 2px;

@@ -7,8 +7,7 @@
 html {
     font-family: sans-serif;
     height: 100%;
-    ms-text-size-adjust: 100%;
-    webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 .tng-home {
@@ -534,8 +533,8 @@ div.innercontainer {
 }
 
 ul.tngdd .menulink {
-    background: #D1C5B7 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #D1C5B7, #b28963);
+    background: #d1c5b7 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #d1c5b7, #b28963);
     background-position: 2px 8px;
     background-repeat: no-repeat;
 }
@@ -556,8 +555,8 @@ ul.tngdd .menuhover {
 div.innercontainer,
 ul.tngdd .langmenu,
 ul.tngdd .stubmenu {
-    background-color: #D1C5B7;
-    background-image: linear-gradient(top, #D1C5B7, #b28963);
+    background-color: #d1c5b7;
+    background-image: linear-gradient(to top, #d1c5b7, #b28963);
 }
 
 ul.tngdd .sub {
@@ -629,8 +628,6 @@ h3.subheader {
 td.highlightedchild {
     background-color: #efe9e3;
     box-shadow: 4px 4px 6px 0 #777;
-    moz-box-shadow: 4px 4px 6px 0 #777;
-    webkit-box-shadow: 4px 4px 6px 0 #777;
 }
 
 .bottomhr {
@@ -933,8 +930,6 @@ h6 {
 td.highlightedchild {
     background-color: #D1C5B7;
     box-shadow: 4px 4px 6px 0 #777;
-    moz-box-shadow: 4px 4px 6px 0 #777;
-    webkit-box-shadow: 4px 4px 6px 0 #777;
 }
 
 textarea {
@@ -955,8 +950,8 @@ ul.tngdd .menuhover {
 }
 
 ul.tngdd .stubmenu {
-    background-color: #D1C5B7;
-    background-image: linear-gradient(top, #D1C5B7, #b28963);
+    background-color: #d1c5b7;
+    background-image: linear-gradient(to top, #d1c5b7, #b28963);
 }
 
 ul.tngdd .sub {

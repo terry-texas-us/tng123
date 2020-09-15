@@ -113,14 +113,10 @@ a:visited {
 }
 
 .popup, .slidedown {
-    -moz-box-shadow: 1px 1px 3px 0 #666;
-    -webkit-box-shadow: 1px 1px 3px 0 #666;
     box-shadow: 1px 1px 3px 0 #666;
 }
 
 .popup, .popinner, .pboxpopupdiv, .slidedown {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
@@ -143,20 +139,14 @@ a:visited {
 
 
 .rounded10 {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
 .rounded4, div.pad5 img {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
 }
 
 div.pad5 img, .adminicon {
-    -moz-box-shadow: 1px 1px 2px 0 #333;
-    -webkit-box-shadow: 1px 1px 2px 0 #333;
     box-shadow: 1px 1px 2px 0 #333;
 }
 
@@ -585,8 +575,6 @@ input[type="text"],
 textarea,
 select {
     border: 1px solid gray;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
     padding: 3px 6px;
 }
@@ -787,11 +775,7 @@ input.minibutton {
 }
 
 .thumb, .smallimg, .media-preview {
-    -moz-box-shadow: 1px 1px 1px 0 #777;
-    -webkit-box-shadow: 1px 1px 1px 0 #777;
     box-shadow: 1px 1px 1px 0 #777;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
 }
 
@@ -824,8 +808,6 @@ input.minibutton {
     color: black;
     font-weight: bold;
     text-decoration: none;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
     text-align: right;
 }
@@ -872,8 +854,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
     display: none;
     z-index: 500;
     padding-top: 28px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
     border-radius: 8px;
 }
 
@@ -896,8 +876,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
     position: absolute;
     top: 0;
     background-color: #336; /*same as "fieldnameback" background color */
-    -moz-border-radius: 5px 5px 0 0;
-    -webkit-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
 }
 
@@ -905,8 +883,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
     cursor: pointer;
     padding: 1px 4px 2px 2px;
     float: right;
-    -moz-border-radius: 5px 5px 0 0;
-    -webkit-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
 }
 
@@ -1039,16 +1015,6 @@ td.unhighlightedchild {
     background-color: green;
 }
 
-/* for images in pull down menus */
-.tnggif {
-    width: 20px;
-    height: 20px;
-    border: 0;
-    vertical-align: -6px;
-    margin: 0;
-    padding: -3px;
-}
-
 /* for ArrowDown.gif in genlib.php */
 #mnav .arrow {
     float: left;
@@ -1106,8 +1072,6 @@ form {
     background-color: #f9f9f9;
     padding: 10px;
     margin: 1px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
     border-radius: 8px;
 }
 
@@ -1122,8 +1086,6 @@ form {
 }
 
 .rightround {
-    -moz-border-radius: 0 4px 4px 0;
-    -webkit-border-radius: 0 4px 4px 0;
     border-radius: 0 4px 4px 0;
 }
 
@@ -1156,8 +1118,6 @@ form {
     font-size: 14pt;
     border: 1px solid black;
     background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
@@ -1238,8 +1198,6 @@ p.menu {
     width: 40px;
     height: 40px;
     margin: 1px 9px 0 3px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
 }
 
@@ -1255,8 +1213,6 @@ a.admincell {
     padding: 8px;
     margin: 2px 3px 4px 3px;
     display: block;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
 }
 
@@ -1285,15 +1241,12 @@ a.admincell {
 .leftlink {
     padding: 4px 4px 4px 6px;
     display: block;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
 }
 
 .tngmsgarea,
 a.admincell, .leftlink, .whiteheader, .whitetext {
     text-shadow: 1px 1px 1px #000;
-    filter: dropshadow(color=#000, offx=1, offy=1);
 }
 
 a.admincell:hover, a.leftlink:hover {
@@ -1491,8 +1444,6 @@ div.menucontainer {
 
 div.innercontainer {
     height: 22px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
 }
 
@@ -1546,8 +1497,6 @@ ul.tngdd * {
 ul.tngdd a {
     display: block;
     text-decoration: none;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
 }
 
@@ -1555,8 +1504,6 @@ ul.tngdd li {
     position: relative;
     float: left;
     margin-right: 1px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
 }
 
@@ -1567,12 +1514,8 @@ ul.tngdd ul {
     display: none;
     opacity: 0;
     list-style: none;
-    -moz-box-shadow: 1px 1px 3px 0 #666;
-    -webkit-box-shadow: 1px 1px 3px 0 #666;
     box-shadow: 1px 1px 3px 0 #666;
     background-color: #666;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
 }
 
@@ -1586,8 +1529,6 @@ ul.tngdd ul li {
     border-top: none;
     width: 158px;
     margin: 0;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
     border-radius: 0;
 }
 
@@ -1597,20 +1538,14 @@ ul.tngdd ul li a {
     background-color: #eee;
     font-size: 12px;
     border-top: 1px solid #fff;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
     border-radius: 0;
 }
 
 ul.tngdd ul li:first-child, ul.tngdd ul li:first-child a {
-    -moz-border-radius: 6px 6px 0 0;
-    -webkit-border-radius: 6px 6px 0 0;
     border-radius: 6px 6px 0 0;
 }
 
 ul.tngdd ul li:last-child, ul.tngdd ul li:last-child a {
-    -moz-border-radius: 0 0 6px 6px;
-    -webkit-border-radius: 0 0 6px 6px;
     border-radius: 0 0 6px 6px;
 }
 
@@ -1652,8 +1587,6 @@ ul.tngdd .langmenu {
 ul.tngdd .stubmenu {
     border-left: 0;
     width: 8px;
-    -moz-border-radius: 0 6px 6px 0;
-    -webkit-border-radius: 0 6px 6px 0;
     border-radius: 0 6px 6px 0;
 }
 
@@ -1661,8 +1594,6 @@ ul.tngdd .stubmenu-rt {
     border-right: 0;
     margin-right: 0;
     width: 8px;
-    -moz-border-radius: 6px 0 0 6px;
-    -webkit-border-radius: 6px 0 0 6px;
     border-radius: 6px 0 0 6px;
 }
 
@@ -1852,11 +1783,7 @@ ul.tngdd ul li a .menu-icon {
 
 .temppreview {
     border: 1px solid black;
-    -moz-box-shadow: 1px 1px 3px 0 #666;
-    -webkit-box-shadow: 1px 1px 3px 0 #666;
     box-shadow: 1px 1px 3px 0 #666;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
     border-radius: 8px;
 }
 
@@ -1870,11 +1797,7 @@ ul.tngdd ul li a .menu-icon {
     background-color: white;
     min-height: 150px;
     width: 95%;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
-    -moz-box-shadow: 1px 1px 3px 0 #666;
-    -webkit-box-shadow: 1px 1px 3px 0 #666;
     box-shadow: 1px 1px 3px 0 #666;
     padding: 10px;
     margin-right: 20px;
@@ -1941,8 +1864,6 @@ ul.tngdd ul li a .menu-icon {
     margin-top: -10px;
     z-index: 20;
     background: #e0e0f7; /*same as "databack" background color */
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
     border-radius: 8px;
 }
 
@@ -2417,7 +2338,6 @@ thead th {
 .btn.active {
     background-image: none;
     outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 

@@ -5,20 +5,20 @@ $textpart = "templates";
 include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
-  header("Location: admin_main.php");
-  exit;
+    header("Location: admin_main.php");
+    exit;
 }
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  include "version.php";
+    $admin_login = 1;
+    include "checklogin.php";
+    include "version.php";
 
-  if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    if ($assignedtree || !$allow_edit) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 }
 
 require "adminlog.php";
@@ -34,52 +34,52 @@ unset($_POST['form_templateswitching']);
 unset($_POST['save']);
 
 foreach ($_FILES as $key => $file) {
-  $newfile = $file['tmp_name'];
-  if ($newfile && $newfile != "none") {
-    $newkey = substr($key, 7);
-    $foldername = is_numeric($form_templatenum) ? "template" . $form_templatenum : $form_templatenum;
-    $newpath = $rootpath . "templates/$foldername/" . $_POST['form_' . $newkey];
+    $newfile = $file['tmp_name'];
+    if ($newfile && $newfile != "none") {
+        $newkey = substr($key, 7);
+        $foldername = is_numeric($form_templatenum) ? "template" . $form_templatenum : $form_templatenum;
+        $newpath = $rootpath . "templates/$foldername/" . $_POST['form_' . $newkey];
 
-    if (@move_uploaded_file($newfile, $newpath)) {
-      @chmod($newpath, 0644);
+        if (@move_uploaded_file($newfile, $newpath)) {
+            @chmod($newpath, 0644);
+        }
     }
-  }
 }
 
 $lastkey = "";
 $holdarr = array();
 $orders = array();
 
-$insert = "INSERT IGNORE INTO $templates_table (template,ordernum,keyname,language,value) VALUES ";
+$insert = "INSERT IGNORE INTO $templates_table (template, ordernum, keyname, language, value) VALUES ";
 $update = "UPDATE $templates_table SET ";
 
 foreach ($_POST as $newkey => $newvalue) {
-  $newvalue = addslashes($newvalue);
+    $newvalue = addslashes($newvalue);
 
     $key = substr($newkey, 5);
 
-  //split key to get number, keyname & language
-  $keyparts = explode("_", $key);
-  $template = substr($keyparts[0], 1);
-  if (!isset($orders[$template])) {
-    $orders[$template] = 1;
-  } else {
-    $orders[$template]++;
-  }
+    //split key to get number, keyname & language
+    $keyparts = explode("_", $key);
+    $template = substr($keyparts[0], 1);
+    if (!isset($orders[$template])) {
+        $orders[$template] = 1;
+    } else {
+        $orders[$template]++;
+    }
 
-  $keyname = $keyparts[1];
-  $num_keyparts = count($keyparts);
-  $language = $num_keyparts > 2 ? $keyparts[$num_keyparts - 1] : "";
+    $keyname = $keyparts[1];
+    $num_keyparts = count($keyparts);
+    $language = $num_keyparts > 2 ? $keyparts[$num_keyparts - 1] : "";
 
-  //try insert
-  $query = $insert . "(\"$template\", \"{$orders[$template]}\", \"$keyname\", \"$language\", \"$newvalue\")";
-  $result = tng_query($query);
-  $success = tng_affected_rows();
-  //else try update
-  if (!$success) {
-    $query = $update . "value = \"$newvalue\", ordernum = \"{$orders[$template]}\" WHERE template = \"$template\" AND keyname = \"$keyname\" AND language = \"$language\"";
+    //try insert
+    $query = $insert . "(\"$template\", \"{$orders[$template]}\", \"$keyname\", \"$language\", \"$newvalue\")";
     $result = tng_query($query);
-  }
+    $success = tng_affected_rows();
+    //else try update
+    if (!$success) {
+        $query = $update . "value = \"$newvalue\", ordernum = \"{$orders[$template]}\" WHERE template = \"$template\" AND keyname = \"$keyname\" AND language = \"$language\"";
+        $result = tng_query($query);
+    }
 }
 
 adminwritelog($admtext['modifytemplatesettings'] . " - {$admtext['template']} " . $form_templatenum . " - {$admtext['templateswitching']} = " . $form_templateswitching);
