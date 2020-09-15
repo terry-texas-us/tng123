@@ -712,7 +712,7 @@ include_once "eventlib_js.php";
                     echo "<input type=\"hidden\" name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
                 } ?>
                 <?php defineLdsHiddenFields($rights['lds'], $row); ?>
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
             </td>
         </tr>
         <?php } ?> <!-- end of the editconflict conditional -->

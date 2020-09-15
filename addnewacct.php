@@ -8,7 +8,7 @@ include $cms['tngpath'] . "$mylanguage/cust_text.php"; //needed because alltext.
 
 include $cms['tngpath'] . "tngmaillib.php";
 
-$valid_user_agent = isset($_SERVER["HTTP_USER_AGENT"]) && $_SERVER["HTTP_USER_AGENT"] != "";
+$valid_user_agent = isset($_SERVER["HTTP_USER_AGENT"]) && ($_SERVER["HTTP_USER_AGENT"] != "");
 
 $emailfield = $_SESSION['tng_email'];
 if (!$emailfield) {

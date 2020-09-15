@@ -18,9 +18,9 @@
             <div class="art-nav-inner">
                 <div class="t tngfooter">
                     <?php
-                  $flags['basicfooter'] = true;
-                  echo tng_footer($flags);
-                  ?>
+                    $flags['basicfooter'] = true;
+                    tng_footer($flags);
+                    ?>
                 </div>
             </div>
         </div>

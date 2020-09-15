@@ -45,8 +45,8 @@ html {
 }
 
 body {
-    color: #000000;
-    background-color: #ECE4EB;
+    color: #000;
+    background-color: #ece4eb;
     background-image: url('../img/Bottom_texture.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
@@ -237,7 +237,7 @@ table.position {
 }
 
 .art-hmenu a .t {
-    color: #435E95;
+    color: #435e95;
     padding: 0 22px;
     margin: 0 0;
     line-height: 31px;
@@ -257,15 +257,15 @@ table.position {
 }
 
 .art-hmenu a:hover .t {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .art-hmenu li:hover a .t {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .art-hmenu li:hover > a .t {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /* end MenuItem */
@@ -301,7 +301,7 @@ table.position {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #FFFFFF;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 1px 1px 2px 1px #666;
 }
@@ -491,13 +491,13 @@ div.art-block img {
 
 /* link: normal links, active: links in use */
 a:link, a:active, div.icons a {
-    color: #435E95;
+    color: #435e95;
 }
 
 /* fieldnameback: background color for column and row title sections */
 .fieldnameback, .bar, .page, .LB_closeAjaxWindow,
 .tablesaw-cell-label {
-    background-color: #435E95;
+    background-color: #435e95;
 }
 
 a.admincell:hover, a.leftlink:hover {
@@ -506,7 +506,7 @@ a.admincell:hover, a.leftlink:hover {
 
 /* sideback: background color for side and top frames */
 .admincell, .sideback {
-    background-color: #435E95;
+    background-color: #435e95;
     background-image: none;
 }
 
@@ -518,14 +518,14 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #435E95;
+    background-color: #435e95;
     color: #fff;
 }
 
 .LB_window {
     background: #eeeef3;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.innercontainer {
@@ -537,7 +537,7 @@ ul.tngdd {
 }
 
 ul.tngdd a {
-    color: #435E95;
+    color: #435e95;
 }
 
 ul.tngdd ul li a, .slidedown {
@@ -545,7 +545,7 @@ ul.tngdd ul li a, .slidedown {
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -570,8 +570,8 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
-    background: #435E95 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    color: #fff;
+    background: #435e95 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
@@ -591,7 +591,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #CFCFDE;
+    background-color: #cfcfde;
 }
 
 .adminback {
@@ -621,11 +621,11 @@ ul.home-menus, ul.fancy_list {
 }
 
 td.calDay, td.calToday, table.calendar {
-    border-color: #435E95;
+    border-color: #435e95;
 }
 
 h2.site-head, h2.site-head a {
-    color: #435E95;
+    color: #435e95;
     font-family: 'Marcellus SC', Georgia, "Times New Roman", Times, Serif;
     font-size: 24pt;
     padding: 0 0 0 3px;
@@ -636,7 +636,7 @@ h2.site-head, h2.site-head a {
 
 .mmaintitle {
     font-family: 'Marcellus SC', Georgia, "Times New Roman", Times, Serif;
-    color: #435E95;
+    color: #435e95;
     opacity: 0.7;
 }
 
@@ -648,14 +648,14 @@ h2.site-head, h2.site-head a {
 }
 
 .big-header {
-    color: #435E95;
+    color: #435e95;
     font-family: 'Marcellus SC', Georgia, "Times New Roman", Times, Serif;
     font-size: 55px;
 }
 
 .dotted-line {
     width: 100%;
-    border-top: 1px dashed #435E95;
+    border-top: 1px dashed #435e95;
     margin: 0 0 0 -10px;
 }
 

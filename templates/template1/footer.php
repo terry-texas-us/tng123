@@ -3,7 +3,7 @@
 <hr>
 <?php
 $flags['basicfooter'] = true;
-echo tng_footer($flags);
+tng_footer($flags);
 ?>
 <br>
-<!-- end of footer.php for template 1 -->
+<!-- end of footer for template 1 -->

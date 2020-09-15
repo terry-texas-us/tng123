@@ -300,8 +300,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
             <td class="tngshadow">
                 <p class="normal"><strong><?php echo $admtext['medlater']; ?></strong></p>
                 <input type="hidden" name="usenl" value="0">
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
-                <input type="hidden" name="numlinks" value="1"><input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
+                <input type="hidden" name="numlinks" value="1">
+                <input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
             </td>
         </tr>
 

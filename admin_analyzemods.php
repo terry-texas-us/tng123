@@ -34,14 +34,7 @@ $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
 $min_width = $sitever == 'mobile' ? '0' : '640px';
-echo "
-<style type='text/css'>
-body {
-   margin:0;
-   overflow-y: scroll;
-   min-width:$min_width;
-}
-</style>";
+echo "<style type='text/css'>body { margin:0; overflow-y: scroll; min-width:$min_width; }</style>";
 
 if (!isset($options['show_analyzer'])) {
     $options['show_analyzer'] = "0";
@@ -70,9 +63,8 @@ $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $m
 if (empty($admtext['modguidelines'])) {
     $admtext['modguidelines'] = "Mod Guidelines";
 }
-/*************************************************************************
- * SHOW HEADER
- *************************************************************************/
+// SHOW HEADER
+
 if ($options['fix_header'] == YES && $sitever != 'mobile') {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
@@ -81,54 +73,32 @@ if ($options['fix_header'] == YES && $sitever != 'mobile') {
     $tableclass = 'm2table-scroll';
 }
 
-echo "
-</head>
-<body background=\"img/background.gif\">
-<div id=\"mmhead\" class=\"$headclass adminback\">
-   $headline
-</div><!--head-section-->";
+echo "</head>";
+echo "<body background=\"img/background.gif\">";
+echo "<div id=\"mmhead\" class=\"$headclass adminback\">$headline</div> <!--head-section-->";
+echo "<table id=\"m2table\" class='normal lightback $tableclass'>";
+echo "<tr><td class='databack mmleftcol'>";
 
-echo "
-<table id=\"m2table\" class='normal lightback $tableclass'>
-<tr>
-<td class='databack mmleftcol'>";
-
-/*************************************************************************
- * DISPLAY INDEX OF MODIFIED FILES (LEFT SIDE)
- **************************************************************************/
-echo "
-<table class=\"normal tfixed\">
-   <tr>
-      <th class=\"fieldnameback fieldname\">{$admtext['filesel']}</th>
-   <tr>";
+// DISPLAY INDEX OF MODIFIED FILES (LEFT SIDE)
+echo "<table class=\"normal tfixed\">";
+echo "<tr><th class=\"fieldnameback fieldname\">{$admtext['filesel']}</th><tr>";
 $modFiles = get_modfile_names();
 $targetFiles = get_targetfile_names($modFiles);
 display_targetfiles($targetFiles);
-echo "
-   <tr><td>&nbsp;</td></tr>
-</table><!--left-->
-</td>";
+echo "<tr><td>&nbsp;</td></tr>";
+echo "</table><!--left-->";
+echo "</td>";
 
-/*************************************************************************
- * DISPLAY FILE MODIFICATIONS (RIGHT SIDE)
- *************************************************************************/
-echo "
-<td class='databack mmrightcol'>
-<table class=\"normal tfixed\">
-   <tr>
-      <th class=\"fieldnameback fieldname\">{$admtext['potconf']}</th>
-   </tr>";
+// DISPLAY FILE MODIFICATIONS (RIGHT SIDE)
+echo "<td class='databack mmrightcol'>";
+echo "<table class=\"normal tfixed\">";
+echo "<tr><th class=\"fieldnameback fieldname\">{$admtext['potconf']}</th></tr>";
 
 
 if ($_GET && is_array($_GET)) {
     if (!empty($mtarget)) {
         $file_hdr = str_replace('xxx', "<span class=\"mmhighlight\">$mtarget</span>", $admtext['filemod']);
-        echo "
-   <tr>
-      <td class='databack'>
-         <h2>$file_hdr:</h2>
-      </td>
-   </tr>";
+        echo "<tr><td class='databack'><h2>$file_hdr:</h2></td></tr>";
 
         $id = 1;
 
@@ -142,26 +112,16 @@ if ($_GET && is_array($_GET)) {
             if ($file == 'add_my_copyright_v11.0.0.1.cfg') {
             }
             if (strpos($buffer, "%target:$mtarget%") || strpos($buffer, "%target: $mtarget")) {
-                echo "
-   <tr>
-      <td class='databack'>";
+                echo "<tr><td class='databack'>";
                 display_section_locations($file, $buffer, $mtarget, "id$id");
                 $id++;
-                echo "
-      </td>
-   </tr>";
+                echo "</td></tr>";
             }
         }
     }
 }
-echo "
-</table><!--right-->
-</td>
-</tr>
-</table><!--outter-->";
-/*************************************************************************
- * JAVASCRIPT SECTION
- *************************************************************************/
+echo "</table><!--right-->";
+echo "</td></tr></table><!--outter-->";
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
     echo "
@@ -194,10 +154,9 @@ function toggleSection(sectionName) {
 }
 </script>";
 
-echo "
-<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>
-</body>
-</html>";
+echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
+echo "</body>";
+echo "</html>";
 exit;
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
@@ -287,10 +246,7 @@ function get_targetfile_names($modFileNames) {
 
 function display_targetfiles($targetFiles) {
     foreach ($targetFiles as $mtarget) {
-        echo "
-   <tr><td class='lightback databack mmrightalign'>
-      <a class=\"mmlinks\" href=\"?mtarget=$mtarget\">$mtarget</a>
-   </td></tr>";
+        echo "<tr><td class='lightback databack mmrightalign'><a class=\"mmlinks\" href=\"?mtarget=$mtarget\">$mtarget</a></td></tr>";
     }
 }
 
@@ -299,13 +255,9 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
 
     $contentstr = nl2br($contentstr);
     $sections = array_map('trim', explode("%target:", $contentstr));
-    echo "
-      <span class=\"mmfilenmfont\">$modfile</span>&nbsp;&nbsp;
-      <a href=\"#\" id=\"{$id}link\" onclick=\"return toggleSection('$id');\">
-         {$admtext['show']}&nbsp;{$admtext['modifications']}
-      </a><br>
-      <div id=\"{$id}div\" style=\"display:none;\">
-      <br>";
+    echo "<span class=\"mmfilenmfont\">$modfile</span>&nbsp;&nbsp;";
+    echo "<a href=\"#\" id=\"{$id}link\" onclick=\"return toggleSection('$id');\">{$admtext['show']}&nbsp;{$admtext['modifications']}</a><br>";
+    echo "<div id=\"{$id}div\" style=\"display:none;\"><br>";
     for ($i = 1; isset($sections[$i]); $i++) {
         $target_file = trim(preg_replace("#([^%]*)%.*#s", "\${1}", $sections[$i]));
         if (trim($target_file) == trim($mtarget)) {
@@ -315,13 +267,10 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
                 $locations[$j] = str_replace("%end:%", "</strong>%end:%", $locations[$j]);
                 $locations[$j] .= "%end:%<br>";
                 $locations[$j] = preg_replace("@((%location|%end|%trim|%insert|%replace)[^%]*%)@i", "<span class=\"mmkeyword\">$1</span>", $locations[$j]);
-                echo "
-         <span class=\"mmlochdr\">// Location $j</span><br>
-         <span class=\"mmkeyword\">%location:%</span><strong>
-         {$locations[$j]}";
+                echo "<span class=\"mmlochdr\">// Location $j</span><br>";
+                echo "<span class=\"mmkeyword\">%location:%</span><strong>{$locations[$j]}";
             }
         }
     }
-    echo "
-      </div>";
+    echo "</div>";
 }

@@ -4,13 +4,13 @@
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
-    background-color: #D5BF90;
+    background-color: #d5bf90;
     border-bottom: 1px solid #948055;
-    border-top: 1px solid #F2E6CC;
+    border-top: 1px solid #f2e6cc;
     text-shadow: white 1px 1px 0;
     color: black;
 }

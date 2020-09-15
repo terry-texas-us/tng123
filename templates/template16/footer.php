@@ -11,4 +11,4 @@ echo tng_footer($flags);
 </div>
 </div>
 </div>
-<!-- end of footer.php for template 1 -->
+<!-- end of footer for template 16 -->

@@ -84,7 +84,7 @@
 }
 
 #tfooter a:hover, #tfooter a:active {
-    color: #FFF;
+    color: #fff;
 }
 
 #thomemast {
@@ -107,7 +107,7 @@
 }
 
 .theader h1, #subfooter p, #subfooter a {
-    color: #D99860;
+    color: #d99860;
 }
 
 .theader h1, .tblock h2, .tfooter h2, .linkcol h2 {
@@ -212,7 +212,7 @@ a:link, a:active, div.icons a {
 }
 
 a.admincell:hover, a.leftlink:hover {
-    background-color: #D99860;
+    background-color: #d99860;
 }
 
 /* sideback: background color for side and top frames */
@@ -235,8 +235,8 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 
 .LB_window {
     background: #e2c2a9;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.innercontainer {
@@ -264,7 +264,7 @@ ul.tngdd ul li a, .slidedown {
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -279,7 +279,7 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
+    color: #fff;
     background: #000 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
@@ -290,7 +290,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #F2F0EE;
+    background-color: #f2f0ee;
 }
 
 ul.tngdd .sub {

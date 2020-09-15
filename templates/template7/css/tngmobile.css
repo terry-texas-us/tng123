@@ -1,19 +1,19 @@
 #mast {
-    background-color: #B9B186;
-    background-image: -moz-linear-gradient(to bottom, #C5BD93 0%, #A59C6F 100%);
-    background-image: -webkit-linear-gradient(to bottom, #C5BD93 0%, #A59C6F 100%);
-    background-image: linear-gradient(to bottom, #C5BD93 0%, #A59C6F 100%);
-    border-top: 1px solid #DAD3B0;
+    background-color: #b9b186;
+    background-image: -moz-linear-gradient(to bottom, #c5bd93 0%, #a59c6f 100%);
+    background-image: -webkit-linear-gradient(to bottom, #c5bd93 0%, #a59c6f 100%);
+    background-image: linear-gradient(to bottom, #c5bd93 0%, #a59c6f 100%);
+    border-top: 1px solid #dad3b0;
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
-    background-color: #D6D6BC;
-    border-bottom: 1px solid #7A7A58;
-    border-top: 1px solid #FFFFFD;
+    background-color: #d6d6bc;
+    border-bottom: 1px solid #7a7a58;
+    border-top: 1px solid #fffffd;
     text-shadow: white 1px 1px 0;
-    color: #666666;
+    color: #666;
 }

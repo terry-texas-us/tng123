@@ -10,7 +10,7 @@ ul#tngnav {
 /*inactive tab*/
 #tngnav a {
     color: #444;
-    background: #F2E6CC;
+    background: #f2e6cc;
     padding: 0.4em 1em 0.3em 8px;
     border-right: 1px solid #444;
     border-radius: 4px 4px 0 0;
@@ -19,14 +19,14 @@ ul#tngnav {
 /*active tab*/
 #tngnav a:hover {
     background-color: #660002;
-    color: #FFFFFF;
+    color: #fff;
     background-image: url(../img/fieldbg.jpg);
 }
 
 /*active tab*/
 #tngnav a.here {
     background-color: #660002;
-    color: #FFCC00;
+    color: #fc0;
     border-right: 1px solid #444;
     margin: 0;
     background-image: url(../img/fieldbg.jpg);
@@ -40,7 +40,7 @@ ul#tngnav {
 
 /*inactive tab*/
 #tabs a {
-    background: #F2E6CC;
+    background: #f2e6cc;
     color: #444;
     padding: 0.4em 0.8em 0.4em 0.8em;
     border-right: 1px solid #aaa;
@@ -49,13 +49,13 @@ ul#tngnav {
 /*active tab*/
 #tabs a:hover {
     background-color: #660002;
-    color: #FFFFFF;
+    color: #fff;
     background-image: url(../img/fieldbg.jpg);
 }
 
 /*active tab*/
 #tabs .here {
     background-color: #660002;
-    color: #FFCC00;
+    color: #fc0;
     background-image: url(../img/fieldbg.jpg);
 }

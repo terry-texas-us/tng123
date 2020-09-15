@@ -553,13 +553,14 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
                     }
                     ?>
-                    <br><br><input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
+                    <br><br>
+                    <input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
                     <?php if (!$rights['lds']) { ?>
                         <input type="hidden" value="<?php echo $row['sealdate']; ?>" name="sealdate">
                         <input type="hidden" name="sealsrc" value="<?php echo $row['sealsrc']; ?>">
                         <input type="hidden" value="<?php echo $row['sealplace']; ?>" name="sealplace">
                     <?php } ?>
-                    <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                    <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                     </span>
                 </td>
             </tr>

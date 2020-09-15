@@ -268,18 +268,18 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                 </div>
             </td>
         </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-                <p class="normal"><strong><?php echo $admtext['pevslater']; ?></strong></p>
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+      <tr class="databack">
+          <td class="tngshadow">
+              <p class="normal"><strong><?php echo $admtext['pevslater']; ?></strong></p>
+              <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
               <?php
               if (!$lnprefixes) {
-                echo "<input type=\"hidden\" name=\"lnprefix\" value=\"\">";
+                  echo "<input type=\"hidden\" name=\"lnprefix\" value=\"\">";
               }
               ?>
-                <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
-            </td>
-        </tr>
+              <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+          </td>
+      </tr>
 
   </table>
 </form>

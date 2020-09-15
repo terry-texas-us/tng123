@@ -135,15 +135,15 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
+                </table>
+              </div>
+      </td>
+    </tr>
 
       <tr class="databack">
           <td class="tngshadow">
               <p class="normal"><strong><?php echo $admtext['dnalater']; ?></strong></p>
-              <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+              <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
               <input type="submit" name="submitbtn" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
           </td>
       </tr>

@@ -1,8 +1,5 @@
 <?php
 $flags['noicons'] = 1;
-// PLEASE NOTE: This page only contains the contents of your main page.  If you are trying to make changes
-//              to the header, you will need to edit topmenu.php.  If you want to edit the footer, edit
-//              footer.php.
 
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 if ($sitever == "mobile") {
@@ -156,6 +153,4 @@ if ($sitever == "mobile") {
         </tr>
     </table>
 
-<?php
-echo tng_footer($flags);
-?>
+<?php tng_footer($flags); ?>

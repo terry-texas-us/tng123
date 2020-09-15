@@ -85,7 +85,7 @@ a:link, a:active, div.icons a {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #EEEEDD;
+    background-color: #eed;
     border-right: 1px solid #f2f2e9;
     border-bottom: 1px solid #f2f2e9;
 }
@@ -120,7 +120,7 @@ table.mmlog-fixed {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #EEEEDD;
+    background-color: #eed;
     border-right: 1px solid #f2f2e9;
     border-bottom: 1px solid #f2f2e9;
 }
@@ -169,7 +169,7 @@ a.lightlink:hover, a.lightlink:active {
 
 /* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #666666;
+    background-color: #666;
 }
 
 .whitesubhead {
@@ -193,14 +193,14 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 #mnav li { /* all list items */
     font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, sans-serif;
     background: #f2f2e9; /* d7cfa2; - same as "databack" background color */
-    border-color: #cccc99 #777 #777 #cccc99;
+    border-color: #cc9 #777 #777 #cc9;
     border-style: solid;
     border-width: 1px;
 }
 
 
 #mnav li ul li {
-    background: #eeeecc; /*inactive dropdown menu color*/
+    background: #eec; /*inactive dropdown menu color*/
 }
 
 
@@ -209,7 +209,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 /* line: is defined to replace the bgcolor="#999966" used with a line gif image (khaki.gif in template 7)*/
 .line {
-    color: #999966;
+    color: #996;
     margin-top: 0;
     background-image: url(../img/khaki.gif);
     height: 1px;
@@ -217,13 +217,13 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 /* page:  */
 .page {
-    background-color: #FFFFFF;
+    background-color: #fff;
 }
 
 /* tableborder to replace hard-coded style in topmenu.php */
 /* bgcolor="#FAF4E6" bordercolor="#000000" style="border-collapse: collapse" */
 .tableborder {
-    background-color: #FAF4E6;
+    background-color: #faf4e6;
     border-collapse: collapse;
     border-color: black;
 }
@@ -237,7 +237,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 /* tableheader added to replace background="border.jpg" */
 .tableheader {
-    background-color: #FFFFFF;
+    background-color: #fff;
     background-image: url(../img/border.jpg);
     vertical-align: top;
     width: 73px;
@@ -249,7 +249,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 }
 
 #headertable {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 /* footer:Link added to replace <font color="#39692A"> */
@@ -270,7 +270,7 @@ a.footer:hover {
 
 /* strip replaces  align="right" valign="middle" height="20"  */
 .strip {
-    color: #999966;
+    color: #996;
     margin-top: 0;
     background-image: url(../img/khaki.gif);
     height: 27px;
@@ -290,7 +290,7 @@ a.footer:hover {
 .news {
     vertical-align: top;
     text-align: left;
-    background-color: #FFFFFF;
+    background-color: #fff;
     width: 70%;
     padding: 5px;
 }
@@ -361,12 +361,12 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 
 .LB_window {
     background: #f2f2e9;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #000;
+    color: #000;
 }
 
 .plainheader {
-    color: #666633;
+    color: #663;
 }
 
 div.innercontainer {
@@ -374,11 +374,11 @@ div.innercontainer {
 }
 
 ul.tngdd {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd a {
-    color: #FF8212;
+    color: #ff8212;
     font-weight: bold;
 }
 
@@ -387,7 +387,7 @@ ul.tngdd ul li a, .slidedown {
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -402,7 +402,7 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #999;
     border-right: 1px solid #999;
-    color: #ffffff;
+    color: #fff;
     background: #b9b186 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
@@ -432,12 +432,12 @@ ul.tngdd .topline {
 
 .mmaintitle {
     font-family: Verdana, Arial, sans-serif;
-    color: #666666;
+    color: #666;
     font-style: italic;
 }
 
 .adminsubmsg {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .fambackground {

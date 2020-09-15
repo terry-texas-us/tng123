@@ -23,9 +23,6 @@ $row['state'] = preg_replace("/\"/", "&#34;", $row['state']);
 $row['zip'] = preg_replace("/\"/", "&#34;", $row['zip']);
 $row['country'] = preg_replace("/\"/", "&#34;", $row['country']);
 
-if ($session_charset != "UTF-8") {
-}
-
 $helplang = findhelp("more_help.php");
 
 header("Content-type:text/html; charset=" . $session_charset);

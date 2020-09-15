@@ -1275,14 +1275,15 @@ function getAlbumPhoto($albumID, $albumname) {
                 }
 
                 $rights = determineLivingPrivateRights($prow);
+                // TODO are allow_living allow_private used
                 $prow['allow_living'] == $rights['living'];
                 $prow['allow_private'] == $rights['private'];
 
                 //if living still null, must be a source
                 if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-                    $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
-						WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
-						AND living = '1'";
+                    $query = "SELECT COUNT(personID) AS ccount ";
+                    $query .= "FROM $citations_table citations, $people_table people ";
+                    $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND living = '1'";
                     $presult2 = tng_query($query);
                     $prow2 = tng_fetch_assoc($presult2);
                     if ($prow2['ccount']) {
@@ -1290,9 +1291,9 @@ function getAlbumPhoto($albumID, $albumname) {
                     }
                     tng_free_result($presult2);
                 } elseif ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
-                    $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
-						WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom
-						AND living = '1'";
+                    $query = "SELECT COUNT(familyID) AS ccount ";
+                    $query .= "FROM $citations_table citations, $families_table families ";
+                    $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = families.familyID AND citations.gedcom = families.gedcom AND living = '1'";
                     $presult2 = tng_query($query);
                     $prow2 = tng_fetch_assoc($presult2);
                     if ($prow2['ccount']) {

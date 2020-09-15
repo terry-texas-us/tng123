@@ -90,13 +90,13 @@ ul#tngnav {
 /*active tab*/
 #tngnav a:hover {
     background: url(../img/tngtabactive.png) no-repeat;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /*active tab*/
 #tngnav a.here {
     background: url(../img/tngtabactive.png) no-repeat;
-    color: #FFCC00;
+    color: #fc0;
     border-right: 1px solid #777;
     padding: 0.45em 1em 0.4em 26px;
     margin: 0 4px 0 0;
@@ -122,12 +122,12 @@ ul#tngnav {
 /*active tab*/
 #tabs a:hover {
     background: url(../img/tngtabactive.png) no-repeat;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /*active tab*/
 #tabs a.here {
     background: url(../img/tngtabactive.png) no-repeat;
-    color: #FFCC00;
+    color: #fc0;
     padding: 0.3em 1.0em .6em 26px;
 }

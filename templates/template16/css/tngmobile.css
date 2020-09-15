@@ -12,16 +12,16 @@ body {
     background-image: -moz-linear-gradient(to bottom, #5e8db5 0%, #2e5d85 100%);
     background-image: -webkit-linear-gradient(to bottom, #5e8db5 0%, #2e5d85 100%);
     background-image: linear-gradient(to bottom, #5e8db5 0%, #2e5d85 100%);
-    border-top: 1px solid #000066;
+    border-top: 1px solid #006;
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
     background-color: #5e8db5;
-    border-bottom: 1px solid #000066;
+    border-bottom: 1px solid #006;
     border-top: 1px solid #ddd4c7;
 }
 

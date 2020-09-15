@@ -192,15 +192,15 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
             echo $admtext['onsave'] . ":<br>";
             echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
             if ($cw) {
-              echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
             } else {
-              echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
             }
             ?>
           </p>
             <input type="hidden" name="tree" value="<?php echo $tree; ?>">
             <input type="hidden" name="sourceID" value="<?php echo "$sourceID"; ?>">
-            <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+            <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
             <input type="submit" class="btn" name="submit2" accesskey="s" value="<?php echo $admtext['save']; ?>">
         </td>
       </tr>

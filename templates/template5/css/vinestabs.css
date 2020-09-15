@@ -80,11 +80,11 @@ ul#tngnav {
     display: block;
     background: url("../img/tabright.gif") no-repeat right top;
     padding: 5px 15px 4px 6px;
-    color: #9F9584;
+    color: #9f9584;
 }
 
 #tngnav a:hover span {
-    color: #FFF;
+    color: #fff;
 }
 
 #tngnav a:hover {
@@ -101,6 +101,6 @@ ul#tngnav {
 
 #tngnav a.here span {
     background-position: 100% -42px;
-    color: #FFF;
+    color: #fff;
 }
 

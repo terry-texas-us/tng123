@@ -10,7 +10,7 @@ ul#tngnav {
 /*inactive tab*/
 #tngnav a {
     color: #444;
-    background: #FFE9A9;
+    background: #ffe9a9;
     padding: 0.4em 1em 0.3em 8px;
     border-right: 1px solid #444;
     border-radius: 4px 4px 0 0;
@@ -19,13 +19,13 @@ ul#tngnav {
 /*active tab*/
 #tngnav a:hover {
     background: #676037;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /*active tab*/
 #tngnav a.here {
     background: #676037;
-    color: #FFCC00;
+    color: #fc0;
     border-right: 1px solid #444;
     margin: 0;
 }
@@ -38,7 +38,7 @@ ul#tngnav {
 
 /*inactive tab*/
 #tabs a {
-    background: #FFE9A9;
+    background: #ffe9a9;
     color: #444;
     padding: 0.4em 0.8em 0.4em 0.8em;
     border-right: 1px solid #aaa;
@@ -47,11 +47,11 @@ ul#tngnav {
 /*active tab*/
 #tabs a:hover {
     background: #676037;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /*active tab*/
 #tabs .here {
     background: #676037;
-    color: #FFCC00;
+    color: #fc0;
 }

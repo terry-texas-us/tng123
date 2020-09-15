@@ -4,12 +4,12 @@
     <tr>
         <td>
             <div class="footer">
-              <?php
-              $flags['basicfooter'] = true;
-              echo tng_footer($flags);
-              ?>
+                <?php
+                $flags['basicfooter'] = true;
+                tng_footer($flags);
+                ?>
             </div>
         </td>
     </tr>
 </table>
-<!-- end of footer.php for template 3 -->
+<!-- end of footer for template 3 -->

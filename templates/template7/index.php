@@ -62,9 +62,11 @@ if (!$cms['support'] && $sitever != "mobile") {
             <tr class="strip">
                 <td class="fieldnameback">
 								<span class="fieldname">
-									&nbsp;<span class="nw"><?php echo $text['mnufirstname']; ?>: <input type="text" name="myfirstname" size="18"></span>
+									&nbsp;<span class="nw"><?php echo $text['mnufirstname']; ?>: <input type="text" name="myfirstname"
+                                                                                                        size="18"></span>
 									&nbsp;<span class="nw"><?php echo $text['mnulastname']; ?>: <input type="text" name="mylastname" size="18"></span>
-									<input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0"><input type="submit" name="search"
+									<input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0"><input type="submit"
+                                                                                                                                       name="search"
                                                                                                                                        value="<?php echo $text['mnusearch']; ?>">
 								</span>
                 </td>
@@ -143,7 +145,8 @@ if (!$cms['support'] && $sitever != "mobile") {
                                         //Actual file name has been replaced with t7_mainimage variable, configurable from Template Settings. Default name of actual image is "bigphoto.jpg"
                                         //You can replace the t7_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                                         ?>
-                                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t7_mainimage']; ?>" alt="" class="bigphoto"><br>
+                                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t7_mainimage']; ?>" alt=""
+                                             class="bigphoto"><br>
                                         <?php
                                         //end MAIN IMAGE
                                         ?>
@@ -255,10 +258,10 @@ if (!$cms['support'] && $sitever != "mobile") {
     <div class="footer">
         <?php
         $flags['basicfooter'] = true;
-        echo tng_footer($flags);
+        tng_footer($flags);
         ?>
     </div> <!-- end of footer div -->
 </div> <!-- end of center div -->
 
-</body>
-</html>
+<?php echo "</body>"; ?>
+<?php echo "</html>"; ?>"

@@ -1,5 +1,5 @@
 <?php global $text, $currentuser, $mylanguage, $cms, $tng_version, $flags; ?>
-</div> <!-- end of normal div -->
+</div>
 </td>
 </tr>
 </table>
@@ -9,11 +9,11 @@
 
 <hr>
 <div class="footer">
-  <?php
-  $flags['basicfooter'] = true;
-  echo tng_footer($flags);
-  ?>
-  <br>
-</div> <!-- end of footer div -->
-</div> <!-- end of center div -->
-<!-- end of footer.php for template 7 -->
+    <?php
+    $flags['basicfooter'] = true;
+    tng_footer($flags);
+    ?>
+    <br>
+</div>
+</div>
+<!-- end of footer for template 7 -->

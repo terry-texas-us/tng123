@@ -17,7 +17,9 @@ global $text, $currentuser, $cms, $allow_admin, $subroot, $tmp, $mediatypes;
 
                         if ($tmp['t7_titlechoice'] == "text") {
                             ?>
-                            <td class="logo" style="padding:10px;background:url(<?php echo $cms['tngpath'] . $templatepath; ?>img/logoedge.gif) no-repeat right #DCD5B9;" width="400">
+                            <td class="logo"
+                                style="padding:10px;background:url(<?php echo $cms['tngpath'] . $templatepath; ?>img/logoedge.gif) no-repeat right #DCD5B9;"
+                                width="400">
                                 <div>
                                     <em id="maintitle"><?php echo getTemplateMessage('t7_maintitle'); ?></em>
                                 </div>

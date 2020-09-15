@@ -43,6 +43,7 @@ function getAlbumPhoto($albumID, $albumname) {
                 //if living still null, must be a source
 
                 $rights = determineLivingPrivateRights($prow);
+                // TODO are allow_living allow_private used
                 $prow['allow_living'] == $rights['living'];
                 $prow['allow_private'] == $rights['private'];
 

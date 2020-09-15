@@ -9,10 +9,10 @@
 <tr>
     <td colspan="4" class="headerback">
         <div class="footer">
-          <?php
-          $flags['basicfooter'] = true;
-          echo tng_footer($flags);
-          ?>
+            <?php
+            $flags['basicfooter'] = true;
+            tng_footer($flags);
+            ?>
         </div>
     </td>
 </tr>

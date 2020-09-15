@@ -8,7 +8,7 @@
 /* header: heading text */
 .header, .theader {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    color: #665544;
+    color: #654;
     text-align: left;
 }
 
@@ -18,53 +18,53 @@
 
 /* body: describes page background color and all non-table text not governed by any other style */
 body {
-    background-color: #FAF4E6;
-    color: #665544;
+    background-color: #faf4e6;
+    color: #654;
 }
 
 /* link: normal links, active: links in use */
 a:link, a:visited, div.icons a {
-    color: #4E7076;
+    color: #4e7076;
 }
 
 /* visited: previously visited links */
 a:active, a:hover {
-    color: #6CABAE;
+    color: #6cabae;
 }
 
 /* fieldname: background color for column and row title sections */
 .fieldname {
-    background-color: #68939B;
+    background-color: #68939b;
     text-align: left;
 }
 
 /* databack: background color for data areas */
 .databack {
-    background-color: #FDFAF2;
+    background-color: #fdfaf2;
 }
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #EEEEDD;
+    background-color: #eed;
 }
 
 a.lightlink:hover, a.lightlink:active {
-    color: #CCE2E3;
+    color: #cce2e3;
     text-decoration: none;
 }
 
 a.lightlink2:hover, a.lightlink2:active {
-    color: #CCE2E3;
+    color: #cce2e3;
     text-decoration: none;
 }
 
 .lightback {
-    background-color: #FAF4E6;
+    background-color: #faf4e6;
 }
 
 /* sideback: background color for side and top frames */
 .sideback {
-    background-color: #4E7076;
+    background-color: #4e7076;
 }
 
 /* page: is defined to replace the bgcolor=#676037; */
@@ -72,22 +72,22 @@ a.lightlink2:hover, a.lightlink2:active {
 /* sideback: background color for side and top frames */
 .LB_closeAjaxWindow, .bar, .fieldnameback,
 .tablesaw-cell-label {
-    background-color: #68939B;
+    background-color: #68939b;
 }
 
 /* background color for admin menu items while active*/
 a.admincell:hover {
-    background-color: #4E7076;
+    background-color: #4e7076;
 }
 
 a.leftlink:hover {
-    background-color: #68939B;
+    background-color: #68939b;
 }
 
 /*added in 5.0.0*/
 /*for active secondary tab link*/
 a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
-    color: #ECD9CC;
+    color: #ecd9cc;
 }
 
 /* banner: heading text replaces td width="585" class="header" style="font-size:30 px" */
@@ -95,18 +95,18 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     margin-top: 0;
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 30px;
-    color: #665544;
+    color: #654;
     width: 585px;
 }
 
 .mmaintitle {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    color: #665544;
+    color: #654;
 }
 
 /* line is defined to replace the bgcolor="#660000"  */
 .line {
-    color: #660000;
+    color: #600;
 }
 
 /* row:  added to replace bgcolor="#4E7076"  */
@@ -114,7 +114,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     border: 1px;
     border-collapse: collapse;
     border-color: black;
-    background-color: #4E7076;
+    background-color: #4e7076;
     height: 5px;
 }
 
@@ -122,13 +122,13 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 .row30 {
     border-collapse: collapse;
     border-color: black;
-    background-color: #4E7076;
+    background-color: #4e7076;
     height: 30px;
 }
 
 /* sitename: background color for site name section */
 .sitename {
-    background-color: #4E7076;
+    background-color: #4e7076;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -139,7 +139,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 .topmenu {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     padding: 5px;
     text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
@@ -147,21 +147,21 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 a.topmenu:link {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
 }
 
 a.topmenu:visited {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
 }
 
 a.topmenu:active {
     text-decoration: none;
-    color: #CCE2E3;
+    color: #cce2e3;
 }
 
 a.topmenu:hover {
-    color: #CCE2E3;
+    color: #cce2e3;
     text-decoration: none;
 }
 
@@ -181,11 +181,11 @@ a.topmenu:hover {
 
 /* tableheader added to replace bgcolor="#4E7076" background="blueleaves.gif" width="785" height="25" */
 .tableheader {
-    background-color: #4E7076;
+    background-color: #4e7076;
     background-image: url(../img/blueleaves.gif);
     border: 1px;
     border-collapse: collapse;
-    border-color: #111111;
+    border-color: #111;
     width: 885px;
     height: 25px;
 }
@@ -193,8 +193,8 @@ a.topmenu:hover {
 /* tablesubheader added to replace bgcolor="#665544" width="785" height="15" in topmenu.php */
 .tablesubheader {
     border-collapse: collapse;
-    border-color: #111111;
-    background-color: #665544;
+    border-color: #111;
+    background-color: #654;
     width: 885px;
     height: 15px;
 }
@@ -206,7 +206,7 @@ a.topmenu:hover {
     background-image: url(../img/blueleaves.gif);
     width: 150px;
     border-collapse: collapse;
-    border-color: #111111;
+    border-color: #111;
     padding: 0;
 }
 
@@ -214,7 +214,7 @@ a.topmenu:hover {
 .spacercol {
     /* border-collapse: collapse;
     border-color: #111111; */
-    background-color: #665544;
+    background-color: #654;
     width: 12px;
     padding: 0;
 }
@@ -222,7 +222,7 @@ a.topmenu:hover {
 /* indexheader: site home page header text */
 .indexheader {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    color: #665544;
+    color: #654;
     font-size: 30px;
     text-align: right;
     padding: 10px 10px 5px 0; /* top right bottom left */
@@ -240,13 +240,13 @@ a.topmenu:hover {
 /* box: added to replace hard-coded style  */
 /* bgcolor="#4E7076" style="border-collapse: separate" bordercolor="#111111" */
 .indexbox {
-    background-color: #4E7076;
+    background-color: #4e7076;
     border-collapse: collapse;
-    border-color: #111111;
+    border-color: #111;
     margin-right: 10px;
     margin-left: 120px;
     text-align: left;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 20px;
     padding: 5px 10px 5px 10px; /* top right bottom left */
     float: right;
@@ -259,8 +259,8 @@ a.topmenu:hover {
 
 /* boxback: to use instead of fieldback on index.php  */
 .boxback {
-    background-color: #4E7076;
-    color: #FFFFFF;
+    background-color: #4e7076;
+    color: #fff;
     font-size: 12px;
     text-align: right;
     margin-right: 5px;
@@ -274,7 +274,7 @@ a.topmenu:hover {
 
 /* footer:hover added to override footer links hover attribute */
 a.footer:hover {
-    color: #4E7076;
+    color: #4e7076;
 }
 
 /* additional styles added for XHTML 1.0 Strict validation */
@@ -305,7 +305,7 @@ a.footer:hover {
 /* innertable added to replace hard-coded style in topmenu and index.php   style="border-collapse: collapse" bordercolor="#111111" cellpadding="5" cellspacing="0" width="100%"  */
 .innertable {
     border-collapse: collapse;
-    border-color: #111111;
+    border-color: #111;
     border: none;
 }
 
@@ -341,23 +341,23 @@ a.footer:hover {
 .snlink {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
-    background-color: #FDFAF2;
+    background-color: #fdfaf2;
     color: black;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #68939B;
+    background-color: #68939b;
     color: #fff;
 }
 
 .LB_window {
-    background: #FDFAF2;
-    border: 2px solid #000000;
-    color: #000000;
+    background: #fdfaf2;
+    border: 2px solid #000;
+    color: #000;
 }
 
 .plainheader {
-    color: #4E7076;
+    color: #4e7076;
 }
 
 div.innercontainer {
@@ -365,19 +365,19 @@ div.innercontainer {
 }
 
 ul.tngdd {
-    background-color: #FAF4E6;
+    background-color: #faf4e6;
 }
 
 ul.tngdd a {
-    color: #4E7076;
+    color: #4e7076;
 }
 
 ul.tngdd ul li a, .slidedown {
-    background-color: #eeeeee;
+    background-color: #eee;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -400,8 +400,8 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
-    background: #665544 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    color: #fff;
+    background: #654 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
@@ -425,7 +425,7 @@ ul.tngdd .topline {
 
 
 .fambackground {
-    background-color: #9BB9BD;
+    background-color: #9bb9bd;
 }
 
 @media (max-width: 980px) {

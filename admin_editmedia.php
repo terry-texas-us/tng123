@@ -609,7 +609,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <input type="hidden" name="mediatypeID_org" value="<?php echo "$mediatypeID"; ?>">
                 <input type="hidden" name="mediaID" value="<?php echo "$mediaID"; ?>">
                 <input type="hidden" name="mediakey_org" value="<?php echo $row['mediakey']; ?>">
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                 <input type="submit" name="fsubmit" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
             </td>
         </tr>

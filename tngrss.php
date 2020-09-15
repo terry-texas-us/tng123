@@ -67,9 +67,9 @@ function doMedia($mediatypeID) {
                 $prow['private'] = $prow['fprivate'];
             }
             if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-                $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
-					WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
-					AND (living = '1' OR private = '1')";
+                $query = "SELECT count(personID) AS ccount ";
+                $query .= "FROM $citations_table citations, $people_table people ";
+                $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
                 $presult2 = tng_query($query);
                 $prow2 = tng_fetch_assoc($presult2);
                 if ($prow2['ccount']) {
@@ -220,7 +220,7 @@ if (!$personID && !$familyID) {             // only feed the changes when not mo
     initMediaTypes();
     foreach ($mediatypes as $mediatype) {
         $mediatypeID = $mediatype['ID'];
-        echo doMedia($mediatypeID);
+        doMedia($mediatypeID);
     }
 }
 $cutoffstr .= " AND";

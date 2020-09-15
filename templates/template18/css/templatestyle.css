@@ -40,7 +40,7 @@
 
 .homebody, .theader {
     margin: 0;
-    background-color: #31708E;
+    background-color: #31708e;
 }
 
 #tngcontent {
@@ -95,7 +95,7 @@
 }
 
 #home-search-box a {
-    color: #31708E;
+    color: #31708e;
 }
 
 .tsubtitle {
@@ -105,7 +105,7 @@
 }
 
 #tfooter a:hover, #tfooter a:active {
-    color: #FFF;
+    color: #fff;
 }
 
 #thomemast {
@@ -141,7 +141,7 @@
 }
 
 #big-block-2, #tfooter {
-    background-color: #31708E;
+    background-color: #31708e;
 }
 
 #tfooter {
@@ -210,7 +210,7 @@
 
 /* header: heading text */
 .header, .plainheader {
-    color: #31708E;
+    color: #31708e;
 }
 
 /* link: normal links, active: links in use */
@@ -221,7 +221,7 @@ a:link, a:active, div.icons a {
 /* fieldnameback: background color for column and row title sections */
 .fieldnameback, .bar, .page, .LB_closeAjaxWindow,
 .tablesaw-cell-label {
-    background-color: #31708E;
+    background-color: #31708e;
 }
 
 /* databack: background color for data areas */
@@ -235,12 +235,12 @@ a.admincell:hover, a.leftlink:hover {
 
 /* sideback: background color for side and top frames */
 .admincell {
-    background-color: #31708E;
+    background-color: #31708e;
     background-image: none;
 }
 
 .sideback {
-    background-color: #31708E;
+    background-color: #31708e;
     background-image: none;
 }
 
@@ -252,14 +252,14 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #31708E;
+    background-color: #31708e;
     color: #fff;
 }
 
 .LB_window {
     background: #deebf4;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.innercontainer {
@@ -287,7 +287,7 @@ ul.tngdd ul li a, .slidedown {
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -302,8 +302,8 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
-    background: #31708E url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    color: #fff;
+    background: #31708e url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
@@ -313,7 +313,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #F2F0EE;
+    background-color: #f2f0ee;
 }
 
 ul.tngdd .sub {

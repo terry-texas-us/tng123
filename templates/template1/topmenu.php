@@ -7,21 +7,22 @@
 //You can replace the t1_titleimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
 
 if ($tmp['t1_titlechoice'] == "text") {
-  ?>
-  <div style="float:left;"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header-image.gif" alt="" width="93" height="72"></div>
-  <div>
-    <em><a href="index.php" class="toptitle">
+    ?>
+    <div style="float:left;"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header-image.gif" alt="" width="93" height="72"></div>
+    <div>
+        <em><a href="index.php" class="toptitle">
 
-        <?php echo getTemplateMessage('t1_maintitle'); ?>
+                <?php echo getTemplateMessage('t1_maintitle'); ?>
 
-      </a></em>
-  </div>
-  <br>
-  <?php
+            </a></em>
+    </div>
+    <br>
+    <?php
 } else {
-  ?>
-  <a href="<?php echo $cms['tngpath']; ?>index.php"><img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_headimgplustitle']; ?>" alt=""></a>
-  <?php
+    ?>
+    <a href="<?php echo $cms['tngpath']; ?>index.php"><img
+                src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_headimgplustitle']; ?>" alt=""></a>
+    <?php
 }
 //end HEADER IMAGE
 ?>

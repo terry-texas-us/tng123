@@ -26,7 +26,7 @@
 
 /* fieldname: regular text within column or row title sections */
 .fieldname {
-    color: #F2E6CC;
+    color: #f2e6cc;
 }
 
 /* body: describes page background color and all non-table text not governed by any other style */
@@ -38,11 +38,11 @@
 
 /* header: heading text */
 .header, .plainheader {
-    color: #660000;
+    color: #600;
 }
 
 a.headerlink:link {
-    color: #CCCCCC;
+    color: #ccc;
     font-family: Geneva, Arial, Helvetica, sans-serif;
     font-size: 10px;
 }
@@ -55,7 +55,7 @@ a:link, a:active, div.icons a {
 
 /* visited: previously visited links */
 a:visited {
-    color: #8B8776;
+    color: #8b8776;
 }
 
 /* fieldnameback: background color for column and row title sections */
@@ -65,23 +65,23 @@ a:visited {
     border-bottom-width: 1px;
     border-right-style: solid;
     border-bottom-style: solid;
-    border-right-color: #663333;
-    border-bottom-color: #663333;
+    border-right-color: #633;
+    border-bottom-color: #633;
     background-image: url(../img/fieldbg.jpg);
 }
 
 /* databack: background color for data areas */
 .databack {
-    background-color: #F2E6CC;
+    background-color: #f2e6cc;
 }
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #FCF9F3;
+    background-color: #fcf9f3;
 }
 
 a.lightlink:hover, a.lightlink:active {
-    color: #F2E6CC;
+    color: #f2e6cc;
     text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ a.lightlink:hover, a.lightlink:active {
 
 /* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #C3B165;
+    background-color: #c3b165;
     background-image: none;
 }
 
@@ -114,7 +114,7 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #navcontainer a {
-    background-color: #FFFFFF;
+    background-color: #fff;
     display: block;
     width: 100px;
     padding: 3px;
@@ -123,26 +123,26 @@ a.admincell:hover, a.leftlink:hover {
 .navtext {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #3E331D;
+    color: #3e331d;
     padding-left: 7px;
 }
 
 #navcontainer a:link {
-    color: #3E331D;
+    color: #3e331d;
     text-decoration: none;
 }
 
 #navlist a:visited {
-    color: #3E331D;
+    color: #3e331d;
     text-decoration: none;
 }
 
 #navcontainer a:hover {
-    background-color: #F2E6CC;
+    background-color: #f2e6cc;
 }
 
 .tablebkground {
-    background-color: #FFFFFF;
+    background-color: #fff;
 }
 
 
@@ -171,7 +171,7 @@ a.admincell:hover, a.leftlink:hover {
 
 /* page: is defined to override the body bgcolor=#3E331D; width="100%" align="center" cellspacing="0" in the top table for the page */
 .page {
-    background-color: #3E331D;
+    background-color: #3e331d;
     padding: 0;
     margin: 0;
     border-collapse: collapse;
@@ -180,7 +180,7 @@ a.admincell:hover, a.leftlink:hover {
 
 /* header-title is defined to replace the hard-coded style in topmenu.php */
 .headertitle {
-    background-color: #660000;
+    background-color: #600;
     letter-spacing: 2px;
     color: #b99852;
     font-style: italic;
@@ -191,25 +191,25 @@ a.admincell:hover, a.leftlink:hover {
 
 .mmaintitle {
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    color: #3E331D;
+    color: #3e331d;
     font-style: italic;
 }
 
 /* headertext-sm added to replace <font size=1> */
 .headertext-sm {
     font-size: 10px;
-    color: #B99852;
+    color: #b99852;
 }
 
 /* headertext added to replace <font size=2 color=#B99852> */
 .headertext {
     font-size: 12px;
-    color: #B99852;
+    color: #b99852;
 }
 
 /* headerback: is defined to replace the bgcolor=#3E331D; in the top table and footer */
 .headerback {
-    background-color: #3E331D;
+    background-color: #3e331d;
     padding: 10px;
 }
 
@@ -236,37 +236,37 @@ a.admincell:hover, a.leftlink:hover {
 /* footer added to replace <font size="1" color="#cccc99"> in footer */
 .footer {
     font-size: 11px;
-    color: #cccc99;
+    color: #cc9;
 }
 
 /* footer:link added to replace <font color="#E1B964"> in footer */
 a.footer:link {
-    color: #B99852;
+    color: #b99852;
 }
 
 a.footer:visited {
-    color: #B99852;
+    color: #b99852;
 }
 
 a.footer:hover {
-    color: #FFCC33;
+    color: #fc3;
 }
 
 .footerbold {
-    color: #FFCC33;
+    color: #fc3;
     font-weight: bold;
 }
 
 /* gradientup added to replace background=gradientup.gif" bgcolor="#F8EDE3" in footer */
 .gradientup {
     background-image: url(../img/gradientup.gif);
-    background-color: #3E331D;
+    background-color: #3e331d;
 }
 
 /* gradient added to replace background=gradient.gif" bgcolor="#F8EDE3" in topmenu */
 .gradient {
     background-image: url(../img/gradient.gif);
-    background-color: #3E331D;
+    background-color: #3e331d;
 }
 
 /* padding added to replace align="left" style="padding:5px" in topmenu */
@@ -284,7 +284,7 @@ a.footer:hover {
 .snlink {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
-    background-color: #F2E6CC;
+    background-color: #f2e6cc;
     color: black;
 }
 
@@ -294,49 +294,49 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 }
 
 .LB_window {
-    background: #F2E6CC;
-    border: 2px solid #000000;
-    color: #000000;
+    background: #f2e6cc;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.innercontainer {
-    border-bottom: 1px solid #3E331D;
+    border-bottom: 1px solid #3e331d;
 }
 
 ul.tngdd {
-    background-color: #3E331D;
+    background-color: #3e331d;
 }
 
 ul.tngdd a {
-    color: #F2E6CC;
+    color: #f2e6cc;
 }
 
 ul.tngdd ul li a, .slidedown {
-    background-color: #F2E6CC;
+    background-color: #f2e6cc;
     color: #000;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
-    background: #3E331D url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background: #3e331d url(../img/ArrowDown.gif) 2px 8px no-repeat;
 }
 
 ul.tngdd .menulink, ul.tngdd .langmenu {
-    border: 1px solid #3E331D;
+    border: 1px solid #3e331d;
 }
 
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
-    border: 1px solid #3E331D;
-    color: #ffffff;
-    background: #3E331D url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    border: 1px solid #3e331d;
+    color: #fff;
+    background: #3e331d url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
-    background-color: #3E331D;
+    background-color: #3e331d;
 }
 
 ul.tngdd .sub {
@@ -348,11 +348,11 @@ ul.tngdd .topline {
 }
 
 div.icons a, div.icons-rt a {
-    color: #EBDEC5;
+    color: #ebdec5;
 }
 
 .fambackground {
-    background-color: #F2E6CC;
+    background-color: #f2e6cc;
 }
 
 @media (max-width: 800px) {

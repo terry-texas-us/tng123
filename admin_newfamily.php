@@ -334,7 +334,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
         <tr class="databack">
             <td class="tngshadow">
                 <p class="normal"><strong><?php echo $admtext['fevslater']; ?></strong></p>
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                 <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
             </td>
         </tr>

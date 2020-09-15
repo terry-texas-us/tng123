@@ -32,7 +32,6 @@ if ($cms['support'] == "phpnuke") {
         session_start();
         $session_language = $_SESSION['session_language'] = $newlanguage;
     }
-} elseif ($cms['support'] == "postnuke") {
 }
 
 if (empty($tree)) {

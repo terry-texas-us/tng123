@@ -1,22 +1,22 @@
 body {
     background-image: none;
-    background-color: #FDE6B8;
+    background-color: #fde6b8;
 }
 
 #mast {
-    background-color: #993333;
-    background-image: -moz-linear-gradient(to bottom, #AA0000 0%, #770000 100%);
-    background-image: -webkit-linear-gradient(to bottom, #AA0000 0%, #770000 100%);
-    background-image: linear-gradient(to bottom, #AA0000 0%, #770000 100%);
-    border-top: 1px solid #D56E6E;
+    background-color: #933;
+    background-image: -moz-linear-gradient(to bottom, #a00 0%, #700 100%);
+    background-image: -webkit-linear-gradient(to bottom, #a00 0%, #700 100%);
+    background-image: linear-gradient(to bottom, #a00 0%, #700 100%);
+    border-top: 1px solid #d56e6e;
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
-    background-color: #aa4444;
-    border-bottom: 1px solid #660000;
-    border-top: 1px solid #cc6666;
+    background-color: #a44;
+    border-bottom: 1px solid #600;
+    border-top: 1px solid #c66;
 }

@@ -211,7 +211,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                 <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                 <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
                 <input type="hidden" name="repoID" value="<?php echo "$repoID"; ?>">
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                 <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
             </td>
         </tr>

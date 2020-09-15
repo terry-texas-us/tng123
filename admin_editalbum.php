@@ -448,7 +448,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     ?>
                 </p>
 
-                <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                 <input type="hidden" name="albumID" value="<?php echo "$albumID"; ?>">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
             </td>

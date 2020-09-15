@@ -1,23 +1,23 @@
 body {
-    background: url("../img/bg.gif") repeat scroll 0 0 #FFFFFF;
+    background: url("../img/bg.gif") repeat scroll 0 0 #fff;
 }
 
 #mast {
-    background-color: #063E53;
+    background-color: #063e53;
     background-image: none;
     border-top: 1px solid #998475;
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
-    background-color: #E0D1BE;
+    background-color: #e0d1be;
     border-bottom: 1px solid #967954;
-    border-top: 1px solid #FCF9F7;
+    border-top: 1px solid #fcf9f7;
     text-shadow: white 1px 1px 1px;
-    color: #000000;
+    color: #000;
 }
 
 .headerrow {
@@ -25,7 +25,7 @@ body {
 }
 
 h3 {
-    color: #063E53;
+    color: #063e53;
 }
 
 .mmaintitle {

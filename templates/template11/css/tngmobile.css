@@ -3,21 +3,21 @@ body {
 }
 
 #mast {
-    background-color: #9F5392;
-    background-image: -moz-linear-gradient(to bottom, #B366A5 0%, #8A407D 100%);
-    background-image: -webkit-linear-gradient(to bottom, #B366A5 0%, #8A407D 100%);
-    background-image: linear-gradient(to bottom, #B366A5 0%, #8A407D 100%);
-    border-top: 1px solid #CA81BE;
+    background-color: #9f5392;
+    background-image: -moz-linear-gradient(to bottom, #b366a5 0%, #8a407d 100%);
+    background-image: -webkit-linear-gradient(to bottom, #b366a5 0%, #8a407d 100%);
+    background-image: linear-gradient(to bottom, #b366a5 0%, #8a407d 100%);
+    border-top: 1px solid #ca81be;
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
-    background-color: #C6E2C0;
-    border-bottom: 1px solid #6D9663;
-    border-top: 1px solid #EEFAEC;
+    background-color: #c6e2c0;
+    border-bottom: 1px solid #6d9663;
+    border-top: 1px solid #eefaec;
     text-shadow: white 1px 1px 1px;
-    color: #000000;
+    color: #000;
 }

@@ -106,27 +106,36 @@ if ($map['key']) {
                     <table class="normal" width="100%">
                         <tr>
                             <td><?php echo $admtext['cemeteryname']; ?>:</td>
-                            <td width="80%"><input type="text" value="<?php echo $row['cemname']; ?>" name="cemname" id="cemname" size="40"></td>
+                            <td width="80%">
+                                <input type="text" value="<?php echo $row['cemname']; ?>" name="cemname" id="cemname" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['maptoupload']; ?>*:</td>
-                            <td><input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.maplink);"></td>
+                            <td>
+                                <input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.maplink);">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['mapfilenamefolder']; ?>**:</td>
                             <td>
                                 <input type="text" value="<?php echo $row['maplink']; ?>" name="maplink" id="maplink" size="60">
-                                <input type="hidden" id="maplink_org" value="<?php echo $row['maplink']; ?>"><input type="hidden" id="maplink_last">
+                                <input type="hidden" id="maplink_org" value="<?php echo $row['maplink']; ?>">
+                                <input type="hidden" id="maplink_last">
                                 <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" OnClick="FilePicker('maplink','headstones');">
                             </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['city']; ?>:</td>
-                            <td><input type="text" value="<?php echo $row['city']; ?>" name="city" id="city" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $row['city']; ?>" name="city" id="city" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['countyparish']; ?>:</td>
-                            <td><input type="text" value="<?php echo $row['county']; ?>" name="county" id="county" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $row['county']; ?>" name="county" id="county" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['stateprovince']; ?>:</td>
@@ -145,7 +154,8 @@ if ($map['key']) {
                                 </select>
                                 <input type="button" name="addnewstate" value="<?php echo $admtext['addnew']; ?>"
                                        onclick="tnglitbox = new LITBox('admin_newentity.php?entity=state', {width:350, height:120}); $('newitem').focus();">
-                                <input type="button" name="deletestate" value="<?php echo $admtext['deleteselected']; ?>" onclick="attemptDelete(document.form1.state,'state');">
+                                <input type="button" name="deletestate" value="<?php echo $admtext['deleteselected']; ?>"
+                                       onclick="attemptDelete(document.form1.state,'state');">
                             </td>
                         </tr>
                         <tr>
@@ -165,22 +175,26 @@ if ($map['key']) {
                                 </select>
                                 <input type="button" name="addnewcountry" value="<?php echo $admtext['addnew']; ?>"
                                        onclick="tnglitbox = new LITBox('admin_newentity.php?entity=country', {width:350, height:120}); $('newitem').focus();">
-                                <input type="button" name="deletecountry" value="<?php echo $admtext['deleteselected']; ?>" onclick="attemptDelete(document.form1.country,'country');">
+                                <input type="button" name="deletecountry" value="<?php echo $admtext['deleteselected']; ?>"
+                                       onclick="attemptDelete(document.form1.country,'country');">
                             </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['linkplace']; ?>:</td>
                             <td>
-                                <input type="text" value="<?php echo $row['place']; ?>" name="place" id="place" class="longfield" onblur="fillCemetery(this.value);">
+                                <input type="text" value="<?php echo $row['place']; ?>" name="place" id="place" class="longfield"
+                                       onblur="fillCemetery(this.value);">
                                 <a href="#" onclick="return openFindPlaceForm('place');">
-                                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20" class="alignmiddle">
+                                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"
+                                         width="20" height="20" class="alignmiddle">
                                 </a>
                                 <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);">
                             </td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td><input type="checkbox" name="usecoords" value="1"> <?php echo $admtext['usecemcoords']; ?></td>
+                            <td>
+                                <input type="checkbox" name="usecoords" value="1"> <?php echo $admtext['usecemcoords']; ?></td>
                         </tr>
                         <?php
                         if ($map['key']) {
@@ -200,18 +214,24 @@ if ($map['key']) {
                         ?>
                         <tr>
                             <td><?php echo $admtext['latitude']; ?>:</td>
-                            <td><input id="latbox" name="latitude" type="text" value="<?php echo $row['latitude']; ?>" size="20"></td>
+                            <td>
+                                <input id="latbox" name="latitude" type="text" value="<?php echo $row['latitude']; ?>" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['longitude']; ?>:</td>
-                            <td><input id="lonbox" name="longitude" type="text" value="<?php echo $row['longitude']; ?>" size="20"></td>
+                            <td>
+                                <input id="lonbox" name="longitude" type="text" value="<?php echo $row['longitude']; ?>" size="20">
+                            </td>
                         </tr>
                         <?php
                         if ($map['key']) {
                             ?>
                             <tr>
                                 <td><?php echo $admtext['zoom']; ?>:</td>
-                                <td><input id="zoombox" name="zoom" type="text" value="<?php echo $row['zoom']; ?>" size="20"></td>
+                                <td>
+                                    <input id="zoombox" name="zoom" type="text" value="<?php echo $row['zoom']; ?>" size="20">
+                                </td>
                             </tr>
                             <?php
                         }
@@ -224,23 +244,23 @@ if ($map['key']) {
                         </tr>
                         <tr>
                             <td colspan="2">
-		<span class="normal">
-<?php
-echo $admtext['onsave'] . ":<br>";
-echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
-if ($cw) {
-    echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
-} else {
-    echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
-}
-?>
-		</span>
+		                        <span class="normal">
+                                    <?php
+                                    echo $admtext['onsave'] . ":<br>";
+                                    echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                                    if ($cw) {
+                                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                                    } else {
+                                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                                    }
+                                    ?>
+		                        </span>
                             </td>
                         </tr>
                     </table>
                     <br>&nbsp;
                     <input type="hidden" name="cemeteryID" value="<?php echo "$cemeteryID"; ?>">
-                    <input type="hidden" value="<?php echo "$cw"; /*stands for "close window" */ ?>" name="cw">
+                    <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                     <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
                     <p class="normal">*<?php echo $admtext['ifmapuploaded']; ?><br>
                         **<?php echo $admtext['requiredmap']; ?></p>

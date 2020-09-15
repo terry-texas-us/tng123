@@ -168,20 +168,20 @@ switch ($type) {
         $myhusbname = trim($myhusbname);
         $mywifename = trim($mywifename);
         $myfamilyID = trim($myfamilyID);
-        $allwhere = "$families_table.gedcom = \"$tree\"";
+        $allwhere = "families.gedcom = '$tree'";
         if ($branch) {
-            $allwhere .= " AND $families_table.branch LIKE \"%$branch%\"";
+            $allwhere .= " AND families.branch LIKE '%$branch%'";
         }
         if ($myfamilyID) {
             $myfamilyID = strtoupper($myfamilyID);
             if ($f != "%" && substr($myfamilyID, 0, 1) != $tngconfig['familyprefix']) {
                 $myfamilyID = $tngconfig['familyprefix'] . $myfamilyID;
             }
-            $allwhere .= " AND familyID LIKE \"%$myfamilyID%\"";
+            $allwhere .= " AND familyID LIKE '%$myfamilyID%'";
         }
         $joinon = "";
         if ($assignedbranch) {
-            $allwhere .= " AND $families_table.branch LIKE \"%$assignedbranch%\"";
+            $allwhere .= " AND families.branch LIKE '%$assignedbranch%'";
         }
 
         $allwhere2 = "";
@@ -209,7 +209,7 @@ switch ($type) {
         }
 
         $query = "SELECT familyID, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, wifepeople.living AS wliving, wifepeople.private AS wprivate, wifepeople.branch AS wbranch, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, husbpeople.living AS hliving, husbpeople.private AS hprivate, husbpeople.branch AS hbranch ";
-        $query .= "FROM $families_table families";
+        $query .= "FROM $families_table families ";
         $query .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
         $query .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
         $query .= "WHERE $allwhere $allwhere2 ";

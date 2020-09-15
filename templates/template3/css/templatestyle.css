@@ -34,44 +34,44 @@
 
 /* header: heading text */
 .header, .plainheader {
-    color: #39692A;
+    color: #39692a;
 }
 
 /* body: describes page background color and all non-table text not governed by any other style */
 body {
-    background-color: #FAF4E6;
+    background-color: #faf4e6;
 }
 
 /* link: normal links, active: links in use */
 a:link, a:active, div.icons a {
-    color: #39692A;
+    color: #39692a;
 }
 
 /* visited: previously visited links */
 a:visited {
-    color: #46AB28;
+    color: #46ab28;
 }
 
 /* sideback: background color for side and top frames */
 .sideback {
-    background-color: #28541B;
+    background-color: #28541b;
 }
 
 /* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #46AB28;
+    background-color: #46ab28;
 }
 
 /* fieldnameback: background color for column and row title sections */
 /* sideback: background color for side and top frames */
 .LB_closeAjaxWindow, .bar, .sideback, .fieldnameback,
 .tablesaw-cell-label {
-    background-color: #39692A;
+    background-color: #39692a;
 }
 
 /* line: is defined to replace the bgcolor="#660000"  */
 .line {
-    color: #660000;
+    color: #600;
 }
 
 .left-indent {
@@ -92,7 +92,7 @@ a.admincell:hover, a.leftlink:hover {
 
 /* page:  */
 .t3hdr {
-    background-color: #D0BC91;
+    background-color: #d0bc91;
     width: 186px;
 }
 
@@ -105,18 +105,18 @@ a.admincell:hover, a.leftlink:hover {
 .topmenu {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #39692A;
+    color: #39692a;
     text-decoration: none;
 }
 
 a.topmenu:link {
     text-decoration: none;
-    color: #39692A;
+    color: #39692a;
 }
 
 a.topmenu:visited {
     text-decoration: none;
-    color: #39692A;
+    color: #39692a;
 }
 
 a.topmenu:active {
@@ -124,14 +124,14 @@ a.topmenu:active {
 }
 
 a.topmenu:hover {
-    color: #000000;
+    color: #000;
     text-decoration: none;
 }
 
 /* tableborder to replace hard-coded style in topmenu.php */
 /* bordercolor="#000000" bgcolor="#D0BC91" style="border-collapse: collapse; border: 1; border-color: black;" */
 .tableborder {
-    background-color: #D0BC91;
+    background-color: #d0bc91;
     border-collapse: collapse;
     border-color: black;
     margin-bottom: 15px; /* added to replace <br> after table */
@@ -146,13 +146,13 @@ a.topmenu:hover {
 /* styles added for index.php *.
 /* homebody added to replace style="background-color:#D0BC91;" in index.php */
 .homebody {
-    background-color: #D0BC91;
+    background-color: #d0bc91;
 }
 
 .mainmenu {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
-    color: #39692A;
+    color: #39692a;
     text-decoration: none;
     text-align: center;
 }
@@ -194,19 +194,19 @@ a.topmenu:hover {
 .snlink {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
-    background-color: #D0BC91;
+    background-color: #d0bc91;
     color: black;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #39692A;
+    background-color: #39692a;
     color: #fff;
 }
 
 .LB_window {
-    background: #D0BC91;
-    border: 2px solid #000000;
-    color: #000000;
+    background: #d0bc91;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.innercontainer {
@@ -214,19 +214,19 @@ div.innercontainer {
 }
 
 ul.tngdd {
-    background-color: #FAF4E6;
+    background-color: #faf4e6;
 }
 
 ul.tngdd a {
-    color: #39692A;
+    color: #39692a;
 }
 
 ul.tngdd ul li a, .slidedown {
-    background-color: #ddeedd;
+    background-color: #ded;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
@@ -249,8 +249,8 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #444;
     border-right: 1px solid #444;
-    color: #ffffff;
-    background: #39692A url(../img/arrowdown2.gif) 2px 8px no-repeat;
+    color: #fff;
+    background: #39692a url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
@@ -265,12 +265,12 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 }
 
 .databack {
-    background-color: #D0BC91;
+    background-color: #d0bc91;
 }
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #DFD1B4;
+    background-color: #dfd1b4;
 }
 
 ul.tngdd .sub {
@@ -284,13 +284,13 @@ ul.tngdd .topline {
 .maintitle {
     font-size: 68px;
     font-family: Georgia, Arial, sans-serif;
-    color: #39692A;
+    color: #39692a;
 }
 
 .mmaintitle {
     font-family: Georgia, Arial, sans-serif;
     font-style: italic;
-    color: #39692A;
+    color: #39692a;
 }
 
 .mainimg {
@@ -302,7 +302,7 @@ ul.tngdd .topline {
 .toptitle {
     font-size: 48px;
     font-family: Georgia, Arial, sans-serif;
-    color: #39692A;
+    color: #39692a;
 }
 
 #searchpane {
@@ -310,7 +310,7 @@ ul.tngdd .topline {
 }
 
 .fambackground {
-    background-color: #D0BC91;
+    background-color: #d0bc91;
 }
 
 @media (max-width: 730px) {

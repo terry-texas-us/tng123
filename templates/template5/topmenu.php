@@ -10,33 +10,33 @@ global $text, $cms, $subroot, $tmp;
         <tr>
             <td class="tablesubheader"></td>
         </tr>
-      <tr>
-        <td>
-          <table class="innertable">
-            <tr>
-              <td>
-                <?php
-                //begin HEADER IMAGE (default: small picture of a couple on the top left). Size is width=100px, height=76px
-                //Actual file name has been replaced with t5_headimg variable, configurable from Template Settings. Default name of actual image is "smallphoto.jpg"
-                //You can replace the t5_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-                ?>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t5_headimg']; ?>" alt="" class="smallphoto"></td>
-              <?php
-              //end HEADER IMAGE
-              ?>
-              <td class="banner">
+        <tr>
+            <td>
+                <table class="innertable">
+                    <tr>
+                        <td>
+                            <?php
+                            //begin HEADER IMAGE (default: small picture of a couple on the top left). Size is width=100px, height=76px
+                            //Actual file name has been replaced with t5_headimg variable, configurable from Template Settings. Default name of actual image is "smallphoto.jpg"
+                            //You can replace the t5_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
+                            ?>
+                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t5_headimg']; ?>" alt="" class="smallphoto"></td>
+                        <?php
+                        //end HEADER IMAGE
+                        ?>
+                        <td class="banner">
 
-                <?php
-                //begin TITLE TEXT (default: "Our Family History and Ancestry")
-                //Actual file name has been replaced with t5_maintitle variable, configurable from Template Settings.
-                //You can simply replace the t5_maintitle PHP block below with your title text if you prefer that to using the Template Settings.
-                ?>
+                            <?php
+                            //begin TITLE TEXT (default: "Our Family History and Ancestry")
+                            //Actual file name has been replaced with t5_maintitle variable, configurable from Template Settings.
+                            //You can simply replace the t5_maintitle PHP block below with your title text if you prefer that to using the Template Settings.
+                            ?>
 
-                          <?php echo getTemplateMessage('t5_maintitle'); ?> <!-- Our Family History and Ancestry -->
+                            <?php echo getTemplateMessage('t5_maintitle'); ?> <!-- Our Family History and Ancestry -->
 
-                          <?php
-                          //end TITLE TEXT
-                          ?>
+                            <?php
+                            //end TITLE TEXT
+                            ?>
                         </td>
                     </tr>
                 </table>

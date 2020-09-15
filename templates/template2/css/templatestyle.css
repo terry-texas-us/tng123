@@ -49,12 +49,12 @@ a:link, a:active, div.icons a {
 
 /* visited: previously visited links */
 a:visited {
-    color: #8B8776;
+    color: #8b8776;
 }
 
 /* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #C3B165;
+    background-color: #c3b165;
 }
 
 /* New style definitions added in 7.0.0  */
@@ -73,22 +73,22 @@ a.admincell:hover, a.leftlink:hover {
 .topmenu {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 
 a.topmenu:link {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 a.topmenu:visited {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 a.topmenu:hover {
-    color: #FFCC33;
+    color: #fc3;
     text-decoration: none;
 }
 
@@ -101,7 +101,7 @@ a.topmenu:Active {
 .tabletopedge {
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: #fff;
     background-image: url(../img/edge.gif);
     border: 0;
     border-bottom-color: white;
@@ -113,7 +113,7 @@ a.topmenu:Active {
 .tablebottomedge {
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: #fff;
     background-image: url(../img/edge-bottom.gif);
     border: 0;
     width: 100%;
@@ -121,7 +121,7 @@ a.topmenu:Active {
 }
 
 .tablebkground {
-    background-color: #FFFFFF;
+    background-color: #fff;
 }
 
 .noimgborder {
@@ -141,7 +141,7 @@ a.topmenu:Active {
 
 .sidelink:Hover {
     text-decoration: underline;
-    color: #669900;
+    color: #690;
 }
 
 .sidesmall {
@@ -158,7 +158,7 @@ a.topmenu:Active {
 .sidesmalllink {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 /* body-index: describes index page body style definitions replaces hard-coded style information background="burlap.jpg" leftmargin="1" topmargin="10" rightmargin="1" marginwidth="1" in index.php of template2 */
@@ -171,24 +171,24 @@ a.topmenu:Active {
 
 /* footer added to replace footer fonts and links */
 .footer {
-    color: #FFFFFF;
+    color: #fff;
     font-size: 11px;
     text-align: center;
 }
 
 a.footer:link {
     text-decoration: underline;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 a.footer:visited {
     text-decoration: underline;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 a.footer:hover {
     text-decoration: underline;
-    color: #FFCC33;
+    color: #fc3;
 }
 
 /* additional classes added for strict validation */
@@ -236,7 +236,7 @@ a.footer:hover {
 
 /* page: is defined to replace the bgcolor=#676037; */
 .indexpage {
-    background-color: #FFFFFF;
+    background-color: #fff;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
@@ -245,7 +245,7 @@ a.footer:hover {
 .snlink {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
-    background-color: #FFE9A9;
+    background-color: #ffe9a9;
     color: black;
 }
 
@@ -255,9 +255,9 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 }
 
 .LB_window {
-    background: #FFE9A9;
-    border: 2px solid #000000;
-    color: #000000;
+    background: #ffe9a9;
+    border: 2px solid #000;
+    color: #000;
 }
 
 div.innercontainer {
@@ -265,7 +265,7 @@ div.innercontainer {
 }
 
 ul.tngdd {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd a {
@@ -273,15 +273,15 @@ ul.tngdd a {
 }
 
 ul.tngdd ul li a, .slidedown {
-    background-color: #eeeecc;
+    background-color: #eec;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 ul.tngdd .menulink {
-    background: #FFE9A9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background: #ffe9a9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
 }
 
 ul.tngdd .menulink, ul.tngdd .langmenu {
@@ -292,18 +292,18 @@ ul.tngdd .menulink, ul.tngdd .langmenu {
 ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     border-bottom: 1px solid #999;
     border-right: 1px solid #999;
-    color: #ffffff;
+    color: #fff;
     background: #676037 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 /* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu, .databack {
-    background-color: #FFE9A9;
+    background-color: #ffe9a9;
 }
 
 /* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
-    background-color: #FFF6DB;
+    background-color: #fff6db;
 }
 
 tr.modline:hover td.mmcell:nth-child(-n+5) {
@@ -340,7 +340,7 @@ ul.tngdd .topline {
 .headertitle {
     font-size: 24px;
     font-family: Georgia, Arial, sans-serif;
-    color: #FFE9A9;
+    color: #ffe9a9;
     font-style: italic;
 }
 
@@ -355,7 +355,7 @@ a.toptitle {
 em.toptitle {
     font-size: 30px;
     font-family: Georgia, Arial, sans-serif;
-    color: #FFE9A9;
+    color: #ffe9a9;
 }
 
 .mainlink {
@@ -388,7 +388,7 @@ em.toptitle {
 }
 
 .fambackground {
-    background-color: #FFE9A9;
+    background-color: #ffe9a9;
 }
 
 @media (max-width: 400px) {

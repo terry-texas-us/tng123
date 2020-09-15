@@ -85,7 +85,8 @@ $title = getTemplateMessage('t10_maintitle');
                         }
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span class="t"><?php echo $text['contactus']; ?></span></a>
+                            <a href="<?php echo $cms['tngpath']; ?>suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span
+                                        class="t"><?php echo $text['contactus']; ?></span></a>
                         </li>
                     </ul>
                 </div>
@@ -108,8 +109,10 @@ $title = getTemplateMessage('t10_maintitle');
                                 <div class="art-vmenublockcontent">
                                     <div class="art-vmenublockcontent-body">
                                         <ul class="art-vmenu">
-                                            <li><a href="whatsnew.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mnuwhatsnew']; ?></span></a></li>
-                                            <li><a href="mostwanted.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mostwanted']; ?></span></a></li>
+                                            <li><a href="whatsnew.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['mnuwhatsnew']; ?></span></a></li>
+                                            <li><a href="mostwanted.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['mostwanted']; ?></span></a></li>
                                             <?php
                                             foreach ($mediatypes as $mediatype) {
                                                 if (!$mediatype['disabled']) {
@@ -117,33 +120,48 @@ $title = getTemplateMessage('t10_maintitle');
                                                 }
                                             }
                                             ?>
-                                            <li><a href="browsealbums.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['albums']; ?></span></a></li>
-                                            <li><a href="browsemedia.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['allmedia']; ?></span></a></li>
-                                            <li><a href="cemeteries.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mnucemeteries']; ?></span></a></li>
-                                            <li><a href="places.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['places']; ?></span></a></li>
-                                            <li><a href="browsenotes.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['notes']; ?></span></a></li>
-                                            <li><a href="anniversaries.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['anniversaries']; ?></span></a></li>
-                                            <li><a href="calendar.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['calendar']; ?></span></a></li>
-                                            <li><a href="reports.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['reports']; ?></span></a></li>
-                                            <li><a href="browsesources.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mnusources']; ?></span></a></li>
-                                            <li><a href="browserepos.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['repositories']; ?></span></a></li>
+                                            <li><a href="browsealbums.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['albums']; ?></span></a></li>
+                                            <li><a href="browsemedia.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['allmedia']; ?></span></a></li>
+                                            <li><a href="cemeteries.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['mnucemeteries']; ?></span></a></li>
+                                            <li><a href="places.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['places']; ?></span></a></li>
+                                            <li><a href="browsenotes.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['notes']; ?></span></a></li>
+                                            <li><a href="anniversaries.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['anniversaries']; ?></span></a></li>
+                                            <li><a href="calendar.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['calendar']; ?></span></a></li>
+                                            <li><a href="reports.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['reports']; ?></span></a></li>
+                                            <li><a href="browsesources.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['mnusources']; ?></span></a></li>
+                                            <li><a href="browserepos.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['repositories']; ?></span></a></li>
                                             <?php
                                             if (!$tngconfig['hidedna']) {
                                                 ?>
-                                                <li><a href="browse_dna_tests.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['dna_tests']; ?></span></a></li>
+                                                <li><a href="browse_dna_tests.php"><span class="l"></span><span class="r"></span><span
+                                                                class="t"><?php echo $text['dna_tests']; ?></span></a></li>
                                                 <?php
                                             }
                                             ?>
-                                            <li><a href="statistics.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
+                                            <li><a href="statistics.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
                                             <?php
                                             if ($allow_admin) {
                                                 ?>
-                                                <li><a href="showlog.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
-                                                <li><a href="admin.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
+                                                <li><a href="showlog.php"><span class="l"></span><span class="r"></span><span
+                                                                class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
+                                                <li><a href="admin.php"><span class="l"></span><span class="r"></span><span
+                                                                class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
                                                 <?php
                                             }
                                             ?>
-                                            <li><a href="bookmarks.php"><span class="l"></span><span class="r"></span><span class="t"><?php echo $text['bookmarks']; ?></span></a></li>
+                                            <li><a href="bookmarks.php"><span class="l"></span><span class="r"></span><span
+                                                            class="t"><?php echo $text['bookmarks']; ?></span></a></li>
                                         </ul>
 
                                         <div class="cleared"></div>
@@ -163,7 +181,8 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="cleared"></div>
                                     <div class="art-postcontent">
 
-                                        <img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t10_mainimage']; ?>" alt="" style="float:left;" class="temppreview">
+                                        <img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t10_mainimage']; ?>" alt="" style="float:left;"
+                                             class="temppreview">
                                         <?php
                                         if ($chooselang) {
                                             $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
@@ -208,7 +227,8 @@ $title = getTemplateMessage('t10_maintitle');
                                         echo getTemplateMessage('t10_mainpara');
                                         ?>
                                         <h4><?php echo $text['contactus']; ?></h4>
-                                        <p><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                                        <p><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image"
+                                                class="emailimg"><?php echo $text['contactus_long']; ?></p>
 
                                     </div>
                                     <div class="cleared"></div>
@@ -255,7 +275,8 @@ $title = getTemplateMessage('t10_maintitle');
                                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
                                                 <input type="text" value="" name="mylastname" style="width: 95%;">
                                                 <input type="hidden" name="mybool" value="AND">
-                                                <input type="submit" style="margin-top:5px; margin-bottom:5px;" value="<?php echo $text['search']; ?>">
+                                                <input type="submit" style="margin-top:5px; margin-bottom:5px;"
+                                                       value="<?php echo $text['search']; ?>">
                                             </form>
                                             <ul class="home-menus">
                                                 <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
@@ -369,7 +390,7 @@ $title = getTemplateMessage('t10_maintitle');
                         <a href="<?php echo $cms['tngpath']; ?>tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
                         <?php
                         $flags['basicfooter'] = true;
-                        echo tng_footer($flags);
+                        tng_footer($flags);
                         ?>
                         <div class="cleared"></div>
                     </div>
@@ -380,5 +401,5 @@ $title = getTemplateMessage('t10_maintitle');
         <div class="cleared"></div>
     </div>
 </div>
-</body>
-</html>
+<?php echo "</body>"; ?>
+<?php echo "</html>"; ?>

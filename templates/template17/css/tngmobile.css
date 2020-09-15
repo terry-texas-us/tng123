@@ -10,20 +10,20 @@ body {
 }
 
 #mast {
-    background-color: #D99860;
-    background-image: -moz-linear-gradient(to bottom, #D99860 0%, #9b5520 100%);
-    background-image: -webkit-linear-gradient(to bottom, #D99860 0%, #9b5520 100%);
-    background-image: linear-gradient(to bottom, #D99860 0%, #9b5520 100%);
-    border-top: 1px solid #000000;
+    background-color: #d99860;
+    background-image: -moz-linear-gradient(to bottom, #d99860 0%, #9b5520 100%);
+    background-image: -webkit-linear-gradient(to bottom, #d99860 0%, #9b5520 100%);
+    background-image: linear-gradient(to bottom, #d99860 0%, #9b5520 100%);
+    border-top: 1px solid #000;
 }
 
 .mhead ul li {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .mhead li a {
     background-color: #e2c2a9;
-    border-bottom: 1px solid #aaaaaa;
-    border-top: 1px solid #dddddd;
-    color: #333333;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #ddd;
+    color: #333;
 }

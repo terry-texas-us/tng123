@@ -18,14 +18,14 @@ ul#tngnav {
 
 /*active tab*/
 #tngnav a:hover {
-    background: #31708E;
-    color: #FFFFFF;
+    background: #31708e;
+    color: #fff;
 }
 
 /*active tab*/
 #tngnav a.here {
-    background: #31708E;
-    color: #FFCC00;
+    background: #31708e;
+    color: #fc0;
     border-right: 1px solid #444;
     margin: 0;
 }
@@ -47,12 +47,12 @@ ul#tngnav {
 
 /*active tab*/
 #tabs a:hover {
-    background: #31708E;
-    color: #FFFFFF;
+    background: #31708e;
+    color: #fff;
 }
 
 /*active tab*/
 #tabs .here {
-    background: #31708E;
-    color: #FFCC00;
+    background: #31708e;
+    color: #fc0;
 }

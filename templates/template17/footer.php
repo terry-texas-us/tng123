@@ -2,9 +2,9 @@
 <br>
 </div>
 <div id="subfooter">
-  <?php
-  $flags['basicfooter'] = true;
-  echo tng_footer($flags);
-  ?>
+    <?php
+    $flags['basicfooter'] = true;
+    tng_footer($flags);
+    ?>
 </div>
-<!-- end of footer.php for template 1 -->
+<!-- end of footer for template 17 -->
