@@ -15,17 +15,17 @@ if (!empty($needMap)) {
         include_once $cms['tngpath'] . "googlemaplib.php";
     }
 }
-$flags = array();
+$flags = [];
 @include $cms['tngpath'] . "tngrobots.php";
 
 $isConnected = isConnected();
 
-$htmldocs = array("HTML", "PHP", "HTM");
+$htmldocs = ["HTML", "PHP", "HTM"];
 $http_user_agent = strtolower($_SERVER["HTTP_USER_AGENT"]);
 $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $http_user_agent) ? 0 : 1;
 $gotlastpage = false;
 $flags['error'] = $error;
-
+// UnusedCode "phpnuke" block
 if ($cms['support'] == "phpnuke") {
     if ($multilingual == "1") {
         $newlanguage = strtoupper(substr($currentlang, 0, 1)) . substr($currentlang, 1);
@@ -51,7 +51,6 @@ if (!$tree && $defaulttree) {
 } elseif ($tree == "-x--all--x-") {
     $tree = "";
 }
-
 
 function tng_header($title, $flags) {
     global $custommeta, $customheader, $cms, $session_charset, $tngprint, $sitename, $site_desc, $tngconfig, $tngdomain, $responsivetables;
@@ -281,7 +280,7 @@ function tng_footer($flags) {
 }
 
 function tng_basicfooter($flags) {
-    global $text, $cms, $sitever, $flags, $templatepath;
+    global $text, $cms, $sitever, $templatepath;
 
     $footer = "";
     $newsitever = getSiteVersion();
@@ -338,7 +337,6 @@ function tng_basicfooter($flags) {
         </script>
         <?php
     }
-
     return $footer;
 }
 
@@ -408,6 +406,7 @@ function tng_DrawHeading($photostr, $namestr, $years) {
     return $outputstr;
 }
 
+// UnusedCode function getSurnameOnly
 function getSurnameOnly($row) {
     global $text, $admtext, $tngconfig;
 
@@ -542,11 +541,6 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
     }
 
     return $menu;
-}
-
-//DEPRECATED
-function tng_coreicons() {
-    return "";
 }
 
 function tng_smallIcon($options) {

@@ -29,18 +29,17 @@ tng_header($text['cemeteriesheadstones'], $flags);
 ?>
 
 <script type="text/javascript">
-    var collapsemsg = "<?php echo $text['collapse']; ?>";
-    var expandmsg = "<?php echo $text['expand']; ?>";
+    const collapsemsg = "<?php echo $text['collapse']; ?>";
+    const expandmsg = "<?php echo $text['expand']; ?>";
 
     function toggleSection(key) {
 
-        var section = jQuery('#' + key);
-        if (section.css('display') == 'none') {
-            jQuery('#' + key).fadeIn(200);
-
+        let sectionSelection = jQuery('#' + key);
+        if (sectionSelection.css('display') == 'none') {
+            sectionSelection.fadeIn(200);
             swap("plusminus" + key, "minus");
         } else {
-            jQuery('#' + key).fadeOut(200);
+            sectionSelection.fadeOut(200);
             swap("plusminus" + key, "plus");
         }
         return false;

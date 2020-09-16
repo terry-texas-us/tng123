@@ -9,14 +9,11 @@ $logstring = "<a href=\"histories/feature1.php\">Your Feature 1 Story</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-// The following $flags can be passed on the feature story pages.  The $flags can either be 
-//	true or false 
-$flags['noheader'] = false; // set to true to not include the template Custom Header
-// set to false to include the template Custom Header - normally topmenu.php
-$flags['nobody'] = true;    // set to not generate the <body> tag if the tag is in the topmenu.php
-// set to false to generate the <body> tag
-$flags['noicons'] = false;    // set to true to not generate the TNG menu bar
-// set to false to generates the TNG menu bar
+// The following 'flags' can be passed on the feature story pages.
+$flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
+$flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
+$flags['noicons'] = false; // generate the TNG menu bar
+
 // for multi-language pages, you can use $text variables for your Feature Story Title
 tng_header("Your Feature 1 Story Title", $flags);
 ?>
@@ -31,9 +28,12 @@ tng_header("Your Feature 1 Story Title", $flags);
     content that starts with the heading 1 (< h1 >) line to everything in the line before the tng_footer.php
     function call in your language folder and use a PHP
 </p>
-include $mylanguage/feature1.php to include the content from you language folder for each language you support on your site.
-<br>
-For additional information see the TNG Wiki article on creating User Pages or histories using the historytemplate.php file at http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Getting_Started and http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Multi-Language
+<p>
+    include $mylanguage/feature1.php to include the content from you language folder for each language you support on your site.
+    <br>
+    For additional information see the TNG Wiki article on creating User Pages or histories using the historytemplate.php file at
+    http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Getting_Started and
+    http://tng.lythgoes.net/wiki/index.php?title=User_Pages_-_Multi-Language
 </p>
 <p>
     This feature1.php file was created from the historytemplate.php and saved in the histories folder as an example of how to create such a file.

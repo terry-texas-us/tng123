@@ -79,7 +79,6 @@ tng_header($text['regnewacct'], $flags);
                             class="headericon">&nbsp;<?php echo $text['regnewacct']; ?></h2>
     <br style="clear: left;">
 <?php
-echo tng_coreicons();
 
 @include $cms['tngpath'] . "TNG_captcha.php";
 

@@ -5,31 +5,19 @@ include "tng_begin.php";
 //	writelog creates an entry in the Access Log
 //	preparebookmark creates the bookmark link on the page
 
-$logstring = "<a href=\"histories/feature1.php\">Your Family 1 Story</a>";
+$logstring = "<a href=\"histories/family1.php\">Your Family 1 Story</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-// The following $flags can be passed on the family story pages.  The $flags can either be 
-//	true or false 
-$flags['noheader'] = false; // set to true to not include the template Custom Header
-// set to false to include the template Custom Header - normally topmenu.php
-$flags['nobody'] = true;    // set to not generate the <body> tag if the tag is in the topmenu.php
-// set to false to generate the <body> tag
-$flags['noicons'] = false;    // set to true to not generate the TNG menu bar
-// set to false to generates the TNG menu bar
-// for multi-language pages, you can use $text variables for your Feature Story Title
-tng_header("Your Feature 1 Story Title", $flags);
+// The following 'flags' can be passed on the family story pages.
+$flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
+$flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
+$flags['noicons'] = false; // generate the TNG menu bar
 
-/*  For multi-language pages, you can cut everything that follows the ending php tag ?> through the starting php tag before the tng_footer( "" ) function call and paste it in a new file in your language folder, for example English/family1.php and remove the comments on the next line. 
-
-	If you use a different file name, you need to also update the family1.php file name accordingly
-*/
-
-// include $cms['tngpath'] . "$mylanguage/family1.php";
+// for multi-language pages, you can use 'text' variables for your Family Story Title
+tng_header("Your Family 1 Story Title", $flags);
 ?>
-
 <h1>Family 1 Story</h1>
-
 <p>
     Your Family 1 story goes here. You can use HTML tags within the body of the story. You can also use PHP code by inserting the code within a < ?
     php ? > section (note that blanks were inserted in between the php starting and ending characters so the php
@@ -55,5 +43,4 @@ tng_header("Your Feature 1 Story Title", $flags);
 <p>
     This family1.php file was created from the historytemplate.php and saved in the histories folder as an example of how to create such a file.
 </p>
-
 <?php tng_footer(""); ?>

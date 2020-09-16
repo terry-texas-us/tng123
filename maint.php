@@ -17,9 +17,6 @@ tng_header($text['sitemaint'], $flags);
 <br style="clear: both;">
 
 <?php
-echo tng_coreicons();
-
 echo "<p class='normal'>" . $text['standby'] . "</p><br><br>";
-
 tng_footer("");
 ?>
