@@ -6,8 +6,8 @@ if (!$personID) {
     die("no args");
 }
 include $subroot . "pedconfig.php";
-include $cms['tngpath'] . "personlib.php";
-include $cms['tngpath'] . "reglib.php";
+include "personlib.php";
+include "reglib.php";
 
 $getperson_url = getURL("getperson", 1);
 $register_url = getURL("register", 1);
@@ -121,7 +121,7 @@ echo "</form>\n";
                 echo showSmallPhoto($row['personID'], $row['name'], $row['allow_living'] && $row['allow_private'], 0, false, $row['sex']);
                 echo "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree=$tree\" name=\"p{$row['personID']}\" id=\"p{$row['personID']}\">{$row['name']}</a>";
                 if ($row['genlist']) {
-                    echo " <a href=\"$desctracker_url" . "trail={$row['trail']}&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> ({$row['genlist']})";
+                    echo " <a href=\"$desctracker_url" . "trail={$row['trail']}&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> ({$row['genlist']})";
                 }
                 echo getVitalDates($row);
                 echo getOtherEvents($row);
@@ -196,7 +196,7 @@ echo "</form>\n";
                                     $nextgen[$childID] = $childrow;
                                 }
                             }
-                            echo "<li style=\"list-style-type:lower-roman;\">$displaycount. <a href=\"#\" onclick=\"if(jQuery('#p$childID').length) {jQuery('html, body').animate({scrollTop: jQuery('#p$childID').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID=$childID&amp;tree=$tree';} return false;\">$name</a> &nbsp;<a href=\"$desctracker_url" . "trail={$childrow['trail']}&amp;tree=$tree\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitaldates</li>\n";
+                            echo "<li style=\"list-style-type:lower-roman;\">$displaycount. <a href=\"#\" onclick=\"if(jQuery('#p$childID').length) {jQuery('html, body').animate({scrollTop: jQuery('#p$childID').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID=$childID&amp;tree=$tree';} return false;\">$name</a> &nbsp;<a href=\"$desctracker_url" . "trail={$childrow['trail']}&amp;tree=$tree\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitaldates</li>\n";
                         }
                         echo "</ol>\n</td></tr></table>\n";
                         tng_free_result($result2);
@@ -215,7 +215,7 @@ echo "</form>\n";
         ?>
 
     </div>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");
 ?>

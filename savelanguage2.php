@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 
 session_start();
 $instance = preg_replace("/[^0-9]/", '', $instance);

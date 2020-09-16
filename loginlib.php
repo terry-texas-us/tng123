@@ -1,7 +1,5 @@
 <?php
-if ($p) {
-    $cms['tngpath'] = urldecode($p);
-}
+
 ?>
 
 <h2 class="header"><span class="headericon" id="unlock-hdr-icon"></span><?php echo $text['login']; ?></h2>
@@ -55,7 +53,7 @@ echo $formstr;
 </div>
 <?php
 if (!$tngconfig['disallowreg']) {
-    echo "<p class='normal'>{$text['nologin']} <a href=\"{$cms['tngpath']}newacctform.php\">{$text['regnewacct']}</a></p>";
+    echo "<p class='normal'>{$text['nologin']} <a href=\"newacctform.php\">{$text['regnewacct']}</a></p>";
 }
 ?>
 </form>

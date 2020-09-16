@@ -33,7 +33,7 @@ if ($sitever == "mobile") {
             //Actual file name has been replaced with t6_headimg variable, configurable from Template Settings. Default name of actual image is "titlebottom.jpg"
             //You can replace the t6_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
             ?>
-            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt="">
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt="">
             <?php
             //end HEADER IMAGE
             ?>
@@ -49,7 +49,7 @@ if ($sitever == "mobile") {
     <table width="100%" cellspacing="0" cellpadding="5">
         <tr>
             <td class="section">
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_welcome.gif" width="200" height="50" alt=""><br>
+                <img src="<?php echo $templatepath; ?>img/header_welcome.gif" width="200" height="50" alt=""><br>
                 <span class="normal">
 
 <?php
@@ -67,7 +67,7 @@ if ($sitever == "mobile") {
 	<br>
 	<br>
 	</span>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_search.gif" width="200" height="50" alt=""><br>
+                <img src="<?php echo $templatepath; ?>img/header_search.gif" width="200" height="50" alt=""><br>
                 <span class="normal">
 
 <?php
@@ -83,7 +83,7 @@ if ($sitever == "mobile") {
 
 	</span>
                 <br><br>
-                <form id="form1" method="get" action="<?php echo $cms['tngpath']; ?>search.php">
+                <form id="form1" method="get" action="search.php">
                     <div>
                         <input type="hidden" value="AND" name="mybool">
                         <table width="297" cellspacing="0">
@@ -100,14 +100,14 @@ if ($sitever == "mobile") {
                                     <input name="mylastname" type="text" id="mylastname">
                                 </td>
                                 <td rowspan="2">
-                                    <input type="image" name="imageField" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/searchbutton.gif">
+                                    <input type="image" name="imageField" src="<?php echo $templatepath; ?>img/searchbutton.gif">
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </form>    <!-- <div added for strict KCR -->
-                <p class="center">[<a href="<?php echo $cms['tngpath']; ?>surnames.php"><?php echo $text['mnulastnames']; ?></a>] [<a
-                            href="<?php echo $cms['tngpath']; ?>searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]<br>
+                <p class="center">[<a href="surnames.php"><?php echo $text['mnulastnames']; ?></a>] [<a
+                        href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]<br>
                     [<a href="http://www.gendexnetwork.org">GenDex Network</a>]<br>[<a href="http://www.familytreeseeker.com">FamilyTreeSeeker.com</a>]
                 </p>
             </td>
@@ -116,7 +116,7 @@ if ($sitever == "mobile") {
                 <!-- RANDOM PHOTO CODE STARTS HERE -->
                 <!-- If you don't want to have a random photo displayed, just remove this section down to 'RANDOM PHOTO CODE ENDS HERE' -->
 
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""><br>
+                <img src="<?php echo $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""><br>
                 <!--	<center> ** removed since there is not a good way to center images -->
                 <?php
                 include "randomphoto.php";
@@ -126,7 +126,7 @@ if ($sitever == "mobile") {
 
                 <!-- RANDOM PHOTO CODE ENDS HERE -->
 
-                <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_famhist.gif" width="200" height="50" alt=""><br>
+                <p class="normal"><img src="<?php echo $templatepath; ?>img/header_famhist.gif" width="200" height="50" alt=""><br>
 
                     <?php
                     //begin FAMILY HISTORIES PARAGRAPH (default text: "You can use this section to link to some of your more interesting family histories.")
@@ -222,7 +222,7 @@ if ($sitever == "mobile") {
                 </table>
                 <p>&nbsp;</p></td>
             <td class="section">
-                <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt="">
+                <p class="normal"><img src="<?php echo $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt="">
                 </p>
 
                 <?php
@@ -236,8 +236,8 @@ if ($sitever == "mobile") {
                 //end "MOST WANTED" PARAGRAPH
                 ?>
 
-                <p class="center">[<a href="<?php echo $cms['tngpath']; ?>mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
-                <p class="normal"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/header_resources.gif" width="200" height="50" alt="">
+                <p class="center">[<a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
+                <p class="normal"><img src="<?php echo $templatepath; ?>img/header_resources.gif" width="200" height="50" alt="">
                 </p>
 
                 <?php

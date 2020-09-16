@@ -1,15 +1,15 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "adminlib.php";
+include "adminlib.php";
 $textpart = "people";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/admintext.php";
+include "getlang.php";
+include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if ($session_charset != "UTF-8") {
-  $myfirstname = tng_utf8_decode($myfirstname);
-  $mylastname = tng_utf8_decode($mylastname);
+    $myfirstname = tng_utf8_decode($myfirstname);
+    $mylastname = tng_utf8_decode($mylastname);
 }
 
 $allwhere = "gedcom = \"$tree\"";

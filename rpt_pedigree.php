@@ -10,8 +10,8 @@ $tngprint = 1;
 initMediaTypes();
 
 define('FPDF_FONTPATH', $rootpath . $endrootpath . 'font/');
-require $cms['tngpath'] . 'tngpdf.php';
-require $cms['tngpath'] . 'rpt_utils.php';
+require 'tngpdf.php';
+require 'rpt_utils.php';
 $pdf = new TNGPDF($orient, 'in', $pagesize);
 setcookie("tng_pagesize", $pagesize, time() + 31536000, "/");
 

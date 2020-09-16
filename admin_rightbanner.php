@@ -1,17 +1,17 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $maint = $tngconfig['maint'];
 $tngconfig['maint'] = "";
-include $cms['tngpath'] . "adminlib.php";
+include "adminlib.php";
 $textpart = "index";
 include "$mylanguage/admintext.php";
 $admin_login = 2;
 
 if ($link) {
-  include $cms['tngpath'] . "checklogin.php";
+    include "checklogin.php";
 }
-include $cms['tngpath'] . "version.php";
+include "version.php";
 
 $home_url = $homepage;
 
@@ -43,8 +43,8 @@ tng_adminheader($admtext['administration'], "");
                 }
                 $query .= " ORDER BY treename";
                 $result = tng_query($query);
-                echo "<form action=\"{$cms['tngpath']}switchtree.php\" target=\"_parent\" name=\"newtreeform\" style=\"display:inline-block;\">\n";
-                echo "<input type=\"hidden\" name=\"ret\" value=\"admin.php\">\n";
+                echo "<form action=\"switchtree.php\" target=\"_parent\" name=\"newtreeform\" style=\"display:inline-block;\">\n";
+                  echo "<input type=\"hidden\" name=\"ret\" value=\"admin.php\">\n";
                   echo "<select name=\"newtree\" class='normal' onChange=\"document.newtreeform.submit();\">\n";
                 while ($row = tng_fetch_assoc($result)) {
                   echo "<option value=\"{$row['gedcom']}\"";
@@ -62,7 +62,7 @@ tng_adminheader($admtext['administration'], "");
               $result = @tng_query($query);
 
               if ($result && tng_num_rows($result)) {
-                  echo "<form action=\"{$cms['tngpath']}admin_savelanguage.php\" method=\"GET\" target=\"_parent\" name=\"language\" style=\"display:inline-block;\">\n";
+                  echo "<form action=\"admin_savelanguage.php\" method=\"GET\" target=\"_parent\" name=\"language\" style=\"display:inline-block;\">\n";
                   echo " &nbsp;<select name=\"newlanguage\" class='normal' onChange=\"document.language.submit();\">\n";
 
                 while ($row = tng_fetch_assoc($result)) {
@@ -87,7 +87,7 @@ tng_adminheader($admtext['administration'], "");
 			&nbsp;|&nbsp; <a href="<?php echo $home_url; ?>" target="_parent" class="lightlink"><?php echo $admtext['publichome']; ?></a>
 <?php
 if ($allow_admin) {
-  echo "&nbsp;|&nbsp; <a href=\"{$cms['tngpath']}adminshowlog.php\" class=\"lightlink\" target=\"main\">{$admtext['showlog']}</a>\n";
+    echo "&nbsp;|&nbsp; <a href=\"adminshowlog.php\" class=\"lightlink\" target=\"main\">{$admtext['showlog']}</a>\n";
 }
 if ($sitever != "mobile") {
   ?>

@@ -19,7 +19,7 @@ if (!$generations) {
 
 function displayIndividual($key, $generation, $slot, $column) {
     global $columns, $tree, $pedmax, $text, $media_table, $medialinks_table, $col1fam, $col2fam;
-    global $cms, $getperson_url, $showall, $parentset, $righttree;
+    global $getperson_url, $showall, $parentset, $righttree;
 
     $nextslot = $slot * 2;
     $name = "";
@@ -59,7 +59,7 @@ function displayIndividual($key, $generation, $slot, $column) {
                 $namestr = getNameRev($row);
                 $columns[$column][$generation] .= "<li><span class='normal'><a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\">$namestr</a> " . trim(getYears($row));
                 if ($mediarow['mediacount']) {
-                    $columns[$column][$generation] .= " <a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\" title=\"{$text['mediaavail']}\"><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"></a>";
+                    $columns[$column][$generation] .= " <a href=\"$getperson_url" . "tng_extras=1&amp;personID=$key&amp;tree=$tree\" title=\"{$text['mediaavail']}\"><img src=\"img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"></a>";
                 }
                 $columns[$column][$generation] .= "</span></li>\n";
             }
@@ -191,7 +191,7 @@ echo "</form>\n";
 echo "<h3 class='subhead'>{$text['media']}: {$text['familyof']} $pedname</h3>";
 
 if ($showall) {
-    echo "<p><img src=\"{$cms['tngpath']}img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"> {$text['extrasexpl']}</p>";
+    echo "<p><img src=\"img/photo.gif\" width=\"14\" height=\"12\" alt=\"{$text['mediaavail']}\"> {$text['extrasexpl']}</p>";
 }
 $slot = 1;
 displayIndividual($personID, 1, $slot, 0);
@@ -223,7 +223,7 @@ displayIndividual($personID, 1, $slot, 0);
             </td>
         </tr>
     </table>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
 
 <?php
 tng_footer("");

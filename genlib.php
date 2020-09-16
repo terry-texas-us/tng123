@@ -1,22 +1,20 @@
 <?php
-if (isset($_GET['cms']) || isset($_POST['cms'])) {
-    die("Sorry!");
-}
-include_once $cms['tngpath'] . "pwdlib.php";
-include_once $cms['tngpath'] . "globallib.php";
-@include_once $cms['tngpath'] . "mediatypes.php";
-@include_once $cms['tngpath'] . "tngfiletypes.php";
-include_once $cms['tngpath'] . "version.php";
+
+include_once "pwdlib.php";
+include_once "globallib.php";
+@include_once "mediatypes.php";
+@include_once "tngfiletypes.php";
+include_once "version.php";
 checkMaintenanceMode(0);
 if (!empty($needMap)) {
     include $subroot . "mapconfig.php";
     $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
     if ($map['key']) {
-        include_once $cms['tngpath'] . "googlemaplib.php";
+        include_once "googlemaplib.php";
     }
 }
 $flags = [];
-@include $cms['tngpath'] . "tngrobots.php";
+@include "tngrobots.php";
 
 $isConnected = isConnected();
 
@@ -45,7 +43,7 @@ if (!$tree && $defaulttree) {
 }
 
 function tng_header($title, $flags) {
-    global $custommeta, $customheader, $cms, $session_charset, $tngprint, $sitename, $site_desc, $tngconfig, $tngdomain, $responsivetables;
+    global $custommeta, $customheader, $session_charset, $tngprint, $sitename, $site_desc, $tngconfig, $tngdomain, $responsivetables;
     global $text, $templatepath, $tng_title, $tng_version, $tng_date, $tng_copyright, $sitever, $templatenum, $tmp, $http, $isConnected;
     global $fbOGimage, $pageURL;
 
@@ -99,33 +97,33 @@ function tng_header($title, $flags) {
     if (!$tng_version) {
         $tng_version = "12.0.0";
     }
-    echo "<link href=\"{$cms['tngpath']}css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever != "standard" && $responsivetables) {
-        echo "<link href=\"{$cms['tngpath']}css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
-    echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     if (isset($flags['tabs'])) {
-        echo "<link href=\"{$cms['tngpath']}{$templatepath}css/{$flags['tabs']}?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"{$templatepath}css/{$flags['tabs']}?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
-    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever == "mobile") {
-        echo "<link href=\"{$cms['tngpath']}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-        echo "<link href=\"{$cms['tngpath']}{$templatepath}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"{$templatepath}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
 
     if ($isConnected) {
         echo "<script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" type=\"text/javascript\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>\n";
         echo "<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.min.js\" type=\"text/javascript\" integrity=\"sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=\" crossorigin=\"anonymous\"></script>\n";
     } else {
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery || document.write(\"<script src='{$cms['tngpath']}js/jquery-3.3.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery.ui || document.write(\"<script src='{$cms['tngpath']}js/jquery-ui-1.12.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
+        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery || document.write(\"<script src='js/jquery-3.3.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
+        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery.ui || document.write(\"<script src='js/jquery-ui-1.12.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
     }
-    echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/net.js\"></script>\n";
+    echo "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
 
     if (isset($flags['scripting'])) {
         echo $flags['scripting'];
     }
-    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
 
     if (!empty($tngconfig['showshare']) && $isConnected && $sitever != "mobile") {
         $w = $http == "https" ? "ws" : "w";
@@ -134,39 +132,38 @@ function tng_header($title, $flags) {
     }
 
     if ($tngconfig['menu'] < 2 && !$tngprint && $sitever != "mobile") {
-        echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/tngmenuhover2.js\"></script>\n";
+        echo "<script type=\"text/javascript\" src=\"js/tngmenuhover2.js\"></script>\n";
     }
 
     if ($sitever != "standard" && $responsivetables) {
-        echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/tablesaw.js\"></script>\n";
+        echo "<script type=\"text/javascript\" src=\"js/tablesaw.js\"></script>\n";
         echo "<!--[if lt IE 9]>";
-        echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/respond.js\"></script>\n";
+        echo "<script type=\"text/javascript\" src=\"js/respond.js\"></script>\n";
         echo "<![endif]-->";
     }
 
     echo "<script type=\"text/javascript\">\n";
     echo "var tnglitbox;\n";
     echo "var share = 0;\n";
-    echo "var closeimg = \"{$cms['tngpath']}img/tng_close.gif\";\n";
+    echo "var closeimg = \"img/tng_close.gif\";\n";
     echo "var smallimage_url = '" . getURL("ajx_smallimage", 1) . "';\n";
-    echo "var cmstngpath='{$cms['tngpath']}';\n";
     echo "var loadingmsg = '{$text['loading']}';\n";
     echo "var expand_msg = \"{$text['expand']}\";\n";
     echo "var collapse_msg = \"{$text['collapse']}\";\n";
     if (isset($flags['error']) && $flags['error']) {
         $login_url = getURL("ajx_login", 1);
-        echo "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "&message={$flags['error']}');});\n";
+        echo "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode("") . "&message={$flags['error']}');});\n";
     }
     echo "</script>\n";
-    echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"{$cms['tngpath']}tngrss.php\">\n";
+    echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"tngrss.php\">\n";
 
     if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
-        include $cms['tngpath'] . "cookie_approval.php";
+        include "cookie_approval.php";
     }
 
     @include $custommeta;
     if ($tngprint) {
-        echo "<link href=\"{$cms['tngpath']}css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
     echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
 
@@ -185,7 +182,7 @@ function tng_header($title, $flags) {
     } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
         $class = !empty($flags['homeclass']) ? $flags['homeclass'] : "publicbody";
         echo "<body class=\"{$class}\">\n";
-        echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"{$cms['tngpath']}img/backtotop.png\" alt=\"\"></a></div>\n";
+        echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"img/backtotop.png\" alt=\"\"></a></div>\n";
     }
     if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
         $icons = tng_icons(1, $title);
@@ -216,7 +213,7 @@ function tng_header($title, $flags) {
 }
 
 function tng_footer($flags) {
-    global $customfooter, $cms, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $sitever, $tngconfig;
+    global $customfooter, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $sitever, $tngconfig;
 
     $needtherest = true;
     if ($tngprint) {
@@ -255,20 +252,20 @@ function tng_footer($flags) {
             echo $flags['more'];
         }
         if (!$tngprint) {
-            echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/litbox.js\"></script>\n";
+            echo "<script type=\"text/javascript\" src=\"js/litbox.js\"></script>\n";
         }
         if (!empty($map['key']) && !empty($map['pins'])) {
             tng_map_pins();
         }
 
         if (!isset($flags['noend']) || !$flags['noend']) {
-            include $cms['tngpath'] . "end.php";
+            include "end.php";
         }
     }
 }
 
 function tng_basicfooter($flags) {
-    global $text, $cms, $sitever, $templatepath;
+    global $text, $sitever, $templatepath;
 
     $footer = "";
     $newsitever = getSiteVersion();
@@ -281,8 +278,8 @@ function tng_basicfooter($flags) {
         if ($sitever == "mobile") {
             $gotover = $newsitever == "mobile" ? "standard" : $newsitever;
             $message = $text['switchs'];
-            if (file_exists($cms['tngpath'] . $templatepath . "mobile_footer.php")) {
-                include $cms['tngpath'] . $templatepath . "mobile_footer.php";
+            if (file_exists($templatepath . "mobile_footer.php")) {
+                include $templatepath . "mobile_footer.php";
             }
         } else {
             $gotover = "mobile";
@@ -292,7 +289,7 @@ function tng_basicfooter($flags) {
         $footer .= "<a href=\"$thispage{$con}sitever=$gotover\" class=\"fieldnameback lightlink2 rounded4\">&nbsp;{$message}&nbsp;</a>\n";
         $footer .= "</p><br>\n";
     }
-    include $cms['tngpath'] . "stdsitecredit.php";
+    include "stdsitecredit.php";
     $footer .= $sitecredit;
 
     if (isset($flags['imgprev'])) {
@@ -330,7 +327,7 @@ function tng_basicfooter($flags) {
 
 function getSmallPhoto($medialink) {
     global $rootpath, $mediapath, $mediatypes_assoc, $thumbmaxw, $thumbmaxh;
-    global $cms, $mediatypes_thumbs, $tnggallery, $tngconfig;
+    global $mediatypes_thumbs, $tnggallery, $tngconfig;
 
     if (!$thumbmaxh) {
         $thumbmaxh = 100;
@@ -345,7 +342,7 @@ function getSmallPhoto($medialink) {
 
     $treestr = !empty($tngconfig['mediatrees']) && $medialink['gedcom'] ? $medialink['gedcom'] . "/" : "";
     if ($medialink['allow_living'] && $medialink['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $medialink['thumbpath'])) {
-        $thumb = $cms['tngpath'] . "$usefolder/" . str_replace("%2F", "/", rawurlencode($medialink['thumbpath']));
+        $thumb = "$usefolder/" . str_replace("%2F", "/", rawurlencode($medialink['thumbpath']));
         $photoinfo = @GetImageSize("$rootpath$usefolder/$treestr" . $medialink['thumbpath']);
 
         if ($photoinfo[0] <= $thumbmaxw && $photoinfo[1] <= $thumbmaxh) {
@@ -363,7 +360,7 @@ function getSmallPhoto($medialink) {
         $dimensions = " height=\"$photohtouse\"";
         $class = " class=\"thumb\"";
     } else {
-        $thumb = $cms['tngpath'] . "img/" . $mediatypes_thumbs[$mediatypeID];
+        $thumb = "img/" . $mediatypes_thumbs[$mediatypeID];
         $dimensions = $class = "";
     }
     if (!isset($medialink['description'])) {
@@ -432,7 +429,7 @@ function getFirstNameOnly($row) {
 
 function tng_menu($enttype, $currpage, $entityID, $innermenu) {
     global $tree, $text, $disallowgedcreate, $allow_edit;
-    global $rightbranch, $cms, $allow_ged, $emailaddr, $newbrowser, $tngprint, $flags, $sitever;
+    global $rightbranch, $allow_ged, $emailaddr, $newbrowser, $tngprint, $flags, $sitever;
 
     $nexttab = 0;
     if (!$tngprint) {
@@ -494,7 +491,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
             $entityID = urlencode($entityID);
         }
         if ($allow_edit && $rightbranch) {
-            $choices .= doMenuItem($nexttab, $cms['tngpath'] . "$editstr" . "ID=$entityID&amp;tree=$tree&amp;cw=1\" target=\"_blank", "sugg", $text['edit'], $currpage, "");
+            $choices .= doMenuItem($nexttab, "$editstr" . "ID=$entityID&amp;tree=$tree&amp;cw=1\" target=\"_blank", "sugg", $text['edit'], $currpage, "");
         } elseif ($emailaddr) {
             $suggest_url = getURL("suggest", 1);
             $choices .= doMenuItem($nexttab, "$suggest_url" . "enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", $text['suggest'], $currpage, "suggest");
@@ -553,7 +550,7 @@ function tng_smallIcon($options) {
 }
 
 function tng_getLeftIcons() {
-    global $tngconfig, $text, $homepage, $currentuser, $allow_profile, $cms, $sitever;
+    global $tngconfig, $text, $homepage, $currentuser, $allow_profile, $sitever;
 
     if (!isset($tngconfig['menucount'])) {
         $tngconfig['menucount'] = 0;
@@ -579,7 +576,7 @@ function tng_getLeftIcons() {
             $editprofile_url = getURL("ajx_editprofile", 1);
             $profilelink = tng_smallIcon(array('label' => ($sitever == "mobile" ? $text['editprofile'] : "({$text['editprofile']}: $currentuser)"),
                 'class' => "tngsmallicon3", 'id' => "profile",
-                'onclick' => "tnglitbox = new LITBox('{$editprofile_url}p=" . urlencode($cms['tngpath']) . "',{width:520, height:560}); return false"));
+                'onclick' => "tnglitbox = new LITBox('{$editprofile_url}p=" . urlencode("") . "',{width:520, height:560}); return false"));
             $tngconfig['menucount']++;
         } else {
             $userparen = " ($currentuser)";
@@ -590,7 +587,7 @@ function tng_getLeftIcons() {
             $left_icons .= tng_smallIcon(array('url' => getURL("logout", 1) . "session=" . session_name(), 'label' => $text['logout'] . $userparen, 'id' => "log"));
         } else {
             $login_url = getURL("ajx_login", 1);
-            $left_icons .= tng_smallIcon(array('label' => $text['login'], 'id' => "log", 'onclick' => "return openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "');"));
+            $left_icons .= tng_smallIcon(array('label' => $text['login'], 'id' => "log", 'onclick' => "return openLogin('{$login_url}p=" . urlencode("") . "');"));
         }
         $tngconfig['menucount']++;
     }
@@ -600,7 +597,7 @@ function tng_getLeftIcons() {
 }
 
 function tng_getRightIcons() {
-    global $text, $tngconfig, $cms, $gotlastpage, $sitever, $isConnected;
+    global $text, $tngconfig, $gotlastpage, $sitever, $isConnected;
 
     $addbookmark_url = getURL("ajx_addbookmark", 1);
 
@@ -620,7 +617,7 @@ function tng_getRightIcons() {
     }
 
     if (empty($tngconfig['showbmarks']) && $gotlastpage) {
-        $right_icons .= tng_smallIcon(['label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('{$addbookmark_url}p=" . urlencode($cms['tngpath']) . "', {width:350, height:120}); return false;"]);
+        $right_icons .= tng_smallIcon(['label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('{$addbookmark_url}p=" . urlencode("") . "', {width:350, height:120}); return false;"]);
         $tngconfig['menucount']++;
     }
 
@@ -675,7 +672,7 @@ function tng_getMediaMenu() {
 }
 
 function tng_getInfoMenu($title) {
-    global $allow_admin, $cms, $tngconfig;
+    global $allow_admin, $tngconfig;
 
     $menu = tngddrow(getURL("whatsnew", 0), "whatsnew-icon", "", "whatsnew");
     $menu .= tngddrow(getURL("mostwanted", 0), "mw-icon", "", "mostwanted");
@@ -690,7 +687,7 @@ function tng_getInfoMenu($title) {
         $menu .= tngddrow(getURL("browse_dna_tests", 0), "dna-icon", "", "dna_tests");
     }
     if ($allow_admin) {
-        $menu .= tngddrow($cms['tngpath'] . "admin.php", "admin-icon", "", "administration");
+        $menu .= tngddrow("admin.php", "admin-icon", "", "administration");
         $menu .= tngddrow(getURL("showlog", 0), "unlock-icon", "", "mnushowlog");
         $tngconfig['menucount'] += 2;
     }
@@ -848,7 +845,7 @@ function tng_mobileicons($title) {
 }
 
 function tng_icons($instance, $title = "") {
-    global $text, $tngconfig, $customshare, $cms, $tngprint, $custommenu, $custmenu, $custommenulinks, $sitever;
+    global $text, $tngconfig, $customshare, $tngprint, $custommenu, $custmenu, $custommenulinks, $sitever;
 
     $fullmenu = "";
     if ($tngprint) {
@@ -947,7 +944,7 @@ function tng_icons($instance, $title = "") {
                 $searchsite_url = getURL("searchsite", 0);
 
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
-                $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"{$cms['tngpath']}img/tng_close.gif\" alt=\"\"/></a>";
+                $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"img/tng_close.gif\" alt=\"\"/></a>";
                 $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
@@ -1003,7 +1000,7 @@ function tng_icons($instance, $title = "") {
 }
 
 function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
-    global $cms, $text, $sitever;
+    global $text, $sitever;
 
     $uselabel = $labelliteral ? $label : $text[$label];
     if ($sitever == "mobile") {
@@ -1011,7 +1008,7 @@ function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
     } else {
         $ddrow = "<li><a href=\"$link\">";
         if ($thumb) {
-            $ddrow .= "<img src=\"{$cms['tngpath']}$thumb\" class=\"menu-icon\" alt=\"\">";
+            $ddrow .= "<img src=\"$thumb\" class=\"menu-icon\" alt=\"\">";
         } else {
             $ddrow .= "<span class=\"menu-icon\" id=\"$id\"></span>";
         }
@@ -1022,7 +1019,7 @@ function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
 }
 
 function treeDropdown($forminfo) {
-    global $text, $requirelogin, $assignedtree, $trees_table, $time_offset, $treerestrict, $cms, $tree, $numtrees, $tngconfig;
+    global $text, $requirelogin, $assignedtree, $trees_table, $time_offset, $treerestrict, $tree, $numtrees, $tngconfig;
 
     $ret = "";
     if (!$requirelogin || !$treerestrict || !$assignedtree) {
@@ -1037,7 +1034,7 @@ function treeDropdown($forminfo) {
             }
             $ret .= "<span class='normal'>{$text['tree']}: </span>";
             $ret .= treeSelect($treeresult, $forminfo['name']);
-            $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
+            $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
             if (isset($forminfo['hidden']) && is_array($forminfo['hidden'])) {
                 foreach ($forminfo['hidden'] as $hidden)
                     $ret .= "<input type=\"hidden\" name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\">\n";
@@ -1105,7 +1102,7 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
 }
 
 function getMediaHREF($row, $mlflag) {
-    global $mediatypes_assoc, $mediapath, $htmldocs, $imagetypes, $videotypes, $recordingtypes, $cms;
+    global $mediatypes_assoc, $mediapath, $htmldocs, $imagetypes, $videotypes, $recordingtypes;
 
     $histories_url = getURL("histories", 1);
     $showmedia_url = getURL("showmedia", 1);
@@ -1230,7 +1227,7 @@ function showLinks($linkList, $newtab = false, $class = null, $inner_html = null
 }
 
 function showMediaLinks($linkList) {
-    global $media_table, $mediapath, $mediatypes_assoc, $cms;
+    global $media_table, $mediapath, $mediatypes_assoc;
     $links = explode(",", $linkList);
     $finishedmedList = "";
 
@@ -1241,7 +1238,7 @@ function showMediaLinks($linkList) {
         tng_free_result($thumbresult);
         $mediatypeID = $thumbrow['mediatypeID'];
         $usefolder = $thumbrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
-        $thumb = $cms['tngpath'] . "$usefolder/" . str_replace("%2F", "/", rawurlencode($thumbrow['thumbpath']));
+        $thumb = "$usefolder/" . str_replace("%2F", "/", rawurlencode($thumbrow['thumbpath']));
         $title = !empty($thumbrow['altdescription']) ? $thumbrow['altdescription'] : $thumbrow['description'];
         $imgsrc = "<img src=\"$thumb\" alt=\"$title\" title=\"$title\" class=\"thumb\">";
         $href = getMediaHREF($thumbrow, 0);
@@ -1280,7 +1277,7 @@ function custom_menu($custmenu, $items, $mobile = false) {
 }
 
 function custom_links($linkdefs) {
-    global $cms, $text, $allow_admin, $currentuser, $users_table, $tngconfig;
+    global $text, $allow_admin, $currentuser, $users_table, $tngconfig;
 
     $menustr = '';
     for ($i = 0; isset($linkdefs[$i]); $i++) {
@@ -1303,7 +1300,6 @@ function custom_links($linkdefs) {
             continue;
         }
         $target = $linkdefs[$i]['target'];
-        $linkpath = !empty($linkdefs[$i]['external']) ? '' : $cms['tngpath'];
 
         // add options to target section
         if (!empty($linkdefs[$i]['tip_text'])) {
@@ -1338,7 +1334,7 @@ function custom_links($linkdefs) {
             $linkdefs[$i]['icon'] = '';
         }
         $menustr .= tngddrow(
-            $linkpath . $target,
+            $target,
             $linkdefs[$i]['sprite'],
             $linkdefs[$i]['icon'],
             $label,

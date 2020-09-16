@@ -15,9 +15,7 @@ exit;
 //1a: If you want to skip the login check when displaying this page, remote the comment marks from this line:
 //$nologin = 1;
 
-$cms['tngpath'] = "../";
 include "../tng_begin.php";
-$cms['tngpath'] = "../";
 
 //STEP 3: Replace "Your Title Here" in the next line with the title of your page. Keep it surrounded with double quotes. 
 //  Do not include any double quotes within your title. This creates the primary headline at the top of the page.

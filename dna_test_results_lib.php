@@ -34,7 +34,7 @@ if ($debug) {
     echo "Number of total DNA Tests - $totnum_tests<br>";
 }
 if ($totnum_tests) {
-    $toggleicon = "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon2\" style=\"cursor:pointer; float:right; padding-top:4px;\" title=\"{$text['expand']}\" alt=\"\" onclick=\"togglednaicon(); \">";
+    $toggleicon = "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon2\" style=\"cursor:pointer; float:right; padding-top:4px;\" title=\"{$text['expand']}\" alt=\"\" onclick=\"togglednaicon(); \">";
     $displaystyle = "display:none";
     $displayclass = "dnatest";
 
@@ -63,7 +63,7 @@ if ($totnum_tests) {
     $persontext .= "<tr>\n";
     $persontext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
     $persontext .= "<td colspan=\"4\" class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
-    $persontext .= "<a href=\"#\" title=\"{$text['dna_info_head']}\"><img src=\"{$cms['tngpath']}img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
+    $persontext .= "<a href=\"#\" title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
     $persontext .= "</td>\n";
     $persontext .= "</tr>\n";
     $persontext .= "<tr id=\"dnatest\" class=\"$displayclass\" style=\"$displaystyle\">\n";

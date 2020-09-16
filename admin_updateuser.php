@@ -126,7 +126,7 @@ if (!$duplicate) {
 
             if ($langrow['folder']) {
                 $oldtext = $admtext;
-                include $cms['tngpath'] . "$languages_path{$langrow['folder']}/admintext.php";
+                include "$languages_path{$langrow['folder']}/admintext.php";
                 $deftext = $admtext;
                 $admtext = $oldtext;
             }

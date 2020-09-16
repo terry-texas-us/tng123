@@ -27,7 +27,7 @@ function newPerson(gender, type, father, familyID) {
     allow_cites = false;
     allow_notes = false;
     newpersongender = gender;
-    nplitbox = new LITBox(cmstngpath + 'ajx_newperson.php?tree=' + tree + '&gender=' + gender + '&type=' + type + '&father=' + father + '&familyID=' + familyID, {
+    nplitbox = new LITBox('ajx_newperson.php?tree=' + tree + '&gender=' + gender + '&type=' + type + '&father=' + father + '&familyID=' + familyID, {
         width: 790, height: 600
     });
     generateIDajax('person', 'personID');
@@ -43,7 +43,7 @@ function addPerson(form) {
         params += '&order=' + (childcount + 1);
     }
     jQuery.ajax({
-        url: cmstngpath + 'admin_addperson.php',
+        url: 'admin_addperson.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -89,7 +89,7 @@ function updatePerson(form, slot) {
     checkDate(form.endldate);
     var params = jQuery(form).serialize();
     jQuery.ajax({
-        url: cmstngpath + 'admin_updateperson.php',
+        url: 'admin_updateperson.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -116,7 +116,7 @@ function editFamily(familyID, slot, lastperson) {
     allow_cites = true;
     allow_notes = true;
     persfamID = familyID;
-    tnglitbox = new LITBox(cmstngpath + 'ajx_editfamily.php?familyID=' + familyID + '&tree=' + tree + '&lastperson=' + lastperson + '&slot=' + slot, {
+    tnglitbox = new LITBox('ajx_editfamily.php?familyID=' + familyID + '&tree=' + tree + '&lastperson=' + lastperson + '&slot=' + slot, {
         width: 790, height: 540
     });
     startSortFamily();
@@ -126,7 +126,7 @@ function editFamily(familyID, slot, lastperson) {
 function newFamily(slot, child) {
     allow_cites = false;
     allow_notes = false;
-    tnglitbox = new LITBox(cmstngpath + 'ajx_newfamily.php?tree=' + tree + '&child=' + child + '&slot=' + slot, {
+    tnglitbox = new LITBox('ajx_newfamily.php?tree=' + tree + '&child=' + child + '&slot=' + slot, {
         width: 740, height: 460
     });
     generateIDajax('family', 'familyID');
@@ -136,7 +136,7 @@ function newFamily(slot, child) {
 function updateFamily(form, slot, script) {
     var params = jQuery(form).serialize();
     jQuery.ajax({
-        url: cmstngpath + script,
+        url: script,
         data: params,
         datatype: 'html',
         success: function (req) {
@@ -197,7 +197,7 @@ function updateParentsOrder(id) {
 
     var params = {sequence: parentlist.join(','), action: 'parentorder', personID: persfamID, tree: tree};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });
@@ -208,7 +208,7 @@ function updateSpousesOrder(id) {
 
     var params = {sequence: spouselist.join(','), action: 'spouseorder', tree: tree, spouseorder: spouseorder};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });
@@ -218,7 +218,7 @@ function unlinkSpouse(familyID) {
     if (confirm(confunlink)) {
         var params = {action: 'spouseunlink', familyID: familyID, personID: persfamID, tree: tree};
         jQuery.ajax({
-            url: cmstngpath + 'ajx_updateorder.php',
+            url: 'ajx_updateorder.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -236,7 +236,7 @@ function unlinkParents(familyID) {
     if (confirm(confunlinkc)) {
         var params = {action: 'parentunlink', familyID: familyID, personID: persfamID, tree: tree};
         jQuery.ajax({
-            url: cmstngpath + 'ajx_updateorder.php',
+            url: 'ajx_updateorder.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -255,7 +255,7 @@ function updateChildrenOrder(id) {
 
     var params = {sequence: childlist.join(','), action: 'childorder', familyID: persfamID, tree: tree};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });
@@ -266,7 +266,7 @@ function unlinkChild(personID, action) {
     if (confirm(confmsg)) {
         var params = {personID: personID, familyID: persfamID, desc: tree, t: action};
         jQuery.ajax({
-            url: cmstngpath + 'ajx_delete.php',
+            url: 'ajx_delete.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -308,7 +308,7 @@ function validatePerson(form) {
 function generateIDajax(type, dest) {
     var params = {type: type, tree: tree};
     jQuery.ajax({
-        url: cmstngpath + 'admin_generateID.php',
+        url: 'admin_generateID.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -320,7 +320,7 @@ function generateIDajax(type, dest) {
 function checkIDajax(checkID, type, dest) {
     var params = {checkID: checkID, type: type, tree: tree};
     jQuery.ajax({
-        url: cmstngpath + 'admin_checkID.php',
+        url: 'admin_checkID.php',
         data: params,
         dataType: 'html',
         success: function (req) {

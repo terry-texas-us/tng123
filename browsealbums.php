@@ -2,8 +2,8 @@
 $textpart = "showphoto";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
-include $cms['tngpath'] . "personlib.php";
+include "functions.php";
+include "personlib.php";
 
 $browsealbums_url = getURL("browsealbums", 1);
 $browsealbums_noargs_url = getURL("browsealbums", 0);

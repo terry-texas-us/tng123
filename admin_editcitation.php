@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "sources";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $query = "SELECT citations.sourceID AS sourceID, description, page, quay, citedate, citetext, note, title, citations.gedcom AS gedcom ";
 $query .= "FROM $citations_table citations ";

@@ -8,10 +8,6 @@ if (!$allow_admin) {
     exit;
 }
 
-if (isset($cms['events'])) {
-    include 'cmsevents.php';
-    cms_logs();
-}
 require $subroot . "logconfig.php";
 
 if ($maxloglines) {
@@ -24,7 +20,7 @@ $showlog_url = getURL("showlog", 1);
 $logxml_url = getURL("ajx_logxml", 0);
 
 if (isset($autorefresh)) {
-    $flags['scripting'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/net.js\"></script>\n";
+    $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
 }
 $owner = $sitename ? $sitename : $dbowner;
 tng_header("$loglines {$text['mostrecentactions']}", $flags);

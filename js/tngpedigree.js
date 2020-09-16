@@ -144,7 +144,7 @@ function getGenderIcon(gender) {
         if (gender == "M") genderstr = "male";
         else if (gender == "F") genderstr = "female";
         if (genderstr)
-            icon = " <img src=\"" + cmstngpath + "img/tng_" + genderstr + ".gif\" width=\"11\" height=\"11\" alt=\"" + genderstr + "\" style=\"vertical-align: " + valign + "px;\">";
+            icon = " <img src=\"" + "img/tng_" + genderstr + ".gif\" width=\"11\" height=\"11\" alt=\"" + genderstr + "\" style=\"vertical-align: " + valign + "px;\">";
     }
 
     return icon;
@@ -419,7 +419,7 @@ function getBackPopup() {
                     var spchild = children[j];
 
                     kidlink = '<a href="javascript:getBackPerson(' + "'" + spchild.childID + "'" + ')">';
-                    popupcontent += '<tr><td ' + tdclasstxt + ' id="popabbrleft">' + kidlink + '<img src="' + cmstngpath + 'img/ArrowLeft.gif" width="10" height="16"></a></td>';
+                    popupcontent += '<tr><td ' + tdclasstxt + ' id="popabbrleft">' + kidlink + '<img src="img/ArrowLeft.gif" width="10" height="16"></a></td>';
                     popupcontent += '<td ' + tdclasstxt + ' id="popleft">' + kidlink + spchild.name + '</a></td></tr>';
                 }
             }
@@ -540,7 +540,7 @@ function getPopup(slot) {
 
 function editIcon(type, slot, personID, familyID, gender) {
     var iconlink;
-    var editicon = '<img src="' + cmstngpath + 'img/tng_edit2.gif" width="10" height="10">';
+    var editicon = '<img src="img/tng_edit2.gif" width="10" height="10">';
 
     if (type == "P")
         iconlink = ' <a href="#" onclick="return editPerson(\'' + personID + '\',' + slot + ',\'' + gender + '\');" title="' + txt_editperson + '">' + editicon + '</a>';

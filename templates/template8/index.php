@@ -5,10 +5,10 @@ tng_header($sitename ? "" : $text['mnuheader'], $flags);
 if ($sitever == "mobile") {
     ?>
     <div class="headerrow"
-         style="background-image: url(<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t8_headimg']; ?>);background-position:right;">
+         style="background-image: url(<?php echo $templatepath; ?><?php echo $tmp['t8_headimg']; ?>);background-position:right;">
         <span class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle1'); ?></span><span
-                class="headertext text_tan"><?php echo getTemplateMessage('t8_headtitle2'); ?></span><span
-                class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle3'); ?></span>
+            class="headertext text_tan"><?php echo getTemplateMessage('t8_headtitle2'); ?></span><span
+            class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle3'); ?></span>
     </div>
     <br>
     <?php

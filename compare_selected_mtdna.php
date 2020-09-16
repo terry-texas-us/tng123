@@ -1,12 +1,12 @@
 <?php
 $textpart = "dna";
 include "tng_begin.php";
-include $cms['tngpath'] . "adminlib.php";
-include $cms['tngpath'] . "personlib.php";
+include "adminlib.php";
+include "personlib.php";
 
 if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 
 

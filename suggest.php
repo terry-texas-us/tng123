@@ -2,11 +2,6 @@
 $textpart = "gedcom";
 include "tng_begin.php";
 
-if (!empty($cms['events'])) {
-    include 'cmsevents.php';
-    cms_contact();
-}
-
 $_SESSION['tng_email'] = generatePassword(1);
 $_SESSION['tng_comments'] = generatePassword(1);
 $_SESSION['tng_yourname'] = generatePassword(1);
@@ -192,7 +187,7 @@ if ($enttype) {
 ?>
 
 <?php
-@include $cms['tngpath'] . "TNG_captcha.php";
+@include "TNG_captcha.php";
 
 $formstr = getFORM("tngsendmail", "post\" onsubmit=\"return validateForm();", "suggest", "suggest");
 echo $formstr;

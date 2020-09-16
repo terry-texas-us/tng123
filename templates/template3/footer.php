@@ -1,4 +1,4 @@
-<?php global $text, $currentuser, $mylanguage, $cms, $tng_version, $flags; ?>
+<?php global $text, $currentuser, $mylanguage, $tng_version, $flags; ?>
 
 <table width="100%" cellspacing="0" cellpadding="5" class="tableborder rounded4 t3shadow">
     <tr>

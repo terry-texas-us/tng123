@@ -1,9 +1,6 @@
 <?php
 $register_globals = (bool)ini_get('register_globals');
 
-if (isset($_GET['cms']) || isset($_POST['cms'])) {
-  die("Sorry!");
-}
 if (isset($_GET['nologin']) || isset($_POST['nologin'])) {
   die("Sorry!");
 }

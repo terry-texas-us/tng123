@@ -28,7 +28,7 @@ $title = getTemplateMessage('t3_maintitle');
                 <?php
             } else {
                 ?>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t3_titleimage']; ?>" alt="" class="titleimg" width="630"
+                <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_titleimage']; ?>" alt="" class="titleimg" width="630"
                      height="93">
                 <?php
             }
@@ -40,7 +40,7 @@ $title = getTemplateMessage('t3_maintitle');
                 //Actual file name has been replaced with t3_mainimage variable, configurable from Template Settings. Default name of actual image is "mainstreet.jpg"
                 //You can replace the t3_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                 ?>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t3_mainimage']; ?>" alt="" class="mainimg">
+                <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_mainimage']; ?>" alt="" class="mainimg">
                 <?php
                 //end MAIN IMAGE
                 ?>
@@ -62,8 +62,8 @@ $title = getTemplateMessage('t3_maintitle');
                     </form>
                     <br>
                     <div class="subheader">
-                        <a href="<?php echo $cms['tngpath']; ?>searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a><br>
-                        <a href="<?php echo $cms['tngpath']; ?>surnames.php"><?php echo $text['mnulastnames']; ?></a><br><br>
+                        <a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a><br>
+                        <a href="surnames.php"><?php echo $text['mnulastnames']; ?></a><br><br>
                         <?php
                         if ($currentuser) {
                             echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
@@ -105,58 +105,58 @@ $title = getTemplateMessage('t3_maintitle');
             ?>
             <div class="mainmenu">
                 <br>
-                <a href="<?php echo $cms['tngpath']; ?>whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a> &nbsp;|&nbsp;
+                <a href="whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a> &nbsp;|&nbsp;
                 <?php
                 foreach ($mediatypes as $mediatype) {
                     if (!$mediatype['disabled']) {
-                        echo "<a href=\"{$cms['tngpath']}browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a> &nbsp;|&nbsp;\n";
+                        echo "<a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a> &nbsp;|&nbsp;\n";
                     }
                 }
                 ?>
-                <a href="<?php echo $cms['tngpath']; ?>browsealbums.php"><?php echo $text['albums']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>browsemedia.php"><?php echo $text['allmedia']; ?></a>
+                <a href="browsealbums.php"><?php echo $text['albums']; ?></a> &nbsp;|&nbsp;
+                <a href="browsemedia.php"><?php echo $text['allmedia']; ?></a>
 
                 <br>
-                <a href="<?php echo $cms['tngpath']; ?>mostwanted.php"><?php echo $text['mostwanted']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>cemeteries.php"><?php echo $text['mnucemeteries']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=headstones"><?php echo $text['mnutombstones']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>places.php"><?php echo $text['places']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>anniversaries.php"><?php echo $text['anniversaries']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>calendar.php"><?php echo $text['calendar']; ?></a>
+                <a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a> &nbsp;|&nbsp;
+                <a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a> &nbsp;|&nbsp;
+                <a href="browsemedia.php?mediatypeID=headstones"><?php echo $text['mnutombstones']; ?></a> &nbsp;|&nbsp;
+                <a href="places.php"><?php echo $text['places']; ?></a> &nbsp;|&nbsp;
+                <a href="anniversaries.php"><?php echo $text['anniversaries']; ?></a> &nbsp;|&nbsp;
+                <a href="calendar.php"><?php echo $text['calendar']; ?></a>
 
                 <br>
-                <a href="<?php echo $cms['tngpath']; ?>browsesources.php"><?php echo $text['mnusources']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>browserepos.php"><?php echo $text['repositories']; ?></a> &nbsp;|&nbsp;
+                <a href="browsesources.php"><?php echo $text['mnusources']; ?></a> &nbsp;|&nbsp;
+                <a href="browserepos.php"><?php echo $text['repositories']; ?></a> &nbsp;|&nbsp;
                 <?php
                 if (!$tngconfig['hidedna']) {
                     ?>
-                    <a href="<?php echo $cms['tngpath']; ?>browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a> &nbsp;|&nbsp;
+                    <a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a> &nbsp;|&nbsp;
                     <?php
                 }
                 ?>
-                <a href="<?php echo $cms['tngpath']; ?>reports.php"><?php echo $text['mnureports']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>browsenotes.php"><?php echo $text['notes']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>bookmarks.php"><?php echo $text['bookmarks']; ?></a> &nbsp;|&nbsp;
-                <a href="<?php echo $cms['tngpath']; ?>statistics.php"><?php echo $text['mnustatistics']; ?></a>
+                <a href="reports.php"><?php echo $text['mnureports']; ?></a> &nbsp;|&nbsp;
+                <a href="browsenotes.php"><?php echo $text['notes']; ?></a> &nbsp;|&nbsp;
+                <a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a> &nbsp;|&nbsp;
+                <a href="statistics.php"><?php echo $text['mnustatistics']; ?></a>
                 <br>
                 <?php
                 if ($currentuser) {
-                    echo "<a href=\"{$cms['tngpath']}logout.php\">{$text['mnulogout']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href=\"logout.php\">{$text['mnulogout']}</a> &nbsp;|&nbsp;\n";
                 } else {
-                    echo "<a href=\"{$cms['tngpath']}login.php\">{$text['mnulogon']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href=\"login.php\">{$text['mnulogon']}</a> &nbsp;|&nbsp;\n";
                 }
 
                 if ($allow_admin) {
-                    echo "<a href=\"{$cms['tngpath']}showlog.php\">{$text['mnushowlog']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href=\"showlog.php\">{$text['mnushowlog']}</a> &nbsp;|&nbsp;\n";
                     echo "<a href=\"admin.php\">{$text['mnuadmin']}</a> &nbsp;|&nbsp;\n";
                 }
                 if (!$currentuser && !$tngconfig['disallowreg']) {
                     ?>
-                    <a href="<?php echo $cms['tngpath']; ?>newacctform.php"><?php echo $text['mnuregister']; ?></a> &nbsp;|&nbsp;
+                    <a href="newacctform.php"><?php echo $text['mnuregister']; ?></a> &nbsp;|&nbsp;
                     <?php
                 }
                 ?>
-                <a href="<?php echo $cms['tngpath']; ?>suggest.php?page=<?php echo $title; ?>"><?php echo $text['contactus']; ?></a>
+                <a href="suggest.php?page=<?php echo $title; ?>"><?php echo $text['contactus']; ?></a>
             </div>
             <?php
         }

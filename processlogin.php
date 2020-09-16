@@ -1,10 +1,10 @@
 <?php
 include "begin.php";
 $textpart = "login";
-include $cms['tngpath'] . "getlang.php";
+include "getlang.php";
 
 $tngconfig['maint'] = "";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 
 $tngusername = mysqli_real_escape_string($link, $tngusername);
 $tngpassword = mysqli_real_escape_string($link, $tngpassword);

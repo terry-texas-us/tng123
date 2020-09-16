@@ -1,5 +1,5 @@
 <?php
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
 <table class="page">
@@ -28,7 +28,7 @@ global $text, $cms, $subroot, $tmp;
             //Actual file name has been replaced with t6_headimg variable, configurable from Template Settings. Default name of actual image is "titlebottom.jpg"
             //You can replace the t6_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
             ?>
-            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt="">
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt="">
             <?php
             //end HEADER IMAGE
             ?>
@@ -48,10 +48,10 @@ global $text, $cms, $subroot, $tmp;
 
             if ($currentuser) {
                 echo "<span class=\"headertext\">{$text['welcome']}, $currentuserdesc</span>&nbsp;";
-                echo "<a href=\"{$cms['tngpath']}logout.php\"><span class=\"headertext-sm\">{$text['mnulogout']}</span></a>";
+                echo "<a href=\"logout.php\"><span class=\"headertext-sm\">{$text['mnulogout']}</span></a>";
             } else {
                 echo "<span class=\"headertext\">{$text['anon']}</span>&nbsp;";
-                echo "<a href=\"{$cms['tngpath']}login.php\"><span class=\"headertext-sm\">{$text['mnulogon']}</span></a>";
+                echo "<a href=\"login.php\"><span class=\"headertext-sm\">{$text['mnulogon']}</span></a>";
             }
             ?>
 

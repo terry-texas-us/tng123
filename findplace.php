@@ -5,7 +5,7 @@ include "adminlib.php";
 $textpart = "findplace";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if ($del) {
   $query = "DELETE FROM $places_table WHERE ID=\"$del\"";

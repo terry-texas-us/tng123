@@ -11,7 +11,7 @@ tng_header($text['login'], $flags);
 $loginfieldclass = "medfield";
 $loginbtnclass = "btn";
 
-include $cms['tngpath'] . "loginlib.php";
+include "loginlib.php";
 ?>
 
     <script type="text/javascript">

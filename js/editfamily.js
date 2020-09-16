@@ -8,7 +8,7 @@ function updateChildrenOrder(id) {
 
     var params = {sequence: children.join(','), action: 'childorder', familyID: persfamID, tree: tree};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });

@@ -12,7 +12,7 @@ if (!empty($tngprint)) {
     $tngconfig['hidemedia'] = "";
 }
 $defermap = $map['pstartoff'] || $tngconfig['istart'] ? 1 : 0;
-include $cms['tngpath'] . "personlib.php";
+include "personlib.php";
 
 $getperson_url = getURL("getperson", 1);
 $familygroup_url = getURL("familygroup", 1);
@@ -106,25 +106,25 @@ if (empty($tngconfig['hidedna'])) {
 <script type = 'text/javascript' language = 'javascript'>
 function togglednaicon() {
    if ($('.toggleicon2').attr('src').indexOf('desc') > 0) {
-      $('.toggleicon2').attr('src',cmstngpath + 'img/tng_sort_asc.gif')
+      $('.toggleicon2').attr('src','img/tng_sort_asc.gif')
       $('.toggleicon2').attr('title', '{$text['collapse']}');
       $('.dnatest').show();
    }
    else {
-      $('.toggleicon2').attr('src',cmstngpath + 'img/tng_sort_desc.gif')
+      $('.toggleicon2').attr('src','img/tng_sort_desc.gif')
       $('.toggleicon2').attr('title', '{$text['expand']}');
       $('.dnatest').hide();
    }
 }
 
 function show_dnatest() {
-      $('.toggleicon2').attr('src',cmstngpath + 'img/tng_sort_asc.gif')
+      $('.toggleicon2').attr('src','img/tng_sort_asc.gif')
       $('.toggleicon2').attr('title', '{$text['collapse']}');
       $('.dnatest').show();
 }
 
 function hide_dnatest() {
-      $('.toggleicon2').attr('src',cmstngpath + 'img/tng_sort_desc.gif')
+      $('.toggleicon2').attr('src','img/tng_sort_desc.gif')
       $('.toggleicon2').attr('title', '{$text['expand']}');
       $('.dnatest').hide();
 }
@@ -276,7 +276,7 @@ if ($row['changedate'] || ($allow_edit && $rightbranch)) {
         if ($row['changedate']) {
             $row['changedate'] .= " | ";
         }
-        $row['changedate'] .= "<a href=\"{$cms['tngpath']}admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
     }
     $persontext .= showEvent(array("text" => $text['lastmodified'], "fact" => $row['changedate']));
 }
@@ -623,7 +623,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             if ($marriagerow['changedate']) {
                 $marriagerow['changedate'] .= " | ";
             }
-            $marriagerow['changedate'] .= "<a href=\"{$cms['tngpath']}admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
         }
         $persontext .= showEvent(array("text" => $text['lastmodified'], "fact" => $marriagerow['changedate']));
     }
@@ -700,7 +700,7 @@ if ($map['key'] && $locations2map) {
                         }
                     }
                 }
-                $persontext .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target= \"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel.png&amp;text=$thismarker\" alt=\"{$text['googlemaplink']}\" width= \"20\" height=\"34\"></a>";
+                $persontext .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target= \"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$thismarker\" alt=\"{$text['googlemaplink']}\" width= \"20\" height=\"34\"></a>";
                 $map['pins']++;
             } else {
                 $persontext .= "&nbsp;";
@@ -710,21 +710,21 @@ if ($map['key'] && $locations2map) {
                 $persontext .= " - $description";
             }
             $persontext .= " - $dateforeventtable - $place</span></td>\n";
-            $persontext .= "<td class='databack' valign=\"middle\"><a href=\"{$cms['tngpath']}googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"{$cms['tngpath']}img/earth.gif\" alt=\"{$text['googleearthlink']}\" width=\"15\" height=\"15\"></a></td></tr>\n";
+            $persontext .= "<td class='databack' valign=\"middle\"><a href=\"googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"img/earth.gif\" alt=\"{$text['googleearthlink']}\" width=\"15\" height=\"15\"></a></td></tr>\n";
             if ($val['notes']) {
                 $locations2map[$key]['htmlcontent'] = str_replace("</div>", "<br><br>" . tng_real_escape_string($val['notes']) . "</div>", $locations2map[$key]['htmlcontent']);
             }
         }
     }
     $persontext .= "</table></div>\n<table>";
-    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"{$cms['tngpath']}img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
+    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
         $persontext .= "<tr valign=\"top\"><td class=\"fieldnameback\"><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
         $persontext .= "<td colspan=\"2\" class='databack'><span class=\"smaller\">";
         for ($i = 1; $i < 7; $i++)
-            $persontext .= "<img src=\"{$cms['tngpath']}img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
-        $persontext .= "<img src=\"{$cms['tngpath']}img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class=\"aligntop\">&nbsp;: {$admtext['level0']}</span></td>\n";
+            $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
+        $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class=\"aligntop\">&nbsp;: {$admtext['level0']}</span></td>\n";
         $persontext .= "</tr>\n";
     }
     $persontext .= "</table>\n";
@@ -829,7 +829,7 @@ if ($allowpdf) {
 $rightbranch = $org_rightbranch;
 echo tng_menu("I", "person", $personID, $innermenu);
 ?>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/getperson.js"></script>
+    <script type="text/javascript" src="js/getperson.js"></script>
     <script type="text/javascript">
         function infoToggle(part) {
             if (part == "all") {
@@ -898,14 +898,14 @@ if ($map['key'] && $locations2map && $tngconfig['istart']) {
     $flags['more'] .= "</script>\n";
 }
 
-$flags['more'] .= "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/rpt_utils.js\"></script>\n";
+$flags['more'] .= "<script type=\"text/javascript\" src=\"js/rpt_utils.js\"></script>\n";
 if ($tentative_edit) {
     $flags['more'] .= "<script type=\"text/javascript\">\n";
     $flags['more'] .= "var preferEuro = " . ($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false") . ";\n";
     $flags['more'] .= "var preferDateFormat = '$preferDateFormat';\n";
     $flags['more'] .= "</script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/tentedit.js\"></script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/datevalidation.js\"></script>\n";
+    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/tentedit.js\"></script>\n";
+    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/datevalidation.js\"></script>\n";
 }
 tng_footer($flags);
 ?>

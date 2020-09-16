@@ -78,8 +78,8 @@ $vsep = $familychart['boxVsep'];
 $hpad = $familychart['chartHpad'];
 $vpad = $familychart['chartVpad'];
 $pheight = $boxheight + $vsep;
-$downarrow = "<img src='{$cms['tngpath']}img/ArrowDown.gif' class='famdownarrow' alt=''>";
-$uparrow = "<img src='{$cms['tngpath']}img/admArrowUp.gif' class='famuparrow' alt=''>";
+$downarrow = "<img src='img/ArrowDown.gif' class='famdownarrow' alt=''>";
+$uparrow = "<img src='img/admArrowUp.gif' class='famuparrow' alt=''>";
 
 $famx = $hpad + floor(($boxwidth + $hsep) / 2); #position of parent boxes
 $famy = $vpad + $boxheight + $parentorder * $pheight + 2 * $familychart['halfgenheight'];
@@ -293,7 +293,7 @@ function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left,
 
 function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
     #class=fambox or mfambox, $type=parent or child
-    global $familychart, $cms, $text, $family_url, $downarrow, $uparrow;
+    global $familychart, $text, $family_url, $downarrow, $uparrow;
     $name = $person['displayname'];
     $gender = getGenderIcon($person['sex'], 0);
     $rev = $reverse ? '&amp;rev=1' : '';
@@ -303,10 +303,10 @@ function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
         $death = $person['death'] ? $person['death'] : ' ';
         $life = $birth == ' ' && $death == ' ' ? ' ' : "($birth-$death)";
         if ($person['living'] && $familychart['livingsymbol'] && $familychart['livingalways']) {
-            $life .= "<img src='{$cms['tngpath']}img/alive.png' height='15' width='15' title='{$text['living']}' alt=''>";
+            $life .= "<img src='img/alive.png' height='15' width='15' title='{$text['living']}' alt=''>";
         }
     } elseif ($familychart['livingsymbol'] && !$_SESSION['logged_in']) {
-        $life = "<a href='{$cms['tngpath']}login.php' title='{$text['fcmlogin']}'><img src='{$cms['tngpath']}img/alive.png' height='15' width='15' title='{$text['living']}' alt=''></a>";
+        $life = "<a href='login.php' title='{$text['fcmlogin']}'><img src='img/alive.png' height='15' width='15' title='{$text['living']}' alt=''></a>";
     }
     $details = "<br><span class=\"smaller\">$gender $life</span>";
     $andtree = '&amp;tree=' . $person['gedcom'];
@@ -355,11 +355,11 @@ function doConnector($side, $x1, $x2, $x3, $y1, $y2) {
 
 function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     #insert html of a plus symbol with popups if other spouse(s)
-    global $cms, $text, $families_table, $people_table, $family_url, $tree;
+    global $text, $families_table, $people_table, $family_url, $tree;
 
     if ($otherfamilies = getfamilyID($person, 'other')) {
         echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
-		<img src='{$cms['tngpath']}img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
+		<img src='img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
 		<div id='$spouse' class='rounded10 popup hiddenbox'>";
         $tree = $person['gedcom'];
         $rev = $reverse ? '&amp;rev=1' : '';

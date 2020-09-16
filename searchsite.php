@@ -48,8 +48,8 @@ echo $formstr;
         </p>
         <br><br>
         <p>
-            <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
-            <a href="<?php echo $cms['tngpath']; ?>famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
+            <a href="searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
+            <a href="famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
         </p>
     </div>
 

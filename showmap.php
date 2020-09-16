@@ -9,7 +9,7 @@ if (!$cemeteryID || !is_numeric($cemeteryID)) {
     header("Location: thispagedoesnotexist.html");
     exit;
 }
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 $showmap_url = getURL("showmap", 1);
 $showmedia_url = getURL("showmedia", 1);
@@ -108,7 +108,7 @@ if ($cemeteryID) {
     }
 
     if ($allow_admin && $allow_edit) {
-        $infoblock .= "<p><a href=\"{$cms['tngpath']}" . "admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target=\"_blank\" class=\"snlink\">{$text['editcem']}</a></p>\n";
+        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target=\"_blank\" class=\"snlink\">{$text['editcem']}</a></p>\n";
     }
 
     if ($cemetery['notes']) {
@@ -140,8 +140,8 @@ if ($cemeteryID) {
             $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
             $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "htmlcontent" => "<div class=\"mapballoon normal\">$localballooncemeteryname<br>$localballooncemeteryplace$codednotes</div>"];
             $cemcoords = true;
-            $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"{$cms['tngpath']}img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
-            $body .= "<div style=\"padding-bottom:15px;\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"{$cms['tngpath']}google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
+            $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
+            $body .= "<div style=\"padding-bottom:15px;\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
             $map['pins']++;
             $body .= "<span><strong>{$text['latitude']}:</strong> $lat, <strong>{$text['longitude']}:</strong> $long</span></div>";
         }
@@ -420,7 +420,7 @@ if ($cemetery['place']) {
             $body .= "<tr><td class='databack'>$i.</td>\n";
             $body .= "<td class='databack'><a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
 
-            $placetxt = $row['burialplace'] . " <a href=\"$placesearch_url" . "tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+            $placetxt = $row['burialplace'] . " <a href=\"$placesearch_url" . "tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
 
             $deathdate = $row['burialdate'] ? $row['burialdate'] : $row['deathdate'];
             if ($row['burialdate']) {

@@ -16,7 +16,7 @@ if (!$familyID) {
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 initMediaTypes();
 
@@ -232,7 +232,7 @@ include_once "eventlib.php";
 
                                     $select .= "$options</select>\n";
 
-                                    echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                    echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                     ?>
                                     <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                          onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -321,7 +321,7 @@ include_once "eventlib.php";
                                         echo ">\n";
                                         echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
                                         echo "<td class=\"dragarea normal\">";
-                                        echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+                                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";
                                         echo "<td class='lightback normal childblock'>\n";
 

@@ -6,7 +6,7 @@ require "./public/events.php";
 $textpart = "sources";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if (!isset($tree)) {
     $tree = "";

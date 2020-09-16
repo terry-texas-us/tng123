@@ -28,7 +28,7 @@ if ($display == "textonly" || (!$display && $pedigree['usepopups'] == -1)) {
 }
 
 if ($allow_edit || $allow_add) {
-    include $cms['tngpath'] . "$mylanguage/admintext.php";
+    include "$mylanguage/admintext.php";
 }
 
 $pedigree_url = getURL("pedigree", 1);
@@ -110,7 +110,7 @@ if (file_exists($arrrtpath)) {
     $offpageimg = @GetImageSize($arrrtpath);
     $offpageimgw = $offpageimg[0];
     $offpageimgh = $offpageimg[1];
-    $pedigree['offpagelink'] = "<img src=\"{$cms['tngpath']}" . "img/ArrowRight.gif\" $offpageimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
+    $pedigree['offpagelink'] = "<img src=\"img/ArrowRight.gif\" $offpageimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
     $pedigree['offpagelink'] = "<b>&gt;</b>";
 }
@@ -120,7 +120,7 @@ if (file_exists($arrltpath)) {
     $leftarrowimg = @GetImageSize($arrltpath);
     $leftarrowimgw = $leftarrowimg[0];
     $leftarrowimgh = $leftarrowimg[1];
-    $pedigree['leftarrowlink'] = "<img src=\"{$cms['tngpath']}" . "img/ArrowLeft.gif\" $leftarrowimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
+    $pedigree['leftarrowlink'] = "<img src=\"img/ArrowLeft.gif\" $leftarrowimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
     $pedigree['leftarrowlink'] = "<b>&lt;</b>";
 }
@@ -128,7 +128,7 @@ if (file_exists($arrltpath)) {
 // see if chart link image is present
 if (file_exists($rootpath . $endrootpath . "img/Chart.gif")) {
     $imageSize = @GetImageSize($rootpath . $endrootpath . "img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}" . "img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
+    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
 } else {
     $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
 }
@@ -305,7 +305,7 @@ function getColor($shifts) {
 }
 
 function showBox($generation, $slot) {
-    global $pedigree, $generations, $pedmax, $boxes, $flags, $offpageimgh, $offpageimgw, $cms, $rounded, $templatepath;
+    global $pedigree, $generations, $pedmax, $boxes, $flags, $offpageimgh, $offpageimgw, $rounded, $templatepath;
 
     // set pointer to next father/mother pair
     $nextslot = $slot * 2;
@@ -393,7 +393,7 @@ function showBox($generation, $slot) {
     $cancelt = $pedigree['event'] == "over" ? " onmouseout=\"cancelTimer($slot)\"" : "";
     $boxes .= "<div class=\"downarrow\" id=\"downarrow$slot\" onmouse{$pedigree['event']}=\"setPopup($slot, $offsetV,$boxheighttouse)\"$cancelt style=\"width:{$pedigree['boxwidth']}" . "px; text-align:center; top:" . ($offsetV + $boxheighttouse + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 1) . "px;left:" . ($offsetH - 1) . "px;\">\n";
 
-    $boxes .= "<img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\"  alt=\"\"></div>\n";
+    $boxes .= "<img src=\"{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\"  alt=\"\"></div>\n";
 
     if ($pedigree['usepopups_real']) {
         //start the block
@@ -479,7 +479,6 @@ $flags['scripting'] .= "var leftarrowimg = '{$pedigree['leftarrowlink']}';\n";
 $flags['scripting'] .= "var namepad = '$namepad';\n";
 $flags['scripting'] .= "var allow_add = $allow_add;\n";
 $flags['scripting'] .= "var allow_edit = $allow_edit;\n";
-$flags['scripting'] .= "var cmstngpath = '{$cms['tngpath']}';\n";
 $flags['scripting'] .= "var editperson_url = '$editperson_url';\n";
 $flags['scripting'] .= "var chartlink = '{$pedigree['chartlink']}';\n";
 $flags['scripting'] .= "var personID = '$personID';\n";
@@ -512,9 +511,9 @@ $flags['scripting'] .= "var endslotctr;\n";
 $flags['scripting'] .= "var firstperson = '', topparams = '', botparams = '', toplinks = '', botlinks = '';\n";
 $flags['scripting'] .= "var pedjsonfile = '" . getURL("ajx_pedjson", 1) . "';\n";
 $flags['scripting'] .= "//]]>\n</script>\n";
-$flags['scripting'] .= "<script src=\"{$cms['tngpath']}js/tngpedigree.js\" type=\"text/javascript\"></script>\n";
+$flags['scripting'] .= "<script src=\"js/tngpedigree.js\" type=\"text/javascript\"></script>\n";
 if ($allow_edit || $allow_add) {
-    $flags['scripting'] .= "<script src=\"{$cms['tngpath']}js/tngpededit.js\" type=\"text/javascript\"></script>\n";
+    $flags['scripting'] .= "<script src=\"js/tngpededit.js\" type=\"text/javascript\"></script>\n";
 }
 
 $flags['scripting'] .= "<style type=\"text/css\">\n";
@@ -535,7 +534,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_header($text['pedigreefor'] . " $pedname", $flags);
 
 if ($allow_edit || $allow_add) {
-    include $cms['tngpath'] . "eventlib_js.php";
+    include "eventlib_js.php";
 }
 
 $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row['sex']);
@@ -571,7 +570,7 @@ echo "</form>\n";
 if (!$tngprint) {
     echo "<span class='normal'>(" . $text['scrollnote'];
     if ($pedigree['usepopups_real']) {
-        echo ($pedigree['downarrow'] ? " <img src=\"{$cms['tngpath']}{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><span class='normal'><B>V</B></span></a>") . $text['popupnote1'];
+        echo ($pedigree['downarrow'] ? " <img src=\"{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><span class='normal'><B>V</B></span></a>") . $text['popupnote1'];
         if ($pedigree['popupchartlinks']) {
             echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . $text['popupnote2'];
         }
@@ -583,12 +582,12 @@ if (!$tngprint) {
     <div align="left"
          style="position:relative;margin-top:8px;margin-bottom:16px;height:<?php echo(20 + $pedigree['borderwidth'] + ($pedigree['maxheight'] - $pedigree['boxVsep']) + $pedigree['shadowoffset']); ?>px;"
          id="outer">
-        <div id="loading"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif" alt=""> <?php echo $text['loading']; ?></div>
+        <div id="loading"><img src="img/spinner.gif" alt=""> <?php echo $text['loading']; ?></div>
         <?php
         echo $boxes;
         ?>
     </div>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
     <script type="text/javascript">
         //<![CDATA[
         for (var c = 1; c < slotceiling; c++) {

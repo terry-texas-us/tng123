@@ -1,16 +1,16 @@
 <?php
 $textpart = "dna";
 include "tng_begin.php";
-include $cms['tngpath'] . "adminlib.php";
-include $cms['tngpath'] . "personlib.php";
+include "adminlib.php";
+include "personlib.php";
 
 if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 $dnatree = isset($_SESSION["ttree"]) ? $_SESSION["ttree"] : "";
 if (empty($_SESSION["ttree"])) {
-  $_SESSION["ttree"] = "-x--all--x-";
+    $_SESSION["ttree"] = "-x--all--x-";
 }
 
 $test_search = isset($_SESSION["tsearch"]) ? $_SESSION["tsearch"] : "";

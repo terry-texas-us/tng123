@@ -2,7 +2,7 @@
 $textpart = "notes";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 require_once "./core/sql/extractWhereClause.php";
 
 $browsenotes_url = getURL("browsenotes", 1);

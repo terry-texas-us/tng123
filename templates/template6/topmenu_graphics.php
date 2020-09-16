@@ -1,18 +1,18 @@
 <?php
 
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 ?>
 <body>
 <div class="center">
     <table class="page">
         <tr class="row60">
             <td colspan="4" class="headertitle">
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/titletop.jpg" alt="">
+                <img src="<?php echo $templatepath; ?>img/titletop.jpg" alt="">
             </td>
         </tr>
         <tr>
             <td class="titlemid">
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/titlebottom.jpg" width="559" height="60" alt="">
+                <img src="<?php echo $templatepath; ?>img/titlebottom.jpg" width="559" height="60" alt="">
             </td>
         </tr>
         <tr>
@@ -25,10 +25,10 @@ global $text, $cms, $subroot, $tmp;
 
                 if ($currentuser) {
                     echo "<span class=\"headertext\">{$text['welcome']}, $currentuserdesc</span>&nbsp;";
-                    echo "<a href=\"{$cms['tngpath']}logout.php\"><span class=\"headertext-sm\">{$text['mnulogout']}</span></a>";
+                    echo "<a href=\"logout.php\"><span class=\"headertext-sm\">{$text['mnulogout']}</span></a>";
                 } else {
                     echo "<span class=\"headertext\">{$text['anon']}</span>&nbsp;";
-                    echo "<a href=\"{$cms['tngpath']}login.php\"><span class=\"headertext-sm\">{$text['mnulogon']}</span></a>";
+                    echo "<a href=\"login.php\"><span class=\"headertext-sm\">{$text['mnulogon']}</span></a>";
                 }
                 ?>
 

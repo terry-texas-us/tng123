@@ -1,8 +1,7 @@
 <?php
 
 function getFormStartTag($action, $method, $class = "", $id = "", $onsubmit = null) {
-    global $cms;
-    $url = $action ? $cms['tngpath'] . $action . ".php" : "";
+    $url = $action ? $action . ".php" : "";
     $html = "<form action=\"$url\"";
     if ($method) {
         $html .= " method=\"$method\"";

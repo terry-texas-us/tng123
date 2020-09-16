@@ -1,15 +1,15 @@
 <?php
 $textpart = "dna";
 include "tng_begin.php";
-include $cms['tngpath'] . "adminlib.php";
-include $cms['tngpath'] . "personlib.php";
+include "adminlib.php";
+include "personlib.php";
 
 if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 if (!$_SESSION["ttree"]) {
-  $_SESSION["ttree"] = "-x--all--x-";
+    $_SESSION["ttree"] = "-x--all--x-";
 }
 $browse_dna_tests_url = getURL("browse_dna_tests", 1) . "tree=" . $_SESSION["ttree"] . "&amp;testsearch=" . $_SESSION["tsearch"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"];
 

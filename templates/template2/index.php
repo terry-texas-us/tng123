@@ -12,14 +12,14 @@ $title = getTemplateMessage('t2_maintitle');
 
     <script type="text/javascript">
         pedigreeoff = new Image(162, 24);
-        pedigreeoff.src = "<?php echo $cms['tngpath'] . $templatepath; ?>img/pedigreeoff.gif";
+        pedigreeoff.src = "<?php echo $templatepath; ?>img/pedigreeoff.gif";
         pedigreeon = new Image(162, 24);
-        pedigreeon.src = "<?php echo $cms['tngpath'] . $templatepath; ?>img/pedigreeon.gif";
+        pedigreeon.src = "<?php echo $templatepath; ?>img/pedigreeon.gif";
 
         photosoff = new Image(193, 24);
-        photosoff.src = "<?php echo $cms['tngpath'] . $templatepath; ?>img/photosoff.gif";
+        photosoff.src = "<?php echo $templatepath; ?>img/photosoff.gif";
         photoson = new Image(193, 24);
-        photoson.src = "<?php echo $cms['tngpath'] . $templatepath; ?>img/photoson.gif";
+        photoson.src = "<?php echo $templatepath; ?>img/photoson.gif";
 
         function swap(x, y) {
             document.images[x].src = eval(y + '.src');
@@ -49,7 +49,7 @@ $title = getTemplateMessage('t2_maintitle');
                                 <?php
                             } else {
                                 ?>
-                                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443"
+                                <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443"
                                      height="114" class="noimgborder rounded10">
                                 <?php
                             }
@@ -86,78 +86,78 @@ $title = getTemplateMessage('t2_maintitle');
                                         <td valign="top">
                                             <?php
                                             if ($currentuser) {
-                                                echo "<a href=\"{$cms['tngpath']}logout.php\" class=\"sidelink\">" . strtoupper($text['mnulogout']) . "</a>\n";
+                                                echo "<a href=\"logout.php\" class=\"sidelink\">" . strtoupper($text['mnulogout']) . "</a>\n";
                                             } else {
-                                                echo "<a href=\"{$cms['tngpath']}login.php\" class=\"sidelink\">" . strtoupper($text['mnulogon']) . "</a>\n";
+                                                echo "<a href=\"login.php\" class=\"sidelink\">" . strtoupper($text['mnulogon']) . "</a>\n";
                                             }
                                             ?>
                                         </td>
                                         <td>&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>whatsnew.php"
+                                        <td valign="top"><a href="whatsnew.php"
                                                             class="sidelink"><?php echo $text['mnuwhatsnew']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>statistics.php"
+                                        <td valign="top"><a href="statistics.php"
                                                             class="sidelink"><?php echo $text['mnustatistics']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>anniversaries.php"
+                                        <td valign="top"><a href="anniversaries.php"
                                                             class="sidelink"><?php echo $text['anniversaries']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=photos"
+                                        <td valign="top"><a href="browsemedia.php?mediatypeID=photos"
                                                             class="sidelink"><?php echo $text['mnuphotos']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=histories"
+                                        <td valign="top"><a href="browsemedia.php?mediatypeID=histories"
                                                             class="sidelink"><?php echo $text['mnuhistories']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>cemeteries.php"
+                                        <td valign="top"><a href="cemeteries.php"
                                                             class="sidelink"><?php echo $text['mnucemeteries']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>places.php"
+                                        <td valign="top"><a href="places.php"
                                                             class="sidelink"><?php echo $text['places']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=documents"
+                                        <td valign="top"><a href="browsemedia.php?mediatypeID=documents"
                                                             class="sidelink"><?php echo $text['documents']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsemedia.php"
+                                        <td valign="top"><a href="browsemedia.php"
                                                             class="sidelink"><?php echo $text['allmedia']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=headstones"
+                                        <td valign="top"><a href="browsemedia.php?mediatypeID=headstones"
                                                             class="sidelink"><?php echo $text['mnutombstones']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsealbums.php"
+                                        <td valign="top"><a href="browsealbums.php"
                                                             class="sidelink"><?php echo $text['albums']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>reports.php"
+                                        <td valign="top"><a href="reports.php"
                                                             class="sidelink"><?php echo $text['mnureports']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browsesources.php"
+                                        <td valign="top"><a href="browsesources.php"
                                                             class="sidelink"><?php echo $text['mnusources']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>bookmarks.php"
+                                        <td valign="top"><a href="bookmarks.php"
                                                             class="sidelink"><?php echo $text['bookmarks']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>suggest.php?page=<?php echo $title; ?>"
+                                        <td valign="top"><a href="suggest.php?page=<?php echo $title; ?>"
                                                             class="sidelink"><?php echo $text['contactus']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>mostwanted.php"
+                                        <td valign="top"><a href="mostwanted.php"
                                                             class="sidelink"><?php echo $text['mostwanted']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>browserepos.php"
+                                        <td valign="top"><a href="browserepos.php"
                                                             class="sidelink"><?php echo $text['repositories']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>showlog.php"
+                                        <td valign="top"><a href="showlog.php"
                                                             class="sidelink"><?php if ($allow_admin) {
                                                     echo $text['mnushowlog'];
                                                 } ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="<?php echo $cms['tngpath']; ?>admin.php" class="sidelink"><?php if ($allow_admin) {
+                                        <td valign="top"><a href="admin.php" class="sidelink"><?php if ($allow_admin) {
                                                     echo $text['mnuadmin'];
                                                 } ?></a>&nbsp;
                                         </td>
@@ -167,7 +167,7 @@ $title = getTemplateMessage('t2_maintitle');
                                     if (!$currentuser && !$tngconfig['disallowreg']) {
                                         ?>
                                         <tr>
-                                            <td valign="top" colspan="4"><a href="<?php echo $cms['tngpath']; ?>newacctform.php"
+                                            <td valign="top" colspan="4"><a href="newacctform.php"
                                                                             class="sidelink"><?php echo $text['mnuregister']; ?></a></td>
                                             <td>&nbsp;&nbsp;&nbsp;</td>
                                         </tr>
@@ -184,11 +184,11 @@ $title = getTemplateMessage('t2_maintitle');
                                         <span class="smalltitle"><?php echo $text['search']; ?></span>
                                         <table cellspacing="6">
                                             <tr>
-                                                <td align="center"><a href="<?php echo $cms['tngpath']; ?>searchform.php"
+                                                <td align="center"><a href="searchform.php"
                                                                       class="sidelink"><?php echo $text['mnuadvancedsearch']; ?></a></td>
                                             </tr>
                                             <tr>
-                                                <td align="center"><a href="<?php echo $cms['tngpath']; ?>surnames.php"
+                                                <td align="center"><a href="surnames.php"
                                                                       class="sidelink"><?php echo $text['mnulastnames']; ?></a></td>
                                             </tr>
                                         </table>
@@ -196,14 +196,14 @@ $title = getTemplateMessage('t2_maintitle');
                                     <div id="searchformblock">
 									<span class="small"><?php echo $text['firstname']; ?>:<br>
 									<input type="text" name="myfirstname" class="searchbox"><br>
-									<img src="<?php echo $cms['tngpath']; ?>img/spacer.gif" alt="" width="1" height="4"
+									<img src="img/spacer.gif" alt="" width="1" height="4"
                                          class="noimgborder"><br><?php echo $text['lastname']; ?>:<br>
 									<input type="text" name="mylastname" class="searchbox"><br>
 									<input type="hidden" name="mybool" value="AND">
 									</span>
                                     </div>
                                     <div id="searcharrowblock">
-                                        <input type="image" name="imgsubmit" src="<?php echo $cms['tngpath'] . $templatepath; ?>img/button.jpg"
+                                        <input type="image" name="imgsubmit" src="<?php echo $templatepath; ?>img/button.jpg"
                                                class="indexsubmit" style="border:none;" alt="">
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@ $title = getTemplateMessage('t2_maintitle');
                             //Actual file name has been replaced with t2_mainimage variable, configurable from Template Settings. Default name of actual image is "mainphoto.jpg"
                             //You can replace the t2_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                             ?>
-                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327"
+                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327"
                                  style="max-height:460px;" class="noimgborder rounded10" id="mainphoto"><br><br>
                             <?php
                             //end MAIN IMAGE

@@ -20,7 +20,7 @@ function updateMostWantedOrder(mwtype) {
 
     let params = {sequence: linklist.join(','), mwtype: mwtype, action: 'mworder'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });

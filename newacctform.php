@@ -1,10 +1,6 @@
 <?php
 $textpart = "login";
 include "tng_begin.php";
-if (!empty($cms['events'])) {
-  include 'cmsevents.php';
-  cms_register();
-}
 
 $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
 $treeresult = tng_query($query);
@@ -75,12 +71,12 @@ tng_header($text['regnewacct'], $flags);
         }
     </script>
 
-    <h2 class="header"><img src="<?php echo $cms['tngpath']; ?>img/tng_log2.gif" width="20" height="20" alt=""
+    <h2 class="header"><img src="img/tng_log2.gif" width="20" height="20" alt=""
                             class="headericon">&nbsp;<?php echo $text['regnewacct']; ?></h2>
     <br style="clear: left;">
 <?php
 
-@include $cms['tngpath'] . "TNG_captcha.php";
+@include "TNG_captcha.php";
 
 if (!$tngconfig['disallowreg']) {
     echo "<p class='normal'><strong>*{$text['required']}</strong></p>\n";

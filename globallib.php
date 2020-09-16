@@ -191,7 +191,7 @@ function showNames($row) {
 }
 
 function getGenderIcon($gender, $valign) {
-    global $text, $cms;
+    global $text;
 
     $icon = "";
     if ($gender) {
@@ -201,22 +201,18 @@ function getGenderIcon($gender, $valign) {
             $genderstr = "female";
         }
         if ($genderstr) {
-            $icon = "<img src=\"{$cms['tngpath']}img/tng_$genderstr.gif\" width=\"11\" height=\"11\" alt=\"" . $text[$genderstr] . "\" style=\"vertical-align: " . $valign . "px;\">";
+            $icon = "<img src=\"img/tng_$genderstr.gif\" width=\"11\" height=\"11\" alt=\"" . $text[$genderstr] . "\" style=\"vertical-align: " . $valign . "px;\">";
         }
     }
     return $icon;
 }
 
 function getURL($destination, $args, $ext = ".php") {
-    global $cms;
-
-    return $args ? $cms['tngpath'] . $destination . $ext . "?" : $cms['tngpath'] . $destination . $ext;
+    return $args ? $destination . $ext . "?" : $destination . $ext;
 }
 
 function getFORM($action, $method, $name, $id, $onsubmit = null) {
-    global $cms;
-
-    $url = $action ? $cms['tngpath'] . $action . ".php" : "";
+    $url = $action ? $action . ".php" : "";
     $formstr = "<form action=\"$url\"";
     if ($method) {
         $formstr .= " method=\"$method\"";
@@ -993,7 +989,7 @@ function age($row) {
 
 function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $gender = "") {
     global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
-    global $photosext, $tree, $medialinks_table, $media_table, $cms, $admtext, $tngconfig;
+    global $photosext, $tree, $medialinks_table, $media_table, $admtext, $tngconfig;
 
     $photo = "";
     $photocheck = "";
@@ -1012,9 +1008,9 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
             $mediatypeID = $row['mediatypeID'];
             $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
             $photocheck = "$usefolder/$treestr" . $row['thumbpath'];
-            $photoref = $cms['tngpath'] . "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath']));
+            $photoref = "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath']));
             if ($type) {
-                $prefix = "<a href=\"{$cms['tngpath']}admin_editmedia.php?mediaID={$row['mediaID']}\"$targettext>";
+                $prefix = "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\"$targettext>";
             } else {
                 $showmedia_url = getURL("showmedia", 1);
                 $prefix = "<a href=\"$showmedia_url" . "mediaID={$row['mediaID']}&amp;medialinkID={$row['medialinkID']}\" title=\"" . str_replace("\"", "&#34;", $alttext) . "\"$targettext>";
@@ -1045,7 +1041,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
             } elseif ($gender == "F") {
                 $photocheck = "img/female.jpg";
             }
-            $photoref = $cms['tngpath'] . $photocheck;
+            $photoref = $photocheck;
             $gotfile = file_exists("$rootpath$photocheck");
         }
     }
@@ -1068,9 +1064,9 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
 }
 
 function placeImage($place) {
-    global $placesearch_url, $cms;
+    global $placesearch_url;
 
-    return "<a href=\"$placesearch_url" . "psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
+    return "<a href=\"$placesearch_url" . "psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
 }
 
 function checkMaintenanceMode($area) {
@@ -1192,7 +1188,7 @@ function utf82iso88592($text) {
 }
 
 function getAllTextPath() {
-    global $rootpath, $mylanguage, $language, $languages_path, $endrootpath, $cms;
+    global $rootpath, $mylanguage, $language, $languages_path, $endrootpath;
 
     $rootpath = trim($rootpath);
     if ($rootpath && strpos($rootpath, "http") !== 0) {

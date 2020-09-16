@@ -2,7 +2,7 @@
 $textpart = "timeline";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "datelib.php";
+include "datelib.php";
 
 $timeline = $_SESSION['timeline'];
 if (!is_array($timeline)) {

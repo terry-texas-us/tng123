@@ -17,7 +17,7 @@ if ($display == "textonly" || (!$display && !$pedigree['defdesc'])) {
     exit;
 }
 
-include $cms['tngpath'] . "pedbox.php";
+include "pedbox.php";
 
 if ($pedigree['defdesc'] == "") {
     $pedigree['defdesc'] = 2;
@@ -58,7 +58,7 @@ if (file_exists($arrdnpath)) {
     $downarrow = @GetImageSize($arrdnpath);
     $pedigree['downarroww'] = $downarrow[0];
     $pedigree['downarrowh'] = $downarrow[1];
-    $pedigree['downarrow'] = "<img src=\"" . $cms['tngpath'] . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">";
+    $pedigree['downarrow'] = "<img src=\"" . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">";
 } else {
     $pedigree['downarrow'] = "";
 }
@@ -66,7 +66,7 @@ if (file_exists($arrdnpath)) {
 $arrrtpath = $rootpath . $endrootpath . "img/ArrowRight.gif";
 if (file_exists($arrrtpath)) {
     $offpageimg = @GetImageSize($arrrtpath);
-    $pedigree['offpagelink'] = "<img src=\"" . $cms['tngpath'] . "img/ArrowRight.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\">";
+    $pedigree['offpagelink'] = "<img src=\"" . "img/ArrowRight.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\">";
     $pedigree['offpageimgw'] = $offpageimg[0];
     $pedigree['offpageimgh'] = $offpageimg[1];
 } else {
@@ -78,7 +78,7 @@ if (file_exists($arrltpath)) {
     $leftarrowimg = @GetImageSize($arrltpath);
     $pedigree['leftarrowimgw'] = $leftarrowimg[0];
     $pedigree['leftarrowimgh'] = $leftarrowimg[1];
-    $pedigree['leftarrowlink'] = "<img src=\"" . $cms['tngpath'] . "img/ArrowLeft.gif\" $leftarrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\">";
+    $pedigree['leftarrowlink'] = "<img src=\"" . "img/ArrowLeft.gif\" $leftarrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\">";
     $pedigree['leftindent'] += $pedigree['leftarrowimgw'] + $pedigree['shadowoffset'] + 6;
 } else {
     $pedigree['leftarrowlink'] = "<b>&lt;</b>";
@@ -114,9 +114,9 @@ if ($display == "compact") {
     $pedigree['diff'] = $pedigree['boxheight'] + $pedigree['boxVsep'] + $pedigree['linewidth'] + $pedigree['downarrowh'];
     $clinkstyle = "";
     $slinkstyle = "3";
-    if (file_exists($cms['tngpath'] . "img/Chart.gif")) {
-        $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-        $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
+    if (file_exists("img/Chart.gif")) {
+        $imageSize = @GetImageSize("img/Chart.gif");
+        $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
     } else {
         $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
     }
@@ -211,8 +211,8 @@ function getParents($personID) {
 }
 
 function getNewChart($personID) {
-    global $tree, $generations, $cms, $text, $descend_url, $display;
-    return $kidsflag ? "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\"></a>" : "";
+    global $tree, $generations, $text, $descend_url, $display;
+    return $kidsflag ? "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\"></a>" : "";
 }
 
 function doBox($level, $person, $spouseflag, $kidsflag) {
@@ -742,7 +742,7 @@ echo "</form>\n";
     <p class="normal">
         (<?php echo $text['scrollnote'];
         if ($pedigree['usepopups_real']) {
-            echo ($pedigree['downarrow'] ? " <img src=\"" . $cms['tngpath'] . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><b>V</b></a>") . $text['popupnote1'];
+            echo ($pedigree['downarrow'] ? " <img src=\"" . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><b>V</b></a>") . $text['popupnote1'];
         }
         ?>)
     </p>
@@ -833,7 +833,7 @@ if ($display != "compact" && $pedigree['usepopups']) {
     <?php
 }
 ?>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");
 ?>

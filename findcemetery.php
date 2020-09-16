@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "cemeteries";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $tng_search_cemeteries = $_SESSION['tng_search_cemeteries'];
 $tng_search_cemeteries_post = $_SESSION['tng_search_cemeteries_post'];

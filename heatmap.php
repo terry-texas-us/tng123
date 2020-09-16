@@ -4,7 +4,7 @@ $order = "";
 $needMap = true;
 include "tng_begin.php";
 
-include $cms['tngpath'] . "searchlib.php";
+include "searchlib.php";
 
 $placesearch_url = getURL("placesearch", 1);
 $getperson_url = getURL("getperson", 1);
@@ -368,7 +368,6 @@ if ($markermap) {
         <?php
         if($markermap) {
         ?>
-        var cmstngpath = '<?php echo $cms['tngpath']; ?>';
         var markerClusterer = null;
         var infoWindow = new google.maps.InfoWindow();
         var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
@@ -454,7 +453,7 @@ if ($markermap) {
                         people += " (" + place.people[i].birthdate + ")";
                     people += "<br>";
                 }
-                var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + cmstngpath + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
+                var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
                 if (people != "")
                     infoHtml += '<div class="info-body">' + people + '</div>';
                 if (place.notes != "")

@@ -2,7 +2,7 @@
 $textpart = "search";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 if (isset($tngyear)) {
     $tngyear = preg_replace("/[^0-9]/", "", $tngyear);
@@ -54,7 +54,7 @@ tng_header($text['anniversaries'], $flags);
 
 if ($sitever != "mobile") {
     ?>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript">
         // <![CDATA[
         const ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
@@ -498,8 +498,8 @@ if ($tngneedresults) {
 
             <?php
             $i = $offsetplus;
-            $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-            $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" alt=\"\" $imageSize[3]>";
+            $imageSize = @GetImageSize("img/Chart.gif");
+            $chartlink = "<img src=\"img/Chart.gif\" alt=\"\" $imageSize[3]>";
             $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
             while ($row = tng_fetch_assoc($result)) {
                 echo "<tr>";
@@ -581,7 +581,7 @@ if ($tngneedresults) {
                 echo $namestr;
 
                 if ($rights['both']) {
-                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : truncateIt($row['info'], 75);
+                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : truncateIt($row['info'], 75);
                     $dateval = $row[$datefield];
                 } else {
                     $dateval = $placetxt = "";

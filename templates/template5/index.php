@@ -147,7 +147,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     //Actual file name has been replaced with t5_mainimage variable, configurable from Template Settings. Default name of actual image is "mediumphoto.jpg"
                                     //You can replace the t5_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                                     ?>
-                                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t5_mainimage']; ?>" alt=""
+                                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t5_mainimage']; ?>" alt=""
                                          class="indexphoto"><br><br>
                                     <?php
                                     //end MAIN IMAGE

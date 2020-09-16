@@ -1,10 +1,10 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $textpart = "search";
-include $cms['tngpath'] . "getlang.php";
+include "getlang.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $anniversaries_url = getURL("anniversaries", 1);
 

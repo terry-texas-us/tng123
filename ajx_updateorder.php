@@ -4,7 +4,7 @@ include "adminlib.php";
 include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if (!$allow_media_edit && !$allow_media_add && !$allow_media_delete) {
   $message = $admtext['norights'];
@@ -204,7 +204,7 @@ switch ($action) {
       $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
       $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
       $rval .= "<td class=\"dragarea normal\">";
-      $rval .= "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+      $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
       $rval .= "</td>\n";
       $rval .= "<td class='lightback normal childblock'>\n";
 

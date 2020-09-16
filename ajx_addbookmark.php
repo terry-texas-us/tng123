@@ -1,15 +1,11 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $textpart = "getperson";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "getlang.php";
+include "$mylanguage/text.php";
 
-include $cms['tngpath'] . "checklogin.php";
-
-if ($p) {
-    $cms['tngpath'] = urldecode($p);
-}
+include "checklogin.php";
 
 $bookmarks_url = getURL("bookmarks", 0);
 
@@ -32,7 +28,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="bkmkdiv">
-    <h3 class="subhead"><img src="<?php echo $cms['tngpath']; ?>img/tng_bmk.gif" width="20" height="20" align="left" alt="" vspace="0">&nbsp;<?php echo $text['bookmarked']; ?></h3>
+    <h3 class="subhead"><img src="img/tng_bmk.gif" width="20" height="20" align="left" alt="" vspace="0">&nbsp;<?php echo $text['bookmarked']; ?></h3>
     <form>
         <input type="button" onclick="tnglitbox.remove();return false;" value="<?php echo $text['closewindow']; ?>">
         <input type="button" onclick="window.location.href='<?php echo $bookmarks_url ?>';" value="<?php echo $text['mngbookmarks']; ?>">

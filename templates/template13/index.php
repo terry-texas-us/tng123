@@ -26,18 +26,18 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             if ($dadlabel) {
                                 ?>
                                 <li>
-                                    <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t13_dadperson']; ?>&amp;tree=<?php echo $tmp['t13_dadtree']; ?>"><span
-                                                class="l"></span><span class="r"></span><span
-                                                class="t"><?php echo $dadlabel; ?></span></a>
+                                    <a href="pedigree.php?personID=<?php echo $tmp['t13_dadperson']; ?>&amp;tree=<?php echo $tmp['t13_dadtree']; ?>"><span
+                                            class="l"></span><span class="r"></span><span
+                                            class="t"><?php echo $dadlabel; ?></span></a>
                                 </li>
                                 <?php
                             }
                             if ($momlabel) {
                                 ?>
                                 <li>
-                                    <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t13_momperson']; ?>&amp;tree=<?php echo $tmp['t13_momtree']; ?>"><span
-                                                class="l"></span><span class="r"></span><span
-                                                class="t"><?php echo $momlabel; ?></span></a>
+                                    <a href="pedigree.php?personID=<?php echo $tmp['t13_momperson']; ?>&amp;tree=<?php echo $tmp['t13_momtree']; ?>"><span
+                                            class="l"></span><span class="r"></span><span
+                                            class="t"><?php echo $momlabel; ?></span></a>
                                 </li>
                                 <?php
                             }
@@ -62,13 +62,13 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
 
                                             <div class="left-indent">
                                                 <p class="big-header">
-                                                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/globe.jpg" id="globe" alt="">
+                                                    <img src="<?php echo $templatepath; ?>img/globe.jpg" id="globe" alt="">
                                                     <?php echo $title; ?>
                                                 </p>
                                                 <br>
                                                 <div class="photo-container">
                                                     <img alt="" class="rounded10"
-                                                         src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t13_mainimage']; ?>" id="mainphoto">
+                                                         src="<?php echo $templatepath . $tmp['t13_mainimage']; ?>" id="mainphoto">
                                                 </div>
                                                 <br>
                                             </div>
@@ -81,7 +81,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                         </div>
                                                         <div class="left-indent">
                                                             <h4><?php echo $text['contactus']; ?></h4>
-                                                            <p class="contact"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif"
+                                                            <p class="contact"><img src="<?php echo $templatepath; ?>img/email.gif"
                                                                                     alt="email image"
                                                                                     class="emailimg"><?php echo $text['contactus_long']; ?></p>
                                                         </div>

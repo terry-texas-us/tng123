@@ -7,7 +7,7 @@ if (!$testID) {
     exit;
 }
 
-include $cms['tngpath'] . "personlib.php";
+include "personlib.php";
 
 $getperson_url = getURL("getperson", 1);
 $show_dna_test_url = getURL("show_dna_test", 1);

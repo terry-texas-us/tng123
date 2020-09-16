@@ -38,7 +38,7 @@ function showPersonPreview(personID, tree, event) {
     let $personSelection = jQuery('#prev' + entitystr);
     $personSelection.css('visibility', 'visible');
     if (!$personSelection.html()) {
-        $personSelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0;" alt="" > ' + loadingmsg + '</div>');
+        $personSelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + 'img/spinner.gif" style="border:0;" alt="" > ' + loadingmsg + '</div>');
 
         const params = {personID: personID, tree: tree};
         jQuery.ajax({
@@ -67,7 +67,7 @@ function showFamilyPreview(familyID, tree) {
     let $familySelection = jQuery('#prev' + entitystr);
     $familySelection.css('visibility', 'visible');
     if (!$familySelection.html()) {
-        $familySelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0;"> ' + loadingmsg + '</div>');
+        $familySelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + 'img/spinner.gif" style="border:0;"> ' + loadingmsg + '</div>');
         const params = {familyID: familyID, tree: tree};
         jQuery.ajax({
             url: ajx_fampreview,

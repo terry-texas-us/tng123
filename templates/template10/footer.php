@@ -24,7 +24,7 @@
         <div class="art-footer-center">
             <div class="art-footer-wrapper">
                 <div class="art-footer-text">
-                    <a href="<?php echo $cms['tngpath']; ?>tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
+                    <a href="tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
                     <?php
                     $flags['basicfooter'] = true;
                     tng_footer($flags);

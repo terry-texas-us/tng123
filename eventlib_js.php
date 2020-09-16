@@ -1,5 +1,5 @@
-<script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/selectutils.js"></script>
-<script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/datevalidation.js"></script>
+<script type="text/javascript" src="js/selectutils.js"></script>
+<script type="text/javascript" src="js/datevalidation.js"></script>
 <script type="text/javascript">
     var tnglitbox;
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;

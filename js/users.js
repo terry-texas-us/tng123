@@ -140,7 +140,7 @@ function checkIfUnique(emailfield) {
         if (checkEmail(emailfield.value)) {
             var params = {checkemail: emailfield.value};
             jQuery.ajax({
-                url: cmstngpath + 'admin_checkemail.php',
+                url: 'admin_checkemail.php',
                 data: params,
                 type: 'POST',
                 dataType: 'json',

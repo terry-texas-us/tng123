@@ -1,5 +1,5 @@
 <?php
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <table width="100%" cellspacing="0" cellpadding="5" class="tableborder rounded10 t3shadow">
@@ -10,7 +10,7 @@ global $text, $cms, $subroot, $tmp;
             //Actual file name has been replaced with t3_headimg variable, configurable from Template Settings. Default name of actual image is "headerphoto.jpg"
             //You can replace the t3_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
             ?>
-            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t3_headimg']; ?>" alt="" class="headerphoto" width="186"
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headimg']; ?>" alt="" class="headerphoto" width="186"
                  height="110">
             <?php
             //end HEADER IMAGE
@@ -28,23 +28,23 @@ global $text, $cms, $subroot, $tmp;
                 <?php
             } else {
                 ?>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t3_headtitleimg']; ?>" alt="" class="menutitle">
+                <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headtitleimg']; ?>" alt="" class="menutitle">
                 <?php
             }
             //end HEADER TITLE IMAGE
             ?>
             <br>
-            <a href="<?php echo $cms['tngpath']; ?>index.php" class="topmenu"><?php echo $text['homepage']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>whatsnew.php" class="topmenu"><?php echo $text['mnuwhatsnew']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=photos" class="topmenu"><?php echo $text['mnuphotos']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=histories" class="topmenu"><?php echo $text['mnuhistories']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>browsesources.php" class="topmenu"><?php echo $text['mnusources']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>reports.php" class="topmenu"><?php echo $text['mnureports']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>calendar.php" class="topmenu"><?php echo $text['calendar']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>cemeteries.php" class="topmenu"><?php echo $text['mnucemeteries']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>browsemedia.php?mediatypeID=headstones" class="topmenu"><?php echo $text['mnutombstones']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>statistics.php" class="topmenu"><?php echo $text['mnustatistics']; ?></a> |
-            <a href="<?php echo $cms['tngpath']; ?>surnames.php" class="topmenu"><?php echo $text['mnulastnames']; ?></a>
+            <a href="index.php" class="topmenu"><?php echo $text['homepage']; ?></a> |
+            <a href="whatsnew.php" class="topmenu"><?php echo $text['mnuwhatsnew']; ?></a> |
+            <a href="browsemedia.php?mediatypeID=photos" class="topmenu"><?php echo $text['mnuphotos']; ?></a> |
+            <a href="browsemedia.php?mediatypeID=histories" class="topmenu"><?php echo $text['mnuhistories']; ?></a> |
+            <a href="browsesources.php" class="topmenu"><?php echo $text['mnusources']; ?></a> |
+            <a href="reports.php" class="topmenu"><?php echo $text['mnureports']; ?></a> |
+            <a href="calendar.php" class="topmenu"><?php echo $text['calendar']; ?></a> |
+            <a href="cemeteries.php" class="topmenu"><?php echo $text['mnucemeteries']; ?></a> |
+            <a href="browsemedia.php?mediatypeID=headstones" class="topmenu"><?php echo $text['mnutombstones']; ?></a> |
+            <a href="statistics.php" class="topmenu"><?php echo $text['mnustatistics']; ?></a> |
+            <a href="surnames.php" class="topmenu"><?php echo $text['mnulastnames']; ?></a>
         </td>
     </tr>
 </table>

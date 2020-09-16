@@ -238,7 +238,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     if ($pdftype == "desc") {
         ?>
         <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle"><img
-                        src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
+                    src="img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
             </a></div>
         <div style="display:none;" id="dispopts">
             <table id="display" cellpadding="3" class="normal">
@@ -276,7 +276,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
     <!-- Font section -->
     <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('font','fonticon','');" class="pdftoggle"><img
-                    src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="fonticon"> <?php echo $text['fonts']; ?>
+                src="img/tng_expand.gif" width="15" height="15" id="fonticon"> <?php echo $text['fonts']; ?>
         </a></div>
     <div style="display:none;" id="font">
         <table cellpadding="3" class="normal">
@@ -347,7 +347,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
     <!-- Page setup section -->
     <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('pgsetup','pgicon','');" class="pdftoggle"><img
-                    src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" width="15" height="15" id="pgicon"> <?php echo $text['pgsetup']; ?></a>
+                src="img/tng_expand.gif" width="15" height="15" id="pgicon"> <?php echo $text['pgsetup']; ?></a>
     </div>
     <div style="display:none;" id="pgsetup">
         <table cellpadding="3" class="normal">

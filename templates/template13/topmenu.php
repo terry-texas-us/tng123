@@ -1,6 +1,6 @@
 <?php
 
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 
 $dadlabel = getTemplateMessage('t13_dadside');
 $momlabel = getTemplateMessage('t13_momside');
@@ -20,18 +20,18 @@ $momlabel = getTemplateMessage('t13_momside');
                         if ($dadlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t13_dadperson']; ?>&amp;tree=<?php echo $tmp['t13_dadtree']; ?>"><span
-                                            class="l"></span><span class="r"></span><span
-                                            class="t"><?php echo getTemplateMessage('t13_dadside'); ?></span></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t13_dadperson']; ?>&amp;tree=<?php echo $tmp['t13_dadtree']; ?>"><span
+                                        class="l"></span><span class="r"></span><span
+                                        class="t"><?php echo getTemplateMessage('t13_dadside'); ?></span></a>
                             </li>
                             <?php
                         }
                         if ($momlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t13_momperson']; ?>&amp;tree=<?php echo $tmp['t13_momtree']; ?>"><span
-                                            class="l"></span><span class="r"></span><span
-                                            class="t"><?php echo getTemplateMessage('t13_momside'); ?></span></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t13_momperson']; ?>&amp;tree=<?php echo $tmp['t13_momtree']; ?>"><span
+                                        class="l"></span><span class="r"></span><span
+                                        class="t"><?php echo getTemplateMessage('t13_momside'); ?></span></a>
                             </li>
                             <?php
                         }
@@ -51,6 +51,6 @@ $momlabel = getTemplateMessage('t13_momside');
                     <div class="art-layout-cell art-content">
                         <div class="art-post">
                             <div class="art-post-body">
-                                <h2 class="site-head"><a href="<?php echo $cms['tngpath']; ?>index.php"><img
-                                                src="<?php echo $cms['tngpath'] . $templatepath; ?>img/globe-small.jpg" alt=""
-                                                class="greentree"><?php echo getTemplateMessage('t13_maintitle'); ?></a></h2>
+                                <h2 class="site-head"><a href="index.php"><img
+                                            src="<?php echo $templatepath; ?>img/globe-small.jpg" alt=""
+                                            class="greentree"><?php echo getTemplateMessage('t13_maintitle'); ?></a></h2>

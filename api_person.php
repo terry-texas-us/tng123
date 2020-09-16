@@ -1,14 +1,14 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $textpart = "getperson";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "getlang.php";
+include "$mylanguage/text.php";
 
-include $cms['tngpath'] . "api_checklogin.php";
-include $cms['tngpath'] . "personlib.php";
-include $cms['tngpath'] . "api_library.php";
-include $cms['tngpath'] . "log.php";
+include "api_checklogin.php";
+include "personlib.php";
+include "api_library.php";
+include "log.php";
 
 header("Content-Type: application/json; charset=" . $session_charset);
 

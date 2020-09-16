@@ -1,9 +1,9 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 
 $tngprint = 1;
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 header('Content-type: image/jpeg');
 $maxsize = 380;

@@ -4,7 +4,7 @@ $order = "";
 include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
-include $cms['tngpath'] . "searchlib.php";
+include "searchlib.php";
 
 $searchform_url = getURL("famsearchform", 1);
 $search_url = getURL("famsearch", 1);
@@ -76,9 +76,9 @@ $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
 if ($order == "marr") {
     $orderstr = "marrdatetr, marrplace, father.lastname, father.firstname";
-    $marrsort = "<a href=\"$search_url$currargs&order=marrup\" class=\"lightlink\">{$text['married']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $marrsort = "<a href=\"$search_url$currargs&order=marrup\" class=\"lightlink\">{$text['married']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $marrsort = "<a href=\"$search_url$currargs&order=marr\" class=\"lightlink\">{$text['married']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $marrsort = "<a href=\"$search_url$currargs&order=marr\" class=\"lightlink\">{$text['married']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "marrup") {
         $orderstr = "marrdatetr DESC, marrplace DESC, father.lastname, father.firstname";
     }
@@ -86,9 +86,9 @@ if ($order == "marr") {
 
 if ($order == "div") {
     $orderstr = "divdatetr, divplace, father.lastname, father.firstname, marrdatetr";
-    $divsort = "<a href=\"$search_url$currargs&order=divup\" class=\"lightlink\">{$text['divorced']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $divsort = "<a href=\"$search_url$currargs&order=divup\" class=\"lightlink\">{$text['divorced']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $divsort = "<a href=\"$search_url$currargs&order=div\" class=\"lightlink\">{$text['divorced']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $divsort = "<a href=\"$search_url$currargs&order=div\" class=\"lightlink\">{$text['divorced']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "divup") {
         $orderstr = "divdatetr DESC, divplace DESC, father.lastname, father.firstname, marrdatetr";
     }
@@ -96,9 +96,9 @@ if ($order == "div") {
 
 if ($order == "fname") {
     $orderstr = "father.lastname, father.firstname, marrdatetr";
-    $fnamesort = "<a href=\"$search_url$currargs&order=fnameup\" class=\"lightlink\">{$text['fathername']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $fnamesort = "<a href=\"$search_url$currargs&order=fnameup\" class=\"lightlink\">{$text['fathername']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $fnamesort = "<a href=\"$search_url$currargs&order=fname\" class=\"lightlink\">{$text['fathername']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $fnamesort = "<a href=\"$search_url$currargs&order=fname\" class=\"lightlink\">{$text['fathername']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "fnameup") {
         $orderstr = "father.lastname DESC, father.firstname DESC, marrdatetr";
     }
@@ -106,9 +106,9 @@ if ($order == "fname") {
 
 if ($order == "mname") {
     $orderstr = "mother.lastname, mother.firstname, marrdatetr";
-    $mnamesort = "<a href=\"$search_url$currargs&order=mnameup\" class=\"lightlink\">{$text['mothername']} <img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $mnamesort = "<a href=\"$search_url$currargs&order=mnameup\" class=\"lightlink\">{$text['mothername']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $mnamesort = "<a href=\"$search_url$currargs&order=mname\" class=\"lightlink\">{$text['mothername']} <img src=\"{$cms['tngpath']}img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $mnamesort = "<a href=\"$search_url$currargs&order=mname\" class=\"lightlink\">{$text['mothername']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "mnameup") {
         $orderstr = "mother.lastname DESC, mother.firstname DESC, marrdatetr";
     }
@@ -301,7 +301,7 @@ tng_header($text['searchresults'], $flags);
 <?php
 if ($sitever != "mobile") {
     ?>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript">
         // <![CDATA[
         var ajx_fampreview = '<?php echo getURL("ajx_fampreview", 0);?>';
@@ -373,7 +373,7 @@ echo $header;
 <?php
 $i = $offsetplus;
 
-$chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" class=\"chartimg\">";
+$chartlink = "<img src=\"img/Chart.gif\" class=\"chartimg\">";
 while ($row = tng_fetch_assoc($result)) {
     //assemble frow and mrow, override family living flag if allow_living for either of these is no
     $frow = array(

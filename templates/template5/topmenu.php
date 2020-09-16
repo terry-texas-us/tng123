@@ -1,5 +1,5 @@
 <?php
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <div class="center">
@@ -20,7 +20,7 @@ global $text, $cms, $subroot, $tmp;
                             //Actual file name has been replaced with t5_headimg variable, configurable from Template Settings. Default name of actual image is "smallphoto.jpg"
                             //You can replace the t5_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                             ?>
-                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t5_headimg']; ?>" alt="" class="smallphoto"></td>
+                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t5_headimg']; ?>" alt="" class="smallphoto"></td>
                         <?php
                         //end HEADER IMAGE
                         ?>

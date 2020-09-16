@@ -190,13 +190,14 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     }
                                     $ret .= "</select>\n";
                                     tng_free_result($treeresult);
-                                    $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
+                                    $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                                     echo $ret;
                                 }
                                 echo $admtext['test_type'] . ": ";
                                 $wherestr = $newwherestr;
                                 ?>
-                                <select name="test_type" id="test_type" onchange="jQuery('#treespinner2').show();document.form1.test_group.selectedIndex = 0;document.form1.submit();">
+                                <select name="test_type" id="test_type"
+                                        onchange="jQuery('#treespinner2').show();document.form1.test_group.selectedIndex = 0;document.form1.submit();">
                                     <option value=""><?php echo $admtext['alltypes']; ?></option>
                                     <option value="atDNA"<?php if ($test_type == "atDNA") {
                                         echo " selected";
@@ -210,13 +211,11 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     <option value="X-DNA"<?php if ($test_type == "X-DNA") {
                                         echo " selected";
                                     } ?>><?php echo $admtext['xdna_test']; ?></option>
-                                </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;
+                                </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;
                                 <?php echo $text['testgroup']; ?>:
                                 <select name="test_group" id="test_group" onchange="jQuery('#treespinner3').show();document.form1.submit();">
-                                    <?php
-                                    echo get_test_groups($test_type, $test_group);
-                                    ?>
-                                </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner3" alt="" class="spinner">
+                                    <?php echo get_test_groups($test_type, $test_group); ?>
+                                </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner3" alt="" class="spinner">
                             </td>
                         </tr>
                         <tr>
@@ -224,12 +223,13 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                 <input type="text" name="searchstring" value="<?php echo $originalstring; ?>">&nbsp;
                                 <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="aligntop">&nbsp;&nbsp;
                                 <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="aligntop"
-                                       onclick="document.form1.searchstring.value='';document.form1.tree.selectedIndex=0;document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
+                                       onclick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.test_type.selectedIndex = 0; document.form1.test_group.selectedIndex = 0;">
                             </td>
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findtest" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findtest" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
                 <?php

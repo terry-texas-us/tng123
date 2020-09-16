@@ -12,7 +12,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], "/admin_updateconfig.php") === FALSE) {
 include "subroot.php";
 include_once "tngconnect.php";
 include $tngconfig['subroot'] . "config.php";
-$subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : $cms['tngpath'];
+$subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : "";
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";
 $templatepath = $templateswitching && $templatenum ? "templates/$templatepfx$templatenum/" : "";
@@ -37,7 +37,7 @@ $session_charset = $_SESSION['session_charset'] ?? $charset;
 $endrootpath = "";
 
 $languages_path = "languages/";
-include $cms['tngpath'] . "getlang.php";
+include "getlang.php";
 
 // include "./admin/locale.php";
 

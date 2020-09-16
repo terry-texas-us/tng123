@@ -1,16 +1,16 @@
 <?php
 include "begin.php";
 $tngconfig['maint'] = "";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $textpart = "gedcom";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "getlang.php";
+include "$mylanguage/text.php";
 
 if ($enttype) {
-  include $cms['tngpath'] . "checklogin.php";
+    include "checklogin.php";
 }
 include $subroot . "logconfig.php";
-include $cms['tngpath'] . "tngmaillib.php";
+include "tngmaillib.php";
 
 $valid_user_agent = isset($_SERVER["HTTP_USER_AGENT"]) && $_SERVER["HTTP_USER_AGENT"] != "";
 

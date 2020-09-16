@@ -4,7 +4,7 @@
     agree: '<?php echo $text['understand']; ?>',
     learnMore: '&bull; <?php echo $text['viewpolicy']; ?>',
     link: '<?php echo getURL("data_protection_policy", 0); ?>',
-    theme: 'hell-unten-rechts'  //other options: dark-top, dark-bottom
+      theme: 'hell-unten-rechts'  //other options: dark-top, dark-bottom
   };
 </script>
-<script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/cookiebanner.js"></script>
+<script type="text/javascript" src="js/cookiebanner.js"></script>

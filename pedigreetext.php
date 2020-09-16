@@ -37,7 +37,7 @@ function showBlank($pedborder) {
 
 function displayIndividual($key, $generation, $slot) {
     global $tree, $generations, $marrdate, $marrplace, $pedmax, $text;
-    global $cms, $getperson_url, $pedigree_url, $parentset, $righttree;
+    global $getperson_url, $pedigree_url, $parentset, $righttree;
 
     $nextslot = $slot * 2;
     $name = "";
@@ -83,11 +83,11 @@ function displayIndividual($key, $generation, $slot) {
 
     if ($slot > 1 && $slot % 2 != 0) {
         echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td width='1'><img src=\"{$cms['tngpath']}img/black.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n";
+        echo "<td width='1'><img src=\"img/black.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n";
         echo "<td></td>\n</tr>\n</table>\n";
     } else {
         echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td colspan=\"2\"><img src=\"{$cms['tngpath']}img/spacer.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n</tr>\n</table>\n";
+        echo "<td colspan=\"2\"><img src=\"img/spacer.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n</tr>\n</table>\n";
     }
 
     echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
@@ -101,7 +101,7 @@ function displayIndividual($key, $generation, $slot) {
     }
 
     echo "</tr>\n";
-    echo "<tr>\n<td colspan=\"2\"><img src=\"{$cms['tngpath']}img/black.gif\" alt=\"\" width=\"100%\" height='1' vspace=\"0\" hspace=\"0\"></td>\n</tr>\n";
+    echo "<tr>\n<td colspan=\"2\"><img src=\"img/black.gif\" alt=\"\" width=\"100%\" height='1' vspace=\"0\" hspace=\"0\"></td>\n</tr>\n";
     echo "<tr>\n";
 
     $pedborder = $slot % 2 ? "" : "class=\"pedborderleft\"";
@@ -165,11 +165,11 @@ function displayIndividual($key, $generation, $slot) {
 
     if ($slot % 2 == 0) {
         echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td width='1'><img src=\"{$cms['tngpath']}img/black.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n";
+        echo "<td width='1'><img src=\"img/black.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n";
         echo "<td></td>\n</tr>\n</table>\n";
     } else {
         echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td colspan=\"2\"><img src=\"{$cms['tngpath']}img/spacer.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n</tr>\n</table>\n";
+        echo "<td colspan=\"2\"><img src=\"img/spacer.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\"></td>\n</tr>\n</table>\n";
     }
     echo "</td>\n";
 
@@ -311,7 +311,7 @@ echo "</form>\n";
             ?>
         </tr>
     </table>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");
 ?>

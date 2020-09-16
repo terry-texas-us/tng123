@@ -219,7 +219,7 @@ function findLivingPrivate($mediaID, $tree) {
 
 function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlinks = true) {
     global $allow_admin, $allow_media_edit, $albumname, $albumID, $offset;
-    global $tree, $page, $maxsearchresults, $linktype, $cms, $showall, $tnggallery, $text;
+    global $tree, $page, $maxsearchresults, $linktype, $showall, $tnggallery, $text;
     global $showalbum_url, $browsemedia_url, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $showmedia_url, $tngconfig;
     global $totalpages, $all;
 
@@ -230,7 +230,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
     if ($showlinks) {
         if ($allow_admin && $allow_media_edit) {
-            $pagenav .= "<a href=\"{$cms['tngpath']}admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target=\"_blank\" class=\"snlink\">&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target=\"_blank\" class=\"snlink\">&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
         }
 
         if ($albumlinkID) {
@@ -444,7 +444,7 @@ function getMediaLinkText($mediaID, $ioffset) {
 }
 
 function showMediaSource($imgrow, $ss = false) {
-    global $text, $usefolder, $size, $imagetypes, $htmldocs, $histories_url, $cms, $tngconfig, $videotypes, $recordingtypes;
+    global $text, $usefolder, $size, $imagetypes, $htmldocs, $histories_url, $tngconfig, $videotypes, $recordingtypes;
     global $description, $showmedia_url, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
 
     if ($sitever == "mobile") {

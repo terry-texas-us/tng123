@@ -761,7 +761,7 @@ INFO_BOX;
 echo("//]]>\n");
 echo("</script>\n");
 ?>
-<script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
+<script type="text/javascript" src="js/rpt_utils.js"></script>
 <?php
 tng_footer($flags);
 ?>

@@ -7,8 +7,8 @@ if (!$personID) {
 }
 
 include $subroot . "pedconfig.php";
-include $cms['tngpath'] . "personlib.php";
-include $cms['tngpath'] . "reglib.php";
+include "personlib.php";
+include "reglib.php";
 
 $getperson_url = getURL("getperson", 1);
 $descend_url = getURL("descend", 1);
@@ -417,7 +417,5 @@ echo "</form>\n";
         ?>
     </div>
 
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
-<?php
-tng_footer("");
-?>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
+<?php tng_footer(""); ?>

@@ -223,10 +223,6 @@ function ZoomImage(zoom, canvas) {
     img.findPan();
 
     // realign at the top left
-    //lastLeft = -1 * Math.round(img.width/2);
-    //img.style.left = lastLeft + 'px';
-    //lastTop = -1 * Math.round((img.fullHeight - img.height)/2);
-    //img.style.top = lastTop + 'px';
     img.style.left = img.style.top = '0px';
     lastLeft = lastTop = 0;
 
@@ -243,21 +239,21 @@ function ZoomImage(zoom, canvas) {
 function checkZoomLevel(level, controller) {
     // we need to disable the zoom up button now
     if (magzoom == 9) {
-        controller.magup.src = cmstngpath + 'img/img_magupoff.gif';
-        controller.magdown.src = cmstngpath + 'img/img_magdown.gif';
+        controller.magup.src = 'img/img_magupoff.gif';
+        controller.magdown.src = 'img/img_magdown.gif';
     } else if (magzoom == 2) {
-        controller.magdown.src = cmstngpath + 'img/img_magdownoff.gif';
-        controller.magup.src = cmstngpath + 'img/img_magup.gif';
+        controller.magdown.src = 'img/img_magdownoff.gif';
+        controller.magup.src = 'img/img_magup.gif';
     } else {
         controller.magdown.src = 'img/img_magdown.gif';
-        controller.magup.src = cmstngpath + 'img/img_magup.gif';
+        controller.magup.src = 'img/img_magup.gif';
     }
 
     if (magzoom > 4) {
-        controller.buttonMag.src = cmstngpath + 'img/img_magoff.gif';
+        controller.buttonMag.src = 'img/img_magoff.gif';
         controller.buttonMag.enabled = false;
     } else {
-        controller.buttonMag.src = cmstngpath + 'img/img_mag.gif';
+        controller.buttonMag.src = 'img/img_mag.gif';
         controller.buttonMag.enabled = true;
     }
 }
@@ -312,9 +308,6 @@ function sizeController(frameHeight) {
 
     // determine if we want to show the controller
     var showController = true;
-    //if (img.origZoom == 1 && img.height <= img.bodyh) {
-    //showController = false;
-    //}
 
     if (!showController) {
         controllerContainer.style.display = "none";
@@ -349,10 +342,10 @@ function sizeController(frameHeight) {
     magimg = document.getElementById('buttonMag');
     if (zoom == 1) {
         magimg.enabled = false;
-        magimg.src = cmstngpath + 'img/img_magoff.gif';
+        magimg.src = 'img/img_magoff.gif';
     } else {
         magimg.enabled = true;
-        magimg.src = cmstngpath + 'img/img_mag.gif';
+        magimg.src = 'img/img_mag.gif';
     }
     img.findPan();
     scaleImageMap(canvas);
@@ -372,11 +365,6 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
     canvas.zoom = 1;
     canvas.id = 'imageviewer';
     canvas.className = 'canvas';
-    //canvas.style.position = 'absolute';
-    //canvas.style.overflow = 'hidden';
-    //canvas.style.backgroundColor = canvasBackground;
-    //canvas.style.backgroundImage = 'url(' + cmstngpath + 'img/bg.gif)';
-    //canvas.style.width = '99.8%';
     canvas.beingDragged = false;
     canvas.mode = 'pan';
     lastLeft = lastTop = 0;
@@ -442,7 +430,7 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
     var pan = document.createElement('img');
     pan.id = 'buttonPan';
     pan.className = 'controllerPanSelected';
-    pan.src = cmstngpath + 'img/img_select.gif';
+    pan.src = 'img/img_select.gif';
     pan.title = panmode_msg;
     pan.alt = panmode_msg;
     pan.onclick = ControllerPanMode;
@@ -451,14 +439,14 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
 
     var break1 = document.createElement('img');
     break1.className = 'breakLine';
-    break1.src = cmstngpath + 'img/img_break.png';
+    break1.src = 'img/img_break.png';
     controller.appendChild(break1);
 
     // controller - magnify down button
     var magdown = document.createElement('img');
     magdown.id = 'magdown';
     magdown.className = 'controllerImage';
-    magdown.src = cmstngpath + 'img/img_magdown.gif';
+    magdown.src = 'img/img_magdown.gif';
     magdown.onclick = ControllerMagDown;
     magdown.title = zoomout_msg;
     magdown.alt = zoomout_msg;
@@ -469,7 +457,7 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
     var magup = document.createElement('img');
     magup.id = 'magup';
     magup.className = 'controllerImage';
-    magup.src = cmstngpath + 'img/img_magup.gif';
+    magup.src = 'img/img_magup.gif';
     magup.onclick = ControllerMagUp;
     magup.title = zoomin_msg;
     magup.alt = zoomin_msg;
@@ -553,7 +541,7 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
         // controller - second break line
         var break2 = document.createElement('img');
         break2.className = 'breakLine';
-        break2.src = cmstngpath + 'img/img_break.png';
+        break2.src = 'img/img_break.png';
         controller.appendChild(break2);
 
         // controller - new window button
@@ -567,19 +555,13 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
         newbtn.title = opennw_msg;
         newbtn.onclick = ControllerNewWin;
         controller.appendChild(newbtn);
-
-        // uncomment these lines for debug statements
-        //var debug = document.createElement('span');
-        //debug.innerHTML = "DEBUG: "+canvas.offsetTop;
-        //debug.id = "debug";
-        //controller.appendChild(debug);
     }
 
     // provide some status info
     // controller - third? break line
     var break3 = document.createElement('img');
     break3.className = 'breakLine';
-    break3.src = cmstngpath + 'img/img_break.png';
+    break3.src = 'img/img_break.png';
     controller.appendChild(break3);
     var msg = document.createElement('span');
     msg.innerHTML = pan_msg;
@@ -609,7 +591,6 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
     var enableContainer = document.createElement('div');
     enableContainer.id = 'encontainer';
     enableContainer.style.backgroundColor = canvasBackground;
-    //enableContainer.style.backgroundImage = 'url(' + cmstngpath + 'img/bg.gif)';
     enableContainer.style.height = "36px";
 
     // put a button at the bottom to turn on/off the controller
@@ -629,7 +610,7 @@ function imageViewer(baseID, imgURL, fullWidth, fullHeight, standalone, mediaID,
     closeimg.className = 'controllerClose';
     closeimg.title = close_msg;
     closeimg.alt = close_msg;
-    closeimg.src = cmstngpath + 'img/img_close.gif';
+    closeimg.src = 'img/img_close.gif';
     closeimg.onclick = function () {
         enableContainer.style.display = "";
         controllerContainer.style.display = "none";
@@ -718,7 +699,7 @@ function handleMouseDown(e) {
         var shadowSize = mag.size + 2 * shadowPadding;
 
         //// MSIE 5.x/6.x must be treated specially in order to make them use the PNG alpha channel
-        var shadowImageSrc = cmstngpath + 'img/img_shadow.png';
+        var shadowImageSrc = 'img/img_shadow.png';
         if (shadow.runtimeStyle)
             shadow.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + shadowImageSrc + "', sizingMethod='scale')";
         else

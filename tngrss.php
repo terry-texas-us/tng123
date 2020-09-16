@@ -11,7 +11,7 @@ $langstr = isset($_GET['lang']) ? "&amp;lang=$languages_path" . $_GET['lang'] : 
 
 @ini_set("session.bug_compat_warn", "0");
 
-include $cms['tngpath'] . "version.php";
+include "version.php";
 
 $getperson_url = getURL("getperson", 1);
 $showmedia_url = getURL("showmedia", 1);

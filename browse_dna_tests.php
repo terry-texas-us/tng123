@@ -6,8 +6,8 @@ if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
     header("Location: thispagedoesnotexist.html");
     exit;
 }
-include $cms['tngpath'] . "functions.php";
-include $cms['tngpath'] . "personlib.php";
+include "functions.php";
+include "personlib.php";
 
 $browse_dna_tests_url = getURL("browse_dna_tests", 1);
 $show_dna_test_url = getURL("show_dna_test", 1);
@@ -198,7 +198,7 @@ echo "<div class='normal'>\n";
                         }
                         $ret .= "</select>\n";
                         tng_free_result($treeresult);
-                        $ret .= "&nbsp; <img src=\"{$cms['tngpath']}img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
+                        $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                         echo $ret;
                     }
                 }
@@ -220,7 +220,7 @@ echo "<div class='normal'>\n";
                     <option value="X-DNA"<?php if ($test_type == "X-DNA") {
                         echo " selected";
                     } ?>><?php echo $admtext['xdna_test']; ?></option>
-                </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
+                </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 <?php echo $text['testgroup']; ?>:
@@ -228,7 +228,7 @@ echo "<div class='normal'>\n";
                     <?php
                     echo get_test_groups($test_type, $test_group);
                     ?>
-                </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner3" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
+                </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner3" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
                 <input type="submit" name="reset" value="<?php echo $text['tng_reset']; ?>" onclick="document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
                 <br>
             </td>
@@ -437,7 +437,7 @@ if ($test_type == "mtDNA") {
             tng_free_result($presult);
 
             if ($dnalinktext) {
-                $more = "<a href=\"#\" onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
+                $more = "<a href=\"#\" onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
                 $morediv = "<div style=\"display:none;\" id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
             } else {
                 $more = $morediv = "";

@@ -38,17 +38,17 @@ function setMediaType($newtype) {
 //To change display order of these groups, simply move the corresponding lines below up or down.
 
 function initMediaTypes() {
-  global $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_table, $mediatypes, $cms;
+    global $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_table, $mediatypes;
 
-  if (count($mediatypes)) {
-    return;
-  }
+    if (count($mediatypes)) {
+        return;
+    }
 
-  if (!isset($mediatypes_table)) {
-    return;
-  }  // added by Ken Roy to handle TNG v6 to v10 upgrade
-  $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
-  $result = @tng_query($query);
+    if (!isset($mediatypes_table)) {
+        return;
+    }  // added by Ken Roy to handle TNG v6 to v10 upgrade
+    $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
+    $result = @tng_query($query);
 
   if ($result) {
     while ($row = tng_fetch_assoc($result)) {
@@ -127,9 +127,6 @@ function initMediaTypes() {
           break;
         default:
           $row['type'] = 1;
-          if ($cms['tngpath'] && strpos($row['path'], $cms['tngpath']) !== 0) {
-            $row['path'] = $cms['tngpath'] . $row['path'];
-          }
           setMediaType($row);
           break;
       }

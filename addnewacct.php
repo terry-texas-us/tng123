@@ -3,10 +3,10 @@ $textpart = "login";
 include "tng_begin.php";
 
 $deftext = $text;
-include $cms['tngpath'] . "$mylanguage/text.php";
-include $cms['tngpath'] . "$mylanguage/cust_text.php"; //needed because alltext.php only gets included once
+include "$mylanguage/text.php";
+include "$mylanguage/cust_text.php"; //needed because alltext.php only gets included once
 
-include $cms['tngpath'] . "tngmaillib.php";
+include "tngmaillib.php";
 
 $valid_user_agent = isset($_SERVER["HTTP_USER_AGENT"]) && ($_SERVER["HTTP_USER_AGENT"] != "");
 

@@ -1,6 +1,6 @@
 <?php
 
-include $cms['tngpath'] . "surname_cloud.class.php";
+include "surname_cloud.class.php";
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
@@ -49,14 +49,14 @@ $search .= "</form>\n";
                             if ($dadlabel) {
                                 ?>
                                 <li>
-                                    <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t16_dadperson']; ?>&amp;tree=<?php echo $tmp['t16_dadtree']; ?>"><?php echo $dadlabel; ?></a>
+                                    <a href="pedigree.php?personID=<?php echo $tmp['t16_dadperson']; ?>&amp;tree=<?php echo $tmp['t16_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                                 </li>
                                 <?php
                             }
                             if ($momlabel) {
                                 ?>
                                 <li>
-                                    <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t16_momperson']; ?>&amp;tree=<?php echo $tmp['t16_momtree']; ?>"><?php echo $momlabel; ?></a>
+                                    <a href="pedigree.php?personID=<?php echo $tmp['t16_momperson']; ?>&amp;tree=<?php echo $tmp['t16_momtree']; ?>"><?php echo $momlabel; ?></a>
                                 </li>
                                 <?php
                             }
@@ -136,7 +136,7 @@ $search .= "</form>\n";
                                 if ($tmp['t16_mainimage']) {
                                     ?>
                                     <div id="mainphoto">
-                                        <img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t16_mainimage']; ?>" alt="" class="temppreview">
+                                        <img src="<?php echo $templatepath . $tmp['t16_mainimage']; ?>" alt="" class="temppreview">
                                     </div>
                                     <?php
                                 }
@@ -181,7 +181,7 @@ $search .= "</form>\n";
                                 echo getTemplateMessage('t16_mainpara');
                                 ?>
                                 <h3><?php echo $text['contactus']; ?></h3>
-                                <p class="contact"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image"
+                                <p class="contact"><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
                                                         class="emailimg"><?php echo $text['contactus_long']; ?></p>
 
                                 <?php
@@ -208,10 +208,7 @@ $search .= "</form>\n";
                         ?>
                         <div class="tblock">
                             <h2><?php echo $text['whatsnew'] . " | <a href=\"$whatsnew_url\">" . $text['more'] . "</a>"; ?></h2>
-                            <?php
-                            echo $cms['tngpath'];
-                            include $cms['tngpath'] . "widget_whatsnew.php";
-                            ?>
+                            <?php include "widget_whatsnew.php"; ?>
                         </div>
                         <div class="tblock">
                             <h2><?php echo $text['surnames'] . " | <a href=\"$surnames_url\">" . $text['more'] . "</a>"; ?></h2>

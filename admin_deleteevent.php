@@ -5,7 +5,7 @@ $textpart = "events";
 include "$mylanguage/admintext.php";
 
 $admin_login = 1;
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if (!$allow_delete) {
     exit;

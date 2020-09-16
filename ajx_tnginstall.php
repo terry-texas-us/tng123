@@ -1,6 +1,6 @@
 <?php
-$cms = array();
-if (isset($cms['tngpath']) || isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
+
+if (isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
     die("Sorry!");
 }
 $tngconfig = array();
@@ -8,18 +8,18 @@ include "processvars.php";
 include "subroot.php";
 include "tngconnect.php";
 include $tngconfig['subroot'] . "config.php";
-$subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : $cms['tngpath'];
+$subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : "";
 
 session_start();
 $session_language = $_SESSION['session_language'];
 $session_charset = $_SESSION['session_charset'];
 
 $languages_path = "languages/";
-include $cms['tngpath'] . "getlang.php";
+include "getlang.php";
 $textpart = "install";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "$mylanguage/text.php";
 
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 include $subroot . "importconfig.php";
 $saveconfig = 0;
 $saveimportconfig = 0;
@@ -32,7 +32,7 @@ if (!trim($database_socket)) {
 }
 $link = tng_connect($database_host, $database_username, $database_password, $database_name, $database_port, $database_socket);
 if ($link && tng_select_db($link, $database_name)) {
-    include $cms['tngpath'] . "checklogin.php";
+    include "checklogin.php";
     if (($assignedtree && $assignedtree != "-x-guest-x-") || !$allow_edit) {
         $_POST['subroutine'] = "login";
     }
@@ -44,11 +44,11 @@ function createtables($collation) {
     global $people_table, $places_table, $reports_table, $repositories_table, $saveimport_table, $sources_table, $states_table, $mostwanted_table;
     global $temp_events_table, $tlevents_table, $trees_table, $users_table, $xnotes_table, $albums_table, $album2entities_table, $albumlinks_table, $assoc_table, $mediatypes_table;
     global $dna_tests_table, $dna_links_table, $dna_groups_table, $templates_table;
-    global $cms, $link, $tngconfig;
+    global $link, $tngconfig;
 
     $badtables = "";
 
-    include $cms['tngpath'] . "tabledefs.php";
+    include "tabledefs.php";
 
     return $badtables;
 }
@@ -432,10 +432,6 @@ if ($saveconfig) {
     fwrite($fp, "\$tngconfig['mediadel'] = \"{$tngconfig['mediadel']}\";\n");
     fwrite($fp, "\$tngconfig['mediathumbs'] = \"{$tngconfig['mediathumbs']}\";\n");
     fwrite($fp, "\$tng_notinstalled = \"$tng_notinstalled\";\n");
-    fwrite($fp, "\n");
-    fwrite($fp, "if(!isset(\$cms['auto'])) {\n");
-    fwrite($fp, "\$cms['tngpath'] = \"{$cms['tngpath']}\";\n");
-    fwrite($fp, "}\n");
     fwrite($fp, "\n");
     fwrite($fp, "@include \$subroot . \"customconfig.php\";\n");
     fwrite($fp, "?>\n");

@@ -37,7 +37,7 @@ echo $formstr;
         <h3 class="subhead"><?php echo "{$text['top30first']} ({$text['totalnames']}):"; ?></h3>
         <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
         <?php
-        include $cms['tngpath'] . "firstnamestable.php";
+        include "firstnamestable.php";
         ?>
     </div>
     <br>

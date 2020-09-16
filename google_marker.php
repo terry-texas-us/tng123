@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "globallib.php";
+include "globallib.php";
 
 header("Content-type: image/png");
 

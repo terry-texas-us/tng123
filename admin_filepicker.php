@@ -67,7 +67,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 frmFiles();
 
 function frmFiles() {
-    global $ImageFileTypes, $subdir, $img, $admtext, $page, $rootpath, $path, $tngpath, $pagetotal, $searchstring, $allow_delete, $tngconfig, $folders, $namedir, $datedir, $order, $cms;
+    global $ImageFileTypes, $subdir, $img, $admtext, $page, $rootpath, $path, $tngpath, $pagetotal, $searchstring, $allow_delete, $tngconfig, $folders, $namedir, $datedir, $order;
     $columns = 4;
     $datefmt = !empty($tngconfig['preferEuro']) && $tngconfig['preferEuro'] == "true" ? "d/m/Y h:i:s A" : "m/d/Y h:i:s A";
     ?>
@@ -89,10 +89,10 @@ function frmFiles() {
     <tr class="fieldnameback">
         <td align="left" width="60"><span class="fieldname"><b><?php echo $admtext['action']; ?></b></span></td>
         <td nowrap><span
-                    class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'name') . "\" class=\"lightlink\">{$admtext['filename']} <img src=\"{$cms['tngpath']}img/tng_sort_{$namedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
+                class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'name') . "\" class=\"lightlink\">{$admtext['filename']} <img src=\"img/tng_sort_{$namedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
         </td>
         <td align="center"><span
-                    class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'date') . "\" class=\"lightlink\">{$admtext['date']} <img src=\"{$cms['tngpath']}img/tng_sort_{$datedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
+                class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'date') . "\" class=\"lightlink\">{$admtext['date']} <img src=\"img/tng_sort_{$datedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
         </td>
         <td align="center"><span class="fieldname"><b><?php echo $admtext['size']; ?></b></span></td>
         <td align="center"><span class="fieldname"><b><?php echo $admtext['dimensions']; ?></b></span></td>

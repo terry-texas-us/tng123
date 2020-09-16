@@ -1,6 +1,6 @@
 <?php
 
-global $text, $currentuser, $cms, $allow_admin, $subroot, $tmp;
+global $text, $currentuser, $allow_admin, $subroot, $tmp;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
 <table class="page">
@@ -8,7 +8,7 @@ global $text, $currentuser, $cms, $allow_admin, $subroot, $tmp;
         <td class="mainborder" rowspan="5">
             &nbsp;
         </td>
-        <td class="headerrow" style="background: url(<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t8_headimg']; ?>) no-repeat;">
+        <td class="headerrow" style="background: url(<?php echo $templatepath; ?><?php echo $tmp['t8_headimg']; ?>) no-repeat;">
             <table class="headertable">
                 <tr class="headertextrow">
                     <td>
@@ -43,19 +43,19 @@ global $text, $currentuser, $cms, $allow_admin, $subroot, $tmp;
 
                     </td>
                     <td class="searchtext">
-                        <form id="topsearchform" name="topsearchform" method="get" action="<?php echo $cms['tngpath']; ?>search.php">
+                        <form id="topsearchform" name="topsearchform" method="get" action="search.php">
                             <input type="hidden" value="AND" name="mybool">
                             <span class="subsearch"><?php echo $text['mnufirstname']; ?>:&nbsp;</span>
                             <input size="8" name="myfirstname" type="text" id="myfirstname">
                             <span class="subsearch"><?php echo $text['mnulastname']; ?>:&nbsp;</span>
                             <input
-                                    size="10" name="mylastname" type="text" id="mylastname">
+                                size="10" name="mylastname" type="text" id="mylastname">
                             <input alt="Submit Search" style="vertical-align: bottom; border:none;" type="image" name="imageField"
-                                   src="<?php echo $cms['tngpath'] . $templatepath; ?>img/searchbutton.gif">
+                                   src="<?php echo $templatepath; ?>img/searchbutton.gif">
                             <br>
-                            [<a class="subsearch" href="<?php echo $cms['tngpath']; ?>searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]&nbsp;&nbsp;[<a
-                                    class="subsearch"
-                                    href="<?php echo $cms['tngpath']; ?>surnames.php"><?php echo $text['mnulastnames']; ?></a>]
+                            [<a class="subsearch" href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]&nbsp;&nbsp;[<a
+                                class="subsearch"
+                                href="surnames.php"><?php echo $text['mnulastnames']; ?></a>]
                         </form>
                     </td>
                 </tr>

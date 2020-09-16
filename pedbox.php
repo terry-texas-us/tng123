@@ -1,17 +1,17 @@
 <?php
 function getPhotoSrc($persfamID, $living, $gender) {
-  global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
-  global $photosext, $tree, $medialinks_table, $media_table, $tngconfig, $cms;
+    global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
+    global $photosext, $tree, $medialinks_table, $media_table, $tngconfig;
 
-  $photo = array();
-  $showmedia_url = getURL("showmedia", 1);
+    $photo = array();
+    $showmedia_url = getURL("showmedia", 1);
 
-  $query = "SELECT $media_table.mediaID, medialinkID, alwayson, thumbpath, mediatypeID, usecollfolder FROM ($media_table, $medialinks_table)
+    $query = "SELECT $media_table.mediaID, medialinkID, alwayson, thumbpath, mediatypeID, usecollfolder FROM ($media_table, $medialinks_table)
 		WHERE personID = \"$persfamID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
 
-  $photocheck = "";
+    $photocheck = "";
   if ($row['thumbpath']) {
     if ($row['alwayson'] || checkLivingLinks($row['mediaID'])) {
       $mediatypeID = $row['mediatypeID'];
@@ -38,8 +38,8 @@ function getPhotoSrc($persfamID, $living, $gender) {
     }
   }
   if ($gotfile) {
-    $photo['ref'] = $cms['tngpath'] . $photoref;
-    $photo['link'] = $photolink;
+    $photo['ref'] = $photoref;
+      $photo['link'] = $photolink;
   } else {
     $photo['ref'] = "";
     $photo['link'] = "";

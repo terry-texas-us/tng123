@@ -1,5 +1,5 @@
 <?php
-global $text, $mediatypes, $currentuser, $cms, $allow_admin, $subroot, $tmp, $target, $tngconfig, $logout_url;
+global $text, $mediatypes, $currentuser, $allow_admin, $subroot, $tmp, $target, $tngconfig, $logout_url;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicbody">
     <a name="top"></a>
@@ -7,11 +7,11 @@ global $text, $mediatypes, $currentuser, $cms, $allow_admin, $subroot, $tmp, $ta
     <header class="cb-header clearfix">
         <div class="cb-shapes">
             <h1 class="cb-headline" data-left="25.52%">
-                <a href="<?php echo $cms['tngpath']; ?>index.php"><?php echo getTemplateMessage('t12_maintitle'); ?></a>
+                <a href="index.php"><?php echo getTemplateMessage('t12_maintitle'); ?></a>
             </h1>
             <h2 class="cb-slogan" data-left="25.52%"><?php echo getTemplateMessage('t12_headsubtitle'); ?></h2>
 
-            <div class="cb-mainimage"><img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t12_headimg']; ?>" alt=""></div>
+            <div class="cb-mainimage"><img src="<?php echo $templatepath; ?><?php echo $tmp['t12_headimg']; ?>" alt=""></div>
         </div>
         <div class="cb-header-search-box">
             <table>
@@ -28,7 +28,7 @@ global $text, $mediatypes, $currentuser, $cms, $allow_admin, $subroot, $tmp, $ta
                             </tr>
                             <tr>
                                 <form class="cb-search" id="topsearchform" name="topsearchform" method="get"
-                                      action="<?php echo $cms['tngpath']; ?>search.php">
+                                      action="search.php">
                                     <td class="col1and2">
                                         <input type="hidden" value="AND" name="mybool">
                                         <input size="17" name="myfirstname" type="text" id="myfirstname">
@@ -46,10 +46,10 @@ global $text, $mediatypes, $currentuser, $cms, $allow_admin, $subroot, $tmp, $ta
                             </script>
                             <tr>
                                 <td id="cb-header-links">
-                                    <a href="<?php echo $cms['tngpath']; ?>searchform.php">[<?php echo $text['mnuadvancedsearch']; ?>]</a>
+                                    <a href="searchform.php">[<?php echo $text['mnuadvancedsearch']; ?>]</a>
                                 </td>
                                 <td colspan="2" id="cb-header-links">
-                                    <a href="<?php echo $cms['tngpath']; ?>surnames.php">[<?php echo $text['mnulastnames']; ?>]</a>
+                                    <a href="surnames.php">[<?php echo $text['mnulastnames']; ?>]</a>
                                     <br>
                                 </td>
                             </tr>

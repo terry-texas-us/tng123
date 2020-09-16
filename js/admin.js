@@ -9,7 +9,7 @@ function deleteIt(type, id, tree, confirm) {
     });
     var params = {t: type, id: id, desc: tree, confirm: confirm};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_delete.php',
+        url: 'ajx_delete.php',
         data: params,
         dataType: 'html',
         success: function (entity) {
@@ -71,7 +71,7 @@ function makeFolder(folder, name) {
     jQuery('#msg_' + folder).html('<img src="img/spinner.gif">');
     var params = {folder: name};
     jQuery.ajax({
-        url: cmstngpath + 'admin_makefolder.php',
+        url: 'admin_makefolder.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -86,7 +86,7 @@ function makeFolder(folder, name) {
 function makeDefault(photo) {
     var params = {media: photo.value.substr(1), entity: entity, tree: tree, album: album, action: 'setdef'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -111,7 +111,7 @@ function removeDefault() {
     }
     var params = {entity: entity, tree: tree, album: album, action: 'deldef'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params
     });
     return false;

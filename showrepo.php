@@ -7,7 +7,7 @@ if (!$repoID) {
   exit;
 }
 
-include $cms['tngpath'] . "personlib.php";
+include "personlib.php";
 
 $showrepo_url = getURL("showrepo", 1);
 $showsource_url = getURL("showsource", 1);
@@ -70,7 +70,7 @@ ksort($events);
 foreach ($events as $event)
   $repotext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-  $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"{$cms['tngpath']}" . "admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
+  $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
 } else {
   $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID));
 }

@@ -23,7 +23,7 @@ if ($sitever != "mobile") {
             $title = str_replace(["<br>", "<br>"], " ", getTemplateMessage('t7_maintitle'));
             if ($tmp['t7_titlechoice'] == "text" || $sitever == "mobile") {
                 ?>
-                <td class="logo" style="background:url(<?php echo $cms['tngpath'] . $templatepath; ?>img/logoedge.gif) no-repeat right #DCD5B9;">
+                <td class="logo" style="background:url(<?php echo $templatepath; ?>img/logoedge.gif) no-repeat right #DCD5B9;">
                     <div style="padding:10px;"><em id="maintitle">
 
                             <?php echo getTemplateMessage('t7_maintitle'); ?>
@@ -34,7 +34,7 @@ if ($sitever != "mobile") {
             } else {
                 ?>
                 <td class="logo">
-                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t7_titleimg']; ?>" alt="">
+                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t7_titleimg']; ?>" alt="">
                 </td>
                 <?php
             }
@@ -145,7 +145,7 @@ if ($sitever != "mobile") {
                                         //Actual file name has been replaced with t7_mainimage variable, configurable from Template Settings. Default name of actual image is "bigphoto.jpg"
                                         //You can replace the t7_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                                         ?>
-                                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t7_mainimage']; ?>" alt=""
+                                        <img src="<?php echo $templatepath; ?><?php echo $tmp['t7_mainimage']; ?>" alt=""
                                              class="bigphoto"><br>
                                         <?php
                                         //end MAIN IMAGE

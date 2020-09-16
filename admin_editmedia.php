@@ -647,7 +647,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     echo "var linkcount = $numlinks;\n";
     echo "var manage = 0;\n";
     echo "var assignedbranch = \"$assignedbranch\";\n";
-    echo "var getperson_url = \"{$cms['tngpath']}getperson.php?\";\n";
+    echo "var getperson_url = \"getperson.php?\";\n";
     echo $likearray;
     ?>
     const entercollid = "<?php echo $admtext['entercollid']; ?>";

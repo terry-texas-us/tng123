@@ -2,11 +2,6 @@
 $textpart = "search";
 include "tng_begin.php";
 
-if (!empty($cms['events'])) {
-    include 'cmsevents.php';
-    cms_search();
-}
-
 $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
 $result = tng_query($query);
 $numtrees = tng_num_rows($result);
@@ -507,12 +502,13 @@ echo $formstr;
         <hr>
         <h3 class="subhead"><?php echo $text['otherevents']; ?></h3>
         <ul id="descendantchart" class="normal">
-            <li id="expand" class="othersearch"><a href="#" onclick="return toggleSection(1);" class="nounderline"><img src="<?php echo $cms['tngpath']; ?>img/tng_expand.gif" alt="" width="15"
+            <li id="expand" class="othersearch"><a href="#" onclick="return toggleSection(1);" class="nounderline"><img src="img/tng_expand.gif"
+                                                                                                                        alt="" width="15"
                                                                                                                         height="15" class="exp-cont"><?php echo $text['clickdisplay']; ?>
                 </a></li>
             <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img
-                            src="<?php echo $cms['tngpath']; ?>img/tng_collapse.gif" alt="" width="15" height="15"
-                            class="exp-cont"><?php echo $text['clickhide']; ?></a></li>
+                        src="img/tng_collapse.gif" alt="" width="15" height="15"
+                        class="exp-cont"><?php echo $text['clickhide']; ?></a></li>
         </ul>
         <table style="display:none;" id="otherevents">
             <tr>
@@ -712,8 +708,8 @@ echo $formstr;
         </p>
         <br><br>
         <p>
-            <a href="<?php echo $cms['tngpath']; ?>famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
-            <a href="<?php echo $cms['tngpath']; ?>searchsite.php" class="snlink">&raquo; <?php echo $text['searchsitemenu']; ?></a>
+            <a href="famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
+            <a href="searchsite.php" class="snlink">&raquo; <?php echo $text['searchsitemenu']; ?></a>
         </p>
     </div>
 

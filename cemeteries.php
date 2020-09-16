@@ -23,7 +23,7 @@ $logstring = "<a href=\"$cemeteries_url" . "tree=$tree\">{$text['cemeteriesheads
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/cemeteries.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] = "<link href=\"css/cemeteries.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
@@ -46,9 +46,9 @@ tng_header($text['cemeteriesheadstones'], $flags);
     }
 
     plus = new Image;
-    plus.src = "<?php echo $cms['tngpath'] ?>img/tng_expand.gif";
+    plus.src = "img/tng_expand.gif";
     minus = new Image;
-    minus.src = "<?php echo $cms['tngpath'] ?>img/tng_collapse.gif";
+    minus.src = "img/tng_collapse.gif";
 
     function swap(x, y) {
         jQuery('#' + x).attr('title', y == "minus" ? collapsemsg : expandmsg);
@@ -100,7 +100,7 @@ while ($i < $numrows) {
                         $divname = "city$divctr";
                         if ($cemetery['city'] || !$tngconfig['cemblanks']) {
                             $txt = $cemetery['city'] ? @htmlspecialchars($cemetery['city'], ENT_QUOTES, $session_charset) : $text['nocity'];
-                            echo "<div class=\"pad3\"><img src=\"" . $cms['tngpath'] . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;city=" . urlencode($cemetery['city']) . "&amp;tree=$tree\">$txt</a></div>\n";
+                            echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;city=" . urlencode($cemetery['city']) . "&amp;tree=$tree\">$txt</a></div>\n";
                             echo "<div id=\"$divname\" class=\"cemblock\" style=\"display:none;\">\n";
                         } else {
                             echo "<div id=\"$divname\">\n";
@@ -124,7 +124,7 @@ while ($i < $numrows) {
                 if ($cemetery['county'] || !$tngconfig['cemblanks']) {
                     $linectr++;
                     $txt = $cemetery['county'] ? @htmlspecialchars($cemetery['county'], ENT_QUOTES, $session_charset) : $text['nocounty'];
-                    echo "<div class=\"pad3\"><img src=\"" . $cms['tngpath'] . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;tree=$tree\">$txt</a></div>\n";
+                    echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;tree=$tree\">$txt</a></div>\n";
                     echo "<div id=\"$divname\" class=\"cemblock\" style=\"display:none;\">\n";
                     $hiding = true;
                 } else {

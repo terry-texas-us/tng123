@@ -2,11 +2,6 @@
 $textpart = "language";
 include "tng_begin.php";
 
-if (!empty($cms['events'])) {
-  include 'cmsevents.php';
-  cms_register();
-}
-
 $currentuser = $_SESSION['currentuser'];
 $currentuserdesc = $_SESSION['currentuserdesc'];
 

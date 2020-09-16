@@ -2,7 +2,7 @@
 $textpart = "familygroup";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "personlib.php";
+include "personlib.php";
 
 $familygroup_url = getURL("familygroup", 1);
 $getperson_url = getURL("getperson", 1);
@@ -13,7 +13,7 @@ $showalbum_url = getURL("showalbum", 1);
 $pdfform_url = getUrl("rpt_pdfform", 1);
 
 $placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"$placesearch_url" . "psearch=" : "<a href=\"$placesearch_url" . "tree=$tree&amp;psearch=";
-$placelinkend = "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+$placelinkend = "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
 
 $firstsection = 0;
 $tableid = "";
@@ -44,7 +44,7 @@ function showFact($text, $fact) {
 }
 
 function showDatePlace($event) {
-    global $allow_lds_this, $cellnumber, $text, $cms, $tentative_edit, $tentedit_url, $tree, $familyID;
+    global $allow_lds_this, $cellnumber, $text, $tentative_edit, $tentedit_url, $tree, $familyID;
     global $placelinkbegin, $placelinkend;
 
     $dptext = "";
@@ -66,7 +66,7 @@ function showDatePlace($event) {
     }
 
     $dptext .= "<tr>\n";
-    $editicon = $tentative_edit ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
+    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
     $dptext .= "<td valign=\"top\" class=\"fieldnameback\"$cellid><span class=\"fieldname\">" . $event['text'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td valign=\"top\" class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td valign=\"top\" class='databack'";
@@ -85,7 +85,7 @@ function showDatePlace($event) {
             $event['type'] = $event['type2'];
             $event['ID'] = $event['ID2'];
         }
-        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         $dptext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
         $dptext .= "<td valign=\"top\" class='databack'><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
         $dptext .= "<td valign=\"top\" class='databack'><span class='normal'>{$event['ldsplace']}&nbsp;";
@@ -101,7 +101,7 @@ function showDatePlace($event) {
 
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
     global $tree, $text, $children_table, $righttree;
-    global $allow_lds_this, $allow_edit, $families_table, $people_table, $cms, $getperson_url, $familygroup_url, $personID;
+    global $allow_lds_this, $allow_edit, $families_table, $people_table, $getperson_url, $familygroup_url, $personID;
 
     $indtext = "";
 
@@ -144,7 +144,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= "<a href=\"$getperson_url" . "personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
 
     if ($allow_edit && $rightbranch) {
-        $indtext .= " | <a href=\"{$cms['tngpath']}" . "admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+        $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
     }
     $indtext .= "<br></h3>\n";
     $indtext .= "</td></tr>\n</table>\n<br>\n";
@@ -659,14 +659,14 @@ echo $famtext;
     <br>
 
 <?php
-$flags['more'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/rpt_utils.js\"></script>\n";
+$flags['more'] = "<script type=\"text/javascript\" src=\"js/rpt_utils.js\"></script>\n";
 if ($tentative_edit) {
     $flags['more'] .= "<script type=\"text/javascript\">\n";
     $flags['more'] .= "var preferEuro = " . ($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false") . ";\n";
     $flags['more'] .= "var preferDateFormat = '$preferDateFormat';\n";
     $flags['more'] .= "</script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/tentedit.js\"></script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/datevalidation.js\"></script>\n";
+    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/tentedit.js\"></script>\n";
+    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/datevalidation.js\"></script>\n";
 }
 tng_footer($flags);
 ?>

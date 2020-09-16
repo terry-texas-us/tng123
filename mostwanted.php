@@ -3,11 +3,7 @@
 $textpart = "reports";
 include "tng_begin.php";
 
-if (!empty($cms['events'])) {
-    include 'cmsevents.php';
-    cms_whatsnew();
-}
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 $getperson_url = getURL("getperson", 1);
 $showmedia_url = getURL("showmedia", 1);

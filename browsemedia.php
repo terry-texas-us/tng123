@@ -2,7 +2,7 @@
 $textpart = "showphoto";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 $browsemedia_url = getURL("browsemedia", 1);
 $getperson_url = getURL("getperson", 1);
@@ -122,7 +122,7 @@ preparebookmark($logstring);
 tng_header($titlestr, $flags);
 if ($orgmediatypeID) {
     if ($mediatypes_icons[$mediatypeID]) {
-        $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width='20' height='20' alt=\"\" class='headericon'>";
+        $icon = "<img src=\"{$mediatypes_icons[$mediatypeID]}\" width='20' height='20' alt=\"\" class='headericon'>";
     } else {
         $icon = "<span class='headericon' id=\"{$mediatypeID}-hdr-icon\"></span>";
     }

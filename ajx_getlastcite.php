@@ -1,7 +1,7 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $query = "SELECT * FROM $citations_table WHERE citationID = \"$citationID\"";
 $result = @tng_query($query);

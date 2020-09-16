@@ -34,7 +34,7 @@ echo getFORM("surnames100", "get", "", "");
     <div class="titlebox">
         <h3 class="subhead"><?php echo "{$text['top30']} ({$text['totalnames']}):"; ?></h3>
         <p class="smaller"><?php echo $text['showmatchingsurnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$surnames_url" . "tree=$tree\">{$text['mainsurnamepage']}</a> &nbsp;|&nbsp; <a href=\"$surnames_all_url" . "tree=$tree\">{$text['showallsurnames']}</a>"; ?></p>
-        <?php include $cms['tngpath'] . "surnamestable.php"; ?>
+        <?php include "surnamestable.php"; ?>
     </div>
     <br>
 <?php tng_footer(""); ?>

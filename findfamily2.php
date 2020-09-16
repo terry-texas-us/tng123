@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "families";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if ($session_charset != "UTF-8") {
   $myhusbname = tng_utf8_decode($myhusbname);

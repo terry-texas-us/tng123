@@ -6,7 +6,7 @@ $flags['nobody'] = true;
 if ($sitever != "mobile") {
     $flags['scripting'] = "<style>
 div.art-headerobject {
-  background-image: url('{$cms['tngpath']}$templatepath{$tmp['t10_headimg']}');
+  background-image: url('$templatepath{$tmp['t10_headimg']}');
   background-repeat: no-repeat;
   width: 420px;
   height: 150px;
@@ -70,7 +70,7 @@ $title = getTemplateMessage('t10_maintitle');
                         if ($dadlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t10_dadperson']; ?>&amp;tree=<?php echo $tmp['t10_dadtree']; ?>"><span
+                                <a href="pedigree.php?personID=<?php echo $tmp['t10_dadperson']; ?>&amp;tree=<?php echo $tmp['t10_dadtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $dadlabel; ?></span></a>
                             </li>
                             <?php
@@ -78,14 +78,14 @@ $title = getTemplateMessage('t10_maintitle');
                         if ($momlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t10_momperson']; ?>&amp;tree=<?php echo $tmp['t10_momtree']; ?>"><span
+                                <a href="pedigree.php?personID=<?php echo $tmp['t10_momperson']; ?>&amp;tree=<?php echo $tmp['t10_momtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $momlabel; ?></span></a>
                             </li>
                             <?php
                         }
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span
+                            <a href="suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span
                                     class="t"><?php echo $text['contactus']; ?></span></a>
                         </li>
                     </ul>
@@ -181,7 +181,7 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="cleared"></div>
                                     <div class="art-postcontent">
 
-                                        <img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t10_mainimage']; ?>" alt="" style="float:left;"
+                                        <img src="<?php echo $templatepath . $tmp['t10_mainimage']; ?>" alt="" style="float:left;"
                                              class="temppreview">
                                         <?php
                                         if ($chooselang) {
@@ -227,7 +227,7 @@ $title = getTemplateMessage('t10_maintitle');
                                         echo getTemplateMessage('t10_mainpara');
                                         ?>
                                         <h4><?php echo $text['contactus']; ?></h4>
-                                        <p><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image"
+                                        <p><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
                                                 class="emailimg"><?php echo $text['contactus_long']; ?></p>
 
                                     </div>
@@ -387,7 +387,7 @@ $title = getTemplateMessage('t10_maintitle');
             <div class="art-footer-center">
                 <div class="art-footer-wrapper">
                     <div class="art-footer-text">
-                        <a href="<?php echo $cms['tngpath']; ?>tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
+                        <a href="tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
                         <?php
                         $flags['basicfooter'] = true;
                         tng_footer($flags);

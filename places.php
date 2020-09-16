@@ -103,7 +103,7 @@ if ($result) {
             $specificcount = $countrow['placecount'];
             tng_free_result($result2);
 
-            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
+            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
             $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
             if (($count - 1) % $collen == 0) {
                 $col++;

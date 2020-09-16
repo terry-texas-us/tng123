@@ -2,7 +2,7 @@
 $textpart = "showphoto";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 require_once "albumlib.php";
 
@@ -219,7 +219,7 @@ echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'sho
 $toplinks = "<p class='normal'>";
 $toplinks .= $totrows ? "{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp;&nbsp; " : "";
 $toplinks .= $gallerymsg;
-$toplinks .= $allow_admin && $allow_edit ? "<a href=\"{$cms['tngpath']}" . "admin_editalbum.php?albumID=$albumID&amp;cw=1\" target=\"_blank\" class=\"snlink\">&raquo; {$text['editalbum']}</a> " : "";
+$toplinks .= $allow_admin && $allow_edit ? "<a href=\"admin_editalbum.php?albumID=$albumID&amp;cw=1\" target=\"_blank\" class=\"snlink\">&raquo; {$text['editalbum']}</a> " : "";
 
 $pagenav = get_browseitems_nav($totrows, $showalbum_url . "albumID=$albumID&amp;tnggallery=$tnggallery&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 $preheader = $pagenav . "</p>\n";

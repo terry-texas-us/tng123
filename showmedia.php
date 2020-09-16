@@ -7,8 +7,8 @@ if (!is_numeric($mediaID)) {
     exit;
 }
 
-include $cms['tngpath'] . "functions.php";
-include $cms['tngpath'] . "personlib.php";
+include "functions.php";
+include "personlib.php";
 
 //starting time between slides
 $slidetime_display = "3.0";
@@ -80,8 +80,8 @@ if (!tng_num_rows($result)) {
     header("Location: thispagedoesnotexist.html");
     exit;
 }
-include $cms['tngpath'] . "checklogin.php";
-include $cms['tngpath'] . "showmedialib.php";
+include "checklogin.php";
+include "showmedialib.php";
 
 $mediaperpage = 1;
 $max_showmedia_pages = 5;
@@ -162,9 +162,9 @@ if (!$personID) {
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] .= "<link href=\"{$cms['tngpath']}css/media.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] .= "<link href=\"css/media.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 if (!$tngprint) {
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$cms['tngpath']}" . "js/slideshow.js\"></script>\n";
+    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"js/slideshow.js\"></script>\n";
     $flags['scripting'] .= "<script type=\"text/javascript\">\n";
     $flags['scripting'] .= "var showmediaxmlfile = '" . getURL("ajx_showmediaxml", 1) . "';\n";
     $flags['scripting'] .= "</script>\n";
@@ -179,7 +179,7 @@ tng_header($mediatypeIDstr . ": " . $description, $flags);
 
 $imgviewer = $tngconfig['imgviewer'];
 if (!$imgviewer || in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
-    include $cms['tngpath'] . "js/img_utils.js";
+    include "js/img_utils.js";
 }
 
 $usefolder = $imgrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
@@ -225,7 +225,7 @@ if ($personID) {
         $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
         $icon = $mediatypes_icons[$mediatypeID];
         if ($mediatypes_icons[$mediatypeID]) {
-            $icon = "<img src=\"{$cms['tngpath']}{$mediatypes_icons[$mediatypeID]}\" width='20' height='20' alt=\"\" class='headericon'/>";
+            $icon = "<img src=\"{$mediatypes_icons[$mediatypeID]}\" width='20' height='20' alt=\"\" class='headericon'/>";
         } else {
             $icon = "<span class='headericon' id=\"{$mediatypeID}-hdr-icon\"></span>";
         }

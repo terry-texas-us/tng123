@@ -62,7 +62,7 @@ function generateID(type, dest, treefield) {
     if (tree !== false) {
         var params = {type: type, tree: tree};
         jQuery.ajax({
-            url: cmstngpath + 'admin_generateID.php',
+            url: 'admin_generateID.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -77,7 +77,7 @@ function checkID(checkID, type, dest, treefield) {
     if (tree !== false) {
         var params = {checkID: checkID, type: type, tree: tree};
         jQuery.ajax({
-            url: cmstngpath + 'admin_checkID.php',
+            url: 'admin_checkID.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -133,7 +133,7 @@ function addEvent(form) {
     else {
         var params = jQuery(form).serialize();
         jQuery.ajax({
-            url: cmstngpath + 'admin_addevent.php',
+            url: 'admin_addevent.php',
             data: params,
             type: 'POST',
             dataType: 'json',
@@ -160,7 +160,7 @@ function updateEvent(form) {
     var eventID = form.eventID.value;
     var params = jQuery(form).serialize();
     jQuery.ajax({
-        url: cmstngpath + 'admin_updateevent.php',
+        url: 'admin_updateevent.php',
         data: params,
         type: 'POST',
         dataType: 'json',
@@ -180,7 +180,7 @@ function updateEvent(form) {
 }
 
 function editEvent(eventID) {
-    tnglitbox = new LITBox(cmstngpath + 'admin_editevent.php?eventID=' + eventID, {
+    tnglitbox = new LITBox('admin_editevent.php?eventID=' + eventID, {
         width: 540, height: 500, doneLoading: function () {
             $('#eventdate').focus();
         }
@@ -190,7 +190,7 @@ function editEvent(eventID) {
 }
 
 function newEvent(prefix, persfamID, tree) {
-    tnglitbox = new LITBox(cmstngpath + 'admin_newevent.php?prefix=' + prefix + '&persfamID=' + persfamID + '&tree=' + tree, {
+    tnglitbox = new LITBox('admin_newevent.php?prefix=' + prefix + '&persfamID=' + persfamID + '&tree=' + tree, {
         width: 540, height: 500, doneLoading: function () {
             $('#eventtypeID').focus();
         }
@@ -207,7 +207,7 @@ function deleteEvent(eventID) {
         });
         var params = {eventID: eventID};
         jQuery.ajax({
-            url: cmstngpath + 'admin_deleteevent.php',
+            url: 'admin_deleteevent.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -219,21 +219,21 @@ function deleteEvent(eventID) {
 }
 
 function showNotes(eventID, persfamID) {
-    tnglitbox = new LITBox(cmstngpath + 'admin_notes.php?eventID=' + eventID + '&persfamID=' + persfamID + '&tree=' + tree, {
+    tnglitbox = new LITBox('admin_notes.php?eventID=' + eventID + '&persfamID=' + persfamID + '&tree=' + tree, {
         width: 645, height: 540, doneLoading: initNoteSort
     });
     return false;
 }
 
 function showCitations(eventID, persfamID) {
-    tnglitbox = new LITBox(cmstngpath + 'admin_citations.php?eventID=' + eventID + '&persfamID=' + persfamID + '&tree=' + tree, {
+    tnglitbox = new LITBox('admin_citations.php?eventID=' + eventID + '&persfamID=' + persfamID + '&tree=' + tree, {
         width: 645, height: 540, doneLoading: initCitationSort
     });
     return false;
 }
 
 function showMore(eventID, persfamID) {
-    tnglitbox = new LITBox(cmstngpath + 'admin_editmore.php?eventID=' + eventID + '&persfamID=' + persfamID + '&tree=' + tree, {
+    tnglitbox = new LITBox('admin_editmore.php?eventID=' + eventID + '&persfamID=' + persfamID + '&tree=' + tree, {
         width: 600, height: 480
     });
     return false;
@@ -271,7 +271,7 @@ function addNote(form) {
     else {
         var params = jQuery(form).serialize();
         jQuery.ajax({
-            url: cmstngpath + 'admin_addnote.php',
+            url: 'admin_addnote.php',
             data: params,
             type: 'POST',
             dataType: 'json',
@@ -309,7 +309,7 @@ function addNote(form) {
 function editNote(noteID) {
     var params = {noteID: noteID};
     jQuery.ajax({
-        url: cmstngpath + 'admin_editnote.php',
+        url: 'admin_editnote.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -327,7 +327,7 @@ function updateNote(form) {
         var noteID = form.ID.value;
         var params = jQuery(form).serialize();
         jQuery.ajax({
-            url: cmstngpath + 'admin_updatenote.php',
+            url: 'admin_updatenote.php',
             data: params,
             type: 'POST',
             dataType: 'json',
@@ -352,7 +352,7 @@ function deleteNote(noteID, personID, tree, eventID) {
         })
         var params = {noteID: noteID, personID: personID, tree: tree, eventID: eventID};
         jQuery.ajax({
-            url: cmstngpath + 'admin_deletenote.php',
+            url: 'admin_deletenote.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -380,7 +380,7 @@ function updateNoteOrder(event, ui) {
 
     var params = {sequence: notelist.join(','), action: 'noteorder'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });
@@ -391,7 +391,7 @@ function updateCitationOrder(event, ui) {
 
     var params = {sequence: citelist.join(','), action: 'citeorder'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });
@@ -412,7 +412,7 @@ function showCitationsInside(eventID, noteID, persfamID) {
     var xnote = noteID != "" ? noteID : "";
     var params = {eventID: eventID, persfamID: persfamID, noteID: xnote, tree: tree};
     jQuery.ajax({
-        url: cmstngpath + 'admin_citations.php',
+        url: 'admin_citations.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -430,7 +430,7 @@ function addCitation(form) {
     else {
         var params = jQuery(form).serialize();
         jQuery.ajax({
-            url: cmstngpath + 'admin_addcitation.php',
+            url: 'admin_addcitation.php',
             data: params,
             type: 'POST',
             dataType: 'json',
@@ -467,7 +467,7 @@ function addCitation(form) {
 function editCitation(citationID) {
     var params = {citationID: citationID};
     jQuery.ajax({
-        url: cmstngpath + 'admin_editcitation.php',
+        url: 'admin_editcitation.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -482,7 +482,7 @@ function updateCitation(form) {
     var citationID = form.citationID.value;
     var params = jQuery(form).serialize();
     jQuery.ajax({
-        url: cmstngpath + 'admin_updatecitation.php',
+        url: 'admin_updatecitation.php',
         data: params,
         type: 'POST',
         dataType: 'json',
@@ -506,7 +506,7 @@ function deleteCitation(citationID, personID, tree, eventID) {
         });
         var params = {citationID: citationID, personID: personID, tree: tree, eventID: eventID};
         jQuery.ajax({
-            url: cmstngpath + 'admin_deletecitation.php',
+            url: 'admin_deletecitation.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -591,7 +591,7 @@ function deleteAssociation(assocID, personID, tree) {
         });
         var params = {assocID: assocID, personID: personID, tree: tree};
         jQuery.ajax({
-            url: cmstngpath + 'admin_deleteassoc.php',
+            url: 'admin_deleteassoc.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -609,7 +609,7 @@ function deleteAssociation(assocID, personID, tree) {
 function updateMore(form) {
     var params = jQuery(form).serialize();
     jQuery.ajax({
-        url: cmstngpath + 'admin_updatemore.php',
+        url: 'admin_updatemore.php',
         data: params,
         dataType: 'html',
         type: 'POST',
@@ -731,7 +731,7 @@ function findItem(type, field, titlediv, findtree, findbranch, media) {
             break;
     }
     branchstr = findbranch ? '&branch=' + findbranch : '';
-    seclitbox = new LITBox(cmstngpath + newpage + '?tree=' + findtree + branchstr + mediastr, {
+    seclitbox = new LITBox(newpage + '?tree=' + findtree + branchstr + mediastr, {
         width: 645, height: 580
     });
     initFilter(null, seclitbox, field, titlediv);
@@ -864,7 +864,7 @@ function applyFilter(options) {
     lastFilter = options.filter;
 
     jQuery.ajax({
-        url: cmstngpath + 'finditems.php',
+        url: 'finditems.php',
         data: options,
         dataType: 'html',
         type: 'get',

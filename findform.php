@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "photos";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>

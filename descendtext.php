@@ -26,7 +26,7 @@ if ($pedigree['stdesc']) {
 }
 
 function getIndividual($key, $sex, $level, $trail, $dab) {
-    global $tree, $generations, $text, $cms, $getperson_url, $righttree;
+    global $tree, $generations, $text, $getperson_url, $righttree;
     global $desctracker_url, $divctr, $display, $excolimg, $descendtext_url, $imgtitle;
 
     $rval = "";
@@ -81,7 +81,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
             if ($numkids) {
                 $divname = "fc$divctr";
                 $divctr++;
-                $rval .= str_repeat("  ", ($level - 1) * 8 - 4) . "<li><img src='{$cms['tngpath']}" . "img/$excolimg.gif' width='9' height='9' hspace='0' vspace='0' border='0' title='$imgtitle' id='plusminus$divname' onclick=\"return toggleDescSection('$divname');\" class=\"fakelink\" alt=\"\"> $spousestr";
+                $rval .= str_repeat("  ", ($level - 1) * 8 - 4) . "<li><img src='img/$excolimg.gif' width='9' height='9' hspace='0' vspace='0' border='0' title='$imgtitle' id='plusminus$divname' onclick=\"return toggleDescSection('$divname');\" class=\"fakelink\" alt=\"\"> $spousestr";
                 $rval .= str_repeat("  ", ($level - 1) * 8 - 2) . "<ul id=\"$divname\" class='normal' style=\"display:$display;\">\n";
 
                 while ($crow = tng_fetch_assoc($result2)) {
@@ -93,7 +93,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                     $cname = getName($crow);
                     $vitalinfo = getVitalDates($crow);
                     $newdab = $dab . "." . $childcounter;
-                    $rval .= str_repeat("  ", ($level - 1) * 8) . "<li>$level &nbsp;<a href=\"$getperson_url" . "personID={$crow['personID']}&amp;tree=$tree\">$cname</a> <sup>[$newdab]</sup> &nbsp; <a href=\"$desctracker_url" . "trail=$newtrail&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitalinfo\n";
+                    $rval .= str_repeat("  ", ($level - 1) * 8) . "<li>$level &nbsp;<a href=\"$getperson_url" . "personID={$crow['personID']}&amp;tree=$tree\">$cname</a> <sup>[$newdab]</sup> &nbsp; <a href=\"$desctracker_url" . "trail=$newtrail&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitalinfo\n";
                     if ($level < $generations) {
                         $ind = getIndividual($crow['personID'], $crow['sex'], $level + 1, $newtrail, $newdab);
                         if ($ind) {
@@ -220,9 +220,9 @@ tng_header($text['descendfor'] . " $namestr", $flags);
         }
 
         plus = new Image;
-        plus.src = "<?php echo $cms['tngpath'] ?>img/tng_plus.gif";
+        plus.src = "img/tng_plus.gif";
         minus = new Image;
-        minus.src = "<?php echo $cms['tngpath'] ?>img/tng_minus.gif";
+        minus.src = "img/tng_minus.gif";
 
         function swap(x, y) {
             jQuery('#' + x).attr('title', y == "minus" ? collapsemsg : expandmsg);
@@ -275,10 +275,12 @@ echo "</form>\n";
 ?>
     <div class="normal">
         <p>
-            (<?php echo "<img src=\"{$cms['tngpath']}img/dchart.gif\" width=\"10\" height=\"9\" alt=\"\"> = {$text['graphdesc']}, <img src=\"{$cms['tngpath']}img/tng_plus.gif\" width=\"9\" height=\"9\" alt=\"\"> = {$text['expand']}, <img src=\"{$cms['tngpath']}img/tng_minus.gif\" width=\"9\" height=\"9\" alt=\"\"> = {$text['collapse']}"; ?>
+            (<?php echo "<img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"\"> = {$text['graphdesc']}, <img src=\"img/tng_plus.gif\" width=\"9\" height=\"9\" alt=\"\"> = {$text['expand']}, <img src=\"img/tng_minus.gif\" width=\"9\" height=\"9\" alt=\"\"> = {$text['collapse']}"; ?>
             )</p>
 
-        <p><a href="#" onclick="return toggleAll('');"><?php echo $text['expandall']; ?></a> | <a href="#" onclick="return toggleAll('none');"><?php echo $text['collapseall']; ?></a></p>
+        <p><a href="#" onclick="return toggleAll('');"><?php echo $text['expandall']; ?></a> | <a href="#"
+                                                                                                  onclick="return toggleAll('none');"><?php echo $text['collapseall']; ?></a>
+        </p>
 
         <div id="descendantchart" align="left">
             <?php
@@ -299,7 +301,5 @@ echo "</form>\n";
         </div>
         <br>
     </div>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/rpt_utils.js"></script>
-<?php
-tng_footer("");
-?>
+    <script type="text/javascript" src="js/rpt_utils.js"></script>
+<?php tng_footer(""); ?>

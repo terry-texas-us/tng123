@@ -1,5 +1,5 @@
 <?php
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 
 $dadlabel = getTemplateMessage('t14_dadside');
 $momlabel = getTemplateMessage('t14_momside');
@@ -19,18 +19,18 @@ $momlabel = getTemplateMessage('t14_momside');
                         if ($dadlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t14_dadperson']; ?>&amp;tree=<?php echo $tmp['t14_dadtree']; ?>"><span
-                                            class="l"></span><span class="r"></span><span
-                                            class="t"><?php echo $dadlabel; ?></span></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t14_dadperson']; ?>&amp;tree=<?php echo $tmp['t14_dadtree']; ?>"><span
+                                        class="l"></span><span class="r"></span><span
+                                        class="t"><?php echo $dadlabel; ?></span></a>
                             </li>
                             <?php
                         }
                         if ($momlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t14_momperson']; ?>&amp;tree=<?php echo $tmp['t14_momtree']; ?>"><span
-                                            class="l"></span><span class="r"></span><span
-                                            class="t"><?php echo $momlabel; ?></span></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t14_momperson']; ?>&amp;tree=<?php echo $tmp['t14_momtree']; ?>"><span
+                                        class="l"></span><span class="r"></span><span
+                                        class="t"><?php echo $momlabel; ?></span></a>
                             </li>
                             <?php
                         }
@@ -53,11 +53,11 @@ $momlabel = getTemplateMessage('t14_momside');
                         <div class="art-post">
                             <div class="art-post-body">
                                 <img alt="" class="rounded4 vignette" height="100"
-                                     src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t14_headimg3']; ?>">
+                                     src="<?php echo $templatepath . $tmp['t14_headimg3']; ?>">
                                 <img alt="" class="rounded4 vignette" height="100"
-                                     src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t14_headimg2']; ?>">
+                                     src="<?php echo $templatepath . $tmp['t14_headimg2']; ?>">
                                 <img alt="" class="rounded4 vignette" height="100"
-                                     src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t14_headimg']; ?>">
+                                     src="<?php echo $templatepath . $tmp['t14_headimg']; ?>">
                                 <h1 class="site-head"><a
-                                            href="<?php echo $cms['tngpath']; ?>index.php"><?php echo getTemplateMessage('t14_maintitle'); ?></a></h1>
+                                        href="index.php"><?php echo getTemplateMessage('t14_maintitle'); ?></a></h1>
                                 <h3 class="subheader"><?php echo getTemplateMessage('t14_headsubtitle'); ?></h3>

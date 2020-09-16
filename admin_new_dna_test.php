@@ -56,11 +56,11 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
                                     <option value="Y-DNA"><?php echo $admtext['ydna_test']; ?></option>
                                     <option value="mtDNA"><?php echo $admtext['mtdna_test']; ?></option>
                                     <option value="X-DNA"><?php echo $admtext['xdna_test']; ?></option>
-                                </select>&nbsp;<img src=<?php echo "{$cms['tngpath']}img/spinner.gif"; ?> style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
+                                </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
                             </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['test_number']; ?>:</td>
+                  </tr>
+                    <tr>
+                        <td><?php echo $admtext['test_number']; ?>:</td>
                             <td><input type="text" name="test_number" class="medfield"></td>
                         </tr>
                         <tr>

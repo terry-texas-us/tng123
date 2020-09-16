@@ -52,18 +52,18 @@ function generateYears($ind) {
 }
 
 function getPdfSmallPhoto($persfamID, $rights, $gender = "") {
-  global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
-  global $photosext, $tree, $medialinks_table, $media_table, $cms, $tngconfig;
+    global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
+    global $photosext, $tree, $medialinks_table, $media_table, $tngconfig;
 
-  $query = "SELECT $media_table.mediaID, medialinkID, alwayson, mediatypeID, usecollfolder, thumbpath, usecollfolder FROM ($media_table, $medialinks_table)
+    $query = "SELECT $media_table.mediaID, medialinkID, alwayson, mediatypeID, usecollfolder, thumbpath, usecollfolder FROM ($media_table, $medialinks_table)
 		WHERE personID = \"$persfamID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
 
-  if ($row['thumbpath']) {
-    if ($row['alwayson'] || $rights || checkLivingLinks($row['mediaID'])) {
-      $mediatypeID = $row['mediatypeID'];
-      $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
+    if ($row['thumbpath']) {
+        if ($row['alwayson'] || $rights || checkLivingLinks($row['mediaID'])) {
+            $mediatypeID = $row['mediatypeID'];
+            $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
       $photocheck = "$usefolder/" . $row['thumbpath'];
       $photoref = "$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath']));
     }
@@ -81,7 +81,7 @@ function getPdfSmallPhoto($persfamID, $rights, $gender = "") {
       } elseif ($gender == "F") {
         $photocheck = "img/female.jpg";
       }
-      $photoref = $cms['tngpath'] . $photocheck;
+      $photoref = $photocheck;
     }
   }
   tng_free_result($result);

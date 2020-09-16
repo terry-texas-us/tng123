@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "checkID";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $query = "SELECT userId FROM $users_table WHERE LOWER(email) = LOWER(\"$checkemail\")";
 $result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");

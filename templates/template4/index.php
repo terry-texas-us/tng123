@@ -112,7 +112,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                     //You can replace the t4_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                     if ($sitever != "mobile") {
                         ?>
-                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto">
+                        <img src="<?php echo $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto">
                         <?php
                     }
                     //end HEADER IMAGE
@@ -133,7 +133,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                         <?php
                     } else {
                         ?>
-                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_titleimg']; ?>" alt="" class="banner" width="468"
+                        <img src="<?php echo $templatepath; ?><?php echo $tmp['t4_titleimg']; ?>" alt="" class="banner" width="468"
                              height="100">
                         <?php
                     }
@@ -146,7 +146,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             //Actual file name has been replaced with t4_mainimage variable, configurable from Template Settings. Default name of actual image is "bigphoto.jpg"
                             //You can replace the t4_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                             ?>
-                            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_mainimage']; ?>" alt="" class="bigphoto"><br>
+                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t4_mainimage']; ?>" alt="" class="bigphoto"><br>
                             <?php
                             //end MAIN IMAGE
                             ?>
@@ -202,34 +202,34 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                             ?>
                                             <p>
                                                 <a href="<?php echo $tmp['t4_featurelink1']; ?>"><img
-                                                            src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_featurethumb1']; ?>"
-                                                            alt="feature 1" class="featureimg"></a>
+                                                        src="<?php echo $templatepath; ?><?php echo $tmp['t4_featurethumb1']; ?>"
+                                                        alt="feature 1" class="featureimg"></a>
                                                 <a href="<?php echo $tmp['t4_featurelink1']; ?>"><span
-                                                            class="emphasis"><?php echo getTemplateMessage('t4_featuretitle1'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara1'); ?>
+                                                        class="emphasis"><?php echo getTemplateMessage('t4_featuretitle1'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara1'); ?>
                                                 <br style="clear: left;">
                                             </p>
                                             <p>
                                                 <a href="<?php echo $tmp['t4_featurelink2']; ?>"><img
-                                                            src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_featurethumb2']; ?>"
-                                                            alt="feature 2" class="featureimg"></a>
+                                                        src="<?php echo $templatepath; ?><?php echo $tmp['t4_featurethumb2']; ?>"
+                                                        alt="feature 2" class="featureimg"></a>
                                                 <a href="<?php echo $tmp['t4_featurelink2']; ?>"><span
-                                                            class="emphasis"><?php echo getTemplateMessage('t4_featuretitle2'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara2'); ?>
+                                                        class="emphasis"><?php echo getTemplateMessage('t4_featuretitle2'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara2'); ?>
                                                 <br style="clear: left;">
                                             </p>
                                             <p>
                                                 <a href="<?php echo $tmp['t4_featurelink3']; ?>"><img
-                                                            src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_featurethumb3']; ?>"
-                                                            alt="feature 3" class="featureimg"></a>
+                                                        src="<?php echo $templatepath; ?><?php echo $tmp['t4_featurethumb3']; ?>"
+                                                        alt="feature 3" class="featureimg"></a>
                                                 <a href="<?php echo $tmp['t4_featurelink3']; ?>"><span
-                                                            class="emphasis"><?php echo getTemplateMessage('t4_featuretitle3'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara3'); ?>
+                                                        class="emphasis"><?php echo getTemplateMessage('t4_featuretitle3'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara3'); ?>
                                                 <br style="clear: left;">
                                             </p>
                                             <p>
                                                 <a href="<?php echo $tmp['t4_featurelink4']; ?>"><img
-                                                            src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t4_featurethumb4']; ?>"
-                                                            alt="feature 4" class="featureimg"></a>
+                                                        src="<?php echo $templatepath; ?><?php echo $tmp['t4_featurethumb4']; ?>"
+                                                        alt="feature 4" class="featureimg"></a>
                                                 <a href="<?php echo $tmp['t4_featurelink4']; ?>"><span
-                                                            class="emphasis"><?php echo getTemplateMessage('t4_featuretitle4'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara4'); ?>
+                                                        class="emphasis"><?php echo getTemplateMessage('t4_featuretitle4'); ?></span></a> <?php echo getTemplateMessage('t4_featurepara4'); ?>
                                             </p>
                                             <?php
                                             //end FEATURES 1-4
@@ -249,7 +249,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                 <tr>
                                     <td valign="top">
                                         <div class="normal">
-                                            <p><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image"
+                                            <p><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
                                                     class="emailimg"><?php echo $text['contactus_long']; ?></p><br>
                                         </div>
                                     </td>

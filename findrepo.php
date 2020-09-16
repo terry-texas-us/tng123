@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "sources";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 if ($session_charset != "UTF-8") {
   $mytitle = tng_utf8_decode($mytitle);

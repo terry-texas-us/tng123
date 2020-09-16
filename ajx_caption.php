@@ -1,16 +1,16 @@
 <?php
 include "begin.php";
 $tngconfig['maint'] = "";
-include $cms['tngpath'] . "genlib.php";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "genlib.php";
+include "getlang.php";
+include "$mylanguage/text.php";
 tng_db_connect($database_host, $database_name, $database_username, $database_password) or exit;
-include $cms['tngpath'] . "log.php";
+include "log.php";
 
 //if medialinkID, get caption from there
 //else get caption from mediaID
 if ($medialinkID) {
-  $query = "SELECT description, notes, altdescription, altnotes
+    $query = "SELECT description, notes, altdescription, altnotes
 		FROM ($media_table, $medialinks_table)
 		WHERE medialinkID = \"$medialinkID\" and $media_table.mediaID = $medialinks_table.mediaID";
 } else {

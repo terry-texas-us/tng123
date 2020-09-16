@@ -1,17 +1,17 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $textpart = "getperson";
-include $cms['tngpath'] . "$languages_path$language/text.php";
+include "$languages_path$language/text.php";
 
-include_once $cms['tngpath'] . "tngdblib.php";
-include $cms['tngpath'] . "checklogin.php";
-include $cms['tngpath'] . "tngmaillib.php";
+include_once "tngdblib.php";
+include "checklogin.php";
+include "tngmaillib.php";
 
 if ($session_charset != "UTF-8") {
-  $newplace = tng_utf8_decode($newplace);
-  $newinfo = tng_utf8_decode($newinfo);
-  $usernote = tng_utf8_decode($usernote);
+    $newplace = tng_utf8_decode($newplace);
+    $newinfo = tng_utf8_decode($newinfo);
+    $usernote = tng_utf8_decode($usernote);
 }
 $postdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $query = "INSERT INTO $temp_events_table (type,gedcom,personID,familyID,eventID,eventdate,eventplace,info,note,user,postdate) VALUES (\"$type\",\"$tree\",\"$personID\",'$familyID',\"$eventID\",\"$newdate\",\"$newplace\",\"$newinfo\",\"$usernote\",\"$currentuser\",\"$postdate\")";

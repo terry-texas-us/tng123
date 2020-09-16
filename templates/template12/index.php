@@ -1,5 +1,5 @@
 <?php
-include $cms['tngpath'] . "surname_cloud.class.php";
+include "surname_cloud.class.php";
 $flags['noicons'] = true;
 $flags['noheader'] = false;
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
@@ -35,7 +35,7 @@ if ($sitever != "mobile") {
                                         </h2>
                                         <p style="text-align: center;">
                                             <a href="<?php echo $tmp['t12_featurelink1']; ?>">
-                                                <img width="300" alt="" src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t12_photol']; ?>"></a>
+                                                <img width="300" alt="" src="<?php echo $templatepath . $tmp['t12_photol']; ?>"></a>
                                         </p>
                                         <p><?php echo getTemplateMessage('t12_photocaptionl'); ?></p>
                                     </div>
@@ -51,7 +51,7 @@ if ($sitever != "mobile") {
                                         </h2>
                                         <p style="text-align: center;">
                                             <a href="<?php echo $tmp['t12_featurelink2']; ?>">
-                                                <img width="300" alt="" src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t12_photor']; ?>"></a>
+                                                <img width="300" alt="" src="<?php echo $templatepath . $tmp['t12_photor']; ?>"></a>
                                         </p>
                                         <p><?php echo getTemplateMessage('t12_photocaptionr'); ?></p>
                                         <h2 style="text-align: center;"></h2>

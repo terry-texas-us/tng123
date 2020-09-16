@@ -9,10 +9,6 @@ include "checklogin.php";
 //if no rights, just throw up a message. don't redirect
 //remove javascript. put that somewhere global
 
-if ($p) {
-    $cms['tngpath'] = urldecode($p);
-}
-
 if (!$currentuser) {
   header("Location: login.php");
   exit;
@@ -38,9 +34,9 @@ $allow_user_change = true;
 ?>
 
 <div class="databack ajaxwindow" id="editprof">
-  <form action="<?php echo $cms['tngpath']; ?>ajx_updateuser.php" method="post" name="editprofile"
-        onsubmit='if(!this.username.value.length) {
-            alert("<?php echo htmlentities($text['enterusername'], ENT_QUOTES); ?>");
+    <form action="ajx_updateuser.php" method="post" name="editprofile"
+          onsubmit='if(!this.username.value.length) {
+              alert("<?php echo htmlentities($text['enterusername'], ENT_QUOTES); ?>");
             this.username.focus();
             return false;
             }

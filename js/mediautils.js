@@ -454,7 +454,7 @@ function updateMediaOrder(event, ui) {
 
     var params = {sequence: linklist.join(','), album: album, action: orderaction};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html'
     });
@@ -519,7 +519,7 @@ function handleMediaEnter(elname, pos, e) {
 function removeFromSort(type, link) {
     var params = {type: type, sortlink: link, action: 'remsort'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params,
         dataType: 'html',
         success: function (req) {
@@ -569,7 +569,7 @@ function toggleShow(checkbox) {
     var medialinkID = checkbox.name.substr(4);
     var params = {medialinkID: medialinkID, toggle: toggle, action: 'show'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params
     });
 }
@@ -579,7 +579,7 @@ function toggleDefault(checkbox, tree, entityID) {
     var medialinkID = checkbox.name.substr(4);
     var params = {medialinkID: medialinkID, tree: tree, entity: entityID, toggle: toggle, action: 'setdef3'};
     jQuery.ajax({
-        url: cmstngpath + 'ajx_updateorder.php',
+        url: 'ajx_updateorder.php',
         data: params
     });
 }

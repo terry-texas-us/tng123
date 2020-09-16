@@ -14,10 +14,10 @@ function Slideshow(options) {
     sscontrols.className = "smaller";
     var dims = 'width="9" height="9" hspace="0" vspace="0" border="0"';
     var controls;
-    controls = slidesecsmsg + '\n<a href="#" title="' + minussecsmsg + '" onclick="return changeSlideTime(-500)"><img src="' + cmstngpath + 'img/tng_minus.gif" ' + dims + ' alt="' + minussecsmsg + '" name="minus"></a>\n';
-  controls += '<span id="sssecs">' + slidetime + '</span>\n';
-  controls += '<a href="#" title="' + plussecsmsg + '" onclick="return changeSlideTime(500)"><img src="' + cmstngpath + 'img/tng_plus.gif" ' + dims + ' alt="' + plussecsmsg + '" name="plus"></a>\n';
-  sscontrols.innerHTML = controls;
+    controls = slidesecsmsg + '\n<a href="#" title="' + minussecsmsg + '" onclick="return changeSlideTime(-500)"><img src="' + 'img/tng_minus.gif" ' + dims + ' alt="' + minussecsmsg + '" name="minus"></a>\n';
+    controls += '<span id="sssecs">' + slidetime + '</span>\n';
+    controls += '<a href="#" title="' + plussecsmsg + '" onclick="return changeSlideTime(500)"><img src="' + 'img/tng_plus.gif" ' + dims + ' alt="' + plussecsmsg + '" name="plus"></a>\n';
+    sscontrols.innerHTML = controls;
     jQuery('#LB_titletext').append(sscontrols);
 
     this.slides = [];

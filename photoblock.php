@@ -1,10 +1,10 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "genlib.php";
+include "getlang.php";
+include "$mylanguage/text.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 ?>
 
 <html>

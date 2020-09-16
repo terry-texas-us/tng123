@@ -44,7 +44,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var resheremsg = '<span class="normal">' + "<?php echo _todo_('reshere'); ?>" + '</span>';
     var tng_thumbmaxw = <?php echo($thumbmaxw ? $thumbmaxw : "80"); ?>;
     var tng_thumbmaxh = <?php echo($thumbmaxh ? $thumbmaxh : "80"); ?>;
-    var links_url = cmstngpath + "ajx_medialinks.php";
+    var links_url = "ajx_medialinks.php";
     var findform;
     <?php
     echo "const altdescmsg = \"{$admtext['alttitle']}\";\n";
@@ -114,27 +114,27 @@ tng_adminheader($admtext['sortmedia'], $flags);
         if (jQuery('#newlink1').val()) {
           var medialist = "";
 
-          jQuery('.mediacheck:checked').each(function () {
-            medialist += (medialist ? "," + this.id : this.id);
-          });
-          if (medialist) {
-            var linkermsg = jQuery('#linkermsg');
-            linkermsg.html('&nbsp;<img src="img/spinner.gif">');
+            jQuery('.mediacheck:checked').each(function () {
+                medialist += (medialist ? "," + this.id : this.id);
+            });
+            if (medialist) {
+                var linkermsg = jQuery('#linkermsg');
+                linkermsg.html('&nbsp;<img src="img/spinner.gif">');
 
-            var params = jQuery('#linkerform').serialize();
-            params += "&medialist=" + medialist + "&action=masslink";
-            jQuery.ajax({
-              url: cmstngpath + 'ajx_updateorder.php',
-              data: params,
-              dataType: 'html',
-              success: function (req) {
-                linkermsg.html('<span class="green">' + req + '</span>');
-                linkermsg.effect("highlight", {}, 2500);
-                        },
-                        error: function (req) {
-                            linkermsg.html("An error has occurred. Please try again.");
-                        }
-                    });
+                var params = jQuery('#linkerform').serialize();
+                params += "&medialist=" + medialist + "&action=masslink";
+                jQuery.ajax({
+                    url: 'ajx_updateorder.php',
+                    data: params,
+                    dataType: 'html',
+                    success: function (req) {
+                        linkermsg.html('<span class="green">' + req + '</span>');
+                        linkermsg.effect("highlight", {}, 2500);
+                    },
+                    error: function (req) {
+                        linkermsg.html("An error has occurred. Please try again.");
+                    }
+                });
                 }
             }
             return false;

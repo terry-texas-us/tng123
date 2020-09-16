@@ -2,7 +2,7 @@
 $textpart = "reports";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 if (!isset($csv)) {
     $csv = false;
 }
@@ -666,7 +666,7 @@ if (!$result) {
                                     } else {
                                         $data = nl2br($row[$thisfield]);
                                         if (strpos($thisfield, "place") && $data && !$csv) {
-                                            $data .= " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($data) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
+                                            $data .= " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($data) . "\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
                                         }
                                     }
                                 } else {

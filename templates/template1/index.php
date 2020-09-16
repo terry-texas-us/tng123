@@ -21,7 +21,7 @@ $title = getTemplateMessage('t1_maintitle');
                     //Actual file name has been replaced with t1_mainimage variable, configurable from Template Settings. Default name of actual image is "home-image.jpg"
                     //You can replace the t1_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
                     ?>
-                    <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="" align="left" id="mainphoto">
+                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="" align="left" id="mainphoto">
                     <?php
                     //end MAIN IMAGE
                     ?>
@@ -37,7 +37,7 @@ $title = getTemplateMessage('t1_maintitle');
                         <?php
                     } else {
                         ?>
-                        <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="" hspace="10">
+                        <img src="<?php echo $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="" hspace="10">
                         <?php
                     }
                     //end MAIN IMAGE

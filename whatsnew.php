@@ -3,11 +3,7 @@
 $textpart = "whatsnew";
 include "tng_begin.php";
 
-if (!empty($cms['events'])) {
-    include 'cmsevents.php';
-    cms_whatsnew();
-}
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 require_once "./public/people.php";
 
@@ -69,7 +65,7 @@ if ($currentuser) {
 tng_free_result($result);
 ?>
 <?php if ($sitever != "mobile") { ?>
-    <script type="text/javascript" src="<?php echo $cms['tngpath']; ?>js/search.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript">
         // <![CDATA[
         const ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
@@ -125,7 +121,7 @@ if (!$change_limit) {
     $change_limit = 10;
 }
 //check for custom message
-$file = $rootpath . $cms['tngpath'] . "whatsnew.txt";
+$file = $rootpath . "whatsnew.txt";
 if (file_exists($file)) {
     $contents = file($file);
     foreach ($contents as $line) {
@@ -179,8 +175,8 @@ if (tng_num_rows($result)) {
         </thead>
 
         <?php
-        $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-        $chartlink = "<img src=\"{$cms['tngpath']}img/Chart.gif\" alt=\"\" $imageSize[3]>";
+        $imageSize = @GetImageSize("img/Chart.gif");
+        $chartlink = "<img src=\"img/Chart.gif\" alt=\"\" $imageSize[3]>";
         while ($row = tng_fetch_assoc($result)) {
             $rights = determineLivingPrivateRights($row);
             $row['allow_living'] = $rights['living'];
@@ -193,7 +189,7 @@ if (tng_num_rows($result)) {
                 if (!$tngconfig['places1tree']) {
                     $birthplacestr .= "tree={$row['gedcom']}&amp;";
                 }
-                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
+                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
             }
             echo "<tr>\n";
             echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";

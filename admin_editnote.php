@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "notes";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $query = "SELECT xnotes.note AS note, xnotes.ID AS xID, secret, notelinks.gedcom AS gedcom, persfamID, eventID ";
 $query .= "FROM $notelinks_table notelinks, $xnotes_table xnotes ";

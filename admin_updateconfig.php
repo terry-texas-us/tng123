@@ -280,12 +280,6 @@ fwrite($fp, "\$txt111 = \"" . stripslashes($txt111) . "\";\n");
 
 fwrite($fp, "\$tng_notinstalled = \"$tng_notinstalled\";\n");
 fwrite($fp, "\n");
-fwrite($fp, "if(!isset(\$cms['auto'])) {\n");
-fwrite($fp, "if (!isset(\$cms['tngpath'])) {\n");
-fwrite($fp, "  \$cms['tngpath'] = \"$cmstngpath\";\n");
-fwrite($fp, "}\n");
-fwrite($fp, "}\n");
-fwrite($fp, "\n");
 fwrite($fp, "@include \$subroot . \"customconfig.php\";\n");
 
 flock($fp, LOCK_UN);

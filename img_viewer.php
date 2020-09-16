@@ -2,7 +2,7 @@
 $textpart = "imgviewer";
 include "tng_begin.php";
 
-include $cms['tngpath'] . "functions.php";
+include "functions.php";
 
 if ($medialinkID) {
     $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom AS gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
@@ -37,13 +37,13 @@ if (!tng_num_rows($result)) {
     tng_free_result($result);
     header("Location: thispagedoesnotexist.html");
 }
-include $cms['tngpath'] . "checklogin.php";
-include $cms['tngpath'] . "showmedialib.php";
+include "checklogin.php";
+include "showmedialib.php";
 
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $imgrow = $info['imgrow'];
 
-$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/img_viewer.css\" rel=\"stylesheet\" type=\"text/css\">\n<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/img_viewer.js\"></script>";
+$flags['scripting'] = "<link href=\"css/img_viewer.css\" rel=\"stylesheet\" type=\"text/css\">\n<script type=\"text/javascript\" src=\"js/img_viewer.js\"></script>";
 $flags['noheader'] = 1;
 $flags['noicons'] = 1;
 $flags['nobody'] = 1;
@@ -56,7 +56,7 @@ $treestr = $tngconfig['mediatrees'] && $imgrow['gedcom'] ? $imgrow['gedcom'] . "
 if ($imgrow['abspath'] || substr($imgrow['path'], 0, 4) == "http" || substr($imgrow['path'], 0, 1) == "/") {
     $mediasrc = $imgrow['path'];
 } else {
-    $mediasrc = $cms['tngpath'] . "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path']));
+    $mediasrc = "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path']));
 }
 
 // get image info

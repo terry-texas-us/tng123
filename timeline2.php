@@ -356,7 +356,7 @@ $ratio = $totalspan ? $chartwidth / $totalspan : 0;
 $spanheight = 30 + count($keeparray) * 29;
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/selectutils.js\"></script>\n";
+$flags['scripting'] = "<script type=\"text/javascript\" src=\"js/selectutils.js\"></script>\n";
 $personID = $primaryID;
 
 $mpct = $pedigree['mpct'] ? $pedigree['mpct'] : 0;
@@ -389,14 +389,14 @@ if ($pedigree['simile']) {
 		var band4_pct = \"" . $band4_pct . "%\";
 		var band4_interval = \"" . $band4_interval . "\";
 		var band4_multiple = " . $band4_multiple . ";
-		var Timeline_ajax_url = \"" . $cms['tngpath'] . "timeline_2.3.1/timeline_ajax/simile-ajax-api.js\";
-	    var Timeline_urlPrefix = \"" . $cms['tngpath'] . "timeline_2.3.1/timeline_js/\";
+		var Timeline_ajax_url = \"" . "timeline_2.3.1/timeline_ajax/simile-ajax-api.js\";
+	    var Timeline_urlPrefix = \"" . "timeline_2.3.1/timeline_js/\";
 		var Timeline_parameters = 'bundle=true';
 	</script>\n";
-  $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . $cms['tngpath'] . "js/timeline.js\"></script>\n";
-  $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . $cms['tngpath'] . "timeline_2.3.1/timeline_js/timeline-api.js\"></script>\n";
+    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . "js/timeline.js\"></script>\n";
+    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . "timeline_2.3.1/timeline_js/timeline-api.js\"></script>\n";
 }
-$flags['scripting'] .= "<link href=\"{$cms['tngpath']}css/timeline.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] .= "<link href=\"css/timeline.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 tng_header($text['timeline'] . ": $namestr", $flags);
 
 $photostr = showSmallPhoto($primaryID, $namestr, $rights['both'], 0, false, $row['sex']);

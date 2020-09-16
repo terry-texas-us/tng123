@@ -72,23 +72,23 @@ net.ContentLoader.prototype.defaultError = function () {
 
 function showPreview(mediaID, medialinkID, path, entitystr, sitever) {
     if (jQuery('#prev' + entitystr).html() == "") {
-      var caption_div = sitever != "mobile" ? '<div class=\"prev-caption\" id=\"capt' + entitystr + '\"></div>' : '<div class=\"prev-close\"><img id=\"close-' + entitystr + '\" src=' + cmstngpath + '"img/tng_close.gif"></div>';
-      jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '"><img src="' + cmstngpath + 'img/spinner.gif" style="border:0;"> ' + loadingmsg + '</div><a href="' + cmstngpath + 'showmedia.php?mediaID=' + mediaID + '&medialinkID=' + medialinkID + '"><img src="' + smallimage_url + 'mediaID=' + mediaID + '&path=' + encodeURIComponent(path) + '" style="display:none;" onload="jQuery(\'#ld\'+\'' + entitystr + '\').hide(); this.style.display=\'\';"></a>' + caption_div);
+        var caption_div = sitever != "mobile" ? '<div class=\"prev-caption\" id=\"capt' + entitystr + '\"></div>' : '<div class=\"prev-close\"><img id=\"close-' + entitystr + '\" src="img/tng_close.gif"></div>';
+        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '"><img src="img/spinner.gif" style="border:0;"> ' + loadingmsg + '</div><a href="showmedia.php?mediaID=' + mediaID + '&medialinkID=' + medialinkID + '"><img src="' + smallimage_url + 'mediaID=' + mediaID + '&path=' + encodeURIComponent(path) + '" style="display:none;" onload="jQuery(\'#ld\'+\'' + entitystr + '\').hide(); this.style.display=\'\';"></a>' + caption_div);
         pageWidth = jQuery(window).width();
-      parent = jQuery('#prev' + entitystr).parent();
-      currX = parent.position().left;
-      if (sitever == "mobile")
-        jQuery('#prev' + entitystr).css('background-image', 'none')
-      else if (currX + 490 > pageWidth) {
-        width = parent.next().width() - 4;
-        jQuery('#prev' + entitystr).css('right', width + 'px');
-        jQuery('#prev' + entitystr).css('background-image', 'url(img/media-prevbg-rotated.png)')
-      }
+        parent = jQuery('#prev' + entitystr).parent();
+        currX = parent.position().left;
+        if (sitever == "mobile")
+            jQuery('#prev' + entitystr).css('background-image', 'none')
+        else if (currX + 490 > pageWidth) {
+            width = parent.next().width() - 4;
+            jQuery('#prev' + entitystr).css('right', width + 'px');
+            jQuery('#prev' + entitystr).css('background-image', 'url(img/media-prevbg-rotated.png)')
+        }
         if (sitever != "mobile" && (mediaID || medialinkID)) {
             //ajax call to get title & description
             var params = {mediaID: mediaID, medialinkID: medialinkID};
             jQuery.ajax({
-                url: cmstngpath + 'ajx_caption.php',
+                url: 'ajx_caption.php',
                 data: params,
                 dataType: 'html',
                 success: function (req) {
@@ -226,7 +226,7 @@ function toggleCollapsed(collapsing) {
         var targetId = $(item).attr('id');
         var affectedRows = jQuery('.' + targetId);
         if (!collapsing && $(item).attr('src').indexOf('desc') > 0) {
-            $(item).attr('src', cmstngpath + "img/tng_sort_asc.gif");
+            $(item).attr('src', "img/tng_sort_asc.gif");
             $(item).attr('title', collapse_msg);
             jQuery('.l' + targetId).attr('rowspan', affectedRows.length + 1);
             if (targetId.substring(0, 1) == "m") {
@@ -235,7 +235,7 @@ function toggleCollapsed(collapsing) {
             }
             affectedRows.show();
         } else if (collapsing && $(item).attr('src').indexOf('asc') > 0) {
-            $(item).attr('src', cmstngpath + "img/tng_sort_desc.gif");
+            $(item).attr('src', "img/tng_sort_desc.gif");
             $(item).attr('title', expand_msg);
             jQuery('.l' + targetId).removeAttr('rowspan');
             if (targetId.substring(0, 1) == "m") {
@@ -264,11 +264,11 @@ jQuery(document).ready(function () {
         var targetId = target.attr('id');
         var affectedRows = jQuery('.' + targetId);
         if (target.attr('src').indexOf('desc') > 0) {
-            target.attr('src', cmstngpath + "img/tng_sort_asc.gif");
+            target.attr('src', "img/tng_sort_asc.gif");
             target.attr('title', collapse_msg);
             jQuery('.l' + targetId).attr('rowspan', affectedRows.length + 1);
         } else {
-            target.attr('src', cmstngpath + "img/tng_sort_desc.gif");
+            target.attr('src', "img/tng_sort_desc.gif");
             target.attr('title', expand_msg);
             jQuery('.l' + targetId).removeAttr('rowspan');
         }

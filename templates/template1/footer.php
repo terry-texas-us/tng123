@@ -1,4 +1,4 @@
-<?php global $text, $currentuser, $mylanguage, $cms, $tmp, $tng_version, $flags; ?>
+<?php global $text, $currentuser, $mylanguage, $tmp, $tng_version, $flags; ?>
 
 <hr>
 <?php

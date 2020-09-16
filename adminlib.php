@@ -15,7 +15,7 @@ $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $htt
 $isConnected = isConnected();
 
 function tng_adminheader($title, $flags) {
-    global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $cms, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
+    global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
 
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n\n";
@@ -35,19 +35,19 @@ function tng_adminheader($title, $flags) {
     if (!$tng_version) {
         $tng_version = "12.0.1";
     }
-    echo "<link href=\"{$cms['tngpath']}css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-    echo "<link href=\"{$cms['tngpath']}css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     if (isset($flags['modmgr'])) {
-        echo "<link href=\"{$cms['tngpath']}css/modmanager.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"css/modmanager.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
     if ($sitever == "mobile") {
-        echo "<link href=\"{$cms['tngpath']}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
     if (isset($flags['tabs'])) {
-        echo "<link href=\"{$cms['tngpath']}{$templatepath}css/{$flags['tabs']}\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href=\"{$templatepath}css/{$flags['tabs']}\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
-    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-    echo "<link href=\"{$cms['tngpath']}{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href=\"{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever != "mobile" && $sitever != "tablet") {
         echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
     }
@@ -63,20 +63,19 @@ function tng_adminheader($title, $flags) {
     echo "document.form2.elements[i].checked = false;\n";
     echo "}\n}\n}\n";
     echo "var closeimg = \"img/tng_close.gif\";\n";
-    echo "var cmstngpath='';\n";
     echo "var loadingmsg = \"{$text['loading']}\";\n";
     echo "</script>\n";
     if ($isConnected) {
         echo "<script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>\n";
         echo "<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.min.js\" integrity=\"sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=\" crossorigin=\"anonymous\"></script>\n";
     } else {
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery || document.write(\"<script src='{$cms['tngpath']}js/jquery-3.3.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery.ui || document.write(\"<script src='{$cms['tngpath']}js/jquery-ui-1.12.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
+        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery || document.write(\"<script src='js/jquery-3.3.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
+        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery.ui || document.write(\"<script src='js/jquery-ui-1.12.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
     }
-    echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/jquery.ui.touch-punch.min.js\"></script>\n";
-    echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/net.js\"></script>\n";
+    echo "<script type=\"text/javascript\" src=\"js/jquery.ui.touch-punch.min.js\"></script>\n";
+    echo "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
 
-    echo "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/litbox.js\"></script>\n";
+    echo "<script type=\"text/javascript\" src=\"js/litbox.js\"></script>\n";
     initMediaTypes();
 }
 

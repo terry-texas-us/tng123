@@ -239,20 +239,21 @@ header("Content-type:text/html; charset=" . $session_charset);
           echo "<td colspan=\"2\">&nbsp;</td>";
           echo "</tr>\n";
       }
-      ?>
+    ?>
       <tr>
-        <td valign="top"><span class="normal"><?php echo $text['notes']; ?>: </span></td>
-        <td valign="top"><textarea cols="40" rows="3" name="usernote"></textarea></td>
+          <td valign="top"><span class="normal"><?php echo $text['notes']; ?>: </span></td>
+          <td valign="top"><textarea cols="40" rows="3" name="usernote"></textarea></td>
       </tr>
-    </table>
-  <br>
-  <input type="submit" value="<?php echo $text['savechanges']; ?>"> <span id="tspinner" style="display:none;"><img src="<?php echo $cms['tngpath']; ?>img/spinner.gif"></span>
+  </table>
+    <br>
+    <input type="submit" value="<?php echo $text['savechanges']; ?>">
+    <span id="tspinner" style="display:none;"><img src="img/spinner.gif"></span>
     </form>
 
 </div>
 
 <div class="databack" style="margin:10px;border:0;display:none;" id="finished">
     <p class="header"><?php echo $text['thanks']; ?></p>
-  <p class="normal"><?php echo $text['received']; ?><br><br>
-    <a href="#" onclick="tnglitbox.remove();"><?php echo $text['closewindow']; ?></a></p>
+    <p class="normal"><?php echo $text['received']; ?><br><br>
+        <a href="#" onclick="tnglitbox.remove();"><?php echo $text['closewindow']; ?></a></p>
 </div>

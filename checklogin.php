@@ -87,7 +87,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && (!$
             $passcookiename = "tngpass_$newroot";
             $passtype = "tngpasstype_$newroot";
             $adminloginstr = $admin_login ? "admin_login=1&continue=1&" : "";
-            header("Location: " . $cms['tngpath'] . "processlogin.php?{$adminloginstr}tngusername=" . $_COOKIE[$usercookiename] . "&tngpassword=" . $_COOKIE[$passcookiename] . "&encrypted=encrypted");
+            header("Location: " . "processlogin.php?{$adminloginstr}tngusername=" . $_COOKIE[$usercookiename] . "&tngpassword=" . $_COOKIE[$passcookiename] . "&encrypted=encrypted");
             exit;
         }
         if ($admin_login) {

@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "events";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 $query = "SELECT eventID, age, agency, cause, events.addressID, address1, address2, city, state, zip, country, info, phone, email, www ";
 $query .= "FROM $events_table events ";

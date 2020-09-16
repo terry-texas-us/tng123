@@ -14,17 +14,17 @@ $banreplace = array("[", "]", "", "and", " from%A0", " to%A0", " van%A0", " naar
 //may not need charset in v3
 
 function tng_map_pins() {
-  global $locations2map, $pinplacelevel0, $cms;
-  global $map, $defermap, $session_charset;
+    global $locations2map, $pinplacelevel0;
+    global $map, $defermap, $session_charset;
 
-  $minLat = 500;
-  $maxLat = -500;
-  $minLong = 500;
-  $maxLong = -500;
+    $minLat = 500;
+    $maxLat = -500;
+    $minLong = 500;
+    $maxLong = -500;
 
-  reset($locations2map);
-  foreach ($locations2map as $key => $val) {
-    $lat = $val['lat'];
+    reset($locations2map);
+    foreach ($locations2map as $key => $val) {
+        $lat = $val['lat'];
     $long = $val['long'];
     $zoom = $val['zoom'] ? $val['zoom'] : 10;
     $pinplacelevel = $val['pinplacelevel'];
@@ -93,9 +93,9 @@ function tng_map_pins() {
               $markerNum++;
               echo "   contentString = '$htmlcontent';\n";
               echo "   var point$markerNum = new google.maps.LatLng($lat,$long);\n";
-              echo "   var infowindow$markerNum = new google.maps.InfoWindow({content: contentString});\n";
-              echo "   icon = \"{$cms['tngpath']}google_marker.php?image={$pinplacelevel}.png&text={$markerNum}\";\n";
-              echo "   var marker$markerNum = new google.maps.Marker({position: point$markerNum,map: map,icon:icon,title:\"" . @htmlspecialchars($uniqueplace, ENT_QUOTES, $session_charset) . "\"});\n";
+                echo "   var infowindow$markerNum = new google.maps.InfoWindow({content: contentString});\n";
+                echo "   icon = \"google_marker.php?image={$pinplacelevel}.png&text={$markerNum}\";\n";
+                echo "   var marker$markerNum = new google.maps.Marker({position: point$markerNum,map: map,icon:icon,title:\"" . @htmlspecialchars($uniqueplace, ENT_QUOTES, $session_charset) . "\"});\n";
               echo "   google.maps.event.addListener(marker$markerNum, 'click', function() {infowindow$markerNum.open(map,marker$markerNum);});\n";
               echo "   bounds.extend(point$markerNum);\n";
             }

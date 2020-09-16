@@ -3,7 +3,7 @@ $textpart = "relate";
 include "tng_begin.php";
 
 include $subroot . "pedconfig.php";
-include $cms['tngpath'] . "pedbox.php";
+include "pedbox.php";
 
 $relate_url = getURL("relateform", 1);
 $relationship_url = getURL("relationship", 1);
@@ -282,9 +282,9 @@ $pedigree['cellpad'] = 5;
 if ($pedigree['inclphotos'] && (trim($photopath) == "" || trim($photosext) == "")) {
     $pedigree['inclphotos'] = false;
 }
-if (file_exists($cms['tngpath'] . "img/Chart.gif")) {
-    $imageSize = @GetImageSize($cms['tngpath'] . "img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"{$cms['tngpath']}img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
+if (file_exists("img/Chart.gif")) {
+    $imageSize = @GetImageSize("img/Chart.gif");
+    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
 } else {
     $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
 }

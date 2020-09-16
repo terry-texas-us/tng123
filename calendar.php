@@ -27,7 +27,7 @@ function substr_unicode($str, $start, $len = null) {
           preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY), $start, $len));
 }
 
-$flags['scripting'] = "<link href=\"{$cms['tngpath']}css/calendar.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] = "<link href=\"css/calendar.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 $flags['scripting'] .= "
 <script>\n
 function redisplay(key) {\n
@@ -42,7 +42,7 @@ tng_header($text['calendar'], $flags);
     <br style="clear: left;">
 
 <?php
-include_once $cms['tngpath'] . "calsettings.php";
+include_once "calsettings.php";
 
 // Make an array of all the event types
 $calAllEvents = array_merge($calIndEvent, $calFamEvent, $calEvent);
@@ -153,8 +153,8 @@ if (!empty($where)) {
           if (isset($row[$field])) {
             $date = substr($row[$field], 5);
             $yearval = substr($row[$key . 'date'], -4);
-            $year = is_numeric($yearval) ? " ($yearval)" : "";
-            $html = '<img src="' . $cms['tngpath'] . 'img/' . $val . '" class="calIcon" alt=""><a href="' . $getperson_url . 'personID=' . $row['personID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
+              $year = is_numeric($yearval) ? " ($yearval)" : "";
+              $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="' . $getperson_url . 'personID=' . $row['personID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
 
             if (strpos($date, "-00")) {
               $html = '<span class="nw">' . $html . '</span>';
@@ -235,8 +235,8 @@ if (!empty($where)) {
           if (isset($row[$field])) {
             $date = substr($row[$field], 5);
             $yearval = substr($row[$key . 'date'], -4);
-            $year = is_numeric($yearval) ? " ($yearval)" : "";
-            $html = '<img src="' . $cms['tngpath'] . 'img/' . $val . '" class="calIcon" alt=""><a href="' . $familygroup_url . 'familyID=' . $row['familyID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
+              $year = is_numeric($yearval) ? " ($yearval)" : "";
+              $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="' . $familygroup_url . 'familyID=' . $row['familyID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
 
             if (strpos($date, "-00")) {
               $html = '<span class="nw">' . $html . '</span>';
@@ -349,9 +349,9 @@ if (!empty($where)) {
         $tag = $row['tag'];
 
         if ($isFam) {
-          $html = '<img src="' . $cms['tngpath'] . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="' . $familygroup_url . 'familyID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
+            $html = '<img src="' . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="' . $familygroup_url . 'familyID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
         } else {
-          $html = '<img src="' . $cms['tngpath'] . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="' . $getperson_url . 'personID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
+            $html = '<img src="' . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="' . $getperson_url . 'personID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
         }
 
         $date = substr($row['eventdatetr'], 5);
@@ -375,26 +375,28 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'calendar
 
 ?>
 
-  <div id="calHeader">
-    <a href="<?php echo $args; ?>m=<?php echo $thisMonth; ?>&amp;y=<?php echo $lastYear; ?>"><img src="<?php echo $cms['tngpath']; ?>img/ArrowLeft.gif" alt=""><img src="<?php echo $cms['tngpath']; ?>img/ArrowLeft.gif" alt=""></a>
-    &nbsp;
-    <a href="<?php echo $args; ?>m=<?php echo $lastMonth; ?>&amp;y=<?php echo $lastMonthYear; ?>"><img src="<?php echo $cms['tngpath']; ?>img/ArrowLeft.gif" alt=""></a>
-    &nbsp;
-    <?php echo $thisMonthName; ?> <?php echo $thisYear; ?>
-    &nbsp;
-    <a href="<?php echo $args; ?>m=<?php echo $nextMonth; ?>&amp;y=<?php echo $nextMonthYear; ?>"><img src="<?php echo $cms['tngpath']; ?>img/ArrowRight.gif" alt=""></a>
-    &nbsp;
-    <a href="<?php echo $args; ?>m=<?php echo $thisMonth; ?>&amp;y=<?php echo $nextYear; ?>"><img src="<?php echo $cms['tngpath']; ?>img/ArrowRight.gif" alt=""><img src="<?php echo $cms['tngpath']; ?>img/ArrowRight.gif" alt=""></a>
-  </div>
+    <div id="calHeader">
+        <a href="<?php echo $args; ?>m=<?php echo $thisMonth; ?>&amp;y=<?php echo $lastYear; ?>"><img src="img/ArrowLeft.gif" alt=""><img
+                src="img/ArrowLeft.gif" alt=""></a>
+        &nbsp;
+        <a href="<?php echo $args; ?>m=<?php echo $lastMonth; ?>&amp;y=<?php echo $lastMonthYear; ?>"><img src="img/ArrowLeft.gif" alt=""></a>
+        &nbsp;
+        <?php echo $thisMonthName; ?> <?php echo $thisYear; ?>
+        &nbsp;
+        <a href="<?php echo $args; ?>m=<?php echo $nextMonth; ?>&amp;y=<?php echo $nextMonthYear; ?>"><img src="img/ArrowRight.gif" alt=""></a>
+        &nbsp;
+        <a href="<?php echo $args; ?>m=<?php echo $thisMonth; ?>&amp;y=<?php echo $nextYear; ?>"><img src="img/ArrowRight.gif" alt=""><img
+                src="img/ArrowRight.gif" alt=""></a>
+    </div>
 
 <?php
 if ($allow_living) {
-  ?>
-  <div style="text-align: right;">
-    <div style="float: left;">
-      <?php
-      echo "<a href=\"{$anniversaries_url}tngmonth=$m&amp;tngneedresults=1\"><b>&gt;&gt; {$text['anniversaries']}</b></a>";
-      ?>
+    ?>
+    <div style="text-align: right;">
+        <div style="float: left;">
+            <?php
+            echo "<a href=\"{$anniversaries_url}tngmonth=$m&amp;tngneedresults=1\"><b>&gt;&gt; {$text['anniversaries']}</b></a>";
+            ?>
     </div>
     <?php
     echo '<b>' . $text['filter'] . ':</b>&nbsp; ';
@@ -537,7 +539,7 @@ if ($allow_living) {
             }
 
             $args = "?living=$showLiving&amp;hide=" . implode(',', $toHide) . "&amp;tree=$thisTree&amp;m=$thisMonth&amp;year=$thisYear";
-            echo '<li class="flat nw"><a href="' . $args . '" class="' . $class . '" id="cal_' . $key . '">' . $checkbox . '<img src="' . $cms['tngpath'] . 'img/' . $val . '" class="calIcon" alt="">' . $text[$key . 'date'] . '</a></li>' . "\n";
+              echo '<li class="flat nw"><a href="' . $args . '" class="' . $class . '" id="cal_' . $key . '">' . $checkbox . '<img src="' . 'img/' . $val . '" class="calIcon" alt="">' . $text[$key . 'date'] . '</a></li>' . "\n";
           }
 
           ?>

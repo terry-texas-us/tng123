@@ -1,9 +1,6 @@
 <?php
 include "begin.php";
-if (!empty($cms['events'])) {
-    include 'cmsevents.php';
-    cms_logout();
-}
+
 session_start();
 $session_language = $_SESSION['session_language'];
 $session_charset = $_SESSION['session_charset'];

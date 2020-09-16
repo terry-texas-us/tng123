@@ -7,13 +7,13 @@ $textpart = "getperson";
 include "tng_begin.php";
 $tngprint = 1;
 
-include $cms['tngpath'] . "personlib.php";
+include "personlib.php";
 
 initMediaTypes();
 
 define('FPDF_FONTPATH', $rootpath . $endrootpath . 'font/');
-require $cms['tngpath'] . 'tngpdf.php';
-require $cms['tngpath'] . 'rpt_utils.php';
+require 'tngpdf.php';
+require 'rpt_utils.php';
 $pdf = new TNGPDF($orient, 'in', $pagesize);
 setcookie("tng_pagesize", $pagesize, time() + 31536000, "/");
 

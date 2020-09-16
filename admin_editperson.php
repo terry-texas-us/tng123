@@ -170,7 +170,7 @@ include_once "eventlib_js.php";
 
                         var params = {sequence: parentlist.join(','), action: 'parentorder', personID: persfamID, tree: tree};
                         jQuery.ajax({
-                            url: cmstngpath + 'ajx_updateorder.php',
+                            url: 'ajx_updateorder.php',
                             data: params,
                             dataType: 'html'
                         });
@@ -190,7 +190,7 @@ include_once "eventlib_js.php";
 
                         var params = {sequence: spouselist.join(','), action: 'spouseorder', tree: tree, spouseorder: '<?php echo $spouseorder; ?>'};
                         jQuery.ajax({
-                            url: cmstngpath + 'ajx_updateorder.php',
+                            url: 'ajx_updateorder.php',
                             data: params,
                             dataType: 'html'
                         });

@@ -1,5 +1,5 @@
 <?php
-include $cms['tngpath'] . "surname_cloud.class.php";
+include "surname_cloud.class.php";
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
@@ -25,7 +25,7 @@ $title = getTemplateMessage('t17_maintitle');
         }
 
         #big-block-1 {
-            background: url('<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t17_mainimage']; ?>') no-repeat center 45%;
+            background: url('<?php echo $templatepath; ?><?php echo $tmp['t17_mainimage']; ?>') no-repeat center 45%;
             background-size: 100% auto;
             height: 250px;
         }
@@ -42,14 +42,14 @@ $title = getTemplateMessage('t17_maintitle');
                 if ($dadlabel) {
                     ?>
                     <li>
-                        <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t17_dadperson']; ?>&amp;tree=<?php echo $tmp['t17_dadtree']; ?>"><?php echo $dadlabel; ?></a>
+                        <a href="pedigree.php?personID=<?php echo $tmp['t17_dadperson']; ?>&amp;tree=<?php echo $tmp['t17_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                     </li>
                     <?php
                 }
                 if ($momlabel) {
                     ?>
                     <li>
-                        <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t17_momperson']; ?>&amp;tree=<?php echo $tmp['t17_momtree']; ?>"><?php echo $momlabel; ?></a>
+                        <a href="pedigree.php?personID=<?php echo $tmp['t17_momperson']; ?>&amp;tree=<?php echo $tmp['t17_momtree']; ?>"><?php echo $momlabel; ?></a>
                     </li>
                     <?php
                 }
@@ -159,7 +159,7 @@ $title = getTemplateMessage('t17_maintitle');
 
                         <div class="left-indent">
                             <h3 class="entry-title"><?php echo $text['contactus']; ?></h3>
-                            <p class="entry-content"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/email.gif" alt="email image"
+                            <p class="entry-content"><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
                                                           class="emailimg"><?php echo $text['contactus_long']; ?></p>
                         </div>
                     </article>
@@ -168,7 +168,7 @@ $title = getTemplateMessage('t17_maintitle');
                     <article class="post">
                         <header class="entry-header">
                             <a href="<?php echo $tmp['t17_featurelink1']; ?>" title="" class="alignnone"><h2
-                                        class="entry-title"><?php echo getTemplateMessage('t17_featuretitle1'); ?></h2></a>
+                                    class="entry-title"><?php echo getTemplateMessage('t17_featuretitle1'); ?></h2></a>
                         </header>
                         <div class="entry-content">
                             <?php
@@ -191,7 +191,7 @@ $title = getTemplateMessage('t17_maintitle');
         <h2><a href="<?php echo $tmp['t17_featurelink2']; ?>" title=""><?php echo getTemplateMessage('t17_featuretitle2'); ?></a></h2>
         <div class="left-indent mainsection">
             <br>
-            <div class="two-cols"><img src="<?php echo $cms['tngpath'] . $templatepath . $tmp['t17_featurethumb2']; ?>" alt="Lorem Ipsum" title="">
+            <div class="two-cols"><img src="<?php echo $templatepath . $tmp['t17_featurethumb2']; ?>" alt="Lorem Ipsum" title="">
                 <?php
                 echo getTemplateMessage('t17_featurepara2');
                 $tl2 = getTemplateMessage('t17_featurelink2');

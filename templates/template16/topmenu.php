@@ -1,5 +1,5 @@
 <?php
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 
 $dadlabel = getTemplateMessage('t16_dadside');
 $momlabel = getTemplateMessage('t16_momside');
@@ -27,14 +27,14 @@ $title = getTemplateMessage('t16_maintitle');
                         if ($dadlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t16_dadperson']; ?>&amp;tree=<?php echo $tmp['t16_dadtree']; ?>"><?php echo $dadlabel; ?></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t16_dadperson']; ?>&amp;tree=<?php echo $tmp['t16_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                             </li>
                             <?php
                         }
                         if ($momlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t16_momperson']; ?>&amp;tree=<?php echo $tmp['t16_momtree']; ?>"><?php echo $momlabel; ?></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t16_momperson']; ?>&amp;tree=<?php echo $tmp['t16_momtree']; ?>"><?php echo $momlabel; ?></a>
                             </li>
                             <?php
                         }

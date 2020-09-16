@@ -7,7 +7,7 @@ if (!$sourceID) {
   exit;
 }
 
-include $cms['tngpath'] . "personlib.php";
+include "personlib.php";
 
 $showsource_url = getURL("showsource", 1);
 $showrepo_url = getURL("showrepo", 1);
@@ -101,7 +101,7 @@ ksort($events);
 foreach ($events as $event)
   $sourcetext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-  $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"{$cms['tngpath']}admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
+  $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
 } else {
   $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID));
 }

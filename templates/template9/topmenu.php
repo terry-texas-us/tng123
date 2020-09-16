@@ -1,12 +1,12 @@
 <?php
-global $text, $cms, $subroot, $tmp;
+global $text, $subroot, $tmp;
 
 $dadlabel = getTemplateMessage('t9_dadside');
 $momlabel = getTemplateMessage('t9_momside');
 ?>
 <style>
     div.art-headerobject {
-        background-image: url('<?php echo $cms['tngpath'] . $templatepath . $tmp['t9_headimg']; ?>');
+        background-image: url('<?php echo $templatepath . $tmp['t9_headimg']; ?>');
         background-repeat: no-repeat;
         width: 432px;
         height: 150px;
@@ -34,7 +34,7 @@ $momlabel = getTemplateMessage('t9_momside');
                 </div>
                 <div class="art-headerobject"></div>
                 <div class="art-logo">
-                    <h1 class="art-logo-name"><a href="<?php echo $cms['tngpath']; ?>index.php"><?php echo getTemplateMessage('t9_maintitle'); ?></a>
+                    <h1 class="art-logo-name"><a href="index.php"><?php echo getTemplateMessage('t9_maintitle'); ?></a>
                     </h1>
                     <h2 class="art-logo-text"><?php echo getTemplateMessage('t9_headsubtitle'); ?></h2>
                 </div>
@@ -49,23 +49,23 @@ $momlabel = getTemplateMessage('t9_momside');
                         if ($dadlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t9_dadperson']; ?>&amp;tree=<?php echo $tmp['t9_dadtree']; ?>"><span
-                                            class="l"></span><span class="t"><?php echo $dadlabel; ?></span></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t9_dadperson']; ?>&amp;tree=<?php echo $tmp['t9_dadtree']; ?>"><span
+                                        class="l"></span><span class="t"><?php echo $dadlabel; ?></span></a>
                             </li>
                             <?php
                         }
                         if ($momlabel) {
                             ?>
                             <li>
-                                <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t9_momperson']; ?>&amp;tree=<?php echo $tmp['t9_momtree']; ?>"><span
-                                            class="l"></span><span class="t"><?php echo $momlabel; ?></span></a>
+                                <a href="pedigree.php?personID=<?php echo $tmp['t9_momperson']; ?>&amp;tree=<?php echo $tmp['t9_momtree']; ?>"><span
+                                        class="l"></span><span class="t"><?php echo $momlabel; ?></span></a>
                             </li>
                             <?php
                         }
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>suggest.php?page=<?php echo urlencode(str_replace("?", "", $title)); ?>"><span
-                                        class="l"></span><span class="t"><?php echo $text['contactus']; ?></span></a>
+                            <a href="suggest.php?page=<?php echo urlencode(str_replace("?", "", $title)); ?>"><span
+                                    class="l"></span><span class="t"><?php echo $text['contactus']; ?></span></a>
                         </li>
                     </ul>
                 </div>

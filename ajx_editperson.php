@@ -17,7 +17,7 @@ if (!$personID) {
 $textpart = "people";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 initMediaTypes();
 
@@ -127,17 +127,21 @@ include_once "eventlib.php";
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35"></td>
+                            <td>
+                                <input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35">
+                            </td>
                             <?php
                             if ($lnprefixes) {
                                 echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px;\"></td>\n";
                             }
                             ?>
-                            <td><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35"></td>
+                            <td>
+                                <input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35">
+                            </td>
                             <td>
                                 <?php
-                                $notesicon = $cms['tngpath'] . "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
-                                $citesicon = $cms['tngpath'] . "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
+                                $notesicon = "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
+                                $citesicon = "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
                                 echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\">\n";
                                 echo "<img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" width='20' height='20' id=\"notesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
@@ -237,7 +241,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"{$cms['tngpath']}img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                      onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -336,7 +340,7 @@ include_once "eventlib.php";
                     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
                     if ($parentcount > 1) {
                         echo "<td class=\"dragarea normal\">";
-                        echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
@@ -431,7 +435,7 @@ include_once "eventlib.php";
     if ($rights['lds']) {
         $citquery = "SELECT citationID FROM $citations_table WHERE persfamID = \"$personID" . "::" . "{$parent['familyID']}\" AND gedcom = '$tree'";
         $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
-        $citesicon = $cms['tngpath'] . "img/" . (tng_num_rows($citresult) ? "tng_cite_on.gif" : "tng_cite.gif");
+        $citesicon = "img/" . (tng_num_rows($citresult) ? "tng_cite_on.gif" : "tng_cite.gif");
         tng_free_result($citresult);
 
         echo "<table>";
@@ -447,7 +451,7 @@ include_once "eventlib.php";
         echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
         echo "<td>\n";
         echo "<a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
-        echo "<img src=\"{$cms['tngpath']}img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class=\"smallicon\">\n";
+        echo "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "<td>\n";
@@ -511,7 +515,7 @@ include_once "eventlib.php";
                     echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";
-                        echo "<img src=\"{$cms['tngpath']}img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"{$cms['tngpath']}img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";

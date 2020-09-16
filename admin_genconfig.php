@@ -134,7 +134,7 @@ tng_adminheader($admtext['modifysettings'], $flags);
         var options = {action: command};
         if (command == "convert")
             options.placetree = jQuery('#placetree').val();
-        jQuery('#' + command + 'expl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0;vertical-align:middle;">');
+        jQuery('#' + command + 'expl').html('<img src="img/spinner.gif" style="border: 0; vertical-align: middle;">');
 
         jQuery.ajax({
             url: 'ajx_placeconvert.php',
@@ -151,7 +151,7 @@ tng_adminheader($admtext['modifysettings'], $flags);
 
     function convertMedia(select) {
         var options = {action: select.val()};
-        jQuery('#mediaexpl').html('<img src="' + cmstngpath + 'img/spinner.gif" style="border:0;vertical-align:middle;">');
+        jQuery('#mediaexpl').html('<img src="img/spinner.gif" style="border: 0; vertical-align: middle;">');
 
         jQuery.ajax({
             url: 'ajx_mediaconvert.php',
@@ -2005,8 +2005,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
         <tr class="databack tngshadow">
             <td class="tngshadow">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-
-                <input type="hidden" name="cmstngpath" value="<?php echo $cms['tngpath']; ?>">
 
                 <input type="hidden" value="1" name="safety">
                 <input type="hidden" value="<?php echo $photos_table; ?>" name="photos_table">

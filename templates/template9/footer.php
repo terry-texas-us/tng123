@@ -11,7 +11,7 @@
     <div class="art-footer-t"></div>
     <div class="art-footer-b"></div>
     <div class="art-footer-body">
-        <a href="<?php echo $cms['tngpath']; ?>tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
+        <a href="tngrss.php" class="art-rss-tag-icon" title="RSS"></a>
         <div class="art-footer-text">
             <?php
             $flags['basicfooter'] = true;

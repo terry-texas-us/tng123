@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "generateID";
 include "$mylanguage/admintext.php";
 
-include $cms['tngpath'] . "checklogin.php";
+include "checklogin.php";
 
 function getNewID($type, $table) {
   global $tree, $admtext, $tngconfig;

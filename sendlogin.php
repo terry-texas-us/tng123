@@ -1,11 +1,11 @@
 <?php
 include "begin.php";
-include $cms['tngpath'] . "genlib.php";
+include "genlib.php";
 $textpart = "login";
-include $cms['tngpath'] . "getlang.php";
-include $cms['tngpath'] . "$mylanguage/text.php";
+include "getlang.php";
+include "$mylanguage/text.php";
 
-include $cms['tngpath'] . "tngmaillib.php";
+include "tngmaillib.php";
 
 //look up email
 $email = trim($email);
@@ -13,7 +13,7 @@ $email = trim($email);
 $valid_user_agent = isset($_SERVER["HTTP_USER_AGENT"]) && $_SERVER["HTTP_USER_AGENT"] != "";
 
 if (preg_match("/\n[[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/i", $email) || !$valid_user_agent) {
-  die("sorry!");
+    die("sorry!");
 }
 if (preg_match("/\r/", $email) || preg_match("/\n/", $email)) {
   die("sorry!");

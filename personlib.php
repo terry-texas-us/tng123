@@ -8,7 +8,7 @@ function doStrong($string) {
 }
 
 function getBirthInfo($thisperson, $noicon = null) {
-    global $text, $placesearch_url, $cms, $tngconfig, $tree;
+    global $text, $placesearch_url, $tngconfig, $tree;
 
     $varlist = array('birthdate', 'birthplace', 'altbirthdate', 'altbirthplace', 'deathdate', 'deathplace', 'burialdate', 'burialplace');
     foreach ($varlist as $myindex) {
@@ -20,7 +20,7 @@ function getBirthInfo($thisperson, $noicon = null) {
     $birthstring = "";
 
     if (!$noicon) {
-        $icon = "<img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\">";
+        $icon = "<img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\">";
 
         $treestr = !empty($tngconfig['places1tree']) ? "" : "tree=$tree&amp;";
 
@@ -572,7 +572,7 @@ $datewidth = $thumbmaxw + 20 > 104 ? $thumbmaxw + 20 : 104;
 $eventcounter = 0;
 function showEvent($data) {
     global $notestogether, $text, $tree, $tentedit_url;
-    global $tableid, $cellnumber, $cms, $placesearch_url, $tentative_edit;
+    global $tableid, $cellnumber, $placesearch_url, $tentative_edit;
     global $indnotes, $famnotes, $srcnotes, $reponotes, $indmedia, $fammedia, $srcmedia, $repomedia, $tngconfig;
     global $indalbums, $famalbums, $srcalbums, $repoalbums, $eventcounter, $num_collapsed;
 
@@ -654,7 +654,7 @@ function showEvent($data) {
             $output .= ">" . $data['place'];
             if (!isset($data['np'])) {
                 $treestr = !empty($tngconfig['places1tree']) ? "" : "&amp;tree=$tree";
-                $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"{$text['findplaces']}\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
+                $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
             } else {
                 $output .= "</td>\n";
             }
@@ -765,9 +765,9 @@ function showEvent($data) {
     }
 
     if ($output) {
-        $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"{$cms['tngpath']}img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         if (!empty($data['collapse']) && $rows > 1) {
-            $toggleicon = "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
+            $toggleicon = "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
             $num_collapsed++;
         } else {
             $toggleicon = "";
@@ -1115,7 +1115,7 @@ function getMedia($entity, $linktype, $all = false) {
 }
 
 function writeMedia($media_array, $mediatypeID, $prefix = "") {
-    global $tableid, $cellnumber, $text, $datewidth, $mediatypes_display, $mediatypes_like, $tngconfig, $sitever, $num_collapsed, $cms;
+    global $tableid, $cellnumber, $text, $datewidth, $mediatypes_display, $mediatypes_like, $tngconfig, $sitever, $num_collapsed;
 
     $mediatext = "";
 
@@ -1203,7 +1203,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                 $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
             }
             $mediatext .= "<tr>\n";
-            $toggleicon = $hidemedia ? "<img src=\"{$cms['tngpath']}img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"m{$prefix}{$mediatypeID}\" title=\"{$text['expand']}\"/>" : "";
+            $toggleicon = $hidemedia ? "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"m{$prefix}{$mediatypeID}\" title=\"{$text['expand']}\"/>" : "";
             $mediatext .= "<td valign=\"top\" class=\"fieldnameback indleftcol lm{$prefix}{$mediatypeID}\"$cellid";
             if ($thumbdivs) {
                 $rows++;

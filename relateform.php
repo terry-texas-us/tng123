@@ -43,7 +43,7 @@ if ($result) {
 
 $personID = preg_replace("/[^A-Za-z0-9_\-. ]/", '', $primaryID);
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\" src=\"{$cms['tngpath']}js/selectutils.js\"></script>\n";
+$flags['scripting'] = "<script type=\"text/javascript\" src=\"js/selectutils.js\"></script>\n";
 tng_header($text['relcalc'], $flags);
 
 $photostr = showSmallPhoto($primaryID, $namestr, $rights['both'], 0, false, $row['sex']);

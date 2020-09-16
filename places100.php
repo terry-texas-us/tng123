@@ -115,7 +115,7 @@ echo getFORM("places100", "get", "", "");
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
 
-                            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"{$cms['tngpath']}img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
                             if ($place['placecount'] > 1 || !$specificcount) {
                                 $name = "<a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\">{$place['myplace']}</a>";
                                 echo "$counter. $name ({$place['placecount']}) $searchlink<br>\n";
