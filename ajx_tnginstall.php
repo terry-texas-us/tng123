@@ -1,6 +1,6 @@
 <?php
 $cms = array();
-if (isset($cms['support']) || isset($cms['tngpath']) || isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
+if (isset($cms['tngpath']) || isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
     die("Sorry!");
 }
 $tngconfig = array();
@@ -434,12 +434,7 @@ if ($saveconfig) {
     fwrite($fp, "\$tng_notinstalled = \"$tng_notinstalled\";\n");
     fwrite($fp, "\n");
     fwrite($fp, "if(!isset(\$cms['auto'])) {\n");
-    fwrite($fp, "\$cms['support'] = \"{$cms['support']}\";\n");
-    fwrite($fp, "\$cms['url'] = \"{$cms['url']}\";\n");
     fwrite($fp, "\$cms['tngpath'] = \"{$cms['tngpath']}\";\n");
-    fwrite($fp, "\$cms['module'] = \"{$cms['module']}\";\n");
-    fwrite($fp, "\$cms['cloaklogin'] = \"{$cms['cloaklogin']}\";\n");
-    fwrite($fp, "\$cms['credits'] = \"{$cms['credits']}\";\n");
     fwrite($fp, "}\n");
     fwrite($fp, "\n");
     fwrite($fp, "@include \$subroot . \"customconfig.php\";\n");

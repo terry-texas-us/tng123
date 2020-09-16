@@ -26,7 +26,7 @@ $yournamefield = $_SESSION['tng_yourname'];
 eval("\$yourname = \$$yournamefield;");
 $_SESSION['tng_yourname'] = "";
 
-$tngwebsite = $cms['support'] ? "http://" . $_SERVER['HTTP_HOST'] : $tngdomain;
+$tngwebsite = $tngdomain;
 
 if (preg_match("/\n[[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/i", $youremail) || preg_match("/[\r|\n][[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/", $yourname) || !$valid_user_agent) {
   die("sorry!");

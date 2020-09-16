@@ -468,12 +468,8 @@ function showMediaSource($imgrow, $ss = false) {
     if ($imgrow['abspath'] || substr($imgrow['path'], 0, 4) == "http" || substr($imgrow['path'], 0, 1) == "/") {
         $mediasrc = $imgrow['path'];
     } else {
-        if (in_array($imgrow['form'], $htmldocs) && $cms['support']) {
-            $mediasrc = $histories_url . "inc=" . $imgrow['path'];
-        } else {
-            $treestr = $tngconfig['mediatrees'] && $imgrow['gedcom'] ? $imgrow['gedcom'] . "/" : "";
-            $mediasrc = "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path']));
-        }
+        $treestr = $tngconfig['mediatrees'] && $imgrow['gedcom'] ? $imgrow['gedcom'] . "/" : "";
+        $mediasrc = "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path']));
     }
 
     $targettext = $imgrow['newwindow'] ? " target=\"_blank\"" : "";

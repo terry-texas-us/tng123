@@ -7,7 +7,7 @@ include $cms['tngpath'] . "$mylanguage/text.php";
 
 include $cms['tngpath'] . "checklogin.php";
 
-if ($p && !$cms['support']) {
+if ($p) {
     $cms['tngpath'] = urldecode($p);
 }
 

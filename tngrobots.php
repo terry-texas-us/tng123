@@ -1,22 +1,14 @@
 <?php
-if (!$cms['support']) {
-    $tngscript = basename($_SERVER['SCRIPT_NAME'], ".php");
-} else {
-    $tngscript = $file;
-}
 
-//No index only
-$NOI = "<meta name=\"robots\" content=\"noindex\">\n";
+$tngscript = basename($_SERVER['SCRIPT_NAME'], ".php");
 
-//No follow only
-$NOF = "<meta name=\"robots\" content=\"nofollow\">\n";
-
-//No index AND no follow
-$NOINOF = "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
+define("NOI", "<meta name=\"robots\" content=\"noindex\">\n");
+define("NOF", "<meta name=\"robots\" content=\"nofollow\">\n");
+define("NOINOF", "<meta name=\"robots\" content=\"noindex, nofollow\">\n");
 
 //each "case" is the name of the script file without the ".php" at the end
 if ($tngprint) {
-    $flags['norobots'] = $NOINOF;
+    $flags['norobots'] = NOINOF;
 } else {
     switch ($tngscript) {
         //no index, no follow
@@ -55,7 +47,7 @@ if ($tngprint) {
         case "heatmap":
         case "fan":
         case "img_viewer":
-            $flags['norobots'] = $NOINOF;
+        $flags['norobots'] = NOINOF;
             break;
 
         //no indexing, but allow link following
@@ -70,7 +62,7 @@ if ($tngprint) {
         case "showreport":
         case "surnames100":
         case "whatsnew":
-            $flags['norobots'] = $NOI;
+        $flags['norobots'] = NOI;
             break;
 
         //allow full indexing

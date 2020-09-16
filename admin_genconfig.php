@@ -2006,12 +2006,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <td class="tngshadow">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
 
-                <input type="hidden" name="cmssupport" value="<?php echo $cms['support']; ?>">
-                <input type="hidden" name="cmsurl" value="<?php echo $cms['url']; ?>">
                 <input type="hidden" name="cmstngpath" value="<?php echo $cms['tngpath']; ?>">
-                <input type="hidden" name="cmsmodule" value="<?php echo $cms['module']; ?>">
-                <input type="hidden" name="cmscloaklogin" value="<?php echo $cms['cloaklogin']; ?>">
-                <input type="hidden" name="cmscredits" value="<?php echo $cms['credits']; ?>">
 
                 <input type="hidden" value="1" name="safety">
                 <input type="hidden" value="<?php echo $photos_table; ?>" name="photos_table">

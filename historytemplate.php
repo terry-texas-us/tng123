@@ -17,9 +17,7 @@ exit;
 
 $cms['tngpath'] = "../";
 include "../tng_begin.php";
-if (!$cms['support']) {
-  $cms['tngpath'] = "../";
-}
+$cms['tngpath'] = "../";
 
 //STEP 3: Replace "Your Title Here" in the next line with the title of your page. Keep it surrounded with double quotes. 
 //  Do not include any double quotes within your title. This creates the primary headline at the top of the page.

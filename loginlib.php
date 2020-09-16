@@ -1,5 +1,5 @@
 <?php
-if ($p && !$cms['support']) {
+if ($p) {
     $cms['tngpath'] = urldecode($p);
 }
 ?>

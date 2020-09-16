@@ -169,11 +169,9 @@ header("Content-type: application/rss+xml; charset=\"$charset\"");
 $item .= "<rss version=\"2.0\" xmlns:atom=\"{$http}://www.w3.org/2005/Atom\">\n";
 $item .= "<channel>\n";
 $item .= "<atom:link href=\"" . $tngdomain . "/tngrss.php\" rel=\"self\" type=\"application/rss+xml\" />\n";
-if (!$cms['support']) {
-    $tngscript = basename($_SERVER['SCRIPT_NAME'], ".php");
-} else {
-    $tngscript = $file;
-}
+
+$tngscript = basename($_SERVER['SCRIPT_NAME'], ".php");
+
 $item .= "<copyright>$tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright</copyright>\n";
 $item .= "<lastBuildDate>$date</lastBuildDate>\n";
 

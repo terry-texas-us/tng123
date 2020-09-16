@@ -47,13 +47,9 @@ function writelog($string) {
 
     $remhost = $charset == "UTF-8" ? utf8_encode($remhost) : utf8_decode($remhost);
 
-    if ($cms['support'] && $currentuser) {
-        $string .= " {$text['accessedby']} {$text['user']}: $currentuser";
-    } else {
-        $string .= " {$text['accessedby']} $remhost";
-        if ($currentuser) {
-            $string .= " ({$text['user']}: $currentuserdesc)";
-        }
+    $string .= " {$text['accessedby']} $remhost";
+    if ($currentuser) {
+        $string .= " ({$text['user']}: $currentuserdesc)";
     }
 
     $fp = fopen($logfile, "r+");

@@ -25,14 +25,6 @@ $http_user_agent = strtolower($_SERVER["HTTP_USER_AGENT"]);
 $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $http_user_agent) ? 0 : 1;
 $gotlastpage = false;
 $flags['error'] = $error;
-// UnusedCode "phpnuke" block
-if ($cms['support'] == "phpnuke") {
-    if ($multilingual == "1") {
-        $newlanguage = strtoupper(substr($currentlang, 0, 1)) . substr($currentlang, 1);
-        session_start();
-        $session_language = $_SESSION['session_language'] = $newlanguage;
-    }
-}
 
 if (empty($tree)) {
     $tree = "";
@@ -61,12 +53,10 @@ function tng_header($title, $flags) {
 
     header("Content-type:text/html;charset=" . $session_charset);
     echo !empty($tngconfig['doctype']) ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
-    if (!$cms['support']) {
-        echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
-        echo "<head>\n";
-    } else {
-        echo $cms['credits'];
-    }
+
+    echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+    echo "<head>\n";
+
     $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
     $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
     echo "<title>$title$siteprefix</title>\n";
@@ -189,22 +179,20 @@ function tng_header($title, $flags) {
         echo "<style>\n{$tngconfig['mmenustyle']}</style>\n";
     }
 
-    if (!$cms['support']) {
-        echo "</head>";
-        if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
-            include $templatepath . $customheader;
-        } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
-            $class = !empty($flags['homeclass']) ? $flags['homeclass'] : "publicbody";
-            echo "<body class=\"{$class}\">\n";
-            echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"{$cms['tngpath']}img/backtotop.png\" alt=\"\"></a></div>\n";
-        }
+    echo "</head>";
+    if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        include $templatepath . $customheader;
+    } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
+        $class = !empty($flags['homeclass']) ? $flags['homeclass'] : "publicbody";
+        echo "<body class=\"{$class}\">\n";
+        echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"{$cms['tngpath']}img/backtotop.png\" alt=\"\"></a></div>\n";
     }
     if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
         $icons = tng_icons(1, $title);
     }
     echo $icons;  //from above
 
-    if (!$cms['support'] && $sitever == "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+    if ($sitever == "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         $ttitle = "t{$templatenum}_maintitle";
         if ($tmp[$ttitle]) {
             $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
@@ -599,14 +587,10 @@ function tng_getLeftIcons() {
     }
     if (empty($tngconfig['showlogin'])) {
         if ($currentuser) {
-            if (!$cms['cloaklogin'] || $cms['cloaklogin'] == "both") {
-                $left_icons .= tng_smallIcon(array('url' => getURL("logout", 1) . "session=" . session_name(), 'label' => $text['logout'] . $userparen, 'id' => "log"));
-            }
+            $left_icons .= tng_smallIcon(array('url' => getURL("logout", 1) . "session=" . session_name(), 'label' => $text['logout'] . $userparen, 'id' => "log"));
         } else {
-            if (!$cms['cloaklogin'] || $cms['cloaklogin'] == "both") {
-                $login_url = getURL("ajx_login", 1);
-                $left_icons .= tng_smallIcon(array('label' => $text['login'], 'id' => "log", 'onclick' => "return openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "');"));
-            }
+            $login_url = getURL("ajx_login", 1);
+            $left_icons .= tng_smallIcon(array('label' => $text['login'], 'id' => "log", 'onclick' => "return openLogin('{$login_url}p=" . urlencode($cms['tngpath']) . "');"));
         }
         $tngconfig['menucount']++;
     }
@@ -706,7 +690,7 @@ function tng_getInfoMenu($title) {
         $menu .= tngddrow(getURL("browse_dna_tests", 0), "dna-icon", "", "dna_tests");
     }
     if ($allow_admin) {
-        $menu .= tngddrow((!empty($cms['adminurl']) ? $cms['adminurl'] : $cms['tngpath'] . "admin.php"), "admin-icon", "", "administration");
+        $menu .= tngddrow($cms['tngpath'] . "admin.php", "admin-icon", "", "administration");
         $menu .= tngddrow(getURL("showlog", 0), "unlock-icon", "", "mnushowlog");
         $tngconfig['menucount'] += 2;
     }
@@ -1149,8 +1133,6 @@ function getMediaHREF($row, $mlflag) {
     } else {
         if ($row['abspath'] || substr($row['path'], 0, 4) == "http" || substr($row['path'], 0, 1) == "/") {
             $uselink = $row['path'];
-        } elseif (in_array($form, $htmldocs) && $cms['support']) {
-            $uselink = $histories_url . "inc=" . $row['path'];
         } else {
             $url = rawurlencode($row['path']);
             $url = str_replace("%2F", "/", $url);

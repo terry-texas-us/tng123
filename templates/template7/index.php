@@ -7,7 +7,7 @@ $tngconfig['showshare'] = false;
 
 //default header ($text['ourpages']) is "Our Family Genealogy Pages"
 tng_header($sitename ? "" : $text['ourpages'], $flags);
-if (!$cms['support'] && $sitever != "mobile") {
+if ($sitever != "mobile") {
     echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
 }
 ?>

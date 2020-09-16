@@ -52,7 +52,7 @@ $dna_groups_table = "tng_dna_groups";
 $templates_table = "tng_templates";
 
 $rootpath = "C:/Apache24/htdocs/tng123/";
-$templatenum = "1";
+$templatenum = "5";
 $templateswitching = "1";
 $homepage = "index.php";
 $tngdomain = "http://localhost/tng123";
@@ -203,15 +203,9 @@ $txt111 = "#FFFFFF";
 $tng_notinstalled = "";
 
 if (!isset($cms['auto'])) {
-    $cms['support'] = "";
-    $cms['url'] = "";
     if (!isset($cms['tngpath'])) {
         $cms['tngpath'] = "";
     }
-    $cms['module'] = "";
-    $cms['cloaklogin'] = "";
-    $cms['credits'] = "";
-    $cms['adminurl'] = "";
 }
 
 @include $subroot . "customconfig.php";

@@ -9,8 +9,8 @@ include "checklogin.php";
 //if no rights, just throw up a message. don't redirect
 //remove javascript. put that somewhere global
 
-if ($p && !$cms['support']) {
-  $cms['tngpath'] = urldecode($p);
+if ($p) {
+    $cms['tngpath'] = urldecode($p);
 }
 
 if (!$currentuser) {

@@ -4,7 +4,7 @@ $flags['noheader'] = true;
 $flags['nobody'] = true;
 
 tng_header($sitename ? "" : $text['ourhist'], $flags);
-if (!$cms['support'] && $sitever != "mobile") {
+if ($sitever != "mobile") {
     echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
 }
 

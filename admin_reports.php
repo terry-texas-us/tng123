@@ -13,7 +13,7 @@ if ($assignedtree) {
     exit;
 }
 
-$showreport_url = $cms['support'] ? "{$cms['url']}=showreport&amp;" : "showreport.php?";
+$showreport_url = "showreport.php?";
 
 $tng_search_reports = $_SESSION['tng_search_reports'] = 1;
 if ($newsearch) {

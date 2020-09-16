@@ -210,33 +210,12 @@ function getGenderIcon($gender, $valign) {
 function getURL($destination, $args, $ext = ".php") {
     global $cms;
 
-    if ($cms['support']) {
-        if (class_exists('TNGcms')) {
-            $url = TNGcms::getURL($destination, $args, $ext = ".php", $cms);
-        } else {
-            $url = $args ? $cms['url'] . "=$destination&" : $cms['url'] . "=$destination";
-        }
-    } else {
-        $url = $args ? $cms['tngpath'] . $destination . $ext . "?" : $cms['tngpath'] . $destination . $ext;
-    }
-
-    return $url;
+    return $args ? $cms['tngpath'] . $destination . $ext . "?" : $cms['tngpath'] . $destination . $ext;
 }
 
 function getFORM($action, $method, $name, $id, $onsubmit = null) {
     global $cms;
 
-    if (!$cms['support']) {
-        $url = $action ? $cms['tngpath'] . $action . ".php" : "";
-    } elseif (class_exists('TNGcms')) {
-        return TNGcms::getFORM($action, $method, $name, $id, $cms);
-    } elseif ($cms['support'] == "joomla") { // backwards compatibility
-        $url = "index.php";
-    } elseif ($cms['support'] == "zikula") { // backwards compatibility
-        $url = "index.php";
-    } else { // backwards compatibility
-        $url = "modules.php";
-    }
     $url = $action ? $cms['tngpath'] . $action . ".php" : "";
     $formstr = "<form action=\"$url\"";
     if ($method) {
@@ -251,24 +230,7 @@ function getFORM($action, $method, $name, $id, $onsubmit = null) {
     if ($onsubmit) {
         $formstr .= " onsubmit=\"$onsubmit\"";
     }
-
     $formstr .= ">\n";
-
-    if ($cms['support']) {
-        if ($cms['support'] == "joomla") {
-            $formstr .= "<input type=\"hidden\" name=\"option\" value= \"com_tngbridge\">\n";
-            $formstr .= "<input type=\"hidden\" name=\"Itemid\" value=\"39\"> \n";
-            $formstr .= "<input type=\"hidden\" name=\"url\" value=\"$action\"> \n";
-        } elseif ($cms['support'] == "zikula") {
-            $formstr .= "<input type=\"hidden\" name=\"module\" value=\"{$cms['module']}\">\n";
-            $formstr .= "<input type=\"hidden\" name=\"show\" value=\"$action\">\n";
-        } else {
-            $formstr .= "<input type=\"hidden\" name=\"op\" value=\"modload\">\n";
-            $formstr .= "<input type=\"hidden\" name=\"name\" value=\"{$cms['module']}\">\n";
-            $formstr .= "<input type=\"hidden\" name=\"file\" value=\"$action\">\n";
-        }
-    }
-
     return $formstr;
 }
 
@@ -1236,11 +1198,7 @@ function getAllTextPath() {
     if ($rootpath && strpos($rootpath, "http") !== 0) {
         $thislanguage = trim($mylanguage ? $mylanguage : $languages_path . $language);
         if (strpos($thislanguage, "http") !== 0) {
-            if ($cms['support']) {
-                @include_once $rootpath . $cms['tngpath'] . "$thislanguage/alltext.php";
-            } else {
-                @include_once $rootpath . $endrootpath . "$thislanguage/alltext.php";
-            }
+            @include_once $rootpath . $endrootpath . "$thislanguage/alltext.php";
         }
     }
 }

@@ -7,7 +7,7 @@ $flags['nobody'] = true;
 $flags['homeclass'] = "homebody";
 $tngconfig['showshare'] = false;
 tng_header($sitename ? "" : $text['ourhist'], $flags);
-if (!$cms['support'] && $sitever != "mobile") {
+if ($sitever != "mobile") {
     echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody\">\n";
 }
 

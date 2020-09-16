@@ -30,14 +30,10 @@ if ($session_language) {
     }
 }
 if ($mylanguage) {
-    if ($cms['support']) {
-        $file_exists = file_exists($rootpath . $cms['tngpath'] . "$mylanguage/text.php");
-    } else {
-        if (!isset($endrootpath)) {
-            $endrootpath = '';
-        }
-        $file_exists = file_exists($rootpath . $endrootpath . "$mylanguage/text.php");
+    if (!isset($endrootpath)) {
+        $endrootpath = '';
     }
+    $file_exists = file_exists($rootpath . $endrootpath . "$mylanguage/text.php");
 } else {
     $file_exists = false;
 }
