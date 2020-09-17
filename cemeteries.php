@@ -35,7 +35,7 @@ tng_header($text['cemeteriesheadstones'], $flags);
     function toggleSection(key) {
 
         let sectionSelection = jQuery('#' + key);
-        if (sectionSelection.css('display') == 'none') {
+        if (sectionSelection.css('display') === 'none') {
             sectionSelection.fadeIn(200);
             swap("plusminus" + key, "minus");
         } else {
@@ -51,7 +51,7 @@ tng_header($text['cemeteriesheadstones'], $flags);
     minus.src = "img/tng_collapse.gif";
 
     function swap(x, y) {
-        jQuery('#' + x).attr('title', y == "minus" ? collapsemsg : expandmsg);
+        jQuery('#' + x).attr('title', y === "minus" ? collapsemsg : expandmsg);
         document.images[x].src = eval(y + '.src');
     }
 </script>

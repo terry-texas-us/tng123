@@ -95,7 +95,7 @@ function tng_header($title, $flags) {
     }
 
     if (!$tng_version) {
-        $tng_version = "12.0.0";
+        $tng_version = "12.3";
     }
     echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever != "standard" && $responsivetables) {

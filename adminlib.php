@@ -33,7 +33,7 @@ function tng_adminheader($title, $flags) {
     }
 
     if (!$tng_version) {
-        $tng_version = "12.0.1";
+        $tng_version = "12.3";
     }
     echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     echo "<link href=\"css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";

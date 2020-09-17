@@ -1,6 +1,9 @@
 <?php
 include "tng_begin.php";
 
+include "classes/StyleManager.php";
+$style = new StyleManager();
+
 //Insert the following lines in your index.php to take advantage of template switching
 if ($templateswitching && $templatenum) {
     include "templates/$templatepfx$templatenum/index.php";
@@ -10,7 +13,11 @@ if ($templateswitching && $templatenum) {
 
 $flags['noicons'] = true;
 $flags['noheader'] = true;
-$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 5px;} table th, table td {padding: 0;}</style>";
+
+$style->addSelector("table", ["border-collapse" => "separate", "border-spacing" => "5px"]);
+$style->addSelector("table td", ["padding" => "0"]);
+
+$flags['scripting'] = $style->getStyle();
 tng_header($text['mnuheader'], $flags);
 ?>
 
