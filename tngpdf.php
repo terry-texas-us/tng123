@@ -27,12 +27,12 @@ if (!class_exists('TNGPDF')) {
 // Private properties
         public $charset;      // character set being used
 
-        public function TNGPDF($orientation = 'P', $unit = 'mm', $format = 'A4') {
+        public function __construct($orientation = 'P', $unit = 'mm', $format = 'A4') {
             global $session_charset;
 
             $this->charset = $session_charset;
             $this->bold = $session_charset == "UTF-8" ? "B" : "";
-            tFPDF::tFPDF($orientation, $unit, $format);
+            tFPDF::__construct($orientation, $unit, $format);
         }
 
 

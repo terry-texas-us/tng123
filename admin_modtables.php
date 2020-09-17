@@ -25,13 +25,13 @@ define('YES', "1");
 include $subroot . 'mmconfig.php';
 
 if (!isset($options['show_analyzer'])) {
-  $options['show_analyzer'] = "0";
+    $options['show_analyzer'] = "0";
 }
 if (!isset($options['show_developer'])) {
-  $options['show_developer'] = "0";
+    $options['show_developer'] = "0";
 }
 if (!isset($options['show_updates'])) {
-  $options['show_updates'] = "0";
+    $options['show_updates'] = "0";
 }
 
 // SETUP THE PAGE HEADER AND MENUS
@@ -41,7 +41,7 @@ $menu = "<div class=\"mmmenuwrap\">";
 $menu .= doMenu($modtabs, "parser", $innermenu);
 $menu .= "</div>";
 if (!isset($message)) {
-  $message = "";
+    $message = "";
 }
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
@@ -51,16 +51,16 @@ $mhuser = isset($_SESSION['currentuserdesc']) ? $_SESSION['currentuser'] : "";
 
 // ADJUSTMENTS TO USER PREFERENCES (OPTIONS)
 if (isset($_GET['sort'])) {
-  $_SESSION['sortby'] = $_GET['sort'];
+    $_SESSION['sortby'] = $_GET['sort'];
 }
 if (isset($_SESSION['sortby'])) {
-  $options['sortby'] = $_SESSION['sortby'];
+    $options['sortby'] = $_SESSION['sortby'];
 }
 if (!isset($options['show_analyzer'])) {
-  $options['show_analyzer'] = "0";
+    $options['show_analyzer'] = "0";
 }
 if (!isset($options['compress_log'])) {
-  $options['compress_log'] = "0";
+    $options['compress_log'] = "0";
 }
 
 require 'classes/modobjinits.php';
@@ -120,36 +120,36 @@ include_once 'classes/modparser.class.php';
 $oParse = new modparser($objinits);
 
 if ($options['fix_header']) {
-  $style = "position:absolute;min-width:98%;top:119;left:05;padding:5px;";
+    $style = "position:absolute;min-width:98%;top:119;left:05;padding:5px;";
 } else {
-  $style = "min-width:98%;";
+    $style = "min-width:98%;";
 }
 
 if ($options['fix_header']) {
-  $pclass = "parse-table";
+    $pclass = "parse-table";
 } else {
-  $pclass = '';
+    $pclass = '';
 }
 /*************************************************************************
  * DISPLAY THE MOD FILE SELECTION LIST
  *************************************************************************/
 if (empty($modfile)) {
-  $modlist = $oParse->get_modfile_names();
-  $modnum = 1;
-  echo "
+    $modlist = $oParse->get_modfile_names();
+    $modnum = 1;
+    echo "
 <div id=\"parse-sec\" class='lightback parse-table' style=$style>
    <h2>{$admtext['selectmod']}</h2>";
-  foreach ($modlist as $modfile) {
-    echo "
+    foreach ($modlist as $modfile) {
+        echo "
       <p>" . $modnum++ . ". <a href=\"" . $thisfile . "?modfile=$modfile\">$modfile</a></p>";
-  }
-  echo "
+    }
+    echo "
 </div>";
-  fix_header($options);
-  echo "
+    fix_header($options);
+    echo "
 </body>
 </html>";
-  exit;
+    exit;
 }
 
 /*************************************************************************
@@ -172,10 +172,10 @@ echo "
 exit;
 
 function fix_header($options) {
-  global $sitever;
+    global $sitever;
 
     if ($sitever != 'mobile' && $options['adjust_headers']) {
-    echo "
+        echo "
    <script type=\"text/javascript\">
       jQuery(document).ready(function() {
          // set position of parse-sec div relative to mmhead
@@ -187,50 +187,50 @@ function fix_header($options) {
          });
       });
    </script>";
-  }
+    }
 
 
 }
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
-  global $admtext;
+    global $admtext;
 
-  $modtabs = array();
-  $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-  $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-  $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
-  if ($show_analyzer == YES) {
-    $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
-  }
-  if ($show_developer == YES) {
-    $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
-  }
-  if ($show_updates == YES) {
-    $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
-  }
-  return $modtabs;
+    $modtabs = array();
+    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
+    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
+    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    if ($show_analyzer == YES) {
+        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+    }
+    if ($show_developer == YES) {
+        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+    }
+    if ($show_updates == YES) {
+        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+    }
+    return $modtabs;
 }
 
 function set_innermenu_links($tng_version) {
-  global $admtext;
+    global $admtext;
 
-  $parts = explode(".", $tng_version);    // added to determine TNG vNN for
-  $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
-  $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
-  $helplang = findhelp("modhandler_help.php");
+    $parts = explode(".", $tng_version);    // added to determine TNG vNN for
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
+    $helplang = findhelp("modhandler_help.php");
 
-  // inner menu help
-  $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    // inner menu help
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 
-  // MM syntax
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    // MM syntax
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
 
-  // mod guidelines
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    // mod guidelines
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
-  // mods for TNGv10
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
-  return $innermenu;
+    // mods for TNGv10
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    return $innermenu;
 }
 
 /*************************************************************************
@@ -243,7 +243,7 @@ jQuery(document).ready(function() {
 
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
-  echo "
+    echo "
    window.scroll(0,0);
 
    // set position of status bar relative to #mmhead (jQuery UI)

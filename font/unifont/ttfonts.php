@@ -69,7 +69,7 @@ class TTFontFile
     public $defaultWidth;
     public $maxStrLenRead;
 
-    public function TTFontFile() {
+    public function __construct() {
         $this->maxStrLenRead = 200000;  // Maximum size of glyf table to read in as string (otherwise reads each glyph from file)
     }
 

@@ -191,17 +191,17 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
   }
 }
 
-function tngImageFlip(&$image, $x = 0, $y = 0, $width = null, $height = null) {
-  if ($width < 1) {
-    $width = imagesx($image);
-  }
-  if ($height < 1) {
-    $height = imagesy($image);
-  }
+function tngImageFlip($image, $x = 0, $y = 0, $width = null, $height = null) {
+    if ($width < 1) {
+        $width = imagesx($image);
+    }
+    if ($height < 1) {
+        $height = imagesy($image);
+    }
 
-  // truecolor provides better results, if possible.
-  if (function_exists('imageistruecolor') && imageistruecolor($image)) {
-    $tmp = imagecreatetruecolor(1, $height);
+    // truecolor provides better results, if possible.
+    if (function_exists('imageistruecolor') && imageistruecolor($image)) {
+        $tmp = imagecreatetruecolor(1, $height);
   } else {
     $tmp = imagecreate(1, $height);
   }

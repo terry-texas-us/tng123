@@ -500,7 +500,9 @@ function getPlaceRecord($place, $prevlevel) {
             $treeval = $tree;
             $treecriteria = " AND gedcom=\"$tree\"";
         }
-        $query = "INSERT IGNORE INTO $places_table (place,gedcom,longitude,latitude,zoom,placelevel,temple,notes,geoignore) VALUES(\"$place\", \"$treeval\", \"{$map['long']}\", \"{$map['lati']}\", \"{$map['zoom']}\", \"{$map['placelevel']}\", \"$temple\", \"$note\", \"0\" )";
+        $query = "INSERT IGNORE ";
+        $query .= "INTO $places_table (place, gedcom, longitude, latitude, zoom, placelevel, temple, notes, geoignore) ";
+        $query .= "VALUES(\"$place\", \"$treeval\", \"{$map['long']}\", \"{$map['lati']}\", \"{$map['zoom']}\", \"{$map['placelevel']}\", \"$temple\", \"$note\", \"0\" )";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
         $success = tng_affected_rows();

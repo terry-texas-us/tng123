@@ -19,7 +19,7 @@ if (!class_exists('UFPDF')) {
     class UFPDF extends FPDF
     {
 
-        public function UFPDF($orientation = 'P', $unit = 'mm', $format = 'A4') {
+        public function __construct($orientation = 'P', $unit = 'mm', $format = 'A4') {
             FPDF::FPDF($orientation, $unit, $format);
         }
 

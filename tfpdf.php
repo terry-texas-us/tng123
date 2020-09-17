@@ -71,7 +71,7 @@ class tFPDF
     public $AliasNbPages;       // alias for total number of pages
     public $PDFVersion;         // PDF version number
 
-    public function tFPDF($orientation = 'P', $unit = 'mm', $size = 'A4') {
+    public function __construct($orientation = 'P', $unit = 'mm', $size = 'A4') {
         global $session_charset;
 
         $this->charset = $session_charset;

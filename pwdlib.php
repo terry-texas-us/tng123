@@ -5,15 +5,15 @@
 */
 
 function PasswordType() {
-  global $tngconfig;
+    global $tngconfig;
 
-  static $type_name;    // the password encryption name. Save for faster future calls
+    static $type_name;    // the password encryption name. Save for faster future calls
 
-  if (!isset($type_name)) { // just do this once
-    // start with the default if type not set
-    $type_name = $tngconfig['password_type'] && PasswordTypeList($tngconfig['password_type']) ? $tngconfig['password_type'] : PasswordTypeList('default');
-  }
-  return $type_name;
+    if (!isset($type_name)) { // just do this once
+        // start with the default if type not set
+        $type_name = $tngconfig['password_type'] && PasswordTypeList($tngconfig['password_type']) ? $tngconfig['password_type'] : PasswordTypeList('default');
+    }
+    return $type_name;
 }
 
 /*
@@ -25,36 +25,32 @@ function PasswordType() {
 
 function PasswordEncode($str, $name = null) {
 
-  // make sure $name is valid
-  if ($name === null) {
-    $name = PasswordType();
-  } elseif (!PasswordTypeList($name)) {
-    return false;
-  }
+    // make sure $name is valid
+    if ($name === null) {
+        $name = PasswordType();
+    } elseif (!PasswordTypeList($name)) {
+        return false;
+    }
 
-  switch ($name) {
-    case "none":
-      return $str;
-      break;
-    case 'md5':
-      return md5($str);
-      break;
-    case 'sha1':
-      return sha1($str);
-      break;
-    case 'phpass':
-      global $pwd_hasher;
-      if (empty($pwd_hasher)) {
-        $pwd_hasher = phpassInit(8, TRUE);  // DEFAULT: use the portable hash from phpasss
-      }                                       // NOTE: this may need to be extended to support variations by different CMS's
-      return $pwd_hasher->HashPassword($str);
-      break;
-    default:
-      // if it exists, the hash() function contains all the encryption types, so use it for all the rest
-      return (function_exists('hash')) ? hash($name, $str) : false;
-  }
+    switch ($name) {
+        case "none":
+            return $str;
+        case 'md5':
+            return md5($str);
+        case 'sha1':
+            return sha1($str);
+        case 'phpass':
+            global $pwd_hasher;
+            if (empty($pwd_hasher)) {
+                $pwd_hasher = phpassInit(8, TRUE);  // DEFAULT: use the portable hash from phpasss
+            }                                       // NOTE: this may need to be extended to support variations by different CMS's
+            return $pwd_hasher->HashPassword($str);
+        default:
+            // if it exists, the hash() function contains all the encryption types, so use it for all the rest
+            return (function_exists('hash')) ? hash($name, $str) : false;
+    }
 
-  return false;  // error, something went wrong if we got this far
+    return false;  // error, something went wrong if we got this far
 }
 
 
@@ -73,35 +69,35 @@ function PasswordEncode($str, $name = null) {
 
 function PasswordCheck($str, $hash, $name = null) {
 
-  if ($name == 'encrypted') {
-    // $str is already encrypted, so just check to see if they match
-    return (strcmp($str, $hash) == 0) ? 1 : 0;
-  } else {
-    // make sure $name is valid
-    if ($name == null || !$name) {
-      $name = PasswordType();
-    } elseif (!PasswordTypeList($name)) {
-      return 0;
-    }
-    if ($name == 'phpass') {
-      // use the phpass functions
-      global $pwd_hasher;
-      if (empty($pwd_hasher)) {
-        $pwd_hasher = phpassInit(8, TRUE); // DEFAULT: use the portable hash from phpasss
-      }                                      // NOTE: this may need to be extended to support variations by different CMS's
-      $check = $pwd_hasher->CheckPassword($str, $hash);
-
+    if ($name == 'encrypted') {
+        // $str is already encrypted, so just check to see if they match
+        return (strcmp($str, $hash) == 0) ? 1 : 0;
     } else {
-      // everything else
-      $check = $hash == PasswordEncode($str, $name);
-    }
+        // make sure $name is valid
+        if ($name == null || !$name) {
+            $name = PasswordType();
+        } elseif (!PasswordTypeList($name)) {
+            return 0;
+        }
+        if ($name == 'phpass') {
+            // use the phpass functions
+            global $pwd_hasher;
+            if (empty($pwd_hasher)) {
+                $pwd_hasher = phpassInit(8, TRUE); // DEFAULT: use the portable hash from phpasss
+            }                                      // NOTE: this may need to be extended to support variations by different CMS's
+            $check = $pwd_hasher->CheckPassword($str, $hash);
 
-    if ($check) {
-      return ($name == PasswordType()) ? 1 : 2; // have a match, same encryption as the preferred?
-    } else {
-      return 0;  // no match
+        } else {
+            // everything else
+            $check = $hash == PasswordEncode($str, $name);
+        }
+
+        if ($check) {
+            return ($name == PasswordType()) ? 1 : 2; // have a match, same encryption as the preferred?
+        } else {
+            return 0;  // no match
+        }
     }
-  }
 }
 
 
@@ -119,37 +115,37 @@ function PasswordCheck($str, $hash, $name = null) {
  */
 
 function PasswordTypeList($ReturnPart = null, $Force_No_Hash = false) {
-  static $type_list;  // save for faster future calls
+    static $type_list;  // save for faster future calls
 
-  if (!isset($type_list)) { // just do this once
+    if (!isset($type_list)) { // just do this once
 
-    $type_list[] = 'md5'; // always have at least md5
+        $type_list[] = 'md5'; // always have at least md5
 
-    if (function_exists('sha1')) {
-      $type_list[] = 'sha1';
+        if (function_exists('sha1')) {
+            $type_list[] = 'sha1';
+        }
+
+        if (function_exists('hash') && !$Force_No_Hash) {
+            $type_list[] = 'sha256';
+            $type_list[] = 'sha384';
+            $type_list[] = 'sha512';
+            // Note: Others can be added here
+        }
+
+        $type_list[] = 'phpass';
+        $type_list[] = 'none';
     }
 
-    if (function_exists('hash') && !$Force_No_Hash) {
-      $type_list[] = 'sha256';
-      $type_list[] = 'sha384';
-      $type_list[] = 'sha512';
-      // Note: Others can be added here
+    if ($ReturnPart === null) {
+        return $type_list;  // give the whole list
     }
 
-    $type_list[] = 'phpass';
-    $type_list[] = 'none';
-  }
+    if ($ReturnPart === '' || $ReturnPart === 'default') {
+        return 'md5';  // give the default
+    }
 
-  if ($ReturnPart === null) {
-    return $type_list;  // give the whole list
-  }
-
-  if ($ReturnPart === '' || $ReturnPart === 'default') {
-    return 'md5';  // give the default
-  }
-
-  // If still here, then return true if in the list, false if not
-  return in_array($ReturnPart, $type_list);
+    // If still here, then return true if in the list, false if not
+    return in_array($ReturnPart, $type_list);
 
 }
 

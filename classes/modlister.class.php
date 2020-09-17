@@ -202,35 +202,29 @@ class modlister extends modparser
          * SHOW MOD LIST HEADINGS
          *******************************************************************/
         // uses bounding table to eliminate jumping during page load
-        echo "
-<table id=\"mmgrid\" class=\"lightback $mmlistclass\">
-<tr class='databack'>
-<td class=\"tngshadow\">
-
-<table class=\"tfixed normal\">
-   <tr>";
+        echo "<table id=\"mmgrid\" class=\"lightback $mmlistclass\">";
+        echo "<tr class='databack'>";
+        echo "<td class=\"tngshadow\">";
+        echo "<table class=\"tfixed normal\">";
+        echo "<tr>";
 
         // SHOW LEFT-SIDE SELECTION BOX HEADING IF A FILTER IS APPLIED
         if ($this->filter != self::F_ALL) {
-            echo "
-		<th class=\"fieldnameback fieldname center colselct\">
-         <div class=\"mminner\">&nbsp;{$this->admtext['choose']}</div>
-      </th>";
+            echo "<th class=\"fieldnameback fieldname center colselct\">";
+            echo "<div class=\"mminner\">&nbsp;{$this->admtext['choose']}</div>";
+            echo "</th>";
         }
 
         // DISPLAY THE MOD LISTING ROW HEADINGS
-        echo "
-      <th class=\"fieldnameback fieldname center colmodnm\">{$this->admtext['modname']}&nbsp;&nbsp;$namesort</th>
-      <th class=\"fieldnameback fieldname center colcfgnm\">{$this->admtext['cfgname']}&nbsp;&nbsp;$filesort</th>
-      <th class=\"fieldnameback fieldname center colversn\">{$this->admtext['version']}</th>
-      <th class=\"fieldnameback fieldname center colwiki\">
-         <div class=\"mminner\">
-            {$this->admtext['wiki']}
-         </div>
-      </th>
-      <th class=\"fieldnameback fieldname center colstatus\">{$this->admtext['status']}</th>
-      <th class=\"fieldnameback fieldname center colaflist\"><strong>{$this->admtext['aflist']}</strong></th>
-   <tr>";
+        echo "<th class=\"fieldnameback fieldname center colmodnm\">{$this->admtext['modname']}&nbsp;&nbsp;$namesort</th>";
+        echo "<th class=\"fieldnameback fieldname center colcfgnm\">{$this->admtext['cfgname']}&nbsp;&nbsp;$filesort</th>";
+        echo "<th class=\"fieldnameback fieldname center colversn\">{$this->admtext['version']}</th>";
+        echo "<th class=\"fieldnameback fieldname center colwiki\">";
+        echo "<div class=\"mminner\">{$this->admtext['wiki']}</div>";
+        echo "</th>";
+        echo "<th class=\"fieldnameback fieldname center colstatus\">{$this->admtext['status']}</th>";
+        echo "<th class=\"fieldnameback fieldname center colaflist\"><strong>{$this->admtext['aflist']}</strong></th>";
+        echo "<tr>";
 
         $id = 0;
         $ix = 0;

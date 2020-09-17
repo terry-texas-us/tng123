@@ -291,7 +291,7 @@ function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left,
     }
 }
 
-function doBox(&$person, $left, $top, $class, $type, $reverse = 0) {
+function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     #class=fambox or mfambox, $type=parent or child
     global $familychart, $text, $family_url, $downarrow, $uparrow;
     $name = $person['displayname'];
