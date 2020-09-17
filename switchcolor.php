@@ -1,14 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-<html>
+<!doctypehtml>
+<html lang="en">
 <head>
-  <title>Switch Tab Color</title>
-  <script src="js/popupwindow.js"></script>
-  <script src="js/anchorposition.js"></script>
-  <script src="js/colorpicker2.js"></script>
-  <script type="text/javascript">
-    var cp = new ColorPicker('window');
-  </script>
+    <title>Switch Tab Color</title>
+    <script src="js/popupwindow.js"></script>
+    <script src="js/anchorposition.js"></script>
+    <script src="js/colorpicker2.js"></script>
+    <script type="text/javascript">
+        var cp = new ColorPicker('window');
+    </script>
 </head>
 
 <body>

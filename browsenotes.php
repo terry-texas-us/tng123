@@ -80,7 +80,7 @@ preparebookmark($logstring);
 $flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top;}</style>\n";
 tng_header($text['notes'], $flags);
 ?>
-    <h2 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h2><br>
+    <h2 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h2>
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsenotes', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 

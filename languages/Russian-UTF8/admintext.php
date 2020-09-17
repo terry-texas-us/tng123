@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Временная";
     $admtext['tleventstable'] = "Хронология";
     $admtext['album2entitiestable'] = "Ссылки на альбомы";
-    $admtext['doctype'] = "Тип документа (&#60;!DOCTYPE&#62;)";
     $admtext['cemrows'] = "Максимальное количество строк в столбце (приблизительно)";
     $admtext['cemblanks'] = "Опускать &#171;Неизвестные&#187; категории";
     $admtext['success'] = "Успешно";

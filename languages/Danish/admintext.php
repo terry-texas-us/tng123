@@ -1195,7 +1195,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Midlertidig begivenhedstabel";
     $admtext['tleventstable'] = "Tidslinje begivenhedstabel";
     $admtext['album2entitiestable'] = "Links til album";
-    $admtext['doctype'] = "Dokumenttypeerkl�ring";
     $admtext['cemrows'] = "Maks. antal linier pr. kolonne (ca.)";
     $admtext['cemblanks'] = "Udelad \"Ukendte\" kategorier";
     $admtext['success'] = "Succes";

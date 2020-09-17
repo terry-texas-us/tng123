@@ -8,9 +8,9 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit && !$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
@@ -50,7 +50,7 @@ $dna_group_desc = $dna_group ? $descrow['description'] : "";
 $test_date = convertDate($test_date);
 $match_date = convertDate($match_date);
 if (!$personID && !$person_name) {
-  $mynewgedcom = "";
+    $mynewgedcom = "";
 }
 
 $query = "UPDATE $dna_tests_table SET test_type=\"$test_type\", test_number=\"$test_number\", notes=\"$notes\", vendor=\"$vendor\", test_date=\"$test_date\", match_date=\"$match_date\",personID=\"$personID\",
@@ -66,29 +66,30 @@ $query = "UPDATE $dna_links_table SET dna_group=\"$dna_group\"  WHERE testID=\"$
 $result = tng_query($query);
 
 if ($personID && $personID != $personID_org) {
-  $query = "INSERT IGNORE INTO $dna_links_table (testID,personID,gedcom,dna_group) VALUES (\"$testID\",\"$personID\",\"$mynewgedcom\",\"$dna_group\")";
-  $result = @tng_query($query);
+    $query = "INSERT IGNORE INTO $dna_links_table (testID,personID,gedcom,dna_group) VALUES (\"$testID\",\"$personID\",\"$mynewgedcom\",\"$dna_group\")";
+    $result = @tng_query($query);
 }
 
 adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['modifydna']}: $testID</a>");
 
 if ($newtest == "return") {
-  header("Location: admin_edit_dna_test.php?testID=$testID&cw=$cw");
+    header("Location: admin_edit_dna_test.php?testID=$testID&cw=$cw");
 } else {
-  if ($newtest == "close") {
-    ?>
-      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-      <html>
-      <body>
-      <script type="text/javascript">
-          top.close();
-      </script>
-      </body>
-      </html>
-    <?php
-  } else {
-    $message = $admtext['changestotest'] . " $test_number {$admtext['succsaved']}.";
-    header("Location: admin_dna_tests.php?message=" . urlencode($message));
-  }
+    if ($newtest == "close") {
+        ?>
+        <!doctype html>
+        <html lang="en">
+
+        <body>
+        <script type="text/javascript">
+            top.close();
+        </script>
+        </body>
+        </html>
+        <?php
+    } else {
+        $message = $admtext['changestotest'] . " $test_number {$admtext['succsaved']}.";
+        header("Location: admin_dna_tests.php?message=" . urlencode($message));
+    }
 }
 ?>

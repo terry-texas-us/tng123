@@ -52,6 +52,15 @@ function tng_error() {
     return mysqli_error($link);
 }
 
+/**
+ *  fetches all result rows
+ * @param mysqli_result $result Specifies a result set identifier returned by mysqli_query(), mysqli_store_result() or mysqli_use_result()
+ * @return array result-set as an associative array
+ */
+function tng_fetch_all(mysqli_result $result) {
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
 function tng_fetch_assoc($result) {
     return mysqli_fetch_assoc($result);
 }

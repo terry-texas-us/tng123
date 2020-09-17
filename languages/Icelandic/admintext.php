@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Atbur�a (t�mabundnir) tafla";
     $admtext['tleventstable'] = "T�mal�nu tafla";
     $admtext['album2entitiestable'] = "Alb�m tenglar";
-    $admtext['doctype'] = "Doctype Declaration";
     $admtext['cemrows'] = "H�marks l�nufj�ldi � d�lk (ca.)";
     $admtext['cemblanks'] = "Fela \"��ekkta\" flokka";
     $admtext['success'] = "T�kst";

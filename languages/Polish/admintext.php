@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Tabela tymczasowych wydarze�";
     $admtext['tleventstable'] = "Tabela linii czasu wydarze�";
     $admtext['album2entitiestable'] = "��cza album�w";
-    $admtext['doctype'] = "Deklaracja rodzaju dokumentu";
     $admtext['cemrows'] = "Maksymalna ilo�� wierszy w kolumnie (oko�o)";
     $admtext['cemblanks'] = "Ukryj kategori� \"Nieznany\"";
     $admtext['success'] = "Operacja przeprowadzona pomy�lnie";

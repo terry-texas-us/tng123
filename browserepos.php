@@ -8,47 +8,47 @@ $browserepos_url = getURL("browserepos", 1);
 $showrepo_url = getURL("showrepo", 1);
 
 function doRepoSearch($instance, $pagenav) {
-  global $text, $reposearch, $tree;
+    global $text, $reposearch, $tree;
 
-  $browserepos_noargs_url = getURL("browserepos", 0);
+    $browserepos_noargs_url = getURL("browserepos", 0);
 
-  $str = "<span class='normal'>\n";
+    $str = "<span class='normal'>\n";
     $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"reposearch\" value=\"$reposearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-  $str .= $pagenav;
-  if ($reposearch) {
-    $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browserepos_noargs_url\">{$text['browseallrepos']}</a>";
-  }
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
-  $str .= "</form></span>\n";
+    $str .= "<input type=\"text\" name=\"reposearch\" value=\"$reposearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= $pagenav;
+    if ($reposearch) {
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browserepos_noargs_url\">{$text['browseallrepos']}</a>";
+    }
+    $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+    $str .= "</form></span>\n";
 
-  return $str;
+    return $str;
 }
 
 $max_browserepo_pages = 5;
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $page = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $page = 1;
 }
 
 $reposearch = cleanIt(trim($reposearch));
 if ($tree) {
-  $wherestr = "WHERE $repositories_table.gedcom = \"$tree\"";
-  if ($reposearch) {
-    $wherestr .= " AND reponame LIKE \"%$reposearch%\"";
-  }
-  $join = "INNER JOIN";
+    $wherestr = "WHERE $repositories_table.gedcom = \"$tree\"";
+    if ($reposearch) {
+        $wherestr .= " AND reponame LIKE \"%$reposearch%\"";
+    }
+    $join = "INNER JOIN";
 } else {
-  if ($reposearch) {
-    $wherestr = "WHERE reponame LIKE \"%$reposearch%\"";
-  } else {
-    $wherestr = "";
-  }
-  $join = "LEFT JOIN";
+    if ($reposearch) {
+        $wherestr = "WHERE reponame LIKE \"%$reposearch%\"";
+    } else {
+        $wherestr = "";
+    }
+    $join = "LEFT JOIN";
 }
 
 $query = "SELECT repoID, reponame, repositories.gedcom AS gedcom, treename ";
@@ -62,21 +62,21 @@ $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  if ($tree) {
-    $query = "SELECT count(repoID) AS scount ";
-    $query .= "FROM $repositories_table repositories ";
-    $query .= "LEFT JOIN $trees_table trees ON repositories.gedcom = trees.gedcom ";
-    $query .= "$wherestr";
-  } else {
-    $query = "SELECT count(repoID) AS scount ";
-    $query .= "FROM $repositories_table repositories ";
-    $query .= "$wherestr";
-  }
-  $result2 = tng_query($query);
-  $row = tng_fetch_assoc($result2);
-  $totrows = $row['scount'];
+    if ($tree) {
+        $query = "SELECT count(repoID) AS scount ";
+        $query .= "FROM $repositories_table repositories ";
+        $query .= "LEFT JOIN $trees_table trees ON repositories.gedcom = trees.gedcom ";
+        $query .= "$wherestr";
+    } else {
+        $query = "SELECT count(repoID) AS scount ";
+        $query .= "FROM $repositories_table repositories ";
+        $query .= "$wherestr";
+    }
+    $result2 = tng_query($query);
+    $row = tng_fetch_assoc($result2);
+    $totrows = $row['scount'];
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $numrowsplus = $numrows + $offset;
@@ -90,7 +90,7 @@ $flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 
 tng_header($text['repositories'], $flags);
 ?>
 
-<h2 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h2><br>
+<h2 class="header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h2>
 <?php
 echo "<div class='normal'>\n";
 
@@ -102,8 +102,8 @@ if ($totrows) {
 
 $pagenav = get_browseitems_nav($totrows, $browserepos_url . "reposearch=$reposearch&amp;offset", $maxsearchresults, $max_browserepo_pages);
 if ($pagenav || $reposearch) {
-  echo doRepoSearch(1, $pagenav);
-  echo "<br>\n";
+    echo doRepoSearch(1, $pagenav);
+    echo "<br>\n";
 }
 
 $header = "";
@@ -111,15 +111,15 @@ $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if ($sitever != "standard") {
-  if ($tabletype == "toggle") {
-    $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
-  } elseif ($tabletype == "stack") {
-    $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
-  } elseif ($tabletype == "swipe") {
-    $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
-  }
+    if ($tabletype == "toggle") {
+        $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+    } elseif ($tabletype == "stack") {
+        $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+    } elseif ($tabletype == "swipe") {
+        $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+    }
 } else {
-  $header = "<table class=\"whiteback normal\">";
+    $header = "<table class=\"whiteback normal\">";
 }
 echo $header;
 ?>
@@ -128,8 +128,8 @@ echo $header;
     <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
     <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['repoid']; ?>&nbsp;</th>
     <th data-tablesaw-priority="2" class="fieldnameback fieldname">&nbsp;<?php echo $text['name']; ?>&nbsp;</th>
-  <?php if ($numtrees > 1) { ?>
-      <th data-tablesaw-priority="3" class="fieldnameback">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
+    <?php if ($numtrees > 1) { ?>
+        <th data-tablesaw-priority="3" class="fieldnameback">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
 </tr>
 </thead>
 <?php
@@ -151,7 +151,7 @@ echo "</tbody>\n";
 echo "</table><br>\n";
 echo "</div>\n";
 if ($pagenav || $reposearch) {
-  echo doRepoSearch(2, $pagenav) . "<br>\n";
+    echo doRepoSearch(2, $pagenav) . "<br>\n";
 }
 tng_footer("");
 ?>

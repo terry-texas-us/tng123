@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Eventos Temp";
     $admtext['tleventstable'] = "Eventos de Linha de Tempo";
     $admtext['album2entitiestable'] = "Liga��es de �lbums";
-    $admtext['doctype'] = "Declara��o Doctype";
     $admtext['cemrows'] = "Max linhas por coluna (aprox.)";
     $admtext['cemblanks'] = "Suprimir categorias \"Unknown\"";
     $admtext['success'] = "Sucesso";

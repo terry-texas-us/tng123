@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "V�liaikainen Tapahtumat-taulu";
     $admtext['tleventstable'] = "Aikajanan Tapahtumat -taulu";
     $admtext['album2entitiestable'] = "Albumin linkit";
-    $admtext['doctype'] = "Doctype Declaration";
     $admtext['cemrows'] = "Sarakkeen maksimi rivim��r� (noin)";
     $admtext['cemblanks'] = "Suppress 'Unknown' categories";
     $admtext['success'] = "Onnistui";

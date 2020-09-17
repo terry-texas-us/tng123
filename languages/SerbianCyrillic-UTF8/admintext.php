@@ -1204,7 +1204,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Привремени Догађаји";
     $admtext['tleventstable'] = "Времеплов";
     $admtext['album2entitiestable'] = "Линкови Албума";
-    $admtext['doctype'] = "Doctype Декларације";
     $admtext['cemrows'] = "Максимални број линија по колони (приближно)";
     $admtext['cemblanks'] = "Потисните \"Непознате\" категорије";
     $admtext['success'] = "Успело";

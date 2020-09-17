@@ -111,9 +111,9 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
     }
     $password_type = PasswordType();
     $template = "sssssssssssssssssss";
-    $query = "INSERT INTO $users_table (description,username,password,password_type,realname,phone,email,website,address,city,state,zip,country,languageID,notes,gedcom,role,allow_living,dt_registered,dt_consented) 
-		VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'guest',?,?,?)";
-    $params = array(&$template, &$realname, &$username, &$password, &$password_type, &$realname, &$phone, &$email, &$website, &$address, &$city, &$state, &$zip, &$country, &$preflang, &$notes, &$gedcom, &$allow_living_val, &$today, &$dt_consented);
+    $query = "INSERT INTO $users_table (description, username, password, password_type, realname, phone, email, website, address, city, state, zip, country, languageID, notes, gedcom, role, allow_living, dt_registered, dt_consented) ";
+    $query .= "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'guest',?,?,?)";
+    $params = [&$template, &$realname, &$username, &$password, &$password_type, &$realname, &$phone, &$email, &$website, &$address, &$city, &$state, &$zip, &$country, &$preflang, &$notes, &$gedcom, &$allow_living_val, &$today, &$dt_consented];
     $success = tng_execute_noerror($query, $params);
 } else {
     $success = 0;
@@ -121,7 +121,7 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
 
 tng_header($text['regnewacct'], $flags);
 
-echo "<p class='header'>{$text['regnewacct']}</span></p><br>\n";
+echo "<h2 class='header'>{$text['regnewacct']}</h2>\n";
 echo "<span class='normal'>\n";
 if ($success > 0) {
     echo "<p>{$text['success']}</p>";

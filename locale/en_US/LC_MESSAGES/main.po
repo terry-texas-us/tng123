@@ -4380,10 +4380,6 @@ msgstr "Timeline Events"
 msgid "Album Links"
 msgstr "Album Links"
 
-# $admtext['doctype'] = "Doctype Declaration";
-msgid "Doctype Declaration"
-msgstr "Doctype Declaration"
-
 # $admtext['cemrows'] = "Max lines per column (approx.)";
 msgid "Max lines per column (approx.)"
 msgstr "Max lines per column (approx.)"

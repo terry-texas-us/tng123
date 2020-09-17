@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Temporäre Ereignisse";
     $admtext['tleventstable'] = "Zeitstrahl-Ereignisse";
     $admtext['album2entitiestable'] = "Alben-Verknüpfungen";
-    $admtext['doctype'] = "Doctype-Deklaration";
     $admtext['cemrows'] = "Max. Zeilenanzahl pro Spalte (ungefähr)";
     $admtext['cemblanks'] = "\"Unbekannte\" Kategorien unterdrücken";
     $admtext['success'] = "Erfolgreich";

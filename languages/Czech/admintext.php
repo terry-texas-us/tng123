@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Do�asn� ud�losti";
     $admtext['tleventstable'] = "Ud�losti �asov� osy";
     $admtext['album2entitiestable'] = "Odkazy na alba";
-    $admtext['doctype'] = "Doctype Deklarace";
     $admtext['cemrows'] = "Maxim�ln� po�et ��dk� ve sloupci (pr�m.)";
     $admtext['cemblanks'] = "Potla�it kategorii \"Nezn�m�\"";
     $admtext['success'] = "�sp�ch";

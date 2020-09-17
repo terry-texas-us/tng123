@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Tijdelijke gebeurtenissen-tabel";
     $admtext['tleventstable'] = "Tijdlijn gebeurtenissen-tabel";
     $admtext['album2entitiestable'] = "Album-koppelingen";
-    $admtext['doctype'] = "Documenttype toewijzing";
     $admtext['cemrows'] = "Max. lijnen per kolom (ongeveer)";
     $admtext['cemblanks'] = "Onderdruk \"Onbekend\" categorie�n";
     $admtext['success'] = "Succesvol";

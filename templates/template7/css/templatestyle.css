@@ -33,7 +33,6 @@
 /* normal: most regular body text */
 .normal {
     color: #666;
-    font-size: 12px;
     font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, sans-serif;
     font-weight: bold;
 }

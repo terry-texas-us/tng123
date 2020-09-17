@@ -1197,7 +1197,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Tabell för temporära händelser";
     $admtext['tleventstable'] = "Tabell för tidslinjehändelser";
     $admtext['album2entitiestable'] = "Album-länkar";
-    $admtext['doctype'] = "Dok-typ deklaration";
     $admtext['cemrows'] = "Max rader per kolumn (ung.)";
     $admtext['cemblanks'] = "Ta inte med kategori \"Okänd\"";
     $admtext['success'] = "Lyckats";

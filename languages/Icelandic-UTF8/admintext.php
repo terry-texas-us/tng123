@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Atburða (tímabundnir) tafla";
     $admtext['tleventstable'] = "Tímalínu tafla";
     $admtext['album2entitiestable'] = "Albúm tenglar";
-    $admtext['doctype'] = "Doctype Declaration";
     $admtext['cemrows'] = "Hámarks línufjöldi í dálk (ca.)";
     $admtext['cemblanks'] = "Fela \"Óþekkta\" flokka";
     $admtext['success'] = "Tókst";

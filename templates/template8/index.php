@@ -82,7 +82,7 @@ if ($sitever == "mobile") {
 
             <!-- This is the main contents of your home page. -->
             <td class="home_section" id="hs1">
-                <span class="header"><?php echo $text['welcome']; ?></span><br>
+                <h2 class="header"><?php echo $text['welcome']; ?></h2>
 
                 <!-- RANDOM PHOTO CODE STARTS HERE -->
                 <!-- If you don't want to have a random photo displayed, just remove the following line. -->
@@ -104,7 +104,7 @@ if ($sitever == "mobile") {
                 <br style="clear: both;"><br>
             </td>
             <td class="home_section" id="hs2">
-                <span class="header"><?php echo $text['features']; ?></span><br>
+                <h2 class="header"><?php echo $text['features']; ?></h2>
 
                 <!-- ADD "FEATURED SECTIONS" OF YOUR SITE BELOW -->
 
@@ -114,8 +114,7 @@ if ($sitever == "mobile") {
 
                 <!-- Contact Us section -->
                 <hr>
-                <br>
-                <span class="header"><?php echo $text['contactus']; ?></span><br><br>
+                <h2 class="header"><?php echo $text['contactus']; ?></h2>
 
                 <!-- ADD YOUR CONTACT US TEXT BELOW -->
 
@@ -133,7 +132,7 @@ if ($sitever == "mobile") {
             </td>
             <td class="home_section" id="hs3">
                 <div class="latest_news rounded10">
-                    <span class="header"><?php echo $text['latestnews']; ?></span>
+                    <h2 class="header"><?php echo $text['latestnews']; ?></h2>
                     <hr>
 
                     <?php

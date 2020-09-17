@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Geçici Etkinlikler";
     $admtext['tleventstable'] = "Zaman Çizelgesi Etkinlikleri";
     $admtext['album2entitiestable'] = "Albüm Bağlantıları";
-    $admtext['doctype'] = "Doküman Türü Deklarasyonu";
     $admtext['cemrows'] = "Sütun başına maksimum satır (yaklaşık)";
     $admtext['cemblanks'] = "\"Bilinmeyen\" kategorileri bastır";
     $admtext['success'] = "Başarılı";

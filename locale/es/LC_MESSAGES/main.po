@@ -4380,10 +4380,6 @@ msgstr "Eventos Cronológicos"
 msgid "Album Links"
 msgstr "Enlaces de Album"
 
-# $admtext['doctype'] = "Declaración Doctype";
-msgid "Doctype Declaration"
-msgstr "Declaración Doctype"
-
 # $admtext['cemrows'] = "Max. Líneas por columna (apróx.)";
 msgid "Max lines per column (approx.)"
 msgstr "Max. Líneas por columna (apróx.)"

@@ -21,20 +21,22 @@ $lines = file($mod);
 
 if (false !== $lines) {
 
-    echo $tngconfig['doctype'] ? $tngconfig['doctype'] : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">";
+    echo "<!doctype html>\n";
+    echo "<html lang=\"en\">\n";
+    echo "<head>";
     echo "<title>CFG</title>";
     echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">";
 
     echo "<style type='text/css'>";
-    echo "pre {
-   white-space: pre-wrap;       /* Since CSS 2.1 */
-   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-   white-space: -pre-wrap;      /* Opera 4-6 */
-   white-space: -o-pre-wrap;    /* Opera 7 */
-   word-wrap: break-word;       /* Internet Explorer 5.5+ */
-   padding:0;
-   margin:0;
-}";
+    echo "pre {";
+    echo "white-space: pre-wrap; /* Since CSS 2.1 */";
+    echo "white-space: -moz-pre-wrap; /* Mozilla, since 1999 */";
+    echo "white-space: -pre-wrap; /* Opera 4-6 */";
+    echo "white-space: -o-pre-wrap; /* Opera 7 */";
+    echo "word-wrap: break-word; /* Internet Explorer 5.5+ */";
+    echo "padding:0;";
+    echo "margin:0;";
+    echo "}";
     echo "div {padding:0; margin:0;}";
     echo "</style>";
     echo "</head>";

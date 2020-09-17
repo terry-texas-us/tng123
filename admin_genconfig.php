@@ -48,7 +48,6 @@ if (!isset($tngconfig['maxdesc'])) {
 if (!$tngconfig['backupdays']) {
     $tngconfig['backupdays'] = 30;
 }
-$tngconfig['doctype'] = preg_replace("/\"/", "&#34;", $tngconfig['doctype']);
 $sitename = preg_replace("/\"/", "&#34;", $sitename);
 $site_desc = preg_replace("/\"/", "&#34;", $site_desc);
 $dbowner = preg_replace("/\"/", "&#34;", $dbowner);
@@ -525,10 +524,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <tr>
                             <td valign="top"><?php echo $admtext['site_desc']; ?>:</td>
                             <td><textarea name="site_desc" rows="2" cols="65"><?php echo $site_desc; ?></textarea></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['doctype']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['doctype']; ?>" name="doctype" size="70"></td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['siteowner']; ?>:</td>

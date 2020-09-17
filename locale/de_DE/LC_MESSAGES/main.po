@@ -4380,10 +4380,6 @@ msgstr "Zeitstrahl-Ereignisse"
 msgid "Album Links"
 msgstr "Alben-Verknüpfungen"
 
-# $admtext['doctype'] = "Doctype-Deklaration";
-msgid "Doctype Declaration"
-msgstr "Doctype-Deklaration"
-
 # $admtext['cemrows'] = "Max. Zeilenanzahl pro Spalte (ungefähr)";
 msgid "Max lines per column (approx.)"
 msgstr "Max. Zeilenanzahl pro Spalte (ungefähr)"

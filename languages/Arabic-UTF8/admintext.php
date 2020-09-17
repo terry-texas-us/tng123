@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "الأحداث المؤقتة";
     $admtext['tleventstable'] = "أحداث خط الزمن";
     $admtext['album2entitiestable'] = "روابط الألبومات";
-    $admtext['doctype'] = "إعلان نوع الملف";
     $admtext['cemrows'] = "حد الأسطر لكل عمود (تقريبي)";
     $admtext['cemblanks'] = "قم الفئات \"غير المعروفة\"";
     $admtext['success'] = "نجاح";

@@ -73,7 +73,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
     $urlfirstchar = addslashes($firstchars[$scount]);
     ?>
     <div class="titlebox">
-        <p class="header"><strong><?php echo $firstchars[$scount]; ?></strong></p>
+        <h2 class="header"><?php echo $firstchars[$scount]; ?></h2>
         <table class="sntable">
             <tr>
                 <td class="sncol">

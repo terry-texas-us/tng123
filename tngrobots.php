@@ -55,7 +55,6 @@ if ($tngprint) {
         case "browsenotes":
         case "browserepos":
         case "browsesources":
-        case "browsetrees-old":
         case "extrastree":
         case "reports":
         case "search":

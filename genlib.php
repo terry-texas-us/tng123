@@ -50,9 +50,9 @@ function tng_header($title, $flags) {
     initMediaTypes();
 
     header("Content-type:text/html;charset=" . $session_charset);
-    echo !empty($tngconfig['doctype']) ? $tngconfig['doctype'] . "\n\n" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
+    echo "<!doctype html>\n";
+    echo "<html lang=\"en\">\n";
 
-    echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
     echo "<head>\n";
 
     $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";

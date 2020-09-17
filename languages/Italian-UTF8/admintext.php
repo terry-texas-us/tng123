@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Tavola di eventi temporanei";
     $admtext['tleventstable'] = "Tavola di eventi della linea del tempo";
     $admtext['album2entitiestable'] = "Collegamenti dell'album";
-    $admtext['doctype'] = "Dichiarazione di Doctype";
     $admtext['cemrows'] = "Linee massime per colonna (approssimativamente.)";
     $admtext['cemblanks'] = "Sopprima \" Sconosciuto \" categorie";
     $admtext['success'] = "Successo";

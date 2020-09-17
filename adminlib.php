@@ -18,9 +18,10 @@ function tng_adminheader($title, $flags) {
     global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
 
     header("Content-type:text/html;charset=" . $session_charset);
-    echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n\n";
+    echo "<!doctype html>\n";
+    echo "<html lang=\"en\">\n";
     echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
-    echo "<html>\n<head>\n";
+    echo "<head>\n";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 

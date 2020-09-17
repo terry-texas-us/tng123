@@ -58,7 +58,6 @@ $homepage = "index.php";
 $tngdomain = "http://localhost/tng123";
 $sitename = "";
 $site_desc = "";
-$tngconfig['doctype'] = "";
 $target = "_self";
 $language = "English-UTF8";
 $charset = "UTF-8";

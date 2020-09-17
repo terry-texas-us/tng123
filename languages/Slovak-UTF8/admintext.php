@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Dočasné udalosti";
     $admtext['tleventstable'] = "Udalosti časovej osi";
     $admtext['album2entitiestable'] = "Odkazy na albumy";
-    $admtext['doctype'] = "Deklarácia Doctype";
     $admtext['cemrows'] = "Maximálny počet riadkov v stĺpci (priem.)";
     $admtext['cemblanks'] = "Potlačiť kategóriu \"Neznámy\"";
     $admtext['success'] = "Úspech";

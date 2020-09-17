@@ -130,8 +130,9 @@ if ($media == "1") {
 } else {
     if ($newfamily == "close") {
         ?>
-        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-        <html>
+        <!doctype html>
+        <html lang="en">
+
         <body>
         <script type="text/javascript">
             top.close();

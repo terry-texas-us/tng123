@@ -1,27 +1,20 @@
 <?php
 include "tng_begin.php";
 
-include "classes/StyleManager.php";
-$style = new StyleManager();
-
-//Insert the following lines in your index.php to take advantage of template switching
 if ($templateswitching && $templatenum) {
     include "templates/$templatepfx$templatenum/index.php";
     exit;
 }
-//end of lines to be inserted for template switching
-
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-
 $style->addSelector("table", ["border-collapse" => "separate", "border-spacing" => "5px"]);
 $style->addSelector("table td", ["padding" => "0"]);
 
 $flags['scripting'] = $style->getStyle();
+$flags['noicons'] = true;
+$flags['noheader'] = true;
+
 tng_header($text['mnuheader'], $flags);
 ?>
 
-<!-- "Home Page" (the text for these messages can be found at near the bottom of text.php -->
 <h1><?php echo $text['mnuheader']; ?></h1>
 
 <?php
@@ -31,7 +24,7 @@ if ($currentuser) {
 ?>
 
 <h2><?php echo $text['mnusearchfornames']; ?></h2>
-<!-- Do not change the form action or field names! -->
+
 <form action="search.php" method="get">
     <table>
         <tr>

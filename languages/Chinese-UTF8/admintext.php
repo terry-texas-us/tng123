@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "临时事件";
     $admtext['tleventstable'] = "时间事件";
     $admtext['album2entitiestable'] = "相册链接";
-    $admtext['doctype'] = "Doctype 声明";
     $admtext['cemrows'] = "每列最大行数";
     $admtext['cemblanks'] = "废止【未知】类别";
     $admtext['success'] = "成功";

@@ -1197,7 +1197,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Tempor�re Ereignisse";
     $admtext['tleventstable'] = "Zeitstrahl-Ereignisse";
     $admtext['album2entitiestable'] = "Alben-Verkn�pfungen";
-    $admtext['doctype'] = "Doctype-Deklaration";
     $admtext['cemrows'] = "Max. Zeilenanzahl pro Spalte (ungef�hr)";
     $admtext['cemblanks'] = "\"Unbekannte\" Kategorien unterdr�cken";
     $admtext['success'] = "Erfolgreich";

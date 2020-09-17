@@ -1196,7 +1196,6 @@ switch ($textpart) {
     $admtext['temptable'] = "Eventos Temporales";
     $admtext['tleventstable'] = "Eventos Cronol�gicos";
     $admtext['album2entitiestable'] = "Enlaces de Album";
-    $admtext['doctype'] = "Declaraci�n Doctype";
     $admtext['cemrows'] = "Max. L�neas por columna (apr�x.)";
     $admtext['cemblanks'] = "Suprimir categor�as \"Desconocido\"";
     $admtext['success'] = "Exito";
