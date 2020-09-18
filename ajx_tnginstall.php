@@ -59,7 +59,7 @@ switch ($_POST['subroutine']) {
         $failed = "";
         $success = 0;
 
-        $files = array("adminlog.txt", $subroot . "config.php", $subroot . "mmconfig.php", "genlog.txt", $subroot . "importconfig.php", $subroot . "logconfig.php", "config/mapconfig.php", $subroot . "pedconfig.php", "subroot.php", "whatsnew.txt");
+        $files = array("adminlog.txt", $subroot . "config.php", "config/mmconfig.php", "genlog.txt", $subroot . "importconfig.php", $subroot . "logconfig.php", "config/mapconfig.php", $subroot . "pedconfig.php", "subroot.php", "whatsnew.txt");
         foreach ($files as $file) {
             if (@chmod($file, 0666)) {
                 $success++;

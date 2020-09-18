@@ -10,32 +10,11 @@ $admin_login = 1;
 include 'checklogin.php';
 include 'version.php';
 include 'classes/version.php';
-include $subroot . 'mmconfig.php';
+include "config/mmconfig.php";
 
 $mhuser = isset($_SESSION['currentuserdesc']) ? $_SESSION['currentuser'] : "";
 
 require 'classes/modobjinits.php';
-
-/*
-// INITIALIZATIONS FOR MOD OBJECTS
-$fpaths = array (
-   'rootpath'  => $rootpath,
-   'subroot'   => $subroot,
-   'modspath'  => $modspath,
-   'extspath'  => $extspath
-);
-
-$objinits = array (
-   'fpaths'       => $fpaths,
-   'options'      => $options,
-   'time_offset'  => $time_offset,
-   'sitever'      => $sitever,
-   'currentuserdesc' => $mhuser,
-   'admtext'      => $admtext,
-   'templatenum'  => $templatenum,
-   'tng_version'  => $tng_version
-);
-*/
 
 include 'classes/modinfo.class.php';
 

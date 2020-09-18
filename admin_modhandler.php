@@ -42,7 +42,7 @@ define('CLEANUP', 4);
 define('F_SELECT', 5);
 
 // USER PREFERENCES
-include $subroot . 'mmconfig.php';
+include "config/mmconfig.php";
 
 //suppress PHP notices
 if (!isset($modspath)) {

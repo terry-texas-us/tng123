@@ -14,7 +14,7 @@ include "checklogin.php";
 include "version.php";
 $admvers = "TNG12 V4.0 ";
 
-include $subroot . 'mmconfig.php';
+include "config/mmconfig.php";
 
 define("YES", 1);
 define("NO", 0);

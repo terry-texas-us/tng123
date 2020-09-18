@@ -36,7 +36,7 @@ if (isset($_SESSION['sortby'])) {
 }
 
 require "adminlog.php";
-$optionsfile = $subroot . 'mmconfig.php';
+$optionsfile = "config/mmconfig.php";
 if (!is_writeable($optionsfile)) {
   $_SESSION['err_msg'] = "{$admtext['checkwrite']} {$admtext['cantwrite']} $optionsfile !";
   header("Location: admin_modhandler.php");  // restored to new Mod Manager screen KCR 140504

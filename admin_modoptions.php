@@ -16,7 +16,7 @@ include "checklogin.php";
 include "version.php";
 $admvers = "TNG12 V4.0 ";
 
-$optionsfile = $subroot . 'mmconfig.php';
+$optionsfile = "config/mmconfig.php";
 include $optionsfile;
 
 define("YES", 1);

@@ -82,7 +82,7 @@ echo "The originals of files that have been changed are at cust_text.bak in the 
 //	echo " Updating the Mod Manager Options to turn off the Recommended Updates tab.<br>\n";
 require "adminlog.php";
 
-$optionsfile = $subroot . 'mmconfig.php';
+$optionsfile = "config/mmconfig.php";
 include $optionsfile;
 $options['show_updates'] = "0";    // Turn off to not show the Recommended Updates tab  - added by Ken
 $optionstring = "<?php";

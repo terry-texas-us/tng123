@@ -22,7 +22,7 @@ $thisfile = $_SERVER['PHP_SELF'];
 define('YES', "1");
 
 // USER PREFERENCES
-include $subroot . 'mmconfig.php';
+include "config/mmconfig.php";
 
 if (!isset($options['show_analyzer'])) {
     $options['show_analyzer'] = "0";

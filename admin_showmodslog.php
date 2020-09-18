@@ -51,7 +51,7 @@ include "version.php";
 
 // temporary: these can be set from an options file
 // include 'classes/mod.class.config.php';
-include $subroot . 'mmconfig.php';
+include "config/mmconfig.php";
 
 define('YES', "1");
 define('NO', "0");

@@ -22,7 +22,7 @@ include "version.php";
 include "classes/version.php";
 $thisfile = $_SERVER['PHP_SELF'];
 
-include $subroot . 'mmconfig.php';
+include "config/mmconfig.php";
 $helplang = findhelp("modhandler_help.php");
 
 $parts = explode(".", $tng_version);        // added to determine TNG vNN for
