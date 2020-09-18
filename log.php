@@ -1,6 +1,6 @@
 <?php
 function writelog($string) {
-    global $text, $currentuser, $currentuserdesc, $_SERVER, $time_offset, $subroot, $exusers, $badhosts, $charset;
+    global $text, $currentuser, $currentuserdesc, $_SERVER, $time_offset, $exusers, $badhosts, $charset;
 
     require "config/logconfig.php";
 

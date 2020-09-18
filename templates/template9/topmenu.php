@@ -1,5 +1,5 @@
 <?php
-global $text, $subroot, $tmp;
+global $text, $tmp;
 
 $dadlabel = getTemplateMessage('t9_dadside');
 $momlabel = getTemplateMessage('t9_momside');

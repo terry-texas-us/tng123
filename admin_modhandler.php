@@ -101,7 +101,6 @@ require 'classes/modobjinits.php';
 /*
 $objinits = array (
    'rootpath'     => $rootpath,
-   'subroot'      => $subroot,
    'modspath'     => $modspath,
    'extspath'     => $extspath,
    'options'      => $options,

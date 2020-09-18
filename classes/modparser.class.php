@@ -564,15 +564,6 @@ class modparser extends modbase
 
                         $tags[$j]['flag'] = $this->extract_flag($arg1);
                         $arg1 = trim($arg1);
-                        //$arg1 = ltrim( $arg1, "/" );
-
-                        // if is a TNG config file add subroot path
-                        //if( in_array( $arg1, $this->configs ) ) {
-                        //   $arg1 = $this->subroot.$arg1;
-                        //}
-                        //else {
-                        //   $arg1 = $this->rootpath.$arg1;
-                        //}
                         $arg1 = $this->resolve_file_path($arg1);
 
                         $tags[$j]['arg1'] = $arg1;

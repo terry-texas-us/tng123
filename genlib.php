@@ -47,6 +47,9 @@ function tng_header($title, $flags) {
     global $text, $templatepath, $tng_title, $tng_version, $tng_date, $tng_copyright, $sitever, $templatenum, $tmp, $http, $isConnected;
     global $fbOGimage, $pageURL;
 
+    if (!$tng_version) {
+        $tng_version = "12.3";
+    }
     $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
     $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
     initMediaTypes();
@@ -58,13 +61,13 @@ function tng_header($title, $flags) {
     echo "<head>\n";
     echo "<title>$title$siteprefix</title>\n";
     echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
-    if ($session_charset) {
-        echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
+    echo "<meta charset=utf-8\">\n";
+    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
+    if (isset($flags['norobots'])) {
+        echo $flags['norobots'];
     }
     if ($sitever == "mobile" || $sitever == "tablet") {
-        echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
         echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n";
-        echo "<meta http-equiv=\"cleartype\" content=\"on\">\n";
     }
     echo "<meta name=\"Keywords\" content=\"$site_desc\">\n";
     echo "<meta name=\"Description\" content=\"$title$siteprefix\">\n";
@@ -75,12 +78,10 @@ function tng_header($title, $flags) {
         echo "<meta property=\"og:url\" content=\"$tngdomain/$pageURL\">\n";
         echo $fbOGimage . "\n";
     }
-    if (isset($flags['norobots'])) {
-        echo $flags['norobots'];
-    }
     if (isset($flags['autorefresh']) && $flags['autorefresh'] == 1) {
         echo "<meta http-equiv=\"refresh\" content=\"30\">\n";
     }
+
     if ($sitever == "mobile" || $sitever == "tablet") {
         echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"$tngdomain/img/tng-apple-icon-144.png\">\n";
         echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"$tngdomain/img/tng-apple-icon-114.png\">\n";
@@ -89,9 +90,6 @@ function tng_header($title, $flags) {
         echo "<link rel=\"shortcut icon\" href=\"$tngdomain/img/tng-apple-icon.png\">\n";
     } elseif ($tngconfig['favicon']) {
         echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
-    }
-    if (!$tng_version) {
-        $tng_version = "12.3";
     }
     echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     if ($sitever != "standard" && $responsivetables) {

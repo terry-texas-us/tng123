@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "zapisy zoptymalizowano";
     $admtext['needmaint'] = "Aby uruchomi� to narz�dzie musisz przej�� do trybu konserwacji (przejd� do Ustawienia i konfiguracja &gt;&gt; Konfiguracja  &gt;&gt; G��wne ustawienia konfiguracji)";
     $admtext['reseqwarn'] = "<B>Ostrze�enie:</B> Optymalizacja numer�w ID mo�e spowodowa�, �e istniej�ce ��cza kieruj�ce na Twoj� witryn� b�d�  kierowa� na pusty lub niew�a�ciwy wiersz.";
-    $admtext['subroot'] = "Katalog konfiguracyjny";
     $admtext['hidechr'] = "Ukryj etykiety chrztu";
     $admtext['datefmt'] = "Kolejno�� wy�wietlania dat";
     $admtext['dayfirst'] = "dzie�/miesi�c/rok";

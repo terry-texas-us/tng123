@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "records resequenced";
     $admtext['needmaint'] = "You must be in Maintenance Mode to run this utility (go to Setup &gt;&gt; Configuration &gt;&gt; General Settings)";
     $admtext['reseqwarn'] = "<strong>WARNING:</strong> Resequencing your IDs could cause external links to your site to break or point to erroneous locations.";
-    $admtext['subroot'] = "Subroot Path";
     $admtext['hidechr'] = "Fela reit fyrir skírn";
     $admtext['datefmt'] = "Uppsetning dagsetninga";
     $admtext['dayfirst'] = "Dagur/Mánuður/Ár";

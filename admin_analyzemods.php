@@ -13,7 +13,6 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include 'checklogin.php';
 include 'version.php';
-$admvers = 'TNG10 V2.0 ';
 $modspath .= '/';
 $modfolder = 'tools/';
 

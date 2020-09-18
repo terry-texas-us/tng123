@@ -88,14 +88,6 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 z webu), zapi�te tuto slo�ku zde. <strong>Mus�</strong> kon�it koncov�m lom�tkem (/). Bude to pravd�podobn� ��st ko�enov� slo�ky.
                 Je-li nap�. va�e ko�enov� slo�ka "/home/www/username/public_html/genealogy/", jako konfigura�n� slo�ku m��ete zvolit "/home/www/username/".</p>
 
-            <p><strong>D�LE�IT�:</strong> Pou�it� tohoto pole je
-                zcela voliteln� a nebude m�t vliv na provoz va�ich str�nek. Vyplnit byste jej m�li pouze, kdy� dokonale zn�te
-                strukturu slo�ek na va�ich webov�ch. Pokud sem n�jak� um�st�n� zap�ete, <strong>mus�te n�sleduj�c� soubory p�esunout
-                    do konfigura�n� slo�ky okam�it� po ulo�en�</strong> a zm�nit je na zapisovateln� (opr�vn�n� 664 nebo 666): config.php, customconfig.php, importconfig.php,
-                logconfig.php, mapconfig.php, mmconfig.php and pedconfig.php. Pokud tak neu�in�te, na va�ich str�nk�ch nebude nic fungovat. Pokud ud�l�te chybu a va�e str�nky p�estanou pracovat,
-                budete muset ru�n� opravit v� soubor subroot.php a zapsat spr�vnou slo�ku do prom�nn� $tngconfig['subroot'] (jej� op�tovn� nastaven� na pr�zdnou hodnotu vr�t� v� syst�m
-                do v�choz�ho stavu).</p>
-
             <span class="optionhead">Slo�ky Fotografie / Dokumenty / Vypr�v�n� / N�hrobky / Multim�dia / GENDEX / Z�lohy / M�dy / Extensions</span>
             <p>Do t�chto pol� zapi�te n�zev slo�ky nebo adres��e pro zm�n�n� entity. V�echny by m�ly m�t glob�ln� p��stup ��st+ps�t+prov�st (read+write+execute, 755 nebo 775, i kdy� n�kter� syst�my vy�aduj� 777).
                 Slo�ka multim�di� je ur�ena jako "z�chytn�" pro v�echny polo�ky m�di�, kter� se nehod� do jin�ch kategori� (nap�. videa a

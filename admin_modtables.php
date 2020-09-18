@@ -69,7 +69,6 @@ require 'classes/modobjinits.php';
 // INITIALIZATIONS FOR MOD OBJECTS
 $fpaths = array (
    'rootpath'  => $rootpath,
-   'subroot'   => $subroot,
    'modspath'  => $modspath,
    'extspath'  => $extspath
 );

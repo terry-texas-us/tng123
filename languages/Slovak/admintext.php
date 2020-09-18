@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "z�znamy boli preraden�";
     $admtext['needmaint'] = "Tento n�stroj m��ete spusti� len v re�ime �dr�by (cho�te na Nastavenie >> Konfigur�cia >> Z�kladn� nastavenie)";
     $admtext['reseqwarn'] = "VAROVANIE: Pre��slovanie ID ��sel m��e sp�sobi�, �e extern� odkazy na va�e str�nky nebud� funk�n� a/alebo bud� ukazova� na nespr�vne miesta.";
-    $admtext['subroot'] = "Konfigura�n� prie�inok";
     $admtext['hidechr'] = "Skry� popisy krstu";
     $admtext['datefmt'] = "Preferencia ��seln�ho d�tumu";
     $admtext['dayfirst'] = "De�/Mesiac/Rok";

@@ -4448,10 +4448,6 @@ msgstr "Um diese Dienstroutine laufen zu lassen, müssen Sie zuerst in den Wartu
 msgid "<strong>WARNING:</strong> Resequencing your IDs could cause external links to your site to break or point to erroneous locations."
 msgstr "<strong>ACHTUNG:</strong> Das Resequenzieren der Kennungen kann zur Folge haben, dass externe Links, die auf Ihre Website verweisen, ins Leere oder auf falsche Ziele zeigen."
 
-# $admtext['subroot'] = "Konfigurations-Verzeichnis";
-msgid "Config Path"
-msgstr "Konfigurations-Verzeichnis"
-
 # $admtext['hidechr'] = "Tauf-Angaben ausblenden";
 msgid "Hide Christening Labels"
 msgstr "Tauf-Angaben ausblenden"

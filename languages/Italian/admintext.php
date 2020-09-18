@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "annotazioni con riferimento all'ordinato";
     $admtext['needmaint'] = "Dovete essere nel modo di manutenzione per fare funzionare questo programma di utilit� (vada installare &gt;&gt; Configurazione &gt;&gt; Configurazioni generali)";
     $admtext['reseqwarn'] = "<strong>AVVERTIMENTO:</strong> Re ordinamento vostro IDs ha potuto indurre i collegamenti esterni al vostro luogo a rompersi o indicare le posizioni errate.";
-    $admtext['subroot'] = "Percorso di Subroot";
     $admtext['hidechr'] = "Nasconda le etichette di battesimo";
     $admtext['datefmt'] = "Preferenza numerica della data";
     $admtext['dayfirst'] = "Giorno/mese/anno";

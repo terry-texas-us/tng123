@@ -1,4 +1,4 @@
-<?php global $text, $subroot, $tmp; ?>
+<?php global $text, $tmp; ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <?php

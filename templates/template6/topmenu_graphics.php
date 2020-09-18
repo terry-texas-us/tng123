@@ -1,6 +1,6 @@
 <?php
 
-global $text, $subroot, $tmp;
+global $text, $tmp;
 ?>
 <body>
 <div class="center">

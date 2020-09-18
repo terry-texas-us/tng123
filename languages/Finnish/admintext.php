@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "tietuetta numeroitu uudelleen";
     $admtext['needmaint'] = "T�m�n ty�kalun k�ytt� onnistuu vain Yll�pitotilassa (Asetukset >> Asetukset >> Yleiset asetukset >> Tietokanta)";
     $admtext['reseqwarn'] = "VAROITUS: Jos numeroit uudelleen ID:t, voit saada aikaan sivustosi ulkopuolisten linkkien rikkoontumisentai linkkien osoittamisen v��riin kohteisiin.";
-    $admtext['subroot'] = "Subroot Path";
     $admtext['hidechr'] = "Piilota kastetiedot";
     $admtext['datefmt'] = "Numeerinen p�iv�m��r�muoto";
     $admtext['dayfirst'] = "P�iv�/Kuukausi/Vuosi";

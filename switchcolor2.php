@@ -1,6 +1,8 @@
 <?php
-$tngconfig = array();
-include "subroot.php";
+$tngconfig = [];
+// todo check error_reporting
+error_reporting(E_ERROR);
+
 include "config/config.php";
 $color = substr($_GET["rgbcolor"], 0, 1) == "#" ? substr($_GET["rgbcolor"], 1) : $_GET["rgbcolor"];
 $red = hexdec(substr($color, 0, 2));

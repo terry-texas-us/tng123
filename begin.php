@@ -3,16 +3,15 @@
 if (isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
     die("Sorry!");
 }
-$tngconfig = array();
+error_reporting(E_ERROR);
+$tngconfig = [];
 
 if (strpos($_SERVER['SCRIPT_NAME'], "/admin_updateconfig.php") === FALSE) {
     include "processvars.php";
 }
 
-include "subroot.php";
 include_once "tngconnect.php";
 include "config/config.php";
-$subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : "";
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";
 $templatepath = $templateswitching && $templatenum ? "templates/$templatepfx$templatenum/" : "";

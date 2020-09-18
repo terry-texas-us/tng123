@@ -14,7 +14,6 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-$admvers = "TNG12 V4.0 ";
 
 $optionsfile = "config/mmconfig.php";
 include $optionsfile;

@@ -47,8 +47,10 @@ echo help_header("Aide : Mise en route");
             <a name="notes"><p class="subheadbold">Notes:</p></a>
             <ol>
                 <li><p>Si vous remarquez que certaines options sont absentes du menu Administration, c'est peut-être parce que vous n'êtes pas connecté avec tous les droits, ou que vous êtes associé à un arbre en particulier.
-                        Pour apporter des changements aux droits d'un utilisateur, déconnectez-vous et reconnectez-vous comme Administrateurr, ou encore éditez vos données directement en utilisant phpMyAdmin ou un outil similaire.</p></li>
-                <li><p>Le lien vers la Page d'accueil public en haut de l'écran vous permet d'ouvrir votre page et d'afficher l'adresse de votre site. De même, le lien à gauche en bas de l'écran vers l'Accueil public vous permet de naviguer dans votre site
+                        Pour apporter des changements aux droits d'un utilisateur, déconnectez-vous et reconnectez-vous comme Administrateurr, ou
+                        encore éditez vos données directement en utilisant phpMyAdmin ou un outil similaire.</p></li>
+                <li><p>Le lien vers la Page d'accueil public en haut de l'écran vous permet d'ouvrir votre page et d'afficher l'adresse de votre site.
+                        De même, le lien à gauche en bas de l'écran vers l'Accueil public vous permet de naviguer dans votre site
                         et de revenir à l'écran Admin. en cliquant sur le lien approprié dans la liste des fonctions diverses.</p></li>
             </ol>
 
@@ -57,12 +59,16 @@ echo help_header("Aide : Mise en route");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="otherresources"><p class="subheadbold">Autres ressources:</p></a>
+            <a id="otherresources"><p class="subheadbold">Autres ressources:</p></a>
             <ol>
-                <li><p>Liste des mises à jour : <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. Pour y souscrire, envoyer un message à
-                        <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. Cette liste ne sert qu'à informer les utilisateurs des mises à jour disponibles et d'autres informations. </p></li>
-                <li><p>Liste des adresses courriel des utilisateurs : <a href="mailto:tngusers2@lythgoes.net">tngusers2@lythgoes.net</a>. Pour y souscrire, envoyer un message à
-                        <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. Cette liste peut être utilisée comme lieu de discussion entre utilisateurs de TNG. </p></li>
+                <li><p>Liste des mises à jour : <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. Pour y souscrire, envoyer un message
+                        à
+                        <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. Cette liste ne sert qu'à informer les
+                        utilisateurs des mises à jour disponibles et d'autres informations. </p></li>
+                <li><p>Liste des adresses courriel des utilisateurs : <a href="mailto:tngusers2@lythgoes.net">tngusers2@lythgoes.net</a>. Pour y
+                        souscrire, envoyer un message à
+                        <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. Cette liste peut être utilisée comme
+                        lieu de discussion entre utilisateurs de TNG. </p></li>
                 <li><p>Forum des utilisateurs : <a href="http://tngforum.us" target="_blank">http://tngforum.us</a>.</p></li>
                 <li><p>Référence PHP : <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
                 <li><p>RéférenceMySQL : <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>

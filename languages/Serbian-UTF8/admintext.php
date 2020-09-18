@@ -1221,7 +1221,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "resekvencirani zapisi";
     $admtext['needmaint'] = "Morate biti u modu održavanja da biste pokrenuli ovaj uslužni program (idite na Setup &gt;&gt; Configuration &gt;&gt; General Settings)";
     $admtext['reseqwarn'] = "<strong>UPOZORENjE:</strong> Ponovno postavljanje ID-ova može dovesti do toga da eksterne veze na vašu veb-lokaciju se prekinu ili pokažu na pogrešne lokacije.";
-    $admtext['subroot'] = "Config Putanja";
     $admtext['hidechr'] = "Sakrij labele za Krštenja";
     $admtext['datefmt'] = "Prvenstvo Numeričkog Datuma";
     $admtext['dayfirst'] = "Dan/Mesec/Godina";

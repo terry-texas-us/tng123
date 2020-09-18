@@ -92,14 +92,6 @@ echo help_header("Help: General Settings");
                 accessible from the web), enter that path here. It <strong>must</strong> end with a trailing slash (/). It will likely be the first part of the Root Path.
                 For example, if your Root Path is "/home/www/username/public_html/genealogy/", then you might choose "/home/www/username/" as your Config Path.</p>
 
-            <p><strong>IMPORTANT:</strong> Use of this field is
-                completely optional and will not affect the operation of your site one way or the other. You should only enter something here
-                if you are very familiar with your web site's directory structure. If you do enter a path here, you <strong>must move the following files
-                    to the Config Path immediately after saving</strong> and make them writeable (664 or 666 permissions): config.php, customconfig.php, importconfig.php,
-                logconfig.php, mapconfig.php, mmconfig.php and pedconfig.php. If you don't, nothing on the site will be operational. If you make a mistake and your site stops working,
-                you will need to manually edit your subroot.php file in order to correct the $tngconfig['subroot'] path (setting it back to blank will return your system
-                to the way it was before).</p>
-
             <span class="optionhead">Photo / Document / History / Headstone / Multimedia / GENDEX / Backup / Mods / Extensions Folders</span>
             <p>Please enter folder or directory names for these respective entities. All should have global read+write+execute permissions (755 or 775, although some systems will require 777).
                 The Multimedia folder is intended as a "catch all" for any media items that don't fit cleanly into the other categories (e.g., videos and

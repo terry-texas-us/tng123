@@ -48,7 +48,8 @@ echo help_header("Pomoc: Pierwsze kroki");
             <ol>
                 <li><p>Jeśli zauważysz brak jakichś opcji w menu Administratora, znaczy to prawdopodobnie, że nie jesteś zalogowany z pełnymi uprawnieniami, albo masz uprawnienia tylko do określonego drzewa.
                         Aby dokonać zmian uprawnień użytkownika, musisz się wylogować i zalogować ponownie jako </p></li>
-                <li><p>Link do "Strony publicznej" w menu Administratora po lewej stronie, otwiera okno Twojej przeglądarki w polu obok. Pozwala to na swobodną nawigację na Twojej stronie z możliwością natychmiastowego
+                <li><p>Link do "Strony publicznej" w menu Administratora po lewej stronie, otwiera okno Twojej przeglądarki w polu obok. Pozwala to na
+                        swobodną nawigację na Twojej stronie z możliwością natychmiastowego
                         powrotu do sekcji Administratora. </p></li>
             </ol>
 
@@ -57,13 +58,15 @@ echo help_header("Pomoc: Pierwsze kroki");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="otherresources"><p class="subheadbold">Przydatne adresy i linki:</p></a>
+            <a id="otherresources"><p class="subheadbold">Przydatne adresy i linki:</p></a>
             <ol>
                 <li><p>Updates mailing list: <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. To subscribe, send a message to
-                        <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. This list is used exclusively to inform users of
+                        <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. This list is used exclusively to inform
+                        users of
                         software updates and related issues. </p></li>
                 <li><p>Users mailing list: <a href="mailto:tngusers2@lythgoes.net">tngusers2@lythgoes.net</a>. To subscribe, send a message to
-                        <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. This list may be used for all discussion among TNG users. </p></li>
+                        <a href="mailto:tngusers2-subscribe@lythgoes.net">tngusers2-subscribe@lythgoes.net</a>. This list may be used for all
+                        discussion among TNG users. </p></li>
                 <li><p>Forum użytkowników: <a href="http://tngforum.us" target="_blank">http://tngforum.us</a>.</p></li>
                 <li><p>PHP Reference: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
                 <li><p>MySQL Reference: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>

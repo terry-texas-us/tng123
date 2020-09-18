@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "tietuetta numeroitu uudelleen";
     $admtext['needmaint'] = "Tämän työkalun käyttö onnistuu vain Ylläpitotilassa (Asetukset >> Asetukset >> Yleiset asetukset >> Tietokanta)";
     $admtext['reseqwarn'] = "VAROITUS: Jos numeroit uudelleen ID:t, voit saada aikaan sivustosi ulkopuolisten linkkien rikkoontumisentai linkkien osoittamisen vääriin kohteisiin.";
-    $admtext['subroot'] = "Subroot Path";
     $admtext['hidechr'] = "Piilota kastetiedot";
     $admtext['datefmt'] = "Numeerinen päivämäärämuoto";
     $admtext['dayfirst'] = "Päivä/Kuukausi/Vuosi";

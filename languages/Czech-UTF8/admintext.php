@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "záznamy byly přeřazeny";
     $admtext['needmaint'] = "Tento nástroj můžete spustit pouze v režimu údržby (jděte na Nastavení >> Konfigurace >> Základní nastavení)";
     $admtext['reseqwarn'] = "VAROVÁNÍ: Přečíslování ID čísel muže způsobit, že externí odkazy na vaše stránky nebudou funkční a nebo budou ukazovat na chybná místa.";
-    $admtext['subroot'] = "Konfigurační složka";
     $admtext['hidechr'] = "Skrýt popisky křtu";
     $admtext['datefmt'] = "Preference číselného data";
     $admtext['dayfirst'] = "Den/Měsíc/Rok";

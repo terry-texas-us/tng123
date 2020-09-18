@@ -1,16 +1,16 @@
 <?php
 function adminwritelog($string) {
-  global $admtext, $currentuserdesc, $time_offset, $subroot;
+    global $admtext, $currentuserdesc, $time_offset;
 
-  require "config/logconfig.php";
+    require "config/logconfig.php";
 
-  $string .= " ({$admtext['user']}: $currentuserdesc)";
+    $string .= " ({$admtext['user']}: $currentuserdesc)";
 
-  $lines = file($adminlogfile);
-  if ($adminmaxloglines && sizeof($lines) >= $adminmaxloglines) {
-    array_pop($lines);
-  }
-  $updated = date("D d M Y H:i:s", time() + (3600 * intval($time_offset)));
+    $lines = file($adminlogfile);
+    if ($adminmaxloglines && sizeof($lines) >= $adminmaxloglines) {
+        array_pop($lines);
+    }
+    $updated = date("D d M Y H:i:s", time() + (3600 * intval($time_offset)));
   array_unshift($lines, "$updated $string.\n");
 
   $fp = @fopen($adminlogfile, "w");

@@ -78,10 +78,8 @@ $tmp['t6_searchpara'] = "To search the genealogy database, enter a name below. Y
 $tmp['t6_fhpara'] = "You can use this section to link to some of your more interesting family histories.";
 $tmp['t6_hisside'] = "His Side";
 $tmp['t6_herside'] = "Her Side";
-$tmp['t6_fhlinkshis'] = "<a href=\"extrastree.php?personID=I1&amp;tree=T0001&amp;showall=1\">Individual 1</a><br>
-<a href=\"extrastree.php?personID=I2&amp;tree=T0001&amp;showall=1\">Individual 2</a><br>";
-$tmp['t6_fhlinkshers'] = "<a href=\"extrastree.php?personID=I3&amp;tree=T0001&amp;showall=1\">Individual 3</a><br>
-<a href=\"extrastree.php?personID=I4&amp;tree=T0001&amp;showall=1\">Individual 4</a><br>";
+$tmp['t6_fhlinkshis'] = ">Individual 2</a><br>\"";
+$tmp['t6_fhlinkshers'] = ">Individual 4</a><br>\"";
 $tmp['t6_mwpara'] = "Use this section to display information about individuals you are actively researching.";
 $tmp['t6_respara'] = "List resources here that you would like to share with others.";
 $tmp['t6_reslinks'] = "<a href=\"http://www.ancestry.com\" target=\"_blank\">Ancestry.com</a><br>
@@ -102,8 +100,7 @@ $tmp['t8_headimg'] = "img/titletop.jpg";
 $tmp['t8_mainpara'] = "This is where you can welcome a user to your site.  You might also give them some basic information on navigating and links to any help or FAQ pages you may have.";
 $tmp['t8_latestnews'] = "<b>5 Jan 2009</b> - Added a whole new look to my site.<br><br>
 <b>25 Dec 2008</b> - Put years and years of work into my family research.<br><br>";
-$tmp['t8_featurespara'] = "<p><a href=\"mostwanted.php\">Most Wanted</a> - I am looking for information about these ancestors.  Can you help?</p>
-<p><a href=\"whatsnew.php\">What's New</a> - View the latest updates made to the site.</p>";
+$tmp['t8_featurespara'] = ">What's New</a> - View the latest updates made to the site.</p>\"";
 $tmp['t8_menutitle'] = "Site Menu";
 $tmp['t8_headtitle1'] = "surname";
 $tmp['t8_headtitle2'] = "genealogy";

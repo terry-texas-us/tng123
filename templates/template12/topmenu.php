@@ -1,5 +1,5 @@
 <?php
-global $text, $mediatypes, $currentuser, $allow_admin, $subroot, $tmp, $target, $tngconfig, $logout_url;
+global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicbody">
     <a name="top"></a>

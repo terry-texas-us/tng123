@@ -158,7 +158,6 @@ class modbase
 
     // initializers
     protected $rootpath = '';
-    protected $subroot = '';
     protected $extspath = '';
     protected $modspath = '';
     protected $modname = '';
@@ -442,7 +441,7 @@ class modbase
 
         // set path for TNG config files
         if (in_array($path, $this->configs)) {
-            return $this->subroot . $path;
+            return "config/$path";
         } elseif ($relative == self::MODS_DIR) {
             $path = $this->resolve_path_vars($path);
             return $this->rootpath . $this->modspath . '/' . $path;

@@ -52,7 +52,6 @@ require 'classes/modobjinits.php';
 // INITIALIZATIONS FOR MOD OBJECTS
 $objinits = array (
    'rootpath'     => $rootpath,
-   'subroot'      => $subroot,
    'modspath'     => $modspath,
    'extspath'     => $extspath,
    'options'      => $options,

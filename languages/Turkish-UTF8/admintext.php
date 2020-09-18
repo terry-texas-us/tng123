@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "kayıtlar yeniden sıralandı";
     $admtext['needmaint'] = "Bu yardımcı programı çalıştırmak için Bakım modunda olmanız gerekir (Kurulum &gt;&gt; Yapılandırma &gt;&gt; Genel Ayarlar'a git)";
     $admtext['reseqwarn'] = "<strong>UYARI:</strong> Kimliklerinizi yeniden sıralamak, sitenize yapılan dış bağlantıların kopmasına veya hatalı konumlara işaret etmesine neden olabilir.";
-    $admtext['subroot'] = "Yapılandırma Yolu";
     $admtext['hidechr'] = "Vaftiz Etiketlerini Gizle";
     $admtext['datefmt'] = "Sayısal Tarih Tercihi";
     $admtext['dayfirst'] = "Gün/Ay/Yıl";

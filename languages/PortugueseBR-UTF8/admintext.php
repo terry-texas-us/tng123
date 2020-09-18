@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "registros resquenciados";
     $admtext['needmaint'] = "Você deve estar no Modo de Manutenção para executar este utilitário (vá para Setup &gt;&gt; Configuração &gt;&gt; Configuração Geral)";
     $admtext['reseqwarn'] = "<strong>AVISO:</strong> Resequencear os IDs pode ter como conseqüência que links externos ao seu site apontem para endereços incorretos.";
-    $admtext['subroot'] = "Caminho de Configuração";
     $admtext['hidechr'] = "Ocultar Rótulos de Batismo";
     $admtext['datefmt'] = "Preferência de Data Numérica";
     $admtext['dayfirst'] = "Dia/Mês/Ano";

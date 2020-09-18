@@ -1,20 +1,15 @@
 <?php
 include "processvars.php";
+error_reporting(E_ERROR);
+$tngconfig = [];
 
-include "subroot.php";
 include "tngconnect.php";
-if (!file_exists("config/config.php")) {
-    $subroot = $_GET['sr'];
-}
 include "config/config.php";
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";
 $templatepath = $templateswitching && $templatenum ? "templates/$templatepfx$templatenum/" : "";
 
 include "adminlib.php";
-if ($subroot != $_GET['sr']) {
-    $subroot = $_GET['sr'];
-}
 $textpart = "setup";
 
 if (isset($sitever)) {

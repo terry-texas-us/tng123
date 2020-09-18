@@ -1212,7 +1212,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "poster omnummereret";
     $admtext['needmaint'] = "Du skal v�re i opdaterings-mode for at bruge denne funktion. (g� til Ops�tning &gt;&gt; Konfiguration &gt;&gt; Generel)";
     $admtext['reseqwarn'] = "<strong>ADVARSEL:</strong> Omnummerering af dine ID'er kan medf�re, at eksterne links til din hjemmeside slettes eller henviser til forkerte adresser.";
-    $admtext['subroot'] = "Konfig. sti";
     $admtext['hidechr'] = "Skjul d�bsetiketter";
     $admtext['datefmt'] = "Nummerisk datopr�ference";
     $admtext['dayfirst'] = "Dag/M�ned/�r";

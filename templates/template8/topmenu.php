@@ -1,6 +1,6 @@
 <?php
 
-global $text, $currentuser, $allow_admin, $subroot, $tmp;
+global $text, $currentuser, $allow_admin, $tmp;
 ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
 <table class="page">

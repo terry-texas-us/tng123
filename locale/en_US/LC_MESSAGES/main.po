@@ -4448,10 +4448,6 @@ msgstr "You must be in Maintenance Mode to run this utility (go to Setup &gt;&gt
 msgid "<strong>WARNING:</strong> Resequencing your IDs could cause external links to your site to break or point to erroneous locations."
 msgstr "<strong>WARNING:</strong> Resequencing your IDs could cause external links to your site to break or point to erroneous locations."
 
-# $admtext['subroot'] = "Config Path";
-msgid "Config Path"
-msgstr "Config Path"
-
 # $admtext['hidechr'] = "Hide Christening Labels";
 msgid "Hide Christening Labels"
 msgstr "Hide Christening Labels"

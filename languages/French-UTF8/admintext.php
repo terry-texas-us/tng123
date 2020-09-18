@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "Réordonnancement des entrées de la base de données";
     $admtext['needmaint'] = "Vous devez être en mode Maintenance pour lancer cet outil (Aller à  Configurations &gt;&gt; Configuration &gt;&gt; Configuration générale>>Bases de données)";
     $admtext['reseqwarn'] = "<strong>AVERTISSEMENT:</strong> Le réordonnancement de vos identités peut faire en sorte que les liens externes vers votre site soient brisés ou soient acheminés vers un adresse erronée.";
-    $admtext['subroot'] = "Chemin d'accès au dossier config";
     $admtext['hidechr'] = "Cachez les étiquettes de baptême";
     $admtext['datefmt'] = "Préférence de date numérique";
     $admtext['dayfirst'] = "Jour/mois/année";

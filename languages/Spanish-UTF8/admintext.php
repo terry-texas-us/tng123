@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "registros ordenados";
     $admtext['needmaint'] = "Usted debe estar en Modo Mantenimiento para ejecutar esta utilidad (ir a Configurar &gt;&gt; Configuración &gt;&gt; Configuración General)";
     $admtext['reseqwarn'] = "<strong>ATENCIÓN:</strong> Ordenar los ID puede provocar que enlaces externos a su sitio web aparezcan rotos o apuntando a lugares equivocados.";
-    $admtext['subroot'] = "Ruta Config";
     $admtext['hidechr'] = "Ocultar Etiquetas de Bautismo";
     $admtext['datefmt'] = "Preferencia Numérica para Fechas";
     $admtext['dayfirst'] = "Día/Mes/Año";

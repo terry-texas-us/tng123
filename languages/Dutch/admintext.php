@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "records herschikt";
     $admtext['needmaint'] = "Het systeem moet in onderhouds-mode staan om dit hulpprogramma te kunnen gebruiken (ga naar Startpagina Beheerder &gt;&gt; Instellingen &gt;&gt; Algemene Instellingen)";
     $admtext['reseqwarn'] = "<strong>WAARSCHUWING:</strong> Het herschikken van ID's kan tot gevolg hebben dat externe linken naar uw site verbroken worden of naar verkeerde plaatsen gaan verwijzen.";
-    $admtext['subroot'] = "Sub-hoofdpad";
     $admtext['hidechr'] = "Verberg doop-labels";
     $admtext['datefmt'] = "Numerieke datum voorkeur";
     $admtext['dayfirst'] = "Dag/Maand/Jaar";

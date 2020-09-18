@@ -437,13 +437,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td><input type="text" value="<?php echo $rootpath; ?>" name="newrootpath" class="verylongfield"></td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['subroot']; ?>*:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['subroot']; ?>" name="newsubroot" class="verylongfield"></td>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>*<?php echo $admtext['srexpl']; ?></td>
-
-                        <tr>
                             <td class="nw"><?php echo $admtext['photopath']; ?>:</td>
                             <td><input type="text" value="<?php echo $photopath; ?>" name="photopath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('photos',document.form1.photopath.value);"> <span id="msg_photos"></span>

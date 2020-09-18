@@ -1214,7 +1214,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "poster omnumrerade";
     $admtext['needmaint'] = "Du måste vara i Underhållsläge för att köra denna rutin (gå till Setup &gt;&gt; Konfigurering &gt;&gt; Generella Inställningar)";
     $admtext['reseqwarn'] = "<strong>VARNING:</strong> Omnumrering av dina ID kan orsaka att externa länkar till din sajt bryts eller pekar på felaktiga ställen.";
-    $admtext['subroot'] = "Sökväg till Konfig-rot";
     $admtext['hidechr'] = "Göm dop-märke";
     $admtext['datefmt'] = "Numerisk datum-preferens";
     $admtext['dayfirst'] = "Dag/Månad/År";

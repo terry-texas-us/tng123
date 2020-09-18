@@ -1195,7 +1195,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "R�ordonnancement des entr�es de la base de donn�es";
     $admtext['needmaint'] = "Vous devez �tre en mode Maintenance pour lancer cet outil (Aller �  Configurations &gt;&gt; Configuration &gt;&gt; Configuration g�n�rale>>Bases de donn�es)";
     $admtext['reseqwarn'] = "<strong>AVERTISSEMENT:</strong> Le r�ordonnancement de vos identit�s peut faire en sorte que les liens externes vers votre site soient bris�s ou soient achemin�s vers un adresse erron�e.";
-    $admtext['subroot'] = "Chemin d'acc�s au dossier config";
     $admtext['hidechr'] = "Cachez les �tiquettes de bapt�me";
     $admtext['datefmt'] = "Pr�f�rence de date num�rique";
     $admtext['dayfirst'] = "Jour/mois/ann�e";

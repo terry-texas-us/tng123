@@ -9,9 +9,7 @@ include $relpath . "version.php";
 <head>
     <title>Aide : Administration</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <?php
-    include $relpath . "adminmeta.php";
-    ?>
+    <?php include $relpath . "adminmeta.php"; ?>
     <style>
         p {
             margin-top: 0;
@@ -83,7 +81,7 @@ include $relpath . "version.php";
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="otherresources"><p class="subheadbold">Autres ressources:</p></a>
+            <a id="otherresources"><p class="subheadbold">Autres ressources:</p></a>
             <ol>
                 <li><p>Liste des mises à jour : <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. Pour y souscrire, envoyer un message
                         à

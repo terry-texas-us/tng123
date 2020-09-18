@@ -1214,7 +1214,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "rekords met volgnommers";
     $admtext['needmaint'] = "Hierdie funksie kan alleen in Onderhoudmodus uitgevoer word (gaan na Instellings&gt;&gt; Konfigurasie &gt;&gt; Algemene Instellings)";
     $admtext['reseqwarn'] = "<strong>PASOP:</strong> Nuwe volgnommers mag daartoe lei dat eksterne skakels na jou werf ongeldig is of na 'n verkeerde lokasie wys.";
-    $admtext['subroot'] = "Subroot Pad/lokasie";
     $admtext['hidechr'] = "Verberg velde vir Doop";
     $admtext['datefmt'] = "Voorkeur vir toon van numerieke datums";
     $admtext['dayfirst'] = "Dag/Maand/Jaar";

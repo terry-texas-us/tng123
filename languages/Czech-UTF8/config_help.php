@@ -88,14 +88,6 @@ echo help_header("Nápověda: Základní nastavení");
                 z webu), zapište tuto složku zde. <strong>Musí</strong> končit koncovým lomítkem (/). Bude to pravděpodobně část kořenové složky.
                 Je-li např. vaše kořenová složka "/home/www/username/public_html/genealogy/", jako konfigurační složku můžete zvolit "/home/www/username/".</p>
 
-            <p><strong>DŮLEŽITÉ:</strong> Použití tohoto pole je
-                zcela volitelné a nebude mít vliv na provoz vašich stránek. Vyplnit byste jej měli pouze, když dokonale znáte
-                strukturu složek na vašich webových. Pokud sem nějaké umístění zapíšete, <strong>musíte následující soubory přesunout
-                    do konfigurační složky okamžitě po uložení</strong> a změnit je na zapisovatelné (oprávnění 664 nebo 666): config.php, customconfig.php, importconfig.php,
-                logconfig.php, mapconfig.php, mmconfig.php and pedconfig.php. Pokud tak neučiníte, na vašich stránkách nebude nic fungovat. Pokud uděláte chybu a vaše stránky přestanou pracovat,
-                budete muset ručně opravit váš soubor subroot.php a zapsat správnou složku do proměnné $tngconfig['subroot'] (její opětovné nastavení na prázdnou hodnotu vrátí váš systém
-                do výchozího stavu).</p>
-
             <span class="optionhead">Složky Fotografie / Dokumenty / Vyprávění / Náhrobky / Multimédia / GENDEX / Zálohy / Módy / Extensions</span>
             <p>Do těchto polí zapište název složky nebo adresáře pro zmíněné entity. Všechny by měly mít globální přístup číst+psát+provést (read+write+execute, 755 nebo 775, i když některé systémy vyžadují 777).
                 Složka multimédií je určena jako "záchytná" pro všechny položky médií, které se nehodí do jiných kategorií (např. videa a

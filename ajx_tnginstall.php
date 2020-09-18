@@ -3,12 +3,12 @@
 if (isset($_GET['lang']) || isset($_GET['mylanguage']) || isset($_GET['language']) || isset($_GET['session_language']) || isset($_GET['rootpath'])) {
     die("Sorry!");
 }
-$tngconfig = array();
+$tngconfig = [];
 include "processvars.php";
-include "subroot.php";
+// todo check error_reporting
+error_reporting(E_ERROR);
 include "tngconnect.php";
 include "config/config.php";
-$subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : "";
 
 session_start();
 $session_language = $_SESSION['session_language'];
@@ -59,7 +59,7 @@ switch ($_POST['subroutine']) {
         $failed = "";
         $success = 0;
 
-        $files = array("adminlog.txt", "config/config.php", "config/mmconfig.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "subroot.php", "whatsnew.txt");
+        $files = ["adminlog.txt", "config/config.php", "config/mmconfig.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "whatsnew.txt"];
         foreach ($files as $file) {
             if (@chmod($file, 0666)) {
                 $success++;

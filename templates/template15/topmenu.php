@@ -1,6 +1,6 @@
 <?php
 
-global $text, $currentuser, $allow_admin, $subroot, $tmp, $homepage;
+global $text, $currentuser, $allow_admin, $tmp, $homepage;
 
 $dadlabel = getTemplateMessage('t15_dadside');
 $momlabel = getTemplateMessage('t15_momside');

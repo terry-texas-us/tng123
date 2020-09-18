@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "تم إعادة تسلسل السجلات";
     $admtext['needmaint'] = "لا بد من تفعيل حالة الصيانة لتشغيل هذه الأداة (اذهب إلى الاعدادات &lt;&lt; معايرة &lt;&lt; إعدادات عامة)";
     $admtext['reseqwarn'] = "<strong>تحذير</strong> إعادة تسلسل ترميزاتك قد تؤدي إلى كسر الروابط الخارجية المشيرة إليها.";
-    $admtext['subroot'] = "مسار الإعدادات";
     $admtext['hidechr'] = "اخفاء تسميات التعميد النصراني";
     $admtext['datefmt'] = "تفضيلات التاريخ الرقمي";
     $admtext['dayfirst'] = "يوم/شهر/سنة";

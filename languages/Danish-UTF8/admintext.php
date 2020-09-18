@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "poster omnummereret";
     $admtext['needmaint'] = "Du skal være i opdaterings-mode for at bruge denne funktion. (gå til Opsætning &gt;&gt; Konfiguration &gt;&gt; Generel)";
     $admtext['reseqwarn'] = "<strong>ADVARSEL:</strong> Omnummerering af dine ID'er kan medføre, at eksterne links til din hjemmeside slettes eller henviser til forkerte adresser.";
-    $admtext['subroot'] = "Konfig. sti";
     $admtext['hidechr'] = "Skjul dåbsetiketter";
     $admtext['datefmt'] = "Nummerisk datopræference";
     $admtext['dayfirst'] = "Dag/Måned/År";

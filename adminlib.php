@@ -17,25 +17,21 @@ $isConnected = isConnected();
 function tng_adminheader($title, $flags) {
     global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
 
+    if (!$tng_version) {
+        $tng_version = "12.3";
+    }
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
     echo "<html lang=\"en\">\n";
     echo "<head>\n";
     echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
-    if ($session_charset) {
-        echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
-    }
-    if ($sitever == "mobile") {
-        echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\">\n";
-    }
+    echo "<meta charset=utf-8\">\n";
+    echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\">\n";
     echo "<meta name=\"robots\" content=\"noindex, nofollow\">\n";
     include "adminmeta.php";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
-    if (!$tng_version) {
-        $tng_version = "12.3";
-    }
     echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     echo "<link href=\"css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
     if (isset($flags['modmgr'])) {

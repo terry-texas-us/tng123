@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "data sortert";
     $admtext['needmaint'] = "Du må være i Vedlikeholdsmodus for å kjøre dette programmet (gå til Oppsett &gt;&gt; Konfigurasjon &gt;&gt; Generelle &gt;&gt; Database)";
     $admtext['reseqwarn'] = "<strong>ADVARSEL:</strong> Sortering av ID kan føre til at eksterne linker ikke virker eller blir feil.";
-    $admtext['subroot'] = "Konfigurasjonssti";
     $admtext['hidechr'] = "Skjul dåp";
     $admtext['datefmt'] = "Numerisk datoformat";
     $admtext['dayfirst'] = "Dag/Måned/År";

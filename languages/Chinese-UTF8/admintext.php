@@ -1213,7 +1213,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "记录重新排序";
     $admtext['needmaint'] = "您必须处于维护模式才能运行此实用程序（设置;;配置;常规设置）";
     $admtext['reseqwarn'] = "<strong>警告：</strong>重新排序您的标识可能导致外部链接到您的网站或指向错误的位置。";
-    $admtext['subroot'] = "配置路径";
     $admtext['hidechr'] = "隐藏洗礼标签";
     $admtext['datefmt'] = "数字日期优先";
     $admtext['dayfirst'] = "日/月/年";

@@ -284,17 +284,6 @@ fwrite($fp, "@include \"config/customconfig.php\";\n");
 flock($fp, LOCK_UN);
 fclose($fp);
 
-$fp = @fopen("subroot.php", "w", 1);
-if ($fp) {
-    flock($fp, LOCK_EX);
-    fwrite($fp, "<?php\n");
-    fwrite($fp, "error_reporting(E_ERROR);\n");
-    fwrite($fp, "\$tngconfig = array();\n");
-    fwrite($fp, "\$tngconfig['subroot'] = \"$newsubroot\";\n");
-    fwrite($fp, "\$subroot = \$tngconfig['subroot'] ? \$tngconfig['subroot'] : \"\";\n");
-    flock($fp, LOCK_UN);
-    fclose($fp);
-}
 adminwritelog($admtext['modifysettings']);
 
 $oldsubroot = $newsubroot != $subroot ? "?sr=$subroot" : "";

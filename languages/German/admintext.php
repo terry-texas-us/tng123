@@ -1214,7 +1214,6 @@ switch ($textpart) {
     $admtext['recsreseq'] = "Datens�tze resequenziert";
     $admtext['needmaint'] = "Um diese Dienstroutine laufen zu lassen, m�ssen Sie zuerst in den Wartungsmodus gehen (siehe: Einstellungen &gt;&gt; Konfiguration &gt;&gt; Allgemeine Einstellungen &gt;&gt; Datenbank)";
     $admtext['reseqwarn'] = "<strong>ACHTUNG:</strong> Das Resequenzieren der Kennungen kann zur Folge haben, dass externe Links, die auf Ihre Website verweisen, ins Leere oder auf falsche Ziele zeigen.";
-    $admtext['subroot'] = "Konfigurations-Verzeichnis";
     $admtext['hidechr'] = "Tauf-Angaben ausblenden";
     $admtext['datefmt'] = "Voreinstellung f�r numerische Datumsangaben";
     $admtext['dayfirst'] = "Tag/Monat/Jahr";

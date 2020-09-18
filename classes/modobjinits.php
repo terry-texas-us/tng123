@@ -7,19 +7,15 @@ if (!isset($extspath)) {
 if (!isset($modspath)) {
   $modspath = '';
 }
-if (!empty($subroot)) {
-  $subroot = rtrim($subroot, "/") . "/";
-}
-$objinits = array(
-        'rootpath' => $rootpath,
-        'subroot' => $subroot,
-        'modspath' => $modspath,
-        'extspath' => $extspath,
-        'options' => $options,
-        'time_offset' => $time_offset,
-        'sitever' => $sitever,
-        'currentuserdesc' => $mhuser,
-        'admtext' => $admtext,
-        'templatenum' => $templatenum,
-        'tng_version' => $tng_version
-);
+$objinits = [
+    'rootpath' => $rootpath,
+    'modspath' => $modspath,
+    'extspath' => $extspath,
+    'options' => $options,
+    'time_offset' => $time_offset,
+    'sitever' => $sitever,
+    'currentuserdesc' => $mhuser,
+    'admtext' => $admtext,
+    'templatenum' => $templatenum,
+    'tng_version' => $tng_version
+];

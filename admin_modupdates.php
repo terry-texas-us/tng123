@@ -12,7 +12,6 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-$admvers = "TNG12 V4.0 ";
 
 include "config/mmconfig.php";
 
@@ -25,14 +24,7 @@ tng_adminheader($admtext['modmgr'], $flags);
 
 
 $min_width = $sitever == 'mobile' ? '0' : '640px';
-echo "
-<style type='text/css'>
-body {
-   margin:0;
-   overflow-y: scroll;
-   min-width:$min_width;
-}
-</style>";
+echo "<style type='text/css'>body {margin:0; overflow-y: scroll; min-width:$min_width;}</style>";
 
 $helplang = findhelp("modhandler_help.php");
 

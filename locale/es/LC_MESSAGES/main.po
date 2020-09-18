@@ -4448,10 +4448,6 @@ msgstr "Usted debe estar en Modo Mantenimiento para ejecutar esta utilidad (ir a
 msgid "<strong>WARNING:</strong> Resequencing your IDs could cause external links to your site to break or point to erroneous locations."
 msgstr "<strong>ATENCIÓN:</strong> Ordenar los ID puede provocar que enlaces externos a su sitio web aparezcan rotos o apuntando a lugares equivocados."
 
-# $admtext['subroot'] = "Ruta Config";
-msgid "Config Path"
-msgstr "Ruta Config"
-
 # $admtext['hidechr'] = "Ocultar Etiquetas de Bautismo";
 msgid "Hide Christening Labels"
 msgstr "Ocultar Etiquetas de Bautismo"
