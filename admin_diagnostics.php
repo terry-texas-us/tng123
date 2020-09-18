@@ -173,8 +173,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
               $text = '';
               $ftext = '';
               // check files
-              if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'config.php'))) {
-                $text = "<p>$red&nbsp;{$admtext['rofile']} config.php</p>";
+              if (!(fileReadWrite($myuserid, $mygroupid, 'config/config.php'))) {
+                  $text = "<p>$red&nbsp;{$admtext['rofile']} config.php</p>";
               }
               $uselog = $logname;
               if (!(fileReadWrite($myuserid, $mygroupid, $uselog))) {

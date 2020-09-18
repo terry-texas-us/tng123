@@ -7,7 +7,7 @@ $tngconfig = array();
 include "processvars.php";
 include "subroot.php";
 include "tngconnect.php";
-include $tngconfig['subroot'] . "config.php";
+include "config/config.php";
 $subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : "";
 
 session_start();
@@ -59,7 +59,7 @@ switch ($_POST['subroutine']) {
         $failed = "";
         $success = 0;
 
-        $files = array("adminlog.txt", $subroot . "config.php", "config/mmconfig.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "subroot.php", "whatsnew.txt");
+        $files = array("adminlog.txt", "config/config.php", "config/mmconfig.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "subroot.php", "whatsnew.txt");
         foreach ($files as $file) {
             if (@chmod($file, 0666)) {
                 $success++;
@@ -263,11 +263,11 @@ switch ($_POST['subroutine']) {
     case 'template':
         $flen = 0;
         if (function_exists('file_put_contents')) {
-            $settings = @file_get_contents($subroot . "config.php");
+            $settings = @file_get_contents("config/config.php");
             $pattern = '/templatenum = \"(\d*)\"/i';
             $replacement = "templatenum = \"$newtemplate\"";
             $templatesettings = preg_replace($pattern, $replacement, $settings);
-            $flen = @file_put_contents($subroot . "config.php", $templatesettings);
+            $flen = @file_put_contents("config/config.php", $templatesettings);
             if ($flen) {
                 $class = "green";
                 $msg = $text['infosaved2'] . " ($newtemplate)";
@@ -289,8 +289,7 @@ switch ($_POST['subroutine']) {
 }
 
 if ($saveconfig) {
-    //save config.php values;
-    $fp = @fopen($subroot . "config.php", "w", 1);
+    $fp = @fopen("config/config.php", "w", 1);
     if (!$fp) {
         die ($text['cannotopen'] . " config.php");
     }

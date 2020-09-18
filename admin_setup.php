@@ -3,10 +3,10 @@ include "processvars.php";
 
 include "subroot.php";
 include "tngconnect.php";
-if (!file_exists($subroot . "config.php")) {
+if (!file_exists("config/config.php")) {
     $subroot = $_GET['sr'];
 }
-include $subroot . "config.php";
+include "config/config.php";
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";
 $templatepath = $templateswitching && $templatenum ? "templates/$templatepfx$templatenum/" : "";

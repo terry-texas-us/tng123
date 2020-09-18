@@ -22,7 +22,6 @@ define('NO', "0");
 
 // temporary: these can be set from any options file
 include "config/mmconfig.php";
-// include 'classes/mod.class.config.php';
 
 $helplang = findhelp("modhandler_help.php");
 

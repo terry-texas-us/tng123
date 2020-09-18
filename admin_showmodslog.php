@@ -49,8 +49,6 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 
-// temporary: these can be set from an options file
-// include 'classes/mod.class.config.php';
 include "config/mmconfig.php";
 
 define('YES', "1");

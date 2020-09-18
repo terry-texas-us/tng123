@@ -23,11 +23,11 @@ if ($link) {
 
 require "adminlog.php";
 
-$gensettings = @file_get_contents($tngconfig['subroot'] . "config.php");
+$gensettings = @file_get_contents("config/config.php");
 $gensettings = str_replace("\$templatenum = \"$templatenum\"", "\$templatenum = \"$form_templatenum\"", $gensettings);
 $gensettings = str_replace("\$templateswitching = \"$templateswitching\"", "\$templateswitching = \"$form_templateswitching\"", $gensettings);
 
-$flen = @file_put_contents($tngconfig['subroot'] . "config.php", $gensettings);
+$flen = @file_put_contents("config/config.php", $gensettings);
 
 unset($_POST['form_templatenum']);
 unset($_POST['form_templateswitching']);

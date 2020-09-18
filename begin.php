@@ -11,7 +11,7 @@ if (strpos($_SERVER['SCRIPT_NAME'], "/admin_updateconfig.php") === FALSE) {
 
 include "subroot.php";
 include_once "tngconnect.php";
-include $tngconfig['subroot'] . "config.php";
+include "config/config.php";
 $subroot = $tngconfig['subroot'] ? $tngconfig['subroot'] : "";
 
 $templatepfx = is_numeric($templatenum) ? "template" : "";

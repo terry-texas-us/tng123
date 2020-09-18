@@ -41,7 +41,7 @@ $doctype = addslashes($doctype);
 
 require "adminlog.php";
 
-$fp = @fopen($subroot . "config.php", "w", 1);
+$fp = @fopen("config/config.php", "w", 1);
 if (!$fp) {
     die ($admtext['cannotopen'] . " config.php");
 }

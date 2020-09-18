@@ -67,7 +67,7 @@ class modparser extends modbase
         'triminsert:after',
     );
 
-    protected $configs = array(
+    protected $configs = [
         'config.php',
         'customconfig.php',
         'importconfig.php',
@@ -75,7 +75,7 @@ class modparser extends modbase
         'mapconfig.php',
         'pedconfig.php',
         'mmconfig.php'
-    );
+    ];
 
     // FUNCTION RETURNS TAGS TABLE IF NO ERRORS
     public function parse($cfgpath) {
