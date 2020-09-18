@@ -79,8 +79,6 @@ function tng_header($title, $flags) {
         echo "<meta http-equiv=\"refresh\" content=\"30\">\n";
     }
     if ($sitever == "mobile" || $sitever == "tablet") {
-        echo "<meta name=\"HandheldFriendly\" content=\"True\">\n";
-        echo "<meta name=\"MobileOptimized\" content=\"320\">\n";
         echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
         echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n";
         echo "<meta http-equiv=\"cleartype\" content=\"on\">\n";

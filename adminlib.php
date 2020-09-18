@@ -22,16 +22,16 @@ function tng_adminheader($title, $flags) {
     echo "<html lang=\"en\">\n";
     echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
     echo "<head>\n";
-    $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
-    echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
-
     if ($session_charset) {
         echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
     }
     if ($sitever == "mobile") {
-        echo "<meta name=\"MobileOptimized\" content=\"320\">\n";
         echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\">\n";
     }
+    echo "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
+    include "adminmeta.php";
+    $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
+    echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
     if (!$tng_version) {
         $tng_version = "12.3";
@@ -52,8 +52,6 @@ function tng_adminheader($title, $flags) {
     if ($sitever != "mobile" && $sitever != "tablet") {
         echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
     }
-    echo "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
-    include "adminmeta.php";
     echo "<script type=\"text/javascript\">\n";
     echo "function toggleAll(flag) {\n";
     echo "for (var i = 0; i < document.form2.elements.length; i++ ) {\n";
