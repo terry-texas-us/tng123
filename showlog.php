@@ -8,7 +8,7 @@ if (!$allow_admin) {
     exit;
 }
 
-require $subroot . "logconfig.php";
+require "config/logconfig.php";
 
 if ($maxloglines) {
     $loglines = $maxloglines;

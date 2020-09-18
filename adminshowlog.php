@@ -8,7 +8,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 
-require $subroot . "logconfig.php";
+require "config/logconfig.php";
 
 if ($adminmaxloglines) {
   $loglines = $adminmaxloglines;

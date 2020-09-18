@@ -9,7 +9,7 @@ include "$mylanguage/text.php";
 if ($enttype) {
     include "checklogin.php";
 }
-include $subroot . "logconfig.php";
+include "config/logconfig.php";
 include "tngmaillib.php";
 
 $valid_user_agent = isset($_SERVER["HTTP_USER_AGENT"]) && $_SERVER["HTTP_USER_AGENT"] != "";

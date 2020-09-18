@@ -2,7 +2,7 @@
 function adminwritelog($string) {
   global $admtext, $currentuserdesc, $time_offset, $subroot;
 
-  require $subroot . "logconfig.php";
+  require "config/logconfig.php";
 
   $string .= " ({$admtext['user']}: $currentuserdesc)";
 

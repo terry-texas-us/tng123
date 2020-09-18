@@ -1,7 +1,7 @@
 <?php
 //This page written and contributed by Bert Deelman. Thanks, Bert!
 include "begin.php";
-include $subroot . "logconfig.php";
+include "config/logconfig.php";
 include $subroot . "importconfig.php";
 include "adminlib.php";
 $textpart = "setup";
@@ -184,9 +184,9 @@ tng_adminheader($admtext['diagnostics'], $flags);
                 $ftext .= "<p>$red&nbsp;{$admtext['rofile']} {$admtext['admlog']} ($adminlogfile)</p>";
               }
               if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'importconfig.php'))) {
-                $ftext .= "<p>$red&nbsp;{$admtext['rofile']} importconfig.php</p>";
+                  $ftext .= "<p>$red&nbsp;{$admtext['rofile']} importconfig.php</p>";
               }
-              if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'logconfig.php'))) {
+              if (!(fileReadWrite($myuserid, $mygroupid, 'config/logconfig.php'))) {
                   $ftext .= "<p>$red&nbsp;{$admtext['rofile']} logconfig.php</p>";
               }
               if (!(fileReadWrite($myuserid, $mygroupid, 'config/pedconfig.php'))) {

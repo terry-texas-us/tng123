@@ -23,7 +23,7 @@ if ($link) {
 
 require "adminlog.php";
 
-$fp = @fopen($subroot . "logconfig.php", "w", 1);
+$fp = @fopen("config/logconfig.php", "w", 1);
 if (!$fp) {
   die ($admtext['cannotopen'] . " logconfig.php");
 }

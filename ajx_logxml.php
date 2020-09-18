@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-require $subroot . "logconfig.php";
+require "config/logconfig.php";
 include "genlib.php";
 include "getlang.php";
 
