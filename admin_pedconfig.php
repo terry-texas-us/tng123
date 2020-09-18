@@ -1,6 +1,6 @@
 <?php
 include "begin.php";
-include $subroot . "pedconfig.php";
+include "config/pedconfig.php";
 include "adminlib.php";
 $textpart = "setup";
 include "$mylanguage/admintext.php";

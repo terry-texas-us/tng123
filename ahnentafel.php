@@ -6,7 +6,7 @@ if (!$personID) {
     die("no args");
 }
 
-include $subroot . "pedconfig.php";
+include "config/pedconfig.php";
 include "personlib.php";
 include "reglib.php";
 

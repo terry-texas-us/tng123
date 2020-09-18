@@ -3,7 +3,7 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-include $subroot . "pedconfig.php";
+include "config/pedconfig.php";
 if (!$personID && !isset($needperson)) {
     die("no args");
 }

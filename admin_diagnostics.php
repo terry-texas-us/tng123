@@ -187,9 +187,9 @@ tng_adminheader($admtext['diagnostics'], $flags);
                 $ftext .= "<p>$red&nbsp;{$admtext['rofile']} importconfig.php</p>";
               }
               if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'logconfig.php'))) {
-                $ftext .= "<p>$red&nbsp;{$admtext['rofile']} logconfig.php</p>";
+                  $ftext .= "<p>$red&nbsp;{$admtext['rofile']} logconfig.php</p>";
               }
-              if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'pedconfig.php'))) {
+              if (!(fileReadWrite($myuserid, $mygroupid, 'config/pedconfig.php'))) {
                   $ftext .= "<p>$red&nbsp;{$admtext['rofile']} pedconfig.php</p>";
               }
               if (!(fileReadWrite($myuserid, $mygroupid, 'config/mapconfig.php'))) {

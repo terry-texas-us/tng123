@@ -2,7 +2,7 @@
 $textpart = "relate";
 include "tng_begin.php";
 
-include $subroot . "pedconfig.php";
+include "config/pedconfig.php";
 include "pedbox.php";
 
 $relate_url = getURL("relateform", 1);
