@@ -190,10 +190,10 @@ tng_adminheader($admtext['diagnostics'], $flags);
                 $ftext .= "<p>$red&nbsp;{$admtext['rofile']} logconfig.php</p>";
               }
               if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'pedconfig.php'))) {
-                $ftext .= "<p>$red&nbsp;{$admtext['rofile']} pedconfig.php</p>";
+                  $ftext .= "<p>$red&nbsp;{$admtext['rofile']} pedconfig.php</p>";
               }
-              if (!(fileReadWrite($myuserid, $mygroupid, $subroot . 'mapconfig.php'))) {
-                $ftext .= "<p>$red&nbsp;{$admtext['rofile']} mapconfig.php</p>";
+              if (!(fileReadWrite($myuserid, $mygroupid, 'config/mapconfig.php'))) {
+                  $ftext .= "<p>$red&nbsp;{$admtext['rofile']} mapconfig.php</p>";
               }
 
               // check folders

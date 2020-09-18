@@ -7,7 +7,7 @@ include_once "globallib.php";
 include_once "version.php";
 checkMaintenanceMode(0);
 if (!empty($needMap)) {
-    include $subroot . "mapconfig.php";
+    include "config/mapconfig.php";
     $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
     if ($map['key']) {
         include_once "googlemaplib.php";

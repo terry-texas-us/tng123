@@ -3,7 +3,7 @@ $textpart = "headstones";
 $needMap = true;
 include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
-include $subroot . "mapconfig.php";
+include "config/mapconfig.php";
 
 if (!$cemeteryID || !is_numeric($cemeteryID)) {
     header("Location: thispagedoesnotexist.html");

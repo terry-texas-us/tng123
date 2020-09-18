@@ -23,7 +23,7 @@ if ($link) {
 
 require "adminlog.php";
 
-$fp = @fopen($subroot . "mapconfig.php", "w", 1);
+$fp = @fopen("config/mapconfig.php", "w", 1);
 if (!$fp) {
   die ($admtext['cannotopen'] . " mapconfig.php");
 }

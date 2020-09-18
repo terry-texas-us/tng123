@@ -1,5 +1,5 @@
 <?php
-include $subroot . "mapconfig.php";
+include "config/mapconfig.php";
 
 $base_url = "https://maps.googleapis.com/maps/api/geocode/xml?key=" . $map['key'];
 $phpversion = phpversion();
