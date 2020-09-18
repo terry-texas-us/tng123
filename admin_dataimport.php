@@ -9,7 +9,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-include $subroot . "importconfig.php";
+include "config/importconfig.php";
 
 if (!$allow_add || !$allow_edit || $assignedbranch) {
     $message = $admtext['norights'];
