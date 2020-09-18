@@ -20,15 +20,15 @@ function tng_adminheader($title, $flags) {
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
     echo "<html lang=\"en\">\n";
-    echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
     echo "<head>\n";
+    echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
     if ($session_charset) {
         echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
     }
     if ($sitever == "mobile") {
         echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\">\n";
     }
-    echo "<meta name=\"robots\" content=\"noindex,nofollow\">\n";
+    echo "<meta name=\"robots\" content=\"noindex, nofollow\">\n";
     include "adminmeta.php";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";

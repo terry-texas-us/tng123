@@ -47,6 +47,8 @@ function tng_header($title, $flags) {
     global $text, $templatepath, $tng_title, $tng_version, $tng_date, $tng_copyright, $sitever, $templatenum, $tmp, $http, $isConnected;
     global $fbOGimage, $pageURL;
 
+    $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
+    $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
     initMediaTypes();
 
     header("Content-type:text/html;charset=" . $session_charset);
@@ -54,23 +56,24 @@ function tng_header($title, $flags) {
     echo "<html lang=\"en\">\n";
 
     echo "<head>\n";
-
-    $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
-    $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
     echo "<title>$title$siteprefix</title>\n";
-    echo "<meta name=\"Keywords\" content=\"$site_desc\">\n";
-
-    echo "<meta name=\"Description\" content=\"" . $title . $siteprefix . "\">\n";
-
-    if ($fbOGimage) {
-        echo "<meta property=\"og:title\" content=\"" . $sitename . "\">\n";
-        echo "<meta property=\"og:description\" content=\"" . $title . "\">\n";
-        echo "<meta property=\"og:url\" content=\"" . $tngdomain . "/" . $pageURL . "\">\n";
-        echo $fbOGimage . "\n";
-    }
-
+    echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
     if ($session_charset) {
         echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
+    }
+    if ($sitever == "mobile" || $sitever == "tablet") {
+        echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
+        echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n";
+        echo "<meta http-equiv=\"cleartype\" content=\"on\">\n";
+    }
+    echo "<meta name=\"Keywords\" content=\"$site_desc\">\n";
+    echo "<meta name=\"Description\" content=\"$title$siteprefix\">\n";
+
+    if ($fbOGimage) { // Facebook Open Graph protocol
+        echo "<meta property=\"og:title\" content=\"$sitename\">\n";
+        echo "<meta property=\"og:description\" content=\"$title\">\n";
+        echo "<meta property=\"og:url\" content=\"$tngdomain/$pageURL\">\n";
+        echo $fbOGimage . "\n";
     }
     if (isset($flags['norobots'])) {
         echo $flags['norobots'];
@@ -79,10 +82,6 @@ function tng_header($title, $flags) {
         echo "<meta http-equiv=\"refresh\" content=\"30\">\n";
     }
     if ($sitever == "mobile" || $sitever == "tablet") {
-        echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
-        echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n";
-        echo "<meta http-equiv=\"cleartype\" content=\"on\">\n";
-
         echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"$tngdomain/img/tng-apple-icon-144.png\">\n";
         echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"$tngdomain/img/tng-apple-icon-114.png\">\n";
         echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"$tngdomain/img/tng-apple-icon-72.png\">\n";
@@ -91,7 +90,6 @@ function tng_header($title, $flags) {
     } elseif ($tngconfig['favicon']) {
         echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
     }
-
     if (!$tng_version) {
         $tng_version = "12.3";
     }

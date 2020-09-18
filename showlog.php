@@ -35,8 +35,7 @@ if (isset($autorefresh)) {
     echo "<p class='normal'><a href=\"$showlog_url" . "autorefresh=1\">{$text['autorefresh']}</a></p>\n";
 }
 ?>
-
-    <div align="left" class="normal" id="content">
+    <div class="normal" id="content">
         <?php
         if (empty($autorefresh)) {
             $lines = file($logfile);
@@ -44,7 +43,7 @@ if (isset($autorefresh)) {
                 if (strpos($line, "<script") === false) {
                     echo "$line<br>\n";
                 } else {
-                    echo htmlspecialchars($line) . "<strong>Please investigate this access</strong> <br>\n";
+                    echo htmlspecialchars($line) . "<strong>Please investigate this access</strong><br>\n";
                 }
             }
         }
