@@ -20,7 +20,7 @@ $textpart = "install";
 include "$mylanguage/text.php";
 
 include "genlib.php";
-include $subroot . "importconfig.php";
+include "config/importconfig.php";
 $saveconfig = 0;
 $saveimportconfig = 0;
 $class = "red";
@@ -59,7 +59,7 @@ switch ($_POST['subroutine']) {
         $failed = "";
         $success = 0;
 
-        $files = array("adminlog.txt", $subroot . "config.php", "config/mmconfig.php", "genlog.txt", $subroot . "importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "subroot.php", "whatsnew.txt");
+        $files = array("adminlog.txt", $subroot . "config.php", "config/mmconfig.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "subroot.php", "whatsnew.txt");
         foreach ($files as $file) {
             if (@chmod($file, 0666)) {
                 $success++;
@@ -433,7 +433,7 @@ if ($saveconfig) {
     fwrite($fp, "\$tngconfig['mediathumbs'] = \"{$tngconfig['mediathumbs']}\";\n");
     fwrite($fp, "\$tng_notinstalled = \"$tng_notinstalled\";\n");
     fwrite($fp, "\n");
-    fwrite($fp, "@include \$subroot . \"customconfig.php\";\n");
+    fwrite($fp, "@include \"config/customconfig.php\";\n");
     fwrite($fp, "?>\n");
 
     flock($fp, LOCK_UN);
@@ -441,7 +441,7 @@ if ($saveconfig) {
 }
 
 if ($saveimportconfig) {
-    $fp = @fopen($subroot . "importconfig.php", "w", 1);
+    $fp = @fopen("config/importconfig.php", "w", 1);
     if (!$fp) {
         die ($text['cannotopen'] . " importconfig.php");
     }

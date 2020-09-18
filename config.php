@@ -201,4 +201,4 @@ $bg111 = "#05B8CC";
 $txt111 = "#FFFFFF";
 $tng_notinstalled = "";
 
-@include $subroot . "customconfig.php";
+@include "config/customconfig.php";

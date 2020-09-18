@@ -4,7 +4,7 @@ include "adminlib.php";
 $textpart = "secondary";
 include "$mylanguage/admintext.php";
 
-include $subroot . "importconfig.php";
+include "config/importconfig.php";
 
 $admin_login = 1;
 include "checklogin.php";

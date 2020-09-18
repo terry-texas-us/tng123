@@ -279,7 +279,7 @@ fwrite($fp, "\$txt111 = \"" . stripslashes($txt111) . "\";\n");
 
 fwrite($fp, "\$tng_notinstalled = \"$tng_notinstalled\";\n");
 fwrite($fp, "\n");
-fwrite($fp, "@include \$subroot . \"customconfig.php\";\n");
+fwrite($fp, "@include \"config/customconfig.php\";\n");
 
 flock($fp, LOCK_UN);
 fclose($fp);

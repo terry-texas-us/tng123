@@ -22,7 +22,7 @@ if (!$allow_add || !$allow_edit || $assignedbranch) {
   exit;
 }
 
-include $subroot . "importconfig.php";
+include "config/importconfig.php";
 require "datelib.php";
 require "gedimport_trees.php";
 require "gedimport_families.php";
