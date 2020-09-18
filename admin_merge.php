@@ -79,9 +79,9 @@ function doRow($field, $textmsg, $boxname) {
             //if it's a spouse and they're equal, do a hidden field for p1 & p2 and don't do the checkbox
             if ($textmsg == "spouse") {
                 if ($p1field && $p2field) {
-                    echo "<input type=\"hidden\" name=\"xx$boxname\" value=\"$field\">";
+                    echo "<input type='hidden' name=\"xx$boxname\" value=\"$field\">";
                 } elseif ($p2field) {
-                    echo "<input type=\"hidden\" name=\"yy$boxname\" value=\"$field\">";
+                    echo "<input type='hidden' name=\"yy$boxname\" value=\"$field\">";
                 }
             }
             if ($boxname) {

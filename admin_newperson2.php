@@ -160,7 +160,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                       echo "</div>\n";
                       }
                       else {
-                        echo "<input type=\"hidden\" name=\"branch\" value=\"$assignedbranch\">$assdesc ($assignedbranch)";
+                        echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">$assdesc ($assignedbranch)";
                       }
                       ?>
                 </td>
@@ -214,7 +214,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input type="hidden" name="type" value="<?php echo $type; ?>">
       <?php
       if (!$lnprefixes) {
-        echo "<input type=\"hidden\" name=\"lnprefix\" value=\"\">";
+          echo "<input type='hidden' name=\"lnprefix\" value=\"\">";
       }
       ?>
         <p class="normal" style="margin-top:15px;margin-left:4px;"><input type="submit" name="submit" value="<?php echo $admtext['save']; ?>"> &nbsp; <strong><?php echo $admtext['pevslater2']; ?></strong></p>

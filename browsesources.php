@@ -18,7 +18,7 @@ function doSourceSearch($instance, $pagenav) {
     $str .= getFORM("browsesources", "get", "SourceSearch$instance", "");
   $str .= "<input type=\"text\" name=\"sourcesearch\" value=\"$sourcesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
   if ($sourcesearch) {
     $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsesources_noargs_url\">{$text['browseallsources']}</a>";
   }

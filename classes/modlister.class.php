@@ -739,7 +739,7 @@ class modlister extends modparser
 		<td class=\"mmcell $dbclass\">
          <div class=\"mminner center checkpad\">
             <input class=\"sbox\" type=\"checkbox\" name=\"mods[$ix][selected]\" value='1'>
-            <input type=\"hidden\" name=\"mods[$ix][file]\" value=\"$this->cfgfile\" target=\"_blank\">
+            <input type='hidden' name=\"mods[$ix][file]\" value=\"$this->cfgfile\" target=\"_blank\">
          </div>
       </td>";
                 $ix++;

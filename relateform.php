@@ -105,7 +105,7 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                                 tng_free_result($result2);
                             }
                           }
-              echo "<div id=\"name2\" class='normal'>$namestr2</div><input type=\"hidden\" name=\"savedpersonID\" value=\"$relatepersonID\"></td></tr>\n";
+              echo "<div id=\"name2\" class='normal'>$namestr2</div><input type='hidden' name=\"savedpersonID\" value=\"$relatepersonID\"></td></tr>\n";
               echo "<tr>";
               echo "<td><span class='normal'>{$text['changeto']} </span></td>";
               echo "<td>";

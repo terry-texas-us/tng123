@@ -176,13 +176,13 @@ class modeditor extends modparser
    <td class='databack edpanel mmrightcol'>
       <div>$relpath: {$params[$i]['param']}</div>
       <textarea class=\"w100\" name=\"param[val]\">{$params[$i]['val']}</textarea>
-      <input type=\"hidden\" name=\"param[mod]\" value=\"$this->modname\">
-      <input type=\"hidden\" name=\"param[version]\" value=\"$this->version\">
-      <input type=\"hidden\" name=\"param[def]\" value=\"{$params[$i]['def']}\">
-      <input type=\"hidden\" name=\"param[tgt]\" value=\"{$params[$i]['tgt']}\">
-      <input type=\"hidden\" name=\"param[cfg]\" value=\"{$params[$i]['cfg']}\">
-      <input type=\"hidden\" name=\"param[param]\" value=\"{$params[$i]['param']}\">
-      <input type=\"hidden\" name=\"param[quot]\" value=\"{$params[$i]['quot']}\">
+      <input type='hidden' name=\"param[mod]\" value=\"$this->modname\">
+      <input type='hidden' name=\"param[version]\" value=\"$this->version\">
+      <input type='hidden' name=\"param[def]\" value=\"{$params[$i]['def']}\">
+      <input type='hidden' name=\"param[tgt]\" value=\"{$params[$i]['tgt']}\">
+      <input type='hidden' name=\"param[cfg]\" value=\"{$params[$i]['cfg']}\">
+      <input type='hidden' name=\"param[param]\" value=\"{$params[$i]['param']}\">
+      <input type='hidden' name=\"param[quot]\" value=\"{$params[$i]['quot']}\">
       <div class=\"edbuttonbar\">
          <button type=\"submit\" name=\"submit\" value=\"pUpdate\">{$this->admtext['update']}</button>&nbsp;&nbsp;
          <button type=\"submit\" name=\"submit\" value=\"pRestore\">{$this->admtext['restore']}</button>&nbsp;&nbsp;

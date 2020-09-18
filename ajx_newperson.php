@@ -155,7 +155,7 @@ include_once "eventlib.php";
                                   echo "</div>\n";
                                   }
                                   else {
-                                    echo "<input type=\"hidden\" name=\"branch\" value=\"$assignedbranch\">";
+                                    echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">";
                                   }
                                   ?>
                             </td>
@@ -203,7 +203,7 @@ include_once "eventlib.php";
     <input type="hidden" name="type" value="<?php echo $type; ?>">
   <?php
   if (!$lnprefixes) {
-    echo "<input type=\"hidden\" name=\"lnprefix\" value=\"\">";
+      echo "<input type='hidden' name=\"lnprefix\" value=\"\">";
   }
   ?>
 </form>

@@ -26,7 +26,7 @@ $search .= "<label class=\"formfield\" for=\"myfirstname\" style=\"padding-top:0
 $search .= "<input type=\"text\" name=\"myfirstname\" class=\"formfield\" size=\"14\">\n";
 $search .= "<label class=\"formfield\" for=\"mylastname\">{$text['mnulastname']}: </label>\n";
 $search .= "<input type=\"text\" name=\"mylastname\" class=\"formfield\" size=\"14\"><br>\n";
-$search .= "<input type=\"hidden\" name=\"mybool\" value=\"AND\">\n";
+$search .= "<input type='hidden' name=\"mybool\" value=\"AND\">\n";
 $search .= "<div style=\"float:left; margin-right:10px; margin-bottom:5px;\">\n";
 $search .= "<input type=\"submit\" name=\"search\" value=\"{$text['mnusearchfornames']}\" class=\"btn\" id=\"searchbtn\">\n";
 $search .= "</div>\n";
@@ -156,7 +156,7 @@ $search .= "</form>\n";
                                         echo ">{$row['display']}</option>\n";
                                     }
                                     echo "</select>\n";
-                                    echo "<input type=\"hidden\" name=\"instance\" value=\"3\"></form><br>\n";
+                                    echo "<input type='hidden' name=\"instance\" value=\"3\"></form><br>\n";
                                 }
 
                                 tng_free_result($result);

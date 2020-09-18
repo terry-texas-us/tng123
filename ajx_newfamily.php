@@ -153,7 +153,7 @@ include_once "eventlib.php";
                                     echo "</div>\n";
                                     }
                                     else {
-                                        echo "<input type=\"hidden\" name=\"branch\" value=\"$assignedbranch\">";
+                                        echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">";
                                     }
                                     ?>
                             </td>

@@ -162,7 +162,7 @@ $title = getTemplateMessage('t11_maintitle');
                                                             echo ">{$row['display']}</option>\n";
                                                         }
                                                         echo "</select>\n";
-                                                        echo "<input type=\"hidden\" name=\"instance\" value=\"3\"></form>\n";
+                                                        echo "<input type='hidden' name=\"instance\" value=\"3\"></form>\n";
                                                     }
 
                                                     tng_free_result($result);

@@ -724,7 +724,7 @@ function tng_getLanguageSelect($instance) {
                 $menu .= ">{$row['display']}</option>\n";
             }
             $menu .= "</select>\n";
-            $menu .= "<input type=\"hidden\" name=\"instance\" value=\"$instance\"></form>\n";
+            $menu .= "<input type='hidden' name=\"instance\" value=\"$instance\"></form>\n";
             $menu .= "</li>\n";
         }
 
@@ -950,7 +950,7 @@ function tng_icons($instance, $title = "") {
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
                 $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type=\"text\" name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
                 $fullmenu .= "<label for=\"searchid\">{$text['id']}: </label><input type=\"text\" class=\"veryshortfield\" name=\"mypersonid\" id=\"searchid\"/> &nbsp;\n";
-                $fullmenu .= "<input type=\"hidden\" name=\"idqualify\" value=\"equals\">\n";
+                $fullmenu .= "<input type='hidden' name=\"idqualify\" value=\"equals\">\n";
                 $fullmenu .= "<input type=\"submit\" value=\"{$text['search']}\"></form></div>";
             }
         }
@@ -1037,7 +1037,7 @@ function treeDropdown($forminfo) {
             $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
             if (isset($forminfo['hidden']) && is_array($forminfo['hidden'])) {
                 foreach ($forminfo['hidden'] as $hidden)
-                    $ret .= "<input type=\"hidden\" name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\">\n";
+                    $ret .= "<input type='hidden' name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\">\n";
             }
             if ($forminfo['endform']) {
                 $ret .= "</form><br>\n";

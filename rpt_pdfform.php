@@ -96,7 +96,7 @@ function doFontOptions($field, $default = 'helvetica') {
 function doFontSizeOptions($field, $options, $default) {
     if (count($options) == 1) {
         echo "<span class='normal'>$options[0] pt</span>";
-        echo "<input type=\"hidden\" name=\"$field\" value=\"$options[0]\">";
+        echo "<input type='hidden' name=\"$field\" value=\"$options[0]\">";
     } else {
         echo "<select name=\"$field\">";
         foreach ($options as $size) {
@@ -226,9 +226,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         <?php
     }
     if ($pdftype == "fam") {
-        echo "<input type=\"hidden\" name=\"familyID\" value='$familyID'>\n";
+        echo "<input type='hidden' name=\"familyID\" value='$familyID'>\n";
     } else {
-        echo "<input type=\"hidden\" name=\"personID\" value=\"$personID\">\n";
+        echo "<input type='hidden' name=\"personID\" value=\"$personID\">\n";
     }
     ?>
     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
@@ -333,13 +333,13 @@ header("Content-type:text/html; charset=" . $session_charset);
         </table>
         <?php
         if (count($hdrFontSizes) == 1) {
-            echo "<input type=\"hidden\" name=\"hdrFontSize\" value=\"$hdrFontSizes[0]\">";
+            echo "<input type='hidden' name=\"hdrFontSize\" value=\"$hdrFontSizes[0]\">";
         }
         if (count($lblFontSizes) == 1) {
-            echo "<input type=\"hidden\" name=\"lblFontSize\" value=\"$lblFontSizes[0]\">";
+            echo "<input type='hidden' name=\"lblFontSize\" value=\"$lblFontSizes[0]\">";
         }
         if (count($rptFontSizes) == 1) {
-            echo "<input type=\"hidden\" name=\"rptFontSize\" value=\"$rptFontSizes[0]\">";
+            echo "<input type='hidden' name=\"rptFontSize\" value=\"$rptFontSizes[0]\">";
         }
         ?>
         <br>

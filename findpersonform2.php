@@ -38,7 +38,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input type="hidden" name="type" value="<?php echo $type; ?>">
       <?php
       if ($nameplusid) {
-        echo "<input type=\"hidden\" name=\"nameplusid\" value=\"$nameplusid\">";
+        echo "<input type='hidden' name=\"nameplusid\" value=\"$nameplusid\">";
       }
       ?>
     <table cellspacing="0" cellpadding="2">

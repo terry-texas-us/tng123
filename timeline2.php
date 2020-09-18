@@ -538,7 +538,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
           echo "</select>\n";
           $treestr = "document.form1.nexttree$x.options[document.form1.nexttree$x.selectedIndex].value";
       } else {
-        echo "<input type=\"hidden\" name=\"nexttree$x\" value=\"$tree\">";
+        echo "<input type='hidden' name=\"nexttree$x\" value=\"$tree\">";
         $treestr = "'" . $tree . "'";
       }
       echo "<input type=\"text\" name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type=\"button\" name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";

@@ -47,7 +47,7 @@ function doTestSearch($instance, $pagenav) {
     if ($testsearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browse_dna_tests_noargs_url\">{$text['browsealltests']}</a>";
     }
-    $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "</form></span>\n";
 
     return $str;

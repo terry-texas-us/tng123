@@ -241,9 +241,9 @@ include_once "eventlib.php";
                                         echo "</div>\n";
                                         }
                                         else {
-                                            echo "<input type=\"hidden\" name=\"branch\" value=\"{$row['branch']}\">";
+                                            echo "<input type='hidden' name=\"branch\" value=\"{$row['branch']}\">";
                                         }
-                                        echo "<input type=\"hidden\" name=\"orgbranch\" value=\"{$row['branch']}\">";
+                                        echo "<input type='hidden' name=\"orgbranch\" value=\"{$row['branch']}\">";
                                         ?>
                                 </td>
                             </tr>

@@ -106,7 +106,7 @@ for ($i = 1; $i <= $maxgedcom; $i++)
     </table>
 <?php
 if ($currentuser) {
-    echo "<input type=\"hidden\" name=\"email\" value=\"$currentuserdesc\">";
+    echo "<input type='hidden' name=\"email\" value=\"$currentuserdesc\">";
 }
 ?>
     <br>

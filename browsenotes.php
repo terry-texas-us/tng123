@@ -22,7 +22,7 @@ function doNoteSearch($instance, $pagenav) {
     if ($notesearch) {
         $str .= "<a href=\"$browsenotes_noargs_url\">{$text['browseallnotes']}</a>";
     }
-    $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "</form>\n";
     $str .= "</div>\n";
 

@@ -305,18 +305,18 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
               if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview1.jpg")) {
                 $imagetext .= "<img src=\"templates/$newtemplatepfx$i/img/preview1.jpg\" id=\"preview1\" hspace=\"2\" class=\"temppreview\"> ";
               }
-              if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview2.jpg")) {
-                $imagetext .= " &nbsp; <img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id=\"preview2\" hspace=\"2\" class=\"temppreview\">\n";
-              }
-              if ($imagetext) {
-                echo "$imagetext<br>";
-              }
-              echo "<p><input type=\"submit\" name=\"submittop\" accesskey=\"s\" value=\"{$admtext['save']}\"></p>\n";
-              echo "<p><strong>{$admtext['folder']}: templates/" . $folders['t' . $i] . "</strong></p>";
-              echo "$section</table>\n";
-              echo "<br><input type=\"submit\" name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
-              echo "<input type=\"hidden\" name=\"form_templateswitching\" value=\"\">\n";
-              echo "<input type=\"hidden\" name=\"form_templatenum\" value=\"\">\n";
+                if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview2.jpg")) {
+                    $imagetext .= " &nbsp; <img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id=\"preview2\" hspace=\"2\" class=\"temppreview\">\n";
+                }
+                if ($imagetext) {
+                    echo "$imagetext<br>";
+                }
+                echo "<p><input type=\"submit\" name=\"submittop\" accesskey=\"s\" value=\"{$admtext['save']}\"></p>\n";
+                echo "<p><strong>{$admtext['folder']}: templates/" . $folders['t' . $i] . "</strong></p>";
+                echo "$section</table>\n";
+                echo "<br><input type=\"submit\" name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
+                echo "<input type='hidden' name=\"form_templateswitching\" value=\"\">\n";
+                echo "<input type='hidden' name=\"form_templatenum\" value=\"\">\n";
                 echo "</form>\n";
                 echo "</div>\n";
             }

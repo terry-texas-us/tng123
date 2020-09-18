@@ -240,7 +240,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                                 echo "</div>\n";
                                 }
                                 else {
-                                    echo "<input type=\"hidden\" name=\"branch\" value=\"$assignedbranch\">$assdesc ($assignedbranch)";
+                                    echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">$assdesc ($assignedbranch)";
                                 }
                                 ?>
                         </td>

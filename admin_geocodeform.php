@@ -37,7 +37,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
             <form action="admin_geocode.php" method="post" name="form1">
                 <?php
                 if ($tngconfig['places1tree']) {
-                    echo "<input type=\"hidden\" name=\"tree1\" value=\"\">\n";
+                    echo "<input type='hidden' name=\"tree1\" value=\"\">\n";
                 }
                 ?>
                 <table class="normal">

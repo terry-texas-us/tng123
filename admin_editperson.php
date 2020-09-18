@@ -709,7 +709,7 @@ include_once "eventlib_js.php";
                 <input type="hidden" name="personID" value="<?php echo "$personID"; ?>">
                 <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
                 <?php if (!$lnprefixes) {
-                    echo "<input type=\"hidden\" name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
+                    echo "<input type='hidden' name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
                 } ?>
                 <?php defineLdsHiddenFields($rights['lds'], $row); ?>
                 <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">

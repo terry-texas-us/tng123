@@ -19,7 +19,7 @@ function doRepoSearch($instance, $pagenav) {
     if ($reposearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browserepos_noargs_url\">{$text['browseallrepos']}</a>";
     }
-    $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "</form></span>\n";
 
     return $str;

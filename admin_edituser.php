@@ -523,10 +523,10 @@ echo "</select>\n";
                     }
                     echo "\r\n$owner\r\n$tngdomain</textarea><br><br>\n";
                 } else {
-                    echo "<input type=\"hidden\" name=\"notify\" value=\"0\">\n";
+                    echo "<input type='hidden' name=\"notify\" value=\"0\">\n";
                 }
                 if (!$numlangs) {
-                    echo "<input type=\"hidden\" name=\"preflang\" value=\"{$row['languageID']}\">\n";
+                    echo "<input type='hidden' name=\"preflang\" value=\"{$row['languageID']}\">\n";
                 }
                 ?>
                 <input type="hidden" name="userID" value="<?php echo "$userID"; ?>">

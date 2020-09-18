@@ -31,7 +31,7 @@ class StyleManager
         foreach ($this->ruleSets as $selector => $declarationBlocks) {
             $out .= $selector . "{";
             foreach ($declarationBlocks as $name => $value) {
-                $out .= $name . ": " . $value . ";";
+                $out .= $name . ":" . $value . ";";
             }
             $out .= "}";
         }

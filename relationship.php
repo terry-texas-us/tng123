@@ -826,9 +826,9 @@ $innermenu .= "<a href=\"$relate_url" . "primaryID=$primarypersonID&amp;tree=$tr
 
 echo getFORM("relationship2", "get", "form1", "form1");
 echo tng_menu("I", "relate", $primarypersonID, $innermenu);
-echo "<input type=\"hidden\" name=\"primarypersonID\" value=\"$primarypersonID\">\n";
-echo "<input type=\"hidden\" name=\"savedpersonID\" value=\"$secondpersonID\">\n";
-echo "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
+echo "<input type='hidden' name=\"primarypersonID\" value=\"$primarypersonID\">\n";
+echo "<input type='hidden' name=\"savedpersonID\" value=\"$secondpersonID\">\n";
+echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
 echo "</form>\n";
 ?>
     <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo $text['searching']; ?></div>

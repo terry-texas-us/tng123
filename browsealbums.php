@@ -19,8 +19,8 @@ function doMediaSearch($instance, $pagenav) {
 
   $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
   $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\">\n";
-  $str .= "<input type=\"hidden\" name=\"tree\" value=\"$tree\">\n";
-  $str .= "<input type=\"submit\" value=\"{$text['search']}\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type=\"submit\" value=\"{$text['search']}\">\n";
   $str .= "<input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
   $str .= $pagenav;
   $str .= "</form>\n";

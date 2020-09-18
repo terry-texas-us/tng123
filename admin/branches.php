@@ -47,8 +47,8 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         $html .= $select;
         $html .= "</div>\n";
     } else {
-        $html .= "<input type=\"hidden\" name=\"branch\" value=\"{$row}\">";
+        $html .= "<input type='hidden' name=\"branch\" value=\"{$row}\">";
     }
-    $html .= "<input type=\"hidden\" name=\"orgbranch\" value=\"{$row}\">";
+    $html .= "<input type='hidden' name=\"orgbranch\" value=\"{$row}\">";
     return $html;
 }
