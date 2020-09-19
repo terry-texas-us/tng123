@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Ud�losti");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,7 +31,7 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="what"><p class="subheadbold">Standardn� a vlastn� ud�losti</p></a>
+            <a id="what"><h4 class="subheadbold">Standardn� a vlastn� ud�losti</h4></a>
             <p>Ud�losti obvykl� jako je narozen�, �mrt�, s�atek a n�kter� dal�� se vkl�daj� na hlavn� str�nce osoby, rodiny, pramenu a �lo�i�t�
                 pramen�
                 a jsou ulo�eny do odpov�daj�c�ch tabulek v datab�zi. Dokumentace TNG na tyto ud�losti odkazuje jako na "standardn�" ud�losti. V�echny
@@ -45,7 +45,7 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">P�idat ud�lost</p></a>
+            <a id="add"><h4 class="subheadbold">P�idat ud�lost</h4></a>
 
             <p>Chcete-li p�idat novou ud�lost, klikn�te na tla��tko "P�idat nov�" v sekci Dal�� ud�losti a vypl�te formul��. Pokud ud�losti ji�
                 existuj�,
@@ -56,7 +56,7 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="edit"><p class="subheadbold">Upravit ud�lost</p></a>
+            <a id="edit"><h4 class="subheadbold">Upravit ud�lost</h4></a>
 
             <p>Pokud chcete upravit existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Upravit vedle t�to ud�losti (pro �pravu �daj�
                 "standardn�ch" ud�lost�
@@ -64,39 +64,44 @@ echo help_header("N�pov�da: Ud�losti");
 
             <p>P�i p�id�n� nebo �prav� ud�losti si v�imn�te n�sleduj�c�ho:</p>
 
-            <span class="optionhead">Typ ud�losti</span>
+            <h5 class="optionhead">Typ ud�losti</h5>
             <p>Vyberte typ ud�losti (u existuj�c� ud�losti nelze zm�nit typ ud�losti). Nen�-li typ ud�losti, kter� chcete, ve v�b�rov�m poli typ�
                 ud�lost�,
                 jd�te nejprve do Admin/Vlastn� typy ud�lost� a nastavte zde typ ud�losti, pak se vra�te na tuto obrazovku a vyberte jej.</p>
 
-            <span class="optionhead">Datum ud�losti</span>
+            <h5 class="optionhead">Datum ud�losti</h5>
             <p>Aktu�ln� nebo p�edpokl�dan� datum spojen� s ud�lost�.</p>
 
-            <span class="optionhead">M�sto ud�losti</span>
+            <h5 class="optionhead">M�sto ud�losti</h5>
             <p>M�sto, kde ud�lost prob�hla. Zapi�te n�zev m�sta nebo klikn�te na ikonu Naj�t (lupa).</p>
 
-          <span class="optionhead">Podrobnosti</span>
-          <p>Dal�� podrobnosti popisuj�c� ud�lost. Pokud s ud�lost� nen� spojeno ��dn� datum ani m�sto, m��e pole Podrobnosti obsahovat �daje, kter� tuto ud�lost definuj�.</p>
+            <h5 class="optionhead">Podrobnosti</h5>
+            <p>Dal�� podrobnosti popisuj�c� ud�lost. Pokud s ud�lost� nen� spojeno ��dn� datum ani m�sto, m��e pole Podrobnosti obsahovat �daje, kter�
+                tuto ud�lost definuj�.</p>
 
-          <span class="optionhead">Duplikovat pro (ID):</span>
-          <p>Chcete-li tuto ud�lost duplikovat pro v�ce osob nebo rodin, zapi�te sem ��sla ID t�chto osob nebo rodin. Vkl�d�te-li v�ce ��sel ID, odd�lte je ��rkou.
-            Pokud ��slo ID nezn�te, klikn�te na ikonu "Naj�t" vpravo od tohoto pole a m��ete je vyhledat podle jm�na. Po kliknut� na tla��tko "Ulo�it" bude tato ud�lost nakop�rov�na
-            t�mto osob�m (rodin�m). Pokud znovu otev�ete okno s �pravou ud�lolsti, toto pole bude pr�zdn�. V�echny zm�ny, kter� od tohoto okam�iku v t�to ud�losti
-            provedete, <b>nebudou</b> prom�tnuty do d��ve vytvo�en�ch duplik�t�.</p>
+            <h5 class="optionhead">Duplikovat pro (ID):</h5>
+            <p>Chcete-li tuto ud�lost duplikovat pro v�ce osob nebo rodin, zapi�te sem ��sla ID t�chto osob nebo rodin. Vkl�d�te-li v�ce ��sel ID,
+                odd�lte je ��rkou.
+                Pokud ��slo ID nezn�te, klikn�te na ikonu "Naj�t" vpravo od tohoto pole a m��ete je vyhledat podle jm�na. Po kliknut� na tla��tko
+                "Ulo�it" bude tato ud�lost nakop�rov�na
+                t�mto osob�m (rodin�m). Pokud znovu otev�ete okno s �pravou ud�lolsti, toto pole bude pr�zdn�. V�echny zm�ny, kter� od tohoto okam�iku
+                v t�to ud�losti
+                provedete, <b>nebudou</b> prom�tnuty do d��ve vytvo�en�ch duplik�t�.</p>
 
-          <span class="optionhead">V�ce</span><br>
-          <p>Kliknut�m na "V�ce" m��ete pro ka�dou ud�lost zapsat n�kter� m�n� b�n� �daje. Objev� se dal�� pole.
-            Tato pole lze skr�t op�tovn�m kliknut�m na "V�ce". Skryt� pol� neznamen� vymaz�n� jejich obsahu. Tato pole obsahuj�:</p>
+            <h5 class="optionhead">V�ce</h5><br>
+            <p>Kliknut�m na "V�ce" m��ete pro ka�dou ud�lost zapsat n�kter� m�n� b�n� �daje. Objev� se dal�� pole.
+                Tato pole lze skr�t op�tovn�m kliknut�m na "V�ce". Skryt� pol� neznamen� vymaz�n� jejich obsahu. Tato pole obsahuj�:</p>
 
-          <p><span class="optionhead">V�k</span>: V�k osoby v dob� ud�losti.</p>
+            <p><h5 class="optionhead">V�k</h5>: V�k osoby v dob� ud�losti.</p>
 
-          <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
+            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
 
-          <p><span class="optionhead">P���ina</span>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
+            <p><h5 class="optionhead">P���ina</h5>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
 
-          <p><span class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</span>: Adresa a ostatn� kontaktn� �daje spojen� s ud�lost�.</p>
+            <p><h5 class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</h5>: Adresa a ostatn�
+            kontaktn� �daje spojen� s ud�lost�.</p>
 
-            <span class="optionhead">Povinn� pole:</span>
+            <h5 class="optionhead">Povinn� pole:</h5>
             <p>Vybrat mus�te typ ud�losti a nejm�n� do jednoho z n�sleduj�c�ch pol� mus�te n�co vlo�it: <strong>Datum ud�losti</strong>, <strong>M�sto
                     ud�losti</strong>,
                 nebo <strong>Podrobnosti</strong>. V�echna ostatn� pole jsou nepovinn�.</p>
@@ -106,7 +111,7 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="del"><p class="subheadbold">Vymazat ud�lost</p></a>
+            <a id="del"><h4 class="subheadbold">Vymazat ud�lost</h4></a>
 
             <p>Chcete-li vymazat existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Vymazat vedle t�to ud�losti. Ud�lost bude vymaz�na bez
                 ohledu na to, zda ostatn� �daje na str�nce jsou
@@ -117,7 +122,7 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="citations"><p class="subheadbold">Pozn�mky a citace</p>
+            <a id="citations"><h4 class="subheadbold">Pozn�mky a citace</h4>
                 <p>Chcete-li p�idat nebo upravit pozn�mky nebo citace u ud�losti, ud�lost nejd��ve ulo�te, a pot� klikn�te na p��slu�nou ikonu vedle
                     z�znamu t�to ud�losti v aktu�ln�m seznamu
                     ud�lost�.

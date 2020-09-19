@@ -5,7 +5,7 @@ echo help_header("Pomoc: Notatki");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -24,7 +24,7 @@ echo help_header("Pomoc: Notatki");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Dodawanie/Edycja/Usuwanie notatek</p></a>
+            <a id="add"><h4 class="subheadbold">Dodawanie/Edycja/Usuwanie notatek</h4></a>
 
             <p>Aby dodać, edytować lub usuwać notatki dla osoby, rodziny, źródła, repozytorium lub wydarzenia, należy kliknąć na ikonkę na górze
                 ekranu lub obok wybranego pola
@@ -37,11 +37,12 @@ echo help_header("Pomoc: Notatki");
 
             <p>Podczas dodawania lub edycji notatek dostępne są następujące pola:</p>
 
-            <span class="optionhead">Notatka</span>
+            <h5 class="optionhead">Notatka</h5>
             <p>Wpisz swoją notatkę, lub dokonaj zmian w dużym polu <strong>Notatek</strong> i kliknij przycisk "Zapisz".
-                Notatka zostanie zapisana, nawet jeśli inne informacje dla aktywnego podmiotu nie są aktywne. Można tu wprowadzić kod HTML. Kody PHP i Javascript nie będą działać.</p>
+                Notatka zostanie zapisana, nawet jeśli inne informacje dla aktywnego podmiotu nie są aktywne. Można tu wprowadzić kod HTML. Kody PHP i
+                Javascript nie będą działać.</p>
 
-            <span class="optionhead">Informacja prywatna</span>
+            <h5 class="optionhead">Informacja prywatna</h5>
             <p>Zaznacz to pole aby zapobiec wyświetlaniu notatki w obszarze publicznym.</p>
 
         </td>
@@ -49,7 +50,7 @@ echo help_header("Pomoc: Notatki");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="cite"><p class="subheadbold">Dodawanie do notatek cytatów ze źródeł</p></a>
+            <a id="cite"><h4 class="subheadbold">Dodawanie do notatek cytatów ze źródeł</h4></a>
             <p>Aby dodać lub edytować cytaty ze źródeł w notatkach musisz najpierw zapisać notatkę, a następnie kliknąć na ikonkę "Cytat" obok
                 wybranego zapisu notatki na wyświetlonej liście notatek.
                 Aby uzyskać więcej informacji na temat cytatów zobacz <a href="citations_help.php">Pomoc: Cytaty</a>.</p>

@@ -9,7 +9,7 @@ echo help_header("Nápověda: Hřbitovy");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -29,7 +29,7 @@ echo help_header("Nápověda: Hřbitovy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
             <p>Nalezení existujících hřbitovů vyhledáním celého nebo části <strong>ID čísla hřbitova, názvu hřbitova, města, okresu, kraje,
                     země</strong> nebo <strong>názvu souboru mapy</strong>.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech hřbitovů ve vaší databázi.</p>
@@ -37,7 +37,7 @@ echo help_header("Nápověda: Hřbitovy");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <span class="optionhead">Akce</span>
+            <h5 class="optionhead">Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
                 více záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
@@ -50,7 +50,7 @@ echo help_header("Nápověda: Hřbitovy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="add"><p class="subheadbold">Přidat nový / Upravit existující hřbitovy</p></a>
+            <a id="add"><h4 class="subheadbold">Přidat nový / Upravit existující hřbitovy</h4></a>
             <p>TNG vám umožní třídit a zobrazit vaše fotografie náhrobků podle hřbitovů. Aby toto fungovalo, musíte pro každé místo nastavit nový
                 záznam hřbitova. Záznamy
                 hřbitovů v TNG se nevztahují k záznamům míst a pro hřitovy neexistuje konvence GEDCOM, takže pokud váš soubor GEDCOM obsehuje v
@@ -62,23 +62,30 @@ echo help_header("Nápověda: Hřbitovy");
                 záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Upravit vedle tohoto řádku.</p>
             Význam jednotlivých polí při přidání nebo úpravě hřbitova je následující:</p>
 
-            <span class="optionhead">Název hřbitova</span>
-            <p>Vložte úplný název hřbitova. Např. Hřbitov Klášterec by měl být zapsán jako <em>Hřbitov Klášterec</em> a ne jen jako <em>Klášterec</em>.</p>
+            <h5 class="optionhead">Název hřbitova</h5>
+            <p>Vložte úplný název hřbitova. Např. Hřbitov Klášterec by měl být zapsán jako <em>Hřbitov Klášterec</em> a ne jen jako <em>Klášterec</em>.
+            </p>
 
-            <span class="optionhead">Obrázek plánu pro nahrání</span>
-            <p>Pokud máte plán nebo jinou fotografii tohoto hřbitova a ještě jste ji nenahráli na na vaše webové stránky, klikněte na tlačítko "Prohledat" a najděte ji na svém disku.
-                Je-li fotografie již na vašich stránkách ve složce náhrobků, nechat toto pole prázdné a použijte místo toho pole "Název souboru plánu ve složce náhrobků".</p>
+            <h5 class="optionhead">Obrázek plánu pro nahrání</h5>
+            <p>Pokud máte plán nebo jinou fotografii tohoto hřbitova a ještě jste ji nenahráli na na vaše webové stránky, klikněte na tlačítko
+                "Prohledat" a najděte ji na svém disku.
+                Je-li fotografie již na vašich stránkách ve složce náhrobků, nechat toto pole prázdné a použijte místo toho pole "Název souboru plánu
+                ve složce náhrobků".</p>
 
-            <span class="optionhead">Název souboru plánu ve složce náhrobků</span>
-            <p>Pokud jste již dříve nahráli svůj plán nebo fotografii do složky náhrobků, zapište umístění a název souboru tak, jak existuje ve složce náhrobků na vašich webových stránkách,
+            <h5 class="optionhead">Název souboru plánu ve složce náhrobků</h5>
+            <p>Pokud jste již dříve nahráli svůj plán nebo fotografii do složky náhrobků, zapište umístění a název souboru tak, jak existuje ve složce
+                náhrobků na vašich webových stránkách,
                 nebo klikněte na tlačítko Vybrat pro nalezení souboru. Jestliže jste nahráli svůj plán nebo fotografii
-                až nyní pomocí předchozího pole, použijte toto pole k zápisu umístění a názvu souboru po jeho nahrání. Předpokládané umístění a název bude pro vás předvyplněn.</p>
+                až nyní pomocí předchozího pole, použijte toto pole k zápisu umístění a názvu souboru po jeho nahrání. Předpokládané umístění a název
+                bude pro vás předvyplněn.</p>
 
-            <p><span class="optionhead">POZN.</span>: Budete-li na stránky nahrávat nyní, adresář, který jste zde označili, musí existovat a musí mít nastaveno právo na zápis.
-                Pokud složka neexistuje, můžete ji vytvořit pomocí tlačítka "Vytvořit složku" v Základním nastavení. Není-li tato operace možná, použijte váš FTP program
-                nebo jiný online souborový správce. </p>
+            <p><h5 class="optionhead">POZN.</h5>: Budete-li na stránky nahrávat nyní, adresář, který jste zde označili, musí existovat a musí mít
+            nastaveno právo na zápis.
+            Pokud složka neexistuje, můžete ji vytvořit pomocí tlačítka "Vytvořit složku" v Základním nastavení. Není-li tato operace možná, použijte
+            váš FTP program
+            nebo jiný online souborový správce. </p>
 
-            <span class="optionhead">Asociované místo</span>
+            <h5 class="optionhead">Asociované místo</h5>
             <p>Chcete-li tento hřbitov propojit s místem, zadejte sem název místa tak, jak existuje ve vaší databázi nebo postupujte tak, že
                 vyplníte údaje město, okres/farnost, kraj/provincie, země a klikněte na tlačítko <strong>Doplnit místo</strong>.
                 Kliknutím na toto tlačítko se hodnoty, které jste zapsali do předchozích polí, vyplní do pole Asociované místo.</p>
@@ -86,27 +93,34 @@ echo help_header("Nápověda: Hřbitovy");
             <p>Je-li hřbitov propojen s místem, údaje o hřbitovu budou zobrazeny na stránce místa a seznam pohřbů
                 spojených s místem bude zobrazen na stránce hřbitova.</p>
 
-            <span class="optionhead">Město, Okres/farnost, Kraj/provincie, Země</span>
+            <h5 class="optionhead">Město, Okres/farnost, Kraj/provincie, Země</h5>
             <p>Zadejte co nejvíce údajů o umístění tohoto hřbitova. Povinná je země, ostatní pole jsou nepovinná.</p>
 
-            <p>Při vyplnění polí <strong>Kraj/provincie</strong> a <strong>Země</strong> vyberte existující zápis z rozbalovacího seznamu. Pokud zde požadovaný údaj není, pro přidání do seznamu použijte tlačítko "Přidat nové".
+            <p>Při vyplnění polí <strong>Kraj/provincie</strong> a <strong>Země</strong> vyberte existující zápis z rozbalovacího seznamu. Pokud zde
+                požadovaný údaj není, pro přidání do seznamu použijte tlačítko "Přidat nové".
                 Pokud zápis do tohoto seznamu nepatří, nejdříve jej vyberte a pak klikněte na tlačítko "Vymazat vybrané".</p>
 
-            <span class="optionhead">Zobrazit/skrýt klikací mapu</span>
-            <p>Kliknutím na tlačítko "Zobrazit/skrýt klikací mapu" se zobrazí Google Map. Tato funkce je aktivní, pokud jste obdrželi od Google "klíč" a vložili jej do
-                svého nastavení map v TNG (viz <a href="mapconfig_help.php">Nápověda pro nastavení mapy</a> pro více informací). Opětovným kliknutím na toto tlačítko bude mapa skryta. Chcete-li, aby bylo umístění vyhledáno v Google Maps,
-                zapište toto umístění do pole <strong>Geokódovat umístění</strong> a klikněte na tlačítko "Hledat". Do mapy můžete také klikat a pohybovat s ní, dokud
-                nebude "špendlík" na požadovaném místě. Můžete také použít ovládací prvek Přiblížení pro zobrazení více podrobností v okolí požadované oblasti. Na stránce
-                <a href="places_googlemap_help.php">Nápověda Google Maps</a> najdete více informací. Informace o výchozím nastavení vašich map najdete v <a href="mapconfig_help.php">Nápovědě: Nastavení map</a>.</p>
+            <h5 class="optionhead">Zobrazit/skrýt klikací mapu</h5>
+            <p>Kliknutím na tlačítko "Zobrazit/skrýt klikací mapu" se zobrazí Google Map. Tato funkce je aktivní, pokud jste obdrželi od Google "klíč"
+                a vložili jej do
+                svého nastavení map v TNG (viz <a href="mapconfig_help.php">Nápověda pro nastavení mapy</a> pro více informací). Opětovným kliknutím
+                na toto tlačítko bude mapa skryta. Chcete-li, aby bylo umístění vyhledáno v Google Maps,
+                zapište toto umístění do pole <strong>Geokódovat umístění</strong> a klikněte na tlačítko "Hledat". Do mapy můžete také klikat a
+                pohybovat s ní, dokud
+                nebude "špendlík" na požadovaném místě. Můžete také použít ovládací prvek Přiblížení pro zobrazení více podrobností v okolí požadované
+                oblasti. Na stránce
+                <a href="places_googlemap_help.php">Nápověda Google Maps</a> najdete více informací. Informace o výchozím nastavení vašich map najdete
+                v <a href="mapconfig_help.php">Nápovědě: Nastavení map</a>.</p>
 
-            <span class="optionhead">Zeměpisná šířka/délka</span>
+            <h5 class="optionhead">Zeměpisná šířka/délka</h5>
             <p>Zapište souřadnice zeměpisné šířky a délky hřbitova nebo pro nastavení hodnot použijte klikací Google Map (nepovinné, viz výše).</p>
 
-            <span class="optionhead">Přiblížení</span>
-            <p>Zadejte úroveň přiblížení nebo upravte ovládací prvek přiblížení v Google Map pro nastavení úrovně přiblížení. Tato volba je dostupná pouze, když jste obdrželi "klíč"
+            <h5 class="optionhead">Přiblížení</h5>
+            <p>Zadejte úroveň přiblížení nebo upravte ovládací prvek přiblížení v Google Map pro nastavení úrovně přiblížení. Tato volba je dostupná
+                pouze, když jste obdrželi "klíč"
                 od Google a zapsali jej do vašeho nastavení map v TNG.</p>
 
-            <span class="optionhead">Poznámky</span>
+            <h5 class="optionhead">Poznámky</h5>
             <p>Jsou-li třeba pro popis hřbitova nebo jeho místa ještě další informace, zapište je sem (nepovinné).</p>
 
         </td>
@@ -115,7 +129,7 @@ echo help_header("Nápověda: Hřbitovy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="delete"><p class="subheadbold">Vymazat hřbitovy</p></a>
+            <a id="delete"><h4 class="subheadbold">Vymazat hřbitovy</h4></a>
 
             <p>Chcete-li odstranit hřbitov, použijte záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Vymazat
                 vedle tohoto záznamu hřbitova. Tento řádek změní

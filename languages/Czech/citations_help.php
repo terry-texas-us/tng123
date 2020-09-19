@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Citace");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("N�pov�da: Citace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="what"><p class="subheadbold">Co jsou to citace?</p></a>
+            <a id="what"><h4 class="subheadbold">Co jsou to citace?</h4></a>
 
             <p><strong>Citace</strong> je odkaz na z�znam pramenu, proveden� s �myslem prok�zat pravdivost n�jak�ho �daje. Pramen obvykle
                 v�eobecn� popisuje, kde byl uveden� �daj nalezen (nap�. matrika nebo s��tac� arch), zat�mco citace obvykle obsahuje konkr�tn�
@@ -40,7 +40,7 @@ echo help_header("N�pov�da: Citace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">P�idat/Upravit/Vymazat citace</p></a>
+            <a id="add"><h4 class="subheadbold">P�idat/Upravit/Vymazat citace</h4></a>
 
             <p>Chcete-li p�idat, upravit nebo vymazat citace, klikn�te na ikonu Citace na str�nce naho�e nebo vedle n�jak� pozn�mky nebo ud�losti
                 (pokud ji� citace existuje,
@@ -55,30 +55,32 @@ echo help_header("N�pov�da: Citace");
 
             <p>P�i p�id�n� nebo �prav� citace si v�imn�te n�sleduj�c�ho:</p>
 
-            <span class="optionhead">ID ��slo pramenu</span>
+            <h5 class="optionhead">ID ��slo pramenu</h5>
             <p>Zapi�te ID ��slo pramenu, kter� m� b�t citov�n, nebo klikn�te na tla��tko "Naj�t" pro jeho nalezen�. Pokud pramen je�t� nebyl vytvo�en,
-                p�ejd�te do Admin/Prameny a vytvo�te pramen v p��slu�n�m strom�. Pot� se vra�te do seznamu citac� nebo m��ete kliknout na tla��tko "Vytvo�it"
+                p�ejd�te do Admin/Prameny a vytvo�te pramen v p��slu�n�m strom�. Pot� se vra�te do seznamu citac� nebo m��ete kliknout na tla��tko
+                "Vytvo�it"
                 pro z�pis �daj� o nov�m pramenu. Po ulo�en� �daj� bude do tohoto pole vlo�eno nov� ID ��slo pramenu.</p>
-            <p>Pokud jste ji� b�hem sv� aktu�ln� relace pro stejn� typ subjektu (osoba, rodina, atd.) vytvo�ili n�jakou citaci, uvid�te tak� tla��tko "Kop�rovat posledn�". Kliknut�
+            <p>Pokud jste ji� b�hem sv� aktu�ln� relace pro stejn� typ subjektu (osoba, rodina, atd.) vytvo�ili n�jakou citaci, uvid�te tak� tla��tko
+                "Kop�rovat posledn�". Kliknut�
                 na toto tla��tko budou v�echna pole vypln�na stejn�mi �daji, jako jste pou�ili ve sv� minul� citaci.</p>
 
-            <!--<span class="optionhead">Description</span>
+            <!--<h5 class="optionhead">Description</h5>
         <p>If your desktop genealogy program does not assign ID numbers to your sources, your citation will have a Description instead. You will not see
         the Description field for a new citation.</p>-->
 
-            <span class="optionhead">Strana</span>
+            <h5 class="optionhead">Strana</h5>
             <p>Zapi�te str�nku, na kter� se ve vybran�m pramenu nach�z� tato ud�lost (voliteln�).</p>
 
-            <span class="optionhead">V�rohodnost</span>
+            <h5 class="optionhead">V�rohodnost</h5>
             <p>Vyberte ��slo (0-3), kter� ozna�uje, na kolik je tento pramen v�rohodn� (voliteln�). Vy��� ��sla ozna�uj� v�t�� v�rohodnost.</p>
 
-            <span class="optionhead">Datum citace</span>
+            <h5 class="optionhead">Datum citace</h5>
             <p>Datum spojen� s touto citac� (voliteln�).</p>
 
-            <span class="optionhead">Vlastn� text</span>
+            <h5 class="optionhead">Vlastn� text</h5>
             <p>Kr�tk� v��atek z materi�lu pramenu (voliteln�).</p>
 
-            <span class="optionhead">Pozn�mky</span>
+            <h5 class="optionhead">Pozn�mky</h5>
             <p>U�ite�n� pozn�mky, kter� se t�kaj� tohoto pramenu (voliteln�).</p>
 
         </td>

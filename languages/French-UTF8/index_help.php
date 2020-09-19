@@ -18,7 +18,7 @@ include $relpath . "begin.php";
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -37,7 +37,7 @@ include $relpath . "begin.php";
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a id="gettingstarted"><p class="subheadbold">Mise en route:</p></a>
+            <a id="gettingstarted"><h4 class="subheadbold">Mise en route:</h4></a>
             <p>Directives de base pour débutants :</p>
             <ol>
                 <li><p><strong>Lire attentivement les directives dans le fichier <a href="../readme.html" target="_blank">readme.html</a>
@@ -64,7 +64,7 @@ include $relpath . "begin.php";
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="notes"><p class="subheadbold">Notes:</p></a>
+            <a id="notes"><h4 class="subheadbold">Notes:</h4></a>
             <ol>
                 <li><p>Si vous remarquez que certaines options sont absentes du menu Administration, c'est peut-être parce que vous n'êtes pas
                         connecté avec tous les droits, ou que vous êtes associé à un arbre en particulier.
@@ -80,7 +80,7 @@ include $relpath . "begin.php";
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="otherresources"><p class="subheadbold">Autres ressources:</p></a>
+            <a id="otherresources"><h4 class="subheadbold">Autres ressources:</h4></a>
             <ol>
                 <li><p>Liste des mises à jour : <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. Pour y souscrire, envoyer un message
                         à

@@ -5,7 +5,7 @@ echo help_header("Pomoc: Pierwsze kroki");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -24,7 +24,7 @@ echo help_header("Pomoc: Pierwsze kroki");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a id="gettingstarted"><p class="subheadbold">Pierwsze kroki:</p></a>
+            <a id="gettingstarted"><h4 class="subheadbold">Pierwsze kroki:</h4></a>
             <p>Nie wiesz co zrobić najpierw? Oto podstawowe informacje:</p>
             <ol>
                 <li><p><strong>Postępuj zgodnie z instrukcjami instalacji w pliku <a href="../readme.html" target="_blank">readme.html</a> albo <a
@@ -53,7 +53,7 @@ echo help_header("Pomoc: Pierwsze kroki");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="notes"><p class="subheadbold">Uwagi:</p></a>
+            <a id="notes"><h4 class="subheadbold">Uwagi:</h4></a>
             <ol>
                 <li><p>Jeśli zauważysz brak jakichś opcji w menu Administratora, znaczy to prawdopodobnie, że nie jesteś zalogowany z pełnymi
                         uprawnieniami, albo masz uprawnienia tylko do określonego drzewa.
@@ -68,7 +68,7 @@ echo help_header("Pomoc: Pierwsze kroki");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="otherresources"><p class="subheadbold">Przydatne adresy i linki:</p></a>
+            <a id="otherresources"><h4 class="subheadbold">Przydatne adresy i linki:</h4></a>
             <ol>
                 <li><p>Updates mailing list: <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. To subscribe, send a message to
                         <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. This list is used exclusively to inform

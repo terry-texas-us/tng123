@@ -5,7 +5,7 @@ echo help_header("Help: Log Settings");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -27,35 +27,37 @@ echo help_header("Help: Log Settings");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <span class="optionhead">Log File Name</span>
+            <h5 class="optionhead">Log File Name</h5>
             <p>The Log File Name is the file where visitor actions are recorded. You shouldn't have to change this from "genlog.txt".</p>
 
-            <span class="optionhead">Max Log Lines</span>
+            <h5 class="optionhead">Max Log Lines</h5>
             <p>Max Log Lines indicates how many actions should be
                 retained at any one time. If this number gets too high, you may experience a performance hit.</p>
 
-            <span class="optionhead">Exclude Host Names</span>
+            <h5 class="optionhead">Exclude Host Names</h5>
             <p>Before making any log entry, TNG will check this list. If the host of the visitor responsible for the potential log entry
                 is on the list, no log entry will be made. Host names should be separated by commas (no spaces) and can consist of entire
                 host names, IP addresses, or portions of either. For example, "googlebot" will block "crawler4.googlebot.com".</p>
 
-            <span class="optionhead">Exclude User Names</span>
+            <h5 class="optionhead">Exclude User Names</h5>
             <p>Before making any log entry, TNG will check this list as well. If the logged-in user
                 is on the list, no log entry will be made. User names should be separated by commas (no spaces).</p>
 
-            <span class="optionhead">Log File Name (Admin)</span>
+            <h5 class="optionhead">Log File Name (Admin)</h5>
             <p>The log file where actions in the Admin area are recorded. You shouldn't have to change this from "genlog.txt".</p>
 
-            <span class="optionhead">Max Log Lines (Admin)</span>
-            <p>Indicates how many actions should be retained at any one time in the Admin log file. If this number gets too high, you may experience a performance hit.</p>
+            <h5 class="optionhead">Max Log Lines (Admin)</h5>
+            <p>Indicates how many actions should be retained at any one time in the Admin log file. If this number gets too high, you may experience a
+                performance hit.</p>
 
-            <span class="optionhead">Block Suggestions or New User Registrations</span></p>
+            <h5 class="optionhead">Block Suggestions or New User Registrations</h5></p>
 
-            <span class="optionhead">Address contains</span>
-            <p>Block any incoming suggestion or new user registration where the e-mail address of the sender contains any of the entered words or word segments.
+            <h5 class="optionhead">Address contains</h5>
+            <p>Block any incoming suggestion or new user registration where the e-mail address of the sender contains any of the entered words or word
+                segments.
                 Separate multiple words with commas.</p>
 
-            <span class="optionhead">Message contains</span>
+            <h5 class="optionhead">Message contains</h5>
             <p>Block any incoming suggestion or new user registration where the message body contains any of the entered words or word segments.
                 Separate multiple words with commas.</p>
         </td>

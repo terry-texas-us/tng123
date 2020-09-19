@@ -5,7 +5,7 @@ echo help_header("Help: Citations");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,7 +31,7 @@ echo help_header("Help: Citations");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="what"><p class="subheadbold">What are Citations?</p></a>
+            <a id="what"><h4 class="subheadbold">What are Citations?</h4></a>
 
             <p>A <strong>Citation</strong> is a reference to a Source record, made with the intent of proving the veracity of some piece of
                 information. The Source usually
@@ -44,7 +44,7 @@ echo help_header("Help: Citations");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Adding/Editing/Deleting Citations</p></a>
+            <a id="add"><h4 class="subheadbold">Adding/Editing/Deleting Citations</h4></a>
 
             <p>To add, edit or delete citations, click on the Citations icon at the top of the screen or next to any note or event (if citations
                 already exist,
@@ -58,30 +58,32 @@ echo help_header("Help: Citations");
 
             <p>While adding or editing a citation, please take note of the following:</p>
 
-            <span class="optionhead">Source ID</span>
+            <h5 class="optionhead">Source ID</h5>
             <p>Enter the ID of the source to be cited, or click the "Find" button to search for it. If the source has not yet been created, you
-                can go to Admin/Sources to create the source in the proper tree, then return to the citations list, or you can click the "Create" button
+                can go to Admin/Sources to create the source in the proper tree, then return to the citations list, or you can click the "Create"
+                button
                 to enter the information for the new source. Once that information is saved, the new Source ID will be entered into this field.</p>
-            <p>If you have already made at least one citation for the same type of entity (person, family, etc.) during your current session, you will also see a "Copy Last" button. Clicking that
+            <p>If you have already made at least one citation for the same type of entity (person, family, etc.) during your current session, you will
+                also see a "Copy Last" button. Clicking that
                 button will populate all the fields with the same values that you used in your last citation.</p>
 
-            <!--<span class="optionhead">Description</span>
+            <!--<h5 class="optionhead">Description</h5>
         <p>If your desktop genealogy program does not assign ID numbers to your sources, your citation will have a Description instead. You will not see
         the Description field for a new citation.</p>-->
 
-            <span class="optionhead">Page</span>
+            <h5 class="optionhead">Page</h5>
             <p>Enter the page of the selected source relevant to this event (optional).</p>
 
-            <span class="optionhead">Reliability</span>
+            <h5 class="optionhead">Reliability</h5>
             <p>Select a number (0-3) indicating how reliable the source is (optional). Higher numbers indicate greater reliability.</p>
 
-            <span class="optionhead">Citation Date</span>
+            <h5 class="optionhead">Citation Date</h5>
             <p>The date associated with this citation (optional).</p>
 
-            <span class="optionhead">Actual Text</span>
+            <h5 class="optionhead">Actual Text</h5>
             <p>An short excerpt of the source material (optional).</p>
 
-            <span class="optionhead">Notes</span>
+            <h5 class="optionhead">Notes</h5>
             <p>Any helpful comments you may have concerning this source (optional).</p>
 
         </td>

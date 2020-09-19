@@ -5,7 +5,7 @@ echo help_header("Help: More");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -30,24 +30,24 @@ echo help_header("Help: More");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="more"><p class="subheadbold">More Information</p></a>
+            <a id="more"><h4 class="subheadbold">More Information</h4></a>
             <p>This screen allows you to enter additional information related to TNG's standard event types. When one or more of these fields are
                 filled in,
                 the More icon (plus sign) will have a green dot in the corner. Fields on the More Information screen include:</p>
 
-            <p><span class="optionhead">Age</span>: The age of the individual at the time of the event.</p>
+            <p><h5 class="optionhead">Age</h5>: The age of the individual at the time of the event.</p>
 
-            <p><span class="optionhead">Agency</span>: The institution or individual having authority and/or responsibility at the time of the event.
+            <p><h5 class="optionhead">Agency</h5>: The institution or individual having authority and/or responsibility at the time of the event.
             </p>
 
-            <p><span class="optionhead">Cause</span>: The cause of the event (most often used with Death).</p>
+            <p><h5 class="optionhead">Cause</h5>: The cause of the event (most often used with Death).</p>
 
-            <p><span class="optionhead">Address 1/Address 2/City/State/Province/Zip/Postal Code/Country/Phone/E-mail/Web Site</span>: The address and
-                other contact information
-                associated with the event.</p>
+            <p><h5 class="optionhead">Address 1/Address 2/City/State/Province/Zip/Postal Code/Country/Phone/E-mail/Web Site</h5>: The address and
+            other contact information
+            associated with the event.</p>
 
-            <p><span class="optionhead">Required fields:</span>
-                None of the information here is required.</p>
+            <p><h5 class="optionhead">Required fields:</h5>
+            None of the information here is required.</p>
         </td>
     </tr>
 

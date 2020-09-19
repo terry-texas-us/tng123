@@ -9,7 +9,7 @@ echo help_header("Nápověda: Citace");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("Nápověda: Citace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="what"><p class="subheadbold">Co jsou to citace?</p></a>
+            <a id="what"><h4 class="subheadbold">Co jsou to citace?</h4></a>
 
             <p><strong>Citace</strong> je odkaz na záznam pramenu, provedená s úmyslem prokázat pravdivost nějakého údaje. Pramen obvykle
                 všeobecně popisuje, kde byl uvedený údaj nalezen (např. matrika nebo sčítací arch), zatímco citace obvykle obsahuje konkrétní
@@ -40,7 +40,7 @@ echo help_header("Nápověda: Citace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Přidat/Upravit/Vymazat citace</p></a>
+            <a id="add"><h4 class="subheadbold">Přidat/Upravit/Vymazat citace</h4></a>
 
             <p>Chcete-li přidat, upravit nebo vymazat citace, klikněte na ikonu Citace na stránce nahoře nebo vedle nějaké poznámky nebo události
                 (pokud již citace existuje,
@@ -55,30 +55,32 @@ echo help_header("Nápověda: Citace");
 
             <p>Při přidání nebo úpravě citace si všimněte následujícího:</p>
 
-            <span class="optionhead">ID číslo pramenu</span>
+            <h5 class="optionhead">ID číslo pramenu</h5>
             <p>Zapište ID číslo pramenu, který má být citován, nebo klikněte na tlačítko "Najít" pro jeho nalezení. Pokud pramen ještě nebyl vytvořen,
-                přejděte do Admin/Prameny a vytvořte pramen v příslušném stromě. Poté se vraťte do seznamu citací nebo můžete kliknout na tlačítko "Vytvořit"
+                přejděte do Admin/Prameny a vytvořte pramen v příslušném stromě. Poté se vraťte do seznamu citací nebo můžete kliknout na tlačítko
+                "Vytvořit"
                 pro zápis údajů o novém pramenu. Po uložení údajů bude do tohoto pole vloženo nové ID číslo pramenu.</p>
-            <p>Pokud jste již během své aktuální relace pro stejný typ subjektu (osoba, rodina, atd.) vytvořili nějakou citaci, uvidíte také tlačítko "Kopírovat poslední". Kliknutí
+            <p>Pokud jste již během své aktuální relace pro stejný typ subjektu (osoba, rodina, atd.) vytvořili nějakou citaci, uvidíte také tlačítko
+                "Kopírovat poslední". Kliknutí
                 na toto tlačítko budou všechna pole vyplněna stejnými údaji, jako jste použili ve své minulé citaci.</p>
 
-            <!--<span class="optionhead">Description</span>
+            <!--<h5 class="optionhead">Description</h5>
         <p>If your desktop genealogy program does not assign ID numbers to your sources, your citation will have a Description instead. You will not see
         the Description field for a new citation.</p>-->
 
-            <span class="optionhead">Strana</span>
+            <h5 class="optionhead">Strana</h5>
             <p>Zapište stránku, na které se ve vybraném pramenu nachází tato událost (volitelné).</p>
 
-            <span class="optionhead">Věrohodnost</span>
+            <h5 class="optionhead">Věrohodnost</h5>
             <p>Vyberte číslo (0-3), které označuje, na kolik je tento pramen věrohodný (volitelné). Vyšší čísla označují větší věrohodnost.</p>
 
-            <span class="optionhead">Datum citace</span>
+            <h5 class="optionhead">Datum citace</h5>
             <p>Datum spojené s touto citací (volitelné).</p>
 
-            <span class="optionhead">Vlastní text</span>
+            <h5 class="optionhead">Vlastní text</h5>
             <p>Krátký výňatek z materiálu pramenu (volitelné).</p>
 
-            <span class="optionhead">Poznámky</span>
+            <h5 class="optionhead">Poznámky</h5>
             <p>Užitečné poznámky, které se týkají tohoto pramenu (volitelné).</p>
 
         </td>

@@ -5,7 +5,7 @@ echo help_header("Help: Miscellaneous");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -32,7 +32,7 @@ echo help_header("Help: Miscellaneous");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="whatsnew"><p class="subheadbold">What's New</p></a>
+            <a id="whatsnew"><h4 class="subheadbold">What's New</h4></a>
             <p>Any text entered on this tab will be displayed at the top of the <strong>What's New</strong> page in the public area.
                 Use this feature if you would like to provide your visitors with a general site update or other timely information. Click on the
                 <strong>Test</strong> link to display the
@@ -44,7 +44,7 @@ echo help_header("Help: Miscellaneous");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="mostwanted"><p class="subheadbold">Most Wanted</p></a>
+            <a id="mostwanted"><h4 class="subheadbold">Most Wanted</h4></a>
             <p>The Most Wanted tab allows you to add elusive people and mystery photos to a <strong>Most Wanted</strong> page on your site, in hopes
                 of getting more publicity for the
                 things that are giving you the most trouble. See the <a href="mostwanted_help.php">Help: Most Wanted</a> link for more information on
@@ -56,7 +56,7 @@ echo help_header("Help: Miscellaneous");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="validation"><p class="subheadbold">Data Validation</p></a>
+            <a id="validation"><h4 class="subheadbold">Data Validation</h4></a>
             <p>Here's where you can run a number of preconfigured reports to help you find possible problems in your information. Running each report
                 will examine your database in real time
                 and return a listing of people who might need some attention. You'll then be able to click through to those records and take a closer

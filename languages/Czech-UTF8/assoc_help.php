@@ -9,7 +9,7 @@ echo help_header("Nápověda: Spojení");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("Nápověda: Spojení");
 
     <tr class="databack">
         <td class="tngshadow">
-            <a id="what"><p class="subheadbold">Co jsou spojení?</p></a>
+            <a id="what"><h4 class="subheadbold">Co jsou spojení?</h4></a>
 
             <p><strong>Spojení</strong> je záznam vztahu mezi dvěma osobami, mezi dvěma rodinami nebo mezi osobou a rodinou.
                 Ze stromové struktury vaší databáze nemusí být vztah zřejmý. Ve skutečnosti dvě osoby/rodiny, které jsou propojeny
@@ -39,7 +39,7 @@ echo help_header("Nápověda: Spojení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Přidání/Úprava/Odstranění spojení</p></a>
+            <a id="add"><h4 class="subheadbold">Přidání/Úprava/Odstranění spojení</h4></a>
 
             <p>Chcete-li přidat, upravit nebo odstranit spojení u osoby, vyhledejte osobu v Administrace/Osoba a upravte
                 individuální záznam, a poté klikněte na ikonu Spojení v horní části obrazovky (pokud spojení již existují,
@@ -56,13 +56,14 @@ echo help_header("Nápověda: Spojení");
 
             <p>Při přidání nebo úpravě spojení mějte na paměti následující:</p>
 
-            <span class="optionhead">ID čísla osoby nebo rodiny</span>
-            <p>Zapište ID číslo osoby nebo rodiny, která má být spojena s aktivní osobou nebo rodinou, nebo klikněte na ikonu Najít a vyhledejte ID číslo.</p>
+            <h5 class="optionhead">ID čísla osoby nebo rodiny</h5>
+            <p>Zapište ID číslo osoby nebo rodiny, která má být spojena s aktivní osobou nebo rodinou, nebo klikněte na ikonu Najít a vyhledejte ID
+                číslo.</p>
 
-            <span class="optionhead">Vztah</span>
+            <h5 class="optionhead">Vztah</h5>
             <p>Zapište povahu spojení. Např. <em>Kmotr</em>, <em>Učitel</em> nebo <em>Svědek</em>.</p>
 
-            <span class="optionhead">Obrácené spojení?</span>
+            <h5 class="optionhead">Obrácené spojení?</h5>
             <p>Někdy jde spojení oběma směry. Např. vztah <em>Přítel</em> může mít působnost oběma směry. Je-li to pravda,
                 a chcete vytvořit druhé spojení jdoucí opačným směrem, pak klikněte na tuto volbu. Pokud povaha vztahu není taková, že by
                 platila i v opačném směru (např. <em>Kmotr</em> nebo <em>Učitel</em>), pak byste měli vytvořit jiné spojení, začínající

@@ -5,7 +5,7 @@ echo help_header("Pomoc: Więcej");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -23,23 +23,24 @@ echo help_header("Pomoc: Więcej");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="more"><p class="subheadbold">Więcej informacji</p></a>
+            <a id="more"><h4 class="subheadbold">Więcej informacji</h4></a>
             <p>To okienko pozwala na wprowadzenie dodatkowych informacji związanych ze standardowymi rodzajami wydarzeń TNG. Kiedy jedno lub więcej z
                 tych pól jest wypełnione, ikonka "Więcej" (znak plus)
                 będzie miała zieloną kropkę w rogu. Pola w okienku "Więcej informacji" obejmują:</p>
 
-            <p><span class="optionhead">Wiek</span>: Wiek osoby w czasie wydarzenia.</p>
+            <p><h5 class="optionhead">Wiek</h5>: Wiek osoby w czasie wydarzenia.</p>
 
-            <p><span class="optionhead">Urząd</span>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
+            <p><h5 class="optionhead">Urząd</h5>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
 
-            <p><span class="optionhead">Przyczyna</span>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
+            <p><h5 class="optionhead">Przyczyna</h5>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
 
-            <p><span class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</span>: Adres oraz inne
-                informacje kontaktowe związane z wydarzeniem..</p>
+            <p><h5 class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</h5>: Adres oraz inne
+            informacje kontaktowe związane z wydarzeniem..</p>
 
-            <p><span class="optionhead">Wymagane pola:</span>
+            <p><h5 class="optionhead">Wymagane pola:</h5>
             <p>Żadna z tych informacji nie jest wymagana.</p>
-            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                    ewentualne błędy lub niejasności.</p></li>
         </td>
     </tr>
 

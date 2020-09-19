@@ -9,7 +9,7 @@ echo help_header("Nápověda: Reporty");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -29,7 +29,7 @@ echo help_header("Nápověda: Reporty");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
 
             <p>Nalezení existujících reportů vyhledáním celého nebo části <strong>názvu reportu</strong> nebo <strong>popisu</strong>.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech reportů ve vaší databázi.</p>
@@ -37,7 +37,7 @@ echo help_header("Nápověda: Reporty");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <span class="optionhead">Akce</span>
+            <h5 class="optionhead">Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
                 více záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
@@ -50,7 +50,7 @@ echo help_header("Nápověda: Reporty");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="add"><p class="subheadbold">Přidání nebo úprava reportu</p></a>
+            <a id="add"><h4 class="subheadbold">Přidání nebo úprava reportu</h4></a>
 
             <p>Reportem se v TNG rozumí uživatelský seznam osob z vaší databáze. Vy rozhodnete, která pole mají být zobrazena, které osoby mají být do
                 reportu vloženy a jak mají být seřazeny.
@@ -61,20 +61,23 @@ echo help_header("Nápověda: Reporty");
                 záložku <a href="#search">Hledat</a> pro nalezení reportu, a poté klikněte na ikonu Upravit vedle tohoto řádku.</p>
             Význam jednotlivých polí při přidání nebo úpravě reportu je následující:</p>
 
-            <span class="optionhead">Název reportu</span>
+            <h5 class="optionhead">Název reportu</h5>
             <p>Svému reportu musíte dát název. Při zobrazení reportu se objeví jako jeho titul.</p>
 
-            <span class="optionhead">Popis</span>
-            <p>Svůj report stručně popište. Tento popis se objeví při zobrazení reportu pod titulem. Popis by měl stručně vysvětlit, co report zobrazuje a při
+            <h5 class="optionhead">Popis</h5>
+            <p>Svůj report stručně popište. Tento popis se objeví při zobrazení reportu pod titulem. Popis by měl stručně vysvětlit, co report
+                zobrazuje a při
                 použití jakých kritérií.</p>
 
-            <span class="optionhead">Pořadí/Priorita</span>
-            <p>Reporty budou tříděny alfabeticky podle názvu, pokud každému nepřidělíte pořadí nebo prioritu. Nejdříve se řadí nižší čísla. Prázdné pořadí se dostane před číslo.</p>
+            <h5 class="optionhead">Pořadí/Priorita</h5>
+            <p>Reporty budou tříděny alfabeticky podle názvu, pokud každému nepřidělíte pořadí nebo prioritu. Nejdříve se řadí nižší čísla. Prázdné
+                pořadí se dostane před číslo.</p>
 
-            <span class="optionhead">Aktivní</span>
-            <p>Váš nový report nebude na stránkách návštěvníků viditelný, dokud jej neoznačíte zde jako aktivní. Je dobré před aktivací nový report uložit a otestovat, zda pracuje tak, jak chcete.</p>
+            <h5 class="optionhead">Aktivní</h5>
+            <p>Váš nový report nebude na stránkách návštěvníků viditelný, dokud jej neoznačíte zde jako aktivní. Je dobré před aktivací nový report
+                uložit a otestovat, zda pracuje tak, jak chcete.</p>
 
-            <span class="optionhead">Zvolte pole pro zobrazení</span>
+            <h5 class="optionhead">Zvolte pole pro zobrazení</h5>
             <p>Zkopírováním z levé části do pravé označte, která pole chcete ve svém reportu zobrazit. Provést to můžete
                 výběrem pole a kliknutím na tlačítko <em>Přidat >></em> nebo jednoduše dvojklikem na název pole (pouze IE). </p>
 
@@ -82,19 +85,23 @@ echo help_header("Nápověda: Reporty");
                 v pravé části a kliknutím na tlačítko <em><< Odstranit</em> nebo jednoduše dvojklikem na název pole (pouze IE). </p>
 
             <p>Pole v seznamu zobrazení nahoře jsou zobrazena v reportu nalevo. Změnit pořadí zobrazovaných polí
-                můžete výběrem pole v pravé části a kliknutím na tlačítka <em>Posunout nahoru</em> a <em>Posunout dolů</em> můžete pole posunout nahoru nebo dolů.</p>
+                můžete výběrem pole v pravé části a kliknutím na tlačítka <em>Posunout nahoru</em> a <em>Posunout dolů</em> můžete pole posunout
+                nahoru nebo dolů.</p>
 
-            <span class="optionhead">Vyberte kritéria</span>
-            <p>Volbou kritérií označte osoby, které chcete vložit do svého reportu. Osoby, které kritériím neodpovídají, v reportu nebudou obsaženy. Příkazy pro kritéria jsou
-                dobře zformulovány, když obsahují název pole a podmínku. Např. "Příjmení = 'Novák' " nebo "Místo narození obsahuje 'Olomouc' ". Více kritérií musí být spojeno příkazy A nebo
+            <h5 class="optionhead">Vyberte kritéria</h5>
+            <p>Volbou kritérií označte osoby, které chcete vložit do svého reportu. Osoby, které kritériím neodpovídají, v reportu nebudou obsaženy.
+                Příkazy pro kritéria jsou
+                dobře zformulovány, když obsahují název pole a podmínku. Např. "Příjmení = 'Novák' " nebo "Místo narození obsahuje 'Olomouc' ". Více
+                kritérií musí být spojeno příkazy A nebo
                 NE. Pořadí je indikováno pomocí závorek.</p>
 
             <p>Příkaz začněte výběrem názvu pole z horního levého rámce a přidejte jej do pravého rámce. Provést to můžete
-              výběrem pole a kliknutím na sousední tlačítko <em>Přidat >></em> nebo jednoduše dvojklikem na název pole (pouze IE).</p>
+                výběrem pole a kliknutím na sousední tlačítko <em>Přidat >></em> nebo jednoduše dvojklikem na název pole (pouze IE).</p>
 
-          <p><strong>POZN.</strong>: Všechna datová pole mimo Datum poslední aktualizace se chovají jako řetězce a ne jako
-            skutečná data POKUD NEJSOU označena jako 'True'. Porovnání dat, které používají textová nebo řetězcová pole, se nejlépe provede porovnáním komponent data,
-            jako je pouze rok nebo pouze den. Chcete-li tímto způsobem izolovat komponentu data, vyberte nejdříve <em>Měsíc pouze</em>,
+            <p><strong>POZN.</strong>: Všechna datová pole mimo Datum poslední aktualizace se chovají jako řetězce a ne jako
+                skutečná data POKUD NEJSOU označena jako 'True'. Porovnání dat, které používají textová nebo řetězcová pole, se nejlépe provede
+                porovnáním komponent data,
+                jako je pouze rok nebo pouze den. Chcete-li tímto způsobem izolovat komponentu data, vyberte nejdříve <em>Měsíc pouze</em>,
             <em>Den pouze</em> nebo <em>Rok pouze</em>, a pak vyberte pole data, ze kterého tato komponenta pochází.</p>
 
           <p>Při práci se skutečnými datovými poli (jako Datum poslední aktualizace) můžete porovnat pole přímo s jiným skutečným datem
@@ -118,31 +125,39 @@ echo help_header("Nápověda: Reporty");
             Chcete-li přidat prázdný řetězec, nechte před kliknutím na toto tlačítko pole prázdné. Pokud chcete zvolit hodnotu číselné konstanty, zadejte do pole <em>Číselná konstanta</em> číslo a klikněte na sousední
             tlačítko <em>Přidat >></em>.</p>
 
-          <p>Odstranit jakoukoli položku z pravé části můžete jejím výběrem a kliknutím na tlačítko <em><< Odstranit</em> nebo jednoduše dvojklikem na položku (pouze IE).
-            Chcete-li změnit pořadí položek v seznamu, vyberte položku a přesuňte ji nahoru nebo dolů kliknutím na tlačítka <em>Posunout nahoru</em> nebo <em>Posunout dolů</em>.</p>
+          <p>Odstranit jakoukoli položku z pravé části můžete jejím výběrem a kliknutím na tlačítko <em><< Odstranit</em> nebo jednoduše dvojklikem na
+              položku (pouze IE).
+              Chcete-li změnit pořadí položek v seznamu, vyberte položku a přesuňte ji nahoru nebo dolů kliknutím na tlačítka <em>Posunout nahoru</em>
+              nebo <em>Posunout dolů</em>.</p>
 
-          <span class="optionhead">Vybrat třídění</span>
-          <p>Výběrem jednoho nebo více polí určíte, jak mají být odpovídající záznamy tříděny.
-            Pokud nelze určit pořadí záznamů podle prvního pole v seznamu, bude použito druhé pole ze seznamu, a tak dále. Není-li určeno žádné třídění, odpovídající
-            záznamy budou zobrazeny v pořadí, v jakém byly přidány do databáze.
-            Pole, podle kterých má být tříděno, vyberte zkopírováním z levé části do pravé. Provést to můžete výběrem pole a kliknutím na tlačítko <em>Přidat >></em> nebo jednoduše dvojklikem na název pole (pouze IE).
+            <h5 class="optionhead">Vybrat třídění</h5>
+            <p>Výběrem jednoho nebo více polí určíte, jak mají být odpovídající záznamy tříděny.
+                Pokud nelze určit pořadí záznamů podle prvního pole v seznamu, bude použito druhé pole ze seznamu, a tak dále. Není-li určeno žádné
+                třídění, odpovídající
+                záznamy budou zobrazeny v pořadí, v jakém byly přidány do databáze.
+                Pole, podle kterých má být tříděno, vyberte zkopírováním z levé části do pravé. Provést to můžete výběrem pole a kliknutím na tlačítko
+                <em>Přidat >></em> nebo jednoduše dvojklikem na název pole (pouze IE).
 
-          <p>Všechna pole se obvykle třídí ve vzestupném pořadí (např. A-Z nebo 0-9). Chcete-li pole třídit v sestupném pořadí, použijte pseudopole 'Sestupně (Předchozí)'.
-            Výraz 'Předchozí' v závorce znamená, že tento výraz musí <i>následovat</i> za polem, které upravuje. Jinými slovy,
-            pokud chcete třídit podle Příjmení, zvolte vaše tříděni takto:<br><br>
+            <p>Všechna pole se obvykle třídí ve vzestupném pořadí (např. A-Z nebo 0-9). Chcete-li pole třídit v sestupném pořadí, použijte pseudopole
+                'Sestupně (Předchozí)'.
+                Výraz 'Předchozí' v závorce znamená, že tento výraz musí <i>následovat</i> za polem, které upravuje. Jinými slovy,
+                pokud chcete třídit podle Příjmení, zvolte vaše tříděni takto:<br><br>
 
-            <i>Příjmení<br>
-              Sestupně (Předchozí)</i></p>
+                <i>Příjmení<br>
+                    Sestupně (Předchozí)</i></p>
 
-          <span class="optionhead">Různé</span>
-          <p>Odstranit jakoukoli položku z pravé části můžete jejím výběrem a kliknutím na tlačítko <em><< Odstranit</em> nebo jednoduše dvojklikem na položku (pouze IE).
-                Chcete-li změnit pořadí položek v seznamu, vyberte položku a přesuňte ji nahoru nebo dolů kliknutím na tlačítka <em>Posunout nahoru</em> nebo <em>Posunout dolů</em>.</p>
+            <h5 class="optionhead">Různé</h5>
+            <p>Odstranit jakoukoli položku z pravé části můžete jejím výběrem a kliknutím na tlačítko <em><< Odstranit</em> nebo jednoduše dvojklikem
+                na položku (pouze IE).
+                Chcete-li změnit pořadí položek v seznamu, vyberte položku a přesuňte ji nahoru nebo dolů kliknutím na tlačítka <em>Posunout
+                    nahoru</em> nebo <em>Posunout dolů</em>.</p>
 
-            <span class="optionhead">Vlastní SQL dotaz</span>
-            <p>Pokud znáte SQL (structured query language) a znáte strukturu tabulek TNG, můžete nechat oblasti Zobrazit, Kritéria a Třídění prázdná a místo toho zapsat do rámečku na konci obrazovky přímo
+            <h5 class="optionhead">Vlastní SQL dotaz</h5>
+            <p>Pokud znáte SQL (structured query language) a znáte strukturu tabulek TNG, můžete nechat oblasti Zobrazit, Kritéria a Třídění prázdná a
+                místo toho zapsat do rámečku na konci obrazovky přímo
                 SQL příkaz SELECT.</p>
 
-            <span class="optionhead">Uložit report vs. Uložit a ukončit</span>
+            <h5 class="optionhead">Uložit report vs. Uložit a ukončit</h5>
             <p>Chcete-li report uložit, kliknìte na "Uložit report" a zůstanete na stejné stránce a můžete pokračovat v editaci. Kliknutím na "Uložit
                 a ukončit" report uložíte a vrátíte se na menu Reporty.</p>
 
@@ -155,7 +170,7 @@ echo help_header("Nápověda: Reporty");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="delete"><p class="subheadbold">Vymazání reportu</p></a>
+            <a id="delete"><h4 class="subheadbold">Vymazání reportu</h4></a>
             <p>Chcete-li odstranit report, použijte záložku <a href="#search">Hledat</a> k nalezení reportu, a poté klikněte na ikonku Vymazat vedle
                 tohoto záznamu. Tento řádek změní
                 barvu a poté po odstranění reportu zmizí.</p>

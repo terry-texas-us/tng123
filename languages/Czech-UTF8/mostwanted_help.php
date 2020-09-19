@@ -9,7 +9,7 @@ echo help_header("Nápověda: Hledá se");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,28 +31,30 @@ echo help_header("Nápověda: Hledá se");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="add"><p class="subheadbold">Přidání nových zápisů</p></a>
+            <a id="add"><h4 class="subheadbold">Přidání nových zápisů</h4></a>
             <p>Funkce <strong>Hledá se</strong> vám umožní vytvořit seznam kritických osob nebo fotografií, se kterými máte ve svém bádání problémy.
                 Tento seznam je rozdělen do dvou kategorií, <strong>Hledané osoby</strong> a <strong>Tajemné fotografie</strong>. Chcete-li do nějaké
                 kategorie přidat nový zápis,
                 klikněte na tlačítko "Přidat nový" pod příslušným nadpisem a poté vyplňte formulář. Význam polí je následující:</p>
 
-            <span class="optionhead">Titul</span>
+            <h5 class="optionhead">Titul</h5>
             <p>Vašemu zápisu dejte titul, který může být i otázkou. Např. <em>Kdo je tato osoba?</em> nebo <em>Kdo je otcem Josefa Nováka?</em></p>
 
-            <span class="optionhead">Popis</span>
+            <h5 class="optionhead">Popis</h5>
             <p>Vašemu zápisu dejte také krátký popis. Může obsahovat aktuální údaje, které jste shromáždili, překážky, na které jste narazili
                 nebo nějaké konkrétní informace, které hledáte.</p>
 
-            <span class="optionhead">Strom</span>
+            <h5 class="optionhead">Strom</h5>
             <p>Pokud chcete, můžete spojit tento zápis se stromem (nepovinné).</p>
 
-            <span class="optionhead">Osoba</span>
-            <p>Je-li tento zápis úzce spojen s nějakou osobou, zapište ID číslo osoby nebo klikněte na ikonu lupy pro její vyhledání. Po nalezení požadované
+            <h5 class="optionhead">Osoba</h5>
+            <p>Je-li tento zápis úzce spojen s nějakou osobou, zapište ID číslo osoby nebo klikněte na ikonu lupy pro její vyhledání. Po nalezení
+                požadované
                 osoby klikněte na odkaz "Vybrat" a vrátíte se do formuláře Hledá se s vybraným ID číslem.</p>
 
-            <span class="optionhead">Vybrat fotografii</span>
-            <p>Je-li tento zápis úzce spojen s nějakou fotografií, klikněte na tlačítko "Vybrat fotografii" pro vyhledání této fotografie ze záznamů fotografií
+            <h5 class="optionhead">Vybrat fotografii</h5>
+            <p>Je-li tento zápis úzce spojen s nějakou fotografií, klikněte na tlačítko "Vybrat fotografii" pro vyhledání této fotografie ze záznamů
+                fotografií
                 z vaší databáze. Po nalezení požadované fotografie klikněte na odkaz "Vybrat" a vrátíte se do formuláře Hledá se s vybraným ID
                 číslem.</p>
 
@@ -65,7 +67,7 @@ echo help_header("Nápověda: Hledá se");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="edit"><p class="subheadbold">Úprava existujících zápisů</p></a>
+            <a id="edit"><h4 class="subheadbold">Úprava existujících zápisů</h4></a>
             <p>Chcete-li existující zápis upravit, přesuňte kursor myši nad záznam, který chcete upravit. Pod tímto zápisem by se měly objevit odkazy
                 "Upravit" a "Vymazat". Kliknutím
                 na odkaz "Upravit" se zobrazí formulář, ve kterém můžete provést své změny. Pole ve formuláři jsou stejná jako jsou popsána výše v
@@ -77,7 +79,7 @@ echo help_header("Nápověda: Hledá se");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="sort"><p class="subheadbold">Třídění zápisů</p></a>
+            <a id="sort"><h4 class="subheadbold">Třídění zápisů</h4></a>
             <p>Chcete-li změnit pořadí zápisů, které jste vytvořili v sekci Hledá se, chytněte je a přetáhněte na požadované místo (klikněte na oblast
                 "Táhnout", podržte tlačítko myši,
                 dokud nepřesunete ukazovátko na požadované místo a pak myš uvolněte). </p>
@@ -91,7 +93,7 @@ echo help_header("Nápověda: Hledá se");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="delete"><p class="subheadbold">Vymazání existujících zápisů</p></a>
+            <a id="delete"><h4 class="subheadbold">Vymazání existujících zápisů</h4></a>
             <p>Chcete-li existující zápis vymazat, přesuňte kursor myši nad záznam, který chcete vymazat. Pod tímto zápisem by se měly objevit odkazy
                 "Upravit" a "Vymazat". Kliknutím
                 na odkaz "Vymazat" zápis odstraníte (před tím budete požádáni o potvrzení této akce).</p>

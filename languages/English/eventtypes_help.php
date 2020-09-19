@@ -5,7 +5,7 @@ echo help_header("Help: Custom Event Types");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -33,27 +33,28 @@ echo help_header("Help: Custom Event Types");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><h4 class="subheadbold">Search</h4></a>
             <p>Locate existing Custom Event Types by searching for all or part of the <strong>Tag, Type/Description (for EVEN events)</strong> or
                 <strong>Display</strong>.
                 Select an <strong>Associated with</strong> type or check one of the other options to further narrow your search.
                 Searching with no options selected and no value in the search box will find all Custom Event Types in your database. Search options
                 include:</p>
 
-            <p><span class="optionhead">Associated with</span><br>
-                Choose an option from this dropdown box to limit the search to Custom Event Types associated with
-                individuals, families, sources or repositories.</p>
+            <p><h5 class="optionhead">Associated with</h5><br>
+            Choose an option from this dropdown box to limit the search to Custom Event Types associated with
+            individuals, families, sources or repositories.</p>
 
-            <p><span class="optionhead">Accept/Ignore/All</span><br>
-                Select one of these options to limit the search to Custom Event Types that are being <strong>accepted</strong> or those
+            <p><h5 class="optionhead">Accept/Ignore/All</h5><br>
+            Select one of these options to limit the search to Custom Event Types that are being <strong>accepted</strong> or those
             that are being <strong>ignored</strong>. Choosing <strong>All</strong> will not restrict the search results.</p>
 
-          <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                values and searches again.</p>
 
-          <p><span class="optionhead">Delete/Accept/Ignore/Collapse Selected</span><br>
+            <p><h5 class="optionhead">Delete/Accept/Ignore/Collapse Selected</h5><br>
             Click the checkbox next to one or more event types, then use these buttons to perform the action on all selected event types at once.</p>
 
-          <span class="optionhead">Actions</span>
+            <h5 class="optionhead">Actions</h5>
             <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one record at a time, click
                 the box in the
                 <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -66,7 +67,7 @@ echo help_header("Help: Custom Event Types");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="add"><p class="subheadbold">Adding or Editing Custom Event Types</p></a>
+            <a id="add"><h4 class="subheadbold">Adding or Editing Custom Event Types</h4></a>
 
             <p>The more common or "Standard" event types, such as Birth, Death, Marriage and a few others, are managed directly on the main People,
                 Families, Sources and Repositories pages.
@@ -82,48 +83,54 @@ echo help_header("Help: Custom Event Types");
                 the <a href="#search">Search</a> tab to locate the record, then click on the Edit icon next to that line.
                 When adding or editing a Custom Event Type, take note of the following:</p>
 
-            <span class="optionhead">Associated with</span>
+            <h5 class="optionhead">Associated with</h5>
             <p>Choose an option from this dropdown box to associate this custom event type with individuals, families, sources
                 or repositories. A single custom event type may not be associated with more than one of these options. The
                 choice made here will dictate what options show in the Tag dropdown box.</p>
 
-            <span class="optionhead">Select Tag or enter</span>
+            <h5 class="optionhead">Select Tag or enter</h5>
             <p>This is a 3 or 4 character abbreviation (all uppercase) or mnemonic code.
-                Many common non-standard event types are listed in the Tag select box. If you do not see the desired tag here, enter it in the box directly beneath. If you select a tag from the list
+                Many common non-standard event types are listed in the Tag select box. If you do not see the desired tag here, enter it in the box
+                directly beneath. If you select a tag from the list
                 AND enter one in the box, the tag you entered in the box will be accepted and the tag selected from the list will be ignored.</p>
 
-            <span class="optionhead">Type/Description</span>
-            <p>This should match the "Type" output by your PC/Mac genealogy program for this event type. NOTE: This field will only be displayed if you
+            <h5 class="optionhead">Type/Description</h5>
+            <p>This should match the "Type" output by your PC/Mac genealogy program for this event type. NOTE: This field will only be displayed if
+                you
                 choose "EVEN" for your tag. For all other tags, this field should be left blank.</p>
 
-            <span class="optionhead">Display</span>
-            <p>This will appear in the column to the left of the event data when it is displayed for public viewing. If you have set up multiple languages,
+            <h5 class="optionhead">Display</h5>
+            <p>This will appear in the column to the left of the event data when it is displayed for public viewing. If you have set up multiple
+                languages,
                 you will see a section below this field titled "Other Languages". If you click on the plus sign, a separate
                 Display box will be presented for each language supported. To have the same label display for every language,
                 fill in the Display box above and leave the language-specific display boxes blank.</p>
 
-            <span class="optionhead">Display Order</span>
+            <h5 class="optionhead">Display Order</h5>
             <p>Events with associated dates are always sorted chronologically. Those events without dates are sorted within
                 that list, in the order they appear in the database. The order of this sublist can be affected by assigning
                 a Display Order here. A lower number will cause an event to be sorted higher.</p>
 
-            <span class="optionhead">Event Data</span>
-            <p>To accept imported data corresponding to this custom event type, select <em>Accept</em>. To reject data corresponding to this type and cause it to not
+            <h5 class="optionhead">Event Data</h5>
+            <p>To accept imported data corresponding to this custom event type, select <em>Accept</em>. To reject data corresponding to this type and
+                cause it to not
                 be imported, choose <em>Ignore</em>. Once an event of this type is imported, you may still elect not to
                 display it by setting this option back to Ignore.</p>
 
-            <span class="optionhead">Collapse Event</span>
-            <p>If the information for this event results in more than one row of data on the Individual page, all rows after the first will start off in the collapsed
-                position. Visitors can expand the event and view the hidden information by clicking on the downward-facing triangle next to the event label.</p>
+            <h5 class="optionhead">Collapse Event</h5>
+            <p>If the information for this event results in more than one row of data on the Individual page, all rows after the first will start off
+                in the collapsed
+                position. Visitors can expand the event and view the hidden information by clicking on the downward-facing triangle next to the event
+                label.</p>
 
-            <span class="optionhead">LDS Event</span>
+            <h5 class="optionhead">LDS Event</h5>
             <p>If this event type should be subject to the same privacy rules that govern other LDS events, choose "Yes" here.</p>
 
-            <p><span class="optionhead">Required fields:</span> You must select or enter a GEDCOM tag for your event. If you choose "EVEN" (generic
-                custom event) for
-                your Tag, you must also enter a Type/Description. If you do not choose EVEN as your Tag, you must leave the Type/Description field
-                blank. You must also enter a Display
-                string.</p>
+            <p><h5 class="optionhead">Required fields:</h5> You must select or enter a GEDCOM tag for your event. If you choose "EVEN" (generic
+            custom event) for
+            your Tag, you must also enter a Type/Description. If you do not choose EVEN as your Tag, you must leave the Type/Description field
+            blank. You must also enter a Display
+            string.</p>
 
         </td>
     </tr>
@@ -131,7 +138,7 @@ echo help_header("Help: Custom Event Types");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="accept"><p class="subheadbold">Accept Selected / Ignore Selected</p></a>
+            <a id="accept"><h4 class="subheadbold">Accept Selected / Ignore Selected</h4></a>
             <p>To flag multiple custom event types as <strong>Accept</strong> or <strong>Ignore</strong> at the same time, check the Select box next
                 to each Custom Event Type
                 to be updated, then click either the "Accept Selected" or "Ignore Selected" button at the top of the page.</p>
@@ -142,7 +149,7 @@ echo help_header("Help: Custom Event Types");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="delete"><p class="subheadbold">Deleting Custom Event Types</p></a>
+            <a id="delete"><h4 class="subheadbold">Deleting Custom Event Types</h4></a>
             <p>To delete one Custom Event Type, use the <a href="#search">Search</a> tab to locate the item, then click on the Delete icon next to
                 that record. The row will
                 change color and then vanish as the Custom Event Type is deleted. To delete more than one record at a time, check the box in the

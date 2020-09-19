@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -30,13 +30,13 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 <a href="#options" class="lightlink">Mo�nosti</a> &nbsp; | &nbsp;
                 <a href="#analyze" class="lightlink">Anal�za soubor� TNG</a> &nbsp; | &nbsp;
                 <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp; | &nbsp;
-          <a href="#custtext" class="lightlink">Doporu�en� aktualizace</a>
+                <a href="#custtext" class="lightlink">Doporu�en� aktualizace</a>
 
-      </p></td>
+            </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a id="overview"><p class="subheadbold">P�ehled</p></a>
+            <a id="overview"><h4 class="subheadbold">P�ehled</h4></a>
             <p>Mana�er m�d� TNG verze 12 je zalo�en na Mana�eru m�d�, kter� byl p�vodn� vyvinut Brianem McFadyenem, n�sledn� zaktualizov�n Seanem
                 Schwoerem pro pr�ci s Joomla TNG Component
                 a ve verzi 10.0.3 a 10.1 zaktualizov�n o integrovan�j�� zp�sob instalace, odstran�n� a ��zen� zm�n softwarov�ho bal�ku TNG.</p>
@@ -92,7 +92,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="operation"><p class="subheadbold">Operace</p></a>
+            <a id="operation"><h4 class="subheadbold">Operace</h4></a>
             <p>Mana�er m�d� prozkoum� slo�ku m�d� a p�e�te ka�d� soubor <strong>cfg</strong>, kter� najde. Soubory <strong>cfg</strong> jsou
                 direktivn� soubory, kter� popisuj� m�d, soubory a um�st�n�, kter� m� b�t modifikov�no, a k�d, kter� je p�i
                 modifikaci pou�it.
@@ -119,7 +119,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="status"><p class="subheadbold">Stav</p></a>
+            <a id="status"><h4 class="subheadbold">Stav</h4></a>
             <p>Mana�er m�d� vrac� n�sleduj�c� stavy:
             <ul>
                 <li><strong>Lze instalovat</strong>, pokud m�d je�t� nebyl nainstalov�n a c�lov� um�st�n� je identifikov�no, pak je uvedena mo�nost
@@ -145,7 +145,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="syntax"><p class="subheadbold">Syntaxe m�d�</p></a>
+            <a id="syntax"><h4 class="subheadbold">Syntaxe m�d�</h4></a>
             <p>Syntaxe mana�era m�d� v z�sad� zahrnuje:
             <p><strong>Sekci z�hlav�</strong>, kter� obsahuje</p>
             <ul>
@@ -172,21 +172,21 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="files"><p class="subheadbold">Konfigura�n� soubory</p></a>
+            <a id="files"><h4 class="subheadbold">Konfigura�n� soubory</h4></a>
 
-            <span class="optionhead">Instalov�n� m�d�</span>
+            <h5 class="optionhead">Instalov�n� m�d�</h5>
             <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">instalaci
                     konfigura�n�ch soubor� (v angli�tin�)</a> k instalaci m�d� najdete na TNG Wiki.</p>
 
-            <span class="optionhead">Interpretace stavu</span>
+            <h5 class="optionhead">Interpretace stavu</h5>
             <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">interpretaci
                     stavu (v angli�tin�)</a> najdete na TNG Wiki.</p>
 
-            <span class="optionhead">Syntaxe konfigura�n�ch soubor�</span>
+            <h5 class="optionhead">Syntaxe konfigura�n�ch soubor�</h5>
             <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">syntaxi mana�eru m�d� (v
                     angli�tin�)</a> najdete na TNG Wiki.</p>
 
-            <span class="optionhead">Vytvo�en� konfigura�n�ho souboru</span>
+            <h5 class="optionhead">Vytvo�en� konfigura�n�ho souboru</h5>
             <p>Informace pro v�voj��e o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvo�en�
                     konfigura�n�ch soubor� (v angli�tin�)</a> najdete na TNG Wiki.</p>
         </td>
@@ -195,7 +195,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="batch"><p class="subheadbold">D�vkov� operace</p></a>
+            <a id="batch"><h4 class="subheadbold">D�vkov� operace</h4></a>
 
             <p>Funkce D�vkov� operace, v TNG 10.0.3 p�edstaven� jako D�vkov� instalace, je nyn� sou��st� Seznamu m�d� a umo�n� prov�st specifick� akce
                 t�kaj�c� se v�ce m�d� pomoc� v�b�ru filtru.
@@ -253,7 +253,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="options"><p class="subheadbold">Mo�nosti</p></a>
+            <a id="options"><h4 class="subheadbold">Mo�nosti</h4></a>
 
             <p>Mo�nosti v�m umo�n� specifikovat chov�n� mana�eru m�d�.
 
@@ -322,7 +322,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="analyze"><p class="subheadbold">Anal�za soubor� TNG</p></a>
+            <a id="analyze"><h4 class="subheadbold">Anal�za soubor� TNG</h4></a>
 
             <p>Tento n�stroj na z�lo�ce <strong>Anal�za soubor� TNG</strong>, kter� vytvo�il Rick Bisbee, existoval d��ve jako opravn� m�d. Anal�za
                 soubor� TNG umo��uje v�voj���m zkoumat p�soben� m�d� navz�jem. Situace, kdy dva m�dy m�n� stejn� �sek
@@ -347,7 +347,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="parser"><p class="subheadbold">Tabulka parseru</p></a>
+            <a id="parser"><h4 class="subheadbold">Tabulka parseru</h4></a>
             <p>Tento n�stroj je ur�en hlavn� pro v�voj��e. Tabulka parseru ukazuje, jak Mana�er m�d� zanalyzoval konfigura�n� soubor m�du (.cfg)
                 zapracov�n�m jeho komponent do tabulky, kter� pak proch�z� do dal��ch skript� Mana�eru m�d� pro dal��
                 zpracov�n�. Pokud se vyskytne probl�m s m�dem, prvn� m�sto, kter� je t�eba zkontrolovat, je tabulka parseru, aby se zjistilo, zda jsou
@@ -366,7 +366,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="custtext"><p class="subheadbold">Doporu�en� aktualizace</p></a>
+            <a id="custtext"><h4 class="subheadbold">Doporu�en� aktualizace</h4></a>
             <p>Z�lo�ka Doporu�en� aktualizace je voliteln� z�lo�ka, kter� m��e b�t povolena na obrazovce Mo�nosti, a umo�n� v�m aktualizovat soubory
                 cust_text.php, pokud jste tak neu�inili jako sou��st aktualizace TNG.</p>
             <p>Pou�it� z�lo�ky se p�edpokl�d� v p��pad�, �e m�d nem��e b�t nainstalov�n, proto�e hled� nov� koment��ov� �et�zec v horn� ��sti soubor�

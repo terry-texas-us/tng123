@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -29,7 +29,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
             <p>Nalezen� existuj�c�ch ud�lost� �asov� osy vyhled�n�m cel�ho nebo ��sti <strong>roku ud�losti</strong> nebo <strong>podrobnost�
                     ud�losti</strong>.
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech m�st ve va�� datab�zi.</p>
@@ -37,7 +37,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <span class="optionhead">Akce</span>
+            <h5 class="optionhead">Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
                 v�ce z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
@@ -50,7 +50,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="add"><p class="subheadbold">P�idat novou / Upravit existuj�c� ud�losti �asov� osy</p></a>
+            <a id="add"><h4 class="subheadbold">P�idat novou / Upravit existuj�c� ud�losti �asov� osy</h4></a>
             <p>TNG umo��uje zobrazen� sch�matu �asov� osy pro porovn�n� rozsahu �ivota osob ve va�� datab�zi.
                 Roz���it souvislosti t�chto sch�mat m��ete tak� vytvo�en�m ud�lost� �asov� osy. Pokud roky, kter� pokr�v�
                 sch�ma �asov� osy, obsahuj� �daje spojen� s t�mito ud�lostmi, jsou ve sch�matu zobrazeny jako
@@ -61,15 +61,16 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
                 z�lo�ku <a href="#search">Hledat</a> pro nalezen� ud�losti, a pot� klikn�te na ikonu Upravit vedle tohoto ��dku.</p>
             V�znam jednotliv�ch pol� p�i p�id�n� nebo �prav� ud�losti �asov� osy je n�sleduj�c�:</p>
 
-            <span class="optionhead">Po��te�n� datum / Kone�n� datum</span>
-          <p>Vyberte v�echny zn�m� slo�ky (den, m�s�c, rok) po��te�n�ho a kone�n�ho data ud�losti. Povinn� je pouze rok po��te�n�ho data.
-            Zap�ete-li n�jakou slo�ku kone�n�ho data, pak je tak� zde povinn� rok.</p>
+            <h5 class="optionhead">Po��te�n� datum / Kone�n� datum</h5>
+            <p>Vyberte v�echny zn�m� slo�ky (den, m�s�c, rok) po��te�n�ho a kone�n�ho data ud�losti. Povinn� je pouze rok po��te�n�ho data.
+                Zap�ete-li n�jakou slo�ku kone�n�ho data, pak je tak� zde povinn� rok.</p>
 
-          <span class="optionhead">Titul ud�losti</span><br>
-          <p>Zadejte velmi kr�tk� titul ud�losti. Nap�. <em>Potopen� Titanicu</em> nebo <em>1. sv�tov� v�lka</em>. Toto pole bylo zavedeno v TNG 9.0. Ud�losti
-            �asov� osy p�idan� p�ed touto verz� nemaj� titul. V tomto p��pad� budou jako Titul ud�losti pou�ity Podrobnosti ud�losti.</p>
+            <h5 class="optionhead">Titul ud�losti</h5><br>
+            <p>Zadejte velmi kr�tk� titul ud�losti. Nap�. <em>Potopen� Titanicu</em> nebo <em>1. sv�tov� v�lka</em>. Toto pole bylo zavedeno v TNG
+                9.0. Ud�losti
+                �asov� osy p�idan� p�ed touto verz� nemaj� titul. V tomto p��pad� budou jako Titul ud�losti pou�ity Podrobnosti ud�losti.</p>
 
-            <span class="optionhead">Podrobnosti ud�losti</span><br>
+            <h5 class="optionhead">Podrobnosti ud�losti</h5><br>
             <p>Zapi�te stru�n� popis ud�losti. M�l by obsahovat pouze n�kolik v�t.</p>
 
         </td>
@@ -78,7 +79,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="delete"><p class="subheadbold">Vymazat ud�losti �asov� osy</p></a>
+            <a id="delete"><h4 class="subheadbold">Vymazat ud�losti �asov� osy</h4></a>
             <p>Chcete-li odstranit ud�lost �asov� osy, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� ud�losti, a pot� klikn�te na ikonu
                 Vymazat vedle tohoto z�znamu ud�losti. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� ud�losti zmiz�. Chcete-li najednou odstranit v�ce ud�lost�, za�krtn�te pol��ko ve sloupci Vybrat vedle

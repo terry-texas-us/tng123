@@ -9,7 +9,7 @@ echo help_header("N�pov�da: V�ce");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -27,20 +27,20 @@ echo help_header("N�pov�da: V�ce");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="more"><p class="subheadbold">V�ce informac�</p></a>
+            <a id="more"><h4 class="subheadbold">V�ce informac�</h4></a>
             <p>Tato obrazovka v�m umo�n� zapsat dal�� �daje spojen� se standardn�mi typy ud�lost�. Pokud je n�kter� z t�chto pol� vypln�no,
                 ikona V�ce (znam�nko plus) bude m�t v roku zelenou te�ku. Pole na obrazovce V�ce informac� jsou tato:</p>
 
-            <p><span class="optionhead">V�k</span>: V�k osoby v dob� ud�losti.</p>
+            <p><h5 class="optionhead">V�k</h5>: V�k osoby v dob� ud�losti.</p>
 
-            <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
+            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
 
-            <p><span class="optionhead">P���ina</span>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
+            <p><h5 class="optionhead">P���ina</h5>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
 
-            <p><span class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</span>: Adresa a ostatn�
-                kontaktn� �daje spojen� s ud�lost�.</p>
+            <p><h5 class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</h5>: Adresa a ostatn�
+            kontaktn� �daje spojen� s ud�lost�.</p>
 
-            <span class="optionhead">Povinn� pole:</span>
+            <h5 class="optionhead">Povinn� pole:</h5>
             ��dn� z t�chto �daj� nen� povinn�.</p>
         </td>
     </tr>

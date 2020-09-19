@@ -10,7 +10,7 @@ echo help_header("Nápověda: Události");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -32,7 +32,7 @@ echo help_header("Nápověda: Události");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="what"><p class="subheadbold">Standardní a vlastní události</p></a>
+            <a id="what"><h4 class="subheadbold">Standardní a vlastní události</h4></a>
             <p>Události obvyklé jako je narození, úmrtí, sňatek a některé další se vkládají na hlavní stránce osoby, rodiny, pramenu a úložiště
                 pramenů
                 a jsou uloženy do odpovídajících tabulek v databázi. Dokumentace TNG na tyto události odkazuje jako na "standardní" události. Všechny
@@ -47,7 +47,7 @@ echo help_header("Nápověda: Události");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Přidat událost</p></a>
+            <a id="add"><h4 class="subheadbold">Přidat událost</h4></a>
 
             <p>Chcete-li přidat novou událost, klikněte na tlačítko "Přidat nové" v sekci Další události a vyplňte formulář. Pokud události již
                 existují,
@@ -58,7 +58,7 @@ echo help_header("Nápověda: Události");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="edit"><p class="subheadbold">Upravit událost</p></a>
+            <a id="edit"><h4 class="subheadbold">Upravit událost</h4></a>
 
             <p>Pokud chcete upravit existující událost, klikněte v sekci Další události na ikonu Upravit vedle této události (pro úpravu údajů
                 "standardních" událostí
@@ -66,39 +66,44 @@ echo help_header("Nápověda: Události");
 
             <p>Při přidání nebo úpravě události si všimněte následujícího:</p>
 
-            <span class="optionhead">Typ události</span>
+            <h5 class="optionhead">Typ události</h5>
             <p>Vyberte typ události (u existující události nelze změnit typ události). Není-li typ události, který chcete, ve výběrovém poli typů
                 událostí,
                 jděte nejprve do Admin/Vlastní typy událostí a nastavte zde typ události, pak se vraťte na tuto obrazovku a vyberte jej.</p>
 
-            <span class="optionhead">Datum události</span>
+            <h5 class="optionhead">Datum události</h5>
             <p>Aktuální nebo předpokládané datum spojené s událostí.</p>
 
-            <span class="optionhead">Místo události</span>
+            <h5 class="optionhead">Místo události</h5>
             <p>Místo, kde událost proběhla. Zapište název místa nebo klikněte na ikonu Najít (lupa).</p>
 
-            <span class="optionhead">Podrobnosti</span>
-            <p>Další podrobnosti popisující událost. Pokud s událostí není spojeno žádné datum ani místo, může pole Podrobnosti obsahovat údaje, které tuto událost definují.</p>
+            <h5 class="optionhead">Podrobnosti</h5>
+            <p>Další podrobnosti popisující událost. Pokud s událostí není spojeno žádné datum ani místo, může pole Podrobnosti obsahovat údaje, které
+                tuto událost definují.</p>
 
-            <span class="optionhead">Duplikovat pro (ID):</span>
-            <p>Chcete-li tuto událost duplikovat pro více osob nebo rodin, zapište sem čísla ID těchto osob nebo rodin. Vkládáte-li více čísel ID, oddělte je čárkou.
-                Pokud číslo ID neznáte, klikněte na ikonu "Najít" vpravo od tohoto pole a můžete je vyhledat podle jména. Po kliknutí na tlačítko "Uložit" bude tato událost nakopírována
-                těmto osobám (rodinám). Pokud znovu otevřete okno s úpravou událolsti, toto pole bude prázdné. Všechny změny, které od tohoto okamžiku v této události
+            <h5 class="optionhead">Duplikovat pro (ID):</h5>
+            <p>Chcete-li tuto událost duplikovat pro více osob nebo rodin, zapište sem čísla ID těchto osob nebo rodin. Vkládáte-li více čísel ID,
+                oddělte je čárkou.
+                Pokud číslo ID neznáte, klikněte na ikonu "Najít" vpravo od tohoto pole a můžete je vyhledat podle jména. Po kliknutí na tlačítko
+                "Uložit" bude tato událost nakopírována
+                těmto osobám (rodinám). Pokud znovu otevřete okno s úpravou událolsti, toto pole bude prázdné. Všechny změny, které od tohoto okamžiku
+                v této události
                 provedete, <b>nebudou</b> promítnuty do dříve vytvořených duplikátů.</p>
 
-            <span class="optionhead">Více</span><br>
+            <h5 class="optionhead">Více</h5><br>
             <p>Kliknutím na "Více" můžete pro každou událost zapsat některé méně běžné údaje. Objeví se další pole.
                 Tato pole lze skrýt opětovným kliknutím na "Více". Skrytí polí neznamená vymazání jejich obsahu. Tato pole obsahují:</p>
 
-            <p><span class="optionhead">Věk</span>: Věk osoby v době události.</p>
+            <p><h5 class="optionhead">Věk</h5>: Věk osoby v době události.</p>
 
-            <p><span class="optionhead">Instituce</span>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
+            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
 
-            <p><span class="optionhead">Příčina</span>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
+            <p><h5 class="optionhead">Příčina</h5>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
 
-            <p><span class="optionhead">Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</span>: Adresa a ostatní kontaktní údaje spojené s událostí.</p>
+            <p><h5 class="optionhead">Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</h5>: Adresa a ostatní
+            kontaktní údaje spojené s událostí.</p>
 
-            <span class="optionhead">Povinná pole:</span>
+            <h5 class="optionhead">Povinná pole:</h5>
             <p>Vybrat musíte typ události a nejméně do jednoho z následujících polí musíte něco vložit: <strong>Datum události</strong>, <strong>Místo
                     události</strong>,
                 nebo <strong>Podrobnosti</strong>. Všechna ostatní pole jsou nepovinná.</p>
@@ -108,7 +113,7 @@ echo help_header("Nápověda: Události");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="del"><p class="subheadbold">Vymazat událost</p></a>
+            <a id="del"><h4 class="subheadbold">Vymazat událost</h4></a>
 
             <p>Chcete-li vymazat existující událost, klikněte v sekci Další události na ikonu Vymazat vedle této události. Událost bude vymazána bez
                 ohledu na to, zda ostatní údaje na stránce jsou
@@ -119,7 +124,7 @@ echo help_header("Nápověda: Události");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="citations"><p class="subheadbold">Poznámky a citace</p>
+            <a id="citations"><h4 class="subheadbold">Poznámky a citace</h4>
                 <p>Chcete-li přidat nebo upravit poznámky nebo citace u události, událost nejdříve uložte, a poté klikněte na příslušnou ikonu vedle
                     záznamu této události v aktuálním seznamu
                     událostí.

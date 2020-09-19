@@ -9,7 +9,7 @@ echo help_header("Nápověda: Manažer módů");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -174,7 +174,7 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="batch"><p class="subheadbold">Dávková instalace</p></a>
+            <a id="batch"><h4 class="subheadbold">Dávková instalace</h4></a>
 
             <p>Dávková instalace umožní provést specifické akce týkající se několika módů pomocí výběru filtru. Z filtru seznamu stavů vyberte
                 požadovaný stav a kliknutím na Provést zobrazíte
@@ -210,7 +210,7 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="options"><p class="subheadbold">Možnosti</p></a>
+            <a id="options"><h4 class="subheadbold">Možnosti</h4></a>
 
             <p>Možnosti vám umožní specifikovat chování manažeru módů v případě
             <p><strong>Seznamu dotčených souborů</strong>

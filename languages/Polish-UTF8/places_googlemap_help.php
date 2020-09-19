@@ -5,7 +5,7 @@ echo help_header("Pomoc: Mapy Google");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -25,24 +25,24 @@ echo help_header("Pomoc: Mapy Google");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-          <p><span class="subheadbold">Pokaż/ukryj mapę Google</span><br><br>
-              Kliknij przycisk "Pokaż /ukryj mapę Google", aby pokazać mapę Google i szukać szerokości i długości geograficznej lokalizacji oraz
-              zoomu, lub ukryć mapę po
-              zakończeniu. Domyślnie jest ustawienie początkowe określone w Administrator /Ustawienia i konfiguracja / Ustawienia mapy.</p>
+            <p><span class="subheadbold">Pokaż/ukryj mapę Google</span><br><br>
+                Kliknij przycisk "Pokaż /ukryj mapę Google", aby pokazać mapę Google i szukać szerokości i długości geograficznej lokalizacji oraz
+                zoomu, lub ukryć mapę po
+                zakończeniu. Domyślnie jest ustawienie początkowe określone w Administrator /Ustawienia i konfiguracja / Ustawienia mapy.</p>
 
-      </td>
-  </tr>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="show"><p class="subheadbold">Szukanie</p></a>
+            <a id="show"><h4 class="subheadbold">Szukanie</h4></a>
             <p>Interfejs Google Map Geocoder pozwala na zlokalizowanie szerokości i długości geograficznej miejsca za pomocą wywołania poprzez
                 kliknięcie w wybrany punkt.
                 Możesz również skorzystać z StreetMap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) aby
                 odnaleźć współrzędne w Anglii, lub z Mapy Szukacza (<a href="http://mapa.szukacz.pl" target="_blank">http://mapa.szukacz.pl</a>)
                 w Polsce.</p>
 
-            <span class="optionhead">Określenie miejsca Geocode</span>
+            <h5 class="optionhead">Określenie miejsca Geocode</h5>
             <p>Karta dotycząca współrzędnych geograficznych miejsca TNG zawiera nazwę miejsca, jeśli jest ono już zdefiniowane w TNG. Podczas
                 dodawania nowej lokalizacji, współrzędne geograficzne będą dodawane do
                 każdego miejsca noszącego tę samą nazwę. Podczas dodawania lub cmentarzy mediów będą dotyczyły jednak wyłącznie jednej
@@ -51,7 +51,7 @@ echo help_header("Pomoc: Mapy Google");
                 <em>powiatu (County)</em> jako części nazwy miejsca dla lokalizacji w USA i Szkocji ani nie radzi sobie z
                 prowincjami Nowej Zelandii.
                 Być może warto spróbować podać dodatkowo nazwę kraju. Można także wpisać nazwę kraju w języku Angielskim.</p>
-            <span class="optionhead">Przykłady nazw miejsc</span>
+            <h5 class="optionhead">Przykłady nazw miejsc</h5>
             <p>Oto przykłady, jak powinny być wpisanie nazwy miejsca w celu uzyskania prawidłowych współrzędnych:</p>
             <ul>
                 <li>Śląska 12, 66400 Gorzów Wielkopolski, Polska</li>
@@ -66,22 +66,29 @@ echo help_header("Pomoc: Mapy Google");
                 <li>Lise-Meitner-Strasse 2, 60486 Frankfurt, Germany</li>
             </ul>
 
-            <p>Mapy niektórych krajów są niedostępne dla geocodera powodu nacjonalistycznych praw autorskich i licencji. Dla tych krajów, będziesz musiał użyć linku <a href="http://maps.google.com/" target="_blank">Full Google Map Search</a>.</p>
+            <p>Mapy niektórych krajów są niedostępne dla geocodera powodu nacjonalistycznych praw autorskich i licencji. Dla tych krajów, będziesz
+                musiał użyć linku <a href="http://maps.google.com/" target="_blank">Full Google Map Search</a>.</p>
 
-            <span class="optionhead">Szerokość i długość geograficzna</span>
-            <p>Musisz być bardzo ostrożny z przyjęciem szerokości i długości geograficznej, które są oferowane z mapki. Należy przynajmniej trochę znać lokalizację miejsca i to,
-                czego oczekuje przed zaakceptowaniem tego, co jest proponowane na mapce. Jeżeli "szpilka" na mapie nie znajduje się w oczekiwanej lokalizacji, proponowana
-                szerokość i długość mogą być niepoprawne. W takim przypadku, należy kliknąć na żądany punkt na mapie w celu ustalenia lepszej lokalizacji.</p>
+            <h5 class="optionhead">Szerokość i długość geograficzna</h5>
+            <p>Musisz być bardzo ostrożny z przyjęciem szerokości i długości geograficznej, które są oferowane z mapki. Należy przynajmniej trochę
+                znać lokalizację miejsca i to,
+                czego oczekuje przed zaakceptowaniem tego, co jest proponowane na mapce. Jeżeli "szpilka" na mapie nie znajduje się w oczekiwanej
+                lokalizacji, proponowana
+                szerokość i długość mogą być niepoprawne. W takim przypadku, należy kliknąć na żądany punkt na mapie w celu ustalenia lepszej
+                lokalizacji.</p>
 
-            <p>Należy również sprawdzić przyjęte współrzędne za pomocą ikonki Test na liście miejsc, a następnie kliknąć na "szpilkę" przy wydarzeniu w celu otwarcia mapy
+            <p>Należy również sprawdzić przyjęte współrzędne za pomocą ikonki Test na liście miejsc, a następnie kliknąć na "szpilkę" przy wydarzeniu
+                w celu otwarcia mapy
                 zewnętrznej, aby zweryfikować to położenie.</p>
 
-            <span class="optionhead">Zoom</span>
-            <p>Jeśli lokalizacja na mapie nie jest odpowiednio powiększona, możesz użyć opcji kontroli zoomu opisanych poniżej w celu go dostosowania do potrzeb. Może to być
-                szczególnie potrzebne w celu wyeliminowania komunikatu błędu informującego, że Google nie jest w stanie powiększyć mapy żądanego poziomu.
+            <h5 class="optionhead">Zoom</h5>
+            <p>Jeśli lokalizacja na mapie nie jest odpowiednio powiększona, możesz użyć opcji kontroli zoomu opisanych poniżej w celu go dostosowania
+                do potrzeb. Może to być
+                szczególnie potrzebne w celu wyeliminowania komunikatu błędu informującego, że Google nie jest w stanie powiększyć mapy żądanego
+                poziomu.
                 Ustawione wartości powiększenia będą zapisywane w bazie danych TNG.</p>
 
-            <span class="optionhead">Poziom miejsca</span>
+            <h5 class="optionhead">Poziom miejsca</h5>
             <p>Możesz skorzystać z rozwijanej listy poziomów miejsc , aby wybrać odpowiedni poziom nazwy miejsca. Do dyspozycji jest sześć poziomów
                 począwszy od adresu do kraju. Adres jest najbardziej specyficzny.
                 Można określić w Twoim pliku cust_text.php zastępcze preferencje do $admtext dla poziomów od 1 do 6 zawartych w pliku alltext.php.
@@ -96,20 +103,20 @@ echo help_header("Pomoc: Mapy Google");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="controls"><p class="subheadbold">Sterowanie mapą Google</p></a>
+            <a id="controls"><h4 class="subheadbold">Sterowanie mapą Google</h4></a>
 
-            <span class="optionhead">Punkt / Kliknięcie</span>
+            <h5 class="optionhead">Punkt / Kliknięcie</h5>
             <p>Aby precyzyjnie ustawić szerokość i długość geograficzną, kliknij na mapę Google w wybranym przez Ciebie miejscu. Być może trzeba
                 będzie skorzystać z przycisków Mapa, Satelita lub Hybrydowa
                 aby łatwiej było ustalić współrzędne miejsca.</p>
 
-            <span class="optionhead">Przesuwanie mapy</span>
+            <h5 class="optionhead">Przesuwanie mapy</h5>
             <p>Aby zobaczy obszar mapy znajdujący się poza obszarem ekranu możesz ją przesuwać używając myszy lub strzałek kierunkowych w lewo, prawo,
                 w górę i w dół.
                 The drag and pan capability means there is no clicking and waiting for graphics to reload each time you want to view the adjacent
                 parts of a map.</p>
 
-            <span class="optionhead">Zoom</span>
+            <h5 class="optionhead">Zoom</h5>
             <p>Można użyć plus znaków (+) i minus (-) lub suwaka, aby powiększyć lub zmniejszyć mapę. Być może trzeba będzie użyć strzałek do zmiany
                 pozycji mapy przy powiększaniu.
                 Jeśli dokonasz zmiany poziomu powiększenia, wartości zoom zostaną zapisane w tabeli TNG.</p>
@@ -119,7 +126,7 @@ echo help_header("Pomoc: Mapy Google");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="help"><p class="subheadbold">Pomoc Google Map</p></a>
+            <a id="help"><h4 class="subheadbold">Pomoc Google Map</h4></a>
 
             <p>Tutaj możesz uzyskać dodatkową pomoc: <a href="http://www.google.com/apis/maps/documentation/" target="_blank">Google Maps API</a>.</p>
             <p>Możesz również skorzystać z tej: <a href="http://www.google.com/intl/en_us/help/maps/tour/" target="_blank">Google Maps tour</a>.</p>

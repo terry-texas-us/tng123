@@ -9,7 +9,7 @@ echo help_header("N�pov�da: R�zn�");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,7 +31,7 @@ echo help_header("N�pov�da: R�zn�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="whatsnew"><p class="subheadbold">Co je nov�ho</p></a>
+            <a id="whatsnew"><h4 class="subheadbold">Co je nov�ho</h4></a>
             <p>Text zapsan� do tohoto pole bude zobrazen v horn� ��sti str�nky <strong>Co je nov�ho</strong> ve ve�ejn� oblasti.
                 Tuto funkci pou�ijete, kdy� chcete n�v�t�vn�ky informovat o v�t��ch aktualizac�ch str�nek nebo jin�ch aktu�ln�ch informac�ch.
                 Kliknut�m na odkaz <strong>Test</strong> zobraz�te
@@ -43,7 +43,7 @@ echo help_header("N�pov�da: R�zn�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="mostwanted"><p class="subheadbold">Hled� se</p></a>
+            <a id="mostwanted"><h4 class="subheadbold">Hled� se</h4></a>
             <p>Z�lo�ka Hled� se v�m umo�n� p�idat nezn�m� osoby a tajemn� fotografie na str�nku <strong>Hled� se</strong>, v nad�ji, �e tyto informace
                 budou roz���eny a dostane
                 se jim v�ce publicity. V�ce informac� o sestaven� str�nky Hled� se najdete v odkazu <a href="mostwanted_help.php">N�pov�da: Hled�
@@ -56,7 +56,7 @@ echo help_header("N�pov�da: R�zn�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="validation"><p class="subheadbold">Ov��en� dat</p></a>
+            <a id="validation"><h4 class="subheadbold">Ov��en� dat</h4></a>
             <p>Na tomto m�st� m��ete spustit �adu p�ednastaven�ch report�, kter� v�m pomohou naj�t mo�n� probl�my ve va�ich datech. Spu�t�n�m ka�d�ho
                 reportu dojde prozkoum�n� va�� datab�zi v re�ln�m �ase
                 a v�sledkem bude v�pis osob, kter� by mohly vy�adovat n�jakou pozornost. Pot� budete m�t mo�nost proklikat se k t�mto z�znam�m a bl�e

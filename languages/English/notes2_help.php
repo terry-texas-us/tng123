@@ -5,7 +5,7 @@ echo help_header("Help: Notes");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -30,7 +30,7 @@ echo help_header("Help: Notes");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="notes"><p class="subheadbold">Notes</p></a>
+            <a id="notes"><h4 class="subheadbold">Notes</h4></a>
             <p>From the <strong>Notes</strong> page, you can search for notes directly based on their content. You don't have to know who or
                 what the notes linked to. Once you've found the note you searched for, you can click on the Edit icon next to that
                 row to edit the note's content. You can also delete the note outright by clicking on the Delete icon next to that row.

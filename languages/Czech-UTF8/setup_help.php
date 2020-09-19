@@ -9,7 +9,7 @@ echo help_header("Nápověda: Nastavení");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -29,7 +29,7 @@ echo help_header("Nápověda: Nastavení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="config"><p class="subheadbold">Konfigurace</p></a>
+            <a id="config"><h4 class="subheadbold">Konfigurace</h4></a>
             <p>Tato stránka je přístupovým místem pro nastavení různých oblastí TNG. Úprava nastavení v každé oblasti se odrazí na vzhledu vašich
                 webových stránek, na
                 databázi MySQL a dalších možnostech. Změna dalších nastavení ovlivní zobrazení různých stránek.</p>
@@ -40,13 +40,13 @@ echo help_header("Nápověda: Nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="diag"><p class="subheadbold">Diagnostika</p></a>
+            <a id="diag"><h4 class="subheadbold">Diagnostika</h4></a>
 
-            <span class="optionhead">Spustit diagnostiku</span>
+            <h5 class="optionhead">Spustit diagnostiku</h5>
             <p>Tato stránka zobrazí informace o nastavení vašeho webového serveru, včetně varování týkajícího se nastavení, která mohou ovlivnit běh
                 TNG.</p>
 
-            <span class="optionhead">Informace o PHP</span>
+            <h5 class="optionhead">Informace o PHP</h5>
             <p>Tato stránka zobrazí informace o instalaci PHP. Zobrazení těchto informací je funkcí PHP, nikoli TNG. Stránka je rozdělena do bloků,
                 které popisují jednotlivé oblasti konfigurace. Pokud se nejste schopni připojit k databázi MySQL, podívejte se na tuto stránku a
                 vyhledejte odstavec "mysql".
@@ -58,15 +58,15 @@ echo help_header("Nápověda: Nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="diag"><p class="subheadbold">Vytvoření tabulek</p></a>
+            <a id="diag"><h4 class="subheadbold">Vytvoření tabulek</h4></a>
 
-            <span class="optionhead">Vytvořit tabulky</span>
+            <h5 class="optionhead">Vytvořit tabulky</h5>
             <p>Na toto tlačítko klikněte <strong>POUZE</strong>, když vaši stránku nastavujete poprvé, protože zde budou vytvořeny databázové tabulky
                 potřebné
                 k uložení vašich údajů. <strong>Pozn.: Pokud tabulky již existují, všechna data budou ztracena!</strong> Tuto operaci můžete provést,
                 pokud byla vaše data poškozena a mají být po novém vytvoření tabulek obnovena ze zálohy.</p>
 
-            <span class="optionhead">Porovnávání</span>
+            <h5 class="optionhead">Porovnávání</h5>
             <p>Pokud používáte znakovou sadu UTF-8, můžete do tohoto pole před vytvořením tabulek zadat utf8_unicode_ci, utf8_general_ci nebo
                 utf8_czech_ci.
                 V ostatních případech, ponecháte-li toto pole prázdné, přijmete výchozí porovnávání.</p>

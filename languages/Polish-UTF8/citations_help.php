@@ -5,7 +5,7 @@ echo help_header("Pomoc: Cytaty");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -24,7 +24,7 @@ echo help_header("Pomoc: Cytaty");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="what"><p class="subheadbold">Co to są cytaty?</p></a>
+            <a id="what"><h4 class="subheadbold">Co to są cytaty?</h4></a>
 
             <p><strong>Cytat</strong> jest odniesieniem do zapisu źródła, dokonanym z zamiarem udowodnienia prawdziwości niektórych informacji. Źródło
                 zawiera
@@ -38,7 +38,7 @@ echo help_header("Pomoc: Cytaty");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Dodawanie/Edycja/Usuwanie cytatów</p></a>
+            <a id="add"><h4 class="subheadbold">Dodawanie/Edycja/Usuwanie cytatów</h4></a>
 
             <p>Aby dodać, edytować lub usuwać cytaty, należy kliknąć na ikonkę na górze ekranu lub obok wybranego pola (jeśli istnieją już jakieś
                 cytaty,
@@ -51,29 +51,30 @@ echo help_header("Pomoc: Cytaty");
 
             <p>Podczas dodawania lub edycji cytatów dostępne są następujące pola:</p>
 
-            <span class="optionhead">Źródło</span>
+            <h5 class="optionhead">Źródło</h5>
             <p>Wybierz istniejące źródło do cytowania. Jeśli źródło, które chcemy cytować nie pojawia się na liście źródeł, to znaczy że
                 albo nie zostało jeszcze utworzone albo istnieje w innym drzewie. Najpierw przejdź do Administracja / Źródła i utwórz źródło
                 dla właściwego drzewa, a następnie wrócić do listy cytatów i wybierz źródło.</p>
 
-            <!--<span class="optionhead">Opis</span>
+            <!--<h5 class="optionhead">Opis</h5>
         <p>Jeśli Twój program genealogiczny nie przydziela numerów ID swoim źródłom, cytaty będą miały swój opis. Nie zobaczysz pola do opisu nowych cytatów.</p>-->
 
-            <span class="optionhead">Strona</span>
+            <h5 class="optionhead">Strona</h5>
             <p>Podaj stronę z wybranego źródła odnoszącą się do tego wydarzenia (opcjonalne).</p>
 
-            <span class="optionhead">Wiarygodność</span>
+            <h5 class="optionhead">Wiarygodność</h5>
             <p>Wybierz cyfrę (0-3) wskazującą, jak wiarygodne jest źródło (opcjonalnie). Wyższe cyfry oznaczają większą wiarygodność.</p>
 
-            <span class="optionhead">Data cytatu</span>
+            <h5 class="optionhead">Data cytatu</h5>
             <p>Data związana z tym cytatem (opcjonalne).</p>
 
-            <span class="optionhead">Faktyczny tekst</span>
+            <h5 class="optionhead">Faktyczny tekst</h5>
             <p>Krótki fragment z materiału źródłowego (opcjonalne).</p>
 
-            <span class="optionhead">Notatki</span>
+            <h5 class="optionhead">Notatki</h5>
             <p>Wszelkie uwagi pomocnicze dotyczące tego źródła (opcjonalne).</p><br>
-            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                    ewentualne błędy lub niejasności.</p></li>
 
         </td>
     </tr>

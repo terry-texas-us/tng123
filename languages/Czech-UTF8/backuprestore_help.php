@@ -9,7 +9,7 @@ echo help_header("Nápověda: Obslužné programy");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -29,7 +29,7 @@ echo help_header("Nápověda: Obslužné programy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="tables"><p class="subheadbold">Zálohování, obnovování &amp; optimalizace dat v tabulkách</p></a>
+            <a id="tables"><h4 class="subheadbold">Zálohování, obnovování &amp; optimalizace dat v tabulkách</h4></a>
             <p>Tyto funkce používejte pro zabezpečení vašich dat a pro udržení rychlejšího běhu vašich stránek.</p>
 
             <p><em><strong>POZNÁMKA:</strong> Je-li vaše databáze velmi velká, můžete pro zálohu a obnovu databáze použít nějaký nezávislý nástroj
@@ -40,39 +40,53 @@ echo help_header("Nápověda: Obslužné programy");
                     určitým
                     měřítkem může být počet 50 000 osob ve vašem stromě.</em></p>
 
-            <span class="optionhead">Záloha</span>
+            <h5 class="optionhead">Záloha</h5>
             <p>Chcete-li zálohovat jednotlivou tabulku, klikněte na ikonu Zálohovat ve sloupci Akcí vedle tabulky, kterou chcete zálohovat. Na pravé
                 straně řádku se vám
-                zobrazí hlášení o dokončení této akce. Aktualizován bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru. Pokud operace neproběhla úspěšně,
-                nemáte zřejmě vytvořenou složku "Backups" (není nutné toto pojmenování; podívejte se do svého Základního nastavení) nebo nemá potřebná přístupová práva.
-                Vytvořte tuto složku ve své hlavní TNG složce a přidělte jí práva pro čtení/zápis/spuštění pro ostatní/skupinu/majitele (755 nebo 775, některé systémy vyžadují 777),
-                poté jděte do Základního nastavení a ujistěte se, že se název složky zde přesně shoduje s aktuálním názvem (velikost písmen). Po vytvoření
+                zobrazí hlášení o dokončení této akce. Aktualizován bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru.
+                Pokud operace neproběhla úspěšně,
+                nemáte zřejmě vytvořenou složku "Backups" (není nutné toto pojmenování; podívejte se do svého Základního nastavení) nebo nemá potřebná
+                přístupová práva.
+                Vytvořte tuto složku ve své hlavní TNG složce a přidělte jí práva pro čtení/zápis/spuštění pro ostatní/skupinu/majitele (755 nebo 775,
+                některé systémy vyžadují 777),
+                poté jděte do Základního nastavení a ujistěte se, že se název složky zde přesně shoduje s aktuálním názvem (velikost písmen). Po
+                vytvoření
                 úvodního souboru záloh byste měli pro zvýšení úrovně bezpečnosti nastavit přístupová práva zpět na 771.
                 <strong>POZN.</strong>: Pokud vaše veškeré údaje osob a rodin pocházejí z importu souboru GEDCOM,
                 není nutné zálohovat tabulky osob, dětí a rodin, protože by tyto zálohy mohly být dost velké a mohly by zabírat cenné místo.
                 Pokud by došlo ke ztrátě dat, můžete pak tyto tabulky jednoduše obnovit novým importem vašeho souboru GEDCOM.</p>
 
-            <span class="optionhead">Obnova</span>
-            <p>Chcete-li obnovit jednotlivou tabulku, klikněte na ikonu Obnovit ve sloupci Akcí vedle tabulky, kterou chcete obnovit. Na pravé straně řádku se vám
-                zobrazí hlášení o dokončení této akce. Není-li ikona Obnovit vedle názvu příslušné tabulky vidět, není pro tuto tabulku k dispozici žádný soubor zálohy.
+            <h5 class="optionhead">Obnova</h5>
+            <p>Chcete-li obnovit jednotlivou tabulku, klikněte na ikonu Obnovit ve sloupci Akcí vedle tabulky, kterou chcete obnovit. Na pravé straně
+                řádku se vám
+                zobrazí hlášení o dokončení této akce. Není-li ikona Obnovit vedle názvu příslušné tabulky vidět, není pro tuto tabulku k dispozici
+                žádný soubor zálohy.
                 <strong>POZN.</strong>: Pokud pokus o obnovu končí chybou, je možné, že se pokoušíte obnovit tabulku, jejíž aktuální struktura sloupců
                 neodpovídá struktuře, která byla v době, kdy byla vytvořena poslední záloha. Zřejmě jste zálohu vytvořili před aktualizací, která
                 změnila strukturu tabulky.</p>
 
-            <span class="optionhead">Optimalizace</span>
-            <p>Chcete-li optimalizovat jednotlivou tabulku, klikněte na ikonu Optimalizovat ve sloupci Akcí vedle tabulky, kterou chcete optimalizovat. Na pravé straně řádku se vám
-                zobrazí hlášení o dokončení této akce. Tabulka by měla být optimalizována, pokud jste vymazali velkou část tabulky, od doby vaší poslední optimalizace provedli několik importů
-                nebo jste provedli mnoho změn v polích s proměnlivou délkou. Optimalizací bude získáno zpět nevyužité místo a datový soubor bude defragmentován,
-                výsledkem bývá obvykle zlepšený výkon. S optimalizací velkých tabulek jsou spojena některá nebezpečí, takže své tabulky před optimalizací raději zazálohujte.</p>
+            <h5 class="optionhead">Optimalizace</h5>
+            <p>Chcete-li optimalizovat jednotlivou tabulku, klikněte na ikonu Optimalizovat ve sloupci Akcí vedle tabulky, kterou chcete
+                optimalizovat. Na pravé straně řádku se vám
+                zobrazí hlášení o dokončení této akce. Tabulka by měla být optimalizována, pokud jste vymazali velkou část tabulky, od doby vaší
+                poslední optimalizace provedli několik importů
+                nebo jste provedli mnoho změn v polích s proměnlivou délkou. Optimalizací bude získáno zpět nevyužité místo a datový soubor bude
+                defragmentován,
+                výsledkem bývá obvykle zlepšený výkon. S optimalizací velkých tabulek jsou spojena některá nebezpečí, takže své tabulky před
+                optimalizací raději zazálohujte.</p>
 
-            <span class="optionhead">Zálohovat vybrané / Obnovit vybrané / Optimalizovat vybrané / Vymazat vybrané</span>
-            <p>Chcete-li zálohovat, obnovit nebo optimalizovat více tabulek najednou, nebo vymazat záložní soubory, zaškrtněte políčko ve sloupci Vybrat vedle požadovaných tabulek, a poté vyberte
-                z rozbalovacího seznamu "S vybranými" v horní části stránky vyberte příslušnou akci. Pokud chcete pro některou operaci vybrat všechny tabulky, klikněte na tlačítko "Vybrat vše".
+            <h5 class="optionhead">Zálohovat vybrané / Obnovit vybrané / Optimalizovat vybrané / Vymazat vybrané</h5>
+            <p>Chcete-li zálohovat, obnovit nebo optimalizovat více tabulek najednou, nebo vymazat záložní soubory, zaškrtněte políčko ve sloupci
+                Vybrat vedle požadovaných tabulek, a poté vyberte
+                z rozbalovacího seznamu "S vybranými" v horní části stránky vyberte příslušnou akci. Pokud chcete pro některou operaci vybrat všechny
+                tabulky, klikněte na tlačítko "Vybrat vše".
                 Podobně můžete všechny výběry zrušit kliknutím na tlačítko "Vyčistit vše".</p>
 
-            <span class="optionhead">Další doporučení</span>
-            <p>Po vytvoření zálohy bude záložní soubor uložen ve složce Backups (podle definice ve vašem Základním nastavení). Doporučujeme, abyste si tyto soubory zkopírovali
-                do svého počítače, protože katastrofická událost, která může postihnout vaše databázové tabulky, může také postihnout záložní soubory uložené na stejném počítači. Pokud jsou vaše záložní
+            <h5 class="optionhead">Další doporučení</h5>
+            <p>Po vytvoření zálohy bude záložní soubor uložen ve složce Backups (podle definice ve vašem Základním nastavení). Doporučujeme, abyste si
+                tyto soubory zkopírovali
+                do svého počítače, protože katastrofická událost, která může postihnout vaše databázové tabulky, může také postihnout záložní soubory
+                uložené na stejném počítači. Pokud jsou vaše záložní
                 soubory příliš velké, můžete je poté z vašich webových stránek odstranit a nakopírovat je zpět až, když je nutná obnova.</p>
             <p>Také vám doporučujeme, abyste svou složku pro ukládání záložních souborů nazvali jinak než 'backups', protože by někteří uživatelé TNG
                 s nečestnými úmysly mohli snadno zcizit vaše data.
@@ -85,7 +99,7 @@ echo help_header("Nápověda: Obslužné programy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="structure"><p class="subheadbold">Zálohování struktury tabulek</p></a>
+            <a id="structure"><h4 class="subheadbold">Zálohování struktury tabulek</h4></a>
             <p>Chcete-li zálohovat strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Zálohovat. Pokud byla operace úspěšná, stránka bude
                 znovu zobrazena s červenou zprávou nahoře.
                 Vyplněn bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru. Záloha struktury vašich tabulek vám umožní
@@ -101,7 +115,7 @@ echo help_header("Nápověda: Obslužné programy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="ids"><p class="subheadbold">Přečíslování ID čísel</p></a>
+            <a id="ids"><h4 class="subheadbold">Přečíslování ID čísel</h4></a>
             <p>Pomocí této funkce můžete ke všem vašim osobám, rodinám, pramenům a/nebo úložištím pramenů přiřadit nová, po sobě jdoucí ID čísla. V
                 případě této operace musíte být režimu údržby.
                 Chcete-li spustit režim údržby, jděte do Admin/Nastavení/Základní nastavení a v sekci "Databáze" vyberte volbu Režim údržby.</p>
@@ -114,16 +128,17 @@ echo help_header("Nápověda: Obslužné programy");
 
             <p>Volby na této stránce jsou následující:</p>
 
-            <span class="optionhead">Strom</span>
+            <h5 class="optionhead">Strom</h5>
             <p>Strom musíte vybrat. Tuto operaci můžete provést pouze v jednom stromě.</p>
 
-            <span class="optionhead">Typ ID čísla</span>
+            <h5 class="optionhead">Typ ID čísla</h5>
             <p>Volby jsou osoby, rodiny, prameny nebo úložiště pramenů. Přečíslování jednoho typu, aniž byste provedli totéž s jinými typy, by nemělo
                 mít žádné nežádoucí účinky, které jsou obsahem výše uvedeného varování.</p>
 
-            <span class="optionhead">Minimální počet číslic</span>
+            <h5 class="optionhead">Minimální počet číslic</h5>
             <p>Toto číslo určuje, jak budou vaše nová ID čísla dlouhá. Je-li číslo dané osoby menší než minimální počet číslic, zbývající čísla
-                budou doplněna nulami zleva. Např. pokud je váš minimální počet číslic roven 5, vaše nejmenší čísla budou I00001, I00002, I00003, atd. Nechcete-li nuly zleva,
+                budou doplněna nulami zleva. Např. pokud je váš minimální počet číslic roven 5, vaše nejmenší čísla budou I00001, I00002, I00003, atd.
+                Nechcete-li nuly zleva,
                 nastavte toto číslo na 1 (do počtu není zahrnuta předpona ID čísla).</p>
 
         </td>

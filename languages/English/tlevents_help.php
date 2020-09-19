@@ -5,7 +5,7 @@ echo help_header("Help: Timeline Events");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -32,14 +32,14 @@ echo help_header("Help: Timeline Events");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><h4 class="subheadbold">Search</h4></a>
             <p>Locate existing timeline events by searching for all or part of the <strong>Event Year</strong> or <strong>Event Detail</strong>.
                 Searching with no value in the search box will find all timeline events in your database.</p>
 
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <span class="optionhead">Actions</span>
+            <h5 class="optionhead">Actions</h5>
             <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one timeline event at a
                 time, click the box in the
                 <strong>Select</strong> column for each event to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -52,7 +52,7 @@ echo help_header("Help: Timeline Events");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="add"><p class="subheadbold">Add New / Edit Existing Timeline Events</p></a>
+            <a id="add"><h4 class="subheadbold">Add New / Edit Existing Timeline Events</h4></a>
             <p>TNG allows you to display timeline charts to compare the lifespans of people in your database.
                 You can also create Timeline Events to provide additional context for these charts. When the years
                 covered by a timeline chart include the dates associated with these events, they are displayed as
@@ -63,15 +63,16 @@ echo help_header("Help: Timeline Events");
                 the <a href="#search">Search</a> tab to locate the event, then click on the Edit icon next to that line.
                 When adding or editing a timeline event, take note of the following:</p>
 
-            <span class="optionhead">Start Date / End Date</span>
-          <p>Select all known components (day, month, year) of the event Start and End Dates. Only the year of the Start Date is required.
-            If any part of the End Date is entered, the year is required there as well.</p>
+            <h5 class="optionhead">Start Date / End Date</h5>
+            <p>Select all known components (day, month, year) of the event Start and End Dates. Only the year of the Start Date is required.
+                If any part of the End Date is entered, the year is required there as well.</p>
 
-          <span class="optionhead">Event Title</span><br>
-          <p>Enter a very short title for the event. For example, <em>Sinking of the Titanic</em> or <em>World War I</em>. This field was added in TNG 9.0. Timeline
-            events added prior to that version will not have a title. In those cases the EVent Detail will be used as the title.</p>
+            <h5 class="optionhead">Event Title</h5><br>
+            <p>Enter a very short title for the event. For example, <em>Sinking of the Titanic</em> or <em>World War I</em>. This field was added in
+                TNG 9.0. Timeline
+                events added prior to that version will not have a title. In those cases the EVent Detail will be used as the title.</p>
 
-            <span class="optionhead">Event Detail</span><br>
+            <h5 class="optionhead">Event Detail</h5><br>
             <p>Enter a brief description of the event. It should not be more than few sentences long.</p>
 
         </td>
@@ -80,7 +81,7 @@ echo help_header("Help: Timeline Events");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="delete"><p class="subheadbold">Deleting Timeline Events</p></a>
+            <a id="delete"><h4 class="subheadbold">Deleting Timeline Events</h4></a>
             <p>To delete one timeline event, use the <a href="#search">Search</a> tab to locate the event, then click on the Delete icon next to that
                 event record. The row will
                 change color and then vanish as the event is deleted. To delete more than one event at a time, check the box in the Select column next

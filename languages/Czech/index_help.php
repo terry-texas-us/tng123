@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Administrace");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("N�pov�da: Administrace");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a id="gettingstarted"><p class="subheadbold">Za��n�me:</p></a>
+            <a id="gettingstarted"><h4 class="subheadbold">Za��n�me:</h4></a>
             <p>��m za��t nejd��ve? Zde je z�klad:</p>
             <ol>
                 <li><p><strong>Pe�liv� dodr�ujte instrukce k instalaci, kter� jsou obsa�en� v souboru <a href="../../readme.html" target="_blank">readme.html</a>
@@ -59,7 +59,7 @@ echo help_header("N�pov�da: Administrace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="notes"><p class="subheadbold">Pozn�mky:</p></a>
+            <a id="notes"><h4 class="subheadbold">Pozn�mky:</h4></a>
             <ol>
                 <li><p>Pokud v�m v menu Administrace chyb� n�kter� volby, z�ejm� jste se nep�ihl�sili s �pln�mi p��stupov�mi pr�vy nebo jsou va�e
                         p��stupov� pr�va omezena pouze na ur�it� strom.
@@ -76,7 +76,7 @@ echo help_header("N�pov�da: Administrace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="otherresources"><p class="subheadbold">Jin� zdroje:</p></a>
+            <a id="otherresources"><h4 class="subheadbold">Jin� zdroje:</h4></a>
             <ol>
                 <li><p>Mailov� seznam pro aktualizace: <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. P�ij�mat a pos�lat maily na
                         <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. Tento seznam se pou��v� v�hradn� na

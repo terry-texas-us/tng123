@@ -5,7 +5,7 @@ echo help_header("Help: Utilities");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -32,7 +32,7 @@ echo help_header("Help: Utilities");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="tables"><p class="subheadbold">Back up, Restore &amp; Optimize Table Data</p></a>
+            <a id="tables"><h4 class="subheadbold">Back up, Restore &amp; Optimize Table Data</h4></a>
             <p>Use these functions to secure your data and keep your site running fast.</p>
 
             <p><em><strong>NOTE:</strong> If your database is very large, you might want to use an independent tool (like mysqldumper or phpMyAdmin)
@@ -43,40 +43,54 @@ echo help_header("Help: Utilities");
                     each server
                     and the available resources, but a good benchmark might be 50,000 people in your tree.</em></p>
 
-            <span class="optionhead">Back Up</span>
+            <h5 class="optionhead">Back Up</h5>
             <p>To back up a single table, click on the Backup icon in the Action column next to the table to be backed up. You will see a success or
                 failure message to the
-                right of the row. The Last Backup column will also be updated, as will the size of the resulting file. If the operation is not successful,
-                you may not have created a "Backups" folder (not necessarily named that; check your General Settings), or it may not have adequate permissions.
-                Create the folder in your main TNG folder and give it read/write/execute rights for world/group/owner n (755 or 775, some systems will require 777),
-                then go to the General Settings and make sure the folder name there matches the actual folder name exactly (case matters). After you have
+                right of the row. The Last Backup column will also be updated, as will the size of the resulting file. If the operation is not
+                successful,
+                you may not have created a "Backups" folder (not necessarily named that; check your General Settings), or it may not have adequate
+                permissions.
+                Create the folder in your main TNG folder and give it read/write/execute rights for world/group/owner n (755 or 775, some systems will
+                require 777),
+                then go to the General Settings and make sure the folder name there matches the actual folder name exactly (case matters). After you
+                have
                 created an initial set of backups, you should be able to set permissions back to 771 for added security.
                 <strong>NOTE</strong>: If all your individual and family data comes from a GEDCOM
-                import, it is not necessary to back up the People, Children and Families tables, as these backups could be quite large and will only take up valuable space.
+                import, it is not necessary to back up the People, Children and Families tables, as these backups could be quite large and will only
+                take up valuable space.
                 In the event of a data loss, you can simply re-import your GEDCOM file to restore these tables.</p>
 
-            <span class="optionhead">Restore</span>
-            <p>To restore a single table, click on the Restore icon in the Action column next to the table to be restored. You will see a success or failure message to the
+            <h5 class="optionhead">Restore</h5>
+            <p>To restore a single table, click on the Restore icon in the Action column next to the table to be restored. You will see a success or
+                failure message to the
                 right of the row. If the Restore icon is not present next to a particular table name, no backup for that table is available.
                 <strong>NOTE</strong>: If a restore attempt produces a database error, you could be trying to restore a table whose current column
-                structure does not match the structure that was in place when the last backup was made. That could mean that you made the backup prior to an upgrade that
+                structure does not match the structure that was in place when the last backup was made. That could mean that you made the backup prior
+                to an upgrade that
                 changed the table structure.</p>
 
-            <span class="optionhead">Optimize</span>
-            <p>To optimize a single table, click on the Optimize icon in the Action column next to the table to be optimized. You will see a success or failure message to the
-                right of the row. A table should be optimized if you have deleted a large part of the table, have done several imports since your last optimization
+            <h5 class="optionhead">Optimize</h5>
+            <p>To optimize a single table, click on the Optimize icon in the Action column next to the table to be optimized. You will see a success
+                or failure message to the
+                right of the row. A table should be optimized if you have deleted a large part of the table, have done several imports since your last
+                optimization
                 or if you have made many changes to variable-length fields. This will reclaim the unused space and defragment
-                the datafile, usually resulting in improved performance. Some risks are associated with optimizing large tables, so be sure to back up your tables before
+                the datafile, usually resulting in improved performance. Some risks are associated with optimizing large tables, so be sure to back up
+                your tables before
                 you optimize them.</p>
 
-            <span class="optionhead">Back Selected / Restore Selected / Optimize Selected / Delete Selected</span>
-            <p>To back up, restore or optimize multiple tables at once, or to delete backup files, check the box in the Select column next to the desired tables, then select
-                the appropriate action from the "With selected" dropdown box at the top of the page. To select all tables for any of these operations, click the "Select All" button.
+            <h5 class="optionhead">Back Selected / Restore Selected / Optimize Selected / Delete Selected</h5>
+            <p>To back up, restore or optimize multiple tables at once, or to delete backup files, check the box in the Select column next to the
+                desired tables, then select
+                the appropriate action from the "With selected" dropdown box at the top of the page. To select all tables for any of these operations,
+                click the "Select All" button.
                 Likewise, all selections can be cleared by clicking the "Clear All" button.</p>
 
-            <span class="optionhead">Other Recommendations</span>
-            <p>After making a backup, the backup file will be stored in the Backups folder (as defined in your General Settings). It is recommended that you copy these files to
-                your home computer, since any catastrophic event that affects your database tables could also affect any backups stored on the same computer. If your backup files
+            <h5 class="optionhead">Other Recommendations</h5>
+            <p>After making a backup, the backup file will be stored in the Backups folder (as defined in your General Settings). It is recommended
+                that you copy these files to
+                your home computer, since any catastrophic event that affects your database tables could also affect any backups stored on the same
+                computer. If your backup files
                 take up too much space, you could then delete them from your web site and copy them back if a restore is needed.</p>
             <p>It is also highly recommended that you name your Backups folder something other than 'backups', as other TNG users with dishonorable
                 intentions could easily steal your data.
@@ -89,7 +103,7 @@ echo help_header("Help: Utilities");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="structure"><p class="subheadbold">Back up Table Structure</p></a>
+            <a id="structure"><h4 class="subheadbold">Back up Table Structure</h4></a>
             <p>To back up your TNG table structure, click on the Backup icon in this section. If the operation is successful, the page will be
                 redisplayed with a red message at the top
                 detailing the action taken. The Last Backup column will also be populated, as will the size of the file. Having a backup of your table
@@ -106,7 +120,7 @@ echo help_header("Help: Utilities");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="ids"><p class="subheadbold">Resequence IDs</p></a>
+            <a id="ids"><h4 class="subheadbold">Resequence IDs</h4></a>
             <p>This feature allows you to assign new, sequential ID numbers to all of your people, families, sources and/or repositories. You must be
                 in Maintenance Mode
                 to run this utility. To enter Maintenance Mode, go to Admin/Setup/General Settings and select the Maintenance Mode option in the
@@ -120,16 +134,18 @@ echo help_header("Help: Utilities");
 
             <p>Options on this page include:</p>
 
-            <span class="optionhead">Tree</span>
+            <h5 class="optionhead">Tree</h5>
             <p>You must select a Tree. This operation can only be performed on one tree at a time.</p>
 
-            <span class="optionhead">ID Type</span>
+            <h5 class="optionhead">ID Type</h5>
             <p>Choices are People, Families, Sources or Repositories. Resequencing one type without doing the others should not have
                 any adverse side affects not covered in the above warning.</p>
 
-            <span class="optionhead">Minimum Digits</span>
-            <p>This number dictates how long your new IDs will be. If the number of any given individual is less than the minimum number of digits, the remaining digits
-                will be filled in with leading zeros. For example, if your Minimum Digits value is 5, your smaller numbers will be I00001, I00002, I00003, etc. If you don't
+            <h5 class="optionhead">Minimum Digits</h5>
+            <p>This number dictates how long your new IDs will be. If the number of any given individual is less than the minimum number of digits,
+                the remaining digits
+                will be filled in with leading zeros. For example, if your Minimum Digits value is 5, your smaller numbers will be I00001, I00002,
+                I00003, etc. If you don't
                 want any leading zeros, leave this number at 1 (does not include ID prefix).</p>
 
         </td>

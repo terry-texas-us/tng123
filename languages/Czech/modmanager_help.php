@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -174,7 +174,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="batch"><p class="subheadbold">D�vkov� instalace</p></a>
+            <a id="batch"><h4 class="subheadbold">D�vkov� instalace</h4></a>
 
             <p>D�vkov� instalace umo�n� prov�st specifick� akce t�kaj�c� se n�kolika m�d� pomoc� v�b�ru filtru. Z filtru seznamu stav� vyberte
                 po�adovan� stav a kliknut�m na Prov�st zobraz�te
@@ -210,7 +210,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="options"><p class="subheadbold">Mo�nosti</p></a>
+            <a id="options"><h4 class="subheadbold">Mo�nosti</h4></a>
 
             <p>Mo�nosti v�m umo�n� specifikovat chov�n� mana�eru m�d� v p��pad�
             <p><strong>Seznamu dot�en�ch soubor�</strong>

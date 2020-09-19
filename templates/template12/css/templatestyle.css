@@ -168,8 +168,6 @@ header, footer, article, nav, .cb-sheet, .cb-hmenu a {
 
 header, footer, article, nav, .cb-sheet {
     display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -444,8 +442,6 @@ ul.cb-hmenu, ul.cb-hmenu ul {
 ul.cb-hmenu {
     display: inline-block;
     vertical-align: middle;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -801,8 +797,6 @@ form.cb-search input[type="text"] {
     margin: 0 auto;
     width: 100%;
     padding: 3px 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     color: #4d3e23 !important;
     font-size: 16px;

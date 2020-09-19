@@ -902,11 +902,11 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 
 /* optionhead: added to replace <strong> on option heading */
 .optionhead {
-    font-weight: bold;
 }
 
 /* helpbody: describes page background on Help screens  */
 .helpbody {
+    margin: 8px;
     background-image: url(../img/background.gif);
 }
 

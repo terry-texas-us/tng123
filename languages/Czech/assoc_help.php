@@ -9,7 +9,7 @@ echo help_header("N�pov�da: Spojen�");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("N�pov�da: Spojen�");
 
     <tr class="databack">
         <td class="tngshadow">
-            <a id="what"><p class="subheadbold">Co jsou spojen�?</p></a>
+            <a id="what"><h4 class="subheadbold">Co jsou spojen�?</h4></a>
 
             <p><strong>Spojen�</strong> je z�znam vztahu mezi dv�ma osobami, mezi dv�ma rodinami nebo mezi osobou a rodinou.
                 Ze stromov� struktury va�� datab�ze nemus� b�t vztah z�ejm�. Ve skute�nosti dv� osoby/rodiny, kter� jsou propojeny
@@ -39,7 +39,7 @@ echo help_header("N�pov�da: Spojen�");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">P�id�n�/�prava/Odstran�n� spojen�</p></a>
+            <a id="add"><h4 class="subheadbold">P�id�n�/�prava/Odstran�n� spojen�</h4></a>
 
             <p>Chcete-li p�idat, upravit nebo odstranit spojen� u osoby, vyhledejte osobu v Administrace/Osoba a upravte
                 individu�ln� z�znam, a pot� klikn�te na ikonu Spojen� v horn� ��sti obrazovky (pokud spojen� ji� existuj�,
@@ -56,13 +56,14 @@ echo help_header("N�pov�da: Spojen�");
 
             <p>P�i p�id�n� nebo �prav� spojen� m�jte na pam�ti n�sleduj�c�:</p>
 
-            <span class="optionhead">ID ��sla osoby nebo rodiny</span>
-            <p>Zapi�te ID ��slo osoby nebo rodiny, kter� m� b�t spojena s aktivn� osobou nebo rodinou, nebo klikn�te na ikonu Naj�t a vyhledejte ID ��slo.</p>
+            <h5 class="optionhead">ID ��sla osoby nebo rodiny</h5>
+            <p>Zapi�te ID ��slo osoby nebo rodiny, kter� m� b�t spojena s aktivn� osobou nebo rodinou, nebo klikn�te na ikonu Naj�t a vyhledejte ID
+                ��slo.</p>
 
-            <span class="optionhead">Vztah</span>
+            <h5 class="optionhead">Vztah</h5>
             <p>Zapi�te povahu spojen�. Nap�. <em>Kmotr</em>, <em>U�itel</em> nebo <em>Sv�dek</em>.</p>
 
-            <span class="optionhead">Obr�cen� spojen�?</span>
+            <h5 class="optionhead">Obr�cen� spojen�?</h5>
             <p>N�kdy jde spojen� ob�ma sm�ry. Nap�. vztah <em>P��tel</em> m��e m�t p�sobnost ob�ma sm�ry. Je-li to pravda,
                 a chcete vytvo�it druh� spojen� jdouc� opa�n�m sm�rem, pak klikn�te na tuto volbu. Pokud povaha vztahu nen� takov�, �e by
                 platila i v opa�n�m sm�ru (nap�. <em>Kmotr</em> nebo <em>U�itel</em>), pak byste m�li vytvo�it jin� spojen�, za��naj�c�

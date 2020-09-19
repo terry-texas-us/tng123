@@ -9,7 +9,7 @@ echo help_header("Nápověda: Poznámky");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("Nápověda: Poznámky");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Přidat/Upravit/Vymazat poznámky</p></a>
+            <a id="add"><h4 class="subheadbold">Přidat/Upravit/Vymazat poznámky</h4></a>
 
             <p>Chcete-li přidat, upravit nebo vymazat poznámky u osoby, rodiny, pramene, úložiště pramenů nebo události, klikněte na ikonu Poznámky na
                 stránce nahoře nebo vedle nějaké události (pokud již poznámky existují,
@@ -41,12 +41,13 @@ echo help_header("Nápověda: Poznámky");
 
             <p>Pokud chcete existující poznámku upravit nebo vymazat, klikněte na příslušnou ikonu vedle této poznámky.</p>
 
-            <p>Přidáváte-li nebo upravujete-li poznámku, zapisujte, prosím, vaši poznámku nebo vaše změny do velkého pole <strong>Poznámka</strong> a pak klikněte na tlačítko "Uložit". Poznámky budou uloženy v tomto okamžiku, i když třeba ještě
+            <p>Přidáváte-li nebo upravujete-li poznámku, zapisujte, prosím, vaši poznámku nebo vaše změny do velkého pole <strong>Poznámka</strong> a
+                pak klikněte na tlačítko "Uložit". Poznámky budou uloženy v tomto okamžiku, i když třeba ještě
                 u aktivního subjektu nejsou žádné jiné údaje. Do pole můžete zapsat HTML kód. Kódy PHP a Javascript nebudou pracovat.</p>
 
             <p>Chcete-li poznámky přetřídit, klikněte kamkoli na řádek (ne na ikonu) a přetáhněte poznámku nahoru nebo dolů.</p>
 
-            <span class="optionhead">Neveřejné</span>
+            <h5 class="optionhead">Neveřejné</h5>
             <p>Zaškrtnutím tohoto políčka zamezíte zobrazení poznámky ve veřejné oblasti. Nezávisí to na označení Neveřejné, které může být spojeno s
                 osobou
                 nebo rodinou.</p>
@@ -56,7 +57,7 @@ echo help_header("Nápověda: Poznámky");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="cite"><p class="subheadbold">Přidání citací pramenů k poznámkám</p></a>
+            <a id="cite"><h4 class="subheadbold">Přidání citací pramenů k poznámkám</h4></a>
             <p>Chcete-li přidat nebo upravit citaci pramenů u poznámky, poznámku nejprve uložte a poté klikněte na ikonu Citace vedle záznamu této
                 poznámky v aktuálním seznamu poznámek.
                 Více informací o citacích se dozvíte zde: <a href="citations_help.php">Nápověda: Citace</a>.</p>

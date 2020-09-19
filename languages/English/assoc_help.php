@@ -5,7 +5,7 @@ echo help_header("Help: Associations");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -32,7 +32,7 @@ echo help_header("Help: Associations");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="what"><p class="subheadbold">What are Associations?</p></a>
+            <a id="what"><h4 class="subheadbold">What are Associations?</h4></a>
 
             <p>An <strong>Association</strong> is a record of a relationship between two people, between two families, or between a person and a
                 family.
@@ -44,7 +44,7 @@ echo help_header("Help: Associations");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Adding/Editing/Deleting Associations</p></a>
+            <a id="add"><h4 class="subheadbold">Adding/Editing/Deleting Associations</h4></a>
 
             <p>To add, edit or delete associations for an individual, look up person in Admin/People and edit
                 the individual record, then click on the Associations icon at the top of the screen (if associations already exist,
@@ -61,14 +61,14 @@ echo help_header("Help: Associations");
 
             <p>While adding or editing an association, take note of the following:</p>
 
-            <span class="optionhead">Person ID or Family ID</span>
+            <h5 class="optionhead">Person ID or Family ID</h5>
             <p>Enter the ID of the person or family to be associated with the active person or family, or click the Find icon to search for the
                 ID.</p>
 
-            <span class="optionhead">Relationship</span>
+            <h5 class="optionhead">Relationship</h5>
             <p>Enter the nature of the association. For example, <em>Godfather</em>, <em>Mentor</em> or <em>Witness</em>.</p>
 
-            <span class="optionhead">Reverse Association?</span>
+            <h5 class="optionhead">Reverse Association?</h5>
             <p>Sometimes an association goes both ways. For example, an association relationship of <em>Friend</em> could apply in both directions. If
                 that
                 is true and you want to create a second association going in the reverse direction, then check this box. If the relationship doesn't

@@ -9,7 +9,7 @@ echo help_header("Nápověda: Místa");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,7 +31,7 @@ echo help_header("Nápověda: Místa");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
             <p>Nalezení existujících míst vyhledáním celého nebo části <strong>názvu místa</strong>. Pro další zúžení výsledků vašeho hledání na místa
                 spojená s určitým stromem vyberte tento strom.
                 Zaškrtnutím "Chybí zeměpisná šířka nebo délka" se zobrazí pouze místa, která je třeba doplnit tyto údaje. Zaškrtnutím "Vyhledat pouze
@@ -44,7 +44,7 @@ echo help_header("Nápověda: Místa");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <span class="optionhead">Akce</span>
+            <h5 class="optionhead">Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
                 více záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
@@ -57,7 +57,7 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="add"><p class="subheadbold">Přidat nové / Upravit existující místa</p></a>
+            <a id="add"><h4 class="subheadbold">Přidat nové / Upravit existující místa</h4></a>
 
             <p>TNG automaticky přidá záznam nového místa pokaždé, když zapíšete nové místo v Admin/Osoba, v Admin/Rodiny nebo jako součást nějaké
                 vlastní události.
@@ -69,35 +69,44 @@ echo help_header("Nápověda: Místa");
                 záložku <a href="#search">Hledat</a> pro nalezení místa, a poté klikněte na ikonu Upravit vedle tohoto řádku.</p>
             Význam jednotlivých polí při přidání nebo úpravě hřbitova je následující:</p>
 
-            <span class="optionhead">Strom</span>
-            <p>Pokud jsou místa ve vašem Základním nastavení programu konfigurována tak, že jsou spojena se stromy, uvidíte zde pole výběru stromu. V tomto případě vyberte jeden z vašich existujících stromů,
+            <h5 class="optionhead">Strom</h5>
+            <p>Pokud jsou místa ve vašem Základním nastavení programu konfigurována tak, že jsou spojena se stromy, uvidíte zde pole výběru stromu. V
+                tomto případě vyberte jeden z vašich existujících stromů,
                 protože každé místo musí být spojeno se stromem. <strong>Pozn.:</strong> Po vytvoření místa nelze změnit jeho spojení se stromem
-                (místo toho vymažte místo a znovu jej založte pod jiným stromem). Pokud nechcete, aby byla místa spojená se stromy, změňte nastavení v Admin/Nastavení/Základní nastavení/Různé.</p>
+                (místo toho vymažte místo a znovu jej založte pod jiným stromem). Pokud nechcete, aby byla místa spojená se stromy, změňte nastavení v
+                Admin/Nastavení/Základní nastavení/Různé.</p>
 
-            <span class="optionhead">Místo</span>
+            <h5 class="optionhead">Místo</h5>
             <p>Zapište název vašeho místa nejmenší částí místa počínaje. Všechny části místa by měla být oddělena čárkoou. Např.
                 <em>Klášterec, Šumperk, Olomoucký kraj, Česká republika</em>. Nepoužívejte neurčité nebo máloznámé zkratky.</p>
 
-            <span class="optionhead">Zobrazit/skrýt klikací mapu</span>
-            <p>Kliknutím na tlačítko "Zobrazit/skrýt klikací mapu" se zobrazí Google Map. Tato funkce je aktivní, pokud jste obdrželi od Google "klíč" a vložili jej do
-                svého nastavení map v TNG (viz <a href="mapconfig_help.php">Nápověda pro nastavení mapy</a> pro více informací). Opětovným kliknutím na toto tlačítko bude mapa skryta. Chcete-li, aby bylo umístění vyhledáno v Google Maps,
-                zapište toto umístění do pole <strong>Geokódovat umístění</strong> a klikněte na tlačítko "Hledat". Do mapy můžete také klikat a pohybovat s ní, dokud
-                nebude "špendlík" na požadovaném místě. Můžete také použít ovládací prvek Přiblížení pro zobrazení více podrobností v okolí požadované oblasti. Na stránce
-                <a href="places_googlemap_help.php">Nápověda Google Maps</a> najdete více informací. Informace o výchozím nastavení vašich map najdete v <a href="mapconfig_help.php">Nápovědě: Nastavení map</a>.</p>
+            <h5 class="optionhead">Zobrazit/skrýt klikací mapu</h5>
+            <p>Kliknutím na tlačítko "Zobrazit/skrýt klikací mapu" se zobrazí Google Map. Tato funkce je aktivní, pokud jste obdrželi od Google "klíč"
+                a vložili jej do
+                svého nastavení map v TNG (viz <a href="mapconfig_help.php">Nápověda pro nastavení mapy</a> pro více informací). Opětovným kliknutím
+                na toto tlačítko bude mapa skryta. Chcete-li, aby bylo umístění vyhledáno v Google Maps,
+                zapište toto umístění do pole <strong>Geokódovat umístění</strong> a klikněte na tlačítko "Hledat". Do mapy můžete také klikat a
+                pohybovat s ní, dokud
+                nebude "špendlík" na požadovaném místě. Můžete také použít ovládací prvek Přiblížení pro zobrazení více podrobností v okolí požadované
+                oblasti. Na stránce
+                <a href="places_googlemap_help.php">Nápověda Google Maps</a> najdete více informací. Informace o výchozím nastavení vašich map najdete
+                v <a href="mapconfig_help.php">Nápovědě: Nastavení map</a>.</p>
 
-            <span class="optionhead">Zeměpisná šířka/délka</span>
+            <h5 class="optionhead">Zeměpisná šířka/délka</h5>
             <p>Zapište souřadnice zeměpisné šířky a délky místa nebo pro nastavení hodnot použijte klikací Google Map (nepovinné, viz výše).</p>
 
-            <span class="optionhead">Přiblížení</span>
-            <p>Zadejte úroveň přiblížení nebo upravte ovládací prvek přiblížení v Google Map pro nastavení úrovně přiblížení. Tato volba je dostupná pouze, když jste obdrželi "klíč"
+            <h5 class="optionhead">Přiblížení</h5>
+            <p>Zadejte úroveň přiblížení nebo upravte ovládací prvek přiblížení v Google Map pro nastavení úrovně přiblížení. Tato volba je dostupná
+                pouze, když jste obdrželi "klíč"
                 od Google a zapsali jej do vašeho nastavení map v TNG.</p>
 
-            <span class="optionhead">Úroveň sídla</span></p>
-            <p>Úroveň sídla popisuje úroveň členění sídla zastoupeného názvem místa. Vašim návštěvníkům to může pomoci poznat přesnost umístění špendlíku na mapě.
+            <h5 class="optionhead">Úroveň sídla</h5></p>
+            <p>Úroveň sídla popisuje úroveň členění sídla zastoupeného názvem místa. Vašim návštěvníkům to může pomoci poznat přesnost umístění
+                špendlíku na mapě.
                 Např. chcete-li umístit špendlík do Francie, ale nevíte, kam přesně, měli byste vybrat v této volbě
                 "Země", aby vaši návštěvníci věděli, umístění špendlíku ve Francii není přesné.</p>
 
-            <span class="optionhead">Hřbitovy</span>
+            <h5 class="optionhead">Hřbitovy</h5>
             <p>Chcete-li spojit hřbitov s aktuálním místem, klikněte zde na tlačítko <strong>Přidat nový</strong>.
                 V malém okně, které se objeví, vyberte ze seznamu, který jste vytvořili v Admin/Hřbitovy hřbitov,
                 a poté klikněte na tlačítko Go. Chcete-li vymazat hřbitov spojený s aktuálním místem, klikněte na malou ikonu
@@ -106,10 +115,10 @@ echo help_header("Nápověda: Místa");
             <p>Je-li hřbitov propojen s místem, údaje o hřbitovu budou zobrazeny na stránce místa a seznam pohřbů
                 spojených s místem bude zobrazen na stránce hřbitova.</p>
 
-            <span class="optionhead">Poznámky</span>
+            <h5 class="optionhead">Poznámky</h5>
             <p>Do tohoto pole zapište jakékoli poznámky, které mají vztah k vašemu místu.</p>
 
-            <span class="optionhead">Provést změny názvu místa v existujících událostech</span>
+            <h5 class="optionhead">Provést změny názvu místa v existujících událostech</h5>
             <p>Toto zaškrtnuté políčko (viditelné pouze při úpravě existujícího místa) označuje, že budou při uložení změn
                 aktualizovány všechny události, kde je toto místo použito.</p>
 
@@ -124,7 +133,7 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="delete"><p class="subheadbold">Vymazat místa</p></a>
+            <a id="delete"><h4 class="subheadbold">Vymazat místa</h4></a>
             <p>Chcete-li odstranit místo, použijte záložku <a href="#search">Hledat</a> pro nalezení místa, a poté klikněte na ikonu Vymazat vedle
                 tohoto záznamu místa. Tento řádek změní
                 barvu a poté po odstranění místa zmizí. Chcete-li najednou odstranit více míst, zaškrtněte políčko ve sloupci Vybrat vedle každého
@@ -137,11 +146,11 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="merge"><p class="subheadbold">Sloučit místa</p></a>
+            <a id="merge"><h4 class="subheadbold">Sloučit místa</h4></a>
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit názvy míst, které jsou lehce odlišné, ale odkazují na stejné místo.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
 
-            <span class="optionhead">Najít kandidáty pro sloučení</span>
+            <h5 class="optionhead">Najít kandidáty pro sloučení</h5>
             <p>Pokud je ve vašem Základním nastavení konfigurováno, že místa jsou spojena se stromy, uvidíte zde výběrové pole Strom. V tomto případě
                 vyberte strom.
                 Nelze slučovat místa z různých stromů, takže lze vybrat pouze jeden strom. Poté zadejte výběrová kritéria,
@@ -152,13 +161,17 @@ echo help_header("Nápověda: Místa");
                 <em>TU</em>
                 a do druhého <em>Trutnov</em>. Po dokončení zápisu kritérií klikněte na "Pokračovat".</p>
 
-            <span class="optionhead">Vybrat místa pro sloučení</span>
-            <p>Pod tímto nadpisem uvidíte seznam výsledků, které odpovídají vašim výběrovým kritériím. Pokud některé z nich odkazují na stejné umístění,
-                zaškrtněte políčko označení "Sloučit tyto (vymazat)" nalevo od každého. Každý vybraný řádek zčervená. Dále klikněte na přepínač ve sloupci označeném "do těchto (ponechat)", jehož
-                název místa nahradí všechny zaškrtnutá místa. Tento řádek zezelená. Nezáleží to na tom, zda název místa, který má být ponechán, je současně
+            <h5 class="optionhead">Vybrat místa pro sloučení</h5>
+            <p>Pod tímto nadpisem uvidíte seznam výsledků, které odpovídají vašim výběrovým kritériím. Pokud některé z nich odkazují na stejné
+                umístění,
+                zaškrtněte políčko označení "Sloučit tyto (vymazat)" nalevo od každého. Každý vybraný řádek zčervená. Dále klikněte na přepínač ve
+                sloupci označeném "do těchto (ponechat)", jehož
+                název místa nahradí všechny zaškrtnutá místa. Tento řádek zezelená. Nezáleží to na tom, zda název místa, který má být ponechán, je
+                současně
                 zaškrtnut jako "Sloučit tyto (vymazat)". Pro "ponechání" můžete vybrat pouze jedno místo na jedno sloučení, ale můžete vybrat
                 několik míst, která chcete sloučit do jednoho. Pokud jste připraveni sloučit místa, klikněte na tlačítko "Sloučit místa"
-                na obrazovce nahoře nebo dole. Všechny výskyty vymazaných míst (v záznamech osoby nebo rodiny) budou nahrazeny názvem, který jste vybrali, že má být ponechán.
+                na obrazovce nahoře nebo dole. Všechny výskyty vymazaných míst (v záznamech osoby nebo rodiny) budou nahrazeny názvem, který jste
+                vybrali, že má být ponechán.
                 <strong>Pozn.:</strong> Poznámky a údaje o zeměpisné šířce a délce zůstanou u míst, která ponecháváte.</p>
 
             <p>Pamatujte na to, že se zvyšujícím počtem položek, které jsou vybrány ke sloučení, klesá výkon. Jinými slovy sloučení dvou míst proběhne
@@ -172,15 +185,15 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="geo"><p class="subheadbold">Geokódovat</p></a>
+            <a id="geo"><h4 class="subheadbold">Geokódovat</h4></a>
             <p>Nástroj Geokódování lze použít k nalezení a uložení souřadnic zeměpisné šířky a délky pro místa, která tyto údaje neobsahují.</p>
 
-            <span class="optionhead">Omezení</span>
+            <h5 class="optionhead">Omezení</h5>
             <p>Délka trvání tohoto procesu záleží na počtu míst, která je potřeba geokódovat. Google také omezuje počet míst na 2500 denně. Z těchto
                 důvodů můžete omezit počet míst, která mají být okódována najednou.
                 Výchozí počet je 100. Pokud zjistíte, že prvních 100 míst proběhlo rychle, můžete v další dávce tento počet zvýšit.</p>
 
-            <span class="optionhead">Pokud bude pro jedno místo nalezeno více výsledků:</span>
+            <h5 class="optionhead">Pokud bude pro jedno místo nalezeno více výsledků:</h5>
             <p>Je-li název místa nejednoznačný, Google může vrátit více výsledků. V tomto případě doporučujeme odmítnout všechny vrácené výsledky
                 (takže můžete
                 dohledání provést později ručně), ale můžete také zvolit, aby TNG akceptoval první nalezený výsledek.</p>

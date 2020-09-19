@@ -5,7 +5,7 @@ echo help_header("Pomoc: Związki");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -24,7 +24,7 @@ echo help_header("Pomoc: Związki");
 
     <tr class="databack">
         <td class="tngshadow">
-            <a id="what"><p class="subheadbold">Co to są związki?</p></a>
+            <a id="what"><h4 class="subheadbold">Co to są związki?</h4></a>
 
             <p><strong>Związek</strong> jest zapisem relacji między dwojgiem ludzi w Twojej bazie danych, które
                 nie muszą być oczywiste w regularnej strukturze Twego drzewa genealogicznego. Dwoje ludzi (np. chrześniak i matka chrzestna lub osoba
@@ -36,7 +36,7 @@ echo help_header("Pomoc: Związki");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="add"><p class="subheadbold">Dodawanie/Edycja/Usuwanie związków</p></a>
+            <a id="add"><h4 class="subheadbold">Dodawanie/Edycja/Usuwanie związków</h4></a>
 
             <p>Aby dodać, edytować lub usuwać związki dla osób, zlokalizuj osobę w Administracja / Osoby i edytuj poszczególne zapisy,
                 a następnie kliknij na ikonkę <em>Związki</em> na górze ekranu (jeśli istnieją już jakieś związki, ikonka będzie oznaczona zieloną
@@ -49,14 +49,15 @@ echo help_header("Pomoc: Związki");
 
             <p>Podczas dodawania lub edycji związków dostępne są następujące pola:</p>
 
-            <span class="optionhead">ID osoby</span>
+            <h5 class="optionhead">ID osoby</h5>
             <p>Wprowadź ID osoby, które mają być związane z wybraną osobą, lub kliknij ikonę "Znajdź" aby wyszukać jej ID.</p>
 
-            <span class="optionhead">Wzajemny stosunek</span>
+            <h5 class="optionhead">Wzajemny stosunek</h5>
             <p>Wprowadź charakter związku między dwoma osobami. Na przykład, <em>ojciec chrzestny</em>, <em>świadek</em> itp.</p>
 
             <p>Po dodaniu, edycji lub usunięciu związków tej osoby, kliknij przycisk "Koniec", aby zamknąć okno.</p>
-            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                    ewentualne błędy lub niejasności.</p></li>
 
         </td>
     </tr>

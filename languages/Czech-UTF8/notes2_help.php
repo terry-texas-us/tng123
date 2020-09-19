@@ -5,7 +5,7 @@ echo help_header("Nápověda: Poznámky");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -24,7 +24,7 @@ echo help_header("Nápověda: Poznámky");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="notes"><p class="subheadbold">Poznámky</p></a>
+            <a id="notes"><h4 class="subheadbold">Poznámky</h4></a>
             <p>Ze stránky <strong>Poznámky</strong> můžete poznámky vyhledat přímo na základě jejich obsahu. Nemusíte vědět, s kým nebo k čemu
                 jsou poznámky připojeny. Po nalezení hledané poznámky můžete kliknout na ikonu Upravit vedle tohoto řádku
                 a obsah poznámky upravit. Poznámku můžete také vymazat kliknutím na ikonu Vymazat vedle tohoto řádku.

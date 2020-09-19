@@ -5,7 +5,7 @@ echo help_header("N�pov�da: Pozn�mky");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -24,7 +24,7 @@ echo help_header("N�pov�da: Pozn�mky");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="notes"><p class="subheadbold">Pozn�mky</p></a>
+            <a id="notes"><h4 class="subheadbold">Pozn�mky</h4></a>
             <p>Ze str�nky <strong>Pozn�mky</strong> m��ete pozn�mky vyhledat p��mo na z�klad� jejich obsahu. Nemus�te v�d�t, s k�m nebo k �emu
                 jsou pozn�mky p�ipojeny. Po nalezen� hledan� pozn�mky m��ete kliknout na ikonu Upravit vedle tohoto ��dku
                 a obsah pozn�mky upravit. Pozn�mku m��ete tak� vymazat kliknut�m na ikonu Vymazat vedle tohoto ��dku.

@@ -5,7 +5,7 @@ echo help_header("Help: Notes");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,7 +31,7 @@ echo help_header("Help: Notes");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="add"><p class="subheadbold">Adding/Editing/Deleting Notes</p></a>
+            <a id="add"><h4 class="subheadbold">Adding/Editing/Deleting Notes</h4></a>
 
             <p>To add, edit or delete notes for a person, family, source, repository or event, click on the Notes icon at the top of the screen or
                 next to any event (if notes already exist,
@@ -43,12 +43,13 @@ echo help_header("Help: Notes");
 
             <p>To edit or delete an existing note, click on the appropriate icon next to that note.</p>
 
-            <p>While adding or editing a note, please enter your note or make your changes in the large <strong>Note</strong> field and click the "Save" button. Notes are saved at that point, even if other
+            <p>While adding or editing a note, please enter your note or make your changes in the large <strong>Note</strong> field and click the
+                "Save" button. Notes are saved at that point, even if other
                 information for the active entity is not. You may enter HTML code in the field. PHP and Javascript code will not work.</p>
 
             <p>To sort notes, click anywhere in the row (not on one of the icons) and drag the note up or down.</p>
 
-            <span class="optionhead">Private</span>
+            <h5 class="optionhead">Private</h5>
             <p>Check this box to prevent the note from being displayed in the public area. This is independent of any Private tag you may have
                 associated with a person
                 or family.</p>
@@ -58,7 +59,7 @@ echo help_header("Help: Notes");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="cite"><p class="subheadbold">Adding Source Citations for Notes</p></a>
+            <a id="cite"><h4 class="subheadbold">Adding Source Citations for Notes</h4></a>
             <p>To add or edit source citations for a note, first save the note, then click the Citations icon next to that note record in the current
                 list of notes
                 For more information on citations, please see <a href="citations_help.php">Help: Citations</a>.</p>

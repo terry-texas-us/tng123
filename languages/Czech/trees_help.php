@@ -10,7 +10,7 @@ echo help_header("N�pov�da: Stromy");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -31,7 +31,7 @@ echo help_header("N�pov�da: Stromy");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
             <p>Nalezen� existuj�c�ch strom� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla stromu, n�zvu stromu, popisu</strong> nebo
                 <strong>vlastn�ka</strong>.
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech strom� ve va�� datab�zi.</p>
@@ -39,7 +39,7 @@ echo help_header("N�pov�da: Stromy");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <span class="optionhead">Akce</span>
+            <h5 class="optionhead">Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo p�idat ozna�en� k tomuto stromu.</p>
 
         </td>
@@ -48,7 +48,7 @@ echo help_header("N�pov�da: Stromy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� stromy</p></a>
+            <a id="add"><h4 class="subheadbold">P�idat nov� / Upravit existuj�c� stromy</h4></a>
             <p><strong>Strom</strong> v TNG je z�sobn�k samostatn�ho souboru rodinn�ch �daj�. TNG umo��uje na va�ich str�nk�ch podporu v�ce strom�,
                 ale proto�e
                 jsou stromy samostatn�, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jin�ho stromu. Z tohoto d�vodu by m�ly b�t
@@ -65,34 +65,39 @@ echo help_header("N�pov�da: Stromy");
             <p>Chcete-li p�idat nov� strom, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pak vypl�te formul��.
                 V�znam pol� je n�sleduj�c�:</p>
 
-            <span class="optionhead">ID ��slo stromu</span>
-            <p>Toto by m�l b�t kr�tk�, jednozna�n�, jednoslovn� identifik�tor stromu. Mus� obsahovat pouze alfanumerick� znaky (��slice a p�smena). Nepou��vejte p�smena
-                s diakritikou a mezery. Tento �daj se nikde nezobrazuje, s v�jimkou ��dku adresy ve va�em prohl�e�i, tak�e m��e b�t zaps�n pouze mal�mi p�smeny. Pozd�ji tento �daj nelze zm�nit.
+            <h5 class="optionhead">ID ��slo stromu</h5>
+            <p>Toto by m�l b�t kr�tk�, jednozna�n�, jednoslovn� identifik�tor stromu. Mus� obsahovat pouze alfanumerick� znaky (��slice a p�smena).
+                Nepou��vejte p�smena
+                s diakritikou a mezery. Tento �daj se nikde nezobrazuje, s v�jimkou ��dku adresy ve va�em prohl�e�i, tak�e m��e b�t zaps�n pouze
+                mal�mi p�smeny. Pozd�ji tento �daj nelze zm�nit.
                 D�lka max. 20 znak�.</p>
 
-            <span class="optionhead">N�zev stromu:</span>
-            <p>Kr�tk� n�zev nebo fr�ze, kter� se bude zobrazovat a identifikovat strom. Objev� se na v�ech m�stech v�b�ru stromu a podle tohoto n�zvu budou u�ivatel� strom zn�t.</p>
+            <h5 class="optionhead">N�zev stromu:</h5>
+            <p>Kr�tk� n�zev nebo fr�ze, kter� se bude zobrazovat a identifikovat strom. Objev� se na v�ech m�stech v�b�ru stromu a podle tohoto n�zvu
+                budou u�ivatel� strom zn�t.</p>
 
-            <span class="optionhead">Popis:</span>
+            <h5 class="optionhead">Popis:</h5>
             <p>Del�� popis tohoto stromu nebo dat, kter� obsahuje.</p>
 
-            <span class="optionhead">Majitel:</span>
-            <p>Osoba nebo organizace, kter� vytvo�ila nebo shrom�dila �daje v tomto strom�, nebo osoba �i organizace odpov�dn� za spr�vu t�chto �daj�.</p>
+            <h5 class="optionhead">Majitel:</h5>
+            <p>Osoba nebo organizace, kter� vytvo�ila nebo shrom�dila �daje v tomto strom�, nebo osoba �i organizace odpov�dn� za spr�vu t�chto
+                �daj�.</p>
 
-            <span class="optionhead">Email:</span>
+            <h5 class="optionhead">Email:</h5>
             <p>Emailov� adresa majitele. N�vrhy t�kaj�c� se osob v tomto stromu budou pos�l�ny na tuto adresu, pokud existuje (jinak budou n�vrhy
                 pos�l�ny na adresu uvedenou v Z�kladn�m nastaven�).</p>
 
-            <span class="optionhead">Adresa/m�sto/kraj/PS�/zem�/telefon:</span>
+            <h5 class="optionhead">Adresa/m�sto/kraj/PS�/zem�/telefon:</h5>
             <p>Kontaktn� �daje majitele.</p>
 
-            <span class="optionhead">Informace o majiteli zachovat neve�ejn�</span>
-            <p>Za�krtnut�m tohoto pol��ka skryjete emailovou adresu a jin� kontaktn� �daje majitele tohoto stromu (pro n�v�t�vn�ky ve ve�ejn� oblasti).</p>
+            <h5 class="optionhead">Informace o majiteli zachovat neve�ejn�</h5>
+            <p>Za�krtnut�m tohoto pol��ka skryjete emailovou adresu a jin� kontaktn� �daje majitele tohoto stromu (pro n�v�t�vn�ky ve ve�ejn�
+                oblasti).</p>
 
-            <span class="optionhead">Nepovolit u�ivatel�m st�hnut� soubor� GEDCOM</span>
+            <h5 class="optionhead">Nepovolit u�ivatel�m st�hnut� soubor� GEDCOM</h5>
             <p>Za�krtnut�m tohoto pol��ka zabr�n�te u�ivatel�m st�hnout z tohoto stromu soubory GEDCOM.</p>
 
-            <span class="optionhead">Nepovolit u�ivatel�m tvorbu soubor� PDF</span>
+            <h5 class="optionhead">Nepovolit u�ivatel�m tvorbu soubor� PDF</h5>
             <p>Za�krtnut�m tohoto pol��ka zabr�n�te u�ivatel�m vytvo�it z tohoto stromu soubory PDF.</p>
 
         </td>
@@ -101,7 +106,7 @@ echo help_header("N�pov�da: Stromy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="delete"><p class="subheadbold">Vymaz�n� strom�</p></a>
+            <a id="delete"><h4 class="subheadbold">Vymaz�n� strom�</h4></a>
             <p>Chcete-li odstranit strom, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� stromu, a pot� klikn�te na ikonku Vymazat vedle
                 z�znamu tohoto stromu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky strom zmiz�. <em>V�echna data spojen� s t�mto stromem (v�etn� osob, rodin,
@@ -113,7 +118,7 @@ echo help_header("N�pov�da: Stromy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="clear"><p class="subheadbold">Vy�i�t�n� strom�</p></a>
+            <a id="clear"><h4 class="subheadbold">Vy�i�t�n� strom�</h4></a>
             <p>Chcete-li strom "vy�istit" (vymazat v�echny �daje, ale strom samotn� ponechat), pou�ijte z�lo�ku <a href="#search">Hledat</a> k
                 nalezen� stromu, a pot� klikn�te na ikonku Vy�istit
                 vedle z�znamu tohoto stromu.

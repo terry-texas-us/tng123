@@ -9,7 +9,7 @@ echo help_header("Nápověda: Administrace");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -28,7 +28,7 @@ echo help_header("Nápověda: Administrace");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a id="gettingstarted"><p class="subheadbold">Začínáme:</p></a>
+            <a id="gettingstarted"><h4 class="subheadbold">Začínáme:</h4></a>
             <p>Čím začít nejdříve? Zde je základ:</p>
             <ol>
                 <li><p><strong>Pečlivě dodržujte instrukce k instalaci, které jsou obsažené v souboru <a href="../../readme.html" target="_blank">readme.html</a>
@@ -61,7 +61,7 @@ echo help_header("Nápověda: Administrace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="notes"><p class="subheadbold">Poznámky:</p></a>
+            <a id="notes"><h4 class="subheadbold">Poznámky:</h4></a>
             <ol>
                 <li><p>Pokud vám v menu Administrace chybí některé volby, zřejmě jste se nepřihlásili s úplnými přístupovými právy nebo jsou vaše
                         přístupová práva omezena pouze na určitý strom.
@@ -78,7 +78,7 @@ echo help_header("Nápověda: Administrace");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="otherresources"><p class="subheadbold">Jiné zdroje:</p></a>
+            <a id="otherresources"><h4 class="subheadbold">Jiné zdroje:</h4></a>
             <ol>
                 <li><p>Mailový seznam pro aktualizace: <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. Přijímat a posílat maily na
                         <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. Tento seznam se používá výhradně na

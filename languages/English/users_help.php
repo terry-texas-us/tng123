@@ -5,7 +5,7 @@ echo help_header("Help: Users");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -36,7 +36,7 @@ echo help_header("Help: Users");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><h4 class="subheadbold">Search</h4></a>
             <p>Locate existing users by searching for all or part of the <strong>Username, Description, Real Name</strong> or <strong>E-mail</strong>.
                 Check the "Show
                 Admin users only" option to further narrow your search.
@@ -45,7 +45,7 @@ echo help_header("Help: Users");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <span class="optionhead">Actions</span>
+            <h5 class="optionhead">Actions</h5>
             <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one record at a time, click
                 the box in the
                 <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -58,7 +58,7 @@ echo help_header("Help: Users");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="add"><p class="subheadbold">Adding New Users</p></a>
+            <a id="add"><h4 class="subheadbold">Adding New Users</h4></a>
             <p>Setting up user records for your visitors allows you to give them special rights that they can enjoy only after logging in with their
                 username and password. The
                 first user you create should be the administrator (someone who has all rights and is not restricted to any tree, usually yourself). If
@@ -74,40 +74,43 @@ echo help_header("Help: Users");
                 next to that user. When
                 adding or editing a user, take note of the following:</p>
 
-            <span class="optionhead">Description</span>
-            <p>Give your user a short description to help you remember who it is. For example, you might enter "Site Administrator" or "Aunt Martha".</p>
+            <h5 class="optionhead">Description</h5>
+            <p>Give your user a short description to help you remember who it is. For example, you might enter "Site Administrator" or "Aunt
+                Martha".</p>
 
-            <span class="optionhead">Username</span></span>
-            <p>A unique one-word identifier for this user (no two users may have the same username). The user will be required to enter the username when logging in. 20 characters max.</p>
+            <h5 class="optionhead">Username</span></h5>
+            <p>A unique one-word identifier for this user (no two users may have the same username). The user will be required to enter the username
+                when logging in. 20 characters max.</p>
 
-            <span class="optionhead">Password</span>
-            <p>A secret word or string of characters (no spaces) that this user must also enter when logging in. When entered by the user in the appropriate field, the actual
+            <h5 class="optionhead">Password</h5>
+            <p>A secret word or string of characters (no spaces) that this user must also enter when logging in. When entered by the user in the
+                appropriate field, the actual
                 characters typed will be replaced on the screen by asterisks or some other character for privacy. 20 chars max. The password
                 is encrypted in the database and may not be retrieved for viewing by anyone, including this user and Next Generation Software.</p>
 
-            <span class="optionhead">Real Name</span>
+            <h5 class="optionhead">Real Name</h5>
             <p>The actual name (if applicable) of the user assigned to this information.</p>
 
-            <span class="optionhead">Phone, E-mail, Web Site, Address, City, State/Province, Zip/Postal Code, Country, Notes</span>
+            <h5 class="optionhead">Phone, E-mail, Web Site, Address, City, State/Province, Zip/Postal Code, Country, Notes</h5>
             <p>Optional information pertaining to the user.</p>
 
-            <span class="optionhead">Do not send mass e-mail to this user</span>
+            <h5 class="optionhead">Do not send mass e-mail to this user</h5>
             <p>Check this box if you do not want any mass e-mail (see below) to be sent to this user.</p>
 
-            <span class="optionhead">Tree / Person ID</span>
+            <h5 class="optionhead">Tree / Person ID</h5>
             <p>If this user corresponds to anyone in your database, you may indicate the Tree and Person ID of their individual record
                 here. Doing this will allow this user to see living data for their own record even if their record is not included in
                 their assigned tree or branch.</p>
 
-            <span class="optionhead">Disabled</span>
+            <h5 class="optionhead">Disabled</h5>
             <p>Check this box to prevent this user from logging in without deleting his or her entire account.</p>
 
-            <span class="optionhead">Roles and Rights</span>
+            <h5 class="optionhead">Roles and Rights</h5>
             <p>See <a href="#rights">below for details on the roles and rights</a> that may be assigned to users.</p>
 
-            <p><span class="optionhead">Required fields:</span> You must enter a username, a password, and a user description. All the other fields
-                are optional, but it is highly
-                recommended that you enter your e-mail address, just in case you forget your username or password at some point.</p>
+            <p><h5 class="optionhead">Required fields:</h5> You must enter a username, a password, and a user description. All the other fields
+            are optional, but it is highly
+            recommended that you enter your e-mail address, just in case you forget your username or password at some point.</p>
 
         </td>
     </tr>
@@ -115,7 +118,7 @@ echo help_header("Help: Users");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="delete"><p class="subheadbold">Deleting Users</p></a>
+            <a id="delete"><h4 class="subheadbold">Deleting Users</h4></a>
             <p>To delete a user, use the <a href="#search">Search</a> tab to locate the user, then click on the Delete icon next to that user record.
                 The row will
                 change color and then vanish as the user is deleted.</p>
@@ -126,7 +129,7 @@ echo help_header("Help: Users");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="review"><p class="subheadbold">Review</p></a>
+            <a id="review"><h4 class="subheadbold">Review</h4></a>
 
             <p>Click on the "Review" tab to manage new user registrations. These user records will not become active until they are edited and saved
                 the first time. Once a record becomes
@@ -136,7 +139,7 @@ echo help_header("Help: Users");
                 editing a new user
                 record, take note of the following:</p>
 
-            <span class="optionhead">Notify this user upon account activation</span>
+            <h5 class="optionhead">Notify this user upon account activation</h5>
             <p>Check this box to send an e-mail notification to the new user upon activation (when the page is saved). The text of the message appears
                 in the box below
                 this option. Changes may be made prior to sending.</p>
@@ -147,7 +150,7 @@ echo help_header("Help: Users");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="rights"><p class="subheadbold">Roles and Rights</p></a>
+            <a id="rights"><h4 class="subheadbold">Roles and Rights</h4></a>
 
             <p>A "Right" is something a user may do when they are logged in. A "Role" is a predefined set of rights, so the
                 list of selected rights (on the right side of the page) will change if you select a different role (the "Allow" rights
@@ -158,55 +161,58 @@ echo help_header("Help: Users");
 
             <p>The following rights can be assigned to a user:</p>
 
-            <span class="optionhead">Allow to add any new data</span>
+            <h5 class="optionhead">Allow to add any new data</h5>
             <p>User may enter the Admin area to add new records, including media.</p>
 
-            <span class="optionhead">Allow to add media only</span>
+            <h5 class="optionhead">Allow to add media only</h5>
             <p>User may enter the Admin area to add new media, but nothing else.</p>
 
-            <span class="optionhead">No Add rights</span>
+            <h5 class="optionhead">No Add rights</h5>
             <p>User may not any new data.</p>
 
-            <span class="optionhead">Allow to edit any existing data</span>
+            <h5 class="optionhead">Allow to edit any existing data</h5>
             <p>User may enter the Admin area to edit existing records, including media.</p>
 
-            <span class="optionhead">Allow to edit media only</span>
+            <h5 class="optionhead">Allow to edit media only</h5>
             <p>User may enter the Admin area to edit existing media, but nothing else.</p>
 
-            <span class="optionhead">Allow to submit edits for administrative review</span>
+            <h5 class="optionhead">Allow to submit edits for administrative review</h5>
             <p>User may not enter the Admin area for editing purposes. Tentative changes may be made from the public area by clicking on the small
-                Edit icon next to eligible events on the Individual and Family Group pages. Changes do not become permanent until approved by the administrator.</p>
+                Edit icon next to eligible events on the Individual and Family Group pages. Changes do not become permanent until approved by the
+                administrator.</p>
 
-            <span class="optionhead">No Edit rights</span>
+            <h5 class="optionhead">No Edit rights</h5>
             <p>User may not make changes to existing records.</p>
 
-            <span class="optionhead">Allow to delete any existing data</span>
+            <h5 class="optionhead">Allow to delete any existing data</h5>
             <p>User may enter the Admin area to delete existing records, including media.</p>
 
-            <span class="optionhead">Allow to delete media</span>
+            <h5 class="optionhead">Allow to delete media</h5>
             <p>User may enter the Admin area to delete media, but nothing else.</p>
 
-            <span class="optionhead">No Delete rights</span>
+            <h5 class="optionhead">No Delete rights</h5>
             <p>User may not delete any existing records.</p>
 
             <p>These rights are independent of the selected Role:</p>
 
-            <span class="optionhead">Allow to view information for living individuals</span>
+            <h5 class="optionhead">Allow to view information for living individuals</h5>
             <p>User may view information for living individuals while in the public area.</p>
 
-            <span class="optionhead">Allow to view information for private individuals</span>
+            <h5 class="optionhead">Allow to view information for private individuals</h5>
             <p>User may view information for private individuals while in the public area.</p>
 
-            <span class="optionhead">Allow to download GEDCOMs</span>
-            <p>User may use the GEDCOM tab to download a GEDCOM file from the GEDCOM tab in the public area. This overrides the setting for each tree in Admin/Trees.</p>
+            <h5 class="optionhead">Allow to download GEDCOMs</h5>
+            <p>User may use the GEDCOM tab to download a GEDCOM file from the GEDCOM tab in the public area. This overrides the setting for each tree
+                in Admin/Trees.</p>
 
-            <span class="optionhead">Allow to download PDfs</span>
-            <p>User may use the PDF option to create a PDF file from various pages in the public area. This overrides the setting for each tree in Admin/Trees.</p>
+            <h5 class="optionhead">Allow to download PDfs</h5>
+            <p>User may use the PDF option to create a PDF file from various pages in the public area. This overrides the setting for each tree in
+                Admin/Trees.</p>
 
-            <span class="optionhead">Allow to view LDS information</span>
+            <h5 class="optionhead">Allow to view LDS information</h5>
             <p>User may view LDS information while in the public area.</p>
 
-            <span class="optionhead">Allow to edit user profile</span>
+            <h5 class="optionhead">Allow to edit user profile</h5>
             <p>User may edit their user information (username, password, etc.) from a link in the public area.</p>
 
         </td>
@@ -215,23 +221,24 @@ echo help_header("Help: Users");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="limits"><p class="subheadbold">Access Limits</p></a>
+            <a id="limits"><h4 class="subheadbold">Access Limits</h4></a>
 
             <p>These define the limits of a user's rights. All users (including anonymous visitors) may view information for deceased individuals at
                 any time. No rights or access
                 limits are required.</p>
 
-            <span class="optionhead">Allow access to all system settings...</span>
+            <h5 class="optionhead">Allow access to all system settings...</h5>
             <p>Check this option to allow the user to access system-wide options, such as the General Settings or Users.</p>
 
-            <span class="optionhead">Restrict to Tree/Branch</span>
+            <h5 class="optionhead">Restrict to Tree/Branch</h5>
             <p>To restrict a user's rights to a particular tree, select that tree here. To restrict rights to a particular branch within the
                 selected tree, select that branch here as well. Assigning a user to a branch will not prevent that user from seeing other individuals
                 not in that branch.</p>
 
-            <span class="optionhead">Apply rights to multiple trees</span>
+            <h5 class="optionhead">Apply rights to multiple trees</h5>
             <p>To restrict a user's rights to more than one tree, select this option and then Ctrl+click or Command+click those trees here. When
-                the user logs in for the first time, the first tree in the list will be selected. The user can switch trees using the dropdown in the upper
+                the user logs in for the first time, the first tree in the list will be selected. The user can switch trees using the dropdown in the
+                upper
                 right corner of the Admin menu (the dropdown is only visible when an alternate tree selection is available). Subsequent logins from
                 the
                 same browser will result in the most recently used tree being selected to start.
@@ -243,19 +250,19 @@ echo help_header("Help: Users");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="email"><p class="subheadbold">E-mail</p></a>
+            <a id="email"><h4 class="subheadbold">E-mail</h4></a>
             <p>This tab allows you to send e-mail to all users, or all users assigned to a particular tree/branch combination.</p>
 
-            <span class="optionhead">Subject</span>
+            <h5 class="optionhead">Subject</h5>
             <p>The subject of your e-mail.</p>
 
-            <span class="optionhead">Text</span>
+            <h5 class="optionhead">Text</h5>
             <p>The body of your e-mail.</p>
 
-            <span class="optionhead">Tree</span>
+            <h5 class="optionhead">Tree</h5>
             <p>If you want to send this message only to users assigned to a particular tree, select that tree here.</p>
 
-            <span class="optionhead">Branch</span>
+            <h5 class="optionhead">Branch</h5>
             <p>If you want to send this message only to users assigned to a particular branch within the selected tree,
                 select that branch here.</p>
 
