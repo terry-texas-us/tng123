@@ -18,7 +18,7 @@ echo help_header("Nápověda: Více");
                 <a href="events_help.php" class="lightlink">&laquo; Nápověda: Události</a> &nbsp; | &nbsp;
                 <a href="media_help.php" class="lightlink">Nápověda: Média &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Více</span>
+            <h2 class="largeheader">Nápověda: <small>Více</small></h2>
             <p class="smaller menu">
                 <a href="#more" class="lightlink">Více informací</a>
             </p>

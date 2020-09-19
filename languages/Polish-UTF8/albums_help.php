@@ -14,14 +14,14 @@ echo help_header("Pomoc: Albumy");
                 <a href="collections_help.php" class="lightlink">&laquo; Pomoc: Kolekcje</a> &nbsp; | &nbsp;
                 <a href="cemeteries_help.php" class="lightlink">Pomoc: Cmentrze &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Albumy</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">Dodaj nowy</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Edytuj istniejący</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-          <a href="#sort" class="lightlink">Sortuj</a>
-      </p>
+            <h2 class="largeheader">Pomoc: <small>Albumy</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj nowy</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edytuj istniejący</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">Sortuj</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

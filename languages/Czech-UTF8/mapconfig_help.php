@@ -18,11 +18,11 @@ echo help_header("Nápověda: Nastavení mapy");
                 <a href="importconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení importu dat</a> &nbsp; | &nbsp;
                 <a href="templateconfig_help.php" class="lightlink">Nápověda: Nastavení šablony &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Nastavení mapy</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow"><span class="normal">
+            <h2 class="largeheader">Nápověda: <small>Nastavení mapy</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow"><span class="normal">
 
 		<span class="optionhead">Klíč k mapě</span>
 		<p>Pro použití map z Google Maps na vašich internetových stránkách musíte od června 2016 získat od Google tzv. <strong>klíč</strong> k mapě. Tento klíč můžete obdržet zde:<br>

@@ -18,7 +18,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
                 <a href="places_googlemap_help.php" class="lightlink">&laquo; N�pov�da: Google Maps</a> &nbsp; | &nbsp;
                 <a href="notes2_help.php" class="lightlink">N�pov�da: Pozn�mky &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Ud�losti �asov� osy</span>
+            <h2 class="largeheader">N�pov�da: <small>Ud�losti �asov� osy</small></h2>
             <p class="smaller menu">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;

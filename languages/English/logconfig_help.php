@@ -14,13 +14,13 @@ echo help_header("Help: Log Settings");
                 <a href="pedconfig_help.php" class="lightlink">&laquo; Help: Chart Settings</a> &nbsp; | &nbsp;
                 <a href="importconfig_help.php" class="lightlink">Help: Import Settings &raquo;</a>
             </p>
-            <span class="largeheader">Help: Log Settings</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <div id="google_translate_element" style="float:right;"></div>
-      <script type="text/javascript">
+            <h2 class="largeheader">Help: <small>Log Settings</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <div id="google_translate_element" style="float:right;"></div>
+            <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
                 }

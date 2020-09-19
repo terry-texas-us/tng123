@@ -18,17 +18,22 @@ echo help_header("Nápověda: Nastavení šablony");
                 <a href="mapconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení mapy</a> &nbsp; | &nbsp;
                 <a href="users_help.php" class="lightlink">Nápověda: Uživatelé &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Nastavení šablony</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <p><span class="optionhead">Použití šablony</span><br>Šablony TNG umožní dát vašim stránkám rychle profesionální vzhled a atmosféru. Chcete-li šablonu použít, nejdříve nastavte
-        "Umožnit výběr šablony" na <strong>Ano</strong>, pak vyberte číslo šablony, kterou chcete (viz volby na
-        <a href="http://lythgoes.net/genealogy/templates.php">http://lythgoes.net/genealogy/templates.php</a>). Po uložení změn bude nová šablony účinkovat.</p>
-      <p>Chcete-li zachovat existující nastavení stránky (z verze před 8.1.0), nechte volbu <strong>Umožnit výběr šablony</strong> nastavenu na <b>Ne</b>.</p>
-      <p><span class="optionhead">Přizpůsobení</span><br>Vaši stránku můžete upravit podle toho, co vám soubory šablon dovolí. Vaše výchozí domovská stránka je index.php, vaše
-        výchozí záhlaví a zápatí je topmenu.php a footer.php. Soubory s těmito názvy jsou umístěny uvnitř složky každé šablony. Specifický "styl" šablony (barvy, písma a jiné
+            <h2 class="largeheader">Nápověda: <small>Nastavení šablony</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <p><span class="optionhead">Použití šablony</span><br>Šablony TNG umožní dát vašim stránkám rychle profesionální vzhled a atmosféru.
+                Chcete-li šablonu použít, nejdříve nastavte
+                "Umožnit výběr šablony" na <strong>Ano</strong>, pak vyberte číslo šablony, kterou chcete (viz volby na
+                <a href="http://lythgoes.net/genealogy/templates.php">http://lythgoes.net/genealogy/templates.php</a>). Po uložení změn bude nová
+                šablony účinkovat.</p>
+            <p>Chcete-li zachovat existující nastavení stránky (z verze před 8.1.0), nechte volbu <strong>Umožnit výběr šablony</strong> nastavenu na
+                <b>Ne</b>.</p>
+            <p><span class="optionhead">Přizpůsobení</span><br>Vaši stránku můžete upravit podle toho, co vám soubory šablon dovolí. Vaše výchozí
+                domovská stránka je index.php, vaše
+                výchozí záhlaví a zápatí je topmenu.php a footer.php. Soubory s těmito názvy jsou umístěny uvnitř složky každé šablony. Specifický
+                "styl" šablony (barvy, písma a jiné
         formátování) je definováno v souboru templatestyle.css (v podsložce "css" u každé šablony), ale pokud chcete něco měnit, je lepší změny provést
         v souboru mytngstyle.css (také v podsložce "css" u každé šablony), takže vaše změny nebudou v budoucnu přepsány aktualizací programu.</p>
       <p><span class="optionhead">Podpora více jazyků</span><br>Pokud chcete, aby byla nějaká zpráva v nastavení šablony dostupná v jiném jazyku,

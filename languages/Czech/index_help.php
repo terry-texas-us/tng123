@@ -18,14 +18,14 @@ echo help_header("N�pov�da: Administrace");
                 <a href="modmanager_help.php" class="lightlink">&laquo; N�pov�da: Mana�er m�d�</a> &nbsp; | &nbsp;
                 <a href="people_help.php" class="lightlink">N�pov�da: Osoby &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Za��n�me</span>
-        <p class="smaller menu">
-            <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp; | &nbsp;
-            <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp; | &nbsp;
-            <a href="#otherresources" class="lightlink">Jin� zdroje</a>
-        </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">N�pov�da: <small>Za��n�me</small></h2>
+            <p class="smaller menu">
+                <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp; | &nbsp;
+                <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp; | &nbsp;
+                <a href="#otherresources" class="lightlink">Jin� zdroje</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <a id="gettingstarted"><p class="subheadbold">Za��n�me:</p></a>

@@ -18,13 +18,13 @@ echo help_header("N�pov�da: Rodiny");
                 <a href="people_help.php" class="lightlink">&laquo; N�pov�da: Osoby</a> &nbsp; | &nbsp;
                 <a href="sources_help.php" class="lightlink">N�pov�da: Prameny &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Rodiny</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#review" class="lightlink">P�ezkoumat</a>
+            <h2 class="largeheader">N�pov�da: <small>Rodiny</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">P�ezkoumat</a>
             </p>
         </td>
     </tr>

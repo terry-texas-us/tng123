@@ -18,13 +18,13 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
                 <a href="branches_help.php" class="lightlink">&laquo; N�pov�da: V�tve</a> &nbsp; | &nbsp;
                 <a href="reports_help.php" class="lightlink">N�pov�da: Reporty &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Vlastn� typy ud�lost�</span>
-      <p class="smaller menu">
-          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-          <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a>
-      </p>
+            <h2 class="largeheader">N�pov�da: <small>Vlastn� typy ud�lost�</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+                <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

@@ -14,13 +14,13 @@ echo help_header("Help: Cemeteries");
                 <a href="albums_help.php" class="lightlink">&laquo; Help: Albums</a> &nbsp; | &nbsp;
                 <a href="places_help.php" class="lightlink">Help: Places &raquo;</a>
             </p>
-            <span class="largeheader">Help: Cemeteries</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a>
-      </p>
-    </td>
+            <h2 class="largeheader">Help: <small>Cemeteries</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

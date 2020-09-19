@@ -14,17 +14,17 @@ echo help_header("Pomoc: Mapy Google");
                 <a href="places_help.php" class="lightlink">&laquo; Pomoc: Miejsca</a> &nbsp; | &nbsp;
                 <a href="tlevents_help.php" class="lightlink">Pomoc: Linia czasu wydarzeń &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Mapy Google</span>
-      <p class="smaller menu">
-        <a href="#show" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
-        <a href="#help" class="lightlink">Pomoc</a>
-      </p>
-    </td>
-  </tr>
-  <tr class="databack">
-      <td class="tngshadow">
+            <h2 class="largeheader">Pomoc: <small>Mapy Google</small></h2>
+            <p class="smaller menu">
+                <a href="#show" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
+                <a href="#help" class="lightlink">Pomoc</a>
+            </p>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
           <p><span class="subheadbold">Pokaż/ukryj mapę Google</span><br><br>
               Kliknij przycisk "Pokaż /ukryj mapę Google", aby pokazać mapę Google i szukać szerokości i długości geograficznej lokalizacji oraz
               zoomu, lub ukryć mapę po

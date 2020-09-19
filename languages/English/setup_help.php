@@ -14,13 +14,13 @@ echo help_header("Help: Setup");
                 <a href="second_help.php" class="lightlink">&laquo; Help: Secondary Processes</a> &nbsp; | &nbsp;
                 <a href="config_help.php" class="lightlink">Help: General Settings &raquo;</a>
             </p>
-            <span class="largeheader">Help: Setup</span>
-      <p class="smaller menu">
-        <a href="#config" class="lightlink">Configuration</a> &nbsp; | &nbsp;
-        <a href="#diag" class="lightlink">Diagnostics</a> &nbsp; | &nbsp;
-        <a href="#tables" class="lightlink">Table Creation</a>
-      </p>
-    </td>
+            <h2 class="largeheader">Help: <small>Setup</small></h2>
+            <p class="smaller menu">
+                <a href="#config" class="lightlink">Configuration</a> &nbsp; | &nbsp;
+                <a href="#diag" class="lightlink">Diagnostics</a> &nbsp; | &nbsp;
+                <a href="#tables" class="lightlink">Table Creation</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

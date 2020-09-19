@@ -14,7 +14,7 @@ echo help_header("N�pov�da: Pozn�mky");
                 <a href="tlevents_help.php" class="lightlink">&laquo; N�pov�da: Ud�losti �asov� osy</a> &nbsp; | &nbsp;
                 <a href="misc_help.php" class="lightlink">N�pov�da: R�zn� &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Pozn�mky</span>
+            <h2 class="largeheader">N�pov�da: <small>Pozn�mky</small></h2>
             <p class="smaller menu">
                 <a href="#notes" class="lightlink">Pozn�mky</a>
             </p>

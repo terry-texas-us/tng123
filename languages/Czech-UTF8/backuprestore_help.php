@@ -18,7 +18,7 @@ echo help_header("Nápověda: Obslužné programy");
                 <a href="languages_help.php" class="lightlink">&laquo; Nápověda: Jazyky</a> &nbsp; | &nbsp;
                 <a href="modmanager_help.php" class="lightlink">Nápověda: Manažer módů &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Obslužné programy</span>
+            <h2 class="largeheader">Nápověda: <small>Obslužné programy</small></h2>
             <p class="smaller menu">
                 <a href="#tables" class="lightlink">Záloha - Obnova - Optimalizace</a> &nbsp; | &nbsp;
                 <a href="#structure" class="lightlink">Záloha struktury tabulek</a> &nbsp; | &nbsp;

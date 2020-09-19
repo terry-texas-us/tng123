@@ -14,17 +14,17 @@ echo help_header("Nápověda: Testy DNA");
                 <a href="reports_help.php" class="lightlink">&laquo; Nápověda: Reporty</a> &nbsp; | &nbsp;
                 <a href="languages_help.php" class="lightlink">Nápověda: Jazyky &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Testy DNA</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-        <a href="#ydna" class="lightlink">Pole Y-DNA</a> &nbsp; | &nbsp;
-          <a href="#mtdna" class="lightlink">Pole mtDNA</a> &nbsp; | &nbsp;
-          <a href="#atdna" class="lightlink">Pole atDNA</a> &nbsp; | &nbsp;
-          <a href="#common" class="lightlink">Společná pole</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a>
-      </p>
+            <h2 class="largeheader">Nápověda: <small>Testy DNA</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+                <a href="#ydna" class="lightlink">Pole Y-DNA</a> &nbsp; | &nbsp;
+                <a href="#mtdna" class="lightlink">Pole mtDNA</a> &nbsp; | &nbsp;
+                <a href="#atdna" class="lightlink">Pole atDNA</a> &nbsp; | &nbsp;
+                <a href="#common" class="lightlink">Společná pole</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

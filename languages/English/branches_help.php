@@ -14,13 +14,13 @@ echo help_header("Help: Branches");
                 <a href="trees_help.php" class="lightlink">&laquo; Help: Trees</a> &nbsp; | &nbsp;
                 <a href="eventtypes_help.php" class="lightlink">Help: Custom Event Types &raquo;</a>
             </p>
-            <span class="largeheader">Help: Branches</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-        <a href="#label" class="lightlink">Label</a>
+            <h2 class="largeheader">Help: <small>Branches</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+                <a href="#label" class="lightlink">Label</a>
             </p>
         </td>
     </tr>
@@ -86,8 +86,10 @@ echo help_header("Help: Branches");
 
             <span class="optionhead">Starting Individual</span>
             <p>Enter or find the ID of the individual with whom your branch begins. All
-                partial branches are defined by a starting individual and a number of ancestral or descendant generations from that individual. You can add additional names
-                by repeating this process and picking a different "Starting Individual". When you save your branch, only the most recent Starting Individual will be remembered,
+                partial branches are defined by a starting individual and a number of ancestral or descendant generations from that individual. You
+                can add additional names
+                by repeating this process and picking a different "Starting Individual". When you save your branch, only the most recent Starting
+                Individual will be remembered,
                 but all labels added previously will not be affected.</p>
 
             <span class="optionhead">Number of Generations</span>

@@ -14,14 +14,14 @@ echo help_header("Pomoc: Wydarzenia");
                 <a href="citations_help.php" class="lightlink">&laquo; Pomoc: Cytaty</a> &nbsp; | &nbsp;
                 <a href="more_help.php" class="lightlink">Pomoc: Więcej &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Wydarzenia</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
-          <a href="#del" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-          <a href="#citations" class="lightlink">Cytaty</a>
-      </p>
+            <h2 class="largeheader">Pomoc: <small>Wydarzenia</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
+                <a href="#del" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+                <a href="#citations" class="lightlink">Cytaty</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

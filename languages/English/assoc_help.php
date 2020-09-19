@@ -14,13 +14,13 @@ echo help_header("Help: Associations");
                 <a href="repositories_help.php" class="lightlink">&laquo; Help: Repositories</a> &nbsp; | &nbsp;
                 <a href="notes_help.php" class="lightlink">Help: Notes &raquo;</a>
             </p>
-            <span class="largeheader">Help: Associations</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add/Edit/Delete</a>
-      </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>Associations</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add/Edit/Delete</a>
+            </p>
+        </td>
+    </tr>
 
     <tr class="databack">
         <td class="tngshadow">
@@ -62,18 +62,23 @@ echo help_header("Help: Associations");
             <p>While adding or editing an association, take note of the following:</p>
 
             <span class="optionhead">Person ID or Family ID</span>
-            <p>Enter the ID of the person or family to be associated with the active person or family, or click the Find icon to search for the ID.</p>
+            <p>Enter the ID of the person or family to be associated with the active person or family, or click the Find icon to search for the
+                ID.</p>
 
             <span class="optionhead">Relationship</span>
             <p>Enter the nature of the association. For example, <em>Godfather</em>, <em>Mentor</em> or <em>Witness</em>.</p>
 
             <span class="optionhead">Reverse Association?</span>
-            <p>Sometimes an association goes both ways. For example, an association relationship of <em>Friend</em> could apply in both directions. If that
-                is true and you want to create a second association going in the reverse direction, then check this box. If the relationship doesn't seem to
-                apply when the association is reversed (e.g., <em>Godfather</em> or <em>Mentor</em>), then you should create a different association, starting
+            <p>Sometimes an association goes both ways. For example, an association relationship of <em>Friend</em> could apply in both directions. If
+                that
+                is true and you want to create a second association going in the reverse direction, then check this box. If the relationship doesn't
+                seem to
+                apply when the association is reversed (e.g., <em>Godfather</em> or <em>Mentor</em>), then you should create a different association,
+                starting
                 from the other person or family, to show the reverse relationship.</p>
 
-            <p>When you are done adding, editing or deleting associations for this person or family, click the "Finish" button to close the window.</p>
+            <p>When you are done adding, editing or deleting associations for this person or family, click the "Finish" button to close the
+                window.</p>
 
         </td>
     </tr>

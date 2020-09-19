@@ -18,7 +18,7 @@ echo help_header("N�pov�da: V�ce");
                 <a href="events_help.php" class="lightlink">&laquo; N�pov�da: Ud�losti</a> &nbsp; | &nbsp;
                 <a href="media_help.php" class="lightlink">N�pov�da: M�dia &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: V�ce</span>
+            <h2 class="largeheader">N�pov�da: <small>V�ce</small></h2>
             <p class="smaller menu">
                 <a href="#more" class="lightlink">V�ce informac�</a>
             </p>

@@ -14,12 +14,12 @@ echo help_header("Help: More");
                 <a href="events_help.php" class="lightlink">&laquo; Help: Events</a> &nbsp; | &nbsp;
                 <a href="media_help.php" class="lightlink">Help: Media &raquo;</a>
             </p>
-            <span class="largeheader">Help: More</span>
-      <p class="smaller menu">
-        <a href="#more" class="lightlink">More Information</a>
-      </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>More</small></h2>
+            <p class="smaller menu">
+                <a href="#more" class="lightlink">More Information</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>

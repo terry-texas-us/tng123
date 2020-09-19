@@ -18,7 +18,7 @@ echo help_header("Nápověda: Import dat");
                 <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
                 <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Import / Export</span>
+            <h2 class="largeheader">Nápověda: <small>Import / Export</small></h2>
             <p class="smaller menu">
                 <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
                 <a href="#export" class="lightlink">GEDCOM Export</a>

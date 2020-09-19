@@ -18,13 +18,13 @@ echo help_header("Nápověda: Základní nastavení");
                 <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
                 <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Základní nastavení</span>
-      <p class="smaller menu">
-        <a href="#data" class="lightlink">Databáze</a> &nbsp; | &nbsp;
-        <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
-        <a href="#path" class="lightlink">Umístění a složky</a> &nbsp; | &nbsp;
-        <a href="#site" class="lightlink">Stránka</a> &nbsp; | &nbsp;
-        <a href="#media" class="lightlink">Média</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Nápověda: <small>Základní nastavení</small></h2>
+            <p class="smaller menu">
+                <a href="#data" class="lightlink">Databáze</a> &nbsp; | &nbsp;
+                <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
+                <a href="#path" class="lightlink">Umístění a složky</a> &nbsp; | &nbsp;
+                <a href="#site" class="lightlink">Stránka</a> &nbsp; | &nbsp;
+                <a href="#media" class="lightlink">Média</a> &nbsp; | &nbsp;
                 <a href="#lang" class="lightlink">Jazyk</a> &nbsp; | &nbsp;
                 <a href="#priv" class="lightlink">Ochrana údajů</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Jména</a> &nbsp; | &nbsp;

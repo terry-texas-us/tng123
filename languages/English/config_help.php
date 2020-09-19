@@ -14,13 +14,13 @@ echo help_header("Help: General Settings");
                 <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
                 <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
             </p>
-            <span class="largeheader">Help: General Settings</span>
-      <p class="smaller menu">
-        <a href="#data" class="lightlink">Database</a> &nbsp; | &nbsp;
-        <a href="#table" class="lightlink">Tables</a> &nbsp; | &nbsp;
-        <a href="#path" class="lightlink">Paths+Folders</a> &nbsp; | &nbsp;
-        <a href="#site" class="lightlink">Site</a> &nbsp; | &nbsp;
-        <a href="#media" class="lightlink">Media</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Help: <small>General Settings</small></h2>
+            <p class="smaller menu">
+                <a href="#data" class="lightlink">Database</a> &nbsp; | &nbsp;
+                <a href="#table" class="lightlink">Tables</a> &nbsp; | &nbsp;
+                <a href="#path" class="lightlink">Paths+Folders</a> &nbsp; | &nbsp;
+                <a href="#site" class="lightlink">Site</a> &nbsp; | &nbsp;
+                <a href="#media" class="lightlink">Media</a> &nbsp; | &nbsp;
                 <a href="#lang" class="lightlink">Language</a> &nbsp; | &nbsp;
                 <a href="#priv" class="lightlink">Privacy</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Names</a> &nbsp; | &nbsp;

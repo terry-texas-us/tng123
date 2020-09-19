@@ -18,17 +18,16 @@ echo help_header("Nápověda: Manažer módů");
                 <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
                 <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Manažer módů
-        </span>
-      <p class="smaller menu">
-        <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
-          <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-          <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-          <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
-          <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
-          <a href="#batch" class="lightlink">Dávková instalace</a> &nbsp; | &nbsp;
-          <a href="#options" class="lightlink">Možnosti</a>
-      </p></td>
+            <h2 class="largeheader">Nápověda: <small>Manažer módů</small></h2>
+            <p class="smaller menu">
+                <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
+                <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
+                <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
+                <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
+                <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
+                <a href="#batch" class="lightlink">Dávková instalace</a> &nbsp; | &nbsp;
+                <a href="#options" class="lightlink">Možnosti</a>
+            </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

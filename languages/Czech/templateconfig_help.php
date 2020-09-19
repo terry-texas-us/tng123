@@ -18,17 +18,22 @@ echo help_header("N�pov�da: Nastaven� �ablony");
                 <a href="mapconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� mapy</a> &nbsp; | &nbsp;
                 <a href="users_help.php" class="lightlink">N�pov�da: U�ivatel� &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Nastaven� �ablony</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <p><span class="optionhead">Pou�it� �ablony</span><br>�ablony TNG umo�n� d�t va�im str�nk�m rychle profesion�ln� vzhled a atmosf�ru. Chcete-li �ablonu pou��t, nejd��ve nastavte
-        "Umo�nit v�b�r �ablony" na <strong>Ano</strong>, pak vyberte ��slo �ablony, kterou chcete (viz volby na
-        <a href="http://lythgoes.net/genealogy/templates.php">http://lythgoes.net/genealogy/templates.php</a>). Po ulo�en� zm�n bude nov� �ablony ��inkovat.</p>
-      <p>Chcete-li zachovat existuj�c� nastaven� str�nky (z verze p�ed 8.1.0), nechte volbu <strong>Umo�nit v�b�r �ablony</strong> nastavenu na <b>Ne</b>.</p>
-      <p><span class="optionhead">P�izp�soben�</span><br>Va�i str�nku m��ete upravit podle toho, co v�m soubory �ablon dovol�. Va�e v�choz� domovsk� str�nka je index.php, va�e
-        v�choz� z�hlav� a z�pat� je topmenu.php a footer.php. Soubory s t�mito n�zvy jsou um�st�ny uvnit� slo�ky ka�d� �ablony. Specifick� "styl" �ablony (barvy, p�sma a jin�
+            <h2 class="largeheader">N�pov�da: <small>Nastaven� �ablony</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <p><span class="optionhead">Pou�it� �ablony</span><br>�ablony TNG umo�n� d�t va�im str�nk�m rychle profesion�ln� vzhled a atmosf�ru.
+                Chcete-li �ablonu pou��t, nejd��ve nastavte
+                "Umo�nit v�b�r �ablony" na <strong>Ano</strong>, pak vyberte ��slo �ablony, kterou chcete (viz volby na
+                <a href="http://lythgoes.net/genealogy/templates.php">http://lythgoes.net/genealogy/templates.php</a>). Po ulo�en� zm�n bude nov�
+                �ablony ��inkovat.</p>
+            <p>Chcete-li zachovat existuj�c� nastaven� str�nky (z verze p�ed 8.1.0), nechte volbu <strong>Umo�nit v�b�r �ablony</strong> nastavenu na
+                <b>Ne</b>.</p>
+            <p><span class="optionhead">P�izp�soben�</span><br>Va�i str�nku m��ete upravit podle toho, co v�m soubory �ablon dovol�. Va�e v�choz�
+                domovsk� str�nka je index.php, va�e
+                v�choz� z�hlav� a z�pat� je topmenu.php a footer.php. Soubory s t�mito n�zvy jsou um�st�ny uvnit� slo�ky ka�d� �ablony. Specifick�
+                "styl" �ablony (barvy, p�sma a jin�
         form�tov�n�) je definov�no v souboru templatestyle.css (v podslo�ce "css" u ka�d� �ablony), ale pokud chcete n�co m�nit, je lep�� zm�ny prov�st
         v souboru mytngstyle.css (tak� v podslo�ce "css" u ka�d� �ablony), tak�e va�e zm�ny nebudou v budoucnu p�eps�ny aktualizac� programu.</p>
       <p><span class="optionhead">Podpora v�ce jazyk�</span><br>Pokud chcete, aby byla n�jak� zpr�va v nastaven� �ablony dostupn� v jin�m jazyku,

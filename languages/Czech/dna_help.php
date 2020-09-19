@@ -14,17 +14,17 @@ echo help_header("N�pov�da: Testy DNA");
                 <a href="reports_help.php" class="lightlink">&laquo; N�pov�da: Reporty</a> &nbsp; | &nbsp;
                 <a href="languages_help.php" class="lightlink">N�pov�da: Jazyky &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Testy DNA</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-        <a href="#ydna" class="lightlink">Pole Y-DNA</a> &nbsp; | &nbsp;
-          <a href="#mtdna" class="lightlink">Pole mtDNA</a> &nbsp; | &nbsp;
-          <a href="#atdna" class="lightlink">Pole atDNA</a> &nbsp; | &nbsp;
-          <a href="#common" class="lightlink">Spole�n� pole</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a>
-      </p>
+            <h2 class="largeheader">N�pov�da: <small>Testy DNA</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+                <a href="#ydna" class="lightlink">Pole Y-DNA</a> &nbsp; | &nbsp;
+                <a href="#mtdna" class="lightlink">Pole mtDNA</a> &nbsp; | &nbsp;
+                <a href="#atdna" class="lightlink">Pole atDNA</a> &nbsp; | &nbsp;
+                <a href="#common" class="lightlink">Spole�n� pole</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

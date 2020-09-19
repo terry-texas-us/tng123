@@ -18,15 +18,15 @@ echo help_header("Nápověda: Nastavení schémat");
                 <a href="config_help.php" class="lightlink">&laquo; Nápověda: Základní nastavení</a> &nbsp; | &nbsp;
                 <a href="logconfig_help.php" class="lightlink">Nápověda: Nastavení protokolování &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Nastavení schémat</span>
-      <p class="smaller menu">
-        <a href="#ped" class="lightlink">Předkové</a> &nbsp; | &nbsp;
-          <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-          <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp; | &nbsp;
-          <a href="#time" class="lightlink">Časová osa</a> &nbsp; | &nbsp;
-          <a href="#common" class="lightlink">Společné prvky</a> &nbsp; | &nbsp;
-          <a href="#thumb" class="lightlink">Náhledy</a>
-      </p>
+            <h2 class="largeheader">Nápověda: <small>Nastavení schémat</small></h2>
+            <p class="smaller menu">
+                <a href="#ped" class="lightlink">Předkové</a> &nbsp; | &nbsp;
+                <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
+                <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp; | &nbsp;
+                <a href="#time" class="lightlink">Časová osa</a> &nbsp; | &nbsp;
+                <a href="#common" class="lightlink">Společné prvky</a> &nbsp; | &nbsp;
+                <a href="#thumb" class="lightlink">Náhledy</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

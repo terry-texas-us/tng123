@@ -14,12 +14,12 @@ echo help_header("Help: Secondary Processes");
                 <a href="data_help.php" class="lightlink">&laquo; Help: Import / Export</a> &nbsp; | &nbsp;
                 <a href="setup_help.php" class="lightlink">Help: Setup &raquo;</a>
             </p>
-            <span class="largeheader">Help: Secondary Processes</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">What are they?</a>
-      </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>Secondary Processes</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">What are they?</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>

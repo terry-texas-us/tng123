@@ -14,13 +14,13 @@ echo help_header("Help: Custom Event Types");
                 <a href="branches_help.php" class="lightlink">&laquo; Help: Branches</a> &nbsp; | &nbsp;
                 <a href="reports_help.php" class="lightlink">Help: Reports &raquo;</a>
             </p>
-            <span class="largeheader">Help: Custom Event Types</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-        <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a>
-      </p>
+            <h2 class="largeheader">Help: <small>Custom Event Types</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+                <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

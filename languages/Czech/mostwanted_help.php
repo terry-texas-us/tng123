@@ -18,13 +18,13 @@ echo help_header("N�pov�da: Hled� se");
                 <a href="misc_help.php" class="lightlink">&laquo; N�pov�da: R�zn�</a> &nbsp; | &nbsp;
                 <a href="data_help.php" class="lightlink">N�pov�da: Import / Export &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Hled� se</span>
-      <p class="smaller menu">
-        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-          <a href="#sort" class="lightlink">T��dit</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a>
-      </p>
+            <h2 class="largeheader">N�pov�da: <small>Hled� se</small></h2>
+            <p class="smaller menu">
+                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">T��dit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

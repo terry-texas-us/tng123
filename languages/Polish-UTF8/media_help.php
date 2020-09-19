@@ -14,17 +14,17 @@ echo help_header("Pomoc: Media");
                 <a href="more_help.php" class="lightlink">&laquo; Pomoc: Więcej</a> &nbsp; | &nbsp;
                 <a href="collections_help.php" class="lightlink">Pomoc: Kolekcje &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Media</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-        <a href="#convert" class="lightlink">Konwertuj</a> &nbsp; | &nbsp;
-          <a href="#album" class="lightlink">Dodaj do albumu</a> &nbsp; | &nbsp;
-          <a href="#sort" class="lightlink">Sortuj</a> &nbsp; | &nbsp;
-          <a href="#thumbs" class="lightlink">Miniaturki</a> &nbsp; | &nbsp;
-          <a href="#import" class="lightlink">Import</a>
+            <h2 class="largeheader">Pomoc: <small>Media</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+                <a href="#convert" class="lightlink">Konwertuj</a> &nbsp; | &nbsp;
+                <a href="#album" class="lightlink">Dodaj do albumu</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">Sortuj</a> &nbsp; | &nbsp;
+                <a href="#thumbs" class="lightlink">Miniaturki</a> &nbsp; | &nbsp;
+                <a href="#import" class="lightlink">Import</a>
       </p>
         </td>
     </tr>

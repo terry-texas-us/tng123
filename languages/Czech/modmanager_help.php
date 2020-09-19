@@ -18,17 +18,16 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp; | &nbsp;
                 <a href="index_help.php" class="lightlink">N�pov�da: Za��n�me &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Mana�er m�d�
-        </span>
-      <p class="smaller menu">
-        <a href="#overview" class="lightlink">P�ehled</a> &nbsp; | &nbsp;
-          <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-          <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-          <a href="#syntax" class="lightlink">Syntaxe m�d�</a> &nbsp; | &nbsp;
-          <a href="#files" class="lightlink">Konfigura�n� soubory</a> &nbsp; | &nbsp;
-          <a href="#batch" class="lightlink">D�vkov� instalace</a> &nbsp; | &nbsp;
-          <a href="#options" class="lightlink">Mo�nosti</a>
-      </p></td>
+            <h2 class="largeheader">N�pov�da: <small>Mana�er m�d�</small></h2>
+            <p class="smaller menu">
+                <a href="#overview" class="lightlink">P�ehled</a> &nbsp; | &nbsp;
+                <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
+                <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
+                <a href="#syntax" class="lightlink">Syntaxe m�d�</a> &nbsp; | &nbsp;
+                <a href="#files" class="lightlink">Konfigura�n� soubory</a> &nbsp; | &nbsp;
+                <a href="#batch" class="lightlink">D�vkov� instalace</a> &nbsp; | &nbsp;
+                <a href="#options" class="lightlink">Mo�nosti</a>
+            </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

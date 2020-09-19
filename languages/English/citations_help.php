@@ -14,13 +14,13 @@ echo help_header("Help: Citations");
                 <a href="notes_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
                 <a href="events_help.php" class="lightlink">Help: Events &raquo;</a>
             </p>
-            <span class="largeheader">Help: Citations</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add/Edit/Delete</a>
-      </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>Citations</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add/Edit/Delete</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>

@@ -18,7 +18,7 @@ echo help_header("Nápověda: Nastavení");
                 <a href="second_help.php" class="lightlink">&laquo; Nápověda: Druhotné procesy</a> &nbsp; | &nbsp;
                 <a href="config_help.php" class="lightlink">Nápověda: Základní nastavení &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Nastavení</span>
+            <h2 class="largeheader">Nápověda: <small>Nastavení</small></h2>
             <p class="smaller menu">
                 <a href="#config" class="lightlink">Konfigurace</a> &nbsp; | &nbsp;
                 <a href="#diag" class="lightlink">Diagnostika</a> &nbsp; | &nbsp;

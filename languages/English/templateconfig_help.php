@@ -14,17 +14,17 @@ echo help_header("Help: Template Settings");
                 <a href="mapconfig_help.php" class="lightlink">&laquo; Help: Map Settings</a> &nbsp; | &nbsp;
                 <a href="users_help.php" class="lightlink">Help: Users &raquo;</a>
             </p>
-            <span class="largeheader">Help: Template Settings</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <div id="google_translate_element" style="float:right;"></div>
-      <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-      </script>
+            <h2 class="largeheader">Help: <small>Template Settings</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <div id="google_translate_element" style="float:right;"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+            </script>
       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
       <p><span class="optionhead">Using a Template</span><br>TNG templates allow you to quickly give your site a professional look and feel. To use a template, first set

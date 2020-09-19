@@ -18,17 +18,17 @@ echo help_header("N�pov�da: M�dia");
                 <a href="more_help.php" class="lightlink">&laquo; N�pov�da: V�ce</a> &nbsp; | &nbsp;
                 <a href="collections_help.php" class="lightlink">N�pov�da: Kolekce &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: M�dia</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#convert" class="lightlink">P�ev�st</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">N�pov�da: <small>M�dia</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#convert" class="lightlink">P�ev�st</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">P�idat do alba</a> &nbsp; | &nbsp;
-          <a href="#sort" class="lightlink">Se�adit</a> &nbsp; | &nbsp;
-          <a href="#thumbs" class="lightlink">N�hledy</a> &nbsp; | &nbsp;
-          <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">Se�adit</a> &nbsp; | &nbsp;
+                <a href="#thumbs" class="lightlink">N�hledy</a> &nbsp; | &nbsp;
+                <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
           <a href="#upload" class="lightlink">Nahr�t</a>
       </p>
         </td>

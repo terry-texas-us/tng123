@@ -14,7 +14,7 @@ echo help_header("Pomoc: Kolekcje");
                 <a href="media_help.php" class="lightlink">&laquo; Pomoc: Media</a> &nbsp; | &nbsp;
                 <a href="albums_help.php" class="lightlink">Pomoc: Albumy &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Kolekcje</span>
+            <h2 class="largeheader">Pomoc: <small>Kolekcje</small></h2>
             <p class="smaller menu">
                 <a href="#what" class="lightlink">Co to jest kolekcja?</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">Dodaj/Eytuj/Usuń</a>

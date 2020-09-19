@@ -18,7 +18,7 @@ echo help_header("N�pov�da: Kolekce");
                 <a href="media_help.php" class="lightlink">&laquo; N�pov�da: M�dia</a> &nbsp; | &nbsp;
                 <a href="albums_help.php" class="lightlink">N�pov�da: Alba &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Kolekce</span>
+            <h2 class="largeheader">N�pov�da: <small>Kolekce</small></h2>
             <p class="smaller menu">
                 <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>

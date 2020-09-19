@@ -14,7 +14,7 @@ echo help_header("Pomoc: Notatki");
                 <a href="assoc_help.php" class="lightlink">&laquo; Pomoc: Związki</a> &nbsp; | &nbsp;
                 <a href="citations_help.php" class="lightlink">Pomoc: Cytaty &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Notatki</span>
+            <h2 class="largeheader">Pomoc: <small>Notatki</small></h2>
             <p class="smaller menu">
                 <a href="#add" class="lightlink">Dodaj/Edytuj/Usuń</a> &nbsp; | &nbsp;
                 <a href="#cite" class="lightlink">Notatki</a>

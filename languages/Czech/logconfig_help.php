@@ -18,13 +18,13 @@ echo help_header("N�pov�da: Nastaven� protokolov�n�");
                 <a href="pedconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� sch�mat</a> &nbsp; | &nbsp;
                 <a href="importconfig_help.php" class="lightlink">N�pov�da: Nastaven� importu &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Nastaven� protokolov�n�</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <span class="optionhead">N�zev souboru protokolu</span>
-      <p>N�zev souboru protokolu je soubor, kam jsou zaznamen�v�ny akce n�v�t�vn�k�. P�vodn� n�zev "genlog.txt" byste nem�li m�nit.</p>
+            <h2 class="largeheader">N�pov�da: <small>Nastaven� protokolov�n�</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <span class="optionhead">N�zev souboru protokolu</span>
+            <p>N�zev souboru protokolu je soubor, kam jsou zaznamen�v�ny akce n�v�t�vn�k�. P�vodn� n�zev "genlog.txt" byste nem�li m�nit.</p>
 
             <span class="optionhead">Maxim�ln� po�et ��dk� v protokolu</span>
             <p>Maxim�ln� po�et ��dk� v protokolu ur�uje, kolik akc� by m�l protokol aktu�ln� uchov�vat.

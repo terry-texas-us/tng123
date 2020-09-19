@@ -14,13 +14,13 @@ echo help_header("Help: Media");
                 <a href="more_help.php" class="lightlink">&laquo; Help: More</a> &nbsp; | &nbsp;
                 <a href="collections_help.php" class="lightlink">Help: Collections &raquo;</a>
             </p>
-            <span class="largeheader">Help: Media</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-        <a href="#convert" class="lightlink">Convert</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Help: <small>Media</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+                <a href="#convert" class="lightlink">Convert</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">Add to Album</a> &nbsp; | &nbsp;
                 <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
                 <a href="#thumbs" class="lightlink">Thumbnails</a> &nbsp; | &nbsp;

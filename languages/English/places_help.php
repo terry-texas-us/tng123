@@ -14,13 +14,13 @@ echo help_header("Help: Places");
                 <a href="cemeteries_help.php" class="lightlink">&laquo; Help: Cemeteries</a> &nbsp; | &nbsp;
                 <a href="places_googlemap_help.php" class="lightlink">Help: Google Maps &raquo;</a>
             </p>
-            <span class="largeheader">Help: Places</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Merge</a> &nbsp; | &nbsp;
-        <a href="#geo" class="lightlink">Geocode</a>
+            <h2 class="largeheader">Help: <small>Places</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+                <a href="#merge" class="lightlink">Merge</a> &nbsp; | &nbsp;
+                <a href="#geo" class="lightlink">Geocode</a>
             </p>
         </td>
     </tr>

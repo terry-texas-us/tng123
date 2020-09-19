@@ -18,7 +18,7 @@ echo help_header("Nápověda: Jazyky");
                 <a href="dna_help.php" class="lightlink">&laquo; Nápověda: Testy DNA</a> &nbsp; | &nbsp;
                 <a href="backuprestore_help.php" class="lightlink">Nápověda: Obslužné programy &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Jazyky</span>
+            <h2 class="largeheader">Nápověda: <small>Jazyky</small></h2>
             <p class="smaller menu">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;

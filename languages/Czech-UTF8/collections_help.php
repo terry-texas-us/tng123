@@ -18,7 +18,7 @@ echo help_header("Nápověda: Kolekce");
                 <a href="media_help.php" class="lightlink">&laquo; Nápověda: Média</a> &nbsp; | &nbsp;
                 <a href="albums_help.php" class="lightlink">Nápověda: Alba &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Kolekce</span>
+            <h2 class="largeheader">Nápověda: <small>Kolekce</small></h2>
             <p class="smaller menu">
                 <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>

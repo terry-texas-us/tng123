@@ -18,7 +18,7 @@ echo help_header("Nápověda: Google Maps");
                 <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
                 <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Google Maps</span>
+            <h2 class="largeheader">Nápověda: <small>Google Maps</small></h2>
             <p class="smaller menu">
                 <a href="#show" class="lightlink">Zobrazit</a> &nbsp; | &nbsp;
                 <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;

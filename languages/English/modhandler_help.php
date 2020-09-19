@@ -14,13 +14,13 @@ echo help_header("Help: Mod Manager");
                 <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
                 <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
             </p>
-            <span class="largeheader">Help: Mod Manager</span>
-      <p class="smaller menu">
-        <a href="#overview" class="lightlink">Overview</a> &nbsp; | &nbsp;
-        <a href="#operation" class="lightlink">Operation</a> &nbsp; | &nbsp;
-        <a href="#status" class="lightlink">Status</a> &nbsp; | &nbsp;
-        <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp; | &nbsp;
-        <a href="#files" class="lightlink">Config Files</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Help: <small>Mod Manager</small></h2>
+            <p class="smaller menu">
+                <a href="#overview" class="lightlink">Overview</a> &nbsp; | &nbsp;
+                <a href="#operation" class="lightlink">Operation</a> &nbsp; | &nbsp;
+                <a href="#status" class="lightlink">Status</a> &nbsp; | &nbsp;
+                <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp; | &nbsp;
+                <a href="#files" class="lightlink">Config Files</a> &nbsp; | &nbsp;
                 <a href="#batch" class="lightlink">Batch Operations</a> &nbsp; | &nbsp;
                 <a href="#options" class="lightlink">Options</a> &nbsp; | &nbsp;
                 <a href="#analyze" class="lightlink">Analyze TNG Files</a> &nbsp; | &nbsp;

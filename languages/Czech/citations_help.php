@@ -18,7 +18,7 @@ echo help_header("N�pov�da: Citace");
                 <a href="notes_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp; | &nbsp;
                 <a href="events_help.php" class="lightlink">N�pov�da: Ud�losti &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Citace</span>
+            <h2 class="largeheader">N�pov�da: <small>Citace</small></h2>
             <p class="smaller menu">
                 <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>

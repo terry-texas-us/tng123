@@ -14,17 +14,17 @@ echo help_header("Help: Google Maps");
                 <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp; | &nbsp;
                 <a href="tlevents_help.php" class="lightlink">Help: Timeline Events &raquo;</a>
             </p>
-            <span class="largeheader">Help: Google Maps</span>
-      <p class="smaller menu">
-        <a href="#show" class="lightlink">Show/Hide</a> &nbsp; | &nbsp;
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
-        <a href="#help" class="lightlink">Help</a>
-      </p>
+            <h2 class="largeheader">Help: <small>Google Maps</small></h2>
+            <p class="smaller menu">
+                <a href="#show" class="lightlink">Show/Hide</a> &nbsp; | &nbsp;
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
+                <a href="#help" class="lightlink">Help</a>
+            </p>
         </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
       <div id="google_translate_element" style="float:right;"></div>
       <script type="text/javascript">
         function googleTranslateElementInit() {

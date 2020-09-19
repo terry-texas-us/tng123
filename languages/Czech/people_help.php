@@ -18,16 +18,15 @@ echo help_header("N�pov�da: Osoby");
                 <a href="index_help.php" class="lightlink">&laquo; N�pov�da: Za��n�me</a> &nbsp; | &nbsp;
                 <a href="families_help.php" class="lightlink">N�pov�da: Rodiny &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Osoby
-        </span>
-      <p class="smaller menu">
-          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-          <a href="#review" class="lightlink">P�ezkoumat</a> &nbsp; | &nbsp;
-          <a href="#merge" class="lightlink">Slou�it</a>
-      </p></td>
+            <h2 class="largeheader">N�pov�da: <small>Osoby</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">P�ezkoumat</a> &nbsp; | &nbsp;
+                <a href="#merge" class="lightlink">Slou�it</a>
+            </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

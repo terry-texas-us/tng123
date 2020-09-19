@@ -14,15 +14,15 @@ echo help_header("Pomoc: Osoby");
                 <a href="index_help.php" class="lightlink">&laquo; Pomoc: Pierwsze kroki</a> &nbsp; | &nbsp;
                 <a href="families_help.php" class="lightlink">Pomoc: Rodziny &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Osoby</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-          <a href="#review" class="lightlink">Przegląd zmian</a> &nbsp; | &nbsp;
-          <a href="#merge" class="lightlink">Scalanie</a>
-      </p>
+            <h2 class="largeheader">Pomoc: <small>Osoby</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">Przegląd zmian</a> &nbsp; | &nbsp;
+                <a href="#merge" class="lightlink">Scalanie</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

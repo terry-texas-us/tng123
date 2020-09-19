@@ -14,13 +14,13 @@ echo help_header("Help: Import Settings");
                 <a href="logconfig_help.php" class="lightlink">&laquo; Help: Log Settings</a> &nbsp; | &nbsp;
                 <a href="mapconfig_help.php" class="lightlink">Help: Map Settings &raquo;</a>
             </p>
-            <span class="largeheader">Help: Import Settings</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <div id="google_translate_element" style="float:right;"></div>
-      <script type="text/javascript">
+            <h2 class="largeheader">Help: <small>Import Settings</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <div id="google_translate_element" style="float:right;"></div>
+            <script type="text/javascript">
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
                 }

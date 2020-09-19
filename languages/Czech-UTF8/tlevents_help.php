@@ -18,7 +18,7 @@ echo help_header("Nápověda: Události časové osy");
                 <a href="places_googlemap_help.php" class="lightlink">&laquo; Nápověda: Google Maps</a> &nbsp; | &nbsp;
                 <a href="notes2_help.php" class="lightlink">Nápověda: Poznámky &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Události časové osy</span>
+            <h2 class="largeheader">Nápověda: <small>Události časové osy</small></h2>
             <p class="smaller menu">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;

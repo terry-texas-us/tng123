@@ -14,13 +14,13 @@ echo help_header("Help: Utilities");
                 <a href="languages_help.php" class="lightlink">&laquo; Help: Languages</a> &nbsp; | &nbsp;
                 <a href="modmanager_help.php" class="lightlink">Help: Mod Manager &raquo;</a>
             </p>
-            <span class="largeheader">Help: Utilities</span>
-      <p class="smaller menu">
-        <a href="#tables" class="lightlink">Backup - Restore - Optimize</a> &nbsp; | &nbsp;
-        <a href="#structure" class="lightlink">Backup Table Structure</a> &nbsp; | &nbsp;
-        <a href="#ids" class="lightlink">Resequence IDs</a>
-      </p>
-    </td>
+            <h2 class="largeheader">Help: <small>Utilities</small></h2>
+            <p class="smaller menu">
+                <a href="#tables" class="lightlink">Backup - Restore - Optimize</a> &nbsp; | &nbsp;
+                <a href="#structure" class="lightlink">Backup Table Structure</a> &nbsp; | &nbsp;
+                <a href="#ids" class="lightlink">Resequence IDs</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

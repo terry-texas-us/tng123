@@ -14,13 +14,13 @@ echo help_header("Help: Families");
                 <a href="people_help.php" class="lightlink">&laquo; Help: People</a> &nbsp; | &nbsp;
                 <a href="sources_help.php" class="lightlink">Help: Sources &raquo;</a>
             </p>
-            <span class="largeheader">Help: Families</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-        <a href="#review" class="lightlink">Review</a>
+            <h2 class="largeheader">Help: <small>Families</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">Review</a>
             </p>
         </td>
     </tr>

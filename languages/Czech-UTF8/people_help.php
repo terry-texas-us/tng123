@@ -18,16 +18,15 @@ echo help_header("Nápověda: Osoby");
                 <a href="index_help.php" class="lightlink">&laquo; Nápověda: Začínáme</a> &nbsp; | &nbsp;
                 <a href="families_help.php" class="lightlink">Nápověda: Rodiny &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Osoby
-        </span>
-      <p class="smaller menu">
-          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-          <a href="#review" class="lightlink">Přezkoumat</a> &nbsp; | &nbsp;
-          <a href="#merge" class="lightlink">Sloučit</a>
-      </p></td>
+            <h2 class="largeheader">Nápověda: <small>Osoby</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">Přezkoumat</a> &nbsp; | &nbsp;
+                <a href="#merge" class="lightlink">Sloučit</a>
+            </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

@@ -15,15 +15,15 @@ echo help_header("Help: Trees");
                 <a href="users_help.php" class="lightlink">&laquo; Help: Users</a> &nbsp; | &nbsp;
                 <a href="branches_help.php" class="lightlink">Help: Branches &raquo;</a>
             </p>
-            <span class="largeheader">Help: Trees</span>
-        <p class="smaller menu">
-            <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-            <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-            <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-            <a href="#clear" class="lightlink">Clear</a>
-        </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>Trees</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+                <a href="#clear" class="lightlink">Clear</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>

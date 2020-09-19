@@ -14,14 +14,14 @@ echo help_header("Pomoc: Repozytoria");
                 <a href="sources_help.php" class="lightlink">&laquo; Pomoc: Źródła</a> &nbsp; | &nbsp;
                 <a href="assoc_help.php" class="lightlink">Pomoc: Związki &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Repozytoria</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-          <a href="#merge" class="lightlink">Scalanie</a>
-      </p>
+            <h2 class="largeheader">Pomoc: <small>Repozytoria</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+                <a href="#merge" class="lightlink">Scalanie</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

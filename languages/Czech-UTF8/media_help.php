@@ -18,17 +18,17 @@ echo help_header("Nápověda: Média");
                 <a href="more_help.php" class="lightlink">&laquo; Nápověda: Více</a> &nbsp; | &nbsp;
                 <a href="collections_help.php" class="lightlink">Nápověda: Kolekce &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Média</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#convert" class="lightlink">Převést</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Nápověda: <small>Média</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#convert" class="lightlink">Převést</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">Přidat do alba</a> &nbsp; | &nbsp;
-          <a href="#sort" class="lightlink">Seřadit</a> &nbsp; | &nbsp;
-          <a href="#thumbs" class="lightlink">Náhledy</a> &nbsp; | &nbsp;
-          <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">Seřadit</a> &nbsp; | &nbsp;
+                <a href="#thumbs" class="lightlink">Náhledy</a> &nbsp; | &nbsp;
+                <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
           <a href="#upload" class="lightlink">Nahrát</a>
       </p>
         </td>

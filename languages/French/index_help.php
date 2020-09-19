@@ -14,7 +14,7 @@ echo help_header("Aide : Mise en route");
                 <a href="backuprestore_help.php" class="lightlink">&laquo; Aide : Utilités</a> &nbsp; | &nbsp;
                 <a href="people_help.php" class="lightlink">Aide : Personnes &raquo;</a>
             </p>
-            <span class="largeheader">Aide : Mise en route</span>
+            <h2 class="largeheader">Aide : <small>Mise en route</small></h2>
             <p class="smaller menu">
                 <a href="#gettingstarted" class="lightlink">Mise en route</a> &nbsp; | &nbsp;
                 <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;

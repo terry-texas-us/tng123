@@ -18,14 +18,14 @@ echo help_header("Nápověda: Větve");
                 <a href="trees_help.php" class="lightlink">&laquo; Nápověda: Stromy</a> &nbsp; | &nbsp;
                 <a href="eventtypes_help.php" class="lightlink">Nápověda: Vlastní typy událostí &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Větve</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
-          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-          <a href="#label" class="lightlink">Označit</a>
-      </p>
+            <h2 class="largeheader">Nápověda: <small>Větve</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#label" class="lightlink">Označit</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

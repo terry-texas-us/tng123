@@ -14,7 +14,7 @@ echo help_header("Pomoc: Więcej");
                 <a href="events_help.php" class="lightlink">&laquo; Pomoc: Wydarzenia</a> &nbsp; | &nbsp;
                 <a href="media_help.php" class="lightlink">Pomoc: Media &raquo;</a>
             </p>
-            <span class="largeheader">Pomoc: Więcej</span>
+            <h2 class="largeheader">Pomoc: <small>Więcej</small></h2>
             <p class="smaller menu">
                 <a href="#more" class="lightlink">Więcej informacji</a>
             </p>

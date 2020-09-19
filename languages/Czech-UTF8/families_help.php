@@ -18,13 +18,13 @@ echo help_header("Nápověda: Rodiny");
                 <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
                 <a href="sources_help.php" class="lightlink">Nápověda: Prameny &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Rodiny</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#review" class="lightlink">Přezkoumat</a>
+            <h2 class="largeheader">Nápověda: <small>Rodiny</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">Přezkoumat</a>
             </p>
         </td>
     </tr>

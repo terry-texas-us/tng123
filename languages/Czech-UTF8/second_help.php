@@ -18,7 +18,7 @@ echo help_header("Nápověda: Druhotné procesy");
                 <a href="data_help.php" class="lightlink">&laquo; Nápověda: Import / Export</a> &nbsp; | &nbsp;
                 <a href="setup_help.php" class="lightlink">Nápověda: Nastavení &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Druhotné procesy</span>
+            <h2 class="largeheader">Nápověda: <small>Druhotné procesy</small></h2>
             <p class="smaller menu">
                 <a href="#what" class="lightlink">Co to je?</a>
             </p>

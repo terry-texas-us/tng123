@@ -18,13 +18,13 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 <a href="logconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� protokolov�n�</a> &nbsp; | &nbsp;
                 <a href="mapconfig_help.php" class="lightlink">N�pov�da: Nastaven� mapy &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Nastaven� importu dat</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <span class="optionhead">Slo�ka souboru GEDCOM (Import/Export)</span>
-      <p>N�zev slo�ky, ze kter� bude TNG importovat soubory GEDCOM a m�sto, kam bude TNG ukl�dat exportovan� soubory GEDCOM.</p>
+            <h2 class="largeheader">N�pov�da: <small>Nastaven� importu dat</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <span class="optionhead">Slo�ka souboru GEDCOM (Import/Export)</span>
+            <p>N�zev slo�ky, ze kter� bude TNG importovat soubory GEDCOM a m�sto, kam bude TNG ukl�dat exportovan� soubory GEDCOM.</p>
 
             <span class="optionhead">Ulo�it stav importu</span>
             <p>Pokud import nebo export z n�jak�ho d�vodu sel�e a nebude dokon�en, vyberte tuto mo�nost a spus�te import/export znovu. Pokud proces

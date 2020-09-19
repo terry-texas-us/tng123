@@ -18,15 +18,15 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                 <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
                 <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Nastaven� sch�mat</span>
-      <p class="smaller menu">
-        <a href="#ped" class="lightlink">P�edkov�</a> &nbsp; | &nbsp;
-          <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-          <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
-          <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
-          <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
-          <a href="#thumb" class="lightlink">N�hledy</a>
-      </p>
+            <h2 class="largeheader">N�pov�da: <small>Nastaven� sch�mat</small></h2>
+            <p class="smaller menu">
+                <a href="#ped" class="lightlink">P�edkov�</a> &nbsp; | &nbsp;
+                <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
+                <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
+                <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
+                <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
+                <a href="#thumb" class="lightlink">N�hledy</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

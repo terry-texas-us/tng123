@@ -14,13 +14,13 @@ echo help_header("Help: Data Import");
                 <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp; | &nbsp;
                 <a href="second_help.php" class="lightlink">Help: Secondary Processes &raquo;</a>
             </p>
-            <span class="largeheader">Help: Import / Export</span>
-      <p class="smaller menu">
-        <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
-        <a href="#export" class="lightlink">GEDCOM Export</a>
-      </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>Import / Export</small></h2>
+            <p class="smaller menu">
+                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+                <a href="#export" class="lightlink">GEDCOM Export</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>

@@ -5,7 +5,7 @@ echo help_header("Help: Administration");
 
 <body class="helpbody">
 <a id="top"></a>
-<table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
+<table class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
@@ -14,7 +14,7 @@ echo help_header("Help: Administration");
                 <a href="modmanager_help.php" class="lightlink">&laquo; Help: Mod Manager</a> &nbsp; | &nbsp;
                 <a href="people_help.php" class="lightlink">Help: People &raquo;</a>
             </p>
-            <span class="largeheader">Help: Getting Started</span>
+            <h2 class="largeheader">Help: <small>Getting Started</small></h2>
             <p class="smaller menu">
                 <a href="#gettingstarted" class="lightlink">Getting Started</a> &nbsp; | &nbsp;
                 <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
@@ -32,7 +32,7 @@ echo help_header("Help: Administration");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="gettingstarted"><p class="subheadbold">Getting Started:</p></a>
+            <a id="gettingstarted"><h4 class="subheadbold">Getting Started:</h4></a>
             <p>Not sure what to do first? Here are the basics:</p>
             <ol>
                 <li><p><strong>Carefully follow the installation instructions in the <a href="../../readme.html" target="_blank">readme.html</a> file.</strong>
@@ -66,7 +66,7 @@ echo help_header("Help: Administration");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="notes"><p class="subheadbold">Notes:</p></a>
+            <a id="notes"><h4 class="subheadbold">Notes:</h4></a>
             <ol>
                 <li><p>If you notice some options are missing from the Administration menu, it is likely that you are not logged in with full
                         permissions, or that your rights are restricted to a particular tree.
@@ -83,7 +83,7 @@ echo help_header("Help: Administration");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="otherresources"><p class="subheadbold">Other Resources:</p></a>
+            <a id="otherresources"><h4 class="subheadbold">Other Resources:</h4></a>
             <ol>
                 <li><p>Updates mailing list: <a href="mailto:tngusers@lythgoes.net">tngusers@lythgoes.net</a>. To subscribe, send a message to
                         <a href="mailto:tngusers-subscribe@lythgoes.net">tngusers-subscribe@lythgoes.net</a>. This list is used exclusively to inform

@@ -14,13 +14,13 @@ echo help_header("Help: Miscellaneous");
                 <a href="notes2_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
                 <a href="mostwanted_help.php" class="lightlink">Help: Most Wanted &raquo;</a>
             </p>
-            <span class="largeheader">Help: Miscellaneous</span>
-      <p class="smaller menu">
-        <a href="#whatsnew" class="lightlink">What's New</a> &nbsp; | &nbsp;
-        <a href="#mostwanted" class="lightlink">Most Wanted</a> &nbsp; | &nbsp;
-        <a href="#validation" class="lightlink">Data Validation</a>
-      </p>
-    </td>
+            <h2 class="largeheader">Help: <small>Miscellaneous</small></h2>
+            <p class="smaller menu">
+                <a href="#whatsnew" class="lightlink">What's New</a> &nbsp; | &nbsp;
+                <a href="#mostwanted" class="lightlink">Most Wanted</a> &nbsp; | &nbsp;
+                <a href="#validation" class="lightlink">Data Validation</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">

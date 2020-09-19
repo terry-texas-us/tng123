@@ -14,13 +14,13 @@ echo help_header("Help: Users");
                 <a href="templateconfig_help.php" class="lightlink">&laquo; Help: Template Settings</a> &nbsp; | &nbsp;
                 <a href="trees_help.php" class="lightlink">Help: Trees &raquo;</a>
             </p>
-            <span class="largeheader">Help: Users</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-        <a href="#review" class="lightlink">Review</a> &nbsp; | &nbsp;
-        <a href="#rights" class="lightlink">Rights</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Help: <small>Users</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+                <a href="#review" class="lightlink">Review</a> &nbsp; | &nbsp;
+                <a href="#rights" class="lightlink">Rights</a> &nbsp; | &nbsp;
                 <a href="#limits" class="lightlink">Access Limits</a> &nbsp; | &nbsp;
                 <a href="#email" class="lightlink">E-mail</a>
             </p>

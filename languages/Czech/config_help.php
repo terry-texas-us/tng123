@@ -18,13 +18,13 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
                 <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: Z�kladn� nastaven�</span>
-      <p class="smaller menu">
-        <a href="#data" class="lightlink">Datab�ze</a> &nbsp; | &nbsp;
-        <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
-        <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp; | &nbsp;
-        <a href="#site" class="lightlink">Str�nka</a> &nbsp; | &nbsp;
-        <a href="#media" class="lightlink">M�dia</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">N�pov�da: <small>Z�kladn� nastaven�</small></h2>
+            <p class="smaller menu">
+                <a href="#data" class="lightlink">Datab�ze</a> &nbsp; | &nbsp;
+                <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
+                <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp; | &nbsp;
+                <a href="#site" class="lightlink">Str�nka</a> &nbsp; | &nbsp;
+                <a href="#media" class="lightlink">M�dia</a> &nbsp; | &nbsp;
                 <a href="#lang" class="lightlink">Jazyk</a> &nbsp; | &nbsp;
                 <a href="#priv" class="lightlink">Ochrana �daj�</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Jm�na</a> &nbsp; | &nbsp;

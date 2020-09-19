@@ -893,13 +893,10 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 /* subheadbold: subheading text in Help screens */
 .subheadbold {
     margin-top: 0;
-    font-size: 18pt;
-    font-weight: bold;
 }
 
 /* largeheader: heading text used on dark backgrounds (usually fieldnameback) in Help screens */
 .largeheader {
-    font-size: 32px;
     color: #fff;
 }
 
@@ -2056,6 +2053,16 @@ a.size0 {
 table.uploadmore td {
     padding: 2px;
     border: none;
+}
+
+table.tblback {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+table.tblback th, table.tblback td {
+    padding: 10px;
 }
 
 #imgdiv img {

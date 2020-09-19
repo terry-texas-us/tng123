@@ -14,12 +14,12 @@ echo help_header("Help: Notes");
                 <a href="tlevents_help.php" class="lightlink">&laquo; Help: Timeline Events</a> &nbsp; | &nbsp;
                 <a href="misc_help.php" class="lightlink">Help: Miscellaneous &raquo;</a>
             </p>
-            <span class="largeheader">Help: Notes</span>
-      <p class="smaller menu">
-        <a href="#notes" class="lightlink">Notes</a>
-      </p>
-    </td>
-  </tr>
+            <h2 class="largeheader">Help: <small>Notes</small></h2>
+            <p class="smaller menu">
+                <a href="#notes" class="lightlink">Notes</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>

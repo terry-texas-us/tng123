@@ -18,13 +18,13 @@ echo help_header("Nápověda: Nastavení protokolování");
                 <a href="pedconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení schémat</a> &nbsp; | &nbsp;
                 <a href="importconfig_help.php" class="lightlink">Nápověda: Nastavení importu &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Nastavení protokolování</span>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-      <span class="optionhead">Název souboru protokolu</span>
-      <p>Název souboru protokolu je soubor, kam jsou zaznamenávány akce návštěvníků. Původní název "genlog.txt" byste neměli měnit.</p>
+            <h2 class="largeheader">Nápověda: <small>Nastavení protokolování</small></h2>
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <span class="optionhead">Název souboru protokolu</span>
+            <p>Název souboru protokolu je soubor, kam jsou zaznamenávány akce návštěvníků. Původní název "genlog.txt" byste neměli měnit.</p>
 
             <span class="optionhead">Maximální počet řádků v protokolu</span>
             <p>Maximální počet řádků v protokolu určuje, kolik akcí by měl protokol aktuálně uchovávat.

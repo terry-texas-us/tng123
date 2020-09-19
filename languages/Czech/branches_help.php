@@ -18,14 +18,14 @@ echo help_header("N�pov�da: V�tve");
                 <a href="trees_help.php" class="lightlink">&laquo; N�pov�da: Stromy</a> &nbsp; | &nbsp;
                 <a href="eventtypes_help.php" class="lightlink">N�pov�da: Vlastn� typy ud�lost� &raquo;</a>
             </p>
-            <span class="largeheader">N�pov�da: V�tve</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
-          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-          <a href="#label" class="lightlink">Ozna�it</a>
-      </p>
+            <h2 class="largeheader">N�pov�da: <small>V�tve</small></h2>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#label" class="lightlink">Ozna�it</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

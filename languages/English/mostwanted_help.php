@@ -14,13 +14,13 @@ echo help_header("Help: Most Wanted");
                 <a href="misc_help.php" class="lightlink">&laquo; Help: Miscellaneous</a> &nbsp; | &nbsp;
                 <a href="data_help.php" class="lightlink">Help: Import / Export &raquo;</a>
             </p>
-            <span class="largeheader">Help: Most Wanted</span>
-      <p class="smaller menu">
-        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-        <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Delete</a>
-      </p>
+            <h2 class="largeheader">Help: <small>Most Wanted</small></h2>
+            <p class="smaller menu">
+                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Delete</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

@@ -18,14 +18,14 @@ echo help_header("Nápověda: Alba");
                 <a href="collections_help.php" class="lightlink">&laquo; Nápověda: Kolekce</a> &nbsp; | &nbsp;
                 <a href="cemeteries_help.php" class="lightlink">Nápověda: Hřbitovy &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Alba</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-          <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
-          <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-          <a href="#sort" class="lightlink">Třídit</a>
-      </p>
+            <h2 class="largeheader">Nápověda: <small>Alba</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+                <a href="#sort" class="lightlink">Třídit</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">

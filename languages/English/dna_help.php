@@ -14,13 +14,13 @@ echo help_header("Help: DNA Tests");
                 <a href="reports_help.php" class="lightlink">&laquo; Help: Reports</a> &nbsp; | &nbsp;
                 <a href="languages_help.php" class="lightlink">Help: Languages &raquo;</a>
             </p>
-            <span class="largeheader">Help: DNA Tests</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-        <a href="#ydna" class="lightlink">Y-DNA Fields</a> &nbsp; | &nbsp;
-        <a href="#mtdna" class="lightlink">mtDNA Fields</a> &nbsp; | &nbsp;
+            <h2 class="largeheader">Help: <small>DNA Tests</small></h2>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
+                <a href="#ydna" class="lightlink">Y-DNA Fields</a> &nbsp; | &nbsp;
+                <a href="#mtdna" class="lightlink">mtDNA Fields</a> &nbsp; | &nbsp;
                 <a href="#atdna" class="lightlink">atDNA Fields</a> &nbsp; | &nbsp;
                 <a href="#common" class="lightlink">Common Fields</a> &nbsp; | &nbsp;
                 <a href="#delete" class="lightlink">Delete</a>

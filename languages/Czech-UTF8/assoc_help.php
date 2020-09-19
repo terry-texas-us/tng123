@@ -18,7 +18,7 @@ echo help_header("Nápověda: Spojení");
                 <a href="repositories_help.php" class="lightlink">&laquo; Nápověda: Úložiště pramenů</a> &nbsp; | &nbsp;
                 <a href="notes_help.php" class="lightlink">Nápověda: Poznámky &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Spojení</span>
+            <h2 class="largeheader">Nápověda: <small>Spojení</small></h2>
             <p class="smaller menu">
                 <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">Přidat/Upravit/Odstranit</a>

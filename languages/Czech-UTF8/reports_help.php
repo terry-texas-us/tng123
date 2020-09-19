@@ -18,7 +18,7 @@ echo help_header("Nápověda: Reporty");
                 <a href="eventtypes_help.php" class="lightlink">&laquo; Nápověda: Vlastní typy událostí</a> &nbsp; | &nbsp;
                 <a href="dna_help.php" class="lightlink">Nápověda: Testy DNA &raquo;</a>
             </p>
-            <span class="largeheader">Nápověda: Reporty</span>
+            <h2 class="largeheader">Nápověda: <small>Reporty</small></h2>
             <p class="smaller menu">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
                 <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
