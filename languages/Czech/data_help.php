@@ -13,14 +13,14 @@ echo help_header("N�pov�da: Import dat");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp; | &nbsp;
+                <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp;|&nbsp;
                 <a href="second_help.php" class="lightlink">N�pov�da: Druhotn� procesy &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Import / Export</small></h2>
-            <p class="smaller menu">
-                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp;|&nbsp;
                 <a href="#export" class="lightlink">GEDCOM Export</a>
             </p>
         </td>
@@ -71,7 +71,7 @@ echo help_header("N�pov�da: Import dat");
                 zvolit, kter� ud�losti
                 p�ed importem va�� cel� datab�ze p�ijmout a kter� odm�tnout.</p>
 
-            <h5 class="optionhead">C�lov� strom</h5><br>
+            <h5 class="optionhead">C�lov� strom</h5>
             <p>Vyberte strom, do kter�ho chcete importovat data (povinn�). Pokud strom, kam maj� data p�ij�t, je�t� neexistuje, klikn�te na tla��tko
                 "P�idat nov� strom" a vytvo�te jej.
                 Objev� se mal� okno, kter� v�m umo�n� zadat informace o nov�m stromu.</p>

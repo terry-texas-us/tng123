@@ -13,19 +13,19 @@ echo help_header("N�pov�da: U�ivatel�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="templateconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� �ablony</a> &nbsp; | &nbsp;
+                <a href="templateconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� �ablony</a> &nbsp;|&nbsp;
                 <a href="trees_help.php" class="lightlink">N�pov�da: Stromy &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>U�ivatel�</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">P�ezkoumat</a> &nbsp; | &nbsp;
-                <a href="#rights" class="lightlink">P��stupov� pr�va</a> &nbsp; | &nbsp;
-                <a href="#limits" class="lightlink">Omezen� p��stupu</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
+                <a href="#review" class="lightlink">P�ezkoumat</a> &nbsp;|&nbsp;
+                <a href="#rights" class="lightlink">P��stupov� pr�va</a> &nbsp;|&nbsp;
+                <a href="#limits" class="lightlink">Omezen� p��stupu</a> &nbsp;|&nbsp;
                 <a href="#email" class="lightlink">Email</a>
             </p>
         </td>

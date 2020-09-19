@@ -9,17 +9,17 @@ echo help_header("Pomoc: Albumy");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="collections_help.php" class="lightlink">&laquo; Pomoc: Kolekcje</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">&laquo; Pomoc: Kolekcje</a> &nbsp;|&nbsp;
                 <a href="cemeteries_help.php" class="lightlink">Pomoc: Cmentrze &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Albumy</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowy</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edytuj istniejący</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Dodaj nowy</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edytuj istniejący</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp;|&nbsp;
                 <a href="#sort" class="lightlink">Sortuj</a>
             </p>
         </td>
@@ -53,13 +53,13 @@ echo help_header("Pomoc: Albumy");
                 do osób, rodzin i innych podmiotów, mogą zostać dodane dopiero po naciśnięciu przycisku "zapisz i kontynuuj". Do dyspozycji są
                 następujące pola:</p>
 
-            <p><h5 class="optionhead">Nazwa albumu</h5><br>
+            <p><h5 class="optionhead">Nazwa albumu</h5>
             Nazwa Twojego albumu.</p>
 
-            <p><h5 class="optionhead">Opis</h5><br>
+            <p><h5 class="optionhead">Opis</h5>
             Krótki opis albumu lub elementów w nim zawartych.</p>
 
-            <p><h5 class="optionhead">Słowa kluczowe</h5><br>
+            <p><h5 class="optionhead">Słowa kluczowe</h5>
             Pewna ilość słów kluczowych poza nazwą albumu lub opis, który może być użyty w celu zlokalizowania tego albumu podczas wyszukiwania.</p>
 
             <p><h5 class="optionhead">Pola wymagane:</h5> Tylko nazwa albumu jest wymagana, ale powinno być w Twoim interesie wypełnić również

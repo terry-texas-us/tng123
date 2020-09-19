@@ -13,9 +13,9 @@ echo help_header("Nápověda: Nastavení mapy");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="importconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení importu dat</a> &nbsp; | &nbsp;
+                <a href="importconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení importu dat</a> &nbsp;|&nbsp;
                 <a href="templateconfig_help.php" class="lightlink">Nápověda: Nastavení šablony &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Nastavení mapy</small></h2>

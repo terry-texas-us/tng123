@@ -13,18 +13,18 @@ echo help_header("Nápověda: Nastavení schémat");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="config_help.php" class="lightlink">&laquo; Nápověda: Základní nastavení</a> &nbsp; | &nbsp;
+                <a href="config_help.php" class="lightlink">&laquo; Nápověda: Základní nastavení</a> &nbsp;|&nbsp;
                 <a href="logconfig_help.php" class="lightlink">Nápověda: Nastavení protokolování &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Nastavení schémat</small></h2>
-            <p class="smaller menu">
-                <a href="#ped" class="lightlink">Předkové</a> &nbsp; | &nbsp;
-                <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-                <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp; | &nbsp;
-                <a href="#time" class="lightlink">Časová osa</a> &nbsp; | &nbsp;
-                <a href="#common" class="lightlink">Společné prvky</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#ped" class="lightlink">Předkové</a> &nbsp;|&nbsp;
+                <a href="#desc" class="lightlink">Potomci</a> &nbsp;|&nbsp;
+                <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp;|&nbsp;
+                <a href="#time" class="lightlink">Časová osa</a> &nbsp;|&nbsp;
+                <a href="#common" class="lightlink">Společné prvky</a> &nbsp;|&nbsp;
                 <a href="#thumb" class="lightlink">Náhledy</a>
             </p>
         </td>

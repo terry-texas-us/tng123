@@ -9,14 +9,14 @@ echo help_header("Help: Citations");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="notes_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
+                <a href="notes_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp;|&nbsp;
                 <a href="events_help.php" class="lightlink">Help: Events &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Citations</small></h2>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#what" class="lightlink">What are they?</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Add/Edit/Delete</a>
             </p>
         </td>
@@ -26,8 +26,13 @@ echo help_header("Help: Citations");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

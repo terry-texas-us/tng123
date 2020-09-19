@@ -9,13 +9,13 @@ echo help_header("Pomoc: Więcej");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="events_help.php" class="lightlink">&laquo; Pomoc: Wydarzenia</a> &nbsp; | &nbsp;
+                <a href="events_help.php" class="lightlink">&laquo; Pomoc: Wydarzenia</a> &nbsp;|&nbsp;
                 <a href="media_help.php" class="lightlink">Pomoc: Media &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Więcej</small></h2>
-            <p class="smaller menu">
+            <p class="smaller menu" style="clear: both;">
                 <a href="#more" class="lightlink">Więcej informacji</a>
             </p>
         </td>

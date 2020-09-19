@@ -1,4 +1,7 @@
 <?php
+
+define("INCLUDED_LANGUAGES", "cs,de,en,es,po");
+
 function help_header($helptitle) {
     $relpath = "../../";
     include $relpath . "begin.php";

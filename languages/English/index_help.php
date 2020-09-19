@@ -9,15 +9,15 @@ echo help_header("Help: Administration");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="modmanager_help.php" class="lightlink">&laquo; Help: Mod Manager</a> &nbsp; | &nbsp;
+                <a href="modmanager_help.php" class="lightlink">&laquo; Help: Mod Manager</a> &nbsp;|&nbsp;
                 <a href="people_help.php" class="lightlink">Help: People &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Getting Started</small></h2>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Getting Started</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#gettingstarted" class="lightlink">Getting Started</a> &nbsp;|&nbsp;
+                <a href="#notes" class="lightlink">Notes</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Other Resources</a>
             </p>
         </td>
@@ -27,8 +27,13 @@ echo help_header("Help: Administration");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

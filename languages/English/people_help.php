@@ -3,44 +3,49 @@ include "../../helplib.php";
 echo help_header("Help: People");
 ?>
 
-<body class="helpbody">
-<a id="top"></a>
-<table class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="index_help.php" class="lightlink">&laquo; Help: Getting Started</a> &nbsp; | &nbsp;
-                <a href="families_help.php" class="lightlink">Help: Families &raquo;</a>
-            </p>
-            <h2 class="largeheader">Help: <small>People</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Review</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Merge</a>
-            </p>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-                }
-            </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <body class="helpbody">
+    <a id="top"></a>
+    <table class="tblback normal">
+        <tr class="fieldnameback">
+            <td class="tngshadow">
+                <p style="float:right; text-align:right;" class="smaller menu">
+                    <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
+                    <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                    <a href="index_help.php" class="lightlink">&laquo; Help: Getting Started</a>&nbsp;|&nbsp;
+                    <a href="families_help.php" class="lightlink">Help: Families &raquo;</a>
+                </p>
+                <h2 class="largeheader">Help: <small>People</small></h2>
+                <p class="smaller menu" style="clear: both;">
+                    <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                    <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                    <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                    <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;
+                    <a href="#review" class="lightlink">Review</a> &nbsp;|&nbsp;
+                    <a href="#merge" class="lightlink">Merge</a>
+                </p>
+            </td>
+        </tr>
+        <tr class="databack">
+            <td class="tngshadow">
+                <div id="google_translate_element" style="float:right;"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en',
+                            includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                        }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a id="search"><h4 class="subheadbold">Search</h4></a>
-            <p>Locate existing individuals by searching for all or part of the <strong>Person ID</strong> or <strong>Name</strong>. Select a Tree or
-                check one of the other options to further narrow your search.
-                Searching with no options selected and no value in the search box will find all people in your database.</p>
+                <a id="search"><h4 class="subheadbold">Search</h4></a>
+                <p>Locate existing individuals by searching for all or part of the <strong>Person ID</strong> or <strong>Name</strong>. Select a Tree
+                    or
+                    check one of the other options to further narrow your search.
+                    Searching with no options selected and no value in the search box will find all people in your database.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
             <h5 class="optionhead">Actions</h5>
@@ -54,7 +59,6 @@ echo help_header("Help: People");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-
             <p style="float:right;"><a href="#top">Top</a></p>
             <a id="add"><h4 class="subheadbold">Adding New People</h4></a>
             <p>To add a new person, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations,
@@ -129,23 +133,23 @@ echo help_header("Help: People");
                 To limit the number of results found, enter part of the place name before clicking the Find icon. All results will contain what you
                 entered in the place name.</p>
 
-            <p><h5 class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</h5><br>
-            These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the
-            GEDCOM standard).
-            <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that
-            you logout and back in again).</p>
+            <h5 class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</h5>
+            <p>These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the
+                GEDCOM standard).
+                <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that
+                you logout and back in again).</p>
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+        <tr class="databack">
+            <td class="tngshadow">
+                <p style="float:right;"><a href="#top">Top</a></p>
+                <a id="edit"><h4 class="subheadbold">Editing Existing People</h4></a>
+                <p>To make changes to an existing person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Edit
+                    icon
+                    next to that individual.</p>
 
-            <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="edit"><h4 class="subheadbold">Editing Existing People</h4></a>
-            <p>To make changes to an existing person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Edit icon
-                next to that individual.</p>
-
-            <h5 class="optionhead">Notes / Citations / Associations / "More"</h5>
+                <h5 class="optionhead">Notes / Citations / Associations / "More"</h5>
             <p>Notes, citations and associations may be linked to events or to the person in general by clicking on the associated icons at the top of
                 the page
                 or next to each event. "More" information for an event may also be added for an event by clicking on the "Plus" icon. When items exist
@@ -154,24 +158,29 @@ echo help_header("Help: People");
                 Help links that
                 become visible when the icons are clicked.</p>
 
-            <h5 class="optionhead">Other Events</h5>
-            <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
-                    href="events_help.php">Help</a> link there for more
-                information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
-                button. Action buttons for
-                each event allow you to edit or delete the event, or add notes or citations. The order in which the events are displayed is determined
-                by date (if applicable),
-                and by the event types' assigned priority (when no date is associated). This priority may be changed when editing the event types.
+                <h5 class="optionhead">Other Events</h5>
+                <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
+                        href="events_help.php">Help</a> link there for more
+                    information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
+                    button. Action buttons for
+                    each event allow you to edit or delete the event, or add notes or citations. The order in which the events are displayed is
+                    determined
+                    by date (if applicable),
+                    and by the event types' assigned priority (when no date is associated). This priority may be changed when editing the event types.
+                </p>
 
-            <p><strong>Note</strong>: Notes, source citations, associations, "Other" events and "More" information for standard events are all saved
-                automatically. Other changes (e.g., to the Name or
-                standard events) can be saved by clicking on the Save button at the bottom of the page, or by clicking on the Save icon at the top of
-                the page. The Tree and
-                Person ID cannot be changed.</p>
+                <p><strong>Note</strong>: Notes, source citations, associations, "Other" events and "More" information for standard events are all
+                    saved
+                    automatically. Other changes (e.g., to the Name or
+                    standard events) can be saved by clicking on the Save button at the bottom of the page, or by clicking on the Save icon at the top
+                    of
+                    the page. The Tree and
+                    Person ID cannot be changed.</p>
 
-            <h5 class="optionhead">Parents</h5>
-            <p>If the current individual has parents, a <strong>Parents</strong> section will be present under the Events section. It will start out
-                collapsed and will indicate the number
+                <h5 class="optionhead">Parents</h5>
+                <p>If the current individual has parents, a <strong>Parents</strong> section will be present under the Events section. It will start
+                    out
+                    collapsed and will indicate the number
                 of parent sets in parentheses. To expand the section and view all sets of parents, click on the word "Parents" or the arrow next to
                 it. Some information, including the nature of the
                 relationship between the current individual and each set of parents, may be edited in each block. When your mouse pointer is over a
@@ -211,7 +220,6 @@ echo help_header("Help: People");
                 then move your mouse up or
                 down on the page. Let go of the mouse button when the block appears in the desired location. Sorting changes are saved
                 automatically.</p>
-
         </td>
     </tr>
     <tr class="databack">
@@ -227,105 +235,120 @@ echo help_header("Help: People");
 
         </td>
     </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+        <tr class="databack">
+            <td class="tngshadow">
+                <p style="float:right;"><a href="#top">Top</a></p>
+                <a id="review"><h4 class="subheadbold">Reviewing Tentative Edits</h4></a>
+                <p>To review tentative edits made by other users, click on the "Review" tab. You will decide whether to keep or delete these proposed
+                    changes. Choose to review by tree, by user or both.
+                    No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are
+                    present.</p>
 
-            <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="review"><h4 class="subheadbold">Reviewing Tentative Edits</h4></a>
-            To review tentative edits made by other users, click on the "Review" tab. You will decide whether to keep or delete these proposed
-            changes. Choose to review by tree, by user or both.
-            No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are
-            present.</p>
+                <h5 class="optionhead">Select Event and Action</h5>
+                <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting
+                    a
+                    User (the person
+                    responsible for the proposed change) and/or the Tree. When the results are displayed, click on one of the possible actions listed
+                    at
+                    the left of that line. To review and
+                    possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
 
-            <h5 class="optionhead">Select Event and Action</h5><br>
-            <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting a
-                User (the person
-                responsible for the proposed change) and/or the Tree. When the results are displayed, click on one of the possible actions listed at
-                the left of that line. To review and
-                possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
+                <h5 class="optionhead">Review</h5>
+                <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and
+                    Delete"
+                    to
+                    make the changes permanent and remove the tentative record. You may also choose to remove the tentative record without saving by
+                    clicking "Ignore and Delete",
+                    or you can postpone the decision until later by clicking "Postpone".</p>
 
-            <h5 class="optionhead">Review</h5><br>
-            <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and Delete"
-                to
-                make the changes permanent and remove the tentative record. You may also choose to remove the tentative record without saving by
-                clicking "Ignore and Delete",
-                or you can postpone the decision until later by clicking "Postpone".</p>
+            </td>
+        </tr>
+        <tr class="databack">
+            <td class="tngshadow">
 
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+                <p style="float:right;"><a href="#top">Top</a></p>
+                <a id="merge"><h4 class="subheadbold">Merging People</h4></a>
+                <p>To review and merge duplicate records, click on the "Merge" tab. You will decide whether two records are the same or not.</p>
 
-            <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="merge"><h4 class="subheadbold">Merging People</h4></a>
-            To review and merge duplicate records, click on the "Merge" tab. You will decide whether two records are the same or not.</p>
+                <h5 class="optionhead">Find Matches</h5>
+                <p>First, select a tree. You cannot merge individuals from different trees, so only one tree can be selected. After that, you have the
+                    option of selecting an individual as
+                    the starting point for your search (Person 1), or letting TNG find the first match for you. If you'd rather let TNG find all
+                    matches,
+                    leave the Person ID 1 field blank</p>
+                <p>If you selected an individual as Person 1, you may also decide to manually select Person ID 2. If you'd rather let TNG find
+                    duplicates
+                    for Person 1, leave Person ID 2 blank.</p>
 
-            <h5 class="optionhead">Find Matches</h5><br>
-            <p>First, select a tree. You cannot merge individuals from different trees, so only one tree can be selected. After that, you have the
-                option of selecting an individual as
-                the starting point for your search (Person 1), or letting TNG find the first match for you. If you'd rather let TNG find all matches,
-                leave the Person ID 1 field blank</p>
-            <p>If you selected an individual as Person 1, you may also decide to manually select Person ID 2. If you'd rather let TNG find duplicates
-                for Person 1, leave Person ID 2 blank.</p>
+                <h5 class="optionhead">Match the following fields</h5>
+                <p>These are the criteria TNG will use in determining possible matches. By default, First Name and Last Name are selected, meaning
+                    that
+                    those fields
+                    must match in order for two records to be considered a possible match. If you also select Birth Date, Birth Place, Death Date,
+                    and/or
+                    Death Place, those fields must also match.</p>
 
-            <h5 class="optionhead">Match the following fields</h5><br>
-            <p>These are the criteria TNG will use in determining possible matches. By default, First Name and Last Name are selected, meaning that
-                those fields
-                must match in order for two records to be considered a possible match. If you also select Birth Date, Birth Place, Death Date, and/or
-                Death Place, those fields must also match.</p>
+                <h5 class="optionhead">Other Options</h5>
+                <p><em>Ignore Blanks</em> means that blank fields will not be considered. For example, someone with a Last Name but no First Name
+                    will not match any other records if First Name is among the selected criteria.</p>
 
-            <h5 class="optionhead">Other Options</h5><br>
-            <p><em>Ignore Blanks</em> means that blank fields will not be considered. For example, someone with a Last Name but no First Name
-                will not match any other records if First Name is among the selected criteria.</p>
+                <p><em>Use Soundex</em> means that the MySQL Soundex function will be used when comparing names. In
+                    this case, "Blakely" could be considered a match for "Blackley".</p>
 
-            <p><em>Use Soundex</em> means that the MySQL Soundex function will be used when comparing names. In
-                this case, "Blakely" could be considered a match for "Blackley".</p>
+                <p><em>Combine Notes &amp; Citations</em> means that notes and citations from Person 2 will be added to the notes and citations
+                    from Person 1 for all merged fields. If this option is not selected and a field from Person 2 is checked, the notes and citations
+                    from
+                    Person 2 for that field will overwrite those
+                    for the corresponding field from Person 1.</p>
 
-            <p><em>Combine Notes &amp; Citations</em> means that notes and citations from Person 2 will be added to the notes and citations
-                from Person 1 for all merged fields. If this option is not selected and a field from Person 2 is checked, the notes and citations from
-                Person 2 for that field will overwrite those
-                for the corresponding field from Person 1.</p>
+                <p><em>Combine Photos &amp; Histories</em> means that photos and histories from Person 2 will be kept and added to those already
+                    existing
+                    for
+                    Person 1 if the two are merged. If this option is not selected, all photo, history &amp; headstone links for Person 2 will be
+                    deleted
+                    after the merge.</p>
 
-            <p><em>Combine Photos &amp; Histories</em> means that photos and histories from Person 2 will be kept and added to those already existing
-                for
-                Person 1 if the two are merged. If this option is not selected, all photo, history &amp; headstone links for Person 2 will be deleted
-                after the merge.</p>
+                <h5 class="optionhead">Warning!</h5>
+                <p>Once a merge has taken place, it cannot be undone! <em>Please consider backing up your database
+                        tables before
+                        performing any merge operations</em>, just in case you merge two individuals unintentionally.</p>
 
-            <p><h5 class="optionhead">Warning!</h5> Once a merge has taken place, it cannot be undone! <em>Please consider backing up your database
-                tables before
-                performing any merge operations</em>, just in case you merge two individuals unintentionally.</p>
+                <h5 class="optionhead">Next Match</h5>
+                <p>Find the next possible match that does not involve Person 1. TNG traverses the list of possible individuals as ordered by Person ID
+                    in
+                    string format.
+                    This means that "10" comes after "1" but before "2".</p>
 
-            <h5 class="optionhead">Next Match</h5><br>
-            <p>Find the next possible match that does not involve Person 1. TNG traverses the list of possible individuals as ordered by Person ID in
-                string format.
-                This means that "10" comes after "1" but before "2".</p>
+                <h5 class="optionhead">Next Duplicate</h5>
+                <p>Find the next possible duplicate for Person 1. If this results in no record being displayed for Person 2, it means that a duplicate
+                    was
+                    not found.</p>
 
-            <h5 class="optionhead">Next Duplicate</h5><br>
-            <p>Find the next possible duplicate for Person 1. If this results in no record being displayed for Person 2, it means that a duplicate was
-                not found.</p>
+                <h5 class="optionhead">Compare/Refresh.</h5>
+                <p>Compare Person 1 and Person 2. If that comparison is already displayed, clicking this button will cause the page to refresh.</p>
 
-            <h5 class="optionhead">Compare/Refresh.</h5><br>
-            <p>Compare Person 1 and Person 2. If that comparison is already displayed, clicking this button will cause the page to refresh.</p>
+                <h5 class="optionhead">Switch</h5>
+                <p>Person 1 becomes Person 2 and vice versa.</p>
 
-            <h5 class="optionhead">Switch</h5><br>
-            <p>Person 1 becomes Person 2 and vice versa.</p>
+                <h5 class="optionhead">Merge</h5>
+                <p>Person 2 is merged into Person 1. The ID for Person 1 will be retained, as will all other data for Person 1 unless the
+                    corresponding
+                    box(es) for
+                    are checked for Person 2. For example, if the box next to Birth Date is checked for Person 2, this data in this field will be
+                    copied
+                    from Person 2's record to Person 1's record
+                    during the merge. Corresponding data for Person 1 will then be deleted. Boxes for Person 2 are checked automatically when no
+                    corresponding data exists for Person 1. If
+                    a data field is not displayed for either Person 1 or Person 2, then no data exists in that field for either individual.</p>
 
-            <h5 class="optionhead">Merge</h5><br>
-            <p>Person 2 is merged into Person 1. The ID for Person 1 will be retained, as will all other data for Person 1 unless the corresponding
-                box(es) for
-                are checked for Person 2. For example, if the box next to Birth Date is checked for Person 2, this data in this field will be copied
-                from Person 2's record to Person 1's record
-                during the merge. Corresponding data for Person 1 will then be deleted. Boxes for Person 2 are checked automatically when no
-                corresponding data exists for Person 1. If
-                a data field is not displayed for either Person 1 or Person 2, then no data exists in that field for either individual.</p>
+                <h5 class="optionhead">Edit</h5>
+                <p>Edit the individual record for that individual in a new window. If changes are made, you must click Compare/Refresh in order to see
+                    the
+                    changes
+                    in on the Merge screen.</p>
+            </td>
+        </tr>
 
-            <h5 class="optionhead">Edit</h5><br>
-            <p>Edit the individual record for that individual in a new window. If changes are made, you must click Compare/Refresh in order to see the
-                changes
-                in on the Merge screen.</p>
-        </td>
-    </tr>
-
-</table>
-</body>
-</html>
+    </table>
+    </body>
+<?php echo "</html>"; ?>

@@ -9,22 +9,22 @@ echo help_header("Help: Mod Manager");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp;|&nbsp;
                 <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Mod Manager</small></h2>
-            <p class="smaller menu">
-                <a href="#overview" class="lightlink">Overview</a> &nbsp; | &nbsp;
-                <a href="#operation" class="lightlink">Operation</a> &nbsp; | &nbsp;
-                <a href="#status" class="lightlink">Status</a> &nbsp; | &nbsp;
-                <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp; | &nbsp;
-                <a href="#files" class="lightlink">Config Files</a> &nbsp; | &nbsp;
-                <a href="#batch" class="lightlink">Batch Operations</a> &nbsp; | &nbsp;
-                <a href="#options" class="lightlink">Options</a> &nbsp; | &nbsp;
-                <a href="#analyze" class="lightlink">Analyze TNG Files</a> &nbsp; | &nbsp;
-                <a href="#parser" class="lightlink">View Parser Table</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#overview" class="lightlink">Overview</a> &nbsp;|&nbsp;
+                <a href="#operation" class="lightlink">Operation</a> &nbsp;|&nbsp;
+                <a href="#status" class="lightlink">Status</a> &nbsp;|&nbsp;
+                <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp;|&nbsp;
+                <a href="#files" class="lightlink">Config Files</a> &nbsp;|&nbsp;
+                <a href="#batch" class="lightlink">Batch Operations</a> &nbsp;|&nbsp;
+                <a href="#options" class="lightlink">Options</a> &nbsp;|&nbsp;
+                <a href="#analyze" class="lightlink">Analyze TNG Files</a> &nbsp;|&nbsp;
+                <a href="#parser" class="lightlink">View Parser Table</a> &nbsp;|&nbsp;
                 <a href="#custtext" class="lightlink">Recommended Updates</a>
             </p>
         </td>
@@ -34,8 +34,13 @@ echo help_header("Help: Mod Manager");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

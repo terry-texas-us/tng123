@@ -13,17 +13,17 @@ echo help_header("N�pov�da: Prameny");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="families_help.php" class="lightlink">&laquo; N�pov�da: Rodiny</a> &nbsp; | &nbsp;
+                <a href="families_help.php" class="lightlink">&laquo; N�pov�da: Rodiny</a> &nbsp;|&nbsp;
                 <a href="repositories_help.php" class="lightlink">N�pov�da: �lo�i�t� pramen� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Prameny</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Slou�it</a>
             </p>
         </td>
@@ -89,15 +89,15 @@ echo help_header("N�pov�da: Prameny");
             <h5 class="optionhead">Dlouh� n�zev</h5>
             <p>Dlouh� n�zev pramene.</p>
 
-            <h5 class="optionhead">Autor, archiva�n� ��slo, vydavatel</h5><br>
+            <h5 class="optionhead">Autor, archiva�n� ��slo, vydavatel</h5>
             <p>Dal�� informace spojen� s pramenem (pokud existuj�).</p>
 
-            <h5 class="optionhead">�lo�i�t� pramen�</h5><br>
+            <h5 class="optionhead">�lo�i�t� pramen�</h5>
             <p>Vyberte �lo�i�t� pramen�, ve kter�m se pramen nach�z� (je-li tato skute�nost zn�ma). Pokud dan� �lo�i�t� pramen� je�t� v datab�zi
                 neexistuje, jd�te na Administrace/�lo�i�t� pramen� a
                 kde jej zalo�te, pak se vra�te a zde jej vyberte.</p>
 
-            <h5 class="optionhead">Vlastn� text</h5><br>
+            <h5 class="optionhead">Vlastn� text</h5>
             <p>Citace z materi�lu pramene (voliteln�).</p>
 
         </td>
@@ -184,22 +184,22 @@ echo help_header("N�pov�da: Prameny");
                 zaz�lohujte sv� datab�zov� tabulky</em>
             pro p��pad, �e byste dva prameny slou�ili omylem.</p>
 
-            <h5 class="optionhead">Dal�� shoda</h5><br>
+            <h5 class="optionhead">Dal�� shoda</h5>
             <p>Najde dal�� mo�n� porovn�n�, kter� nezahrne pramen 1. TNG postoup� seznamem mo�n�ch pramen� v t��d�n� podle ID ��sla v textov�m
                 form�tu.
                 Znamen� to, �e "10" bude po "1", ale p�ed "2".</p>
 
-            <h5 class="optionhead">Dal�� duplicita</h5><br>
+            <h5 class="optionhead">Dal�� duplicita</h5>
             <p>Najde dal�� mo�nou duplicitu k pramenu 1. Pokud v�sledkem nen� z�znam, kter� byl zobrazen u pramenu 2, znamen� to, �e duplicita nebyla
                 nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5><br>
+            <h5 class="optionhead">Porovnat/Obnovit</h5>
             <p>Porovn�n� pramenu 1 a pramenu 2. Je-li toto porovn�n� ji� zobrazeno, kliknut� na toto tla��tko zp�sob� obnoven� str�nky.</p>
 
-            <h5 class="optionhead">Prohodit</h5><br>
+            <h5 class="optionhead">Prohodit</h5>
             <p>Pramen 1 se stane pramenem 2 a naopak.</p>
 
-            <h5 class="optionhead">Slou�it</h5><br>
+            <h5 class="optionhead">Slou�it</h5>
             <p>Pramen 2 bude slou�en s pramenem 1. ID ��slo pramene 1 bude zachov�no, stejn� jako ostatn� �daje pramenu 1, pokud nejsou za�krtnuta
                 odpov�daj�c� pol��ka
                 u pramenu 2. Nap�. pokud je u pramenu 2 za�krtnuto pol��ko vedle autora, bude b�hem slou�en� �daj z tohoto pole zkop�rov�n ze z�znamu
@@ -208,7 +208,7 @@ echo help_header("N�pov�da: Prameny");
                 Nen�-li
                 pole zobrazeno ani u jednoho pramenu, pak v tomto poli neexistuje ��dn� �daj.</p>
 
-            <h5 class="optionhead">Upravit</h5><br>
+            <h5 class="optionhead">Upravit</h5>
             <p>�prava z�znamu pramenu v nov�m okn�. Po proveden� zm�n mus�te kliknout na Porovnat/Obnovit, aby se zm�ny projevily na obrazovce
                 Slou�en�.</p>
 

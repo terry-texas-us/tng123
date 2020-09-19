@@ -13,19 +13,19 @@ echo help_header("Nápověda: Uživatelé");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="templateconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení šablony</a> &nbsp; | &nbsp;
+                <a href="templateconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení šablony</a> &nbsp;|&nbsp;
                 <a href="trees_help.php" class="lightlink">Nápověda: Stromy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Uživatelé</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Přezkoumat</a> &nbsp; | &nbsp;
-                <a href="#rights" class="lightlink">Přístupová práva</a> &nbsp; | &nbsp;
-                <a href="#limits" class="lightlink">Omezení přístupu</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
+                <a href="#review" class="lightlink">Přezkoumat</a> &nbsp;|&nbsp;
+                <a href="#rights" class="lightlink">Přístupová práva</a> &nbsp;|&nbsp;
+                <a href="#limits" class="lightlink">Omezení přístupu</a> &nbsp;|&nbsp;
                 <a href="#email" class="lightlink">Email</a>
             </p>
         </td>

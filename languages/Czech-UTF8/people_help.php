@@ -13,18 +13,18 @@ echo help_header("Nápověda: Osoby");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="index_help.php" class="lightlink">&laquo; Nápověda: Začínáme</a> &nbsp; | &nbsp;
+                <a href="index_help.php" class="lightlink">&laquo; Nápověda: Začínáme</a> &nbsp;|&nbsp;
                 <a href="families_help.php" class="lightlink">Nápověda: Rodiny &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Osoby</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Přezkoumat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat novou</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
+                <a href="#review" class="lightlink">Přezkoumat</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Sloučit</a>
             </p></td>
     </tr>
@@ -124,7 +124,7 @@ echo help_header("Nápověda: Osoby");
                 Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapište část místa. Všechny výsledky budou obsahovat to, co
                 jste zapsali jako název místa.</p>
 
-            <p><h5 class="optionhead">Údaje CJKSpd (Křest, Obdarování, Biřmování, Zasvěcení)</h5><br>
+            <p><h5 class="optionhead">Údaje CJKSpd (Křest, Obdarování, Biřmování, Zasvěcení)</h5>
             Tyto události jsou spojeny s obřady prováděnými Církví Ježíše Krista Svatých posledních dní (mormonská církev, která vytvořila
             standard GEDCOM).
             <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto možnost vypněte (je
@@ -226,14 +226,14 @@ echo help_header("Nápověda: Osoby");
             Změny můžete prohlédnout podle stromu nebo podle uživatele nebo podle obojího. Po uložení navrhovaných změn není zaslán žádný mail, ale
             pokud nové změny existují, na záložce Přezkoumat se objeví hvězdička (*).</p>
 
-            <h5 class="optionhead">Vybrat událost a akci</h5><br>
+            <h5 class="optionhead">Vybrat událost a akci</h5>
             <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můžete zúžit výběrem
                 uživatele (osoba
                 odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z možných akcí nalevo od tohoto řádku. Chcete-li
                 změny přezkoumat a
                 případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
 
-            <h5 class="optionhead">Přezkoumat</h5><br>
+            <h5 class="optionhead">Přezkoumat</h5>
             <p>Na obrazovce Přezkoumat můžete provést další potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uložit a vymazat" pro
                 uložení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můžete rovněž odstranit dočasný záznam, aniž
                 byste jej uložili,
@@ -249,7 +249,7 @@ echo help_header("Nápověda: Osoby");
             Chcete-li přezkoumat a sloučit duplicitní záznamy, klikněte na záložku "Sloučit". Zde rozhodnete, zda jsou dva záznamy totožné nebo
             ne.</p>
 
-            <h5 class="optionhead">Najít shodu</h5><br>
+            <h5 class="optionhead">Najít shodu</h5>
             <p>Vyberte nejprve strom. Nelze slučovat osoby z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat osobu jako
                 výchozí bod vašeho hledání (osoba 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny změny,
                 nechte pole ID číslo osoby 1 prázdné</p>
@@ -257,13 +257,13 @@ echo help_header("Nápověda: Osoby");
             <p>Pokud jste vybrali osobu jako Osobu 1, můžete také ručně vybrat ID číslo osoby 2. Chcete-li, aby duplicity Osoby 1 nalezl TNG, nechte
                 pole ID číslo osoby 2 prázdné.</p>
 
-            <h5 class="optionhead">Porovnat následující pole</h5><br>
+            <h5 class="optionhead">Porovnat následující pole</h5>
             <p>Toto jsou kritéria, která TNG používá k určení možných duplicit. Standardně jsou vybrány křestní jméno a příjmení, což znamená, že tato
                 pole
                 musí být shodná, aby mohly být dva záznamy považovány za potenciálně duplicitní. Vyberete-li také datum narození, místo narození,
                 datum úmrtí a/nebo místo úmrtí, musí být také tato pole shodná.</p>
 
-            <h5 class="optionhead">Jiné možnosti</h5><br>
+            <h5 class="optionhead">Jiné možnosti</h5>
 
             <p><em>Odmítnout prázdné</em> znamená, že prázdná pole nebudou brána v potaz. Např. někdo s příjmením, ale bez vyplněného křestního jména
                 nebude brán jako shodný s jiným záznamem, pokud je křestní jméno mezi vybranými kritérii.</p>
@@ -284,21 +284,21 @@ echo help_header("Nápověda: Osoby");
                 zazálohujte své databázové tabulky</em>
             pro případ, že byste dvě osoby sloučili omylem.</p>
 
-            <h5 class="optionhead">Další shoda</h5><br>
+            <h5 class="optionhead">Další shoda</h5>
             <p>Najde další možné porovnání, která nezahrne osobu 1. TNG postoupí seznamem možných osob v třídění podle ID čísla v textovém formátu.
                 Znamená to, že "10" bude po "1", ale před "2".</p>
 
-            <h5 class="optionhead">Další duplicita</h5><br>
+            <h5 class="optionhead">Další duplicita</h5>
             <p>Najde další možnou duplicitu k osobě 1. Pokud výsledkem není záznam, který byl zobrazen u osoby 2, znamená to, že duplicita nebyla
                 nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5><br>
+            <h5 class="optionhead">Porovnat/Obnovit</h5>
             <p>Porovnání osoby 1 a osoby 2. Je-li toto porovnání již zobrazeno, kliknutí na toto tlačítko způsobí obnovení stránky.</p>
 
-            <h5 class="optionhead">Prohodit</h5><br>
+            <h5 class="optionhead">Prohodit</h5>
             <p>Osoba 1 se stane osobou 2 a naopak.</p>
 
-            <h5 class="optionhead">Sloučit</h5><br>
+            <h5 class="optionhead">Sloučit</h5>
             <p>Osoba 2 bude sloučena s osobou 1. ID číslo osoby 1 bude zachováno, stejně jako ostatní údaje osoby 1, pokud nejsou zaškrtnuta
                 odpovídající políčka
                 u osoby 2. Např. pokud je u osoby 2 zaškrtnuto políčko vedle data narození, bude během sloučení údaj z tohoto pole zkopírován ze
@@ -307,7 +307,7 @@ echo help_header("Nápověda: Osoby");
                 Není-li
                 pole zobrazeno ani u jedné osoby, pak v tomto poli neexistuje žádný údaj.</p>
 
-            <h5 class="optionhead">Upravit</h5><br>
+            <h5 class="optionhead">Upravit</h5>
             <p>Úprava záznamu osoby v novém okně. Po provedení změn musíte kliknout na Porovnat/Obnovit, aby se změny projevily na obrazovce
                 Sloučení.</p>
 

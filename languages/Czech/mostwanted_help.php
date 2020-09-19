@@ -13,16 +13,16 @@ echo help_header("N�pov�da: Hled� se");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="misc_help.php" class="lightlink">&laquo; N�pov�da: R�zn�</a> &nbsp; | &nbsp;
+                <a href="misc_help.php" class="lightlink">&laquo; N�pov�da: R�zn�</a> &nbsp;|&nbsp;
                 <a href="data_help.php" class="lightlink">N�pov�da: Import / Export &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Hled� se</small></h2>
-            <p class="smaller menu">
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">T��dit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;
+                <a href="#sort" class="lightlink">T��dit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>

@@ -13,15 +13,15 @@ echo help_header("N�pov�da: R�zn�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="notes2_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp; | &nbsp;
+                <a href="notes2_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp;|&nbsp;
                 <a href="mostwanted_help.php" class="lightlink">N�pov�da: Hled� se &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>R�zn�</small></h2>
-            <p class="smaller menu">
-                <a href="#whatsnew" class="lightlink">Co je nov�ho</a> &nbsp; | &nbsp;
-                <a href="#mostwanted" class="lightlink">Hled� se</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#whatsnew" class="lightlink">Co je nov�ho</a> &nbsp;|&nbsp;
+                <a href="#mostwanted" class="lightlink">Hled� se</a> &nbsp;|&nbsp;
                 <a href="#validation" class="lightlink">Ov��en� dat</a>
             </p>
         </td>

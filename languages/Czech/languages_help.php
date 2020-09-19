@@ -13,15 +13,15 @@ echo help_header("N�pov�da: Jazyky");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="dna_help.php" class="lightlink">&laquo; N�pov�da: Testy DNA</a> &nbsp; | &nbsp;
+                <a href="dna_help.php" class="lightlink">&laquo; N�pov�da: Testy DNA</a> &nbsp;|&nbsp;
                 <a href="backuprestore_help.php" class="lightlink">N�pov�da: Obslu�n� programy &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Jazyky</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>

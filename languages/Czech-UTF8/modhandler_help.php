@@ -13,22 +13,22 @@ echo help_header("Nápověda: Manažer módů");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp;|&nbsp;
                 <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Manažer módů</small></h2>
-            <p class="smaller menu">
-                <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
-                <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-                <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-                <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
-                <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
-                <a href="#batch" class="lightlink">Dávkové operace</a> &nbsp; | &nbsp;
-                <a href="#options" class="lightlink">Možnosti</a> &nbsp; | &nbsp;
-                <a href="#analyze" class="lightlink">Analýza souborů TNG</a> &nbsp; | &nbsp;
-                <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#overview" class="lightlink">Přehled</a> &nbsp;|&nbsp;
+                <a href="#operation" class="lightlink">Operace</a> &nbsp;|&nbsp;
+                <a href="#status" class="lightlink">Stav</a> &nbsp;|&nbsp;
+                <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp;|&nbsp;
+                <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp;|&nbsp;
+                <a href="#batch" class="lightlink">Dávkové operace</a> &nbsp;|&nbsp;
+                <a href="#options" class="lightlink">Možnosti</a> &nbsp;|&nbsp;
+                <a href="#analyze" class="lightlink">Analýza souborů TNG</a> &nbsp;|&nbsp;
+                <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp;|&nbsp;
                 <a href="#custtext" class="lightlink">Doporučené aktualizace</a>
 
             </p></td>

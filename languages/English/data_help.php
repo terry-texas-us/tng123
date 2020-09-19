@@ -9,14 +9,14 @@ echo help_header("Help: Data Import");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp; | &nbsp;
+                <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp;|&nbsp;
                 <a href="second_help.php" class="lightlink">Help: Secondary Processes &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Import / Export</small></h2>
-            <p class="smaller menu">
-                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp;|&nbsp;
                 <a href="#export" class="lightlink">GEDCOM Export</a>
             </p>
         </td>
@@ -26,8 +26,13 @@ echo help_header("Help: Data Import");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -74,7 +79,7 @@ echo help_header("Help: Data Import");
                 select which ones
                 to accept and which ones to ignore before importing your entire database.</p>
 
-            <h5 class="optionhead">Destination Tree</h5><br>
+            <h5 class="optionhead">Destination Tree</h5>
             <p>Select a Tree to receive the imported data (required). If the tree to receive the data does not yet exist, click on the "Add New Tree"
                 button to create it.
                 A small popup box will appear and allow you to enter the information for the new tree.</p>

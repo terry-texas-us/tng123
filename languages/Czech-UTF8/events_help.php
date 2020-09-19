@@ -14,17 +14,17 @@ echo help_header("Nápověda: Události");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="citations_help.php" class="lightlink">&laquo; Nápověda: Citace</a> &nbsp; | &nbsp;
+                <a href="citations_help.php" class="lightlink">&laquo; Nápověda: Citace</a> &nbsp;|&nbsp;
                 <a href="more_help.php" class="lightlink">Nápověda: Více &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Události</small></h2>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Standardní a vlastní</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#what" class="lightlink">Standardní a vlastní</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nové</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;
+                <a href="#del" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
                 <a href="#citations" class="lightlink">Citace</a>
             </p>
         </td>
@@ -90,7 +90,7 @@ echo help_header("Nápověda: Události");
                 v této události
                 provedete, <b>nebudou</b> promítnuty do dříve vytvořených duplikátů.</p>
 
-            <h5 class="optionhead">Více</h5><br>
+            <h5 class="optionhead">Více</h5>
             <p>Kliknutím na "Více" můžete pro každou událost zapsat některé méně běžné údaje. Objeví se další pole.
                 Tato pole lze skrýt opětovným kliknutím na "Více". Skrytí polí neznamená vymazání jejich obsahu. Tato pole obsahují:</p>
 

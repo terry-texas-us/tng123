@@ -9,17 +9,17 @@ echo help_header("Pomoc: Repozytoria");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="sources_help.php" class="lightlink">&laquo; Pomoc: Źródła</a> &nbsp; | &nbsp;
+                <a href="sources_help.php" class="lightlink">&laquo; Pomoc: Źródła</a> &nbsp;|&nbsp;
                 <a href="assoc_help.php" class="lightlink">Pomoc: Związki &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Repozytoria</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Scalanie</a>
             </p>
         </td>
@@ -82,7 +82,7 @@ echo help_header("Pomoc: Repozytoria");
             <h5 class="optionhead">Nazwa</h5>
             <p>Krótka nazwa repozytorium.</p>
 
-            <h5 class="optionhead">Adres 1, Adres 2, Miasto, Województwo, Kod pocztowy, Kraj</h5><br>
+            <h5 class="optionhead">Adres 1, Adres 2, Miasto, Województwo, Kod pocztowy, Kraj</h5>
             <p>Lokalizacja repozytorium (jeśli dotyczy; wszystkie dane opcjonalne).</p>
 
         </td>
@@ -165,19 +165,19 @@ echo help_header("Pomoc: Repozytoria");
             tabel bazy danych zanim dokonasz operacji scalania na wypadek,
             gdybyś scalił niechcąco niewłaściwe osoby.</p>
 
-            <h5 class="optionhead">Następna zgodność</h5><br>
+            <h5 class="optionhead">Następna zgodność</h5>
             <p>Znajdź następną możliwą zgodność, która nie wymaga podania Repozytorium 1. TNG zmienia listę możliwych repozytoriów w przyporządkowany
                 ID repozytorium ciąg znaków.
                 To znaczy, że "10" następuje po "1" ale przed "2".</p>
 
-            <h5 class="optionhead">Następny duplikat</h5><br>
+            <h5 class="optionhead">Następny duplikat</h5>
             <p>Znajdź następny możliwy duplikat dla Repozytorium 1. Jeśli ta operacja zakończy się brakiem zapisu dla Repozytorium 2, znaczy, że
                 duplikat nie został znaleziony.</p>
 
-            <h5 class="optionhead">Porównaj / odśwież.</h5><br>
+            <h5 class="optionhead">Porównaj / odśwież.</h5>
             <p>Porównanie Repozytoriów 1 i 2. Jeśli to porównanie jest już widoczne, kliknięcie na ten przycisk spowoduje odświeżenie strony.</p>
 
-            <h5 class="optionhead">Przełącz</h5><br>
+            <h5 class="optionhead">Przełącz</h5>
             <p>Zamiana - Repozytorium 1 staje się Repozytorium 2 i vice versa.</p>
 
             <h5 class="optionhead">Scalanie</h5>

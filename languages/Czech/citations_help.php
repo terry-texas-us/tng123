@@ -13,14 +13,14 @@ echo help_header("N�pov�da: Citace");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="notes_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp; | &nbsp;
+                <a href="notes_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp;|&nbsp;
                 <a href="events_help.php" class="lightlink">N�pov�da: Ud�losti &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Citace</small></h2>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#what" class="lightlink">Co je to?</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>
             </p>
         </td>

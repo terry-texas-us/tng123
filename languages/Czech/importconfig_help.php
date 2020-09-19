@@ -13,9 +13,9 @@ echo help_header("N�pov�da: Nastaven� importu dat");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="logconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� protokolov�n�</a> &nbsp; | &nbsp;
+                <a href="logconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� protokolov�n�</a> &nbsp;|&nbsp;
                 <a href="mapconfig_help.php" class="lightlink">N�pov�da: Nastaven� mapy &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Nastaven� importu dat</small></h2>

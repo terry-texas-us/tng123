@@ -9,17 +9,17 @@ echo help_header("Pomoc: Źródła");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="families_help.php" class="lightlink">&laquo; Pomoc: Rodziny</a> &nbsp; | &nbsp;
+                <a href="families_help.php" class="lightlink">&laquo; Pomoc: Rodziny</a> &nbsp;|&nbsp;
                 <a href="repositories_help.php" class="lightlink">Pomoc: Repozytoria &raquo;</a>
             </p>
             (<h2 class="largeheader">Pomoc: <small>Źródła</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edycja</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Scalanie</a>
             </p>
         </td>
@@ -87,15 +87,15 @@ echo help_header("Pomoc: Źródła");
             <h5 class="optionhead">Długi tytuł</h5>
             <p>Formalny, długi tytuł dla źródła.</p>
 
-            <h5 class="optionhead">Autor, numer telefonu, wydawca</h5><br>
+            <h5 class="optionhead">Autor, numer telefonu, wydawca</h5>
             <p>Dodatkowa informacja związana ze źródłem (jeśli dostępna).</p>
 
-            <h5 class="optionhead">Repozytorium</h5><br>
+            <h5 class="optionhead">Repozytorium</h5>
             <p>Wybierz repozytorium, w którym znajduje się to źródło. Jeśli repozytorium jeszcze nie istnieje, przejdź do działu
                 Administracja/Repozytoria, dodaj go tam,
                 wtedy wróć i wybierz go tutaj.</p>
 
-            <h5 class="optionhead">Faktyczny tekst</h5><br>
+            <h5 class="optionhead">Faktyczny tekst</h5>
             <p>Cytat albo fragment materiału ze źródła (opcjonalne).</p>
 
         </td>
@@ -171,7 +171,7 @@ echo help_header("Pomoc: Źródła");
                 zapisach, aby zostały wzięte pod uwagę jako możliwe zgodności. Jeśli wybierzesz też autora, wydawcę, repozytorium, faktyczny tekst,
                 to te pola muszą się też zgadzać.</p>
 
-            <h5 class="optionhead">Inne opcje</h5><br>
+            <h5 class="optionhead">Inne opcje</h5>
             <p><em>Ignoruj puste pola</em> znaczy, że puste pola nie będą brane pod uwagę. Na przykład, źródła z krótkim, nie pełnym tytułem nie
                 zostanie uwzględnione,
                 jeśli pełny tytuł jest wśród zaznaczonych kryteriów.</p>
@@ -188,21 +188,21 @@ echo help_header("Pomoc: Źródła");
             tabel bazy danych zanim dokonasz operacji scalania na wypadek,
             gdybyś scalił niechcąco niewłaściwe osoby.</p>
 
-            <h5 class="optionhead">Następna zgodność</h5><br>
+            <h5 class="optionhead">Następna zgodność</h5>
             <p>Znajdź następną możliwą zgodność, która nie wymaga podania Źródła 1. TNG zmienia listę możliwych źródeł w przyporządkowany ID źródła
                 ciąg znaków. To znaczy, że "10" następuje po "1" ale przed "2".</p>
 
-            <h5 class="optionhead">Następny duplikat</h5><br>
+            <h5 class="optionhead">Następny duplikat</h5>
             <p>Znajdź następny możliwy duplikat dla Źródła 1. Jeśli ta operacja zakończy się brakiem zapisu dla Źródła 2, znaczy, że duplikat nie
                 został znaleziony.</p>
 
-            <h5 class="optionhead">Porównaj / odśwież.</h5><br>
+            <h5 class="optionhead">Porównaj / odśwież.</h5>
             <p>Porównanie źródeł 1 i 2. Jeśli to porównanie jest już widoczne, kliknięcie na ten przycisk spowoduje odświeżenie strony.</p>
 
-            <h5 class="optionhead">Przełącz</h5><br>
+            <h5 class="optionhead">Przełącz</h5>
             <p>Zamiana - Źródło 1 staje się Źródłem 2 i vice versa.</p>
 
-            <h5 class="optionhead">Scalanie</h5><br>
+            <h5 class="optionhead">Scalanie</h5>
             <p>Źródło 2 jest scalane ze Źródłem 1. ID Źródła 1 oraz jego wszystkie inne dane zostaną zachowane, chyba, że dla Źródła 2 zostało
                 zaznaczone odpowiednie pole(a).
                 Na przykład, jeśli zaznaczyłeś pole autor dla Źródła 2, dane w tym polu będą podczas scalania skopiowane ze Źródła 2 do Źródła 1.
@@ -211,7 +211,7 @@ echo help_header("Pomoc: Źródła");
                 1 lub 2 jest puste, znaczy, że nie istnieją żadne
                 dane dla któregokolwiek źródła.</p>
 
-            <h5 class="optionhead">Edycja</h5><br>
+            <h5 class="optionhead">Edycja</h5>
             <p>Edytuj indywidualny zapis dla tego źródła w nowym oknie. Jeśli dokonałeś zmian, musisz kliknąć Porównaj / odśwież by zobaczyć zmiany w
                 widoku scalania.</p>
             <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać

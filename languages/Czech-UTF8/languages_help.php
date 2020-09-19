@@ -13,15 +13,15 @@ echo help_header("Nápověda: Jazyky");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="dna_help.php" class="lightlink">&laquo; Nápověda: Testy DNA</a> &nbsp; | &nbsp;
+                <a href="dna_help.php" class="lightlink">&laquo; Nápověda: Testy DNA</a> &nbsp;|&nbsp;
                 <a href="backuprestore_help.php" class="lightlink">Nápověda: Obslužné programy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Jazyky</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>

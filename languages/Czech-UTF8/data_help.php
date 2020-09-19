@@ -13,14 +13,14 @@ echo help_header("Nápověda: Import dat");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
+                <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp;|&nbsp;
                 <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Import / Export</small></h2>
-            <p class="smaller menu">
-                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp;|&nbsp;
                 <a href="#export" class="lightlink">GEDCOM Export</a>
             </p>
         </td>
@@ -71,7 +71,7 @@ echo help_header("Nápověda: Import dat");
                 zvolit, které události
                 před importem vaší celé databáze přijmout a které odmítnout.</p>
 
-            <h5 class="optionhead">Cílový strom</h5><br>
+            <h5 class="optionhead">Cílový strom</h5>
             <p>Vyberte strom, do kterého chcete importovat data (povinné). Pokud strom, kam mají data přijít, ještě neexistuje, klikněte na tlačítko
                 "Přidat nový strom" a vytvořte jej.
                 Objeví se malé okno, které vám umožní zadat informace o novém stromu.</p>

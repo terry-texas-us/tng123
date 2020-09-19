@@ -13,15 +13,15 @@ echo help_header("Nápověda: Administrace");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="modmanager_help.php" class="lightlink">&laquo; Nápověda: Manažer módů</a> &nbsp; | &nbsp;
+                <a href="modmanager_help.php" class="lightlink">&laquo; Nápověda: Manažer módů</a> &nbsp;|&nbsp;
                 <a href="people_help.php" class="lightlink">Nápověda: Osoby &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Začínáme</small></h2>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Začínáme</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Poznámky</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#gettingstarted" class="lightlink">Začínáme</a> &nbsp;|&nbsp;
+                <a href="#notes" class="lightlink">Poznámky</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Jiné zdroje</a>
             </p>
         </td>

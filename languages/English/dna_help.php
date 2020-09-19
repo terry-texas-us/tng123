@@ -9,20 +9,20 @@ echo help_header("Help: DNA Tests");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="reports_help.php" class="lightlink">&laquo; Help: Reports</a> &nbsp; | &nbsp;
+                <a href="reports_help.php" class="lightlink">&laquo; Help: Reports</a> &nbsp;|&nbsp;
                 <a href="languages_help.php" class="lightlink">Help: Languages &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>DNA Tests</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#ydna" class="lightlink">Y-DNA Fields</a> &nbsp; | &nbsp;
-                <a href="#mtdna" class="lightlink">mtDNA Fields</a> &nbsp; | &nbsp;
-                <a href="#atdna" class="lightlink">atDNA Fields</a> &nbsp; | &nbsp;
-                <a href="#common" class="lightlink">Common Fields</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                <a href="#ydna" class="lightlink">Y-DNA Fields</a> &nbsp;|&nbsp;
+                <a href="#mtdna" class="lightlink">mtDNA Fields</a> &nbsp;|&nbsp;
+                <a href="#atdna" class="lightlink">atDNA Fields</a> &nbsp;|&nbsp;
+                <a href="#common" class="lightlink">Common Fields</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Delete</a>
             </p>
         </td>
@@ -32,8 +32,13 @@ echo help_header("Help: DNA Tests");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

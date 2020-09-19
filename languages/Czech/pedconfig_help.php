@@ -13,18 +13,18 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
+                <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp;|&nbsp;
                 <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Nastaven� sch�mat</small></h2>
-            <p class="smaller menu">
-                <a href="#ped" class="lightlink">P�edkov�</a> &nbsp; | &nbsp;
-                <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-                <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
-                <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
-                <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#ped" class="lightlink">P�edkov�</a> &nbsp;|&nbsp;
+                <a href="#desc" class="lightlink">Potomci</a> &nbsp;|&nbsp;
+                <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp;|&nbsp;
+                <a href="#time" class="lightlink">�asov� osa</a> &nbsp;|&nbsp;
+                <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp;|&nbsp;
                 <a href="#thumb" class="lightlink">N�hledy</a>
             </p>
         </td>

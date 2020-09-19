@@ -13,17 +13,17 @@ echo help_header("Nápověda: Místa");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="cemeteries_help.php" class="lightlink">&laquo; Nápověda: Hřbitovy</a> &nbsp; | &nbsp;
+                <a href="cemeteries_help.php" class="lightlink">&laquo; Nápověda: Hřbitovy</a> &nbsp;|&nbsp;
                 <a href="places_googlemap_help.php" class="lightlink">Nápověda: Google Maps &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Místa</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Sloučit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
+                <a href="#merge" class="lightlink">Sloučit</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Geokódovat</a>
             </p>
         </td>

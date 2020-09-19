@@ -13,15 +13,15 @@ echo help_header("N�pov�da: Nastaven�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="second_help.php" class="lightlink">&laquo; N�pov�da: Druhotn� procesy</a> &nbsp; | &nbsp;
+                <a href="second_help.php" class="lightlink">&laquo; N�pov�da: Druhotn� procesy</a> &nbsp;|&nbsp;
                 <a href="config_help.php" class="lightlink">N�pov�da: Z�kladn� nastaven� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Nastaven�</small></h2>
-            <p class="smaller menu">
-                <a href="#config" class="lightlink">Konfigurace</a> &nbsp; | &nbsp;
-                <a href="#diag" class="lightlink">Diagnostika</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#config" class="lightlink">Konfigurace</a> &nbsp;|&nbsp;
+                <a href="#diag" class="lightlink">Diagnostika</a> &nbsp;|&nbsp;
                 <a href="#tables" class="lightlink">Vytvo�en� tabulek</a>
             </p>
         </td>

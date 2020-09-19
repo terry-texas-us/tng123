@@ -13,17 +13,17 @@ echo help_header("N�pov�da: Rodiny");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="people_help.php" class="lightlink">&laquo; N�pov�da: Osoby</a> &nbsp; | &nbsp;
+                <a href="people_help.php" class="lightlink">&laquo; N�pov�da: Osoby</a> &nbsp;|&nbsp;
                 <a href="sources_help.php" class="lightlink">N�pov�da: Prameny &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Rodiny</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat novou</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat novou</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
                 <a href="#review" class="lightlink">P�ezkoumat</a>
             </p>
         </td>
@@ -122,7 +122,7 @@ echo help_header("N�pov�da: Rodiny");
                 Chcete-li omezit po�et nalezen�ch v�sledk�, p�ed kliknut�m na ikonu Naj�t zapi�te ��st m�sta. V�echny v�sledky budou obsahovat to, co
                 jste zapsali jako n�zev m�sta.</p>
 
-            <p><h5 class="optionhead">�daje CJKSpd (Pe�et�n� s partnerem)</h5><br>
+            <p><h5 class="optionhead">�daje CJKSpd (Pe�et�n� s partnerem)</h5>
             Tato ud�lost jsou spojena s ob�adem prov�d�n�m C�rkv� Je��e Krista Svat�ch posledn�ch dn� (mormonsk� c�rkev, kter� vytvo�ila standard
             GEDCOM).
             <strong>Pozn.:</strong> Nechcete-li vid�t pole spojen� s CJKSpd, jd�te na Nastaven�/Z�kladn� nastaven� a zde tuto mo�nost vypn�te (je
@@ -160,7 +160,7 @@ echo help_header("N�pov�da: Rodiny");
                 standardn� ud�losti) se ulo�� kliknut�m na tla��tko Ulo�it na konci str�nky nebo kliknut�m na ikonu Ulo�it na str�nce naho�e. Strom a
                 ID ��slo osoby nelze zm�nit.</p>
 
-            <p><h5 class="optionhead">D�ti</h5><br>
+            <p><h5 class="optionhead">D�ti</h5>
             <p>Kliknut�m na "Naj�t..." vyberte existuj�c� osoby, kter� by m�ly b�t v t�to rodin� d�tmi, nebo kliknut�m na "Vytvo�it"
                 vytvo�te nov� d�t�. Pokud jste zvolili Vytvo�it, budete moci vlo�it �daje o nov� osob� bez toho, abyste museli opustit aktu�ln�
                 str�nku.
@@ -201,14 +201,14 @@ echo help_header("N�pov�da: Rodiny");
             Zm�ny m��ete prohl�dnout podle stromu nebo podle u�ivatele nebo podle oboj�ho. Po ulo�en� navrhovan�ch zm�n nen� zasl�n ��dn� mail, ale
             pokud nov� zm�ny existuj�, na z�lo�ce P�ezkoumat se objev� hv�zdi�ka (*).</p>
 
-            <h5 class="optionhead">Vybrat ud�lost a akci</h5><br>
+            <h5 class="optionhead">Vybrat ud�lost a akci</h5>
             <p>V tabulce, kter� popisuje ud�losti, kter� si p�ejete p�ezkoumat nebo odstranit, vyberte ��dek. Seznam v�sledk� m��ete z��it v�b�rem
                 u�ivatele (osoba
                 odpov�dn� za navrhovan� zm�ny) a/nebo strom. Po zobrazen� v�sledk� klikn�te na jednu z mo�n�ch akc� nalevo od tohoto ��dku. Chcete-li
                 zm�ny p�ezkoumat a
                 p��padn� za�lenit do datab�ze, vyberte <em>P�ezkoumat</em>. Chcete-li navrhovan� zm�ny zam�tnout, vyberte <em>Odstranit</em>.</p>
 
-            <h5 class="optionhead">P�ezkoumat</h5><br>
+            <h5 class="optionhead">P�ezkoumat</h5>
             <p>Na obrazovce P�ezkoumat m��ete prov�st dal�� pot�ebn� zm�ny, v�etn� pozn�mek a pramen�, a pot� klikn�te na "Ulo�it a vymazat" pro
                 ulo�en� do datab�ze a odstran�n� do�asn�ho z�znamu. Kliknut�m na "Odm�tnout a vymazat" m��ete rovn� odstranit do�asn� z�znam, ani�
                 byste jej ulo�ili,

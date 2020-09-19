@@ -9,17 +9,17 @@ echo help_header("Help: Families");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="people_help.php" class="lightlink">&laquo; Help: People</a> &nbsp; | &nbsp;
+                <a href="people_help.php" class="lightlink">&laquo; Help: People</a> &nbsp;|&nbsp;
                 <a href="sources_help.php" class="lightlink">Help: Sources &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Families</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;
                 <a href="#review" class="lightlink">Review</a>
             </p>
         </td>
@@ -29,8 +29,13 @@ echo help_header("Help: Families");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -69,7 +74,7 @@ echo help_header("Help: Families");
             <h5 class="optionhead">Tree</h5>
             <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new family.</p>
 
-            <h5 class="optionhead">Branch (optional)</h5><br>
+            <h5 class="optionhead">Branch (optional)</h5>
             <p>Assigning a family to a "Branch" limits access to the family's data to users who are also assigned to the same Branch. If at least one
                 Branch has been
                 defined and your user account is not assigned to a particular branch, you may elect to assign the new family to one or more of the
@@ -79,7 +84,7 @@ echo help_header("Help: Families");
                 more than one branch. When you're done making your selection, move your mouse pointer out of the editing box and it will
                 disappear.</p>
 
-            <p><h5 class="optionhead">Family ID</h5><br>
+            <p><h5 class="optionhead">Family ID</h5>
             <p>The Family ID must be unique within the selected Tree and should consist of an upper case <strong>F</strong> followed by a number (no
                 more than 21 digits).
                 An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may enter
@@ -127,7 +132,7 @@ echo help_header("Help: Families");
                 To limit the number of results found, enter part of the place name before clicking the Find icon. All results will contain what you
                 entered in the place name.</p>
 
-            <p><h5 class="optionhead">LDS Data (Sealed to Spouse)</h5><br>
+            <p><h5 class="optionhead">LDS Data (Sealed to Spouse)</h5>
             This event is associated with an ordinance practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the
             GEDCOM standard).
             <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that
@@ -166,7 +171,7 @@ echo help_header("Help: Families");
                 the page. The Tree and
                 Family ID cannot be changed.</p>
 
-            <p><h5 class="optionhead">Children</h5><br>
+            <p><h5 class="optionhead">Children</h5>
             <p>Select existing individuals to be children in this family by clicking "Find", or create new children by clicking
                 "Create". If you choose Create, you will be allowed to enter information for the new person without leaving the current page.
                 After an individual is selected or created, the person's Name, ID and birth date will appear in the Children list. That list cannot be
@@ -208,14 +213,14 @@ echo help_header("Help: Families");
             No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are
             present.</p>
 
-            <h5 class="optionhead">Select Event and Action</h5><br>
+            <h5 class="optionhead">Select Event and Action</h5>
             <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting a
                 User (the person
                 responsible for the proposed change) and/or the Tree. When the results are displayed, click on one of the possible actions listed at
                 the left of that line. To review and
                 possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
 
-            <h5 class="optionhead">Review</h5><br>
+            <h5 class="optionhead">Review</h5>
             <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and Delete"
                 to
                 make the changes permanent and remove the tentative record. You may also choose to remove the tentative record without saving by

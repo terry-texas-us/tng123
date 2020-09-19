@@ -9,16 +9,16 @@ echo help_header("Pomoc: Mapy Google");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="places_help.php" class="lightlink">&laquo; Pomoc: Miejsca</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">&laquo; Pomoc: Miejsca</a> &nbsp;|&nbsp;
                 <a href="tlevents_help.php" class="lightlink">Pomoc: Linia czasu wydarzeń &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Mapy Google</small></h2>
-            <p class="smaller menu">
-                <a href="#show" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#show" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#controls" class="lightlink">Map Controls</a> &nbsp;|&nbsp;
                 <a href="#help" class="lightlink">Pomoc</a>
             </p>
         </td>

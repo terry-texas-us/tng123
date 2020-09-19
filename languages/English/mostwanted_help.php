@@ -9,16 +9,16 @@ echo help_header("Help: Most Wanted");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="misc_help.php" class="lightlink">&laquo; Help: Miscellaneous</a> &nbsp; | &nbsp;
+                <a href="misc_help.php" class="lightlink">&laquo; Help: Miscellaneous</a> &nbsp;|&nbsp;
                 <a href="data_help.php" class="lightlink">Help: Import / Export &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Most Wanted</small></h2>
-            <p class="smaller menu">
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Sort</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                <a href="#sort" class="lightlink">Sort</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Delete</a>
             </p>
         </td>
@@ -28,8 +28,13 @@ echo help_header("Help: Most Wanted");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

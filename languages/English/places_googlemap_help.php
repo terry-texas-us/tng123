@@ -9,28 +9,33 @@ echo help_header("Help: Google Maps");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp;|&nbsp;
                 <a href="tlevents_help.php" class="lightlink">Help: Timeline Events &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Google Maps</small></h2>
-            <p class="smaller menu">
-                <a href="#show" class="lightlink">Show/Hide</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#controls" class="lightlink">Map Controls</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#show" class="lightlink">Show/Hide</a> &nbsp;|&nbsp;
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#controls" class="lightlink">Map Controls</a> &nbsp;|&nbsp;
                 <a href="#help" class="lightlink">Help</a>
             </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-      <div id="google_translate_element" style="float:right;"></div>
-      <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-      </script>
+            <div id="google_translate_element" style="float:right;"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
+                }
+
+            </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <p><span class="subheadbold">Show/Hide Clickable Map</span><br><br>
                 Click the "Show/Hide Clickable Map" button to show the Google Map and search for a Geocode

@@ -22,15 +22,15 @@ include $relpath . "begin.php";
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Aide : Utilités</a> &nbsp; | &nbsp;
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Aide : Utilités</a> &nbsp;|&nbsp;
                 <a href="people_help.php" class="lightlink">Aide : Personnes &raquo;</a>
             </p>
             <h2 class="largeheader">Aide : <small>Mise en route</small></h2>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Mise en route</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Notes</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#gettingstarted" class="lightlink">Mise en route</a> &nbsp;|&nbsp;
+                <a href="#notes" class="lightlink">Notes</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Autres ressources</a>
             </p>
         </td>

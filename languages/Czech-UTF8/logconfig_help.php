@@ -13,9 +13,9 @@ echo help_header("Nápověda: Nastavení protokolování");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="pedconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení schémat</a> &nbsp; | &nbsp;
+                <a href="pedconfig_help.php" class="lightlink">&laquo; Nápověda: Nastavení schémat</a> &nbsp;|&nbsp;
                 <a href="importconfig_help.php" class="lightlink">Nápověda: Nastavení importu &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Nastavení protokolování</small></h2>

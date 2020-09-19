@@ -13,16 +13,16 @@ echo help_header("Nápověda: Vlastní typy událostí");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp; | &nbsp;
+                <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp;|&nbsp;
                 <a href="reports_help.php" class="lightlink">Nápověda: Reporty &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Vlastní typy událostí</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
-                <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp;|&nbsp;
+                <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>
@@ -37,18 +37,18 @@ echo help_header("Nápověda: Vlastní typy událostí");
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech vlastních typů událostí ve vaší databázi.
                 Možnosti výběru jsou následující:</p>
 
-            <p><h5 class="optionhead">Spojeno s</h5><br>
+            <p><h5 class="optionhead">Spojeno s</h5>
             Pro omezení výběru zvolte z tohoto rozbalovacího seznamu vlastní typy událostí spojené s osobami, rodinami, prameny nebo úložišti
             pramenů.</p>
 
-            <p><h5 class="optionhead">Přijmout/Odmítnout/Vše</h5><br>
+            <p><h5 class="optionhead">Přijmout/Odmítnout/Vše</h5>
             Výběrem jedné z těchto voleb omezíte výběr vlastních typů událostí na ty, které jsou <strong>přijaty</strong>, nebo na ty,
             které jsou <strong>odmítnuty</strong>. Volba <strong>Vše</strong> neomezí výsledek výběru.</p>
 
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <p><h5 class="optionhead">Smazat/Přijmout/Odmítnout/Sbalit vybrané</h5><br>
+            <p><h5 class="optionhead">Smazat/Přijmout/Odmítnout/Sbalit vybrané</h5>
             Klikněte na zaškrtávací políčko vedle jednoho nebo více typů událostí, a poté použijte tato tlačítka k provedení akce na všech vybraných
             typech událostí najednou.</p>
 

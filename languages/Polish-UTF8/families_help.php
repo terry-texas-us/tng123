@@ -9,17 +9,17 @@ echo help_header("Pomoc: Rodziny");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="people_help.php" class="lightlink">&laquo; Pomoc: Osoby</a> &nbsp; | &nbsp;
+                <a href="people_help.php" class="lightlink">&laquo; Pomoc: Osoby</a> &nbsp;|&nbsp;
                 <a href="sources_help.php" class="lightlink">Pomoc: Źródła &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Rodziny</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edytuj istniejące</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edytuj istniejące</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp;|&nbsp;
                 <a href="#review" class="lightlink">Przegląd zmian</a>
             </p>
         </td>
@@ -63,7 +63,7 @@ echo help_header("Pomoc: Rodziny");
             <h5 class="optionhead">Drzewo</h5>
             <p>Jeśli masz tylko jedno drzewo, zostanie ono zaznaczone automatycznie. W innym przypadku, należy wybrać drzewo na nowej rodziny.</p>
 
-            <h5 class="optionhead">Gałąź (opcjonalne)</h5><br>
+            <h5 class="optionhead">Gałąź (opcjonalne)</h5>
             <p>Przypisanie "Gałęzi" do rodziny ogranicza dostęp do danych rodzinnych do użytkowników którzy są przypisani do tej samej gałęzi. Jeśli
                 co najmniej jedna gałąź została
                 zdefiniowana i konto użytkownika nie jest przypisane do danej gałęzi, może on przypisać nową rodzinę do jednej lub większej liczby
@@ -72,7 +72,7 @@ echo help_header("Pomoc: Rodziny");
                 (Mac), aby wybrać więcej niż jedną gałąź.
                 Po dokonaniu wyboru przenieś wskaźnik myszy na pole edycji, a pole wyboru zniknie.</p>
 
-            <p><h5 class="optionhead">ID rodziny</h5><br>
+            <p><h5 class="optionhead">ID rodziny</h5>
             ID rodziny musi być unikalne w obrębie wybranego drzewa i powinno składać się z litery <strong>F</strong> oraz następujących po niej cyfr
             (nie więcej niż 21).
             Numer ID jest generowany automatycznie za każdym razem, gdy strona jest wyświetlana po raz pierwszy, ale można także w razie potrzeby
@@ -119,7 +119,7 @@ echo help_header("Pomoc: Rodziny");
                 Aby ograniczyć ilość wyświetleń, podaj przed kliknięciem część nazwy miejsca. Wyświetlą się wszystkie miejsca zawierające w nazwie
                 podane hasło.</p>
 
-            <p><h5 class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</h5><br>
+            <p><h5 class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</h5>
             Te zdarzenia są związane z nakazami praktykowanymi przez Mormonów w Kościele Jezusa Chrystusa Świętych w Dniach Ostatnich (kościół LDS
             wymyślił standard GEDCOM).
             <strong>Uwaga:</strong> Jeśli nie chcesz, aby dane LDS były widoczne, przejdź do <em>Ustawienia i konfiguracja/Ustawienia główne</em>
@@ -157,7 +157,7 @@ echo help_header("Pomoc: Rodziny");
                 strony,
                 lub klikając na ikonkę "Zapisz" u góry strony. Drzewo oraz ID osoby nie mogą zostać zmienione.</p>
 
-            <p><h5 class="optionhead">Dzieci</h5><br>
+            <p><h5 class="optionhead">Dzieci</h5>
             Wybierz istniejące osoby, które mają być dziećmi w tej rodzinie klikając przycisk "Znajdź...", lub utwórz nowe, klikając "Twórz...".
             Jeśli wybierzesz tworzenie, informacje o nowej osobie będą mogły zostać wprowadzone bez opuszczania tej strony. Po utworzeniu nowej osoby
             jej nazwisko, imię (imiona) oraz numer ID pojawią się w polu dzieci. Ta lista nie może być edytowana bezpośrednio, ale możesz użyć
@@ -198,14 +198,14 @@ echo help_header("Pomoc: Rodziny");
                 Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika
                 lub oba.</p>
 
-            <h5 class="optionhead">Wybierz wydarzenie i czynność</h5><br>
+            <h5 class="optionhead">Wybierz wydarzenie i czynność</h5>
             <p>Zlokalizuj wiersz w tabeli, która opisuje zdarzenie, które chcesz obejrzeć usunąć. Listę wyników możesz zawęzić przez wybranie
                 użytkownika (osoby odpowiedzialnej za
                 proponowaną zmianę) oraz / lub drzewa. Kiedy wyniki zostaną wyświetlone, kliknij na jedną z opcji widocznych z lewej strony wiersza.
                 Aby sprawdzić i ewentualnie nanieść zmiany wybierz <em>Przegląd zmian</em>. Aby odrzucić proponowane zmiany, wybierz <em>Usuń</em>.
             </p>
 
-            <h5 class="optionhead">Przegląd zmian</h5><br>
+            <h5 class="optionhead">Przegląd zmian</h5>
             <p>Na tej karcie możesz dokonywać różnych dodatkowych zmian, w tym dotyczących notatek lub źródeł, a następnie kliknąć przycisk "Zapisz i
                 Usuń",
                 aby zapisać zmiany i usunąć wpis. Można również zdecydować się na usunięcie propozycji klikając przycisk "Ignoruj i Usuń",

@@ -9,14 +9,14 @@ echo help_header("Pomoc: Notatki");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="assoc_help.php" class="lightlink">&laquo; Pomoc: Związki</a> &nbsp; | &nbsp;
+                <a href="assoc_help.php" class="lightlink">&laquo; Pomoc: Związki</a> &nbsp;|&nbsp;
                 <a href="citations_help.php" class="lightlink">Pomoc: Cytaty &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Notatki</small></h2>
-            <p class="smaller menu">
-                <a href="#add" class="lightlink">Dodaj/Edytuj/Usuń</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#add" class="lightlink">Dodaj/Edytuj/Usuń</a> &nbsp;|&nbsp;
                 <a href="#cite" class="lightlink">Notatki</a>
             </p>
         </td>

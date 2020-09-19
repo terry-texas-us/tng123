@@ -9,17 +9,17 @@ echo help_header("Help: Albums");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp;|&nbsp;
                 <a href="cemeteries_help.php" class="lightlink">Help: Cemeteries &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Albums</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;
                 <a href="#sort" class="lightlink">Sort</a>
             </p>
         </td>
@@ -29,8 +29,13 @@ echo help_header("Help: Albums");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -59,21 +64,21 @@ echo help_header("Help: Albums");
                 and
                 links to people, families and other entities, can be added after saving the record. Take note of the following:</p>
 
-            <p><h5 class="optionhead">Album Name</h5><br>
+            <p><h5 class="optionhead">Album Name</h5>
             The name of your album.</p>
 
-            <p><h5 class="optionhead">Description</h5><br>
+            <p><h5 class="optionhead">Description</h5>
             A short description of the album or the items contained in it.</p>
 
-            <p><h5 class="optionhead">Keywords</h5><br>
+            <p><h5 class="optionhead">Keywords</h5>
             Any number of keywords outside the Album Name or Description that can be used to locate this album when searching.</p>
 
-            <p><h5 class="optionhead">Active</h5><br>
+            <p><h5 class="optionhead">Active</h5>
             If an album is flagged as "Active", it will show on the public listing of all albums on your site. If the Active flag is set to "No", then
             visitors to your
             site will not see it.</p>
 
-            <p><h5 class="optionhead">Always viewable</h5><br>
+            <p><h5 class="optionhead">Always viewable</h5>
             If an active album is flagged as "Always viewable" and is linked to a person, family, source or repository, it will always show on the
             pages for those entities, even if it is
             linked to a living person or family. Normally, active albums and other media linked to living individuals are hidden from visitors who do

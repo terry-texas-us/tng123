@@ -9,20 +9,20 @@ echo help_header("N�pov�da: Testy DNA");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="reports_help.php" class="lightlink">&laquo; N�pov�da: Reporty</a> &nbsp; | &nbsp;
+                <a href="reports_help.php" class="lightlink">&laquo; N�pov�da: Reporty</a> &nbsp;|&nbsp;
                 <a href="languages_help.php" class="lightlink">N�pov�da: Jazyky &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Testy DNA</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#ydna" class="lightlink">Pole Y-DNA</a> &nbsp; | &nbsp;
-                <a href="#mtdna" class="lightlink">Pole mtDNA</a> &nbsp; | &nbsp;
-                <a href="#atdna" class="lightlink">Pole atDNA</a> &nbsp; | &nbsp;
-                <a href="#common" class="lightlink">Spole�n� pole</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;
+                <a href="#ydna" class="lightlink">Pole Y-DNA</a> &nbsp;|&nbsp;
+                <a href="#mtdna" class="lightlink">Pole mtDNA</a> &nbsp;|&nbsp;
+                <a href="#atdna" class="lightlink">Pole atDNA</a> &nbsp;|&nbsp;
+                <a href="#common" class="lightlink">Spole�n� pole</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>

@@ -13,23 +13,23 @@ echo help_header("N�pov�da: Mana�er m�d�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp; | &nbsp;
+                <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp;|&nbsp;
                 <a href="index_help.php" class="lightlink">N�pov�da: Za��n�me &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: Mana�er m�d�
             </h2>
-            <p class="smaller menu">
-                <a href="#overview" class="lightlink">P�ehled</a> &nbsp; | &nbsp;
-                <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-                <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-                <a href="#syntax" class="lightlink">Syntaxe m�d�</a> &nbsp; | &nbsp;
-                <a href="#files" class="lightlink">Konfigura�n� soubory</a> &nbsp; | &nbsp;
-                <a href="#batch" class="lightlink">D�vkov� operace</a> &nbsp; | &nbsp;
-                <a href="#options" class="lightlink">Mo�nosti</a> &nbsp; | &nbsp;
-                <a href="#analyze" class="lightlink">Anal�za soubor� TNG</a> &nbsp; | &nbsp;
-                <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#overview" class="lightlink">P�ehled</a> &nbsp;|&nbsp;
+                <a href="#operation" class="lightlink">Operace</a> &nbsp;|&nbsp;
+                <a href="#status" class="lightlink">Stav</a> &nbsp;|&nbsp;
+                <a href="#syntax" class="lightlink">Syntaxe m�d�</a> &nbsp;|&nbsp;
+                <a href="#files" class="lightlink">Konfigura�n� soubory</a> &nbsp;|&nbsp;
+                <a href="#batch" class="lightlink">D�vkov� operace</a> &nbsp;|&nbsp;
+                <a href="#options" class="lightlink">Mo�nosti</a> &nbsp;|&nbsp;
+                <a href="#analyze" class="lightlink">Anal�za soubor� TNG</a> &nbsp;|&nbsp;
+                <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp;|&nbsp;
                 <a href="#custtext" class="lightlink">Doporu�en� aktualizace</a>
 
             </p></td>

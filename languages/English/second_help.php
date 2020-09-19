@@ -9,13 +9,13 @@ echo help_header("Help: Secondary Processes");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="data_help.php" class="lightlink">&laquo; Help: Import / Export</a> &nbsp; | &nbsp;
+                <a href="data_help.php" class="lightlink">&laquo; Help: Import / Export</a> &nbsp;|&nbsp;
                 <a href="setup_help.php" class="lightlink">Help: Setup &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Secondary Processes</small></h2>
-            <p class="smaller menu">
+            <p class="smaller menu" style="clear: both;">
                 <a href="#what" class="lightlink">What are they?</a>
             </p>
         </td>
@@ -25,8 +25,13 @@ echo help_header("Help: Secondary Processes");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

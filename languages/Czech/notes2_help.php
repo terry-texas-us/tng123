@@ -9,13 +9,13 @@ echo help_header("N�pov�da: Pozn�mky");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="tlevents_help.php" class="lightlink">&laquo; N�pov�da: Ud�losti �asov� osy</a> &nbsp; | &nbsp;
+                <a href="tlevents_help.php" class="lightlink">&laquo; N�pov�da: Ud�losti �asov� osy</a> &nbsp;|&nbsp;
                 <a href="misc_help.php" class="lightlink">N�pov�da: R�zn� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Pozn�mky</small></h2>
-            <p class="smaller menu">
+            <p class="smaller menu" style="clear: both;">
                 <a href="#notes" class="lightlink">Pozn�mky</a>
             </p>
         </td>

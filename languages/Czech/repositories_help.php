@@ -13,17 +13,17 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="sources_help.php" class="lightlink">&laquo; N�pov�da: Prameny</a> &nbsp; | &nbsp;
+                <a href="sources_help.php" class="lightlink">&laquo; N�pov�da: Prameny</a> &nbsp;|&nbsp;
                 <a href="assoc_help.php" class="lightlink">N�pov�da: Spojen� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>�lo�i�t� pramen�</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nov�</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Slou�it</a>
             </p>
         </td>
@@ -85,7 +85,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
             <h5 class="optionhead">N�zev</h5>
             <p>Kr�tk� n�zev �lo�i�t�.</p>
 
-            <h5 class="optionhead">Adresa 1, Adresa 2, M�sto, Kraj/provincie, PS�, Zem�</h5><br>
+            <h5 class="optionhead">Adresa 1, Adresa 2, M�sto, Kraj/provincie, PS�, Zem�</h5>
             <p>Um�st�n� �lo�i�t� (p�i vyu�it� t�chto pol� jsou v�echny ��sti voliteln�).</p>
 
         </td>
@@ -163,23 +163,23 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 zaz�lohujte sv� datab�zov� tabulky</em>
             pro p��pad, �e byste dv� �lo�i�t� pramen� slou�ili omylem.</p>
 
-            <h5 class="optionhead">Dal�� shoda</h5><br>
+            <h5 class="optionhead">Dal�� shoda</h5>
             <p>Najde dal�� mo�n� porovn�n�, kter� nezahrne �lo�i�t� pramen� 1. TNG postoup� seznamem mo�n�ch �lo�i�� pramen� v t��d�n� podle ID ��sla
                 �lo�i�t� v textov�m form�tu.
                 Znamen� to, �e "10" bude po "1", ale p�ed "2".</p>
 
-            <h5 class="optionhead">Dal�� duplicita</h5><br>
+            <h5 class="optionhead">Dal�� duplicita</h5>
             <p>Najde dal�� mo�nou duplicitu k �lo�i�t� pramen� 1. Pokud v�sledkem nen� z�znam, kter� byl zobrazen u �lo�i�t� pramen� 2, znamen� to, �e
                 duplicita nebyla nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5><br>
+            <h5 class="optionhead">Porovnat/Obnovit</h5>
             <p>Porovn�n� �lo�i�t� pramen� 1 a �lo�i�t� pramen� 2. Je-li toto porovn�n� ji� zobrazeno, kliknut� na toto tla��tko zp�sob� obnoven�
                 str�nky.</p>
 
-            <h5 class="optionhead">Prohodit</h5><br>
+            <h5 class="optionhead">Prohodit</h5>
             <p>�lo�i�t� pramen� 1 se stane �lo�i�t�m pramen� 2 a naopak.</p>
 
-            <h5 class="optionhead">Slou�it</h5><br>
+            <h5 class="optionhead">Slou�it</h5>
             <p>�lo�i�t� pramen� 2 bude slou�eno s �lo�i�t�m pramen� 1. ID ��slo �lo�i�t� 1 bude zachov�no, stejn� jako ostatn� �daje �lo�i�t� pramen�
                 1, pokud nejsou za�krtnuta odpov�daj�c� pol��ka
                 u �lo�i�t� pramen� 2. Nap�. pokud je u �lo�i�t� pramen� 2 za�krtnuto pol��ko vedle autora, bude b�hem slou�en� �daj z tohoto pole
@@ -188,7 +188,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 nejsou odpov�daj�c� �daje. Nen�-li
                 pole zobrazeno ani u jednoho �lo�i�t� pramen�, pak v tomto poli neexistuje ��dn� �daj.</p>
 
-            <h5 class="optionhead">Upravit</h5><br>
+            <h5 class="optionhead">Upravit</h5>
             <p>�prava z�znamu �lo�i�t� pramen� v nov�m okn�. Po proveden� zm�n mus�te kliknout na Porovnat/Obnovit, aby se zm�ny projevily na
                 obrazovce Slou�en�.</p>
 

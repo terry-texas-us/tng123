@@ -13,15 +13,15 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="places_googlemap_help.php" class="lightlink">&laquo; N�pov�da: Google Maps</a> &nbsp; | &nbsp;
+                <a href="places_googlemap_help.php" class="lightlink">&laquo; N�pov�da: Google Maps</a> &nbsp;|&nbsp;
                 <a href="notes2_help.php" class="lightlink">N�pov�da: Pozn�mky &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Ud�losti �asov� osy</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>
@@ -65,12 +65,12 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
             <p>Vyberte v�echny zn�m� slo�ky (den, m�s�c, rok) po��te�n�ho a kone�n�ho data ud�losti. Povinn� je pouze rok po��te�n�ho data.
                 Zap�ete-li n�jakou slo�ku kone�n�ho data, pak je tak� zde povinn� rok.</p>
 
-            <h5 class="optionhead">Titul ud�losti</h5><br>
+            <h5 class="optionhead">Titul ud�losti</h5>
             <p>Zadejte velmi kr�tk� titul ud�losti. Nap�. <em>Potopen� Titanicu</em> nebo <em>1. sv�tov� v�lka</em>. Toto pole bylo zavedeno v TNG
                 9.0. Ud�losti
                 �asov� osy p�idan� p�ed touto verz� nemaj� titul. V tomto p��pad� budou jako Titul ud�losti pou�ity Podrobnosti ud�losti.</p>
 
-            <h5 class="optionhead">Podrobnosti ud�losti</h5><br>
+            <h5 class="optionhead">Podrobnosti ud�losti</h5>
             <p>Zapi�te stru�n� popis ud�losti. M�l by obsahovat pouze n�kolik v�t.</p>
 
         </td>

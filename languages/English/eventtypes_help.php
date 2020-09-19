@@ -9,16 +9,16 @@ echo help_header("Help: Custom Event Types");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="branches_help.php" class="lightlink">&laquo; Help: Branches</a> &nbsp; | &nbsp;
+                <a href="branches_help.php" class="lightlink">&laquo; Help: Branches</a> &nbsp;|&nbsp;
                 <a href="reports_help.php" class="lightlink">Help: Reports &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Custom Event Types</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-                <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;
+                <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Delete</a>
             </p>
         </td>
@@ -28,8 +28,13 @@ echo help_header("Help: Custom Event Types");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -40,18 +45,18 @@ echo help_header("Help: Custom Event Types");
                 Searching with no options selected and no value in the search box will find all Custom Event Types in your database. Search options
                 include:</p>
 
-            <p><h5 class="optionhead">Associated with</h5><br>
+            <p><h5 class="optionhead">Associated with</h5>
             Choose an option from this dropdown box to limit the search to Custom Event Types associated with
             individuals, families, sources or repositories.</p>
 
-            <p><h5 class="optionhead">Accept/Ignore/All</h5><br>
+            <p><h5 class="optionhead">Accept/Ignore/All</h5>
             Select one of these options to limit the search to Custom Event Types that are being <strong>accepted</strong> or those
             that are being <strong>ignored</strong>. Choosing <strong>All</strong> will not restrict the search results.</p>
 
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <p><h5 class="optionhead">Delete/Accept/Ignore/Collapse Selected</h5><br>
+            <p><h5 class="optionhead">Delete/Accept/Ignore/Collapse Selected</h5>
             Click the checkbox next to one or more event types, then use these buttons to perform the action on all selected event types at once.</p>
 
             <h5 class="optionhead">Actions</h5>

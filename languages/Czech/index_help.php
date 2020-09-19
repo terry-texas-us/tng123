@@ -13,15 +13,15 @@ echo help_header("N�pov�da: Administrace");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="modmanager_help.php" class="lightlink">&laquo; N�pov�da: Mana�er m�d�</a> &nbsp; | &nbsp;
+                <a href="modmanager_help.php" class="lightlink">&laquo; N�pov�da: Mana�er m�d�</a> &nbsp;|&nbsp;
                 <a href="people_help.php" class="lightlink">N�pov�da: Osoby &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Za��n�me</small></h2>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp;|&nbsp;
+                <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Jin� zdroje</a>
             </p>
         </td>

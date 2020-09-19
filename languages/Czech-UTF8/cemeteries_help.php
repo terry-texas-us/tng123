@@ -13,15 +13,15 @@ echo help_header("Nápověda: Hřbitovy");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="albums_help.php" class="lightlink">&laquo; Nápověda: Alba</a> &nbsp; | &nbsp;
+                <a href="albums_help.php" class="lightlink">&laquo; Nápověda: Alba</a> &nbsp;|&nbsp;
                 <a href="places_help.php" class="lightlink">Nápověda: Místa &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Hřbitovy</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>

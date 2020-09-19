@@ -906,6 +906,7 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 
 /* helpbody: describes page background on Help screens  */
 .helpbody {
+    min-width: 360px;
     margin: 8px;
     background-image: url(../img/background.gif);
 }

@@ -13,25 +13,25 @@ echo help_header("Nápověda: Základní nastavení");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
+                <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp;|&nbsp;
                 <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Základní nastavení</small></h2>
-            <p class="smaller menu">
-                <a href="#data" class="lightlink">Databáze</a> &nbsp; | &nbsp;
-                <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
-                <a href="#path" class="lightlink">Umístění a složky</a> &nbsp; | &nbsp;
-                <a href="#site" class="lightlink">Stránka</a> &nbsp; | &nbsp;
-                <a href="#media" class="lightlink">Média</a> &nbsp; | &nbsp;
-                <a href="#lang" class="lightlink">Jazyk</a> &nbsp; | &nbsp;
-                <a href="#priv" class="lightlink">Ochrana údajů</a> &nbsp; | &nbsp;
-                <a href="#name" class="lightlink">Jména</a> &nbsp; | &nbsp;
-                <a href="#cem" class="lightlink">Hřbitovy</a> &nbsp; | &nbsp;
-                <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
-                <a href="#mobile" class="lightlink">Mobil</a> &nbsp; | &nbsp;
-                <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#data" class="lightlink">Databáze</a> &nbsp;|&nbsp;
+                <a href="#table" class="lightlink">Tabulky</a> &nbsp;|&nbsp;
+                <a href="#path" class="lightlink">Umístění a složky</a> &nbsp;|&nbsp;
+                <a href="#site" class="lightlink">Stránka</a> &nbsp;|&nbsp;
+                <a href="#media" class="lightlink">Média</a> &nbsp;|&nbsp;
+                <a href="#lang" class="lightlink">Jazyk</a> &nbsp;|&nbsp;
+                <a href="#priv" class="lightlink">Ochrana údajů</a> &nbsp;|&nbsp;
+                <a href="#name" class="lightlink">Jména</a> &nbsp;|&nbsp;
+                <a href="#cem" class="lightlink">Hřbitovy</a> &nbsp;|&nbsp;
+                <a href="#mail" class="lightlink">Mail</a> &nbsp;|&nbsp;
+                <a href="#mobile" class="lightlink">Mobil</a> &nbsp;|&nbsp;
+                <a href="#pref" class="lightlink">Prefixes</a> &nbsp;|&nbsp;
                 <a href="#misc" class="lightlink">Různé</a>
             </p>
         </td>

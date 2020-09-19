@@ -9,17 +9,17 @@ echo help_header("Pomoc: Wydarzenia");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="citations_help.php" class="lightlink">&laquo; Pomoc: Cytaty</a> &nbsp; | &nbsp;
+                <a href="citations_help.php" class="lightlink">&laquo; Pomoc: Cytaty</a> &nbsp;|&nbsp;
                 <a href="more_help.php" class="lightlink">Pomoc: Więcej &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Wydarzenia</small></h2>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp;|&nbsp;
+                <a href="#del" class="lightlink">Usuń</a> &nbsp;|&nbsp;
                 <a href="#citations" class="lightlink">Cytaty</a>
             </p>
         </td>
@@ -76,7 +76,7 @@ echo help_header("Pomoc: Wydarzenia");
             <p>Wszelkie dodatkowe wyjaśnienia w przypadku, jeśli jest to konieczne. Jeśli nie ma miejsca lub daty związanych z wydarzeniem, pole
                 "szczegóły" powinno zawierać informacje dotyczące tych brakujących danych.</p>
 
-            <h5 class="optionhead">Więcej</h5><br>
+            <h5 class="optionhead">Więcej</h5>
             <p>Więcej rzadziej używanych informacji można dodać do każdego wydarzenia klikając na napis "Więcej" lub strzałkę obok niego. W ten sposób
                 pojawią dodatkowe pola. Pola te możesz ukryć przez ponowne kliknięcie
                 na napis lub strzałkę. Ukrywanie pól nie usuwa zapisanych informacji. Te dodatkowe pola to:</p>

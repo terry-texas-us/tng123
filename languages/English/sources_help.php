@@ -9,17 +9,17 @@ echo help_header("Help: Sources");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="families_help.php" class="lightlink">&laquo; Help: Families</a> &nbsp; | &nbsp;
+                <a href="families_help.php" class="lightlink">&laquo; Help: Families</a> &nbsp;|&nbsp;
                 <a href="repositories_help.php" class="lightlink">Help: Repositories &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Sources</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Merge</a>
             </p>
         </td>
@@ -29,8 +29,13 @@ echo help_header("Help: Sources");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -92,15 +97,15 @@ echo help_header("Help: Sources");
             <h5 class="optionhead">Long Title</h5>
             <p>A more formal, longer title for the source.</p>
 
-            <h5 class="optionhead">Author, Call Number, Publisher</h5><br>
+            <h5 class="optionhead">Author, Call Number, Publisher</h5>
             <p>Additional information related to the source (if available).</p>
 
-            <h5 class="optionhead">Repository</h5><br>
+            <h5 class="optionhead">Repository</h5>
             <p>Select the repository where the source resides (if known). If the repository does not yet exist in the database, go to
                 Admin/Repositories and
                 add it there, then come back and select it here.</p>
 
-            <h5 class="optionhead">Actual Text</h5><br>
+            <h5 class="optionhead">Actual Text</h5>
             <p>A quote from or a portion of the source material (optional).</p>
 
         </td>
@@ -201,13 +206,13 @@ echo help_header("Help: Sources");
             <p>Find the next possible duplicate for Source 1. If this results in no record being displayed for Source 2, it means that a duplicate was
                 not found.</p>
 
-            <h5 class="optionhead">Compare/Refresh</h5><br>
+            <h5 class="optionhead">Compare/Refresh</h5>
             <p>Compare Source 1 and Source 2. If that comparison is already displayed, clicking this button will cause the page to refresh.</p>
 
-            <h5 class="optionhead">Switch</h5><br>
+            <h5 class="optionhead">Switch</h5>
             <p>Source 1 becomes Source 2 and vice versa.</p>
 
-            <h5 class="optionhead">Merge</h5><br>
+            <h5 class="optionhead">Merge</h5>
             <p>Source 2 is merged into Source 1. The ID for Source 1 will be retained, as will all other data for Source 1 unless the corresponding
                 box(es)
                 for are checked for Source 2. For example, if the box next to Author is checked for Source 2, this data in this field will be copied
@@ -218,7 +223,7 @@ echo help_header("Help: Sources");
                 in that field
                 for either individual.</p>
 
-            <h5 class="optionhead">Edit</h5><br>
+            <h5 class="optionhead">Edit</h5>
             <p>Edit the record for that source in a new window. If changes are made, you must click "Compare/Refresh" in order to see the changes
                 in on the Merge screen.</p>
 

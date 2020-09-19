@@ -9,15 +9,15 @@ echo help_header("Pomoc: Pierwsze kroki");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="backuprestore_help.php" class="lightlink">&laquo; Pomoc: Narzędzia</a> &nbsp; | &nbsp;
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Pomoc: Narzędzia</a> &nbsp;|&nbsp;
                 <a href="people_help.php" class="lightlink">Pomoc: Osoby &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Pierwsze kroki</small></h2>
-            <p class="smaller menu">
-                <a href="#gettingstarted" class="lightlink">Pierwsze kroki</a> &nbsp; | &nbsp;
-                <a href="#notes" class="lightlink">Notatki</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#gettingstarted" class="lightlink">Pierwsze kroki</a> &nbsp;|&nbsp;
+                <a href="#notes" class="lightlink">Notatki</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Inne dane</a>
             </p>
         </td>

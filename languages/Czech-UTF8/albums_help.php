@@ -13,17 +13,17 @@ echo help_header("Nápověda: Alba");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="collections_help.php" class="lightlink">&laquo; Nápověda: Kolekce</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">&laquo; Nápověda: Kolekce</a> &nbsp;|&nbsp;
                 <a href="cemeteries_help.php" class="lightlink">Nápověda: Hřbitovy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Alba</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nové</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nové</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
                 <a href="#sort" class="lightlink">Třídit</a>
             </p>
         </td>
@@ -56,21 +56,21 @@ echo help_header("Nápověda: Alba");
                 která má album obsahovat, a
                 odkazy na osobu, rodinu a jiné entity, můžete přidat po uložení záznamu. Význam jednotlivých polí je následující:</p>
 
-            <p><h5 class="optionhead">Název alba</h5><br>
+            <p><h5 class="optionhead">Název alba</h5>
             Název vašeho alba.</p>
 
-            <p><h5 class="optionhead">Popis</h5><br>
+            <p><h5 class="optionhead">Popis</h5>
             Krátký popis alba nebo položek, které obsahuje.</p>
 
-            <p><h5 class="optionhead">Klíčová slova</h5><br>
+            <p><h5 class="optionhead">Klíčová slova</h5>
             Jakýkoli počet klíčových slov mimo název alba a popis, která mají být použita při vyhledávání tohoto alba.</p>
 
-            <p><h5 class="optionhead">Aktivní</h5><br>
+            <p><h5 class="optionhead">Aktivní</h5>
             Je-li album označeno jako "Aktivní", bude zobrazeno na vašich stránkách ve veřejném seznamu. Je-li příznak Aktivní nastaven na "Ne",
             návštěvníci vašich stránek
             toto album vidět nebudou.</p>
 
-            <p><h5 class="optionhead">Vždy viditelné</h5><br>
+            <p><h5 class="optionhead">Vždy viditelné</h5>
             Je-li aktivní album označeno jako "Vždy viditelné" a je připojeno k osobě, rodině, pramenu nebo úložišti pramenů, bude na stránkách u
             těchto entit vždy viditelné, i když je
             připojeno k žijící osobě nebo rodině. Jinak jsou aktivní alba nebo média, která jsou připojená k žijícím osobám, skryta pro návštěvníky,

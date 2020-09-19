@@ -9,18 +9,18 @@ echo help_header("Pomoc: Osoby");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="index_help.php" class="lightlink">&laquo; Pomoc: Pierwsze kroki</a> &nbsp; | &nbsp;
+                <a href="index_help.php" class="lightlink">&laquo; Pomoc: Pierwsze kroki</a> &nbsp;|&nbsp;
                 <a href="families_help.php" class="lightlink">Pomoc: Rodziny &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Osoby</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Przegląd zmian</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edycja</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Usuń</a> &nbsp;|&nbsp;
+                <a href="#review" class="lightlink">Przegląd zmian</a> &nbsp;|&nbsp;
                 <a href="#merge" class="lightlink">Scalanie</a>
             </p>
         </td>
@@ -119,7 +119,7 @@ echo help_header("Pomoc: Osoby");
                 Aby ograniczyć ilość wyświetleń, podaj przed kliknięciem część nazwy miejsca. Wyświetlą się wszystkie miejsca zawierające w nazwie
                 podane hasło.</p>
 
-            <p><h5 class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</h5><br>
+            <p><h5 class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</h5>
             Te zdarzenia są związane z nakazami praktykowanymi przez Mormonów w Kościele Jezusa Chrystusa Świętych w Dniach Ostatnich (kościół LDS
             wymyślił standard GEDCOM).
             <strong>Uwaga:</strong> Jeśli nie chcesz, aby dane LDS były widoczne, przejdź do <em>Ustawienia i konfiguracja/Ustawienia główne</em>
@@ -205,14 +205,14 @@ echo help_header("Pomoc: Osoby");
                 Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika
                 lub oba.</p>
 
-            <h5 class="optionhead">Wybierz wydarzenie i czynność</h5><br>
+            <h5 class="optionhead">Wybierz wydarzenie i czynność</h5>
             <p>Zlokalizuj wiersz w tabeli, która opisuje zdarzenie, które chcesz obejrzeć usunąć. Listę wyników możesz zawęzić przez wybranie
                 użytkownika (osoby odpowiedzialnej za
                 proponowaną zmianę) oraz / lub drzewa. Kiedy wyniki zostaną wyświetlone, kliknij na jedną z opcji widocznych z lewej strony wiersza.
                 Aby sprawdzić i ewentualnie nanieść zmiany wybierz <em>Przegląd zmian</em>. Aby odrzucić proponowane zmiany, wybierz <em>Usuń</em>.
             </p>
 
-            <h5 class="optionhead">Przegląd zmian</h5><br>
+            <h5 class="optionhead">Przegląd zmian</h5>
             <p>Na tej karcie możesz dokonywać różnych dodatkowych zmian, w tym dotyczących notatek lub źródeł, a następnie kliknąć przycisk "Zapisz i
                 Usuń",
                 aby zapisać zmiany i usunąć wpis. Można również zdecydować się na usunięcie propozycji klikając przycisk "Ignoruj i Usuń",
@@ -228,7 +228,7 @@ echo help_header("Pomoc: Osoby");
             Aby znaleźć i scalić dwa powtarzające się zapisy, kliknij na przycisk "Scalanie". Użytkownik decyduje, czy dwa zapisy są identyczne, czy
             też nie.</p>
 
-            <h5 class="optionhead">Szukaj zgodności</h5><br>
+            <h5 class="optionhead">Szukaj zgodności</h5>
             <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć osób z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej, masz
                 możliwość wybrać osobę jako punkt wyjściowy
                 dla Twojego szukania (Osoba 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie. Jeśli zdecydowałeś, że TNG wyszukuje
@@ -236,13 +236,13 @@ echo help_header("Pomoc: Osoby");
             <p>Jeśli wybrałeś osobę jako Osoba 1, możesz też wybrać ręcznie ID Osoby 2. Wskazane jest jednak, aby pozwolić TNG na szukanie duplikatów
                 dla Osoby 1, pozostawiając pole ID Osoby 2 puste.</p>
 
-            <h5 class="optionhead">Zgodność następujących pozycji</h5><br>
+            <h5 class="optionhead">Zgodność następujących pozycji</h5>
             <p>Te kryteria TNG służą do określania możliwych zgodności. Imię i nazwisko są wybrane jako domyślne. To oznacza, że te pola muszą zgadzać
                 się w obydwóch zapisach, aby zostały wzięte pod uwagę
                 jako możliwe zgodności. Jeśli wybierzesz też datę urodzenia, miejsce urodzenia, datę oraz / lub miejsce zgonu, to te pola muszą się
                 też zgadzać.</p>
 
-            <h5 class="optionhead">Inne opcje</h5><br>
+            <h5 class="optionhead">Inne opcje</h5>
             <p><em>Ignoruj puste pola</em> znaczy, że puste pola nie będą brane pod uwagę. Na przykład, ktoś z nazwiskiem ale bez imienia nie zostanie
                 uwzględniony, jeśli imię będzie wśród zaznaczonych kryteriów.</p>
 
@@ -261,21 +261,21 @@ echo help_header("Pomoc: Osoby");
             tabel bazy danych zanim dokonasz operacji scalania na wypadek,
             gdybyś scalił niechcący niewłaściwe osoby.</p>
 
-            <h5 class="optionhead">Następna zgodność</h5><br>
+            <h5 class="optionhead">Następna zgodność</h5>
             <p>Znajdź następną możliwą zgodność, która nie wymaga podania Osoby 1. TNG zmienia listę możliwych osób w przyporządkowany ID osoby ciąg
                 znaków. To znaczy, że "10" następuje po "1" ale przed "2".</p>
 
-            <h5 class="optionhead">Następny duplikat</h5><br>
+            <h5 class="optionhead">Następny duplikat</h5>
             <p>Znajdź następny możliwy duplikat dla Osoby 1. Jeśli ta operacja zakończy się brakiem zapisu dla Osoby 2, znaczy, że duplikat nie został
                 znaleziony.</p>
 
-            <h5 class="optionhead">Porównaj / odśwież.</h5><br>
+            <h5 class="optionhead">Porównaj / odśwież.</h5>
             <p>Porównanie osób 1 i 2. Jeśli to porównanie jest już widoczne, kliknięcie na ten przycisk spowoduje odświeżenie strony.</p>
 
-            <h5 class="optionhead">Przełącz</h5><br>
+            <h5 class="optionhead">Przełącz</h5>
             <p>Zamiana - Osoba 1 staje się Osobą 2 i vice versa.</p>
 
-            <h5 class="optionhead">Scalanie</h5><br>
+            <h5 class="optionhead">Scalanie</h5>
             <p>Osoba 2 jest scalana z osobą 1. ID Osoby 1 oraz jej wszystkie inne dane zostaną zachowane, chyba, że dla Osoby 2 zostało zaznaczone
                 odpowiednie pole(a).
                 Na przykład, jeśli zaznaczyłeś pole obok daty urodzenia Osoby 2, dane w tym polu będą podczas scalania skopiowane od Osoby 2 do Osoby
@@ -283,7 +283,7 @@ echo help_header("Pomoc: Osoby");
                 Pola dla Osoby 2 są znaczone automatycznie, jeśli żadne odpowiadające im dane nie istnieją dla Osoby 1. Jeśli pole danych dla Osoby 1
                 lub 2 jest puste, znaczy, że nie istnieją żadne dane dla którejkolwiek osoby.</p>
 
-            <h5 class="optionhead">Edycja</h5><br>
+            <h5 class="optionhead">Edycja</h5>
             <p>Edytuj indywidualny zapis dla tej osoby w nowym oknie. Jeśli dokonałeś zmian, musisz kliknąć Porównaj / odśwież by zobaczyć zmiany w
                 widoku scalania.</p>
             <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać

@@ -13,25 +13,25 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
+                <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp;|&nbsp;
                 <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Z�kladn� nastaven�</small></h2>
-            <p class="smaller menu">
-                <a href="#data" class="lightlink">Datab�ze</a> &nbsp; | &nbsp;
-                <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
-                <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp; | &nbsp;
-                <a href="#site" class="lightlink">Str�nka</a> &nbsp; | &nbsp;
-                <a href="#media" class="lightlink">M�dia</a> &nbsp; | &nbsp;
-                <a href="#lang" class="lightlink">Jazyk</a> &nbsp; | &nbsp;
-                <a href="#priv" class="lightlink">Ochrana �daj�</a> &nbsp; | &nbsp;
-                <a href="#name" class="lightlink">Jm�na</a> &nbsp; | &nbsp;
-                <a href="#cem" class="lightlink">H�bitovy</a> &nbsp; | &nbsp;
-                <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
-                <a href="#mobile" class="lightlink">Mobil</a> &nbsp; | &nbsp;
-                <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#data" class="lightlink">Datab�ze</a> &nbsp;|&nbsp;
+                <a href="#table" class="lightlink">Tabulky</a> &nbsp;|&nbsp;
+                <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp;|&nbsp;
+                <a href="#site" class="lightlink">Str�nka</a> &nbsp;|&nbsp;
+                <a href="#media" class="lightlink">M�dia</a> &nbsp;|&nbsp;
+                <a href="#lang" class="lightlink">Jazyk</a> &nbsp;|&nbsp;
+                <a href="#priv" class="lightlink">Ochrana �daj�</a> &nbsp;|&nbsp;
+                <a href="#name" class="lightlink">Jm�na</a> &nbsp;|&nbsp;
+                <a href="#cem" class="lightlink">H�bitovy</a> &nbsp;|&nbsp;
+                <a href="#mail" class="lightlink">Mail</a> &nbsp;|&nbsp;
+                <a href="#mobile" class="lightlink">Mobil</a> &nbsp;|&nbsp;
+                <a href="#pref" class="lightlink">Prefixes</a> &nbsp;|&nbsp;
                 <a href="#misc" class="lightlink">R�zn�</a>
             </p>
         </td>

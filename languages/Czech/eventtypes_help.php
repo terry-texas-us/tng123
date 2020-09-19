@@ -13,16 +13,16 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="branches_help.php" class="lightlink">&laquo; N�pov�da: V�tve</a> &nbsp; | &nbsp;
+                <a href="branches_help.php" class="lightlink">&laquo; N�pov�da: V�tve</a> &nbsp;|&nbsp;
                 <a href="reports_help.php" class="lightlink">N�pov�da: Reporty &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Vlastn� typy ud�lost�</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-                <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp;|&nbsp;
+                <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>
@@ -37,18 +37,18 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech vlastn�ch typ� ud�lost� ve va�� datab�zi.
                 Mo�nosti v�b�ru jsou n�sleduj�c�:</p>
 
-            <p><h5 class="optionhead">Spojeno s</h5><br>
+            <p><h5 class="optionhead">Spojeno s</h5>
             Pro omezen� v�b�ru zvolte z tohoto rozbalovac�ho seznamu vlastn� typy ud�lost� spojen� s osobami, rodinami, prameny nebo �lo�i�ti
             pramen�.</p>
 
-            <p><h5 class="optionhead">P�ijmout/Odm�tnout/V�e</h5><br>
+            <p><h5 class="optionhead">P�ijmout/Odm�tnout/V�e</h5>
             V�b�rem jedn� z t�chto voleb omez�te v�b�r vlastn�ch typ� ud�lost� na ty, kter� jsou <strong>p�ijaty</strong>, nebo na ty,
             kter� jsou <strong>odm�tnuty</strong>. Volba <strong>V�e</strong> neomez� v�sledek v�b�ru.</p>
 
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <p><h5 class="optionhead">Smazat/P�ijmout/Odm�tnout/Sbalit vybran�</h5><br>
+            <p><h5 class="optionhead">Smazat/P�ijmout/Odm�tnout/Sbalit vybran�</h5>
             Klikn�te na za�krt�vac� pol��ko vedle jednoho nebo v�ce typ� ud�lost�, a pot� pou�ijte tato tla��tka k proveden� akce na v�ech vybran�ch
             typech ud�lost� najednou.</p>
 

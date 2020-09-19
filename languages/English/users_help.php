@@ -9,19 +9,19 @@ echo help_header("Help: Users");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="templateconfig_help.php" class="lightlink">&laquo; Help: Template Settings</a> &nbsp; | &nbsp;
+                <a href="templateconfig_help.php" class="lightlink">&laquo; Help: Template Settings</a> &nbsp;|&nbsp;
                 <a href="trees_help.php" class="lightlink">Help: Trees &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Users</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Delete</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Review</a> &nbsp; | &nbsp;
-                <a href="#rights" class="lightlink">Rights</a> &nbsp; | &nbsp;
-                <a href="#limits" class="lightlink">Access Limits</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;
+                <a href="#review" class="lightlink">Review</a> &nbsp;|&nbsp;
+                <a href="#rights" class="lightlink">Rights</a> &nbsp;|&nbsp;
+                <a href="#limits" class="lightlink">Access Limits</a> &nbsp;|&nbsp;
                 <a href="#email" class="lightlink">E-mail</a>
             </p>
         </td>
@@ -31,8 +31,13 @@ echo help_header("Help: Users");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

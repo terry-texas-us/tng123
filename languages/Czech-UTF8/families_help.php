@@ -13,17 +13,17 @@ echo help_header("Nápověda: Rodiny");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
+                <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp;|&nbsp;
                 <a href="sources_help.php" class="lightlink">Nápověda: Prameny &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Rodiny</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat novou</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;
                 <a href="#review" class="lightlink">Přezkoumat</a>
             </p>
         </td>
@@ -122,7 +122,7 @@ echo help_header("Nápověda: Rodiny");
                 Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapiąte část místa. Vąechny výsledky budou obsahovat to, co
                 jste zapsali jako název místa.</p>
 
-            <p><h5 class="optionhead">Údaje CJKSpd (Pečetění s partnerem)</h5><br>
+            <p><h5 class="optionhead">Údaje CJKSpd (Pečetění s partnerem)</h5>
             Tato událost jsou spojena s obřadem prováděným Církví Jeľíąe Krista Svatých posledních dní (mormonská církev, která vytvořila standard
             GEDCOM).
             <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto moľnost vypněte (je
@@ -160,7 +160,7 @@ echo help_header("Nápověda: Rodiny");
                 standardní události) se uloľí kliknutím na tlačítko Uloľit na konci stránky nebo kliknutím na ikonu Uloľit na stránce nahoře. Strom a
                 ID číslo osoby nelze změnit.</p>
 
-            <p><h5 class="optionhead">Děti</h5><br>
+            <p><h5 class="optionhead">Děti</h5>
             <p>Kliknutím na "Najít..." vyberte existující osoby, které by měly být v této rodině dětmi, nebo kliknutím na "Vytvořit"
                 vytvořte nové dítě. Pokud jste zvolili Vytvořit, budete moci vloľit údaje o nové osobě bez toho, abyste museli opustit aktuální
                 stránku.
@@ -201,14 +201,14 @@ echo help_header("Nápověda: Rodiny");
             Změny můľete prohlédnout podle stromu nebo podle uľivatele nebo podle obojího. Po uloľení navrhovaných změn není zaslán ľádný mail, ale
             pokud nové změny existují, na záloľce Přezkoumat se objeví hvězdička (*).</p>
 
-            <h5 class="optionhead">Vybrat událost a akci</h5><br>
+            <h5 class="optionhead">Vybrat událost a akci</h5>
             <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můľete zúľit výběrem
                 uľivatele (osoba
                 odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z moľných akcí nalevo od tohoto řádku. Chcete-li
                 změny přezkoumat a
                 případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
 
-            <h5 class="optionhead">Přezkoumat</h5><br>
+            <h5 class="optionhead">Přezkoumat</h5>
             <p>Na obrazovce Přezkoumat můľete provést daląí potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uloľit a vymazat" pro
                 uloľení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můľete rovněľ odstranit dočasný záznam, aniľ
                 byste jej uloľili,

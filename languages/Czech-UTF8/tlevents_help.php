@@ -13,15 +13,15 @@ echo help_header("Nápověda: Události časové osy");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="places_googlemap_help.php" class="lightlink">&laquo; Nápověda: Google Maps</a> &nbsp; | &nbsp;
+                <a href="places_googlemap_help.php" class="lightlink">&laquo; Nápověda: Google Maps</a> &nbsp;|&nbsp;
                 <a href="notes2_help.php" class="lightlink">Nápověda: Poznámky &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Události časové osy</small></h2>
-            <p class="smaller menu">
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>
             </p>
         </td>
@@ -65,12 +65,12 @@ echo help_header("Nápověda: Události časové osy");
             <p>Vyberte všechny známé složky (den, měsíc, rok) počátečního a konečného data události. Povinný je pouze rok počátečního data.
                 Zapíšete-li nějakou složku konečného data, pak je také zde povinný rok.</p>
 
-            <h5 class="optionhead">Titul události</h5><br>
+            <h5 class="optionhead">Titul události</h5>
             <p>Zadejte velmi krátký titul události. Např. <em>Potopení Titanicu</em> nebo <em>1. světová válka</em>. Toto pole bylo zavedeno v TNG
                 9.0. Události
                 časové osy přidané před touto verzí nemají titul. V tomto případě budou jako Titul události použity Podrobnosti události.</p>
 
-            <h5 class="optionhead">Podrobnosti události</h5><br>
+            <h5 class="optionhead">Podrobnosti události</h5>
             <p>Zapište stručný popis události. Měl by obsahovat pouze několik vět.</p>
 
         </td>

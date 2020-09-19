@@ -9,17 +9,17 @@ echo help_header("Help: Events");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="citations_help.php" class="lightlink">&laquo; Help: Citations</a> &nbsp; | &nbsp;
+                <a href="citations_help.php" class="lightlink">&laquo; Help: Citations</a> &nbsp;|&nbsp;
                 <a href="more_help.php" class="lightlink">Help: More &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Events</small></h2>
-            <p class="smaller menu">
-                <a href="#what" class="lightlink">Standard vs. Custom</a> &nbsp; | &nbsp;
-                <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
-                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp; | &nbsp;
-                <a href="#del" class="lightlink">Delete</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#what" class="lightlink">Standard vs. Custom</a> &nbsp;|&nbsp;
+                <a href="#add" class="lightlink">Add New</a> &nbsp;|&nbsp;
+                <a href="#edit" class="lightlink">Edit Existing</a> &nbsp;|&nbsp;
+                <a href="#del" class="lightlink">Delete</a> &nbsp;|&nbsp;
                 <a href="#citations" class="lightlink">Citations</a>
             </p>
         </td>
@@ -29,8 +29,13 @@ echo help_header("Help: Events");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -91,7 +96,7 @@ echo help_header("Help: Events");
                 is re-opened, this field will be blank. Any changes made to the event at that point will <b>not</b> be propagated to the duplicates
                 made earlier.</p>
 
-            <h5 class="optionhead">More</h5><br>
+            <h5 class="optionhead">More</h5>
             <p>More less commonly used information can be added for each event by clicking on the "More" heading or the arrow next to it. Doing so
                 will cause these fields
                 to appear. The fields can be hidden by again clicking on the heading or arrow. Hiding the fields does not remove any information

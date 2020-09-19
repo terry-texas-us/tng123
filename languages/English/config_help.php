@@ -9,25 +9,25 @@ echo help_header("Help: General Settings");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
+                <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp;|&nbsp;
                 <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>General Settings</small></h2>
-            <p class="smaller menu">
-                <a href="#data" class="lightlink">Database</a> &nbsp; | &nbsp;
-                <a href="#table" class="lightlink">Tables</a> &nbsp; | &nbsp;
-                <a href="#path" class="lightlink">Paths+Folders</a> &nbsp; | &nbsp;
-                <a href="#site" class="lightlink">Site</a> &nbsp; | &nbsp;
-                <a href="#media" class="lightlink">Media</a> &nbsp; | &nbsp;
-                <a href="#lang" class="lightlink">Language</a> &nbsp; | &nbsp;
-                <a href="#priv" class="lightlink">Privacy</a> &nbsp; | &nbsp;
-                <a href="#name" class="lightlink">Names</a> &nbsp; | &nbsp;
-                <a href="#cem" class="lightlink">Cemeteries</a> &nbsp; | &nbsp;
-                <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
-                <a href="#mobile" class="lightlink">Mobile</a> &nbsp; | &nbsp;
-                <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#data" class="lightlink">Database</a> &nbsp;|&nbsp;
+                <a href="#table" class="lightlink">Tables</a> &nbsp;|&nbsp;
+                <a href="#path" class="lightlink">Paths+Folders</a> &nbsp;|&nbsp;
+                <a href="#site" class="lightlink">Site</a> &nbsp;|&nbsp;
+                <a href="#media" class="lightlink">Media</a> &nbsp;|&nbsp;
+                <a href="#lang" class="lightlink">Language</a> &nbsp;|&nbsp;
+                <a href="#priv" class="lightlink">Privacy</a> &nbsp;|&nbsp;
+                <a href="#name" class="lightlink">Names</a> &nbsp;|&nbsp;
+                <a href="#cem" class="lightlink">Cemeteries</a> &nbsp;|&nbsp;
+                <a href="#mail" class="lightlink">Mail</a> &nbsp;|&nbsp;
+                <a href="#mobile" class="lightlink">Mobile</a> &nbsp;|&nbsp;
+                <a href="#pref" class="lightlink">Prefixes</a> &nbsp;|&nbsp;
                 <a href="#misc" class="lightlink">Misc</a>
             </p>
         </td>
@@ -37,8 +37,13 @@ echo help_header("Help: General Settings");
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: '<?php echo INCLUDED_LANGUAGES; ?>',
+                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                    }, 'google_translate_element');
                 }
+
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

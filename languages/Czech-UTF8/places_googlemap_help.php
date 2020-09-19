@@ -13,16 +13,16 @@ echo help_header("Nápověda: Google Maps");
     <tr class="fieldnameback">
         <td class="tngshadow">
             <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp;|&nbsp;
                 <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Google Maps</small></h2>
-            <p class="smaller menu">
-                <a href="#show" class="lightlink">Zobrazit</a> &nbsp; | &nbsp;
-                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-                <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp; | &nbsp;
+            <p class="smaller menu" style="clear: both;">
+                <a href="#show" class="lightlink">Zobrazit</a> &nbsp;|&nbsp;
+                <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
+                <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp;|&nbsp;
                 <a href="#help" class="lightlink">Nápověda</a>
             </p>
         </td>
