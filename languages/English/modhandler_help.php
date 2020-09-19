@@ -4,17 +4,17 @@ echo help_header("Help: Mod Manager");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
-        <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Mod Manager</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Help: Utilities</a> &nbsp; | &nbsp;
+                <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Mod Manager</span>
       <p class="smaller menu">
         <a href="#overview" class="lightlink">Overview</a> &nbsp; | &nbsp;
         <a href="#operation" class="lightlink">Operation</a> &nbsp; | &nbsp;
@@ -39,17 +39,23 @@ echo help_header("Help: Mod Manager");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="overview"><p class="subheadbold">Overview</p></a>
+            <a id="overview"><p class="subheadbold">Overview</p></a>
 
-            <p>The TNG 12 version of the Mod Manager is based on the Mod Manager originally developed by Brian McFadyen, updated by Sean Schwoere to work with the Joomla TNG Component, and updated in TNG 10.0.3 and 10.1 to provide a more integrated way to
+            <p>The TNG 12 version of the Mod Manager is based on the Mod Manager originally developed by Brian McFadyen, updated by Sean Schwoere to
+                work with the Joomla TNG Component, and updated in TNG 10.0.3 and 10.1 to provide a more integrated way to
                 install, remove and manage modifications to the TNG software package that have been coded to work with this manager.</p>
-            <p>The new Mod Manager provides a single line summary of the mod status which can be expanded to view the complete Description and errors when applicable. The Affected Files List can be displayed by hovering over the + plus sign in the Files
-                column. You can also use the <strong>Expand All</strong> inner menu to expand all entries to show the status like the old Mod Manager used to do. The Expand All option is helpful when filtering the list by <strong>Partially
+            <p>The new Mod Manager provides a single line summary of the mod status which can be expanded to view the complete Description and errors
+                when applicable. The Affected Files List can be displayed by hovering over the + plus sign in the Files
+                column. You can also use the <strong>Expand All</strong> inner menu to expand all entries to show the status like the old Mod Manager
+                used to do. The Expand All option is helpful when filtering the list by <strong>Partially
                     Installed</strong> or <strong>Cannot Install</strong> so you can see what the errors are.</p>
             <p>The Mod Manager is connected into the TNG Administrative page for easy access. The Mod Manager adds the following folders to TNG:
             <ul>
-                <li><strong>mods</strong> to contain the Mod configuration files and associated Mod support files. The mods folder can now be renamed. The Mod Manager uses the $modspath variable to resolve the folder name.</li>
-                <li><strong>extensions</strong> to contain some of the mod extensions that are installed by other Mod Manager config files. The extensions folder can now be renamed. The Mod Manager uses the $extspath variable to resolve the folder name.
+                <li><strong>mods</strong> to contain the Mod configuration files and associated Mod support files. The mods folder can now be renamed.
+                    The Mod Manager uses the $modspath variable to resolve the folder name.
+                </li>
+                <li><strong>extensions</strong> to contain some of the mod extensions that are installed by other Mod Manager config files. The
+                    extensions folder can now be renamed. The Mod Manager uses the $extspath variable to resolve the folder name.
                 </li>
                 <li><strong>classes</strong> which contain the Object Orient Progamming classes that were split and enhanced from the previous managemods.class.php created by Sean Schwoere from Brian's original Mod Manager code.</li>
             </ul>
@@ -70,9 +76,12 @@ echo help_header("Help: Mod Manager");
             <p>The <strong>Analyze TNG Files</strong> tab is an optional tab that can be enabled in the Options screen that allows you to select a TNG file and view which mods change that specific TNG file.</p>
             <p>The <strong>View Parser Table</strong> tab is an optional tab that can be enabled in the Options screen by enabling the <strong>Show Other Development Tools</strong> that allows you to view how the mod is parsed by the Mod Manager.</p>
             <p>The <strong>Recommended Changes</strong> tab is an optional tab that can be enabled in the Options screen that allows you to update your cust_text.php files if you did not do so as part of the TNG upgrade readme.</p>
-            <p>Additional information can be found in the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Mod Manager</a> article and in the <a
-                        href="https://tng.lythgoes.net/wiki/index.php?title=Category:TNG_Mod_Manager" target="_blank">TNG Mod Manager</a> category of articles on the TNG Wiki.</p>
-            <p>You can view the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Enhancements" target="_blank">Mod Manager</a> article in TNG Wiki to see what enhancements were made in TNG v12.</p>
+            <p>Additional information can be found in the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Mod
+                    Manager</a> article and in the <a
+                    href="https://tng.lythgoes.net/wiki/index.php?title=Category:TNG_Mod_Manager" target="_blank">TNG Mod Manager</a> category of
+                articles on the TNG Wiki.</p>
+            <p>You can view the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Enhancements" target="_blank">Mod Manager</a>
+                article in TNG Wiki to see what enhancements were made in TNG v12.</p>
 
         </td>
     </tr>
@@ -80,9 +89,10 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="operation"><p class="subheadbold">Operation</p></a>
+            <a id="operation"><p class="subheadbold">Operation</p></a>
 
-            <p>The Mod Manager examines the mods folder and reads each <strong>cfg</strong> file that it finds. The <strong>cfg</strong> files are directive files that describe the mod, the files and locations to be modified, and the code that is used in
+            <p>The Mod Manager examines the mods folder and reads each <strong>cfg</strong> file that it finds. The <strong>cfg</strong> files are
+                directive files that describe the mod, the files and locations to be modified, and the code that is used in
                 the modification.
             <p>The Mod Manager checks the following:
             <ul>
@@ -95,7 +105,9 @@ echo help_header("Help: Mod Manager");
                     </ul>
                 <li>creates any specified folder or directory</li>
                 <li>identifies new files to be created. If the file is marked as protected it will not be removed by the Uninstall or Clean Up.</li>
-                <li>identifies files to be copied to the TNG root or a specified folder. If the file is marked as protected it will not be removed by the Uninstall or Clean Up.</li>
+                <li>identifies files to be copied to the TNG root or a specified folder. If the file is marked as protected it will not be removed by
+                    the Uninstall or Clean Up.
+                </li>
             </ul>
             </p>
 
@@ -105,19 +117,27 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="status"><p class="subheadbold">Status</p></a>
+            <a id="status"><p class="subheadbold">Status</p></a>
             <p>The Mod Manager returns the following status:
             <ul>
-                <li><strong>Ok to Install</strong> if the mod is not yet installed and the target locations can be identified, then the <strong>Install</strong> button is displayed</li>
-                <li><strong>Installed</strong> if the mod is completely installed, the option to <strong>Uninstall</strong> the Mod is presented and the option to <strong>Edit</strong> parameters if any exist. Mods with edit parameters are identified
+                <li><strong>Ok to Install</strong> if the mod is not yet installed and the target locations can be identified, then the <strong>Install</strong>
+                    button is displayed
+                </li>
+                <li><strong>Installed</strong> if the mod is completely installed, the option to <strong>Uninstall</strong> the Mod is presented and
+                    the option to <strong>Edit</strong> parameters if any exist. Mods with edit parameters are identified
                     by[Option] after the Installed status.
                 </li>
-                <li><strong>Partially installed</strong> if the mod is partially installed, the <strong>Cleanup</strong> button is provided. A Clean up operation will attempt to remove any inserted code, restore and replaced code, and remove any created or
+                <li><strong>Partially installed</strong> if the mod is partially installed, the <strong>Cleanup</strong> button is provided. A Clean
+                    up operation will attempt to remove any inserted code, restore and replaced code, and remove any created or
                     copied files.
                 </li>
-                <li><strong>Cannot Install</strong> if the mod <strong>cannot</strong> be installed. You will need to expand the Status to get more detailed messages as to why the mod cannot be installed.</li>
+                <li><strong>Cannot Install</strong> if the mod <strong>cannot</strong> be installed. You will need to expand the Status to get more
+                    detailed messages as to why the mod cannot be installed.
+                </li>
             </ul>
-            <p>For examples of the Mod Manager Status screens and how to interpret the various statuses, see <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Mod Manager - Interpreting Status</a></p>
+            <p>For examples of the Mod Manager Status screens and how to interpret the various statuses, see <a
+                    href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Mod Manager - Interpreting
+                    Status</a></p>
 
             </p>
 
@@ -127,16 +147,19 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="syntax"><p class="subheadbold">Mod Syntax</p></a>
+            <a id="syntax"><p class="subheadbold">Mod Syntax</p></a>
             <p>The Mod Manager syntax basically includes:
             <p><strong>Header section</strong> that includes</p>
             <ul>
                 <li>Name - the name of the mod, wiki article and file name</li>
                 <li>Version - the version of the mod, where the first 3 period places represents the lowest TNG version to which the mod applies</li>
-                <li>Description - provides a brief description of the mod, the Mod Developer's name, and a URL link to the TNG Wiki article for the mod.</li>
+                <li>Description - provides a brief description of the mod, the Mod Developer's name, and a URL link to the TNG Wiki article for the
+                    mod.
+                </li>
             </ul>
             </p>
-            <p><strong>Target sections</strong> that specify the file that is the target of the change and includes the following directives. A note can now be added to the target.</p>
+            <p><strong>Target sections</strong> that specify the file that is the target of the change and includes the following directives. A note
+                can now be added to the target.</p>
             <ul>
                 <li>Location - that specifies the code location to be changed. A note can now be added to the location.</li>
                 <li>Action keyword - that specifies whether to replace or insert code before or after the location</li>
@@ -144,8 +167,8 @@ echo help_header("Help: Mod Manager");
             </p>
             <p><strong>New File directives</strong> that create the file when the mod is installed</p>
             <p><strong>Copy File directives</strong> that copy the specified file to the TNG root (%copyfile) or to a subfolder (%copyfile2)</p>
-            <p>For detailed information on the Mod Manager Syntax, see <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">Mod Manager Syntax</a></p>
-
+            <p>For detailed information on the Mod Manager Syntax, see <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax"
+                                                                          target="_blank">Mod Manager Syntax</a></p>
 
         </td>
     </tr>
@@ -153,19 +176,24 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="files"><p class="subheadbold">Config Files</p></a>
+            <a id="files"><p class="subheadbold">Config Files</p></a>
 
             <span class="optionhead">Installing Mods</span>
-            <p>The TNG Wiki provides information on <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">Installing Config Files</a> to install the TNG mods.</p>
+            <p>The TNG Wiki provides information on <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files"
+                                                       target="_blank">Installing Config Files</a> to install the TNG mods.</p>
 
             <span class="optionhead">Interpreting Status</span>
-            <p>The TNG Wiki provides information on <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Interpreting Status</a>.</p>
+            <p>The TNG Wiki provides information on <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status"
+                                                       target="_blank">Interpreting Status</a>.</p>
 
             <span class="optionhead">Config File Syntax</span>
-            <p>The TNG Wiki provides information on the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">Mod Manager Syntax</a>.</p>
+            <p>The TNG Wiki provides information on the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">Mod
+                    Manager Syntax</a>.</p>
 
             <span class="optionhead">Creating Config Files</span>
-            <p>The TNG Wiki provides information for the mod developers on the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">Creating Config Files</a>.</p>
+            <p>The TNG Wiki provides information for the mod developers on the <a
+                    href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">Creating Config Files</a>.
+            </p>
         </td>
     </tr>
 
@@ -173,7 +201,7 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="batch"><p class="subheadbold">Batch Operations</p></a>
+            <a id="batch"><p class="subheadbold">Batch Operations</p></a>
 
             <p>The Batch Operations function introduced in TNG 10.0.3 as a Batch Updates tab is now combined in the Mod List and allows specific
                 actions on multiple mods using the Select Filter. You must choose from the status filter list pull down and
@@ -222,17 +250,22 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="options"><p class="subheadbold">Options</p></a>
+            <a id="options"><p class="subheadbold">Options</p></a>
 
             <p>The Options allows you to specify some of the Mod Manager behavior for the
             <p><strong>Mod Manager Log Options</strong>
             <ul>
-                <li><strong>Log File Name</strong> - allows you to specify the file name to be used for the Mod Manager log. The default is <strong>modmgrlog.txt</strong>.</li>
-                <li><strong>Max number of Transactions</strong> - allows you to specify how many log transactions to keep in the log. The default is <strong>200</strong> transactions.</li>
-                <li><strong>Collapse Log display</strong> - allows you to specify if you want the View Log displayed in a collapsed or expanded format initially. The default is <strong>Yes</strong> but can be changed to <strong>No</strong> to display the
+                <li><strong>Log File Name</strong> - allows you to specify the file name to be used for the Mod Manager log. The default is <strong>modmgrlog.txt</strong>.
+                </li>
+                <li><strong>Max number of Transactions</strong> - allows you to specify how many log transactions to keep in the log. The default is
+                    <strong>200</strong> transactions.
+                </li>
+                <li><strong>Collapse Log display</strong> - allows you to specify if you want the View Log displayed in a collapsed or expanded format
+                    initially. The default is <strong>Yes</strong> but can be changed to <strong>No</strong> to display the
                     log expanded normally.
                 </li>
-                <li><strong>Redirect to Log For</strong> - allows you to specify if you want go to the Mod List to be redirected to the View Log on <strong>Errors Only</strong> or for <strong>All Transactions</strong>. The default is to redirect on
+                <li><strong>Redirect to Log For</strong> - allows you to specify if you want go to the Mod List to be redirected to the View Log on
+                    <strong>Errors Only</strong> or for <strong>All Transactions</strong>. The default is to redirect on
                     <strong>Errors Only</strong> which displays the View Log only if errors are encountered in the install, uninstall, clean up, or delete transaction.
                 </li>
                 <li><strong>Log full path for file actions</strong> - allows you to select No to only display the relative path for files in the log. The default is <strong>Yes</strong> to display the full absolute path.</li>
@@ -286,17 +319,23 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="analyze"><p class="subheadbold">Analyze TNG Files</p></a>
+            <a id="analyze"><p class="subheadbold">Analyze TNG Files</p></a>
 
-            <p>Created by Rick Bisbee this tool located under the <strong>Analyze TNG Files</strong> tab was previously provided as a mod. This tool lets developers examine mods to see precisely how they interact with each other. Two mods changing the same
-                block of code almost always results in Mod Manager errors. You must enable the <strong>Show Analyzer TNG Files tab</strong> by setting the Options to Yes if want the Analyze TNG Files tab to be displayed.</p>
+            <p>Created by Rick Bisbee this tool located under the <strong>Analyze TNG Files</strong> tab was previously provided as a mod. This tool
+                lets developers examine mods to see precisely how they interact with each other. Two mods changing the same
+                block of code almost always results in Mod Manager errors. You must enable the <strong>Show Analyzer TNG Files tab</strong> by setting
+                the Options to Yes if want the Analyze TNG Files tab to be displayed.</p>
 
-            <p>The analyzer works by examining every mod in the mods folder and cataloging which target files and which blocks of code each one modifies. It then lists the affected file names in the left hand column. Selecting one of those target files
-                displays a list on the right showing all the mods that change it. Each mod shown on the right has a link to open a section of the page displaying the actual modifications made by the Mod Manager Config file. A user can compare changes to
+            <p>The analyzer works by examining every mod in the mods folder and cataloging which target files and which blocks of code each one
+                modifies. It then lists the affected file names in the left hand column. Selecting one of those target files
+                displays a list on the right showing all the mods that change it. Each mod shown on the right has a link to open a section of the page
+                displaying the actual modifications made by the Mod Manager Config file. A user can compare changes to
                 the target file to see where potential conflicts might be. </p>
-            <p>This is helpful not only to find conflicts between two mods but also to know which mods need to be cleaned up and re-installed after replacing the given target file. </p>
+            <p>This is helpful not only to find conflicts between two mods but also to know which mods need to be cleaned up and re-installed after
+                replacing the given target file. </p>
 
-            <p>The TNG Wiki provides additional information for the mod developers on <a href="https://tng.lythgoes.net/wiki/index.php?title=Using_the_Mod_Analyzer" target="_blank">Using the Mod Analyzer</a>.</p>
+            <p>The TNG Wiki provides additional information for the mod developers on <a
+                    href="https://tng.lythgoes.net/wiki/index.php?title=Using_the_Mod_Analyzer" target="_blank">Using the Mod Analyzer</a>.</p>
         </td>
     </tr>
 
@@ -304,13 +343,17 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="parser"><p class="subheadbold">View Parser Table</p></a>
-            <p>This tool is designed mainly for developers. The Parser Table shows how the Mod Manager parsed the mod config file (.cfg) for processing its components into a table, which is then passed to other mod manager scripts for further processing.
-                If there is a problem with a mod, the first place to check is the parse table to see if all the mod's directives and arguments are being captured properly.</p>
+            <a id="parser"><p class="subheadbold">View Parser Table</p></a>
+            <p>This tool is designed mainly for developers. The Parser Table shows how the Mod Manager parsed the mod config file (.cfg) for
+                processing its components into a table, which is then passed to other mod manager scripts for further processing.
+                If there is a problem with a mod, the first place to check is the parse table to see if all the mod's directives and arguments are
+                being captured properly.</p>
 
-            <p>You can use this tab to select a mod from a list whose table you want to view, or alternatively you can click on the mod name in the Mod List to view the parse table for that mod, if you enabled the Show Other Developer Tools option.</p>
+            <p>You can use this tab to select a mod from a list whose table you want to view, or alternatively you can click on the mod name in the
+                Mod List to view the parse table for that mod, if you enabled the Show Other Developer Tools option.</p>
 
-            <p>Displaying this tab is optional. To use it select 'Display Settings/Show Other Developer tools' on the options tab. If the tab option is turned off, the link on the listing page will also be disabled.</p>
+            <p>Displaying this tab is optional. To use it select 'Display Settings/Show Other Developer tools' on the options tab. If the tab option
+                is turned off, the link on the listing page will also be disabled.</p>
 
         </td>
     </tr>
@@ -319,9 +362,11 @@ echo help_header("Help: Mod Manager");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="custtext"><p class="subheadbold">Recommended Changes</p></a>
-            <p>The Recommended Changes tab is an optional tab that can be enabled in the Options screen that allows you to update your cust_text.php files if you did not do so as part of the TNG upgrade readme.</p>
-            <p>It is intended to be used if a mod cannot be installed because it is looking for the new comment string at the top of the cust_text.php files starting with TNG v12. The option will be turned off when you click the Update button to change
+            <a id="custtext"><p class="subheadbold">Recommended Changes</p></a>
+            <p>The Recommended Changes tab is an optional tab that can be enabled in the Options screen that allows you to update your cust_text.php
+                files if you did not do so as part of the TNG upgrade readme.</p>
+            <p>It is intended to be used if a mod cannot be installed because it is looking for the new comment string at the top of the cust_text.php
+                files starting with TNG v12. The option will be turned off when you click the Update button to change
                 your existing cust_text.php files. The code checks whether the files have previously been updated.</p>
 
         </td>

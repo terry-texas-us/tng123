@@ -4,21 +4,21 @@ echo help_header("Nápověda: Základní nastavení");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
-        <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Základní nastavení</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="setup_help.php" class="lightlink">&laquo; Nápověda: Nastavení</a> &nbsp; | &nbsp;
+                <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Základní nastavení</span>
       <p class="smaller menu">
         <a href="#data" class="lightlink">Databáze</a> &nbsp; | &nbsp;
         <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
@@ -29,32 +29,36 @@ echo help_header("Nápověda: Základní nastavení");
                 <a href="#priv" class="lightlink">Ochrana údajů</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Jména</a> &nbsp; | &nbsp;
                 <a href="#cem" class="lightlink">Hřbitovy</a> &nbsp; | &nbsp;
-                <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
-                <a href="#mobile" class="lightlink">Mobil</a> &nbsp; | &nbsp;
-                <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
-                <a href="#misc" class="lightlink">Různé</a>
-            </p>
+          <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
+          <a href="#mobile" class="lightlink">Mobil</a> &nbsp; | &nbsp;
+          <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
+          <a href="#misc" class="lightlink">Různé</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="data"><p class="subheadbold">Databáze</p></a>
+            <a id="data"><p class="subheadbold">Databáze</p></a>
 
             <span class="optionhead">Hostitel databáze, název, uživatelské jméno, heslo</span>
             <p>Tyto údaje použije TNG a PHP k připojení k vaší databázi. Tyto pole musí být vyplněny dřív, než bude vaše databáze
-                zpřístupněna. <strong>Pozn.</strong>: Toto uživatelské jméno a heslo může být jiné, než jsou vaše obvyklé přístupové údaje k webové stránce.
+                zpřístupněna. <strong>Pozn.</strong>: Toto uživatelské jméno a heslo může být jiné, než jsou vaše obvyklé přístupové údaje k webové
+                stránce.
                 Pokud se po vložení těchto údajů objeví chybové hlášení, že TNG nemůže komunikovat s vaší databází,
                 pak je některý z těchto údajů chybný. Neznáte-li správné údaje, vyžádejte si je u poskytovatele vašeho
-                webového hostingu. Název hostitel může také obsahovat číslo portu nebo cestu do soketu (socket path), např. "localhost:3306" nebo "localhost:/path/to/socket".
-                Tyto údaje jsou důležité, takže je zadávejte s maximální přesností. Pokud působíte jako svůj vlastní webmaster, ujistěte se, že jste vytvořili databázi
+                webového hostingu. Název hostitel může také obsahovat číslo portu nebo cestu do soketu (socket path), např. "localhost:3306" nebo
+                "localhost:/path/to/socket".
+                Tyto údaje jsou důležité, takže je zadávejte s maximální přesností. Pokud působíte jako svůj vlastní webmaster, ujistěte se, že jste
+                vytvořili databázi
                 a přidali do ní uživatele (uživatel musí mít VŠECHNA přístupová práva).</p>
 
             <span class="optionhead">Režim údržby</span>
             <p>Je-li TNG v režimu údržby, data nejsou přístupná veřejnosti. Návštěvníkovi se zobrazí zpráva,
                 která mu oznámí, že na stránkách probíhá údržba a může se sem vrátit později. Vaši stránku můžete
                 přepnout do režimu údržby při importu vašich dat. Pokud chcete přečíslovat vaše ID čísla, přepnutí do režimu údržby
-                je nutné. Pokud jste se v režimu údržby "zasekli", můžete přímo opravit váš soubor config.php a obnovit nastavení proměnné $tngconfig['maint']
+                je nutné. Pokud jste se v režimu údržby "zasekli", můžete přímo opravit váš soubor config.php a obnovit nastavení proměnné
+                $tngconfig['maint']
                 na 0 nebo prázdnou.</p>
 
         </td>
@@ -63,10 +67,11 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="table"><p class="subheadbold">Názvy tabulek</p></a>
+            <a id="table"><p class="subheadbold">Názvy tabulek</p></a>
 
             <span class="optionhead">Názvy tabulek</span>
-            <p>Výchozí názvy byste neměli měnit, pokud už některé tabulky mají tyto názvy. Všechny názvy tabulek musí být vyplněny a všechny názvy musí být jednoznačné.
+            <p>Výchozí názvy byste neměli měnit, pokud už některé tabulky mají tyto názvy. Všechny názvy tabulek musí být vyplněny a všechny názvy
+                musí být jednoznačné.
                 Neměňte názvy existujících tabulek.</p>
 
         </td>
@@ -75,12 +80,14 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="path"><p class="subheadbold">Umístění a složky</p></a>
+            <a id="path"><p class="subheadbold">Umístění a složky</p></a>
 
             <span class="optionhead">Kořenová složka</span>
             <p>Toto je složka v systému, ve které jsou umístěny vaše soubory TNG. Není to webová adresa.
-                Zapsat musíte koncové lomítko. Pokud tuto stránku otevřete poprvé, vaše kořenová složka by měla být vyplněna správně. Neměňte ji, pokud nejste pokročilý uživatel
-                nebo nejste instruováni, jak to udělat. Pokud smažete obsah tohoto pole a stránku uložíte, správná složka se objeví po opětovném načtení této stránky, ale
+                Zapsat musíte koncové lomítko. Pokud tuto stránku otevřete poprvé, vaše kořenová složka by měla být vyplněna správně. Neměňte ji,
+                pokud nejste pokročilý uživatel
+                nebo nejste instruováni, jak to udělat. Pokud smažete obsah tohoto pole a stránku uložíte, správná složka se objeví po opětovném
+                načtení této stránky, ale
                 stránku musíte uložit znovu, aby se nová složka uložila.</p>
 
             <span class="optionhead">Konfigurační složka</span>
@@ -89,7 +96,8 @@ echo help_header("Nápověda: Základní nastavení");
                 Je-li např. vaše kořenová složka "/home/www/username/public_html/genealogy/", jako konfigurační složku můžete zvolit "/home/www/username/".</p>
 
             <span class="optionhead">Složky Fotografie / Dokumenty / Vyprávění / Náhrobky / Multimédia / GENDEX / Zálohy / Módy / Extensions</span>
-            <p>Do těchto polí zapište název složky nebo adresáře pro zmíněné entity. Všechny by měly mít globální přístup číst+psát+provést (read+write+execute, 755 nebo 775, i když některé systémy vyžadují 777).
+            <p>Do těchto polí zapište název složky nebo adresáře pro zmíněné entity. Všechny by měly mít globální přístup číst+psát+provést
+                (read+write+execute, 755 nebo 775, i když některé systémy vyžadují 777).
                 Složka multimédií je určena jako "záchytná" pro všechny položky médií, které se nehodí do jiných kategorií (např. videa a
                 zvukové záznamy). Tyto složky mohou být vytvořeny z této obrazovky kliknutím na tlačítka "Vytvořit složku".</p>
 
@@ -99,11 +107,13 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="site"><p class="subheadbold">Vzhled a definice stránek</p></a>
+            <a id="site"><p class="subheadbold">Vzhled a definice stránek</p></a>
 
             <span class="optionhead">Domovská stránka</span>
-            <p>Všechna menu v programu TNG obsahují odkaz na "domovskou stránku". Do tohoto pole zapište adresu tohoto odkazu. Standardně je to stránka index.php ve složce s ostatními
-                soubory TNG. Musí to být relativní odkaz ("index.php" nebo "../otherhomepage.html"), nikoli absolutní odkaz ("http://yoursite.com").</p>
+            <p>Všechna menu v programu TNG obsahují odkaz na "domovskou stránku". Do tohoto pole zapište adresu tohoto odkazu. Standardně je to
+                stránka index.php ve složce s ostatními
+                soubory TNG. Musí to být relativní odkaz ("index.php" nebo "../otherhomepage.html"), nikoli absolutní odkaz
+                ("http://yoursite.com").</p>
 
             <span class="optionhead">URL genealogických stránek</span>
             <p>Webová adresa vaší genealogické složky (např. "http://mysite.com/genealogy").</p>
@@ -171,17 +181,20 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="media"><p class="subheadbold">Média</p></a>
+            <a id="media"><p class="subheadbold">Média</p></a>
 
             <span class="optionhead">Typ souborů fotografií</span>
-            <p>Přípona souboru všech malých fotografií používaných ve schématech. Ostatní fotografie nemusí obsahovat tuto příponu. Pro většinu fotografií je doporučena přípona .jpg.</p>
+            <p>Přípona souboru všech malých fotografií používaných ve schématech. Ostatní fotografie nemusí obsahovat tuto příponu. Pro většinu
+                fotografií je doporučena přípona .jpg.</p>
 
             <span class="optionhead">Zobrazit rozšířenou informaci o obrázku</span>
-            <p>Pokud je tato volba zaškrtnuta, budou u každé fotografie zobrazeny rozšířené informace. Ty obsahují fyzický název souboru, rozměry v pixelech a
+            <p>Pokud je tato volba zaškrtnuta, budou u každé fotografie zobrazeny rozšířené informace. Ty obsahují fyzický název souboru, rozměry v
+                pixelech a
                 existující údaje IPTC.</p>
 
             <span class="optionhead">Maximální výška a šířka obrázku</span>
-            <p>Jsou-li tyto hodnoty nastaveny (pixely), obrázky větší než tyto rozměry budou při zobrazení ve veřejném prostředí zmenšeny (použitím HTML).</p>
+            <p>Jsou-li tyto hodnoty nastaveny (pixely), obrázky větší než tyto rozměry budou při zobrazení ve veřejném prostředí zmenšeny (použitím
+                HTML).</p>
 
             <span class="optionhead">Předpona/prefix pro náhledy</span>
             <p>Při automatickém generování náhledu přidá TNG tuto hodnotu před originální název souboru a vytvoří tak název souboru náhledu. Pokud název originálního souboru obsahuje údaj o cestě,
@@ -243,7 +256,8 @@ echo help_header("Nápověda: Základní nastavení");
                 ve hlavní složce kolekce). Kliknutím na tlačítko "Převést" přesunete příslušná média do této nové struktury složek. Pokud cílové složky stromů neexistují, budou vytvořeny.</p>
 
             <span class="optionhead">Favicon</span>
-            <p>"Favicon" je malá ikona zobrazená v adresním řádku prohlížeče nalevo od adresy URL stránky. TNG neobsahuje nástroj, který vám pomůže takovou ikonu vytvořit, ale pokud
+            <p>"Favicon" je malá ikona zobrazená v adresním řádku prohlížeče nalevo od adresy URL stránky. TNG neobsahuje nástroj, který vám pomůže
+                takovou ikonu vytvořit, ale pokud
                 nějakou máte k dispozici a chcete ji použít, nahrajte ji do hlavní složky TNG a název souboru zadejte zde.</p>
 
         </td>
@@ -252,13 +266,15 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="lang"><p class="subheadbold">Jazyk</p></a>
+            <a id="lang"><p class="subheadbold">Jazyk</p></a>
 
             <span class="optionhead">Jazyk</span>
-            <p>Výchozí složka jazyka (např. 'Czech'). Pro návštěvníky vašich stránek můžete mít dostupných několik jazyků, ale tento jazyk bude vždy zobrazen jako první.</p>
+            <p>Výchozí složka jazyka (např. 'Czech'). Pro návštěvníky vašich stránek můžete mít dostupných několik jazyků, ale tento jazyk bude vždy
+                zobrazen jako první.</p>
 
             <span class="optionhead">Znaková sada</span>
-            <p>Znaková sada vašeho výchozího jazyka. Pokud toto pole ponecháte prázdné, bude použita výchozí znaková sada vašeho prohlížeče. Znaková sada pro angličtinu a jiné západoevropské jazyky používající 26 znakovou
+            <p>Znaková sada vašeho výchozího jazyka. Pokud toto pole ponecháte prázdné, bude použita výchozí znaková sada vašeho prohlížeče. Znaková
+                sada pro angličtinu a jiné západoevropské jazyky používající 26 znakovou
                 římskou abecedu je ISO-8859-1. Převládající kódování češtiny jsou ISO-8859-2, Windows-1250 a UTF-8.</p>
 
             <span class="optionhead">Dynamická změna jazyka</span>
@@ -271,14 +287,15 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="priv"><p class="subheadbold">Ochrana údajů</p></a>
+            <a id="priv"><p class="subheadbold">Ochrana údajů</p></a>
 
             <span class="optionhead">Vyžadovat přihlášení</span>
             <p>Každý uživatel může běžně prohlížet veřejné prostředí vašich stránek, s přihlášením může volitelně vidět data žijících osob. Pokud však
                 chcete, aby se muset přihlásit každý před tím než muže spatřit cokoli z vašich stránek, zaškrtněte toto pole.</p>
 
             <span class="optionhead">Omezit přístup pouze na připojený strom</span>
-            <p>Je-li Vyžadovat přihlášení nastaveno na 'Ano', pak nastavení této volby na 'Ano' způsobí, že uživatelé budou moci pouze vidět data spojená se svými
+            <p>Je-li Vyžadovat přihlášení nastaveno na 'Ano', pak nastavení této volby na 'Ano' způsobí, že uživatelé budou moci pouze vidět data
+                spojená se svými
                 připojenými stromy. Všechny jiné osoby, rodiny, prameny, atd. budou skryty.</p>
 
             <span class="optionhead">Zobrazit údaje CJKSpd</span>
@@ -324,8 +341,10 @@ echo help_header("Nápověda: Základní nastavení");
                 Návštěvníci budou muset pouze zaškrtnout políčko označující, že nejsou robot. Chcete-li tuto službu aktivovat, budete potřebovat dva klíče: Site Key a Secret Key.</p>
 
             <span class="optionhead">Klíče Site Key a Secret Key</span>
-            <p>Chcete-li získat své klíče Site Key a Secret Key, přejděte na stránku https://www.google.com/recaptcha/admin. Pokud ještě nemáte účet Google, bude si jej muset vytvořit.
-                Pokud máte účet Google, na vyžádání se přihlaste a postupujte podle pokynů pro vytvoření klíčů. Po zobrazení výzvy k zadání adresy/názvu domény NEZADÁVEJTE "www" a
+            <p>Chcete-li získat své klíče Site Key a Secret Key, přejděte na stránku https://www.google.com/recaptcha/admin. Pokud ještě nemáte účet
+                Google, bude si jej muset vytvořit.
+                Pokud máte účet Google, na vyžádání se přihlaste a postupujte podle pokynů pro vytvoření klíčů. Po zobrazení výzvy k zadání
+                adresy/názvu domény NEZADÁVEJTE "www" a
                 nezadávejte zadní lomítko. Po vytvoření klíčů je vložte do polí na této stránce.</p>
 
         </td>
@@ -334,17 +353,20 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="name"><p class="subheadbold">Jména</p></a>
+            <a id="name"><p class="subheadbold">Jména</p></a>
 
             <span class="optionhead">Pořadí jména a příjmení</span>
-            <p>Určí, jak budou ve většině případů jména zobrazena (některé seznamy vždy zobrazí příjmení jako první). Zvolit můžete zobrazení křestního jména jako první nebo příjmení jako první.
+            <p>Určí, jak budou ve většině případů jména zobrazena (některé seznamy vždy zobrazí příjmení jako první). Zvolit můžete zobrazení
+                křestního jména jako první nebo příjmení jako první.
                 Není-li nic vybráno, bude zobrazeno jako první křestní jméno.</p>
 
             <span class="optionhead">Všechna příjmení velkými písmeny</span>
-            <p>Umožní zobrazit všechna příjmení velkými písmeny. Je-li tato volba nastavena na "Ne", budou jména zobrazena tak, jak byla zapsána nebo naimportována.</p>
+            <p>Umožní zobrazit všechna příjmení velkými písmeny. Je-li tato volba nastavena na "Ne", budou jména zobrazena tak, jak byla zapsána nebo
+                naimportována.</p>
 
             <span class="optionhead">Předpony příjmení</span>
-            <p>Určí, jak se bude zacházet s předponami příjmení (např. "de" nebo "van"). Standardně je vše, co je obsaženo v poli příjmení souboru GEDCOM součástí příjmení, a podle toho jsou i
+            <p>Určí, jak se bude zacházet s předponami příjmení (např. "de" nebo "van"). Standardně je vše, co je obsaženo v poli příjmení souboru
+                GEDCOM součástí příjmení, a podle toho jsou i
                 příjmení tříděna ("de Kalb" je dříve než "van Buren"). Předpony příjmení můžete ponechat jako součást příjmení nebo je můžete oddělit
                 jako samostatné subjekty (takto bude "van Buren" v řazení před "de Kalb"). Toto nebude mít vliv na existující příjmení, dokud je ručně neupravíte nebo nepřevedete pomocí surnameconvert400.php.</p>
 
@@ -352,8 +374,10 @@ echo help_header("Nápověda: Základní nastavení");
             <p>Pokud jste zvolili oddělení předpon jako samostatných subjektů, tato sekce stanoví pravidla, která pomohou rozhodnout importovací rutině, co je předponou. Předpony jsou definovány jako
                 části jmen oddělené mezerami, ale vy můžete zvolit, kolik předpon každého jména bude součástí předpony v TNG. Jinými slovy, pokud určíte, že
                 "Počet předpon každého (max)" je 1, pak bude do pole předpona ze jména "van der Merwe" přesunuto pouze "van". Na druhou stranu, pokud tuto hodnotu nastavíte na 2 nebo vyšší, předponou
-                bude "van der". Označit můžete také určité předpony, které budou vždy odděleny jako samostatné předpony. Jinými slovy, nastavíte-li tuto hodnotu na "van der", pak
-                bude "van der" vždy uvažována jako platná předpona nezávisle na tom, jak vysoká nebo nízká je předchozí hodnota. Více hodnot oddělujte čárkami. Je-li ve jméně předpona oddělena
+                bude "van der". Označit můžete také určité předpony, které budou vždy odděleny jako samostatné předpony. Jinými slovy, nastavíte-li
+                tuto hodnotu na "van der", pak
+                bude "van der" vždy uvažována jako platná předpona nezávisle na tom, jak vysoká nebo nízká je předchozí hodnota. Více hodnot oddělujte
+                čárkami. Je-li ve jméně předpona oddělena
                 apostrofem, tento apostrof uveďte v seznamu také. Např.: "van,vander,van der,d',a',de,das".</p>
 
         </td>
@@ -362,7 +386,7 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="cem"><p class="subheadbold">Hřbitovy</p></a>
+            <a id="cem"><p class="subheadbold">Hřbitovy</p></a>
 
             <span class="optionhead">Maximální počet řádků ve sloupci (prům.)</span>
             <p>Pokud máte definováno velké množství hřbitovů, tento údaj řekne TNG, že je-li dosažen zadaný počet, seznam má být rozdělen
@@ -378,11 +402,13 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="mail"><p class="subheadbold">Mail a registrace</p></a>
+            <a id="mail"><p class="subheadbold">Mail a registrace</p></a>
 
             <span class="optionhead">Emailová adresa</span>
-            <p>Vaše emailová adresa. Požádá-li návštěvník o nový uživatelský účet, email bude posílán z této adresy. Na tuto adresu budou také zasílány
-                všechny zprávy ze stránky "Napište nám". Zprávy pocházející z formuláře "Návrh" přijdou na tuto adresu, pokud není se stromem odpovídajícím
+            <p>Vaše emailová adresa. Požádá-li návštěvník o nový uživatelský účet, email bude posílán z této adresy. Na tuto adresu budou také
+                zasílány
+                všechny zprávy ze stránky "Napište nám". Zprávy pocházející z formuláře "Návrh" přijdou na tuto adresu, pokud není se stromem
+                odpovídajícím
                 stránce, ze které byl poslán návrh, spojena žádná emailová adresa (jinak bude zpráva poslána na tuto adresu).</p>
 
             <span class="optionhead">Posílat všechny maily z výše uvedené adresy</span>
@@ -417,27 +443,32 @@ echo help_header("Nápověda: Základní nastavení");
                 nyní aktivní. Nechcete-li, aby bylo heslo do emailu vkládáno, nastavte tuto hodnotu Ne.</p>
 
             <span class="optionhead">Použít ověření SMTP</span>
-            <p>TNG posílá normálně maily pomocí PHP funkce "mail". Chcete-li raději použít Simple Mail Transfer Protocol, pak tuto hodnotu nastavte na "Ano".
-                Zobrazí se navíc některé další volby: Název SMTP hostitele, Uživatelské jméno pro email, Heslo pro email a Číslo portu. Správné hodnoty těchto polí
+            <p>TNG posílá normálně maily pomocí PHP funkce "mail". Chcete-li raději použít Simple Mail Transfer Protocol, pak tuto hodnotu nastavte na
+                "Ano".
+                Zobrazí se navíc některé další volby: Název SMTP hostitele, Uživatelské jméno pro email, Heslo pro email a Číslo portu. Správné
+                hodnoty těchto polí
                 by vám měl být schopen dát poskytovatel vašeho hostingu.</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="mobile"><p class="subheadbold">Mobil</p></a>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="mobile"><p class="subheadbold">Mobil</p></a>
 
-      <p>Sekce Mobil vám umožní určit, jak se bude TNG zobrazovat na chytrých telefonech a tabletech.</p>
+            <p>Sekce Mobil vám umožní určit, jak se bude TNG zobrazovat na chytrých telefonech a tabletech.</p>
 
-      <span class="optionhead">Povolit responzivní tabulky</span>
-      <p>Je-li tato volba nastavena na Ano, bbude aktivován plugin Tablesaw jQuery, který umožňuje responzivní tabulky.<br>Je-li volba nastavena na Ne, plugin Tablesaw jQuery nebude aktivní.</p>
+            <span class="optionhead">Povolit responzivní tabulky</span>
+            <p>Je-li tato volba nastavena na Ano, bbude aktivován plugin Tablesaw jQuery, který umožňuje responzivní tabulky.<br>Je-li volba nastavena
+                na Ne, plugin Tablesaw jQuery nebude aktivní.</p>
 
-      <span class="optionhead">Typ responzivní tabulky</span>
-      <p>Typ responzivní tabulky může být nastaven na
-      <ul>
-        <li><strong>Toggle</strong>, který je výchozí, a zobrazí data ve sloupcích založených na šířce displeje a přiřazené prioritě. Otočením displeje chytrého telefonu nebo tabletu na šířku budou zobrazeny další sloupce dat.</li>
+            <span class="optionhead">Typ responzivní tabulky</span>
+            <p>Typ responzivní tabulky může být nastaven na
+            <ul>
+                <li><strong>Toggle</strong>, který je výchozí, a zobrazí data ve sloupcích založených na šířce displeje a přiřazené prioritě. Otočením
+                    displeje chytrého telefonu nebo tabletu na šířku budou zobrazeny další sloupce dat.
+                </li>
 
         <li><strong>Stack</strong>, který shrne záhlaví tabulky do dvousloupcového návrhu se záhlavím nalevo, je-li šířka výřezu menší než 40em (640px).</li>
 
@@ -447,20 +478,22 @@ echo help_header("Nápověda: Základní nastavení");
       <span class="optionhead">Povolit přepínač módů responzivních tabulek:</span>
       <p>Volba přepínače módů umožní uživateli přepínat mezi jednotlivými typy zobrazení sloupců tabulek: toggle, stack nebo swipe.</p>
 
-      <span class="optionhead">Povolit minimapu responzivních tabulek</span>
-      <p>Použití minimapy přidá sérii malých teček ukazujících, které sloupce jsou aktuálně viditelné a které jsou skryté.
-        K dispozici pouze v módu swipe a toggle. </p>
+            <span class="optionhead">Povolit minimapu responzivních tabulek</span>
+            <p>Použití minimapy přidá sérii malých teček ukazujících, které sloupce jsou aktuálně viditelné a které jsou skryté.
+                K dispozici pouze v módu swipe a toggle. </p>
 
-    </td>
-  </tr>
-  <tr class="databack">
+        </td>
+    </tr>
+    <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="pref"><p class="subheadbold">Předpony a přípony</p></a>
+            <a id="pref"><p class="subheadbold">Předpony a přípony</p></a>
 
-            <p>Tato písmena ve spojení s číslicí tvoří identifikační čísla (ID čísla) osob, rodin, pramenů, úložišť a poznámek ve vaší databázi. Většina genealogických
-                programů používá stejnou sadu standardních předpon (a žádné přípony). Pokud váš desktopový program používá přípony nebo jiné předpony, můžete je zadat zde.
+            <p>Tato písmena ve spojení s číslicí tvoří identifikační čísla (ID čísla) osob, rodin, pramenů, úložišť a poznámek ve vaší databázi.
+                Většina genealogických
+                programů používá stejnou sadu standardních předpon (a žádné přípony). Pokud váš desktopový program používá přípony nebo jiné předpony,
+                můžete je zadat zde.
                 Nejsou-li zadány správné předpony nebo přípony, některé funkce TNG nebudou pracovat správně.</p>
 
         </td>
@@ -469,10 +502,11 @@ echo help_header("Nápověda: Základní nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="misc"><p class="subheadbold">Různé</p></a>
+            <a id="misc"><p class="subheadbold">Různé</p></a>
 
             <span class="optionhead">Maximální počet výsledků hledání</span>
-            <p>Tato volba omezuje počet výsledků, které mohou být zobrazeny z veřejného vyhledávacího dotazu. Může to být relativně malé, zvládnutelné číslo, aby byla
+            <p>Tato volba omezuje počet výsledků, které mohou být zobrazeny z veřejného vyhledávacího dotazu. Může to být relativně malé, zvládnutelné
+                číslo, aby byla
                 maximalizována efektivnost a zlepšení zkušeností uživatelů.</p>
 
             <span class="optionhead">Osoby začínají na</span>

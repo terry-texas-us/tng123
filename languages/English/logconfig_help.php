@@ -4,17 +4,17 @@ echo help_header("Help: Log Settings");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="pedconfig_help.php" class="lightlink">&laquo; Help: Chart Settings</a> &nbsp; | &nbsp;
-        <a href="importconfig_help.php" class="lightlink">Help: Import Settings &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Log Settings</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="pedconfig_help.php" class="lightlink">&laquo; Help: Chart Settings</a> &nbsp; | &nbsp;
+                <a href="importconfig_help.php" class="lightlink">Help: Import Settings &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Log Settings</span>
     </td>
   </tr>
   <tr class="databack">

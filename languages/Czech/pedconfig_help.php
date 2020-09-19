@@ -4,41 +4,45 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
-        <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Nastaven� sch�mat</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="config_help.php" class="lightlink">&laquo; N�pov�da: Z�kladn� nastaven�</a> &nbsp; | &nbsp;
+                <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Nastaven� sch�mat</span>
       <p class="smaller menu">
         <a href="#ped" class="lightlink">P�edkov�</a> &nbsp; | &nbsp;
-        <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-        <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
-        <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
-        <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
-                <a href="#thumb" class="lightlink">N�hledy</a>
-            </p>
+          <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
+          <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp; | &nbsp;
+          <a href="#time" class="lightlink">�asov� osa</a> &nbsp; | &nbsp;
+          <a href="#common" class="lightlink">Spole�n� prvky</a> &nbsp; | &nbsp;
+          <a href="#thumb" class="lightlink">N�hledy</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="ped"><p class="subheadbold">P�edkov�</p></a>
+            <a id="ped"><p class="subheadbold">P�edkov�</p></a>
 
             <span class="optionhead">V�choz� zobrazen�</span>
             <p>Pomoc� t�to volby nastav�te v�choz� form�t sch�matu p�edk�. Je-li vybr�no Standardn�, v�echna data narozen�, s�atku a �mrt�/poh�bu
-                (jsou-li k dispozici) budou vlo�ena do skryt�ho vyskakovac�ho r�me�ku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou data k dispozici,
-                bude na st�edu pod spodn�m okrajem r�me�k� sch�matu um�st�n obrazov� soubor (nap�. ArrowDown.gif), a kdy� je vyvol�n vyskakovac� r�me�ek, objev� se pod r�me�kem sch�matu.
-                Kompaktn� form�t je podobn� Standardn�mu, ale velikost r�me�ku je v�razn� zmen�ena, a nejsou zobrazeny fotografie. Kdy� je vybr�n form�t R�me�ek,
-                standardn� �daje se v�dy objev� v r�me�c�ch sch�matu. Je-li vybr�n Pouze text, bude nejprve zobrazena textov� verze sch�matu p�edk� (��dn� r�me�ky ani vyskakovac� okna).
+                (jsou-li k dispozici) budou vlo�ena do skryt�ho vyskakovac�ho r�me�ku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou
+                data k dispozici,
+                bude na st�edu pod spodn�m okrajem r�me�k� sch�matu um�st�n obrazov� soubor (nap�. ArrowDown.gif), a kdy� je vyvol�n vyskakovac�
+                r�me�ek, objev� se pod r�me�kem sch�matu.
+                Kompaktn� form�t je podobn� Standardn�mu, ale velikost r�me�ku je v�razn� zmen�ena, a nejsou zobrazeny fotografie. Kdy� je vybr�n
+                form�t R�me�ek,
+                standardn� �daje se v�dy objev� v r�me�c�ch sch�matu. Je-li vybr�n Pouze text, bude nejprve zobrazena textov� verze sch�matu p�edk�
+                (��dn� r�me�ky ani vyskakovac� okna).
                 Volba Svisle zobraz� v�choz� osobu dole a p�edkov� osoby budou zobrazeni nad n�.
                 Po zobrazen� v�choz�ho form�tu m� u�ivatel v�dy mo�nost p�epnout mezi jednotliv�mi typy.</p>
 
@@ -103,13 +107,16 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="desc"><p class="subheadbold">Potomci</p></a>
+            <a id="desc"><p class="subheadbold">Potomci</p></a>
 
             <span class="optionhead">V�choz� zobrazen�</span>
             <p>Pomoc� t�to volby nastav�te v�choz� form�t potomk�. Je-li vybr�no Standardn�, v�echna data narozen�, s�atku a �mrt�/poh�bu
-                (jsou-li k dispozici) budou vlo�ena do skryt�ho vyskakovac�ho r�me�ku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou data k dispozici,
-                bude na st�edu pod spodn�m okrajem r�me�k� sch�matu um�st�n obrazov� soubor (nap�. ArrowDown.gif), a kdy� je vyvol�n vyskakovac� r�me�ek, objev� se pod r�me�kem sch�matu.
-                Kompaktn� form�t je podobn� Standardn�mu, ale velikost r�me�ku je v�razn� zmen�ena, a nejsou zobrazeny fotografie. Je-li vybr�n Pouze text, bude zobrazena textov�
+                (jsou-li k dispozici) budou vlo�ena do skryt�ho vyskakovac�ho r�me�ku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou
+                data k dispozici,
+                bude na st�edu pod spodn�m okrajem r�me�k� sch�matu um�st�n obrazov� soubor (nap�. ArrowDown.gif), a kdy� je vyvol�n vyskakovac�
+                r�me�ek, objev� se pod r�me�kem sch�matu.
+                Kompaktn� form�t je podobn� Standardn�mu, ale velikost r�me�ku je v�razn� zmen�ena, a nejsou zobrazeny fotografie. Je-li vybr�n Pouze
+                text, bude zobrazena textov�
                 verze sch�matu potomk� (��dn� r�me�ky ani vyskakovac� okna). Form�t Registr zobraz� stejn� informace ve stylu vypr�v�n�.
                 Po zobrazen� v�choz�ho form�tu m� u�ivatel v�dy mo�nost p�epnout mezi jednotliv�mi typy.</p>
 
@@ -137,9 +144,10 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="rel"><p class="subheadbold">Sch�ma p��buzensk�ch vztah�</p></a>
+            <a id="rel"><p class="subheadbold">Sch�ma p��buzensk�ch vztah�</p></a>
             <span class="optionhead">V�choz� po�et vztah�</span>
-            <p>Tato hodnota ud�v� po�et p��buzensk�ch vztah�, kter� bude TNG hledat p�i prvn�m spu�t�n� sch�matu p��buzensk�ch vztah�. Po nalezen� tohoto
+            <p>Tato hodnota ud�v� po�et p��buzensk�ch vztah�, kter� bude TNG hledat p�i prvn�m spu�t�n� sch�matu p��buzensk�ch vztah�. Po nalezen�
+                tohoto
                 po�tu vztah� se proces zastav�. Pokud v� strom neobsahuje komplikovan� p��buzensk� vztahy, m��ete tuto hodnotu nastavit
                 na 1, abyste u�et�ili �as pr�b�hu.</p>
 
@@ -151,7 +159,8 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                 TNG bude po nalezen� prvn�ho vztahu d�le hledat marn�.</p>
 
             <span class="optionhead">Maxim�ln� po�et generac�</span>
-            <p>Maxim�ln� po�et generac�, kter� povol�te n�v�t�vn�kovi na str�nce p��buzensk�ch vztah� najednou prohledat. M��e to b�t na t�to str�nce tak� v�choz� po�et.</p>
+            <p>Maxim�ln� po�et generac�, kter� povol�te n�v�t�vn�kovi na str�nce p��buzensk�ch vztah� najednou prohledat. M��e to b�t na t�to str�nce
+                tak� v�choz� po�et.</p>
 
         </td>
     </tr>
@@ -159,13 +168,14 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="time"><p class="subheadbold">Sch�ma �asov� osy</p></a>
+            <a id="time"><p class="subheadbold">Sch�ma �asov� osy</p></a>
             <span class="optionhead">V�choz� ���ka sch�matu</span>
             <p>V�choz� ���ka sch�matu d�lky �ivota v pixelech. N�v�t�vn�ci si mohou ���ku zm�nit na horn�m okraji obrazovky.</p>
 
             <span class="optionhead">Povolit �asovou linii Simile</span>
             <p>V�b�rem volby "Ano" m��ete vedle standardn� �asov� linie TNG tak� na stejn� str�nce zobrazit sch�ma �asov� linie Simile. V�ce
-                informac� o sch�matu �asov� linie Simile m��ete naj�t na <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.</p>
+                informac� o sch�matu �asov� linie Simile m��ete naj�t na <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.
+            </p>
 
             <span class="optionhead">V��ka sch�matu</span>
             <p>V��ka �asov� osy ud�lost� (Simile) v pixelech. Je-li zobrazeno mnoho ud�lost� najednou, mohou b�t n�kter� vytla�eny
@@ -191,7 +201,8 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                 $band3_interval = 175; (Po�et pixel� mezi jednotliv�mi zna�kami.)<br>
                 $band3_multiple = 1; (Po�et let mezi zna�kami. Pokud je hodnota 2, bude p�esko�en ka�d� druh� rok.)<br>
 
-                $band4_pct = "15%"; (Spodn� pruh; jsou zde zobrazeny velmi mal� ��rky, hrub� �rove� zobrazen� obecn�ch ud�lost� �asov� osy z pruhu 3. Zab�r� 15% celkov� v��ky.)<br>
+                $band4_pct = "15%"; (Spodn� pruh; jsou zde zobrazeny velmi mal� ��rky, hrub� �rove� zobrazen� obecn�ch ud�lost� �asov� osy z pruhu 3.
+                Zab�r� 15% celkov� v��ky.)<br>
                 $band4_interval = 150; (Po�et pixel� mezi jednotliv�mi zna�kami.)<br>
                 $band4_multiple = 1; (Po�et let mezi zna�kami. Pokud je hodnota 2, bude p�esko�en ka�d� druh� rok.)<br>
             </p>
@@ -201,11 +212,12 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="common"><p class="subheadbold">Spole�n� prvky</p></a>
+            <a id="common"><p class="subheadbold">Spole�n� prvky</p></a>
 
             <span class="optionhead">Odsazen� zleva</span>
             <p>Vodorovn� posun, kter� bude pou�it u cel�ho sch�matu (v pixelech). Lze t�m nap�. zajistit, aby sch�ma nep�ekr�valo
-                okraj obr�zku, menu nebo textu, kter� by mohly b�t na lev�m okraji. V�choz� hodnota je 10. Zad�te-li z�pornou hodnotu, bude pou�ita 0.</p>
+                okraj obr�zku, menu nebo textu, kter� by mohly b�t na lev�m okraji. V�choz� hodnota je 10. Zad�te-li z�pornou hodnotu, bude pou�ita
+                0.</p>
 
             <span class="optionhead">Velikost jm�na v r�me�ku</span>
             <p>Velikost (v bodech) v�ech jmen ve sch�matu. V ��dn�m p��pad� nen� mo�no sn�it toto hodnotu na m�n� ne�
@@ -293,7 +305,8 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                 Pou�it� ��slo by m�lo b�t v�dy lich�, tak�e bude-li vlo�eno sud� ��slo, bude zv�t�eno o 1.</p>
 
             <span class="optionhead">Vlo�it fotografie</span>
-            <p>Je-li za�krtnuta tato volba, do r�me�k� ve sch�matech budou vlo�eny n�hledy fotografi� (pou��vaj�-li se vyskakovac� okna a soubory obr�zk� byly nalezeny -- viz n�e).
+            <p>Je-li za�krtnuta tato volba, do r�me�k� ve sch�matech budou vlo�eny n�hledy fotografi� (pou��vaj�-li se vyskakovac� okna a soubory
+                obr�zk� byly nalezeny -- viz n�e).
                 V�choz� volbou je neza�krtnuto.</p>
 
         </td>
@@ -302,14 +315,18 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="thumb"><p class="subheadbold">Pozn�mky k vlo�en� n�hled� fotografi�</p></a>
+            <a id="thumb"><p class="subheadbold">Pozn�mky k vlo�en� n�hled� fotografi�</p></a>
 
             <ul>
-                <li>Chcete-li ozna�it fotografii jako z�stupce osoby ve sch�matech, jd�te do �pravy fotografie (mus� m�t n�hled) a za�krtn�te pol��ko ozna�en� <span class="emphasis">Nastavit jako v�choz�</span>
+                <li>Chcete-li ozna�it fotografii jako z�stupce osoby ve sch�matech, jd�te do �pravy fotografie (mus� m�t n�hled) a za�krtn�te pol��ko
+                    ozna�en� <span class="emphasis">Nastavit jako v�choz�</span>
                     pod odkazem po�adovan� osoby a str�nku ulo�te. Existuj�c� n�hled pak bude pou�it ve sch�matech. Akce v�b�ru <span class="choice">Nastavit jako v�choz�</span>
-                    se pou��vala pro kop�rov�n� existuj�c�ho n�hledu na nov� um�st�n�, kde byl kop�rovan� soubor pojmenov�n <span class="emphasis">Mtreename.###.ext</span>, kde <span class="emphasis">strom</span> byl n�zev stromu,
-                    ke kter�mu pat�ila osoba, <span class="emphasis">###</span> bylo ID ��slo osoby ze souboru GEDCOM a ext byla p��pona fotografie definovan� v��e (nap�. <span class="example">MLythgoe.I567.jpg</span>).
-                    Tato konvence se ji� nepou��v�, ale existuj�c� n�hledy vytvo�en� t�mto zp�sobem jsou nad�le vyu��v�ny a maj� p�ednost. <span class="emphasis">POZN.:</span> M��ete t�mto zp�sobem vytv��et v�choz� n�hledy
+                    se pou��vala pro kop�rov�n� existuj�c�ho n�hledu na nov� um�st�n�, kde byl kop�rovan� soubor pojmenov�n <span class="emphasis">Mtreename.###.ext</span>,
+                    kde <span class="emphasis">strom</span> byl n�zev stromu,
+                    ke kter�mu pat�ila osoba, <span class="emphasis">###</span> bylo ID ��slo osoby ze souboru GEDCOM a ext byla p��pona fotografie
+                    definovan� v��e (nap�. <span class="example">MLythgoe.I567.jpg</span>).
+                    Tato konvence se ji� nepou��v�, ale existuj�c� n�hledy vytvo�en� t�mto zp�sobem jsou nad�le vyu��v�ny a maj� p�ednost. <span
+                        class="emphasis">POZN.:</span> M��ete t�mto zp�sobem vytv��et v�choz� n�hledy
                     ru�n�, pokud nechcete, aby byla v�choz� fotografie odvozena z jin� fotografie p�ipojen� k osob�.
                 </li>
 

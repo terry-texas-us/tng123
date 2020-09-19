@@ -4,17 +4,17 @@ echo help_header("Help: People");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="index_help.php" class="lightlink">&laquo; Help: Getting Started</a> &nbsp; | &nbsp;
-        <a href="families_help.php" class="lightlink">Help: Families &raquo;</a>
-      </p>
-      <span class="largeheader">Help: People</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="index_help.php" class="lightlink">&laquo; Help: Getting Started</a> &nbsp; | &nbsp;
+                <a href="families_help.php" class="lightlink">Help: Families &raquo;</a>
+            </p>
+            <span class="largeheader">Help: People</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
@@ -35,15 +35,19 @@ echo help_header("Help: People");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
-            <p>Locate existing individuals by searching for all or part of the <strong>Person ID</strong> or <strong>Name</strong>. Select a Tree or check one of the other options to further narrow your search.
+            <a id="search"><p class="subheadbold">Search</p></a>
+            <p>Locate existing individuals by searching for all or part of the <strong>Person ID</strong> or <strong>Name</strong>. Select a Tree or
+                check one of the other options to further narrow your search.
                 Searching with no options selected and no value in the search box will find all people in your database.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                values and searches again.</p>
 
             <span class="optionhead">Actions</span>
-            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a time, click the box in the
-                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
+            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
+                time, click the box in the
+                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
+                <strong>Select All</strong> or <strong>Clear All</strong>
                 buttons to toggle all select boxes at once.</p>
 
         </td>
@@ -52,17 +56,21 @@ echo help_header("Help: People");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="add"><p class="subheadbold">Adding New People</p></a>
-            <p>To add a new person, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations, associations and
+            <a id="add"><p class="subheadbold">Adding New People</p></a>
+            <p>To add a new person, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations,
+                associations and
                 additional events) can be added after saving or locking the record. Take note of the following:</p>
 
             <span class="optionhead">Tree</span>
             <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new individual.</p>
 
             <span class="optionhead">Branch (optional)</span>
-            <p>Assigning a person to a "Branch" limits access to the person's data to users who are also assigned to the same Branch. If at least one Branch has been
-                defined and your user account is not assigned to a particular branch, you may elect to assign the new person to one or more of the existing branches. To select
-                Branches, click on the "Edit" link to open a box with all Branch options for the selected Tree. Use the Control (Windows) or Command (Mac) key to select
+            <p>Assigning a person to a "Branch" limits access to the person's data to users who are also assigned to the same Branch. If at least one
+                Branch has been
+                defined and your user account is not assigned to a particular branch, you may elect to assign the new person to one or more of the
+                existing branches. To select
+                Branches, click on the "Edit" link to open a box with all Branch options for the selected Tree. Use the Control (Windows) or Command
+                (Mac) key to select
                 more than one branch. When you're done making your selection, move your mouse pointer out of the editing box and it will disappear.</p>
 
             <span class="optionhead">Person ID</span>
@@ -102,27 +110,34 @@ echo help_header("Help: People");
             comma (for example, <em>Boston, Suffolk, Massachusetts, USA</em>), or select an existing place name by clicking "Find" icon (magnifying glass).
             To limit the number of results found, enter part of the place name before clicking the Find icon. All results will contain what you entered in the place name.</p>
 
-          <p><span class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</span><br>
-            These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the GEDCOM standard).
-            <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that you logout and back in again).</p>
+            <p><span class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</span><br>
+                These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the
+                GEDCOM standard).
+                <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that
+                you logout and back in again).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="edit"><p class="subheadbold">Editing Existing People</p></a>
-            <p>To make changes to an existing person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Edit icon next to that individual.</p>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="edit"><p class="subheadbold">Editing Existing People</p></a>
+            <p>To make changes to an existing person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Edit icon
+                next to that individual.</p>
 
             <span class="optionhead">Notes / Citations / Associations / "More"</span>
-            <p>Notes, citations and associations may be linked to events or to the person in general by clicking on the associated icons at the top of the page
-                or next to each event. "More" information for an event may also be added for an event by clicking on the "Plus" icon. When items exist in any of these
-                categories, the corresponding icons will feature a green dot in the upper right corner. For more information on each category, see the Help links that
+            <p>Notes, citations and associations may be linked to events or to the person in general by clicking on the associated icons at the top of
+                the page
+                or next to each event. "More" information for an event may also be added for an event by clicking on the "Plus" icon. When items exist
+                in any of these
+                categories, the corresponding icons will feature a green dot in the upper right corner. For more information on each category, see the
+                Help links that
                 become visible when the icons are clicked.</p>
 
             <span class="optionhead">Other Events</span>
-            <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a href="events_help.php">Help</a> link there for more
+            <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
+                    href="events_help.php">Help</a> link there for more
                 information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New" button. Action buttons for
                 each event allow you to edit or delete the event, or add notes or citations. The order in which the events are displayed is determined by date (if applicable),
                 and by the event types' assigned priority (when no date is associated). This priority may be changed when editing the event types.
@@ -164,8 +179,10 @@ echo help_header("Help: People");
 
             <span class="optionhead">Sorting Parents or Spouses</span>
             <p>If more than one spouse or set of parents exists,
-                you may change the order by "dragging" the blocks up and down. To drag, click your mouse on the "Drag" box and hold down the button, then move your mouse up or
-                down on the page. Let go of the mouse button when the block appears in the desired location. Sorting changes are saved automatically.</p>
+                you may change the order by "dragging" the blocks up and down. To drag, click your mouse on the "Drag" box and hold down the button,
+                then move your mouse up or
+                down on the page. Let go of the mouse button when the block appears in the desired location. Sorting changes are saved
+                automatically.</p>
 
         </td>
     </tr>
@@ -173,48 +190,61 @@ echo help_header("Help: People");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Deleting People</p></a>
-            <p>To delete one person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Delete icon next to that individual. The row will
-                change color and then vanish as the person is deleted. To delete more than one person at a time, check the box in the Select column next to each person to be
+            <a id="delete"><p class="subheadbold">Deleting People</p></a>
+            <p>To delete one person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Delete icon next to that
+                individual. The row will
+                change color and then vanish as the person is deleted. To delete more than one person at a time, check the box in the Select column
+                next to each person to be
                 deleted, then click the "Delete Selected" button at the top of the page.</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="review"><p class="subheadbold">Reviewing Tentative Edits</p></a>
-      To review tentative edits made by other users, click on the "Review" tab. You will decide whether to keep or delete these proposed changes. Choose to review by tree, by user or both.
-      No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are present.</p>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="review"><p class="subheadbold">Reviewing Tentative Edits</p></a>
+            To review tentative edits made by other users, click on the "Review" tab. You will decide whether to keep or delete these proposed
+            changes. Choose to review by tree, by user or both.
+            No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are
+            present.</p>
 
-      <span class="optionhead">Select Event and Action</span><br>
-      <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting a User (the person
-        responsible for the proposed change) and/or the Tree. When the results are displayed, click on one of the possible actions listed at the left of that line. To review and
-        possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
+            <span class="optionhead">Select Event and Action</span><br>
+            <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting a
+                User (the person
+                responsible for the proposed change) and/or the Tree. When the results are displayed, click on one of the possible actions listed at
+                the left of that line. To review and
+                possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
 
-      <span class="optionhead">Review</span><br>
-      <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and Delete" to
-        make the changes permanent and remove the tentative record. You may also choose to remove the tentative record without saving by clicking "Ignore and Delete",
-        or you can postpone the decision until later by clicking "Postpone".</p>
+            <span class="optionhead">Review</span><br>
+            <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and Delete"
+                to
+                make the changes permanent and remove the tentative record. You may also choose to remove the tentative record without saving by
+                clicking "Ignore and Delete",
+                or you can postpone the decision until later by clicking "Postpone".</p>
 
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="merge"><p class="subheadbold">Merging People</p></a>
-      To review and merge duplicate records, click on the "Merge" tab. You will decide whether two records are the same or not.</p>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="merge"><p class="subheadbold">Merging People</p></a>
+            To review and merge duplicate records, click on the "Merge" tab. You will decide whether two records are the same or not.</p>
 
-      <span class="optionhead">Find Matches</span><br>
-      <p>First, select a tree. You cannot merge individuals from different trees, so only one tree can be selected. After that, you have the option of selecting an individual as
-        the starting point for your search (Person 1), or letting TNG find the first match for you. If you'd rather let TNG find all matches, leave the Person ID 1 field blank</p>
-      <p>If you selected an individual as Person 1, you may also decide to manually select Person ID 2. If you'd rather let TNG find duplicates for Person 1, leave Person ID 2 blank.</p>
+            <span class="optionhead">Find Matches</span><br>
+            <p>First, select a tree. You cannot merge individuals from different trees, so only one tree can be selected. After that, you have the
+                option of selecting an individual as
+                the starting point for your search (Person 1), or letting TNG find the first match for you. If you'd rather let TNG find all matches,
+                leave the Person ID 1 field blank</p>
+            <p>If you selected an individual as Person 1, you may also decide to manually select Person ID 2. If you'd rather let TNG find duplicates
+                for Person 1, leave Person ID 2 blank.</p>
 
-      <span class="optionhead">Match the following fields</span><br>
-      <p>These are the criteria TNG will use in determining possible matches. By default, First Name and Last Name are selected, meaning that those fields
-        must match in order for two records to be considered a possible match. If you also select Birth Date, Birth Place, Death Date, and/or Death Place, those fields must also match.</p>
+            <span class="optionhead">Match the following fields</span><br>
+            <p>These are the criteria TNG will use in determining possible matches. By default, First Name and Last Name are selected, meaning that
+                those fields
+                must match in order for two records to be considered a possible match. If you also select Birth Date, Birth Place, Death Date, and/or
+                Death Place, those fields must also match.</p>
 
       <span class="optionhead">Other Options</span><br>
       <p><em>Ignore Blanks</em> means that blank fields will not be considered. For example, someone with a Last Name but no First Name

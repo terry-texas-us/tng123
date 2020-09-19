@@ -4,43 +4,47 @@ echo help_header("Nápověda: Úložiště pramenů");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="sources_help.php" class="lightlink">&laquo; Nápověda: Prameny</a> &nbsp; | &nbsp;
-        <a href="assoc_help.php" class="lightlink">Nápověda: Spojení &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Úložiště pramenů</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="sources_help.php" class="lightlink">&laquo; Nápověda: Prameny</a> &nbsp; | &nbsp;
+                <a href="assoc_help.php" class="lightlink">Nápověda: Spojení &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Úložiště pramenů</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Sloučit</a>
-            </p>
+          <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Sloučit</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících úložišť pramenů vyhledáním celého nebo části <strong>ID čísla úložiště</strong> nebo <strong>názvu úložiště pramenů</strong>.
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezení existujících úložišť pramenů vyhledáním celého nebo části <strong>ID čísla úložiště</strong> nebo <strong>názvu úložiště
+                    pramenů</strong>.
                 Pro další zúžení vašeho hledání vyberte strom nebo zaškrtněte "Pouze přesná shoda".
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech osob ve vaší databázi.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více záznamů, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více
+                záznamů, zaškrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u každého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
+                Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
         </td>
@@ -49,17 +53,19 @@ echo help_header("Nápověda: Úložiště pramenů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nové úložiště pramenů</p></a>
+            <a id="add"><p class="subheadbold">Přidat nové úložiště pramenů</p></a>
             <p><strong>Úložiště pramenů</strong> je archív, sborník či kolekce pramenů, fyzická či jiná.</p>
 
-            <p>Chcete-li přidat nové úložiště pramenů, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář. Některé informace (poznámky a
+            <p>Chcete-li přidat nové úložiště pramenů, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář. Některé informace
+                (poznámky a
                 další události) můžete přidat po uložení a zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
             <span class="optionhead">Strom</span>
             <p>Pokud máte pouze jeden strom, vybrán bude vždy tento strom. Jinak, prosím, pro nové úložiště pramenů vyberte požadovaný strom.</p>
 
             <span class="optionhead">ID číslo úložiště</span>
-            <p>ID číslo úložiště musí být jednoznačné uvnitř vybraného stromu a mělo by se skládat z velkých písmen <strong>REPO</strong> nebo <strong>R</strong> následovaného číslem (nejvíce 22 znaků celkem).
+            <p>ID číslo úložiště musí být jednoznačné uvnitř vybraného stromu a mělo by se skládat z velkých písmen <strong>REPO</strong> nebo
+                <strong>R</strong> následovaného číslem (nejvíce 22 znaků celkem).
                 Při prvním zobrazení stránky a kdykoli je vybrán jiný strom, bude doplněno volné a jednoznačné číslo, ale pokud chcete, můžete vložit své vlastní ID číslo.
                 Chcete-li zkontrolovat, zda je vaše ID číslo jednoznačné, klikněte na tlačítko <strong>Zkontrolovat</strong>. Objeví se zpráva, která vám sdělí, zda je již ID číslo použito nebo ne.
                 Chcete-li vygenerovat další jednoznačné číslo, klikněte na <strong>Vygenerovat</strong>. Bude zjištěno nejvyšší číslo ve vaší databázi a přidána 1.
@@ -73,33 +79,8 @@ echo help_header("Nápověda: Úložiště pramenů");
           <span class="optionhead">Název</span>
           <p>Krátký název úložiště.</p>
 
-          <span class="optionhead">Adresa 1, Adresa 2, Město, Kraj/provincie, PSČ, Země</span><br>
-          <p>Umístění úložiště (při využití těchto polí jsou všechny části volitelné).</p>
-
-        </td>
-    </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="edit"><p class="subheadbold">Upravit existující úložiště pramenů</p></a>
-      <p>Chcete-li upravit existující úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté klikněte na ikonu Upravit vedle úložiště.</p>
-
-            <span class="optionhead">Poznámky</span>
-            <p>Poznámky lze připojit k události nebo úložišti pramenů obecně kliknutím na ikonu Poznámky v horní části stránky
-                nebo vedle každé události pod "Další události". Pokud pro událost již existují poznámky, na ikoně Poznámky se v horním pravém rohu zobrazí zelená tečka.
-                Více informací o poznámkách najdete v odkazu <a href="notes_help.php">Nápověda</a> v oblasti Poznámky.</p>
-
-            <span class="optionhead">Další události</span>
-            <p>Chcete-li přidat nebo spravovat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Dalších událostí</strong>. Viz odkaz <a href="events_help.php">Nápověda</a> v tomto okně pro více
-                informací o přidání nových událostí. Po přidání události se v tabulce pod tlačítkem "Přidat nové" zobrazí krátké shrnutí. Akční tlačítka pro
-                každou událost vám umožní upravit nebo vymazat událost, nebo přidat poznámky. Pořadí, ve kterém jsou události zobrazeny, závisí na datu (pokud je použito),
-                a pořadí zapsaném u typu události (není-li připojeno datum). Toto pořadí lze změnit při úpravě typů událostí.
-
-            <p><strong>Poznámka</strong>: Poznámky a změny "Dalších" událostí se ukládají automaticky. Jiné změny (např. standardní události)
-                lze uložit kliknutím na tlačítko Uložit na konci stránky, nebo kliknutím na ikonu Uložit na stránce nahoře. Strom a
-                ID číslo úložiště nelze změnit.</p>
-
+            <span class="optionhead">Adresa 1, Adresa 2, Město, Kraj/provincie, PSČ, Země</span><br>
+            <p>Umístění úložiště (při využití těchto polí jsou všechny části volitelné).</p>
 
         </td>
     </tr>
@@ -107,9 +88,39 @@ echo help_header("Nápověda: Úložiště pramenů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat úložiště pramenů</p></a>
-            <p>Chcete-li odstranit úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté klikněte na ikonu Vymazat vedle tohoto úložiště. Tento řádek změní
-                barvu a poté po odstranění úložiště zmizí. Chcete-li najednou odstranit více úložišť pramenů, zaškrtněte políčko ve sloupci Vybrat vedle každého úložiště, který
+            <a id="edit"><p class="subheadbold">Upravit existující úložiště pramenů</p></a>
+            <p>Chcete-li upravit existující úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté
+                klikněte na ikonu Upravit vedle úložiště.</p>
+
+            <span class="optionhead">Poznámky</span>
+            <p>Poznámky lze připojit k události nebo úložišti pramenů obecně kliknutím na ikonu Poznámky v horní části stránky
+                nebo vedle každé události pod "Další události". Pokud pro událost již existují poznámky, na ikoně Poznámky se v horním pravém rohu
+                zobrazí zelená tečka.
+                Více informací o poznámkách najdete v odkazu <a href="notes_help.php">Nápověda</a> v oblasti Poznámky.</p>
+
+            <span class="optionhead">Další události</span>
+            <p>Chcete-li přidat nebo spravovat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Dalších událostí</strong>. Viz odkaz
+                <a href="events_help.php">Nápověda</a> v tomto okně pro více
+                informací o přidání nových událostí. Po přidání události se v tabulce pod tlačítkem "Přidat nové" zobrazí krátké shrnutí. Akční
+                tlačítka pro
+                každou událost vám umožní upravit nebo vymazat událost, nebo přidat poznámky. Pořadí, ve kterém jsou události zobrazeny, závisí na datu (pokud je použito),
+                a pořadí zapsaném u typu události (není-li připojeno datum). Toto pořadí lze změnit při úpravě typů událostí.
+
+            <p><strong>Poznámka</strong>: Poznámky a změny "Dalších" událostí se ukládají automaticky. Jiné změny (např. standardní události)
+                lze uložit kliknutím na tlačítko Uložit na konci stránky, nebo kliknutím na ikonu Uložit na stránce nahoře. Strom a
+                ID číslo úložiště nelze změnit.</p>
+
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="delete"><p class="subheadbold">Vymazat úložiště pramenů</p></a>
+            <p>Chcete-li odstranit úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté klikněte na
+                ikonu Vymazat vedle tohoto úložiště. Tento řádek změní
+                barvu a poté po odstranění úložiště zmizí. Chcete-li najednou odstranit více úložišť pramenů, zaškrtněte políčko ve sloupci Vybrat
+                vedle každého úložiště, který
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat označené" na stránce nahoře</p>
 
         </td>

@@ -4,44 +4,48 @@ echo help_header("Pomoc: Media");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="more_help.php" class="lightlink">&laquo; Pomoc: Więcej</a> &nbsp; | &nbsp;
-        <a href="collections_help.php" class="lightlink">Pomoc: Kolekcje &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Media</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="more_help.php" class="lightlink">&laquo; Pomoc: Więcej</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">Pomoc: Kolekcje &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Media</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Dodaj</a> &nbsp; | &nbsp;
         <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
         <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
         <a href="#convert" class="lightlink">Konwertuj</a> &nbsp; | &nbsp;
-                <a href="#album" class="lightlink">Dodaj do albumu</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Sortuj</a> &nbsp; | &nbsp;
-                <a href="#thumbs" class="lightlink">Miniaturki</a> &nbsp; | &nbsp;
-                <a href="#import" class="lightlink">Import</a>
-            </p>
+          <a href="#album" class="lightlink">Dodaj do albumu</a> &nbsp; | &nbsp;
+          <a href="#sort" class="lightlink">Sortuj</a> &nbsp; | &nbsp;
+          <a href="#thumbs" class="lightlink">Miniaturki</a> &nbsp; | &nbsp;
+          <a href="#import" class="lightlink">Import</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Szukanie</p></a>
+            <a id="search"><p class="subheadbold">Szukanie</p></a>
             <p>Znajdź istniejące media wpisując <strong>ID Medium, Tytuł, Opis, Łącze, Właścicela</strong> albo
-                <strong>tekst Body</strong> (tylko dla historii) lub ich część. Wybierz jedną z dostępnych opcji w celu dalszego zawężenia kryteriów wyszukiwania.
-                Jeśli nie wybierzesz żadnej z proponowanych opcji, w polu wyszukiwania wyświetlą się wszystkie media zapisane w bazie danych. Opcje szukania zawierają:</p>
+                <strong>tekst Body</strong> (tylko dla historii) lub ich część. Wybierz jedną z dostępnych opcji w celu dalszego zawężenia kryteriów
+                wyszukiwania.
+                Jeśli nie wybierzesz żadnej z proponowanych opcji, w polu wyszukiwania wyświetlą się wszystkie media zapisane w bazie danych. Opcje
+                szukania zawierają:</p>
 
             <span class="optionhead">Drzewo</span>
             <p>Ogranicza wyniki do mediów przypisanych do wybranego drzewa.</p>
 
             <span class="optionhead">Kolekcja</span>
-            <p>Ogranicza wyniki wyszukiwania do mediów z wybranej kolekcji. Aby dodać nową kolekcję, kliknij na "Dodaj kolekcję", a następnie wypełnić formularz w okienku (popup).
-                Aby utworzyć folder dla nowej kolekcji, należy utworzyć własną ikonkę (lub wybrać istniejącą). Pole "Takie same ustawienie jak" pozwala na wskazanie
+            <p>Ogranicza wyniki wyszukiwania do mediów z wybranej kolekcji. Aby dodać nową kolekcję, kliknij na "Dodaj kolekcję", a następnie wypełnić
+                formularz w okienku (popup).
+                Aby utworzyć folder dla nowej kolekcji, należy utworzyć własną ikonkę (lub wybrać istniejącą). Pole "Takie same ustawienie jak"
+                pozwala na wskazanie
                 jednego z podstawowych rodzajów Twoich kolekcji, z jakiego nowa kolekcja powinna przejąć ustawienia.</p>
 
             <span class="optionhead">Rozszerzenie pliku</span>
@@ -59,9 +63,12 @@ echo help_header("Pomoc: Media");
             <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który przywraca domyślne wartości wszystkich wyszukiwań.</p>
 
             <span class="optionhead">Czynność</span>
-            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż jeden rekord jednocześnie, kliknij pole w kolumnie
-                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
-                aby zaznaczyć lub usunąć zaznaczenie wszystkich pól naraz. Można również konwertować wiele mediów z jednej kolekcji do innej, lub dodać do albumu w ten sam sposób (patrz poniżej, aby uzyskać więcej informacji).</p>
+            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
+                jeden rekord jednocześnie, kliknij pole w kolumnie
+                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
+                górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
+                aby zaznaczyć lub usunąć zaznaczenie wszystkich pól naraz. Można również konwertować wiele mediów z jednej kolekcji do innej, lub
+                dodać do albumu w ten sam sposób (patrz poniżej, aby uzyskać więcej informacji).</p>
 
         </td>
     </tr>
@@ -69,16 +76,20 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="add"><p class="subheadbold">Dodawanie nowych mediów</p></a>
-            <p>Aby dodać nowe media, kliknij przycisk <strong>Dodaj nowe</strong> a następnie wypełnić formularz. Niektóre informacje, w tym Mapa zdjęcia, informacje o lokalizacji, oraz łącza do osób, rodzin i itp. mogą zostać dodane
+            <a id="add"><p class="subheadbold">Dodawanie nowych mediów</p></a>
+            <p>Aby dodać nowe media, kliknij przycisk <strong>Dodaj nowe</strong> a następnie wypełnić formularz. Niektóre informacje, w tym Mapa
+                zdjęcia, informacje o lokalizacji, oraz łącza do osób, rodzin i itp. mogą zostać dodane
                 dopiero po kliknięciu na "Zapisz i kontynuuj". Do dyspozycji są następujące pola:</p>
 
             <span class="optionhead">Kolekcje</span>
-            <p>Wybierz rodzaj medium (np. zdjęcie, dokument, nagrobek, historia, nagranie lub film). Nie ma ograniczeń dotyczących typów plików dla żadnej z <span class="emphasis">kolekcji</span>.</p>
+            <p>Wybierz rodzaj medium (np. zdjęcie, dokument, nagrobek, historia, nagranie lub film). Nie ma ograniczeń dotyczących typów plików dla
+                żadnej z <span class="emphasis">kolekcji</span>.</p>
 
             <span class="optionhead">To medium pochodzi z zewnętrznego źródła</span>
-            <p>Zaznacz to pole, jeśli Twoje medium znajduje się w innym miejscu niż na Twoim serwerze. Musisz dostarczyć dokładną ścieżkę dostępu ( na przykład, "http://www.thatsite.com/image.jpg") w polu
-                oznaczonym "Nazwa pliku na stronie" (pozostaw pole "Plik do załadowania " wolne). Jeśli chcesz mieć miniaturkę zdjęcia, musisz dostarczyć swoją (TNG jej nie utworzy).</p>
+            <p>Zaznacz to pole, jeśli Twoje medium znajduje się w innym miejscu niż na Twoim serwerze. Musisz dostarczyć dokładną ścieżkę dostępu ( na
+                przykład, "http://www.thatsite.com/image.jpg") w polu
+                oznaczonym "Nazwa pliku na stronie" (pozostaw pole "Plik do załadowania " wolne). Jeśli chcesz mieć miniaturkę zdjęcia, musisz
+                dostarczyć swoją (TNG jej nie utworzy).</p>
 
             <span class="optionhead">Plik mediów</span>
             <p>Wybierz fizyczny plik (z Twojego komputera lub z serwera) dla tego medium.</p>
@@ -173,7 +184,8 @@ echo help_header("Pomoc: Media");
                 strony.</p>
 
             <span class="optionhead">Pokaż mapę cmentarza za każdym razem, kiedy to zdjęcie zostanie wybrane</span>
-            <p><strong>(Tylko nagrobki)</strong> Zaznacz to pole, jeśli dla cmentarza, na którym znajduje się ten nagrobek, istnieje mapa lub zdjęcie. Będzie ona widoczna zawsze razem z tym nagrobkiem.</p>
+            <p><strong>(Tylko nagrobki)</strong> Zaznacz to pole, jeśli dla cmentarza, na którym znajduje się ten nagrobek, istnieje mapa lub zdjęcie.
+                Będzie ona widoczna zawsze razem z tym nagrobkiem.</p>
 
         </td>
     </tr>
@@ -181,16 +193,21 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="edit"><p class="subheadbold">Edycja istniejących mediów</p></a>
-            <p>Aby wprowadzić zmiany do istniejących mediów, kliknij przycisk <a href="#search">Szukaj</a> w celu znalezienia medium a następnie kliknij na ikonkę Edycja obok tego elementu.
+            <a id="edit"><p class="subheadbold">Edycja istniejących mediów</p></a>
+            <p>Aby wprowadzić zmiany do istniejących mediów, kliknij przycisk <a href="#search">Szukaj</a> w celu znalezienia medium a następnie
+                kliknij na ikonkę Edycja obok tego elementu.
                 Oto elementy, których nie ma w "Dodaj nowe":</p>
 
             <span class="optionhead">Linki mediów</span>
-            <p>Możesz tworzyć łącza mediów do osób, rodzin, źródeł, repozytoriów lub miejsc. Dla każdego łącza, należy najpierw wybrać drzewo związane z łączonym medium. Następnie rodzaj łącza
-                (osoby, rodziny, źródła, repozytoria lub miejsca) i wreszcie wprowadzić numer ID lub nazwę (tylko miejsca) łączonego podmiotu. Po wykonaniu tych czynności kliknij przycisk "Dodaj".</p>
+            <p>Możesz tworzyć łącza mediów do osób, rodzin, źródeł, repozytoriów lub miejsc. Dla każdego łącza, należy najpierw wybrać drzewo związane
+                z łączonym medium. Następnie rodzaj łącza
+                (osoby, rodziny, źródła, repozytoria lub miejsca) i wreszcie wprowadzić numer ID lub nazwę (tylko miejsca) łączonego podmiotu. Po
+                wykonaniu tych czynności kliknij przycisk "Dodaj".</p>
 
-            <p>Jeśli nie znasz numeru ID lub dokładnej nazwy miejsca, kliknij na ikonę lupy aby w celu wyszukiwania. Pojawi się okienko popup. Gdy znajdziesz żądany opis podmiotu,
-                kliknij przycisk "Dodaj" po lewej stronie. Możesz kliknąć "Dodaj" dla wielu podmiotów. Po zakończeniu tworzenia łączy kliknij na czerwone pole z krzyżykiem w prawym górnym rogu.</p>
+            <p>Jeśli nie znasz numeru ID lub dokładnej nazwy miejsca, kliknij na ikonę lupy aby w celu wyszukiwania. Pojawi się okienko popup. Gdy
+                znajdziesz żądany opis podmiotu,
+                kliknij przycisk "Dodaj" po lewej stronie. Możesz kliknąć "Dodaj" dla wielu podmiotów. Po zakończeniu tworzenia łączy kliknij na
+                czerwone pole z krzyżykiem w prawym górnym rogu.</p>
 
             <p><strong>Istniejące łącza:</strong> Możesz edytować lub usuwać istniejące łącza mediów klikając na ikonkę Edycja lub Usuń obok wybranego łącza. Edycja łącza umożliwia
                 jego skojarzenie wydarzeniem oraz wpisanie<strong>dodatkowego tytułu</strong> i <strong>dodatkowego opisu</strong>.</p>
@@ -226,7 +243,8 @@ echo help_header("Pomoc: Media");
 
             <p>Powtórz ten proces dla wszystkich obszarów, które będziesz potrzebował. Wszystkie nowe teksty lub kody łączy będą dodane w polu "Mapa zdjęcia".</p>
 
-            <p>Aby połączyć różne fragmenty zdjęcia do różnych stron, lub do wyświetlania krótkich wiadomości, kiedy wskaźnik myszy znajduje się nad tymi fragmentami, wprowadź potrzebny kod mapy zdjęcia w tym polu.
+            <p>Aby połączyć różne fragmenty zdjęcia do różnych stron, lub do wyświetlania krótkich wiadomości, kiedy wskaźnik myszy znajduje się nad
+                tymi fragmentami, wprowadź potrzebny kod mapy zdjęcia w tym polu.
                 Aby budować własną mapę zdjęcia, zobacz pole "Mapa zdjęcia" na dole strony (pod zdjęciem).</p>
 
         </td>
@@ -235,9 +253,11 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="delete"><p class="subheadbold">Usuwanie mediów</p></a>
-            <p>Aby usunąć jedno medium, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego medium. Wiersz zmieni kolor,
-                a następnie zniknie. Medium zostało usunięte. Aby usunąć więcej niż jedno medium naraz, zaznacz pole w kolumnie Wybierz obok każdego medium, które ma zostać usunięte, a następnie kliknąć
+            <a id="delete"><p class="subheadbold">Usuwanie mediów</p></a>
+            <p>Aby usunąć jedno medium, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na
+                ikonkę Usuń obok tego medium. Wiersz zmieni kolor,
+                a następnie zniknie. Medium zostało usunięte. Aby usunąć więcej niż jedno medium naraz, zaznacz pole w kolumnie Wybierz obok każdego
+                medium, które ma zostać usunięte, a następnie kliknąć
                 przycisk "Usuń wybrane" znajdujący się na górze strony.</p>
 
         </td>
@@ -246,9 +266,11 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="convert"><p class="subheadbold">Konwertowanie mediów z jednej kolekcji do drugiej</p></a>
-            Aby przekonwertować media z jednej "Kolekcji" do innej, zaznacz odpowiednie pozycje w polu "Wybierz" na karcie Szukaj a następnie wybierz nową kolekcję z rozwijanej listy u góry strony
-            obok "Konwertuj wybrane do ". Po dokonaniu wyboru kliknij przycisk "Konwertuj wybrane do". Strona zostanie otwarta ponownie i ukaże się czerwony napis informujący o statusie operacji.</p>
+            <a id="convert"><p class="subheadbold">Konwertowanie mediów z jednej kolekcji do drugiej</p></a>
+            Aby przekonwertować media z jednej "Kolekcji" do innej, zaznacz odpowiednie pozycje w polu "Wybierz" na karcie Szukaj a następnie wybierz
+            nową kolekcję z rozwijanej listy u góry strony
+            obok "Konwertuj wybrane do ". Po dokonaniu wyboru kliknij przycisk "Konwertuj wybrane do". Strona zostanie otwarta ponownie i ukaże się
+            czerwony napis informujący o statusie operacji.</p>
 
         </td>
     </tr>
@@ -256,8 +278,9 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="album"><p class="subheadbold">Dodawanie mediów do albumów</p></a>
-            Aby dołączyć media do albumu, zaznacz odpowiednie pozycje w polu "Wybierz" na karcie Szukaj a następnie wybierz album z rozwijanej listy u góry strony obok "Dodaj do albumu". Po dokonaniu
+            <a id="album"><p class="subheadbold">Dodawanie mediów do albumów</p></a>
+            Aby dołączyć media do albumu, zaznacz odpowiednie pozycje w polu "Wybierz" na karcie Szukaj a następnie wybierz album z rozwijanej listy u
+            góry strony obok "Dodaj do albumu". Po dokonaniu
             wyboru kliknij przycisk "Dodaj do albumu". Media mogą być także dodane do albumów w Administracja / Albumy.</p>
 
         </td>
@@ -266,15 +289,18 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="sort"><p class="subheadbold">Sortowanie mediów</p></a>
-            <p>Domyślnie media połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami są sortowane według kolejności, w jakiej zostały utworzone łącza. Aby zmienić tę kolejność, możesz na karcie
+            <a id="sort"><p class="subheadbold">Sortowanie mediów</p></a>
+            <p>Domyślnie media połączone z osobami, rodzinami, źródłami, repozytoriami lub miejscami są sortowane według kolejności, w jakiej zostały
+                utworzone łącza. Aby zmienić tę kolejność, możesz na karcie
                 Media / Sortuj przesuwać media według życzenia.</p>
 
             <span class="optionhead">Drzewo, Rodzaj łącza, Kolekcja:</span>
-            <p>Wybierz z drzewo związane z podmiotem, dla którego chcesz sortować media. Następnie wybierz rodzaj łącza (osoby, rodziny, źródła, repozytoria lub miejsca) oraz kolekcję, w której chcesz posortować media.</p>
+            <p>Wybierz z drzewo związane z podmiotem, dla którego chcesz sortować media. Następnie wybierz rodzaj łącza (osoby, rodziny, źródła,
+                repozytoria lub miejsca) oraz kolekcję, w której chcesz posortować media.</p>
 
             <span class="optionhead">ID:</span>
-            <p>Wprowadź numer ID lub nazwę (tylko miejsca) podmiotu. Jeśli nie znasz numeru ID lub dokładnej nazwy miejsca, kliknij ikonkę lupy w celu ich wyszukania. Po znalezieniu żądanego podmiotu, kliknij przycisk
+            <p>Wprowadź numer ID lub nazwę (tylko miejsca) podmiotu. Jeśli nie znasz numeru ID lub dokładnej nazwy miejsca, kliknij ikonkę lupy w celu
+                ich wyszukania. Po znalezieniu żądanego podmiotu, kliknij przycisk
                 "Wybierz" obok danego podmiotu. Okienko popup zostanie zamknięte i w polu ID pojawi się wybrany identyfikator .</p>
 
             <span class="optionhead">Łącze do wydarzeń niestandardowych</span>
@@ -286,8 +312,10 @@ echo help_header("Pomoc: Media");
                 dla każdego medium, przytrzymaj przycisk myszy a następnie przesuń wskaźnika myszy do żądanej lokalizacji w obrębie listy, poczym zwolnij przycisk myszy ( "przeciągnij i upuść"). Zmiany są zapisywane automatycznie .</p>
 
             <span class="optionhead">Zdjęcie standardowe</span>
-            <p>Podczas sortowania, możesz również wybrać dowolne zdjęcie jako "Zdjęcie domyślne". Oznacza to, że miniaturka wybranego zdjęcia będzie wyświetlana na diagramach i nagłówkach aktualnie wybranej nazwy podmiotu lub tytułu.
-                Aby ustawić lub usunąć zdjęcie standardowe, zatrzymaj wskaźnik myszy nad dowolnym z widocznych zdjęć a następnie kliknij na jedną z opcji "Jako standard" lub "Usuń". Aktualne zdjęcie standardowe może zostać również usunięte
+            <p>Podczas sortowania, możesz również wybrać dowolne zdjęcie jako "Zdjęcie domyślne". Oznacza to, że miniaturka wybranego zdjęcia będzie
+                wyświetlana na diagramach i nagłówkach aktualnie wybranej nazwy podmiotu lub tytułu.
+                Aby ustawić lub usunąć zdjęcie standardowe, zatrzymaj wskaźnik myszy nad dowolnym z widocznych zdjęć a następnie kliknij na jedną z
+                opcji "Jako standard" lub "Usuń". Aktualne zdjęcie standardowe może zostać również usunięte
                 przez kliknięcie przycisku "Usuń zdjęcie standardowe" u góry strony.</p>
 
         </td>
@@ -296,19 +324,24 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="thumbs"><p class="subheadbold">Miniaturki</p></a>
+            <a id="thumbs"><p class="subheadbold">Miniaturki</p></a>
 
             <span class="optionhead">Generowanie miniaturek</span>
-            <p> Kiedy klikniesz na przycisk "Generuj", TNG automatycznie utworzy miniaturki dla wszystkich plików JPG, GIF oraz PNG, które jej jeszcze nie mają. Nazwa nowej miniaturki będzie taka sama jak oryginał, ale będzie poprzedzona
-                prefiksem i / albo będzie miała przyrostek taki, jak to zostało przez Ciebie zdefiniowane w Ustawieniach ogólnych. Zaznacz pole "Regeneruj istniejące miniaturki", aby ponownie utworzyć miniaturki dla mediów, które już je posiadają.
-                "Regeneruj nazwę ścieżki pliku miniaturki jeśli plik nie istnieje" jeśli sądzisz, że niektóre miniaturki dotyczą nieprawidłowych plików. To spowoduje przywrócenie przez TNG nazw łączy miniaturek przed ich regeneracją.
+            <p> Kiedy klikniesz na przycisk "Generuj", TNG automatycznie utworzy miniaturki dla wszystkich plików JPG, GIF oraz PNG, które jej jeszcze
+                nie mają. Nazwa nowej miniaturki będzie taka sama jak oryginał, ale będzie poprzedzona
+                prefiksem i / albo będzie miała przyrostek taki, jak to zostało przez Ciebie zdefiniowane w Ustawieniach ogólnych. Zaznacz pole
+                "Regeneruj istniejące miniaturki", aby ponownie utworzyć miniaturki dla mediów, które już je posiadają.
+                "Regeneruj nazwę ścieżki pliku miniaturki jeśli plik nie istnieje" jeśli sądzisz, że niektóre miniaturki dotyczą nieprawidłowych
+                plików. To spowoduje przywrócenie przez TNG nazw łączy miniaturek przed ich regeneracją.
                 Bez tej funkcji nieprawidłowe nazwy miniaturek będą regenerowane "tam i z powrotem".</p>
 
             <p><strong>Uwaga</strong>: Jeśli nie widzisz pola Generuj miniaturki, znaczy że Twój serwer nie wspiera biblioteki GD image library.</p>
 
             <span class="optionhead">Twórz zdjęcia standardowe</span>
-            <p>Ta opcja pozwala na wybranie pierwszego zdjęcia dla każdej osoby, rodziny i źródła się jako zdjęcie standardowe (wyświetlanych w nagłówkach diagramów, arkuszy osób i rodzin oraz innych stron tego podmiotu).
-                Przyporządkowanie może być dokonane w odniesieniu do wszystkich osób, rodzin, źródła i repozytoriów w wybranym drzewie. Zaznacz pole "Nadpisz aktualne ustawienia standardowe ", aby zmienić domyślne ustawienia niezależnie od tego,
+            <p>Ta opcja pozwala na wybranie pierwszego zdjęcia dla każdej osoby, rodziny i źródła się jako zdjęcie standardowe (wyświetlanych w
+                nagłówkach diagramów, arkuszy osób i rodzin oraz innych stron tego podmiotu).
+                Przyporządkowanie może być dokonane w odniesieniu do wszystkich osób, rodzin, źródła i repozytoriów w wybranym drzewie. Zaznacz pole
+                "Nadpisz aktualne ustawienia standardowe ", aby zmienić domyślne ustawienia niezależnie od tego,
                 co zostało wcześniej ustalone. Jeśli nie zaznaczysz tego pola, poprzednie ustawienia pozostaną bez zmian.</p>
         </td>
     </tr>
@@ -316,11 +349,14 @@ echo help_header("Pomoc: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="import"><p class="subheadbold">Import zdjęć</p></a>
+            <a id="import"><p class="subheadbold">Import zdjęć</p></a>
 
-            <p>Ta funkcja tworzy zapis medium dla każdego pliku w dowolnym Twoim folderze mediów TNG z tytułem takim jak nazwa pliku. Do przeprowadzenia importu wybierz najpierw Kolekcję (lub wcześniej utwórz nową kolekcję) oraz drzewo
-                (jeżeli importowana zawartość powinna być połączona z tym drzewem). Następnie kliknij przycisk "Import". Jeżeli zapis już istnieje dla tej zawartości to nowy zapis nie zostanie utworzony.</p>
-            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+            <p>Ta funkcja tworzy zapis medium dla każdego pliku w dowolnym Twoim folderze mediów TNG z tytułem takim jak nazwa pliku. Do
+                przeprowadzenia importu wybierz najpierw Kolekcję (lub wcześniej utwórz nową kolekcję) oraz drzewo
+                (jeżeli importowana zawartość powinna być połączona z tym drzewem). Następnie kliknij przycisk "Import". Jeżeli zapis już istnieje dla
+                tej zawartości to nowy zapis nie zostanie utworzony.</p>
+            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                    ewentualne błędy lub niejasności.</p></li>
 
         </td>
     </tr>

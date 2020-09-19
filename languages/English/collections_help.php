@@ -4,17 +4,17 @@ echo help_header("Help: Collections");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="media_help.php" class="lightlink">&laquo; Help: Media</a> &nbsp; | &nbsp;
-        <a href="albums_help.php" class="lightlink">Help: Albums &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Collections</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="media_help.php" class="lightlink">&laquo; Help: Media</a> &nbsp; | &nbsp;
+                <a href="albums_help.php" class="lightlink">Help: Albums &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Collections</span>
       <p class="smaller menu">
         <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add</a> &nbsp; | &nbsp;
@@ -32,26 +32,30 @@ echo help_header("Help: Collections");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="what"><p class="subheadbold">What are Collections?</p></a>
+            <a id="what"><p class="subheadbold">What are Collections?</p></a>
 
-            <p>A <strong>Collection</strong> in TNG refers to a type of media. TNG's standard collections are Photos, Documents, Headstones, Histories, Videos and Recordings,
-                but TNG also allows you to create your own collections. A collection is not restricted to a single file type. For example, .jpg images can be part of any collection,
+            <p>A <strong>Collection</strong> in TNG refers to a type of media. TNG's standard collections are Photos, Documents, Headstones,
+                Histories, Videos and Recordings,
+                but TNG also allows you to create your own collections. A collection is not restricted to a single file type. For example, .jpg images
+                can be part of any collection,
                 not just Photos or Documents, and the Photos collection does not have to contain only image files.</p>
-
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Adding Collections</p></a>
+            <a id="add"><p class="subheadbold">Adding Collections</p></a>
 
-            <p>To add a new collection, click on the "Add Collection" button wherever it is visible (for example, on the Media, Add Media and Edit Media screens).
+            <p>To add a new collection, click on the "Add Collection" button wherever it is visible (for example, on the Media, Add Media and Edit
+                Media screens).
                 When the small popup appears, fill out the form. Take note of the following:</p>
 
             <span class="optionhead">Collection ID</span>
-            <p>A very short string of characters to be an identifier for this collection. It should not contain spaces or any characters that are not alphanumeric,
-                and ideally it should be 10 characters or less. For example, if you were creating a collection for military records, you might put "military" in this field.
+            <p>A very short string of characters to be an identifier for this collection. It should not contain spaces or any characters that are not
+                alphanumeric,
+                and ideally it should be 10 characters or less. For example, if you were creating a collection for military records, you might put
+                "military" in this field.
                 This value will not be displayed anywhere, so what you name it doesn't really matter, just as long as it is unique.</p>
 
             <span class="optionhead">Export as</span>
@@ -96,22 +100,28 @@ echo help_header("Help: Collections");
                 you must prefix the icon file name with "img/".</p>
 
             <span class="optionhead">Thumbnail file</span>
-            <p>This is the name of the default thumbnail image for this collection. In other words, if you create a media item in this collection and do not supply a thumbnail
+            <p>This is the name of the default thumbnail image for this collection. In other words, if you create a media item in this collection and
+                do not supply a thumbnail
                 for that specific item, the image designated here will be used as the thumbnail. The thumbnail must be placed in the "img" folder.</p>
 
             <span class="optionhead">Display order</span>
-            <p>Enter a whole number here to indicate the order in which your custom Collection types will be displayed in the public dropdown menus. Lower numbers appear first.</p>
+            <p>Enter a whole number here to indicate the order in which your custom Collection types will be displayed in the public dropdown menus.
+                Lower numbers appear first.</p>
 
             <span class="optionhead">Same setup as</span>
-            <p>You may have noticed that the Add Media and Edit Media screens change slightly depending on which Collection you choose. This "same setup as" field allows you
-                to indicate which of the standard Collection types your new Collection should resemble most, with regard to the layout of those screens.</p>
+            <p>You may have noticed that the Add Media and Edit Media screens change slightly depending on which Collection you choose. This "same
+                setup as" field allows you
+                to indicate which of the standard Collection types your new Collection should resemble most, with regard to the layout of those
+                screens.</p>
 
-            <a name="edit"><p class="subheadbold">Editing/Deleting Collections</p></a>
+            <a id="edit"><p class="subheadbold">Editing/Deleting Collections</p></a>
 
-            <p>To edit an existing custom Collection (the standard ones cannot be edited, except in the General Settings), select that Collection from the dropdown list and
+            <p>To edit an existing custom Collection (the standard ones cannot be edited, except in the General Settings), select that Collection from
+                the dropdown list and
                 click on the Edit button. The fields will be as described above.</p>
 
-            <p>To delete an existing custom Collection, select that Collection from the dropdown list and click on the Delete button. Neither the physical folder you created,
+            <p>To delete an existing custom Collection, select that Collection from the dropdown list and click on the Delete button. Neither the
+                physical folder you created,
                 nor any of the items in it, should be deleted.</p>
 
         </td>

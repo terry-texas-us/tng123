@@ -4,27 +4,27 @@ echo help_header("Nápověda: Poznámky");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="tlevents_help.php" class="lightlink">&laquo; Nápověda: Události časové osy</a> &nbsp; | &nbsp;
-        <a href="misc_help.php" class="lightlink">Nápověda: Různé &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Poznámky</span>
-      <p class="smaller menu">
-        <a href="#notes" class="lightlink">Poznámky</a>
-      </p>
-    </td>
-  </tr>
-  <tr class="databack">
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="tlevents_help.php" class="lightlink">&laquo; Nápověda: Události časové osy</a> &nbsp; | &nbsp;
+                <a href="misc_help.php" class="lightlink">Nápověda: Různé &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Poznámky</span>
+            <p class="smaller menu">
+                <a href="#notes" class="lightlink">Poznámky</a>
+            </p>
+        </td>
+    </tr>
+    <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="notes"><p class="subheadbold">Poznámky</p></a>
+            <a id="notes"><p class="subheadbold">Poznámky</p></a>
             <p>Ze stránky <strong>Poznámky</strong> můžete poznámky vyhledat přímo na základě jejich obsahu. Nemusíte vědět, s kým nebo k čemu
                 jsou poznámky připojeny. Po nalezení hledané poznámky můžete kliknout na ikonu Upravit vedle tohoto řádku
                 a obsah poznámky upravit. Poznámku můžete také vymazat kliknutím na ikonu Vymazat vedle tohoto řádku.

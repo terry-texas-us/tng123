@@ -4,23 +4,23 @@ echo help_header("Help: Secondary Processes");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="data_help.php" class="lightlink">&laquo; Help: Import / Export</a> &nbsp; | &nbsp;
-        <a href="setup_help.php" class="lightlink">Help: Setup &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Secondary Processes</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="data_help.php" class="lightlink">&laquo; Help: Import / Export</a> &nbsp; | &nbsp;
+                <a href="setup_help.php" class="lightlink">Help: Setup &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Secondary Processes</span>
       <p class="smaller menu">
         <a href="#what" class="lightlink">What are they?</a>
       </p>
     </td>
   </tr>
-  <tr class="databack">
+    <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
             <script type="text/javascript">
@@ -30,13 +30,15 @@ echo help_header("Help: Secondary Processes");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="what"><p class="subheadbold">What are Secondary Processes?</p></a>
-            <p>Secondary Processes are operations you may want to perform on your data directly following an import. To perform one of these operations,
+            <a id="what"><p class="subheadbold">What are Secondary Processes?</p></a>
+            <p>Secondary Processes are operations you may want to perform on your data directly following an import. To perform one of these
+                operations,
                 you must first select whether it should apply to "All Trees" or
                 only one tree in particular. If only one tree, select that tree here. Operations you can perform include:</p>
 
             <span class="optionhead">Track Lines</span>
-            <p>Once you have imported your data, click here to trace through the selected tree and mark all individuals with children. This will allow visitors
+            <p>Once you have imported your data, click here to trace through the selected tree and mark all individuals with children. This will allow
+                visitors
                 to your site to more easily find your primary lines of descent.</p>
 
             <span class="optionhead">Sort Children</span>

@@ -4,21 +4,21 @@ echo help_header("Nápověda: Rodiny");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
-        <a href="sources_help.php" class="lightlink">Nápověda: Prameny &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Rodiny</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="people_help.php" class="lightlink">&laquo; Nápověda: Osoby</a> &nbsp; | &nbsp;
+                <a href="sources_help.php" class="lightlink">Nápověda: Prameny &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Rodiny</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
@@ -39,8 +39,10 @@ echo help_header("Nápověda: Rodiny");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví vąechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle kaľdého výsledku hledání vám umoľní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více záznamů, zaąkrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u kaľdého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaąkrtnutí nebo vyčiątění vąech výběrových políček najednou
+            <p>Tlačítko Akce vedle kaľdého výsledku hledání vám umoľní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více
+                záznamů, zaąkrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u kaľdého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
+                Pro zaąkrtnutí nebo vyčiątění vąech výběrových políček najednou
                 můľete pouľít tlačítka <strong>Vybrat vąe</strong> nebo <strong>Vyčistit vąe</strong> .</p>
 
         </td>
@@ -49,11 +51,13 @@ echo help_header("Nápověda: Rodiny");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat novou rodinu</p></a>
-            <p>Výrazem <strong>Rodina</strong> se v tomto programu rozumí kaľdé spojení mezi "otcem" a "matkou" (děti zde mohou nebo nemusí být obsaľeny). Pokud byla osoba víckrát sezdána
+            <a id="add"><p class="subheadbold">Přidat novou rodinu</p></a>
+            <p>Výrazem <strong>Rodina</strong> se v tomto programu rozumí kaľdé spojení mezi "otcem" a "matkou" (děti zde mohou nebo nemusí být
+                obsaľeny). Pokud byla osoba víckrát sezdána
                 nebo má děti s více partnery, měli byste pro kaľdý pár manľelů nebo partnerů vytvořit novou rodinu.</p>
 
-            <p>Chcete-li přidat novou rodinu, klikněte na záloľku <strong>Přidat nové</strong> a poté vyplňte formulář. Některé informace (poznámky, citace a
+            <p>Chcete-li přidat novou rodinu, klikněte na záloľku <strong>Přidat nové</strong> a poté vyplňte formulář. Některé informace (poznámky,
+                citace a
                 daląí události) můľete přidat po uloľení a zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
             <span class="optionhead">Strom</span>
@@ -99,27 +103,32 @@ echo help_header("Nápověda: Rodiny");
             Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapiąte část místa. Vąechny výsledky budou obsahovat to, co jste zapsali jako název místa.</p>
 
           <p><span class="optionhead">Údaje CJKSpd (Pečetění s partnerem)</span><br>
-            Tato událost jsou spojena s obřadem prováděným Církví Jeľíąe Krista Svatých posledních dní (mormonská církev, která vytvořila standard GEDCOM).
-            <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto moľnost vypněte (je třeba se pak odhlásit a znovu přihlásit).</p>
-
+              Tato událost jsou spojena s obřadem prováděným Církví Jeľíąe Krista Svatých posledních dní (mormonská církev, která vytvořila standard
+              GEDCOM).
+              <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto moľnost vypněte (je
+              třeba se pak odhlásit a znovu přihlásit).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="edit"><p class="subheadbold">Upravit existující rodinu</p></a>
-            <p>Chcete-li upravit existující rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu Upravit vedle této osoby.</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="edit"><p class="subheadbold">Upravit existující rodinu</p></a>
+            <p>Chcete-li upravit existující rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu
+                Upravit vedle této osoby.</p>
 
             <span class="optionhead">Poznámky / Citace / "Více"</span>
             <p>Poznámky a citace lze připojit k událostem nebo rodině obecně kliknutím na připojené ikony v horní části stránky
-                nebo vedle kaľdé události. Ke kaľdé události můľete také přidat "více" informací kliknutím na ikonu "Plus". Pokud v nějaké této kategorii existují údaje,
-                na odpovídající ikoně bude v horním pravém rohu zelená tečka. Chcete-li znát více informací o kaľdé kategorii, jděte na odkazy nápovědy,
+                nebo vedle kaľdé události. Ke kaľdé události můľete také přidat "více" informací kliknutím na ikonu "Plus". Pokud v nějaké této
+                kategorii existují údaje,
+                na odpovídající ikoně bude v horním pravém rohu zelená tečka. Chcete-li znát více informací o kaľdé kategorii, jděte na odkazy
+                nápovědy,
                 které budou viditelné po kliknutí na tyto ikony.</p>
 
-      <span class="optionhead">Jiné události</span>
-      <p>Chcete-li přidat daląí události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a href="events_help.php">Nápověda</a> pro více
+            <span class="optionhead">Jiné události</span>
+            <p>Chcete-li přidat daląí události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a
+                    href="events_help.php">Nápověda</a> pro více
         informací o přidání nových událostí. Po přidání události se pod tlačítkem "Přidat nové" zobrazí v tabulce krátké shrnutí. Tlačítka akcí
         pro kaľdou událost vám umoľní událost upravit nebo odstranit, nebo přidat poznámky nebo citace. Pořadí, ve kterém se události zobrazí, závisí na datu (je-li zapsáno)
         a prioritě, kterou má daný typ události (není-li připojeno datum). Při úpravě typu události můľete prioritu změnit.
@@ -138,9 +147,9 @@ echo help_header("Nápověda: Rodiny");
 
       <span class="optionhead">Pořadí dětí</span>
       <p>Pokud existuje více dětí,
-        můľete jejich pořadí změnit "přetaľením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myąí na tlačítko "Táhnout", toto tlačítko podrľte, a vaąi myą přesuňte na stránce nahoru
-                nebo dolů. Po přesunu bloku do poľadované pozice tlačítko pus»te. Změny pořadí budou automaticky uloľeny.</p>
-
+          můľete jejich pořadí změnit "přetaľením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myąí na tlačítko "Táhnout", toto
+          tlačítko podrľte, a vaąi myą přesuňte na stránce nahoru
+          nebo dolů. Po přesunu bloku do poľadované pozice tlačítko pus»te. Změny pořadí budou automaticky uloľeny.</p>
 
         </td>
     </tr>
@@ -148,28 +157,34 @@ echo help_header("Nápověda: Rodiny");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat rodinu</p></a>
-            <p>Chcete-li odstranit rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu Odstranit vedle této rodiny. Tento řádek změní
-                barvu a poté po odstranění rodiny zmizí (partneři a děti nebudou odstraněni, ale vztah bude rozpojen). Chcete-li najednou odstranit více rodin, zaąkrtněte políčko ve sloupci Vybrat vedle kaľdé rodiny, kterou
+            <a id="delete"><p class="subheadbold">Vymazat rodinu</p></a>
+            <p>Chcete-li odstranit rodinu, pouľijte záloľku <a href="#search">Hledat</a> pro nalezení rodiny, a poté klikněte na ikonu Odstranit vedle
+                této rodiny. Tento řádek změní
+                barvu a poté po odstranění rodiny zmizí (partneři a děti nebudou odstraněni, ale vztah bude rozpojen). Chcete-li najednou odstranit
+                více rodin, zaąkrtněte políčko ve sloupci Vybrat vedle kaľdé rodiny, kterou
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat označené" na stránce nahoře</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="review"><p class="subheadbold">Předběľné prohlédnutí úprav</p></a>
-      Chcete-li si předběľně prohlédnout změny provedené ostatními uľivateli, klikněte na záloľku "Přezkoumat". Můľete se pak rozhodnout, zda tyto navrhované změny uloľíte nebo odstraníte.
-      Změny můľete prohlédnout podle stromu nebo podle uľivatele nebo podle obojího. Po uloľení navrhovaných změn není zaslán ľádný mail, ale pokud nové změny existují, na záloľce Přezkoumat se objeví hvězdička (*).</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="review"><p class="subheadbold">Předběľné prohlédnutí úprav</p></a>
+            Chcete-li si předběľně prohlédnout změny provedené ostatními uľivateli, klikněte na záloľku "Přezkoumat". Můľete se pak rozhodnout, zda
+            tyto navrhované změny uloľíte nebo odstraníte.
+            Změny můľete prohlédnout podle stromu nebo podle uľivatele nebo podle obojího. Po uloľení navrhovaných změn není zaslán ľádný mail, ale
+            pokud nové změny existují, na záloľce Přezkoumat se objeví hvězdička (*).</p>
 
-      <span class="optionhead">Vybrat událost a akci</span><br>
-      <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můľete zúľit výběrem uľivatele (osoba
-        odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z moľných akcí nalevo od tohoto řádku. Chcete-li změny přezkoumat a
-        případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
+            <span class="optionhead">Vybrat událost a akci</span><br>
+            <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můľete zúľit výběrem
+                uľivatele (osoba
+                odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z moľných akcí nalevo od tohoto řádku. Chcete-li
+                změny přezkoumat a
+                případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
 
-      <span class="optionhead">Přezkoumat</span><br>
-      <p>Na obrazovce Přezkoumat můľete provést daląí potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uloľit a vymazat" pro
+            <span class="optionhead">Přezkoumat</span><br>
+            <p>Na obrazovce Přezkoumat můľete provést daląí potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uloľit a vymazat" pro
         uloľení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můľete rovněľ odstranit dočasný záznam, aniľ byste jej uloľili,
         nebo můľete své rozhodnutí odloľit na pozdějąí dobu kliknutím na "Odloľit".</p>
 

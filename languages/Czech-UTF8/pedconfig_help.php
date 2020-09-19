@@ -4,41 +4,45 @@ echo help_header("Nápověda: Nastavení schémat");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="config_help.php" class="lightlink">&laquo; Nápověda: Základní nastavení</a> &nbsp; | &nbsp;
-        <a href="logconfig_help.php" class="lightlink">Nápověda: Nastavení protokolování &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Nastavení schémat</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="config_help.php" class="lightlink">&laquo; Nápověda: Základní nastavení</a> &nbsp; | &nbsp;
+                <a href="logconfig_help.php" class="lightlink">Nápověda: Nastavení protokolování &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Nastavení schémat</span>
       <p class="smaller menu">
         <a href="#ped" class="lightlink">Předkové</a> &nbsp; | &nbsp;
-        <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
-        <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp; | &nbsp;
-        <a href="#time" class="lightlink">Časová osa</a> &nbsp; | &nbsp;
-        <a href="#common" class="lightlink">Společné prvky</a> &nbsp; | &nbsp;
-                <a href="#thumb" class="lightlink">Náhledy</a>
-            </p>
+          <a href="#desc" class="lightlink">Potomci</a> &nbsp; | &nbsp;
+          <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp; | &nbsp;
+          <a href="#time" class="lightlink">Časová osa</a> &nbsp; | &nbsp;
+          <a href="#common" class="lightlink">Společné prvky</a> &nbsp; | &nbsp;
+          <a href="#thumb" class="lightlink">Náhledy</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="ped"><p class="subheadbold">Předkové</p></a>
+            <a id="ped"><p class="subheadbold">Předkové</p></a>
 
             <span class="optionhead">Výchozí zobrazení</span>
             <p>Pomocí této volby nastavíte výchozí formát schématu předků. Je-li vybráno Standardně, všechna data narození, sňatku a úmrtí/pohřbu
-                (jsou-li k dispozici) budou vložena do skrytého vyskakovacího rámečku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou data k dispozici,
-                bude na středu pod spodním okrajem rámečků schématu umístěn obrazový soubor (např. ArrowDown.gif), a když je vyvolán vyskakovací rámeček, objeví se pod rámečkem schématu.
-                Kompaktní formát je podobný Standardnímu, ale velikost rámečku je výrazně zmenšena, a nejsou zobrazeny fotografie. Když je vybrán formát Rámeček,
-                standardní údaje se vždy objeví v rámečcích schématu. Je-li vybrán Pouze text, bude nejprve zobrazena textová verze schématu předků (žádné rámečky ani vyskakovací okna).
+                (jsou-li k dispozici) budou vložena do skrytého vyskakovacího rámečku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou
+                data k dispozici,
+                bude na středu pod spodním okrajem rámečků schématu umístěn obrazový soubor (např. ArrowDown.gif), a když je vyvolán vyskakovací
+                rámeček, objeví se pod rámečkem schématu.
+                Kompaktní formát je podobný Standardnímu, ale velikost rámečku je výrazně zmenšena, a nejsou zobrazeny fotografie. Když je vybrán
+                formát Rámeček,
+                standardní údaje se vždy objeví v rámečcích schématu. Je-li vybrán Pouze text, bude nejprve zobrazena textová verze schématu předků
+                (žádné rámečky ani vyskakovací okna).
                 Volba Svisle zobrazí výchozí osobu dole a předkové osoby budou zobrazeni nad ní.
                 Po zobrazení výchozího formátu má uživatel vždy možnost přepnout mezi jednotlivými typy.</p>
 
@@ -103,13 +107,16 @@ echo help_header("Nápověda: Nastavení schémat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="desc"><p class="subheadbold">Potomci</p></a>
+            <a id="desc"><p class="subheadbold">Potomci</p></a>
 
             <span class="optionhead">Výchozí zobrazení</span>
             <p>Pomocí této volby nastavíte výchozí formát potomků. Je-li vybráno Standardně, všechna data narození, sňatku a úmrtí/pohřbu
-                (jsou-li k dispozici) budou vložena do skrytého vyskakovacího rámečku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou data k dispozici,
-                bude na středu pod spodním okrajem rámečků schématu umístěn obrazový soubor (např. ArrowDown.gif), a když je vyvolán vyskakovací rámeček, objeví se pod rámečkem schématu.
-                Kompaktní formát je podobný Standardnímu, ale velikost rámečku je výrazně zmenšena, a nejsou zobrazeny fotografie. Je-li vybrán Pouze text, bude zobrazena textová
+                (jsou-li k dispozici) budou vložena do skrytého vyskakovacího rámečku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou
+                data k dispozici,
+                bude na středu pod spodním okrajem rámečků schématu umístěn obrazový soubor (např. ArrowDown.gif), a když je vyvolán vyskakovací
+                rámeček, objeví se pod rámečkem schématu.
+                Kompaktní formát je podobný Standardnímu, ale velikost rámečku je výrazně zmenšena, a nejsou zobrazeny fotografie. Je-li vybrán Pouze
+                text, bude zobrazena textová
                 verze schématu potomků (žádné rámečky ani vyskakovací okna). Formát Registr zobrazí stejné informace ve stylu vyprávění.
                 Po zobrazení výchozího formátu má uživatel vždy možnost přepnout mezi jednotlivými typy.</p>
 
@@ -137,9 +144,10 @@ echo help_header("Nápověda: Nastavení schémat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="rel"><p class="subheadbold">Schéma příbuzenských vztahů</p></a>
+            <a id="rel"><p class="subheadbold">Schéma příbuzenských vztahů</p></a>
             <span class="optionhead">Výchozí počet vztahů</span>
-            <p>Tato hodnota udává počet příbuzenských vztahů, které bude TNG hledat při prvním spuštění schématu příbuzenských vztahů. Po nalezení tohoto
+            <p>Tato hodnota udává počet příbuzenských vztahů, které bude TNG hledat při prvním spuštění schématu příbuzenských vztahů. Po nalezení
+                tohoto
                 počtu vztahů se proces zastaví. Pokud váš strom neobsahuje komplikované příbuzenské vztahy, můžete tuto hodnotu nastavit
                 na 1, abyste ušetřili čas průběhu.</p>
 
@@ -151,7 +159,8 @@ echo help_header("Nápověda: Nastavení schémat");
                 TNG bude po nalezení prvního vztahu dále hledat marně.</p>
 
             <span class="optionhead">Maximální počet generací</span>
-            <p>Maximální počet generací, které povolíte návštěvníkovi na stránce příbuzenských vztahů najednou prohledat. Může to být na této stránce také výchozí počet.</p>
+            <p>Maximální počet generací, které povolíte návštěvníkovi na stránce příbuzenských vztahů najednou prohledat. Může to být na této stránce
+                také výchozí počet.</p>
 
         </td>
     </tr>
@@ -159,13 +168,14 @@ echo help_header("Nápověda: Nastavení schémat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="time"><p class="subheadbold">Schéma časové osy</p></a>
+            <a id="time"><p class="subheadbold">Schéma časové osy</p></a>
             <span class="optionhead">Výchozí šířka schématu</span>
             <p>Výchozí šířka schématu délky života v pixelech. Návštěvníci si mohou šířku změnit na horním okraji obrazovky.</p>
 
             <span class="optionhead">Povolit časovou linii Simile</span>
             <p>Výběrem volby "Ano" můžete vedle standardní časové linie TNG také na stejné stránce zobrazit schéma časové linie Simile. Více
-                informací o schématu časové linie Simile můžete najít na <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.</p>
+                informací o schématu časové linie Simile můžete najít na <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.
+            </p>
 
             <span class="optionhead">Výška schématu</span>
             <p>Výška časové osy událostí (Simile) v pixelech. Je-li zobrazeno mnoho událostí najednou, mohou být některé vytlačeny
@@ -191,7 +201,8 @@ echo help_header("Nápověda: Nastavení schémat");
                 $band3_interval = 175; (Počet pixelů mezi jednotlivými značkami.)<br>
                 $band3_multiple = 1; (Počet let mezi značkami. Pokud je hodnota 2, bude přeskočen každý druhý rok.)<br>
 
-                $band4_pct = "15%"; (Spodní pruh; jsou zde zobrazeny velmi malé čárky, hrubá úroveň zobrazení obecných událostí časové osy z pruhu 3. Zabírá 15% celkové výšky.)<br>
+                $band4_pct = "15%"; (Spodní pruh; jsou zde zobrazeny velmi malé čárky, hrubá úroveň zobrazení obecných událostí časové osy z pruhu 3.
+                Zabírá 15% celkové výšky.)<br>
                 $band4_interval = 150; (Počet pixelů mezi jednotlivými značkami.)<br>
                 $band4_multiple = 1; (Počet let mezi značkami. Pokud je hodnota 2, bude přeskočen každý druhý rok.)<br>
             </p>
@@ -201,11 +212,12 @@ echo help_header("Nápověda: Nastavení schémat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="common"><p class="subheadbold">Společné prvky</p></a>
+            <a id="common"><p class="subheadbold">Společné prvky</p></a>
 
             <span class="optionhead">Odsazení zleva</span>
             <p>Vodorovný posun, který bude použit u celého schématu (v pixelech). Lze tím např. zajistit, aby schéma nepřekrývalo
-                okraj obrázku, menu nebo textu, které by mohly být na levém okraji. Výchozí hodnota je 10. Zadáte-li zápornou hodnotu, bude použita 0.</p>
+                okraj obrázku, menu nebo textu, které by mohly být na levém okraji. Výchozí hodnota je 10. Zadáte-li zápornou hodnotu, bude použita
+                0.</p>
 
             <span class="optionhead">Velikost jména v rámečku</span>
             <p>Velikost (v bodech) všech jmen ve schématu. V žádném případě není možno snížit toto hodnotu na méně než
@@ -293,7 +305,8 @@ echo help_header("Nápověda: Nastavení schémat");
                 Použité číslo by mělo být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
             <span class="optionhead">Vložit fotografie</span>
-            <p>Je-li zaškrtnuta tato volba, do rámečků ve schématech budou vloženy náhledy fotografií (používají-li se vyskakovací okna a soubory obrázků byly nalezeny -- viz níže).
+            <p>Je-li zaškrtnuta tato volba, do rámečků ve schématech budou vloženy náhledy fotografií (používají-li se vyskakovací okna a soubory
+                obrázků byly nalezeny -- viz níže).
                 Výchozí volbou je nezaškrtnuto.</p>
 
         </td>
@@ -302,14 +315,18 @@ echo help_header("Nápověda: Nastavení schémat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="thumb"><p class="subheadbold">Poznámky k vložení náhledů fotografií</p></a>
+            <a id="thumb"><p class="subheadbold">Poznámky k vložení náhledů fotografií</p></a>
 
             <ul>
-                <li>Chcete-li označit fotografii jako zástupce osoby ve schématech, jděte do úpravy fotografie (musí mít náhled) a zaškrtněte políčko označené <span class="emphasis">Nastavit jako výchozí</span>
+                <li>Chcete-li označit fotografii jako zástupce osoby ve schématech, jděte do úpravy fotografie (musí mít náhled) a zaškrtněte políčko
+                    označené <span class="emphasis">Nastavit jako výchozí</span>
                     pod odkazem požadované osoby a stránku uložte. Existující náhled pak bude použit ve schématech. Akce výběru <span class="choice">Nastavit jako výchozí</span>
-                    se používala pro kopírování existujícího náhledu na nové umístění, kde byl kopírovaný soubor pojmenován <span class="emphasis">Mtreename.###.ext</span>, kde <span class="emphasis">strom</span> byl název stromu,
-                    ke kterému patřila osoba, <span class="emphasis">###</span> bylo ID číslo osoby ze souboru GEDCOM a ext byla přípona fotografie definovaná výše (např. <span class="example">MLythgoe.I567.jpg</span>).
-                    Tato konvence se již nepoužívá, ale existující náhledy vytvořené tímto způsobem jsou nadále využívány a mají přednost. <span class="emphasis">POZN.:</span> Můžete tímto způsobem vytvářet výchozí náhledy
+                    se používala pro kopírování existujícího náhledu na nové umístění, kde byl kopírovaný soubor pojmenován <span class="emphasis">Mtreename.###.ext</span>,
+                    kde <span class="emphasis">strom</span> byl název stromu,
+                    ke kterému patřila osoba, <span class="emphasis">###</span> bylo ID číslo osoby ze souboru GEDCOM a ext byla přípona fotografie
+                    definovaná výše (např. <span class="example">MLythgoe.I567.jpg</span>).
+                    Tato konvence se již nepoužívá, ale existující náhledy vytvořené tímto způsobem jsou nadále využívány a mají přednost. <span
+                        class="emphasis">POZN.:</span> Můžete tímto způsobem vytvářet výchozí náhledy
                     ručně, pokud nechcete, aby byla výchozí fotografie odvozena z jiné fotografie připojené k osobě.
                 </li>
 

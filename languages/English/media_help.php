@@ -4,17 +4,17 @@ echo help_header("Help: Media");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="more_help.php" class="lightlink">&laquo; Help: More</a> &nbsp; | &nbsp;
-        <a href="collections_help.php" class="lightlink">Help: Collections &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Media</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="more_help.php" class="lightlink">&laquo; Help: More</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">Help: Collections &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Media</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add</a> &nbsp; | &nbsp;
@@ -39,7 +39,7 @@ echo help_header("Help: Media");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><p class="subheadbold">Search</p></a>
             <p>Locate existing media by searching for all or part of the <strong>Media ID, Title, Description, Path</strong> or
                 <strong>Body Text</strong>. Use the other available options to further narrow your search.
                 Searching with no options selected and no value in the search box will find all media in your database. Search options include:</p>
@@ -48,8 +48,10 @@ echo help_header("Help: Media");
             <p>Restrict the results to media assigned to the selected tree.</p>
 
             <span class="optionhead">Collection</span>
-            <p>Restrict the results to media of the selected Collection type. To add a new Collection, click on the "Add Collection" button, then fill out the form in
-                the popup. You must create a folder for your new Collection, and you must create your own icon (or designate an existing one). The "Same setup as" field
+            <p>Restrict the results to media of the selected Collection type. To add a new Collection, click on the "Add Collection" button, then fill
+                out the form in
+                the popup. You must create a folder for your new Collection, and you must create your own icon (or designate an existing one). The
+                "Same setup as" field
                 allows you to indicate which one of the basic Collection types your new Collection should emulate.</p>
 
             <span class="optionhead">File ext.</span>
@@ -70,8 +72,10 @@ echo help_header("Help: Media");
 
             <span class="optionhead">Actions</span>
             <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a time, click the box in the
-                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
-                buttons to toggle all select boxes at once. You can also convert multiple items from one Collection to another, or add multiple items to an Album in the same
+                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
+                <strong>Select All</strong> or <strong>Clear All</strong>
+                buttons to toggle all select boxes at once. You can also convert multiple items from one Collection to another, or add multiple items
+                to an Album in the same
                 manner (see below for more information).</p>
 
         </td>
@@ -80,12 +84,14 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="add"><p class="subheadbold">Adding New Media</p></a>
-            <p>To add new media, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the image map, location information, and
+            <a id="add"><p class="subheadbold">Adding New Media</p></a>
+            <p>To add new media, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the image map,
+                location information, and
                 links to people, families and other entities, can be added after saving or locking the record. Take note of the following:</p>
 
             <span class="optionhead">Collection</span>
-            <p>Choose what type of media your item is (e.g., Photos, Documents, Headstones, Histories, Recordings or Videos). There is no restriction on file type for any of these media <span class="emphasis">collections</span>.</p>
+            <p>Choose what type of media your item is (e.g., Photos, Documents, Headstones, Histories, Recordings or Videos). There is no restriction
+                on file type for any of these media <span class="emphasis">collections</span>.</p>
 
             <span class="optionhead">This media comes from an external source</span>
             <p>Check this box if this image resides somewhere on the Internet other than on your server. You must supply
@@ -190,7 +196,8 @@ echo help_header("Help: Media");
                 associated with the cemetery in this manner will be displayed at the top of the page.</p>
 
             <span class="optionhead">Show cemetery map and media whenever this item is displayed</span>
-            <p><strong>(Headstones only)</strong> If the cemetery where this headstone is located has an accompanying map or photo, check this box to display the map or photo as well whenever the
+            <p><strong>(Headstones only)</strong> If the cemetery where this headstone is located has an accompanying map or photo, check this box to
+                display the map or photo as well whenever the
                 headstone is displayed.</p>
 
         </td>
@@ -199,17 +206,22 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="edit"><p class="subheadbold">Editing Existing Media</p></a>
-            <p>To make changes to existing media, use the <a href="#search">Search</a> tab to locate the item, then click on the Edit icon next to that item.
+            <a id="edit"><p class="subheadbold">Editing Existing Media</p></a>
+            <p>To make changes to existing media, use the <a href="#search">Search</a> tab to locate the item, then click on the Edit icon next to
+                that item.
                 Take note of the following items that are not on the "Add New Media" page:</p>
 
             <span class="optionhead">Media Links</span>
-            <p>You can link this media item to individuals, families, sources, repositories or places. For each link, first select the tree associated with the link entity.
-                Next, select the Link Type (Person, Family, Source, Repository or Place), and finally, enter the ID number or name (Places only) of the link entity. After
+            <p>You can link this media item to individuals, families, sources, repositories or places. For each link, first select the tree associated
+                with the link entity.
+                Next, select the Link Type (Person, Family, Source, Repository or Place), and finally, enter the ID number or name (Places only) of
+                the link entity. After
                 all the information has been entered, click on the "Add" button.</p>
 
-            <p>If you don't know the ID number or exact Place Name, click the magnifying glass icon to search for it. A popup window will appear to let you do the searching.
-                When you find the desired entity description, click the "Add" link at the left. You may click "Add" for multiple entities. When you are finished creating
+            <p>If you don't know the ID number or exact Place Name, click the magnifying glass icon to search for it. A popup window will appear to
+                let you do the searching.
+                When you find the desired entity description, click the "Add" link at the left. You may click "Add" for multiple entities. When you
+                are finished creating
                 links, click on the "Close Window" link.</p>
 
             <p><strong>Existing Links:</strong> You may edit or delete an existing link by clicking on the Edit or Delete icon next to that link. Editing a link
@@ -261,7 +273,8 @@ echo help_header("Help: Media");
 
             <p>Repeat this process for any additional regions needed. All new code will be added to the end of that already in the Image Map box.</p>
 
-            <p>To link different portions of your image to different pages, or to display short messages when the mouse pointer is over those portions, enter the needed
+            <p>To link different portions of your image to different pages, or to display short messages when the mouse pointer is over those
+                portions, enter the needed
                 image map code in this box. To construct your own image map, see the Image Map Construction section at the bottom of the page.</p>
 
         </td>
@@ -270,9 +283,11 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Deleting Media</p></a>
-            <p>To delete one media item, use the <a href="#search">Search</a> tab to locate the item, then click on the Delete icon next to that item. The row will
-                change color and then vanish as the item is deleted. To delete multiple media at a time, check the box in the Select column next to each item to be
+            <a id="delete"><p class="subheadbold">Deleting Media</p></a>
+            <p>To delete one media item, use the <a href="#search">Search</a> tab to locate the item, then click on the Delete icon next to that item.
+                The row will
+                change color and then vanish as the item is deleted. To delete multiple media at a time, check the box in the Select column next to
+                each item to be
                 deleted, then click the "Delete Selected" button at the top of the page.</p>
 
         </td>
@@ -281,9 +296,11 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="convert"><p class="subheadbold">Converting Media From One Collection to Another</p></a>
-            To convert media items from one media type or "Collection" to another, check the Select box next to those items on the <a href="#search">Search</a> tab,
-            then select a new Collection from the dropdown box at the top of the page next to the "Convert Selected to" button. Finally, click the "Convert Selected to" button.
+            <a id="convert"><p class="subheadbold">Converting Media From One Collection to Another</p></a>
+            To convert media items from one media type or "Collection" to another, check the Select box next to those items on the <a href="#search">Search</a>
+            tab,
+            then select a new Collection from the dropdown box at the top of the page next to the "Convert Selected to" button. Finally, click the
+            "Convert Selected to" button.
             The page will redisplay with a red status message at the top.</p>
 
         </td>
@@ -292,9 +309,10 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="album"><p class="subheadbold">Adding Media to Albums</p></a>
+            <a id="album"><p class="subheadbold">Adding Media to Albums</p></a>
             To add media to an Album, check the Select box next to the items to be added, then select an Album from the dropdown box
-            at the top of the page next to the "Add to Album" button. Finally, click the "Add to Album" button. Media can also be added to Albums from Admin/Albums.</p>
+            at the top of the page next to the "Add to Album" button. Finally, click the "Add to Album" button. Media can also be added to Albums from
+            Admin/Albums.</p>
 
         </td>
     </tr>
@@ -302,17 +320,21 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="sort"><p class="subheadbold">Sorting Media</p></a>
-            <p>By default, media linked to a Person, Family, Source, Repository or Place are sorted by the order in which they were linked to that entity. To change that
+            <a id="sort"><p class="subheadbold">Sorting Media</p></a>
+            <p>By default, media linked to a Person, Family, Source, Repository or Place are sorted by the order in which they were linked to that
+                entity. To change that
                 order, you must indicate a new order on the Media/Sort tab.</p>
 
             <span class="optionhead">Tree, Link Type, Collection:</span>
-            <p>Select the Tree associated with the entity for which you would like to sort media. Next, select a Link Type (Person, Family, Source, Repository or Place) and
+            <p>Select the Tree associated with the entity for which you would like to sort media. Next, select a Link Type (Person, Family, Source,
+                Repository or Place) and
                 the Collection you would like to sort.</p>
 
             <span class="optionhead">ID:</span>
-            <p>Enter the ID number or name (Places only) of the entity. If you don't know the ID number or exact place name, click the magnifying glass icon to search for it.
-                When you find the desired entity, click on the "Select" link next to that entity. The popup will close and the selected ID will appear in the ID field.</p>
+            <p>Enter the ID number or name (Places only) of the entity. If you don't know the ID number or exact place name, click the magnifying
+                glass icon to search for it.
+                When you find the desired entity, click on the "Select" link next to that entity. The popup will close and the selected ID will appear
+                in the ID field.</p>
 
             <span class="optionhead">Link to specific event</span>
             <p>If you wish to sort only the media items attached to a specific event associated with the link entity, check the box marked "Link to specific event" AFTER
@@ -331,8 +353,10 @@ echo help_header("Help: Media");
 
             <span class="optionhead">Default Photos</span>
             <p>While sorting, you may also select any of the displayed photos as the current entity's <strong>Default Photo</strong>. That means that the thumbnail for the
-                selected image will appear on pedigree charts and in page titles with the current entity's name or title. To set or remove a Default Photo designation, hold
-                your mouse pointer over any of the listed images, then click on either of the now visible options of "Make Default" or "Remove". The current Default Photo
+                selected image will appear on pedigree charts and in page titles with the current entity's name or title. To set or remove a Default
+                Photo designation, hold
+                your mouse pointer over any of the listed images, then click on either of the now visible options of "Make Default" or "Remove". The
+                current Default Photo
                 may also be removed by clicking on the "Remove Default" link at the top of the page.</p>
 
         </td>
@@ -341,22 +365,27 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="thumbs"><p class="subheadbold">Thumbnails</p></a>
+            <a id="thumbs"><p class="subheadbold">Thumbnails</p></a>
 
             <span class="optionhead">Generate Thumbnails</span>
             <p>When you click on the "Generate" button under this option, TNG will automatically create thumbnails for all JPG, GIF or
-                PNG images that do not already have an existing thumbnail. By default, the name of the new image will be the same as the larger image but with a
+                PNG images that do not already have an existing thumbnail. By default, the name of the new image will be the same as the larger image
+                but with a
                 prefix and/or suffix as defined by you in the General Settings. Check the box labeled "Regenerate existing thumbnails" to
-                create thumbnails for all images, including those that already have them. Check "Regenerate thumbnail path names were file does not exist" if
-                you think you have some thumbnail records that point to invalid files. That will cause TNG to reevaluate the thumbnail path names before regenerating
+                create thumbnails for all images, including those that already have them. Check "Regenerate thumbnail path names were file does not
+                exist" if
+                you think you have some thumbnail records that point to invalid files. That will cause TNG to reevaluate the thumbnail path names
+                before regenerating
                 the thumbnail. Without this feature, the same invalid thumbnail name would be regenerated over and over.</p>
 
             <p><strong>NOTE</strong>: If you do not see the Generate Thumbnails section, your server does not support the GD image library.</p>
 
             <span class="optionhead">Assign Default Photos</span>
             <p>This option allows you to make the first photo for each individual, family and source be that entity's Default
-                Photo (the one displayed on pedigree charts, family group sheets, and at the top of other pages assigned to that entity). The assignment can be
-                made for all individuals, families, sources and repositories in a particular tree by selecting that tree from the dropdown box. Check the box
+                Photo (the one displayed on pedigree charts, family group sheets, and at the top of other pages assigned to that entity). The
+                assignment can be
+                made for all individuals, families, sources and repositories in a particular tree by selecting that tree from the dropdown box. Check
+                the box
                 labeled "Override existing defaults" to set defaults regardless of what has previously been set. Leaving this box
                 unchecked allows previously set defaults to remain.</p>
         </td>
@@ -365,15 +394,19 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="import"><p class="subheadbold">Importing Media</p></a>
+            <a id="import"><p class="subheadbold">Importing Media</p></a>
 
             <span class="optionhead">Purpose</span>
-            <p>Create a media record for each physical file in any of your TNG media folders, with the file name becoming the title of each record.</p>
+            <p>Create a media record for each physical file in any of your TNG media folders, with the file name becoming the title of each
+                record.</p>
 
             <span class="optionhead">Usage</span>
-            <p>To perform the import, first select a Collection (or add a new collection first) and a Tree (if the incoming items should be associated with a tree), then click the "Import"
-                button. If a record already exists for an item, no new record is created. The "key" (what determines whether a record already exists or not) consists of
-                both the file name and the tree. If you import the same item into multiple trees (or if the item was once imported with "All Trees" and another time imported
+            <p>To perform the import, first select a Collection (or add a new collection first) and a Tree (if the incoming items should be associated
+                with a tree), then click the "Import"
+                button. If a record already exists for an item, no new record is created. The "key" (what determines whether a record already exists
+                or not) consists of
+                both the file name and the tree. If you import the same item into multiple trees (or if the item was once imported with "All Trees"
+                and another time imported
                 into a specific tree), TNG will not recognize that you already have a record for that item and it will create another.</p>
 
         </td>
@@ -382,17 +415,21 @@ echo help_header("Help: Media");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="upload"><p class="subheadbold">Uploading Media</p></a>
+            <a id="upload"><p class="subheadbold">Uploading Media</p></a>
 
             <span class="optionhead">Purpose</span>
-            <p>Upload multiple media items at once, then give them better titles and descriptions, plus link them to individuals, families, sources or places
+            <p>Upload multiple media items at once, then give them better titles and descriptions, plus link them to individuals, families, sources or
+                places
                 directly from this screen.</p>
 
             <span class="optionhead">Usage</span>
-            <p>To use, first select a Collection and a Tree (if the incoming items should be associated with a tree), then click "Add Files" and select one or more files from your computer to upload. Most browsers (not Internet Explorer) will also allow
+            <p>To use, first select a Collection and a Tree (if the incoming items should be associated with a tree), then click "Add Files" and
+                select one or more files from your computer to upload. Most browsers (not Internet Explorer) will also allow
                 you to drag and drop files
-                from another window directly into the white area in the middle of the screen. To select a subfolder within the selected media location as the destination
-                for your files, enter the name in the "Folder" field, or use the "Select" button to choose a subfolder that already exists. If you don't need the files to
+                from another window directly into the white area in the middle of the screen. To select a subfolder within the selected media location
+                as the destination
+                for your files, enter the name in the "Folder" field, or use the "Select" button to choose a subfolder that already exists. If you
+                don't need the files to
                 be stored in a subfolder, then simply leave the Folder field blank.</p>
             <p>After selecting your files and the destination, you may begin the upload of all files together
                 by clicking the "Start upload" button at the top of the page. Or, upload files individually by clicking the "Start" button next to those specific files.

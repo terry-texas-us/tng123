@@ -4,36 +4,40 @@ echo help_header("Pomoc: Cmentarze");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="albums_help.php" class="lightlink">&laquo; Pomoc: Albumy</a> &nbsp; | &nbsp;
-        <a href="places_help.php" class="lightlink">Pomoc: Miejsca &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Cmentarze</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj lub edytuj</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Usuń</a>
-      </p>
-    </td>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="albums_help.php" class="lightlink">&laquo; Pomoc: Albumy</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">Pomoc: Miejsca &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Cmentarze</span>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj lub edytuj</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Usuń</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Szukanie</p></a>
-            <p>Znajdź istniejący cmentarz szukając jego pełnej nazwy lub jej części, ID cmentarza, miasta, powiatu, województwa, kraju lub nazwy pliku mapy. Jeśli nic nie wybierzesz,
+            <a id="search"><p class="subheadbold">Szukanie</p></a>
+            <p>Znajdź istniejący cmentarz szukając jego pełnej nazwy lub jej części, ID cmentarza, miasta, powiatu, województwa, kraju lub nazwy pliku
+                mapy. Jeśli nic nie wybierzesz,
                 w polu wyszukiwania znajdziesz wszystkie cmentarze zapisane w bazie danych.</p>
 
-            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który przywraca domyślne wartości i wszystkich wyszukiwań.</p>
+            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
+                przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
             <span class="optionhead">Czynność</span>
-            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż jeden rekord jednocześnie, kliknij pole w kolumnie
-                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
+            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
+                jeden rekord jednocześnie, kliknij pole w kolumnie
+                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
+                górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
                 aby zaznaczyć lub usunąć zaznaczenie wszystkich pól wyboru naraz.</p>
 
         </td>
@@ -42,15 +46,19 @@ echo help_header("Pomoc: Cmentarze");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="add"><p class="subheadbold">Dodawanie nowych / Edycja istniejących cmentarzy</p></a>
-            <p>TNG pozwala na grupowanie nagrobków i wyświetlanie przy danym cmentarzu. Aby to zrobić, należy utworzyć nowy cmentarz dla każdej lokalizacji. Zapisy dotyczące cmentarzy w TNG nie są związane z zapisami miejsc
-                pogrzebu i w pliku GEDCOM nie mają odwołania do cmentarzy. Jeśli więc nawet plik GEDCOM zawiera nazwy miejsc pogrzebów, nazwy te nie będą połączone z nazwami cmentarzy i po imporcie pliku GEDCOM łącza te muszą być utworzone w TNG.</p>
+            <a id="add"><p class="subheadbold">Dodawanie nowych / Edycja istniejących cmentarzy</p></a>
+            <p>TNG pozwala na grupowanie nagrobków i wyświetlanie przy danym cmentarzu. Aby to zrobić, należy utworzyć nowy cmentarz dla każdej
+                lokalizacji. Zapisy dotyczące cmentarzy w TNG nie są związane z zapisami miejsc
+                pogrzebu i w pliku GEDCOM nie mają odwołania do cmentarzy. Jeśli więc nawet plik GEDCOM zawiera nazwy miejsc pogrzebów, nazwy te nie
+                będą połączone z nazwami cmentarzy i po imporcie pliku GEDCOM łącza te muszą być utworzone w TNG.</p>
 
-            <p>Aby dodać nowy cmentarz, kliknij przycisk <strong>Dodaj nowe</strong>, a następnie wypełnić formularz. Aby edytować istniejący cmentarz, należy użyć przycisku <a href="#search">Szukaj</a> aby zlokalizować cmentarz,
+            <p>Aby dodać nowy cmentarz, kliknij przycisk <strong>Dodaj nowe</strong>, a następnie wypełnić formularz. Aby edytować istniejący
+                cmentarz, należy użyć przycisku <a href="#search">Szukaj</a> aby zlokalizować cmentarz,
                 a następnie kliknąć na ikonkę Edycja obok wybranej linii. Podczas dodawania lub edycji cmentarza dostępne są następujące elementy:</p>
 
             <span class="optionhead">Nazwa cmentarza</span>
-            <p>Wpisz pełną nazwę cmentarza. Na przykład cmentarz znajdujący się w Warszawie na Wilanowie należy zapisać jako <em>Cmentarz rzymsko-katolicki w Wilanowie</em> lub <em>Warszawa, Wilanów, cmentarz rzymsko-katolicki</em> a nie tylko
+            <p>Wpisz pełną nazwę cmentarza. Na przykład cmentarz znajdujący się w Warszawie na Wilanowie należy zapisać jako <em>Cmentarz
+                    rzymsko-katolicki w Wilanowie</em> lub <em>Warszawa, Wilanów, cmentarz rzymsko-katolicki</em> a nie tylko
                 <em>Warszawa</em> lub <em>Wilanów</em>.</p>
 
             <span class="optionhead">Zdjęcie mapy do załadowania</span>
@@ -97,11 +105,14 @@ echo help_header("Pomoc: Cmentarze");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="delete"><p class="subheadbold">Usuwanie cmentarzy</p></a>
-            <p>Aby usunąć jeden cmentarz, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego cmentarza. Wiersz zmieni kolor,
-                a następnie zniknie. Cmentarz został usunięty. Aby usunąć więcej niż jeden cmentarz naraz, zaznacz pole w kolumnie Wybierz obok każdego cmentarza, który ma zostać usunięty, a następnie kliknij
+            <a id="delete"><p class="subheadbold">Usuwanie cmentarzy</p></a>
+            <p>Aby usunąć jeden cmentarz, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na
+                ikonkę Usuń obok tego cmentarza. Wiersz zmieni kolor,
+                a następnie zniknie. Cmentarz został usunięty. Aby usunąć więcej niż jeden cmentarz naraz, zaznacz pole w kolumnie Wybierz obok
+                każdego cmentarza, który ma zostać usunięty, a następnie kliknij
                 przycisk "Usuń wybrane" znajdujący się na górze strony.</p>
-            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                    ewentualne błędy lub niejasności.</p></li>
 
         </td>
     </tr>

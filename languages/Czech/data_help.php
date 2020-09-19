@@ -4,41 +4,45 @@ echo help_header("N�pov�da: Import dat");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp; | &nbsp;
-        <a href="second_help.php" class="lightlink">N�pov�da: Druhotn� procesy &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Import / Export</span>
-      <p class="smaller menu">
-        <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
-        <a href="#export" class="lightlink">GEDCOM Export</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="mostwanted_help.php" class="lightlink">&laquo; N�pov�da: Hled� se</a> &nbsp; | &nbsp;
+                <a href="second_help.php" class="lightlink">N�pov�da: Druhotn� procesy &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Import / Export</span>
+            <p class="smaller menu">
+                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+                <a href="#export" class="lightlink">GEDCOM Export</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="import"><p class="subheadbold">GEDCOM Import</p></a>
+            <a id="import"><p class="subheadbold">GEDCOM Import</p></a>
             <p>Na t�to str�nce m��ete naimportovat v�echna data ze standardn�ho souboru GEDCOM do ur�it�ho stromu.</p>
 
-            <p><span class="optionhead">P�ed importem:</span> Z va�eho genealogick�ho programu vytvo�te standardn� soubor GEDCOM 5.5 (4.0 je tak� akceptovateln�). Neve�ejn� informace u �ij�c�ch osob
-                m��ete vylou�it, ale nen� to nutn�. Nen� tak� nutn� vylou�it �daje t�kaj�c� se CJKSpd, proto�e mohou b�t tak� filtrov�ny v z�vislosti na u�ivatelsk�ch pr�vech.</p>
+            <p><span class="optionhead">P�ed importem:</span> Z va�eho genealogick�ho programu vytvo�te standardn� soubor GEDCOM 5.5 (4.0 je tak�
+                akceptovateln�). Neve�ejn� informace u �ij�c�ch osob
+                m��ete vylou�it, ale nen� to nutn�. Nen� tak� nutn� vylou�it �daje t�kaj�c� se CJKSpd, proto�e mohou b�t tak� filtrov�ny v z�vislosti
+                na u�ivatelsk�ch pr�vech.</p>
 
             <p>Po vytvo�en� souboru GEDCOM je dal��m krokem, jak ho dostat na va�e webov� str�nky. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
             <p><span class="optionhead">[Import souboru GEDCOM] Z va�eho po��ta�e</span>
-                Chcete-li nahr�t a importovat v� soubor na va�e str�nky bez pou�it� FTP, klikn�te na tla��tko "Prohledat" a najd�te soubor na va�em disku. Po jeho vyhled�n� se v tomto poli objev� n�zev a um�st�n� va�eho souboru.
-                <strong>POZN.</strong>: Pokud je v� soubor GEDCOM p��li� velk� (> 2MB), budete muset p�ed nahr�n�m va�eho souboru t�mto zp�sobem kontaktovat poskytovatele sv�ho hostingu, proto�e server m��e m�t omezen� maxim�ln�
+                Chcete-li nahr�t a importovat v� soubor na va�e str�nky bez pou�it� FTP, klikn�te na tla��tko "Prohledat" a najd�te soubor na va�em
+                disku. Po jeho vyhled�n� se v tomto poli objev� n�zev a um�st�n� va�eho souboru.
+                <strong>POZN.</strong>: Pokud je v� soubor GEDCOM p��li� velk� (> 2MB), budete muset p�ed nahr�n�m va�eho souboru t�mto zp�sobem
+                kontaktovat poskytovatele sv�ho hostingu, proto�e server m��e m�t omezen� maxim�ln�
                 velikosti pro nahr�v�n� soubor� prost�ednictv�m webov�ho formul��e. Pokud b�hem importu obdr��te chybov� hl�en�, jedn� se o tento p��pad. Zkuste m�sto toho pou��t k nakop�rov�n� sv�ho souboru do slo�ky GEDCOM program FTP,
                 a pak jej naimportujte odtud (viz n�e).</p>
 
@@ -116,7 +120,8 @@ echo help_header("N�pov�da: Import dat");
             <span class="optionhead">Funkce "za��t znovu"</span>
             <p>Pokud neuvid�te zpr�vu o "dokon�en�", v� server mo�n� proces importu ukon�il, proto�e trval p��li� dlouho.
                 Pokud se v�m to stalo, jd�te na str�nku Admin/Nastaven�/Nastaven� importu
-                a za�krtn�te pol��ko <strong>Ulo�it stav importu</strong>. Pak se vra�te na str�nku importu a zkuste v� import znovu. Pokud jsou stejn� podm�nky,
+                a za�krtn�te pol��ko <strong>Ulo�it stav importu</strong>. Pak se vra�te na str�nku importu a zkuste v� import znovu. Pokud jsou
+                stejn� podm�nky,
                 import by se m�l s�m restartovat.</p>
 
         </td>
@@ -125,7 +130,7 @@ echo help_header("N�pov�da: Import dat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="export"><p class="subheadbold">GEDCOM Export</p></a>
+            <a id="export"><p class="subheadbold">GEDCOM Export</p></a>
             <p>Tato str�nka v�m umo�n� exportovat sv� data z ur�it�ho stromu do standardn�ho souboru GEDCOM 5.5. Soubor bude ulo�en ve va�� slo�ce
                 GEDCOM (ur�ena v Nastaven� importu) a bude pojmenov�n n�zvem stromu a p��ponou ".ged".</p>
 

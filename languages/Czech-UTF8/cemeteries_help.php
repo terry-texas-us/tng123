@@ -4,40 +4,44 @@ echo help_header("Nápověda: Hřbitovy");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="albums_help.php" class="lightlink">&laquo; Nápověda: Alba</a> &nbsp; | &nbsp;
-        <a href="places_help.php" class="lightlink">Nápověda: Místa &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Hřbitovy</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a>
-      </p>
-    </td>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="albums_help.php" class="lightlink">&laquo; Nápověda: Alba</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">Nápověda: Místa &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Hřbitovy</span>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících hřbitovů vyhledáním celého nebo části <strong>ID čísla hřbitova, názvu hřbitova, města, okresu, kraje, země</strong> nebo <strong>názvu souboru mapy</strong>.
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezení existujících hřbitovů vyhledáním celého nebo části <strong>ID čísla hřbitova, názvu hřbitova, města, okresu, kraje,
+                    země</strong> nebo <strong>názvu souboru mapy</strong>.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech hřbitovů ve vaší databázi.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat více záznamů, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
+                více záznamů, zaškrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
+                zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
         </td>
@@ -46,9 +50,11 @@ echo help_header("Nápověda: Hřbitovy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nový / Upravit existující hřbitovy</p></a>
-            <p>TNG vám umožní třídit a zobrazit vaše fotografie náhrobků podle hřbitovů. Aby toto fungovalo, musíte pro každé místo nastavit nový záznam hřbitova. Záznamy
-                hřbitovů v TNG se nevztahují k záznamům míst a pro hřitovy neexistuje konvence GEDCOM, takže pokud váš soubor GEDCOM obsehuje v některých místech pohřbů
+            <a id="add"><p class="subheadbold">Přidat nový / Upravit existující hřbitovy</p></a>
+            <p>TNG vám umožní třídit a zobrazit vaše fotografie náhrobků podle hřbitovů. Aby toto fungovalo, musíte pro každé místo nastavit nový
+                záznam hřbitova. Záznamy
+                hřbitovů v TNG se nevztahují k záznamům míst a pro hřitovy neexistuje konvence GEDCOM, takže pokud váš soubor GEDCOM obsehuje v
+                některých místech pohřbů
                 názvy hřbitovů, tyto názvy po naimporování souboru GEDCOM nebudou v TNG založeny jako záznamy hřbitovů.</p>
 
             <p>Chcete-li přidat nový hřbitov, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář.
@@ -109,12 +115,13 @@ echo help_header("Nápověda: Hřbitovy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat hřbitovy</p></a>
+            <a id="delete"><p class="subheadbold">Vymazat hřbitovy</p></a>
 
-            <p>Chcete-li odstranit hřbitov, použijte záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Vymazat vedle tohoto záznamu hřbitova. Tento řádek změní
-                barvu a poté po odstranění hřbitova zmizí. Chcete-li najednou odstranit více hřbitovů, zaškrtněte políčko ve sloupci Vybrat vedle každého hřbitova, který
+            <p>Chcete-li odstranit hřbitov, použijte záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Vymazat
+                vedle tohoto záznamu hřbitova. Tento řádek změní
+                barvu a poté po odstranění hřbitova zmizí. Chcete-li najednou odstranit více hřbitovů, zaškrtněte políčko ve sloupci Vybrat vedle
+                každého hřbitova, který
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat označené" na stránce nahoře</p>
-
 
         </td>
     </tr>

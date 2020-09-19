@@ -4,21 +4,21 @@ echo help_header("Nápověda: Média");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="more_help.php" class="lightlink">&laquo; Nápověda: Více</a> &nbsp; | &nbsp;
-        <a href="collections_help.php" class="lightlink">Nápověda: Kolekce &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Média</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="more_help.php" class="lightlink">&laquo; Nápověda: Více</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">Nápověda: Kolekce &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Média</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Přidat</a> &nbsp; | &nbsp;
@@ -26,27 +26,30 @@ echo help_header("Nápověda: Média");
         <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
         <a href="#convert" class="lightlink">Převést</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">Přidat do alba</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Seřadit</a> &nbsp; | &nbsp;
-                <a href="#thumbs" class="lightlink">Náhledy</a> &nbsp; | &nbsp;
-                <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
-                <a href="#upload" class="lightlink">Nahrát</a>
-            </p>
+          <a href="#sort" class="lightlink">Seřadit</a> &nbsp; | &nbsp;
+          <a href="#thumbs" class="lightlink">Náhledy</a> &nbsp; | &nbsp;
+          <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
+          <a href="#upload" class="lightlink">Nahrát</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
             <p>Nalezení existujících médií vyhledáním celého nebo části <strong>ID čísla média, titulu, popisu, umístění</strong> nebo
                 <strong>základního textu</strong>. Pro další zúžení vašeho výběru použijte další dostupné možnosti.
-                Vyhledávání bez vybraných voleb a bez zapsaných hodnot ve výběrových polí povede k výběru všech médií z vaší databáze. Vyhledávací volby obsahují:</p>
+                Vyhledávání bez vybraných voleb a bez zapsaných hodnot ve výběrových polí povede k výběru všech médií z vaší databáze. Vyhledávací
+                volby obsahují:</p>
 
             <span class="optionhead">Strom</span>
             <p>Omezí výsledek na média spojená pouze s vybraným stromem.</p>
 
             <span class="optionhead">Kolekce</span>
-            <p>Omezí výsledek na média vybraného typu kolekce. Chcete-li přidat novou kolekci, klikněte na tlačítko "Přidat kolekci", a v zobrazeném okně vyplňte formulář.
-                Pro vaši novou kolekci musíte vytvořit složku a musíte vytvořit vlastní ikonu (nebo použít nějakou stávající). Pole "Stejné nastavení jako"
+            <p>Omezí výsledek na média vybraného typu kolekce. Chcete-li přidat novou kolekci, klikněte na tlačítko "Přidat kolekci", a v zobrazeném
+                okně vyplňte formulář.
+                Pro vaši novou kolekci musíte vytvořit složku a musíte vytvořit vlastní ikonu (nebo použít nějakou stávající). Pole "Stejné nastavení
+                jako"
                 vám umožní označit, ze které ze stávajících kolekcí si nová kolekce vezme nastavení.</p>
 
             <span class="optionhead">Přípona souboru</span>
@@ -66,8 +69,10 @@ echo help_header("Nápověda: Média");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více osob, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, která má být odstraněn, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více osob,
+                zaškrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u každého záznamu, která má být odstraněn, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
+                Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
         </td>
@@ -76,16 +81,19 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nové médium</p></a>
+            <a id="add"><p class="subheadbold">Přidat nové médium</p></a>
 
-            <p>Chcete-li přidat nové médium, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako obrázek mapy, informace o místě a
+            <p>Chcete-li přidat nové médium, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako obrázek
+                mapy, informace o místě a
                 odkazy na osoby, rodiny a další subjekty můžete přidat po uložení nebo zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
             <span class="optionhead">Kolekce</span>
-            <p>Vyberte typ média, kterým je vaše položka (např. fotografie, dokumenty, náhrobky, vyprávění, zvukový záznam nebo video). Žádná z <span class="emphasis">kolekcí</span> médií není omezena typem souboru.</p>
+            <p>Vyberte typ média, kterým je vaše položka (např. fotografie, dokumenty, náhrobky, vyprávění, zvukový záznam nebo video). Žádná z <span
+                    class="emphasis">kolekcí</span> médií není omezena typem souboru.</p>
 
             <span class="optionhead">Toto médium je z externího zdroje</span>
-            <p>Toto políčko zaškrtněte, pokud se obrázek nachází někde na internetu jinde než na vašem serveru. Do pole označeného "URL média" musíte zapsat
+            <p>Toto políčko zaškrtněte, pokud se obrázek nachází někde na internetu jinde než na vašem serveru. Do pole označeného "URL média" musíte
+                zapsat
                 úplnou webovou adresu (např. <em>http://www.tentoweb.com/image.jpg</em>), a
                 pokud chcete mít náhled tohoto obrázku, musíte přidat vlastní (TNG jej nevytvoří).</p>
 
@@ -186,7 +194,8 @@ echo help_header("Nápověda: Média");
                 spojené se hřbitovem tímto způsobem zobrazí v horní části stránky.</p>
 
             <span class="optionhead">Ukázat mapu hřbitova a médium, kdykoliv bude tato položka zobrazena</span>
-            <p><strong>(pouze Náhrobky)</strong> Pokud má hřbitov, na které se náhrobek nachází, přiloženou mapu nebo fotografii, zaškrtnutím tohoto políčka se mapa nebo fotografie zobrazí kdykoli
+            <p><strong>(pouze Náhrobky)</strong> Pokud má hřbitov, na které se náhrobek nachází, přiloženou mapu nebo fotografii, zaškrtnutím tohoto
+                políčka se mapa nebo fotografie zobrazí kdykoli
                 je zobrazen náhrobek.</p>
 
         </td>
@@ -195,17 +204,21 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="edit"><p class="subheadbold">Upravit existující médium</p></a>
-            <p>Chcete-li upravit existující médium, k nalezení položky použijte záložku <a href="#search">Hledat</a>, a poté klikněte na ikonu Upravit vedle této položky.
+            <a id="edit"><p class="subheadbold">Upravit existující médium</p></a>
+            <p>Chcete-li upravit existující médium, k nalezení položky použijte záložku <a href="#search">Hledat</a>, a poté klikněte na ikonu Upravit
+                vedle této položky.
                 Význam polí, která nejsou na stránce "Přidat nové médium", je následující:</p>
 
             <span class="optionhead">Odkazy na médium</span>
-            <p>Toto médium můžete připojit k osobám, rodinám, pramenům, úložištím pramenů nebo místům. Pro každý odkaz nejdříve vyberte strom spojený se subjektem, se kterým chcete položku spojit.
-                Dále vyberte typ odkazu (osoba, rodina, pramen, úložiště pramenů nebo místo) a na závěr ID číslo nebo název (pouze u místa) subjektu, se kterým položku spojujete.
+            <p>Toto médium můžete připojit k osobám, rodinám, pramenům, úložištím pramenů nebo místům. Pro každý odkaz nejdříve vyberte strom spojený
+                se subjektem, se kterým chcete položku spojit.
+                Dále vyberte typ odkazu (osoba, rodina, pramen, úložiště pramenů nebo místo) a na závěr ID číslo nebo název (pouze u místa) subjektu,
+                se kterým položku spojujete.
                 Po vložení všech těchto údajů klikněte na tlačítko "Přidat".</p>
 
             <p>Pokud neznáte ID číslo nebo přesný název místa, kliknutím na ikonu lupy je můžete vyhledat. Objeví se okno, ve kterém můžete hledat.
-                Po nalezení požadovaného popisu subjektu klikněte na odkaz "Přidat" vlevo. Kliknout na "Přidat" můžete u více subjektů. Po ukončení vytváření
+                Po nalezení požadovaného popisu subjektu klikněte na odkaz "Přidat" vlevo. Kliknout na "Přidat" můžete u více subjektů. Po ukončení
+                vytváření
                 odkazů klikněte na odkaz "Zavřít okno".</p>
 
             <p><strong>Existující odkazy:</strong> Existující odkazy můžete upravit nebo vymazat kliknutím na ikonu Upravit nebo Vymazat vedle tohoto odkazu. Úprava odkazu
@@ -256,7 +269,8 @@ echo help_header("Nápověda: Média");
 
             <p>Tento postup můžete opakovat pro další oblasti. Každý nový kód bude vložen na konec obsahu pole Mapa obrázku.</p>
 
-            <p>Chcete-li různé části vašeho obrázku spojit s různými stránkami nebo zobrazit krátké zprávy při přemístění kursoru myší nad tyto části, zapište do tohoto pole
+            <p>Chcete-li různé části vašeho obrázku spojit s různými stránkami nebo zobrazit krátké zprávy při přemístění kursoru myší nad tyto části,
+                zapište do tohoto pole
                 potřebný kód mapy obrázku. Vytvořit svoji vlastní mapu obrázku můžete podle sekce Tvorba mapy obrázku na konci stránky.</p>
 
         </td>
@@ -265,10 +279,12 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat médium</p></a>
+            <a id="delete"><p class="subheadbold">Vymazat médium</p></a>
 
-            <p>Chcete-li odstranit jednu mediální položku, použijte záložku <a href="#search">Hledat</a> pro nalezení dané položky, a poté klikněte na ikonu Vymazat vedle této položky. Tento řádek změní
-                barvu a poté po odstranění položky zmizí. Chcete-li najednou odstranit více položek, zaškrtněte políčko ve sloupci Vybrat vedle každé položky, kterou
+            <p>Chcete-li odstranit jednu mediální položku, použijte záložku <a href="#search">Hledat</a> pro nalezení dané položky, a poté klikněte na
+                ikonu Vymazat vedle této položky. Tento řádek změní
+                barvu a poté po odstranění položky zmizí. Chcete-li najednou odstranit více položek, zaškrtněte políčko ve sloupci Vybrat vedle každé
+                položky, kterou
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat vybrané" na stránce nahoře</p>
 
         </td>
@@ -277,9 +293,11 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="convert"><p class="subheadbold">Převést médium z jedné kolekce do jiné</p></a>
-            Chcete-li převést mediální položky z jednoho typu média nebo "kolekce" do jiné, zaškrtněte na záložce <a href="#search">Hledat</a> políčko vedle těchto položek,
-            poté z rozbalovacího seznamu v horní části stránky vedle tlačítka "Převést vybrané na" vyberte novou kolekci. Na závěr klikněte na tlačítko "Převést vybrané na".
+            <a id="convert"><p class="subheadbold">Převést médium z jedné kolekce do jiné</p></a>
+            Chcete-li převést mediální položky z jednoho typu média nebo "kolekce" do jiné, zaškrtněte na záložce <a href="#search">Hledat</a> políčko
+            vedle těchto položek,
+            poté z rozbalovacího seznamu v horní části stránky vedle tlačítka "Převést vybrané na" vyberte novou kolekci. Na závěr klikněte na
+            tlačítko "Převést vybrané na".
             Stránka bude zobrazena znovu s červenou stavovou zprávou nahoře.</p>
 
         </td>
@@ -288,9 +306,11 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="album"><p class="subheadbold">Přidat médium do alba</p></a>
-            Chcete-li médium přidat do alba, zaškrtněte políčko Vybrat vedle položek, které mají být přidány, poté z rozbalovacího seznamu v horní části stránky
-            vedle tlačítka "Přidat do alba" vyberte album. Na závěr klikněte na tlačítko "Přidat do alba". Média můžete do alba přidat také z Admin/Alba.</p>
+            <a id="album"><p class="subheadbold">Přidat médium do alba</p></a>
+            Chcete-li médium přidat do alba, zaškrtněte políčko Vybrat vedle položek, které mají být přidány, poté z rozbalovacího seznamu v horní
+            části stránky
+            vedle tlačítka "Přidat do alba" vyberte album. Na závěr klikněte na tlačítko "Přidat do alba". Média můžete do alba přidat také z
+            Admin/Alba.</p>
 
         </td>
     </tr>
@@ -298,17 +318,21 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="sort"><p class="subheadbold">Seřadit média</p></a>
-            <p>Standardně jsou média spojená s osobou, rodinou, pramenem, úložištěm pramenů nebo místem seřazena v pořadí, ve kterém byla k tomuto subjektu připojena. Toto pořadí
+            <a id="sort"><p class="subheadbold">Seřadit média</p></a>
+            <p>Standardně jsou média spojená s osobou, rodinou, pramenem, úložištěm pramenů nebo místem seřazena v pořadí, ve kterém byla k tomuto
+                subjektu připojena. Toto pořadí
                 můžete změnit na záložce Media/Seřadit.</p>
 
             <span class="optionhead">Strom, Typ odkazu, Kolekce:</span>
-            <p>Zvolte strom spojený se subjektem, u kterého chcete změnit pořadí médií. Dále vyberte typ odkazu (osoba, rodina, pramen, úložiště pramenů nebo místo) a
+            <p>Zvolte strom spojený se subjektem, u kterého chcete změnit pořadí médií. Dále vyberte typ odkazu (osoba, rodina, pramen, úložiště
+                pramenů nebo místo) a
                 kolekci, kterou chcete přetřídit.</p>
 
             <span class="optionhead">ID číslo:</span>
-            <p>Zapište ID číslo nebo název (pouze místa) subjektu. Pokud neznáte ID číslo nebo přesný název místa, kliknutím na ikonu lupy je můžete vyhledat.
-                Po nalezení požadovaného subjektu klikněte na odkaz "Vybrat" vedle tohoto subjektu. Okno se zvře a vybrané ID číslo se objeví v poli ID číslo.</p>
+            <p>Zapište ID číslo nebo název (pouze místa) subjektu. Pokud neznáte ID číslo nebo přesný název místa, kliknutím na ikonu lupy je můžete
+                vyhledat.
+                Po nalezení požadovaného subjektu klikněte na odkaz "Vybrat" vedle tohoto subjektu. Okno se zvře a vybrané ID číslo se objeví v poli
+                ID číslo.</p>
 
             <span class="optionhead">Spojeno s určitou událostí</span>
             <p>Pokud chcete přetřídit mediální položky připojené k určité události spojené s připojeným subjektem, zaškrtněte políčko označené "Spojeno s určitou událostí" PO
@@ -327,8 +351,10 @@ echo help_header("Nápověda: Média");
 
             <span class="optionhead">Výchozí fotografie</span>
             <p>Při třídění můžete zvolit jakoukoli zobrazenou fotografii jako <strong>Výchozí fotografii</strong> aktuálního subjektu. Znamená to, že se náhled zvoleného obrázku
-                objeví ve schématu vývodu a v titulech stránek s názvem nebo popisem aktuálního subjektu. Chcete-li nastavit nebo vymazat označení Výchozí fotografie, podržte
-                kurzor myši nad obrázkem v seznamu, a poté klikněte na jednu z voleb, které se objeví: "Nastavit jako výchozí" nebo "Odstranit". Aktuální výchozí fotografii
+                objeví ve schématu vývodu a v titulech stránek s názvem nebo popisem aktuálního subjektu. Chcete-li nastavit nebo vymazat označení
+                Výchozí fotografie, podržte
+                kurzor myši nad obrázkem v seznamu, a poté klikněte na jednu z voleb, které se objeví: "Nastavit jako výchozí" nebo "Odstranit".
+                Aktuální výchozí fotografii
                 lze odstranit také kliknutím na odkaz "Odstranit výchozí fotografii" na stránce nahoře.</p>
 
         </td>
@@ -337,23 +363,29 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="thumbs"><p class="subheadbold">Náhledy</p></a>
+            <a id="thumbs"><p class="subheadbold">Náhledy</p></a>
 
             <span class="optionhead">Vytvořit náhledy</span>
             <p>Pop kliknutí na tlačítko "Vygenerovat" pod touto volbou, vytvoří TNG automaticky náhledy všech obrázků formátu JPG, GIF nebo
                 PNG, které nemají existující náhledy. Standardně bude název obrázku stejný jako je název velkého obrázku a bude obsahovat
-                předponu a/nebo příponu, které jsou definovány v Základním nastavení. Zaškrtnutím políčka označeného "Obnovit existující náhledy" vytvoříte
-                náhledy všech obrázků, včetně těch, které je již mají. Políčko "Obnovit názvy cest k náhledům, kde soubor neexistuje" zaškrtněte, pokud
-                si myslíte, že máte některé náhledy, které ukazují na neplatné soubory. To způsobí, že TNG přehodnotí názvy cest u náhledů před obnovením náhledů.
+                předponu a/nebo příponu, které jsou definovány v Základním nastavení. Zaškrtnutím políčka označeného "Obnovit existující náhledy"
+                vytvoříte
+                náhledy všech obrázků, včetně těch, které je již mají. Políčko "Obnovit názvy cest k náhledům, kde soubor neexistuje" zaškrtněte,
+                pokud
+                si myslíte, že máte některé náhledy, které ukazují na neplatné soubory. To způsobí, že TNG přehodnotí názvy cest u náhledů před
+                obnovením náhledů.
                 Bez této funkce by docházelo k opětovnému vytváření některých neplatných názvů náhledů.</p>
 
             <p><strong>POZN.</strong>: Pokud nevidíte sekci Vytvořit náhledy, váš server nepodporuje knihovnu GD image.</p>
 
             <span class="optionhead">Přiřadit výchozí fotografie</span>
             <p>Tato volba vám umožní nastavit jako výchozí fotografii první fotografii u každé osoby, rodiny nebo pramenu
-                (ta, která bude zobrazena ve schématu vývodu, rodiny a nahoře na každé stránce, která je s daným subjektem spojena). Přiřazení může být provedeno
-                pro všechny osoby, rodiny, prameny a úložiště pramenů v určitém stromu výběrem tohoto stromu z rozbalovacího seznamu. Zaškrtnutím políčka
-                označeného "Přepsat existující nastavení" nastavíte výchozí fotografie bez ohledu na to, co bylo nastaveno dříve. Ponechání tohoto políčka
+                (ta, která bude zobrazena ve schématu vývodu, rodiny a nahoře na každé stránce, která je s daným subjektem spojena). Přiřazení může
+                být provedeno
+                pro všechny osoby, rodiny, prameny a úložiště pramenů v určitém stromu výběrem tohoto stromu z rozbalovacího seznamu. Zaškrtnutím
+                políčka
+                označeného "Přepsat existující nastavení" nastavíte výchozí fotografie bez ohledu na to, co bylo nastaveno dříve. Ponechání tohoto
+                políčka
                 nezaškrtnutého vám umožní ponechat dříve nastavené výchozí fotografie.</p>
         </td>
     </tr>
@@ -361,15 +393,17 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="import"><p class="subheadbold">Import médií</p></a>
+            <a id="import"><p class="subheadbold">Import médií</p></a>
 
             <span class="optionhead">Cíl</span>
             <p>Vytvoření záznamu média pro každý fyzický soubor ve vaší složce médií s názvem souboru jako titulem každého záznamu.</p>
 
             <span class="optionhead">Použití</span>
-            <p>Chcete-li import provést, zvolte nejprve kolekci (nebo vytvořte novou kolekci) a strom (pokud mají být vkládané položky spojeny s určitým stromem), poté klikněte na tlačítko "Import".
+            <p>Chcete-li import provést, zvolte nejprve kolekci (nebo vytvořte novou kolekci) a strom (pokud mají být vkládané položky spojeny s
+                určitým stromem), poté klikněte na tlačítko "Import".
                 Existuje-li již pro položku záznam, nový záznam se nevytvoří. "Klíčem" (který určí, zda již záznam existuje nebo ne) je
-                název souboru a strom. Pokud importujete stejnou položku do více stromů (nebo pokud byla položka kdysi importována do "všech stromů" a jindy
+                název souboru a strom. Pokud importujete stejnou položku do více stromů (nebo pokud byla položka kdysi importována do "všech stromů" a
+                jindy
                 jen do určitého stromu), TNG nepozná, že již máte záznam pro tuto položku a vytvoří jej znovu.</p>
 
         </td>
@@ -378,16 +412,18 @@ echo help_header("Nápověda: Média");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="upload"><p class="subheadbold">Nahrání médií</p></a>
+            <a id="upload"><p class="subheadbold">Nahrání médií</p></a>
 
             <span class="optionhead">Cíl</span>
             <p>Dávkové nahrání více položek médií, jejich opatření tituly a popisy, včetně jejich připojení k osobám, rodinám, pramenům nebo místům
                 přímo z této obrazovky.</p>
 
             <span class="optionhead">Použití</span>
-            <p>Chcete-li tuto funkci použít, zvolte nejprve kolekci a strom (pokud mají být vkládané položky spojeny s určitým stromem), poté klikněte na "Přidat soubory" a z vašeho počítače vyberte soubory pro nahrání. Většina prohlížečů (mimo Internet
+            <p>Chcete-li tuto funkci použít, zvolte nejprve kolekci a strom (pokud mají být vkládané položky spojeny s určitým stromem), poté klikněte
+                na "Přidat soubory" a z vašeho počítače vyberte soubory pro nahrání. Většina prohlížečů (mimo Internet
                 Explorer) vám umožní soubory chytit a přetáhnout
-                z jiného okna přímo do bílé oblasti ve středu obrazovky. Chcete-li zvolit jako cíl pro nahrání vašich souborů podsložku v rámci zvolené složky, zapište do pole "Složka" její název nebo použijte tlačítko
+                z jiného okna přímo do bílé oblasti ve středu obrazovky. Chcete-li zvolit jako cíl pro nahrání vašich souborů podsložku v rámci
+                zvolené složky, zapište do pole "Složka" její název nebo použijte tlačítko
                 "Vybrat" pro výběr podsložky, která již existuje. Nechcete-li soubory uložit do podsložky, nechte pole Složka prázdné.
                 Po dokončení výběru souborů a jejich umístění můžete zahájit nahrání všech souborů najednou kliknutím
                 na tlačítko "Spustit nahrání" na stránce nahoře. Nebo můžete nahrát soubory jednotlivě kliknutím na tlačítko "Spustit" vedle příslušného souboru.

@@ -4,38 +4,42 @@ echo help_header("Pomoc: Miejsca");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="cemeteries_help.php" class="lightlink">&laquo; Pomoc: Cmentarze</a> &nbsp; | &nbsp;
-        <a href="places_googlemap_help.php" class="lightlink">: Mapy Google &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Miejsca</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="cemeteries_help.php" class="lightlink">&laquo; Pomoc: Cmentarze</a> &nbsp; | &nbsp;
+                <a href="places_googlemap_help.php" class="lightlink">: Mapy Google &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Miejsca</span>
       <p class="smaller menu">
-        <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj lub Edycja</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Scal</a>
+          <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
+          <a href="#add" class="lightlink">Dodaj lub Edycja</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Scal</a>
       </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Szukanie</p></a>
+            <a id="search"><p class="subheadbold">Szukanie</p></a>
             <p>
-            <p>Znajdź istniejące miejsce szukając jego pełnej nazwy lub jej części. Wybierz drzewo lub zaznacz pole "Tylko dokładna nazwa" w celu dalszego zawężenia kryteriów wyszukiwania.
+            <p>Znajdź istniejące miejsce szukając jego pełnej nazwy lub jej części. Wybierz drzewo lub zaznacz pole "Tylko dokładna nazwa" w celu
+                dalszego zawężenia kryteriów wyszukiwania.
                 Jeśli nic nie wybierzesz, w polu wyszukiwania znajdziesz wszystkie miejsca zapisane w bazie danych.</p></p>
 
-            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który przywraca domyślne wartości i wszystkich wyszukiwań.</p>
+            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
+                przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
             <span class="optionhead">Czynność</span>
-            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż jeden rekord jednocześnie, kliknij pole w kolumnie
-                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
+            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
+                jeden rekord jednocześnie, kliknij pole w kolumnie
+                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
+                górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
                 aby zaznaczyć lub usunąć zaznaczenie wszystkich pól wyboru naraz.</p>
 
         </td>
@@ -44,16 +48,20 @@ echo help_header("Pomoc: Miejsca");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="add"><p class="subheadbold">Dodaj nowe / Edytuj istniejące miejsca</p></a>
+            <a id="add"><p class="subheadbold">Dodaj nowe / Edytuj istniejące miejsca</p></a>
 
-            <p>TNG automatycznie dodaje nowy rekord Miejsca za każdym razem, gdy są dodawane nowe miejsca w Administracja / Osoby, Administracja / Rodziny oraz jako część niestandardowe wydarzenia.
-                Jeśli wprowadzasz zmiany istniejącego miejsca w którymś z tych działów i jest to nowa, unikatowa nazwa miejsca, utworzony zostanie nowy zapis miejsca.</p>
+            <p>TNG automatycznie dodaje nowy rekord Miejsca za każdym razem, gdy są dodawane nowe miejsca w Administracja / Osoby, Administracja /
+                Rodziny oraz jako część niestandardowe wydarzenia.
+                Jeśli wprowadzasz zmiany istniejącego miejsca w którymś z tych działów i jest to nowa, unikatowa nazwa miejsca, utworzony zostanie
+                nowy zapis miejsca.</p>
 
-            <p>Aby dodać nowe miejsce, kliknij przycisk <strong>Dodaj nowe</strong>, a następnie wypełnić formularz. Aby edytować istniejące miejsce, należy użyć przycisku <a href="#search">Szukaj</a> aby zlokalizować miejsce,
+            <p>Aby dodać nowe miejsce, kliknij przycisk <strong>Dodaj nowe</strong>, a następnie wypełnić formularz. Aby edytować istniejące miejsce,
+                należy użyć przycisku <a href="#search">Szukaj</a> aby zlokalizować miejsce,
                 a następnie kliknąć na ikonkę Edycja obok wybranej linii. Podczas dodawania lub edycji miejsca dostępne są następujące elementy:</p>
 
             <span class="optionhead">Drzewo</span>
-            <p>Wybierz jedno z istniejących drzew. Każde miejsce musi być przypisane do drzewa. <strong> Uwaga: </strong> Drzewo nie może być zmieniane dla raz utworzonego miejsca (zamiast tego możesz usunąć miejsce i dodać go ponownie dla innego drzewa).
+            <p>Wybierz jedno z istniejących drzew. Każde miejsce musi być przypisane do drzewa. <strong> Uwaga: </strong> Drzewo nie może być
+                zmieniane dla raz utworzonego miejsca (zamiast tego możesz usunąć miejsce i dodać go ponownie dla innego drzewa).
             </p>
 
             <span class="optionhead">Miejsce</span>
@@ -83,7 +91,8 @@ echo help_header("Pomoc: Miejsca");
             <span class="optionhead">Zmień w nazwy miejsca w istniejących wydarzeniach</span>
             <p>Zaznaczenie tego pola (widoczne tylko podczas edycji istniejącego miejsca) spowoduje, że wszystkie wydarzenia, w których to miejsce jest wykorzystywane będą uaktualniane podczas zapisywania zmian.</p>
 
-            <p><strong>UWAGA:</strong> Kolejne importy GEDCOM z wykorzystaniem opcji "Nadpisz Wszystkie dane" <strong>NIE zastępują</strong> ani nie usuwają istniejących danych miejsca, jeżeli istniejące zapisy zawierają informacje o
+            <p><strong>UWAGA:</strong> Kolejne importy GEDCOM z wykorzystaniem opcji "Nadpisz Wszystkie dane" <strong>NIE zastępują</strong> ani nie
+                usuwają istniejących danych miejsca, jeżeli istniejące zapisy zawierają informacje o
                 szerokości, długości lub notatkach, lub jeśli są załączone jakiekolwiek media.</p>
 
         </td>
@@ -92,9 +101,11 @@ echo help_header("Pomoc: Miejsca");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="delete"><p class="subheadbold">Usuwanie miejsc</p></a>
-            <p>Aby usunąć jedno miejsce, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego miejsca. Wiersz zmieni kolor,
-                a następnie zniknie. Miejsce zostało usunięte. Aby usunąć więcej niż jedno miejsce naraz, zaznacz pole w kolumnie Wybierz obok każdego miejsca, które ma zostać usunięte, a następnie kliknij
+            <a id="delete"><p class="subheadbold">Usuwanie miejsc</p></a>
+            <p>Aby usunąć jedno miejsce, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na
+                ikonkę Usuń obok tego miejsca. Wiersz zmieni kolor,
+                a następnie zniknie. Miejsce zostało usunięte. Aby usunąć więcej niż jedno miejsce naraz, zaznacz pole w kolumnie Wybierz obok każdego
+                miejsca, które ma zostać usunięte, a następnie kliknij
                 przycisk "Usuń wybrane" znajdujący się na górze strony.</p>
 
         </td>
@@ -103,17 +114,20 @@ echo help_header("Pomoc: Miejsca");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="merge"><p class="subheadbold">Scalanie miejsc</p></a>
+            <a id="merge"><p class="subheadbold">Scalanie miejsc</p></a>
             Aby dokonać scalenia nazw miejsc, które mogą być nieco inne, lecz odnosić się do tej samej lokalizacji, kliknij na "Scalanie".
             Użytkownik decyduje, czy dwa zapisy są takie same, czy też nie.</p>
 
             <span class="optionhead">Znajdż kandydatów do scalenia</span>
-            <p>Najpierw wybierz drzewo. Nie można scalać miejsc z różnych drzew, a więc możesz wybrać tylko jedno drzewo. Wprowadź kryteria wyszukiwania,
-                które będą wspólne dla wszystkich potencjalnych duplikatów, a następnie kliknij przycisk "Kontynuuj" (na przykład, możesz wpisać <em>Salt Lake</em> aby znaleźć
+            <p>Najpierw wybierz drzewo. Nie można scalać miejsc z różnych drzew, a więc możesz wybrać tylko jedno drzewo. Wprowadź kryteria
+                wyszukiwania,
+                które będą wspólne dla wszystkich potencjalnych duplikatów, a następnie kliknij przycisk "Kontynuuj" (na przykład, możesz wpisać <em>Salt
+                    Lake</em> aby znaleźć
                 <em>Salt Lake</em> i <em>Salt Lake City</em>).</p>
 
             <span class="optionhead">Wybierz miejsca do scalenia</span>
-            <p>Na tej karcie można będzie zobaczyć listę miejsc pasującą do kryteriów wyszukiwania. Jeśli którykolwiek z nich odnosi się do tej samej lokalizacji, zaznacz pole
+            <p>Na tej karcie można będzie zobaczyć listę miejsc pasującą do kryteriów wyszukiwania. Jeśli którykolwiek z nich odnosi się do tej samej
+                lokalizacji, zaznacz pole
                 "scal te (usuń)" po lewej stronie dla każdego z nich. Każdy wybrany wiersz będzie podświetli się na czerwono. Następnie kliknij kółko w kolumnie oznaczonej "do tego (zachowaj)".
                 Będzie to nazwa miejsca, która zastąpi wszystkie zaznaczone miejsca. Ten wiersz stanie się zielony. Nie ma znaczenia, czy nazwa miejsca do zachowania jest również jednym z tych
                 zaznaczonych w ramach "scal te (usuń)". Będziesz mógł wybrać tylko jeden zapis w kolumnie "zachowaj", ale można wybrać dowolną liczbę duplikatów aby je z nim scalić.

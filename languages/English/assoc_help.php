@@ -4,17 +4,17 @@ echo help_header("Help: Associations");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="repositories_help.php" class="lightlink">&laquo; Help: Repositories</a> &nbsp; | &nbsp;
-        <a href="notes_help.php" class="lightlink">Help: Notes &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Associations</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="repositories_help.php" class="lightlink">&laquo; Help: Repositories</a> &nbsp; | &nbsp;
+                <a href="notes_help.php" class="lightlink">Help: Notes &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Associations</span>
       <p class="smaller menu">
         <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add/Edit/Delete</a>
@@ -32,9 +32,10 @@ echo help_header("Help: Associations");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="what"><p class="subheadbold">What are Associations?</p></a>
+            <a id="what"><p class="subheadbold">What are Associations?</p></a>
 
-            <p>An <strong>Association</strong> is a record of a relationship between two people, between two families, or between a person and a family.
+            <p>An <strong>Association</strong> is a record of a relationship between two people, between two families, or between a person and a
+                family.
                 The relationship may not be obvious from the regular tree structure of your genealogy. In fact, two people/families who
                 are linked in an Association may not be related at all.</p>
 
@@ -43,7 +44,7 @@ echo help_header("Help: Associations");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Adding/Editing/Deleting Associations</p></a>
+            <a id="add"><p class="subheadbold">Adding/Editing/Deleting Associations</p></a>
 
             <p>To add, edit or delete associations for an individual, look up person in Admin/People and edit
                 the individual record, then click on the Associations icon at the top of the screen (if associations already exist,
@@ -51,7 +52,8 @@ echo help_header("Help: Associations");
                 all associations existing for the active individual. To do the same for family associations, look up the family in Admin/Families
                 and edit the family record, then proceed as outlined above.</p>
 
-            <p>To add a new association, click on the "Add New" button and fill out the form. If the selected person or family did not have any previous
+            <p>To add a new association, click on the "Add New" button and fill out the form. If the selected person or family did not have any
+                previous
                 associations, you will be sent directly to the "Add New Association" screen. Once you're on that screen, you will be able to indicate
                 whether the associated entity is a person or family.</p>
 

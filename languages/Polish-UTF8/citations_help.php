@@ -4,42 +4,46 @@ echo help_header("Pomoc: Cytaty");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="notes_help.php" class="lightlink">&laquo; Pomoc: Notatki</a> &nbsp; | &nbsp;
-        <a href="events_help.php" class="lightlink">Pomoc: Wydarzenia &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Cytaty</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to jest cytat?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj/Edycja/Usuń</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="notes_help.php" class="lightlink">&laquo; Pomoc: Notatki</a> &nbsp; | &nbsp;
+                <a href="events_help.php" class="lightlink">Pomoc: Wydarzenia &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Cytaty</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to jest cytat?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj/Edycja/Usuń</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Co to są cytaty?</p></a>
+            <a id="what"><p class="subheadbold">Co to są cytaty?</p></a>
 
-            <p><strong>Cytat</strong> jest odniesieniem do zapisu źródła, dokonanym z zamiarem udowodnienia prawdziwości niektórych informacji. Źródło zawiera
-                zwykle ogólne dane, gdzie została znaleziona informacja (np. księga lub spis ludności), cytat natomiast zawiera zwylke więcej szczegółowych
-                informacji (np. na której stronie). To samo źródło może być cytowane w treści dokumentu wiele razy dla różnych osób, rodzin, notatek i wydarzeń.</p>
-
+            <p><strong>Cytat</strong> jest odniesieniem do zapisu źródła, dokonanym z zamiarem udowodnienia prawdziwości niektórych informacji. Źródło
+                zawiera
+                zwykle ogólne dane, gdzie została znaleziona informacja (np. księga lub spis ludności), cytat natomiast zawiera zwylke więcej
+                szczegółowych
+                informacji (np. na której stronie). To samo źródło może być cytowane w treści dokumentu wiele razy dla różnych osób, rodzin, notatek i
+                wydarzeń.</p>
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Dodawanie/Edycja/Usuwanie cytatów</p></a>
+            <a id="add"><p class="subheadbold">Dodawanie/Edycja/Usuwanie cytatów</p></a>
 
-            <p>Aby dodać, edytować lub usuwać cytaty, należy kliknąć na ikonkę na górze ekranu lub obok wybranego pola (jeśli istnieją już jakieś cytaty,
-                ikonka będzie oznaczona zieloną kropką). Po kliknięciu ikonki, pojawi się małe okienko (popup), w którym zobaczysz wszystkie istniejące dla wybranego źródła, wydarzenia cytaty.</p>
+            <p>Aby dodać, edytować lub usuwać cytaty, należy kliknąć na ikonkę na górze ekranu lub obok wybranego pola (jeśli istnieją już jakieś
+                cytaty,
+                ikonka będzie oznaczona zieloną kropką). Po kliknięciu ikonki, pojawi się małe okienko (popup), w którym zobaczysz wszystkie
+                istniejące dla wybranego źródła, wydarzenia cytaty.</p>
 
             <p>Aby dodać nowy cytat, kliknij na "Dodaj nowe" i wypełnić formularz. </p>
 

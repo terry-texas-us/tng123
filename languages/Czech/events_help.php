@@ -4,37 +4,40 @@ echo help_header("N�pov�da: Ud�losti");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="citations_help.php" class="lightlink">&laquo; N�pov�da: Citace</a> &nbsp; | &nbsp;
-        <a href="more_help.php" class="lightlink">N�pov�da: V�ce &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Ud�losti</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="citations_help.php" class="lightlink">&laquo; N�pov�da: Citace</a> &nbsp; | &nbsp;
+                <a href="more_help.php" class="lightlink">N�pov�da: V�ce &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Ud�losti</span>
       <p class="smaller menu">
         <a href="#what" class="lightlink">Standardn� a vlastn�</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-        <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#citations" class="lightlink">Citace</a>
-            </p>
+          <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+          <a href="#del" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#citations" class="lightlink">Citace</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Standardn� a vlastn� ud�losti</p></a>
-            <p>Ud�losti obvykl� jako je narozen�, �mrt�, s�atek a n�kter� dal�� se vkl�daj� na hlavn� str�nce osoby, rodiny, pramenu a �lo�i�t� pramen�
-                a jsou ulo�eny do odpov�daj�c�ch tabulek v datab�zi. Dokumentace TNG na tyto ud�losti odkazuje jako na "standardn�" ud�losti. V�echny ostatn� ud�losti jsou naz�v�ny "vlastn�" ud�losti
-                a jsou spravov�ny v sekci <strong>Dal�� ud�losti</strong> na str�nk�ch osoby, rodiny, pramenu a �lo�i�t� pramen�. Tyto ud�losti se ukl�daj� do zvl�tn�
+            <a id="what"><p class="subheadbold">Standardn� a vlastn� ud�losti</p></a>
+            <p>Ud�losti obvykl� jako je narozen�, �mrt�, s�atek a n�kter� dal�� se vkl�daj� na hlavn� str�nce osoby, rodiny, pramenu a �lo�i�t�
+                pramen�
+                a jsou ulo�eny do odpov�daj�c�ch tabulek v datab�zi. Dokumentace TNG na tyto ud�losti odkazuje jako na "standardn�" ud�losti. V�echny
+                ostatn� ud�losti jsou naz�v�ny "vlastn�" ud�losti
+                a jsou spravov�ny v sekci <strong>Dal�� ud�losti</strong> na str�nk�ch osoby, rodiny, pramenu a �lo�i�t� pramen�. Tyto ud�losti se
+                ukl�daj� do zvl�tn�
                 tabulky Ud�losti (Events). Toto t�ma n�pov�dy se v�nuje t�mto <em>vlastn�m</em> ud�lostem.</p>
 
         </td>
@@ -42,9 +45,10 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">P�idat ud�lost</p></a>
+            <a id="add"><p class="subheadbold">P�idat ud�lost</p></a>
 
-            <p>Chcete-li p�idat novou ud�lost, klikn�te na tla��tko "P�idat nov�" v sekci Dal�� ud�losti a vypl�te formul��. Pokud ud�losti ji� existuj�,
+            <p>Chcete-li p�idat novou ud�lost, klikn�te na tla��tko "P�idat nov�" v sekci Dal�� ud�losti a vypl�te formul��. Pokud ud�losti ji�
+                existuj�,
                 budou zobrazeny v sekci Dal�� ud�losti v tabulce. V dal�� ��sti jsou vysv�tlena dostupn� pole.</p>
 
         </td>
@@ -52,15 +56,17 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="edit"><p class="subheadbold">Upravit ud�lost</p></a>
+            <a id="edit"><p class="subheadbold">Upravit ud�lost</p></a>
 
-            <p>Pokud chcete upravit existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Upravit vedle t�to ud�losti (pro �pravu �daj� "standardn�ch" ud�lost�
+            <p>Pokud chcete upravit existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Upravit vedle t�to ud�losti (pro �pravu �daj�
+                "standardn�ch" ud�lost�
                 jako je narozen� nebo �mrt� zm��te jednodu�e text).</p>
 
             <p>P�i p�id�n� nebo �prav� ud�losti si v�imn�te n�sleduj�c�ho:</p>
 
             <span class="optionhead">Typ ud�losti</span>
-            <p>Vyberte typ ud�losti (u existuj�c� ud�losti nelze zm�nit typ ud�losti). Nen�-li typ ud�losti, kter� chcete, ve v�b�rov�m poli typ� ud�lost�,
+            <p>Vyberte typ ud�losti (u existuj�c� ud�losti nelze zm�nit typ ud�losti). Nen�-li typ ud�losti, kter� chcete, ve v�b�rov�m poli typ�
+                ud�lost�,
                 jd�te nejprve do Admin/Vlastn� typy ud�lost� a nastavte zde typ ud�losti, pak se vra�te na tuto obrazovku a vyberte jej.</p>
 
             <span class="optionhead">Datum ud�losti</span>
@@ -91,7 +97,8 @@ echo help_header("N�pov�da: Ud�losti");
           <p><span class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</span>: Adresa a ostatn� kontaktn� �daje spojen� s ud�lost�.</p>
 
             <span class="optionhead">Povinn� pole:</span>
-            <p>Vybrat mus�te typ ud�losti a nejm�n� do jednoho z n�sleduj�c�ch pol� mus�te n�co vlo�it: <strong>Datum ud�losti</strong>, <strong>M�sto ud�losti</strong>,
+            <p>Vybrat mus�te typ ud�losti a nejm�n� do jednoho z n�sleduj�c�ch pol� mus�te n�co vlo�it: <strong>Datum ud�losti</strong>, <strong>M�sto
+                    ud�losti</strong>,
                 nebo <strong>Podrobnosti</strong>. V�echna ostatn� pole jsou nepovinn�.</p>
 
         </td>
@@ -99,9 +106,10 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="del"><p class="subheadbold">Vymazat ud�lost</p></a>
+            <a id="del"><p class="subheadbold">Vymazat ud�lost</p></a>
 
-            <p>Chcete-li vymazat existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Vymazat vedle t�to ud�losti. Ud�lost bude vymaz�na bez ohledu na to, zda ostatn� �daje na str�nce jsou
+            <p>Chcete-li vymazat existuj�c� ud�lost, klikn�te v sekci Dal�� ud�losti na ikonu Vymazat vedle t�to ud�losti. Ud�lost bude vymaz�na bez
+                ohledu na to, zda ostatn� �daje na str�nce jsou
                 ulo�eny.</p>
 
         </td>
@@ -109,8 +117,9 @@ echo help_header("N�pov�da: Ud�losti");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="citations"><p class="subheadbold">Pozn�mky a citace</p>
-                <p>Chcete-li p�idat nebo upravit pozn�mky nebo citace u ud�losti, ud�lost nejd��ve ulo�te, a pot� klikn�te na p��slu�nou ikonu vedle z�znamu t�to ud�losti v aktu�ln�m seznamu
+            <a id="citations"><p class="subheadbold">Pozn�mky a citace</p>
+                <p>Chcete-li p�idat nebo upravit pozn�mky nebo citace u ud�losti, ud�lost nejd��ve ulo�te, a pot� klikn�te na p��slu�nou ikonu vedle
+                    z�znamu t�to ud�losti v aktu�ln�m seznamu
                     ud�lost�.
                     V�ce informac� o pozn�mk�ch naleznete zde: <a href="notes_help.php">N�pov�da: Pozn�mky</a>.
                     V�ce informac� o citac�ch naleznete zde: <a href="citations_help.php">N�pov�da: Citace</a>.</p>

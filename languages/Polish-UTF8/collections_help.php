@@ -4,46 +4,49 @@ echo help_header("Pomoc: Kolekcje");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="media_help.php" class="lightlink">&laquo; Pomoc: Media</a> &nbsp; | &nbsp;
-        <a href="albums_help.php" class="lightlink">Pomoc: Albumy &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Kolekcje</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to jest kolekcja?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj/Eytuj/Usuń</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="media_help.php" class="lightlink">&laquo; Pomoc: Media</a> &nbsp; | &nbsp;
+                <a href="albums_help.php" class="lightlink">Pomoc: Albumy &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Kolekcje</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to jest kolekcja?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Dodaj/Eytuj/Usuń</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Co to są kolekcje?</p></a>
+            <a id="what"><p class="subheadbold">Co to są kolekcje?</p></a>
 
             <p><strong>Kolekcja</strong> w TNG odnosi się do rodzaju mediów. Standardowymi kolekcjami w TNG są zdjęcia, dokumenty, nagrobki, historie,
                 filmy i nagrania. TNG pozwala jednak również na tworzenie własnych kolekcji. Kolekcja nie jest ograniczona do jednego rodzaju plików.
-                Na przykład zdjęcia w formacie jpg mogą być częścią każdej kolekcji, nie tylko zdjęć lub dokumentów. Kolekcja zdjęć nie musi zawierać wyłącznie plików graficznych.</p>
-
+                Na przykład zdjęcia w formacie jpg mogą być częścią każdej kolekcji, nie tylko zdjęć lub dokumentów. Kolekcja zdjęć nie musi zawierać
+                wyłącznie plików graficznych.</p>
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Dodawanie kolekcji</p></a>
+            <a id="add"><p class="subheadbold">Dodawanie kolekcji</p></a>
 
-            <p>Aby dodać nową kolekcję, kliknij na przycisk "Dodaj kolekcję" tam gdzie jest on widoczny (na przykład w dziale Media na kartach Szukaj i Dodaj nowe).
+            <p>Aby dodać nową kolekcję, kliknij na przycisk "Dodaj kolekcję" tam gdzie jest on widoczny (na przykład w dziale Media na kartach Szukaj
+                i Dodaj nowe).
                 Kiedy pojawi się okienko popup, wypełnij formularz. Do dyspozycji są następujące pola:</p>
 
             <span class="optionhead">ID kolekcji</span>
-            <p>ID kolekcji to bardzo krótki ciąg znaków. Nie powinno zawierać spacji ani znaków, które nie są alfanumeryczne. Idealnie było by to 10 znaków lub mniej.
-                Na przykład, jeśli tworzysz kolekcję dla tematów wojskowych, możesz podać "wojsko" jako jej ID . Ta wartość nie będzie wyświetlana więc to, jak ją nazwiesz
+            <p>ID kolekcji to bardzo krótki ciąg znaków. Nie powinno zawierać spacji ani znaków, które nie są alfanumeryczne. Idealnie było by to 10
+                znaków lub mniej.
+                Na przykład, jeśli tworzysz kolekcję dla tematów wojskowych, możesz podać "wojsko" jako jej ID . Ta wartość nie będzie wyświetlana
+                więc to, jak ją nazwiesz
                 nie jest ważne tak długo, jak długo jest ona niepowtarzalna.</p>
 
             <span class="optionhead">Wyświetlany tytuł</span>

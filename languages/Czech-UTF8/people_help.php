@@ -4,44 +4,47 @@ echo help_header("Nápověda: Osoby");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="index_help.php" class="lightlink">&laquo; Nápověda: Začínáme</a> &nbsp; | &nbsp;
-        <a href="families_help.php" class="lightlink">Nápověda: Rodiny &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Osoby
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="index_help.php" class="lightlink">&laquo; Nápověda: Začínáme</a> &nbsp; | &nbsp;
+                <a href="families_help.php" class="lightlink">Nápověda: Rodiny &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Osoby
         </span>
       <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-                <a href="#review" class="lightlink">Přezkoumat</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Sloučit</a>
-            </p></td>
+          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+          <a href="#add" class="lightlink">Přidat novou</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#review" class="lightlink">Přezkoumat</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Sloučit</a>
+      </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="search">
+            <a id="search">
 
                 <p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících osob vyhledáním celého nebo části <strong>ID čísla osoby</strong> nebo <strong>Jména</strong>. Pro další zúžení vašeho
+            <p>Nalezení existujících osob vyhledáním celého nebo části <strong>ID čísla osoby</strong> nebo <strong>Jména</strong>. Pro další zúžení
+                vašeho
                 hledání vyberte strom nebo jednu z dalších možností.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech osob ve vaší databázi.</p>
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví
                 všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více osob, zaškrtněte políčko ve sloupci
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více osob,
+                zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být odstraněn, a poté klikněte na tlačítko "Vymazat
                 označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.
@@ -53,17 +56,21 @@ echo help_header("Nápověda: Osoby");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat novou osobu</p></a>
-            <p>Chcete-li přidat novou osobu, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako poznámky, citace, spojení a
+            <a id="add"><p class="subheadbold">Přidat novou osobu</p></a>
+            <p>Chcete-li přidat novou osobu, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář. Další informace jako poznámky,
+                citace, spojení a
                 další události, můžete přidat po uložení nebo zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
             <span class="optionhead">Strom</span>
             <p>Pokud máte pouze jeden strom, vybrán bude vždy tento strom. Jinak, prosím, pro novou osobu vyberte požadovaný strom.</p>
 
             <span class="optionhead">Větev (volitelné)</span>
-            <p>Připojení osoby ke "větvi" omezí přístup k informacím o osobě pro uživatele, kteří jsou spojeni k téže větvi. Je-li definována alespoň jedna větev
-                a váš uživatelský účet není spojen se žádnou konkrétní větví, můžete novou osobu připojit k více existujícím větvím. Chcete-li větev vybrat,
-                kliknutím na odkaz "Upravit" se otevře box se všemi větvemi ve vybraném stromě. Pro výběr více větví použijte klávesu Control (Windows) nebo Command (Mac).
+            <p>Připojení osoby ke "větvi" omezí přístup k informacím o osobě pro uživatele, kteří jsou spojeni k téže větvi. Je-li definována alespoň
+                jedna větev
+                a váš uživatelský účet není spojen se žádnou konkrétní větví, můžete novou osobu připojit k více existujícím větvím. Chcete-li větev
+                vybrat,
+                kliknutím na odkaz "Upravit" se otevře box se všemi větvemi ve vybraném stromě. Pro výběr více větví použijte klávesu Control
+                (Windows) nebo Command (Mac).
                 Po dokončení vašeho výběru přesuňte kursor myši mimo okno úprav a toto okno zmizí.</p>
 
             <span class="optionhead">ID číslo osoby</span>
@@ -103,27 +110,33 @@ echo help_header("Nápověda: Osoby");
             (např. <em>Bludov, Šumperk, Olomoucký kraj, Česká republika</em>), nebo kliknutím na ikonu "Najít" vyberte existující místo (lupa).
             Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapište část místa. Všechny výsledky budou obsahovat to, co jste zapsali jako název místa.</p>
 
-          <p><span class="optionhead">Údaje CJKSpd (Křest, Obdarování, Biřmování, Zasvěcení)</span><br>
-            Tyto události jsou spojeny s obřady prováděnými Církví Ježíše Krista Svatých posledních dní (mormonská církev, která vytvořila standard GEDCOM).
-            <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto možnost vypněte (je třeba se pak odhlásit a znovu přihlásit).</p>
+            <p><span class="optionhead">Údaje CJKSpd (Křest, Obdarování, Biřmování, Zasvěcení)</span><br>
+                Tyto události jsou spojeny s obřady prováděnými Církví Ježíše Krista Svatých posledních dní (mormonská církev, která vytvořila
+                standard GEDCOM).
+                <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto možnost vypněte (je
+                třeba se pak odhlásit a znovu přihlásit).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="edit"><p class="subheadbold">Upravit existující osobu</p></a>
-            <p>Chcete-li upravit existující osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení osoby, a poté klikněte na ikonu Upravit vedle této osoby.</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="edit"><p class="subheadbold">Upravit existující osobu</p></a>
+            <p>Chcete-li upravit existující osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení osoby, a poté klikněte na ikonu Upravit
+                vedle této osoby.</p>
 
             <span class="optionhead">Poznámky / Citace / Spojení / "Více"</span>
             <p>Poznámky, citace a spojení lze připojit k událostem nebo osobě obecně kliknutím na připojené ikony v horní části stránky
-                nebo vedle každé události. Ke každé události můžete také přidat "více" informací kliknutím na ikonu "Plus". Pokud v nějaké této kategorii existují údaje,
-                na odpovídající ikoně bude v horním pravém rohu zelená tečka. Chcete-li znát více informací o každé kategorii, jděte na odkazy nápovědy,
+                nebo vedle každé události. Ke každé události můžete také přidat "více" informací kliknutím na ikonu "Plus". Pokud v nějaké této
+                kategorii existují údaje,
+                na odpovídající ikoně bude v horním pravém rohu zelená tečka. Chcete-li znát více informací o každé kategorii, jděte na odkazy
+                nápovědy,
                 které budou viditelné po kliknutí na tyto ikony.</p>
 
             <span class="optionhead">Jiné události</span>
-            <p>Chcete-li přidat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a href="events_help.php">Nápověda</a> pro více
+            <p>Chcete-li přidat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a
+                    href="events_help.php">Nápověda</a> pro více
                 informací o přidání nových událostí. Po přidání události se pod tlačítkem "Přidat nové" zobrazí v tabulce krátké shrnutí. Tlačítka akcí
                 pro každou událost vám umožní událost upravit nebo odstranit, nebo přidat poznámky nebo citace. Pořadí, ve kterém se události zobrazí, závisí na datu (je-li zapsáno)
                 a prioritě, kterou má daný typ události (není-li připojeno datum). Při úpravě typu události můžete prioritu změnit.
@@ -161,7 +174,8 @@ echo help_header("Nápověda: Osoby");
 
             <span class="optionhead">Pořadí rodičů nebo partnerů</span>
             <p>Pokud existuje více partnerů nebo párů rodičů,
-                můžete jejich pořadí změnit "přetažením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myší na tlačítko "Táhnout", toto tlačítko podržte, a vaši myš přesuňte na stránce nahoru
+                můžete jejich pořadí změnit "přetažením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myší na tlačítko "Táhnout", toto
+                tlačítko podržte, a vaši myš přesuňte na stránce nahoru
                 nebo dolů. Po přesunu bloku do požadované pozice tlačítko pusťte. Změny pořadí budou automaticky uloženy.</p>
 
         </td>
@@ -170,48 +184,59 @@ echo help_header("Nápověda: Osoby");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat osobu</p></a>
-            <p>Chcete-li odstranit osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení dané osoby, a poté klikněte na ikonu Vymazat vedle této osoby. Tento řádek změní
-                barvu a poté po odstranění položky zmizí. Chcete-li najednou odstranit více osob, zaškrtněte políčko ve sloupci Vybrat vedle každé osoby, kterou
+            <a id="delete"><p class="subheadbold">Vymazat osobu</p></a>
+            <p>Chcete-li odstranit osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení dané osoby, a poté klikněte na ikonu Vymazat
+                vedle této osoby. Tento řádek změní
+                barvu a poté po odstranění položky zmizí. Chcete-li najednou odstranit více osob, zaškrtněte políčko ve sloupci Vybrat vedle každé
+                osoby, kterou
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat vybrané" na stránce nahoře</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="review"><p class="subheadbold">Předběžné prohlédnutí úprav</p></a>
-      Chcete-li si předběžně prohlédnout změny provedené ostatními uživateli, klikněte na záložku "Přezkoumat". Můžete se pak rozhodnout, zda tyto navrhované změny uložíte nebo odstraníte.
-      Změny můžete prohlédnout podle stromu nebo podle uživatele nebo podle obojího. Po uložení navrhovaných změn není zaslán žádný mail, ale pokud nové změny existují, na záložce Přezkoumat se objeví hvězdička (*).</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="review"><p class="subheadbold">Předběžné prohlédnutí úprav</p></a>
+            Chcete-li si předběžně prohlédnout změny provedené ostatními uživateli, klikněte na záložku "Přezkoumat". Můžete se pak rozhodnout, zda
+            tyto navrhované změny uložíte nebo odstraníte.
+            Změny můžete prohlédnout podle stromu nebo podle uživatele nebo podle obojího. Po uložení navrhovaných změn není zaslán žádný mail, ale
+            pokud nové změny existují, na záložce Přezkoumat se objeví hvězdička (*).</p>
 
-      <span class="optionhead">Vybrat událost a akci</span><br>
-      <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můžete zúžit výběrem uživatele (osoba
-        odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z možných akcí nalevo od tohoto řádku. Chcete-li změny přezkoumat a
-        případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
+            <span class="optionhead">Vybrat událost a akci</span><br>
+            <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můžete zúžit výběrem
+                uživatele (osoba
+                odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z možných akcí nalevo od tohoto řádku. Chcete-li
+                změny přezkoumat a
+                případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
 
-      <span class="optionhead">Přezkoumat</span><br>
-      <p>Na obrazovce Přezkoumat můžete provést další potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uložit a vymazat" pro
-        uložení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můžete rovněž odstranit dočasný záznam, aniž byste jej uložili,
-        nebo můžete své rozhodnutí odložit na pozdější dobu kliknutím na "Odložit".</p>
+            <span class="optionhead">Přezkoumat</span><br>
+            <p>Na obrazovce Přezkoumat můžete provést další potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uložit a vymazat" pro
+                uložení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můžete rovněž odstranit dočasný záznam, aniž
+                byste jej uložili,
+                nebo můžete své rozhodnutí odložit na pozdější dobu kliknutím na "Odložit".</p>
 
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="merge"><p class="subheadbold">Sloučení osob</p></a>
-      Chcete-li přezkoumat a sloučit duplicitní záznamy, klikněte na záložku "Sloučit". Zde rozhodnete, zda jsou dva záznamy totožné nebo ne.</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="merge"><p class="subheadbold">Sloučení osob</p></a>
+            Chcete-li přezkoumat a sloučit duplicitní záznamy, klikněte na záložku "Sloučit". Zde rozhodnete, zda jsou dva záznamy totožné nebo
+            ne.</p>
 
-      <span class="optionhead">Najít shodu</span><br>
-      <p>Vyberte nejprve strom. Nelze slučovat osoby z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat osobu jako
-        výchozí bod vašeho hledání (osoba 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny změny, nechte pole ID číslo osoby 1 prázdné</p>
+            <span class="optionhead">Najít shodu</span><br>
+            <p>Vyberte nejprve strom. Nelze slučovat osoby z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat osobu jako
+                výchozí bod vašeho hledání (osoba 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny změny,
+                nechte pole ID číslo osoby 1 prázdné</p>
 
-      <p>Pokud jste vybrali osobu jako Osobu 1, můžete také ručně vybrat ID číslo osoby 2. Chcete-li, aby duplicity Osoby 1 nalezl TNG, nechte pole ID číslo osoby 2 prázdné.</p>
+            <p>Pokud jste vybrali osobu jako Osobu 1, můžete také ručně vybrat ID číslo osoby 2. Chcete-li, aby duplicity Osoby 1 nalezl TNG, nechte
+                pole ID číslo osoby 2 prázdné.</p>
 
-      <span class="optionhead">Porovnat následující pole</span><br>
-      <p>Toto jsou kritéria, která TNG používá k určení možných duplicit. Standardně jsou vybrány křestní jméno a příjmení, což znamená, že tato pole
+            <span class="optionhead">Porovnat následující pole</span><br>
+            <p>Toto jsou kritéria, která TNG používá k určení možných duplicit. Standardně jsou vybrány křestní jméno a příjmení, což znamená, že tato
+                pole
         musí být shodná, aby mohly být dva záznamy považovány za potenciálně duplicitní. Vyberete-li také datum narození, místo narození, datum úmrtí a/nebo místo úmrtí, musí být také tato pole shodná.</p>
 
       <span class="optionhead">Jiné možnosti</span><br>

@@ -4,41 +4,44 @@ echo help_header("N�pov�da: Reporty");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="eventtypes_help.php" class="lightlink">&laquo; N�pov�da: Vlastn� typy ud�lost�</a> &nbsp; | &nbsp;
-        <a href="dna_help.php" class="lightlink">N�pov�da: Testy DNA &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Reporty</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-      </p>
-    </td>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="eventtypes_help.php" class="lightlink">&laquo; N�pov�da: Vlastn� typy ud�lost�</a> &nbsp; | &nbsp;
+                <a href="dna_help.php" class="lightlink">N�pov�da: Testy DNA &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Reporty</span>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
 
             <p>Nalezen� existuj�c�ch report� vyhled�n�m cel�ho nebo ��sti <strong>n�zvu reportu</strong> nebo <strong>popisu</strong>.
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech report� ve va�� datab�zi.</p>
 
-            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
+            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
+                obnov� v�echny v�choz� hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat v�ce z�znam�, za�krtn�te pol��ko ve sloupci
-                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
+            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
+                v�ce z�znam�, za�krtn�te pol��ko ve sloupci
+                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
+                za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
                 m��ete pou��t tla��tka <strong>Vybrat v�e</strong> nebo <strong>Vy�istit v�e</strong>.</p>
 
         </td>
@@ -47,9 +50,10 @@ echo help_header("N�pov�da: Reporty");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">P�id�n� nebo �prava reportu</p></a>
+            <a id="add"><p class="subheadbold">P�id�n� nebo �prava reportu</p></a>
 
-            <p>Reportem se v TNG rozum� u�ivatelsk� seznam osob z va�� datab�ze. Vy rozhodnete, kter� pole maj� b�t zobrazena, kter� osoby maj� b�t do reportu vlo�eny a jak maj� b�t se�azeny.
+            <p>Reportem se v TNG rozum� u�ivatelsk� seznam osob z va�� datab�ze. Vy rozhodnete, kter� pole maj� b�t zobrazena, kter� osoby maj� b�t do
+                reportu vlo�eny a jak maj� b�t se�azeny.
                 M��ete pou��t rozhran� pro tvorbu report� nebo m��ete m�sto toho pou��t sv� vlastn� p��kazy SQL.</p>
 
             <p>Chcete-li p�idat nov� report, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��.
@@ -139,9 +143,11 @@ echo help_header("N�pov�da: Reporty");
                 SQL p��kaz SELECT.</p>
 
             <span class="optionhead">Ulo�it report vs. Ulo�it a ukon�it</span>
-            <p>Chcete-li report ulo�it, kliknite na "Ulo�it report" a z�stanete na stejn� str�nce a m��ete pokra�ovat v editaci. Kliknut�m na "Ulo�it a ukon�it" report ulo��te a vr�t�te se na menu Reporty.</p>
+            <p>Chcete-li report ulo�it, kliknite na "Ulo�it report" a z�stanete na stejn� str�nce a m��ete pokra�ovat v editaci. Kliknut�m na "Ulo�it
+                a ukon�it" report ulo��te a vr�t�te se na menu Reporty.</p>
 
-            <p>N�kolik vzorov�ch report� m��ete vid�t na <a href="http://lythgoes.net/genealogy/demo.php" target="_blank">http://lythgoes.net/genealogy/demo.php</a>. Zvolte zde Administrative Demo a vyhledejte sekci Reporty.</p>
+            <p>N�kolik vzorov�ch report� m��ete vid�t na <a href="http://lythgoes.net/genealogy/demo.php" target="_blank">http://lythgoes.net/genealogy/demo.php</a>.
+                Zvolte zde Administrative Demo a vyhledejte sekci Reporty.</p>
 
         </td>
     </tr>
@@ -149,8 +155,9 @@ echo help_header("N�pov�da: Reporty");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymaz�n� reportu</p></a>
-            <p>Chcete-li odstranit report, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� reportu, a pot� klikn�te na ikonku Vymazat vedle tohoto z�znamu. Tento ��dek zm�n�
+            <a id="delete"><p class="subheadbold">Vymaz�n� reportu</p></a>
+            <p>Chcete-li odstranit report, pou�ijte z�lo�ku <a href="#search">Hledat</a> k nalezen� reportu, a pot� klikn�te na ikonku Vymazat vedle
+                tohoto z�znamu. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� reportu zmiz�.</p>
 
         </td>

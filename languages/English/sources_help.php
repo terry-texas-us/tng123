@@ -4,17 +4,17 @@ echo help_header("Help: Sources");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="families_help.php" class="lightlink">&laquo; Help: Families</a> &nbsp; | &nbsp;
-        <a href="repositories_help.php" class="lightlink">Help: Repositories &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Sources</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="families_help.php" class="lightlink">&laquo; Help: Families</a> &nbsp; | &nbsp;
+                <a href="repositories_help.php" class="lightlink">Help: Repositories &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Sources</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
@@ -34,16 +34,19 @@ echo help_header("Help: Sources");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><p class="subheadbold">Search</p></a>
             <p>Locate existing sources by searching for all or part of the <strong>Source ID, Source Title, Author, Call Number</strong> or <strong>Publisher</strong>.
                 Select a Tree or check "Exact match only" to further narrow your search.
                 Searching with no options selected and no value in the search box will find all sources in your database.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                values and searches again.</p>
 
             <span class="optionhead">Actions</span>
-            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a time, click the box in the
-                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
+            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
+                time, click the box in the
+                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
+                <strong>Select All</strong> or <strong>Clear All</strong>
                 buttons to toggle all select boxes at once.</p>
 
         </td>
@@ -52,8 +55,9 @@ echo help_header("Help: Sources");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="add"><p class="subheadbold">Adding New Sources</p></a>
-            <p>A <strong>Source</strong> is any form of evidence cited to prove or substantiate any part of your data. The same source may be cited multiple times
+            <a id="add"><p class="subheadbold">Adding New Sources</p></a>
+            <p>A <strong>Source</strong> is any form of evidence cited to prove or substantiate any part of your data. The same source may be cited
+                multiple times
                 for multiple individuals, families or events.</p>
 
             <p>To add a new source, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes and
@@ -87,31 +91,36 @@ echo help_header("Help: Sources");
           <p>Select the repository where the source resides (if known). If the repository does not yet exist in the database, go to Admin/Repositories and
             add it there, then come back and select it here.</p>
 
-          <span class="optionhead">Actual Text</span><br>
-          <p>A quote from or a portion of the source material (optional).</p>
+            <span class="optionhead">Actual Text</span><br>
+            <p>A quote from or a portion of the source material (optional).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="edit"><p class="subheadbold">Editing Existing Sources</p></a>
-      <p>To make changes to an existing source, use the <a href="#search">Search</a> tab to locate the source, then click on the Edit icon next to that source.</p>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="edit"><p class="subheadbold">Editing Existing Sources</p></a>
+            <p>To make changes to an existing source, use the <a href="#search">Search</a> tab to locate the source, then click on the Edit icon next
+                to that source.</p>
 
             <span class="optionhead">Notes</span>
             <p>Notes may be linked to events or to the source in general by clicking on the Notes icon at the top of the page
-                or next to each event under "Other Events". When notes already exist for an event, the Notes icon will feature a green dot in the upper right corner.
+                or next to each event under "Other Events". When notes already exist for an event, the Notes icon will feature a green dot in the
+                upper right corner.
                 For more information on Notes, see the <a href="notes_help.php">Help</a> link visible in the Notes area.</p>
 
             <span class="optionhead">Other Events</span>
-            <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a href="events_help.php">Help</a> link there for more
-                information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New" button. Action buttons for
+            <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
+                    href="events_help.php">Help</a> link there for more
+                information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
+                button. Action buttons for
                 each event allow you to edit or delete the event, or add notes. The order in which the events are displayed is determined by date (if applicable),
                 and by the event types' assigned priority (when no date is associated). This priority may be changed when editing the event types.
 
             <p><strong>Note</strong>: Notes and changes to "Other" events are all saved automatically. Other changes (e.g., to
-                standard events) can be saved by clicking on the Save button at the bottom of the page, or by clicking on the Save icon at the top of the page. The Tree and
+                standard events) can be saved by clicking on the Save button at the bottom of the page, or by clicking on the Save icon at the top of
+                the page. The Tree and
                 Source ID cannot be changed.</p>
 
         </td>
@@ -120,8 +129,9 @@ echo help_header("Help: Sources");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Deleting Sources</p></a>
-            <p>To delete one source, use the <a href="#search">Search</a> tab to locate the source, then click on the Delete icon next to that source. The row will
+            <a id="delete"><p class="subheadbold">Deleting Sources</p></a>
+            <p>To delete one source, use the <a href="#search">Search</a> tab to locate the source, then click on the Delete icon next to that source.
+                The row will
                 change color and then vanish as the source is deleted (all associated citations will also be deleted).
                 To delete more than one source at a time, check the box in the Select column next to each source to be
                 deleted, then click the "Delete Selected" button at the top of the page.</p>
@@ -132,16 +142,19 @@ echo help_header("Help: Sources");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="merge"><p class="subheadbold">Merge</p></a>
+            <a id="merge"><p class="subheadbold">Merge</p></a>
             <p>Click on this tab to review and merge sources that may be slightly different but refer to the same material.
                 You will decide whether multiple records are the same or not.</p>
 
             <span class="optionhead">Find Matches</span>
-            <p>First, select a tree. You cannot merge sources from different trees, so only one tree can be selected. After that, you have the option of selecting
-                a source as the starting point for your search (Source ID 1), or letting TNG find the first match for you. If you'd rather let TNG find all matches,
+            <p>First, select a tree. You cannot merge sources from different trees, so only one tree can be selected. After that, you have the option
+                of selecting
+                a source as the starting point for your search (Source ID 1), or letting TNG find the first match for you. If you'd rather let TNG
+                find all matches,
                 leave the Source ID 1 field blank.</p>
 
-            <p>If you selected a source as Source ID 1, you may also decide to manually select Source ID 2. If you'd rather let TNG find duplicates for Source ID 1,
+            <p>If you selected a source as Source ID 1, you may also decide to manually select Source ID 2. If you'd rather let TNG find duplicates
+                for Source ID 1,
                 leave Source ID 2 blank.</p>
 
             <span class="optionhead">Match the following fields</span>

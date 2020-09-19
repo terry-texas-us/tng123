@@ -4,39 +4,41 @@ echo help_header("Nápověda: Manažer módů");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
-        <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Manažer módů
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
+                <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Manažer módů
         </span>
       <p class="smaller menu">
         <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
-        <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-        <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-        <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
-                <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
-                <a href="#batch" class="lightlink">Dávková instalace</a> &nbsp; | &nbsp;
-                <a href="#options" class="lightlink">Možnosti</a>
-            </p></td>
+          <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
+          <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
+          <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
+          <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
+          <a href="#batch" class="lightlink">Dávková instalace</a> &nbsp; | &nbsp;
+          <a href="#options" class="lightlink">Možnosti</a>
+      </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="overview">
+            <a id="overview">
                 <p class="subheadbold">Přehled
                 </p></a>
-            <p>TNG Manažer módů, který původně vyvinul Brian McFadyen a pro práci s Joomla TNG Component aktualizoval Sean Schwoere, je určen k poskytnutí ucelenějšího
-                způsobu instalování, odstraňování a správě modifikací TNG software, který s tímto manažerem dokáže pracovat. Aktualizace v TNG V9 provedli Bart Degryse a Ken Roy.
+            <p>TNG Manažer módů, který původně vyvinul Brian McFadyen a pro práci s Joomla TNG Component aktualizoval Sean Schwoere, je určen k
+                poskytnutí ucelenějšího
+                způsobu instalování, odstraňování a správě modifikací TNG software, který s tímto manažerem dokáže pracovat. Aktualizace v TNG V9
+                provedli Bart Degryse a Ken Roy.
                 Manažer módů je pro snazší přístup připojen ke stránce Administrace TNG. Manažer módů přidává do TNG tyto složky:
             <ul>
                 <li><strong>mods</strong> obsahuje konfigurační soubory módů a přidružené podpůrné soubory módů
@@ -59,10 +61,11 @@ echo help_header("Nápověda: Manažer módů");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="operation">
+            <a id="operation">
                 <p class="subheadbold">Operace
                 </p></a>
-            <p>Manažer módů prozkoumá složku módů a přečte každý soubor <strong>cfg</strong>, který najde. Soubory <strong>cfg</strong> jsou direktivní soubory, které popisují mód, soubory a umístění, které má být modifikováno, a kód, který je při
+            <p>Manažer módů prozkoumá složku módů a přečte každý soubor <strong>cfg</strong>, který najde. Soubory <strong>cfg</strong> jsou
+                direktivní soubory, které popisují mód, soubory a umístění, které má být modifikováno, a kód, který je při
                 modifikaci použit.
             <p>Manažer módů zkontroluje následující:
             <ul>
@@ -86,22 +89,25 @@ echo help_header("Nápověda: Manažer módů");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="status">
+            <a id="status">
                 <p class="subheadbold">Stav
                 </p></a>
             <p>Manažer módů vrací následující stavy:
             <ul>
                 <li><strong>Lze instalovat</strong>, pokud mód ještě nebyl nainstalován a cílové umístění bylo určeno, pak je uvedena možnost <strong>Instalovat</strong>
                 </li>
-                <li><strong>Instalováno</strong>, pokud mód byl nainstalován, je uvedena možnost <strong>Odstranit</strong> mód a možnost <strong>Upravit</strong> parametry, pokud nějaké existují
+                <li><strong>Instalováno</strong>, pokud mód byl nainstalován, je uvedena možnost <strong>Odstranit</strong> mód a možnost <strong>Upravit</strong>
+                    parametry, pokud nějaké existují
                 </li>
-                <li><strong>Vyčistit</strong>, pokud mód byl částečně nainstalován, je k dispozici tlačítko <strong>Vyčistit</strong>. Operace Vyčištění se pokusí odstranit vložený kód, obnovit a nahradit kód, a odstranit vytvořený soubor.
+                <li><strong>Vyčistit</strong>, pokud mód byl částečně nainstalován, je k dispozici tlačítko <strong>Vyčistit</strong>. Operace
+                    Vyčištění se pokusí odstranit vložený kód, obnovit a nahradit kód, a odstranit vytvořený soubor.
                 </li>
                 <li><strong>Nelze nainstalovat</strong>, pokud mód <strong>nelze</strong> instalovat. Tato zpráva bude předcházet jinou zprávu, která poskytne více informací o tom, proč mód nelze nainstalovat.
                 </li>
             </ul>
             <p>Příklady obrazovek stavu manažeru módů a jak interpretovat různé stavy najdete na
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Manažer módů - interpretace stavů</a>
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Manažer módů - interpretace
+                    stavů</a>
             </p></td>
     </tr>
     <tr class="databack">
@@ -109,7 +115,7 @@ echo help_header("Nápověda: Manažer módů");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="syntax">
+            <a id="syntax">
                 <p class="subheadbold">Syntaxe módů
                 </p></a>
             <p>The Mod Manager syntax basically includes:
@@ -127,8 +133,10 @@ echo help_header("Nápověda: Manažer módů");
             </ul>
             </p>
             <p><strong>Příkaz Nový soubor (New File)</strong>, který po instalaci módu vytvoří nový soubor</p>
-            <p><strong>Příkaz Kopírovat soubor (Copy File)</strong>, který nakopíruje určitý soubor do řídící složky TNG (%copyfile) nebo do podsložky (%copyfile2)</p>
-            <p>Detailní informace týkající se syntaxe módů najdete v článku <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">Mod Manager Syntax (v angličtině)</a></p>
+            <p><strong>Příkaz Kopírovat soubor (Copy File)</strong>, který nakopíruje určitý soubor do řídící složky TNG (%copyfile) nebo do podsložky
+                (%copyfile2)</p>
+            <p>Detailní informace týkající se syntaxe módů najdete v článku <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax"
+                                                                               target="_blank">Mod Manager Syntax (v angličtině)</a></p>
         </td>
     </tr>
     <tr class="databack">
@@ -136,13 +144,14 @@ echo help_header("Nápověda: Manažer módů");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="files">
+            <a id="files">
                 <p class="subheadbold">Konfigurační soubory
                 </p></a>
             <span class="optionhead">Instalování módů
         </span>
             <p>Informace o použití
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">konfiguračních souborů</a> k instalaci módů najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">konfiguračních
+                    souborů</a> k instalaci módů najdete na TNG Wiki.
             </p>
             <span class="optionhead">Interpretace stavu
         </span>
@@ -157,7 +166,8 @@ echo help_header("Nápověda: Manažer módů");
             <span class="optionhead">Vytvoření konfiguračního souboru
         </span>
             <p>Informace pro vývojáře o
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvoření konfiguračních souborů</a> najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvoření konfiguračních
+                    souborů</a> najdete na TNG Wiki.
             </p></td>
     </tr>
 
@@ -165,13 +175,16 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="batch"><p class="subheadbold">Dávková instalace</p></a>
+            <a id="batch"><p class="subheadbold">Dávková instalace</p></a>
 
-            <p>Dávková instalace umožní provést specifické akce týkající se několika módů pomocí výběru filtru. Z filtru seznamu stavů vyberte požadovaný stav a kliknutím na Provést zobrazíte
-                dostupná ovládací tlačítka pro vybraný stav. Pro stav Vyčistit není k dispozici akce Odstranit, takže pro odstranění módů ve stavu Vyčistit musíte použít záložku Seznam módů.
+            <p>Dávková instalace umožní provést specifické akce týkající se několika módů pomocí výběru filtru. Z filtru seznamu stavů vyberte
+                požadovaný stav a kliknutím na Provést zobrazíte
+                dostupná ovládací tlačítka pro vybraný stav. Pro stav Vyčistit není k dispozici akce Odstranit, takže pro odstranění módů ve stavu
+                Vyčistit musíte použít záložku Seznam módů.
             <p>Možnosti výběrového filtru jsou tyto:
             <ul>
-                <li><strong>Vše</strong> - zobrazí se úplný seznam všech souborů .cfg ze složky mods. Pokud zvolíte určitý stav, objeví se dostupná tlačítka jednotlivých akcí
+                <li><strong>Vše</strong> - zobrazí se úplný seznam všech souborů .cfg ze složky mods. Pokud zvolíte určitý stav, objeví se dostupná
+                    tlačítka jednotlivých akcí
                 <li><strong>Lze nainstalovat</strong> - zobrazí se seznam všech módů, které mohou být</li>
                 <ul>
                     <li>Nainstalovány - na základě vašeho výběru a kliknutím na tlačítko <strong>Instalovat</strong></li>
@@ -198,17 +211,27 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="options"><p class="subheadbold">Možnosti</p></a>
+            <a id="options"><p class="subheadbold">Možnosti</p></a>
 
             <p>Možnosti vám umožní specifikovat chování manažeru módů v případě
             <p><strong>Seznamu dotčených souborů</strong>
             <ul>
-                <li><strong>Zobrazit seznam dotčených souborů</strong> - umožní vám zvolit, zda chcete v tabulce seznamu módů zobrazit seznam dotčených souborů. Výchozí volbou je <strong>Ano</strong>.</li>
-                <li><strong>Zobrazit v seznamu nové soubory</strong> - zobrazí nové soubory vytvořené módem. Výchozí volbou je <strong>Ano</strong>.</li>
-                <li><strong>Zobrazit v seznamu kopírované soubory</strong> - zobrazí soubory, které jsou kopírovány módem. Výchozí volbou je <strong>Ano</strong>.</li>
-                <li><strong>Zobrazit seznam ve sloupci</strong> - zobrazí seznam dotčených souborů ve zvoleném sloupci. Výchozí volbou je sloupec <strong>Název konfiguračního souboru</strong>.</li>
-                <li><strong>Zobrazit seznam jako</strong> - umožní vám zvolit, zda chcete seznam zobrazit jako tabulku nebo jako hodnoty oddělené čárkou. Výchozí volbou je <strong>Tabulka</strong>.</li>
-                <li><strong>Zobrazit seznam v Dávkové instalaci</strong> - umožní vám zvolit, zda chcete seznam zobrazit na záložce Dávková instalace ve vyskakovacím okně. Výchozí volbou je <strong>Ano</strong>.</li>
+                <li><strong>Zobrazit seznam dotčených souborů</strong> - umožní vám zvolit, zda chcete v tabulce seznamu módů zobrazit seznam
+                    dotčených souborů. Výchozí volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Zobrazit v seznamu nové soubory</strong> - zobrazí nové soubory vytvořené módem. Výchozí volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Zobrazit v seznamu kopírované soubory</strong> - zobrazí soubory, které jsou kopírovány módem. Výchozí volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Zobrazit seznam ve sloupci</strong> - zobrazí seznam dotčených souborů ve zvoleném sloupci. Výchozí volbou je sloupec
+                    <strong>Název konfiguračního souboru</strong>.
+                </li>
+                <li><strong>Zobrazit seznam jako</strong> - umožní vám zvolit, zda chcete seznam zobrazit jako tabulku nebo jako hodnoty oddělené
+                    čárkou. Výchozí volbou je <strong>Tabulka</strong>.
+                </li>
+                <li><strong>Zobrazit seznam v Dávkové instalaci</strong> - umožní vám zvolit, zda chcete seznam zobrazit na záložce Dávková instalace
+                    ve vyskakovacím okně. Výchozí volbou je <strong>Ano</strong>.
+                </li>
             </ul>
             </p>
             <p><strong>Protokolu manažeru módů</strong>

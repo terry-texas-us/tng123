@@ -4,43 +4,47 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="sources_help.php" class="lightlink">&laquo; N�pov�da: Prameny</a> &nbsp; | &nbsp;
-        <a href="assoc_help.php" class="lightlink">N�pov�da: Spojen� &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: �lo�i�t� pramen�</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="sources_help.php" class="lightlink">&laquo; N�pov�da: Prameny</a> &nbsp; | &nbsp;
+                <a href="assoc_help.php" class="lightlink">N�pov�da: Spojen� &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: �lo�i�t� pramen�</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Slou�it</a>
-            </p>
+          <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Slou�it</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezen� existuj�c�ch �lo�i�� pramen� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla �lo�i�t�</strong> nebo <strong>n�zvu �lo�i�t� pramen�</strong>.
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezen� existuj�c�ch �lo�i�� pramen� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla �lo�i�t�</strong> nebo <strong>n�zvu �lo�i�t�
+                    pramen�</strong>.
                 Pro dal�� z��en� va�eho hled�n� vyberte strom nebo za�krtn�te "Pouze p�esn� shoda".
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech osob ve va�� datab�zi.</p>
 
-            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
+            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
+                obnov� v�echny v�choz� hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, vymazat nebo otestovat v�sledek. Chcete-li najednou vymazat v�ce z�znam�, za�krtn�te pol��ko ve sloupci
-                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
+            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, vymazat nebo otestovat v�sledek. Chcete-li najednou vymazat v�ce
+                z�znam�, za�krtn�te pol��ko ve sloupci
+                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu.
+                Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
                 m��ete pou��t tla��tka <strong>Vybrat v�e</strong> nebo <strong>Vy�istit v�e</strong>.</p>
 
         </td>
@@ -49,17 +53,19 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">P�idat nov� �lo�i�t� pramen�</p></a>
+            <a id="add"><p class="subheadbold">P�idat nov� �lo�i�t� pramen�</p></a>
             <p><strong>�lo�i�t� pramen�</strong> je arch�v, sborn�k �i kolekce pramen�, fyzick� �i jin�.</p>
 
-            <p>Chcete-li p�idat nov� �lo�i�t� pramen�, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. N�kter� informace (pozn�mky a
+            <p>Chcete-li p�idat nov� �lo�i�t� pramen�, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. N�kter� informace
+                (pozn�mky a
                 dal�� ud�losti) m��ete p�idat po ulo�en� a zamknut� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
             <span class="optionhead">Strom</span>
             <p>Pokud m�te pouze jeden strom, vybr�n bude v�dy tento strom. Jinak, pros�m, pro nov� �lo�i�t� pramen� vyberte po�adovan� strom.</p>
 
             <span class="optionhead">ID ��slo �lo�i�t�</span>
-            <p>ID ��slo �lo�i�t� mus� b�t jednozna�n� uvnit� vybran�ho stromu a m�lo by se skl�dat z velk�ch p�smen <strong>REPO</strong> nebo <strong>R</strong> n�sledovan�ho ��slem (nejv�ce 22 znak� celkem).
+            <p>ID ��slo �lo�i�t� mus� b�t jednozna�n� uvnit� vybran�ho stromu a m�lo by se skl�dat z velk�ch p�smen <strong>REPO</strong> nebo
+                <strong>R</strong> n�sledovan�ho ��slem (nejv�ce 22 znak� celkem).
                 P�i prvn�m zobrazen� str�nky a kdykoli je vybr�n jin� strom, bude dopln�no voln� a jednozna�n� ��slo, ale pokud chcete, m��ete vlo�it sv� vlastn� ID ��slo.
                 Chcete-li zkontrolovat, zda je va�e ID ��slo jednozna�n�, klikn�te na tla��tko <strong>Zkontrolovat</strong>. Objev� se zpr�va, kter� v�m sd�l�, zda je ji� ID ��slo pou�ito nebo ne.
                 Chcete-li vygenerovat dal�� jednozna�n� ��slo, klikn�te na <strong>Vygenerovat</strong>. Bude zji�t�no nejvy��� ��slo ve va�� datab�zi a p�id�na 1.
@@ -73,33 +79,8 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
           <span class="optionhead">N�zev</span>
           <p>Kr�tk� n�zev �lo�i�t�.</p>
 
-          <span class="optionhead">Adresa 1, Adresa 2, M�sto, Kraj/provincie, PS�, Zem�</span><br>
-          <p>Um�st�n� �lo�i�t� (p�i vyu�it� t�chto pol� jsou v�echny ��sti voliteln�).</p>
-
-        </td>
-    </tr>
-  <tr class="databack">
-    <td class="tngshadow">
-
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="edit"><p class="subheadbold">Upravit existuj�c� �lo�i�t� pramen�</p></a>
-      <p>Chcete-li upravit existuj�c� �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot� klikn�te na ikonu Upravit vedle �lo�i�t�.</p>
-
-            <span class="optionhead">Pozn�mky</span>
-            <p>Pozn�mky lze p�ipojit k ud�losti nebo �lo�i�ti pramen� obecn� kliknut�m na ikonu Pozn�mky v horn� ��sti str�nky
-                nebo vedle ka�d� ud�losti pod "Dal�� ud�losti". Pokud pro ud�lost ji� existuj� pozn�mky, na ikon� Pozn�mky se v horn�m prav�m rohu zobraz� zelen� te�ka.
-                V�ce informac� o pozn�mk�ch najdete v odkazu <a href="notes_help.php">N�pov�da</a> v oblasti Pozn�mky.</p>
-
-            <span class="optionhead">Dal�� ud�losti</span>
-            <p>Chcete-li p�idat nebo spravovat dal�� ud�losti, klikn�te na tla��tko "P�idat nov�" vedle <strong>Dal��ch ud�lost�</strong>. Viz odkaz <a href="events_help.php">N�pov�da</a> v tomto okn� pro v�ce
-                informac� o p�id�n� nov�ch ud�lost�. Po p�id�n� ud�losti se v tabulce pod tla��tkem "P�idat nov�" zobraz� kr�tk� shrnut�. Ak�n� tla��tka pro
-                ka�dou ud�lost v�m umo�n� upravit nebo vymazat ud�lost, nebo p�idat pozn�mky. Po�ad�, ve kter�m jsou ud�losti zobrazeny, z�vis� na datu (pokud je pou�ito),
-                a po�ad� zapsan�m u typu ud�losti (nen�-li p�ipojeno datum). Toto po�ad� lze zm�nit p�i �prav� typ� ud�lost�.
-
-            <p><strong>Pozn�mka</strong>: Pozn�mky a zm�ny "Dal��ch" ud�lost� se ukl�daj� automaticky. Jin� zm�ny (nap�. standardn� ud�losti)
-                lze ulo�it kliknut�m na tla��tko Ulo�it na konci str�nky, nebo kliknut�m na ikonu Ulo�it na str�nce naho�e. Strom a
-                ID ��slo �lo�i�t� nelze zm�nit.</p>
-
+            <span class="optionhead">Adresa 1, Adresa 2, M�sto, Kraj/provincie, PS�, Zem�</span><br>
+            <p>Um�st�n� �lo�i�t� (p�i vyu�it� t�chto pol� jsou v�echny ��sti voliteln�).</p>
 
         </td>
     </tr>
@@ -107,9 +88,39 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat �lo�i�t� pramen�</p></a>
-            <p>Chcete-li odstranit �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot� klikn�te na ikonu Vymazat vedle tohoto �lo�i�t�. Tento ��dek zm�n�
-                barvu a pot� po odstran�n� �lo�i�t� zmiz�. Chcete-li najednou odstranit v�ce �lo�i�� pramen�, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�ho �lo�i�t�, kter�
+            <a id="edit"><p class="subheadbold">Upravit existuj�c� �lo�i�t� pramen�</p></a>
+            <p>Chcete-li upravit existuj�c� �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot�
+                klikn�te na ikonu Upravit vedle �lo�i�t�.</p>
+
+            <span class="optionhead">Pozn�mky</span>
+            <p>Pozn�mky lze p�ipojit k ud�losti nebo �lo�i�ti pramen� obecn� kliknut�m na ikonu Pozn�mky v horn� ��sti str�nky
+                nebo vedle ka�d� ud�losti pod "Dal�� ud�losti". Pokud pro ud�lost ji� existuj� pozn�mky, na ikon� Pozn�mky se v horn�m prav�m rohu
+                zobraz� zelen� te�ka.
+                V�ce informac� o pozn�mk�ch najdete v odkazu <a href="notes_help.php">N�pov�da</a> v oblasti Pozn�mky.</p>
+
+            <span class="optionhead">Dal�� ud�losti</span>
+            <p>Chcete-li p�idat nebo spravovat dal�� ud�losti, klikn�te na tla��tko "P�idat nov�" vedle <strong>Dal��ch ud�lost�</strong>. Viz odkaz
+                <a href="events_help.php">N�pov�da</a> v tomto okn� pro v�ce
+                informac� o p�id�n� nov�ch ud�lost�. Po p�id�n� ud�losti se v tabulce pod tla��tkem "P�idat nov�" zobraz� kr�tk� shrnut�. Ak�n�
+                tla��tka pro
+                ka�dou ud�lost v�m umo�n� upravit nebo vymazat ud�lost, nebo p�idat pozn�mky. Po�ad�, ve kter�m jsou ud�losti zobrazeny, z�vis� na datu (pokud je pou�ito),
+                a po�ad� zapsan�m u typu ud�losti (nen�-li p�ipojeno datum). Toto po�ad� lze zm�nit p�i �prav� typ� ud�lost�.
+
+            <p><strong>Pozn�mka</strong>: Pozn�mky a zm�ny "Dal��ch" ud�lost� se ukl�daj� automaticky. Jin� zm�ny (nap�. standardn� ud�losti)
+                lze ulo�it kliknut�m na tla��tko Ulo�it na konci str�nky, nebo kliknut�m na ikonu Ulo�it na str�nce naho�e. Strom a
+                ID ��slo �lo�i�t� nelze zm�nit.</p>
+
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="delete"><p class="subheadbold">Vymazat �lo�i�t� pramen�</p></a>
+            <p>Chcete-li odstranit �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot� klikn�te na
+                ikonu Vymazat vedle tohoto �lo�i�t�. Tento ��dek zm�n�
+                barvu a pot� po odstran�n� �lo�i�t� zmiz�. Chcete-li najednou odstranit v�ce �lo�i�� pramen�, za�krtn�te pol��ko ve sloupci Vybrat
+                vedle ka�d�ho �lo�i�t�, kter�
                 chcete odstranit, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na str�nce naho�e</p>
 
         </td>

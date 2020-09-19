@@ -4,46 +4,51 @@ echo help_header("Nápověda: Místa");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="cemeteries_help.php" class="lightlink">&laquo; Nápověda: Hřbitovy</a> &nbsp; | &nbsp;
-        <a href="places_googlemap_help.php" class="lightlink">Nápověda: Google Maps &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Místa</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="cemeteries_help.php" class="lightlink">&laquo; Nápověda: Hřbitovy</a> &nbsp; | &nbsp;
+                <a href="places_googlemap_help.php" class="lightlink">Nápověda: Google Maps &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Místa</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Sloučit</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Geokódovat</a>
-            </p>
+          <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Sloučit</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Geokódovat</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících míst vyhledáním celého nebo části <strong>názvu místa</strong>. Pro další zúžení výsledků vašeho hledání na místa spojená s určitým stromem vyberte tento strom.
-                Zaškrtnutím "Chybí zeměpisná šířka nebo délka" se zobrazí pouze místa, která je třeba doplnit tyto údaje. Zaškrtnutím "Vyhledat pouze kódy chrámů CJKSpd" se zobrazí pouze pětiznakové názvy míst,
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezení existujících míst vyhledáním celého nebo části <strong>názvu místa</strong>. Pro další zúžení výsledků vašeho hledání na místa
+                spojená s určitým stromem vyberte tento strom.
+                Zaškrtnutím "Chybí zeměpisná šířka nebo délka" se zobrazí pouze místa, která je třeba doplnit tyto údaje. Zaškrtnutím "Vyhledat pouze
+                kódy chrámů CJKSpd" se zobrazí pouze pětiznakové názvy míst,
                 které byly označeny jako chrámy CJKSpd. Zaškrtnutím volby "Pouze přesná shoda" výsledek vašeho hledání dále zúžíte.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech míst ve vaší databázi.</p>
 
             <p>Zaškrtnutím políčka "Žádné připojené události" zobrazíte pouze místa, která nejsou spojena s žádnými událostmi.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat více záznamů, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
+                více záznamů, zaškrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
+                zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
         </td>
@@ -52,10 +57,12 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nové / Upravit existující místa</p></a>
+            <a id="add"><p class="subheadbold">Přidat nové / Upravit existující místa</p></a>
 
-            <p>TNG automaticky přidá záznam nového místa pokaždé, když zapíšete nové místo v Admin/Osoba, v Admin/Rodiny nebo jako součást nějaké vlastní události.
-                Pokud na jakékoli z těchto obrazovek změníte existující místo a výsledkem bude nový jednoznačný název místa, nový záznam místa bude rovněž vytvořen.</p>
+            <p>TNG automaticky přidá záznam nového místa pokaždé, když zapíšete nové místo v Admin/Osoba, v Admin/Rodiny nebo jako součást nějaké
+                vlastní události.
+                Pokud na jakékoli z těchto obrazovek změníte existující místo a výsledkem bude nový jednoznačný název místa, nový záznam místa bude
+                rovněž vytvořen.</p>
 
             <p>Chcete-li přidat nové místo, klikněte na záložku <strong>Přidat nové</strong> a poté vyplňte formulář.
             <p>Chcete-li upravit existující místo, použijte
@@ -106,8 +113,10 @@ echo help_header("Nápověda: Místa");
             <p>Toto zaškrtnuté políčko (viditelné pouze při úpravě existujícího místa) označuje, že budou při uložení změn
                 aktualizovány všechny události, kde je toto místo použito.</p>
 
-            <p><strong>POZN.:</strong> Všechny následné importy souborů GEDCOM, kde je zaškrtnuta volba "Nahradit všechna aktuální data" nepřepíše nebo nevymaže
-                existující údaje o místech, pokud existující záznamy obsahují údaje v polích zeměpisná šířka, délka nebo poznámky nebo jsou připojena nějaká média.</p>
+            <p><strong>POZN.:</strong> Všechny následné importy souborů GEDCOM, kde je zaškrtnuta volba "Nahradit všechna aktuální data" nepřepíše
+                nebo nevymaže
+                existující údaje o místech, pokud existující záznamy obsahují údaje v polích zeměpisná šířka, délka nebo poznámky nebo jsou připojena
+                nějaká média.</p>
 
         </td>
     </tr>
@@ -115,9 +124,11 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat místa</p></a>
-            <p>Chcete-li odstranit místo, použijte záložku <a href="#search">Hledat</a> pro nalezení místa, a poté klikněte na ikonu Vymazat vedle tohoto záznamu místa. Tento řádek změní
-                barvu a poté po odstranění místa zmizí. Chcete-li najednou odstranit více míst, zaškrtněte políčko ve sloupci Vybrat vedle každého místa, který
+            <a id="delete"><p class="subheadbold">Vymazat místa</p></a>
+            <p>Chcete-li odstranit místo, použijte záložku <a href="#search">Hledat</a> pro nalezení místa, a poté klikněte na ikonu Vymazat vedle
+                tohoto záznamu místa. Tento řádek změní
+                barvu a poté po odstranění místa zmizí. Chcete-li najednou odstranit více míst, zaškrtněte políčko ve sloupci Vybrat vedle každého
+                místa, který
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat označené" na stránce nahoře</p>
 
         </td>
@@ -126,17 +137,19 @@ echo help_header("Nápověda: Místa");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="merge"><p class="subheadbold">Sloučit místa</p></a>
+            <a id="merge"><p class="subheadbold">Sloučit místa</p></a>
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit názvy míst, které jsou lehce odlišné, ale odkazují na stejné místo.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
 
             <span class="optionhead">Najít kandidáty pro sloučení</span>
-            <p>Pokud je ve vašem Základním nastavení konfigurováno, že místa jsou spojena se stromy, uvidíte zde výběrové pole Strom. V tomto případě vyberte strom.
+            <p>Pokud je ve vašem Základním nastavení konfigurováno, že místa jsou spojena se stromy, uvidíte zde výběrové pole Strom. V tomto případě
+                vyberte strom.
                 Nelze slučovat místa z různých stromů, takže lze vybrat pouze jeden strom. Poté zadejte výběrová kritéria,
                 která budou společná pro všechny potenciální duplicity. Můžete např. zapsat <em>Horní Staré</em> pro nalezení
                 <em>Horní Staré</em> a <em>Horní Staré Město</em>.</p>
             <p>Do prvního pole musíte něco zapsat, druhé pole je nepovinné. Chcete-li sloučit dvě místa, jejichž názvy nejsou moc podobné,
-                můžete něco zapsat i do druhého pole. Např. pokud chcete sloučit <em>TU</em> a <em>Trutnov</em>, bude nejlepší zapsat do prvního pole <em>TU</em>
+                můžete něco zapsat i do druhého pole. Např. pokud chcete sloučit <em>TU</em> a <em>Trutnov</em>, bude nejlepší zapsat do prvního pole
+                <em>TU</em>
                 a do druhého <em>Trutnov</em>. Po dokončení zápisu kritérií klikněte na "Pokračovat".</p>
 
             <span class="optionhead">Vybrat místa pro sloučení</span>
@@ -148,24 +161,28 @@ echo help_header("Nápověda: Místa");
                 na obrazovce nahoře nebo dole. Všechny výskyty vymazaných míst (v záznamech osoby nebo rodiny) budou nahrazeny názvem, který jste vybrali, že má být ponechán.
                 <strong>Pozn.:</strong> Poznámky a údaje o zeměpisné šířce a délce zůstanou u míst, která ponecháváte.</p>
 
-            <p>Pamatujte na to, že se zvyšujícím počtem položek, které jsou vybrány ke sloučení, klesá výkon. Jinými slovy sloučení dvou míst proběhne mnohem rychleji než sloučení 20 míst.</p>
+            <p>Pamatujte na to, že se zvyšujícím počtem položek, které jsou vybrány ke sloučení, klesá výkon. Jinými slovy sloučení dvou míst proběhne
+                mnohem rychleji než sloučení 20 míst.</p>
 
-            <p>Chcete-li znovu vyhledat, aniž byste slučovali, zapište novou hodnotu do pole "Hledat" na obrazovce nahoře a klikněte znovu na "Pokračovat".</p>
+            <p>Chcete-li znovu vyhledat, aniž byste slučovali, zapište novou hodnotu do pole "Hledat" na obrazovce nahoře a klikněte znovu na
+                "Pokračovat".</p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="geo"><p class="subheadbold">Geokódovat</p></a>
+            <a id="geo"><p class="subheadbold">Geokódovat</p></a>
             <p>Nástroj Geokódování lze použít k nalezení a uložení souřadnic zeměpisné šířky a délky pro místa, která tyto údaje neobsahují.</p>
 
             <span class="optionhead">Omezení</span>
-            <p>Délka trvání tohoto procesu záleží na počtu míst, která je potřeba geokódovat. Google také omezuje počet míst na 2500 denně. Z těchto důvodů můžete omezit počet míst, která mají být okódována najednou.
+            <p>Délka trvání tohoto procesu záleží na počtu míst, která je potřeba geokódovat. Google také omezuje počet míst na 2500 denně. Z těchto
+                důvodů můžete omezit počet míst, která mají být okódována najednou.
                 Výchozí počet je 100. Pokud zjistíte, že prvních 100 míst proběhlo rychle, můžete v další dávce tento počet zvýšit.</p>
 
             <span class="optionhead">Pokud bude pro jedno místo nalezeno více výsledků:</span>
-            <p>Je-li název místa nejednoznačný, Google může vrátit více výsledků. V tomto případě doporučujeme odmítnout všechny vrácené výsledky (takže můžete
+            <p>Je-li název místa nejednoznačný, Google může vrátit více výsledků. V tomto případě doporučujeme odmítnout všechny vrácené výsledky
+                (takže můžete
                 dohledání provést později ručně), ale můžete také zvolit, aby TNG akceptoval první nalezený výsledek.</p>
         </td>
     </tr>

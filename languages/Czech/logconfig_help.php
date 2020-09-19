@@ -4,21 +4,21 @@ echo help_header("N�pov�da: Nastaven� protokolov�n�");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="pedconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� sch�mat</a> &nbsp; | &nbsp;
-        <a href="importconfig_help.php" class="lightlink">N�pov�da: Nastaven� importu &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Nastaven� protokolov�n�</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="pedconfig_help.php" class="lightlink">&laquo; N�pov�da: Nastaven� sch�mat</a> &nbsp; | &nbsp;
+                <a href="importconfig_help.php" class="lightlink">N�pov�da: Nastaven� importu &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Nastaven� protokolov�n�</span>
     </td>
   </tr>
   <tr class="databack">

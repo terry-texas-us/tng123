@@ -4,49 +4,52 @@ echo help_header("Nápověda: Kolekce");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="media_help.php" class="lightlink">&laquo; Nápověda: Média</a> &nbsp; | &nbsp;
-        <a href="albums_help.php" class="lightlink">Nápověda: Alba &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Kolekce</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="media_help.php" class="lightlink">&laquo; Nápověda: Média</a> &nbsp; | &nbsp;
+                <a href="albums_help.php" class="lightlink">Nápověda: Alba &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Kolekce</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Co jsou to kolekce?</p></a>
+            <a id="what"><p class="subheadbold">Co jsou to kolekce?</p></a>
 
-            <p><strong>Kolekcemi</strong> se v TNG rozumí typ média. Standardní kolekce v TNG jsou Fotografie, Dokumenty, Náhrobky, Vyprávění, Videa a Zvukové záznamy,
-                ale TNG vám umožní vytvořit i vlastní kolekce. Kolekce není omezena jedním typem souboru. Např. obrázky .jpg mohou být součástí kterékoli kolekce,
+            <p><strong>Kolekcemi</strong> se v TNG rozumí typ média. Standardní kolekce v TNG jsou Fotografie, Dokumenty, Náhrobky, Vyprávění, Videa a
+                Zvukové záznamy,
+                ale TNG vám umožní vytvořit i vlastní kolekce. Kolekce není omezena jedním typem souboru. Např. obrázky .jpg mohou být součástí
+                kterékoli kolekce,
                 nejen fotografií a dokumentů, a kolekce Fotografie nemusí obsahovat pouze obrazové soubory.</p>
-
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Přidání kolekce</p></a>
+            <a id="add"><p class="subheadbold">Přidání kolekce</p></a>
 
-            <p>Chcete-li přidat novou kolekci, klikněte na tlačítko "Přidat kolekci" kdekoli je viditelné (např. na obrazovkách Média, Přidat média a Upravit média).
+            <p>Chcete-li přidat novou kolekci, klikněte na tlačítko "Přidat kolekci" kdekoli je viditelné (např. na obrazovkách Média, Přidat média a
+                Upravit média).
                 Po zobrazení malého okna vyplňte formulář. Význam jednotlivých polí je následující:</p>
 
             <span class="optionhead">ID číslo kolekce</span>
-            <p>Velmi krátký řetězec znaků, který slouží jako identifikátor této kolekce. Neměl by obsahovat mezery ani žádné znaky, které nejsou alfanumerické,
+            <p>Velmi krátký řetězec znaků, který slouží jako identifikátor této kolekce. Neměl by obsahovat mezery ani žádné znaky, které nejsou
+                alfanumerické,
                 a měl mít maximálně 10 znaků. Např. pokud jste vytvořili kolekci pro vojenské záznamy, do tohoto pole byste měli zapsat "military".
                 Tato hodnota se nikde nezobrazí, takže není důležité, jak ji pojmenujete, ale musí být jednoznačná.</p>
 

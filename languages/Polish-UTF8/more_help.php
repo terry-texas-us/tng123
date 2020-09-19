@@ -4,27 +4,28 @@ echo help_header("Pomoc: Więcej");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="events_help.php" class="lightlink">&laquo; Pomoc: Wydarzenia</a> &nbsp; | &nbsp;
-        <a href="media_help.php" class="lightlink">Pomoc: Media &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Więcej</span>
-      <p class="smaller menu">
-        <a href="#more" class="lightlink">Więcej informacji</a>
-      </p>
-    </td>
-  </tr>
-  <tr class="databack">
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="events_help.php" class="lightlink">&laquo; Pomoc: Wydarzenia</a> &nbsp; | &nbsp;
+                <a href="media_help.php" class="lightlink">Pomoc: Media &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Więcej</span>
+            <p class="smaller menu">
+                <a href="#more" class="lightlink">Więcej informacji</a>
+            </p>
+        </td>
+    </tr>
+    <tr class="databack">
         <td class="tngshadow">
 
-            <a name="more"><p class="subheadbold">Więcej informacji</p></a>
-            <p>To okienko pozwala na wprowadzenie dodatkowych informacji związanych ze standardowymi rodzajami wydarzeń TNG. Kiedy jedno lub więcej z tych pól jest wypełnione, ikonka "Więcej" (znak plus)
+            <a id="more"><p class="subheadbold">Więcej informacji</p></a>
+            <p>To okienko pozwala na wprowadzenie dodatkowych informacji związanych ze standardowymi rodzajami wydarzeń TNG. Kiedy jedno lub więcej z
+                tych pól jest wypełnione, ikonka "Więcej" (znak plus)
                 będzie miała zieloną kropkę w rogu. Pola w okienku "Więcej informacji" obejmują:</p>
 
             <p><span class="optionhead">Wiek</span>: Wiek osoby w czasie wydarzenia.</p>
@@ -33,7 +34,8 @@ echo help_header("Pomoc: Więcej");
 
             <p><span class="optionhead">Przyczyna</span>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
 
-            <p><span class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</span>: Adres oraz inne informacje kontaktowe związane z wydarzeniem..</p>
+            <p><span class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</span>: Adres oraz inne
+                informacje kontaktowe związane z wydarzeniem..</p>
 
             <p><span class="optionhead">Wymagane pola:</span>
             <p>Żadna z tych informacji nie jest wymagana.</p>

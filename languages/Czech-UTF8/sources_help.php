@@ -4,43 +4,47 @@ echo help_header("Nápověda: Prameny");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="families_help.php" class="lightlink">&laquo; Nápověda: Rodiny</a> &nbsp; | &nbsp;
-        <a href="repositories_help.php" class="lightlink">Nápověda: Úložiště pramenů &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Prameny</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="families_help.php" class="lightlink">&laquo; Nápověda: Rodiny</a> &nbsp; | &nbsp;
+                <a href="repositories_help.php" class="lightlink">Nápověda: Úložiště pramenů &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Prameny</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Sloučit</a>
-            </p>
+          <a href="#add" class="lightlink">Přidat nový</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Upravit existující</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Sloučit</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících pramenů vyhledáním celého nebo části <strong>ID čísla pramenu, názvu pramenu, autora, archivačního čísla</strong> nebo <strong>vydavatele</strong>.
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezení existujících pramenů vyhledáním celého nebo části <strong>ID čísla pramenu, názvu pramenu, autora, archivačního čísla</strong>
+                nebo <strong>vydavatele</strong>.
                 Pro další zúžení vašeho hledání vyberte strom nebo zaškrtněte "Pouze přesná shoda".
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech osob ve vaší databázi.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více záznamů, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více
+                záznamů, zaškrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u každého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
+                Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
         </td>
@@ -49,8 +53,9 @@ echo help_header("Nápověda: Prameny");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nový pramen</p></a>
-            <p><strong>Pramen</strong> je nějaká forma důkazu, která slouží k prokázání nebo doložení údajů ve vaší databázi. Stejný pramen může být citován vícekrát
+            <a id="add"><p class="subheadbold">Přidat nový pramen</p></a>
+            <p><strong>Pramen</strong> je nějaká forma důkazu, která slouží k prokázání nebo doložení údajů ve vaší databázi. Stejný pramen může být
+                citován vícekrát
                 u více osob, rodin nebo událostí.</p>
 
             <p>Chcete-li přidat nový pramen, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář. Některé informace (poznámky a
@@ -84,26 +89,30 @@ echo help_header("Nápověda: Prameny");
           <p>Vyberte úložiště pramenů, ve kterém se pramen nachází (je-li tato skutečnost známa). Pokud dané úložiště pramenů ještě v databázi neexistuje, jděte na Administrace/Úložiště pramenů a
             kde jej založte, pak se vraťte a zde jej vyberte.</p>
 
-          <span class="optionhead">Vlastní text</span><br>
-          <p>Citace z materiálu pramene (volitelné).</p>
+            <span class="optionhead">Vlastní text</span><br>
+            <p>Citace z materiálu pramene (volitelné).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Nahoru</a></p>
-      <a name="edit"><p class="subheadbold">Upravit existující prameny</p></a>
-      <p>Chcete-li upravit existující pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Upravit vedle pramenu.</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="edit"><p class="subheadbold">Upravit existující prameny</p></a>
+            <p>Chcete-li upravit existující pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu
+                Upravit vedle pramenu.</p>
 
             <span class="optionhead">Poznámky</span>
             <p>Poznámky lze připojit k událostem nebo pramenu obecně kliknutím na ikonu Poznámky v horní části stránky
-                nebo vedle každé události pod "Další události". Pokud pro událost již existují poznámky, na ikoně Poznámky se v horním pravém rohu zobrazí zelená tečka.
+                nebo vedle každé události pod "Další události". Pokud pro událost již existují poznámky, na ikoně Poznámky se v horním pravém rohu
+                zobrazí zelená tečka.
                 Více informací o poznámkách najdete v odkazu <a href="notes_help.php">Nápověda</a> v oblasti Poznámky.</p>
 
             <span class="optionhead">Další události</span>
-            <p>Chcete-li přidat nebo spravovat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Dalších událostí</strong>. Viz odkaz <a href="events_help.php">Nápověda</a> v tomto okně pro více
-                informací o přidání nových událostí. Po přidání události se v tabulce pod tlačítkem "Přidat nové" zobrazí krátké shrnutí. Akční tlačítka pro
+            <p>Chcete-li přidat nebo spravovat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Dalších událostí</strong>. Viz odkaz
+                <a href="events_help.php">Nápověda</a> v tomto okně pro více
+                informací o přidání nových událostí. Po přidání události se v tabulce pod tlačítkem "Přidat nové" zobrazí krátké shrnutí. Akční
+                tlačítka pro
                 každou událost vám umožní upravit nebo vymazat událost, nebo přidat poznámky. Pořadí, ve kterém jsou události zobrazeny, závisí na datu (pokud je použito),
                 a pořadí zapsaném u typu události (není-li připojeno datum). Toto pořadí lze změnit při úpravě typů událostí.
 
@@ -117,9 +126,11 @@ echo help_header("Nápověda: Prameny");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat prameny</p></a>
-            <p>Chcete-li odstranit pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Vymazat vedle tohoto pramenu. Tento řádek změní
-                barvu a poté po odstranění pramenu zmizí (všechny připojené citace budou také vymazány). Chcete-li najednou odstranit více pramenů, zaškrtněte políčko ve sloupci Vybrat vedle každého pramenu, který
+            <a id="delete"><p class="subheadbold">Vymazat prameny</p></a>
+            <p>Chcete-li odstranit pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu Vymazat vedle
+                tohoto pramenu. Tento řádek změní
+                barvu a poté po odstranění pramenu zmizí (všechny připojené citace budou také vymazány). Chcete-li najednou odstranit více pramenů,
+                zaškrtněte políčko ve sloupci Vybrat vedle každého pramenu, který
                 chcete odstranit, a poté klikněte na tlačítko "Vymazat označené" na stránce nahoře</p>
 
         </td>
@@ -128,15 +139,18 @@ echo help_header("Nápověda: Prameny");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="merge"><p class="subheadbold">Sloučit</p></a>
+            <a id="merge"><p class="subheadbold">Sloučit</p></a>
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit prameny, které jsou lehce odlišné, ale odkazují na stejný materiál.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
 
             <span class="optionhead">Najít shodu</span>
-            <p>Vyberte nejprve strom. Nelze slučovat prameny z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat pramen jako
-                výchozí bod vašeho hledání (ID číslo pramenu 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny změny, nechte pole ID číslo pramenu 1 prázdné</p>
+            <p>Vyberte nejprve strom. Nelze slučovat prameny z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat pramen
+                jako
+                výchozí bod vašeho hledání (ID číslo pramenu 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny
+                změny, nechte pole ID číslo pramenu 1 prázdné</p>
 
-            <p>Pokud jste vybrali pramen jako ID číslo pramenu 1, můžete také ručně vybrat ID číslo pramenu 2. Chcete-li, aby duplicity Pramenu 1 nalezl TNG, nechte pole ID číslo pramenu 2 prázdné.</p>
+            <p>Pokud jste vybrali pramen jako ID číslo pramenu 1, můžete také ručně vybrat ID číslo pramenu 2. Chcete-li, aby duplicity Pramenu 1
+                nalezl TNG, nechte pole ID číslo pramenu 2 prázdné.</p>
 
             <span class="optionhead">Porovnat následující pole</span>
             <p>Toto jsou kritéria, která TNG používá k určení možných duplicit. Standardně jsou vybrány krátký název a (dlouhý) název, což znamená, že tato pole

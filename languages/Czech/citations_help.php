@@ -4,49 +4,51 @@ echo help_header("N�pov�da: Citace");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="notes_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp; | &nbsp;
-        <a href="events_help.php" class="lightlink">N�pov�da: Ud�losti &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Citace</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="notes_help.php" class="lightlink">&laquo; N�pov�da: Pozn�mky</a> &nbsp; | &nbsp;
+                <a href="events_help.php" class="lightlink">N�pov�da: Ud�losti &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Citace</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Co jsou to citace?</p></a>
+            <a id="what"><p class="subheadbold">Co jsou to citace?</p></a>
 
             <p><strong>Citace</strong> je odkaz na z�znam pramenu, proveden� s �myslem prok�zat pravdivost n�jak�ho �daje. Pramen obvykle
-                v�eobecn� popisuje, kde byl uveden� �daj nalezen (nap�. matrika nebo s��tac� arch), zat�mco citace obvykle obsahuje konkr�tn� informaci (nap�. na kter� str�nce).
+                v�eobecn� popisuje, kde byl uveden� �daj nalezen (nap�. matrika nebo s��tac� arch), zat�mco citace obvykle obsahuje konkr�tn�
+                informaci (nap�. na kter� str�nce).
                 Jeden z�znam pramenu m��e b�t citov�n v�cekr�t u r�zn�ch osob, rodin, pozn�mek nebo ud�lost�.</p>
-
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">P�idat/Upravit/Vymazat citace</p></a>
+            <a id="add"><p class="subheadbold">P�idat/Upravit/Vymazat citace</p></a>
 
-            <p>Chcete-li p�idat, upravit nebo vymazat citace, klikn�te na ikonu Citace na str�nce naho�e nebo vedle n�jak� pozn�mky nebo ud�losti (pokud ji� citace existuje,
+            <p>Chcete-li p�idat, upravit nebo vymazat citace, klikn�te na ikonu Citace na str�nce naho�e nebo vedle n�jak� pozn�mky nebo ud�losti
+                (pokud ji� citace existuje,
                 na ikon� je zelen� te�ka). Po kliknut� na ikonu se objev� okno, ve kter�m jsou zobrazeny
                 v�echny citace existuj�c� pro aktivn� subjekt nebo ud�lost.</p>
 
-            <p>Chcete-li p�idat novou citaci, klikn�te na tla��tko "P�idat nov�" a vypl�te formul��. Pokud vybran� subjekt nebo ud�lost je�t� nem�ly ��dn�
+            <p>Chcete-li p�idat novou citaci, klikn�te na tla��tko "P�idat nov�" a vypl�te formul��. Pokud vybran� subjekt nebo ud�lost je�t� nem�ly
+                ��dn�
                 citace, dostanete se p��mo na obrazovku "P�idat novou citaci".</p>
 
             <p>Pokud chcete existuj�c� citaci upravit nebo vymazat, klikn�te na p��slu�nou ikonu vedle t�to citace.</p>

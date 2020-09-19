@@ -4,17 +4,17 @@ echo help_header("Help: Reports");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="eventtypes_help.php" class="lightlink">&laquo; Help: Custom Event Types</a> &nbsp; | &nbsp;
-        <a href="dna_help.php" class="lightlink">Help: DNA Tests &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Reports</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="eventtypes_help.php" class="lightlink">&laquo; Help: Custom Event Types</a> &nbsp; | &nbsp;
+                <a href="dna_help.php" class="lightlink">Help: DNA Tests &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Reports</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
@@ -32,15 +32,18 @@ echo help_header("Help: Reports");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><p class="subheadbold">Search</p></a>
             <p>Locate existing cemeteries by searching for all or part of the <strong>Report Name</strong> or <strong>Description</strong>.
                 Searching with no value in the search box will find all cemeteries in your database.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                values and searches again.</p>
 
             <span class="optionhead">Actions</span>
-            <p>The Action buttons next to each Report allow you to edit, delete or preview that Report. To delete more than one Report at a time, click the box in the
-                <strong>Select</strong> column for each Report to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
+            <p>The Action buttons next to each Report allow you to edit, delete or preview that Report. To delete more than one Report at a time,
+                click the box in the
+                <strong>Select</strong> column for each Report to be deleted, then click the "Delete Selected" button at the top of the list. Use the
+                <strong>Select All</strong> or <strong>Clear All</strong>
                 buttons to toggle all select boxes at once.</p>
 
         </td>
@@ -49,9 +52,10 @@ echo help_header("Help: Reports");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="add"><p class="subheadbold">Adding or Editing Reports</p></a>
+            <a id="add"><p class="subheadbold">Adding or Editing Reports</p></a>
 
-            <p>A TNG Report is a custom-built listing of people in your database. You decide which fields to display, which people to put in the report, and how to sort them.
+            <p>A TNG Report is a custom-built listing of people in your database. You decide which fields to display, which people to put in the
+                report, and how to sort them.
                 You can use the report builder interface, or you can include your own SQL query instead.</p>
 
             <p>To add a new Report, click on the "Add New" tab, then fill out the form. To make changes to an existing Report, use
@@ -144,7 +148,8 @@ echo help_header("Help: Reports");
             <p>When you're ready to save your report, click "Save Report" to save and stay on the same page and continue editing. Click "Save and Exit" to save and return to the Reports
                 menu.</p>
 
-            <p>To see some sample reports, please visit <a href="http://lythgoes.net/genealogy/demo.php" target="_blank">http://lythgoes.net/genealogy/demo.php</a>, choose the Administrative Demo, and browse the Reports section there.</p>
+            <p>To see some sample reports, please visit <a href="http://lythgoes.net/genealogy/demo.php" target="_blank">http://lythgoes.net/genealogy/demo.php</a>,
+                choose the Administrative Demo, and browse the Reports section there.</p>
 
         </td>
     </tr>
@@ -152,8 +157,9 @@ echo help_header("Help: Reports");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Deleting Reports</p></a>
-            <p>To delete a Report, use the <a href="#search">Search</a> tab to locate the Report, then click on the Delete icon next to that Report record. The row will
+            <a id="delete"><p class="subheadbold">Deleting Reports</p></a>
+            <p>To delete a Report, use the <a href="#search">Search</a> tab to locate the Report, then click on the Delete icon next to that Report
+                record. The row will
                 change color and then vanish as the Report is deleted.</p>
 
         </td>

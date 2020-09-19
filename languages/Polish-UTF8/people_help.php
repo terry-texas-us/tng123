@@ -4,39 +4,43 @@ echo help_header("Pomoc: Osoby");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="index_help.php" class="lightlink">&laquo; Pomoc: Pierwsze kroki</a> &nbsp; | &nbsp;
-        <a href="families_help.php" class="lightlink">Pomoc: Rodziny &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Osoby</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="index_help.php" class="lightlink">&laquo; Pomoc: Pierwsze kroki</a> &nbsp; | &nbsp;
+                <a href="families_help.php" class="lightlink">Pomoc: Rodziny &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Osoby</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-        <a href="#review" class="lightlink">Przegląd zmian</a> &nbsp; | &nbsp;
-                <a href="#merge" class="lightlink">Scalanie</a>
-            </p>
+          <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+          <a href="#review" class="lightlink">Przegląd zmian</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Scalanie</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Szukanie</p></a>
-            <p>Znajdź istniejące osoby wpisując <strong>nazwisko</strong> albo <strong>numer ID</strong> lub ich część. Wybierz drzewo oraz / lub jedną z dostępnych opcji w celu dalszego zawężenia kryteriów wyszukiwania.
+            <a id="search"><p class="subheadbold">Szukanie</p></a>
+            <p>Znajdź istniejące osoby wpisując <strong>nazwisko</strong> albo <strong>numer ID</strong> lub ich część. Wybierz drzewo oraz / lub
+                jedną z dostępnych opcji w celu dalszego zawężenia kryteriów wyszukiwania.
                 Jeśli nie wybierzesz żadnej z proponowanych opcji, w polu wyszukiwania wyświetlą się wszystkie osoby zapisane w bazie danych.</p>
 
-            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który przywraca domyślne wartości i wszystkich wyszukiwań.</p>
+            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
+                przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
             <span class="optionhead">Czynność</span>
-            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż jeden rekord jednocześnie, kliknij pole w kolumnie
-                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
+            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
+                jeden rekord jednocześnie, kliknij pole w kolumnie
+                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
+                górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
                 aby zaznaczyć lub usunąć zaznaczenie wszystkich pól wyboru naraz.</p>
 
         </td>
@@ -45,17 +49,21 @@ echo help_header("Pomoc: Osoby");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="add"><p class="subheadbold">Dodawanie nowej osoby</p></a>
-            <p>Aby dodać nową osobę, kliknij na <strong>Dodaj nowe</strong>, a następnie wypełnij formularz. Niektóre informacje (notatki, cytaty, związki i dodatkowe wydarzenia)
+            <a id="add"><p class="subheadbold">Dodawanie nowej osoby</p></a>
+            <p>Aby dodać nową osobę, kliknij na <strong>Dodaj nowe</strong>, a następnie wypełnij formularz. Niektóre informacje (notatki, cytaty,
+                związki i dodatkowe wydarzenia)
                 mogą być dodane dopiero po kliknięciu na przycisk <strong>Zapisz i kontynuuj</strong>. Do dyspozycji są następujące pola:</p>
 
             <span class="optionhead">Drzewo</span>
             <p>Jeśli masz tylko jedno drzewo, zostanie ono zaznaczone automatycznie. W innym przypadku, należy dla nowej osoby wybrać drzewo.</p>
 
             <span class="optionhead">Gałąź (opcjonalnie)</span>
-            <p>Przypisanie "Gałęzi" do osoby ogranicza dostęp do jej danych do użytkowników którzy są przypisani do tej samej gałęzi. Jeśli co najmniej jedna gałąź została
-                zdefiniowana i konto użytkownika nie jest przypisane do danej gałęzi, może on przypisać nową osobę do jednej lub większej liczby istniejących gałęzi. Aby wybrać
-                "Gałęzie", kliknij na przycisk "Edycja" w celu otwarcia pola wyboru gałęzi wybranego drzewa. Użyj przycisku Ctrl (Windows) lub Command (Mac), aby wybrać więcej niż jedną gałąź.
+            <p>Przypisanie "Gałęzi" do osoby ogranicza dostęp do jej danych do użytkowników którzy są przypisani do tej samej gałęzi. Jeśli co
+                najmniej jedna gałąź została
+                zdefiniowana i konto użytkownika nie jest przypisane do danej gałęzi, może on przypisać nową osobę do jednej lub większej liczby
+                istniejących gałęzi. Aby wybrać
+                "Gałęzie", kliknij na przycisk "Edycja" w celu otwarcia pola wyboru gałęzi wybranego drzewa. Użyj przycisku Ctrl (Windows) lub Command
+                (Mac), aby wybrać więcej niż jedną gałąź.
                 Po dokonaniu wyboru przenieś wskaźnik myszy na pole edycji, a pole wyboru zniknie.</p>
 
             <span class="optionhead">ID osoby</span>
@@ -92,27 +100,32 @@ echo help_header("Pomoc: Osoby");
             Informacje na temat miejsca powinny być rozdzielane przecinkami ( na przykład, <em>Boston, Suffolk, Massachusetts, USA</em>). Możesz również wybrać istniejącą nazwę miejsca przez kliknięcie ikonki "Znajdź" (lupa).
             Aby ograniczyć ilość wyświetleń, podaj przed kliknięciem część nazwy miejsca. Wyświetlą się wszystkie miejsca zawierające w nazwie podane hasło.</p>
 
-          <p><span class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</span><br>
-            Te zdarzenia są związane z nakazami praktykowanymi przez Mormonów w Kościele Jezusa Chrystusa Świętych w Dniach Ostatnich (kościół LDS wymyślił standard GEDCOM).
-            <strong>Uwaga:</strong> Jeśli nie chcesz, aby dane LDS były widoczne, przejdź do <em>Ustawienia i konfiguracja/Ustawienia główne</em> i ustaw tam odpowiednią opcję (musisz się wylogować i ponownie zalogować).</p>
+            <p><span class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</span><br>
+                Te zdarzenia są związane z nakazami praktykowanymi przez Mormonów w Kościele Jezusa Chrystusa Świętych w Dniach Ostatnich (kościół LDS
+                wymyślił standard GEDCOM).
+                <strong>Uwaga:</strong> Jeśli nie chcesz, aby dane LDS były widoczne, przejdź do <em>Ustawienia i konfiguracja/Ustawienia główne</em>
+                i ustaw tam odpowiednią opcję (musisz się wylogować i ponownie zalogować).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Wróć</a></p>
-      <a name="edit"><p class="subheadbold">Edycja istniejących osób</p></a>
-            <p>Aby wprowadzić zmiany dotyczące istniejącej osoby, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranej osoby.</p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
+            <a id="edit"><p class="subheadbold">Edycja istniejących osób</p></a>
+            <p>Aby wprowadzić zmiany dotyczące istniejącej osoby, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a
+                następnie kliknąć na ikonkę "Edycja" obok wybranej osoby.</p>
 
             <span class="optionhead">Notatki / Cytaty / Związki / "Więcej"</span>
             <p>Notatki, cytaty i związki możesz łączyć z wydarzeniami lub osobami klikając na ikony łączy u góry strony lub obok każdego wydarzenia.
                 "Więcej" informacji dla wydarzenia można dodać klikając na ikonkę "Plus ". Jeśli w którejś z kategorii istnieją już jakieś elementy,
-                odpowiednie ikonki oznaczone są zielonymi kropkami w prawym górnym rogu. Aby uzyskać więcej informacji na temat każdej z kategorii, zobacz <em>Pomoc</em> w okienkach,
+                odpowiednie ikonki oznaczone są zielonymi kropkami w prawym górnym rogu. Aby uzyskać więcej informacji na temat każdej z kategorii,
+                zobacz <em>Pomoc</em> w okienkach,
                 które stają się widoczne, gdy ikona zostanie naciśnięta.</p>
 
             <span class="optionhead">Inne wydarzenia</span>
-            <p>Aby dodać lub zarządzać dodatkowymi wydarzeniami, kliknij na przycisk "Dodaj nowe" obok <strong>Inne wydarzenia</strong>. Klikając <a href="events_help.php">Pomoc</a> znajdziesz więcej informacji na temat dodawania nowych wydarzeń.
+            <p>Aby dodać lub zarządzać dodatkowymi wydarzeniami, kliknij na przycisk "Dodaj nowe" obok <strong>Inne wydarzenia</strong>. Klikając <a
+                    href="events_help.php">Pomoc</a> znajdziesz więcej informacji na temat dodawania nowych wydarzeń.
                 Gdy wydarzenie zostało dodane, pod polem "Dodaj nowe" pokaże się krótkie streszczenie. Przyciski w polu "Czynność" dla każdego wydarzenia pozwalają na edycję
                 lub usunięcie wydarzenia, oraz dodawanie notatek lub cytatów. Kolejność, w której wydarzenia są wyświetlane jest ustalana wg daty (jeżeli dotyczy) i przez przypisany w "Rodzajach wydarzeń " priorytet
                 (jeśli nie jest związane terminem). Priorytet ten może ulec zmianie podczas edycji rodzajów wydarzeń.
@@ -135,8 +148,10 @@ echo help_header("Pomoc: Osoby");
                 Kliknij, aby usunąć łącze danej osoby z jej współmałżonkiem lub partnerem.</p>
 
             <span class="optionhead">Sortowanie rodziców lub małżonów</span>
-            <p>Jeżeli istnieje więcej niż jeden małżonek lub para rodziców, można zmienić kolejność przez "przeciąganie" bloków w górę i w dół. Aby to zrobić kliknij myszą na pole "Przeciągnij" i przytrzymaj
-                przycisk, a następnie przesuń w górę lub w dół na stronie. Gdy blok znajdzie się w wybranym miejscu zwolnij przycisk myszy. Zmiany dokonane podczas sortowania są zapisywane automatycznie.</p>
+            <p>Jeżeli istnieje więcej niż jeden małżonek lub para rodziców, można zmienić kolejność przez "przeciąganie" bloków w górę i w dół. Aby to
+                zrobić kliknij myszą na pole "Przeciągnij" i przytrzymaj
+                przycisk, a następnie przesuń w górę lub w dół na stronie. Gdy blok znajdzie się w wybranym miejscu zwolnij przycisk myszy. Zmiany
+                dokonane podczas sortowania są zapisywane automatycznie.</p>
 
         </td>
     </tr>
@@ -144,48 +159,61 @@ echo help_header("Pomoc: Osoby");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="delete"><p class="subheadbold">Usuwanie osób</p></a>
-            <p>Aby usunąć jedną osobę, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tej osoby. Wiersz zmieni kolor,
-                a następnie zniknie. Osoba została usunięta. Aby usunąć więcej niż jedną osobę naraz, zaznacz pole w kolumnie Wybierz obok każdej osoby, która
+            <a id="delete"><p class="subheadbold">Usuwanie osób</p></a>
+            <p>Aby usunąć jedną osobę, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a następnie kliknąć na ikonkę
+                Usuń obok tej osoby. Wiersz zmieni kolor,
+                a następnie zniknie. Osoba została usunięta. Aby usunąć więcej niż jedną osobę naraz, zaznacz pole w kolumnie Wybierz obok każdej
+                osoby, która
                 ma zostać usunięta, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze strony.</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Wróć</a></p>
-      <a name="review"><p class="subheadbold">Przegląd zmian</p></a>
-      <p>Aby sprawdzić propozycje zmian dokonane przez innych użytkowników, kliknij na przycisk "Przegląd zmian". Jeśli są tam jakieś wpisy, w polu "Propozycje zmian" pojawi się gwiazdka (*).
-        Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika lub oba.</p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
+            <a id="review"><p class="subheadbold">Przegląd zmian</p></a>
+            <p>Aby sprawdzić propozycje zmian dokonane przez innych użytkowników, kliknij na przycisk "Przegląd zmian". Jeśli są tam jakieś wpisy, w
+                polu "Propozycje zmian" pojawi się gwiazdka (*).
+                Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika
+                lub oba.</p>
 
-      <span class="optionhead">Wybierz wydarzenie i czynność</span><br>
-      <p>Zlokalizuj wiersz w tabeli, która opisuje zdarzenie, które chcesz obejrzeć usunąć. Listę wyników możesz zawęzić przez wybranie użytkownika (osoby odpowiedzialnej za
-        proponowaną zmianę) oraz / lub drzewa. Kiedy wyniki zostaną wyświetlone, kliknij na jedną z opcji widocznych z lewej strony wiersza.
-        Aby sprawdzić i ewentualnie nanieść zmiany wybierz <em>Przegląd zmian</em>. Aby odrzucić proponowane zmiany, wybierz <em>Usuń</em>.</p>
+            <span class="optionhead">Wybierz wydarzenie i czynność</span><br>
+            <p>Zlokalizuj wiersz w tabeli, która opisuje zdarzenie, które chcesz obejrzeć usunąć. Listę wyników możesz zawęzić przez wybranie
+                użytkownika (osoby odpowiedzialnej za
+                proponowaną zmianę) oraz / lub drzewa. Kiedy wyniki zostaną wyświetlone, kliknij na jedną z opcji widocznych z lewej strony wiersza.
+                Aby sprawdzić i ewentualnie nanieść zmiany wybierz <em>Przegląd zmian</em>. Aby odrzucić proponowane zmiany, wybierz <em>Usuń</em>.
+            </p>
 
-      <span class="optionhead">Przegląd zmian</span><br>
-      <p>Na tej karcie możesz dokonywać różnych dodatkowych zmian, w tym dotyczących notatek lub źródeł, a następnie kliknąć przycisk "Zapisz i Usuń",
-        aby zapisać zmiany i usunąć wpis. Można również zdecydować się na usunięcie propozycji klikając przycisk "Ignoruj i Usuń",
-        lub odłożyć decyzję na później klikając przycisk "Odłóż".</p>
+            <span class="optionhead">Przegląd zmian</span><br>
+            <p>Na tej karcie możesz dokonywać różnych dodatkowych zmian, w tym dotyczących notatek lub źródeł, a następnie kliknąć przycisk "Zapisz i
+                Usuń",
+                aby zapisać zmiany i usunąć wpis. Można również zdecydować się na usunięcie propozycji klikając przycisk "Ignoruj i Usuń",
+                lub odłożyć decyzję na później klikając przycisk "Odłóż".</p>
 
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Wróć</a></p>
-      <a name="merge"><p class="subheadbold">Scalanie osób</p></a>
-      Aby znaleźć i scalić dwa powtarzające się zapisy, kliknij na przycisk "Scalanie". Użytkownik decyduje, czy dwa zapisy są identyczne, czy też nie.</p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
+            <a id="merge"><p class="subheadbold">Scalanie osób</p></a>
+            Aby znaleźć i scalić dwa powtarzające się zapisy, kliknij na przycisk "Scalanie". Użytkownik decyduje, czy dwa zapisy są identyczne, czy
+            też nie.</p>
 
-      <span class="optionhead">Szukaj zgodności</span><br>
-      <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć osób z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej, masz możliwość wybrać osobę jako punkt wyjściowy
-        dla Twojego szukania (Osoba 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie. Jeśli zdecydowałeś, że TNG wyszukuje zgodności, pozostaw pole ID Osoby 1 puste.</p>
-      <p>Jeśli wybrałeś osobę jako Osoba 1, możesz też wybrać ręcznie ID Osoby 2. Wskazane jest jednak, aby pozwolić TNG na szukanie duplikatów dla Osoby 1, pozostawiając pole ID Osoby 2 puste.</p>
+            <span class="optionhead">Szukaj zgodności</span><br>
+            <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć osób z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej, masz
+                możliwość wybrać osobę jako punkt wyjściowy
+                dla Twojego szukania (Osoba 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie. Jeśli zdecydowałeś, że TNG wyszukuje
+                zgodności, pozostaw pole ID Osoby 1 puste.</p>
+            <p>Jeśli wybrałeś osobę jako Osoba 1, możesz też wybrać ręcznie ID Osoby 2. Wskazane jest jednak, aby pozwolić TNG na szukanie duplikatów
+                dla Osoby 1, pozostawiając pole ID Osoby 2 puste.</p>
 
-      <span class="optionhead">Zgodność następujących pozycji</span><br>
-      <p>Te kryteria TNG służą do określania możliwych zgodności. Imię i nazwisko są wybrane jako domyślne. To oznacza, że te pola muszą zgadzać się w obydwóch zapisach, aby zostały wzięte pod uwagę
-        jako możliwe zgodności. Jeśli wybierzesz też datę urodzenia, miejsce urodzenia, datę oraz / lub miejsce zgonu, to te pola muszą się też zgadzać.</p>
+            <span class="optionhead">Zgodność następujących pozycji</span><br>
+            <p>Te kryteria TNG służą do określania możliwych zgodności. Imię i nazwisko są wybrane jako domyślne. To oznacza, że te pola muszą zgadzać
+                się w obydwóch zapisach, aby zostały wzięte pod uwagę
+                jako możliwe zgodności. Jeśli wybierzesz też datę urodzenia, miejsce urodzenia, datę oraz / lub miejsce zgonu, to te pola muszą się
+                też zgadzać.</p>
 
       <span class="optionhead">Inne opcje</span><br>
       <p><em>Ignoruj puste pola</em> znaczy, że puste pola nie będą brane pod uwagę. Na przykład, ktoś z nazwiskiem ale bez imienia nie zostanie uwzględniony, jeśli imię będzie wśród zaznaczonych kryteriów.</p>

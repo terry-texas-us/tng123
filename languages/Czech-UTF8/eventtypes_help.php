@@ -4,43 +4,46 @@ echo help_header("Nápověda: Vlastní typy událostí");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp; | &nbsp;
-        <a href="reports_help.php" class="lightlink">Nápověda: Reporty &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Vlastní typy událostí</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="branches_help.php" class="lightlink">&laquo; Nápověda: Větve</a> &nbsp; | &nbsp;
+                <a href="reports_help.php" class="lightlink">Nápověda: Reporty &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Vlastní typy událostí</span>
       <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
-        <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a>
+          <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+          <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
+          <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a>
       </p>
-    </td>
-  </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+        </td>
+    </tr>
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <a name="search"><p class="subheadbold">Hledat</p></a>
-      <p>Nalezení existujících vlastních typů událostí vyhledáním celého nebo části <strong>Tagu, Typu/popisu (pro události EVEN)</strong> nebo <strong>Zobrazit</strong>.
-        Pro zúžení vašeho hledání vyberte <strong>Spojeno s</strong> nebo zvolte jednu z dalších možností.
-        Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech vlastních typů událostí ve vaší databázi. Možnosti výběru jsou následující:</p>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezení existujících vlastních typů událostí vyhledáním celého nebo části <strong>Tagu, Typu/popisu (pro události EVEN)</strong> nebo
+                <strong>Zobrazit</strong>.
+                Pro zúžení vašeho hledání vyberte <strong>Spojeno s</strong> nebo zvolte jednu z dalších možností.
+                Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech vlastních typů událostí ve vaší databázi.
+                Možnosti výběru jsou následující:</p>
 
-      <p><span class="optionhead">Spojeno s</span><br>
-        Pro omezení výběru zvolte z tohoto rozbalovacího seznamu vlastní typy událostí spojené s osobami, rodinami, prameny nebo úložišti pramenů.</p>
+            <p><span class="optionhead">Spojeno s</span><br>
+                Pro omezení výběru zvolte z tohoto rozbalovacího seznamu vlastní typy událostí spojené s osobami, rodinami, prameny nebo úložišti
+                pramenů.</p>
 
-      <p><span class="optionhead">Přijmout/Odmítnout/Vše</span><br>
-        Výběrem jedné z těchto voleb omezíte výběr vlastních typů událostí na ty, které jsou <strong>přijaty</strong>, nebo na ty,
-        které jsou <strong>odmítnuty</strong>. Volba <strong>Vše</strong> neomezí výsledek výběru.</p>
+            <p><span class="optionhead">Přijmout/Odmítnout/Vše</span><br>
+                Výběrem jedné z těchto voleb omezíte výběr vlastních typů událostí na ty, které jsou <strong>přijaty</strong>, nebo na ty,
+                které jsou <strong>odmítnuty</strong>. Volba <strong>Vše</strong> neomezí výsledek výběru.</p>
 
       <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
 
@@ -48,25 +51,31 @@ echo help_header("Nápověda: Vlastní typy událostí");
         Klikněte na zaškrtávací políčko vedle jednoho nebo více typů událostí, a poté použijte tato tlačítka k provedení akce na všech vybraných typech událostí najednou.</p>
 
       <span class="optionhead">Akce</span>
-      <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit nebo odstranit tento výsledek. Chcete-li najednou odstranit více záznamů, zaškrtněte políčko ve sloupci
-        <strong>Vybrat</strong> u každého záznamu, který má být odstraněn a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
-        můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
+        <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit nebo odstranit tento výsledek. Chcete-li najednou odstranit více záznamů,
+            zaškrtněte políčko ve sloupci
+            <strong>Vybrat</strong> u každého záznamu, který má být odstraněn a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
+            zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
     </td>
   </tr>
-  <tr class="databack">
+    <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nebo upravit vlastní typy událostí</p></a>
+            <a id="add"><p class="subheadbold">Přidat nebo upravit vlastní typy událostí</p></a>
 
-            <p>Nejobvyklejší neboli "Standardní" typy událostí, jako jsou Narození, Úmrtí, Sňatek několik dalších, jsou spravovány přímo na stránkách osoby, rodiny, pramenu nebo úložišti pramenů.
+            <p>Nejobvyklejší neboli "Standardní" typy událostí, jako jsou Narození, Úmrtí, Sňatek několik dalších, jsou spravovány přímo na stránkách
+                osoby, rodiny, pramenu nebo úložišti pramenů.
                 Všechny ostatní typy událostí jsou spojeny s "vlastními" typy událostí
-                a jsou spravovány v sekcích <strong>Další události</strong> na stránkách osoby, rodiny, pramenu nebo úložiště pramenů. Před zápisem některé z těchto "dalších"
-                událostí musíte mít záznam s ní spojeného vlastního typu události. TNG automaticky nastaví vlastní typy událostí pro všechny nestandardní události, které obsahuje
+                a jsou spravovány v sekcích <strong>Další události</strong> na stránkách osoby, rodiny, pramenu nebo úložiště pramenů. Před zápisem
+                některé z těchto "dalších"
+                událostí musíte mít záznam s ní spojeného vlastního typu události. TNG automaticky nastaví vlastní typy událostí pro všechny
+                nestandardní události, které obsahuje
                 váš soubor GEDCOM, ale nastavit vlastní typy událostí můžete také ručně.</p>
 
-            <p>Chcete-li přidat nový vlastní typ události, klikněte na záložku <strong>Přidat nový</strong> a pak vyplňte formulář. Chcete-li upravit existující vlastní typ události, použijte
+            <p>Chcete-li přidat nový vlastní typ události, klikněte na záložku <strong>Přidat nový</strong> a pak vyplňte formulář. Chcete-li upravit
+                existující vlastní typ události, použijte
                 záložku <a href="#search">Hledat</a> pro vyhledání záznamu a poté klikněte na ikonu Upravit vedle tohoto řádku.
                 Význam polí při přidání nebo úpravě vlastního typ události je následující:</p>
 
@@ -107,8 +116,10 @@ echo help_header("Nápověda: Vlastní typy událostí");
             <span class="optionhead">Událost CJKSpd</span>
             <p>Pokud by tento typ události měl podléhat stejným pravidlům ochrany osobních údajů, které upravují další události CJKSpd, zvolte zde možnost "Ano".</p>
 
-            <p><span class="optionhead">Povinná pole:</span>Pro vaši událost musíte vybrat nebo zadat GEDCOM tag. Pokud zvolíte tag "EVEN" (obecná vlastní událost),
-                musíte zadat také Type/popis. Pokud jako tag nezvolíte EVEN, musíte nechat pole Type/popis prázdné. Musíte také zadat řetězec Zobrazit.</p>
+            <p><span class="optionhead">Povinná pole:</span>Pro vaši událost musíte vybrat nebo zadat GEDCOM tag. Pokud zvolíte tag "EVEN" (obecná
+                vlastní událost),
+                musíte zadat také Type/popis. Pokud jako tag nezvolíte EVEN, musíte nechat pole Type/popis prázdné. Musíte také zadat řetězec
+                Zobrazit.</p>
 
         </td>
     </tr>
@@ -116,8 +127,9 @@ echo help_header("Nápověda: Vlastní typy událostí");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="accept"><p class="subheadbold">Přijmout vybrané / Odmítnout vybrané</p></a>
-            <p>Chcete-li najednou označit vlastní typy událostí jako <strong>Přijmout</strong> nebo <strong>Odmítnout</strong>, zaškrtněte políčko Vybrat vedle každého vlastního typu události,
+            <a id="accept"><p class="subheadbold">Přijmout vybrané / Odmítnout vybrané</p></a>
+            <p>Chcete-li najednou označit vlastní typy událostí jako <strong>Přijmout</strong> nebo <strong>Odmítnout</strong>, zaškrtněte políčko
+                Vybrat vedle každého vlastního typu události,
                 který chcete změnit, a poté klikněte na tlačítko "Přijmout vybrané" nebo "Odmítnout vybrané" v horní části stránky.</p>
 
         </td>
@@ -126,9 +138,11 @@ echo help_header("Nápověda: Vlastní typy událostí");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat vlastní typy událostí</p></a>
-            <p>Chcete-li odstranit vlastní typ události, použijte záložku <a href="#search">Hledat</a> k nalezení položky, a poté klikněte na ikonku Vymazat vedle tohoto záznamu. Tento řádek změní
-                barvu a poté po odstranění vlastního typu události zmizí. Chcete-li najednou odstranit více záznamů, zaškrtněte tlačítko ve sloupci Vybrat vedle každého záznamu, který má být
+            <a id="delete"><p class="subheadbold">Vymazat vlastní typy událostí</p></a>
+            <p>Chcete-li odstranit vlastní typ události, použijte záložku <a href="#search">Hledat</a> k nalezení položky, a poté klikněte na ikonku
+                Vymazat vedle tohoto záznamu. Tento řádek změní
+                barvu a poté po odstranění vlastního typu události zmizí. Chcete-li najednou odstranit více záznamů, zaškrtněte tlačítko ve sloupci
+                Vybrat vedle každého záznamu, který má být
                 odstraněn, a poté klikněte na tlačítko "Vymazat vybrané" na stránce nahoře.</p>
 
         </td>

@@ -4,42 +4,45 @@ echo help_header("Nápověda: Obslužné programy");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="languages_help.php" class="lightlink">&laquo; Nápověda: Jazyky</a> &nbsp; | &nbsp;
-        <a href="modmanager_help.php" class="lightlink">Nápověda: Manažer módů &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Obslužné programy</span>
-      <p class="smaller menu">
-        <a href="#tables" class="lightlink">Záloha - Obnova - Optimalizace</a> &nbsp; | &nbsp;
-        <a href="#structure" class="lightlink">Záloha struktury tabulek</a> &nbsp; | &nbsp;
-        <a href="#ids" class="lightlink">Přečíslování ID čísel</a>
-      </p>
-    </td>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="languages_help.php" class="lightlink">&laquo; Nápověda: Jazyky</a> &nbsp; | &nbsp;
+                <a href="modmanager_help.php" class="lightlink">Nápověda: Manažer módů &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Obslužné programy</span>
+            <p class="smaller menu">
+                <a href="#tables" class="lightlink">Záloha - Obnova - Optimalizace</a> &nbsp; | &nbsp;
+                <a href="#structure" class="lightlink">Záloha struktury tabulek</a> &nbsp; | &nbsp;
+                <a href="#ids" class="lightlink">Přečíslování ID čísel</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="tables"><p class="subheadbold">Zálohování, obnovování &amp; optimalizace dat v tabulkách</p></a>
+            <a id="tables"><p class="subheadbold">Zálohování, obnovování &amp; optimalizace dat v tabulkách</p></a>
             <p>Tyto funkce používejte pro zabezpečení vašich dat a pro udržení rychlejšího běhu vašich stránek.</p>
 
             <p><em><strong>POZNÁMKA:</strong> Je-li vaše databáze velmi velká, můžete pro zálohu a obnovu databáze použít nějaký nezávislý nástroj
                     (např. mysqldumper or phpMyAdmin). Alespoň jeden z nich byste měli mít k dispozici na ovládacím panelu vašich stránek.
-                    Pokud je vaše databáze příliš velká a pokud váš hostitel má limit omezující čas k provedení a dokončení skriptu, nemusí být operace
-                    zálohování nebo obnovy úspěšně dokončena. Co je to "velká databáze" záleží na každém serveru a jeho dostupných zdrojích, ale určitým
+                    Pokud je vaše databáze příliš velká a pokud váš hostitel má limit omezující čas k provedení a dokončení skriptu, nemusí být
+                    operace
+                    zálohování nebo obnovy úspěšně dokončena. Co je to "velká databáze" záleží na každém serveru a jeho dostupných zdrojích, ale
+                    určitým
                     měřítkem může být počet 50 000 osob ve vašem stromě.</em></p>
 
             <span class="optionhead">Záloha</span>
-            <p>Chcete-li zálohovat jednotlivou tabulku, klikněte na ikonu Zálohovat ve sloupci Akcí vedle tabulky, kterou chcete zálohovat. Na pravé straně řádku se vám
+            <p>Chcete-li zálohovat jednotlivou tabulku, klikněte na ikonu Zálohovat ve sloupci Akcí vedle tabulky, kterou chcete zálohovat. Na pravé
+                straně řádku se vám
                 zobrazí hlášení o dokončení této akce. Aktualizován bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru. Pokud operace neproběhla úspěšně,
                 nemáte zřejmě vytvořenou složku "Backups" (není nutné toto pojmenování; podívejte se do svého Základního nastavení) nebo nemá potřebná přístupová práva.
                 Vytvořte tuto složku ve své hlavní TNG složce a přidělte jí práva pro čtení/zápis/spuštění pro ostatní/skupinu/majitele (755 nebo 775, některé systémy vyžadují 777),
@@ -71,8 +74,10 @@ echo help_header("Nápověda: Obslužné programy");
             <p>Po vytvoření zálohy bude záložní soubor uložen ve složce Backups (podle definice ve vašem Základním nastavení). Doporučujeme, abyste si tyto soubory zkopírovali
                 do svého počítače, protože katastrofická událost, která může postihnout vaše databázové tabulky, může také postihnout záložní soubory uložené na stejném počítači. Pokud jsou vaše záložní
                 soubory příliš velké, můžete je poté z vašich webových stránek odstranit a nakopírovat je zpět až, když je nutná obnova.</p>
-            <p>Také vám doporučujeme, abyste svou složku pro ukládání záložních souborů nazvali jinak než 'backups', protože by někteří uživatelé TNG s nečestnými úmysly mohli snadno zcizit vaše data.
-                Také vám radíme, je-li to možné, přidělit vaší složce záloh přístupová práva 771 (po vytvoření počátečních záloh), protože to zabrání komukoli získat výpis složky.</p>
+            <p>Také vám doporučujeme, abyste svou složku pro ukládání záložních souborů nazvali jinak než 'backups', protože by někteří uživatelé TNG
+                s nečestnými úmysly mohli snadno zcizit vaše data.
+                Také vám radíme, je-li to možné, přidělit vaší složce záloh přístupová práva 771 (po vytvoření počátečních záloh), protože to zabrání
+                komukoli získat výpis složky.</p>
 
         </td>
     </tr>
@@ -80,11 +85,15 @@ echo help_header("Nápověda: Obslužné programy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="structure"><p class="subheadbold">Zálohování struktury tabulek</p></a>
-            <p>Chcete-li zálohovat strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Zálohovat. Pokud byla operace úspěšná, stránka bude znovu zobrazena s červenou zprávou nahoře.
-                Vyplněn bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru. Záloha struktury vašich tabulek vám umožní snáze obnovit vaše data
-                v případě katastrofy na vašem serveru, zvláště pokud se aktuální struktura vašich tabulek liší od struktury, která byla na počátku.</p>
-            <p>Pokud chcete obnovit strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Obnovit. Pokud byla operace úspěšná, stránka bude znovu zobrazena s červenou zprávou nahoře.</p>
+            <a id="structure"><p class="subheadbold">Zálohování struktury tabulek</p></a>
+            <p>Chcete-li zálohovat strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Zálohovat. Pokud byla operace úspěšná, stránka bude
+                znovu zobrazena s červenou zprávou nahoře.
+                Vyplněn bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru. Záloha struktury vašich tabulek vám umožní
+                snáze obnovit vaše data
+                v případě katastrofy na vašem serveru, zvláště pokud se aktuální struktura vašich tabulek liší od struktury, která byla na
+                počátku.</p>
+            <p>Pokud chcete obnovit strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Obnovit. Pokud byla operace úspěšná, stránka bude
+                znovu zobrazena s červenou zprávou nahoře.</p>
             <strong>VAROVÁNÍ: Obnova struktury tabulek smaže všechna existující data!</strong></p>
         </td>
     </tr>
@@ -92,12 +101,15 @@ echo help_header("Nápověda: Obslužné programy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="ids"><p class="subheadbold">Přečíslování ID čísel</p></a>
-            <p>Pomocí této funkce můžete ke všem vašim osobám, rodinám, pramenům a/nebo úložištím pramenů přiřadit nová, po sobě jdoucí ID čísla. V případě této operace musíte být režimu údržby.
+            <a id="ids"><p class="subheadbold">Přečíslování ID čísel</p></a>
+            <p>Pomocí této funkce můžete ke všem vašim osobám, rodinám, pramenům a/nebo úložištím pramenů přiřadit nová, po sobě jdoucí ID čísla. V
+                případě této operace musíte být režimu údržby.
                 Chcete-li spustit režim údržby, jděte do Admin/Nastavení/Základní nastavení a v sekci "Databáze" vyberte volbu Režim údržby.</p>
 
-            <p><strong>VAROVÁNÍ: Provedení této operace by mohlo mít vážné vedlejší účinky!</strong> Mohlo by přerušit propojení nebo záložky, které ukazují na vaše stránky, mohlo by přerušit indexování vyhledávače,
-                a mohlo by způsobit, že vaše ID čísla nebudou synchronizována s vaším původním souborem GEDCOM (pokud nějaký máte). Doporučujeme, abyste před zahájením této operace
+            <p><strong>VAROVÁNÍ: Provedení této operace by mohlo mít vážné vedlejší účinky!</strong> Mohlo by přerušit propojení nebo záložky, které
+                ukazují na vaše stránky, mohlo by přerušit indexování vyhledávače,
+                a mohlo by způsobit, že vaše ID čísla nebudou synchronizována s vaším původním souborem GEDCOM (pokud nějaký máte). Doporučujeme,
+                abyste před zahájením této operace
                 zazálohovali své tabulky, zvláště v případě, kdy výsledek nedokážete předem odhadnout.</p>
 
             <p>Volby na této stránce jsou následující:</p>

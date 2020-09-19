@@ -4,32 +4,32 @@ echo help_header("Nápověda: Google Maps");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
-        <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Google Maps</span>
-      <p class="smaller menu">
-        <a href="#show" class="lightlink">Zobrazit</a> &nbsp; | &nbsp;
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp; | &nbsp;
-        <a href="#help" class="lightlink">Nápověda</a>
-      </p>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="places_help.php" class="lightlink">&laquo; Nápověda: Místa</a> &nbsp; | &nbsp;
+                <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Google Maps</span>
+            <p class="smaller menu">
+                <a href="#show" class="lightlink">Zobrazit</a> &nbsp; | &nbsp;
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp; | &nbsp;
+                <a href="#help" class="lightlink">Nápověda</a>
+            </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="show"><p class="subheadbold">Zobrazit/skrýt klikací mapu</p></a>
+            <a id="show"><p class="subheadbold">Zobrazit/skrýt klikací mapu</p></a>
             <p>Kliknutím na tlačítko "Zobrazit/skrýt klikací mapu" se zobrazí Google Maps a možnost vyhledat místa pro geokódování
                 nebo se po dokončení mapa skryje. Výchozí nastavení je specifikováno v Admin/Nastavení/Nastavení mapy.</p>
 
@@ -39,15 +39,20 @@ echo help_header("Nápověda: Google Maps");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Google Map Geocoder vám umožní nalézt souřadnice zeměpisné šířky a délky pro název místa při použití pole Geokódovat umístění jako vstupního pole.
-                Pro vyhledání souřadnic můžete také využít aplikaci Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>).</p>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Google Map Geocoder vám umožní nalézt souřadnice zeměpisné šířky a délky pro název místa při použití pole Geokódovat umístění jako
+                vstupního pole.
+                Pro vyhledání souřadnic můžete také využít aplikaci Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>).
+            </p>
 
             <span class="optionhead">Geokódovat umístění</span>
-            <p>Pokud již bylo místo zavedeno v TNG, obsahuje pole Geokódovat umístění název tohoto místa. Při přidání nového místa bude do pole Geokódovat umístění
+            <p>Pokud již bylo místo zavedeno v TNG, obsahuje pole Geokódovat umístění název tohoto místa. Při přidání nového místa bude do pole
+                Geokódovat umístění
                 doplněn název místa z TNG. Při přidání hřbitovů nebo médií nejsou názvy míst doplněny. </p>
-            <p>U existujících názvů míst v TNG je někdy třeba ve vstupním poli Geokódovat umístění upravit název místa. Např. Google nemá rád názvy okresů
-                jako součást názvů míst v USA, ani si neporadí s novozélandskými provinciemi. Jako vstup můžete také chtít vložit pouze název místa a zemi.
+            <p>U existujících názvů míst v TNG je někdy třeba ve vstupním poli Geokódovat umístění upravit název místa. Např. Google nemá rád názvy
+                okresů
+                jako součást názvů míst v USA, ani si neporadí s novozélandskými provinciemi. Jako vstup můžete také chtít vložit pouze název místa a
+                zemi.
                 Název země můžete také zapsat v angličtině.</p>
             <span class="optionhead">Příklady názvů míst</span>
             <p>Následují příklady, jak mají být zapsána místa, aby výsledek obsahoval správné údaje o zeměpisné šířce a délce:
@@ -84,9 +89,11 @@ echo help_header("Nápověda: Google Maps");
             <span class="optionhead">Úroveň sídla</span>
             <p>Rozbalovací seznam Úroveň sídla můžete použít k výběru úrovně členění sídla zastoupeného názvem místa. K dispozici je šest úrovní v rozsahu od adresy po zemi,
                 kde adresa je nejpodrobnější. Přepsat obsah proměnné $admtext pro úrovně 1 až 6, které jsou v souboru alltext.php, můžete ve svém souboru cust_text.php.
-                Tagy pro úrovně 2 až 5 můžete změnit, aby reflektovali např. kostel/nemocnice/hřbitov, město/obec, okres/department, kraj/provincie/region.
+                Tagy pro úrovně 2 až 5 můžete změnit, aby reflektovali např. kostel/nemocnice/hřbitov, město/obec, okres/department,
+                kraj/provincie/region.
                 Různě barevné špendlíky označují členění úrovně sídla na stránce osoby. Indikátor úrovně sídla se neobjevuje
-                v tabulce hřbitovů a médií. Špendlíky zobrazené v tabulce hřbitovů jsou v úrovni 2, což umožňuje, že náhrobky jsou zobrazeny v nejpodrobnější úrovni.</p>
+                v tabulce hřbitovů a médií. Špendlíky zobrazené v tabulce hřbitovů jsou v úrovni 2, což umožňuje, že náhrobky jsou zobrazeny v
+                nejpodrobnější úrovni.</p>
 
         </td>
     </tr>
@@ -94,18 +101,22 @@ echo help_header("Nápověda: Google Maps");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="controls"><p class="subheadbold">Ovládací prvky Google Maps</p></a>
+            <a id="controls"><p class="subheadbold">Ovládací prvky Google Maps</p></a>
 
             <span class="optionhead">Bod / Klik</span>
-            <p>Chcete-li zpřesnit údaj o zeměpisné šířce a délce u daného místa, klikněte v Google Maps na bod, kde si myslíte, že se místo nachází. Pro obdržení lepších údajů
+            <p>Chcete-li zpřesnit údaj o zeměpisné šířce a délce u daného místa, klikněte v Google Maps na bod, kde si myslíte, že se místo nachází.
+                Pro obdržení lepších údajů
                 o zeměpisné šířce a délce pro název místa v TNG můžete také v Google Maps použít tlačítka Mapa nebo Satelitní. </p>
 
             <span class="optionhead">Táhnout a posunout</span>
-            <p>Mapy se dají posunovat, takže můžete použít myš nebo směrové šipky pro posun doleva, doprava, nahoru nebo dolů pro zobrazení oblastí, které jsou skryté
-                mimo obrazovku. Možnost táhnout a posunout znamená, že nemusíte klikat ani čekat na nové načtení grafiky pokaždé, když chcete vidět přilehlé části mapy.</p>
+            <p>Mapy se dají posunovat, takže můžete použít myš nebo směrové šipky pro posun doleva, doprava, nahoru nebo dolů pro zobrazení oblastí,
+                které jsou skryté
+                mimo obrazovku. Možnost táhnout a posunout znamená, že nemusíte klikat ani čekat na nové načtení grafiky pokaždé, když chcete vidět
+                přilehlé části mapy.</p>
 
             <span class="optionhead">Přiblížení</span>
-            <p>Značky plus (+) a minus (-) nebo posuvník přiblížení můžete použít pro přiblížení nebo oddálení mapy. Při přiblížení mapy můžete použít směrové šipky
+            <p>Značky plus (+) a minus (-) nebo posuvník přiblížení můžete použít pro přiblížení nebo oddálení mapy. Při přiblížení mapy můžete použít
+                směrové šipky
                 pro vylepšení pozice na mapě. Změníte-li úroveň přiblížení, hodnota přiblížení bude uložena v tabulce TNG.</p>
 
         </td>
@@ -114,7 +125,7 @@ echo help_header("Nápověda: Google Maps");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="help"><p class="subheadbold">Nápověda Google Maps</p></a>
+            <a id="help"><p class="subheadbold">Nápověda Google Maps</p></a>
 
             <p>Další nápovědu najdete na <a href="http://www.google.com/apis/maps/documentation/" target="_blank">Google Maps API</a>.</p>
         </td>

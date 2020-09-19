@@ -4,17 +4,17 @@ echo help_header("Help: Utilities");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="languages_help.php" class="lightlink">&laquo; Help: Languages</a> &nbsp; | &nbsp;
-        <a href="modmanager_help.php" class="lightlink">Help: Mod Manager &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Utilities</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="languages_help.php" class="lightlink">&laquo; Help: Languages</a> &nbsp; | &nbsp;
+                <a href="modmanager_help.php" class="lightlink">Help: Mod Manager &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Utilities</span>
       <p class="smaller menu">
         <a href="#tables" class="lightlink">Backup - Restore - Optimize</a> &nbsp; | &nbsp;
         <a href="#structure" class="lightlink">Backup Table Structure</a> &nbsp; | &nbsp;
@@ -32,17 +32,20 @@ echo help_header("Help: Utilities");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="tables"><p class="subheadbold">Back up, Restore &amp; Optimize Table Data</p></a>
+            <a id="tables"><p class="subheadbold">Back up, Restore &amp; Optimize Table Data</p></a>
             <p>Use these functions to secure your data and keep your site running fast.</p>
 
-            <p><em><strong>NOTE:</strong> If your database is very large, you might want to use an independent tool (like mysqldumper or phpMyAdmin) to back up and restore your tables (either
+            <p><em><strong>NOTE:</strong> If your database is very large, you might want to use an independent tool (like mysqldumper or phpMyAdmin)
+                    to back up and restore your tables (either
                     instead of these utilities or in addition to them). At least one backup tool
                     should be available from your site control panel. If the database is too large, and if your host has put a limit on each script's
-                    allowed execution time, a backup or restore operation done here may not be able to finish. What is "large" depends somewhat on each server
+                    allowed execution time, a backup or restore operation done here may not be able to finish. What is "large" depends somewhat on
+                    each server
                     and the available resources, but a good benchmark might be 50,000 people in your tree.</em></p>
 
             <span class="optionhead">Back Up</span>
-            <p>To back up a single table, click on the Backup icon in the Action column next to the table to be backed up. You will see a success or failure message to the
+            <p>To back up a single table, click on the Backup icon in the Action column next to the table to be backed up. You will see a success or
+                failure message to the
                 right of the row. The Last Backup column will also be updated, as will the size of the resulting file. If the operation is not successful,
                 you may not have created a "Backups" folder (not necessarily named that; check your General Settings), or it may not have adequate permissions.
                 Create the folder in your main TNG folder and give it read/write/execute rights for world/group/owner n (755 or 775, some systems will require 777),
@@ -75,8 +78,10 @@ echo help_header("Help: Utilities");
             <p>After making a backup, the backup file will be stored in the Backups folder (as defined in your General Settings). It is recommended that you copy these files to
                 your home computer, since any catastrophic event that affects your database tables could also affect any backups stored on the same computer. If your backup files
                 take up too much space, you could then delete them from your web site and copy them back if a restore is needed.</p>
-            <p>It is also highly recommended that you name your Backups folder something other than 'backups', as other TNG users with dishonorable intentions could easily steal your data.
-                It is also recommended that you give your Backups folder 771 permissions if possible (after creation of initial backups), as this will prevent anyone from obtaining a directory listing of the folder.</p>
+            <p>It is also highly recommended that you name your Backups folder something other than 'backups', as other TNG users with dishonorable
+                intentions could easily steal your data.
+                It is also recommended that you give your Backups folder 771 permissions if possible (after creation of initial backups), as this will
+                prevent anyone from obtaining a directory listing of the folder.</p>
 
         </td>
     </tr>
@@ -84,11 +89,15 @@ echo help_header("Help: Utilities");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="structure"><p class="subheadbold">Back up Table Structure</p></a>
-            <p>To back up your TNG table structure, click on the Backup icon in this section. If the operation is successful, the page will be redisplayed with a red message at the top
-                detailing the action taken. The Last Backup column will also be populated, as will the size of the file. Having a backup of your table structure will enable you to easily restore your data
-                in the event that your server suffers a catastrophic failure, especially if your current table structure differs at all from the structure you get from creating the tables again from scratch.</p>
-            <p>To restore your TNG table structure, click on the Restore icon in this section. If the operation is successful, the page will be redisplayed with a red message at the top
+            <a id="structure"><p class="subheadbold">Back up Table Structure</p></a>
+            <p>To back up your TNG table structure, click on the Backup icon in this section. If the operation is successful, the page will be
+                redisplayed with a red message at the top
+                detailing the action taken. The Last Backup column will also be populated, as will the size of the file. Having a backup of your table
+                structure will enable you to easily restore your data
+                in the event that your server suffers a catastrophic failure, especially if your current table structure differs at all from the
+                structure you get from creating the tables again from scratch.</p>
+            <p>To restore your TNG table structure, click on the Restore icon in this section. If the operation is successful, the page will be
+                redisplayed with a red message at the top
                 detailing the action taken.</p>
             <strong>WARNING: Restoring the table structure will delete all existing data!</strong></p>
         </td>
@@ -97,12 +106,16 @@ echo help_header("Help: Utilities");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="ids"><p class="subheadbold">Resequence IDs</p></a>
-            <p>This feature allows you to assign new, sequential ID numbers to all of your people, families, sources and/or repositories. You must be in Maintenance Mode
-                to run this utility. To enter Maintenance Mode, go to Admin/Setup/General Settings and select the Maintenance Mode option in the "Database" section.</p>
+            <a id="ids"><p class="subheadbold">Resequence IDs</p></a>
+            <p>This feature allows you to assign new, sequential ID numbers to all of your people, families, sources and/or repositories. You must be
+                in Maintenance Mode
+                to run this utility. To enter Maintenance Mode, go to Admin/Setup/General Settings and select the Maintenance Mode option in the
+                "Database" section.</p>
 
-            <p><strong>WARNING: Performing this operation could have serious side effects!</strong> It could break links or bookmarks pointing to your site, it could corrupt search engine
-                indexing, and it could cause your ID numbers to be out of synch with your original GEDCOM file (if you had one). It is highly recommended that you back up your
+            <p><strong>WARNING: Performing this operation could have serious side effects!</strong> It could break links or bookmarks pointing to your
+                site, it could corrupt search engine
+                indexing, and it could cause your ID numbers to be out of synch with your original GEDCOM file (if you had one). It is highly
+                recommended that you back up your
                 tables before proceeding, just in case you don't like the results.</p>
 
             <p>Options on this page include:</p>

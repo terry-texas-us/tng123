@@ -4,40 +4,44 @@ echo help_header("N�pov�da: H�bitovy");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="albums_help.php" class="lightlink">&laquo; N�pov�da: Alba</a> &nbsp; | &nbsp;
-        <a href="places_help.php" class="lightlink">N�pov�da: M�sta &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: H�bitovy</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a>
-      </p>
-    </td>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="albums_help.php" class="lightlink">&laquo; N�pov�da: Alba</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">N�pov�da: M�sta &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: H�bitovy</span>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a>
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezen� existuj�c�ch h�bitov� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla h�bitova, n�zvu h�bitova, m�sta, okresu, kraje, zem�</strong> nebo <strong>n�zvu souboru mapy</strong>.
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezen� existuj�c�ch h�bitov� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla h�bitova, n�zvu h�bitova, m�sta, okresu, kraje,
+                    zem�</strong> nebo <strong>n�zvu souboru mapy</strong>.
                 V�sledkem hled�n� bez zadan�ch voleb a hodnot ve vyhled�vac�ch pol�ch bude seznam v�ech h�bitov� ve va�� datab�zi.</p>
 
-            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
+            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
+                obnov� v�echny v�choz� hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat v�ce z�znam�, za�krtn�te pol��ko ve sloupci
-                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
+            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
+                v�ce z�znam�, za�krtn�te pol��ko ve sloupci
+                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
+                za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
                 m��ete pou��t tla��tka <strong>Vybrat v�e</strong> nebo <strong>Vy�istit v�e</strong>.</p>
 
         </td>
@@ -46,9 +50,11 @@ echo help_header("N�pov�da: H�bitovy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� h�bitovy</p></a>
-            <p>TNG v�m umo�n� t��dit a zobrazit va�e fotografie n�hrobk� podle h�bitov�. Aby toto fungovalo, mus�te pro ka�d� m�sto nastavit nov� z�znam h�bitova. Z�znamy
-                h�bitov� v TNG se nevztahuj� k z�znam�m m�st a pro h�itovy neexistuje konvence GEDCOM, tak�e pokud v� soubor GEDCOM obsehuje v n�kter�ch m�stech poh�b�
+            <a id="add"><p class="subheadbold">P�idat nov� / Upravit existuj�c� h�bitovy</p></a>
+            <p>TNG v�m umo�n� t��dit a zobrazit va�e fotografie n�hrobk� podle h�bitov�. Aby toto fungovalo, mus�te pro ka�d� m�sto nastavit nov�
+                z�znam h�bitova. Z�znamy
+                h�bitov� v TNG se nevztahuj� k z�znam�m m�st a pro h�itovy neexistuje konvence GEDCOM, tak�e pokud v� soubor GEDCOM obsehuje v
+                n�kter�ch m�stech poh�b�
                 n�zvy h�bitov�, tyto n�zvy po naimporov�n� souboru GEDCOM nebudou v TNG zalo�eny jako z�znamy h�bitov�.</p>
 
             <p>Chcete-li p�idat nov� h�bitov, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��.
@@ -109,12 +115,13 @@ echo help_header("N�pov�da: H�bitovy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat h�bitovy</p></a>
+            <a id="delete"><p class="subheadbold">Vymazat h�bitovy</p></a>
 
-            <p>Chcete-li odstranit h�bitov, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� h�bitova, a pot� klikn�te na ikonu Vymazat vedle tohoto z�znamu h�bitova. Tento ��dek zm�n�
-                barvu a pot� po odstran�n� h�bitova zmiz�. Chcete-li najednou odstranit v�ce h�bitov�, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�ho h�bitova, kter�
+            <p>Chcete-li odstranit h�bitov, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� h�bitova, a pot� klikn�te na ikonu Vymazat
+                vedle tohoto z�znamu h�bitova. Tento ��dek zm�n�
+                barvu a pot� po odstran�n� h�bitova zmiz�. Chcete-li najednou odstranit v�ce h�bitov�, za�krtn�te pol��ko ve sloupci Vybrat vedle
+                ka�d�ho h�bitova, kter�
                 chcete odstranit, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na str�nce naho�e</p>
-
 
         </td>
     </tr>

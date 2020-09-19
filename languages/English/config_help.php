@@ -4,17 +4,17 @@ echo help_header("Help: General Settings");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
-        <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
-      </p>
-      <span class="largeheader">Help: General Settings</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="setup_help.php" class="lightlink">&laquo; Help: Setup</a> &nbsp; | &nbsp;
+                <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
+            </p>
+            <span class="largeheader">Help: General Settings</span>
       <p class="smaller menu">
         <a href="#data" class="lightlink">Database</a> &nbsp; | &nbsp;
         <a href="#table" class="lightlink">Tables</a> &nbsp; | &nbsp;
@@ -42,14 +42,15 @@ echo help_header("Help: General Settings");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="data"><p class="subheadbold">Database</p></a>
+            <a id="data"><p class="subheadbold">Database</p></a>
 
             <span class="optionhead">Database Host, Name, User Name, Password</span>
             <p>This is the information TNG and PHP will use to connect to your database. These fields must be filled in before your database
                 can be accessed. <strong>Note</strong>: The user name and password mentioned here may be different from
                 your regular web site login. If, after entering this information, you continue to see an error message that TNG is not communicating
                 with your database, then you know at least one of these values is incorrect. If you don't know the correct information, ask your web
-                hosting provider. The host name may also require a port number or a socket path (i.e., "localhost:3306" or "localhost:/path/to/socket").
+                hosting provider. The host name may also require a port number or a socket path (i.e., "localhost:3306" or
+                "localhost:/path/to/socket").
                 Case is important, so be mindful to type in everything exactly as it was given
                 to you. If you are acting as your own webmaster, be sure you have created a database
                 and added a user to it (the user must have ALL rights).</p>
@@ -58,7 +59,8 @@ echo help_header("Help: General Settings");
             <p>When TNG is in Maintenance Mode, the data cannot be accessed from the public side of your site. Instead, visitors will see a
                 polite message telling them that you are performing maintenance on the site and they should try again later. You might wish to
                 put your site in Maintenance Mode while you are re-importing your data. If you are resequencing your IDs, Maintenance Mode is
-                required. If you ever find yourself "stuck" in Maintenance Mode, you can edit your config.php file directly and reset the $tngconfig['maint'] variable
+                required. If you ever find yourself "stuck" in Maintenance Mode, you can edit your config.php file directly and reset the
+                $tngconfig['maint'] variable
                 to 0 or blank.</p>
 
         </td>
@@ -67,7 +69,7 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="table"><p class="subheadbold">Table Names</p></a>
+            <a id="table"><p class="subheadbold">Table Names</p></a>
 
             <span class="optionhead">Table Names</span>
             <p>You shouldn't have to change any of the default names unless you already have one or more tables with one or more of these
@@ -79,22 +81,27 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="path"><p class="subheadbold">Paths and Folders</p></a>
+            <a id="path"><p class="subheadbold">Paths and Folders</p></a>
 
             <span class="optionhead">Root Path</span>
             <p>This is the system path to the folder or directory where your TNG files are located. It is not a web address.
-                You must include a trailing slash. When you first open this page, your Root Path should be correct. Do not change it unless you are an advanced user
-                or have been instructed to do so. If you blank out the field and save the page, the correct path will appear here the next time you load the page, but you
+                You must include a trailing slash. When you first open this page, your Root Path should be correct. Do not change it unless you are an
+                advanced user
+                or have been instructed to do so. If you blank out the field and save the page, the correct path will appear here the next time you
+                load the page, but you
                 will need to save the page again to keep the new path.</p>
 
             <span class="optionhead">Config Path</span>
             <p>If you would like to put your TNG configuration files in a more secure location outside of the "web root" directory (so they aren't
-                accessible from the web), enter that path here. It <strong>must</strong> end with a trailing slash (/). It will likely be the first part of the Root Path.
+                accessible from the web), enter that path here. It <strong>must</strong> end with a trailing slash (/). It will likely be the first
+                part of the Root Path.
                 For example, if your Root Path is "/home/www/username/public_html/genealogy/", then you might choose "/home/www/username/" as your Config Path.</p>
 
             <span class="optionhead">Photo / Document / History / Headstone / Multimedia / GENDEX / Backup / Mods / Extensions Folders</span>
-            <p>Please enter folder or directory names for these respective entities. All should have global read+write+execute permissions (755 or 775, although some systems will require 777).
-                The Multimedia folder is intended as a "catch all" for any media items that don't fit cleanly into the other categories (e.g., videos and
+            <p>Please enter folder or directory names for these respective entities. All should have global read+write+execute permissions (755 or
+                775, although some systems will require 777).
+                The Multimedia folder is intended as a "catch all" for any media items that don't fit cleanly into the other categories (e.g., videos
+                and
                 audio recordings). These folders can be created from this screen by clicking on the "Make Folder" buttons.</p>
 
         </td>
@@ -103,10 +110,11 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="site"><p class="subheadbold">Site Design and Definition</p></a>
+            <a id="site"><p class="subheadbold">Site Design and Definition</p></a>
 
             <span class="optionhead">Home Page</span>
-            <p>All TNG menus include a link to the "Home Page". Enter the address for this link here. By default this is the index.php page in the folder with your other
+            <p>All TNG menus include a link to the "Home Page". Enter the address for this link here. By default this is the index.php page in the
+                folder with your other
                 TNG files. It must be a relative link ("index.php" or "../otherhomepage.html"), not an absolute link ("http://yoursite.com").</p>
 
             <span class="optionhead">Genealogy URL</span>
@@ -176,17 +184,20 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="media"><p class="subheadbold">Media</p></a>
+            <a id="media"><p class="subheadbold">Media</p></a>
 
             <span class="optionhead">Photos Extension</span>
-            <p>The file extension assigned to all small pedigree-style photos. Other photos need not have this extension. The .jpg extension is recommended for most photos.</p>
+            <p>The file extension assigned to all small pedigree-style photos. Other photos need not have this extension. The .jpg extension is
+                recommended for most photos.</p>
 
             <span class="optionhead">Show Extended Photo Info</span>
-            <p>If this option is checked, any available extended information will be displayed for each photo. This includes the physical file name, the dimensions in pixels, and any
+            <p>If this option is checked, any available extended information will be displayed for each photo. This includes the physical file name,
+                the dimensions in pixels, and any
                 existing IPTC data.</p>
 
             <span class="optionhead">Image Max Height and Width</span>
-            <p>When these values are set (pixels), images larger than these dimensions will be scaled down (using HTML) when displayed in the public area.</p>
+            <p>When these values are set (pixels), images larger than these dimensions will be scaled down (using HTML) when displayed in the public
+                area.</p>
 
             <span class="optionhead">Thumbnails Prefix</span>
             <p>When generating thumbnails automatically, TNG will prepend this value to the original image file name to create the thumbnail file name. If the file name of the original includes path
@@ -250,7 +261,8 @@ echo help_header("Help: General Settings");
                 be created.</p>
 
             <span class="optionhead">Favicon</span>
-            <p>A "favicon" is a small icon displayed in the browser's address bar, just to the left of the site URL. TNG does not include a utility to help you create such an icon, but if
+            <p>A "favicon" is a small icon displayed in the browser's address bar, just to the left of the site URL. TNG does not include a utility to
+                help you create such an icon, but if
                 you have one, upload it to the main TNG folder and enter the file name here.</p>
 
         </td>
@@ -259,13 +271,15 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="lang"><p class="subheadbold">Language</p></a>
+            <a id="lang"><p class="subheadbold">Language</p></a>
 
             <span class="optionhead">Language</span>
-            <p>Your default language folder (i.e., 'English'). You may have more than one language available to visitors, but this language will always display first.</p>
+            <p>Your default language folder (i.e., 'English'). You may have more than one language available to visitors, but this language will
+                always display first.</p>
 
             <span class="optionhead">Character Set</span>
-            <p>The character set for your default language. If this is left blank, the browser's default character set will be used. The character set for English and other languages using the 26-character
+            <p>The character set for your default language. If this is left blank, the browser's default character set will be used. The character set
+                for English and other languages using the 26-character
                 Roman alphabet is ISO-8859-1.</p>
 
             <span class="optionhead">Dynamic Language Change</span>
@@ -278,7 +292,7 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="priv"><p class="subheadbold">Privacy</p></a>
+            <a id="priv"><p class="subheadbold">Privacy</p></a>
 
             <span class="optionhead">Require Login</span>
             <p>Normally anyone can view your public pages, with a login to see data for living individuals being optional. If, however,
@@ -344,17 +358,20 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="name"><p class="subheadbold">Names</p></a>
+            <a id="name"><p class="subheadbold">Names</p></a>
 
             <span class="optionhead">Name Order</span>
-            <p>Dictates how names will be displayed in most cases (some lists always display the surname first). Choose to display the first name first (Western) or the surname first (Oriental).
+            <p>Dictates how names will be displayed in most cases (some lists always display the surname first). Choose to display the first name
+                first (Western) or the surname first (Oriental).
                 If nothing is selected, names will be displayed "first name first".</p>
 
             <span class="optionhead">Uppercase All Surnames</span>
-            <p>Allows you to dispay all surnames in upper case. If this option is set to "No", then names will appear as they were entered or imported.</p>
+            <p>Allows you to dispay all surnames in upper case. If this option is set to "No", then names will appear as they were entered or
+                imported.</p>
 
             <span class="optionhead">Surname Prefixes</span>
-            <p>Governs how surname prefixes (i.e., "de" or "van") are treated. By default, anything imported in the GEDCOM surname field is part of the surname, and this dictates how
+            <p>Governs how surname prefixes (i.e., "de" or "van") are treated. By default, anything imported in the GEDCOM surname field is part of
+                the surname, and this dictates how
                 surnames are sorted ("de Kalb" comes before "van Buren"). You can elect to keep surname prefixes as part of the surname, or you can choose to treat them
                 as separate entities (thus, "van Buren" would then sort before "de Kalb"). Existing surnames will not be affected unless manually edited or converted with surnameconvert400.php.</p>
 
@@ -362,8 +379,10 @@ echo help_header("Help: General Settings");
             <p>If you have elected to treat surname prefixes as separate entities, this section will provide rules to help the import routine decide what is a prefix. Prefixes are defined as
                 portions of the name separated by spaces, but you can choose how many prefixes from each name will be part of TNG's prefix. In other words, if you indicate that
                 the "Num. prefixes each (max)" is 1, then only the "van" from "van der Merwe" would be moved to the prefix field. On the other hand, if you set this value to 2 or higher, "van der"
-                would be the prefix. You may also indicate one or more specific prefixes that should always be treated as full prefixes. In other words, if you set this value to "van der", then
-                "van der" will always be considered a valid prefix, regardless of how high or low you set the previous value. Separate multiple values with commas. To recognize a
+                would be the prefix. You may also indicate one or more specific prefixes that should always be treated as full prefixes. In other
+                words, if you set this value to "van der", then
+                "van der" will always be considered a valid prefix, regardless of how high or low you set the previous value. Separate multiple values
+                with commas. To recognize a
                 prefix offset by an apostrophe, include the apostrophe in this list. For example: "van,vander,van der,d',a',de,das".</p>
 
         </td>
@@ -372,7 +391,7 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="cem"><p class="subheadbold">Cemeteries</p></a>
+            <a id="cem"><p class="subheadbold">Cemeteries</p></a>
 
             <span class="optionhead">Max lines per column (approx.)</span>
             <p>If you have a lot of cemeteries defined, this number will tell TNG to split the list and create another column when the
@@ -388,7 +407,7 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="mail"><p class="subheadbold">Mail and Registration</p></a>
+            <a id="mail"><p class="subheadbold">Mail and Registration</p></a>
 
             <span class="optionhead">Email Address</span>
             <p>Your email address. When visitors request a new user account, an email message will be sent to this address. Submissions from the
@@ -429,26 +448,30 @@ echo help_header("Help: General Settings");
 
             <span class="optionhead">Use SMTP Authentication</span>
             <p>Normally TNG sends email by way of the PHP "mail" function. If you'd rather use the Simple Mail Transfer Protocol (meaning that a login
-                must be supplied by the program before the mail can be sent), then set this option to "Yes". More options will then become visible. They are: SMTP host name,
-                Mail username, Mail password, Port number and Encryption. Your hosting provider should be able to give you the correct values for these fields.</p>
+                must be supplied by the program before the mail can be sent), then set this option to "Yes". More options will then become visible.
+                They are: SMTP host name,
+                Mail username, Mail password, Port number and Encryption. Your hosting provider should be able to give you the correct values for
+                these fields.</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="mobile"><p class="subheadbold">Mobile</p></a>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="mobile"><p class="subheadbold">Mobile</p></a>
 
-      <p>The Mobile section allows you to control how TNG is displayed on smart phones and tablets.</p>
+            <p>The Mobile section allows you to control how TNG is displayed on smart phones and tablets.</p>
 
-      <span class="optionhead">Enable Responsive Tables</span>
-      <p>If this option is set to yes, the Tablesaw jQuery plugin that enables the Responsive Tables will be activated.<br>If set to no, then the Tablesaw jQuery plugin options will be bypassed.</p>
+            <span class="optionhead">Enable Responsive Tables</span>
+            <p>If this option is set to yes, the Tablesaw jQuery plugin that enables the Responsive Tables will be activated.<br>If set to no, then
+                the Tablesaw jQuery plugin options will be bypassed.</p>
 
-      <span class="optionhead">Responsive Table Type</span>
-      <p>The Responsive Table Type can be set to
-      <ul>
-        <li><strong>Toggle</strong>, which is the default, displays data columns based on the screen width and priority assigned. Rotating the smart phone or tablet screen from portrait to landscape orientation will display additional data columns.
+            <span class="optionhead">Responsive Table Type</span>
+            <p>The Responsive Table Type can be set to
+            <ul>
+                <li><strong>Toggle</strong>, which is the default, displays data columns based on the screen width and priority assigned. Rotating the
+                    smart phone or tablet screen from portrait to landscape orientation will display additional data columns.
         </li>
 
         <li><strong>Stack</strong>, which stacks the table headers to a two column layout with headers on the left when the viewport width is less than 40em (640px).</li>
@@ -459,20 +482,22 @@ echo help_header("Help: General Settings");
       <span class="optionhead">Enable Responsive Tables Mode Switcher:</span>
       <p>The Mode Switcher option allows the user to switch between toggle, stack, or swipe table column displays.</p>
 
-      <span class="optionhead">Enable Responsive Tables Mini Map</span>
-      <p>Use data-tablesaw-minimap to add a series of small dots to show which columns are currently visible and which are hidden.
-        Only available on swipe and toggle options. </p>
+            <span class="optionhead">Enable Responsive Tables Mini Map</span>
+            <p>Use data-tablesaw-minimap to add a series of small dots to show which columns are currently visible and which are hidden.
+                Only available on swipe and toggle options. </p>
 
-    </td>
-  </tr>
-  <tr class="databack">
+        </td>
+    </tr>
+    <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="pref"><p class="subheadbold">Prefixes and Suffixes</p></a>
+            <a id="pref"><p class="subheadbold">Prefixes and Suffixes</p></a>
 
-            <p>These letters are combined with a number to form IDs for the people, families, sources, repositories and notes in your database. Most genealogy
-                programs use the same set of standard prefixes (and no suffixes). If your desktop program uses suffixes or different prefixes instead, enter them here.
+            <p>These letters are combined with a number to form IDs for the people, families, sources, repositories and notes in your database. Most
+                genealogy
+                programs use the same set of standard prefixes (and no suffixes). If your desktop program uses suffixes or different prefixes instead,
+                enter them here.
                 If the proper prefixes or suffixes are not entered, some TNG features may not work correctly.</p>
 
         </td>
@@ -481,10 +506,11 @@ echo help_header("Help: General Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="misc"><p class="subheadbold">Miscellaneous</p></a>
+            <a id="misc"><p class="subheadbold">Miscellaneous</p></a>
 
             <span class="optionhead">Max Search Results</span>
-            <p>This limits the number of results that can be displayed for any public search query. This should be a relatively small, manageable number in order to maximize
+            <p>This limits the number of results that can be displayed for any public search query. This should be a relatively small, manageable
+                number in order to maximize
                 efficiency and enhance the user experience.</p>
 
             <span class="optionhead">Individuals Start With</span>

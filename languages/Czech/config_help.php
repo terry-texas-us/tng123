@@ -4,21 +4,21 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
-        <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Z�kladn� nastaven�</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="setup_help.php" class="lightlink">&laquo; N�pov�da: Nastaven�</a> &nbsp; | &nbsp;
+                <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Z�kladn� nastaven�</span>
       <p class="smaller menu">
         <a href="#data" class="lightlink">Datab�ze</a> &nbsp; | &nbsp;
         <a href="#table" class="lightlink">Tabulky</a> &nbsp; | &nbsp;
@@ -29,32 +29,36 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 <a href="#priv" class="lightlink">Ochrana �daj�</a> &nbsp; | &nbsp;
                 <a href="#name" class="lightlink">Jm�na</a> &nbsp; | &nbsp;
                 <a href="#cem" class="lightlink">H�bitovy</a> &nbsp; | &nbsp;
-                <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
-                <a href="#mobile" class="lightlink">Mobil</a> &nbsp; | &nbsp;
-                <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
-                <a href="#misc" class="lightlink">R�zn�</a>
-            </p>
+          <a href="#mail" class="lightlink">Mail</a> &nbsp; | &nbsp;
+          <a href="#mobile" class="lightlink">Mobil</a> &nbsp; | &nbsp;
+          <a href="#pref" class="lightlink">Prefixes</a> &nbsp; | &nbsp;
+          <a href="#misc" class="lightlink">R�zn�</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="data"><p class="subheadbold">Datab�ze</p></a>
+            <a id="data"><p class="subheadbold">Datab�ze</p></a>
 
             <span class="optionhead">Hostitel datab�ze, n�zev, u�ivatelsk� jm�no, heslo</span>
             <p>Tyto �daje pou�ije TNG a PHP k p�ipojen� k va�� datab�zi. Tyto pole mus� b�t vypln�ny d��v, ne� bude va�e datab�ze
-                zp��stupn�na. <strong>Pozn.</strong>: Toto u�ivatelsk� jm�no a heslo m��e b�t jin�, ne� jsou va�e obvykl� p��stupov� �daje k webov� str�nce.
+                zp��stupn�na. <strong>Pozn.</strong>: Toto u�ivatelsk� jm�no a heslo m��e b�t jin�, ne� jsou va�e obvykl� p��stupov� �daje k webov�
+                str�nce.
                 Pokud se po vlo�en� t�chto �daj� objev� chybov� hl�en�, �e TNG nem��e komunikovat s va�� datab�z�,
                 pak je n�kter� z t�chto �daj� chybn�. Nezn�te-li spr�vn� �daje, vy��dejte si je u poskytovatele va�eho
-                webov�ho hostingu. N�zev hostitel m��e tak� obsahovat ��slo portu nebo cestu do soketu (socket path), nap�. "localhost:3306" nebo "localhost:/path/to/socket".
-                Tyto �daje jsou d�le�it�, tak�e je zad�vejte s maxim�ln� p�esnost�. Pokud p�sob�te jako sv�j vlastn� webmaster, ujist�te se, �e jste vytvo�ili datab�zi
+                webov�ho hostingu. N�zev hostitel m��e tak� obsahovat ��slo portu nebo cestu do soketu (socket path), nap�. "localhost:3306" nebo
+                "localhost:/path/to/socket".
+                Tyto �daje jsou d�le�it�, tak�e je zad�vejte s maxim�ln� p�esnost�. Pokud p�sob�te jako sv�j vlastn� webmaster, ujist�te se, �e jste
+                vytvo�ili datab�zi
                 a p�idali do n� u�ivatele (u�ivatel mus� m�t V�ECHNA p��stupov� pr�va).</p>
 
             <span class="optionhead">Re�im �dr�by</span>
             <p>Je-li TNG v re�imu �dr�by, data nejsou p��stupn� ve�ejnosti. N�v�t�vn�kovi se zobraz� zpr�va,
                 kter� mu ozn�m�, �e na str�nk�ch prob�h� �dr�ba a m��e se sem vr�tit pozd�ji. Va�i str�nku m��ete
                 p�epnout do re�imu �dr�by p�i importu va�ich dat. Pokud chcete p�e��slovat va�e ID ��sla, p�epnut� do re�imu �dr�by
-                je nutn�. Pokud jste se v re�imu �dr�by "zasekli", m��ete p��mo opravit v� soubor config.php a obnovit nastaven� prom�nn� $tngconfig['maint']
+                je nutn�. Pokud jste se v re�imu �dr�by "zasekli", m��ete p��mo opravit v� soubor config.php a obnovit nastaven� prom�nn�
+                $tngconfig['maint']
                 na 0 nebo pr�zdnou.</p>
 
         </td>
@@ -63,10 +67,11 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="table"><p class="subheadbold">N�zvy tabulek</p></a>
+            <a id="table"><p class="subheadbold">N�zvy tabulek</p></a>
 
             <span class="optionhead">N�zvy tabulek</span>
-            <p>V�choz� n�zvy byste nem�li m�nit, pokud u� n�kter� tabulky maj� tyto n�zvy. V�echny n�zvy tabulek mus� b�t vypln�ny a v�echny n�zvy mus� b�t jednozna�n�.
+            <p>V�choz� n�zvy byste nem�li m�nit, pokud u� n�kter� tabulky maj� tyto n�zvy. V�echny n�zvy tabulek mus� b�t vypln�ny a v�echny n�zvy
+                mus� b�t jednozna�n�.
                 Nem��te n�zvy existuj�c�ch tabulek.</p>
 
         </td>
@@ -75,12 +80,14 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="path"><p class="subheadbold">Um�st�n� a slo�ky</p></a>
+            <a id="path"><p class="subheadbold">Um�st�n� a slo�ky</p></a>
 
             <span class="optionhead">Ko�enov� slo�ka</span>
             <p>Toto je slo�ka v syst�mu, ve kter� jsou um�st�ny va�e soubory TNG. Nen� to webov� adresa.
-                Zapsat mus�te koncov� lom�tko. Pokud tuto str�nku otev�ete poprv�, va�e ko�enov� slo�ka by m�la b�t vypln�na spr�vn�. Nem��te ji, pokud nejste pokro�il� u�ivatel
-                nebo nejste instruov�ni, jak to ud�lat. Pokud sma�ete obsah tohoto pole a str�nku ulo��te, spr�vn� slo�ka se objev� po op�tovn�m na�ten� t�to str�nky, ale
+                Zapsat mus�te koncov� lom�tko. Pokud tuto str�nku otev�ete poprv�, va�e ko�enov� slo�ka by m�la b�t vypln�na spr�vn�. Nem��te ji,
+                pokud nejste pokro�il� u�ivatel
+                nebo nejste instruov�ni, jak to ud�lat. Pokud sma�ete obsah tohoto pole a str�nku ulo��te, spr�vn� slo�ka se objev� po op�tovn�m
+                na�ten� t�to str�nky, ale
                 str�nku mus�te ulo�it znovu, aby se nov� slo�ka ulo�ila.</p>
 
             <span class="optionhead">Konfigura�n� slo�ka</span>
@@ -89,7 +96,8 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 Je-li nap�. va�e ko�enov� slo�ka "/home/www/username/public_html/genealogy/", jako konfigura�n� slo�ku m��ete zvolit "/home/www/username/".</p>
 
             <span class="optionhead">Slo�ky Fotografie / Dokumenty / Vypr�v�n� / N�hrobky / Multim�dia / GENDEX / Z�lohy / M�dy / Extensions</span>
-            <p>Do t�chto pol� zapi�te n�zev slo�ky nebo adres��e pro zm�n�n� entity. V�echny by m�ly m�t glob�ln� p��stup ��st+ps�t+prov�st (read+write+execute, 755 nebo 775, i kdy� n�kter� syst�my vy�aduj� 777).
+            <p>Do t�chto pol� zapi�te n�zev slo�ky nebo adres��e pro zm�n�n� entity. V�echny by m�ly m�t glob�ln� p��stup ��st+ps�t+prov�st
+                (read+write+execute, 755 nebo 775, i kdy� n�kter� syst�my vy�aduj� 777).
                 Slo�ka multim�di� je ur�ena jako "z�chytn�" pro v�echny polo�ky m�di�, kter� se nehod� do jin�ch kategori� (nap�. videa a
                 zvukov� z�znamy). Tyto slo�ky mohou b�t vytvo�eny z t�to obrazovky kliknut�m na tla��tka "Vytvo�it slo�ku".</p>
 
@@ -99,11 +107,13 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="site"><p class="subheadbold">Vzhled a definice str�nek</p></a>
+            <a id="site"><p class="subheadbold">Vzhled a definice str�nek</p></a>
 
             <span class="optionhead">Domovsk� str�nka</span>
-            <p>V�echna menu v programu TNG obsahuj� odkaz na "domovskou str�nku". Do tohoto pole zapi�te adresu tohoto odkazu. Standardn� je to str�nka index.php ve slo�ce s ostatn�mi
-                soubory TNG. Mus� to b�t relativn� odkaz ("index.php" nebo "../otherhomepage.html"), nikoli absolutn� odkaz ("http://yoursite.com").</p>
+            <p>V�echna menu v programu TNG obsahuj� odkaz na "domovskou str�nku". Do tohoto pole zapi�te adresu tohoto odkazu. Standardn� je to
+                str�nka index.php ve slo�ce s ostatn�mi
+                soubory TNG. Mus� to b�t relativn� odkaz ("index.php" nebo "../otherhomepage.html"), nikoli absolutn� odkaz
+                ("http://yoursite.com").</p>
 
             <span class="optionhead">URL genealogick�ch str�nek</span>
             <p>Webov� adresa va�� genealogick� slo�ky (nap�. "http://mysite.com/genealogy").</p>
@@ -171,17 +181,20 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="media"><p class="subheadbold">M�dia</p></a>
+            <a id="media"><p class="subheadbold">M�dia</p></a>
 
             <span class="optionhead">Typ soubor� fotografi�</span>
-            <p>P��pona souboru v�ech mal�ch fotografi� pou��van�ch ve sch�matech. Ostatn� fotografie nemus� obsahovat tuto p��ponu. Pro v�t�inu fotografi� je doporu�ena p��pona .jpg.</p>
+            <p>P��pona souboru v�ech mal�ch fotografi� pou��van�ch ve sch�matech. Ostatn� fotografie nemus� obsahovat tuto p��ponu. Pro v�t�inu
+                fotografi� je doporu�ena p��pona .jpg.</p>
 
             <span class="optionhead">Zobrazit roz���enou informaci o obr�zku</span>
-            <p>Pokud je tato volba za�krtnuta, budou u ka�d� fotografie zobrazeny roz���en� informace. Ty obsahuj� fyzick� n�zev souboru, rozm�ry v pixelech a
+            <p>Pokud je tato volba za�krtnuta, budou u ka�d� fotografie zobrazeny roz���en� informace. Ty obsahuj� fyzick� n�zev souboru, rozm�ry v
+                pixelech a
                 existuj�c� �daje IPTC.</p>
 
             <span class="optionhead">Maxim�ln� v��ka a ���ka obr�zku</span>
-            <p>Jsou-li tyto hodnoty nastaveny (pixely), obr�zky v�t�� ne� tyto rozm�ry budou p�i zobrazen� ve ve�ejn�m prost�ed� zmen�eny (pou�it�m HTML).</p>
+            <p>Jsou-li tyto hodnoty nastaveny (pixely), obr�zky v�t�� ne� tyto rozm�ry budou p�i zobrazen� ve ve�ejn�m prost�ed� zmen�eny (pou�it�m
+                HTML).</p>
 
             <span class="optionhead">P�edpona/prefix pro n�hledy</span>
             <p>P�i automatick�m generov�n� n�hledu p�id� TNG tuto hodnotu p�ed origin�ln� n�zev souboru a vytvo�� tak n�zev souboru n�hledu. Pokud n�zev origin�ln�ho souboru obsahuje �daj o cest�,
@@ -243,7 +256,8 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 ve hlavn� slo�ce kolekce). Kliknut�m na tla��tko "P�ev�st" p�esunete p��slu�n� m�dia do t�to nov� struktury slo�ek. Pokud c�lov� slo�ky strom� neexistuj�, budou vytvo�eny.</p>
 
             <span class="optionhead">Favicon</span>
-            <p>"Favicon" je mal� ikona zobrazen� v adresn�m ��dku prohl�e�e nalevo od adresy URL str�nky. TNG neobsahuje n�stroj, kter� v�m pom��e takovou ikonu vytvo�it, ale pokud
+            <p>"Favicon" je mal� ikona zobrazen� v adresn�m ��dku prohl�e�e nalevo od adresy URL str�nky. TNG neobsahuje n�stroj, kter� v�m pom��e
+                takovou ikonu vytvo�it, ale pokud
                 n�jakou m�te k dispozici a chcete ji pou��t, nahrajte ji do hlavn� slo�ky TNG a n�zev souboru zadejte zde.</p>
 
         </td>
@@ -252,13 +266,15 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="lang"><p class="subheadbold">Jazyk</p></a>
+            <a id="lang"><p class="subheadbold">Jazyk</p></a>
 
             <span class="optionhead">Jazyk</span>
-            <p>V�choz� slo�ka jazyka (nap�. 'Czech'). Pro n�v�t�vn�ky va�ich str�nek m��ete m�t dostupn�ch n�kolik jazyk�, ale tento jazyk bude v�dy zobrazen jako prvn�.</p>
+            <p>V�choz� slo�ka jazyka (nap�. 'Czech'). Pro n�v�t�vn�ky va�ich str�nek m��ete m�t dostupn�ch n�kolik jazyk�, ale tento jazyk bude v�dy
+                zobrazen jako prvn�.</p>
 
             <span class="optionhead">Znakov� sada</span>
-            <p>Znakov� sada va�eho v�choz�ho jazyka. Pokud toto pole ponech�te pr�zdn�, bude pou�ita v�choz� znakov� sada va�eho prohl�e�e. Znakov� sada pro angli�tinu a jin� z�padoevropsk� jazyky pou��vaj�c� 26 znakovou
+            <p>Znakov� sada va�eho v�choz�ho jazyka. Pokud toto pole ponech�te pr�zdn�, bude pou�ita v�choz� znakov� sada va�eho prohl�e�e. Znakov�
+                sada pro angli�tinu a jin� z�padoevropsk� jazyky pou��vaj�c� 26 znakovou
                 ��mskou abecedu je ISO-8859-1. P�evl�daj�c� k�dov�n� �e�tiny jsou ISO-8859-2, Windows-1250 a UTF-8.</p>
 
             <span class="optionhead">Dynamick� zm�na jazyka</span>
@@ -271,14 +287,15 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="priv"><p class="subheadbold">Ochrana �daj�</p></a>
+            <a id="priv"><p class="subheadbold">Ochrana �daj�</p></a>
 
             <span class="optionhead">Vy�adovat p�ihl�en�</span>
             <p>Ka�d� u�ivatel m��e b�n� prohl�et ve�ejn� prost�ed� va�ich str�nek, s p�ihl�en�m m��e voliteln� vid�t data �ij�c�ch osob. Pokud v�ak
                 chcete, aby se muset p�ihl�sit ka�d� p�ed t�m ne� mu�e spat�it cokoli z va�ich str�nek, za�krtn�te toto pole.</p>
 
             <span class="optionhead">Omezit p��stup pouze na p�ipojen� strom</span>
-            <p>Je-li Vy�adovat p�ihl�en� nastaveno na 'Ano', pak nastaven� t�to volby na 'Ano' zp�sob�, �e u�ivatel� budou moci pouze vid�t data spojen� se sv�mi
+            <p>Je-li Vy�adovat p�ihl�en� nastaveno na 'Ano', pak nastaven� t�to volby na 'Ano' zp�sob�, �e u�ivatel� budou moci pouze vid�t data
+                spojen� se sv�mi
                 p�ipojen�mi stromy. V�echny jin� osoby, rodiny, prameny, atd. budou skryty.</p>
 
             <span class="optionhead">Zobrazit �daje CJKSpd</span>
@@ -324,8 +341,10 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 N�v�t�vn�ci budou muset pouze za�krtnout pol��ko ozna�uj�c�, �e nejsou robot. Chcete-li tuto slu�bu aktivovat, budete pot�ebovat dva kl��e: Site Key a Secret Key.</p>
 
             <span class="optionhead">Kl��e Site Key a Secret Key</span>
-            <p>Chcete-li z�skat sv� kl��e Site Key a Secret Key, p�ejd�te na str�nku https://www.google.com/recaptcha/admin. Pokud je�t� nem�te ��et Google, bude si jej muset vytvo�it.
-                Pokud m�te ��et Google, na vy��d�n� se p�ihlaste a postupujte podle pokyn� pro vytvo�en� kl���. Po zobrazen� v�zvy k zad�n� adresy/n�zvu dom�ny NEZAD�VEJTE "www" a
+            <p>Chcete-li z�skat sv� kl��e Site Key a Secret Key, p�ejd�te na str�nku https://www.google.com/recaptcha/admin. Pokud je�t� nem�te ��et
+                Google, bude si jej muset vytvo�it.
+                Pokud m�te ��et Google, na vy��d�n� se p�ihlaste a postupujte podle pokyn� pro vytvo�en� kl���. Po zobrazen� v�zvy k zad�n�
+                adresy/n�zvu dom�ny NEZAD�VEJTE "www" a
                 nezad�vejte zadn� lom�tko. Po vytvo�en� kl��� je vlo�te do pol� na t�to str�nce.</p>
 
         </td>
@@ -334,17 +353,20 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="name"><p class="subheadbold">Jm�na</p></a>
+            <a id="name"><p class="subheadbold">Jm�na</p></a>
 
             <span class="optionhead">Po�ad� jm�na a p��jmen�</span>
-            <p>Ur��, jak budou ve v�t�in� p��pad� jm�na zobrazena (n�kter� seznamy v�dy zobraz� p��jmen� jako prvn�). Zvolit m��ete zobrazen� k�estn�ho jm�na jako prvn� nebo p��jmen� jako prvn�.
+            <p>Ur��, jak budou ve v�t�in� p��pad� jm�na zobrazena (n�kter� seznamy v�dy zobraz� p��jmen� jako prvn�). Zvolit m��ete zobrazen�
+                k�estn�ho jm�na jako prvn� nebo p��jmen� jako prvn�.
                 Nen�-li nic vybr�no, bude zobrazeno jako prvn� k�estn� jm�no.</p>
 
             <span class="optionhead">V�echna p��jmen� velk�mi p�smeny</span>
-            <p>Umo�n� zobrazit v�echna p��jmen� velk�mi p�smeny. Je-li tato volba nastavena na "Ne", budou jm�na zobrazena tak, jak byla zaps�na nebo naimportov�na.</p>
+            <p>Umo�n� zobrazit v�echna p��jmen� velk�mi p�smeny. Je-li tato volba nastavena na "Ne", budou jm�na zobrazena tak, jak byla zaps�na nebo
+                naimportov�na.</p>
 
             <span class="optionhead">P�edpony p��jmen�</span>
-            <p>Ur��, jak se bude zach�zet s p�edponami p��jmen� (nap�. "de" nebo "van"). Standardn� je v�e, co je obsa�eno v poli p��jmen� souboru GEDCOM sou��st� p��jmen�, a podle toho jsou i
+            <p>Ur��, jak se bude zach�zet s p�edponami p��jmen� (nap�. "de" nebo "van"). Standardn� je v�e, co je obsa�eno v poli p��jmen� souboru
+                GEDCOM sou��st� p��jmen�, a podle toho jsou i
                 p��jmen� t��d�na ("de Kalb" je d��ve ne� "van Buren"). P�edpony p��jmen� m��ete ponechat jako sou��st p��jmen� nebo je m��ete odd�lit
                 jako samostatn� subjekty (takto bude "van Buren" v �azen� p�ed "de Kalb"). Toto nebude m�t vliv na existuj�c� p��jmen�, dokud je ru�n� neuprav�te nebo nep�evedete pomoc� surnameconvert400.php.</p>
 
@@ -352,8 +374,10 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
             <p>Pokud jste zvolili odd�len� p�edpon jako samostatn�ch subjekt�, tato sekce stanov� pravidla, kter� pomohou rozhodnout importovac� rutin�, co je p�edponou. P�edpony jsou definov�ny jako
                 ��sti jmen odd�len� mezerami, ale vy m��ete zvolit, kolik p�edpon ka�d�ho jm�na bude sou��st� p�edpony v TNG. Jin�mi slovy, pokud ur��te, �e
                 "Po�et p�edpon ka�d�ho (max)" je 1, pak bude do pole p�edpona ze jm�na "van der Merwe" p�esunuto pouze "van". Na druhou stranu, pokud tuto hodnotu nastav�te na 2 nebo vy���, p�edponou
-                bude "van der". Ozna�it m��ete tak� ur�it� p�edpony, kter� budou v�dy odd�leny jako samostatn� p�edpony. Jin�mi slovy, nastav�te-li tuto hodnotu na "van der", pak
-                bude "van der" v�dy uva�ov�na jako platn� p�edpona nez�visle na tom, jak vysok� nebo n�zk� je p�edchoz� hodnota. V�ce hodnot odd�lujte ��rkami. Je-li ve jm�n� p�edpona odd�lena
+                bude "van der". Ozna�it m��ete tak� ur�it� p�edpony, kter� budou v�dy odd�leny jako samostatn� p�edpony. Jin�mi slovy, nastav�te-li
+                tuto hodnotu na "van der", pak
+                bude "van der" v�dy uva�ov�na jako platn� p�edpona nez�visle na tom, jak vysok� nebo n�zk� je p�edchoz� hodnota. V�ce hodnot odd�lujte
+                ��rkami. Je-li ve jm�n� p�edpona odd�lena
                 apostrofem, tento apostrof uve�te v seznamu tak�. Nap�.: "van,vander,van der,d',a',de,das".</p>
 
         </td>
@@ -362,7 +386,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="cem"><p class="subheadbold">H�bitovy</p></a>
+            <a id="cem"><p class="subheadbold">H�bitovy</p></a>
 
             <span class="optionhead">Maxim�ln� po�et ��dk� ve sloupci (pr�m.)</span>
             <p>Pokud m�te definov�no velk� mno�stv� h�bitov�, tento �daj �ekne TNG, �e je-li dosa�en zadan� po�et, seznam m� b�t rozd�len
@@ -378,11 +402,13 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="mail"><p class="subheadbold">Mail a registrace</p></a>
+            <a id="mail"><p class="subheadbold">Mail a registrace</p></a>
 
             <span class="optionhead">Emailov� adresa</span>
-            <p>Va�e emailov� adresa. Po��d�-li n�v�t�vn�k o nov� u�ivatelsk� ��et, email bude pos�l�n z t�to adresy. Na tuto adresu budou tak� zas�l�ny
-                v�echny zpr�vy ze str�nky "Napi�te n�m". Zpr�vy poch�zej�c� z formul��e "N�vrh" p�ijdou na tuto adresu, pokud nen� se stromem odpov�daj�c�m
+            <p>Va�e emailov� adresa. Po��d�-li n�v�t�vn�k o nov� u�ivatelsk� ��et, email bude pos�l�n z t�to adresy. Na tuto adresu budou tak�
+                zas�l�ny
+                v�echny zpr�vy ze str�nky "Napi�te n�m". Zpr�vy poch�zej�c� z formul��e "N�vrh" p�ijdou na tuto adresu, pokud nen� se stromem
+                odpov�daj�c�m
                 str�nce, ze kter� byl posl�n n�vrh, spojena ��dn� emailov� adresa (jinak bude zpr�va posl�na na tuto adresu).</p>
 
             <span class="optionhead">Pos�lat v�echny maily z v��e uveden� adresy</span>
@@ -417,27 +443,32 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 nyn� aktivn�. Nechcete-li, aby bylo heslo do emailu vkl�d�no, nastavte tuto hodnotu Ne.</p>
 
             <span class="optionhead">Pou��t ov��en� SMTP</span>
-            <p>TNG pos�l� norm�ln� maily pomoc� PHP funkce "mail". Chcete-li rad�ji pou��t Simple Mail Transfer Protocol, pak tuto hodnotu nastavte na "Ano".
-                Zobraz� se nav�c n�kter� dal�� volby: N�zev SMTP hostitele, U�ivatelsk� jm�no pro email, Heslo pro email a ��slo portu. Spr�vn� hodnoty t�chto pol�
+            <p>TNG pos�l� norm�ln� maily pomoc� PHP funkce "mail". Chcete-li rad�ji pou��t Simple Mail Transfer Protocol, pak tuto hodnotu nastavte na
+                "Ano".
+                Zobraz� se nav�c n�kter� dal�� volby: N�zev SMTP hostitele, U�ivatelsk� jm�no pro email, Heslo pro email a ��slo portu. Spr�vn�
+                hodnoty t�chto pol�
                 by v�m m�l b�t schopen d�t poskytovatel va�eho hostingu.</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Top</a></p>
-      <a name="mobile"><p class="subheadbold">Mobil</p></a>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="mobile"><p class="subheadbold">Mobil</p></a>
 
-      <p>Sekce Mobil v�m umo�n� ur�it, jak se bude TNG zobrazovat na chytr�ch telefonech a tabletech.</p>
+            <p>Sekce Mobil v�m umo�n� ur�it, jak se bude TNG zobrazovat na chytr�ch telefonech a tabletech.</p>
 
-      <span class="optionhead">Povolit responzivn� tabulky</span>
-      <p>Je-li tato volba nastavena na Ano, bbude aktivov�n plugin Tablesaw jQuery, kter� umo��uje responzivn� tabulky.<br>Je-li volba nastavena na Ne, plugin Tablesaw jQuery nebude aktivn�.</p>
+            <span class="optionhead">Povolit responzivn� tabulky</span>
+            <p>Je-li tato volba nastavena na Ano, bbude aktivov�n plugin Tablesaw jQuery, kter� umo��uje responzivn� tabulky.<br>Je-li volba nastavena
+                na Ne, plugin Tablesaw jQuery nebude aktivn�.</p>
 
-      <span class="optionhead">Typ responzivn� tabulky</span>
-      <p>Typ responzivn� tabulky m��e b�t nastaven na
-      <ul>
-        <li><strong>Toggle</strong>, kter� je v�choz�, a zobraz� data ve sloupc�ch zalo�en�ch na ���ce displeje a p�i�azen� priorit�. Oto�en�m displeje chytr�ho telefonu nebo tabletu na ���ku budou zobrazeny dal�� sloupce dat.</li>
+            <span class="optionhead">Typ responzivn� tabulky</span>
+            <p>Typ responzivn� tabulky m��e b�t nastaven na
+            <ul>
+                <li><strong>Toggle</strong>, kter� je v�choz�, a zobraz� data ve sloupc�ch zalo�en�ch na ���ce displeje a p�i�azen� priorit�. Oto�en�m
+                    displeje chytr�ho telefonu nebo tabletu na ���ku budou zobrazeny dal�� sloupce dat.
+                </li>
 
         <li><strong>Stack</strong>, kter� shrne z�hlav� tabulky do dvousloupcov�ho n�vrhu se z�hlav�m nalevo, je-li ���ka v��ezu men�� ne� 40em (640px).</li>
 
@@ -447,20 +478,22 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
       <span class="optionhead">Povolit p�ep�na� m�d� responzivn�ch tabulek:</span>
       <p>Volba p�ep�na�e m�d� umo�n� u�ivateli p�ep�nat mezi jednotliv�mi typy zobrazen� sloupc� tabulek: toggle, stack nebo swipe.</p>
 
-      <span class="optionhead">Povolit minimapu responzivn�ch tabulek</span>
-      <p>Pou�it� minimapy p�id� s�rii mal�ch te�ek ukazuj�c�ch, kter� sloupce jsou aktu�ln� viditeln� a kter� jsou skryt�.
-        K dispozici pouze v m�du swipe a toggle. </p>
+            <span class="optionhead">Povolit minimapu responzivn�ch tabulek</span>
+            <p>Pou�it� minimapy p�id� s�rii mal�ch te�ek ukazuj�c�ch, kter� sloupce jsou aktu�ln� viditeln� a kter� jsou skryt�.
+                K dispozici pouze v m�du swipe a toggle. </p>
 
-    </td>
-  </tr>
-  <tr class="databack">
+        </td>
+    </tr>
+    <tr class="databack">
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="pref"><p class="subheadbold">P�edpony a p��pony</p></a>
+            <a id="pref"><p class="subheadbold">P�edpony a p��pony</p></a>
 
-            <p>Tato p�smena ve spojen� s ��slic� tvo�� identifika�n� ��sla (ID ��sla) osob, rodin, pramen�, �lo�i�� a pozn�mek ve va�� datab�zi. V�t�ina genealogick�ch
-                program� pou��v� stejnou sadu standardn�ch p�edpon (a ��dn� p��pony). Pokud v� desktopov� program pou��v� p��pony nebo jin� p�edpony, m��ete je zadat zde.
+            <p>Tato p�smena ve spojen� s ��slic� tvo�� identifika�n� ��sla (ID ��sla) osob, rodin, pramen�, �lo�i�� a pozn�mek ve va�� datab�zi.
+                V�t�ina genealogick�ch
+                program� pou��v� stejnou sadu standardn�ch p�edpon (a ��dn� p��pony). Pokud v� desktopov� program pou��v� p��pony nebo jin� p�edpony,
+                m��ete je zadat zde.
                 Nejsou-li zad�ny spr�vn� p�edpony nebo p��pony, n�kter� funkce TNG nebudou pracovat spr�vn�.</p>
 
         </td>
@@ -469,10 +502,11 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="misc"><p class="subheadbold">R�zn�</p></a>
+            <a id="misc"><p class="subheadbold">R�zn�</p></a>
 
             <span class="optionhead">Maxim�ln� po�et v�sledk� hled�n�</span>
-            <p>Tato volba omezuje po�et v�sledk�, kter� mohou b�t zobrazeny z ve�ejn�ho vyhled�vac�ho dotazu. M��e to b�t relativn� mal�, zvl�dnuteln� ��slo, aby byla
+            <p>Tato volba omezuje po�et v�sledk�, kter� mohou b�t zobrazeny z ve�ejn�ho vyhled�vac�ho dotazu. M��e to b�t relativn� mal�, zvl�dnuteln�
+                ��slo, aby byla
                 maximalizov�na efektivnost a zlep�en� zku�enost� u�ivatel�.</p>
 
             <span class="optionhead">Osoby za��naj� na</span>

@@ -5,37 +5,39 @@ echo help_header("Nápověda: Stromy");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-          <a href="users_help.php" class="lightlink">&laquo; Nápověda: Uživatelé</a> &nbsp; | &nbsp;
-          <a href="branches_help.php" class="lightlink">Nápověda: Větve &raquo;</a>
-      </p>
-        <span class="largeheader">Nápověda: Stromy</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="users_help.php" class="lightlink">&laquo; Nápověda: Uživatelé</a> &nbsp; | &nbsp;
+                <a href="branches_help.php" class="lightlink">Nápověda: Větve &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Stromy</span>
         <p class="smaller menu">
             <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
             <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
             <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
             <a href="#clear" class="lightlink">Vyčistit</a>
         </p>
-    </td>
-  </tr>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
-            <p>Nalezení existujících stromů vyhledáním celého nebo části <strong>ID čísla stromu, názvu stromu, popisu</strong> nebo <strong>vlastníka</strong>.
+            <a id="search"><p class="subheadbold">Hledat</p></a>
+            <p>Nalezení existujících stromů vyhledáním celého nebo části <strong>ID čísla stromu, názvu stromu, popisu</strong> nebo
+                <strong>vlastníka</strong>.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech stromů ve vaší databázi.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo přidat označení k tomuto stromu.</p>
@@ -46,14 +48,18 @@ echo help_header("Nápověda: Stromy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidat nový / Upravit existující stromy</p></a>
-            <p><strong>Strom</strong> v TNG je zásobník samostatného souboru rodinných údajů. TNG umožňuje na vašich stránkách podporu více stromů, ale protože
-                jsou stromy samostatné, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jiného stromu. Z tohoto důvodu by měly být osoby, které jsou nebo by měly být navzájem
+            <a id="add"><p class="subheadbold">Přidat nový / Upravit existující stromy</p></a>
+            <p><strong>Strom</strong> v TNG je zásobník samostatného souboru rodinných údajů. TNG umožňuje na vašich stránkách podporu více stromů,
+                ale protože
+                jsou stromy samostatné, nelze propojit osobu z jednoho stromu s osobou nebo rodinou z jiného stromu. Z tohoto důvodu by měly být
+                osoby, které jsou nebo by měly být navzájem
                 spojeny,
                 udržovány ve stejném stromě.</p>
 
-            <p><strong>POZN.: Strom musíte přidat před tím, než budete zadávat nebo importovat data</strong> osob, rodin, pramenů nebo úložiště pramenů. Pokud jste aktualizovali z nižší verze,
-                nepodporovala stromy, budou vaše data spojena s výchozím stromem, který má prázdné ID číslo stromu. Další údaje tohoto stromu můžete upravit,
+            <p><strong>POZN.: Strom musíte přidat před tím, než budete zadávat nebo importovat data</strong> osob, rodin, pramenů nebo úložiště
+                pramenů. Pokud jste aktualizovali z nižší verze,
+                nepodporovala stromy, budou vaše data spojena s výchozím stromem, který má prázdné ID číslo stromu. Další údaje tohoto stromu můžete
+                upravit,
                 ale ID číslo stromu zůstane prázdné (program s tímto dokáže pracovat).</p>
 
             <p>Chcete-li přidat nový strom, klikněte na záložku <strong>Přidat nový</strong> a pak vyplňte formulář.
@@ -95,8 +101,9 @@ echo help_header("Nápověda: Stromy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazání stromů</p></a>
-            <p>Chcete-li odstranit strom, použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vymazat vedle záznamu tohoto stromu. Tento řádek změní
+            <a id="delete"><p class="subheadbold">Vymazání stromů</p></a>
+            <p>Chcete-li odstranit strom, použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vymazat vedle
+                záznamu tohoto stromu. Tento řádek změní
                 barvu a poté po odstranění položky strom zmizí. <em>Všechna data spojená s tímto stromem (včetně osob, rodin,
                     pramenů, úložišť pramenů, médií a větví) budou také odstraněna</em>.</p>
 
@@ -106,8 +113,9 @@ echo help_header("Nápověda: Stromy");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="clear"><p class="subheadbold">Vyčištění stromů</p></a>
-            Chcete-li strom "vyčistit" (vymazat všechny údaje, ale strom samotný ponechat), použijte záložku <a href="#search">Hledat</a> k nalezení stromu, a poté klikněte na ikonku Vyčistit
+            <a id="clear"><p class="subheadbold">Vyčištění stromů</p></a>
+            Chcete-li strom "vyčistit" (vymazat všechny údaje, ale strom samotný ponechat), použijte záložku <a href="#search">Hledat</a> k nalezení
+            stromu, a poté klikněte na ikonku Vyčistit
             vedle záznamu tohoto stromu.
             <em>Všechny údaje spojené s tímto stromem (včetně osob, rodin, pramenů, úložišť pramenů, médií a větví) budou odstraněny</em>.</p>
 

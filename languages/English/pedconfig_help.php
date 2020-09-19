@@ -5,17 +5,17 @@ echo help_header("Help: Chart Settings");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-          <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
-          <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
-      </p>
-        <span class="largeheader">Help: Chart Settings</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="config_help.php" class="lightlink">&laquo; Help: General Settings</a> &nbsp; | &nbsp;
+                <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Chart Settings</span>
         <p class="smaller menu">
             <a href="#ped" class="lightlink">Pedigree</a> &nbsp; | &nbsp;
             <a href="#desc" class="lightlink">Descendancy</a> &nbsp; | &nbsp;
@@ -36,16 +36,20 @@ echo help_header("Help: Chart Settings");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="ped"><p class="subheadbold">Pedigree Chart</p></a>
+            <a id="ped"><p class="subheadbold">Pedigree Chart</p></a>
 
             <span class="optionhead">Initial Display</span>
-            <p>This option determines which pedigree format is initially displayed. When Standard is selected, all birth, marriage, and death/burial dates
-                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e., ArrowDown.gif) will be placed below the bottom
+            <p>This option determines which pedigree format is initially displayed. When Standard is selected, all birth, marriage, and death/burial
+                dates
+                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e.,
+                ArrowDown.gif) will be placed below the bottom
                 center of the pedigree boxes wherever information
                 is available, and the popup box will appear beneath the pedigree box when the Popup Event is triggered. The Compact format is
                 similar to Standard, but the box size is greatly reduced, and no photos are displayed. When Box is selected,
-                the standard information will appear in the pedigree boxes at all times. When Text Only is selected, a text-based version of the pedigree chart (no boxes or popup windows)
-                will be shown first. The Vertical option will show the primary individual at the bottom, with the person's ancestors being displayed above them.
+                the standard information will appear in the pedigree boxes at all times. When Text Only is selected, a text-based version of the
+                pedigree chart (no boxes or popup windows)
+                will be shown first. The Vertical option will show the primary individual at the bottom, with the person's ancestors being displayed
+                above them.
                 The user will always have the option to switch among these display types after viewing the initial display.</p>
 
             <span class="optionhead">Max Generations</span>
@@ -104,15 +108,18 @@ echo help_header("Help: Chart Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="desc"><p class="subheadbold">Descendancy Chart</p></a>
+            <a id="desc"><p class="subheadbold">Descendancy Chart</p></a>
 
             <span class="optionhead">Initial Display</span>
             <p>This option determines which descendancy format is initially displayed. When Standard is selected, all birth and death/burial dates
-                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e., ArrowDown.gif) will be placed below the bottom
+                (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e.,
+                ArrowDown.gif) will be placed below the bottom
                 center of the pedigree boxes wherever information
                 is available, and the popup box will appear beneath the descendancy box when the Popup Event is triggered. The Compact format is
-                similar to Standard, but the box size is greatly reduced, and no photos are displayed. When Text Only is selected, a text-based version
-                of the descendancy chart (no boxes or popup windows) will be shown first. The Register format shows the same information in a narrative
+                similar to Standard, but the box size is greatly reduced, and no photos are displayed. When Text Only is selected, a text-based
+                version
+                of the descendancy chart (no boxes or popup windows) will be shown first. The Register format shows the same information in a
+                narrative
                 style. The user will always have the option to switch among these display types after viewing the initial display.</p>
 
             <span class="optionhead">Max Generations</span>
@@ -139,7 +146,7 @@ echo help_header("Help: Chart Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="rel"><p class="subheadbold">Relationship Chart</p></a>
+            <a id="rel"><p class="subheadbold">Relationship Chart</p></a>
             <span class="optionhead">Initial Relationships</span>
             <p>When a new Relationship chart is requested, this is how many relationships TNG will try to find. As soon as that many
                 relationships are found, the process will stop. If your tree contains no complicated relationships, you may want to set
@@ -153,7 +160,8 @@ echo help_header("Help: Chart Settings");
                 TNG will continue searching in vain after the first relationship is found.</p>
 
             <span class="optionhead">Max Generations</span>
-            <p>The maximum number of generations you will allow visitors to search at one time on the Relationship page. This will also be the initial default on that page.</p>
+            <p>The maximum number of generations you will allow visitors to search at one time on the Relationship page. This will also be the initial
+                default on that page.</p>
 
         </td>
     </tr>
@@ -161,14 +169,15 @@ echo help_header("Help: Chart Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="time"><p class="subheadbold">Timeline Chart</p></a>
+            <a id="time"><p class="subheadbold">Timeline Chart</p></a>
             <span class="optionhead">Starting chart width</span>
             <p>The initial width in pixels of the lifespan timeline. Visitors can change the width for themselves only at the top
                 of the page.</p>
 
             <span class="optionhead">Enable Simile timeline</span>
             <p>Along with the standard TNG timeline, you can also display a Simile timeline chart on the same page by choosing "Yes" here. More
-                information on the Simile timeline chart can be found at <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.</p>
+                information on the Simile timeline chart can be found at <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.
+            </p>
 
             <span class="optionhead">Chart height</span>
             <p>Height in pixels of the event (Simile) timeline. If many events are charted at the same time, some could get pushed
@@ -179,7 +188,8 @@ echo help_header("Help: Chart Settings");
                 within the lifespans of the individuals on the chart. If you have a lot of events, choosing to display them all may
                 cause the chart to be slighly slower in its initial display.</p>
 
-            <p>Notes: If too many events are on the chart at once, those at the bottom will not be visible. If you have a lot of timeline events and this is a frequent occurrence,
+            <p>Notes: If too many events are on the chart at once, those at the bottom will not be visible. If you have a lot of timeline events and
+                this is a frequent occurrence,
                 you might consider increasing the Chart Height (see above). More options are available in timelineconfig.php.</p>
 
         </td>
@@ -188,11 +198,13 @@ echo help_header("Help: Chart Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="common"><p class="subheadbold">Common Elements</p></a>
+            <a id="common"><p class="subheadbold">Common Elements</p></a>
 
             <span class="optionhead">Left Indent</span>
-            <p>Horizontal offset to be used for the entire pedigree chart (in pixels). This may be needed, for example, to ensure that the chart does not
-                overlay any margin images, menus, or text that are in the left margin. Default value is 10. If a negative number is entered, 0 will be used.</p>
+            <p>Horizontal offset to be used for the entire pedigree chart (in pixels). This may be needed, for example, to ensure that the chart does
+                not
+                overlay any margin images, menus, or text that are in the left margin. Default value is 10. If a negative number is entered, 0 will be
+                used.</p>
 
             <span class="optionhead">Box Name Size</span>
             <p>The size (in points) of all names on the chart. In no case will the font size be permitted to
@@ -282,7 +294,8 @@ echo help_header("Help: Chart Settings");
                 will occur. The number used will always be an even number, so if an odd number is entered, it will be increased by 1.</p>
 
             <span class="optionhead">Include Photos</span>
-            <p>If this option is checked, thumbnail photos will be included in the pedigree boxes (when popups are used and the image file can be found -- see below).
+            <p>If this option is checked, thumbnail photos will be included in the pedigree boxes (when popups are used and the image file can be
+                found -- see below).
                 Default is not checked.</p>
 
         </td>
@@ -291,16 +304,20 @@ echo help_header("Help: Chart Settings");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="thumb"><p class="subheadbold">Notes About Including Thumbnail Photos</p></a>
+            <a id="thumb"><p class="subheadbold">Notes About Including Thumbnail Photos</p></a>
 
             <ul>
-                <li>To designate a photo to represent an individual on the pedigree chart, edit the photo (must be one with a thumbnail) and check the box marked <span class="emphasis">Make Default</span>
+                <li>To designate a photo to represent an individual on the pedigree chart, edit the photo (must be one with a thumbnail) and check the
+                    box marked <span class="emphasis">Make Default</span>
                     under the link to the desired individual and save
-                    the page. The existing thumbnail will then be used on the pedigree and other charts. The action of selecting <span class="choice">Make Default</span> used to copy the existing
+                    the page. The existing thumbnail will then be used on the pedigree and other charts. The action of selecting <span class="choice">Make Default</span>
+                    used to copy the existing
                     thumbnail to a new location, with the copied file being
-                    named <span class="emphasis">Mtreename.###.ext</span>, where <span class="emphasis">treename</span> was the name of the tree to which the person belonged, <span
-                            class="emphasis">###</span> was the GEDCOM person ID and ext was the Photos
-                    Extension defined above (i.e., <span class="example">MLythgoe.I567.jpg</span>). This convention is no longer used, but existing thumbnails created in that manner will still be
+                    named <span class="emphasis">Mtreename.###.ext</span>, where <span class="emphasis">treename</span> was the name of the tree to
+                    which the person belonged, <span
+                        class="emphasis">###</span> was the GEDCOM person ID and ext was the Photos
+                    Extension defined above (i.e., <span class="example">MLythgoe.I567.jpg</span>). This convention is no longer used, but existing
+                    thumbnails created in that manner will still be
                     used and will take precedence. <span
                             class="emphasis">NOTE:</span> You can still create default thumbnails manually in this manner if you don't want the default photo to be derived from any other photo
                     linked to the individual.

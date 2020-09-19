@@ -4,17 +4,17 @@ echo help_header("Help: Cemeteries");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="albums_help.php" class="lightlink">&laquo; Help: Albums</a> &nbsp; | &nbsp;
-        <a href="places_help.php" class="lightlink">Help: Places &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Cemeteries</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="albums_help.php" class="lightlink">&laquo; Help: Albums</a> &nbsp; | &nbsp;
+                <a href="places_help.php" class="lightlink">Help: Places &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Cemeteries</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add or Edit</a> &nbsp; | &nbsp;
@@ -32,15 +32,19 @@ echo help_header("Help: Cemeteries");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
-            <p>Locate existing cemeteries by searching for all or part of the <strong>Cemetery ID, Cemetery Name, City, County, State, Country</strong> or <strong>Map File Name</strong>.
+            <a id="search"><p class="subheadbold">Search</p></a>
+            <p>Locate existing cemeteries by searching for all or part of the <strong>Cemetery ID, Cemetery Name, City, County, State,
+                    Country</strong> or <strong>Map File Name</strong>.
                 Searching with no value in the search box will find all cemeteries in your database.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                values and searches again.</p>
 
             <span class="optionhead">Actions</span>
-            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a time, click the box in the
-                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the <strong>Select All</strong> or <strong>Clear All</strong>
+            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
+                time, click the box in the
+                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
+                <strong>Select All</strong> or <strong>Clear All</strong>
                 buttons to toggle all select boxes at once.</p>
 
         </td>
@@ -49,9 +53,11 @@ echo help_header("Help: Cemeteries");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="add"><p class="subheadbold">Add New / Edit Existing Cemeteries</p></a>
-            <p>TNG allows you to categorize and display your headstone photos by cemetery. To do that, you must set up a new cemetery record for each location. Cemetery
-                records in TNG are not related to place records and there is no GEDCOM convention for cemeteries, so even if your GEDCOM file contains cemetery names in some
+            <a id="add"><p class="subheadbold">Add New / Edit Existing Cemeteries</p></a>
+            <p>TNG allows you to categorize and display your headstone photos by cemetery. To do that, you must set up a new cemetery record for each
+                location. Cemetery
+                records in TNG are not related to place records and there is no GEDCOM convention for cemeteries, so even if your GEDCOM file contains
+                cemetery names in some
                 of your burial locations, those names will not cause cemetery records to be created in TNG when your GEDCOM file is imported.</p>
 
             <p>To add a new cemetery, click on the <strong>Add New</strong> tab, then fill out the form. To make changes to an existing cemetery, use
@@ -59,7 +65,8 @@ echo help_header("Help: Cemeteries");
                 When adding or editing a cemetery, take note of the following:</p>
 
             <span class="optionhead">Cemetery Name</span>
-            <p>Include the full, proper name for the cemetery. For example, the Salt Lake City Cemetery should be entered as <em>Salt Lake City Cemetery</em>, not just <em>Salt
+            <p>Include the full, proper name for the cemetery. For example, the Salt Lake City Cemetery should be entered as <em>Salt Lake City
+                    Cemetery</em>, not just <em>Salt
                     Lake City</em> or <em>Salt Lake</em>.</p>
 
             <span class="optionhead">Map Image to Upload</span>
@@ -116,9 +123,11 @@ echo help_header("Help: Cemeteries");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Deleting Cemeteries</p></a>
-            <p>To delete one cemetery, use the <a href="#search">Search</a> tab to locate the cemetery, then click on the Delete icon next to that cemetery record. The row will
-                change color and then vanish as the cemetery is deleted. To delete more than one cemetery at a time, check the box in the Select column next to each cemetery to be
+            <a id="delete"><p class="subheadbold">Deleting Cemeteries</p></a>
+            <p>To delete one cemetery, use the <a href="#search">Search</a> tab to locate the cemetery, then click on the Delete icon next to that
+                cemetery record. The row will
+                change color and then vanish as the cemetery is deleted. To delete more than one cemetery at a time, check the box in the Select
+                column next to each cemetery to be
                 deleted, then click the "Delete Selected" button at the top of the page.</p>
 
         </td>

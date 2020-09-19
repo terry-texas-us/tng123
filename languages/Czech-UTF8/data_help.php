@@ -4,41 +4,45 @@ echo help_header("Nápověda: Import dat");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
-        <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Import / Export</span>
-      <p class="smaller menu">
-        <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
-        <a href="#export" class="lightlink">GEDCOM Export</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="mostwanted_help.php" class="lightlink">&laquo; Nápověda: Hledá se</a> &nbsp; | &nbsp;
+                <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Import / Export</span>
+            <p class="smaller menu">
+                <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
+                <a href="#export" class="lightlink">GEDCOM Export</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="import"><p class="subheadbold">GEDCOM Import</p></a>
+            <a id="import"><p class="subheadbold">GEDCOM Import</p></a>
             <p>Na této stránce můžete naimportovat všechna data ze standardního souboru GEDCOM do určitého stromu.</p>
 
-            <p><span class="optionhead">Před importem:</span> Z vašeho genealogického programu vytvořte standardní soubor GEDCOM 5.5 (4.0 je také akceptovatelný). Neveřejné informace u žijících osob
-                můžete vyloučit, ale není to nutné. Není také nutné vyloučit údaje týkající se CJKSpd, protože mohou být také filtrovány v závislosti na uživatelských právech.</p>
+            <p><span class="optionhead">Před importem:</span> Z vašeho genealogického programu vytvořte standardní soubor GEDCOM 5.5 (4.0 je také
+                akceptovatelný). Neveřejné informace u žijících osob
+                můžete vyloučit, ale není to nutné. Není také nutné vyloučit údaje týkající se CJKSpd, protože mohou být také filtrovány v závislosti
+                na uživatelských právech.</p>
 
             <p>Po vytvoření souboru GEDCOM je dalším krokem, jak ho dostat na vaše webové stránky. Význam jednotlivých polí je následující:</p>
 
             <p><span class="optionhead">[Import souboru GEDCOM] Z vašeho počítače</span>
-                Chcete-li nahrát a importovat váš soubor na vaše stránky bez použití FTP, klikněte na tlačítko "Prohledat" a najděte soubor na vašem disku. Po jeho vyhledání se v tomto poli objeví název a umístění vašeho souboru.
-                <strong>POZN.</strong>: Pokud je váš soubor GEDCOM příliš velký (> 2MB), budete muset před nahráním vašeho souboru tímto způsobem kontaktovat poskytovatele svého hostingu, protože server může mít omezení maximální
+                Chcete-li nahrát a importovat váš soubor na vaše stránky bez použití FTP, klikněte na tlačítko "Prohledat" a najděte soubor na vašem
+                disku. Po jeho vyhledání se v tomto poli objeví název a umístění vašeho souboru.
+                <strong>POZN.</strong>: Pokud je váš soubor GEDCOM příliš velký (> 2MB), budete muset před nahráním vašeho souboru tímto způsobem
+                kontaktovat poskytovatele svého hostingu, protože server může mít omezení maximální
                 velikosti pro nahrávání souborů prostřednictvím webového formuláře. Pokud během importu obdržíte chybové hlášení, jedná se o tento případ. Zkuste místo toho použít k nakopírování svého souboru do složky GEDCOM program FTP,
                 a pak jej naimportujte odtud (viz níže).</p>
 
@@ -116,7 +120,8 @@ echo help_header("Nápověda: Import dat");
             <span class="optionhead">Funkce "začít znovu"</span>
             <p>Pokud neuvidíte zprávu o "dokončení", váš server možná proces importu ukončil, protože trval příliš dlouho.
                 Pokud se vám to stalo, jděte na stránku Admin/Nastavení/Nastavení importu
-                a zaškrtněte políčko <strong>Uložit stav importu</strong>. Pak se vraťte na stránku importu a zkuste váš import znovu. Pokud jsou stejné podmínky,
+                a zaškrtněte políčko <strong>Uložit stav importu</strong>. Pak se vraťte na stránku importu a zkuste váš import znovu. Pokud jsou
+                stejné podmínky,
                 import by se měl sám restartovat.</p>
 
         </td>
@@ -125,7 +130,7 @@ echo help_header("Nápověda: Import dat");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="export"><p class="subheadbold">GEDCOM Export</p></a>
+            <a id="export"><p class="subheadbold">GEDCOM Export</p></a>
             <p>Tato stránka vám umožní exportovat svá data z určitého stromu do standardního souboru GEDCOM 5.5. Soubor bude uložen ve vaší složce
                 GEDCOM (určena v Nastavení importu) a bude pojmenován názvem stromu a příponou ".ged".</p>
 

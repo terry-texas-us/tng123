@@ -4,21 +4,21 @@ echo help_header("N�pov�da: M�dia");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="more_help.php" class="lightlink">&laquo; N�pov�da: V�ce</a> &nbsp; | &nbsp;
-        <a href="collections_help.php" class="lightlink">N�pov�da: Kolekce &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: M�dia</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="more_help.php" class="lightlink">&laquo; N�pov�da: V�ce</a> &nbsp; | &nbsp;
+                <a href="collections_help.php" class="lightlink">N�pov�da: Kolekce &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: M�dia</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">P�idat</a> &nbsp; | &nbsp;
@@ -26,27 +26,30 @@ echo help_header("N�pov�da: M�dia");
         <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
         <a href="#convert" class="lightlink">P�ev�st</a> &nbsp; | &nbsp;
                 <a href="#album" class="lightlink">P�idat do alba</a> &nbsp; | &nbsp;
-                <a href="#sort" class="lightlink">Se�adit</a> &nbsp; | &nbsp;
-                <a href="#thumbs" class="lightlink">N�hledy</a> &nbsp; | &nbsp;
-                <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
-                <a href="#upload" class="lightlink">Nahr�t</a>
-            </p>
+          <a href="#sort" class="lightlink">Se�adit</a> &nbsp; | &nbsp;
+          <a href="#thumbs" class="lightlink">N�hledy</a> &nbsp; | &nbsp;
+          <a href="#import" class="lightlink">Import</a> &nbsp; | &nbsp;
+          <a href="#upload" class="lightlink">Nahr�t</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
             <p>Nalezen� existuj�c�ch m�di� vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla m�dia, titulu, popisu, um�st�n�</strong> nebo
                 <strong>z�kladn�ho textu</strong>. Pro dal�� z��en� va�eho v�b�ru pou�ijte dal�� dostupn� mo�nosti.
-                Vyhled�v�n� bez vybran�ch voleb a bez zapsan�ch hodnot ve v�b�rov�ch pol� povede k v�b�ru v�ech m�di� z va�� datab�ze. Vyhled�vac� volby obsahuj�:</p>
+                Vyhled�v�n� bez vybran�ch voleb a bez zapsan�ch hodnot ve v�b�rov�ch pol� povede k v�b�ru v�ech m�di� z va�� datab�ze. Vyhled�vac�
+                volby obsahuj�:</p>
 
             <span class="optionhead">Strom</span>
             <p>Omez� v�sledek na m�dia spojen� pouze s vybran�m stromem.</p>
 
             <span class="optionhead">Kolekce</span>
-            <p>Omez� v�sledek na m�dia vybran�ho typu kolekce. Chcete-li p�idat novou kolekci, klikn�te na tla��tko "P�idat kolekci", a v zobrazen�m okn� vypl�te formul��.
-                Pro va�i novou kolekci mus�te vytvo�it slo�ku a mus�te vytvo�it vlastn� ikonu (nebo pou��t n�jakou st�vaj�c�). Pole "Stejn� nastaven� jako"
+            <p>Omez� v�sledek na m�dia vybran�ho typu kolekce. Chcete-li p�idat novou kolekci, klikn�te na tla��tko "P�idat kolekci", a v zobrazen�m
+                okn� vypl�te formul��.
+                Pro va�i novou kolekci mus�te vytvo�it slo�ku a mus�te vytvo�it vlastn� ikonu (nebo pou��t n�jakou st�vaj�c�). Pole "Stejn� nastaven�
+                jako"
                 v�m umo�n� ozna�it, ze kter� ze st�vaj�c�ch kolekc� si nov� kolekce vezme nastaven�.</p>
 
             <span class="optionhead">P��pona souboru</span>
@@ -66,8 +69,10 @@ echo help_header("N�pov�da: M�dia");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, vymazat nebo otestovat v�sledek. Chcete-li najednou vymazat v�ce osob, za�krtn�te pol��ko ve sloupci
-                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t odstran�n, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
+            <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, vymazat nebo otestovat v�sledek. Chcete-li najednou vymazat v�ce osob,
+                za�krtn�te pol��ko ve sloupci
+                <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t odstran�n, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu.
+                Pro za�krtnut� nebo vy�i�t�n� v�ech v�b�rov�ch pol��ek najednou
                 m��ete pou��t tla��tka <strong>Vybrat v�e</strong> nebo <strong>Vy�istit v�e</strong>.</p>
 
         </td>
@@ -76,16 +81,19 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">P�idat nov� m�dium</p></a>
+            <a id="add"><p class="subheadbold">P�idat nov� m�dium</p></a>
 
-            <p>Chcete-li p�idat nov� m�dium, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako obr�zek mapy, informace o m�st� a
+            <p>Chcete-li p�idat nov� m�dium, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako obr�zek
+                mapy, informace o m�st� a
                 odkazy na osoby, rodiny a dal�� subjekty m��ete p�idat po ulo�en� nebo zamknut� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
             <span class="optionhead">Kolekce</span>
-            <p>Vyberte typ m�dia, kter�m je va�e polo�ka (nap�. fotografie, dokumenty, n�hrobky, vypr�v�n�, zvukov� z�znam nebo video). ��dn� z <span class="emphasis">kolekc�</span> m�di� nen� omezena typem souboru.</p>
+            <p>Vyberte typ m�dia, kter�m je va�e polo�ka (nap�. fotografie, dokumenty, n�hrobky, vypr�v�n�, zvukov� z�znam nebo video). ��dn� z <span
+                    class="emphasis">kolekc�</span> m�di� nen� omezena typem souboru.</p>
 
             <span class="optionhead">Toto m�dium je z extern�ho zdroje</span>
-            <p>Toto pol��ko za�krtn�te, pokud se obr�zek nach�z� n�kde na internetu jinde ne� na va�em serveru. Do pole ozna�en�ho "URL m�dia" mus�te zapsat
+            <p>Toto pol��ko za�krtn�te, pokud se obr�zek nach�z� n�kde na internetu jinde ne� na va�em serveru. Do pole ozna�en�ho "URL m�dia" mus�te
+                zapsat
                 �plnou webovou adresu (nap�. <em>http://www.tentoweb.com/image.jpg</em>), a
                 pokud chcete m�t n�hled tohoto obr�zku, mus�te p�idat vlastn� (TNG jej nevytvo��).</p>
 
@@ -186,7 +194,8 @@ echo help_header("N�pov�da: M�dia");
                 spojen� se h�bitovem t�mto zp�sobem zobraz� v horn� ��sti str�nky.</p>
 
             <span class="optionhead">Uk�zat mapu h�bitova a m�dium, kdykoliv bude tato polo�ka zobrazena</span>
-            <p><strong>(pouze N�hrobky)</strong> Pokud m� h�bitov, na kter� se n�hrobek nach�z�, p�ilo�enou mapu nebo fotografii, za�krtnut�m tohoto pol��ka se mapa nebo fotografie zobraz� kdykoli
+            <p><strong>(pouze N�hrobky)</strong> Pokud m� h�bitov, na kter� se n�hrobek nach�z�, p�ilo�enou mapu nebo fotografii, za�krtnut�m tohoto
+                pol��ka se mapa nebo fotografie zobraz� kdykoli
                 je zobrazen n�hrobek.</p>
 
         </td>
@@ -195,17 +204,21 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="edit"><p class="subheadbold">Upravit existuj�c� m�dium</p></a>
-            <p>Chcete-li upravit existuj�c� m�dium, k nalezen� polo�ky pou�ijte z�lo�ku <a href="#search">Hledat</a>, a pot� klikn�te na ikonu Upravit vedle t�to polo�ky.
+            <a id="edit"><p class="subheadbold">Upravit existuj�c� m�dium</p></a>
+            <p>Chcete-li upravit existuj�c� m�dium, k nalezen� polo�ky pou�ijte z�lo�ku <a href="#search">Hledat</a>, a pot� klikn�te na ikonu Upravit
+                vedle t�to polo�ky.
                 V�znam pol�, kter� nejsou na str�nce "P�idat nov� m�dium", je n�sleduj�c�:</p>
 
             <span class="optionhead">Odkazy na m�dium</span>
-            <p>Toto m�dium m��ete p�ipojit k osob�m, rodin�m, pramen�m, �lo�i�t�m pramen� nebo m�st�m. Pro ka�d� odkaz nejd��ve vyberte strom spojen� se subjektem, se kter�m chcete polo�ku spojit.
-                D�le vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t� pramen� nebo m�sto) a na z�v�r ID ��slo nebo n�zev (pouze u m�sta) subjektu, se kter�m polo�ku spojujete.
+            <p>Toto m�dium m��ete p�ipojit k osob�m, rodin�m, pramen�m, �lo�i�t�m pramen� nebo m�st�m. Pro ka�d� odkaz nejd��ve vyberte strom spojen�
+                se subjektem, se kter�m chcete polo�ku spojit.
+                D�le vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t� pramen� nebo m�sto) a na z�v�r ID ��slo nebo n�zev (pouze u m�sta) subjektu,
+                se kter�m polo�ku spojujete.
                 Po vlo�en� v�ech t�chto �daj� klikn�te na tla��tko "P�idat".</p>
 
             <p>Pokud nezn�te ID ��slo nebo p�esn� n�zev m�sta, kliknut�m na ikonu lupy je m��ete vyhledat. Objev� se okno, ve kter�m m��ete hledat.
-                Po nalezen� po�adovan�ho popisu subjektu klikn�te na odkaz "P�idat" vlevo. Kliknout na "P�idat" m��ete u v�ce subjekt�. Po ukon�en� vytv��en�
+                Po nalezen� po�adovan�ho popisu subjektu klikn�te na odkaz "P�idat" vlevo. Kliknout na "P�idat" m��ete u v�ce subjekt�. Po ukon�en�
+                vytv��en�
                 odkaz� klikn�te na odkaz "Zav��t okno".</p>
 
             <p><strong>Existuj�c� odkazy:</strong> Existuj�c� odkazy m��ete upravit nebo vymazat kliknut�m na ikonu Upravit nebo Vymazat vedle tohoto odkazu. �prava odkazu
@@ -256,7 +269,8 @@ echo help_header("N�pov�da: M�dia");
 
             <p>Tento postup m��ete opakovat pro dal�� oblasti. Ka�d� nov� k�d bude vlo�en na konec obsahu pole Mapa obr�zku.</p>
 
-            <p>Chcete-li r�zn� ��sti va�eho obr�zku spojit s r�zn�mi str�nkami nebo zobrazit kr�tk� zpr�vy p�i p�em�st�n� kursoru my�� nad tyto ��sti, zapi�te do tohoto pole
+            <p>Chcete-li r�zn� ��sti va�eho obr�zku spojit s r�zn�mi str�nkami nebo zobrazit kr�tk� zpr�vy p�i p�em�st�n� kursoru my�� nad tyto ��sti,
+                zapi�te do tohoto pole
                 pot�ebn� k�d mapy obr�zku. Vytvo�it svoji vlastn� mapu obr�zku m��ete podle sekce Tvorba mapy obr�zku na konci str�nky.</p>
 
         </td>
@@ -265,10 +279,12 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat m�dium</p></a>
+            <a id="delete"><p class="subheadbold">Vymazat m�dium</p></a>
 
-            <p>Chcete-li odstranit jednu medi�ln� polo�ku, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� dan� polo�ky, a pot� klikn�te na ikonu Vymazat vedle t�to polo�ky. Tento ��dek zm�n�
-                barvu a pot� po odstran�n� polo�ky zmiz�. Chcete-li najednou odstranit v�ce polo�ek, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d� polo�ky, kterou
+            <p>Chcete-li odstranit jednu medi�ln� polo�ku, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� dan� polo�ky, a pot� klikn�te na
+                ikonu Vymazat vedle t�to polo�ky. Tento ��dek zm�n�
+                barvu a pot� po odstran�n� polo�ky zmiz�. Chcete-li najednou odstranit v�ce polo�ek, za�krtn�te pol��ko ve sloupci Vybrat vedle ka�d�
+                polo�ky, kterou
                 chcete odstranit, a pot� klikn�te na tla��tko "Vymazat vybran�" na str�nce naho�e</p>
 
         </td>
@@ -277,9 +293,11 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="convert"><p class="subheadbold">P�ev�st m�dium z jedn� kolekce do jin�</p></a>
-            Chcete-li p�ev�st medi�ln� polo�ky z jednoho typu m�dia nebo "kolekce" do jin�, za�krtn�te na z�lo�ce <a href="#search">Hledat</a> pol��ko vedle t�chto polo�ek,
-            pot� z rozbalovac�ho seznamu v horn� ��sti str�nky vedle tla��tka "P�ev�st vybran� na" vyberte novou kolekci. Na z�v�r klikn�te na tla��tko "P�ev�st vybran� na".
+            <a id="convert"><p class="subheadbold">P�ev�st m�dium z jedn� kolekce do jin�</p></a>
+            Chcete-li p�ev�st medi�ln� polo�ky z jednoho typu m�dia nebo "kolekce" do jin�, za�krtn�te na z�lo�ce <a href="#search">Hledat</a> pol��ko
+            vedle t�chto polo�ek,
+            pot� z rozbalovac�ho seznamu v horn� ��sti str�nky vedle tla��tka "P�ev�st vybran� na" vyberte novou kolekci. Na z�v�r klikn�te na
+            tla��tko "P�ev�st vybran� na".
             Str�nka bude zobrazena znovu s �ervenou stavovou zpr�vou naho�e.</p>
 
         </td>
@@ -288,9 +306,11 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="album"><p class="subheadbold">P�idat m�dium do alba</p></a>
-            Chcete-li m�dium p�idat do alba, za�krtn�te pol��ko Vybrat vedle polo�ek, kter� maj� b�t p�id�ny, pot� z rozbalovac�ho seznamu v horn� ��sti str�nky
-            vedle tla��tka "P�idat do alba" vyberte album. Na z�v�r klikn�te na tla��tko "P�idat do alba". M�dia m��ete do alba p�idat tak� z Admin/Alba.</p>
+            <a id="album"><p class="subheadbold">P�idat m�dium do alba</p></a>
+            Chcete-li m�dium p�idat do alba, za�krtn�te pol��ko Vybrat vedle polo�ek, kter� maj� b�t p�id�ny, pot� z rozbalovac�ho seznamu v horn�
+            ��sti str�nky
+            vedle tla��tka "P�idat do alba" vyberte album. Na z�v�r klikn�te na tla��tko "P�idat do alba". M�dia m��ete do alba p�idat tak� z
+            Admin/Alba.</p>
 
         </td>
     </tr>
@@ -298,17 +318,21 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="sort"><p class="subheadbold">Se�adit m�dia</p></a>
-            <p>Standardn� jsou m�dia spojen� s osobou, rodinou, pramenem, �lo�i�t�m pramen� nebo m�stem se�azena v po�ad�, ve kter�m byla k tomuto subjektu p�ipojena. Toto po�ad�
+            <a id="sort"><p class="subheadbold">Se�adit m�dia</p></a>
+            <p>Standardn� jsou m�dia spojen� s osobou, rodinou, pramenem, �lo�i�t�m pramen� nebo m�stem se�azena v po�ad�, ve kter�m byla k tomuto
+                subjektu p�ipojena. Toto po�ad�
                 m��ete zm�nit na z�lo�ce Media/Se�adit.</p>
 
             <span class="optionhead">Strom, Typ odkazu, Kolekce:</span>
-            <p>Zvolte strom spojen� se subjektem, u kter�ho chcete zm�nit po�ad� m�di�. D�le vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t� pramen� nebo m�sto) a
+            <p>Zvolte strom spojen� se subjektem, u kter�ho chcete zm�nit po�ad� m�di�. D�le vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t�
+                pramen� nebo m�sto) a
                 kolekci, kterou chcete p�et��dit.</p>
 
             <span class="optionhead">ID ��slo:</span>
-            <p>Zapi�te ID ��slo nebo n�zev (pouze m�sta) subjektu. Pokud nezn�te ID ��slo nebo p�esn� n�zev m�sta, kliknut�m na ikonu lupy je m��ete vyhledat.
-                Po nalezen� po�adovan�ho subjektu klikn�te na odkaz "Vybrat" vedle tohoto subjektu. Okno se zv�e a vybran� ID ��slo se objev� v poli ID ��slo.</p>
+            <p>Zapi�te ID ��slo nebo n�zev (pouze m�sta) subjektu. Pokud nezn�te ID ��slo nebo p�esn� n�zev m�sta, kliknut�m na ikonu lupy je m��ete
+                vyhledat.
+                Po nalezen� po�adovan�ho subjektu klikn�te na odkaz "Vybrat" vedle tohoto subjektu. Okno se zv�e a vybran� ID ��slo se objev� v poli
+                ID ��slo.</p>
 
             <span class="optionhead">Spojeno s ur�itou ud�lost�</span>
             <p>Pokud chcete p�et��dit medi�ln� polo�ky p�ipojen� k ur�it� ud�losti spojen� s p�ipojen�m subjektem, za�krtn�te pol��ko ozna�en� "Spojeno s ur�itou ud�lost�" PO
@@ -327,8 +351,10 @@ echo help_header("N�pov�da: M�dia");
 
             <span class="optionhead">V�choz� fotografie</span>
             <p>P�i t��d�n� m��ete zvolit jakoukoli zobrazenou fotografii jako <strong>V�choz� fotografii</strong> aktu�ln�ho subjektu. Znamen� to, �e se n�hled zvolen�ho obr�zku
-                objev� ve sch�matu v�vodu a v titulech str�nek s n�zvem nebo popisem aktu�ln�ho subjektu. Chcete-li nastavit nebo vymazat ozna�en� V�choz� fotografie, podr�te
-                kurzor my�i nad obr�zkem v seznamu, a pot� klikn�te na jednu z voleb, kter� se objev�: "Nastavit jako v�choz�" nebo "Odstranit". Aktu�ln� v�choz� fotografii
+                objev� ve sch�matu v�vodu a v titulech str�nek s n�zvem nebo popisem aktu�ln�ho subjektu. Chcete-li nastavit nebo vymazat ozna�en�
+                V�choz� fotografie, podr�te
+                kurzor my�i nad obr�zkem v seznamu, a pot� klikn�te na jednu z voleb, kter� se objev�: "Nastavit jako v�choz�" nebo "Odstranit".
+                Aktu�ln� v�choz� fotografii
                 lze odstranit tak� kliknut�m na odkaz "Odstranit v�choz� fotografii" na str�nce naho�e.</p>
 
         </td>
@@ -337,23 +363,29 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="thumbs"><p class="subheadbold">N�hledy</p></a>
+            <a id="thumbs"><p class="subheadbold">N�hledy</p></a>
 
             <span class="optionhead">Vytvo�it n�hledy</span>
             <p>Pop kliknut� na tla��tko "Vygenerovat" pod touto volbou, vytvo�� TNG automaticky n�hledy v�ech obr�zk� form�tu JPG, GIF nebo
                 PNG, kter� nemaj� existuj�c� n�hledy. Standardn� bude n�zev obr�zku stejn� jako je n�zev velk�ho obr�zku a bude obsahovat
-                p�edponu a/nebo p��ponu, kter� jsou definov�ny v Z�kladn�m nastaven�. Za�krtnut�m pol��ka ozna�en�ho "Obnovit existuj�c� n�hledy" vytvo��te
-                n�hledy v�ech obr�zk�, v�etn� t�ch, kter� je ji� maj�. Pol��ko "Obnovit n�zvy cest k n�hled�m, kde soubor neexistuje" za�krtn�te, pokud
-                si mysl�te, �e m�te n�kter� n�hledy, kter� ukazuj� na neplatn� soubory. To zp�sob�, �e TNG p�ehodnot� n�zvy cest u n�hled� p�ed obnoven�m n�hled�.
+                p�edponu a/nebo p��ponu, kter� jsou definov�ny v Z�kladn�m nastaven�. Za�krtnut�m pol��ka ozna�en�ho "Obnovit existuj�c� n�hledy"
+                vytvo��te
+                n�hledy v�ech obr�zk�, v�etn� t�ch, kter� je ji� maj�. Pol��ko "Obnovit n�zvy cest k n�hled�m, kde soubor neexistuje" za�krtn�te,
+                pokud
+                si mysl�te, �e m�te n�kter� n�hledy, kter� ukazuj� na neplatn� soubory. To zp�sob�, �e TNG p�ehodnot� n�zvy cest u n�hled� p�ed
+                obnoven�m n�hled�.
                 Bez t�to funkce by doch�zelo k op�tovn�mu vytv��en� n�kter�ch neplatn�ch n�zv� n�hled�.</p>
 
             <p><strong>POZN.</strong>: Pokud nevid�te sekci Vytvo�it n�hledy, v� server nepodporuje knihovnu GD image.</p>
 
             <span class="optionhead">P�i�adit v�choz� fotografie</span>
             <p>Tato volba v�m umo�n� nastavit jako v�choz� fotografii prvn� fotografii u ka�d� osoby, rodiny nebo pramenu
-                (ta, kter� bude zobrazena ve sch�matu v�vodu, rodiny a naho�e na ka�d� str�nce, kter� je s dan�m subjektem spojena). P�i�azen� m��e b�t provedeno
-                pro v�echny osoby, rodiny, prameny a �lo�i�t� pramen� v ur�it�m stromu v�b�rem tohoto stromu z rozbalovac�ho seznamu. Za�krtnut�m pol��ka
-                ozna�en�ho "P�epsat existuj�c� nastaven�" nastav�te v�choz� fotografie bez ohledu na to, co bylo nastaveno d��ve. Ponech�n� tohoto pol��ka
+                (ta, kter� bude zobrazena ve sch�matu v�vodu, rodiny a naho�e na ka�d� str�nce, kter� je s dan�m subjektem spojena). P�i�azen� m��e
+                b�t provedeno
+                pro v�echny osoby, rodiny, prameny a �lo�i�t� pramen� v ur�it�m stromu v�b�rem tohoto stromu z rozbalovac�ho seznamu. Za�krtnut�m
+                pol��ka
+                ozna�en�ho "P�epsat existuj�c� nastaven�" nastav�te v�choz� fotografie bez ohledu na to, co bylo nastaveno d��ve. Ponech�n� tohoto
+                pol��ka
                 neza�krtnut�ho v�m umo�n� ponechat d��ve nastaven� v�choz� fotografie.</p>
         </td>
     </tr>
@@ -361,15 +393,17 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="import"><p class="subheadbold">Import m�di�</p></a>
+            <a id="import"><p class="subheadbold">Import m�di�</p></a>
 
             <span class="optionhead">C�l</span>
             <p>Vytvo�en� z�znamu m�dia pro ka�d� fyzick� soubor ve va�� slo�ce m�di� s n�zvem souboru jako titulem ka�d�ho z�znamu.</p>
 
             <span class="optionhead">Pou�it�</span>
-            <p>Chcete-li import prov�st, zvolte nejprve kolekci (nebo vytvo�te novou kolekci) a strom (pokud maj� b�t vkl�dan� polo�ky spojeny s ur�it�m stromem), pot� klikn�te na tla��tko "Import".
+            <p>Chcete-li import prov�st, zvolte nejprve kolekci (nebo vytvo�te novou kolekci) a strom (pokud maj� b�t vkl�dan� polo�ky spojeny s
+                ur�it�m stromem), pot� klikn�te na tla��tko "Import".
                 Existuje-li ji� pro polo�ku z�znam, nov� z�znam se nevytvo��. "Kl��em" (kter� ur��, zda ji� z�znam existuje nebo ne) je
-                n�zev souboru a strom. Pokud importujete stejnou polo�ku do v�ce strom� (nebo pokud byla polo�ka kdysi importov�na do "v�ech strom�" a jindy
+                n�zev souboru a strom. Pokud importujete stejnou polo�ku do v�ce strom� (nebo pokud byla polo�ka kdysi importov�na do "v�ech strom�" a
+                jindy
                 jen do ur�it�ho stromu), TNG nepozn�, �e ji� m�te z�znam pro tuto polo�ku a vytvo�� jej znovu.</p>
 
         </td>
@@ -378,16 +412,18 @@ echo help_header("N�pov�da: M�dia");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="upload"><p class="subheadbold">Nahr�n� m�di�</p></a>
+            <a id="upload"><p class="subheadbold">Nahr�n� m�di�</p></a>
 
             <span class="optionhead">C�l</span>
             <p>D�vkov� nahr�n� v�ce polo�ek m�di�, jejich opat�en� tituly a popisy, v�etn� jejich p�ipojen� k osob�m, rodin�m, pramen�m nebo m�st�m
                 p��mo z t�to obrazovky.</p>
 
             <span class="optionhead">Pou�it�</span>
-            <p>Chcete-li tuto funkci pou��t, zvolte nejprve kolekci a strom (pokud maj� b�t vkl�dan� polo�ky spojeny s ur�it�m stromem), pot� klikn�te na "P�idat soubory" a z va�eho po��ta�e vyberte soubory pro nahr�n�. V�t�ina prohl�e�� (mimo Internet
+            <p>Chcete-li tuto funkci pou��t, zvolte nejprve kolekci a strom (pokud maj� b�t vkl�dan� polo�ky spojeny s ur�it�m stromem), pot� klikn�te
+                na "P�idat soubory" a z va�eho po��ta�e vyberte soubory pro nahr�n�. V�t�ina prohl�e�� (mimo Internet
                 Explorer) v�m umo�n� soubory chytit a p�et�hnout
-                z jin�ho okna p��mo do b�l� oblasti ve st�edu obrazovky. Chcete-li zvolit jako c�l pro nahr�n� va�ich soubor� podslo�ku v r�mci zvolen� slo�ky, zapi�te do pole "Slo�ka" jej� n�zev nebo pou�ijte tla��tko
+                z jin�ho okna p��mo do b�l� oblasti ve st�edu obrazovky. Chcete-li zvolit jako c�l pro nahr�n� va�ich soubor� podslo�ku v r�mci
+                zvolen� slo�ky, zapi�te do pole "Slo�ka" jej� n�zev nebo pou�ijte tla��tko
                 "Vybrat" pro v�b�r podslo�ky, kter� ji� existuje. Nechcete-li soubory ulo�it do podslo�ky, nechte pole Slo�ka pr�zdn�.
                 Po dokon�en� v�b�ru soubor� a jejich um�st�n� m��ete zah�jit nahr�n� v�ech soubor� najednou kliknut�m
                 na tla��tko "Spustit nahr�n�" na str�nce naho�e. Nebo m��ete nahr�t soubory jednotliv� kliknut�m na tla��tko "Spustit" vedle p��slu�n�ho souboru.

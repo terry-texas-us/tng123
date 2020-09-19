@@ -4,39 +4,41 @@ echo help_header("N�pov�da: Mana�er m�d�");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp; | &nbsp;
-        <a href="index_help.php" class="lightlink">N�pov�da: Za��n�me &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Mana�er m�d�
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="backuprestore_help.php" class="lightlink">&laquo; N�pov�da: Obslu�n� programy</a> &nbsp; | &nbsp;
+                <a href="index_help.php" class="lightlink">N�pov�da: Za��n�me &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Mana�er m�d�
         </span>
       <p class="smaller menu">
         <a href="#overview" class="lightlink">P�ehled</a> &nbsp; | &nbsp;
-        <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
-        <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
-        <a href="#syntax" class="lightlink">Syntaxe m�d�</a> &nbsp; | &nbsp;
-                <a href="#files" class="lightlink">Konfigura�n� soubory</a> &nbsp; | &nbsp;
-                <a href="#batch" class="lightlink">D�vkov� instalace</a> &nbsp; | &nbsp;
-                <a href="#options" class="lightlink">Mo�nosti</a>
-            </p></td>
+          <a href="#operation" class="lightlink">Operace</a> &nbsp; | &nbsp;
+          <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
+          <a href="#syntax" class="lightlink">Syntaxe m�d�</a> &nbsp; | &nbsp;
+          <a href="#files" class="lightlink">Konfigura�n� soubory</a> &nbsp; | &nbsp;
+          <a href="#batch" class="lightlink">D�vkov� instalace</a> &nbsp; | &nbsp;
+          <a href="#options" class="lightlink">Mo�nosti</a>
+      </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="overview">
+            <a id="overview">
                 <p class="subheadbold">P�ehled
                 </p></a>
-            <p>TNG Mana�er m�d�, kter� p�vodn� vyvinul Brian McFadyen a pro pr�ci s Joomla TNG Component aktualizoval Sean Schwoere, je ur�en k poskytnut� ucelen�j��ho
-                zp�sobu instalov�n�, odstra�ov�n� a spr�v� modifikac� TNG software, kter� s t�mto mana�erem dok�e pracovat. Aktualizace v TNG V9 provedli Bart Degryse a Ken Roy.
+            <p>TNG Mana�er m�d�, kter� p�vodn� vyvinul Brian McFadyen a pro pr�ci s Joomla TNG Component aktualizoval Sean Schwoere, je ur�en k
+                poskytnut� ucelen�j��ho
+                zp�sobu instalov�n�, odstra�ov�n� a spr�v� modifikac� TNG software, kter� s t�mto mana�erem dok�e pracovat. Aktualizace v TNG V9
+                provedli Bart Degryse a Ken Roy.
                 Mana�er m�d� je pro snaz�� p��stup p�ipojen ke str�nce Administrace TNG. Mana�er m�d� p�id�v� do TNG tyto slo�ky:
             <ul>
                 <li><strong>mods</strong> obsahuje konfigura�n� soubory m�d� a p�idru�en� podp�rn� soubory m�d�
@@ -59,10 +61,11 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="operation">
+            <a id="operation">
                 <p class="subheadbold">Operace
                 </p></a>
-            <p>Mana�er m�d� prozkoum� slo�ku m�d� a p�e�te ka�d� soubor <strong>cfg</strong>, kter� najde. Soubory <strong>cfg</strong> jsou direktivn� soubory, kter� popisuj� m�d, soubory a um�st�n�, kter� m� b�t modifikov�no, a k�d, kter� je p�i
+            <p>Mana�er m�d� prozkoum� slo�ku m�d� a p�e�te ka�d� soubor <strong>cfg</strong>, kter� najde. Soubory <strong>cfg</strong> jsou
+                direktivn� soubory, kter� popisuj� m�d, soubory a um�st�n�, kter� m� b�t modifikov�no, a k�d, kter� je p�i
                 modifikaci pou�it.
             <p>Mana�er m�d� zkontroluje n�sleduj�c�:
             <ul>
@@ -86,22 +89,25 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="status">
+            <a id="status">
                 <p class="subheadbold">Stav
                 </p></a>
             <p>Mana�er m�d� vrac� n�sleduj�c� stavy:
             <ul>
                 <li><strong>Lze instalovat</strong>, pokud m�d je�t� nebyl nainstalov�n a c�lov� um�st�n� bylo ur�eno, pak je uvedena mo�nost <strong>Instalovat</strong>
                 </li>
-                <li><strong>Instalov�no</strong>, pokud m�d byl nainstalov�n, je uvedena mo�nost <strong>Odstranit</strong> m�d a mo�nost <strong>Upravit</strong> parametry, pokud n�jak� existuj�
+                <li><strong>Instalov�no</strong>, pokud m�d byl nainstalov�n, je uvedena mo�nost <strong>Odstranit</strong> m�d a mo�nost <strong>Upravit</strong>
+                    parametry, pokud n�jak� existuj�
                 </li>
-                <li><strong>Vy�istit</strong>, pokud m�d byl ��ste�n� nainstalov�n, je k dispozici tla��tko <strong>Vy�istit</strong>. Operace Vy�i�t�n� se pokus� odstranit vlo�en� k�d, obnovit a nahradit k�d, a odstranit vytvo�en� soubor.
+                <li><strong>Vy�istit</strong>, pokud m�d byl ��ste�n� nainstalov�n, je k dispozici tla��tko <strong>Vy�istit</strong>. Operace
+                    Vy�i�t�n� se pokus� odstranit vlo�en� k�d, obnovit a nahradit k�d, a odstranit vytvo�en� soubor.
                 </li>
                 <li><strong>Nelze nainstalovat</strong>, pokud m�d <strong>nelze</strong> instalovat. Tato zpr�va bude p�edch�zet jinou zpr�vu, kter� poskytne v�ce informac� o tom, pro� m�d nelze nainstalovat.
                 </li>
             </ul>
             <p>P��klady obrazovek stavu mana�eru m�d� a jak interpretovat r�zn� stavy najdete na
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Mana�er m�d� - interpretace stav�</a>
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Mana�er m�d� - interpretace
+                    stav�</a>
             </p></td>
     </tr>
     <tr class="databack">
@@ -109,7 +115,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="syntax">
+            <a id="syntax">
                 <p class="subheadbold">Syntaxe m�d�
                 </p></a>
             <p>The Mod Manager syntax basically includes:
@@ -127,8 +133,10 @@ echo help_header("N�pov�da: Mana�er m�d�");
             </ul>
             </p>
             <p><strong>P��kaz Nov� soubor (New File)</strong>, kter� po instalaci m�du vytvo�� nov� soubor</p>
-            <p><strong>P��kaz Kop�rovat soubor (Copy File)</strong>, kter� nakop�ruje ur�it� soubor do ��d�c� slo�ky TNG (%copyfile) nebo do podslo�ky (%copyfile2)</p>
-            <p>Detailn� informace t�kaj�c� se syntaxe m�d� najdete v �l�nku <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">Mod Manager Syntax (v angli�tin�)</a></p>
+            <p><strong>P��kaz Kop�rovat soubor (Copy File)</strong>, kter� nakop�ruje ur�it� soubor do ��d�c� slo�ky TNG (%copyfile) nebo do podslo�ky
+                (%copyfile2)</p>
+            <p>Detailn� informace t�kaj�c� se syntaxe m�d� najdete v �l�nku <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax"
+                                                                               target="_blank">Mod Manager Syntax (v angli�tin�)</a></p>
         </td>
     </tr>
     <tr class="databack">
@@ -136,13 +144,14 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <p style="float:right;">
                 <a href="#top">Nahoru</a>
             </p>
-            <a name="files">
+            <a id="files">
                 <p class="subheadbold">Konfigura�n� soubory
                 </p></a>
             <span class="optionhead">Instalov�n� m�d�
         </span>
             <p>Informace o pou�it�
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">konfigura�n�ch soubor�</a> k instalaci m�d� najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">konfigura�n�ch
+                    soubor�</a> k instalaci m�d� najdete na TNG Wiki.
             </p>
             <span class="optionhead">Interpretace stavu
         </span>
@@ -157,7 +166,8 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <span class="optionhead">Vytvo�en� konfigura�n�ho souboru
         </span>
             <p>Informace pro v�voj��e o
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvo�en� konfigura�n�ch soubor�</a> najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvo�en� konfigura�n�ch
+                    soubor�</a> najdete na TNG Wiki.
             </p></td>
     </tr>
 
@@ -165,13 +175,16 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="batch"><p class="subheadbold">D�vkov� instalace</p></a>
+            <a id="batch"><p class="subheadbold">D�vkov� instalace</p></a>
 
-            <p>D�vkov� instalace umo�n� prov�st specifick� akce t�kaj�c� se n�kolika m�d� pomoc� v�b�ru filtru. Z filtru seznamu stav� vyberte po�adovan� stav a kliknut�m na Prov�st zobraz�te
-                dostupn� ovl�dac� tla��tka pro vybran� stav. Pro stav Vy�istit nen� k dispozici akce Odstranit, tak�e pro odstran�n� m�d� ve stavu Vy�istit mus�te pou��t z�lo�ku Seznam m�d�.
+            <p>D�vkov� instalace umo�n� prov�st specifick� akce t�kaj�c� se n�kolika m�d� pomoc� v�b�ru filtru. Z filtru seznamu stav� vyberte
+                po�adovan� stav a kliknut�m na Prov�st zobraz�te
+                dostupn� ovl�dac� tla��tka pro vybran� stav. Pro stav Vy�istit nen� k dispozici akce Odstranit, tak�e pro odstran�n� m�d� ve stavu
+                Vy�istit mus�te pou��t z�lo�ku Seznam m�d�.
             <p>Mo�nosti v�b�rov�ho filtru jsou tyto:
             <ul>
-                <li><strong>V�e</strong> - zobraz� se �pln� seznam v�ech soubor� .cfg ze slo�ky mods. Pokud zvol�te ur�it� stav, objev� se dostupn� tla��tka jednotliv�ch akc�
+                <li><strong>V�e</strong> - zobraz� se �pln� seznam v�ech soubor� .cfg ze slo�ky mods. Pokud zvol�te ur�it� stav, objev� se dostupn�
+                    tla��tka jednotliv�ch akc�
                 <li><strong>Lze nainstalovat</strong> - zobraz� se seznam v�ech m�d�, kter� mohou b�t</li>
                 <ul>
                     <li>Nainstalov�ny - na z�klad� va�eho v�b�ru a kliknut�m na tla��tko <strong>Instalovat</strong></li>
@@ -198,17 +211,27 @@ echo help_header("N�pov�da: Mana�er m�d�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="options"><p class="subheadbold">Mo�nosti</p></a>
+            <a id="options"><p class="subheadbold">Mo�nosti</p></a>
 
             <p>Mo�nosti v�m umo�n� specifikovat chov�n� mana�eru m�d� v p��pad�
             <p><strong>Seznamu dot�en�ch soubor�</strong>
             <ul>
-                <li><strong>Zobrazit seznam dot�en�ch soubor�</strong> - umo�n� v�m zvolit, zda chcete v tabulce seznamu m�d� zobrazit seznam dot�en�ch soubor�. V�choz� volbou je <strong>Ano</strong>.</li>
-                <li><strong>Zobrazit v seznamu nov� soubory</strong> - zobraz� nov� soubory vytvo�en� m�dem. V�choz� volbou je <strong>Ano</strong>.</li>
-                <li><strong>Zobrazit v seznamu kop�rovan� soubory</strong> - zobraz� soubory, kter� jsou kop�rov�ny m�dem. V�choz� volbou je <strong>Ano</strong>.</li>
-                <li><strong>Zobrazit seznam ve sloupci</strong> - zobraz� seznam dot�en�ch soubor� ve zvolen�m sloupci. V�choz� volbou je sloupec <strong>N�zev konfigura�n�ho souboru</strong>.</li>
-                <li><strong>Zobrazit seznam jako</strong> - umo�n� v�m zvolit, zda chcete seznam zobrazit jako tabulku nebo jako hodnoty odd�len� ��rkou. V�choz� volbou je <strong>Tabulka</strong>.</li>
-                <li><strong>Zobrazit seznam v D�vkov� instalaci</strong> - umo�n� v�m zvolit, zda chcete seznam zobrazit na z�lo�ce D�vkov� instalace ve vyskakovac�m okn�. V�choz� volbou je <strong>Ano</strong>.</li>
+                <li><strong>Zobrazit seznam dot�en�ch soubor�</strong> - umo�n� v�m zvolit, zda chcete v tabulce seznamu m�d� zobrazit seznam
+                    dot�en�ch soubor�. V�choz� volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Zobrazit v seznamu nov� soubory</strong> - zobraz� nov� soubory vytvo�en� m�dem. V�choz� volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Zobrazit v seznamu kop�rovan� soubory</strong> - zobraz� soubory, kter� jsou kop�rov�ny m�dem. V�choz� volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Zobrazit seznam ve sloupci</strong> - zobraz� seznam dot�en�ch soubor� ve zvolen�m sloupci. V�choz� volbou je sloupec
+                    <strong>N�zev konfigura�n�ho souboru</strong>.
+                </li>
+                <li><strong>Zobrazit seznam jako</strong> - umo�n� v�m zvolit, zda chcete seznam zobrazit jako tabulku nebo jako hodnoty odd�len�
+                    ��rkou. V�choz� volbou je <strong>Tabulka</strong>.
+                </li>
+                <li><strong>Zobrazit seznam v D�vkov� instalaci</strong> - umo�n� v�m zvolit, zda chcete seznam zobrazit na z�lo�ce D�vkov� instalace
+                    ve vyskakovac�m okn�. V�choz� volbou je <strong>Ano</strong>.
+                </li>
             </ul>
             </p>
             <p><strong>Protokolu mana�eru m�d�</strong>

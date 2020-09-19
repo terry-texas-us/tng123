@@ -4,17 +4,17 @@ echo help_header("Help: Data Import");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp; | &nbsp;
-        <a href="second_help.php" class="lightlink">Help: Secondary Processes &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Import / Export</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="mostwanted_help.php" class="lightlink">&laquo; Help: Most Wanted</a> &nbsp; | &nbsp;
+                <a href="second_help.php" class="lightlink">Help: Secondary Processes &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Import / Export</span>
       <p class="smaller menu">
         <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp; | &nbsp;
         <a href="#export" class="lightlink">GEDCOM Export</a>
@@ -31,17 +31,22 @@ echo help_header("Help: Data Import");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="import"><p class="subheadbold">GEDCOM Import</p></a>
+            <a id="import"><p class="subheadbold">GEDCOM Import</p></a>
             <p>This page allows you to import all data from a standard GEDCOM file into a particular tree.</p>
 
-            <p><span class="optionhead">Before Importing:</span> Use your desktop genealogy software to create a standard 5.5 GEDCOM file (4.0 will also work). You may choose to exclude
-                private information for living individuals, but this is not necessary. It is also not necessary to exclude LDS information, as this can be filtered as well depending on user rights.</p>
+            <p><span class="optionhead">Before Importing:</span> Use your desktop genealogy software to create a standard 5.5 GEDCOM file (4.0 will
+                also work). You may choose to exclude
+                private information for living individuals, but this is not necessary. It is also not necessary to exclude LDS information, as this
+                can be filtered as well depending on user rights.</p>
 
-            <p>After you've created your GEDCOM file, the next step is to get it to your web site. Please take note of the following items on the page:</p>
+            <p>After you've created your GEDCOM file, the next step is to get it to your web site. Please take note of the following items on the
+                page:</p>
 
             <p><span class="optionhead">[Import GEDCOM] From your computer</span>
-                To upload and import your file to your site without using FTP, click on the "Browse" button and locate the file on your hard drive. The name and path of your file will appear in this field after you select it.
-                <strong>NOTE</strong>: If your GEDCOM file is very large (> 2Mb), you might need to check with your hosting provider before you can upload your file this way, as the server may have a maximum size
+                To upload and import your file to your site without using FTP, click on the "Browse" button and locate the file on your hard drive.
+                The name and path of your file will appear in this field after you select it.
+                <strong>NOTE</strong>: If your GEDCOM file is very large (> 2Mb), you might need to check with your hosting provider before you can
+                upload your file this way, as the server may have a maximum size
                 limit for files uploaded via a web form. If you receive an error during the import, this is likely the case. Try using FTP to copy your file to the GEDCOM folder instead, then import it from there (see below).</p>
 
             <span class="optionhead">OR [Import GEDCOM] From web site (in GEDCOM folder)</span>
@@ -118,7 +123,8 @@ echo help_header("Help: Data Import");
             <span class="optionhead">"Resume" Feature</span>
             <p>If you do not see the "Finished" message, your server may have killed your import process for running too long.
                 If this happens to you, go to the Admin/Setup/Import Settings page
-                and check the box next to <strong>Save Import State</strong>. Then return to the Import page and try your import again. If the same condition
+                and check the box next to <strong>Save Import State</strong>. Then return to the Import page and try your import again. If the same
+                condition
                 occurs, the import should now be able to restart itself.</p>
 
         </td>
@@ -127,8 +133,9 @@ echo help_header("Help: Data Import");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="export"><p class="subheadbold">GEDCOM Export</p></a>
-            <p>This page allows you to export all data from a particular tree to a standard 5.5 GEDCOM file. The file will be available for download in your
+            <a id="export"><p class="subheadbold">GEDCOM Export</p></a>
+            <p>This page allows you to export all data from a particular tree to a standard 5.5 GEDCOM file. The file will be available for download
+                in your
                 GEDCOM folder (as indicated in the Import Settings) and will be given the name of the tree's Tree ID plus ".ged".</p>
 
             <span class="optionhead">Branch</span>

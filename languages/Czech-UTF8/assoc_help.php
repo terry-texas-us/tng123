@@ -4,31 +4,31 @@ echo help_header("Nápověda: Spojení");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="repositories_help.php" class="lightlink">&laquo; Nápověda: Úložiště pramenů</a> &nbsp; | &nbsp;
-        <a href="notes_help.php" class="lightlink">Nápověda: Poznámky &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Spojení</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat/Upravit/Odstranit</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="repositories_help.php" class="lightlink">&laquo; Nápověda: Úložiště pramenů</a> &nbsp; | &nbsp;
+                <a href="notes_help.php" class="lightlink">Nápověda: Poznámky &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Spojení</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat/Upravit/Odstranit</a>
+            </p>
+        </td>
+    </tr>
 
     <tr class="databack">
         <td class="tngshadow">
-            <a name="what"><p class="subheadbold">Co jsou spojení?</p></a>
+            <a id="what"><p class="subheadbold">Co jsou spojení?</p></a>
 
             <p><strong>Spojení</strong> je záznam vztahu mezi dvěma osobami, mezi dvěma rodinami nebo mezi osobou a rodinou.
                 Ze stromové struktury vaší databáze nemusí být vztah zřejmý. Ve skutečnosti dvě osoby/rodiny, které jsou propojeny
@@ -39,7 +39,7 @@ echo help_header("Nápověda: Spojení");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Přidání/Úprava/Odstranění spojení</p></a>
+            <a id="add"><p class="subheadbold">Přidání/Úprava/Odstranění spojení</p></a>
 
             <p>Chcete-li přidat, upravit nebo odstranit spojení u osoby, vyhledejte osobu v Administrace/Osoba a upravte
                 individuální záznam, a poté klikněte na ikonu Spojení v horní části obrazovky (pokud spojení již existují,
@@ -47,7 +47,8 @@ echo help_header("Nápověda: Spojení");
                 pro aktivní osobu. Chcete-li pracovat se spojeními u rodin, vyhledejte rodinu v Administrace/Rodiny
                 a upravte záznam rodiny, poté proveďte totéž jako v případě osoby.</p>
 
-            <p>Chcete-li přidat nové spojení, klikněte na tlačítko "Přidat nové" a vyplňte formulář. Pokud vybraná osoba nebo rodina nemají žádné spojení,
+            <p>Chcete-li přidat nové spojení, klikněte na tlačítko "Přidat nové" a vyplňte formulář. Pokud vybraná osoba nebo rodina nemají žádné
+                spojení,
                 dostanete se přímo na obrazovku "Přidat nové spojení". Na této obrazovce budete moci označit,
                 zda spojovaná entita je osoba nebo rodina.</p>
 

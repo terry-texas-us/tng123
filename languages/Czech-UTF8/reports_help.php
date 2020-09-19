@@ -4,41 +4,44 @@ echo help_header("Nápověda: Reporty");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="eventtypes_help.php" class="lightlink">&laquo; Nápověda: Vlastní typy událostí</a> &nbsp; | &nbsp;
-        <a href="dna_help.php" class="lightlink">Nápověda: Testy DNA &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Reporty</span>
-      <p class="smaller menu">
-        <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-      </p>
-    </td>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="eventtypes_help.php" class="lightlink">&laquo; Nápověda: Vlastní typy událostí</a> &nbsp; | &nbsp;
+                <a href="dna_help.php" class="lightlink">Nápověda: Testy DNA &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Reporty</span>
+            <p class="smaller menu">
+                <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp; | &nbsp;
+                <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+            </p>
+        </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
 
             <p>Nalezení existujících reportů vyhledáním celého nebo části <strong>názvu reportu</strong> nebo <strong>popisu</strong>.
                 Výsledkem hledání bez zadaných voleb a hodnot ve vyhledávacích polích bude seznam všech reportů ve vaší databázi.</p>
 
-            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu obnoví všechny výchozí hodnoty.</p>
+            <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
+                obnoví všechny výchozí hodnoty.</p>
 
             <span class="optionhead">Akce</span>
-            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat více záznamů, zaškrtněte políčko ve sloupci
-                <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro zaškrtnutí nebo vyčištění všech výběrových políček najednou
+            <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
+                více záznamů, zaškrtněte políčko ve sloupci
+                <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
+                zaškrtnutí nebo vyčištění všech výběrových políček najednou
                 můžete použít tlačítka <strong>Vybrat vše</strong> nebo <strong>Vyčistit vše</strong>.</p>
 
         </td>
@@ -47,9 +50,10 @@ echo help_header("Nápověda: Reporty");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="add"><p class="subheadbold">Přidání nebo úprava reportu</p></a>
+            <a id="add"><p class="subheadbold">Přidání nebo úprava reportu</p></a>
 
-            <p>Reportem se v TNG rozumí uživatelský seznam osob z vaší databáze. Vy rozhodnete, která pole mají být zobrazena, které osoby mají být do reportu vloženy a jak mají být seřazeny.
+            <p>Reportem se v TNG rozumí uživatelský seznam osob z vaší databáze. Vy rozhodnete, která pole mají být zobrazena, které osoby mají být do
+                reportu vloženy a jak mají být seřazeny.
                 Můžete použít rozhraní pro tvorbu reportů nebo můžete místo toho použít své vlastní příkazy SQL.</p>
 
             <p>Chcete-li přidat nový report, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář.
@@ -139,9 +143,11 @@ echo help_header("Nápověda: Reporty");
                 SQL příkaz SELECT.</p>
 
             <span class="optionhead">Uložit report vs. Uložit a ukončit</span>
-            <p>Chcete-li report uložit, kliknìte na "Uložit report" a zůstanete na stejné stránce a můžete pokračovat v editaci. Kliknutím na "Uložit a ukončit" report uložíte a vrátíte se na menu Reporty.</p>
+            <p>Chcete-li report uložit, kliknìte na "Uložit report" a zůstanete na stejné stránce a můžete pokračovat v editaci. Kliknutím na "Uložit
+                a ukončit" report uložíte a vrátíte se na menu Reporty.</p>
 
-            <p>Několik vzorových reportů můžete vidět na <a href="http://lythgoes.net/genealogy/demo.php" target="_blank">http://lythgoes.net/genealogy/demo.php</a>. Zvolte zde Administrative Demo a vyhledejte sekci Reporty.</p>
+            <p>Několik vzorových reportů můžete vidět na <a href="http://lythgoes.net/genealogy/demo.php" target="_blank">http://lythgoes.net/genealogy/demo.php</a>.
+                Zvolte zde Administrative Demo a vyhledejte sekci Reporty.</p>
 
         </td>
     </tr>
@@ -149,8 +155,9 @@ echo help_header("Nápověda: Reporty");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazání reportu</p></a>
-            <p>Chcete-li odstranit report, použijte záložku <a href="#search">Hledat</a> k nalezení reportu, a poté klikněte na ikonku Vymazat vedle tohoto záznamu. Tento řádek změní
+            <a id="delete"><p class="subheadbold">Vymazání reportu</p></a>
+            <p>Chcete-li odstranit report, použijte záložku <a href="#search">Hledat</a> k nalezení reportu, a poté klikněte na ikonku Vymazat vedle
+                tohoto záznamu. Tento řádek změní
                 barvu a poté po odstranění reportu zmizí.</p>
 
         </td>

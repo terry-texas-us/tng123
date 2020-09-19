@@ -4,39 +4,43 @@ echo help_header("Pomoc: Źródła");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="families_help.php" class="lightlink">&laquo; Pomoc: Rodziny</a> &nbsp; | &nbsp;
-        <a href="repositories_help.php" class="lightlink">Pomoc: Repozytoria &raquo;</a>
-      </p>
-      <span class="largeheader">Pomoc: Źródła</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tngforum.us" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="families_help.php" class="lightlink">&laquo; Pomoc: Rodziny</a> &nbsp; | &nbsp;
+                <a href="repositories_help.php" class="lightlink">Pomoc: Repozytoria &raquo;</a>
+            </p>
+            <span class="largeheader">Pomoc: Źródła</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Szukaj</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
-        <a href="#merge" class="lightlink">Scalanie</a>
-            </p>
+          <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Edycja</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Usuń</a> &nbsp; | &nbsp;
+          <a href="#merge" class="lightlink">Scalanie</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Szukanie</p></a>
-            <p>Znajdź istniejące źródła szukając pełnego lub części <strong>ID źródła, tytułu, autora, numeru telefonu</strong> lub <strong>wydawcy</strong>.
+            <a id="search"><p class="subheadbold">Szukanie</p></a>
+            <p>Znajdź istniejące źródła szukając pełnego lub części <strong>ID źródła, tytułu, autora, numeru telefonu</strong> lub
+                <strong>wydawcy</strong>.
                 Wybierz drzewo lub zaznacz "Tylko dokładna nazwa" w celu dalszego zawężenia kryteriów wyszukiwania.
                 Jeśli nie wybierzesz żadnej z wymienionych opcji, w polu wyszukiwania znajdą się wszystkie źródła zapisane w bazie danych.</p>
 
-            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który przywraca domyślne wartości i wszystkich wyszukiwań.</p>
+            <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
+                przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
             <span class="optionhead">Czynność</span>
-            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż jeden rekord jednocześnie, kliknij pole w kolumnie
-                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
+            <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
+                jeden rekord jednocześnie, kliknij pole w kolumnie
+                <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
+                górze listy. Użyj <strong>Wybierz wszystko</strong> lub <strong>Wyczyść wszystko</strong>
                 aby zaznaczyć lub usunąć zaznaczenie wszystkich pól wyboru naraz.</p>
 
         </td>
@@ -45,11 +49,13 @@ echo help_header("Pomoc: Źródła");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróc</a></p>
-            <a name="add"><p class="subheadbold">Dodawanie nowego źródła</p></a>
-            <p><strong>Źródło</strong> jest formą ewidencji cytatów przeznaczonych do udowodnienia lub uzasadnienia jakiegoś elementu danych. To samo źródło może być cytowane w treści dokumentu wielokrotnie na wielu osób,
+            <a id="add"><p class="subheadbold">Dodawanie nowego źródła</p></a>
+            <p><strong>Źródło</strong> jest formą ewidencji cytatów przeznaczonych do udowodnienia lub uzasadnienia jakiegoś elementu danych. To samo
+                źródło może być cytowane w treści dokumentu wielokrotnie na wielu osób,
                 rodzin lub wydarzeń.</p>
 
-            <p>Aby dodać nowe źródło, kliknij na <strong>Dodaj nowe</strong> a następnie wypełnić formularz. Niektóre informacje (notatki i dodatkowe wydarzenia) mogą być dodane dopiero po kliknięciu na
+            <p>Aby dodać nowe źródło, kliknij na <strong>Dodaj nowe</strong> a następnie wypełnić formularz. Niektóre informacje (notatki i dodatkowe
+                wydarzenia) mogą być dodane dopiero po kliknięciu na
                 przycisk Zapisz i kontynuuj. Do dyspozycji są następujące pola:</p>
 
             <span class="optionhead">Drzewo</span>
@@ -80,24 +86,25 @@ echo help_header("Pomoc: Źródła");
           <p>Wybierz repozytorium, w którym znajduje się to źródło. Jeśli repozytorium jeszcze nie istnieje, przejdź do działu Administracja/Repozytoria, dodaj go tam,
             wtedy wróć i wybierz go tutaj.</p>
 
-          <span class="optionhead">Faktyczny tekst</span><br>
-          <p>Cytat albo fragment materiału ze źródła (opcjonalne).</p>
+            <span class="optionhead">Faktyczny tekst</span><br>
+            <p>Cytat albo fragment materiału ze źródła (opcjonalne).</p>
 
         </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <p style="float:right;"><a href="#top">Wróć</a></p>
-      <a name="edit"><p class="subheadbold">Edycja istniejących źródeł</p></a>
-      <p>Aby wprowadzić zmiany dotyczące istniejącego źródła, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranego źródła.</p>
+            <p style="float:right;"><a href="#top">Wróć</a></p>
+            <a id="edit"><p class="subheadbold">Edycja istniejących źródeł</p></a>
+            <p>Aby wprowadzić zmiany dotyczące istniejącego źródła, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a
+                następnie kliknąć na ikonkę "Edycja" obok wybranego źródła.</p>
 
             <span class="optionhead">Notatki</span>
             <p>Notatki możesz łączyć z wydarzeniami lub źródłami klikając na ikony łączy u góry strony lub obok każdego wydarzenia.
                 "Więcej" informacji dla wydarzenia można dodać klikając na ikonkę "Plus ". Jeśli w którejś z kategorii istnieją już jakieś elementy,
-                odpowiednie ikonki oznaczone są zielonymi kropkami w prawym górnym rogu. Aby uzyskać więcej informacji na temat każdej z kategorii, zobacz <em>Pomoc</em> w okienkach,
+                odpowiednie ikonki oznaczone są zielonymi kropkami w prawym górnym rogu. Aby uzyskać więcej informacji na temat każdej z kategorii,
+                zobacz <em>Pomoc</em> w okienkach,
                 które stają się widoczne, gdy ikona zostanie naciśnięta.</p>
-
 
             <span class="optionhead">Inne wydarzenia</span>
             <p>Aby dodać lub zarządzać dodatkowymi wydarzeniami, kliknij na przycisk "Dodaj nowe" obok <strong>Inne wydarzenia</strong>. Klikając <a href="events_help.php">Pomoc</a> znajdziesz więcej informacji na temat dodawania nowych wydarzeń.
@@ -105,9 +112,10 @@ echo help_header("Pomoc: Źródła");
                 lub usunięcie wydarzenia, oraz dodawanie notatek lub cytatów. Kolejność, w której wydarzenia są wyświetlane jest ustalana wg daty (jeżeli dotyczy) i przez przypisany w "Rodzajach wydarzeń " priorytet
                 (jeśli nie jest związane terminem). Priorytet ten może ulec zmianie podczas edycji rodzajów wydarzeń.
 
-
-            <p><strong>Uwaga</strong>: Takie informacje o standardowych wydarzeniach jak uwagi, cytaty ze źródeł, związki, "inne" wydarzenia i "więcej" są zapisywane
-                automatycznie. Inne zmiany (dotyczące np. nazwiska lub standardowego wydarzenia) można zapisać klikając przycisk "Zapisz" na dole strony,
+            <p><strong>Uwaga</strong>: Takie informacje o standardowych wydarzeniach jak uwagi, cytaty ze źródeł, związki, "inne" wydarzenia i
+                "więcej" są zapisywane
+                automatycznie. Inne zmiany (dotyczące np. nazwiska lub standardowego wydarzenia) można zapisać klikając przycisk "Zapisz" na dole
+                strony,
                 lub klikając na ikonkę "Zapisz" u góry strony. Drzewo oraz ID osoby nie mogą zostać zmienione.</p>
 
         </td>
@@ -116,9 +124,11 @@ echo help_header("Pomoc: Źródła");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="delete"><p class="subheadbold">Usuwanie źródeł</p></a>
-            <p>Aby usunąć jedno źródło, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na ikonkę Usuń obok tego źródła. Wiersz zmieni kolor,
-                a następnie zniknie. Źródło zostało usunięte. Aby usunąć więcej niż jedno źródło naraz, zaznacz pole w kolumnie Wybierz obok każdego źródła, które
+            <a id="delete"><p class="subheadbold">Usuwanie źródeł</p></a>
+            <p>Aby usunąć jedno źródło, należy nacisnąć przycisk <a href="#search">Szukaj</a> w celu jego zlokalizowania, a następnie kliknąć na
+                ikonkę Usuń obok tego źródła. Wiersz zmieni kolor,
+                a następnie zniknie. Źródło zostało usunięte. Aby usunąć więcej niż jedno źródło naraz, zaznacz pole w kolumnie Wybierz obok każdego
+                źródła, które
                 ma zostać usunięte, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na górze strony.</p>
 
         </td>
@@ -127,17 +137,21 @@ echo help_header("Pomoc: Źródła");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Wróć</a></p>
-            <a name="merge"><p class="subheadbold">Scalanie</p></a>
-            <p>Aby znaleźć i scalić dwa powtarzające się źródła, które mogą być nieco inne, lecz odnoszą się do tego samego materiału, kliknij na przycisk "Scalanie".
+            <a id="merge"><p class="subheadbold">Scalanie</p></a>
+            <p>Aby znaleźć i scalić dwa powtarzające się źródła, które mogą być nieco inne, lecz odnoszą się do tego samego materiału, kliknij na
+                przycisk "Scalanie".
                 Użytkownik decyduje, czy dwa zapisy są identyczne, czy też nie.</p>
 
             <span class="optionhead">Szukaj zgodności</span>
-            <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć źródeł z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej, masz możliwość
-                wyboru źródła jako punkt wyjściowy dla Twojego szukania (Źródło 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie. Jeśli zdecydowałeś,
-              że TNG wyszukuje zgodności, pozostaw pole ID źródła 1 puste.</p>
+            <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć źródeł z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej, masz
+                możliwość
+                wyboru źródła jako punkt wyjściowy dla Twojego szukania (Źródło 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie. Jeśli
+                zdecydowałeś,
+                że TNG wyszukuje zgodności, pozostaw pole ID źródła 1 puste.</p>
 
-          <p>Jeśli wybrałeś źródło jako Źródło 1, możesz też wybrać ręcznie ID Źródła 2. Wskazane jest jednak, aby pozwolić TNG na szukanie duplikatów dla Źródła 1,
-            pozostawiając pole ID Źródła 2 puste.</p>
+            <p>Jeśli wybrałeś źródło jako Źródło 1, możesz też wybrać ręcznie ID Źródła 2. Wskazane jest jednak, aby pozwolić TNG na szukanie
+                duplikatów dla Źródła 1,
+                pozostawiając pole ID Źródła 2 puste.</p>
 
           <span class="optionhead">Zgodność następujących pozycji</span>
           <p>Te kryteria TNG służą do określania możliwych zgodności. Tytuł i krótki tytuł jako domyślne. To oznacza, że te pola muszą zgadzać się w obydwóch

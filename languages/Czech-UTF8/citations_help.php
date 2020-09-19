@@ -4,49 +4,51 @@ echo help_header("Nápověda: Citace");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="notes_help.php" class="lightlink">&laquo; Nápověda: Poznámky</a> &nbsp; | &nbsp;
-        <a href="events_help.php" class="lightlink">Nápověda: Události &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Citace</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="notes_help.php" class="lightlink">&laquo; Nápověda: Poznámky</a> &nbsp; | &nbsp;
+                <a href="events_help.php" class="lightlink">Nápověda: Události &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Citace</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co je to?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Co jsou to citace?</p></a>
+            <a id="what"><p class="subheadbold">Co jsou to citace?</p></a>
 
             <p><strong>Citace</strong> je odkaz na záznam pramenu, provedená s úmyslem prokázat pravdivost nějakého údaje. Pramen obvykle
-                všeobecně popisuje, kde byl uvedený údaj nalezen (např. matrika nebo sčítací arch), zatímco citace obvykle obsahuje konkrétní informaci (např. na které stránce).
+                všeobecně popisuje, kde byl uvedený údaj nalezen (např. matrika nebo sčítací arch), zatímco citace obvykle obsahuje konkrétní
+                informaci (např. na které stránce).
                 Jeden záznam pramenu může být citován vícekrát u různých osob, rodin, poznámek nebo událostí.</p>
-
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Přidat/Upravit/Vymazat citace</p></a>
+            <a id="add"><p class="subheadbold">Přidat/Upravit/Vymazat citace</p></a>
 
-            <p>Chcete-li přidat, upravit nebo vymazat citace, klikněte na ikonu Citace na stránce nahoře nebo vedle nějaké poznámky nebo události (pokud již citace existuje,
+            <p>Chcete-li přidat, upravit nebo vymazat citace, klikněte na ikonu Citace na stránce nahoře nebo vedle nějaké poznámky nebo události
+                (pokud již citace existuje,
                 na ikoně je zelená tečka). Po kliknutí na ikonu se objeví okno, ve kterém jsou zobrazeny
                 všechny citace existující pro aktivní subjekt nebo událost.</p>
 
-            <p>Chcete-li přidat novou citaci, klikněte na tlačítko "Přidat nové" a vyplňte formulář. Pokud vybraný subjekt nebo událost ještě neměly žádné
+            <p>Chcete-li přidat novou citaci, klikněte na tlačítko "Přidat nové" a vyplňte formulář. Pokud vybraný subjekt nebo událost ještě neměly
+                žádné
                 citace, dostanete se přímo na obrazovku "Přidat novou citaci".</p>
 
             <p>Pokud chcete existující citaci upravit nebo vymazat, klikněte na příslušnou ikonu vedle této citace.</p>

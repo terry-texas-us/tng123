@@ -4,38 +4,40 @@ echo help_header("N�pov�da: Alba");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="collections_help.php" class="lightlink">&laquo; N�pov�da: Kolekce</a> &nbsp; | &nbsp;
-        <a href="cemeteries_help.php" class="lightlink">N�pov�da: H�bitovy &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Alba</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="collections_help.php" class="lightlink">&laquo; N�pov�da: Kolekce</a> &nbsp; | &nbsp;
+                <a href="cemeteries_help.php" class="lightlink">N�pov�da: H�bitovy &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Alba</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Hledat</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
-        <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
-        <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
-        <a href="#sort" class="lightlink">T��dit</a>
-            </p>
+          <a href="#add" class="lightlink">P�idat nov�</a> &nbsp; | &nbsp;
+          <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp; | &nbsp;
+          <a href="#delete" class="lightlink">Vymazat</a> &nbsp; | &nbsp;
+          <a href="#sort" class="lightlink">T��dit</a>
+      </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="search"><p class="subheadbold">Hledat</p></a>
+            <a id="search"><p class="subheadbold">Hledat</p></a>
             <p>Existuj�c� m�dia vyhled�te zad�n�m �pln�ho v�razu nebo ��sti <strong>N�zvu alba, Popisu</strong> nebo
-                <strong>Kl��ov�ch slov</strong>. Pokud do vyhled�vac�ch pol� nezad�te ��dn� v�b�rov� krit�ria, budou nalezena v�echna alba, kter� se nach�zej� ve va�� datab�zi.</p>
+                <strong>Kl��ov�ch slov</strong>. Pokud do vyhled�vac�ch pol� nezad�te ��dn� v�b�rov� krit�ria, budou nalezena v�echna alba, kter� se
+                nach�zej� ve va�� datab�zi.</p>
 
-            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu obnov� v�echny v�choz� hodnoty.</p>
+            <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
+                obnov� v�echny v�choz� hodnoty.</p>
 
             <span class="optionhead">Akce</span>
             <p>Tla��tko Akce vedle ka�d�ho alba v�m umo�n� upravit, vymazat nebo zobrazit n�hled tohoto alba.</p>
@@ -43,20 +45,21 @@ echo help_header("N�pov�da: Alba");
         </td>
     </tr>
     <tr class="databack">
-      <td class="tngshadow">
+        <td class="tngshadow">
 
-        <p style="float:right;"><a href="#top">Nahoru</a></p>
-        <a name="add"><p class="subheadbold">P�id�n� nov�ch alb</p></a>
-        <p><strong>Album</strong> v TNG je skupina m�di�. Album m��e obsahovat jak�koli po�et m�di� a konkr�tn� m�dium m��e b�t sou��st� v�ce alb.
-          Podobn� jako jednotliv� m�dium m��e b�t album p�ipojeno k osob�, rodin�, pramenu, �lo�i�ti pramen� nebo m�stu.</p>
+            <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="add"><p class="subheadbold">P�id�n� nov�ch alb</p></a>
+            <p><strong>Album</strong> v TNG je skupina m�di�. Album m��e obsahovat jak�koli po�et m�di� a konkr�tn� m�dium m��e b�t sou��st� v�ce alb.
+                Podobn� jako jednotliv� m�dium m��e b�t album p�ipojeno k osob�, rodin�, pramenu, �lo�i�ti pramen� nebo m�stu.</p>
 
-        <p>Chcete-li p�idat nov� album, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako m�dia, kter� m� album obsahovat, a
-          odkazy na osobu, rodinu a jin� entity, m��ete p�idat po ulo�en� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
+            <p>Chcete-li p�idat nov� album, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��. Dal�� informace jako m�dia,
+                kter� m� album obsahovat, a
+                odkazy na osobu, rodinu a jin� entity, m��ete p�idat po ulo�en� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-        <p><span class="optionhead">N�zev alba</span><br>
-          N�zev va�eho alba.</p>
+            <p><span class="optionhead">N�zev alba</span><br>
+                N�zev va�eho alba.</p>
 
-        <p><span class="optionhead">Popis</span><br>
+            <p><span class="optionhead">Popis</span><br>
           Kr�tk� popis alba nebo polo�ek, kter� obsahuje.</p>
 
         <p><span class="optionhead">Kl��ov� slova</span><br>
@@ -71,25 +74,31 @@ echo help_header("N�pov�da: Alba");
           p�ipojeno k �ij�c� osob� nebo rodin�. Jinak jsou aktivn� alba nebo m�dia, kter� jsou p�ipojen� k �ij�c�m osob�m, skryta pro n�v�t�vn�ky, kte�� nemaj� opr�vn�n� prohl�et data �ij�c�ch osob.
         </p>
 
-        <p><span class="optionhead">Pole, kter� mus� b�t vypln�na:</span> N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu vyplnit i ostatn� pole.</p>
+            <p><span class="optionhead">Pole, kter� mus� b�t vypln�na:</span> N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu
+                vyplnit i ostatn� pole.</p>
 
-      </td>
+        </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="edit"><p class="subheadbold">�prava existuj�c�ho alba</p></a>
-            <p>Chcete-li upravit existuj�c� album, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro vyhled�n� alba a pot� klikn�te na ikonu Upravit vedle tohoto alba.
+            <a id="edit"><p class="subheadbold">�prava existuj�c�ho alba</p></a>
+            <p>Chcete-li upravit existuj�c� album, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro vyhled�n� alba a pot� klikn�te na ikonu Upravit
+                vedle tohoto alba.
                 V�znam n�sleduj�c�ch pol�, kter� nejsou na str�nce "P�idat nov� album":</p>
 
             <span class="optionhead">M�dia v albu</span>
-            <p>Chcete-li do alba p�idat m�dia, klikn�te na tla��tko "P�idat m�dium", a pot� pou�ijte formul�� v zobrazen�m okn� pro v�b�r m�di� z polo�ek, kter� obsahuje
+            <p>Chcete-li do alba p�idat m�dia, klikn�te na tla��tko "P�idat m�dium", a pot� pou�ijte formul�� v zobrazen�m okn� pro v�b�r m�di� z
+                polo�ek, kter� obsahuje
                 va�e datab�ze. M��ete pou��t Kolekce a/nebo Strom (ob� volby jsou nepovinn�), pot� do pole "Naj�t" zapi�te ��st n�zvu alba nebo popisu
-                a klikn�te na tla��tko "Hledat". Kdy� najdete polo�ku, kterou byste cht�li p�idat do alba, klikn�te na odkaz "P�idat" vlevo na ��dku polo�ky. Tato
-                polo�ka bude do alba p�id�na a okno z�stane zobrazen�. Tento postup opakujte pro dal�� m�dia, kter� chcete p�idat, nebo klikn�te na odkaz "Zav��t okno" pro n�vrat na str�nku �prava alba.</p>
+                a klikn�te na tla��tko "Hledat". Kdy� najdete polo�ku, kterou byste cht�li p�idat do alba, klikn�te na odkaz "P�idat" vlevo na ��dku
+                polo�ky. Tato
+                polo�ka bude do alba p�id�na a okno z�stane zobrazen�. Tento postup opakujte pro dal�� m�dia, kter� chcete p�idat, nebo klikn�te na
+                odkaz "Zav��t okno" pro n�vrat na str�nku �prava alba.</p>
 
-            <p>Chcete-li z alba odstranit m�dium, p�esu�te kursor my�i nad tuto polo�ku. Zobraz� se odkaz "Odstranit". Pro odstran�n� polo�ky klikn�te na tento odkaz. Po
+            <p>Chcete-li z alba odstranit m�dium, p�esu�te kursor my�i nad tuto polo�ku. Zobraz� se odkaz "Odstranit". Pro odstran�n� polo�ky klikn�te
+                na tento odkaz. Po
                 potvrzen� bude polo�ka zatemn�na.</p>
 
             <p>Pro v�b�r n�hledu, kter� m� b�t pro toto album <strong>V�choz� fotografi�</strong>, p�esu�te kursor my�i nad tuto polo�ku. Zobraz� se odkaz "Nastavit jako v�choz�".
@@ -113,7 +122,8 @@ echo help_header("N�pov�da: Alba");
                 Po nalezen� popisu po�adovan� entity klikn�te na odkaz "P�idat" vlevo. Kliknout na "P�idat" m��ete u v�ce entit. Po dokon�en� tvorby propojen�
                 klikn�te na odkaz "Zav��t okno".</p>
 
-            <p>POZN�MKA: V�echny zm�ny, kter� se medi� v albech a odkaz� na alba, jsou ulo�eny okam�it� a nen� nutn� kliknout na tla��tko "Ulo�it" na spodn�m okraji obrazovky.
+            <p>POZN�MKA: V�echny zm�ny, kter� se medi� v albech a odkaz� na alba, jsou ulo�eny okam�it� a nen� nutn� kliknout na tla��tko "Ulo�it" na
+                spodn�m okraji obrazovky.
                 Pro ulo�en� zm�n v sekci "Informace o albu" je nutn� kliknout na "Ulo�it".</p>
 
         </td>
@@ -122,8 +132,9 @@ echo help_header("N�pov�da: Alba");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="delete"><p class="subheadbold">Vymazat alba</p></a>
-            <p>Chcete-li album odstranit, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� alba, a pot� klikn�te na ikonu Vymazat vedle tohoto alba. Tento ��dek zm�n�
+            <a id="delete"><p class="subheadbold">Vymazat alba</p></a>
+            <p>Chcete-li album odstranit, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� alba, a pot� klikn�te na ikonu Vymazat vedle
+                tohoto alba. Tento ��dek zm�n�
                 barvu a pot� po odstran�n� polo�ky zmiz�.</p>
 
         </td>
@@ -132,17 +143,21 @@ echo help_header("N�pov�da: Alba");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="sort"><p class="subheadbold">T��d�n� alb</p></a>
-            <p>Standardn� jsou alba, kter� jsou propojena s osobou, rodinou, pramenem, �lo�i�t�m pramen� nebo m�stem, se�azena v po�ad�, ve kter�m byla k t�to entit� p�ipojena. Chcete-li
+            <a id="sort"><p class="subheadbold">T��d�n� alb</p></a>
+            <p>Standardn� jsou alba, kter� jsou propojena s osobou, rodinou, pramenem, �lo�i�t�m pramen� nebo m�stem, se�azena v po�ad�, ve kter�m
+                byla k t�to entit� p�ipojena. Chcete-li
                 toto po�ad� zm�nit, nov� po�ad� nastav�te na z�lo�ce Album/T��dit.</p>
 
             <span class="optionhead">Strom, Typ odkazu, Kolekce:</span>
-            <p>Vyberte strom spojen� s entitou, u kter� chcete t��dit alba. Pot� vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t� pramen� nebo m�sto) a
+            <p>Vyberte strom spojen� s entitou, u kter� chcete t��dit alba. Pot� vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t� pramen� nebo
+                m�sto) a
                 kolekci, kterou chcete t��dit.</p>
 
             <span class="optionhead">ID:</span>
-            <p>Zapi�te ��slo ID nebo n�zev (pouze u m�sta) entity. Pokud nezn�te ID ��slo nebo p�esn� n�zev m�sta, klikn�te na ikonu lupy pro vyhled�n� t�chto �daj�.
-                Po nalezen� po�adovan� entity klikn�te na odkaz "Vybrat" vedle t�to entity. Zobrazen� okno se uzav�e a vybran� ID ��slo se objev� v poli ID ��slo.</p>
+            <p>Zapi�te ��slo ID nebo n�zev (pouze u m�sta) entity. Pokud nezn�te ID ��slo nebo p�esn� n�zev m�sta, klikn�te na ikonu lupy pro
+                vyhled�n� t�chto �daj�.
+                Po nalezen� po�adovan� entity klikn�te na odkaz "Vybrat" vedle t�to entity. Zobrazen� okno se uzav�e a vybran� ID ��slo se objev� v
+                poli ID ��slo.</p>
 
             <span class="optionhead">Procedura �azen�</span>
             <p>Po v�b�ru nebo zaps�n� ID ��sla klikn�te na tla��tko "Pokra�ovat" pro zobrazen� v�ech alb pro vybranou entitu a kolekci v jejich aktu�ln�m po�ad�.

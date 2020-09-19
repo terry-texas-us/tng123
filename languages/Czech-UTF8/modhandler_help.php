@@ -4,21 +4,21 @@ echo help_header("Nápověda: Manažer módů");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
-        <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
-      </p>
-      <span class="largeheader">Nápověda: Manažer módů
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="backuprestore_help.php" class="lightlink">&laquo; Nápověda: Obslužné programy</a> &nbsp; | &nbsp;
+                <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
+            </p>
+            <span class="largeheader">Nápověda: Manažer módů
         </span>
       <p class="smaller menu">
         <a href="#overview" class="lightlink">Přehled</a> &nbsp; | &nbsp;
@@ -26,27 +26,32 @@ echo help_header("Nápověda: Manažer módů");
         <a href="#status" class="lightlink">Stav</a> &nbsp; | &nbsp;
         <a href="#syntax" class="lightlink">Syntaxe módů</a> &nbsp; | &nbsp;
                 <a href="#files" class="lightlink">Konfigurační soubory</a> &nbsp; | &nbsp;
-                <a href="#batch" class="lightlink">Dávkové operace</a> &nbsp; | &nbsp;
-                <a href="#options" class="lightlink">Možnosti</a> &nbsp; | &nbsp;
-                <a href="#analyze" class="lightlink">Analýza souborů TNG</a> &nbsp; | &nbsp;
-                <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp; | &nbsp;
-                <a href="#custtext" class="lightlink">Doporučené aktualizace</a>
+          <a href="#batch" class="lightlink">Dávkové operace</a> &nbsp; | &nbsp;
+          <a href="#options" class="lightlink">Možnosti</a> &nbsp; | &nbsp;
+          <a href="#analyze" class="lightlink">Analýza souborů TNG</a> &nbsp; | &nbsp;
+          <a href="#parser" class="lightlink">Tabulka parseru</a> &nbsp; | &nbsp;
+          <a href="#custtext" class="lightlink">Doporučené aktualizace</a>
 
-            </p></td>
+      </p></td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="overview"><p class="subheadbold">Přehled</p></a>
-            <p>Manažer módů TNG verze 12 je založen na Manažeru módů, který byl původně vyvinut Brianem McFadyenem, následně zaktualizován Seanem Schwoerem pro práci s Joomla TNG Component
+            <a id="overview"><p class="subheadbold">Přehled</p></a>
+            <p>Manažer módů TNG verze 12 je založen na Manažeru módů, který byl původně vyvinut Brianem McFadyenem, následně zaktualizován Seanem
+                Schwoerem pro práci s Joomla TNG Component
                 a ve verzi 10.0.3 a 10.1 zaktualizován o integrovanější způsob instalace, odstranění a řízení změn softwarového balíku TNG.</p>
             <p>Nový Manažer módů nabízí jednoduchý řádkový souhrn stavů módů, který může být rozšířen na zobrazení kompletního popisu a chyb.
                 Seznam souborů, které daný mód ovlivňuje, lze zobrazit přejetím kursorem myši nad znaménkem + ve sloupci Soubory.
-                K rozbalení všech záznamů a zobrazení stavu můžete podobně jako ve starém Manažeru módů použít také tlačítko <strong>Rozbalit vše</strong> v horním menu.
-                Volba Rozbalit vše je užitečná při filtrování seznamu na stavy <strong>Částečně nainstalováno</strong> nebo <strong>Nelze nainstalovat</strong>, takže můžete vidět chyby, které se
+                K rozbalení všech záznamů a zobrazení stavu můžete podobně jako ve starém Manažeru módů použít také tlačítko <strong>Rozbalit
+                    vše</strong> v horním menu.
+                Volba Rozbalit vše je užitečná při filtrování seznamu na stavy <strong>Částečně nainstalováno</strong> nebo <strong>Nelze
+                    nainstalovat</strong>, takže můžete vidět chyby, které se
                 zde objevují.</p>
             <p>Manažer módů je pro snazší přístup přidán na stránku Administrace TNG. Manažer módů vytváří v TNG tyto složky:
             <ul>
-                <li><strong>mods</strong> obsahuje konfigurační soubory módů a přidružené podpůrné soubory módů. Složka mods může být přejmenována. Manažer módů používá pro práci s názvem složky proměnnou $modspath.</li>
+                <li><strong>mods</strong> obsahuje konfigurační soubory módů a přidružené podpůrné soubory módů. Složka mods může být přejmenována.
+                    Manažer módů používá pro práci s názvem složky proměnnou $modspath.
+                </li>
                 <li><strong>extensions</strong> obsahuje některá rozšíření módů, které jsou instalovány jinými konfiguračními soubory manažeru módů. Složka extensions může být přejmenována. Manažer módů používá pro práci s názvem složky proměnnou
                     $modspath.
                 </li>
@@ -75,17 +80,21 @@ echo help_header("Nápověda: Manažer módů");
             <p>Záložka <strong>Doporučené aktualizace</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti, která vám umožní aktualizovat soubory cust_text.php, pokud jste tak neučinili v rámci aktualizace TNG.</p>
 
             <p>Další informace můžete najít v článku
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Manažer módů (v angličtině)</a> a v kategorii článků
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Category:TNG_Mod_Manager" target="_blank">TNG Mod Manager (v angličtině)</a> na TNG Wiki.</p>
-            <p>You can view the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Enhancements" target="_blank">Mod Manager</a> article in TNG Wiki to see what enhancements were made in TNG v12.</p>
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Manažer módů (v angličtině)</a> a v kategorii
+                článků
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Category:TNG_Mod_Manager" target="_blank">TNG Mod Manager (v angličtině)</a> na
+                TNG Wiki.</p>
+            <p>You can view the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Enhancements" target="_blank">Mod Manager</a>
+                article in TNG Wiki to see what enhancements were made in TNG v12.</p>
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="operation"><p class="subheadbold">Operace</p></a>
-            <p>Manažer módů prozkoumá složku módů a přečte každý soubor <strong>cfg</strong>, který najde. Soubory <strong>cfg</strong> jsou direktivní soubory, které popisují mód, soubory a umístění, které má být modifikováno, a kód, který je při
+            <a id="operation"><p class="subheadbold">Operace</p></a>
+            <p>Manažer módů prozkoumá složku módů a přečte každý soubor <strong>cfg</strong>, který najde. Soubory <strong>cfg</strong> jsou
+                direktivní soubory, které popisují mód, soubory a umístění, které má být modifikováno, a kód, který je při
                 modifikaci použit.
             <p>Manažer módů zkontroluje následující:
             <ul>
@@ -98,7 +107,9 @@ echo help_header("Nápověda: Manažer módů");
                     </ul>
                 <li>vytvoří zadanou složku nebo adresář</li>
                 <li>identifikuje nové soubory, které mají být vytvořeny. Pokud je soubor označen jako chráněný, nebude odstraněn Odinstalací ani Vyčištěním.</li>
-                <li>identifikuje soubory, které mají být zkopírovány do kořenové složky TNG nebo do určené složky. Pokud je soubor označen jako chráněný, nebude odstraněn Odinstalací ani Vyčištěním.</li>
+                <li>identifikuje soubory, které mají být zkopírovány do kořenové složky TNG nebo do určené složky. Pokud je soubor označen jako
+                    chráněný, nebude odstraněn Odinstalací ani Vyčištěním.
+                </li>
             </ul>
             </p>
 
@@ -108,29 +119,33 @@ echo help_header("Nápověda: Manažer módů");
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="status"><p class="subheadbold">Stav</p></a>
+            <a id="status"><p class="subheadbold">Stav</p></a>
             <p>Manažer módů vrací následující stavy:
             <ul>
-                <li><strong>Lze instalovat</strong>, pokud mód ještě nebyl nainstalován a cílové umístění je identifikováno, pak je uvedena možnost <strong>Instalovat</strong>
+                <li><strong>Lze instalovat</strong>, pokud mód ještě nebyl nainstalován a cílové umístění je identifikováno, pak je uvedena možnost
+                    <strong>Instalovat</strong>
                 </li>
-                <li><strong>Instalováno</strong>, pokud již mód byl nainstalován, je uvedena možnost <strong>Odinstalovat</strong> mód a možnost <strong>Upravit</strong> parametry, pokud nějaké existují. Módy s editačními parametry jsou identifikovány
+                <li><strong>Instalováno</strong>, pokud již mód byl nainstalován, je uvedena možnost <strong>Odinstalovat</strong> mód a možnost
+                    <strong>Upravit</strong> parametry, pokud nějaké existují. Módy s editačními parametry jsou identifikovány
                     podle [Možnosti] za stavem Instalováno.
                 </li>
-                <li><strong>Částečně instalováno</strong>, pokud mód byl částečně nainstalován, je k dispozici tlačítko <strong>Vyčistit</strong>. Operace Vyčištění se pokusí odstranit vložený kód, obnovit a nahradit kód, a odstranit jakékoli vytvořené
+                <li><strong>Částečně instalováno</strong>, pokud mód byl částečně nainstalován, je k dispozici tlačítko <strong>Vyčistit</strong>.
+                    Operace Vyčištění se pokusí odstranit vložený kód, obnovit a nahradit kód, a odstranit jakékoli vytvořené
                     nebo zkopírované soubory.
                 </li>
                 <li><strong>Nelze nainstalovat</strong>, pokud mód <strong>nelze</strong> instalovat. Rozšíření (zobrazení kompletní informace) stavu poskytne více informací o tom, proč mód nelze nainstalovat.
                 </li>
             </ul>
             <p>Příklady obrazovek stavu manažeru módů a jak interpretovat různé stavy najdete na
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Manažer módů - interpretace stavů (v angličtině)</a>
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">Manažer módů - interpretace
+                    stavů (v angličtině)</a>
             </p></td>
     </tr>
 
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="syntax"><p class="subheadbold">Syntaxe módů</p></a>
+            <a id="syntax"><p class="subheadbold">Syntaxe módů</p></a>
             <p>Syntaxe manažera módů v zásadě zahrnuje:
             <p><strong>Sekci záhlaví</strong>, která obsahuje</p>
             <ul>
@@ -139,41 +154,48 @@ echo help_header("Nápověda: Manažer módů");
                 <li>Popis (description) - obsahuje stručný popis módu, jméno vývojáře a URL článku o daném módu na TNG Wiki.</li>
             </ul>
             </p>
-            <p><strong>Cílovou sekci (target)</strong>, kde je specifikován soubor, který je opravným módem změněn, a následně obsahuje příkazy. K cílové sekce lze přidat poznámku.</p>
+            <p><strong>Cílovou sekci (target)</strong>, kde je specifikován soubor, který je opravným módem změněn, a následně obsahuje příkazy. K
+                cílové sekce lze přidat poznámku.</p>
             <ul>
                 <li>Umístění (location) - určuje umístění kódu, který je v souboru měněn. K umístění lze přidat poznámku.</li>
                 <li>Klíčové slovo akce - určuje, zda přepsat (Replace) nebo vložit (Insert) kód před (Before) nebo za (After) toto umístění</li>
             </ul>
             </p>
             <p><strong>Příkaz Nový soubor (New File)</strong>, který po instalaci módu vytvoří nový soubor</p>
-            <p><strong>Příkaz Kopírovat soubor (Copy File)</strong>, který nakopíruje určitý soubor do řídící složky TNG (%copyfile) nebo do podsložky (%copyfile2)</p>
-            <p>Detailní informace týkající se syntaxe módů najdete v článku <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">Mod Manager Syntax (v angličtině)</a></p>
+            <p><strong>Příkaz Kopírovat soubor (Copy File)</strong>, který nakopíruje určitý soubor do řídící složky TNG (%copyfile) nebo do podsložky
+                (%copyfile2)</p>
+            <p>Detailní informace týkající se syntaxe módů najdete v článku <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax"
+                                                                               target="_blank">Mod Manager Syntax (v angličtině)</a></p>
         </td>
     </tr>
 
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="files"><p class="subheadbold">Konfigurační soubory</p></a>
+            <a id="files"><p class="subheadbold">Konfigurační soubory</p></a>
 
             <span class="optionhead">Instalování módů</span>
-            <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">instalaci konfiguračních souborů (v angličtině)</a> k instalaci módů najdete na TNG Wiki.</p>
+            <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">instalaci
+                    konfiguračních souborů (v angličtině)</a> k instalaci módů najdete na TNG Wiki.</p>
 
             <span class="optionhead">Interpretace stavu</span>
-            <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">interpretaci stavu (v angličtině)</a> najdete na TNG Wiki.</p>
+            <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">interpretaci
+                    stavu (v angličtině)</a> najdete na TNG Wiki.</p>
 
             <span class="optionhead">Syntaxe konfiguračních souborů</span>
-            <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">syntaxi manažeru módů (v angličtině)</a> najdete na TNG Wiki.</p>
+            <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">syntaxi manažeru módů (v
+                    angličtině)</a> najdete na TNG Wiki.</p>
 
             <span class="optionhead">Vytvoření konfiguračního souboru</span>
-            <p>Informace pro vývojáře o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvoření konfiguračních souborů (v angličtině)</a> najdete na TNG Wiki.</p>
+            <p>Informace pro vývojáře o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvoření
+                    konfiguračních souborů (v angličtině)</a> najdete na TNG Wiki.</p>
         </td>
     </tr>
 
     <tr class="databack">
         <td class="tngshadow">
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="batch"><p class="subheadbold">Dávkové operace</p></a>
+            <a id="batch"><p class="subheadbold">Dávkové operace</p></a>
 
             <p>Funkce Dávkové operace, v TNG 10.0.3 představená jako Dávkové instalace, je nyní součástí Seznamu módů a umožní provést specifické akce
                 týkající se více módů pomocí výběru filtru.
@@ -231,17 +253,25 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="options"><p class="subheadbold">Možnosti</p></a>
+            <a id="options"><p class="subheadbold">Možnosti</p></a>
 
             <p>Možnosti vám umožní specifikovat chování manažeru módů.
 
             <p><strong>Možnosti protokolu Manažeru módů</strong>
             <ul>
-                <li><strong>Název protokolu</strong> - umožní vám určit název souboru, který bude použit pro protokol manažeru módů. Výchozí volbou je <strong>modmgrlog.txt</strong>.</li>
-                <li><strong>Maximální počet transakcí</strong> - umožní vám určit, kolik transakcí bude zachováváno v protokolu. Výchozí volbou je <strong>200</strong> transakcí.</li>
-                <li><strong>Sbalit zobrazení protokolu</strong> - umožní vám určit, zda chcete při úvodním zobrazení vidět protokol v zúženém nebo rozšířeném stavu. Výchozí volbou je <strong>Ano</strong>.</li>
-                <li><strong>Přesměrovat na protokol</strong> - umožní vám určit, zda chcete být ze Seznamu módů přesměrováni na záložku Zobrazit protokol v případě <strong>Pouze chyb</strong> nebo <strong>Všech transakcí</strong>. Výchozí volbou je
-                    přesměrování v případě <strong>Pouze chyb</strong>, která zobrazí protokol pouze v případě, že se vyskytne v průběhu instalace, odinstalace, vyčištění nebo vymazání chyba.
+                <li><strong>Název protokolu</strong> - umožní vám určit název souboru, který bude použit pro protokol manažeru módů. Výchozí volbou je
+                    <strong>modmgrlog.txt</strong>.
+                </li>
+                <li><strong>Maximální počet transakcí</strong> - umožní vám určit, kolik transakcí bude zachováváno v protokolu. Výchozí volbou je
+                    <strong>200</strong> transakcí.
+                </li>
+                <li><strong>Sbalit zobrazení protokolu</strong> - umožní vám určit, zda chcete při úvodním zobrazení vidět protokol v zúženém nebo
+                    rozšířeném stavu. Výchozí volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Přesměrovat na protokol</strong> - umožní vám určit, zda chcete být ze Seznamu módů přesměrováni na záložku Zobrazit
+                    protokol v případě <strong>Pouze chyb</strong> nebo <strong>Všech transakcí</strong>. Výchozí volbou je
+                    přesměrování v případě <strong>Pouze chyb</strong>, která zobrazí protokol pouze v případě, že se vyskytne v průběhu instalace,
+                    odinstalace, vyčištění nebo vymazání chyba.
                 </li>
                 <li><strong>Do protokolu zapsat celou cestu souborů</strong> - umožní vám zapsat Ne, pokud chcete u souborů v protokolu zobrazit pouze relativní cestu. Výchozí volbou je <strong>Ano</strong> pro zobrazení úplné absolutní cesty.</li>
             </ul>
@@ -292,17 +322,24 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a name="analyze"><p class="subheadbold">Analýza souborů TNG</p></a>
+            <a id="analyze"><p class="subheadbold">Analýza souborů TNG</p></a>
 
-            <p>Tento nástroj na záložce <strong>Analýza souborů TNG</strong>, který vytvořil Rick Bisbee, existoval dříve jako opravný mód. Analýza souborů TNG umožňuje vývojářům zkoumat působení módů navzájem. Situace, kdy dva módy mění stejný úsek
-                programového kódu, má téměř vždy za následek chybu v manažeru módů. Chcete-li, aby byla záložka Analýza souborů TNG zobrazena, musíte ji povolit nastavením volby <strong>Analýza souborů TNG</strong> na Ano.</p>
+            <p>Tento nástroj na záložce <strong>Analýza souborů TNG</strong>, který vytvořil Rick Bisbee, existoval dříve jako opravný mód. Analýza
+                souborů TNG umožňuje vývojářům zkoumat působení módů navzájem. Situace, kdy dva módy mění stejný úsek
+                programového kódu, má téměř vždy za následek chybu v manažeru módů. Chcete-li, aby byla záložka Analýza souborů TNG zobrazena, musíte
+                ji povolit nastavením volby <strong>Analýza souborů TNG</strong> na Ano.</p>
 
-            <p>Analyzér pracuje tak, že prozkoumá všechny módy ve složce mods a vytvoří soupis cílových souborů a úseků programového kódu, který každý mód mění. V levém sloupci uvede názvy dotčených souborů. Po kliknutí na název cílového souboru se na
-                pravé straně zobrazí seznam módů, které tento cílový soubor mění. U každého módu je napravo zobrazen odkaz pro otevření sekce stránky zobrazující aktuální změny, které obsahuje konfigurační soubor manažeru módů. Uživatel může porovnat změny
+            <p>Analyzér pracuje tak, že prozkoumá všechny módy ve složce mods a vytvoří soupis cílových souborů a úseků programového kódu, který každý
+                mód mění. V levém sloupci uvede názvy dotčených souborů. Po kliknutí na název cílového souboru se na
+                pravé straně zobrazí seznam módů, které tento cílový soubor mění. U každého módu je napravo zobrazen odkaz pro otevření sekce stránky
+                zobrazující aktuální změny, které obsahuje konfigurační soubor manažeru módů. Uživatel může porovnat změny
                 cílového souboru a vidět, kde mohou být skryty potenciální konflikty.</p>
 
-            <p>To je užitečné nejen pro nalezení konfliktů mezi dvěma módy, ale také pro poznání, které módy je třeba vyčistit a znovu nainstalovat po přepsání daného cílového souboru. </p>
-            <p>Vývojáři módů naleznou další informace na TNG Wiki v článku <a href="https://tng.lythgoes.net/wiki/index.php?title=Using_the_Mod_Analyzer" target="_blank">Using the Mod Analyzer (v angličtině)</a>.</p>
+            <p>To je užitečné nejen pro nalezení konfliktů mezi dvěma módy, ale také pro poznání, které módy je třeba vyčistit a znovu nainstalovat po
+                přepsání daného cílového souboru. </p>
+            <p>Vývojáři módů naleznou další informace na TNG Wiki v článku <a
+                    href="https://tng.lythgoes.net/wiki/index.php?title=Using_the_Mod_Analyzer" target="_blank">Using the Mod Analyzer (v
+                    angličtině)</a>.</p>
         </td>
     </tr>
 
@@ -310,13 +347,17 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="parser"><p class="subheadbold">Tabulka parseru</p></a>
-            <p>Tento nástroj je určen hlavně pro vývojáře. Tabulka parseru ukazuje, jak Manažer módů zanalyzoval konfigurační soubor módu (.cfg) zapracováním jeho komponent do tabulky, která pak prochází do dalších skriptů Manažeru módů pro další
-                zpracování. Pokud se vyskytne problém s módem, první místo, které je třeba zkontrolovat, je tabulka parseru, aby se zjistilo, zda jsou správně zachyceny všechny příkazy a argumenty módu.</p>
-            <p>Tuto záložku můžete použít k výběru módu ze seznamu, jehož tabulku chcete zobrazit, nebo, pokud jste povolili možnost Zobrazit další nástroje pro vývojáře, můžete kliknout na název módu v Seznamu módů a zobrazit tabulku parseru pro tento
+            <a id="parser"><p class="subheadbold">Tabulka parseru</p></a>
+            <p>Tento nástroj je určen hlavně pro vývojáře. Tabulka parseru ukazuje, jak Manažer módů zanalyzoval konfigurační soubor módu (.cfg)
+                zapracováním jeho komponent do tabulky, která pak prochází do dalších skriptů Manažeru módů pro další
+                zpracování. Pokud se vyskytne problém s módem, první místo, které je třeba zkontrolovat, je tabulka parseru, aby se zjistilo, zda jsou
+                správně zachyceny všechny příkazy a argumenty módu.</p>
+            <p>Tuto záložku můžete použít k výběru módu ze seznamu, jehož tabulku chcete zobrazit, nebo, pokud jste povolili možnost Zobrazit další
+                nástroje pro vývojáře, můžete kliknout na název módu v Seznamu módů a zobrazit tabulku parseru pro tento
                 mód.</p>
 
-            <p>Zobrazení této záložky je volitelné. Chcete-li jej použít, vyberte možnost 'Nastavení zobrazení/Zobrazit další nástroje pro vývojáře' na záložce Možnosti. Pokud je volba záložky vypnuta, odkaz na stránce se seznamem nebude také povolen.</p>
+            <p>Zobrazení této záložky je volitelné. Chcete-li jej použít, vyberte možnost 'Nastavení zobrazení/Zobrazit další nástroje pro vývojáře'
+                na záložce Možnosti. Pokud je volba záložky vypnuta, odkaz na stránce se seznamem nebude také povolen.</p>
 
         </td>
     </tr>
@@ -325,9 +366,11 @@ echo help_header("Nápověda: Manažer módů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="custtext"><p class="subheadbold">Doporučené aktualizace</p></a>
-            <p>Záložka Doporučené aktualizace je volitelná záložka, která může být povolena na obrazovce Možnosti, a umožní vám aktualizovat soubory cust_text.php, pokud jste tak neučinili jako součást aktualizace TNG.</p>
-            <p>Použití záložky se předpokládá v případě, že mód nemůže být nainstalován, protože hledá nový komentářový řetězec v horní části souborů cust_text.php počínaje TNG v12. Tato volba bude vypnuta po kliknutí na tlačítko Aktualizovat a změně
+            <a id="custtext"><p class="subheadbold">Doporučené aktualizace</p></a>
+            <p>Záložka Doporučené aktualizace je volitelná záložka, která může být povolena na obrazovce Možnosti, a umožní vám aktualizovat soubory
+                cust_text.php, pokud jste tak neučinili jako součást aktualizace TNG.</p>
+            <p>Použití záložky se předpokládá v případě, že mód nemůže být nainstalován, protože hledá nový komentářový řetězec v horní části souborů
+                cust_text.php počínaje TNG v12. Tato volba bude vypnuta po kliknutí na tlačítko Aktualizovat a změně
                 stávajících souborů cust_text.php. Kód kontroluje, zda byly tyto soubory již dříve aktualizovány.</p>
 
         </td>

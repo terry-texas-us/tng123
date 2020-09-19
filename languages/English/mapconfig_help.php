@@ -4,17 +4,17 @@ echo help_header("Help: Map Settings");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="importconfig_help.php" class="lightlink">&laquo; Help: Import Settings</a> &nbsp; | &nbsp;
-        <a href="templateconfig_help.php" class="lightlink">Help: Template Settings &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Map Settings</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="importconfig_help.php" class="lightlink">&laquo; Help: Import Settings</a> &nbsp; | &nbsp;
+                <a href="templateconfig_help.php" class="lightlink">Help: Template Settings &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Map Settings</span>
     </td>
   </tr>
   <tr class="databack">

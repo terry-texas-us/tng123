@@ -4,49 +4,52 @@ echo help_header("N�pov�da: Kolekce");
 ?>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="media_help.php" class="lightlink">&laquo; N�pov�da: M�dia</a> &nbsp; | &nbsp;
-        <a href="albums_help.php" class="lightlink">N�pov�da: Alba &raquo;</a>
-      </p>
-      <span class="largeheader">N�pov�da: Kolekce</span>
-      <p class="smaller menu">
-        <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
-        <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>
-      </p>
-    </td>
-  </tr>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="media_help.php" class="lightlink">&laquo; N�pov�da: M�dia</a> &nbsp; | &nbsp;
+                <a href="albums_help.php" class="lightlink">N�pov�da: Alba &raquo;</a>
+            </p>
+            <span class="largeheader">N�pov�da: Kolekce</span>
+            <p class="smaller menu">
+                <a href="#what" class="lightlink">Co to je?</a> &nbsp; | &nbsp;
+                <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a>
+            </p>
+        </td>
+    </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="what"><p class="subheadbold">Co jsou to kolekce?</p></a>
+            <a id="what"><p class="subheadbold">Co jsou to kolekce?</p></a>
 
-            <p><strong>Kolekcemi</strong> se v TNG rozum� typ m�dia. Standardn� kolekce v TNG jsou Fotografie, Dokumenty, N�hrobky, Vypr�v�n�, Videa a Zvukov� z�znamy,
-                ale TNG v�m umo�n� vytvo�it i vlastn� kolekce. Kolekce nen� omezena jedn�m typem souboru. Nap�. obr�zky .jpg mohou b�t sou��st� kter�koli kolekce,
+            <p><strong>Kolekcemi</strong> se v TNG rozum� typ m�dia. Standardn� kolekce v TNG jsou Fotografie, Dokumenty, N�hrobky, Vypr�v�n�, Videa a
+                Zvukov� z�znamy,
+                ale TNG v�m umo�n� vytvo�it i vlastn� kolekce. Kolekce nen� omezena jedn�m typem souboru. Nap�. obr�zky .jpg mohou b�t sou��st�
+                kter�koli kolekce,
                 nejen fotografi� a dokument�, a kolekce Fotografie nemus� obsahovat pouze obrazov� soubory.</p>
-
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">P�id�n� kolekce</p></a>
+            <a id="add"><p class="subheadbold">P�id�n� kolekce</p></a>
 
-            <p>Chcete-li p�idat novou kolekci, klikn�te na tla��tko "P�idat kolekci" kdekoli je viditeln� (nap�. na obrazovk�ch M�dia, P�idat m�dia a Upravit m�dia).
+            <p>Chcete-li p�idat novou kolekci, klikn�te na tla��tko "P�idat kolekci" kdekoli je viditeln� (nap�. na obrazovk�ch M�dia, P�idat m�dia a
+                Upravit m�dia).
                 Po zobrazen� mal�ho okna vypl�te formul��. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
             <span class="optionhead">ID ��slo kolekce</span>
-            <p>Velmi kr�tk� �et�zec znak�, kter� slou�� jako identifik�tor t�to kolekce. Nem�l by obsahovat mezery ani ��dn� znaky, kter� nejsou alfanumerick�,
+            <p>Velmi kr�tk� �et�zec znak�, kter� slou�� jako identifik�tor t�to kolekce. Nem�l by obsahovat mezery ani ��dn� znaky, kter� nejsou
+                alfanumerick�,
                 a m�l m�t maxim�ln� 10 znak�. Nap�. pokud jste vytvo�ili kolekci pro vojensk� z�znamy, do tohoto pole byste m�li zapsat "military".
                 Tato hodnota se nikde nezobraz�, tak�e nen� d�le�it�, jak ji pojmenujete, ale mus� b�t jednozna�n�.</p>
 

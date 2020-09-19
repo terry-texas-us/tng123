@@ -18,7 +18,7 @@ include $relpath . "version.php";
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">
@@ -38,7 +38,7 @@ include $relpath . "version.php";
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <a name="gettingstarted"><p class="subheadbold">Mise en route:</p></a>
+            <a id="gettingstarted"><p class="subheadbold">Mise en route:</p></a>
             <p>Directives de base pour débutants :</p>
             <ol>
                 <li><p><strong>Lire attentivement les directives dans le fichier <a href="../readme.html" target="_blank">readme.html</a>
@@ -65,7 +65,7 @@ include $relpath . "version.php";
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="notes"><p class="subheadbold">Notes:</p></a>
+            <a id="notes"><p class="subheadbold">Notes:</p></a>
             <ol>
                 <li><p>Si vous remarquez que certaines options sont absentes du menu Administration, c'est peut-être parce que vous n'êtes pas
                         connecté avec tous les droits, ou que vous êtes associé à un arbre en particulier.

@@ -8,7 +8,7 @@ echo help_header("Nápověda: Administrace");
 </head>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
     <tr class="fieldnameback">
         <td class="tngshadow">

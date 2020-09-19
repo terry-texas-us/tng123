@@ -4,17 +4,17 @@ echo help_header("Help: Citations");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="notes_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
-        <a href="events_help.php" class="lightlink">Help: Events &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Citations</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="notes_help.php" class="lightlink">&laquo; Help: Notes</a> &nbsp; | &nbsp;
+                <a href="events_help.php" class="lightlink">Help: Events &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Citations</span>
       <p class="smaller menu">
         <a href="#what" class="lightlink">What are they?</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add/Edit/Delete</a>
@@ -31,21 +31,23 @@ echo help_header("Help: Citations");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="what"><p class="subheadbold">What are Citations?</p></a>
+            <a id="what"><p class="subheadbold">What are Citations?</p></a>
 
-            <p>A <strong>Citation</strong> is a reference to a Source record, made with the intent of proving the veracity of some piece of information. The Source usually
-                describes in general where the information was found (e.g., a book or a census), while the Citation usually contains more specific information (e.g., on which page).
+            <p>A <strong>Citation</strong> is a reference to a Source record, made with the intent of proving the veracity of some piece of
+                information. The Source usually
+                describes in general where the information was found (e.g., a book or a census), while the Citation usually contains more specific
+                information (e.g., on which page).
                 The same Source record can be cited multiple times for different people, families, notes and events.</p>
-
 
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="add"><p class="subheadbold">Adding/Editing/Deleting Citations</p></a>
+            <a id="add"><p class="subheadbold">Adding/Editing/Deleting Citations</p></a>
 
-            <p>To add, edit or delete citations, click on the Citations icon at the top of the screen or next to any note or event (if citations already exist,
+            <p>To add, edit or delete citations, click on the Citations icon at the top of the screen or next to any note or event (if citations
+                already exist,
                 a green dot will be present on the icon). When the icon is clicked, a small popup will appear showing
                 all citations existing for the active entity or event.</p>
 

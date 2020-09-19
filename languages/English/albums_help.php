@@ -4,17 +4,17 @@ echo help_header("Help: Albums");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp; | &nbsp;
-        <a href="cemeteries_help.php" class="lightlink">Help: Cemeteries &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Albums</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="collections_help.php" class="lightlink">&laquo; Help: Collections</a> &nbsp; | &nbsp;
+                <a href="cemeteries_help.php" class="lightlink">Help: Cemeteries &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Albums</span>
       <p class="smaller menu">
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
         <a href="#add" class="lightlink">Add New</a> &nbsp; | &nbsp;
@@ -34,11 +34,12 @@ echo help_header("Help: Albums");
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-            <a name="search"><p class="subheadbold">Search</p></a>
+            <a id="search"><p class="subheadbold">Search</p></a>
             <p>Locate existing media by searching for all or part of the <strong>Album Name, Description</strong> or
                 <strong>Keywords</strong>. Searching with no value in the search box will find all albums in your database.</p>
 
-            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default values and searches again.</p>
+            <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
+                values and searches again.</p>
 
             <span class="optionhead">Actions</span>
             <p>The Action buttons next to each Album allow you to edit, delete or preview that Album.</p>
@@ -46,20 +47,22 @@ echo help_header("Help: Albums");
         </td>
     </tr>
     <tr class="databack">
-      <td class="tngshadow">
+        <td class="tngshadow">
 
-        <p style="float:right;"><a href="#top">Top</a></p>
-        <a name="add"><p class="subheadbold">Adding New Albums</p></a>
-        <p>An <strong>Album</strong> in TNG is a grouping of media. An Album can include any number of media, and any particular media item can belong to multiple albums.
-          Like individual media, Albums can be linked to people, families, sources, repositories or places.</p>
+            <p style="float:right;"><a href="#top">Top</a></p>
+            <a id="add"><p class="subheadbold">Adding New Albums</p></a>
+            <p>An <strong>Album</strong> in TNG is a grouping of media. An Album can include any number of media, and any particular media item can
+                belong to multiple albums.
+                Like individual media, Albums can be linked to people, families, sources, repositories or places.</p>
 
-        <p>To add a new Album, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the media to include and
-          links to people, families and other entities, can be added after saving the record. Take note of the following:</p>
+            <p>To add a new Album, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the media to include
+                and
+                links to people, families and other entities, can be added after saving the record. Take note of the following:</p>
 
-        <p><span class="optionhead">Album Name</span><br>
-          The name of your album.</p>
+            <p><span class="optionhead">Album Name</span><br>
+                The name of your album.</p>
 
-        <p><span class="optionhead">Description</span><br>
+            <p><span class="optionhead">Description</span><br>
           A short description of the album or the items contained in it.</p>
 
         <p><span class="optionhead">Keywords</span><br>
@@ -74,25 +77,32 @@ echo help_header("Help: Albums");
           linked to a living person or family. Normally, active albums and other media linked to living individuals are hidden from visitors who do not have rights to view living data.
         </p>
 
-        <p><span class="optionhead">Required fields:</span> Album Name is the only required field, but it is in your best interest to fill in the other fields as well.</p>
+            <p><span class="optionhead">Required fields:</span> Album Name is the only required field, but it is in your best interest to fill in the
+                other fields as well.</p>
 
-      </td>
+        </td>
     </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="edit"><p class="subheadbold">Editing Existing Albums</p></a>
-            <p>To make changes to an existing Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Edit icon next to that Album.
+            <a id="edit"><p class="subheadbold">Editing Existing Albums</p></a>
+            <p>To make changes to an existing Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Edit icon next to
+                that Album.
                 Take note of the following items that are not on the "Add New Album" page:</p>
 
             <span class="optionhead">Album Media</span>
-            <p>To add media to an album, click on the "Add Media" button, then use the form in the resulting popup to select media from the items currently in
-                your database. To do that, select a Collection and/or a Tree (both optional), then enter part of the media name or description in the "Search for" field
-                and click the "Search" button. When you locate an item that you'd like to add to the Album, click on the "Add" link to the left of the item row. That
-                item will be added and the popup will remain. Repeat this step to locate and add more media, or click on the "Close Window" link to return to the Edit Album page.</p>
+            <p>To add media to an album, click on the "Add Media" button, then use the form in the resulting popup to select media from the items
+                currently in
+                your database. To do that, select a Collection and/or a Tree (both optional), then enter part of the media name or description in the
+                "Search for" field
+                and click the "Search" button. When you locate an item that you'd like to add to the Album, click on the "Add" link to the left of the
+                item row. That
+                item will be added and the popup will remain. Repeat this step to locate and add more media, or click on the "Close Window" link to
+                return to the Edit Album page.</p>
 
-            <p>To remove media from an album, move your mouse pointer over the item. A "Remove" link will be revealed. Click that link to remove the item. After the
+            <p>To remove media from an album, move your mouse pointer over the item. A "Remove" link will be revealed. Click that link to remove the
+                item. After the
                 confirmation, the item will fade away.</p>
 
             <p>To choose one thumbnail to be the <strong>Default Photo</strong> for the current Album, move your mouse pointer over the item. A "Make Default" link will be revealed.
@@ -116,7 +126,8 @@ echo help_header("Help: Albums");
                 When you find the desired entity description, click the "Add" link at the left. You may click "Add" for multiple entities. When you are finished creating
                 links, click on the "Close Window" link.</p>
 
-            <p>NOTE: All changes relating to Album Media and Album Links are saved immediately and do not require you to click the "Save" button at the bottom of the screen.
+            <p>NOTE: All changes relating to Album Media and Album Links are saved immediately and do not require you to click the "Save" button at
+                the bottom of the screen.
                 Changes in the "Album Information" section do require you to click "Save".</p>
 
         </td>
@@ -125,8 +136,9 @@ echo help_header("Help: Albums");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="delete"><p class="subheadbold">Deleting Albums</p></a>
-            <p>To delete an Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Delete icon next to that Album. The row will
+            <a id="delete"><p class="subheadbold">Deleting Albums</p></a>
+            <p>To delete an Album, use the <a href="#search">Search</a> tab to locate the Album, then click on the Delete icon next to that Album. The
+                row will
                 change color and then vanish as the item is deleted.</p>
 
         </td>
@@ -135,17 +147,21 @@ echo help_header("Help: Albums");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Top</a></p>
-            <a name="sort"><p class="subheadbold">Sorting Albums</p></a>
-            <p>By default, Albums linked to a Person, Family, Source, Repository or Place are sorted by the order in which they were linked to that entity. To change that
+            <a id="sort"><p class="subheadbold">Sorting Albums</p></a>
+            <p>By default, Albums linked to a Person, Family, Source, Repository or Place are sorted by the order in which they were linked to that
+                entity. To change that
                 order, you must indicate a new order on the Album/Sort tab.</p>
 
             <span class="optionhead">Tree, Link Type, Collection:</span>
-            <p>Select the Tree associated with the entity for which you would like to sort Albums. Next, select a Link Type (Person, Family, Source, Repository or Place) and
+            <p>Select the Tree associated with the entity for which you would like to sort Albums. Next, select a Link Type (Person, Family, Source,
+                Repository or Place) and
                 the Collection you would like to sort.</p>
 
             <span class="optionhead">ID:</span>
-            <p>Enter the ID number or name (Places only) of the entity. If you don't know the ID number or exact place name, click the magnifying glass icon to search for it.
-                When you find the desired entity, click on the "Select" link next to that entity. The popup will close and the selected ID will appear in the ID field.</p>
+            <p>Enter the ID number or name (Places only) of the entity. If you don't know the ID number or exact place name, click the magnifying
+                glass icon to search for it.
+                When you find the desired entity, click on the "Select" link next to that entity. The popup will close and the selected ID will appear
+                in the ID field.</p>
 
             <span class="optionhead">Sorting Procedure</span>
             <p>After selecting or entering an ID, click on the "Continue" button to display all Albums for the selected entity and Collection in their current order.

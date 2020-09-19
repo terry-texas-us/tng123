@@ -4,17 +4,17 @@ echo help_header("Help: Google Maps");
 ?>
 
 <body class="helpbody">
-<a name="top"></a>
+<a id="top"></a>
 <table width="100%" cellpadding="10" cellspacing="2" class="tblback normal">
-  <tr class="fieldnameback">
-    <td class="tngshadow">
-      <p style="float:right; text-align:right;" class="smaller menu">
-        <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
-        <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-        <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp; | &nbsp;
-        <a href="tlevents_help.php" class="lightlink">Help: Timeline Events &raquo;</a>
-      </p>
-      <span class="largeheader">Help: Google Maps</span>
+    <tr class="fieldnameback">
+        <td class="tngshadow">
+            <p style="float:right; text-align:right;" class="smaller menu">
+                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp; | &nbsp;
+                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                <a href="places_help.php" class="lightlink">&laquo; Help: Places</a> &nbsp; | &nbsp;
+                <a href="tlevents_help.php" class="lightlink">Help: Timeline Events &raquo;</a>
+            </p>
+            <span class="largeheader">Help: Google Maps</span>
       <p class="smaller menu">
         <a href="#show" class="lightlink">Show/Hide</a> &nbsp; | &nbsp;
         <a href="#search" class="lightlink">Search</a> &nbsp; | &nbsp;
@@ -31,25 +31,29 @@ echo help_header("Help: Google Maps");
           new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
       </script>
-      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-      <p><span class="subheadbold">Show/Hide Clickable Map</span><br><br>
-        Click the "Show/Hide Clickable Map" button to show the Google Map and search for a Geocode
-        Location, or to hide the map when finished. The default initial setting is specified in Admin/Setup/Map Settings.</p>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <p><span class="subheadbold">Show/Hide Clickable Map</span><br><br>
+            Click the "Show/Hide Clickable Map" button to show the Google Map and search for a Geocode
+            Location, or to hide the map when finished. The default initial setting is specified in Admin/Setup/Map Settings.</p>
 
     </td>
   </tr>
-  <tr class="databack">
-    <td class="tngshadow">
+    <tr class="databack">
+        <td class="tngshadow">
 
-      <a name="show"><p class="subheadbold">Search</p></a>
-      <p>The Google Map Geocoder interface allows you to locate the latitude and longitude for a place name using the Geocode place input field.
-                Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) can also be used to look up coordinates.</p>
+            <a id="show"><p class="subheadbold">Search</p></a>
+            <p>The Google Map Geocoder interface allows you to locate the latitude and longitude for a place name using the Geocode place input field.
+                Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) can also be used to look up
+                coordinates.</p>
 
             <span class="optionhead">Geocode Location</span>
-            <p>The Geocode place field contains the TNG place name if the place is already defined in TNG. When adding a new location, the Geocode place will be
+            <p>The Geocode place field contains the TNG place name if the place is already defined in TNG. When adding a new location, the Geocode
+                place will be
                 propagated to the TNG place name. The location names are not propagated when adding cemeteries or media. </p>
-            <p>For existing TNG place names, you may need to modify the place name in the Geocode place input field. For example, Google does not like County
-                names as part of the place name for U.S. and Scottish locations, nor does it deal with New Zealand provinces. You may want to try place name and
+            <p>For existing TNG place names, you may need to modify the place name in the Geocode place input field. For example, Google does not like
+                County
+                names as part of the place name for U.S. and Scottish locations, nor does it deal with New Zealand provinces. You may want to try
+                place name and
                 country only as input. You might also have to enter the country name as it is known in English.</p>
             <span class="optionhead">Place name examples</span>
             <p>The following are examples of how the Geocode place may need to be entered to obtain the correct latitude and longitude:</p>
@@ -85,9 +89,12 @@ echo help_header("Help: Google Maps");
             <span class="optionhead">Place Level</span>
             <p>You can use the place level dropdown to select the granularity level of the place name. Six levels are provided ranging from Address to Country,
                 address being the most specific. You can specify overrides for the $admtext for level 1 through 6 contained in the alltext.php file in your cust_text.php file.
-                Levels 2 through 5 tags can be changed to reflect church/hospital/nursing home/cemetery, town/city/commune, county/department, state/province/region, for
-                example. Different colored pins will indicate the granularity of the place level on the Individual person's page. The place level indicator does not
-                apply to the cemeteries nor the media table. Pins displayed on the cemeteries table default to level 2 to allow for headstones being at the most
+                Levels 2 through 5 tags can be changed to reflect church/hospital/nursing home/cemetery, town/city/commune, county/department,
+                state/province/region, for
+                example. Different colored pins will indicate the granularity of the place level on the Individual person's page. The place level
+                indicator does not
+                apply to the cemeteries nor the media table. Pins displayed on the cemeteries table default to level 2 to allow for headstones being
+                at the most
                 specific level.</p>
 
         </td>
@@ -95,18 +102,23 @@ echo help_header("Help: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="controls"><p class="subheadbold">Google Map Controls</p></a>
+            <a id="controls"><p class="subheadbold">Google Map Controls</p></a>
 
             <span class="optionhead">Point / Click</span>
-            <p>To refine the latitude and longitude of a place, click on the Google Map, at the point where you think the place is located. You may also need to
-                use the Map, Satellite, or Hybrid button on the Google Map in order to obtain a better latitude and longitude for the TNG place name. </p>
+            <p>To refine the latitude and longitude of a place, click on the Google Map, at the point where you think the place is located. You may
+                also need to
+                use the Map, Satellite, or Hybrid button on the Google Map in order to obtain a better latitude and longitude for the TNG place
+                name. </p>
 
             <span class="optionhead">Drag and Pan</span>
-            <p>Since these maps are draggable, you can use your mouse or the directional arrows to pan left, right, up and down to see areas that are hidden
-                offscreen. The drag and pan capability means there is no clicking and waiting for graphics to reload each time you want to view the adjacent parts of a map.</p>
+            <p>Since these maps are draggable, you can use your mouse or the directional arrows to pan left, right, up and down to see areas that are
+                hidden
+                offscreen. The drag and pan capability means there is no clicking and waiting for graphics to reload each time you want to view the
+                adjacent parts of a map.</p>
 
             <span class="optionhead">Zoom</span>
-            <p>You can use the plus (+) and minus (-) signs or the slider to zoom the map in and out. You may also need to use the direction arrows to position
+            <p>You can use the plus (+) and minus (-) signs or the slider to zoom the map in and out. You may also need to use the direction arrows to
+                position
                 the map when zooming in. If you change the zoom level, the zoom value will be saved in the TNG table.</p>
 
         </td>
@@ -114,9 +126,10 @@ echo help_header("Help: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a name="help"><p class="subheadbold">Google Map Help</p></a>
+            <a id="help"><p class="subheadbold">Google Map Help</p></a>
 
-            <p>You can obtain additional help on the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">Google Maps APIs</a>.</p>
+            <p>You can obtain additional help on the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">Google
+                    Maps APIs</a>.</p>
         </td>
     </tr>
 
