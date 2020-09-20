@@ -90,4 +90,4 @@ echo help_header("Help: Associations");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

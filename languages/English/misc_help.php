@@ -72,4 +72,4 @@ echo help_header("Help: Miscellaneous");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

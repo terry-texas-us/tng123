@@ -358,7 +358,8 @@ echo help_header("Help: Chart Settings");
                     would be severely affected.
                 </li>
 
-                <li>The inclusion of photos will affect the space remaining in pedigree boxes for names and other information. As such, it may be advisable to <span class="emphasis">tune</span>
+                <li>The inclusion of photos will affect the space remaining in pedigree boxes for names and other information. As such, it may be
+                    advisable to <span class="emphasis">tune</span>
                     box and font sizes using previously described configuration
                     options, or to select the <span class="choice">overflow</span> option described above.
                 </li>
@@ -368,4 +369,4 @@ echo help_header("Help: Chart Settings");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

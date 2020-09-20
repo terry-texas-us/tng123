@@ -37,4 +37,4 @@ echo help_header("Nápověda: Poznámky");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

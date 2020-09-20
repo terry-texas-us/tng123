@@ -88,4 +88,4 @@ echo help_header("Aide : Mise en route");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -98,4 +98,4 @@ echo help_header("Help: Timeline Events");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -7,7 +7,7 @@
 .art-postcontent a:visited,
 .art-postcontent a:hover,
 .art-postcontent a.hovered {
-    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
 
 .art-postcontent p {
@@ -365,7 +365,7 @@ div.art-logo {
 h1.art-logo-name {
     display: block;
     text-align: center;
-    font-family: Impact, Arial, Helvetica, Sans-Serif;
+    font-family: Impact, Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 54px;
     padding: 0;
@@ -380,7 +380,7 @@ h1.art-logo-name a {
 }
 
 .mmaintitle {
-    font-family: Impact, Arial, Helvetica, Sans-Serif;
+    font-family: Impact, Arial, Helvetica, sans-serif;
     font-weight: normal;
     color: #fff;
     text-shadow: 1px 1px 1px #333;
@@ -390,7 +390,7 @@ h1.art-logo-name a {
 h2.art-logo-text {
     display: block;
     text-align: center;
-    font-family: "Lucida Calligraphy", "Apple Chancery", Arial, Helvetica, Sans-Serif;
+    font-family: "Lucida Calligraphy", "Apple Chancery", Arial, Helvetica, sans-serif;
     font-size: 18px;
     padding: 0;
     margin: 0;
@@ -900,7 +900,7 @@ ul.art-vmenu a .r {
 }
 
 ul.art-vmenu a .t, ul.art-vmenu ul a {
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 11px;
@@ -1054,7 +1054,7 @@ div.art-block img {
     position: relative;
     height: 29px;
     color: #d9e9cd;
-    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 13px;
     letter-spacing: normal;
     text-transform: uppercase;
@@ -1069,7 +1069,7 @@ div.art-block img {
 .art-blockheader h3.t a:visited,
 .art-blockheader h3.t a:hover {
     color: #d9e9cd;
-    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 13px;
     letter-spacing: normal;
     text-transform: uppercase;
@@ -1106,7 +1106,7 @@ div.art-block img {
     position: relative;
     padding: 8px;
     color: #d5dbdd;
-    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 11px;
 }
 
@@ -1201,7 +1201,7 @@ div.art-block img {
 .art-blockcontent-body a:visited,
 .art-blockcontent-body a:hover {
     color: #d5dbdd;
-    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-size: 11px;
 }
 
@@ -1242,7 +1242,7 @@ div.art-block img {
 .art-button-wrapper input.art-button,
 .art-button-wrapper button.art-button {
     text-decoration: none;
-    font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 13px;
@@ -1540,7 +1540,7 @@ div.art-footer img {
 .art-page-footer a:link,
 .art-page-footer a:visited,
 .art-page-footer a:hover {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-size: 10px;
     letter-spacing: normal;
     word-spacing: normal;

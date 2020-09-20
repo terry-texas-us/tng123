@@ -336,4 +336,4 @@ echo help_header("N�pov�da: Testy DNA");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

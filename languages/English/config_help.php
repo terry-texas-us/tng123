@@ -677,4 +677,4 @@ echo help_header("Help: General Settings");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

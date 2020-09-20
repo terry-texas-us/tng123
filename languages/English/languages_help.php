@@ -106,4 +106,4 @@ echo help_header("Help: Languages");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

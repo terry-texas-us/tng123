@@ -190,4 +190,4 @@ echo help_header("Help: Reports");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

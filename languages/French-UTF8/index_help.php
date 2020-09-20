@@ -101,4 +101,4 @@ include $relpath . "begin.php";
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -152,10 +152,11 @@ echo help_header("Pomoc: Miejsca");
 
             <p>Aby ponownie szukać duplikatów, wystarczy wpisać nową wartość w polu "Szukaj" u góry ekranu i kliknąć przycisk "Kontynuuj".</p>
 
-            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+            <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                    ewentualne błędy lub niejasności.</p></li>
         </td>
     </tr>
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Alba");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -56,29 +52,31 @@ echo help_header("Nápověda: Alba");
                 která má album obsahovat, a
                 odkazy na osobu, rodinu a jiné entity, můžete přidat po uložení záznamu. Význam jednotlivých polí je následující:</p>
 
-            <p><h5 class="optionhead">Název alba</h5>
-            Název vašeho alba.</p>
+            <h5 class="optionhead">Název alba</h5>
+            <p>Název vašeho alba.</p>
 
-            <p><h5 class="optionhead">Popis</h5>
-            Krátký popis alba nebo položek, které obsahuje.</p>
+            <h5 class="optionhead">Popis</h5>
+            <p>Krátký popis alba nebo položek, které obsahuje.</p>
 
-            <p><h5 class="optionhead">Klíčová slova</h5>
-            Jakýkoli počet klíčových slov mimo název alba a popis, která mají být použita při vyhledávání tohoto alba.</p>
+            <h5 class="optionhead">Klíčová slova</h5>
+            <p>Jakýkoli počet klíčových slov mimo název alba a popis, která mají být použita při vyhledávání tohoto alba.</p>
 
-            <p><h5 class="optionhead">Aktivní</h5>
-            Je-li album označeno jako "Aktivní", bude zobrazeno na vašich stránkách ve veřejném seznamu. Je-li příznak Aktivní nastaven na "Ne",
-            návštěvníci vašich stránek
-            toto album vidět nebudou.</p>
+            <h5 class="optionhead">Aktivní</h5>
+            <p>Je-li album označeno jako "Aktivní", bude zobrazeno na vašich stránkách ve veřejném seznamu. Je-li příznak Aktivní nastaven na "Ne",
+                návštěvníci vašich stránek
+                toto album vidět nebudou.</p>
 
-            <p><h5 class="optionhead">Vždy viditelné</h5>
-            Je-li aktivní album označeno jako "Vždy viditelné" a je připojeno k osobě, rodině, pramenu nebo úložišti pramenů, bude na stránkách u
-            těchto entit vždy viditelné, i když je
-            připojeno k žijící osobě nebo rodině. Jinak jsou aktivní alba nebo média, která jsou připojená k žijícím osobám, skryta pro návštěvníky,
-            kteří nemají oprávnění prohlížet data žijících osob.
+            <h5 class="optionhead">Vždy viditelné</h5>
+            <p>Je-li aktivní album označeno jako "Vždy viditelné" a je připojeno k osobě, rodině, pramenu nebo úložišti pramenů, bude na stránkách u
+                těchto entit vždy viditelné, i když je
+                připojeno k žijící osobě nebo rodině. Jinak jsou aktivní alba nebo média, která jsou připojená k žijícím osobám, skryta pro
+                návštěvníky,
+                kteří nemají oprávnění prohlížet data žijících osob.
             </p>
 
-            <p><h5 class="optionhead">Pole, která musí být vyplněna:</h5> Název alba je jediné pole, které je nutné vyplnit, ale je ve vašem zájmu
-            vyplnit i ostatní pole.</p>
+            <h5 class="optionhead">Pole, která musí být vyplněna:</h5>
+            <p>Název alba je jediné pole, které je nutné vyplnit, ale je ve vašem zájmu
+                vyplnit i ostatní pole.</p>
 
         </td>
     </tr>
@@ -104,8 +102,10 @@ echo help_header("Nápověda: Alba");
                 na tento odkaz. Po
                 potvrzení bude položka zatemněna.</p>
 
-            <p>Pro výběr náhledu, který má být pro toto album <strong>Výchozí fotografií</strong>, přesuňte kursor myši nad tuto položku. Zobrazí se odkaz "Nastavit jako výchozí".
-                Kliknutím na tento odkaz určíte tento náhled jako výchozí fotografii tohoto alba. Chcete-li vybrat jinou výchozí fotografii, opakujte tento postup s jinou
+            <p>Pro výběr náhledu, který má být pro toto album <strong>Výchozí fotografií</strong>, přesuňte kursor myši nad tuto položku. Zobrazí se
+                odkaz "Nastavit jako výchozí".
+                Kliknutím na tento odkaz určíte tento náhled jako výchozí fotografii tohoto alba. Chcete-li vybrat jinou výchozí fotografii, opakujte
+                tento postup s jinou
                 položkou ze seznamu. Chcete-li odstranit výchozí fotografii, klikněte na odkaz "Odstranit výchozí fotografii" v horní části této
                 stránky.</p>
 
@@ -189,4 +189,4 @@ echo help_header("Nápověda: Alba");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

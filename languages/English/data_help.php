@@ -200,4 +200,4 @@ echo help_header("Help: Data Import");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

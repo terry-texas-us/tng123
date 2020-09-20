@@ -48,4 +48,4 @@ echo help_header("Help: Notes");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -199,4 +199,4 @@ echo help_header("Pomoc: Repozytoria");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

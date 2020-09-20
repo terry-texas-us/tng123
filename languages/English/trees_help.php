@@ -135,4 +135,4 @@ echo help_header("Help: Trees");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

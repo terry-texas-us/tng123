@@ -222,4 +222,4 @@ echo help_header("Pomoc: Źródła");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

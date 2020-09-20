@@ -96,4 +96,4 @@ echo help_header("Help: Citations");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

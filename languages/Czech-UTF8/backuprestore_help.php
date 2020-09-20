@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Obslužné programy");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -108,7 +104,7 @@ echo help_header("Nápověda: Obslužné programy");
                 počátku.</p>
             <p>Pokud chcete obnovit strukturu vašich TNG tabulek, klikněte v této sekci na ikonu Obnovit. Pokud byla operace úspěšná, stránka bude
                 znovu zobrazena s červenou zprávou nahoře.</p>
-            <strong>VAROVÁNÍ: Obnova struktury tabulek smaže všechna existující data!</strong></p>
+            <p><strong>VAROVÁNÍ: Obnova struktury tabulek smaže všechna existující data!</strong></p>
         </td>
     </tr>
     <tr class="databack">
@@ -146,4 +142,4 @@ echo help_header("Nápověda: Obslužné programy");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

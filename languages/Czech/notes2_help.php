@@ -37,4 +37,4 @@ echo help_header("N�pov�da: Pozn�mky");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

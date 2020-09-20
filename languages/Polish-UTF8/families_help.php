@@ -218,4 +218,4 @@ echo help_header("Pomoc: Rodziny");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

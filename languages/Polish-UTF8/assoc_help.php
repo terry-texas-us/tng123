@@ -64,4 +64,4 @@ echo help_header("Pomoc: Związki");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

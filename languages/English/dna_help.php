@@ -347,4 +347,4 @@ echo help_header("Help: DNA Tests");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -102,4 +102,4 @@ echo help_header("Pomoc: Kolekcje");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

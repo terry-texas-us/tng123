@@ -166,4 +166,4 @@ echo help_header("Help: Import Settings");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

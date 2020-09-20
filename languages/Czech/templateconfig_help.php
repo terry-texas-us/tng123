@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: Nastaven� �ablony");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -74,4 +70,4 @@ echo help_header("N�pov�da: Nastaven� �ablony");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

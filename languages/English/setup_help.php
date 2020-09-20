@@ -86,4 +86,4 @@ echo help_header("Help: Setup");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

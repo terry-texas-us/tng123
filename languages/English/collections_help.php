@@ -154,4 +154,4 @@ echo help_header("Help: Collections");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -103,4 +103,4 @@ echo help_header("N�pov�da: Hled� se");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

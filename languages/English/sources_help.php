@@ -232,4 +232,4 @@ echo help_header("Help: Sources");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

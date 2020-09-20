@@ -100,4 +100,4 @@ echo help_header("Help: Map Settings");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

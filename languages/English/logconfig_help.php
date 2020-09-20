@@ -70,4 +70,4 @@ echo help_header("Help: Log Settings");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

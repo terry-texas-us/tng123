@@ -143,4 +143,4 @@ echo help_header("Help: Events");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: Obslu�n� programy");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -106,7 +102,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
                 v p��pad� katastrofy na va�em serveru, zvl�t� pokud se aktu�ln� struktura va�ich tabulek li�� od struktury, kter� byla na po��tku.</p>
             <p>Pokud chcete obnovit strukturu va�ich TNG tabulek, klikn�te v t�to sekci na ikonu Obnovit. Pokud byla operace �sp�n�, str�nka bude
                 znovu zobrazena s �ervenou zpr�vou naho�e.</p>
-            <strong>VAROV�N�: Obnova struktury tabulek sma�e v�echna existuj�c� data!</strong></p>
+            <p><strong>VAROV�N�: Obnova struktury tabulek sma�e v�echna existuj�c� data!</strong></p>
         </td>
     </tr>
     <tr class="databack">
@@ -144,4 +140,4 @@ echo help_header("N�pov�da: Obslu�n� programy");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

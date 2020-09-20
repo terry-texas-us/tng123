@@ -98,4 +98,4 @@ echo help_header("Help: Secondary Processes");
     </tr>
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

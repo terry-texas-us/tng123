@@ -166,4 +166,4 @@ echo help_header("Help: Custom Event Types");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

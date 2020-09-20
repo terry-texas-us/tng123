@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Rodiny");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -30,7 +26,7 @@ echo help_header("Nápověda: Rodiny");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
             <p>Nalezení existujících rodin vyhledáním celého nebo části <strong>ID čísla rodiny</strong>, <strong>Jména otce</strong> nebo <strong>Jména
                     matky</strong>.
                 Pro daląí zúľení vaąeho hledání vyberte strom nebo zaąkrtněte "Pouze přesná shoda". Volbou "Jména otce" budou vaąe výběrová kritéria
@@ -219,4 +215,4 @@ echo help_header("Nápověda: Rodiny");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

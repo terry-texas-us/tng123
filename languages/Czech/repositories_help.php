@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: �lo�i�t� pramen�");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -136,6 +132,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="merge"><h4 class="subheadbold">Slou�it</h4></a>
 
             <p>Kliknut�m na tuto z�lo�ku lze p�ezkoumat a slou�it �lo�i�t� pramen�, kter� jsou lehce odli�n�, ale odkazuj� na stejn� materi�l.
                 Mus�te rozhodnout, zda jsou tyto z�znamy toto�n� nebo ne.</p>
@@ -197,4 +194,4 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

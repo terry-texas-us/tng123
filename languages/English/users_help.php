@@ -276,4 +276,4 @@ echo help_header("Help: Users");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -336,4 +336,4 @@ echo help_header("Nápověda: Testy DNA");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

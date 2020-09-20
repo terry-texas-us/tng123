@@ -46,4 +46,4 @@ echo help_header("Pomoc: Więcej");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

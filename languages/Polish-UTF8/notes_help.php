@@ -61,4 +61,4 @@ echo help_header("Pomoc: Notatki");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

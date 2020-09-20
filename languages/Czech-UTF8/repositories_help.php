@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Úložiště pramenů");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -136,6 +132,7 @@ echo help_header("Nápověda: Úložiště pramenů");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
+            <a id="merge"><h4 class="subheadbold">Sloučit</h4></a>
 
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit úložiště pramenů, která jsou lehce odlišná, ale odkazují na stejný materiál.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
@@ -197,4 +194,4 @@ echo help_header("Nápověda: Úložiště pramenů");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

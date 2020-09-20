@@ -58,4 +58,4 @@ echo help_header("Help: More");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

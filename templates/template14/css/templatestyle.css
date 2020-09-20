@@ -388,7 +388,7 @@ div.art-block img {
 .art-blockheader h3.t {
     position: relative;
     height: 42px;
-    font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
+    font-family: 'Playball', Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
     margin: 0;
     padding: 0 10px 0 5px;
@@ -400,7 +400,7 @@ div.art-block img {
 .art-blockheader h3.t a:link,
 .art-blockheader h3.t a:visited,
 .art-blockheader h3.t a:hover {
-    font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
+    font-family: 'Playball', Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
 }
 
@@ -611,7 +611,7 @@ td.calDay, td.calToday, table.calendar {
 
 .site-head, .site-head a {
     color: #a00;
-    font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
+    font-family: 'Playball', Georgia, "Times New Roman", Times, serif;
     font-size: 48pt;
     font-weight: normal;
     margin: 0;
@@ -624,13 +624,13 @@ h2.site-head {
 }
 
 .mmaintitle {
-    font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
+    font-family: 'Playball', Georgia, "Times New Roman", Times, serif;
     color: #a00;
     font-size: 1.2em;
 }
 
 .subheader {
-    font-family: "Arial Black", Arial, "Sans Serif";
+    font-family: "Arial Black", Arial, sans-serif;
     color: #825953;
     margin-top: 0;
 }
@@ -660,7 +660,7 @@ h3.subheader {
 
 .big-header {
     color: #a00;
-    font-family: 'Playball', Georgia, "Times New Roman", Times, Serif;
+    font-family: 'Playball', Georgia, "Times New Roman", Times, serif;
     font-size: 54pt;
     margin: 0;
     font-weight: normal;

@@ -5,7 +5,7 @@
 
 ul.cb-hmenu {
     font-size: 12px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     text-align: left;
@@ -24,7 +24,7 @@ ul.cb-hmenu {
 .cb-postcontent a.visited,
 .cb-postcontent a:hover,
 .cb-postcontent a.hovered {
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cb-postcontent p {
@@ -40,7 +40,7 @@ ul.cb-hmenu {
 .cb-headline, .cb-headline a, .cb-headline a:link, .cb-headline a:visited, .cb-headline a:hover,
 .cb-slogan, .cb-slogan a, .cb-slogan a:link, .cb-slogan a:visited, .cb-slogan a:hover {
     font-size: 36px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-weight: normal;
     font-style: normal;
     font-variant: small-caps;
@@ -49,25 +49,24 @@ ul.cb-hmenu {
 
 .mmaintitle {
     font-size: 1.5em;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-variant: small-caps;
 }
 
 .cb-postcontent a, .cb-postcontent a:link {
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: #655543;
 }
 
 .cb-postcontent a:visited, .cb-postcontent a.visited {
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: #655543;
 }
 
 .cb-postcontent a:hover, .cb-postcontent a.hover {
-    font-family: Arial, Helvetica, Sans-Serif;
-    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
     color: #655543;
     text-decoration: underline;
 }
@@ -76,14 +75,14 @@ ul.cb-hmenu {
     color: #1f1a14;
     margin: 10px 0 0;
     font-size: 31px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-variant: small-caps;
     text-align: center;
 }
 
 .cb-postcontent h1 a, .cb-postcontent h1 a:link, .cb-postcontent h1 a:hover, .cb-postcontent h1 a:visited {
     font-size: 31px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-variant: small-caps;
     text-align: center;
 }
@@ -92,14 +91,14 @@ ul.cb-hmenu {
     color: #1f1a14;
     margin: 10px 0 0;
     font-size: 26px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-variant: small-caps;
     text-align: center;
 }
 
 .cb-postcontent h2 a, .cb-postcontent h2 a:link, .cb-postcontent h2 a:hover, .cb-postcontent h2 a:visited {
     font-size: 26px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-variant: small-caps;
     text-align: center;
 }
@@ -108,13 +107,13 @@ ul.cb-hmenu {
     color: #1f1a14;
     margin: 10px 0 0;
     font-size: 26px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
 .cb-postcontent h3 a, .cb-postcontent h3 a:link, .cb-postcontent h3 a:hover, .cb-postcontent h3 a:visited {
     font-size: 26px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
 
@@ -122,13 +121,13 @@ ul.cb-hmenu {
     color: #1f1a14;
     margin: 10px 0 0;
     font-size: 24px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
 .cb-postcontent h4 a, .cb-postcontent h4 a:link, .cb-postcontent h4 a:hover, .cb-postcontent h4 a:visited {
     font-size: 24px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
@@ -136,13 +135,13 @@ ul.cb-hmenu {
     color: #1f1a14;
     margin: 10px 0 0;
     font-size: 22px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
 .cb-postcontent h5 a, .cb-postcontent h5 a:link, .cb-postcontent h5 a:hover, .cb-postcontent h5 a:visited {
     font-size: 22px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
@@ -150,13 +149,13 @@ ul.cb-hmenu {
     color: #1f1a14;
     margin: 10px 0 0;
     font-size: 19px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
 .cb-postcontent h6 a, .cb-postcontent h6 a:link, .cb-postcontent h6 a:hover, .cb-postcontent h6 a:visited {
     font-size: 19px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     text-align: left;
 }
 
@@ -286,7 +285,7 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
 .cb-headline a:visited,
 .cb-headline a:hover {
     font-size: 36px;
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
@@ -320,7 +319,7 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
 .cb-slogan a:visited,
 .cb-slogan a:hover {
     font-size: 14px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     text-align: left;
     padding: 0;
@@ -494,7 +493,7 @@ ul.cb-hmenu > li > a {
 .cb-hmenu a.active,
 .cb-hmenu a:hover {
     font-size: 16px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
@@ -561,7 +560,6 @@ ul.cb-hmenu > li:first-child:before {
 }
 
 ul.cb-hmenu li li a {
-    background: #cabaa0;
     background: transparent;
     border-radius: 8px;
     padding: 0 8px;
@@ -593,7 +591,7 @@ ul.cb-hmenu li li ul > li:last-child {
     line-height: 26px;
     color: #312816;
     font-size: 14px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     margin: 0;
 }
@@ -606,7 +604,7 @@ ul.cb-hmenu li li ul > li:last-child {
     line-height: 26px;
     color: #312816;
     font-size: 14px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     margin: 0;
 }
@@ -800,7 +798,7 @@ form.cb-search input[type="text"] {
     box-sizing: border-box;
     color: #4d3e23 !important;
     font-size: 16px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
 }
@@ -880,7 +878,7 @@ pre {
 }
 
 .cb-postcontent li, .cb-post li, .cb-textblock li {
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     color: #000;
     margin: 5px 0 5px 11px;
@@ -927,7 +925,7 @@ pre {
     position: relative;
     color: #d6cdc2;
     font-size: 13px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
@@ -940,7 +938,7 @@ pre {
 .cb-footer caption {
     color: #d6cdc2;
     font-size: 13px;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cb-footer p {
@@ -951,19 +949,19 @@ pre {
 .cb-footer a,
 .cb-footer a:link {
     color: #ad9a85;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 
 .cb-footer a:visited {
     color: #c0a572;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 
 .cb-footer a:hover {
     color: #b39356;
-    font-family: Arial, Helvetica, Sans-Serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
 }
 
@@ -1031,7 +1029,7 @@ pre {
 }
 
 .cb-searchtext {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-size: 14px;
     font-weight: bold;
     vertical-align: bottom;
@@ -1207,7 +1205,7 @@ a.size0:visited {
 }
 
 .header {
-    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, Serif;
+    font-family: 'Palatino Linotype', Georgia, 'Times New Roman', Times, serif;
     font-size: 28px;
     font-weight: normal;
     padding-bottom: 6px;

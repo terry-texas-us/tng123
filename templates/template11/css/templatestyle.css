@@ -387,7 +387,7 @@ div.art-block img {
 .art-blockheader h3.t {
     position: relative;
     height: 42px;
-    font-family: Georgia, "Times New Roman", Times, Serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
     margin: 0;
     padding: 0 10px 0 5px;
@@ -399,7 +399,7 @@ div.art-block img {
 .art-blockheader h3.t a:link,
 .art-blockheader h3.t a:visited,
 .art-blockheader h3.t a:hover {
-    font-family: Georgia, "Times New Roman", Times, Serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
 }
 
@@ -621,7 +621,7 @@ td.calDay, td.calToday, table.calendar {
 
 h2.site-head, h2.site-head a {
     color: #9f5392;
-    font-family: Georgia, "Times New Roman", Times, Serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 20pt;
     padding: 0 0 0 3px;
     margin: 0 0 15px;
@@ -629,7 +629,7 @@ h2.site-head, h2.site-head a {
 }
 
 .mmaintitle {
-    font-family: Georgia, "Times New Roman", Times, Serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     color: #9f5392;
 }
 
@@ -642,7 +642,7 @@ h2.site-head, h2.site-head a {
 
 .big-header {
     color: #9f5392;
-    font-family: Georgia, "Times New Roman", Times, Serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 55px;
     text-align: center;
     padding-top: 10px;

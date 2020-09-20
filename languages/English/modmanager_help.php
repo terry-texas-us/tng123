@@ -22,7 +22,7 @@ echo help_header("Help: Mod Manager");
                 <a href="#syntax" class="lightlink">Mod Syntax</a> &nbsp;|&nbsp;
                 <a href="#files" class="lightlink">Config Files</a> &nbsp;|&nbsp;
                 <a href="#batch" class="lightlink">Batch Updates</a> &nbsp;|&nbsp;
-                <a href="#option" class="lightlink">Options</a>
+                <a href="#options" class="lightlink">Options</a>
             </p>
         </td>
     </tr>
@@ -253,7 +253,6 @@ echo help_header("Help: Mod Manager");
         </td>
     </tr>
 
-
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

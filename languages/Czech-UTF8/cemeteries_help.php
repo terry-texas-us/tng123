@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Hřbitovy");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -59,8 +55,8 @@ echo help_header("Nápověda: Hřbitovy");
 
             <p>Chcete-li přidat nový hřbitov, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář.
             <p>Chcete-li upravit existující hřbitov, použijte
-                záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Upravit vedle tohoto řádku.</p>
-            Význam jednotlivých polí při přidání nebo úpravě hřbitova je následující:</p>
+                záložku <a href="#search">Hledat</a> pro nalezení hřbitova, a poté klikněte na ikonu Upravit vedle tohoto řádku.
+                Význam jednotlivých polí při přidání nebo úpravě hřbitova je následující:</p>
 
             <h5 class="optionhead">Název hřbitova</h5>
             <p>Vložte úplný název hřbitova. Např. Hřbitov Klášterec by měl být zapsán jako <em>Hřbitov Klášterec</em> a ne jen jako <em>Klášterec</em>.
@@ -79,11 +75,13 @@ echo help_header("Nápověda: Hřbitovy");
                 až nyní pomocí předchozího pole, použijte toto pole k zápisu umístění a názvu souboru po jeho nahrání. Předpokládané umístění a název
                 bude pro vás předvyplněn.</p>
 
-            <p><h5 class="optionhead">POZN.</h5>: Budete-li na stránky nahrávat nyní, adresář, který jste zde označili, musí existovat a musí mít
-            nastaveno právo na zápis.
-            Pokud složka neexistuje, můžete ji vytvořit pomocí tlačítka "Vytvořit složku" v Základním nastavení. Není-li tato operace možná, použijte
-            váš FTP program
-            nebo jiný online souborový správce. </p>
+            <h5 class="optionhead">POZN.</h5>
+            <p>Budete-li na stránky nahrávat nyní, adresář, který jste zde označili, musí existovat a musí mít
+                nastaveno právo na zápis.
+                Pokud složka neexistuje, můžete ji vytvořit pomocí tlačítka "Vytvořit složku" v Základním nastavení. Není-li tato operace možná,
+                použijte
+                váš FTP program
+                nebo jiný online souborový správce. </p>
 
             <h5 class="optionhead">Asociované místo</h5>
             <p>Chcete-li tento hřbitov propojit s místem, zadejte sem název místa tak, jak existuje ve vaší databázi nebo postupujte tak, že
@@ -142,4 +140,4 @@ echo help_header("Nápověda: Hřbitovy");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

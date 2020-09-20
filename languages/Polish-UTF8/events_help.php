@@ -122,4 +122,4 @@ echo help_header("Pomoc: Wydarzenia");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

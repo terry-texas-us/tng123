@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Hledá se");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -103,4 +99,4 @@ echo help_header("Nápověda: Hledá se");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

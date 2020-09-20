@@ -73,12 +73,14 @@ echo help_header("Pomoc: Cmentarze");
                 lub zdjęcia przy użyciu
                 poprzedniego pola, ścieżka i nazwa pliku zostanie Ci zaproponowana.</p>
 
-            <p><h5 class="optionhead">UWAGA</h5>: Jeśli załadowujesz nowy plik, folder musi już istnieć i musi być zapisywalny. Jeśli folder jeszcze
-            nie istnieje możesz skorzystać z funkcji "Utwórz folder" w Ustawieniach głównych. Jeśli to zawiedzie,
-            należy użyć programu FTP lub menedżera plików w online.
-            Folder ten musi mieć uprawnienia 777 lub 755, które w wielu przypadkach również wystarczą. Nie używaj polskich liter takich jak np. ą, ę
-            ż, ź. Pisz małymi literami, nie rozdzielaj nazwy kropkami lub przecinkami (np. 12.10.99 moje
-            zdjęcie.jpg) Staraj się zapisywać nazwy plików jak w przykładzie: <strong>12_10_99_moje_zdjecie.jpg</strong>.</p>
+            <h5 class="optionhead">UWAGA</h5>
+            <p>: Jeśli załadowujesz nowy plik, folder musi już istnieć i musi być zapisywalny. Jeśli folder jeszcze
+                nie istnieje możesz skorzystać z funkcji "Utwórz folder" w Ustawieniach głównych. Jeśli to zawiedzie,
+                należy użyć programu FTP lub menedżera plików w online.
+                Folder ten musi mieć uprawnienia 777 lub 755, które w wielu przypadkach również wystarczą. Nie używaj polskich liter takich jak np. ą,
+                ę
+                ż, ź. Pisz małymi literami, nie rozdzielaj nazwy kropkami lub przecinkami (np. 12.10.99 moje
+                zdjęcie.jpg) Staraj się zapisywać nazwy plików jak w przykładzie: <strong>12_10_99_moje_zdjecie.jpg</strong>.</p>
 
             <p><h5 class="optionhead">Miasto, powiat, województwo, kraj</h5>
             <p>Podaj tyle informacji, ile wiesz o lokalizacji tego cmentarza. Kraj jest wymagany, pozostałe pola opcjonalne.</p>
@@ -129,4 +131,4 @@ echo help_header("Pomoc: Cmentarze");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

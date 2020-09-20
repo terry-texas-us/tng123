@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Uživatelé");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -218,7 +214,7 @@ echo help_header("Nápověda: Uživatelé");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="rights"><h4 class="subheadbold">Omezení přístupu</h4></a>
+            <a id="limits"><h4 class="subheadbold">Omezení přístupu</h4></a>
 
             <p>Toto definuje omezení uživatelských práv. Všichni uživatelé (včetně anonymních návštěvníků) mohou vždy vidět údaje zesnulých osob. Zde
                 nejsou nutná žádná práva
@@ -265,4 +261,4 @@ echo help_header("Nápověda: Uživatelé");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

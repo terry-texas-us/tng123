@@ -146,4 +146,4 @@ echo help_header("Help: Branches");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

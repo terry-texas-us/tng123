@@ -411,4 +411,4 @@ echo help_header("Pomoc: Media");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

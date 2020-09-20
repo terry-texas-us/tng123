@@ -118,7 +118,7 @@ echo help_header("Help: Utilities");
             <p>To restore your TNG table structure, click on the Restore icon in this section. If the operation is successful, the page will be
                 redisplayed with a red message at the top
                 detailing the action taken.</p>
-            <strong>WARNING: Restoring the table structure will delete all existing data!</strong></p>
+            <p><strong>WARNING: Restoring the table structure will delete all existing data!</strong></p>
         </td>
     </tr>
     <tr class="databack">
@@ -158,4 +158,4 @@ echo help_header("Help: Utilities");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

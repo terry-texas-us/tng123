@@ -217,4 +217,4 @@ echo help_header("Help: Places");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

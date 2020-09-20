@@ -88,10 +88,12 @@ echo help_header("Help: Cemeteries");
                 suggested path and file name will be prepopulated
                 for you.</p>
 
-            <p><h5 class="optionhead">NOTE</h5>: If you are uploading now, the directory you indicate here
-            must already exist and must be writeable. You may be able to use the "Make Folder" button in the General Settings to create the folder if
-            it does not already exist.
-            If that fails, use an FTP program or online file manager.</p>
+            <h5 class="optionhead">NOTE</h5>
+            <p>If you are uploading now, the directory you indicate here
+                must already exist and must be writeable. You may be able to use the "Make Folder" button in the General Settings to create the folder
+                if
+                it does not already exist.
+                If that fails, use an FTP program or online file manager.</p>
 
             <h5 class="optionhead">Associated Place</h5>
             <p>To link this cemetery to a place, enter the place name here as it exists in your database, or proceed to fill
@@ -153,4 +155,4 @@ echo help_header("Help: Cemeteries");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

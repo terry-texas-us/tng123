@@ -37,6 +37,7 @@ echo help_header("Help: Google Maps");
 
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <a id="show"><h4 class="subheadbold">Show/Hide</h4></a>
             <p><span class="subheadbold">Show/Hide Clickable Map</span><br><br>
                 Click the "Show/Hide Clickable Map" button to show the Google Map and search for a Geocode
                 Location, or to hide the map when finished. The default initial setting is specified in Admin/Setup/Map Settings.</p>
@@ -46,7 +47,7 @@ echo help_header("Help: Google Maps");
     <tr class="databack">
         <td class="tngshadow">
 
-            <a id="show"><h4 class="subheadbold">Search</h4></a>
+            <a id="search"><h4 class="subheadbold">Search</h4></a>
             <p>The Google Map Geocoder interface allows you to locate the latitude and longitude for a place name using the Geocode place input field.
                 Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) can also be used to look up
                 coordinates.</p>
@@ -148,4 +149,4 @@ echo help_header("Help: Google Maps");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

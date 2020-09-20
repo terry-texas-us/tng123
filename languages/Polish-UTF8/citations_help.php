@@ -81,4 +81,4 @@ echo help_header("Pomoc: Cytaty");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

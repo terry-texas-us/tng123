@@ -162,4 +162,4 @@ echo help_header("Pomoc: Albumy");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

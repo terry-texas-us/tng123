@@ -82,11 +82,12 @@ echo help_header("Pomoc: Pierwsze kroki");
                 <li><p>MySQL Reference: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
                 <li><p>HTML Reference: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>
                 <li><p>Bezpośredni kontakt z autorem: <a href="mailto:darrin@lythgoes.net">darrin@lythgoes.net</a>.</p></li>
-                <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać ewentualne błędy lub niejasności.</p></li>
+                <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
+                        ewentualne błędy lub niejasności.</p></li>
             </ol>
         </td>
     </tr>
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

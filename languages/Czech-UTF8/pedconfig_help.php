@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Nastavení schémat");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -361,7 +357,8 @@ echo help_header("Nápověda: Nastavení schémat");
                     protože by prodlužovaly čas načtení celé stránky.
                 </li>
 
-                <li>Vložení fotografií ovlivní prostor, který v rámečku zůstane pro jména a další údaje. V tomto případě by bylo vhodné rámeček a velikost písma <span class="emphasis">vyladit</span> použitím
+                <li>Vložení fotografií ovlivní prostor, který v rámečku zůstane pro jména a další údaje. V tomto případě by bylo vhodné rámeček a
+                    velikost písma <span class="emphasis">vyladit</span> použitím
                     výše popsaných konfiguračních metod nebo vybrat možnost <span class="choice">přetečení</span> popsanou výše.
                 </li>
             </ul>
@@ -370,4 +367,4 @@ echo help_header("Nápověda: Nastavení schémat");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

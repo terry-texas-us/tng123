@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("Nápověda: Nastavení");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -58,7 +54,7 @@ echo help_header("Nápověda: Nastavení");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="diag"><h4 class="subheadbold">Vytvoření tabulek</h4></a>
+            <a id="tables"><h4 class="subheadbold">Vytvoření tabulek</h4></a>
 
             <h5 class="optionhead">Vytvořit tabulky</h5>
             <p>Na toto tlačítko klikněte <strong>POUZE</strong>, když vaši stránku nastavujete poprvé, protože zde budou vytvořeny databázové tabulky
@@ -75,4 +71,4 @@ echo help_header("Nápověda: Nastavení");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

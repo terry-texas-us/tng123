@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: Alba");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -56,30 +52,31 @@ echo help_header("N�pov�da: Alba");
                 kter� m� album obsahovat, a
                 odkazy na osobu, rodinu a jin� entity, m��ete p�idat po ulo�en� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-            <p><h5 class="optionhead">N�zev alba</h5>
-            N�zev va�eho alba.</p>
+            <h5 class="optionhead">N�zev alba</h5>
+            <p>N�zev va�eho alba.</p>
 
-            <p><h5 class="optionhead">Popis</h5>
-            Kr�tk� popis alba nebo polo�ek, kter� obsahuje.</p>
+            <h5 class="optionhead">Popis</h5>
+            <p>Kr�tk� popis alba nebo polo�ek, kter� obsahuje.</p>
 
-            <p><h5 class="optionhead">Kl��ov� slova</h5>
-            Jak�koli po�et kl��ov�ch slov mimo n�zev alba a popis, kter� maj� b�t pou�ita p�i vyhled�v�n� tohoto alba.</p>
+            <h5 class="optionhead">Kl��ov� slova</h5>
+            <p>Jak�koli po�et kl��ov�ch slov mimo n�zev alba a popis, kter� maj� b�t pou�ita p�i vyhled�v�n� tohoto alba.</p>
 
-            <p><h5 class="optionhead">Aktivn�</h5>
-            Je-li album ozna�eno jako "Aktivn�", bude zobrazeno na va�ich str�nk�ch ve ve�ejn�m seznamu. Je-li p��znak Aktivn� nastaven na "Ne",
-            n�v�t�vn�ci va�ich str�nek
-            toto album vid�t nebudou.</p>
+            <h5 class="optionhead">Aktivn�</h5>
+            <p>Je-li album ozna�eno jako "Aktivn�", bude zobrazeno na va�ich str�nk�ch ve ve�ejn�m seznamu. Je-li p��znak Aktivn� nastaven na "Ne",
+                n�v�t�vn�ci va�ich str�nek
+                toto album vid�t nebudou.</p>
 
-            <p><h5 class="optionhead">V�dy viditeln�</h5>
-            Je-li aktivn� album ozna�eno jako "V�dy viditeln�" a je p�ipojeno k osob�, rodin�, pramenu nebo �lo�i�ti pramen�, bude na str�nk�ch u
-            t�chto entit v�dy viditeln�, i kdy� je
-            p�ipojeno k �ij�c� osob� nebo rodin�. Jinak jsou aktivn� alba nebo m�dia, kter� jsou p�ipojen� k �ij�c�m osob�m, skryta pro n�v�t�vn�ky,
-            kte�� nemaj� opr�vn�n� prohl�et data �ij�c�ch osob.
+            <h5 class="optionhead">V�dy viditeln�</h5>
+            <p>Je-li aktivn� album ozna�eno jako "V�dy viditeln�" a je p�ipojeno k osob�, rodin�, pramenu nebo �lo�i�ti pramen�, bude na str�nk�ch u
+                t�chto entit v�dy viditeln�, i kdy� je
+                p�ipojeno k �ij�c� osob� nebo rodin�. Jinak jsou aktivn� alba nebo m�dia, kter� jsou p�ipojen� k �ij�c�m osob�m, skryta pro
+                n�v�t�vn�ky,
+                kte�� nemaj� opr�vn�n� prohl�et data �ij�c�ch osob.
             </p>
 
-            <p><h5 class="optionhead">Pole, kter� mus� b�t vypln�na:</h5> N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu
-            vyplnit i ostatn� pole.</p>
-
+            <h5 class="optionhead">Pole, kter� mus� b�t vypln�na:</h5>
+            <p>N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu
+                vyplnit i ostatn� pole.</p>
         </td>
     </tr>
     <tr class="databack">
@@ -104,8 +101,10 @@ echo help_header("N�pov�da: Alba");
                 na tento odkaz. Po
                 potvrzen� bude polo�ka zatemn�na.</p>
 
-            <p>Pro v�b�r n�hledu, kter� m� b�t pro toto album <strong>V�choz� fotografi�</strong>, p�esu�te kursor my�i nad tuto polo�ku. Zobraz� se odkaz "Nastavit jako v�choz�".
-                Kliknut�m na tento odkaz ur��te tento n�hled jako v�choz� fotografii tohoto alba. Chcete-li vybrat jinou v�choz� fotografii, opakujte tento postup s jinou
+            <p>Pro v�b�r n�hledu, kter� m� b�t pro toto album <strong>V�choz� fotografi�</strong>, p�esu�te kursor my�i nad tuto polo�ku. Zobraz� se
+                odkaz "Nastavit jako v�choz�".
+                Kliknut�m na tento odkaz ur��te tento n�hled jako v�choz� fotografii tohoto alba. Chcete-li vybrat jinou v�choz� fotografii, opakujte
+                tento postup s jinou
                 polo�kou ze seznamu. Chcete-li odstranit v�choz� fotografii, klikn�te na odkaz "Odstranit v�choz� fotografii" v horn� ��sti t�to
                 str�nky.</p>
 
@@ -189,4 +188,4 @@ echo help_header("N�pov�da: Alba");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

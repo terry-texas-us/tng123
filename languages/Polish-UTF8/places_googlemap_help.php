@@ -16,15 +16,16 @@ echo help_header("Pomoc: Mapy Google");
             </p>
             <h2 class="largeheader">Pomoc: <small>Mapy Google</small></h2>
             <p class="smaller menu" style="clear: both;">
-                <a href="#show" class="lightlink">Search</a> &nbsp;|&nbsp;
-                <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
-                <a href="#controls" class="lightlink">Map Controls</a> &nbsp;|&nbsp;
+                <a href="#show" class="lightlink">Pokaż/Ukryj</a> &nbsp;|&nbsp;
+                <a href="#search" class="lightlink">Szukanie</a> &nbsp;|&nbsp;
+                <a href="#controls" class="lightlink">Sterowanie mapą Google</a> &nbsp;|&nbsp;
                 <a href="#help" class="lightlink">Pomoc</a>
             </p>
         </td>
     </tr>
     <tr class="databack">
         <td class="tngshadow">
+            <a id="show"><h4 class="subheadbold">Pokaż/Ukryj</h4></a>
             <p><span class="subheadbold">Pokaż/ukryj mapę Google</span><br><br>
                 Kliknij przycisk "Pokaż /ukryj mapę Google", aby pokazać mapę Google i szukać szerokości i długości geograficznej lokalizacji oraz
                 zoomu, lub ukryć mapę po
@@ -34,8 +35,7 @@ echo help_header("Pomoc: Mapy Google");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-
-            <a id="show"><h4 class="subheadbold">Szukanie</h4></a>
+            <a id="search"><h4 class="subheadbold">Szukanie</h4></a>
             <p>Interfejs Google Map Geocoder pozwala na zlokalizowanie szerokości i długości geograficznej miejsca za pomocą wywołania poprzez
                 kliknięcie w wybrany punkt.
                 Możesz również skorzystać z StreetMap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>) aby
@@ -138,4 +138,4 @@ echo help_header("Pomoc: Mapy Google");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

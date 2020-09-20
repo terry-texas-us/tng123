@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: Rodiny");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -30,7 +26,7 @@ echo help_header("N�pov�da: Rodiny");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-
+            <a id="search"><h4 class="subheadbold">Hledat</h4></a>
             <p>Nalezen� existuj�c�ch rodin vyhled�n�m cel�ho nebo ��sti <strong>ID ��sla rodiny</strong>, <strong>Jm�na otce</strong> nebo <strong>Jm�na
                     matky</strong>.
                 Pro dal�� z��en� va�eho hled�n� vyberte strom nebo za�krtn�te "Pouze p�esn� shoda". Volbou "Jm�na otce" budou va�e v�b�rov� krit�ria
@@ -219,4 +215,4 @@ echo help_header("N�pov�da: Rodiny");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

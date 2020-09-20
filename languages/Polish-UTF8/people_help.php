@@ -293,4 +293,4 @@ echo help_header("Pomoc: Osoby");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -88,4 +88,4 @@ echo help_header("Help: Template Settings");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

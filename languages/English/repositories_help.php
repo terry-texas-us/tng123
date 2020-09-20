@@ -207,4 +207,4 @@ echo help_header("Help: Repositories");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

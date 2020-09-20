@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: Nastaven�");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -58,7 +54,7 @@ echo help_header("N�pov�da: Nastaven�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="diag"><h4 class="subheadbold">Vytvo�en� tabulek</h4></a>
+            <a id="tables"><h4 class="subheadbold">Vytvo�en� tabulek</h4></a>
 
             <h5 class="optionhead">Vytvo�it tabulky</h5>
             <p>Na toto tla��tko klikn�te <strong>POUZE</strong>, kdy� va�i str�nku nastavujete poprv�, proto�e zde budou vytvo�eny datab�zov� tabulky
@@ -75,4 +71,4 @@ echo help_header("N�pov�da: Nastaven�");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

@@ -912,8 +912,8 @@ switch ($textpart) {
     $admtext['configuration'] = "Configurazione";
     $admtext['entersysvars'] = "Battitura dei valori delle variabili sistema.";
     $admtext['createdbtables'] = "Crea le tavole che contengono le vostre informazioni.";
-    $admtext['tcwarning'] = "<stong>Attenzione!</strong> Scegliete quest'opzione soltanto se definite la vostra località per la prima volta.<strong>Tutti i dati esistenti, là le fotografie, cronistorie, infos di tombe e cimiteri, saranno cancellate!</strong>";
-    $admtext['conftabledelete'] = "Questo cancellerà tutti i dati esistenti. Essete certo di volere continuare?";
+      $admtext['tcwarning'] = "<strong>Attenzione!</strong> Scegliete quest'opzione soltanto se definite la vostra località per la prima volta.<strong>Tutti i dati esistenti, là le fotografie, cronistorie, infos di tombe e cimiteri, saranno cancellate!</strong>";
+      $admtext['conftabledelete'] = "Questo cancellerà tutti i dati esistenti. Essete certo di volere continuare?";
     $admtext['performdatamaint'] = "Manutenzione dei dati, gestione delle fotografie, cronistorie ed altri componenti.";
     $admtext['createtables'] = "Creare le tavole";
     $admtext['configsettings'] = "Configurazione generale";

@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: U�ivatel�");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -218,7 +214,7 @@ echo help_header("N�pov�da: U�ivatel�");
         <td class="tngshadow">
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
-            <a id="rights"><h4 class="subheadbold">Omezen� p��stupu</h4></a>
+            <a id="limits"><h4 class="subheadbold">Omezen� p��stupu</h4></a>
 
             <p>Toto definuje omezen� u�ivatelsk�ch pr�v. V�ichni u�ivatel� (v�etn� anonymn�ch n�v�t�vn�k�) mohou v�dy vid�t �daje zesnul�ch osob. Zde
                 nejsou nutn� ��dn� pr�va
@@ -265,4 +261,4 @@ echo help_header("N�pov�da: U�ivatel�");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

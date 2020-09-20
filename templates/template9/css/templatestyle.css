@@ -1,7 +1,7 @@
 /* templatestyle.css for template 9 overrides to TNG genstyle.css   */
 
 #art-main {
-    /*font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;*/
+    /*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
     font-style: normal;
     font-weight: normal;
 }
@@ -14,7 +14,7 @@
 .art-postcontent a.visited,
 .art-postcontent a:hover,
 .art-postcontent a.hovered {
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
 
 .art-postcontent p {
@@ -292,7 +292,7 @@ div.art-logo {
 h1.art-logo-name {
     display: block;
     text-align: center;
-    font-family: "Lucida Calligraphy", "Apple Chancery", Arial, Helvetica, Sans-Serif;
+    font-family: "Lucida Calligraphy", "Apple Chancery", Arial, Helvetica, sans-serif;
     font-size: 42px;
     letter-spacing: 2px;
     padding: 0;
@@ -306,14 +306,14 @@ h1.art-logo-name a {
 }
 
 .mmaintitle {
-    font-family: "Lucida Calligraphy", "Apple Chancery", Arial, Helvetica, Sans-Serif;
+    font-family: "Lucida Calligraphy", "Apple Chancery", Arial, Helvetica, sans-serif;
     color: #da5820;
 }
 
 h2.art-logo-text {
     display: block;
     text-align: center;
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 17px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -768,7 +768,7 @@ div.art-block img {
     position: relative;
     height: 29px;
     color: #fbedd0;
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 13px;
     letter-spacing: normal;
     text-transform: uppercase;
@@ -783,7 +783,7 @@ div.art-block img {
 .art-blockheader h3.t a:visited,
 .art-blockheader h3.t a:hover {
     color: #fbedd0;
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 13px;
     letter-spacing: normal;
     text-transform: uppercase;
@@ -820,7 +820,7 @@ div.art-block img {
     position: relative;
     padding: 8px;
     color: #51493e;
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 11px;
 }
 
@@ -913,7 +913,7 @@ div.art-block img {
 .art-blockcontent-body a:visited,
 .art-blockcontent-body a:hover {
     color: #51493e;
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 11px;
 }
 
@@ -954,7 +954,7 @@ div.art-block img {
 .art-button-wrapper input.art-button,
 .art-button-wrapper button.art-button {
     text-decoration: none;
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 13px;
@@ -1142,7 +1142,7 @@ h2.art-postheader a:hover, h2.art-postheader a.hovered {
 .art-postheadericons a:link,
 .art-postheadericons a:visited,
 .art-postheadericons a:hover {
-    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 12px;
     letter-spacing: 1px;
     color: #484137;
@@ -1301,7 +1301,7 @@ div.art-footer img {
 
 /* begin PageFooter */
 .art-page-footer {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-size: 10px;
     letter-spacing: normal;
     word-spacing: normal;
@@ -1517,7 +1517,7 @@ ul.art-vmenu a .r {
 }
 
 ul.art-vmenu a .t, ul.art-vmenu ul a {
-    font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+    font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 11px;

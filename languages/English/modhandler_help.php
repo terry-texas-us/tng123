@@ -379,4 +379,4 @@ echo help_header("Help: Mod Manager");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

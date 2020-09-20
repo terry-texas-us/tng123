@@ -3,10 +3,6 @@ include "../../helplib.php";
 echo help_header("N�pov�da: Nastaven� sch�mat");
 ?>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
 <body class="helpbody">
 <a id="top"></a>
 <table class="tblback normal">
@@ -361,7 +357,8 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                     proto�e by prodlu�ovaly �as na�ten� cel� str�nky.
                 </li>
 
-                <li>Vlo�en� fotografi� ovlivn� prostor, kter� v r�me�ku z�stane pro jm�na a dal�� �daje. V tomto p��pad� by bylo vhodn� r�me�ek a velikost p�sma <span class="emphasis">vyladit</span> pou�it�m
+                <li>Vlo�en� fotografi� ovlivn� prostor, kter� v r�me�ku z�stane pro jm�na a dal�� �daje. V tomto p��pad� by bylo vhodn� r�me�ek a
+                    velikost p�sma <span class="emphasis">vyladit</span> pou�it�m
                     v��e popsan�ch konfigura�n�ch metod nebo vybrat mo�nost <span class="choice">p�ete�en�</span> popsanou v��e.
                 </li>
             </ul>
@@ -370,4 +367,4 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>

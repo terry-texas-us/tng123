@@ -521,4 +521,4 @@ echo help_header("Help: Media");
 
 </table>
 </body>
-</html>
+<?php echo "</html>"; ?>
