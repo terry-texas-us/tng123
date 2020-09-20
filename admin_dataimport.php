@@ -189,16 +189,16 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                         <td colspan="2">
                             <h3 class="subhead"><?php echo $admtext['replace']; ?>:</h3>
                             <input type="radio" name="del" value="yes"<?php if ($tngimpcfg['defimpopt'] == 1) {
-                                echo " checked=\"checked\"";
+                                echo " checked";
                             } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['allcurrentdata']; ?> &nbsp;
                             <input type="radio" name="del" value="match"<?php if (!$tngimpcfg['defimpopt']) {
-                                echo " checked=\"checked\"";
+                                echo " checked";
                             } ?> onclick="toggleNorecalcdiv(1); toggleAppenddiv(0);"> <?php echo $admtext['matchingonly']; ?> &nbsp;
                             <input type="radio" name="del" value="no"<?php if ($tngimpcfg['defimpopt'] == 2) {
-                                echo " checked=\"checked\"";
+                                echo " checked";
                             } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(0);"> <?php echo $admtext['donotreplace']; ?> &nbsp;
                             <input type="radio" name="del" value="append"<?php if ($tngimpcfg['defimpopt'] == 3) {
-                                echo " checked=\"checked\"";
+                                echo " checked";
                             } ?> onclick="document.form1.norecalc.checked = false; toggleNorecalcdiv(0); toggleAppenddiv(1);"> <?php echo $admtext['appendall']; ?><br><br>
                             <span class="smaller"><em><?php echo $admtext['imphints']; ?></em></span>
                         </td>

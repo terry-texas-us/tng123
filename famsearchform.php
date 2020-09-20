@@ -178,7 +178,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($ffnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -196,7 +196,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($flnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -217,7 +217,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mfnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -235,7 +235,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mlnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -256,7 +256,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($fidqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -274,7 +274,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mpqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -292,7 +292,7 @@ echo $formstr;
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($myqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -310,7 +310,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($dvpqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -328,7 +328,7 @@ echo $formstr;
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($dvyqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -349,7 +349,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mtqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -460,7 +460,7 @@ echo $formstr;
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mybool == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -478,7 +478,7 @@ echo $formstr;
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($nr == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }

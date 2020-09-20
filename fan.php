@@ -182,7 +182,7 @@ $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"windo
 for ($i = $fan_gen_min; $i <= $fan_gen_max; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $generations) {
-        $innermenu .= " selected=\"selected\"";
+        $innermenu .= " selected";
     }
     $innermenu .= ">$i</option>\n";
 }

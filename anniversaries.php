@@ -111,68 +111,68 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
             echo "<option value=\"\">&nbsp;</option>\n";
             echo "<option value=\"birth\"";
             if ($tngevent == "birth") {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$text['born']}</option>\n";
 
             echo "<option value=\"altbirth\"";
             if ($tngevent == "altbirth") {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$text['christened']}</option>\n";
 
             echo "<option value=\"death\"";
             if ($tngevent == "death") {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$text['died']}</option>\n";
 
             echo "<option value=\"burial\"";
             if ($tngevent == "burial") {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$text['buried']}</option>\n";
 
             echo "<option value=\"marr\"";
             if ($tngevent == "marr") {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$text['married']}</option>\n";
 
             echo "<option value=\"div\"";
             if ($tngevent == "div") {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$text['divorced']}</option>\n";
 
             if ($ldsOK) {
                 echo "<option value=\"bapt\"";
                 if ($tngevent == "bapt") {
-                    echo " selected=\"selected\"";
+                    echo " selected";
                 }
                 echo ">{$text['baptizedlds']}</option>\n";
 
                 echo "<option value=\"conf\"";
                 if ($tngevent == "conf") {
-                    echo " selected=\"selected\"";
+                    echo " selected";
                 }
                 echo ">{$text['conflds']}</option>\n";
 
                 echo "<option value=\"init\"";
                 if ($tngevent == "init") {
-                    echo " selected=\"selected\"";
+                    echo " selected";
                 }
                 echo ">{$text['initlds']}</option>\n";
 
                 echo "<option value=\"endl\"";
                 if ($tngevent == "endl") {
-                    echo " selected=\"selected\"";
+                    echo " selected";
                 }
                 echo ">{$text['endowedlds']}</option>\n";
 
                 echo "<option value=\"seal\"";
                 if ($tngevent == "seal") {
-                    echo " selected=\"selected\"";
+                    echo " selected";
                 }
                 echo ">{$text['sealedslds']}</option>\n";
             }
@@ -185,7 +185,7 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
                 if (!in_array($row['tag'], $dontdo)) {
                     echo "<option value=\"{$row['eventtypeID']}\"";
                     if ($tngevent == $row['eventtypeID']) {
-                        echo " selected=\"selected\"";
+                        echo " selected";
                     }
                     echo ">" . getEventDisplay($row['display']) . "</option>\n";
                 }
@@ -203,7 +203,7 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
             for ($i = 1; $i <= 31; $i++) {
                 echo "<option value=\"$i\"";
                 if ($i == $tngdaymonth) {
-                    echo " selected=\"selected\"";
+                    echo " selected";
                 }
                 echo ">$i</option>\n";
             }
@@ -217,40 +217,40 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
         <select name="tngmonth" id="tngmonth">
             <option value="">&nbsp;</option>
             <option value="1"<?php if ($tngmonth == 1) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['JANUARY']; ?></option>
             <option value="2"<?php if ($tngmonth == 2) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['FEBRUARY']; ?></option>
             <option value="3"<?php if ($tngmonth == 3) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['MARCH']; ?></option>
             <option value="4"<?php if ($tngmonth == 4) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['APRIL']; ?></option>
             <option value="5"<?php if ($tngmonth == 5) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['MAY']; ?></option>
             <option value="6"<?php if ($tngmonth == 6) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['JUNE']; ?></option>
             <option value="7"<?php if ($tngmonth == 7) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['JULY']; ?></option>
             <option value="8"<?php if ($tngmonth == 8) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['AUGUST']; ?></option>
             <option value="9"<?php if ($tngmonth == 9) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['SEPTEMBER']; ?></option>
             <option value="10"<?php if ($tngmonth == 10) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['OCTOBER']; ?></option>
             <option value="11"<?php if ($tngmonth == 11) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['NOVEMBER']; ?></option>
             <option value="12"<?php if ($tngmonth == 12) {
-                echo " selected=\"selected\"";
+                echo " selected";
             } ?>><?php echo $dates['DECEMBER']; ?></option>
         </select>
     </div>

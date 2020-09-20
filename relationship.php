@@ -791,7 +791,7 @@ $innermenu .= "<select name=\"maxrels\" class=\"verysmall\">\n";
 for ($i = 1; $i <= $pedigree['maxrels']; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $maxrels) {
-        $innermenu .= " selected=\"selected\"";
+        $innermenu .= " selected";
     }
     $innermenu .= ">$i</option>\n";
 }
@@ -801,12 +801,12 @@ $innermenu .= $text['dospouses2'] . ": &nbsp;";
 $innermenu .= "<select name=\"disallowspouses\" class=\"verysmall\">\n";
 $innermenu .= "<option value=\"0\"";
 if (!$disallowspouses) {
-    $innermenu .= " selected=\"selected\"";
+    $innermenu .= " selected";
 }
 $innermenu .= ">{$admtext['yes']}</option>\n";
 $innermenu .= "<option value=\"1\"";
 if ($disallowspouses) {
-    $innermenu .= " selected=\"selected\"";
+    $innermenu .= " selected";
 }
 $innermenu .= ">{$admtext['no']}</option>\n";
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
@@ -816,7 +816,7 @@ $innermenu .= "<select name=\"generations\" class=\"verysmall\">\n";
 for ($i = 1; $i <= $pedigree['maxupgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $generations) {
-        $innermenu .= " selected=\"selected\"";
+        $innermenu .= " selected";
     }
     $innermenu .= ">$i</option>\n";
 }

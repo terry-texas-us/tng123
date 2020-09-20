@@ -180,7 +180,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     foreach ($entries as $entry) {
                         echo "<option value=\"$entry\"";
                         if ($templatenum == $entry) {
-                            echo " selected=\"selected\"";
+                            echo " selected";
                         }
                         $tprefix = is_numeric($entry) ? $admtext['template'] . " " : "";
                         echo ">$tprefix$entry</option>\n";
@@ -258,12 +258,12 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                 } elseif ($label == "titlechoice") {
                     $sections[$n] .= "<input type=\"radio\" name=\"form_$key\" id=\"form_{$key}_image\" value=\"image\"";
                     if ($value == "image") {
-                        $sections[$n] .= " checked=\"checked\"";
+                        $sections[$n] .= " checked";
                     }
                     $sections[$n] .= "> <label for=\"form_{$key}_image\">{$admtext['ttitleimage']}</label> &nbsp;";
                     $sections[$n] .= "<input type=\"radio\" name=\"form_$key\" id=\"form_{$key}_text\" value=\"text\"";
                     if ($value == "text") {
-                        $sections[$n] .= " checked=\"checked\"";
+                        $sections[$n] .= " checked";
                     }
                     $sections[$n] .= "> <label for=\"form_{$key}_text\">{$admtext['ttitletext']}</label> &nbsp;";
                 } else {

@@ -270,7 +270,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                                 ?>
                                 <p>
                                     <input type="radio" name="role" value="admin"<?php if (!$row['ucount']) {
-                                        echo " checked=\"checked\"";
+                                        echo " checked";
                                     } ?> onclick="assignRightsFromRole('admin');"> <?php echo $admtext['usradmin'] . "<br><em class=\"smaller indent\">{$admtext['usradmind']}</em>"; ?></p>
                             </td>
                             <td valign="top">
@@ -278,7 +278,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
 
                                 <p>
                                     <input type="radio" name="form_allow_add" class="rights" value="1"<?php if (!$row['ucount']) {
-                                        echo " checked=\"checked\"";
+                                        echo " checked";
                                     } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_add']; ?><br>
                                     <?php
                                     if ($row['ucount']) {
@@ -294,7 +294,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
 
                                 <p>
                                     <input type="radio" name="form_allow_edit" class="rights" value="1"<?php if (!$row['ucount']) {
-                                        echo " checked=\"checked\"";
+                                        echo " checked";
                                     } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_edit']; ?><br>
                                     <?php
                                     if ($row['ucount']) {

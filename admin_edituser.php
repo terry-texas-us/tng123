@@ -245,7 +245,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "	<option value=\"{$treerow['gedcom']}\"";
                                     if ($treerow['gedcom'] == $row['mygedcom']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     }
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
@@ -314,47 +314,47 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
 
                             <p>
                                 <input type="radio" name="role" value="guest"<?php if ($row['role'] == "guest") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('guest');"> <?php echo $admtext['usrguest'] . "<br><em class=\"smaller indent\">{$admtext['usrguestd']} {$admtext['noadmin']}</em>"; ?>
                             </p>
                             <p>
                                 <input type="radio" name="role" value="subm"<?php if ($row['role'] == "subm") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('subm');"> <?php echo $admtext['usrsubm'] . "<br><em class=\"smaller indent\">{$admtext['usrsubmd']} {$admtext['noadmin']}</em>"; ?>
                             </p>
                             <p>
                                 <input type="radio" name="role" value="contrib"<?php if ($row['role'] == "contrib") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('contrib');"> <?php echo $admtext['usrcontrib'] . "<br><em class=\"smaller indent\">{$admtext['usrcontribd']}</em>"; ?>
                             </p>
                             <p>
                                 <input type="radio" name="role" value="editor"<?php if ($row['role'] == "editor") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('editor');"> <?php echo $admtext['usreditor'] . "<br><em class=\"smaller indent\">{$admtext['usreditord']}</em>"; ?>
                             </p>
                             <p>
                                 <input type="radio" name="role" value="mcontrib"<?php if ($row['role'] == "mcontrib") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('mcontrib');"> <?php echo $admtext['usrmcontrib'] . "<br><em class=\"smaller indent\">{$admtext['usrmcontribd']}</em>"; ?>
                             </p>
                             <p>
                                 <input type="radio" name="role" value="meditor"<?php if ($row['role'] == "meditor") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('meditor');"> <?php echo $admtext['usrmeditor'] . "<br><em class=\"smaller indent\">{$admtext['usrmeditord']}</em>"; ?>
                             </p>
                             <p>
                                 <input type="radio" name="role" value="custom"<?php if (!$row['role'] || $row['role'] == "custom") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="assignRightsFromRole('custom');"> <?php echo $admtext['usrcustom']; ?></p>
                             <p>
                                 <input type="radio" name="role" value="admin"<?php if ($row['role'] == "admin") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>
                                        onclick="assignRightsFromRole('admin');"> <?php echo $admtext['usradmin'] . "<br><em class=\"smaller indent\">{$admtext['usradmind']}</em>"; ?>
                             </p>
@@ -364,41 +364,41 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
 
                             <p>
                                 <input type="radio" name="form_allow_add" class="rights" value="1"<?php if ($row['allow_add'] == 1) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_add']; ?><br>
                                 <input type="radio" name="form_allow_add" class="rights" value="3"<?php if ($row['allow_add'] == 3) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_media_add']; ?><br>
                                 <input type="radio" name="form_allow_add" class="rights" value="0"<?php if (!$row['allow_add']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['no_add']; ?><br>
                             </p>
 
                             <p>
                                 <input type="radio" name="form_allow_edit" class="rights" value="1"<?php if ($row['allow_edit'] == 1) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_edit']; ?><br>
                                 <input type="radio" name="form_allow_edit" class="rights" value="3"<?php if ($row['allow_edit'] == 3) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_media_edit']; ?><br>
                                 <input type="radio" name="form_allow_edit" class="rights" value="2"<?php if ($row['tentative_edit']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['tentative_edit']; ?><br>
                                 <input type="radio" name="form_allow_edit" class="rights"
                                        value="0"<?php if (!$row['allow_edit'] && !$row['tentative_edit']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['no_edit']; ?><br>
                             </p>
 
                             <p>
                                 <input type="radio" name="form_allow_delete" class="rights" value="1"<?php if ($row['allow_delete'] == 1) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_delete']; ?><br>
                                 <input type="radio" name="form_allow_delete" class="rights" value="3"<?php if ($row['allow_delete'] == 3) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['allow_media_delete']; ?><br>
                                 <input type="radio" name="form_allow_delete" class="rights" value="0"<?php if (!$row['allow_delete']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> onclick="document.form1.role[6].checked='checked';"> <?php echo $admtext['no_delete']; ?><br>
                             </p>
 
@@ -407,22 +407,22 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
                             <br>
                             <p>
                                 <input type="checkbox" name="form_allow_living" value="1"<?php if ($row['allow_living'] > 0) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['allow_living']; ?><br>
                                 <input type="checkbox" name="form_allow_private" value="1"<?php if ($row['allow_private'] > 0) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['allow_private']; ?><br>
                                 <input type="checkbox" name="form_allow_ged" value="1"<?php if ($row['allow_ged']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['allow_ged']; ?><br>
                                 <input type="checkbox" name="form_allow_pdf" value="1"<?php if ($row['allow_pdf']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['allow_pdf']; ?><br>
                                 <input type="checkbox" name="form_allow_lds" value="1"<?php if ($row['allow_lds']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['allow_lds']; ?><br>
                                 <input type="checkbox" name="form_allow_profile" value="1"<?php if ($row['allow_profile']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['allow_profile']; ?>
                             </p>
                         </td>
@@ -440,10 +440,10 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
                 }
                 ?>
                 <input type="radio" name="administrator" value="1" <?php if ($adminaccess == 1) {
-                    echo "checked=\"checked\"";
+                    echo "checked";
                 } ?> onClick="handleAdmin('allow');"> <?php echo $admtext['allow_admin']; ?><br>
                 <input type="radio" name="administrator" value="0" <?php if (!$adminaccess) {
-                    echo "checked=\"checked\"";
+                    echo "checked";
                 } ?> onClick="handleAdmin('restrict');"> <?php echo $admtext['limitedrights']; ?><br>
                 <div id="restrictions" <?php if ($adminaccess) {
                     echo "style='display:none;'";
@@ -492,7 +492,7 @@ echo "</select>\n";
                     </table>
                 </div>
                 <input type="radio" name="administrator" value="2" <?php if ($adminaccess == 2) {
-                    echo "checked=\"checked\"";
+                    echo "checked";
                 } ?> onclick="handleAdmin('allow_multiple');"> <?php echo $admtext['mult_trees']; ?><br>
                 <div style="margin-left: 30px;<?php if ($adminaccess != 2) {
                     echo "display: none;";

@@ -73,13 +73,13 @@ tng_adminheader($admtext['modifylanguage'], $flags);
                                         foreach ($dirs as $dir) {
                                             echo "<option value=\"$dir\"";
                                             if ($dir == $row['folder']) {
-                                                echo " selected=\"selected\"";
+                                                echo " selected";
                                                 $found_current = 1;
                                             }
                                             echo ">$dir</option>\n";
                                         }
                                         if (!$found_current) {
-                                            echo "<option value=\"{$row['folder']}\" selected=\"selected\">{$row['folder']}</option>\n";
+                                            echo "<option value=\"{$row['folder']}\" selected>{$row['folder']}</option>\n";
                                         }
                                         closedir($handle);
                                     }

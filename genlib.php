@@ -713,7 +713,7 @@ function tng_getLanguageSelect($instance) {
             while ($row = tng_fetch_assoc($result)) {
                 $menu .= "<option value=\"{$row['languageID']}\"";
                 if ($languages_path . $row['folder'] == $mylanguage) {
-                    $menu .= " selected=\"selected\"";
+                    $menu .= " selected";
                 }
                 $menu .= ">{$row['display']}</option>\n";
             }
@@ -1080,14 +1080,14 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
     $ret .= ">\n";
     $ret .= "<option value=\"-x--all--x-\" ";
     if (!$tree) {
-        $ret .= "selected=\"selected\"";
+        $ret .= "selected";
     }
     $ret .= ">{$text['alltrees']}</option>\n";
 
     while ($row = tng_fetch_assoc($treeresult)) {
         $ret .= "<option value=\"{$row['gedcom']}\"";
         if ($tree && $row['gedcom'] == $tree) {
-            $ret .= " selected=\"selected\"";
+            $ret .= " selected";
         }
         $ret .= ">{$row['treename']}</option>\n";
     }

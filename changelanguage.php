@@ -25,7 +25,7 @@ if ($numrows) {
         while ($row = tng_fetch_assoc($result)) {
             echo "<option value=\"{$row['languageID']}\"";
             if ($row['folder'] == $mylanguage) {
-                echo " selected=\"selected\"";
+                echo " selected";
             }
             echo ">{$row['display']}</option>\n";
         }

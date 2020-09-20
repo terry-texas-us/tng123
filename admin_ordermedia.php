@@ -216,7 +216,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         echo "<a href=\"#\" onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";
                         echo "</span>&nbsp;</td>\n";
                         echo "<td class='lightback normal' style=\"width:45px;text-align:center;vertical-align:top;\">";
-                        $checked = $row['dontshow'] ? "" : " checked=\"checked\"";
+                        $checked = $row['dontshow'] ? "" : " checked";
                         echo "<input type=\"checkbox\" name=\"show{$row['medialinkID']}\" onclick=\"toggleShow(this);\" value='1'$checked>&nbsp;</td>\n";
                         echo "<td class='lightback normal' style=\"width:150px;\">{$row['datetaken']}&nbsp;</td>\n";
                         echo "</tr></table>";

@@ -35,10 +35,10 @@ header("Content-type:text/html; charset=" . $session_charset);
         <tr>
             <td colspan="2">
                 <input type="radio" name="reltype" value="I"<?php if ($row['reltype'] == "I") {
-                    echo " checked=\"checked\"";
+                    echo " checked";
                 } ?> onclick="activateAssocType('I');"> <?php echo $admtext['person']; ?> &nbsp;&nbsp;
                 <input type="radio" name="reltype" value="F"<?php if ($row['reltype'] == "F") {
-                    echo " checked=\"checked\"";
+                    echo " checked";
                 } ?> onclick="activateAssocType('F');"> <?php echo $admtext['family']; ?>
             </td>
         </tr>

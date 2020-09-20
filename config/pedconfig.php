@@ -18,6 +18,7 @@ $pedigree['vspacing'] = "20";
 $pedigree['vfontsize'] = "7";
 $pedigree['boxHsep'] = "31";
 $pedigree['boxVsep'] = "11";
+$pedigree['pagesize'] = "letter";
 $pedigree['shadowoffset'] = "4";
 $pedigree['linewidth'] = "1";
 $pedigree['borderwidth'] = "1";
@@ -45,8 +46,8 @@ $pedigree['defdesc'] = "2";
 $pedigree['stdesc'] = "0";
 $pedigree['regnotes'] = "0";
 $pedigree['regnosp'] = "0";
-$pedigree['tcheight'] = "300";
 $pedigree['tcwidth'] = "500";
 $pedigree['simile'] = "1";
-$pedigree['tcevents'] = "1";
-
+$pedigree['tcheight'] = "400";
+$pedigree['tcevents'] = "0";
+?>

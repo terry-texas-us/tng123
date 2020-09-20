@@ -208,10 +208,10 @@ include_once "eventlib.php";
                         <tr>
                             <td class="nw">
                                 <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
                                 <input type="checkbox" name="private" value="1"<?php if ($row['private']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['text_private']; ?>
                             </td>
                             <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
@@ -287,7 +287,7 @@ include_once "eventlib.php";
                         }
                         echo showEventRow('deathdate', 'deathplace', 'DEAT', $personID);
                         echo showEventRow('burialdate', 'burialplace', 'BURI', $personID);
-                        $checked = $row['burialtype'] == 1 ? " checked=\"checked\"" : "";
+                        $checked = $row['burialtype'] == 1 ? " checked" : "";
                         echo "<tr>";
                         echo "<td></td>";
                         echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";

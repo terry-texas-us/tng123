@@ -78,8 +78,8 @@ if ($result2) {
             $linktype = "L";
         }
 
-        $dchecked = $plink['defphoto'] ? " checked=\"checked\"" : "";
-        $schecked = $plink['dontshow'] ? "" : " checked=\"checked\"";
+        $dchecked = $plink['defphoto'] ? " checked" : "";
+        $schecked = $plink['dontshow'] ? "" : " checked";
         $alttext = $plink['altdescription'] || $plink['altnotes'] ? $admtext['yes'] : "&nbsp;";
 
         include "eventmicro.php";

@@ -531,7 +531,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
                 while ($treerow = tng_fetch_assoc($treeresult)) {
                     echo "	<option value=\"{$treerow['gedcom']}\"";
                     if ($treerow['gedcom'] == $tree) {
-                        echo " selected=\"selected\"";
+                        echo " selected";
                     }
                     echo ">{$treerow['treename']}</option>\n";
                 }

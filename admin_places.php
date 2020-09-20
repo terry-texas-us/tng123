@@ -244,22 +244,22 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                             <td>&nbsp;</td>
                             <td colspan="2">
                                 <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['exactmatch']; ?>&nbsp;&nbsp;
                                 <input type="checkbox" name="nocoords" value="yes"<?php if ($nocoords == "yes") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['nocoords']; ?>&nbsp;&nbsp;
                                 <input type="checkbox" name="noevents" value="yes"<?php if ($noevents == "yes") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['noevents']; ?>&nbsp;&nbsp;<br>
                                 <input type="checkbox" name="nolevel" value="yes"<?php if ($nolevel == "yes") {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['nolevel']; ?>&nbsp;&nbsp;
                                 <?php
                                 if (determineLDSRights()) {
                                     echo "<input type=\"checkbox\" name=\"temples\" value=\"yes\"";
                                     if ($temples == "yes") {
-                                        echo " checked=\"checked\"";
+                                        echo " checked";
                                     }
                                     echo "> " . $admtext['findtemples'];
                                 }

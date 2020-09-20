@@ -486,22 +486,22 @@ if (!isset($pedigree['vfontsize'])) {
                                         <td>
                                             <select name="pagesize">
                                                 <option value="a3"<?php if ($pedigree['pagesize'] == "a3") {
-                                                    echo " selected=\"selected\"";
+                                                    echo " selected";
                                                 } ?>>A3
                                                 </option>
                                                 <option value="a4"<?php if ($pedigree['pagesize'] == "a4") {
-                                                    echo " selected=\"selected\"";
+                                                    echo " selected";
                                                 } ?>>A4
                                                 </option>
                                                 <option value="a5"<?php if ($pedigree['pagesize'] == "a5") {
-                                                    echo " selected=\"selected\"";
+                                                    echo " selected";
                                                 } ?>>A5
                                                 </option>
                                                 <option value="letter"<?php if (!$pedigree['pagesize'] || $pedigree['pagesize'] == "letter") {
-                                                    echo " selected=\"selected\"";
+                                                    echo " selected";
                                                 } ?>><?php echo $text['letter']; ?></option>
                                                 <option value="legal"<?php if ($pedigree['pagesize'] == "legal") {
-                                                    echo " selected=\"selected\"";
+                                                    echo " selected";
                                                 } ?>><?php echo $text['legal']; ?></option>
                                             </select>
                                         </td>

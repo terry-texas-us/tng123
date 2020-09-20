@@ -153,7 +153,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                                     while ($row = tng_fetch_assoc($result)) {
                                                                         echo "<option value=\"{$row['languageID']}\"";
                                                                         if ($languages_path . $row['folder'] == $mylanguage) {
-                                                                            echo " selected=\"selected\"";
+                                                                            echo " selected";
                                                                         }
                                                                         echo ">{$row['display']}</option>\n";
                                                                     }

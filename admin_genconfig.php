@@ -249,10 +249,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     echo " disabled=\"disabled\"";
                                 } ?>>
                                     <option value=""<?php if (!$tngconfig['maint']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['off']; ?></option>
                                     <option value="1"<?php if ($tngconfig['maint']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['on']; ?></option>
                                 </select>
                             </td>
@@ -981,10 +981,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="hidemedia">
                                     <option value="1"<?php if ($tngconfig['hidemedia']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="0"<?php if (!$tngconfig['hidemedia']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -1010,10 +1010,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="tng_mediathumbs">
                                     <option value="1"<?php if ($tngconfig['mediathumbs']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="0"<?php if (!$tngconfig['mediathumbs']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -1023,10 +1023,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="tng_mediatrees" id="tng_mediatrees">
                                     <option value="0"<?php if (!$tngconfig['mediatrees']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['mediatrees']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                                 <input type="button" value="<?php echo $admtext['convert']; ?>" id="convertmedia" onclick="convertMedia(jQuery('#tng_mediatrees'));">
@@ -1072,13 +1072,13 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                         foreach ($dirs as $dir) {
                                             echo "<option value=\"$dir\"";
                                             if ($dir == $language) {
-                                                echo " selected=\"selected\"";
+                                                echo " selected";
                                                 $found_current = 1;
                                             }
                                             echo ">$dir</option>\n";
                                         }
                                         if (!$found_current) {
-                                            echo "<option value=\"$language\" selected=\"selected\">$language</option>\n";
+                                            echo "<option value=\"$language\" selected>$language</option>\n";
                                         }
                                         closedir($handle);
                                     }
@@ -1393,10 +1393,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="cemblanks">
                                     <option value="0"<?php if (!$tngconfig['cemblanks']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['cemblanks']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1423,10 +1423,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="fromadmin">
                                     <option value="0"<?php if (!$tngconfig['fromadmin']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['fromadmin']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1436,10 +1436,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="disallowreg" onchange="toggleAllowReg();">
                                     <option value="0"<?php if (!$tngconfig['disallowreg']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="1"<?php if ($tngconfig['disallowreg']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -1449,10 +1449,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="revmail">
                                     <option value="0"<?php if (!$tngconfig['revmail']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['revmail']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1462,10 +1462,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="autotree" id="autotree">
                                     <option value="0"<?php if (!$tngconfig['autotree']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['autotree']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1475,10 +1475,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="autoapp" id="autoapp" onchange="toggleAutoApprove();">
                                     <option value="0"<?php if (!$tngconfig['autoapp']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['autoapp']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1490,10 +1490,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     echo " disabled=\"disabled\"";
                                 } ?>>
                                     <option value="0"<?php if (!$tngconfig['ackemail']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['ackemail']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1503,10 +1503,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="omitpwd" id="omitpwd">
                                     <option value="0"<?php if (!$tngconfig['omitpwd']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="1"<?php if ($tngconfig['omitpwd']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -1516,10 +1516,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="usesmtp" id="usesmtp" onchange="jQuery('#smtpstuff').toggle(200);">
                                     <option value="0"<?php if (!$tngconfig['usesmtp']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['usesmtp']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -1967,10 +1967,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="scrollcite">
                                     <option value="1"<?php if ($tngconfig['scrollcite']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="0"<?php if (!$tngconfig['scrollcite']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -2053,13 +2053,13 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="pardata">
                                     <option value="0"<?php if (!$tngconfig['pardata']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['palldata']; ?></option>
                                     <option value="1"<?php if ($tngconfig['pardata'] == 1) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['pstdonly']; ?></option>
                                     <option value="2"<?php if ($tngconfig['pardata'] == 2) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['pnoevents']; ?></option>
                                 </select>
                             </td>
@@ -2080,7 +2080,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                         $display = $encrtype != "none" ? $encrtype : $admtext['none'];
                                         echo "<option value=\"$encrtype\"";
                                         if ($encrtype == $tngconfig['password_type']) {
-                                            echo " selected=\"selected\"";
+                                            echo " selected";
                                         }
                                         echo ">$display</option>\n";
                                     }
@@ -2093,10 +2093,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="places1tree" id="places1tree" onchange="flipPlaces(this);">
                                     <option value="0"<?php if (!$tngconfig['places1tree']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="1"<?php if ($tngconfig['places1tree']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                                 <input type="button" value="<?php echo $admtext['merge']; ?>" id="merge" onclick="convertPlaces('merge');" style="display:none;">
@@ -2117,10 +2117,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="autogeo">
                                     <option value="0"<?php if (!$tngconfig['autogeo']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['autogeo']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -2130,10 +2130,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="oldids">
                                     <option value=""<?php if (!$tngconfig['oldids']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="1"<?php if ($tngconfig['oldids']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -2143,10 +2143,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="lastimport">
                                     <option value=""<?php if (!$tngconfig['lastimport']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['lastimport']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>
@@ -2156,10 +2156,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="hidetasks">
                                     <option value=""<?php if (!$tngconfig['hidetasks']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="1"<?php if ($tngconfig['hidetasks']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -2169,10 +2169,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="hidetotals">
                                     <option value=""<?php if (!$tngconfig['hidetotals']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                     <option value="1"<?php if ($tngconfig['hidetotals']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                 </select>
                             </td>
@@ -2187,10 +2187,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td>
                                 <select name="tng_offline">
                                     <option value=""<?php if (!$tngconfig['offline']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['no']; ?></option>
                                     <option value="1"<?php if ($tngconfig['offline']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     } ?>><?php echo $admtext['yes']; ?></option>
                                 </select>
                             </td>

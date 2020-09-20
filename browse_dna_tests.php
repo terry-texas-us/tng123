@@ -185,14 +185,14 @@ echo "<div class='normal'>\n";
                         $ret .= "<select name=\"tree\" id=\"treeselect\" onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                         $ret .= "<option value=\"-x--all--x-\" ";
                         if (!$tree) {
-                            $ret .= "selected=\"selected\"";
+                            $ret .= "selected";
                         }
                         $ret .= ">{$text['alltrees']}</option>\n";
 
                         while ($row = tng_fetch_assoc($treeresult)) {
                             $ret .= "<option value=\"{$row['gedcom']}\"";
                             if ($tree && $row['gedcom'] == $tree) {
-                                $ret .= " selected=\"selected\"";
+                                $ret .= " selected";
                             }
                             $ret .= ">{$row['treename']}</option>\n";
                         }

@@ -141,7 +141,7 @@ $momlabel = getTemplateMessage('t18_momside');
                                     while ($row = tng_fetch_assoc($result)) {
                                         echo "<option value=\"{$row['languageID']}\"";
                                         if ($languages_path . $row['folder'] == $mylanguage) {
-                                            echo " selected=\"selected\"";
+                                            echo " selected";
                                         }
                                         echo ">{$row['display']}</option>\n";
                                     }

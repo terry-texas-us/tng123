@@ -100,7 +100,7 @@ $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"windo
 for ($i = 1; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $generations) {
-        $innermenu .= " selected=\"selected\"";
+        $innermenu .= " selected";
     }
     $innermenu .= ">$i</option>\n";
 }

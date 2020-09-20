@@ -212,7 +212,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                         echo "<td>&nbsp;</td>";
                         echo "<td><input type=\"checkbox\" name=\"temple\" value=\"1\"";
                         if ($row['temple']) {
-                            echo " checked=\"checked\"";
+                            echo " checked";
                         }
                         echo "> {$admtext['istemple']}</td>";
                         echo "</tr>\n";

@@ -177,14 +177,14 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     $ret .= "<select name=\"tree\" id=\"tree\" onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                                     $ret .= "<option value=\"\" ";
                                     if (!$tree) {
-                                        $ret .= "selected=\"selected\"";
+                                        $ret .= "selected";
                                     }
                                     $ret .= ">{$admtext['alltrees']}</option>\n";
 
                                     while ($row2 = tng_fetch_assoc($treeresult)) {
                                         $ret .= "<option value=\"{$row2['gedcom']}\"";
                                         if ($tree && $row2['gedcom'] == $tree) {
-                                            $ret .= " selected=\"selected\"";
+                                            $ret .= " selected";
                                         }
                                         $ret .= ">{$row2['treename']}</option>\n";
                                     }

@@ -183,7 +183,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
                                 <input type="text" name="agens" size="3" maxlength="3" value="0"> &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
                                 <select name="dagens">
                                     <option value="0">0</option>
-                                    <option value="1" selected="selected">1</option>
+                                    <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
@@ -209,7 +209,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
                         <td>
                             <div id="overwrite2"><br>
                                 <select name="overwrite">
-                                    <option value="2" selected="selected"><?php echo $admtext['append']; ?></option>
+                                    <option value="2" selected><?php echo $admtext['append']; ?></option>
                                     <option value="1"><?php echo $admtext['overwrite']; ?></option>
                                     <option value="0"><?php echo $admtext['leave']; ?></option>
                                 </select>

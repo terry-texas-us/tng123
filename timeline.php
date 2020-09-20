@@ -4,7 +4,7 @@ include "tng_begin.php";
 
 $timeline = $_SESSION['timeline'];
 if (!is_array($timeline)) {
-    $timeline = array();
+    $timeline = [];
 }
 
 $tng_message = $_SESSION['tng_message'] = "";
@@ -13,7 +13,7 @@ if ($newwidth) {
 }
 
 if ($primaryID) {
-    $newentry = "timeperson=$primaryID" . "&timetree=$tree";
+    $newentry = "timeperson=$primaryID&timetree=$tree";
     if (!in_array($newentry, $timeline)) {
         array_push($timeline, $newentry);
         $_SESSION['timeline'] = $timeline;
@@ -33,7 +33,7 @@ for ($i = 2; $i < 6; $i++) {
 
 $righttree = checktree($timetree);
 
-$finalarray = array();
+$finalarray = [];
 foreach ($timeline as $timeentry) {
     parse_str($timeentry, $output);
     $todelete = $output['timetree'] . "_" . $output['timeperson'];

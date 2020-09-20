@@ -76,7 +76,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
                                 while ($row = tng_fetch_assoc($result)) {
                                     echo "		<option value=\"{$row['gedcom']}\"";
                                     if ($firsttree == $row['gedcom']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     }
                                     echo ">{$row['treename']}</option>\n";
                                 }

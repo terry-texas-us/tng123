@@ -159,7 +159,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                                     break;
                             }
                             echo "<tr>";
-                            echo "<td><input type=\"checkbox\" name=\"incl_$msgID\" value='1' checked=\"checked\"></td>\n";
+                            echo "<td><input type=\"checkbox\" name=\"incl_$msgID\" value='1' checked></td>\n";
                             echo "<td>" . $mediatype['display'] . ":</td>\n";
                             echo "<td><input type=\"text\" value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td>";
                             echo "</tr>\n";

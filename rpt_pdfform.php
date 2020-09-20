@@ -70,7 +70,7 @@ function doGenOptions($generations, $first, $last) {
     for ($i = $first; $i <= $last; $i++) {
         echo "<option value=\"$i\"";
         if ($i == $generations) {
-            echo " selected=\"selected\"";
+            echo " selected";
         }
         echo ">$i</option>\n";
     }
@@ -86,7 +86,7 @@ function doFontOptions($field, $default = 'helvetica') {
     foreach ($fonts as $font) {
         echo "<option value=\"$font\"";
         if ($font == $default) {
-            print " selected=\"selected\"";
+            print " selected";
         }
         echo ">$font_list[$font]</option>";
     }
@@ -102,7 +102,7 @@ function doFontSizeOptions($field, $options, $default) {
         foreach ($options as $size) {
             echo "<option value=\"$size\"";
             if ($default == $size) {
-                print " selected=\"selected\"";
+                print " selected";
             }
             echo ">$size</option>";
         }
@@ -248,7 +248,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                     <td>
                         <select name="getPlace">
-                            <option value="1" selected="selected"><?php echo $text['borchr']; ?></option>
+                            <option value="1" selected><?php echo $text['borchr']; ?></option>
                             <option value="2"><?php echo $text['nobd']; ?></option>
                             <option value="3"><?php echo $text['bcdb']; ?></option>
                         </select>
@@ -260,7 +260,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td>
                     <select name="numbering">
                         <option value="0"><?php echo $text['none']; ?></option>
-                        <option value="1" selected="selected"><?php echo $text['gennums']; ?></option>
+                        <option value="1" selected><?php echo $text['gennums']; ?></option>
                         <option value="2"><?php echo $text['henrynums']; ?></option>
                         <option value="3"><?php echo $text['abovnums']; ?></option>
                         <option value="4"><?php echo $text['devnums']; ?></option>
@@ -358,22 +358,22 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td>
                     <select name="pagesize">
                         <option value="a3"<?php if ($pagesize == "a3") {
-                            echo "selected=\"selected\"";
+                            echo "selected";
                         } ?>>A3
                         </option>
                         <option value="a4"<?php if ($pagesize == "a4") {
-                            echo "selected=\"selected\"";
+                            echo "selected";
                         } ?>>A4
                         </option>
                         <option value="a5"<?php if ($pagesize == "a5") {
-                            echo "selected=\"selected\"";
+                            echo "selected";
                         } ?>>A5
                         </option>
                         <option value="letter"<?php if (!$pagesize || $pagesize == "letter") {
-                            echo "selected=\"selected\"";
+                            echo "selected";
                         } ?>><?php echo $text['letter']; ?></option>
                         <option value="legal<?php if ($pagesize == "legal") {
-                            echo "selected=\"selected\"";
+                            echo "selected";
                         } ?>"><?php echo $text['legal']; ?></option>
                     </select>
                 </td>

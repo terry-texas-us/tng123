@@ -72,7 +72,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "		<option value=\"{$treerow['gedcom']}\"";
                                     if ($firsttree == $treerow['gedcom']) {
-                                        echo " selected=\"selected\"";
+                                        echo " selected";
                                     }
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
@@ -128,7 +128,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                                 <input type="text" name="agens" size="3" maxlength="3" value="0"> &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
                                 <select name="dagens">
                                     <option value="0">0</option>
-                                    <option value="1" selected="selected">1</option>
+                                    <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>

@@ -197,7 +197,7 @@ include_once "eventlib.php";
                             <tr>
                                 <td class="nw">
                                     <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
-                                        echo " checked=\"checked\"";
+                                        echo " checked";
                                     } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
                                     <input type="checkbox" name="private" value="1"<?php if ($row['private']) {
                                         echo " checked=\"$checked\"";

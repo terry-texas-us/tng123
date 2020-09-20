@@ -112,13 +112,13 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                     </table>
                     <span class="normal">
                 <input type="checkbox" name="private" value="1"<?php if ($private) {
-                    echo " checked=\"checked\"";
+                    echo " checked";
                 } ?>> <?php echo $admtext['keepprivate']; ?><br>
                 <input type="checkbox" name="disallowgedcreate" value="1"<?php if ($disallowgedcreate) {
-                    echo " checked=\"checked\"";
+                    echo " checked";
                 } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
                 <input type="checkbox" name="disallowpdf" value="1"<?php if ($disallowpdf) {
-                    echo " checked=\"checked\"";
+                    echo " checked";
                 } ?>> <?php echo $admtext['nopdf']; ?>
                 <br><br>
                 </span>

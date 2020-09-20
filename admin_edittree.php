@@ -179,13 +179,13 @@ tng_adminheader($admtext['modifytree'], $flags);
                     </table>
                     <span class="normal">
 	<input type="checkbox" name="private" value="1"<?php if ($row['secret']) {
-        echo " checked=\"checked\"";
+        echo " checked";
     } ?>> <?php echo $admtext['keepprivate']; ?><br>
 	<input type="checkbox" name="disallowgedcreate" value="1"<?php if ($row['disallowgedcreate']) {
-        echo " checked=\"checked\"";
+        echo " checked";
     } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
 	<input type="checkbox" name="disallowpdf" value="1"<?php if ($row['disallowpdf']) {
-        echo " checked=\"checked\"";
+        echo " checked";
     } ?>> <?php echo $admtext['nopdf']; ?>
 	<br><br></span>
                     <input type="hidden" name="tree" value="<?php echo "$tree"; ?>">

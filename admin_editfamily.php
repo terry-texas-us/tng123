@@ -375,7 +375,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             <tr>
                                 <td class="nw">
                                     <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
-                                        echo " checked=\"checked\"";
+                                        echo " checked";
                                     } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
                                     <input type="checkbox" name="private" value="1"<?php if ($row['private']) {
                                         echo " checked=\"$checked\"";
@@ -554,9 +554,9 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                     echo $admtext['onsave'] . ":<br>";
                     echo "<input type=\"radio\" name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newfamily\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
+                        echo "<input type=\"radio\" name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
+                        echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                     <br><br>

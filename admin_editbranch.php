@@ -184,7 +184,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                                     for ($i = 0; $i < 6; $i++) {
                                         echo "<option value=\"$i\"";
                                         if ($i == $dagens) {
-                                            echo " selected=\"selected\"";
+                                            echo " selected";
                                         }
                                         echo ">$i</option>";
                                     }
@@ -201,7 +201,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                             <div id="numgens5">
                                 <input type="text" name="dgens" size="3" maxlength="3" value="<?php echo $row['dgens'] ? $row['dgens'] : 0; ?>"> &nbsp;&nbsp;
                                 <input type="checkbox" name="dospouses" id="dospouses"<?php if ($row['inclspouses']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?> value="1"> <?php echo $admtext['inclspouses']; ?>
                             </div>
                         </td>

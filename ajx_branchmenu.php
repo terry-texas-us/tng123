@@ -52,17 +52,17 @@ header("Content-type:text/html; charset=" . $session_charset);
                         <select name="overwrite" id="overwrite">
                             <?php $action = $brow['action'] ? $brow['action'] : 2; ?>
                             <option value="2" <?php if ($action == 2) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             } ?>>
                                 <?php echo $admtext['append']; ?>
                             </option>
                             <option value="1" <?php if ($action == 1) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             } ?>>
                                 <?php echo $admtext['overwrite']; ?>
                             </option>
                             <option value="0" <?php if ($action == 0) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             } ?>>
                                 <?php echo $admtext['leave']; ?></option>
                         </select>

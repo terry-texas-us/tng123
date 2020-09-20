@@ -176,12 +176,12 @@ echo "
          				<select name=\"options[compress_log]\">
          					<option value=" . YES;
 if ($options['compress_log'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['compress_log'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -193,12 +193,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[redirect2log]\">
                         <option value=" . ON_ERROR;
 if ($options['redirect2log'] == ON_ERROR) {
-    echo "  selected=\"selected\"";
+    echo "  selected";
 }
 echo ">{$admtext['on_error']}</option>
                         <option value=" . ON_ALL;
 if ($options['redirect2log'] == ON_ALL) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['on_all']}</option>
          				</select>
@@ -210,12 +210,12 @@ echo ">{$admtext['on_all']}</option>
 						<select name=\"options[log_full_path]\">
 						<option value=" . YES;
 if ($options['log_full_path'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
 						<option value=" . NO;
 if ($options['log_full_path'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
 						</select>
@@ -238,12 +238,12 @@ echo "
          				<select name=\"options[sortby]\">
          					<option value=" . MODNAME;
 if ($options['sortby'] == MODNAME) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['modname']}</option>
          					<option value=" . CFGNAME;
 if ($options['sortby'] == CFGNAME) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['cfgname']}</option>
          				</select>
@@ -255,12 +255,12 @@ echo ">{$admtext['cfgname']}</option>
          				<select name=\"options[fix_header]\">
          					<option value=" . YES;
 if ($options['fix_header'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['fix_header'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -272,12 +272,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[adjust_headers]\">
          					<option value=" . YES;
 if ($options['adjust_headers'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['adjust_headers'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -289,12 +289,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[use_striping]\">
          					<option value=" . YES;
 if ($options['use_striping'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['use_striping'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -306,27 +306,27 @@ echo ">{$admtext['no']}</option>
 						<select name=\"options[stripe_after]\">
 							<option value=" . ONE;
 if ($options['stripe_after'] == ONE) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">1</option>
 							<option value=" . TWO;
 if ($options['stripe_after'] == TWO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">2</option>
 							<option value=" . THREE;
 if ($options['stripe_after'] == THREE) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">3</option>
 							<option value=" . FOUR;
 if ($options['stripe_after'] == FOUR) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">4</option>
 							<option value=" . FIVE;
 if ($options['stripe_after'] == FIVE) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">5</option>
 						</select>
@@ -338,12 +338,12 @@ echo ">5</option>
          				<select name=\"options[compress_names]\">
          					<option value=" . YES;
 if ($options['compress_names'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['compress_names'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -355,12 +355,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[show_analyzer]\">
          					<option value=" . YES;
 if ($options['show_analyzer'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['show_analyzer'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -372,12 +372,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[show_developer]\">
          					<option value=" . YES;
 if ($options['show_developer'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['show_developer'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -389,12 +389,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[show_updates]\">
          					<option value=" . YES;
 if ($options['show_updates'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['show_updates'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -416,12 +416,12 @@ echo "
          				<select name=\"options[delete_partial]\">
          					<option value=" . YES;
 if ($options['delete_partial'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['delete_partial'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -436,12 +436,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[delete_installed]\">
          					<option value=" . YES;
 if ($options['delete_installed'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['delete_installed'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -456,12 +456,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[delete_support]\">
          					<option value=" . YES;
 if ($options['delete_support'] == YES) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['delete_support'] == NO) {
-    echo " selected=\"selected\"";
+    echo " selected";
 }
 echo ">{$admtext['no']}</option>
          				</select>

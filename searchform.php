@@ -258,7 +258,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($fnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -276,7 +276,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($lnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -294,7 +294,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($idqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -312,16 +312,16 @@ echo $formstr;
                     <select name="mygender">
                         <option value="">&nbsp;</option>
                         <option value="M"<?php if ($mygender == "M") {
-                            echo " selected=\"selected\"";
+                            echo " selected";
                         } ?>><?php echo $text['male']; ?></option>
                         <option value="F"<?php if ($mygender == "F") {
-                            echo " selected=\"selected\"";
+                            echo " selected";
                         } ?>><?php echo $text['female']; ?></option>
                         <option value="U"<?php if ($mygender == "U") {
-                            echo " selected=\"selected\"";
+                            echo " selected";
                         } ?>><?php echo $text['unknown']; ?></option>
                         <option value="N"<?php if ($mygender == "N") {
-                            echo " selected=\"selected\"";
+                            echo " selected";
                         } ?>><?php echo $text['none']; ?></option>
                     </select>
                 </td>
@@ -338,7 +338,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($bpqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -356,7 +356,7 @@ echo $formstr;
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($byqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -375,7 +375,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($cpqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -395,7 +395,7 @@ echo $formstr;
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($cyqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -412,7 +412,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($dpqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -430,7 +430,7 @@ echo $formstr;
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($dyqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -447,7 +447,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($brpqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -465,7 +465,7 @@ echo $formstr;
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($bryqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -486,7 +486,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($spqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -522,7 +522,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($nnqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -541,7 +541,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($tqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -560,7 +560,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($pfqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -579,7 +579,7 @@ echo $formstr;
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($sfqualify == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -676,7 +676,7 @@ echo $formstr;
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mybool == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -694,7 +694,7 @@ echo $formstr;
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($nr == $item[1]) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">$item[0]</option>\n";
                         }
@@ -706,10 +706,10 @@ echo $formstr;
         </table>
         <p class="normal">
             <input type="checkbox" name="showdeath" value="yes"<?php if ($showdeath == "yes") {
-                echo " checked=\"checked\"";
+                echo " checked";
             } ?> > <?php echo $text['showdeath']; ?><br>
             <input type="checkbox" name="showspouse" value="yes"<?php if ($showspouse == "yes") {
-                echo " checked=\"checked\"";
+                echo " checked";
             } ?> > <?php echo $text['showspouse']; ?><br>
             <br>
             <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>">

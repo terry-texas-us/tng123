@@ -69,7 +69,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                         while ($treerow = tng_fetch_assoc($treeresult)) {
                             echo "<option value=\"{$treerow['gedcom']}\"";
                             if ($firsttree == $treerow['gedcom']) {
-                                echo " selected=\"selected\"";
+                                echo " selected";
                             }
                             echo ">{$treerow['treename']}";
                             echo "</option>\n";

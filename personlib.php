@@ -568,6 +568,9 @@ function setEvent($data, $datetr) {
     }
 }
 
+define("UNKNOWN", $text['unknown']);
+define("FIND_PLACES", $text['findplaces']);
+
 $datewidth = $thumbmaxw + 20 > 104 ? $thumbmaxw + 20 : 104;
 $eventcounter = 0;
 function showEvent($data) {
@@ -626,40 +629,8 @@ function showEvent($data) {
     $output = "";
 
     $cite = $data['entity'] ? reorderCitation($data['entity'] . "_" . $data['event']) : "";
-
     if ($dateplace) {
-        if ($data['date']) {
-            $output .= "<td valign=\"top\" class='databack'";
-            if (!$data['place']) {
-                $output .= " colspan='2'";
-            }
-            $output .= ">" . displayDate($data['date']);
-            if (!$data['place'] && $cite) {
-                $output .= "&nbsp; [$cite]";
-                $cite = "";
-            }
-            $output .= "&nbsp;</td>\n";
-        }
-        if ($data['place']) {
-            $output .= "<td valign=\"top\" class='databack'";
-            if ($cite) {
-                $cite = "&nbsp; [$cite]";
-            }
-            if (!$data['date']) {
-                $output .= " colspan=\"2\"";
-            }
-            if ($data['place'] == "NN") {
-                $data['place'] = $text['unknown'];
-            }
-            $output .= ">" . $data['place'];
-            if (!isset($data['np'])) {
-                $treestr = !empty($tngconfig['places1tree']) ? "" : "&amp;tree=$tree";
-                $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
-            } else {
-                $output .= "</td>\n";
-            }
-            $cite = "";
-        }
+        $output .= formatDateAndPlace($data, $cite, $tngconfig['places1tree'], $tree, $placesearch_url);
         $output .= "</tr>\n";
     } elseif ($data['fact'] == "" && $cite) {
 
@@ -781,6 +752,80 @@ function showEvent($data) {
     }
 
     return $final;
+}
+
+/**
+ * @param $data
+ * @param string $cite
+ * @param string $places1Tree
+ * @param string $tree
+ * @param string $placesearch_url
+ * @return string
+ */
+function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $tree, string $placesearch_url): string {
+    $oneColumn = true;
+    $output = "";
+
+    if ($oneColumn) {
+        $output .= "<td class='databack' colspan='2'>";
+        if ($data['date']) {
+            $output .= displayDate($data['date']) . "<br>";
+            if (!$data['place'] && $cite) {
+                $output .= "&nbsp; [$cite]";
+                $cite = "";
+            }
+        }
+        if ($data['place']) {
+            if ($cite) {
+                $cite = "&nbsp; [$cite]";
+            }
+            if ($data['place'] == "NN") {
+                $data['place'] = UNKNOWN;
+            }
+            $output .= $data['place'];
+            if (!isset($data['np'])) {
+                $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
+                $output .= " <a href='$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'><img src='img/tng_search_small.gif' alt='" . FIND_PLACES . "' width='9' height='9'></a>$cite\n";
+            }
+            $cite = "";
+        }
+        $output .= "</td>\n";
+    } else {
+
+        if ($data['date']) {
+            $output .= "<td valign=\"top\" class='databack'";
+            if (!$data['place']) {
+                $output .= " colspan='2'";
+            }
+            $output .= ">" . displayDate($data['date']);
+            if (!$data['place'] && $cite) {
+                $output .= "&nbsp; [$cite]";
+                $cite = "";
+            }
+            $output .= "&nbsp;</td>\n";
+        }
+        if ($data['place']) {
+            $output .= "<td valign=\"top\" class='databack'";
+            if ($cite) {
+                $cite = "&nbsp; [$cite]";
+            }
+            if (!$data['date']) {
+                $output .= " colspan=\"2\"";
+            }
+            if ($data['place'] == "NN") {
+                $data['place'] = UNKNOWN;
+            }
+            $output .= ">" . $data['place'];
+            if (!isset($data['np'])) {
+                $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
+                $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"" . FIND_PLACES . "\"><img src=\"img/tng_search_small.gif\" alt=\"" . FIND_PLACES . "\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
+            } else {
+                $output .= "</td>\n";
+            }
+            $cite = "";
+        }
+    }
+    return $output;
 }
 
 function showBreak($breaksize) {

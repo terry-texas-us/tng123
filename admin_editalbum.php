@@ -191,10 +191,10 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             <td><?php echo $admtext['active']; ?>:</td>
                             <td>
                                 <input type="radio" name="active" value="1"<?php if ($row['active']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['yes']; ?> &nbsp;
                                 <input type="radio" name="active" value="0"<?php if (!$row['active']) {
-                                    echo " checked=\"checked\"";
+                                    echo " checked";
                                 } ?>> <?php echo $admtext['no']; ?></td>
                         </tr>
                         </tr>
@@ -312,7 +312,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "		<option value=\"{$treerow['gedcom']}\"";
                                         if ($firsttree == $treerow['gedcom']) {
-                                            echo " selected=\"selected\"";
+                                            echo " selected";
                                         }
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
@@ -449,9 +449,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     echo $admtext['onsave'] . ":<br>";
                     echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked=\"checked\"> {$text['closewindow']}\n";
+                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked=\"checked\"> {$admtext['saveback']}\n";
+                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>
