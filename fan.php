@@ -7,7 +7,7 @@ include "tng_begin.php";
 include "fan_config.php";
 
 if (!$personID && !isset($needperson)) {
-  die("no args");
+    die("no args");
 }
 
 $fan_url = getURL("fan", 1);
@@ -22,24 +22,24 @@ die();
 // how many generations to show?
 $generations = intval($generations);
 if (!$generations) {
-  if ($sitever != "mobile") {
-    $generations = $fan_gen_default;
-  } else {
-    $generations = 3;
-  }
+    if ($sitever != "mobile") {
+        $generations = $fan_gen_default;
+    } else {
+        $generations = 3;
+    }
 }
 if ($generations > $fan_gen_max) {
-  $generations = $fan_gen_max;
+    $generations = $fan_gen_max;
 }
 if ($generations < $fan_gen_min) {
-  $generations = $fan_gen_min;
+    $generations = $fan_gen_min;
 }
 
 $result = getPersonFullPlusDates($tree, $personID);
 if (!tng_num_rows($result)) {
-  tng_free_result($result);
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    tng_free_result($result);
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -83,89 +83,89 @@ $marriages = array();
 $righttree = checktree($tree);
 
 for ($a = 0; $a < $generations; $a++) {
-  for ($b = 0; $b < pow(2, $a); $b++) {
-    if (isset($perID[pow(2, $a) + $b - 1])) {
-      $tID = pow(2, $a) + $b - 1;
-      $result = getPersonFullPlusDates($tree, $perID[$tID]);
-      $row = tng_fetch_assoc($result);
+    for ($b = 0; $b < pow(2, $a); $b++) {
+        if (isset($perID[pow(2, $a) + $b - 1])) {
+            $tID = pow(2, $a) + $b - 1;
+            $result = getPersonFullPlusDates($tree, $perID[$tID]);
+            $row = tng_fetch_assoc($result);
 
-      $rightbranch = $righttree ? checkbranch($row['branch']) : false;
-      $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
-      $row['display'] = $rights['both'];
+            $rightbranch = $righttree ? checkbranch($row['branch']) : false;
+            $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
+            $row['display'] = $rights['both'];
 
-      $row['allow_living'] = $rights['living'];
-      $row['allow_private'] = $rights['private'];
+            $row['allow_living'] = $rights['living'];
+            $row['allow_private'] = $rights['private'];
 
-      $perName[$tID] = getName($row);
-      $pNames .= "pNames[$tID] = \"" . addslashes($perName[$tID]) . "\";\n";
-      $pIDs .= "pIDs[$tID] = '{$perID[$tID]}';\n";
-      $tData .= "tData[$tID] = ";
-      $bio = $perName[$tID] . "<br>";
+            $perName[$tID] = getName($row);
+            $pNames .= "pNames[$tID] = \"" . addslashes($perName[$tID]) . "\";\n";
+            $pIDs .= "pIDs[$tID] = '{$perID[$tID]}';\n";
+            $tData .= "tData[$tID] = ";
+            $bio = $perName[$tID] . "<br>";
 
-      $result = getFamilyData($tree, $row['famc']);
-      $rowM = tng_fetch_assoc($result);
-      $h = 2 * ($tID) + 1;
-      $w = 2 * ($tID) + 2;
-      $perID[$h] = $rowM['husband'];
-      $perID[$w] = $rowM['wife'];
+            $result = getFamilyData($tree, $row['famc']);
+            $rowM = tng_fetch_assoc($result);
+            $h = 2 * ($tID) + 1;
+            $w = 2 * ($tID) + 2;
+            $perID[$h] = $rowM['husband'];
+            $perID[$w] = $rowM['wife'];
 
-      $rightsM = determineLivingPrivateRights($rowM, $righttree, $rightbranch);
-      $rowM['allow_living'] = $rightsM['living'];
-      $rowM['allow_private'] = $rightsM['private'];
+            $rightsM = determineLivingPrivateRights($rowM, $righttree, $rightbranch);
+            $rowM['allow_living'] = $rightsM['living'];
+            $rowM['allow_private'] = $rightsM['private'];
 
-      if ($rightsM['both'] && ($rowM['marrdate'] || $rowM['marrplace'])) {
-        $marr = trim($text['married'] . ": " . displayDate($rowM['marrdate']));
-        if ($rowM['marrdate'] && $rowM['marrplace']) {
-          $marr .= ", ";
+            if ($rightsM['both'] && ($rowM['marrdate'] || $rowM['marrplace'])) {
+                $marr = trim($text['married'] . ": " . displayDate($rowM['marrdate']));
+                if ($rowM['marrdate'] && $rowM['marrplace']) {
+                    $marr .= ", ";
+                }
+                $marr .= $rowM['marrplace'];
+                $marriages[$h] = $marriages[$w] = $marr;
+            }
+
+            if ($rights['both']) {
+                if ($row['birthdate'] || $row['birthplace']) {
+                    $bio .= trim($text['born'] . ": " . displayDate($row['birthdate']));
+                    if ($row['birthdate'] && $row['birthplace']) {
+                        $bio .= ", ";
+                    }
+                    $bio .= $row['birthplace'];
+                } elseif ($row['altbirthdate'] || $row['altbirthplace']) {
+                    $bio .= trim($text['christened'] . ": " . displayDate($row['altbirthdate']));
+                    if ($row['altbirthdate'] && $row['altbirthplace']) {
+                        $bio .= ", ";
+                    }
+                    $bio .= $row['altbirthplace'];
+                }
+                if (isset($marriages[$tID])) {
+                    $bio .= trim($bio ? '<br>' : '') . $marriages[$tID];
+                }
+                if ($row['deathdate'] || $row['deathplace']) {
+                    $bio .= trim(($bio ? '<br>' : '') . $text['died'] . ": " . displayDate($row['deathdate']));
+                    if ($row['deathdate'] && $row['deathplace']) {
+                        $bio .= ", ";
+                    }
+                    $bio .= $row['deathplace'];
+                } elseif ($row['burialdate'] || $row['burialplace']) {
+                    $bio .= trim(($bio ? '<br>' : '') . $text['buried'] . ": " . displayDate($row['burialdate']));
+                    if ($row['burialdate'] && $row['burialplace']) {
+                        $bio .= ", ";
+                    }
+                    $bio .= $row['burialplace'];
+                }
+            }
+            $tData .= "\"" . addslashes($bio) . "\";\n";
         }
-        $marr .= $rowM['marrplace'];
-        $marriages[$h] = $marriages[$w] = $marr;
-      }
-
-      if ($rights['both']) {
-        if ($row['birthdate'] || $row['birthplace']) {
-          $bio .= trim($text['born'] . ": " . displayDate($row['birthdate']));
-          if ($row['birthdate'] && $row['birthplace']) {
-            $bio .= ", ";
-          }
-          $bio .= $row['birthplace'];
-        } elseif ($row['altbirthdate'] || $row['altbirthplace']) {
-          $bio .= trim($text['christened'] . ": " . displayDate($row['altbirthdate']));
-          if ($row['altbirthdate'] && $row['altbirthplace']) {
-            $bio .= ", ";
-          }
-          $bio .= $row['altbirthplace'];
-        }
-        if (isset($marriages[$tID])) {
-          $bio .= trim($bio ? '<br>' : '') . $marriages[$tID];
-        }
-        if ($row['deathdate'] || $row['deathplace']) {
-          $bio .= trim(($bio ? '<br>' : '') . $text['died'] . ": " . displayDate($row['deathdate']));
-          if ($row['deathdate'] && $row['deathplace']) {
-            $bio .= ", ";
-          }
-          $bio .= $row['deathplace'];
-        } elseif ($row['burialdate'] || $row['burialplace']) {
-          $bio .= trim(($bio ? '<br>' : '') . $text['buried'] . ": " . displayDate($row['burialdate']));
-          if ($row['burialdate'] && $row['burialplace']) {
-            $bio .= ", ";
-          }
-          $bio .= $row['burialplace'];
-        }
-      }
-      $tData .= "\"" . addslashes($bio) . "\";\n";
     }
-  }
 }
 
 $textStyles = null;
 foreach ($fan_text_style as $k => $v) {
-  $textStyles .= "fan_text_style[$k]='$v';\n";
+    $textStyles .= "fan_text_style[$k]='$v';\n";
 }
 
 $lineHeight = null;
 foreach ($fan_line_height as $k => $v) {
-  $lineHeight .= "fan_line_height[$k]=$v;\n";
+    $lineHeight .= "fan_line_height[$k]=$v;\n";
 }
 
 $getperson_url = getURL("getperson", 1);
@@ -180,11 +180,11 @@ $fan_url = getURL("fan", 1);
 $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='$fan_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = $fan_gen_min; $i <= $fan_gen_max; $i++) {
-  $innermenu .= "<option value=\"$i\"";
-  if ($i == $generations) {
-    $innermenu .= " selected=\"selected\"";
-  }
-  $innermenu .= ">$i</option>\n";
+    $innermenu .= "<option value=\"$i\"";
+    if ($i == $generations) {
+        $innermenu .= " selected=\"selected\"";
+    }
+    $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 $innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink\" id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
@@ -197,8 +197,8 @@ $innermenu .= "<a href=\"$fan_url" . "personID=$personID&amp;tree=$tree&amp;pare
 $innermenu .= "<a href=\"$extrastree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\">{$text['media']}</a>\n";
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 if ($generations <= 6 && $allowpdf) {
-  $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-  $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width:350, height:350}); return false;\">PDF</a>\n";
+    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+    $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width:350, height:350}); return false;\">PDF</a>\n";
 }
 
 echo getFORM("pedigree", "", "form1", "form1");
@@ -640,7 +640,7 @@ FAN_DOC;
 
 
 if ($fan_use_info_box && !$tngprint) {
-  echo <<< INFO_BOX
+    echo <<< INFO_BOX
 	var tooltipPrevID=null;
 	var tooltipCurID=null;
 

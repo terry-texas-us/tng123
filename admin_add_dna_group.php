@@ -8,9 +8,9 @@ $admin_login = 1;
 include "checklogin.php";
 
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";

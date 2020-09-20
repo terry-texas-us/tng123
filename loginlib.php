@@ -44,11 +44,13 @@ echo $formstr;
 ?>
 <div class="normal" id="forgot" style="clear:both;">
     <p><?php echo $text['forgot1']; ?></p>
-    <input type="text" class="forgotfield" name="email" id="email" placeholder="<?php echo $text['email']; ?>"> <input type="submit" value="<?php echo $text['go']; ?>">
+    <input type="text" class="forgotfield" name="email" id="email" placeholder="<?php echo $text['email']; ?>">
+    <input type="submit" value="<?php echo $text['go']; ?>">
     <div id="usnmsg" class="smaller"></div>
 
     <p><?php echo $text['forgot2']; ?></p>
-    <input type="text" class="forgotfield" name="username" id="username" placeholder="<?php echo $text['username']; ?>"> <input type="submit" value="<?php echo $text['go']; ?>">
+    <input type="text" class="forgotfield" name="username" id="username" placeholder="<?php echo $text['username']; ?>">
+    <input type="submit" value="<?php echo $text['go']; ?>">
     <div id="pwdmsg" class="smaller"></div>
 </div>
 <?php

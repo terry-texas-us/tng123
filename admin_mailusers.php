@@ -14,21 +14,21 @@ tng_adminheader($admtext['emailusers'], $flags);
 ?>
 <script src="js/selectutils.js"></script>
 <script type="text/javascript">
-  <?php
-  include "branchlibjs.php";
-  ?>
+    <?php
+    include "branchlibjs.php";
+    ?>
 
-  function validateForm() {
-      let rval = true;
-      if (document.form1.subject.value.length == 0) {
-          alert("<?php echo $admtext['entersubject']; ?>");
-          rval = false;
-      } else if (document.form1.messagetext.value.length == 0) {
-          alert("<?php echo $admtext['entermsgtext']; ?>");
-          rval = false;
-      }
-      return rval;
-  }
+    function validateForm() {
+        let rval = true;
+        if (document.form1.subject.value.length == 0) {
+            alert("<?php echo $admtext['entersubject']; ?>");
+            rval = false;
+        } else if (document.form1.messagetext.value.length == 0) {
+            alert("<?php echo $admtext['entermsgtext']; ?>");
+            rval = false;
+        }
+        return rval;
+    }
 </script>
 </head>
 
@@ -45,25 +45,25 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['emailmessage']
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_sendmailusers.php" method="post" name="form1" onSubmit="return validateForm();">
-        <table>
-          <tr>
-            <td valign="top"><span class="normal"><?php echo $admtext['subject']; ?>:</span></td>
-                  <td><span class="normal"><input type="text" name="subject" size="50" maxlength="50"></span></td>
-                </tr>
-                <tr>
-                  <td valign="top"><span class="normal"><?php echo $admtext['messagetext']; ?>:</span></td>
-                  <td><span class="normal"><textarea cols="50" rows="15" name="messagetext"></textarea></span></td>
-                </tr>
-                <tr>
-                  <td valign="top" colspan="2"><span class="normal"><br><strong><?php echo $admtext['selectgroup']; ?></strong></span></td>
-                </tr>
-                <tr>
-                  <td valign="top">
-                    <span class="normal"><?php echo $admtext['tree']; ?>*:</span></td>
-                  <td><span class="normal">
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_sendmailusers.php" method="post" name="form1" onSubmit="return validateForm();">
+                <table>
+                    <tr>
+                        <td valign="top"><span class="normal"><?php echo $admtext['subject']; ?>:</span></td>
+                        <td><span class="normal"><input type="text" name="subject" size="50" maxlength="50"></span></td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><span class="normal"><?php echo $admtext['messagetext']; ?>:</span></td>
+                        <td><span class="normal"><textarea cols="50" rows="15" name="messagetext"></textarea></span></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" colspan="2"><span class="normal"><br><strong><?php echo $admtext['selectgroup']; ?></strong></span></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <span class="normal"><?php echo $admtext['tree']; ?>*:</span></td>
+                        <td><span class="normal">
 			<select name="gedcom" id="gedcom" onChange="var tree=getTree(this); if( !tree ) tree = 'none'; <?php echo $swapbranches; ?>">
 				<option value=""></option>
 <?php
@@ -71,7 +71,7 @@ $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
 $treeresult = tng_query($query);
 
 while ($treerow = tng_fetch_assoc($treeresult)) {
-  echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
+    echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
 }
 ?>
 			</select> </span>
@@ -86,18 +86,19 @@ while ($treerow = tng_fetch_assoc($treeresult)) {
 			</select>
 		</span></td>
                     </tr>
-              </table>
-              <br>
-              <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['send']; ?>"></form>
-          <br>
-          <p class="normal">
-            <?php
-            echo "*{$admtext['treemailmsg']}<br>\n";
-            echo "**{$admtext['branchmailmsg']}<br>\n";
-            ?>
-          </p>
-    </td>
-  </tr>
+                </table>
+                <br>
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['send']; ?>">
+            </form>
+            <br>
+            <p class="normal">
+                <?php
+                echo "*{$admtext['treemailmsg']}<br>\n";
+                echo "**{$admtext['branchmailmsg']}<br>\n";
+                ?>
+            </p>
+        </td>
+    </tr>
 
 </table>
 

@@ -55,7 +55,7 @@ define('YES', "1");
 define('NO', "0");
 
 if (!isset($sub)) {
-  $sub = "tables";
+    $sub = "tables";
 }
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
@@ -74,13 +74,13 @@ body {
 $helplang = findhelp("modmanager_help.php");
 
 if (!isset($options['show_analyzer'])) {
-  $options['show_analyzer'] = "0";
+    $options['show_analyzer'] = "0";
 }
 if (!isset($options['show_developer'])) {
-  $options['show_developer'] = "0";
+    $options['show_developer'] = "0";
 }
 if (!isset($options['show_updates'])) {
-  $options['show_updates'] = "0";
+    $options['show_updates'] = "0";
 }
 
 $parts = explode(".", $tng_version);
@@ -92,7 +92,7 @@ $menu = "<div class=\"mmmenuwrap\">";
 $menu .= doMenu($modtabs, "viewlog", $innermenu);
 $menu .= "</div>";
 if (!isset($message)) {
-  $message = "";
+    $message = "";
 }
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 
@@ -102,13 +102,13 @@ $first_menu = TRUE;
 $clearmmlog = empty($_GET['clearmmlog']) ? false : true;
 
 if ($options['fix_header'] == YES && $sitever != 'mobile') {
-  $headclass = 'mmhead-fixed';
-  $ibarclass = 'ibar-fixed';
-  $mmlogclass = 'mmlog-fixed';
+    $headclass = 'mmhead-fixed';
+    $ibarclass = 'ibar-fixed';
+    $mmlogclass = 'mmlog-fixed';
 } else {
-  $headclass = 'mmhead-scroll';
-  $ibarclass = 'ibar-scroll';
-  $mmlogclass = 'mmlog-scroll';
+    $headclass = 'mmhead-scroll';
+    $ibarclass = 'ibar-scroll';
+    $mmlogclass = 'mmlog-scroll';
 }
 
 echo "
@@ -120,26 +120,26 @@ echo "
 </div><!--head-section-->";
 
 if ($options['compress_log'] == YES) {
-  echo "
+    echo "
 <style>
 	.action {padding-left:15px; cursor: pointer; background: url(img/tng_expand.gif) no-repeat left center;}
 	.collapse {background: url(img/tng_collapse.gif) no-repeat left center;
 	.collapse a { text-decoration: none;}
 	.moddetails {display:none;}
 </style>";
-  $hideDetails = "style=\"display:none;\"";
+    $hideDetails = "style=\"display:none;\"";
 } else {
-  $hideDetails = "";
+    $hideDetails = "";
 }
 
 $logfilename = 'modmgrlog.txt';
 if (!isset($options['modlogfile'])) {
-  $options['modlogfile'] = $logfilename;
+    $options['modlogfile'] = $logfilename;
 } //TEMPORARY CODE - get logfilename from querystring parameter
 
 if ($clearmmlog || !file_exists($options['modlogfile'])) {
-  $content = "#### Mod Manager Log created " . date("D d M Y h:i:s A", time() + (3600 * $time_offset)) . " ####";
-  file_put_contents($options['modlogfile'], $content);
+    $content = "#### Mod Manager Log created " . date("D d M Y h:i:s A", time() + (3600 * $time_offset)) . " ####";
+    file_put_contents($options['modlogfile'], $content);
 }
 $nColumns = 1;
 //Add the heading with the Mod Manager Recent Actions message
@@ -155,94 +155,94 @@ echo "
 <table id=\"mmlog\" class='normal lightback $mmlogclass'>";
 $lines = file($options['modlogfile']);
 if ($lines) {
-  $actionCount = 0; // Counts the actions, i.e. the "log entries"
-  $logEntryDetails = "";
-  // These two boolean variables are used (a) to flag that the first line of a log entry
-  // has been output, and (b) to distinguish between newer and older log entries, because
-  // the detail lines of old log entries are in reverse chronological order.
-  $type1Or2EntryIsActive = false;
-  $type3EntryIsActive = false;
-  foreach ($lines as $line) {
-    //Because there are multiple tests involved, we use this boolean variable as we
-    //determine if the log entry is in the newer one-physical-line format.
-    $newLogFormat = false;
-    //Log entries have to start with a date.  This test is necessary because some old log entries
-    //contain
-    if (preg_match("/^\w{3} \d{2} \w{3} \d{4} \d{2}:\d{2}:\d{2} \w{2}/i", $line, $matches)) {
-      //New log entries have a <br> more than 20 characters from the end,
-      //and less than 150 characters from the beginning
-      $br = strpos($line, "<br>");
-      if ($br !== false) {
-        if (strlen($line) - $br > 20 || $br < 150) {
-          $newLogFormat = true;
+    $actionCount = 0; // Counts the actions, i.e. the "log entries"
+    $logEntryDetails = "";
+    // These two boolean variables are used (a) to flag that the first line of a log entry
+    // has been output, and (b) to distinguish between newer and older log entries, because
+    // the detail lines of old log entries are in reverse chronological order.
+    $type1Or2EntryIsActive = false;
+    $type3EntryIsActive = false;
+    foreach ($lines as $line) {
+        //Because there are multiple tests involved, we use this boolean variable as we
+        //determine if the log entry is in the newer one-physical-line format.
+        $newLogFormat = false;
+        //Log entries have to start with a date.  This test is necessary because some old log entries
+        //contain
+        if (preg_match("/^\w{3} \d{2} \w{3} \d{4} \d{2}:\d{2}:\d{2} \w{2}/i", $line, $matches)) {
+            //New log entries have a <br> more than 20 characters from the end,
+            //and less than 150 characters from the beginning
+            $br = strpos($line, "<br>");
+            if ($br !== false) {
+                if (strlen($line) - $br > 20 || $br < 150) {
+                    $newLogFormat = true;
+                }
+            }
         }
-      }
-    }
 
-    if ($newLogFormat) {
-      //This is a one-physical-line log entry.
-      if ($logEntryDetails) {
-        echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
-        $type3EntryIsActive = false;
-      }
-      $actionCount++;
-      //Suppress any <hr> elements in the first line of the log entry.
-      $heading = str_replace("<hr>", "", substr($line, 0, $br));
-      //The rest of the log entry goes into the details.
-      $logEntryDetails = substr($line, $br + 6);
-      $type1Or2EntryIsActive = true;
+        if ($newLogFormat) {
+            //This is a one-physical-line log entry.
+            if ($logEntryDetails) {
+                echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
+                $type3EntryIsActive = false;
+            }
+            $actionCount++;
+            //Suppress any <hr> elements in the first line of the log entry.
+            $heading = str_replace("<hr>", "", substr($line, 0, $br));
+            //The rest of the log entry goes into the details.
+            $logEntryDetails = substr($line, $br + 6);
+            $type1Or2EntryIsActive = true;
 
-      // break out the status from $heading, set $dynoclass and add below
-      if (false !== strpos($heading, "errors")) {
-        $dynoclass = "msgerror";
-      } elseif (false !== stripos($heading, "modrem")) {
-        $dynoclass = "ready";
-      } elseif (false !== stripos($heading, "installed")) {
-        $dynoclass = "installed";
-      } elseif (false !== stripos($heading, "updated")) {
-        $dynoclass = "installed";
-      } elseif (false !== stripos($heading, "filedel")) {
-        $dynoclass = "";
-      } else {
-        $dynoclass = "lightback";
-      }
-      echo "<tr class=\"$dynoclass mmpadleft\">";
-      echo "<td class=\"action\" id=\"action$actionCount\">$actionCount. $heading</td></tr>\n";
-    } else {
-      // This isn't a one-physical-line log entry.  But we also need to look for old log
-      // entries that consist of multiple physical lines.
-      //This pattern should match old "type 3" log entries.
-      //(I know that it isn't perfect, but it's the best I could come up with.)
-      $match = preg_match("/^(\w{3} \d{2} \w{3} \d{4} \d{2}:\d{2}:\d{2} \w{2}) ([.\w_-]*)\.cfg(.*)\(([\w: ]*)\)/i", $line, $matches);
-      if ($match) {
-        //It looks like this is the beginning of an old multiple-physical-line log entry.
-        if ($logEntryDetails) {
-            echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
-          $type1Or2EntryIsActive = false;
-          $logEntryDetails = "";
-        }
-        $actionCount++;
-        $modFilename = $matches[2]; //I'm not using this variable now, but hope to later.
-          echo "<tr class='databack mmpadleft'>";
-          echo "<td class=\"action\" id=\"action$actionCount\">$actionCount. $line</td></tr>";
-        $type3EntryIsActive = true;
-      } else {
-        //Couldn't parse the alternate pattern - treat this as an unrecognizable entry
-        if ($type3EntryIsActive) {
-          //Add the unrecognized entry at the beginning of existing details
-          $logEntryDetails = "$line</span><br>\n$logEntryDetails"; //add </span> to close a chronically unclosed span in the log.
+            // break out the status from $heading, set $dynoclass and add below
+            if (false !== strpos($heading, "errors")) {
+                $dynoclass = "msgerror";
+            } elseif (false !== stripos($heading, "modrem")) {
+                $dynoclass = "ready";
+            } elseif (false !== stripos($heading, "installed")) {
+                $dynoclass = "installed";
+            } elseif (false !== stripos($heading, "updated")) {
+                $dynoclass = "installed";
+            } elseif (false !== stripos($heading, "filedel")) {
+                $dynoclass = "";
+            } else {
+                $dynoclass = "lightback";
+            }
+            echo "<tr class=\"$dynoclass mmpadleft\">";
+            echo "<td class=\"action\" id=\"action$actionCount\">$actionCount. $heading</td></tr>\n";
         } else {
-          if ($type1Or2EntryIsActive) {
-            //Add the unrecognized entry at the end of the existing details
-            $logEntryDetails .= "<br>$line";
-          } else {
-            //There's no outstanding log entry to add this to. Just display it without any compression controls
-              echo "<tr><td class='databack mmpadleft' colspan=\"$nColumns\"><b>?? </b>$line</td></tr>\n";
-          }
+            // This isn't a one-physical-line log entry.  But we also need to look for old log
+            // entries that consist of multiple physical lines.
+            //This pattern should match old "type 3" log entries.
+            //(I know that it isn't perfect, but it's the best I could come up with.)
+            $match = preg_match("/^(\w{3} \d{2} \w{3} \d{4} \d{2}:\d{2}:\d{2} \w{2}) ([.\w_-]*)\.cfg(.*)\(([\w: ]*)\)/i", $line, $matches);
+            if ($match) {
+                //It looks like this is the beginning of an old multiple-physical-line log entry.
+                if ($logEntryDetails) {
+                    echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
+                    $type1Or2EntryIsActive = false;
+                    $logEntryDetails = "";
+                }
+                $actionCount++;
+                $modFilename = $matches[2]; //I'm not using this variable now, but hope to later.
+                echo "<tr class='databack mmpadleft'>";
+                echo "<td class=\"action\" id=\"action$actionCount\">$actionCount. $line</td></tr>";
+                $type3EntryIsActive = true;
+            } else {
+                //Couldn't parse the alternate pattern - treat this as an unrecognizable entry
+                if ($type3EntryIsActive) {
+                    //Add the unrecognized entry at the beginning of existing details
+                    $logEntryDetails = "$line</span><br>\n$logEntryDetails"; //add </span> to close a chronically unclosed span in the log.
+                } else {
+                    if ($type1Or2EntryIsActive) {
+                        //Add the unrecognized entry at the end of the existing details
+                        $logEntryDetails .= "<br>$line";
+                    } else {
+                        //There's no outstanding log entry to add this to. Just display it without any compression controls
+                        echo "<tr><td class='databack mmpadleft' colspan=\"$nColumns\"><b>?? </b>$line</td></tr>\n";
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
 // Are any details left over from the very last log entry?
 if ($logEntryDetails) {
@@ -253,46 +253,46 @@ echo "
 	</table>";
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
-  global $admtext;
+    global $admtext;
 
-  $modtabs = array();
-  $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-  $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-  $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
-  if ($show_analyzer == YES) {
-    $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
-  }
-  if ($show_developer == YES) {
-    $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
-  }
-  if ($show_updates == YES) {
-    $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
-  }
-  return $modtabs;
+    $modtabs = array();
+    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
+    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
+    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    if ($show_analyzer == YES) {
+        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+    }
+    if ($show_developer == YES) {
+        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+    }
+    if ($show_updates == YES) {
+        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+    }
+    return $modtabs;
 }
 
 function set_innermenu_links($tng_version) {
-  global $text, $admtext;
-  $parts = explode(".", $tng_version);        // added to determine TNG vNN for
-  $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";    // Mods for TNG vNN text display
-  $tngmodurl = "Mods_for_TNG_v{$parts[0]}";    // Mods for TNG vNN URL
-  $helplang = findhelp("modhandler_help.php");
+    global $text, $admtext;
+    $parts = explode(".", $tng_version);        // added to determine TNG vNN for
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";    // Mods for TNG vNN text display
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";    // Mods for TNG vNN URL
+    $helplang = findhelp("modhandler_help.php");
 
-  // inner menu help
-  $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    // inner menu help
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 
-  // expand & collapse all
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"expandall\"> {$text['expandall']}</a>";
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"collapseall\">{$text['collapseall']}</a>";
+    // expand & collapse all
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"expandall\"> {$text['expandall']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"collapseall\">{$text['collapseall']}</a>";
 
-  //This section for View Log only to allow clearing the log
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_showmodslog.php?clearmmlog=true\" onclick=\"return confirm( '{$admtext['confirmclearlog']}')\"; class=\"lightlink\">{$admtext['clearlog']}</a>";
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    //This section for View Log only to allow clearing the log
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_showmodslog.php?clearmmlog=true\" onclick=\"return confirm( '{$admtext['confirmclearlog']}')\"; class=\"lightlink\">{$admtext['clearlog']}</a>";
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
-  // mods for TNGv10
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
-  return $innermenu;
+    // mods for TNGv10
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    return $innermenu;
 }
 
 /*************************************************************************
@@ -300,7 +300,7 @@ function set_innermenu_links($tng_version) {
  *************************************************************************/
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
-  echo "
+    echo "
 <script type=\"text/javascript\">
    jQuery(document).ready(function() {
 	   // set position of table relative to inner menu

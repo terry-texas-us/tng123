@@ -8,16 +8,16 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_media_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $tree = $assignedtree;
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
@@ -97,8 +97,8 @@ tng_adminheader($admtext['sortmedia'], $flags);
     var mediafolders = new Array();
     <?php
     foreach ($mediatypes as $mediatype) {
-      $ID = $mediatype['ID'];
-      echo "mediafolders['$ID'] = '{$mediatypes_assoc[$ID]}';\n";
+        $ID = $mediatype['ID'];
+        echo "mediafolders['$ID'] = '{$mediatypes_assoc[$ID]}';\n";
     }
     ?>
 
@@ -109,32 +109,32 @@ tng_adminheader($admtext['sortmedia'], $flags);
     }
 
     jQuery(document).ready(function () {
-      jQuery('#linker').click(function (e) {
-        e.preventDefault();
-        if (jQuery('#newlink1').val()) {
-          var medialist = "";
+        jQuery('#linker').click(function (e) {
+            e.preventDefault();
+            if (jQuery('#newlink1').val()) {
+                var medialist = "";
 
-            jQuery('.mediacheck:checked').each(function () {
-                medialist += (medialist ? "," + this.id : this.id);
-            });
-            if (medialist) {
-                var linkermsg = jQuery('#linkermsg');
-                linkermsg.html('&nbsp;<img src="img/spinner.gif">');
-
-                var params = jQuery('#linkerform').serialize();
-                params += "&medialist=" + medialist + "&action=masslink";
-                jQuery.ajax({
-                    url: 'ajx_updateorder.php',
-                    data: params,
-                    dataType: 'html',
-                    success: function (req) {
-                        linkermsg.html('<span class="green">' + req + '</span>');
-                        linkermsg.effect("highlight", {}, 2500);
-                    },
-                    error: function (req) {
-                        linkermsg.html("An error has occurred. Please try again.");
-                    }
+                jQuery('.mediacheck:checked').each(function () {
+                    medialist += (medialist ? "," + this.id : this.id);
                 });
+                if (medialist) {
+                    var linkermsg = jQuery('#linkermsg');
+                    linkermsg.html('&nbsp;<img src="img/spinner.gif">');
+
+                    var params = jQuery('#linkerform').serialize();
+                    params += "&medialist=" + medialist + "&action=masslink";
+                    jQuery.ajax({
+                        url: 'ajx_updateorder.php',
+                        data: params,
+                        dataType: 'html',
+                        success: function (req) {
+                            linkermsg.html('<span class="green">' + req + '</span>');
+                            linkermsg.effect("highlight", {}, 2500);
+                        },
+                        error: function (req) {
+                            linkermsg.html("An error has occurred. Please try again.");
+                        }
+                    });
                 }
             }
             return false;
@@ -180,59 +180,62 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                         $msgID = $mediatype['ID'];
                         echo "	<option value=\"$msgID\">" . $mediatype['display'] . "</option>\n";
                     }
-          ?>
+                    ?>
                 </select>
                 &nbsp;
-              <?php
-              echo $admtext['tree'] . ": ";
-              if ($assignedtree) {
-                if ($row['gedcom']) {
-                  $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                  $treerow = tng_fetch_assoc($treeresult);
-                  echo $treerow['treename'];
-                  tng_free_result($treeresult);
+                <?php
+                echo $admtext['tree'] . ": ";
+                if ($assignedtree) {
+                    if ($row['gedcom']) {
+                        $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                        $treerow = tng_fetch_assoc($treeresult);
+                        echo $treerow['treename'];
+                        tng_free_result($treeresult);
+                    } else {
+                        echo $admtext['alltrees'];
+                    }
+                    echo "<input type='hidden' name=\"tree\" value=\"{$row['gedcom']}\">";
                 } else {
-                  echo $admtext['alltrees'];
-                }
-                echo "<input type='hidden' name=\"tree\" value=\"{$row['gedcom']}\">";
-              } else {
-                echo "<select name=\"tree\">";
-                echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                if ($row['gedcom']) {
-                  $tree = $row['gedcom'];
-                }
+                    echo "<select name=\"tree\">";
+                    echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
+                    if ($row['gedcom']) {
+                        $tree = $row['gedcom'];
+                    }
 
-                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                while ($treerow = tng_fetch_assoc($treeresult)) {
-                  echo "	<option value=\"{$treerow['gedcom']}\"";
-                  if ($treerow['gedcom'] == $row['gedcom']) {
-                    echo " selected";
-                  }
-                  echo ">{$treerow['treename']}</option>\n";
+                    $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                    while ($treerow = tng_fetch_assoc($treeresult)) {
+                        echo "	<option value=\"{$treerow['gedcom']}\"";
+                        if ($treerow['gedcom'] == $row['gedcom']) {
+                            echo " selected";
+                        }
+                        echo ">{$treerow['treename']}</option>\n";
+                    }
+                    echo "</select>&nbsp;&nbsp;\n";
+                    tng_free_result($treeresult);
                 }
-                echo "</select>&nbsp;&nbsp;\n";
-                tng_free_result($treeresult);
-              }
-              $mediatypeID = $mediatypes[0]['ID'];
-              $folder = $mediatypes_assoc[$mediatypeID];
-              echo $admtext['folder'] . ": <span id=\"folderlabel\">$folder</span>/";
-              ?>
-        <input type="text" id="folder" name="folder" class="medfield"> <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" name="folderselect" onclick="FilePicker('folder',jQuery('#mediatypeID').val(),1);">
-        <br><br>
+                $mediatypeID = $mediatypes[0]['ID'];
+                $folder = $mediatypes_assoc[$mediatypeID];
+                echo $admtext['folder'] . ": <span id=\"folderlabel\">$folder</span>/";
+                ?>
+                <input type="text" id="folder" name="folder" class="medfield">
+                <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" name="folderselect" onclick="FilePicker('folder',jQuery('#mediatypeID').val(),1);">
+                <br><br>
 
-        <noscript><input type="hidden" name="redirect" value="{$http}://blueimp.github.com/jQuery-File-Upload/"></noscript>
-        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-        <div class="row fileupload-buttonbar" style="float:left;">
-          <div class="span7">
-            <!-- The fileinput-button span is used to style the file input field as button -->
-            <span class="btn fileinput-button">
+                <noscript>
+                    <input type="hidden" name="redirect" value="{$http}://blueimp.github.com/jQuery-File-Upload/">
+                </noscript>
+                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                <div class="row fileupload-buttonbar" style="float:left;">
+                    <div class="span7">
+                        <!-- The fileinput-button span is used to style the file input field as button -->
+                        <span class="btn fileinput-button">
 		            	<span><?php echo $admtext['addfiles']; ?></span>
 		                <input type="file" name="files[]" multiple>
 		            </span>&nbsp;
-            <input type="submit" class="btn start" value="<?php echo $admtext['startupl']; ?>">
-            <input type="reset" class="btn cancel" value="<?php echo $admtext['cancelupl']; ?>">
-          </div>
-        </div>
+                        <input type="submit" class="btn start" value="<?php echo $admtext['startupl']; ?>">
+                        <input type="reset" class="btn cancel" value="<?php echo $admtext['cancelupl']; ?>">
+                    </div>
+                </div>
                 <!-- The global progress information -->
                 <div class="span5 fileupload-progress fade">
                     <!-- The global progress bar -->
@@ -254,29 +257,29 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                 </div>
             </form>
 
-      <br>
+            <br>
 
-      <form action="admin_ordermedia.php" method="get" name="find" id="linkerform" onsubmit="return validateForm();">
-        <table cellspacing="2" class="normal">
-          <tr>
-            <td><?php echo $admtext['tree']; ?></td>
+            <form action="admin_ordermedia.php" method="get" name="find" id="linkerform" onsubmit="return validateForm();">
+                <table cellspacing="2" class="normal">
+                    <tr>
+                        <td><?php echo $admtext['tree']; ?></td>
                         <td><?php echo $admtext['linktype']; ?></td>
                         <td colspan="3"><?php echo $admtext['id']; ?></td>
                     </tr>
                     <tr>
                         <td valign="top">
                             <select name="tree1">
-                              <?php
-                              $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                              while ($treerow = tng_fetch_assoc($treeresult)) {
-                                echo "	<option value=\"{$treerow['gedcom']}\"";
-                                if ($treerow['gedcom'] == $tree) {
-                                  echo " selected";
+                                <?php
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    echo "	<option value=\"{$treerow['gedcom']}\"";
+                                    if ($treerow['gedcom'] == $tree) {
+                                        echo " selected";
+                                    }
+                                    echo ">{$treerow['treename']}</option>\n";
                                 }
-                                echo ">{$treerow['treename']}</option>\n";
-                              }
-                              tng_free_result($treeresult);
-                              ?>
+                                tng_free_result($treeresult);
+                                ?>
                             </select>
                         </td>
                         <td valign="top">
@@ -288,31 +291,33 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                                 <option value="L"><?php echo $admtext['place']; ?></option>
                             </select>
                         </td>
-                        <td><input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>" onblur="toggleEventRow(document.find.eventlink1.checked);"></td>
+                        <td>
+                            <input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>" onblur="toggleEventRow(document.find.eventlink1.checked);">
+                        </td>
                         <td><a href="#"
                                onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                      <td>
-                        <input type="button" class="toggle" value="<?php echo $admtext['selectall']; ?>">
-                        <input type="submit" id="linker" value="<?php echo $admtext['linksel']; ?>"> &nbsp; <span id="linkermsg"></span>
-                      </td>
+                        <td>
+                            <input type="button" class="toggle" value="<?php echo $admtext['selectall']; ?>">
+                            <input type="submit" id="linker" value="<?php echo $admtext['linksel']; ?>"> &nbsp; <span id="linkermsg"></span>
+                        </td>
                     </tr>
-          <tr>
-            <td colspan="2">&nbsp;</td>
-            <td colspan="2">
-              <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
-              <select name="event1" id="eventrow1" style="display:none;">
-                <option value=""></option>
-              </select>
-            </td>
-              <td class="normal" valign="top">&nbsp;</td>
-          </tr>
-        </table>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td colspan="2">
+                            <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
+                            <select name="event1" id="eventrow1" style="display:none;">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td class="normal" valign="top">&nbsp;</td>
+                    </tr>
+                </table>
 
-      </form>
+            </form>
 
-    </td>
-  </tr>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
@@ -345,6 +350,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
         {% } %}</td>
     </tr>
 {% } %}
+
 
 
 
@@ -405,6 +411,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
         </td>
     </tr>
 {% } %}
+
 
 
 

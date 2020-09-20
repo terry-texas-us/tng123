@@ -21,8 +21,8 @@ global $text, $currentuser, $allow_admin, $tmp;
                         ?>
 
                         <span class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle1'); ?></span><span
-                                class="headertext text_tan"><?php echo getTemplateMessage('t8_headtitle2'); ?></span><span
-                                class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle3'); ?></span>
+                            class="headertext text_tan"><?php echo getTemplateMessage('t8_headtitle2'); ?></span><span
+                            class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle3'); ?></span>
 
                         <?php
                         //end HEADER TITLE, PARTS 1,2 & 3

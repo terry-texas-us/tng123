@@ -45,21 +45,27 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td><?php echo $admtext['personid']; ?></td>
             </tr>
             <tr>
-                <td><input type="text" name="myffirstname" id="myffirstname" tabindex="1"
+                <td>
+                    <input type="text" name="myffirstname" id="myffirstname" tabindex="1"
                            onkeyup="filterChanged(event, {form:'findform1',fieldId:'myffirstname',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
                 </td>
-                <td><input type="text" name="myflastname" id="myflastname" tabindex="2"
+                <td>
+                    <input type="text" name="myflastname" id="myflastname" tabindex="2"
                            onkeyup="filterChanged(event, {form:'findform1',fieldId:'myflastname',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
                 </td>
-                <td><input type="text" name="myfpersonID" id="myfpersonID" tabindex="3" class="veryshortfield"
+                <td>
+                    <input type="text" name="myfpersonID" id="myfpersonID" tabindex="3" class="veryshortfield"
                            onkeyup="filterChanged(event, {form:'findform1',fieldId:'myfpersonID',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
-                    <input type="submit" value="<?php echo $admtext['search']; ?>"> <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);"></td>
+                    <input type="submit" value="<?php echo $admtext['search']; ?>">
+                    <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);">
+                </td>
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp; <input type="radio" name="filter" value="c"
-                                                                                                                                                              checked="checked"
-                                                                                                                                                              onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
+                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp;
+                    <input type="radio" name="filter" value="c"
+                           checked="checked"
+                           onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
                 </td>
             </tr>
         </table>

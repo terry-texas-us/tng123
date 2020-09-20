@@ -9,16 +9,16 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $tree = $assignedtree;
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $orgtree = $tree;
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
@@ -63,29 +63,31 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['addgroup'
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_add_dna_group.php" method="post" name="form1" onsubmit="return validateForm();">
-        <table class="normal">
-          <tr>
-            <td><?php echo $admtext['tree']; ?>:</td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_add_dna_group.php" method="post" name="form1" onsubmit="return validateForm();">
+                <table class="normal">
+                    <tr>
+                        <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
                             <select name="tree" id="tree2">
-                              <?php
-                              $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                              while ($treerow = tng_fetch_assoc($treeresult))
-                                echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
-                              tng_free_result($treeresult);
-                              ?>
+                                <?php
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult))
+                                    echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
+                                tng_free_result($treeresult);
+                                ?>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['groupid']; ?>:</td>
-                      <td><input type="text" name="dna_group" size="20" maxlength="20"></td>
+                        <td>
+                            <input type="text" name="dna_group" size="20" maxlength="20">
+                        </td>
                     </tr>
-                  <tr>
-                    <td><?php echo $admtext['test_type']; ?>:</td>
+                    <tr>
+                        <td><?php echo $admtext['test_type']; ?>:</td>
                         <td>
                             <select name="test_type">
                                 <option value=""></option>
@@ -98,15 +100,17 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['addgroup'
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['description']; ?>:</td>
-                      <td><input type="text" name="description" size="60"></td>
+                        <td>
+                            <input type="text" name="description" size="60">
+                        </td>
                     </tr>
 
-        </table>
-          <br>
-          <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-      </form>
-    </td>
-  </tr>
+                </table>
+                <br>
+                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
+            </form>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

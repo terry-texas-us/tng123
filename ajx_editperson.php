@@ -175,10 +175,18 @@ include_once "eventlib.php";
                                     } ?>><?php echo $admtext['female']; ?></option>
                                 </select>
                             </td>
-                            <td><input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="veryshortfield"></td>
-                            <td><input type="text" value="<?php echo $row['title']; ?>" name="title" class="veryshortfield"></td>
-                            <td><input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="veryshortfield"></td>
-                            <td><input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="veryshortfield"></td>
+                            <td>
+                                <input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="veryshortfield">
+                            </td>
+                            <td>
+                                <input type="text" value="<?php echo $row['title']; ?>" name="title" class="veryshortfield">
+                            </td>
+                            <td>
+                                <input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="veryshortfield">
+                            </td>
+                            <td>
+                                <input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="veryshortfield">
+                            </td>
                             <td>
                                 <select name="pnameorder">
                                     <option value="0"><?php echo $admtext['default']; ?></option>

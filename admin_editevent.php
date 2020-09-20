@@ -44,12 +44,15 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td><?php echo $admtext['eventdate']; ?>:</td>
-                <td><input type="text" name="eventdate" id="eventdate" value="<?php echo $row['eventdate']; ?>" onBlur="checkDate(this);"> <span
-                            class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
+                <td>
+                    <input type="text" name="eventdate" id="eventdate" value="<?php echo $row['eventdate']; ?>" onBlur="checkDate(this);">
+                    <span
+                        class="normal"><?php echo $admtext['dateformat']; ?>:</span></td>
             </tr>
             <tr>
                 <td><?php echo $admtext['eventplace']; ?>:</td>
-                <td valign="top"><input type="text" name="eventplace" id="eventplace" size="40" value="<?php echo $row['eventplace']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                <td valign="top">
+                    <input type="text" name="eventplace" id="eventplace" size="40" value="<?php echo $row['eventplace']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                     <a href="#" onclick="return openFindPlaceForm('eventplace');">
                         <img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20">
                     </a>
@@ -67,7 +70,9 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td>
                     <table class="normal" cellpadding="0">
                         <tr>
-                            <td><input type="text" name="dupIDs" id="dupIDs" value="<?php echo $row['personID']; ?>" class="medfield"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
+                            <td>
+                                <input type="text" name="dupIDs" id="dupIDs" value="<?php echo $row['personID']; ?>" class="medfield"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                            </td>
                             <td><a href="#" onclick="return findItem('<?php echo $row['type']; ?>','dupIDs','','<?php echo $row['gedcom']; ?>','<?php echo $assignedbranch; ?>');"
                                    title="<?php echo $admtext['find']; ?>"
                                    class="smallicon admin-find-icon"></a></td>
@@ -86,51 +91,75 @@ header("Content-type:text/html; charset=" . $session_charset);
             <table cellpadding="2" class="normal">
                 <tr>
                     <td><?php echo $admtext['age']; ?>:</td>
-                    <td><input type="text" name="age" size="12" maxlength="12" value="<?php echo $row['age']; ?>"></td>
+                    <td>
+                        <input type="text" name="age" size="12" maxlength="12" value="<?php echo $row['age']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['agency']; ?>:</td>
-                    <td><input type="text" name="agency" size="40" value="<?php echo $row['agency']; ?>"></td>
+                    <td>
+                        <input type="text" name="agency" size="40" value="<?php echo $row['agency']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['cause']; ?>:</td>
-                    <td><input type="text" name="cause" size="40" value="<?php echo $row['cause']; ?>"></td>
+                    <td>
+                        <input type="text" name="cause" size="40" value="<?php echo $row['cause']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['address1']; ?>:</td>
-                    <td><input type="text" name="address1" size="40" value="<?php echo $row['address1']; ?>"></td>
+                    <td>
+                        <input type="text" name="address1" size="40" value="<?php echo $row['address1']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['address2']; ?>:</td>
-                    <td><input type="text" name="address2" size="40" value="<?php echo $row['address2']; ?>"></td>
+                    <td>
+                        <input type="text" name="address2" size="40" value="<?php echo $row['address2']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['city']; ?>:</td>
-                    <td><input type="text" name="city" size="40" value="<?php echo $row['city']; ?>"></td>
+                    <td>
+                        <input type="text" name="city" size="40" value="<?php echo $row['city']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['stateprov']; ?>:</td>
-                    <td><input type="text" name="state" size="40" value="<?php echo $row['state']; ?>"></td>
+                    <td>
+                        <input type="text" name="state" size="40" value="<?php echo $row['state']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['zip']; ?>:</td>
-                    <td><input type="text" name="zip" size="20" value="<?php echo $row['zip']; ?>"></td>
+                    <td>
+                        <input type="text" name="zip" size="20" value="<?php echo $row['zip']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['countryaddr']; ?>:</td>
-                    <td><input type="text" name="country" size="40" value="<?php echo $row['country']; ?>"></td>
+                    <td>
+                        <input type="text" name="country" size="40" value="<?php echo $row['country']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['phone']; ?>:</td>
-                    <td><input type="text" name="phone" size="30" value="<?php echo $row['phone']; ?>"></td>
+                    <td>
+                        <input type="text" name="phone" size="30" value="<?php echo $row['phone']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['email']; ?>:</td>
-                    <td><input type="text" name="email" size="50" value="<?php echo $row['email']; ?>"></td>
+                    <td>
+                        <input type="text" name="email" size="50" value="<?php echo $row['email']; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo $admtext['website']; ?>:</td>
-                    <td><input type="text" name="www" size="50" value="<?php echo $row['www']; ?>"></td>
+                    <td>
+                        <input type="text" name="www" size="50" value="<?php echo $row['www']; ?>">
+                    </td>
                 </tr>
             </table>
             <br>

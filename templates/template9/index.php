@@ -106,9 +106,9 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <div class="art-vmenublockcontent-body">
                                         <ul class="art-vmenu">
                                             <li><a href="whatsnew.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mnuwhatsnew']; ?></span></a></li>
+                                                        class="t"><?php echo $text['mnuwhatsnew']; ?></span></a></li>
                                             <li><a href="mostwanted.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mostwanted']; ?></span></a></li>
+                                                        class="t"><?php echo $text['mostwanted']; ?></span></a></li>
                                             <?php
                                             foreach ($mediatypes as $mediatype) {
                                                 if (!$mediatype['disabled']) {
@@ -117,47 +117,47 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                             }
                                             ?>
                                             <li><a href="browsealbums.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['albums']; ?></span></a></li>
+                                                        class="t"><?php echo $text['albums']; ?></span></a></li>
                                             <li><a href="browsemedia.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['allmedia']; ?></span></a></li>
+                                                        class="t"><?php echo $text['allmedia']; ?></span></a></li>
                                             <li><a href="cemeteries.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mnucemeteries']; ?></span></a></li>
+                                                        class="t"><?php echo $text['mnucemeteries']; ?></span></a></li>
                                             <li><a href="places.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['places']; ?></span></a></li>
+                                                        class="t"><?php echo $text['places']; ?></span></a></li>
                                             <li><a href="browsenotes.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['notes']; ?></span></a></li>
+                                                        class="t"><?php echo $text['notes']; ?></span></a></li>
                                             <li><a href="anniversaries.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['anniversaries']; ?></span></a></li>
+                                                        class="t"><?php echo $text['anniversaries']; ?></span></a></li>
                                             <li><a href="calendar.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['calendar']; ?></span></a></li>
+                                                        class="t"><?php echo $text['calendar']; ?></span></a></li>
                                             <li><a href="reports.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['reports']; ?></span></a></li>
+                                                        class="t"><?php echo $text['reports']; ?></span></a></li>
                                             <li><a href="browsesources.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mnusources']; ?></span></a></li>
+                                                        class="t"><?php echo $text['mnusources']; ?></span></a></li>
                                             <li><a href="browserepos.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['repositories']; ?></span></a></li>
+                                                        class="t"><?php echo $text['repositories']; ?></span></a></li>
                                             <?php
                                             if (!$tngconfig['hidedna']) {
                                                 ?>
                                                 <li><a href="browse_dna_tests.php"><span class="l"></span><span class="r"></span><span
-                                                                class="t"><?php echo $text['dna_tests']; ?></span></a></li>
+                                                            class="t"><?php echo $text['dna_tests']; ?></span></a></li>
                                                 <?php
                                             }
                                             ?>
                                             <li><a href="statistics.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
+                                                        class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
                                             <?php
                                             if ($allow_admin) {
                                                 ?>
                                                 <li><a href="showlog.php"><span class="l"></span><span class="r"></span><span
-                                                                class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
+                                                            class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
                                                 <li><a href="admin.php"><span class="l"></span><span class="r"></span><span
-                                                                class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
+                                                            class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
                                                 <?php
                                             }
                                             ?>
                                             <li><a href="bookmarks.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['bookmarks']; ?></span></a></li>
+                                                        class="t"><?php echo $text['bookmarks']; ?></span></a></li>
                                         </ul>
 
                                         <div class="cleared"></div>

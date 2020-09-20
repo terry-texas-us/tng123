@@ -11,9 +11,9 @@ include "checklogin.php";
 include "version.php";
 
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $row = getTree($trees_table, $tree);
@@ -48,38 +48,38 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <table cellpadding="1">
-        <tr>
-          <td><span class="normal"><strong><?php echo $admtext['tree']; ?>:</strong></span></td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <table cellpadding="1">
+                <tr>
+                    <td><span class="normal"><strong><?php echo $admtext['tree']; ?>:</strong></span></td>
                     <td><span class="normal"><?php echo $row['treename']; ?></span></td>
                 </tr>
                 <tr>
                     <td><span class="normal"><strong><?php echo $admtext['branch']; ?>:</strong></span></td>
                     <td><span class="normal"><?php echo $brow['description']; ?></span></td>
                 </tr>
-              <tr>
-                <td colspan="2">
+                <tr>
+                    <td colspan="2">
 			<span class="normal"><br>
 <?php
 echo "<p class=\"adminnav\"><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class=\"snlink\">{$admtext['labelbranches']}</a></p>\n";
 while ($row = tng_fetch_assoc($brresult)) {
-  $rights = determineLivingPrivateRights($row, true, true);
-  $row['allow_living'] = $rights['living'];
-  $row['allow_private'] = $rights['private'];
+    $rights = determineLivingPrivateRights($row, true, true);
+    $row['allow_living'] = $rights['living'];
+    $row['allow_private'] = $rights['private'];
 
-  echo "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getNameRev($row) . " ({$row['personID']})</a><br>\n";
+    echo "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getNameRev($row) . " ({$row['personID']})</a><br>\n";
 }
 tng_free_result($brresult);
 ?>				
 			</span>
-                </td>
-              </tr>
-      </table>
-        <br>
-    </td>
-  </tr>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </td>
+    </tr>
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>

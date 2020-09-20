@@ -199,12 +199,12 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
 
             ?>
             <?php
-            if( $allow_edit || $showtestnumbers ) { ?>
-            <th colspan="4" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
-            <?php
+            if ($allow_edit || $showtestnumbers) { ?>
+                <th colspan="4" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
+                <?php
             } else { ?>
-            <th colspan="3" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
-            <?php
+                <th colspan="3" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
+                <?php
             }
             ?>
             // TODO the following for lines are likely mangled. Test if dna ever entered.
@@ -213,7 +213,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             <th class="center nw" colspan="10" style="<?php echo $style37 ?>"> {$text['37markers']} "</th>
             <?php if ($columnCount > '37') { ?>
                 <th class="center nw" colspan="28" style="<?php echo $style67 ?>"> {$text['67markers']} "</th>
-            <?php
+                <?php
             }
             if ($columnCount > '67') { ?>
                 <th class="center nw" colspan="44" style="<?php echo $style111 ?>">{$text['111markers']} "</th>
@@ -281,39 +281,39 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             $j = '0';
             $jj = '0';
             while ($j <= ($columnCount - 1)) {
-            $title = "";
-            $class = "";
-            $style = "";
-            if ($j >= 0) {
-                $style = "background-color:$bg1_12; color:$txt1_12;";
-            }
-            if ($j > 10) {
-                $style = "background-color:$bg13_25; color:$txt13_25;";
-            }
-            if ($j > 19) {
-                $style = "background-color:$bg26_37; color:$txt26_37;";
-            }
-            if ($j > 29) {
-                $style = "background-color:$bg38_67; color:$txt38_67;";
-            }
-            if ($j > 57) {
-                $style = "background-color:$bg111; color:$txt111;";
-            }
-            $jj = 0;
-            $col_span = 1;
+                $title = "";
+                $class = "";
+                $style = "";
+                if ($j >= 0) {
+                    $style = "background-color:$bg1_12; color:$txt1_12;";
+                }
+                if ($j > 10) {
+                    $style = "background-color:$bg13_25; color:$txt13_25;";
+                }
+                if ($j > 19) {
+                    $style = "background-color:$bg26_37; color:$txt26_37;";
+                }
+                if ($j > 29) {
+                    $style = "background-color:$bg38_67; color:$txt38_67;";
+                }
+                if ($j > 57) {
+                    $style = "background-color:$bg111; color:$txt111;";
+                }
+                $jj = 0;
+                $col_span = 1;
 
-            if (in_array($dysv[$j], $fastmut)) {
-                $title = $text['fastmutating'];
-                $class = "fakelink";
-                $style = "background-color:$bgfastmut; color:$txtfastmut;";
-            }
-            ?>
-            <th colspan=<?php echo $col_span; ?> align="center" valign="top" class="<?php echo $class; ?>" style="<?php echo $style; ?>" title= <?php echo $title; ?>>
-                <div class="dysval">&nbsp;&nbsp;<?php echo str_replace("_", "", $dysv[$j]); ?></div>
-            </th>
-            <?php
-            $j++;
-            }?>
+                if (in_array($dysv[$j], $fastmut)) {
+                    $title = $text['fastmutating'];
+                    $class = "fakelink";
+                    $style = "background-color:$bgfastmut; color:$txtfastmut;";
+                }
+                ?>
+                <th colspan=<?php echo $col_span; ?> align="center" valign="top" class="<?php echo $class; ?>" style="<?php echo $style; ?>" title= <?php echo $title; ?>>
+                    <div class="dysval">&nbsp;&nbsp;<?php echo str_replace("_", "", $dysv[$j]); ?></div>
+                </th>
+                <?php
+                $j++;
+            } ?>
         </tr>
         </thead>
         <?php

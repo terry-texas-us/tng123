@@ -29,7 +29,7 @@ if ($sitever == "mobile") {
                     <li>
                         <a href="pedigree.php?personID=<?php echo $tmp['t8_momperson']; ?>&amp;tree=<?php echo $tmp['t8_momtree']; ?>"><?php echo getTemplateMessage('t8_momside'); ?>
                             <br>&nbsp;&nbsp;<span
-                                    class="text_grey"><?php echo getTemplateMessage('t8_momsidenames'); ?></span></a></li>
+                                class="text_grey"><?php echo getTemplateMessage('t8_momsidenames'); ?></span></a></li>
 
                     <!-- "DAD's SIDE" LINK: In the following line, substitute the personID and tree ID of the person where you want the pedigree to start. This can be done
                         from the Template Settings, or you can simply replace the t8_dadperson and t8_dadtree PHP blocks in the line below. Also replace the t8_dadside block with the relevant names
@@ -38,7 +38,7 @@ if ($sitever == "mobile") {
                     <li>
                         <a href="pedigree.php?personID=<?php echo $tmp['t8_dadperson']; ?>&amp;tree=<?php echo $tmp['t8_dadtree']; ?>"><?php echo getTemplateMessage('t8_dadside'); ?>
                             <br>&nbsp;&nbsp;<span
-                                    class="text_grey"><?php echo getTemplateMessage('t8_dadsidenames'); ?></span></a></li>
+                                class="text_grey"><?php echo getTemplateMessage('t8_dadsidenames'); ?></span></a></li>
                 </ul>
                 <br>
                 <ul class="homenav">

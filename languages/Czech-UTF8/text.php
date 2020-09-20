@@ -1,683 +1,683 @@
 <?php
 switch ($textpart) {
-  //browsesources.php, showsource.php
-  case "sources":
-    $text['browseallsources'] = "Prohlédnout všechny prameny";
-    $text['shorttitle'] = "Krátký název";
-    $text['callnum'] = "Archivní číslo";
-    $text['author'] = "Autor";
-    $text['publisher'] = "Vydavatel";
-    $text['other'] = "Další informace";
-    $text['sourceid'] = "ID číslo pramenu";
-    $text['moresrc'] = "Další prameny";
-    $text['repoid'] = "ID číslo úložiště";
-    $text['browseallrepos'] = "Prohlédnout všechny úložiště";
-    break;
+    //browsesources.php, showsource.php
+    case "sources":
+        $text['browseallsources'] = "Prohlédnout všechny prameny";
+        $text['shorttitle'] = "Krátký název";
+        $text['callnum'] = "Archivní číslo";
+        $text['author'] = "Autor";
+        $text['publisher'] = "Vydavatel";
+        $text['other'] = "Další informace";
+        $text['sourceid'] = "ID číslo pramenu";
+        $text['moresrc'] = "Další prameny";
+        $text['repoid'] = "ID číslo úložiště";
+        $text['browseallrepos'] = "Prohlédnout všechny úložiště";
+        break;
 
-  //changelanguage.php, savelanguage.php
-  case "language":
-    $text['newlanguage'] = "Nový jazyk";
-    $text['changelanguage'] = "Změna jazyka";
-    $text['languagesaved'] = "Jazyk uložen";
-    $text['sitemaint'] = "Právě probíhá údržba webových stránek";
-    $text['standby'] = "Webové stránky jsou dočasně nedostupné, protože probíhá aktualizace databáze. Zkuste to, prosím, znovu za pár minut. Pokud budou stránky nedostupné delší dobu, kontaktujte majitele těchto stránek.";
-    break;
+    //changelanguage.php, savelanguage.php
+    case "language":
+        $text['newlanguage'] = "Nový jazyk";
+        $text['changelanguage'] = "Změna jazyka";
+        $text['languagesaved'] = "Jazyk uložen";
+        $text['sitemaint'] = "Právě probíhá údržba webových stránek";
+        $text['standby'] = "Webové stránky jsou dočasně nedostupné, protože probíhá aktualizace databáze. Zkuste to, prosím, znovu za pár minut. Pokud budou stránky nedostupné delší dobu, kontaktujte majitele těchto stránek.";
+        break;
 
-  //gedcom.php, gedform.php
-  case "gedcom":
-    $text['gedstart'] = "GEDCOM začínající od";
-    $text['producegedfrom'] = "Vytvořit GEDCOM soubor pro";
-    $text['numgens'] = "Počet generací";
-    $text['includelds'] = "Včetně údajů CJKSpd";
-    $text['buildged'] = "Vytvoř GEDCOM";
-    $text['gedstartfrom'] = "GEDCOM začínající od";
-    $text['nomaxgen'] = "Musíte zadat maximální počet generací. Použijte tlačítko Zpět k návratu na předchozí stránku a chybu opravte.";
-    $text['gedcreatedfrom'] = "GEDCOM vytvořen od";
-    $text['gedcreatedfor'] = "vytvořen pro";
-    $text['creategedfor'] = "Vytvořit GEDCOM";
-    $text['email'] = "Email";
-    $text['suggestchange'] = "Navrhnout změnu";
-    $text['yourname'] = "Vaše jméno";
-    $text['comments'] = "Poznámky";
-    $text['comments2'] = "Komentář";
-    $text['submitsugg'] = "Poslat návrh";
-    $text['proposed'] = "Navrhovaná změna";
-    $text['mailsent'] = "Děkujeme. Vaše zpráva byla odeslána.";
-    $text['mailnotsent'] = "Bohužel, vaše zpráva nemohla být doručena. Kontaktujte prosím xxx přímo na yyy.";
-    $text['mailme'] = "Zaslat kopii na tuto adresu";
-    $text['entername'] = "Zadejte, prosím, vaše jméno";
-    $text['entercomments'] = "Zadejte, prosím, vaše připomínky";
-    $text['sendmsg'] = "Poslat zprávu";
-    //added in 9.0.0
-    $text['subject'] = "Předmět";
-    break;
+    //gedcom.php, gedform.php
+    case "gedcom":
+        $text['gedstart'] = "GEDCOM začínající od";
+        $text['producegedfrom'] = "Vytvořit GEDCOM soubor pro";
+        $text['numgens'] = "Počet generací";
+        $text['includelds'] = "Včetně údajů CJKSpd";
+        $text['buildged'] = "Vytvoř GEDCOM";
+        $text['gedstartfrom'] = "GEDCOM začínající od";
+        $text['nomaxgen'] = "Musíte zadat maximální počet generací. Použijte tlačítko Zpět k návratu na předchozí stránku a chybu opravte.";
+        $text['gedcreatedfrom'] = "GEDCOM vytvořen od";
+        $text['gedcreatedfor'] = "vytvořen pro";
+        $text['creategedfor'] = "Vytvořit GEDCOM";
+        $text['email'] = "Email";
+        $text['suggestchange'] = "Navrhnout změnu";
+        $text['yourname'] = "Vaše jméno";
+        $text['comments'] = "Poznámky";
+        $text['comments2'] = "Komentář";
+        $text['submitsugg'] = "Poslat návrh";
+        $text['proposed'] = "Navrhovaná změna";
+        $text['mailsent'] = "Děkujeme. Vaše zpráva byla odeslána.";
+        $text['mailnotsent'] = "Bohužel, vaše zpráva nemohla být doručena. Kontaktujte prosím xxx přímo na yyy.";
+        $text['mailme'] = "Zaslat kopii na tuto adresu";
+        $text['entername'] = "Zadejte, prosím, vaše jméno";
+        $text['entercomments'] = "Zadejte, prosím, vaše připomínky";
+        $text['sendmsg'] = "Poslat zprávu";
+        //added in 9.0.0
+        $text['subject'] = "Předmět";
+        break;
 
-  //getextras.php, getperson.php
-  case "getperson":
-    $text['photoshistoriesfor'] = "Fotografie a vyprávění pro";
-    $text['indinfofor'] = "Osobní informace o";
-    $text['pp'] = "str."; //page abbreviation
-    $text['age'] = "Věk";
-    $text['agency'] = "Instituce";
-    $text['cause'] = "Příčina";
-    $text['suggested'] = "Navržené";
-    $text['closewindow'] = "Zavřít okno";
-    $text['thanks'] = "Děkujeme";
-    $text['received'] = "Váš návrh byl zaslán administrátorovi těchto stránek k posouzení.";
-    $text['indreport'] = "Report osoby";
-    $text['indreportfor'] = "Report osoby";
-    $text['general'] = "Obecně";
-    $text['bkmkvis'] = "Pozn.: Tyto záložky jsou viditelné pouze na tomto počítači a v tomto prohlížeči.";
-    //added in 9.0.0
-    $text['reviewmsg'] = "Máte doporučenou změnu, která vyžaduje vaše posouzení. Tato změna se týká:";
-    $text['revsubject'] = "Doporučená změna vyžaduje vaše posouzení";
-    break;
+    //getextras.php, getperson.php
+    case "getperson":
+        $text['photoshistoriesfor'] = "Fotografie a vyprávění pro";
+        $text['indinfofor'] = "Osobní informace o";
+        $text['pp'] = "str."; //page abbreviation
+        $text['age'] = "Věk";
+        $text['agency'] = "Instituce";
+        $text['cause'] = "Příčina";
+        $text['suggested'] = "Navržené";
+        $text['closewindow'] = "Zavřít okno";
+        $text['thanks'] = "Děkujeme";
+        $text['received'] = "Váš návrh byl zaslán administrátorovi těchto stránek k posouzení.";
+        $text['indreport'] = "Report osoby";
+        $text['indreportfor'] = "Report osoby";
+        $text['general'] = "Obecně";
+        $text['bkmkvis'] = "Pozn.: Tyto záložky jsou viditelné pouze na tomto počítači a v tomto prohlížeči.";
+        //added in 9.0.0
+        $text['reviewmsg'] = "Máte doporučenou změnu, která vyžaduje vaše posouzení. Tato změna se týká:";
+        $text['revsubject'] = "Doporučená změna vyžaduje vaše posouzení";
+        break;
 
-  //relateform.php, relationship.php, findpersonform.php, findperson.php
-  case "relate":
-    $text['relcalc'] = "Určení příbuzenského vztahu";
-    $text['findrel'] = "Určení příbuzenského vztahu";
-    $text['person1'] = "Osoba 1:";
-    $text['person2'] = "Osoba 2:";
-    $text['calculate'] = "Kalkulovat";
-    $text['select2inds'] = "Zvolte dvě osoby.";
-    $text['findpersonid'] = "Najít ID číslo osoby";
-    $text['enternamepart'] = "zadejte část jména nebo příjmení";
-    $text['pleasenamepart'] = "Zadejte, prosím, část jména nebo příjmení.";
-    $text['clicktoselect'] = "kliknutím vyberte osobu";
-    $text['nobirthinfo'] = "Chybí informace o narození";
-    $text['relateto'] = "Příbuzenský vztah k: ";
-    $text['sameperson'] = "Tyto dvě osoby jsou totožné";
-    $text['notrelated'] = "Tyto dvě osoby nemají žádný příbuzenský vztah v posledních xxx generacích"; //xxx will be replaced with number of generations
-    $text['findrelinstr'] = "Pro zobrazení příbuzenského vztahu mezi dvěma osobami nejprve klikněte na 'Najít', abyste našli příslušné osoby (nebo zanechte osoby, které jsou zobrazené), poté klikněte na 'Kalkulovat'.<br>(české výrazy v některých složitějších případech díky jiné struktuře názvosloví příbuzenských vztahů v anglickém jazyce a z toho pramenícího obtížného překladu nemusí být správné).";
-    $text['sometimes'] = "(Použití jiného počtu generací může mít někdy jiný výsledek.)";
-    $text['findanother'] = "Zjistit jiný příbuzenský vztah";
-    $text['brother'] = "bratr od";
-    $text['sister'] = "sestra od";
-    $text['sibling'] = "sourozenec od";
-    $text['uncle'] = " xxx strýc od";
-    $text['aunt'] = " xxx teta od";
-    $text['uncleaunt'] = " xxx strýc/teta od";
-    $text['nephew'] = " xxx synovec od";
-    $text['niece'] = " xxx neteř od";
-    $text['nephnc'] = "xxx synovec/neteř od";
-    $text['removed'] = "generace";
-    $text['rhusband'] = "manžel od";
-    $text['rwife'] = "manželka od";
-    $text['rspouse'] = "partner od";
-    $text['son'] = "syn od";
-    $text['daughter'] = "dcera od";
-    $text['rchild'] = "dítě od";
-    $text['sil'] = "zeť od";
-    $text['dil'] = "snacha od";
-    $text['sdil'] = "zeť nebo snacha od";
-    $text['gson'] = " xxx vnuk od";
-    $text['gdau'] = " xxx vnučka od";
-    $text['gsondau'] = "xxx vnuk/vnučka od";
-    $text['great'] = "pra";
-    $text['spouses'] = "jsou manželé";
-    $text['is'] = "je";
-    $text['changeto'] = "Změnit na:";
-    $text['notvalid'] = "není platné ID číslo osoby nebo neexistuje v této databázi. Zkuste to prosím znovu.";
-    $text['halfbrother'] = "nevlastní bratr od";
-    $text['halfsister'] = "nevlastní sestra od";
-    $text['halfsibling'] = "nevlastní sourozenec od";
-    //changed in 8.0.0
-    $text['gencheck'] = "Maximální počet kontrolovaných generací";
-    $text['mcousin'] = "xxx bratranec yyy od";  //male cousin; xxx = cousin number, yyy = times removed
-    $text['fcousin'] = "xxx sestřenice yyy od";  //female cousin
-    $text['cousin'] = " xxx bratranec yyy od";
-    $text['mhalfcousin'] = "poloviční xxx bratranec yyy od";  //male cousin
-    $text['fhalfcousin'] = "poloviční xxx sestřenice yyy od";  //female cousin
-    $text['halfcousin'] = "poloviční xxx bratranec/sestřenice yyy od";
-    //added in 8.0.0
-    $text['oneremoved'] = "o jednu generaci";
-    $text['gfath'] = "xxx dědeček od";
-    $text['gmoth'] = "xxx babička od";
-    $text['gpar'] = "xxx prarodiče od";
-    $text['mothof'] = "matka od";
-    $text['fathof'] = "otec od ";
-    $text['parof'] = "rodiče od";
-    $text['maxrels'] = "Maximální počet vztahů k zobrazení";
-    $text['dospouses'] = "Zobrazit vztahy včetně manželů";
-    $text['rels'] = "Příbuzenské vztahy";
-    $text['dospouses2'] = "Zobrazit partnery";
-    $text['fil'] = "tchán od";
-    $text['mil'] = "tchyně od";
-    $text['fmil'] = "tchán nebo tchyně od";
-    $text['stepson'] = "nevlastní syn od";
-    $text['stepdau'] = "nevlastní dcera od";
-    $text['stepchild'] = "nevlastní dítě od";
-    $text['stepgson'] = "xxx nevlastní vnuk od";
-    $text['stepgdau'] = "xxx nevlastní vnučka od";
-    $text['stepgchild'] = "xxx nevlastní vnouče od";
-    //added in 8.1.1
-    $text['ggreat'] = "pra";
-    //added in 8.1.2
-    $text['ggfath'] = " xxx pradědeček od";
-    $text['ggmoth'] = " xxx prababička od";
-    $text['ggpar'] = " xxx prarodič od";
-    $text['ggson'] = " xxx pravnuk od";
-    $text['ggdau'] = " xxx pravnučka od";
-    $text['ggsondau'] = " xxx pradítě od";
-    $text['gstepgson'] = "nevlastní xxx pravnuk od";
-    $text['gstepgdau'] = "nevlastní xxx pravnučka od";
-    $text['gstepgchild'] = "nevlastní xxx prapradítě od";
-    $text['guncle'] = " xxx prastrýc od";
-    $text['gaunt'] = " xxx prateta od";
-    $text['guncleaunt'] = " xxx prastrýc/prateta od";
-    $text['gnephew'] = " xxx prasynovec od";
-    $text['gniece'] = " xxx praneteř od";
-    $text['gnephnc'] = " xxx prasynovec/praneteř od";
-    break;
+    //relateform.php, relationship.php, findpersonform.php, findperson.php
+    case "relate":
+        $text['relcalc'] = "Určení příbuzenského vztahu";
+        $text['findrel'] = "Určení příbuzenského vztahu";
+        $text['person1'] = "Osoba 1:";
+        $text['person2'] = "Osoba 2:";
+        $text['calculate'] = "Kalkulovat";
+        $text['select2inds'] = "Zvolte dvě osoby.";
+        $text['findpersonid'] = "Najít ID číslo osoby";
+        $text['enternamepart'] = "zadejte část jména nebo příjmení";
+        $text['pleasenamepart'] = "Zadejte, prosím, část jména nebo příjmení.";
+        $text['clicktoselect'] = "kliknutím vyberte osobu";
+        $text['nobirthinfo'] = "Chybí informace o narození";
+        $text['relateto'] = "Příbuzenský vztah k: ";
+        $text['sameperson'] = "Tyto dvě osoby jsou totožné";
+        $text['notrelated'] = "Tyto dvě osoby nemají žádný příbuzenský vztah v posledních xxx generacích"; //xxx will be replaced with number of generations
+        $text['findrelinstr'] = "Pro zobrazení příbuzenského vztahu mezi dvěma osobami nejprve klikněte na 'Najít', abyste našli příslušné osoby (nebo zanechte osoby, které jsou zobrazené), poté klikněte na 'Kalkulovat'.<br>(české výrazy v některých složitějších případech díky jiné struktuře názvosloví příbuzenských vztahů v anglickém jazyce a z toho pramenícího obtížného překladu nemusí být správné).";
+        $text['sometimes'] = "(Použití jiného počtu generací může mít někdy jiný výsledek.)";
+        $text['findanother'] = "Zjistit jiný příbuzenský vztah";
+        $text['brother'] = "bratr od";
+        $text['sister'] = "sestra od";
+        $text['sibling'] = "sourozenec od";
+        $text['uncle'] = " xxx strýc od";
+        $text['aunt'] = " xxx teta od";
+        $text['uncleaunt'] = " xxx strýc/teta od";
+        $text['nephew'] = " xxx synovec od";
+        $text['niece'] = " xxx neteř od";
+        $text['nephnc'] = "xxx synovec/neteř od";
+        $text['removed'] = "generace";
+        $text['rhusband'] = "manžel od";
+        $text['rwife'] = "manželka od";
+        $text['rspouse'] = "partner od";
+        $text['son'] = "syn od";
+        $text['daughter'] = "dcera od";
+        $text['rchild'] = "dítě od";
+        $text['sil'] = "zeť od";
+        $text['dil'] = "snacha od";
+        $text['sdil'] = "zeť nebo snacha od";
+        $text['gson'] = " xxx vnuk od";
+        $text['gdau'] = " xxx vnučka od";
+        $text['gsondau'] = "xxx vnuk/vnučka od";
+        $text['great'] = "pra";
+        $text['spouses'] = "jsou manželé";
+        $text['is'] = "je";
+        $text['changeto'] = "Změnit na:";
+        $text['notvalid'] = "není platné ID číslo osoby nebo neexistuje v této databázi. Zkuste to prosím znovu.";
+        $text['halfbrother'] = "nevlastní bratr od";
+        $text['halfsister'] = "nevlastní sestra od";
+        $text['halfsibling'] = "nevlastní sourozenec od";
+        //changed in 8.0.0
+        $text['gencheck'] = "Maximální počet kontrolovaných generací";
+        $text['mcousin'] = "xxx bratranec yyy od";  //male cousin; xxx = cousin number, yyy = times removed
+        $text['fcousin'] = "xxx sestřenice yyy od";  //female cousin
+        $text['cousin'] = " xxx bratranec yyy od";
+        $text['mhalfcousin'] = "poloviční xxx bratranec yyy od";  //male cousin
+        $text['fhalfcousin'] = "poloviční xxx sestřenice yyy od";  //female cousin
+        $text['halfcousin'] = "poloviční xxx bratranec/sestřenice yyy od";
+        //added in 8.0.0
+        $text['oneremoved'] = "o jednu generaci";
+        $text['gfath'] = "xxx dědeček od";
+        $text['gmoth'] = "xxx babička od";
+        $text['gpar'] = "xxx prarodiče od";
+        $text['mothof'] = "matka od";
+        $text['fathof'] = "otec od ";
+        $text['parof'] = "rodiče od";
+        $text['maxrels'] = "Maximální počet vztahů k zobrazení";
+        $text['dospouses'] = "Zobrazit vztahy včetně manželů";
+        $text['rels'] = "Příbuzenské vztahy";
+        $text['dospouses2'] = "Zobrazit partnery";
+        $text['fil'] = "tchán od";
+        $text['mil'] = "tchyně od";
+        $text['fmil'] = "tchán nebo tchyně od";
+        $text['stepson'] = "nevlastní syn od";
+        $text['stepdau'] = "nevlastní dcera od";
+        $text['stepchild'] = "nevlastní dítě od";
+        $text['stepgson'] = "xxx nevlastní vnuk od";
+        $text['stepgdau'] = "xxx nevlastní vnučka od";
+        $text['stepgchild'] = "xxx nevlastní vnouče od";
+        //added in 8.1.1
+        $text['ggreat'] = "pra";
+        //added in 8.1.2
+        $text['ggfath'] = " xxx pradědeček od";
+        $text['ggmoth'] = " xxx prababička od";
+        $text['ggpar'] = " xxx prarodič od";
+        $text['ggson'] = " xxx pravnuk od";
+        $text['ggdau'] = " xxx pravnučka od";
+        $text['ggsondau'] = " xxx pradítě od";
+        $text['gstepgson'] = "nevlastní xxx pravnuk od";
+        $text['gstepgdau'] = "nevlastní xxx pravnučka od";
+        $text['gstepgchild'] = "nevlastní xxx prapradítě od";
+        $text['guncle'] = " xxx prastrýc od";
+        $text['gaunt'] = " xxx prateta od";
+        $text['guncleaunt'] = " xxx prastrýc/prateta od";
+        $text['gnephew'] = " xxx prasynovec od";
+        $text['gniece'] = " xxx praneteř od";
+        $text['gnephnc'] = " xxx prasynovec/praneteř od";
+        break;
 
-  case "familygroup":
-    $text['familygroupfor'] = "Report rodiny";
-    $text['ldsords'] = "Obřady CJKSpd";
-    $text['baptizedlds'] = "Křest (CJKSpd)";
-    $text['endowedlds'] = "Obdarován (CJKSpd)";
-    $text['sealedplds'] = "Pečetěn R (CJKSpd)";
-    $text['sealedslds'] = "Pečetěn P (CJKSpd)";
-    $text['otherspouse'] = "Další partner";
-    $text['husband'] = "Manžel";
-    $text['wife'] = "Manželka";
-    break;
+    case "familygroup":
+        $text['familygroupfor'] = "Report rodiny";
+        $text['ldsords'] = "Obřady CJKSpd";
+        $text['baptizedlds'] = "Křest (CJKSpd)";
+        $text['endowedlds'] = "Obdarován (CJKSpd)";
+        $text['sealedplds'] = "Pečetěn R (CJKSpd)";
+        $text['sealedslds'] = "Pečetěn P (CJKSpd)";
+        $text['otherspouse'] = "Další partner";
+        $text['husband'] = "Manžel";
+        $text['wife'] = "Manželka";
+        break;
 
-  //pedigree.php
-  case "pedigree":
-    $text['capbirthabbr'] = "Nar.";
-    $text['capaltbirthabbr'] = "Nar.";
-    $text['capdeathabbr'] = "Zemř.";
-    $text['capburialabbr'] = "Pohř.";
-    $text['capplaceabbr'] = "v";
-    $text['capmarrabbr'] = "Sň.";
-    $text['capspouseabbr'] = "SP";
-    $text['redraw'] = "Zobrazit s";
-    $text['scrollnote'] = "Pozn.: pro zobrazení diagramu můžete použít posuvník dolů nebo doprava.";
-    $text['unknownlit'] = "Neznámý";
-    $text['popupnote1'] = " = Další informace";
-    $text['popupnote2'] = " = Nové schéma předků";
-    $text['pedcompact'] = "Kompaktně";
-    $text['pedstandard'] = "Standardně";
-    $text['pedtextonly'] = "Pouze text";
-    $text['descendfor'] = "Schéma potomků osoby";
-    $text['maxof'] = "Nejvíce";
-    $text['gensatonce'] = "generací zobrazených najednou.";
-    $text['sonof'] = "syn od";
-    $text['daughterof'] = "dcera od";
-    $text['childof'] = "dítě od";
-    $text['stdformat'] = "Standardní formát";
-    $text['ahnentafel'] = "Ahnentafel";
-    $text['addnewfam'] = "Přidat novou rodinu";
-    $text['editfam'] = "Upravit rodinu";
-    $text['side'] = "strana";
-    $text['familyof'] = "Rodina";
-    $text['paternal'] = "Otcova";
-    $text['maternal'] = "Matčina";
-    $text['gen1'] = "Vlastní";
-    $text['gen2'] = "Rodiče";
-    $text['gen3'] = "Prarodiče";
-    $text['gen4'] = "Praprarodiče";
-    $text['gen5'] = "3xprarodiče";
-    $text['gen6'] = "4xprarodiče";
-    $text['gen7'] = "5xprarodiče";
-    $text['gen8'] = "6xprarodiče";
-    $text['gen9'] = "7xprarodiče";
-    $text['gen10'] = "8xprarodiče";
-    $text['gen11'] = "9xprarodiče";
-    $text['gen12'] = "10xprarodiče";
-    $text['graphdesc'] = "Schéma potomků až do tohoto místa";
-    $text['pedbox'] = "Rámeček";
-    $text['regformat'] = "Registr";
-    $text['extrasexpl'] = "U této osoby existuje fotografie, vyprávění nebo jiná mediální položka.";
-    $text['popupnote3'] = " = Nové schéma";
-    $text['mediaavail'] = "Média k dispozici";
-    $text['pedigreefor'] = "Schéma předků osoby";
-    $text['pedigreech'] = "Schéma předků";
-    $text['datesloc'] = "Datumy a místa";
-    $text['borchr'] = "Naroz/Křest - Úmrtí/Pohř (dva)";
-    $text['nobd'] = "Bez dat narození nebo úmrtí";
-    $text['bcdb'] = "Naroz/Křest/Úmrtí/Pohř (čtyři)";
-    $text['numsys'] = "Systém číslování";
-    $text['gennums'] = "Čísla generací";
-    $text['henrynums'] = "Číslování dle Henryho";
-    $text['abovnums'] = "Číslování dle d'Aboville";
-    $text['devnums'] = "Číslování dle de Villiers";
-    $text['dispopts'] = "Možnosti zobrazení";
+    //pedigree.php
+    case "pedigree":
+        $text['capbirthabbr'] = "Nar.";
+        $text['capaltbirthabbr'] = "Nar.";
+        $text['capdeathabbr'] = "Zemř.";
+        $text['capburialabbr'] = "Pohř.";
+        $text['capplaceabbr'] = "v";
+        $text['capmarrabbr'] = "Sň.";
+        $text['capspouseabbr'] = "SP";
+        $text['redraw'] = "Zobrazit s";
+        $text['scrollnote'] = "Pozn.: pro zobrazení diagramu můžete použít posuvník dolů nebo doprava.";
+        $text['unknownlit'] = "Neznámý";
+        $text['popupnote1'] = " = Další informace";
+        $text['popupnote2'] = " = Nové schéma předků";
+        $text['pedcompact'] = "Kompaktně";
+        $text['pedstandard'] = "Standardně";
+        $text['pedtextonly'] = "Pouze text";
+        $text['descendfor'] = "Schéma potomků osoby";
+        $text['maxof'] = "Nejvíce";
+        $text['gensatonce'] = "generací zobrazených najednou.";
+        $text['sonof'] = "syn od";
+        $text['daughterof'] = "dcera od";
+        $text['childof'] = "dítě od";
+        $text['stdformat'] = "Standardní formát";
+        $text['ahnentafel'] = "Ahnentafel";
+        $text['addnewfam'] = "Přidat novou rodinu";
+        $text['editfam'] = "Upravit rodinu";
+        $text['side'] = "strana";
+        $text['familyof'] = "Rodina";
+        $text['paternal'] = "Otcova";
+        $text['maternal'] = "Matčina";
+        $text['gen1'] = "Vlastní";
+        $text['gen2'] = "Rodiče";
+        $text['gen3'] = "Prarodiče";
+        $text['gen4'] = "Praprarodiče";
+        $text['gen5'] = "3xprarodiče";
+        $text['gen6'] = "4xprarodiče";
+        $text['gen7'] = "5xprarodiče";
+        $text['gen8'] = "6xprarodiče";
+        $text['gen9'] = "7xprarodiče";
+        $text['gen10'] = "8xprarodiče";
+        $text['gen11'] = "9xprarodiče";
+        $text['gen12'] = "10xprarodiče";
+        $text['graphdesc'] = "Schéma potomků až do tohoto místa";
+        $text['pedbox'] = "Rámeček";
+        $text['regformat'] = "Registr";
+        $text['extrasexpl'] = "U této osoby existuje fotografie, vyprávění nebo jiná mediální položka.";
+        $text['popupnote3'] = " = Nové schéma";
+        $text['mediaavail'] = "Média k dispozici";
+        $text['pedigreefor'] = "Schéma předků osoby";
+        $text['pedigreech'] = "Schéma předků";
+        $text['datesloc'] = "Datumy a místa";
+        $text['borchr'] = "Naroz/Křest - Úmrtí/Pohř (dva)";
+        $text['nobd'] = "Bez dat narození nebo úmrtí";
+        $text['bcdb'] = "Naroz/Křest/Úmrtí/Pohř (čtyři)";
+        $text['numsys'] = "Systém číslování";
+        $text['gennums'] = "Čísla generací";
+        $text['henrynums'] = "Číslování dle Henryho";
+        $text['abovnums'] = "Číslování dle d'Aboville";
+        $text['devnums'] = "Číslování dle de Villiers";
+        $text['dispopts'] = "Možnosti zobrazení";
+        //added in 10.0.0
+        $text['no_ancestors'] = "Nebyli nalezeni žádní předkové";
+        $text['ancestor_chart'] = "Svislé schéma předků";
+        $text['opennewwindow'] = "Otevřít v novém okně";
+        $text['pedvertical'] = "Svisle";
+        //added in 11.0.0
+        $text['familywith'] = "Rodina s";
+        $text['fcmlogin'] = "Pro zobrazení podrobností se musíte přihlásit";
+        $text['isthe'] = "je";
+        $text['otherspouses'] = "další partneři/partnerky";
+        $text['parentfamily'] = "Rodina rodičů ";
+        $text['showfamily'] = "Zobrazit rodinu";
+        $text['shown'] = "zobrazeno";
+        $text['showparentfamily'] = "zobrazit rodinu rodičů";
+        $text['showperson'] = "zobrazit osobu";
+        //added in 11.0.2
+        $text['otherfamilies'] = "Další rodiny";
+        break;
+
+    //search.php, searchform.php
+    //merged with reports and showreport in 5.0.0
+    case "search":
+    case "reports":
+        $text['noreports'] = "Žádný report neexistuje.";
+        $text['reportname'] = "Název reportu";
+        $text['allreports'] = "Všechny reporty";
+        $text['report'] = "Report";
+        $text['error'] = "Chyba";
+        $text['reportsyntax'] = "Syntaxe dotazu pro tento report";
+        $text['wasincorrect'] = "byla chybná a report nemohl být vytvořen. Kontaktujte prosím administrátora systému na";
+        $text['errormessage'] = "Chybové hlášení";
+        $text['equals'] = "je";
+        $text['endswith'] = "končí na";
+        $text['soundexof'] = "soundex";
+        $text['metaphoneof'] = "metaphone of";
+        $text['plusminus10'] = "+/- 10 roků od";
+        $text['lessthan'] = "méně než";
+        $text['greaterthan'] = "více než";
+        $text['lessthanequal'] = "méně nebo rovno";
+        $text['greaterthanequal'] = "více nebo rovno";
+        $text['equalto'] = "rovno";
+        $text['tryagain'] = "Zkusit znovu";
+        $text['joinwith'] = "Logika hledání";
+        $text['cap_and'] = "A";
+        $text['cap_or'] = "NEBO";
+        $text['showspouse'] = "Zobrazit partnera (pokud měla dotyčná osoba více partnerů, bude zobrazena vícekrát)";
+        $text['submitquery'] = "Provést dotaz";
+        $text['birthplace'] = "Místo narození";
+        $text['deathplace'] = "Místo úmrtí";
+        $text['birthdatetr'] = "Rok narození";
+        $text['deathdatetr'] = "Rok úmrtí";
+        $text['plusminus2'] = "+/- 2 roky od";
+        $text['resetall'] = "Obnovit všechny hodnoty na výchozí";
+        $text['showdeath'] = "Zobrazit informace o úmrtí/pohřbu";
+        $text['altbirthplace'] = "Místo křtu";
+        $text['altbirthdatetr'] = "Rok křtu";
+        $text['burialplace'] = "Místo pohřbu";
+        $text['burialdatetr'] = "Rok pohřbu";
+        $text['event'] = "Událost(i)";
+        $text['day'] = "Den";
+        $text['month'] = "Měsíc";
+        $text['keyword'] = "Klíčové slovo (např. \"Abt\")";
+        $text['explain'] = "Pro zobrazení odpovídajících událostí zadejte datum. Pro zobrazení všech událostí zanechte pole prázdné.";
+        $text['enterdate'] = "Zadejte nebo zvolte alespoň jedno z následujících: Den, Měsíc, Rok, Klíčové slovo";
+        $text['fullname'] = "Celé jméno";
+        $text['birthdate'] = "Datum narození";
+        $text['altbirthdate'] = "Datum křtu";
+        $text['marrdate'] = "Datum sňatku";
+        $text['spouseid'] = "ID číslo partnera";
+        $text['spousename'] = "Jméno partnera";
+        $text['deathdate'] = "Datum úmrtí";
+        $text['burialdate'] = "Datum pohřbu";
+        $text['changedate'] = "Datum poslední změny";
+        $text['gedcom'] = "Strom";
+        $text['baptdate'] = "CJKSpd datum křtu";
+        $text['baptplace'] = "CJKSpd místo křtu";
+        $text['endldate'] = "CJKSpd datum zaslíbení";
+        $text['endlplace'] = "CJKSpd místo zaslíbení";
+        $text['ssealdate'] = "CJKSpd datum pečetění s partnerem";   //Sealed to spouse
+        $text['ssealplace'] = "CJKSpd místo pečetění s partnerem";
+        $text['psealdate'] = "CJKSpd datum pečetění s rodiči";   //Sealed to parents
+        $text['psealplace'] = "CJKSpd místo pečetění s rodiči";
+        $text['marrplace'] = "Místo sňatku";
+        $text['spousesurname'] = "Příjmení partnera";
+        $text['spousemore'] = "Zapíšete-li příjmení partnera, musíte vybrat Pohlaví.";
+        $text['plusminus5'] = "+/- 5 roku od";
+        $text['exists'] = "existuje";
+        $text['dnexist'] = "neexistuje";
+        $text['divdate'] = "Datum rozvodu";
+        $text['divplace'] = "Místo rozvodu";
+        $text['otherevents'] = "Jiné události";
+        $text['numresults'] = "Počet výsledků na stránce";
+        $text['mysphoto'] = "Tajemné fotografie";
+        $text['mysperson'] = "Hledané osoby";
+        $text['joinor'] = "'Join with OR' možnost nelze použít s příjmením partnera";
+        $text['tellus'] = "Máte-li nějaké informace, napište nám";
+        $text['moreinfo'] = "Více informací";
+        //added in 8.0.0
+        $text['marrdatetr'] = "Rok sňatku";
+        $text['divdatetr'] = "Rok rozvodu";
+        $text['mothername'] = "Jméno matky";
+        $text['fathername'] = "Jméno otce";
+        $text['filter'] = "Filtr";
+        $text['notliving'] = "Zesnulí";
+        $text['nodayevents'] = "Události v tomto měsíci, které nejsou spojeny s určitým dnem:";
+        //added in 9.0.0
+        $text['csv'] = "Soubor CSV oddělený čárkami";
+        //added in 10.0.0
+        $text['confdate'] = "Datum biřmování (CJKSpd)";
+        $text['confplace'] = "Místo biřmování (CJKSpd)";
+        $text['initdate'] = "Datum zasvěcení (CJKSpd)";
+        $text['initplace'] = "Místo zasvěcení (CJKSpd)";
+        //added in 11.0.0
+        $text['marrtype'] = "Typ sňatku";
+        $text['searchfor'] = "Hledat";
+        $text['searchnote'] = "Pozn.: Tato stránka pro vyhledání používá Google. Počet nalezených záznamů je přímo ovlivněn mírou, jakou má Google tyto stránky indexované.";
+        break;
+
+    //showlog.php
+    case "showlog":
+        $text['logfilefor'] = "Soubor záznamů pro";
+        $text['mostrecentactions'] = "Nedávná aktivita";
+        $text['autorefresh'] = "Automatické zobrazení (po 30 vteřinách)";
+        $text['refreshoff'] = "Vypnout automatické zobrazení";
+        break;
+
+    case "headstones":
+    case "showphoto":
+        $text['cemeteriesheadstones'] = "Hřbitovy a náhrobky";
+        $text['showallhsr'] = "Zobrazit všechny záznamy náhrobků";
+        $text['in'] = "v";
+        $text['showmap'] = "Ukázat mapu";
+        $text['headstonefor'] = "Náhrobek pro";
+        $text['photoof'] = "Fotografie";
+        $text['photoowner'] = "Majitel/Pramen";
+        $text['nocemetery'] = "Hřbitov není uveden";
+        $text['iptc005'] = "Název";
+        $text['iptc020'] = "Podporované kategorie";
+        $text['iptc040'] = "Zvláštní instrukce";
+        $text['iptc055'] = "Datum vytvoření";
+        $text['iptc080'] = "Autor";
+        $text['iptc085'] = "Autorova funkce";
+        $text['iptc090'] = "Město";
+        $text['iptc095'] = "Kraj";
+        $text['iptc101'] = "Země";
+        $text['iptc103'] = "OTR";
+        $text['iptc105'] = "Nadpis";
+        $text['iptc110'] = "Pramen";
+        $text['iptc115'] = "Pramen fotografie";
+        $text['iptc116'] = "Veškerá práva vyhrazena";
+        $text['iptc120'] = "Popis";
+        $text['iptc122'] = "Popis vytvořil";
+        $text['mapof'] = "Mapa";
+        $text['regphotos'] = "Zobrazení s popisem";
+        $text['gallery'] = "Pouze náhledy";
+        $text['cemphotos'] = "Obrázky hřbitovů";
+        $text['photosize'] = "Velikost";
+        $text['iptc010'] = "Priorita";
+        $text['filesize'] = "Velikost souboru";
+        $text['seeloc'] = "Prohlédnete místo";
+        $text['showall'] = "Zobrazit vše";
+        $text['editmedia'] = "Upravit médium";
+        $text['viewitem'] = "Prohlédnout tuto položku";
+        $text['editcem'] = "Upravit hřbitov";
+        $text['numitems'] = "Počet položek";
+        $text['allalbums'] = "Všechna alba";
+        $text['slidestop'] = "Pozastavit prezentaci";
+        $text['slideresume'] = "Pokračovat v prezentaci";
+        $text['slidesecs'] = "Počet vteřin pro každý snímek:";
+        $text['minussecs'] = "ubrat 0.5 vteřiny";
+        $text['plussecs'] = "přidat 0.5 vteřiny";
+        $text['nocountry'] = "Neznámá země";
+        $text['nostate'] = "Neznámý kraj";
+        $text['nocounty'] = "Neznámý okres";
+        $text['nocity'] = "Neznámé město";
+        $text['nocemname'] = "Neznámý hřbitov";
+        $text['editalbum'] = "Upravit album";
+        $text['mediamaptext'] = "<strong>Pozn.:</strong> Posouváním ukazatele myši přes obrázek zobrazíte popisky různých částí obrázku. Změní-li se ukazatel myši na tvar vztyčeného ukazováku, můžete kliknutím zobrazit stránku s podrobnostmi.";
+        //added in 8.0.0
+        $text['allburials'] = "Všechny pohřby";
+        $text['moreinfo'] = "Klikněte pro více informací o obrázku";
+        //added in 9.0.0
+        $text['iptc025'] = "Klíčová slova";
+        $text['iptc092'] = "Sub-location";
+        $text['iptc015'] = "Kategorie";
+        $text['iptc065'] = "Původní program";
+        $text['iptc070'] = "Verze programu";
+        break;
+
+    //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
+    case "surnames":
+    case "places":
+        $text['surnamesstarting'] = "Zobrazit příjmení začínající na";
+        $text['showtop'] = "Zobrazit prvních";
+        $text['showallsurnames'] = "Zobrazit všechna příjmení";
+        $text['sortedalpha'] = "seřazena podle abecedy";
+        $text['byoccurrence'] = "seřazených podle četnosti";
+        $text['firstchars'] = "Začáteční písmena";
+        $text['mainsurnamepage'] = "Hlavní stránka příjmení";
+        $text['allsurnames'] = "Všechna příjmení";
+        $text['showmatchingsurnames'] = "Kliknutím na příjmení zobrazíte odpovídající záznamy.";
+        $text['backtotop'] = "Zpět na začátek";
+        $text['beginswith'] = "Začíná na";
+        $text['allbeginningwith'] = "Všechna příjmení začínající na";
+        $text['numoccurrences'] = "celkový počet míst v závorce";
+        $text['placesstarting'] = "Zobrazit nejvýznamnější lokality, které začínají na";
+        $text['showmatchingplaces'] = "Kliknutím na místo zobrazíte podrobnější lokality. Kliknutím na ikonu Hledat zobrazíte odpovídající osoby.";
+        $text['totalnames'] = "celkem osob";
+        $text['showallplaces'] = "Zobrazit všechny nejvýznamnější lokality";
+        $text['totalplaces'] = "celkem míst";
+        $text['mainplacepage'] = "Hlavní stránka míst";
+        $text['allplaces'] = "Všechny nejvýznamnější lokality";
+        $text['placescont'] = "Zobrazit všechna místa obsahující";
+        //changed in 8.0.0
+        $text['top30'] = "Top xxx nejčastěji se vyskytujících příjmení";
+        $text['top30places'] = "Top xxx nejvýznamnějších lokalit";
+        //added in 12.0.0
+        $text['firstnamelist'] = "Seznam křestních jmen";
+        $text['firstnamesstarting'] = "Zobrazit křestní jména začínající na";
+        $text['showallfirstnames'] = "Zobrazit všechna křestní jména";
+        $text['mainfirstnamepage'] = "Hlavní stránka křestních jmen";
+        $text['allfirstnames'] = "Všechna křestní jména";
+        $text['showmatchingfirstnames'] = "Kliknutím na křestní jméno zobrazíte odpovídající záznamy.";
+        $text['allfirstbegwith'] = "Všechna křestní jména začínající na";
+        $text['top30first'] = "Top xxx nejčastěji se vyskytujících křestních jmen";
+        $text['allothers'] = "Všechna ostatní";
+        $text['amongall'] = "(mezi všemi jmény)";
+        $text['justtop'] = "Pouze Top xxx";
+        break;
+
+    //whatsnew.php
+    case "whatsnew":
+        $text['pastxdays'] = "(v posledních xx dnech)";
+
+        $text['photo'] = "Fotografie";
+        $text['history'] = "Vyprávění/dokument";
+        $text['husbid'] = "ID číslo otce";
+        $text['husbname'] = "Jméno otce";
+        $text['wifeid'] = "ID číslo matky";
+        //added in 11.0.0
+        $text['wifename'] = "Jméno matky";
+        break;
+
+    //timeline.php, timeline2.php
+    case "timeline":
+        $text['text_delete'] = "Vymazat";
+        $text['addperson'] = "Přidat osobu";
+        $text['nobirth'] = "Následující osoba nemá platné datum narození a nelze ji přidat";
+        $text['event'] = "Událost(i)";
+        $text['chartwidth'] = "Šířka schématu";
+        $text['timelineinstr'] = "Přidat osoby";
+        $text['togglelines'] = "Přepnout zobrazení linek";
+        //changed in 9.0.0
+        $text['noliving'] = "Následující osoba je označena jako žijící nebo neveřejná a nelze ji přidat, protože nemáte patřičná přístupová práva";
+        break;
+
+    //browsetrees.php
+    //login.php, newacctform.php, addnewacct.php
+    case "trees":
+    case "login":
+        $text['browsealltrees'] = "Prohlédnout všechny stromy";
+        $text['treename'] = "Název stromu";
+        $text['owner'] = "Majitel";
+        $text['address'] = "Adresa";
+        $text['city'] = "Město";
+        $text['state'] = "Kraj/provincie";
+        $text['zip'] = "PSČ";
+        $text['country'] = "Země";
+        $text['email'] = "Email";
+        $text['phone'] = "Telefon";
+        $text['username'] = "Uživatelské jméno";
+        $text['password'] = "Heslo";
+        $text['loginfailed'] = "Chyba přihlášení.";
+
+        $text['regnewacct'] = "Registrace nového účtu";
+        $text['realname'] = "Vaše jméno a příjmení";
+        $text['phone'] = "Telefon";
+        $text['email'] = "Email";
+        $text['address'] = "Adresa";
+        $text['acctcomments'] = "Poznámky";
+        $text['submit'] = "Odeslat";
+        $text['leaveblank'] = "(zanechte toto pole prázdné, pokud žádáte o nový strom)";
+        $text['required'] = "Tyto údaje je nutné vyplnit";
+        $text['enterpassword'] = "Zadejte heslo.";
+        $text['enterusername'] = "Zadejte uživatelské jméno.";
+        $text['failure'] = "Zadané uživatelské jméno je již vyhrazené. Stisknutím tlačítka zpět se vraťte na předchozí stránku a zvolte si jiné uživatelské jméno";
+        $text['success'] = "Vaše registrace proběhla úspěšně. Administrátor systému vás bude informovat, kdy bude váš účet aktivován, nebo pokud budou potřeba další informace.";
+        $text['emailsubject'] = "Žádost o novou registraci";
+        $text['website'] = "Internetové stránky";
+        $text['nologin'] = "Nemáte přihlašovací údaje?";
+        $text['loginsent'] = "Údaje byly odeslány";
+        $text['loginnotsent'] = "Přihlašovací údaje nebyly odeslány";
+        $text['enterrealname'] = "Zadejte, prosím, své skutečné jméno.";
+        $text['rempass'] = "Zůstat přihlášen na tomto počítači";
+        $text['morestats'] = "Další statistika";
+        $text['accmail'] = "POZN.: Abyste mohli obdržet email od administrátora ohledne vašeho účtu, zkontrolujte, prosím, že váš emailový program neblokuje emailové adresy z této domény.";
+        $text['newpassword'] = "Nové heslo";
+        $text['resetpass'] = "Obnovit heslo";
+        $text['nousers'] = "Tento formulář nelze použít, dokud nebude vytvořen alespoň jeden záznam. Pokud jste majitelem těchto stránek, jděte do nabídky Admin/Uživatelé a vytvořte si účet administrátora.";
+        $text['noregs'] = "Je nám líto, ale v současné době nepřijímáme nové registrace. Kontaktujte nás, prosím, přímo, pokud máte nějaké dotazy či připomínky ohledně těchto webových stránek.";
+        //changed in 8.0.0
+        $text['emailmsg'] = "Byla vám zaslána nová žádost o uživatelský účet TNG. Přihlaste se, prosím, do administrátorského prostředí a dejte novému účtu patřičná přístupová práva.";
+        $text['accactive'] = "Úcet byl aktivován, ale uživatel nebude mít žádná zvláštní práva, dokud mu je nepřidělíte.";
+        $text['accinactive'] = "Nastavení účtu můžete provést v Admin/Uživatelé/Přezkoumat. Účet zůstane neaktivní, dokud alespoň jednou záznam neupravíte a neuložíte.";
+        $text['pwdagain'] = "Heslo znovu";
+        $text['enterpassword2'] = "Prosím, vložte znovu heslo.";
+        $text['pwdsmatch'] = "Heslo neodpovídá. Prosím, zadejte stejné heslo do každého pole.";
+        //added in 8.0.0
+        $text['acksubject'] = "Registrace"; //for a new user account
+        $text['ackmessage'] = "Vaše žádost o uživatelský účet byla přijata. Váš účet nebude aktivní, dokud nebude schválen administrátorem. O schválení budete informováni emailovou zprávou.";
+        //added in 12.0.0
+        $text['switch'] = "Prohodit";
+        break;
+
     //added in 10.0.0
-    $text['no_ancestors'] = "Nebyli nalezeni žádní předkové";
-    $text['ancestor_chart'] = "Svislé schéma předků";
-    $text['opennewwindow'] = "Otevřít v novém okně";
-    $text['pedvertical'] = "Svisle";
-    //added in 11.0.0
-    $text['familywith'] = "Rodina s";
-    $text['fcmlogin'] = "Pro zobrazení podrobností se musíte přihlásit";
-    $text['isthe'] = "je";
-    $text['otherspouses'] = "další partneři/partnerky";
-    $text['parentfamily'] = "Rodina rodičů ";
-    $text['showfamily'] = "Zobrazit rodinu";
-    $text['shown'] = "zobrazeno";
-    $text['showparentfamily'] = "zobrazit rodinu rodičů";
-    $text['showperson'] = "zobrazit osobu";
-    //added in 11.0.2
-    $text['otherfamilies'] = "Další rodiny";
-    break;
+    case "branches":
+        $text['browseallbranches'] = "Prohlédnout všechny větve";
+        break;
 
-  //search.php, searchform.php
-  //merged with reports and showreport in 5.0.0
-  case "search":
-  case "reports":
-    $text['noreports'] = "Žádný report neexistuje.";
-    $text['reportname'] = "Název reportu";
-    $text['allreports'] = "Všechny reporty";
-    $text['report'] = "Report";
-    $text['error'] = "Chyba";
-    $text['reportsyntax'] = "Syntaxe dotazu pro tento report";
-    $text['wasincorrect'] = "byla chybná a report nemohl být vytvořen. Kontaktujte prosím administrátora systému na";
-    $text['errormessage'] = "Chybové hlášení";
-    $text['equals'] = "je";
-    $text['endswith'] = "končí na";
-    $text['soundexof'] = "soundex";
-    $text['metaphoneof'] = "metaphone of";
-    $text['plusminus10'] = "+/- 10 roků od";
-    $text['lessthan'] = "méně než";
-    $text['greaterthan'] = "více než";
-    $text['lessthanequal'] = "méně nebo rovno";
-    $text['greaterthanequal'] = "více nebo rovno";
-    $text['equalto'] = "rovno";
-    $text['tryagain'] = "Zkusit znovu";
-    $text['joinwith'] = "Logika hledání";
-    $text['cap_and'] = "A";
-    $text['cap_or'] = "NEBO";
-    $text['showspouse'] = "Zobrazit partnera (pokud měla dotyčná osoba více partnerů, bude zobrazena vícekrát)";
-    $text['submitquery'] = "Provést dotaz";
-    $text['birthplace'] = "Místo narození";
-    $text['deathplace'] = "Místo úmrtí";
-    $text['birthdatetr'] = "Rok narození";
-    $text['deathdatetr'] = "Rok úmrtí";
-    $text['plusminus2'] = "+/- 2 roky od";
-    $text['resetall'] = "Obnovit všechny hodnoty na výchozí";
-    $text['showdeath'] = "Zobrazit informace o úmrtí/pohřbu";
-    $text['altbirthplace'] = "Místo křtu";
-    $text['altbirthdatetr'] = "Rok křtu";
-    $text['burialplace'] = "Místo pohřbu";
-    $text['burialdatetr'] = "Rok pohřbu";
-    $text['event'] = "Událost(i)";
-    $text['day'] = "Den";
-    $text['month'] = "Měsíc";
-    $text['keyword'] = "Klíčové slovo (např. \"Abt\")";
-    $text['explain'] = "Pro zobrazení odpovídajících událostí zadejte datum. Pro zobrazení všech událostí zanechte pole prázdné.";
-    $text['enterdate'] = "Zadejte nebo zvolte alespoň jedno z následujících: Den, Měsíc, Rok, Klíčové slovo";
-    $text['fullname'] = "Celé jméno";
-    $text['birthdate'] = "Datum narození";
-    $text['altbirthdate'] = "Datum křtu";
-    $text['marrdate'] = "Datum sňatku";
-    $text['spouseid'] = "ID číslo partnera";
-    $text['spousename'] = "Jméno partnera";
-    $text['deathdate'] = "Datum úmrtí";
-    $text['burialdate'] = "Datum pohřbu";
-    $text['changedate'] = "Datum poslední změny";
-    $text['gedcom'] = "Strom";
-    $text['baptdate'] = "CJKSpd datum křtu";
-    $text['baptplace'] = "CJKSpd místo křtu";
-    $text['endldate'] = "CJKSpd datum zaslíbení";
-    $text['endlplace'] = "CJKSpd místo zaslíbení";
-    $text['ssealdate'] = "CJKSpd datum pečetění s partnerem";   //Sealed to spouse
-    $text['ssealplace'] = "CJKSpd místo pečetění s partnerem";
-    $text['psealdate'] = "CJKSpd datum pečetění s rodiči";   //Sealed to parents
-    $text['psealplace'] = "CJKSpd místo pečetění s rodiči";
-    $text['marrplace'] = "Místo sňatku";
-    $text['spousesurname'] = "Příjmení partnera";
-    $text['spousemore'] = "Zapíšete-li příjmení partnera, musíte vybrat Pohlaví.";
-    $text['plusminus5'] = "+/- 5 roku od";
-    $text['exists'] = "existuje";
-    $text['dnexist'] = "neexistuje";
-    $text['divdate'] = "Datum rozvodu";
-    $text['divplace'] = "Místo rozvodu";
-    $text['otherevents'] = "Jiné události";
-    $text['numresults'] = "Počet výsledků na stránce";
-    $text['mysphoto'] = "Tajemné fotografie";
-    $text['mysperson'] = "Hledané osoby";
-    $text['joinor'] = "'Join with OR' možnost nelze použít s příjmením partnera";
-    $text['tellus'] = "Máte-li nějaké informace, napište nám";
-    $text['moreinfo'] = "Více informací";
-    //added in 8.0.0
-    $text['marrdatetr'] = "Rok sňatku";
-    $text['divdatetr'] = "Rok rozvodu";
-    $text['mothername'] = "Jméno matky";
-    $text['fathername'] = "Jméno otce";
-    $text['filter'] = "Filtr";
-    $text['notliving'] = "Zesnulí";
-    $text['nodayevents'] = "Události v tomto měsíci, které nejsou spojeny s určitým dnem:";
-    //added in 9.0.0
-    $text['csv'] = "Soubor CSV oddělený čárkami";
-    //added in 10.0.0
-    $text['confdate'] = "Datum biřmování (CJKSpd)";
-    $text['confplace'] = "Místo biřmování (CJKSpd)";
-    $text['initdate'] = "Datum zasvěcení (CJKSpd)";
-    $text['initplace'] = "Místo zasvěcení (CJKSpd)";
-    //added in 11.0.0
-    $text['marrtype'] = "Typ sňatku";
-    $text['searchfor'] = "Hledat";
-    $text['searchnote'] = "Pozn.: Tato stránka pro vyhledání používá Google. Počet nalezených záznamů je přímo ovlivněn mírou, jakou má Google tyto stránky indexované.";
-    break;
+    //statistics.php
+    case "stats":
+        $text['quantity'] = "Množství";
+        $text['totindividuals'] = "Celkem osob";
+        $text['totmales'] = "Celkem mužů";
+        $text['totfemales'] = "Celkem žen";
+        $text['totunknown'] = "Celkem neurčeného pohlaví";
+        $text['totliving'] = "Celkem žijících";
+        $text['totfamilies'] = "Celkem rodin";
+        $text['totuniquesn'] = "Celkem jedinečných příjmení";
+        //$text['totphotos'] = "Total Photos";
+        //$text['totdocs'] = "Total Histories &amp; Documents";
+        //$text['totheadstones'] = "Total Headstones";
+        $text['totsources'] = "Celkem pramenů";
+        $text['avglifespan'] = "Průměrná délka života";
+        $text['earliestbirth'] = "Nejdříve narozený";
+        $text['longestlived'] = "Osoby, které se dožily nejvyššího věku";
+        $text['days'] = "dní";
+        $text['age'] = "Věk";
+        $text['agedisclaimer'] = "Výpočty spojené s věkem se zakládají na údajích osob s udaným datem narození <EM>a</EM> úmrtí.  Protože jsou některá data neúplná (např. úmrtí je zaznamenáno pouze jako rok \"1945\" nebo \"před 1860\"), tyto výpočty nemusí být 100% přesné.";
+        $text['treedetail'] = "Další informace o tomto stromu";
+        $text['total'] = "Celkem";
+        //added in 12.0
+        $text['totdeceased'] = "Celkem zesnulých";
+        break;
 
-  //showlog.php
-  case "showlog":
-    $text['logfilefor'] = "Soubor záznamů pro";
-    $text['mostrecentactions'] = "Nedávná aktivita";
-    $text['autorefresh'] = "Automatické zobrazení (po 30 vteřinách)";
-    $text['refreshoff'] = "Vypnout automatické zobrazení";
-    break;
+    case "notes":
+        $text['browseallnotes'] = "Prohlédnout všechny poznámky";
+        break;
 
-  case "headstones":
-  case "showphoto":
-    $text['cemeteriesheadstones'] = "Hřbitovy a náhrobky";
-    $text['showallhsr'] = "Zobrazit všechny záznamy náhrobků";
-    $text['in'] = "v";
-    $text['showmap'] = "Ukázat mapu";
-    $text['headstonefor'] = "Náhrobek pro";
-    $text['photoof'] = "Fotografie";
-    $text['photoowner'] = "Majitel/Pramen";
-    $text['nocemetery'] = "Hřbitov není uveden";
-    $text['iptc005'] = "Název";
-    $text['iptc020'] = "Podporované kategorie";
-    $text['iptc040'] = "Zvláštní instrukce";
-    $text['iptc055'] = "Datum vytvoření";
-    $text['iptc080'] = "Autor";
-    $text['iptc085'] = "Autorova funkce";
-    $text['iptc090'] = "Město";
-    $text['iptc095'] = "Kraj";
-    $text['iptc101'] = "Země";
-    $text['iptc103'] = "OTR";
-    $text['iptc105'] = "Nadpis";
-    $text['iptc110'] = "Pramen";
-    $text['iptc115'] = "Pramen fotografie";
-    $text['iptc116'] = "Veškerá práva vyhrazena";
-    $text['iptc120'] = "Popis";
-    $text['iptc122'] = "Popis vytvořil";
-    $text['mapof'] = "Mapa";
-    $text['regphotos'] = "Zobrazení s popisem";
-    $text['gallery'] = "Pouze náhledy";
-    $text['cemphotos'] = "Obrázky hřbitovů";
-    $text['photosize'] = "Velikost";
-    $text['iptc010'] = "Priorita";
-    $text['filesize'] = "Velikost souboru";
-    $text['seeloc'] = "Prohlédnete místo";
-    $text['showall'] = "Zobrazit vše";
-    $text['editmedia'] = "Upravit médium";
-    $text['viewitem'] = "Prohlédnout tuto položku";
-    $text['editcem'] = "Upravit hřbitov";
-    $text['numitems'] = "Počet položek";
-    $text['allalbums'] = "Všechna alba";
-    $text['slidestop'] = "Pozastavit prezentaci";
-    $text['slideresume'] = "Pokračovat v prezentaci";
-    $text['slidesecs'] = "Počet vteřin pro každý snímek:";
-    $text['minussecs'] = "ubrat 0.5 vteřiny";
-    $text['plussecs'] = "přidat 0.5 vteřiny";
-    $text['nocountry'] = "Neznámá země";
-    $text['nostate'] = "Neznámý kraj";
-    $text['nocounty'] = "Neznámý okres";
-    $text['nocity'] = "Neznámé město";
-    $text['nocemname'] = "Neznámý hřbitov";
-    $text['editalbum'] = "Upravit album";
-    $text['mediamaptext'] = "<strong>Pozn.:</strong> Posouváním ukazatele myši přes obrázek zobrazíte popisky různých částí obrázku. Změní-li se ukazatel myši na tvar vztyčeného ukazováku, můžete kliknutím zobrazit stránku s podrobnostmi.";
-    //added in 8.0.0
-    $text['allburials'] = "Všechny pohřby";
-    $text['moreinfo'] = "Klikněte pro více informací o obrázku";
-    //added in 9.0.0
-    $text['iptc025'] = "Klíčová slova";
-    $text['iptc092'] = "Sub-location";
-    $text['iptc015'] = "Kategorie";
-    $text['iptc065'] = "Původní program";
-    $text['iptc070'] = "Verze programu";
-    break;
+    case "help":
+        $text['menuhelp'] = "Nápověda nabídky";
+        break;
 
-  //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
-  case "surnames":
-  case "places":
-    $text['surnamesstarting'] = "Zobrazit příjmení začínající na";
-    $text['showtop'] = "Zobrazit prvních";
-    $text['showallsurnames'] = "Zobrazit všechna příjmení";
-    $text['sortedalpha'] = "seřazena podle abecedy";
-    $text['byoccurrence'] = "seřazených podle četnosti";
-    $text['firstchars'] = "Začáteční písmena";
-    $text['mainsurnamepage'] = "Hlavní stránka příjmení";
-    $text['allsurnames'] = "Všechna příjmení";
-    $text['showmatchingsurnames'] = "Kliknutím na příjmení zobrazíte odpovídající záznamy.";
-    $text['backtotop'] = "Zpět na začátek";
-    $text['beginswith'] = "Začíná na";
-    $text['allbeginningwith'] = "Všechna příjmení začínající na";
-    $text['numoccurrences'] = "celkový počet míst v závorce";
-    $text['placesstarting'] = "Zobrazit nejvýznamnější lokality, které začínají na";
-    $text['showmatchingplaces'] = "Kliknutím na místo zobrazíte podrobnější lokality. Kliknutím na ikonu Hledat zobrazíte odpovídající osoby.";
-    $text['totalnames'] = "celkem osob";
-    $text['showallplaces'] = "Zobrazit všechny nejvýznamnější lokality";
-    $text['totalplaces'] = "celkem míst";
-    $text['mainplacepage'] = "Hlavní stránka míst";
-    $text['allplaces'] = "Všechny nejvýznamnější lokality";
-    $text['placescont'] = "Zobrazit všechna místa obsahující";
-    //changed in 8.0.0
-    $text['top30'] = "Top xxx nejčastěji se vyskytujících příjmení";
-    $text['top30places'] = "Top xxx nejvýznamnějších lokalit";
-    //added in 12.0.0
-    $text['firstnamelist'] = "Seznam křestních jmen";
-    $text['firstnamesstarting'] = "Zobrazit křestní jména začínající na";
-    $text['showallfirstnames'] = "Zobrazit všechna křestní jména";
-    $text['mainfirstnamepage'] = "Hlavní stránka křestních jmen";
-    $text['allfirstnames'] = "Všechna křestní jména";
-    $text['showmatchingfirstnames'] = "Kliknutím na křestní jméno zobrazíte odpovídající záznamy.";
-    $text['allfirstbegwith'] = "Všechna křestní jména začínající na";
-    $text['top30first'] = "Top xxx nejčastěji se vyskytujících křestních jmen";
-    $text['allothers'] = "Všechna ostatní";
-    $text['amongall'] = "(mezi všemi jmény)";
-    $text['justtop'] = "Pouze Top xxx";
-    break;
+    case "install":
+        $text['perms'] = "Všechna povolení byla nastavena.";
+        $text['noperms'] = "Povolení nemohla být nastavena pro tyto soubory:";
+        $text['manual'] = "Nastavte je prosím manuálně.";
+        $text['folder'] = "Složka";
+        $text['created'] = "byla vytvořena";
+        $text['nocreate'] = "nemohla být vytvořena. Založte ji, prosím, manuálně.";
+        $text['infosaved'] = "Informace uloženy, spojení potvrzeno!";
+        $text['tablescr'] = "Tabulky byly vytvořeny!";
+        $text['notables'] = "Následující tabulky nemohly být vytvořeny:";
+        $text['nocomm'] = "TNG nemůže navázat komunikaci s vaší databází. Žádné tabulky nebyly vytvořeny.";
+        $text['newdb'] = "Informace uloženy, spojení potvrzeno, nová databáze byla vytvořena:";
+        $text['noattach'] = "Informace uloženy. Spojení navázáno a databáze vytvořena, ale TNG se k ní nemůže připojit.";
+        $text['nodb'] = "Informace uloženy. Spojení navázáno, ale databáze neexistuje a nemohla být vytvořena. Ověřte si, že název databáze je správný anebo použijte ovládací panel a vytvořte ji.";
+        $text['noconn'] = "Informace uložena, ale spojení nebylo navázáno.  Některé z následujích věcí jsou chybné:";
+        $text['exists'] = "existuje";
+        $text['loginfirst'] = "Nejdříve se musíte přihlásit.";
+        $text['noop'] = "Žádná operace nebyla provedena.";
+        //added in 8.0.0
+        $text['nouser'] = "Účet nebyl vytvořen. Uživatelské jméno již zřejmě existuje.";
+        $text['notree'] = "Strom nebyl vytvořen. ID číslo stromu zřejmě již existuje.";
+        $text['infosaved2'] = "Informace uložena";
+        $text['renamedto'] = "přejmenován na";
+        $text['norename'] = "nemohl být přejmenován";
+        break;
 
-  //whatsnew.php
-  case "whatsnew":
-    $text['pastxdays'] = "(v posledních xx dnech)";
+    case "imgviewer":
+        $text['zoomin'] = "Zvětšit";
+        $text['zoomout'] = "Zmenšit";
+        $text['magmode'] = "Režim zvětšování";
+        $text['panmode'] = "Režim sledování";
+        $text['pan'] = "Je-li obrázek větší než okno prohlížeče, obrázkem v okně posunete kliknutím myší dovnitř obrázku a jejím držením a tažením";
+        $text['fitwidth'] = "Na celou šířku";
+        $text['fitheight'] = "Na celou výšku";
+        $text['newwin'] = "Nové okno";
+        $text['opennw'] = "Otevřít obrázek v novém okně";
+        $text['magnifyreg'] = "Kliknutím myši dovnitř obrázku zvětšíte tuto část obrázku";
+        $text['imgctrls'] = "Zapnout ovládání obrázku";
+        $text['vwrctrls'] = "Zapnout ovládání prohlížeče obrázku";
+        $text['vwrclose'] = "Zavřít prohlížeč obrázku";
+        break;
 
-    $text['photo'] = "Fotografie";
-    $text['history'] = "Vyprávění/dokument";
-    $text['husbid'] = "ID číslo otce";
-    $text['husbname'] = "Jméno otce";
-    $text['wifeid'] = "ID číslo matky";
-    //added in 11.0.0
-    $text['wifename'] = "Jméno matky";
-    break;
-
-  //timeline.php, timeline2.php
-  case "timeline":
-    $text['text_delete'] = "Vymazat";
-    $text['addperson'] = "Přidat osobu";
-    $text['nobirth'] = "Následující osoba nemá platné datum narození a nelze ji přidat";
-    $text['event'] = "Událost(i)";
-    $text['chartwidth'] = "Šířka schématu";
-    $text['timelineinstr'] = "Přidat osoby";
-    $text['togglelines'] = "Přepnout zobrazení linek";
-    //changed in 9.0.0
-    $text['noliving'] = "Následující osoba je označena jako žijící nebo neveřejná a nelze ji přidat, protože nemáte patřičná přístupová práva";
-    break;
-
-  //browsetrees.php
-  //login.php, newacctform.php, addnewacct.php
-  case "trees":
-  case "login":
-    $text['browsealltrees'] = "Prohlédnout všechny stromy";
-    $text['treename'] = "Název stromu";
-    $text['owner'] = "Majitel";
-    $text['address'] = "Adresa";
-    $text['city'] = "Město";
-    $text['state'] = "Kraj/provincie";
-    $text['zip'] = "PSČ";
-    $text['country'] = "Země";
-    $text['email'] = "Email";
-    $text['phone'] = "Telefon";
-    $text['username'] = "Uživatelské jméno";
-    $text['password'] = "Heslo";
-    $text['loginfailed'] = "Chyba přihlášení.";
-
-    $text['regnewacct'] = "Registrace nového účtu";
-    $text['realname'] = "Vaše jméno a příjmení";
-    $text['phone'] = "Telefon";
-    $text['email'] = "Email";
-    $text['address'] = "Adresa";
-    $text['acctcomments'] = "Poznámky";
-    $text['submit'] = "Odeslat";
-    $text['leaveblank'] = "(zanechte toto pole prázdné, pokud žádáte o nový strom)";
-    $text['required'] = "Tyto údaje je nutné vyplnit";
-    $text['enterpassword'] = "Zadejte heslo.";
-    $text['enterusername'] = "Zadejte uživatelské jméno.";
-    $text['failure'] = "Zadané uživatelské jméno je již vyhrazené. Stisknutím tlačítka zpět se vraťte na předchozí stránku a zvolte si jiné uživatelské jméno";
-    $text['success'] = "Vaše registrace proběhla úspěšně. Administrátor systému vás bude informovat, kdy bude váš účet aktivován, nebo pokud budou potřeba další informace.";
-    $text['emailsubject'] = "Žádost o novou registraci";
-    $text['website'] = "Internetové stránky";
-    $text['nologin'] = "Nemáte přihlašovací údaje?";
-    $text['loginsent'] = "Údaje byly odeslány";
-    $text['loginnotsent'] = "Přihlašovací údaje nebyly odeslány";
-    $text['enterrealname'] = "Zadejte, prosím, své skutečné jméno.";
-    $text['rempass'] = "Zůstat přihlášen na tomto počítači";
-    $text['morestats'] = "Další statistika";
-    $text['accmail'] = "POZN.: Abyste mohli obdržet email od administrátora ohledne vašeho účtu, zkontrolujte, prosím, že váš emailový program neblokuje emailové adresy z této domény.";
-    $text['newpassword'] = "Nové heslo";
-    $text['resetpass'] = "Obnovit heslo";
-    $text['nousers'] = "Tento formulář nelze použít, dokud nebude vytvořen alespoň jeden záznam. Pokud jste majitelem těchto stránek, jděte do nabídky Admin/Uživatelé a vytvořte si účet administrátora.";
-    $text['noregs'] = "Je nám líto, ale v současné době nepřijímáme nové registrace. Kontaktujte nás, prosím, přímo, pokud máte nějaké dotazy či připomínky ohledně těchto webových stránek.";
-    //changed in 8.0.0
-    $text['emailmsg'] = "Byla vám zaslána nová žádost o uživatelský účet TNG. Přihlaste se, prosím, do administrátorského prostředí a dejte novému účtu patřičná přístupová práva.";
-    $text['accactive'] = "Úcet byl aktivován, ale uživatel nebude mít žádná zvláštní práva, dokud mu je nepřidělíte.";
-    $text['accinactive'] = "Nastavení účtu můžete provést v Admin/Uživatelé/Přezkoumat. Účet zůstane neaktivní, dokud alespoň jednou záznam neupravíte a neuložíte.";
-    $text['pwdagain'] = "Heslo znovu";
-    $text['enterpassword2'] = "Prosím, vložte znovu heslo.";
-    $text['pwdsmatch'] = "Heslo neodpovídá. Prosím, zadejte stejné heslo do každého pole.";
-    //added in 8.0.0
-    $text['acksubject'] = "Registrace"; //for a new user account
-    $text['ackmessage'] = "Vaše žádost o uživatelský účet byla přijata. Váš účet nebude aktivní, dokud nebude schválen administrátorem. O schválení budete informováni emailovou zprávou.";
-    //added in 12.0.0
-    $text['switch'] = "Prohodit";
-    break;
-
-  //added in 10.0.0
-  case "branches":
-    $text['browseallbranches'] = "Prohlédnout všechny větve";
-    break;
-
-  //statistics.php
-  case "stats":
-    $text['quantity'] = "Množství";
-    $text['totindividuals'] = "Celkem osob";
-    $text['totmales'] = "Celkem mužů";
-    $text['totfemales'] = "Celkem žen";
-    $text['totunknown'] = "Celkem neurčeného pohlaví";
-    $text['totliving'] = "Celkem žijících";
-    $text['totfamilies'] = "Celkem rodin";
-    $text['totuniquesn'] = "Celkem jedinečných příjmení";
-    //$text['totphotos'] = "Total Photos";
-    //$text['totdocs'] = "Total Histories &amp; Documents";
-    //$text['totheadstones'] = "Total Headstones";
-    $text['totsources'] = "Celkem pramenů";
-    $text['avglifespan'] = "Průměrná délka života";
-    $text['earliestbirth'] = "Nejdříve narozený";
-    $text['longestlived'] = "Osoby, které se dožily nejvyššího věku";
-    $text['days'] = "dní";
-    $text['age'] = "Věk";
-    $text['agedisclaimer'] = "Výpočty spojené s věkem se zakládají na údajích osob s udaným datem narození <EM>a</EM> úmrtí.  Protože jsou některá data neúplná (např. úmrtí je zaznamenáno pouze jako rok \"1945\" nebo \"před 1860\"), tyto výpočty nemusí být 100% přesné.";
-    $text['treedetail'] = "Další informace o tomto stromu";
-    $text['total'] = "Celkem";
-    //added in 12.0
-    $text['totdeceased'] = "Celkem zesnulých";
-    break;
-
-  case "notes":
-    $text['browseallnotes'] = "Prohlédnout všechny poznámky";
-    break;
-
-  case "help":
-    $text['menuhelp'] = "Nápověda nabídky";
-    break;
-
-  case "install":
-    $text['perms'] = "Všechna povolení byla nastavena.";
-    $text['noperms'] = "Povolení nemohla být nastavena pro tyto soubory:";
-    $text['manual'] = "Nastavte je prosím manuálně.";
-    $text['folder'] = "Složka";
-    $text['created'] = "byla vytvořena";
-    $text['nocreate'] = "nemohla být vytvořena. Založte ji, prosím, manuálně.";
-    $text['infosaved'] = "Informace uloženy, spojení potvrzeno!";
-    $text['tablescr'] = "Tabulky byly vytvořeny!";
-    $text['notables'] = "Následující tabulky nemohly být vytvořeny:";
-    $text['nocomm'] = "TNG nemůže navázat komunikaci s vaší databází. Žádné tabulky nebyly vytvořeny.";
-    $text['newdb'] = "Informace uloženy, spojení potvrzeno, nová databáze byla vytvořena:";
-    $text['noattach'] = "Informace uloženy. Spojení navázáno a databáze vytvořena, ale TNG se k ní nemůže připojit.";
-    $text['nodb'] = "Informace uloženy. Spojení navázáno, ale databáze neexistuje a nemohla být vytvořena. Ověřte si, že název databáze je správný anebo použijte ovládací panel a vytvořte ji.";
-    $text['noconn'] = "Informace uložena, ale spojení nebylo navázáno.  Některé z následujích věcí jsou chybné:";
-    $text['exists'] = "existuje";
-    $text['loginfirst'] = "Nejdříve se musíte přihlásit.";
-    $text['noop'] = "Žádná operace nebyla provedena.";
-    //added in 8.0.0
-    $text['nouser'] = "Účet nebyl vytvořen. Uživatelské jméno již zřejmě existuje.";
-    $text['notree'] = "Strom nebyl vytvořen. ID číslo stromu zřejmě již existuje.";
-    $text['infosaved2'] = "Informace uložena";
-    $text['renamedto'] = "přejmenován na";
-    $text['norename'] = "nemohl být přejmenován";
-    break;
-
-  case "imgviewer":
-    $text['zoomin'] = "Zvětšit";
-    $text['zoomout'] = "Zmenšit";
-    $text['magmode'] = "Režim zvětšování";
-    $text['panmode'] = "Režim sledování";
-    $text['pan'] = "Je-li obrázek větší než okno prohlížeče, obrázkem v okně posunete kliknutím myší dovnitř obrázku a jejím držením a tažením";
-    $text['fitwidth'] = "Na celou šířku";
-    $text['fitheight'] = "Na celou výšku";
-    $text['newwin'] = "Nové okno";
-    $text['opennw'] = "Otevřít obrázek v novém okně";
-    $text['magnifyreg'] = "Kliknutím myši dovnitř obrázku zvětšíte tuto část obrázku";
-    $text['imgctrls'] = "Zapnout ovládání obrázku";
-    $text['vwrctrls'] = "Zapnout ovládání prohlížeče obrázku";
-    $text['vwrclose'] = "Zavřít prohlížeč obrázku";
-    break;
-
-  case "dna":
-    $text['test_date'] = "Datum testu";
-    $text['links'] = "Odpovídající odkazy";
-    $text['testid'] = "ID testu";
-    //added in 12.0.0
-    $text['mode_values'] = "Hodnoty módu";
-    $text['compareselected'] = "Porovnat vybrané";
-    $text['dnatestscompare'] = "Porovnat testy Y-DNA";
-    $text['keep_name_private'] = "Zachovat jméno neveřejné";
-    $text['browsealltests'] = "Procházet všechny testy";
-    $text['all_dna_tests'] = "Všechny testy DNA";
-    $text['fastmutating'] = "Rychlé mutace";
-    $text['alltypes'] = "Všechny typy";
-    $text['allgroups'] = "Všechny skupiny";
-    $text['Ydna_LITbox_info'] = "Test(y) připojené k této osobě nemusí nutně od této osoby pocházet.<br>Ve sloupci 'Haploskupina' se zobrazí data červeně, pokud je výsledek 'Předpovězen', nebo zeleně, pokud je test 'Potvrzen'";
-    //added in 12.1.0
-    $text['dnatestscompare_mtdna'] = "Porovnat vybrané testy mtDNA";
-    $text['dnatestscompare_atdna'] = "Porovnat vybrané testy atDNA";
-    $text['chromosome'] = "Chr";
-    $text['centiMorgans'] = "cM";
-    $text['snps'] = "SNP";
-    $text['y_haplogroup'] = "Y-DNA";
-    $text['mt_haplogroup'] = "mtDNA";
-    $text['sequence'] = "Ref";
-    $text['extra_mutations'] = "Zvláštní mutace";
-    $text['mrca'] = "Nejbližší společný předek";
-    $text['ydna_test'] = "Testy Y-DNA";
-    $text['mtdna_test'] = "Testy mtDNA (mitochondriální)";
-    $text['atdna_test'] = "Testy atDNA (autozomální)";
-    $text['segment_start'] = "Začátek";
-    $text['segment_end'] = "Konec";
-    $text['suggested_relationship'] = "Navrhnuté";
-    $text['actual_relationship'] = "Aktuální";
-    $text['12markers'] = "Markery 1-12";
-    $text['25markers'] = "Markery 13-25";
-    $text['37markers'] = "Markery 26-37";
-    $text['67markers'] = "Markery 38-67";
-    $text['111markers'] = "Markery 68-111";
-    break;
+    case "dna":
+        $text['test_date'] = "Datum testu";
+        $text['links'] = "Odpovídající odkazy";
+        $text['testid'] = "ID testu";
+        //added in 12.0.0
+        $text['mode_values'] = "Hodnoty módu";
+        $text['compareselected'] = "Porovnat vybrané";
+        $text['dnatestscompare'] = "Porovnat testy Y-DNA";
+        $text['keep_name_private'] = "Zachovat jméno neveřejné";
+        $text['browsealltests'] = "Procházet všechny testy";
+        $text['all_dna_tests'] = "Všechny testy DNA";
+        $text['fastmutating'] = "Rychlé mutace";
+        $text['alltypes'] = "Všechny typy";
+        $text['allgroups'] = "Všechny skupiny";
+        $text['Ydna_LITbox_info'] = "Test(y) připojené k této osobě nemusí nutně od této osoby pocházet.<br>Ve sloupci 'Haploskupina' se zobrazí data červeně, pokud je výsledek 'Předpovězen', nebo zeleně, pokud je test 'Potvrzen'";
+        //added in 12.1.0
+        $text['dnatestscompare_mtdna'] = "Porovnat vybrané testy mtDNA";
+        $text['dnatestscompare_atdna'] = "Porovnat vybrané testy atDNA";
+        $text['chromosome'] = "Chr";
+        $text['centiMorgans'] = "cM";
+        $text['snps'] = "SNP";
+        $text['y_haplogroup'] = "Y-DNA";
+        $text['mt_haplogroup'] = "mtDNA";
+        $text['sequence'] = "Ref";
+        $text['extra_mutations'] = "Zvláštní mutace";
+        $text['mrca'] = "Nejbližší společný předek";
+        $text['ydna_test'] = "Testy Y-DNA";
+        $text['mtdna_test'] = "Testy mtDNA (mitochondriální)";
+        $text['atdna_test'] = "Testy atDNA (autozomální)";
+        $text['segment_start'] = "Začátek";
+        $text['segment_end'] = "Konec";
+        $text['suggested_relationship'] = "Navrhnuté";
+        $text['actual_relationship'] = "Aktuální";
+        $text['12markers'] = "Markery 1-12";
+        $text['25markers'] = "Markery 13-25";
+        $text['37markers'] = "Markery 26-37";
+        $text['67markers'] = "Markery 38-67";
+        $text['111markers'] = "Markery 68-111";
+        break;
 }
 
 //common
@@ -1011,5 +1011,5 @@ $text['lastpage'] = "Poslední stránka";
 @include_once "captcha_text.php";
 @include_once "alltext.php";
 if (!$alltextloaded) {
-  getAllTextPath();
+    getAllTextPath();
 }

@@ -3,8 +3,8 @@ $textpart = "sources";
 include "tng_begin.php";
 
 if (!$repoID) {
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 
 include "personlib.php";
@@ -25,9 +25,9 @@ $query = "SELECT * FROM $repositories_table WHERE repoID = '$repoID' AND gedcom 
 $result = tng_query($query);
 $reporow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
-  tng_free_result($result);
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    tng_free_result($result);
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 tng_free_result($result);
 
@@ -54,12 +54,12 @@ $repotext .= beginSection("info");
 $repotext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($reporow['reponame']) {
-  $repotext .= showEvent(array("text" => $text['name'], "fact" => $reporow['reponame']));
+    $repotext .= showEvent(array("text" => $text['name'], "fact" => $reporow['reponame']));
 }
 if ($reporow['addressID']) {
-  $reporow['isrepo'] = true;
-  $extras = getFact($reporow);
-  $repotext .= showEvent(array("text" => $text['address'], "fact" => $extras));
+    $reporow['isrepo'] = true;
+    $extras = getFact($reporow);
+    $repotext .= showEvent(array("text" => $text['address'], "fact" => $extras));
 }
 
 //do custom events
@@ -68,19 +68,19 @@ doCustomEvents($repoID, "R");
 
 ksort($events);
 foreach ($events as $event)
-  $repotext .= showEvent($event);
+    $repotext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-  $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
+    $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
 } else {
-  $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID));
+    $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID));
 }
 
 if ($soffset) {
-  $soffsetstr = "$soffset, ";
-  $newsoffset = $soffset + 1;
+    $soffsetstr = "$soffset, ";
+    $newsoffset = $soffset + 1;
 } else {
-  $soffsetstr = "";
-  $newsoffset = 0;
+    $soffsetstr = "";
+    $newsoffset = 0;
 }
 
 $query = "SELECT sourceID, title, shorttitle FROM $sources_table WHERE gedcom = '$tree' AND repoID = '$repoID' ORDER BY title LIMIT $soffsetstr" . ($maxsearchresults + 1);
@@ -88,19 +88,19 @@ $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $repolinktext = "";
 while ($srow = tng_fetch_assoc($sresult)) {
-  if ($repolinktext) {
-    $repolinktext .= "\n";
-  }
-  $title = $srow['shorttitle'] ? $srow['shorttitle'] : $srow['title'];
-  $repolinktext .= "<a href=\"$showsource_url" . "sourceID={$srow['sourceID']}&amp;tree=$tree\">$title</a>";
+    if ($repolinktext) {
+        $repolinktext .= "\n";
+    }
+    $title = $srow['shorttitle'] ? $srow['shorttitle'] : $srow['title'];
+    $repolinktext .= "<a href=\"$showsource_url" . "sourceID={$srow['sourceID']}&amp;tree=$tree\">$title</a>";
 }
 if ($numrows >= $maxsearchresults) {
-  $repolinktext .= "\n[<a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['moresrc']}</a>]";
+    $repolinktext .= "\n[<a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['moresrc']}</a>]";
 }
 tng_free_result($sresult);
 
 if ($repolinktext) {
-  $repotext .= showEvent(array("text" => $text['indlinked'], "fact" => $repolinktext));
+    $repotext .= showEvent(array("text" => $text['indlinked'], "fact" => $repolinktext));
 }
 
 $repotext .= "</table>\n";
@@ -109,9 +109,9 @@ $repotext .= endSection("info");
 
 $media = doMediaSection($repoID, $repomedia, $repoalbums);
 if ($media) {
-  $repotext .= beginSection("media");
-  $repotext .= $media;
-  $repotext .= endSection("media");
+    $repotext .= beginSection("media");
+    $repotext .= $media;
+    $repotext .= endSection("media");
 }
 
 $notes = buildNotes($reponotes, "");
@@ -132,21 +132,21 @@ $repotext .= "</ul>\n";
 $tng_alink = $tng_plink = "lightlink";
 $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
 if ($media || $notes) {
-  if ($tngconfig['istart']) {
-    $tng_plink = "lightlink3";
-  } else {
-    $tng_alink = "lightlink3";
-  }
-  $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['repoinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-  if ($media) {
-    $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-  }
-  if ($notes) {
-    $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-  }
-  $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    if ($tngconfig['istart']) {
+        $tng_plink = "lightlink3";
+    } else {
+        $tng_alink = "lightlink3";
+    }
+    $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['repoinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    if ($media) {
+        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    }
+    if ($notes) {
+        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    }
+    $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
 } else {
-  $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['repoinfo']}</span>\n";
+    $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['repoinfo']}</span>\n";
 }
 
 $rightbranch = 1;
@@ -173,28 +173,28 @@ echo tng_menu("R", "repo", $repoID, $innermenu);
         function infoToggle(part) {
             if (part == "all") {
                 jQuery('#info').show();
-              <?php
-              if ($media) {
-                echo "\$('#media').show();\n";
-                echo "\$('#tng_mlink').attr('class','lightlink');\n";
-              }
-              if ($notes) {
-                echo "\$('#notes').show();\n";
-                echo "\$('#tng_nlink').attr('class','lightlink');\n";
-              }
-              ?>
+                <?php
+                if ($media) {
+                    echo "\$('#media').show();\n";
+                    echo "\$('#tng_mlink').attr('class','lightlink');\n";
+                }
+                if ($notes) {
+                    echo "\$('#notes').show();\n";
+                    echo "\$('#tng_nlink').attr('class','lightlink');\n";
+                }
+                ?>
                 jQuery('#tng_alink').attr('class', 'lightlink3');
                 jQuery('#tng_plink').attr('class', 'lightlink');
             } else {
                 innerToggle(part, "info", "tng_plink");
-              <?php
-              if ($media) {
-                echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
-              }
-              if ($notes) {
-                echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
-              }
-              ?>
+                <?php
+                if ($media) {
+                    echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
+                }
+                if ($notes) {
+                    echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
+                }
+                ?>
                 jQuery('#tng_alink').attr('class', 'lightlink');
             }
             return false;
@@ -204,7 +204,7 @@ echo tng_menu("R", "repo", $repoID, $innermenu);
 <?php
 echo $repotext;
 ?>
-  <br>
+    <br>
 
 <?php
 tng_footer($flags);

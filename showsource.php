@@ -3,8 +3,8 @@ $textpart = "sources";
 include "tng_begin.php";
 
 if (!$sourceID) {
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 
 include "personlib.php";
@@ -29,9 +29,9 @@ $query .= "LEFT JOIN $repositories_table repositories ON sources.repoID = reposi
 $result = tng_query($query);
 $srcrow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
-  tng_free_result($result);
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    tng_free_result($result);
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 tng_free_result($result);
 
@@ -72,25 +72,25 @@ $sourcetext .= beginSection("info");
 $sourcetext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($srcrow['title']) {
-  $sourcetext .= showEvent(array("text" => $text['title'], "fact" => $srcrow['title']));
+    $sourcetext .= showEvent(array("text" => $text['title'], "fact" => $srcrow['title']));
 }
 if ($srcrow['shorttitle']) {
-  $sourcetext .= showEvent(array("text" => $text['shorttitle'], "fact" => $srcrow['shorttitle']));
+    $sourcetext .= showEvent(array("text" => $text['shorttitle'], "fact" => $srcrow['shorttitle']));
 }
 if ($srcrow['author']) {
-  $sourcetext .= showEvent(array("text" => $text['author'], "fact" => $srcrow['author']));
+    $sourcetext .= showEvent(array("text" => $text['author'], "fact" => $srcrow['author']));
 }
 if ($srcrow['publisher']) {
-  $sourcetext .= showEvent(array("text" => $text['publisher'], "fact" => $srcrow['publisher']));
+    $sourcetext .= showEvent(array("text" => $text['publisher'], "fact" => $srcrow['publisher']));
 }
 if ($srcrow['callnum']) {
-  $sourcetext .= showEvent(array("text" => $text['callnum'], "fact" => $srcrow['callnum']));
+    $sourcetext .= showEvent(array("text" => $text['callnum'], "fact" => $srcrow['callnum']));
 }
 if ($srcrow['reponame']) {
-  $sourcetext .= showEvent(array("text" => $text['repository'], "fact" => "<a href=\"$showrepo_url" . "repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"));
+    $sourcetext .= showEvent(array("text" => $text['repository'], "fact" => "<a href=\"$showrepo_url" . "repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"));
 }
 if ($srcrow['other']) {
-  $sourcetext .= showEvent(array("text" => $text['other'], "fact" => $srcrow['other']));
+    $sourcetext .= showEvent(array("text" => $text['other'], "fact" => $srcrow['other']));
 }
 
 //do custom events
@@ -99,26 +99,26 @@ doCustomEvents($sourceID, "S");
 
 ksort($events);
 foreach ($events as $event)
-  $sourcetext .= showEvent($event);
+    $sourcetext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-  $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
+    $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
 } else {
-  $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID));
+    $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID));
 }
 
 if ($ioffset) {
-  $ioffsetstr = "$ioffset, ";
-  $newioffset = $ioffset + 1;
+    $ioffsetstr = "$ioffset, ";
+    $newioffset = $ioffset + 1;
 } else {
-  $ioffsetstr = "";
-  $newioffset = 0;
+    $ioffsetstr = "";
+    $newioffset = 0;
 }
 if ($foffset) {
-  $foffsetstr = "$foffset, ";
-  $newfoffset = $foffset + 1;
+    $foffsetstr = "$foffset, ";
+    $newfoffset = $foffset + 1;
 } else {
-  $foffsetstr = "";
-  $newfoffset = 0;
+    $foffsetstr = "";
+    $newfoffset = 0;
 }
 
 $query = "SELECT DISTINCT $citations_table.persfamID, $citations_table.gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch FROM $citations_table, $people_table WHERE $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom AND $citations_table.gedcom = '$tree' AND $citations_table.sourceID = '$sourceID' ORDER BY lastname, firstname LIMIT $ioffsetstr" . ($maxsearchresults + 1);
@@ -127,35 +127,35 @@ $numrows = tng_num_rows($sresult);
 $sourcelinktext = "";
 $noneliving = $noneprivate = 1;
 while ($srow = tng_fetch_assoc($sresult)) {
-  if ($sourcelinktext) {
-    $sourcelinktext .= "\n";
-  }
+    if ($sourcelinktext) {
+        $sourcelinktext .= "\n";
+    }
 
-  $srights = determineLivingPrivateRights($srow, $righttree);
-  $srow['allow_living'] = $srights['living'];
-  $srow['allow_private'] = $srights['private'];
+    $srights = determineLivingPrivateRights($srow, $righttree);
+    $srow['allow_living'] = $srights['living'];
+    $srow['allow_private'] = $srights['private'];
 
-  if (!$srow['allow_living']) {
-    $noneliving = 0;
-  }
-  if (!$srow['allow_private']) {
-    $noneprivate = 0;
-  }
+    if (!$srow['allow_living']) {
+        $noneliving = 0;
+    }
+    if (!$srow['allow_private']) {
+        $noneprivate = 0;
+    }
 
-  $sourcelinktext .= "<a href=\"$getperson_url" . "personID={$srow['persfamID']}&amp;tree={$srow['gedcom']}\">";
-  $sourcelinktext .= getName($srow);
-  $sourcelinktext .= "</a>";
+    $sourcelinktext .= "<a href=\"$getperson_url" . "personID={$srow['persfamID']}&amp;tree={$srow['gedcom']}\">";
+    $sourcelinktext .= getName($srow);
+    $sourcelinktext .= "</a>";
 }
 
 if ($srcrow['actualtext']) {
-  if ((!$noneliving && !$srcrow['allow_living']) || (!$noneprivate && !$srcrow['allow_private'])) {
-    $srcrow['actualtext'] = $text['livingphoto'];
-  }
-  $sourcetext .= showEvent(array("text" => $text['text'], "fact" => $srcrow['actualtext']));
+    if ((!$noneliving && !$srcrow['allow_living']) || (!$noneprivate && !$srcrow['allow_private'])) {
+        $srcrow['actualtext'] = $text['livingphoto'];
+    }
+    $sourcetext .= showEvent(array("text" => $text['text'], "fact" => $srcrow['actualtext']));
 }
 
 if ($numrows > $maxsearchresults) {
-  $sourcelinktext .= "\n[<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree&amp;foffset=$foffset&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['moreind']}</a>]";
+    $sourcelinktext .= "\n[<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree&amp;foffset=$foffset&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['moreind']}</a>]";
 }
 tng_free_result($sresult);
 
@@ -164,30 +164,30 @@ $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $noneliving = $noneprivate = 1;
 while ($srow = tng_fetch_assoc($sresult)) {
-  if ($sourcelinktext) {
-    $sourcelinktext .= "\n";
-  }
+    if ($sourcelinktext) {
+        $sourcelinktext .= "\n";
+    }
 
-  $srights = determineLivingPrivateRights($srow, $righttree);
-  $srow['allow_living'] = $srights['living'];
-  $srow['allow_private'] = $srights['private'];
+    $srights = determineLivingPrivateRights($srow, $righttree);
+    $srow['allow_living'] = $srights['living'];
+    $srow['allow_private'] = $srights['private'];
 
-  if (!$srow['allow_living']) {
-    $noneliving = 0;
-  }
-  if (!$srow['allow_private']) {
-    $noneprivate = 0;
-  }
+    if (!$srow['allow_living']) {
+        $noneliving = 0;
+    }
+    if (!$srow['allow_private']) {
+        $noneprivate = 0;
+    }
 
-  $sourcelinktext .= "<a href=\"$familygroup_url" . "familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">{$text['family']}: " . getFamilyName($srow) . "</a>";
+    $sourcelinktext .= "<a href=\"$familygroup_url" . "familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">{$text['family']}: " . getFamilyName($srow) . "</a>";
 }
 if ($numrows >= $maxsearchresults) {
-  $sourcelinktext .= "\n[<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree&amp;ioffset=$ioffset&amp;foffset=" . ($newfoffset + $maxsearchresults) . "\">{$text['morefam']}</a>]";
+    $sourcelinktext .= "\n[<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree&amp;ioffset=$ioffset&amp;foffset=" . ($newfoffset + $maxsearchresults) . "\">{$text['morefam']}</a>]";
 }
 tng_free_result($sresult);
 
 if ($sourcelinktext) {
-  $sourcetext .= showEvent(array("text" => $text['indlinked'], "fact" => $sourcelinktext));
+    $sourcetext .= showEvent(array("text" => $text['indlinked'], "fact" => $sourcelinktext));
 }
 
 $sourcetext .= "</table>\n";
@@ -196,9 +196,9 @@ $sourcetext .= endSection("info");
 
 $media = doMediaSection($sourceID, $srcmedia, $srcalbums);
 if ($media) {
-  $sourcetext .= beginSection("media");
-  $sourcetext .= $media . "<br>\n";
-  $sourcetext .= endSection("media");
+    $sourcetext .= beginSection("media");
+    $sourcetext .= $media . "<br>\n";
+    $sourcetext .= endSection("media");
 }
 
 $notes = buildNotes($srcnotes, "");
@@ -219,21 +219,21 @@ $sourcetext .= "</ul>\n";
 $tng_alink = $tng_plink = "lightlink";
 $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
 if ($notes || $media) {
-  if ($tngconfig['istart']) {
-    $tng_plink = "lightlink3";
-  } else {
-    $tng_alink = "lightlink3";
-  }
-  $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['srcinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-  if ($media) {
-    $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-  }
-  if ($notes) {
-    $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-  }
-  $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    if ($tngconfig['istart']) {
+        $tng_plink = "lightlink3";
+    } else {
+        $tng_alink = "lightlink3";
+    }
+    $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['srcinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    if ($media) {
+        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    }
+    if ($notes) {
+        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    }
+    $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
 } else {
-  $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['srcinfo']}</span>\n";
+    $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['srcinfo']}</span>\n";
 }
 
 echo tng_menu("S", "source", $sourceID, $innermenu);
@@ -259,28 +259,28 @@ echo tng_menu("S", "source", $sourceID, $innermenu);
         function infoToggle(part) {
             if (part == "all") {
                 jQuery('#info').show();
-              <?php
-              if ($media) {
-                echo "\$('#media').show();\n";
-                echo "\$('#tng_mlink').attr('class','lightlink');\n";
-              }
-              if ($notes) {
-                echo "\$('#notes').show();\n";
-                echo "\$('#tng_nlink').attr('class','lightlink');\n";
-              }
-              ?>
+                <?php
+                if ($media) {
+                    echo "\$('#media').show();\n";
+                    echo "\$('#tng_mlink').attr('class','lightlink');\n";
+                }
+                if ($notes) {
+                    echo "\$('#notes').show();\n";
+                    echo "\$('#tng_nlink').attr('class','lightlink');\n";
+                }
+                ?>
                 jQuery('#tng_alink').attr('class', 'lightlink3');
                 jQuery('#tng_plink').attr('class', 'lightlink');
             } else {
                 innerToggle(part, "info", "tng_plink");
-              <?php
-              if ($media) {
-                echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
-              }
-              if ($notes) {
-                echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
-              }
-              ?>
+                <?php
+                if ($media) {
+                    echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
+                }
+                if ($notes) {
+                    echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
+                }
+                ?>
                 jQuery('#tng_alink').attr('class', 'lightlink');
             }
             return false;
@@ -290,7 +290,7 @@ echo tng_menu("S", "source", $sourceID, $innermenu);
 <?php
 echo $sourcetext;
 ?>
-  <br>
+    <br>
 
 <?php
 tng_footer($flags);

@@ -122,7 +122,9 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                     <table>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td><input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield"></td>
+                            <td>
+                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                            </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
@@ -130,7 +132,8 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findcemetery" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findcemetery" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
                 <?php

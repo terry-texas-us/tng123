@@ -109,14 +109,20 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                     <table cellpadding="1" class="normal">
                         <tr>
                             <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
-                            <td><input type="file" name="remotefile" size="50"></td>
+                            <td>
+                                <input type="file" name="remotefile" size="50">
+                            </td>
                         </tr>
                         <tr>
                             <td>&nbsp;&nbsp;<strong><?php echo $admtext['text_or']; ?></strong> &nbsp;<?php echo $admtext['onwebserver']; ?>:</td>
-                            <td><input type="text" name="database" id="database" size="50"><input type="hidden" id="database_org" value=""><input type="hidden" id="database_last" value=""> <input
-                                        type="button"
-                                        value="<?php echo $admtext['select'] . "..."; ?>"
-                                        name="gedselect" onclick="FilePicker('database','gedcom');">
+                            <td>
+                                <input type="text" name="database" id="database" size="50">
+                                <input type="hidden" id="database_org" value="">
+                                <input type="hidden" id="database_last" value="">
+                                <input
+                                    type="button"
+                                    value="<?php echo $admtext['select'] . "..."; ?>"
+                                    name="gedselect" onclick="FilePicker('database','gedcom');">
                             </td>
                         </tr>
                         <tr>
@@ -156,8 +162,9 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             <?php
                             if (!$assignedtree) {
                                 ?>
-                                &nbsp; <input type="button" name="newtree" value="<?php echo $admtext['addnewtree']; ?>"
-                                              onclick="tnglitbox = new LITBox('admin_newtree.php?beforeimport=yes', {width:600, height:530});">
+                                &nbsp;
+                                <input type="button" name="newtree" value="<?php echo $admtext['addnewtree']; ?>"
+                                       onclick="tnglitbox = new LITBox('admin_newtree.php?beforeimport=yes', {width:600, height:530});">
                                 <?php
                             }
                             ?>
@@ -199,15 +206,18 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                     <tr id="ioptions">
                         <td valign="top">
                             <br>
-                            <div><input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
+                            <div>
+                                <input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
                             <div id="norecalcdiv"<?php if ($tngimpcfg['defimpopt']) {
                                 echo " style=\"display:none;\"";
                             } ?>>
                                 <input type="checkbox" name="norecalc" value="1"> <?php echo $admtext['norecalc']; ?><br>
                                 <input type="checkbox" name="neweronly" value="1"> <?php echo $admtext['neweronly']; ?><br>
                             </div>
-                            <div><input type="checkbox" name="importmedia" value="1"> <?php echo $admtext['importmedia']; ?></div>
-                            <div><input type="checkbox" name="importlatlong" value="1"> <?php echo $admtext['importlatlong']; ?></div>
+                            <div>
+                                <input type="checkbox" name="importmedia" value="1"> <?php echo $admtext['importmedia']; ?></div>
+                            <div>
+                                <input type="checkbox" name="importlatlong" value="1"> <?php echo $admtext['importlatlong']; ?></div>
                         </td>
                         <td valign="top">
                             <br>

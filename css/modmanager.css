@@ -30,7 +30,7 @@
 }
 
 .mmhighlight {
-    color: #990000;
+    color: #900;
 }
 
 .mmfilenmfont {
@@ -42,7 +42,7 @@
 }
 
 .mmkeyword {
-    color: #AA0000;
+    color: #a00;
 }
 
 .mmrightalign {
@@ -148,7 +148,7 @@ div.descpop:hover div {
     max-height: 200px;
     overflow-y: auto;
     top: -75px;
-    background: #ffffff;
+    background: #fff;
     padding: 3px 3px 3px 3px;
     border-style: solid;
     border-color: black;
@@ -170,36 +170,36 @@ div.descpop:hover div {
 
 /* added for Mod Manager error messages */
 td.avail {
-    border-bottom: 2px solid #00CC7A;
-    border-right: 2px solid #00CC7A;
-    border-top: 1px solid #00FF33;
-    border-left: 1px solid #00FF33;
-    background-color: #FFFFFF;
+    border-bottom: 2px solid #00cc7a;
+    border-right: 2px solid #00cc7a;
+    border-top: 1px solid #0f3;
+    border-left: 1px solid #0f3;
+    background-color: #fff;
     text-align: center;
 }
 
 td.inst {
-    border-bottom: 2px solid #00CC7A;
-    border-right: 2px solid #00CC7A;
-    border-top: 1px solid #00FF33;
-    border-left: 1px solid #00FF33;
-    background-color: #CCFFCC;
+    border-bottom: 2px solid #00cc7a;
+    border-right: 2px solid #00cc7a;
+    border-top: 1px solid #0f3;
+    border-left: 1px solid #0f3;
+    background-color: #cfc;
     text-align: center;
 }
 
 td.failed {
-    border-bottom: 2px solid #CC0000;
-    border-right: 2px solid #CC0000;
-    border-top: 1px solid #CC0000;
-    border-left: 1px solid #CC0000;
-    background-color: #FFE5E5; /* was FFCCCC in admin_modmanager.php */
+    border-bottom: 2px solid #c00;
+    border-right: 2px solid #c00;
+    border-top: 1px solid #c00;
+    border-left: 1px solid #c00;
+    background-color: #ffe5e5; /* was FFCCCC in admin_modmanager.php */
 }
 
 /* The following was added for Mod Manager in TNG 10.1.0  */
 
 /* modlister row highlighting */
 tr.modline:hover td.mmcell:nth-child(-n+5) {
-    background-color: #EEEB8D;
+    background-color: #eeeb8d;
 }
 
 /* Mod List column widths (layout-fixed) */
@@ -337,7 +337,7 @@ div.descpop1 div {
     bottom: -5px;
     right: 16px;
     overflow-y: auto;
-    background: #ffffff;
+    background: #fff;
     padding: 3px 3px 3px 3px;
     border-style: solid;
     border-color: black;
@@ -381,19 +381,19 @@ div.descpop1:hover div {
 
 /*** modlister status backgrounds ***/
 .ready {
-    background-color: #F5FFF5;
+    background-color: #f5fff5;
 }
 
 .installed {
-    background-color: #C6F6C6;
+    background-color: #c6f6c6;
 }
 
 .partinst {
-    background-color: #FFE8BD;
+    background-color: #ffe8bd;
 }
 
 .badcfg {
-    background-color: #FFE5E5 !important;
+    background-color: #ffe5e5 !important;
 }
 
 /* modlister */
@@ -413,7 +413,7 @@ div.descpop1:hover div {
 
 /* modlister */
 .hilighterr {
-    background-color: #FFCCF9;
+    background-color: #ffccf9;
 }
 
 .mmmenuwrap {
@@ -566,7 +566,7 @@ table.mmlog-fixed, table.mmlog-scroll /* View Log */
 
 h2.parse-table-title,
 p.parse-error {
-    color: #990000;
+    color: #900;
 }
 
 div.list-indent {

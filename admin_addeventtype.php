@@ -6,23 +6,23 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
 
 if ($tag2) {
-  $tag = $tag2;
+    $tag = $tag2;
 } else {
-  $tag = $tag1;
+    $tag = $tag1;
 }
 if (!$ordernum) {
-  $ordernum = 0;
+    $ordernum = 0;
 }
 if (!$display) {
-  $display = $defdisplay;
+    $display = $defdisplay;
 }
 $template = "ssssssss";
 $query = "INSERT INTO $eventtypes_table (tag,description,display,type,keep,collapse,ordernum,ldsevent) 
@@ -30,12 +30,12 @@ $query = "INSERT INTO $eventtypes_table (tag,description,display,type,keep,colla
 $params = array(&$template, &$tag, &$description, &$display, &$type, &$keep, &$collapse, &$ordernum, &$ldsevent);
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
-  $eventtypeID = tng_insert_id();
-  $message = $admtext['eventtype'] . " $eventtypeID {$admtext['succadded']}.";
+    $eventtypeID = tng_insert_id();
+    $message = $admtext['eventtype'] . " $eventtypeID {$admtext['succadded']}.";
 
-  adminwritelog($admtext['addnewevtype'] . ": $tag $type - $display");
+    adminwritelog($admtext['addnewevtype'] . ": $tag $type - $display");
 } else {
-  $message = $admtext['eventtype'] . " $eventtypeID {$admtext['idexists']}.";
+    $message = $admtext['eventtype'] . " $eventtypeID {$admtext['idexists']}.";
 }
 
 header("Location: admin_eventtypes.php?message=" . urlencode($message));

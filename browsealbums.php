@@ -15,38 +15,38 @@ $showrepo_url = getURL("showrepo", 1);
 $placesearch_url = getURL("placesearch", 1);
 
 function doMediaSearch($instance, $pagenav) {
-  global $text, $mediasearch, $browsealbums_noargs_url, $tree;
+    global $text, $mediasearch, $browsealbums_noargs_url, $tree;
 
-  $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\">\n";
+    $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
+    $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\">\n";
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "<input type=\"submit\" value=\"{$text['search']}\">\n";
-  $str .= "<input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
-  $str .= $pagenav;
-  $str .= "</form>\n";
+    $str .= "<input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
+    $str .= $pagenav;
+    $str .= "</form>\n";
 
-  return $str;
+    return $str;
 }
 
 $max_browsemedia_pages = 5;
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $page = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $page = 1;
 }
 
 if ($tree) {
-  $wherestr2 = " AND album2entities.gedcom = \"$tree\"";
+    $wherestr2 = " AND album2entities.gedcom = \"$tree\"";
 } else {
-  $wherestr2 = "";
+    $wherestr2 = "";
 }
 
 $wherestr = "WHERE active = \"1\"";
 if ($mediasearch) {
-  $wherestr .= " AND ($albums_table.albumname LIKE \"%$mediasearch%\" OR $albums_table.description LIKE \"%$mediasearch%\" OR $albums_table.keywords LIKE \"%$mediasearch%\")";
+    $wherestr .= " AND ($albums_table.albumname LIKE \"%$mediasearch%\" OR $albums_table.description LIKE \"%$mediasearch%\" OR $albums_table.keywords LIKE \"%$mediasearch%\")";
 }
 
 $query = "SELECT albumID, albumname, description, alwayson FROM $albums_table $wherestr ORDER BY albumname LIMIT $newoffset" . $maxsearchresults;
@@ -54,13 +54,13 @@ $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count($albums_table.albumID) AS acount FROM $albums_table";
-  $result2 = tng_query($query);
-  $row = tng_fetch_assoc($result2);
-  tng_free_result($result2);
-  $totrows = $row['acount'];
+    $query = "SELECT count($albums_table.albumID) AS acount FROM $albums_table";
+    $result2 = tng_query($query);
+    $row = tng_fetch_assoc($result2);
+    tng_free_result($result2);
+    $totrows = $row['acount'];
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $numrowsplus = $numrows + $offset;
@@ -94,10 +94,10 @@ $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if ($sitever != "standard") {
-  if ($tabletype == "toggle") {
-    $tabletype = "columntoggle";
-  }
-  $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    if ($tabletype == "toggle") {
+        $tabletype = "columntoggle";
+    }
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
     $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
 }
@@ -115,115 +115,115 @@ $i = $offsetplus;
 $maxplus = $maxsearchresults + 1;
 $thumbcount = 0;
 while ($row = tng_fetch_assoc($result)) {
-  if ($tree) {
-    $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table, $media_table WHERE albumID = \"{$row['albumID']}\" AND $albumlinks_table.mediaID = $media_table.mediaID AND ($media_table.gedcom = '$tree' OR $media_table.gedcom = \"\")";
-  } else {
-    $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
-  }
-  $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
-  $arow = tng_fetch_assoc($result2);
-  tng_free_result($result2);
+    if ($tree) {
+        $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table, $media_table WHERE albumID = \"{$row['albumID']}\" AND $albumlinks_table.mediaID = $media_table.mediaID AND ($media_table.gedcom = '$tree' OR $media_table.gedcom = \"\")";
+    } else {
+        $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
+    }
+    $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+    $arow = tng_fetch_assoc($result2);
+    tng_free_result($result2);
 
-  $query = "SELECT album2entities.entityID AS personID, people.personID AS personID2, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.gedcom, sources.title, sources.sourceID, repositories.repoID, reponame, deathdate, burialdate, linktype ";
-  $query .= "FROM $album2entities_table album2entities ";
-  $query .= "LEFT JOIN $people_table people ON album2entities.entityID = people.personID AND album2entities.gedcom = people.gedcom ";
-  $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
-  $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
-  $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
-  $query .= "WHERE albumID = \"{$row['albumID']}\"$wherestr2 ";
-  $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
-  $query .= "LIMIT $maxplus";
-  $presult = tng_query($query);
-  $numrows = tng_num_rows($presult);
-  $medialinktext = "";
-  $foundliving = 0;
-  $foundprivate = 0;
-  $count = 0;
-  while ($prow = tng_fetch_assoc($presult)) {
-    if ($prow['fbranch'] != NULL) {
-      $prow['branch'] = $prow['fbranch'];
-    }
-    if ($prow['fliving'] != NULL) {
-      $prow['living'] = $prow['fliving'];
-    }
-    if ($prow['fprivate'] != NULL) {
-      $prow['private'] = $prow['fprivate'];
-    }
-    //if living still null, must be a source
-    if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-      $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
+    $query = "SELECT album2entities.entityID AS personID, people.personID AS personID2, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.gedcom, sources.title, sources.sourceID, repositories.repoID, reponame, deathdate, burialdate, linktype ";
+    $query .= "FROM $album2entities_table album2entities ";
+    $query .= "LEFT JOIN $people_table people ON album2entities.entityID = people.personID AND album2entities.gedcom = people.gedcom ";
+    $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
+    $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
+    $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
+    $query .= "WHERE albumID = \"{$row['albumID']}\"$wherestr2 ";
+    $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
+    $query .= "LIMIT $maxplus";
+    $presult = tng_query($query);
+    $numrows = tng_num_rows($presult);
+    $medialinktext = "";
+    $foundliving = 0;
+    $foundprivate = 0;
+    $count = 0;
+    while ($prow = tng_fetch_assoc($presult)) {
+        if ($prow['fbranch'] != NULL) {
+            $prow['branch'] = $prow['fbranch'];
+        }
+        if ($prow['fliving'] != NULL) {
+            $prow['living'] = $prow['fliving'];
+        }
+        if ($prow['fprivate'] != NULL) {
+            $prow['private'] = $prow['fprivate'];
+        }
+        //if living still null, must be a source
+        if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
+            $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
 				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 				AND (living = '1' OR private = '1')";
-      $presult2 = tng_query($query);
-      $prow2 = tng_fetch_assoc($presult2);
-      if ($prow2['ccount']) {
-        $prow['living'] = 1;
-      }
-      tng_free_result($presult2);
-    }
-    if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
-      $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
+            $presult2 = tng_query($query);
+            $prow2 = tng_fetch_assoc($presult2);
+            if ($prow2['ccount']) {
+                $prow['living'] = 1;
+            }
+            tng_free_result($presult2);
+        }
+        if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
+            $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
 				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom
 				AND living = '1'";
-      $presult2 = tng_query($query);
-      $prow2 = tng_fetch_assoc($presult2);
-      if ($prow2['ccount']) {
-        $prow['living'] = 1;
-      }
-      tng_free_result($presult2);
-    }
+            $presult2 = tng_query($query);
+            $prow2 = tng_fetch_assoc($presult2);
+            if ($prow2['ccount']) {
+                $prow['living'] = 1;
+            }
+            tng_free_result($presult2);
+        }
 
-    $rights = determineLivingPrivateRights($prow);
-    $prow['allow_living'] = $rights['living'];
-    $prow['allow_private'] = $rights['private'];
+        $rights = determineLivingPrivateRights($prow);
+        $prow['allow_living'] = $rights['living'];
+        $prow['allow_private'] = $rights['private'];
 
-    if (!$rights['living']) {
-      $foundliving = 1;
-    }
-    if (!$rights['private']) {
-      $foundprivate = 1;
-    }
+        if (!$rights['living']) {
+            $foundliving = 1;
+        }
+        if (!$rights['private']) {
+            $foundprivate = 1;
+        }
 
-    if ($prow['personID2'] != NULL) {
-      $medialinktext .= "<li><a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
-      $medialinktext .= getName($prow) . "</a></li>\n";
-    } elseif ($prow['sourceID'] != NULL) {
-      $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
-      $medialinktext .= "<li><a href=\"$showsource_url" . "sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext</a></li>\n";
-    } elseif ($prow['repoID'] != NULL) {
-      $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
-      $medialinktext .= "<li><a href=\"$showrepo_url" . "repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext</a></li>\n";
-    } elseif ($prow['familyID'] != NULL) {
-      $medialinktext .= "<li><a href=\"$familygroup_url" . "familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow) . "</a></li>\n";
-    } else {
-      $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
-      $medialinktext .= "<li><a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}</a></li>\n";
+        if ($prow['personID2'] != NULL) {
+            $medialinktext .= "<li><a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+            $medialinktext .= getName($prow) . "</a></li>\n";
+        } elseif ($prow['sourceID'] != NULL) {
+            $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
+            $medialinktext .= "<li><a href=\"$showsource_url" . "sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext</a></li>\n";
+        } elseif ($prow['repoID'] != NULL) {
+            $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
+            $medialinktext .= "<li><a href=\"$showrepo_url" . "repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext</a></li>\n";
+        } elseif ($prow['familyID'] != NULL) {
+            $medialinktext .= "<li><a href=\"$familygroup_url" . "familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow) . "</a></li>\n";
+        } else {
+            $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
+            $medialinktext .= "<li><a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}</a></li>\n";
+        }
+        $count++;
     }
-    $count++;
-  }
-  if ($medialinktext) {
-    $medialinktext = "<ul>$medialinktext</ul>\n";
-  }
-  tng_free_result($presult);
+    if ($medialinktext) {
+        $medialinktext = "<ul>$medialinktext</ul>\n";
+    }
+    tng_free_result($presult);
 
-  $showAlbumInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
+    $showAlbumInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
 
     $albumtext .= "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>";
 
-  $description = $row['description'];
-  if ($showAlbumInfo) {
-    $imgsrc = getAlbumPhoto($row['albumID'], $row['albumname']);
-    $alblink = "<a href=\"$showalbum_url" . "albumID={$row['albumID']}\">{$row['albumname']}</a>";
-  } else {
-    $imgsrc = "";
-    $alblink = $text['living'];
-    $nonamesloc = $foundprivate ? $tngconfig['nnpriv'] : $nonames;
-    if ($nonamesloc) {
-      $description = $text['livingphoto'];
+    $description = $row['description'];
+    if ($showAlbumInfo) {
+        $imgsrc = getAlbumPhoto($row['albumID'], $row['albumname']);
+        $alblink = "<a href=\"$showalbum_url" . "albumID={$row['albumID']}\">{$row['albumname']}</a>";
     } else {
-      $description .= "({$text['livingphoto']})";
+        $imgsrc = "";
+        $alblink = $text['living'];
+        $nonamesloc = $foundprivate ? $tngconfig['nnpriv'] : $nonames;
+        if ($nonamesloc) {
+            $description = $text['livingphoto'];
+        } else {
+            $description .= "({$text['livingphoto']})";
+        }
     }
-  }
 
     if ($imgsrc) {
         $albumtext .= "<td valign=\"top\" class='databack' align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
@@ -246,11 +246,11 @@ if (!$thumbcount) {
 }
 echo $header . $albumtext;
 ?>
-  </table><br>
+    </table><br>
 <?php
 if ($totrows && ($pagenav || $mediasearch)) {
-  echo doMediaSearch(2, $pagenav);
-  echo "<br>";
+    echo doMediaSearch(2, $pagenav);
+    echo "<br>";
 }
 tng_footer("");
 ?>

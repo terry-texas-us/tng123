@@ -13,7 +13,7 @@ echo "<span class='normal'>{$admtext['googleplace']}: ";
 
 echo "<input type=\"text\" size=\"60\" name=\"address\" id=\"location\" onkeypress=\"return keyHandlerEnter(this,event);\" value=\"$searchstring\"";
 if (!$row['place']) {
-  echo " onfocus=\"if(this.value=='$searchstring'){this.value='';}\"";
+    echo " onfocus=\"if(this.value=='$searchstring'){this.value='';}\"";
 }
 echo ">\n";
 echo "<input type=\"button\" value=\"{$admtext['gobutton']}\" onclick=\"showAddress(document.form1.address.value); return false\"><br><br></span>\n";

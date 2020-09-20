@@ -92,26 +92,38 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                 <table class="normal" width="100%">
                     <tr>
                         <td><?php echo $admtext['cemeteryname']; ?>:</td>
-                        <td width="80%"><input type="text" name="cemname" id="cemname" size="40"></td>
+                        <td width="80%">
+                            <input type="text" name="cemname" id="cemname" size="40">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['maptoupload']; ?>*:</td>
-                        <td><input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.maplink);"></td>
+                        <td>
+                            <input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.maplink);">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['mapfilenamefolder']; ?>**:</td>
-                        <td><input type="text" name="maplink" id="maplink" size="60"><input type="hidden" id="maplink_org"><input type="hidden" id="maplink_last"> <input type="button"
-                                                                                                                                                                          value="<?php echo $admtext['select'] . "..."; ?>"
-                                                                                                                                                                          onclick="javascript:FilePicker('maplink','headstones');">
+                        <td>
+                            <input type="text" name="maplink" id="maplink" size="60">
+                            <input type="hidden" id="maplink_org">
+                            <input type="hidden" id="maplink_last">
+                            <input type="button"
+                                   value="<?php echo $admtext['select'] . "..."; ?>"
+                                   onclick="javascript:FilePicker('maplink','headstones');">
                         </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['city']; ?>:</td>
-                        <td><input type="text" name="city" id="city" size="20"></td>
+                        <td>
+                            <input type="text" name="city" id="city" size="20">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['countyparish']; ?>:</td>
-                        <td><input type="text" name="county" id="county" size="20"></td>
+                        <td>
+                            <input type="text" name="county" id="county" size="20">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['stateprovince']; ?>:</td>
@@ -149,13 +161,17 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                     </tr>
                     <tr>
                         <td><?php echo $admtext['linkplace']; ?>:</td>
-                        <td><input type="text" name="place" id="place" class="longfield" onblur="fillCemetery(this.value);"> <a href="#" onclick="return openFindPlaceForm('place');">
+                        <td>
+                            <input type="text" name="place" id="place" class="longfield" onblur="fillCemetery(this.value);">
+                            <a href="#" onclick="return openFindPlaceForm('place');">
                                 <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20" class="alignmiddle"></a>
-                            <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);"></td>
+                            <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);">
+                        </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><input type="checkbox" name="usecoords" value="1" checked="checked"> <?php echo $admtext['usecemcoords']; ?></td>
+                        <td>
+                            <input type="checkbox" name="usecoords" value="1" checked="checked"> <?php echo $admtext['usecemcoords']; ?></td>
                     </tr>
                     <?php
                     if ($map['key']) {
@@ -175,18 +191,24 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                     ?>
                     <tr>
                         <td><?php echo $admtext['latitude']; ?>:</td>
-                        <td><input type="text" name="latitude" size="20" id="latbox"></td>
+                        <td>
+                            <input type="text" name="latitude" size="20" id="latbox">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['longitude']; ?>:</td>
-                        <td><input type="text" name="longitude" size="20" id="lonbox"></td>
+                        <td>
+                            <input type="text" name="longitude" size="20" id="lonbox">
+                        </td>
                     </tr>
                     <?php
                     if ($map['key']) {
                         ?>
                         <tr>
                             <td><?php echo $admtext['zoom']; ?>:</td>
-                            <td><input type="text" name="zoom" size="20" id="zoombox"></td>
+                            <td>
+                                <input type="text" name="zoom" size="20" id="zoombox">
+                            </td>
                         </tr>
                         <?php
                     }

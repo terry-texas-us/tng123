@@ -132,7 +132,9 @@ $citationcount = tng_num_rows($citresult);
             </tr>
             <tr>
                 <td><?php echo $admtext['page']; ?>:</td>
-                <td><input type="text" name="citepage" id="citepage" size="60"></td>
+                <td>
+                    <input type="text" name="citepage" id="citepage" size="60">
+                </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['reliability']; ?>:</td>
@@ -148,7 +150,9 @@ $citationcount = tng_num_rows($citresult);
             </tr>
             <tr>
                 <td><?php echo $admtext['citedate']; ?>:</td>
-                <td><input type="text" name="citedate" id="citedate" size="60" onBlur="checkDate(this);"></td>
+                <td>
+                    <input type="text" name="citedate" id="citedate" size="60" onBlur="checkDate(this);">
+                </td>
             </tr>
             <tr>
                 <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
@@ -179,16 +183,21 @@ $applyfilter = "applyFilter({form:'findsourceform1', fieldId:'mytitle', type:'S'
         <table cellspacing="0" cellpadding="2" class="normal">
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>
-                <td><input type="text" name="mytitle" id="mytitle"
-                           onkeyup="filterChanged(event, {form:'findsourceform1', fieldId:'mytitle', type:'S', tree:'<?php echo $tree; ?>', destdiv:'sourceresults'});"></td>
-                <td><input type="submit" value="<?php echo $admtext['search']; ?>"> <input type="button" value="<?php echo $admtext['cancel']; ?>" onclick="gotoSection('findsource',prevsection);">
+                <td>
+                    <input type="text" name="mytitle" id="mytitle"
+                           onkeyup="filterChanged(event, {form:'findsourceform1', fieldId:'mytitle', type:'S', tree:'<?php echo $tree; ?>', destdiv:'sourceresults'});">
+                </td>
+                <td>
+                    <input type="submit" value="<?php echo $admtext['search']; ?>">
+                    <input type="button" value="<?php echo $admtext['cancel']; ?>" onclick="gotoSection('findsource',prevsection);">
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp; <input type="radio" name="filter" value="c"
-                                                                                                                                                              checked="checked"
-                                                                                                                                                              onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
+                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp;
+                    <input type="radio" name="filter" value="c"
+                           checked="checked"
+                           onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
                 </td>
             </tr>
         </table>

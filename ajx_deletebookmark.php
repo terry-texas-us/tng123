@@ -18,12 +18,12 @@ $bookmarks = explode("|", $_COOKIE[$ref]);
 $bookmarkstr = "";
 $bcount = 0;
 foreach ($bookmarks as $bookmark) {
-  if (trim($bookmark)) {
-    if ($idx != $bcount) {
-      $bookmarkstr = $bookmarkstr ? $bookmarkstr . "|" . $bookmark : $bookmark;
+    if (trim($bookmark)) {
+        if ($idx != $bcount) {
+            $bookmarkstr = $bookmarkstr ? $bookmarkstr . "|" . $bookmark : $bookmark;
+        }
+        $bcount++;
     }
-    $bcount++;
-  }
 }
 
 setcookie($ref, stripslashes($bookmarkstr), time() + 31536000, "/");

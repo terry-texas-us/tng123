@@ -62,7 +62,7 @@ SimileAjax.Graphics._createTranslucentImageHTML2 = function (url, verticalAlign)
         "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + url + "', sizingMethod='image');" +
         (verticalAlign != null ? " vertical-align: " + verticalAlign + ";" : "");
 
-  return "<img src='" + url + "' style=\"" + style + "\">";
+    return "<img src='" + url + "' style=\"" + style + "\">";
 };
 
 /**

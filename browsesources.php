@@ -10,47 +10,47 @@ $showsource_url = getURL("showsource", 1);
 $showtree_url = getURL("showtree", 1);
 
 function doSourceSearch($instance, $pagenav) {
-  global $text, $sourcesearch, $tree;
+    global $text, $sourcesearch, $tree;
 
-  $browsesources_noargs_url = getURL("browsesources", 0);
+    $browsesources_noargs_url = getURL("browsesources", 0);
 
-  $str = "<div class='normal'>\n";
+    $str = "<div class='normal'>\n";
     $str .= getFORM("browsesources", "get", "SourceSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"sourcesearch\" value=\"$sourcesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-  $str .= $pagenav;
+    $str .= "<input type=\"text\" name=\"sourcesearch\" value=\"$sourcesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= $pagenav;
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
-  if ($sourcesearch) {
-    $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsesources_noargs_url\">{$text['browseallsources']}</a>";
-  }
-  $str .= "</form></div>\n";
+    if ($sourcesearch) {
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsesources_noargs_url\">{$text['browseallsources']}</a>";
+    }
+    $str .= "</form></div>\n";
 
-  return $str;
+    return $str;
 }
 
 $max_browsesource_pages = 5;
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $page = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $page = 1;
 }
 
 $sourcesearch = cleanIt(trim($sourcesearch));
 if ($tree) {
-  $wherestr = "WHERE $sources_table.gedcom = \"$tree\"";
-  if ($sourcesearch) {
-    $wherestr .= " AND (title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\")";
-  }
-  $join = "INNER JOIN";
+    $wherestr = "WHERE $sources_table.gedcom = \"$tree\"";
+    if ($sourcesearch) {
+        $wherestr .= " AND (title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\")";
+    }
+    $join = "INNER JOIN";
 } else {
-  if ($sourcesearch) {
-    $wherestr = "WHERE title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\"";
-  } else {
-    $wherestr = "";
-  }
-  $join = "LEFT JOIN";
+    if ($sourcesearch) {
+        $wherestr = "WHERE title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\"";
+    } else {
+        $wherestr = "";
+    }
+    $join = "LEFT JOIN";
 }
 
 $query = "SELECT sourceID, title, shorttitle, author, sources.gedcom AS gedcom, treename ";
@@ -99,23 +99,23 @@ if ($totrows) {
 $pagenav = get_browseitems_nav($totrows, $browsesources_url . "sourcesearch=$sourcesearch&amp;offset", $maxsearchresults, $max_browsesource_pages);
 if ($pagenav || $sourcesearch) {
     echo doSourceSearch(1, $pagenav);
-  echo "<br>\n";
+    echo "<br>\n";
 }
 ?>
-  <br>
+    <br>
 <?php
 $header = $headerr = "";
 $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
 $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
 
 if ($sitever != "standard") {
-  if ($tabletype == "toggle") {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
-  } elseif ($tabletype == "stack") {
-      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
-  } elseif ($tabletype == "swipe") {
-      $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
-  }
+    if ($tabletype == "toggle") {
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
+    } elseif ($tabletype == "stack") {
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"stack\"" . $headerr;
+    } elseif ($tabletype == "swipe") {
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"width:100%;\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"swipe\"" . $headerr;
+    }
 } else {
     $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\">\n" . $header;
 }
@@ -127,8 +127,8 @@ echo $header;
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
         <th data-tablesaw-priority="3" class="fieldnameback nw"><span class="fieldname">&nbsp;<?php echo $text['sourceid']; ?>&nbsp;</span></th>
         <th data-tablesaw-priority="1" class="fieldnameback nw"><span class="fieldname">&nbsp;<?php echo $text['title'] . ", " . $text['author']; ?>&nbsp;</span></th>
-      <?php if ($numtrees > 1) { ?>
-          <th data-tablesaw-priority="3" class="fieldnameback"><span class="fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</span></th><?php } ?>
+        <?php if ($numtrees > 1) { ?>
+            <th data-tablesaw-priority="3" class="fieldnameback"><span class="fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</span></th><?php } ?>
     </tr>
     </thead>
 <?php
@@ -146,11 +146,11 @@ while ($row = tng_fetch_assoc($result)) {
 }
 tng_free_result($result);
 ?>
-  </table>
-  <br>
+    </table>
+    <br>
 <?php
 if ($pagenav || $sourcesearch) {
-  echo doSourceSearch(2, $pagenav) . "<br>\n";
+    echo doSourceSearch(2, $pagenav) . "<br>\n";
 }
 
 tng_footer("");

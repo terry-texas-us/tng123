@@ -6,8 +6,8 @@
 }
 
 #calLegend {
-    background-color: #D6E7FF;
-    border: 1px solid #5576BE;
+    background-color: #d6e7ff;
+    border: 1px solid #5576be;
     font-size: 9pt;
     font-weight: bold;
     margin-top: 8px;
@@ -65,22 +65,22 @@ img.calIcon {
 
 table.calTip {
     background-color: #fff;
-    border: 1px solid #5576BE;
+    border: 1px solid #5576be;
     padding: 0;
 }
 
 table.calendar {
     background-color: #eee;
-    border: 1px solid #6687CD;
+    border: 1px solid #6687cd;
     margin: 4px 0;
 }
 
 td.calDay {
     background-color: #fff;
-    border-top: 1px solid #5576BE;
-    border-left: 1px solid #5576BE;
-    border-bottom: 2px solid #5576BE;
-    border-right: 2px solid #5576BE;
+    border-top: 1px solid #5576be;
+    border-left: 1px solid #5576be;
+    border-bottom: 2px solid #5576be;
+    border-right: 2px solid #5576be;
     height: 110px;
     margin: 4px;
     padding: 2px;
@@ -102,11 +102,11 @@ td.calSkip {
 }
 
 td.calToday {
-    background-color: #FFF5E4;
-    border-top: 1px solid #5576BE;
-    border-left: 1px solid #5576BE;
-    border-bottom: 2px solid #5576BE;
-    border-right: 2px solid #5576BE;
+    background-color: #fff5e4;
+    border-top: 1px solid #5576be;
+    border-left: 1px solid #5576be;
+    border-bottom: 2px solid #5576be;
+    border-right: 2px solid #5576be;
     height: 110px;
     margin: 4px;
     padding: 2px;

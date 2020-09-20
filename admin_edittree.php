@@ -120,7 +120,9 @@ tng_adminheader($admtext['modifytree'], $flags);
                         </tr>
                         <tr>
                             <td><?php echo $admtext['treename']; ?>:</td>
-                            <td><input type="text" name="treename" size="50" value="<?php echo $row['treename']; ?>"></td>
+                            <td>
+                                <input type="text" name="treename" size="50" value="<?php echo $row['treename']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['description']; ?>:</td>
@@ -128,35 +130,51 @@ tng_adminheader($admtext['modifytree'], $flags);
                         </tr>
                         <tr>
                             <td><?php echo $admtext['owner']; ?>:</td>
-                            <td><input type="text" name="owner" size="50" value="<?php echo $row['owner']; ?>"></td>
+                            <td>
+                                <input type="text" name="owner" size="50" value="<?php echo $row['owner']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['email']; ?>:</td>
-                            <td><input type="text" name="email" size="50" value="<?php echo $row['email']; ?>"></td>
+                            <td>
+                                <input type="text" name="email" size="50" value="<?php echo $row['email']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['address']; ?>:</td>
-                            <td><input type="text" name="address" size="50" value="<?php echo $row['address']; ?>"></td>
+                            <td>
+                                <input type="text" name="address" size="50" value="<?php echo $row['address']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['city']; ?>:</td>
-                            <td><input type="text" name="city" size="50" value="<?php echo $row['city']; ?>"></td>
+                            <td>
+                                <input type="text" name="city" size="50" value="<?php echo $row['city']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['stateprov']; ?>:</td>
-                            <td><input type="text" name="state" size="50" value="<?php echo $row['state']; ?>"></td>
+                            <td>
+                                <input type="text" name="state" size="50" value="<?php echo $row['state']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['zip']; ?>:</td>
-                            <td><input type="text" name="zip" size="50" value="<?php echo $row['zip']; ?>"></td>
+                            <td>
+                                <input type="text" name="zip" size="50" value="<?php echo $row['zip']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['cap_country']; ?>:</td>
-                            <td><input type="text" name="country" size="50" value="<?php echo $row['country']; ?>"></td>
+                            <td>
+                                <input type="text" name="country" size="50" value="<?php echo $row['country']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['phone']; ?>:</td>
-                            <td><input type="text" name="phone" size="50" value="<?php echo $row['phone']; ?>"></td>
+                            <td>
+                                <input type="text" name="phone" size="50" value="<?php echo $row['phone']; ?>">
+                            </td>
                         </tr>
                     </table>
                     <span class="normal">
@@ -170,7 +188,9 @@ tng_adminheader($admtext['modifytree'], $flags);
         echo " checked=\"checked\"";
     } ?>> <?php echo $admtext['nopdf']; ?>
 	<br><br></span>
-                    <input type="hidden" name="tree" value="<?php echo "$tree"; ?>"><input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+                    <input type="hidden" name="tree" value="<?php echo "$tree"; ?>">
+                    <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+                </form>
             </td>
         </tr>
 

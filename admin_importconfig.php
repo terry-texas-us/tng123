@@ -6,31 +6,31 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  include "version.php";
-  if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    $admin_login = 1;
+    include "checklogin.php";
+    include "version.php";
+    if ($assignedtree || !$allow_edit) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 
-  $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
-  $result = @tng_query($query);
+    $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
+    $result = @tng_query($query);
 } else {
-  $result = false;
+    $result = false;
 }
 
 if (!$tngimpcfg['maxlivingage']) {
-  $tngimpcfg['maxlivingage'] = "110";
+    $tngimpcfg['maxlivingage'] = "110";
 }
 
 //for upgrading to 6
 if ($localphotopathdisplay && !$locimppath['photos']) {
-  $locimppath['photos'] = $localphotopathdisplay;
+    $locimppath['photos'] = $localphotopathdisplay;
 }
 if ($localdocpathdisplay && !$locimppath['histories']) {
-  $locimppath['histories'] = $localdocpathdisplay;
+    $locimppath['histories'] = $localdocpathdisplay;
 }
 
 $helplang = findhelp("importconfig_help.php");
@@ -54,44 +54,51 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_updateimportconfig.php" method="post" name="form1">
-        <table class="normal">
-          <tr>
-            <td><?php echo $admtext['gedpath']; ?>:</td>
-                        <td><input type="text" value="<?php echo $gedpath; ?>" name="gedpath" size="50">
-                            <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('gedcom',document.form1.gedpath.value);"> <span id="msg_gedcom"></td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_updateimportconfig.php" method="post" name="form1">
+                <table class="normal">
+                    <tr>
+                        <td><?php echo $admtext['gedpath']; ?>:</td>
+                        <td>
+                            <input type="text" value="<?php echo $gedpath; ?>" name="gedpath" size="50">
+                            <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('gedcom',document.form1.gedpath.value);">
+                            <span id="msg_gedcom"></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['saveimportstate']; ?>:</td>
-                        <td><input type="checkbox" name="saveimport" value="1" <?php if ($saveimport) {
-                            echo "checked";
-                          } ?>> <?php echo $admtext['allowresume']; ?></td>
+                        <td>
+                            <input type="checkbox" name="saveimport" value="1" <?php if ($saveimport) {
+                                echo "checked";
+                            } ?>> <?php echo $admtext['allowresume']; ?></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['rrnum']; ?>:</td>
-                        <td><input type="text" value="<?php echo $tngimpcfg['rrnum']; ?>" name="rrnum" size="5"></td>
+                        <td>
+                            <input type="text" value="<?php echo $tngimpcfg['rrnum']; ?>" name="rrnum" size="5">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['progint']; ?>:</td>
-                        <td><input type="text" value="<?php echo $tngimpcfg['readmsecs']; ?>" name="readmsecs" size="5"></td>
+                        <td>
+                            <input type="text" value="<?php echo $tngimpcfg['readmsecs']; ?>" name="readmsecs" size="5">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['defimpopt']; ?>:</td>
                         <td>
                             <select name="defimpopt">
                                 <option value="1"<?php if ($tngimpcfg['defimpopt'] == 1) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['allcurrentdata']; ?></option>
                                 <option value="0"<?php if (!$tngimpcfg['defimpopt']) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['matchingonly']; ?></option>
                                 <option value="2"<?php if ($tngimpcfg['defimpopt'] == 2) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['donotreplace']; ?></option>
                                 <option value="3"<?php if ($tngimpcfg['defimpopt'] == 3) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['appendall']; ?></option>
                             </select>
 
@@ -102,10 +109,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <td>
                             <select name="blankchangedt">
                                 <option value="0"<?php if (!$tngimpcfg['chdate']) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['usetoday']; ?></option>
                                 <option value="1"<?php if ($tngimpcfg['chdate']) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['useblank']; ?></option>
                             </select>
 
@@ -116,10 +123,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <td>
                             <select name="livingreqbirth">
                                 <option value="0"<?php if (!$tngimpcfg['livingreqbirth']) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['persdead']; ?></option>
                                 <option value="1"<?php if ($tngimpcfg['livingreqbirth']) {
-                                  echo " selected";
+                                    echo " selected";
                                 } ?>><?php echo $admtext['persliving']; ?></option>
                             </select>
 
@@ -127,61 +134,82 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     </tr>
                     <tr>
                         <td><?php echo $admtext['nodeathdate']; ?>:</td>
-                        <td><input type="text" value="<?php echo $tngimpcfg['maxlivingage']; ?>" name="maxlivingage" size="5"></td>
+                        <td>
+                            <input type="text" value="<?php echo $tngimpcfg['maxlivingage']; ?>" name="maxlivingage" size="5">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['assumepriv']; ?>:</td>
-                        <td><input type="text" value="<?php echo $tngimpcfg['maxprivyrs']; ?>" name="maxprivyrs" size="5"></td>
+                        <td>
+                            <input type="text" value="<?php echo $tngimpcfg['maxprivyrs']; ?>" name="maxprivyrs" size="5">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['assumeliving']; ?>:</td>
-                        <td><input type="text" value="<?php echo $tngimpcfg['maxdecdyrs']; ?>" name="maxdecdyrs" size="5"></td>
+                        <td>
+                            <input type="text" value="<?php echo $tngimpcfg['maxdecdyrs']; ?>" name="maxdecdyrs" size="5">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['embeddedmedia']; ?>:</td>
-                        <td><input type="checkbox" name="assignnames" value="yes" <?php if ($assignnames) {
-                            echo "checked";
-                          } ?>> <?php echo $admtext['assignnames']; ?></td>
+                        <td>
+                            <input type="checkbox" name="assignnames" value="yes" <?php if ($assignnames) {
+                                echo "checked";
+                            } ?>> <?php echo $admtext['assignnames']; ?></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['localphotopath']; ?>*:</td>
-                        <td><input type="text" value="<?php echo $locimppath['photos']; ?>" name="localphotopathdisplay" class="verylongfield"></td>
+                        <td>
+                            <input type="text" value="<?php echo $locimppath['photos']; ?>" name="localphotopathdisplay" class="verylongfield">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['localdocpath']; ?>*:</td>
-                        <td><input type="text" value="<?php echo $locimppath['histories']; ?>" name="localhistorypathdisplay" class="verylongfield"></td>
+                        <td>
+                            <input type="text" value="<?php echo $locimppath['histories']; ?>" name="localhistorypathdisplay" class="verylongfield">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['localdocumentpath']; ?>*:</td>
-                        <td><input type="text" value="<?php echo $locimppath['documents']; ?>" name="localdocumentpathdisplay" class="verylongfield"></td>
+                        <td>
+                            <input type="text" value="<?php echo $locimppath['documents']; ?>" name="localdocumentpathdisplay" class="verylongfield">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['localhspath']; ?>*:</td>
-                        <td><input type="text" value="<?php echo $locimppath['headstones']; ?>" name="localhspathdisplay" class="verylongfield"></td>
+                        <td>
+                            <input type="text" value="<?php echo $locimppath['headstones']; ?>" name="localhspathdisplay" class="verylongfield">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['localotherpath']; ?>*:</td>
-                        <td><input type="text" value="<?php echo $locimppath['other']; ?>" name="localotherpathdisplay" class="verylongfield"></td>
+                        <td>
+                            <input type="text" value="<?php echo $locimppath['other']; ?>" name="localotherpathdisplay" class="verylongfield">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['nopathmatch']; ?>:</td>
-                        <td colspan="4"><input type="radio" name="wholepath" value="1" <?php if ($wholepath) {
-                            echo "checked";
-                          } ?>> <?php echo $admtext['wholepath']; ?> <input type="radio" name="wholepath" value="0" <?php if (!$wholepath) {
-                            echo "checked";
-                          } ?>> <?php echo $admtext['justname']; ?></td>
+                        <td colspan="4">
+                            <input type="radio" name="wholepath" value="1" <?php if ($wholepath) {
+                                echo "checked";
+                            } ?>> <?php echo $admtext['wholepath']; ?>
+                            <input type="radio" name="wholepath" value="0" <?php if (!$wholepath) {
+                                echo "checked";
+                            } ?>> <?php echo $admtext['justname']; ?></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['privnote']; ?>:</td>
-                        <td><input type="text" value="<?php echo $tngimpcfg['privnote']; ?>" name="privnote" size="5"></td>
+                        <td>
+                            <input type="text" value="<?php echo $tngimpcfg['privnote']; ?>" name="privnote" size="5">
+                        </td>
                     </tr>
-        </table>
-          <br>&nbsp;
-          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-      </form>
-        <p class="normal">*<?php echo $admtext['commas']; ?></p>
-    </td>
-  </tr>
+                </table>
+                <br>&nbsp;
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+            </form>
+            <p class="normal">*<?php echo $admtext['commas']; ?></p>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</div>"; ?>

@@ -83,63 +83,79 @@ function showDiv(string $type) {
     tng_free_result($result);
     echo "</div>\n";
 }
+
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['mostwanted'], $flags);
 ?>
-<script type="text/javascript" src="js/mostwanted.js"></script>
-<script type="text/javascript" src="js/admin.js"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
-    var mwlitbox;
-    var tnglitbox;
-    const entertitle = "<?php echo $admtext['entertitle']; ?>";
-    const enterdesc = "<?php echo $admtext['enterdesc']; ?>";
-    const drag = "<?php echo $admtext['drag']; ?>";
-    var thumbwidth = <?php echo($thumbmaxw + 6); ?>;
-    const edittext = "<?php echo $admtext['edit']; ?>";
-    const deletetext = "<?php echo $admtext['delete']; ?>";
-    const confremmw = "<?php echo $admtext['confremmw']; ?>";
-    const loading = "<?php echo $text['loading']; ?>";
-    var tree = "<?php echo $assignedtree; ?>";
-</script>
-<style>
-    body {background-image: url("img/background.gif");}
-    table {width: 100%; border-collapse: separate; border-spacing: 2px;}
-    table th, table td {padding: 4px;}
-    .thumb-center {display: block; margin-left: auto; margin-right: auto;}
-</style>
+    <script type="text/javascript" src="js/mostwanted.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/selectutils.js"></script>
+    <script type="text/javascript">
+        var mwlitbox;
+        var tnglitbox;
+        const entertitle = "<?php echo $admtext['entertitle']; ?>";
+        const enterdesc = "<?php echo $admtext['enterdesc']; ?>";
+        const drag = "<?php echo $admtext['drag']; ?>";
+        var thumbwidth = <?php echo($thumbmaxw + 6); ?>;
+        const edittext = "<?php echo $admtext['edit']; ?>";
+        const deletetext = "<?php echo $admtext['delete']; ?>";
+        const confremmw = "<?php echo $admtext['confremmw']; ?>";
+        const loading = "<?php echo $text['loading']; ?>";
+        var tree = "<?php echo $assignedtree; ?>";
+    </script>
+    <style>
+        body {
+            background-image: url("img/background.gif");
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 2px;
+        }
+
+        table th, table td {
+            padding: 4px;
+        }
+
+        .thumb-center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 <?php echo "</head>"; ?>
 
-<body onLoad="startMostWanted()">
+    <body onLoad="startMostWanted()">
 
-<?php
-$misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
-$misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
-$misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
-$misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$mostwanted_url\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
-$menu = doMenu($misctabs, "mostwanted", $innermenu);
-echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "img/misc_icon.gif", $menu, $message);
-?>
+    <?php
+    $misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
+    $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
+    $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
+    $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"$mostwanted_url\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+    $menu = doMenu($misctabs, "mostwanted", $innermenu);
+    echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "img/misc_icon.gif", $menu, $message);
+    ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <?php
-            echo displayToggle("plus0", 1, "personarea", $admtext['mysperson'], "");
-            echo "<div id=\"personarea\">\n<br>\n";
-            showDiv('person');
-            echo "<br></div>\n";
-            echo "<br>\n";
-            echo displayToggle("plus1", 1, "photoarea", $admtext['mysphoto'], "");
-            echo "<div id=\"photoarea\">\n<br>\n";
-            showDiv('photo');
-            echo "</div>\n";
-            ?>
-        </td>
-    </tr>
-</table>
-<div style="text-align: right;"><span class="normal"><?php echo "$tng_title, v.$tng_version"; ?></span></div>
-</body>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <?php
+                echo displayToggle("plus0", 1, "personarea", $admtext['mysperson'], "");
+                echo "<div id=\"personarea\">\n<br>\n";
+                showDiv('person');
+                echo "<br></div>\n";
+                echo "<br>\n";
+                echo displayToggle("plus1", 1, "photoarea", $admtext['mysphoto'], "");
+                echo "<div id=\"photoarea\">\n<br>\n";
+                showDiv('photo');
+                echo "</div>\n";
+                ?>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: right;"><span class="normal"><?php echo "$tng_title, v.$tng_version"; ?></span></div>
+    </body>
 <?php echo "</html>\n"; ?>

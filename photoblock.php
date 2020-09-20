@@ -49,20 +49,20 @@ $photohtouse = $photoinfo[1];
 
 //these lines do the resizing
 if ($maxheight && $photohtouse > $maxheight) {
-  $photowtouse = intval($maxheight * $photowtouse / $photohtouse);
-  $photohtouse = $maxheight;
+    $photowtouse = intval($maxheight * $photowtouse / $photohtouse);
+    $photohtouse = $maxheight;
 }
 if ($maxwidth && $photowtouse > $maxwidth) {
-  $photohtouse = intval($maxwidth * $photohtouse / $photowtouse);
-  $photowtouse = $maxwidth;
+    $photohtouse = intval($maxwidth * $photohtouse / $photowtouse);
+    $photowtouse = $maxwidth;
 }
 
 //these lines restrict the table width so the caption will not be wider than the photo
 if ($maxwidth) {
-  $width = "width=\"$maxwidth\"";
+    $width = "width=\"$maxwidth\"";
 }
 if ($maxheight) {
-  $height = "height=\"$maxheight\"";
+    $height = "height=\"$maxheight\"";
 }
 
 echo "<table $width $height>\n";

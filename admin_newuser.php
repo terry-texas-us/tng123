@@ -92,7 +92,9 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                 <table class="normal">
                     <tr>
                         <td><?php echo $admtext['description']; ?>:</td>
-                        <td><input type="text" name="description" size="50" maxlength="50"></td>
+                        <td>
+                            <input type="text" name="description" size="50" maxlength="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['username']; ?>:</td>
@@ -103,47 +105,68 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                     </tr>
                     <tr>
                         <td><?php echo $admtext['password']; ?>:</td>
-                        <td><input type="text" name="password" size="20" maxlength="100"></td>
+                        <td>
+                            <input type="text" name="password" size="20" maxlength="100">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['realname']; ?>:</td>
-                        <td><input type="text" name="realname" size="50" maxlength="50"></td>
+                        <td>
+                            <input type="text" name="realname" size="50" maxlength="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['phone']; ?>:</td>
-                        <td><input type="text" name="phone" size="30" maxlength="30"></td>
+                        <td>
+                            <input type="text" name="phone" size="30" maxlength="30">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['email']; ?>:</td>
-                        <td><input type="text" name="email" size="50" maxlength="100" onblur="checkIfUnique(this);"> <span id="emailmsg"></span></td>
+                        <td>
+                            <input type="text" name="email" size="50" maxlength="100" onblur="checkIfUnique(this);">
+                            <span id="emailmsg"></span></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><input type="checkbox" name="no_email" value="1"> <?php echo $admtext['no_email']; ?></td>
+                        <td>
+                            <input type="checkbox" name="no_email" value="1"> <?php echo $admtext['no_email']; ?></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['website']; ?>:</td>
-                        <td><input type="text" name="website" size="50" maxlength="128" value="http://"></td>
+                        <td>
+                            <input type="text" name="website" size="50" maxlength="128" value="http://">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['address']; ?>:</td>
-                        <td><input type="text" name="address" size="50" maxlength="100"></td>
+                        <td>
+                            <input type="text" name="address" size="50" maxlength="100">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['city']; ?>:</td>
-                        <td><input type="text" name="city" size="50" maxlength="64"></td>
+                        <td>
+                            <input type="text" name="city" size="50" maxlength="64">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['stateprov']; ?>:</td>
-                        <td><input type="text" name="state" size="50" maxlength="64"></td>
+                        <td>
+                            <input type="text" name="state" size="50" maxlength="64">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['zip']; ?>:</td>
-                        <td><input type="text" name="zip" size="20" maxlength="10"></td>
+                        <td>
+                            <input type="text" name="zip" size="20" maxlength="10">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['cap_country']; ?>:</td>
-                        <td><input type="text" name="country" size="50" maxlength="64"></td>
+                        <td>
+                            <input type="text" name="country" size="50" maxlength="64">
+                        </td>
                     </tr>
                     <?php
                     $query = "SELECT languageID, display FROM $languages_table ORDER BY display";
@@ -200,7 +223,8 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                     <tr>
                         <td>&nbsp;</td>
                         <td>
-                            <input type="checkbox" name="disabled" value="1"> <?php echo $admtext['disabled']; ?></br>
+                            <input type="checkbox" name="disabled" value="1">
+                            <?php echo $admtext['disabled']; ?></br>
                             <input type="checkbox" name="consented" value="1"> <?php echo $admtext['consented']; ?>
                         </td>
                     </tr>
@@ -216,28 +240,36 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                                 <?php
                                 if ($row['ucount']) {
                                     ?>
-                                    <p><input type="radio" name="role" value="guest" checked="checked"
-                                              onclick="assignRightsFromRole('guest');"> <?php echo $admtext['usrguest'] . "<br><em class=\"smaller indent\">{$admtext['usrguestd']} {$admtext['noadmin']}</em>"; ?>
+                                    <p>
+                                        <input type="radio" name="role" value="guest" checked="checked"
+                                               onclick="assignRightsFromRole('guest');"> <?php echo $admtext['usrguest'] . "<br><em class=\"smaller indent\">{$admtext['usrguestd']} {$admtext['noadmin']}</em>"; ?>
                                     </p>
-                                    <p><input type="radio" name="role" value="subm"
-                                              onclick="assignRightsFromRole('subm');"> <?php echo $admtext['usrsubm'] . "<br><em class=\"smaller indent\">{$admtext['usrsubmd']} {$admtext['noadmin']}</em>"; ?>
+                                    <p>
+                                        <input type="radio" name="role" value="subm"
+                                               onclick="assignRightsFromRole('subm');"> <?php echo $admtext['usrsubm'] . "<br><em class=\"smaller indent\">{$admtext['usrsubmd']} {$admtext['noadmin']}</em>"; ?>
                                     </p>
-                                    <p><input type="radio" name="role" value="contrib"
-                                              onclick="assignRightsFromRole('contrib');"> <?php echo $admtext['usrcontrib'] . "<br><em class=\"smaller indent\">{$admtext['usrcontribd']}</em>"; ?>
+                                    <p>
+                                        <input type="radio" name="role" value="contrib"
+                                               onclick="assignRightsFromRole('contrib');"> <?php echo $admtext['usrcontrib'] . "<br><em class=\"smaller indent\">{$admtext['usrcontribd']}</em>"; ?>
                                     </p>
-                                    <p><input type="radio" name="role" value="editor"
-                                              onclick="assignRightsFromRole('editor');"> <?php echo $admtext['usreditor'] . "<br><em class=\"smaller indent\">{$admtext['usreditord']}</em>"; ?></p>
-                                    <p><input type="radio" name="role" value="mcontrib"
-                                              onclick="assignRightsFromRole('mcontrib');"> <?php echo $admtext['usrmcontrib'] . "<br><em class=\"smaller indent\">{$admtext['usrmcontribd']}</em>"; ?>
+                                    <p>
+                                        <input type="radio" name="role" value="editor"
+                                               onclick="assignRightsFromRole('editor');"> <?php echo $admtext['usreditor'] . "<br><em class=\"smaller indent\">{$admtext['usreditord']}</em>"; ?></p>
+                                    <p>
+                                        <input type="radio" name="role" value="mcontrib"
+                                               onclick="assignRightsFromRole('mcontrib');"> <?php echo $admtext['usrmcontrib'] . "<br><em class=\"smaller indent\">{$admtext['usrmcontribd']}</em>"; ?>
                                     </p>
-                                    <p><input type="radio" name="role" value="meditor"
-                                              onclick="assignRightsFromRole('meditor');"> <?php echo $admtext['usrmeditor'] . "<br><em class=\"smaller indent\">{$admtext['usrmeditord']}</em>"; ?>
+                                    <p>
+                                        <input type="radio" name="role" value="meditor"
+                                               onclick="assignRightsFromRole('meditor');"> <?php echo $admtext['usrmeditor'] . "<br><em class=\"smaller indent\">{$admtext['usrmeditord']}</em>"; ?>
                                     </p>
-                                    <p><input type="radio" name="role" value="custom" onclick="assignRightsFromRole('custom');"> <?php echo $admtext['usrcustom']; ?></p>
+                                    <p>
+                                        <input type="radio" name="role" value="custom" onclick="assignRightsFromRole('custom');"> <?php echo $admtext['usrcustom']; ?></p>
                                     <?php
                                 }
                                 ?>
-                                <p><input type="radio" name="role" value="admin"<?php if (!$row['ucount']) {
+                                <p>
+                                    <input type="radio" name="role" value="admin"<?php if (!$row['ucount']) {
                                         echo " checked=\"checked\"";
                                     } ?> onclick="assignRightsFromRole('admin');"> <?php echo $admtext['usradmin'] . "<br><em class=\"smaller indent\">{$admtext['usradmind']}</em>"; ?></p>
                             </td>

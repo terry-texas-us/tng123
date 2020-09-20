@@ -25,7 +25,9 @@ header("Content-type:text/html; charset=" . $session_charset);
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-                <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onClick="reopenFindSourceForm();"></form>
+                <form action="">
+                    <input type="button" value="<?php echo $admtext['find']; ?>" onClick="reopenFindSourceForm();">
+                </form>
             </td>
         </tr>
     </table>

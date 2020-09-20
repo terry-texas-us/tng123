@@ -7,9 +7,9 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $query = "SELECT * FROM $mediatypes_table WHERE mediatypeID = \"$mediatypeID\"";
@@ -19,13 +19,13 @@ tng_free_result($result);
 
 $exportas = $row['exportas'];
 if (!$exportas) {
-  $exportas = strtoupper($mediatypeID);
-  if (substr($exportas, -1) == "S") {
-    $exportas = substr($exportas, 0, -1);
-  }
-  if ($exportas == "HISTORIE") {
-    $exportas = "HISTORY";
-  }
+    $exportas = strtoupper($mediatypeID);
+    if (substr($exportas, -1) == "S") {
+        $exportas = substr($exportas, 0, -1);
+    }
+    if ($exportas == "HISTORIE") {
+        $exportas = "HISTORY";
+    }
 }
 
 $helplang = findhelp("collections_help.php");
@@ -47,35 +47,51 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td><?php echo $admtext['collexpas']; ?>:</td>
-                <td><input type="text" name="exportas" id="exportas" class="veryshortfield" value="<?php echo $exportas; ?>"></td>
-      </tr>
-      <tr>
-        <td><?php echo $admtext['colldisplay']; ?>:</td>
-        <td><input type="text" name="display" size="30" value="<?php echo $row['display']; ?>"></td>
-      </tr>
-      <tr>
-        <td><?php echo $admtext['collpath']; ?>:</td>
-        <td><input type="text" name="path" size="50" value="<?php echo $row['path']; ?>"></td>
-      </tr>
-      <tr>
+                <td>
+                    <input type="text" name="exportas" id="exportas" class="veryshortfield" value="<?php echo $exportas; ?>">
+                </td>
+            </tr>
+            <tr>
+                <td><?php echo $admtext['colldisplay']; ?>:</td>
+                <td>
+                    <input type="text" name="display" size="30" value="<?php echo $row['display']; ?>">
+                </td>
+            </tr>
+            <tr>
+                <td><?php echo $admtext['collpath']; ?>:</td>
+                <td>
+                    <input type="text" name="path" size="50" value="<?php echo $row['path']; ?>">
+                </td>
+            </tr>
+            <tr>
                 <td>&nbsp;</td>
-                <td><input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="if(document.collform.path.value){makeFolder('newcoll',document.collform.path.value);}"> <span id="msg_newcoll"></span></td>
+                <td>
+                    <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="if(document.collform.path.value){makeFolder('newcoll',document.collform.path.value);}">
+                    <span id="msg_newcoll"></span></td>
             </tr>
             <tr>
                 <td><?php echo $admtext['localpath']; ?>:</td>
-                <td><input type="text" name="localpath" size="50" value="<?php echo $row['localpath']; ?>"></td>
+                <td>
+                    <input type="text" name="localpath" size="50" value="<?php echo $row['localpath']; ?>">
+                </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['collicon']; ?>:</td>
-                <td><input type="text" name="icon" size="30" value="<?php echo $row['icon']; ?>"></td>
+                <td>
+                    <input type="text" name="icon" size="30" value="<?php echo $row['icon']; ?>">
+                </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['collthumb']; ?>:</td>
-                <td><input type="text" name="thumb" size="30" value="<?php echo $row['thumb']; ?>"></td>
+                <td>
+                    <input type="text" name="thumb" size="30" value="<?php echo $row['thumb']; ?>">
+                </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['displayorder']; ?>:</td>
-                <td><input type="text" name="ordernum" size="5" value="<?php echo $row['ordernum']; ?>"></td>
+                <td>
+                    <input type="text" name="ordernum" size="5" value="<?php echo $row['ordernum']; ?>">
+                </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['colllike']; ?>:</td>
@@ -84,14 +100,14 @@ header("Content-type:text/html; charset=" . $session_charset);
 			<select name="liketype">
 <?php
 foreach ($mediatypes as $mediatype) {
-  if (!$mediatype['type']) {
-    $msgID = $mediatype['ID'];
-    echo "	<option value=\"$msgID\"";
-    if ($msgID == $row['liketype']) {
-      echo " selected";
+    if (!$mediatype['type']) {
+        $msgID = $mediatype['ID'];
+        echo "	<option value=\"$msgID\"";
+        if ($msgID == $row['liketype']) {
+            echo " selected";
+        }
+        echo ">" . $mediatype['display'] . "</option>\n";
     }
-    echo ">" . $mediatype['display'] . "</option>\n";
-  }
 }
 ?>
 			</select>

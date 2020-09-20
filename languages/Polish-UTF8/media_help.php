@@ -285,7 +285,8 @@ echo help_header("Pomoc: Media");
                 Okienko zamknie się, kiedy klikniesz na wybraną osobę i tekst lub kod łącza dla wybranego obszaru zostanie dodany do pola "Mapa
                 zdjęcia". Jeśli jest to konieczne, możesz ten tekst lub kod łącza edytować.</p>
 
-            <p>Powtórz ten proces dla wszystkich obszarów, które będziesz potrzebował. Wszystkie nowe teksty lub kody łączy będą dodane w polu "Mapa zdjęcia".</p>
+            <p>Powtórz ten proces dla wszystkich obszarów, które będziesz potrzebował. Wszystkie nowe teksty lub kody łączy będą dodane w polu "Mapa
+                zdjęcia".</p>
 
             <p>Aby połączyć różne fragmenty zdjęcia do różnych stron, lub do wyświetlania krótkich wiadomości, kiedy wskaźnik myszy znajduje się nad
                 tymi fragmentami, wprowadź potrzebny kod mapy zdjęcia w tym polu.

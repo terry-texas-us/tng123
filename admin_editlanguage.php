@@ -23,98 +23,103 @@ $helplang = findhelp("languages_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifylanguage'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
-<script type="text/javascript">
-    function validateForm() {
-        let rval = true;
-        if (document.form1.folder.value.length == 0) {
-            alert("<?php echo $admtext['enterlangfolder']; ?>");
-            rval = false;
-        } else if (document.form1.display.value.length == 0) {
-            alert("<?php echo $admtext['enterlangdisplay']; ?>");
-            rval = false;
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript">
+        function validateForm() {
+            let rval = true;
+            if (document.form1.folder.value.length == 0) {
+                alert("<?php echo $admtext['enterlangfolder']; ?>");
+                rval = false;
+            } else if (document.form1.display.value.length == 0) {
+                alert("<?php echo $admtext['enterlangdisplay']; ?>");
+                rval = false;
+            }
+            return rval;
         }
-        return rval;
-    }
-</script>
+    </script>
 <?php echo "</head>"; ?>
 
-<body background="img/background.gif">
+    <body background="img/background.gif">
 
-<?php
-$langtabs[0] = array(1, "admin_languages.php", $admtext['search'], "findlang");
-$langtabs[1] = array($allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage");
-$langtabs[2] = array($allow_edit, "#", $admtext['edit'], "edit");
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-$menu = doMenu($langtabs, "edit", $innermenu);
-echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylanguage'], "img/languages_icon.gif", $menu, $message);
-?>
+    <?php
+    $langtabs[0] = array(1, "admin_languages.php", $admtext['search'], "findlang");
+    $langtabs[1] = array($allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage");
+    $langtabs[2] = array($allow_edit, "#", $admtext['edit'], "edit");
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+    $menu = doMenu($langtabs, "edit", $innermenu);
+    echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylanguage'], "img/languages_icon.gif", $menu, $message);
+    ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatelanguage.php" method="post" name="form1" onSubmit="return validateForm();">
-                <table class="normal">
-                    <tr>
-                        <td><?php echo $admtext['langfolder']; ?>:</td>
-                        <td>
-                            <select name="folder">
-                                <?php
-                                @chdir($rootpath . $endrootpath . $languages_path);
-                                if ($handle = @opendir('.')) {
-                                    $dirs = array();
-                                    while ($filename = readdir($handle)) {
-                                        if (is_dir($filename) && $filename != '..' && $filename != '.') {
-                                            array_push($dirs, $filename);
+    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <form action="admin_updatelanguage.php" method="post" name="form1" onSubmit="return validateForm();">
+                    <table class="normal">
+                        <tr>
+                            <td><?php echo $admtext['langfolder']; ?>:</td>
+                            <td>
+                                <select name="folder">
+                                    <?php
+                                    @chdir($rootpath . $endrootpath . $languages_path);
+                                    if ($handle = @opendir('.')) {
+                                        $dirs = array();
+                                        while ($filename = readdir($handle)) {
+                                            if (is_dir($filename) && $filename != '..' && $filename != '.') {
+                                                array_push($dirs, $filename);
+                                            }
                                         }
-                                    }
-                                    natcasesort($dirs);
-                                    $found_current = 0;
-                                    foreach ($dirs as $dir) {
-                                        echo "<option value=\"$dir\"";
-                                        if ($dir == $row['folder']) {
-                                            echo " selected=\"selected\"";
-                                            $found_current = 1;
+                                        natcasesort($dirs);
+                                        $found_current = 0;
+                                        foreach ($dirs as $dir) {
+                                            echo "<option value=\"$dir\"";
+                                            if ($dir == $row['folder']) {
+                                                echo " selected=\"selected\"";
+                                                $found_current = 1;
+                                            }
+                                            echo ">$dir</option>\n";
                                         }
-                                        echo ">$dir</option>\n";
+                                        if (!$found_current) {
+                                            echo "<option value=\"{$row['folder']}\" selected=\"selected\">{$row['folder']}</option>\n";
+                                        }
+                                        closedir($handle);
                                     }
-                                    if (!$found_current) {
-                                        echo "<option value=\"{$row['folder']}\" selected=\"selected\">{$row['folder']}</option>\n";
-                                    }
-                                    closedir($handle);
-                                }
-                                ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['langdisplay']; ?>:</td>
-                        <td><input type="text" name="display" size="50" value="<?php echo $row['display']; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['charset']; ?>:</td>
-                        <td><input type="text" name="langcharset" size="30" value="<?php echo $row['charset']; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['norels']; ?>:</td>
-                        <td>
-                            <select name="langnorels">
-                                <option value=""<?php if (!$row['norels']) {
-                                    echo " selected";
-                                } ?>><?php echo $admtext['no']; ?></option>
-                                <option value="1"<?php if ($row['norels']) {
-                                    echo " selected";
-                                } ?>><?php echo $admtext['yes']; ?></option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <input type="hidden" name="languageID" value="<?php echo "$languageID"; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
-        </td>
-    </tr>
-</table>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-</body>
+                                    ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $admtext['langdisplay']; ?>:</td>
+                            <td>
+                                <input type="text" name="display" size="50" value="<?php echo $row['display']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $admtext['charset']; ?>:</td>
+                            <td>
+                                <input type="text" name="langcharset" size="30" value="<?php echo $row['charset']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $admtext['norels']; ?>:</td>
+                            <td>
+                                <select name="langnorels">
+                                    <option value=""<?php if (!$row['norels']) {
+                                        echo " selected";
+                                    } ?>><?php echo $admtext['no']; ?></option>
+                                    <option value="1"<?php if ($row['norels']) {
+                                        echo " selected";
+                                    } ?>><?php echo $admtext['yes']; ?></option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="hidden" name="languageID" value="<?php echo "$languageID"; ?>">
+                    <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+    </body>
 <?php echo "</html>";

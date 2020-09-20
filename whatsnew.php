@@ -170,7 +170,7 @@ if (tng_num_rows($result)) {
                         } ?></b>
                 </th>
             <?php } ?>
-            <th data-tablesaw-priority = "5" class = "fieldnameback fieldname" width="130"><?php echo $text['lastmodified']; ?></th>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname" width="130"><?php echo $text['lastmodified']; ?></th>
         </tr>
         </thead>
 

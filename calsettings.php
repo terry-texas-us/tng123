@@ -11,7 +11,7 @@
 
 /* Make sure we're running under TNG */
 if (!isset($tngconfig)) {
-  die ("Sorry!");
+    die ("Sorry!");
 }
 
 /* What is the first day of the week? */
@@ -27,20 +27,20 @@ $truncateDateAfter = '4';
 $calIndEvent['birth'] = 'tng_cal_birth.png';
 $calIndEvent['death'] = 'tng_cal_death.png';
 if (!$tngconfig['hidechr']) {  //don't show these if we're hiding the christening event
-  $calIndEvent['altbirth'] = 'tng_cal_altbirth.png';
+    $calIndEvent['altbirth'] = 'tng_cal_altbirth.png';
 }
 $calIndEvent['burial'] = 'tng_cal_burial.png';
 $ldsOK = determineLDSRights();
 if ($ldsOK) {              //don't show these if the user does not have rights to see LDS data
-  $calIndEvent['bapt'] = 'tng_cal_bapt.png';
-  $calIndEvent['endl'] = 'tng_cal_endl.png';
+    $calIndEvent['bapt'] = 'tng_cal_bapt.png';
+    $calIndEvent['endl'] = 'tng_cal_endl.png';
 }
 
 /* Select which FAMILY events you'd like to show by setting an icon */
 
 $calFamEvent['marr'] = 'tng_cal_marr.png';
 if ($ldsOK) {              //don't show these if the user does not have rights to see LDS data
-  $calFamEvent['seal'] = 'tng_cal_seal.png';
+    $calFamEvent['seal'] = 'tng_cal_seal.png';
 }
 
 /* To show CUSTOM events, enter the GEDCOM TAG and set an icon */

@@ -57,7 +57,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         ?>
         <tr>
             <td valign="top"><?php echo $admtext['page']; ?>:</td>
-            <td><input type="text" name="citepage" value="<?php echo $row['page']; ?>" size="60"></td>
+            <td>
+                <input type="text" name="citepage" value="<?php echo $row['page']; ?>" size="60">
+            </td>
         </tr>
         <tr>
             <td valign="top"><?php echo $admtext['reliability']; ?>*:</td>
@@ -85,7 +87,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         </tr>
         <tr>
             <td valign="top"><?php echo $admtext['citedate']; ?>:</td>
-            <td><input type="text" name="citedate" value="<?php echo $row['citedate']; ?>" size="60" onBlur="checkDate(this);"></td>
+            <td>
+                <input type="text" name="citedate" value="<?php echo $row['citedate']; ?>" size="60" onBlur="checkDate(this);">
+            </td>
         </tr>
         <tr>
             <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>

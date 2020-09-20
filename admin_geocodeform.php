@@ -88,7 +88,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
                             </select>
                         </td>
                         <td>
-                            &nbsp; &nbsp; <input type="checkbox" value="1" name="resetignore"> <?php echo $admtext['reset']; ?>
+                            &nbsp; &nbsp;
+                            <input type="checkbox" value="1" name="resetignore"> <?php echo $admtext['reset']; ?>
                         </td>
                     </tr>
                 </table>

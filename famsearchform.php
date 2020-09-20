@@ -439,9 +439,10 @@ echo $formstr;
             ?>
             <tr class="secondsearch">
                 <td colspan="3"><br>
-                    <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();"> <input type="button"
-                                                                                                                                                                 value="<?php echo $text['resetall']; ?>"
-                                                                                                                                                                 onclick="resetValues();">
+                    <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();">
+                    <input type="button"
+                           value="<?php echo $text['resetall']; ?>"
+                           onclick="resetValues();">
                 </td>
             </tr>
         </table>

@@ -42,9 +42,11 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 </li>
             </ul>
             </p>
-            <p><strong>D�vkovou instalaci</strong> p�idal do TNG 10.0.3 Rick Bisbee a umo��uje vykonat stejnou akci pro v�ce m�d�. Popup okno s popisem p�idal Jeff Robison.</p>
+            <p><strong>D�vkovou instalaci</strong> p�idal do TNG 10.0.3 Rick Bisbee a umo��uje vykonat stejnou akci pro v�ce m�d�. Popup okno s
+                popisem p�idal Jeff Robison.</p>
             <p><strong>Mo�nosti</strong> p�idal do TNG 10.0.3 Ken Roy a umo��uje m�nit n�kter� chov�n� mana�eru m�d�.</p>
-            <p><strong>Zobrazit protokol</strong> p�idal do TNG 10.0.3 Ken Roy a zobrazuje protokol mana�eru m�d�, kter� je nyn� odd�len od protokolu administrace.
+            <p><strong>Zobrazit protokol</strong> p�idal do TNG 10.0.3 Ken Roy a zobrazuje protokol mana�eru m�d�, kter� je nyn� odd�len od protokolu
+                administrace.
                 Protokol mana�eru m�d� pro snadn�j�� �itelnost akc� p�eform�toval Rick Bisbee.</p>
             <p>Dal�� informace m��ete naj�t v �l�nku
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Mana�er m�d�</a> a v kategorii �l�nk�
@@ -97,7 +99,8 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 <li><strong>Vy�istit</strong>, pokud m�d byl ��ste�n� nainstalov�n, je k dispozici tla��tko <strong>Vy�istit</strong>. Operace
                     Vy�i�t�n� se pokus� odstranit vlo�en� k�d, obnovit a nahradit k�d, a odstranit vytvo�en� soubor.
                 </li>
-                <li><strong>Nelze nainstalovat</strong>, pokud m�d <strong>nelze</strong> instalovat. Tato zpr�va bude p�edch�zet jinou zpr�vu, kter� poskytne v�ce informac� o tom, pro� m�d nelze nainstalovat.
+                <li><strong>Nelze nainstalovat</strong>, pokud m�d <strong>nelze</strong> instalovat. Tato zpr�va bude p�edch�zet jinou zpr�vu, kter�
+                    poskytne v�ce informac� o tom, pro� m�d nelze nainstalovat.
                 </li>
             </ul>
             <p>P��klady obrazovek stavu mana�eru m�d� a jak interpretovat r�zn� stavy najdete na
@@ -151,12 +154,14 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <span class="optionhead">Interpretace stavu
         </span>
             <p>Informace o
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">interpretaci stavu</a> najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">interpretaci stavu</a>
+                najdete na TNG Wiki.
             </p>
             <span class="optionhead">Syntaxe konfigura�n�ch soubor�
         </span>
             <p>Informace o
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax" target="_blank">syntaxi konfigura�n�ch soubor�</a> najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax" target="_blank">syntaxi konfigura�n�ch
+                    soubor�</a> najdete na TNG Wiki.
             </p>
             <span class="optionhead">Vytvo�en� konfigura�n�ho souboru
         </span>
@@ -193,7 +198,9 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 <ul>
                     <li>Vy�i�t�ny - na z�klad� va�eho v�b�ru a kliknut�m na tla��tko <strong>Vy�istit</strong></li>
                 </ul>
-                <li><strong>Nelze nainstalovat</strong> - zobraz� se seznam v�ech m�d�, kter� nelze nainstalovat z d�vodu chybn�ho c�lov�ho souboru nebo chyb�j�c�ch soubor�, a mohou b�t</li>
+                <li><strong>Nelze nainstalovat</strong> - zobraz� se seznam v�ech m�d�, kter� nelze nainstalovat z d�vodu chybn�ho c�lov�ho souboru
+                    nebo chyb�j�c�ch soubor�, a mohou b�t
+                </li>
                 <ul>
                     <li>Vymaz�ny ze slo�ky mods - na z�klad� va�eho v�b�ru a kliknut�m na tla��tko <strong>Vymazat</strong></li>
                 </ul>
@@ -231,16 +238,26 @@ echo help_header("N�pov�da: Mana�er m�d�");
             </p>
             <p><strong>Protokolu mana�eru m�d�</strong>
             <ul>
-                <li><strong>Zaznamen�vat akce mana�eru m�d�</strong> - umo�n� v�m zvolit, zda chcete zaznamen�vat potvrzen� a akce mana�eru m�d�. V�choz� volbou je <strong>Ano</strong>.</li>
-                <li><strong>N�zev protokolu</strong> - umo�n� v�m ur�it n�zev souboru, kter� bude pou�it pro protokol mana�eru m�d�. V�choz� volbou je <strong>modmgrlog.txt</strong>.</li>
-                <li><strong>Maxim�ln� po�et ��dk�</strong> - umo�n� v�m ur�it, kolik ��dk� bude zachov�v�no v protokolu. V�choz� volbou je <strong>2000</strong>.</li>
+                <li><strong>Zaznamen�vat akce mana�eru m�d�</strong> - umo�n� v�m zvolit, zda chcete zaznamen�vat potvrzen� a akce mana�eru m�d�.
+                    V�choz� volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>N�zev protokolu</strong> - umo�n� v�m ur�it n�zev souboru, kter� bude pou�it pro protokol mana�eru m�d�. V�choz� volbou je
+                    <strong>modmgrlog.txt</strong>.
+                </li>
+                <li><strong>Maxim�ln� po�et ��dk�</strong> - umo�n� v�m ur�it, kolik ��dk� bude zachov�v�no v protokolu. V�choz� volbou je <strong>2000</strong>.
+                </li>
             </ul>
             </p>
             <p><strong>Jin�</strong>
             <ul>
-                <li><strong>�adit seznamy podle</strong> - umo�n� v�m zvolit, podle kter�ho sloupce bude �azen Seznam m�d� a D�vkov� instalace. V�choz� volbou je <strong>N�zev konfigura�n�ho souboru</strong>.</li>
-                <li><strong>Vynechat potvrzen�</strong> - umo�n� v�m zvolit, zda chcete vynechat zobrazen� obrazovky Potvrzen� v Seznamu m�d�. I kdy� zvol�te Ano, Potvrzen� bude st�le zapisov�no do protokolu. V�choz� volbou je <strong>Ne</strong>.</li>
-                <li><strong>Vynechat zpr�vy o akc�ch</strong> - umo�n� v�m zvolit, zda chcete vynechat zobrazen� obrazovky Zpr�va o akci v Seznamu m�d�. I kdy� zvol�te Ano, Zpr�va o akci bude st�le zapisov�na do protokolu. V�choz� volbou je
+                <li><strong>�adit seznamy podle</strong> - umo�n� v�m zvolit, podle kter�ho sloupce bude �azen Seznam m�d� a D�vkov� instalace.
+                    V�choz� volbou je <strong>N�zev konfigura�n�ho souboru</strong>.
+                </li>
+                <li><strong>Vynechat potvrzen�</strong> - umo�n� v�m zvolit, zda chcete vynechat zobrazen� obrazovky Potvrzen� v Seznamu m�d�. I kdy�
+                    zvol�te Ano, Potvrzen� bude st�le zapisov�no do protokolu. V�choz� volbou je <strong>Ne</strong>.
+                </li>
+                <li><strong>Vynechat zpr�vy o akc�ch</strong> - umo�n� v�m zvolit, zda chcete vynechat zobrazen� obrazovky Zpr�va o akci v Seznamu
+                    m�d�. I kdy� zvol�te Ano, Zpr�va o akci bude st�le zapisov�na do protokolu. V�choz� volbou je
                     <strong>Ne</strong>.
                 </li>
             </ul>

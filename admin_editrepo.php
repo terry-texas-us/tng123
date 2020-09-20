@@ -110,8 +110,8 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                         <td>
                             <?php echo $treerow['treename']; ?>
                             &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img
-                                        src="img/ArrowDown.gif"
-                                        style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
+                                    src="img/ArrowDown.gif"
+                                    style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
                             </a> )
                         </td>
                     </tr>

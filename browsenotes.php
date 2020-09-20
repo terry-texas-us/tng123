@@ -100,7 +100,7 @@ if ($sitever != "standard") {
     if ($enableminimap) {
         $tableStartTag .= " data-tablesaw-minimap";
     }
-    if ($enablemodeswitch){
+    if ($enablemodeswitch) {
         $tableStartTag .= " data-tablesaw-mode-switch";
     }
     $tableStartTag .= ">";

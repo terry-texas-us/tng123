@@ -110,7 +110,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
                     </tr>
                 </table>
                 <p class="normal">*<?php echo $admtext['phalltrees']; ?></p>
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['import']; ?>"></form>
+                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['import']; ?>">
+            </form>
         </td>
     </tr>
 

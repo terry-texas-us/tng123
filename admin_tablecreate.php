@@ -5,17 +5,17 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  include "version.php";
+    $admin_login = 1;
+    include "checklogin.php";
+    include "version.php";
 }
 
 require "adminlog.php";
 
 if ($assignedtree) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $badtables = "";
@@ -23,7 +23,7 @@ $collation = "";
 include "tabledefs.php";
 
 if (!$badtables) {
-  adminwritelog($admtext['createtables']);
+    adminwritelog($admtext['createtables']);
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
@@ -43,8 +43,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['tablecreation'
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow"><span class="normal"><p>
+    <tr class="databack">
+        <td class="tngshadow"><span class="normal"><p>
 <?php
 if ($badtables) {
     echo "Tables not created: $badtables";
@@ -54,8 +54,8 @@ if ($badtables) {
 ?>
 </p>
 			<p><a href="admin_setup.php"><?php echo $admtext['backtosetup']; ?></a>.</p></span>
-    </td>
-  </tr>
+        </td>
+    </tr>
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>

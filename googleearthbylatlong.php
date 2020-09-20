@@ -12,9 +12,9 @@ $zoom = $_REQUEST['z'];
 
 //db mod for range calculation from zoom level
 if ($zoom > 0) {
-  $range = pow(1.94, (20 - $zoom)) * 64 * 1.4;
+    $range = pow(1.94, (20 - $zoom)) * 64 * 1.4;
 } else {
-  $range = 3000;
+    $range = 3000;
 }
 
 header('HTTP/1.1 200 OK');

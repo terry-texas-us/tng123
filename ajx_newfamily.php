@@ -61,7 +61,9 @@ include_once "eventlib.php";
     <table width="100%" cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
-                <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+                <div style="float:right;">
+                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
+                </div>
                 <h3 class="subhead togglehead"><?php echo $admtext['addnewfamily']; ?></h3>
 
                 <table class="normal">
@@ -89,7 +91,8 @@ include_once "eventlib.php";
                     <table class="normal topmarginsmall">
                         <tr>
                             <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
-                            <td><input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
+                            <td>
+                                <input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
                                 <input type="hidden" name="husband" id="husband" value="<?php echo $husband; ?>">
                                 <input type="button" value="<?php echo $admtext['find']; ?>"
                                        onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
@@ -100,7 +103,8 @@ include_once "eventlib.php";
                         </tr>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>
-                            <td><input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
+                            <td>
+                                <input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
                                 <input type="hidden" name="wife" id="wife" value="<?php echo $wife; ?>">
                                 <input type="button" value="<?php echo $admtext['find']; ?>"
                                        onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
@@ -180,7 +184,9 @@ include_once "eventlib.php";
                         ?>
                         <tr>
                             <td><?php echo $admtext['marriagetype']; ?>:</td>
-                            <td colspan="6"><input type="text" value="" name="marrtype" style="width:494px;" maxlength="50"></td>
+                            <td colspan="6">
+                                <input type="text" value="" name="marrtype" style="width:494px;" maxlength="50">
+                            </td>
                         </tr>
                         <?php
                         if (determineLDSRights()) {

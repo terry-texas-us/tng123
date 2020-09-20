@@ -8,16 +8,16 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_media_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $tree = $assignedtree;
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
@@ -89,17 +89,17 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                     <tr>
                         <td valign="top">
                             <select name="tree1">
-                <?php
-                              $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                              while ($treerow = tng_fetch_assoc($treeresult)) {
-                                echo "	<option value=\"{$treerow['gedcom']}\"";
-                                if ($treerow['gedcom'] == $tree) {
-                                  echo " selected";
+                                <?php
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    echo "	<option value=\"{$treerow['gedcom']}\"";
+                                    if ($treerow['gedcom'] == $tree) {
+                                        echo " selected";
+                                    }
+                                    echo ">{$treerow['treename']}</option>\n";
                                 }
-                                echo ">{$treerow['treename']}</option>\n";
-                              }
-                              tng_free_result($treeresult);
-                              ?>
+                                tng_free_result($treeresult);
+                                ?>
                             </select>
                         </td>
                         <td valign="top">
@@ -113,40 +113,44 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         </td>
                         <td valign="top">
                             <select name="mediatypeID">
-                              <?php
-                              foreach ($mediatypes as $mediatype) {
-                                $msgID = $mediatype['ID'];
-                                echo "	<option value=\"$msgID\"";
-                                if ($msgID == $mediatypeID) {
-                                  echo " selected";
+                                <?php
+                                foreach ($mediatypes as $mediatype) {
+                                    $msgID = $mediatype['ID'];
+                                    echo "	<option value=\"$msgID\"";
+                                    if ($msgID == $mediatypeID) {
+                                        echo " selected";
+                                    }
+                                    echo ">" . $mediatype['display'] . "</option>\n";
                                 }
-                                echo ">" . $mediatype['display'] . "</option>\n";
-                              }
-                              ?>
+                                ?>
                             </select>
                         </td>
-            <td><input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>" onblur="toggleEventRow(document.find.eventlink1.checked);"></td>
-            <td><a href="#"
-                   onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                   title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-            <td><input type="submit" value="<?php echo $admtext['text_continue']; ?>"></td>
-          </tr>
-          <tr>
-            <td colspan="3">&nbsp;</td>
-            <td colspan="2">
-              <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
-              <select name="event1" id="eventrow1" style="display:none;">
-                <option value=""></option>
-              </select>
-            </td>
-              <td class="normal" valign="top">&nbsp;</td>
-          </tr>
-        </table>
+                        <td>
+                            <input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>" onblur="toggleEventRow(document.find.eventlink1.checked);">
+                        </td>
+                        <td><a href="#"
+                               onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
+                               title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+                        <td>
+                            <input type="submit" value="<?php echo $admtext['text_continue']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">&nbsp;</td>
+                        <td colspan="2">
+                            <span id="eventlink1" class="normal"><input type="checkbox" name="eventlink1" value="1" onclick="return toggleEventRow(this.checked);"> <?php echo $admtext['eventlink']; ?></span><br>
+                            <select name="event1" id="eventrow1" style="display:none;">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td class="normal" valign="top">&nbsp;</td>
+                    </tr>
+                </table>
 
-      </form>
+            </form>
 
-    </td>
-  </tr>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

@@ -47,32 +47,44 @@ echo help_header("Nápověda: Manažer módů");
                 <li><strong>mods</strong> obsahuje konfigurační soubory módů a přidružené podpůrné soubory módů. Složka mods může být přejmenována.
                     Manažer módů používá pro práci s názvem složky proměnnou $modspath.
                 </li>
-                <li><strong>extensions</strong> obsahuje některá rozšíření módů, které jsou instalovány jinými konfiguračními soubory manažeru módů. Složka extensions může být přejmenována. Manažer módů používá pro práci s názvem složky proměnnou
+                <li><strong>extensions</strong> obsahuje některá rozšíření módů, které jsou instalovány jinými konfiguračními soubory manažeru módů.
+                    Složka extensions může být přejmenována. Manažer módů používá pro práci s názvem složky proměnnou
                     $modspath.
                 </li>
-                <li><strong>classes</strong> obsahuje třídy Objektově orientovaného programování (Object Orient Progamming classes), které byly rozděleny a vylepšeny z předchozího souboru managemods.class.php, který vytvořil Sean Schwoere z původní kódu
+                <li><strong>classes</strong> obsahuje třídy Objektově orientovaného programování (Object Orient Progamming classes), které byly
+                    rozděleny a vylepšeny z předchozího souboru managemods.class.php, který vytvořil Sean Schwoere z původní kódu
                     Manažeru módů od Briana McFadyena.
                 </li>
             </ul>
             </p>
 
-            <p>Záložka <strong>Seznam módů</strong> nyní spojuje předchozí Seznam módů a Dávkové instalace, které do TNG 10.0.3 přidal Rick Bisbee, a umožňuje vykonat stejnou akci pro více módů. Popis a rozšířený stav lze zobrazit pomocí kliknutí na šipku
-                vpravo ve sloupci Stav nebo kdekoli na řádku. Přejetím kurzorem myši nad řádkem se zvýrazní řádek a usnadní se tak výběru stavu pro rozšířené zobrazení. Přejetím kurzoru myši přes znaménko + ve sloupci Soubory se zobrazí seznam souborů,
+            <p>Záložka <strong>Seznam módů</strong> nyní spojuje předchozí Seznam módů a Dávkové instalace, které do TNG 10.0.3 přidal Rick Bisbee, a
+                umožňuje vykonat stejnou akci pro více módů. Popis a rozšířený stav lze zobrazit pomocí kliknutí na šipku
+                vpravo ve sloupci Stav nebo kdekoli na řádku. Přejetím kurzorem myši nad řádkem se zvýrazní řádek a usnadní se tak výběru stavu pro
+                rozšířené zobrazení. Přejetím kurzoru myši přes znaménko + ve sloupci Soubory se zobrazí seznam souborů,
                 které daný mód mění, vytváří nebo kopíruje.</p>
             <p>Pokud je povolena možnost Zobrazit další nástroje pro vývojáře, TNG v12 přidává následující změny:
             <ul>
                 <li>kliknutím na název souboru se otevře tabulka parseru pro tento mód</li>
                 <li>kliknutím na název souboru cfg se zobrazí soubor cfg na jiné záložce</li>
-                <li>tlačítko <strong>Podrobnosti</strong> v buňce Stav funguje jako přepínač pro rozbalení nebo sbalení zobrazení směrnic souboru ve stavu Instalovat nebo Lze instalovat.</li>
+                <li>tlačítko <strong>Podrobnosti</strong> v buňce Stav funguje jako přepínač pro rozbalení nebo sbalení zobrazení směrnic souboru ve
+                    stavu Instalovat nebo Lze instalovat.
+                </li>
             </ul>
             </p>
 
-            <p>Záložku <strong>Zobrazit protokol</strong> přidal do TNG 10.0.3 Ken Roy a zobrazuje protokol Manažeru módů, který je nyní oddělen od protokolu Administrace. Protokol manažeru módů je přeformátovaný protokol z Manažeru módů vytvořeného Rickem
-                Bisbee a Robinem Richmondem v TNG 10.0.3 a srozumitelnost vykonaných akcí zaznamenaných v protokolu je nyní lepší. Zprávy a hlášení byly značně zjednodušeny.</p>
-            <p>Záložka <strong>Možnosti</strong> je modifikací záložky přidané Kenem Royem do TNG 10.0.3 a umožňuje měnit některé chování manažeru módů.</p>
-            <p>Záložka <strong>Analýza souboru TNG</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti, a umožňuje vybrat soubor TNG a zobrazit, které módy jej mění.</p>
-            <p>Záložka <strong>Tabulka parseru</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti povolením <strong>Další nástroje pro vývojáře</strong>, a umožní zobrazit, jak je daný mód analyzován Manažerem módů.</p>
-            <p>Záložka <strong>Doporučené aktualizace</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti, která vám umožní aktualizovat soubory cust_text.php, pokud jste tak neučinili v rámci aktualizace TNG.</p>
+            <p>Záložku <strong>Zobrazit protokol</strong> přidal do TNG 10.0.3 Ken Roy a zobrazuje protokol Manažeru módů, který je nyní oddělen od
+                protokolu Administrace. Protokol manažeru módů je přeformátovaný protokol z Manažeru módů vytvořeného Rickem
+                Bisbee a Robinem Richmondem v TNG 10.0.3 a srozumitelnost vykonaných akcí zaznamenaných v protokolu je nyní lepší. Zprávy a hlášení
+                byly značně zjednodušeny.</p>
+            <p>Záložka <strong>Možnosti</strong> je modifikací záložky přidané Kenem Royem do TNG 10.0.3 a umožňuje měnit některé chování manažeru
+                módů.</p>
+            <p>Záložka <strong>Analýza souboru TNG</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti, a umožňuje vybrat
+                soubor TNG a zobrazit, které módy jej mění.</p>
+            <p>Záložka <strong>Tabulka parseru</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti povolením <strong>Další
+                    nástroje pro vývojáře</strong>, a umožní zobrazit, jak je daný mód analyzován Manažerem módů.</p>
+            <p>Záložka <strong>Doporučené aktualizace</strong> je volitelná záložka, jejíž zobrazení lze povolit na obrazovce Možnosti, která vám
+                umožní aktualizovat soubory cust_text.php, pokud jste tak neučinili v rámci aktualizace TNG.</p>
 
             <p>Další informace můžete najít v článku
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Manažer módů (v angličtině)</a> a v kategorii
@@ -101,7 +113,9 @@ echo help_header("Nápověda: Manažer módů");
                         <li>určí, zda cílové umístění již bylo nainstalováno</li>
                     </ul>
                 <li>vytvoří zadanou složku nebo adresář</li>
-                <li>identifikuje nové soubory, které mají být vytvořeny. Pokud je soubor označen jako chráněný, nebude odstraněn Odinstalací ani Vyčištěním.</li>
+                <li>identifikuje nové soubory, které mají být vytvořeny. Pokud je soubor označen jako chráněný, nebude odstraněn Odinstalací ani
+                    Vyčištěním.
+                </li>
                 <li>identifikuje soubory, které mají být zkopírovány do kořenové složky TNG nebo do určené složky. Pokud je soubor označen jako
                     chráněný, nebude odstraněn Odinstalací ani Vyčištěním.
                 </li>
@@ -128,7 +142,8 @@ echo help_header("Nápověda: Manažer módů");
                     Operace Vyčištění se pokusí odstranit vložený kód, obnovit a nahradit kód, a odstranit jakékoli vytvořené
                     nebo zkopírované soubory.
                 </li>
-                <li><strong>Nelze nainstalovat</strong>, pokud mód <strong>nelze</strong> instalovat. Rozšíření (zobrazení kompletní informace) stavu poskytne více informací o tom, proč mód nelze nainstalovat.
+                <li><strong>Nelze nainstalovat</strong>, pokud mód <strong>nelze</strong> instalovat. Rozšíření (zobrazení kompletní informace) stavu
+                    poskytne více informací o tom, proč mód nelze nainstalovat.
                 </li>
             </ul>
             <p>Příklady obrazovek stavu manažeru módů a jak interpretovat různé stavy najdete na
@@ -229,13 +244,18 @@ echo help_header("Nápověda: Manažer módů");
                 <ul>
                     <li>Vyčištěny - na základě vašeho výběru a kliknutím na tlačítko <strong>Vyčistit vybrané</strong></li>
                 </ul>
-                <li><strong>Nelze nainstalovat</strong> - zobrazí se seznam všech módů, které nelze nainstalovat z důvodu chybného cílového souboru nebo chybějících souborů, a mohou být</li>
+                <li><strong>Nelze nainstalovat</strong> - zobrazí se seznam všech módů, které nelze nainstalovat z důvodu chybného cílového souboru
+                    nebo chybějících souborů, a mohou být
+                </li>
                 <ul>
                     <li>Vymazány ze složky mods - na základě vašeho výběru a kliknutím na tlačítko <strong>Vymazat vybrané</strong></li>
                 </ul>
-                <li><strong>Vybrat</strong> - přidáno v TNG v12 - zobrazí se seznam všech modů, které mohou být vybrány bez ohledu na stav a poté pouze vrací tyto módy do seznamu</li>
+                <li><strong>Vybrat</strong> - přidáno v TNG v12 - zobrazí se seznam všech modů, které mohou být vybrány bez ohledu na stav a poté
+                    pouze vrací tyto módy do seznamu
+                </li>
                 <ul>
-                    <li>Tlačítko <strong>Vymazat</strong> bude dostupné pouze na seznamu Vybrat, pokud máte aktivní volbu Povolit Vymazat vybrané u částečně nainstalovaných módů. Tato funkce byla přidána hlavně pro vývojáře módů k vyčištění jejich
+                    <li>Tlačítko <strong>Vymazat</strong> bude dostupné pouze na seznamu Vybrat, pokud máte aktivní volbu Povolit Vymazat vybrané u
+                        částečně nainstalovaných módů. Tato funkce byla přidána hlavně pro vývojáře módů k vyčištění jejich
                         testovacích prostředí.
                     </li>
                 </ul>
@@ -268,44 +288,67 @@ echo help_header("Nápověda: Manažer módů");
                     přesměrování v případě <strong>Pouze chyb</strong>, která zobrazí protokol pouze v případě, že se vyskytne v průběhu instalace,
                     odinstalace, vyčištění nebo vymazání chyba.
                 </li>
-                <li><strong>Do protokolu zapsat celou cestu souborů</strong> - umožní vám zapsat Ne, pokud chcete u souborů v protokolu zobrazit pouze relativní cestu. Výchozí volbou je <strong>Ano</strong> pro zobrazení úplné absolutní cesty.</li>
+                <li><strong>Do protokolu zapsat celou cestu souborů</strong> - umožní vám zapsat Ne, pokud chcete u souborů v protokolu zobrazit pouze
+                    relativní cestu. Výchozí volbou je <strong>Ano</strong> pro zobrazení úplné absolutní cesty.
+                </li>
             </ul>
             </p>
             <p><strong>Možnosti nastavení zobrazení</strong>
             <ul>
-                <li><strong>Řadit seznamy podle</strong> - umožní vám zvolit, podle kterého sloupce bude řazen Seznam módů. Možnosti jsou Název módu a Název konfiguračního souboru. Výchozí volbou je <strong>Název módu</strong>.</li>
-                <li><strong>Použít pevné záhlaví</strong> - umožní vám změnit volbu, aby nebylo zobrazeno pevné záhlaví. Tato volba není zřetelná, pokud máte velký monitor a málo módů. Výchozí volbou je <strong>Ano</strong> pro zobrazení pevného záhlaví.
+                <li><strong>Řadit seznamy podle</strong> - umožní vám zvolit, podle kterého sloupce bude řazen Seznam módů. Možnosti jsou Název módu a
+                    Název konfiguračního souboru. Výchozí volbou je <strong>Název módu</strong>.
+                </li>
+                <li><strong>Použít pevné záhlaví</strong> - umožní vám změnit volbu, aby nebylo zobrazeno pevné záhlaví. Tato volba není zřetelná,
+                    pokud máte velký monitor a málo módů. Výchozí volbou je <strong>Ano</strong> pro zobrazení pevného záhlaví.
                     Bez ohledu na nastavení této volby se pevné záhlaví nezobrazí v případě chytrých telefonů (mobilní režim).
                 </li>
-                <li><strong>Upravit pevné záhlaví</strong> - umožní vám povolit úpravu pevného záhlaví jQuery v případě, že pevné záhlaví není správně zobrazeno. Tato volba je potřeba pouze na určitých monitorech. Výchozí volbou je <strong>Ne</strong> a
+                <li><strong>Upravit pevné záhlaví</strong> - umožní vám povolit úpravu pevného záhlaví jQuery v případě, že pevné záhlaví není správně
+                    zobrazeno. Tato volba je potřeba pouze na určitých monitorech. Výchozí volbou je <strong>Ne</strong> a
                     nepoužívat javascript jQuery pro úpravu pevného záhlaví.
                 </li>
-                <li><strong>Použít pruhy</strong> - umožní vám změnit volbu a nepoužít pruhy při zobrazení Seznamu módů. Výchozí volbou je <strong>Ano</strong>, která použije třídu databackalt k zobrazení barevných pruhů střídavě po počtu N řádků.</li>
-                <li><strong>Pruh po tomto počtu řádků</strong> - umožní nastavit počet řádků, po kterém se budou střídat barevné pruhy. Výchozí volbou jsou <strong>3</strong> řádky jedné barvy a pak 3 řádky jiné barvy.</li>
-                <li><strong>Odstranit mezery z názvů souborů v seznamu módů</strong> - umožní odstranit mezery z názvů módů před jejich zobrazením v Seznamu názvů módů. Výchozí volbou je <strong>Ne</strong>, kdy jsou mezery v názvech módů zobrazeny a tyto
+                <li><strong>Použít pruhy</strong> - umožní vám změnit volbu a nepoužít pruhy při zobrazení Seznamu módů. Výchozí volbou je
+                    <strong>Ano</strong>, která použije třídu databackalt k zobrazení barevných pruhů střídavě po počtu N řádků.
+                </li>
+                <li><strong>Pruh po tomto počtu řádků</strong> - umožní nastavit počet řádků, po kterém se budou střídat barevné pruhy. Výchozí volbou
+                    jsou <strong>3</strong> řádky jedné barvy a pak 3 řádky jiné barvy.
+                </li>
+                <li><strong>Odstranit mezery z názvů souborů v seznamu módů</strong> - umožní odstranit mezery z názvů módů před jejich zobrazením v
+                    Seznamu názvů módů. Výchozí volbou je <strong>Ne</strong>, kdy jsou mezery v názvech módů zobrazeny a tyto
                     názvy pak odpovídají názvům článků na TNG Wiki.
                 </li>
-                <li><strong>Zobrazit záložku Analýza souborů TNG</strong> - umožní určit, zda chcete zobrazit záložku Analýza soouborů TNG. Výchozí volbou je <strong>Ne</strong>, která potlačí zobrazení záložky Analýza soouborů TNG.</li>
-                <li><strong>Zobrazit další nástroje pro vývojáře</strong> - umožní určit, zda chcete zobrazit záložku Tabulka parseru. Výchozí volbou je <strong>Ne</strong>, která potlačí zobrazení záložky Tabulka parseru. Tato volba také řídí, zda se na
-                    kliknutí na název módu zobrazí tabulka parseru pro daný mod a zda se kliknutím na název konfiguračního souboru zobrazí na nové záložce konfigurační soubor.
+                <li><strong>Zobrazit záložku Analýza souborů TNG</strong> - umožní určit, zda chcete zobrazit záložku Analýza soouborů TNG. Výchozí
+                    volbou je <strong>Ne</strong>, která potlačí zobrazení záložky Analýza soouborů TNG.
                 </li>
-                <li><strong>Zobrazit záložku Doporučené aktualizace</strong> - umožní určit, zda chcete zobrazit záložku Doporučené aktualizace. Výchozí volbou je <strong>Ne</strong>, která potlačí zobrazení záložky Doporučené aktualizace. Tato záložka
+                <li><strong>Zobrazit další nástroje pro vývojáře</strong> - umožní určit, zda chcete zobrazit záložku Tabulka parseru. Výchozí volbou
+                    je <strong>Ne</strong>, která potlačí zobrazení záložky Tabulka parseru. Tato volba také řídí, zda se na
+                    kliknutí na název módu zobrazí tabulka parseru pro daný mod a zda se kliknutím na název konfiguračního souboru zobrazí na nové
+                    záložce konfigurační soubor.
+                </li>
+                <li><strong>Zobrazit záložku Doporučené aktualizace</strong> - umožní určit, zda chcete zobrazit záložku Doporučené aktualizace.
+                    Výchozí volbou je <strong>Ne</strong>, která potlačí zobrazení záložky Doporučené aktualizace. Tato záložka
                     nemusí být zobrazena, pokud jste provedli aktualizaci souboru cust_text.php v rámci aktualizace na TNG v12.
                 </li>
             </ul>
             </p>
             <p><strong>Jiné možnosti</strong>
             <ul>
-                <li><strong>Povolit Vymazat vybrané pro částečně nainstalované módy</strong> - povolí zobrazení tlačítka <strong>Vymazat</strong> v seznamu vybraných Částečně nainstalovaných módů, pomocí kterého lze vymazat více módů najednou, jako např.
-                    vymazání předchozích verzí modů, které nebyly vymazány před instalací novější verzí. Výchozí volbou je <strong>Ne</strong>. Tuto volbu doporučujeme povolit pouze v případě, že potřebujete vymazat více modů, aniž byste museli
-                    odinstalovat aktuální verze, abyste odstranili předchozí verze módu, když jste zapomněli odinstalovat a vymazat předchozí verze modu před instalací nové verze. Normálně tuto volbu nechte nastavenou na Ne a volbu Ne obnovte po odstranění
+                <li><strong>Povolit Vymazat vybrané pro částečně nainstalované módy</strong> - povolí zobrazení tlačítka <strong>Vymazat</strong> v
+                    seznamu vybraných Částečně nainstalovaných módů, pomocí kterého lze vymazat více módů najednou, jako např.
+                    vymazání předchozích verzí modů, které nebyly vymazány před instalací novější verzí. Výchozí volbou je <strong>Ne</strong>. Tuto
+                    volbu doporučujeme povolit pouze v případě, že potřebujete vymazat více modů, aniž byste museli
+                    odinstalovat aktuální verze, abyste odstranili předchozí verze módu, když jste zapomněli odinstalovat a vymazat předchozí verze
+                    modu před instalací nové verze. Normálně tuto volbu nechte nastavenou na Ne a volbu Ne obnovte po odstranění
                     předchozích verzí módu, které se zobrazují jako částečně nainstalované.
                 </li>
-                <li><strong>Povolit Vymazat pro samostatně nainstalované módy</strong> - umožní zapnutí volby zobrazení tlačítka <strong>Vymazat</strong> vedle tlačítka Odinstalovat u samostatně instalovaných módů, např. pro vymazání předchozí verze módu,
-                    která nebyla vymazána před instalací novější verze. Výchozí volbou je <strong>Ne</strong>. Doporučujeme, abyste tuto volbu povolili pouze v případě, kdy je potřeba vymazat předchozí verzi módu, bez nutnosti odinstalování aktuální verze
-                    za účelem vymazání předchozí verze, a za normálních okolností ponechte tuto volbu nastavenou na <strong>Ne</strong> a volbu Ne obnovte po odstranění předchozích verzí módu, které se zobrazují jako nainstalované.
+                <li><strong>Povolit Vymazat pro samostatně nainstalované módy</strong> - umožní zapnutí volby zobrazení tlačítka
+                    <strong>Vymazat</strong> vedle tlačítka Odinstalovat u samostatně instalovaných módů, např. pro vymazání předchozí verze módu,
+                    která nebyla vymazána před instalací novější verze. Výchozí volbou je <strong>Ne</strong>. Doporučujeme, abyste tuto volbu
+                    povolili pouze v případě, kdy je potřeba vymazat předchozí verzi módu, bez nutnosti odinstalování aktuální verze
+                    za účelem vymazání předchozí verze, a za normálních okolností ponechte tuto volbu nastavenou na <strong>Ne</strong> a volbu Ne
+                    obnovte po odstranění předchozích verzí módu, které se zobrazují jako nainstalované.
                 </li>
-                <li><strong>Povolit smazání podpůrné složky po vymazání modu</strong> - umožní zapnutí volby smazání složky (složek) přidružených k módu při mazání módu. Výchozí volbou je <strong>Ne</strong>. Doporučujeme tuto možnost povolit jen tehdy,
+                <li><strong>Povolit smazání podpůrné složky po vymazání modu</strong> - umožní zapnutí volby smazání složky (složek) přidružených k
+                    módu při mazání módu. Výchozí volbou je <strong>Ne</strong>. Doporučujeme tuto možnost povolit jen tehdy,
                     pokud chápete nebezpečí vymazání nezamýšlených složek. Věříme, že toto riziko je velmi malé.
                 </li>
             </ul>

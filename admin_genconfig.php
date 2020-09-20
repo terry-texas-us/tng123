@@ -195,27 +195,39 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['dbhost']; ?>:</td>
-                            <td><input type="text" value="<?php echo $database_host; ?>" name="new_database_host" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $database_host; ?>" name="new_database_host" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['dbname']; ?>:</td>
-                            <td><input type="text" value="<?php echo $database_name; ?>" name="new_database_name" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $database_name; ?>" name="new_database_name" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['dbusername']; ?>:</td>
-                            <td><input type="text" value="<?php echo $database_username; ?>" name="new_database_username" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $database_username; ?>" name="new_database_username" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['dbpassword']; ?>:</td>
-                            <td><input type="text" value="<?php echo $database_password; ?>" name="new_database_password" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $database_password; ?>" name="new_database_password" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['dbport']; ?>:</td>
-                            <td><input type="text" value="<?php echo $database_port; ?>" name="new_database_port" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $database_port; ?>" name="new_database_port" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['dbsocket']; ?>:</td>
-                            <td><input type="text" value="<?php echo $database_socket; ?>" name="new_database_socket" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $database_socket; ?>" name="new_database_socket" size="20">
+                            </td>
                         </tr>
                         <?php
                         $query = "SELECT count(userID) AS ucount FROM $users_table";
@@ -262,51 +274,75 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <table class="normal">
                                     <tr>
                                         <td><?php echo $admtext['people']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $people_table; ?>" name="people_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $people_table; ?>" name="people_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['families']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $families_table; ?>" name="families_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $families_table; ?>" name="families_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['children']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $children_table; ?>" name="children_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $children_table; ?>" name="children_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['albums']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $albums_table; ?>" name="albums_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $albums_table; ?>" name="albums_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['album2entitiestable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $album2entities_table; ?>" name="album2entities_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $album2entities_table; ?>" name="album2entities_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['albumlinkstable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $albumlinks_table; ?>" name="albumlinks_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $albumlinks_table; ?>" name="albumlinks_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['media']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $media_table; ?>" name="media_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $media_table; ?>" name="media_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['medialinkstable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $medialinks_table; ?>" name="medialinks_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $medialinks_table; ?>" name="medialinks_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['mediatypes']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $mediatypes_table; ?>" name="mediatypes_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $mediatypes_table; ?>" name="mediatypes_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['addresstable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $address_table; ?>" name="address_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $address_table; ?>" name="address_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['languages']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $languages_table; ?>" name="languages_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $languages_table; ?>" name="languages_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['places']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $places_table; ?>" name="places_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $places_table; ?>" name="places_table" size="20">
+                                        </td>
                                     </tr>
                                 </table>
                             </td>
@@ -315,51 +351,75 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <table class="normal">
                                     <tr>
                                         <td><?php echo $admtext['cemeteries']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $cemeteries_table; ?>" name="cemeteries_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $cemeteries_table; ?>" name="cemeteries_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['statestable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $states_table; ?>" name="states_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $states_table; ?>" name="states_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['countriestable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $countries_table; ?>" name="countries_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $countries_table; ?>" name="countries_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['users']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $users_table; ?>" name="users_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $users_table; ?>" name="users_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['sources']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $sources_table; ?>" name="sources_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $sources_table; ?>" name="sources_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['citations']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $citations_table; ?>" name="citations_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $citations_table; ?>" name="citations_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['repositories']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $repositories_table; ?>" name="repositories_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $repositories_table; ?>" name="repositories_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['events']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $events_table; ?>" name="events_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $events_table; ?>" name="events_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['eventtypes']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $eventtypes_table; ?>" name="eventtypes_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $eventtypes_table; ?>" name="eventtypes_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['reports']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $reports_table; ?>" name="reports_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $reports_table; ?>" name="reports_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['trees']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $trees_table; ?>" name="trees_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $trees_table; ?>" name="trees_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['notes']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $xnotes_table; ?>" name="xnotes_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $xnotes_table; ?>" name="xnotes_table" size="20">
+                                        </td>
                                     </tr>
                                 </table>
                             </td>
@@ -368,51 +428,75 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <table class="normal">
                                     <tr>
                                         <td><?php echo $admtext['notelinkstable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $notelinks_table; ?>" name="notelinks_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $notelinks_table; ?>" name="notelinks_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['saveimporttable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $saveimport_table; ?>" name="saveimport_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $saveimport_table; ?>" name="saveimport_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['branches']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $branches_table; ?>" name="branches_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $branches_table; ?>" name="branches_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['brlinkstable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $branchlinks_table; ?>" name="branchlinks_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $branchlinks_table; ?>" name="branchlinks_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['tleventstable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $tlevents_table; ?>" name="tlevents_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $tlevents_table; ?>" name="tlevents_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['temptable']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $temp_events_table; ?>" name="temp_events_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $temp_events_table; ?>" name="temp_events_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['associations']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $assoc_table; ?>" name="assoc_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $assoc_table; ?>" name="assoc_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['mostwanted']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $mostwanted_table; ?>" name="mostwanted_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $mostwanted_table; ?>" name="mostwanted_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['dna_tests']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $dna_tests_table; ?>" name="dna_tests_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $dna_tests_table; ?>" name="dna_tests_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['dna_groups']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $dna_groups_table; ?>" name="dna_groups_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $dna_groups_table; ?>" name="dna_groups_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['dna_links']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $dna_links_table; ?>" name="dna_links_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $dna_links_table; ?>" name="dna_links_table" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><?php echo $admtext['templates']; ?>:</td>
-                                        <td><input type="text" value="<?php echo $templates_table; ?>" name="templates_table" size="20"></td>
+                                        <td>
+                                            <input type="text" value="<?php echo $templates_table; ?>" name="templates_table" size="20">
+                                        </td>
                                     </tr>
                                 </table>
                             </td>
@@ -434,58 +518,78 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['rootpath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $rootpath; ?>" name="newrootpath" class="verylongfield"></td>
+                            <td>
+                                <input type="text" value="<?php echo $rootpath; ?>" name="newrootpath" class="verylongfield">
+                            </td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['photopath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $photopath; ?>" name="photopath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('photos',document.form1.photopath.value);"> <span id="msg_photos"></span>
+                            <td>
+                                <input type="text" value="<?php echo $photopath; ?>" name="photopath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('photos',document.form1.photopath.value);">
+                                <span id="msg_photos"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['documentpath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $documentpath; ?>" name="documentpath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('documents',document.form1.documentpath.value);"> <span
-                                        id="msg_documents"></span></td>
+                            <td>
+                                <input type="text" value="<?php echo $documentpath; ?>" name="documentpath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('documents',document.form1.documentpath.value);">
+                                <span
+                                    id="msg_documents"></span></td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['historypath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $historypath; ?>" name="historypath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('histories',document.form1.historypath.value);"> <span
-                                        id="msg_histories"></span></td>
+                            <td>
+                                <input type="text" value="<?php echo $historypath; ?>" name="historypath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('histories',document.form1.historypath.value);">
+                                <span
+                                    id="msg_histories"></span></td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['headstonepath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $headstonepath; ?>" name="headstonepath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('headstones',document.form1.headstonepath.value);"> <span
-                                        id="msg_headstones"></span></td>
+                            <td>
+                                <input type="text" value="<?php echo $headstonepath; ?>" name="headstonepath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('headstones',document.form1.headstonepath.value);">
+                                <span
+                                    id="msg_headstones"></span></td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['mediapath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $mediapath; ?>" name="mediapath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('media',document.form1.mediapath.value);"> <span id="msg_media"></span></td>
+                            <td>
+                                <input type="text" value="<?php echo $mediapath; ?>" name="mediapath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('media',document.form1.mediapath.value);">
+                                <span id="msg_media"></span></td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['gendex']; ?>:</td>
-                            <td><input type="text" value="<?php echo $gendexfile; ?>" name="gendexfile" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('gendex',document.form1.gendexfile.value);"> <span id="msg_gendex"></span>
+                            <td>
+                                <input type="text" value="<?php echo $gendexfile; ?>" name="gendexfile" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('gendex',document.form1.gendexfile.value);">
+                                <span id="msg_gendex"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['backuppath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $backuppath; ?>" name="backuppath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('backups',document.form1.backuppath.value);"> <span id="msg_backups"></span>
+                            <td>
+                                <input type="text" value="<?php echo $backuppath; ?>" name="backuppath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('backups',document.form1.backuppath.value);">
+                                <span id="msg_backups"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['modspath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $modspath; ?>" name="modspath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('mods',document.form1.modspath.value);"> <span id="msg_mods"></span></td>
+                            <td>
+                                <input type="text" value="<?php echo $modspath; ?>" name="modspath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('mods',document.form1.modspath.value);">
+                                <span id="msg_mods"></span></td>
                         </tr>
                         <tr>
                             <td class="nw"><?php echo $admtext['extspath']; ?>:</td>
-                            <td><input type="text" value="<?php echo $extspath; ?>" name="extspath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('exts',document.form1.extspath.value);"> <span id="msg_exts"></span></td>
+                            <td>
+                                <input type="text" value="<?php echo $extspath; ?>" name="extspath" class="verylongfield">
+                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('exts',document.form1.extspath.value);">
+                                <span id="msg_exts"></span></td>
                         </tr>
                     </table>
                 </div>
@@ -504,15 +608,21 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['homepage']; ?>:</td>
-                            <td><input type="text" value="<?php echo $homepage; ?>" name="homepage" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $homepage; ?>" name="homepage" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['tngdomain']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngdomain; ?>" name="tngdomain" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngdomain; ?>" name="tngdomain" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['sitename']; ?>:</td>
-                            <td><input type="text" value="<?php echo $sitename; ?>" name="sitename" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $sitename; ?>" name="sitename" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['site_desc']; ?>:</td>
@@ -520,19 +630,27 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['siteowner']; ?>:</td>
-                            <td><input type="text" value="<?php echo $dbowner; ?>" name="dbowner" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $dbowner; ?>" name="dbowner" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['targetframe']; ?>:</td>
-                            <td><input type="text" value="<?php echo $target; ?>" name="target" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $target; ?>" name="target" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['customheader']; ?>:</td>
-                            <td><input type="text" value="<?php echo $customheader; ?>" name="customheader" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $customheader; ?>" name="customheader" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['customfooter']; ?>:</td>
-                            <td><input type="text" value="<?php echo $customfooter; ?>" name="customfooter" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $customfooter; ?>" name="customfooter" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['footermsg']; ?>:</td>
@@ -540,7 +658,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['custommeta']; ?>:</td>
-                            <td><input type="text" value="<?php echo $custommeta; ?>" name="custommeta" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $custommeta; ?>" name="custommeta" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['tabstyle']; ?>:</td>
@@ -751,27 +871,39 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['imgmaxh']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['imgmaxh']; ?>" name="imgmaxh" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['imgmaxh']; ?>" name="imgmaxh" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['imgmaxw']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['imgmaxw']; ?>" name="imgmaxw" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['imgmaxw']; ?>" name="imgmaxw" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['thumbprefix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $thumbprefix; ?>" name="thumbprefix" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $thumbprefix; ?>" name="thumbprefix" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['thumbsuffix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $thumbsuffix; ?>" name="thumbsuffix" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $thumbsuffix; ?>" name="thumbsuffix" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['thumbmaxh']; ?>:</td>
-                            <td><input type="text" value="<?php echo $thumbmaxh; ?>" name="thumbmaxh" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $thumbmaxh; ?>" name="thumbmaxh" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['thumbmaxw']; ?>:</td>
-                            <td><input type="text" value="<?php echo $thumbmaxw; ?>" name="thumbmaxw" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $thumbmaxw; ?>" name="thumbmaxw" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['usedefthumbs']; ?>:</td>
@@ -788,7 +920,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['maxnoteprev']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['maxnoteprev']; ?>" name="tng_maxnoteprev" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['maxnoteprev']; ?>" name="tng_maxnoteprev" size="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['ssenabled']; ?>:</td>
@@ -901,7 +1035,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td>Favicon:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['favicon']; ?>" name="favicon" size="20"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['favicon']; ?>" name="favicon" size="20">
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -1145,11 +1281,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['sitekey']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['sitekey']; ?>" name="rcsitekey" class="longfield"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['sitekey']; ?>" name="rcsitekey" class="longfield">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['secret']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['secret']; ?>" name="rcsecret" class="longfield"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['secret']; ?>" name="rcsecret" class="longfield">
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -1214,11 +1354,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td>&nbsp;&nbsp;<?php echo $admtext['lnpfxnum']; ?>:</td>
-                            <td><input type="text" value="<?php echo $lnpfxnum; ?>" name="lnpfxnum" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $lnpfxnum; ?>" name="lnpfxnum" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td>&nbsp;&nbsp;<?php echo $admtext['specpfx']; ?>*:</td>
-                            <td><input type="text" value="<?php echo stripslashes($specpfx); ?>" name="specpfx" class="verylongfield"></td>
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($specpfx); ?>" name="specpfx" class="verylongfield">
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">*<?php echo $admtext['commas']; ?></td>
@@ -1240,7 +1384,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['cemrows']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $tngconfig['cemrows']; ?>" name="cemrows" size="5"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $tngconfig['cemrows']; ?>" name="cemrows" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['cemblanks']; ?>:</td>
@@ -1268,7 +1414,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['emailaddress']; ?>:</td>
-                            <td><input type="text" value="<?php echo $emailaddr; ?>" name="emailaddr" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $emailaddr; ?>" name="emailaddr" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['fromadmin']; ?>:</td>
@@ -1382,29 +1530,38 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     } ?>" id="smtpstuff">
                         <tr>
                             <td><?php echo $admtext['mailhost']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['mailhost']; ?>" name="mailhost" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['mailhost']; ?>" name="mailhost" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['mailuser']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['mailuser']; ?>" name="mailuser" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['mailuser']; ?>" name="mailuser" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['mailpass']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['mailpass']; ?>" name="mailpass" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['mailpass']; ?>" name="mailpass" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['mailport']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['mailport']; ?>" name="mailport" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['mailport']; ?>" name="mailport" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['mailenc']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['mailenc']; ?>" name="mailenc" size="40"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['mailenc']; ?>" name="mailenc" size="40">
+                            </td>
                         </tr>
                     </table>
                 </div>
             </td>
         </tr>
-
 
         <tr class="databack tngshadow">
             <td class="tngshadow">
@@ -1414,43 +1571,63 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['personprefix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['personprefix']; ?>" name="pprefix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['personprefix']; ?>" name="pprefix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['personsuffix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['personsuffix']; ?>" name="psuffix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['personsuffix']; ?>" name="psuffix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['familyprefix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['familyprefix']; ?>" name="fprefix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['familyprefix']; ?>" name="fprefix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['familysuffix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['familysuffix']; ?>" name="fsuffix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['familysuffix']; ?>" name="fsuffix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['sourceprefix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['sourceprefix']; ?>" name="sprefix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['sourceprefix']; ?>" name="sprefix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['sourcesuffix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['sourcesuffix']; ?>" name="ssuffix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['sourcesuffix']; ?>" name="ssuffix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['repoprefix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['repoprefix']; ?>" name="rprefix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['repoprefix']; ?>" name="rprefix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['reposuffix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['reposuffix']; ?>" name="rsuffix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['reposuffix']; ?>" name="rsuffix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['noteprefix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['noteprefix']; ?>" name="nprefix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['noteprefix']; ?>" name="nprefix" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['notesuffix']; ?>:</td>
-                            <td><input type="text" value="<?php echo $tngconfig['notesuffix']; ?>" name="nsuffix" size="5"></td>
+                            <td>
+                                <input type="text" value="<?php echo $tngconfig['notesuffix']; ?>" name="nsuffix" size="5">
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -1553,7 +1730,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         } ?>
                         <tr>
                             <td><?php echo $text['dna_tests'] . ' ' . $admtext['maxsearchresults']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $maxdnasearchresults; ?>" name="maxdnasearchresults" size="3"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $maxdnasearchresults; ?>" name="maxdnasearchresults" size="3">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['show_test_number']; ?>:</td>
@@ -1613,7 +1792,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['excludefromancsn']; ?>*:</td>
-                            <td><input type="text" value="<?php echo stripslashes($surnameexcl); ?>" name="surnameexcl" class="longfield"></td>
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($surnameexcl); ?>" name="surnameexcl" class="longfield">
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">*<?php echo $admtext['commas']; ?></td>
@@ -1644,67 +1825,83 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         ?>
                         <tr>
                             <td><?php echo $admtext['mainbackground']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bgmain); ?>" name="bgmain" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bgmain); ?>" name="bgmain" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txtmain); ?>" name="txtmain" size="7">&nbsp;&nbsp;
                                 <input type="text" class="<?php echo $mainclass; ?>" style="background-color:<?php echo $bgmain; ?>; color:<?php echo $txtmain; ?>;"
-                                       value="<?php echo $admtext['textcolor']; ?>" id="exmain" disabled></td>
+                                       value="<?php echo $admtext['textcolor']; ?>" id="exmain" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['modebackground']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bgmode); ?>" name="bgmode" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bgmode); ?>" name="bgmode" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txtmode); ?>" name="txtmode" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bgmode; ?>; color:<?php echo $txtmode; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="exmode" disabled></td>
+                                       name="exmode" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['fastmutbackground']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bgfastmut); ?>" name="bgfastmut" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bgfastmut); ?>" name="bgfastmut" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txtfastmut); ?>" name="txtfastmut" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bgfastmut; ?>; color:<?php echo $txtfastmut; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="exfastmut" disabled></td>
+                                       name="exfastmut" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['background1_12']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bg1_12); ?>" name="bg1_12" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bg1_12); ?>" name="bg1_12" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt1_12); ?>" name="txt1_12" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bg1_12; ?>; color:<?php echo $txt1_12; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex1_12" disabled></td>
+                                       name="ex1_12" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['background13_25']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bg13_25); ?>" name="bg13_25" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bg13_25); ?>" name="bg13_25" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt13_25); ?>" name="txt13_25" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bg13_25; ?>; color:<?php echo $txt13_25; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex13_25" disabled></td>
+                                       name="ex13_25" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['background26_37']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bg26_37); ?>" name="bg26_37" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bg26_37); ?>" name="bg26_37" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt26_37); ?>" name="txt26_37" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bg26_37; ?>; color:<?php echo $txt26_37; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex26_37" disabled></td>
+                                       name="ex26_37" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['background38_67']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bg38_67); ?>" name="bg38_67" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bg38_67); ?>" name="bg38_67" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt38_67); ?>" name="txt38_67" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bg38_67; ?>; color:<?php echo $txt38_67; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex38_67" disabled></td>
+                                       name="ex38_67" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['background111']; ?>:</td>
-                            <td><input type="text" value="<?php echo stripslashes($bg111); ?>" name="bg111" size="7">&nbsp;
+                            <td>
+                                <input type="text" value="<?php echo stripslashes($bg111); ?>" name="bg111" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt111); ?>" name="txt111" size="7">&nbsp;&nbsp;
                                 <input type="text" class="center" style="background-color:<?php echo $bg111; ?>; color:<?php echo $txt111; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex111" disabled></td>
+                                       name="ex111" disabled>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -1732,7 +1929,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['maxsearchresults']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $maxsearchresults; ?>" name="maxsearchresults" size="5"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $maxsearchresults; ?>" name="maxsearchresults" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['indstart']; ?>:</td>
@@ -1779,26 +1978,34 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 
                         <tr>
                             <td><?php echo $admtext['time_offset']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $time_offset; ?>" name="time_offset"
-                                                   size="5"> <?php echo $admtext['servertime'] . " <strong>" . date("D h:i a") . "</strong> ";
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $time_offset; ?>" name="time_offset"
+                                       size="5"> <?php echo $admtext['servertime'] . " <strong>" . date("D h:i a") . "</strong> ";
                                 $new_U = date("U") + $time_offset * 3600;
                                 echo $admtext['sitetime'] . " <strong>" . date("D h:i a", $new_U) . "</strong>"; ?></td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['edit_timeout']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $tngconfig['edit_timeout']; ?>" name="edit_timeout" size="5"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $tngconfig['edit_timeout']; ?>" name="edit_timeout" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['maxgedcom']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $maxgedcom; ?>" name="maxgedcom" size="5"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $maxgedcom; ?>" name="maxgedcom" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['change_cutoff']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $change_cutoff; ?>" name="change_cutoff" size="5"> <?php echo $admtext['nocutoff']; ?></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $change_cutoff; ?>" name="change_cutoff" size="5"> <?php echo $admtext['nocutoff']; ?></td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['change_limit']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $change_limit; ?>" name="change_limit" size="5"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $change_limit; ?>" name="change_limit" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['datefmt']; ?>:</td>
@@ -1859,7 +2066,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['lineending']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $lineendingdisplay; ?>" name="lineending" size="5"></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $lineendingdisplay; ?>" name="lineending" size="5">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['encrtype']; ?>:</td>
@@ -1970,7 +2179,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td><?php echo $admtext['backupdays']; ?>:</td>
-                            <td colspan="4"><input type="text" value="<?php echo $tngconfig['backupdays']; ?>" name="backupdays" size="5"> <?php echo $admtext['nocutoff']; ?></td>
+                            <td colspan="4">
+                                <input type="text" value="<?php echo $tngconfig['backupdays']; ?>" name="backupdays" size="5"> <?php echo $admtext['nocutoff']; ?></td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['nointernet']; ?>:</td>

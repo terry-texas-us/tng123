@@ -204,7 +204,9 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['rankpriority']; ?>:</span></td>
-                        <td><input type="text" name="ranking" size="3" maxlength="3" value="<?php echo $row['ranking']; ?>"></td>
+                        <td>
+                            <input type="text" name="ranking" size="3" maxlength="3" value="<?php echo $row['ranking']; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['active']; ?>:</span></td>

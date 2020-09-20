@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 include "checklogin.php";
 
 if ($type == "map") {
-  $firstfield = "personID";
+    $firstfield = "personID";
     $subtitle = $admtext['enternamepart2'];
 } else {
     $firstfield = "mylastname";
@@ -29,35 +29,42 @@ header("Content-type:text/html; charset=" . $session_charset);
         } ?>
         <input type="hidden" name="formname" value="<?php echo $formname; ?>">
         <?php if ($field == "") {
-      $field = "personID";
-    } ?>
-    <input type="hidden" name="field" value="<?php echo $field; ?>">
-      <?php if ($type == "") {
-        $type = "text";
-      } ?>
+            $field = "personID";
+        } ?>
+        <input type="hidden" name="field" value="<?php echo $field; ?>">
+        <?php if ($type == "") {
+            $type = "text";
+        } ?>
         <input type="hidden" name="type" value="<?php echo $type; ?>">
-      <?php
-      if ($nameplusid) {
-        echo "<input type='hidden' name=\"nameplusid\" value=\"$nameplusid\">";
-      }
-      ?>
-    <table cellspacing="0" cellpadding="2">
-      <tr>
-        <td><span class="normal"><?php echo $admtext['firstname']; ?>: </span></td>
-                <td><input type="text" name="myfirstname" id="myfirstname"></td>
+        <?php
+        if ($nameplusid) {
+            echo "<input type='hidden' name=\"nameplusid\" value=\"$nameplusid\">";
+        }
+        ?>
+        <table cellspacing="0" cellpadding="2">
+            <tr>
+                <td><span class="normal"><?php echo $admtext['firstname']; ?>: </span></td>
+                <td>
+                    <input type="text" name="myfirstname" id="myfirstname">
+                </td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['lastname']; ?>: </span></td>
-                <td><input type="text" name="mylastname" id="mylastname"></td>
+                <td>
+                    <input type="text" name="mylastname" id="mylastname">
+                </td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['personid']; ?>: </span></td>
-              <td><input type="text" name="personID"></td>
+                <td>
+                    <input type="text" name="personID">
+                </td>
             </tr>
         </table>
-    <br>
-    <input type="submit" value="<?php echo $admtext['search']; ?>"> <img src="img/spinner.gif" id="findspin" style="display:none;">
-  </form>
+        <br>
+        <input type="submit" value="<?php echo $admtext['search']; ?>">
+        <img src="img/spinner.gif" id="findspin" style="display:none;">
+    </form>
 
 </div>
 

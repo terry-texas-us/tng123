@@ -59,18 +59,18 @@ echo "
    </tr>";
 
 if (!empty($authors)) {
-  foreach ($authors as $author) {
-    echo "
+    foreach ($authors as $author) {
+        echo "
          <tr>
             <td>author</td>
             <td>$author</td>
          </tr>";
-  }
+    }
 }
 
 if (!empty($private)) {
 
-  echo "
+    echo "
    <tr>
       <td>private</td>
       <td>$private</td>
@@ -80,7 +80,7 @@ if (!empty($private)) {
 
 if (!empty($wikipage)) {
 
-  echo "
+    echo "
    <tr>
       <td>wikipage</td>
       <td>$wikipage</td>

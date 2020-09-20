@@ -40,7 +40,9 @@ header("Content-type:text/html; charset=" . $session_charset);
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td valign="top">
-                <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindForm()"></form>
+                <form action="">
+                    <input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindForm()">
+                </form>
             </td>
         </tr>
     </table>

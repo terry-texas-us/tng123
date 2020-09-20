@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit) {
-  exit;
+    exit;
 }
 
 require "adminlog.php";
@@ -15,7 +15,7 @@ require "adminlog.php";
 $display_org = stripslashes($display);
 
 if ($session_charset != "UTF-8") {
-  $display = tng_utf8_decode($display);
+    $display = tng_utf8_decode($display);
 }
 
 $display = addslashes($display);
@@ -24,9 +24,9 @@ $query = "UPDATE $mediatypes_table SET display=\"$display\", path=\"$path\", lik
 $result = @tng_query($query);
 
 if (tng_affected_rows()) {
-  adminwritelog($admtext['editcoll'] . ": $display_org");
-  echo "1";
+    adminwritelog($admtext['editcoll'] . ": $display_org");
+    echo "1";
 } else {
-  echo "0";
+    echo "0";
 }
 

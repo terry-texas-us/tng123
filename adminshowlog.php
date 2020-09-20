@@ -11,9 +11,9 @@ include "version.php";
 require "config/logconfig.php";
 
 if ($adminmaxloglines) {
-  $loglines = $adminmaxloglines;
+    $loglines = $adminmaxloglines;
 } else {
-  $loglines = "";
+    $loglines = "";
 }
 
 tng_adminheader($admtext['adminlogfile'], "");
@@ -24,18 +24,18 @@ tng_adminheader($admtext['adminlogfile'], "");
 <div width="100%" class="lightback">
     <div style="padding:10px;" class="databack normal">
         <p class="plainheader"><?php echo "$loglines " . $admtext['mostrecentactions']; ?></p>
-      <table cellpadding="3" cellspacing="1" class="normal">
-        <tr>
-          <td class="fieldnameback fieldname"><?php echo $admtext['mostrecentactions']; ?></td>
+        <table cellpadding="3" cellspacing="1" class="normal">
+            <tr>
+                <td class="fieldnameback fieldname"><?php echo $admtext['mostrecentactions']; ?></td>
             </tr>
-          <?php
-          $lines = file($adminlogfile);
+            <?php
+            $lines = file($adminlogfile);
 
-          foreach ($lines as $line) {
-              echo "<tr><td class='lightback'>$line</td></tr>\n";
-          }
-          ?>
-      </table>
+            foreach ($lines as $line) {
+                echo "<tr><td class='lightback'>$line</td></tr>\n";
+            }
+            ?>
+        </table>
     </div>
 </div>
 

@@ -46,101 +46,121 @@ echo help_header("Help: People");
                     Searching with no options selected and no value in the search box will find all people in your database.</p>
 
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
-                values and searches again.</p>
+                    values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
-            <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
-                time, click the box in the
-                <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
-                <strong>Select All</strong> or <strong>Clear All</strong>
-                buttons to toggle all select boxes at once.</p>
+                <h5 class="optionhead">Actions</h5>
+                <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
+                    time, click the box in the
+                    <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
+                    the
+                    <strong>Select All</strong> or <strong>Clear All</strong>
+                    buttons to toggle all select boxes at once.</p>
 
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="add"><h4 class="subheadbold">Adding New People</h4></a>
-            <p>To add a new person, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations,
-                associations and
-                additional events) can be added after saving or locking the record. Take note of the following:</p>
+            </td>
+        </tr>
+        <tr class="databack">
+            <td class="tngshadow">
+                <p style="float:right;"><a href="#top">Top</a></p>
+                <a id="add"><h4 class="subheadbold">Adding New People</h4></a>
+                <p>To add a new person, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations,
+                    associations and
+                    additional events) can be added after saving or locking the record. Take note of the following:</p>
 
-            <h5 class="optionhead">Tree</h5>
-            <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new individual.</p>
+                <h5 class="optionhead">Tree</h5>
+                <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new
+                    individual.</p>
 
-            <h5 class="optionhead">Branch (optional)</h5>
-            <p>Assigning a person to a "Branch" limits access to the person's data to users who are also assigned to the same Branch. If at least one
-                Branch has been
-                defined and your user account is not assigned to a particular branch, you may elect to assign the new person to one or more of the
-                existing branches. To select
-                Branches, click on the "Edit" link to open a box with all Branch options for the selected Tree. Use the Control (Windows) or Command
-                (Mac) key to select
-                more than one branch. When you're done making your selection, move your mouse pointer out of the editing box and it will
-                disappear.</p>
+                <h5 class="optionhead">Branch (optional)</h5>
+                <p>Assigning a person to a "Branch" limits access to the person's data to users who are also assigned to the same Branch. If at least
+                    one
+                    Branch has been
+                    defined and your user account is not assigned to a particular branch, you may elect to assign the new person to one or more of the
+                    existing branches. To select
+                    Branches, click on the "Edit" link to open a box with all Branch options for the selected Tree. Use the Control (Windows) or
+                    Command
+                    (Mac) key to select
+                    more than one branch. When you're done making your selection, move your mouse pointer out of the editing box and it will
+                    disappear.</p>
 
-            <h5 class="optionhead">Person ID</h5>
-            <p>The Person ID must be unique within the selected Tree and should consist of an upper case <strong>I</strong> followed by a number (no
-                more than 21 digits).
-                An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may enter
-                your own ID if desired.
-                To check if the ID you have entered is unique, click the <strong>Check</strong> button. A message will appear to tell you if the ID is
-                in use or not.
-                To generate the next sequential unique ID, click <strong>Generate</strong>. This will locate the highest number in your database and
-                add 1.
-                To ensure that the displayed ID is not claimed by another user while you're entering the data, click the <strong>Lock</strong> button.
-            </p>
+                <h5 class="optionhead">Person ID</h5>
+                <p>The Person ID must be unique within the selected Tree and should consist of an upper case <strong>I</strong> followed by a number
+                    (no
+                    more than 21 digits).
+                    An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may
+                    enter
+                    your own ID if desired.
+                    To check if the ID you have entered is unique, click the <strong>Check</strong> button. A message will appear to tell you if the
+                    ID is
+                    in use or not.
+                    To generate the next sequential unique ID, click <strong>Generate</strong>. This will locate the highest number in your database
+                    and
+                    add 1.
+                    To ensure that the displayed ID is not claimed by another user while you're entering the data, click the <strong>Lock</strong>
+                    button.
+                </p>
 
-            <p><strong>NOTE</strong>: If you are using this software in conjunction with a PC/Mac-based genealogy program which also creates IDs for
-                new individuals,
-                it is HIGHLY RECOMMENDED that you keep all IDs in sync between the two programs at all times. Failure to do this may result in
-                collisions and may also cause
-                your media links to become unusable. If your desktop program creates IDs that do not conform to traditional standards (for example,
-                the
-                <strong>I</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
+                <p><strong>NOTE</strong>: If you are using this software in conjunction with a PC/Mac-based genealogy program which also creates IDs
+                    for
+                    new individuals,
+                    it is HIGHLY RECOMMENDED that you keep all IDs in sync between the two programs at all times. Failure to do this may result in
+                    collisions and may also cause
+                    your media links to become unusable. If your desktop program creates IDs that do not conform to traditional standards (for
+                    example,
+                    the
+                    <strong>I</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
 
-            <h5 class="optionhead">Name</h5>
-            <p>Enter the individual's First/Given Name(s) and/or Last/Surname. Middle names should be included with First/Given Name(s). If you have
-                elected to support
-                surname prefixes as a separate entity (so the prefixes are ignored during sorting), enter the prefix portion in the box labeled
-                Surname Prefix.
-                <strong>Note:</strong> If this box is not visible, go to Setup/General Settings and check the option to use surname prefixes.</p>
+                <h5 class="optionhead">Name</h5>
+                <p>Enter the individual's First/Given Name(s) and/or Last/Surname. Middle names should be included with First/Given Name(s). If you
+                    have
+                    elected to support
+                    surname prefixes as a separate entity (so the prefixes are ignored during sorting), enter the prefix portion in the box labeled
+                    Surname Prefix.
+                    <strong>Note:</strong> If this box is not visible, go to Setup/General Settings and check the option to use surname prefixes.</p>
 
-            <h5 class="optionhead">Gender / Nickname / Title / Prefix / Suffix / Name Order</h5>
-            <p>Enter as much of this information as you have available. A <strong>Nickname</strong> is an informal name sometimes associated with the
-                individual.
-                A <strong>Title</strong> is used in front of the name (e.g., <em>Sir</em> or <em>Captain</em>) but is not part of the name. A <strong>Prefix</strong>
-                is used in front of the name and is usually considered part of the
-                name. A <strong>Suffix</strong> is used after the name (e.g., <em>M.D.</em> or <em>Esquire</em>). Use <strong>Name Order</strong> to
-                change how this name should be displayed.
-                You can change the Name Order for all people in your database under Setup/General Settings.</p>
+                <h5 class="optionhead">Gender / Nickname / Title / Prefix / Suffix / Name Order</h5>
+                <p>Enter as much of this information as you have available. A <strong>Nickname</strong> is an informal name sometimes associated with
+                    the
+                    individual.
+                    A <strong>Title</strong> is used in front of the name (e.g., <em>Sir</em> or <em>Captain</em>) but is not part of the name. A
+                    <strong>Prefix</strong>
+                    is used in front of the name and is usually considered part of the
+                    name. A <strong>Suffix</strong> is used after the name (e.g., <em>M.D.</em> or <em>Esquire</em>). Use <strong>Name Order</strong>
+                    to
+                    change how this name should be displayed.
+                    You can change the Name Order for all people in your database under Setup/General Settings.</p>
 
-            <h5 class="optionhead">Living</h5>
-            <p>If this person is alive, or if you wish to restrict access to this person's data to users who are logged in with rights to see living
-                data,
-                check this box.</p>
+                <h5 class="optionhead">Living</h5>
+                <p>If this person is alive, or if you wish to restrict access to this person's data to users who are logged in with rights to see
+                    living
+                    data,
+                    check this box.</p>
 
-            <h5 class="optionhead">Private</h5>
-            <p>Whether this person is alive or not, you can still restrict access to this person's data by checking this option. Only
-                users with rights to see private data will be able to see information associated with a "private" person.</p>
+                <h5 class="optionhead">Private</h5>
+                <p>Whether this person is alive or not, you can still restrict access to this person's data by checking this option. Only
+                    users with rights to see private data will be able to see information associated with a "private" person.</p>
 
-            <h5 class="optionhead">Events</h5>
-            <p>Enter dates and places for the standard events listed (if known). Additional events can be added after the record is saved or locked.
-                Always enter
-                dates in the standard genealogical format, DD MMM YYYY (for example, <em>18 Feb 2008</em>). List place information from local to
-                general, separating each locality by a
-                comma (for example, <em>Boston, Suffolk, Massachusetts, USA</em>), or select an existing place name by clicking "Find" icon
-                (magnifying glass).
-                To limit the number of results found, enter part of the place name before clicking the Find icon. All results will contain what you
-                entered in the place name.</p>
+                <h5 class="optionhead">Events</h5>
+                <p>Enter dates and places for the standard events listed (if known). Additional events can be added after the record is saved or
+                    locked.
+                    Always enter
+                    dates in the standard genealogical format, DD MMM YYYY (for example, <em>18 Feb 2008</em>). List place information from local to
+                    general, separating each locality by a
+                    comma (for example, <em>Boston, Suffolk, Massachusetts, USA</em>), or select an existing place name by clicking "Find" icon
+                    (magnifying glass).
+                    To limit the number of results found, enter part of the place name before clicking the Find icon. All results will contain what
+                    you
+                    entered in the place name.</p>
 
-            <h5 class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</h5>
-            <p>These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the
-                GEDCOM standard).
-                <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that
-                you logout and back in again).</p>
+                <h5 class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</h5>
+                <p>These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented
+                    the
+                    GEDCOM standard).
+                    <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires
+                    that
+                    you logout and back in again).</p>
 
-        </td>
-    </tr>
+            </td>
+        </tr>
         <tr class="databack">
             <td class="tngshadow">
                 <p style="float:right;"><a href="#top">Top</a></p>
@@ -150,13 +170,16 @@ echo help_header("Help: People");
                     next to that individual.</p>
 
                 <h5 class="optionhead">Notes / Citations / Associations / "More"</h5>
-            <p>Notes, citations and associations may be linked to events or to the person in general by clicking on the associated icons at the top of
-                the page
-                or next to each event. "More" information for an event may also be added for an event by clicking on the "Plus" icon. When items exist
-                in any of these
-                categories, the corresponding icons will feature a green dot in the upper right corner. For more information on each category, see the
-                Help links that
-                become visible when the icons are clicked.</p>
+                <p>Notes, citations and associations may be linked to events or to the person in general by clicking on the associated icons at the
+                    top of
+                    the page
+                    or next to each event. "More" information for an event may also be added for an event by clicking on the "Plus" icon. When items
+                    exist
+                    in any of these
+                    categories, the corresponding icons will feature a green dot in the upper right corner. For more information on each category, see
+                    the
+                    Help links that
+                    become visible when the icons are clicked.</p>
 
                 <h5 class="optionhead">Other Events</h5>
                 <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
@@ -181,60 +204,66 @@ echo help_header("Help: People");
                 <p>If the current individual has parents, a <strong>Parents</strong> section will be present under the Events section. It will start
                     out
                     collapsed and will indicate the number
-                of parent sets in parentheses. To expand the section and view all sets of parents, click on the word "Parents" or the arrow next to
-                it. Some information, including the nature of the
-                relationship between the current individual and each set of parents, may be edited in each block. When your mouse pointer is over a
-                set of parents, an <strong>Unlink</strong>
-                option will be visible in the upper right corner. Click that link to unlink the current individual from that set of parents.</p>
+                    of parent sets in parentheses. To expand the section and view all sets of parents, click on the word "Parents" or the arrow next
+                    to
+                    it. Some information, including the nature of the
+                    relationship between the current individual and each set of parents, may be edited in each block. When your mouse pointer is over
+                    a
+                    set of parents, an <strong>Unlink</strong>
+                    option will be visible in the upper right corner. Click that link to unlink the current individual from that set of parents.</p>
 
-            <p>You can add a new set of parents for the current individual by clicking the <strong>Add New</strong> link next to
-                the Parents section. At that point you will see a popup message asking if you want to save your changes first ("OK" or "Cancel").
-                If you choose "OK", then the page will be saved and then you will be taken to a New Family page with the current
-                individual listed as a child. If you choose "Cancel", no changes will be saved, but you will still be directed to
-                the New Family page with the current individual as a child. You will then have the chance to enter or select the new
-                parents and provide details about the new family.</p>
+                <p>You can add a new set of parents for the current individual by clicking the <strong>Add New</strong> link next to
+                    the Parents section. At that point you will see a popup message asking if you want to save your changes first ("OK" or "Cancel").
+                    If you choose "OK", then the page will be saved and then you will be taken to a New Family page with the current
+                    individual listed as a child. If you choose "Cancel", no changes will be saved, but you will still be directed to
+                    the New Family page with the current individual as a child. You will then have the chance to enter or select the new
+                    parents and provide details about the new family.</p>
 
-            <p>You can also add new parents by selecting the option "Go to new family with current individual as child" at the bottom of
-                the page.</p>
+                <p>You can also add new parents by selecting the option "Go to new family with current individual as child" at the bottom of
+                    the page.</p>
 
-            <h5 class="optionhead">Spouses/Partners</h5>
-            <p>If the current individual has at least one spouse or partner, a <strong>Spouses/Partners</strong> section will be present under the
-                Parents section. It will start out collapsed and will indicate the number
-                of spouses/partners in parentheses. To expand the section and view all spouses or partners, click on the words "Spouses/Parters" or
-                the arrow next to them. When your mouse pointer is over a spouse/partner, an <strong>Unlink</strong>
-                option will be visible in the upper right corner. Click that link to unlink the current individual from that spouse or partner.</p>
+                <h5 class="optionhead">Spouses/Partners</h5>
+                <p>If the current individual has at least one spouse or partner, a <strong>Spouses/Partners</strong> section will be present under the
+                    Parents section. It will start out collapsed and will indicate the number
+                    of spouses/partners in parentheses. To expand the section and view all spouses or partners, click on the words "Spouses/Parters"
+                    or
+                    the arrow next to them. When your mouse pointer is over a spouse/partner, an <strong>Unlink</strong>
+                    option will be visible in the upper right corner. Click that link to unlink the current individual from that spouse or partner.
+                </p>
 
-            <p>You can add a new spouse or partner for the current individual by clicking the <strong>Add New</strong> link next to
-                the Spouses section. At that point you will see a popup message asking if you want to save your changes first ("OK" or "Cancel").
-                If you choose "OK", then the page will be saved and then you will be taken to a New Family page with the current
-                individual listed as either the husband or the wife (depending on the gender of the current individual). If you choose
-                "Cancel", no changes will be saved, but you will still be directed to the New Family page with the current individual
-                as a spouse. You will then have the chance to enter or select the new spouse and provide details about the new family.</p>
+                <p>You can add a new spouse or partner for the current individual by clicking the <strong>Add New</strong> link next to
+                    the Spouses section. At that point you will see a popup message asking if you want to save your changes first ("OK" or "Cancel").
+                    If you choose "OK", then the page will be saved and then you will be taken to a New Family page with the current
+                    individual listed as either the husband or the wife (depending on the gender of the current individual). If you choose
+                    "Cancel", no changes will be saved, but you will still be directed to the New Family page with the current individual
+                    as a spouse. You will then have the chance to enter or select the new spouse and provide details about the new family.</p>
 
-            <p>You can also add new a new spouse by selecting the option "Go to new family with current individual as spouse" at the bottom of
-                the page.</p>
+                <p>You can also add new a new spouse by selecting the option "Go to new family with current individual as spouse" at the bottom of
+                    the page.</p>
 
-            <h5 class="optionhead">Sorting Parents or Spouses</h5>
-            <p>If more than one spouse or set of parents exists,
-                you may change the order by "dragging" the blocks up and down. To drag, click your mouse on the "Drag" box and hold down the button,
-                then move your mouse up or
-                down on the page. Let go of the mouse button when the block appears in the desired location. Sorting changes are saved
-                automatically.</p>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
+                <h5 class="optionhead">Sorting Parents or Spouses</h5>
+                <p>If more than one spouse or set of parents exists,
+                    you may change the order by "dragging" the blocks up and down. To drag, click your mouse on the "Drag" box and hold down the
+                    button,
+                    then move your mouse up or
+                    down on the page. Let go of the mouse button when the block appears in the desired location. Sorting changes are saved
+                    automatically.</p>
+            </td>
+        </tr>
+        <tr class="databack">
+            <td class="tngshadow">
 
-            <p style="float:right;"><a href="#top">Top</a></p>
-            <a id="delete"><h4 class="subheadbold">Deleting People</h4></a>
-            <p>To delete one person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Delete icon next to that
-                individual. The row will
-                change color and then vanish as the person is deleted. To delete more than one person at a time, check the box in the Select column
-                next to each person to be
-                deleted, then click the "Delete Selected" button at the top of the page.</p>
+                <p style="float:right;"><a href="#top">Top</a></p>
+                <a id="delete"><h4 class="subheadbold">Deleting People</h4></a>
+                <p>To delete one person, use the <a href="#search">Search</a> tab to locate the individual, then click on the Delete icon next to that
+                    individual. The row will
+                    change color and then vanish as the person is deleted. To delete more than one person at a time, check the box in the Select
+                    column
+                    next to each person to be
+                    deleted, then click the "Delete Selected" button at the top of the page.</p>
 
-        </td>
-    </tr>
+            </td>
+        </tr>
         <tr class="databack">
             <td class="tngshadow">
                 <p style="float:right;"><a href="#top">Top</a></p>

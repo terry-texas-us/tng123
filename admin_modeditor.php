@@ -37,7 +37,7 @@ $menu .= doMenu($modtabs, "modlist", $innermenu);
 $menu .= "</div>";
 
 if (!isset($message)) {
-  $message = "";
+    $message = "";
 }
 $headline = displayHeadline($admtext['modmgr'] . ' - ' . ucwords($admtext['edparams']), "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
@@ -67,44 +67,44 @@ $objinits = array (
  * PROCESS POSTED FORM DATA
  *************************************************************************/
 if (!empty($_POST)) {
-  foreach ($_POST as $key => $value) {
-    ${$key} = $value;
-  }
-  if ($submit == "pUpdate") {
-    include_once 'classes/modeditor.class.php';
-    $oEdit = new modeditor($objinits);
-    if ($oEdit->update_parameter($param)) {
-      $action = EDITP;
-      $cfgpath = $param['cfg'];
-    } else {
-      header("Location:admin_showmodslog.php");
-      exit;
+    foreach ($_POST as $key => $value) {
+        ${$key} = $value;
     }
-  } elseif ($submit == "pRestore") {
-    include_once 'classes/modeditor.class.php';
-    $oEdit = new modeditor($objinits);
-    if ($oEdit->restore_parameter($param)) {
-      $action = EDITP;
-      $cfgpath = $param['cfg'];
-    } else {
-      header("Location:admin_showmodslog.php");
-      exit;
+    if ($submit == "pUpdate") {
+        include_once 'classes/modeditor.class.php';
+        $oEdit = new modeditor($objinits);
+        if ($oEdit->update_parameter($param)) {
+            $action = EDITP;
+            $cfgpath = $param['cfg'];
+        } else {
+            header("Location:admin_showmodslog.php");
+            exit;
+        }
+    } elseif ($submit == "pRestore") {
+        include_once 'classes/modeditor.class.php';
+        $oEdit = new modeditor($objinits);
+        if ($oEdit->restore_parameter($param)) {
+            $action = EDITP;
+            $cfgpath = $param['cfg'];
+        } else {
+            header("Location:admin_showmodslog.php");
+            exit;
+        }
+    } elseif ($submit == "pCancel") {
+        header("Location:admin_modhandler.php");
     }
-  } elseif ($submit == "pCancel") {
-    header("Location:admin_modhandler.php");
-  }
 } /*************************************************************************
  * PROCESS QUERY LINE ARGS
  *************************************************************************/
 elseif (!empty($_GET)) {
-  foreach ($_GET as $key => $value) {
-    ${$key} = $value;
-  }
-  if (isset($a)) {
-    $action = $a;
-      $cfgfile = isset($m) ? $m : '';
-    $cfgpath = isset($m) ? $cfgfolder . $m : '';
-  }
+    foreach ($_GET as $key => $value) {
+        ${$key} = $value;
+    }
+    if (isset($a)) {
+        $action = $a;
+        $cfgfile = isset($m) ? $m : '';
+        $cfgpath = isset($m) ? $cfgfolder . $m : '';
+    }
 }
 
 /*************************************************************************
@@ -125,11 +125,11 @@ body {
 </style>";
 
 if ($options['fix_header'] == YES && $sitever != 'mobile') {
-  $headclass = 'mmhead-fixed';
-  $tableclass = 'm2table-fixed';
+    $headclass = 'mmhead-fixed';
+    $tableclass = 'm2table-fixed';
 } else {
-  $headclass = 'mmhead-scroll';
-  $tableclass = 'm2table-scroll';
+    $headclass = 'mmhead-scroll';
+    $tableclass = 'm2table-scroll';
 }
 
 echo "
@@ -144,25 +144,25 @@ echo "
 
 if (!empty($action) && $action == EDITP) {
 
-  if (!class_exists("modeditor")) {
-    require_once 'classes/modeditor.class.php';
-    $oEdit = new modeditor($objinits);
-  }
+    if (!class_exists("modeditor")) {
+        require_once 'classes/modeditor.class.php';
+        $oEdit = new modeditor($objinits);
+    }
 
-  if (!$oEdit->show_editor($cfgpath)) {
-    ?>
-      <script>
-          window.location.href = "admin_showmodslog.php";
-      </script>
-    <?php
-  }
+    if (!$oEdit->show_editor($cfgpath)) {
+        ?>
+        <script>
+            window.location.href = "admin_showmodslog.php";
+        </script>
+        <?php
+    }
 }
 
 /*************************************************************************
  * SHOW EDIT FORM
  *************************************************************************/
 if ($sitever != 'mobile' && $options['adjust_headers']) {
-  echo "
+    echo "
 <script type=\"text/javascript\">
    window.scroll(0,0);
    jQuery(document).ready(function() {
@@ -191,42 +191,42 @@ echo "
 exit;
 
 function set_horizontal_tabs($show_analyzer = NO, $show_updates = NO) {
-  global $admtext;
+    global $admtext;
 
-  $modtabs = array();
-  $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-  $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-  $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
-  if ($show_analyzer == YES) {
-    $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
-    $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
-  }
-  if ($show_updates == YES) {
-    $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
-  }
-  return $modtabs;
+    $modtabs = array();
+    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
+    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
+    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    if ($show_analyzer == YES) {
+        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+    }
+    if ($show_updates == YES) {
+        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+    }
+    return $modtabs;
 }
 
 function set_innermenu_links($tng_version) {
-  global $admtext;
+    global $admtext;
 
-  $parts = explode(".", $tng_version);        // added to determine TNG vNN for
-  $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";    // Mods for TNG vNN text display
-  $tngmodurl = "Mods_for_TNG_v{$parts[0]}";    // Mods for TNG vNN URL
-  $helplang = findhelp("modhandler_help.php");
+    $parts = explode(".", $tng_version);        // added to determine TNG vNN for
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";    // Mods for TNG vNN text display
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";    // Mods for TNG vNN URL
+    $helplang = findhelp("modhandler_help.php");
 
-  // inner menu help
-  $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    // inner menu help
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 
-  // MM syntax
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    // MM syntax
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
 
-  // mod guidelines
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    // mod guidelines
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
-  // mods for TNGv10
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
-  return $innermenu;
+    // mods for TNGv10
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    return $innermenu;
 }
 
 ?>

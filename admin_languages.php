@@ -81,8 +81,10 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
             <div class="normal">
 
                 <form action="admin_languages.php" name="form1">
-                    <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
-                    <input type="hidden" name="findlang" value="1"><input type="hidden" name="newsearch" value="1">
+                    <?php echo $admtext['searchfor']; ?>:
+                    <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                    <input type="hidden" name="findlang" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
                 </form>

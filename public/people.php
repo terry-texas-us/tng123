@@ -81,25 +81,25 @@ function fetchPersonNameWithRights(string $people_table, $passocID, array $tree)
  * @return array
  */
 function getBirthInformation(bool $both, array $person): array {
-  global $admtext;
+    global $admtext;
 
-  if ($both) {
-    if ($person['birthdate'] || $person['birthplace']) {
-      $birthdate = $admtext['birthabbr'] . " " . displayDate($person['birthdate']);
-      $birthplace = $person['birthplace'];
+    if ($both) {
+        if ($person['birthdate'] || $person['birthplace']) {
+            $birthdate = $admtext['birthabbr'] . " " . displayDate($person['birthdate']);
+            $birthplace = $person['birthplace'];
+        } else {
+            if ($person['altbirthdate'] || $person['altbirthplace']) {
+                $birthdate = $admtext['chrabbr'] . " " . displayDate($person['altbirthdate']);
+                $birthplace = $person['altbirthplace'];
+            } else {
+                $birthdate = "";
+                $birthplace = "";
+            }
+        }
     } else {
-      if ($person['altbirthdate'] || $person['altbirthplace']) {
-        $birthdate = $admtext['chrabbr'] . " " . displayDate($person['altbirthdate']);
-        $birthplace = $person['altbirthplace'];
-      } else {
-        $birthdate = "";
-        $birthplace = "";
-      }
+        $birthdate = $birthplace = "";
     }
-  } else {
-    $birthdate = $birthplace = "";
-  }
-  return [$birthdate, $birthplace];
+    return [$birthdate, $birthplace];
 }
 
 /**

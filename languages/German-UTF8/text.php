@@ -1,683 +1,683 @@
 <?php
 switch ($textpart) {
-  //browsesources.php, showsource.php
-  case "sources":
-    $text['browseallsources'] = "Alle Quellen anzeigen";
-    $text['shorttitle'] = "Kurztitel";
-    $text['callnum'] = "Signatur";
-    $text['author'] = "Autor";
-    $text['publisher'] = "Veröffentlicht durch";
-    $text['other'] = "Zusätzliche Angaben";
-    $text['sourceid'] = "Quellen-Kennung";
-    $text['moresrc'] = "Weitere Quellen";
-    $text['repoid'] = "Aufbewahrungs-Kennung";
-    $text['browseallrepos'] = "Alle Aufbewahrungsorte durchblättern";
-    break;
+    //browsesources.php, showsource.php
+    case "sources":
+        $text['browseallsources'] = "Alle Quellen anzeigen";
+        $text['shorttitle'] = "Kurztitel";
+        $text['callnum'] = "Signatur";
+        $text['author'] = "Autor";
+        $text['publisher'] = "Veröffentlicht durch";
+        $text['other'] = "Zusätzliche Angaben";
+        $text['sourceid'] = "Quellen-Kennung";
+        $text['moresrc'] = "Weitere Quellen";
+        $text['repoid'] = "Aufbewahrungs-Kennung";
+        $text['browseallrepos'] = "Alle Aufbewahrungsorte durchblättern";
+        break;
 
-  //changelanguage.php, savelanguage.php
-  case "language":
-    $text['newlanguage'] = "Neue Sprache";
-    $text['changelanguage'] = "Sprache ändern";
-    $text['languagesaved'] = "Sprache gespeichert";
-    $text['sitemaint'] = "Momentan werden auf dieser Website Wartungsarbeiten durchgeführt";
-    $text['standby'] = "Diese Website ist zeitweilig nicht verfügbar, da eine Datenbank-Aktualisierung läuft. Bitte versuchen Sie es in einigen Minuten nochmals. Falls diese Website für längere Zeit nicht verfügbar bleibt, so <a href=\"suggest.php\">wenden Sie sich bitte an den Verwalter</a>.";
-    break;
+    //changelanguage.php, savelanguage.php
+    case "language":
+        $text['newlanguage'] = "Neue Sprache";
+        $text['changelanguage'] = "Sprache ändern";
+        $text['languagesaved'] = "Sprache gespeichert";
+        $text['sitemaint'] = "Momentan werden auf dieser Website Wartungsarbeiten durchgeführt";
+        $text['standby'] = "Diese Website ist zeitweilig nicht verfügbar, da eine Datenbank-Aktualisierung läuft. Bitte versuchen Sie es in einigen Minuten nochmals. Falls diese Website für längere Zeit nicht verfügbar bleibt, so <a href=\"suggest.php\">wenden Sie sich bitte an den Verwalter</a>.";
+        break;
 
-  //gedcom.php, gedform.php
-  case "gedcom":
-    $text['gedstart'] = "GEDCOM-Datei startet bei";
-    $text['producegedfrom'] = "GEDCOM-Datei erzeugen ab";
-    $text['numgens'] = "Anzahl Generationen";
-    $text['includelds'] = "einschließlich LDS-Angaben";
-    $text['buildged'] = "Erzeuge GEDCOM-Datei";
-    $text['gedstartfrom'] = "GEDCOM-Datei beginnt mit";
-    $text['nomaxgen'] = "Sie müssen die maximale Zahl der Generationen angeben. Bitte mit 'Zurück' zur vorangehenden Seite und den Fehler beheben";
-    $text['gedcreatedfrom'] = "GEDCOM-Datei erstellt ab";
-    $text['gedcreatedfor'] = "Erstellt für";
-    $text['creategedfor'] = "GEDCOM-Datei erzeugen";
-    $text['email'] = "E-Mail";
-    $text['suggestchange'] = "Änderungsvorschlag für";
-    $text['yourname'] = "Ihr Name";
-    $text['comments'] = "Notiz oder Kommentar";
-    $text['comments2'] = "Ihre Mitteilung";
-    $text['submitsugg'] = "Absenden";
-    $text['proposed'] = "Vorgeschlagene Änderung";
-    $text['mailsent'] = "Ihre Mitteilung wurde abgeschickt. Vielen Dank.";
-    $text['mailnotsent'] = "Ihre Mitteilung konnte nicht gesendet werden. Bitte wenden Sie sich an xxx (E-Mail: yyy).";
-    $text['mailme'] = "Kopie an diese Adresse senden";
-    $text['entername'] = "Bitte geben Sie Ihren Namen ein";
-    $text['entercomments'] = "Bitte geben Sie Ihre Mitteilung ein";
-    $text['sendmsg'] = "Nachricht absenden";
-    //added in 9.0.0
-    $text['subject'] = "Titel";
-    break;
+    //gedcom.php, gedform.php
+    case "gedcom":
+        $text['gedstart'] = "GEDCOM-Datei startet bei";
+        $text['producegedfrom'] = "GEDCOM-Datei erzeugen ab";
+        $text['numgens'] = "Anzahl Generationen";
+        $text['includelds'] = "einschließlich LDS-Angaben";
+        $text['buildged'] = "Erzeuge GEDCOM-Datei";
+        $text['gedstartfrom'] = "GEDCOM-Datei beginnt mit";
+        $text['nomaxgen'] = "Sie müssen die maximale Zahl der Generationen angeben. Bitte mit 'Zurück' zur vorangehenden Seite und den Fehler beheben";
+        $text['gedcreatedfrom'] = "GEDCOM-Datei erstellt ab";
+        $text['gedcreatedfor'] = "Erstellt für";
+        $text['creategedfor'] = "GEDCOM-Datei erzeugen";
+        $text['email'] = "E-Mail";
+        $text['suggestchange'] = "Änderungsvorschlag für";
+        $text['yourname'] = "Ihr Name";
+        $text['comments'] = "Notiz oder Kommentar";
+        $text['comments2'] = "Ihre Mitteilung";
+        $text['submitsugg'] = "Absenden";
+        $text['proposed'] = "Vorgeschlagene Änderung";
+        $text['mailsent'] = "Ihre Mitteilung wurde abgeschickt. Vielen Dank.";
+        $text['mailnotsent'] = "Ihre Mitteilung konnte nicht gesendet werden. Bitte wenden Sie sich an xxx (E-Mail: yyy).";
+        $text['mailme'] = "Kopie an diese Adresse senden";
+        $text['entername'] = "Bitte geben Sie Ihren Namen ein";
+        $text['entercomments'] = "Bitte geben Sie Ihre Mitteilung ein";
+        $text['sendmsg'] = "Nachricht absenden";
+        //added in 9.0.0
+        $text['subject'] = "Titel";
+        break;
 
-  //getextras.php, getperson.php
-  case "getperson":
-    $text['photoshistoriesfor'] = "Fotos und Geschichten von";
-    $text['indinfofor'] = "Individuelle Angaben über";
-    $text['pp'] = "S."; //page abbreviation
-    $text['age'] = "Alter";
-    $text['agency'] = "Stelle";
-    $text['cause'] = "Ursache";
-    $text['suggested'] = "Vorgeschlagene Änderung";
-    $text['closewindow'] = "Fenster schließen";
-    $text['thanks'] = "Vielen Dank";
-    $text['received'] = "Ihre Anmerkung wurde zur Überprüfung an den Verwalter dieser Website gesendet.";
-    $text['indreport'] = "Personen-Datenblatt";
-    $text['indreportfor'] = "Personen-Datenblatt für";
-    $text['general'] = "Allgemein";
-    $text['bkmkvis'] = "<strong>Hinweis:</strong> Diese Lesezeichen sind nur auf diesem Rechner und nur mit diesem Browser sichtbar.";
-    //added in 9.0.0
-    $text['reviewmsg'] = "Sie haben einen Änderungsvorschlag erhalten, der Ihre Überprüfung benötigt. Dieser Vorschlag betrifft:";
-    $text['revsubject'] = "Ein Änderungsvorschlag benötigt Ihre Überprüfung";
-    break;
+    //getextras.php, getperson.php
+    case "getperson":
+        $text['photoshistoriesfor'] = "Fotos und Geschichten von";
+        $text['indinfofor'] = "Individuelle Angaben über";
+        $text['pp'] = "S."; //page abbreviation
+        $text['age'] = "Alter";
+        $text['agency'] = "Stelle";
+        $text['cause'] = "Ursache";
+        $text['suggested'] = "Vorgeschlagene Änderung";
+        $text['closewindow'] = "Fenster schließen";
+        $text['thanks'] = "Vielen Dank";
+        $text['received'] = "Ihre Anmerkung wurde zur Überprüfung an den Verwalter dieser Website gesendet.";
+        $text['indreport'] = "Personen-Datenblatt";
+        $text['indreportfor'] = "Personen-Datenblatt für";
+        $text['general'] = "Allgemein";
+        $text['bkmkvis'] = "<strong>Hinweis:</strong> Diese Lesezeichen sind nur auf diesem Rechner und nur mit diesem Browser sichtbar.";
+        //added in 9.0.0
+        $text['reviewmsg'] = "Sie haben einen Änderungsvorschlag erhalten, der Ihre Überprüfung benötigt. Dieser Vorschlag betrifft:";
+        $text['revsubject'] = "Ein Änderungsvorschlag benötigt Ihre Überprüfung";
+        break;
 
-  //relateform.php, relationship.php, findpersonform.php, findperson.php
-  case "relate":
-    $text['relcalc'] = "Verwandtschaftsrechner";
-    $text['findrel'] = "Verwandtschaftsbeziehung darstellen";
-    $text['person1'] = "Person 1:";
-    $text['person2'] = "Person 2:";
-    $text['calculate'] = "Berechnen";
-    $text['select2inds'] = "Bitte zwei Personen auswählen.";
-    $text['findpersonid'] = "Suche Personen-Kennung";
-    $text['enternamepart'] = "Tragen Sie einen Teil des Vor- oder Nachnamens ein";
-    $text['pleasenamepart'] = "Bitte tragen Sie einen Teil des Vor- oder Nachnamens ein.";
-    $text['clicktoselect'] = "Klicken Sie einen Eintrag an, um ihn auszuwählen";
-    $text['nobirthinfo'] = "Keine Geburts-Angaben";
-    $text['relateto'] = "Verwandtschaftsbeziehung mit";
-    $text['sameperson'] = "Die zwei Personen sind identisch.";
-    $text['notrelated'] = "Die zwei Personen sind nicht innerhalb von xxx Generationen verwandt."; //xxx will be replaced with number of generations
-    $text['findrelinstr'] = "Personen-Kennungen eingeben (oder angezeigte belassen), dann auf 'Berechnen' klicken, um die Verwandtschaftsbeziehung darzustellen.";
-    $text['sometimes'] = " (Eine unterschiedliche Anzahl der zu berücksichtigenden Generationen kann manchmal zu unterschiedlichen Ergebnissen führen.)";
-    $text['findanother'] = "Eine andere Verwandtschaftsbeziehung suchen";
-    $text['brother'] = "der Bruder von";
-    $text['sister'] = "die Schwester von";
-    $text['sibling'] = "der Bruder/die Schwester von";
-    $text['uncle'] = "der xxx Onkel von";
-    $text['aunt'] = "die xxx Tante von";
-    $text['uncleaunt'] = "der xxx Onkel/die xxx Tante von";
-    $text['nephew'] = "der xxx Neffe von";
-    $text['niece'] = "die xxx Nichte von";
-    $text['nephnc'] = "der xxx Neffe/die xxx Nichte von";
-    $text['removed'] = "fach entfernt";
-    $text['rhusband'] = "der/dem Ehemann von ";
-    $text['rwife'] = "die/der Ehefrau von ";
-    $text['rspouse'] = "der Ehemann/die Ehefrau von ";
-    $text['son'] = "der Sohn von";
-    $text['daughter'] = "die Tochter von";
-    $text['rchild'] = "das Kind von";
-    $text['sil'] = "der Schwiegersohn von";
-    $text['dil'] = "die Schwiegertochter von";
-    $text['sdil'] = "der Schwiegersohn/die Schwiegertochter von";
-    $text['gson'] = "der xxx Enkel von";
-    $text['gdau'] = "die xxx Enkelin von";
-    $text['gsondau'] = "der xxx Enkel/die xxx Enkelin von";
-    $text['great'] = "Groß-";
-    $text['spouses'] = "sind Ehepartner";
-    $text['is'] = "ist";
-    $text['changeto'] = "Ändere zu:";
-    $text['notvalid'] = "ist keine gültige Personen-Kennung oder existiert nicht in dieser Datenbank. Bitte nochmals versuchen.";
-    $text['halfbrother'] = "der Halbbruder von";
-    $text['halfsister'] = "die Halbschwester von";
-    $text['halfsibling'] = "Halbgeschwister von";
-    //changed in 8.0.0
-    $text['gencheck'] = "Maximale Anzahl der<br>zu berücksichtigenden Generationen";
-    $text['mcousin'] = "der xxx Cousin (Vetter) yyy von";  //male cousin; xxx = cousin number, yyy = times removed
-    $text['fcousin'] = "die xxx Cousine (Base) yyy von";  //female cousin
-    $text['cousin'] = "der xxx Cousin (Vetter)/die xxx Cousine (Base) yyy von";
-    $text['mhalfcousin'] = "der xxx Halb-Cousin (Halb-Vetter) yyy von";  //male cousin
-    $text['fhalfcousin'] = "die xxx Halb-Cousine (Halb-Base) yyy von";  //female cousin
-    $text['halfcousin'] = "xxx Halb-Cousin/Halb-Cousine (Halb-Vetter/Halb-Base) yyy von";
-    //added in 8.0.0
-    $text['oneremoved'] = "einfach entfernt";
-    $text['gfath'] = "der xxx Großvater von";
-    $text['gmoth'] = "die xxx Großmutter von";
-    $text['gpar'] = "die xxx Großeltern von";
-    $text['mothof'] = "die Mutter von";
-    $text['fathof'] = "der Vater von";
-    $text['parof'] = "die Eltern von";
-    $text['maxrels'] = "Max. Anzahl der Beziehungen";
-    $text['dospouses'] = "Auch Beziehungen über einen Ehepartner anzeigen";
-    $text['rels'] = "Anzahl Beziehungen";
-    $text['dospouses2'] = "Auch Beziehungen über Partner anzeigen";
-    $text['fil'] = "der Schwiegervater von";
-    $text['mil'] = "die Schwiegermutter von";
-    $text['fmil'] = "der Schwiegervater oder die Schwiegermutter von";
-    $text['stepson'] = "der Stiefsohn von";
-    $text['stepdau'] = "die Stieftochter von";
-    $text['stepchild'] = "das Stiefkind von";
-    $text['stepgson'] = "der xxx Stiefenkel von";
-    $text['stepgdau'] = "die xxx Stiefenkelin von";
-    $text['stepgchild'] = "das xxx Stiefenkelkind von";
-    //added in 8.1.1
-    $text['ggreat'] = "Ur-";
-    //added in 8.1.2
-    $text['ggfath'] = "der xxx Urgroßvater von";
-    $text['ggmoth'] = "die xxx Urgroßmutter von";
-    $text['ggpar'] = "die xxx Urgroßeltern von";
-    $text['ggson'] = "der xxx Urenkel von";
-    $text['ggdau'] = "die xxx Urenkelin von";
-    $text['ggsondau'] = "das xxx Urenkelkind";
-    $text['gstepgson'] = "der xxx Stiefurenkel von";
-    $text['gstepgdau'] = "die xxx Stiefurenkelin von";
-    $text['gstepgchild'] = "das xxx Stiefurenkelkind von";
-    $text['guncle'] = "der xxx Großonkel von";
-    $text['gaunt'] = "die xxx Großtante von";
-    $text['guncleaunt'] = "der/die xxx Großonkel/Großtante von";
-    $text['gnephew'] = "der xxx Großneffe von";
-    $text['gniece'] = "die xxx Großnichte von";
-    $text['gnephnc'] = "der/die xxx Großneffe/Großnichte von";
-    break;
+    //relateform.php, relationship.php, findpersonform.php, findperson.php
+    case "relate":
+        $text['relcalc'] = "Verwandtschaftsrechner";
+        $text['findrel'] = "Verwandtschaftsbeziehung darstellen";
+        $text['person1'] = "Person 1:";
+        $text['person2'] = "Person 2:";
+        $text['calculate'] = "Berechnen";
+        $text['select2inds'] = "Bitte zwei Personen auswählen.";
+        $text['findpersonid'] = "Suche Personen-Kennung";
+        $text['enternamepart'] = "Tragen Sie einen Teil des Vor- oder Nachnamens ein";
+        $text['pleasenamepart'] = "Bitte tragen Sie einen Teil des Vor- oder Nachnamens ein.";
+        $text['clicktoselect'] = "Klicken Sie einen Eintrag an, um ihn auszuwählen";
+        $text['nobirthinfo'] = "Keine Geburts-Angaben";
+        $text['relateto'] = "Verwandtschaftsbeziehung mit";
+        $text['sameperson'] = "Die zwei Personen sind identisch.";
+        $text['notrelated'] = "Die zwei Personen sind nicht innerhalb von xxx Generationen verwandt."; //xxx will be replaced with number of generations
+        $text['findrelinstr'] = "Personen-Kennungen eingeben (oder angezeigte belassen), dann auf 'Berechnen' klicken, um die Verwandtschaftsbeziehung darzustellen.";
+        $text['sometimes'] = " (Eine unterschiedliche Anzahl der zu berücksichtigenden Generationen kann manchmal zu unterschiedlichen Ergebnissen führen.)";
+        $text['findanother'] = "Eine andere Verwandtschaftsbeziehung suchen";
+        $text['brother'] = "der Bruder von";
+        $text['sister'] = "die Schwester von";
+        $text['sibling'] = "der Bruder/die Schwester von";
+        $text['uncle'] = "der xxx Onkel von";
+        $text['aunt'] = "die xxx Tante von";
+        $text['uncleaunt'] = "der xxx Onkel/die xxx Tante von";
+        $text['nephew'] = "der xxx Neffe von";
+        $text['niece'] = "die xxx Nichte von";
+        $text['nephnc'] = "der xxx Neffe/die xxx Nichte von";
+        $text['removed'] = "fach entfernt";
+        $text['rhusband'] = "der/dem Ehemann von ";
+        $text['rwife'] = "die/der Ehefrau von ";
+        $text['rspouse'] = "der Ehemann/die Ehefrau von ";
+        $text['son'] = "der Sohn von";
+        $text['daughter'] = "die Tochter von";
+        $text['rchild'] = "das Kind von";
+        $text['sil'] = "der Schwiegersohn von";
+        $text['dil'] = "die Schwiegertochter von";
+        $text['sdil'] = "der Schwiegersohn/die Schwiegertochter von";
+        $text['gson'] = "der xxx Enkel von";
+        $text['gdau'] = "die xxx Enkelin von";
+        $text['gsondau'] = "der xxx Enkel/die xxx Enkelin von";
+        $text['great'] = "Groß-";
+        $text['spouses'] = "sind Ehepartner";
+        $text['is'] = "ist";
+        $text['changeto'] = "Ändere zu:";
+        $text['notvalid'] = "ist keine gültige Personen-Kennung oder existiert nicht in dieser Datenbank. Bitte nochmals versuchen.";
+        $text['halfbrother'] = "der Halbbruder von";
+        $text['halfsister'] = "die Halbschwester von";
+        $text['halfsibling'] = "Halbgeschwister von";
+        //changed in 8.0.0
+        $text['gencheck'] = "Maximale Anzahl der<br>zu berücksichtigenden Generationen";
+        $text['mcousin'] = "der xxx Cousin (Vetter) yyy von";  //male cousin; xxx = cousin number, yyy = times removed
+        $text['fcousin'] = "die xxx Cousine (Base) yyy von";  //female cousin
+        $text['cousin'] = "der xxx Cousin (Vetter)/die xxx Cousine (Base) yyy von";
+        $text['mhalfcousin'] = "der xxx Halb-Cousin (Halb-Vetter) yyy von";  //male cousin
+        $text['fhalfcousin'] = "die xxx Halb-Cousine (Halb-Base) yyy von";  //female cousin
+        $text['halfcousin'] = "xxx Halb-Cousin/Halb-Cousine (Halb-Vetter/Halb-Base) yyy von";
+        //added in 8.0.0
+        $text['oneremoved'] = "einfach entfernt";
+        $text['gfath'] = "der xxx Großvater von";
+        $text['gmoth'] = "die xxx Großmutter von";
+        $text['gpar'] = "die xxx Großeltern von";
+        $text['mothof'] = "die Mutter von";
+        $text['fathof'] = "der Vater von";
+        $text['parof'] = "die Eltern von";
+        $text['maxrels'] = "Max. Anzahl der Beziehungen";
+        $text['dospouses'] = "Auch Beziehungen über einen Ehepartner anzeigen";
+        $text['rels'] = "Anzahl Beziehungen";
+        $text['dospouses2'] = "Auch Beziehungen über Partner anzeigen";
+        $text['fil'] = "der Schwiegervater von";
+        $text['mil'] = "die Schwiegermutter von";
+        $text['fmil'] = "der Schwiegervater oder die Schwiegermutter von";
+        $text['stepson'] = "der Stiefsohn von";
+        $text['stepdau'] = "die Stieftochter von";
+        $text['stepchild'] = "das Stiefkind von";
+        $text['stepgson'] = "der xxx Stiefenkel von";
+        $text['stepgdau'] = "die xxx Stiefenkelin von";
+        $text['stepgchild'] = "das xxx Stiefenkelkind von";
+        //added in 8.1.1
+        $text['ggreat'] = "Ur-";
+        //added in 8.1.2
+        $text['ggfath'] = "der xxx Urgroßvater von";
+        $text['ggmoth'] = "die xxx Urgroßmutter von";
+        $text['ggpar'] = "die xxx Urgroßeltern von";
+        $text['ggson'] = "der xxx Urenkel von";
+        $text['ggdau'] = "die xxx Urenkelin von";
+        $text['ggsondau'] = "das xxx Urenkelkind";
+        $text['gstepgson'] = "der xxx Stiefurenkel von";
+        $text['gstepgdau'] = "die xxx Stiefurenkelin von";
+        $text['gstepgchild'] = "das xxx Stiefurenkelkind von";
+        $text['guncle'] = "der xxx Großonkel von";
+        $text['gaunt'] = "die xxx Großtante von";
+        $text['guncleaunt'] = "der/die xxx Großonkel/Großtante von";
+        $text['gnephew'] = "der xxx Großneffe von";
+        $text['gniece'] = "die xxx Großnichte von";
+        $text['gnephnc'] = "der/die xxx Großneffe/Großnichte von";
+        break;
 
-  case "familygroup":
-    $text['familygroupfor'] = "Familienblatt von";
-    $text['ldsords'] = "LDS Anordnungen";
-    $text['baptizedlds'] = "Getauft (LDS)";
-    $text['endowedlds'] = "Begabung (LDS)";
-    $text['sealedplds'] = "Siegelung an die Eltern (LDS)";
-    $text['sealedslds'] = "Siegelung an den Ehepartner (LDS)";
-    $text['otherspouse'] = "Andere Ehepartner";
-    $text['husband'] = "Vater";
-    $text['wife'] = "Mutter";
-    break;
+    case "familygroup":
+        $text['familygroupfor'] = "Familienblatt von";
+        $text['ldsords'] = "LDS Anordnungen";
+        $text['baptizedlds'] = "Getauft (LDS)";
+        $text['endowedlds'] = "Begabung (LDS)";
+        $text['sealedplds'] = "Siegelung an die Eltern (LDS)";
+        $text['sealedslds'] = "Siegelung an den Ehepartner (LDS)";
+        $text['otherspouse'] = "Andere Ehepartner";
+        $text['husband'] = "Vater";
+        $text['wife'] = "Mutter";
+        break;
 
-  //pedigree.php
-  case "pedigree":
-    $text['capbirthabbr'] = "*";
-    $text['capaltbirthabbr'] = "in";
-    $text['capdeathabbr'] = "+";
-    $text['capburialabbr'] = "begr.";
-    $text['capplaceabbr'] = "in";
-    $text['capmarrabbr'] = "oo";
-    $text['capspouseabbr'] = "Gatt.";
-    $text['redraw'] = "Neu zeichnen mit";
-    $text['scrollnote'] = "Hinweis: Evtl. müssen Sie nach unten oder nach rechts scrollen, um alles sehen zu können.";
-    $text['unknownlit'] = "Unbekannt";
-    $text['popupnote1'] = " = Zusatz-Angaben";
-    $text['popupnote2'] = " = neuen Stammbaum zeigen";
-    $text['pedcompact'] = "Kompakt";
-    $text['pedstandard'] = "Standard";
-    $text['pedtextonly'] = "Nur Text";
-    $text['descendfor'] = "Nachkommen von";
-    $text['maxof'] = "Maximum";
-    $text['gensatonce'] = "Generationen gleichzeitig anzeigen.";
-    $text['sonof'] = "Sohn von";
-    $text['daughterof'] = "Tochter von";
-    $text['childof'] = "Kind von";
-    $text['stdformat'] = "Standardformat";
-    $text['ahnentafel'] = "Ahnenliste";
-    $text['addnewfam'] = "Neue Familie anlegen";
-    $text['editfam'] = "Familie bearbeiten";
-    $text['side'] = "-Seite";
-    $text['familyof'] = "Familie von";
-    $text['paternal'] = "Väterlicherseits";
-    $text['maternal'] = "Mütterlicherseits";
-    $text['gen1'] = "Selbst";
-    $text['gen2'] = "Eltern";
-    $text['gen3'] = "Großeltern";
-    $text['gen4'] = "Urgroßeltern";
-    $text['gen5'] = "Alteltern";
-    $text['gen6'] = "Altgroßeltern";
-    $text['gen7'] = "Alturgroßeltern";
-    $text['gen8'] = "Obereltern";
-    $text['gen9'] = "Obergroßeltern";
-    $text['gen10'] = "Oberurgroßeltern";
-    $text['gen11'] = "Stammeltern";
-    $text['gen12'] = "Stammgroßeltern";
-    $text['graphdesc'] = "Graphische Anzeige der Nachkommen";
-    $text['pedbox'] = "Rahmen";
-    $text['regformat'] = "Registerformat";
-    $text['extrasexpl'] = "Falls für die folgenden Personen Fotos oder Geschichten vorhanden sind, werden die entsprechenden Vorschaubilder bei den Namen angezeigt.";
-    $text['popupnote3'] = " = Neues Diagramm";
-    $text['mediaavail'] = "Medien verfügbar";
-    $text['pedigreefor'] = "Ahnentafel für";
-    $text['pedigreech'] = "Ahnentafel";
-    $text['datesloc'] = "Daten und Orte";
-    $text['borchr'] = "Geburt/Taufe - Tod/Beerdigung (zwei)";
-    $text['nobd'] = "Keine Angaben zu Geburt oder Tod";
-    $text['bcdb'] = "Geburt/Taufe/Tod/Beerdigung (vier)";
-    $text['numsys'] = "Nummerierungs-System";
-    $text['gennums'] = "Generations-Nummern";
-    $text['henrynums'] = "Nummerierung nach Henry";
-    $text['abovnums'] = "Nummerierung nach d'Aboville";
-    $text['devnums'] = "Nummerierung nach de Villiers";
-    $text['dispopts'] = "Anzeige-Optionen";
+    //pedigree.php
+    case "pedigree":
+        $text['capbirthabbr'] = "*";
+        $text['capaltbirthabbr'] = "in";
+        $text['capdeathabbr'] = "+";
+        $text['capburialabbr'] = "begr.";
+        $text['capplaceabbr'] = "in";
+        $text['capmarrabbr'] = "oo";
+        $text['capspouseabbr'] = "Gatt.";
+        $text['redraw'] = "Neu zeichnen mit";
+        $text['scrollnote'] = "Hinweis: Evtl. müssen Sie nach unten oder nach rechts scrollen, um alles sehen zu können.";
+        $text['unknownlit'] = "Unbekannt";
+        $text['popupnote1'] = " = Zusatz-Angaben";
+        $text['popupnote2'] = " = neuen Stammbaum zeigen";
+        $text['pedcompact'] = "Kompakt";
+        $text['pedstandard'] = "Standard";
+        $text['pedtextonly'] = "Nur Text";
+        $text['descendfor'] = "Nachkommen von";
+        $text['maxof'] = "Maximum";
+        $text['gensatonce'] = "Generationen gleichzeitig anzeigen.";
+        $text['sonof'] = "Sohn von";
+        $text['daughterof'] = "Tochter von";
+        $text['childof'] = "Kind von";
+        $text['stdformat'] = "Standardformat";
+        $text['ahnentafel'] = "Ahnenliste";
+        $text['addnewfam'] = "Neue Familie anlegen";
+        $text['editfam'] = "Familie bearbeiten";
+        $text['side'] = "-Seite";
+        $text['familyof'] = "Familie von";
+        $text['paternal'] = "Väterlicherseits";
+        $text['maternal'] = "Mütterlicherseits";
+        $text['gen1'] = "Selbst";
+        $text['gen2'] = "Eltern";
+        $text['gen3'] = "Großeltern";
+        $text['gen4'] = "Urgroßeltern";
+        $text['gen5'] = "Alteltern";
+        $text['gen6'] = "Altgroßeltern";
+        $text['gen7'] = "Alturgroßeltern";
+        $text['gen8'] = "Obereltern";
+        $text['gen9'] = "Obergroßeltern";
+        $text['gen10'] = "Oberurgroßeltern";
+        $text['gen11'] = "Stammeltern";
+        $text['gen12'] = "Stammgroßeltern";
+        $text['graphdesc'] = "Graphische Anzeige der Nachkommen";
+        $text['pedbox'] = "Rahmen";
+        $text['regformat'] = "Registerformat";
+        $text['extrasexpl'] = "Falls für die folgenden Personen Fotos oder Geschichten vorhanden sind, werden die entsprechenden Vorschaubilder bei den Namen angezeigt.";
+        $text['popupnote3'] = " = Neues Diagramm";
+        $text['mediaavail'] = "Medien verfügbar";
+        $text['pedigreefor'] = "Ahnentafel für";
+        $text['pedigreech'] = "Ahnentafel";
+        $text['datesloc'] = "Daten und Orte";
+        $text['borchr'] = "Geburt/Taufe - Tod/Beerdigung (zwei)";
+        $text['nobd'] = "Keine Angaben zu Geburt oder Tod";
+        $text['bcdb'] = "Geburt/Taufe/Tod/Beerdigung (vier)";
+        $text['numsys'] = "Nummerierungs-System";
+        $text['gennums'] = "Generations-Nummern";
+        $text['henrynums'] = "Nummerierung nach Henry";
+        $text['abovnums'] = "Nummerierung nach d'Aboville";
+        $text['devnums'] = "Nummerierung nach de Villiers";
+        $text['dispopts'] = "Anzeige-Optionen";
+        //added in 10.0.0
+        $text['no_ancestors'] = "Keine Vorfahren gefunden";
+        $text['ancestor_chart'] = "Vertikale Ahnentafel";
+        $text['opennewwindow'] = "In einem neuen Fenster öffnen";
+        $text['pedvertical'] = "Vertikal";
+        //added in 11.0.0
+        $text['familywith'] = "Familie mit";
+        $text['fcmlogin'] = "Bitte einloggen, um die Details zu sehen";
+        $text['isthe'] = "ist der/die";
+        $text['otherspouses'] = "andere Partner";
+        $text['parentfamily'] = "Die Eltern-Familie ";
+        $text['showfamily'] = "Die Familie zeigen";
+        $text['shown'] = "gezeigt";
+        $text['showparentfamily'] = "Eltern-Familie zeigen";
+        $text['showperson'] = "Person zeigen";
+        //added in 11.0.2
+        $text['otherfamilies'] = "Andere Familien";
+        break;
+
+    //search.php, searchform.php
+    //merged with reports and showreport in 5.0.0
+    case "search":
+    case "reports":
+        $text['noreports'] = "Es sind keine Berichte vorhanden.";
+        $text['reportname'] = "Name des Bericht";
+        $text['allreports'] = "Alle Berichte";
+        $text['report'] = "Bericht";
+        $text['error'] = "Fehler";
+        $text['reportsyntax'] = "Die Syntax der Suchabfrage für diesen Bericht";
+        $text['wasincorrect'] = "ist ungültig, deswegen kann dieser Bericht nicht erstellt werden. Benachrichtigen Sie den Systemverantwortlichen";
+        $text['errormessage'] = "Fehlermeldung";
+        $text['equals'] = "ist gleich";
+        $text['endswith'] = "endet auf";
+        $text['soundexof'] = "soundex von";
+        $text['metaphoneof'] = "metafon von";
+        $text['plusminus10'] = "+/- 10 Jahre von";
+        $text['lessthan'] = "kleiner als";
+        $text['greaterthan'] = "größer als";
+        $text['lessthanequal'] = "kleiner oder gleich";
+        $text['greaterthanequal'] = "größer oder gleich";
+        $text['equalto'] = "ist gleich";
+        $text['tryagain'] = "Bitte erneut versuchen";
+        $text['joinwith'] = "Verknüpfen mit";
+        $text['cap_and'] = "UND";
+        $text['cap_or'] = "ODER";
+        $text['showspouse'] = "Zeige Partner. Dubletten werden gezeigt, wenn eine Person mehrere Partner hat";
+        $text['submitquery'] = "Suche";
+        $text['birthplace'] = "Geburtsort";
+        $text['deathplace'] = "Sterbeort";
+        $text['birthdatetr'] = "Geburtsjahr";
+        $text['deathdatetr'] = "Sterbejahr";
+        $text['plusminus2'] = "+/- 2 Jahre von";
+        $text['resetall'] = "Alle Werte zurücksetzen";
+        $text['showdeath'] = "Zeige Todestag/Beerdigungsangaben";
+        $text['altbirthplace'] = "Ort der Taufe";
+        $text['altbirthdatetr'] = "Jahr der Taufe";
+        $text['burialplace'] = "Ort der Beerdigung";
+        $text['burialdatetr'] = "Jahr der Beerdigung";
+        $text['event'] = "Ereignis(se)";
+        $text['day'] = "Tag";
+        $text['month'] = "Monat";
+        $text['keyword'] = "Suchwort (z.B. \"ABT\", \"BEF\", \"AFT\")";
+        $text['explain'] = "Datum oder Datumsteile eingeben, um passende Ereignisse zu erhalten. Oder Feld leerlassen, um alle Ereignisse zu erhalten.";
+        $text['enterdate'] = "Bitte mindestens eines der folgenden eingeben oder auswählen: Tag, Monat, Jahr, Suchwort";
+        $text['fullname'] = "Vollständiger Name";
+        $text['birthdate'] = "Geburtsdatum";
+        $text['altbirthdate'] = "Taufdatum";
+        $text['marrdate'] = "Heiratsdatum";
+        $text['spouseid'] = "Partner-Kennung";
+        $text['spousename'] = "Partner-Name";
+        $text['deathdate'] = "Sterbedatum";
+        $text['burialdate'] = "Beerdigungsdatum";
+        $text['changedate'] = "Datum der letzten Änderung";
+        $text['gedcom'] = "Stammbaum";
+        $text['baptdate'] = "Datum der Taufe (LDS)";
+        $text['baptplace'] = "Ort der Taufe (LDS)";
+        $text['endldate'] = "Datum der Begabung (LDS)";
+        $text['endlplace'] = "Ort der Begabung (LDS)";
+        $text['ssealdate'] = "Datum der Siegelung an den Ehepartner (LDS)";   //Sealed to spouse
+        $text['ssealplace'] = "Ort der Siegelung an den Ehepartner (LDS)";
+        $text['psealdate'] = "Datum der Siegelung an die Eltern (LDS)";   //Sealed to parents
+        $text['psealplace'] = "Ort der Siegelung an die Eltern (LDS)";
+        $text['marrplace'] = "Heiratsort";
+        $text['spousesurname'] = "Nachname des Partners";
+        $text['spousemore'] = "Wenn Sie einen Partner-Nachnamen eingeben, müssen Sie das Geschlecht der gesuchten Person auswählen.";
+        $text['plusminus5'] = "+/- 5 Jahre von";
+        $text['exists'] = "ist vorhanden";
+        $text['dnexist'] = "ist nicht vorhanden";
+        $text['divdate'] = "Scheidungsdatum";
+        $text['divplace'] = "Scheidungsort";
+        $text['otherevents'] = "Weitere Ereignisse";
+        $text['numresults'] = "Ergebnisse pro Seite";
+        $text['mysphoto'] = "Fotos mit unbekannten Personen";
+        $text['mysperson'] = "Personen mit fehlenden Angaben";
+        $text['joinor'] = "Die Option 'Verknüpfen mit ODER' kann nicht mit dem Nachnamen des Ehepartners verwendet werden";
+        $text['tellus'] = "Teilen Sie uns mit, was Sie wissen";
+        $text['moreinfo'] = "Weitere Informationen:";
+        //added in 8.0.0
+        $text['marrdatetr'] = "Jahr der Heirat";
+        $text['divdatetr'] = "Jahr der Scheidung";
+        $text['mothername'] = "Name der Mutter";
+        $text['fathername'] = "Name des Vaters";
+        $text['filter'] = "Filter";
+        $text['notliving'] = "Nicht lebend";
+        $text['nodayevents'] = "Ereignisse für diesen Monat, die nicht einem bestimmten Tag zugeordnet sind:";
+        //added in 9.0.0
+        $text['csv'] = "Komma-getrennte CSV-Datei";
+        //added in 10.0.0
+        $text['confdate'] = "Datum der Konfirmation (LDS)";
+        $text['confplace'] = "Ort der Konfirmation (LDS)";
+        $text['initdate'] = "Datum der Vorverordnungen (LDS)";
+        $text['initplace'] = "Ort der Vorverordnungen (LDS)";
+        //added in 11.0.0
+        $text['marrtype'] = "Ehe-Typ";
+        $text['searchfor'] = "Suchen nach";
+        $text['searchnote'] = "Anmerkung: Diese Seite benutzt Google um die Suche auszuführen. Die Anzahl der Treffer hängt direkt davon ab, in wieweit Google die Seite indizieren konnte.";
+        break;
+
+    //showlog.php
+    case "showlog":
+        $text['logfilefor'] = "Protokolldatei für";
+        $text['mostrecentactions'] = "letzte Aktionen";
+        $text['autorefresh'] = "automatische Aktualisierung einschalten (alle 30 Sekunden)";
+        $text['refreshoff'] = "automatische Aktualisierung abschalten";
+        break;
+
+    case "headstones":
+    case "showphoto":
+        $text['cemeteriesheadstones'] = "Friedhöfe und Grabsteine";
+        $text['showallhsr'] = "Zeige alle Grabsteine";
+        $text['in'] = "in";
+        $text['showmap'] = "Karte anzeigen";
+        $text['headstonefor'] = "Grabstein von";
+        $text['photoof'] = "Foto von";
+        $text['photoowner'] = "Besitzer/Quelle";
+        $text['nocemetery'] = "Kein Friedhof";
+        $text['iptc005'] = "Titel";
+        $text['iptc020'] = "Zusätzliche Kategorien";
+        $text['iptc040'] = "Spezielle Anweisungen";
+        $text['iptc055'] = "Gestaltungsdatum";
+        $text['iptc080'] = "Autor";
+        $text['iptc085'] = "Position des Autors";
+        $text['iptc090'] = "Stadt";
+        $text['iptc095'] = "Staat";
+        $text['iptc101'] = "Land";
+        $text['iptc103'] = "Auftraggeber";
+        $text['iptc105'] = "Schlagzeile";
+        $text['iptc110'] = "Quelle";
+        $text['iptc115'] = "Quelle des Fotos";
+        $text['iptc116'] = "Copyright-Notiz";
+        $text['iptc120'] = "Bildtext";
+        $text['iptc122'] = "Bildtext Autor";
+        $text['mapof'] = "Karte von";
+        $text['regphotos'] = "Übersicht mit Kurzbeschreibungen";
+        $text['gallery'] = "Übersicht mit Vorschaubildern";
+        $text['cemphotos'] = "Friedhofs-Fotos";
+        $text['photosize'] = "Größe";
+        $text['iptc010'] = "Priorität";
+        $text['filesize'] = "Dateigröße";
+        $text['seeloc'] = "Siehe Ort";
+        $text['showall'] = "Alles anzeigen";
+        $text['editmedia'] = "Medium bearbeiten";
+        $text['viewitem'] = "Dieses Element ansehen";
+        $text['editcem'] = "Friedhof bearbeiten";
+        $text['numitems'] = "Elemente";
+        $text['allalbums'] = "Alle Alben";
+        $text['slidestop'] = "Diaschau beenden";
+        $text['slideresume'] = "Diaschau fortsetzen";
+        $text['slidesecs'] = "Sekunden für jedes Bild:";
+        $text['minussecs'] = "minus 0,5 Sekunden";
+        $text['plussecs'] = "plus 0,5 Sekunden";
+        $text['nocountry'] = "Unbekanntes Land";
+        $text['nostate'] = "Unbekannter/s (Bundes-)Staat/Land";
+        $text['nocounty'] = "Unbekannte Provinz";
+        $text['nocity'] = "Unbekannter Ort";
+        $text['nocemname'] = "Unbekannter Friedhofs-Name";
+        $text['editalbum'] = "Album bearbeiten";
+        $text['mediamaptext'] = "<strong>Hinweis:</strong> Wenn Sie Ihren Mauszeiger über das Bild bewegen, werden Namen angezeigt. Klicken Sie diese an, um weitere Informationen zu erhalten.";
+        //added in 8.0.0
+        $text['allburials'] = "Alle Beerdigungen";
+        $text['moreinfo'] = "Weitere Informationen:";
+        //added in 9.0.0
+        $text['iptc025'] = "Schlagwörter";
+        $text['iptc092'] = "genauen Aufnahmeort";
+        $text['iptc015'] = "Kategorie";
+        $text['iptc065'] = "erzeugendes Grafikprogramm";
+        $text['iptc070'] = "Programmversion";
+        break;
+
+    //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
+    case "surnames":
+    case "places":
+        $text['surnamesstarting'] = "Nachnamen anzeigen, die mit ... anfangen";
+        $text['showtop'] = "Zeige die ersten";
+        $text['showallsurnames'] = "Zeige alle Nachnamen";
+        $text['sortedalpha'] = "alphabetisch sortiert";
+        $text['byoccurrence'] = "Einträge sortiert nach ihrer Häufigkeit";
+        $text['firstchars'] = "Erster Buchstabe der obersten Orts-Ebene";
+        $text['mainsurnamepage'] = "Übersichtsseite Nachnamen";
+        $text['allsurnames'] = "Alle Nachnamen";
+        $text['showmatchingsurnames'] = "Nachnamen anklicken, um weitere Angaben zu erhalten";
+        $text['backtotop'] = "Zurück nach oben";
+        $text['beginswith'] = "Beginnt mit";
+        $text['allbeginningwith'] = "Alle Nachnamen beginnend mit";
+        $text['numoccurrences'] = "Anzahl der Datensätze wird in Klammern angezeigt";
+        $text['placesstarting'] = "Zeige oberste Orts-Ebenen beginnend mit";
+        $text['showmatchingplaces'] = "Klicken Sie auf einen Eintrag, um die untergeordneten Ebenen anzuzeigen. Klicken Sie auf das 'Suchen'-Icon, um die Nachnamen zu diesem Ort zu zeigen.";
+        $text['totalnames'] = "Anzahl der Personen";
+        $text['showallplaces'] = "Zeige alle obersten Orts-Ebenen";
+        $text['totalplaces'] = "Anzahl der Orte";
+        $text['mainplacepage'] = "Zurück zur Orts-Hauptseite";
+        $text['allplaces'] = "Alle obersten Orts-Ebenen";
+        $text['placescont'] = "Zeige alle Orte, die ... enthalten";
+        //changed in 8.0.0
+        $text['top30'] = "Die xxx häufigsten Nachnamen";
+        $text['top30places'] = "Die xxx bedeutendsten obersten Orts-Ebenen";
+        //added in 12.0.0
+        $text['firstnamelist'] = "Liste der Vornamen";
+        $text['firstnamesstarting'] = "Zeige Vornamen beginnend mit";
+        $text['showallfirstnames'] = "Zeige alle Vornamen";
+        $text['mainfirstnamepage'] = "Hauptseite für Vornamen";
+        $text['allfirstnames'] = "Alle Vornamen";
+        $text['showmatchingfirstnames'] = "Einen Vornamen anklicken, um zugehörige Einträge zu zeigen";
+        $text['allfirstbegwith'] = "Alle Vornamen beginnend mit";
+        $text['top30first'] = "Die xxx häufigsten Vornamen";
+        $text['allothers'] = "Alle anderen";
+        $text['amongall'] = "(von allen Namen)";
+        $text['justtop'] = "Nur die häufigsten xxx";
+        break;
+
+    //whatsnew.php
+    case "whatsnew":
+        $text['pastxdays'] = "(aus den letzten xx Tagen)";
+
+        $text['photo'] = "Foto";
+        $text['history'] = "Geschichte/Dokument";
+        $text['husbid'] = "Vater-Kennung";
+        $text['husbname'] = "Name des Vaters";
+        $text['wifeid'] = "Mutter-Kennung";
+        //added in 11.0.0
+        $text['wifename'] = "Name der Mutter";
+        break;
+
+    //timeline.php, timeline2.php
+    case "timeline":
+        $text['text_delete'] = "Löschen";
+        $text['addperson'] = "Person hinzufügen";
+        $text['nobirth'] = "Die folgende Person hat kein gültiges Geburtsdatum und konnte daher nicht hinzugefügt werden";
+        $text['event'] = "Ereignis(se)";
+        $text['chartwidth'] = "Breite der Graphik";
+        $text['timelineinstr'] = "Weitere Kennungen eintragen";
+        $text['togglelines'] = "Linien ein-/ausschalten";
+        //changed in 9.0.0
+        $text['noliving'] = "Die folgende Person ist als 'lebend' deklariert und konnte nicht hinzugefügt werden, da Sie nicht mit den entsprechenden Berechtigungen angemeldet sind";
+        break;
+
+    //browsetrees.php
+    //login.php, newacctform.php, addnewacct.php
+    case "trees":
+    case "login":
+        $text['browsealltrees'] = "Zeige alle Stammbäume";
+        $text['treename'] = "Stammbaumname";
+        $text['owner'] = "Besitzer";
+        $text['address'] = "Adresse";
+        $text['city'] = "Ort";
+        $text['state'] = "(Bundes-)Staat/-Land";
+        $text['zip'] = "Postleitzahl";
+        $text['country'] = "Land";
+        $text['email'] = "E-Mail";
+        $text['phone'] = "Telefon";
+        $text['username'] = "Benutzerkennung";
+        $text['password'] = "Passwort";
+        $text['loginfailed'] = "Anmeldung fehlgeschlagen.";
+
+        $text['regnewacct'] = "Benutzerkennung beantragen";
+        $text['realname'] = "Ihr Name";
+        $text['phone'] = "Telefon";
+        $text['email'] = "E-Mail";
+        $text['address'] = "Adresse";
+        $text['acctcomments'] = "Notiz oder Kommentar";
+        $text['submit'] = "Eintragen";
+        $text['leaveblank'] = "(Leer lassen, wenn Sie einen neuen Baum beginnen)";
+        $text['required'] = "Erforderliche Angaben";
+        $text['enterpassword'] = "Bitte Passwort eingeben.";
+        $text['enterusername'] = "Bitte eine Benutzerkennung eingeben.";
+        $text['failure'] = "Diese Benutzerkennung wird bereits verwendet. Bitte zur vorgehenden Seite zurück gehen und eine andere Benutzerkennung wählen.";
+        $text['success'] = "Vielen Dank. Wir haben Ihre Registrierung empfangen. Wir werden Kontakt mit Ihnen aufnehmen, wenn Ihre Benutzerkennung freigeschaltet worden ist oder wenn wir weitere Angaben benötigen.";
+        $text['emailsubject'] = "Registrierungsanfrage: Neuer TNG-Benutzer";
+        $text['website'] = "Website (WWW-Adresse)";
+        $text['nologin'] = "Sie haben keine Anmeldedaten?";
+        $text['loginsent'] = "Anmeldedaten wurden versandt";
+        $text['loginnotsent'] = "Anmeldedaten wurden nicht versandt";
+        $text['enterrealname'] = "Bitte geben Sie Ihren Namen ein.";
+        $text['rempass'] = "Auf diesem Rechner angemeldet bleiben";
+        $text['morestats'] = "Weitere Statistiken";
+        $text['accmail'] = "<strong>HINWEIS:</strong> Um vom Verwalter dieser Website E-Mails, betreffend Ihre Benutzerkennung, empfangen zu können, stellen Sie bitte sicher, dass E-Mails aus dieser Domain bei Ihnen nicht gesperrt werden.";
+        $text['newpassword'] = "Neues Passwort";
+        $text['resetpass'] = "Ihr Passwort zurücksetzen";
+        $text['nousers'] = "Dieses Formular kann nicht verwendet werden, solange nicht mindestens ein Benutzer-Datensatz existiert. Wenn Sie der Eigentümer dieser Website sind, dann rufen Sie Verwaltung/Benutzer auf und legen Sie Ihre Verwalter-Kennung an.";
+        $text['noregs'] = "Bedauerlicherweise werden momentan keine neuen Benutzer-Registrierungen akzeptiert. Bitte <a href=\"suggest.php\">kontaktieren</a> Sie uns, wenn Sie Anmerkungen oder Fragen zu dieser Website haben.";
+        //changed in 8.0.0
+        $text['emailmsg'] = "Sie haben eine Registrierungsanfrage für einen neuen TNG-Benutzer erhalten. Bitte besuchen Sie Ihren TNG-Verwaltungsbereich und stellen Sie die Zugriffsrechte ein. Wenn Sie der Registrierung zustimmen, unterrichten Sie den Antragsteller, indem Sie auf diese E-Mail antworten.";
+        $text['accactive'] = "Die Benutzerkennung wurde freigeschaltet, aber der Benutzer wird solange keine besonderen Berechtigungen haben, bis Sie diese zuweisen.";
+        $text['accinactive'] = "Gehen Sie zu Verwaltung/Benutzerverwaltung/Änderungsvorschläge prüfen, um die Angaben zur Benutzerkennung zu überprüfen. Die Benutzerkennung bleibt inaktiv, bis Sie die Einstellungen überprüft und den Benutzer-Datensatz mindestens einmal gespeichert haben.";
+        $text['pwdagain'] = "Passwort-Wiederholung";
+        $text['enterpassword2'] = "Bitte geben Sie Ihr Passwort nochmals ein.";
+        $text['pwdsmatch'] = "Ihre Passwort-Angaben stimmen nicht überein. Bitte geben Sie jeweils dasselbe Passwort ein.";
+        //added in 8.0.0
+        $text['acksubject'] = "Vielen Dank für Ihren Benutzer-Antrag"; //for a new user account
+        $text['ackmessage'] = "Ihr Antrag für eine Benutzerkennung ist eingegangen. Die Benutzerkennung ist inaktiv, bis sie vom Verwalter der Website überprüft wurde. Sie erhalten eine E-Mail-Nachricht, sobald Ihre Benutzerkennung freigeschaltet ist.";
+        //added in 12.0.0
+        $text['switch'] = "Wechseln";
+        break;
+
     //added in 10.0.0
-    $text['no_ancestors'] = "Keine Vorfahren gefunden";
-    $text['ancestor_chart'] = "Vertikale Ahnentafel";
-    $text['opennewwindow'] = "In einem neuen Fenster öffnen";
-    $text['pedvertical'] = "Vertikal";
-    //added in 11.0.0
-    $text['familywith'] = "Familie mit";
-    $text['fcmlogin'] = "Bitte einloggen, um die Details zu sehen";
-    $text['isthe'] = "ist der/die";
-    $text['otherspouses'] = "andere Partner";
-    $text['parentfamily'] = "Die Eltern-Familie ";
-    $text['showfamily'] = "Die Familie zeigen";
-    $text['shown'] = "gezeigt";
-    $text['showparentfamily'] = "Eltern-Familie zeigen";
-    $text['showperson'] = "Person zeigen";
-    //added in 11.0.2
-    $text['otherfamilies'] = "Andere Familien";
-    break;
+    case "branches":
+        $text['browseallbranches'] = "Alle Zweige durchsuchen";
+        break;
 
-  //search.php, searchform.php
-  //merged with reports and showreport in 5.0.0
-  case "search":
-  case "reports":
-    $text['noreports'] = "Es sind keine Berichte vorhanden.";
-    $text['reportname'] = "Name des Bericht";
-    $text['allreports'] = "Alle Berichte";
-    $text['report'] = "Bericht";
-    $text['error'] = "Fehler";
-    $text['reportsyntax'] = "Die Syntax der Suchabfrage für diesen Bericht";
-    $text['wasincorrect'] = "ist ungültig, deswegen kann dieser Bericht nicht erstellt werden. Benachrichtigen Sie den Systemverantwortlichen";
-    $text['errormessage'] = "Fehlermeldung";
-    $text['equals'] = "ist gleich";
-    $text['endswith'] = "endet auf";
-    $text['soundexof'] = "soundex von";
-    $text['metaphoneof'] = "metafon von";
-    $text['plusminus10'] = "+/- 10 Jahre von";
-    $text['lessthan'] = "kleiner als";
-    $text['greaterthan'] = "größer als";
-    $text['lessthanequal'] = "kleiner oder gleich";
-    $text['greaterthanequal'] = "größer oder gleich";
-    $text['equalto'] = "ist gleich";
-    $text['tryagain'] = "Bitte erneut versuchen";
-    $text['joinwith'] = "Verknüpfen mit";
-    $text['cap_and'] = "UND";
-    $text['cap_or'] = "ODER";
-    $text['showspouse'] = "Zeige Partner. Dubletten werden gezeigt, wenn eine Person mehrere Partner hat";
-    $text['submitquery'] = "Suche";
-    $text['birthplace'] = "Geburtsort";
-    $text['deathplace'] = "Sterbeort";
-    $text['birthdatetr'] = "Geburtsjahr";
-    $text['deathdatetr'] = "Sterbejahr";
-    $text['plusminus2'] = "+/- 2 Jahre von";
-    $text['resetall'] = "Alle Werte zurücksetzen";
-    $text['showdeath'] = "Zeige Todestag/Beerdigungsangaben";
-    $text['altbirthplace'] = "Ort der Taufe";
-    $text['altbirthdatetr'] = "Jahr der Taufe";
-    $text['burialplace'] = "Ort der Beerdigung";
-    $text['burialdatetr'] = "Jahr der Beerdigung";
-    $text['event'] = "Ereignis(se)";
-    $text['day'] = "Tag";
-    $text['month'] = "Monat";
-    $text['keyword'] = "Suchwort (z.B. \"ABT\", \"BEF\", \"AFT\")";
-    $text['explain'] = "Datum oder Datumsteile eingeben, um passende Ereignisse zu erhalten. Oder Feld leerlassen, um alle Ereignisse zu erhalten.";
-    $text['enterdate'] = "Bitte mindestens eines der folgenden eingeben oder auswählen: Tag, Monat, Jahr, Suchwort";
-    $text['fullname'] = "Vollständiger Name";
-    $text['birthdate'] = "Geburtsdatum";
-    $text['altbirthdate'] = "Taufdatum";
-    $text['marrdate'] = "Heiratsdatum";
-    $text['spouseid'] = "Partner-Kennung";
-    $text['spousename'] = "Partner-Name";
-    $text['deathdate'] = "Sterbedatum";
-    $text['burialdate'] = "Beerdigungsdatum";
-    $text['changedate'] = "Datum der letzten Änderung";
-    $text['gedcom'] = "Stammbaum";
-    $text['baptdate'] = "Datum der Taufe (LDS)";
-    $text['baptplace'] = "Ort der Taufe (LDS)";
-    $text['endldate'] = "Datum der Begabung (LDS)";
-    $text['endlplace'] = "Ort der Begabung (LDS)";
-    $text['ssealdate'] = "Datum der Siegelung an den Ehepartner (LDS)";   //Sealed to spouse
-    $text['ssealplace'] = "Ort der Siegelung an den Ehepartner (LDS)";
-    $text['psealdate'] = "Datum der Siegelung an die Eltern (LDS)";   //Sealed to parents
-    $text['psealplace'] = "Ort der Siegelung an die Eltern (LDS)";
-    $text['marrplace'] = "Heiratsort";
-    $text['spousesurname'] = "Nachname des Partners";
-    $text['spousemore'] = "Wenn Sie einen Partner-Nachnamen eingeben, müssen Sie das Geschlecht der gesuchten Person auswählen.";
-    $text['plusminus5'] = "+/- 5 Jahre von";
-    $text['exists'] = "ist vorhanden";
-    $text['dnexist'] = "ist nicht vorhanden";
-    $text['divdate'] = "Scheidungsdatum";
-    $text['divplace'] = "Scheidungsort";
-    $text['otherevents'] = "Weitere Ereignisse";
-    $text['numresults'] = "Ergebnisse pro Seite";
-    $text['mysphoto'] = "Fotos mit unbekannten Personen";
-    $text['mysperson'] = "Personen mit fehlenden Angaben";
-    $text['joinor'] = "Die Option 'Verknüpfen mit ODER' kann nicht mit dem Nachnamen des Ehepartners verwendet werden";
-    $text['tellus'] = "Teilen Sie uns mit, was Sie wissen";
-    $text['moreinfo'] = "Weitere Informationen:";
-    //added in 8.0.0
-    $text['marrdatetr'] = "Jahr der Heirat";
-    $text['divdatetr'] = "Jahr der Scheidung";
-    $text['mothername'] = "Name der Mutter";
-    $text['fathername'] = "Name des Vaters";
-    $text['filter'] = "Filter";
-    $text['notliving'] = "Nicht lebend";
-    $text['nodayevents'] = "Ereignisse für diesen Monat, die nicht einem bestimmten Tag zugeordnet sind:";
-    //added in 9.0.0
-    $text['csv'] = "Komma-getrennte CSV-Datei";
-    //added in 10.0.0
-    $text['confdate'] = "Datum der Konfirmation (LDS)";
-    $text['confplace'] = "Ort der Konfirmation (LDS)";
-    $text['initdate'] = "Datum der Vorverordnungen (LDS)";
-    $text['initplace'] = "Ort der Vorverordnungen (LDS)";
-    //added in 11.0.0
-    $text['marrtype'] = "Ehe-Typ";
-    $text['searchfor'] = "Suchen nach";
-    $text['searchnote'] = "Anmerkung: Diese Seite benutzt Google um die Suche auszuführen. Die Anzahl der Treffer hängt direkt davon ab, in wieweit Google die Seite indizieren konnte.";
-    break;
+    //statistics.php
+    case "stats":
+        $text['quantity'] = "Anzahl";
+        $text['totindividuals'] = "Personen";
+        $text['totmales'] = "Männliche Personen";
+        $text['totfemales'] = "Weibliche Personen";
+        $text['totunknown'] = "Personen mit unbekanntem Geschlecht";
+        $text['totliving'] = "Lebende Personen";
+        $text['totfamilies'] = "Familien";
+        $text['totuniquesn'] = "Eindeutige Nachnamen";
+        //$text['totphotos'] = "Total Photos";
+        //$text['totdocs'] = "Total Histories &amp; Documents";
+        //$text['totheadstones'] = "Total Headstones";
+        $text['totsources'] = "Quellen";
+        $text['avglifespan'] = "Durchschnittliche Lebensspanne";
+        $text['earliestbirth'] = "Früheste Geburt";
+        $text['longestlived'] = "Älteste Personen";
+        $text['days'] = "Tage";
+        $text['age'] = "Alter";
+        $text['agedisclaimer'] = "Altersbasierte Berechnungen sind bezogen auf Personen mit eingetragenem Geburtstag <EM>und</EM> Sterbedatum. Durch unvollständige Datumsfelder (z.B. Geburtstag nur eingetragen als \"1945\" oder \"BEF 1860\") können diese Berechnungen nicht immer 100 % korrekt sein.";
+        $text['treedetail'] = "Weitere Angaben zu diesem Stammbaum";
+        $text['total'] = "Anzahl";
+        //added in 12.0
+        $text['totdeceased'] = "Gesamtzahl der Verstorbenen";
+        break;
 
-  //showlog.php
-  case "showlog":
-    $text['logfilefor'] = "Protokolldatei für";
-    $text['mostrecentactions'] = "letzte Aktionen";
-    $text['autorefresh'] = "automatische Aktualisierung einschalten (alle 30 Sekunden)";
-    $text['refreshoff'] = "automatische Aktualisierung abschalten";
-    break;
+    case "notes":
+        $text['browseallnotes'] = "Alle Notizen durchblättern";
+        break;
 
-  case "headstones":
-  case "showphoto":
-    $text['cemeteriesheadstones'] = "Friedhöfe und Grabsteine";
-    $text['showallhsr'] = "Zeige alle Grabsteine";
-    $text['in'] = "in";
-    $text['showmap'] = "Karte anzeigen";
-    $text['headstonefor'] = "Grabstein von";
-    $text['photoof'] = "Foto von";
-    $text['photoowner'] = "Besitzer/Quelle";
-    $text['nocemetery'] = "Kein Friedhof";
-    $text['iptc005'] = "Titel";
-    $text['iptc020'] = "Zusätzliche Kategorien";
-    $text['iptc040'] = "Spezielle Anweisungen";
-    $text['iptc055'] = "Gestaltungsdatum";
-    $text['iptc080'] = "Autor";
-    $text['iptc085'] = "Position des Autors";
-    $text['iptc090'] = "Stadt";
-    $text['iptc095'] = "Staat";
-    $text['iptc101'] = "Land";
-    $text['iptc103'] = "Auftraggeber";
-    $text['iptc105'] = "Schlagzeile";
-    $text['iptc110'] = "Quelle";
-    $text['iptc115'] = "Quelle des Fotos";
-    $text['iptc116'] = "Copyright-Notiz";
-    $text['iptc120'] = "Bildtext";
-    $text['iptc122'] = "Bildtext Autor";
-    $text['mapof'] = "Karte von";
-    $text['regphotos'] = "Übersicht mit Kurzbeschreibungen";
-    $text['gallery'] = "Übersicht mit Vorschaubildern";
-    $text['cemphotos'] = "Friedhofs-Fotos";
-    $text['photosize'] = "Größe";
-    $text['iptc010'] = "Priorität";
-    $text['filesize'] = "Dateigröße";
-    $text['seeloc'] = "Siehe Ort";
-    $text['showall'] = "Alles anzeigen";
-    $text['editmedia'] = "Medium bearbeiten";
-    $text['viewitem'] = "Dieses Element ansehen";
-    $text['editcem'] = "Friedhof bearbeiten";
-    $text['numitems'] = "Elemente";
-    $text['allalbums'] = "Alle Alben";
-    $text['slidestop'] = "Diaschau beenden";
-    $text['slideresume'] = "Diaschau fortsetzen";
-    $text['slidesecs'] = "Sekunden für jedes Bild:";
-    $text['minussecs'] = "minus 0,5 Sekunden";
-    $text['plussecs'] = "plus 0,5 Sekunden";
-    $text['nocountry'] = "Unbekanntes Land";
-    $text['nostate'] = "Unbekannter/s (Bundes-)Staat/Land";
-    $text['nocounty'] = "Unbekannte Provinz";
-    $text['nocity'] = "Unbekannter Ort";
-    $text['nocemname'] = "Unbekannter Friedhofs-Name";
-    $text['editalbum'] = "Album bearbeiten";
-    $text['mediamaptext'] = "<strong>Hinweis:</strong> Wenn Sie Ihren Mauszeiger über das Bild bewegen, werden Namen angezeigt. Klicken Sie diese an, um weitere Informationen zu erhalten.";
-    //added in 8.0.0
-    $text['allburials'] = "Alle Beerdigungen";
-    $text['moreinfo'] = "Weitere Informationen:";
-    //added in 9.0.0
-    $text['iptc025'] = "Schlagwörter";
-    $text['iptc092'] = "genauen Aufnahmeort";
-    $text['iptc015'] = "Kategorie";
-    $text['iptc065'] = "erzeugendes Grafikprogramm";
-    $text['iptc070'] = "Programmversion";
-    break;
+    case "help":
+        $text['menuhelp'] = "Bedeutung der Menü-Icons";
+        break;
 
-  //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
-  case "surnames":
-  case "places":
-    $text['surnamesstarting'] = "Nachnamen anzeigen, die mit ... anfangen";
-    $text['showtop'] = "Zeige die ersten";
-    $text['showallsurnames'] = "Zeige alle Nachnamen";
-    $text['sortedalpha'] = "alphabetisch sortiert";
-    $text['byoccurrence'] = "Einträge sortiert nach ihrer Häufigkeit";
-    $text['firstchars'] = "Erster Buchstabe der obersten Orts-Ebene";
-    $text['mainsurnamepage'] = "Übersichtsseite Nachnamen";
-    $text['allsurnames'] = "Alle Nachnamen";
-    $text['showmatchingsurnames'] = "Nachnamen anklicken, um weitere Angaben zu erhalten";
-    $text['backtotop'] = "Zurück nach oben";
-    $text['beginswith'] = "Beginnt mit";
-    $text['allbeginningwith'] = "Alle Nachnamen beginnend mit";
-    $text['numoccurrences'] = "Anzahl der Datensätze wird in Klammern angezeigt";
-    $text['placesstarting'] = "Zeige oberste Orts-Ebenen beginnend mit";
-    $text['showmatchingplaces'] = "Klicken Sie auf einen Eintrag, um die untergeordneten Ebenen anzuzeigen. Klicken Sie auf das 'Suchen'-Icon, um die Nachnamen zu diesem Ort zu zeigen.";
-    $text['totalnames'] = "Anzahl der Personen";
-    $text['showallplaces'] = "Zeige alle obersten Orts-Ebenen";
-    $text['totalplaces'] = "Anzahl der Orte";
-    $text['mainplacepage'] = "Zurück zur Orts-Hauptseite";
-    $text['allplaces'] = "Alle obersten Orts-Ebenen";
-    $text['placescont'] = "Zeige alle Orte, die ... enthalten";
-    //changed in 8.0.0
-    $text['top30'] = "Die xxx häufigsten Nachnamen";
-    $text['top30places'] = "Die xxx bedeutendsten obersten Orts-Ebenen";
-    //added in 12.0.0
-    $text['firstnamelist'] = "Liste der Vornamen";
-    $text['firstnamesstarting'] = "Zeige Vornamen beginnend mit";
-    $text['showallfirstnames'] = "Zeige alle Vornamen";
-    $text['mainfirstnamepage'] = "Hauptseite für Vornamen";
-    $text['allfirstnames'] = "Alle Vornamen";
-    $text['showmatchingfirstnames'] = "Einen Vornamen anklicken, um zugehörige Einträge zu zeigen";
-    $text['allfirstbegwith'] = "Alle Vornamen beginnend mit";
-    $text['top30first'] = "Die xxx häufigsten Vornamen";
-    $text['allothers'] = "Alle anderen";
-    $text['amongall'] = "(von allen Namen)";
-    $text['justtop'] = "Nur die häufigsten xxx";
-    break;
+    case "install":
+        $text['perms'] = "Alle Berechtigungen wurden eingerichtet.";
+        $text['noperms'] = "Die Berechtigungen für die folgenden Dateien konnten nicht eingerichtet werden:";
+        $text['manual'] = "Bitte richten Sie sie von Hand ein.";
+        $text['folder'] = "Verzeichnis";
+        $text['created'] = "wurde angelegt";
+        $text['nocreate'] = "konnte nicht angelegt werden. Bitte von Hand anlegen.";
+        $text['infosaved'] = "Information wurde gespeichert, Datenbank-Verbindung wurde überprüft!";
+        $text['tablescr'] = "Die Tabellen wurden angelegt!";
+        $text['notables'] = "Die folgenden Tabellen konnten nicht angelegt werden:";
+        $text['nocomm'] = "TNG kann nicht auf Ihre Datenbank zugreifen. Es wurden keine Tabellen angelegt.";
+        $text['newdb'] = "Information wurde gespeichert, Datenbank-Verbindung wurde überprüft, neue Datenbank wurde angelegt:";
+        $text['noattach'] = "Information wurde gespeichert. Datenbank-Verbindung wurde hergestellt und Datenbank wurde angelegt, aber TNG kann nicht darauf zugreifen.";
+        $text['nodb'] = "Information wurde gespeichert. Verbindung wurde hergestellt, aber die Datenbank ist nicht vorhanden und konnte auch nicht angelegt werden. Bitte überprüfen Sie, ob der angegebene Datenbankname korrekt ist, oder verwenden Sie Ihr Verwaltungsprogramm, um sie anzulegen.";
+        $text['noconn'] = "Information wurde gespeichert, aber die Verbindung zur Datenbank ist fehlgeschlagen. Einer oder mehrere der folgenden Punkte sind nicht korrekt:";
+        $text['exists'] = "ist vorhanden";
+        $text['loginfirst'] = "Sie müssen sich zuerst anmelden.";
+        $text['noop'] = "Es wurde keine Datenbank-Operation ausgeführt.";
+        //added in 8.0.0
+        $text['nouser'] = "Benutzerkennung wurde nicht angelegt. Die angegebene Benutzerkennung existiert möglicherweise bereits.";
+        $text['notree'] = "Baum wurde nicht angelegt. Die Baum-Kennung existiert möglicherweise bereits.";
+        $text['infosaved2'] = "Information gespeichert";
+        $text['renamedto'] = "Umbenannt zu";
+        $text['norename'] = "Konnte nicht umbenannt werden";
+        break;
 
-  //whatsnew.php
-  case "whatsnew":
-    $text['pastxdays'] = "(aus den letzten xx Tagen)";
+    case "imgviewer":
+        $text['zoomin'] = "Vergrößern";
+        $text['zoomout'] = "Verkleinern";
+        $text['magmode'] = "Vergrößerungsmodus";
+        $text['panmode'] = "Zeiger";
+        $text['pan'] = "Klicken und Ziehen Sie, um sich innerhalb des Bildes zu bewegen";
+        $text['fitwidth'] = "Breite anpassen";
+        $text['fitheight'] = "Höhe anpassen";
+        $text['newwin'] = "Neues Fenster";
+        $text['opennw'] = "Bild in einem neuen Fenster öffnen";
+        $text['magnifyreg'] = "Klicken Sie, um einen Bereich des Bildes zu vergrößern";
+        $text['imgctrls'] = "Bildsteuerung aktivieren";
+        $text['vwrctrls'] = "Bildbetrachter Steuerung aktivieren";
+        $text['vwrclose'] = "Bildbetrachter schließen";
+        break;
 
-    $text['photo'] = "Foto";
-    $text['history'] = "Geschichte/Dokument";
-    $text['husbid'] = "Vater-Kennung";
-    $text['husbname'] = "Name des Vaters";
-    $text['wifeid'] = "Mutter-Kennung";
-    //added in 11.0.0
-    $text['wifename'] = "Name der Mutter";
-    break;
-
-  //timeline.php, timeline2.php
-  case "timeline":
-    $text['text_delete'] = "Löschen";
-    $text['addperson'] = "Person hinzufügen";
-    $text['nobirth'] = "Die folgende Person hat kein gültiges Geburtsdatum und konnte daher nicht hinzugefügt werden";
-    $text['event'] = "Ereignis(se)";
-    $text['chartwidth'] = "Breite der Graphik";
-    $text['timelineinstr'] = "Weitere Kennungen eintragen";
-    $text['togglelines'] = "Linien ein-/ausschalten";
-    //changed in 9.0.0
-    $text['noliving'] = "Die folgende Person ist als 'lebend' deklariert und konnte nicht hinzugefügt werden, da Sie nicht mit den entsprechenden Berechtigungen angemeldet sind";
-    break;
-
-  //browsetrees.php
-  //login.php, newacctform.php, addnewacct.php
-  case "trees":
-  case "login":
-    $text['browsealltrees'] = "Zeige alle Stammbäume";
-    $text['treename'] = "Stammbaumname";
-    $text['owner'] = "Besitzer";
-    $text['address'] = "Adresse";
-    $text['city'] = "Ort";
-    $text['state'] = "(Bundes-)Staat/-Land";
-    $text['zip'] = "Postleitzahl";
-    $text['country'] = "Land";
-    $text['email'] = "E-Mail";
-    $text['phone'] = "Telefon";
-    $text['username'] = "Benutzerkennung";
-    $text['password'] = "Passwort";
-    $text['loginfailed'] = "Anmeldung fehlgeschlagen.";
-
-    $text['regnewacct'] = "Benutzerkennung beantragen";
-    $text['realname'] = "Ihr Name";
-    $text['phone'] = "Telefon";
-    $text['email'] = "E-Mail";
-    $text['address'] = "Adresse";
-    $text['acctcomments'] = "Notiz oder Kommentar";
-    $text['submit'] = "Eintragen";
-    $text['leaveblank'] = "(Leer lassen, wenn Sie einen neuen Baum beginnen)";
-    $text['required'] = "Erforderliche Angaben";
-    $text['enterpassword'] = "Bitte Passwort eingeben.";
-    $text['enterusername'] = "Bitte eine Benutzerkennung eingeben.";
-    $text['failure'] = "Diese Benutzerkennung wird bereits verwendet. Bitte zur vorgehenden Seite zurück gehen und eine andere Benutzerkennung wählen.";
-    $text['success'] = "Vielen Dank. Wir haben Ihre Registrierung empfangen. Wir werden Kontakt mit Ihnen aufnehmen, wenn Ihre Benutzerkennung freigeschaltet worden ist oder wenn wir weitere Angaben benötigen.";
-    $text['emailsubject'] = "Registrierungsanfrage: Neuer TNG-Benutzer";
-    $text['website'] = "Website (WWW-Adresse)";
-    $text['nologin'] = "Sie haben keine Anmeldedaten?";
-    $text['loginsent'] = "Anmeldedaten wurden versandt";
-    $text['loginnotsent'] = "Anmeldedaten wurden nicht versandt";
-    $text['enterrealname'] = "Bitte geben Sie Ihren Namen ein.";
-    $text['rempass'] = "Auf diesem Rechner angemeldet bleiben";
-    $text['morestats'] = "Weitere Statistiken";
-    $text['accmail'] = "<strong>HINWEIS:</strong> Um vom Verwalter dieser Website E-Mails, betreffend Ihre Benutzerkennung, empfangen zu können, stellen Sie bitte sicher, dass E-Mails aus dieser Domain bei Ihnen nicht gesperrt werden.";
-    $text['newpassword'] = "Neues Passwort";
-    $text['resetpass'] = "Ihr Passwort zurücksetzen";
-    $text['nousers'] = "Dieses Formular kann nicht verwendet werden, solange nicht mindestens ein Benutzer-Datensatz existiert. Wenn Sie der Eigentümer dieser Website sind, dann rufen Sie Verwaltung/Benutzer auf und legen Sie Ihre Verwalter-Kennung an.";
-    $text['noregs'] = "Bedauerlicherweise werden momentan keine neuen Benutzer-Registrierungen akzeptiert. Bitte <a href=\"suggest.php\">kontaktieren</a> Sie uns, wenn Sie Anmerkungen oder Fragen zu dieser Website haben.";
-    //changed in 8.0.0
-    $text['emailmsg'] = "Sie haben eine Registrierungsanfrage für einen neuen TNG-Benutzer erhalten. Bitte besuchen Sie Ihren TNG-Verwaltungsbereich und stellen Sie die Zugriffsrechte ein. Wenn Sie der Registrierung zustimmen, unterrichten Sie den Antragsteller, indem Sie auf diese E-Mail antworten.";
-    $text['accactive'] = "Die Benutzerkennung wurde freigeschaltet, aber der Benutzer wird solange keine besonderen Berechtigungen haben, bis Sie diese zuweisen.";
-    $text['accinactive'] = "Gehen Sie zu Verwaltung/Benutzerverwaltung/Änderungsvorschläge prüfen, um die Angaben zur Benutzerkennung zu überprüfen. Die Benutzerkennung bleibt inaktiv, bis Sie die Einstellungen überprüft und den Benutzer-Datensatz mindestens einmal gespeichert haben.";
-    $text['pwdagain'] = "Passwort-Wiederholung";
-    $text['enterpassword2'] = "Bitte geben Sie Ihr Passwort nochmals ein.";
-    $text['pwdsmatch'] = "Ihre Passwort-Angaben stimmen nicht überein. Bitte geben Sie jeweils dasselbe Passwort ein.";
-    //added in 8.0.0
-    $text['acksubject'] = "Vielen Dank für Ihren Benutzer-Antrag"; //for a new user account
-    $text['ackmessage'] = "Ihr Antrag für eine Benutzerkennung ist eingegangen. Die Benutzerkennung ist inaktiv, bis sie vom Verwalter der Website überprüft wurde. Sie erhalten eine E-Mail-Nachricht, sobald Ihre Benutzerkennung freigeschaltet ist.";
-    //added in 12.0.0
-    $text['switch'] = "Wechseln";
-    break;
-
-  //added in 10.0.0
-  case "branches":
-    $text['browseallbranches'] = "Alle Zweige durchsuchen";
-    break;
-
-  //statistics.php
-  case "stats":
-    $text['quantity'] = "Anzahl";
-    $text['totindividuals'] = "Personen";
-    $text['totmales'] = "Männliche Personen";
-    $text['totfemales'] = "Weibliche Personen";
-    $text['totunknown'] = "Personen mit unbekanntem Geschlecht";
-    $text['totliving'] = "Lebende Personen";
-    $text['totfamilies'] = "Familien";
-    $text['totuniquesn'] = "Eindeutige Nachnamen";
-    //$text['totphotos'] = "Total Photos";
-    //$text['totdocs'] = "Total Histories &amp; Documents";
-    //$text['totheadstones'] = "Total Headstones";
-    $text['totsources'] = "Quellen";
-    $text['avglifespan'] = "Durchschnittliche Lebensspanne";
-    $text['earliestbirth'] = "Früheste Geburt";
-    $text['longestlived'] = "Älteste Personen";
-    $text['days'] = "Tage";
-    $text['age'] = "Alter";
-    $text['agedisclaimer'] = "Altersbasierte Berechnungen sind bezogen auf Personen mit eingetragenem Geburtstag <EM>und</EM> Sterbedatum. Durch unvollständige Datumsfelder (z.B. Geburtstag nur eingetragen als \"1945\" oder \"BEF 1860\") können diese Berechnungen nicht immer 100 % korrekt sein.";
-    $text['treedetail'] = "Weitere Angaben zu diesem Stammbaum";
-    $text['total'] = "Anzahl";
-    //added in 12.0
-    $text['totdeceased'] = "Gesamtzahl der Verstorbenen";
-    break;
-
-  case "notes":
-    $text['browseallnotes'] = "Alle Notizen durchblättern";
-    break;
-
-  case "help":
-    $text['menuhelp'] = "Bedeutung der Menü-Icons";
-    break;
-
-  case "install":
-    $text['perms'] = "Alle Berechtigungen wurden eingerichtet.";
-    $text['noperms'] = "Die Berechtigungen für die folgenden Dateien konnten nicht eingerichtet werden:";
-    $text['manual'] = "Bitte richten Sie sie von Hand ein.";
-    $text['folder'] = "Verzeichnis";
-    $text['created'] = "wurde angelegt";
-    $text['nocreate'] = "konnte nicht angelegt werden. Bitte von Hand anlegen.";
-    $text['infosaved'] = "Information wurde gespeichert, Datenbank-Verbindung wurde überprüft!";
-    $text['tablescr'] = "Die Tabellen wurden angelegt!";
-    $text['notables'] = "Die folgenden Tabellen konnten nicht angelegt werden:";
-    $text['nocomm'] = "TNG kann nicht auf Ihre Datenbank zugreifen. Es wurden keine Tabellen angelegt.";
-    $text['newdb'] = "Information wurde gespeichert, Datenbank-Verbindung wurde überprüft, neue Datenbank wurde angelegt:";
-    $text['noattach'] = "Information wurde gespeichert. Datenbank-Verbindung wurde hergestellt und Datenbank wurde angelegt, aber TNG kann nicht darauf zugreifen.";
-    $text['nodb'] = "Information wurde gespeichert. Verbindung wurde hergestellt, aber die Datenbank ist nicht vorhanden und konnte auch nicht angelegt werden. Bitte überprüfen Sie, ob der angegebene Datenbankname korrekt ist, oder verwenden Sie Ihr Verwaltungsprogramm, um sie anzulegen.";
-    $text['noconn'] = "Information wurde gespeichert, aber die Verbindung zur Datenbank ist fehlgeschlagen. Einer oder mehrere der folgenden Punkte sind nicht korrekt:";
-    $text['exists'] = "ist vorhanden";
-    $text['loginfirst'] = "Sie müssen sich zuerst anmelden.";
-    $text['noop'] = "Es wurde keine Datenbank-Operation ausgeführt.";
-    //added in 8.0.0
-    $text['nouser'] = "Benutzerkennung wurde nicht angelegt. Die angegebene Benutzerkennung existiert möglicherweise bereits.";
-    $text['notree'] = "Baum wurde nicht angelegt. Die Baum-Kennung existiert möglicherweise bereits.";
-    $text['infosaved2'] = "Information gespeichert";
-    $text['renamedto'] = "Umbenannt zu";
-    $text['norename'] = "Konnte nicht umbenannt werden";
-    break;
-
-  case "imgviewer":
-    $text['zoomin'] = "Vergrößern";
-    $text['zoomout'] = "Verkleinern";
-    $text['magmode'] = "Vergrößerungsmodus";
-    $text['panmode'] = "Zeiger";
-    $text['pan'] = "Klicken und Ziehen Sie, um sich innerhalb des Bildes zu bewegen";
-    $text['fitwidth'] = "Breite anpassen";
-    $text['fitheight'] = "Höhe anpassen";
-    $text['newwin'] = "Neues Fenster";
-    $text['opennw'] = "Bild in einem neuen Fenster öffnen";
-    $text['magnifyreg'] = "Klicken Sie, um einen Bereich des Bildes zu vergrößern";
-    $text['imgctrls'] = "Bildsteuerung aktivieren";
-    $text['vwrctrls'] = "Bildbetrachter Steuerung aktivieren";
-    $text['vwrclose'] = "Bildbetrachter schließen";
-    break;
-
-  case "dna":
-    $text['test_date'] = "Test-Datum";
-    $text['links'] = "Relevante Links";
-    $text['testid'] = "Test-Kennung";
-    //added in 12.0.0
-    $text['mode_values'] = "Einzelne Werte";
-    $text['compareselected'] = "Ausgewählte vergleichen";
-    $text['dnatestscompare'] = "yDNA-Tests vergleichen";
-    $text['keep_name_private'] = "Namen nicht veröffentlichen";
-    $text['browsealltests'] = "Alle Tests durchsuchen";
-    $text['all_dna_tests'] = "Alle DNA-Tests";
-    $text['fastmutating'] = "Bereiche mit häufigen Mutationen";
-    $text['alltypes'] = "Alle Test-Typen";
-    $text['allgroups'] = "Alle Gruppen";
-    $text['Ydna_LITbox_info'] = "Mit dieser Person ist ein DNA-Test verbunden; das bedeutet nicht unbedingt, dass diese Person selbst getestet worden ist.<br>Die Haplogruppe wird in rot angezeigt, wenn sie vermutet ist; sie wird in grün angezeigt, wenn sie bestätigt ist.";
-    //added in 12.1.0
-    $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
-    $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";
-    $text['chromosome'] = "Chr";
-    $text['centiMorgans'] = "cM";
-    $text['snps'] = "SNPs";
-    $text['y_haplogroup'] = "Y-DNA";
-    $text['mt_haplogroup'] = "mtDNA";
-    $text['sequence'] = "Ref";
-    $text['extra_mutations'] = "Extra Mutations";
-    $text['mrca'] = "MRC Ancestor";
-    $text['ydna_test'] = "Y-DNA Tests";
-    $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
-    $text['atdna_test'] = "atDNA (autosomal) Tests";
-    $text['segment_start'] = "Start";
-    $text['segment_end'] = "End";
-    $text['suggested_relationship'] = "Suggested";
-    $text['actual_relationship'] = "Actual";
-    $text['12markers'] = "Markers 1-12";
-    $text['25markers'] = "Markers 13-25";
-    $text['37markers'] = "Markers 26-37";
-    $text['67markers'] = "Markers 38-67";
-    $text['111markers'] = "Markers 68-111";
-    break;
+    case "dna":
+        $text['test_date'] = "Test-Datum";
+        $text['links'] = "Relevante Links";
+        $text['testid'] = "Test-Kennung";
+        //added in 12.0.0
+        $text['mode_values'] = "Einzelne Werte";
+        $text['compareselected'] = "Ausgewählte vergleichen";
+        $text['dnatestscompare'] = "yDNA-Tests vergleichen";
+        $text['keep_name_private'] = "Namen nicht veröffentlichen";
+        $text['browsealltests'] = "Alle Tests durchsuchen";
+        $text['all_dna_tests'] = "Alle DNA-Tests";
+        $text['fastmutating'] = "Bereiche mit häufigen Mutationen";
+        $text['alltypes'] = "Alle Test-Typen";
+        $text['allgroups'] = "Alle Gruppen";
+        $text['Ydna_LITbox_info'] = "Mit dieser Person ist ein DNA-Test verbunden; das bedeutet nicht unbedingt, dass diese Person selbst getestet worden ist.<br>Die Haplogruppe wird in rot angezeigt, wenn sie vermutet ist; sie wird in grün angezeigt, wenn sie bestätigt ist.";
+        //added in 12.1.0
+        $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
+        $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";
+        $text['chromosome'] = "Chr";
+        $text['centiMorgans'] = "cM";
+        $text['snps'] = "SNPs";
+        $text['y_haplogroup'] = "Y-DNA";
+        $text['mt_haplogroup'] = "mtDNA";
+        $text['sequence'] = "Ref";
+        $text['extra_mutations'] = "Extra Mutations";
+        $text['mrca'] = "MRC Ancestor";
+        $text['ydna_test'] = "Y-DNA Tests";
+        $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
+        $text['atdna_test'] = "atDNA (autosomal) Tests";
+        $text['segment_start'] = "Start";
+        $text['segment_end'] = "End";
+        $text['suggested_relationship'] = "Suggested";
+        $text['actual_relationship'] = "Actual";
+        $text['12markers'] = "Markers 1-12";
+        $text['25markers'] = "Markers 13-25";
+        $text['37markers'] = "Markers 26-37";
+        $text['67markers'] = "Markers 38-67";
+        $text['111markers'] = "Markers 68-111";
+        break;
 }
 
 //common
@@ -1011,5 +1011,5 @@ $text['lastpage'] = "Letzte Seite";
 @include_once "captcha_text.php";
 @include_once "alltext.php";
 if (!$alltextloaded) {
-  getAllTextPath();
+    getAllTextPath();
 }

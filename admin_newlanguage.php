@@ -8,9 +8,9 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $helplang = findhelp("languages_help.php");
@@ -20,10 +20,10 @@ tng_adminheader($admtext['addnewlanguage'], $flags);
 ?>
 <script type="text/javascript" src="js/admin.js"></script>
 <script type="text/javascript">
-  function validateForm() {
-      let rval = true;
-      if (document.form1.folder.value.length == 0) {
-      alert("<?php echo $admtext['enterlangfolder']; ?>");
+    function validateForm() {
+        let rval = true;
+        if (document.form1.folder.value.length == 0) {
+            alert("<?php echo $admtext['enterlangfolder']; ?>");
             rval = false;
         } else if (document.form1.display.value.length == 0) {
             alert("<?php echo $admtext['enterlangdisplay']; ?>");
@@ -45,41 +45,45 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['addnewlang
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_addlanguage.php" method="post" name="form1" onSubmit="return validateForm();">
-        <table class="normal">
-          <tr>
-            <td><?php echo $admtext['langfolder']; ?>:</td>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_addlanguage.php" method="post" name="form1" onSubmit="return validateForm();">
+                <table class="normal">
+                    <tr>
+                        <td><?php echo $admtext['langfolder']; ?>:</td>
                         <td>
                             <select name="folder">
                                 <option value=""></option>
-                              <?php
-                              @chdir($rootpath . $endrootpath . $languages_path);
-                              if ($handle = @opendir('.')) {
-                                $dirs = array();
-                                while ($filename = readdir($handle)) {
-                                  if (is_dir($filename) && $filename != '..' && $filename != '.') {
-                                    array_push($dirs, $filename);
-                                  }
+                                <?php
+                                @chdir($rootpath . $endrootpath . $languages_path);
+                                if ($handle = @opendir('.')) {
+                                    $dirs = array();
+                                    while ($filename = readdir($handle)) {
+                                        if (is_dir($filename) && $filename != '..' && $filename != '.') {
+                                            array_push($dirs, $filename);
+                                        }
+                                    }
+                                    natcasesort($dirs);
+                                    foreach ($dirs as $dir) {
+                                        echo "<option value=\"$dir\">$dir</option>\n";
+                                    }
+                                    closedir($handle);
                                 }
-                                natcasesort($dirs);
-                                foreach ($dirs as $dir) {
-                                  echo "<option value=\"$dir\">$dir</option>\n";
-                                }
-                                closedir($handle);
-                              }
-                              ?>
+                                ?>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['langdisplay']; ?>:</td>
-                        <td><input type="text" name="display" size="50"></td>
+                        <td>
+                            <input type="text" name="display" size="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['charset']; ?>:</td>
-                        <td><input type="text" name="langcharset" size="30" value="<?php echo $session_charset; ?>"></td>
+                        <td>
+                            <input type="text" name="langcharset" size="30" value="<?php echo $session_charset; ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['norels']; ?>:</td>
@@ -90,11 +94,12 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['addnewlang
                             </select>
                         </td>
                     </tr>
-        </table>
-          <br>
-          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
-    </td>
-  </tr>
+                </table>
+                <br>
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+            </form>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

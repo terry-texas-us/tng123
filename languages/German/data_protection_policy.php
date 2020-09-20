@@ -15,22 +15,26 @@
 <p>Die meisten der von uns verwendeten Cookies sind "Session-Cookies". Sie werden automatisch gelöscht, wenn Sie Ihren Browser schließen. Andere
     Cookies bleiben auf Ihrem Gerät gespeichert, bis Sie sie löschen. Diese Cookies ermöglichen es uns, Ihren
     Browser beim nächsten Besuch wiederzuerkennen und einige Ihrer Präferenzen wiederherzustellen (z. B. Ihre bevorzugte Sprache).</p>
-    <p>Sie können Ihre Browsereinstellungen so konfigurieren, dass Sie über das Setzen von Cookies informiert werden und Cookies nur in bestimmten Fällen zulassen. Das Deaktivieren von Cookies kann die Funktionalität dieser Website einschränken.</p>
-    <h3>Serverprotokolldateien</h3>
-    <p>Der Provider dieser Seiten erhebt und speichert automatisch Informationen in Server Log Files, die Ihr Browser an uns übermittelt. Diese sind:</p>
-    <ul>
-        <li>Browsertyp und -version</li>
-        <li>Betriebssystem</li>
-        <li>Referrer URL</li>
-        <li>Hostname des zugreifenden Computers</li>
-        <li>IP-Adresse (anonymisiert)</li>
-        <li>Zeitpunkt der Anfrage</li>
-    </ul>
-    <p>Diese Daten können nicht bestimmten Personen zugeordnet werden. Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Wir behalten uns vor, diese Daten nachträglich zu überprüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige
-        Nutzung bekannt werden.</p>
-    <h3>Kontaktformular</h3>
-    <p>Wenn Sie uns über das Kontaktformular Anfragen senden, werden Ihre Angaben aus dem Anfrageformular einschließlich der von Ihnen dort angegebenen Kontaktdaten gespeichert, um die Anfrage und Folgefragen bearbeiten zu können. Selbstverständlich werden
-        wir diese Daten nicht weitergeben.</p>
-    <h3>Recht auf Auskunft, Löschung, Sperrung</h3>
-    <p>Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der weiteren Verarbeitung und Übermittlung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
-        Für weitere Informationen zu personenbezogenen Daten können Sie uns jederzeit <a href="suggest.php">kontaktieren</a></p>.
+<p>Sie können Ihre Browsereinstellungen so konfigurieren, dass Sie über das Setzen von Cookies informiert werden und Cookies nur in bestimmten Fällen
+    zulassen. Das Deaktivieren von Cookies kann die Funktionalität dieser Website einschränken.</p>
+<h3>Serverprotokolldateien</h3>
+<p>Der Provider dieser Seiten erhebt und speichert automatisch Informationen in Server Log Files, die Ihr Browser an uns übermittelt. Diese sind:</p>
+<ul>
+    <li>Browsertyp und -version</li>
+    <li>Betriebssystem</li>
+    <li>Referrer URL</li>
+    <li>Hostname des zugreifenden Computers</li>
+    <li>IP-Adresse (anonymisiert)</li>
+    <li>Zeitpunkt der Anfrage</li>
+</ul>
+<p>Diese Daten können nicht bestimmten Personen zugeordnet werden. Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Wir behalten uns
+    vor, diese Daten nachträglich zu überprüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige
+    Nutzung bekannt werden.</p>
+<h3>Kontaktformular</h3>
+<p>Wenn Sie uns über das Kontaktformular Anfragen senden, werden Ihre Angaben aus dem Anfrageformular einschließlich der von Ihnen dort angegebenen
+    Kontaktdaten gespeichert, um die Anfrage und Folgefragen bearbeiten zu können. Selbstverständlich werden
+    wir diese Daten nicht weitergeben.</p>
+<h3>Recht auf Auskunft, Löschung, Sperrung</h3>
+<p>Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der weiteren
+    Verarbeitung und Übermittlung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
+    Für weitere Informationen zu personenbezogenen Daten können Sie uns jederzeit <a href="suggest.php">kontaktieren</a></p>.

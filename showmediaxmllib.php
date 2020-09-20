@@ -1,50 +1,50 @@
 <?php
 if ($medialinkID) {
-  //look up media & medialinks joined
-  //get info for linked person/family/source/repo
-  $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom AS gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $personID = $row['personID'];
-  if (!$requirelogin || !$treerestrict || !$assignedtree) {
-    $tree = $row['gedcom'];
-  }
-  $ordernum = $row['ordernum'];
-  $mediatypeID = $row['mediatypeID'];
-  $linktype = $row['linktype'];
-  if ($linktype == "P") {
-    $linktype = "I";
-  }
-  $eventID = $row['eventID'];
-} else {
-  if ($albumlinkID) {
-    $query = "SELECT albumname, description, ordernum, $albums_table.albumID AS albumID FROM ($albums_table, $albumlinks_table)
-			WHERE albumlinkID = \"$albumlinkID\" AND $albumlinks_table.albumID = $albums_table.albumID";
+    //look up media & medialinks joined
+    //get info for linked person/family/source/repo
+    $query = "SELECT mediatypeID, personID, linktype, $medialinks_table.gedcom AS gedcom, eventID, ordernum FROM ($media_table, $medialinks_table) WHERE medialinkID = \"$medialinkID\" AND $media_table.mediaID = $medialinks_table.mediaID";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
+    $personID = $row['personID'];
+    if (!$requirelogin || !$treerestrict || !$assignedtree) {
+        $tree = $row['gedcom'];
+    }
     $ordernum = $row['ordernum'];
-    $albumID = $row['albumID'];
-    $albumname = $row['albumname'];
-    $albdesc = $row['description'];
-    tng_free_result($result);
-    $showalbum_url = getURL("showalbum", 1);
-  }
-  $query = "SELECT mediatypeID, gedcom FROM $media_table WHERE mediaID = \"$mediaID\"";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $mediatypeID = $row['mediatypeID'];
-  if (!$requirelogin || !$treerestrict || !$assignedtree) {
-    $tree = $row['gedcom'];
-  }
+    $mediatypeID = $row['mediatypeID'];
+    $linktype = $row['linktype'];
+    if ($linktype == "P") {
+        $linktype = "I";
+    }
+    $eventID = $row['eventID'];
+} else {
+    if ($albumlinkID) {
+        $query = "SELECT albumname, description, ordernum, $albums_table.albumID AS albumID FROM ($albums_table, $albumlinks_table)
+			WHERE albumlinkID = \"$albumlinkID\" AND $albumlinks_table.albumID = $albums_table.albumID";
+        $result = tng_query($query);
+        $row = tng_fetch_assoc($result);
+        $ordernum = $row['ordernum'];
+        $albumID = $row['albumID'];
+        $albumname = $row['albumname'];
+        $albdesc = $row['description'];
+        tng_free_result($result);
+        $showalbum_url = getURL("showalbum", 1);
+    }
+    $query = "SELECT mediatypeID, gedcom FROM $media_table WHERE mediaID = \"$mediaID\"";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $mediatypeID = $row['mediatypeID'];
+    if (!$requirelogin || !$treerestrict || !$assignedtree) {
+        $tree = $row['gedcom'];
+    }
 }
 //redirect if we're not supposed to be here
 if ($requirelogin && $treerestrict && $assignedtree && $row['gedcom'] && $row['gedcom'] != $assignedtree) {
-  exit;
+    exit;
 }
 if (!tng_num_rows($result)) {
-  tng_free_result($result);
-  header("Location: thispagedoesnotexist.html");
-  exit;
+    tng_free_result($result);
+    header("Location: thispagedoesnotexist.html");
+    exit;
 }
 
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
@@ -63,11 +63,11 @@ $showPhotoInfo = $imgrow['alwayson'] || $noneliving;
 $nonamesloc = $livinginfo['private'] ? $tngconfig['nnpriv'] : $nonames;
 
 if ($noneliving || !$nonamesloc || $imgrow['alwayson']) {
-  $description = $mediadescription;
-  $notes = nl2br(xmlcharacters(getXrefNotes($medianotes, $tree)));
-  $notes .= $info['gotmap'] ? "<p>" . $text['mediamaptext'] . "</p>" : "";
+    $description = $mediadescription;
+    $notes = nl2br(xmlcharacters(getXrefNotes($medianotes, $tree)));
+    $notes .= $info['gotmap'] ? "<p>" . $text['mediamaptext'] . "</p>" : "";
 } else {
-  $description = $notes = $text['living'];
+    $description = $notes = $text['living'];
 }
 $logdesc = $nonamesloc && !$noneliving && !$imgrow['alwayson'] ? ($livinginfo['private'] ? $admtext['text_private'] : $text['living']) : $description;
 

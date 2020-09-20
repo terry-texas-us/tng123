@@ -7,32 +7,32 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedbranch || !$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
 setcookie("tng_tree", $tree, 0);
 
 if (!$dospouses) {
-  $dospouses = 0;
+    $dospouses = 0;
 }
 $template = "ssssssss";
 $query = "INSERT INTO $branches_table (gedcom,branch,description,personID,agens,dgens,dagens,inclspouses,action) VALUES (?,?,?,?,?,?,?,?,'2')";
 $params = array(&$template, &$tree, &$branch, &$description, &$personID, &$agens, &$dgens, &$dagens, &$dospouses);
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
-  $message = $admtext['branch'] . " $description {$admtext['succadded']}.";
+    $message = $admtext['branch'] . " $description {$admtext['succadded']}.";
 
-  adminwritelog($admtext['addnewbranch'] . " : $gedcom/$description");
+    adminwritelog($admtext['addnewbranch'] . " : $gedcom/$description");
 } else {
-  $message = $admtext['branch'] . " $description {$admtext['idexists']}.";
+    $message = $admtext['branch'] . " $description {$admtext['idexists']}.";
 }
 
 
 if ($submitx) {
-  header("Location: admin_branches.php?message=" . urlencode($message));
+    header("Location: admin_branches.php?message=" . urlencode($message));
 } else {
-  header("Location: admin_editbranch.php?branch=$branch&tree=$tree");
+    header("Location: admin_editbranch.php?branch=$branch&tree=$tree");
 }

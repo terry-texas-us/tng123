@@ -8,17 +8,17 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $firsttree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $firsttree = $assignedtree;
 } else {
-  $wherestr = "";
-  $firsttree = isset($_COOKIE['tng_tree']) ? $_COOKIE['tng_tree'] : "";
+    $wherestr = "";
+    $firsttree = isset($_COOKIE['tng_tree']) ? $_COOKIE['tng_tree'] : "";
 }
 
 $helplang = findhelp("repositories_help.php");
@@ -58,30 +58,30 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
 ?>
 
 <form action="admin_addrepo.php" method="post" name="form1" onSubmit="return validateForm();">
-  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-      <td class="tngshadow">
-        <table>
-          <tr>
-            <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixrepoid']; ?></strong></span></td>
+    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <table>
+                    <tr>
+                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixrepoid']; ?></strong></span></td>
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
                         <td>
                             <select name="tree1" onChange="generateID('repo',document.form1.repoID,document.form1.tree1);">
-                              <?php
-                              $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-                              $result = tng_query($query);
-                              $numtrees = tng_num_rows($result);
-                              while ($row = tng_fetch_assoc($result)) {
-                                echo "		<option value=\"{$row['gedcom']}\"";
-                                if ($firsttree == $row['gedcom']) {
-                                  echo " selected=\"selected\"";
+                                <?php
+                                $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
+                                $result = tng_query($query);
+                                $numtrees = tng_num_rows($result);
+                                while ($row = tng_fetch_assoc($result)) {
+                                    echo "		<option value=\"{$row['gedcom']}\"";
+                                    if ($firsttree == $row['gedcom']) {
+                                        echo " selected=\"selected\"";
+                                    }
+                                    echo ">{$row['treename']}</option>\n";
                                 }
-                                echo ">{$row['treename']}</option>\n";
-                              }
-                              tng_free_result($result);
-                              ?>
+                                tng_free_result($result);
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -107,50 +107,68 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
                     </tr>
                     <tr>
                         <td><?php echo $admtext['address1']; ?>:</td>
-                        <td><input type="text" name="address1" size="50"></td>
+                        <td>
+                            <input type="text" name="address1" size="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['address2']; ?>:</td>
-                        <td><input type="text" name="address2" size="50"></td>
+                        <td>
+                            <input type="text" name="address2" size="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['city']; ?>:</td>
-                        <td><input type="text" name="city" size="50"></td>
+                        <td>
+                            <input type="text" name="city" size="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['stateprov']; ?>:</td>
-                        <td><input type="text" name="state" size="50"></td>
+                        <td>
+                            <input type="text" name="state" size="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['zip']; ?>:</td>
-                        <td><input type="text" name="zip" size="20"></td>
+                        <td>
+                            <input type="text" name="zip" size="20">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['countryaddr']; ?>:</td>
-                        <td><input type="text" name="country" size="50"></td>
+                        <td>
+                            <input type="text" name="country" size="50">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['phone']; ?>:</td>
-                        <td><input type="text" name="phone" size="30" value=""></td>
+                        <td>
+                            <input type="text" name="phone" size="30" value="">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['email']; ?>:</td>
-                        <td><input type="text" name="email" size="50" value=""></td>
+                        <td>
+                            <input type="text" name="email" size="50" value="">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['website']; ?>:</td>
-                        <td><input type="text" name="www" size="50" value=""></td>
+                        <td>
+                            <input type="text" name="www" size="50" value="">
+                        </td>
                     </tr>
                 </table>
             </td>
         </tr>
-      <tr class="databack">
-          <td class="tngshadow">
-              <p class="normal"><strong><?php echo $admtext['revslater']; ?></strong></p>
-              <input type="submit" name="save" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
-          </td>
-      </tr>
-  </table>
+        <tr class="databack">
+            <td class="tngshadow">
+                <p class="normal"><strong><?php echo $admtext['revslater']; ?></strong></p>
+                <input type="submit" name="save" class="btn" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+            </td>
+        </tr>
+    </table>
 </form>
 
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

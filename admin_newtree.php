@@ -46,11 +46,15 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['treeid']; ?>:</td>
-                            <td><input type="text" name="gedcom" size="20" maxlength="20"></td>
+                            <td>
+                                <input type="text" name="gedcom" size="20" maxlength="20">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['treename']; ?>:</td>
-                            <td><input type="text" name="treename" size="50" value="<?php echo $treename; ?>"></td>
+                            <td>
+                                <input type="text" name="treename" size="50" value="<?php echo $treename; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['description']; ?>:</td>
@@ -59,35 +63,51 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                         </tr>
                         <tr>
                             <td><?php echo $admtext['owner']; ?>:</td>
-                            <td><input type="text" name="owner" size="50" value="<?php echo $owner; ?>"></td>
+                            <td>
+                                <input type="text" name="owner" size="50" value="<?php echo $owner; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['email']; ?>:</td>
-                            <td><input type="text" name="email" size="50" value="<?php echo $email; ?>"></td>
+                            <td>
+                                <input type="text" name="email" size="50" value="<?php echo $email; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['address']; ?>:</td>
-                            <td><input type="text" name="address" size="50" value="<?php echo $address; ?>"></td>
+                            <td>
+                                <input type="text" name="address" size="50" value="<?php echo $address; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['city']; ?>:</td>
-                            <td><input type="text" name="city" size="50" value="<?php echo $city; ?>"></td>
+                            <td>
+                                <input type="text" name="city" size="50" value="<?php echo $city; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['stateprov']; ?>:</td>
-                            <td><input type="text" name="state" size="50" value="<?php echo $state; ?>"></td>
+                            <td>
+                                <input type="text" name="state" size="50" value="<?php echo $state; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['zip']; ?>:</td>
-                            <td><input type="text" name="zip" size="50" value="<?php echo $zip; ?>"></td>
+                            <td>
+                                <input type="text" name="zip" size="50" value="<?php echo $zip; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['cap_country']; ?>:</td>
-                            <td><input type="text" name="country" size="50" value="<?php echo $country; ?>"></td>
+                            <td>
+                                <input type="text" name="country" size="50" value="<?php echo $country; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['phone']; ?>:</td>
-                            <td><input type="text" name="phone" size="50" value="<?php echo $phone; ?>"></td>
+                            <td>
+                                <input type="text" name="phone" size="50" value="<?php echo $phone; ?>">
+                            </td>
                         </tr>
                     </table>
                     <span class="normal">
@@ -104,8 +124,9 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                 </span>
                     <input type="hidden" name="beforeimport" value="<?php echo $beforeimport; ?>">
                     <input type="submit" name="submit" accesskey="s" class="btn"
-                           value="<?php echo $admtext['save']; ?>"> <span id="treemsg"
-                                                                          class="normal msgapproved"></span>
+                           value="<?php echo $admtext['save']; ?>">
+                    <span id="treemsg"
+                          class="normal msgapproved"></span>
                 </form>
             </td>
         </tr>

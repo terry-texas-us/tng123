@@ -1,689 +1,689 @@
 <?php
 switch ($textpart) {
-  //browsesources.php, showsource.php
-  case "sources":
-    $text['browseallsources'] = "Извори информација";
-    $text['shorttitle'] = "Кратак наслов";
-    $text['callnum'] = "Позивни број";
-    $text['author'] = "АУТОР";
-    $text['publisher'] = "Издавач";
-    $text['other'] = "Остале информације";
-    $text['sourceid'] = "ИЗВОР ИД";
-    $text['moresrc'] = "Други извори";
-    $text['repoid'] = "ИД Репозиторијума";
-    $text['browseallrepos'] = "Прикажи све Репозиторијуме";
-    break;
+    //browsesources.php, showsource.php
+    case "sources":
+        $text['browseallsources'] = "Извори информација";
+        $text['shorttitle'] = "Кратак наслов";
+        $text['callnum'] = "Позивни број";
+        $text['author'] = "АУТОР";
+        $text['publisher'] = "Издавач";
+        $text['other'] = "Остале информације";
+        $text['sourceid'] = "ИЗВОР ИД";
+        $text['moresrc'] = "Други извори";
+        $text['repoid'] = "ИД Репозиторијума";
+        $text['browseallrepos'] = "Прикажи све Репозиторијуме";
+        break;
 
-  //changelanguage.php, savelanguage.php
-  case "language":
-    $text['newlanguage'] = "Нови језик";
-    $text['changelanguage'] = "Промена језика";
-    $text['languagesaved'] = "Активирај одабрани језик";
-    $text['sitemaint'] = "Одржавање сајта је у току";
-    $text['standby'] = "Сајт је привремено недоступан, врши се ажурирање базе података. Молим вас покушајте мало касније да отворите сајт. Ако сајт остане угашен дуже време, молим вас <a href=\"suggest.php\">контактирајте власника сајта</a>.";
-    break;
+    //changelanguage.php, savelanguage.php
+    case "language":
+        $text['newlanguage'] = "Нови језик";
+        $text['changelanguage'] = "Промена језика";
+        $text['languagesaved'] = "Активирај одабрани језик";
+        $text['sitemaint'] = "Одржавање сајта је у току";
+        $text['standby'] = "Сајт је привремено недоступан, врши се ажурирање базе података. Молим вас покушајте мало касније да отворите сајт. Ако сајт остане угашен дуже време, молим вас <a href=\"suggest.php\">контактирајте власника сајта</a>.";
+        break;
 
-  //gedcom.php, gedform.php
-  case "gedcom":
-    $text['gedstart'] = "GEDCOM почиње од";
-    $text['producegedfrom'] = "Направи GEDCOM фајл у коме се налазе";
-    $text['numgens'] = "Број генерација";
-    $text['includelds'] = "Укљући ЛДС информације";
-    $text['buildged'] = "Направи GEDCOM";
-    $text['gedstartfrom'] = "GEDCOM стартује од";
-    $text['nomaxgen'] = "Морате да одредите максималан број генерација. Вратите се на претходну страну, користећи дугме за назад и исправите грешку.";
-    $text['gedcreatedfrom'] = "GEDCOM направљен од";
-    $text['gedcreatedfor'] = "направљен за";
-    $text['creategedfor'] = "Креирање GEDCOM фајлова";
-    $text['email'] = "Ваша Е-маил адреса";
-    $text['suggestchange'] = "Предлог за измену или допуну података";
-    $text['yourname'] = "Ваше име и презиме";
-    $text['comments'] = "Опис <br>предложених измена";
-    $text['comments2'] = "Ваш коментар";
-    $text['submitsugg'] = "Пошаљи сугестију";
-    $text['proposed'] = "Предложена измена";
-    $text['mailsent'] = "Хвала вам. Ваша порука је послата.";
-    $text['mailnotsent'] = "Жао нам је, али ваша порука неможе бити испорућена.";
-    $text['mailme'] = "Пошаљи копију и на ову адресу";
-    $text['entername'] = "Заборавили сте да упишете ваше име.";
-    $text['entercomments'] = "Заборавили сте да упишите ваш коментар";
-    $text['sendmsg'] = "Пошаљи Поруку";
-    //added in 9.0.0
-    $text['subject'] = "Наслов поруке";
-    break;
+    //gedcom.php, gedform.php
+    case "gedcom":
+        $text['gedstart'] = "GEDCOM почиње од";
+        $text['producegedfrom'] = "Направи GEDCOM фајл у коме се налазе";
+        $text['numgens'] = "Број генерација";
+        $text['includelds'] = "Укљући ЛДС информације";
+        $text['buildged'] = "Направи GEDCOM";
+        $text['gedstartfrom'] = "GEDCOM стартује од";
+        $text['nomaxgen'] = "Морате да одредите максималан број генерација. Вратите се на претходну страну, користећи дугме за назад и исправите грешку.";
+        $text['gedcreatedfrom'] = "GEDCOM направљен од";
+        $text['gedcreatedfor'] = "направљен за";
+        $text['creategedfor'] = "Креирање GEDCOM фајлова";
+        $text['email'] = "Ваша Е-маил адреса";
+        $text['suggestchange'] = "Предлог за измену или допуну података";
+        $text['yourname'] = "Ваше име и презиме";
+        $text['comments'] = "Опис <br>предложених измена";
+        $text['comments2'] = "Ваш коментар";
+        $text['submitsugg'] = "Пошаљи сугестију";
+        $text['proposed'] = "Предложена измена";
+        $text['mailsent'] = "Хвала вам. Ваша порука је послата.";
+        $text['mailnotsent'] = "Жао нам је, али ваша порука неможе бити испорућена.";
+        $text['mailme'] = "Пошаљи копију и на ову адресу";
+        $text['entername'] = "Заборавили сте да упишете ваше име.";
+        $text['entercomments'] = "Заборавили сте да упишите ваш коментар";
+        $text['sendmsg'] = "Пошаљи Поруку";
+        //added in 9.0.0
+        $text['subject'] = "Наслов поруке";
+        break;
 
-  //getextras.php, getperson.php
-  case "getperson":
-    $text['photoshistoriesfor'] = "Фотографије и историје за";
-    $text['indinfofor'] = "Информације особе за";
-    $text['pp'] = "стр."; //page abbreviation
-    $text['age'] = "ГОДИНА И ДАНА";
-    $text['agency'] = "Кумство";
-    $text['cause'] = "Узрок";
-    $text['suggested'] = "Предложено";
-    $text['closewindow'] = "Затвори прозор";
-    $text['thanks'] = "Хвала";
-    $text['received'] = "Ваша сугестија је прослеђена администратору на преглед.";
-    $text['indreport'] = "Извештај о особи";
-    $text['indreportfor'] = "Извештај особе за";
-    $text['general'] = "Генерални";
-    $text['bkmkvis'] = "<strong>Напомена:</strong> Ове омиљене странице су видљиве само на овом рачунару и на овом wеб претраживачу.";
-    //added in 9.0.0
-    $text['reviewmsg'] = "Имате предложену примедбу, за коју је потребно ваше мишљење. Овај поднесак односи се на:";
-    $text['revsubject'] = "Предложена сугестија треба вашу рецензију";
-    break;
+    //getextras.php, getperson.php
+    case "getperson":
+        $text['photoshistoriesfor'] = "Фотографије и историје за";
+        $text['indinfofor'] = "Информације особе за";
+        $text['pp'] = "стр."; //page abbreviation
+        $text['age'] = "ГОДИНА И ДАНА";
+        $text['agency'] = "Кумство";
+        $text['cause'] = "Узрок";
+        $text['suggested'] = "Предложено";
+        $text['closewindow'] = "Затвори прозор";
+        $text['thanks'] = "Хвала";
+        $text['received'] = "Ваша сугестија је прослеђена администратору на преглед.";
+        $text['indreport'] = "Извештај о особи";
+        $text['indreportfor'] = "Извештај особе за";
+        $text['general'] = "Генерални";
+        $text['bkmkvis'] = "<strong>Напомена:</strong> Ове омиљене странице су видљиве само на овом рачунару и на овом wеб претраживачу.";
+        //added in 9.0.0
+        $text['reviewmsg'] = "Имате предложену примедбу, за коју је потребно ваше мишљење. Овај поднесак односи се на:";
+        $text['revsubject'] = "Предложена сугестија треба вашу рецензију";
+        break;
 
-  //relateform.php, relationship.php, findpersonform.php, findperson.php
-  case "relate":
-    $text['relcalc'] = "Калкулатор степена сродства";
-    $text['findrel'] = "Пронађи Сродство";
-    $text['person1'] = "Особа 1:";
-    $text['person2'] = "Особа 2:";
-    $text['calculate'] = "ИЗРАЧУНАЈ";
-    $text['select2inds'] = "Одаберите две особе.";
-    $text['findpersonid'] = "Пронађи ИД особе";
-    $text['enternamepart'] = "Упишите део имена и / или презимена";
-    $text['pleasenamepart'] = "Упишите део имена или презимена.";
-    $text['clicktoselect'] = "кликните мишем и одаберите";
-    $text['nobirthinfo'] = "Нема информација о рођењу";
-    $text['relateto'] = "Сродство са особом по имену - ";
-    $text['sameperson'] = "Иста особа је одабрана два пута.";
-    $text['notrelated'] = "Ове две особе нису у сродству уназад xxx генерација."; //xxx will be replaced with number of generations
-    $text['findrelinstr'] = "Да би сте видели степен сродства између две особе, користите дугме 'ТРАЖИ' за проналажење особа (или задржите већ уписану особу), затим притисните дугме 'ИЗРАЧУНАЈ'";
-    $text['sometimes'] = "(Понекад провера за различит број генерација даје разлићит резултат.)";
-    $text['findanother'] = "Пронађи друго сродство";
-    $text['brother'] = "брат";
-    $text['sister'] = "сестра";
-    $text['sibling'] = "полубрат";
-    $text['uncle'] = "xxx стриц";
-    $text['aunt'] = "xxx тетка";
-    $text['uncleaunt'] = "xxx стриц/тетка";
-    $text['nephew'] = "xxx нећак/братанац";
-    $text['niece'] = "xxx сестричина/синовица";
-    $text['nephnc'] = "xxx нећак/сестричина";
-    $text['removed'] = "пута уклоњена";
-    $text['rhusband'] = "муж ";
-    $text['rwife'] = "жена ";
-    $text['rspouse'] = "супруга ";
-    $text['son'] = "син";
-    $text['daughter'] = "ћерка";
-    $text['rchild'] = "дете";
-    $text['sil'] = "син по закону";
-    $text['dil'] = "ћерка по закону";
-    $text['sdil'] = "син или ћерка по закону";
-    $text['gson'] = "xxx унук";
-    $text['gdau'] = "xxx унука";
-    $text['gsondau'] = "xxx унук/унука";
-    $text['great'] = "велики";
-    $text['spouses'] = "су супружници";
-    $text['is'] = "је";
-    $text['changeto'] = "Промени у: (унеси ИД):";
-    $text['notvalid'] = "није важећи ИД број Особе или број не постоји у бази. Покушајте поново.";
-    $text['halfbrother'] = "полубрат";
-    $text['halfsister'] = "полусестра";
-    $text['halfsibling'] = "полубрат по закону";
-    //changed in 8.0.0
-    $text['gencheck'] = "Максимални број генерација за проверу";
-    $text['mcousin'] = "xxx рођак од yyy";  //male cousin; xxx = cousin number, yyy = times removed
-    $text['fcousin'] = "xxx рођакиња од yyy";  //female cousin
-    $text['cousin'] = "xxx рођак од yyy";
-    $text['mhalfcousin'] = "xxx полусестра од yyy";  //male cousin
-    $text['fhalfcousin'] = "xxx полубрат од yyy";  //female cousin
-    $text['halfcousin'] = "xxx полурођак од yyy";
-    //added in 8.0.0
-    $text['oneremoved'] = "од стрица";
-    $text['gfath'] = "xxx деда од";
-    $text['gmoth'] = "xxx баба од";
-    $text['gpar'] = "xxx деда/баба од";
-    $text['mothof'] = "мајка од";
-    $text['fathof'] = "отац од";
-    $text['parof'] = "родитељ од";
-    $text['maxrels'] = "Максимални број веза за приказ";
-    $text['dospouses'] = "Прикажи везе где су укључени и супружици";
-    $text['rels'] = "СРОДСТВО";
-    $text['dospouses2'] = "Прикажи Супружнике";
-    $text['fil'] = "отац по закону (очух)";
-    $text['mil'] = "мајка по закону (маћеха)";
-    $text['fmil'] = "отац или мајка по закону (очух/маћеха)";
-    $text['stepson'] = "пасторак";
-    $text['stepdau'] = "пасторка";
-    $text['stepchild'] = "пасторче";
-    $text['stepgson'] = "xxx усвојен-унук";
-    $text['stepgdau'] = "xxx усвојена-унука";
-    $text['stepgchild'] = "xxx усвојени-унуци";
-    //added in 8.1.1
-    $text['ggreat'] = "прадеда";
-    //added in 8.1.2
-    $text['ggfath'] = "xxx прадеда од";
-    $text['ggmoth'] = "xxx прабаба од";
-    $text['ggpar'] = "xxx прадеда/прабаба од";
-    $text['ggson'] = "xxx праунук од";
-    $text['ggdau'] = "xxx праунука од";
-    $text['ggsondau'] = "xxx праунук/праунука од";
-    $text['gstepgson'] = "xxx усвојен-праунук од";
-    $text['gstepgdau'] = "xxx usvojena-praunuka od";
-    $text['gstepgchild'] = "xxx усвојено-праунуче од";
-    $text['guncle'] = "xxx деда стриц ";
-    $text['gaunt'] = "xxx баба тетка од";
-    $text['guncleaunt'] = "xxx деда стриц/баба тетка од";
-    $text['gnephew'] = "xxx пра нећак/братанац од";
-    $text['gniece'] = "xxx пра нећака/братаница од";
-    $text['gnephnc'] = "xxx пра братанац/братаница од";
-    break;
+    //relateform.php, relationship.php, findpersonform.php, findperson.php
+    case "relate":
+        $text['relcalc'] = "Калкулатор степена сродства";
+        $text['findrel'] = "Пронађи Сродство";
+        $text['person1'] = "Особа 1:";
+        $text['person2'] = "Особа 2:";
+        $text['calculate'] = "ИЗРАЧУНАЈ";
+        $text['select2inds'] = "Одаберите две особе.";
+        $text['findpersonid'] = "Пронађи ИД особе";
+        $text['enternamepart'] = "Упишите део имена и / или презимена";
+        $text['pleasenamepart'] = "Упишите део имена или презимена.";
+        $text['clicktoselect'] = "кликните мишем и одаберите";
+        $text['nobirthinfo'] = "Нема информација о рођењу";
+        $text['relateto'] = "Сродство са особом по имену - ";
+        $text['sameperson'] = "Иста особа је одабрана два пута.";
+        $text['notrelated'] = "Ове две особе нису у сродству уназад xxx генерација."; //xxx will be replaced with number of generations
+        $text['findrelinstr'] = "Да би сте видели степен сродства између две особе, користите дугме 'ТРАЖИ' за проналажење особа (или задржите већ уписану особу), затим притисните дугме 'ИЗРАЧУНАЈ'";
+        $text['sometimes'] = "(Понекад провера за различит број генерација даје разлићит резултат.)";
+        $text['findanother'] = "Пронађи друго сродство";
+        $text['brother'] = "брат";
+        $text['sister'] = "сестра";
+        $text['sibling'] = "полубрат";
+        $text['uncle'] = "xxx стриц";
+        $text['aunt'] = "xxx тетка";
+        $text['uncleaunt'] = "xxx стриц/тетка";
+        $text['nephew'] = "xxx нећак/братанац";
+        $text['niece'] = "xxx сестричина/синовица";
+        $text['nephnc'] = "xxx нећак/сестричина";
+        $text['removed'] = "пута уклоњена";
+        $text['rhusband'] = "муж ";
+        $text['rwife'] = "жена ";
+        $text['rspouse'] = "супруга ";
+        $text['son'] = "син";
+        $text['daughter'] = "ћерка";
+        $text['rchild'] = "дете";
+        $text['sil'] = "син по закону";
+        $text['dil'] = "ћерка по закону";
+        $text['sdil'] = "син или ћерка по закону";
+        $text['gson'] = "xxx унук";
+        $text['gdau'] = "xxx унука";
+        $text['gsondau'] = "xxx унук/унука";
+        $text['great'] = "велики";
+        $text['spouses'] = "су супружници";
+        $text['is'] = "је";
+        $text['changeto'] = "Промени у: (унеси ИД):";
+        $text['notvalid'] = "није важећи ИД број Особе или број не постоји у бази. Покушајте поново.";
+        $text['halfbrother'] = "полубрат";
+        $text['halfsister'] = "полусестра";
+        $text['halfsibling'] = "полубрат по закону";
+        //changed in 8.0.0
+        $text['gencheck'] = "Максимални број генерација за проверу";
+        $text['mcousin'] = "xxx рођак од yyy";  //male cousin; xxx = cousin number, yyy = times removed
+        $text['fcousin'] = "xxx рођакиња од yyy";  //female cousin
+        $text['cousin'] = "xxx рођак од yyy";
+        $text['mhalfcousin'] = "xxx полусестра од yyy";  //male cousin
+        $text['fhalfcousin'] = "xxx полубрат од yyy";  //female cousin
+        $text['halfcousin'] = "xxx полурођак од yyy";
+        //added in 8.0.0
+        $text['oneremoved'] = "од стрица";
+        $text['gfath'] = "xxx деда од";
+        $text['gmoth'] = "xxx баба од";
+        $text['gpar'] = "xxx деда/баба од";
+        $text['mothof'] = "мајка од";
+        $text['fathof'] = "отац од";
+        $text['parof'] = "родитељ од";
+        $text['maxrels'] = "Максимални број веза за приказ";
+        $text['dospouses'] = "Прикажи везе где су укључени и супружици";
+        $text['rels'] = "СРОДСТВО";
+        $text['dospouses2'] = "Прикажи Супружнике";
+        $text['fil'] = "отац по закону (очух)";
+        $text['mil'] = "мајка по закону (маћеха)";
+        $text['fmil'] = "отац или мајка по закону (очух/маћеха)";
+        $text['stepson'] = "пасторак";
+        $text['stepdau'] = "пасторка";
+        $text['stepchild'] = "пасторче";
+        $text['stepgson'] = "xxx усвојен-унук";
+        $text['stepgdau'] = "xxx усвојена-унука";
+        $text['stepgchild'] = "xxx усвојени-унуци";
+        //added in 8.1.1
+        $text['ggreat'] = "прадеда";
+        //added in 8.1.2
+        $text['ggfath'] = "xxx прадеда од";
+        $text['ggmoth'] = "xxx прабаба од";
+        $text['ggpar'] = "xxx прадеда/прабаба од";
+        $text['ggson'] = "xxx праунук од";
+        $text['ggdau'] = "xxx праунука од";
+        $text['ggsondau'] = "xxx праунук/праунука од";
+        $text['gstepgson'] = "xxx усвојен-праунук од";
+        $text['gstepgdau'] = "xxx usvojena-praunuka od";
+        $text['gstepgchild'] = "xxx усвојено-праунуче од";
+        $text['guncle'] = "xxx деда стриц ";
+        $text['gaunt'] = "xxx баба тетка од";
+        $text['guncleaunt'] = "xxx деда стриц/баба тетка од";
+        $text['gnephew'] = "xxx пра нећак/братанац од";
+        $text['gniece'] = "xxx пра нећака/братаница од";
+        $text['gnephnc'] = "xxx пра братанац/братаница од";
+        break;
 
-  case "familygroup":
-    $text['familygroupfor'] = "Породични лист за - ";
-    $text['ldsords'] = "ЛДС Уредбе (за мормонску цркву-неп.код нас)";
-    $text['baptizedlds'] = "Крштење (ЛДС)";
-    $text['endowedlds'] = "Обдарен (ЛДС)";
-    $text['sealedplds'] = "Запечаћен П (ЛДС)";
-    $text['sealedslds'] = "Запечаћен С (ЛДС)";
-    $text['otherspouse'] = "ДРУГИ БРАКОВИ";
-    $text['husband'] = "Супруг";
-    $text['wife'] = "Супруга";
-    break;
+    case "familygroup":
+        $text['familygroupfor'] = "Породични лист за - ";
+        $text['ldsords'] = "ЛДС Уредбе (за мормонску цркву-неп.код нас)";
+        $text['baptizedlds'] = "Крштење (ЛДС)";
+        $text['endowedlds'] = "Обдарен (ЛДС)";
+        $text['sealedplds'] = "Запечаћен П (ЛДС)";
+        $text['sealedslds'] = "Запечаћен С (ЛДС)";
+        $text['otherspouse'] = "ДРУГИ БРАКОВИ";
+        $text['husband'] = "Супруг";
+        $text['wife'] = "Супруга";
+        break;
 
-  //pedigree.php
-  case "pedigree":
-    $text['capbirthabbr'] = "Рођ.";
-    $text['capaltbirthabbr'] = "А";
-    $text['capdeathabbr'] = "Смр.";
-    $text['capburialabbr'] = "Сахр.";
-    $text['capplaceabbr'] = "85П";
-    $text['capmarrabbr'] = "Вен.";
-    $text['capspouseabbr'] = "СП";
-    $text['redraw'] = "Исцртава се";
-    $text['scrollnote'] = "Ако не видите цео дијаграм померите слику доле или десно.";
-    $text['unknownlit'] = "Нема података";
-    $text['popupnote1'] = "= Додатне информације";
-    $text['popupnote2'] = "= Нови дијаграм";
-    $text['pedcompact'] = "ЗБИЈЕНО";
-    $text['pedstandard'] = "СТАНДАРДНО";
-    $text['pedtextonly'] = "ТЕКСТ";
-    $text['descendfor'] = "Потомци";
-    $text['maxof'] = "Максимално";
-    $text['gensatonce'] = "генерација приказаних одједном.";
-    $text['sonof'] = "син - родитељи";
-    $text['daughterof'] = "кћи - родитељи";
-    $text['childof'] = "дете - родитељи";
-    $text['stdformat'] = "СТАНДАРДНИ ФОРМАТ";
-    $text['ahnentafel'] = "ПО ГЕНЕРАЦИЈАМА (ПЕДИГРЕ ДИЈ.)";
-    $text['addnewfam'] = "Додај нову породицу";
-    $text['editfam'] = "Измени податке о породици";
-    $text['side'] = "- Крило";
-    $text['familyof'] = "свих предака који воде до особе са именом";
-    $text['paternal'] = "Очево";
-    $text['maternal'] = "Мајчино";
-    $text['gen1'] = "Одабрана особа";
-    $text['gen2'] = "Родитељ";
-    $text['gen3'] = "Деда и Баба";
-    $text['gen4'] = "Прадеде и Прабабе";
-    $text['gen5'] = "Čukundede i čukunbabe";
-    $text['gen6'] = "Наврдеде и Наврбабе";
-    $text['gen7'] = "Курђели и Курђеле";
-    $text['gen8'] = "Аскурђели и Аскурђеле";
-    $text['gen9'] = "Курђепи и Курђепе";
-    $text['gen10'] = "Курлебали и Курлебале";
-    $text['gen11'] = "Сукурдови и Сукурдове";
-    $text['gen12'] = "Сурдепачи и Сурдепаче";
-    // my add - vladimir@milicevic.rs - www.milicevic.rs/tng
-    $text['gen13'] = "Парђупани и Парђупане";
-    $text['gen14'] = "Ожмикури и Ожмикуре";
-    $text['gen15'] = "Курајбери и Курајберке";
-    $text['gen16'] = "Сајкатови и Сајкотовке";
-    $text['gen17'] = "Бели орао и Бела пчела";
-    // my add - vladimir@milicevic.rs  - www.milicevic.rs/tng
-    $text['graphdesc'] = "График до те тачке";
-    $text['pedbox'] = "КАРТИЦЕ";
-    $text['regformat'] = "ПО ГЕНЕРАЦИЈАМА";
-    $text['extrasexpl'] = "Ако постоје фотографије, медији или нека друга документа (историје,...) за неку од особа, одговарајућа иконица ће се појавити поред тог имена.";
-    $text['popupnote3'] = "Нови графикон";
-    $text['mediaavail'] = "Доступни медији";
-    $text['pedigreefor'] = "Граф Предака (Педигре) за";
-    $text['pedigreech'] = "Граф Предака (Педигре)";
-    $text['datesloc'] = "Датуми и Локације";
-    $text['borchr'] = "Рођење/Алтернативно - Смрт/Сахрана (два)";
-    $text['nobd'] = "Нема датума рођења или смрти";
-    $text['bcdb'] = "Рођење/Алт/Смрт/Сахрана (четири)";
-    $text['numsys'] = "Бројевни Систем";
-    $text['gennums'] = "Бројеви Генерације";
-    $text['henrynums'] = "Хенри Бројеви";
-    $text['abovnums'] = "d'Aboville Бројеви";
-    $text['devnums'] = "de Villiers Бројеви";
-    $text['dispopts'] = "Приказ Опција";
+    //pedigree.php
+    case "pedigree":
+        $text['capbirthabbr'] = "Рођ.";
+        $text['capaltbirthabbr'] = "А";
+        $text['capdeathabbr'] = "Смр.";
+        $text['capburialabbr'] = "Сахр.";
+        $text['capplaceabbr'] = "85П";
+        $text['capmarrabbr'] = "Вен.";
+        $text['capspouseabbr'] = "СП";
+        $text['redraw'] = "Исцртава се";
+        $text['scrollnote'] = "Ако не видите цео дијаграм померите слику доле или десно.";
+        $text['unknownlit'] = "Нема података";
+        $text['popupnote1'] = "= Додатне информације";
+        $text['popupnote2'] = "= Нови дијаграм";
+        $text['pedcompact'] = "ЗБИЈЕНО";
+        $text['pedstandard'] = "СТАНДАРДНО";
+        $text['pedtextonly'] = "ТЕКСТ";
+        $text['descendfor'] = "Потомци";
+        $text['maxof'] = "Максимално";
+        $text['gensatonce'] = "генерација приказаних одједном.";
+        $text['sonof'] = "син - родитељи";
+        $text['daughterof'] = "кћи - родитељи";
+        $text['childof'] = "дете - родитељи";
+        $text['stdformat'] = "СТАНДАРДНИ ФОРМАТ";
+        $text['ahnentafel'] = "ПО ГЕНЕРАЦИЈАМА (ПЕДИГРЕ ДИЈ.)";
+        $text['addnewfam'] = "Додај нову породицу";
+        $text['editfam'] = "Измени податке о породици";
+        $text['side'] = "- Крило";
+        $text['familyof'] = "свих предака који воде до особе са именом";
+        $text['paternal'] = "Очево";
+        $text['maternal'] = "Мајчино";
+        $text['gen1'] = "Одабрана особа";
+        $text['gen2'] = "Родитељ";
+        $text['gen3'] = "Деда и Баба";
+        $text['gen4'] = "Прадеде и Прабабе";
+        $text['gen5'] = "Čukundede i čukunbabe";
+        $text['gen6'] = "Наврдеде и Наврбабе";
+        $text['gen7'] = "Курђели и Курђеле";
+        $text['gen8'] = "Аскурђели и Аскурђеле";
+        $text['gen9'] = "Курђепи и Курђепе";
+        $text['gen10'] = "Курлебали и Курлебале";
+        $text['gen11'] = "Сукурдови и Сукурдове";
+        $text['gen12'] = "Сурдепачи и Сурдепаче";
+        // my add - vladimir@milicevic.rs - www.milicevic.rs/tng
+        $text['gen13'] = "Парђупани и Парђупане";
+        $text['gen14'] = "Ожмикури и Ожмикуре";
+        $text['gen15'] = "Курајбери и Курајберке";
+        $text['gen16'] = "Сајкатови и Сајкотовке";
+        $text['gen17'] = "Бели орао и Бела пчела";
+        // my add - vladimir@milicevic.rs  - www.milicevic.rs/tng
+        $text['graphdesc'] = "График до те тачке";
+        $text['pedbox'] = "КАРТИЦЕ";
+        $text['regformat'] = "ПО ГЕНЕРАЦИЈАМА";
+        $text['extrasexpl'] = "Ако постоје фотографије, медији или нека друга документа (историје,...) за неку од особа, одговарајућа иконица ће се појавити поред тог имена.";
+        $text['popupnote3'] = "Нови графикон";
+        $text['mediaavail'] = "Доступни медији";
+        $text['pedigreefor'] = "Граф Предака (Педигре) за";
+        $text['pedigreech'] = "Граф Предака (Педигре)";
+        $text['datesloc'] = "Датуми и Локације";
+        $text['borchr'] = "Рођење/Алтернативно - Смрт/Сахрана (два)";
+        $text['nobd'] = "Нема датума рођења или смрти";
+        $text['bcdb'] = "Рођење/Алт/Смрт/Сахрана (четири)";
+        $text['numsys'] = "Бројевни Систем";
+        $text['gennums'] = "Бројеви Генерације";
+        $text['henrynums'] = "Хенри Бројеви";
+        $text['abovnums'] = "d'Aboville Бројеви";
+        $text['devnums'] = "de Villiers Бројеви";
+        $text['dispopts'] = "Приказ Опција";
+        //added in 10.0.0
+        $text['no_ancestors'] = "Нема пронађених предака";
+        $text['ancestor_chart'] = "Вертикални графикон предака";
+        $text['opennewwindow'] = "Отвори у новом прозору";
+        $text['pedvertical'] = "Вертикално";
+        //added in 11.0.0
+        $text['familywith'] = "Породица са";
+        $text['fcmlogin'] = "Пријавите се да бисте видели детаље";
+        $text['isthe'] = "је";
+        $text['otherspouses'] = "други супружници";
+        $text['parentfamily'] = "Родитељска породица ";
+        $text['showfamily'] = "Приказ породице";
+        $text['shown'] = "показано";
+        $text['showparentfamily'] = "приказ родитељске породице";
+        $text['showperson'] = "приказ особе";
+        //added in 11.0.2
+        $text['otherfamilies'] = "Друге породице";
+        break;
+
+    //search.php, searchform.php
+    //merged with reports and showreport in 5.0.0
+    case "search":
+    case "reports":
+        $text['noreports'] = "Не постоји ни један Извештај.";
+        $text['reportname'] = "Назив Извештаја";
+        $text['allreports'] = "Сви Извештаји";
+        $text['report'] = "Извештај";
+        $text['error'] = "Грешка";
+        $text['reportsyntax'] = "Синтакса упита који креира извештај";
+        $text['wasincorrect'] = "је погрешна, и као резултат тога, извештај се не може приказати. Контактирајте систем администратора : vladimir@milicevic.rs";
+        $text['query'] = "Упит";
+        $text['equals'] = "налик на";
+        $text['endswith'] = "завршава се са";
+        $text['soundexof'] = "звући као";
+        $text['metaphoneof'] = "метафора од";
+        $text['plusminus10'] = "+/- 10 година од";
+        $text['lessthan'] = "мање од";
+        $text['greaterthan'] = "више од";
+        $text['lessthanequal'] = "мање или једнако";
+        $text['greaterthanequal'] = "веће или једнако";
+        $text['equalto'] = "једнако";
+        $text['tryagain'] = "Покушајте поново";
+        $text['joinwith'] = "Однос параметара";
+        $text['cap_and'] = "AND";
+        $text['cap_or'] = "OR";
+        $text['showspouse'] = "Покажи брачне партнере (ће приказати дупликате ако појединац има више од једног брачног друга)";
+        $text['submitquery'] = "Ваш упит";
+        $text['birthplace'] = "Место рођења";
+        $text['deathplace'] = "Место смрти";
+        $text['birthdatetr'] = "Година рођења";
+        $text['deathdatetr'] = "Година смрти";
+        $text['plusminus2'] = "+/- 2 године од";
+        $text['resetall'] = "Ресетуј све вредности";
+        $text['showdeath'] = "Прикажи информације о смрти/сахрани";
+        $text['altbirthplace'] = "Место крштења";
+        $text['altbirthdatetr'] = "Година крштења";
+        $text['burialplace'] = "Место сахране";
+        $text['burialdatetr'] = "Година сахране";
+        $text['event'] = "Dogaђај(и)";
+        $text['day'] = "Дан";
+        $text['month'] = "Месец";
+        $text['keyword'] = "Кључна реч (ie, \"Abt\")";
+        $text['explain'] = "Унесите податке о датуму да би видели догађаје који одговарају задатом критеријуму. Или оставите празно да би видели све одабране догађаје.";
+        $text['enterdate'] = "Упишите или одаберите минимум једну од ових информација: дан, месец, година, кључна реч";
+        $text['fullname'] = "Пуно име и презиме";
+        $text['birthdate'] = "Датум рођења";
+        $text['altbirthdate'] = "Датум крштења";
+        $text['marrdate'] = "Датум склапања брака";
+        $text['spouseid'] = "Брачни друг - ИД";
+        $text['spousename'] = "Име брачног друга";
+        $text['deathdate'] = "Датум смрти";
+        $text['burialdate'] = "Датум сахране";
+        $text['changedate'] = "Datum zadnje promene";
+        $text['gedcom'] = "Породично стабло";
+        $text['baptdate'] = "Датум крштења (ЛДС)";
+        $text['baptplace'] = "Место крштења (ЛДС)";
+        $text['endldate'] = "Датум Задужбине (ЛДС)";
+        $text['endlplace'] = "Место Задужбине (ЛДС)";
+        $text['ssealdate'] = "Датум печата С (ЛДС)"; //Sealed to spouse
+        $text['ssealplace'] = "Место печата С (ЛДС";
+        $text['psealdate'] = "Датум печата П (ЛДС)"; //Sealed to parents
+        $text['psealplace'] = "Место печата П (ЛДС)";
+        $text['marrplace'] = "Место склапања брака";
+        $text['spousesurname'] = "Презиме брачног друга";
+        $text['spousemore'] = "Ако унесете презиме супружника, морате унети још једну вредност и за друго поље.";
+        $text['plusminus5'] = "+/- 5 година од";
+        $text['exists'] = "постоји";
+        $text['dnexist'] = "не постоји";
+        $text['divdate'] = "Датум Развода";
+        $text['divplace'] = "Место Развода";
+        $text['otherevents'] = "Други догађаји";
+        $text['numresults'] = "Резултати по страници";
+        $text['mysphoto'] = "Загонетне Фотографије";
+        $text['mysperson'] = "Особе које се траже, за породично стабло";
+        $text['joinor'] = "Је 'Члан са ИЛИ ' опција не може да се користи са презименом супружника";
+        $text['tellus'] = "Реците нам шта знате о њима";
+        $text['moreinfo'] = "Више информација:";
+        //added in 8.0.0
+        $text['marrdatetr'] = "Година Брака";
+        $text['divdatetr'] = "Година Развода";
+        $text['mothername'] = "Мајчино Име";
+        $text['fathername'] = "Очево Име";
+        $text['filter'] = "Филтер";
+        $text['notliving'] = "Није у животу";
+        $text['nodayevents'] = "Догађаји за овај месец, а који нису повезани са одређеним даноом:";
+        //added in 9.0.0
+        $text['csv'] = "Раздвојен зарезима CSV фајл";
+        //added in 10.0.0
+        $text['confdate'] = "Датум потврде (ЛДС)";
+        $text['confplace'] = "Место поврде (ЛДС)";
+        $text['initdate'] = "Уводни/Иницијаторни Датум (ЛДС)";
+        $text['initplace'] = "Уводно/Иницијаторно Место (ЛДС)";
+        //added in 11.0.0
+        $text['marrtype'] = "Тип Брака";
+        $text['searchfor'] = "Тражи";
+        $text['searchnote'] = "Напомена: Ова страница користи Google за извршавање својих претрага. Број одговора ће директно утицати у којој мери Google је био у стању да индексира сајт.";
+        break;
+
+    //showlog.php
+    case "showlog":
+        $text['logfilefor'] = "Евиденција за";
+        $text['mostrecentactions'] = "последњих извршених упита.";
+        $text['autorefresh'] = "Стартуј аутоматско обнављање сваких 30 секунди";
+        $text['refreshoff'] = "Заустави аутоматско обнављање";
+        break;
+
+    case "headstones":
+    case "showphoto":
+        $text['cemeteriesheadstones'] = "Гробља и Надгробни Споменици";
+        $text['showallhsr'] = "Покажи све записе о Надгробним Споменицима";
+        $text['in'] = "-";
+        $text['showmap'] = "Покажи мапу";
+        $text['headstonefor'] = "Споменик за";
+        $text['photoof'] = "Фотографија -";
+        $text['photoowner'] = "Аутор/Извор";
+        $text['nocemetery'] = "Нема Гробља";
+        $text['iptc005'] = "Наслов";
+        $text['iptc020'] = "Категорије подршке";
+        $text['iptc040'] = "Посебна упутства";
+        $text['iptc055'] = "Датум креирања";
+        $text['iptc080'] = "Аутор";
+        $text['iptc085'] = "Позиција Аутора";
+        $text['iptc090'] = "Град";
+        $text['iptc095'] = "Држава/Покрајна";
+        $text['iptc101'] = "Земља";
+        $text['iptc103'] = "OTR";
+        $text['iptc105'] = "Наслов";
+        $text['iptc110'] = "Извор";
+        $text['iptc115'] = "Извор Фотографије";
+        $text['iptc116'] = "Обавештење о ауторским правима";
+        $text['iptc120'] = "Наслов";
+        $text['iptc122'] = "Писац Наслова";
+        $text['mapof'] = "Мапа";
+        $text['regphotos'] = "Листа са детаљима";
+        $text['gallery'] = "Само сличице";
+        $text['cemphotos'] = "Фотографије Гробља";
+        $text['photosize'] = "Величина";
+        $text['iptc010'] = "Приоритет";
+        $text['filesize'] = "Величина Фајла";
+        $text['seeloc'] = "Види Локацију";
+        $text['showall'] = "Покажи Све";
+        $text['editmedia'] = "Измени Медиј";
+        $text['viewitem'] = "Погледај ову ставку";
+        $text['editcem'] = "Измеми Гробље";
+        $text['numitems'] = "# Ставка";
+        $text['allalbums'] = "Сви Албуми";
+        $text['slidestop'] = "Паузирај Фото слајд";
+        $text['slideresume'] = "Настави Фото слајд";
+        $text['slidesecs'] = "Секунде за сваку фотографију у слајду:";
+        $text['minussecs'] = "минус 0.5 секунди";
+        $text['plussecs'] = "плус 0.5 секунди";
+        $text['nocountry'] = "Непозната замља";
+        $text['nostate'] = "Непозната држава";
+        $text['nocounty'] = "Непознат округ";
+        $text['nocity'] = "Непознат град";
+        $text['nocemname'] = "Непознат назив гробља";
+        $text['editalbum'] = "Измени Албум";
+        $text['mediamaptext'] = "<strong>Напомена:</strong> Померите показивач миша преко слике да бисте видели имена особа. Кликните да бисте видели страницу особе са именом.";
+        //added in 8.0.0
+        $text['allburials'] = "Сва Сахрањивања";
+        $text['moreinfo'] = "Кликните мишем за више информација о овој слици.";
+        //added in 9.0.0
+        $text['iptc025'] = "Кључне речи";
+        $text['iptc092'] = "Под-локација";
+        $text['iptc015'] = "Категорија";
+        $text['iptc065'] = "Изворни Програм";
+        $text['iptc070'] = "Верзија Програма";
+        break;
+
+    //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
+    case "surnames":
+    case "places":
+        $text['surnamesstarting'] = "Приказ презимена која поћињу на";
+        $text['showtop'] = "Прикажи прве";
+        $text['showallsurnames'] = "Приказ свих презимена";
+        $text['sortedalpha'] = "по абецеди";
+        $text['byoccurrence'] = "по учесталости";
+        $text['firstchars'] = "Почетна слова";
+        $text['mainsurnamepage'] = "Почетна страна са презименима";
+        $text['allsurnames'] = "Сва Презимена";
+        $text['showmatchingsurnames'] = "Кликните на презиме да видите особе са тим презименом.";
+        $text['backtotop'] = "Повратак на почетак";
+        $text['beginswith'] = "Која почињу са";
+        $text['allbeginningwith'] = "Сва презимена која почињу са";
+        $text['numoccurrences'] = "укупан број локалитета у заградама";
+        $text['placesstarting'] = "Прикажи највећа места/локалитете ћије име почиње са";
+        $text['showmatchingplaces'] = "Кликните на име места да видите мање локалитете. Кликните на икону за претрагу ако желите да видите ко је све повезан са том особом.";
+        $text['totalnames'] = "укупно особа";
+        $text['showallplaces'] = "Прикажи сва већа места/локације";
+        $text['totalplaces'] = "укупно места";
+        $text['mainplacepage'] = "Главна листа места";
+        $text['allplaces'] = "Сва већа Места/Локације";
+        $text['placescont'] = "Прикажи сва места која у имену садрже";
+        //changed in 8.0.0
+        $text['top30'] = "Првих xxx презимена";
+        $text['top30places'] = "Првих xxx већих места/локација";
+        //added in 12.0.0
+        $text['firstnamelist'] = "Листа Имена";
+        $text['firstnamesstarting'] = "Прикажи имена која почињу са";
+        $text['showallfirstnames'] = "Прикажи сва имена";
+        $text['mainfirstnamepage'] = "Главна листа имена";
+        $text['allfirstnames'] = "Сва Имена";
+        $text['showmatchingfirstnames'] = "Кликните на Име да бисте приказали одговарајуће записе.";
+        $text['allfirstbegwith'] = "Сва имена која почињу са";
+        $text['top30first'] = "Првих xxx Имена";
+        $text['allothers'] = "Сви други";
+        $text['amongall'] = "(међу свим именима)";
+        $text['justtop'] = "Само првих xxx";
+        break;
+
+    //whatsnew.php
+    case "whatsnew":
+        $text['pastxdays'] = "(у последњих xx дана)";
+        $text['photo'] = "Фотографије";
+        $text['history'] = "Историја/Документ";
+        $text['husbid'] = "ИД Супруга";
+        $text['husbname'] = "Име и Презиме Супруга";
+        $text['wifeid'] = "ИД Супруге";
+        //added in 11.0.0
+        $text['wifename'] = "Име и Презиме Супруге";
+        break;
+
+    //timeline.php, timeline2.php
+    case "timeline":
+        $text['text_delete'] = "Обриши";
+        $text['addperson'] = "Додај нову Особу";
+        $text['nobirth'] = "Одабрана особа нема корктан датум рођења и не може бити додата.";
+        $text['event'] = "Догађај(и)";
+        $text['chartwidth'] = "Ширина дијаграма";
+        $text['timelineinstr'] = "Додај нове особе уносећи њихов ИД у доња поља";
+        $text['togglelines'] = "Прикључене линије";
+        //changed in 9.0.0
+        $text['noliving'] = "Одабрана особа је маркирана као жива и н може бити додата јер ви немате довољно права, за ту активност";
+        break;
+
+    //browsetrees.php
+    //login.php, newacctform.php, addnewacct.php
+    case "trees":
+    case "login":
+        $text['browsealltrees'] = "Претражавање свих породичних стабала";
+        $text['treename'] = "Породично стабло";
+        $text['owner'] = "Власник";
+        $text['address'] = "Адреса";
+        $text['city'] = "Место";
+        $text['state'] = "Област/Провинција";
+        $text['zip'] = "Поштански број";
+        $text['country'] = "Држава";
+        $text['email'] = "Ваша Е-маил адреса";
+        $text['phone'] = "Телефон";
+        $text['username'] = "Корисничко име";
+        $text['password'] = "Лозинка";
+        $text['loginfailed'] = "Пријављивање није успело.";
+        $text['regnewacct'] = "<strong>Регистровање новог корисничког налога</strong>";
+        $text['realname'] = "Ваше пуно име и презиме";
+        $text['phone'] = "Телефон";
+        $text['email'] = "Ваша регистрована Е-маил адреса";
+        $text['address'] = "Адреса";
+        $text['acctcomments'] = "Коментар";
+        $text['submit'] = "Пошаљи";
+        $text['leaveblank'] = "(оставите презно ако желите ново породично стабло)";
+        $text['required'] = "Поља која морате обавезно попунити. <br><br> (НАПОМЕНА: За УПИС ЛОЗИНКЕ, користите најмање 8 карактера: бар једно мало и велико слово и бар један број), Хвала";
+        $text['enterpassword'] = "Молим Вас упишите лозинку.";
+        $text['enterusername'] = "Молим Вас упишите кориничко име.";
+        $text['failure'] = "Жао нам је, али корисничко име које сте одабрали је већ у употреби. Вратите се на претходну страницу користећи дугме за назад и одаберите неко друго корисничко име.";
+        $text['success'] = "Хвала. Добили смо ваш захтев за регистрацију. Добићете е-маил, ћим ваша регистрација буде активирана или у случају да су потребне додатне информације. После тога можете се пријавити на сајт.";
+        $text['emailsubject'] = "Захтев за регистрацију ново корисника";
+        $text['website'] = "Web Сајт";
+        $text['nologin'] = "Нисте регистровани на сајту? ";
+        $text['loginsent'] = "Информације о пријави су послате";
+        $text['loginnotsent'] = "Тражене информације нису послате";
+        $text['enterrealname'] = "Молим Вас упишите ваше право, пуно име и презиме.";
+        $text['rempass'] = "Активирај сталну пријаву на овом вашем компјутеру";
+        $text['morestats'] = "Потпуна статистика";
+        $text['accmail'] = "<strong>НАПОМЕНА:</strong> Да би добили е-маил поруку од администратора сајта о свом налогу проверите да нисте случајно блокирали е-пошту за овај домен. Овај сајт је приватан сајт породице Милићевић. Сви подаци сакупљени у овом пројекту подлежу закону Републике Србије  о заштити података о личности Члана 6. Свако копирање података без дозволе аутора овог сајта подлеже истом закону и може добити судски еполог.";
+        $text['newpassword'] = "Нова Лозинка";
+        $text['resetpass'] = "Ресетуј лозинку";
+        $text['nousers'] = "Овај образац се не може користити, све док постоји бар један кориснички запис. Ако сте власник сајта, уђите као Адиминистратор да креирате Администраторски налог.";
+        $text['noregs'] = "Жао нам је али у овом тренутку не прихватамо регистрацију нових корисничких налога. Молим Вас <a href=\"suggest.php\">контактирајте нас</a> директно, ако имате сугестије/коментаре или питања у вези свега на овом сајту.";
+        //changed in 8.0.0
+        $text['emailmsg'] = "Примили сте нови захтев за кориснички налог сајта. Пријавите се на админ панел сајта и доделите одговарајућа права за овај нови налог. Ако одобрите ове регистрације, молим вас обавестите подносиоца захтева за одговор на ову поруку.";
+        $text['accactive'] = "Кориснички налог је сада активиран, али корисник неће имати специјална права док се то не потврди од стране администратора.";
+        $text['accinactive'] = "Идите на Admin/Users/Review ради приступу подешавањима корисничким налозима. Кориснички налог ће остати неактиван док се не измени и сними/сачува запис бар једном.";
+        $text['pwdagain'] = "Лозинка поново";
+        $text['enterpassword2'] = "Унесите лозинку поново.";
+        $text['pwdsmatch'] = "Лозинке се не подударају. Унесите исту лозинку у свако поље. (НАПОМЕНА: Користите најмање 8 карактера: бар једно мало и велико слово и бар један број)";
+        //added in 8.0.0
+        $text['acksubject'] = "Хвала на регистрацији"; //for a new user account
+        $text['ackmessage'] = "Ваш захтев за корисничким налогом је примљен. Ваш корисички налог ће бити НЕАКТИВАН док не буде прегледан од стране администратора сајта. Бићете обавештени путем е-маила када ваш кориснички налог буде спреман за употребу. Због других активности администратора, неки пут може и дуже трајати одговор али будите сигурни да ћете добили е-маил";
+        //added in 12.0.0
+        $text['switch'] = "Прекидач";
+        break;
+
     //added in 10.0.0
-    $text['no_ancestors'] = "Нема пронађених предака";
-    $text['ancestor_chart'] = "Вертикални графикон предака";
-    $text['opennewwindow'] = "Отвори у новом прозору";
-    $text['pedvertical'] = "Вертикално";
-    //added in 11.0.0
-    $text['familywith'] = "Породица са";
-    $text['fcmlogin'] = "Пријавите се да бисте видели детаље";
-    $text['isthe'] = "је";
-    $text['otherspouses'] = "други супружници";
-    $text['parentfamily'] = "Родитељска породица ";
-    $text['showfamily'] = "Приказ породице";
-    $text['shown'] = "показано";
-    $text['showparentfamily'] = "приказ родитељске породице";
-    $text['showperson'] = "приказ особе";
-    //added in 11.0.2
-    $text['otherfamilies'] = "Друге породице";
-    break;
+    case "branches":
+        $text['browseallbranches'] = "Прегледај све Гране стабла";
+        break;
 
-  //search.php, searchform.php
-  //merged with reports and showreport in 5.0.0
-  case "search":
-  case "reports":
-    $text['noreports'] = "Не постоји ни један Извештај.";
-    $text['reportname'] = "Назив Извештаја";
-    $text['allreports'] = "Сви Извештаји";
-    $text['report'] = "Извештај";
-    $text['error'] = "Грешка";
-    $text['reportsyntax'] = "Синтакса упита који креира извештај";
-    $text['wasincorrect'] = "је погрешна, и као резултат тога, извештај се не може приказати. Контактирајте систем администратора : vladimir@milicevic.rs";
-    $text['query'] = "Упит";
-    $text['equals'] = "налик на";
-    $text['endswith'] = "завршава се са";
-    $text['soundexof'] = "звући као";
-    $text['metaphoneof'] = "метафора од";
-    $text['plusminus10'] = "+/- 10 година од";
-    $text['lessthan'] = "мање од";
-    $text['greaterthan'] = "више од";
-    $text['lessthanequal'] = "мање или једнако";
-    $text['greaterthanequal'] = "веће или једнако";
-    $text['equalto'] = "једнако";
-    $text['tryagain'] = "Покушајте поново";
-    $text['joinwith'] = "Однос параметара";
-    $text['cap_and'] = "AND";
-    $text['cap_or'] = "OR";
-    $text['showspouse'] = "Покажи брачне партнере (ће приказати дупликате ако појединац има више од једног брачног друга)";
-    $text['submitquery'] = "Ваш упит";
-    $text['birthplace'] = "Место рођења";
-    $text['deathplace'] = "Место смрти";
-    $text['birthdatetr'] = "Година рођења";
-    $text['deathdatetr'] = "Година смрти";
-    $text['plusminus2'] = "+/- 2 године од";
-    $text['resetall'] = "Ресетуј све вредности";
-    $text['showdeath'] = "Прикажи информације о смрти/сахрани";
-    $text['altbirthplace'] = "Место крштења";
-    $text['altbirthdatetr'] = "Година крштења";
-    $text['burialplace'] = "Место сахране";
-    $text['burialdatetr'] = "Година сахране";
-    $text['event'] = "Dogaђај(и)";
-    $text['day'] = "Дан";
-    $text['month'] = "Месец";
-    $text['keyword'] = "Кључна реч (ie, \"Abt\")";
-    $text['explain'] = "Унесите податке о датуму да би видели догађаје који одговарају задатом критеријуму. Или оставите празно да би видели све одабране догађаје.";
-    $text['enterdate'] = "Упишите или одаберите минимум једну од ових информација: дан, месец, година, кључна реч";
-    $text['fullname'] = "Пуно име и презиме";
-    $text['birthdate'] = "Датум рођења";
-    $text['altbirthdate'] = "Датум крштења";
-    $text['marrdate'] = "Датум склапања брака";
-    $text['spouseid'] = "Брачни друг - ИД";
-    $text['spousename'] = "Име брачног друга";
-    $text['deathdate'] = "Датум смрти";
-    $text['burialdate'] = "Датум сахране";
-    $text['changedate'] = "Datum zadnje promene";
-    $text['gedcom'] = "Породично стабло";
-    $text['baptdate'] = "Датум крштења (ЛДС)";
-    $text['baptplace'] = "Место крштења (ЛДС)";
-    $text['endldate'] = "Датум Задужбине (ЛДС)";
-    $text['endlplace'] = "Место Задужбине (ЛДС)";
-    $text['ssealdate'] = "Датум печата С (ЛДС)"; //Sealed to spouse
-    $text['ssealplace'] = "Место печата С (ЛДС";
-    $text['psealdate'] = "Датум печата П (ЛДС)"; //Sealed to parents
-    $text['psealplace'] = "Место печата П (ЛДС)";
-    $text['marrplace'] = "Место склапања брака";
-    $text['spousesurname'] = "Презиме брачног друга";
-    $text['spousemore'] = "Ако унесете презиме супружника, морате унети још једну вредност и за друго поље.";
-    $text['plusminus5'] = "+/- 5 година од";
-    $text['exists'] = "постоји";
-    $text['dnexist'] = "не постоји";
-    $text['divdate'] = "Датум Развода";
-    $text['divplace'] = "Место Развода";
-    $text['otherevents'] = "Други догађаји";
-    $text['numresults'] = "Резултати по страници";
-    $text['mysphoto'] = "Загонетне Фотографије";
-    $text['mysperson'] = "Особе које се траже, за породично стабло";
-    $text['joinor'] = "Је 'Члан са ИЛИ ' опција не може да се користи са презименом супружника";
-    $text['tellus'] = "Реците нам шта знате о њима";
-    $text['moreinfo'] = "Више информација:";
-    //added in 8.0.0
-    $text['marrdatetr'] = "Година Брака";
-    $text['divdatetr'] = "Година Развода";
-    $text['mothername'] = "Мајчино Име";
-    $text['fathername'] = "Очево Име";
-    $text['filter'] = "Филтер";
-    $text['notliving'] = "Није у животу";
-    $text['nodayevents'] = "Догађаји за овај месец, а који нису повезани са одређеним даноом:";
-    //added in 9.0.0
-    $text['csv'] = "Раздвојен зарезима CSV фајл";
-    //added in 10.0.0
-    $text['confdate'] = "Датум потврде (ЛДС)";
-    $text['confplace'] = "Место поврде (ЛДС)";
-    $text['initdate'] = "Уводни/Иницијаторни Датум (ЛДС)";
-    $text['initplace'] = "Уводно/Иницијаторно Место (ЛДС)";
-    //added in 11.0.0
-    $text['marrtype'] = "Тип Брака";
-    $text['searchfor'] = "Тражи";
-    $text['searchnote'] = "Напомена: Ова страница користи Google за извршавање својих претрага. Број одговора ће директно утицати у којој мери Google је био у стању да индексира сајт.";
-    break;
+    //statistics.php
+    case "stats":
+        $text['quantity'] = "ВЕЛИЧИНА";
+        $text['totindividuals'] = "Укупно особа";
+        $text['totmales'] = "Укупно особа мушког пола";
+        $text['totfemales'] = "Укупно особа женског пола";
+        $text['totunknown'] = "Укупно особа непознатог пола";
+        $text['totliving'] = "Укупно живих";
+        $text['totfamilies'] = "Укупно породица";
+        $text['totuniquesn'] = "Укупно једниствених презимена";
+        //$text['totphotos'] = "Total Photos";
+        //$text['totdocs'] = "Total Histories &amp; Documents";
+        //$text['totheadstones'] = "Total Headstones";
+        $text['totsources'] = "Укупно извора";
+        $text['avglifespan'] = "Просечан животни век";
+        $text['earliestbirth'] = "Најраније рођење";
+        $text['longestlived'] = "НАЈДУЖЕ ЖИВЕЛИ";
+        $text['days'] = "дана";
+        $text['age'] = "ГОДИНА И ДАНА";
+        $text['agedisclaimer'] = "Израчунавање година је базирано на подацима рођења и смрти. Будући да постоје непотпуни подаци као што су пре \"1869\" или око \"1863\" или иза \"1780\" ова израчунавања не могу бити 100% тачна.";
+        $text['treedetail'] = "Више информација о овом дрвету";
+        $text['total'] = "Укупно";
+        //added in 12.0
+        $text['totdeceased'] = "Укупно умрлих";
+        break;
 
-  //showlog.php
-  case "showlog":
-    $text['logfilefor'] = "Евиденција за";
-    $text['mostrecentactions'] = "последњих извршених упита.";
-    $text['autorefresh'] = "Стартуј аутоматско обнављање сваких 30 секунди";
-    $text['refreshoff'] = "Заустави аутоматско обнављање";
-    break;
+    case "notes":
+        $text['browseallnotes'] = "Листа свих белешки";
+        break;
 
-  case "headstones":
-  case "showphoto":
-    $text['cemeteriesheadstones'] = "Гробља и Надгробни Споменици";
-    $text['showallhsr'] = "Покажи све записе о Надгробним Споменицима";
-    $text['in'] = "-";
-    $text['showmap'] = "Покажи мапу";
-    $text['headstonefor'] = "Споменик за";
-    $text['photoof'] = "Фотографија -";
-    $text['photoowner'] = "Аутор/Извор";
-    $text['nocemetery'] = "Нема Гробља";
-    $text['iptc005'] = "Наслов";
-    $text['iptc020'] = "Категорије подршке";
-    $text['iptc040'] = "Посебна упутства";
-    $text['iptc055'] = "Датум креирања";
-    $text['iptc080'] = "Аутор";
-    $text['iptc085'] = "Позиција Аутора";
-    $text['iptc090'] = "Град";
-    $text['iptc095'] = "Држава/Покрајна";
-    $text['iptc101'] = "Земља";
-    $text['iptc103'] = "OTR";
-    $text['iptc105'] = "Наслов";
-    $text['iptc110'] = "Извор";
-    $text['iptc115'] = "Извор Фотографије";
-    $text['iptc116'] = "Обавештење о ауторским правима";
-    $text['iptc120'] = "Наслов";
-    $text['iptc122'] = "Писац Наслова";
-    $text['mapof'] = "Мапа";
-    $text['regphotos'] = "Листа са детаљима";
-    $text['gallery'] = "Само сличице";
-    $text['cemphotos'] = "Фотографије Гробља";
-    $text['photosize'] = "Величина";
-    $text['iptc010'] = "Приоритет";
-    $text['filesize'] = "Величина Фајла";
-    $text['seeloc'] = "Види Локацију";
-    $text['showall'] = "Покажи Све";
-    $text['editmedia'] = "Измени Медиј";
-    $text['viewitem'] = "Погледај ову ставку";
-    $text['editcem'] = "Измеми Гробље";
-    $text['numitems'] = "# Ставка";
-    $text['allalbums'] = "Сви Албуми";
-    $text['slidestop'] = "Паузирај Фото слајд";
-    $text['slideresume'] = "Настави Фото слајд";
-    $text['slidesecs'] = "Секунде за сваку фотографију у слајду:";
-    $text['minussecs'] = "минус 0.5 секунди";
-    $text['plussecs'] = "плус 0.5 секунди";
-    $text['nocountry'] = "Непозната замља";
-    $text['nostate'] = "Непозната држава";
-    $text['nocounty'] = "Непознат округ";
-    $text['nocity'] = "Непознат град";
-    $text['nocemname'] = "Непознат назив гробља";
-    $text['editalbum'] = "Измени Албум";
-    $text['mediamaptext'] = "<strong>Напомена:</strong> Померите показивач миша преко слике да бисте видели имена особа. Кликните да бисте видели страницу особе са именом.";
-    //added in 8.0.0
-    $text['allburials'] = "Сва Сахрањивања";
-    $text['moreinfo'] = "Кликните мишем за више информација о овој слици.";
-    //added in 9.0.0
-    $text['iptc025'] = "Кључне речи";
-    $text['iptc092'] = "Под-локација";
-    $text['iptc015'] = "Категорија";
-    $text['iptc065'] = "Изворни Програм";
-    $text['iptc070'] = "Верзија Програма";
-    break;
+    case "help":
+        $text['menuhelp'] = "ИЗБОР";
+        break;
 
-  //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
-  case "surnames":
-  case "places":
-    $text['surnamesstarting'] = "Приказ презимена која поћињу на";
-    $text['showtop'] = "Прикажи прве";
-    $text['showallsurnames'] = "Приказ свих презимена";
-    $text['sortedalpha'] = "по абецеди";
-    $text['byoccurrence'] = "по учесталости";
-    $text['firstchars'] = "Почетна слова";
-    $text['mainsurnamepage'] = "Почетна страна са презименима";
-    $text['allsurnames'] = "Сва Презимена";
-    $text['showmatchingsurnames'] = "Кликните на презиме да видите особе са тим презименом.";
-    $text['backtotop'] = "Повратак на почетак";
-    $text['beginswith'] = "Која почињу са";
-    $text['allbeginningwith'] = "Сва презимена која почињу са";
-    $text['numoccurrences'] = "укупан број локалитета у заградама";
-    $text['placesstarting'] = "Прикажи највећа места/локалитете ћије име почиње са";
-    $text['showmatchingplaces'] = "Кликните на име места да видите мање локалитете. Кликните на икону за претрагу ако желите да видите ко је све повезан са том особом.";
-    $text['totalnames'] = "укупно особа";
-    $text['showallplaces'] = "Прикажи сва већа места/локације";
-    $text['totalplaces'] = "укупно места";
-    $text['mainplacepage'] = "Главна листа места";
-    $text['allplaces'] = "Сва већа Места/Локације";
-    $text['placescont'] = "Прикажи сва места која у имену садрже";
-    //changed in 8.0.0
-    $text['top30'] = "Првих xxx презимена";
-    $text['top30places'] = "Првих xxx већих места/локација";
-    //added in 12.0.0
-    $text['firstnamelist'] = "Листа Имена";
-    $text['firstnamesstarting'] = "Прикажи имена која почињу са";
-    $text['showallfirstnames'] = "Прикажи сва имена";
-    $text['mainfirstnamepage'] = "Главна листа имена";
-    $text['allfirstnames'] = "Сва Имена";
-    $text['showmatchingfirstnames'] = "Кликните на Име да бисте приказали одговарајуће записе.";
-    $text['allfirstbegwith'] = "Сва имена која почињу са";
-    $text['top30first'] = "Првих xxx Имена";
-    $text['allothers'] = "Сви други";
-    $text['amongall'] = "(међу свим именима)";
-    $text['justtop'] = "Само првих xxx";
-    break;
+    case "install":
+        $text['perms'] = "Права су сва била сетована.";
+        $text['noperms'] = "Права не могу да се подесе за ове фајлове:";
+        $text['manual'] = "Молим Вас поставите их ручно.";
+        $text['folder'] = "Фолдер";
+        $text['created'] = "направљено је";
+        $text['nocreate'] = "не могу да се креирају. Молим Вас креирајте их ручно.";
+        $text['infosaved'] = "Информације су сачуване, конекција потврђена!";
+        $text['tablescr'] = "Табеле су креиране!";
+        $text['notables'] = "Следеће табеле нису могле бити креиране:";
+        $text['nocomm'] = "ТНГ не комуницира са вашом базом података. Табеле нису креиране.";
+        $text['newdb'] = "сачувана информација, верификована конекција, створена нова база података:";
+        $text['noattach'] = "Информације су сачуване. Конекција је успостављена и база података је креирана, али ТНГ се не може прикључити на њу.";
+        $text['nodb'] = "Информације су сачуване. Веза је направљена, али база података не постоји и није могла бити креирана овде. Проверите да ли је име базе података тачно и да ли корисник базе података има одговарајући приступ, или користите контролни панел да бисте га креирали.";
+        $text['noconn'] = "Информације су сачуване, али веза није успела. Једно или више од следећих je погрешно:";
+        $text['exists'] = "већ постоји.";
+        $text['loginfirst'] = "Прво морате да се пријавите на сајт, а уколико немате кориснички налог морате се регистровати.";
+        $text['noop'] = "Није извршена никаква операција.";
+        //added in 8.0.0
+        $text['nouser'] = "Корисник није креиран. Корисничко име можда већ постоји.";
+        $text['notree'] = "Дрво није креирано. ИД стабла можда већ постоји.";
+        $text['infosaved2'] = "Информације су сачуване";
+        $text['renamedto'] = "преименован у";
+        $text['norename'] = "није могуће преименовати";
+        break;
 
-  //whatsnew.php
-  case "whatsnew":
-    $text['pastxdays'] = "(у последњих xx дана)";
-    $text['photo'] = "Фотографије";
-    $text['history'] = "Историја/Документ";
-    $text['husbid'] = "ИД Супруга";
-    $text['husbname'] = "Име и Презиме Супруга";
-    $text['wifeid'] = "ИД Супруге";
-    //added in 11.0.0
-    $text['wifename'] = "Име и Презиме Супруге";
-    break;
+    case "imgviewer":
+        $text['zoomin'] = "Увеличај";
+        $text['zoomout'] = "Смањи";
+        $text['magmode'] = "Приказ Увеличавања";
+        $text['panmode'] = "Панорамски Приказ";
+        $text['pan'] = "Кликните и повуците да бисте се кретали унутар слике";
+        $text['fitwidth'] = "Подесива Ширина";
+        $text['fitheight'] = "Подесива Висина";
+        $text['newwin'] = "Нови Прозор";
+        $text['opennw'] = "Отвори слику у новом прозору";
+        $text['magnifyreg'] = "Кликните да бисте увећали регион слике";
+        $text['imgctrls'] = "Омогући контроле слике";
+        $text['vwrctrls'] = "Омогућити контроле прегледача слика";
+        $text['vwrclose'] = "Затворите прегледач слика";
+        break;
 
-  //timeline.php, timeline2.php
-  case "timeline":
-    $text['text_delete'] = "Обриши";
-    $text['addperson'] = "Додај нову Особу";
-    $text['nobirth'] = "Одабрана особа нема корктан датум рођења и не може бити додата.";
-    $text['event'] = "Догађај(и)";
-    $text['chartwidth'] = "Ширина дијаграма";
-    $text['timelineinstr'] = "Додај нове особе уносећи њихов ИД у доња поља";
-    $text['togglelines'] = "Прикључене линије";
-    //changed in 9.0.0
-    $text['noliving'] = "Одабрана особа је маркирана као жива и н може бити додата јер ви немате довољно права, за ту активност";
-    break;
+    case "dna":
+        $text['test_date'] = "Датум теста";
+        $text['links'] = "Релевантни линкови";
+        $text['testid'] = "ID Теста";
+        //added in 12.0.0
+        $text['mode_values'] = "Вредности Мода";
+        $text['compareselected'] = "Изабери за упоређивање";
+        $text['dnatestscompare'] = "Упоређивање Y-DNA Тестове";
+        $text['keep_name_private'] = "Задржи Имена Приватно";
+        $text['browsealltests'] = "Прегледати све ДНА Тестове";
+        $text['all_dna_tests'] = "Сви ДНА Тестови";
+        $text['fastmutating'] = "Брзе&nbsp;Мутације";
+        $text['alltypes'] = "Сви Типови";
+        $text['allgroups'] = "Све Групе";
+        $text['Ydna_LITbox_info'] = "Тестo(ви) који су повезани са овом особом нису обавезно преузети од ове особе.<br>'Хаплогроупа' приказује податке у црвеној боји ако је резултат 'Предвиђен унапред' или зелен ако је тест 'Потврђен'";
 
-  //browsetrees.php
-  //login.php, newacctform.php, addnewacct.php
-  case "trees":
-  case "login":
-    $text['browsealltrees'] = "Претражавање свих породичних стабала";
-    $text['treename'] = "Породично стабло";
-    $text['owner'] = "Власник";
-    $text['address'] = "Адреса";
-    $text['city'] = "Место";
-    $text['state'] = "Област/Провинција";
-    $text['zip'] = "Поштански број";
-    $text['country'] = "Држава";
-    $text['email'] = "Ваша Е-маил адреса";
-    $text['phone'] = "Телефон";
-    $text['username'] = "Корисничко име";
-    $text['password'] = "Лозинка";
-    $text['loginfailed'] = "Пријављивање није успело.";
-    $text['regnewacct'] = "<strong>Регистровање новог корисничког налога</strong>";
-    $text['realname'] = "Ваше пуно име и презиме";
-    $text['phone'] = "Телефон";
-    $text['email'] = "Ваша регистрована Е-маил адреса";
-    $text['address'] = "Адреса";
-    $text['acctcomments'] = "Коментар";
-    $text['submit'] = "Пошаљи";
-    $text['leaveblank'] = "(оставите презно ако желите ново породично стабло)";
-    $text['required'] = "Поља која морате обавезно попунити. <br><br> (НАПОМЕНА: За УПИС ЛОЗИНКЕ, користите најмање 8 карактера: бар једно мало и велико слово и бар један број), Хвала";
-    $text['enterpassword'] = "Молим Вас упишите лозинку.";
-    $text['enterusername'] = "Молим Вас упишите кориничко име.";
-    $text['failure'] = "Жао нам је, али корисничко име које сте одабрали је већ у употреби. Вратите се на претходну страницу користећи дугме за назад и одаберите неко друго корисничко име.";
-    $text['success'] = "Хвала. Добили смо ваш захтев за регистрацију. Добићете е-маил, ћим ваша регистрација буде активирана или у случају да су потребне додатне информације. После тога можете се пријавити на сајт.";
-    $text['emailsubject'] = "Захтев за регистрацију ново корисника";
-    $text['website'] = "Web Сајт";
-    $text['nologin'] = "Нисте регистровани на сајту? ";
-    $text['loginsent'] = "Информације о пријави су послате";
-    $text['loginnotsent'] = "Тражене информације нису послате";
-    $text['enterrealname'] = "Молим Вас упишите ваше право, пуно име и презиме.";
-    $text['rempass'] = "Активирај сталну пријаву на овом вашем компјутеру";
-    $text['morestats'] = "Потпуна статистика";
-    $text['accmail'] = "<strong>НАПОМЕНА:</strong> Да би добили е-маил поруку од администратора сајта о свом налогу проверите да нисте случајно блокирали е-пошту за овај домен. Овај сајт је приватан сајт породице Милићевић. Сви подаци сакупљени у овом пројекту подлежу закону Републике Србије  о заштити података о личности Члана 6. Свако копирање података без дозволе аутора овог сајта подлеже истом закону и може добити судски еполог.";
-    $text['newpassword'] = "Нова Лозинка";
-    $text['resetpass'] = "Ресетуј лозинку";
-    $text['nousers'] = "Овај образац се не може користити, све док постоји бар један кориснички запис. Ако сте власник сајта, уђите као Адиминистратор да креирате Администраторски налог.";
-    $text['noregs'] = "Жао нам је али у овом тренутку не прихватамо регистрацију нових корисничких налога. Молим Вас <a href=\"suggest.php\">контактирајте нас</a> директно, ако имате сугестије/коментаре или питања у вези свега на овом сајту.";
-    //changed in 8.0.0
-    $text['emailmsg'] = "Примили сте нови захтев за кориснички налог сајта. Пријавите се на админ панел сајта и доделите одговарајућа права за овај нови налог. Ако одобрите ове регистрације, молим вас обавестите подносиоца захтева за одговор на ову поруку.";
-    $text['accactive'] = "Кориснички налог је сада активиран, али корисник неће имати специјална права док се то не потврди од стране администратора.";
-    $text['accinactive'] = "Идите на Admin/Users/Review ради приступу подешавањима корисничким налозима. Кориснички налог ће остати неактиван док се не измени и сними/сачува запис бар једном.";
-    $text['pwdagain'] = "Лозинка поново";
-    $text['enterpassword2'] = "Унесите лозинку поново.";
-    $text['pwdsmatch'] = "Лозинке се не подударају. Унесите исту лозинку у свако поље. (НАПОМЕНА: Користите најмање 8 карактера: бар једно мало и велико слово и бар један број)";
-    //added in 8.0.0
-    $text['acksubject'] = "Хвала на регистрацији"; //for a new user account
-    $text['ackmessage'] = "Ваш захтев за корисничким налогом је примљен. Ваш корисички налог ће бити НЕАКТИВАН док не буде прегледан од стране администратора сајта. Бићете обавештени путем е-маила када ваш кориснички налог буде спреман за употребу. Због других активности администратора, неки пут може и дуже трајати одговор али будите сигурни да ћете добили е-маил";
-    //added in 12.0.0
-    $text['switch'] = "Прекидач";
-    break;
-
-  //added in 10.0.0
-  case "branches":
-    $text['browseallbranches'] = "Прегледај све Гране стабла";
-    break;
-
-  //statistics.php
-  case "stats":
-    $text['quantity'] = "ВЕЛИЧИНА";
-    $text['totindividuals'] = "Укупно особа";
-    $text['totmales'] = "Укупно особа мушког пола";
-    $text['totfemales'] = "Укупно особа женског пола";
-    $text['totunknown'] = "Укупно особа непознатог пола";
-    $text['totliving'] = "Укупно живих";
-    $text['totfamilies'] = "Укупно породица";
-    $text['totuniquesn'] = "Укупно једниствених презимена";
-    //$text['totphotos'] = "Total Photos";
-    //$text['totdocs'] = "Total Histories &amp; Documents";
-    //$text['totheadstones'] = "Total Headstones";
-    $text['totsources'] = "Укупно извора";
-    $text['avglifespan'] = "Просечан животни век";
-    $text['earliestbirth'] = "Најраније рођење";
-    $text['longestlived'] = "НАЈДУЖЕ ЖИВЕЛИ";
-    $text['days'] = "дана";
-    $text['age'] = "ГОДИНА И ДАНА";
-    $text['agedisclaimer'] = "Израчунавање година је базирано на подацима рођења и смрти. Будући да постоје непотпуни подаци као што су пре \"1869\" или око \"1863\" или иза \"1780\" ова израчунавања не могу бити 100% тачна.";
-    $text['treedetail'] = "Више информација о овом дрвету";
-    $text['total'] = "Укупно";
-    //added in 12.0
-    $text['totdeceased'] = "Укупно умрлих";
-    break;
-
-  case "notes":
-    $text['browseallnotes'] = "Листа свих белешки";
-    break;
-
-  case "help":
-    $text['menuhelp'] = "ИЗБОР";
-    break;
-
-  case "install":
-    $text['perms'] = "Права су сва била сетована.";
-    $text['noperms'] = "Права не могу да се подесе за ове фајлове:";
-    $text['manual'] = "Молим Вас поставите их ручно.";
-    $text['folder'] = "Фолдер";
-    $text['created'] = "направљено је";
-    $text['nocreate'] = "не могу да се креирају. Молим Вас креирајте их ручно.";
-    $text['infosaved'] = "Информације су сачуване, конекција потврђена!";
-    $text['tablescr'] = "Табеле су креиране!";
-    $text['notables'] = "Следеће табеле нису могле бити креиране:";
-    $text['nocomm'] = "ТНГ не комуницира са вашом базом података. Табеле нису креиране.";
-    $text['newdb'] = "сачувана информација, верификована конекција, створена нова база података:";
-    $text['noattach'] = "Информације су сачуване. Конекција је успостављена и база података је креирана, али ТНГ се не може прикључити на њу.";
-    $text['nodb'] = "Информације су сачуване. Веза је направљена, али база података не постоји и није могла бити креирана овде. Проверите да ли је име базе података тачно и да ли корисник базе података има одговарајући приступ, или користите контролни панел да бисте га креирали.";
-    $text['noconn'] = "Информације су сачуване, али веза није успела. Једно или више од следећих je погрешно:";
-    $text['exists'] = "већ постоји.";
-    $text['loginfirst'] = "Прво морате да се пријавите на сајт, а уколико немате кориснички налог морате се регистровати.";
-    $text['noop'] = "Није извршена никаква операција.";
-    //added in 8.0.0
-    $text['nouser'] = "Корисник није креиран. Корисничко име можда већ постоји.";
-    $text['notree'] = "Дрво није креирано. ИД стабла можда већ постоји.";
-    $text['infosaved2'] = "Информације су сачуване";
-    $text['renamedto'] = "преименован у";
-    $text['norename'] = "није могуће преименовати";
-    break;
-
-  case "imgviewer":
-    $text['zoomin'] = "Увеличај";
-    $text['zoomout'] = "Смањи";
-    $text['magmode'] = "Приказ Увеличавања";
-    $text['panmode'] = "Панорамски Приказ";
-    $text['pan'] = "Кликните и повуците да бисте се кретали унутар слике";
-    $text['fitwidth'] = "Подесива Ширина";
-    $text['fitheight'] = "Подесива Висина";
-    $text['newwin'] = "Нови Прозор";
-    $text['opennw'] = "Отвори слику у новом прозору";
-    $text['magnifyreg'] = "Кликните да бисте увећали регион слике";
-    $text['imgctrls'] = "Омогући контроле слике";
-    $text['vwrctrls'] = "Омогућити контроле прегледача слика";
-    $text['vwrclose'] = "Затворите прегледач слика";
-    break;
-
-  case "dna":
-    $text['test_date'] = "Датум теста";
-    $text['links'] = "Релевантни линкови";
-    $text['testid'] = "ID Теста";
-    //added in 12.0.0
-    $text['mode_values'] = "Вредности Мода";
-    $text['compareselected'] = "Изабери за упоређивање";
-    $text['dnatestscompare'] = "Упоређивање Y-DNA Тестове";
-    $text['keep_name_private'] = "Задржи Имена Приватно";
-    $text['browsealltests'] = "Прегледати све ДНА Тестове";
-    $text['all_dna_tests'] = "Сви ДНА Тестови";
-    $text['fastmutating'] = "Брзе&nbsp;Мутације";
-    $text['alltypes'] = "Сви Типови";
-    $text['allgroups'] = "Све Групе";
-    $text['Ydna_LITbox_info'] = "Тестo(ви) који су повезани са овом особом нису обавезно преузети од ове особе.<br>'Хаплогроупа' приказује податке у црвеној боји ако је резултат 'Предвиђен унапред' или зелен ако је тест 'Потврђен'";
-
-    //added in 12.1.0
-    $text['dnatestscompare_mtdna'] = "Упоредите изабране mtDNA Tестове";
-    $text['dnatestscompare_atdna'] = "Упоредите изабране atDNA Tестове";
-    $text['chromosome'] = "Хром";
-    $text['centiMorgans'] = "cM";
-    $text['snps'] = "SNPs";
-    $text['y_haplogroup'] = "Y-DNA";
-    $text['mt_haplogroup'] = "mtDNA";
-    $text['sequence'] = "секвенца";
-    $text['extra_mutations'] = "Екстра Мутације";
-    $text['mrca'] = "MRC Предак";
-    $text['ydna_test'] = "Y-DNA Tестови";
-    $text['mtdna_test'] = "mtDNA (Митохондријски) Тестови";
-    $text['atdna_test'] = "atDNA (аутозомни) Тестови";
-    $text['segment_start'] = "Почетак";
-    $text['segment_end'] = "Крај";
-    $text['suggested_relationship'] = "Предложено";
-    $text['actual_relationship'] = "Актуелно";
-    $text['12markers'] = "Маркери 1-12";
-    $text['25markers'] = "Маркери 13-25";
-    $text['37markers'] = "Маркери 26-37";
-    $text['67markers'] = "Маркери 38-67";
-    $text['111markers'] = "Маркери 68-111";
-    break;
+        //added in 12.1.0
+        $text['dnatestscompare_mtdna'] = "Упоредите изабране mtDNA Tестове";
+        $text['dnatestscompare_atdna'] = "Упоредите изабране atDNA Tестове";
+        $text['chromosome'] = "Хром";
+        $text['centiMorgans'] = "cM";
+        $text['snps'] = "SNPs";
+        $text['y_haplogroup'] = "Y-DNA";
+        $text['mt_haplogroup'] = "mtDNA";
+        $text['sequence'] = "секвенца";
+        $text['extra_mutations'] = "Екстра Мутације";
+        $text['mrca'] = "MRC Предак";
+        $text['ydna_test'] = "Y-DNA Tестови";
+        $text['mtdna_test'] = "mtDNA (Митохондријски) Тестови";
+        $text['atdna_test'] = "atDNA (аутозомни) Тестови";
+        $text['segment_start'] = "Почетак";
+        $text['segment_end'] = "Крај";
+        $text['suggested_relationship'] = "Предложено";
+        $text['actual_relationship'] = "Актуелно";
+        $text['12markers'] = "Маркери 1-12";
+        $text['25markers'] = "Маркери 13-25";
+        $text['37markers'] = "Маркери 26-37";
+        $text['67markers'] = "Маркери 38-67";
+        $text['111markers'] = "Маркери 68-111";
+        break;
 }
 
 //common
@@ -1026,5 +1026,5 @@ $text['lastpage'] = "Последња страна";
 @include_once "captcha_text.php";
 @include_once "alltext.php";
 if (!$alltextloaded) {
-  getAllTextPath();
+    getAllTextPath();
 }

@@ -24,9 +24,9 @@ initMediaTypes();
 include "showmediaxmllib.php";
 
 if ($page < $totalpages) {
-  $nextpage = $page + 1;
+    $nextpage = $page + 1;
 } else {
-  $nextpage = 1;
+    $nextpage = 1;
 }
 $nextmediaID = get_item_id($result, $nextpage - 1, "mediaID");
 $nextmedialinkID = get_item_id($result, $nextpage - 1, "medialinkID");
@@ -40,10 +40,10 @@ echo "<p class=\"adminnav topmargin\">$pagenav</p>";
 echo "<h3 class='subhead'>" . truncateIt($description, 100) . "</h3>\n";
 
 if ($noneliving || $imgrow['alwayson']) {
-  showMediaSource($imgrow, true);
+    showMediaSource($imgrow, true);
 } else {
-  ?>
+    ?>
     <div class="livingbox rounded10"><?php echo $text['living']; ?></div>
-  <?php
+    <?php
 }
 ?>

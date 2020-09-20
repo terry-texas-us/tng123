@@ -38,9 +38,9 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames
                     $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
                     $more = getLivingPrivateRestrictions($people_table, false, false);
-                  if ($more) {
-                      $wherestr .= " AND " . $more;
-                  }
+                    if ($more) {
+                        $wherestr .= " AND " . $more;
+                    }
 
                     $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
                     if ($tngconfig['ucsurnames']) {
@@ -61,31 +61,31 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames
                             $numcols = 2;
                         } elseif (!isset($numcols) || $numcols > 5) {
                             $numcols = 5;
-                    }
-                    $num_in_col = ceil($topnum / $numcols);
+                        }
+                        $num_in_col = ceil($topnum / $numcols);
 
-                    $num_in_col_ctr = 0;
-                    while ($surname = tng_fetch_assoc($result)) {
-                      $surname2 = urlencode($surname['lastname']);
-                      $name = $surname['lastname'] ? "<a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : $text['nosurname'];
-                      echo "$snnum. $name ({$surname['lncount']})<br>\n";
-                      $snnum++;
-                      $num_in_col_ctr++;
-                      if ($num_in_col_ctr == $num_in_col) {
-                          echo "</td>\n";
-                          echo "<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n";
-                          echo "<td class=\"sncol\">";
-                          $num_in_col_ctr = 0;
-                      }
+                        $num_in_col_ctr = 0;
+                        while ($surname = tng_fetch_assoc($result)) {
+                            $surname2 = urlencode($surname['lastname']);
+                            $name = $surname['lastname'] ? "<a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : $text['nosurname'];
+                            echo "$snnum. $name ({$surname['lncount']})<br>\n";
+                            $snnum++;
+                            $num_in_col_ctr++;
+                            if ($num_in_col_ctr == $num_in_col) {
+                                echo "</td>\n";
+                                echo "<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n";
+                                echo "<td class=\"sncol\">";
+                                $num_in_col_ctr = 0;
+                            }
+                        }
+                        tng_free_result($result);
                     }
-                    tng_free_result($result);
-                  }
-                  ?>
+                    ?>
                 </td>
             </tr>
         </table>
     </div>
-  <br>
+    <br>
 <?php
 tng_footer("");
 ?>

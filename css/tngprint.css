@@ -6,7 +6,7 @@ a, a:link, a:active, a:visited {
 /* body: describes page background color and all non-table text not governed by any other style */
 body {
     background-image: none;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .publicbody {

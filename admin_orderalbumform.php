@@ -8,16 +8,16 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $tree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $tree = $assignedtree;
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
@@ -87,16 +87,16 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         <td>
                             <select name="tree1">
                                 <?php
-                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                              while ($treerow = tng_fetch_assoc($treeresult)) {
-                                echo "	<option value=\"{$treerow['gedcom']}\"";
-                                if ($treerow['gedcom'] == $tree) {
-                                  echo " selected";
+                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    echo "	<option value=\"{$treerow['gedcom']}\"";
+                                    if ($treerow['gedcom'] == $tree) {
+                                        echo " selected";
+                                    }
+                                    echo ">{$treerow['treename']}</option>\n";
                                 }
-                                echo ">{$treerow['treename']}</option>\n";
-                              }
-                              tng_free_result($treeresult);
-                              ?>
+                                tng_free_result($treeresult);
+                                ?>
                             </select>
                         </td>
                         <td>
@@ -108,18 +108,22 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                                 <option value="L"><?php echo $admtext['place']; ?></option>
                             </select>
                         </td>
-                        <td><input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>"></td>
-                        <td class="normal"><input type="submit" value="<?php echo $admtext['text_continue']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
+                        <td>
+                            <input type="text" name="newlink1" id="newlink1" value="<?php echo $personID; ?>">
+                        </td>
+                        <td class="normal">
+                            <input type="submit" value="<?php echo $admtext['text_continue']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                        </td>
                         <td><a href="#"
                                onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-          </tr>
-        </table>
+                    </tr>
+                </table>
 
-      </form>
+            </form>
 
-    </td>
-  </tr>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

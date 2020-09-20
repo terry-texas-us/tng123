@@ -185,7 +185,9 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                 <table>
                     <tr>
                         <td><span class="normal"><?php echo $admtext['reportname']; ?>:</span></td>
-                        <td><input type="text" name="reportname" size="50" maxlength="80"></td>
+                        <td>
+                            <input type="text" name="reportname" size="50" maxlength="80">
+                        </td>
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['description']; ?>:</span></td>
@@ -193,7 +195,9 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['rankpriority']; ?>:</span></td>
-                        <td><input type="text" name="ranking" size="3" maxlength="3" value="1"></td>
+                        <td>
+                            <input type="text" name="ranking" size="3" maxlength="3" value="1">
+                        </td>
                     </tr>
                     <tr>
                         <td valign="top"><span class="normal"><?php echo $admtext['active']; ?>:</span></td>

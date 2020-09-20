@@ -147,9 +147,9 @@ echo help_header("Nápověda: Testy DNA");
                 (UEP) vzor DNA.</p>
             <p>V genetické genealogii je unikátní polymorfismus (UEP) genetickým markerem, který odpovídá mutaci, která se pravděpodobně vyskytuje tak
                 zřídka, že se předpokládá, že je naprosto pravděpodobné, že všichni jedinci, kteří sdílejí tento marker
-        po celém světě, ji dědí od shodného společného předka a shodné události jednotlivé mutace.</p>
+                po celém světě, ji dědí od shodného společného předka a shodné události jednotlivé mutace.</p>
 
-      <p><strong>Signifikantní SNPs</strong></p>
+            <p><strong>Signifikantní SNPs</strong></p>
             <p>Tyto SNP mohou klinicky souviset, souviset s americkými indiány, apod.</p>
 
             <p><strong>Terminální SNP</strong></p>
@@ -220,28 +220,31 @@ echo help_header("Nápověda: Testy DNA");
             <p><strong>Celkově sdílené cM</strong><br>
                 Toto je součet autosomální DNA, dané v centimorgans (cM), který vy a vaše genetická shoda sdílíte.<br>Viz <a
                     href="https://dnapainter.com/tools/sharedcmv4" traget="_blank">The Shared cM Project Tool</a>, kde je více informací o
-        pravděpodobnosti zpřízněnosti na základě počtu celkového počtu sdílených cM.</p>
+                pravděpodobnosti zpřízněnosti na základě počtu celkového počtu sdílených cM.</p>
 
-      <p><strong>Sdílené segmenty</strong><br>
-        Počet sdílených segmentů v této sdílené shodě DNA. Čím více segmentů sdílíte a čím větší je délka těchto segmentů, tím více jste zpřízněni.</p>
+            <p><strong>Sdílené segmenty</strong><br>
+                Počet sdílených segmentů v této sdílené shodě DNA. Čím více segmentů sdílíte a čím větší je délka těchto segmentů, tím více jste
+                zpřízněni.</p>
 
-      <p><strong>Největší segment</strong><br>
-        Segmenty, které společně sdílejí velké množství centiMorganů, jsou s větší pravděpodobností významné a označují v genealogickém časovém rámci společného předka. Toto je největší sdílený segment v této shodě DNA.</p>
+            <p><strong>Největší segment</strong><br>
+                Segmenty, které společně sdílejí velké množství centiMorganů, jsou s větší pravděpodobností významné a označují v genealogickém
+                časovém rámci společného předka. Toto je největší sdílený segment v této shodě DNA.</p>
 
-      <p><strong>Chromozóm č.</strong><br>
-        Toto je číslo chromozómu největšího shodného segmentu.</p>
+            <p><strong>Chromozóm č.</strong><br>
+                Toto je číslo chromozómu největšího shodného segmentu.</p>
 
-      <p><strong>Začátek segmentu</strong><br>
-        Toto je počáteční místo největšího shodného sdíleného segmentu DNA</p>
+            <p><strong>Začátek segmentu</strong><br>
+                Toto je počáteční místo největšího shodného sdíleného segmentu DNA</p>
 
-      <p><strong>Konec segmentu</strong><br>
-        Toto je konečné místo největšího shodného sdíleného segmentu DNA</p>
+            <p><strong>Konec segmentu</strong><br>
+                Toto je konečné místo největšího shodného sdíleného segmentu DNA</p>
 
-      <p><strong>centiMorgany</strong><br>
-        V genetické genealogii je centiMorgan (cM) nebo mapová jednotka (m.u.) jednotkou frekvence rekombinace, která se používá k měření genetické vzdálenosti. Toto je počet cM v největším shodném segmentu.</p>
+            <p><strong>centiMorgany</strong><br>
+                V genetické genealogii je centiMorgan (cM) nebo mapová jednotka (m.u.) jednotkou frekvence rekombinace, která se používá k měření
+                genetické vzdálenosti. Toto je počet cM v největším shodném segmentu.</p>
 
-      <p><strong>Počet shodných SNP</strong><br>
-          To je počet SNP pro největší shodný segment.</p>
+            <p><strong>Počet shodných SNP</strong><br>
+                To je počet SNP pro největší shodný segment.</p>
 
             <p><strong>X-shoda</strong><br>
                 Toto pole udává, zda se autosomální DNA shoduje také na chromozómu X.</p>

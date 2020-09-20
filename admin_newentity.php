@@ -20,7 +20,8 @@ header("Content-type:text/html; charset=" . $session_charset);
 
     <form action="admin_addentity.php" method="post" name="entityform" id="entityform" onsubmit="return addEntity(this);">
         <input type="hidden" name="entity" value="<?php echo "$entity"; ?>">
-        &nbsp;<input type="text" name="newitem" id="newitem"> <input type="submit" value="<?php echo $admtext['add']; ?>">
+        &nbsp;<input type="text" name="newitem" id="newitem">
+        <input type="submit" value="<?php echo $admtext['add']; ?>">
         <br>
         <div class="normal" id="entitymsg" style="color:green;"></div>
     </form>

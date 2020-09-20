@@ -3829,7 +3829,7 @@ Timeline.ClassicTheme._Impl = function () {
         instant: {icon: Timeline.urlPrefix + "images/dull-blue-circle.png", iconWidth: 10, iconHeight: 10, impreciseOpacity: 20, impreciseIconMargin: 3},
         duration: {impreciseOpacity: 20},
         label: {backgroundOpacity: 50, offsetFromLine: 3},
-        highlightColors: ["#FFFF00", "#FFC000", "#FF0000", "#0000FF"],
+        highlightColors: ["#ff0", "#ffc000", "#f00", "#00f"],
         highlightLabelBackground: false,
         bubble: {
             width: 250, maxHeight: 0, titleStyler: function (A) {
@@ -4182,10 +4182,10 @@ Timeline._Impl.prototype._initialize = function () {
     D.containerDiv.className = "timeline-message-container";
     H.appendChild(D.containerDiv);
     D.contentDiv.className = "timeline-message";
-  D.contentDiv.innerHTML = "<img src='" + Timeline.urlPrefix + "images/progress-running.gif'> Loading...";
-  this.showLoadingMessage = function () {
-    D.containerDiv.style.display = "block";
-  };
+    D.contentDiv.innerHTML = "<img src='" + Timeline.urlPrefix + "images/progress-running.gif'> Loading...";
+    this.showLoadingMessage = function () {
+        D.containerDiv.style.display = "block";
+    };
     this.hideLoadingMessage = function () {
         D.containerDiv.style.display = "none";
     };

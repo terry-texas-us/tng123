@@ -235,7 +235,8 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findfamily" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findfamily" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
 

@@ -121,7 +121,9 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['searchfor']; ?>:</td>
-                            <td><input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield"></td>
+                            <td>
+                                <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                            </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
@@ -170,7 +172,8 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findeventtype" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findeventtype" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
                 <?php
@@ -192,12 +195,12 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                         }
                         if ($allow_edit) {
                         ?>
-                            <input type="submit" name="cetaction" value="<?php echo $admtext['acceptselected']; ?>">
-                            <input type="submit" name="cetaction" value="<?php echo $admtext['ignoreselected']; ?>">
-                            <input type="submit" name="cetaction" value="<?php echo $admtext['collapseselected']; ?>">
-                            <input type="submit" name="cetaction" value="<?php echo $admtext['expselected']; ?>">
+                        <input type="submit" name="cetaction" value="<?php echo $admtext['acceptselected']; ?>">
+                        <input type="submit" name="cetaction" value="<?php echo $admtext['ignoreselected']; ?>">
+                        <input type="submit" name="cetaction" value="<?php echo $admtext['collapseselected']; ?>">
+                        <input type="submit" name="cetaction" value="<?php echo $admtext['expselected']; ?>">
                     </p>
-                        <?php } ?>
+                    <?php } ?>
 
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>

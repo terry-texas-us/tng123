@@ -8,9 +8,9 @@ $admin_login = 1;
 include "checklogin.php";
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
@@ -21,17 +21,17 @@ setcookie("tng_tree", $tree, 0);
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
 if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
-  $template = "ssssssssss";
-  $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www) VALUES(?,?,?,?,?,?,?,?,?,?)";
-  $params = array(&$template, &$address1, &$address2, &$city, &$state, &$zip, &$country, &$tree, &$phone, &$email, &$www);
-  tng_execute($query, $params);
-  $addressID = tng_insert_id();
+    $template = "ssssssssss";
+    $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www) VALUES(?,?,?,?,?,?,?,?,?,?)";
+    $params = array(&$template, &$address1, &$address2, &$city, &$state, &$zip, &$country, &$tree, &$phone, &$email, &$www);
+    tng_execute($query, $params);
+    $addressID = tng_insert_id();
 } else {
-  $addressID = "";
+    $addressID = "";
 }
 
 if (!$addressID) {
-  $addressID = 0;
+    $addressID = 0;
 }
 $template = "ssssss";
 $query = "INSERT INTO $repositories_table (repoID,reponame,addressID,changedate,gedcom,changedby) VALUES (?,?,?,?,?,?)";

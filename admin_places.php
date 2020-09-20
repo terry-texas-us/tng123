@@ -268,7 +268,8 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findplace" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findplace" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
 

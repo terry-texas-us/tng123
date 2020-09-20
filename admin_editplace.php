@@ -202,7 +202,9 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     </tr>
                     <tr>
                         <td><?php echo $admtext['place']; ?>:</td>
-                        <td><input type="text" value="<?php echo $row['place']; ?>" name="place" id="place" size="50" class="longfield"></td>
+                        <td>
+                            <input type="text" value="<?php echo $row['place']; ?>" name="place" id="place" size="50" class="longfield">
+                        </td>
                     </tr>
                     <?php
                     if (determineLDSRights()) {
@@ -232,11 +234,15 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     ?>
                     <tr>
                         <td><?php echo $admtext['latitude']; ?>:</td>
-                        <td><input type="text" name="latitude" value="<?php echo $row['latitude']; ?>" size="20" id="latbox"></td>
+                        <td>
+                            <input type="text" name="latitude" value="<?php echo $row['latitude']; ?>" size="20" id="latbox">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['longitude']; ?>:</td>
-                        <td><input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox"></td>
+                        <td>
+                            <input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox">
+                        </td>
                     </tr>
                     <?php
                     if ($map['key']) {
@@ -326,7 +332,9 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     if (!$assignedbranch) {
                         ?>
                         <tr>
-                            <td valign="top" colspan="2"><input type="checkbox" name="propagate" value="1" checked> <?php echo $admtext['propagate']; ?>:</td>
+                            <td valign="top" colspan="2">
+                                <input type="checkbox" name="propagate" value="1" checked> <?php echo $admtext['propagate']; ?>:
+                            </td>
                         </tr>
                         <?php
                     }
@@ -351,7 +359,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                 <br>&nbsp;
                 <input type="hidden" name="ID" value="<?php echo "$ID"; ?>">
                 <input type="hidden" name="orgplace" value="<?php echo $row['place']; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+            </form>
         </td>
     </tr>
 

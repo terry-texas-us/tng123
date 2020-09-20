@@ -180,7 +180,8 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findsource" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findsource" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
 

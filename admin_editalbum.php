@@ -176,7 +176,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['albumname']; ?>:</td>
-                            <td><input type="text" name="albumname" size="50" value="<?php echo $row['albumname']; ?>"></td>
+                            <td>
+                                <input type="text" name="albumname" size="50" value="<?php echo $row['albumname']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['description']; ?>:</td>
@@ -187,15 +189,18 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             <td><textarea cols="60" rows="3" name="keywords"><?php echo $row['keywords']; ?></textarea></td>
                         <tr>
                             <td><?php echo $admtext['active']; ?>:</td>
-                            <td><input type="radio" name="active" value="1"<?php if ($row['active']) {
+                            <td>
+                                <input type="radio" name="active" value="1"<?php if ($row['active']) {
                                     echo " checked=\"checked\"";
-                                } ?>> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="active" value="0"<?php if (!$row['active']) {
+                                } ?>> <?php echo $admtext['yes']; ?> &nbsp;
+                                <input type="radio" name="active" value="0"<?php if (!$row['active']) {
                                     echo " checked=\"checked\"";
                                 } ?>> <?php echo $admtext['no']; ?></td>
                         </tr>
                         </tr>
                         <tr>
-                            <td valign="top" colspan="2"><input type="checkbox" name="alwayson" value="1"<?php if ($row['alwayson']) {
+                            <td valign="top" colspan="2">
+                                <input type="checkbox" name="alwayson" value="1"<?php if ($row['alwayson']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['alwayson']; ?></td>
                         </tr>
@@ -324,8 +329,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                     <option value="L"><?php echo $admtext['place']; ?></option>
                                 </select>
                             </td>
-                            <td><input type="text" name="newlink1" id="newlink1" value="" onkeypress="return newlinkEnter(document.form1,this,event);"></td>
-                            <td class="normal"><input type="button" value="<?php echo $admtext['add']; ?>" onclick="return addMedia2EntityLink(document.form1);">
+                            <td>
+                                <input type="text" name="newlink1" id="newlink1" value="" onkeypress="return newlinkEnter(document.form1,this,event);">
+                            </td>
+                            <td class="normal">
+                                <input type="button" value="<?php echo $admtext['add']; ?>" onclick="return addMedia2EntityLink(document.form1);">
                                 &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </td>
                             <td><a href="#"

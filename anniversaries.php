@@ -104,7 +104,8 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
 ?>
 
     <div class="annfield normal">
-        <label for="tngevent"><?php echo $text['event']; ?>:</label><br>
+        <label for="tngevent"><?php echo $text['event']; ?>:</label>
+        <br>
         <select name="tngevent" id="tngevent" style="max-width: 335px;">
             <?php
             echo "<option value=\"\">&nbsp;</option>\n";
@@ -194,7 +195,8 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
         </select>
     </div>
     <div class="annfield normal">
-        <label for="tngdaymonth"><?php echo $text['day']; ?>:</label><br>
+        <label for="tngdaymonth"><?php echo $text['day']; ?>:</label>
+        <br>
         <select name="tngdaymonth" id="tngdaymonth">
             <option value="">&nbsp;</option>
             <?php
@@ -210,7 +212,8 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
         </select>
     </div>
     <div class="annfield normal">
-        <label for="tngmonth" class="annlabel"><?php echo $text['month']; ?>:</label><br>
+        <label for="tngmonth" class="annlabel"><?php echo $text['month']; ?>:</label>
+        <br>
         <select name="tngmonth" id="tngmonth">
             <option value="">&nbsp;</option>
             <option value="1"<?php if ($tngmonth == 1) {
@@ -252,18 +255,22 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
         </select>
     </div>
     <div class="annfield normal">
-        <label for="tngyear"><?php echo $text['year']; ?>:</label><br>
+        <label for="tngyear"><?php echo $text['year']; ?>:</label>
+        <br>
         <input type="text" name="tngyear" id="tngyear" size="6" maxlength="4" value="<?php echo $tngyear; ?>">
     </div>
     <div class="annfield normal">
-        <label for="tngkeywords"><?php echo $text['keyword']; ?>:</label><br>
+        <label for="tngkeywords"><?php echo $text['keyword']; ?>:</label>
+        <br>
         <input type="text" name="tngkeywords" id="tngkeywords" size="20" value="<?php echo stripslashes($tngkeywordsclean); ?>">
     </div>
     <div class="annfield normal">
         <br>
-        <input type="hidden" name="tngneedresults" value="1"><input type="submit" value="<?php echo $text['search']; ?>">
+        <input type="hidden" name="tngneedresults" value="1">
+        <input type="submit" value="<?php echo $text['search']; ?>">
         <input type="button" value="<?php echo $text['tng_reset']; ?>" onclick="resetForm();">
-        | <input type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "{$calendar_url}m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
+        |
+        <input type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "{$calendar_url}m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
     </div>
 
     </form>

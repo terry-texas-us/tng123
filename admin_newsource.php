@@ -8,17 +8,17 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 if ($assignedtree) {
-  $wherestr = "WHERE gedcom = \"$assignedtree\"";
-  $firsttree = $assignedtree;
+    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $firsttree = $assignedtree;
 } else {
-  $wherestr = "";
-  $firsttree = isset($_COOKIE['tng_tree']) ? $_COOKIE['tng_tree'] : "";
+    $wherestr = "";
+    $firsttree = isset($_COOKIE['tng_tree']) ? $_COOKIE['tng_tree'] : "";
 }
 
 $helplang = findhelp("sources_help.php");
@@ -55,30 +55,30 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource
 ?>
 
 <form action="admin_addsource.php" method="post" name="form1" onSubmit="return validateForm();">
-  <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-    <tr class="databack">
-      <td class="tngshadow">
-        <table class="normal">
-          <tr>
-            <td colspan="2"><strong><?php echo $admtext['prefixsourceid']; ?></strong></td>
+    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <table class="normal">
+                    <tr>
+                        <td colspan="2"><strong><?php echo $admtext['prefixsourceid']; ?></strong></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['tree']; ?></td>
                         <td>
                             <select name="tree1" onChange="generateID('source',document.form1.sourceID,document.form1.tree1);">
-                              <?php
-                              $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
-                              $result = tng_query($query);
-                              $numtrees = tng_num_rows($result);
-                              while ($row = tng_fetch_assoc($result)) {
-                                echo "		<option value=\"{$row['gedcom']}\"";
-                                if ($firsttree == $row['gedcom']) {
-                                  echo " selected=\"selected\"";
+                                <?php
+                                $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
+                                $result = tng_query($query);
+                                $numtrees = tng_num_rows($result);
+                                while ($row = tng_fetch_assoc($result)) {
+                                    echo "		<option value=\"{$row['gedcom']}\"";
+                                    if ($firsttree == $row['gedcom']) {
+                                        echo " selected=\"selected\"";
+                                    }
+                                    echo ">{$row['treename']}</option>\n";
                                 }
-                                echo ">{$row['treename']}</option>\n";
-                              }
-                              tng_free_result($result);
-                              ?>
+                                tng_free_result($result);
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -98,17 +98,17 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource
         <tr class="databack">
             <td class="tngshadow">
                 <table class="normal">
-                  <?php include "micro_newsource.php"; ?>
+                    <?php include "micro_newsource.php"; ?>
                 </table>
             </td>
         </tr>
-      <tr class="databack">
-          <td class="tngshadow">
-              <p class="normal"><strong><?php echo $admtext['sevslater']; ?></strong></p>
-              <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
-          </td>
-      </tr>
-  </table>
+        <tr class="databack">
+            <td class="tngshadow">
+                <p class="normal"><strong><?php echo $admtext['sevslater']; ?></strong></p>
+                <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">
+            </td>
+        </tr>
+    </table>
 </form>
 
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

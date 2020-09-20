@@ -5,24 +5,24 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
-  header("Location: admin_main.php");
-  exit;
+    header("Location: admin_main.php");
+    exit;
 }
 
 if ($link) {
-  include "checklogin.php";
-  if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    include "checklogin.php";
+    if ($assignedtree || !$allow_edit) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 }
 
 require "adminlog.php";
 
 $fp = @fopen("config/importconfig.php", "w", 1);
 if (!$fp) {
-  die ($admtext['cannotopen'] . " importconfig.php");
+    die ($admtext['cannotopen'] . " importconfig.php");
 }
 
 $localphotopathdisplay = addslashes($localphotopathdisplay);
@@ -32,11 +32,11 @@ $localotherpathdisplay = addslashes($localotherpathdisplay);
 $localhspathdisplay = addslashes($localhspathdisplay);
 
 if (!$readmsecs) {
-  $readmsecs = 750;
+    $readmsecs = 750;
 }
 
 if (!$rrnum) {
-  $rrnum = 100;
+    $rrnum = 100;
 }
 
 flock($fp, LOCK_EX);

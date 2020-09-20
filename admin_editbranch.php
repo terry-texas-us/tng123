@@ -139,7 +139,9 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['description']; ?>:</td>
-                        <td><input type="text" name="description" size="60" value="<?php echo $row['description']; ?>"></td>
+                        <td>
+                            <input type="text" name="description" size="60" value="<?php echo $row['description']; ?>">
+                        </td>
                     </tr>
 
                     <tr>
@@ -154,7 +156,9 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                         <td>
                             <table id="startind3" class="normal">
                                 <tr>
-                                    <td><input type="text" name="personID" id="personID" value="<?php echo $row['personID']; ?>" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;</td>
+                                    <td>
+                                        <input type="text" name="personID" id="personID" value="<?php echo $row['personID']; ?>" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                                    </td>
                                     <td><a href="#" onclick="return findItem('I','personID','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>"
                                            class="smallicon admin-find-icon"></a></td>
                                 </tr>
@@ -171,7 +175,8 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                             <div id="numgens2">&nbsp;&nbsp;<?php echo $admtext['ancestors']; ?>:</div>
                         </td>
                         <td>
-                            <div id="numgens3"><input type="text" name="agens" size="3" maxlength="3" value="<?php echo $row['agens'] ? $row['agens'] : 0; ?>">
+                            <div id="numgens3">
+                                <input type="text" name="agens" size="3" maxlength="3" value="<?php echo $row['agens'] ? $row['agens'] : 0; ?>">
                                 &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
                                 <select name="dagens" id="dagens">
                                     <?php
@@ -193,7 +198,8 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                             <div id="numgens4">&nbsp;&nbsp;<?php echo $admtext['descendants']; ?>:</div>
                         </td>
                         <td>
-                            <div id="numgens5"><input type="text" name="dgens" size="3" maxlength="3" value="<?php echo $row['dgens'] ? $row['dgens'] : 0; ?>"> &nbsp;&nbsp;
+                            <div id="numgens5">
+                                <input type="text" name="dgens" size="3" maxlength="3" value="<?php echo $row['dgens'] ? $row['dgens'] : 0; ?>"> &nbsp;&nbsp;
                                 <input type="checkbox" name="dospouses" id="dospouses"<?php if ($row['inclspouses']) {
                                     echo " checked=\"checked\"";
                                 } ?> value="1"> <?php echo $admtext['inclspouses']; ?>

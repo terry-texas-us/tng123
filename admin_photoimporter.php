@@ -10,57 +10,57 @@ include "version.php";
 require "adminlog.php";
 
 if (!$allow_media_add || $assignedtree) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $totalImported = 0;
 function importFrom($tngpath, $orgpath, $needsubdirs) {
-  global $rootpath, $media_table, $mediatypeID, $tree, $time_offset, $thumbprefix, $thumbsuffix, $totalImported;
-  $subdirs = array();
+    global $rootpath, $media_table, $mediatypeID, $tree, $time_offset, $thumbprefix, $thumbsuffix, $totalImported;
+    $subdirs = array();
 
-  if ($orgpath) {
-    $path = $tngpath . "/" . $orgpath;
-    $orgpath .= "/";
-  } else {
-    $path = $tngpath;
-  }
-  @chdir("$rootpath$path") or die("Unable to open $rootpath$path. Please check your Root Path (General Settings).");
-  if ($handle = @opendir('.')) {
-    while ($filename = readdir($handle)) {
-      if (is_file($filename)) {
-        if (($thumbprefix && strpos($filename, $thumbprefix) !== 0) || ($thumbsuffix && substr($filename, -strlen($thumbsuffix)) != $thumbsuffix)) {
-          echo "Inserting $path/$filename ... ";
-          //insert ignore into database
-          $fileparts = pathinfo($filename);
-          $form = strtoupper($fileparts["extension"]);
-          $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
-          $query = "INSERT IGNORE INTO $media_table (mediatypeID,mediakey,gedcom,path,thumbpath,description,notes,width,height,datetaken,placetaken,owner,changedate,form,alwayson,map,abspath,status,cemeteryID,showmap,linktocem,latitude,longitude,zoom,bodytext,usenl,newwindow,usecollfolder)
-						VALUES (\"$mediatypeID\",\"$path/$filename\",\"$tree\",\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",\"0\",\"\",\"0\",\"\",\"\",\"0\",\"0\",\"\",\"\",\"0\",\"\",\"0\",\"0\",'1')";
-            $result = @tng_query($query);
-            $success = tng_affected_rows();
-
-            if ($success) {
-            echo "success<br>\n";
-            $totalImported++;
-          } else {
-              echo "<strong>failed (duplicate)</strong><br>\n";
-          }
-        }
-      } elseif ($needsubdirs && is_dir($filename) && $filename != '..' && $filename != '.') {
-        // Added to remove Synology @ea type files
-        if (fnmatch("@ea*", $filename)) {
-          continue;
-        } else {
-          array_push($subdirs, $filename);
-        }
-      }
+    if ($orgpath) {
+        $path = $tngpath . "/" . $orgpath;
+        $orgpath .= "/";
+    } else {
+        $path = $tngpath;
     }
-    closedir($handle);
-  }
+    @chdir("$rootpath$path") or die("Unable to open $rootpath$path. Please check your Root Path (General Settings).");
+    if ($handle = @opendir('.')) {
+        while ($filename = readdir($handle)) {
+            if (is_file($filename)) {
+                if (($thumbprefix && strpos($filename, $thumbprefix) !== 0) || ($thumbsuffix && substr($filename, -strlen($thumbsuffix)) != $thumbsuffix)) {
+                    echo "Inserting $path/$filename ... ";
+                    //insert ignore into database
+                    $fileparts = pathinfo($filename);
+                    $form = strtoupper($fileparts["extension"]);
+                    $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
+                    $query = "INSERT IGNORE INTO $media_table (mediatypeID,mediakey,gedcom,path,thumbpath,description,notes,width,height,datetaken,placetaken,owner,changedate,form,alwayson,map,abspath,status,cemeteryID,showmap,linktocem,latitude,longitude,zoom,bodytext,usenl,newwindow,usecollfolder)
+						VALUES (\"$mediatypeID\",\"$path/$filename\",\"$tree\",\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",\"0\",\"\",\"0\",\"\",\"\",\"0\",\"0\",\"\",\"\",\"0\",\"\",\"0\",\"0\",'1')";
+                    $result = @tng_query($query);
+                    $success = tng_affected_rows();
 
-  return $subdirs;
+                    if ($success) {
+                        echo "success<br>\n";
+                        $totalImported++;
+                    } else {
+                        echo "<strong>failed (duplicate)</strong><br>\n";
+                    }
+                }
+            } elseif ($needsubdirs && is_dir($filename) && $filename != '..' && $filename != '.') {
+                // Added to remove Synology @ea type files
+                if (fnmatch("@ea*", $filename)) {
+                    continue;
+                } else {
+                    array_push($subdirs, $filename);
+                }
+            }
+        }
+        closedir($handle);
+    }
+
+    return $subdirs;
 }
 
 $helplang = findhelp("data_help.php");
@@ -92,17 +92,17 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
         <td class="tngshadow normal">
             <?php
             $subdirs = importFrom($tngpath, '', 1);
-          foreach ($subdirs as $subdir) {
-            chdir("$rootpath$tngpath/$subdir");
-            importFrom($tngpath, $subdir, 0);
-          }
-      if ($totalImported) {
-          $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
-          $result = @tng_query($query);
-      }
-      ?>
-    </td>
-  </tr>
+            foreach ($subdirs as $subdir) {
+                chdir("$rootpath$tngpath/$subdir");
+                importFrom($tngpath, $subdir, 0);
+            }
+            if ($totalImported) {
+                $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
+                $result = @tng_query($query);
+            }
+            ?>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

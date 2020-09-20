@@ -108,16 +108,21 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                             &nbsp; <?php echo $admtext['orenter']; ?>:
                         </td>
                         <td>
-                            <input type="text" name="tag2" size="10" onblur="if(this.value == 'EVEN') {toggleTdesc(1);} else {toggleTdesc(0);}"> (<?php echo $admtext['ifbothdata']; ?>)
+                            <input type="text" name="tag2" size="10" onblur="if(this.value == 'EVEN') {toggleTdesc(1);} else {toggleTdesc(0);}">
+                            (<?php echo $admtext['ifbothdata']; ?>)
                         </td>
                     </tr>
                     <tr id="tdesc">
                         <td valign="top"><?php echo $admtext['typedescription']; ?>*:</td>
-                        <td><input type="text" name="description" size="40"></td>
+                        <td>
+                            <input type="text" name="description" size="40">
+                        </td>
                     </tr>
                     <tr id="displaytr">
                         <td valign="top"><?php echo $admtext['display']; ?>:</td>
-                        <td><input type="text" name="defdisplay" size="40"></td>
+                        <td>
+                            <input type="text" name="defdisplay" size="40">
+                        </td>
                     </tr>
                     <?php if ($displayrows) { ?>
                         <tr>
@@ -138,29 +143,38 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                     <?php } ?>
                     <tr>
                         <td valign="top"><?php echo $admtext['displayorder']; ?>:</td>
-                        <td><input type="text" name="ordernum" size="4" value="0"></td>
+                        <td>
+                            <input type="text" name="ordernum" size="4" value="0">
+                        </td>
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['evdata']; ?>:</td>
-                        <td><input type="radio" name="keep" value="1" checked> <?php echo $admtext['accept']; ?> &nbsp; <input type="radio" name="keep" value="0"> <?php echo $admtext['ignore']; ?>
+                        <td>
+                            <input type="radio" name="keep" value="1" checked> <?php echo $admtext['accept']; ?> &nbsp;
+                            <input type="radio" name="keep" value="0"> <?php echo $admtext['ignore']; ?>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['collapseev']; ?>:</td>
-                        <td><input type="radio" name="collapse" value="1"> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="collapse" value="0"
-                                                                                                                        checked> <?php echo $admtext['no']; ?></td>
+                        <td>
+                            <input type="radio" name="collapse" value="1"> <?php echo $admtext['yes']; ?> &nbsp;
+                            <input type="radio" name="collapse" value="0"
+                                   checked> <?php echo $admtext['no']; ?></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td valign="top"><?php echo $admtext['ldsevent']; ?>:</td>
-                        <td><input type="radio" name="ldsevent" value="1"> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="ldsevent" value="0"
-                                                                                                                        checked> <?php echo $admtext['no']; ?></td>
+                        <td>
+                            <input type="radio" name="ldsevent" value="1"> <?php echo $admtext['yes']; ?> &nbsp;
+                            <input type="radio" name="ldsevent" value="0"
+                                   checked> <?php echo $admtext['no']; ?></td>
                         <td></td>
                     </tr>
                 </table>
                 <br>
-                <input type="hidden" name="eventtypeID" value="<?php echo $eventtypeID; ?>"><input type="hidden" name="display" value="">
+                <input type="hidden" name="eventtypeID" value="<?php echo $eventtypeID; ?>">
+                <input type="hidden" name="display" value="">
                 <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
             </form>
             <p class="normal">*<?php echo $admtext['typerequired']; ?></p>

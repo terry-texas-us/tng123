@@ -2,7 +2,7 @@ function deleteDnaLink(linkID) {
     if (confirm(confdellink)) {
         var tds = jQuery('tr#alink_' + linkID + ' td');
         jQuery.each(tds, function (index, item) {
-            jQuery(item).effect('highlight', {color: '#ff9999'}, 200);
+            jQuery(item).effect('highlight', {color: '#f99'}, 200);
         });
         var params = {linkID: linkID, action: 'deldnalink'};
         jQuery.ajax({
@@ -66,7 +66,7 @@ function addDnaLink(form) {
                     newtr.setAttribute('style', 'display:none');
 
                     var actionbuttons = '<a href="#" title="' + remove_text + '" onclick="return deleteDnaLink(' + linkID + ');"><img src="img/tng_delete.gif" alt="' + remove_text + '" ' + 'class="smallicon admin-delete-icon"></a>';
-                  var td0 = insertCell(newtr, 0, "lightback normal", actionbuttons);
+                    var td0 = insertCell(newtr, 0, "lightback normal", actionbuttons);
                     td0.setAttribute('align', 'center');
                     insertCell(newtr, 1, "lightback normal", name + displayID);
                     insertCell(newtr, 2, "lightback normal", treename + '&nbsp;');

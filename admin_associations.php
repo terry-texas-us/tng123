@@ -116,7 +116,8 @@ $assoccount = tng_num_rows($assocresult);
             </tr>
             <tr>
                 <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label" style="display:none;"><?php echo $admtext['familyid']; ?></span>:</td>
-                <td valign="top"><input type="text" name="passocID" id="passocID"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                <td valign="top">
+                    <input type="text" name="passocID" id="passocID"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                     <a href="#" onclick="return findItem(assocType,'passocID',null,'<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>">
                         <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20">
                     </a>
@@ -124,10 +125,14 @@ $assoccount = tng_num_rows($assocresult);
             </tr>
             <tr>
                 <td><?php echo $admtext['relationship']; ?>:</td>
-                <td><input type="text" name="relationship" size="60"></td>
+                <td>
+                    <input type="text" name="relationship" size="60">
+                </td>
             </tr>
             <tr>
-                <td colspan="2"><input type="checkbox" name="revassoc" value="1"> <?php echo $admtext['revassoc']; ?>:</td>
+                <td colspan="2">
+                    <input type="checkbox" name="revassoc" value="1"> <?php echo $admtext['revassoc']; ?>:
+                </td>
             </tr>
             </tr>
         </table>

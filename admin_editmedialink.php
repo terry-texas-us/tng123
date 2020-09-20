@@ -7,11 +7,11 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($type == "album") {
-  $query = "SELECT eventID, linktype, entityID, gedcom
+    $query = "SELECT eventID, linktype, entityID, gedcom
 		FROM $album2entities_table
 		WHERE alinkID = \"$linkID\"";
 } else {
-  $query = "SELECT eventID, altdescription, altnotes, defphoto, linktype, personID, gedcom, dontshow
+    $query = "SELECT eventID, altdescription, altnotes, defphoto, linktype, personID, gedcom, dontshow
 		FROM $medialinks_table
 		WHERE medialinkID = \"$linkID\"";
 }
@@ -30,31 +30,31 @@ $ldsOK = determineLDSRights();
  * @return string
  */
 function doEvent($eventID, $displayval, $info) {
-  global $meventID;
-  return "<option value=\"$eventID\"" . ($eventID == $meventID ? " selected" : "") . ">$displayval" . ($info ? ": $info" : "") . "</option>\n";
+    global $meventID;
+    return "<option value=\"$eventID\"" . ($eventID == $meventID ? " selected" : "") . ">$displayval" . ($info ? ": $info" : "") . "</option>\n";
 }
 
 $options = "<option value=\"\">{$text['none']}</option>";
 if ($row['linktype'] == "I") {
-  //standard people events
-  $list = array("NAME", "BIRT", "CHR", "DEAT", "BURI");
-  foreach ($list as $eventtype)
-    $options .= doEvent($eventtype, $admtext[$eventtype], '');
-  if ($ldsOK) {
-    $ldslist = array("BAPL", "CONL", "INIT", "ENDL", "SLGC");
-    foreach ($ldslist as $eventtype)
-      $options .= doEvent($eventtype, $admtext[$eventtype], '');
-  }
+    //standard people events
+    $list = array("NAME", "BIRT", "CHR", "DEAT", "BURI");
+    foreach ($list as $eventtype)
+        $options .= doEvent($eventtype, $admtext[$eventtype], '');
+    if ($ldsOK) {
+        $ldslist = array("BAPL", "CONL", "INIT", "ENDL", "SLGC");
+        foreach ($ldslist as $eventtype)
+            $options .= doEvent($eventtype, $admtext[$eventtype], '');
+    }
 } elseif ($row['linktype'] == "F") {
-  //standard family events
-  $list = array("MARR", "DIV");
-  foreach ($list as $eventtype)
-    $options .= doEvent($eventtype, $admtext[$eventtype], '');
-  if ($ldsOK) {
-    $ldslist = array("SLGS");
-    foreach ($ldslist as $eventtype)
-      $options .= doEvent($eventtype, $admtext[$eventtype], '');
-  }
+    //standard family events
+    $list = array("MARR", "DIV");
+    foreach ($list as $eventtype)
+        $options .= doEvent($eventtype, $admtext[$eventtype], '');
+    if ($ldsOK) {
+        $ldslist = array("SLGS");
+        foreach ($ldslist as $eventtype)
+            $options .= doEvent($eventtype, $admtext[$eventtype], '');
+    }
 }
 
 //now call up custom events linked to passed in entity
@@ -64,15 +64,15 @@ $query .= "WHERE persfamID = \"{$entityID}\" AND events.eventtypeID = eventtypes
 $query .= "ORDER BY ordernum, tag, description, eventdatetr, info, eventID";
 $custevents = tng_query($query);
 while ($custevent = tng_fetch_assoc($custevents)) {
-  $displayval = getEventDisplay($custevent['display']);
-  $info = "";
-  if ($custevent['eventdate']) {
-    $info = displayDate($custevent['eventdate']);
-  } elseif ($custevent['eventplace']) {
-    $info = truncateIt($custevent['eventplace'], 20);
-  } elseif ($custevent['info']) {
-      $info = truncateIt($custevent['info'], 20);
-  }
+    $displayval = getEventDisplay($custevent['display']);
+    $info = "";
+    if ($custevent['eventdate']) {
+        $info = displayDate($custevent['eventdate']);
+    } elseif ($custevent['eventplace']) {
+        $info = truncateIt($custevent['eventplace'], 20);
+    } elseif ($custevent['info']) {
+        $info = truncateIt($custevent['info'], 20);
+    }
     $options .= doEvent($custevent['eventID'], $displayval, $info);
 }
 tng_free_result($custevents);
@@ -92,56 +92,56 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </select>
                 </td>
             </tr>
-          <?php
-          if ($type != "album") {
-            ?>
-              <tr>
-                  <td valign="top"><?php echo $admtext['alttitle']; ?>:</td>
-                  <td><textarea name="altdescription" rows="3" cols="40"><?php echo $row['altdescription']; ?></textarea></td>
-              </tr>
-              <tr>
-                  <td valign="top"><?php echo $admtext['altdesc']; ?>:</td>
-                  <td><textarea name="altnotes" rows="4" cols="40"><?php echo $row['altnotes']; ?></textarea></td>
-              </tr>
-              <tr>
-                  <td valign="top" colspan="2">
-                    <?php
-                    if ($row['linktype'] != "C") {
-                      ?>
-                        <input type="checkbox" name="defphoto" value="1"<?php if ($row['defphoto']) {
-                          echo " checked";
-                        } ?>> <?php echo $admtext['makedefault']; ?>*
-                      <?php
-                    }
-                    ?>
-                      <input type="checkbox" name="show" value="1"<?php if (!$row['dontshow']) {
-                        echo " checked";
-                      } ?>> <?php echo $admtext['show']; ?>
-                  </td>
-              </tr>
             <?php
-          }
-          ?>
+            if ($type != "album") {
+                ?>
+                <tr>
+                    <td valign="top"><?php echo $admtext['alttitle']; ?>:</td>
+                    <td><textarea name="altdescription" rows="3" cols="40"><?php echo $row['altdescription']; ?></textarea></td>
+                </tr>
+                <tr>
+                    <td valign="top"><?php echo $admtext['altdesc']; ?>:</td>
+                    <td><textarea name="altnotes" rows="4" cols="40"><?php echo $row['altnotes']; ?></textarea></td>
+                </tr>
+                <tr>
+                    <td valign="top" colspan="2">
+                        <?php
+                        if ($row['linktype'] != "C") {
+                            ?>
+                            <input type="checkbox" name="defphoto" value="1"<?php if ($row['defphoto']) {
+                                echo " checked";
+                            } ?>> <?php echo $admtext['makedefault']; ?>*
+                            <?php
+                        }
+                        ?>
+                        <input type="checkbox" name="show" value="1"<?php if (!$row['dontshow']) {
+                            echo " checked";
+                        } ?>> <?php echo $admtext['show']; ?>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
         </table>
-      <br>
-      <?php
-      if ($type != "album") {
-        ?>
-          <input type="hidden" name="personID" value="<?php echo $entityID; ?>">
-          <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
+        <br>
         <?php
-      }
-      ?>
+        if ($type != "album") {
+            ?>
+            <input type="hidden" name="personID" value="<?php echo $entityID; ?>">
+            <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
+            <?php
+        }
+        ?>
         <input type="hidden" name="linkID" value="<?php echo $linkID; ?>">
         <input type="hidden" name="type" value="<?php echo $type; ?>">
         <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">
         <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();">
         <p class="normal">
-          <?php
-          if ($type != "album") {
-            echo "*{$admtext['defphotonote']}\n";
-          }
-          ?>
+            <?php
+            if ($type != "album") {
+                echo "*{$admtext['defphotonote']}\n";
+            }
+            ?>
         </p>
     </form>
 </div>

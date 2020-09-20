@@ -42,7 +42,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         <table class="normal">
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>
-                <td><input type="text" name="title" size="60" maxlength="128" value="<?php echo $row['title']; ?>" style="width: 100%;"></td>
+                <td>
+                    <input type="text" name="title" size="60" maxlength="128" value="<?php echo $row['title']; ?>" style="width: 100%;">
+                </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['description']; ?>:</td>
@@ -91,8 +93,9 @@ header("Content-type:text/html; charset=" . $session_charset);
                 </td>
             </tr>
         </table>
-        <br><input type="button" value="<?php echo $admtext['selphoto']; ?>"
-                   onclick="return openMostWantedMediaFind(document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value);">
+        <br>
+        <input type="button" value="<?php echo $admtext['selphoto']; ?>"
+               onclick="return openMostWantedMediaFind(document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value);">
         <div id="mwphoto">
             <table style="padding-top:6px;">
                 <tr>

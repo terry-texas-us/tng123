@@ -343,7 +343,8 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findmedia" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findmedia" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
                 <?php

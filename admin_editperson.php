@@ -341,12 +341,16 @@ include_once "eventlib_js.php";
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35"></td>
+                                <td>
+                                    <input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35">
+                                </td>
                                 <?php if ($lnprefixes) {
                                     echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width: 80px;\"></td>\n";
                                 }
                                 ?>
-                                <td><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35"></td>
+                                <td>
+                                    <input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" size="35">
+                                </td>
                                 <td>
                                     <?php
                                     $notesicon = $gotnotes['NAME'] ? "admin-note-on-icon" : "admin-note-off-icon";
@@ -380,10 +384,18 @@ include_once "eventlib_js.php";
                                         } ?>><?php echo $admtext['female']; ?></option>
                                     </select>
                                 </td>
-                                <td><input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="veryshortfield"></td>
-                                <td><input type="text" value="<?php echo $row['title']; ?>" name="title" class="veryshortfield"></td>
-                                <td><input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="veryshortfield"></td>
-                                <td><input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="veryshortfield"></td>
+                                <td>
+                                    <input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="veryshortfield">
+                                </td>
+                                <td>
+                                    <input type="text" value="<?php echo $row['title']; ?>" name="title" class="veryshortfield">
+                                </td>
+                                <td>
+                                    <input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="veryshortfield">
+                                </td>
+                                <td>
+                                    <input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="veryshortfield">
+                                </td>
                                 <td>
                                     <select name="pnameorder">
                                         <option value="0"><?php echo $admtext['default']; ?></option>
@@ -462,7 +474,9 @@ include_once "eventlib_js.php";
                             <tr>
                                 <td>
                                     <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
-                                    <p><input type="button" value="  <?php echo $admtext['addnew'] ?>  " onclick="newEvent('I', '<?php echo $personID ?>', '<?php echo $tree ?>');"></p>
+                                    <p>
+                                        <input type="button" value="  <?php echo $admtext['addnew'] ?>  " onclick="newEvent('I', '<?php echo $personID ?>', '<?php echo $tree ?>');">
+                                    </p>
                                 </td>
                                 <td valign="top">
                                     <?php showCustEvents($personID); ?>

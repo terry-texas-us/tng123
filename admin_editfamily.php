@@ -323,9 +323,11 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
-                                <td><input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="50" class="verylongfield" value="<?php echo "$husbstr"; ?>"><input
-                                            type="hidden" name="husband" id="husband"
-                                            value="<?php echo $row['husband']; ?>">
+                                <td>
+                                    <input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="50" class="verylongfield" value="<?php echo "$husbstr"; ?>">
+                                    <input
+                                        type="hidden" name="husband" id="husband"
+                                        value="<?php echo $row['husband']; ?>">
                                     <input type="button" value="<?php echo $admtext['find']; ?>"
                                            onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                                     <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return openCreatePersonForm('husband','husbnameplusid','spouse','M');">
@@ -355,9 +357,11 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>
-                                <td><input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="50" class="verylongfield"
-                                           value="<?php echo "$wifestr"; ?>"><input type="hidden" name="wife" id="wife"
-                                                                                    value="<?php echo $row['wife']; ?>">
+                                <td>
+                                    <input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="50" class="verylongfield"
+                                           value="<?php echo "$wifestr"; ?>">
+                                    <input type="hidden" name="wife" id="wife"
+                                           value="<?php echo $row['wife']; ?>">
                                     <input type="button" value="<?php echo $admtext['find']; ?>"
                                            onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                                     <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return openCreatePersonForm('wife','wifenameplusid','spouse','F');">
@@ -449,7 +453,9 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             ?>
                             <tr>
                                 <td><?php echo $admtext['marriagetype']; ?>:</td>
-                                <td colspan="6"><input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50"></td>
+                                <td colspan="6">
+                                    <input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50">
+                                </td>
                             </tr>
                             <?php
                             if ($rights['lds']) {

@@ -1,683 +1,683 @@
 <?php
 switch ($textpart) {
-  //browsesources.php, showsource.php
-  case "sources":
-    $text['browseallsources'] = "Просмотр всех источников";
-    $text['shorttitle'] = "Краткое название";
-    $text['callnum'] = "Архивный номер";
-    $text['author'] = "Автор";
-    $text['publisher'] = "Издатель";
-    $text['other'] = "Другая информация";
-    $text['sourceid'] = "Источник";
-    $text['moresrc'] = "Больше источников";
-    $text['repoid'] = "ID архива";
-    $text['browseallrepos'] = "Показать все архивы";
-    break;
+    //browsesources.php, showsource.php
+    case "sources":
+        $text['browseallsources'] = "Просмотр всех источников";
+        $text['shorttitle'] = "Краткое название";
+        $text['callnum'] = "Архивный номер";
+        $text['author'] = "Автор";
+        $text['publisher'] = "Издатель";
+        $text['other'] = "Другая информация";
+        $text['sourceid'] = "Источник";
+        $text['moresrc'] = "Больше источников";
+        $text['repoid'] = "ID архива";
+        $text['browseallrepos'] = "Показать все архивы";
+        break;
 
-  //changelanguage.php, savelanguage.php
-  case "language":
-    $text['newlanguage'] = "Новый язык";
-    $text['changelanguage'] = "Изменить язык";
-    $text['languagesaved'] = "Язык сохранен";
-    $text['sitemaint'] = "Выполняется обслуживание сайта";
-    $text['standby'] = "Сайт временно недоступен в связи с обновлением базы данных. Пожалуйста, попробуйте через несколько минут. Если сайт недоступен длительное время, вы можете <a href=\"suggest.php\">связаться с администратором</a>.";
-    break;
+    //changelanguage.php, savelanguage.php
+    case "language":
+        $text['newlanguage'] = "Новый язык";
+        $text['changelanguage'] = "Изменить язык";
+        $text['languagesaved'] = "Язык сохранен";
+        $text['sitemaint'] = "Выполняется обслуживание сайта";
+        $text['standby'] = "Сайт временно недоступен в связи с обновлением базы данных. Пожалуйста, попробуйте через несколько минут. Если сайт недоступен длительное время, вы можете <a href=\"suggest.php\">связаться с администратором</a>.";
+        break;
 
-  //gedcom.php, gedform.php
-  case "gedcom":
-    $text['gedstart'] = "Начать GEDCOM с";
-    $text['producegedfrom'] = "Создать GEDCOM из";
-    $text['numgens'] = "Количество поколений";
-    $text['includelds'] = "Включить информацию СПД";
-    $text['buildged'] = "Создать GEDCOM";
-    $text['gedstartfrom'] = "Начать с GEDCOM";
-    $text['nomaxgen'] = "Вы должны указать максимальное количество поколений. Пожалуйста, используйте кнопку &#171;Назад&#187;, чтобы вернуться на предыдущую страницу и исправить ошибку";
-    $text['gedcreatedfrom'] = "GEDCOM создан из";
-    $text['gedcreatedfor'] = "предназначен для";
-    $text['creategedfor'] = "Создать GEDCOM";
-    $text['email'] = "Ваш Email";
-    $text['suggestchange'] = "Предложить изменение";
-    $text['yourname'] = "Ваше имя";
-    $text['comments'] = "Описание <br>предлагаемых изменений";
-    $text['comments2'] = "Комментарии";
-    $text['submitsugg'] = "Отправить предложение";
-    $text['proposed'] = "Предлагаемое изменение";
-    $text['mailsent'] = "Спасибо. Ваше сообщение было отправлено.";
-    $text['mailnotsent'] = "Извините, но ваше сообщение не может быть доставлено. Пожалуйста, свяжитесь с xxx по yyy.";
-    $text['mailme'] = "Отправить копию";
-    $text['entername'] = "Пожалуйста, введите Ваше имя";
-    $text['entercomments'] = "Пожалуйста, введите свои комментарии";
-    $text['sendmsg'] = "Отправить сообщение";
-    //added in 9.0.0
-    $text['subject'] = "Тема";
-    break;
+    //gedcom.php, gedform.php
+    case "gedcom":
+        $text['gedstart'] = "Начать GEDCOM с";
+        $text['producegedfrom'] = "Создать GEDCOM из";
+        $text['numgens'] = "Количество поколений";
+        $text['includelds'] = "Включить информацию СПД";
+        $text['buildged'] = "Создать GEDCOM";
+        $text['gedstartfrom'] = "Начать с GEDCOM";
+        $text['nomaxgen'] = "Вы должны указать максимальное количество поколений. Пожалуйста, используйте кнопку &#171;Назад&#187;, чтобы вернуться на предыдущую страницу и исправить ошибку";
+        $text['gedcreatedfrom'] = "GEDCOM создан из";
+        $text['gedcreatedfor'] = "предназначен для";
+        $text['creategedfor'] = "Создать GEDCOM";
+        $text['email'] = "Ваш Email";
+        $text['suggestchange'] = "Предложить изменение";
+        $text['yourname'] = "Ваше имя";
+        $text['comments'] = "Описание <br>предлагаемых изменений";
+        $text['comments2'] = "Комментарии";
+        $text['submitsugg'] = "Отправить предложение";
+        $text['proposed'] = "Предлагаемое изменение";
+        $text['mailsent'] = "Спасибо. Ваше сообщение было отправлено.";
+        $text['mailnotsent'] = "Извините, но ваше сообщение не может быть доставлено. Пожалуйста, свяжитесь с xxx по yyy.";
+        $text['mailme'] = "Отправить копию";
+        $text['entername'] = "Пожалуйста, введите Ваше имя";
+        $text['entercomments'] = "Пожалуйста, введите свои комментарии";
+        $text['sendmsg'] = "Отправить сообщение";
+        //added in 9.0.0
+        $text['subject'] = "Тема";
+        break;
 
-  //getextras.php, getperson.php
-  case "getperson":
-    $text['photoshistoriesfor'] = "Фотографии и истории для";
-    $text['indinfofor'] = "Индивидуальная информация для";
-    $text['pp'] = "стр."; //page abbreviation
-    $text['age'] = "Возраст";
-    $text['agency'] = "Агентство";
-    $text['cause'] = "Причина";
-    $text['suggested'] = "Предложенный";
-    $text['closewindow'] = "Закрыть окно";
-    $text['thanks'] = "Спасибо";
-    $text['received'] = "Ваше предложение было отправлено администратору сайта для ознакомления.";
-    $text['indreport'] = "Индивидуальный отчёт";
-    $text['indreportfor'] = "Индивидуальный отчёт для";
-    $text['general'] = "Общее";
-    $text['bkmkvis'] = "<strong>Примечание:</strong> Эти закладки видны только на этом компьютере и только в этом браузере.";
-    //added in 9.0.0
-    $text['reviewmsg'] = "У вас есть предлагаемое изменение, которое требует вашей оценки. Это представление касается:";
-    $text['revsubject'] = "Предлагаемое изменение требует вашей оценки";
-    break;
+    //getextras.php, getperson.php
+    case "getperson":
+        $text['photoshistoriesfor'] = "Фотографии и истории для";
+        $text['indinfofor'] = "Индивидуальная информация для";
+        $text['pp'] = "стр."; //page abbreviation
+        $text['age'] = "Возраст";
+        $text['agency'] = "Агентство";
+        $text['cause'] = "Причина";
+        $text['suggested'] = "Предложенный";
+        $text['closewindow'] = "Закрыть окно";
+        $text['thanks'] = "Спасибо";
+        $text['received'] = "Ваше предложение было отправлено администратору сайта для ознакомления.";
+        $text['indreport'] = "Индивидуальный отчёт";
+        $text['indreportfor'] = "Индивидуальный отчёт для";
+        $text['general'] = "Общее";
+        $text['bkmkvis'] = "<strong>Примечание:</strong> Эти закладки видны только на этом компьютере и только в этом браузере.";
+        //added in 9.0.0
+        $text['reviewmsg'] = "У вас есть предлагаемое изменение, которое требует вашей оценки. Это представление касается:";
+        $text['revsubject'] = "Предлагаемое изменение требует вашей оценки";
+        break;
 
-  //relateform.php, relationship.php, findpersonform.php, findperson.php
-  case "relate":
-    $text['relcalc'] = "Калькулятор отношений";
-    $text['findrel'] = "Найти родственников";
-    $text['person1'] = "Человек 1:";
-    $text['person2'] = "Человек 2:";
-    $text['calculate'] = "Расчитать";
-    $text['select2inds'] = "Выберите двух человек.";
-    $text['findpersonid'] = "Найти идентификатор лица";
-    $text['enternamepart'] = "введите часть имени и/или фамилии";
-    $text['pleasenamepart'] = "Введите часть имени или фамилии.";
-    $text['clicktoselect'] = "нажмите, чтобы выбрать";
-    $text['nobirthinfo'] = "Нет информации о рождении";
-    $text['relateto'] = "Связь с";
-    $text['sameperson'] = "Эти два человека являются одним и тем же человеком.";
-    $text['notrelated'] = "Эти два человека не связаны в поколениях ххх."; //xxx will be replaced with number of generations
-    $text['findrelinstr'] = "Чтобы отобразить связь между двумя людьми, используйте кнопки «Найти» ниже, чтобы найти людей (или сохранить людей на экране), затем нажмите «Рассчитать».";
-    $text['sometimes'] = "(Иногда проверка другого поколения приводит к другому результату).";
-    $text['findanother'] = "Найти другое отношение";
-    $text['brother'] = "брат";
-    $text['sister'] = "сестра";
-    $text['sibling'] = "брат";
-    $text['uncle'] = "ххх дядя";
-    $text['aunt'] = "тётя xxx";
-    $text['uncleaunt'] = "ххх дядя/тётя";
-    $text['nephew'] = "племянник xxx";
-    $text['niece'] = "племянница xxx";
-    $text['nephnc'] = "племянник/племянница xxx";
-    $text['removed'] = "раз(а) удалено";
-    $text['rhusband'] = "муж";
-    $text['rwife'] = "жена";
-    $text['rspouse'] = "супруга";
-    $text['son'] = "сын";
-    $text['daughter'] = "дочь";
-    $text['rchild'] = "ребенок";
-    $text['sil'] = "зять";
-    $text['dil'] = "невестка";
-    $text['sdil'] = "сын или невестка";
-    $text['gson'] = "внук xxx";
-    $text['gdau'] = "внучка xxx";
-    $text['gsondau'] = "внук xxx";
-    $text['great'] = "Великий";
-    $text['spouses'] = "супруги";
-    $text['is'] = "является";
-    $text['changeto'] = "Изменить на (введите идентификатор):";
-    $text['notvalid'] = "не является допустимым идентификатором человека или не существует в этой базе данных. Пожалуйста, попробуйте ещё раз.";
-    $text['halfbrother'] = "сводный брат";
-    $text['halfsister'] = "сводная сестра";
-    $text['halfsibling'] = "сводный брат или сестра";
-    //changed in 8.0.0
-    $text['gencheck'] = "Максимальное количество поколений для проверки";
-    $text['mcousin'] = "xxx двоюродный брат yyy";  //male cousin; xxx = cousin number, yyy = times removed
-    $text['fcousin'] = "xxx двоюродная сестра yyy";  //female cousin
-    $text['cousin'] = "xxx двоюродный брат yyy";
-    $text['mhalfcousin'] = "xxx сводный двоюродный брат yyy";  //male cousin
-    $text['fhalfcousin'] = "xxx сводная двоюродная сестра yyy";  //female cousin
-    $text['halfcousin'] = "xxx сводный двоюродный брат yyy";
-    //added in 8.0.0
-    $text['oneremoved'] = "после удаления";
-    $text['gfath'] = "ххх дедушка";
-    $text['gmoth'] = "xxx бабушка";
-    $text['gpar'] = "прародитель xxx";
-    $text['mothof'] = "мать";
-    $text['fathof'] = "отец";
-    $text['parof'] = "родитель";
-    $text['maxrels'] = "Максимум отношений для показа";
-    $text['dospouses'] = "Показать отношения с участием супруга";
-    $text['rels'] = "Отношения";
-    $text['dospouses2'] = "Показать супругов";
-    $text['fil'] = "тесть";
-    $text['mil'] = "теща";
-    $text['fmil'] = "отец или свекровь";
-    $text['stepson'] = "пасынок";
-    $text['stepdau'] = "падчерица";
-    $text['stepchild'] = "падчерица";
-    $text['stepgson'] = "приемный внук xxx";
-    $text['stepgdau'] = "приемная внучка xxx";
-    $text['stepgchild'] = "приемный внук xxx";
-    //added in 8.1.1
-    $text['ggreat'] = "пра";
-    //added in 8.1.2
-    $text['ggfath'] = "ххх прадедушка";
-    $text['ggmoth'] = "ххх прабабушка";
-    $text['ggpar'] = "ххх прародитель";
-    $text['ggson'] = "ххх правнук";
-    $text['ggdau'] = "ххх правнучка";
-    $text['ggsondau'] = "ххх правнук";
-    $text['gstepgson'] = "xxx приемный правнук";
-    $text['gstepgdau'] = "xxx приемная правнучка";
-    $text['gstepgchild'] = "ххх приемный правнук";
-    $text['guncle'] = "ххх прадядя";
-    $text['gaunt'] = "ххх пратётя xxx";
-    $text['guncleaunt'] = "ххх прадядя/пратётя";
-    $text['gnephew'] = "ххх праплемянник";
-    $text['gniece'] = "ххх праплемянница";
-    $text['gnephnc'] = "ххх праплемянник/праплемянница";
-    break;
+    //relateform.php, relationship.php, findpersonform.php, findperson.php
+    case "relate":
+        $text['relcalc'] = "Калькулятор отношений";
+        $text['findrel'] = "Найти родственников";
+        $text['person1'] = "Человек 1:";
+        $text['person2'] = "Человек 2:";
+        $text['calculate'] = "Расчитать";
+        $text['select2inds'] = "Выберите двух человек.";
+        $text['findpersonid'] = "Найти идентификатор лица";
+        $text['enternamepart'] = "введите часть имени и/или фамилии";
+        $text['pleasenamepart'] = "Введите часть имени или фамилии.";
+        $text['clicktoselect'] = "нажмите, чтобы выбрать";
+        $text['nobirthinfo'] = "Нет информации о рождении";
+        $text['relateto'] = "Связь с";
+        $text['sameperson'] = "Эти два человека являются одним и тем же человеком.";
+        $text['notrelated'] = "Эти два человека не связаны в поколениях ххх."; //xxx will be replaced with number of generations
+        $text['findrelinstr'] = "Чтобы отобразить связь между двумя людьми, используйте кнопки «Найти» ниже, чтобы найти людей (или сохранить людей на экране), затем нажмите «Рассчитать».";
+        $text['sometimes'] = "(Иногда проверка другого поколения приводит к другому результату).";
+        $text['findanother'] = "Найти другое отношение";
+        $text['brother'] = "брат";
+        $text['sister'] = "сестра";
+        $text['sibling'] = "брат";
+        $text['uncle'] = "ххх дядя";
+        $text['aunt'] = "тётя xxx";
+        $text['uncleaunt'] = "ххх дядя/тётя";
+        $text['nephew'] = "племянник xxx";
+        $text['niece'] = "племянница xxx";
+        $text['nephnc'] = "племянник/племянница xxx";
+        $text['removed'] = "раз(а) удалено";
+        $text['rhusband'] = "муж";
+        $text['rwife'] = "жена";
+        $text['rspouse'] = "супруга";
+        $text['son'] = "сын";
+        $text['daughter'] = "дочь";
+        $text['rchild'] = "ребенок";
+        $text['sil'] = "зять";
+        $text['dil'] = "невестка";
+        $text['sdil'] = "сын или невестка";
+        $text['gson'] = "внук xxx";
+        $text['gdau'] = "внучка xxx";
+        $text['gsondau'] = "внук xxx";
+        $text['great'] = "Великий";
+        $text['spouses'] = "супруги";
+        $text['is'] = "является";
+        $text['changeto'] = "Изменить на (введите идентификатор):";
+        $text['notvalid'] = "не является допустимым идентификатором человека или не существует в этой базе данных. Пожалуйста, попробуйте ещё раз.";
+        $text['halfbrother'] = "сводный брат";
+        $text['halfsister'] = "сводная сестра";
+        $text['halfsibling'] = "сводный брат или сестра";
+        //changed in 8.0.0
+        $text['gencheck'] = "Максимальное количество поколений для проверки";
+        $text['mcousin'] = "xxx двоюродный брат yyy";  //male cousin; xxx = cousin number, yyy = times removed
+        $text['fcousin'] = "xxx двоюродная сестра yyy";  //female cousin
+        $text['cousin'] = "xxx двоюродный брат yyy";
+        $text['mhalfcousin'] = "xxx сводный двоюродный брат yyy";  //male cousin
+        $text['fhalfcousin'] = "xxx сводная двоюродная сестра yyy";  //female cousin
+        $text['halfcousin'] = "xxx сводный двоюродный брат yyy";
+        //added in 8.0.0
+        $text['oneremoved'] = "после удаления";
+        $text['gfath'] = "ххх дедушка";
+        $text['gmoth'] = "xxx бабушка";
+        $text['gpar'] = "прародитель xxx";
+        $text['mothof'] = "мать";
+        $text['fathof'] = "отец";
+        $text['parof'] = "родитель";
+        $text['maxrels'] = "Максимум отношений для показа";
+        $text['dospouses'] = "Показать отношения с участием супруга";
+        $text['rels'] = "Отношения";
+        $text['dospouses2'] = "Показать супругов";
+        $text['fil'] = "тесть";
+        $text['mil'] = "теща";
+        $text['fmil'] = "отец или свекровь";
+        $text['stepson'] = "пасынок";
+        $text['stepdau'] = "падчерица";
+        $text['stepchild'] = "падчерица";
+        $text['stepgson'] = "приемный внук xxx";
+        $text['stepgdau'] = "приемная внучка xxx";
+        $text['stepgchild'] = "приемный внук xxx";
+        //added in 8.1.1
+        $text['ggreat'] = "пра";
+        //added in 8.1.2
+        $text['ggfath'] = "ххх прадедушка";
+        $text['ggmoth'] = "ххх прабабушка";
+        $text['ggpar'] = "ххх прародитель";
+        $text['ggson'] = "ххх правнук";
+        $text['ggdau'] = "ххх правнучка";
+        $text['ggsondau'] = "ххх правнук";
+        $text['gstepgson'] = "xxx приемный правнук";
+        $text['gstepgdau'] = "xxx приемная правнучка";
+        $text['gstepgchild'] = "ххх приемный правнук";
+        $text['guncle'] = "ххх прадядя";
+        $text['gaunt'] = "ххх пратётя xxx";
+        $text['guncleaunt'] = "ххх прадядя/пратётя";
+        $text['gnephew'] = "ххх праплемянник";
+        $text['gniece'] = "ххх праплемянница";
+        $text['gnephnc'] = "ххх праплемянник/праплемянница";
+        break;
 
-  case "familygroup":
-    $text['familygroupfor'] = "Семейная ведомость для";
-    $text['ldsords'] = "Таинства СПД";
-    $text['baptizedlds'] = "Крещеные (СПД)";
-    $text['endowedlds'] = "Наделяемый (СПД)";
-    $text['sealedplds'] = "Запечатано для родителей (СПД)";
-    $text['sealedslds'] = "Запечатанное для супругом (СПД)";
-    $text['otherspouse'] = "Другой супруг";
-    $text['husband'] = "Отец";
-    $text['wife'] = "Мама";
-    break;
+    case "familygroup":
+        $text['familygroupfor'] = "Семейная ведомость для";
+        $text['ldsords'] = "Таинства СПД";
+        $text['baptizedlds'] = "Крещеные (СПД)";
+        $text['endowedlds'] = "Наделяемый (СПД)";
+        $text['sealedplds'] = "Запечатано для родителей (СПД)";
+        $text['sealedslds'] = "Запечатанное для супругом (СПД)";
+        $text['otherspouse'] = "Другой супруг";
+        $text['husband'] = "Отец";
+        $text['wife'] = "Мама";
+        break;
 
-  //pedigree.php
-  case "pedigree":
-    $text['capbirthabbr'] = "Р.";
-    $text['capaltbirthabbr'] = "Д. Р.";
-    $text['capdeathabbr'] = "С.";
-    $text['capburialabbr'] = "Пох.";
-    $text['capplaceabbr'] = "М.";
-    $text['capmarrabbr'] = "Ж.";
-    $text['capspouseabbr'] = "С.";
-    $text['redraw'] = "Перерисовать с";
-    $text['scrollnote'] = "Примечание: Чтобы увидеть всю диаграмму, Вам может потребоваться прокрутить вниз или вправо.";
-    $text['unknownlit'] = "Неизвестный";
-    $text['popupnote1'] = "Дополнительная информация";
-    $text['popupnote2'] = "Новая родословная";
-    $text['pedcompact'] = "Компактный";
-    $text['pedstandard'] = "Стандартный";
-    $text['pedtextonly'] = "Текст";
-    $text['descendfor'] = "Потомство для";
-    $text['maxof'] = "Максимум";
-    $text['gensatonce'] = "генерируемых одновременно.";
-    $text['sonof'] = "сын";
-    $text['daughterof'] = "дочь";
-    $text['childof'] = "ребенок";
-    $text['stdformat'] = "Стандартный формат";
-    $text['ahnentafel'] = "Система &#171;Ahnentafel&#187;";
-    $text['addnewfam'] = "Добавить новую семью";
-    $text['editfam'] = "Изменить семью";
-    $text['side'] = "Сторона";
-    $text['familyof'] = "Семейство";
-    $text['paternal'] = "отеческий";
-    $text['maternal'] = "Материнский";
-    $text['gen1'] = "Само";
-    $text['gen2'] = "Родители";
-    $text['gen3'] = "дедушка и бабушка";
-    $text['gen4'] = "Прабабушка и прадедушка";
-    $text['gen5'] = "2-й прародитель";
-    $text['gen6'] = "3-й прародитель";
-    $text['gen7'] = "4-й прародитель";
-    $text['gen8'] = "5-й прародитель";
-    $text['gen9'] = "6-й прародитель";
-    $text['gen10'] = "7-й прародитель";
-    $text['gen11'] = "8-й прародитель";
-    $text['gen12'] = "9-й прародитель";
-    $text['graphdesc'] = "Диаграмма происхождения к этому моменту";
-    $text['pedbox'] = "Диаграмма &#171;Коробка&#187;";
-    $text['regformat'] = "Реестр";
-    $text['extrasexpl'] = "По крайней мере, одна фотография, история или другой медиафайл существует для этого человека.";
-    $text['popupnote3'] = "Новая диаграмма";
-    $text['mediaavail'] = "Доступные медиафайлы";
-    $text['pedigreefor'] = "Диаграмма родословной для";
-    $text['pedigreech'] = "Диаграмма родословной";
-    $text['datesloc'] = "Даты и места";
-    $text['borchr'] = "Рождение/крещение-смерть/погребение";
-    $text['nobd'] = "Нет дат рождения или смерти";
-    $text['bcdb'] = "Все данные о рождении/крещение/смерти/погребении";
-    $text['numsys'] = "Система нумерации";
-    $text['gennums'] = "Номера поколений";
-    $text['henrynums'] = "Система Генри";
-    $text['abovnums'] = "Система д'Абовилла";
-    $text['devnums'] = "Система де Вильерса";
-    $text['dispopts'] = "Показать варианты";
+    //pedigree.php
+    case "pedigree":
+        $text['capbirthabbr'] = "Р.";
+        $text['capaltbirthabbr'] = "Д. Р.";
+        $text['capdeathabbr'] = "С.";
+        $text['capburialabbr'] = "Пох.";
+        $text['capplaceabbr'] = "М.";
+        $text['capmarrabbr'] = "Ж.";
+        $text['capspouseabbr'] = "С.";
+        $text['redraw'] = "Перерисовать с";
+        $text['scrollnote'] = "Примечание: Чтобы увидеть всю диаграмму, Вам может потребоваться прокрутить вниз или вправо.";
+        $text['unknownlit'] = "Неизвестный";
+        $text['popupnote1'] = "Дополнительная информация";
+        $text['popupnote2'] = "Новая родословная";
+        $text['pedcompact'] = "Компактный";
+        $text['pedstandard'] = "Стандартный";
+        $text['pedtextonly'] = "Текст";
+        $text['descendfor'] = "Потомство для";
+        $text['maxof'] = "Максимум";
+        $text['gensatonce'] = "генерируемых одновременно.";
+        $text['sonof'] = "сын";
+        $text['daughterof'] = "дочь";
+        $text['childof'] = "ребенок";
+        $text['stdformat'] = "Стандартный формат";
+        $text['ahnentafel'] = "Система &#171;Ahnentafel&#187;";
+        $text['addnewfam'] = "Добавить новую семью";
+        $text['editfam'] = "Изменить семью";
+        $text['side'] = "Сторона";
+        $text['familyof'] = "Семейство";
+        $text['paternal'] = "отеческий";
+        $text['maternal'] = "Материнский";
+        $text['gen1'] = "Само";
+        $text['gen2'] = "Родители";
+        $text['gen3'] = "дедушка и бабушка";
+        $text['gen4'] = "Прабабушка и прадедушка";
+        $text['gen5'] = "2-й прародитель";
+        $text['gen6'] = "3-й прародитель";
+        $text['gen7'] = "4-й прародитель";
+        $text['gen8'] = "5-й прародитель";
+        $text['gen9'] = "6-й прародитель";
+        $text['gen10'] = "7-й прародитель";
+        $text['gen11'] = "8-й прародитель";
+        $text['gen12'] = "9-й прародитель";
+        $text['graphdesc'] = "Диаграмма происхождения к этому моменту";
+        $text['pedbox'] = "Диаграмма &#171;Коробка&#187;";
+        $text['regformat'] = "Реестр";
+        $text['extrasexpl'] = "По крайней мере, одна фотография, история или другой медиафайл существует для этого человека.";
+        $text['popupnote3'] = "Новая диаграмма";
+        $text['mediaavail'] = "Доступные медиафайлы";
+        $text['pedigreefor'] = "Диаграмма родословной для";
+        $text['pedigreech'] = "Диаграмма родословной";
+        $text['datesloc'] = "Даты и места";
+        $text['borchr'] = "Рождение/крещение-смерть/погребение";
+        $text['nobd'] = "Нет дат рождения или смерти";
+        $text['bcdb'] = "Все данные о рождении/крещение/смерти/погребении";
+        $text['numsys'] = "Система нумерации";
+        $text['gennums'] = "Номера поколений";
+        $text['henrynums'] = "Система Генри";
+        $text['abovnums'] = "Система д'Абовилла";
+        $text['devnums'] = "Система де Вильерса";
+        $text['dispopts'] = "Показать варианты";
+        //added in 10.0.0
+        $text['no_ancestors'] = "Не найдено ни одного предка";
+        $text['ancestor_chart'] = "Вертикальная диаграмма предков";
+        $text['opennewwindow'] = "Открыть в новом окне";
+        $text['pedvertical'] = "Вертикальный";
+        //added in 11.0.0
+        $text['familywith'] = "Семья с";
+        $text['fcmlogin'] = "Пожалуйста, войдите, чтобы увидеть подробности";
+        $text['isthe'] = "это";
+        $text['otherspouses'] = "другие супруги";
+        $text['parentfamily'] = "Родительское семейство";
+        $text['showfamily'] = "Показать семью";
+        $text['shown'] = "показанный";
+        $text['showparentfamily'] = "показать родительскую семью";
+        $text['showperson'] = "показать человека";
+        //added in 11.0.2
+        $text['otherfamilies'] = "Другие семьи";
+        break;
+
+    //search.php, searchform.php
+    //merged with reports and showreport in 5.0.0
+    case "search":
+    case "reports":
+        $text['noreports'] = "Отчёты не существуют.";
+        $text['reportname'] = "Название отчёта";
+        $text['allreports'] = "Все отчёты";
+        $text['report'] = "Отчёт";
+        $text['error'] = "Ошибка";
+        $text['reportsyntax'] = "Синтаксис запроса, выполняемого с этим отчётом";
+        $text['wasincorrect'] = "неверный, и в результате отчёт не может быть запущен. Пожалуйста, обратитесь к системному администратору";
+        $text['errormessage'] = "Сообщение об ошибке";
+        $text['equals'] = "равняется";
+        $text['endswith'] = "заканчивается на";
+        $text['soundexof'] = "звучит (soundex) как";
+        $text['metaphoneof'] = "звучит (metaphone) как";
+        $text['plusminus10'] = "+/- 10 лет от";
+        $text['lessthan'] = "меньше, чем";
+        $text['greaterthan'] = "больше, чем";
+        $text['lessthanequal'] = "меньше или равно, чем";
+        $text['greaterthanequal'] = "больше или равно, чем";
+        $text['equalto'] = "равно";
+        $text['tryagain'] = "Попробуйте ещё раз";
+        $text['joinwith'] = "Объединять используя";
+        $text['cap_and'] = "И";
+        $text['cap_or'] = "ИЛИ";
+        $text['showspouse'] = "Показать супруга (покажет дубликаты, если человек имеет более одного супруга)";
+        $text['submitquery'] = "Отправить запрос";
+        $text['birthplace'] = "Место рождения";
+        $text['deathplace'] = "Место смерти";
+        $text['birthdatetr'] = "Дата рождения";
+        $text['deathdatetr'] = "Дата смерти";
+        $text['plusminus2'] = "+/- 2 года от";
+        $text['resetall'] = "Сбросить все значения";
+        $text['showdeath'] = "Показать информацию о смерти/похоронах";
+        $text['altbirthplace'] = "Место крещения";
+        $text['altbirthdatetr'] = "Дата крещения";
+        $text['burialplace'] = "Место погребения";
+        $text['burialdatetr'] = "Дата погребения";
+        $text['event'] = "Событие(я)";
+        $text['day'] = "День";
+        $text['month'] = "Месяц";
+        $text['keyword'] = "Ключевое слово (например, &#171;Abt (Около)&#187;, &#171;Bef (До)&#187;, &#171;Aft (После)&#187;)";
+        $text['explain'] = "Введите компоненты даты, чтобы увидеть соответствующие события. Чтобы игнорировать поле, оставьте в нём пустое значение.";
+        $text['enterdate'] = "Пожалуйста, введите или выберите хотя бы одно из следующих значений: &#171;День&#187;, &#171;Месяц&#187;, &#171;Год&#187;, &#171;Ключевое слово&#187;";
+        $text['fullname'] = "Полное имя";
+        $text['birthdate'] = "Дата рождения";
+        $text['altbirthdate'] = "Дата крещения";
+        $text['marrdate'] = "Дата брака";
+        $text['spouseid'] = "ID Супруг(а)";
+        $text['spousename'] = "Имя Супруг(а)";
+        $text['deathdate'] = "Дата смерти";
+        $text['burialdate'] = "Дата погребения";
+        $text['changedate'] = "Дата последнего изменения";
+        $text['gedcom'] = "Генеалогическое древо";
+        $text['baptdate'] = "Дата Крещения (СПД)";
+        $text['baptplace'] = "Место крещения (СПД)";
+        $text['endldate'] = "Дата пожертвования (СПД)";
+        $text['endlplace'] = "Место пожертвования (СПД)";
+        $text['ssealdate'] = "Дата запечатывания S (СПД)";   //Sealed to spouse
+        $text['ssealplace'] = "Место запечатывания S (СПД)";
+        $text['psealdate'] = "Дата запечатывания P (СПД)";   //Sealed to parents
+        $text['psealplace'] = "Место запечатывания P (СПД)";
+        $text['marrplace'] = "Место брака";
+        $text['spousesurname'] = "Фамилия супруга/супруги";
+        $text['spousemore'] = "При вводе значения фамилии супруга необходимо выбрать пол.";
+        $text['plusminus5'] = "+/- 5 лет от";
+        $text['exists'] = "существует";
+        $text['dnexist'] = "не существует";
+        $text['divdate'] = "Дата развода";
+        $text['divplace'] = "Место развода";
+        $text['otherevents'] = "Другие критерии поиска";
+        $text['numresults'] = "Результатов на странице";
+        $text['mysphoto'] = "Неизвестные фотографии";
+        $text['mysperson'] = "Неизвестные люди";
+        $text['joinor'] = "Параметр &#171;Объединять используя ИЛИ&#187; не может использоваться с фамилией супруга";
+        $text['tellus'] = "Расскажите нам, что вы знаете";
+        $text['moreinfo'] = "Больше информации:";
+        //added in 8.0.0
+        $text['marrdatetr'] = "Год бракосочетания";
+        $text['divdatetr'] = "Год развода";
+        $text['mothername'] = "Имя матери";
+        $text['fathername'] = "Имя отца";
+        $text['filter'] = "Фильтр";
+        $text['notliving'] = "Нет в живых";
+        $text['nodayevents'] = "События за этот месяц, которые не связаны с конкретным днем:";
+        //added in 9.0.0
+        $text['csv'] = "Файл CSV с разделителями-запятыми";
+        //added in 10.0.0
+        $text['confdate'] = "Дата конфирмации (СПД)";
+        $text['confplace'] = "Место конфирмации (СПД)";
+        $text['initdate'] = "Дата посвящения (СПД)";
+        $text['initplace'] = "Место посвящения (СПД)";
+        //added in 11.0.0
+        $text['marrtype'] = "Тип брака";
+        $text['searchfor'] = "Поиск";
+        $text['searchnote'] = "Примечание: эта страница использует Google, чтобы выполнять поиск. Количество возвращаемых совпадений будет напрямую зависеть от того, насколько Google сможет индексировать сайт.";
+        break;
+
+    //showlog.php
+    case "showlog":
+        $text['logfilefor'] = "Журнал записей для ";
+        $text['mostrecentactions'] = "Последняя активность";
+        $text['autorefresh'] = "Автообновление каждые (30 секунд)";
+        $text['refreshoff'] = "Отключить автообновление";
+        break;
+
+    case "headstones":
+    case "showphoto":
+        $text['cemeteriesheadstones'] = "Кладбища и надгробия";
+        $text['showallhsr'] = "Показать полный список надгробий";
+        $text['in'] = "в";
+        $text['showmap'] = "Показать карту";
+        $text['headstonefor'] = "Надгробие для";
+        $text['photoof'] = "Фото";
+        $text['photoowner'] = "Владелец/Источник";
+        $text['nocemetery'] = "Нет кладбища";
+        $text['iptc005'] = "Название";
+        $text['iptc020'] = "Дополнительные категории";
+        $text['iptc040'] = "Специальные инструкции";
+        $text['iptc055'] = "Дата создания";
+        $text['iptc080'] = "Автор";
+        $text['iptc085'] = "Должность автора";
+        $text['iptc090'] = "Город";
+        $text['iptc095'] = "Штат/провинция";
+        $text['iptc101'] = "Страна";
+        $text['iptc103'] = "OTR";
+        $text['iptc105'] = "Заголовок";
+        $text['iptc110'] = "Источник";
+        $text['iptc115'] = "Источник фото";
+        $text['iptc116'] = "Уведомление об авторских правах";
+        $text['iptc120'] = "титр";
+        $text['iptc122'] = "Подпись писателя";
+        $text['mapof'] = "Карта";
+        $text['regphotos'] = "Подробный вид";
+        $text['gallery'] = "Только миниатюры";
+        $text['cemphotos'] = "Фотографии кладбищ";
+        $text['photosize'] = "Габаритные размеры";
+        $text['iptc010'] = "Приоритет";
+        $text['filesize'] = "Размер файла";
+        $text['seeloc'] = "См. местоположение";
+        $text['showall'] = "Показать все";
+        $text['editmedia'] = "Редактировать медиафайл";
+        $text['viewitem'] = "Просмотреть этот элемент";
+        $text['editcem'] = "Редактировать кладбище";
+        $text['numitems'] = "# Предметов";
+        $text['allalbums'] = "Все альбомы";
+        $text['slidestop'] = "Пауза Слайд-шоу";
+        $text['slideresume'] = "Показ слайдов";
+        $text['slidesecs'] = "Секунды для каждого слайда:";
+        $text['minussecs'] = "минус 0,5 секунды";
+        $text['plussecs'] = "плюс 0,5 секунды";
+        $text['nocountry'] = "Неизвестная страна";
+        $text['nostate'] = "Неизвестный штат";
+        $text['nocounty'] = "Неизвестный район";
+        $text['nocity'] = "Неизвестный город";
+        $text['nocemname'] = "Неизвестное название кладбища";
+        $text['editalbum'] = "Редактировать альбом";
+        $text['mediamaptext'] = "<strong>Примечание:</strong> Переместите указатель мыши на изображение, чтобы отобразить имена. Нажмите, чтобы просмотреть страницу для каждого имени.";
+        //added in 8.0.0
+        $text['allburials'] = "Все погребения";
+        $text['moreinfo'] = "Нажмите для получения дополнительной информации об этом изображении";
+        //added in 9.0.0
+        $text['iptc025'] = "Ключевые слова";
+        $text['iptc092'] = "Суб-место";
+        $text['iptc015'] = "Категория";
+        $text['iptc065'] = "Исходная программа";
+        $text['iptc070'] = "Версия программы";
+        break;
+
+    //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
+    case "surnames":
+    case "places":
+        $text['surnamesstarting'] = "Показать фамилии на букву";
+        $text['showtop'] = "Показать популярные";
+        $text['showallsurnames'] = "Фамилии в виде списка";
+        $text['sortedalpha'] = "в алфавитном порядке";
+        $text['byoccurrence'] = "и упорядочить по дате происхождения";
+        $text['firstchars'] = "Первые символы";
+        $text['mainsurnamepage'] = "Фамилии в виде диаграммы";
+        $text['allsurnames'] = "Все фамилии";
+        $text['showmatchingsurnames'] = "Нажмите на фамилию, чтобы показать соответствующие записи.";
+        $text['backtotop'] = "Наверх";
+        $text['beginswith'] = "Начинается на";
+        $text['allbeginningwith'] = "Все фамилии на букву";
+        $text['numoccurrences'] = "общее количество мест (населенных пунктов) в скобках";
+        $text['placesstarting'] = "Места на букву";
+        $text['showmatchingplaces'] = "Нажмите на место, чтобы показать меньшие населенные пункты. Нажмите на значок поиска, чтобы показать соответствующих людей.";
+        $text['totalnames'] = "из общего числа";
+        $text['showallplaces'] = "Показать все места (населенные пункты)";
+        $text['totalplaces'] = "из общего числа";
+        $text['mainplacepage'] = "Главная страница мест (населенных пунктов)";
+        $text['allplaces'] = "Все крупнейшие населенные пункты";
+        $text['placescont'] = "Поиск мест (населенных пунктов)";
+        //changed in 8.0.0
+        $text['top30'] = "Популярные xxx фамилий";
+        $text['top30places'] = "Популярные xxx мест";
+        //added in 12.0.0
+        $text['firstnamelist'] = "Имена";
+        $text['firstnamesstarting'] = "Показать имена на букву";
+        $text['showallfirstnames'] = "Имена в виде списка";
+        $text['mainfirstnamepage'] = "Имена в виде диаграммы";
+        $text['allfirstnames'] = "Все имена";
+        $text['showmatchingfirstnames'] = "Нажмите на имя, чтобы отобразить соответствующие записи.";
+        $text['allfirstbegwith'] = "Все имена на букву";
+        $text['top30first'] = "Популярные xxx имён";
+        $text['allothers'] = "Все остальные";
+        $text['amongall'] = "(среди всех имен)";
+        $text['justtop'] = "Просто ххх популярных";
+        break;
+
+    //whatsnew.php
+    case "whatsnew":
+        $text['pastxdays'] = "(за последние xx дней)";
+
+        $text['photo'] = "Фото";
+        $text['history'] = "История/Документ";
+        $text['husbid'] = "ID-отца";
+        $text['husbname'] = "Имя отца";
+        $text['wifeid'] = "ID-матери";
+        //added in 11.0.0
+        $text['wifename'] = "Имя матери";
+        break;
+
+    //timeline.php, timeline2.php
+    case "timeline":
+        $text['text_delete'] = "Удалить";
+        $text['addperson'] = "Добавить человека";
+        $text['nobirth'] = "Этот человек не имеют действительную дату рождения и не может быть добавлен";
+        $text['event'] = "Событие(я)";
+        $text['chartwidth'] = "Ширина диаграммы";
+        $text['timelineinstr'] = "Добавить людей";
+        $text['togglelines'] = "Тумблер линии";
+        //changed in 9.0.0
+        $text['noliving'] = "Следующий человек помечен как живой или секретный и не может быть добавлен, потому что вы не вошли в систему с надлежащими разрешениями";
+        break;
+
+    //browsetrees.php
+    //login.php, newacctform.php, addnewacct.php
+    case "trees":
+    case "login":
+        $text['browsealltrees'] = "Просмотр всех деревьев";
+        $text['treename'] = "Генеалогическое древо";
+        $text['owner'] = "Владелец";
+        $text['address'] = "Адрес";
+        $text['city'] = "Город";
+        $text['state'] = "Область";
+        $text['zip'] = "Почтовый индекс";
+        $text['country'] = "Страна";
+        $text['email'] = "E-mail адрес";
+        $text['phone'] = "Телефон";
+        $text['username'] = "Логин";
+        $text['password'] = "Пароль";
+        $text['loginfailed'] = "Неправильный логин или пароль.";
+
+        $text['regnewacct'] = "Создать новую учётную запись";
+        $text['realname'] = "Настоящее имя";
+        $text['phone'] = "Телефон";
+        $text['email'] = "E-mail адрес";
+        $text['address'] = "Адрес";
+        $text['acctcomments'] = "Примечания или комментарии";
+        $text['submit'] = "Отправить";
+        $text['leaveblank'] = "(Оставьте пустым, если запрашивается новое генеалогическое древо)";
+        $text['required'] = " Обязательные поля";
+        $text['enterpassword'] = "Введите пароль.";
+        $text['enterusername'] = "Введите логин.";
+        $text['failure'] = "К сожалению введенное Вами имя пользователя уже используется. Пожалуйста, используйте кнопку Назад в вашем браузере, чтобы вернуться на предыдущую страницу и выберите другое имя пользователя.";
+        $text['success'] = "Спасибо. Мы получили вашы данные для регистрации. Мы свяжемся с Вами, когда Ваш профиль будет активирован или потребуется дополнительная информация.";
+        $text['emailsubject'] = "Новый пользователь TNG";
+        $text['website'] = "Веб-сайт";
+        $text['nologin'] = "Ещё не зарегистрированы?";
+        $text['loginsent'] = "Информация для входа отправлена";
+        $text['loginnotsent'] = "Информация для входа не отправлена";
+        $text['enterrealname'] = "Введите Ваше настоящее имя.";
+        $text['rempass'] = "Запомнить пароль на этом компьютере";
+        $text['morestats'] = "Дополнительная статистика";
+        $text['accmail'] = "<strong>Внимание:</strong> Для получения подтверждения регистрации от Администратора сайта, убедитесь что не блокируется адрес этого домена.";
+        $text['newpassword'] = "Новый пароль";
+        $text['resetpass'] = "Сбросить пароль";
+        $text['nousers'] = "Эта форма не может быть использован до тех пор, по крайней мере, одна запись пользователя существует. Если вы являетесь владельцем сайта, пожалуйста, перейдите на администратора / пользователей для создания учетной записи администратора.";
+        $text['noregs'] = "К сожалению, но мы не принимаем регистрацию новых пользователей в настоящее время. Пожалуйста <a href=\"suggest.php\">свяжитесь с администратором</a> напрямую, если у вас есть замечания или вопросы относительно чего-либо на этом сайте.";
+        //changed in 8.0.0
+        $text['emailmsg'] = "Вы получили новый запрос для учетной записи пользователя TNG. Пожалуйста, войдите в Вашу панель Администратора что бы задать соответствующие разрешения для этой новой учетной записи.";
+        $text['accactive'] = "Учетная запись была активирована, но пользователь не будет иметь никаких особых прав, пока не назначать их.";
+        $text['accinactive'] = "Зайдите в Администрирование/Пользователи/Обзор для доступа к настройкам учетной записи. Учётная запись будет оставаться неактивным, пока её не отредактировать и не сохранять  по крайней мере, один раз.";
+        $text['pwdagain'] = "Пороль ещё раз";
+        $text['enterpassword2'] = "Пожалуйста, введите пароль ещё раз.";
+        $text['pwdsmatch'] = "Ваши пароли не совпадают. Введите один и тот же пароль в оба поля.";
+        //added in 8.0.0
+        $text['acksubject'] = "Благодарим Вас за регистрацию"; //for a new user account
+        $text['ackmessage'] = "Ваш запрос на регистрацию учётной записи получен. Ваша учетная запись будет неактивна, пока она не будет рассмотрена администратором сайта. Вы будете уведомлены по электронной почте, когда ваш логин будет готов к использованию.";
+        //added in 12.0.0
+        $text['switch'] = "Переключатель";
+        break;
+
     //added in 10.0.0
-    $text['no_ancestors'] = "Не найдено ни одного предка";
-    $text['ancestor_chart'] = "Вертикальная диаграмма предков";
-    $text['opennewwindow'] = "Открыть в новом окне";
-    $text['pedvertical'] = "Вертикальный";
-    //added in 11.0.0
-    $text['familywith'] = "Семья с";
-    $text['fcmlogin'] = "Пожалуйста, войдите, чтобы увидеть подробности";
-    $text['isthe'] = "это";
-    $text['otherspouses'] = "другие супруги";
-    $text['parentfamily'] = "Родительское семейство";
-    $text['showfamily'] = "Показать семью";
-    $text['shown'] = "показанный";
-    $text['showparentfamily'] = "показать родительскую семью";
-    $text['showperson'] = "показать человека";
-    //added in 11.0.2
-    $text['otherfamilies'] = "Другие семьи";
-    break;
+    case "branches":
+        $text['browseallbranches'] = "Просмотр всех ветвей";
+        break;
 
-  //search.php, searchform.php
-  //merged with reports and showreport in 5.0.0
-  case "search":
-  case "reports":
-    $text['noreports'] = "Отчёты не существуют.";
-    $text['reportname'] = "Название отчёта";
-    $text['allreports'] = "Все отчёты";
-    $text['report'] = "Отчёт";
-    $text['error'] = "Ошибка";
-    $text['reportsyntax'] = "Синтаксис запроса, выполняемого с этим отчётом";
-    $text['wasincorrect'] = "неверный, и в результате отчёт не может быть запущен. Пожалуйста, обратитесь к системному администратору";
-    $text['errormessage'] = "Сообщение об ошибке";
-    $text['equals'] = "равняется";
-    $text['endswith'] = "заканчивается на";
-    $text['soundexof'] = "звучит (soundex) как";
-    $text['metaphoneof'] = "звучит (metaphone) как";
-    $text['plusminus10'] = "+/- 10 лет от";
-    $text['lessthan'] = "меньше, чем";
-    $text['greaterthan'] = "больше, чем";
-    $text['lessthanequal'] = "меньше или равно, чем";
-    $text['greaterthanequal'] = "больше или равно, чем";
-    $text['equalto'] = "равно";
-    $text['tryagain'] = "Попробуйте ещё раз";
-    $text['joinwith'] = "Объединять используя";
-    $text['cap_and'] = "И";
-    $text['cap_or'] = "ИЛИ";
-    $text['showspouse'] = "Показать супруга (покажет дубликаты, если человек имеет более одного супруга)";
-    $text['submitquery'] = "Отправить запрос";
-    $text['birthplace'] = "Место рождения";
-    $text['deathplace'] = "Место смерти";
-    $text['birthdatetr'] = "Дата рождения";
-    $text['deathdatetr'] = "Дата смерти";
-    $text['plusminus2'] = "+/- 2 года от";
-    $text['resetall'] = "Сбросить все значения";
-    $text['showdeath'] = "Показать информацию о смерти/похоронах";
-    $text['altbirthplace'] = "Место крещения";
-    $text['altbirthdatetr'] = "Дата крещения";
-    $text['burialplace'] = "Место погребения";
-    $text['burialdatetr'] = "Дата погребения";
-    $text['event'] = "Событие(я)";
-    $text['day'] = "День";
-    $text['month'] = "Месяц";
-    $text['keyword'] = "Ключевое слово (например, &#171;Abt (Около)&#187;, &#171;Bef (До)&#187;, &#171;Aft (После)&#187;)";
-    $text['explain'] = "Введите компоненты даты, чтобы увидеть соответствующие события. Чтобы игнорировать поле, оставьте в нём пустое значение.";
-    $text['enterdate'] = "Пожалуйста, введите или выберите хотя бы одно из следующих значений: &#171;День&#187;, &#171;Месяц&#187;, &#171;Год&#187;, &#171;Ключевое слово&#187;";
-    $text['fullname'] = "Полное имя";
-    $text['birthdate'] = "Дата рождения";
-    $text['altbirthdate'] = "Дата крещения";
-    $text['marrdate'] = "Дата брака";
-    $text['spouseid'] = "ID Супруг(а)";
-    $text['spousename'] = "Имя Супруг(а)";
-    $text['deathdate'] = "Дата смерти";
-    $text['burialdate'] = "Дата погребения";
-    $text['changedate'] = "Дата последнего изменения";
-    $text['gedcom'] = "Генеалогическое древо";
-    $text['baptdate'] = "Дата Крещения (СПД)";
-    $text['baptplace'] = "Место крещения (СПД)";
-    $text['endldate'] = "Дата пожертвования (СПД)";
-    $text['endlplace'] = "Место пожертвования (СПД)";
-    $text['ssealdate'] = "Дата запечатывания S (СПД)";   //Sealed to spouse
-    $text['ssealplace'] = "Место запечатывания S (СПД)";
-    $text['psealdate'] = "Дата запечатывания P (СПД)";   //Sealed to parents
-    $text['psealplace'] = "Место запечатывания P (СПД)";
-    $text['marrplace'] = "Место брака";
-    $text['spousesurname'] = "Фамилия супруга/супруги";
-    $text['spousemore'] = "При вводе значения фамилии супруга необходимо выбрать пол.";
-    $text['plusminus5'] = "+/- 5 лет от";
-    $text['exists'] = "существует";
-    $text['dnexist'] = "не существует";
-    $text['divdate'] = "Дата развода";
-    $text['divplace'] = "Место развода";
-    $text['otherevents'] = "Другие критерии поиска";
-    $text['numresults'] = "Результатов на странице";
-    $text['mysphoto'] = "Неизвестные фотографии";
-    $text['mysperson'] = "Неизвестные люди";
-    $text['joinor'] = "Параметр &#171;Объединять используя ИЛИ&#187; не может использоваться с фамилией супруга";
-    $text['tellus'] = "Расскажите нам, что вы знаете";
-    $text['moreinfo'] = "Больше информации:";
-    //added in 8.0.0
-    $text['marrdatetr'] = "Год бракосочетания";
-    $text['divdatetr'] = "Год развода";
-    $text['mothername'] = "Имя матери";
-    $text['fathername'] = "Имя отца";
-    $text['filter'] = "Фильтр";
-    $text['notliving'] = "Нет в живых";
-    $text['nodayevents'] = "События за этот месяц, которые не связаны с конкретным днем:";
-    //added in 9.0.0
-    $text['csv'] = "Файл CSV с разделителями-запятыми";
-    //added in 10.0.0
-    $text['confdate'] = "Дата конфирмации (СПД)";
-    $text['confplace'] = "Место конфирмации (СПД)";
-    $text['initdate'] = "Дата посвящения (СПД)";
-    $text['initplace'] = "Место посвящения (СПД)";
-    //added in 11.0.0
-    $text['marrtype'] = "Тип брака";
-    $text['searchfor'] = "Поиск";
-    $text['searchnote'] = "Примечание: эта страница использует Google, чтобы выполнять поиск. Количество возвращаемых совпадений будет напрямую зависеть от того, насколько Google сможет индексировать сайт.";
-    break;
+    //statistics.php
+    case "stats":
+        $text['quantity'] = "Всего";
+        $text['totindividuals'] = "Всего людей";
+        $text['totmales'] = "Всего мужчин";
+        $text['totfemales'] = "Всего женщин";
+        $text['totunknown'] = "Всего с неизвестным полом";
+        $text['totliving'] = "Всего живущих";
+        $text['totfamilies'] = "Всего семей";
+        $text['totuniquesn'] = "Всего уникальных фамилий";
+        //$text['totphotos'] = "Total Photos";
+        //$text['totdocs'] = "Total Histories &amp; Documents";
+        //$text['totheadstones'] = "Total Headstones";
+        $text['totsources'] = "Всего источников";
+        $text['avglifespan'] = "Средняя продолжительность жизни";
+        $text['earliestbirth'] = "Самая ранняя дата рождения";
+        $text['longestlived'] = "Долгожители";
+        $text['days'] = "дней";
+        $text['age'] = "Возраст";
+        $text['agedisclaimer'] = "Статистика продолжительности жизни расчитывается по записям о людях, с указанными датами рождения и смерти. Если информация не полная (например одна из дат указана не полностью, только год &#171;1945&#187; или только год и месяц без числа &#171;май 1755&#187;),  то точность расчётов не будет 100%-ой. Периоды &#171;с&#187;, &#171;до&#187;, &#171;после&#187;, &#171;приблизительно&#187;, &#171;между&#187; и т.п. в расчётах не участвуют.";
+        $text['treedetail'] = "Иформация о древе";
+        $text['total'] = "Всего";
+        //added in 12.0
+        $text['totdeceased'] = "Всего умерших";
+        break;
 
-  //showlog.php
-  case "showlog":
-    $text['logfilefor'] = "Журнал записей для ";
-    $text['mostrecentactions'] = "Последняя активность";
-    $text['autorefresh'] = "Автообновление каждые (30 секунд)";
-    $text['refreshoff'] = "Отключить автообновление";
-    break;
+    case "notes":
+        $text['browseallnotes'] = "Просмотр всех заметок";
+        break;
 
-  case "headstones":
-  case "showphoto":
-    $text['cemeteriesheadstones'] = "Кладбища и надгробия";
-    $text['showallhsr'] = "Показать полный список надгробий";
-    $text['in'] = "в";
-    $text['showmap'] = "Показать карту";
-    $text['headstonefor'] = "Надгробие для";
-    $text['photoof'] = "Фото";
-    $text['photoowner'] = "Владелец/Источник";
-    $text['nocemetery'] = "Нет кладбища";
-    $text['iptc005'] = "Название";
-    $text['iptc020'] = "Дополнительные категории";
-    $text['iptc040'] = "Специальные инструкции";
-    $text['iptc055'] = "Дата создания";
-    $text['iptc080'] = "Автор";
-    $text['iptc085'] = "Должность автора";
-    $text['iptc090'] = "Город";
-    $text['iptc095'] = "Штат/провинция";
-    $text['iptc101'] = "Страна";
-    $text['iptc103'] = "OTR";
-    $text['iptc105'] = "Заголовок";
-    $text['iptc110'] = "Источник";
-    $text['iptc115'] = "Источник фото";
-    $text['iptc116'] = "Уведомление об авторских правах";
-    $text['iptc120'] = "титр";
-    $text['iptc122'] = "Подпись писателя";
-    $text['mapof'] = "Карта";
-    $text['regphotos'] = "Подробный вид";
-    $text['gallery'] = "Только миниатюры";
-    $text['cemphotos'] = "Фотографии кладбищ";
-    $text['photosize'] = "Габаритные размеры";
-    $text['iptc010'] = "Приоритет";
-    $text['filesize'] = "Размер файла";
-    $text['seeloc'] = "См. местоположение";
-    $text['showall'] = "Показать все";
-    $text['editmedia'] = "Редактировать медиафайл";
-    $text['viewitem'] = "Просмотреть этот элемент";
-    $text['editcem'] = "Редактировать кладбище";
-    $text['numitems'] = "# Предметов";
-    $text['allalbums'] = "Все альбомы";
-    $text['slidestop'] = "Пауза Слайд-шоу";
-    $text['slideresume'] = "Показ слайдов";
-    $text['slidesecs'] = "Секунды для каждого слайда:";
-    $text['minussecs'] = "минус 0,5 секунды";
-    $text['plussecs'] = "плюс 0,5 секунды";
-    $text['nocountry'] = "Неизвестная страна";
-    $text['nostate'] = "Неизвестный штат";
-    $text['nocounty'] = "Неизвестный район";
-    $text['nocity'] = "Неизвестный город";
-    $text['nocemname'] = "Неизвестное название кладбища";
-    $text['editalbum'] = "Редактировать альбом";
-    $text['mediamaptext'] = "<strong>Примечание:</strong> Переместите указатель мыши на изображение, чтобы отобразить имена. Нажмите, чтобы просмотреть страницу для каждого имени.";
-    //added in 8.0.0
-    $text['allburials'] = "Все погребения";
-    $text['moreinfo'] = "Нажмите для получения дополнительной информации об этом изображении";
-    //added in 9.0.0
-    $text['iptc025'] = "Ключевые слова";
-    $text['iptc092'] = "Суб-место";
-    $text['iptc015'] = "Категория";
-    $text['iptc065'] = "Исходная программа";
-    $text['iptc070'] = "Версия программы";
-    break;
+    case "help":
+        $text['menuhelp'] = "Кнопка меню";
+        break;
 
-  //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
-  case "surnames":
-  case "places":
-    $text['surnamesstarting'] = "Показать фамилии на букву";
-    $text['showtop'] = "Показать популярные";
-    $text['showallsurnames'] = "Фамилии в виде списка";
-    $text['sortedalpha'] = "в алфавитном порядке";
-    $text['byoccurrence'] = "и упорядочить по дате происхождения";
-    $text['firstchars'] = "Первые символы";
-    $text['mainsurnamepage'] = "Фамилии в виде диаграммы";
-    $text['allsurnames'] = "Все фамилии";
-    $text['showmatchingsurnames'] = "Нажмите на фамилию, чтобы показать соответствующие записи.";
-    $text['backtotop'] = "Наверх";
-    $text['beginswith'] = "Начинается на";
-    $text['allbeginningwith'] = "Все фамилии на букву";
-    $text['numoccurrences'] = "общее количество мест (населенных пунктов) в скобках";
-    $text['placesstarting'] = "Места на букву";
-    $text['showmatchingplaces'] = "Нажмите на место, чтобы показать меньшие населенные пункты. Нажмите на значок поиска, чтобы показать соответствующих людей.";
-    $text['totalnames'] = "из общего числа";
-    $text['showallplaces'] = "Показать все места (населенные пункты)";
-    $text['totalplaces'] = "из общего числа";
-    $text['mainplacepage'] = "Главная страница мест (населенных пунктов)";
-    $text['allplaces'] = "Все крупнейшие населенные пункты";
-    $text['placescont'] = "Поиск мест (населенных пунктов)";
-    //changed in 8.0.0
-    $text['top30'] = "Популярные xxx фамилий";
-    $text['top30places'] = "Популярные xxx мест";
-    //added in 12.0.0
-    $text['firstnamelist'] = "Имена";
-    $text['firstnamesstarting'] = "Показать имена на букву";
-    $text['showallfirstnames'] = "Имена в виде списка";
-    $text['mainfirstnamepage'] = "Имена в виде диаграммы";
-    $text['allfirstnames'] = "Все имена";
-    $text['showmatchingfirstnames'] = "Нажмите на имя, чтобы отобразить соответствующие записи.";
-    $text['allfirstbegwith'] = "Все имена на букву";
-    $text['top30first'] = "Популярные xxx имён";
-    $text['allothers'] = "Все остальные";
-    $text['amongall'] = "(среди всех имен)";
-    $text['justtop'] = "Просто ххх популярных";
-    break;
+    case "install":
+        $text['perms'] = "Все разрешения были  установлены.";
+        $text['noperms'] = "Права доступа не могут быть установлены ​​для этих файлов:";
+        $text['manual'] = "Пожалуйста, установите их вручную.";
+        $text['folder'] = "Папка";
+        $text['created'] = "была создана";
+        $text['nocreate'] = "не может быть создана. Пожалуйста, создайте её вручную.";
+        $text['infosaved'] = "Информация сохранена, подключение проверено!";
+        $text['tablescr'] = "Таблицы были созданы!";
+        $text['notables'] = "Таблицы не могут быть созданы:";
+        $text['nocomm'] = "TNG не не может соединиться с базой данных. Таблицы не были созданы.";
+        $text['newdb'] = "Информация сохранена, подключение проверено, создана новая база данных:";
+        $text['noattach'] = "Информация сохранена. Соединение установлено и базы данных создана, но TNG не может подключиться к ней.";
+        $text['nodb'] = "Информация сохранена. Соединения установлено, но база данных не существует и не может быть создана. Пожалуйста, убедитесь, что имя базы данных правильное и есть права у пользователя базы данных, или зайдите в панель управления для её создания.";
+        $text['noconn'] = "Информация сохранена, но соединение не установлено. Не выполнено одно или несколько из следующих условий:";
+        $text['exists'] = "уже существует";
+        $text['loginfirst'] = "Сначала Вы должны осуществить вход.";
+        $text['noop'] = "Операция не выполнялась.";
+        //added in 8.0.0
+        $text['nouser'] = "Пользователь не был создан. Возможно, имя пользователя уже существует.";
+        $text['notree'] = "Генеалогическое древо не было создано. Номер генеалогического древа может уже существовать.";
+        $text['infosaved2'] = "Информация сохранена";
+        $text['renamedto'] = "переименовано в";
+        $text['norename'] = "Не может быть переименовано";
+        break;
 
-  //whatsnew.php
-  case "whatsnew":
-    $text['pastxdays'] = "(за последние xx дней)";
+    case "imgviewer":
+        $text['zoomin'] = "Увеличить";
+        $text['zoomout'] = "Уменьшить";
+        $text['magmode'] = "Режим увеличения";
+        $text['panmode'] = "Режим просмотра";
+        $text['pan'] = "Нажмите и перетащите для перемещения по изображению";
+        $text['fitwidth'] = "Вписать по ширине";
+        $text['fitheight'] = "Вписать по высоте";
+        $text['newwin'] = "Новое окно";
+        $text['opennw'] = "Открыть изображение в новом окне";
+        $text['magnifyreg'] = "Нажмите, чтобы увеличить область изображения";
+        $text['imgctrls'] = "Включить элементы управления изображением";
+        $text['vwrctrls'] = "Включить элементы управления просмотрщика изображений";
+        $text['vwrclose'] = "Закрыть просмотрщик изображений";
+        break;
 
-    $text['photo'] = "Фото";
-    $text['history'] = "История/Документ";
-    $text['husbid'] = "ID-отца";
-    $text['husbname'] = "Имя отца";
-    $text['wifeid'] = "ID-матери";
-    //added in 11.0.0
-    $text['wifename'] = "Имя матери";
-    break;
-
-  //timeline.php, timeline2.php
-  case "timeline":
-    $text['text_delete'] = "Удалить";
-    $text['addperson'] = "Добавить человека";
-    $text['nobirth'] = "Этот человек не имеют действительную дату рождения и не может быть добавлен";
-    $text['event'] = "Событие(я)";
-    $text['chartwidth'] = "Ширина диаграммы";
-    $text['timelineinstr'] = "Добавить людей";
-    $text['togglelines'] = "Тумблер линии";
-    //changed in 9.0.0
-    $text['noliving'] = "Следующий человек помечен как живой или секретный и не может быть добавлен, потому что вы не вошли в систему с надлежащими разрешениями";
-    break;
-
-  //browsetrees.php
-  //login.php, newacctform.php, addnewacct.php
-  case "trees":
-  case "login":
-    $text['browsealltrees'] = "Просмотр всех деревьев";
-    $text['treename'] = "Генеалогическое древо";
-    $text['owner'] = "Владелец";
-    $text['address'] = "Адрес";
-    $text['city'] = "Город";
-    $text['state'] = "Область";
-    $text['zip'] = "Почтовый индекс";
-    $text['country'] = "Страна";
-    $text['email'] = "E-mail адрес";
-    $text['phone'] = "Телефон";
-    $text['username'] = "Логин";
-    $text['password'] = "Пароль";
-    $text['loginfailed'] = "Неправильный логин или пароль.";
-
-    $text['regnewacct'] = "Создать новую учётную запись";
-    $text['realname'] = "Настоящее имя";
-    $text['phone'] = "Телефон";
-    $text['email'] = "E-mail адрес";
-    $text['address'] = "Адрес";
-    $text['acctcomments'] = "Примечания или комментарии";
-    $text['submit'] = "Отправить";
-    $text['leaveblank'] = "(Оставьте пустым, если запрашивается новое генеалогическое древо)";
-    $text['required'] = " Обязательные поля";
-    $text['enterpassword'] = "Введите пароль.";
-    $text['enterusername'] = "Введите логин.";
-    $text['failure'] = "К сожалению введенное Вами имя пользователя уже используется. Пожалуйста, используйте кнопку Назад в вашем браузере, чтобы вернуться на предыдущую страницу и выберите другое имя пользователя.";
-    $text['success'] = "Спасибо. Мы получили вашы данные для регистрации. Мы свяжемся с Вами, когда Ваш профиль будет активирован или потребуется дополнительная информация.";
-    $text['emailsubject'] = "Новый пользователь TNG";
-    $text['website'] = "Веб-сайт";
-    $text['nologin'] = "Ещё не зарегистрированы?";
-    $text['loginsent'] = "Информация для входа отправлена";
-    $text['loginnotsent'] = "Информация для входа не отправлена";
-    $text['enterrealname'] = "Введите Ваше настоящее имя.";
-    $text['rempass'] = "Запомнить пароль на этом компьютере";
-    $text['morestats'] = "Дополнительная статистика";
-    $text['accmail'] = "<strong>Внимание:</strong> Для получения подтверждения регистрации от Администратора сайта, убедитесь что не блокируется адрес этого домена.";
-    $text['newpassword'] = "Новый пароль";
-    $text['resetpass'] = "Сбросить пароль";
-    $text['nousers'] = "Эта форма не может быть использован до тех пор, по крайней мере, одна запись пользователя существует. Если вы являетесь владельцем сайта, пожалуйста, перейдите на администратора / пользователей для создания учетной записи администратора.";
-    $text['noregs'] = "К сожалению, но мы не принимаем регистрацию новых пользователей в настоящее время. Пожалуйста <a href=\"suggest.php\">свяжитесь с администратором</a> напрямую, если у вас есть замечания или вопросы относительно чего-либо на этом сайте.";
-    //changed in 8.0.0
-    $text['emailmsg'] = "Вы получили новый запрос для учетной записи пользователя TNG. Пожалуйста, войдите в Вашу панель Администратора что бы задать соответствующие разрешения для этой новой учетной записи.";
-    $text['accactive'] = "Учетная запись была активирована, но пользователь не будет иметь никаких особых прав, пока не назначать их.";
-    $text['accinactive'] = "Зайдите в Администрирование/Пользователи/Обзор для доступа к настройкам учетной записи. Учётная запись будет оставаться неактивным, пока её не отредактировать и не сохранять  по крайней мере, один раз.";
-    $text['pwdagain'] = "Пороль ещё раз";
-    $text['enterpassword2'] = "Пожалуйста, введите пароль ещё раз.";
-    $text['pwdsmatch'] = "Ваши пароли не совпадают. Введите один и тот же пароль в оба поля.";
-    //added in 8.0.0
-    $text['acksubject'] = "Благодарим Вас за регистрацию"; //for a new user account
-    $text['ackmessage'] = "Ваш запрос на регистрацию учётной записи получен. Ваша учетная запись будет неактивна, пока она не будет рассмотрена администратором сайта. Вы будете уведомлены по электронной почте, когда ваш логин будет готов к использованию.";
-    //added in 12.0.0
-    $text['switch'] = "Переключатель";
-    break;
-
-  //added in 10.0.0
-  case "branches":
-    $text['browseallbranches'] = "Просмотр всех ветвей";
-    break;
-
-  //statistics.php
-  case "stats":
-    $text['quantity'] = "Всего";
-    $text['totindividuals'] = "Всего людей";
-    $text['totmales'] = "Всего мужчин";
-    $text['totfemales'] = "Всего женщин";
-    $text['totunknown'] = "Всего с неизвестным полом";
-    $text['totliving'] = "Всего живущих";
-    $text['totfamilies'] = "Всего семей";
-    $text['totuniquesn'] = "Всего уникальных фамилий";
-    //$text['totphotos'] = "Total Photos";
-    //$text['totdocs'] = "Total Histories &amp; Documents";
-    //$text['totheadstones'] = "Total Headstones";
-    $text['totsources'] = "Всего источников";
-    $text['avglifespan'] = "Средняя продолжительность жизни";
-    $text['earliestbirth'] = "Самая ранняя дата рождения";
-    $text['longestlived'] = "Долгожители";
-    $text['days'] = "дней";
-    $text['age'] = "Возраст";
-    $text['agedisclaimer'] = "Статистика продолжительности жизни расчитывается по записям о людях, с указанными датами рождения и смерти. Если информация не полная (например одна из дат указана не полностью, только год &#171;1945&#187; или только год и месяц без числа &#171;май 1755&#187;),  то точность расчётов не будет 100%-ой. Периоды &#171;с&#187;, &#171;до&#187;, &#171;после&#187;, &#171;приблизительно&#187;, &#171;между&#187; и т.п. в расчётах не участвуют.";
-    $text['treedetail'] = "Иформация о древе";
-    $text['total'] = "Всего";
-    //added in 12.0
-    $text['totdeceased'] = "Всего умерших";
-    break;
-
-  case "notes":
-    $text['browseallnotes'] = "Просмотр всех заметок";
-    break;
-
-  case "help":
-    $text['menuhelp'] = "Кнопка меню";
-    break;
-
-  case "install":
-    $text['perms'] = "Все разрешения были  установлены.";
-    $text['noperms'] = "Права доступа не могут быть установлены ​​для этих файлов:";
-    $text['manual'] = "Пожалуйста, установите их вручную.";
-    $text['folder'] = "Папка";
-    $text['created'] = "была создана";
-    $text['nocreate'] = "не может быть создана. Пожалуйста, создайте её вручную.";
-    $text['infosaved'] = "Информация сохранена, подключение проверено!";
-    $text['tablescr'] = "Таблицы были созданы!";
-    $text['notables'] = "Таблицы не могут быть созданы:";
-    $text['nocomm'] = "TNG не не может соединиться с базой данных. Таблицы не были созданы.";
-    $text['newdb'] = "Информация сохранена, подключение проверено, создана новая база данных:";
-    $text['noattach'] = "Информация сохранена. Соединение установлено и базы данных создана, но TNG не может подключиться к ней.";
-    $text['nodb'] = "Информация сохранена. Соединения установлено, но база данных не существует и не может быть создана. Пожалуйста, убедитесь, что имя базы данных правильное и есть права у пользователя базы данных, или зайдите в панель управления для её создания.";
-    $text['noconn'] = "Информация сохранена, но соединение не установлено. Не выполнено одно или несколько из следующих условий:";
-    $text['exists'] = "уже существует";
-    $text['loginfirst'] = "Сначала Вы должны осуществить вход.";
-    $text['noop'] = "Операция не выполнялась.";
-    //added in 8.0.0
-    $text['nouser'] = "Пользователь не был создан. Возможно, имя пользователя уже существует.";
-    $text['notree'] = "Генеалогическое древо не было создано. Номер генеалогического древа может уже существовать.";
-    $text['infosaved2'] = "Информация сохранена";
-    $text['renamedto'] = "переименовано в";
-    $text['norename'] = "Не может быть переименовано";
-    break;
-
-  case "imgviewer":
-    $text['zoomin'] = "Увеличить";
-    $text['zoomout'] = "Уменьшить";
-    $text['magmode'] = "Режим увеличения";
-    $text['panmode'] = "Режим просмотра";
-    $text['pan'] = "Нажмите и перетащите для перемещения по изображению";
-    $text['fitwidth'] = "Вписать по ширине";
-    $text['fitheight'] = "Вписать по высоте";
-    $text['newwin'] = "Новое окно";
-    $text['opennw'] = "Открыть изображение в новом окне";
-    $text['magnifyreg'] = "Нажмите, чтобы увеличить область изображения";
-    $text['imgctrls'] = "Включить элементы управления изображением";
-    $text['vwrctrls'] = "Включить элементы управления просмотрщика изображений";
-    $text['vwrclose'] = "Закрыть просмотрщик изображений";
-    break;
-
-  case "dna":
-    $text['test_date'] = "Дата теста";
-    $text['links'] = "Соответствующие ссылки";
-    $text['testid'] = "ID теста";
-    //added in 12.0.0
-    $text['mode_values'] = "Значения режима";
-    $text['compareselected'] = "Сравнить выбранные";
-    $text['dnatestscompare'] = "Сравнить тесты Y-DNA";
-    $text['keep_name_private'] = "Хранить приватно";
-    $text['browsealltests'] = "Просмотр всех тестов";
-    $text['all_dna_tests'] = "Все тесты ДНК";
-    $text['fastmutating'] = "Быстрые & NBSP; мутации";
-    $text['alltypes'] = "Все типы";
-    $text['allgroups'] = "Все группы";
-    $text['Ydna_LITbox_info'] = "Тест(ы), связанный с этим человеком, не обязательно проводились с этим человеком.<br>в столбце &#171;Гаплогруппа&#187; данные отображаются красным цветом, если результат &#171;Предсказан&#187;, и зелёным, если тест &#171;Подтверждён&#187;.";
-    //added in 12.1.0
-    $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
-    $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";
-    $text['chromosome'] = "Chr";
-    $text['centiMorgans'] = "cM";
-    $text['snps'] = "SNPs";
-    $text['y_haplogroup'] = "Y-DNA";
-    $text['mt_haplogroup'] = "mtDNA";
-    $text['sequence'] = "Ref";
-    $text['extra_mutations'] = "Extra Mutations";
-    $text['mrca'] = "MRC Ancestor";
-    $text['ydna_test'] = "Y-DNA Tests";
-    $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
-    $text['atdna_test'] = "atDNA (autosomal) Tests";
-    $text['segment_start'] = "Start";
-    $text['segment_end'] = "End";
-    $text['suggested_relationship'] = "Suggested";
-    $text['actual_relationship'] = "Actual";
-    $text['12markers'] = "Markers 1-12";
-    $text['25markers'] = "Markers 13-25";
-    $text['37markers'] = "Markers 26-37";
-    $text['67markers'] = "Markers 38-67";
-    $text['111markers'] = "Markers 68-111";
-    break;
+    case "dna":
+        $text['test_date'] = "Дата теста";
+        $text['links'] = "Соответствующие ссылки";
+        $text['testid'] = "ID теста";
+        //added in 12.0.0
+        $text['mode_values'] = "Значения режима";
+        $text['compareselected'] = "Сравнить выбранные";
+        $text['dnatestscompare'] = "Сравнить тесты Y-DNA";
+        $text['keep_name_private'] = "Хранить приватно";
+        $text['browsealltests'] = "Просмотр всех тестов";
+        $text['all_dna_tests'] = "Все тесты ДНК";
+        $text['fastmutating'] = "Быстрые & NBSP; мутации";
+        $text['alltypes'] = "Все типы";
+        $text['allgroups'] = "Все группы";
+        $text['Ydna_LITbox_info'] = "Тест(ы), связанный с этим человеком, не обязательно проводились с этим человеком.<br>в столбце &#171;Гаплогруппа&#187; данные отображаются красным цветом, если результат &#171;Предсказан&#187;, и зелёным, если тест &#171;Подтверждён&#187;.";
+        //added in 12.1.0
+        $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
+        $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";
+        $text['chromosome'] = "Chr";
+        $text['centiMorgans'] = "cM";
+        $text['snps'] = "SNPs";
+        $text['y_haplogroup'] = "Y-DNA";
+        $text['mt_haplogroup'] = "mtDNA";
+        $text['sequence'] = "Ref";
+        $text['extra_mutations'] = "Extra Mutations";
+        $text['mrca'] = "MRC Ancestor";
+        $text['ydna_test'] = "Y-DNA Tests";
+        $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
+        $text['atdna_test'] = "atDNA (autosomal) Tests";
+        $text['segment_start'] = "Start";
+        $text['segment_end'] = "End";
+        $text['suggested_relationship'] = "Suggested";
+        $text['actual_relationship'] = "Actual";
+        $text['12markers'] = "Markers 1-12";
+        $text['25markers'] = "Markers 13-25";
+        $text['37markers'] = "Markers 26-37";
+        $text['67markers'] = "Markers 38-67";
+        $text['111markers'] = "Markers 68-111";
+        break;
 }
 
 //common
@@ -1011,5 +1011,5 @@ $text['lastpage'] = "Последняя страница";
 @include_once "captcha_text.php";
 @include_once "alltext.php";
 if (!$alltextloaded) {
-  getAllTextPath();
+    getAllTextPath();
 }

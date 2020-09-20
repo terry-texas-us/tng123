@@ -7,24 +7,24 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
 
 if (!$evday) {
-  $evday = "0";
+    $evday = "0";
 }
 if (!$evmonth) {
-  $evmonth = "0";
+    $evmonth = "0";
 }
 if (!$endday) {
-  $endday = "0";
+    $endday = "0";
 }
 if (!$endmonth) {
-  $endmonth = "0";
+    $endmonth = "0";
 }
 $template = "ssssssss";
 $query = "INSERT INTO $tlevents_table (evday,evmonth,evyear,endday,endmonth,endyear,evtitle,evdetail) VALUES (?,?,?,?,?,?,?,?)";

@@ -9,16 +9,16 @@ define("TEMPLATES_PATH", "templates");
  * @return array of t<template>_<keyname>[_<language>] => <value>
  */
 function buildTemplateArray(mysqli_result $result) {
-  $tmp = array();
-  while ($row = tng_fetch_assoc($result)) {
-    $key = "t" . $row['template'] . "_" . $row['keyname'];
-    if ($row['language']) {
-      $key .= "_" . $row['language'];
+    $tmp = array();
+    while ($row = tng_fetch_assoc($result)) {
+        $key = "t" . $row['template'] . "_" . $row['keyname'];
+        if ($row['language']) {
+            $key .= "_" . $row['language'];
+        }
+        $tmp[$key] = $row['value'];
     }
-    $tmp[$key] = $row['value'];
-  }
-  tng_free_result($result);
-  return $tmp;
+    tng_free_result($result);
+    return $tmp;
 }
 
 /**
@@ -27,10 +27,10 @@ function buildTemplateArray(mysqli_result $result) {
  * @return array
  */
 function getTemplateVars($table, $template) {
-  $query = "SELECT * FROM $table WHERE template = '$template'";
-  $result = tng_query_noerror($query);
+    $query = "SELECT * FROM $table WHERE template = '$template'";
+    $result = tng_query_noerror($query);
 
-  return ($result == FALSE) ? array() : buildTemplateArray($result);
+    return ($result == FALSE) ? array() : buildTemplateArray($result);
 }
 
 /**
@@ -38,8 +38,8 @@ function getTemplateVars($table, $template) {
  * @return array
  */
 function getAllTemplatesVars($table) {
-  $query = "SELECT * FROM $table ORDER BY template, ordernum";
-  $result = tng_query($query);
+    $query = "SELECT * FROM $table ORDER BY template, ordernum";
+    $result = tng_query($query);
 
-  return buildTemplateArray($result);
+    return buildTemplateArray($result);
 }

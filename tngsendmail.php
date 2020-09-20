@@ -29,114 +29,114 @@ $_SESSION['tng_yourname'] = "";
 $tngwebsite = $tngdomain;
 
 if (preg_match("/\n[[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/i", $youremail) || preg_match("/[\r|\n][[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/", $yourname) || !$valid_user_agent) {
-  die("sorry!");
+    die("sorry!");
 }
 if (preg_match("/\r/", $youremail) || preg_match("/\n/", $youremail) || preg_match("/\r/", $yourname) || preg_match("/\n/", $yourname)) {
-  die("sorry!");
+    die("sorry!");
 }
 
 $youremail = strtok($youremail, ",; ");
 if (!$youremail || !$comments || !$yourname) {
-  die("sorry!");
+    die("sorry!");
 }
 
 if ($addr_exclude) {
-  $bad_addrs = explode(",", $addr_exclude);
-  foreach ($bad_addrs as $bad_addr) {
-    if ($bad_addr) {
-      if (strstr($youremail, trim($bad_addr))) {
-        die("sorry");
-      }
+    $bad_addrs = explode(",", $addr_exclude);
+    foreach ($bad_addrs as $bad_addr) {
+        if ($bad_addr) {
+            if (strstr($youremail, trim($bad_addr))) {
+                die("sorry");
+            }
+        }
     }
-  }
 }
 
 if ($msg_exclude) {
-  $bad_msgs = explode(",", $msg_exclude);
-  foreach ($bad_msgs as $bad_msg) {
-    if ($bad_msg) {
-      if (stristr($comments, trim($bad_msg))) {
-        die("sorry");
-      }
+    $bad_msgs = explode(",", $msg_exclude);
+    foreach ($bad_msgs as $bad_msg) {
+        if ($bad_msg) {
+            if (stristr($comments, trim($bad_msg))) {
+                die("sorry");
+            }
+        }
     }
-  }
 }
 
 $suggest_url = getURL("suggest", 1);
 
 if ($enttype == "I") {
-  $typestr = "person";
-  $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, sex, nameorder, living, private, branch, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) AS death
+    $typestr = "person";
+    $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, sex, nameorder, living, private, branch, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) AS death
 		FROM $people_table, $trees_table WHERE personID = \"$ID\" AND $people_table.gedcom = \"$tree\" AND $people_table.gedcom = $trees_table.gedcom";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
 
-  $righttree = checktree($tree);
-  $rights = determineLivingPrivateRights($row, $righttree);
-  $row['allow_living'] = $rights['living'];
-  $row['allow_private'] = $rights['private'];
+    $righttree = checktree($tree);
+    $rights = determineLivingPrivateRights($row, $righttree);
+    $row['allow_living'] = $rights['living'];
+    $row['allow_private'] = $rights['private'];
 
-  $name = getName($row) . " ($ID)";
-  $pagelink = "$tngwebsite/" . getURL("getperson", 1) . "personID=$ID&tree=$tree";
-  tng_free_result($result);
+    $name = getName($row) . " ($ID)";
+    $pagelink = "$tngwebsite/" . getURL("getperson", 1) . "personID=$ID&tree=$tree";
+    tng_free_result($result);
 } elseif ($enttype == "F") {
-  $typestr = "family";
-  $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"$ID\" AND gedcom = '$tree'";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
+    $typestr = "family";
+    $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"$ID\" AND gedcom = '$tree'";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
 
-  $righttree = checktree($tree);
-  $rights = determineLivingPrivateRights($row, $righttree);
-  $row['allow_living'] = $rights['living'];
-  $row['allow_private'] = $rights['private'];
+    $righttree = checktree($tree);
+    $rights = determineLivingPrivateRights($row, $righttree);
+    $row['allow_living'] = $rights['living'];
+    $row['allow_private'] = $rights['private'];
 
-  $name = $text['family'] . ": " . getFamilyName($row);
-  $pagelink = "$tngwebsite/" . getURL("familygroup", 1) . "familyID=$ID&tree=$tree";
-  tng_free_result($result);
+    $name = $text['family'] . ": " . getFamilyName($row);
+    $pagelink = "$tngwebsite/" . getURL("familygroup", 1) . "familyID=$ID&tree=$tree";
+    tng_free_result($result);
 } elseif ($enttype == "S") {
-  $query = "SELECT title FROM $sources_table WHERE sourceID = \"$ID\" AND gedcom = '$tree'";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $name = $text['source'] . ": {$row['title']} ($ID)";
-  $pagelink = "$tngwebsite/" . getURL("showsource", 1) . "sourceID=$ID&tree=$tree";
-  tng_free_result($result);
+    $query = "SELECT title FROM $sources_table WHERE sourceID = \"$ID\" AND gedcom = '$tree'";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $name = $text['source'] . ": {$row['title']} ($ID)";
+    $pagelink = "$tngwebsite/" . getURL("showsource", 1) . "sourceID=$ID&tree=$tree";
+    tng_free_result($result);
 } elseif ($enttype == "R") {
-  $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$ID\" AND gedcom = '$tree'";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $name = $text['repository'] . ": {$row['reponame']} ($ID)";
-  $pagelink = "$tngwebsite/" . getURL("showrepo", 1) . "repoID=$ID&tree=$tree";
-  tng_free_result($result);
+    $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$ID\" AND gedcom = '$tree'";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $name = $text['repository'] . ": {$row['reponame']} ($ID)";
+    $pagelink = "$tngwebsite/" . getURL("showrepo", 1) . "repoID=$ID&tree=$tree";
+    tng_free_result($result);
 } elseif ($enttype == "L") {
-  $name = $ID;
-  if ($tree && !$tngconfig['places1tree']) {
-    $treestr = "tree=$tree&amp;";
-  } else {
-    $treestr = "";
-  }
-  $pagelink = "$tngwebsite/" . getURL("placesearch", 1) . "{$treestr}psearch=" . urlencode($name);
+    $name = $ID;
+    if ($tree && !$tngconfig['places1tree']) {
+        $treestr = "tree=$tree&amp;";
+    } else {
+        $treestr = "";
+    }
+    $pagelink = "$tngwebsite/" . getURL("placesearch", 1) . "{$treestr}psearch=" . urlencode($name);
 }
 if ($enttype) {
-  $subject = $text['proposed'] . ": $name";
-  $query = "SELECT treename, email, owner FROM $trees_table WHERE gedcom='$tree'";
-  $treeresult = tng_query($query);
-  $treerow = tng_fetch_assoc($treeresult);
-  tng_free_result($treeresult);
+    $subject = $text['proposed'] . ": $name";
+    $query = "SELECT treename, email, owner FROM $trees_table WHERE gedcom='$tree'";
+    $treeresult = tng_query($query);
+    $treerow = tng_fetch_assoc($treeresult);
+    tng_free_result($treeresult);
 
-  $body = $text['proposed'] . ": $name\n{$text['tree']}: {$treerow['treename']}\n{$text['link']}: $pagelink\n\n{$text['description']}: " . stripslashes($comments) . "\n\n$yourname\n$youremail";
+    $body = $text['proposed'] . ": $name\n{$text['tree']}: {$treerow['treename']}\n{$text['link']}: $pagelink\n\n{$text['description']}: " . stripslashes($comments) . "\n\n$yourname\n$youremail";
 
-  $sendemail = $treerow['email'] ? $treerow['email'] : $emailaddr;
-  $owner = $treerow['owner'] ? $treerow['owner'] : ($sitename ? $sitename : $dbowner);
+    $sendemail = $treerow['email'] ? $treerow['email'] : $emailaddr;
+    $owner = $treerow['owner'] ? $treerow['owner'] : ($sitename ? $sitename : $dbowner);
 } else {
-  $page = $page ? " ($page)" : "";
-  $subject = $text['comments2'] . $page;
-  $body = $text['comments2'] . $page . ": " . stripslashes($comments) . "\n\n$yourname\n$youremail";
+    $page = $page ? " ($page)" : "";
+    $subject = $text['comments2'] . $page;
+    $body = $text['comments2'] . $page . ": " . stripslashes($comments) . "\n\n$yourname\n$youremail";
 
-  $sendemail = $emailaddr;
-  $owner = $sitename ? $sitename : $dbowner;
+    $sendemail = $emailaddr;
+    $owner = $sitename ? $sitename : $dbowner;
 }
 if ($currentuser) {
-  $body .= "\n{$text['user']}: $currentuserdesc ($currentuser)";
+    $body .= "\n{$text['user']}: $currentuserdesc ($currentuser)";
 }
 $emailtouse = $tngconfig['fromadmin'] == 1 ? $emailaddr : $youremail;
 

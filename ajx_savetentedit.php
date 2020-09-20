@@ -20,54 +20,54 @@ $result = tng_query($query);
 $righttree = checktree($tree);
 
 if ($tngconfig['revmail']) {
-  if ($personID) {
-    $result = getPersonSimple($tree, $personID);
-    $namerow = tng_fetch_assoc($result);
-    $rights = determineLivingPrivateRights($namerow, $righttree);
-    $namerow['allow_living'] = $rights['living'];
-    $namerow['allow_private'] = $rights['private'];
-    $namestr = getName($namerow) . " ($personID)";
-    tng_free_result($result);
-  } else {
-    $result = getFamilyData($tree, $familyID);
-    $frow = tng_fetch_assoc($result);
-    $hname = $wname = "";
-    $frights = determineLivingPrivateRights($frow, $righttree);
-    $frow['allow_living'] = $frights['living'];
-    $frow['allow_private'] = $frights['private'];
-    if ($frow['husband']) {
-      $presult = getPersonSimple($tree, $frow['husband']);
-      $prow = tng_fetch_assoc($presult);
-      tng_free_result($presult);
-      $prights = determineLivingPrivateRights($prow, $righttree);
-      $prow['allow_living'] = $prights['living'];
-      $prow['allow_private'] = $prights['private'];
-      $hname = getName($prow);
-    }
-    if ($frow['wife']) {
-      $presult = getPersonSimple($tree, $frow['wife']);
-      $prow = tng_fetch_assoc($presult);
-      tng_free_result($presult);
-      $prights = determineLivingPrivateRights($prow, $righttree);
-      $prow['allow_living'] = $prights['living'];
-      $prow['allow_private'] = $prights['private'];
-      $wname = getName($prow);
-    }
-    tng_free_result($result);
+    if ($personID) {
+        $result = getPersonSimple($tree, $personID);
+        $namerow = tng_fetch_assoc($result);
+        $rights = determineLivingPrivateRights($namerow, $righttree);
+        $namerow['allow_living'] = $rights['living'];
+        $namerow['allow_private'] = $rights['private'];
+        $namestr = getName($namerow) . " ($personID)";
+        tng_free_result($result);
+    } else {
+        $result = getFamilyData($tree, $familyID);
+        $frow = tng_fetch_assoc($result);
+        $hname = $wname = "";
+        $frights = determineLivingPrivateRights($frow, $righttree);
+        $frow['allow_living'] = $frights['living'];
+        $frow['allow_private'] = $frights['private'];
+        if ($frow['husband']) {
+            $presult = getPersonSimple($tree, $frow['husband']);
+            $prow = tng_fetch_assoc($presult);
+            tng_free_result($presult);
+            $prights = determineLivingPrivateRights($prow, $righttree);
+            $prow['allow_living'] = $prights['living'];
+            $prow['allow_private'] = $prights['private'];
+            $hname = getName($prow);
+        }
+        if ($frow['wife']) {
+            $presult = getPersonSimple($tree, $frow['wife']);
+            $prow = tng_fetch_assoc($presult);
+            tng_free_result($presult);
+            $prights = determineLivingPrivateRights($prow, $righttree);
+            $prow['allow_living'] = $prights['living'];
+            $prow['allow_private'] = $prights['private'];
+            $wname = getName($prow);
+        }
+        tng_free_result($result);
 
-    $persfamID = $familyID;
-    $plus = $hname && $wname ? " + " : "";
-    $namestr = $text['family'] . ": $hname$plus$wname ($familyID)";
-  }
-  $query = "SELECT treename, email, owner FROM $trees_table WHERE gedcom='$tree'";
-  $treeresult = tng_query($query);
-  $treerow = tng_fetch_assoc($treeresult);
-  $sendemail = $treerow['email'] ? $treerow['email'] : $emailaddr;
-  $owner = $treerow['owner'] ? $treerow['owner'] : ($sitename ? $sitename : $dbowner);
-  tng_free_result($treeresult);
+        $persfamID = $familyID;
+        $plus = $hname && $wname ? " + " : "";
+        $namestr = $text['family'] . ": $hname$plus$wname ($familyID)";
+    }
+    $query = "SELECT treename, email, owner FROM $trees_table WHERE gedcom='$tree'";
+    $treeresult = tng_query($query);
+    $treerow = tng_fetch_assoc($treeresult);
+    $sendemail = $treerow['email'] ? $treerow['email'] : $emailaddr;
+    $owner = $treerow['owner'] ? $treerow['owner'] : ($sitename ? $sitename : $dbowner);
+    tng_free_result($treeresult);
 
-  $message = "{$text['reviewmsg']}\n\n$namestr\n{$text['user']}: $currentuser\n\n{$text['administration']}: $tngdomain/admin.php";
-  tng_sendmail("TNG", $emailaddr, $owner, $sendemail, $text['revsubject'], $message, $emailaddr, $emailaddr);
+    $message = "{$text['reviewmsg']}\n\n$namestr\n{$text['user']}: $currentuser\n\n{$text['administration']}: $tngdomain/admin.php";
+    tng_sendmail("TNG", $emailaddr, $owner, $sendemail, $text['revsubject'], $message, $emailaddr, $emailaddr);
 }
 echo 1;
 

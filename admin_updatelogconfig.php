@@ -5,27 +5,27 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
-  header("Location: admin_main.php");
-  exit;
+    header("Location: admin_main.php");
+    exit;
 }
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  include "version.php";
+    $admin_login = 1;
+    include "checklogin.php";
+    include "version.php";
 
-  if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    if ($assignedtree || !$allow_edit) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 }
 
 require "adminlog.php";
 
 $fp = @fopen("config/logconfig.php", "w", 1);
 if (!$fp) {
-  die ($admtext['cannotopen'] . " logconfig.php");
+    die ($admtext['cannotopen'] . " logconfig.php");
 }
 
 flock($fp, LOCK_EX);
@@ -47,13 +47,13 @@ fclose($fp);
 
 $fp = fopen($rootpath . $logname, "c");
 if (!$fp) {
-  die ("{$admtext['cannotopen']} $logname");
+    die ("{$admtext['cannotopen']} $logname");
 }
 fclose($fp);
 
 $fp = fopen($rootpath . $adminlogfile, "c");
 if (!$fp) {
-  die ("{$admtext['cannotopen']} $adminlogfile");
+    die ("{$admtext['cannotopen']} $adminlogfile");
 }
 fclose($fp);
 

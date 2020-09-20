@@ -7,9 +7,9 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
@@ -19,12 +19,12 @@ $tag2 = addslashes($tag2);
 $defdisplay = addslashes($defdisplay);
 
 if ($tag2) {
-  $tag = $tag2;
+    $tag = $tag2;
 } else {
-  $tag = $tag1;
+    $tag = $tag1;
 }
 if (!$display) {
-  $display = $defdisplay;
+    $display = $defdisplay;
 }
 $query = "UPDATE $eventtypes_table SET tag=\"$tag\",type=\"$type\",description=\"$description\",display=\"$display\",keep=\"$keep\",collapse=\"$collapse\",ordernum=\"$ordernum\",ldsevent=\"$ldsevent\" WHERE eventtypeID=\"$eventtypeID\"";
 $result = tng_query($query);

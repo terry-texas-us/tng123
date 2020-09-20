@@ -111,7 +111,9 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                     <table>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td><input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield"></td>
+                            <td>
+                                <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                            </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">

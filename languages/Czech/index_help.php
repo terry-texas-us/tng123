@@ -43,8 +43,10 @@ echo help_header("N�pov�da: Administrace");
                 <li><p><strong>Pod�vejte se na n�sledn� procesy</strong> (po Importu/Exportu) a prove�te ty, o kter�ch si mysl�te, �e jsou nutn� (v�ce
                         informac�
                         dozv�te zde v N�pov�d�).</p></li>
-                <li><p><strong>M�dia.</strong> Pokud jste vlo�ili nebo naimportovali sv� data, m��ete je spojit s fotografiemi, vypr�v�n�mi �i jin�mi m�dii. Bavte se!</p></li>
-                <li><p><strong>Z�skejte mapov� kl��.</strong> Mapy Google op�t ke sv�mu pou�it� vy�aduj� kl��. P�ejd�te do Nastaven� a potom do Nastaven� map a klikn�te na odkaz N�pov�da. Zde najdete pokyny, jak z�skat kl��
+                <li><p><strong>M�dia.</strong> Pokud jste vlo�ili nebo naimportovali sv� data, m��ete je spojit s fotografiemi, vypr�v�n�mi �i jin�mi
+                        m�dii. Bavte se!</p></li>
+                <li><p><strong>Z�skejte mapov� kl��.</strong> Mapy Google op�t ke sv�mu pou�it� vy�aduj� kl��. P�ejd�te do Nastaven� a potom do
+                        Nastaven� map a klikn�te na odkaz N�pov�da. Zde najdete pokyny, jak z�skat kl��
                         a co s n�m d�lat. Va�e mapy nebudou fungovat, dokud to nebude hotovo.</p></li>
                 <li><p><strong>N�co jin�ho.</strong> Budete cht�t proj�t tak� dal�� sekce z menu Administrace. Dal�� n�pov�du naleznete
                         na ka�d� str�nce.</p></li>
@@ -88,14 +90,24 @@ echo help_header("N�pov�da: Administrace");
                         <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Getting_Started" target="_blank">Pr�vodce uvodem do
                                 TNG</a>. Jak nastavit va�e str�nky a vytvo�it u�ivatelsk� str�nky.
                         </li>
-                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">Pr�vodce pro n�v�t�vn�ky TNG</a>. Jak se mohou n�v�t�vn�ci pohybovat po va�ich str�nk�ch.</li>
-                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">Pr�vodce pro registrovan� u�ivatele TNG</a>. Jak vyu��t mo�nosti TNG jako registrovan� u�ivatel nebo Administr�tor.</li>
-                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">Pr�vodce pro administr�tora TNG</a>. Poskytne informace pro administr�tora webov�ch str�nek TNG.</li>
-                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">Pr�vodce pro program�tora TNG</a>. Pom��e porozum�t, jak TNG pracuje, a pro program�tory, jak vytvo�it zm�ny v TNG.</li>
-                  <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">Seznam term�n� TNG</a>. Slova a v�ty pou�it� v TNG, kter� souvis� s genealogi�, po��ta�ovou technikou a organizac� archivace.</li>
-                </ul>
-                <br>
-              </li>
+                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Visitors" target="_blank">Pr�vodce pro n�v�t�vn�ky TNG</a>.
+                            Jak se mohou n�v�t�vn�ci pohybovat po va�ich str�nk�ch.
+                        </li>
+                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Registered_Users" target="_blank">Pr�vodce pro
+                                registrovan� u�ivatele TNG</a>. Jak vyu��t mo�nosti TNG jako registrovan� u�ivatel nebo Administr�tor.
+                        </li>
+                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Administrator" target="_blank">Pr�vodce pro administr�tora
+                                TNG</a>. Poskytne informace pro administr�tora webov�ch str�nek TNG.
+                        </li>
+                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=Category:Programmer" target="_blank">Pr�vodce pro program�tora
+                                TNG</a>. Pom��e porozum�t, jak TNG pracuje, a pro program�tory, jak vytvo�it zm�ny v TNG.
+                        </li>
+                        <li><a href="https://tng.lythgoes.net/wiki/index.php?title=TNG_Glossary" target="_blank">Seznam term�n� TNG</a>. Slova a v�ty
+                            pou�it� v TNG, kter� souvis� s genealogi�, po��ta�ovou technikou a organizac� archivace.
+                        </li>
+                    </ul>
+                    <br>
+                </li>
                 <li><p>Odkazy PHP: <a href="http://www.php.net" target="_blank">http://www.php.net</a>.</p></li>
                 <li><p>Odkazy MySQL: <a href="http://www.mysql.com" target="_blank">http://www.mysql.com</a>.</p></li>
                 <li><p>Odkazy HTML: <a href="http://www.htmlhelp.com" target="_blank">http://www.htmlhelp.com</a>.</p></li>

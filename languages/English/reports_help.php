@@ -111,33 +111,39 @@ echo help_header("Help: Reports");
                 as true dates UNLESS they are labeled as 'True'. Comparing dates using text or string fields is best done by comparing date
                 components,
                 such as the year only or the day only. To isolate a date component in this manner, first select <em>Month Only From:</em>,
-            <em>Day Only From:</em> or <em>Year Only From:</em>, and then select the date field from which the component will come.</p>
+                <em>Day Only From:</em> or <em>Year Only From:</em>, and then select the date field from which the component will come.</p>
 
-          <p>When working with a true date field (like Last Modified Date), you may compare the field directly to other true dates
-            or true date fields. A predefined true date you may use is the Operator 'Today'. You may also use the operator 'Convert
-            to Days' when relating two true dates. For example, find all records in which the Last Modified Date is less than 30 days old,
-            you could choose for your criteria:<br><br>
+            <p>When working with a true date field (like Last Modified Date), you may compare the field directly to other true dates
+                or true date fields. A predefined true date you may use is the Operator 'Today'. You may also use the operator 'Convert
+                to Days' when relating two true dates. For example, find all records in which the Last Modified Date is less than 30 days old,
+                you could choose for your criteria:<br><br>
 
-            <i>Convert to Days<br>
-              Today (true date)<br>
-              -<br>
-              Convert to Days<br>
-              Last Modified Date<br>
-              <=<br>
-              30</i></p>
+                <i>Convert to Days<br>
+                    Today (true date)<br>
+                    -<br>
+                    Convert to Days<br>
+                    Last Modified Date<br>
+                    <=<br>
+                    30</i></p>
 
-          <p>After choosing a field name, next choose a comparision operator from the <em>Operators &amp; Special Values</em> box. These include "=, !=, < > <=, >=, contains, starts with, ends with". Copy
-            the operator to the righthand box by selecting it and then clicking the adjacent <em>Add >></em> button, or by simply double-clicking on the operator name (IE only).</p>
+            <p>After choosing a field name, next choose a comparision operator from the <em>Operators &amp; Special Values</em> box. These include "=,
+                !=, < > <=, >=, contains, starts with, ends with". Copy
+                the operator to the righthand box by selecting it and then clicking the adjacent <em>Add >></em> button, or by simply double-clicking
+                on the operator name (IE only).</p>
 
-          <p>Finally, complete the statement by selecting a field or value to compare to your original field. You may also select one of the following Special Values: <em>Current Month, Current Year</em> or
-            <em>Current Day</em>. To select a constant string value, enter the string without quotes in the <em>Constant String</em> field and click the adjacent <em>Add >></em> button.
-            To add a blank string, leave the field blank before clicking the button. To select a constant numeric value, enter the number in the <em>Constant Value</em> field and click the adjacent
-            <em>Add >></em> button.</p>
+            <p>Finally, complete the statement by selecting a field or value to compare to your original field. You may also select one of the
+                following Special Values: <em>Current Month, Current Year</em> or
+                <em>Current Day</em>. To select a constant string value, enter the string without quotes in the <em>Constant String</em> field and
+                click the adjacent <em>Add >></em> button.
+                To add a blank string, leave the field blank before clicking the button. To select a constant numeric value, enter the number in the
+                <em>Constant Value</em> field and click the adjacent
+                <em>Add >></em> button.</p>
 
-          <p>You can remove any item from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply
-              double-clicking on the item (IE only).
-              To change the order of the items in the list, select the item and move it up or down within the list by clicking on the <em>Move Up</em>
-              and <em>Move Down</em> buttons.</p>
+            <p>You can remove any item from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply
+                double-clicking on the item (IE only).
+                To change the order of the items in the list, select the item and move it up or down within the list by clicking on the <em>Move
+                    Up</em>
+                and <em>Move Down</em> buttons.</p>
 
             <h5 class="optionhead">Choose Sort Order</h5>
             <p>Indicate how the matching records should be sorted by choosing one or more fields to determine a sort order.

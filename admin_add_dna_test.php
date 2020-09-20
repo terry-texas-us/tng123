@@ -9,9 +9,9 @@ $admin_login = 1;
 include "checklogin.php";
 
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
@@ -29,7 +29,7 @@ $test_date = convertDate($test_date);
 $match_date = convertDate($match_date);
 
 if (!$personID && !$person_name) {
-  $mynewgedcom = "";
+    $mynewgedcom = "";
 }
 
 $template = "sssssssssssssssssssssssssssss";
@@ -39,20 +39,20 @@ $params = array(&$template, &$test_type, &$test_number, &$notes, &$vendor, &$tes
 tng_execute($query, $params);
 $success = tng_affected_rows();
 if ($success) {
-  $testID = tng_insert_id();
+    $testID = tng_insert_id();
 
-  if ($personID) {
-    $template = "ssss";
-    $query = "INSERT IGNORE INTO $dna_links_table (testID,personID,gedcom,dna_group) VALUES (?,?,?,?)";
-    $params = array(&$template, &$testID, &$personID, &$mynewgedcom, &$dna_group);
-    tng_execute($query, $params);
-  }
+    if ($personID) {
+        $template = "ssss";
+        $query = "INSERT IGNORE INTO $dna_links_table (testID,personID,gedcom,dna_group) VALUES (?,?,?,?)";
+        $params = array(&$template, &$testID, &$personID, &$mynewgedcom, &$dna_group);
+        tng_execute($query, $params);
+    }
 
-  adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['addnewdna']}: $testID</a>");
+    adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['addnewdna']}: $testID</a>");
 
-  header("Location: admin_edit_dna_test.php?testID=$testID&newtest=1&added=1");
+    header("Location: admin_edit_dna_test.php?testID=$testID&newtest=1&added=1");
 } else {
-  // TODO text ['testnotadded'] was not defined in any language. Manually added here.
-  $message = _todo_('DNA test could not added');
-  header("Location: admin_dna_tests.php?message=" . urlencode($message));
+    // TODO text ['testnotadded'] was not defined in any language. Manually added here.
+    $message = _todo_('DNA test could not added');
+    header("Location: admin_dna_tests.php?message=" . urlencode($message));
 }

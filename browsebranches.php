@@ -12,40 +12,40 @@ $famsearch_url = getURL("famsearch", 1);
 $getperson_url = getURL("getperson", 1);
 
 function doBranchSearch($instance, $pagenav) {
-  global $text, $branchsearch;
+    global $text, $branchsearch;
 
-  $browsebranches_noargs_url = getURL("browsebranches", 0);
+    $browsebranches_noargs_url = getURL("browsebranches", 0);
 
-  $str = "<span class='normal'>\n";
+    $str = "<span class='normal'>\n";
     $str .= getFORM("browsebranches", "GET", "BranchSearch$instance", "");
-  $str .= "<input type=\"text\" name=\"branchsearch\" value=\"$branchsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-  $str .= $pagenav;
-  if ($branchsearch) {
-    $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsebranches_noargs_url\">{$text['browsealltrees']}</a>";
-  }
-  $str .= "</form></span>\n";
+    $str .= "<input type=\"text\" name=\"branchsearch\" value=\"$branchsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= $pagenav;
+    if ($branchsearch) {
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsebranches_noargs_url\">{$text['browsealltrees']}</a>";
+    }
+    $str .= "</form></span>\n";
 
-  return $str;
+    return $str;
 }
 
 $max_browsebranch_pages = 5;
 if ($offset) {
-  $offsetplus = $offset + 1;
-  $newoffset = "$offset, ";
+    $offsetplus = $offset + 1;
+    $newoffset = "$offset, ";
 } else {
-  $offsetplus = 1;
-  $newoffset = "";
-  $page = 1;
+    $offsetplus = 1;
+    $newoffset = "";
+    $page = 1;
 }
 
 $branchsearch = cleanIt(trim($branchsearch));
 if ($branchsearch) {
-  $wherestr = " AND (branch LIKE \"%$branchsearch%\" OR branches.description LIKE \"%$branchsearch%\")";
+    $wherestr = " AND (branch LIKE \"%$branchsearch%\" OR branches.description LIKE \"%$branchsearch%\")";
 } else {
-  $wherestr = "";
+    $wherestr = "";
 }
 if ($tree) {
-  $wherestr .= " AND branches.gedcom = \"$tree\"";
+    $wherestr .= " AND branches.gedcom = \"$tree\"";
 }
 
 $query = "SELECT branches.branch, branches.gedcom, branches.description, treename, personID ";
@@ -58,12 +58,12 @@ $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-  $query = "SELECT count(branch) AS branchcount FROM $branches_table";
-  $result2 = tng_query($query);
-  $countrow = tng_fetch_assoc($result2);
-  $totrows = $countrow['branchcount'];
+    $query = "SELECT count(branch) AS branchcount FROM $branches_table";
+    $result2 = tng_query($query);
+    $countrow = tng_fetch_assoc($result2);
+    $totrows = $countrow['branchcount'];
 } else {
-  $totrows = $numrows;
+    $totrows = $numrows;
 }
 
 $numrowsplus = $numrows + $offset;
@@ -99,10 +99,10 @@ $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if ($sitever != "standard") {
-  if ($tabletype == "toggle") {
-    $tabletype = "columntoggle";
-  }
-  $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    if ($tabletype == "toggle") {
+        $tabletype = "columntoggle";
+    }
+    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
     $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
 }
@@ -112,13 +112,13 @@ echo $header;
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
         <th data-tablesaw-priority="1" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
-      <?php
-      if ($numtrees > 1) {
-        ?>
-          <th data-tablesaw-priority="2" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
         <?php
-      }
-      ?>
+        if ($numtrees > 1) {
+            ?>
+            <th data-tablesaw-priority="2" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
+            <?php
+        }
+        ?>
         <th data-tablesaw-priority="3" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>
         <th data-tablesaw-priority="4" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['individuals']; ?>&nbsp;</th>
         <th data-tablesaw-priority="5" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['families']; ?>&nbsp;</th>
@@ -128,22 +128,22 @@ echo $header;
 $i = $offsetplus;
 $peoplewhere = getLivingPrivateRestrictions($people_table, false, false);
 if ($peoplewhere) {
-  $peoplewhere = "AND " . $peoplewhere;
+    $peoplewhere = "AND " . $peoplewhere;
 }
 $familywhere = getLivingPrivateRestrictions($families_table, false, false);
 if ($familywhere) {
-  $familywhere = "AND " . $familywhere;
+    $familywhere = "AND " . $familywhere;
 }
 
 while ($row = tng_fetch_assoc($result)) {
-  $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE branch LIKE \"%{$row['branch']}%\" $familywhere";
-  $famresult = tng_query($query);
-  $famrow = tng_fetch_assoc($famresult);
-  tng_free_result($famresult);
+    $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE branch LIKE \"%{$row['branch']}%\" $familywhere";
+    $famresult = tng_query($query);
+    $famrow = tng_fetch_assoc($famresult);
+    tng_free_result($famresult);
 
-  $query = "SELECT count(personID) AS pcount FROM $people_table WHERE branch LIKE \"%{$row['branch']}%\" $peoplewhere";
-  $indresult = tng_query($query);
-  $indrow = tng_fetch_assoc($indresult);
+    $query = "SELECT count(personID) AS pcount FROM $people_table WHERE branch LIKE \"%{$row['branch']}%\" $peoplewhere";
+    $indresult = tng_query($query);
+    $indrow = tng_fetch_assoc($indresult);
     tng_free_result($indresult);
 
     $presult = getPersonSimple($row['gedcom'], $row['personID']);
@@ -171,7 +171,7 @@ tng_free_result($result);
 
 <?php
 if ($pagenav || $treesearch) {
-  echo doBranchSearch(2, $pagenav);
+    echo doBranchSearch(2, $pagenav);
 }
 
 tng_footer("");

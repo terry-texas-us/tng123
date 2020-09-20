@@ -219,33 +219,43 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top" colspan="2"><input type="checkbox" name="abspath" value="1"<?php if ($row['abspath']) {
+                            <td valign="top" colspan="2">
+                                <input type="checkbox" name="abspath" value="1"<?php if ($row['abspath']) {
                                     echo " checked";
-                                } ?> onClick="toggleMediaURL();"><span class="normal"> <?php echo $admtext['abspath']; ?></span></td>
+                                } ?> onClick="toggleMediaURL();">
+                                <span class="normal"> <?php echo $admtext['abspath']; ?></span></td>
                         </tr>
                         <tr>
                             <td colspan="2"><strong><br><?php echo $admtext['imagefile']; ?></strong></td>
                         </tr>
                         <tr id="imgrow">
                             <td><?php echo $admtext['imagefiletoupload']; ?>*:</td>
-                            <td><input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.path);"></td>
+                            <td>
+                                <input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.path);">
+                            </td>
                         </tr>
                         <tr id="pathrow">
                             <td><?php echo $admtext['pathwithinphotos']; ?>**:</td>
-                            <td><input type="text" value="<?php if (!$row['abspath']) {
+                            <td>
+                                <input type="text" value="<?php if (!$row['abspath']) {
                                     echo $row['path'];
-                                } ?>" name="path" id="path" size="60"><input type="hidden" value="<?php if (!$row['abspath']) {
+                                } ?>" name="path" id="path" size="60">
+                                <input type="hidden" value="<?php if (!$row['abspath']) {
                                     echo $row['path'];
-                                } ?>" id="path_org" name="path_org"><input type="hidden" id="path_last" name="path_last"> <input type="button" value="<?php echo "{$admtext['select']}..."; ?>"
-                                                                                                                                 name="photoselect"
-                                                                                                                                 onclick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('path',folder);">
+                                } ?>" id="path_org" name="path_org">
+                                <input type="hidden" id="path_last" name="path_last">
+                                <input type="button" value="<?php echo "{$admtext['select']}..."; ?>"
+                                       name="photoselect"
+                                       onclick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('path',folder);">
                             </td>
                         </tr>
                         <tr id="abspathrow" style="display:none;">
                             <td><?php echo $admtext['mediaurl']; ?>:</td>
-                            <td><input type="text" value="<?php if ($row['abspath']) {
+                            <td>
+                                <input type="text" value="<?php if ($row['abspath']) {
                                     echo $row['path'];
-                                } ?>" name="mediaurl" size="60"></td>
+                                } ?>" name="mediaurl" size="60">
+                            </td>
                         </tr>
 
                         <!-- history section -->
@@ -278,16 +288,22 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         ?>
                         <tr>
                             <td><?php echo $admtext['imagefiletoupload']; ?>*:</td>
-                            <td><input type="file" name="newthumb" size="60" onChange="populatePath(document.form1.newthumb,document.form1.thumbpath);"></td>
+                            <td>
+                                <input type="file" name="newthumb" size="60" onChange="populatePath(document.form1.newthumb,document.form1.thumbpath);">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['pathwithinphotos']; ?>**:</td>
-                            <td><input type="text" value="<?php echo $row['thumbpath']; ?>" name="thumbpath" id="thumbpath" size="60"><input type="hidden" value="<?php if (!$row['abspath']) {
+                            <td>
+                                <input type="text" value="<?php echo $row['thumbpath']; ?>" name="thumbpath" id="thumbpath" size="60">
+                                <input type="hidden" value="<?php if (!$row['abspath']) {
                                     echo $row['thumbpath'];
-                                } ?>" id="thumbpath_org" name="thumbpath_org"><input type="hidden" id="thumbpath_last" name="thumbpath_last"> <input type="button"
-                                                                                                                                                     value="<?php echo "{$admtext['select']}..."; ?>"
-                                                                                                                                                     name="thumbselect"
-                                                                                                                                                     OnClick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('thumbpath',folder);">
+                                } ?>" id="thumbpath_org" name="thumbpath_org">
+                                <input type="hidden" id="thumbpath_last" name="thumbpath_last">
+                                <input type="button"
+                                       value="<?php echo "{$admtext['select']}..."; ?>"
+                                       name="thumbselect"
+                                       OnClick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('thumbpath',folder);">
                             </td>
                         </tr>
                         <tr>
@@ -303,11 +319,15 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         </tr>
                         <tr id="vidrow1">
                             <td><?php echo $admtext['width']; ?>:</td>
-                            <td><input type="text" name="width" value="<?php echo $row['width']; ?>" size="40"></td>
+                            <td>
+                                <input type="text" name="width" value="<?php echo $row['width']; ?>" size="40">
+                            </td>
                         </tr>
                         <tr id="vidrow2">
                             <td><?php echo $admtext['height']; ?>:</td>
-                            <td><input type="text" name="height" value="<?php echo $row['height']; ?>" size="40"><span class="normal"> (<?php echo $admtext['controller']; ?>)</span></td>
+                            <td>
+                                <input type="text" name="height" value="<?php echo $row['height']; ?>" size="40">
+                                <span class="normal"> (<?php echo $admtext['controller']; ?>)</span></td>
                         </tr>
                     </table>
                     <p class="smaller">
@@ -337,11 +357,15 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         </tr>
                         <tr>
                             <td><?php echo $admtext['photoowner']; ?>:</td>
-                            <td><input type="text" name="owner" value="<?php echo $row['owner']; ?>" size="40"></td>
+                            <td>
+                                <input type="text" name="owner" value="<?php echo $row['owner']; ?>" size="40">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['datetaken']; ?>:</td>
-                            <td><input type="text" name="datetaken" value="<?php echo $row['datetaken']; ?>" size="40" onblur="checkDate(this);"></td>
+                            <td>
+                                <input type="text" name="datetaken" value="<?php echo $row['datetaken']; ?>" size="40" onblur="checkDate(this);">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['tree']; ?>:</td>
@@ -436,26 +460,30 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         </tr>
 
                         <tr>
-                            <td valign="top" colspan="2"><input type="checkbox" name="alwayson" value="1"<?php if ($row['alwayson']) {
+                            <td valign="top" colspan="2">
+                                <input type="checkbox" name="alwayson" value="1"<?php if ($row['alwayson']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['alwayson']; ?></td>
                         </tr>
 
                         <!-- history section -->
                         <tr id="newwinrow">
-                            <td valign="top" colspan="2"><input type="checkbox" name="newwindow" value="1"<?php if ($row['newwindow']) {
+                            <td valign="top" colspan="2">
+                                <input type="checkbox" name="newwindow" value="1"<?php if ($row['newwindow']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['newwin']; ?></td>
                         </tr>
 
                         <!-- headstone section -->
                         <tr id="linktocemrow">
-                            <td colspan="2" valign="top"><input type="checkbox" name="linktocem" value="1"<?php if ($row['linktocem']) {
+                            <td colspan="2" valign="top">
+                                <input type="checkbox" name="linktocem" value="1"<?php if ($row['linktocem']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['linktocem']; ?></td>
                         </tr>
                         <tr id="maprow">
-                            <td colspan="2" valign="top"><input type="checkbox" name="showmap" value="1"<?php if ($row['showmap']) {
+                            <td colspan="2" valign="top">
+                                <input type="checkbox" name="showmap" value="1"<?php if ($row['showmap']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['showmap']; ?></td>
                         </tr>
@@ -482,10 +510,12 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                     <table class="topbuffer normal" width="100%">
                         <tr>
                             <td width="150"><?php echo $admtext['placetaken']; ?>:</td>
-                            <td><input type="text" name="place" id="place" value="<?php echo $row['placetaken']; ?>" size="40" style="float:left;"><a href="#"
-                                                                                                                                                     onclick="return openFindPlaceForm('place');"
-                                                                                                                                                     title="<?php echo $admtext['find']; ?>"
-                                                                                                                                                     class="smallicon admin-find-icon dn2px"></a>
+                            <td>
+                                <input type="text" name="place" id="place" value="<?php echo $row['placetaken']; ?>" size="40" style="float:left;">
+                                <a href="#"
+                                   onclick="return openFindPlaceForm('place');"
+                                   title="<?php echo $admtext['find']; ?>"
+                                   class="smallicon admin-find-icon dn2px"></a>
                             </td>
                         </tr>
                         <?php
@@ -506,18 +536,24 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         ?>
                         <tr>
                             <td><?php echo $admtext['latitude']; ?>:</td>
-                            <td><input type="text" name="latitude" value="<?php echo $row['latitude']; ?>" size="20" id="latbox"></td>
+                            <td>
+                                <input type="text" name="latitude" value="<?php echo $row['latitude']; ?>" size="20" id="latbox">
+                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['longitude']; ?>:</td>
-                            <td><input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox"></td>
+                            <td>
+                                <input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox">
+                            </td>
                         </tr>
                         <?php
                         if ($map['key']) {
                             ?>
                             <tr>
                                 <td><?php echo $admtext['zoom']; ?>:</td>
-                                <td><input type="text" name="zoom" value="<?php echo $row['zoom']; ?>" size="20" id="zoombox"></td>
+                                <td>
+                                    <input type="text" name="zoom" value="<?php echo $row['zoom']; ?>" size="20" id="zoombox">
+                                </td>
                             </tr>
                             <?php
                         }

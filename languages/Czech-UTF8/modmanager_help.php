@@ -42,9 +42,11 @@ echo help_header("Nápověda: Manažer módů");
                 </li>
             </ul>
             </p>
-            <p><strong>Dávkovou instalaci</strong> přidal do TNG 10.0.3 Rick Bisbee a umožňuje vykonat stejnou akci pro více módů. Popup okno s popisem přidal Jeff Robison.</p>
+            <p><strong>Dávkovou instalaci</strong> přidal do TNG 10.0.3 Rick Bisbee a umožňuje vykonat stejnou akci pro více módů. Popup okno s
+                popisem přidal Jeff Robison.</p>
             <p><strong>Možnosti</strong> přidal do TNG 10.0.3 Ken Roy a umožňuje měnit některé chování manažeru módů.</p>
-            <p><strong>Zobrazit protokol</strong> přidal do TNG 10.0.3 Ken Roy a zobrazuje protokol manažeru módů, který je nyní oddělen od protokolu administrace.
+            <p><strong>Zobrazit protokol</strong> přidal do TNG 10.0.3 Ken Roy a zobrazuje protokol manažeru módů, který je nyní oddělen od protokolu
+                administrace.
                 Protokol manažeru módů pro snadnější čitelnost akcí přeformátoval Rick Bisbee.</p>
             <p>Další informace můžete najít v článku
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Manažer módů</a> a v kategorii článků
@@ -97,7 +99,8 @@ echo help_header("Nápověda: Manažer módů");
                 <li><strong>Vyčistit</strong>, pokud mód byl částečně nainstalován, je k dispozici tlačítko <strong>Vyčistit</strong>. Operace
                     Vyčištění se pokusí odstranit vložený kód, obnovit a nahradit kód, a odstranit vytvořený soubor.
                 </li>
-                <li><strong>Nelze nainstalovat</strong>, pokud mód <strong>nelze</strong> instalovat. Tato zpráva bude předcházet jinou zprávu, která poskytne více informací o tom, proč mód nelze nainstalovat.
+                <li><strong>Nelze nainstalovat</strong>, pokud mód <strong>nelze</strong> instalovat. Tato zpráva bude předcházet jinou zprávu, která
+                    poskytne více informací o tom, proč mód nelze nainstalovat.
                 </li>
             </ul>
             <p>Příklady obrazovek stavu manažeru módů a jak interpretovat různé stavy najdete na
@@ -151,12 +154,14 @@ echo help_header("Nápověda: Manažer módů");
             <span class="optionhead">Interpretace stavu
         </span>
             <p>Informace o
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">interpretaci stavu</a> najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">interpretaci stavu</a>
+                najdete na TNG Wiki.
             </p>
             <span class="optionhead">Syntaxe konfiguračních souborů
         </span>
             <p>Informace o
-                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax" target="_blank">syntaxi konfiguračních souborů</a> najdete na TNG Wiki.
+                <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax" target="_blank">syntaxi konfiguračních
+                    souborů</a> najdete na TNG Wiki.
             </p>
             <span class="optionhead">Vytvoření konfiguračního souboru
         </span>
@@ -193,7 +198,9 @@ echo help_header("Nápověda: Manažer módů");
                 <ul>
                     <li>Vyčištěny - na základě vašeho výběru a kliknutím na tlačítko <strong>Vyčistit</strong></li>
                 </ul>
-                <li><strong>Nelze nainstalovat</strong> - zobrazí se seznam všech módů, které nelze nainstalovat z důvodu chybného cílového souboru nebo chybějících souborů, a mohou být</li>
+                <li><strong>Nelze nainstalovat</strong> - zobrazí se seznam všech módů, které nelze nainstalovat z důvodu chybného cílového souboru
+                    nebo chybějících souborů, a mohou být
+                </li>
                 <ul>
                     <li>Vymazány ze složky mods - na základě vašeho výběru a kliknutím na tlačítko <strong>Vymazat</strong></li>
                 </ul>
@@ -231,16 +238,26 @@ echo help_header("Nápověda: Manažer módů");
             </p>
             <p><strong>Protokolu manažeru módů</strong>
             <ul>
-                <li><strong>Zaznamenávat akce manažeru módů</strong> - umožní vám zvolit, zda chcete zaznamenávat potvrzení a akce manažeru módů. Výchozí volbou je <strong>Ano</strong>.</li>
-                <li><strong>Název protokolu</strong> - umožní vám určit název souboru, který bude použit pro protokol manažeru módů. Výchozí volbou je <strong>modmgrlog.txt</strong>.</li>
-                <li><strong>Maximální počet řádků</strong> - umožní vám určit, kolik řádků bude zachováváno v protokolu. Výchozí volbou je <strong>2000</strong>.</li>
+                <li><strong>Zaznamenávat akce manažeru módů</strong> - umožní vám zvolit, zda chcete zaznamenávat potvrzení a akce manažeru módů.
+                    Výchozí volbou je <strong>Ano</strong>.
+                </li>
+                <li><strong>Název protokolu</strong> - umožní vám určit název souboru, který bude použit pro protokol manažeru módů. Výchozí volbou je
+                    <strong>modmgrlog.txt</strong>.
+                </li>
+                <li><strong>Maximální počet řádků</strong> - umožní vám určit, kolik řádků bude zachováváno v protokolu. Výchozí volbou je <strong>2000</strong>.
+                </li>
             </ul>
             </p>
             <p><strong>Jiné</strong>
             <ul>
-                <li><strong>Řadit seznamy podle</strong> - umožní vám zvolit, podle kterého sloupce bude řazen Seznam módů a Dávková instalace. Výchozí volbou je <strong>Název konfiguračního souboru</strong>.</li>
-                <li><strong>Vynechat potvrzení</strong> - umožní vám zvolit, zda chcete vynechat zobrazení obrazovky Potvrzení v Seznamu módů. I když zvolíte Ano, Potvrzení bude stále zapisováno do protokolu. Výchozí volbou je <strong>Ne</strong>.</li>
-                <li><strong>Vynechat zprávy o akcích</strong> - umožní vám zvolit, zda chcete vynechat zobrazení obrazovky Zpráva o akci v Seznamu módů. I když zvolíte Ano, Zpráva o akci bude stále zapisována do protokolu. Výchozí volbou je
+                <li><strong>Řadit seznamy podle</strong> - umožní vám zvolit, podle kterého sloupce bude řazen Seznam módů a Dávková instalace.
+                    Výchozí volbou je <strong>Název konfiguračního souboru</strong>.
+                </li>
+                <li><strong>Vynechat potvrzení</strong> - umožní vám zvolit, zda chcete vynechat zobrazení obrazovky Potvrzení v Seznamu módů. I když
+                    zvolíte Ano, Potvrzení bude stále zapisováno do protokolu. Výchozí volbou je <strong>Ne</strong>.
+                </li>
+                <li><strong>Vynechat zprávy o akcích</strong> - umožní vám zvolit, zda chcete vynechat zobrazení obrazovky Zpráva o akci v Seznamu
+                    módů. I když zvolíte Ano, Zpráva o akci bude stále zapisována do protokolu. Výchozí volbou je
                     <strong>Ne</strong>.
                 </li>
             </ul>

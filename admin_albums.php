@@ -96,7 +96,9 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     <table>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td><input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield"></td>
+                            <td>
+                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                            </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
@@ -104,7 +106,8 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findalbum" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findalbum" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
 
                 <?php

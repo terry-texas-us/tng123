@@ -16,61 +16,61 @@ if (preg_match("/\n[[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/i", $ema
     die("sorry!");
 }
 if (preg_match("/\r/", $email) || preg_match("/\n/", $email)) {
-  die("sorry!");
+    die("sorry!");
 }
 
 $email = strtok($email, ",; ");
 $div = "";
 
 if ($email) {
-  $sendmail = 0;
+    $sendmail = 0;
 
-  //if username is there too, then look up based on username and get password
-  if ($username) {
-    $query = "SELECT realname, allow_profile FROM $users_table WHERE username = \"$username\"";
-    $result = tng_query($query);
-    $row = tng_fetch_assoc($result);
-    tng_free_result($result);
-
-    $div = "pwdmsg";
-    if ($row['allow_profile']) {
-        $newpassword = generatePassword(0);
-        $query = "UPDATE $users_table SET password = '" . PasswordEncode($newpassword) . "', password_type = '" . PasswordType() . "' WHERE email = '$email' AND username = '$username' AND allow_living != '-1'";
+    //if username is there too, then look up based on username and get password
+    if ($username) {
+        $query = "SELECT realname, allow_profile FROM $users_table WHERE username = \"$username\"";
         $result = tng_query($query);
-        $success = tng_affected_rows();
+        $row = tng_fetch_assoc($result);
+        tng_free_result($result);
 
-        if ($success) {
-            $sendmail = 1;
-            $content = $text['newpass'] . ": $newpassword";
-            $message = $text['pwdsent'];
+        $div = "pwdmsg";
+        if ($row['allow_profile']) {
+            $newpassword = generatePassword(0);
+            $query = "UPDATE $users_table SET password = '" . PasswordEncode($newpassword) . "', password_type = '" . PasswordType() . "' WHERE email = '$email' AND username = '$username' AND allow_living != '-1'";
+            $result = tng_query($query);
+            $success = tng_affected_rows();
+
+            if ($success) {
+                $sendmail = 1;
+                $content = $text['newpass'] . ": $newpassword";
+                $message = $text['pwdsent'];
+            } else {
+                $message = $text['loginnotsent3'];
+            }
         } else {
-            $message = $text['loginnotsent3'];
+            $message = $text['loginnotsent'];
         }
     } else {
-      $message = $text['loginnotsent'];
+        $div = "usnmsg";
+        $query = "SELECT realname, username FROM $users_table WHERE email = \"$email\"";
+        $result = tng_query($query);
+        $row = tng_fetch_assoc($result);
+        tng_free_result($result);
+
+        if ($row['username']) {
+            $sendmail = 1;
+            $content = $text['logininfo'] . ":\n\n{$text['username']}: {$row['username']}";
+            $message = $text['usersent'];
+        } else {
+            $message = $text['loginnotsent2'];
+        }
     }
-  } else {
-    $div = "usnmsg";
-    $query = "SELECT realname, username FROM $users_table WHERE email = \"$email\"";
-    $result = tng_query($query);
-    $row = tng_fetch_assoc($result);
-    tng_free_result($result);
 
-    if ($row['username']) {
-      $sendmail = 1;
-      $content = $text['logininfo'] . ":\n\n{$text['username']}: {$row['username']}";
-      $message = $text['usersent'];
-    } else {
-      $message = $text['loginnotsent2'];
+    if ($sendmail) {
+        $mailmessage = $content;
+        $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
+
+        tng_sendmail($owner, $emailaddr, $row['realname'], $email, $text['logininfo'], $mailmessage, $emailaddr, $emailaddr);
     }
-  }
-
-  if ($sendmail) {
-    $mailmessage = $content;
-    $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
-
-    tng_sendmail($owner, $emailaddr, $row['realname'], $email, $text['logininfo'], $mailmessage, $emailaddr, $emailaddr);
-  }
 }
 header("Content-type:text/html; charset=" . $session_charset);
 echo "{\"div\":\"$div\", \"msg\":\"$message\"}";

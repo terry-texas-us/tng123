@@ -206,7 +206,7 @@ $imgsrc = getAlbumPhoto($albumID, $albumname);
 if (!$imgsrc) {
     ?>
     <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $albumname; ?><br><span
-                class="normal"><?php echo $description; ?></span></h2>
+            class="normal"><?php echo $description; ?></span></h2>
     <br style="clear: left;">
     <?php
 } else {

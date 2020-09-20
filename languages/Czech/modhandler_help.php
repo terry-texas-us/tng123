@@ -48,32 +48,44 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 <li><strong>mods</strong> obsahuje konfigura�n� soubory m�d� a p�idru�en� podp�rn� soubory m�d�. Slo�ka mods m��e b�t p�ejmenov�na.
                     Mana�er m�d� pou��v� pro pr�ci s n�zvem slo�ky prom�nnou $modspath.
                 </li>
-                <li><strong>extensions</strong> obsahuje n�kter� roz���en� m�d�, kter� jsou instalov�ny jin�mi konfigura�n�mi soubory mana�eru m�d�. Slo�ka extensions m��e b�t p�ejmenov�na. Mana�er m�d� pou��v� pro pr�ci s n�zvem slo�ky prom�nnou
+                <li><strong>extensions</strong> obsahuje n�kter� roz���en� m�d�, kter� jsou instalov�ny jin�mi konfigura�n�mi soubory mana�eru m�d�.
+                    Slo�ka extensions m��e b�t p�ejmenov�na. Mana�er m�d� pou��v� pro pr�ci s n�zvem slo�ky prom�nnou
                     $modspath.
                 </li>
-                <li><strong>classes</strong> obsahuje t��dy Objektov� orientovan�ho programov�n� (Object Orient Progamming classes), kter� byly rozd�leny a vylep�eny z p�edchoz�ho souboru managemods.class.php, kter� vytvo�il Sean Schwoere z p�vodn� k�du
+                <li><strong>classes</strong> obsahuje t��dy Objektov� orientovan�ho programov�n� (Object Orient Progamming classes), kter� byly
+                    rozd�leny a vylep�eny z p�edchoz�ho souboru managemods.class.php, kter� vytvo�il Sean Schwoere z p�vodn� k�du
                     Mana�eru m�d� od Briana McFadyena.
                 </li>
             </ul>
             </p>
 
-            <p>Z�lo�ka <strong>Seznam m�d�</strong> nyn� spojuje p�edchoz� Seznam m�d� a D�vkov� instalace, kter� do TNG 10.0.3 p�idal Rick Bisbee, a umo��uje vykonat stejnou akci pro v�ce m�d�. Popis a roz���en� stav lze zobrazit pomoc� kliknut� na �ipku
-                vpravo ve sloupci Stav nebo kdekoli na ��dku. P�ejet�m kurzorem my�i nad ��dkem se zv�razn� ��dek a usnadn� se tak v�b�ru stavu pro roz���en� zobrazen�. P�ejet�m kurzoru my�i p�es znam�nko + ve sloupci Soubory se zobraz� seznam soubor�,
+            <p>Z�lo�ka <strong>Seznam m�d�</strong> nyn� spojuje p�edchoz� Seznam m�d� a D�vkov� instalace, kter� do TNG 10.0.3 p�idal Rick Bisbee, a
+                umo��uje vykonat stejnou akci pro v�ce m�d�. Popis a roz���en� stav lze zobrazit pomoc� kliknut� na �ipku
+                vpravo ve sloupci Stav nebo kdekoli na ��dku. P�ejet�m kurzorem my�i nad ��dkem se zv�razn� ��dek a usnadn� se tak v�b�ru stavu pro
+                roz���en� zobrazen�. P�ejet�m kurzoru my�i p�es znam�nko + ve sloupci Soubory se zobraz� seznam soubor�,
                 kter� dan� m�d m�n�, vytv��� nebo kop�ruje.</p>
             <p>Pokud je povolena mo�nost Zobrazit dal�� n�stroje pro v�voj��e, TNG v12 p�id�v� n�sleduj�c� zm�ny:
             <ul>
                 <li>kliknut�m na n�zev souboru se otev�e tabulka parseru pro tento m�d</li>
                 <li>kliknut�m na n�zev souboru cfg se zobraz� soubor cfg na jin� z�lo�ce</li>
-                <li>tla��tko <strong>Podrobnosti</strong> v bu�ce Stav funguje jako p�ep�na� pro rozbalen� nebo sbalen� zobrazen� sm�rnic souboru ve stavu Instalovat nebo Lze instalovat.</li>
+                <li>tla��tko <strong>Podrobnosti</strong> v bu�ce Stav funguje jako p�ep�na� pro rozbalen� nebo sbalen� zobrazen� sm�rnic souboru ve
+                    stavu Instalovat nebo Lze instalovat.
+                </li>
             </ul>
             </p>
 
-            <p>Z�lo�ku <strong>Zobrazit protokol</strong> p�idal do TNG 10.0.3 Ken Roy a zobrazuje protokol Mana�eru m�d�, kter� je nyn� odd�len od protokolu Administrace. Protokol mana�eru m�d� je p�eform�tovan� protokol z Mana�eru m�d� vytvo�en�ho Rickem
-                Bisbee a Robinem Richmondem v TNG 10.0.3 a srozumitelnost vykonan�ch akc� zaznamenan�ch v protokolu je nyn� lep��. Zpr�vy a hl�en� byly zna�n� zjednodu�eny.</p>
-            <p>Z�lo�ka <strong>Mo�nosti</strong> je modifikac� z�lo�ky p�idan� Kenem Royem do TNG 10.0.3 a umo��uje m�nit n�kter� chov�n� mana�eru m�d�.</p>
-            <p>Z�lo�ka <strong>Anal�za souboru TNG</strong> je voliteln� z�lo�ka, jej� zobrazen� lze povolit na obrazovce Mo�nosti, a umo��uje vybrat soubor TNG a zobrazit, kter� m�dy jej m�n�.</p>
-            <p>Z�lo�ka <strong>Tabulka parseru</strong> je voliteln� z�lo�ka, jej� zobrazen� lze povolit na obrazovce Mo�nosti povolen�m <strong>Dal�� n�stroje pro v�voj��e</strong>, a umo�n� zobrazit, jak je dan� m�d analyzov�n Mana�erem m�d�.</p>
-            <p>Z�lo�ka <strong>Doporu�en� aktualizace</strong> je voliteln� z�lo�ka, jej� zobrazen� lze povolit na obrazovce Mo�nosti, kter� v�m umo�n� aktualizovat soubory cust_text.php, pokud jste tak neu�inili v r�mci aktualizace TNG.</p>
+            <p>Z�lo�ku <strong>Zobrazit protokol</strong> p�idal do TNG 10.0.3 Ken Roy a zobrazuje protokol Mana�eru m�d�, kter� je nyn� odd�len od
+                protokolu Administrace. Protokol mana�eru m�d� je p�eform�tovan� protokol z Mana�eru m�d� vytvo�en�ho Rickem
+                Bisbee a Robinem Richmondem v TNG 10.0.3 a srozumitelnost vykonan�ch akc� zaznamenan�ch v protokolu je nyn� lep��. Zpr�vy a hl�en�
+                byly zna�n� zjednodu�eny.</p>
+            <p>Z�lo�ka <strong>Mo�nosti</strong> je modifikac� z�lo�ky p�idan� Kenem Royem do TNG 10.0.3 a umo��uje m�nit n�kter� chov�n� mana�eru
+                m�d�.</p>
+            <p>Z�lo�ka <strong>Anal�za souboru TNG</strong> je voliteln� z�lo�ka, jej� zobrazen� lze povolit na obrazovce Mo�nosti, a umo��uje vybrat
+                soubor TNG a zobrazit, kter� m�dy jej m�n�.</p>
+            <p>Z�lo�ka <strong>Tabulka parseru</strong> je voliteln� z�lo�ka, jej� zobrazen� lze povolit na obrazovce Mo�nosti povolen�m <strong>Dal��
+                    n�stroje pro v�voj��e</strong>, a umo�n� zobrazit, jak je dan� m�d analyzov�n Mana�erem m�d�.</p>
+            <p>Z�lo�ka <strong>Doporu�en� aktualizace</strong> je voliteln� z�lo�ka, jej� zobrazen� lze povolit na obrazovce Mo�nosti, kter� v�m
+                umo�n� aktualizovat soubory cust_text.php, pokud jste tak neu�inili v r�mci aktualizace TNG.</p>
 
             <p>Dal�� informace m��ete naj�t v �l�nku
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager" target="_blank">Mana�er m�d� (v angli�tin�)</a> a v kategorii
@@ -102,7 +114,9 @@ echo help_header("N�pov�da: Mana�er m�d�");
                         <li>ur��, zda c�lov� um�st�n� ji� bylo nainstalov�no</li>
                     </ul>
                 <li>vytvo�� zadanou slo�ku nebo adres��</li>
-                <li>identifikuje nov� soubory, kter� maj� b�t vytvo�eny. Pokud je soubor ozna�en jako chr�n�n�, nebude odstran�n Odinstalac� ani Vy�i�t�n�m.</li>
+                <li>identifikuje nov� soubory, kter� maj� b�t vytvo�eny. Pokud je soubor ozna�en jako chr�n�n�, nebude odstran�n Odinstalac� ani
+                    Vy�i�t�n�m.
+                </li>
                 <li>identifikuje soubory, kter� maj� b�t zkop�rov�ny do ko�enov� slo�ky TNG nebo do ur�en� slo�ky. Pokud je soubor ozna�en jako
                     chr�n�n�, nebude odstran�n Odinstalac� ani Vy�i�t�n�m.
                 </li>
@@ -129,7 +143,8 @@ echo help_header("N�pov�da: Mana�er m�d�");
                     Operace Vy�i�t�n� se pokus� odstranit vlo�en� k�d, obnovit a nahradit k�d, a odstranit jak�koli vytvo�en�
                     nebo zkop�rovan� soubory.
                 </li>
-                <li><strong>Nelze nainstalovat</strong>, pokud m�d <strong>nelze</strong> instalovat. Roz���en� (zobrazen� kompletn� informace) stavu poskytne v�ce informac� o tom, pro� m�d nelze nainstalovat.
+                <li><strong>Nelze nainstalovat</strong>, pokud m�d <strong>nelze</strong> instalovat. Roz���en� (zobrazen� kompletn� informace) stavu
+                    poskytne v�ce informac� o tom, pro� m�d nelze nainstalovat.
                 </li>
             </ul>
             <p>P��klady obrazovek stavu mana�eru m�d� a jak interpretovat r�zn� stavy najdete na
@@ -230,13 +245,18 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 <ul>
                     <li>Vy�i�t�ny - na z�klad� va�eho v�b�ru a kliknut�m na tla��tko <strong>Vy�istit vybran�</strong></li>
                 </ul>
-                <li><strong>Nelze nainstalovat</strong> - zobraz� se seznam v�ech m�d�, kter� nelze nainstalovat z d�vodu chybn�ho c�lov�ho souboru nebo chyb�j�c�ch soubor�, a mohou b�t</li>
+                <li><strong>Nelze nainstalovat</strong> - zobraz� se seznam v�ech m�d�, kter� nelze nainstalovat z d�vodu chybn�ho c�lov�ho souboru
+                    nebo chyb�j�c�ch soubor�, a mohou b�t
+                </li>
                 <ul>
                     <li>Vymaz�ny ze slo�ky mods - na z�klad� va�eho v�b�ru a kliknut�m na tla��tko <strong>Vymazat vybran�</strong></li>
                 </ul>
-                <li><strong>Vybrat</strong> - p�id�no v TNG v12 - zobraz� se seznam v�ech mod�, kter� mohou b�t vybr�ny bez ohledu na stav a pot� pouze vrac� tyto m�dy do seznamu</li>
+                <li><strong>Vybrat</strong> - p�id�no v TNG v12 - zobraz� se seznam v�ech mod�, kter� mohou b�t vybr�ny bez ohledu na stav a pot�
+                    pouze vrac� tyto m�dy do seznamu
+                </li>
                 <ul>
-                    <li>Tla��tko <strong>Vymazat</strong> bude dostupn� pouze na seznamu Vybrat, pokud m�te aktivn� volbu Povolit Vymazat vybran� u ��ste�n� nainstalovan�ch m�d�. Tato funkce byla p�id�na hlavn� pro v�voj��e m�d� k vy�i�t�n� jejich
+                    <li>Tla��tko <strong>Vymazat</strong> bude dostupn� pouze na seznamu Vybrat, pokud m�te aktivn� volbu Povolit Vymazat vybran� u
+                        ��ste�n� nainstalovan�ch m�d�. Tato funkce byla p�id�na hlavn� pro v�voj��e m�d� k vy�i�t�n� jejich
                         testovac�ch prost�ed�.
                     </li>
                 </ul>
@@ -269,44 +289,67 @@ echo help_header("N�pov�da: Mana�er m�d�");
                     p�esm�rov�n� v p��pad� <strong>Pouze chyb</strong>, kter� zobraz� protokol pouze v p��pad�, �e se vyskytne v pr�b�hu instalace,
                     odinstalace, vy�i�t�n� nebo vymaz�n� chyba.
                 </li>
-                <li><strong>Do protokolu zapsat celou cestu soubor�</strong> - umo�n� v�m zapsat Ne, pokud chcete u soubor� v protokolu zobrazit pouze relativn� cestu. V�choz� volbou je <strong>Ano</strong> pro zobrazen� �pln� absolutn� cesty.</li>
+                <li><strong>Do protokolu zapsat celou cestu soubor�</strong> - umo�n� v�m zapsat Ne, pokud chcete u soubor� v protokolu zobrazit pouze
+                    relativn� cestu. V�choz� volbou je <strong>Ano</strong> pro zobrazen� �pln� absolutn� cesty.
+                </li>
             </ul>
             </p>
             <p><strong>Mo�nosti nastaven� zobrazen�</strong>
             <ul>
-                <li><strong>�adit seznamy podle</strong> - umo�n� v�m zvolit, podle kter�ho sloupce bude �azen Seznam m�d�. Mo�nosti jsou N�zev m�du a N�zev konfigura�n�ho souboru. V�choz� volbou je <strong>N�zev m�du</strong>.</li>
-                <li><strong>Pou��t pevn� z�hlav�</strong> - umo�n� v�m zm�nit volbu, aby nebylo zobrazeno pevn� z�hlav�. Tato volba nen� z�eteln�, pokud m�te velk� monitor a m�lo m�d�. V�choz� volbou je <strong>Ano</strong> pro zobrazen� pevn�ho z�hlav�.
+                <li><strong>�adit seznamy podle</strong> - umo�n� v�m zvolit, podle kter�ho sloupce bude �azen Seznam m�d�. Mo�nosti jsou N�zev m�du a
+                    N�zev konfigura�n�ho souboru. V�choz� volbou je <strong>N�zev m�du</strong>.
+                </li>
+                <li><strong>Pou��t pevn� z�hlav�</strong> - umo�n� v�m zm�nit volbu, aby nebylo zobrazeno pevn� z�hlav�. Tato volba nen� z�eteln�,
+                    pokud m�te velk� monitor a m�lo m�d�. V�choz� volbou je <strong>Ano</strong> pro zobrazen� pevn�ho z�hlav�.
                     Bez ohledu na nastaven� t�to volby se pevn� z�hlav� nezobraz� v p��pad� chytr�ch telefon� (mobiln� re�im).
                 </li>
-                <li><strong>Upravit pevn� z�hlav�</strong> - umo�n� v�m povolit �pravu pevn�ho z�hlav� jQuery v p��pad�, �e pevn� z�hlav� nen� spr�vn� zobrazeno. Tato volba je pot�eba pouze na ur�it�ch monitorech. V�choz� volbou je <strong>Ne</strong> a
+                <li><strong>Upravit pevn� z�hlav�</strong> - umo�n� v�m povolit �pravu pevn�ho z�hlav� jQuery v p��pad�, �e pevn� z�hlav� nen� spr�vn�
+                    zobrazeno. Tato volba je pot�eba pouze na ur�it�ch monitorech. V�choz� volbou je <strong>Ne</strong> a
                     nepou��vat javascript jQuery pro �pravu pevn�ho z�hlav�.
                 </li>
-                <li><strong>Pou��t pruhy</strong> - umo�n� v�m zm�nit volbu a nepou��t pruhy p�i zobrazen� Seznamu m�d�. V�choz� volbou je <strong>Ano</strong>, kter� pou�ije t��du databackalt k zobrazen� barevn�ch pruh� st��dav� po po�tu N ��dk�.</li>
-                <li><strong>Pruh po tomto po�tu ��dk�</strong> - umo�n� nastavit po�et ��dk�, po kter�m se budou st��dat barevn� pruhy. V�choz� volbou jsou <strong>3</strong> ��dky jedn� barvy a pak 3 ��dky jin� barvy.</li>
-                <li><strong>Odstranit mezery z n�zv� soubor� v seznamu m�d�</strong> - umo�n� odstranit mezery z n�zv� m�d� p�ed jejich zobrazen�m v Seznamu n�zv� m�d�. V�choz� volbou je <strong>Ne</strong>, kdy jsou mezery v n�zvech m�d� zobrazeny a tyto
+                <li><strong>Pou��t pruhy</strong> - umo�n� v�m zm�nit volbu a nepou��t pruhy p�i zobrazen� Seznamu m�d�. V�choz� volbou je
+                    <strong>Ano</strong>, kter� pou�ije t��du databackalt k zobrazen� barevn�ch pruh� st��dav� po po�tu N ��dk�.
+                </li>
+                <li><strong>Pruh po tomto po�tu ��dk�</strong> - umo�n� nastavit po�et ��dk�, po kter�m se budou st��dat barevn� pruhy. V�choz� volbou
+                    jsou <strong>3</strong> ��dky jedn� barvy a pak 3 ��dky jin� barvy.
+                </li>
+                <li><strong>Odstranit mezery z n�zv� soubor� v seznamu m�d�</strong> - umo�n� odstranit mezery z n�zv� m�d� p�ed jejich zobrazen�m v
+                    Seznamu n�zv� m�d�. V�choz� volbou je <strong>Ne</strong>, kdy jsou mezery v n�zvech m�d� zobrazeny a tyto
                     n�zvy pak odpov�daj� n�zv�m �l�nk� na TNG Wiki.
                 </li>
-                <li><strong>Zobrazit z�lo�ku Anal�za soubor� TNG</strong> - umo�n� ur�it, zda chcete zobrazit z�lo�ku Anal�za sooubor� TNG. V�choz� volbou je <strong>Ne</strong>, kter� potla�� zobrazen� z�lo�ky Anal�za sooubor� TNG.</li>
-                <li><strong>Zobrazit dal�� n�stroje pro v�voj��e</strong> - umo�n� ur�it, zda chcete zobrazit z�lo�ku Tabulka parseru. V�choz� volbou je <strong>Ne</strong>, kter� potla�� zobrazen� z�lo�ky Tabulka parseru. Tato volba tak� ��d�, zda se na
-                    kliknut� na n�zev m�du zobraz� tabulka parseru pro dan� mod a zda se kliknut�m na n�zev konfigura�n�ho souboru zobraz� na nov� z�lo�ce konfigura�n� soubor.
+                <li><strong>Zobrazit z�lo�ku Anal�za soubor� TNG</strong> - umo�n� ur�it, zda chcete zobrazit z�lo�ku Anal�za sooubor� TNG. V�choz�
+                    volbou je <strong>Ne</strong>, kter� potla�� zobrazen� z�lo�ky Anal�za sooubor� TNG.
                 </li>
-                <li><strong>Zobrazit z�lo�ku Doporu�en� aktualizace</strong> - umo�n� ur�it, zda chcete zobrazit z�lo�ku Doporu�en� aktualizace. V�choz� volbou je <strong>Ne</strong>, kter� potla�� zobrazen� z�lo�ky Doporu�en� aktualizace. Tato z�lo�ka
+                <li><strong>Zobrazit dal�� n�stroje pro v�voj��e</strong> - umo�n� ur�it, zda chcete zobrazit z�lo�ku Tabulka parseru. V�choz� volbou
+                    je <strong>Ne</strong>, kter� potla�� zobrazen� z�lo�ky Tabulka parseru. Tato volba tak� ��d�, zda se na
+                    kliknut� na n�zev m�du zobraz� tabulka parseru pro dan� mod a zda se kliknut�m na n�zev konfigura�n�ho souboru zobraz� na nov�
+                    z�lo�ce konfigura�n� soubor.
+                </li>
+                <li><strong>Zobrazit z�lo�ku Doporu�en� aktualizace</strong> - umo�n� ur�it, zda chcete zobrazit z�lo�ku Doporu�en� aktualizace.
+                    V�choz� volbou je <strong>Ne</strong>, kter� potla�� zobrazen� z�lo�ky Doporu�en� aktualizace. Tato z�lo�ka
                     nemus� b�t zobrazena, pokud jste provedli aktualizaci souboru cust_text.php v r�mci aktualizace na TNG v12.
                 </li>
             </ul>
             </p>
             <p><strong>Jin� mo�nosti</strong>
             <ul>
-                <li><strong>Povolit Vymazat vybran� pro ��ste�n� nainstalovan� m�dy</strong> - povol� zobrazen� tla��tka <strong>Vymazat</strong> v seznamu vybran�ch ��ste�n� nainstalovan�ch m�d�, pomoc� kter�ho lze vymazat v�ce m�d� najednou, jako nap�.
-                    vymaz�n� p�edchoz�ch verz� mod�, kter� nebyly vymaz�ny p�ed instalac� nov�j�� verz�. V�choz� volbou je <strong>Ne</strong>. Tuto volbu doporu�ujeme povolit pouze v p��pad�, �e pot�ebujete vymazat v�ce mod�, ani� byste museli
-                    odinstalovat aktu�ln� verze, abyste odstranili p�edchoz� verze m�du, kdy� jste zapomn�li odinstalovat a vymazat p�edchoz� verze modu p�ed instalac� nov� verze. Norm�ln� tuto volbu nechte nastavenou na Ne a volbu Ne obnovte po odstran�n�
+                <li><strong>Povolit Vymazat vybran� pro ��ste�n� nainstalovan� m�dy</strong> - povol� zobrazen� tla��tka <strong>Vymazat</strong> v
+                    seznamu vybran�ch ��ste�n� nainstalovan�ch m�d�, pomoc� kter�ho lze vymazat v�ce m�d� najednou, jako nap�.
+                    vymaz�n� p�edchoz�ch verz� mod�, kter� nebyly vymaz�ny p�ed instalac� nov�j�� verz�. V�choz� volbou je <strong>Ne</strong>. Tuto
+                    volbu doporu�ujeme povolit pouze v p��pad�, �e pot�ebujete vymazat v�ce mod�, ani� byste museli
+                    odinstalovat aktu�ln� verze, abyste odstranili p�edchoz� verze m�du, kdy� jste zapomn�li odinstalovat a vymazat p�edchoz� verze
+                    modu p�ed instalac� nov� verze. Norm�ln� tuto volbu nechte nastavenou na Ne a volbu Ne obnovte po odstran�n�
                     p�edchoz�ch verz� m�du, kter� se zobrazuj� jako ��ste�n� nainstalovan�.
                 </li>
-                <li><strong>Povolit Vymazat pro samostatn� nainstalovan� m�dy</strong> - umo�n� zapnut� volby zobrazen� tla��tka <strong>Vymazat</strong> vedle tla��tka Odinstalovat u samostatn� instalovan�ch m�d�, nap�. pro vymaz�n� p�edchoz� verze m�du,
-                    kter� nebyla vymaz�na p�ed instalac� nov�j�� verze. V�choz� volbou je <strong>Ne</strong>. Doporu�ujeme, abyste tuto volbu povolili pouze v p��pad�, kdy je pot�eba vymazat p�edchoz� verzi m�du, bez nutnosti odinstalov�n� aktu�ln� verze
-                    za ��elem vymaz�n� p�edchoz� verze, a za norm�ln�ch okolnost� ponechte tuto volbu nastavenou na <strong>Ne</strong> a volbu Ne obnovte po odstran�n� p�edchoz�ch verz� m�du, kter� se zobrazuj� jako nainstalovan�.
+                <li><strong>Povolit Vymazat pro samostatn� nainstalovan� m�dy</strong> - umo�n� zapnut� volby zobrazen� tla��tka
+                    <strong>Vymazat</strong> vedle tla��tka Odinstalovat u samostatn� instalovan�ch m�d�, nap�. pro vymaz�n� p�edchoz� verze m�du,
+                    kter� nebyla vymaz�na p�ed instalac� nov�j�� verze. V�choz� volbou je <strong>Ne</strong>. Doporu�ujeme, abyste tuto volbu
+                    povolili pouze v p��pad�, kdy je pot�eba vymazat p�edchoz� verzi m�du, bez nutnosti odinstalov�n� aktu�ln� verze
+                    za ��elem vymaz�n� p�edchoz� verze, a za norm�ln�ch okolnost� ponechte tuto volbu nastavenou na <strong>Ne</strong> a volbu Ne
+                    obnovte po odstran�n� p�edchoz�ch verz� m�du, kter� se zobrazuj� jako nainstalovan�.
                 </li>
-                <li><strong>Povolit smaz�n� podp�rn� slo�ky po vymaz�n� modu</strong> - umo�n� zapnut� volby smaz�n� slo�ky (slo�ek) p�idru�en�ch k m�du p�i maz�n� m�du. V�choz� volbou je <strong>Ne</strong>. Doporu�ujeme tuto mo�nost povolit jen tehdy,
+                <li><strong>Povolit smaz�n� podp�rn� slo�ky po vymaz�n� modu</strong> - umo�n� zapnut� volby smaz�n� slo�ky (slo�ek) p�idru�en�ch k
+                    m�du p�i maz�n� m�du. V�choz� volbou je <strong>Ne</strong>. Doporu�ujeme tuto mo�nost povolit jen tehdy,
                     pokud ch�pete nebezpe�� vymaz�n� nezam��len�ch slo�ek. V���me, �e toto riziko je velmi mal�.
                 </li>
             </ul>

@@ -4,7 +4,7 @@ include "adminlib.php";
 require_once "./admin/trees.php";
 
 if (!$mediaID) {
-  die("no args");
+    die("no args");
 }
 
 $textpart = "photos";
@@ -21,9 +21,9 @@ tng_free_result($result);
 $row['firstname'] = preg_replace("/\"/", "&#34;", $row['firstname']);
 
 if (!$allow_media_edit && !$allow_media_add) {
-  $message = $admtext['norights'];
-  header("Location: ajx_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: ajx_login.php?message=" . urlencode($message));
+    exit;
 }
 
 [$tree, $trees, $treename, $treequery] = getOrderedTreesList($assignedtree, $trees_table);

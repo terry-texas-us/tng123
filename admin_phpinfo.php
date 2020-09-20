@@ -5,13 +5,13 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  if ($assignedtree) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    $admin_login = 1;
+    include "checklogin.php";
+    if ($assignedtree) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 }
 
 echo phpinfo();

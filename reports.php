@@ -28,14 +28,14 @@ if (!$numrows) {
 
     if ($sitever != "standard") {
         if ($tabletype == "toggle") {
-      $tabletype = "columntoggle";
-    }
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
-  } else {
+            $tabletype = "columntoggle";
+        }
+        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    } else {
         $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
-  }
-  echo $header;
-  ?>
+    }
+    echo $header;
+    ?>
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
@@ -43,22 +43,22 @@ if (!$numrows) {
         <th data-tablesaw-priority="2" class="fieldnameback fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
     </tr>
     </thead>
-  <?php
-  $count = 1;
-  while ($row = tng_fetch_assoc($result)) {
-      echo "<tr>";
-      echo "<td class='databack'><span class='normal'>$count.</span></td>";
-      echo "<td class='databack'><span class='normal'>&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td>";
-      echo "<td class='databack'><span class='normal'>{$row['reportdesc']}&nbsp;</span></td>";
-      echo "</tr>\n";
-      $count++;
-  }
-  tng_free_result($result);
-  ?>
-  </table>
-  <br>
+    <?php
+    $count = 1;
+    while ($row = tng_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td class='databack'><span class='normal'>$count.</span></td>";
+        echo "<td class='databack'><span class='normal'>&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td>";
+        echo "<td class='databack'><span class='normal'>{$row['reportdesc']}&nbsp;</span></td>";
+        echo "</tr>\n";
+        $count++;
+    }
+    tng_free_result($result);
+    ?>
+    </table>
+    <br>
 
-  <?php
+    <?php
 }
 
 tng_footer("");

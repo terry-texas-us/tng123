@@ -529,7 +529,9 @@ echo $formstr;
                         ?>
                     </select>
                 </td>
-                <td><input type="text" name="mynickname" value="<?php echo $mynickname; ?>"></td>
+                <td>
+                    <input type="text" name="mynickname" value="<?php echo $mynickname; ?>">
+                </td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $text['title']; ?>:</span></td>
@@ -546,7 +548,9 @@ echo $formstr;
                         ?>
                     </select>
                 </td>
-                <td><input type="text" name="mytitle" value="<?php echo $mytitle; ?>"></td>
+                <td>
+                    <input type="text" name="mytitle" value="<?php echo $mytitle; ?>">
+                </td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $text['prefix']; ?>:</span></td>
@@ -563,7 +567,9 @@ echo $formstr;
                         ?>
                     </select>
                 </td>
-                <td><input type="text" name="myprefix" value="<?php echo $myprefix; ?>"></td>
+                <td>
+                    <input type="text" name="myprefix" value="<?php echo $myprefix; ?>">
+                </td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $text['suffix']; ?>:</span></td>
@@ -580,7 +586,9 @@ echo $formstr;
                         ?>
                     </select>
                 </td>
-                <td><input type="text" name="mysuffix" value="<?php echo $mysuffix; ?>"></td>
+                <td>
+                    <input type="text" name="mysuffix" value="<?php echo $mysuffix; ?>">
+                </td>
             </tr>
             <tr>
                 <td colspan="3">&nbsp;</td>
@@ -647,9 +655,10 @@ echo $formstr;
             ?>
             <tr>
                 <td colspan="3"><br>
-                    <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();"> <input type="button"
-                                                                                                                                                                 value="<?php echo $text['resetall']; ?>"
-                                                                                                                                                                 onclick="resetValues();">
+                    <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();">
+                    <input type="button"
+                           value="<?php echo $text['resetall']; ?>"
+                           onclick="resetValues();">
                 </td>
             </tr>
         </table>

@@ -47,7 +47,7 @@ if ($tngprint) {
         case "heatmap":
         case "fan":
         case "img_viewer":
-        $flags['norobots'] = NOINOF;
+            $flags['norobots'] = NOINOF;
             break;
 
         //no indexing, but allow link following

@@ -9,8 +9,8 @@ include "checklogin.php";
 require "adminlog.php";
 
 if ($noteID) {
-  $query = "DELETE FROM $citations_table WHERE eventID = \"{$tngconfig['noteprefix']}$noteID{$tngconfig['notesuffix']}\"";
-  $result = @tng_query($query);
+    $query = "DELETE FROM $citations_table WHERE eventID = \"{$tngconfig['noteprefix']}$noteID{$tngconfig['notesuffix']}\"";
+    $result = @tng_query($query);
 }
 
 deleteNote($noteID, 1);

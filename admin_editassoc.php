@@ -60,7 +60,9 @@ header("Content-type:text/html; charset=" . $session_charset);
         </tr>
         <tr>
             <td valign="top"><span class="normal"><?php echo $admtext['relationship']; ?>:</span></td>
-            <td><input type="text" name="relationship" size="60" value="<?php echo $row['relationship']; ?>"></td>
+            <td>
+                <input type="text" name="relationship" size="60" value="<?php echo $row['relationship']; ?>">
+            </td>
         </tr>
     </table>
     <input type="hidden" name="assocID" value="<?php echo $assocID; ?>">

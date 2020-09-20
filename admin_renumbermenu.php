@@ -8,9 +8,9 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if ($assignedtree) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
@@ -51,7 +51,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                                 while ($row = tng_fetch_assoc($result)) {
                                     echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
                                 }
-                              ?>
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -70,15 +70,15 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                         <td><?php echo $admtext['mindigits']; ?>*:</td>
                         <td>
                             <select name="digits">
-                              <?php
-                              for ($i = 1; $i <= 20; $i++)
-                                echo "<option value=\"$i\">$i</option>\n";
-                              ?>
+                                <?php
+                                for ($i = 1; $i <= 20; $i++)
+                                    echo "<option value=\"$i\">$i</option>\n";
+                                ?>
                             </select>
                         </td>
                     </tr>
                 </table>
-              <br>
+                <br>
                 <input type="hidden" name="start" value="1">
                 <input type="submit" class="btn" value="<?php echo $admtext['renumber']; ?>"<?php if (!$tngconfig['maint']) {
                     echo " disabled";
@@ -91,8 +91,8 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                 <br><br>
                 <?php echo "<p class='normal'>*{$admtext['niprefix']}</p>\n"; ?>
             </form>
-    </td>
-  </tr>
+        </td>
+    </tr>
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>

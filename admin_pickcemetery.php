@@ -12,59 +12,61 @@ $result = tng_query($query);
 ?>
 
 <div class="databack ajaxwindow" id="cemdiv">
-  <?php
-  if (tng_num_rows($result)) {
-      ?>
-      <h3 class="subhead"><?php echo $admtext['choosecem']; ?></h3>
-      <p><?php echo $admtext['cemsavail']; ?></p>
-      <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
-          <table cellspacing="0" cellpadding="2">
-              <tr>
-                  <td>
-                      <select name="cemeteryID" id="cemeteryID">
-                          <option value=""></option>
-                          <?php
-                          while ($cemrow = tng_fetch_assoc($result)) {
-                              $location = $cemrow['country'];
-                          if ($cemrow['state']) {
-                            if ($location) {
-                              $location .= ", ";
-                            }
-                            $location .= $cemrow['state'];
-                          }
-                          if ($cemrow['county']) {
-                            if ($location) {
-                              $location .= ", ";
-                            }
-                            $location .= $cemrow['county'];
-                          }
-                          if ($cemrow['city']) {
-                            if ($location) {
-                              $location .= ", ";
-                            }
-                            $location .= $cemrow['city'];
-                          }
-                          if ($cemrow['cemname']) {
-                            if ($location) {
-                              $location .= ", ";
-                            }
-                            $location .= $cemrow['cemname'];
-                          }
-                          echo "<option value=\"{$cemrow['cemeteryID']}\">$location</option>\n";
-                        }
-                        ?>
-                      </select>
-                  </td>
-                  <td><input type="submit" value="<?php echo $admtext['go']; ?>"></td>
-              </tr>
-          </table>
-      </form>
     <?php
-  } else {
+    if (tng_num_rows($result)) {
+        ?>
+        <h3 class="subhead"><?php echo $admtext['choosecem']; ?></h3>
+        <p><?php echo $admtext['cemsavail']; ?></p>
+        <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
+            <table cellspacing="0" cellpadding="2">
+                <tr>
+                    <td>
+                        <select name="cemeteryID" id="cemeteryID">
+                            <option value=""></option>
+                            <?php
+                            while ($cemrow = tng_fetch_assoc($result)) {
+                                $location = $cemrow['country'];
+                                if ($cemrow['state']) {
+                                    if ($location) {
+                                        $location .= ", ";
+                                    }
+                                    $location .= $cemrow['state'];
+                                }
+                                if ($cemrow['county']) {
+                                    if ($location) {
+                                        $location .= ", ";
+                                    }
+                                    $location .= $cemrow['county'];
+                                }
+                                if ($cemrow['city']) {
+                                    if ($location) {
+                                        $location .= ", ";
+                                    }
+                                    $location .= $cemrow['city'];
+                                }
+                                if ($cemrow['cemname']) {
+                                    if ($location) {
+                                        $location .= ", ";
+                                    }
+                                    $location .= $cemrow['cemname'];
+                                }
+                                echo "<option value=\"{$cemrow['cemeteryID']}\">$location</option>\n";
+                            }
+                            ?>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" value="<?php echo $admtext['go']; ?>">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <?php
+    } else {
+        ?>
+        <p><?php echo $admtext['nocemsavail']; ?></p>
+        <?php
+    }
+    tng_free_result($result);
     ?>
-      <p><?php echo $admtext['nocemsavail']; ?></p>
-    <?php
-  }
-  tng_free_result($result);
-  ?>
 </div>

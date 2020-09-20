@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 include "checklogin.php";
 
 if ($session_charset != "UTF-8") {
-  $mytitle = tng_utf8_decode($mytitle);
+    $mytitle = tng_utf8_decode($mytitle);
 }
 
 $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = '$tree' AND reponame LIKE \"%$mytitle%\" ORDER BY reponame LIMIT 250";
@@ -25,24 +25,26 @@ header("Content-type:text/html; charset=" . $session_charset);
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-                <form action=""><input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindRepoForm();"></form>
+                <form action="">
+                    <input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindRepoForm();">
+                </form>
             </td>
         </tr>
     </table>
     <table cellspacing="1" cellpadding="3">
         <tr>
-      <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['repoid']; ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['repoid']; ?></b>&nbsp;</span></td>
             <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['name']; ?></b>&nbsp;</span></td>
         </tr>
-      <?php
-      while ($row = tng_fetch_assoc($result)) {
-          $fixedtitle = addslashes($row['reponame']);
-          echo "<tr>\n";
-          echo "<td valign=\"top\" class='lightback'><span class='normal'><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">{$row['repoID']}</a></span></td>\n";
-          echo "<td class='lightback'><span class='normal'><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">" . truncateIt($row['reponame'], 75) . "</a></span></td>\n";
-          echo "</tr>\n";
-      }
-      tng_free_result($result);
-      ?>
+        <?php
+        while ($row = tng_fetch_assoc($result)) {
+            $fixedtitle = addslashes($row['reponame']);
+            echo "<tr>\n";
+            echo "<td valign=\"top\" class='lightback'><span class='normal'><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">{$row['repoID']}</a></span></td>\n";
+            echo "<td class='lightback'><span class='normal'><a href=\"findrepo.php\" onClick=\"return returnTitle('{$row['repoID']}');\">" . truncateIt($row['reponame'], 75) . "</a></span></td>\n";
+            echo "</tr>\n";
+        }
+        tng_free_result($result);
+        ?>
     </table>
 </div>

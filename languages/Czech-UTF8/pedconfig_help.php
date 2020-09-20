@@ -351,9 +351,12 @@ echo help_header("Nápověda: Nastavení schémat");
                     ručně, pokud nechcete, aby byla výchozí fotografie odvozena z jiné fotografie připojené k osobě.
                 </li>
 
-                <li>Je-li obrázek vytvořen výše uvedenou konvencí, jeho velikost může být zmenšena, je-li to třeba k tomu, aby se vešel do výšky rámečku. <span class="emphasis">Zvětšení</span>
-                    obrázku se však neprovede, protože by tím utrpěla kvalita obrázku. Je třeba také poznamenat, že zmenšení velikosti obrázku nemá vliv na velikost souboru fotografie. Jinými slovy
-                    to neznamená, že když obrázek vypadá menší, zobrazí se rychleji, než kdyby byl zobrazen ve své původní velikosti. Proto by velké fotografie neměly být používány jako obrázky ve schématech,
+                <li>Je-li obrázek vytvořen výše uvedenou konvencí, jeho velikost může být zmenšena, je-li to třeba k tomu, aby se vešel do výšky
+                    rámečku. <span class="emphasis">Zvětšení</span>
+                    obrázku se však neprovede, protože by tím utrpěla kvalita obrázku. Je třeba také poznamenat, že zmenšení velikosti obrázku nemá
+                    vliv na velikost souboru fotografie. Jinými slovy
+                    to neznamená, že když obrázek vypadá menší, zobrazí se rychleji, než kdyby byl zobrazen ve své původní velikosti. Proto by velké
+                    fotografie neměly být používány jako obrázky ve schématech,
                     protože by prodlužovaly čas načtení celé stránky.
                 </li>
 

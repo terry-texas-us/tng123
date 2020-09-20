@@ -24,11 +24,11 @@ if (isset($_COOKIE[$ref])) {
     foreach ($bookmarks as $bookmark) {
         if (trim($bookmark)) {
             echo "<li>" . stripslashes($bookmark) . " | <a href=\"$deletebookmark_url" . "idx=$bcount\">{$text['remove']}</a></li>\n";
-      $bcount++;
+            $bcount++;
+        }
     }
-  }
 } else {
-  echo "<li>0 {$text['bookmarks']}</li>";
+    echo "<li>0 {$text['bookmarks']}</li>";
 }
 echo "</ul><br>\n";
 tng_footer("");

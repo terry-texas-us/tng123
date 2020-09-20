@@ -13,8 +13,8 @@
 
 include "begin.php";
 if (empty($rootpath)) {
-  echo 'Error ', __LINE__, ': $rootpath missing! Please contact your system administrator.';
-  exit;
+    echo 'Error ', __LINE__, ': $rootpath missing! Please contact your system administrator.';
+    exit;
 }
 include "adminlib.php";
 $textpart = "mods";
@@ -46,40 +46,40 @@ include "config/mmconfig.php";
 
 //suppress PHP notices
 if (!isset($modspath)) {
-  $modspath = '';
+    $modspath = '';
 }
 if (!isset($extspath)) {
-  $extspath = '';
+    $extspath = '';
 }
 
 // VERIFY TNG FILES WRITEABLE
 $message = '';
 if (!is_writable($rootpath)) {
-  $message .= "{$admtext['checkwrite']} {$admtext['cantwrite']} $rootpath ";
+    $message .= "{$admtext['checkwrite']} {$admtext['cantwrite']} $rootpath ";
 }
 
 if (!empty($message)) {
-  $message = "<span class=\"msgerror\">$message</span>";
+    $message = "<span class=\"msgerror\">$message</span>";
 }
 
 // ADJUSTMENTS TO USER PREFERENCES (OPTIONS)
 if (isset($_GET['sort'])) {
-  $_SESSION['sortby'] = $_GET['sort'];
+    $_SESSION['sortby'] = $_GET['sort'];
 }
 if (isset($_SESSION['sortby'])) {
-  $options['sortby'] = $_SESSION['sortby'];
+    $options['sortby'] = $_SESSION['sortby'];
 }
 if (!isset($options['show_analyzer'])) {
-  $options['show_analyzer'] = "0";
+    $options['show_analyzer'] = "0";
 }
 if (!isset($options['show_developer'])) {
-  $options['show_developer'] = "0";
+    $options['show_developer'] = "0";
 }
 if (!isset($options['show_updates'])) {
-  $options['show_updates'] = "0";
+    $options['show_updates'] = "0";
 }
 if (!isset($options['compress_log'])) {
-  $options['compress_log'] = "0";
+    $options['compress_log'] = "0";
 }
 
 // SETUP THE PAGE HEADER AND MENUS
@@ -117,143 +117,143 @@ BATCH MOD PROCESSING
 *************************************************************************/
 $modlist = array();
 if (!empty($_POST)) {
-  foreach ($_POST as $key => $value) {
-    ${$key} = $value;
-  }
+    foreach ($_POST as $key => $value) {
+        ${$key} = $value;
+    }
 
-  // APPLY FILTER TO MODLIST FOR BATCH OPS
-  if (!empty($submit)) {
-    if (!empty($mods)) {
-      foreach ($mods as $mod) {
-        if (isset($mod['selected'])) {
-          $modlist[] = $cfgfolder . $mod['file'];
+    // APPLY FILTER TO MODLIST FOR BATCH OPS
+    if (!empty($submit)) {
+        if (!empty($mods)) {
+            foreach ($mods as $mod) {
+                if (isset($mod['selected'])) {
+                    $modlist[] = $cfgfolder . $mod['file'];
+                }
+            }
         }
-      }
-    }
 
-    // INSTALL ALL
-    if ($submit == "installall") {
-      include_once 'classes/modinstaller.class.php';
-      $oInstaller = new modinstaller($objinits);
-      if (!$oInstaller->batch_install($modlist) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
-    } // REMOVE ALL
-    elseif ($submit == "removeall") {
-      include_once 'classes/modremover.class.php';
-      $oRemover = new modremover($objinits);
-      if (!$oRemover->batch_remove($modlist) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
-    } // CLEANUP ALL
-    elseif ($submit == "cleanupall") {
-      include_once 'classes/modremover.class.php';
-      $oRemover = new modremover($objinits);
-      if (!$oRemover->batch_remove($modlist) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
-    } // DELETE ALL
-    elseif ($submit == "deleteall") {
-      include_once 'classes/moddeleter.class.php';
-      $oDeleter = new moddeleter($objinits);
-      if (!$oDeleter->batch_delete($modlist) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
+        // INSTALL ALL
+        if ($submit == "installall") {
+            include_once 'classes/modinstaller.class.php';
+            $oInstaller = new modinstaller($objinits);
+            if (!$oInstaller->batch_install($modlist) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        } // REMOVE ALL
+        elseif ($submit == "removeall") {
+            include_once 'classes/modremover.class.php';
+            $oRemover = new modremover($objinits);
+            if (!$oRemover->batch_remove($modlist) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        } // CLEANUP ALL
+        elseif ($submit == "cleanupall") {
+            include_once 'classes/modremover.class.php';
+            $oRemover = new modremover($objinits);
+            if (!$oRemover->batch_remove($modlist) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        } // DELETE ALL
+        elseif ($submit == "deleteall") {
+            include_once 'classes/moddeleter.class.php';
+            $oDeleter = new moddeleter($objinits);
+            if (!$oDeleter->batch_delete($modlist) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        }
     }
-  }
 } /*************************************************************************
  * SINGLE MOD PROCESSING
  *************************************************************************/
 elseif (!empty($_GET)) {
-  foreach ($_GET as $key => $value) {
-    ${$key} = $value;
-  }
-  if (isset($a)) {
-    $action = $a;
-      $cfgpath = isset($m) ? $cfgfolder . $m : '';
-
-    // INSTALL
-    if ($action == INSTALL) {
-      include_once 'classes/modinstaller.class.php';
-      $obj = new modinstaller($objinits);
-      if (!$obj->install($cfgpath) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
-    } // REMOVE
-    elseif ($action == REMOVE) {
-      include_once 'classes/modremover.class.php';
-      $obj = new modremover($objinits);
-      if (!$obj->remove($cfgpath) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
-    } // DELETE
-    elseif ($action == DELETE) {
-      $error = false;
-      include_once 'classes/moddeleter.class.php';
-      $obj = new moddeleter($objinits);
-      if (!$obj->delete_mod($cfgpath) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
-    } // CLEANUP
-    elseif ($action == CLEANUP) {
-      include_once 'classes/modremover.class.php';
-      $obj = new modremover($objinits);
-      $obj->classID = "cleaner";
-      if (!$obj->remove($cfgpath) || $options['redirect2log'] == ON_ALL) {
-        header("Location:admin_showmodslog.php");
-        exit;
-      } else {
-        header("Location:admin_modhandler.php");
-        exit;
-      }
+    foreach ($_GET as $key => $value) {
+        ${$key} = $value;
     }
-  }
+    if (isset($a)) {
+        $action = $a;
+        $cfgpath = isset($m) ? $cfgfolder . $m : '';
+
+        // INSTALL
+        if ($action == INSTALL) {
+            include_once 'classes/modinstaller.class.php';
+            $obj = new modinstaller($objinits);
+            if (!$obj->install($cfgpath) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        } // REMOVE
+        elseif ($action == REMOVE) {
+            include_once 'classes/modremover.class.php';
+            $obj = new modremover($objinits);
+            if (!$obj->remove($cfgpath) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        } // DELETE
+        elseif ($action == DELETE) {
+            $error = false;
+            include_once 'classes/moddeleter.class.php';
+            $obj = new moddeleter($objinits);
+            if (!$obj->delete_mod($cfgpath) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        } // CLEANUP
+        elseif ($action == CLEANUP) {
+            include_once 'classes/modremover.class.php';
+            $obj = new modremover($objinits);
+            $obj->classID = "cleaner";
+            if (!$obj->remove($cfgpath) || $options['redirect2log'] == ON_ALL) {
+                header("Location:admin_showmodslog.php");
+                exit;
+            } else {
+                header("Location:admin_modhandler.php");
+                exit;
+            }
+        }
+    }
 }
 
 // FILTER IS ONLY RETURNED IF THE 'LOCK' BOX IS CHECKED
 $fbox_checked = false;
 if (!isset($filter)) {
-  // user not asking for filter change
-  if (isset($_SESSION['filter'])) {
-    $filter = $_SESSION['filter'];
-    $fbox_checked = true;
-  } else {
-    $filter = 0;
-    $fbox_checked = false;
-  }
+    // user not asking for filter change
+    if (isset($_SESSION['filter'])) {
+        $filter = $_SESSION['filter'];
+        $fbox_checked = true;
+    } else {
+        $filter = 0;
+        $fbox_checked = false;
+    }
 } else {
-  // filter was set from drop down -- starting over with clean filter checkbox
-  if (isset($_SESSION['filter'])) {
-    unset($_SESSION['filter']);
-  }
+    // filter was set from drop down -- starting over with clean filter checkbox
+    if (isset($_SESSION['filter'])) {
+        unset($_SESSION['filter']);
+    }
 }
 
 /*************************************************************************
@@ -286,12 +286,12 @@ echo "
 
 // IMPLEMENT THE 'SELECT MODS TO DISPLAY' FILTER
 if ($filter == F_SELECT && !empty($modlist)) {
-  $_SESSION['modlist'] = $modlist;
+    $_SESSION['modlist'] = $modlist;
 } elseif ($filter == F_SELECT && isset($_SESSION['modlist'])) {
-  $modlist = $_SESSION['modlist'];
+    $modlist = $_SESSION['modlist'];
 } else {
-  unset($_SESSION['modlist']);
-  $modlist = array();
+    unset($_SESSION['modlist']);
+    $modlist = array();
 }
 include 'classes/modlister.class.php';
 $oModlist = new modlister($objinits);
@@ -302,63 +302,63 @@ $oModlist->modlist = $modlist;
 $oModlist->list_mods();
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
-  global $admtext;
+    global $admtext;
 
-  $modtabs = array();
-  $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-  $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-  $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
-  if ($show_analyzer == YES) {
-    $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
-  }
-  if ($show_developer == YES) {
-    $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
-  }
-  if ($show_updates == YES) {
-    $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
-  }
-  return $modtabs;
+    $modtabs = array();
+    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
+    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
+    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    if ($show_analyzer == YES) {
+        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+    }
+    if ($show_developer == YES) {
+        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+    }
+    if ($show_updates == YES) {
+        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+    }
+    return $modtabs;
 }
 
 function set_innermenu_links($tng_version) {
-  global $text, $admtext;
+    global $text, $admtext;
 
-  $parts = explode(".", $tng_version);    // added to determine TNG vNN for
-  $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
-  $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
-  $helplang = findhelp("modhandler_help.php");
+    $parts = explode(".", $tng_version);    // added to determine TNG vNN for
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
+    $helplang = findhelp("modhandler_help.php");
 
-  // inner menu help
-  $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    // inner menu help
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 
-  // expand & collapse all
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"expandall\"> {$text['expandall']}</a>";
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"collapseall\">{$text['collapseall']}</a>";
+    // expand & collapse all
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"expandall\"> {$text['expandall']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"collapseall\">{$text['collapseall']}</a>";
 
-  // MM syntax
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    // MM syntax
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
 
-  // mod guidelines
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    // mod guidelines
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
-  // mods for TNGv10
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
-  return $innermenu;
+    // mods for TNGv10
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    return $innermenu;
 }
 
 /*************************************************************************
  * JQUERY/JAVASCRIPT FUNCTIONS
  *************************************************************************/
 $confirm = empty($options['delete_support']) ?
-        $admtext['confdelmod1'] :
-        $admtext['confdelmod'];
+    $admtext['confdelmod1'] :
+    $admtext['confdelmod'];
 echo "
 <script type=\"text/javascript\">
 jQuery(document).ready(function() {
 ";
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
-  echo "
+    echo "
    window.scroll(0,0);
 
    // set position of status bar relative to #mmhead (jQuery UI)

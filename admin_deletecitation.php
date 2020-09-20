@@ -17,7 +17,7 @@ $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
 if ($_SESSION['lastcite'] == $tree . "|" . $citationID) {
-  unset($_SESSION['lastcite']);
+    unset($_SESSION['lastcite']);
 }
 
 adminwritelog("{$admtext['deleted']}: {$admtext['citation']} $citationID");

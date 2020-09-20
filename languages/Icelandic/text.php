@@ -1,683 +1,683 @@
 <?php
 switch ($textpart) {
-  //browsesources.php, showsource.php
-  case "sources":
-    $text['browseallsources'] = "Sko�a allar heimildir";
-    $text['shorttitle'] = "Stuttur titill";
-    $text['callnum'] = "S�man�mer";
-    $text['author'] = "H�fundur";
-    $text['publisher'] = "�tgefandi";
-    $text['other'] = "A�rar uppl�singar";
-    $text['sourceid'] = "Nr. heimildar";
-    $text['moresrc'] = "Fleiri Heimildir";
-    $text['repoid'] = "Nr. heimildasafns";
-    $text['browseallrepos'] = "Sko�a �ll heimildas�fn";
-    break;
+    //browsesources.php, showsource.php
+    case "sources":
+        $text['browseallsources'] = "Sko�a allar heimildir";
+        $text['shorttitle'] = "Stuttur titill";
+        $text['callnum'] = "S�man�mer";
+        $text['author'] = "H�fundur";
+        $text['publisher'] = "�tgefandi";
+        $text['other'] = "A�rar uppl�singar";
+        $text['sourceid'] = "Nr. heimildar";
+        $text['moresrc'] = "Fleiri Heimildir";
+        $text['repoid'] = "Nr. heimildasafns";
+        $text['browseallrepos'] = "Sko�a �ll heimildas�fn";
+        break;
 
-  //changelanguage.php, savelanguage.php
-  case "language":
-    $text['newlanguage'] = "N�tt tungum�l";
-    $text['changelanguage'] = "Breyta tungum�li";
-    $text['languagesaved'] = "Tungum�l geymt";
-    $text['sitemaint'] = "vi�hald � gangi � vefs��unni";
-    $text['standby'] = "S��an er ekki a�gengileg � augnablikinu vegna vi�halds � gagnagrunni. Vinsamlegast reyni� aftur eftir nokkrar m�n�tur. Ef s��an er ni�ri � lengri t�ma, vinsamlegast <a href=\"suggest.php\"> hafi� samband vi� vefstj�ra</a>.";
-    break;
+    //changelanguage.php, savelanguage.php
+    case "language":
+        $text['newlanguage'] = "N�tt tungum�l";
+        $text['changelanguage'] = "Breyta tungum�li";
+        $text['languagesaved'] = "Tungum�l geymt";
+        $text['sitemaint'] = "vi�hald � gangi � vefs��unni";
+        $text['standby'] = "S��an er ekki a�gengileg � augnablikinu vegna vi�halds � gagnagrunni. Vinsamlegast reyni� aftur eftir nokkrar m�n�tur. Ef s��an er ni�ri � lengri t�ma, vinsamlegast <a href=\"suggest.php\"> hafi� samband vi� vefstj�ra</a>.";
+        break;
 
-  //gedcom.php, gedform.php
-  case "gedcom":
-    $text['gedstart'] = "GEDCOM byrjar fr�";
-    $text['producegedfrom'] = "�tb�a GEDCOM skr� fr�";
-    $text['numgens'] = "fj�ldi kynsl��a";
-    $text['includelds'] = "hafa LDS uppl�singar me�";
-    $text['buildged'] = "Byggja GEDCOM";
-    $text['gedstartfrom'] = "GEDCOM byrjar fr�";
-    $text['nomaxgen'] = "�� ver�ur a� skilgreina fj�lda kynsl��a. Vinsamlegast noti� back takkan til a� fara til baka";
-    $text['gedcreatedfrom'] = "GEDCOM skapa� af";
-    $text['gedcreatedfor'] = "Skapa� fyrir";
-    $text['creategedfor'] = "�tb�a GEDCOM fyrir";
-    $text['email'] = "Netfang";
-    $text['suggestchange'] = "Stinga upp� breytingu";
-    $text['yourname'] = "Nafn �itt";
-    $text['comments'] = "Skilabo� e�a athugasemdir";
-    $text['comments2'] = "Athugasemdir";
-    $text['submitsugg'] = "Senda inn upp�stungu";
-    $text['proposed'] = "Breyting";
-    $text['mailsent'] = "Takk fyrir. Skilabo� ��n hafa veri� send.";
-    $text['mailnotsent'] = "�v� mi�ur komust skilabo�in ekki til. Vinsamlegast haf�u samband vi� xxx beint yyy.";
-    $text['mailme'] = "Senda afrit � �etta netfang";
-    $text['entername'] = "Vinsamlegast sl��u inn nafni� �itt";
-    $text['entercomments'] = "Vinsamlegast sl��u inn athugasemdir";
-    $text['sendmsg'] = "Senda skilabo�";
-    //added in 9.0.0
-    $text['subject'] = "Efni";
-    break;
+    //gedcom.php, gedform.php
+    case "gedcom":
+        $text['gedstart'] = "GEDCOM byrjar fr�";
+        $text['producegedfrom'] = "�tb�a GEDCOM skr� fr�";
+        $text['numgens'] = "fj�ldi kynsl��a";
+        $text['includelds'] = "hafa LDS uppl�singar me�";
+        $text['buildged'] = "Byggja GEDCOM";
+        $text['gedstartfrom'] = "GEDCOM byrjar fr�";
+        $text['nomaxgen'] = "�� ver�ur a� skilgreina fj�lda kynsl��a. Vinsamlegast noti� back takkan til a� fara til baka";
+        $text['gedcreatedfrom'] = "GEDCOM skapa� af";
+        $text['gedcreatedfor'] = "Skapa� fyrir";
+        $text['creategedfor'] = "�tb�a GEDCOM fyrir";
+        $text['email'] = "Netfang";
+        $text['suggestchange'] = "Stinga upp� breytingu";
+        $text['yourname'] = "Nafn �itt";
+        $text['comments'] = "Skilabo� e�a athugasemdir";
+        $text['comments2'] = "Athugasemdir";
+        $text['submitsugg'] = "Senda inn upp�stungu";
+        $text['proposed'] = "Breyting";
+        $text['mailsent'] = "Takk fyrir. Skilabo� ��n hafa veri� send.";
+        $text['mailnotsent'] = "�v� mi�ur komust skilabo�in ekki til. Vinsamlegast haf�u samband vi� xxx beint yyy.";
+        $text['mailme'] = "Senda afrit � �etta netfang";
+        $text['entername'] = "Vinsamlegast sl��u inn nafni� �itt";
+        $text['entercomments'] = "Vinsamlegast sl��u inn athugasemdir";
+        $text['sendmsg'] = "Senda skilabo�";
+        //added in 9.0.0
+        $text['subject'] = "Efni";
+        break;
 
-  //getextras.php, getperson.php
-  case "getperson":
-    $text['photoshistoriesfor'] = "Lj�smyndir og saga fyrir";
-    $text['indinfofor'] = "Einstaklings uppl�singar fyrir";
-    $text['pp'] = "bls."; //page abbreviation
-    $text['age'] = "Aldur";
-    $text['agency'] = "Samt�k";
-    $text['cause'] = "�st��a";
-    $text['suggested'] = "Upp�stunga";
-    $text['closewindow'] = "Loka �essum glugga";
-    $text['thanks'] = "Takk fyrir";
-    $text['received'] = "Upp�stungu hefur veri� komi� �lei�is til vefstj�ra til sko�unar.";
-    $text['indreport'] = "Einst�k sk�rsla";
-    $text['indreportfor'] = "Individual Report for";
-    $text['general'] = "Almennt";
-    $text['bkmkvis'] = "<strong>Ath:</strong> �essi b�kamerki eru einungis s�nileg � �essari t�lvu og � �essum vafra.";
-    //added in 9.0.0
-    $text['reviewmsg'] = "�� �arft a� sko�a athugasemd um breytingu sem ��r hefur veri� send.  �essi athugasemd var�ar:";
-    $text['revsubject'] = "Eftirfarandi athugasemd b��ur sko�unar";
-    break;
+    //getextras.php, getperson.php
+    case "getperson":
+        $text['photoshistoriesfor'] = "Lj�smyndir og saga fyrir";
+        $text['indinfofor'] = "Einstaklings uppl�singar fyrir";
+        $text['pp'] = "bls."; //page abbreviation
+        $text['age'] = "Aldur";
+        $text['agency'] = "Samt�k";
+        $text['cause'] = "�st��a";
+        $text['suggested'] = "Upp�stunga";
+        $text['closewindow'] = "Loka �essum glugga";
+        $text['thanks'] = "Takk fyrir";
+        $text['received'] = "Upp�stungu hefur veri� komi� �lei�is til vefstj�ra til sko�unar.";
+        $text['indreport'] = "Einst�k sk�rsla";
+        $text['indreportfor'] = "Individual Report for";
+        $text['general'] = "Almennt";
+        $text['bkmkvis'] = "<strong>Ath:</strong> �essi b�kamerki eru einungis s�nileg � �essari t�lvu og � �essum vafra.";
+        //added in 9.0.0
+        $text['reviewmsg'] = "�� �arft a� sko�a athugasemd um breytingu sem ��r hefur veri� send.  �essi athugasemd var�ar:";
+        $text['revsubject'] = "Eftirfarandi athugasemd b��ur sko�unar";
+        break;
 
-  //relateform.php, relationship.php, findpersonform.php, findperson.php
-  case "relate":
-    $text['relcalc'] = "Skyldleika reiknir";
-    $text['findrel'] = "Rekja saman";
-    $text['person1'] = "Einstaklingur 1:";
-    $text['person2'] = "Einstaklingur 2:";
-    $text['calculate'] = "Reikna";
-    $text['select2inds'] = "Veldu 2 einstaklinga.";
-    $text['findpersonid'] = "Finna einstaklings n�mer";
-    $text['enternamepart'] = "Sl��ur inn hluta fyrra nafns/e�a seinna nafns";
-    $text['pleasenamepart'] = "Vinsamlegast sl��u inn hluta nafns.";
-    $text['clicktoselect'] = "Smelltu h�r til a� velja";
-    $text['nobirthinfo'] = "Engar upll�singar um f��ingardag";
-    $text['relateto'] = "Skyldleiki til";
-    $text['sameperson'] = "�etta er sama manneskjan.";
-    $text['notrelated'] = "�essir 2 einstaklingar eru ekki skyldir innan xxx kynsl��a."; //xxx will be replaced with number of generations
-    $text['findrelinstr'] = "Sl��u inn nr. einstaklings, e�a nota�u Finna takkann, smelltu svo � Reikna til a� finna skyldleika �essara tveggja einstaklinga (allt a� xxx kynsl��ir).";
-    $text['sometimes'] = "(Stundum �egar athuga� er yfir mismunandi fj�lda kynsl��a kemur �nnur ni�ursta�a.)";
-    $text['findanother'] = "Finna annan skyldleika";
-    $text['brother'] = "Br��ir";
-    $text['sister'] = "Systir";
-    $text['sibling'] = "Systkyni";
-    $text['uncle'] = "xxx fr�ndi";
-    $text['aunt'] = "xxx fr�nka";
-    $text['uncleaunt'] = "xxx fr�ndur/fr�nkur";
-    $text['nephew'] = "xxx fr�ndi";
-    $text['niece'] = "xxx fr�nka";
-    $text['nephnc'] = "xxx fr�ndur/fr�nkur";
-    $text['removed'] = "oft fjarl��ur";
-    $text['rhusband'] = "eiginma�ur ";
-    $text['rwife'] = "eiginkona ";
-    $text['rspouse'] = "maki ";
-    $text['son'] = "sonur";
-    $text['daughter'] = "d�ttir";
-    $text['rchild'] = "barn";
-    $text['sil'] = "Tengdasonur";
-    $text['dil'] = "Tengdad�ttir";
-    $text['sdil'] = "Tengdasonur e�a d�ttir";
-    $text['gson'] = "Barnabarn";
-    $text['gdau'] = "xxx barnabarn";
-    $text['gsondau'] = "xxx barnabarn";
-    $text['great'] = "langa";
-    $text['spouses'] = "eru makar";
-    $text['is'] = "er";
-    $text['changeto'] = "Breyta �:";
-    $text['notvalid'] = "er ekki gilt sem nr. einstaklings e�a er ekki til i gagnagrunninum.  Vinsamlegast reyni� aftur.";
-    $text['halfbrother'] = "h�lfbr��ir";
-    $text['halfsister'] = "h�lfsystir";
-    $text['halfsibling'] = "h�lf systkyni";
-    //changed in 8.0.0
-    $text['gencheck'] = "H�marks fj�ldi kynsl��a<br>sem skal athugast";
-    $text['mcousin'] = "xxx fr�ndi yyy";  //male cousin; xxx = cousin number, yyy = times removed
-    $text['fcousin'] = "xxx fr�ndi yyy";  //female cousin
-    $text['cousin'] = "xxx fr�ndi yyy";
-    $text['mhalfcousin'] = "the xxx half cousin yyy of";  //male cousin
-    $text['fhalfcousin'] = "the xxx half cousin yyy of";  //female cousin
-    $text['halfcousin'] = "the xxx half cousin yyy of";
-    //added in 8.0.0
-    $text['oneremoved'] = "one removed";
-    $text['gfath'] = "xxx langafi af";
-    $text['gmoth'] = "xxx langamma af";
-    $text['gpar'] = "xxx afit of";
-    $text['mothof'] = "mamma af";
-    $text['fathof'] = "fa�ir af";
-    $text['parof'] = "foreldri of";
-    $text['maxrels'] = "S�nilegur h�marks skyldleiki";
-    $text['dospouses'] = "S�na skyldleika � gegnum maka";
-    $text['rels'] = "Skyldleikar";
-    $text['dospouses2'] = "S�na maka";
-    $text['fil'] = "tengdafa�ir";
-    $text['mil'] = "tengdam��ir";
-    $text['fmil'] = "tengdaforeldrar";
-    $text['stepson'] = "stj�psonur";
-    $text['stepdau'] = "stj�pd�ttir";
-    $text['stepchild'] = "stj�pbarn";
-    $text['stepgson'] = "stj�p-sonarsonur hans";
-    $text['stepgdau'] = "stj�p-d�ttursonur";
-    $text['stepgchild'] = "stj�p barnabarn";
-    //added in 8.1.1
-    $text['ggreat'] = "langa";
-    //added in 8.1.2
-    $text['ggfath'] = "the xxx great grandfather of";
-    $text['ggmoth'] = "the xxx great grandmother of";
-    $text['ggpar'] = "the xxx great grandparent of";
-    $text['ggson'] = "the xxx great grandson of";
-    $text['ggdau'] = "the xxx great granddaughter of";
-    $text['ggsondau'] = "the xxx great grandchild of";
-    $text['gstepgson'] = "the xxx great step-grandson of";
-    $text['gstepgdau'] = "the xxx great step-granddaughter of";
-    $text['gstepgchild'] = "the xxx great step-grandchild of";
-    $text['guncle'] = "the xxx great uncle of";
-    $text['gaunt'] = "the xxx great aunt of";
-    $text['guncleaunt'] = "the xxx great uncle/aunt of";
-    $text['gnephew'] = "the xxx great nephew of";
-    $text['gniece'] = "the xxx great niece of";
-    $text['gnephnc'] = "the xxx great nephew/niece of";
-    break;
+    //relateform.php, relationship.php, findpersonform.php, findperson.php
+    case "relate":
+        $text['relcalc'] = "Skyldleika reiknir";
+        $text['findrel'] = "Rekja saman";
+        $text['person1'] = "Einstaklingur 1:";
+        $text['person2'] = "Einstaklingur 2:";
+        $text['calculate'] = "Reikna";
+        $text['select2inds'] = "Veldu 2 einstaklinga.";
+        $text['findpersonid'] = "Finna einstaklings n�mer";
+        $text['enternamepart'] = "Sl��ur inn hluta fyrra nafns/e�a seinna nafns";
+        $text['pleasenamepart'] = "Vinsamlegast sl��u inn hluta nafns.";
+        $text['clicktoselect'] = "Smelltu h�r til a� velja";
+        $text['nobirthinfo'] = "Engar upll�singar um f��ingardag";
+        $text['relateto'] = "Skyldleiki til";
+        $text['sameperson'] = "�etta er sama manneskjan.";
+        $text['notrelated'] = "�essir 2 einstaklingar eru ekki skyldir innan xxx kynsl��a."; //xxx will be replaced with number of generations
+        $text['findrelinstr'] = "Sl��u inn nr. einstaklings, e�a nota�u Finna takkann, smelltu svo � Reikna til a� finna skyldleika �essara tveggja einstaklinga (allt a� xxx kynsl��ir).";
+        $text['sometimes'] = "(Stundum �egar athuga� er yfir mismunandi fj�lda kynsl��a kemur �nnur ni�ursta�a.)";
+        $text['findanother'] = "Finna annan skyldleika";
+        $text['brother'] = "Br��ir";
+        $text['sister'] = "Systir";
+        $text['sibling'] = "Systkyni";
+        $text['uncle'] = "xxx fr�ndi";
+        $text['aunt'] = "xxx fr�nka";
+        $text['uncleaunt'] = "xxx fr�ndur/fr�nkur";
+        $text['nephew'] = "xxx fr�ndi";
+        $text['niece'] = "xxx fr�nka";
+        $text['nephnc'] = "xxx fr�ndur/fr�nkur";
+        $text['removed'] = "oft fjarl��ur";
+        $text['rhusband'] = "eiginma�ur ";
+        $text['rwife'] = "eiginkona ";
+        $text['rspouse'] = "maki ";
+        $text['son'] = "sonur";
+        $text['daughter'] = "d�ttir";
+        $text['rchild'] = "barn";
+        $text['sil'] = "Tengdasonur";
+        $text['dil'] = "Tengdad�ttir";
+        $text['sdil'] = "Tengdasonur e�a d�ttir";
+        $text['gson'] = "Barnabarn";
+        $text['gdau'] = "xxx barnabarn";
+        $text['gsondau'] = "xxx barnabarn";
+        $text['great'] = "langa";
+        $text['spouses'] = "eru makar";
+        $text['is'] = "er";
+        $text['changeto'] = "Breyta �:";
+        $text['notvalid'] = "er ekki gilt sem nr. einstaklings e�a er ekki til i gagnagrunninum.  Vinsamlegast reyni� aftur.";
+        $text['halfbrother'] = "h�lfbr��ir";
+        $text['halfsister'] = "h�lfsystir";
+        $text['halfsibling'] = "h�lf systkyni";
+        //changed in 8.0.0
+        $text['gencheck'] = "H�marks fj�ldi kynsl��a<br>sem skal athugast";
+        $text['mcousin'] = "xxx fr�ndi yyy";  //male cousin; xxx = cousin number, yyy = times removed
+        $text['fcousin'] = "xxx fr�ndi yyy";  //female cousin
+        $text['cousin'] = "xxx fr�ndi yyy";
+        $text['mhalfcousin'] = "the xxx half cousin yyy of";  //male cousin
+        $text['fhalfcousin'] = "the xxx half cousin yyy of";  //female cousin
+        $text['halfcousin'] = "the xxx half cousin yyy of";
+        //added in 8.0.0
+        $text['oneremoved'] = "one removed";
+        $text['gfath'] = "xxx langafi af";
+        $text['gmoth'] = "xxx langamma af";
+        $text['gpar'] = "xxx afit of";
+        $text['mothof'] = "mamma af";
+        $text['fathof'] = "fa�ir af";
+        $text['parof'] = "foreldri of";
+        $text['maxrels'] = "S�nilegur h�marks skyldleiki";
+        $text['dospouses'] = "S�na skyldleika � gegnum maka";
+        $text['rels'] = "Skyldleikar";
+        $text['dospouses2'] = "S�na maka";
+        $text['fil'] = "tengdafa�ir";
+        $text['mil'] = "tengdam��ir";
+        $text['fmil'] = "tengdaforeldrar";
+        $text['stepson'] = "stj�psonur";
+        $text['stepdau'] = "stj�pd�ttir";
+        $text['stepchild'] = "stj�pbarn";
+        $text['stepgson'] = "stj�p-sonarsonur hans";
+        $text['stepgdau'] = "stj�p-d�ttursonur";
+        $text['stepgchild'] = "stj�p barnabarn";
+        //added in 8.1.1
+        $text['ggreat'] = "langa";
+        //added in 8.1.2
+        $text['ggfath'] = "the xxx great grandfather of";
+        $text['ggmoth'] = "the xxx great grandmother of";
+        $text['ggpar'] = "the xxx great grandparent of";
+        $text['ggson'] = "the xxx great grandson of";
+        $text['ggdau'] = "the xxx great granddaughter of";
+        $text['ggsondau'] = "the xxx great grandchild of";
+        $text['gstepgson'] = "the xxx great step-grandson of";
+        $text['gstepgdau'] = "the xxx great step-granddaughter of";
+        $text['gstepgchild'] = "the xxx great step-grandchild of";
+        $text['guncle'] = "the xxx great uncle of";
+        $text['gaunt'] = "the xxx great aunt of";
+        $text['guncleaunt'] = "the xxx great uncle/aunt of";
+        $text['gnephew'] = "the xxx great nephew of";
+        $text['gniece'] = "the xxx great niece of";
+        $text['gnephnc'] = "the xxx great nephew/niece of";
+        break;
 
-  case "familygroup":
-    $text['familygroupfor'] = "Fj�lskyldu bla� fyrir";
-    $text['ldsords'] = "LDS Ordinances";
-    $text['baptizedlds'] = "Sk�r�ur (LDS)";
-    $text['endowedlds'] = "Fermdur (LDS)";
-    $text['sealedplds'] = "Sealed P (LDS)";
-    $text['sealedslds'] = "Sealed S (LDS)";
-    $text['otherspouse'] = "Annar/ur maki";
-    $text['husband'] = "Eiginma�ur";
-    $text['wife'] = "Eiginkona";
-    break;
+    case "familygroup":
+        $text['familygroupfor'] = "Fj�lskyldu bla� fyrir";
+        $text['ldsords'] = "LDS Ordinances";
+        $text['baptizedlds'] = "Sk�r�ur (LDS)";
+        $text['endowedlds'] = "Fermdur (LDS)";
+        $text['sealedplds'] = "Sealed P (LDS)";
+        $text['sealedslds'] = "Sealed S (LDS)";
+        $text['otherspouse'] = "Annar/ur maki";
+        $text['husband'] = "Eiginma�ur";
+        $text['wife'] = "Eiginkona";
+        break;
 
-  //pedigree.php
-  case "pedigree":
-    $text['capbirthabbr'] = "F";
-    $text['capaltbirthabbr'] = "A";
-    $text['capdeathabbr'] = "D";
-    $text['capburialabbr'] = "G";
-    $text['capplaceabbr'] = "S";
-    $text['capmarrabbr'] = "G";
-    $text['capspouseabbr'] = "SP";
-    $text['redraw'] = "Endura�a me�";
-    $text['scrollnote'] = "Ath: �� �arft kannski a� skruna ni�ur e�a til h�gri til a� sj�.";
-    $text['unknownlit'] = "�skr��";
-    $text['popupnote1'] = " = Frekari uppl�singar";
-    $text['popupnote2'] = " = N�tt ni�jatal";
-    $text['pedcompact'] = "�jappa�";
-    $text['pedstandard'] = "Sta�la�";
-    $text['pedtextonly'] = "Einungis texti";
-    $text['descendfor'] = "Afkomendur";
-    $text['maxof'] = "H�mark af";
-    $text['gensatonce'] = "kynsl��ir birtar � einu.";
-    $text['sonof'] = "foreldrar:";
-    $text['daughterof'] = "foreldrar:";
-    $text['childof'] = "barn";
-    $text['stdformat'] = "Sta�la� sni�";
-    $text['ahnentafel'] = "Fram�tt";
-    $text['addnewfam'] = "B�ta vi� fj�lskyldu";
-    $text['editfam'] = "Breyta fj�lskyldu";
-    $text['side'] = "Hli�";
-    $text['familyof'] = "Fj�lskylda";
-    $text['paternal'] = "Paternal";
-    $text['maternal'] = "Maternal";
-    $text['gen1'] = "Sj�lf/ur";
-    $text['gen2'] = "Foreldrar";
-    $text['gen3'] = "�mmur og afar";
-    $text['gen4'] = "Lang�mmur og afar";
-    $text['gen5'] = "� annan �ttli�";
-    $text['gen6'] = "� �ri�ja �ttli�";
-    $text['gen7'] = "� fj�r�a �ttli�";
-    $text['gen8'] = "� fimmta �ttli�";
-    $text['gen9'] = "� sj�tta �ttli�";
-    $text['gen10'] = "� Sj�unda �ttli�";
-    $text['gen11'] = "� �ttunda �ttli�";
-    $text['gen12'] = "� n�unda �ttli�";
-    $text['graphdesc'] = "Graf�skt ni�jatal a� �essum punkti";
-    $text['pedbox'] = "Kassar";
-    $text['regformat'] = "Ni�jatal";
-    $text['extrasexpl'] = "Ef a� lj�smyndir e�a s�gur eru til um vi�komandi einstakling, koma vi�eigandi myndir n�st vi� n�fnin.";
-    $text['popupnote3'] = " = N�tt ";
-    $text['mediaavail'] = "Margmi�lun tilt�k";
-    $text['pedigreefor'] = "Ni�jatal fyrir";
-    $text['pedigreech'] = "�ttarb�karmynd";
-    $text['datesloc'] = "Dagsetningar og sta�setningar";
-    $text['borchr'] = "F�ddur/E�a - d�in/jar�a�ur (tveir)";
-    $text['nobd'] = "Engin f��ingar- e�a d�nardagur";
-    $text['bcdb'] = "F�ddur/Alt/d�nar/jar�a�ur (four)";
-    $text['numsys'] = "N�mera kerfi";
-    $text['gennums'] = "Kynsl��ar n�mer";
-    $text['henrynums'] = "Henry n�mer";
-    $text['abovnums'] = "d'Aboville n�mer";
-    $text['devnums'] = "de Villiers Nn�mer";
-    $text['dispopts'] = "Valkostir";
+    //pedigree.php
+    case "pedigree":
+        $text['capbirthabbr'] = "F";
+        $text['capaltbirthabbr'] = "A";
+        $text['capdeathabbr'] = "D";
+        $text['capburialabbr'] = "G";
+        $text['capplaceabbr'] = "S";
+        $text['capmarrabbr'] = "G";
+        $text['capspouseabbr'] = "SP";
+        $text['redraw'] = "Endura�a me�";
+        $text['scrollnote'] = "Ath: �� �arft kannski a� skruna ni�ur e�a til h�gri til a� sj�.";
+        $text['unknownlit'] = "�skr��";
+        $text['popupnote1'] = " = Frekari uppl�singar";
+        $text['popupnote2'] = " = N�tt ni�jatal";
+        $text['pedcompact'] = "�jappa�";
+        $text['pedstandard'] = "Sta�la�";
+        $text['pedtextonly'] = "Einungis texti";
+        $text['descendfor'] = "Afkomendur";
+        $text['maxof'] = "H�mark af";
+        $text['gensatonce'] = "kynsl��ir birtar � einu.";
+        $text['sonof'] = "foreldrar:";
+        $text['daughterof'] = "foreldrar:";
+        $text['childof'] = "barn";
+        $text['stdformat'] = "Sta�la� sni�";
+        $text['ahnentafel'] = "Fram�tt";
+        $text['addnewfam'] = "B�ta vi� fj�lskyldu";
+        $text['editfam'] = "Breyta fj�lskyldu";
+        $text['side'] = "Hli�";
+        $text['familyof'] = "Fj�lskylda";
+        $text['paternal'] = "Paternal";
+        $text['maternal'] = "Maternal";
+        $text['gen1'] = "Sj�lf/ur";
+        $text['gen2'] = "Foreldrar";
+        $text['gen3'] = "�mmur og afar";
+        $text['gen4'] = "Lang�mmur og afar";
+        $text['gen5'] = "� annan �ttli�";
+        $text['gen6'] = "� �ri�ja �ttli�";
+        $text['gen7'] = "� fj�r�a �ttli�";
+        $text['gen8'] = "� fimmta �ttli�";
+        $text['gen9'] = "� sj�tta �ttli�";
+        $text['gen10'] = "� Sj�unda �ttli�";
+        $text['gen11'] = "� �ttunda �ttli�";
+        $text['gen12'] = "� n�unda �ttli�";
+        $text['graphdesc'] = "Graf�skt ni�jatal a� �essum punkti";
+        $text['pedbox'] = "Kassar";
+        $text['regformat'] = "Ni�jatal";
+        $text['extrasexpl'] = "Ef a� lj�smyndir e�a s�gur eru til um vi�komandi einstakling, koma vi�eigandi myndir n�st vi� n�fnin.";
+        $text['popupnote3'] = " = N�tt ";
+        $text['mediaavail'] = "Margmi�lun tilt�k";
+        $text['pedigreefor'] = "Ni�jatal fyrir";
+        $text['pedigreech'] = "�ttarb�karmynd";
+        $text['datesloc'] = "Dagsetningar og sta�setningar";
+        $text['borchr'] = "F�ddur/E�a - d�in/jar�a�ur (tveir)";
+        $text['nobd'] = "Engin f��ingar- e�a d�nardagur";
+        $text['bcdb'] = "F�ddur/Alt/d�nar/jar�a�ur (four)";
+        $text['numsys'] = "N�mera kerfi";
+        $text['gennums'] = "Kynsl��ar n�mer";
+        $text['henrynums'] = "Henry n�mer";
+        $text['abovnums'] = "d'Aboville n�mer";
+        $text['devnums'] = "de Villiers Nn�mer";
+        $text['dispopts'] = "Valkostir";
+        //added in 10.0.0
+        $text['no_ancestors'] = "Engir forfe�ur fundust";
+        $text['ancestor_chart'] = "L��r�tt �ttartr� (�ar)";
+        $text['opennewwindow'] = "Opna � n�jum glugga";
+        $text['pedvertical'] = "L��r�tt";
+        //added in 11.0.0
+        $text['familywith'] = "Family with";
+        $text['fcmlogin'] = "Vinsamlegast skr��u �ig inn til a� sko�a n�nar";
+        $text['isthe'] = "er";
+        $text['otherspouses'] = "a�rir makar";
+        $text['parentfamily'] = "The parent family ";
+        $text['showfamily'] = "S�na fj�lskyldu";
+        $text['shown'] = "shown";
+        $text['showparentfamily'] = "show parent family";
+        $text['showperson'] = "s�na einstakling";
+        //added in 11.0.2
+        $text['otherfamilies'] = "Other families";
+        break;
+
+    //search.php, searchform.php
+    //merged with reports and showreport in 5.0.0
+    case "search":
+    case "reports":
+        $text['noreports'] = "Engar sk�rslur til.";
+        $text['reportname'] = "Nafn sk�rslu";
+        $text['allreports'] = "Allar sk�rslur";
+        $text['report'] = "Sk�rslur";
+        $text['error'] = "Villa";
+        $text['reportsyntax'] = "Eitthva� vi� �essa fyrirspurn";
+        $text['wasincorrect'] = "var rangt, og g�tum vi� ekki s�� sk�rsluna. vinsemlagast hafi� samband vi� vefstj�ra �";
+        $text['errormessage'] = "Villu bo�";
+        $text['equals'] = "er";
+        $text['endswith'] = "endar �";
+        $text['soundexof'] = "soundex of";
+        $text['metaphoneof'] = "metaphone of";
+        $text['plusminus10'] = "+/- 10 �rum fr�";
+        $text['lessthan'] = "minna en";
+        $text['greaterthan'] = "meira en";
+        $text['lessthanequal'] = "minna en e�a jafnt og";
+        $text['greaterthanequal'] = "meira en e�a jafnt og";
+        $text['equalto'] = "Jafnt og";
+        $text['tryagain'] = "Vinsamlegast reyndu aftur";
+        $text['joinwith'] = "Sameina me�";
+        $text['cap_and'] = "og";
+        $text['cap_or'] = "e�a";
+        $text['showspouse'] = "S�na maka (s�nir alla ef um fleiri en einn er a� r��a)";
+        $text['submitquery'] = "S�kja sk�rslu";
+        $text['birthplace'] = "F��ingarsta�ur";
+        $text['deathplace'] = "D�narsta�ur";
+        $text['birthdatetr'] = "F��ingar�r";
+        $text['deathdatetr'] = "D�nar�r";
+        $text['plusminus2'] = "+/- 2 �rum fr�";
+        $text['resetall'] = "Hreinsa �ll gildi";
+        $text['showdeath'] = "S�na uppl�singar um andl�t/jar�setningu";
+        $text['altbirthplace'] = "Sk�rnarsta�ur";
+        $text['altbirthdatetr'] = "Sk�rnar�r";
+        $text['burialplace'] = "Nafn kirkjugar�s";
+        $text['burialdatetr'] = "Jar�setningar�r";
+        $text['event'] = "Atbur�ir";
+        $text['day'] = "Dagur";
+        $text['month'] = "M�nu�ur";
+        $text['keyword'] = "Lykilor� (t.d, \"Abt\")";
+        $text['explain'] = "Sl��u inn dagsetningu til a� sj� atbur�i �ann dag e�a skyldu reitina eftir au�a til a� sj� alla atbur�i.";
+        $text['enterdate'] = "Vinsamlegast sl��u inn e�a veldu a� minnsta kosti eitt af eftirfarandi: Dagur, M�nu�ur, �r, Lykil or�";
+        $text['fullname'] = "Fullt nafn";
+        $text['birthdate'] = "F��ingardagur";
+        $text['altbirthdate'] = "Sk�rnardagur";
+        $text['marrdate'] = "Giftingardagur";
+        $text['spouseid'] = "Nr. maka";
+        $text['spousename'] = "Nafn Maka";
+        $text['deathdate'] = "D�nardagur";
+        $text['burialdate'] = "Jar�setningardagur";
+        $text['changedate'] = "Dagsetning s��ustu breytingar";
+        $text['gedcom'] = "Tr�";
+        $text['baptdate'] = "Ferming (LDS)";
+        $text['baptplace'] = "Fermingar sta�ur (LDS)";
+        $text['endldate'] = "Endowment Date (LDS)";
+        $text['endlplace'] = "Endowment Place (LDS)";
+        $text['ssealdate'] = "Seal Date S (LDS)";   //Sealed to spouse
+        $text['ssealplace'] = "Seal Place S (LDS)";
+        $text['psealdate'] = "Seal Date P (LDS)";   //Sealed to parents
+        $text['psealplace'] = "Seal Place P (LDS)";
+        $text['marrplace'] = "Hj�nav�gslusta�ur";
+        $text['spousesurname'] = "Eftirnafn maka";
+        $text['spousemore'] = "Ef �� sl�r� in eftirnafn maka ver�ur �� a� minnsta kosti a� sl� inn � einn annan reit hj� honum.";
+        $text['plusminus5'] = "+/- 5 �rum fr�";
+        $text['exists'] = "er �egar til";
+        $text['dnexist'] = "er ekki til";
+        $text['divdate'] = "Dagsetning skilna�ar";
+        $text['divplace'] = "Skilna�ar sta�ur";
+        $text['otherevents'] = "A�rir atbur�ir";
+        $text['numresults'] = "Ni�urst��ur � hverri s��u";
+        $text['mysphoto'] = "Myndir sem vantar frekari uppl�singar um";
+        $text['mysperson'] = "Einstaklingar sem vantar frekari uppl�singar um";
+        $text['joinor'] = "'Skr��u �ig me� valkostur e�a 'ekki er h�gt a� nota me� Eftirnafn maka";
+        $text['tellus'] = "Seg�u okkur �a� sem �� veist";
+        $text['moreinfo'] = "frekari uppl�singar:";
+        //added in 8.0.0
+        $text['marrdatetr'] = "Giftingar�r";
+        $text['divdatetr'] = "Skilna�ar�r";
+        $text['mothername'] = "Nafn m��ur";
+        $text['fathername'] = "Nafn f��urs";
+        $text['filter'] = "S�a";
+        $text['notliving'] = "Ekki � l�fi";
+        $text['nodayevents'] = "Atbur�ir �essa m�na�ar, sem ekki eru tengdir vi� tiltekinn dag:";
+        //added in 9.0.0
+        $text['csv'] = "Comma-delimited CSV file";
+        //added in 10.0.0
+        $text['confdate'] = "Fermingardagur (LDS)";
+        $text['confplace'] = "Fermingarsta�ur (LDS)";
+        $text['initdate'] = "Initiatory Date (LDS)";
+        $text['initplace'] = "Initiatory Place (LDS)";
+        //added in 11.0.0
+        $text['marrtype'] = "Tegund hj�nabands";
+        $text['searchfor'] = "Leita a�";
+        $text['searchnote'] = "Ath: �essi s��a notar Google leitarv�lina til a� leita � �llum g�gnum sem eru skr�� � �essari s��u.  Fj�ldi ni�ursta�a sem fram koma vi� leit, er h��ur �v� hversu vel Google hefur skr�� s��una.";
+        break;
+
+    //showlog.php
+    case "showlog":
+        $text['logfilefor'] = "loggar fyrir";
+        $text['mostrecentactions'] = "S��ustu a�ger�ir";
+        $text['autorefresh'] = "Sj�lfvirk endurn�jun (� 30 sek�ndu fresti)";
+        $text['refreshoff'] = "S�kkva � sj�lfvirk endurn�jun";
+        break;
+
+    case "headstones":
+    case "showphoto":
+        $text['cemeteriesheadstones'] = "Kirkjugar�ar og legsteinar";
+        $text['showallhsr'] = "S�na yfirlit yfir alla";
+        $text['in'] = "inn";
+        $text['showmap'] = "S�na kort";
+        $text['headstonefor'] = "legsteinn fyrir";
+        $text['photoof'] = "Lj�smynd af";
+        $text['photoowner'] = "Eigandi/heimild";
+        $text['nocemetery'] = "engin grafreitur";
+        $text['iptc005'] = "Titill";
+        $text['iptc020'] = "stu�n. Flokkar";
+        $text['iptc040'] = "S�rstakar lei�beningar";
+        $text['iptc055'] = "Skapa� dags";
+        $text['iptc080'] = "H�fundur";
+        $text['iptc085'] = "Sta�setning h�fundar";
+        $text['iptc090'] = "Borg";
+        $text['iptc095'] = "R�ki";
+        $text['iptc101'] = "Land";
+        $text['iptc103'] = "OTR";
+        $text['iptc105'] = "Fyrirs�gn";
+        $text['iptc110'] = "spretta";
+        $text['iptc115'] = "Lj�smyndaspretta";
+        $text['iptc116'] = "H�fundarr�ttur";
+        $text['iptc120'] = "Mynd af";
+        $text['iptc122'] = "mynda ger� af";
+        $text['mapof'] = "kort af";
+        $text['regphotos'] = "N�kv�mari uppl�singar";
+        $text['gallery'] = "Sj� bara sm�myndir";
+        $text['cemphotos'] = "Myndir af kirkjug�r�um";
+        $text['photosize'] = "St�r�";
+        $text['iptc010'] = "Priority";
+        $text['filesize'] = "Skr�arst�r�";
+        $text['seeloc'] = "sj� sta�setningu";
+        $text['showall'] = "S�na allr";
+        $text['editmedia'] = "Breyta margmi�lun";
+        $text['viewitem'] = "Sko�a �ennan hlut";
+        $text['editcem'] = "Breyta grafreit";
+        $text['numitems'] = "# Hlutir";
+        $text['allalbums'] = "�ll myndaalb�m";
+        $text['slidestop'] = "Stoppa myndas�ningu";
+        $text['slideresume'] = "Setja myndas�ningu af sta�";
+        $text['slidesecs'] = "Fj�ldi sek�ndna fyrir hverja mynd:";
+        $text['minussecs'] = "M�nus 0.5 sek�ndur";
+        $text['plussecs'] = "Pl�s 0.5 sek�ndur";
+        $text['nocountry'] = "��ekkt land";
+        $text['nostate'] = "��ekkt fylki";
+        $text['nocounty'] = "��ekkt s�sla";
+        $text['nocity'] = "��ekkt borg";
+        $text['nocemname'] = "��ekktur kirkjugar�ur";
+        $text['editalbum'] = "Breyta myndaalb�mi";
+        $text['mediamaptext'] = "<strong>Ath:</strong> F�r�u m�sarbendillinn �inn yfir mynd til a� birta n�fn. Smelltu til a� sj� s��u fyrir hvert nafn.";
+        //added in 8.0.0
+        $text['allburials'] = "Allir kirkjugar�ar";
+        $text['moreinfo'] = "meiri uppl�singar:";
+        //added in 9.0.0
+        $text['iptc025'] = "Lykilor�";
+        $text['iptc092'] = "Sub-location";
+        $text['iptc015'] = "Flokkur";
+        $text['iptc065'] = "Originating Program";
+        $text['iptc070'] = "�tg�fa forrits";
+        break;
+
+    //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
+    case "surnames":
+    case "places":
+        $text['surnamesstarting'] = "S�na eftirn�fn sem byrja �";
+        $text['showtop'] = "S�na fyrstu";
+        $text['showallsurnames'] = "S�na �ll eftirn�fn";
+        $text['sortedalpha'] = "� stafr�fsr��";
+        $text['byoccurrence'] = "eftir fj�lda";
+        $text['firstchars'] = "Fyrstu stafina";
+        $text['mainsurnamepage'] = "A�al eftirnafna s��an";
+        $text['allsurnames'] = "�ll eftirn�fn";
+        $text['showmatchingsurnames'] = "Smelltu � eftirnafn til a� sj� fleiri.";
+        $text['backtotop'] = "Aftur efst";
+        $text['beginswith'] = "Byrjar �";
+        $text['allbeginningwith'] = "�ll sem byrja �";
+        $text['numoccurrences'] = "fj�ldi � foreldrart�lu";
+        $text['placesstarting'] = "S�na sta�i sem byrja �";
+        $text['showmatchingplaces'] = "smelltu � nafn til a� sko�a.";
+        $text['totalnames'] = "heildarfj�ldi nafna";
+        $text['showallplaces'] = "S�na alla sta�i";
+        $text['totalplaces'] = "heildarfj�ldi sta�a";
+        $text['mainplacepage'] = "A�al sta�ir s��a";
+        $text['allplaces'] = "�ll st�rstu umhverfin";
+        $text['placescont'] = "S�na alla sta�i sem innihalda";
+        //changed in 8.0.0
+        $text['top30'] = "xxx algengustu eftirn�fnin";
+        $text['top30places'] = "xxx algengustu sta�irnir";
+        //added in 12.0.0
+        $text['firstnamelist'] = "Yfirlit yfir forn�fn";
+        $text['firstnamesstarting'] = "S�na forn�fn sem byrja �";
+        $text['showallfirstnames'] = "S�na �ll forn�fn";
+        $text['mainfirstnamepage'] = "Yfirlit yfir �ll skr�� forn�fn";
+        $text['allfirstnames'] = "�ll forn�fn";
+        $text['showmatchingfirstnames'] = "Smelltu � nafn til a� sj� ni�urst��urnar.";
+        $text['allfirstbegwith'] = "�ll forn�fn sem byrja �";
+        $text['top30first'] = "Fyrstu xxx forn�fnin";
+        $text['allothers'] = "�ll �nnur";
+        $text['amongall'] = "(af �llum n�fnum)";
+        $text['justtop'] = "A�eins fyrstu xxx";
+        break;
+
+    //whatsnew.php
+    case "whatsnew":
+        $text['pastxdays'] = "(S��ustu xx daga)";
+
+        $text['photo'] = "Lj�smynd";
+        $text['history'] = "Saga/Skal";
+        $text['husbid'] = "Nr. eiginmanns";
+        $text['husbname'] = "Nafn eiginmanns";
+        $text['wifeid'] = "Nr. eiginkonu";
+        //added in 11.0.0
+        $text['wifename'] = "Mother's Name";
+        break;
+
+    //timeline.php, timeline2.php
+    case "timeline":
+        $text['text_delete'] = "Ey�a";
+        $text['addperson'] = "B�ta einstakling vi�";
+        $text['nobirth'] = "�essi einstaklingur er ekki me� gildan f��ingardag og var �v� ekki h�gt a� b�ta honum vi�";
+        $text['event'] = "Vi�bur�ir";
+        $text['chartwidth'] = "Breidd";
+        $text['timelineinstr'] = "b�ttu allt a� fj�rum fleirri einstaklingum me� �v� a� sl� inn einstaklingsn�meri� �eirra h�r fyrir ne�an:";
+        $text['togglelines'] = "Kveikja � l�num";
+        //changed in 9.0.0
+        $text['noliving'] = "�essi einstaklingur er merktur � l�fi og var �v� ekki h�gt a� b�ta honum vi� �v� �� ert ekki m� r�ttindi til �ess";
+        break;
+
+    //browsetrees.php
+    //login.php, newacctform.php, addnewacct.php
+    case "trees":
+    case "login":
+        $text['browsealltrees'] = "Sko�a �ll tr�";
+        $text['treename'] = "Nafn tr�s";
+        $text['owner'] = "Eigandi";
+        $text['address'] = "Heimilisfang";
+        $text['city'] = "Borg";
+        $text['state'] = "S�sla";
+        $text['zip'] = "P�stn�mer";
+        $text['country'] = "Land";
+        $text['email'] = "Netfang";
+        $text['phone'] = "S�mi";
+        $text['username'] = "Notendanafn";
+        $text['password'] = "Lykilor�";
+        $text['loginfailed'] = "Innskr�ning mist�kst.";
+
+        $text['regnewacct'] = "Notendaskr�ning";
+        $text['realname'] = "Nafn";
+        $text['phone'] = "S�mi";
+        $text['email'] = "Netfang";
+        $text['address'] = "Heimilisfang";
+        $text['acctcomments'] = "Skilabo� e�a athugasemdir";
+        $text['submit'] = "Senda";
+        $text['leaveblank'] = "(haf�u autt ef �ska� er eftir n�ju tr�i)";
+        $text['required'] = "Ver�ur a� fylla �t";
+        $text['enterpassword'] = "Sl��u inn lykilor�.";
+        $text['enterusername'] = "Sl��u inn notendanafn.";
+        $text['failure'] = "Notendanafni� sem �� valdir er uppteki�.  Far�u til baka til a� velja ��r n�tt notendanafn.";
+        $text['success'] = "Takk fyrir. Skr�ningin ��n hefur veri� m�ttekin. �� ver�ur l�tin vita �egar a�gangur �inn er or�in virkur e�a meiri uppl�singar vantar.";
+        $text['emailsubject'] = "�ska� hefur veri� eftir a�gang a� �ttfr��is��unni";
+        $text['website'] = "Heimas��a";
+        $text['nologin'] = "Vantar �ig notendanafn?";
+        $text['loginsent'] = "Uppl�singar sendar";
+        $text['loginnotsent'] = "A�gangs uppl�singar ekki sendar";
+        $text['enterrealname'] = "Sl��u inn nafni� �itt.";
+        $text['rempass'] = "Vera alltaf skr��ur � �essari t�lvu";
+        $text['morestats'] = "Meiri t�lfr��i";
+        $text['accmail'] = "<strong>ATH:</strong> Gangtu �r skugga um a� ekki �etta l�n s� ekki � lista yfir l�n sem loka� er � p�st fr�.";
+        $text['newpassword'] = "N�tt lykilor�";
+        $text['resetpass'] = "Breyta lykilor�i";
+        $text['nousers'] = "�etta form er ekki h�gt a� nota fyrr en einn notandi er til. Ef �� ert eigandi �essara s��u, far�u � admin/notendur til a� b�a til kerfistj�ra a�gang.";
+        $text['noregs'] = "�v� mi�ur, er ekki teki� � m�ti skr�ningum n�na. Vinsamlegast haf�u <a href=\"suggest.php\">samband </a> beint ef �� hefur athugasemdir e�a spurning er var�ar eitthva� � �essari s��u.";
+        //changed in 8.0.0
+        $text['emailmsg'] = "�a� hefur borist ��r p�stur um a�gang a� ny�jatals s��unni. vinsamlegast skr��u �ig inn � kerfis hluta s��unar og gef�u notenda r�ttindi til a� taka ��tt � a� vi�halda s��unni. Ef �� notandi er � lagi vinsamlegast l�ttu hann vita me� �v� a� svara p�stinum hanns.";
+        $text['accactive'] = "A�gangurinn hefur veri� virkja�ur en notandinn hefur engin s�rst�k r�ttindi fyrr en �� gefur honum �au.";
+        $text['accinactive'] = "Far�u � Admin / Notandi / yfirlit til a� f� a�gang a� a�gangs stillingum. A�gangurinn ver�ur �fram �virkur �ar til �� breytir og vistar skr�na a� minnsta kosti einu sinni..";
+        $text['pwdagain'] = "Lykilor� aftur";
+        $text['enterpassword2'] = "Vinsamlegast skr��u inn lykilor�i� �itt aftur.";
+        $text['pwdsmatch'] = "lykilor� ��n passa ekki saman. Vinsamlegast sl��u inn sama a�gangsor�i� � hvern reit.";
+        //added in 8.0.0
+        $text['acksubject'] = "�akka ��r fyrir a� skr� �ig"; //for a new user account
+        $text['ackmessage'] = "Bei�ni ��n um notanda hefur veri� m�ttekin. A�gangurinn �inn mun vera �virkur �ar til hann hefur veri� sko�a�ur af  stj�rnanda. ��r ver�ur tilkynnt me� t�lvup�sti �egar tenging ��n er tilb�in til notkunar.";
+        //added in 12.0.0
+        $text['switch'] = "Switch";
+        break;
+
     //added in 10.0.0
-    $text['no_ancestors'] = "Engir forfe�ur fundust";
-    $text['ancestor_chart'] = "L��r�tt �ttartr� (�ar)";
-    $text['opennewwindow'] = "Opna � n�jum glugga";
-    $text['pedvertical'] = "L��r�tt";
-    //added in 11.0.0
-    $text['familywith'] = "Family with";
-    $text['fcmlogin'] = "Vinsamlegast skr��u �ig inn til a� sko�a n�nar";
-    $text['isthe'] = "er";
-    $text['otherspouses'] = "a�rir makar";
-    $text['parentfamily'] = "The parent family ";
-    $text['showfamily'] = "S�na fj�lskyldu";
-    $text['shown'] = "shown";
-    $text['showparentfamily'] = "show parent family";
-    $text['showperson'] = "s�na einstakling";
-    //added in 11.0.2
-    $text['otherfamilies'] = "Other families";
-    break;
+    case "branches":
+        $text['browseallbranches'] = "Sko�a allar greinar";
+        break;
 
-  //search.php, searchform.php
-  //merged with reports and showreport in 5.0.0
-  case "search":
-  case "reports":
-    $text['noreports'] = "Engar sk�rslur til.";
-    $text['reportname'] = "Nafn sk�rslu";
-    $text['allreports'] = "Allar sk�rslur";
-    $text['report'] = "Sk�rslur";
-    $text['error'] = "Villa";
-    $text['reportsyntax'] = "Eitthva� vi� �essa fyrirspurn";
-    $text['wasincorrect'] = "var rangt, og g�tum vi� ekki s�� sk�rsluna. vinsemlagast hafi� samband vi� vefstj�ra �";
-    $text['errormessage'] = "Villu bo�";
-    $text['equals'] = "er";
-    $text['endswith'] = "endar �";
-    $text['soundexof'] = "soundex of";
-    $text['metaphoneof'] = "metaphone of";
-    $text['plusminus10'] = "+/- 10 �rum fr�";
-    $text['lessthan'] = "minna en";
-    $text['greaterthan'] = "meira en";
-    $text['lessthanequal'] = "minna en e�a jafnt og";
-    $text['greaterthanequal'] = "meira en e�a jafnt og";
-    $text['equalto'] = "Jafnt og";
-    $text['tryagain'] = "Vinsamlegast reyndu aftur";
-    $text['joinwith'] = "Sameina me�";
-    $text['cap_and'] = "og";
-    $text['cap_or'] = "e�a";
-    $text['showspouse'] = "S�na maka (s�nir alla ef um fleiri en einn er a� r��a)";
-    $text['submitquery'] = "S�kja sk�rslu";
-    $text['birthplace'] = "F��ingarsta�ur";
-    $text['deathplace'] = "D�narsta�ur";
-    $text['birthdatetr'] = "F��ingar�r";
-    $text['deathdatetr'] = "D�nar�r";
-    $text['plusminus2'] = "+/- 2 �rum fr�";
-    $text['resetall'] = "Hreinsa �ll gildi";
-    $text['showdeath'] = "S�na uppl�singar um andl�t/jar�setningu";
-    $text['altbirthplace'] = "Sk�rnarsta�ur";
-    $text['altbirthdatetr'] = "Sk�rnar�r";
-    $text['burialplace'] = "Nafn kirkjugar�s";
-    $text['burialdatetr'] = "Jar�setningar�r";
-    $text['event'] = "Atbur�ir";
-    $text['day'] = "Dagur";
-    $text['month'] = "M�nu�ur";
-    $text['keyword'] = "Lykilor� (t.d, \"Abt\")";
-    $text['explain'] = "Sl��u inn dagsetningu til a� sj� atbur�i �ann dag e�a skyldu reitina eftir au�a til a� sj� alla atbur�i.";
-    $text['enterdate'] = "Vinsamlegast sl��u inn e�a veldu a� minnsta kosti eitt af eftirfarandi: Dagur, M�nu�ur, �r, Lykil or�";
-    $text['fullname'] = "Fullt nafn";
-    $text['birthdate'] = "F��ingardagur";
-    $text['altbirthdate'] = "Sk�rnardagur";
-    $text['marrdate'] = "Giftingardagur";
-    $text['spouseid'] = "Nr. maka";
-    $text['spousename'] = "Nafn Maka";
-    $text['deathdate'] = "D�nardagur";
-    $text['burialdate'] = "Jar�setningardagur";
-    $text['changedate'] = "Dagsetning s��ustu breytingar";
-    $text['gedcom'] = "Tr�";
-    $text['baptdate'] = "Ferming (LDS)";
-    $text['baptplace'] = "Fermingar sta�ur (LDS)";
-    $text['endldate'] = "Endowment Date (LDS)";
-    $text['endlplace'] = "Endowment Place (LDS)";
-    $text['ssealdate'] = "Seal Date S (LDS)";   //Sealed to spouse
-    $text['ssealplace'] = "Seal Place S (LDS)";
-    $text['psealdate'] = "Seal Date P (LDS)";   //Sealed to parents
-    $text['psealplace'] = "Seal Place P (LDS)";
-    $text['marrplace'] = "Hj�nav�gslusta�ur";
-    $text['spousesurname'] = "Eftirnafn maka";
-    $text['spousemore'] = "Ef �� sl�r� in eftirnafn maka ver�ur �� a� minnsta kosti a� sl� inn � einn annan reit hj� honum.";
-    $text['plusminus5'] = "+/- 5 �rum fr�";
-    $text['exists'] = "er �egar til";
-    $text['dnexist'] = "er ekki til";
-    $text['divdate'] = "Dagsetning skilna�ar";
-    $text['divplace'] = "Skilna�ar sta�ur";
-    $text['otherevents'] = "A�rir atbur�ir";
-    $text['numresults'] = "Ni�urst��ur � hverri s��u";
-    $text['mysphoto'] = "Myndir sem vantar frekari uppl�singar um";
-    $text['mysperson'] = "Einstaklingar sem vantar frekari uppl�singar um";
-    $text['joinor'] = "'Skr��u �ig me� valkostur e�a 'ekki er h�gt a� nota me� Eftirnafn maka";
-    $text['tellus'] = "Seg�u okkur �a� sem �� veist";
-    $text['moreinfo'] = "frekari uppl�singar:";
-    //added in 8.0.0
-    $text['marrdatetr'] = "Giftingar�r";
-    $text['divdatetr'] = "Skilna�ar�r";
-    $text['mothername'] = "Nafn m��ur";
-    $text['fathername'] = "Nafn f��urs";
-    $text['filter'] = "S�a";
-    $text['notliving'] = "Ekki � l�fi";
-    $text['nodayevents'] = "Atbur�ir �essa m�na�ar, sem ekki eru tengdir vi� tiltekinn dag:";
-    //added in 9.0.0
-    $text['csv'] = "Comma-delimited CSV file";
-    //added in 10.0.0
-    $text['confdate'] = "Fermingardagur (LDS)";
-    $text['confplace'] = "Fermingarsta�ur (LDS)";
-    $text['initdate'] = "Initiatory Date (LDS)";
-    $text['initplace'] = "Initiatory Place (LDS)";
-    //added in 11.0.0
-    $text['marrtype'] = "Tegund hj�nabands";
-    $text['searchfor'] = "Leita a�";
-    $text['searchnote'] = "Ath: �essi s��a notar Google leitarv�lina til a� leita � �llum g�gnum sem eru skr�� � �essari s��u.  Fj�ldi ni�ursta�a sem fram koma vi� leit, er h��ur �v� hversu vel Google hefur skr�� s��una.";
-    break;
+    //statistics.php
+    case "stats":
+        $text['quantity'] = "Fj�ldi";
+        $text['totindividuals'] = "Fj�ldi einstaklinga";
+        $text['totmales'] = "Fj�ldi manna";
+        $text['totfemales'] = "Fj�ldi kvenna";
+        $text['totunknown'] = "Fj�ldi einstaklinga �ar sem kyn er ekki �ekkt";
+        $text['totliving'] = "Fj�ldi lifandi einstaklinga";
+        $text['totfamilies'] = "Fj�ldi fj�lskyldna";
+        $text['totuniquesn'] = "Fj�ldi eftirnafn";
+        //$text['totphotos'] = "Total Photos";
+        //$text['totdocs'] = "Total Histories &amp; Documents";
+        //$text['totheadstones'] = "Total Headstones";
+        $text['totsources'] = "Fj�ldi heimilda";
+        $text['avglifespan'] = "Me�al �vilengd";
+        $text['earliestbirth'] = "Fyrsta f��ing";
+        $text['longestlived'] = "H�sti aldur";
+        $text['days'] = "dagar";
+        $text['age'] = "Aldur";
+        $text['agedisclaimer'] = "Aldurs-tengdir �treikningar eru bygg�ir � einstaklingum me� skr��ar dagsetningar vegna fj�lda �skr��ra dagsetninga er �etta ekki alveg 100 pr�sent n�kv�mt.";
+        $text['treedetail'] = "Meiri uppl�singar um �etta tr�";
+        $text['total'] = "Samtals";
+        //added in 12.0
+        $text['totdeceased'] = "Total Deceased";
+        break;
 
-  //showlog.php
-  case "showlog":
-    $text['logfilefor'] = "loggar fyrir";
-    $text['mostrecentactions'] = "S��ustu a�ger�ir";
-    $text['autorefresh'] = "Sj�lfvirk endurn�jun (� 30 sek�ndu fresti)";
-    $text['refreshoff'] = "S�kkva � sj�lfvirk endurn�jun";
-    break;
+    case "notes":
+        $text['browseallnotes'] = "Fl�tta � �llum athugasemdum";
+        break;
 
-  case "headstones":
-  case "showphoto":
-    $text['cemeteriesheadstones'] = "Kirkjugar�ar og legsteinar";
-    $text['showallhsr'] = "S�na yfirlit yfir alla";
-    $text['in'] = "inn";
-    $text['showmap'] = "S�na kort";
-    $text['headstonefor'] = "legsteinn fyrir";
-    $text['photoof'] = "Lj�smynd af";
-    $text['photoowner'] = "Eigandi/heimild";
-    $text['nocemetery'] = "engin grafreitur";
-    $text['iptc005'] = "Titill";
-    $text['iptc020'] = "stu�n. Flokkar";
-    $text['iptc040'] = "S�rstakar lei�beningar";
-    $text['iptc055'] = "Skapa� dags";
-    $text['iptc080'] = "H�fundur";
-    $text['iptc085'] = "Sta�setning h�fundar";
-    $text['iptc090'] = "Borg";
-    $text['iptc095'] = "R�ki";
-    $text['iptc101'] = "Land";
-    $text['iptc103'] = "OTR";
-    $text['iptc105'] = "Fyrirs�gn";
-    $text['iptc110'] = "spretta";
-    $text['iptc115'] = "Lj�smyndaspretta";
-    $text['iptc116'] = "H�fundarr�ttur";
-    $text['iptc120'] = "Mynd af";
-    $text['iptc122'] = "mynda ger� af";
-    $text['mapof'] = "kort af";
-    $text['regphotos'] = "N�kv�mari uppl�singar";
-    $text['gallery'] = "Sj� bara sm�myndir";
-    $text['cemphotos'] = "Myndir af kirkjug�r�um";
-    $text['photosize'] = "St�r�";
-    $text['iptc010'] = "Priority";
-    $text['filesize'] = "Skr�arst�r�";
-    $text['seeloc'] = "sj� sta�setningu";
-    $text['showall'] = "S�na allr";
-    $text['editmedia'] = "Breyta margmi�lun";
-    $text['viewitem'] = "Sko�a �ennan hlut";
-    $text['editcem'] = "Breyta grafreit";
-    $text['numitems'] = "# Hlutir";
-    $text['allalbums'] = "�ll myndaalb�m";
-    $text['slidestop'] = "Stoppa myndas�ningu";
-    $text['slideresume'] = "Setja myndas�ningu af sta�";
-    $text['slidesecs'] = "Fj�ldi sek�ndna fyrir hverja mynd:";
-    $text['minussecs'] = "M�nus 0.5 sek�ndur";
-    $text['plussecs'] = "Pl�s 0.5 sek�ndur";
-    $text['nocountry'] = "��ekkt land";
-    $text['nostate'] = "��ekkt fylki";
-    $text['nocounty'] = "��ekkt s�sla";
-    $text['nocity'] = "��ekkt borg";
-    $text['nocemname'] = "��ekktur kirkjugar�ur";
-    $text['editalbum'] = "Breyta myndaalb�mi";
-    $text['mediamaptext'] = "<strong>Ath:</strong> F�r�u m�sarbendillinn �inn yfir mynd til a� birta n�fn. Smelltu til a� sj� s��u fyrir hvert nafn.";
-    //added in 8.0.0
-    $text['allburials'] = "Allir kirkjugar�ar";
-    $text['moreinfo'] = "meiri uppl�singar:";
-    //added in 9.0.0
-    $text['iptc025'] = "Lykilor�";
-    $text['iptc092'] = "Sub-location";
-    $text['iptc015'] = "Flokkur";
-    $text['iptc065'] = "Originating Program";
-    $text['iptc070'] = "�tg�fa forrits";
-    break;
+    case "help":
+        $text['menuhelp'] = "Valmynd";
+        break;
 
-  //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
-  case "surnames":
-  case "places":
-    $text['surnamesstarting'] = "S�na eftirn�fn sem byrja �";
-    $text['showtop'] = "S�na fyrstu";
-    $text['showallsurnames'] = "S�na �ll eftirn�fn";
-    $text['sortedalpha'] = "� stafr�fsr��";
-    $text['byoccurrence'] = "eftir fj�lda";
-    $text['firstchars'] = "Fyrstu stafina";
-    $text['mainsurnamepage'] = "A�al eftirnafna s��an";
-    $text['allsurnames'] = "�ll eftirn�fn";
-    $text['showmatchingsurnames'] = "Smelltu � eftirnafn til a� sj� fleiri.";
-    $text['backtotop'] = "Aftur efst";
-    $text['beginswith'] = "Byrjar �";
-    $text['allbeginningwith'] = "�ll sem byrja �";
-    $text['numoccurrences'] = "fj�ldi � foreldrart�lu";
-    $text['placesstarting'] = "S�na sta�i sem byrja �";
-    $text['showmatchingplaces'] = "smelltu � nafn til a� sko�a.";
-    $text['totalnames'] = "heildarfj�ldi nafna";
-    $text['showallplaces'] = "S�na alla sta�i";
-    $text['totalplaces'] = "heildarfj�ldi sta�a";
-    $text['mainplacepage'] = "A�al sta�ir s��a";
-    $text['allplaces'] = "�ll st�rstu umhverfin";
-    $text['placescont'] = "S�na alla sta�i sem innihalda";
-    //changed in 8.0.0
-    $text['top30'] = "xxx algengustu eftirn�fnin";
-    $text['top30places'] = "xxx algengustu sta�irnir";
-    //added in 12.0.0
-    $text['firstnamelist'] = "Yfirlit yfir forn�fn";
-    $text['firstnamesstarting'] = "S�na forn�fn sem byrja �";
-    $text['showallfirstnames'] = "S�na �ll forn�fn";
-    $text['mainfirstnamepage'] = "Yfirlit yfir �ll skr�� forn�fn";
-    $text['allfirstnames'] = "�ll forn�fn";
-    $text['showmatchingfirstnames'] = "Smelltu � nafn til a� sj� ni�urst��urnar.";
-    $text['allfirstbegwith'] = "�ll forn�fn sem byrja �";
-    $text['top30first'] = "Fyrstu xxx forn�fnin";
-    $text['allothers'] = "�ll �nnur";
-    $text['amongall'] = "(af �llum n�fnum)";
-    $text['justtop'] = "A�eins fyrstu xxx";
-    break;
+    case "install":
+        $text['perms'] = "a�gangsheimildir hafa veri� settar.";
+        $text['noperms'] = "a�gangsheimildir var ekki h�gt a� setja � �essar skr�r:";
+        $text['manual'] = "Vinsamlegast settu �� inn handvirkt.";
+        $text['folder'] = "Mappa";
+        $text['created'] = "hefur veri� �tb�inn";
+        $text['nocreate'] = "gat ekki veri� �tb�inn. Vinsamlegast ger�u �a� handvirkt.";
+        $text['infosaved'] = "Uppl�singar vista�ar, tenging sta�fest!";
+        $text['tablescr'] = "T�flur hafa veri� b�nar til!";
+        $text['notables'] = "Eftirfarandi t�flur g�tu ekki veri� �tb�nar:";
+        $text['nocomm'] = "TNG n�r ekki sambandi vi� gagnagrunn. Engar t�flur voru �tb�nar.";
+        $text['newdb'] = "Uppl�singar vistu�, tengingu sta�fest, n�r gagnagrunnur til:";
+        $text['noattach'] = "Uppl�singar vista�ar. Tengsl myndu� og gagnasafn skapa�, en TNG getur ekki tengst.";
+        $text['nodb'] = "Uppl�singar vista�ar. Tengsl ger�, en gagnagrunnur er ekki til og ekki h�gt a� skapa h�r. Vinsamlegast sta�festu a� gagnagrunns nafn s� r�tt, e�a nota stj�rnbor�i� til a� stofna hann..";
+        $text['noconn'] = "Uppl�singar vistu� en tengingin t�kst ekki. Einn e�a fleiri af eftirfarandi er rangt:";
+        $text['exists'] = "�egar til";
+        $text['loginfirst'] = "�� ver�ur a� skr�  �ig inn fyrst.";
+        $text['noop'] = "Ekkert var gert.";
+        //added in 8.0.0
+        $text['nouser'] = "Notandi var ekki b�inn til. notendanafn er l�klega til.";
+        $text['notree'] = "Tr� var ekki b�i� til. tr� er l�klega til.";
+        $text['infosaved2'] = "Uppl�singar vista�ar";
+        $text['renamedto'] = "endursk�rt �";
+        $text['norename'] = "gat ekki veri� endursk�rt";
+        break;
 
-  //whatsnew.php
-  case "whatsnew":
-    $text['pastxdays'] = "(S��ustu xx daga)";
+    case "imgviewer":
+        $text['zoomin'] = "�ysja Inn";
+        $text['zoomout'] = "�ysja �r";
+        $text['magmode'] = "St�kka";
+        $text['panmode'] = "Pan Mode";
+        $text['pan'] = "Smelltu til a� flytja innan myndar";
+        $text['fitwidth'] = "passa breidd";
+        $text['fitheight'] = "passa h��";
+        $text['newwin'] = "n�jan glugga";
+        $text['opennw'] = "n�ja mynd � n�jum glugga";
+        $text['magnifyreg'] = "Smelltu tul a� st�kka hluta af myndinni";
+        $text['imgctrls'] = "Virkja myndstj�rnun";
+        $text['vwrctrls'] = "Virkja mynd sko�ara stj�rnum Image Viewer Controls";
+        $text['vwrclose'] = "loka mynda sko�ara";
+        break;
 
-    $text['photo'] = "Lj�smynd";
-    $text['history'] = "Saga/Skal";
-    $text['husbid'] = "Nr. eiginmanns";
-    $text['husbname'] = "Nafn eiginmanns";
-    $text['wifeid'] = "Nr. eiginkonu";
-    //added in 11.0.0
-    $text['wifename'] = "Mother's Name";
-    break;
-
-  //timeline.php, timeline2.php
-  case "timeline":
-    $text['text_delete'] = "Ey�a";
-    $text['addperson'] = "B�ta einstakling vi�";
-    $text['nobirth'] = "�essi einstaklingur er ekki me� gildan f��ingardag og var �v� ekki h�gt a� b�ta honum vi�";
-    $text['event'] = "Vi�bur�ir";
-    $text['chartwidth'] = "Breidd";
-    $text['timelineinstr'] = "b�ttu allt a� fj�rum fleirri einstaklingum me� �v� a� sl� inn einstaklingsn�meri� �eirra h�r fyrir ne�an:";
-    $text['togglelines'] = "Kveikja � l�num";
-    //changed in 9.0.0
-    $text['noliving'] = "�essi einstaklingur er merktur � l�fi og var �v� ekki h�gt a� b�ta honum vi� �v� �� ert ekki m� r�ttindi til �ess";
-    break;
-
-  //browsetrees.php
-  //login.php, newacctform.php, addnewacct.php
-  case "trees":
-  case "login":
-    $text['browsealltrees'] = "Sko�a �ll tr�";
-    $text['treename'] = "Nafn tr�s";
-    $text['owner'] = "Eigandi";
-    $text['address'] = "Heimilisfang";
-    $text['city'] = "Borg";
-    $text['state'] = "S�sla";
-    $text['zip'] = "P�stn�mer";
-    $text['country'] = "Land";
-    $text['email'] = "Netfang";
-    $text['phone'] = "S�mi";
-    $text['username'] = "Notendanafn";
-    $text['password'] = "Lykilor�";
-    $text['loginfailed'] = "Innskr�ning mist�kst.";
-
-    $text['regnewacct'] = "Notendaskr�ning";
-    $text['realname'] = "Nafn";
-    $text['phone'] = "S�mi";
-    $text['email'] = "Netfang";
-    $text['address'] = "Heimilisfang";
-    $text['acctcomments'] = "Skilabo� e�a athugasemdir";
-    $text['submit'] = "Senda";
-    $text['leaveblank'] = "(haf�u autt ef �ska� er eftir n�ju tr�i)";
-    $text['required'] = "Ver�ur a� fylla �t";
-    $text['enterpassword'] = "Sl��u inn lykilor�.";
-    $text['enterusername'] = "Sl��u inn notendanafn.";
-    $text['failure'] = "Notendanafni� sem �� valdir er uppteki�.  Far�u til baka til a� velja ��r n�tt notendanafn.";
-    $text['success'] = "Takk fyrir. Skr�ningin ��n hefur veri� m�ttekin. �� ver�ur l�tin vita �egar a�gangur �inn er or�in virkur e�a meiri uppl�singar vantar.";
-    $text['emailsubject'] = "�ska� hefur veri� eftir a�gang a� �ttfr��is��unni";
-    $text['website'] = "Heimas��a";
-    $text['nologin'] = "Vantar �ig notendanafn?";
-    $text['loginsent'] = "Uppl�singar sendar";
-    $text['loginnotsent'] = "A�gangs uppl�singar ekki sendar";
-    $text['enterrealname'] = "Sl��u inn nafni� �itt.";
-    $text['rempass'] = "Vera alltaf skr��ur � �essari t�lvu";
-    $text['morestats'] = "Meiri t�lfr��i";
-    $text['accmail'] = "<strong>ATH:</strong> Gangtu �r skugga um a� ekki �etta l�n s� ekki � lista yfir l�n sem loka� er � p�st fr�.";
-    $text['newpassword'] = "N�tt lykilor�";
-    $text['resetpass'] = "Breyta lykilor�i";
-    $text['nousers'] = "�etta form er ekki h�gt a� nota fyrr en einn notandi er til. Ef �� ert eigandi �essara s��u, far�u � admin/notendur til a� b�a til kerfistj�ra a�gang.";
-    $text['noregs'] = "�v� mi�ur, er ekki teki� � m�ti skr�ningum n�na. Vinsamlegast haf�u <a href=\"suggest.php\">samband </a> beint ef �� hefur athugasemdir e�a spurning er var�ar eitthva� � �essari s��u.";
-    //changed in 8.0.0
-    $text['emailmsg'] = "�a� hefur borist ��r p�stur um a�gang a� ny�jatals s��unni. vinsamlegast skr��u �ig inn � kerfis hluta s��unar og gef�u notenda r�ttindi til a� taka ��tt � a� vi�halda s��unni. Ef �� notandi er � lagi vinsamlegast l�ttu hann vita me� �v� a� svara p�stinum hanns.";
-    $text['accactive'] = "A�gangurinn hefur veri� virkja�ur en notandinn hefur engin s�rst�k r�ttindi fyrr en �� gefur honum �au.";
-    $text['accinactive'] = "Far�u � Admin / Notandi / yfirlit til a� f� a�gang a� a�gangs stillingum. A�gangurinn ver�ur �fram �virkur �ar til �� breytir og vistar skr�na a� minnsta kosti einu sinni..";
-    $text['pwdagain'] = "Lykilor� aftur";
-    $text['enterpassword2'] = "Vinsamlegast skr��u inn lykilor�i� �itt aftur.";
-    $text['pwdsmatch'] = "lykilor� ��n passa ekki saman. Vinsamlegast sl��u inn sama a�gangsor�i� � hvern reit.";
-    //added in 8.0.0
-    $text['acksubject'] = "�akka ��r fyrir a� skr� �ig"; //for a new user account
-    $text['ackmessage'] = "Bei�ni ��n um notanda hefur veri� m�ttekin. A�gangurinn �inn mun vera �virkur �ar til hann hefur veri� sko�a�ur af  stj�rnanda. ��r ver�ur tilkynnt me� t�lvup�sti �egar tenging ��n er tilb�in til notkunar.";
-    //added in 12.0.0
-    $text['switch'] = "Switch";
-    break;
-
-  //added in 10.0.0
-  case "branches":
-    $text['browseallbranches'] = "Sko�a allar greinar";
-    break;
-
-  //statistics.php
-  case "stats":
-    $text['quantity'] = "Fj�ldi";
-    $text['totindividuals'] = "Fj�ldi einstaklinga";
-    $text['totmales'] = "Fj�ldi manna";
-    $text['totfemales'] = "Fj�ldi kvenna";
-    $text['totunknown'] = "Fj�ldi einstaklinga �ar sem kyn er ekki �ekkt";
-    $text['totliving'] = "Fj�ldi lifandi einstaklinga";
-    $text['totfamilies'] = "Fj�ldi fj�lskyldna";
-    $text['totuniquesn'] = "Fj�ldi eftirnafn";
-    //$text['totphotos'] = "Total Photos";
-    //$text['totdocs'] = "Total Histories &amp; Documents";
-    //$text['totheadstones'] = "Total Headstones";
-    $text['totsources'] = "Fj�ldi heimilda";
-    $text['avglifespan'] = "Me�al �vilengd";
-    $text['earliestbirth'] = "Fyrsta f��ing";
-    $text['longestlived'] = "H�sti aldur";
-    $text['days'] = "dagar";
-    $text['age'] = "Aldur";
-    $text['agedisclaimer'] = "Aldurs-tengdir �treikningar eru bygg�ir � einstaklingum me� skr��ar dagsetningar vegna fj�lda �skr��ra dagsetninga er �etta ekki alveg 100 pr�sent n�kv�mt.";
-    $text['treedetail'] = "Meiri uppl�singar um �etta tr�";
-    $text['total'] = "Samtals";
-    //added in 12.0
-    $text['totdeceased'] = "Total Deceased";
-    break;
-
-  case "notes":
-    $text['browseallnotes'] = "Fl�tta � �llum athugasemdum";
-    break;
-
-  case "help":
-    $text['menuhelp'] = "Valmynd";
-    break;
-
-  case "install":
-    $text['perms'] = "a�gangsheimildir hafa veri� settar.";
-    $text['noperms'] = "a�gangsheimildir var ekki h�gt a� setja � �essar skr�r:";
-    $text['manual'] = "Vinsamlegast settu �� inn handvirkt.";
-    $text['folder'] = "Mappa";
-    $text['created'] = "hefur veri� �tb�inn";
-    $text['nocreate'] = "gat ekki veri� �tb�inn. Vinsamlegast ger�u �a� handvirkt.";
-    $text['infosaved'] = "Uppl�singar vista�ar, tenging sta�fest!";
-    $text['tablescr'] = "T�flur hafa veri� b�nar til!";
-    $text['notables'] = "Eftirfarandi t�flur g�tu ekki veri� �tb�nar:";
-    $text['nocomm'] = "TNG n�r ekki sambandi vi� gagnagrunn. Engar t�flur voru �tb�nar.";
-    $text['newdb'] = "Uppl�singar vistu�, tengingu sta�fest, n�r gagnagrunnur til:";
-    $text['noattach'] = "Uppl�singar vista�ar. Tengsl myndu� og gagnasafn skapa�, en TNG getur ekki tengst.";
-    $text['nodb'] = "Uppl�singar vista�ar. Tengsl ger�, en gagnagrunnur er ekki til og ekki h�gt a� skapa h�r. Vinsamlegast sta�festu a� gagnagrunns nafn s� r�tt, e�a nota stj�rnbor�i� til a� stofna hann..";
-    $text['noconn'] = "Uppl�singar vistu� en tengingin t�kst ekki. Einn e�a fleiri af eftirfarandi er rangt:";
-    $text['exists'] = "�egar til";
-    $text['loginfirst'] = "�� ver�ur a� skr�  �ig inn fyrst.";
-    $text['noop'] = "Ekkert var gert.";
-    //added in 8.0.0
-    $text['nouser'] = "Notandi var ekki b�inn til. notendanafn er l�klega til.";
-    $text['notree'] = "Tr� var ekki b�i� til. tr� er l�klega til.";
-    $text['infosaved2'] = "Uppl�singar vista�ar";
-    $text['renamedto'] = "endursk�rt �";
-    $text['norename'] = "gat ekki veri� endursk�rt";
-    break;
-
-  case "imgviewer":
-    $text['zoomin'] = "�ysja Inn";
-    $text['zoomout'] = "�ysja �r";
-    $text['magmode'] = "St�kka";
-    $text['panmode'] = "Pan Mode";
-    $text['pan'] = "Smelltu til a� flytja innan myndar";
-    $text['fitwidth'] = "passa breidd";
-    $text['fitheight'] = "passa h��";
-    $text['newwin'] = "n�jan glugga";
-    $text['opennw'] = "n�ja mynd � n�jum glugga";
-    $text['magnifyreg'] = "Smelltu tul a� st�kka hluta af myndinni";
-    $text['imgctrls'] = "Virkja myndstj�rnun";
-    $text['vwrctrls'] = "Virkja mynd sko�ara stj�rnum Image Viewer Controls";
-    $text['vwrclose'] = "loka mynda sko�ara";
-    break;
-
-  case "dna":
-    $text['test_date'] = "Pr�fdagsetning";
-    $text['links'] = "Relevant links";
-    $text['testid'] = "Au�kennisnr. pr�fs";
-    //added in 12.0.0
-    $text['mode_values'] = "Mode Values";
-    $text['compareselected'] = "Bera saman vali�";
-    $text['dnatestscompare'] = "Bera saman Y-DNA pr�f";
-    $text['keep_name_private'] = "Keep Name Private";
-    $text['browsealltests'] = "Browse All Tests";
-    $text['all_dna_tests'] = "�ll DNA pr�f";
-    $text['fastmutating'] = "Fast&nbsp;Mutating";
-    $text['alltypes'] = "Allar tegundir";
-    $text['allgroups'] = "Allir h�par";
-    $text['Ydna_LITbox_info'] = "Test(s) linked to this person were not necessarily taken by this person.<br>The 'Haplogroup' column displays data in red if the result is 'Predicted' or green if the test is 'Confirmed'";
-    //added in 12.1.0
-    $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
-    $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";
-    $text['chromosome'] = "Chr";
-    $text['centiMorgans'] = "cM";
-    $text['snps'] = "SNPs";
-    $text['y_haplogroup'] = "Y-DNA";
-    $text['mt_haplogroup'] = "mtDNA";
-    $text['sequence'] = "Ref";
-    $text['extra_mutations'] = "Extra Mutations";
-    $text['mrca'] = "MRC Ancestor";
-    $text['ydna_test'] = "Y-DNA Tests";
-    $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
-    $text['atdna_test'] = "atDNA (autosomal) Tests";
-    $text['segment_start'] = "Start";
-    $text['segment_end'] = "End";
-    $text['suggested_relationship'] = "Suggested";
-    $text['actual_relationship'] = "Actual";
-    $text['12markers'] = "Markers 1-12";
-    $text['25markers'] = "Markers 13-25";
-    $text['37markers'] = "Markers 26-37";
-    $text['67markers'] = "Markers 38-67";
-    $text['111markers'] = "Markers 68-111";
-    break;
+    case "dna":
+        $text['test_date'] = "Pr�fdagsetning";
+        $text['links'] = "Relevant links";
+        $text['testid'] = "Au�kennisnr. pr�fs";
+        //added in 12.0.0
+        $text['mode_values'] = "Mode Values";
+        $text['compareselected'] = "Bera saman vali�";
+        $text['dnatestscompare'] = "Bera saman Y-DNA pr�f";
+        $text['keep_name_private'] = "Keep Name Private";
+        $text['browsealltests'] = "Browse All Tests";
+        $text['all_dna_tests'] = "�ll DNA pr�f";
+        $text['fastmutating'] = "Fast&nbsp;Mutating";
+        $text['alltypes'] = "Allar tegundir";
+        $text['allgroups'] = "Allir h�par";
+        $text['Ydna_LITbox_info'] = "Test(s) linked to this person were not necessarily taken by this person.<br>The 'Haplogroup' column displays data in red if the result is 'Predicted' or green if the test is 'Confirmed'";
+        //added in 12.1.0
+        $text['dnatestscompare_mtdna'] = "Compare selected mtDNA Tests";
+        $text['dnatestscompare_atdna'] = "Compare selected atDNA Tests";
+        $text['chromosome'] = "Chr";
+        $text['centiMorgans'] = "cM";
+        $text['snps'] = "SNPs";
+        $text['y_haplogroup'] = "Y-DNA";
+        $text['mt_haplogroup'] = "mtDNA";
+        $text['sequence'] = "Ref";
+        $text['extra_mutations'] = "Extra Mutations";
+        $text['mrca'] = "MRC Ancestor";
+        $text['ydna_test'] = "Y-DNA Tests";
+        $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
+        $text['atdna_test'] = "atDNA (autosomal) Tests";
+        $text['segment_start'] = "Start";
+        $text['segment_end'] = "End";
+        $text['suggested_relationship'] = "Suggested";
+        $text['actual_relationship'] = "Actual";
+        $text['12markers'] = "Markers 1-12";
+        $text['25markers'] = "Markers 13-25";
+        $text['37markers'] = "Markers 26-37";
+        $text['67markers'] = "Markers 38-67";
+        $text['111markers'] = "Markers 68-111";
+        break;
 }
 
 //common
@@ -1011,5 +1011,5 @@ $text['lastpage'] = "S��asta s��a";
 @include_once "captcha_text.php";
 @include_once "alltext.php";
 if (!$alltextloaded) {
-  getAllTextPath();
+    getAllTextPath();
 }

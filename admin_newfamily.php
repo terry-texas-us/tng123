@@ -267,7 +267,8 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                     <table class="normal topmarginsmall">
                         <tr>
                             <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
-                            <td><input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
+                            <td>
+                                <input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
                                 <input type="hidden" name="husband" id="husband" value="<?php echo $husband; ?>">
                                 <input type="button" value="<?php echo $admtext['find']; ?>"
                                        onclick="return findItem('I','husband','husbnameplusid',document.form1.tree1.options[document.form1.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');">
@@ -278,7 +279,8 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                         </tr>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>
-                            <td><input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
+                            <td>
+                                <input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
                                 <input type="hidden" name="wife" id="wife" value="<?php echo $wife; ?>">
                                 <input type="button" value="<?php echo $admtext['find']; ?>"
                                        onclick="return findItem('I','wife','wifenameplusid',document.form1.tree1.options[document.form1.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');">
@@ -318,7 +320,9 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                         ?>
                         <tr>
                             <td><?php echo $admtext['marriagetype']; ?>:</td>
-                            <td colspan="6"><input type="text" value="" name="marrtype" style="width:494px;" maxlength="50"></td>
+                            <td colspan="6">
+                                <input type="text" value="" name="marrtype" style="width:494px;" maxlength="50">
+                            </td>
                         </tr>
                         <?php
                         if (determineLDSRights()) {

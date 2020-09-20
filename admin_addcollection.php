@@ -6,7 +6,7 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 if (!$allow_add) {
-  exit;
+    exit;
 }
 
 require "adminlog.php";
@@ -14,21 +14,21 @@ require "adminlog.php";
 $display_org = stripslashes($display);
 
 if ($session_charset != "UTF-8") {
-  $display = tng_utf8_decode($display);
+    $display = tng_utf8_decode($display);
 }
 
 $stdcolls = array("photos", "histories", "headstones", "documents", "recordings", "videos");
 $collid = cleanID($collid);
 $newcollid = 0;
 if (!in_array($collid, $stdcolls)) {
-  $template = "sssssssss";
-  $query = "INSERT IGNORE INTO $mediatypes_table (mediatypeID,display,path,liketype,icon,thumb,exportas,ordernum,localpath) VALUES (?,?,?,?,?,?,?,?,?)";
-  $params = array(&$template, &$collid, &$display, &$path, &$liketype, &$icon, &$thumb, &$exportas, &$ordernum, &$localpath);
-  $affected_rows = tng_execute($query, $params);
+    $template = "sssssssss";
+    $query = "INSERT IGNORE INTO $mediatypes_table (mediatypeID,display,path,liketype,icon,thumb,exportas,ordernum,localpath) VALUES (?,?,?,?,?,?,?,?,?)";
+    $params = array(&$template, &$collid, &$display, &$path, &$liketype, &$icon, &$thumb, &$exportas, &$ordernum, &$localpath);
+    $affected_rows = tng_execute($query, $params);
 
-  if ($affected_rows > 0) {
-    adminwritelog($admtext['addnewcoll'] . ": $display_org");
-    $newcollid = $collid;
-  }
+    if ($affected_rows > 0) {
+        adminwritelog($admtext['addnewcoll'] . ": $display_org");
+        $newcollid = $collid;
+    }
 }
 echo $newcollid;

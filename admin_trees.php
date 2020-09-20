@@ -82,10 +82,13 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
             <div class="normal">
 
                 <form action="admin_trees.php" name="form1">
-                    <?php echo $admtext['searchfor']; ?>: <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
-                    <input type="hidden" name="findtree" value="1"><input type="hidden" name="newsearch" value="1">
+                    <?php echo $admtext['searchfor']; ?>:
+                    <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                    <input type="hidden" name="findtree" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                     <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop"></form>
+                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
+                </form>
                 <br>
 
                 <?php

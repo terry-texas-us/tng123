@@ -7,15 +7,15 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_media_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
 
 if (!$alwayson) {
-  $alwayson = 0;
+    $alwayson = 0;
 }
 $template = "sssss";
 $query = "INSERT INTO $albums_table (albumname,description,keywords,active,alwayson) VALUES (?,?,?,?,?)";

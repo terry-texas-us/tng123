@@ -25,7 +25,6 @@
             font-size: 12pt;
         }
 
-
     </style>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/net.js"></script>
@@ -290,7 +289,7 @@
                 <li><p><a href="javascript: startAt('s0');"><strong>Welcome / Begin Installation</strong></a></p></li>
                 <li><a href="javascript: startAt('s1');"><strong>More Information</strong></a></li>
                 <li><img src="img/tng_plus.gif" name="plus1" width="9" height="9" alt="expand" onclick="toggleItem('plus1',document.getElementById('list1'));"> <a
-                        href="javascript: startAt('s1');"><strong>Files</strong></a>
+                    href="javascript: startAt('s1');"><strong>Files</strong></a>
                     <ol style="display:none;" id="list1">
                         <li><a href="javascript: startAt('s1');">Extract Files</a></li>
                         <li><a href="javascript: startAt('s2');">Connect to Your Remote Web Site</a></li>
@@ -413,7 +412,8 @@
                                     <td>
                                         <form action="" method="get" style="margin:0;" name="backupsfrmEx" id="backupsfrmEx"
                                               onsubmit="if( document.backupsfrmEx.foldername.value != '' ) {doFolder('backuppath',document.backupsfrmEx,'buFolderMsgEx');} return false;">
-                                            <input type="text" value="backups" name="foldername" size="30"><input type="hidden" value="backups" name="oldname">
+                                            <input type="text" value="backups" name="foldername" size="30">
+                                            <input type="hidden" value="backups" name="oldname">
                                             <input type="submit" value="Rename Folder">
                                         </form>
                                     </td>
@@ -426,7 +426,8 @@
                                     <td>
                                         <form action="" method="get" style="margin:0;" name="gedcomfrmEx" id="gedcomfrmEx"
                                               onsubmit="if( document.gedcomfrmEx.foldername.value != '' ) {doFolder('gedpath',document.gedcomfrmEx,'gedFolderMsgEx');} return false;">
-                                            <input type="text" value="gedcom" name="foldername" size="30"><input type="hidden" value="gedcom" name="oldname">
+                                            <input type="text" value="gedcom" name="foldername" size="30">
+                                            <input type="hidden" value="gedcom" name="oldname">
                                             <input type="submit" value="Rename Folder">
                                         </form>
                                     </td>
@@ -448,11 +449,13 @@
                                             <select name="newlanguage" onchange="matchCharset(this,'newcharset1');">
                                                 <script type="text/javascript">showLanguageOptions();</script>
                                             </select>
-                                          <input type="hidden" name="newcharset" id="newcharset1" value="UTF-8">
+                                            <input type="hidden" name="newcharset" id="newcharset1" value="UTF-8">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input name="setlang" type="submit" value="Save"></td>
+                                        <td>
+                                            <input name="setlang" type="submit" value="Save">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td id="langMsg" colspan="2"></td>
@@ -469,30 +472,46 @@
                                 <table>
                                     <tr>
                                         <td><span class="normal">Host Name:</span></td>
-                                        <td><input type="text" value="localhost" name="database_host" size="20"></td>
+                                        <td>
+                                            <input type="text" value="localhost" name="database_host" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><span class="normal">Database Name:</span></td>
-                                        <td><input type="text" value="" name="database_name" size="20"></td>
+                                        <td>
+                                            <input type="text" value="" name="database_name" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><span class="normal">Database Username:</span></td>
-                                        <td><input type="text" value="" name="database_username" size="20"></td>
+                                        <td>
+                                            <input type="text" value="" name="database_username" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><span class="normal">Database Password:</span></td>
-                                        <td><input type="text" value="" name="database_password" size="20"></td>
+                                        <td>
+                                            <input type="text" value="" name="database_password" size="20">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><span class="normal">Database Port:</span></td>
-                                        <td><input type="text" value="" name="database_port" size="20"> (leave blank for default)</td>
+                                        <td>
+                                            <input type="text" value="" name="database_port" size="20">
+                                            (leave blank for default)
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><span class="normal">Database Socket:</span></td>
-                                        <td><input type="text" value="" name="database_socket" size="20"> (leave blank for default)</td>
+                                        <td>
+                                            <input type="text" value="" name="database_socket" size="20">
+                                            (leave blank for default)
+                                        </td>
                                     </tr>
                                     <tr>
-                                      <td><input name="dbparams" type="submit" value="Save and Verify"></td>
+                                        <td>
+                                            <input name="dbparams" type="submit" value="Save and Verify">
+                                        </td>
                                         <td id="dbMsgEx"></td>
                                     </tr>
                                 </table>
@@ -510,10 +529,15 @@
                                 <table class="normal">
                                     <tr>
                                         <td>Database Collation:</td>
-                                        <td><input type="text" name="collation" id="collation1" value="utf8_general_ci"> (leave blank to use your database's default collation)</td>
+                                        <td>
+                                            <input type="text" name="collation" id="collation1" value="utf8_general_ci">
+                                            (leave blank to use your database's default collation)
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><input name="dbparams" type="button" value="Save and Create" onclick="doTables(document.tablesfrm,'tableMsgEx')"></td>
+                                        <td>
+                                            <input name="dbparams" type="button" value="Save and Create" onclick="doTables(document.tablesfrm,'tableMsgEx')">
+                                        </td>
                                         <td id="tableMsgEx" colspan="2"></td>
                                     </tr>
                                 </table>
@@ -527,26 +551,38 @@
                                 <table class="normal">
                                     <tr>
                                         <td>Username:</td>
-                                      <td><input type="text" name="newusername" value=""></td>
+                                        <td>
+                                            <input type="text" name="newusername" value="">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Password:</td>
-                                      <td><input type="password" name="newpassword" value=""></td>
+                                        <td>
+                                            <input type="password" name="newpassword" value="">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Password again:</td>
-                                      <td><input type="password" name="newpassword2" value=""></td>
+                                        <td>
+                                            <input type="password" name="newpassword2" value="">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Your real name:</td>
-                                      <td><input type="text" name="newrealname" value=""></td>
+                                        <td>
+                                            <input type="text" name="newrealname" value="">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Your email:</td>
-                                      <td><input type="text" name="newemail" value=""></td>
+                                        <td>
+                                            <input type="text" name="newemail" value="">
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><input name="usercreate" type="submit" value="Create User"></td>
+                                        <td>
+                                            <input name="usercreate" type="submit" value="Create User">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td id="userMsg" colspan="2"></td>
@@ -562,14 +598,21 @@
                                 <table class="normal">
                                     <tr>
                                         <td>Tree ID:</td>
-                                      <td><input type="text" name="newtreeid" value="tree1"> (should be short, alphanumeric only, no spaces)</td>
+                                        <td>
+                                            <input type="text" name="newtreeid" value="tree1">
+                                            (should be short, alphanumeric only, no spaces)
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Tree Name:</td>
-                                      <td><input type="text" name="newtreename" value="My Genealogy"></td>
+                                        <td>
+                                            <input type="text" name="newtreename" value="My Genealogy">
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><input name="treecreate" type="submit" value="Create Tree"></td>
+                                        <td>
+                                            <input name="treecreate" type="submit" value="Create Tree">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td id="treeMsg" colspan="2"></td>
@@ -611,7 +654,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input name="tempselect" type="submit" value="Select Template"></td>
+                                        <td>
+                                            <input name="tempselect" type="submit" value="Select Template">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td id="templateMsg" colspan="2"></td>
@@ -660,11 +705,9 @@
                         extracted and perform the extraction process again
                         with different options.</p>
 
-
                     <a href="javascript: nextStep(1);"><strong>Next >></strong></a>
                     <br><br><br><br>
                 </li>
-
 
                 <li style="display:none;" id="s2">
                     <h3>Files</h3>
@@ -728,7 +771,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s5">
                     <h3>Permissions</h3>
 
@@ -770,7 +812,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s6">
                     <h3>Permissions</h3>
 
@@ -808,7 +849,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s7">
                     <h3>Permissions</h3>
 
@@ -840,7 +880,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s8">
                     <h3>Folders</h3>
 
@@ -855,7 +894,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="mediafrm" id="mediafrm"
                                       onsubmit="if( document.mediafrm.foldername.value != '' ) {doFolder('mediapath',document.mediafrm,'mediaFolderMsg');} return false">
-                                    <input type="text" value="media" name="foldername" size="30"><input type="hidden" value="media" name="oldname">
+                                    <input type="text" value="media" name="foldername" size="30">
+                                    <input type="hidden" value="media" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -868,7 +908,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="photosfrm" id="photosfrm"
                                       onsubmit="if( document.photosfrm.foldername.value != '' ) {doFolder('photopath',document.photosfrm,'phFolderMsg');} return false;">
-                                    <input type="text" value="photos" name="foldername" size="30"><input type="hidden" value="photos" name="oldname">
+                                    <input type="text" value="photos" name="foldername" size="30">
+                                    <input type="hidden" value="photos" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -881,7 +922,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="documentsfrm" id="documentsfrm"
                                       onsubmit="if( document.documentsfrm.foldername.value != '' ) {doFolder('documentpath',document.documentsfrm,'docFolderMsg');} return false;">
-                                    <input type="text" value="documents" name="foldername" size="30"><input type="hidden" value="documents" name="oldname">
+                                    <input type="text" value="documents" name="foldername" size="30">
+                                    <input type="hidden" value="documents" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -894,7 +936,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="historiesfrm" id="historiesfrm"
                                       onsubmit="if( document.historiesfrm.foldername.value != '' ) {doFolder('historypath',document.historiesfrm,'histFolderMsg');} return false;">
-                                    <input type="text" value="histories" name="foldername" size="30"><input type="hidden" value="histories" name="oldname">
+                                    <input type="text" value="histories" name="foldername" size="30">
+                                    <input type="hidden" value="histories" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -907,7 +950,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="headstonesfrm" id="headstonesfrm"
                                       onsubmit="if( document.headstonesfrm.foldername.value != '' ) {doFolder('headstonepath',document.headstonesfrm,'hsFolderMsg');} return false;">
-                                    <input type="text" value="headstones" name="foldername" size="30"><input type="hidden" value="headstones" name="oldname">
+                                    <input type="text" value="headstones" name="foldername" size="30">
+                                    <input type="hidden" value="headstones" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -920,7 +964,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="gendexfrm" id="gendexfrm"
                                       onsubmit="if( document.gendexfrm.foldername.value != '' ) {doFolder('gendexfile',document.gendexfrm,'gendexFolderMsg');} return false;">
-                                    <input type="text" value="gendex" name="foldername" size="30"><input type="hidden" value="gendex" name="oldname">
+                                    <input type="text" value="gendex" name="foldername" size="30">
+                                    <input type="hidden" value="gendex" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -933,7 +978,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="backupsfrm" id="backupsfrm"
                                       onsubmit="if( document.backupsfrm.foldername.value != '' ) {doFolder('backuppath',document.backupsfrm,'buFolderMsg');} return false;">
-                                    <input type="text" value="backups" name="foldername" size="30"><input type="hidden" value="backups" name="oldname">
+                                    <input type="text" value="backups" name="foldername" size="30">
+                                    <input type="hidden" value="backups" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -946,7 +992,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="gedcomfrm" id="gedcomfrm"
                                       onsubmit="if( document.gedcomfrm.foldername.value != '' ) {doFolder('gedpath',document.gedcomfrm,'gedFolderMsg');} return false;">
-                                    <input type="text" value="gedcom" name="foldername" size="30"><input type="hidden" value="gedcom" name="oldname">
+                                    <input type="text" value="gedcom" name="foldername" size="30">
+                                    <input type="hidden" value="gedcom" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -959,7 +1006,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="modsfrm" id="modsfrm"
                                       onsubmit="if( document.modsfrm.foldername.value != '' ) {doFolder('modspath',document.modsfrm,'modsFolderMsg');} return false;">
-                                    <input type="text" value="mods" name="foldername" size="30"><input type="hidden" value="mods" name="oldname">
+                                    <input type="text" value="mods" name="foldername" size="30">
+                                    <input type="hidden" value="mods" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -972,7 +1020,8 @@
                             <td>
                                 <form action="" method="get" style="margin:0;" name="extensionsfrm" id="extensionsfrm"
                                       onsubmit="if( document.extensionsfrm.foldername.value != '' ) {doFolder('extspath',document.extensionsfrm,'extsFolderMsg');} return false;">
-                                    <input type="text" value="extensions" name="foldername" size="30"><input type="hidden" value="extensions" name="oldname">
+                                    <input type="text" value="extensions" name="foldername" size="30">
+                                    <input type="hidden" value="extensions" name="oldname">
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
@@ -1000,7 +1049,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s9">
                     <h3>Languages and Character Sets</h3>
 
@@ -1022,10 +1070,14 @@
                             </tr>
                             <tr>
                                 <td>Character Set:</td>
-                              <td><input type="text" name="newcharset" id="newcharset2" value="UTF-8"></td>
+                                <td>
+                                    <input type="text" name="newcharset" id="newcharset2" value="UTF-8">
+                                </td>
                             </tr>
                             <tr>
-                                <td><input name="setlang" type="submit" value="Save"></td>
+                                <td>
+                                    <input name="setlang" type="submit" value="Save">
+                                </td>
                             </tr>
                             <tr>
                                 <td id="langMsg2" colspan="2"></td>
@@ -1036,7 +1088,6 @@
                     <a href="javascript: prevStep(9);"><strong><< Prev</strong></a> &nbsp;&nbsp;&nbsp; <a href="javascript: nextStep(9);"><strong>Next >></strong></a>
                     <br><br><br><br>
                 </li>
-
 
                 <li style="display:none;" id="s10">
                     <h3>Database Tables</h3>
@@ -1078,30 +1129,46 @@
                         <table>
                             <tr>
                                 <td valign="top"><span class="normal">Host Name:</span></td>
-                                <td><input type="text" value="localhost" name="database_host" size="20"></td>
+                                <td>
+                                    <input type="text" value="localhost" name="database_host" size="20">
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top"><span class="normal">Database Name:</span></td>
-                                <td><input type="text" value="" name="database_name" size="20"></td>
+                                <td>
+                                    <input type="text" value="" name="database_name" size="20">
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top"><span class="normal">Database Username:</span></td>
-                                <td><input type="text" value="" name="database_username" size="20"></td>
+                                <td>
+                                    <input type="text" value="" name="database_username" size="20">
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top"><span class="normal">Database Password:</span></td>
-                                <td><input type="text" value="" name="database_password" size="20"></td>
+                                <td>
+                                    <input type="text" value="" name="database_password" size="20">
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top"><span class="normal">Database Port:</span></td>
-                                <td><input type="text" value="" name="database_port" size="20"> (leave blank for default)</td>
+                                <td>
+                                    <input type="text" value="" name="database_port" size="20">
+                                    (leave blank for default)
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top"><span class="normal">Database Socket:</span></td>
-                                <td><input type="text" value="" name="database_socket" size="20"> (leave blank for default)</td>
+                                <td>
+                                    <input type="text" value="" name="database_socket" size="20">
+                                    (leave blank for default)
+                                </td>
                             </tr>
                             <tr>
-                                <td valign="top"><input name="dbparams" type="submit" value="Save and Verify"></td>
+                                <td valign="top">
+                                    <input name="dbparams" type="submit" value="Save and Verify">
+                                </td>
                                 <td valign="top" id="dbMsg"></td>
                             </tr>
                         </table>
@@ -1127,7 +1194,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s11">
                     <h3>Database Tables</h3>
 
@@ -1148,51 +1214,75 @@
                                     <table>
                                         <tr>
                                             <td valign="top"><span class="normal">People:</span></td>
-                                            <td><input type="text" value="tng_people" name="people_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_people" name="people_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Families:</span></td>
-                                            <td><input type="text" value="tng_families" name="families_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_families" name="families_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Children:</span></td>
-                                            <td><input type="text" value="tng_children" name="children_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_children" name="children_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Albums:</span></td>
-                                            <td><input type="text" value="tng_albums" name="albums_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_albums" name="albums_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Album Links:</span></td>
-                                            <td><input type="text" value="tng_albumplinks" name="album2entities_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_albumplinks" name="album2entities_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Album Media:</span></td>
-                                            <td><input type="text" value="tng_albumlinks" name="albumlinks_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_albumlinks" name="albumlinks_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Media:</span></td>
-                                            <td><input type="text" value="tng_media" name="media_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_media" name="media_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Media Links:</span></td>
-                                            <td><input type="text" value="tng_medialinks" name="medialinks_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_medialinks" name="medialinks_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Media Types:</span></td>
-                                            <td><input type="text" value="tng_mediatypes" name="mediatypes_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_mediatypes" name="mediatypes_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Addresses:</span></td>
-                                            <td><input type="text" value="tng_addresses" name="address_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_addresses" name="address_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Languages:</span></td>
-                                            <td><input type="text" value="tng_languages" name="languages_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_languages" name="languages_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Places:</span></td>
-                                            <td><input type="text" value="tng_places" name="places_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_places" name="places_table" size="20">
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -1201,51 +1291,75 @@
                                     <table>
                                         <tr>
                                             <td valign="top"><span class="normal">Cemeteries:</span></td>
-                                            <td><input type="text" value="tng_cemeteries" name="cemeteries_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_cemeteries" name="cemeteries_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">States:</span></td>
-                                            <td><input type="text" value="tng_states" name="states_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_states" name="states_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Countries:</span></td>
-                                            <td><input type="text" value="tng_countries" name="countries_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_countries" name="countries_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Users:</span></td>
-                                            <td><input type="text" value="tng_users" name="users_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_users" name="users_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Sources:</span></td>
-                                            <td><input type="text" value="tng_sources" name="sources_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_sources" name="sources_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Citations:</span></td>
-                                            <td><input type="text" value="tng_citations" name="citations_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_citations" name="citations_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Repositories:</span></td>
-                                            <td><input type="text" value="tng_repositories" name="repositories_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_repositories" name="repositories_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Events:</span></td>
-                                            <td><input type="text" value="tng_events" name="events_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_events" name="events_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Event Types:</span></td>
-                                            <td><input type="text" value="tng_eventtypes" name="eventtypes_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_eventtypes" name="eventtypes_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Reports:</span></td>
-                                            <td><input type="text" value="tng_reports" name="reports_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_reports" name="reports_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Trees:</span></td>
-                                            <td><input type="text" value="tng_trees" name="trees_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_trees" name="trees_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Notes:</span></td>
-                                            <td><input type="text" value="tng_xnotes" name="xnotes_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_xnotes" name="xnotes_table" size="20">
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -1254,61 +1368,89 @@
                                     <table>
                                         <tr>
                                             <td valign="top"><span class="normal">Note Links:</span></td>
-                                            <td><input type="text" value="tng_notelinks" name="notelinks_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_notelinks" name="notelinks_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Save Import:</span></td>
-                                            <td><input type="text" value="tng_saveimport" name="saveimport_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_saveimport" name="saveimport_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Branches:</span></td>
-                                            <td><input type="text" value="tng_branches" name="branches_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_branches" name="branches_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Branch Links:</span></td>
-                                            <td><input type="text" value="tng_branchlinks" name="branchlinks_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_branchlinks" name="branchlinks_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Timeline Events:</span></td>
-                                            <td><input type="text" value="tng_timelineevents" name="tlevents_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_timelineevents" name="tlevents_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Temp Events:</span></td>
-                                            <td><input type="text" value="tng_temp_events" name="temp_events_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_temp_events" name="temp_events_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Associations:</span></td>
-                                            <td><input type="text" value="tng_associations" name="assoc_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_associations" name="assoc_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Most Wanted:</span></td>
-                                            <td><input type="text" value="tng_mostwanted" name="mostwanted_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_mostwanted" name="mostwanted_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">DNA Tests:</span></td>
-                                            <td><input type="text" value="tng_dna_tests" name="dna_tests_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_dna_tests" name="dna_tests_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">DNA Groups:</span></td>
-                                            <td><input type="text" value="tng_dna_groups" name="dna_groups_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_dna_groups" name="dna_groups_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">DNA Links:</span></td>
-                                            <td><input type="text" value="tng_dna_links" name="dna_links_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_dna_links" name="dna_links_table" size="20">
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td valign="top"><span class="normal">Template Settings:</span></td>
-                                            <td><input type="text" value="tng_templates" name="templates_table" size="20"></td>
+                                            <td>
+                                                <input type="text" value="tng_templates" name="templates_table" size="20">
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
                             </tr>
                             <tr>
-                              <td colspan="3">Database Collation: <input type="text" name="collation" id="collation2" value=""></td>
+                                <td colspan="3">Database Collation:
+                                    <input type="text" name="collation" id="collation2" value="">
+                                </td>
                                 (leave blank to accept the default)
                             </tr>
                             <tr>
-                                <td valign="top"><input name="dbparams" type="submit" value="Save and Create"></td>
+                                <td valign="top">
+                                    <input name="dbparams" type="submit" value="Save and Create">
+                                </td>
                                 <td valign="top" id="tableMsg" colspan="2"></td>
                             </tr>
                         </table>
@@ -1325,7 +1467,6 @@
                     <a href="javascript: prevStep(11);"><strong><< Prev</strong></a> &nbsp;&nbsp;&nbsp; <a href="javascript: nextStep(11);"><strong>Next >></strong></a>
                     <br><br><br><br>
                 </li>
-
 
                 <li style="display:none;" id="s12">
                     <h3>Other Settings</h3>
@@ -1360,7 +1501,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s13">
                     <h3>Other Settings</h3>
 
@@ -1391,7 +1531,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s14">
                     <h3>Your Data</h3>
 
@@ -1400,33 +1539,45 @@
                     <p>Next you must set up at least one user. A "User" can represent one or more people with the same access rights. Until you have at least one user,
                         your Administration area will be wide open to all visitors, and all visitors to the public part of your site will be able
                         to see all data for all individuals. You can set up your first user here or from the Admin menu. To create a user here, please fill in <span
-                                style="text-decoration: underline;">all</span> of the following
+                            style="text-decoration: underline;">all</span> of the following
                         fields and click the Submit button. This user will have full administrator rights. You can enter more information about this user later from the Admin menu.</p>
 
                     <form action="#" onsubmit="return createUser(this,'userMsg2');">
                         <table class="normal">
                             <tr>
                                 <td>Username:</td>
-                              <td><input type="text" name="newusername" value=""></td>
+                                <td>
+                                    <input type="text" name="newusername" value="">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Password:</td>
-                              <td><input type="password" name="newpassword" value=""></td>
+                                <td>
+                                    <input type="password" name="newpassword" value="">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Password again:</td>
-                              <td><input type="password" name="newpassword2" value=""></td>
+                                <td>
+                                    <input type="password" name="newpassword2" value="">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Your real name:</td>
-                              <td><input type="text" name="newrealname" value=""></td>
+                                <td>
+                                    <input type="text" name="newrealname" value="">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Your Email:</td>
-                              <td><input type="text" name="newemail" value=""></td>
+                                <td>
+                                    <input type="text" name="newemail" value="">
+                                </td>
                             </tr>
                             <tr>
-                                <td valign="top"><input name="usercreate" type="submit" value="Create User"></td>
+                                <td valign="top">
+                                    <input name="usercreate" type="submit" value="Create User">
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top" id="userMsg2" colspan="2"></td>
@@ -1452,7 +1603,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s15">
                     <h3>Your Data</h3>
 
@@ -1460,7 +1610,7 @@
 
                     <p>Next you must create at least one tree. A "Tree" is defined as an independent data set, or a group of individuals, families and sources that is
                         independent from any other such group. You can create your first tree here or from the Admin menu. To create a tree here, please fill in <span
-                                style="text-decoration: underline;">both</span> fields
+                            style="text-decoration: underline;">both</span> fields
                         below and click the Submit button. You will not be able to edit the Tree ID after you save this page. It should be a short, alpha-numeric identifier with no spaces.
                         It will not be displayed on any public pages. You can enter more information about this tree later from the Admin menu.</p>
 
@@ -1468,14 +1618,21 @@
                         <table class="normal">
                             <tr>
                                 <td>Tree ID:</td>
-                              <td><input type="text" name="newtreeid" value="tree1"> (alphanumeric only, no spaces)</td>
+                                <td>
+                                    <input type="text" name="newtreeid" value="tree1">
+                                    (alphanumeric only, no spaces)
+                                </td>
                             </tr>
                             <tr>
                                 <td>Tree Name:</td>
-                              <td><input type="text" name="newtreename" value="My Genealogy"></td>
+                                <td>
+                                    <input type="text" name="newtreename" value="My Genealogy">
+                                </td>
                             </tr>
                             <tr>
-                                <td valign="top"><input name="treecreate" type="submit" value="Create Tree"></td>
+                                <td valign="top">
+                                    <input name="treecreate" type="submit" value="Create Tree">
+                                </td>
                             </tr>
                             <tr>
                                 <td valign="top" id="treeMsg2" colspan="2"></td>
@@ -1545,7 +1702,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s17">
                     <h3>Your Data</h3>
 
@@ -1591,7 +1747,6 @@
                     <a href="javascript: prevStep(18);"><strong><< Prev</strong></a> &nbsp;&nbsp;&nbsp; <a href="javascript: nextStep(18);"><strong>Next >></strong></a>
                     <br><br><br><br>
                 </li>
-
 
                 <li style="display:none;" id="s19">
                     <h3>Your Data</h3>
@@ -1672,7 +1827,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s22">
                     <h3>Customizing Your TNG Pages</h3>
 
@@ -1694,7 +1848,6 @@
                     <a href="javascript: prevStep(22);"><strong><< Prev</strong></a> &nbsp;&nbsp;&nbsp; <a href="javascript: nextStep(22);"><strong>Next >></strong></a>
                     <br><br><br><br>
                 </li>
-
 
                 <li style="display:none;" id="s23">
                     <h3>Customizing Your TNG Pages</h3>
@@ -1778,7 +1931,6 @@
                     <br><br><br><br>
                 </li>
 
-
                 <li style="display:none;" id="s25">
                     <h3>Customizing Your TNG Pages</h3>
 
@@ -1800,7 +1952,6 @@
                     <a href="javascript: prevStep(25);"><strong><< Prev</strong></a> &nbsp;&nbsp;&nbsp; <a href="javascript: nextStep(25);"><strong>Next >></strong></a>
                     <br><br><br><br>
                 </li>
-
 
                 <li style="display:none;" id="s26">
                     <h3>Final Notes</h3>

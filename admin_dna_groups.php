@@ -150,7 +150,8 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findgroup" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findgroup" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
 
@@ -212,14 +213,14 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         tng_free_result($result);
                         ?>
                     </table>
-                <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
-                }
-                else {
-                    echo $admtext['notrees'];
-                }
-                ?>
+                    <?php
+                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                    echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                    }
+                    else {
+                        echo $admtext['notrees'];
+                    }
+                    ?>
 
             </div>
         </td>

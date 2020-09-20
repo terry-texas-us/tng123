@@ -5,35 +5,35 @@ $textpart = "setup";
 include "$mylanguage/admintext.php";
 
 if ($link) {
-  $admin_login = 1;
-  include "checklogin.php";
-  include "version.php";
+    $admin_login = 1;
+    include "checklogin.php";
+    include "version.php";
 
-  if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
-    header("Location: admin_login.php?message=" . urlencode($message));
-    exit;
-  }
+    if ($assignedtree || !$allow_edit) {
+        $message = $admtext['norights'];
+        header("Location: admin_login.php?message=" . urlencode($message));
+        exit;
+    }
 }
 
 require "adminlog.php";
 
 $fp = @fopen("config/pedconfig.php", "w", 1);
 if (!$fp) {
-  die ($admtext['cannotopen'] . " pedconfig.php");
+    die ($admtext['cannotopen'] . " pedconfig.php");
 }
 
 if (!$vwidth) {
-  $vwidth = 100;
+    $vwidth = 100;
 }
 if (!$vheight) {
-  $vheight = 42;
+    $vheight = 42;
 }
 if (!$vspacing) {
-  $vspacing = 20;
+    $vspacing = 20;
 }
 if (!$vfontsize) {
-  $vfontsize = 7;
+    $vfontsize = 7;
 }
 
 flock($fp, LOCK_EX);
@@ -89,28 +89,28 @@ fwrite($fp, "\$pedigree['regnotes'] = \"$regnotes\";\n");
 fwrite($fp, "\$pedigree['regnosp'] = \"$regnosp\";\n");
 
 if (!$tcwidth) {
-  $tcwidth = 800;
+    $tcwidth = 800;
 }
 if (!$tcheight) {
-  $tcheight = 200;
+    $tcheight = 200;
 }
 if (!$mpct) {
-  $mpct = 0;
+    $mpct = 0;
 }
 if (!$ypct) {
-  $ypct = 100 - $mpct;
+    $ypct = 100 - $mpct;
 }
 if (!$ypixels) {
-  $ypixels = 10;
+    $ypixels = 10;
 }
 if (!$ymult) {
-  $ymult = 10;
+    $ymult = 10;
 }
 if (!$mpixels) {
-  $mpixels = 50;
+    $mpixels = 50;
 }
 if (!$tcevents) {
-  $tcevents = 0;
+    $tcevents = 0;
 }
 
 fwrite($fp, "\$pedigree['tcwidth'] = \"$tcwidth\";\n");

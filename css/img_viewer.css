@@ -9,7 +9,7 @@ body {
     border: solid 1px #000;
     cursor: move;
     background-repeat: no-repeat;
-    background-color: #FFF;
+    background-color: #fff;
 }
 
 .magnifierShadow {
@@ -25,7 +25,7 @@ body {
 
 .controllerContainer {
     height: 34px;
-    background: #EEE;
+    background: #eee;
     border: solid 1px #000;
     padding: 0;
     position: relative;
@@ -48,18 +48,18 @@ body {
 
 .controllerPan {
     margin: 5px 5px 0 5px;
-    border: solid 1px #EEE;
+    border: solid 1px #eee;
     vertical-align: bottom;
 }
 
 .controllerPanSelected {
     margin: 5px 5px 0 5px;
     vertical-align: bottom;
-    background: #DDD;
+    background: #ddd;
     border-left: solid 1px #111;
     border-top: solid 1px #111;
-    border-right: solid 1px #FFF;
-    border-bottom: solid 1px #FFF;
+    border-right: solid 1px #fff;
+    border-bottom: solid 1px #fff;
 }
 
 .controllerClose {
@@ -68,24 +68,24 @@ body {
 }
 
 .controllerMag {
-    border: solid 1px #EEE;
+    border: solid 1px #eee;
     margin: 5px 5px 0 10px;
     vertical-align: bottom;
 }
 
 .controllerMagSelected {
     margin: 5px 5px 0 10px;
-    background: #DDD;
+    background: #ddd;
     border-left: solid 1px #111;
     border-top: solid 1px #111;
-    border-right: solid 1px #FFF;
-    border-bottom: solid 1px #FFF;
+    border-right: solid 1px #fff;
+    border-bottom: solid 1px #fff;
     vertical-align: bottom;
 }
 
 .controllerImage {
     margin: 5px 0 0 5px;
-    background: #EEE;
+    background: #eee;
     vertical-align: bottom;
 }
 
@@ -101,7 +101,7 @@ body {
 }
 
 .canvas {
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;

@@ -71,7 +71,8 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td colspan="2">
-                    <br><input type="submit" id="labelsub" value="<?php echo $admtext['addlabels']; ?>">
+                    <br>
+                    <input type="submit" id="labelsub" value="<?php echo $admtext['addlabels']; ?>">
                     &nbsp; <img src="img/spinner.gif" style="display:none;" id="labelspinner">
                 </td>
             </tr>

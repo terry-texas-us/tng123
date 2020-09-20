@@ -33,58 +33,58 @@ define("FOUR", 4);
 define("FIVE", 5);
 
 if (!isset($options['modlogfile'])) {
-  $options['modlogfile'] = "modmgrlog.txt";
+    $options['modlogfile'] = "modmgrlog.txt";
 }    // Default Mod Log file name
 if (!isset($options['maxloglines'])) {
-  $options['maxloglines'] = "200";
+    $options['maxloglines'] = "200";
 }    // Default Log max transactions
 if (!isset($options['compress_log'])) {
-  $options['compress_log'] = "1";
+    $options['compress_log'] = "1";
 }    // Default to compress log
 if (!isset($options['redirect2log'])) {
-  $options['redirect2log'] = ON_ERROR;
+    $options['redirect2log'] = ON_ERROR;
 }
 if (!isset($options['sortby'])) {
-  $options['sortby'] = "1";
+    $options['sortby'] = "1";
 }    // Default Sort by Mod Name column
 if (!isset($options['delete_partial'])) {
-  $options['delete_partial'] = "0";
+    $options['delete_partial'] = "0";
 }  // do not allow Delete Selected of Partially Installed mods
 if (!isset($options['delete_installed'])) {
-  $options['delete_installed'] = "0";
+    $options['delete_installed'] = "0";
 }  // do not allow deletes of individual Installed mod
 if (!isset($options['log_full_path'])) {
-  $options['log_full_path'] = "1";
+    $options['log_full_path'] = "1";
 }    // Log full path for file actions
 if (!isset($options['compress_names'])) {
-  $options['compress_names'] = "0";
+    $options['compress_names'] = "0";
 }  // Compress Mod Names
 if (!isset($options['fix_header'])) {
-  $options['fix_header'] = "1";
+    $options['fix_header'] = "1";
 }  // Use Fixed Headers
 if (!isset($options['show_analyzer'])) {
-  $options['show_analyzer'] = "0";
+    $options['show_analyzer'] = "0";
 }    // Default to not show the Analyze TNG Files tab
 if (!isset($options['show_developer'])) {
-  $options['show_developer'] = "0";
+    $options['show_developer'] = "0";
 }    // Default to not show the Analyze Parser Table tab - added 171209 Ken
 if (!isset($options['show_updates'])) {
-  $options['show_updates'] = "1";
+    $options['show_updates'] = "1";
 }    // Default to not show the Recommended Updates tab  - added 171209 Ken
 if (!isset($options['use_striping'])) {
-  $options['use_striping'] = "1";
+    $options['use_striping'] = "1";
 }  //Default to striping
 if (!isset($options['stripe_after'])) {
-  $options['stripe_after'] = THREE;
+    $options['stripe_after'] = THREE;
 }  //Default to ledger striping
 if (!isset($options['adjust_headers'])) {
-  $options['adjust_headers'] = "0";
+    $options['adjust_headers'] = "0";
 }  // Default to not adjust fixed
 if (!isset($options['delete_support'])) {
-  $options['delete_support'] = "0";
+    $options['delete_support'] = "0";
 }
 if (!isset($sub)) {
-  $sub = "tables";
+    $sub = "tables";
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
@@ -121,17 +121,17 @@ $menu .= doMenu($modtabs, "options", $innermenu);
 $menu .= "</div>";
 
 if (!isset($message)) {
-  $message = "";
+    $message = "";
 }
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
 
 if ($options['fix_header'] == YES && $sitever != 'mobile') {
-  $headclass = 'mmhead-fixed';
-  $tableclass = 'm2table-fixed';
+    $headclass = 'mmhead-fixed';
+    $tableclass = 'm2table-fixed';
 } else {
-  $headclass = 'mmhead-scroll';
-  $tableclass = 'm2table-scroll';
+    $headclass = 'mmhead-scroll';
+    $tableclass = 'm2table-scroll';
 }
 
 echo "
@@ -176,12 +176,12 @@ echo "
          				<select name=\"options[compress_log]\">
          					<option value=" . YES;
 if ($options['compress_log'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['compress_log'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -193,12 +193,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[redirect2log]\">
                         <option value=" . ON_ERROR;
 if ($options['redirect2log'] == ON_ERROR) {
-  echo "  selected=\"selected\"";
+    echo "  selected=\"selected\"";
 }
 echo ">{$admtext['on_error']}</option>
                         <option value=" . ON_ALL;
 if ($options['redirect2log'] == ON_ALL) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['on_all']}</option>
          				</select>
@@ -210,12 +210,12 @@ echo ">{$admtext['on_all']}</option>
 						<select name=\"options[log_full_path]\">
 						<option value=" . YES;
 if ($options['log_full_path'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
 						<option value=" . NO;
 if ($options['log_full_path'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
 						</select>
@@ -238,12 +238,12 @@ echo "
          				<select name=\"options[sortby]\">
          					<option value=" . MODNAME;
 if ($options['sortby'] == MODNAME) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['modname']}</option>
          					<option value=" . CFGNAME;
 if ($options['sortby'] == CFGNAME) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['cfgname']}</option>
          				</select>
@@ -255,12 +255,12 @@ echo ">{$admtext['cfgname']}</option>
          				<select name=\"options[fix_header]\">
          					<option value=" . YES;
 if ($options['fix_header'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['fix_header'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -272,12 +272,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[adjust_headers]\">
          					<option value=" . YES;
 if ($options['adjust_headers'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['adjust_headers'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -289,12 +289,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[use_striping]\">
          					<option value=" . YES;
 if ($options['use_striping'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['use_striping'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -306,27 +306,27 @@ echo ">{$admtext['no']}</option>
 						<select name=\"options[stripe_after]\">
 							<option value=" . ONE;
 if ($options['stripe_after'] == ONE) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">1</option>
 							<option value=" . TWO;
 if ($options['stripe_after'] == TWO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">2</option>
 							<option value=" . THREE;
 if ($options['stripe_after'] == THREE) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">3</option>
 							<option value=" . FOUR;
 if ($options['stripe_after'] == FOUR) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">4</option>
 							<option value=" . FIVE;
 if ($options['stripe_after'] == FIVE) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">5</option>
 						</select>
@@ -338,12 +338,12 @@ echo ">5</option>
          				<select name=\"options[compress_names]\">
          					<option value=" . YES;
 if ($options['compress_names'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['compress_names'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -355,12 +355,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[show_analyzer]\">
          					<option value=" . YES;
 if ($options['show_analyzer'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['show_analyzer'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -372,12 +372,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[show_developer]\">
          					<option value=" . YES;
 if ($options['show_developer'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['show_developer'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -389,12 +389,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[show_updates]\">
          					<option value=" . YES;
 if ($options['show_updates'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['show_updates'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -416,12 +416,12 @@ echo "
          				<select name=\"options[delete_partial]\">
          					<option value=" . YES;
 if ($options['delete_partial'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['delete_partial'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -436,12 +436,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[delete_installed]\">
          					<option value=" . YES;
 if ($options['delete_installed'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['delete_installed'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -456,12 +456,12 @@ echo ">{$admtext['no']}</option>
          				<select name=\"options[delete_support]\">
          					<option value=" . YES;
 if ($options['delete_support'] == YES) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['yes']}</option>
          					<option value=" . NO;
 if ($options['delete_support'] == NO) {
-  echo " selected=\"selected\"";
+    echo " selected=\"selected\"";
 }
 echo ">{$admtext['no']}</option>
          				</select>
@@ -482,47 +482,47 @@ echo ">{$admtext['no']}</option>
 	</form>";
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
-  global $admtext;
-  $modtabs = array();
-  $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-  $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-  $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
-  if ($show_analyzer == YES) {
-    $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
-  }
-  if ($show_developer == YES) {
-    $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
-  }
+    global $admtext;
+    $modtabs = array();
+    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
+    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
+    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    if ($show_analyzer == YES) {
+        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+    }
+    if ($show_developer == YES) {
+        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+    }
 
-  if ($show_updates == YES) {
-    $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
-  }
-  return $modtabs;
+    if ($show_updates == YES) {
+        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+    }
+    return $modtabs;
 }
 
 function set_innermenu_links($tng_version) {
-  global $text, $admtext;
+    global $text, $admtext;
 
-  $parts = explode(".", $tng_version);    // added to determine TNG vNN for
-  $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
-  $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
-  $helplang = findhelp("modhandler_help.php");
+    $parts = explode(".", $tng_version);    // added to determine TNG vNN for
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
+    $helplang = findhelp("modhandler_help.php");
 
-  // inner menu help
-  $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    // inner menu help
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 
-  // toggle sections open/close
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+    // toggle sections open/close
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 
-  // MM syntax
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    // MM syntax
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
 
-  // mod guidelines
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    // mod guidelines
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
-  // mods for TNGv10
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
-  return $innermenu;
+    // mods for TNGv10
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    return $innermenu;
 }
 
 
@@ -531,7 +531,7 @@ function set_innermenu_links($tng_version) {
  *************************************************************************/
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
-  echo "
+    echo "
 <script type=\"text/javascript\">
    jQuery(document).ready(function() {
       // set position of m2table relative to mmhead

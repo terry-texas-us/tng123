@@ -351,9 +351,12 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                     ru�n�, pokud nechcete, aby byla v�choz� fotografie odvozena z jin� fotografie p�ipojen� k osob�.
                 </li>
 
-                <li>Je-li obr�zek vytvo�en v��e uvedenou konvenc�, jeho velikost m��e b�t zmen�ena, je-li to t�eba k tomu, aby se ve�el do v��ky r�me�ku. <span class="emphasis">Zv�t�en�</span>
-                    obr�zku se v�ak neprovede, proto�e by t�m utrp�la kvalita obr�zku. Je t�eba tak� poznamenat, �e zmen�en� velikosti obr�zku nem� vliv na velikost souboru fotografie. Jin�mi slovy
-                    to neznamen�, �e kdy� obr�zek vypad� men��, zobraz� se rychleji, ne� kdyby byl zobrazen ve sv� p�vodn� velikosti. Proto by velk� fotografie nem�ly b�t pou��v�ny jako obr�zky ve sch�matech,
+                <li>Je-li obr�zek vytvo�en v��e uvedenou konvenc�, jeho velikost m��e b�t zmen�ena, je-li to t�eba k tomu, aby se ve�el do v��ky
+                    r�me�ku. <span class="emphasis">Zv�t�en�</span>
+                    obr�zku se v�ak neprovede, proto�e by t�m utrp�la kvalita obr�zku. Je t�eba tak� poznamenat, �e zmen�en� velikosti obr�zku nem�
+                    vliv na velikost souboru fotografie. Jin�mi slovy
+                    to neznamen�, �e kdy� obr�zek vypad� men��, zobraz� se rychleji, ne� kdyby byl zobrazen ve sv� p�vodn� velikosti. Proto by velk�
+                    fotografie nem�ly b�t pou��v�ny jako obr�zky ve sch�matech,
                     proto�e by prodlu�ovaly �as na�ten� cel� str�nky.
                 </li>
 

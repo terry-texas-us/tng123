@@ -12,28 +12,28 @@ $path = urldecode($path);
 $imagename = "$rootpath$path";
 $photoinfo = @GetImageSize($imagename);
 switch ($photoinfo[2]) {
-  case 1: //GIF
-    $image = @imageCreateFromGif($imagename);
-    break;
-  case 3: //PNG
-    $image = @imageCreateFromPng($imagename);
-    break;
-  default: //JPEG
-    $image = @imageCreateFromJpeg($imagename);
-    break;
+    case 1: //GIF
+        $image = @imageCreateFromGif($imagename);
+        break;
+    case 3: //PNG
+        $image = @imageCreateFromPng($imagename);
+        break;
+    default: //JPEG
+        $image = @imageCreateFromJpeg($imagename);
+        break;
 }
 
 if ($photoinfo[0] <= $maxsize && $photoinfo[1] <= $maxsize) {
-  $photohtouse = $photoinfo[1];
-  $photowtouse = $photoinfo[0];
+    $photohtouse = $photoinfo[1];
+    $photowtouse = $photoinfo[0];
 } else {
-  if ($photoinfo[0] > $photoinfo[1]) {
-    $photowtouse = $maxsize;
-    $photohtouse = intval($maxsize * $photoinfo[1] / $photoinfo[0]);
-  } else {
-    $photohtouse = $maxsize;
-    $photowtouse = intval($maxsize * $photoinfo[0] / $photoinfo[1]);
-  }
+    if ($photoinfo[0] > $photoinfo[1]) {
+        $photowtouse = $maxsize;
+        $photohtouse = intval($maxsize * $photoinfo[1] / $photoinfo[0]);
+    } else {
+        $photohtouse = $maxsize;
+        $photowtouse = intval($maxsize * $photoinfo[0] / $photoinfo[1]);
+    }
 }
 
 // Resample

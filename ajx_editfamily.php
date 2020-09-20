@@ -36,6 +36,7 @@ function getBirth($row) {
     }
     return $birthdate;
 }
+
 $row = fetchAndCleanFamilyRow($familyID, $families_table, $tree);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
@@ -82,7 +83,9 @@ include_once "eventlib.php";
     <table width="100%" cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
-                <div style="float:right;"><input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>"></div>
+                <div style="float:right;">
+                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
+                </div>
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
                         <td valign="top">
@@ -142,9 +145,11 @@ include_once "eventlib.php";
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
-                                <td><input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>"><input type="hidden" name="husband"
-                                                                                                                                                                        id="husband"
-                                                                                                                                                                        value="<?php echo $row['husband']; ?>">
+                                <td>
+                                    <input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
+                                    <input type="hidden" name="husband"
+                                           id="husband"
+                                           value="<?php echo $row['husband']; ?>">
                                     <input type="button" value="<?php echo $admtext['find']; ?>"
                                            onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                                     <input type="button" value="<?php echo $admtext['addnew']; ?>" onclick="return newPerson('M','spouse');">
@@ -173,10 +178,12 @@ include_once "eventlib.php";
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>
-                                <td><input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>"><input type="hidden"
-                                                                                                                                                                                 name="wife"
-                                                                                                                                                                                 id="wife"
-                                                                                                                                                                                 value="<?php echo $row['wife']; ?>">
+                                <td>
+                                    <input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
+                                    <input type="hidden"
+                                           name="wife"
+                                           id="wife"
+                                           value="<?php echo $row['wife']; ?>">
                                     <input type="button" value="<?php echo $admtext['find']; ?>"
                                            onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                                     <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return newPerson('F','spouse');">
@@ -269,7 +276,9 @@ include_once "eventlib.php";
                             ?>
                             <tr>
                                 <td><?php echo $admtext['marriagetype']; ?>:</td>
-                                <td colspan="6"><input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50"></td>
+                                <td colspan="6">
+                                    <input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50">
+                                </td>
                             </tr>
                             <?php
                             if ($rights['lds']) {

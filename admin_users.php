@@ -106,7 +106,9 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                     <table class="normal">
                         <tr>
                             <td><?php echo $admtext['searchfor']; ?>:</td>
-                            <td><input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield"></td>
+                            <td>
+                                <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                            </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value=''; document.form1.adminonly.checked=false;"
@@ -123,7 +125,8 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                         </tr>
                     </table>
 
-                    <input type="hidden" name="finduser" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="finduser" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
 

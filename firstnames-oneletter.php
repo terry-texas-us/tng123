@@ -41,49 +41,49 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
                     $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
                     $more = getLivingPrivateRestrictions($people_table, false, false);
-                  if ($more) {
-                    $wherestr .= " AND " . $more;
-                  }
-
-                  $firstnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,firstname) )" : "firstname";
-                  if ($tngconfig['ucfirstnames']) {
-                    $firstnamestr = "UCASE($firstnamestr)";
-                  }
-                  $firstchar = $firstchar == "\"" ? "\\\"" : $firstchar;
-                  $query = "SELECT UCASE( $binary $firstnamestr ) AS firstname, $firstnamestr AS lowername, UCASE($binary firstname) AS binlast, count( UCASE($binary firstname) ) AS lncount FROM $people_table WHERE UCASE($binary TRIM(firstname)) LIKE \"$firstchar%\" $wherestr GROUP BY lowername ORDER by binlast";
-                  $result = tng_query($query);
-                  $topnum = tng_num_rows($result);
-                  if ($result) {
-                    $snnum = 1;
-                    if ($sitever == "mobile") {
-                      $numcols = 2;
-                    } elseif (!isset($numcols) || $numcols > 5) {
-                      $numcols = 5;
+                    if ($more) {
+                        $wherestr .= " AND " . $more;
                     }
-                    $num_in_col = ceil($topnum / $numcols);
 
-                    $num_in_col_ctr = 0;
-                    while ($firstname = tng_fetch_assoc($result)) {
-                      $firstname2 = urlencode($firstname['firstname']);
-                      $name = $firstname['firstname'] ? "<a href=\"$search_url" . "myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : $text['nofirstname'];
-                      echo "$snnum. $name ({$firstname['lncount']})<br>\n";
-                      $snnum++;
-                      $num_in_col_ctr++;
-                      if ($num_in_col_ctr == $num_in_col) {
-                          echo "</td>\n";
-                          echo "<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n";
-                          echo "<td class=\"sncol\">";
-                          $num_in_col_ctr = 0;
-                      }
+                    $firstnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,firstname) )" : "firstname";
+                    if ($tngconfig['ucfirstnames']) {
+                        $firstnamestr = "UCASE($firstnamestr)";
                     }
-                    tng_free_result($result);
-                  }
-                  ?>
+                    $firstchar = $firstchar == "\"" ? "\\\"" : $firstchar;
+                    $query = "SELECT UCASE( $binary $firstnamestr ) AS firstname, $firstnamestr AS lowername, UCASE($binary firstname) AS binlast, count( UCASE($binary firstname) ) AS lncount FROM $people_table WHERE UCASE($binary TRIM(firstname)) LIKE \"$firstchar%\" $wherestr GROUP BY lowername ORDER by binlast";
+                    $result = tng_query($query);
+                    $topnum = tng_num_rows($result);
+                    if ($result) {
+                        $snnum = 1;
+                        if ($sitever == "mobile") {
+                            $numcols = 2;
+                        } elseif (!isset($numcols) || $numcols > 5) {
+                            $numcols = 5;
+                        }
+                        $num_in_col = ceil($topnum / $numcols);
+
+                        $num_in_col_ctr = 0;
+                        while ($firstname = tng_fetch_assoc($result)) {
+                            $firstname2 = urlencode($firstname['firstname']);
+                            $name = $firstname['firstname'] ? "<a href=\"$search_url" . "myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : $text['nofirstname'];
+                            echo "$snnum. $name ({$firstname['lncount']})<br>\n";
+                            $snnum++;
+                            $num_in_col_ctr++;
+                            if ($num_in_col_ctr == $num_in_col) {
+                                echo "</td>\n";
+                                echo "<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n";
+                                echo "<td class=\"sncol\">";
+                                $num_in_col_ctr = 0;
+                            }
+                        }
+                        tng_free_result($result);
+                    }
+                    ?>
                 </td>
             </tr>
         </table>
     </div>
-  <br>
+    <br>
 <?php
 tng_footer("");
 ?>

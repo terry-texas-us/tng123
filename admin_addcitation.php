@@ -9,14 +9,14 @@ require "datelib.php";
 require "adminlog.php";
 
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  exit;
+    $message = $admtext['norights'];
+    exit;
 }
 
 if ($session_charset != "UTF-8") {
-  $citepage = tng_utf8_decode($citepage);
-  $citetext = tng_utf8_decode($citetext);
-  $citenote = tng_utf8_decode($citenote);
+    $citepage = tng_utf8_decode($citepage);
+    $citetext = tng_utf8_decode($citetext);
+    $citenote = tng_utf8_decode($citenote);
 }
 
 $citedatetr = convertDate($citedate);

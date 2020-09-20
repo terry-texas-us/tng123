@@ -8,9 +8,9 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 $helplang = findhelp("tlevents_help.php");
@@ -53,62 +53,66 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtleve
 ?>
 
 <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
-  <tr class="databack">
-    <td class="tngshadow">
-      <form action="admin_addtlevent.php" method="post" name="form1" onSubmit="return validateForm();">
-        <table class="normal">
-          <?php
-                  function doEventRow($label, $dayname, $monthname, $yearname, $help) {
-                    global $dates;
-                    ?>
-                      <tr>
-                          <td><?php echo $label; ?>:</td>
-                          <td>
-                              <select name="<?php echo $dayname; ?>">
-                                  <option value=""></option>
-                                <?php
-                                for ($i = 1; $i <= 31; $i++) {
-                                  echo "<option value=\"$i\">$i</option>\n";
-                                }
-                                ?>
-                              </select>
-                              <select name="<?php echo $monthname; ?>">
-                                  <option value=""></option>
-                                  <option value="1"><?php echo $dates['JAN']; ?></option>
-                                  <option value="2"><?php echo $dates['FEB']; ?></option>
-                                  <option value="3"><?php echo $dates['MAR']; ?></option>
-                                <option value="4"><?php echo $dates['APR']; ?></option>
-                                <option value="5"><?php echo $dates['MAY']; ?></option>
-                                <option value="6"><?php echo $dates['JUN']; ?></option>
-                                <option value="7"><?php echo $dates['JUL']; ?></option>
-                                <option value="8"><?php echo $dates['AUG']; ?></option>
-                                <option value="9"><?php echo $dates['SEP']; ?></option>
-                                <option value="10"><?php echo $dates['OCT']; ?></option>
-                                <option value="11"><?php echo $dates['NOV']; ?></option>
-                                <option value="12"><?php echo $dates['DEC']; ?></option>
-                              </select>
-                            <input type="text" name="<?php echo $yearname; ?>" size="4"> <span class="normal"><?php echo $help; ?></span>
-                          </td>
-                      </tr>
+    <tr class="databack">
+        <td class="tngshadow">
+            <form action="admin_addtlevent.php" method="post" name="form1" onSubmit="return validateForm();">
+                <table class="normal">
                     <?php
-                  }
+                    function doEventRow($label, $dayname, $monthname, $yearname, $help) {
+                        global $dates;
+                        ?>
+                        <tr>
+                            <td><?php echo $label; ?>:</td>
+                            <td>
+                                <select name="<?php echo $dayname; ?>">
+                                    <option value=""></option>
+                                    <?php
+                                    for ($i = 1; $i <= 31; $i++) {
+                                        echo "<option value=\"$i\">$i</option>\n";
+                                    }
+                                    ?>
+                                </select>
+                                <select name="<?php echo $monthname; ?>">
+                                    <option value=""></option>
+                                    <option value="1"><?php echo $dates['JAN']; ?></option>
+                                    <option value="2"><?php echo $dates['FEB']; ?></option>
+                                    <option value="3"><?php echo $dates['MAR']; ?></option>
+                                    <option value="4"><?php echo $dates['APR']; ?></option>
+                                    <option value="5"><?php echo $dates['MAY']; ?></option>
+                                    <option value="6"><?php echo $dates['JUN']; ?></option>
+                                    <option value="7"><?php echo $dates['JUL']; ?></option>
+                                    <option value="8"><?php echo $dates['AUG']; ?></option>
+                                    <option value="9"><?php echo $dates['SEP']; ?></option>
+                                    <option value="10"><?php echo $dates['OCT']; ?></option>
+                                    <option value="11"><?php echo $dates['NOV']; ?></option>
+                                    <option value="12"><?php echo $dates['DEC']; ?></option>
+                                </select>
+                                <input type="text" name="<?php echo $yearname; ?>" size="4">
+                                <span class="normal"><?php echo $help; ?></span>
+                            </td>
+                        </tr>
+                        <?php
+                    }
 
-                  doEventRow($admtext['startdt'], "evday", "evmonth", "evyear", $admtext['yrreq']);
-                  doEventRow($admtext['enddt'], "endday", "endmonth", "endyear", "");
-                  ?>
+                    doEventRow($admtext['startdt'], "evday", "evmonth", "evyear", $admtext['yrreq']);
+                    doEventRow($admtext['enddt'], "endday", "endmonth", "endyear", "");
+                    ?>
                     <tr>
                         <td><?php echo $admtext['evtitle']; ?>:</td>
-                      <td><input type="text" name="evtitle" width="100"></td>
+                        <td>
+                            <input type="text" name="evtitle" width="100">
+                        </td>
                     </tr>
-                  <tr>
-                      <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
-                      <td><textarea cols="80" rows="8" name="evdetail"></textarea></td>
-                  </tr>
-        </table>
-          <br>&nbsp;
-          <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>"></form>
-    </td>
-  </tr>
+                    <tr>
+                        <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
+                        <td><textarea cols="80" rows="8" name="evdetail"></textarea></td>
+                    </tr>
+                </table>
+                <br>&nbsp;
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+            </form>
+        </td>
+    </tr>
 
 </table>
 <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>

@@ -98,33 +98,41 @@ echo help_header("N�pov�da: Reporty");
                 skute�n� data POKUD NEJSOU ozna�ena jako 'True'. Porovn�n� dat, kter� pou��vaj� textov� nebo �et�zcov� pole, se nejl�pe provede
                 porovn�n�m komponent data,
                 jako je pouze rok nebo pouze den. Chcete-li t�mto zp�sobem izolovat komponentu data, vyberte nejd��ve <em>M�s�c pouze</em>,
-            <em>Den pouze</em> nebo <em>Rok pouze</em>, a pak vyberte pole data, ze kter�ho tato komponenta poch�z�.</p>
+                <em>Den pouze</em> nebo <em>Rok pouze</em>, a pak vyberte pole data, ze kter�ho tato komponenta poch�z�.</p>
 
-          <p>P�i pr�ci se skute�n�mi datov�mi poli (jako Datum posledn� aktualizace) m��ete porovnat pole p��mo s jin�m skute�n�m datem
-            nebo skute�n�mi datov�mi poli. P�eddefinovan� skute�n� datum, kter� m��ete pou��t jako oper�tor, je 'Dnes'. P�i porovn�v�n� dvou skute�n�ch dat m��ete tak� pou��t
-            oper�tor 'P�ev�st na dny'. Nap�. pro nalezen� v�ech z�znam�, u kter�ch je Datum posledn� aktualizace men�� ne� 30 dn�,
-            m��ete zvolit toto krit�rium:<br><br>
+            <p>P�i pr�ci se skute�n�mi datov�mi poli (jako Datum posledn� aktualizace) m��ete porovnat pole p��mo s jin�m skute�n�m datem
+                nebo skute�n�mi datov�mi poli. P�eddefinovan� skute�n� datum, kter� m��ete pou��t jako oper�tor, je 'Dnes'. P�i porovn�v�n� dvou
+                skute�n�ch dat m��ete tak� pou��t
+                oper�tor 'P�ev�st na dny'. Nap�. pro nalezen� v�ech z�znam�, u kter�ch je Datum posledn� aktualizace men�� ne� 30 dn�,
+                m��ete zvolit toto krit�rium:<br><br>
 
-            <i>P�ev�st na dny<br>
-              Dnes (true)<br>
-              -<br>
-              P�ev�st na dny<br>
-              Datum posledn� aktualizace<br>
-              <=<br>
-              30</i></p>
+                <i>P�ev�st na dny<br>
+                    Dnes (true)<br>
+                    -<br>
+                    P�ev�st na dny<br>
+                    Datum posledn� aktualizace<br>
+                    <=<br>
+                    30</i></p>
 
-          <p>Po v�b�ru n�zvu pole zvolte d�le ze seznamu <em>Oper�tory &amp; Speci�ln� hodnoty</em> porovn�vac� oper�tor. Jsou to "=, !=, < > <=, >=, obsahuje, za��n� na, kon�� na". Oper�tor
-            zkop�rujte do prav� ��sti jeho v�b�rem a kliknut�m na sousedn� tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev oper�tora (pouze IE).</p>
+            <p>Po v�b�ru n�zvu pole zvolte d�le ze seznamu <em>Oper�tory &amp; Speci�ln� hodnoty</em> porovn�vac� oper�tor. Jsou to "=, !=, < > <=,
+                >=, obsahuje, za��n� na, kon�� na". Oper�tor
+                zkop�rujte do prav� ��sti jeho v�b�rem a kliknut�m na sousedn� tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev
+                oper�tora (pouze IE).</p>
 
-          <p>P��kaz zakon�ete v�b�rem pole nebo hodnoty pro porovn�n� s va��m p�vodn�m polem. M��ete tak� zvolit n�kterou ze speci�ln�ch hodnot: <em>Aktu�ln� m�s�c, aktu�ln� rok</em> nebo
-            <em>aktu�ln� den</em>. Chcete-li vybrat hodnotu konstantn�ho �et�zce, zadejte do pole <em>Konstantn� �et�zec</em> hodnotu �et�zce bez uvozovek a klikn�te na sousedn� tla��tko <em>P�idat >></em>.
-            Chcete-li p�idat pr�zdn� �et�zec, nechte p�ed kliknut�m na toto tla��tko pole pr�zdn�. Pokud chcete zvolit hodnotu ��seln� konstanty, zadejte do pole <em>��seln� konstanta</em> ��slo a klikn�te na sousedn�
-            tla��tko <em>P�idat >></em>.</p>
+            <p>P��kaz zakon�ete v�b�rem pole nebo hodnoty pro porovn�n� s va��m p�vodn�m polem. M��ete tak� zvolit n�kterou ze speci�ln�ch hodnot:
+                <em>Aktu�ln� m�s�c, aktu�ln� rok</em> nebo
+                <em>aktu�ln� den</em>. Chcete-li vybrat hodnotu konstantn�ho �et�zce, zadejte do pole <em>Konstantn� �et�zec</em> hodnotu �et�zce bez
+                uvozovek a klikn�te na sousedn� tla��tko <em>P�idat >></em>.
+                Chcete-li p�idat pr�zdn� �et�zec, nechte p�ed kliknut�m na toto tla��tko pole pr�zdn�. Pokud chcete zvolit hodnotu ��seln� konstanty,
+                zadejte do pole <em>��seln� konstanta</em> ��slo a klikn�te na sousedn�
+                tla��tko <em>P�idat >></em>.</p>
 
-          <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem na
-              polo�ku (pouze IE).
-              Chcete-li zm�nit po�ad� polo�ek v seznamu, vyberte polo�ku a p�esu�te ji nahoru nebo dol� kliknut�m na tla��tka <em>Posunout nahoru</em>
-              nebo <em>Posunout dol�</em>.</p>
+            <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem
+                na
+                polo�ku (pouze IE).
+                Chcete-li zm�nit po�ad� polo�ek v seznamu, vyberte polo�ku a p�esu�te ji nahoru nebo dol� kliknut�m na tla��tka <em>Posunout
+                    nahoru</em>
+                nebo <em>Posunout dol�</em>.</p>
 
             <h5 class="optionhead">Vybrat t��d�n�</h5>
             <p>V�b�rem jednoho nebo v�ce pol� ur��te, jak maj� b�t odpov�daj�c� z�znamy t��d�ny.

@@ -9,17 +9,17 @@ include "checklogin.php";
 require "datelib.php";
 
 if (!$allow_edit) {
-  $message = $admtext['norights'];
-  header("Location: admin_login.php?message=" . urlencode($message));
-  exit;
+    $message = $admtext['norights'];
+    header("Location: admin_login.php?message=" . urlencode($message));
+    exit;
 }
 
 require "adminlog.php";
 
 if ($session_charset != "UTF-8") {
-  $citepage = tng_utf8_decode($citepage);
-  $citetext = tng_utf8_decode($citetext);
-  $citenote = tng_utf8_decode($citenote);
+    $citepage = tng_utf8_decode($citepage);
+    $citetext = tng_utf8_decode($citetext);
+    $citenote = tng_utf8_decode($citenote);
 }
 
 $description = addslashes($description);
@@ -40,13 +40,13 @@ adminwritelog($admtext['modifycite'] . ": $citationID/$sourceID");
 
 //if sourceID, get title
 if ($sourceID) {
-  $query = "SELECT title, shorttitle FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = '$tree'";
-  $result = tng_query($query);
-  $row = tng_fetch_assoc($result);
-  $title = $row['title'] ? $row['title'] : $row['shorttitle'];
-  $citationsrc = "[$sourceID] " . $title;
+    $query = "SELECT title, shorttitle FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = '$tree'";
+    $result = tng_query($query);
+    $row = tng_fetch_assoc($result);
+    $title = $row['title'] ? $row['title'] : $row['shorttitle'];
+    $citationsrc = "[$sourceID] " . $title;
 } else {
-  $citationsrc = "$description";
+    $citationsrc = "$description";
 }
 
 $citationsrc = cleanIt($citationsrc);

@@ -1,683 +1,683 @@
 <?php
 switch ($textpart) {
-  //browsesources.php, showsource.php
-  case "sources":
-    $text['browseallsources'] = "Søg i alle kilder";
-    $text['shorttitle'] = "Titel";
-    $text['callnum'] = "Nummer";
-    $text['author'] = "Forfatter";
-    $text['publisher'] = "Udgiver";
-    $text['other'] = "Andre oplysninger";
-    $text['sourceid'] = "Kilde-ID";
-    $text['moresrc'] = "Flere kilder";
-    $text['repoid'] = "Arkiv-ID";
-    $text['browseallrepos'] = "Søg i alle arkiver";
-    break;
+    //browsesources.php, showsource.php
+    case "sources":
+        $text['browseallsources'] = "Søg i alle kilder";
+        $text['shorttitle'] = "Titel";
+        $text['callnum'] = "Nummer";
+        $text['author'] = "Forfatter";
+        $text['publisher'] = "Udgiver";
+        $text['other'] = "Andre oplysninger";
+        $text['sourceid'] = "Kilde-ID";
+        $text['moresrc'] = "Flere kilder";
+        $text['repoid'] = "Arkiv-ID";
+        $text['browseallrepos'] = "Søg i alle arkiver";
+        break;
 
-  //changelanguage.php, savelanguage.php
-  case "language":
-    $text['newlanguage'] = "Nyt sprog";
-    $text['changelanguage'] = "Skift sprog";
-    $text['languagesaved'] = "Sproget er gemt";
-    $text['sitemaint'] = "Hjemmesiden opdateres i øjeblikket";
-    $text['standby'] = "Hjemmesiden er ikke tilgængelig i øjeblikket pga. opdatering. Prøv igen om nogle minutter. Hvis siden ikke er tilgængelig inden for kort tid, <a href=\"suggest.php\">kontakt da hjemmesidens administrator</a>.";
-    break;
+    //changelanguage.php, savelanguage.php
+    case "language":
+        $text['newlanguage'] = "Nyt sprog";
+        $text['changelanguage'] = "Skift sprog";
+        $text['languagesaved'] = "Sproget er gemt";
+        $text['sitemaint'] = "Hjemmesiden opdateres i øjeblikket";
+        $text['standby'] = "Hjemmesiden er ikke tilgængelig i øjeblikket pga. opdatering. Prøv igen om nogle minutter. Hvis siden ikke er tilgængelig inden for kort tid, <a href=\"suggest.php\">kontakt da hjemmesidens administrator</a>.";
+        break;
 
-  //gedcom.php, gedform.php
-  case "gedcom":
-    $text['gedstart'] = "GEDCOM begynder med";
-    $text['producegedfrom'] = "Opret en GEDCOM-fil fra";
-    $text['numgens'] = "Antal generationer";
-    $text['includelds'] = "Inkluder SDH-oplysninger";
-    $text['buildged'] = "Opret GEDCOM";
-    $text['gedstartfrom'] = "GEDCOM begynder med";
-    $text['nomaxgen'] = "Angiv antal generationer. Brug Tilbage-tasten for at rette fejlen";
-    $text['gedcreatedfrom'] = "GEDCOM oprettet fra";
-    $text['gedcreatedfor'] = "GEDCOM oprettet for";
-    $text['creategedfor'] = "Opret GEDCOM for";
-    $text['email'] = "mailadresse";
-    $text['suggestchange'] = "Foreslå en ændring";
-    $text['yourname'] = "Dit navn";
-    $text['comments'] = "Bemærkninger og kommentarer";
-    $text['comments2'] = "Bemærkninger";
-    $text['submitsugg'] = "Send forslag";
-    $text['proposed'] = "Foreslået ændring";
-    $text['mailsent'] = "Tak. Beskeden er sendt.";
-    $text['mailnotsent'] = "Beklager, men beskeden kunne ikke leveres. Kontakt venligst xxx direkte på yyy.";
-    $text['mailme'] = "Send en kopi til denne mailadresse";
-    $text['entername'] = "Skriv venligst dit navn";
-    $text['entercomments'] = "Skriv venligst dine kommentarer";
-    $text['sendmsg'] = "Send meddelelse";
-    //added in 9.0.0
-    $text['subject'] = "Emne";
-    break;
+    //gedcom.php, gedform.php
+    case "gedcom":
+        $text['gedstart'] = "GEDCOM begynder med";
+        $text['producegedfrom'] = "Opret en GEDCOM-fil fra";
+        $text['numgens'] = "Antal generationer";
+        $text['includelds'] = "Inkluder SDH-oplysninger";
+        $text['buildged'] = "Opret GEDCOM";
+        $text['gedstartfrom'] = "GEDCOM begynder med";
+        $text['nomaxgen'] = "Angiv antal generationer. Brug Tilbage-tasten for at rette fejlen";
+        $text['gedcreatedfrom'] = "GEDCOM oprettet fra";
+        $text['gedcreatedfor'] = "GEDCOM oprettet for";
+        $text['creategedfor'] = "Opret GEDCOM for";
+        $text['email'] = "mailadresse";
+        $text['suggestchange'] = "Foreslå en ændring";
+        $text['yourname'] = "Dit navn";
+        $text['comments'] = "Bemærkninger og kommentarer";
+        $text['comments2'] = "Bemærkninger";
+        $text['submitsugg'] = "Send forslag";
+        $text['proposed'] = "Foreslået ændring";
+        $text['mailsent'] = "Tak. Beskeden er sendt.";
+        $text['mailnotsent'] = "Beklager, men beskeden kunne ikke leveres. Kontakt venligst xxx direkte på yyy.";
+        $text['mailme'] = "Send en kopi til denne mailadresse";
+        $text['entername'] = "Skriv venligst dit navn";
+        $text['entercomments'] = "Skriv venligst dine kommentarer";
+        $text['sendmsg'] = "Send meddelelse";
+        //added in 9.0.0
+        $text['subject'] = "Emne";
+        break;
 
-  //getextras.php, getperson.php
-  case "getperson":
-    $text['photoshistoriesfor'] = "Billeder og fortællinger for";
-    $text['indinfofor'] = "Individuelle oplysninger om";
-    $text['pp'] = "pp."; //page abbreviation
-    $text['age'] = "Alder";
-    $text['agency'] = "Firma";
-    $text['cause'] = "Årsag";
-    $text['suggested'] = "Foreslået";
-    $text['closewindow'] = "Luk dette vindue";
-    $text['thanks'] = "Tak";
-    $text['received'] = "Dit forslag er videresendt.";
-    $text['indreport'] = "Personrapport";
-    $text['indreportfor'] = "Personrapport for ";
-    $text['general'] = "Generelt";
-    $text['bkmkvis'] = "<strong>Note:</strong> Disse bogmærker er kun synlige på denne PC og i denne browser.";
-    //added in 9.0.0
-    $text['reviewmsg'] = "Du har foreslået en ændring, som skal tjekkes. Indsendelsen vedrører:";
-    $text['revsubject'] = "Foreslået ændring kræver din godkendelse";
-    break;
+    //getextras.php, getperson.php
+    case "getperson":
+        $text['photoshistoriesfor'] = "Billeder og fortællinger for";
+        $text['indinfofor'] = "Individuelle oplysninger om";
+        $text['pp'] = "pp."; //page abbreviation
+        $text['age'] = "Alder";
+        $text['agency'] = "Firma";
+        $text['cause'] = "Årsag";
+        $text['suggested'] = "Foreslået";
+        $text['closewindow'] = "Luk dette vindue";
+        $text['thanks'] = "Tak";
+        $text['received'] = "Dit forslag er videresendt.";
+        $text['indreport'] = "Personrapport";
+        $text['indreportfor'] = "Personrapport for ";
+        $text['general'] = "Generelt";
+        $text['bkmkvis'] = "<strong>Note:</strong> Disse bogmærker er kun synlige på denne PC og i denne browser.";
+        //added in 9.0.0
+        $text['reviewmsg'] = "Du har foreslået en ændring, som skal tjekkes. Indsendelsen vedrører:";
+        $text['revsubject'] = "Foreslået ændring kræver din godkendelse";
+        break;
 
-  //relateform.php, relationship.php, findpersonform.php, findperson.php
-  case "relate":
-    $text['relcalc'] = "Slægtskabsberegner";
-    $text['findrel'] = "Find slægtskab";
-    $text['person1'] = "Person 1:";
-    $text['person2'] = "Person 2:";
-    $text['calculate'] = "Beregn";
-    $text['select2inds'] = "Vælg to personer.";
-    $text['findpersonid'] = "Find person-ID";
-    $text['enternamepart'] = "indtast del af for- og/eller efternavn";
-    $text['pleasenamepart'] = "Indtast del af for- eller efternavn.";
-    $text['clicktoselect'] = "klik for at vælge";
-    $text['nobirthinfo'] = "Ingen fødselsoplysninger";
-    $text['relateto'] = "Slægtskab til";
-    $text['sameperson'] = "De to personer er identiske.";
-    $text['notrelated'] = "De to personer er ikke i slægt med hinanden indenfor xxx generationer."; //xxx will be replaced with number of generations
-    $text['findrelinstr'] = "For at vise slægtskabet mellem to personer, skal du bruge 'Find'-knapperne nedenfor for at finde de aktuelle personer (eller behold de viste personer), derefter klikkes på 'Beregn'.";
-    $text['sometimes'] = "(Sommetider kan man ved at vælge et andet antal generationer få et andet resultat.)";
-    $text['findanother'] = "Find et andet slægtskab";
-    $text['brother'] = "bror til";
-    $text['sister'] = "søster til";
-    $text['sibling'] = "bror/søster";
-    $text['uncle'] = "xxx onkel til";
-    $text['aunt'] = "xxx tante til";
-    $text['uncleaunt'] = "xxx onkel/tante til";
-    $text['nephew'] = "xxx nevø til";
-    $text['niece'] = "xxx niece til";
-    $text['nephnc'] = "xxx nevø/niece til";
-    $text['removed'] = "gange forskudt";
-    $text['rhusband'] = "ægtemand til ";
-    $text['rwife'] = "hustru til ";
-    $text['rspouse'] = "ægtefælle til ";
-    $text['son'] = "søn af";
-    $text['daughter'] = "datter af";
-    $text['rchild'] = "barn af";
-    $text['sil'] = "svigersøn til";
-    $text['dil'] = "svigerdatter til";
-    $text['sdil'] = "svigerdatter eller -søn til";
-    $text['gson'] = "xxx barnebarn af";
-    $text['gdau'] = "xxx barnebarn af";
-    $text['gsondau'] = "xxx barnebarn af";
-    $text['great'] = "olde";
-    $text['spouses'] = "er ægtefæller";
-    $text['is'] = "er";
-    $text['changeto'] = "Skift til: (Indtast ID)";
-    $text['notvalid'] = "er ikke et gyldigt person-ID eller eksisterer ikke i denne database. Prøv igen.";
-    $text['halfbrother'] = "halvbror til";
-    $text['halfsister'] = "halvsøster til";
-    $text['halfsibling'] = "halvsøskende til";
-    //changed in 8.0.0
-    $text['gencheck'] = "Maks. antal generationer,<br>der skal tjekkes";
-    $text['mcousin'] = "xxx fætter/kusine yyy til";  //male cousin; xxx = cousin number, yyy = times removed
-    $text['fcousin'] = "xxx fætter/kusine yyy til";  //female cousin
-    $text['cousin'] = "xxx fætter/kusine yyy til";
-    $text['mhalfcousin'] = "xxx halvfætter yyy til";  //male cousin
-    $text['fhalfcousin'] = "xxx halvkusine yyy til";  //female cousin
-    $text['halfcousin'] = "xxx halvfætter eller halvkusine yyy til";
-    //added in 8.0.0
-    $text['oneremoved'] = "en gang forskudt";
-    $text['gfath'] = "den xxx bedstefar til";
-    $text['gmoth'] = "den xxx bedstemor til";
-    $text['gpar'] = "den xxx bedsteforælder til";
-    $text['mothof'] = "mor til";
-    $text['fathof'] = "far til";
-    $text['parof'] = "forælder til";
-    $text['maxrels'] = "Maks. antal slægtskaber, der skal vises";
-    $text['dospouses'] = "Vis slægtskaber, der involverer ægtefælle";
-    $text['rels'] = "Slægtskaber";
-    $text['dospouses2'] = "Vis ægtefæller";
-    $text['fil'] = "svigerfar til";
-    $text['mil'] = "svigermor til";
-    $text['fmil'] = "svigerfar/-mor til";
-    $text['stepson'] = "stedsøn til";
-    $text['stepdau'] = "steddatter til";
-    $text['stepchild'] = "stedbarn til";
-    $text['stepgson'] = "den xxx stedsøns barn til";
-    $text['stepgdau'] = "den xxx steddatters barn til";
-    $text['stepgchild'] = "den xxx sted-barnebarn af";
-    //added in 8.1.1
-    $text['ggreat'] = "olde";
-    //added in 8.1.2
-    $text['ggfath'] = "xxx oldefar til";
-    $text['ggmoth'] = "xxx oldemor til";
-    $text['ggpar'] = "xxx oldeforældre til";
-    $text['ggson'] = "xxx oldebarn af";
-    $text['ggdau'] = "xxx oldebarn af";
-    $text['ggsondau'] = "xxx oldebarn af";
-    $text['gstepgson'] = "xxx stedoldebarn af";
-    $text['gstepgdau'] = "xxx stedoldebarn af";
-    $text['gstepgchild'] = "xxx stedoldebarn af";
-    $text['guncle'] = "xxx grandonkel til";
-    $text['gaunt'] = "xxx grantante til";
-    $text['guncleaunt'] = "xxx grandonkel / grandtante til";
-    $text['gnephew'] = "xxx grandnevø af";
-    $text['gniece'] = "xxx grandniece af";
-    $text['gnephnc'] = "xxx grandnevø / grandniece af";
-    break;
+    //relateform.php, relationship.php, findpersonform.php, findperson.php
+    case "relate":
+        $text['relcalc'] = "Slægtskabsberegner";
+        $text['findrel'] = "Find slægtskab";
+        $text['person1'] = "Person 1:";
+        $text['person2'] = "Person 2:";
+        $text['calculate'] = "Beregn";
+        $text['select2inds'] = "Vælg to personer.";
+        $text['findpersonid'] = "Find person-ID";
+        $text['enternamepart'] = "indtast del af for- og/eller efternavn";
+        $text['pleasenamepart'] = "Indtast del af for- eller efternavn.";
+        $text['clicktoselect'] = "klik for at vælge";
+        $text['nobirthinfo'] = "Ingen fødselsoplysninger";
+        $text['relateto'] = "Slægtskab til";
+        $text['sameperson'] = "De to personer er identiske.";
+        $text['notrelated'] = "De to personer er ikke i slægt med hinanden indenfor xxx generationer."; //xxx will be replaced with number of generations
+        $text['findrelinstr'] = "For at vise slægtskabet mellem to personer, skal du bruge 'Find'-knapperne nedenfor for at finde de aktuelle personer (eller behold de viste personer), derefter klikkes på 'Beregn'.";
+        $text['sometimes'] = "(Sommetider kan man ved at vælge et andet antal generationer få et andet resultat.)";
+        $text['findanother'] = "Find et andet slægtskab";
+        $text['brother'] = "bror til";
+        $text['sister'] = "søster til";
+        $text['sibling'] = "bror/søster";
+        $text['uncle'] = "xxx onkel til";
+        $text['aunt'] = "xxx tante til";
+        $text['uncleaunt'] = "xxx onkel/tante til";
+        $text['nephew'] = "xxx nevø til";
+        $text['niece'] = "xxx niece til";
+        $text['nephnc'] = "xxx nevø/niece til";
+        $text['removed'] = "gange forskudt";
+        $text['rhusband'] = "ægtemand til ";
+        $text['rwife'] = "hustru til ";
+        $text['rspouse'] = "ægtefælle til ";
+        $text['son'] = "søn af";
+        $text['daughter'] = "datter af";
+        $text['rchild'] = "barn af";
+        $text['sil'] = "svigersøn til";
+        $text['dil'] = "svigerdatter til";
+        $text['sdil'] = "svigerdatter eller -søn til";
+        $text['gson'] = "xxx barnebarn af";
+        $text['gdau'] = "xxx barnebarn af";
+        $text['gsondau'] = "xxx barnebarn af";
+        $text['great'] = "olde";
+        $text['spouses'] = "er ægtefæller";
+        $text['is'] = "er";
+        $text['changeto'] = "Skift til: (Indtast ID)";
+        $text['notvalid'] = "er ikke et gyldigt person-ID eller eksisterer ikke i denne database. Prøv igen.";
+        $text['halfbrother'] = "halvbror til";
+        $text['halfsister'] = "halvsøster til";
+        $text['halfsibling'] = "halvsøskende til";
+        //changed in 8.0.0
+        $text['gencheck'] = "Maks. antal generationer,<br>der skal tjekkes";
+        $text['mcousin'] = "xxx fætter/kusine yyy til";  //male cousin; xxx = cousin number, yyy = times removed
+        $text['fcousin'] = "xxx fætter/kusine yyy til";  //female cousin
+        $text['cousin'] = "xxx fætter/kusine yyy til";
+        $text['mhalfcousin'] = "xxx halvfætter yyy til";  //male cousin
+        $text['fhalfcousin'] = "xxx halvkusine yyy til";  //female cousin
+        $text['halfcousin'] = "xxx halvfætter eller halvkusine yyy til";
+        //added in 8.0.0
+        $text['oneremoved'] = "en gang forskudt";
+        $text['gfath'] = "den xxx bedstefar til";
+        $text['gmoth'] = "den xxx bedstemor til";
+        $text['gpar'] = "den xxx bedsteforælder til";
+        $text['mothof'] = "mor til";
+        $text['fathof'] = "far til";
+        $text['parof'] = "forælder til";
+        $text['maxrels'] = "Maks. antal slægtskaber, der skal vises";
+        $text['dospouses'] = "Vis slægtskaber, der involverer ægtefælle";
+        $text['rels'] = "Slægtskaber";
+        $text['dospouses2'] = "Vis ægtefæller";
+        $text['fil'] = "svigerfar til";
+        $text['mil'] = "svigermor til";
+        $text['fmil'] = "svigerfar/-mor til";
+        $text['stepson'] = "stedsøn til";
+        $text['stepdau'] = "steddatter til";
+        $text['stepchild'] = "stedbarn til";
+        $text['stepgson'] = "den xxx stedsøns barn til";
+        $text['stepgdau'] = "den xxx steddatters barn til";
+        $text['stepgchild'] = "den xxx sted-barnebarn af";
+        //added in 8.1.1
+        $text['ggreat'] = "olde";
+        //added in 8.1.2
+        $text['ggfath'] = "xxx oldefar til";
+        $text['ggmoth'] = "xxx oldemor til";
+        $text['ggpar'] = "xxx oldeforældre til";
+        $text['ggson'] = "xxx oldebarn af";
+        $text['ggdau'] = "xxx oldebarn af";
+        $text['ggsondau'] = "xxx oldebarn af";
+        $text['gstepgson'] = "xxx stedoldebarn af";
+        $text['gstepgdau'] = "xxx stedoldebarn af";
+        $text['gstepgchild'] = "xxx stedoldebarn af";
+        $text['guncle'] = "xxx grandonkel til";
+        $text['gaunt'] = "xxx grantante til";
+        $text['guncleaunt'] = "xxx grandonkel / grandtante til";
+        $text['gnephew'] = "xxx grandnevø af";
+        $text['gniece'] = "xxx grandniece af";
+        $text['gnephnc'] = "xxx grandnevø / grandniece af";
+        break;
 
-  case "familygroup":
-    $text['familygroupfor'] = "Familieskema for";
-    $text['ldsords'] = "SDH ordinancer";
-    $text['baptizedlds'] = "Døbt (SDH)";
-    $text['endowedlds'] = "Begavet (SDH)";
-    $text['sealedplds'] = "Beseglet F (SDH)";
-    $text['sealedslds'] = "Beseglet Æ (SDH)";
-    $text['otherspouse'] = "Andre partnere";
-    $text['husband'] = "Far";
-    $text['wife'] = "Mor";
-    break;
+    case "familygroup":
+        $text['familygroupfor'] = "Familieskema for";
+        $text['ldsords'] = "SDH ordinancer";
+        $text['baptizedlds'] = "Døbt (SDH)";
+        $text['endowedlds'] = "Begavet (SDH)";
+        $text['sealedplds'] = "Beseglet F (SDH)";
+        $text['sealedslds'] = "Beseglet Æ (SDH)";
+        $text['otherspouse'] = "Andre partnere";
+        $text['husband'] = "Far";
+        $text['wife'] = "Mor";
+        break;
 
-  //pedigree.php
-  case "pedigree":
-    $text['capbirthabbr'] = "F";
-    $text['capaltbirthabbr'] = "Dbt";
-    $text['capdeathabbr'] = "D";
-    $text['capburialabbr'] = "B";
-    $text['capplaceabbr'] = "S";
-    $text['capmarrabbr'] = "G";
-    $text['capspouseabbr'] = "BTÆ";
-    $text['redraw'] = "Tegn igen";
-    $text['scrollnote'] = "NB: Rul ned for at se hele træet.";
-    $text['unknownlit'] = "Ukendt";
-    $text['popupnote1'] = " = Tillægsoplysninger";
-    $text['popupnote2'] = " = Ny anetavle";
-    $text['pedcompact'] = "Kompakt";
-    $text['pedstandard'] = "Standard";
-    $text['pedtextonly'] = "Kun tekst";
-    $text['descendfor'] = "Efterkommere af";
-    $text['maxof'] = "Maksimum";
-    $text['gensatonce'] = "generationer vist samtidig.";
-    $text['sonof'] = "søn af";
-    $text['daughterof'] = "datter af";
-    $text['childof'] = "barn af";
-    $text['stdformat'] = "Standardformat";
-    $text['ahnentafel'] = "Anetavle";
-    $text['addnewfam'] = "Tilføj ny familie";
-    $text['editfam'] = "Redigér familie";
-    $text['side'] = "Side";
-    $text['familyof'] = "Familie til";
-    $text['paternal'] = "Far";
-    $text['maternal'] = "Mor";
-    $text['gen1'] = "Selv";
-    $text['gen2'] = "Forældre";
-    $text['gen3'] = "Bedsteforældre";
-    $text['gen4'] = "Oldeforældre";
-    $text['gen5'] = "Tipoldeforældre";
-    $text['gen6'] = "Tiptip-oldeforældre";
-    $text['gen7'] = "3xtip-oldeforældre";
-    $text['gen8'] = "4xtip-oldeforældre";
-    $text['gen9'] = "5xtip-oldeforældre";
-    $text['gen10'] = "6xtip-oldeforældre";
-    $text['gen11'] = "7xtip-oldeforældre";
-    $text['gen12'] = "8xtip-oldeforældre";
-    $text['graphdesc'] = "Efterkommere til dette punkt";
-    $text['pedbox'] = "Felt";
-    $text['regformat'] = "Register";
-    $text['extrasexpl'] = "Hvis der eksisterer billeder eller fortællinger for de følgende personer, vil tilhørende ikoner blive vist ved siden af navnene.";
-    $text['popupnote3'] = " = Ny tavle";
-    $text['mediaavail'] = "Tilgængelige medier";
-    $text['pedigreefor'] = "Aner til";
-    $text['pedigreech'] = "Anetavle";
-    $text['datesloc'] = "Datoer og steder";
-    $text['borchr'] = "Fødsel/Alt - Død/Begravelse (to)";
-    $text['nobd'] = "Ingen fødsels- eller dødsdatoer";
-    $text['bcdb'] = "Fødsel/Alt/Død/Begravelse (fire)";
-    $text['numsys'] = "Nummersystem";
-    $text['gennums'] = "Generationsnumre";
-    $text['henrynums'] = "Henry numre";
-    $text['abovnums'] = "d'Aboville numre";
-    $text['devnums'] = "de Villiers numre";
-    $text['dispopts'] = "Vis mulighederne";
+    //pedigree.php
+    case "pedigree":
+        $text['capbirthabbr'] = "F";
+        $text['capaltbirthabbr'] = "Dbt";
+        $text['capdeathabbr'] = "D";
+        $text['capburialabbr'] = "B";
+        $text['capplaceabbr'] = "S";
+        $text['capmarrabbr'] = "G";
+        $text['capspouseabbr'] = "BTÆ";
+        $text['redraw'] = "Tegn igen";
+        $text['scrollnote'] = "NB: Rul ned for at se hele træet.";
+        $text['unknownlit'] = "Ukendt";
+        $text['popupnote1'] = " = Tillægsoplysninger";
+        $text['popupnote2'] = " = Ny anetavle";
+        $text['pedcompact'] = "Kompakt";
+        $text['pedstandard'] = "Standard";
+        $text['pedtextonly'] = "Kun tekst";
+        $text['descendfor'] = "Efterkommere af";
+        $text['maxof'] = "Maksimum";
+        $text['gensatonce'] = "generationer vist samtidig.";
+        $text['sonof'] = "søn af";
+        $text['daughterof'] = "datter af";
+        $text['childof'] = "barn af";
+        $text['stdformat'] = "Standardformat";
+        $text['ahnentafel'] = "Anetavle";
+        $text['addnewfam'] = "Tilføj ny familie";
+        $text['editfam'] = "Redigér familie";
+        $text['side'] = "Side";
+        $text['familyof'] = "Familie til";
+        $text['paternal'] = "Far";
+        $text['maternal'] = "Mor";
+        $text['gen1'] = "Selv";
+        $text['gen2'] = "Forældre";
+        $text['gen3'] = "Bedsteforældre";
+        $text['gen4'] = "Oldeforældre";
+        $text['gen5'] = "Tipoldeforældre";
+        $text['gen6'] = "Tiptip-oldeforældre";
+        $text['gen7'] = "3xtip-oldeforældre";
+        $text['gen8'] = "4xtip-oldeforældre";
+        $text['gen9'] = "5xtip-oldeforældre";
+        $text['gen10'] = "6xtip-oldeforældre";
+        $text['gen11'] = "7xtip-oldeforældre";
+        $text['gen12'] = "8xtip-oldeforældre";
+        $text['graphdesc'] = "Efterkommere til dette punkt";
+        $text['pedbox'] = "Felt";
+        $text['regformat'] = "Register";
+        $text['extrasexpl'] = "Hvis der eksisterer billeder eller fortællinger for de følgende personer, vil tilhørende ikoner blive vist ved siden af navnene.";
+        $text['popupnote3'] = " = Ny tavle";
+        $text['mediaavail'] = "Tilgængelige medier";
+        $text['pedigreefor'] = "Aner til";
+        $text['pedigreech'] = "Anetavle";
+        $text['datesloc'] = "Datoer og steder";
+        $text['borchr'] = "Fødsel/Alt - Død/Begravelse (to)";
+        $text['nobd'] = "Ingen fødsels- eller dødsdatoer";
+        $text['bcdb'] = "Fødsel/Alt/Død/Begravelse (fire)";
+        $text['numsys'] = "Nummersystem";
+        $text['gennums'] = "Generationsnumre";
+        $text['henrynums'] = "Henry numre";
+        $text['abovnums'] = "d'Aboville numre";
+        $text['devnums'] = "de Villiers numre";
+        $text['dispopts'] = "Vis mulighederne";
+        //added in 10.0.0
+        $text['no_ancestors'] = "Ingen aner fundet";
+        $text['ancestor_chart'] = "Lodret anetavle";
+        $text['opennewwindow'] = "Åbn i et nyt vindue";
+        $text['pedvertical'] = "Lodret";
+        //added in 11.0.0
+        $text['familywith'] = "Familie med";
+        $text['fcmlogin'] = "Log ind for at se flere oplysninger";
+        $text['isthe'] = "er den";
+        $text['otherspouses'] = "andre partnere";
+        $text['parentfamily'] = "Den biologiske familie ";
+        $text['showfamily'] = "Vis familie";
+        $text['shown'] = "vist";
+        $text['showparentfamily'] = "vis den biologiske familie";
+        $text['showperson'] = "vis person";
+        //added in 11.0.2
+        $text['otherfamilies'] = "Andre familier";
+        break;
+
+    //search.php, searchform.php
+    //merged with reports and showreport in 5.0.0
+    case "search":
+    case "reports":
+        $text['noreports'] = "Der er ingen rapporter.";
+        $text['reportname'] = "Rapportnavn";
+        $text['allreports'] = "Alle rapporter";
+        $text['report'] = "Rapport";
+        $text['error'] = "Fejl";
+        $text['reportsyntax'] = "Syntaxen for forespørgslen kører i denne rapport";
+        $text['wasincorrect'] = "var forkert, og rapporten kunne ikke oprettes. Kontakt administratoren på";
+        $text['errormessage'] = "Fejlmelding";
+        $text['equals'] = "lig med";
+        $text['endswith'] = "ender med";
+        $text['soundexof'] = "soundex af";
+        $text['metaphoneof'] = "metaphone af";
+        $text['plusminus10'] = "+/- 10 år fra";
+        $text['lessthan'] = "før";
+        $text['greaterthan'] = "efter";
+        $text['lessthanequal'] = "Præcis eller før";
+        $text['greaterthanequal'] = "Præcis eller efter";
+        $text['equalto'] = "lig med";
+        $text['tryagain'] = "Prøv igen";
+        $text['joinwith'] = "kombiner med";
+        $text['cap_and'] = "OG";
+        $text['cap_or'] = "ELLER";
+        $text['showspouse'] = "Vis partner(e)";
+        $text['submitquery'] = "Begynd søg";
+        $text['birthplace'] = "Fødested";
+        $text['deathplace'] = "Dødssted";
+        $text['birthdatetr'] = "Født år";
+        $text['deathdatetr'] = "Død år";
+        $text['plusminus2'] = "+/- 2 år fra";
+        $text['resetall'] = "Gendan alle værdier";
+        $text['showdeath'] = "Vis døds-/begravelsesoplysninger";
+        $text['altbirthplace'] = "Dåbssted";
+        $text['altbirthdatetr'] = "Dåbsår";
+        $text['burialplace'] = "Begravelsessted";
+        $text['burialdatetr'] = "Begravelsesår";
+        $text['event'] = "Begivenhed(er)";
+        $text['day'] = "Dag";
+        $text['month'] = "Måned";
+        $text['keyword'] = "Nøgleord (f.eks., \"Omkr.\")";
+        $text['explain'] = "Skriv del af dato for at se sammenfaldende begivenheder. Lad feltet være tomt for at se sammenfald for alle.";
+        $text['enterdate'] = "Skriv eller vælg mindst én af de følgende: Dag, Måned, År, Nøgleord";
+        $text['fullname'] = "Fuldt navn";
+        $text['birthdate'] = "Fødselsdato";
+        $text['altbirthdate'] = "Dåbsdato";
+        $text['marrdate'] = "Vielsesdato";
+        $text['spouseid'] = "Partners ID";
+        $text['spousename'] = "Partners navn";
+        $text['deathdate'] = "Dødsdato";
+        $text['burialdate'] = "Begravelsesdato";
+        $text['changedate'] = "Sidst ændret dato";
+        $text['gedcom'] = "Træ";
+        $text['baptdate'] = "Dåbsdato (SDH)";
+        $text['baptplace'] = "Dåbssted (SDH)";
+        $text['endldate'] = "Begavelsesdato (SDH)";
+        $text['endlplace'] = "Begavelsessted (SDH)";
+        $text['ssealdate'] = "Beseglingsdato Æ (SDH)";   //Sealed to spouse
+        $text['ssealplace'] = "Beseglingssted Æ (SDH)";
+        $text['psealdate'] = "Beseglingsdato F (SDH)";   //Sealed to parents
+        $text['psealplace'] = "Beseglingssted F (SDH)";
+        $text['marrplace'] = "Vielsessted";
+        $text['spousesurname'] = "Ægtefælles efternavn";
+        $text['spousemore'] = "Hvis der indtastes en værdi for ægtefælles efternavn, skal der også vælges køn.";
+        $text['plusminus5'] = "+/- 5 år fra";
+        $text['exists'] = "eksisterer";
+        $text['dnexist'] = "eksisterer ikke";
+        $text['divdate'] = "Skilsmissedato";
+        $text['divplace'] = "Skilsmissested";
+        $text['otherevents'] = "Andre begivenheder";
+        $text['numresults'] = "Resultater pr. side";
+        $text['mysphoto'] = "Uidentificerede billeder";
+        $text['mysperson'] = "Personer, der er vanskelige at finde frem til";
+        $text['joinor'] = "Muligheden 'Sammenføj med Eller' kan ikke bruges med en ægtefælles efternavn.";
+        $text['tellus'] = "Fortæl, hvad du ved";
+        $text['moreinfo'] = "Klik for at se mere om dette billede";
+        //added in 8.0.0
+        $text['marrdatetr'] = "Ægteskabet indgået";
+        $text['divdatetr'] = "Skilsmisseår";
+        $text['mothername'] = "Mors navn";
+        $text['fathername'] = "Fars navn";
+        $text['filter'] = "Filtrer";
+        $text['notliving'] = "Ikke levende";
+        $text['nodayevents'] = "Begivenheder i denne måned, der ikke er tilknyttet en specifik dato:";
+        //added in 9.0.0
+        $text['csv'] = "Kommasepareret CSV fil";
+        //added in 10.0.0
+        $text['confdate'] = "Bekræftelsesdato (SDH)";
+        $text['confplace'] = "Bekræftelsessted (SDH)";
+        $text['initdate'] = "Forberedende dato (SDH)";
+        $text['initplace'] = "Forberedende sted (SDH)";
+        //added in 11.0.0
+        $text['marrtype'] = "Ægteskabstype";
+        $text['searchfor'] = "Søg efter";
+        $text['searchnote'] = "Bemærk: Denne side bruger Google til at udføre sin søgning. Antallet af matches vil blive direkte berørt af, i hvilket omfang Google har været i stand til at indeksere sitet.";
+        break;
+
+    //showlog.php
+    case "showlog":
+        $text['logfilefor'] = "Logfil for";
+        $text['mostrecentactions'] = "Seneste aktiviteter";
+        $text['autorefresh'] = "Automatisk opdatering (30 sekunder)";
+        $text['refreshoff'] = "Slå automatisk opdatering fra";
+        break;
+
+    case "headstones":
+    case "showphoto":
+        $text['cemeteriesheadstones'] = "Kirkegårde og gravsten";
+        $text['showallhsr'] = "Vis alle gravstens poster";
+        $text['in'] = "i";
+        $text['showmap'] = "Vis kort";
+        $text['headstonefor'] = "Gravsten for";
+        $text['photoof'] = "Billeder af";
+        $text['photoowner'] = "Ejer/Kilde";
+        $text['nocemetery'] = "Ingen kirkegård";
+        $text['iptc005'] = "Titel";
+        $text['iptc020'] = "Supplerende kategorier";
+        $text['iptc040'] = "Særlige vejledninger";
+        $text['iptc055'] = "Dannet dato";
+        $text['iptc080'] = "Forfatter";
+        $text['iptc085'] = "Forfatters stilling";
+        $text['iptc090'] = "By";
+        $text['iptc095'] = "Stat";
+        $text['iptc101'] = "Land";
+        $text['iptc103'] = "OTR";
+        $text['iptc105'] = "Overskrift";
+        $text['iptc110'] = "Kilde";
+        $text['iptc115'] = "Billedkilde";
+        $text['iptc116'] = "Copyright bemærkning";
+        $text['iptc120'] = "Billedtekst";
+        $text['iptc122'] = "Billedtekst forfatter";
+        $text['mapof'] = "Kort over";
+        $text['regphotos'] = "Beskrivelse";
+        $text['gallery'] = "Kun thumbnails";
+        $text['cemphotos'] = "Kirkegårdsbilleder";
+        $text['photosize'] = "Størrelse";
+        $text['iptc010'] = "Prioritet";
+        $text['filesize'] = "Filstørrelse";
+        $text['seeloc'] = "Se sted";
+        $text['showall'] = "Vis alle";
+        $text['editmedia'] = "Redigér medie";
+        $text['viewitem'] = "Vis dette element";
+        $text['editcem'] = "Redigér kirkegård";
+        $text['numitems'] = "# elementer";
+        $text['allalbums'] = "Alle albummer";
+        $text['slidestop'] = "Pause lysbilledshow";
+        $text['slideresume'] = "Genoptag lysbilledshow";
+        $text['slidesecs'] = "Sekunder for hvert billede:";
+        $text['minussecs'] = "minus 0.5 sekunder";
+        $text['plussecs'] = "plus 0.5 sekunder";
+        $text['nocountry'] = "Ukendt land";
+        $text['nostate'] = "Ukendt stat";
+        $text['nocounty'] = "Ukendt amt";
+        $text['nocity'] = "Ukendt by";
+        $text['nocemname'] = "Ukendt kirkegård";
+        $text['editalbum'] = "Redigér album";
+        $text['mediamaptext'] = "<strong>Note:</strong> Kør musen henover billedet for at vise navnene. Klik på et navn for at se siden.";
+        //added in 8.0.0
+        $text['allburials'] = "Alle begravelser";
+        $text['moreinfo'] = "Klik for at se mere om dette billede";
+        //added in 9.0.0
+        $text['iptc025'] = "Nøgleord";
+        $text['iptc092'] = "Underlokation";
+        $text['iptc015'] = "Kategori";
+        $text['iptc065'] = "Oprindeligt program";
+        $text['iptc070'] = "Programversion";
+        break;
+
+    //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
+    case "surnames":
+    case "places":
+        $text['surnamesstarting'] = "Vis efternavne, der begynder med";
+        $text['showtop'] = "Vis mest brugte";
+        $text['showallsurnames'] = "Vis alle efternavne";
+        $text['sortedalpha'] = "sorteret alfabetisk";
+        $text['byoccurrence'] = "sorteret efter hyppighed";
+        $text['firstchars'] = "Første bogstav";
+        $text['mainsurnamepage'] = "Efternavne";
+        $text['allsurnames'] = "Alle efternavne";
+        $text['showmatchingsurnames'] = "Klik på et efternavn for at se data.";
+        $text['backtotop'] = "Tilbage til toppen";
+        $text['beginswith'] = "Begynder med";
+        $text['allbeginningwith'] = "Alle efternavne, der begynder med";
+        $text['numoccurrences'] = "hyppigheden i parentes";
+        $text['placesstarting'] = "Vis steder, der begynder med";
+        $text['showmatchingplaces'] = "Klik på et efternavn for at vise matchende poster.";
+        $text['totalnames'] = "totalt antal navne";
+        $text['showallplaces'] = "Vis alle steder";
+        $text['totalplaces'] = "totalt antal steder";
+        $text['mainplacepage'] = "Steders primærside";
+        $text['allplaces'] = "Alle steder";
+        $text['placescont'] = "Vis alle steder, der indeholder";
+        //changed in 8.0.0
+        $text['top30'] = "Efternavnes top xxx";
+        $text['top30places'] = "Steders top xxx";
+        //added in 12.0.0
+        $text['firstnamelist'] = "Fornavneliste";
+        $text['firstnamesstarting'] = "Vis fornavne begyndende med";
+        $text['showallfirstnames'] = "Vis alle fornavne";
+        $text['mainfirstnamepage'] = "Forsiden med fornavne";
+        $text['allfirstnames'] = "Alle fornavne";
+        $text['showmatchingfirstnames'] = "Klik på et fornavn for at vise matchende poster.";
+        $text['allfirstbegwith'] = "Alle fornavne begyndende med";
+        $text['top30first'] = "Top xxx fornavne";
+        $text['allothers'] = "Alle andre";
+        $text['amongall'] = "(blandt alle navne)";
+        $text['justtop'] = "Kun top xxx";
+        break;
+
+    //whatsnew.php
+    case "whatsnew":
+        $text['pastxdays'] = "(sidste xx dage)";
+
+        $text['photo'] = "Billede";
+        $text['history'] = "Fortælling/Dokument";
+        $text['husbid'] = "Mands ID";
+        $text['husbname'] = "Mands navn";
+        $text['wifeid'] = "Kvindes ID";
+        //added in 11.0.0
+        $text['wifename'] = "Kvindes navn";
+        break;
+
+    //timeline.php, timeline2.php
+    case "timeline":
+        $text['text_delete'] = "Slet";
+        $text['addperson'] = "Tilføj person";
+        $text['nobirth'] = "Den følgende person har ikke en gyldig fødselsdato og kunne ikke tilføjes";
+        $text['event'] = "Begivenhed(er)";
+        $text['chartwidth'] = "Tavlebredde";
+        $text['timelineinstr'] = "Tilføj personer";
+        $text['togglelines'] = "Vis/skjul linjer";
+        //changed in 9.0.0
+        $text['noliving'] = "Den følgende person er mærket som nulevende eller privat og kunne ikke tilføjes, fordi du ikke er logget ind med korrekte rettigheder";
+        break;
+
+    //browsetrees.php
+    //login.php, newacctform.php, addnewacct.php
+    case "trees":
+    case "login":
+        $text['browsealltrees'] = "Søg i alle træer";
+        $text['treename'] = "Trænavn";
+        $text['owner'] = "Ejer";
+        $text['address'] = "Adresse";
+        $text['city'] = "By";
+        $text['state'] = "Stat";
+        $text['zip'] = "Postnummer";
+        $text['country'] = "Land";
+        $text['email'] = "mailadresse";
+        $text['phone'] = "Telefon";
+        $text['username'] = "Brugernavn";
+        $text['password'] = "Kodeord";
+        $text['loginfailed'] = "Login mislykkedes";
+
+        $text['regnewacct'] = "Registrér ny brugerkonto";
+        $text['realname'] = "Dit fulde navn";
+        $text['phone'] = "Telefon";
+        $text['email'] = "mailadresse";
+        $text['address'] = "Adresse";
+        $text['acctcomments'] = "Bemærkninger og kommentarer";
+        $text['submit'] = "Send";
+        $text['leaveblank'] = "(tomt, hvis du vil have nyt træ)";
+        $text['required'] = "Nødvendige felter";
+        $text['enterpassword'] = " Indtast venligst en adgangskode.";
+        $text['enterusername'] = "Indtast venligst et brugernavn.";
+        $text['failure'] = "Det angivne brugernavn er desværre allerede i brug. Brug Tilbage-tasten i din browser for at komme tilbage til forrige side og vælg et andet brugernavn.";
+        $text['success'] = "Mange tak for din anmodning om adgang til hjemmesiden. Der sendes en mail, når din adgang til hjemmesiden er aktiveret.";
+        $text['emailsubject'] = "Ny brugeransøgning";
+        $text['website'] = "Hjemmeside";
+        $text['nologin'] = "Er du ikke oprettet som bruger?";
+        $text['loginsent'] = "Login-oplysninger er sendt";
+        $text['loginnotsent'] = "Login-oplysninger er ikke sendt";
+        $text['enterrealname'] = "Indtast venligst dit fulde navn.";
+        $text['rempass'] = "Forbliv logget ind på denne computer";
+        $text['morestats'] = "Mere statistik";
+        $text['accmail'] = "<strong>OBS:</strong> For at kunne modtage mails fra hjemmesiden vedr. registreringen, skal du sikre, at mails fra dette domæne ikke er blokeret.";
+        $text['newpassword'] = "Ny adgangskode";
+        $text['resetpass'] = "Gendan adgangskode";
+        $text['nousers'] = "Dette skema kan ikke bruges, før der eksisterer mindst een brugerregistrering. Hvis du er ejer af denne side, skal du gå til Admin/Users og oprette en Administratorkonto.";
+        $text['noregs'] = "Der kan desværre ikke accepteres flere nye brugerregistreringer for øjeblikket. Vær venlig at <a href=\"suggest.php\">kontakte mig</a>, hvis du har kommentarer til eller spørgsmål ang. hjemmesiden.";
+        //changed in 8.0.0
+        $text['emailmsg'] = "Du har modtaget en anmodning om adgang til din hjemmeside.";
+        $text['accactive'] = "Adgangen er blevet aktiveret, men brugeren har ingen ekstra rettigheder, før du tildeler dem.";
+        $text['accinactive'] = "Gå til Admin/Brugere/Gennemse for at godkende brugerens adgang til hjemmesiden. Brugerens konto vil forblive inaktiv, indtil den er redigeret og godkendt.";
+        $text['pwdagain'] = "Gentag adgangskode";
+        $text['enterpassword2'] = "Indtast din adgangskode igen.";
+        $text['pwdsmatch'] = "Dine adgangskoder er ikke ens. Indtast den samme adgangskode i begge felter.";
+        //added in 8.0.0
+        $text['acksubject'] = "Tak for din henvendelse"; //for a new user account
+        $text['ackmessage'] = "Anmodningen er modtaget. Kontoen vil være inaktiv, indtil administratoren aktiverer den. Du vil modtage en mail, når du kan logge på.";
+        //added in 12.0.0
+        $text['switch'] = "Skift";
+        break;
+
     //added in 10.0.0
-    $text['no_ancestors'] = "Ingen aner fundet";
-    $text['ancestor_chart'] = "Lodret anetavle";
-    $text['opennewwindow'] = "Åbn i et nyt vindue";
-    $text['pedvertical'] = "Lodret";
-    //added in 11.0.0
-    $text['familywith'] = "Familie med";
-    $text['fcmlogin'] = "Log ind for at se flere oplysninger";
-    $text['isthe'] = "er den";
-    $text['otherspouses'] = "andre partnere";
-    $text['parentfamily'] = "Den biologiske familie ";
-    $text['showfamily'] = "Vis familie";
-    $text['shown'] = "vist";
-    $text['showparentfamily'] = "vis den biologiske familie";
-    $text['showperson'] = "vis person";
-    //added in 11.0.2
-    $text['otherfamilies'] = "Andre familier";
-    break;
+    case "branches":
+        $text['browseallbranches'] = "Gennemse alle grene";
+        break;
 
-  //search.php, searchform.php
-  //merged with reports and showreport in 5.0.0
-  case "search":
-  case "reports":
-    $text['noreports'] = "Der er ingen rapporter.";
-    $text['reportname'] = "Rapportnavn";
-    $text['allreports'] = "Alle rapporter";
-    $text['report'] = "Rapport";
-    $text['error'] = "Fejl";
-    $text['reportsyntax'] = "Syntaxen for forespørgslen kører i denne rapport";
-    $text['wasincorrect'] = "var forkert, og rapporten kunne ikke oprettes. Kontakt administratoren på";
-    $text['errormessage'] = "Fejlmelding";
-    $text['equals'] = "lig med";
-    $text['endswith'] = "ender med";
-    $text['soundexof'] = "soundex af";
-    $text['metaphoneof'] = "metaphone af";
-    $text['plusminus10'] = "+/- 10 år fra";
-    $text['lessthan'] = "før";
-    $text['greaterthan'] = "efter";
-    $text['lessthanequal'] = "Præcis eller før";
-    $text['greaterthanequal'] = "Præcis eller efter";
-    $text['equalto'] = "lig med";
-    $text['tryagain'] = "Prøv igen";
-    $text['joinwith'] = "kombiner med";
-    $text['cap_and'] = "OG";
-    $text['cap_or'] = "ELLER";
-    $text['showspouse'] = "Vis partner(e)";
-    $text['submitquery'] = "Begynd søg";
-    $text['birthplace'] = "Fødested";
-    $text['deathplace'] = "Dødssted";
-    $text['birthdatetr'] = "Født år";
-    $text['deathdatetr'] = "Død år";
-    $text['plusminus2'] = "+/- 2 år fra";
-    $text['resetall'] = "Gendan alle værdier";
-    $text['showdeath'] = "Vis døds-/begravelsesoplysninger";
-    $text['altbirthplace'] = "Dåbssted";
-    $text['altbirthdatetr'] = "Dåbsår";
-    $text['burialplace'] = "Begravelsessted";
-    $text['burialdatetr'] = "Begravelsesår";
-    $text['event'] = "Begivenhed(er)";
-    $text['day'] = "Dag";
-    $text['month'] = "Måned";
-    $text['keyword'] = "Nøgleord (f.eks., \"Omkr.\")";
-    $text['explain'] = "Skriv del af dato for at se sammenfaldende begivenheder. Lad feltet være tomt for at se sammenfald for alle.";
-    $text['enterdate'] = "Skriv eller vælg mindst én af de følgende: Dag, Måned, År, Nøgleord";
-    $text['fullname'] = "Fuldt navn";
-    $text['birthdate'] = "Fødselsdato";
-    $text['altbirthdate'] = "Dåbsdato";
-    $text['marrdate'] = "Vielsesdato";
-    $text['spouseid'] = "Partners ID";
-    $text['spousename'] = "Partners navn";
-    $text['deathdate'] = "Dødsdato";
-    $text['burialdate'] = "Begravelsesdato";
-    $text['changedate'] = "Sidst ændret dato";
-    $text['gedcom'] = "Træ";
-    $text['baptdate'] = "Dåbsdato (SDH)";
-    $text['baptplace'] = "Dåbssted (SDH)";
-    $text['endldate'] = "Begavelsesdato (SDH)";
-    $text['endlplace'] = "Begavelsessted (SDH)";
-    $text['ssealdate'] = "Beseglingsdato Æ (SDH)";   //Sealed to spouse
-    $text['ssealplace'] = "Beseglingssted Æ (SDH)";
-    $text['psealdate'] = "Beseglingsdato F (SDH)";   //Sealed to parents
-    $text['psealplace'] = "Beseglingssted F (SDH)";
-    $text['marrplace'] = "Vielsessted";
-    $text['spousesurname'] = "Ægtefælles efternavn";
-    $text['spousemore'] = "Hvis der indtastes en værdi for ægtefælles efternavn, skal der også vælges køn.";
-    $text['plusminus5'] = "+/- 5 år fra";
-    $text['exists'] = "eksisterer";
-    $text['dnexist'] = "eksisterer ikke";
-    $text['divdate'] = "Skilsmissedato";
-    $text['divplace'] = "Skilsmissested";
-    $text['otherevents'] = "Andre begivenheder";
-    $text['numresults'] = "Resultater pr. side";
-    $text['mysphoto'] = "Uidentificerede billeder";
-    $text['mysperson'] = "Personer, der er vanskelige at finde frem til";
-    $text['joinor'] = "Muligheden 'Sammenføj med Eller' kan ikke bruges med en ægtefælles efternavn.";
-    $text['tellus'] = "Fortæl, hvad du ved";
-    $text['moreinfo'] = "Klik for at se mere om dette billede";
-    //added in 8.0.0
-    $text['marrdatetr'] = "Ægteskabet indgået";
-    $text['divdatetr'] = "Skilsmisseår";
-    $text['mothername'] = "Mors navn";
-    $text['fathername'] = "Fars navn";
-    $text['filter'] = "Filtrer";
-    $text['notliving'] = "Ikke levende";
-    $text['nodayevents'] = "Begivenheder i denne måned, der ikke er tilknyttet en specifik dato:";
-    //added in 9.0.0
-    $text['csv'] = "Kommasepareret CSV fil";
-    //added in 10.0.0
-    $text['confdate'] = "Bekræftelsesdato (SDH)";
-    $text['confplace'] = "Bekræftelsessted (SDH)";
-    $text['initdate'] = "Forberedende dato (SDH)";
-    $text['initplace'] = "Forberedende sted (SDH)";
-    //added in 11.0.0
-    $text['marrtype'] = "Ægteskabstype";
-    $text['searchfor'] = "Søg efter";
-    $text['searchnote'] = "Bemærk: Denne side bruger Google til at udføre sin søgning. Antallet af matches vil blive direkte berørt af, i hvilket omfang Google har været i stand til at indeksere sitet.";
-    break;
+    //statistics.php
+    case "stats":
+        $text['quantity'] = "Antal";
+        $text['totindividuals'] = "Antal personer";
+        $text['totmales'] = "Heraf antal hankøn";
+        $text['totfemales'] = "Heraf antal hunkøn";
+        $text['totunknown'] = "Ukendt køn";
+        $text['totliving'] = "Antal nulevende";
+        $text['totfamilies'] = "Antal familier";
+        $text['totuniquesn'] = "Antal unikke efternavne";
+        //$text['totphotos'] = "Total Photos";
+        //$text['totdocs'] = "Total Histories &amp; Documents";
+        //$text['totheadstones'] = "Total Headstones";
+        $text['totsources'] = "Antal kilder";
+        $text['avglifespan'] = "Gennemsnitlig livslængde";
+        $text['earliestbirth'] = "Tidligste fødsel";
+        $text['longestlived'] = "Længstlevende person";
+        $text['days'] = "dage";
+        $text['age'] = "Alder";
+        $text['agedisclaimer'] = "Aldersrelaterede beregninger er baseret på personer med angivne fødsels- <EM>og</EM> dødsdatoer.  Fordi der findes ukomplette datofelter(f.eks. en dødsdato, der kun er skrevet som \"1945\" eller \"FØR 1860\"), kan disse beregninger ikke være 100% præcise.";
+        $text['treedetail'] = "Flere oplysninger om dette træ";
+        $text['total'] = "Antal";
+        //added in 12.0
+        $text['totdeceased'] = "Antal afdøde";
+        break;
 
-  //showlog.php
-  case "showlog":
-    $text['logfilefor'] = "Logfil for";
-    $text['mostrecentactions'] = "Seneste aktiviteter";
-    $text['autorefresh'] = "Automatisk opdatering (30 sekunder)";
-    $text['refreshoff'] = "Slå automatisk opdatering fra";
-    break;
+    case "notes":
+        $text['browseallnotes'] = "Søg i alle notater";
+        break;
 
-  case "headstones":
-  case "showphoto":
-    $text['cemeteriesheadstones'] = "Kirkegårde og gravsten";
-    $text['showallhsr'] = "Vis alle gravstens poster";
-    $text['in'] = "i";
-    $text['showmap'] = "Vis kort";
-    $text['headstonefor'] = "Gravsten for";
-    $text['photoof'] = "Billeder af";
-    $text['photoowner'] = "Ejer/Kilde";
-    $text['nocemetery'] = "Ingen kirkegård";
-    $text['iptc005'] = "Titel";
-    $text['iptc020'] = "Supplerende kategorier";
-    $text['iptc040'] = "Særlige vejledninger";
-    $text['iptc055'] = "Dannet dato";
-    $text['iptc080'] = "Forfatter";
-    $text['iptc085'] = "Forfatters stilling";
-    $text['iptc090'] = "By";
-    $text['iptc095'] = "Stat";
-    $text['iptc101'] = "Land";
-    $text['iptc103'] = "OTR";
-    $text['iptc105'] = "Overskrift";
-    $text['iptc110'] = "Kilde";
-    $text['iptc115'] = "Billedkilde";
-    $text['iptc116'] = "Copyright bemærkning";
-    $text['iptc120'] = "Billedtekst";
-    $text['iptc122'] = "Billedtekst forfatter";
-    $text['mapof'] = "Kort over";
-    $text['regphotos'] = "Beskrivelse";
-    $text['gallery'] = "Kun thumbnails";
-    $text['cemphotos'] = "Kirkegårdsbilleder";
-    $text['photosize'] = "Størrelse";
-    $text['iptc010'] = "Prioritet";
-    $text['filesize'] = "Filstørrelse";
-    $text['seeloc'] = "Se sted";
-    $text['showall'] = "Vis alle";
-    $text['editmedia'] = "Redigér medie";
-    $text['viewitem'] = "Vis dette element";
-    $text['editcem'] = "Redigér kirkegård";
-    $text['numitems'] = "# elementer";
-    $text['allalbums'] = "Alle albummer";
-    $text['slidestop'] = "Pause lysbilledshow";
-    $text['slideresume'] = "Genoptag lysbilledshow";
-    $text['slidesecs'] = "Sekunder for hvert billede:";
-    $text['minussecs'] = "minus 0.5 sekunder";
-    $text['plussecs'] = "plus 0.5 sekunder";
-    $text['nocountry'] = "Ukendt land";
-    $text['nostate'] = "Ukendt stat";
-    $text['nocounty'] = "Ukendt amt";
-    $text['nocity'] = "Ukendt by";
-    $text['nocemname'] = "Ukendt kirkegård";
-    $text['editalbum'] = "Redigér album";
-    $text['mediamaptext'] = "<strong>Note:</strong> Kør musen henover billedet for at vise navnene. Klik på et navn for at se siden.";
-    //added in 8.0.0
-    $text['allburials'] = "Alle begravelser";
-    $text['moreinfo'] = "Klik for at se mere om dette billede";
-    //added in 9.0.0
-    $text['iptc025'] = "Nøgleord";
-    $text['iptc092'] = "Underlokation";
-    $text['iptc015'] = "Kategori";
-    $text['iptc065'] = "Oprindeligt program";
-    $text['iptc070'] = "Programversion";
-    break;
+    case "help":
+        $text['menuhelp'] = "Menunøgle";
+        break;
 
-  //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
-  case "surnames":
-  case "places":
-    $text['surnamesstarting'] = "Vis efternavne, der begynder med";
-    $text['showtop'] = "Vis mest brugte";
-    $text['showallsurnames'] = "Vis alle efternavne";
-    $text['sortedalpha'] = "sorteret alfabetisk";
-    $text['byoccurrence'] = "sorteret efter hyppighed";
-    $text['firstchars'] = "Første bogstav";
-    $text['mainsurnamepage'] = "Efternavne";
-    $text['allsurnames'] = "Alle efternavne";
-    $text['showmatchingsurnames'] = "Klik på et efternavn for at se data.";
-    $text['backtotop'] = "Tilbage til toppen";
-    $text['beginswith'] = "Begynder med";
-    $text['allbeginningwith'] = "Alle efternavne, der begynder med";
-    $text['numoccurrences'] = "hyppigheden i parentes";
-    $text['placesstarting'] = "Vis steder, der begynder med";
-    $text['showmatchingplaces'] = "Klik på et efternavn for at vise matchende poster.";
-    $text['totalnames'] = "totalt antal navne";
-    $text['showallplaces'] = "Vis alle steder";
-    $text['totalplaces'] = "totalt antal steder";
-    $text['mainplacepage'] = "Steders primærside";
-    $text['allplaces'] = "Alle steder";
-    $text['placescont'] = "Vis alle steder, der indeholder";
-    //changed in 8.0.0
-    $text['top30'] = "Efternavnes top xxx";
-    $text['top30places'] = "Steders top xxx";
-    //added in 12.0.0
-    $text['firstnamelist'] = "Fornavneliste";
-    $text['firstnamesstarting'] = "Vis fornavne begyndende med";
-    $text['showallfirstnames'] = "Vis alle fornavne";
-    $text['mainfirstnamepage'] = "Forsiden med fornavne";
-    $text['allfirstnames'] = "Alle fornavne";
-    $text['showmatchingfirstnames'] = "Klik på et fornavn for at vise matchende poster.";
-    $text['allfirstbegwith'] = "Alle fornavne begyndende med";
-    $text['top30first'] = "Top xxx fornavne";
-    $text['allothers'] = "Alle andre";
-    $text['amongall'] = "(blandt alle navne)";
-    $text['justtop'] = "Kun top xxx";
-    break;
+    case "install":
+        $text['perms'] = "Alle tilladelser er oprettet.";
+        $text['noperms'] = "Der kunne ikke oprettes tilladelser for disse filer:";
+        $text['manual'] = "Vær venlig at oprette dem manuelt.";
+        $text['folder'] = "Mappe";
+        $text['created'] = "er oprettet";
+        $text['nocreate'] = "Kunne ikke oprettes. Vær venlig at gøre det manuelt.";
+        $text['infosaved'] = "Oplysningerne er gemt, forbindelsen er bekræftet!";
+        $text['tablescr'] = "Tabellerne er oprettet!";
+        $text['notables'] = "Følgende tabeller kunne ikke oprettes:";
+        $text['nocomm'] = "TNG kommunikerer ikke med din database. Der er ikke oprettet tabeller.";
+        $text['newdb'] = "Oplysningerne er gemt, forbindelsen er bekræftet, ny database er oprettet:";
+        $text['noattach'] = "Oplysningerne er gemt. Forbindelsen er skabt, og databasen er oprettet, men TNG kan ikke tilknyttes hertil.";
+        $text['nodb'] = "Oplysningerne er gemt. Forbindelsen er skabt, men databasen eksisterer ikke og kunne ikke oprettes her. Vær venlig at bekræfte, at navnet på databasen er korrekt, eller brug kontrolpanelet til at oprette den.";
+        $text['noconn'] = "Oplysningerne er gemt, men forbindelsen mislykkedes. En eller flere af følgende er ikke i orden:";
+        $text['exists'] = "eksisterer";
+        $text['loginfirst'] = "Du skal først logge på.";
+        $text['noop'] = "Der blev ikke udført noget.";
+        //added in 8.0.0
+        $text['nouser'] = "Bruger blev ikke oprettet. Brugernavnet eksisterer allerede.";
+        $text['notree'] = "Træet blev ikke oprettet. Træ-ID findes muligvis allerede.";
+        $text['infosaved2'] = "Oplysningerne er gemt";
+        $text['renamedto'] = "omdøbt til";
+        $text['norename'] = "kunne ikke omdøbes";
+        break;
 
-  //whatsnew.php
-  case "whatsnew":
-    $text['pastxdays'] = "(sidste xx dage)";
+    case "imgviewer":
+        $text['zoomin'] = "Zoom ind";
+        $text['zoomout'] = "Zoom ud";
+        $text['magmode'] = "Forstørrelse";
+        $text['panmode'] = "Panorering";
+        $text['pan'] = "Klik og træk for at flytte indenfor billedet";
+        $text['fitwidth'] = "Tilpas bredde";
+        $text['fitheight'] = "Tilpas højde";
+        $text['newwin'] = "Nyt vindue";
+        $text['opennw'] = "Åben billede i nyt vindue";
+        $text['magnifyreg'] = "Klik for at forstørre en del af billedet";
+        $text['imgctrls'] = "Aktiver billedværktøjer";
+        $text['vwrctrls'] = "Aktiver billedvisningsværktøjer";
+        $text['vwrclose'] = "Luk billedfremviseren";
+        break;
 
-    $text['photo'] = "Billede";
-    $text['history'] = "Fortælling/Dokument";
-    $text['husbid'] = "Mands ID";
-    $text['husbname'] = "Mands navn";
-    $text['wifeid'] = "Kvindes ID";
-    //added in 11.0.0
-    $text['wifename'] = "Kvindes navn";
-    break;
-
-  //timeline.php, timeline2.php
-  case "timeline":
-    $text['text_delete'] = "Slet";
-    $text['addperson'] = "Tilføj person";
-    $text['nobirth'] = "Den følgende person har ikke en gyldig fødselsdato og kunne ikke tilføjes";
-    $text['event'] = "Begivenhed(er)";
-    $text['chartwidth'] = "Tavlebredde";
-    $text['timelineinstr'] = "Tilføj personer";
-    $text['togglelines'] = "Vis/skjul linjer";
-    //changed in 9.0.0
-    $text['noliving'] = "Den følgende person er mærket som nulevende eller privat og kunne ikke tilføjes, fordi du ikke er logget ind med korrekte rettigheder";
-    break;
-
-  //browsetrees.php
-  //login.php, newacctform.php, addnewacct.php
-  case "trees":
-  case "login":
-    $text['browsealltrees'] = "Søg i alle træer";
-    $text['treename'] = "Trænavn";
-    $text['owner'] = "Ejer";
-    $text['address'] = "Adresse";
-    $text['city'] = "By";
-    $text['state'] = "Stat";
-    $text['zip'] = "Postnummer";
-    $text['country'] = "Land";
-    $text['email'] = "mailadresse";
-    $text['phone'] = "Telefon";
-    $text['username'] = "Brugernavn";
-    $text['password'] = "Kodeord";
-    $text['loginfailed'] = "Login mislykkedes";
-
-    $text['regnewacct'] = "Registrér ny brugerkonto";
-    $text['realname'] = "Dit fulde navn";
-    $text['phone'] = "Telefon";
-    $text['email'] = "mailadresse";
-    $text['address'] = "Adresse";
-    $text['acctcomments'] = "Bemærkninger og kommentarer";
-    $text['submit'] = "Send";
-    $text['leaveblank'] = "(tomt, hvis du vil have nyt træ)";
-    $text['required'] = "Nødvendige felter";
-    $text['enterpassword'] = " Indtast venligst en adgangskode.";
-    $text['enterusername'] = "Indtast venligst et brugernavn.";
-    $text['failure'] = "Det angivne brugernavn er desværre allerede i brug. Brug Tilbage-tasten i din browser for at komme tilbage til forrige side og vælg et andet brugernavn.";
-    $text['success'] = "Mange tak for din anmodning om adgang til hjemmesiden. Der sendes en mail, når din adgang til hjemmesiden er aktiveret.";
-    $text['emailsubject'] = "Ny brugeransøgning";
-    $text['website'] = "Hjemmeside";
-    $text['nologin'] = "Er du ikke oprettet som bruger?";
-    $text['loginsent'] = "Login-oplysninger er sendt";
-    $text['loginnotsent'] = "Login-oplysninger er ikke sendt";
-    $text['enterrealname'] = "Indtast venligst dit fulde navn.";
-    $text['rempass'] = "Forbliv logget ind på denne computer";
-    $text['morestats'] = "Mere statistik";
-    $text['accmail'] = "<strong>OBS:</strong> For at kunne modtage mails fra hjemmesiden vedr. registreringen, skal du sikre, at mails fra dette domæne ikke er blokeret.";
-    $text['newpassword'] = "Ny adgangskode";
-    $text['resetpass'] = "Gendan adgangskode";
-    $text['nousers'] = "Dette skema kan ikke bruges, før der eksisterer mindst een brugerregistrering. Hvis du er ejer af denne side, skal du gå til Admin/Users og oprette en Administratorkonto.";
-    $text['noregs'] = "Der kan desværre ikke accepteres flere nye brugerregistreringer for øjeblikket. Vær venlig at <a href=\"suggest.php\">kontakte mig</a>, hvis du har kommentarer til eller spørgsmål ang. hjemmesiden.";
-    //changed in 8.0.0
-    $text['emailmsg'] = "Du har modtaget en anmodning om adgang til din hjemmeside.";
-    $text['accactive'] = "Adgangen er blevet aktiveret, men brugeren har ingen ekstra rettigheder, før du tildeler dem.";
-    $text['accinactive'] = "Gå til Admin/Brugere/Gennemse for at godkende brugerens adgang til hjemmesiden. Brugerens konto vil forblive inaktiv, indtil den er redigeret og godkendt.";
-    $text['pwdagain'] = "Gentag adgangskode";
-    $text['enterpassword2'] = "Indtast din adgangskode igen.";
-    $text['pwdsmatch'] = "Dine adgangskoder er ikke ens. Indtast den samme adgangskode i begge felter.";
-    //added in 8.0.0
-    $text['acksubject'] = "Tak for din henvendelse"; //for a new user account
-    $text['ackmessage'] = "Anmodningen er modtaget. Kontoen vil være inaktiv, indtil administratoren aktiverer den. Du vil modtage en mail, når du kan logge på.";
-    //added in 12.0.0
-    $text['switch'] = "Skift";
-    break;
-
-  //added in 10.0.0
-  case "branches":
-    $text['browseallbranches'] = "Gennemse alle grene";
-    break;
-
-  //statistics.php
-  case "stats":
-    $text['quantity'] = "Antal";
-    $text['totindividuals'] = "Antal personer";
-    $text['totmales'] = "Heraf antal hankøn";
-    $text['totfemales'] = "Heraf antal hunkøn";
-    $text['totunknown'] = "Ukendt køn";
-    $text['totliving'] = "Antal nulevende";
-    $text['totfamilies'] = "Antal familier";
-    $text['totuniquesn'] = "Antal unikke efternavne";
-    //$text['totphotos'] = "Total Photos";
-    //$text['totdocs'] = "Total Histories &amp; Documents";
-    //$text['totheadstones'] = "Total Headstones";
-    $text['totsources'] = "Antal kilder";
-    $text['avglifespan'] = "Gennemsnitlig livslængde";
-    $text['earliestbirth'] = "Tidligste fødsel";
-    $text['longestlived'] = "Længstlevende person";
-    $text['days'] = "dage";
-    $text['age'] = "Alder";
-    $text['agedisclaimer'] = "Aldersrelaterede beregninger er baseret på personer med angivne fødsels- <EM>og</EM> dødsdatoer.  Fordi der findes ukomplette datofelter(f.eks. en dødsdato, der kun er skrevet som \"1945\" eller \"FØR 1860\"), kan disse beregninger ikke være 100% præcise.";
-    $text['treedetail'] = "Flere oplysninger om dette træ";
-    $text['total'] = "Antal";
-    //added in 12.0
-    $text['totdeceased'] = "Antal afdøde";
-    break;
-
-  case "notes":
-    $text['browseallnotes'] = "Søg i alle notater";
-    break;
-
-  case "help":
-    $text['menuhelp'] = "Menunøgle";
-    break;
-
-  case "install":
-    $text['perms'] = "Alle tilladelser er oprettet.";
-    $text['noperms'] = "Der kunne ikke oprettes tilladelser for disse filer:";
-    $text['manual'] = "Vær venlig at oprette dem manuelt.";
-    $text['folder'] = "Mappe";
-    $text['created'] = "er oprettet";
-    $text['nocreate'] = "Kunne ikke oprettes. Vær venlig at gøre det manuelt.";
-    $text['infosaved'] = "Oplysningerne er gemt, forbindelsen er bekræftet!";
-    $text['tablescr'] = "Tabellerne er oprettet!";
-    $text['notables'] = "Følgende tabeller kunne ikke oprettes:";
-    $text['nocomm'] = "TNG kommunikerer ikke med din database. Der er ikke oprettet tabeller.";
-    $text['newdb'] = "Oplysningerne er gemt, forbindelsen er bekræftet, ny database er oprettet:";
-    $text['noattach'] = "Oplysningerne er gemt. Forbindelsen er skabt, og databasen er oprettet, men TNG kan ikke tilknyttes hertil.";
-    $text['nodb'] = "Oplysningerne er gemt. Forbindelsen er skabt, men databasen eksisterer ikke og kunne ikke oprettes her. Vær venlig at bekræfte, at navnet på databasen er korrekt, eller brug kontrolpanelet til at oprette den.";
-    $text['noconn'] = "Oplysningerne er gemt, men forbindelsen mislykkedes. En eller flere af følgende er ikke i orden:";
-    $text['exists'] = "eksisterer";
-    $text['loginfirst'] = "Du skal først logge på.";
-    $text['noop'] = "Der blev ikke udført noget.";
-    //added in 8.0.0
-    $text['nouser'] = "Bruger blev ikke oprettet. Brugernavnet eksisterer allerede.";
-    $text['notree'] = "Træet blev ikke oprettet. Træ-ID findes muligvis allerede.";
-    $text['infosaved2'] = "Oplysningerne er gemt";
-    $text['renamedto'] = "omdøbt til";
-    $text['norename'] = "kunne ikke omdøbes";
-    break;
-
-  case "imgviewer":
-    $text['zoomin'] = "Zoom ind";
-    $text['zoomout'] = "Zoom ud";
-    $text['magmode'] = "Forstørrelse";
-    $text['panmode'] = "Panorering";
-    $text['pan'] = "Klik og træk for at flytte indenfor billedet";
-    $text['fitwidth'] = "Tilpas bredde";
-    $text['fitheight'] = "Tilpas højde";
-    $text['newwin'] = "Nyt vindue";
-    $text['opennw'] = "Åben billede i nyt vindue";
-    $text['magnifyreg'] = "Klik for at forstørre en del af billedet";
-    $text['imgctrls'] = "Aktiver billedværktøjer";
-    $text['vwrctrls'] = "Aktiver billedvisningsværktøjer";
-    $text['vwrclose'] = "Luk billedfremviseren";
-    break;
-
-  case "dna":
-    $text['test_date'] = "Testdato";
-    $text['links'] = "Relevante links";
-    $text['testid'] = "Test-ID";
-    //added in 12.0.0
-    $text['mode_values'] = "Mode Values";
-    $text['compareselected'] = "Sammenlign valgte";
-    $text['dnatestscompare'] = "Sammenlign Y-DNA tests";
-    $text['keep_name_private'] = "Hold navn privat";
-    $text['browsealltests'] = "Gennemse alle tests";
-    $text['all_dna_tests'] = "Alle DNA-tests";
-    $text['fastmutating'] = "Hurtigmuterende";
-    $text['alltypes'] = "Alle typer";
-    $text['allgroups'] = "Alle grupper";
-    $text['Ydna_LITbox_info'] = "Test(s) knyttet til denne person blev ikke nødvendigvis taget af denne person.<br>Kolonnen 'Haplogroup' viser data i rødt, hvis resultatet er 'Forudset' eller grønt, hvis testen er 'Bekræftet'";
-    //added in 12.1.0
-    $text['dnatestscompare_mtdna'] = "Sammenlign valgte mtDNA-tests";
-    $text['dnatestscompare_atdna'] = "Sammenlign valgte atDNA-tests";
-    $text['chromosome'] = "Krom";
-    $text['centiMorgans'] = "cM";
-    $text['snps'] = "SNPs";
-    $text['y_haplogroup'] = "Y-DNA";
-    $text['mt_haplogroup'] = "mtDNA";
-    $text['sequence'] = "Ref";
-    $text['extra_mutations'] = "Ekstra mutationer";
-    $text['mrca'] = "Most Recent Common Ancestor";
-    $text['ydna_test'] = "Y-DNA-tests";
-    $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
-    $text['atdna_test'] = "atDNA (autosomal) Tests";
-    $text['segment_start'] = "Start";
-    $text['segment_end'] = "Slut";
-    $text['suggested_relationship'] = "Foreslået";
-    $text['actual_relationship'] = "Aktuelt";
-    $text['12markers'] = "Markører 1-12";
-    $text['25markers'] = "Markører 13-25";
-    $text['37markers'] = "Markører 26-37";
-    $text['67markers'] = "Markører 38-67";
-    $text['111markers'] = "Markører 68-111";
-    break;
+    case "dna":
+        $text['test_date'] = "Testdato";
+        $text['links'] = "Relevante links";
+        $text['testid'] = "Test-ID";
+        //added in 12.0.0
+        $text['mode_values'] = "Mode Values";
+        $text['compareselected'] = "Sammenlign valgte";
+        $text['dnatestscompare'] = "Sammenlign Y-DNA tests";
+        $text['keep_name_private'] = "Hold navn privat";
+        $text['browsealltests'] = "Gennemse alle tests";
+        $text['all_dna_tests'] = "Alle DNA-tests";
+        $text['fastmutating'] = "Hurtigmuterende";
+        $text['alltypes'] = "Alle typer";
+        $text['allgroups'] = "Alle grupper";
+        $text['Ydna_LITbox_info'] = "Test(s) knyttet til denne person blev ikke nødvendigvis taget af denne person.<br>Kolonnen 'Haplogroup' viser data i rødt, hvis resultatet er 'Forudset' eller grønt, hvis testen er 'Bekræftet'";
+        //added in 12.1.0
+        $text['dnatestscompare_mtdna'] = "Sammenlign valgte mtDNA-tests";
+        $text['dnatestscompare_atdna'] = "Sammenlign valgte atDNA-tests";
+        $text['chromosome'] = "Krom";
+        $text['centiMorgans'] = "cM";
+        $text['snps'] = "SNPs";
+        $text['y_haplogroup'] = "Y-DNA";
+        $text['mt_haplogroup'] = "mtDNA";
+        $text['sequence'] = "Ref";
+        $text['extra_mutations'] = "Ekstra mutationer";
+        $text['mrca'] = "Most Recent Common Ancestor";
+        $text['ydna_test'] = "Y-DNA-tests";
+        $text['mtdna_test'] = "mtDNA (Mitochondrial) Tests";
+        $text['atdna_test'] = "atDNA (autosomal) Tests";
+        $text['segment_start'] = "Start";
+        $text['segment_end'] = "Slut";
+        $text['suggested_relationship'] = "Foreslået";
+        $text['actual_relationship'] = "Aktuelt";
+        $text['12markers'] = "Markører 1-12";
+        $text['25markers'] = "Markører 13-25";
+        $text['37markers'] = "Markører 26-37";
+        $text['67markers'] = "Markører 38-67";
+        $text['111markers'] = "Markører 68-111";
+        break;
 }
 
 //common
@@ -1011,5 +1011,5 @@ $text['lastpage'] = "Sidste side";
 @include_once "captcha_text.php";
 @include_once "alltext.php";
 if (!$alltextloaded) {
-  getAllTextPath();
+    getAllTextPath();
 }

@@ -389,14 +389,16 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                     <table class="normal">
                         <tr>
                             <td>
-                                <div style="float:left;"><?php echo $admtext['sourceid']; ?> 1: <input type="text" name="sourceID1" id="sourceID1" size="10" value="<?php echo $sourceID1; ?>">
+                                <div style="float:left;"><?php echo $admtext['sourceid']; ?> 1:
+                                    <input type="text" name="sourceID1" id="sourceID1" size="10" value="<?php echo $sourceID1; ?>">
                                     &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                                 </div>
                                 <a href="#" onclick="return findItem('S','sourceID1','sourceTitle1',document.form1.tree.options[document.form1.tree.selectedIndex].value);"
                                    title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                             <td width="80">&nbsp;</td>
                             <td>
-                                <div style="float:left;"><?php echo $admtext['sourceid']; ?> 2: <input type="text" name="sourceID2" id="sourceID2" size="10" value="<?php echo $sourceID2; ?>">
+                                <div style="float:left;"><?php echo $admtext['sourceid']; ?> 2:
+                                    <input type="text" name="sourceID2" id="sourceID2" size="10" value="<?php echo $sourceID2; ?>">
                                     &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                                 </div>
                                 <a href="#" onclick="return findItem('S','sourceID2','sourceTitle2',document.form1.tree.options[document.form1.tree.selectedIndex].value);"

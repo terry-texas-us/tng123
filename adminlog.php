@@ -11,26 +11,26 @@ function adminwritelog($string) {
         array_pop($lines);
     }
     $updated = date("D d M Y H:i:s", time() + (3600 * intval($time_offset)));
-  array_unshift($lines, "$updated $string.\n");
+    array_unshift($lines, "$updated $string.\n");
 
-  $fp = @fopen($adminlogfile, "w");
-  if (!$fp) {
-    die ("{$admtext['cannotopen']} $adminlogfile");
-  }
+    $fp = @fopen($adminlogfile, "w");
+    if (!$fp) {
+        die ("{$admtext['cannotopen']} $adminlogfile");
+    }
 
-  flock($fp, LOCK_EX);
-  $linecount = 0;
-  foreach ($lines as $line) {
-    trim($line);
-    if ($line) {
-      fwrite($fp, $line);
+    flock($fp, LOCK_EX);
+    $linecount = 0;
+    foreach ($lines as $line) {
+        trim($line);
+        if ($line) {
+            fwrite($fp, $line);
+        }
+        $linecount++;
+        if ($linecount == $adminmaxloglines) {
+            break;
+        }
     }
-    $linecount++;
-    if ($linecount == $adminmaxloglines) {
-      break;
-    }
-  }
-  flock($fp, LOCK_UN);
-  fclose($fp);
+    flock($fp, LOCK_UN);
+    fclose($fp);
 }
 

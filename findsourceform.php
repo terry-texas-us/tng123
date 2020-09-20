@@ -35,14 +35,16 @@ header("Content-type:text/html; charset=" . $session_charset);
                            onkeyup="filterChanged(event, {form:'findsourceform1',fieldId:'mytitle',type:'S',tree:'<?php echo $tree; ?>',destdiv:'sourceresults'<?php echo $mediaoption; ?>});">
                 </td>
                 <td>
-                    <input type="submit" value="<?php echo $admtext['search']; ?>"> <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);">
+                    <input type="submit" value="<?php echo $admtext['search']; ?>">
+                    <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);">
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp; <input type="radio" name="filter" value="c"
-                                                                                                                                                              checked="checked"
-                                                                                                                                                              onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
+                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp;
+                    <input type="radio" name="filter" value="c"
+                           checked="checked"
+                           onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
                 </td>
             </tr>
         </table>

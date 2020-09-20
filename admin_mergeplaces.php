@@ -113,11 +113,15 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                     ?>
                     <tr>
                         <td><?php echo $admtext['searchfor']; ?>:</td>
-                        <td><input type="text" name="place" size="50" value="<?php echo htmlspecialchars(stripslashes($place)); ?>"></td>
+                        <td>
+                            <input type="text" name="place" size="50" value="<?php echo htmlspecialchars(stripslashes($place)); ?>">
+                        </td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['text_or']; ?>:</td>
-                        <td><input type="text" name="place2" size="50" value="<?php echo htmlspecialchars(stripslashes($place2)); ?>"></td>
+                        <td>
+                            <input type="text" name="place2" size="50" value="<?php echo htmlspecialchars(stripslashes($place2)); ?>">
+                        </td>
                     </tr>
                 </table>
                 <br>
@@ -132,7 +136,9 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                 <h3 class="subhead">2. <?php echo $admtext['selectplacemerge']; ?></h3>
 
                 <form action="" method="post" onSubmit="return validateForm2(this);" name="form2">
-                    <p><input type="submit" value="<?php echo $admtext['mergeplaces']; ?>"> <img src="img/spinner.gif" id="placespin" style="display:none;">
+                    <p>
+                        <input type="submit" value="<?php echo $admtext['mergeplaces']; ?>">
+                        <img src="img/spinner.gif" id="placespin" style="display:none;">
                         <span id="successmsg1" class="normal msgapproved"></span></p>
                     <table cellpadding="3" cellspacing="1" class="normal">
                         <tr>

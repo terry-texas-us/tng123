@@ -3,22 +3,22 @@ include "../../helplib.php";
 echo help_header("Help: Map Settings");
 ?>
 
-<body class="helpbody">
-<a id="top"></a>
-<table class="tblback normal">
-    <tr class="fieldnameback">
-        <td class="tngshadow">
-            <p style="float:right; text-align:right;" class="smaller menu">
-                <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
-                <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="importconfig_help.php" class="lightlink">&laquo; Help: Import Settings</a> &nbsp;|&nbsp;
-                <a href="templateconfig_help.php" class="lightlink">Help: Template Settings &raquo;</a>
-            </p>
-            <h2 class="largeheader">Help: <small>Map Settings</small></h2>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow"><span class="normal">
+    <body class="helpbody">
+    <a id="top"></a>
+    <table class="tblback normal">
+        <tr class="fieldnameback">
+            <td class="tngshadow">
+                <p style="float:right; text-align:right;" class="smaller menu">
+                    <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
+                    <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
+                    <a href="importconfig_help.php" class="lightlink">&laquo; Help: Import Settings</a> &nbsp;|&nbsp;
+                    <a href="templateconfig_help.php" class="lightlink">Help: Template Settings &raquo;</a>
+                </p>
+                <h2 class="largeheader">Help: <small>Map Settings</small></h2>
+            </td>
+        </tr>
+        <tr class="databack">
+            <td class="tngshadow"><span class="normal">
 		<div id="google_translate_element" style="float:right;"></div><script type="text/javascript">
 		                function googleTranslateElementInit() {
                             new google.translate.TranslateElement({
@@ -95,9 +95,9 @@ echo help_header("Help: Map Settings");
 		new pin color next to the corresponding place level variable. Finally, upload the new pin image file(s) to the <span class="emphasis">googlemaps</span> folder on your site.</p>
 
 		</span>
-        </td>
-    </tr>
+            </td>
+        </tr>
 
-</table>
-</body>
+    </table>
+    </body>
 <?php echo "</html>"; ?>

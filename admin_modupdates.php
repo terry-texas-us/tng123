@@ -29,13 +29,13 @@ echo "<style type='text/css'>body {margin:0; overflow-y: scroll; min-width:$min_
 $helplang = findhelp("modhandler_help.php");
 
 if (!isset($options['show_analyzer'])) {
-  $options['show_analyzer'] = "0";
+    $options['show_analyzer'] = "0";
 }
 if (!isset($options['show_developer'])) {
-  $options['show_developer'] = "0";
+    $options['show_developer'] = "0";
 }
 if (!isset($options['show_updates'])) {
-  $options['show_updates'] = "0";
+    $options['show_updates'] = "0";
 }
 
 $modtabs = set_horizontal_tabs($options['show_analyzer'], $options['show_developer'], $options['show_updates']);
@@ -46,17 +46,17 @@ $menu .= doMenu($modtabs, "updates", $innermenu);
 $menu .= "</div>";
 
 if (!isset($message)) {
-  $message = "";
+    $message = "";
 }
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
 
 if ($options['fix_header'] == YES && $sitever != 'mobile') {
-  $headclass = 'mmhead-fixed';
-  $tableclass = 'm2table-fixed';
+    $headclass = 'mmhead-fixed';
+    $tableclass = 'm2table-fixed';
 } else {
-  $headclass = 'mmhead-scroll';
-  $tableclass = 'm2table-scroll';
+    $headclass = 'mmhead-scroll';
+    $tableclass = 'm2table-scroll';
 }
 
 echo "
@@ -103,47 +103,47 @@ echo "
 echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
-  global $admtext;
+    global $admtext;
 
-  $modtabs = array();
-  $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-  $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-  $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
-  if ($show_analyzer == YES) {
-    $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
-  }
-  if ($show_developer == YES) {
-    $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
-  }
-  if ($show_updates == YES) {
-    $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
-  }
-  return $modtabs;
+    $modtabs = array();
+    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
+    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
+    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    if ($show_analyzer == YES) {
+        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+    }
+    if ($show_developer == YES) {
+        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+    }
+    if ($show_updates == YES) {
+        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+    }
+    return $modtabs;
 }
 
 function set_innermenu_links($tng_version) {
-  global $text, $admtext;
+    global $text, $admtext;
 
-  $parts = explode(".", $tng_version);    // added to determine TNG vNN for
-  $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
-  $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
-  $helplang = findhelp("modhandler_help.php");
+    $parts = explode(".", $tng_version);    // added to determine TNG vNN for
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
+    $helplang = findhelp("modhandler_help.php");
 
-  // inner menu help
-  $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    // inner menu help
+    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 
-  // toggle sections open/close
-  $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+    // toggle sections open/close
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 
-  // MM syntax
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    // MM syntax
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
 
-  // mod guidelines
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    // mod guidelines
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
-  // mods for TNGv10
-  $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
-  return $innermenu;
+    // mods for TNGv10
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    return $innermenu;
 }
 
 /*************************************************************************
@@ -151,7 +151,7 @@ function set_innermenu_links($tng_version) {
  *************************************************************************/
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
-  echo "
+    echo "
 <script type=\"text/javascript\">
    jQuery(document).ready(function() {
       // set position of m2table relative to mmhead

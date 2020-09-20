@@ -112,7 +112,8 @@ $notecount = tng_num_rows($notelinks);
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td><input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?></td>
+                <td>
+                    <input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?></td>
             </tr>
         </table>
         <br>

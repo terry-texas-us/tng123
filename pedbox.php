@@ -12,38 +12,38 @@ function getPhotoSrc($persfamID, $living, $gender) {
     $row = tng_fetch_assoc($result);
 
     $photocheck = "";
-  if ($row['thumbpath']) {
-    if ($row['alwayson'] || checkLivingLinks($row['mediaID'])) {
-      $mediatypeID = $row['mediatypeID'];
-      $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
-      $photocheck = "$usefolder/" . $row['thumbpath'];
-      $photoref = "$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath']));
-      $photolink = xmlcharacters($showmedia_url . "mediaID={$row['mediaID']}&amp;medialinkID={$row['medialinkID']}");
+    if ($row['thumbpath']) {
+        if ($row['alwayson'] || checkLivingLinks($row['mediaID'])) {
+            $mediatypeID = $row['mediatypeID'];
+            $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
+            $photocheck = "$usefolder/" . $row['thumbpath'];
+            $photoref = "$usefolder/" . str_replace("%2F", "/", rawurlencode($row['thumbpath']));
+            $photolink = xmlcharacters($showmedia_url . "mediaID={$row['mediaID']}&amp;medialinkID={$row['medialinkID']}");
+        }
+    } elseif ($living) {
+        $photoref = $photocheck = $tree ? "$photopath/$tree.$persfamID.$photosext" : "$photopath/$persfamID.$photosext";
+        $photolink = "";
     }
-  } elseif ($living) {
-    $photoref = $photocheck = $tree ? "$photopath/$tree.$persfamID.$photosext" : "$photopath/$persfamID.$photosext";
-    $photolink = "";
-  }
 
-  $gotfile = $photocheck ? file_exists("$rootpath$photocheck") : false;
-  if (!$gotfile) {
-    if ($gender && $tngconfig['usedefthumbs']) {
-      if ($gender == "M") {
-        $photocheck = "img/male.jpg";
-      } elseif ($gender == "F") {
-        $photocheck = "img/female.jpg";
-      }
-      $photoref = $photocheck;
-      $gotfile = file_exists("$rootpath$photocheck");
+    $gotfile = $photocheck ? file_exists("$rootpath$photocheck") : false;
+    if (!$gotfile) {
+        if ($gender && $tngconfig['usedefthumbs']) {
+            if ($gender == "M") {
+                $photocheck = "img/male.jpg";
+            } elseif ($gender == "F") {
+                $photocheck = "img/female.jpg";
+            }
+            $photoref = $photocheck;
+            $gotfile = file_exists("$rootpath$photocheck");
+        }
     }
-  }
-  if ($gotfile) {
-    $photo['ref'] = $photoref;
-      $photo['link'] = $photolink;
-  } else {
-    $photo['ref'] = "";
-    $photo['link'] = "";
-  }
+    if ($gotfile) {
+        $photo['ref'] = $photoref;
+        $photo['link'] = $photolink;
+    } else {
+        $photo['ref'] = "";
+        $photo['link'] = "";
+    }
 
-  return $photo;
+    return $photo;
 }

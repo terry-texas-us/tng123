@@ -161,7 +161,8 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td><input type="checkbox" name="private" value="yes"<?php if ($private == "yes") {
+                            <td>
+                                <input type="checkbox" name="private" value="yes"<?php if ($private == "yes") {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['text_private']; ?></td>
                         </tr>

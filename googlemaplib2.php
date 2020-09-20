@@ -1,27 +1,27 @@
 <?php
 if (empty($row['latitude'])) {
-  $startzoom = $map['stzoom'];
-  $startlat = $map['stlat'];
-  $startlong = $map['stlong'];
+    $startzoom = $map['stzoom'];
+    $startlat = $map['stlat'];
+    $startlong = $map['stlong'];
 } else {
-  if (empty($row['zoom'])) {
-    $startzoom = 13;
-  } else {
-    $startzoom = $row['zoom'];
-  }
-  $startlat = $row['latitude'];
-  $startlong = $row['longitude'];
+    if (empty($row['zoom'])) {
+        $startzoom = 13;
+    } else {
+        $startzoom = $row['zoom'];
+    }
+    $startlat = $row['latitude'];
+    $startlong = $row['longitude'];
 }
 if (!$startzoom) {
-  $startzoom = 2;
+    $startzoom = 2;
 }
 $foundzoom = $map['foundzoom'] ? $map['foundzoom'] : 13;
 if (!$map['displaytype']) {
-  $map['displaytype'] = "TERRAIN";
+    $map['displaytype'] = "TERRAIN";
 }
 
 if (empty($row['placelevel'])) {
-  $placelevel = 1;
+    $placelevel = 1;
 }
 $mcharsetstr = "&amp;oe=$session_charset";
 ?>

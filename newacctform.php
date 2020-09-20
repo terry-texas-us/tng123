@@ -56,9 +56,9 @@ tng_header($text['regnewacct'], $flags);
                 alert("<?php echo $text['emailsmatch']; ?>");
                 rval = false;
             }
-          <?php
-          if($tngconfig['askconsent']) {
-          ?>
+            <?php
+            if($tngconfig['askconsent']) {
+            ?>
         else
             if (!form.tng_user_consent.checked) {
                 alert("<?php echo $text['consentreq']; ?>");
@@ -83,78 +83,104 @@ if (!$tngconfig['disallowreg']) {
     ?>
     <table cellpadding="0" cellspacing="2">
         <tr>
-      <td>
-        <?php
-              $onsubmit = $ucount ? "return validateForm(this);" : "alert('{$text['nousers']}');return false;";
-              $formstr = getFORM("addnewacct", "post", "form1", "", $onsubmit);
-              echo $formstr;
-              ?>
+            <td>
+                <?php
+                $onsubmit = $ucount ? "return validateForm(this);" : "alert('{$text['nousers']}');return false;";
+                $formstr = getFORM("addnewacct", "post", "form1", "", $onsubmit);
+                echo $formstr;
+                ?>
                 <table class="normal">
                     <tr>
                         <td valign="top"><?php echo $text['username']; ?>*:</td>
-                      <td><input type="text" name="username" size="20" maxlength="20"></td>
+                        <td>
+                            <input type="text" name="username" size="20" maxlength="20">
+                        </td>
                     </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['password']; ?>*:</td>
-                    <td><input type="password" name="password" size="20" maxlength="20"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['pwdagain']; ?>*:</td>
-                    <td><input type="password" name="password2" size="20" maxlength="20"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['realname']; ?>*:</td>
-                    <td><input type="text" name="realname" size="50" maxlength="50"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['phone']; ?>:</td>
-                    <td><input type="text" name="phone" size="30" maxlength="30"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['email']; ?>*:</td>
-                    <td><input type="text" name="<?php echo $_SESSION['tng_email']; ?>" size="50" maxlength="100"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['emailagain']; ?>*:</td>
-                    <td><input type="text" name="em2" size="50" maxlength="100"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['website']; ?>:</td>
-                    <td><input type="text" name="website" size="50" maxlength="100" value="http://"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['address']; ?>:</td>
-                    <td><input type="text" name="address" size="50" maxlength="100"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['city']; ?>:</td>
-                    <td><input type="text" name="city" size="50" maxlength="64"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['state']; ?>:</td>
-                    <td><input type="text" name="state" size="50" maxlength="64"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['zip']; ?>:</td>
-                    <td><input type="text" name="zip" size="20" maxlength="10"></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><?php echo $text['country']; ?>:</td>
-                    <td><input type="text" name="country" size="50" maxlength="64"></td>
-                  </tr>
-                  <tr>
-                    <td><?php echo $admtext['preflang']; ?>:</td>
+                    <tr>
+                        <td valign="top"><?php echo $text['password']; ?>*:</td>
+                        <td>
+                            <input type="password" name="password" size="20" maxlength="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['pwdagain']; ?>*:</td>
+                        <td>
+                            <input type="password" name="password2" size="20" maxlength="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['realname']; ?>*:</td>
+                        <td>
+                            <input type="text" name="realname" size="50" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['phone']; ?>:</td>
+                        <td>
+                            <input type="text" name="phone" size="30" maxlength="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['email']; ?>*:</td>
+                        <td>
+                            <input type="text" name="<?php echo $_SESSION['tng_email']; ?>" size="50" maxlength="100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['emailagain']; ?>*:</td>
+                        <td>
+                            <input type="text" name="em2" size="50" maxlength="100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['website']; ?>:</td>
+                        <td>
+                            <input type="text" name="website" size="50" maxlength="100" value="http://">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['address']; ?>:</td>
+                        <td>
+                            <input type="text" name="address" size="50" maxlength="100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['city']; ?>:</td>
+                        <td>
+                            <input type="text" name="city" size="50" maxlength="64">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['state']; ?>:</td>
+                        <td>
+                            <input type="text" name="state" size="50" maxlength="64">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['zip']; ?>:</td>
+                        <td>
+                            <input type="text" name="zip" size="20" maxlength="10">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><?php echo $text['country']; ?>:</td>
+                        <td>
+                            <input type="text" name="country" size="50" maxlength="64">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $admtext['preflang']; ?>:</td>
                         <td>
                             <select name="preflang">
                                 <option value=""></option>
-                              <?php
-                              $query = "SELECT languageID, display FROM $languages_table ORDER BY display";
-                              $langresult = tng_query($query);
+                                <?php
+                                $query = "SELECT languageID, display FROM $languages_table ORDER BY display";
+                                $langresult = tng_query($query);
 
-                              while ($langrow = tng_fetch_assoc($langresult)) {
-                                echo "	<option value=\"{$langrow['languageID']}\">{$langrow['display']}</option>\n";
-                              }
-                              ?>
+                                while ($langrow = tng_fetch_assoc($langresult)) {
+                                    echo "	<option value=\"{$langrow['languageID']}\">{$langrow['display']}</option>\n";
+                                }
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -164,28 +190,29 @@ if (!$tngconfig['disallowreg']) {
                     </tr>
                 </table>
                 <p class="normal">
-                  <?php
-                  if ($tngconfig['askconsent']) {
-                    ?>
-                      <input type="checkbox" name="tng_user_consent" value="1">
                     <?php
-                    echo $text['consent'];
-                    if ($tngconfig['dataprotect']) {
-                      echo "<br><a href=\"{$dataprotect_url}\" target=\"_blank\">{$text['dataprotect']}</a>\n";
+                    if ($tngconfig['askconsent']) {
+                        ?>
+                        <input type="checkbox" name="tng_user_consent" value="1">
+                        <?php
+                        echo $text['consent'];
+                        if ($tngconfig['dataprotect']) {
+                            echo "<br><a href=\"{$dataprotect_url}\" target=\"_blank\">{$text['dataprotect']}</a>\n";
+                        }
                     }
-                  }
-                  ?>
-                  <br><br>
-                  <?php echo $text['accmail']; ?>
+                    ?>
+                    <br><br>
+                    <?php echo $text['accmail']; ?>
                 </p>
-              <br>
-              <input type="hidden" name="fingerprint" value="realperson">
-              <input type="submit" name="submit" class="btn" id="submitbtn" value="<?php echo $text['submit']; ?>"></form><br>
+                <br>
+                <input type="hidden" name="fingerprint" value="realperson">
+                <input type="submit" name="submit" class="btn" id="submitbtn" value="<?php echo $text['submit']; ?>">
+                </form><br>
             </td>
-    </tr>
+        </tr>
 
-  </table>
-  <?php
+    </table>
+    <?php
 } else {
     echo "<p class='normal'>{$text['noregs']}</p>\n";
 }

@@ -10,20 +10,20 @@ $dispname = "";
 $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 $treeresult = tng_query($query);
 while ($treerow = tng_fetch_assoc($treeresult)) {
-  $nexttree = addslashes($treerow['gedcom']);
-  $dispid .= "branchids['$nexttree'] = new Array(\"\"";
-  $dispname .= "branchnames['$nexttree'] = new Array(\"{$admtext['allbranches']}\"";
+    $nexttree = addslashes($treerow['gedcom']);
+    $dispid .= "branchids['$nexttree'] = new Array(\"\"";
+    $dispname .= "branchnames['$nexttree'] = new Array(\"{$admtext['allbranches']}\"";
 
-  $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"$nexttree\" ORDER BY description";
-  $branchresult = tng_query($query);
+    $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"$nexttree\" ORDER BY description";
+    $branchresult = tng_query($query);
 
-  while ($branchrec = tng_fetch_assoc($branchresult)) {
-    $dispid .= ",\"{$branchrec['branch']}\"";
-    $dispname .= ",\"" . addslashes(trim($branchrec['description'])) . "\"";
-  }
-  tng_free_result($branchresult);
-  $dispid .= ");\n";
-  $dispname .= ");\n";
+    while ($branchrec = tng_fetch_assoc($branchresult)) {
+        $dispid .= ",\"{$branchrec['branch']}\"";
+        $dispname .= ",\"" . addslashes(trim($branchrec['description'])) . "\"";
+    }
+    tng_free_result($branchresult);
+    $dispid .= ");\n";
+    $dispname .= ");\n";
 }
 tng_free_result($treeresult);
 echo $dispid;

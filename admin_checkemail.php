@@ -10,11 +10,11 @@ $query = "SELECT userId FROM $users_table WHERE LOWER(email) = LOWER(\"$checkema
 $result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");
 
 if ($result && tng_num_rows($result)) {
-  $message = $admtext['isinuse'];
-  $success = "msgerror";
+    $message = $admtext['isinuse'];
+    $success = "msgerror";
 } else {
-  $message = $admtext['isok'];
-  $success = "msgapproved";
+    $message = $admtext['isok'];
+    $success = "msgapproved";
 }
 tng_free_result($result);
 

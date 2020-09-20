@@ -157,7 +157,8 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findbranch" value="1"><input type="hidden" name="newsearch" value="1">
+                    <input type="hidden" name="findbranch" value="1">
+                    <input type="hidden" name="newsearch" value="1">
                 </form>
                 <br>
 

@@ -147,9 +147,9 @@ echo help_header("N�pov�da: Testy DNA");
                 (UEP) vzor DNA.</p>
             <p>V genetick� genealogii je unik�tn� polymorfismus (UEP) genetick�m markerem, kter� odpov�d� mutaci, kter� se pravd�podobn� vyskytuje tak
                 z��dka, �e se p�edpokl�d�, �e je naprosto pravd�podobn�, �e v�ichni jedinci, kte�� sd�lej� tento marker
-        po cel�m sv�t�, ji d�d� od shodn�ho spole�n�ho p�edka a shodn� ud�losti jednotliv� mutace.</p>
+                po cel�m sv�t�, ji d�d� od shodn�ho spole�n�ho p�edka a shodn� ud�losti jednotliv� mutace.</p>
 
-      <p><strong>Signifikantn� SNPs</strong></p>
+            <p><strong>Signifikantn� SNPs</strong></p>
             <p>Tyto SNP mohou klinicky souviset, souviset s americk�mi indi�ny, apod.</p>
 
             <p><strong>Termin�ln� SNP</strong></p>
@@ -220,28 +220,31 @@ echo help_header("N�pov�da: Testy DNA");
             <p><strong>Celkov� sd�len� cM</strong><br>
                 Toto je sou�et autosom�ln� DNA, dan� v centimorgans (cM), kter� vy a va�e genetick� shoda sd�l�te.<br>Viz <a
                     href="https://dnapainter.com/tools/sharedcmv4" traget="_blank">The Shared cM Project Tool</a>, kde je v�ce informac� o
-        pravd�podobnosti zp��zn�nosti na z�klad� po�tu celkov�ho po�tu sd�len�ch cM.</p>
+                pravd�podobnosti zp��zn�nosti na z�klad� po�tu celkov�ho po�tu sd�len�ch cM.</p>
 
-      <p><strong>Sd�len� segmenty</strong><br>
-        Po�et sd�len�ch segment� v t�to sd�len� shod� DNA. ��m v�ce segment� sd�l�te a ��m v�t�� je d�lka t�chto segment�, t�m v�ce jste zp��zn�ni.</p>
+            <p><strong>Sd�len� segmenty</strong><br>
+                Po�et sd�len�ch segment� v t�to sd�len� shod� DNA. ��m v�ce segment� sd�l�te a ��m v�t�� je d�lka t�chto segment�, t�m v�ce jste
+                zp��zn�ni.</p>
 
-      <p><strong>Nejv�t�� segment</strong><br>
-        Segmenty, kter� spole�n� sd�lej� velk� mno�stv� centiMorgan�, jsou s v�t�� pravd�podobnost� v�znamn� a ozna�uj� v genealogick�m �asov�m r�mci spole�n�ho p�edka. Toto je nejv�t�� sd�len� segment v t�to shod� DNA.</p>
+            <p><strong>Nejv�t�� segment</strong><br>
+                Segmenty, kter� spole�n� sd�lej� velk� mno�stv� centiMorgan�, jsou s v�t�� pravd�podobnost� v�znamn� a ozna�uj� v genealogick�m
+                �asov�m r�mci spole�n�ho p�edka. Toto je nejv�t�� sd�len� segment v t�to shod� DNA.</p>
 
-      <p><strong>Chromoz�m �.</strong><br>
-        Toto je ��slo chromoz�mu nejv�t��ho shodn�ho segmentu.</p>
+            <p><strong>Chromoz�m �.</strong><br>
+                Toto je ��slo chromoz�mu nejv�t��ho shodn�ho segmentu.</p>
 
-      <p><strong>Za��tek segmentu</strong><br>
-        Toto je po��te�n� m�sto nejv�t��ho shodn�ho sd�len�ho segmentu DNA</p>
+            <p><strong>Za��tek segmentu</strong><br>
+                Toto je po��te�n� m�sto nejv�t��ho shodn�ho sd�len�ho segmentu DNA</p>
 
-      <p><strong>Konec segmentu</strong><br>
-        Toto je kone�n� m�sto nejv�t��ho shodn�ho sd�len�ho segmentu DNA</p>
+            <p><strong>Konec segmentu</strong><br>
+                Toto je kone�n� m�sto nejv�t��ho shodn�ho sd�len�ho segmentu DNA</p>
 
-      <p><strong>centiMorgany</strong><br>
-        V genetick� genealogii je centiMorgan (cM) nebo mapov� jednotka (m.u.) jednotkou frekvence rekombinace, kter� se pou��v� k m��en� genetick� vzd�lenosti. Toto je po�et cM v nejv�t��m shodn�m segmentu.</p>
+            <p><strong>centiMorgany</strong><br>
+                V genetick� genealogii je centiMorgan (cM) nebo mapov� jednotka (m.u.) jednotkou frekvence rekombinace, kter� se pou��v� k m��en�
+                genetick� vzd�lenosti. Toto je po�et cM v nejv�t��m shodn�m segmentu.</p>
 
-      <p><strong>Po�et shodn�ch SNP</strong><br>
-          To je po�et SNP pro nejv�t�� shodn� segment.</p>
+            <p><strong>Po�et shodn�ch SNP</strong><br>
+                To je po�et SNP pro nejv�t�� shodn� segment.</p>
 
             <p><strong>X-shoda</strong><br>
                 Toto pole ud�v�, zda se autosom�ln� DNA shoduje tak� na chromoz�mu X.</p>

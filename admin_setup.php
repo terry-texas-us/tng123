@@ -105,7 +105,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
 
                 <p class="normal"><em><?php echo $admtext['tcwarning']; ?></em></p>
                 <form action="">
-                    <?php echo $admtext['collation']; ?>: <input type="text" name="collation" value="utf8_general_ci"> <?php echo $admtext['collationexpl']; ?><br><br>
+                    <?php echo $admtext['collation']; ?>:
+                    <input type="text" name="collation" value="utf8_general_ci"> <?php echo $admtext['collationexpl']; ?><br><br>
                     <input type="button" value="<?php echo $admtext['createtables']; ?>"
                            onClick="if( confirm( '<?php echo $admtext['conftabledelete']; ?>' ) ) window.location.href = 'admin_tablecreate.php';">
                 </form>

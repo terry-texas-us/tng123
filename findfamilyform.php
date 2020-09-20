@@ -7,13 +7,13 @@ include "$mylanguage/admintext.php";
 include "checklogin.php";
 
 if ($mediaID) {
-  $mediaoption = ", mediaID:'$mediaID'";
+    $mediaoption = ", mediaID:'$mediaID'";
 } else {
-  if ($albumID) {
-      $mediaoption = ", albumID:'$albumID'";
-  } else {
-    $mediaoption = "";
-  }
+    if ($albumID) {
+        $mediaoption = ", albumID:'$albumID'";
+    } else {
+        $mediaoption = "";
+    }
 }
 
 $bailtext = $mediaoption ? $admtext['finish'] : $admtext['cancel'];
@@ -34,27 +34,33 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td><?php echo $admtext['familyid']; ?></td>
             </tr>
             <tr>
-                <td><input type="text" name="myhusbname" id="myhusbname"
+                <td>
+                    <input type="text" name="myhusbname" id="myhusbname"
                            onkeyup="filterChanged(event, {form:'findform1',fieldId:'myhusbname',myhusbname:jQuery('#myhusbname').val(),mywifename:jQuery('#mywifename').val(),myfamilyID:jQuery('#myfamilyID').val(),type:'F',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
                 </td>
-        <td><input type="text" name="mywifename" id="mywifename"
-                   onkeyup="filterChanged(event, {form:'findform1',fieldId:'mywifename',myhusbname:jQuery('#myhusbname').val(),mywifename:jQuery('#mywifename').val(),myfamilyID:jQuery('#myfamilyID').val(),type:'F',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
-        </td>
-        <td><input type="text" name="myfamilyID" id="myfamilyID"
-                   onkeyup="filterChanged(event, {form:'findform1',fieldId:'myfamilyID',myhusbname:jQuery('#myhusbname').val(),mywifename:jQuery('#mywifename').val(),myfamilyID:jQuery('#myfamilyID').val(),type:'F',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
-          <input type="submit" value="<?php echo $admtext['search']; ?>"> <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);"></td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp; <input type="radio" name="filter" value="c" checked="checked"
-                                                                                                                                                    onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
-        </td>
-      </tr>
-    </table>
-  </form>
+                <td>
+                    <input type="text" name="mywifename" id="mywifename"
+                           onkeyup="filterChanged(event, {form:'findform1',fieldId:'mywifename',myhusbname:jQuery('#myhusbname').val(),mywifename:jQuery('#mywifename').val(),myfamilyID:jQuery('#myfamilyID').val(),type:'F',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
+                </td>
+                <td>
+                    <input type="text" name="myfamilyID" id="myfamilyID"
+                           onkeyup="filterChanged(event, {form:'findform1',fieldId:'myfamilyID',myhusbname:jQuery('#myhusbname').val(),mywifename:jQuery('#mywifename').val(),myfamilyID:jQuery('#myfamilyID').val(),type:'F',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
+                    <input type="submit" value="<?php echo $admtext['search']; ?>">
+                    <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp;
+                    <input type="radio" name="filter" value="c" checked="checked"
+                           onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
+                </td>
+            </tr>
+        </table>
+    </form>
 
-  <br>
-  <span class="normal"><strong><?php echo $admtext['searchresults']; ?></strong> (<?php echo $admtext['clicktoselect']; ?>)</span>
+    <br>
+    <span class="normal"><strong><?php echo $admtext['searchresults']; ?></strong> (<?php echo $admtext['clicktoselect']; ?>)</span>
 
-  <div id="findresults" style="width:605px;height:365px;overflow:auto;"></div>
+    <div id="findresults" style="width:605px;height:365px;overflow:auto;"></div>
 </div>
