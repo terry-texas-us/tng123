@@ -23,7 +23,7 @@ tng_adminheader($admtext['backuprestore'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $utiltabs[0] = array(1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables");
@@ -35,7 +35,7 @@ $headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <p class="normal"><?php echo $admtext['reseqwarn']; ?></p>

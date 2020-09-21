@@ -73,7 +73,7 @@ foreach ($mediatypes as $mediatype) {
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $helplang = findhelp("data_help.php");

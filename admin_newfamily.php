@@ -162,7 +162,7 @@ include_once "eventlib_js.php";
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif" onload="generateID('family',document.form1.familyID,document.form1.tree1);">
+<body class="admin-body" onload="generateID('family',document.form1.familyID,document.form1.tree1);">
 
 <?php
 $familytabs[0] = array(1, "admin_families.php", $admtext['search'], "findfamily");
@@ -176,7 +176,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
 
 <form action="admin_addfamily.php" method="post" name="form1" onSubmit="return validateFamily(this);">
     <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table class="normal">

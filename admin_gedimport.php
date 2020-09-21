@@ -116,7 +116,7 @@ tng_adminheader($admtext['datamaint'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 if (!empty($old)) {

@@ -134,7 +134,7 @@ if ($options['fix_header'] == YES && $sitever != 'mobile') {
 
 echo "
 </head>
-<body background=\"img/background.gif\">
+<body class=\"admin-body\">
 <div id=\"mmhead\" class=\"$headclass adminback\">
    $headline
 </div><!--head-section-->";

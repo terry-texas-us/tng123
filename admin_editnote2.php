@@ -40,7 +40,7 @@ tng_adminheader($admtext['modifynote'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $misctabs[0] = array(1, "admin_notelist.php", $admtext['notes'], "notes");
@@ -50,7 +50,7 @@ $menu = doMenu($misctabs, "edit", $innermenu);
 echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_updatenote2.php" name="form2" method="post" onSubmit="return validateForm(this);">

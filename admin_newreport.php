@@ -168,7 +168,7 @@ tng_adminheader($admtext['addnewreport'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $reporttabs[0] = array(1, "admin_reports.php", $admtext['search'], "findreport");
@@ -178,7 +178,7 @@ $menu = doMenu($reporttabs, "addreport", $innermenu);
 echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport'], "img/reports_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_addreport.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">

@@ -60,7 +60,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
@@ -74,7 +74,7 @@ $menu = doMenu($mediatabs, "sortmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_ordermedia.php" method="get" name="find" onsubmit="return validateForm();">

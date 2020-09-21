@@ -31,7 +31,7 @@ tng_adminheader($admtext['addnewalbum'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
@@ -43,7 +43,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['addnewalbum']
 ?>
 
 <form action="admin_addalbum.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <?php echo displayToggle("plus0", 1, "details", $admtext['existingalbuminfo'], $admtext['infosubt']); ?>

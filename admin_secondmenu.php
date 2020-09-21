@@ -23,7 +23,7 @@ tng_adminheader($admtext['secondary'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $allow_export = 1;
@@ -45,7 +45,7 @@ $menu = doMenu($datatabs, "second", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondary'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_secondary.php" method="post" name="form1">

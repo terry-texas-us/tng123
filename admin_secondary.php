@@ -19,7 +19,7 @@ tng_adminheader($admtext['secondarymaint'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $datatabs[0] = array(1, "admin_dataimport.php", $admtext['import'], "import");

@@ -241,7 +241,7 @@ include_once "eventlib_js.php";
 <script src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $familytabs['0'] = array(1, "admin_families.php", $admtext['search'], "findfamily");
@@ -259,7 +259,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
 ?>
 
 <form action="admin_updatefamily.php" method="post" name="form1" id="form1">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">

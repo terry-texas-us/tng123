@@ -92,7 +92,7 @@ tng_adminheader($admtext['reports'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $reporttabs['0'] = array(1, "admin_reports.php", $admtext['search'], "findreport");
@@ -102,7 +102,7 @@ $menu = doMenu($reporttabs, "findreport", $innermenu);
 echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -145,7 +145,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
 
-                <table cellpadding="3" cellspacing="1" class="normal">
+                <table class="normal">
                     <tr>
                         <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                         <th class="fieldnameback fieldname"><?php echo $admtext['rank']; ?></th>

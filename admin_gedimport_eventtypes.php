@@ -32,7 +32,7 @@ tng_adminheader($admtext['datamaint'], $flags);
 echo "</head>";
 ?>
 
-<body background="img/background.gif">
+<body class="admin-body">
 <?php
 $datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
 $datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];

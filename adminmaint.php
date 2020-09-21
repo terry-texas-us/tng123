@@ -13,7 +13,7 @@ tng_adminheader($admtext['maintmode'], '');
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 <div width="100%" class="lightback">
     <div style="padding:10px;" class="databack normal">
         <p class="plainheader"><?php echo $admtext['maintmode']; ?></p>

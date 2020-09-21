@@ -125,7 +125,7 @@ tng_adminheader($admtext['repositories'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $repotabs[0] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
@@ -136,7 +136,7 @@ $menu = doMenu($repotabs, "findrepo", $innermenu);
 echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -196,7 +196,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                     }
                     ?>
 
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>

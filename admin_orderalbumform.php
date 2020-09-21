@@ -61,7 +61,7 @@ tng_adminheader($admtext['sortmedia'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
@@ -72,7 +72,7 @@ $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_orderalbums.php" method="post" name="find" onsubmit="return validateSortForm();">

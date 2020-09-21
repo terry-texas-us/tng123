@@ -93,7 +93,7 @@ if (!empty($reset)) {
     $_COOKIE[$loggedin] = "";
 }
 ?>
-<body background="img/background.gif">
+<body class="admin-body">
 
 <table width="100%" cellpadding="10" bgcolor="#FFFFFF" class="rounded10">
     <tr>

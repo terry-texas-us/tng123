@@ -47,7 +47,7 @@ tng_adminheader($admtext['modifygroup'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $dnatabs[0] = array(1, "admin_dna_groups.php", $admtext['search'], "findtest");
@@ -58,7 +58,7 @@ $menu = doMenu($dnatabs, "edit", $innermenu);
 echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['modifygroup'], "img/dna_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_update_dna_groups.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">

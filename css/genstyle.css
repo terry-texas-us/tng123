@@ -904,9 +904,8 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 .optionhead {
 }
 
-/* helpbody: describes page background on Help screens  */
-.helpbody {
-    min-width: 360px;
+.admin-body, .helpbody {
+    min-width: 576px;
     margin: 8px;
     background-image: url(../img/background.gif);
 }
@@ -2056,14 +2055,24 @@ table.uploadmore td {
     border: none;
 }
 
-table.tblback {
+table.tblback, table.lightback {
     width: 100%;
     border-collapse: separate;
     border-spacing: 2px;
 }
 
-table.tblback th, table.tblback td {
+table.tblback th, table.tblback td, table.lightback th, table.lightback td {
     padding: 10px;
+}
+
+body.admin-body table.normal {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+body.admin-body table.normal th, body.admin-body table.normal td {
+    padding: 3px;
 }
 
 #imgdiv img {

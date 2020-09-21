@@ -178,7 +178,7 @@ tng_adminheader($admtext['families'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $familytabs[0] = array(1, "admin_families.php", $admtext['search'], "findfamily");
@@ -189,7 +189,7 @@ $menu = doMenu($familytabs, "findfamily", $innermenu);
 echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -262,7 +262,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                     }
                     ?>
 
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>

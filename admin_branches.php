@@ -111,7 +111,7 @@ tng_adminheader($admtext['branches'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $branchtabs['0'] = array(1, "admin_branches.php", $admtext['search'], "findbranch");
@@ -121,7 +121,7 @@ $menu = doMenu($branchtabs, "findbranch", $innermenu);
 echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -183,7 +183,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         <?php
                     }
                     ?>
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr class="fieldnameback fieldname nw" r>
                             <th><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>

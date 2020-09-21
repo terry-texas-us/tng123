@@ -89,7 +89,7 @@ tng_adminheader($admtext['modifydna'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $dnatabs[0] = array(1, "admin_dna_tests.php", $admtext['search'], "findtest");
@@ -171,7 +171,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
 ?>
 
 <form action="admin_update_dna_test.php" method="post" name="form1" id="form1" onsubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <?php echo displayToggle("plus0", 1, "testinfo", $admtext['testinfo'], $admtext['uplsel']); ?>

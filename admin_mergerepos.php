@@ -358,7 +358,7 @@ tng_adminheader($admtext['merge'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $repotabs['0'] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
@@ -369,7 +369,7 @@ $menu = doMenu($repotabs, "merge", $innermenu);
 echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge'], "img/repos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow"
         "">
@@ -449,7 +449,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                 <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction" onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchrepositories();">
                 <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
                 <br><br>
-                <table cellpadding="3" cellspacing="1" width="100%" class="normal">
+                <table class="normal">
                     <?php
                     if (is_array($r1row)) {
                         $eventlist = array();

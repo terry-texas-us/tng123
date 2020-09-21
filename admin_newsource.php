@@ -43,7 +43,7 @@ tng_adminheader($admtext['addnewsource'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif" onload="generateID('source',document.form1.sourceID,document.form1.tree1);">
+<body class="admin-body" onload="generateID('source',document.form1.sourceID,document.form1.tree1);">
 
 <?php
 $sourcetabs[0] = array(1, "admin_sources.php", $admtext['search'], "findsource");
@@ -55,7 +55,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource
 ?>
 
 <form action="admin_addsource.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table class="normal">

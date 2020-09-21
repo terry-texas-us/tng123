@@ -32,7 +32,7 @@ tng_adminheader($admtext['emailusers'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $usertabs[0] = array(1, "admin_users.php", $admtext['search'], "finduser");
@@ -44,7 +44,7 @@ $menu = doMenu($usertabs, "mail", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['emailmessage'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_sendmailusers.php" method="post" name="form1" onSubmit="return validateForm();">

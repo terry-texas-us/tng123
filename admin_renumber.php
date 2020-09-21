@@ -22,7 +22,7 @@ tng_adminheader($admtext['backuprestore'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $utiltabs[0] = array(1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables");

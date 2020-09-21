@@ -132,7 +132,7 @@ tng_adminheader($admtext['review'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 if ($type == "I") {
@@ -155,7 +155,7 @@ $menu = doMenu($peopletabs, "review", $innermenu);
 echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <h3 class="subhead"><?php echo $admtext['selectevaction']; ?></h3>
@@ -225,7 +225,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                 $pagenav = get_browseitems_nav($totrows, "admin_findreview.php?type=$type&amp;reviewuser=$reviewuser&amp;offset", $maxsearchresults, 5);
                 echo " &nbsp; $pagenav</p>";
                 ?>
-                <table cellpadding="3" cellspacing="1" class="normal">
+                <table class="normal">
                     <tr>
                         <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                         <th class="fieldnameback fieldname"><?php echo $admtext['id']; ?></th>

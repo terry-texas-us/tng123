@@ -33,7 +33,7 @@ tng_adminheader($admtext['whatsnew'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $misctabs[0] = array(1, "admin_misc.php", $admtext['menu'], "misc");
@@ -46,7 +46,7 @@ $menu = doMenu($misctabs, "whatsnew", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "img/misc_icon.gif", $menu, "");
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_savewhatsnewmsg.php" method="post" name="form1">

@@ -83,11 +83,11 @@ if ($map['key']) {
 ?>
     </head>
 
-    <body<?php if ($map['key']) {
+    <body class="admin-body"<?php if ($map['key']) {
         if (!$map['startoff']) {
             echo " onload=\"divbox('mapcontainer');\"";
         }
-    } ?> background="img/background.gif">
+    } ?>>
 
     <?php
     $cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
@@ -100,7 +100,7 @@ if ($map['key']) {
     ?>
 
     <form action="admin_updatecemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onSubmit="return validateForm();">
-        <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+        <table class="lightback">
             <tr class="databack">
                 <td class="tngshadow">
                     <table class="normal" width="100%">

@@ -131,7 +131,7 @@ tng_adminheader($sortstr, $flags);
 <script type="text/javascript" src="js/mediautils.js"></script>
 </head>
 
-<body background="img/background.gif" onload="startMediaSort()">
+<body class="admin-body" onload="startMediaSort()">
 
 <?php
 $albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
@@ -142,13 +142,13 @@ $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, "");
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br>
             <br style="clear: left;">
             <br>
-            <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
+            <table id="ordertbl" class="fieldname normal">
                 <tr>
                     <th class="fieldnameback" style="width:102px;"><?php echo $admtext['text_sort']; ?></th>
                     <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px;"><?php echo $admtext['thumb']; ?></th>

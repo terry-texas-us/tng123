@@ -103,7 +103,7 @@ tng_adminheader($admtext['labelbranches'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $branchtabs[0] = array(1, "admin_branches.php", $admtext['search'], "findbranch");
@@ -114,7 +114,7 @@ $menu = doMenu($branchtabs, "label", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_branchlabels.php" method="post" id="form1" name="form1" onSubmit="return validateForm();">

@@ -70,7 +70,7 @@ tng_adminheader($admtext['addnewevtype'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $evtabs[0] = [1, "admin_eventtypes.php", $admtext['search'], "findevent"];
@@ -80,7 +80,7 @@ $menu = doMenu($evtabs, "addevent", $innermenu);
 echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['addnewevtype'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_addeventtype.php" method="post" name="form1" onSubmit="return validateForm();">

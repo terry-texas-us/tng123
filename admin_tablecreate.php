@@ -31,7 +31,7 @@ tng_adminheader($admtext['tablecreation'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
@@ -42,7 +42,7 @@ $menu = doMenu($setuptabs, "tablecreation", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['tablecreation'], "img/setup_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow"><span class="normal"><p>
 <?php

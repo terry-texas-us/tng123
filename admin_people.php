@@ -228,7 +228,7 @@ tng_adminheader($admtext['people'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $peopletabs['0'] = array(1, "admin_people.php", $admtext['search'], "findperson");
@@ -243,7 +243,7 @@ if (!isset($message)) {
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -318,7 +318,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                     }
                     ?>
 
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>

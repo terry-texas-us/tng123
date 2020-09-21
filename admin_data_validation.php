@@ -31,7 +31,7 @@ tng_adminheader(_todo_('Validation'), $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $misctabs[0] = array(1, "admin_misc.php", $admtext['menu'], "misc");
@@ -46,7 +46,7 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'], "img
 $reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead');
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <h3 class="subhead"><?php echo $admtext['dataval']; ?></h3>

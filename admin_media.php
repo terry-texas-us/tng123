@@ -217,7 +217,7 @@ $sttypestr = implode(",", $standardtypes);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $mediatabs[0] = array(1, "admin_media.php", $admtext['search'], "findmedia");
@@ -231,7 +231,7 @@ $menu = doMenu($mediatabs, "findmedia", $innermenu);
 echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -406,7 +406,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                     }
                     ?>
 
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) { ?>

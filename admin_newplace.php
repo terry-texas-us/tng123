@@ -53,11 +53,11 @@ if ($map['key']) {
 ?>
 </head>
 
-<body<?php if ($map['key']) {
+<body class="admin-body"<?php if ($map['key']) {
     if (!$map['startoff']) {
         echo " onload=\"divbox('mapcontainer');\"";
     }
-} ?> background="img/background.gif">
+} ?>>
 
 <?php
 $placetabs[0] = array(1, "admin_places.php", $admtext['search'], "findplace");
@@ -69,7 +69,7 @@ $menu = doMenu($placetabs, "addplace", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace'], "img/places_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_addplace.php" method="post" name="form1" onSubmit="return validateForm();">

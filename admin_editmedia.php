@@ -137,7 +137,7 @@ if ($onload) {
 ?>
 </head>
 
-<body <?php echo "$onload"; ?> background="img/background.gif">
+<body class="admin-body" <?php echo "$onload"; ?>>
 
 <?php
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
@@ -155,7 +155,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 ?>
 
 <form action="admin_updatemedia.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">

@@ -175,7 +175,7 @@ tng_adminheader($admtext['modifyreport'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $reporttabs[0] = array(1, "admin_reports.php", $admtext['search'], "findreport");

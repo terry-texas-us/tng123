@@ -99,7 +99,7 @@ echo $style->getStyle();
 
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $usertabs[0] = array(1, "admin_users.php", $admtext['search'], "finduser");

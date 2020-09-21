@@ -345,7 +345,7 @@ tng_adminheader($admtext['merge'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $sourcetabs[0] = array(1, "admin_sources.php", $admtext['search'], "findsource");
@@ -356,7 +356,7 @@ $menu = doMenu($sourcetabs, "merge", $innermenu);
 echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "img/sources_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal"><em><?php echo $admtext['choosemergesources']; ?></em><br><br>
@@ -483,7 +483,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                            onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchsources();">
                     <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
                     <br><br>
-                    <table cellpadding="3" cellspacing="1" width="100%" class="normal">
+                    <table class="normal">
                         <?php
                         if (is_array($s1row)) {
                             $eventlist = array();

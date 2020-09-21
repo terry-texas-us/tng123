@@ -48,7 +48,7 @@ tng_adminheader($admtext['addnewbranch'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $branchtabs[0] = array(1, "admin_branches.php", $admtext['search'], "findbranch");
@@ -58,7 +58,7 @@ $menu = doMenu($branchtabs, "addbranch", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranch'], "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_addbranch.php" method="post" name="form1" onsubmit="return validateForm();">

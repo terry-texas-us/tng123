@@ -72,7 +72,7 @@ if ($options['fix_header'] == YES && $sitever != 'mobile') {
 }
 
 echo "</head>";
-echo "<body background=\"img/background.gif\">";
+echo "<body class=\"admin-body\">";
 echo "<div id=\"mmhead\" class=\"$headclass adminback\">$headline</div> <!--head-section-->";
 echo "<table id=\"m2table\" class='normal lightback $tableclass'>";
 echo "<tr><td class='databack mmleftcol'>";

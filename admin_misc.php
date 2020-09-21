@@ -19,7 +19,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['misc'], $flags);
 ?>
 </head>
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
@@ -30,7 +30,7 @@ $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/misc_help.php')
 $menu = doMenu($misctabs, "misc", $innermenu);
 echo displayHeadline($admtext['misc'], "img/misc_icon.gif", $menu, $message);
 ?>
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_whatsnewmsg.php"><?php echo $admtext['whatsnew']; ?></a></h3>

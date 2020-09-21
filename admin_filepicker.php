@@ -85,7 +85,7 @@ function frmFiles() {
     frmFilesHdFt($columns, $nCurrentPage, $nPages);
     ?>
     <span class="normal">&nbsp;<?php echo "<b>{$admtext['folder']}:</b> $tngpath/" . stripslashes($subdir); ?></span><br>
-    <table cellpadding="3" cellspacing="1" width="100%" class="normal">
+    <table class="normal">
     <tr class="fieldnameback">
         <td align="left" width="60"><span class="fieldname"><b><?php echo $admtext['action']; ?></b></span></td>
         <td nowrap><span

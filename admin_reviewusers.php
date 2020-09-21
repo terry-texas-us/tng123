@@ -34,7 +34,7 @@ tng_adminheader($admtext['users'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $usertabs[0] = array(1, "admin_users.php", $admtext['search'], "finduser");
@@ -46,7 +46,7 @@ $menu = doMenu($usertabs, "review", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -67,7 +67,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
                     }
                     ?>
 
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>

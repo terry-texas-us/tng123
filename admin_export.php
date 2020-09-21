@@ -54,7 +54,7 @@ tng_adminheader($admtext['gedexport'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $datatabs[0] = array(1, "admin_dataimport.php", $admtext['import'], "import");

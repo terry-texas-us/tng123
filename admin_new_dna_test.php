@@ -27,7 +27,7 @@ tng_adminheader($admtext['addnewdna'], $flags);
 ?>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $dnatabs[0] = array(1, "admin_dna_tests.php", $admtext['search'], "findtest");
@@ -39,7 +39,7 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
 ?>
 
 <form action="admin_add_dna_test.php" method="post" name="form1" id="form1" onsubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <?php echo displayToggle("plus0", 1, "testinfo", $admtext['testinfo'], $admtext['uplsel']); ?>

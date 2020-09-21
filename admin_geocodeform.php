@@ -17,7 +17,7 @@ tng_adminheader($admtext['places'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $placetabs[0] = array(1, "admin_places.php", $admtext['search'], "findplace");
@@ -29,7 +29,7 @@ $menu = doMenu($placetabs, "geo", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "img/places_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <h3 class="subhead"><?php echo $admtext['geoexpl']; ?></h3>

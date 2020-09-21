@@ -159,8 +159,6 @@ function tng_header($title, $flags) {
     if ($tngprint) {
         echo "<link href=\"css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\">\n";
     }
-    echo "<!-- $tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright -->\n";
-
     $icons = "";
     if ($sitever == "mobile") {
         if (!isset($flags['nomobile']) || !$flags['nomobile']) {

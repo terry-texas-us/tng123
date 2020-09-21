@@ -136,7 +136,7 @@ tng_adminheader($admtext['sources'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $sourcetabs[0] = array(1, "admin_sources.php", $admtext['search'], "findsource");
@@ -147,7 +147,7 @@ $menu = doMenu($sourcetabs, "findsource", $innermenu);
 echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -207,7 +207,7 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                     }
                     ?>
 
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>

@@ -65,7 +65,7 @@ tng_adminheader($admtext['modifytree'], $flags);
     </script>
     </head>
 
-    <body background="img/background.gif">
+    <body class="admin-body">
 
     <?php
     $allow_add_tree = $assignedtree ? 0 : $allow_add;
@@ -77,7 +77,7 @@ tng_adminheader($admtext['modifytree'], $flags);
     echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['modifytree'], "img/trees_icon.gif", $menu, "");
     ?>
 
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <form action="admin_updatetree.php" method="post" name="form1" onSubmit="return validateForm();">

@@ -39,7 +39,7 @@ tng_adminheader($admtext['modifylanguage'], $flags);
     </script>
 <?php echo "</head>"; ?>
 
-    <body background="img/background.gif">
+    <body class="admin-body">
 
     <?php
     $langtabs[0] = array(1, "admin_languages.php", $admtext['search'], "findlang");
@@ -50,7 +50,7 @@ tng_adminheader($admtext['modifylanguage'], $flags);
     echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylanguage'], "img/languages_icon.gif", $menu, $message);
     ?>
 
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <form action="admin_updatelanguage.php" method="post" name="form1" onSubmit="return validateForm();">

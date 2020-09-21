@@ -69,7 +69,7 @@ include_once "eventlib_js.php";
 <script src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif" onload="generateID('person',document.form1.personID,document.form1.tree1);">
+<body class="admin-body" onload="generateID('person', document.form1.personID,document.form1.tree1);">
 
 <?php
 $peopletabs[0] = array(1, "admin_people.php", $admtext['search'], "findperson");
@@ -86,7 +86,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
 ?>
 
 <form action="admin_addperson.php" method="post" name="form1" onSubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table class="normal">

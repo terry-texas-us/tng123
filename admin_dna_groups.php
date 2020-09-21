@@ -105,7 +105,7 @@ tng_adminheader($admtext['dna_groups'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $dnatabs['0'] = array(1, "admin_dna_groups.php", $admtext['search'], "findgroup");
@@ -116,7 +116,7 @@ $menu = doMenu($dnatabs, "findgroup", $innermenu);
 echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -171,7 +171,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         <input type="submit" name="xdnagroupaction" value="<?php echo $admtext['deleteselected']; ?>"
                                onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                     </p>
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr class="fieldnameback fieldname nw" r>
                             <th><?php echo $admtext['action']; ?></th>
                             <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>

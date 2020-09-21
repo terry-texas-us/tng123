@@ -76,7 +76,7 @@ tng_adminheader($admtext['datamaint'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $allow_export = 1;
@@ -99,7 +99,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
 ?>
 
 <form action="admin_gedimport.php" target="results" name="form1" method="post" ENCTYPE="multipart/form-data" onsubmit="return checkFile(this);">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <div class="normal">

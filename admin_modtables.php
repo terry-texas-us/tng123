@@ -107,7 +107,7 @@ $headclass = $options['fix_header'] == YES && $sitever != 'mobile' ? 'mmhead-fix
 echo "
 <script type=\"text/javascript\" src=\"js/admin.js\"></script>
 </head>
-<body background=\"img/background.gif\">
+<body class=\"admin-body\">
 <div id=\"mmhead\" class=\"$headclass adminback\">
    $headline
 </div><!--head-section-->";

@@ -155,7 +155,7 @@ tng_adminheader($admtext['administration'], "");
 </script>
 </head>
 
-<body background="img/background.gif" class="mainback">
+<body class="admin-body" class="mainback">
 <table cellspacing="0" cellpadding="0" class="mainbox">
     <?php
     //no users?

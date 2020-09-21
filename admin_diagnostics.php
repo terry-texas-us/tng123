@@ -26,7 +26,7 @@ tng_adminheader($admtext['diagnostics'], $flags);
 ?>
     </head>
 
-    <body background="img/background.gif">
+    <body class="admin-body">
 
     <?php
     $setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");

@@ -121,7 +121,7 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
@@ -133,7 +133,7 @@ $menu = doMenu($setuptabs, "template", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['templateconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <form name="formtop1">

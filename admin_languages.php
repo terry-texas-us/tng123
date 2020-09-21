@@ -65,7 +65,7 @@ tng_adminheader($admtext['languages'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $langtabs['0'] = array(1, "admin_languages.php", $admtext['search'], "findlang");
@@ -75,7 +75,7 @@ $menu = doMenu($langtabs, "findlang", $innermenu);
 echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -100,7 +100,7 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
 
-                <table cellpadding="3" cellspacing="1" class="normal">
+                <table class="normal">
                     <tr>
                         <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                         <th class="fieldnameback fieldname"><?php echo $admtext['display']; ?></th>

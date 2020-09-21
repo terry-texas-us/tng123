@@ -141,7 +141,7 @@ if (file_exists("$rootpath$photoref")) {
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif" onLoad="startMediaSort()">
+<body class="admin-body" onLoad="startMediaSort()">
 
 <?php
 $mediatabs[0] = array(1, "admin_media.php", $admtext['search'], "findmedia");
@@ -156,7 +156,7 @@ $menu = doMenu($mediatabs, "sortmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br>
@@ -168,7 +168,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
             }
             echo "><a href=\"#\" onclick=\"return removeDefault();\">{$admtext['removedef']}</a></p>\n";
             ?>
-            <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
+            <table id="ordertbl" class="fieldname normal">
                 <tr>
                     <th class="fieldnameback" style="width:102px;"><?php echo $admtext['text_sort']; ?></th>
                     <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px;"><?php echo $admtext['thumb']; ?></th>

@@ -269,7 +269,7 @@ include_once "eventlib_js.php";
     <script src="js/admin.js"></script>
 <?php echo "</head>"; ?>
 
-    <body background="img/background.gif" onload="startSort()">
+    <body class="admin-body" onload="startSort()">
 
     <?php
     $peopletabs[0] = array(1, "admin_people.php", $admtext['search'], "findperson");

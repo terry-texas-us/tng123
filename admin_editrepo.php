@@ -58,7 +58,7 @@ include_once "eventlib_js.php";
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $repotabs[0] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
@@ -75,7 +75,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
 ?>
 
 <form action="admin_updaterepo.php" method="post" name="form1">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">

@@ -63,7 +63,7 @@ tng_adminheader($admtext['tlevents'], $flags);
 <script type="text/javascript" src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $timelinetabs[0] = array(1, "admin_timelineevents.php", $admtext['search'], "findtimeline");
@@ -73,7 +73,7 @@ $menu = doMenu($timelinetabs, "findtimeline", $innermenu);
 echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
@@ -108,7 +108,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                         <?php
                     }
                     ?>
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>

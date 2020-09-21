@@ -135,7 +135,7 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
 <script src="js/admin.js"></script>
 </head>
 
-<body background="img/background.gif" onload="startMediaSort()">
+<body class="admin-body" onload="startMediaSort()">
 
 <?php
 $albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
@@ -149,7 +149,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 ?>
 
 <form action="admin_updatealbum.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-    <table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+    <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <div>
@@ -220,7 +220,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     </p>
 
                     <p class="normal">&nbsp;<strong><?php echo $admtext['inclmedia']; ?>:</strong> <?php echo $admtext['emoptions']; ?></p>
-                    <table id="ordertbl" width="100%" cellpadding="3" cellspacing="1" class="fieldname normal">
+                    <table id="ordertbl" class="fieldname normal">
                         <tr>
                             <th class="fieldnameback" style="width:102px;"><?php echo $admtext['text_sort']; ?></th>
                             <th class="fieldnameback" style="width:<?php echo($thumbmaxw + 10); ?>px;"><?php echo $admtext['thumb']; ?></th>
@@ -344,7 +344,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     <div id="alink_error" style="display:none;" class="normal red"></div>
 
                     <p class="normal">&nbsp;<strong><?php echo $admtext['existlinks']; ?>:</strong> <?php echo $admtext['eloptions']; ?></p>
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tbody id="linktable">
                         <tr>
                             <th class="fieldnameback fieldname nw"><?php echo $admtext['action']; ?></th>

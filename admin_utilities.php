@@ -184,7 +184,7 @@ tng_adminheader($admtext['backuprestore'], $flags);
 </script>
 </head>
 
-<body background="img/background.gif">
+<body class="admin-body">
 
 <?php
 $utiltabs['0'] = array(1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables");
@@ -196,7 +196,7 @@ $headline = $sub == "tables" ? $admtext['backuprestore'] . " &gt;&gt; " . $admte
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback">
+<table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <?php
@@ -223,7 +223,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                             <input type="submit" name="go" value="<?php echo $admtext['go']; ?>">
                         </p>
 
-                        <table cellpadding="3" cellspacing="1" class="normal">
+                        <table class="normal">
                             <tr>
                                 <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
                                 <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
@@ -281,7 +281,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 
                 <h3 class="subhead"><?php echo $admtext['backupstruct']; ?></h3>
                 <div class="normal">
-                    <table cellpadding="3" cellspacing="1" class="normal">
+                    <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['lastbackup']; ?></span></th>
