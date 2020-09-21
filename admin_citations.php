@@ -69,7 +69,7 @@ $citationcount = tng_num_rows($citresult);
             </tr>
             </tbody>
         </table>
-        <div id="cites" width="460">
+        <div id="cites">
             <?php
             if ($citresult && $citationcount) {
                 while ($citation = tng_fetch_assoc($citresult)) {

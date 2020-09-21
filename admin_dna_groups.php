@@ -172,7 +172,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                                onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                     </p>
                     <table class="normal">
-                        <tr class="fieldnameback fieldname nw" r>
+                        <tr class="fieldnameback fieldname nw">
                             <th><?php echo $admtext['action']; ?></th>
                             <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <th><?php echo $admtext['groupid']; ?></th>
@@ -227,6 +227,6 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

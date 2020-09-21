@@ -142,6 +142,6 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

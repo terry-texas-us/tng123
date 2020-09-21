@@ -219,7 +219,7 @@ echo help_header("Nápověda: Testy DNA");
 
             <p><strong>Celkově sdílené cM</strong><br>
                 Toto je součet autosomální DNA, dané v centimorgans (cM), který vy a vaše genetická shoda sdílíte.<br>Viz <a
-                    href="https://dnapainter.com/tools/sharedcmv4" traget="_blank">The Shared cM Project Tool</a>, kde je více informací o
+                    href="https://dnapainter.com/tools/sharedcmv4" target="_blank">The Shared cM Project Tool</a>, kde je více informací o
                 pravděpodobnosti zpřízněnosti na základě počtu celkového počtu sdílených cM.</p>
 
             <p><strong>Sdílené segmenty</strong><br>

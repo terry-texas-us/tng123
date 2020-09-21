@@ -26,7 +26,7 @@ function tng_adminheader($title, $flags) {
     echo "<head>\n";
     echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
     echo "<meta charset=utf-8\">\n";
-    echo "<meta name=\"viewport\" width=\"device-width, initial-scale=1\">\n";
+    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
     echo "<meta name=\"robots\" content=\"noindex, nofollow\">\n";
     include "adminmeta.php";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";

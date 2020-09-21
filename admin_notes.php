@@ -59,7 +59,7 @@ $notecount = tng_num_rows($notelinks);
             </tr>
             </tbody>
         </table>
-        <div id="notes" width="460">
+        <div id="notes">
             <?php
             if ($notelinks && $notecount) {
 

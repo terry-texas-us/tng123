@@ -184,7 +184,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                     }
                     ?>
                     <table class="normal">
-                        <tr class="fieldnameback fieldname nw" r>
+                        <tr class="fieldnameback fieldname nw">
                             <th><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
                                 <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
@@ -248,6 +248,6 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

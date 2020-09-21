@@ -511,7 +511,7 @@ if (!empty($old)) {
     echo "<p><a href=\"admin_secondary.php?secaction={$admtext['tracklines']}&tree=$tree\">{$admtext['tracklines']}</a></p>";
     echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>\n";
     echo "</div></div>\n";
-    echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
+    echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
 }
 ?>
 </body>

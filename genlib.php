@@ -954,6 +954,7 @@ function tng_icons($instance, $title = "") {
         $sharemenu = "";
         if (!empty($tngconfig['showshare']) && $sitever != "mobile") {
             $sharemenu .= "<div id=\"shareicons\" style=\"display:none;\">\n";
+            // todo shareicons? use of undefined span attribute displaytext
             $sharemenu .= "<span class='st_facebook_hcount' displayText='Facebook'></span>\n";
             $sharemenu .= "<span class='st_twitter_hcount' displayText='Tweet'></span>\n";
             $sharemenu .= "<span class='st_pinterest_hcount' displayText='Pinterest'></span>\n";

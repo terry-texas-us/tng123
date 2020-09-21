@@ -275,6 +275,6 @@ if ($map['key']) {
         </table>
     </form>
 
-    <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
     </body>
 <?php echo "</html>\n";

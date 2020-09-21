@@ -196,6 +196,6 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
 
 </table>
 </div>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

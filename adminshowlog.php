@@ -17,13 +17,13 @@ if ($adminmaxloglines) {
 }
 
 tng_adminheader($admtext['adminlogfile'], "");
+echo "</head>";
 ?>
-</head>
 
-<body class="admin-body">
-<div width="100%" class="lightback">
-    <div style="padding:10px;" class="databack normal">
-        <p class="plainheader"><?php echo "$loglines " . $admtext['mostrecentactions']; ?></p>
+    <body class="admin-body">
+    <div class="lightback">
+        <div style="padding:10px;" class="databack normal">
+            <p class="plainheader"><?php echo "$loglines " . $admtext['mostrecentactions']; ?></p>
         <table class="normal">
             <tr>
                 <td class="fieldnameback fieldname"><?php echo $admtext['mostrecentactions']; ?></td>
@@ -36,9 +36,9 @@ tng_adminheader($admtext['adminlogfile'], "");
             }
             ?>
         </table>
+        </div>
     </div>
-</div>
 
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-</body>
-</html>
+    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+    </body>
+<?php echo "</html>"; ?>

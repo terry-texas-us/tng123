@@ -459,7 +459,9 @@ include_once "eventlib_js.php";
                             $checked = $row['burialtype'] == 1 ? " checked" : "";
                             echo "<tr>";
                             echo "<td></td>";
-                            echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                            echo "<td colspan=\"3\">";
+                            echo "<input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label>";
+                            echo "</td>";
                             echo "</tr>\n";
                             if ($rights['lds']) {
                                 echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -733,7 +735,7 @@ include_once "eventlib_js.php";
         </table>
     </form>
 
-    <?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
     </body>
 
 <?php echo "</html>"; ?>

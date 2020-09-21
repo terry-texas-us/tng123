@@ -220,7 +220,7 @@ echo $admtext['finishedimporting'] . "<br>$eventctr " . $admtext['eventtypes'];
         <?php
         echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>";
 
-        echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
+        echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
         ?>
 </body>
 </html>

@@ -546,7 +546,7 @@ if ($sitever != 'mobile' && $options['adjust_headers']) {
 }
 
 echo "
-<div align=\"right\">
+<div style=\"text-align: center;\">
    <span class='normal'>$tng_title, v.$tng_version</span>
 </div>
 </body>

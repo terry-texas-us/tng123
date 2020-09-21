@@ -346,7 +346,7 @@ echo "</form>\n";
 ?>
     <br style="clear: left;">
 
-    <div width="100%" style="overflow:auto;">
+    <div style="overflow:auto;">
         <table cellspacing="0" cellpadding="0">
             <tr>
                 <td align="center">

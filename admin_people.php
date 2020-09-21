@@ -407,6 +407,6 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
 </html>

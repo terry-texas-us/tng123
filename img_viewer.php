@@ -81,7 +81,7 @@ if ($maxh && ($height > $maxh)) {
 }
 $float = strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 7") > 0 ? " style=\"float:left\"" : "";
 ?>
-<div id="imgviewer" width="100%"<?php echo $float; ?>>
+<div id="imgviewer"<?php echo $float; ?>>
     <map name="imgMapViewer" id="imgMapViewer"><?php echo $imgrow['map']; ?></map>
     <?php
     // clean up the description

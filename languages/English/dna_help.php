@@ -252,7 +252,7 @@ echo help_header("Help: DNA Tests");
 
                 <p><strong>Total shared cMs</strong><br>
                     This is the sum of the autosomal DNA, given in centimorgans (cM), that you and your genetic match share.<br>See <a
-                        href="https://dnapainter.com/tools/sharedcmv4" traget="_blank">The Shared cM Project Tool</a> for the relationship
+                        href="https://dnapainter.com/tools/sharedcmv4" target="_blank">The Shared cM Project Tool</a> for the relationship
                     probabilities based on the total shared cMs.</p>
 
                 <p><strong>shared segments</strong><br>

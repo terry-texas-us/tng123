@@ -246,11 +246,12 @@ if ($lines) {
 }
 // Are any details left over from the very last log entry?
 if ($logEntryDetails) {
-    echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\"><td colspan=\"$nColumns\">$logEntryDetails</td></tr>\n";
+    echo "<tr class='databack mmpadleft moddetails' $hideDetails id=\"data$actionCount\">";
+    echo "<td colspan=\"$nColumns\">$logEntryDetails</td>";
+    echo "</tr>\n";
 }
 
-echo "
-	</table>";
+echo "</table>";
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
     global $admtext;
@@ -286,7 +287,7 @@ function set_innermenu_links($tng_version) {
     $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" id=\"collapseall\">{$text['collapseall']}</a>";
 
     //This section for View Log only to allow clearing the log
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_showmodslog.php?clearmmlog=true\" onclick=\"return confirm( '{$admtext['confirmclearlog']}')\"; class=\"lightlink\">{$admtext['clearlog']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_showmodslog.php?clearmmlog=true\" onclick=\"return confirm('{$admtext['confirmclearlog']}')\" class=\"lightlink\">{$admtext['clearlog']}</a>";
     $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
     $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
 
@@ -320,10 +321,9 @@ if ($sitever != 'mobile' && $options['adjust_headers']) {
 	});
 </script>";
 }
-echo "
-<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>
-</body>
-</html>";
+echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
+echo "</body>";
+echo "</html>";
 ?>
 <script>
     //qQeury document ready handler and embedded event handlers added by RR

@@ -193,9 +193,9 @@ class modlister extends modparser
             width=\"15\" height=\"8\" border=\"0\" alt=\"\">";
         } else {
             $namesort = "<a href=\"admin_modhandler.php?sort=" . self::NAMECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" eight=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
+            width=\"15\" height=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
             $filesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" eight=\"8\" border=\"0\" alt=\"\">";
+            width=\"15\" height=\"8\" border=\"0\" alt=\"\">";
         }
 
         /*******************************************************************
@@ -739,7 +739,7 @@ class modlister extends modparser
 		<td class=\"mmcell $dbclass\">
          <div class=\"mminner center checkpad\">
             <input class=\"sbox\" type=\"checkbox\" name=\"mods[$ix][selected]\" value='1'>
-            <input type='hidden' name=\"mods[$ix][file]\" value=\"$this->cfgfile\" target=\"_blank\">
+            <input type='hidden' name=\"mods[$ix][file]\" value=\"$this->cfgfile\">
          </div>
       </td>";
                 $ix++;

@@ -219,7 +219,7 @@ echo help_header("N�pov�da: Testy DNA");
 
             <p><strong>Celkov� sd�len� cM</strong><br>
                 Toto je sou�et autosom�ln� DNA, dan� v centimorgans (cM), kter� vy a va�e genetick� shoda sd�l�te.<br>Viz <a
-                    href="https://dnapainter.com/tools/sharedcmv4" traget="_blank">The Shared cM Project Tool</a>, kde je v�ce informac� o
+                    href="https://dnapainter.com/tools/sharedcmv4" target="_blank">The Shared cM Project Tool</a>, kde je v�ce informac� o
                 pravd�podobnosti zp��zn�nosti na z�klad� po�tu celkov�ho po�tu sd�len�ch cM.</p>
 
             <p><strong>Sd�len� segmenty</strong><br>

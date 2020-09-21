@@ -186,7 +186,7 @@ function deleteMedia2EntityLink(linkID) {
 }
 
 function editMedia2EntityLink(linkID) {
-    tnglitbox = new LITBox('admin_editmedialink.php?linkID=' + linkID + '&type=' + type, {width: 500, height: 380});
+    tnglitbox = new LITBox('admin_editmedialink.php?linkID=' + linkID + '&type=' + type, {width: 500, height: 430});
     return false;
 }
 

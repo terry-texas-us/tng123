@@ -116,7 +116,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
     </tr>
 
 </table>
-<?php echo "<div align=\"right\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 <script type="text/javascript" src="js/admin.js"></script>
 <script type="text/javascript" src="js/mediautils.js"></script>
 <script type="text/javascript">
