@@ -326,7 +326,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     ?>
                     <tr>
                         <td valign="top"><?php echo $admtext['notes']; ?>:</td>
-                        <td><textarea wrap cols="50" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
+                        <td><textarea cols="50" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
                     </tr>
                     <?php
                     if (!$assignedbranch) {

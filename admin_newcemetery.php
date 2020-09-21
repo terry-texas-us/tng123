@@ -215,7 +215,7 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                     ?>
                     <tr>
                         <td valign="top"><?php echo $admtext['notes']; ?>:</td>
-                        <td><textarea wrap cols="60" rows="8" name="notes"></textarea></td>
+                        <td><textarea cols="60" rows="8" name="notes"></textarea></td>
                     </tr>
                 </table>
                 <br>&nbsp;

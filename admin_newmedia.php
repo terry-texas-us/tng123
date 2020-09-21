@@ -140,7 +140,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                         <!-- history section -->
                         <tr id="bodytextrow">
                             <td valign="top"><span class="normal"><?php echo $admtext['bodytext']; ?>:</span></td>
-                            <td valign="top"><textarea wrap cols="100" rows="12" name="bodytext" id="bodytext"></textarea></td>
+                            <td valign="top"><textarea cols="100" rows="12" name="bodytext" id="bodytext"></textarea></td>
                         </tr>
 
                         <?php
@@ -221,11 +221,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                     <table class="normal">
                         <tr>
                             <td valign="top"><?php echo $admtext['title']; ?>:</td>
-                            <td><textarea wrap cols="70" rows="3" name="description"></textarea></td>
+                            <td><textarea cols="70" rows="3" name="description"></textarea></td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['description']; ?>:</td>
-                            <td><textarea wrap cols="70" rows="5" name="notes"></textarea></td>
+                            <td><textarea cols="70" rows="5" name="notes"></textarea></td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['photoowner']; ?>:</td>
@@ -282,7 +282,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                         </tr>
                         <tr id="hsplotrow">
                             <td valign="top"><?php echo $admtext['plot']; ?>:</td>
-                            <td><textarea wrap cols="70" rows="2" name="plot"></textarea></td>
+                            <td><textarea cols="70" rows="2" name="plot"></textarea></td>
                         </tr>
                         <tr id="hsstatrow">
                             <td><?php echo $admtext['status']; ?>:</td>

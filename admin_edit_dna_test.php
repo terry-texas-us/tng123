@@ -601,19 +601,19 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['notes']; ?>:</td>
-                            <td><textarea wrap cols="90" rows="10" name="notes"><?php echo $row['notes']; ?></textarea></td>
+                            <td><textarea cols="90" rows="10" name="notes"><?php echo $row['notes']; ?></textarea></td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['admin_notes']; ?>:</td>
-                            <td><textarea wrap cols="90" rows="10" name="admin_notes"><?php echo $row['admin_notes']; ?></textarea></td>
+                            <td><textarea cols="90" rows="10" name="admin_notes"><?php echo $row['admin_notes']; ?></textarea></td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['urls']; ?>:</td>
-                            <td><textarea wrap cols="90" rows="3" name="urls"><?php echo $row['urls']; ?></textarea></td>
+                            <td><textarea cols="90" rows="3" name="urls"><?php echo $row['urls']; ?></textarea></td>
                         </tr>
                         <tr>
                             <td valign="top"><?php echo $admtext['medialinks']; ?>:</td>
-                            <td><textarea wrap cols="90" rows="3" name="medialinks"><?php echo $row['medialinks']; ?></textarea></td>
+                            <td><textarea cols="90" rows="3" name="medialinks"><?php echo $row['medialinks']; ?></textarea></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>

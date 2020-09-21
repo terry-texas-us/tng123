@@ -239,7 +239,7 @@ if ($map['key']) {
                         <tr>
                             <td valign="top"><?php echo $admtext['notes']; ?>:</td>
                             <td>
-                                <textarea wrap cols="60" rows="8" name="notes"><?php echo $row['notes']; ?></textarea>
+                                <textarea cols="60" rows="8" name="notes"><?php echo $row['notes']; ?></textarea>
                             </td>
                         </tr>
                         <tr>

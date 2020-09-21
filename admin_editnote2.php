@@ -57,7 +57,7 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                 <table cellpadding="2" class="normal">
                     <tr>
                         <td valign="top"><?php echo $admtext['note']; ?>:</td>
-                        <td><textarea wrap cols="80" rows="30" name="note"><?php echo $row['note']; ?></textarea></td>
+                        <td><textarea cols="80" rows="30" name="note"><?php echo $row['note']; ?></textarea></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>

@@ -167,7 +167,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                     ?>
                     <tr>
                         <td valign="top"><?php echo $admtext['notes']; ?>:</td>
-                        <td><textarea wrap cols="50" rows="5" name="notes"></textarea></td>
+                        <td><textarea cols="50" rows="5" name="notes"></textarea></td>
                     </tr>
                 </table>
                 <br>&nbsp;
