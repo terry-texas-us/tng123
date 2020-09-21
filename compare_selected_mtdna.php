@@ -139,14 +139,15 @@ echo $header;
                     $databack = "databack";
                 }
 
-                echo "<tr><td valign=\"top\" class=\"$databack\">$i</td>\n";
+                echo "<tr>";
+                echo "<td class=\"$databack\">$i</td>\n";
                 if ($allow_edit || $showtestnumbers) {
                     if ($row['private_test']) {
                         $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
                     } else {
                         $privtest = "";
                     }
-                    echo "<td valign=\"top\" class=\"$databack\"><a href=\"$show_dna_test_url" . "group=$test_group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
+                    echo "<td class=\"$databack\"><a href=\"$show_dna_test_url" . "group=$test_group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
                 }
                 $dna_pers_result = getPersonData($row['gedcom'], $row['personID']);
                 $dprow = tng_fetch_assoc($dna_pers_result);
@@ -174,7 +175,7 @@ echo $header;
                     $dna_namestr = $admtext['text_private'];
                 }
                 tng_free_result($dna_pers_result);
-                echo "<td valign=\"top\" class=\"$databack\">$dna_namestr&nbsp;</td>";
+                echo "<td class=\"$databack\">$dna_namestr&nbsp;</td>";
 
                 $mtdna_haplogroup = "";
                 if ($row['mtdna_haplogroup']) {
@@ -184,7 +185,7 @@ echo $header;
                         $mtdna_haplogroup = "<span class='predicted_haplogroup'>" . $row['mtdna_haplogroup'] . "</span>";
                     }
                 }
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;$mtdna_haplogroup</td>";
+                echo "<td class=\"$databack\">&nbsp;$mtdna_haplogroup</td>";
                 $seq = $row['ref_seq'];
                 if ($seq == "rcrs") {
                     $seq = "rCRS";
@@ -192,12 +193,9 @@ echo $header;
                 if ($seq == "rsrs") {
                     $seq = "RSRS";
                 }
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;$seq</td>";
-
-                echo "<td valign=\"top\" class=\"$databack  nw\">&nbsp;{$row['hvr1_results']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack  nw\">&nbsp;{$row['hvr2_results']}</td>";
-
+                echo "<td class=\"$databack\">&nbsp;$seq</td>";
+                echo "<td class=\"$databack  nw\">&nbsp;{$row['hvr1_results']}</td>";
+                echo "<td class=\"$databack  nw\">&nbsp;{$row['hvr2_results']}</td>";
 
                 $mrcanc_namestr = "";
                 $anc_namestr = "";
@@ -232,12 +230,12 @@ echo $header;
                         }
                     }
                 }
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;$mrcanc_namestr</td>";
+                echo "<td class=\"$databack\">&nbsp;$mrcanc_namestr</td>";
 
                 $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
-                echo "<td valign=\"top\" class=\"$databack\">$group</td>";
+                echo "<td class=\"$databack\">$group</td>";
                 if (!$assignedtree && ($numtrees > 1)) {
-                    echo "<td valign=\"top\" class=\"$databack nw\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class=\"$databack nw\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
                 $i++;

@@ -137,8 +137,8 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                             }
                             echo "<td class='lightback' align=\"center\">{$row['evyear']}&nbsp;</td>\n";
                             echo "<td class='lightback' align=\"center\">{$row['endyear']}&nbsp;</td>";
-                            echo "<td class='lightback' valign=\"top\">{$row['evtitle']}&nbsp;</td>";
-                            echo "<td class='lightback' valign=\"top\">{$row['evdetail']}&nbsp;</td></tr>\n";
+                            echo "<td class='lightback'>{$row['evtitle']}&nbsp;</td>";
+                            echo "<td class='lightback'>{$row['evdetail']}&nbsp;</td></tr>\n";
                         }
                         ?>
                     </table>

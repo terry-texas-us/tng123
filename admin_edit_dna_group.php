@@ -64,11 +64,11 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['modifygro
             <form action="admin_update_dna_groups.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
                 <table class="normal">
                     <tr>
-                        <td valign="top"><?php echo $admtext['tree']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['tree']; ?>:</td>
                         <td><?php echo $treerow['treename']; ?></td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['groupid']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['groupid']; ?>:</td>
                         <td><?php echo $row['dna_group']; ?></td>
                     </tr>
                     <tr>
@@ -92,7 +92,7 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['modifygro
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                         <td>
                             <input type="text" name="description" size="60" value="<?php echo $row['description']; ?>">
                         </td>

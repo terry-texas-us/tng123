@@ -29,7 +29,7 @@ $title = getTemplateMessage('t2_maintitle');
     <div class="center">
         <table class="indexpage rounded10" style="padding:0;">
             <tr>
-                <td valign="top">
+                <td class='align-top'>
                     <div class="databack rounded10">
                         <div style="float:left;display:inline;">
                             <?php
@@ -83,7 +83,7 @@ $title = getTemplateMessage('t2_maintitle');
                                 <table cellspacing="4">
                                     <tr>
                                         <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top">
+                                        <td class='align-top'>
                                             <?php
                                             if ($currentuser) {
                                                 echo "<a href=\"logout.php\" class=\"sidelink\">" . strtoupper($text['mnulogout']) . "</a>\n";
@@ -93,71 +93,71 @@ $title = getTemplateMessage('t2_maintitle');
                                             ?>
                                         </td>
                                         <td>&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="whatsnew.php"
-                                                            class="sidelink"><?php echo $text['mnuwhatsnew']; ?></a></td>
+                                        <td class='align-top'><a href="whatsnew.php"
+                                                                 class="sidelink"><?php echo $text['mnuwhatsnew']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="statistics.php"
-                                                            class="sidelink"><?php echo $text['mnustatistics']; ?></a></td>
+                                        <td class='align-top'><a href="statistics.php"
+                                                                 class="sidelink"><?php echo $text['mnustatistics']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="anniversaries.php"
-                                                            class="sidelink"><?php echo $text['anniversaries']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td valign="top"><a href="browsemedia.php?mediatypeID=photos"
-                                                            class="sidelink"><?php echo $text['mnuphotos']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="browsemedia.php?mediatypeID=histories"
-                                                            class="sidelink"><?php echo $text['mnuhistories']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="cemeteries.php"
-                                                            class="sidelink"><?php echo $text['mnucemeteries']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="places.php"
-                                                            class="sidelink"><?php echo $text['places']; ?></a></td>
+                                        <td class='align-top'><a href="anniversaries.php"
+                                                                 class="sidelink"><?php echo $text['anniversaries']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><a href="browsemedia.php?mediatypeID=documents"
-                                                            class="sidelink"><?php echo $text['documents']; ?></a></td>
+                                        <td class='align-top'><a href="browsemedia.php?mediatypeID=photos"
+                                                                 class="sidelink"><?php echo $text['mnuphotos']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="browsemedia.php"
-                                                            class="sidelink"><?php echo $text['allmedia']; ?></a></td>
+                                        <td class='align-top'><a href="browsemedia.php?mediatypeID=histories"
+                                                                 class="sidelink"><?php echo $text['mnuhistories']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="browsemedia.php?mediatypeID=headstones"
-                                                            class="sidelink"><?php echo $text['mnutombstones']; ?></a></td>
+                                        <td class='align-top'><a href="cemeteries.php"
+                                                                 class="sidelink"><?php echo $text['mnucemeteries']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="browsealbums.php"
-                                                            class="sidelink"><?php echo $text['albums']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td valign="top"><a href="reports.php"
-                                                            class="sidelink"><?php echo $text['mnureports']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="browsesources.php"
-                                                            class="sidelink"><?php echo $text['mnusources']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="bookmarks.php"
-                                                            class="sidelink"><?php echo $text['bookmarks']; ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="suggest.php?page=<?php echo $title; ?>"
-                                                            class="sidelink"><?php echo $text['contactus']; ?></a></td>
+                                        <td class='align-top'><a href="places.php"
+                                                                 class="sidelink"><?php echo $text['places']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><a href="mostwanted.php"
-                                                            class="sidelink"><?php echo $text['mostwanted']; ?></a></td>
+                                        <td class='align-top'><a href="browsemedia.php?mediatypeID=documents"
+                                                                 class="sidelink"><?php echo $text['documents']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="browserepos.php"
-                                                            class="sidelink"><?php echo $text['repositories']; ?></a></td>
+                                        <td class='align-top'><a href="browsemedia.php"
+                                                                 class="sidelink"><?php echo $text['allmedia']; ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="showlog.php"
-                                                            class="sidelink"><?php if ($allow_admin) {
+                                        <td class='align-top'><a href="browsemedia.php?mediatypeID=headstones"
+                                                                 class="sidelink"><?php echo $text['mnutombstones']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class='align-top'><a href="browsealbums.php"
+                                                                 class="sidelink"><?php echo $text['albums']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='align-top'><a href="reports.php"
+                                                                 class="sidelink"><?php echo $text['mnureports']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class='align-top'><a href="browsesources.php"
+                                                                 class="sidelink"><?php echo $text['mnusources']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class='align-top'><a href="bookmarks.php"
+                                                                 class="sidelink"><?php echo $text['bookmarks']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class='align-top'><a href="suggest.php?page=<?php echo $title; ?>"
+                                                                 class="sidelink"><?php echo $text['contactus']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='align-top'><a href="mostwanted.php"
+                                                                 class="sidelink"><?php echo $text['mostwanted']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class='align-top'><a href="browserepos.php"
+                                                                 class="sidelink"><?php echo $text['repositories']; ?></a></td>
+                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class='align-top'><a href="showlog.php"
+                                                                 class="sidelink"><?php if ($allow_admin) {
                                                     echo $text['mnushowlog'];
                                                 } ?></a></td>
                                         <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td valign="top"><a href="admin.php" class="sidelink"><?php if ($allow_admin) {
+                                        <td class='align-top'><a href="admin.php" class="sidelink"><?php if ($allow_admin) {
                                                     echo $text['mnuadmin'];
                                                 } ?></a>&nbsp;
                                         </td>
@@ -167,8 +167,8 @@ $title = getTemplateMessage('t2_maintitle');
                                     if (!$currentuser && !$tngconfig['disallowreg']) {
                                         ?>
                                         <tr>
-                                            <td valign="top" colspan="4"><a href="newacctform.php"
-                                                                            class="sidelink"><?php echo $text['mnuregister']; ?></a></td>
+                                            <td class="align-top" colspan="4"><a href="newacctform.php"
+                                                                                 class="sidelink"><?php echo $text['mnuregister']; ?></a></td>
                                             <td>&nbsp;&nbsp;&nbsp;</td>
                                         </tr>
                                         <?php

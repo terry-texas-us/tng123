@@ -47,52 +47,52 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <form action="admin_updatelogconfig.php" method="post" name="form1">
                 <table>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['logfilename'] . " " . $admtext['text_public']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['logfilename'] . " " . $admtext['text_public']; ?>:</span></td>
                         <td>
                             <input type="text" value="<?php echo $logname; ?>" name="logname" size="20">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['maxloglines'] . " " . $admtext['text_public']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['maxloglines'] . " " . $admtext['text_public']; ?>:</span></td>
                         <td>
                             <input type="text" value="<?php echo $maxloglines; ?>" name="maxloglines" size="5">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['badhosts']; ?>*:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['badhosts']; ?>*:</span></td>
                         <td>
                             <input type="text" value="<?php echo $badhosts; ?>" name="badhosts" size="80">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['exusers']; ?>*:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['exusers']; ?>*:</span></td>
                         <td>
                             <input type="text" value="<?php echo $exusers; ?>" name="exusers" size="80">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['logfilename'] . " " . $admtext['admin']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['logfilename'] . " " . $admtext['admin']; ?>:</span></td>
                         <td>
                             <input type="text" value="<?php echo $adminlogfile; ?>" name="adminlogfile" size="20">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['maxloglines'] . " " . $admtext['admin']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['maxloglines'] . " " . $admtext['admin']; ?>:</span></td>
                         <td>
                             <input type="text" value="<?php echo $adminmaxloglines; ?>" name="adminmaxloglines" size="5">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><span class="normal"><br><?php echo $admtext['blockemail']; ?><br><br></span></td>
+                        <td class="align-top" colspan="2"><span class="normal"><br><?php echo $admtext['blockemail']; ?><br><br></span></td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['addrcontains']; ?>*:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['addrcontains']; ?>*:</span></td>
                         <td>
                             <input type="text" value="<?php echo $addr_exclude; ?>" name="addr_exclude" size="80">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['msgcontains']; ?>*:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['msgcontains']; ?>*:</span></td>
                         <td>
                             <input type="text" value="<?php echo $msg_exclude; ?>" name="msg_exclude" size="80">
                         </td>

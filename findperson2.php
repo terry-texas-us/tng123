@@ -39,7 +39,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
-            <td valign="top">
+            <td class='align-top'>
                 <form action="">
                     <input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindForm()">
                 </form>
@@ -85,7 +85,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             $jsnamestr = str_replace("&#34;", "&quot;", $namestr);
             $jsnamestr = preg_replace("/\"/", "&quot;", $namestr);
             echo "<tr>\n";
-            echo "<td valign=\"top\"><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">{$row['personID']}</a></span></td>\n";
+            echo "<td class='align-top'><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">{$row['personID']}</a></span></td>\n";
             echo "<td><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td>\n";
             echo "</tr>\n";
         }

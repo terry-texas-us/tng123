@@ -198,7 +198,7 @@ displayIndividual($personID, 1, $slot, 0);
 ?>
     <table cellspacing="0" cellpadding="0">
         <tr>
-            <td valign="top">
+            <td class='align-top'>
                 <h3 class="subhead"><?php echo "$col1fam {$text['side']}"; ?></h3>
                 <?php
                 for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {
@@ -210,7 +210,7 @@ displayIndividual($personID, 1, $slot, 0);
                 ?>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
-            <td valign="top">
+            <td class='align-top'>
                 <h3 class="subhead"><?php echo "$col2fam " . $text['side']; ?></h3>
                 <?php
                 for ($nextgen = 2; $nextgen <= $generations; $nextgen++) {

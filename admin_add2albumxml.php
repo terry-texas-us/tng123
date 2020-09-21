@@ -161,7 +161,7 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             }
             echo "</div>";
             echo "&nbsp;</td>";
-            echo "<td valign=\"top\" class='lightback' style=\"text-align:center;\" id=\"thumbcell_{$row['mediaID']}\">";
+            echo "<td class='lightback center' id=\"thumbcell_{$row['mediaID']}\">";
             if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                 $size = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);
                 echo "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\" target=\"_blank\"><img border=0 src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" $size[3]></a>\n";
@@ -171,9 +171,9 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             echo "</td>\n";
             $truncated = substr($row['notes'], 0, 90);
             $truncated = strlen($row['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['notes'];
-            echo "<td class='lightback normal' valign=\"top\" id=\"desc_{$row['mediaID']}\"><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated &nbsp;</td>";
-            echo "<td class='lightback normal' style=\"width:100px;\" valign=\"top\" id=\"date_{$row['mediaID']}\">{$row['datetaken']}&nbsp;</td>\n";
-            echo "<td class='lightback' valign=\"top\"><span class='normal' id=\"mtype_{$row['mediaID']}\">" . $label . "&nbsp;</span></td>\n";
+            echo "<td class='lightback normal' id=\"desc_{$row['mediaID']}\"><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated &nbsp;</td>";
+            echo "<td class='lightback normal' style=\"width:100px;\" id=\"date_{$row['mediaID']}\">{$row['datetaken']}&nbsp;</td>\n";
+            echo "<td class='lightback'><span class='normal' id=\"mtype_{$row['mediaID']}\">" . $label . "&nbsp;</span></td>\n";
             echo "</tr>\n";
         }
         ?>

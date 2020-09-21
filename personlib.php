@@ -120,7 +120,7 @@ function getCitations($persfamID, $shortcite = 1) {
                 } else {
                     $mediaoutput .= "<td></td>";
                 }
-                $mediaoutput .= "<td valign=\"top\">{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
+                $mediaoutput .= "<td class='align-top'>{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
                 $mediaoutput .= "</tr>\n";
             }
             $mediaoutput .= "</table>";
@@ -650,7 +650,7 @@ function showEvent($data) {
                 if ($cite) {
                     $cite = "&nbsp; [$cite]";
                 }
-                $output .= "<td valign=\"top\" colspan=\"2\" class='databack'>" . nl2br(insertLinks($data['fact'][$i])) . "$cite&nbsp;</td></tr>\n";
+                $output .= "<td class='databack' colspan=\"2\">" . nl2br(insertLinks($data['fact'][$i])) . "$cite&nbsp;</td></tr>\n";
                 $cite = "";
             }
         } else {
@@ -674,7 +674,7 @@ function showEvent($data) {
             if ($cite) {
                 $cite = "&nbsp; [$cite]";
             }
-            $output .= "<td valign=\"top\" colspan=\"2\" class='databack'>" . nl2br(insertLinks($data['fact'])) . "$cite&nbsp;</td></tr>\n";
+            $output .= "<td class='databack' colspan=\"2\">" . nl2br(insertLinks($data['fact'])) . "$cite&nbsp;</td></tr>\n";
             $cite = "";
         }
     }
@@ -684,7 +684,7 @@ function showEvent($data) {
             if ($output) {
                 $output .= "<tr class=\"t{$eventcounter}\"$toggle>\n";
             }
-            $output .= "<td valign=\"top\" colspan=\"2\" class='databack'>$notes</td>\n";
+            $output .= "<td class='databack' colspan=\"2\">$notes</td>\n";
             $output .= "</tr>\n";
         }
     }
@@ -716,17 +716,17 @@ function showEvent($data) {
                     $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle>\n";
                 }
                 if ($item['imgsrc']) {
-                    $mediaoutput .= "<td valign=\"top\" class='databack' align=\"center\">{$item['imgsrc']}</td>\n";
+                    $mediaoutput .= "<td class='databack' align=\"center\">{$item['imgsrc']}</td>\n";
                     $thumbcount++;
                 } else {
-                    $mediaoutput .= "<td valign=\"top\" class='databack'>&nbsp;</td>";
+                    $mediaoutput .= "<td class='databack'>&nbsp;</td>";
                 }
-                $mediaoutput .= "<td valign=\"top\" class='databack'>{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
+                $mediaoutput .= "<td class='databack'>{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
                 $mediaoutput .= "</tr>\n";
             }
         }
         if (!$thumbcount) {
-            $mediaoutput = str_replace("<td valign=\"top\" class='databack'>&nbsp;</td><td valign=\"top\" class='databack'>", "<td valign=\"top\" class='databack' colspan=\"2\">", $mediaoutput);
+            $mediaoutput = str_replace("<td class='databack'>&nbsp;</td><td class='databack'>", "<td class='databack' colspan=\"2\">", $mediaoutput);
         }
         if ($thumbdivs) {
             $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle><td class='databack' colspan=\"2\">$thumbdivs</td></tr>\n";
@@ -745,7 +745,7 @@ function showEvent($data) {
         }
         $class = $cellid ? " indleftcol" : "";
         $rowspan = $rows > 1 && !$data['collapse'] ? " rowspan=\"$rows\"" : "";
-        $preoutput = "<tr>\n<td valign=\"top\" class=\"fieldnameback$class lt{$eventcounter}\" $rowspan$cellid>$toggleicon<span class=\"fieldname\">{$data['text']}$editicon</span></td>\n";
+        $preoutput = "<tr>\n<td class=\"fieldnameback align-top$class lt{$eventcounter}\" $rowspan$cellid>$toggleicon<span class=\"fieldname\">{$data['text']}$editicon</span></td>\n";
         $final = $preoutput . $output;
     } else {
         $final = "";
@@ -793,7 +793,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
     } else {
 
         if ($data['date']) {
-            $output .= "<td valign=\"top\" class='databack'";
+            $output .= "<td class='databack'";
             if (!$data['place']) {
                 $output .= " colspan='2'";
             }
@@ -805,7 +805,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
             $output .= "&nbsp;</td>\n";
         }
         if ($data['place']) {
-            $output .= "<td valign=\"top\" class='databack'";
+            $output .= "<td class='databack'";
             if ($cite) {
                 $cite = "&nbsp; [$cite]";
             }
@@ -1037,21 +1037,21 @@ function writeAlbums($albums_array) {
                     $albumrows .= "<tr>";
                 }
                 if ($item['imgsrc']) {
-                    $albumrows .= "<td valign=\"top\" class='databack' align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
-                    $albumrows .= "<td valign=\"top\" class='databack'>";
+                    $albumrows .= "<td class='databack' align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
+                    $albumrows .= "<td class='databack'>";
                     $thumbcount++;
                 } else {
-                    $albumrows .= "<td valign=\"top\" class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td>";
-                    $albumrows .= "<td valign=\"top\" class='databack'>";
+                    $albumrows .= "<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td>";
+                    $albumrows .= "<td class='databack'>";
                 }
                 $albumrows .= "<span class='normal'>{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
                 $albumcount++;
             }
             $albumtext .= "<tr>\n";
-            $albumtext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\"$cellid rowspan=\"$totalalbums\"><span class=\"fieldname\">{$text['albums']}</span></td>\n";
+            $albumtext .= "<td class=\"fieldnameback indleftcol align-top\"$cellid rowspan=\"$totalalbums\"><span class=\"fieldname\">{$text['albums']}</span></td>\n";
 
             if (!$thumbcount) {
-                $albumrows = str_replace("/<td valign=\"top\" class='databack' style=\"width:$datewidth" . "px;\">&nbsp;<\/td><td valign=\"top\" class='databack'>/", "<td valign=\"top\" class='databack' colspan=\"2\">", $albumrows);
+                $albumrows = str_replace("/<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;<\/td><td class='databack'>/", "<td class='databack' colspan=\"2\">", $albumrows);
             }
             $albumtext .= $albumrows;
         }
@@ -1229,12 +1229,12 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                         $mediarows .= ">";
                     }
                     if ($item['imgsrc']) {
-                        $mediarows .= "<td valign=\"top\" class='databack' align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
-                        $mediarows .= "<td valign=\"top\" class='databack'>";
+                        $mediarows .= "<td class='databack' align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
+                        $mediarows .= "<td class='databack'>";
                         $thumbcount++;
                     } else {
-                        $mediarows .= "<td valign=\"top\" class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td>";
-                        $mediarows .= "<td valign=\"top\" class='databack'>";
+                        $mediarows .= "<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td>";
+                        $mediarows .= "<td class='databack'>";
                     }
                     $mediarows .= "<span class='normal'>{$item['name']}<br>" . nl2br($item['description']) . "</span></td></tr>\n";
                 }
@@ -1249,7 +1249,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             }
             $mediatext .= "<tr>\n";
             $toggleicon = $hidemedia ? "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"m{$prefix}{$mediatypeID}\" title=\"{$text['expand']}\"/>" : "";
-            $mediatext .= "<td valign=\"top\" class=\"fieldnameback indleftcol lm{$prefix}{$mediatypeID}\"$cellid";
+            $mediatext .= "<td class=\"fieldnameback indleftcol align-top lm{$prefix}{$mediatypeID}\"$cellid";
             if ($thumbdivs) {
                 $rows++;
             }
@@ -1260,7 +1260,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             $mediatext .= "<span class=\"fieldname\">$titlemsg</span></td>\n";
 
             if (!$thumbcount) {
-                $mediarows = str_replace("<td valign=\"top\" class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td><td valign=\"top\" class='databack'>", "<td valign=\"top\" class='databack' colspan=\"2\">", $mediarows);
+                $mediarows = str_replace("<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td><td class='databack'>", "<td class='databack' colspan=\"2\">", $mediarows);
             }
 
             $mediatext .= $countrow;

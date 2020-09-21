@@ -522,9 +522,9 @@ while ($row = tng_fetch_assoc($result)) {
     if ($row['nickname'] && ($row['allow_living'] || !$nonames) && ($row['allow_private'] || !$tngconfig['nnpriv'])) {
         $name .= " \"{$row['nickname']}\"";
     }
-    echo "<td class='databack' valign=\"top\">$i</td>\n";
+    echo "<td class='databack'>$i</td>\n";
     $i++;
-    echo "<td class='databack nw' valign=\"top\">";
+    echo "<td class='databack nw'>";
     if ($sitever != "mobile") {
         echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div></div>\n";
     }

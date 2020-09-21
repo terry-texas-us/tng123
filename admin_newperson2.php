@@ -57,7 +57,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     } ?> style="margin-top:10px;">
         <table cellpadding="2" class="normal">
             <tr>
-                <td valign="top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
+                <td class="align-top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>

@@ -279,7 +279,6 @@ a.footer:hover {
 
 /* additional styles added for XHTML 1.0 Strict validation */
 
-/* smallphoto defined to replace width="100" height="76" inside of <td width="160" align="center" valign="middle"> in topmenu for smallphoto.jpg */
 .smallphoto {
     margin: 2px 30px;
     border: 1px solid black;
@@ -292,7 +291,6 @@ a.footer:hover {
 }
 
 /* content to replace hard-coded style in index.php */
-/* bgcolor="#FAF4E6" valign="top" cellpadding="5" cellspacing="0" width="100%" */
 .content {
     background-color: #faf4e6;
     vertical-align: top;

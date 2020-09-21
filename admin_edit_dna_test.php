@@ -566,7 +566,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                             <td><span id="person_label"><?php echo $admtext['personid']; ?></span><span id="family_label"
                                                                                                         style="display:none;"><?php echo $admtext['familyid']; ?></span>:
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <input type="text" name="MRC_ancestorID" value="<?php echo $row['MRC_ancestorID']; ?>" id="MRC_ancestorID">
                                 &nbsp;<?php echo $mrcancestorname; ?></span>&nbsp;&nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                                 <a href="#"
@@ -593,26 +593,26 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                         }
                         ?>
                         <tr>
-                            <td valign="top"><?php echo $admtext['ancestral_surnames']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['ancestral_surnames']; ?>:</td>
                             <td><textarea cols="90" rows="10" name="surnames"><?php echo $ancestorstr; ?></textarea></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['notes']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                             <td><textarea cols="90" rows="10" name="notes"><?php echo $row['notes']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['admin_notes']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['admin_notes']; ?>:</td>
                             <td><textarea cols="90" rows="10" name="admin_notes"><?php echo $row['admin_notes']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['urls']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['urls']; ?>:</td>
                             <td><textarea cols="90" rows="3" name="urls"><?php echo $row['urls']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['medialinks']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['medialinks']; ?>:</td>
                             <td><textarea cols="90" rows="3" name="medialinks"><?php echo $row['medialinks']; ?></textarea></td>
                         </tr>
                         <tr>

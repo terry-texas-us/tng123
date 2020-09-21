@@ -26,7 +26,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <form action="" method="post" name="form1" id="form1" onSubmit="return addEvent(this);">
         <table cellpadding="2" class="normal">
             <tr>
-                <td valign="top"><span class="normal"><?php echo $admtext['eventtype']; ?>:</span></td>
+                <td class='align-top'><span class="normal"><?php echo $admtext['eventtype']; ?>:</span></td>
                 <td>
 			<span class="normal">
 			<select name="eventtypeID" id="eventtypeID">
@@ -64,7 +64,7 @@ foreach ($events as $event)
             </tr>
             <tr>
                 <td><?php echo $admtext['eventplace']; ?>:</td>
-                <td valign="top">
+                <td class='align-top'>
                     <input type="text" name="eventplace" id="eventplace" size="40"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                     <a href="#" onclick="return openFindPlaceForm('eventplace');">
                         <img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20">
@@ -72,7 +72,7 @@ foreach ($events as $event)
                 </td>
             </tr>
             <tr>
-                <td valign="top"><?php echo $admtext['detail']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['detail']; ?>:</td>
                 <td><textarea name="info" rows="4" cols="40"></textarea></td>
             </tr>
             <tr>

@@ -77,7 +77,7 @@ if (!isset($pedigree['vfontsize'])) {
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['usepopups']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['usepopups']; ?>:</td>
                             <td>
                                 <select name="usepopups">
                                     <option value="1"<?php if ($pedigree['usepopups'] == 1) {
@@ -105,19 +105,19 @@ if (!isset($pedigree['vfontsize'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['maxpedgens']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['maxpedgens']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['maxgen']; ?>" name="maxgen" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['initgens']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['initgens']; ?>:</td>
                             <td colspan="4">
                                 <input type="text" value="<?php echo $pedigree['initpedgens']; ?>" name="initpedgens" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['popupspouses']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['popupspouses']; ?>:</td>
                             <td>
                                 <input type="radio" name="popupspouses" value="1" <?php if ($pedigree['popupspouses']) {
                                     echo "checked";
@@ -127,7 +127,7 @@ if (!isset($pedigree['vfontsize'])) {
                                 } ?>> <?php echo $admtext['no']; ?></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['popupkids']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['popupkids']; ?>:</td>
                             <td>
                                 <input type="radio" name="popupkids" value="1" <?php if ($pedigree['popupkids']) {
                                     echo "checked";
@@ -137,7 +137,7 @@ if (!isset($pedigree['vfontsize'])) {
                                 } ?>> <?php echo $admtext['no']; ?></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['popupchartlinks']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['popupchartlinks']; ?>:</td>
                             <td>
                                 <input type="radio" name="popupchartlinks" value="1" <?php if ($pedigree['popupchartlinks']) {
                                     echo "checked";
@@ -147,7 +147,7 @@ if (!isset($pedigree['vfontsize'])) {
                                 } ?>> <?php echo $admtext['no']; ?></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['hideempty']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['hideempty']; ?>:</td>
                             <td>
                                 <input type="radio" name="hideempty" value="1" <?php if ($pedigree['hideempty']) {
                                     echo "checked";
@@ -157,19 +157,19 @@ if (!isset($pedigree['vfontsize'])) {
                                 } ?>> <?php echo $admtext['no']; ?></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['boxwidth']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['boxwidth']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['boxwidth']; ?>" name="boxwidth" size="10">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['boxheight']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['boxheight']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['boxheight']; ?>" name="boxheight" size="10">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['boxalign']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['boxalign']; ?>:</td>
                             <td>
                                 <select name="boxalign">
                                     <option value="center"<?php if ($pedigree['boxalign'] == "center") {
@@ -185,7 +185,7 @@ if (!isset($pedigree['vfontsize'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['boxheightshift']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['boxheightshift']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['boxheightshift']; ?>" name="boxheightshift" size="10">
                             </td>
@@ -195,25 +195,25 @@ if (!isset($pedigree['vfontsize'])) {
                     <p><strong><?php echo $admtext['vchart']; ?></strong></p>
                     <table class="normal">
                         <tr>
-                            <td valign="top"><?php echo $admtext['vboxwidth']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['vboxwidth']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['vwidth']; ?>" name="vwidth" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['vboxheight']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['vboxheight']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['vheight']; ?>" name="vheight" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['vspacing']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['vspacing']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['vspacing']; ?>" name="vspacing" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['boxnamesize']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['boxnamesize']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $pedigree['vfontsize']; ?>" name="vfontsize" size="5">
                             </td>
@@ -234,7 +234,7 @@ if (!isset($pedigree['vfontsize'])) {
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['usepopups']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['usepopups']; ?>:</span></td>
                             <td>
                                 <select name="defdesc">
                                     <option value="2"<?php if ($pedigree['defdesc'] == 2) {
@@ -253,19 +253,19 @@ if (!isset($pedigree['vfontsize'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['maxpedgens']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['maxpedgens']; ?>:</span></td>
                             <td colspan="4">
                                 <input type="text" value="<?php echo $pedigree['maxdesc']; ?>" name="maxdesc" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['initgens']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['initgens']; ?>:</span></td>
                             <td colspan="4">
                                 <input type="text" value="<?php echo $pedigree['initdescgens']; ?>" name="initdescgens" size="5">
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['stdesc']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['stdesc']; ?>:</span></td>
                             <td>
                                 <select name="stdesc">
                                     <option value="0"<?php if (!$pedigree['stdesc']) {
@@ -278,7 +278,7 @@ if (!isset($pedigree['vfontsize'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['regnotes']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['regnotes']; ?>:</span></td>
                             <td>
                                 <select name="regnotes">
                                     <option value="0"<?php if (!$pedigree['regnotes']) {
@@ -291,7 +291,7 @@ if (!isset($pedigree['vfontsize'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['regnosp']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['regnosp']; ?>:</span></td>
                             <td>
                                 <select name="regnosp">
                                     <option value="0"<?php if (!$pedigree['regnosp']) {
@@ -409,7 +409,7 @@ if (!isset($pedigree['vfontsize'])) {
                             <td colspan="3">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <table class="normal">
                                     <tr>
                                         <td><?php echo $admtext['leftindent']; ?>:</td>
@@ -509,41 +509,41 @@ if (!isset($pedigree['vfontsize'])) {
                                 </table>
                             </td>
                             <td width="20">&nbsp;</td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <table>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['linewidth']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['linewidth']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['linewidth']; ?>" name="linewidth" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['borderwidth']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['borderwidth']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['borderwidth']; ?>" name="borderwidth" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['popupcolor']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['popupcolor']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['popupcolor']; ?>" name="popupcolor" id="popupcolor" size="8">
                                             <A HREF="#" onClick="cp.select(document.form1.popupcolor,'pick5');return false;" NAME="pick5"
                                                ID="pick5"><img src="img/tng_colorpicker.gif" alt="" width="19" height="17"></A></td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['popupinfosize']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['popupinfosize']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['popupinfosize']; ?>" name="popupinfosize" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['popuptimer']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['popuptimer']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['popuptimer']; ?>" name="popuptimer" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['pedevent']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['pedevent']; ?>:</span></td>
                                         <td>
                                             <select name="pedevent">
                                                 <option value="down"<?php if ($pedigree['event'] == "down") {
@@ -556,19 +556,19 @@ if (!isset($pedigree['vfontsize'])) {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['puboxwidth']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['puboxwidth']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['puboxwidth']; ?>" name="puboxwidth" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['puboxheight']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['puboxheight']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['puboxheight']; ?>" name="puboxheight" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['puboxalign']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['puboxalign']; ?>:</span></td>
                                         <td>
                                             <select name="puboxalign">
                                                 <option value="center"<?php if ($pedigree['puboxalign'] == "center") {
@@ -584,13 +584,13 @@ if (!isset($pedigree['vfontsize'])) {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['puboxheightshift']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['puboxheightshift']; ?>:</span></td>
                                         <td>
                                             <input type="text" value="<?php echo $pedigree['puboxheightshift']; ?>" name="puboxheightshift" size="10">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top"><span class="normal"><?php echo $admtext['inclphotos']; ?>:</span></td>
+                                        <td class='align-top'><span class="normal"><?php echo $admtext['inclphotos']; ?>:</span></td>
                                         <td><span class="normal"><input type="radio" name="inclphotos" value="1" <?php if ($pedigree['popupchartlinks']) {
                                                     echo "checked";
                                                 } ?>> <?php echo $admtext['yes']; ?> <input type="radio" name="inclphotos" value="0" <?php if (!$pedigree['inclphotos']) {

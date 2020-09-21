@@ -65,7 +65,7 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
     <p><span class="normal"><?php echo $newstr; ?></span></p>
     <table class="normal">
         <tr>
-            <td valign="top">
+            <td class='align-top'>
                 <table>
                     <tr>
                         <td><span class="normal"><strong><?php echo $text['person1']; ?> </strong></span></td>
@@ -117,12 +117,12 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                     </tr>
                 </table>
             </td>
-            <td valign="top">
+            <td class='align-top'>
                 <div class="searchsidebar">
                     <table>
                         <tr>
                             <td><?php echo $text['maxrels']; ?>:</td>
-                            <td valign="bottom">
+                            <td class="align-bottom">
                                 <select name="maxrels">
                                     <?php
                                     $initrels = $pedigree['initrels'] ? $pedigree['initrels'] : 1;
@@ -144,7 +144,7 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                         </tr>
                         <tr>
                             <td><?php echo $text['dospouses']; ?>:&nbsp;</td>
-                            <td valign="bottom">
+                            <td class="align-bottom">
                                 <select name="disallowspouses">
                                     <?php
                                     $dospouses = $dospouses ? $dospouses : 1;
@@ -167,7 +167,7 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                         </tr>
                         <tr>
                             <td><?php echo $text['gencheck']; ?>:</td>
-                            <td valign="bottom">
+                            <td class="align-bottom">
                                 <select name="generations">
                                     <?php
                                     $dogens = $dogens ? $dogens : $pedigree['maxupgen'];

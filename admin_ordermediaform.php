@@ -87,7 +87,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         <td class="normal" colspan="3"><?php echo $admtext['id']; ?></td>
                     </tr>
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <select name="tree1">
                                 <?php
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
@@ -102,7 +102,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                                 ?>
                             </select>
                         </td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <select name="linktype1" onchange="toggleEventLink(this.selectedIndex);">
                                 <option value="I"><?php echo $admtext['person']; ?></option>
                                 <option value="F"><?php echo $admtext['family']; ?></option>
@@ -111,7 +111,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                                 <option value="L"><?php echo $admtext['place']; ?></option>
                             </select>
                         </td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <select name="mediatypeID">
                                 <?php
                                 foreach ($mediatypes as $mediatype) {
@@ -143,7 +143,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                                 <option value=""></option>
                             </select>
                         </td>
-                        <td class="normal" valign="top">&nbsp;</td>
+                        <td class="normal align-top">&nbsp;</td>
                     </tr>
                 </table>
 

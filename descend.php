@@ -185,7 +185,7 @@ function getParents($personID) {
             } else {
                 $extra = "<br>" . getGenderIcon("M", $pedigree['gendalign']) . " " . justYears($husband);
             }
-            $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['husband']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class='normal'>{$husband['name']}</span></a>{$extra}</td></tr>\n";
+            $parentinfo .= "<tr><td class='align-top'><a href=\"$descend_url" . "personID={$parents['husband']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class='normal'>{$husband['name']}</span></a>{$extra}</td></tr>\n";
             tng_free_result($presult);
         }
         if ($parents['wife']) {
@@ -201,7 +201,7 @@ function getParents($personID) {
             } else {
                 $extra = "<br>" . getGenderIcon("F", $pedigree['gendalign']) . " " . justYears($wife);
             }
-            $parentinfo .= "<tr><td valign=\"top\"><a href=\"$descend_url" . "personID={$parents['wife']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class='normal'>{$wife['name']}</span></a>{$extra}</td></tr>\n";
+            $parentinfo .= "<tr><td class='align-top'><a href=\"$descend_url" . "personID={$parents['wife']}&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">{$pedigree['leftarrowlink']}<span class='normal'>{$wife['name']}</span></a>{$extra}</td></tr>\n";
             tng_free_result($presult);
         }
     }
@@ -623,22 +623,22 @@ function getVitalDates($row) {
         $bd = $bp = $birthabbr = $dd = $dp = $deathabbr = $md = $mp = $marrabbr = "";
     }
     if ($bd) {
-        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal\" align=\"right\" valign=\"top\">$birthabbr</td>\n";
-        $vitalinfo .= "<td class=\"pboxpopup normal\" valign=\"top\">" . displayDate($bd) . "</td></tr>\n";
+        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal align-top\" align=\"right\">$birthabbr</td>\n";
+        $vitalinfo .= "<td class=\"pboxpopup normal align-top\">" . displayDate($bd) . "</td></tr>\n";
         $birthabbr = "&nbsp;";
     }
     if ($bp) {
-        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal\" align=\"right\" valign=\"top\">$birthabbr</td>\n";
-        $vitalinfo .= "<td class=\"pboxpopup normal\" valign=\"top\">$bp</td></tr>\n";
+        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal align-top\" align=\"right\">$birthabbr</td>\n";
+        $vitalinfo .= "<td class=\"pboxpopup normal align-top\">$bp</td></tr>\n";
     }
     if ($dd) {
-        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal\" align=\"right\" valign=\"top\">$deathabbr</td>\n";
-        $vitalinfo .= "<td class=\"pboxpopup normal\" valign=\"top\">" . displayDate($dd) . "</td></tr>\n";
+        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal align-top\" align=\"right\">$deathabbr</td>\n";
+        $vitalinfo .= "<td class=\"pboxpopup normal align-top\">" . displayDate($dd) . "</td></tr>\n";
         $deathabbr = "&nbsp;";
     }
     if ($dp) {
-        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal\" align=\"right\" valign=\"top\">$deathabbr</td>\n";
-        $vitalinfo .= "<td class=\"pboxpopup normal\" valign=\"top\">$dp</td></tr>\n";
+        $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal align-top\" align=\"right\">$deathabbr</td>\n";
+        $vitalinfo .= "<td class=\"pboxpopup normal align-top\">$dp</td></tr>\n";
     }
     if ($vitalinfo) {
         $vitalinfo = "<tr>\n<td class=\"pboxpopup normal\" colspan=\"2\"><strong>" . $row['name'] . "</strong></td></tr>\n" . $vitalinfo;

@@ -104,7 +104,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="abspath" value="1" onClick="toggleMediaURL();">
                                 <span class="normal"> <?php echo $admtext['abspath']; ?></span>
                             </td>
@@ -131,7 +131,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             </td>
                         </tr>
                         <tr id="abspathrow" style="display:none;">
-                            <td valign="top"><span class="normal"><?php echo $admtext['mediaurl']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['mediaurl']; ?>:</span></td>
                             <td>
                                 <input type="text" name="mediaurl" size="60">
                             </td>
@@ -139,16 +139,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
 
                         <!-- history section -->
                         <tr id="bodytextrow">
-                            <td valign="top"><span class="normal"><?php echo $admtext['bodytext']; ?>:</span></td>
-                            <td valign="top"><textarea cols="100" rows="12" name="bodytext" id="bodytext"></textarea></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['bodytext']; ?>:</span></td>
+                            <td class='align-top'><textarea cols="100" rows="12" name="bodytext" id="bodytext"></textarea></td>
                         </tr>
 
                         <?php
                         if (function_exists("imageJpeg")) {
                             ?>
                             <tr>
-                                <td valign="top"><span class="normal"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
-                                <td valign="top"><span class="normal"><br>
+                                <td class='align-top'><span class="normal"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
+                                <td class='align-top'><span class="normal"><br>
 			<input type="radio" name="thumbcreate" value="specify" checked
                    onClick="document.form1.newthumb.style.visibility='visible'; document.form1.thumbselect.style.visibility='visible';"> <?php echo $admtext['specifyimg']; ?> &nbsp;
 			<input type="radio" name="thumbcreate" value="auto"
@@ -183,20 +183,20 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal"><strong><br><?php echo $admtext['put_in']; ?></strong></span></td>
-                            <td valign="top"><span class="normal"><br>
+                            <td class='align-top'><span class="normal"><strong><br><?php echo $admtext['put_in']; ?></strong></span></td>
+                            <td class='align-top'><span class="normal"><br>
 			<input type="radio" name="usecollfolder" value="0"> <?php echo $admtext['usemedia']; ?> &nbsp;
 			<input type="radio" name="usecollfolder" value="1" checked> <?php echo $admtext['usecollect']; ?></span>
                             </td>
                         </tr>
                         <tr id="vidrow1">
-                            <td valign="top"><span class="normal"><?php echo $admtext['width']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['width']; ?>:</span></td>
                             <td>
                                 <input type="text" name="width" size="40">
                             </td>
                         </tr>
                         <tr id="vidrow2">
-                            <td valign="top"><span class="normal"><?php echo $admtext['height']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['height']; ?>:</span></td>
                             <td>
                                 <input type="text" name="height" size="40">
                                 <span class="normal"> (<?php echo $admtext['controller']; ?>)</span></td>
@@ -220,11 +220,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                     <br>
                     <table class="normal">
                         <tr>
-                            <td valign="top"><?php echo $admtext['title']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['title']; ?>:</td>
                             <td><textarea cols="70" rows="3" name="description"></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                             <td><textarea cols="70" rows="5" name="notes"></textarea></td>
                         </tr>
                         <tr>
@@ -281,7 +281,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             </td>
                         </tr>
                         <tr id="hsplotrow">
-                            <td valign="top"><?php echo $admtext['plot']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['plot']; ?>:</td>
                             <td><textarea cols="70" rows="2" name="plot"></textarea></td>
                         </tr>
                         <tr id="hsstatrow">
@@ -299,23 +299,23 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                         </tr>
 
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="alwayson" value="1"> <?php echo $admtext['alwayson']; ?></td>
                         </tr>
 
                         <!-- history section -->
                         <tr id="newwinrow">
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="newwindow" value="1"> <?php echo $admtext['newwin']; ?></td>
                         </tr>
 
                         <!-- headstone section -->
                         <tr id="linktocemrow">
-                            <td colspan="2" valign="top">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="linktocem" value="1"> <?php echo $admtext['linktocem']; ?></td>
                         </tr>
                         <tr id="maprow">
-                            <td colspan="2" valign="top">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="showmap" value="1"> <?php echo $admtext['showmap']; ?></td>
                         </tr>
 

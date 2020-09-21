@@ -51,12 +51,12 @@ function doRow($field, $textmsg, $boxname) {
 
     if ($s1field || $s2field) {
         echo "<tr>\n";
-        echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-        echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>$s1field&nbsp;</span></td>";
+        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
+        echo "<td width=\"31%\" class='lightback'><span class='normal'>$s1field&nbsp;</span></td>";
         if (is_array($s2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td valign=\"top\" width=\"5\" class='lightback'><span class='normal'>";
+            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td width=\"5\" class='lightback'><span class='normal'>";
             if ($boxname) {
                 if ($s2field) {
                     echo "<input type=\"checkbox\" name=\"$boxname\" value=\"$field\"";
@@ -69,12 +69,12 @@ function doRow($field, $textmsg, $boxname) {
                 echo "&nbsp;";
             }
             echo "</span></td>";
-            echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>$s2field&nbsp;</span></td>";
+            echo "<td class='lightback' width=\"31%\"><span class='normal'>$s2field&nbsp;</span></td>";
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td valign=\"top\" width=\"15%\" class=\"fieldnameback\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td valign=\"top\" width=\"5\" class='lightback'><span class='normal'>&nbsp;</span></td>";
-            echo "<td valign=\"top\" width=\"31%\" class='lightback'><span class='normal'>&nbsp;</span></td>";
+            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td class='lightback' width=\"5\"><span class='normal'>&nbsp;</span></td>";
+            echo "<td class='lightback' width=\"31%\"><span class='normal'>&nbsp;</span></td>";
         }
         echo "</tr>\n";
     }
@@ -466,7 +466,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
 				</span>
                             </td>
                             <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td valign="top">
+                            <td class='align-top'>
 				<span class="normal">
 				<input type="checkbox" name="cignoreblanks" value="yes"<?php if ($cignoreblanks == "yes") {
                     echo " checked";

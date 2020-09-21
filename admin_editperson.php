@@ -296,7 +296,7 @@ include_once "eventlib_js.php";
                 <td class="tngshadow">
                     <table cellpadding="0" cellspacing="0" class="normal">
                         <tr>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                                     echo "display:none";
                                 } ?>"><?php echo $photo; ?></div>
@@ -480,7 +480,7 @@ include_once "eventlib_js.php";
                                         <input type="button" value="  <?php echo $admtext['addnew'] ?>  " onclick="newEvent('I', '<?php echo $personID ?>', '<?php echo $tree ?>');">
                                     </p>
                                 </td>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <?php showCustEvents($personID); ?>
                                 </td>
                             </tr>
@@ -515,8 +515,8 @@ include_once "eventlib_js.php";
                         echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkChild('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
                         echo "<table class='normal'>";
                         echo "<tr>";
-                        echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
-                        echo "<td valign=\"top\" colspan=\"4\">\n";
+                        echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
+                        echo "<td class='align-top' colspan=\"4\">\n";
                         echo "<a href=\"admin_editfamily.php?familyID={$parent['familyID']}&amp;tree=$tree&amp;cw=$cw\">{$parent['familyID']}</a>\n";
                         echo "</td>";
                         echo "</tr>";
@@ -538,7 +538,7 @@ include_once "eventlib_js.php";
                             echo "<td colspan=\"2\">&nbsp;</td>";
                             echo "</tr>\n";
                             echo "<tr>\n";
-                            echo "<td valign=\"top\" class=\"nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
+                            echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
                             echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
                             echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
                             echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "',1);\" title=\"{$admtext['find']}\" class=\"smallicon admin-temp-icon\"></a></td>\n";
@@ -601,8 +601,8 @@ include_once "eventlib_js.php";
                     echo "<td class='lightback normal'>\n";
                     echo "<table class='normal' width=\"100%\">";
                     echo "<tr>";
-                    echo "<td valign=\"top\"><strong>{$admtext['family']}:</strong></td>\n";
-                    echo "<td valign=\"top\" width=\"94%\">\n";
+                    echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
+                    echo "<td class='align-top' width=\"94%\">\n";
                     echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\">";
                     echo "<a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a>";
                     echo "</div>\n";
@@ -620,15 +620,15 @@ include_once "eventlib_js.php";
                     }
                     ?>
         <tr>
-            <td valign="top"><span class="normal"><?php echo $admtext['spouse']; ?>:</span></td>
-            <td valign="top"><span class="normal"><?php if (isset($spouserow['personID']) && $spouserow['personID']) {
+            <td class='align-top'><span class="normal"><?php echo $admtext['spouse']; ?>:</span></td>
+            <td class='align-top'><span class="normal"><?php if (isset($spouserow['personID']) && $spouserow['personID']) {
                         echo "<a href=\"admin_editperson.php?personID={$spouserow['personID']}&amp;tree=$tree&amp;cw=$cw\">" . getName($spouserow) . " - {$spouserow['personID']}</a>$birthinfo";
                     } ?></span></td>
         </tr>
     <?php if (!empty($marriagerow['marrdate']) || !empty($marriagerow['marrplace'])) { ?>
         <tr>
-            <td valign="top"><span class="normal"><?php echo $admtext['married']; ?>:</span></td>
-            <td valign="top"><span class="normal"><?php echo displayDate($marriagerow['marrdate']); ?></span></td>
+            <td class='align-top'><span class="normal"><?php echo $admtext['married']; ?>:</span></td>
+            <td class='align-top'><span class="normal"><?php echo displayDate($marriagerow['marrdate']); ?></span></td>
         </tr>
         <?php
     }
@@ -642,8 +642,8 @@ include_once "eventlib_js.php";
     if ($children && tng_num_rows($children)) {
         ?>
         <tr>
-            <td valign="top"><span class="normal"><?php echo $admtext['children']; ?>:</span></td>
-            <td valign="top">
+            <td class='align-top'><span class="normal"><?php echo $admtext['children']; ?>:</span></td>
+            <td class='align-top'>
                 <?php
                 $kidcount = 1;
                 echo "<table cellpadding = \"0\" cellspacing = \"0\">\n";

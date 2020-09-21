@@ -88,7 +88,7 @@ include_once "eventlib.php";
                 </div>
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                                 echo "display:none";
                             } ?>"><?php echo $photo; ?></div>
@@ -290,7 +290,7 @@ include_once "eventlib.php";
                                 <td colspan="7">&nbsp;</td>
                             </tr>
                             <tr>
-                                <td valign="top"><?php echo $admtext['otherevents']; ?>:</td>
+                                <td class='align-top'><?php echo $admtext['otherevents']; ?>:</td>
                                 <td colspan="6">
                                     <?php
                                     echo "<input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('F','$familyID','$tree');\">&nbsp;\n";

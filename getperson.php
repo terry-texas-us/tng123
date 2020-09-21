@@ -262,8 +262,8 @@ if ($notestogether == 1) {
 
     if ($notes) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td valign=\"top\" class=\"fieldnameback\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-        $persontext .= "<td valign=\"top\" class='databack' colspan=\"2\"><div class=\"notearea\">$notes</div></td>\n";
+        $persontext .= "<td class=\"fieldnameback align-top\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan=\"2\"><div class=\"notearea\">$notes</div></td>\n";
         $persontext .= "</tr>\n";
         $notes = ""; //wipe it out so we don't get a link at the top
     }
@@ -427,8 +427,8 @@ if ($parents && tng_num_rows($parents)) {
 
                     if ($famnotes2) {
                         $persontext .= "<tr>\n";
-                        $persontext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-                        $persontext .= "<td valign=\"top\" class='databack' colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
+                        $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
+                        $persontext .= "<td class='databack' colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
                         $persontext .= "</tr>\n";
                     }
 
@@ -549,8 +549,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
         if ($famnotes2) {
             $persontext .= "<tr>\n";
-            $persontext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-            $persontext .= "<td valign=\"top\" class='databack' colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
+            $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
+            $persontext .= "<td class='databack' colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
             $persontext .= "</tr>\n";
         }
     }
@@ -561,8 +561,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">{$text['children']}&nbsp;</span></td>\n";
-        $persontext .= "<td colspan=\"2\" class='databack'>\n";
+        $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan=\"2\">\n";
 
         $kidcount = 1;
         $persontext .= "<table cellpadding = \"0\" cellspacing = \"0\" style=\"width:100%;\">\n";
@@ -577,7 +577,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             if ($child['firstname'] || $child['lastname']) {
                 $childname = getName($child);
                 $persontext .= "<tr>";
-                $persontext .= "<td valign=\"top\" width=\"10\">$ifkids</td>";
+                $persontext .= "<td class='align-top' width=\"10\">$ifkids</td>";
                 $persontext .= "<td onmouseover=\"highlightChild(1,'$childID');\" onmouseout=\"highlightChild(0,'$childID');\" class=\"unhighlightedchild\" id=\"child$childID\"><span class='normal'>$kidcount. <a href=\"$getperson_url" . "personID=$childID&amp;tree=$tree\">$childname</a>";
                 if ($crights['both']) {
                     $persontext .= $birthinfo;
@@ -639,7 +639,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= beginSection("eventmap");
     $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $persontext .= "<col class=\"labelcol\"/><col class=\"mapcol\"/><col />\n";
-    $persontext .= "<tr valign=\"top\"><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class=\"fieldname\">{$text['gmapevent']}</span></td>\n";
+    $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class=\"fieldname\">{$text['gmapevent']}</span></td>\n";
     $persontext .= "<td class='databack'>\n";
     $persontext .= "<div id=\"map\" class=\"rounded10\" style=\"width: {$map['indw']}; height: {$map['indh']};\">";
     if ($map['pstartoff']) {
@@ -678,7 +678,8 @@ if ($map['key'] && $locations2map) {
         $description = is_array($val['description']) ? implode(",", $val['description']) : $val['description'];
         $balloondesc = str_replace("\n", " ", $description);
         if ($place) {
-            $persontext .= "<tr valign=\"top\"><td class='databack'>";
+            $persontext .= "<tr class='align-top'>";
+            $persontext .= "<td class='databack'>";
             if ($lat && $long) {
                 $directionplace = @htmlspecialchars(stri_replace($banish, $banreplace, $place), ENT_QUOTES, $session_charset);
                 $directionballoontext = @htmlspecialchars(stri_replace($banish, $banreplace, $place), ENT_QUOTES, $session_charset);
@@ -720,7 +721,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
-        $persontext .= "<tr valign=\"top\"><td class=\"fieldnameback\"><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
+        $persontext .= "<tr class='align-top'><td class=\"fieldnameback\"><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
         $persontext .= "<td colspan=\"2\" class='databack'><span class=\"smaller\">";
         for ($i = 1; $i < 7; $i++)
             $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
@@ -753,8 +754,8 @@ if ($notestogether != 1) {
         $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
         $persontext .= "<col class=\"labelcol\"/><col />\n";
         $persontext .= "<tr>\n";
-        $persontext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-        $persontext .= "<td valign=\"top\" class='databack'>$notes</td>\n";
+        $persontext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack'>$notes</td>\n";
         $persontext .= "</tr>\n";
         $persontext .= "</table>\n";
         $persontext .= "<br>\n";
@@ -767,8 +768,8 @@ if ($citedispctr) {
     $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $persontext .= "<col class=\"labelcol\"/><col />\n";
     $persontext .= "<tr>\n";
-    $persontext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"citations1\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></a></td>\n";
-    $persontext .= "<td valign=\"top\" class='databack'>";
+    $persontext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"citations1\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></a></td>\n";
+    $persontext .= "<td class='databack'>";
     if (!empty($tngconfig['scrollcite'])) {
         $persontext .= "<div class=\"notearea\">";
     }

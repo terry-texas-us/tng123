@@ -176,8 +176,8 @@ if ($dnarow['markers']) {
 }
 if ($dnarow['y_results']) {
     $dnatext .= "<tr>\n";
-    $dnatext .= "<td valign=\"top\" class=\"fieldnameback fieldname\">" . nl2br($admtext['marker_values']) . "&nbsp;</td>\n";
-    $dnatext .= "<td valign=\"top\" class='databack resultscol' colspan=\"2\">{$dnarow['y_results']}</td>\n";
+    $dnatext .= "<td class=\"fieldnameback fieldname align-top\">" . nl2br($admtext['marker_values']) . "&nbsp;</td>\n";
+    $dnatext .= "<td class='databack resultscol' colspan=\"2\">{$dnarow['y_results']}</td>\n";
     $dnatext .= "</tr>\n";
 }
 if ($dnarow['ydna_haplogroup']) {
@@ -268,28 +268,28 @@ if ($dnarow['urls']) {
         $urls = "<ul>$urls</ul>";
     }
     $dnatext .= "<tr>\n";
-    $dnatext .= "<td valign=\"top\" class=\"fieldnameback fieldname\">{$text['links']}&nbsp;</td>\n";
-    $dnatext .= "<td valign=\"top\" class='databack' colspan=\"2\">$urls</td>\n";
+    $dnatext .= "<td class=\"fieldnameback fieldname align-top\">{$text['links']}&nbsp;</td>\n";
+    $dnatext .= "<td class='databack' colspan=\"2\">$urls</td>\n";
     $dnatext .= "</tr>\n";
 }
 //urls
 if ($dnarow['medialinks']) {
     $medialinks = showMediaLinks($dnarow['medialinks']);
     $dnatext .= "<tr>\n";
-    $dnatext .= "<td valign=\"top\" class=\"fieldnameback fieldname\">{$admtext['medialinks']}&nbsp;</td>\n";
-    $dnatext .= "<td valign=\"top\" class='databack' colspan=\"2\">$medialinks</td>\n";
+    $dnatext .= "<td class=\"fieldnameback fieldname align-top\">{$admtext['medialinks']}&nbsp;</td>\n";
+    $dnatext .= "<td class='databack' colspan=\"2\">$medialinks</td>\n";
     $dnatext .= "</tr>\n";
 }
 if ($dnarow['notes']) {
     $dnatext .= "<tr>\n";
-    $dnatext .= "<td valign=\"top\" class=\"fieldnameback fieldname\">" . nl2br($text['notes']) . "&nbsp;</td>\n";
-    $dnatext .= "<td valign=\"top\" class='databack' colspan=\"2\"><div class=\"notearea\">{$dnarow['notes']}</div></td>\n";
+    $dnatext .= "<td class=\"fieldnameback fieldname align-top\">" . nl2br($text['notes']) . "&nbsp;</td>\n";
+    $dnatext .= "<td class='databack' colspan=\"2\"><div class=\"notearea\">{$dnarow['notes']}</div></td>\n";
     $dnatext .= "</tr>\n";
 }
 if ($allow_admin && $dnarow['admin_notes']) {
     $dnatext .= "<tr>\n";
-    $dnatext .= "<td valign=\"top\" class=\"fieldnameback fieldname\">" . nl2br($admtext['admin_notes']) . "&nbsp;</td>\n";
-    $dnatext .= "<td valign=\"top\" class='databack' colspan=\"2\"><div class=\"notearea\">{$dnarow['admin_notes']}</div></td>\n";
+    $dnatext .= "<td class=\"fieldnameback fieldname align-top\">" . nl2br($admtext['admin_notes']) . "&nbsp;</td>\n";
+    $dnatext .= "<td class='databack' colspan=\"2\"><div class=\"notearea\">{$dnarow['admin_notes']}</div></td>\n";
     $dnatext .= "</tr>\n";
 }
 

@@ -4,7 +4,7 @@
 <table cellspacing="0" class="page" width="100%">
     <tr>
         <td>&nbsp;</td>
-        <td valign="top">
+        <td class='align-top'>
 
             <?php
             //begin HEADER IMAGE (default: small picture of the girl at the top left)
@@ -18,7 +18,7 @@
             ?>
 
         </td>
-        <td align="center" valign="top">
+        <td class="align-top" align="center">
             <table cellspacing="0">
                 <tr>
                     <td align="center"><a href="index.php" class="toptitle">
@@ -44,7 +44,7 @@
                         </a></td>
                 </tr>
                 <tr>
-                    <td align="center" valign="bottom">
+                    <td class="align-bottom" align="center">
 						<span class="topmenu">
 						<br>
 						<a href="index.php" class="topmenu"><?php echo $text['mnuheader']; ?></a>
@@ -68,7 +68,7 @@
                 </tr>
             </table>
         </td>
-        <td valign="top" align="right">
+        <td class="align-top" align="right">
             <form action="search.php" method="get" id="topsearch" style="margin:0;">
                 <table cellspacing="0">
                     <tr>

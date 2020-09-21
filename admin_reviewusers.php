@@ -91,18 +91,18 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
-                            echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' valign=\"top\" nowrap><span class='normal'>{$newactionstr}</span></td>\n";
+                            echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' nowrap><span class='normal'>{$newactionstr}</span></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
                             }
-                            echo "<td class='lightback' valign=\"top\" nowrap><span class='normal'>{$row['username']}&nbsp;</span></td>\n";
-                            echo "<td class='lightback' valign=\"top\"><span class='normal'>{$row['description']}&nbsp;</span></td>\n";
-                            echo "<td class='lightback' valign=\"top\"><span class='normal'>{$row['realname']}";
+                            echo "<td class='lightback' nowrap><span class='normal'>{$row['username']}&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>{$row['description']}&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>{$row['realname']}";
                             if ($row['realname'] && $row['email']) {
                                 echo "<br>";
                             }
                             echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a>&nbsp;</span></td>\n";
-                            echo "<td class='lightback' valign=\"top\"><span class='normal'>{$row['dt_registered_fmt']}&nbsp;</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>{$row['dt_registered_fmt']}&nbsp;</span></td>\n";
                         }
                         ?>
                     </table>

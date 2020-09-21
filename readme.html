@@ -284,7 +284,7 @@
 
 <table style="height:100%;">
     <tr>
-        <td width="250" valign="top" style="background-color:#f9f9f9; border:1px solid silver; padding:5px;">
+        <td class="align-top" width="250" style="background-color:#f9f9f9; border:1px solid silver; padding:5px;">
             <ul style="list-style: none; margin-left: 0; padding-left: 0;">
                 <li><p><a href="javascript: startAt('s0');"><strong>Welcome / Begin Installation</strong></a></p></li>
                 <li><a href="javascript: startAt('s1');"><strong>More Information</strong></a></li>
@@ -356,7 +356,7 @@
 			</span>
         </td>
         <td width="10">&nbsp;</td>
-        <td valign="top">
+        <td class='align-top'>
             <ul style="list-style-type: none; margin: 0; padding: 0;">
                 <li style="display:'';" id="s0">
 
@@ -393,12 +393,12 @@
                             Some files and folders need to be made writeable. If you've done this before and have already completed step 4 below, you may see a message saying that the permissions on those folders can't be renamed. That's OK. :)
                             <table>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <form action="setperms" method="get" style="margin:0;">
                                             <input name="perms" type="button" value="Set Permissions" onclick="doPerms('permMsgEx')">
                                         </form>
                                     </td>
-                                    <td valign="top" id="permMsgEx">&nbsp;</td>
+                                    <td class="align-top" id="permMsgEx">&nbsp;</td>
                                 </tr>
                             </table>
                             </p>
@@ -822,12 +822,12 @@
 
                     <table>
                         <tr>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <form action="setperms" method="get" style="margin:0;">
                                     <input name="perms" type="button" value="Set Permissions" onclick="doPerms('permMsg')">
                                 </form>
                             </td>
-                            <td valign="top" id="permMsg">&nbsp;</td>
+                            <td class="align-top" id="permMsg">&nbsp;</td>
                         </tr>
                     </table>
 
@@ -890,7 +890,7 @@
 
                     <table>
                         <tr>
-                            <td valign="top"><span class="normal">Multimedia Folder:</span></td>
+                            <td class='align-top'><span class="normal">Multimedia Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="mediafrm" id="mediafrm"
                                       onsubmit="if( document.mediafrm.foldername.value != '' ) {doFolder('mediapath',document.mediafrm,'mediaFolderMsg');} return false">
@@ -899,12 +899,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="mediaFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Photos Folder:</span></td>
+                            <td class='align-top'><span class="normal">Photos Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="photosfrm" id="photosfrm"
                                       onsubmit="if( document.photosfrm.foldername.value != '' ) {doFolder('photopath',document.photosfrm,'phFolderMsg');} return false;">
@@ -913,12 +913,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="phFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Documents Folder:</span></td>
+                            <td class='align-top'><span class="normal">Documents Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="documentsfrm" id="documentsfrm"
                                       onsubmit="if( document.documentsfrm.foldername.value != '' ) {doFolder('documentpath',document.documentsfrm,'docFolderMsg');} return false;">
@@ -927,12 +927,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="docFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Histories Folder:</span></td>
+                            <td class='align-top'><span class="normal">Histories Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="historiesfrm" id="historiesfrm"
                                       onsubmit="if( document.historiesfrm.foldername.value != '' ) {doFolder('historypath',document.historiesfrm,'histFolderMsg');} return false;">
@@ -941,12 +941,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="histFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Headstones Folder:</span></td>
+                            <td class='align-top'><span class="normal">Headstones Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="headstonesfrm" id="headstonesfrm"
                                       onsubmit="if( document.headstonesfrm.foldername.value != '' ) {doFolder('headstonepath',document.headstonesfrm,'hsFolderMsg');} return false;">
@@ -955,12 +955,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="hsFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">GENDEX Folder:</span></td>
+                            <td class='align-top'><span class="normal">GENDEX Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="gendexfrm" id="gendexfrm"
                                       onsubmit="if( document.gendexfrm.foldername.value != '' ) {doFolder('gendexfile',document.gendexfrm,'gendexFolderMsg');} return false;">
@@ -969,12 +969,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="gendexFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Backups Folder:</span></td>
+                            <td class='align-top'><span class="normal">Backups Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="backupsfrm" id="backupsfrm"
                                       onsubmit="if( document.backupsfrm.foldername.value != '' ) {doFolder('backuppath',document.backupsfrm,'buFolderMsg');} return false;">
@@ -983,12 +983,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="buFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">GEDCOM Folder:</span></td>
+                            <td class='align-top'><span class="normal">GEDCOM Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="gedcomfrm" id="gedcomfrm"
                                       onsubmit="if( document.gedcomfrm.foldername.value != '' ) {doFolder('gedpath',document.gedcomfrm,'gedFolderMsg');} return false;">
@@ -997,12 +997,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="gedFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Mods Folder:</span></td>
+                            <td class='align-top'><span class="normal">Mods Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="modsfrm" id="modsfrm"
                                       onsubmit="if( document.modsfrm.foldername.value != '' ) {doFolder('modspath',document.modsfrm,'modsFolderMsg');} return false;">
@@ -1011,12 +1011,12 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="modsFolderMsg"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><span class="normal">Extensions Folder:</span></td>
+                            <td class='align-top'><span class="normal">Extensions Folder:</span></td>
                             <td>
                                 <form action="" method="get" style="margin:0;" name="extensionsfrm" id="extensionsfrm"
                                       onsubmit="if( document.extensionsfrm.foldername.value != '' ) {doFolder('extspath',document.extensionsfrm,'extsFolderMsg');} return false;">
@@ -1025,7 +1025,7 @@
                                     <input type="submit" value="Rename Folder">
                                 </form>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <div id="extsFolderMsg"></div>
                             </td>
                         </tr>
@@ -1128,48 +1128,48 @@
                     <form action="setdbparams" method="get" style="margin:0;" name="dbparamsfrm" onsubmit="return doDBParams(document.dbparamsfrm,'dbMsg');">
                         <table>
                             <tr>
-                                <td valign="top"><span class="normal">Host Name:</span></td>
+                                <td class='align-top'><span class="normal">Host Name:</span></td>
                                 <td>
                                     <input type="text" value="localhost" name="database_host" size="20">
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top"><span class="normal">Database Name:</span></td>
+                                <td class='align-top'><span class="normal">Database Name:</span></td>
                                 <td>
                                     <input type="text" value="" name="database_name" size="20">
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top"><span class="normal">Database Username:</span></td>
+                                <td class='align-top'><span class="normal">Database Username:</span></td>
                                 <td>
                                     <input type="text" value="" name="database_username" size="20">
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top"><span class="normal">Database Password:</span></td>
+                                <td class='align-top'><span class="normal">Database Password:</span></td>
                                 <td>
                                     <input type="text" value="" name="database_password" size="20">
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top"><span class="normal">Database Port:</span></td>
+                                <td class='align-top'><span class="normal">Database Port:</span></td>
                                 <td>
                                     <input type="text" value="" name="database_port" size="20">
                                     (leave blank for default)
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top"><span class="normal">Database Socket:</span></td>
+                                <td class='align-top'><span class="normal">Database Socket:</span></td>
                                 <td>
                                     <input type="text" value="" name="database_socket" size="20">
                                     (leave blank for default)
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <input name="dbparams" type="submit" value="Save and Verify">
                                 </td>
-                                <td valign="top" id="dbMsg"></td>
+                                <td class="align-top" id="dbMsg"></td>
                             </tr>
                         </table>
                     </form>
@@ -1210,76 +1210,76 @@
                     <form action="createtables" method="get" style="margin:0;" name="tablesfrm2" onsubmit="return doTables(document.tablesfrm2,'tableMsg');">
                         <table>
                             <tr>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <table>
                                         <tr>
-                                            <td valign="top"><span class="normal">People:</span></td>
+                                            <td class='align-top'><span class="normal">People:</span></td>
                                             <td>
                                                 <input type="text" value="tng_people" name="people_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Families:</span></td>
+                                            <td class='align-top'><span class="normal">Families:</span></td>
                                             <td>
                                                 <input type="text" value="tng_families" name="families_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Children:</span></td>
+                                            <td class='align-top'><span class="normal">Children:</span></td>
                                             <td>
                                                 <input type="text" value="tng_children" name="children_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Albums:</span></td>
+                                            <td class='align-top'><span class="normal">Albums:</span></td>
                                             <td>
                                                 <input type="text" value="tng_albums" name="albums_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Album Links:</span></td>
+                                            <td class='align-top'><span class="normal">Album Links:</span></td>
                                             <td>
                                                 <input type="text" value="tng_albumplinks" name="album2entities_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Album Media:</span></td>
+                                            <td class='align-top'><span class="normal">Album Media:</span></td>
                                             <td>
                                                 <input type="text" value="tng_albumlinks" name="albumlinks_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Media:</span></td>
+                                            <td class='align-top'><span class="normal">Media:</span></td>
                                             <td>
                                                 <input type="text" value="tng_media" name="media_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Media Links:</span></td>
+                                            <td class='align-top'><span class="normal">Media Links:</span></td>
                                             <td>
                                                 <input type="text" value="tng_medialinks" name="medialinks_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Media Types:</span></td>
+                                            <td class='align-top'><span class="normal">Media Types:</span></td>
                                             <td>
                                                 <input type="text" value="tng_mediatypes" name="mediatypes_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Addresses:</span></td>
+                                            <td class='align-top'><span class="normal">Addresses:</span></td>
                                             <td>
                                                 <input type="text" value="tng_addresses" name="address_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Languages:</span></td>
+                                            <td class='align-top'><span class="normal">Languages:</span></td>
                                             <td>
                                                 <input type="text" value="tng_languages" name="languages_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Places:</span></td>
+                                            <td class='align-top'><span class="normal">Places:</span></td>
                                             <td>
                                                 <input type="text" value="tng_places" name="places_table" size="20">
                                             </td>
@@ -1287,76 +1287,76 @@
                                     </table>
                                 </td>
                                 <td>&nbsp;</td>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <table>
                                         <tr>
-                                            <td valign="top"><span class="normal">Cemeteries:</span></td>
+                                            <td class='align-top'><span class="normal">Cemeteries:</span></td>
                                             <td>
                                                 <input type="text" value="tng_cemeteries" name="cemeteries_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">States:</span></td>
+                                            <td class='align-top'><span class="normal">States:</span></td>
                                             <td>
                                                 <input type="text" value="tng_states" name="states_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Countries:</span></td>
+                                            <td class='align-top'><span class="normal">Countries:</span></td>
                                             <td>
                                                 <input type="text" value="tng_countries" name="countries_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Users:</span></td>
+                                            <td class='align-top'><span class="normal">Users:</span></td>
                                             <td>
                                                 <input type="text" value="tng_users" name="users_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Sources:</span></td>
+                                            <td class='align-top'><span class="normal">Sources:</span></td>
                                             <td>
                                                 <input type="text" value="tng_sources" name="sources_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Citations:</span></td>
+                                            <td class='align-top'><span class="normal">Citations:</span></td>
                                             <td>
                                                 <input type="text" value="tng_citations" name="citations_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Repositories:</span></td>
+                                            <td class='align-top'><span class="normal">Repositories:</span></td>
                                             <td>
                                                 <input type="text" value="tng_repositories" name="repositories_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Events:</span></td>
+                                            <td class='align-top'><span class="normal">Events:</span></td>
                                             <td>
                                                 <input type="text" value="tng_events" name="events_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Event Types:</span></td>
+                                            <td class='align-top'><span class="normal">Event Types:</span></td>
                                             <td>
                                                 <input type="text" value="tng_eventtypes" name="eventtypes_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Reports:</span></td>
+                                            <td class='align-top'><span class="normal">Reports:</span></td>
                                             <td>
                                                 <input type="text" value="tng_reports" name="reports_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Trees:</span></td>
+                                            <td class='align-top'><span class="normal">Trees:</span></td>
                                             <td>
                                                 <input type="text" value="tng_trees" name="trees_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Notes:</span></td>
+                                            <td class='align-top'><span class="normal">Notes:</span></td>
                                             <td>
                                                 <input type="text" value="tng_xnotes" name="xnotes_table" size="20">
                                             </td>
@@ -1364,76 +1364,76 @@
                                     </table>
                                 </td>
                                 <td>&nbsp;</td>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <table>
                                         <tr>
-                                            <td valign="top"><span class="normal">Note Links:</span></td>
+                                            <td class='align-top'><span class="normal">Note Links:</span></td>
                                             <td>
                                                 <input type="text" value="tng_notelinks" name="notelinks_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Save Import:</span></td>
+                                            <td class='align-top'><span class="normal">Save Import:</span></td>
                                             <td>
                                                 <input type="text" value="tng_saveimport" name="saveimport_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Branches:</span></td>
+                                            <td class='align-top'><span class="normal">Branches:</span></td>
                                             <td>
                                                 <input type="text" value="tng_branches" name="branches_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Branch Links:</span></td>
+                                            <td class='align-top'><span class="normal">Branch Links:</span></td>
                                             <td>
                                                 <input type="text" value="tng_branchlinks" name="branchlinks_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Timeline Events:</span></td>
+                                            <td class='align-top'><span class="normal">Timeline Events:</span></td>
                                             <td>
                                                 <input type="text" value="tng_timelineevents" name="tlevents_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Temp Events:</span></td>
+                                            <td class='align-top'><span class="normal">Temp Events:</span></td>
                                             <td>
                                                 <input type="text" value="tng_temp_events" name="temp_events_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Associations:</span></td>
+                                            <td class='align-top'><span class="normal">Associations:</span></td>
                                             <td>
                                                 <input type="text" value="tng_associations" name="assoc_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Most Wanted:</span></td>
+                                            <td class='align-top'><span class="normal">Most Wanted:</span></td>
                                             <td>
                                                 <input type="text" value="tng_mostwanted" name="mostwanted_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">DNA Tests:</span></td>
+                                            <td class='align-top'><span class="normal">DNA Tests:</span></td>
                                             <td>
                                                 <input type="text" value="tng_dna_tests" name="dna_tests_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">DNA Groups:</span></td>
+                                            <td class='align-top'><span class="normal">DNA Groups:</span></td>
                                             <td>
                                                 <input type="text" value="tng_dna_groups" name="dna_groups_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">DNA Links:</span></td>
+                                            <td class='align-top'><span class="normal">DNA Links:</span></td>
                                             <td>
                                                 <input type="text" value="tng_dna_links" name="dna_links_table" size="20">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="top"><span class="normal">Template Settings:</span></td>
+                                            <td class='align-top'><span class="normal">Template Settings:</span></td>
                                             <td>
                                                 <input type="text" value="tng_templates" name="templates_table" size="20">
                                             </td>
@@ -1448,10 +1448,10 @@
                                 (leave blank to accept the default)
                             </tr>
                             <tr>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <input name="dbparams" type="submit" value="Save and Create">
                                 </td>
-                                <td valign="top" id="tableMsg" colspan="2"></td>
+                                <td class="align-top" id="tableMsg" colspan="2"></td>
                             </tr>
                         </table>
                     </form>
@@ -1575,12 +1575,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <input name="usercreate" type="submit" value="Create User">
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top" id="userMsg2" colspan="2"></td>
+                                <td class="align-top" id="userMsg2" colspan="2"></td>
                             </tr>
                         </table>
                     </form>
@@ -1630,12 +1630,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top">
+                                <td class='align-top'>
                                     <input name="treecreate" type="submit" value="Create Tree">
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top" id="treeMsg2" colspan="2"></td>
+                                <td class="align-top" id="treeMsg2" colspan="2"></td>
                             </tr>
                         </table>
                     </form>

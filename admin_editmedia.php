@@ -160,7 +160,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                                 echo "display:none";
                             } ?>"><?php echo $photo; ?></div>
@@ -190,7 +190,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                     <br>
                     <table class="normal">
                         <tr>
-                            <td valign="top"><?php echo $admtext['mediatype']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['mediatype']; ?>:</td>
                             <td>
                                 <select name="mediatypeID" onchange="switchOnType(this.options[this.selectedIndex].value)">
                                     <?php
@@ -219,7 +219,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="abspath" value="1"<?php if ($row['abspath']) {
                                     echo " checked";
                                 } ?> onClick="toggleMediaURL();">
@@ -260,7 +260,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 
                         <!-- history section -->
                         <tr id="bodytextrow">
-                            <td valign="top"><?php echo $admtext['bodytext']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['bodytext']; ?>:</td>
                             <td><textarea cols="100" rows="11" name="bodytext" id="bodytext"><?php echo $row['bodytext']; ?></textarea></td>
                         </tr>
 
@@ -268,8 +268,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         if (function_exists("imageJpeg")) {
                             ?>
                             <tr>
-                                <td valign="top"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></td>
-                                <td valign="top"><br>
+                                <td class='align-top'><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></td>
+                                <td class='align-top'><br>
                                     <input type="radio" name="thumbcreate" value="specify" checked="checked"
                                            onClick="document.form1.newthumb.style.visibility='visible'; document.form1.thumbselect.style.visibility='visible';"> <?php echo $admtext['specifyimg']; ?>
                                     &nbsp;
@@ -307,8 +307,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><strong><br><?php echo $admtext['put_in']; ?></strong></td>
-                            <td valign="top"><br>
+                            <td class='align-top'><strong><br><?php echo $admtext['put_in']; ?></strong></td>
+                            <td class='align-top'><br>
                                 <input type="radio" name="usecollfolder" value="0"<?php if (!$row['usecollfolder']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['usemedia']; ?> &nbsp;
@@ -348,11 +348,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                     <br>
                     <table class="normal">
                         <tr>
-                            <td valign="top"><?php echo $admtext['title']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['title']; ?>:</td>
                             <td><textarea cols="70" rows="3" name="description"><?php echo $row['description']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                             <td><textarea cols="70" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
                         </tr>
                         <tr>
@@ -432,7 +432,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             </td>
                         </tr>
                         <tr id="hsplotrow">
-                            <td valign="top"><?php echo $admtext['plot']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['plot']; ?>:</td>
                             <td><textarea cols="70" rows="2" name="plot"><?php echo $row['plot']; ?></textarea></td>
                         </tr>
                         <tr id="hsstatrow">
@@ -460,7 +460,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         </tr>
 
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="alwayson" value="1"<?php if ($row['alwayson']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['alwayson']; ?></td>
@@ -468,7 +468,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 
                         <!-- history section -->
                         <tr id="newwinrow">
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="newwindow" value="1"<?php if ($row['newwindow']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['newwin']; ?></td>
@@ -476,13 +476,13 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 
                         <!-- headstone section -->
                         <tr id="linktocemrow">
-                            <td colspan="2" valign="top">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="linktocem" value="1"<?php if ($row['linktocem']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['linktocem']; ?></td>
                         </tr>
                         <tr id="maprow">
-                            <td colspan="2" valign="top">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="showmap" value="1"<?php if ($row['showmap']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['showmap']; ?></td>

@@ -49,6 +49,6 @@
     </td>
 </tr>
 <tr>
-    <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
+    <td class='align-top'><?php echo $admtext['actualtext']; ?>:</td>
     <td><textarea cols="50" rows="5" name="actualtext"></textarea></td>
 </tr>

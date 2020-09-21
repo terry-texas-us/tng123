@@ -192,7 +192,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                     tng_free_result($langresult);
                     ?>
                     <tr>
-                        <td valign="top"><?php echo $admtext['notes']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                         <td><textarea cols="50" rows="4" name="notes"></textarea></td>
                     </tr>
                     <tr>
@@ -234,7 +234,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                 <div class="normal">
                     <table class="normal">
                         <tr>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <p><strong><?php echo $admtext['roles']; ?>:</strong></p>
 
                                 <?php
@@ -273,7 +273,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                                         echo " checked";
                                     } ?> onclick="assignRightsFromRole('admin');"> <?php echo $admtext['usradmin'] . "<br><em class=\"smaller indent\">{$admtext['usradmind']}</em>"; ?></p>
                             </td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <p><strong><?php echo $admtext['rights']; ?></strong></p>
 
                                 <p>
@@ -364,7 +364,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                         <div id="restrictions">
                             <table>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <span class="normal"><?php echo $admtext['tree']; ?>*:</span></td>
                                     <td>
                                         <select name="gedcom" id="treeselect" onChange="var tree=getTree(); if( !tree ) tree = 'none'; <?php echo $swapbranches; ?>">
@@ -380,7 +380,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td valign="top"><span class="normal"><?php echo $admtext['branch']; ?>**:</span></td>
+                                    <td class='align-top'><span class="normal"><?php echo $admtext['branch']; ?>**:</span></td>
                                     <td><span class="normal">
 <?php
 $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"{$row['gedcom']}\" ORDER BY description";

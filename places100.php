@@ -127,7 +127,7 @@ echo getFORM("places100", "get", "", "");
                             if ($num_in_col_ctr == $num_in_col) {
                                 echo "</td>\n";
                                 echo "<td>&nbsp;&nbsp;</td>\n";
-                                echo "<td valign=\"top\">";
+                                echo "<td class='align-top'>";
                                 $num_in_col_ctr = 0;
                             }
                         }

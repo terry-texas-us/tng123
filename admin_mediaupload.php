@@ -267,7 +267,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                         <td colspan="3"><?php echo $admtext['id']; ?></td>
                     </tr>
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <select name="tree1">
                                 <?php
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
@@ -282,7 +282,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                                 ?>
                             </select>
                         </td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <select name="linktype1" onchange="toggleEventLink(this.selectedIndex);">
                                 <option value="I"><?php echo $admtext['person']; ?></option>
                                 <option value="F"><?php echo $admtext['family']; ?></option>
@@ -310,7 +310,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                                 <option value=""></option>
                             </select>
                         </td>
-                        <td class="normal" valign="top">&nbsp;</td>
+                        <td class="normal align-top">&nbsp;</td>
                     </tr>
                 </table>
 

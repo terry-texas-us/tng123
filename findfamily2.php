@@ -58,7 +58,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow" id="findfamilyresdiv">
     <table cellpadding="0">
         <tr>
-            <td valign="top">
+            <td class='align-top'>
                 <h3 class="subhead"><?php echo $admtext['searchresults']; ?></h3><br>
                 <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
             </td>
@@ -103,7 +103,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 $thisfamily .= getName($person);
             }
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td>";
+            echo "<td class='align-top'><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td>";
             echo "<td><span class='normal'><a href=\"#\" onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td>";
             echo "</tr>\n";
         }

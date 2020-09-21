@@ -29,7 +29,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 
     <table cellpadding="2" class="normal">
         <tr>
-            <td valign="top"><?php echo $admtext['note']; ?>:</td>
+            <td class='align-top'><?php echo $admtext['note']; ?>:</td>
             <td><textarea cols="60" rows="25" name="note"><?php echo $row['note']; ?></textarea></td>
         </tr>
         <tr>

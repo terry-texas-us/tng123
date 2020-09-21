@@ -91,79 +91,79 @@ if (!$tngconfig['disallowreg']) {
                 ?>
                 <table class="normal">
                     <tr>
-                        <td valign="top"><?php echo $text['username']; ?>*:</td>
+                        <td class='align-top'><?php echo $text['username']; ?>*:</td>
                         <td>
                             <input type="text" name="username" size="20" maxlength="20">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['password']; ?>*:</td>
+                        <td class='align-top'><?php echo $text['password']; ?>*:</td>
                         <td>
                             <input type="password" name="password" size="20" maxlength="20">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['pwdagain']; ?>*:</td>
+                        <td class='align-top'><?php echo $text['pwdagain']; ?>*:</td>
                         <td>
                             <input type="password" name="password2" size="20" maxlength="20">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['realname']; ?>*:</td>
+                        <td class='align-top'><?php echo $text['realname']; ?>*:</td>
                         <td>
                             <input type="text" name="realname" size="50" maxlength="50">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['phone']; ?>:</td>
+                        <td class='align-top'><?php echo $text['phone']; ?>:</td>
                         <td>
                             <input type="text" name="phone" size="30" maxlength="30">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['email']; ?>*:</td>
+                        <td class='align-top'><?php echo $text['email']; ?>*:</td>
                         <td>
                             <input type="text" name="<?php echo $_SESSION['tng_email']; ?>" size="50" maxlength="100">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['emailagain']; ?>*:</td>
+                        <td class='align-top'><?php echo $text['emailagain']; ?>*:</td>
                         <td>
                             <input type="text" name="em2" size="50" maxlength="100">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['website']; ?>:</td>
+                        <td class='align-top'><?php echo $text['website']; ?>:</td>
                         <td>
                             <input type="text" name="website" size="50" maxlength="100" value="http://">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['address']; ?>:</td>
+                        <td class='align-top'><?php echo $text['address']; ?>:</td>
                         <td>
                             <input type="text" name="address" size="50" maxlength="100">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['city']; ?>:</td>
+                        <td class='align-top'><?php echo $text['city']; ?>:</td>
                         <td>
                             <input type="text" name="city" size="50" maxlength="64">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['state']; ?>:</td>
+                        <td class='align-top'><?php echo $text['state']; ?>:</td>
                         <td>
                             <input type="text" name="state" size="50" maxlength="64">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['zip']; ?>:</td>
+                        <td class='align-top'><?php echo $text['zip']; ?>:</td>
                         <td>
                             <input type="text" name="zip" size="20" maxlength="10">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['country']; ?>:</td>
+                        <td class='align-top'><?php echo $text['country']; ?>:</td>
                         <td>
                             <input type="text" name="country" size="50" maxlength="64">
                         </td>
@@ -185,7 +185,7 @@ if (!$tngconfig['disallowreg']) {
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $text['acctcomments']; ?>:</td>
+                        <td class='align-top'><?php echo $text['acctcomments']; ?>:</td>
                         <td><textarea cols="50" rows="4" name="notes"></textarea></td>
                     </tr>
                 </table>

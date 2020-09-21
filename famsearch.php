@@ -416,7 +416,7 @@ while ($row = tng_fetch_assoc($result)) {
     $famidstr = "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
 
     echo "<tr>";
-    echo "<td class='databack' valign=\"top\">$i</td>\n";
+    echo "<td class='databack'>$i</td>\n";
     $i++;
 
     echo "<td class='databack'>$famidstr";

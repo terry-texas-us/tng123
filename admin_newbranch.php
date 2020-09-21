@@ -82,13 +82,13 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['branchid']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['branchid']; ?>:</td>
                         <td>
                             <input type="text" name="branch" size="20" maxlength="20">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                         <td>
                             <input type="text" name="description" size="60">
                         </td>

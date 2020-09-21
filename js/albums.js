@@ -115,8 +115,8 @@ function finishAddToAlbum(req) {
         newrow += ' &nbsp;|&nbsp; ';
     }
     newrow += '<a href="#" onclick="return removeFromAlbum(\'' + media + '\',\'' + albumlink + '\');">' + remove_text + '</a></div></td>\n';
-    newrow += '<td class="lightback normal" style="width:150px;" valign="top">' + jQuery('#date_' + media).html() + '</td>';
-    newrow += '<td class="lightback normal" style="width:100px;" valign="top">' + jQuery('#mtype_' + media).html() + '</td>\n';
+    newrow += '<td class="lightback normal" style="width:150px;">' + jQuery('#date_' + media).html() + '</td>';
+    newrow += '<td class="lightback normal" style="width:100px;">' + jQuery('#mtype_' + media).html() + '</td>\n';
     newrow += '</tr></table>';
 
     jQuery('#add_' + media).hide();

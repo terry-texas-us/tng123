@@ -56,7 +56,7 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
             <form action="admin_updatenote2.php" name="form2" method="post" onSubmit="return validateForm(this);">
                 <table cellpadding="2" class="normal">
                     <tr>
-                        <td valign="top"><?php echo $admtext['note']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['note']; ?>:</td>
                         <td><textarea cols="80" rows="30" name="note"><?php echo $row['note']; ?></textarea></td>
                     </tr>
                     <tr>

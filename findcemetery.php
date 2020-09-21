@@ -166,10 +166,10 @@ echo "<p>{$admtext['matches']}: $numrows</p>";
 
                         $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
                         echo "<tr>\n";
-                        echo "<td class='lightback' valign=\"top\"><span class='normal'>{$newactionstr}</span></td>\n";
-                        echo "<td class='lightback' valign=\"top\"><span class='normal'>&nbsp;{$row['cemeteryID']}&nbsp;</span></td>";
-                        echo "<td class='lightback' valign=\"top\"><span class='normal'>{$row['cemname']}&nbsp;</span></td>\n";
-                        echo "<td class='lightback' valign=\"top\"><span class='normal'>$location&nbsp;</span></td>\n";
+                        echo "<td class='lightback'><span class='normal'>{$newactionstr}</span></td>\n";
+                        echo "<td class='lightback'><span class='normal'>{$row['cemeteryID']}</span></td>";
+                        echo "<td class='lightback'><span class='normal'>{$row['cemname']}</span></td>\n";
+                        echo "<td class='lightback'><span class='normal'>$location</span></td>\n";
                         echo "</tr>\n";
                     }
                     tng_free_result($result);

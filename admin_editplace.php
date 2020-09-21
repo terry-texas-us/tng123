@@ -271,7 +271,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['cemeteries']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['cemeteries']; ?>:</td>
                             <td>
                                 <table id="cemeteries" class="normal" cellpadding="3" cellspacing="1" border="0">
                                     <tbody id="cemeteriestblbody">
@@ -325,14 +325,14 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     }
                     ?>
                     <tr>
-                        <td valign="top"><?php echo $admtext['notes']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                         <td><textarea cols="50" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
                     </tr>
                     <?php
                     if (!$assignedbranch) {
                         ?>
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="propagate" value="1" checked> <?php echo $admtext['propagate']; ?>:
                             </td>
                         </tr>
@@ -340,7 +340,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     }
                     ?>
                     <tr>
-                        <td valign="top" colspan="2">&nbsp;</td>
+                        <td class="align-top" colspan="2">&nbsp;</td>
                     </tr>
                     <tr>
                         <td colspan="2">

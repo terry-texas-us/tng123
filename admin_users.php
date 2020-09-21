@@ -192,32 +192,32 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $form_allow_pdf = $row['allow_pdf'] ? $admtext['yes'] : "";
                             $form_disabled = $row['disabled'] ? $admtext['yes'] : "";
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
-                            echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns2\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['userID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
                             }
                             $editlink = "admin_edituser.php?userID={$row['userID']}";
                             $username = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['username'] . "</a>" : $row['username'];
 
-                            echo "<td class='lightback' valign=\"top\" nowrap>&nbsp;$username&nbsp;</td>\n";
-                            echo "<td class='lightback' valign=\"top\">&nbsp;{$row['description']}&nbsp;</td>\n";
-                            echo "<td class='lightback' valign=\"top\">&nbsp;" . $row['realname'];
+                            echo "<td class='lightback' nowrap>$username</td>\n";
+                            echo "<td class='lightback'>{$row['description']}</td>\n";
+                            echo "<td class='lightback'>{$row['realname']}";
                             if ($row['realname'] && $row['email']) {
-                                echo "<br>&nbsp;";
+                                echo "<br>";
                             }
                             $rolestr = 'usr' . ($row['role'] ? $row['role'] : 'custom');
-                            echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a>&nbsp;</td>\n";
+                            echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a></td>\n";
 
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$row['gedcom']}&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$row['branch']}&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$admtext[$rolestr]}&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_living&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_private&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_ged&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_pdf&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_allow_lds&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;{$row['lastlogin']}&nbsp;</td>\n";
-                            echo "<td class='lightback nw' valign=\"top\">&nbsp;$form_disabled&nbsp;</td>\n";
+                            echo "<td class='lightback nw'>{$row['gedcom']}</td>\n";
+                            echo "<td class='lightback nw'>{$row['branch']}</td>\n";
+                            echo "<td class='lightback nw'>{$admtext[$rolestr]}</td>\n";
+                            echo "<td class='lightback nw'>$form_allow_living</td>\n";
+                            echo "<td class='lightback nw'>$form_allow_private</td>\n";
+                            echo "<td class='lightback nw'>$form_allow_ged</td>\n";
+                            echo "<td class='lightback nw'>$form_allow_pdf</td>\n";
+                            echo "<td class='lightback nw'>$form_allow_lds</td>\n";
+                            echo "<td class='lightback nw'>{$row['lastlogin']}</td>\n";
+                            echo "<td class='lightback nw'>$form_disabled</td>\n";
                             echo "</tr>\n";
                         }
                         ?>

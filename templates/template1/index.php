@@ -55,7 +55,7 @@ $title = getTemplateMessage('t1_maintitle');
                 </td>
             </tr>
             <tr>
-                <td valign="top" class="normal">
+                <td class="normal align-top">
                     <?php
                     if ($currentuser) {
                         echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
@@ -104,7 +104,7 @@ $title = getTemplateMessage('t1_maintitle');
                     ?>
                 </td>
                 <td class="std-only">&nbsp;&nbsp;</td>
-                <td valign="top" class="normal std-only">
+                <td class="normal std-only align-top">
                     <h2><?php echo $text['welcome']; ?></h2>
                     <?php
                     if ($mainpara) {
@@ -114,7 +114,7 @@ $title = getTemplateMessage('t1_maintitle');
                     <h2><?php echo $text['mnufeatures']; ?></h2>
                     <table style="font-size:12pt;" width="100%">
                         <tr>
-                            <td valign="top" width="30%">
+                            <td class="align-top" width="30%">
                                 <ul>
                                     <?php
                                     if ($currentuser) {
@@ -141,7 +141,7 @@ $title = getTemplateMessage('t1_maintitle');
                                 </ul>
                             </td>
                             <td width="5%">&nbsp;&nbsp;&nbsp;</td>
-                            <td valign="top" width="30%">
+                            <td class="align-top" width="30%">
                                 <ul>
                                     <?php
                                     foreach ($mediatypes as $mediatype) {
@@ -155,7 +155,7 @@ $title = getTemplateMessage('t1_maintitle');
                                 </ul>
                             </td>
                             <td width="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td valign="top" width="30%">
+                            <td class="align-top" width="30%">
                                 <ul>
                                     <?php
                                     echo "<li><a href=\"whatsnew.php\">{$text['mnuwhatsnew']}</a></li>\n";

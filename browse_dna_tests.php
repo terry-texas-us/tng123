@@ -332,19 +332,19 @@ if ($test_type == "mtDNA") {
             tng_free_result($descresult);
             $group = $row['dna_group'] ? $descrow['description'] : $text['none'];
 
-            echo "<tr><td valign=\"top\" class='databack'>$i</td>\n";
+            echo "<tr><td class='databack'>$i</td>\n";
             if ($test_type && $test_type != "X-DNA") {
-                echo "<td class='databack' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
+                echo "<td class='databack' align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
             }
             $dash = ($row['test_type'] == "Y-DNA") ? "-" : "";
-            echo "<td valign=\"top\" class='databack'><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";
+            echo "<td class='databack'><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";
             if ($allow_edit || $showtestnumbers) {
                 if ($row['private_test']) {
                     $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
                 } else {
                     $privtest = "";
                 }
-                echo "<td valign=\"top\" class='databack'><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
+                echo "<td class='databack'><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
             }
             $haplogroup = "&nbsp;";
             if ($row['ydna_haplogroup'] && $row['test_type'] == "Y-DNA") {
@@ -369,7 +369,7 @@ if ($test_type == "mtDNA") {
                     $haplogroup .= "mt = " . $row['mtdna_haplogroup'];
                 }
             }
-            echo "<td valign=\"top\" class='databack nw'>&nbsp;$haplogroup</td>";
+            echo "<td class='databack nw'>&nbsp;$haplogroup</td>";
 
             $dna_pers_result = getPersonDataPlusDates($row['gedcom'], $row['personID']);
             $dprow = tng_fetch_assoc($dna_pers_result);
@@ -443,7 +443,7 @@ if ($test_type == "mtDNA") {
                 $more = $morediv = "";
             }
 
-            echo "<td valign=\"top\" class='databack'>$more$dna_namestr&nbsp;$morediv</td>";
+            echo "<td class='databack'>$more$dna_namestr&nbsp;$morediv</td>";
             $mdanc_namestr = "";
             if ($row['MD_ancestorID']) {
                 $dna_anc_result = getPersonDataPlusDates($row['gedcom'], $row['MD_ancestorID']);
@@ -492,11 +492,11 @@ if ($test_type == "mtDNA") {
                     }
                 }
             }
-            echo "<td valign=\"top\" class='databack'>&nbsp;$mdanc_namestr</td>";
-            echo "<td valign=\"top\" class='databack'>&nbsp;$mrcanc_namestr</td>";
-            echo "<td valign=\"top\" class='databack'>$group</td>";
+            echo "<td class='databack'>&nbsp;$mdanc_namestr</td>";
+            echo "<td class='databack'>&nbsp;$mrcanc_namestr</td>";
+            echo "<td class='databack'>$group</td>";
             if ($numtrees > 1) {
-                echo "<td valign=\"top\" class='databack nw'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                echo "<td class='databack nw'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
             }
             echo "</tr>\n";
             $i++;

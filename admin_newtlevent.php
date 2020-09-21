@@ -104,7 +104,7 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtleve
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['evdetail']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['evdetail']; ?>:</td>
                         <td><textarea cols="80" rows="8" name="evdetail"></textarea></td>
                     </tr>
                 </table>

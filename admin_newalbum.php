@@ -57,11 +57,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['addnewalbum']
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                             <td><textarea cols="60" rows="3" name="description"></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['keywords']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['keywords']; ?>:</td>
                             <td><textarea cols="60" rows="3" name="keywords"></textarea></td>
                         </tr>
                         <tr>
@@ -71,7 +71,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['addnewalbum']
                                 <input type="radio" name="active" value="0"> <?php echo $admtext['no']; ?></td>
                         </tr>
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="alwayson" value="1"> <?php echo $admtext['alwayson']; ?></td>
                         </tr>
                     </table>

@@ -51,7 +51,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td><?php echo $admtext['eventplace']; ?>:</td>
-                <td valign="top">
+                <td class='align-top'>
                     <input type="text" name="eventplace" id="eventplace" size="40" value="<?php echo $row['eventplace']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                     <a href="#" onclick="return openFindPlaceForm('eventplace');">
                         <img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20">
@@ -59,7 +59,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 </td>
             </tr>
             <tr>
-                <td valign="top"><?php echo $admtext['detail']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['detail']; ?>:</td>
                 <td><textarea name="info" rows="4" cols="40"><?php echo $row['info']; ?></textarea></td>
             </tr>
             <tr>

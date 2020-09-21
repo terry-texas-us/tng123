@@ -63,10 +63,10 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
             <td class="tngshadow">
                 <table>
                     <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixrepoid']; ?></strong></span></td>
+                        <td class="align-top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixrepoid']; ?></strong></span></td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
                         <td>
                             <select name="tree1" onChange="generateID('repo',document.form1.repoID,document.form1.tree1);">
                                 <?php
@@ -86,7 +86,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['repoid']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['repoid']; ?>:</span></td>
                         <td>
                             <input type="text" name="repoID" size="10" onBlur="this.value=this.value.toUpperCase()">
                             <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateID('repo',document.form1.repoID,document.form1.tree1);">

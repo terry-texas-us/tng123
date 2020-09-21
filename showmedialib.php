@@ -718,11 +718,12 @@ function doCemPlusMap($imgrow, $tree) {
             }
 
             $targettext = $hs['newwindow'] ? " target=\"_blank\"" : "";
-            echo "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>";
-            echo "<td valign=\"top\" class='databack' width=\"$thumbmaxw\">";
+            echo "<tr>";
+            echo "<td class='databack'><span class='normal'>$i</span></td>";
+            echo "<td class='databack' width=\"$thumbmaxw\">";
             echo $imgsrc ? "<a href=\"$href\"$targettext>$imgsrc</a>" : "&nbsp;";
             echo "</td>\n";
-            echo "<td valign=\"top\" class='databack'><span class='normal'>";
+            echo "<td class='databack'><span class='normal'>";
             echo "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
             $i++;
         }

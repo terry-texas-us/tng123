@@ -227,7 +227,7 @@ if ($typestr) {
         }
         ?>
         <tr>
-            <td class="fieldnameback" valign="top"><span class="fieldname"><?php echo $comments; ?>:&nbsp; </span></td>
+            <td class="fieldnameback align-top"><span class="fieldname"><?php echo $comments; ?>:&nbsp; </span></td>
             <td class="databack">
                 <textarea style="width:95%;" rows="10" name="<?php echo $_SESSION['tng_comments']; ?>"></textarea>
             </td>

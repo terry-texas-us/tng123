@@ -319,7 +319,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <?php
         echo "<tr>";
         $col_span = ($allow_edit || $showtestnumbers) ? 4 : 3;
-        echo "<td colspan=$col_span valign=\"top\" class=\"center nw\" style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
+        echo "<td colspan=$col_span class=\"align-top center nw\" style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
 
         // the following builds the mode values row in the table
         $i = 0;
@@ -369,9 +369,9 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $databack = "databack";
                 }
                 if ($allow_edit || $showtestnumbers) {
-                    echo "<td valign=\"top\" class=\"$databack nw\">&nbsp;{$row['test_number']}&nbsp;</td>";
+                    echo "<td class=\"$databack nw\">&nbsp;{$row['test_number']}&nbsp;</td>";
                 }
-                echo "<td valign=\"top\" class=\"$databack nw\">&nbsp;$dna_namestr&nbsp;</td>";
+                echo "<td class=\"$databack nw\">&nbsp;$dna_namestr&nbsp;</td>";
                 $anc_namestr = "";
                 if ($row['MD_ancestorID']) {
                     $dna_anc_result = getPersonSimple($row['gedcom'], $row['MD_ancestorID']);
@@ -386,7 +386,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
 
                     tng_free_result($dna_anc_result);
                 }
-                echo "<td valign=\"top\" class=\"$databack nw\">&nbsp;$anc_namestr</td>";
+                echo "<td class=\"$databack nw\">&nbsp;$anc_namestr</td>";
                 if ($row['ydna_haplogroup']) {
                     if ($row['ydna_confirmed']) {
                         $haplogroup = "<span class='confirmed_haplogroup'>" . $row['ydna_haplogroup'] . " - " . $text['confirmed'] . "</span>";
@@ -394,7 +394,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                         $haplogroup = "<span class='predicted_haplogroup'>" . $row['ydna_haplogroup'] . " - " . $text['predicted'] . "</span>";
                     }
                 }
-                echo "<td valign=\"top\" class=\"$databack nw\">&nbsp;$haplogroup</td>";
+                echo "<td class=\"$databack nw\">&nbsp;$haplogroup</td>";
 
                 $resultscsv = $row['y_results'];
                 $yresultsarr = explode(',', $resultscsv);
@@ -417,7 +417,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 while ($j <= $columnCount - 1) {
                     $col_span = 1;
                     $displaystr = ($yresultsarr[$j] != $mode[$j]) ? "<span class=\"deviationback\">{$yresultsarr[$j]}</span>" : "<span class=\"blackchars\">{$yresultsarr[$j]}</span>";
-                    echo "<td colspan=$col_span valign=\"top\" class=\"$databack center nw\">$displaystr</td>";
+                    echo "<td colspan=$col_span class=\"$databack center nw\">$displaystr</td>";
                     $j++;
                 }
                 echo "</tr>\n";

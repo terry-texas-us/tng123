@@ -1,4 +1,41 @@
-/* normal: most regular body text */
+body.admin-body table.normal {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+body.admin-body table.normal th, body.admin-body table.normal td {
+    padding: 3px;
+}
+
+table.uploadmore td {
+    padding: 2px;
+    border: none;
+}
+
+table.tblback, table.lightback {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+table.tblback th, table.tblback td, table.lightback th, table.lightback td {
+    padding: 10px;
+}
+
+td.databack, td.databackalt, td.lightback {
+    vertical-align: top;
+}
+
+td.highlightedchild {
+    padding: 2px;
+    background-color: #f9f9f9;
+}
+
+td.unhighlightedchild {
+    padding: 2px;
+}
+
 .normal {
 }
 
@@ -917,15 +954,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 .tngmsgarea .adminsubhead,
 .yellow {
     color: #fc3;
-}
-
-td.highlightedchild {
-    padding: 2px;
-    background-color: #f9f9f9;
-}
-
-td.unhighlightedchild {
-    padding: 2px;
 }
 
 /*arrow underneath pedigree boxes*/
@@ -2050,31 +2078,6 @@ a.size0 {
     vertical-align: top;
 }
 
-table.uploadmore td {
-    padding: 2px;
-    border: none;
-}
-
-table.tblback, table.lightback {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 2px;
-}
-
-table.tblback th, table.tblback td, table.lightback th, table.lightback td {
-    padding: 10px;
-}
-
-body.admin-body table.normal {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 1px;
-}
-
-body.admin-body table.normal th, body.admin-body table.normal td {
-    padding: 3px;
-}
-
 #imgdiv img {
     max-width: 100%;
 }
@@ -2456,3 +2459,28 @@ thead th {
 }
 
 /* Classes for TNG Mods to be added below */
+
+.align-top {
+    vertical-align: top !important;
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+.align-bottom {
+    vertical-align: bottom !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+

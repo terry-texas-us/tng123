@@ -154,14 +154,15 @@ while ($row = tng_fetch_assoc($result)) {
     $prow['allow_private'] = $prights['private'];
     $namestr = getName($prow);
 
-    echo "<tr><td valign=\"top\" class='databack'>$i</td>\n";
-    echo "<td valign=\"top\" class='databack'>{$row['description']}&nbsp;</td>";
+    echo "<tr>";
+    echo "<td class='databack'>$i</td>\n";
+    echo "<td class='databack'>{$row['description']}&nbsp;</td>";
     if ($numtrees > 1) {
-        echo "<td valign=\"top\" class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+        echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
     }
-    echo "<td valign=\"top\" class='databack'><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>&nbsp;</td>";
-    echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($indrow['pcount']) . "</a>&nbsp;</td>";
-    echo "<td valign=\"top\" class='databack' align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
+    echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>&nbsp;</td>";
+    echo "<td class='databack' align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($indrow['pcount']) . "</a>&nbsp;</td>";
+    echo "<td class='databack' align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
     echo "</tr>\n";
     $i++;
 }

@@ -126,8 +126,8 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><strong><?php echo $admtext['branch']; ?>:</strong></td>
-                        <td valign="top"><?php echo $brow['description'] . "<br>({$admtext['people']} + {$admtext['families']} = $pcount*)"; ?>
+                        <td class='align-top'><strong><?php echo $admtext['branch']; ?>:</strong></td>
+                        <td class='align-top'><?php echo $brow['description'] . "<br>({$admtext['people']} + {$admtext['families']} = $pcount*)"; ?>
                             <input type="hidden" name="branch" value="<?php echo $branch; ?>">
                         </td>
                     </tr>

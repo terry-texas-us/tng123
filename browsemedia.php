@@ -385,9 +385,10 @@ while ($row = tng_fetch_assoc($result)) {
             $i++;
         }
     } else {
-        $mediatext .= "<tr><td valign=\"top\" class='databack'>$i</td>";
+        $mediatext .= "<tr>";
+        $mediatext .= "<td class='databack'>$i</td>";
         if ($imgsrc) {
-            $mediatext .= "<td valign=\"top\" class='databack' align=\"center\">";
+            $mediatext .= "<td class='databack' align=\"center\">";
             $mediatext .= "<div class=\"media-img\" id=\"mi{$row['mediaID']}\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
             if ($href && $row['allow_living']) {
                 $mediatext .= "<a href=\"$href\"";
@@ -399,11 +400,11 @@ while ($row = tng_fetch_assoc($result)) {
             } else {
                 $mediatext .= $imgsrc;
             }
-            $mediatext .= "</td><td valign=\"top\" class='databack'>";
+            $mediatext .= "</td><td class='databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td>";
-            $mediatext .= "<td valign=\"top\" class='databack'>";
+            $mediatext .= "<td class='databack' align=\"center\">&nbsp;</td>";
+            $mediatext .= "<td class='databack'>";
         }
 
         $mediatext .= "$description<br>$notes&nbsp;</td>";
@@ -412,11 +413,11 @@ while ($row = tng_fetch_assoc($result)) {
                 $row['cemname'] = $row['city'];
             }
             $plotstr = $row['plot'] ? "<br>" . nl2br($row['plot']) : "";
-            $mediatext .= "<td valign=\"top\" class='databack' width=\"30%\"><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
-            $mediatext .= "<td valign=\"top\" class='databack nw'>{$row['status']}&nbsp;</td>";
-            $mediatext .= "<td valign=\"top\" class='databack' width=\"30%\">\n";
+            $mediatext .= "<td class='databack' width=\"30%\"><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
+            $mediatext .= "<td class='databack nw'>{$row['status']}&nbsp;</td>";
+            $mediatext .= "<td class='databack' width=\"30%\">\n";
         } else {
-            $mediatext .= "<td valign=\"top\" class='databack' width=\"175\">\n";
+            $mediatext .= "<td class='databack' width=\"175\">\n";
         }
         $mediatext .= $medialinktext;
         $mediatext .= "&nbsp;</td></tr>\n";
@@ -427,7 +428,7 @@ tng_free_result($result);
 if (!$tnggallery) {
     if (!$thumbcount) {
         $header = str_replace("<td class=\"fieldnameback fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>", "", $header);
-        $mediatext = str_replace("<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td><td valign=\"top\" class='databack'>", "<td valign=\"top\" class='databack'>", $mediatext);
+        $mediatext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
 

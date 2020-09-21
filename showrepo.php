@@ -120,8 +120,8 @@ if ($notes) {
     $repotext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
     $repotext .= "<col class=\"labelcol\"/><col/>\n";
     $repotext .= "<tr>\n";
-    $repotext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
-    $repotext .= "<td valign=\"top\" class='databack'>$notes</td>\n";
+    $repotext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
+    $repotext .= "<td class='databack'>$notes</td>\n";
     $repotext .= "</tr>\n";
     $repotext .= "</table>\n";
     $repotext .= "<br>\n";

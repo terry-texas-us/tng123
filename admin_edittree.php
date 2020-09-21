@@ -83,10 +83,10 @@ tng_adminheader($admtext['modifytree'], $flags);
                 <form action="admin_updatetree.php" method="post" name="form1" onSubmit="return validateForm();">
                     <table class="normal">
                         <tr>
-                            <td valign="top"><?php echo $admtext['treeid']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['treeid']; ?>:</td>
                             <td><?php echo "$tree"; ?></td>
                             <td width="30" rowspan="11">&nbsp;&nbsp;&nbsp;</td>
-                            <td rowspan="11" valign="top">
+                            <td class="align-top" rowspan="11">
                                 <table class="normal">
                                     <?php
                                     echo "<tr>";
@@ -125,7 +125,7 @@ tng_adminheader($admtext['modifytree'], $flags);
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                             <td><textarea cols="40" rows="3" name="description"><?php echo $row['description']; ?></textarea></td>
                         </tr>
                         <tr>

@@ -39,13 +39,14 @@ tng_adminheader($admtext['diagnostics'], $flags);
 
     <table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
         <tr>
-            <td class="tngshadow databack" valign="top" colspan="2">
-                <em><?php echo $admtext['sysinfo']; ?></em>
+            <td class="tngshadow databack"
+            " colspan="2">
+            <em><?php echo $admtext['sysinfo']; ?></em>
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack" valign="top"><?php echo $admtext['phpver']; ?>:<br><em><?php echo $admtext['phpreq']; ?></em></td>
-            <td class="tngshadow databack" valign="top">
+            <td class="tngshadow databack"><?php echo $admtext['phpver']; ?>:<br><em><?php echo $admtext['phpreq']; ?></em></td>
+            <td class="tngshadow databack">
                 <?php
                 $phpver = floatval(phpversion());
                 if ($phpver >= 5.6) {
@@ -60,8 +61,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack" valign="top"><?php echo $admtext['gdlib']; ?>:<br><em><?php echo $admtext['gdreq']; ?></em></td>
-            <td class="tngshadow databack" valign="top">
+            <td class="tngshadow databack"><?php echo $admtext['gdlib']; ?>:<br><em><?php echo $admtext['gdreq']; ?></em></td>
+            <td class="tngshadow databack">
                 <?php
                 if (extension_loaded('gd')) {
                     if (ImageTypes() & IMG_GIF) {
@@ -76,8 +77,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack" valign="top"><?php echo $admtext['safemode']; ?>:</td>
-            <td class="tngshadow databack" valign="top">
+            <td class="tngshadow databack"><?php echo $admtext['safemode']; ?>:</td>
+            <td class="tngshadow databack">
                 <?php
                 if (!$safe_mode) {
                     echo "<p>$green&nbsp;" . $admtext['off'] . "</p>";
@@ -88,8 +89,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack" valign="top"><?php echo $admtext['fileuploads']; ?>:<br><em><?php echo $admtext['fureq']; ?></em></td>
-            <td class="tngshadow databack" valign="top">
+            <td class="tngshadow databack"><?php echo $admtext['fileuploads']; ?>:<br><em><?php echo $admtext['fureq']; ?></em></td>
+            <td class="tngshadow databack">
                 <?php
                 if ($file_uploads) {
                     echo "<p>$green&nbsp;" . $admtext['perm'] . "</p>";
@@ -100,8 +101,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack" valign="top"><?php echo $admtext['sqlver']; ?>:<br><em><?php echo $admtext['sqlreq']; ?></em></td>
-            <td class="tngshadow databack" valign="top">
+            <td class="tngshadow databack"><?php echo $admtext['sqlver']; ?>:<br><em><?php echo $admtext['sqlreq']; ?></em></td>
+            <td class="tngshadow databack">
                 <?php
                 $client_info = tng_get_client_info();
                 $dbci = floatval(preg_replace("/[^-0-9\.]/", "", $client_info));
@@ -130,8 +131,8 @@ tng_adminheader($admtext['diagnostics'], $flags);
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack" valign="top"><?php echo $admtext['wsrvr']; ?>:</td>
-            <td class="tngshadow databack" valign="top">
+            <td class="tngshadow databack"><?php echo $admtext['wsrvr']; ?>:</td>
+            <td class="tngshadow databack">
                 <?php
                 echo "<p>$green&nbsp;";
                 echo $_SERVER['SERVER_SOFTWARE'] . "</p>";
@@ -139,7 +140,7 @@ tng_adminheader($admtext['diagnostics'], $flags);
             </td>
         </tr>
         <tr>
-            <td valign="top" class="tngshadow databack"><?php echo $admtext['fperms']; ?>:<br><em><?php echo $admtext['fpreq']; ?></em></td>
+            <td class="tngshadow databack"><?php echo $admtext['fperms']; ?>:<br><em><?php echo $admtext['fpreq']; ?></em></td>
             <td class="tngshadow databack">
                 <?php
                 $myuserid = getmyuid();
@@ -246,13 +247,13 @@ tng_adminheader($admtext['diagnostics'], $flags);
         </tr>
         <tr>
             <td colspan="2" class="tngshadow databack">
-                <p><img src="img/tng_check.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
-                <p><img src="img/orange.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['restricted']; ?></p>
-                <p><img src="img/tng_close.gif" width="18" height="18" align="left">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
+                <p><img src="img/tng_check.gif" width="18" height="18">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
+                <p><img src="img/orange.gif" width="18" height="18">&nbsp;= <?php echo $admtext['restricted']; ?></p>
+                <p><img src="img/tng_close.gif" width="18" height="18">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
                 <br><?php echo $admtext['yourbrowser'] . $_SERVER['HTTP_USER_AGENT']; ?></td>
         </tr>
     </table>
-    <?php echo "<div align=\"right\" class='normal'>$tng_title, v.$tng_version</div>"; ?>
+    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
     </body>
     </html>
 <?php

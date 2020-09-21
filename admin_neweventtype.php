@@ -35,7 +35,7 @@ tng_adminheader($admtext['addnewevtype'], $flags);
                 $display = $admtext['display'] . " ({$langrow['display']})";
                 $displayname = "display" . $langrow['languageID'];
                 $displayrows .= "<tr>";
-                $displayrows .= "<td valign=\"top\"><span class='normal'>$display</span></td>";
+                $displayrows .= "<td class='align-top'><span class='normal'>$display</span></td>";
                 $displayrows .= "<td><input type=\"text\" name=\"$displayname\" size=\"40\" value=\"\" onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td>";
                 $displayrows .= "</tr>\n";
                 echo "if( document.form1.$displayname.value ) display = display + \"$lang\" + \"|\" + document.form1.$displayname.value + \"|\";\n";
@@ -86,7 +86,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
             <form action="admin_addeventtype.php" method="post" name="form1" onSubmit="return validateForm();">
                 <table class="normal">
                     <tr>
-                        <td valign="top"><?php echo $admtext['assocwith']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['assocwith']; ?>:</td>
                         <td>
                             <select name="type" onChange="populateTags(this.options[this.selectedIndex].value,'');">
                                 <option value="I"><?php echo $admtext['individual']; ?></option>
@@ -97,14 +97,14 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['selecttag']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['selecttag']; ?>:</td>
                         <td>
                             <select name="tag1" onChange="if(this.options[this.selectedIndex].value == 'EVEN') {toggleTdesc(1);} else {toggleTdesc(0);}">
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             &nbsp; <?php echo $admtext['orenter']; ?>:
                         </td>
                         <td>
@@ -113,26 +113,26 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                         </td>
                     </tr>
                     <tr id="tdesc">
-                        <td valign="top"><?php echo $admtext['typedescription']; ?>*:</td>
+                        <td class='align-top'><?php echo $admtext['typedescription']; ?>*:</td>
                         <td>
                             <input type="text" name="description" size="40">
                         </td>
                     </tr>
                     <tr id="displaytr">
-                        <td valign="top"><?php echo $admtext['display']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['display']; ?>:</td>
                         <td>
                             <input type="text" name="defdisplay" size="40">
                         </td>
                     </tr>
                     <?php if ($displayrows) { ?>
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <br>
                                 <hr style="margin-left:0; width:400px;">
                                 <?php echo displayToggle("plus0", 0, "otherlangs", $admtext['othlangs'], ''); ?>
                                 <table style="display:none;" id="otherlangs" class="normal">
                                     <tr>
-                                        <td valign="top" colspan="2"><br><b><?php echo $admtext['allnone']; ?></b><br><br></td>
+                                        <td class="align-top" colspan="2"><br><b><?php echo $admtext['allnone']; ?></b><br><br></td>
                                     </tr>
                                     <?php echo $displayrows; ?>
                                 </table>
@@ -142,13 +142,13 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                         </tr>
                     <?php } ?>
                     <tr>
-                        <td valign="top"><?php echo $admtext['displayorder']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['displayorder']; ?>:</td>
                         <td>
                             <input type="text" name="ordernum" size="4" value="0">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['evdata']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['evdata']; ?>:</td>
                         <td>
                             <input type="radio" name="keep" value="1" checked> <?php echo $admtext['accept']; ?> &nbsp;
                             <input type="radio" name="keep" value="0"> <?php echo $admtext['ignore']; ?>
@@ -156,7 +156,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                         <td></td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['collapseev']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['collapseev']; ?>:</td>
                         <td>
                             <input type="radio" name="collapse" value="1"> <?php echo $admtext['yes']; ?> &nbsp;
                             <input type="radio" name="collapse" value="0"
@@ -164,7 +164,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
                         <td></td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['ldsevent']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['ldsevent']; ?>:</td>
                         <td>
                             <input type="radio" name="ldsevent" value="1"> <?php echo $admtext['yes']; ?> &nbsp;
                             <input type="radio" name="ldsevent" value="0"

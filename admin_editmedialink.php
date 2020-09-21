@@ -85,7 +85,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <form action="" method="post" name="editlinkform" id="editlinkform" onsubmit="return updateMedia2EntityLink(this);">
         <table cellpadding="2" class="normal">
             <tr>
-                <td valign="top"><?php echo $admtext['event']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['event']; ?>:</td>
                 <td>
                     <select name="eventID" id="eventID">
                         <?php echo $options; ?>
@@ -96,15 +96,15 @@ header("Content-type:text/html; charset=" . $session_charset);
             if ($type != "album") {
                 ?>
                 <tr>
-                    <td valign="top"><?php echo $admtext['alttitle']; ?>:</td>
+                    <td class='align-top'><?php echo $admtext['alttitle']; ?>:</td>
                     <td><textarea name="altdescription" rows="3" cols="40"><?php echo $row['altdescription']; ?></textarea></td>
                 </tr>
                 <tr>
-                    <td valign="top"><?php echo $admtext['altdesc']; ?>:</td>
+                    <td class='align-top'><?php echo $admtext['altdesc']; ?>:</td>
                     <td><textarea name="altnotes" rows="4" cols="40"><?php echo $row['altnotes']; ?></textarea></td>
                 </tr>
                 <tr>
-                    <td valign="top" colspan="2">
+                    <td class="align-top" colspan="2">
                         <?php
                         if ($row['linktype'] != "C") {
                             ?>

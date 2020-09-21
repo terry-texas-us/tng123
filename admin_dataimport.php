@@ -204,7 +204,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                         </td>
                     </tr>
                     <tr id="ioptions">
-                        <td valign="top">
+                        <td class='align-top'>
                             <br>
                             <div>
                                 <input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
@@ -219,7 +219,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             <div>
                                 <input type="checkbox" name="importlatlong" value="1"> <?php echo $admtext['importlatlong']; ?></div>
                         </td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <br>
                             <div id="appenddiv"<?php if ($tngimpcfg['defimpopt'] != 3) {
                                 echo " style=\"display:none;\"";

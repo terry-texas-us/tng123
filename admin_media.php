@@ -439,11 +439,11 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $mtypeID = $row['mediatypeID'];
                             $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
                             $newactionstr = preg_replace("/xxx/", $row['mediaID'], $actionstr);
-                            echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) {
-                                echo "<td class='lightback' valign=\"top\" align=\"center\"><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value='1'></td>";
+                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value='1'></td>";
                             }
-                            echo "<td valign=\"top\" class='lightback' align=\"center\">";
+                            echo "<td class='lightback' align=\"center\">";
                             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
                             if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                                 $photoinfo = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);
@@ -461,9 +461,9 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             }
                             echo "</td>\n";
                             $description = $allow_edit || $allow_media_edit ? "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a>" : $row['description'];
-                            echo "<td class='lightback' valign=\"top\"><span class='normal'>$description<br>" . truncateIt(getXrefNotes($row['notes']), $maxnoteprev) . "</span></td>\n";
+                            echo "<td class='lightback'><span class='normal'>$description<br>" . truncateIt(getXrefNotes($row['notes']), $maxnoteprev) . "</span></td>\n";
                             if ($map['key']) {
-                                echo "<td nowrap class='lightback' valign=\"top\"><span class='normal'>";
+                                echo "<td nowrap class='lightback'><span class='normal'>";
                                 $geo = "";
                                 if ($row['latitude']) {
                                     $geo .= $admtext['latitude'] . ": " . number_format($row['latitude'], 3);
@@ -484,7 +484,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             }
                             if (!$mediatypeID) {
                                 $label = $text[$mtypeID] ? $text[$mtypeID] : $mediatypes_display[$mtypeID];
-                                echo "<td nowrap class='lightback normal' valign=\"top\">&nbsp;" . $label . "&nbsp;</td>\n";
+                                echo "<td nowrap class='lightback normal'>&nbsp;" . $label . "&nbsp;</td>\n";
                             }
 
                             $query = "SELECT people.personID AS personID2, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.personID AS personID, sources.title, sources.sourceID, repositories.repoID, reponame, linktype, families.gedcom AS gedcom ";
@@ -553,7 +553,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 
                             }
                             $medialinktext = $medialinktext ? "<ul>\n$medialinktext\n</ul>\n" : "&nbsp;";
-                            echo "<td nowrap class='lightback normal' valign=\"top\">$medialinktext</td>\n";
+                            echo "<td nowrap class='lightback normal'>$medialinktext</td>\n";
 
                             echo "</tr>\n";
                         }

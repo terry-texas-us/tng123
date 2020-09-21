@@ -235,7 +235,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                     $query = "SELECT treename FROM " . $trees_table . " WHERE gedcom = \"{$nrow['gedcom']}\"";
                                     $result2 = tng_query($query);
                                     $row2 = tng_fetch_assoc($result2);
-                                    $treetext = "<td valign='top' class='lightback'>" . $row2['treename'] . "</td>";
+                                    $treetext = "<td class='lightback'>" . $row2['treename'] . "</td>";
                                     tng_free_result($result2);
                                 }
 
@@ -296,9 +296,9 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             } else {
                                 $notetext = $admtext['text_private'];
                             }
-                            echo "<td valign=\"top\" class='lightback'>$notetext</td>\n";
+                            echo "<td class='lightback'>$notetext</td>\n";
                             echo $treetext;
-                            echo "<td valign=\"top\" nowrap class='lightback'>\n<ul>\n$notelinktext\n</ul>\n</td></tr>\n";
+                            echo "<td class='lightback' nowrap>\n<ul>\n$notelinktext\n</ul>\n</td></tr>\n";
                         }
                         ?>
                     </table>

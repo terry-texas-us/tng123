@@ -335,7 +335,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $description = $hs['description'];
         $notes = $hs['notes'];
 
-        $body .= "<tr><td valign=\"top\" class='databack center' style=\"width:$thumbmaxw" . "px;\">";
+        $body .= "<tr><td class='databack center' style=\"width:$thumbmaxw" . "px;\">";
         $hs['mediatypeID'] = "headstones";
         $hs['allow_living'] = 1;
         $imgsrc = getSmallPhoto($hs);
@@ -354,9 +354,9 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
         $body .= "</td>\n";
 
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>" . nl2br($hs['plot']);
+        $body .= "<td class='databack'><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'>" . nl2br($hs['plot']);
         if ($hs['latitude'] || $hs['longitude']) {
             if ($hs['plot']) {
                 $body .= "<br>";
@@ -364,7 +364,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
             $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
         }
         $body .= "&nbsp;</span></td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";
         $body .= "</tr>\n";
     }
     $cemcount++;

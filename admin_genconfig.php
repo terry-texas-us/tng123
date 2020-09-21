@@ -424,7 +424,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 </table>
                             </td>
                             <td>&nbsp;</td>
-                            <td valign="top">
+                            <td class='align-top'>
                                 <table class="normal">
                                     <tr>
                                         <td><?php echo $admtext['notelinkstable']; ?>:</td>
@@ -625,7 +625,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['site_desc']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['site_desc']; ?>:</td>
                             <td><textarea name="site_desc" rows="2" cols="65"><?php echo $site_desc; ?></textarea></td>
                         </tr>
                         <tr>
@@ -653,7 +653,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['footermsg']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['footermsg']; ?>:</td>
                             <td><textarea name="tng_footermsg" rows="2" cols="65"><?php echo $tngconfig['footermsg']; ?></textarea></td>
                         </tr>
                         <tr>

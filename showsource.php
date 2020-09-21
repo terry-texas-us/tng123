@@ -207,8 +207,8 @@ if ($notes) {
     $sourcetext .= "<table cellspacing='1' cellpadding=\"4\"  class=\"whiteback tfixed\">\n";
     $sourcetext .= "<col class=\"labelcol\"/><col/>\n";
     $sourcetext .= "<tr>\n";
-    $sourcetext .= "<td valign=\"top\" class=\"fieldnameback indleftcol\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
-    $sourcetext .= "<td valign=\"top\" class='databack'>$notes</td>\n";
+    $sourcetext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\"><span class=\"fieldname\">&nbsp;{$text['notes']}&nbsp;</span></td>\n";
+    $sourcetext .= "<td class='databack'>$notes</td>\n";
     $sourcetext .= "</tr>\n";
     $sourcetext .= "</table>\n";
     $sourcetext .= "<br>\n";

@@ -185,7 +185,7 @@ if ($sitever == "mobile") {
                     <!-- EDIT LINKS TO PARTICULAR INDIVIDUAL HISTORIES YOU WANT TO LINK TO BELOW -->
                     <!-- CHANGE tree=yourtreeid to match your tree ID -->
                     <tr>
-                        <td class="normal" valign="top">
+                        <td class="normal align-top">
 
                             <?php
                             //begin FAMILY HISTORIES LINKS ("HIS")
@@ -201,7 +201,7 @@ if ($sitever == "mobile") {
                             ?>
 
                         </td>
-                        <td class="normal" valign="top">
+                        <td class="normal align-top">
                             <?php
                             //begin FAMILY HISTORIES LINKS ("HIS")
                             //Configurable from Template Settings. You can also replace the t6_fhlinkshis PHP block below with the desired text if you prefer that to using the Template Settings.

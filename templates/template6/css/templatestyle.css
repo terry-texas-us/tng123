@@ -224,7 +224,6 @@ a.admincell:hover, a.leftlink:hover {
     height: 5px;
 }
 
-/* titlemid is defined to replace the height=58 align="left" valign="top" background="titlemid.jpg" */
 .titlemid {
     height: 58px;
     text-align: left;
@@ -275,7 +274,6 @@ a.footer:hover {
     padding: 5px;
 }
 
-/* section replaces width="33%" valign="top" for the 3 home page sections */
 .section {
     width: 33%;
     vertical-align: top;

@@ -129,14 +129,14 @@ if ($sitever != "mobile") {
 
                 </table>
             </td>
-            <td valign="top">
+            <td class='align-top'>
                 <table cellspacing="0" class="bodytable">
                     <tr>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td class="spacercol">&nbsp;&nbsp;&nbsp;</td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <table cellspacing="0" class="bodytable">
                                 <tr>
                                     <td class="maincontent"><br>
@@ -186,7 +186,7 @@ if ($sitever != "mobile") {
                                     <td class="rightcontent"><br>
                                         <table width="200" cellspacing="0">
                                             <tr>
-                                                <td valign="top"><span class="emphasis"><?php echo $text['latupdates']; ?></span></td>
+                                                <td class='align-top'><span class="emphasis"><?php echo $text['latupdates']; ?></span></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="line"></td>
@@ -195,7 +195,7 @@ if ($sitever != "mobile") {
                                                 <td><span class="smallest">&nbsp;</span></td>
                                             </tr>
                                             <tr>
-                                                <td valign="top">
+                                                <td class='align-top'>
                                                     <div class="normal">
                                                         <?php
                                                         $tngquery = "SELECT lastname, firstname, changedate, personID, gedcom, living, private, branch, lnprefix, title, suffix, prefix FROM $people_table ORDER BY changedate DESC LIMIT 10";
@@ -220,10 +220,10 @@ if ($sitever != "mobile") {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td valign="top"><span class="normal">&nbsp;</span></td>
+                                                <td class='align-top'><span class="normal">&nbsp;</span></td>
                                             </tr>
                                             <tr>
-                                                <td valign="top"><span class="emphasis"><?php echo $text['featphoto']; ?></span></td>
+                                                <td class='align-top'><span class="emphasis"><?php echo $text['featphoto']; ?></span></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="line"></td>
@@ -232,7 +232,7 @@ if ($sitever != "mobile") {
                                                 <td><span class="smallest">&nbsp;</span></td>
                                             </tr>
                                             <tr>
-                                                <td valign="top">
+                                                <td class='align-top'>
                                                     <div class="normal">
 
                                                         <?php

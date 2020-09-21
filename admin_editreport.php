@@ -199,17 +199,17 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['description']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['description']; ?>:</span></td>
                         <td><textarea cols="50" rows="3" name="reportdesc"><?php echo $row['reportdesc']; ?></textarea></td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['rankpriority']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['rankpriority']; ?>:</span></td>
                         <td>
                             <input type="text" name="ranking" size="3" maxlength="3" value="<?php echo $row['ranking']; ?>">
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['active']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['active']; ?>:</span></td>
                         <td><span class="normal"><input type="radio" name="active" value="1" <?php if ($row['active']) {
                                     echo "checked";
                                 } ?>> <?php echo $admtext['yes']; ?> &nbsp; <input type="radio" name="active" value="0" <?php if (!$row['active']) {
@@ -217,7 +217,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                 } ?>> <?php echo $admtext['no']; ?></span></td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><span class="normal"><br>
+                        <td class="align-top" colspan="2"><span class="normal"><br>
 	                        <img src="img/tng_right.gif" width="17" height="15" align="middle"> = <?php echo $admtext['add']; ?> &nbsp;&nbsp;
 	                        <img src="img/tng_left.gif" width="17" height="15" align="middle"> = <?php echo $admtext['remove']; ?> &nbsp;&nbsp;
 	                        <img src="img/tng_up.gif" width="17" height="15" align="middle"> = <?php echo $admtext['moveup']; ?> &nbsp;&nbsp;
@@ -226,10 +226,10 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2">
+                        <td class="align-top" colspan="2">
                             <table cellspacing="0" cellpadding="0">
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <select name="availfields" size="15" class="reportcol" onDblClick="AddtoDisplay(document.form1.availfields,document.form1.displayfields);">
                                             <?php
                                             foreach ($dfields as $key => $value)
@@ -252,7 +252,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                         &nbsp;<a href="javascript:RemovefromDisplay(document.form1.displayfields);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17"
                                                                                                                          height="15"></a>&nbsp;
                                     </td>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <select name="displayfields" size="15" class="reportcol" onDblClick="RemovefromDisplay(document.form1.displayfields);">
                                             <?php
                                             $displayfields = explode($lineending, $row['display']);
@@ -292,13 +292,13 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><h3 class="subhead"><?php echo $admtext['choosecriteria']; ?>:</h3></td>
+                        <td class="align-top" colspan="2"><h3 class="subhead"><?php echo $admtext['choosecriteria']; ?>:</h3></td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2">
+                        <td class="align-top" colspan="2">
                             <table cellspacing="0" cellpadding="0">
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <select name="availcriteria" size="12" class="reportcol" onDblClick="AddtoDisplay(document.form1.availcriteria,document.form1.finalcriteria);">
                                             <?php
                                             foreach ($cfields as $key => $value) {
@@ -330,7 +330,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                         &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalcriteria);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17"
                                                                                                                          height="15"></a>&nbsp;
                                     </td>
-                                    <td valign="top" rowspan="4">
+                                    <td class="align-top" rowspan="4">
                                         <select name="finalcriteria" size="28" class="reportcol" onDblClick="RemovefromDisplay(document.form1.finalcriteria);">
                                             <?php
                                             $criteriafields = explode($lineending, $row['criteria']);
@@ -379,7 +379,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <span class="normal"><?php echo $admtext['operators']; ?>:<br></span>
                                         <select name="availoperators" size="8" class="reportcol" onDblClick="AddtoDisplay(document.form1.availoperators,document.form1.finalcriteria);">
                                             <option value="eq">=</option>
@@ -405,7 +405,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <span class="normal"><?php echo $admtext['constantstring']; ?>:*<br></span>
                                         <input type="text" name="constantstring" size="20">
                                     </td>
@@ -416,7 +416,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <span class="normal"><?php echo $admtext['constantvalue']; ?>:<br></span>
                                         <input type="text" name="constantvalue" size="20">
                                     </td>
@@ -431,14 +431,14 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><br>
+                        <td class="align-top" colspan="2"><br>
                             <h3 class="subhead"><?php echo $admtext['choosesort']; ?>:</h3></td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2">
+                        <td class="align-top" colspan="2">
                             <table cellspacing="0" cellpadding="0">
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <select name="availsort" size="10" class="reportcol" onDblClick="AddtoDisplay(document.form1.availsort,document.form1.finalsort);">
                                             <?php
                                             foreach ($cfields as $key => $value)
@@ -461,7 +461,7 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                                         &nbsp;<a href="javascript:RemovefromDisplay(document.form1.finalsort);"><img src="img/tng_left.gif" alt="<?php echo $admtext['remove']; ?>" width="17"
                                                                                                                      height="15"></a>&nbsp;
                                     </td>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <select name="finalsort" size="10" class="reportcol" onDblClick="RemovefromDisplay(document.form1.finalsort);">
                                             <?php
                                             $orderbyfields = explode($lineending, $row['orderby']);
@@ -495,10 +495,10 @@ echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><span class="normal"><br><b><?php echo $admtext['altreport']; ?>:</b><br></span></td>
+                        <td class="align-top" colspan="2"><span class="normal"><br><b><?php echo $admtext['altreport']; ?>:</b><br></span></td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><textarea cols="60" rows="4" name="sqlselect"><?php echo $row['sqlselect']; ?></textarea></td>
+                        <td class="align-top" colspan="2"><textarea cols="60" rows="4" name="sqlselect"><?php echo $row['sqlselect']; ?></textarea></td>
                     </tr>
                 </table>
                 <br>

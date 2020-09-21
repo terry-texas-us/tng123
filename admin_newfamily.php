@@ -181,7 +181,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
             <td class="tngshadow">
                 <table class="normal">
                     <tr>
-                        <td valign="top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
+                        <td class="align-top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixfamilyid']; ?></strong></span></td>
                     </tr>
                     <tr>
                         <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>

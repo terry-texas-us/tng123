@@ -80,7 +80,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                                 echo "display:none";
                             } ?>"><?php echo $photo; ?>
@@ -180,13 +180,13 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                 <br>
                 <table class="normal">
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
                             <?php
                             echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('R','$repoID','$tree');\"></p>\n";
                             ?>
                         </td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <?php
                             showCustEvents($repoID);
                             ?>

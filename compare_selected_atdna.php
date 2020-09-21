@@ -161,14 +161,15 @@ echo $header;
                     $databack = "databack";
                 }
 
-                echo "<tr><td valign=\"top\" class=\"$databack\">$i</td>\n";
+                echo "<tr>";
+                echo "<td class=\"$databack\">$i</td>\n";
                 if ($allow_edit || $showtestnumbers) {
                     if ($row['private_test']) {
                         $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
                     } else {
                         $privtest = "";
                     }
-                    echo "<td valign=\"top\" class=\"$databack\"><a href=\"$show_dna_test_url" . "group=$test_group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
+                    echo "<td class=\"$databack\"><a href=\"$show_dna_test_url" . "group=$test_group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
                 }
 
                 $dna_pers_result = getPersonData($row['gedcom'], $row['personID']);
@@ -197,19 +198,13 @@ echo $header;
                 }
                 tng_free_result($dna_pers_result);
 
-                echo "<td valign=\"top\" class=\"$databack\">$dna_namestr&nbsp;</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['vendor']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['chromosome']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['segment_start']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['segment_end']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['centiMorgans']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['matching_SNPs']}</td>";
+                echo "<td class=\"$databack\">$dna_namestr&nbsp;</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['vendor']}</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['chromosome']}</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['segment_start']}</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['segment_end']}</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['centiMorgans']}</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['matching_SNPs']}</td>";
 
                 if ($row['ydna_haplogroup']) {
                     if ($row['ydna_confirmed']) {
@@ -220,7 +215,7 @@ echo $header;
                 } else {
                     $ydna_haplogroup = "";
                 }
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;$ydna_haplogroup</td>";
+                echo "<td class=\"$databack\">&nbsp;$ydna_haplogroup</td>";
 
                 if ($row['mtdna_haplogroup']) {
                     if ($row['mtdna_confirmed']) {
@@ -231,8 +226,7 @@ echo $header;
                 } else {
                     $mtdna_haplogroup = "";
                 }
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;$mtdna_haplogroup</td>";
-
+                echo "<td class=\"$databack\">&nbsp;$mtdna_haplogroup</td>";
 
                 $anc_namestr = "";
                 $mrcanc_namestr = "";
@@ -267,20 +261,16 @@ echo $header;
                         }
                     }
                 }
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['suggested_relationship']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['actual_relationship']}</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;$mrcanc_namestr</td>";
-
-                echo "<td valign=\"top\" class=\"$databack\">&nbsp;{$row['related_side']}</td>";
-
+                echo "<td class=\"$databack\">&nbsp;{$row['suggested_relationship']}</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['actual_relationship']}</td>";
+                echo "<td class=\"$databack\">&nbsp;$mrcanc_namestr</td>";
+                echo "<td class=\"$databack\">&nbsp;{$row['related_side']}</td>";
 
                 $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
-                echo "<td valign=\"top\" class=\"$databack\">$group</td>";
+                echo "<td class=\"$databack\">$group</td>";
                 global $numtrees;
                 if (!$assignedtree && ($numtrees > 1)) {
-                    echo "<td valign=\"top\" class=\"$databack nw\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class=\"$databack nw\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
                 $i++;

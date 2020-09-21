@@ -137,7 +137,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     </tr>
 
                     <tr>
-                        <td valign="top" colspan="2"><br><?php echo $admtext['mapdimsind']; ?>:</td>
+                        <td class="align-top" colspan="2"><br><?php echo $admtext['mapdimsind']; ?>:</td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['mapwidth']; ?>:</td>
@@ -153,7 +153,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     </tr>
 
                     <tr>
-                        <td valign="top" colspan="2"><br><?php echo $admtext['mapdimshst']; ?>:</td>
+                        <td class="align-top" colspan="2"><br><?php echo $admtext['mapdimshst']; ?>:</td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['mapwidth']; ?>:</td>
@@ -169,7 +169,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     </tr>
 
                     <tr>
-                        <td valign="top" colspan="2"><br><?php echo $admtext['mapdimsadm']; ?>:</td>
+                        <td class="align-top" colspan="2"><br><?php echo $admtext['mapdimsadm']; ?>:</td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['mapwidth']; ?>:</td>
@@ -211,7 +211,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     </tr>
 
                     <tr>
-                        <td valign="top" colspan="2"><br></td>
+                        <td class="align-top" colspan="2"><br></td>
                     </tr>
                     <tr>
                         <td><?php echo $admtext['conslpins']; ?>:</td>

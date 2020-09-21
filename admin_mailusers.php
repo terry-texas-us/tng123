@@ -50,18 +50,18 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['emailmessage']
             <form action="admin_sendmailusers.php" method="post" name="form1" onSubmit="return validateForm();">
                 <table>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['subject']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['subject']; ?>:</span></td>
                         <td><span class="normal"><input type="text" name="subject" size="50" maxlength="50"></span></td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['messagetext']; ?>:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['messagetext']; ?>:</span></td>
                         <td><span class="normal"><textarea cols="50" rows="15" name="messagetext"></textarea></span></td>
                     </tr>
                     <tr>
-                        <td valign="top" colspan="2"><span class="normal"><br><strong><?php echo $admtext['selectgroup']; ?></strong></span></td>
+                        <td class="align-top" colspan="2"><span class="normal"><br><strong><?php echo $admtext['selectgroup']; ?></strong></span></td>
                     </tr>
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <span class="normal"><?php echo $admtext['tree']; ?>*:</span></td>
                         <td><span class="normal">
 			<select name="gedcom" id="gedcom" onChange="var tree=getTree(this); if( !tree ) tree = 'none'; <?php echo $swapbranches; ?>">
@@ -78,7 +78,7 @@ while ($treerow = tng_fetch_assoc($treeresult)) {
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><span class="normal"><?php echo $admtext['branch']; ?>**:</span></td>
+                        <td class='align-top'><span class="normal"><?php echo $admtext['branch']; ?>**:</span></td>
                         <td><span class="normal">
 			<select name="branch" id="branch">
 				<option value=""></option>

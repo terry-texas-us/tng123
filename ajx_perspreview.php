@@ -220,8 +220,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td valign=\"top\" class=\"fieldnameback\"><span class=\"fieldname\">{$text['children']}&nbsp;</span></td>\n";
-        $persontext .= "<td colspan=\"2\" valign=\"top\" class='databack'>\n";
+        $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan=\"2\">\n";
 
         $kidcount = 1;
         $persontext .= "<table cellpadding = \"0\" cellspacing = \"0\">\n";
@@ -234,7 +234,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             if ($child['firstname'] || $child['lastname']) {
                 $childname = getName($child);
                 $persontext .= "<tr>";
-                $persontext .= "<td valign=\"top\">$ifkids</td>";
+                $persontext .= "<td class='align-top'>$ifkids</td>";
                 $persontext .= "<td class=\"unhighlightedchild\" id=\"child{$child['personID']}\">$kidcount. $childname";
                 if ($crights['both']) {
                     $persontext .= $birthinfo;

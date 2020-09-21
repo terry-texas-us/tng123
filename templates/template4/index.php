@@ -185,13 +185,13 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                         <div class="rightsection"><br>
                             <table cellspacing="0">
                                 <tr>
-                                    <td valign="top"><span class="normal"><b><?php echo $text['featarts']; ?></b></span></td>
+                                    <td class='align-top'><span class="normal"><b><?php echo $text['featarts']; ?></b></span></td>
                                 </tr>
                                 <tr>
-                                    <td valign="top" class="line"></td>
+                                    <td class="line align-top"></td>
                                 </tr>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <div class="normal">
                                             <?php
                                             //begin FEATURES 1-4
@@ -238,16 +238,16 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td valign="top"><span class="normal">&nbsp;</span></td>
+                                    <td class='align-top'><span class="normal">&nbsp;</span></td>
                                 </tr>
                                 <tr>
-                                    <td valign="top"><span class="normal"><b><?php echo $text['contactus']; ?></b></span></td>
+                                    <td class='align-top'><span class="normal"><b><?php echo $text['contactus']; ?></b></span></td>
                                 </tr>
                                 <tr>
-                                    <td valign="top" class="line"></td>
+                                    <td class="line align-top"></td>
                                 </tr>
                                 <tr>
-                                    <td valign="top">
+                                    <td class='align-top'>
                                         <div class="normal">
                                             <p><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
                                                     class="emailimg"><?php echo $text['contactus_long']; ?></p><br>

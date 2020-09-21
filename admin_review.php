@@ -267,14 +267,14 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                 <form action="admin_savereview.php" method="post" name="form1">
                     <table class="normal">
                         <tr>
-                            <td valign="top"><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
                             <td><span class="normal"><?php echo $treerow['treename']; ?></span></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top"><h3 class="subhead"><?php echo $admtext['event']; ?>:</h3></td>
+                            <td class='align-top'><h3 class="subhead"><?php echo $admtext['event']; ?>:</h3></td>
                             <td><h3 class="subhead"><?php echo $displayval; ?></h3></td>
                         </tr>
                         <tr>
@@ -285,7 +285,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 // TODO span tags out of order datefield and placefield
                             echo "<tr>";
                             echo "<td>{$admtext['eventdate']}: </span></td>";
-                            echo "<td valign=\"top\"><span class='normal'>{$evrow[$datefield]}</td>";
+                            echo "<td class='align-top'><span class='normal'>{$evrow[$datefield]}</td>";
                             echo "</tr>\n";
                             echo "<tr>";
                             echo "<td><strong>{$admtext['suggested']}:</strong></td>";
@@ -296,23 +296,23 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             $row['eventplace'] = preg_replace("/\"/", "&#34;", $row['eventplace']);
                             echo "<tr>";
                             echo "<td>{$admtext['eventplace']}:</td>";
-                            echo "<td valign=\"top\"><span class='normal'>{$evrow[$placefield]}</td>";
+                            echo "<td class='align-top'><span class='normal'>{$evrow[$placefield]}</td>";
                             echo "</tr>\n";
                             echo "<tr>";
                             echo "<td><strong>{$admtext['suggested']}:</strong></td>";
-                            echo "<td valign=\"top\"><input type=\"text\" name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
+                            echo "<td class='align-top'><input type=\"text\" name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
                             echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('newplace');\" title=\"{$admtext['find']}\" class=\"smallicon admin-find-icon\"></a></td>";
                             echo "</tr>\n";
                         }
                         if ($factfield) {
                             $row['info'] = preg_replace("/\"/", "&#34;", $row['info']);
                             echo "<tr>";
-                            echo "<td valign=\"top\">{$admtext['detail']}:</td>";
-                            echo "<td valign=\"top\">{$row[$factfield]}</td>";
+                            echo "<td class='align-top'>{$admtext['detail']}:</td>";
+                            echo "<td class='align-top'>{$row[$factfield]}</td>";
                             echo "</tr>\n";
                             echo "<tr>";
-                            echo "<td valign=\"top\"><strong>{$admtext['suggested']}:</strong></td>";
-                            echo "<td valign=\"top\" colspan=\"2\"><textarea cols=\"60\" rows=\"4\" name=\"newinfo\">{$row['info']}</textarea></td>";
+                            echo "<td class='align-top'><strong>{$admtext['suggested']}:</strong></td>";
+                            echo "<td class='align-top' colspan=\"2\"><textarea cols=\"60\" rows=\"4\" name=\"newinfo\">{$row['info']}</textarea></td>";
                             echo "</tr>\n";
                         }
                         $row['note'] = preg_replace("/\"/", "&#34;", $row['note']);
@@ -336,14 +336,14 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['usernotes']; ?>:</td>
-                            <td valign="top"><textarea cols="60" rows="4" name="usernote"><?php echo $row['note']; ?></textarea></td>
+                            <td class='align-top'><?php echo $admtext['usernotes']; ?>:</td>
+                            <td class='align-top'><textarea cols="60" rows="4" name="usernote"><?php echo $row['note']; ?></textarea></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['postdate']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['postdate']; ?>:</td>
                             <td><?php echo "{$row['postdate']} ({$row['user']})"; ?></td>
                         </tr>
                     </table>

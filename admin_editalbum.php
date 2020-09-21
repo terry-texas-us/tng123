@@ -181,11 +181,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                             <td><textarea cols="60" rows="3" name="description"><?php echo $row['description']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['keywords']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['keywords']; ?>:</td>
                             <td><textarea cols="60" rows="3" name="keywords"><?php echo $row['keywords']; ?></textarea></td>
                         <tr>
                             <td><?php echo $admtext['active']; ?>:</td>
@@ -199,7 +199,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         </tr>
                         </tr>
                         <tr>
-                            <td valign="top" colspan="2">
+                            <td class="align-top" colspan="2">
                                 <input type="checkbox" name="alwayson" value="1"<?php if ($row['alwayson']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['alwayson']; ?></td>
@@ -272,8 +272,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             }
                             echo "<a href=\"#\" onclick=\"return removeFromAlbum('{$lrow['mediaID']}','{$lrow['albumlinkID']}');\">{$admtext['remove']}</a>";
                             echo "</div></td>\n";
-                            echo "<td class='lightback normal' style=\"width:150px;\" valign=\"top\">{$lrow['datetaken']}&nbsp;</td>\n";
-                            echo "<td class='lightback normal' style=\"width:100px;\" valign=\"top\">" . $label . "&nbsp;</td>\n";
+                            echo "<td class='lightback normal' style=\"width:150px;\">{$lrow['datetaken']}&nbsp;</td>\n";
+                            echo "<td class='lightback normal' style=\"width:100px;\">" . $label . "&nbsp;</td>\n";
                             echo "</tr></table>";
                             echo "</div>\n";
                             $count++;

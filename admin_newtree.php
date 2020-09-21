@@ -57,7 +57,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                            <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                             <td><textarea cols="40" rows="3" name="description"><?php echo $description; ?></textarea>
                             </td>
                         </tr>

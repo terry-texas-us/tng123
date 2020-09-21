@@ -155,11 +155,11 @@ $citationcount = tng_num_rows($citresult);
                 </td>
             </tr>
             <tr>
-                <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['actualtext']; ?>:</td>
                 <td><textarea cols="50" rows="5" name="citetext" id="citetext"></textarea></td>
             </tr>
             <tr>
-                <td valign="top"><?php echo $admtext['notes']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                 <td><textarea cols="50" rows="5" name="citenote" id="citenote"></textarea></td>
             </tr>
         </table>

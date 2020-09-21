@@ -86,7 +86,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['modifysource
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
                                 echo "display:none";
                             } ?>"><?php echo $photo; ?></div>
@@ -174,20 +174,20 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['actualtext']; ?>:</td>
                         <td><textarea cols="50" rows="5" name="actualtext"><?php echo $row['actualtext']; ?></textarea></td>
                     </tr>
                 </table>
                 <br>
                 <table class="normal">
                     <tr>
-                        <td valign="top">
+                        <td class='align-top'>
                             <h3 class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>:</h3>
                             <?php
                             echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
                             ?>
                         </td>
-                        <td valign="top">
+                        <td class='align-top'>
                             <?php
                             showCustEvents($sourceID);
                             ?>

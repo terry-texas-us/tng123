@@ -176,8 +176,9 @@ if (tng_num_rows($hsresult)) {
         $imgsrc = getSmallPhoto($hs);
         $href = getMediaHREF($hs, 3);
 
-        $body .= "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>";
-        $body .= "<td valign=\"top\" class='databack' width=\"$thumbmaxw\">";
+        $body .= "<tr>";
+        $body .= "<td class='databack'><span class='normal'>$i</span></td>";
+        $body .= "<td class='databack' width=\"$thumbmaxw\">";
         if ($imgsrc) {
             $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
             $body .= "<a href=\"$href\"";
@@ -190,7 +191,7 @@ if (tng_num_rows($hsresult)) {
         }
 
         $body .= "</td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>";
+        $body .= "<td class='databack'><span class='normal'>";
         $body .= "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
         $i++;
     }
@@ -334,7 +335,7 @@ if ($numrows) {
         $description = $hs['description'];
         $notes = nl2br($hs['notes']);
 
-        $body .= "<tr><td valign=\"top\" class='databack' align=\"center\" style=\"width:$thumbmaxw" . "px;\">";
+        $body .= "<tr><td class='databack' align=\"center\" style=\"width:$thumbmaxw" . "px;\">";
         $hs['allow_living'] = $noneliving;
         $hs['allow_private'] = $noneprivate;
         $imgsrc = getSmallPhoto($hs);
@@ -353,9 +354,9 @@ if ($numrows) {
 
         $body .= "</td>\n";
 
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>" . nl2br($hs['plot']);
+        $body .= "<td class='databack'><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'>" . nl2br($hs['plot']);
         if ($hs['latitude'] || $hs['longitude']) {
             if ($hs['plot']) {
                 $body .= "<br>";
@@ -363,7 +364,7 @@ if ($numrows) {
             $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
         }
         $body .= "&nbsp;</span></td>\n";
-        $body .= "<td valign=\"top\" class='databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";
         $body .= "</tr>\n";
     }
     $body .= "</table>\n";

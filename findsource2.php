@@ -19,7 +19,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow" id="findrepodiv">
     <table cellpadding="0">
         <tr>
-            <td valign="top">
+            <td class='align-top'>
                 <h3 class="subhead"><?php echo $admtext['searchresults']; ?></h3><br>
                 <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
             </td>
@@ -41,7 +41,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         while ($row = tng_fetch_assoc($result)) {
             $fixedtitle = addslashes($row['title']);
             echo "<tr>\n";
-            echo "<td valign=\"top\" class='lightback'><span class='normal'><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">{$row['sourceID']}</a></span></td>\n";
+            echo "<td class='lightback'><span class='normal'><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">{$row['sourceID']}</a></span></td>\n";
             echo "<td class='lightback'><span class='normal'><a href=\"findsource2.php\" onClick=\"return returnTitle('{$row['sourceID']}');\">" . truncateIt($row['title'], 75) . "</a>&nbsp;</span></td>\n";
             echo "</tr>\n";
         }

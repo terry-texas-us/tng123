@@ -123,7 +123,7 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
 
                 </table>
             </td>
-            <td valign="top">
+            <td class='align-top'>
                 <table cellspacing="0" width="100%">
                     <tr>
                         <td colspan="2">

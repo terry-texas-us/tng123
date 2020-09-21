@@ -267,7 +267,6 @@ a.footer:hover {
     height: 81px;
 }
 
-/* strip replaces  align="right" valign="middle" height="20"  */
 .strip {
     color: #996;
     margin-top: 0;
@@ -278,14 +277,12 @@ a.footer:hover {
 
 /*  additional classes added for strict validation  */
 
-/* logo defined to replace align="left" valign="middle" width="30%" */
 .logo {
     text-align: left;
     vertical-align: middle;
     width: 30%;
 }
 
-/* news defined to replace valign="top" align="left" width="70%" */
 .news {
     vertical-align: top;
     text-align: left;
@@ -293,8 +290,6 @@ a.footer:hover {
     width: 70%;
     padding: 5px;
 }
-
-/* section replaces  width="210" valign="top" class="page" */
 
 .section {
     vertical-align: top;
@@ -323,12 +318,10 @@ a.footer:hover {
     width: 683px;
 }
 
-/* maincontent added to replace td valign="top" width="300" */
 .maincontent {
     vertical-align: top;
 }
 
-/* rightcontent added to replace td width="280" valign="top" */
 .rightcontent {
     vertical-align: top;
     width: 280px;

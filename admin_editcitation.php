@@ -35,7 +35,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <table cellpadding="2" class="normal">
         <?php if ($row['sourceID']) { ?>
             <tr>
-                <td valign="top"><?php echo $admtext['source']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['source']; ?>:</td>
                 <td>
                     <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"> &nbsp;<?php echo $admtext['text_or']; ?> &nbsp;
                     <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
@@ -56,13 +56,13 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         ?>
         <tr>
-            <td valign="top"><?php echo $admtext['page']; ?>:</td>
+            <td class='align-top'><?php echo $admtext['page']; ?>:</td>
             <td>
                 <input type="text" name="citepage" value="<?php echo $row['page']; ?>" size="60">
             </td>
         </tr>
         <tr>
-            <td valign="top"><?php echo $admtext['reliability']; ?>*:</td>
+            <td class='align-top'><?php echo $admtext['reliability']; ?>*:</td>
             <td>
                 <select name="quay">
                     <option value=""></option>
@@ -86,17 +86,17 @@ header("Content-type:text/html; charset=" . $session_charset);
             </td>
         </tr>
         <tr>
-            <td valign="top"><?php echo $admtext['citedate']; ?>:</td>
+            <td class='align-top'><?php echo $admtext['citedate']; ?>:</td>
             <td>
                 <input type="text" name="citedate" value="<?php echo $row['citedate']; ?>" size="60" onBlur="checkDate(this);">
             </td>
         </tr>
         <tr>
-            <td valign="top"><?php echo $admtext['actualtext']; ?>:</td>
+            <td class='align-top'><?php echo $admtext['actualtext']; ?>:</td>
             <td><textarea cols="50" rows="5" name="citetext"><?php echo $row['citetext']; ?></textarea></td>
         </tr>
         <tr>
-            <td valign="top"><?php echo $admtext['notes']; ?>:</td>
+            <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
             <td><textarea cols="50" rows="5" name="citenote"><?php echo $row['note']; ?></textarea></td>
         </tr>
     </table>

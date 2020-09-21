@@ -214,12 +214,12 @@ function frmFiles() {
                                 <span class="normal"><a href="#"
                                                         onclick="return moreFilepicker({subdir: '<?php echo addslashes($newsubdir); ?>',path: '<?php echo $path; ?>',folders: '<?php echo $folders; ?>',order: '<?php echo $order; ?>'});"><?php echo $admtext['open']; ?></a></span>
                             </td>
-                            <td valign="top" class="lightback">
+                            <td class="lightback">
                                 <span class="normal"><?php echo "<b>{$admtext['folder']}:</b> $filename"; ?></span>
                             </td>
-                            <td align="center" class="lightback"><?php echo date($datefmt, filemtime($file)); ?>&nbsp;</td>
-                            <td align="center" valign="middle" class="lightback">&nbsp;</td>
-                            <td align="center" valign="middle" class="lightback">&nbsp;</td>
+                            <td class="lightback text-center"><?php echo date($datefmt, filemtime($file)); ?>&nbsp;</td>
+                            <td class="lightback align-middle text-center">&nbsp;</td>
+                            <td class="lightback align-middle text-center">&nbsp;</td>
                         </tr>
                         <?php
                         $nImageShowed++;

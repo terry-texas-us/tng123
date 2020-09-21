@@ -51,7 +51,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     echo " style=\"display:none;\"";
                 } ?>><?php echo $admtext['familyid']; ?></span>:
             </td>
-            <td valign="top">
+            <td class='align-top'>
                 <input type="text" name="passocID" value="<?php echo $row['passocID']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                 <a href="#" onclick="return findItem(assocType,'passocID','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
                     <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0" hspace="2">
@@ -59,7 +59,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </td>
         </tr>
         <tr>
-            <td valign="top"><span class="normal"><?php echo $admtext['relationship']; ?>:</span></td>
+            <td class='align-top'><span class="normal"><?php echo $admtext['relationship']; ?>:</span></td>
             <td>
                 <input type="text" name="relationship" size="60" value="<?php echo $row['relationship']; ?>">
             </td>

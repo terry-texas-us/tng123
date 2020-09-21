@@ -130,15 +130,15 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
             <form action="admin_updatebranch.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
                 <table class="normal">
                     <tr>
-                        <td valign="top"><?php echo $admtext['tree']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['tree']; ?>:</td>
                         <td><?php echo $treerow['treename']; ?></td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['branchid']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['branchid']; ?>:</td>
                         <td><?php echo $branch; ?></td>
                     </tr>
                     <tr>
-                        <td valign="top"><?php echo $admtext['description']; ?>:</td>
+                        <td class='align-top'><?php echo $admtext['description']; ?>:</td>
                         <td>
                             <input type="text" name="description" size="60" value="<?php echo $row['description']; ?>">
                         </td>

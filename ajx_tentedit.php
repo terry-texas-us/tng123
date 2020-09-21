@@ -193,12 +193,12 @@ header("Content-type:text/html; charset=" . $session_charset);
         <?php
         if ($datefield) {
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'>{$text['date']}: </span></td>";
-            echo "<td valign=\"top\"><span class='normal'>$row[$datefield]</span></td>";
+            echo "<td class='align-top'><span class='normal'>{$text['date']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>$row[$datefield]</span></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'>{$text['suggested']}: </span></td>";
-            echo "<td valign=\"top\"><input type=\"text\" name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td>";
+            echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
+            echo "<td class='align-top'><input type=\"text\" name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td>";
             echo "</tr>\n";
             echo "<tr>";
             echo "<td colspan=\"2\">&nbsp;</td>";
@@ -207,12 +207,12 @@ header("Content-type:text/html; charset=" . $session_charset);
         if ($placefield) {
             $row[$placefield] = preg_replace("/\"/", "&#34;", $row[$placefield]);
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'>{$text['place']}: </span></td>";
-            echo "<td valign=\"top\"><span class='normal'>$row[$placefield]</span></td>";
+            echo "<td class='align-top'><span class='normal'>{$text['place']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>$row[$placefield]</span></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'>{$text['suggested']}: </span></td>";
-            echo "<td valign=\"top\"><input type=\"text\" name=\"newplace\" size=\"40\" value=\"$row[$placefield]\"></td>";
+            echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
+            echo "<td class='align-top'><input type=\"text\" name=\"newplace\" size=\"40\" value=\"$row[$placefield]\"></td>";
             echo "</tr>\n";
             echo "<tr>";
             echo "<td colspan=\"2\">&nbsp;</td>";
@@ -222,12 +222,12 @@ header("Content-type:text/html; charset=" . $session_charset);
             $row[$factfield] = preg_replace("/\"/", "&#34;", $row[$factfield]);
             $factmsg = $event == "MARR" ? $text['type'] : $text['detail'];
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'>$factmsg: </span></td>";
-            echo "<td valign=\"top\"><span class='normal'>$row[$factfield]</span></td>";
+            echo "<td class='align-top'><span class='normal'>$factmsg: </span></td>";
+            echo "<td class='align-top'><span class='normal'>$row[$factfield]</span></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td valign=\"top\"><span class='normal'>{$text['suggested']}: </span></td>";
-            echo "<td valign=\"top\">";
+            echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
+            echo "<td class='align-top'>";
             if ($event == "MARR") {
                 echo "<input type=\"text\" name=\"newinfo\" size=\"40\" value=\"$row[$factfield]\">";
             } else {
@@ -241,8 +241,8 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         ?>
         <tr>
-            <td valign="top"><span class="normal"><?php echo $text['notes']; ?>: </span></td>
-            <td valign="top"><textarea cols="40" rows="3" name="usernote"></textarea></td>
+            <td class='align-top'><span class="normal"><?php echo $text['notes']; ?>: </span></td>
+            <td class='align-top'><textarea cols="40" rows="3" name="usernote"></textarea></td>
         </tr>
     </table>
     <br>

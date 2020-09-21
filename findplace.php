@@ -32,7 +32,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow" id="findplaceresdiv">
     <table cellpadding="0">
         <tr>
-            <td valign="top">
+            <td class='align-top'>
                 <h3 class="subhead"><?php echo $admtext['searchresults']; ?></h3><br>
                 <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
             </td>
@@ -48,7 +48,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <table cellspacing="0" cellpadding="2">
         <?php
         while ($row = tng_fetch_assoc($result)) {
-            echo "<tr><td valign=\"top\"><span class='normal'>";
+            echo "<tr><td class='align-top'><span class='normal'>";
             $row['place'] = str_replace("'", "&#39;", $row['place']);
             $notes = $row['temple'] && $row['notes'] ? " (" . truncateIt($row['notes'], 75) . ")" : "";
             echo "<a href=\"findplace.php\" onClick='return returnValue(\"" . addslashes($row['place']) . "\");'>{$row['place']}</a>$notes</span></td></tr>\n";

@@ -107,7 +107,7 @@ $notecount = tng_num_rows($notelinks);
 
         <table cellpadding="2" class="normal">
             <tr>
-                <td valign="top"><?php echo $admtext['note']; ?>:</td>
+                <td class='align-top'><?php echo $admtext['note']; ?>:</td>
                 <td><textarea cols="60" rows="25" name="note"></textarea></td>
             </tr>
             <tr>

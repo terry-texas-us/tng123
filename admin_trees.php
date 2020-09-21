@@ -137,7 +137,7 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         tng_free_result($result2);
 
                         echo "<tr id=\"row_{$row['gedcom']}\">";
-                        echo "<td class='lightback' valign=\"top\"><div class=\"action-btns\">$newactionstr</div></td>\n";
+                        echo "<td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                         echo "<td class='lightback nw'>&nbsp;$gedcom&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";

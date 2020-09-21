@@ -61,13 +61,16 @@ if ($totnum_tests) {
     $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
 
     $persontext .= "<tr>\n";
-    $persontext .= "<td valign=\"top\" class=\"fieldnameback fieldname\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
+    $persontext .= "<td class=\"fieldnameback fieldname align-top\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
     $persontext .= "<td colspan=\"4\" class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
     $persontext .= "<a href=\"#\" title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
     $persontext .= "</td>\n";
     $persontext .= "</tr>\n";
     $persontext .= "<tr id=\"dnatest\" class=\"$displayclass\" style=\"$displaystyle\">\n";
-    $persontext .= "<th valign=\"top\" class=\"fieldnameback fieldname\">{$text['test_type']}</th><th valign=\"top\" class=\"fieldnameback fieldname\">{$text['takenby']}</a></th><th valign=\"top\" class=\"fieldnameback fieldname\">{$text['haplogroup']}&nbsp;</th><th valign=\"top\" class=\"fieldnameback fieldname\">{$text['test_info']}</th></tr><tr class=\"$displayclass\" style=\"$displaystyle\">\n";
+    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['test_type']}</th>";
+    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['takenby']}</a></th>";
+    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['haplogroup']}&nbsp;</th>";
+    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['test_info']}</th></tr><tr class=\"$displayclass\" style=\"$displaystyle\">\n";
 
     //for each test, do a row
     $testnum = 0;
@@ -103,8 +106,8 @@ if ($totnum_tests) {
                 $persontext .= "</tr>\n<tr class=\"dnatest\" style=\"display:none;\">\n";
             }
             $markercount = ($dna_test['test_type'] == "Y-DNA") ? "-{$dna_test['markers']}" : "";
-            $persontext .= "<td valign=\"top\" class='databack'><a href=\"$dna_test_url" . "testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";
-            $persontext .= "<td valign=\"top\" class='databack'>$dna_namestr";
+            $persontext .= "<td class='databack'><a href=\"$dna_test_url" . "testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";
+            $persontext .= "<td class='databack'>$dna_namestr";
             $test_type = $dna_test['test_type'];
             if ($dna_test['test_type'] == "Y-DNA") {
                 $haplogroup = $dna_test['ydna_haplogroup'] ? $dna_test['ydna_haplogroup'] : " ";
@@ -218,7 +221,7 @@ if ($totnum_tests) {
                     $haplogroup = "<a class=\"fakelink predicted_haplogroup\"  title = \"{$text['predicted']}\">" . $mtdna_haplogroup . "</a>";
                 }
             }
-            $persontext .= "<td valign=\"top\" class='databack'>$haplogroup&nbsp;</td>\n";
+            $persontext .= "<td class='databack'>$haplogroup&nbsp;</td>\n";
             $persontext .= "<td class='databack resultscol'>";
             if ($GEDmatchID) {
                 $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target=\"_blank\">$GEDmatchID</a>";

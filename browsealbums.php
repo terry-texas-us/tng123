@@ -151,9 +151,9 @@ while ($row = tng_fetch_assoc($result)) {
         }
         //if living still null, must be a source
         if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'I') {
-            $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
-				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
-				AND (living = '1' OR private = '1')";
+            $query = "SELECT count(personID) AS ccount ";
+            $query .= "FROM $citations_table citations, $people_table people ";
+            $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
             $presult2 = tng_query($query);
             $prow2 = tng_fetch_assoc($presult2);
             if ($prow2['ccount']) {
@@ -162,9 +162,9 @@ while ($row = tng_fetch_assoc($result)) {
             tng_free_result($presult2);
         }
         if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
-            $query = "SELECT count(familyID) AS ccount FROM $citations_table, $families_table
-				WHERE $citations_table.sourceID = '{$prow['personID']}' AND $citations_table.persfamID = $families_table.familyID AND $citations_table.gedcom = $families_table.gedcom
-				AND living = '1'";
+            $query = "SELECT count(familyID) AS ccount ";
+            $query .= "FROM $citations_table citations, $families_table families ";
+            $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = families.familyID AND citations.gedcom = families.gedcom AND living = '1'";
             $presult2 = tng_query($query);
             $prow2 = tng_fetch_assoc($presult2);
             if ($prow2['ccount']) {
@@ -208,7 +208,7 @@ while ($row = tng_fetch_assoc($result)) {
 
     $showAlbumInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
 
-    $albumtext .= "<tr><td valign=\"top\" class='databack'><span class='normal'>$i</span></td>";
+    $albumtext .= "<tr><td class='databack'><span class='normal'>$i</span></td>";
 
     $description = $row['description'];
     if ($showAlbumInfo) {
@@ -226,15 +226,15 @@ while ($row = tng_fetch_assoc($result)) {
     }
 
     if ($imgsrc) {
-        $albumtext .= "<td valign=\"top\" class='databack' align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
+        $albumtext .= "<td class='databack' align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
         $thumbcount++;
     } else {
-        $albumtext .= "<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td>";
+        $albumtext .= "<td class='databack' align=\"center\">&nbsp;</td>";
     }
 
-    $albumtext .= "<td class='databack' valign=\"top\"><span class='normal'>$alblink<br>$description&nbsp;</span></td>\n";
-    $albumtext .= "<td class='databack' valign=\"top\" align=\"center\"><span class='normal'>{$arow['acount']}&nbsp;</span></td>\n";
-    $albumtext .= "<td valign=\"top\" class='databack' width=\"200\"><span class='normal'>\n$medialinktext&nbsp;</span></td>\n";
+    $albumtext .= "<td class='databack'><span class='normal'>$alblink<br>$description&nbsp;</span></td>\n";
+    $albumtext .= "<td class='databack' align=\"center\"><span class='normal'>{$arow['acount']}&nbsp;</span></td>\n";
+    $albumtext .= "<td class='databack' width=\"200\"><span class='normal'>\n$medialinktext&nbsp;</span></td>\n";
     $albumtext .= "</tr>\n";
     $i++;
 }
@@ -242,7 +242,7 @@ tng_free_result($result);
 
 if (!$thumbcount) {
     $header = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
-    $albumtext = str_replace("<td valign=\"top\" class='databack' align=\"center\">&nbsp;</td><td valign=\"top\" class='databack'>", "<td valign=\"top\" class='databack'>", $albumtext);
+    $albumtext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $albumtext);
 }
 echo $header . $albumtext;
 ?>
