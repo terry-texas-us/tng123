@@ -15,6 +15,7 @@ if (!empty($needMap)) {
 }
 $flags = [];
 @include "tngrobots.php";
+require_once "core/html/HeadElement.php";
 
 $isConnected = isConnected();
 
@@ -43,132 +44,21 @@ if (!$tree && $defaulttree) {
 }
 
 function tng_header($title, $flags) {
-    global $custommeta, $customheader, $session_charset, $tngprint, $sitename, $site_desc, $tngconfig, $tngdomain, $responsivetables;
-    global $text, $templatepath, $tng_title, $tng_version, $tng_date, $tng_copyright, $sitever, $templatenum, $tmp, $http, $isConnected;
-    global $fbOGimage, $pageURL;
+    global $customheader, $session_charset, $sitever, $templatenum, $templatepath, $text, $tmp;
+    global $tngconfig, $tng_copyright, $tng_date, $tngprint, $tng_title, $tng_version;
 
     if (!$tng_version) {
         $tng_version = "12.3";
     }
-    $siteprefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
     $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
     initMediaTypes();
 
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
-    echo "<html lang=\"en\">\n";
+    echo "<html lang='en'>\n";
 
-    echo "<head>\n";
-    echo "<title>$title$siteprefix</title>\n";
-    echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
-    echo "<meta charset=\"utf-8\">\n";
-    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
-    if (isset($flags['norobots'])) {
-        echo $flags['norobots'];
-    }
-    if ($sitever == "mobile" || $sitever == "tablet") {
-        echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n";
-    }
-    echo "<meta name=\"Keywords\" content=\"$site_desc\">\n";
-    echo "<meta name=\"Description\" content=\"$title$siteprefix\">\n";
+    $icons = HeadElement($title, $flags);
 
-    if ($fbOGimage) { // Facebook Open Graph protocol
-        echo "<meta property=\"og:title\" content=\"$sitename\">\n";
-        echo "<meta property=\"og:description\" content=\"$title\">\n";
-        echo "<meta property=\"og:url\" content=\"$tngdomain/$pageURL\">\n";
-        echo $fbOGimage . "\n";
-    }
-    if (isset($flags['autorefresh']) && $flags['autorefresh'] == 1) {
-        echo "<meta http-equiv=\"refresh\" content=\"30\">\n";
-    }
-
-    if ($sitever == "mobile" || $sitever == "tablet") {
-        echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"$tngdomain/img/tng-apple-icon-144.png\">\n";
-        echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"$tngdomain/img/tng-apple-icon-114.png\">\n";
-        echo "<link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"$tngdomain/img/tng-apple-icon-72.png\">\n";
-        echo "<link rel=\"apple-touch-icon-precomposed\" href=\"$tngdomain/img/tng-apple-icon.png\">\n";
-        echo "<link rel=\"shortcut icon\" href=\"$tngdomain/img/tng-apple-icon.png\">\n";
-    } elseif ($tngconfig['favicon']) {
-        echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
-    }
-    echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-    if ($sitever != "standard" && $responsivetables) {
-        echo "<link href=\"css/tablesaw.bare.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-    }
-    echo "<link href=\"css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-    if (isset($flags['tabs'])) {
-        echo "<link href=\"{$templatepath}css/{$flags['tabs']}?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-    }
-    echo "<link href=\"{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-    if ($sitever == "mobile") {
-        echo "<link href=\"css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-        echo "<link href=\"{$templatepath}css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-    }
-
-    if ($isConnected) {
-        echo "<script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" type=\"text/javascript\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>\n";
-        echo "<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.min.js\" type=\"text/javascript\" integrity=\"sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=\" crossorigin=\"anonymous\"></script>\n";
-    } else {
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery || document.write(\"<script src='js/jquery-3.3.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery.ui || document.write(\"<script src='js/jquery-ui-1.12.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
-    }
-    echo "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
-
-    if (isset($flags['scripting'])) {
-        echo $flags['scripting'];
-    }
-    echo "<link href=\"{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-
-    if (!empty($tngconfig['showshare']) && $isConnected && $sitever != "mobile") {
-        $w = $http == "https" ? "ws" : "w";
-        echo "<script type=\"text/javascript\" src=\"{$http}://{$w}.sharethis.com/button/buttons.js\"></script>\n";
-        echo "<script type=\"text/javascript\">stLight.options({publisher: \"be4e16ed-3cf4-460b-aaa4-6ac3d0e3004b\",doNotHash:true,doNotCopy:true,hashAddressBar:false});</script>\n";
-    }
-
-    if ($tngconfig['menu'] < 2 && !$tngprint && $sitever != "mobile") {
-        echo "<script type=\"text/javascript\" src=\"js/tngmenuhover2.js\"></script>\n";
-    }
-
-    if ($sitever != "standard" && $responsivetables) {
-        echo "<script type=\"text/javascript\" src=\"js/tablesaw.js\"></script>\n";
-        echo "<!--[if lt IE 9]>";
-        echo "<script type=\"text/javascript\" src=\"js/respond.js\"></script>\n";
-        echo "<![endif]-->";
-    }
-
-    echo "<script type=\"text/javascript\">\n";
-    echo "var tnglitbox;\n";
-    echo "var share = 0;\n";
-    echo "var closeimg = \"img/tng_close.gif\";\n";
-    echo "var smallimage_url = '" . getURL("ajx_smallimage", 1) . "';\n";
-    echo "var loadingmsg = '{$text['loading']}';\n";
-    echo "var expand_msg = \"{$text['expand']}\";\n";
-    echo "var collapse_msg = \"{$text['collapse']}\";\n";
-    if (isset($flags['error']) && $flags['error']) {
-        $login_url = getURL("ajx_login", 1);
-        echo "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode("") . "&message={$flags['error']}');});\n";
-    }
-    echo "</script>\n";
-    echo "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"tngrss.php\">\n";
-
-    if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
-        include "cookie_approval.php";
-    }
-
-    @include $custommeta;
-    if ($tngprint) {
-        echo "<link href=\"css/tngprint.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-    }
-    $icons = "";
-    if ($sitever == "mobile") {
-        if (!isset($flags['nomobile']) || !$flags['nomobile']) {
-            $icons = tng_mobileicons($title);
-            $icons .= "<div id=\"mcontent\">\n";
-        }
-        echo "<style>\n{$tngconfig['mmenustyle']}</style>\n";
-    }
-
-    echo "</head>\n";
     if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         include $templatepath . $customheader;
     } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {

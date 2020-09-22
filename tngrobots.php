@@ -2,9 +2,9 @@
 
 $tngscript = basename($_SERVER['SCRIPT_NAME'], ".php");
 
-define("NOI", "<meta name=\"robots\" content=\"noindex\">\n");
-define("NOF", "<meta name=\"robots\" content=\"nofollow\">\n");
-define("NOINOF", "<meta name=\"robots\" content=\"noindex, nofollow\">\n");
+define("NOI", "<meta name='robots' content='noindex'>\n");
+define("NOF", "<meta name='robots' content='nofollow'>\n");
+define("NOINOF", "<meta name='robots' content='noindex, nofollow'>\n");
 
 //each "case" is the name of the script file without the ".php" at the end
 if ($tngprint) {
