@@ -197,7 +197,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                     echo ">{$row['display']}</option>\n";
                                                 }
                                                 echo "</select>\n";
-                                                echo "<input type='hidden' name=\"instance\" value=\"3\"></form>\n";
+                                                echo "<input type='hidden' name='instance' value='3'></form>\n";
                                             }
 
                                             tng_free_result($result);

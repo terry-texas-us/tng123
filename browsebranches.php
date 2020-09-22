@@ -18,7 +18,7 @@ function doBranchSearch($instance, $pagenav) {
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browsebranches", "GET", "BranchSearch$instance", "");
-    $str .= "<input type=\"text\" name=\"branchsearch\" value=\"$branchsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"branchsearch\" value=\"$branchsearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($branchsearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsebranches_noargs_url\">{$text['browsealltrees']}</a>";

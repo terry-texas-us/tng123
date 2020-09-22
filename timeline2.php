@@ -405,7 +405,7 @@ echo tng_DrawHeading($photostr, $namestr, getYears($row));
 echo getFORM("timeline", "post", "form1", "form1");
 
 $innermenu = $text['chartwidth'] . ": &nbsp;";
-$innermenu .= "<input type=\"text\" name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength=\"4\" size=\"4\"> &nbsp;&nbsp; ";
+$innermenu .= "<input type='text' name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength=\"4\" size=\"4\"> &nbsp;&nbsp; ";
 $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit();\">{$text['refresh']}</a>\n";
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);
@@ -541,7 +541,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
                 echo "<input type='hidden' name=\"nexttree$x\" value=\"$tree\">";
                 $treestr = "'" . $tree . "'";
             }
-            echo "<input type=\"text\" name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type=\"button\" name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
+            echo "<input type='text' name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type='button' name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
             if ($x < 5) {
                 $treeresult = tng_query($query);
             }

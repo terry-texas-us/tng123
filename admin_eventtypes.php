@@ -249,7 +249,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                             echo "<tr id=\"row_{$row['eventtypeID']}\">\n";
                             echo "<td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete || $allow_edit) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"et{$row['eventtypeID']}\" value='1'></td>\n";
+                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"et{$row['eventtypeID']}\" value='1'></td>\n";
                             }
                             echo "<td class='lightback'>&nbsp;{$row['tag']}&nbsp;</td>\n";
                             echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";

@@ -9,7 +9,7 @@ if ($result2) {
         $plink['allow_private'] = $rights['private'];
         $name = getName($plink);
 
-        $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class='lightback' align=\"center\">";
+        $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class='lightback text-center'>";
         $linkrows .= "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteDnaLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>";
         $linkrows .= "</td>\n";
         $linkrows .= "<td class='lightback normal'>$name ({$plink['personID']})&nbsp;</td>\n";

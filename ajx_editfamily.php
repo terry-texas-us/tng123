@@ -80,7 +80,7 @@ include_once "eventlib.php";
 ?>
 
 <form action="" onsubmit="return updateFamily(this,<?php echo $slot; ?>,'admin_updatefamily.php');" method="post" name="famform1" id="famform1">
-    <table width="100%" cellpadding="10" cellspacing="0">
+    <table class="w-100 " cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
@@ -293,7 +293,7 @@ include_once "eventlib.php";
                                 <td class='align-top'><?php echo $admtext['otherevents']; ?>:</td>
                                 <td colspan="6">
                                     <?php
-                                    echo "<input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('F','$familyID','$tree');\">&nbsp;\n";
+                                    echo "<input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('F','$familyID','$tree');\">&nbsp;\n";
                                     ?>
                                 </td>
                             </tr>

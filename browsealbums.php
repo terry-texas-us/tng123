@@ -18,10 +18,10 @@ function doMediaSearch($instance, $pagenav) {
     global $text, $mediasearch, $browsealbums_noargs_url, $tree;
 
     $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
-    $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\">\n";
+    $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\">\n";
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
-    $str .= "<input type=\"submit\" value=\"{$text['search']}\">\n";
-    $str .= "<input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='submit' value=\"{$text['search']}\">\n";
+    $str .= "<input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     $str .= "</form>\n";
 
@@ -38,18 +38,14 @@ if ($offset) {
     $page = 1;
 }
 
-if ($tree) {
-    $wherestr2 = " AND album2entities.gedcom = \"$tree\"";
-} else {
-    $wherestr2 = "";
-}
-
-$wherestr = "WHERE active = \"1\"";
+$query = "SELECT albumID, albumname, description, alwayson ";
+$query .= "FROM $albums_table albums ";
+$query .= "WHERE active = '1' ";
 if ($mediasearch) {
-    $wherestr .= " AND ($albums_table.albumname LIKE \"%$mediasearch%\" OR $albums_table.description LIKE \"%$mediasearch%\" OR $albums_table.keywords LIKE \"%$mediasearch%\")";
+    $query .= "AND (albums.albumname LIKE '%$mediasearch%' OR albums.description LIKE '%$mediasearch%' OR albums.keywords LIKE '%$mediasearch%')";
 }
-
-$query = "SELECT albumID, albumname, description, alwayson FROM $albums_table $wherestr ORDER BY albumname LIMIT $newoffset" . $maxsearchresults;
+$query .= "ORDER BY albumname ";
+$query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
@@ -116,9 +112,11 @@ $maxplus = $maxsearchresults + 1;
 $thumbcount = 0;
 while ($row = tng_fetch_assoc($result)) {
     if ($tree) {
-        $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table, $media_table WHERE albumID = \"{$row['albumID']}\" AND $albumlinks_table.mediaID = $media_table.mediaID AND ($media_table.gedcom = '$tree' OR $media_table.gedcom = \"\")";
+        $query2 = "SELECT count(albumlinks.albumlinkID) AS acount ";
+        $query2 .= "FROM $albumlinks_table albumlinks, $media_table media ";
+        $query2 .= "WHERE albumID = '{$row['albumID']}' AND albumlinks.mediaID = media.mediaID AND (media.gedcom = '$tree' OR media.gedcom = '')";
     } else {
-        $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = \"{$row['albumID']}\"";
+        $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = '{$row['albumID']}'";
     }
     $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
     $arow = tng_fetch_assoc($result2);
@@ -130,7 +128,10 @@ while ($row = tng_fetch_assoc($result)) {
     $query .= "LEFT JOIN $families_table families ON album2entities.entityID = families.familyID AND album2entities.gedcom = families.gedcom ";
     $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
     $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
-    $query .= "WHERE albumID = \"{$row['albumID']}\"$wherestr2 ";
+    $query .= "WHERE albumID = '{$row['albumID']}'";
+    if ($tree) {
+        $query .= " AND album2entities.gedcom = '$tree'";
+    }
     $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
     $query .= "LIMIT $maxplus";
     $presult = tng_query($query);
@@ -226,15 +227,15 @@ while ($row = tng_fetch_assoc($result)) {
     }
 
     if ($imgsrc) {
-        $albumtext .= "<td class='databack' align=\"center\" style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
+        $albumtext .= "<td class='databack text-center' style=\"width:{$thumbmaxw}px;\">$imgsrc</td>";
         $thumbcount++;
     } else {
-        $albumtext .= "<td class='databack' align=\"center\">&nbsp;</td>";
+        $albumtext .= "<td class='databack text-center'>&nbsp;</td>";
     }
 
     $albumtext .= "<td class='databack'><span class='normal'>$alblink<br>$description&nbsp;</span></td>\n";
-    $albumtext .= "<td class='databack' align=\"center\"><span class='normal'>{$arow['acount']}&nbsp;</span></td>\n";
-    $albumtext .= "<td class='databack' width=\"200\"><span class='normal'>\n$medialinktext&nbsp;</span></td>\n";
+    $albumtext .= "<td class='databack text-center'><span class='normal'>{$arow['acount']}&nbsp;</span></td>\n";
+    $albumtext .= "<td class='databack'><span class='normal'>\n$medialinktext&nbsp;</span></td>\n";
     $albumtext .= "</tr>\n";
     $i++;
 }

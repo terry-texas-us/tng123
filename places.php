@@ -129,12 +129,12 @@ if ($result) {
         echo $formstr;
         ?>
         <?php
-        echo "{$text['placescont']}: <input type=\"text\" name=\"psearch\">\n";
+        echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
             echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
         }
         echo "<input type='hidden' name=\"stretch\" value='1'>\n";
-        echo "<input type=\"submit\" name=\"pgo\" value=\"{$text['go']}\">\n";
+        echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
         ?>
         </form>
 
@@ -172,11 +172,11 @@ if ($result) {
                     $formstr = getFORM("places100", "get", "", "");
                     echo $formstr;
                     echo $text['showtop'];
-                    echo " <input type=\"text\" name=\"topnum\" value=\"100\" size=\"4\" maxlength=\"4\"> {$text['byoccurrence']}\n";
+                    echo " <input type='text' name=\"topnum\" value=\"100\" size=\"4\" maxlength=\"4\"> {$text['byoccurrence']}\n";
                     if ($tree && !$tngconfig['places1tree']) {
                         echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
                     }
-                    echo "<input type=\"submit\" value=\"{$text['go']}\"></form>\n";
+                    echo "<input type='submit' value=\"{$text['go']}\"></form>\n";
                     ?>
                 </td>
             </tr>

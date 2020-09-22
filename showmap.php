@@ -335,7 +335,7 @@ if ($numrows) {
         $description = $hs['description'];
         $notes = nl2br($hs['notes']);
 
-        $body .= "<tr><td class='databack' align=\"center\" style=\"width:$thumbmaxw" . "px;\">";
+        $body .= "<tr><td class='databack text-center' style=\"width:$thumbmaxw" . "px;\">";
         $hs['allow_living'] = $noneliving;
         $hs['allow_private'] = $noneprivate;
         $imgsrc = getSmallPhoto($hs);

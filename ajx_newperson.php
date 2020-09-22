@@ -31,7 +31,7 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="persform1" id="persform1" onSubmit="return validatePerson(this);">
-    <table width="100%" cellpadding="10" cellspacing="0">
+    <table class="w-100" cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
@@ -76,7 +76,7 @@ include_once "eventlib.php";
                             </td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
+                                echo "<td><input type='text' name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
                             }
                             ?>
                             <td>

@@ -65,7 +65,7 @@ $menu = doMenu($datatabs, "export", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
+<table class="lightback normal w-100" cellpadding="10" cellspacing="2">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_gedcom2.php" method="post" name="form1">
@@ -161,7 +161,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             echo "<tr>";
                             echo "<td><input type=\"checkbox\" name=\"incl_$msgID\" value='1' checked></td>\n";
                             echo "<td>" . $mediatype['display'] . ":</td>\n";
-                            echo "<td><input type=\"text\" value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td>";
+                            echo "<td><input type='text' value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td>";
                             echo "</tr>\n";
                         }
                         ?>

@@ -455,12 +455,7 @@ echo "
 
 </script>";
 
-echo "
-<div align=\"center\">
-   <span class='normal'>
-      $tng_title, v.$tng_version
-   </span>
-</div>
-</body>
-</html>";
+echo "<div class='text-center'><span class='normal'>$tng_title, v.$tng_version</span></div>";
+echo "</body>";
+echo "</html>";
 

@@ -184,7 +184,7 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
                         <td class='align-top'>
                             <h3 class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>:</h3>
                             <?php
-                            echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
+                            echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
                             ?>
                         </td>
                         <td class='align-top'>

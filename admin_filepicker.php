@@ -310,8 +310,8 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
         if ($firstNear > 1 || $lastNear < $nPages - 2) {
             $nextPageStr = "jQuery('#gotopage').prev('.tngpage').val()-1";
             echo "<span class=\"snlink\">\n";
-            echo "<input type=\"text\" class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"> ";
-            echo "<input type=\"button\" id=\"gotopage\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"" . mfpGetUrl($nextPageStr) . "\">\n";
+            echo "<input type='text' class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"> ";
+            echo "<input type='button' id=\"gotopage\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"" . mfpGetUrl($nextPageStr) . "\">\n";
             echo "</span>";
         }
         echo "</div>\n";

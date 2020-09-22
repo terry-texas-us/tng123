@@ -54,9 +54,9 @@ function validateForm2(form) {
     return false;
 }
 
-var delcolor = '#ff9999';
-var keepcolor = '#99ff99';
-var neutcolor = '#ffffff';
+var delcolor = '#f99';
+var keepcolor = '#9f9';
+var neutcolor = '#fff';
 var lastradio;
 
 function blankMsg() {

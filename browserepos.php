@@ -14,7 +14,7 @@ function doRepoSearch($instance, $pagenav) {
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
-    $str .= "<input type=\"text\" name=\"reposearch\" value=\"$reposearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"reposearch\" value=\"$reposearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($reposearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browserepos_noargs_url\">{$text['browseallrepos']}</a>";

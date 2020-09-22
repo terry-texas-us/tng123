@@ -126,7 +126,7 @@ function ColorPicker() {
     if (document.getElementById) {
         var width1 = Math.floor(width / 2);
         var width2 = width = width1;
-        cp_contents += "<TR><TD COLSPAN='" + width1 + "' BGCOLOR='#ffffff' ID='colorPickerSelectedColor'>&nbsp;</TD><TD COLSPAN='" + width2 + "' ALIGN='CENTER' ID='colorPickerSelectedColorValue'><font size='3'>#FFFFFF</font></TD></TR>";
+        cp_contents += "<TR><TD COLSPAN='" + width1 + "' BGCOLOR='#fff' ID='colorPickerSelectedColor'>&nbsp;</TD><TD COLSPAN='" + width2 + "' ALIGN='CENTER' ID='colorPickerSelectedColorValue'><font size='3'>#FFFFFF</font></TD></TR>";
     }
     cp_contents += "</TABLE>";
     if (windowMode) {

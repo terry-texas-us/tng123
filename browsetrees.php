@@ -18,7 +18,7 @@ function doTreeSearch($instance, $pagenav) {
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browsetrees", "GET", "TreeSearch$instance", "");
-    $str .= "<input type=\"text\" name=\"treesearch\" value=\"$treesearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"treesearch\" value=\"$treesearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($treesearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsetrees_noargs_url\">{$text['browsealltrees']}</a>";

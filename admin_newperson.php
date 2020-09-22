@@ -186,7 +186,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                             </td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px;\"></td>\n";
+                                echo "<td><input type='text' name=\"lnprefix\" style=\"width:80px;\"></td>\n";
                             }
                             ?>
                             <td>

@@ -583,7 +583,7 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
         }
     }
     if ($firstlink || $lastlink) {
-        $gotolink = " <span class=\"snlink\"><input type=\"text\" class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> <input type=\"button\" value=\"{$text['go']}\" class=\"minibutton\" onclick=\"goToPage(this,'$address','$orgtree',$perpage);\"></span>";
+        $gotolink = " <span class=\"snlink\"><input type='text' class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> <input type='button' value=\"{$text['go']}\" class=\"minibutton\" onclick=\"goToPage(this,'$address','$orgtree',$perpage);\"></span>";
     } else {
         $gotolink = "";
     }

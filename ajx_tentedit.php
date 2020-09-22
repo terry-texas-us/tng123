@@ -198,7 +198,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo "</tr>\n";
             echo "<tr>";
             echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
-            echo "<td class='align-top'><input type=\"text\" name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td>";
+            echo "<td class='align-top'><input type='text' name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td>";
             echo "</tr>\n";
             echo "<tr>";
             echo "<td colspan=\"2\">&nbsp;</td>";
@@ -212,7 +212,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo "</tr>\n";
             echo "<tr>";
             echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
-            echo "<td class='align-top'><input type=\"text\" name=\"newplace\" size=\"40\" value=\"$row[$placefield]\"></td>";
+            echo "<td class='align-top'><input type='text' name=\"newplace\" size=\"40\" value=\"$row[$placefield]\"></td>";
             echo "</tr>\n";
             echo "<tr>";
             echo "<td colspan=\"2\">&nbsp;</td>";
@@ -229,7 +229,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
             echo "<td class='align-top'>";
             if ($event == "MARR") {
-                echo "<input type=\"text\" name=\"newinfo\" size=\"40\" value=\"$row[$factfield]\">";
+                echo "<input type='text' name=\"newinfo\" size=\"40\" value=\"$row[$factfield]\">";
             } else {
                 echo "<textarea cols=\"40\" rows=\"3\" name=\"newinfo\">$row[$factfield]</textarea>";
             }

@@ -214,7 +214,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                             $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
                             echo "<tr id=\"row_{$row['branch']}\"><td class='lightback'><div>$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['branch']}&{$row['gedcom']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['branch']}&{$row['gedcom']}\" value='1'></td>";
                             }
                             $editlink = "admin_editbranch.php?branch={$row['branch']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['branch'] . "</a>" : $row['branch'];

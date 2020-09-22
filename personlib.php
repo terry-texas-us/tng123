@@ -716,7 +716,7 @@ function showEvent($data) {
                     $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle>\n";
                 }
                 if ($item['imgsrc']) {
-                    $mediaoutput .= "<td class='databack' align=\"center\">{$item['imgsrc']}</td>\n";
+                    $mediaoutput .= "<td class='databack text-center'>{$item['imgsrc']}</td>\n";
                     $thumbcount++;
                 } else {
                     $mediaoutput .= "<td class='databack'>&nbsp;</td>";
@@ -1037,7 +1037,7 @@ function writeAlbums($albums_array) {
                     $albumrows .= "<tr>";
                 }
                 if ($item['imgsrc']) {
-                    $albumrows .= "<td class='databack' align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
+                    $albumrows .= "<td class='databack text-center' style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
                     $albumrows .= "<td class='databack'>";
                     $thumbcount++;
                 } else {
@@ -1229,7 +1229,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                         $mediarows .= ">";
                     }
                     if ($item['imgsrc']) {
-                        $mediarows .= "<td class='databack' align=\"center\" style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
+                        $mediarows .= "<td class='databack text-center' style=\"width:$datewidth" . "px;\">{$item['imgsrc']}</td>";
                         $mediarows .= "<td class='databack'>";
                         $thumbcount++;
                     } else {

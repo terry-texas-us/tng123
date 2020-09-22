@@ -128,11 +128,11 @@ class modlister extends modparser
             {$this->admtext['stayon']}&nbsp;&nbsp;<input type=\"checkbox\" id=\"stayon\" $cbchecked>";
 
             $selectboxes = "
-         <button type=\"button\" id=\"selectAll\">
+         <button type='button' id=\"selectAll\">
             {$this->admtext['selectall']}
          </button>
          &nbsp;&nbsp;
-         <button type=\"button\" id=\"clearAll\">
+         <button type='button' id=\"clearAll\">
             {$this->admtext['clearall']}
          </button>";
         } else {
@@ -161,7 +161,7 @@ class modlister extends modparser
             <option $s4 value=" . self::F_BADCFG . ">{$this->admtext['cantinst']}</option>
             <option $s5 value=" . self::F_SELECT . ">{$this->admtext['choose']}</option>
          </select>
-         <input type=\"submit\" name=\"newlist\" value=\"{$this->admtext['go']}\">
+         <input type='submit' name=\"newlist\" value=\"{$this->admtext['go']}\">
          &nbsp;&nbsp;$lockit&nbsp;&nbsp;$selectboxes &nbsp;&nbsp; $btnline
          </div>
     </td>
@@ -1116,15 +1116,15 @@ class modlister extends modparser
 
     // SHOW FILTER LINE BUTTONS
     protected function setup_filter_line($filter) {
-        $buttons['installall'] = "\r\n<button type=\"submit\" id=\"btnInstall\"
+        $buttons['installall'] = "\r\n<button type='submit' id=\"btnInstall\"
          class=\"msgapproved\" name=\"submit\" value=\"installall\">{$this->admtext['installall']}</button>";
-        $buttons['deleteall'] = "\r\n<button type=\"submit\" id=\"btnDelete\"
+        $buttons['deleteall'] = "\r\n<button type='submit' id=\"btnDelete\"
          class=\"msgerror\" name=\"submit\" value=\"deleteall\">{$this->admtext['deleteall']}</button>";
-        $buttons['removeall'] = "\r\n<button type=\"submit\" id=\"btnRemove\"
+        $buttons['removeall'] = "\r\n<button type='submit' id=\"btnRemove\"
          class=\"msgapproved\" name=\"submit\" value=\"removeall\">{$this->admtext['removeall']}</button>";
-        $buttons['cleanupall'] = "\r\n<button type=\"submit\" id=\"btnClean\"
+        $buttons['cleanupall'] = "\r\n<button type='submit' id=\"btnClean\"
          class=\"msgapproved\" name=\"submit\" value=\"cleanupall\">{$this->admtext['cleanupall']}</button>";
-        $buttons['selectall'] = "\r\n<button type=\"submit\" id=\"btnChoose\"
+        $buttons['selectall'] = "\r\n<button type='submit' id=\"btnChoose\"
          class=\"msgapproved\" name=\"submit\" value=\"selectall\">{$this->admtext['choose']}</button>";
 
         $btnline = "";
@@ -1198,7 +1198,7 @@ class modlister extends modparser
 
     protected function format_status($status_header, $error, $status, $author_str, $id) {
         $this->status_header = $status_header;
-        $btn_install = "<button class=\"msgapproved\" type=\"button\" onclick='window.location.href=\"?a=" . self::INSTALL . "&m=$this->cfgfile\"'>{$this->admtext['install']}</button>";
+        $btn_install = "<button class=\"msgapproved\" type='button' onclick='window.location.href=\"?a=" . self::INSTALL . "&m=$this->cfgfile\"'>{$this->admtext['install']}</button>";
 
         $confirm = empty($this->delete_support) ?
             $this->admtext['confdelmod1'] :
@@ -1207,22 +1207,22 @@ class modlister extends modparser
         // javascript messages must contain a single quote character
         $confirm = str_replace("'", "\'", $confirm);
 
-        $btn_delete = "<button class=\"msgerror\" type=\"button\" onclick=\"if(confirm('{$confirm}')) {window.location.href='?a=" . self::DELETE . "&m=$this->cfgfile';}\">{$this->admtext['delete']}</button>";
+        $btn_delete = "<button class=\"msgerror\" type='button' onclick=\"if(confirm('{$confirm}')) {window.location.href='?a=" . self::DELETE . "&m=$this->cfgfile';}\">{$this->admtext['delete']}</button>";
 
-        $btn_remove = "<button class=\"msgapproved\" type=\"button\" onclick='window.location.href=\"?a=" . self::REMOVE . "&m=$this->cfgfile\"'>{$this->admtext['uninstall']}</button>";
+        $btn_remove = "<button class=\"msgapproved\" type='button' onclick='window.location.href=\"?a=" . self::REMOVE . "&m=$this->cfgfile\"'>{$this->admtext['uninstall']}</button>";
 
-        $btn_cleanup = "<button class=\"msgapproved\" type=\"button\" onclick='window.location.href=\"?a=" . self::CLEANUP . "&m=$this->cfgfile\"'>{$this->admtext['cleanup']}</button>";
+        $btn_cleanup = "<button class=\"msgapproved\" type='button' onclick='window.location.href=\"?a=" . self::CLEANUP . "&m=$this->cfgfile\"'>{$this->admtext['cleanup']}</button>";
 
         $btn_edit = '';
         if ($this->parameters) {
-            $btn_edit = "<button type=\"button\" onclick='window.location.href=\"admin_modeditor.php?a=" . self::EDITP . "&m=$this->cfgfile\"'>{$this->admtext['edopts']}</button>";
+            $btn_edit = "<button type='button' onclick='window.location.href=\"admin_modeditor.php?a=" . self::EDITP . "&m=$this->cfgfile\"'>{$this->admtext['edopts']}</button>";
         }
 
         // SHOW AVAILABLE FUNCTION BUTTONS IN OPENED STATUS AREA
         /*
               $btn_list = "";
         */
-        $btn_list = "<button class=\"smallbutton\" type=\"button\"  name=\"listlocation$id\" onclick=\"if(document.getElementById('hiddenstatus$id').style.display=='none') document.getElementById('hiddenstatus$id').style.display='block'; else document.getElementById('hiddenstatus$id').style.display='none';\">{$this->admtext['detail']}</button>";
+        $btn_list = "<button class=\"smallbutton\" type='button'  name=\"listlocation$id\" onclick=\"if(document.getElementById('hiddenstatus$id').style.display=='none') document.getElementById('hiddenstatus$id').style.display='block'; else document.getElementById('hiddenstatus$id').style.display='none';\">{$this->admtext['detail']}</button>";
         $options_link = '';
 
         $buttons = '';

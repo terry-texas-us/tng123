@@ -142,7 +142,7 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             $label = $mediatypes_display[$mtypeID] ? $mediatypes_display[$mtypeID] : $text[$mtypeID];
             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
             $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
-            echo "<tr id=\"addrow_{$row['mediaID']}\"><td class='lightback' align=\"center\">";
+            echo "<tr id=\"addrow_{$row['mediaID']}\"><td class='lightback text-center'>";
             echo "<div id=\"add_{$row['mediaID']}\" class=\"normal\"";
             $gotit = in_array($row['mediaID'], $alreadygot);
             if ($gotit) {

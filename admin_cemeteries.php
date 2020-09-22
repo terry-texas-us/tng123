@@ -209,7 +209,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                             $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
                             echo "<tr id=\"row_{$row['cemeteryID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['cemeteryID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['cemeteryID']}\" value='1'></td>";
                             }
                             $editlink = "admin_editcemetery.php?cemeteryID={$row['cemeteryID']}";
                             $cemname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['cemname'] . "</a>" : $row['cemname'];

@@ -119,7 +119,7 @@ $citationcount = tng_num_rows($citresult);
                     if (isset($_SESSION['lastcite'])) {
                         $parts = explode("|", $_SESSION['lastcite']);
                         if ($parts[0] == $tree) {
-                            echo "<input type=\"button\" value=\"{$admtext['copylast']}\" onclick=\"return copylast(document.citeform2,'{$parts[1]}');\">";
+                            echo "<input type='button' value=\"{$admtext['copylast']}\" onclick=\"return copylast(document.citeform2,'{$parts[1]}');\">";
                             echo "&nbsp; <img src=\"img/spinner.gif\" id=\"lastspinner\" style=\"vertical-align:-3px; display:none;\">";
                         }
                     }

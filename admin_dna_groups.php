@@ -198,7 +198,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             $newactionstr = preg_replace("/zzz/", $row['test_type'], $newactionstr);
                             echo "<tr id=\"row_{$row['dna_group']}\">";
                             echo "<td class='lightback'><div>$newactionstr</div></td>\n";
-                            echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value='1'></td>";
+                            echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value='1'></td>";
                             $editlink = "admin_edit_dna_group.php?dna_group={$row['dna_group']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['dna_group'] . "</a>" : $row['dna_group'];
 

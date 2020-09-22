@@ -194,7 +194,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
                             echo "<tr id=\"row_{$row['userID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
                             }
                             $editlink = "admin_edituser.php?userID={$row['userID']}";
                             $username = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['username'] . "</a>" : $row['username'];

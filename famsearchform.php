@@ -404,7 +404,7 @@ echo $formstr;
                 }
                 echo "</select>\n";
                 echo "</td>\n";
-                echo "<td><input type=\"text\" name=\"cef{$row['eventtypeID']}\" value=\"\"></td>\n";
+                echo "<td><input type='text' name=\"cef{$row['eventtypeID']}\" value=\"\"></td>\n";
                 echo "</tr>\n";
 
                 echo "<tr>\n";
@@ -417,7 +417,7 @@ echo $formstr;
                 }
                 echo "</select>\n";
                 echo "</td>\n";
-                echo "<td><input type=\"text\" name=\"cep{$row['eventtypeID']}\" value=\"\"></td>\n";
+                echo "<td><input type='text' name=\"cep{$row['eventtypeID']}\" value=\"\"></td>\n";
                 echo "</tr>\n";
 
                 echo "<tr>\n";
@@ -433,7 +433,7 @@ echo $formstr;
 
                 echo "</select>\n";
                 echo "</td>\n";
-                echo "<td><input type=\"text\" name=\"cey$row[eventtypeID]\" value=\"\"></td>\n";
+                echo "<td><input type='text' name=\"cey$row[eventtypeID]\" value=\"\"></td>\n";
                 echo "</tr>\n";
             }
             ?>

@@ -61,7 +61,7 @@ function tng_header($title, $flags) {
     echo "<head>\n";
     echo "<title>$title$siteprefix</title>\n";
     echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
-    echo "<meta charset=utf-8\">\n";
+    echo "<meta charset=\"utf-8\">\n";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
     if (isset($flags['norobots'])) {
         echo $flags['norobots'];
@@ -168,7 +168,7 @@ function tng_header($title, $flags) {
         echo "<style>\n{$tngconfig['mmenustyle']}</style>\n";
     }
 
-    echo "</head>";
+    echo "</head>\n";
     if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         include $templatepath . $customheader;
     } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
@@ -716,7 +716,7 @@ function tng_getLanguageSelect($instance) {
                 $menu .= ">{$row['display']}</option>\n";
             }
             $menu .= "</select>\n";
-            $menu .= "<input type='hidden' name=\"instance\" value=\"$instance\"></form>\n";
+            $menu .= "<input type='hidden' name='instance' value=\"$instance\"></form>\n";
             $menu .= "</li>\n";
         }
 
@@ -939,11 +939,11 @@ function tng_icons($instance, $title = "") {
                 $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"img/tng_close.gif\" alt=\"\"/></a>";
                 $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
-                $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type=\"text\" name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
-                $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type=\"text\" name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
-                $fullmenu .= "<label for=\"searchid\">{$text['id']}: </label><input type=\"text\" class=\"veryshortfield\" name=\"mypersonid\" id=\"searchid\"/> &nbsp;\n";
+                $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type='text' name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
+                $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type='text' name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
+                $fullmenu .= "<label for=\"searchid\">{$text['id']}: </label><input type='text' class=\"veryshortfield\" name=\"mypersonid\" id=\"searchid\"/> &nbsp;\n";
                 $fullmenu .= "<input type='hidden' name=\"idqualify\" value=\"equals\">\n";
-                $fullmenu .= "<input type=\"submit\" value=\"{$text['search']}\"></form></div>";
+                $fullmenu .= "<input type='submit' value=\"{$text['search']}\"></form></div>";
             }
         }
 

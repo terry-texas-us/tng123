@@ -5,10 +5,10 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <div>
-    <table width="100%" cellspacing="0" class="headertitle">
+    <table class="headertitle w-100" cellspacing="0">
         <tr class="row">
             <td>
-                <table width="100%" cellspacing="0">
+                <table class="w-100" cellspacing="0">
                     <tr>
                         <?php
                         //begin TITLE IMAGE (default: "Our Family History")
@@ -51,7 +51,7 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
                     </tr>
                 </table>
                 <form action="search.php" method="get" style="margin:0;">
-                    <table width="100%" cellspacing="0">
+                    <table class="w-100" cellspacing="0">
                         <tr class="strip">
                             <td class="fieldnameback">
                 <span class="fieldname">

@@ -159,7 +159,7 @@ echo "
                      <span class='normal'>{$admtext['mmlogfilename']}:</span>
                   </td>
                   <td>
-                     <input type=\"text\" value=\"{$options['modlogfile']}\" name=\"options[modlogfile]\" size=\"20\">
+                     <input type='text' value=\"{$options['modlogfile']}\" name=\"options[modlogfile]\" size=\"20\">
                   </td>
                </tr>
 		         <tr>
@@ -167,7 +167,7 @@ echo "
                      <span class='normal'>{$admtext['mmmaxloglines']}:</span>
                   </td>
                   <td>
-                     <input type=\"text\" value=\"{$options['maxloglines']}\" name=\"options[maxloglines]\" size=\"5\">
+                     <input type='text' value=\"{$options['maxloglines']}\" name=\"options[maxloglines]\" size=\"5\">
                   </td>
                </tr>
          		<tr>
@@ -475,7 +475,7 @@ echo ">{$admtext['no']}</option>
 		</td></tr>
 		<tr class='databack tngshadow'>
 			<td class=\"tngshadow\">
-            <input type=\"submit\" name=\"submit\" accesskey=\"s\" value=\"{$admtext['save']}\">
+            <input type='submit' name=\"submit\" accesskey=\"s\" value=\"{$admtext['save']}\">
 			</td>
 		</tr>
 		</table>

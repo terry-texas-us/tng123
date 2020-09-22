@@ -17,7 +17,7 @@ function doNoteSearch($instance, $pagenav) {
 
     $str = "<div class='normal'>\n";
     $str .= getFORM("browsenotes", "get", "notesearch$instance", "");
-    $str .= "<input type=\"text\" name=\"notesearch\" value=\"$notesearch\"> <input type=\"submit\" value=\"{$text['search']}\"> ";
+    $str .= "<input type='text' name=\"notesearch\" value=\"$notesearch\"> <input type='submit' value=\"{$text['search']}\"> ";
     $str .= $pagenav;
     if ($notesearch) {
         $str .= "<a href=\"$browsenotes_noargs_url\">{$text['browseallnotes']}</a>";

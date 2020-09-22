@@ -184,8 +184,8 @@ class modeditor extends modparser
       <input type='hidden' name=\"param[param]\" value=\"{$params[$i]['param']}\">
       <input type='hidden' name=\"param[quot]\" value=\"{$params[$i]['quot']}\">
       <div class=\"edbuttonbar\">
-         <button type=\"submit\" name=\"submit\" value=\"pUpdate\">{$this->admtext['update']}</button>&nbsp;&nbsp;
-         <button type=\"submit\" name=\"submit\" value=\"pRestore\">{$this->admtext['restore']}</button>&nbsp;&nbsp;
+         <button type='submit' name=\"submit\" value=\"pUpdate\">{$this->admtext['update']}</button>&nbsp;&nbsp;
+         <button type='submit' name=\"submit\" value=\"pRestore\">{$this->admtext['restore']}</button>&nbsp;&nbsp;
       </div>
    </td>
 </tr>
@@ -198,7 +198,7 @@ class modeditor extends modparser
 <td>
 <div class=\"lightback edreturn\">
    <form method=\"post\" action=\"\">
-            <button type=\"submit\" name=\"submit\" value=\"pCancel\">{$this->admtext['return']}</button>
+            <button type='submit' name=\"submit\" value=\"pCancel\">{$this->admtext['return']}</button>
    </form>
 </div>
 </td>

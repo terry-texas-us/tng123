@@ -414,7 +414,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 
                                 include "eventmicro.php";
 
-                                echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='lightback' align=\"center\">\n";
+                                echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='lightback text-center'>\n";
                                 if ($type != "place") {
                                     echo "<a href=\"#\" title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                                 }

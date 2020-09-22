@@ -387,7 +387,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 $albumresult = tng_query($albumquery) or die ($admtext['cannotexecutequery'] . ": $albumquery");
                                 $numalbums = tng_num_rows($albumresult);
                                 if ($numalbums) {
-                                    echo "<input type=\"submit\" name=\"xphaction\" value=\"{$admtext['addtoalbum']}\">\n";
+                                    echo "<input type='submit' name=\"xphaction\" value=\"{$admtext['addtoalbum']}\">\n";
                                     echo "<select name=\"albumID\" style=\"vertical-align:top;\">\n";
                                     while ($albumrow = tng_fetch_assoc($albumresult)) {
                                         echo "	<option value=\"{$albumrow['albumID']}\"";
@@ -441,9 +441,9 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['mediaID'], $actionstr);
                             echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value='1'></td>";
                             }
-                            echo "<td class='lightback' align=\"center\">";
+                            echo "<td class='lightback text-center'>";
                             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
                             if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                                 $photoinfo = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);

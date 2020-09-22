@@ -5,18 +5,18 @@
 // notable exception is UK locations which due to licensing issues can't be
 // searched from within pages using the map API but can be searched from
 // Google's own pages.
-echo "<input type=\"button\" onclick=\"return divbox('mapcontainer');\" value=\"{$admtext['showhidemap']}\" class=\"alignmiddle\"> <span class='normal'>{$admtext['getcoords']}</span>\n";
+echo "<input type='button' onclick=\"return divbox('mapcontainer');\" value=\"{$admtext['showhidemap']}\" class=\"alignmiddle\"> <span class='normal'>{$admtext['getcoords']}</span>\n";
 
 echo "<div id=\"mapcontainer\" style=\"display:none; width:{$map['admw']};\" class=\"mappad5 rounded10\">\n";
 $searchstring = $row['place'] ? $row['place'] : $admtext['searchstring'];
 echo "<span class='normal'>{$admtext['googleplace']}: ";
 
-echo "<input type=\"text\" size=\"60\" name=\"address\" id=\"location\" onkeypress=\"return keyHandlerEnter(this,event);\" value=\"$searchstring\"";
+echo "<input type='text' size=\"60\" name=\"address\" id=\"location\" onkeypress=\"return keyHandlerEnter(this,event);\" value=\"$searchstring\"";
 if (!$row['place']) {
     echo " onfocus=\"if(this.value=='$searchstring'){this.value='';}\"";
 }
 echo ">\n";
-echo "<input type=\"button\" value=\"{$admtext['gobutton']}\" onclick=\"showAddress(document.form1.address.value); return false\"><br><br></span>\n";
+echo "<input type='button' value=\"{$admtext['gobutton']}\" onclick=\"showAddress(document.form1.address.value); return false\"><br><br></span>\n";
 
 echo "<div id=\"map\" style=\"width: {$map['admw']}; height: {$map['admh']};\" class=\"rounded10\"></div>\n";
 $maphelplang = findhelp("places_googlemap_help.php");

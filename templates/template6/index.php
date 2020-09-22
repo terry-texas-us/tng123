@@ -46,7 +46,7 @@ if ($sitever == "mobile") {
 }
 ?>
 
-    <table width="100%" cellspacing="0" cellpadding="5">
+    <table class="w-100" cellspacing="0" cellpadding="5">
         <tr>
             <td class="section">
                 <img src="<?php echo $templatepath; ?>img/header_welcome.gif" width="200" height="50" alt=""><br>

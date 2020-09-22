@@ -56,7 +56,7 @@ function doMediaSearch($instance, $pagenav) {
     global $text, $mediasearch, $orgmediatypeID, $browsemedia_url, $tree, $tnggallery;
 
     $str = getFORM("browsemedia", "get", "MediaSearch$instance", "");
-    $str .= "<input type=\"text\" name=\"mediasearch\" value=\"$mediasearch\"> <input type=\"submit\" value=\"{$text['search']}\"> <input type=\"button\" value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsemedia_url" . "mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"{$text['search']}\"> <input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsemedia_url" . "mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
     $str .= "<input type='hidden' name=\"mediatypeID\" value=\"$orgmediatypeID\">\n";
     $str .= $pagenav;
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
@@ -379,7 +379,7 @@ while ($row = tng_fetch_assoc($result)) {
 
     if ($tnggallery) {
         if ($imgsrc) {
-            $mediatext .= "<div class='databack gallery' align=\"center\">";
+            $mediatext .= "<div class='databack gallery text-center'>";
             $mediatext .= $href ? "<a href=\"$href\">$imgsrc</a>\n" : "$imgsrc\n";
             $mediatext .= "</div>";
             $i++;
@@ -388,7 +388,7 @@ while ($row = tng_fetch_assoc($result)) {
         $mediatext .= "<tr>";
         $mediatext .= "<td class='databack'>$i</td>";
         if ($imgsrc) {
-            $mediatext .= "<td class='databack' align=\"center\">";
+            $mediatext .= "<td class='databack text-center'>";
             $mediatext .= "<div class=\"media-img\" id=\"mi{$row['mediaID']}\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
             if ($href && $row['allow_living']) {
                 $mediatext .= "<a href=\"$href\"";
@@ -403,7 +403,7 @@ while ($row = tng_fetch_assoc($result)) {
             $mediatext .= "</td><td class='databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td class='databack' align=\"center\">&nbsp;</td>";
+            $mediatext .= "<td class='databack text-center'>&nbsp;</td>";
             $mediatext .= "<td class='databack'>";
         }
 

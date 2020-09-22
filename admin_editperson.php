@@ -291,7 +291,7 @@ include_once "eventlib_js.php";
     ?>
 
     <form action="admin_updateperson.php" method="post" name="form1" id="form1">
-        <table width="100%" cellpadding="10" cellspacing="2" class="lightback normal">
+        <table class="lightback normal w-100" cellpadding="10" cellspacing="2">
             <tr class="databack"> <!-- Form content Header -->
                 <td class="tngshadow">
                     <table cellpadding="0" cellspacing="0" class="normal">
@@ -345,7 +345,7 @@ include_once "eventlib_js.php";
                                     <input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35">
                                 </td>
                                 <?php if ($lnprefixes) {
-                                    echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width: 80px;\"></td>\n";
+                                    echo "<td><input type='text' value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width: 80px;\"></td>\n";
                                 }
                                 ?>
                                 <td>
@@ -496,7 +496,7 @@ include_once "eventlib_js.php";
             <tr class="databack"> <!-- Collapsible section - Parents -->
                 <td class="tngshadow">
                     <?php
-                    $newparents = $allow_add && (!$assignedtree || $assignedtree == $tree) ? "&nbsp; <input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"return addNewFamily('child','child=$personID&tree=$tree&cw=$cw');\">\n" : "";
+                    $newparents = $allow_add && (!$assignedtree || $assignedtree == $tree) ? "&nbsp; <input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"return addNewFamily('child','child=$personID&tree=$tree&cw=$cw');\">\n" : "";
                     echo displayToggle("plus2", 1, "parents", $admtext['parents'] . " (<span id=\"parentcount\">$parentcount</span>)", "", $newparents);
                     ?>
 
@@ -539,8 +539,8 @@ include_once "eventlib_js.php";
                             echo "</tr>\n";
                             echo "<tr>\n";
                             echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
-                            echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
-                            echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
+                            echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
+                            echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
                             echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "',1);\" title=\"{$admtext['find']}\" class=\"smallicon admin-temp-icon\"></a></td>\n";
                             echo "<td><a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\" title=\"{$admtext['sources']}\" id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon $citesicon\"></a></td>\n";
                             echo "</tr>\n";
@@ -572,7 +572,7 @@ include_once "eventlib_js.php";
             <td class="tngshadow">
                 <?php
                 $display = !$row['sex'] || $row['sex'] == "U" ? " style=\"display:none;\"" : "";
-                $newspouse = $allow_add && (!$assignedtree || $assignedtree == $tree) ? "&nbsp; <input type=\"button\"$display id=\"addnewspouse\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"return addNewFamily('$self','$self=$personID&tree=$tree&cw=$cw');\">\n" : "";
+                $newspouse = $allow_add && (!$assignedtree || $assignedtree == $tree) ? "&nbsp; <input type='button'$display id=\"addnewspouse\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"return addNewFamily('$self','$self=$personID&tree=$tree&cw=$cw');\">\n" : "";
                 echo displayToggle("plus3", 1, "spouses", $admtext['spouses'] . " (<span id=\"marrcount\">$marrcount</span>)", "", $newspouse);
                 ?>
 

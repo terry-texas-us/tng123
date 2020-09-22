@@ -386,7 +386,7 @@ while ($row = tng_fetch_assoc($result)) {
 
     if ($tnggallery) {
         if ($imgsrc) {
-            $mediatext .= "<div class='databack gallery' align=\"center\">";
+            $mediatext .= "<div class='databack gallery text-center'>";
             $mediatext .= $href ? "<a href=\"$href\">$imgsrc</a>\n" : "$imgsrc\n";
             $mediatext .= "</div>";
             $i++;
@@ -394,7 +394,7 @@ while ($row = tng_fetch_assoc($result)) {
     } else {
         $mediatext .= "<tr><td class='databack'><span class='normal'>$i</span></td>";
         if ($imgsrc) {
-            $mediatext .= "<td class='databack' align=\"center\">";
+            $mediatext .= "<td class='databack text-center'>";
             $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
             if ($href) {
                 $mediatext .= "<a href=\"$href\"";
@@ -410,7 +410,7 @@ while ($row = tng_fetch_assoc($result)) {
             $mediatext .= "<td class='databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td class='databack' align=\"center\">&nbsp;</td>";
+            $mediatext .= "<td class='databack text-center'>&nbsp;</td>";
             $mediatext .= "<td class='databack'>";
         }
 
@@ -429,7 +429,7 @@ if ($tnggallery) {
 } else {
     if (!$thumbcount) {
         $header = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
-        $mediatext = str_replace("<td class='databack' align=\"center\">&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
+        $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
 

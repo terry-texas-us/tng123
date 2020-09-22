@@ -63,7 +63,7 @@ global $text, $tmp;
         </tr>
         <tr>
             <td>
-                <table width="100%" cellspacing="0" cellpadding="7" border="0">
+                <table class="w-100" cellspacing="0" cellpadding="7" border="0">
                     <tr>
                         <td style="border-collapse:separate;">
                             <!-- end topmenu.php for template 5 -->

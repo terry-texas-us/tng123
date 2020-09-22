@@ -58,7 +58,7 @@ if ($sitever != "mobile") {
         </tr>
     </table>
     <form action="search.php" method="get" style="margin:0;">
-        <table width="100%" cellspacing="0">
+        <table class="w-100" cellspacing="0">
             <tr class="strip">
                 <td class="fieldnameback">
 								<span class="fieldname">

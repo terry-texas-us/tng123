@@ -18,7 +18,7 @@ function showDiv(string $type) {
 
     if ($allow_add) {
         echo "<form action=\"\" style=\"margin:0;padding-bottom:5px;\" method=\"post\" name=\"form$type\" id=\"form$type\">\n";
-        echo "<input type=\"button\" value=\"" . $admtext['addnew'] . "\" onclick=\"return openMostWanted('$type','');\">\n";
+        echo "<input type='button' value=\"" . $admtext['addnew'] . "\" onclick=\"return openMostWanted('$type','');\">\n";
         echo "</form>\n";
     }
     echo "<div id=\"order$type" . "divs\">\n";

@@ -183,7 +183,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                         <td class='align-top'>
                             <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
                             <?php
-                            echo "<p><input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('R','$repoID','$tree');\"></p>\n";
+                            echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('R','$repoID','$tree');\"></p>\n";
                             ?>
                         </td>
                         <td class='align-top'>

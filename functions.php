@@ -247,7 +247,7 @@ function doMedia($mediatypeID) {
             $mediatext .= "<td class='databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td class='databack' align=\"center\">&nbsp;</td>";
+            $mediatext .= "<td class='databack text-center'>&nbsp;</td>";
             $mediatext .= "<td class='databack'>";
         }
 

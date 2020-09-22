@@ -228,7 +228,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
 
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback' align=\"center\"><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
                             echo "<td class='lightback'>&nbsp;{$row['reponame']}&nbsp;</td>\n";

@@ -35,7 +35,7 @@ function drawBox($person, $box) {
     drawEmpty($box['topleft'], $box['middleleft'], $box['bottomleft']);
 
     //main area
-    echo "<td class='align-top' align=\"center\">";
+    echo "<td class='align-top text-center'>";
 
     //top border
     if ($box['lineinto']) {
@@ -86,7 +86,7 @@ function drawBox($person, $box) {
             $nameinfo .= "<br>" . getYears($person);
         }
     }
-    echo "</td>\n<td width=\"100%\" align=\"center\" class='normal'>$nameinfo";
+    echo "</td>\n<td class='normal text-center' width=\"100%\">$nameinfo";
     //end inner table
     echo "</td>\n</tr></table>\n";
 
@@ -129,7 +129,7 @@ function drawBox($person, $box) {
 function drawEmpty($top, $middle, $bottom) {
     global $pedigree, $more;
 
-    echo "<td align=\"center\">";
+    echo "<td class='text-center'>";
     if ($top) {
         echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" ><br>";
         echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" >";

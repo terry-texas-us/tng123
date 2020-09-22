@@ -235,8 +235,8 @@ function showEventRow($datefield, $placefield, $label, $persfamID) {
     $long = $noclass ? " style=\"width:270px\"" : " class=\"longfield\"";
     $tr = "<tr>\n";
     $tr .= "<td>" . $admtext[$label] . ":</td>\n";
-    $tr .= "<td><input type=\"text\" value=\"" . $row[$datefield] . "\" name=\"$datefield\" onblur=\"checkDate(this);{$blurAction}\" maxlength=\"50\"$short></td>\n";
-    $tr .= "<td><input type=\"text\" value=\"" . $row[$placefield] . "\" name=\"$placefield\" {$onblur}id=\"$placefield\"$long></td>\n";
+    $tr .= "<td><input type='text' value=\"" . $row[$datefield] . "\" name=\"$datefield\" onblur=\"checkDate(this);{$blurAction}\" maxlength=\"50\"$short></td>\n";
+    $tr .= "<td><input type='text' value=\"" . $row[$placefield] . "\" name=\"$placefield\" {$onblur}id=\"$placefield\"$long></td>\n";
     if (in_array($label, $ldsarray)) {
         $tr .= "<td><a href=\"#\" onclick=\"return openFindPlaceForm('$placefield', 1);\" title=\"{$admtext['find']}\" class=\"smallicon admin-temp-icon\"></a></td>\n";
     } else {

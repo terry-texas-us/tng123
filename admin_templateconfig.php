@@ -72,7 +72,7 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
             var newtr = table.insertRow(row.rowIndex + 1);
             var label = "&nbsp;&nbsp;" + jQuery('#' + rowID + ' :first-child').html();
             insertCell(newtr, 0, label + "<br>&nbsp;&nbsp;&nbsp;(" + langDisplay + ")");
-            var inputstr = type == "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows=\"3\" cols=\"80\"></textarea>" : "<input type=\"text\" class=\"longfield\" name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
+            var inputstr = type == "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows=\"3\" cols=\"80\"></textarea>" : "<input type='text' class=\"longfield\" name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
             insertCell(newtr, 1, inputstr);
             insertCell(newtr, 2, "");
         }
@@ -80,7 +80,7 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
     }
 
     function showUploadBox(key, folder) {
-        jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"> <?php echo $admtext['text_or']; ?> <input type=\"button\" value=\"<?php echo $admtext['select']; ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" >");
+        jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"> <?php echo $admtext['text_or']; ?> <input type='button' value=\"<?php echo $admtext['select']; ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" >");
         jQuery('#div_' + key).toggle();
         return false;
     }
@@ -267,9 +267,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     }
                     $sections[$n] .= "> <label for=\"form_{$key}_text\">{$admtext['ttitletext']}</label> &nbsp;";
                 } else {
-                    $sections[$n] .= "<input type=\"text\" class=\"longfield\" name=\"form_$key\" id=\"form_$key\" value=\"$value\">\n";
+                    $sections[$n] .= "<input type='text' class=\"longfield\" name=\"form_$key\" id=\"form_$key\" value=\"$value\">\n";
                     if (strpos($key, "img") !== false || strpos($key, "image") !== false || strpos($key, "thumb") !== false || strpos($key, "photol") !== false || strpos($key, "photor") !== false) {
-                        $sections[$n] .= " <input type=\"button\" onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"{$admtext['preview']}\"> <input type=\"button\" onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"{$admtext['change']}\" >\n";
+                        $sections[$n] .= " <input type='button' onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"{$admtext['preview']}\"> <input type='button' onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"{$admtext['change']}\" >\n";
                         $size = @GetImageSize($rootpath . "templates/{$folders[$n]}/$value");
                         if ($size) {
                             $imagesize1 = $size[0];
@@ -288,7 +288,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     if ($type == "textarea") {
                         $sections[$n] .= "<br>";
                     }
-                    $sections[$n] .= "{$admtext['createcopy']}: \n<select id=\"lang_$key\">\n$languageList\n</select> <input type=\"button\" value=\"{$admtext['go']}\" onclick=\"return insertLangRow('$key','$type');\" >\n";
+                    $sections[$n] .= "{$admtext['createcopy']}: \n<select id=\"lang_$key\">\n$languageList\n</select> <input type='button' value=\"{$admtext['go']}\" onclick=\"return insertLangRow('$key','$type');\" >\n";
                 }
                 $sections[$n] .= "</td>\n</tr>\n";
             }
@@ -311,10 +311,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     if ($imagetext) {
                         echo "$imagetext<br>";
                     }
-                    echo "<p><input type=\"submit\" name=\"submittop\" accesskey=\"s\" value=\"{$admtext['save']}\"></p>\n";
+                    echo "<p><input type='submit' name=\"submittop\" accesskey=\"s\" value=\"{$admtext['save']}\"></p>\n";
                     echo "<p><strong>{$admtext['folder']}: templates/" . $folders['t' . $i] . "</strong></p>";
                     echo "$section</table>\n";
-                    echo "<br><input type=\"submit\" name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
+                    echo "<br><input type='submit' name=\"submit\" accesskey=\"s\" class=\"btn\" value=\"{$admtext['save']}\">\n";
                     echo "<input type='hidden' name=\"form_templateswitching\" value=\"\">\n";
                     echo "<input type='hidden' name=\"form_templatenum\" value=\"\">\n";
                     echo "</form>\n";

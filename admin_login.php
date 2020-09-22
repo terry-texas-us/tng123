@@ -95,7 +95,7 @@ if (!empty($reset)) {
 ?>
 <body class="admin-body">
 
-<table width="100%" cellpadding="10" bgcolor="#FFFFFF" class="rounded10">
+<table class="w-75 m-auto" cellpadding="10" bgcolor="#fff">
     <tr>
         <td class="fieldnameback rounded10">
             <span class="whiteheader" style="font-size: large; "><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></span>

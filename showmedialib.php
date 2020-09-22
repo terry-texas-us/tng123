@@ -476,9 +476,9 @@ function showMediaSource($imgrow, $ss = false) {
     if ($imgrow['path']) {
         if ($imgrow['abspath']) {
             if ($imgrow['newwindow']) {
-                echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
+                echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
             } else {
-                echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
+                echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
             }
         } else {
             if (!$imgrow['form']) {
@@ -573,9 +573,9 @@ function showMediaSource($imgrow, $ss = false) {
                 }
             } else {
                 if ($imgrow['newwindow']) {
-                    echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
+                    echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
                 } else {
-                    echo "<form><input type=\"button\" value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
+                    echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
                 }
             }
         }

@@ -96,7 +96,7 @@ function finishAddToAlbum(req) {
 
     var newnum = jQuery('.sortrow').length + 1;
 
-    newrow = '<table width="100%" cellpadding="5" cellspacing="1"><tr>\n';
+    newrow = '<table class="w-100" cellpadding="5" cellspacing="1"><tr>\n';
     newrow += '<td class="dragarea normal">';
     newrow += '<img src="img/admArrowUp.gif" alt=""><br>' + dragmsg + '<br><img src="img/admArrowDown.gif" alt="">\n';
     newrow += '</td>\n';

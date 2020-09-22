@@ -42,7 +42,7 @@ function doTestSearch($instance, $pagenav) {
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browse_dna_tests", "get", "TestSearch$instance", "");
-    $str .= "<input type=\"text\" name=\"testsearch\" value=\"$testsearch\"> <input type=\"submit\" value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"testsearch\" value=\"$testsearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($testsearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browse_dna_tests_noargs_url\">{$text['browsealltests']}</a>";
@@ -334,7 +334,7 @@ if ($test_type == "mtDNA") {
 
             echo "<tr><td class='databack'>$i</td>\n";
             if ($test_type && $test_type != "X-DNA") {
-                echo "<td class='databack' align=\"center\"><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
+                echo "<td class='databack text-center'><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
             }
             $dash = ($row['test_type'] == "Y-DNA") ? "-" : "";
             echo "<td class='databack'><a href=\"$show_dna_test_url" . "group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";

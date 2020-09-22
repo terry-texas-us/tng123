@@ -61,7 +61,7 @@ $menu = doMenu($setuptabs, "map", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['mapconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table width="100%" cellpadding="10" cellspacing="2" class="normal lightback">
+<table class="normal lightback w-100" cellpadding="10" cellspacing="2">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_updatemapconfig.php" method="post" name="form1">

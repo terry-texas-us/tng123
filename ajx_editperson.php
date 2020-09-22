@@ -72,7 +72,7 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="form1" id="form1" onsubmit="return updatePerson(this, <?php echo $slot; ?>);">
-    <table width="100%" cellpadding="10" cellspacing="2">
+    <table class="w-100" cellpadding="10" cellspacing="2">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
@@ -132,7 +132,7 @@ include_once "eventlib.php";
                             </td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type=\"text\" value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px;\"></td>\n";
+                                echo "<td><input type='text' value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px;\"></td>\n";
                             }
                             ?>
                             <td>
@@ -306,7 +306,7 @@ include_once "eventlib.php";
                             <td class='align-top'><?php echo $admtext['otherevents']; ?>:</td>
                             <td colspan="6">
                                 <?php
-                                echo "<input type=\"button\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('I','$personID','$tree');\">&nbsp;\n";
+                                echo "<input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('I','$personID','$tree');\">&nbsp;\n";
                                 ?>
                             </td>
                         </tr>
@@ -457,8 +457,8 @@ include_once "eventlib.php";
         echo "</tr>\n";
         echo "<tr>\n";
         echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
-        echo "<td><input type=\"text\" value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
-        echo "<td><input type=\"text\" value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
+        echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
+        echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
         echo "<td>\n";
         echo "<a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
         echo "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class=\"smallicon\">\n";

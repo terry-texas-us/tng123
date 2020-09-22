@@ -289,7 +289,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             echo "</tr>\n";
                             echo "<tr>";
                             echo "<td><strong>{$admtext['suggested']}:</strong></td>";
-                            echo "<td colspan=\"2\"><input type=\"text\" name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td>";
+                            echo "<td colspan=\"2\"><input type='text' name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td>";
                             echo "</tr>\n";
                         }
                         if ($placefield) {
@@ -300,7 +300,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             echo "</tr>\n";
                             echo "<tr>";
                             echo "<td><strong>{$admtext['suggested']}:</strong></td>";
-                            echo "<td class='align-top'><input type=\"text\" name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
+                            echo "<td class='align-top'><input type='text' name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
                             echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('newplace');\" title=\"{$admtext['find']}\" class=\"smallicon admin-find-icon\"></a></td>";
                             echo "</tr>\n";
                         }

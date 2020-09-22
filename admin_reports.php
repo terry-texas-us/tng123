@@ -176,7 +176,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                         echo "<td class='lightback'>&nbsp;{$row['ranking']}</td>\n";
                         echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;<u>$name</u><br>&nbsp;{$row['reportdesc']}</span></td>\n";
-                        echo "<td class='lightback' align=\"center\">&nbsp;$active</td></tr>\n";
+                        echo "<td class='lightback text-center'>&nbsp;$active</td></tr>\n";
                     }
                     ?>
                 </table>

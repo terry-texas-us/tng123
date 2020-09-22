@@ -178,9 +178,9 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $albumname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['albumname'] . "</a>" : "<u>" . $row['albumname'] . "</u>";
 
                         echo "<td class='lightback normal'>$albumname<br>" . strip_tags($row['description']) . "</td>\n";
-                        echo "<td class='lightback normal' align=\"center\">$acount</td>\n";
+                        echo "<td class='lightback normal text-center'>$acount</td>\n";
                         $active = $row['active'] ? $admtext['yes'] : $admtext['no'];
-                        echo "<td class='lightback normal' align=\"center\">$active</td>\n";
+                        echo "<td class='lightback normal text-center'>$active</td>\n";
 
                         $query = "SELECT people.personID AS personID2, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.entityID AS personID, sources.title, sources.sourceID, repositories.repoID, reponame ";
                         $query .= "FROM $album2entities_table album2entities ";

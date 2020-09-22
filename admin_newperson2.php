@@ -85,7 +85,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 </td>
                 <?php
                 if ($lnprefixes) {
-                    echo "<td><input type=\"text\" name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
+                    echo "<td><input type='text' name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
                 }
                 ?>
                 <td>
