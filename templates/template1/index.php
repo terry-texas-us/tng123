@@ -5,52 +5,22 @@ $flags['nobody'] = true;
 $tngconfig['showshare'] = false;
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 $title = getTemplateMessage('t1_maintitle');
 ?>
-
     <br>
-    <div align="center">
+    <div class="m-auto w-75">
         <table class="indexpage">
             <tr>
                 <td colspan="3">
+                    <img id="mainphoto" class="border-0 float-left" src="<?php echo $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="">
 
-                    <?php
-                    //begin MAIN IMAGE (default: picture of the Henefer, Utah cemetery)
-                    //Actual file name has been replaced with t1_mainimage variable, configurable from Template Settings. Default name of actual image is "home-image.jpg"
-                    //You can replace the t1_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-                    ?>
-                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="" align="left" id="mainphoto">
-                    <?php
-                    //end MAIN IMAGE
-                    ?>
-
-                    <?php
-                    //begin TITLE IMAGE (default: "Our Family History")
-                    //Actual file name has been replaced with t1_titleimage variable, configurable from Template Settings. Default name of actual image is "home-title.gif"
-                    //You can replace the t1_titleimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-
-                    if ($tmp['t1_titlechoice'] == "text" || $sitever == "mobile") {
-                        ?>
+                    <?php if ($tmp['t1_titlechoice'] == "text" || $sitever == "mobile") { ?>
                         <em class="maintitle"><?php echo $title; ?></em>
-                        <?php
-                    } else {
-                        ?>
-                        <img src="<?php echo $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="" hspace="10">
-                        <?php
-                    }
-                    //end MAIN IMAGE
-                    ?>
-
-                    <!--
-	<em style="font-size:72px; font-family:Verdana,Arial,sans-serif; color:#000099; line-height:72px">
-
-	<?php echo getTemplateMessage('t1_maintitle'); ?>
-
-	</em>
--->
-
+                    <?php } else { ?>
+                        <img class="ml-2" src="<?php echo $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="">
+                    <?php } ?>
                     <br>
                 </td>
             </tr>
@@ -62,7 +32,7 @@ $title = getTemplateMessage('t1_maintitle');
                     }
                     ?>
                     <h2><?php echo $text['mnusearchfornames']; ?></h2>
-                    <!-- Do not change the form action or field names! -->
+
                     <form method="get" name="searchform" action="search.php">
                         <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                         <br>
@@ -85,19 +55,18 @@ $title = getTemplateMessage('t1_maintitle');
 
                         if ($numlangs > 1) {
                             echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                            echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                            echo "<select name='newlanguage3' id='newlanguage3' onchange='document.tngmenu3.submit();'>\n";
 
                             while ($row = tng_fetch_assoc($result)) {
-                                echo "<option value=\"{$row['languageID']}\"";
+                                echo "<option value='{$row['languageID']}'";
                                 if ($languages_path . $row['folder'] == $mylanguage) {
                                     echo " selected";
                                 }
                                 echo ">{$row['display']}</option>\n";
                             }
                             echo "</select>\n";
-                            echo "<input type='hidden' name=\"instance\" value=\"3\"></form>\n";
+                            echo "<input type='hidden' name='instance' value='3'></form>\n";
                         }
-
                         tng_free_result($result);
                     }
                     $mainpara = getTemplateMessage('t1_mainpara');
@@ -108,71 +77,71 @@ $title = getTemplateMessage('t1_maintitle');
                     <h2><?php echo $text['welcome']; ?></h2>
                     <?php
                     if ($mainpara) {
-                        echo "<div style=\"max-width:700px;\">$mainpara</div>\n";
+                        echo "<div>$mainpara</div>\n";
                     }
                     ?>
                     <h2><?php echo $text['mnufeatures']; ?></h2>
-                    <table style="font-size:12pt;" width="100%">
+                    <table class="w-100">
                         <tr>
-                            <td class="align-top" width="30%">
+                            <td class="align-top" style="width: 30%;">
                                 <ul>
                                     <?php
                                     if ($currentuser) {
-                                        echo "<li><a href=\"logout.php\">{$text['mnulogout']}</a></li>\n";
+                                        echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
                                         if ($allow_admin) {
-                                            echo "<li><a href=\"admin.php\">{$text['mnuadmin']}</a></li>\n";
+                                            echo "<li><a href='admin.php'>{$text['mnuadmin']}</a></li>\n";
                                         }
                                     } else {
-                                        echo "<li><a href=\"login.php\">{$text['mnulogon']}</a></li>\n";
+                                        echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>\n";
                                         if (!$tngconfig['disallowreg']) {
-                                            echo "<li><a href=\"newacctform.php\">{$text['mnuregister']}</a></li>\n";
+                                            echo "<li><a href='newacctform.php'>{$text['mnuregister']}</a></li>\n";
                                         }
                                     }
-                                    echo "<li><a href=\"surnames.php\">{$text['mnulastnames']}</a></li>\n";
-                                    echo "<li><a href=\"searchform.php\">{$text['mnuadvancedsearch']}</a></li>\n";
-                                    echo "<li><a href=\"famsearchform.php\">{$text['searchfams']}</a></li>\n";
-                                    echo "<li><a href=\"searchsite.php\">{$text['searchsitemenu']}</a></li>\n";
-                                    echo "<li><a href=\"places.php\">{$text['places']}</a></li>\n";
-                                    echo "<li><a href=\"anniversaries.php\">{$text['anniversaries']}</a></li>\n";
-                                    echo "<li><a href=\"calendar.php\">{$text['calendar']}</a></li>\n";
-                                    echo "<li><a href=\"cemeteries.php\">{$text['mnucemeteries']}</a></li>\n";
-                                    echo "<li><a href=\"bookmarks.php\">{$text['bookmarks']}</a></li>\n";
+                                    echo "<li><a href='surnames.php'>{$text['mnulastnames']}</a></li>\n";
+                                    echo "<li><a href='searchform.php'>{$text['mnuadvancedsearch']}</a></li>\n";
+                                    echo "<li><a href='famsearchform.php'>{$text['searchfams']}</a></li>\n";
+                                    echo "<li><a href='searchsite.php'>{$text['searchsitemenu']}</a></li>\n";
+                                    echo "<li><a href='places.php'>{$text['places']}</a></li>\n";
+                                    echo "<li><a href='anniversaries.php'>{$text['anniversaries']}</a></li>\n";
+                                    echo "<li><a href='calendar.php'>{$text['calendar']}</a></li>\n";
+                                    echo "<li><a href='cemeteries.php'>{$text['mnucemeteries']}</a></li>\n";
+                                    echo "<li><a href='bookmarks.php'>{$text['bookmarks']}</a></li>\n";
                                     ?>
                                 </ul>
                             </td>
-                            <td width="5%">&nbsp;&nbsp;&nbsp;</td>
-                            <td class="align-top" width="30%">
+                            <td style="width: 5%;"></td>
+                            <td class="align-top" style="width: 30%;">
                                 <ul>
                                     <?php
                                     foreach ($mediatypes as $mediatype) {
                                         if (!$mediatype['disabled']) {
-                                            echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a></li>\n";
+                                            echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
                                         }
                                     }
-                                    echo "<li><a href=\"browsemedia.php\">{$text['allmedia']}</a></li>\n";
-                                    echo "<li><a href=\"browsealbums.php\">{$text['albums']}</a></li>\n";
+                                    echo "<li><a href='browsemedia.php'>{$text['allmedia']}</a></li>\n";
+                                    echo "<li><a href='browsealbums.php'>{$text['albums']}</a></li>\n";
                                     ?>
                                 </ul>
                             </td>
-                            <td width="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td class="align-top" width="30%">
+                            <td style="width: 5%;"></td>
+                            <td class="align-top" style="width: 30%;">
                                 <ul>
                                     <?php
-                                    echo "<li><a href=\"whatsnew.php\">{$text['mnuwhatsnew']}</a></li>\n";
-                                    echo "<li><a href=\"mostwanted.php\">{$text['mostwanted']}</a></li>\n";
-                                    echo "<li><a href=\"reports.php\">{$text['mnureports']}</a></li>\n";
-                                    echo "<li><a href=\"statistics.php\">{$text['mnustatistics']}</a></li>\n";
-                                    echo "<li><a href=\"browsetrees.php\">{$text['trees']}</a></li>\n";
-                                    echo "<li><a href=\"browsenotes.php\">{$text['notes']}</a></li>\n";
-                                    echo "<li><a href=\"browsesources.php\">{$text['mnusources']}</a></li>\n";
-                                    echo "<li><a href=\"browserepos.php\">{$text['repositories']}</a></li>\n";
+                                    echo "<li><a href='whatsnew.php'>{$text['mnuwhatsnew']}</a></li>\n";
+                                    echo "<li><a href='mostwanted.php'>{$text['mostwanted']}</a></li>\n";
+                                    echo "<li><a href='reports.php'>{$text['mnureports']}</a></li>\n";
+                                    echo "<li><a href='statistics.php'>{$text['mnustatistics']}</a></li>\n";
+                                    echo "<li><a href='browsetrees.php'>{$text['trees']}</a></li>\n";
+                                    echo "<li><a href='browsenotes.php'>{$text['notes']}</a></li>\n";
+                                    echo "<li><a href='browsesources.php'>{$text['mnusources']}</a></li>\n";
+                                    echo "<li><a href='browserepos.php'>{$text['repositories']}</a></li>\n";
                                     if (!$tngconfig['hidedna']) {
-                                        echo "<li><a href=\"browse_dna_tests.php\">{$text['dna_tests']}</a></li>\n";
+                                        echo "<li><a href='browse_dna_tests.php'>{$text['dna_tests']}</a></li>\n";
                                     }
                                     if ($allow_admin) {
-                                        echo "<li><a href=\"showlog.php\">{$text['mnushowlog']}</a></li>\n";
+                                        echo "<li><a href='showlog.php'>{$text['mnushowlog']}</a></li>\n";
                                     }
-                                    echo "<li><a href=\"suggest.php?page=$title\">{$text['contactus']}</a></li>\n";
+                                    echo "<li><a href='suggest.php?page=$title'>{$text['contactus']}</a></li>\n";
                                     ?>
                                 </ul>
                                 <br>
@@ -188,5 +157,5 @@ $title = getTemplateMessage('t1_maintitle');
         tng_footer($flags);
         ?>
     </div>
-<?php echo "</body>"; ?>
+<?php echo "</body>\n"; ?>
 <?php echo "</html>"; ?>
