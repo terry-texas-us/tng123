@@ -91,7 +91,6 @@ if ($sitever != "mobile") {
             }
             return rval;
         }
-
         //]]>
     </script>
     <h2 class="header"><span class="headericon" id="dates-hdr-icon"></span><?php echo $text['anniversaries']; ?></h2>

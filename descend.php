@@ -777,7 +777,6 @@ $maxwidth += $pedigree['boxwidth'] + $pedigree['borderwidth'] + (2 * $pedigee['o
             }
             eval("timer" + slot + "=false;");
         }
-
         //]]>
     </script>
 <?php
@@ -819,7 +818,6 @@ if ($display != "compact" && $pedigree['usepopups']) {
             ref.css('z-index', 8);
             ref.css('visibility', 'visible');
         }
-
         //]]>
     </script>
     <?php

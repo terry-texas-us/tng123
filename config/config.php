@@ -52,7 +52,7 @@ $dna_groups_table = "tng_dna_groups";
 $templates_table = "tng_templates";
 
 $rootpath = "C:/Apache24/htdocs/tng123/";
-$templatenum = "9";
+$templatenum = "";
 $templateswitching = "1";
 $homepage = "index.php";
 $tngdomain = "http://localhost/tng123";

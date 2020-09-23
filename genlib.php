@@ -43,6 +43,58 @@ if (!$tree && $defaulttree) {
     $tree = "";
 }
 
+
+/**
+ * @param $headElement
+ * @param array $flags
+ */
+function tng_header0($headElement, array $flags) {
+    global $customheader, $sitever, $templatenum, $templatepath, $text, $tmp;
+    global $tngconfig, $tngprint, $tng_version;
+
+    if (!$tng_version) {
+        $tng_version = "12.3";
+    }
+    initMediaTypes();
+    $title = $headElement->getTitle();
+
+    $icons = $headElement->getIcons();
+    if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        include $templatepath . $customheader;
+    } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
+        $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
+        echo "<body class='{$class}'>\n";
+        echo "<div class='scroll-to-top'><a href='#'><img src='img/backtotop.png' alt=''></a></div>\n";
+    }
+    if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
+        $icons = tng_icons(1, $title);
+    }
+    echo $icons;
+
+    if ($sitever == "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        $ttitle = "t{$templatenum}_maintitle";
+        if ($tmp[$ttitle]) {
+            $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
+        } else {
+            $ttitle = "t{$templatenum}_headtitle";
+            $i = 1;
+            $mtitle = "";
+            while ($tmp[$ttitle . $i]) {
+                $mtitle .= getTemplateMessage($ttitle . $i) . " ";
+                $i++;
+            }
+        }
+        if ($mtitle) {
+            echo "<h3 class=\"mmaintitle\">" . $mtitle . "</h3><hr class=\"mtitlehr\"/><br>\n";
+        }
+    }
+
+    if ($tngconfig['maint']) {
+        echo "<span class=\"fieldnameback yellow\" style=\"padding:3px;\"><strong>{$text['mainton']}</strong></span><br><br>\n";
+    }
+}
+
+
 function tng_header($title, $flags) {
     global $customheader, $session_charset, $sitever, $templatenum, $templatepath, $text, $tmp;
     global $tngconfig, $tng_copyright, $tng_date, $tngprint, $tng_title, $tng_version;
@@ -60,14 +112,14 @@ function tng_header($title, $flags) {
     if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         include $templatepath . $customheader;
     } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
-        $class = !empty($flags['homeclass']) ? $flags['homeclass'] : "publicbody";
-        echo "<body class=\"{$class}\">\n";
-        echo "<div class=\"scroll-to-top\"><a href=\"#\"><img src=\"img/backtotop.png\" alt=\"\"></a></div>\n";
+        $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
+        echo "<body class='{$class}'>\n";
+        echo "<div class='scroll-to-top'><a href='#'><img src='img/backtotop.png' alt=''></a></div>\n";
     }
     if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
         $icons = tng_icons(1, $title);
     }
-    echo $icons;  //from above
+    echo $icons;
 
     if ($sitever == "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         $ttitle = "t{$templatenum}_maintitle";

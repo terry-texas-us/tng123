@@ -1,6 +1,5 @@
 <?php
 
-
 class HeadElementPublic
 {
     private string $title;
@@ -14,7 +13,7 @@ class HeadElementPublic
 
     function __construct(string $title, $flags) {
         global $session_charset, $sitename, $sitever, $tngconfig;
-
+        $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
         $this->title = $title;
         $this->flags = $flags;
 
@@ -32,6 +31,13 @@ class HeadElementPublic
             }
             $this->addStyleElement("<style>\n{$tngconfig['mmenustyle']}</style>");
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string {
+        return $this->title;
     }
 
     /**
@@ -116,7 +122,7 @@ class HeadElementPublic
             $scripts[] = "<script type='text/javascript' src='js/respond.js'></script>";
             $scripts[] = "<![endif]-->";
         }
-        $scripts[] = self::getLitBoxScript($this->flags);
+        $scripts[] = self::getLitBoxScript($this->flags['error']);
 
         if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
             $scripts[] = self::getCookieApprovalScript();
@@ -147,11 +153,11 @@ class HeadElementPublic
         if ($sitever != "standard" && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet' type='text/css'>";
         }
-        $links[] .= "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
+        $links[] = "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
         if (isset($this->flags['tabs'])) {
             $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}?v=$tng_version' rel='stylesheet' type='text/css'>";
         }
-        $links[] .= "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
+        $links[] = "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
         if ($sitever == "mobile") {
             $links[] = "<link href='css/tngmobile.css?v=$tng_version' rel='stylesheet' type='text/css'>";
             $links[] = "<link href='{$templatepath}css/tngmobile.css?v=$tng_version' rel='stylesheet' type='text/css'>";
@@ -185,8 +191,8 @@ class HeadElementPublic
         $metas[] = "<meta name='author' content='Darrin Lythgoe'>";
         $metas[] = "<meta charset='utf-8'>";
         $metas[] = "<meta name='viewport' content='width=device-width, initial-scale=1'>";
-        if (isset($flags['norobots'])) {
-            $metas[] = $flags['norobots'];
+        if (isset($this->flags['norobots'])) {
+            $metas[] = $this->flags['norobots'];
         }
         if ($sitever == "mobile" || $sitever == "tablet") {
             $metas[] = "<meta name='apple-mobile-web-app-capable' content='yes'>";
@@ -200,7 +206,7 @@ class HeadElementPublic
             $metas[] = "<meta property='og:url' content='$tngdomain/$pageURL'>";
             $metas[] = $fbOGimage; // expected to be properly formed single meta tag
         }
-        if (isset($flags['autorefresh']) && $flags['autorefresh'] == 1) {
+        if (isset($this->flags['autorefresh']) && $this->flags['autorefresh'] == 1) {
             $metas[] = "<meta http-equiv='refresh' content='30'>";
         }
         // @include $custommeta; // todo include in dynamic method. static property needed
@@ -226,25 +232,38 @@ class HeadElementPublic
     }
 
     /**
-     * @param $flags
+     * @param $error
      * @return string
      */
-    public static function getLitBoxScript($flags): string {
+    public static function getLitBoxScript($error): string {
         global $text;
         $script = "<script type='text/javascript'>\n";
         $script .= "var tnglitbox;\n";
         $script .= "var share = 0;\n";
         $script .= "var closeimg = 'img/tng_close.gif';\n";
         $script .= "var smallimage_url = '" . getURL("ajx_smallimage", 1) . "';\n";
-        $script .= "var loadingmsg = '{$text['loading']}';\n";
-        $script .= "var expand_msg = '{$text['expand']}';\n";
-        $script .= "var collapse_msg = '{$text['collapse']}';\n";
+        $script .= "const loadingmsg = '{$text['loading']}';\n";
+        $script .= "const expand_msg = '{$text['expand']}';\n";
+        $script .= "const collapse_msg = '{$text['collapse']}';\n";
 
-        if (isset($flags['error']) && $flags['error']) {
+        if (isset($error) && $error) {
             $login_url = getURL("ajx_login", 1);
-            $script .= "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode("") . "&message={$flags['error']}');});\n";
+            $script .= "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode("") . "&message={$error}');});\n";
         }
         $script .= "</script>";
+        return $script;
+    }
+
+    public static function getFamilyChartScript(): string {
+        $script = "<script type='text/javascript'>\n";
+        $script .= "function toggle(elem) {\n";
+        $script .= "if (document.getElementById(elem).style.display) {\n";
+        $script .= "document.getElementById(elem).style.display = '';\n";
+        $script .= "} else {";
+        $script .= "document.getElementById(elem).style.display = 'block';\n";
+        $script .= "}\n";
+        $script .= "}\n";
+        $script .= "</script>\n";
         return $script;
     }
 }

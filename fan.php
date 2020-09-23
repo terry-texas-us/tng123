@@ -12,13 +12,6 @@ if (!$personID && !isset($needperson)) {
 
 $fan_url = getURL("fan", 1);
 
-/*
-echo "<pre>";
-print_r(get_defined_vars());
-echo "</pre>";
-die();
-*/
-
 // how many generations to show?
 $generations = intval($generations);
 if (!$generations) {
@@ -70,13 +63,6 @@ tng_header("{$text['fanchart']}: {$perName[0]}  Generations: {$generations}", $f
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
-
-/*
-echo "<pre>";
-print_r($row);
-echo "</pre>";
-die();
-*/
 
 $perID = array();
 $perID[0] = $personID;

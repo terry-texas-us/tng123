@@ -325,7 +325,7 @@ if (!$tngprint && !$tngconfig['ssdisabled']) {
     ?>
     </div>
     <?php
-    $flags['more'] = "<script type=\"text/javascript\">\n//<![CDATA[\nvar timeoutID;\nvar myslides;\nvar resumemsg='&gt; {$text['slideresume']}';;\n";
+    $flags['more'] = "<script type=\"text/javascript\">\n//<![CDATA[\nvar timeoutID;\nvar myslides;\nvar resumemsg='&gt; {$text['slideresume']}';\n";
     $flags['more'] .= "var slidestopmsg = '&gt; {$text['slidestop']}';\n";
     $flags['more'] .= "var startmsg='&gt; {$text['slidestart']}';\n";
     $flags['more'] .= "var plussecsmsg = \"{$text['plussecs']}\";\n";

@@ -5,17 +5,18 @@ if ($templateswitching && $templatenum) {
     include "templates/$templatepfx$templatenum/index.php";
     exit;
 }
-$style->addSelector("table", ["border-collapse" => "separate", "border-spacing" => "5px"]);
-$style->addSelector("table td", ["padding" => "0"]);
-
-$flags['scripting'] = $style->getStyle();
-$flags['noicons'] = true;
-$flags['noheader'] = true;
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-tng_header($text['mnuheader'], $flags);
+$headElement = new HeadElementPublic($text['mnuheader'], ['noicons' => true, 'noheader' => true]);
+
+$headElement->addStyleElement(
+    "<style>table {border-collapse: separate; border-spacing: 5px;} table td {padding: 0;}</style>");
+
+echo $headElement->getHtml();
+
+tng_header0($headElement, $flags);
 ?>
 
 <h1><?php echo $text['mnuheader']; ?></h1>

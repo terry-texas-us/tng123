@@ -48,4 +48,3 @@ $link = tng_db_connect($database_host, $database_name, $database_username, $data
 
 require_once "core/templates.php";
 require_once "classes/StyleManager.php";
-$style = new StyleManager();

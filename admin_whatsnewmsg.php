@@ -26,9 +26,7 @@ tng_adminheader($admtext['whatsnew'], $flags);
 ?>
 <script type="text/javascript">
     //<![CDATA[
-    <?php
-    include "niceditmsgs.php";
-    ?>
+    <?php include "niceditmsgs.php"; ?>
     //]]>
 </script>
 </head>

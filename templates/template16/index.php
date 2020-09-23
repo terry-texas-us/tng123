@@ -5,7 +5,7 @@ $tngconfig['showshare'] = false;
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
-$flags['homeclass'] = "homebody";
+$flags['bodyclass'] = "homebody";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";

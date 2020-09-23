@@ -43,7 +43,7 @@ tng_header($text['searchfams'], $flags);
         //<![CDATA[
         function resetValues() {
             <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) {
-            echo "	document.famsearch.tree.selectedIndex = 0;";
+            echo "document.famsearch.tree.selectedIndex = 0;";
         } ?>
             document.famsearch.reset();
 
@@ -92,14 +92,12 @@ tng_header($text['searchfams'], $flags);
 
             URL = "mybool=" + thisform.mybool[thisform.mybool.selectedIndex].value;
             URL = URL + "&nr=" + thisform.nr[thisform.nr.selectedIndex].value;
-            <?php
-            if( (!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1 ) {
-            ?>
+            <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) { ?>
             URL = URL + "&tree=" + thisform.tree[thisform.tree.selectedIndex].value;
             <?php
             }
-            $qualifiers = array("fln", "ffn", "mln", "mfn", "fid", "mp", "my", "dvp", "dvy", "mt");
-            $criteria = array("flastname", "ffirstname", "mlastname", "mfirstname", "familyid", "marrplace", "marryear", "divplace", "divyear", "marrtype");
+            $qualifiers = ["fln", "ffn", "mln", "mfn", "fid", "mp", "my", "dvp", "dvy", "mt"];
+            $criteria = ["flastname", "ffirstname", "mlastname", "mfirstname", "familyid", "marrplace", "marryear", "divplace", "divyear", "marrtype"];
 
             $qcount = 0;
             $found = 0;
@@ -369,8 +367,8 @@ echo $formstr;
         <h3 class="subhead"><?php echo $text['otherevents']; ?></h3>
         <ul id="descendantchart" class="normal">
             <li id="expand" class="othersearch"><a href="#" onclick="return toggleSection(1);" class="nounderline"><img src="img/tng_expand.gif"
-                                                                                                                        alt="" width="15"
-                                                                                                                        height="15" class="exp-cont"><?php echo $text['clickdisplay']; ?>
+                        alt="" width="15"
+                        height="15" class="exp-cont"><?php echo $text['clickdisplay']; ?>
                 </a></li>
             <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img
                         src="img/tng_collapse.gif" alt="" width="15" height="15"
@@ -444,8 +442,8 @@ echo $formstr;
                 <td colspan="3"><br>
                     <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave';return makeURL();">
                     <input type="button"
-                           value="<?php echo $text['resetall']; ?>"
-                           onclick="resetValues();">
+                        value="<?php echo $text['resetall']; ?>"
+                        onclick="resetValues();">
                 </td>
             </tr>
         </table>
