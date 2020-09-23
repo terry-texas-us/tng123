@@ -156,6 +156,9 @@ $description = $row['description'];
 tng_free_result($result);
 
 if (!$noneliving && !$noneprivate) {
+    echo "<!doctype html>\n";
+    echo "<html lang='en'>\n";
+
     tng_header($text['albums'] . ": " . $albumname, $flags);
     echo tng_DrawHeading("", $text['albums'] . ": " . $albumname, $description);
 
@@ -199,6 +202,9 @@ $numrowsplus = $numrows + $offset;
 $logstring = "<a href=\"$showalbum_url" . "albumID=$albumID\">$albumname</a>";
 writelog($logstring);
 preparebookmark($logstring);
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($text['albums'] . ": $albumname", $flags);
 

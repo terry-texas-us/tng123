@@ -1,20 +1,19 @@
 <?php
 include "tng_begin.php";
 
-//  $logstring should contain the URL for your feature stories
-//	writelog creates an entry in the Access Log
-//	preparebookmark creates the bookmark link on the page
-
 $logstring = "<a href=\"histories/feature1.php\">Your Feature 1 Story</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-// The following 'flags' can be passed on the feature story pages.
 $flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
 $flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
 $flags['noicons'] = false; // generate the TNG menu bar
 
 // for multi-language pages, you can use $text variables for your Feature Story Title
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header("Your Feature 1 Story Title", $flags);
 ?>
 <h1>Feature 1 Story</h1>

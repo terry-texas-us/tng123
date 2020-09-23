@@ -15,7 +15,7 @@ if (!empty($needMap)) {
 }
 $flags = [];
 @include "tngrobots.php";
-require_once "core/html/HeadElement.php";
+require_once "core/html/HeadElementPublic.php";
 
 $isConnected = isConnected();
 
@@ -53,11 +53,9 @@ function tng_header($title, $flags) {
     $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
     initMediaTypes();
 
-    header("Content-type:text/html;charset=" . $session_charset);
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
-
-    $icons = HeadElement($title, $flags);
+    $headElement = new HeadElementPublic($title, $flags);
+    echo $headElement->getHtml();
+    $icons = $headElement->getIcons();
 
     if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         include $templatepath . $customheader;

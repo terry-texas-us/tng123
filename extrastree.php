@@ -148,6 +148,10 @@ preparebookmark("<a href=\"$extrastree_url" . "personID=$personID&amp;tree=$tree
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['media'] . ": {$text['familyof']} $pedname", $flags);
 ?>
 

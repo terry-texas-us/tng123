@@ -39,7 +39,14 @@ $logstring = "<a href=\"$whatsnew_url\">" . xmlcharacters($text['whatsnew'] . $p
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['scripting'] = "<style>table {width: 100%; border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;}</style>\n";
+$flags['style'] = "<style>\n";
+$flags['style'] .= "table {width: 100%; border-collapse: separate; border-spacing: 1px;}\n";
+$flags['style'] .= "table th, table td {padding: 3px;}\n";
+$flags['style'] .= "</style>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
 
 //get all users, username + description

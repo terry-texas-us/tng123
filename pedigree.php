@@ -531,6 +531,10 @@ writelog("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;gene
 preparebookmark("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $generations " . $gentext);
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['pedigreefor'] . " $pedname", $flags);
 
 if ($allow_edit || $allow_add) {

@@ -16,6 +16,9 @@ $logstring = "<a href=\"$firstnames_oneletter_url" . "firstchar=$firstchar&amp;t
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
 ?>
 

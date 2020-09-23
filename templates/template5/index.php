@@ -1,11 +1,12 @@
 <?php
 
+$tngconfig['showshare'] = false;
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
-$tngconfig['showshare'] = false;
 
-//Change the text in quotes below to reflect the title of your site
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($sitename ? "" : $tmp['t5_maintitle'], $flags);
 if ($sitever != "mobile") {

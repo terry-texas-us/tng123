@@ -16,6 +16,9 @@ $dataprotect_url = getURL("data_protection_policy", 0);
 
 $_SESSION['tng_email'] = generatePassword(1);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['regnewacct'], $flags);
 ?>
     <script type="text/javascript">

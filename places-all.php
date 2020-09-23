@@ -23,6 +23,9 @@ if ($tree && !$tngconfig['places1tree']) {
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['placelist'] . ": " . $text['allplaces'], $flags);
 ?>
     <a id="top"></a>

@@ -6,6 +6,9 @@ session_start();
 
 $flags['error'] = "";
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['login'], $flags);
 
 $loginfieldclass = "medfield";

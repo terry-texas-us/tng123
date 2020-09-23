@@ -57,6 +57,10 @@ preparebookmark("<a href=\"$register_url" . "personID=$personID&amp;tree=$tree\"
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($row['name'], $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

@@ -162,9 +162,9 @@ if (!$personID) {
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] .= "<link href=\"css/media.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['link'] = "<link href=\"css/media.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 if (!$tngprint) {
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"js/slideshow.js\"></script>\n";
+    $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/slideshow.js\"></script>\n";
     $flags['scripting'] .= "<script type=\"text/javascript\">\n";
     $flags['scripting'] .= "var showmediaxmlfile = '" . getURL("ajx_showmediaxml", 1) . "';\n";
     $flags['scripting'] .= "</script>\n";
@@ -174,6 +174,9 @@ $imageFolder = $imgrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $med
 $fixImagePath = str_replace(' ', '%20', $imgrow['path']);
 $fbOGimage = "<meta property=\"og:image\" content=\"" . $tngdomain . "/" . $imageFolder . "/" . $fixImagePath . "\">\n";
 $fbOGimage = "<meta property=\"og:image\" content=\"" . $tngdomain . "/" . $imageFolder . "/" . $fixImagePath . "\">\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($mediatypeIDstr . ": " . $description, $flags);
 

@@ -53,7 +53,11 @@ preparebookmark("<a href=\"$vertical_url" . "personID=$personID&amp;tree=$tree&a
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
-$flags['scripting'] = "<link href=\"css/verticalchart.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['link'] = "<link href=\"css/verticalchart.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['pedigreefor'] . " " . $row['name'], $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

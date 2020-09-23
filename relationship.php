@@ -781,6 +781,10 @@ function swapPeople() {
 
 $personID = $primarypersonID;
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['relcalc'], $flags);
 
 $photostr = showSmallPhoto($primarypersonID, $namestr, $rights['both'], 0, false, $row['sex']);

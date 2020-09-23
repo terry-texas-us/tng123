@@ -14,6 +14,9 @@ $logstring = "<a href=\"$firstnames_url" . "tree=$tree\">" . xmlcharacters($text
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['firstnamelist'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist']; ?></h2>

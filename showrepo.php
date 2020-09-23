@@ -41,6 +41,10 @@ writelog($logstring);
 preparebookmark($logstring);
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($reporow['reponame'], $flags);
 
 $repomedia = getMedia($reporow, "R");

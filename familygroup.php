@@ -414,6 +414,9 @@ $flags['tabs'] = $tngconfig['tabs'];
 
 $years = $famrow['marrdate'] && $rights['both'] ? $text['marrabbr'] . " " . displayDate($famrow['marrdate']) : "";
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 if ($rights['both']) {
     tng_header($text['familygroupfor'] . " $famname $years ", $flags);
 } else {

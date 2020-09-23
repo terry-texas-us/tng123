@@ -286,6 +286,10 @@ $flags['tabs'] = $tngconfig['tabs'];
 if ($map['key'] && $isConnected) {
     $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($psearchns, $flags);
 
 $photostr = showSmallPhoto($psearch, $psearch, 1, 0);

@@ -397,6 +397,10 @@ if ($pedigree['simile']) {
     $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . "timeline_2.3.1/timeline_js/timeline-api.js\"></script>\n";
 }
 $flags['scripting'] .= "<link href=\"css/timeline.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['timeline'] . ": $namestr", $flags);
 
 $photostr = showSmallPhoto($primaryID, $namestr, $rights['both'], 0, false, $row['sex']);

@@ -16,10 +16,13 @@ $logstring = "<a href=\"$surnames_oneletter_url" . "firstchar=$firstchar&amp;tre
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
 ?>
     <h2 class="header"><span class="headericon"
-                             id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h2>
+            id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?></h2>
     <br class="clearleft">
 <?php
 $hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];

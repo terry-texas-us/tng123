@@ -14,6 +14,9 @@ $logstring = "<a href=\"$surnames100_url" . "topnum=$topnum&amp;tree=$tree\">" .
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['surnamelist'] . ": {$text['top30']}", $flags);
 ?>
     <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist'] . ": {$text['top30']}"; ?></h2>

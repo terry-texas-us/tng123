@@ -233,6 +233,8 @@ $numrows = tng_num_rows($result);
 if ($map['key'] && $isConnected) {
     $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
 }
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($headline, $flags);
 ?>

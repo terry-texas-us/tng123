@@ -23,6 +23,10 @@ if (isset($autorefresh)) {
     $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
 }
 $owner = $sitename ? $sitename : $dbowner;
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header("$loglines {$text['mostrecentactions']}", $flags);
 ?>
 

@@ -23,6 +23,9 @@ $text['top30places'] = preg_replace("/xxx/", "30", $text['top30places']);
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['placelist'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist']; ?></h2>

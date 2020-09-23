@@ -29,6 +29,10 @@ $headline = "{$text['dnatestscompare']}";
 $text['dnatestscompare_atdna'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['dnatestscompare_atdna'], $flags);
 
 $comptabs[0] = array(1, $browse_dna_tests_url, $text['dna_tests'], "dnatests");

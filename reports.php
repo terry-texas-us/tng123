@@ -13,6 +13,9 @@ $logstring = "<a href=\"$reports_url\">" . xmlcharacters($text['reports']) . "</
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['reports'], $flags);
 ?>
 

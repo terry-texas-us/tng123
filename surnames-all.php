@@ -12,6 +12,9 @@ $logstring = "<a href=\"$surnames_all_url" . "tree=$tree\">{$text['surnamelist']
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header("{$text['surnamelist']} - {$text['allsurnames']}", $flags);
 ?>
     <a id="top"></a>

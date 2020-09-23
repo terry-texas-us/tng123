@@ -35,31 +35,31 @@ function drawBox($person, $box) {
     drawEmpty($box['topleft'], $box['middleleft'], $box['bottomleft']);
 
     //main area
-    echo "<td class='align-top text-center'>";
+    echo "<td valign=\"top\" align=\"center\">";
 
     //top border
     if ($box['lineinto']) {
         if ($box['topleft']) {
-            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         } else {
-            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         }
         if ($box['lineinto'] == 1 || $box['topleft'] || $box['topright']) {
-            echo "<img src=\"img/black.gif\" width='1' height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/black.gif\" width='1' height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         }
         //line break after
         if ($box['topright']) {
-            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" ><br>";
+            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
         } else {
-            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" ><br>";
+            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
         }
         if ($box['lineinto'] == 1) {
-            echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\">";
         } else {
-            echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\">";
         }
     } else {
-        echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace=\"0\" vspace=\"0\" border=\"0\">";
     }
 
     //name section
@@ -67,7 +67,7 @@ function drawBox($person, $box) {
     echo "<div class=\"popup trackerbox\" style=\"width:{$boxwidth}px; height:{$boxheight}px; background-color:$bgcolor; padding: {$pedigree['cellpad']}px; overflow:hidden;\">\n";
 
     //inner table
-    echo "<table cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0;\">\n<tr><td class='align-top'>";
+    echo "<table cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0;\">\n<tr><td valign=\"top\">";
     $name = getName($person);
     $nameinfo = "<a href=\"$getperson_url" . "personID={$person['personID']}&amp;tree=$tree\"><span style=\"font-size:11pt;\">$name</span></a>";
     if ($person['personID'] && $pedigree['inclphotos']) {
@@ -86,7 +86,7 @@ function drawBox($person, $box) {
             $nameinfo .= "<br>" . getYears($person);
         }
     }
-    echo "</td>\n<td class='normal text-center' width=\"100%\">$nameinfo";
+    echo "</td>\n<td class='normal' width=\"100%\" align='center'>$nameinfo";
     //end inner table
     echo "</td>\n</tr></table>\n";
 
@@ -95,24 +95,24 @@ function drawBox($person, $box) {
 
     //bottom border
     if ($more && $box['lineoutof']) {
-        echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" ><br>";
+        echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
     } else {
-        echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" ><br>";
+        echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
     }
 
     if ($more) {
         if ($box['bottomleft']) {
-            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         } else {
-            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         }
         if ($box['bottomleft'] || $box['bottomright'] || $box['lineoutof']) {
-            echo "<img src=\"img/black.gif\" width='1' height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/black.gif\" width='1' height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         }
         if ($box['bottomright']) {
-            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/black.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         } else {
-            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" >";
+            echo "<img src=\"img/spacer.gif\" width=\"{$pedigree['halfwidth']}\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
         }
     }
 
@@ -129,25 +129,25 @@ function drawBox($person, $box) {
 function drawEmpty($top, $middle, $bottom) {
     global $pedigree, $more;
 
-    echo "<td class='text-center'>";
+    echo "<td align='center'>";
     if ($top) {
-        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" ><br>";
-        echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
+        echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\">";
     } else {
-        echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace=\"0\" vspace=\"0\" border=\"0\">";
     }
 
     echo "<table width=\"5\" height=\"{$pedigree['puboxheight']}\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td>\n";
     if ($middle) {
-        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
     }
     echo "</td></tr></table>";
 
     if ($bottom && $more) {
-        echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" ><br>";
-        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
+        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace=\"0\" vspace=\"0\" border=\"0\">";
     } else {
-        echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace=\"0\" vspace=\"0\" >";
+        echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace=\"0\" vspace=\"0\" border=\"0\">";
     }
     echo "</td>";
 }
@@ -313,6 +313,10 @@ if ($nextperson) {
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($descname, $flags);
 
 $photostr = showSmallPhoto($personID, $descname, $rights['both'], 0, false, $row['sex']);
@@ -346,7 +350,7 @@ echo "</form>\n";
 ?>
     <br style="clear: left;">
 
-    <div style="overflow:auto;">
+    <div border="0" width="100%" style="overflow:auto;">
         <table cellspacing="0" cellpadding="0">
             <tr>
                 <td align="center">
@@ -367,7 +371,7 @@ echo "</form>\n";
                         doNextPerson($row, $items, $nextperson, $box);
                         echo "</tr>\n</table>\n";
                         if ($more) {
-                            echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" ><br>";
+                            echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
                         }
                     }
                     while ($more) {
@@ -413,7 +417,7 @@ echo "</form>\n";
                             echo "</tr>\n</table>";
                         }
                         if ($more) {
-                            echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" ><br>";
+                            echo "<img src=\"img/black.gif\" width='1' height='20' hspace=\"0\" vspace=\"0\" border=\"0\"><br>";
                         }
                         tng_free_result($result2);
                     }

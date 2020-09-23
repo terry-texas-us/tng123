@@ -69,6 +69,9 @@ $logstring = "<a href=\"$browsealbums_url" . "tree=$tree&amp;offset=$offset&amp;
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['albums'], $flags);
 ?>
 

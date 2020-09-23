@@ -49,7 +49,14 @@ preparebookmark($logstring);
 
 $ldsOK = determineLDSRights();
 
-$flags['scripting'] = "<style>table {width: 100%; border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;}</style>\n";
+$flags['style'] = "<style>\n";
+$flags['style'] .= "table {width: 100%; border-collapse: separate; border-spacing: 1px;}\n";
+$flags['style'] .= "table th, table td {padding: 3px;}\n";
+$flags['style'] .= "</style>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['anniversaries'], $flags);
 
 if ($sitever != "mobile") {
@@ -344,15 +351,15 @@ if ($tngneedresults) {
                 break;
             default:
                 //look up display
-                $query = "SELECT display FROM $eventtypes_table WHERE eventtypeID = \"$tngevent\" ORDER BY display";
+                $query = "SELECT display FROM $eventtypes_table WHERE eventtypeID = '$tngevent' ORDER BY display";
                 $evresult = tng_query($query);
                 $event = tng_fetch_assoc($evresult);
                 $datetxt = getEventDisplay($event['display']);
                 tng_free_result($evresult);
 
-                $eventsjoin = ", $events_table";
-                $eventsfields = ",info";
-                $allwhere .= " AND $people_table.personID = $events_table.persfamID AND $people_table.gedcom = $events_table.gedcom AND eventtypeID = \"$tngevent\"";
+                $eventsjoin = ", $events_table events";
+                $eventsfields = ", info";
+                $allwhere .= " AND $people_table.personID = events.persfamID AND $people_table.gedcom = events.gedcom AND eventtypeID = '$tngevent'";
                 $tngevent = "event";
                 break;
         }
@@ -392,14 +399,14 @@ if ($tngneedresults) {
                 $allwhere = " AND (1=1 $allwhere)";
             }
             if ($needfamilies) {
-                $allwhere .= " AND families.gedcom=\"$tree\"";
+                $allwhere .= " AND families.gedcom='$tree'";
             } else {
-                $allwhere .= " AND $people_table.gedcom=\"$tree\"";
+                $allwhere .= " AND $people_table.gedcom='$tree'";
             }
         }
 
         if ($needfamilies) {
-            $more = getLivingPrivateRestrictions($families_table, false, true);
+            $more = getLivingPrivateRestrictions("families", false, true);
         } else {
             $more = getLivingPrivateRestrictions($people_table, false, true);
         }

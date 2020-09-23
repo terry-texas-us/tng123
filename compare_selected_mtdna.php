@@ -27,6 +27,10 @@ $getperson_url = getURL("getperson", 1);
 $familygroup_url = getURL("familygroup", 1);
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['dnatestscompare_mtdna'], $flags);
 
 

@@ -1,24 +1,18 @@
 <?php
+
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
 
-$flags['scripting'] = "<style>
-body {
-  background-image: url('{$templatepath}img/Bottom_texture.jpg');
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: top left;
-}\n";
+$flags['style'] = "<style>\n";
+$flags['style'] .= "body {background-image: url('{$templatepath}img/Bottom_texture.jpg'); background-repeat: repeat; background-attachment: fixed; background-position: top left;}\n";
 if ($sitever != "mobile") {
-    $flags['scripting'] .= "div.art-headerobject {
-  background-image: url('$templatepath{$tmp['t9_headimg']}');
-  background-repeat: no-repeat;
-  width: 432px;
-  height: 150px;
-}\n";
+    $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t9_headimg']}'); background-repeat: no-repeat; width: 432px; height: 150px;}\n";
 }
-$flags['scripting'] .= "</style>\n";
+$flags['style'] .= "</style>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {

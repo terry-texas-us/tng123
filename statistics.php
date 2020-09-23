@@ -16,6 +16,9 @@ $logstring = "<a href=\"$statistics_url" . "tree=$tree\">" . xmlcharacters($text
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['databasestatistics'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="stats-hdr-icon"></span><?php echo $text['databasestatistics']; ?></h2>

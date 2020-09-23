@@ -2,6 +2,10 @@
 include "surname_cloud.class.php";
 $flags['noicons'] = true;
 $flags['noheader'] = false;
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 $tngconfig['showshare'] = 0;
 $tngconfig['showprint'] = 1;

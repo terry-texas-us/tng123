@@ -85,6 +85,9 @@ $logstring = "<a href=\"$browsesources_url" . "tree=$tree&amp;offset=$offset&amp
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['sources'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="sources-hdr-icon"></span><?php echo $text['sources']; ?></h2>

@@ -29,9 +29,12 @@ writelog("<a href=\"$showtree_url" . "tree=$tree\">{$text['tree']}: {$row['treen
 preparebookmark("<a href=\"$showtree_url" . "tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['tree'] . ": " . $row['treename'], $flags);
 ?>
-
     <h2 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h2>
     <br style="clear: both;">
 

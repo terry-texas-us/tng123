@@ -43,11 +43,16 @@ include "showmedialib.php";
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $imgrow = $info['imgrow'];
 
-$flags['scripting'] = "<link href=\"css/img_viewer.css\" rel=\"stylesheet\" type=\"text/css\">\n<script type=\"text/javascript\" src=\"js/img_viewer.js\"></script>";
+$flags['link'] = "<link href=\"css/img_viewer.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] = "<script type=\"text/javascript\" src=\"js/img_viewer.js\"></script>\n";
 $flags['noheader'] = 1;
 $flags['noicons'] = 1;
 $flags['nobody'] = 1;
 $flags['nomobile'] = 1;
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($imgrow['description'], $flags);
 echo '<body style="background-image: none;">';
 

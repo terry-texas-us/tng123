@@ -77,6 +77,10 @@ tng_free_result($treeresult);
 $logstring = "<a href=\"$browsebranches_url" . "tree=$tree&amp;offset=$offset&amp;branchsearch=$branchsearch\">" . xmlcharacters($text['branches']) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['branches'], $flags);
 ?>
 

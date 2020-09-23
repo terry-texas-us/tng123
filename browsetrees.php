@@ -66,6 +66,9 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $numrowsplus = $numrows + $offset;
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['trees'], $flags);
 
 if ($totrows > 1) {

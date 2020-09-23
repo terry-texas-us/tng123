@@ -160,6 +160,9 @@ $logstring = "<a href=\"$browse_dna_tests_url" . "tree=$tree&amp;offset=$offset&
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($admtext['dna_tests'], $flags);
 ?>
 

@@ -119,6 +119,9 @@ $logstring = "<a href=\"$browsemedia_url" . "tree=$tree&amp;offset=$offset&amp;m
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($titlestr, $flags);
 if ($orgmediatypeID) {
     if ($mediatypes_icons[$mediatypeID]) {

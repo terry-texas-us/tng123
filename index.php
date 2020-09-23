@@ -12,6 +12,9 @@ $flags['scripting'] = $style->getStyle();
 $flags['noicons'] = true;
 $flags['noheader'] = true;
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['mnuheader'], $flags);
 ?>
 

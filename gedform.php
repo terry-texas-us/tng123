@@ -35,6 +35,9 @@ function validateForm() {
 }
 </script>\n";
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['creategedfor'] . ": {$text['gedstartfrom']} $name", $flags);
 ?>
 

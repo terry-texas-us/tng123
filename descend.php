@@ -671,25 +671,17 @@ writelog("<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;displ
 preparebookmark("<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=$display\">{$text['descendfor']} " . $row['name'] . " ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<style type=\"text/css\">
-.desc {
-	margin: 0 0 10px 0;
-}
+$flags['style'] = "<style>\n";
+$flags['style'] .= ".desc {margin: 0 0 10px 0;}\n";
+$flags['style'] .= ".spouse {width: 100%;}\n";
+$flags['style'] .= ".shadow {background-color: {$pedigree['shadowcolor']}; position: absolute;}\n";
+$flags['style'] .= ".boxborder {background-color: {$pedigree['bordercolor']};}\n";
+$flags['style'] .= "</style>\n";
+$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
 
-.spouse {
-	width: 100%;
-}
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
-.shadow {
-	background-color: {$pedigree['shadowcolor']};
-	position: absolute;
-}
-
-.boxborder {
-	background-color: {$pedigree['bordercolor']};
-}
-</style>\n";
-$flags['scripting'] .= "<script type=\"text/javascript\">var tnglitbox;</script>\n";
 tng_header($text['descendfor'] . " " . $row['name'], $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

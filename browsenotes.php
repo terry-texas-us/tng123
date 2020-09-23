@@ -77,7 +77,15 @@ $logstring = "<a href=\"$browsenotes_url" . "tree=$tree&amp;offset=$offset&amp;n
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['scripting'] = "<style>table {border-collapse: separate; border-spacing: 1px;} table th, table td {padding: 3px;} tbody td {vertical-align: top;}</style>\n";
+$flags['style'] = "<style>\n";
+$flags['style'] .= "table {border-collapse: separate; border-spacing: 1px;}\n";
+$flags['style'] .= "table th, table td {padding: 3px;}\n";
+$flags['style'] .= "tbody td {vertical-align: top;}\n";
+$flags['style'] .= "</style>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['notes'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h2>

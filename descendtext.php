@@ -186,6 +186,10 @@ preparebookmark("<a href=\"$descendtext_url" . "personID=$personID&amp;tree=$tre
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['descendfor'] . " $namestr", $flags);
 ?>
     <script type="text/javascript">

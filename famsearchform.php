@@ -34,6 +34,9 @@ $nr = $_SESSION['tng_nr'];
 $dontdo = array("MARR", "DIV");
 $famsearch_url = getURL("famsearch", 1);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['searchfams'], $flags);
 ?>
     <script type="text/javascript">

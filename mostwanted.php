@@ -86,6 +86,10 @@ function showDivs($type) {
 }
 
 $flags = [];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['mostwanted'], $flags);
 
 $flags['imgprev'] = true;

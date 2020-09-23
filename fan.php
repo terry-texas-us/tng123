@@ -62,6 +62,10 @@ writelog("<a href=\"$fan_url" . "personID=$personID&amp;tree=$tree&amp;parentset
 preparebookmark("<a href=\"$fan_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\">{$text['fanchart']}: $namestr ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header("{$text['fanchart']}: {$perName[0]}  Generations: {$generations}", $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

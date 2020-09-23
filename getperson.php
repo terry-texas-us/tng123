@@ -102,8 +102,7 @@ preparebookmark("<a href=\"$getperson_url" . "personID=$personID&amp;tree=$tree\
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
 if (empty($tngconfig['hidedna'])) {
-    $flags['scripting'] .= "
-<script type = 'text/javascript' language = 'javascript'>
+    $flags['scripting'] .= "<script type = 'text/javascript' language = 'javascript'>
 function togglednaicon() {
    if ($('.toggleicon2').attr('src').indexOf('desc') > 0) {
       $('.toggleicon2').attr('src','img/tng_sort_asc.gif')
@@ -152,6 +151,9 @@ if ($rights['both']) {
         $headstr .= " " . $row['deathplace'];
     }
 }
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($headstr, $flags);
 
 getCitations($personID);

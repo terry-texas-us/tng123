@@ -1,5 +1,9 @@
 <?php
+
 $flags['noicons'] = 0;
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 if ($sitever == "standard") {

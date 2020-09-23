@@ -7,6 +7,8 @@ if ($requirelogin && !$currentuser) {
     header("Location:" . getURL("searchform", 0));
     exit;
 }
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($text['searchnames'], $flags);
 ?>

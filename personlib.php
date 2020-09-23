@@ -759,11 +759,11 @@ function showEvent($data) {
  * @param string $cite
  * @param string $places1Tree
  * @param string $tree
- * @param string $placesearch_url
+ * @param $placesearch_url
  * @return string
  */
-function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $tree, string $placesearch_url): string {
-    $oneColumn = true;
+function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $tree, $placesearch_url): string {
+    $oneColumn = true; // todo doing oneColumn only. placesearch_url is null sometimes.
     $output = "";
 
     if ($oneColumn) {

@@ -3,6 +3,9 @@ $flags['noicons'] = true;
 $flags['noheader'] = true;
 $flags['nobody'] = true;
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {
     echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";

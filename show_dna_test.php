@@ -38,6 +38,10 @@ writelog($logstring);
 preparebookmark($logstring);
 
 $flags['tabs'] = $tngconfig['tabs'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($headline, $flags);
 ?>
     <h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $headline; ?></h2>

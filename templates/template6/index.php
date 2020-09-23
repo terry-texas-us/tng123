@@ -3,6 +3,9 @@ if (!isset($title) || !$title) {
     $title = getTemplateMessage('t6_maintitle');
 }
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 //if it's  not the mobile site, then this part is handled in the custom header (topmenu.php)
 if ($sitever == "mobile") {

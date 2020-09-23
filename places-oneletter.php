@@ -72,6 +72,10 @@ writelog($logstring);
 preparebookmark($logstring);
 
 $displaychar = $decodedfirstchar ? $decodedfirstchar : $text['all'];
+
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['placelist'] . ": $displaychar", $flags);
 ?>
 <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": $displaychar"; ?></h2>

@@ -14,6 +14,9 @@ $logstring = "<a href=\"$firstnames100_url" . "topnum=$topnum&amp;tree=$tree\">"
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['firstnamelist'] . ": {$text['top30first']}", $flags);
 ?>
 

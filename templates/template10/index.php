@@ -4,15 +4,12 @@ $flags['noheader'] = true;
 $flags['nobody'] = true;
 
 if ($sitever != "mobile") {
-    $flags['scripting'] = "<style>
-div.art-headerobject {
-  background-image: url('$templatepath{$tmp['t10_headimg']}');
-  background-repeat: no-repeat;
-  width: 420px;
-  height: 150px;
+    $flags['style'] = "<style>\n";
+    $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t10_headimg']}'); background-repeat: no-repeat;width: 420px; height: 150px;}\n";
+    $flags['style'] .= "</style>\n";
 }
-</style>\n";
-}
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
 
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {

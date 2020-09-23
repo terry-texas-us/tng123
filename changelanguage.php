@@ -10,6 +10,9 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['changelanguage'], $flags);
 ?>
 

@@ -3,18 +3,19 @@
 //"Folder" is the location where files of this type are generally held.
 
 global $photopath, $documentpath, $historypath, $headstonepath, $mediapath;
-$mediatypes = array();
-$mediatypes_assoc = array();
-$mediatypes_icons = array();
-$mediatypes_thumbs = array();
-$mediatypes_display = array();
-$mediatypes_like = array();
-$mediatypeObjs = array();
+$mediatypes = [];
+$mediatypes_assoc = [];
+$mediatypes_icons = [];
+$mediatypes_thumbs = [];
+$mediatypes_display = [];
+$mediatypes_like = [];
+$mediatypeObjs = [];
 $mctr = 0;
 $maxmediafilesize = 5000000; //5 Mb is too large to create a thumbnail
 
 function setMediaType($newtype) {
-    global $mediatypes, $mediatypes_assoc, $mediatypes_locpaths, $mediatypes_icons, $mediatypes_thumbs, $mediatypes_display, $mediatypes_like, $mediatypeObjs, $mctr, $text;
+    global $mediatypes, $mediatypes_assoc, $mediatypes_icons, $mediatypes_thumbs, $mediatypes_display, $mediatypes_like, $mediatypeObjs, $mctr;
+    global $mediatypes_locpaths, $text;
 
     $ID = $newtype['mediatypeID'];
 
@@ -35,7 +36,7 @@ function setMediaType($newtype) {
     $mctr++;
 }
 
-//To change display order of these groups, simply move the corresponding lines below up or down.
+// To change display order of these groups, simply move the corresponding lines below up or down.
 
 function initMediaTypes() {
     global $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_table, $mediatypes;
@@ -46,7 +47,7 @@ function initMediaTypes() {
 
     if (!isset($mediatypes_table)) {
         return;
-    }  // added by Ken Roy to handle TNG v6 to v10 upgrade
+    }
     $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
     $result = @tng_query($query);
 
@@ -54,7 +55,7 @@ function initMediaTypes() {
         while ($row = tng_fetch_assoc($result)) {
             switch ($row['mediatypeID']) {
                 case "photos":
-                    setMediaType(array(
+                    setMediaType([
                         "mediatypeID" => "photos",
                         "path" => $photopath,
                         "icon" => "",
@@ -63,10 +64,10 @@ function initMediaTypes() {
                         "exportas" => "PHOTO",
                         "type" => 0,
                         "disabled" => $row['disabled']
-                    ));
+                    ]);
                     break;
                 case "documents":
-                    setMediaType(array(
+                    setMediaType([
                         "mediatypeID" => "documents",
                         "path" => $documentpath,
                         "icon" => "",
@@ -75,10 +76,10 @@ function initMediaTypes() {
                         "exportas" => "DOCUMENT",
                         "type" => 0,
                         "disabled" => $row['disabled']
-                    ));
+                    ]);
                     break;
                 case "headstones":
-                    setMediaType(array(
+                    setMediaType([
                         "mediatypeID" => "headstones",
                         "path" => $headstonepath,
                         "icon" => "",
@@ -87,10 +88,10 @@ function initMediaTypes() {
                         "exportas" => "HEADSTONE",
                         "type" => 0,
                         "disabled" => $row['disabled']
-                    ));
+                    ]);
                     break;
                 case "histories":
-                    setMediaType(array(
+                    setMediaType([
                         "mediatypeID" => "histories",
                         "path" => $historypath,
                         "icon" => "",
@@ -99,10 +100,10 @@ function initMediaTypes() {
                         "exportas" => "HISTORY",
                         "type" => 0,
                         "disabled" => $row['disabled']
-                    ));
+                    ]);
                     break;
                 case "recordings":
-                    setMediaType(array(
+                    setMediaType([
                         "mediatypeID" => "recordings",
                         "path" => $mediapath,
                         "icon" => "",
@@ -111,10 +112,10 @@ function initMediaTypes() {
                         "exportas" => "RECORDING",
                         "type" => 0,
                         "disabled" => $row['disabled']
-                    ));
+                    ]);
                     break;
                 case "videos":
-                    setMediaType(array(
+                    setMediaType([
                         "mediatypeID" => "videos",
                         "path" => $mediapath,
                         "icon" => "",
@@ -123,7 +124,7 @@ function initMediaTypes() {
                         "exportas" => "VIDEO",
                         "type" => 0,
                         "disabled" => $row['disabled']
-                    ));
+                    ]);
                     break;
                 default:
                     $row['type'] = 1;

@@ -464,7 +464,7 @@ function getRights($person) {
 }
 
 function doheader($tree, $family) {
-    #calls tng_header, tng_Drawheading and tng_menu
+    #calls tng_Drawheading and tng_menu
     global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames, $family_url;
     $descend_url = getURL("descend", 1);
     $pdfform_url = getURL("rpt_pdfform", 1);
@@ -488,6 +488,9 @@ function doheader($tree, $family) {
     preparebookmark("<a href='{$family_url}familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $familyname ($familyID)</a>");
     $flags['tabs'] = $tngconfig['tabs'];
     $flags['scripting'] = famStylesheet();
+
+    echo "<!doctype html>\n";
+    echo "<html lang='en'>\n";
 
     tng_header($text['family'] . " " . $familyname . " ($familyID)", $flags);
     $photostr = showSmallPhoto($familyID, $familyname, $rights['both'], 0);

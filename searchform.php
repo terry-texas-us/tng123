@@ -51,6 +51,9 @@ $nr = $_SESSION['tng_nr'];
 $dontdo = array("ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX", "NPFX");
 $search_url = getURL("search", 1);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 tng_header($text['searchnames'], $flags);
 ?>
     <script type="text/javascript">
