@@ -9,7 +9,8 @@ if ($templateswitching && $templatenum) {
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$headElement = new HeadElementPublic($text['mnuheader'], ['noicons' => true, 'noheader' => true]);
+$flags = ['noicons' => true, 'noheader' => true];
+$headElement = new HeadElementPublic($text['mnuheader'], $flags);
 
 $headElement->addStyleElement(
     "<style>table {border-collapse: separate; border-spacing: 5px;} table td {padding: 0;}</style>");
@@ -17,6 +18,7 @@ $headElement->addStyleElement(
 echo $headElement->getHtml();
 
 tng_header0($headElement, $flags);
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 ?>
 
 <h1><?php echo $text['mnuheader']; ?></h1>

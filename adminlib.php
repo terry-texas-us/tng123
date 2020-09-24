@@ -22,55 +22,55 @@ function tng_adminheader($title, $flags) {
     }
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
-    echo "<html lang=\"en\">\n";
+    echo "<html lang='en'>\n";
     echo "<head>\n";
-    echo "<meta name=\"author\" content=\"Darrin Lythgoe\">\n";
-    echo "<meta charset=utf-8\">\n";
-    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
-    echo "<meta name=\"robots\" content=\"noindex, nofollow\">\n";
+    echo "<meta name='author' content='Darrin Lythgoe'>\n";
+    echo "<meta charset='utf-8'>\n";
+    echo "<meta name='viewport' content='width=device-width, initial-scale=1'>\n";
+    echo "<meta name='robots' content='noindex, nofollow'>\n";
     include "adminmeta.php";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
-    echo "<link href=\"css/bootstrap-reboot.min.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-    echo "<link href=\"css/genstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
+    echo "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet' type='text/css'>\n";
     if (isset($flags['modmgr'])) {
-        echo "<link href=\"css/modmanager.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href='css/modmanager.css' rel='stylesheet' type='text/css'>\n";
     }
     if ($sitever == "mobile") {
-        echo "<link href=\"css/tngmobile.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href='css/tngmobile.css?v=$tng_version' rel='stylesheet' type='text/css'>\n";
     }
     if (isset($flags['tabs'])) {
-        echo "<link href=\"{$templatepath}css/{$flags['tabs']}\" rel=\"stylesheet\" type=\"text/css\">\n";
+        echo "<link href='{$templatepath}css/{$flags['tabs']}' rel='stylesheet' type='text/css'>\n";
     }
-    echo "<link href=\"{$templatepath}css/templatestyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
-    echo "<link href=\"{$templatepath}css/mytngstyle.css?v=$tng_version\" rel=\"stylesheet\" type=\"text/css\">\n";
+    echo "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet' type='text/css'>\n";
+    echo "<link href='{$templatepath}css/mytngstyle.css?v=$tng_version' rel='stylesheet' type='text/css'>\n";
     if ($sitever != "mobile" && $sitever != "tablet") {
-        echo "<link rel=\"shortcut icon\" href=\"$tngdomain/{$tngconfig['favicon']}\">\n";
+        echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     }
-    echo "<script type=\"text/javascript\">\n";
+    echo "<script type='text/javascript'>\n";
     echo "function toggleAll(flag) {\n";
     echo "for (var i = 0; i < document.form2.elements.length; i++ ) {\n";
-    echo "if (document.form2.elements[i].type == \"checkbox\") {\n";
+    echo "if (document.form2.elements[i].type == 'checkbox') {\n";
     echo "if (flag)\n";
     echo "document.form2.elements[i].checked = true;\n";
     echo "else\n";
     echo "document.form2.elements[i].checked = false;\n";
     echo "}\n}\n}\n";
-    echo "var closeimg = \"img/tng_close.gif\";\n";
-    echo "var loadingmsg = \"{$text['loading']}\";\n";
+    echo "var closeimg = 'img/tng_close.gif';\n";
+    echo "var loadingmsg = '{$text['loading']}';\n";
     echo "</script>\n";
     if ($isConnected) {
-        echo "<script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>\n";
-        echo "<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.min.js\" integrity=\"sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=\" crossorigin=\"anonymous\"></script>\n";
+        echo "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>\n";
+        echo "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>\n";
     } else {
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery || document.write(\"<script src='js/jquery-3.3.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
-        echo "<script type=\"text/javascript\">// <![CDATA[\nwindow.jQuery.ui || document.write(\"<script src='js/jquery-ui-1.12.1.min.js?v=910'>\\x3C/script>\")\n//]]></script>\n";
+        echo "<script type='text/javascript'>// <![CDATA[\nwindow.jQuery || document.write('<script src=\'js/jquery-3.3.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>\n";
+        echo "<script type='text/javascript'>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>\n";
     }
-    echo "<script type=\"text/javascript\" src=\"js/jquery.ui.touch-punch.min.js\"></script>\n";
-    echo "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
+    echo "<script type='text/javascript' src='js/jquery.ui.touch-punch.min.js'></script>\n";
+    echo "<script type='text/javascript' src='js/net.js'></script>\n";
 
-    echo "<script type=\"text/javascript\" src=\"js/litbox.js\"></script>\n";
+    echo "<script type='text/javascript' src='js/litbox.js'></script>\n";
     initMediaTypes();
 }
 

@@ -24,9 +24,6 @@ class RecentPeopleCard
         $people = $tables['people'];
         $trees = $tables['trees'];
 
-        $pedigree_url = getURL("pedigree", 1);
-        $getperson_url = getURL("getperson", 1);
-
         $changedatef = "DATE_FORMAT(changedate,'%e %b %Y') as changedatef";
         $birthyear = "LPAD(SUBSTRING_INDEX(birthdate, ' ', -1), 4, '0') as birthyear";
         $altbirthyear = "LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1), 4, '0') as altbirthyear";
@@ -50,16 +47,16 @@ class RecentPeopleCard
             $content .= "<div class='titlebox tablediv'>";
             $content .= "<h3 class='subhead'>{$title}</h3>";
             $imageSize = @GetImageSize("{$this->path}img/Chart.gif");
-            $chartlink = "<img src=\"{$this->path}img/Chart.gif\" alt=\"\" $imageSize[3]>";
+            $chartlink = "<img src='{$this->path}img/Chart.gif' alt='' $imageSize[3]>";
             while ($row = tng_fetch_assoc($result)) {
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];
                 $row['allow_private'] = $rights['private'];
                 $namestr = getNameRev($row);
                 [$birthdate, $birthplace] = getBirthInformation($rights['both'], $row);
-                $content .= "<div class=\"inner-block\">\n";
-                $content .= "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>";
-                $content .= "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a>";
+                $content .= "<div class='inner-block'>\n";
+                $content .= "<a href='getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}' id='p{$row['personID']}_t{$row['gedcom']}'>$namestr</a>";
+                $content .= "<a href='pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}'>$chartlink</a>";
                 if ($birthdate || $birthplace) {
                     $content .= "<br>";
                     if ($birthdate) {

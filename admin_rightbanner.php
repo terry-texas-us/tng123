@@ -19,10 +19,8 @@ $helplang = findhelp("index_help.php");
 if ($sitever == "mobile") {
     $tng_title = $tng_abbrev;
 }
-$style->addSelector("table", ["width" => "100%", "border-collapse" => "separate", "border-spacing" => "0px"]);
-$style->addSelector("table td", ["padding" => "1px"]);
-tng_adminheader($admtext['administration'], "");
-echo $style->getStyle();
+tng_adminheader($admtext['administration'],
+    ["style" => "<style>table {width: 100%; border-collapse: separate; border-spacing: 0;} table td {padding: 1px;}</style>"]);
 echo "</head>\n";
 ?>
     <body class="sideback">

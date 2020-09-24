@@ -1,6 +1,8 @@
 <?php
 include "begin.php";
 include "adminlib.php";
+require_once "core/html/cleanUserProfile.php";
+
 
 $textpart = "users";
 include "$mylanguage/admintext.php";
@@ -14,22 +16,13 @@ if ($assignedtree || !$allow_edit) {
     exit;
 }
 
-$query = "SELECT *, DATE_FORMAT(lastlogin,\"%d %b %Y %H:%i:%s\") AS lastlogin, dt_registered, DATE_FORMAT(dt_registered,\"%d %b %Y %H:%i:%s\") AS dt_registered_fmt, DATE_FORMAT(dt_activated,\"%d %b %Y %H:%i:%s\") AS dt_activated, dt_consented, DATE_FORMAT(dt_consented,\"%d %b %Y %H:%i:%s\") AS dt_consented_fmt ";
+$query = "SELECT *, DATE_FORMAT(lastlogin, '%d %b %Y %H:%i:%s') AS lastlogin, dt_registered, DATE_FORMAT(dt_registered, '%d %b %Y %H:%i:%s') AS dt_registered_fmt, DATE_FORMAT(dt_activated, '%d %b %Y %H:%i:%s') AS dt_activated, dt_consented, DATE_FORMAT(dt_consented, '%d %b %Y %H:%i:%s') AS dt_consented_fmt ";
 $query .= "FROM $users_table ";
-$query .= "WHERE userID = \"$userID\"";
+$query .= "WHERE userID = '$userID'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
-$row['description'] = preg_replace("/\"/", "&#34;", $row['description']);
-$row['realname'] = preg_replace("/\"/", "&#34;", $row['realname']);
-$row['phone'] = preg_replace("/\"/", "&#34;", $row['phone']);
-$row['email'] = preg_replace("/\"/", "&#34;", $row['email']);
-$row['website'] = preg_replace("/\"/", "&#34;", $row['website']);
-$row['address'] = preg_replace("/\"/", "&#34;", $row['address']);
-$row['city'] = preg_replace("/\"/", "&#34;", $row['city']);
-$row['state'] = preg_replace("/\"/", "&#34;", $row['state']);
-$row['country'] = preg_replace("/\"/", "&#34;", $row['country']);
-$row['notes'] = preg_replace("/\"/", "&#34;", $row['notes']);
+$row = cleanUserProfile($row);
 
 $deftext = $admtext;
 if ($row['languageID']) {

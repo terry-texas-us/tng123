@@ -108,7 +108,7 @@ var loginOverlay;
 
 function openLogin(url) {
     loginOverlay = new LITBox(url, {
-        width: 370, height: 500, doneLoading: function () {
+        width: 400, height: 640, doneLoading: function () {
             setFocus('tngusername');
         }
     });

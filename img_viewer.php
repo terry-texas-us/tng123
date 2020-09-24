@@ -47,7 +47,7 @@ $flags['link'] = "<link href=\"css/img_viewer.css\" rel=\"stylesheet\" type=\"te
 $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/img_viewer.js\"></script>\n";
 $flags['noheader'] = 1;
 $flags['noicons'] = 1;
-$flags['nobody'] = 1;
+$flags['nobody'] = true;
 $flags['nomobile'] = 1;
 
 echo "<!doctype html>\n";

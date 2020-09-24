@@ -2,6 +2,8 @@
 
 include "begin.php";
 include "adminlib.php";
+require_once "core/html/cleanUserProfile.php";
+
 $textpart = "login";
 include "$mylanguage/text.php";
 
@@ -16,74 +18,67 @@ if (!$currentuser) {
 
 header("Content-type:text/html; charset=" . $session_charset);
 
-$query = "SELECT username, password, realname, phone, email, website, address, city, state, country, languageID, zip FROM $users_table WHERE username = \"$currentuser\"";
+$query = "SELECT description, username, password, realname, phone, email, address, city, state, zip, country, website, languageID, notes FROM $users_table WHERE username = '$currentuser'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
-$row['realname'] = preg_replace("/\"/", "&#34;", $row['realname']);
-$row['phone'] = preg_replace("/\"/", "&#34;", $row['phone']);
-$row['email'] = preg_replace("/\"/", "&#34;", $row['email']);
-$row['website'] = preg_replace("/\"/", "&#34;", $row['website']);
-$row['address'] = preg_replace("/\"/", "&#34;", $row['address']);
-$row['city'] = preg_replace("/\"/", "&#34;", $row['city']);
-$row['state'] = preg_replace("/\"/", "&#34;", $row['state']);
-$row['country'] = preg_replace("/\"/", "&#34;", $row['country']);
+$row = cleanUserProfile($row);
 
 $allow_user_change = true;
 ?>
 
 <div class="databack ajaxwindow" id="editprof">
     <form action="ajx_updateuser.php" method="post" name="editprofile"
-          onsubmit='if(!this.username.value.length) {
-              alert("<?php echo htmlentities($text['enterusername'], ENT_QUOTES); ?>");
-              this.username.focus();
-              return false;
-              }
-              else if(!this.password.value.length) {
-              alert("<?php echo htmlentities($text['enterpassword'], ENT_QUOTES); ?>");
-              this.password.focus();
-              return false;
-              }
-              else if(!this.password2.value.length) {
-              alert("<?php echo htmlentities($text['enterpassword2'], ENT_QUOTES); ?>");
-              this.password2.focus();
-              return false;
-              }
-              else if(this.password.value != this.password2.value) {
-              alert("<?php echo htmlentities($text['pwdsmatch'], ENT_QUOTES); ?>");
-              this.password.focus();
-              return false;
-              }
-              else if(!this.realname.value.length) {
-              alert("<?php echo htmlentities($text['enterrealname'], ENT_QUOTES); ?>");
-              this.realname.focus();
-              return false;
-              }
-              else if(!this.email.value.length || !checkEmail(this.email.value)) {
-              alert("<?php echo htmlentities($text['enteremail'], ENT_QUOTES); ?>");
-              this.email.focus();
-              return false;
-              }
-              else if(this.em2.value.length == 0) {
-              alert("<?php echo htmlentities($text['enteremail2'], ENT_QUOTES); ?>");
-              this.em2.focus();
-              return false;
-              }
-              else if(this.email.value != this.em2.value) {
-              alert("<?php echo htmlentities($text['emailsmatch'], ENT_QUOTES); ?>");
-              this.em2.focus();
-              return false;
-              }
-              if(!newuserok) {
-              return checkNewUser(document.editprofile.username,document.editprofile.orguser,true);
-              }'
+        onsubmit='if(!this.username.value.length) {
+            alert("<?php echo htmlentities($text['enterusername'], ENT_QUOTES); ?>");
+            this.username.focus();
+            return false;
+            }
+            else if(!this.password.value.length) {
+            alert("<?php echo htmlentities($text['enterpassword'], ENT_QUOTES); ?>");
+            this.password.focus();
+            return false;
+            }
+            else if(!this.password2.value.length) {
+            alert("<?php echo htmlentities($text['enterpassword2'], ENT_QUOTES); ?>");
+            this.password2.focus();
+            return false;
+            }
+            else if(this.password.value !== this.password2.value) {
+            alert("<?php echo htmlentities($text['pwdsmatch'], ENT_QUOTES); ?>");
+            this.password.focus();
+            return false;
+            }
+            else if(!this.realname.value.length) {
+            alert("<?php echo htmlentities($text['enterrealname'], ENT_QUOTES); ?>");
+            this.realname.focus();
+            return false;
+            }
+            else if(!this.email.value.length || !checkEmail(this.email.value)) {
+            alert("<?php echo htmlentities($text['enteremail'], ENT_QUOTES); ?>");
+            this.email.focus();
+            return false;
+            }
+            else if(this.em2.value.length === 0) {
+            alert("<?php echo htmlentities($text['enteremail2'], ENT_QUOTES); ?>");
+            this.em2.focus();
+            return false;
+            }
+            else if(this.email.value !== this.em2.value) {
+            alert("<?php echo htmlentities($text['emailsmatch'], ENT_QUOTES); ?>");
+            this.em2.focus();
+            return false;
+            }
+            if(!newuserok) {
+            return checkNewUser(document.editprofile.username,document.editprofile.orguser,true);
+            }'
     >
-        <table cellspacing="0" cellpadding="2" class="normal">
+        <table class="normal" cellspacing="0" cellpadding="2">
             <tr class="databack">
                 <td>
                     <h3 class="subhead"><?php echo $text['editprofile']; ?></h3>
-                    <table cellpadding="3" cellspacing="0" class="normal">
+                    <table class="normal" cellpadding="3" cellspacing="0">
                         <tr>
                             <td><?php echo $text['username'];
                                 if ($allow_user_change) {
@@ -94,7 +89,7 @@ $allow_user_change = true;
                                 <?php
                                 if ($allow_user_change) {
                                     ?>
-                                    <input type="text" name="username" size="20" maxlength="100" value="<?php echo $row['username']; ?>" onblur="checkNewUser(this,document.editprofile.orguser);">
+                                    <input name="username" type="text" value="<?php echo $row['username']; ?>" size="20" maxlength="100" onblur="checkNewUser(this,document.editprofile.orguser);">
                                     <span id="checkmsg" class="normal"></span>
                                     <?php
                                 } else {

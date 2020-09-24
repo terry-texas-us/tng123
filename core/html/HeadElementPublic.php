@@ -147,9 +147,8 @@ class HeadElementPublic
      */
     public function getLinkElements(): array {
         global $responsivetables, $sitever, $templatepath, $tngconfig, $tngdomain, $tngprint, $tng_version;
-
         $links = [];
-        $links[] = "<link href='css/bootstrap-reboot.min.css' rel='stylesheet' type='text/css'>";
+        $links[] = "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
         if ($sitever != "standard" && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet' type='text/css'>";
         }
