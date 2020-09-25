@@ -25,7 +25,6 @@ $righttree = checktree($tree);
 if ($row['type'] == "I" || $row['type'] == "C") {
     $tng_search_preview = $_SESSION['tng_search_preview'];
     $reviewmsg = $admtext['reviewpeople'];
-    $getperson_url = getURL("getperson", 1);
 
     $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
@@ -39,11 +38,9 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $prow['allow_private'] = $rights['private'];
 
     $name = getName($prow);
-    $teststr = "  | <a href=\"$getperson_url" . "personID=$personID&amp;tree=$tree\" target=\"_blank\">{$admtext['test']}</a>";
+    $teststr = "  | <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\">{$admtext['test']}</a>";
     $editstr = "  | <a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\">{$admtext['edit']}</a>";
 } elseif ($row['type'] == "F") {
-    $familygroup_url = getURL("familygroup", 1);
-
     $query = "SELECT husband, wife FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
     $result = tng_query($query);
     $frow = tng_fetch_assoc($result);
@@ -76,7 +73,7 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $name = "$hname$plus$wname";
 
     $checkbranch = 1;
-    $teststr = "  | <a href=\"$familygroup_url" . "familyID=$familyID&amp;tree=$tree\" target=\"_blank\">{$admtext['test']}</a>";
+    $teststr = "  | <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\">{$admtext['test']}</a>";
     $editstr = "  | <a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\">{$admtext['edit']}</a>";
 }
 

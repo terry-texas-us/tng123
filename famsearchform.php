@@ -31,8 +31,7 @@ $mymarrtype = $_SESSION['tng_search_marrtype'];
 $mybool = $_SESSION['tng_search_fbool'];
 $nr = $_SESSION['tng_nr'];
 
-$dontdo = array("MARR", "DIV");
-$famsearch_url = getURL("famsearch", 1);
+$dontdo = ["MARR", "DIV"];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -135,7 +134,7 @@ tng_header($text['searchfams'], $flags);
             }
             tng_free_result($etresult);
             ?>
-            window.location.href = "<?php echo $famsearch_url; ?>" + URL;
+            window.location.href = "famsearch.php?" + URL;
 
             return false;
         }

@@ -7,15 +7,6 @@ include "config/mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "functions.php";
 
-$showmap_url = getURL("showmap", 1);
-$getperson_url = getURL("getperson", 1);
-$showmedia_url = getURL("showmedia", 1);
-$showsource_url = getURL("showsource", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showrepo_url = getURL("showrepo", 1);
-$placesearch_url = getURL("placesearch", 1);
-$headstones_url = getURL("headstones", 1);
-
 $flags['imgprev'] = true;
 
 if (!$thumbmaxw) {
@@ -94,14 +85,14 @@ if ($subquery) {
     $cemresult = "";
 }
 if (!$cemeteryID) {
-    $toppagenav = get_browseitems_nav($totrows, $headstones_url . "country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;tree=$tree&amp;cemoffset", $max_cemeteries, $max_pages);
+    $toppagenav = get_browseitems_nav($totrows, "headstones.php?country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;tree=$tree&amp;cemoffset", $max_cemeteries, $max_pages);
     $tngpage = 1;
 }
 
 if (!$tngpage && !$cemeteryID && $cemresult && tng_num_rows($cemresult) == 1) {
     $cemetery = tng_fetch_assoc($cemresult);
     tng_free_result($cemresult);
-    header("Location:$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}&tree=$tree");
+    header("Location:showmap.php?cemeteryID={$cemetery['cemeteryID']}&tree=$tree");
     exit;
 }
 
@@ -139,7 +130,7 @@ $titlestr = $text['cemeteriesheadstones'];
 if ($location) {
     $titlestr .= " {$text['in']} $location";
 }
-$logstring = "<a href=\"$headstones_url" . "country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;cemeteryID=$cemeteryID&amp;tree=$tree\">$titlestr</a>";
+$logstring = "<a href=\"headstones.php?country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;cemeteryID=$cemeteryID&amp;tree=$tree\">$titlestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -208,7 +199,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if ($cemetery['cemname'] == $text['nocemetery']) {
         $location = $cemetery['cemname'];
     } else {
-        $location = "<a href=\"$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">" . $cemetery['cemname'];
+        $location = "<a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">" . $cemetery['cemname'];
         if ($cemetery['city']) {
             if ($location) {
                 $location .= ", ";
@@ -250,7 +241,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
             $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
             $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
             $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
-            $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br>$localballooncemeteryplace$codednotes</div>"];
+            $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br>$localballooncemeteryplace$codednotes</div>"];
             $l2mCount++;
             $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px;\" ></a>";
             $map['pins']++;
@@ -259,7 +250,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
     $body .= $location;
     $body .= "</h3>";
-    $pagenav = get_browseitems_nav($totrows, $headstones_url . "cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
+    $pagenav = get_browseitems_nav($totrows, "headstones.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
     $body .= "<p>$pagenav</p>";
     $body .= "</div>\n";
 
@@ -310,7 +301,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
             $hstext = "";
             if ($prow['personID2'] != NULL) {
-                $hslinktext .= "<a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+                $hslinktext .= "<a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                 $hslinktext .= getName($prow);
                 $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
                 if ($prow['deathdate']) {
@@ -320,16 +311,16 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
                 }
                 $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
             } elseif ($prow['familyID'] != NULL) {
-                $hslinktext .= "<a href=\"$familygroup_url" . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}<br>}\">{$text['family']}: " . getFamilyName($prow);
+                $hslinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}<br>}\">{$text['family']}: " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
                 $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
-                $hslinktext .= "<a href=\"$showsource_url" . "sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
+                $hslinktext .= "<a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
             } elseif ($prow['repoID'] != NULL) {
                 $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
-                $hslinktext .= "<a href=\"$showrepo_url" . "repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
+                $hslinktext .= "<a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } else {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
-                $hslinktext .= "<a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}";
+                $hslinktext .= "<a href=\"placesearch.php?psearch={$prow['personID']}$treestr\">{$prow['personID']}";
             }
             $hslinktext .= "</a>$hstext\n<br>\n";
         }

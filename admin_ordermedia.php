@@ -28,7 +28,7 @@ switch ($linktype) {
         $person['allow_private'] = 1;
         $namestr = "$personID: " . getName($person);
         tng_free_result($result2);
-        $test_url = getURL("getperson", 1);
+        $test_url = "getperson.php?";
         $testID = "personID";
         break;
     case "F":
@@ -37,7 +37,7 @@ switch ($linktype) {
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['family']}: $personID";
         tng_free_result($result2);
-        $test_url = getURL("familygroup", 1);
+        $test_url = "familygroup.php?";
         $testID = "familyID";
         break;
     case "S":
@@ -50,7 +50,7 @@ switch ($linktype) {
         }
         $person['branch'] = "";
         tng_free_result($result2);
-        $test_url = getURL("showsource", 1);
+        $test_url = "showsource.php?";
         $testID = "sourceID";
         break;
     case "R":
@@ -63,13 +63,13 @@ switch ($linktype) {
         }
         $person['branch'] = "";
         tng_free_result($result2);
-        $test_url = getURL("showrepo", 1);
+        $test_url = "showrepo.php?";
         $testID = "repoID";
         break;
     case "L":
         $namestr = $personID;
         $person['branch'] = "";
-        $test_url = getURL("placesearch", 1);
+        $test_url = "placesearch.php?";
         $testID = "psearch";
         break;
 }

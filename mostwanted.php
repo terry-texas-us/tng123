@@ -5,21 +5,14 @@ include "tng_begin.php";
 
 include "functions.php";
 
-$getperson_url = getURL("getperson", 1);
-$showmedia_url = getURL("showmedia", 1);
-$mostwanted_url = getURL("mostwanted", 0);
-
-$logstring = "<a href=\"$mostwanted_url\">" . xmlcharacters($text['mostwanted']) . "</a>";
+$logstring = "<a href='mostwanted.php'>" . xmlcharacters($text['mostwanted']) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-
-$suggest_url = getURL("suggest", 1);
-$getperson_url = getURL("getperson", 1);
 
 $gotImageJpeg = function_exists('imageJpeg');
 
 function showDivs($type) {
-    global $text, $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $rootpath, $suggest_url, $getperson_url;
+    global $text, $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $rootpath;
     global $gotImageJpeg, $maxmediafilesize, $tree;
 
     $mediatext = "<table class=\"whiteback\" cellpadding=\"8\" cellspacing=\"2\" width=\"100%\">\n";
@@ -58,20 +51,20 @@ function showDivs($type) {
         $mediatext .= "<div class=\"mwperson\">\n";
         if ($type == "person") {
             if ($row['personID']) {
-                $mediatext .= "<a href=\"$suggest_url" . "enttype=I&amp;ID={$row['personID']}&amp;tree={$row['gedcom']}\">" . $text['tellus'] . "</a>";
+                $mediatext .= "<a href=\"suggest.php?enttype=I&amp;ID={$row['personID']}&amp;tree={$row['gedcom']}\">" . $text['tellus'] . "</a>";
 
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];
                 $row['allow_private'] = $rights['private'];
 
                 $name = getName($row);
-                $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
+                $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
             } else {
-                $mediatext .= "<a href=\"{$suggest_url}page={$text['mostwanted']}:+{$row['mwtitle']}\">" . $text['tellus'] . "</a>";
+                $mediatext .= "<a href=\"suggest.php?page={$text['mostwanted']}:+{$row['mwtitle']}\">" . $text['tellus'] . "</a>";
             }
         }
         if ($type == "photo" && $row['mediaID']) {
-            $mediatext .= "<a href=\"{$suggest_url}page={$text['mostwanted']}:+{$row['mtitle']}\">" . $text['tellus'] . "</a>";
+            $mediatext .= "<a href=\"suggest.php?page={$text['mostwanted']}:+{$row['mtitle']}\">" . $text['tellus'] . "</a>";
             $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href=\"$href\">{$row['mtitle']}</a> &nbsp;&nbsp;&nbsp;";
         }
         $mediatext .= "</div>\n";

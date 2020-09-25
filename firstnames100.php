@@ -4,13 +4,10 @@ include "tng_begin.php";
 
 $topnum = preg_replace("/[^0-9]/", '', $topnum);
 
-$firstnames_all_url = getURL("firstnames-all", 1);
-$firstnames_url = getURL("firstnames", 1);
-$firstnames100_url = getURL("firstnames100", 1);
 $text['top30first'] = preg_replace("/xxx/", $topnum, $text['top30first']);
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$firstnames100_url" . "topnum=$topnum&amp;tree=$tree\">" . xmlcharacters($text['firstnamelist'] . ": {$text['top']} $topnum$treestr") . "</a>";
+$logstring = "<a href=\"firstnames100.php?topnum=$topnum&amp;tree=$tree\">" . xmlcharacters($text['firstnamelist'] . ": {$text['top']} $topnum$treestr") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -38,7 +35,7 @@ echo $formstr;
 
     <div class="titlebox">
         <h3 class="subhead"><?php echo "{$text['top30first']} ({$text['totalnames']}):"; ?></h3>
-        <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
+        <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
         <?php
         include "firstnamestable.php";
         ?>

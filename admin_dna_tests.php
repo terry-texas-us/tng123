@@ -79,8 +79,6 @@ if ($assignedtree) {
 $orgwherestr = $wherestr;
 $orgtree = $tree;
 
-$show_dna_test_url = getURL("show_dna_test", 1);
-
 $originalstring = preg_replace("/\"/", "&#34;", $searchstring);
 $searchstring = addslashes($searchstring);
 $wherestr = $searchstring ? "(test_number LIKE \"%$searchstring%\" OR vendor LIKE \"%$searchstring%\" OR urls LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR dna_group LIKE \"%$searchstring%\" OR dna_group_desc LIKE \"%$searchstring%\" OR surnames LIKE \"%$searchstring%\" OR ydna_haplogroup LIKE \"%$searchstring%\" OR mtdna_haplogroup LIKE \"%$searchstring%\")" : "";
@@ -287,7 +285,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $show_dna_test_url . "testID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"show_dna_test.php?testID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['testID'], $actionstr);

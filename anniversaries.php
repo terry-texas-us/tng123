@@ -9,14 +9,6 @@ if (isset($tngyear)) {
 }
 $tngkeywords = preg_replace("/[^A-Za-z0-9]/", "", $tngkeywords);
 
-$getperson_url = getURL("getperson", 1);
-$showtree_url = getURL("showtree", 1);
-$pedigree_url = getURL("pedigree", 1);
-$placesearch_url = getURL("placesearch", 1);
-$anniversaries_url = getURL("anniversaries", 1);
-$anniversaries2_url = getURL("anniversaries2", 1);
-$calendar_url = getURL("calendar", 1);
-
 @set_time_limit(0);
 
 if (!$tngneedresults) {
@@ -41,7 +33,7 @@ if ($tree && $tree != '-x--all--x-') {
 }
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$anniversaries_url" . "tngevent=$tngevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=$tngneedresults&amp;offset=$offset&amp;tree=$tree&amp;tngpage=$tngpage\">" . xmlcharacters($text['anniversaries'] . " $treestr") . "</a>";
+$logstring = "<a href=\"anniversaries.php?tngevent=$tngevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=$tngneedresults&amp;offset=$offset&amp;tree=$tree&amp;tngpage=$tngpage\">" . xmlcharacters($text['anniversaries'] . " $treestr") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -64,7 +56,7 @@ if ($sitever != "mobile") {
     <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript">
         // <![CDATA[
-        const ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
+        const ajx_perspreview = 'ajx_perspreview.php';
         //]]>
     </script>
     <?php
@@ -276,7 +268,7 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
         <input type="submit" value="<?php echo $text['search']; ?>">
         <input type="button" value="<?php echo $text['tng_reset']; ?>" onclick="resetForm();">
         |
-        <input type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "{$calendar_url}m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
+        <input type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "calendar.php?m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
     </div>
 
     </form>
@@ -471,7 +463,7 @@ if ($tngneedresults) {
 
             echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
 
-            $pagenav = get_browseitems_nav($totrows, "$anniversaries2_url" . "$urlstring&amp;tngevent=$tngsaveevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=1&amp;offset", $maxsearchresults, $max_browsesearch_pages);
+            $pagenav = get_browseitems_nav($totrows, "anniversaries2.php?$urlstring&amp;tngevent=$tngsaveevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=1&amp;offset", $maxsearchresults, $max_browsesearch_pages);
             if ($pagenav) {
                 echo "<p>$pagenav</p>";
             }
@@ -545,7 +537,7 @@ if ($tngneedresults) {
                         if ($sitever != "mobile") {
                             $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
                         }
-                        $namestr .= "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
+                        $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                     }
 
                     //now dow wife
@@ -576,7 +568,7 @@ if ($tngneedresults) {
                         if ($sitever != "mobile") {
                             $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
                         }
-                        $namestr .= "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
+                        $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                     }
                     $rights['both'] = $hboth && $wboth && $famrights['both'];
                 } else {
@@ -589,12 +581,12 @@ if ($tngneedresults) {
                     if ($sitever != "mobile") {
                         $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
                     }
-                    $namestr .= "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
+                    $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                 }
                 echo $namestr;
 
                 if ($rights['both']) {
-                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : truncateIt($row['info'], 75);
+                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : truncateIt($row['info'], 75);
                     $dateval = $row[$datefield];
                 } else {
                     $dateval = $placetxt = "";
@@ -605,7 +597,7 @@ if ($tngneedresults) {
                 echo "<td class='databack'>$placetxt&nbsp;</td>";
                 echo "<td class='databack'>$personIDstr </td>";
                 if ($numtrees > 1) {
-                    echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
             }

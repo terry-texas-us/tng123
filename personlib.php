@@ -8,7 +8,7 @@ function doStrong($string) {
 }
 
 function getBirthInfo($thisperson, $noicon = null) {
-    global $text, $placesearch_url, $tngconfig, $tree;
+    global $text, $tngconfig, $tree;
 
     $varlist = array('birthdate', 'birthplace', 'altbirthdate', 'altbirthplace', 'deathdate', 'deathplace', 'burialdate', 'burialplace');
     foreach ($varlist as $myindex) {
@@ -24,7 +24,7 @@ function getBirthInfo($thisperson, $noicon = null) {
 
         $treestr = !empty($tngconfig['places1tree']) ? "" : "tree=$tree&amp;";
 
-        $placelinkbegin = " <a href=\"$placesearch_url" . "{$treestr}psearch=";
+        $placelinkbegin = " <a href=\"placesearch.php?{$treestr}psearch=";
         $placelinkend = "\" title=\"{$text['findplaces']}\">$icon</a>";
     }
     if ($thisperson['birthdate'] || ($thisperson['birthplace'] && !$thisperson['altbirthdate'])) {
@@ -92,7 +92,7 @@ function getBirthInfo($thisperson, $noicon = null) {
 }
 
 function getCitations($persfamID, $shortcite = 1) {
-    global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay, $showsource_url;
+    global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay;
 
     $actualtext = $shortcite ? "" : ", actualtext";
     $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, citations.note AS note, citations.sourceID, description, eventID{$actualtext} ";
@@ -103,7 +103,7 @@ function getCitations($persfamID, $shortcite = 1) {
     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
 
     while ($citrow = tng_fetch_assoc($citresult)) {
-        $source = $citrow['sourceID'] ? "[<a href=\"$showsource_url" . "sourceID={$citrow['sourceID']}&amp;tree=$tree\">{$citrow['sourceID']}</a>] " : "";
+        $source = $citrow['sourceID'] ? "[<a href=\"showsource.php?sourceID={$citrow['sourceID']}&amp;tree=$tree\">{$citrow['sourceID']}</a>] " : "";
         $newstring = $source ? "" : $citrow['description'];
         $key = $persfamID . "_" . $citrow['eventID'];
         $citationsctr++;
@@ -574,8 +574,8 @@ define("FIND_PLACES", $text['findplaces']);
 $datewidth = $thumbmaxw + 20 > 104 ? $thumbmaxw + 20 : 104;
 $eventcounter = 0;
 function showEvent($data) {
-    global $notestogether, $text, $tree, $tentedit_url;
-    global $tableid, $cellnumber, $placesearch_url, $tentative_edit;
+    global $notestogether, $text, $tree;
+    global $tableid, $cellnumber, $tentative_edit;
     global $indnotes, $famnotes, $srcnotes, $reponotes, $indmedia, $fammedia, $srcmedia, $repomedia, $tngconfig;
     global $indalbums, $famalbums, $srcalbums, $repoalbums, $eventcounter, $num_collapsed;
 
@@ -630,7 +630,7 @@ function showEvent($data) {
 
     $cite = $data['entity'] ? reorderCitation($data['entity'] . "_" . $data['event']) : "";
     if ($dateplace) {
-        $output .= formatDateAndPlace($data, $cite, $tngconfig['places1tree'], $tree, $placesearch_url);
+        $output .= formatDateAndPlace($data, $cite, $tngconfig['places1tree'], $tree);
         $output .= "</tr>\n";
     } elseif ($data['fact'] == "" && $cite) {
 
@@ -736,7 +736,7 @@ function showEvent($data) {
     }
 
     if ($output) {
-        $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         if (!empty($data['collapse']) && $rows > 1) {
             $toggleicon = "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
             $num_collapsed++;
@@ -759,10 +759,9 @@ function showEvent($data) {
  * @param string $cite
  * @param string $places1Tree
  * @param string $tree
- * @param $placesearch_url
  * @return string
  */
-function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $tree, $placesearch_url): string {
+function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $tree): string {
     $oneColumn = true; // todo doing oneColumn only. placesearch_url is null sometimes.
     $output = "";
 
@@ -785,7 +784,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
             $output .= $data['place'];
             if (!isset($data['np'])) {
                 $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
-                $output .= " <a href='$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'><img src='img/tng_search_small.gif' alt='" . FIND_PLACES . "' width='9' height='9'></a>$cite\n";
+                $output .= " <a href='placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'><img src='img/tng_search_small.gif' alt='" . FIND_PLACES . "' width='9' height='9'></a>$cite\n";
             }
             $cite = "";
         }
@@ -818,7 +817,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
             $output .= ">" . $data['place'];
             if (!isset($data['np'])) {
                 $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
-                $output .= " <a href=\"$placesearch_url" . "psearch=" . urlencode($data['place']) . $treestr . "\" title=\"" . FIND_PLACES . "\"><img src=\"img/tng_search_small.gif\" alt=\"" . FIND_PLACES . "\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
+                $output .= " <a href=\"placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "\" title=\"" . FIND_PLACES . "\"><img src=\"img/tng_search_small.gif\" alt=\"" . FIND_PLACES . "\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
             } else {
                 $output .= "</td>\n";
             }
@@ -924,7 +923,7 @@ function getLinkTypeMisc($entity, $linktype) {
 }
 
 function getAlbums($entity, $linktype) {
-    global $tree, $album2entities_table, $albums_table, $albumlinks_table, $people_table, $families_table, $text, $showalbum_url, $livedefault;
+    global $tree, $album2entities_table, $albums_table, $albumlinks_table, $people_table, $families_table, $text, $livedefault;
 
     $albums = array();
 
@@ -932,10 +931,10 @@ function getAlbums($entity, $linktype) {
     $ID = $misc['personID'];
     $always = $misc['always'];
 
-    $query = "SELECT $albums_table.albumID, albumname, description, eventID, alwayson
-		FROM ($albums_table,$album2entities_table) 
-		WHERE entityID=\"$ID\" AND gedcom=\"$tree\" AND $album2entities_table.albumID=$albums_table.albumID AND active = '1' 
-		ORDER BY ordernum, albumname";
+    $query = "SELECT albums.albumID, albumname, description, eventID, alwayson ";
+    $query .= "FROM ($albums_table albums, $album2entities_table album2entities) ";
+    $query .= "WHERE entityID='$ID' AND gedcom='$tree' AND album2entities.albumID=albums.albumID AND active = '1' ";
+    $query .= "ORDER BY ordernum, albumname";
     $albumlinks = tng_query($query);
     if (is_array($entity)) {
         if (!isset($entity['allow_living'])) {
@@ -997,7 +996,7 @@ function getAlbums($entity, $linktype) {
 
         if (!$foundliving && !$foundprivate) {
             $thisalbum['imgsrc'] = getAlbumPhoto($albumlink['albumID'], $albumlink['albumname']);
-            $thisalbum['name'] = "<a href=\"$showalbum_url" . "albumID={$albumlink['albumID']}\">{$albumlink['albumname']}</a> ({$arow['acount']})";
+            $thisalbum['name'] = "<a href=\"showalbum.php?albumID={$albumlink['albumID']}\">{$albumlink['albumname']}</a> ({$arow['acount']})";
             $thisalbum['description'] = $albumlink['description'];
         } else {
             $thisalbum['imgsrc'] = "";
@@ -1282,7 +1281,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
 
 function getAlbumPhoto($albumID, $albumname) {
     global $livedefault, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
-    global $mediatypes_assoc, $mediapath, $showalbum_url, $tree;
+    global $mediatypes_assoc, $mediapath, $tree;
 
     $query2 = "SELECT path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson ";
     $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
@@ -1359,7 +1358,7 @@ function getAlbumPhoto($albumID, $albumname) {
             $imgsrc = "<div class=\"media-img\">";
             $imgsrc .= "<div class=\"media-prev\" id=\"prev{$trow['mediaID']}\" style=\"display:none;\"></div>";
             $imgsrc .= "</div>\n";
-            $imgsrc .= "<a href=\"$showalbum_url" . "albumID=$albumID\" title=\"{$text['albclicksee']}\"";
+            $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
             if (function_exists('imageJpeg')) {
                 $imgsrc .= " class=\"media-preview\" id=\"img-{$trow['mediaID']}-0-" . urlencode("$tusefolder/{$trow['path']}") . "\"";
             }
@@ -1441,7 +1440,7 @@ function getStdExtras($persfamID) {
 }
 
 function formatAssoc($assoc) {
-    global $text, $tree, $people_table, $families_table, $getperson_url, $familygroup_url;
+    global $text, $tree, $people_table, $families_table;
 
     $assocstr = $namestr = "";
 
@@ -1459,7 +1458,7 @@ function formatAssoc($assoc) {
         if (!$assocstr) {
             $assocstr = $assoc['passocID'];
         }
-        $assocstr = "<a href=\"$getperson_url" . "personID={$assoc['passocID']}&amp;tree=$tree\">$assocstr</a>";
+        $assocstr = "<a href=\"getperson.php?personID={$assoc['passocID']}&amp;tree=$tree\">$assocstr</a>";
     } elseif ($assoc['reltype'] == "F") {
         $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch, gedcom FROM $families_table WHERE familyID = \"{$assoc['passocID']}\" AND gedcom = '$tree'";
         $result = tng_query($query);
@@ -1474,7 +1473,7 @@ function formatAssoc($assoc) {
         if (!$assocstr) {
             $assocstr = $assoc['passocID'];
         }
-        $assocstr = "<a href=\"$familygroup_url" . "familyID={$assoc['passocID']}&amp;tree=$tree\">" . $text['family'] . ": $assocstr</a>";
+        $assocstr = "<a href=\"familygroup.php?familyID={$assoc['passocID']}&amp;tree=$tree\">" . $text['family'] . ": $assocstr</a>";
     }
     $assocstr .= $assoc['relationship'] ? " ({$text['relationship2']}: {$assoc['relationship']})" : "";
 

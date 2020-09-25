@@ -17,13 +17,7 @@ $test_search = isset($_SESSION["tsearch"]) ? $_SESSION["tsearch"] : "";
 $test_type = isset($_SESSION["ttype"]) ? $_SESSION["ttype"] : "";
 $test_group = isset($_SESSION["tgroup"]) ? $_SESSION["tgroup"] : "";
 
-$compare_selected_atdna_url = getURL("compare_selected_atdna", 1);
-$browse_dna_tests_url = getURL("browse_dna_tests", 1) . "tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
-
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$show_dna_test_url = getURL("show_dna_test", 1);
-$showtree_url = getURL("showtree", 1);
+$browse_dna_tests_url = "browse_dna_tests.php?tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
 
 $headline = "{$text['dnatestscompare']}";
 $text['dnatestscompare_atdna'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
@@ -35,7 +29,7 @@ echo "<html lang='en'>\n";
 
 tng_header($text['dnatestscompare_atdna'], $flags);
 
-$comptabs[0] = array(1, $browse_dna_tests_url, $text['dna_tests'], "dnatests");
+$comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
 $innermenu = "";
 $innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target=\"_blank\" class=\"lightlink\">{$text['help']}</a>";
 // Y-DNA Tests
@@ -77,7 +71,7 @@ if ($_SESSION["tgroup"]) {
 }
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$compare_selected_atdna_url" . "tree=$tree&amp;&amp;testsearch=$test_search\">" . xmlcharacters($text['dnatestscompare_atdna'] . $treestr) . "</a>";
+$logstring = "<a href=\"compare_selected_atdna.php?tree=$tree&amp;&amp;testsearch=$test_search\">" . xmlcharacters($text['dnatestscompare_atdna'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -173,7 +167,7 @@ echo $header;
                     } else {
                         $privtest = "";
                     }
-                    echo "<td class=\"$databack\"><a href=\"$show_dna_test_url" . "group=$test_group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
+                    echo "<td class=\"$databack\"><a href=\"show_dna_test.php?group=$test_group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_number']}</a>&nbsp;$privtest</td>";
                 }
 
                 $dna_pers_result = getPersonData($row['gedcom'], $row['personID']);
@@ -193,7 +187,7 @@ echo $header;
                     $privacy = "";
                 }
                 if ($dbname) {
-                    $dna_namestr = "<a href=\"$getperson_url" . "personID={$row['personID']}&tree={$row['gedcom']}\">$dna_namestr</a>$privacy $vitalinfo";
+                    $dna_namestr = "<a href=\"getperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">$dna_namestr</a>$privacy $vitalinfo";
                 } else {
                     $dna_namestr = $person_name . $privacy;
                 }
@@ -245,7 +239,7 @@ echo $header;
                         $ancrow['allow_private'] = $dprights['private'];
 
                         $anc_namestr = getName($ancrow);
-                        $mrcanc_namestr = "<a href=\"$getperson_url" . "personID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>";
+                        $mrcanc_namestr = "<a href=\"getperson.php?personID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$anc_namestr</a>";
                         tng_free_result($dna_anc_result);
                     } else {
                         if ($row['MRC_ancestorID'][0] == "F") {
@@ -261,7 +255,7 @@ echo $header;
                             $famrow['allow_private'] = $rights['private'];
 
                             $famname = getFamilyName($famrow);
-                            $mrcanc_namestr = "<a href=\"$familygroup_url" . "familyID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$famname</a>";
+                            $mrcanc_namestr = "<a href=\"familygroup.php?familyID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$famname</a>";
                         }
                     }
                 }
@@ -274,7 +268,7 @@ echo $header;
                 echo "<td class=\"$databack\">$group</td>";
                 global $numtrees;
                 if (!$assignedtree && ($numtrees > 1)) {
-                    echo "<td class=\"$databack nw\"><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class=\"$databack nw\"><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
                 $i++;

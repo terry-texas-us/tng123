@@ -6,9 +6,6 @@ include "tng_begin.php";
 
 include "searchlib.php";
 
-$placesearch_url = getURL("placesearch", 1);
-$getperson_url = getURL("getperson", 1);
-
 $heatmap = $mtype == "h" || !isset($mtype);
 $markermap = $mtype == "m" || !isset($mtype);
 
@@ -267,7 +264,7 @@ while ($row = tng_fetch_assoc($result)) {
         $row['allow_living'] = $rights['living'];
         $row['allow_private'] = $rights['private'];
         //determine rights?
-        $person->name = "<a href=\"{$getperson_url}personID={$row['personID']}&tree={$row['gedcom']}\">" . getName($row) . "</a>";
+        $person->name = "<a href=\"getperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">" . getName($row) . "</a>";
         if ($rights['both']) {
             $person->birthplace = $row['birthp'];
             $person->birthdate = $row['birthdate'] ? $text['birthabbr'] . " " . displayDate($row['birthdate']) : $text['chrabbr'] . " " . displayDate($row['altbirthdate']);

@@ -78,8 +78,6 @@ if ($assignedtree) {
 $orgwherestr = $wherestr;
 $orgtree = $tree;
 
-$showmedia_url = getURL("showmedia", 1);
-
 $originalstring = preg_replace("/\"/", "&#34;", $searchstring);
 $wherestr = $searchstring ? "($media_table.mediaID LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR path LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR bodytext LIKE \"%$searchstring%\" OR owner LIKE \"%$searchstring%\")" : "";
 if ($assignedtree) {
@@ -433,7 +431,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                         if ($allow_media_delete) {
                             $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $showmedia_url . "mediaID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showmedia.php?mediaID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $mtypeID = $row['mediatypeID'];

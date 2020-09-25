@@ -11,7 +11,7 @@ if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
 if (!$_SESSION["ttree"]) {
     $_SESSION["ttree"] = "-x--all--x-";
 }
-$browse_dna_tests_url = getURL("browse_dna_tests", 1) . "tree=" . $_SESSION["ttree"] . "&amp;testsearch=" . $_SESSION["tsearch"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"];
+$browse_dna_tests_url = "browse_dna_tests.php?tree=" . $_SESSION["ttree"] . "&amp;testsearch=" . $_SESSION["tsearch"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"];
 
 $headline = "{$text['dnatestscompare']}";
 $text['dnatestscompare'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
@@ -122,7 +122,7 @@ if (!function_exists('array_column')) {
     }
 }
 
-$comptabs[0] = array(1, $browse_dna_tests_url, $text['dna_tests'], "dnatests");
+$comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
 $innermenu = "";
 $menu = doMenu($comptabs, "", $innermenu);
 echo displayHeadline($text['dnatestscompare'], "img//dna_icon.gif", $menu, $message);

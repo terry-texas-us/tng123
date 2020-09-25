@@ -55,7 +55,7 @@ function getSpouses($personID, $sex) {
 }
 
 function getSpouseParents($personID, $sex) {
-    global $tree, $righttree, $text, $admtext, $getperson_url;
+    global $tree, $righttree, $text, $admtext;
 
     if ($sex == "M") {
         $childtext = tng_strtolower($text['sonof']);
@@ -88,7 +88,7 @@ function getSpouseParents($personID, $sex) {
                     if ($fathrow['name'] == $admtext['text_private']) {
                         $fathrow['firstname'] = $admtext['text_private'];
                     }
-                    $parentstr .= "<a href=\"#\" onclick=\"if(jQuery('#p{$fathrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$fathrow['personID']}').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID={$fathrow['personID']}&amp;tree=$tree';} return false;\">$fathname</a>";
+                    $parentstr .= "<a href=\"#\" onclick=\"if(jQuery('#p{$fathrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$fathrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$fathrow['personID']}&amp;tree=$tree';} return false;\">$fathname</a>";
                 }
                 tng_free_result($gotfather);
             }
@@ -111,7 +111,7 @@ function getSpouseParents($personID, $sex) {
                     if ($parentstr) {
                         $parentstr .= " {$text['text_and']} ";
                     }
-                    $parentstr .= "<a href=\"#\" onclick=\"if(jQuery('#p{$mothrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$mothrow['personID']}').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID={$mothrow['personID']}&amp;tree=$tree';} return false;\">$mothname</a>";
+                    $parentstr .= "<a href=\"#\" onclick=\"if(jQuery('#p{$mothrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$mothrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$mothrow['personID']}&amp;tree=$tree';} return false;\">$mothname</a>";
                 }
                 tng_free_result($gotmother);
             }

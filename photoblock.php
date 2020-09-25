@@ -27,8 +27,6 @@ include "checklogin.php";
 $maxwidth = "100";
 $maxheight = "100";
 
-$showmedia_url = getURL("showmedia", 1);
-
 $query = "SELECT distinct media.mediaID, path, media.description, usecollfolder ";
 $query .= "FROM ($media_table media, $medialinks_table medialinks, $people_table people) ";
 $query .= "WHERE media.mediaID = medialinks.mediaID ";
@@ -66,8 +64,8 @@ if ($maxheight) {
 }
 
 echo "<table $width $height>\n";
-echo "<tr><td class='text-center'><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\"><img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a></td></tr>\n";
-echo "<tr><td class='text-center'><span class='normal'><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></span></td></tr>";
+echo "<tr><td class='text-center'><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}\"><img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a></td></tr>\n";
+echo "<tr><td class='text-center'><span class='normal'><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></span></td></tr>";
 echo "</table>";
 ?>
 

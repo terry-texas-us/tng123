@@ -12,15 +12,15 @@ $newpassword = !empty($newpassword) ? mysqli_real_escape_string($link, $newpassw
 
 if (!empty($admin_login)) {
     $home_url = $continue ? "admin_main.php" : "admin.php";
-    $login_url = getURL("admin_login", 1);
+    $login_url = "admin_login.php?";
     $dest_url = isset($_SESSION['destinationpage8']) && $continue ? $_SESSION['destinationpage8'] : $home_url;
 } else {
     $home_url = $homepage;
     $dest_url = $_SESSION['destinationpage8'] ?? $home_url;
-    $login_url = $requirelogin || !isset($_SESSION['destinationpage8']) || strpos($_SESSION['destinationpage8'], $home_url) !== false || substr($_SESSION['destinationpage8'], -1) == "/" ? getURL("login", 1) . "message=loginfailed" : $dest_url;
+    $login_url = $requirelogin || !isset($_SESSION['destinationpage8']) || strpos($_SESSION['destinationpage8'], $home_url) !== false || substr($_SESSION['destinationpage8'], -1) == "/" ? "login.php?message=loginfailed" : $dest_url;
 }
 
-$query = "SELECT * FROM $users_table WHERE username = \"$tngusername\"";
+$query = "SELECT * FROM $users_table WHERE username = '$tngusername'";
 $result = tng_query($query) or die ("Cannot execute query: $query");
 if (tng_num_rows($result)) {
     $row = tng_fetch_assoc($result);
@@ -133,7 +133,7 @@ if ($check) {
 
             if ($row['languageID']) {
                 $_SESSION['destinationpage8'] = $dest_url;
-                $dest_url = getURL("savelanguage2", 1) . "newlanguage=" . $row['languageID'];
+                $dest_url = "savelanguage2.php?newlanguage=" . $row['languageID'];
             }
             $headerstr = $dest_url;
         } else {

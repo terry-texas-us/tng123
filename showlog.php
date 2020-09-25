@@ -16,9 +16,6 @@ if ($maxloglines) {
     $loglines = "";
 }
 
-$showlog_url = getURL("showlog", 1);
-$logxml_url = getURL("ajx_logxml", 0);
-
 if (isset($autorefresh)) {
     $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
 }
@@ -34,9 +31,9 @@ tng_header("$loglines {$text['mostrecentactions']}", $flags);
     <br style="clear: both;">
 <?php
 if (isset($autorefresh)) {
-    echo "<p class='normal'><a href=\"$showlog_url" . "autorefresh=0\">{$text['refreshoff']}</a></p>\n";
+    echo "<p class='normal'><a href=\"showlog.php?autorefresh=0\">{$text['refreshoff']}</a></p>\n";
 } else {
-    echo "<p class='normal'><a href=\"$showlog_url" . "autorefresh=1\">{$text['autorefresh']}</a></p>\n";
+    echo "<p class='normal'><a href=\"showlog.php?autorefresh=1\">{$text['autorefresh']}</a></p>\n";
 }
 ?>
     <div class="normal" id="content">
@@ -59,7 +56,7 @@ if (isset($autorefresh)) {
     ?>
     <script type="text/javascript">
         function refreshPage() {
-            var loader1 = new net.ContentLoader('<?php echo $logxml_url ?>', FillPage, null, "POST", '');
+            var loader1 = new net.ContentLoader('ajx_logxml.php', FillPage, null, "POST", '');
             var timer = setTimeout("refreshPage()", 30000);
         }
 

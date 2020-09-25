@@ -33,12 +33,7 @@ function processfield($field) {
     return $newfield;
 }
 
-$showreport_url = getURL("showreport", 1);
-$showtree_url = getURL("showtree", 1);
-$getperson_url = getURL("getperson", 1);
-$placesearch_url = getURL("placesearch", 1);
-
-$ldsfields = array("baptdate", "baptplace", "confdate", "confplace", "initdate", "initplace", "endldate", "endlplace", "ssealdate", "ssealplace", "psealdate", "psealplace");
+$ldsfields = ["baptdate", "baptplace", "confdate", "confplace", "initdate", "initplace", "endldate", "endlplace", "ssealdate", "ssealplace", "psealdate", "psealplace"];
 
 $max_browsesearch_pages = 5;
 if ($offset) {
@@ -513,7 +508,7 @@ $result = @tng_query($query . $limitstr);
 
 $treelogstr = $tree ? " ({$text['tree']}: $tree)" : "";
 if ($rrow['active'] && !$csv) {
-    $logstring = "<a href=\"$showreport_url" . "reportID=$reportID&amp;tree=$tree\">" . xmlcharacters($text['report'] . ": {$rrow['reportname']}$treelogstr") . "</a>";
+    $logstring = "<a href=\"showreport.php?reportID=$reportID&amp;tree=$tree\">" . xmlcharacters($text['report'] . ": {$rrow['reportname']}$treelogstr") . "</a>";
     writelog($logstring);
     preparebookmark($logstring);
 }
@@ -581,10 +576,10 @@ if (!$result) {
 
         $numrowsplus = $numrows + $offset;
         if ($totrows) {
-            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"{$showreport_url}reportID=$reportID&csv=1&tree=$tree\" target=\"_blank\" class=\"snlink\">&raquo; {$text['csv']}</a></p>";
+            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target=\"_blank\" class=\"snlink\">&raquo; {$text['csv']}</a></p>";
         }
 
-        $pagenav = get_browseitems_nav($totrows, "$showreport_url" . "reportID=$reportID$testurl&amp;offset", $maxsearchresults, $max_browsesearch_pages);
+        $pagenav = get_browseitems_nav($totrows, "showreport.php?reportID=$reportID$testurl&amp;offset", $maxsearchresults, $max_browsesearch_pages);
         echo "<p>$pagenav</p>\n";
     }
     if ($csv) {
@@ -623,17 +618,17 @@ if (!$result) {
         for ($i = 0; $i < count($displayfields) - 1; $i++) {
             $thisfield = $displayfields[$i];
             if ($thisfield == "lastfirst") {
-                $data = $csv ? getNameRev($row) : "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">" . getNameRev($row) . "</a>";
+                $data = $csv ? getNameRev($row) : "<a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">" . getNameRev($row) . "</a>";
             } else {
                 if ($thisfield == "fullname") {
                     $namestr = getName($row);
-                    $data = $csv ? $namestr : showSmallPhoto($row['personID'], $namestr, $rights['both'], 0, false, $row['sex']) . "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>";
+                    $data = $csv ? $namestr : showSmallPhoto($row['personID'], $namestr, $rights['both'], 0, false, $row['sex']) . "<a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>";
                 } else {
                     if (strtoupper(substr($thisfield, -8)) == strtoupper("personID")) {
-                        $data = $csv ? $row[$thisfield] : "<a href=\"$getperson_url" . "personID=$row[$thisfield]&amp;tree={$row['gedcom']}\">$row[$thisfield]</a>";
+                        $data = $csv ? $row[$thisfield] : "<a href=\"getperson.php?personID=$row[$thisfield]&amp;tree={$row['gedcom']}\">$row[$thisfield]</a>";
                     } else {
                         if ($thisfield == "treename") {
-                            $data = $csv ? $row['treename'] : "<a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>";
+                            $data = $csv ? $row['treename'] : "<a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>";
                         } else {
                             if (substr($thisfield, 0, 6) == "spouse") {
                                 $spouseID = $row['spouse'];
@@ -647,13 +642,13 @@ if (!$result) {
                                         $sprow['allow_living'] = $srights['living'];
                                         $sprow['allow_private'] = $srights['private'];
 
-                                        $data = $csv ? getName($sprow) : "<a href=\"$getperson_url" . "personID=$spouseID&amp;tree={$sprow['gedcom']}\">" . getName($sprow) . "</a>";
+                                        $data = $csv ? getName($sprow) : "<a href=\"getperson.php?personID=$spouseID&amp;tree={$sprow['gedcom']}\">" . getName($sprow) . "</a>";
                                         tng_free_result($spresult);
                                     } else {
                                         $data = "";
                                     }
                                 } else {
-                                    $data = $csv ? $spouseID : "<a href=\"$getperson_url" . "personID=$spouseID&amp;tree={$sprow['gedcom']}\">$spouseID</a>";
+                                    $data = $csv ? $spouseID : "<a href=\"getperson.php?personID=$spouseID&amp;tree={$sprow['gedcom']}\">$spouseID</a>";
                                 }
                             } else {
                                 if ($rights['both'] && (!in_array($thisfield, $ldsfields) || $rights['lds'])) {
@@ -669,7 +664,7 @@ if (!$result) {
                                     } else {
                                         $data = nl2br($row[$thisfield]);
                                         if (strpos($thisfield, "place") && $data && !$csv) {
-                                            $data .= " <a href=\"$placesearch_url" . "{$treestr}psearch=" . urlencode($data) . "\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
+                                            $data .= " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($data) . "\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
                                         }
                                     }
                                 } else {

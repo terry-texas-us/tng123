@@ -11,9 +11,6 @@ if (!isset($rp_maxheight)) {
 if (!isset($rp_mediatypeID) || !$rp_mediatypeID) {
     $rp_mediatypeID = "photos";
 }
-
-$showmedia_url = getURL("showmedia", 1);
-
 $query = "SELECT DISTINCT $media_table.mediaID, $media_table.description, path, alwayson, usecollfolder, mediatypeID, gedcom FROM $media_table WHERE mediatypeID = \"$rp_mediatypeID\" AND (abspath is NULL OR abspath = \"0\") ORDER BY RAND()";
 $result = tng_query($query);
 while ($imgrow = tng_fetch_assoc($result)) {
@@ -70,9 +67,9 @@ if (strpos($rp_maxwidth, "%") !== FALSE) {
 }
 
 echo "<div class=\"indexphototable\">\n";
-echo "<a href=\"{$showmedia_url}mediaID={$imgrow['mediaID']}\"><img class=\"indexphoto rounded4\" src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" {$dimensions} alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a>";
+echo "<a href=\"showmedia.php?mediaID={$imgrow['mediaID']}\"><img class=\"indexphoto rounded4\" src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" {$dimensions} alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a>";
 echo "<div style=\"padding: 5px;\">\n";
-echo "<em><a href=\"{$showmedia_url}mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></em>\n";
+echo "<em><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}\">{$imgrow['description']}</a></em>\n";
 echo "</div>\n";
 echo "</div>\n";
 

@@ -5,14 +5,8 @@ global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
 include "functions.php";
 
-$browsesources_url = getURL("browsesources", 1);
-$showsource_url = getURL("showsource", 1);
-$showtree_url = getURL("showtree", 1);
-
 function doSourceSearch($instance, $pagenav) {
     global $text, $sourcesearch, $tree;
-
-    $browsesources_noargs_url = getURL("browsesources", 0);
 
     $str = "<div class='normal'>\n";
     $str .= getFORM("browsesources", "get", "SourceSearch$instance", "");
@@ -20,7 +14,7 @@ function doSourceSearch($instance, $pagenav) {
     $str .= $pagenav;
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     if ($sourcesearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsesources_noargs_url\">{$text['browseallsources']}</a>";
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browsesources.php'>{$text['browseallsources']}</a>";
     }
     $str .= "</form></div>\n";
 
@@ -81,7 +75,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 $numrowsplus = $numrows + $offset;
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$browsesources_url" . "tree=$tree&amp;offset=$offset&amp;sourcesearch=$sourcesearch\">" . xmlcharacters($text['sources'] . $treestr) . "</a>";
+$logstring = "<a href=\"browsesources.php?tree=$tree&amp;offset=$offset&amp;sourcesearch=$sourcesearch\">" . xmlcharacters($text['sources'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -99,7 +93,7 @@ if ($totrows) {
     echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
-$pagenav = get_browseitems_nav($totrows, $browsesources_url . "sourcesearch=$sourcesearch&amp;offset", $maxsearchresults, $max_browsesource_pages);
+$pagenav = get_browseitems_nav($totrows, "browsesources.php?sourcesearch=$sourcesearch&amp;offset", $maxsearchresults, $max_browsesource_pages);
 if ($pagenav || $sourcesearch) {
     echo doSourceSearch(1, $pagenav);
     echo "<br>\n";
@@ -140,10 +134,10 @@ while ($row = tng_fetch_assoc($result)) {
     $sourcetitle = $row['title'] ? $row['title'] : $row['shorttitle'];
     echo "<tr>";
     echo "<td class='databack'><span class='normal'>$i</span></td>\n";
-    echo "<td class='databack'><span class='normal'><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
-    echo "<td class='databack'><span class='normal'><a href=\"$showsource_url" . "sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
+    echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
+    echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
     if ($numtrees > 1) {
-        echo "<td class='databack nw'><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+        echo "<td class='databack nw'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
     }
     echo "</tr>\n";
     $i++;

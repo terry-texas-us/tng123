@@ -254,8 +254,7 @@ if ($tngconfig['askconsent']) {
     echo $text['consent'];
 }
 if ($tngconfig['dataprotect']) {
-    $dataprotect_url = getURL("data_protection_policy", 0);
-    echo "<br><a href=\"{$dataprotect_url}\" target=\"_blank\">{$text['dataprotect']}</a>\n";
+    echo "<br><a href='data_protection_policy.php' target=\"_blank\">{$text['dataprotect']}</a>\n";
 }
 ?>
     <br><br>

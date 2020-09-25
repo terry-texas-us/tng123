@@ -9,11 +9,6 @@ if (!$testID) {
 
 include "personlib.php";
 
-$getperson_url = getURL("getperson", 1);
-$show_dna_test_url = getURL("show_dna_test", 1);
-$placesearch_url = getURL("placesearch", 1);
-$familygroup_url = getURL("familygroup", 1);
-
 $flags['imgprev'] = true;
 
 $firstsection = 1;
@@ -33,7 +28,7 @@ tng_free_result($result);
 
 $testnum = ($allow_edit || $showtestnumbers) ? "{$dnarow['test_number']}" : "";
 $headline = "{$text['dna_test']}: {$dnarow['test_type']} $testnum";
-$logstring = "<a href=\"$show_dna_test_url" . "testID=$testID\">$headline</a>";
+$logstring = "<a href=\"show_dna_test.php?testID=$testID\">$headline</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -70,7 +65,7 @@ if ($dnarow['personID']) {
     $dprow['allow_living'] = $dprights['living'];
     $dprow['allow_private'] = $dprights['private'];
     $dna_namestr = getName($dprow);
-    $dna_namestr = "<a href=\"$getperson_url" . "personID={$dnarow['personID']}&tree={$dnarow['gedcom']}\">$dna_namestr</a>";
+    $dna_namestr = "<a href=\"getperson.php?personID={$dnarow['personID']}&tree={$dnarow['gedcom']}\">$dna_namestr</a>";
     if ($dnarow['private_dna'] && !$allow_edit) {
         $dna_namestr = $admtext['text_private'];
     }
@@ -131,7 +126,7 @@ if ($dnarow['MD_ancestorID']) {
     $ancrow['allow_private'] = $dprights['private'];
     $vitalinfo = getBirthInfo($ancrow);
     $anc_namestr = getName($ancrow);
-    $anc_namestr = "<a href=\"$getperson_url" . "personID={$dnarow['MD_ancestorID']}&tree={$dnarow['gedcom']}\">$anc_namestr</a>" . $vitalinfo;
+    $anc_namestr = "<a href=\"getperson.php?personID={$dnarow['MD_ancestorID']}&tree={$dnarow['gedcom']}\">$anc_namestr</a>" . $vitalinfo;
 
     tng_free_result($dna_pers_result);
 
@@ -149,7 +144,7 @@ if ($dnarow['MRC_ancestorID']) {
         $ancrow['allow_private'] = $dprights['private'];
         $vitalinfo = getBirthInfo($ancrow);
         $anc_namestr = getName($ancrow);
-        $anc_namestr = "<a href=\"$getperson_url" . "personID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$anc_namestr</a>" . $vitalinfo;
+        $anc_namestr = "<a href=\"getperson.php?personID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$anc_namestr</a>" . $vitalinfo;
 
         tng_free_result($dna_mrca_result);
 
@@ -168,8 +163,8 @@ if ($dnarow['MRC_ancestorID']) {
             $famrow['allow_private'] = $rights['private'];
 
             $famname = getFamilyName($famrow);
-            $anc_namestr = "<a href=\"$familygroup_url" . "familyID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$famname</a>";
-            $anc_namestr = $text['family'] . ": " . "<a href=\"$familygroup_url" . "familyID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$famname</a>";
+            $anc_namestr = "<a href=\"familygroup.php?familyID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$famname</a>";
+            $anc_namestr = $text['family'] . ": " . "<a href=\"familygroup.php?familyID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$famname</a>";
             $dnatext .= showEvent(array("text" => $admtext['mrca'], "fact" => $anc_namestr));
         }
     }
@@ -330,14 +325,14 @@ while ($prow = tng_fetch_assoc($presult)) {
     $prow['allow_living'] = $rights['living'];
     $prow['allow_private'] = $rights['private'];
     $vitalinfo = $rights['both'] ? getBirthInfo($prow) : "";
-    $name = "<a href=\"$getperson_url" . "personID={$prow['personID']}&amp;tree={$prow['gedcom']}\">" . getName($prow) . "</a>" . $vitalinfo;
+    $name = "<a href=\"getperson.php?personID={$prow['personID']}&amp;tree={$prow['gedcom']}\">" . getName($prow) . "</a>" . $vitalinfo;
     if ($dnarow['private_dna'] && !$allow_edit && ($prow['personID'] == $dnarow['personID'])) {
         $name = $admtext['text_private'];
     }
     $dnalinktext .= $name;
 }
 if ($numrows >= $maxsearchresults) {
-    $dnalinktext .= "\n[<a href=\"$show_dna_test_url" . "testID=$testID&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['morelinks']}</a>]";
+    $dnalinktext .= "\n[<a href=\"show_dna_test.php?testID=$testID&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['morelinks']}</a>]";
 }
 tng_free_result($presult);
 

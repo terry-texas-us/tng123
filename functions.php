@@ -68,9 +68,9 @@ function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $al
 
 function doMedia($mediatypeID) {
     global $media_table, $medialinks_table, $change_limit, $cutoffstr, $wherestr, $text, $admtext, $families_table, $sources_table, $repositories_table, $citations_table, $nonames;
-    global $people_table, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $trees_table, $currentuser, $userlist;
+    global $people_table, $trees_table, $currentuser, $userlist;
     global $rootpath, $mediapath, $header, $footer, $cemeteries_table, $mediatypes_assoc, $mediatypes_display;
-    global $getperson_url, $whatsnew, $wherestr2, $showmap_url, $thumbmaxw, $events_table, $eventtypes_table, $altstr, $tngconfig;
+    global $whatsnew, $wherestr2, $thumbmaxw, $events_table, $eventtypes_table, $altstr, $tngconfig;
 
     if ($mediatypeID == "headstones") {
         $hsfields = ", media.cemeteryID, cemname, city";
@@ -165,7 +165,7 @@ function doMedia($mediatypeID) {
 
             $hstext = "";
             if ($prow['personID2'] != NULL) {
-                $medialinktext .= "<li><a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+                $medialinktext .= "<li><a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                 $medialinktext .= getName($prow);
                 if ($mediatypeID == "headstones") {
                     $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
@@ -177,15 +177,15 @@ function doMedia($mediatypeID) {
                     $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
                 }
             } elseif ($prow['familyID'] != NULL) {
-                $medialinktext .= "<li><a href=\"$familygroup_url" . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
+                $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
                 $sourcetext = $prow['title'] ? $text['source'] . ": " . $prow['title'] : $text['source'] . ": " . $prow['sourceID'];
-                $medialinktext .= "<li><a href=\"$showsource_url" . "sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
+                $medialinktext .= "<li><a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
             } elseif ($prow['repoID'] != NULL) {
                 $repotext = $prow['reponame'] ? $text['repository'] . ": " . $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
-                $medialinktext .= "<li><a href=\"$showrepo_url" . "repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
+                $medialinktext .= "<li><a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } else {
-                $medialinktext .= "<li><a href=\"$placesearch_url" . "psearch=" . urlencode($prow['personID']);
+                $medialinktext .= "<li><a href=\"placesearch.php?psearch=" . urlencode($prow['personID']);
                 if (!$tngconfig['places1tree']) {
                     $medialinktext .= "&amp;tree={$prow['gedcom']}";
                 }
@@ -256,7 +256,7 @@ function doMedia($mediatypeID) {
             if (!$row['cemname']) {
                 $row['cemname'] = $row['city'];
             }
-            $mediatext .= "<td class='databack'><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
+            $mediatext .= "<td class='databack'><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
             if ($row['plot']) {
                 $mediatext .= "<br>";
             }

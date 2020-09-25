@@ -2,9 +2,7 @@
 $nologin = 1;
 include "tng_begin.php";
 
-$dataprotect_url = getURL("data_protection_policy", 0);
-
-$logstring = "<a href=\"$dataprotect_url\">" . xmlcharacters($text['dataprotect']) . "</a>";
+$logstring = "<a href='data_protection_policy.php'>" . xmlcharacters($text['dataprotect']) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 

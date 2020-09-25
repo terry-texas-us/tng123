@@ -11,16 +11,6 @@ if (!$cemeteryID || !is_numeric($cemeteryID)) {
 }
 include "functions.php";
 
-$showmap_url = getURL("showmap", 1);
-$showmedia_url = getURL("showmedia", 1);
-$getperson_url = getURL("getperson", 1);
-$showsource_url = getURL("showsource", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showrepo_url = getURL("showrepo", 1);
-$placesearch_url = getURL("placesearch", 1);
-$showtree_url = getURL("showtree", 1);
-$pedigree_url = getURL("pedigree", 1);
-
 $flags['imgprev'] = true;
 
 $treequery = "SELECT count(gedcom) AS treecount FROM $trees_table";
@@ -83,7 +73,7 @@ if ($cemeteryID) {
     $location = $text['nocemetery'];
 }
 
-$logstring = "<a href=\"$showmap_url" . "cemeteryID=$cemeteryID&amp;tree=$tree\">$location</a>";
+$logstring = "<a href=\"showmap.php?cemeteryID=$cemeteryID&amp;tree=$tree\">$location</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -232,7 +222,7 @@ if ($numrows) {
         $totrows = $numrows;
     }
 
-    $pagenav = get_browseitems_nav($totrows, $showmap_url . "cemeteryID=$cemeteryID&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
+    $pagenav = get_browseitems_nav($totrows, "showmap.php?cemeteryID=$cemeteryID&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
     if ($pagenav) {
         $body .= "<p>$pagenav</p>";
     }
@@ -296,7 +286,7 @@ if ($numrows) {
                     $noneprivate = 0;
                 }
 
-                $hslinktext .= "<a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+                $hslinktext .= "<a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                 $hslinktext .= getName($prow);
                 $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
                 if ($prow['deathdate']) {
@@ -320,16 +310,16 @@ if ($numrows) {
                     $noneprivate = 0;
                 }
 
-                $hslinktext .= "<a href=\"$familygroup_url" . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
+                $hslinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
                 $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
-                $hslinktext .= "<a href=\"$showsource_url" . "sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
+                $hslinktext .= "<a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
             } elseif ($prow['repoID'] != NULL) {
                 $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
-                $hslinktext .= "<a href=\"$showrepo_url" . "repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
+                $hslinktext .= "<a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } else {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
-                $hslinktext .= "<a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}";
+                $hslinktext .= "<a href=\"placesearch.php?psearch={$prow['personID']}$treestr\">{$prow['personID']}";
             }
             $hslinktext .= "</a>$hstext\n<br>\n";
         }
@@ -422,9 +412,9 @@ if ($cemetery['place']) {
 
             $name = getNameRev($row);
             $body .= "<tr><td class='databack'>$i.</td>\n";
-            $body .= "<td class='databack'><a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
+            $body .= "<td class='databack'><a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
 
-            $placetxt = $row['burialplace'] . " <a href=\"$placesearch_url" . "tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
 
             $deathdate = $row['burialdate'] ? $row['burialdate'] : $row['deathdate'];
             if ($row['burialdate']) {
@@ -438,7 +428,7 @@ if ($cemetery['place']) {
             $body .= "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
             $body .= "<td class='databack'>{$row['personID']}</td>\n";
             if ($numtrees > 1) {
-                $body .= "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>\n";
+                $body .= "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>\n";
             }
             $i++;
         }

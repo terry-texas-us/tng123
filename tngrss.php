@@ -13,10 +13,6 @@ $langstr = isset($_GET['lang']) ? "&amp;lang=$languages_path" . $_GET['lang'] : 
 
 include "version.php";
 
-$getperson_url = getURL("getperson", 1);
-$showmedia_url = getURL("showmedia", 1);
-$familygroup_url = getURL("familygroup", 1);
-
 $date = date("r");
 $timezone = date("O");
 
@@ -24,9 +20,9 @@ function doMedia($mediatypeID) {
     global $tngdomain, $langstr, $mediatypes_display, $timezone, $session_charset;
 
     global $media_table, $medialinks_table, $change_limit, $cutoffstr, $text, $families_table, $sources_table, $repositories_table, $citations_table, $nonames;
-    global $people_table, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $trees_table;
+    global $people_table, $trees_table;
     global $cemeteries_table;
-    global $getperson_url, $livedefault, $wherestr2, $events_table, $eventtypes_table;
+    global $livedefault, $wherestr2, $events_table, $eventtypes_table;
 
     if ($mediatypeID == "headstones") {
         $hsfields = ", $media_table.cemeteryID, cemname";
@@ -89,7 +85,7 @@ function doMedia($mediatypeID) {
             }
 
             if ($prow['personID2'] != NULL) {
-                $medialink = $getperson_url . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}";
+                $medialink = "getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}";
                 $mediatext = getName($prow);
                 if ($mediatypeID == "headstones") {
                     $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
@@ -101,16 +97,16 @@ function doMedia($mediatypeID) {
                     $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
                 }
             } elseif ($prow['familyID'] != NULL) {
-                $medialink = $familygroup_url . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}";
+                $medialink = "familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}";
                 $mediatext = "{$text['family']}: " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
                 $mediatext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
-                $medialink = $showsource_url . "sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}";
+                $medialink = "showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}";
             } elseif ($prow['repoID'] != NULL) {
                 $mediatext = $prow['reponame'] ? $text['repository'] . ": " . $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
-                $medialink = $showrepo_url . "repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}";
+                $medialink = "showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}";
             } else {
-                $medialink = $placesearch_url . "psearch={$prow['personID']}&amp;tree={$prow['gedcom']}";
+                $medialink = "placesearch.php?psearch={$prow['personID']}&amp;tree={$prow['gedcom']}";
                 $mediatext = $prow['personID'];
             }
             if ($prow['eventID']) {
@@ -275,7 +271,7 @@ if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a p
             $item .= "<title>";
             $item .= xmlcharacters($text['indinfo'] . ": " . $namestr . " (" . $row['personID'] . ")");
             $item .= "</title>\n";
-            $item .= "<link>" . "$tngdomain/$getperson_url" . "personID=" . $row['personID'] . "&amp;tree=" . $row['gedcom'] . $langstr . "</link>\n";
+            $item .= "<link>" . "$tngdomain/getperson.php?personID=" . $row['personID'] . "&amp;tree=" . $row['gedcom'] . $langstr . "</link>\n";
             $item .= "<description>";
             if ($birthdate || $birthplace) {
                 $item .= xmlcharacters("$birthdate, $birthplace") . "</description>\n";
@@ -314,7 +310,7 @@ if (!$personID) {
 
             $item = "\n<item>\n";
             $item .= "<title>" . xmlcharacters($text['family'] . ": " . getFamilyName($row)) . "</title>\n";
-            $item .= "<link>" . "$tngdomain/$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}$langstr" . "</link>\n";
+            $item .= "<link>" . "$tngdomain/familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}$langstr" . "</link>\n";
             $item .= "<description>";
 
             $item .= displayDate($row['marrdate']);

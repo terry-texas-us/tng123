@@ -107,7 +107,6 @@ function addCriteria($field, $value, $operator) {
     return $criteria;
 }
 
-$getperson_url = getURL("getperson", 1);
 if ($tree) {
     $allwhere = "people.gedcom = \"$tree\" AND people.gedcom = trees.gedcom ";
 } else {
@@ -347,7 +346,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $getperson_url . "personID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"getperson.php?personID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $rights = determineLivingPrivateRights($row);

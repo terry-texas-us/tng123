@@ -10,15 +10,6 @@ include "personlib.php";
 include "checklogin.php";
 include "showmedialib.php";
 
-$showmedia_url = getURL("showmedia", 1);
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showsource_url = getURL("showsource", 1);
-$showrepo_url = getURL("showrepo", 1);
-$browsemedia_url = getURL("browsemedia", 1);
-$placesearch_url = getURL("placesearch", 1);
-$histories_url = getURL("histories", 1);
-
 initMediaTypes();
 
 include "showmediaxmllib.php";

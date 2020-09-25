@@ -62,7 +62,6 @@ function addCriteria($field, $value, $operator) {
     return $criteria;
 }
 
-$showmap_url = getURL("showmap", 1);
 $frontmod = "LIKE";
 $allwhere = "WHERE 1=0";
 
@@ -183,7 +182,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $showmap_url . "cemeteryID=xxx&amp\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showmap.php?cemeteryID=xxx&amp\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $location = $row['city'];

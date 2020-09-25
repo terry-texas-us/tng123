@@ -5,23 +5,14 @@ include "tng_begin.php";
 include "functions.php";
 include "personlib.php";
 
-$browsealbums_url = getURL("browsealbums", 1);
-$browsealbums_noargs_url = getURL("browsealbums", 0);
-$showalbum_url = getURL("showalbum", 1);
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showsource_url = getURL("showsource", 1);
-$showrepo_url = getURL("showrepo", 1);
-$placesearch_url = getURL("placesearch", 1);
-
 function doMediaSearch($instance, $pagenav) {
-    global $text, $mediasearch, $browsealbums_noargs_url, $tree;
+    global $text, $mediasearch, $tree;
 
     $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
     $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\">\n";
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "<input type='submit' value=\"{$text['search']}\">\n";
-    $str .= "<input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsealbums_noargs_url';\">&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='browsealbums.php';\">&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     $str .= "</form>\n";
 
@@ -65,7 +56,7 @@ $treestr = $tree ? " {$text['tree']}: $tree" : "";
 $treestr = trim("$mediasearch $treestr");
 $treestr = $treestr ? " ($treestr)" : "";
 
-$logstring = "<a href=\"$browsealbums_url" . "tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch\">{$text['allalbums']}$treestr</a>";
+$logstring = "<a href=\"browsealbums.php?tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch\">{$text['allalbums']}$treestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -84,7 +75,7 @@ if ($totrows) {
     echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
 }
 
-$pagenav = get_browseitems_nav($totrows, $browsealbums_url . "mediasearch=$mediasearch&amp;offset", $maxsearchresults, $max_browsemedia_pages);
+$pagenav = get_browseitems_nav($totrows, "browsealbums.php?mediasearch=$mediasearch&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 echo doMediaSearch(1, $pagenav);
 echo "<br>\n";
 
@@ -189,19 +180,19 @@ while ($row = tng_fetch_assoc($result)) {
         }
 
         if ($prow['personID2'] != NULL) {
-            $medialinktext .= "<li><a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+            $medialinktext .= "<li><a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
             $medialinktext .= getName($prow) . "</a></li>\n";
         } elseif ($prow['sourceID'] != NULL) {
             $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
-            $medialinktext .= "<li><a href=\"$showsource_url" . "sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext</a></li>\n";
+            $medialinktext .= "<li><a href=\"showsource.php?sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext</a></li>\n";
         } elseif ($prow['repoID'] != NULL) {
             $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
-            $medialinktext .= "<li><a href=\"$showrepo_url" . "repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext</a></li>\n";
+            $medialinktext .= "<li><a href=\"showrepo.php?repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext</a></li>\n";
         } elseif ($prow['familyID'] != NULL) {
-            $medialinktext .= "<li><a href=\"$familygroup_url" . "familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow) . "</a></li>\n";
+            $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow) . "</a></li>\n";
         } else {
             $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
-            $medialinktext .= "<li><a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">{$prow['personID']}</a></li>\n";
+            $medialinktext .= "<li><a href=\"placesearch.php?psearch={$prow['personID']}$treestr\">{$prow['personID']}</a></li>\n";
         }
         $count++;
     }
@@ -217,7 +208,7 @@ while ($row = tng_fetch_assoc($result)) {
     $description = $row['description'];
     if ($showAlbumInfo) {
         $imgsrc = getAlbumPhoto($row['albumID'], $row['albumname']);
-        $alblink = "<a href=\"$showalbum_url" . "albumID={$row['albumID']}\">{$row['albumname']}</a>";
+        $alblink = "<a href=\"showalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a>";
     } else {
         $imgsrc = "";
         $alblink = $text['living'];

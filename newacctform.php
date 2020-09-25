@@ -12,8 +12,6 @@ $row = tng_fetch_assoc($userresult);
 $ucount = $row['ucount'];
 tng_free_result($userresult);
 
-$dataprotect_url = getURL("data_protection_policy", 0);
-
 $_SESSION['tng_email'] = generatePassword(1);
 
 echo "<!doctype html>\n";
@@ -200,7 +198,7 @@ if (!$tngconfig['disallowreg']) {
                         <?php
                         echo $text['consent'];
                         if ($tngconfig['dataprotect']) {
-                            echo "<br><a href=\"{$dataprotect_url}\" target=\"_blank\">{$text['dataprotect']}</a>\n";
+                            echo "<br><a href='data_protection_policy.php' target=\"_blank\">{$text['dataprotect']}</a>\n";
                         }
                     }
                     ?>

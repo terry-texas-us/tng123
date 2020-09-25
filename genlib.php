@@ -128,14 +128,12 @@ function tng_footer($flags) {
             if ($printfooter) {
                 $printfooter .= " - ";
             }
-            $suggest_url = getURL("suggest", 1);
             if ($tngconfig['dataprotect'] && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
-                $dataprotect_url = getURL("data_protection_policy", 0);
-                $data_protection_link = " | <a href=\"{$dataprotect_url}\" class=\"footer\" title=\"{$text['dataprotect']}\" target=\"_blank\">{$text['dataprotect']}</a>.\n";
+                $data_protection_link = " | <a href='data_protection_policy.php' class=\"footer\" title=\"{$text['dataprotect']}\" target=\"_blank\">{$text['dataprotect']}</a>.\n";
             } else {
                 $data_protection_link = "";
             }
-            $printfooter .= $text['maintby'] . " <a href=\"$suggest_url\" class=\"footer\" title=\"{$text['contactus']}\">$dbowner</a>.{$data_protection_link}";
+            $printfooter .= $text['maintby'] . " <a href='suggest.php' class=\"footer\" title=\"{$text['contactus']}\">$dbowner</a>.{$data_protection_link}";
         }
         echo "<p class=\"smaller\">" . $printfooter . "<br>\n$tngdomain</p>";
     } else {
@@ -380,8 +378,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
         if ($allow_edit && $rightbranch) {
             $choices .= doMenuItem($nexttab, "$editstr" . "ID=$entityID&amp;tree=$tree&amp;cw=1\" target=\"_blank", "sugg", $text['edit'], $currpage, "");
         } elseif ($emailaddr) {
-            $suggest_url = getURL("suggest", 1);
-            $choices .= doMenuItem($nexttab, "$suggest_url" . "enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", $text['suggest'], $currpage, "suggest");
+            $choices .= doMenuItem($nexttab, "suggest.php?enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", $text['suggest'], $currpage, "suggest");
         }
         if ($sitever == "mobile") {
             $menu .= "<li>\n<a class=\"here\">\n<select id=\"tngtabselect\" onchange=\"window.location.href=this.options[this.selectedIndex].value\">\n$choices</select>\n</a>\n</li>\n";
@@ -445,11 +442,11 @@ function tng_getLeftIcons() {
 
     $left_icons = "";
     if (empty($tngconfig['showhome'])) {
-        $left_icons .= tng_smallIcon(['url' => getURL($homepage, 0, ""), 'label' => $text['homepage'], 'id' => "home"]);
+        $left_icons .= tng_smallIcon(['url' => $homepage, 'label' => $text['homepage'], 'id' => "home"]);
         $tngconfig['menucount']++;
     }
     if (empty($tngconfig['showsearch'])) {
-        $params = ['url' => getURL("searchform", 0), 'label' => $text['search'], 'id' => "search"];
+        $params = ['url' => "searchform.php", 'label' => $text['search'], 'id' => "search"];
         if (empty($tngconfig['searchchoice']) && $sitever != "mobile") {
             $params['onclick'] = "return openSearch();";
         }
@@ -512,17 +509,17 @@ function tng_getRightIcons(): string {
 function tng_getFindMenu() {
     global $tngconfig, $time_offset;
 
-    $menu = tngddrow(getURL("surnames", 0), "surnames-icon", "", "surnames");
-    $menu .= tngddrow(getURL("firstnames", 0), "firstnames-icon", "", "firstnames");
-    $menu .= tngddrow(getURL("searchform", 0), "search-icon", "", "searchnames");
-    $menu .= tngddrow(getURL("famsearchform", 0), "fsearch-icon", "", "searchfams");
-    $menu .= tngddrow(getURL("searchsite", 0), "searchsite-icon", "", "searchsitemenu");
-    $menu .= tngddrow(getURL("places", 0), "places-icon", "", "places");
-    $menu .= tngddrow(getURL("anniversaries", 0), "dates-icon", "", "dates");
+    $menu = tngddrow("surnames.php", "surnames-icon", "", "surnames");
+    $menu .= tngddrow("firstnames.php", "firstnames-icon", "", "firstnames");
+    $menu .= tngddrow("searchform.php", "search-icon", "", "searchnames");
+    $menu .= tngddrow("famsearchform.php", "fsearch-icon", "", "searchfams");
+    $menu .= tngddrow("searchsite.php", "searchsite-icon", "", "searchsitemenu");
+    $menu .= tngddrow("places.php", "places-icon", "", "places");
+    $menu .= tngddrow("anniversaries.php", "dates-icon", "", "dates");
     $tngmonth = date("m", time() + (3600 * intval($time_offset)));
-    $menu .= tngddrow(getURL("calendar", 1) . "m=$tngmonth", "calendar-icon", "", "calendar");
-    $menu .= tngddrow(getURL("cemeteries", 0), "cemeteries-icon", "", "cemeteries");
-    $menu .= tngddrow(getURL("bookmarks", 0), "bookmarks-icon", "", "bookmarks");
+    $menu .= tngddrow("calendar.php?m=$tngmonth", "calendar-icon", "", "calendar");
+    $menu .= tngddrow("cemeteries.php", "cemeteries-icon", "", "cemeteries");
+    $menu .= tngddrow("bookmarks.php", "bookmarks-icon", "", "bookmarks");
 
     $tngconfig['menucount'] += 8;
 
@@ -540,12 +537,12 @@ function tng_getMediaMenu() {
     $menu = "";
     foreach ($mediatypes as $mediatype) {
         if (!$mediatype['disabled']) {
-            $menu .= tngddrow(getURL("browsemedia", 1) . "mediatypeID=" . $mediatype['ID'], $mediatype['ID'] . "-icon", $mediatype['icon'], $mediatype['display'], true);
+            $menu .= tngddrow("browsemedia.php?mediatypeID=" . $mediatype['ID'], $mediatype['ID'] . "-icon", $mediatype['icon'], $mediatype['display'], true);
             $tngconfig['menucount']++;
         }
     }
-    $menu .= tngddrow(getURL("browsealbums", 0), "albums-icon", "", "albums");
-    $menu .= tngddrow(getURL("browsemedia", 0), "media-icon", "", "allmedia");
+    $menu .= tngddrow("browsealbums.php", "albums-icon", "", "albums");
+    $menu .= tngddrow("browsemedia.php", "media-icon", "", "allmedia");
     $tngconfig['menucount'] += 2;
 
     global $mediamenulinks;
@@ -559,24 +556,24 @@ function tng_getMediaMenu() {
 function tng_getInfoMenu($title) {
     global $allow_admin, $tngconfig;
 
-    $menu = tngddrow(getURL("whatsnew", 0), "whatsnew-icon", "", "whatsnew");
-    $menu .= tngddrow(getURL("mostwanted", 0), "mw-icon", "", "mostwanted");
-    $menu .= tngddrow(getURL("reports", 0), "reports-icon", "", "reports");
-    $menu .= tngddrow(getURL("statistics", 0), "stats-icon", "", "databasestatistics");
-    $menu .= tngddrow(getURL("browsetrees", 0), "trees-icon", "", "trees");
-    $menu .= tngddrow(getURL("browsebranches", 0), "branches-icon", "", "branches");
-    $menu .= tngddrow(getURL("browsenotes", 0), "notes-icon", "", "notes");
-    $menu .= tngddrow(getURL("browsesources", 0), "sources-icon", "", "sources");
-    $menu .= tngddrow(getURL("browserepos", 0), "repos-icon", "", "repositories");
+    $menu = tngddrow("whatsnew.php", "whatsnew-icon", "", "whatsnew");
+    $menu .= tngddrow("mostwanted.php", "mw-icon", "", "mostwanted");
+    $menu .= tngddrow("reports.php", "reports-icon", "", "reports");
+    $menu .= tngddrow("statistics.php", "stats-icon", "", "databasestatistics");
+    $menu .= tngddrow("browsetrees.php", "trees-icon", "", "trees");
+    $menu .= tngddrow("browsebranches.php", "branches-icon", "", "branches");
+    $menu .= tngddrow("browsenotes.php", "notes-icon", "", "notes");
+    $menu .= tngddrow("browsesources.php", "sources-icon", "", "sources");
+    $menu .= tngddrow("browserepos.php", "repos-icon", "", "repositories");
     if (empty($tngconfig['hidedna'])) {
-        $menu .= tngddrow(getURL("browse_dna_tests", 0), "dna-icon", "", "dna_tests");
+        $menu .= tngddrow("browse_dna_tests.php", "dna-icon", "", "dna_tests");
     }
     if ($allow_admin) {
         $menu .= tngddrow("admin.php", "admin-icon", "", "administration");
-        $menu .= tngddrow(getURL("showlog", 0), "unlock-icon", "", "mnushowlog");
+        $menu .= tngddrow("showlog.php", "unlock-icon", "", "mnushowlog");
         $tngconfig['menucount'] += 2;
     }
-    $menu .= tngddrow(getURL("suggest", 1) . "page=" . urlencode(str_replace("?", "", $title)), "contact-icon", "", "contactus");
+    $menu .= tngddrow("suggest.php?page=" . urlencode(str_replace("?", "", $title)), "contact-icon", "", "contactus");
     $tngconfig['menucount'] += 10;  //everything except the 2 admin links
 
     global $infomenulinks;
@@ -631,7 +628,7 @@ function tng_getLangMenu($title) {
         if ($numlangs > 1) {
             while ($row = tng_fetch_assoc($result)) {
                 $prefix = $languages_path . $row['folder'] == $mylanguage ? "*" : "";
-                $menu .= tngddrow(getURL("savelanguage2", 1) . "newlanguage=" . $row['languageID'], "", "", $prefix . $row['display'], true);
+                $menu .= tngddrow("savelanguage2.php?newlanguage=" . $row['languageID'], "", "", $prefix . $row['display'], true);
                 $tngconfig['menucount']++;
             }
             if ($menu) {
@@ -826,13 +823,9 @@ function tng_icons($instance, $title = "") {
             $fullmenu .= "</div>\n";
 
             if (empty($tngconfig['searchchoice']) && empty($tngconfig['showsearch'])) {
-                $searchform_url = getURL("searchform", 0);
-                $famsearch_url = getURL("famsearchform", 0);
-                $searchsite_url = getURL("searchsite", 0);
-
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
                 $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"img/tng_close.gif\" alt=\"\"/></a>";
-                $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href=\"$searchform_url\">{$text['mnuadvancedsearch']}</a> | <a href=\"$famsearch_url\">{$text['searchfams']}</a> | <a href=\"$searchsite_url\">{$text['searchsitemenu']}</a></h3>";
+                $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href='searchform.php'>{$text['mnuadvancedsearch']}</a> | <a href='famsearchform.php'>{$text['searchfams']}</a> | <a href='searchsite.php'>{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type='text' name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
                 $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type='text' name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
@@ -992,9 +985,6 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
 function getMediaHREF($row, $mlflag) {
     global $mediatypes_assoc, $mediapath, $htmldocs, $imagetypes, $videotypes, $recordingtypes;
 
-    $histories_url = getURL("histories", 1);
-    $showmedia_url = getURL("showmedia", 1);
-
     $uselink = "";
 
     if ($row['form']) {
@@ -1007,7 +997,7 @@ function getMediaHREF($row, $mlflag) {
     $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$thismediatype] : $mediapath;
 
     if (!$row['abspath'] && (in_array($form, $imagetypes) || in_array($form, $videotypes) || in_array($form, $recordingtypes) || !$form)) {
-        $uselink = $showmedia_url . "mediaID=" . $row['mediaID'];
+        $uselink = "showmedia.php?mediaID=" . $row['mediaID'];
         if ($mlflag == 1) {
             $uselink .= "&amp;medialinkID=" . $row['medialinkID'];
         } elseif ($mlflag == 2) {

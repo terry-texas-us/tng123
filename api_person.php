@@ -37,7 +37,7 @@ $namestr = getName($row);
 
 $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
 
-writelog("<a href=\"$getperson_url" . "personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
+writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
 
 $events = array();
 echo api_person($row, $fullevents);

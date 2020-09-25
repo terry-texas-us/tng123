@@ -129,8 +129,6 @@ class surname_cloud
         // Clean up
         tng_free_result($result);
 
-        $search_url = getURL("search", 1);
-
         // Note: the appearance of the names is controlled by class surnames-cloud which is defined in templatestyle.css
         $output = "<div class='surnames-cloud'>\n";
         foreach ($surnames as $name) {
@@ -139,7 +137,7 @@ class surname_cloud
                 $name['count'] = $name['count'] . ' ' . $text['individuals'];
                 $output .= "<span class='surnames-cloud size" . $name['class'] . "'>";
                 $output .= "<a class='surnames-cloud size" . $name['class'] . "' ";
-                $output .= "href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treeBranchUrlString\" title=\"{$name['count']}\">";
+                $output .= "href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treeBranchUrlString\" title=\"{$name['count']}\">";
                 $output .= $name['surname'];
                 $output .= "</a>";
                 $output .= "</span>\n";

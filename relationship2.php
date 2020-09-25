@@ -6,6 +6,4 @@ include "getlang.php";
 
 include "checklogin.php";
 
-$relationship_url = getURL("relationship", 1);
-
-header("Location: " . "$relationship_url" . $_SERVER['QUERY_STRING']);
+header("Location: relationship.php?" . $_SERVER['QUERY_STRING']);

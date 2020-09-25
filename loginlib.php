@@ -38,8 +38,7 @@ echo $formstr;
 </form>
 <br style="clear:both;">
 <?php
-$sendlogin_url = getURL("sendlogin", 0);
-$formstr = getFORM("", "post", "form2", "", "return sendLogin(this, '$sendlogin_url');");
+$formstr = getFORM("", "post", "form2", "", "return sendLogin(this, 'sendlogin.php');");
 echo $formstr;
 ?>
 <div class="normal" id="forgot" style="clear:both;">

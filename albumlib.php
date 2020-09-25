@@ -2,7 +2,7 @@
 
 function getAlbumPhoto($albumID, $albumname) {
     global $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
-    global $mediatypes_assoc, $mediapath, $showalbum_url, $tngconfig, $sitever, $livedefault, $tree;
+    global $mediatypes_assoc, $mediapath, $tngconfig, $sitever, $livedefault, $tree;
 
 
     $query2 = "SELECT gedcom, path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson, media.gedcom ";
@@ -81,7 +81,7 @@ function getAlbumPhoto($albumID, $albumname) {
             $imgsrc = "<div class=\"media-img\">\n";
             $imgsrc .= "<div class=\"media-prev\" id=\"prev$albumID\" style=\"display:none;\"></div>\n";
             $imgsrc .= "</div>\n";
-            $imgsrc .= "<a href=\"$showalbum_url" . "albumID=$albumID\" title=\"{$text['albclicksee']}\"";
+            $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
             if (function_exists('imageJpeg')) {
                 $imgsrc .= " onmouseover=\"showPreview('{$trow['mediaID']}','','" . urlencode("$tusefolder/$treestr{$trow['path']}") . "','');\" onmouseout=\"closePreview('$albumID','','$sitever');\" onclick=\"closePreview('$albumID','');\"";
             }

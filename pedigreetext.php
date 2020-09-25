@@ -8,19 +8,6 @@ if (!$personID) {
     die("no args");
 }
 
-$getperson_url = getURL("getperson", 1);
-$searchform_noargs_url = getURL("searchform", 0);
-$descend_url = getURL("descend", 1);
-$gedform_url = getURL("gedform", 1);
-$ahnentafel_url = getURL("ahnentafel", 1);
-$pedigree_url = getURL("pedigree", 1);
-$pedigreetext_url = getURL("pedigreetext", 1);
-$extrastree_url = getURL("extrastree", 1);
-$ultraped_url = getURL("ultraped", 1);
-$pdfform_url = getURL("rpt_pdfform", 1);
-$vertical_url = getURL("verticalchart", 1);
-$fan_url = getURL("fan", 1);
-
 if (isset($generations)) {
     $generations = intval($generations);
 }
@@ -37,7 +24,7 @@ function showBlank($pedborder) {
 
 function displayIndividual($key, $generation, $slot) {
     global $tree, $generations, $marrdate, $marrplace, $pedmax, $text;
-    global $getperson_url, $pedigree_url, $parentset, $righttree;
+    global $parentset, $righttree;
 
     $nextslot = $slot * 2;
     $name = "";
@@ -93,11 +80,11 @@ function displayIndividual($key, $generation, $slot) {
     echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
     echo "<tr>\n";
     $pedborder = $slot % 2 && $slot != 1 ? "class=\"nw pedborderleft\"" : "";
-    echo "<td colspan=\"2\" $pedborder><span class='normal'>&nbsp;$slot. <a href=\"$getperson_url" . "personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
+    echo "<td colspan=\"2\" $pedborder><span class='normal'>&nbsp;$slot. <a href=\"getperson.php?personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
 
     //arrow goes here in own cell
     if ($nextslot >= $pedmax && $row['famc']) {
-        echo "<td><span class='normal'><a href=\"$pedigree_url" . "personID=$key&amp;tree=$tree&amp;display=textonly\" title=\"{$text['popupnote2']}\">=&gt;</a></span></td>\n";
+        echo "<td><span class='normal'><a href=\"pedigree.php?personID=$key&amp;tree=$tree&amp;display=textonly\" title=\"{$text['popupnote2']}\">=&gt;</a></span></td>\n";
     }
 
     echo "</tr>\n";
@@ -263,8 +250,8 @@ $pedmax = pow(2, intval($generations));
 $key = $personID;
 
 $gentext = xmlcharacters($text['generations']);
-writelog("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $logname ($personID)") . "</a> $generations " . $gentext);
-preparebookmark("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $pedname ($personID)") . "</a> $generations " . $gentext);
+writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $logname ($personID)") . "</a> $generations " . $gentext);
+preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $pedname ($personID)") . "</a> $generations " . $gentext);
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
@@ -280,7 +267,7 @@ $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row[
 echo tng_DrawHeading($photostr, $pedname, getYears($row));
 
 $innermenu = $text['generations'] . ": &nbsp;";
-$innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='$pedigreetext_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
+$innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $generations) {
@@ -289,17 +276,17 @@ for ($i = 1; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink\" id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$vertical_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink\" id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink\" id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$pedigreetext_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink3\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$ahnentafel_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$fan_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$extrastree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\">{$text['media']}</a>\n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink\" id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink\" id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink\" id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink3\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\">{$text['media']}</a>\n";
 if ($generations <= 6 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-    $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width:350, height:350}); return false;\">PDF</a>\n";
+    $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
 echo getFORM("pedigree", "", "form1", "form1");

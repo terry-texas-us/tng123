@@ -4,15 +4,8 @@
 $textpart = "stats";
 include "tng_begin.php";
 
-$search_url = getURL("search", 1);
-$surnames_oneletter_url = getURL("surnames-oneletter", 1);
-$surnames_all_url = getURL("surnames-all", 1);
-$getperson_url = getURL("getperson", 1);
-$showtree_url = getURL("showtree", 1);
-$statistics_url = getURL("statistics", 1);
-
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$statistics_url" . "tree=$tree\">" . xmlcharacters($text['databasestatistics'] . $treestr) . "</a>";
+$logstring = "<a href=\"statistics.php?tree=$tree\">" . xmlcharacters($text['databasestatistics'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -277,7 +270,7 @@ tng_header($text['databasestatistics'], $flags);
         echo "<tr>";
         echo "<td class='databack'><span class='normal'>" . $text['earliestbirth'];
         if ($firstallowed) {
-            echo " (<a href=\"$getperson_url" . "personID=$firstbirthpersonid&amp;tree=$firstbirthgedcom\">$firstbirthfirstname $firstbirthlnprefix $firstbirthlastname</a>)";
+            echo " (<a href=\"getperson.php?personID=$firstbirthpersonid&amp;tree=$firstbirthgedcom\">$firstbirthfirstname $firstbirthlnprefix $firstbirthlastname</a>)";
         }
         echo "&nbsp;</span></td>\n";
         echo "<td class='databack' align=\"right\"><span class='normal'>" . displayDate($firstbirthdate) . " &nbsp;</span></td>";
@@ -339,7 +332,7 @@ tng_header($text['databasestatistics'], $flags);
                 }
             }
             echo "<tr>";
-            echo "<td class='databack'><span class='normal'><a href=\"$getperson_url" . "personID=$personid&amp;tree=$gedcom\">";
+            echo "<td class='databack'><span class='normal'><a href=\"getperson.php?personID=$personid&amp;tree=$gedcom\">";
             echo getName($line);
             echo "</a></span></td>\n";
             echo "<td class='databack' align=\"right\"><span class='normal'>";
@@ -365,7 +358,7 @@ tng_header($text['databasestatistics'], $flags);
 
         if ($tree && !$treerow['secret']) {
             echo "<br>\n";
-            echo "<span class='normal'><a href=\"$showtree_url" . "tree=$tree\">{$text['treedetail']}</a></span>\n";
+            echo "<span class='normal'><a href=\"showtree.php?tree=$tree\">{$text['treedetail']}</a></span>\n";
             echo "<br>\n";
         }
 

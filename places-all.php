@@ -2,23 +2,14 @@
 $textpart = "places";
 include "tng_begin.php";
 
-$placesearch_url = getURL("placesearch", 1);
-$places_oneletter_url = getURL("places-oneletter", 1);
-
 if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
     $treestr3 = "tree=$tree&";
-    $places_all_url = getURL("places-all", 1);
-    $places_url = getURL("places", 1);
-    $heatmap_url = getURL("heatmap", 1);
-    $logstring = "<a href=\"$places_all_url" . "$treestr2\">{$text['allplaces']} ({$text['tree']}: $tree)</a>";
+    $logstring = "<a href=\"places-all.php?$treestr2\">{$text['allplaces']} ({$text['tree']}: $tree)</a>";
 } else {
     $treestr = $treestr2 = $treestr3 = "";
-    $places_all_url = getURL("places-all", 0);
-    $places_url = getURL("places", 0);
-    $heatmap_url = getURL("heatmap", 0);
-    $logstring = "<a href=\"$places_all_url\">{$text['allplaces']}</a>";
+    $logstring = "<a href='places-all.php'>{$text['allplaces']}</a>";
 }
 writelog($logstring);
 preparebookmark($logstring);
@@ -82,7 +73,7 @@ if ($result) {
         ?>
         </form>
 
-        <br><?php echo "<a href=\"$places_url" . "$treestr2\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$heatmap_url{$treestr2}\">{$text['heatmap']}</a>"; ?>
+        <br><?php echo "<a href=\"places.php?$treestr2\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\">{$text['heatmap']}</a>"; ?>
     </div>
     <br>
 
@@ -146,9 +137,9 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
 
-                            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
-                                $name = "<a href=\"$places_oneletter_url" . $poffset;
+                                $name = "<a href=\"places-oneletter.php?" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {
                                     $name .= "tree={$place['gedcom']}&";
                                 }

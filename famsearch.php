@@ -6,13 +6,6 @@ global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
 include "searchlib.php";
 
-$searchform_url = getURL("famsearchform", 1);
-$search_url = getURL("famsearch", 1);
-$placesearch_url = getURL("placesearch", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showtree_url = getURL("showtree", 1);
-$pedigree_url = getURL("pedigree", 1);
-
 @set_time_limit(0);
 $maxsearchresults = $nr ? $nr : ($_SESSION['tng_nr'] ? $_SESSION['tng_nr'] : $maxsearchresults);
 
@@ -292,7 +285,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 if (!$numrows) {
     $msg = $text['noresults'] . " $querystring. " . $text['tryagain'] . ".";
-    header("Location: " . "$searchform_url" . "msg=" . urlencode($msg));
+    header("Location: famsearchform.php?msg=" . urlencode($msg));
     exit;
 }
 echo "<!doctype html>\n";
@@ -306,7 +299,7 @@ if ($sitever != "mobile") {
     <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript">
         // <![CDATA[
-        var ajx_fampreview = '<?php echo getURL("ajx_fampreview", 0);?>';
+        const ajx_fampreview = 'ajx_fampreview.php';
         // ]]>
     </script>
     <?php
@@ -316,7 +309,7 @@ if ($sitever != "mobile") {
     <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
 <?php
-$logstring = "<a href=\"$search_url" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
+$logstring = "<a href=\"famsearch.php?" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -324,7 +317,7 @@ $numrowsplus = $numrows + $offset;
 
 echo "<p class='normal'>" . $text['matches'] . " $offsetplus " . $text['to'] . " $numrowsplus " . $text['of'] . " " . number_format($totrows) . " $querystring</p>";
 
-$pagenav = get_browseitems_nav($totrows, "$search_url" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
+$pagenav = get_browseitems_nav($totrows, "famsearch.php?" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
 echo "<p class='normal'>$pagenav</p>";
 
 $header = $headerr = "";
@@ -415,7 +408,7 @@ while ($row = tng_fetch_assoc($result)) {
     $fname = getNameRev($frow);
     $mname = getNameRev($mrow);
 
-    $famidstr = "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
+    $famidstr = "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
 
     echo "<tr>";
     echo "<td class='databack'>$i</td>\n";
@@ -436,7 +429,7 @@ while ($row = tng_fetch_assoc($result)) {
     }
 
     if ($numtrees > 1) {
-        echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+        echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
     }
 
     echo "</tr>\n";

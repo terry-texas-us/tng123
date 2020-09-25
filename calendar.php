@@ -12,12 +12,7 @@
 $textpart = "search";
 include "tng_begin.php";
 
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$anniversaries_url = getURL("anniversaries", 1);
-$calendar_url = getURL("calendar", 1);
-
-$logstring = "<a href=\"$calendar_url" . "living=$living&amp;hide=$hide&amp;tree=$tree&amp;m=$m&amp;year=$year\">" . xmlcharacters($text['calendar']) . "</a>";
+$logstring = "<a href=\"calendar.php?living=$living&amp;hide=$hide&amp;tree=$tree&amp;m=$m&amp;year=$year\">" . xmlcharacters($text['calendar']) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -154,7 +149,7 @@ if (!empty($where)) {
                         $date = substr($row[$field], 5);
                         $yearval = substr($row[$key . 'date'], -4);
                         $year = is_numeric($yearval) ? " ($yearval)" : "";
-                        $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="' . $getperson_url . 'personID=' . $row['personID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
+                        $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="getperson.php?personID=' . $row['personID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
 
                         if (strpos($date, "-00")) {
                             $html = '<span class="nw">' . $html . '</span>';
@@ -236,7 +231,7 @@ if (!empty($where)) {
                         $date = substr($row[$field], 5);
                         $yearval = substr($row[$key . 'date'], -4);
                         $year = is_numeric($yearval) ? " ($yearval)" : "";
-                        $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="' . $familygroup_url . 'familyID=' . $row['familyID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
+                        $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="familygroup.php?familyID=' . $row['familyID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
 
                         if (strpos($date, "-00")) {
                             $html = '<span class="nw">' . $html . '</span>';
@@ -349,9 +344,9 @@ if (!empty($where)) {
                 $tag = $row['tag'];
 
                 if ($isFam) {
-                    $html = '<img src="' . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="' . $familygroup_url . 'familyID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
+                    $html = '<img src="' . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="familygroup.php?familyID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
                 } else {
-                    $html = '<img src="' . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="' . $getperson_url . 'personID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
+                    $html = '<img src="' . 'img/' . $calEvent[$tag] . '" class="calIcon" alt=""><a href="getperson.php?personID=' . $row['persfamID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>';
                 }
 
                 $date = substr($row['eventdatetr'], 5);
@@ -395,7 +390,7 @@ if ($allow_living) {
     <div style="text-align: right;">
         <div style="float: left;">
             <?php
-            echo "<a href=\"{$anniversaries_url}tngmonth=$m&amp;tngneedresults=1\"><b>&gt;&gt; {$text['anniversaries']}</b></a>";
+            echo "<a href=\"anniversaries.php?tngmonth=$m&amp;tngneedresults=1\"><b>&gt;&gt; {$text['anniversaries']}</b></a>";
             ?>
         </div>
         <?php
@@ -437,7 +432,7 @@ if ($allow_living) {
 
                     $class = ($thisYear == $current['year'] && $thisMonth == $current['mon'] && $thisDay == $current['mday']) ? 'calToday' : 'calDay';
                     echo "<td class=\"$class\">\n";
-                    echo "<a href=\"{$anniversaries_url}tngdaymonth=$thisDay&amp;tngmonth=$thisMonth&amp;tngneedresults=1\" class=\"calDate\">$thisDay</a><br>\n<div class=\"calEvents\">\n";
+                    echo "<a href=\"anniversaries.php?tngdaymonth=$thisDay&amp;tngmonth=$thisMonth&amp;tngneedresults=1\" class=\"calDate\">$thisDay</a><br>\n<div class=\"calEvents\">\n";
 
                     $thisDate = "$thisMonth-" . sprintf("%02d", $thisDay);
                     if (array_key_exists($thisDate, $events)) {
@@ -449,7 +444,7 @@ if ($allow_living) {
                             foreach (array_keys($events[$thisDate][$event]) as $ged) {
                                 foreach (array_keys($events[$thisDate][$event][$ged]) as $id) {
                                     if ($j >= $truncateDateAfter) {
-                                        echo "<a href=\"{$anniversaries_url}tngdaymonth=$thisDay&amp;tngmonth=$thisMonth&amp;tngneedresults=1\" class=\"calMore\">" . $text['more'] . "...</a>\n";
+                                        echo "<a href=\"anniversaries.php?tngdaymonth=$thisDay&amp;tngmonth=$thisMonth&amp;tngneedresults=1\" class=\"calMore\">" . $text['more'] . "...</a>\n";
                                         $j++;
                                         continue 3;
                                     }

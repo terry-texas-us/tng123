@@ -4,7 +4,7 @@ include "tng_begin.php";
 
 //if required login, redirect to search people?
 if ($requirelogin && !$currentuser) {
-    header("Location:" . getURL("searchform", 0));
+    header("Location: searchform.php");
     exit;
 }
 echo "<!doctype html>\n";

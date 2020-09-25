@@ -4,24 +4,15 @@ include "tng_begin.php";
 
 include "functions.php";
 
-$browsetrees_url = getURL("browsetrees", 1);
-$showtree_url = getURL("showtree", 1);
-$search_url = getURL("search", 1);
-$famsearch_url = getURL("famsearch", 1);
-$browsesources_url = getURL("browsesources", 1);
-$switchtree_url = getURL("switchtree", 1);
-
 function doTreeSearch($instance, $pagenav) {
     global $text, $treesearch;
-
-    $browsetrees_noargs_url = getURL("browsetrees", 0);
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browsetrees", "GET", "TreeSearch$instance", "");
     $str .= "<input type='text' name=\"treesearch\" value=\"$treesearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($treesearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsetrees_noargs_url\">{$text['browsealltrees']}</a>";
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browsetrees.php'>{$text['browsealltrees']}</a>";
     }
     $str .= "</form></span>\n";
 
@@ -88,7 +79,7 @@ if ($totrows) {
     echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
-$pagenav = get_browseitems_nav($totrows, $browsetrees_url . "treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);
+$pagenav = get_browseitems_nav($totrows, "browsetrees.php?treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);
 if ($pagenav || $treesearch) {
     echo doTreeSearch(1, $pagenav);
 }
@@ -147,17 +138,17 @@ if ($sitever != "standard") {
         tng_free_result($srcresult);
 
         echo "<tr><td class='databack'>$i</td>\n";
-        echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+        echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
         echo "<td class='databack'>{$row['description']}&nbsp;</td>";
-        echo "<td class='databack' align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}\">" . number_format($row['pcount']) . "</a>&nbsp;</td>";
-        echo "<td class='databack' align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
-        echo "<td class='databack' align=\"right\"><a href=\"$browsesources_url" . "tree={$row['gedcom']}\">" . number_format($srcrow['scount']) . "</a>&nbsp;</td>";
+        echo "<td class='databack' align=\"right\"><a href=\"search.php?tree={$row['gedcom']}\">" . number_format($row['pcount']) . "</a>&nbsp;</td>";
+        echo "<td class='databack' align=\"right\"><a href=\"famsearch.php?tree={$row['gedcom']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
+        echo "<td class='databack' align=\"right\"><a href=\"browsesources.php?tree={$row['gedcom']}\">" . number_format($srcrow['scount']) . "</a>&nbsp;</td>";
         if ($numtrees > 1) {
             echo "<td class='databack' align=\"right\">";
             if ($row['gedcom'] == $assignedtree) {
                 echo $admtext['active'];
             } elseif (in_array($row['gedcom'], $trees)) {
-                echo "<a href=\"$switchtree_url" . "newtree={$row['gedcom']}&ret={$homepage}\">{$text['switch']}</a>";
+                echo "<a href=\"switchtree.php?newtree={$row['gedcom']}&ret={$homepage}\">{$text['switch']}</a>";
             }
             echo "</td>";
         }

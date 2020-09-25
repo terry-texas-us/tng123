@@ -8,35 +8,23 @@ if (!$personID && !isset($needperson)) {
     die("no args");
 }
 
-$pedigreetext_url = getURL("pedigreetext", 1);
-$ahnentafel_url = getURL("ahnentafel", 1);
-$vertical_url = getURL("verticalchart", 1);
-$fan_url = getURL("fan", 1);
-$editperson_url = getURL("ajx_editperson", 1);
 if ($display == "textonly" || (!$display && $pedigree['usepopups'] == -1)) {
-    header("Location: $pedigreetext_url" . "personID=$personID&tree=$tree&generations=$generations");
+    header("Location: pedigreetext.php?personID=$personID&tree=$tree&generations=$generations");
     exit;
 } elseif ($display == "ahnentafel" || (!$display && $pedigree['usepopups'] == 3)) {
-    header("Location: $ahnentafel_url" . "personID=$personID&tree=$tree&generations=$generations");
+    header("Location: ahnentafel.php?personID=$personID&tree=$tree&generations=$generations");
     exit;
 } elseif ($display == "vertical" || (!$display && $pedigree['usepopups'] == 4)) {
-    header("Location: $vertical_url" . "personID=$personID&tree=$tree&generations=$generations");
+    header("Location: verticalchart.php?personID=$personID&tree=$tree&generations=$generations");
     exit;
 } elseif ($display == "fan" || (!$display && $pedigree['usepopups'] == 5)) {
-    header("Location: $fan_url" . "personID=$personID&tree=$tree&generations=$generations");
+    header("Location: fan.php?personID=$personID&tree=$tree&generations=$generations");
     exit;
 }
 
 if ($allow_edit || $allow_add) {
     include "$mylanguage/admintext.php";
 }
-
-$pedigree_url = getURL("pedigree", 1);
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$extrastree_url = getURL("extrastree", 1);
-$pdfform_url = getURL("rpt_pdfform", 1);
-
 $flags['scripting'] = "";
 
 $result = getPersonFullPlusDates($tree, $personID);
@@ -454,12 +442,12 @@ $flags['scripting'] .= "<script type=\"text/javascript\">\n//<![CDATA[\n";
 $flags['scripting'] .= "var lastpopup = '';\n";
 $flags['scripting'] .= "var tree = '$tree';\n";
 $flags['scripting'] .= "var tnglitbox;\n";
-$flags['scripting'] .= "var getperson_url = '$getperson_url';\n";
-$flags['scripting'] .= "var pedigree_url = '$pedigree_url';\n";
-$flags['scripting'] .= "var pedigreetext_url = '$pedigreetext_url';\n";
-$flags['scripting'] .= "var extrastree_url = '$extrastree_url';\n";
-$flags['scripting'] .= "var ahnentafel_url = '$ahnentafel_url';\n";
-$flags['scripting'] .= "var familygroup_url = '$familygroup_url';\n";
+$flags['scripting'] .= "var getperson_url = 'getperson.php?';\n";
+$flags['scripting'] .= "var pedigree_url = 'pedigree.php?';\n";
+$flags['scripting'] .= "var pedigreetext_url = 'pedigreetext.php?';\n";
+$flags['scripting'] .= "var extrastree_url = 'extrastree.php?';\n";
+$flags['scripting'] .= "var ahnentafel_url = 'ahnentafel.php?';\n";
+$flags['scripting'] .= "var familygroup_url = 'familygroup.php?';\n";
 $flags['scripting'] .= "var slotceiling = $pedmax;\n";
 $flags['scripting'] .= "var slotceiling_minus1 = " . (pow(2, $generations - 1)) . ";\n";
 $flags['scripting'] .= "var display = '$display';\n";
@@ -479,7 +467,7 @@ $flags['scripting'] .= "var leftarrowimg = '{$pedigree['leftarrowlink']}';\n";
 $flags['scripting'] .= "var namepad = '$namepad';\n";
 $flags['scripting'] .= "var allow_add = $allow_add;\n";
 $flags['scripting'] .= "var allow_edit = $allow_edit;\n";
-$flags['scripting'] .= "var editperson_url = '$editperson_url';\n";
+$flags['scripting'] .= "var editperson_url = 'ajx_editperson.php?';\n";
 $flags['scripting'] .= "var chartlink = '{$pedigree['chartlink']}';\n";
 $flags['scripting'] .= "var personID = '$personID';\n";
 $flags['scripting'] .= "var parentset = $parentset;\n";
@@ -509,7 +497,7 @@ $flags['scripting'] .= "var txt_newped = '{$text['popupnote2']}';\n";
 $flags['scripting'] .= "var families = new Array(), people = new Array(); endslots = new Array(), slots = new Array();\n";
 $flags['scripting'] .= "var endslotctr;\n";
 $flags['scripting'] .= "var firstperson = '', topparams = '', botparams = '', toplinks = '', botlinks = '';\n";
-$flags['scripting'] .= "var pedjsonfile = '" . getURL("ajx_pedjson", 1) . "';\n";
+$flags['scripting'] .= "var pedjsonfile = 'ajx_pedjson.php?';\n";
 $flags['scripting'] .= "//]]>\n</script>\n";
 $flags['scripting'] .= "<script src=\"js/tngpedigree.js\" type=\"text/javascript\"></script>\n";
 if ($allow_edit || $allow_add) {
@@ -527,8 +515,8 @@ showBox(1, $slot);
 $flags['scripting'] .= "</style>\n";
 
 $gentext = xmlcharacters($text['generations']);
-writelog("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $logname ($personID)") . "</a> $generations " . $gentext);
-preparebookmark("<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $generations " . $gentext);
+writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $logname ($personID)") . "</a> $generations " . $gentext);
+preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $generations " . $gentext);
 
 $flags['tabs'] = $tngconfig['tabs'];
 
@@ -545,7 +533,7 @@ $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row[
 echo tng_DrawHeading($photostr, $pedname, getYears($row));
 
 $innermenu = $text['generations'] . ": &nbsp;";
-$innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='$pedigree_url" . "personID=' + firstperson + '&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
+$innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='pedigree.php?personID=' + firstperson + '&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $generations) {
@@ -554,17 +542,17 @@ for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink$slinkstyle\" id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$vertical_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink$chtlinkstyle\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink$clinkstyle\" id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$pedigree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink$blinkstyle\" id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$pedigreetext_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\" id=\"textlnk\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$ahnentafel_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\" id=\"ahnlnk\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$fan_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$extrastree_url" . "personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\" id=\"extralnk\">{$text['media']}</a>\n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink$slinkstyle\" id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink$chtlinkstyle\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink$clinkstyle\" id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink$blinkstyle\" id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\" id=\"textlnk\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\" id=\"ahnlnk\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\" id=\"extralnk\">{$text['media']}</a>\n";
 if ($generations <= 6 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-    $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ped&amp;personID=' + firstperson + '&amp;tree=$tree&amp;generations=$generations', {width:350, height:350}); return false;\">PDF</a>\n";
+    $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ped&amp;personID=' + firstperson + '&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
 echo getFORM("pedigree", "", "form1", "form1");

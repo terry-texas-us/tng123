@@ -2,8 +2,6 @@
 $textpart = "getperson";
 include "tng_begin.php";
 
-$deletebookmark_url = getURL("ajx_deletebookmark", 1);
-
 $newroot = preg_replace("/\//", "", $rootpath);
 $newroot = preg_replace("/ /", "", $newroot);
 $newroot = preg_replace("/\./", "", $newroot);
@@ -26,7 +24,7 @@ if (isset($_COOKIE[$ref])) {
     $bookmarks = explode("|", $_COOKIE[$ref]);
     foreach ($bookmarks as $bookmark) {
         if (trim($bookmark)) {
-            echo "<li>" . stripslashes($bookmark) . " | <a href=\"$deletebookmark_url" . "idx=$bcount\">{$text['remove']}</a></li>\n";
+            echo "<li>" . stripslashes($bookmark) . " | <a href=\"ajx_deletebookmark.php?idx=$bcount\">{$text['remove']}</a></li>\n";
             $bcount++;
         }
     }

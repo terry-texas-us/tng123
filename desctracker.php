@@ -4,17 +4,11 @@ include "tng_begin.php";
 
 include "config/pedconfig.php";
 
-$desctracker_url = getURL("desctracker", 1);
-$getperson_url = getURL("getperson", 1);
-$register_url = getURL("register", 1);
-$descend_url = getURL("descend", 1);
-$descendtext_url = getURL("descendtext", 1);
-
 $righttree = checktree($tree);
 $rightbranch = checkbranch($row['branch']);
 
 function drawBox($person, $box) {
-    global $tree, $pedigree, $more, $getperson_url, $boxheight, $boxwidth;
+    global $tree, $pedigree, $more, $boxheight, $boxwidth;
 
     if ($box['lineoutof']) {
         $bgcolor = $pedigree['boxcolor'];
@@ -69,7 +63,7 @@ function drawBox($person, $box) {
     //inner table
     echo "<table cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0;\">\n<tr><td valign=\"top\">";
     $name = getName($person);
-    $nameinfo = "<a href=\"$getperson_url" . "personID={$person['personID']}&amp;tree=$tree\"><span style=\"font-size:11pt;\">$name</span></a>";
+    $nameinfo = "<a href=\"getperson.php?personID={$person['personID']}&amp;tree=$tree\"><span style=\"font-size:11pt;\">$name</span></a>";
     if ($person['personID'] && $pedigree['inclphotos']) {
         $constoffset = 0;
         $photohtouse = $pedigree['puboxheight'] - $constoffset - ($pedigree['cellpad'] * 2) - 2; // take cellpadding into account
@@ -308,8 +302,8 @@ if ($nextperson) {
     $disallowgedcreate = $treerow['disallowgedcreate'];
     tng_free_result($treeResult);
 
-    writelog("<a href=\"$desctracker_url" . "trail=$trail&amp;tree=$tree\">{$text['descendfor']} $logname ($personID)</a>");
-    preparebookmark("<a href=\"$desctracker_url" . "trail=$trail&amp;tree=$tree\">{$text['descendfor']} $descname ($personID)</a>");
+    writelog("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">{$text['descendfor']} $logname ($personID)</a>");
+    preparebookmark("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">{$text['descendfor']} $descname ($personID)</a>");
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
@@ -339,10 +333,10 @@ if (!$generations) {
     }
 }
 
-$innermenu = "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class=\"lightlink\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class=\"lightlink\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descendtext_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$register_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink\">{$text['regformat']}</a>\n";
+$innermenu = "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class=\"lightlink\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class=\"lightlink\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink\">{$text['regformat']}</a>\n";
 
 echo getFORM("descend", "GET", "form1", "form1");
 echo tng_menu("I", "descend", $personID, $innermenu);

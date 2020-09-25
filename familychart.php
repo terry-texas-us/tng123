@@ -28,8 +28,6 @@ if (!($family = getfamily($tree, $familyID, $personID))) {
     $family = array();
 }
 
-$family_url = getURL('familychart', 1);
-
 doheader($tree, $family);
 
 $fatherID = $family['husband']['personID'];
@@ -190,8 +188,8 @@ function getresult($result, $multiple = 0) {
 
 /*
 function doUpArrow($left,$top,$person) {
-	global $family_url, $tree;
-	echo "<div style='position:absolute;left:" . ($left-7) . "px;top:" . ($top-14) . "px'><a href=\"{$family_url}personID={$person['personID']}&amp;tree=$tree\" style=\"padding:4px\"><img src=\"img/ArrowUp.gif\"></a></div>";
+	global $tree;
+	echo "<div style='position:absolute;left:" . ($left-7) . "px;top:" . ($top-14) . "px'><a href=\"familychart.php?personID={$person['personID']}&amp;tree=$tree\" style=\"padding:4px\"><img src=\"img/ArrowUp.gif\"></a></div>";
 }
 */
 
@@ -293,7 +291,7 @@ function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left,
 
 function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     #class=fambox or mfambox, $type=parent or child
-    global $familychart, $text, $family_url, $downarrow, $uparrow;
+    global $familychart, $text, $downarrow, $uparrow;
     $name = $person['displayname'];
     $gender = getGenderIcon($person['sex'], 0);
     $rev = $reverse ? '&amp;rev=1' : '';
@@ -311,15 +309,14 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     $details = "<br><span class=\"smaller\">$gender $life</span>";
     $andtree = '&amp;tree=' . $person['gedcom'];
     $thisPersonID = $person['personID'];
-    $getperson_url = getURL('getperson', 1);
     $imagestr = "";
     $famlink = "";
     if ($familyID = getfamilyID($person, $type)) {
         if ($type == 'child') {
-            $famlink = " <a href='{$family_url}familyID=$familyID$andtree' title='{$text['showparentfamily']}'>$uparrow</a>\n";
+            $famlink = " <a href='familychart.php?familyID=$familyID$andtree' title='{$text['showparentfamily']}'>$uparrow</a>\n";
         } #in general link through the person
         else {
-            $famlink = " <a href='{$family_url}personID=$thisPersonID$andtree$rev' title='{$text['showfamily']}'>$downarrow</a>";
+            $famlink = " <a href='familychart.php?personID=$thisPersonID$andtree$rev' title='{$text['showfamily']}'>$downarrow</a>";
         } #but we want the child link to use the familyID
     }
 
@@ -330,7 +327,7 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     if (($imagestr && strlen($name) > $familychart['boxwidth'] / 4.5) || strlen($name) > $familychart['boxwidth'] / 3.2) {
         $name = "<small>$name</small>";
     }
-    $link = "<a href='{$getperson_url}personID=$thisPersonID$andtree' title='{$text['showperson']}'>$name</a>";
+    $link = "<a href='getperson.php?personID=$thisPersonID$andtree' title='{$text['showperson']}'>$name</a>";
     echo "<td>$link$details$famlink</td></tr></tbody></table>\n</div>\n";
 
     if ($others = $person['otherfamilies']) {
@@ -338,7 +335,7 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
             ($top + $familychart['boxheight'] - 15) . "px;'><img src='img/family_small_icon.gif' onclick='toggle(\"$thisPersonID\");' alt='{$text['otherfamilies']}' title='{$text['otherfamilies']}' >
 		<div id='$thisPersonID' class='rounded10 popup hiddenbox'>\n";
         while ($other = array_shift($others))
-            echo "\t<a href='{$family_url}familyID={$other['familyID']}&amp;personID=$thisPersonID$andtree'>{$other['text']}</a><br>\n";
+            echo "\t<a href='familychart.php?familyID={$other['familyID']}&amp;personID=$thisPersonID$andtree'>{$other['text']}</a><br>\n";
         echo "</div></div>\n";
     }
 }
@@ -355,7 +352,7 @@ function doConnector($side, $x1, $x2, $x3, $y1, $y2) {
 
 function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     #insert html of a plus symbol with popups if other spouse(s)
-    global $text, $families_table, $people_table, $family_url, $tree;
+    global $text, $families_table, $people_table, $tree;
 
     if ($otherfamilies = getfamilyID($person, 'other')) {
         echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
@@ -395,7 +392,7 @@ function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
             $spousename = getName($spouserow);
             tng_free_result($spresult);
 
-            echo "<a href='{$family_url}familyID=$fam&amp;tree=$tree$rev'>{$text['familywith']} $spousename</a><br>\n";
+            echo "<a href='familychart.php?familyID=$fam&amp;tree=$tree$rev'>{$text['familywith']} $spousename</a><br>\n";
         }
         echo "</div></div>\n";
     }
@@ -465,9 +462,7 @@ function getRights($person) {
 
 function doheader($tree, $family) {
     #calls tng_Drawheading and tng_menu
-    global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames, $family_url;
-    $descend_url = getURL("descend", 1);
-    $pdfform_url = getURL("rpt_pdfform", 1);
+    global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames;
 
     $f = $family['husband'];
     $m = $family['wife'];
@@ -484,8 +479,8 @@ function doheader($tree, $family) {
     tng_free_result($treeResult);
 
     $logname = $tngconfig['nnpriv'] && $family['private'] ? $admtext['text_private'] : ($nonames && $family['living'] ? $text['living'] : $familyname);
-    writelog("<a href='$family_url" . "familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $logname ($familyID)</a>");
-    preparebookmark("<a href='{$family_url}familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $familyname ($familyID)</a>");
+    writelog("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $logname ($familyID)</a>");
+    preparebookmark("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $familyname ($familyID)</a>");
     $flags['tabs'] = $tngconfig['tabs'];
     $flags['scripting'] = famStylesheet();
 
@@ -504,7 +499,7 @@ function doheader($tree, $family) {
     $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
     if ($allowpdf) {
         $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-        $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width:350, height:350}); return false;\">PDF</a>\n";
+        $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
     }
 
     echo tng_menu("F", "familychart", $familyID, $innermenu);

@@ -49,7 +49,6 @@ $spqualify = $_SESSION['tng_search_spqualify'];
 $nr = $_SESSION['tng_nr'];
 
 $dontdo = array("ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX", "NPFX");
-$search_url = getURL("search", 1);
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -196,7 +195,7 @@ tng_header($text['searchnames'], $flags);
             }
             tng_free_result($etresult);
             ?>
-            window.location.href = "<?php echo $search_url; ?>" + URL;
+            window.location.href = "search.php?" + URL;
 
             return false;
         }

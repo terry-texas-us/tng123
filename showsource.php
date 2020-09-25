@@ -9,13 +9,6 @@ if (!$sourceID) {
 
 include "personlib.php";
 
-$showsource_url = getURL("showsource", 1);
-$showrepo_url = getURL("showrepo", 1);
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$placesearch_url = getURL("placesearch", 1);
-$showalbum_url = getURL("showalbum", 1);
-
 $flags['imgprev'] = true;
 
 $firstsection = 1;
@@ -53,7 +46,7 @@ tng_free_result($sresult);
 $srcnotes = getNotes($sourceID, "S");
 getCitations($sourceID);
 
-$logstring = "<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree\">" . xmlcharacters($text['source'] . " {$srcrow['title']} ($sourceID)") . "</a>";
+$logstring = "<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\">" . xmlcharacters($text['source'] . " {$srcrow['title']} ($sourceID)") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -91,7 +84,7 @@ if ($srcrow['callnum']) {
     $sourcetext .= showEvent(array("text" => $text['callnum'], "fact" => $srcrow['callnum']));
 }
 if ($srcrow['reponame']) {
-    $sourcetext .= showEvent(array("text" => $text['repository'], "fact" => "<a href=\"$showrepo_url" . "repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"));
+    $sourcetext .= showEvent(array("text" => $text['repository'], "fact" => "<a href=\"showrepo.php?repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"));
 }
 if ($srcrow['other']) {
     $sourcetext .= showEvent(array("text" => $text['other'], "fact" => $srcrow['other']));
@@ -146,7 +139,7 @@ while ($srow = tng_fetch_assoc($sresult)) {
         $noneprivate = 0;
     }
 
-    $sourcelinktext .= "<a href=\"$getperson_url" . "personID={$srow['persfamID']}&amp;tree={$srow['gedcom']}\">";
+    $sourcelinktext .= "<a href=\"getperson.php?personID={$srow['persfamID']}&amp;tree={$srow['gedcom']}\">";
     $sourcelinktext .= getName($srow);
     $sourcelinktext .= "</a>";
 }
@@ -159,7 +152,7 @@ if ($srcrow['actualtext']) {
 }
 
 if ($numrows > $maxsearchresults) {
-    $sourcelinktext .= "\n[<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree&amp;foffset=$foffset&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['moreind']}</a>]";
+    $sourcelinktext .= "\n[<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree&amp;foffset=$foffset&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['moreind']}</a>]";
 }
 tng_free_result($sresult);
 
@@ -183,10 +176,10 @@ while ($srow = tng_fetch_assoc($sresult)) {
         $noneprivate = 0;
     }
 
-    $sourcelinktext .= "<a href=\"$familygroup_url" . "familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">{$text['family']}: " . getFamilyName($srow) . "</a>";
+    $sourcelinktext .= "<a href=\"familygroup.php?familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">{$text['family']}: " . getFamilyName($srow) . "</a>";
 }
 if ($numrows >= $maxsearchresults) {
-    $sourcelinktext .= "\n[<a href=\"$showsource_url" . "sourceID=$sourceID&amp;tree=$tree&amp;ioffset=$ioffset&amp;foffset=" . ($newfoffset + $maxsearchresults) . "\">{$text['morefam']}</a>]";
+    $sourcelinktext .= "\n[<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree&amp;ioffset=$ioffset&amp;foffset=" . ($newfoffset + $maxsearchresults) . "\">{$text['morefam']}</a>]";
 }
 tng_free_result($sresult);
 

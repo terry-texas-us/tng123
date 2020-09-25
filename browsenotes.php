@@ -5,22 +5,15 @@ include "tng_begin.php";
 include "functions.php";
 require_once "./core/sql/extractWhereClause.php";
 
-$browsenotes_url = getURL("browsenotes", 1);
-$showsource_url = getURL("showsource", 1);
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-
 function doNoteSearch($instance, $pagenav) {
     global $text, $notesearch, $tree;
-
-    $browsenotes_noargs_url = getURL("browsenotes", 0);
 
     $str = "<div class='normal'>\n";
     $str .= getFORM("browsenotes", "get", "notesearch$instance", "");
     $str .= "<input type='text' name=\"notesearch\" value=\"$notesearch\"> <input type='submit' value=\"{$text['search']}\"> ";
     $str .= $pagenav;
     if ($notesearch) {
-        $str .= "<a href=\"$browsenotes_noargs_url\">{$text['browseallnotes']}</a>";
+        $str .= "<a href='browsenotes.php'>{$text['browseallnotes']}</a>";
     }
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "</form>\n";
@@ -73,7 +66,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 $numrowsplus = $numrows + $offset;
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$browsenotes_url" . "tree=$tree&amp;offset=$offset&amp;notesearch=" . htmlentities(stripslashes($notesearch), ENT_QUOTES) . "\">" . xmlcharacters($text['notes'] . $treestr) . "</a>";
+$logstring = "<a href=\"browsenotes.php?tree=$tree&amp;offset=$offset&amp;notesearch=" . htmlentities(stripslashes($notesearch), ENT_QUOTES) . "\">" . xmlcharacters($text['notes'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -96,7 +89,7 @@ if ($totrows) {
     echo "<p class='normal'>{$text['matches']} " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . "</p>";
 }
 
-$pagenav = get_browseitems_nav($totrows, $browsenotes_url . "notesearch=$notesearch&amp;offset", $maxsearchresults, $max_browsenote_pages);
+$pagenav = get_browseitems_nav($totrows, "browsenotes.php?notesearch=$notesearch&amp;offset", $maxsearchresults, $max_browsenote_pages);
 echo doNoteSearch(1, $pagenav);
 echo "<br>\n";
 

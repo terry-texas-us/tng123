@@ -2,11 +2,6 @@
 $textpart = "headstones";
 include "tng_begin.php";
 
-$browsemedia_url = getURL("browsemedia", 1);
-$headstones_url = getURL("headstones", 1);
-$showmap_url = getURL("showmap", 1);
-$cemeteries_url = getURL("cemeteries", 1);
-
 $query = "SELECT * FROM $cemeteries_table ORDER BY country, state, county, city, cemname";
 $cemresult = tng_query($query);
 $numcems = $tngconfig['cemrows'] ? $tngconfig['cemrows'] : max(floor(tng_num_rows($cemresult) / 2), 10);
@@ -19,7 +14,7 @@ $hsresult = tng_query($query);
 $numhs = tng_num_rows($hsresult);
 tng_free_result($hsresult);
 
-$logstring = "<a href=\"$cemeteries_url" . "tree=$tree\">{$text['cemeteriesheadstones']}$treestr</a>";
+$logstring = "<a href=\"cemeteries.php?tree=$tree\">{$text['cemeteriesheadstones']}$treestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -74,7 +69,7 @@ $lastcountry = DUMMYPLACE;
 $divctr = $linectr = $colctr = $i = 0;
 
 echo "<div id=\"cemwrapper\">\n";
-echo "<p>&nbsp;&nbsp;<a href=\"$browsemedia_url" . "mediatypeID=headstones\" class=\"snlink\">&raquo; {$text['showallhsr']}</a></p>\n";
+echo "<p>&nbsp;&nbsp;<a href=\"browsemedia.php?mediatypeID=headstones\" class=\"snlink\">&raquo; {$text['showallhsr']}</a></p>\n";
 echo "<div id=\"cemcontainer\">\n";
 echo "<div id=\"col$colctr\">\n";
 
@@ -103,7 +98,7 @@ while ($i < $numrows) {
                         $divname = "city$divctr";
                         if ($cemetery['city'] || !$tngconfig['cemblanks']) {
                             $txt = $cemetery['city'] ? @htmlspecialchars($cemetery['city'], ENT_QUOTES, $session_charset) : $text['nocity'];
-                            echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;city=" . urlencode($cemetery['city']) . "&amp;tree=$tree\">$txt</a></div>\n";
+                            echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;city=" . urlencode($cemetery['city']) . "&amp;tree=$tree\">$txt</a></div>\n";
                             echo "<div id=\"$divname\" class=\"cemblock\" style=\"display:none;\">\n";
                         } else {
                             echo "<div id=\"$divname\">\n";
@@ -111,7 +106,7 @@ while ($i < $numrows) {
                     }
                     $txt = $cemetery['cemname'] ? $cemetery['cemname'] : $text['nocemname'];
                     $txt = @htmlspecialchars($txt, ENT_QUOTES, $session_charset);
-                    echo "- <a href=\"$showmap_url" . "cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">$txt</a><br>\n";
+                    echo "- <a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">$txt</a><br>\n";
                     $cemetery = tng_fetch_assoc($cemresult);
                     $i++;
                 }
@@ -127,7 +122,7 @@ while ($i < $numrows) {
                 if ($cemetery['county'] || !$tngconfig['cemblanks']) {
                     $linectr++;
                     $txt = $cemetery['county'] ? @htmlspecialchars($cemetery['county'], ENT_QUOTES, $session_charset) : $text['nocounty'];
-                    echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;tree=$tree\">$txt</a></div>\n";
+                    echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;tree=$tree\">$txt</a></div>\n";
                     echo "<div id=\"$divname\" class=\"cemblock\" style=\"display:none;\">\n";
                     $hiding = true;
                 } else {
@@ -149,7 +144,7 @@ while ($i < $numrows) {
             $txt = $cemetery['state'] ? @htmlspecialchars($cemetery['state'], ENT_QUOTES, $session_charset) : $text['nostate'];
             if ($cemetery['state'] || !$tngconfig['cemblanks']) {
                 $linectr += 2;        //Add extra line to allow for the <br> at the end
-                echo "<br><strong><a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;tree=$tree\">$txt</a></strong><br>\n";
+                echo "<br><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;tree=$tree\">$txt</a></strong><br>\n";
             } else {
                 $linectr++;
                 echo "<br>\n";
@@ -170,14 +165,14 @@ while ($i < $numrows) {
         }
         $linectr++;     //Add extra line to allow for the <br> at the end
         $txt = $cemetery['country'] ? @htmlspecialchars($cemetery['country'], ENT_QUOTES, $session_charset) : $text['nocountry'];
-        echo "<div class='databack cemcountry subhead rounded4'><strong><a href=\"$headstones_url" . "country=" . urlencode($cemetery['country']) . "&amp;tree=$tree\">$txt</a></strong></div>\n";
+        echo "<div class='databack cemcountry subhead rounded4'><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;tree=$tree\">$txt</a></strong></div>\n";
         $orphan = true;
     }
 }
 tng_free_result($cemresult);
 
 if ($numhs) {
-    echo "<br><div class='databack cemcountry subhead rounded4'><strong><a href=\"$headstones_url" . "&amp;tree=$tree\">{$text['nocemetery']}</a></strong></div>\n";
+    echo "<br><div class='databack cemcountry subhead rounded4'><strong><a href=\"headstones.php?tree=$tree\">{$text['nocemetery']}</a></strong></div>\n";
 }
 
 echo "</div>\n";    //colx

@@ -14,21 +14,9 @@ if (!empty($tngprint)) {
 $defermap = $map['pstartoff'] || $tngconfig['istart'] ? 1 : 0;
 include "personlib.php";
 
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$familychart_url = getURL("familychart", 1);
-$showsource_url = getURL("showsource", 1);
-$showtree_url = getURL("showtree", 1);
-$placesearch_url = getURL("placesearch", 1);
-$tentedit_url = getURL("ajx_tentedit", 1);
-$showalbum_url = getURL("showalbum", 1);
-$pdfform_url = getURL("rpt_pdfform", 1);
-$descend_url = getURL("descend", 1);
-$dna_test_url = getURL("show_dna_test", 1);
-
-$citations = array();
-$citedisplay = array();
-$citestring = array();
+$citations = [];
+$citedisplay = [];
+$citestring = [];
 $citationctr = 0;
 $citedispctr = 0;
 $firstsection = 1;
@@ -39,7 +27,7 @@ $cellnumber = 0;
 $indnotes = getNotes($personID, "I");
 $stdex = getStdExtras($personID);
 
-$indexlist = array('BIRT', 'CHR', 'BAPL', 'CONL', 'INIT', 'ENDL', 'DEAT', 'BURI');
+$indexlist = ['BIRT', 'CHR', 'BAPL', 'CONL', 'INIT', 'ENDL', 'DEAT', 'BURI'];
 foreach ($indexlist as $myindex)
     if (!isset($stdex[$myindex])) {
         $stdex[$myindex] = '';
@@ -74,7 +62,7 @@ $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
 $logname = !empty($tngconfig['nnpriv']) && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
-$treestr = "<a href=\"$showtree_url" . "tree=$tree\">{$treerow['treename']}</a>";
+$treestr = "<a href=\"showtree.php?tree=$tree\">{$treerow['treename']}</a>";
 if ($row['branch']) {
     //explode on commas
     $branches = explode(",", $row['branch']);
@@ -96,8 +84,8 @@ if ($row['branch']) {
 }
 tng_free_result($result);
 
-writelog("<a href=\"$getperson_url" . "personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
-preparebookmark("<a href=\"$getperson_url" . "personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $namestr ($personID)</a>");
+writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
+preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $namestr ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
@@ -311,7 +299,7 @@ if ($parents && tng_num_rows($parents)) {
             $fathrow['allow_private'] = $frights['private'];
             if ($fathrow['firstname'] || $fathrow['lastname']) {
                 $fathname = getName($fathrow);
-                $fatherlink = "<a href=\"$getperson_url" . "personID={$fathrow['personID']}&amp;tree=$tree\">$fathname</a>";
+                $fatherlink = "<a href=\"getperson.php?personID={$fathrow['personID']}&amp;tree=$tree\">$fathname</a>";
             } else {
                 $fatherlink = "";
             }
@@ -344,7 +332,7 @@ if ($parents && tng_num_rows($parents)) {
             $mothrow['allow_private'] = $mrights['private'];
             if ($mothrow['firstname'] || $mothrow['lastname']) {
                 $mothname = getName($mothrow);
-                $motherlink = "<a href=\"$getperson_url" . "personID={$mothrow['personID']}&amp;tree=$tree\">$mothname</a>";
+                $motherlink = "<a href=\"getperson.php?personID={$mothrow['personID']}&amp;tree=$tree\">$mothname</a>";
             } else {
                 $motherlink = "";
             }
@@ -443,7 +431,7 @@ if ($parents && tng_num_rows($parents)) {
             }
         }
 
-        $persontext .= showEvent(array("text" => $text['familyid'], "date" => $parent['familyID'], "place" => "<a href=\"$familygroup_url" . "familyID={$parent['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='{$familychart_url}familyID={$parent['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1));
+        $persontext .= showEvent(array("text" => $text['familyid'], "date" => $parent['familyID'], "place" => "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='familychart.php?familyID={$parent['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1));
         $persontext .= "</table>\n";
         $persontext .= "<br>\n";
     }
@@ -492,7 +480,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         $spouserow['allow_private'] = $srights['private'];
         if ($spouserow['firstname'] || $spouserow['lastname']) {
             $spousename = getName($spouserow);
-            $spouselink = "<a href=\"$getperson_url" . "personID={$spouserow['personID']}&amp;tree=$tree\">$spousename</a>";
+            $spouselink = "<a href=\"getperson.php?personID={$spouserow['personID']}&amp;tree=$tree\">$spousename</a>";
         }
         if ($srights['both']) {
             $spouselink .= $birthinfo;
@@ -571,7 +559,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         while ($child = tng_fetch_assoc($children)) {
             $childID = $child['personID'];
             $child['gedcom'] = $tree;
-            $ifkids = $child['haskids'] ? "<a href=\"$descend_url" . "personID=$childID&amp;tree=$tree\" title=\"{$text['descendants']}\" class=\"descindicator\"><strong>+</strong></a>" : "&nbsp;";
+            $ifkids = $child['haskids'] ? "<a href=\"descend.php?personID=$childID&amp;tree=$tree\" title=\"{$text['descendants']}\" class=\"descindicator\"><strong>+</strong></a>" : "&nbsp;";
             $birthinfo = getBirthInfo($child);
             $crights = determineLivingPrivateRights($child, $righttree);
             $child['allow_living'] = $crights['living'];
@@ -580,7 +568,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
                 $childname = getName($child);
                 $persontext .= "<tr>";
                 $persontext .= "<td class='align-top' width=\"10\">$ifkids</td>";
-                $persontext .= "<td onmouseover=\"highlightChild(1,'$childID');\" onmouseout=\"highlightChild(0,'$childID');\" class=\"unhighlightedchild\" id=\"child$childID\"><span class='normal'>$kidcount. <a href=\"$getperson_url" . "personID=$childID&amp;tree=$tree\">$childname</a>";
+                $persontext .= "<td onmouseover=\"highlightChild(1,'$childID');\" onmouseout=\"highlightChild(0,'$childID');\" class=\"unhighlightedchild\" id=\"child$childID\"><span class='normal'>$kidcount. <a href=\"getperson.php?personID=$childID&amp;tree=$tree\">$childname</a>";
                 if ($crights['both']) {
                     $persontext .= $birthinfo;
                     $age = age($child);
@@ -629,7 +617,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         }
         $persontext .= showEvent(array("text" => $text['lastmodified'], "fact" => $marriagerow['changedate']));
     }
-    $persontext .= showEvent(array("text" => $text['familyid'], "date" => $marriagerow['familyID'], "place" => "<a href=\"$familygroup_url" . "familyID={$marriagerow['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='{$familychart_url}familyID={$marriagerow['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1));
+    $persontext .= showEvent(array("text" => $text['familyid'], "date" => $marriagerow['familyID'], "place" => "<a href=\"familygroup.php?familyID={$marriagerow['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='familychart.php?familyID={$marriagerow['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1));
     $persontext .= "</table>\n";
     $persontext .= "<br>\n";
 }
@@ -826,7 +814,7 @@ if (!empty($media) || $notes || $citedispctr || $map['key']) {
 }
 if ($allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-    $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=ind&amp;personID=$personID&amp;tree=$tree', {width:350, height:350}); return false;\">PDF</a>\n";
+    $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ind&amp;personID=$personID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
 $rightbranch = $org_rightbranch;

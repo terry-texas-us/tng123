@@ -15,7 +15,7 @@ if (empty($_SESSION["ttree"])) {
 $test_search = isset($_SESSION["tsearch"]) ? $_SESSION["tsearch"] : "";
 $test_type = isset($_SESSION["ttype"]) ? $_SESSION["ttype"] : "";
 $test_group = isset($_SESSION["tgroup"]) ? $_SESSION["tgroup"] : "";
-$browse_dna_tests_url = getURL("browse_dna_tests", 1) . "tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
+$browse_dna_tests_url = "browse_dna_tests.php?tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
 
 $headline = "{$text['dnatestscompare']}";
 $text['dnatestscompare'] .= $test_group ? ": " . $test_group : ": " . $text['allgroups'];
@@ -126,7 +126,7 @@ if (!function_exists('array_column')) {
     }
 }
 
-$comptabs[0] = array(1, $browse_dna_tests_url, $text['dna_tests'], "dnatests");
+$comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
 $innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target=\"_blank\" class=\"lightlink\">{$text['help']}</a>";
 // Y-DNA Tests
 $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class=\"lightlink\">{$admtext['ydna_test']}</a>";

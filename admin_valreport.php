@@ -33,7 +33,7 @@ $misctabs[2] = array(1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwan
 $misctabs[3] = array(1, "admin_data_validation.php", $admtext['dataval'], "validation");
 $misctabs[4] = array(1, "admin_valreport.php?report=$report&amp;tree=$tree", $admtext['report'], "report");
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$mostwanted_url\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "report", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'] . " &gt;&gt; " . $admtext[$report], "img/misc_icon.gif", $menu, $message);
 

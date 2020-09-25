@@ -2,21 +2,13 @@
 $textpart = "places";
 include "tng_begin.php";
 
-$placesearch_url = getURL("placesearch", 1);
-$places_oneletter_url = getURL("places-oneletter", 1);
-$places_url = getURL("places", 1);
-
 if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
-    $places_all_url = getURL("places-all", 1);
-    $heatmap_url = getURL("heatmap", 1);
-    $logstring = "<a href=\"$places_url" . "offset=$offset&amp;$treestr2\">{$text['placelist']} ({$text['tree']}: $tree)</a>";
+    $logstring = "<a href=\"places.php?offset=$offset&amp;$treestr2\">{$text['placelist']} ({$text['tree']}: $tree)</a>";
 } else {
     $treestr = $treestr2 = "";
-    $places_all_url = getURL("places-all", 0);
-    $heatmap_url = getURL("heatmap", 0);
-    $logstring = "<a href=\"$places_url\">{$text['placelist']}</a>";
+    $logstring = "<a href='places.php'>{$text['placelist']}</a>";
 }
 $text['top30places'] = preg_replace("/xxx/", "30", $text['top30places']);
 
@@ -65,7 +57,7 @@ if ($result) {
         if ($place['firstchar'] != "") {
             $urlfirstchar = urlencode($place['firstchar']);
             $countstr = $text['placesstarting'] . ": " . $place['firstchar'] . " (" . number_format($place['placecount']) . " " . $text['totalnames'] . ")";
-            $linkstr .= "<a href=\"$places_oneletter_url" . "firstchar=$urlfirstchar&amp;{$treestr}offset=$offsetorg&amp;psearch=$psearch\" class=\"snlink\" title=\"$countstr\">{$place['firstchar']}</a> ";
+            $linkstr .= "<a href=\"places-oneletter.php?firstchar=$urlfirstchar&amp;{$treestr}offset=$offsetorg&amp;psearch=$psearch\" class=\"snlink\" title=\"$countstr\">{$place['firstchar']}</a> ";
         }
         $initialchar++;
     }
@@ -106,12 +98,12 @@ if ($result) {
             $specificcount = $countrow['placecount'];
             tng_free_result($result2);
 
-            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
-            $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
+            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
+            $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
             if (($count - 1) % $collen == 0) {
                 $col++;
             }
-            $chartstr = $col ? "" : "<td width=\"400\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\"><a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\" title=\"{$place['myplace']} ($tally_fmt)\"></a></div></td>";
+            $chartstr = $col ? "" : "<td width=\"400\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\"><a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\" title=\"{$place['myplace']} ($tally_fmt)\"></a></div></td>";
             $linkstr2col[$col] .= "<tr>";
             $linkstr2col[$col] .= "<td class=\"snlink\" align=\"right\">$count.</td>";
             $linkstr2col[$col] .= "<td>$name$searchlink</td>";
@@ -141,7 +133,7 @@ if ($result) {
         ?>
         </form>
 
-        <br><?php echo "<a href=\"$places_all_url" . "$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"$heatmap_url{$treestr2}\" class=\"snlink\">{$text['heatmap']}</a>"; ?>
+        <br><?php echo "<a href=\"places-all.php?$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\" class=\"snlink\">{$text['heatmap']}</a>"; ?>
     </div>
     <br>
     <div class="titlebox">

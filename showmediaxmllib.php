@@ -27,7 +27,6 @@ if ($medialinkID) {
         $albumname = $row['albumname'];
         $albdesc = $row['description'];
         tng_free_result($result);
-        $showalbum_url = getURL("showalbum", 1);
     }
     $query = "SELECT mediatypeID, gedcom FROM $media_table WHERE mediaID = \"$mediaID\"";
     $result = tng_query($query);

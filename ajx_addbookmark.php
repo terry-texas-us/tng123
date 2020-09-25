@@ -7,8 +7,6 @@ include "$mylanguage/text.php";
 
 include "checklogin.php";
 
-$bookmarks_url = getURL("bookmarks", 0);
-
 $newroot = preg_replace("/\//", "", $rootpath);
 $newroot = preg_replace("/\s*/", "", $newroot);
 $newroot = preg_replace("/\./", "", $newroot);
@@ -31,6 +29,6 @@ header("Content-type:text/html; charset=" . $session_charset);
     <h3 class="subhead"><img src="img/tng_bmk.gif" width="20" height="20" align="left" alt="" vspace="0">&nbsp;<?php echo $text['bookmarked']; ?></h3>
     <form>
         <input type="button" onclick="tnglitbox.remove();return false;" value="<?php echo $text['closewindow']; ?>">
-        <input type="button" onclick="window.location.href='<?php echo $bookmarks_url ?>';" value="<?php echo $text['mngbookmarks']; ?>">
+        <input type="button" onclick="window.location.href='bookmarks.php';" value="<?php echo $text['mngbookmarks']; ?>">
     </form>
 </div>

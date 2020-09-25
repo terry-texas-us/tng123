@@ -9,11 +9,6 @@ if (!$repoID) {
 
 include "personlib.php";
 
-$showrepo_url = getURL("showrepo", 1);
-$showsource_url = getURL("showsource", 1);
-$getperson_url = getURL("getperson", 1);
-$showalbum_url = getURL("showalbum", 1);
-
 $flags['imgprev'] = true;
 
 $firstsection = 1;
@@ -36,7 +31,7 @@ $reporow['allow_living'] = 1;
 
 $reponotes = getNotes($repoID, "R");
 
-$logstring = "<a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree\">" . $text['repository'] . " {$reporow['reponame']} ($repoID)</a>";
+$logstring = "<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\">" . $text['repository'] . " {$reporow['reponame']} ($repoID)</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -96,10 +91,10 @@ while ($srow = tng_fetch_assoc($sresult)) {
         $repolinktext .= "\n";
     }
     $title = $srow['shorttitle'] ? $srow['shorttitle'] : $srow['title'];
-    $repolinktext .= "<a href=\"$showsource_url" . "sourceID={$srow['sourceID']}&amp;tree=$tree\">$title</a>";
+    $repolinktext .= "<a href=\"showsource.php?sourceID={$srow['sourceID']}&amp;tree=$tree\">$title</a>";
 }
 if ($numrows >= $maxsearchresults) {
-    $repolinktext .= "\n[<a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['moresrc']}</a>]";
+    $repolinktext .= "\n[<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['moresrc']}</a>]";
 }
 tng_free_result($sresult);
 

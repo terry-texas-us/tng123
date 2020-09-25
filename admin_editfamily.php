@@ -56,8 +56,6 @@ function getBirth($row) {
     return $birthstring;
 }
 
-$familygroup_url = getURL("familygroup", 1);
-
 $righttree = checktree($tree);
 $rightbranch = $righttree ? checkbranch($row['branch']) : false;
 $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
@@ -250,7 +248,7 @@ $familytabs['2'] = array($allow_edit, "admin_findreview.php?type=F", $admtext['r
 $familytabs['3'] = array($allow_edit, "admin_editfamily.php?familyID=$familyID&tree=$tree", $admtext['edit'], "edit");
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/families_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$familygroup_url" . "familyID=$familyID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" onclick=\"return addNewMedia();\" class=\"lightlink\">{$admtext['addmedia']}</a>";
 }

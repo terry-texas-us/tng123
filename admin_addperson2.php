@@ -232,7 +232,6 @@ if ($result && tng_num_rows($result)) {
     }
     adminwritelog("<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\">{$admtext['addnewperson']}: $tree/$personID</a>");
     if ($needped) {
-        $pedigree_url = getURL("pedigree", 1);
-        header("Location: {$pedigree_url}personID=$personID&tree=$tree");
+        header("Location: pedigree.php?personID=$personID&tree=$tree");
     }
 }

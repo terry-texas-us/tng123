@@ -9,14 +9,6 @@ include "config/pedconfig.php";
 include "personlib.php";
 include "reglib.php";
 
-$getperson_url = getURL("getperson", 1);
-$register_url = getURL("register", 1);
-$descend_url = getURL("descend", 1);
-$descendtext_url = getURL("descendtext", 1);
-$familygroup_url = getURL("familygroup", 1);
-$desctracker_url = getURL("desctracker", 1);
-$pdfform_url = getURL("rpt_pdfform", 1);
-
 if ($tngmore) {
     $pedigree['regnotes'] = 1;
 } elseif ($tngless) {
@@ -52,8 +44,8 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
-writelog("<a href=\"$register_url" . "personID=$personID&amp;tree=$tree\">{$text['descendfor']} $logname ($personID)</a>");
-preparebookmark("<a href=\"$register_url" . "personID=$personID&amp;tree=$tree\">{$text['descendfor']} {$row['name']} ($personID)</a>");
+writelog("<a href=\"register.php?personID=$personID&amp;tree=$tree\">{$text['descendfor']} $logname ($personID)</a>");
+preparebookmark("<a href=\"register.php?personID=$personID&amp;tree=$tree\">{$text['descendfor']} {$row['name']} ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
@@ -82,7 +74,7 @@ if (!$generations) {
     }
 }
 
-$detail_link = "{$register_url}personID=$personID&tree=$tree&generations=$generations";
+$detail_link = "register.php?personID=$personID&tree=$tree&generations=$generations";
 if ($pedigree['regnotes']) {
     $detail_link = "<a href=\"{$detail_link}&tngless=1\">{$text['lessdetail']}</a>";
 } else {
@@ -90,7 +82,7 @@ if ($pedigree['regnotes']) {
 }
 
 $innermenu = $text['generations'] . ": &nbsp;";
-$innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='$register_url" . "personID=$personID&amp;tree=$tree&amp;generations=' + this.options[this.selectedIndex].value\">\n";
+$innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='register.php?personID=$personID&amp;tree=$tree&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
     if ($i == $generations) {
@@ -99,13 +91,13 @@ for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class=\"lightlink\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class=\"lightlink\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descendtext_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$register_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">{$text['regformat']}</a>\n";
+$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class=\"lightlink\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class=\"lightlink\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">{$text['regformat']}</a>\n";
 if ($generations <= 12 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-    $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=desc&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width:350, height:350}); return false;\">PDF</a>\n";
+    $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=desc&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
 echo getFORM("register", "get", "form1", "form1");
@@ -123,9 +115,9 @@ echo "</form>\n";
                 echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
                 echo "{$row['number']}.&nbsp;&nbsp;</td><td>";
                 echo showSmallPhoto($row['personID'], $row['name'], $row['allow_living'] && $row['allow_private'], 0, false, $row['sex']);
-                echo "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree=$tree\" name=\"p{$row['personID']}\" id=\"p{$row['personID']}\">{$row['name']}</a>";
+                echo "<a href=\"getperson.php?personID={$row['personID']}&amp;tree=$tree\" name=\"p{$row['personID']}\" id=\"p{$row['personID']}\">{$row['name']}</a>";
                 if ($row['genlist']) {
-                    echo " <a href=\"$desctracker_url" . "trail={$row['trail']}&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> ({$row['genlist']})";
+                    echo " <a href=\"desctracker.php?trail={$row['trail']}&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> ({$row['genlist']})";
                 }
                 echo getVitalDates($row);
                 echo getOtherEvents($row);
@@ -149,10 +141,10 @@ echo "</form>\n";
                 while ($spouserow = array_shift($row['spouses'])) {
                     $marriagemsg = ($personsex == "F") ? $text['wasmarried_female'] : $text['wasmarried_male'];
                     if ($spouserow['marrdate'] || $spouserow['marrplace']) {
-                        echo "<p>$firstfirstname " . $marriagemsg . " <a href=\"$getperson_url" . "personID={$spouserow['personID']}&amp;tree=$tree\">{$spouserow['name']}</a>";
+                        echo "<p>$firstfirstname " . $marriagemsg . " <a href=\"getperson.php?personID={$spouserow['personID']}&amp;tree=$tree\">{$spouserow['name']}</a>";
                         echo getSpouseDates($spouserow, $personsex);
                     } else {
-                        echo "<p>$firstfirstname " . $marriagemsg . " <a href=\"$getperson_url" . "personID={$spouserow['personID']}&amp;tree=$tree\">{$spouserow['name']}</a>.";
+                        echo "<p>$firstfirstname " . $marriagemsg . " <a href=\"getperson.php?personID={$spouserow['personID']}&amp;tree=$tree\">{$spouserow['name']}</a>.";
                     }
                     $spouseinfo = getVitalDates($spouserow);
                     $spparents = $spouserow['personID'] ? getSpouseParents($spouserow['personID'], $spouserow['sex']) : $text['unknown'];
@@ -163,7 +155,7 @@ echo "</form>\n";
                     } else {
                         echo " $spparents";
                     }
-                    echo " [<a href=\"$familygroup_url" . "familyID={$spouserow['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>]</p>\n";
+                    echo " [<a href=\"familygroup.php?familyID={$spouserow['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>]</p>\n";
 
                     if ($pedigree['regnotes']) {
                         if ($famrights['both']) {
@@ -200,7 +192,7 @@ echo "</form>\n";
                                     $nextgen[$childID] = $childrow;
                                 }
                             }
-                            echo "<li style=\"list-style-type:lower-roman;\">$displaycount. <a href=\"#\" onclick=\"if(jQuery('#p$childID').length) {jQuery('html, body').animate({scrollTop: jQuery('#p$childID').offset().top-10},'slow');}else{window.location.href='$getperson_url" . "personID=$childID&amp;tree=$tree';} return false;\">$name</a> &nbsp;<a href=\"$desctracker_url" . "trail={$childrow['trail']}&amp;tree=$tree\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitaldates</li>\n";
+                            echo "<li style=\"list-style-type:lower-roman;\">$displaycount. <a href=\"#\" onclick=\"if(jQuery('#p$childID').length) {jQuery('html, body').animate({scrollTop: jQuery('#p$childID').offset().top-10},'slow');}else{window.location.href='getperson.php?personID=$childID&amp;tree=$tree';} return false;\">$name</a> &nbsp;<a href=\"desctracker.php?trail={$childrow['trail']}&amp;tree=$tree\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitaldates</li>\n";
                         }
                         echo "</ol>\n</td></tr></table>\n";
                         tng_free_result($result2);

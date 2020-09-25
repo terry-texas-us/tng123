@@ -3,10 +3,6 @@
 $textpart = "places";
 include "tng_begin.php";
 
-$placesearch_url = getURL("placesearch", 1);
-$places_oneletter_url = getURL("places-oneletter", 1);
-$heatmap_url = getURL("heatmap", 1);
-
 $psearch = cleanIt(trim($psearch));
 $decodedfirstchar = $firstchar ? stripslashes(urldecode($firstchar)) : stripslashes($psearch);
 $heatargs = $psearch ? "psearch=" : "firstchar=";
@@ -18,14 +14,10 @@ if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
     $treestr3 = "tree=$tree&";
-    $places_all_url = getURL("places-all", 1);
-    $places_url = getURL("places", 1);
-    $logstring = "<a href=\"$places_oneletter_url" . "firstchar=$firstchar&amp;psearch=$psearch&amp;tree=$tree$offsetstr$stretchstr\">{$text['placelist']}: $decodedfirstchar ({$text['tree']}: $tree)</a>";
+    $logstring = "<a href=\"places-oneletter.php?firstchar=$firstchar&amp;psearch=$psearch&amp;tree=$tree$offsetstr$stretchstr\">{$text['placelist']}: $decodedfirstchar ({$text['tree']}: $tree)</a>";
 } else {
     $treestr = $treestr2 = $treestr3 = "";
-    $places_all_url = getURL("places-all", 0);
-    $places_url = getURL("places", 0);
-    $logstring = "<a href=\"$places_oneletter_url" . "firstchar=$firstchar&amp;psearch=$psearch$offsetstr$stretchstr\">{$text['placelist']}: $decodedfirstchar</a>";
+    $logstring = "<a href=\"places-oneletter.php?firstchar=$firstchar&amp;psearch=$psearch$offsetstr$stretchstr\">{$text['placelist']}: $decodedfirstchar</a>";
 }
 
 $offsetorg = $offset;
@@ -34,10 +26,10 @@ $offset = $offset ? $offset + 1 : 1;
 //if doing a locality search, link directly to placesearch
 if ($stretch) {
     $query = "SELECT DISTINCT place AS myplace, place AS wholeplace, COUNT(place) AS placecount, gedcom ";
-    $places_oneletter_url = getURL("placesearch", 1);
+    $places_oneletter_url = "placesearch.php?";
 } else {
     $query = "SELECT DISTINCT TRIM(SUBSTRING_INDEX(place, ',', -$offset)) AS myplace, TRIM(place) AS wholeplace, COUNT(place) AS placecount, gedcom ";
-    $places_oneletter_url = getURL("places-oneletter", 1);
+    $places_oneletter_url = "places-oneletter.php?";
 }
 $query .= "FROM $places_table ";
 
@@ -62,7 +54,7 @@ $result = tng_query($query);
 if (tng_num_rows($result) == 1) {
     $row = tng_fetch_assoc($result);
     if ($row['myplace'] == $psearch) {
-        header("Location: $placesearch_url" . "{$treestr3}psearch=$psearch&oper=eq");
+        header("Location: placesearch.php?{$treestr3}psearch=$psearch&oper=eq");
     } else {
         $result = tng_query($query);
     }
@@ -101,7 +93,7 @@ echo $formstr;
     echo "<input type='hidden' name=\"stretch\" value='1'>\n";
     echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
     ?>
-    <br><br><?php echo "<a href=\"$places_url" . "{$treestr2}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$places_all_url" . "{$treestr2}\">{$text['showallplaces']}</a>"; ?>
+    <br><br><?php echo "<a href=\"places.php?{$treestr2}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"places-all.php?{$treestr2}\">{$text['showallplaces']}</a>"; ?>
 </div>
 </form>
 
@@ -116,7 +108,7 @@ echo $formstr;
             }
             ?>
         </h3>
-        <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo $heatmap_url . $treestr . $heatargs; ?>" class="snlink"><?php echo $text['heatmap']; ?></a></p>
+        <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo "heatmap.php?" . $treestr . $heatargs; ?>" class="snlink"><?php echo $text['heatmap']; ?></a></p>
     </div>
     <table class="sntable">
         <tr>
@@ -161,7 +153,7 @@ echo $formstr;
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
 
-                            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"$places_oneletter_url" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {

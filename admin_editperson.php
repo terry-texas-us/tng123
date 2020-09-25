@@ -64,8 +64,6 @@ if ($row['sex'] == "M") {
 
 $tng_search_people = $_SESSION['tng_search_people'] ?? '';
 
-$getperson_url = getURL("getperson", 1);
-
 $righttree = checktree($tree);
 $rightbranch = $righttree ? checkbranch($row['branch']) : false;
 $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
@@ -279,7 +277,7 @@ include_once "eventlib_js.php";
     $peopletabs[4] = array($allow_edit, "admin_editperson.php?personID=$personID&tree=$tree", $admtext['edit'], "edit");
     $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
     $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"$getperson_url" . "personID=$personID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
     if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
         $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" onclick=\"return addNewMedia();\" class=\"lightlink\">{$admtext['addmedia']}</a>";
     }

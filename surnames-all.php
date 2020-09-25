@@ -3,12 +3,8 @@ $textpart = "surnames";
 @set_time_limit(0);
 include "tng_begin.php";
 
-$search_url = getURL("search", 1);
-$surnames_noargs_url = getURL("surnames", 0);
-$surnames_all_url = getURL("surnames-all", 1);
-
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$surnames_all_url" . "tree=$tree\">{$text['surnamelist']}: {$text['allsurnames']}$treestr</a>";
+$logstring = "<a href=\"surnames-all.php?tree=$tree\">{$text['surnamelist']}: {$text['allsurnames']}$treestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -51,7 +47,7 @@ if ($result) {
         }
         if ($surname['firstchar'] == "") {
             $surname['firstchar'] = $text['nosurname'];
-            $linkstr .= "<a href=\"$search_url" . "mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">{$text['nosurname']}</a> ";
+            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">{$text['nosurname']}</a> ";
         } else {
             if ($surname['firstchar'] != "_") {
                 $linkstr .= "<a href=\"#char$initialchar\" class=\"snlink\">{$surname['firstchar']}</a>";
@@ -66,7 +62,7 @@ if ($result) {
     <div class="titlebox normal">
         <h3 class="subhead"><?php echo $text['surnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
-        <br><?php echo "<a href=\"$surnames_noargs_url\">{$text['mainsurnamepage']}</a>"; ?>
+        <br><?php echo "<a href='surnames.php'>{$text['mainsurnamepage']}</a>"; ?>
     </div>
 
     <br>
@@ -104,7 +100,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                         $num_in_col_ctr = 0;
                         while ($surname = tng_fetch_assoc($result)) {
                             $surname2 = urlencode($surname['lastname']);
-                            $name = $surname['lastname'] ? "<a href=\"$search_url" . "mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$text['nosurname']}</a>";
+                            $name = $surname['lastname'] ? "<a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$text['nosurname']}</a>";
                             echo "$snnum. $name ({$surname['lncount']})<br>\n";
                             $snnum++;
                             $num_in_col_ctr++;

@@ -3,7 +3,7 @@
         message: '<?php echo $text['cookieuse']; ?><br>',
         agree: '<?php echo $text['understand']; ?>',
         learnMore: '&bull; <?php echo $text['viewpolicy']; ?>',
-        link: '<?php echo getURL("data_protection_policy", 0); ?>',
+        link: 'data_protection_policy.php',
         theme: 'hell-unten-rechts'  //other options: dark-top, dark-bottom
     };
 </script>

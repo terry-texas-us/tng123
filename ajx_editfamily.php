@@ -47,8 +47,6 @@ if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtre
 
 $editconflict = determineConflict($row, $families_table);
 
-$familygroup_url = getURL("familygroup", 1);
-
 $righttree = checktree($tree);
 $rightbranch = $righttree ? checkbranch($row['branch']) : false;
 $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);

@@ -4,8 +4,6 @@ include "tng_begin.php";
 
 include "version.php";
 
-$gedcom_url = getURL("gedcom", 1);
-
 @set_time_limit(0);
 $allsources = array();
 $allrepos = array();

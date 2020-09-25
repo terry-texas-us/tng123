@@ -4,20 +4,15 @@ include "tng_begin.php";
 
 include "functions.php";
 
-$browserepos_url = getURL("browserepos", 1);
-$showrepo_url = getURL("showrepo", 1);
-
 function doRepoSearch($instance, $pagenav) {
     global $text, $reposearch, $tree;
-
-    $browserepos_noargs_url = getURL("browserepos", 0);
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
     $str .= "<input type='text' name=\"reposearch\" value=\"$reposearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($reposearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browserepos_noargs_url\">{$text['browseallrepos']}</a>";
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browserepos.php'>{$text['browseallrepos']}</a>";
     }
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
     $str .= "</form></span>\n";
@@ -82,7 +77,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 $numrowsplus = $numrows + $offset;
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$browserepos_url" . "tree=$tree&amp;offset=$offset&amp;reposearch=$reposearch\">" . xmlcharacters($text['repositories'] . $treestr) . "</a>";
+$logstring = "<a href=\"browserepos.php?tree=$tree&amp;offset=$offset&amp;reposearch=$reposearch\">" . xmlcharacters($text['repositories'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -108,7 +103,7 @@ if ($totrows) {
     echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
-$pagenav = get_browseitems_nav($totrows, $browserepos_url . "reposearch=$reposearch&amp;offset", $maxsearchresults, $max_browserepo_pages);
+$pagenav = get_browseitems_nav($totrows, "browserepos.php?reposearch=$reposearch&amp;offset", $maxsearchresults, $max_browserepo_pages);
 if ($pagenav || $reposearch) {
     echo doRepoSearch(1, $pagenav);
     echo "<br>\n";
@@ -146,8 +141,8 @@ $i = $offsetplus;
 while ($row = tng_fetch_assoc($result)) {
     echo "<tr>\n";
     echo "<td class='databack'><span class='normal'>$i</span></td>\n";
-    echo "<td class='databack'><span class='normal'><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
-    echo "<td class='databack'><span class='normal'><a href=\"$showrepo_url" . "repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
+    echo "<td class='databack'><span class='normal'><a href=\"showrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
+    echo "<td class='databack'><span class='normal'><a href=\"showrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
     if ($numtrees > 1) {
         echo "<td class='databack nw'><span class='normal'>{$row['treename']}&nbsp;</span></td>";
     }

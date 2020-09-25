@@ -161,9 +161,9 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <h3 class="subhead"><?php echo $text['pdfgen']; ?></h3>
+    <h4 class="subhead"><?php echo $text['pdfgen']; ?></h4>
     <br>
-    <h3 class="subhead"><span class="normal" style="padding-bottom:3px;"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></h3>
+    <h5 class="subhead"><span class="normal" style="padding-bottom:3px;"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></h5>
     <?php
     if (count($font_list) == 0) {
         echo "ERROR: There are no fonts installed to support character set $session_charset.";

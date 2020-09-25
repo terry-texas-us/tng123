@@ -31,7 +31,6 @@ $query = "SELECT country FROM $countries_table";
 $countryresult = tng_query($query);
 
 $helplang = findhelp("cemeteries_help.php");
-$showmap_url = getURL("showmap", 1);
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifycemetery'], $flags);
@@ -94,7 +93,7 @@ if ($map['key']) {
     $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
     $cemtabs[2] = [$allow_add, "#", $admtext['edit'], "edit"];
     $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"$showmap_url" . "cemeteryID=$cemeteryID&tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"showmap.php?cemeteryID=$cemeteryID&tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
     $menu = doMenu($cemtabs, "edit", $innermenu);
     echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['modifycemetery'], "img/cemeteries_icon.gif", $menu, $message);
     ?>

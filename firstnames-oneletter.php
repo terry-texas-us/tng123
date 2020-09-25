@@ -3,16 +3,11 @@ $textpart = "surnames";
 @set_time_limit(0);
 include "tng_begin.php";
 
-$search_url = getURL("search", 1);
-$firstnames_url = getURL("firstnames", 1);
-$firstnames_all_url = getURL("firstnames-all", 1);
-$firstnames_oneletter_url = getURL("firstnames-oneletter", 1);
-
 $firstchar = mb_substr($firstchar, 0, 1, $charset);
 $decodedfirstchar = stripslashes(urldecode($firstchar));
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"$firstnames_oneletter_url" . "firstchar=$firstchar&amp;tree=$tree\">" . xmlcharacters($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar$treestr") . "</a>";
+$logstring = "<a href=\"firstnames-oneletter.php?firstchar=$firstchar&amp;tree=$tree\">" . xmlcharacters($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar$treestr") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -34,7 +29,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
     <div class="titlebox">
         <div>
             <h3 class="subhead"><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></h3>
-            <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"$firstnames_url" . "tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"$firstnames_all_url" . "tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
+            <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
         </div>
         <table class="sntable">
             <tr>
@@ -68,7 +63,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
                         $num_in_col_ctr = 0;
                         while ($firstname = tng_fetch_assoc($result)) {
                             $firstname2 = urlencode($firstname['firstname']);
-                            $name = $firstname['firstname'] ? "<a href=\"$search_url" . "myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : $text['nofirstname'];
+                            $name = $firstname['firstname'] ? "<a href=\"search.php?myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : $text['nofirstname'];
                             echo "$snnum. $name ({$firstname['lncount']})<br>\n";
                             $snnum++;
                             $num_in_col_ctr++;

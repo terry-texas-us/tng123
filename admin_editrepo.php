@@ -14,9 +14,6 @@ if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtre
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-
-$showrepo_url = getURL("showrepo", 1);
-
 $repoID = ucfirst($repoID);
 
 $treerow = getTree($trees_table, $tree);
@@ -66,7 +63,7 @@ $repotabs[1] = array($allow_add, "admin_newrepo.php", $admtext['addnew'], "addre
 $repotabs[2] = array($allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge");
 $repotabs[3] = array($allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", $admtext['edit'], "edit");
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$showrepo_url" . "repoID=$repoID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$repoID&amp;tree=$tree&amp;linktype=R\" class=\"lightlink\">{$admtext['addmedia']}</a>";
 }

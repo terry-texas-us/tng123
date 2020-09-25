@@ -75,8 +75,6 @@ function addCriteria($field, $value, $operator) {
 
     return $criteria;
 }
-
-$showrepo_url = getURL("showrepo", 1);
 if ($tree) {
     $allwhere = "$repositories_table.gedcom = \"$tree\" AND $repositories_table.gedcom = $trees_table.gedcom";
 } else {
@@ -217,7 +215,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $showrepo_url . "repoID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showrepo.php?repoID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['repoID'], $actionstr);

@@ -59,7 +59,6 @@ echo tng_menu("I", "relate", $primaryID, $innermenu);
 
 $namestr .= $namestrplus;
 
-$findpersonform_url = getURL("findpersonform", 1);
 echo getFORM("relationship", "get", "form1", "form1", "$('calcbtn').className='fieldnamebacksave';");
 
 $maxupgen = $pedigree['maxupgen'] ? $pedigree['maxupgen'] : 15;

@@ -4,15 +4,7 @@ include "tng_begin.php";
 
 include "personlib.php";
 
-$familygroup_url = getURL("familygroup", 1);
-$getperson_url = getURL("getperson", 1);
-$placesearch_url = getURL("placesearch", 1);
-$showsource_url = getURL("showsource", 1);
-$tentedit_url = getURL("ajx_tentedit", 1);
-$showalbum_url = getURL("showalbum", 1);
-$pdfform_url = getUrl("rpt_pdfform", 1);
-
-$placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"$placesearch_url" . "psearch=" : "<a href=\"$placesearch_url" . "tree=$tree&amp;psearch=";
+$placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"placesearch.php?psearch=" : "<a href=\"placesearch.php?tree=$tree&amp;psearch=";
 $placelinkend = "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
 
 $firstsection = 0;
@@ -44,7 +36,7 @@ function showFact($text, $fact) {
 }
 
 function showDatePlace($event) {
-    global $allow_lds_this, $cellnumber, $text, $tentative_edit, $tentedit_url, $tree, $familyID;
+    global $allow_lds_this, $cellnumber, $text, $tentative_edit, $tree, $familyID;
     global $placelinkbegin, $placelinkend;
 
     $dptext = "";
@@ -66,7 +58,7 @@ function showDatePlace($event) {
     }
 
     $dptext .= "<tr>\n";
-    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
+    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
     $dptext .= "<td class=\"fieldnameback align-top\"$cellid><span class=\"fieldname\">" . $event['text'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td class='databack'";
@@ -85,7 +77,7 @@ function showDatePlace($event) {
             $event['type'] = $event['type2'];
             $event['ID'] = $event['ID2'];
         }
-        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('$tentedit_url" . "tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         $dptext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>{$event['ldsplace']}&nbsp;";
@@ -101,7 +93,7 @@ function showDatePlace($event) {
 
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
     global $tree, $text, $children_table, $righttree;
-    global $allow_lds_this, $allow_edit, $families_table, $people_table, $getperson_url, $familygroup_url, $personID;
+    global $allow_lds_this, $allow_edit, $families_table, $people_table, $personID;
 
     $indtext = "";
 
@@ -141,7 +133,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     if ($ind['haskids']) {
         $indtext .= "+ ";
     }
-    $indtext .= "<a href=\"$getperson_url" . "personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
+    $indtext .= "<a href=\"getperson.php?personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
 
     if ($allow_edit && $rightbranch) {
         $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
@@ -306,8 +298,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $fam['allow_private'] = $famrights['private'];
 
         $spousename = getName($fam);
-        $spouselink = $spousename ? "<a href=\"$getperson_url" . "personID={$fam['personID']}&amp;tree=$tree\">$spousename</a> | " : "";
-        $spouselink .= "<a href=\"$familygroup_url" . "familyID={$fam['familyID']}&amp;tree=$tree\">{$fam['familyID']}</a>";
+        $spouselink = $spousename ? "<a href=\"getperson.php?personID={$fam['personID']}&amp;tree=$tree\">$spousename</a> | " : "";
+        $spouselink .= "<a href=\"familygroup.php?familyID={$fam['familyID']}&amp;tree=$tree\">{$fam['familyID']}</a>";
 
         $fam['living'] = $fam['fliving'];
         $fam['private'] = $fam['fprivate'];
@@ -352,8 +344,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
         $fathername = getName($parent);
         tng_free_result($presult);
-        $fatherlink = $fathername ? "<a href=\"$getperson_url" . "personID={$parent['personID']}&amp;tree=$tree\">$fathername</a> | " : "";
-        $fatherlink .= $fathername ? "<a href=\"$familygroup_url" . "familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
+        $fatherlink = $fathername ? "<a href=\"getperson.php?personID={$parent['personID']}&amp;tree=$tree\">$fathername</a> | " : "";
+        $fatherlink .= $fathername ? "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
         $indtext .= showFact($text['father'], $fatherlink);
 
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch ";
@@ -368,8 +360,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
         $mothername = getName($parent);
         tng_free_result($presult);
-        $motherlink = $mothername ? "<a href=\"$getperson_url" . "personID={$parent['personID']}&amp;tree=$tree\">$mothername</a> | " : "";
-        $motherlink .= $mothername ? "<a href=\"$familygroup_url" . "familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
+        $motherlink = $mothername ? "<a href=\"getperson.php?personID={$parent['personID']}&amp;tree=$tree\">$mothername</a> | " : "";
+        $motherlink .= $mothername ? "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
         $indtext .= showFact($text['mother'], $motherlink);
     }
     $indtext .= "</table>\n</div>\n<br>\n";
@@ -398,7 +390,7 @@ $famrow['allow_private'] = $rights['private'];
 $famname = getFamilyName($famrow);
 
 $logname = $tngconfig['nnpriv'] && $family['private'] ? $admtext['text_private'] : ($nonames && $famrow['living'] ? $text['living'] : $famname);
-$logstring = "<a href=\"$familygroup_url" . "familyID=$familyID&amp;tree=$tree\">{$text['familygroupfor']} $logname ($familyID)</a>";
+$logstring = "<a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\">{$text['familygroupfor']} $logname ($familyID)</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -588,7 +580,7 @@ tng_free_result($treeResult);
 
 if ($allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
-    $innermenu .= "onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width:350, height:350}); return false;\">PDF</a>\n";
+    $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
 echo tng_menu("F", "family", $familyID, $innermenu);

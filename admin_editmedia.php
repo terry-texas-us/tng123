@@ -17,8 +17,6 @@ if (!$allow_media_edit && (!$allow_media_add || !$added)) {
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-$showmedia_url = getURL("showmedia", 1);
-
 include "showmedialib.php";
 
 $query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate FROM $media_table WHERE mediaID = \"$mediaID\"";
@@ -149,7 +147,7 @@ $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], 
 $mediatabs[6] = [$allow_media_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a> ";
 $innermenu .= "&nbsp;|&nbsp;<a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$showmedia_url" . "mediaID=$mediaID\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showmedia.php?mediaID=$mediaID\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 $menu = doMenu($mediatabs, "edit", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediainfo'], "img/photos_icon.gif", $menu, "");
 ?>

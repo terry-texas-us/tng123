@@ -44,7 +44,6 @@ if (!$tngconfig['places1tree']) {
 }
 
 $helplang = findhelp("places_help.php");
-$placesearch_url = getURL("placesearch", 1);
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyplace'], $flags);
@@ -161,7 +160,7 @@ $placetabs[2] = array($allow_edit && $allow_delete, "admin_mergeplaces.php", $ad
 $placetabs[3] = array($allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo");
 $placetabs[4] = array($allow_edit, "#", $admtext['edit'], "edit");
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$placesearch_url" . "psearch=" . urlencode($orgplace) . "\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID={$row['place']}&amp;tree=$tree&amp;linktype=L\" class=\"lightlink\">{$admtext['addmedia']}</a>";
 $menu = doMenu($placetabs, "edit", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace'], "img/places_icon.gif", $menu, $message);

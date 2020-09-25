@@ -92,7 +92,6 @@ function addCriteria($field, $value, $operator) {
     return $criteria;
 }
 
-$familygroup_url = getURL("familygroup", 1);
 $allwhere = "$families_table.gedcom = $trees_table.gedcom";
 $allwhere2 = "";
 
@@ -301,7 +300,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $familygroup_url . "familyID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"familygroup.php?familyID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['familyID'], $actionstr);

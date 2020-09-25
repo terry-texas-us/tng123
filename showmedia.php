@@ -15,16 +15,6 @@ $slidetime_display = "3.0";
 //starting time in microseconds
 $slidetime_micro = 3000;
 
-$showmedia_url = getURL("showmedia", 1);
-$showalbum_url = getURL("showalbum", 1);
-$getperson_url = getURL("getperson", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showsource_url = getURL("showsource", 1);
-$showrepo_url = getURL("showrepo", 1);
-$browsemedia_url = getURL("browsemedia", 1);
-$placesearch_url = getURL("placesearch", 1);
-$histories_url = getURL("histories", 1);
-$slideshow_url = getURL("ajx_slideshow", 1);
 initMediaTypes();
 
 $mediaID = preg_replace("/[^0-9]/", '', $mediaID);
@@ -60,7 +50,6 @@ if ($medialinkID) {
         $albumname = $row['albumname'];
         $albdesc = $row['description'];
         tng_free_result($result);
-        $showalbum_url = getURL("showalbum", 1);
     }
     $query = "SELECT mediatypeID, gedcom FROM $media_table WHERE mediaID = \"$mediaID\"";
     $result = tng_query($query);
@@ -72,7 +61,7 @@ if ($medialinkID) {
 }
 //redirect if we're not supposed to be here
 if ($requirelogin && $treerestrict && $assignedtree && $row['gedcom'] && $row['gedcom'] != $assignedtree) {
-    header("location: $browsemedia_url");
+    header("location: browsemedia.php?");
     exit;
 }
 if (!tng_num_rows($result)) {
@@ -151,14 +140,14 @@ $logdesc = $nonamesloc && !$noneliving && !$imgrow['alwayson'] ? ($livinginfo['p
 $mediatypeIDstr = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
 
 if (!$personID) {
-    writelog("<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;tnggallery=$tnggallery\">$mediatypeIDstr: $logdesc ($mediaID)</a>");
-    preparebookmark("<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;tnggallery=$tnggallery\">$mediatypeIDstr: $description ($mediaID)</a>");
+    writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;tnggallery=$tnggallery\">$mediatypeIDstr: $logdesc ($mediaID)</a>");
+    preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;tnggallery=$tnggallery\">$mediatypeIDstr: $description ($mediaID)</a>");
 } elseif ($albumlinkID) {
-    writelog("<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">{$text['albums']}: $logdesc ($mediaID)</a>");
-    preparebookmark("<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">{$text['albums']}: $description ($mediaID)</a>");
+    writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">{$text['albums']}: $logdesc ($mediaID)</a>");
+    preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">{$text['albums']}: $description ($mediaID)</a>");
 } else {
-    writelog("<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $logdesc ($mediaID)</a>");
-    preparebookmark("<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $description ($mediaID)</a>");
+    writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $logdesc ($mediaID)</a>");
+    preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $description ($mediaID)</a>");
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
@@ -166,7 +155,7 @@ $flags['link'] = "<link href=\"css/media.css\" rel=\"stylesheet\" type=\"text/cs
 if (!$tngprint) {
     $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/slideshow.js\"></script>\n";
     $flags['scripting'] .= "<script type=\"text/javascript\">\n";
-    $flags['scripting'] .= "var showmediaxmlfile = '" . getURL("ajx_showmediaxml", 1) . "';\n";
+    $flags['scripting'] .= "var showmediaxmlfile = 'ajx_showmediaxml.php?';\n";
     $flags['scripting'] .= "</script>\n";
 }
 
@@ -342,7 +331,7 @@ if (!$tngprint && !$tngconfig['ssdisabled']) {
     $slideshowheader = preg_replace("/\"/", "&#34;", $slideshowheader);
     $flags['more'] .= $tngconfig['ssrepeat'] ? "\nrepeat = true;\n" : "\nrepeat = false;\n";
     $flags['more'] .= "\nfunction start() {\n";
-    $flags['more'] .= "tnglitbox = new LITBox(\"$slideshow_url" . "mediaID=$mediaID&medialinkID=$medialinkID&albumlinkID=$albumlinkID&cemeteryID=$cemeteryID\", {width:900, height:675, title:'" . addslashes(truncateIt($slideshowheader, 100)) . "',onremove:function(){tnglitbox=null;timeoutID=null;},doneLoading:startSlides});\n";
+    $flags['more'] .= "tnglitbox = new LITBox(\"ajx_slideshow.php?mediaID=$mediaID&medialinkID=$medialinkID&albumlinkID=$albumlinkID&cemeteryID=$cemeteryID\", {width:900, height:675, title:'" . addslashes(truncateIt($slideshowheader, 100)) . "',onremove:function(){tnglitbox=null;timeoutID=null;},doneLoading:startSlides});\n";
     $flags['more'] .= "jQuery('#slidetoggle').click(function() {stopshow();return false;});\n";
     $flags['more'] .= "return false;}\n";
     $flags['more'] .= "\nfunction startSlides() {\n";

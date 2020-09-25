@@ -4,15 +4,6 @@ include "tng_begin.php";
 
 include "functions.php";
 
-$browsemedia_url = getURL("browsemedia", 1);
-$getperson_url = getURL("getperson", 1);
-$showmedia_url = getURL("showmedia", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showsource_url = getURL("showsource", 1);
-$showrepo_url = getURL("showrepo", 1);
-$placesearch_url = getURL("placesearch", 1);
-$showmap_url = getURL("showmap", 1);
-
 if (isset($mediatypeID)) {
     $mediatypeID = cleanIt(preg_replace("/[<>{};!=]/", '', $mediatypeID));
 }
@@ -44,19 +35,19 @@ if ($mediasearch) {
 if ($tnggallery) {
     $tnggallery = 1;
     $maxsearchresults *= 2;
-    $gallerymsg = "<a href=\"$browsemedia_url" . "tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class=\"snlink\">&raquo; {$text['regphotos']}</a>";
+    $gallerymsg = "<a href=\"browsemedia.php?tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class=\"snlink\">&raquo; {$text['regphotos']}</a>";
 } else {
-    $gallerymsg = "<a href=\"$browsemedia_url" . "tnggallery=1&amp;tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class=\"snlink\">&raquo; {$text['gallery']}</a>";
+    $gallerymsg = "<a href=\"browsemedia.php?tnggallery=1&amp;tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class=\"snlink\">&raquo; {$text['gallery']}</a>";
 }
 
 $_SESSION['tng_gallery'] = $tnggallery;
 $_SESSION['tng_mediatree'] = $tree;
 
 function doMediaSearch($instance, $pagenav) {
-    global $text, $mediasearch, $orgmediatypeID, $browsemedia_url, $tree, $tnggallery;
+    global $text, $mediasearch, $orgmediatypeID, $tree, $tnggallery;
 
     $str = getFORM("browsemedia", "get", "MediaSearch$instance", "");
-    $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"{$text['search']}\"> <input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='$browsemedia_url" . "mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"{$text['search']}\"> <input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='browsemedia.php?mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
     $str .= "<input type='hidden' name=\"mediatypeID\" value=\"$orgmediatypeID\">\n";
     $str .= $pagenav;
     $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
@@ -115,7 +106,7 @@ $numrowsplus = $numrows + $offset;
 $treestr = $tree ? " " . $text['tree'] . ": $tree" : "";
 $treestr = trim("$mediasearch $treestr");
 $treestr = $treestr ? " ($treestr)" : "";
-$logstring = "<a href=\"$browsemedia_url" . "tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch&amp;mediatypeID=$mediatypeID\">$titlestr$treestr</a>";
+$logstring = "<a href=\"browsemedia.php?tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch&amp;mediatypeID=$mediatypeID\">$titlestr$treestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -146,7 +137,7 @@ if ($totrows) {
 }
 $toplinks .= "$gallerymsg";
 
-$pagenav = get_browseitems_nav($totrows, $browsemedia_url . "mediasearch=$mediasearch&amp;tnggallery=$tnggallery&amp;mediatypeID=$orgmediatypeID&amp;offset", $maxsearchresults, $max_browsemedia_pages);
+$pagenav = get_browseitems_nav($totrows, "browsemedia.php?mediasearch=$mediasearch&amp;tnggallery=$tnggallery&amp;mediatypeID=$orgmediatypeID&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 $preheader = doMediaSearch(1, $pagenav);
 $preheader .= "<br>\n";
 
@@ -266,7 +257,7 @@ while ($row = tng_fetch_assoc($result)) {
         if (!$tnggallery) {
             $hstext = "";
             if ($prow['personID2'] != NULL) {
-                $medialinktext .= "<li><a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+                $medialinktext .= "<li><a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                 $medialinktext .= getName($prow);
                 if ($orgmediatypeID == "headstones") {
                     $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
@@ -279,12 +270,12 @@ while ($row = tng_fetch_assoc($result)) {
                 }
             } elseif ($prow['sourceID'] != NULL) {
                 $sourcetext = $prow['title'] ? $text['source'] . ": " . $prow['title'] : $text['source'] . ": " . $prow['sourceID'];
-                $medialinktext .= "<li><a href=\"$showsource_url" . "sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext\n";
+                $medialinktext .= "<li><a href=\"showsource.php?sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext\n";
             } elseif ($prow['repoID'] != NULL) {
                 $repotext = $prow['reponame'] ? $text['repository'] . ": " . $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
-                $medialinktext .= "<li><a href=\"$showrepo_url" . "repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext";
+                $medialinktext .= "<li><a href=\"showrepo.php?repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } elseif ($prow['familyID'] != NULL) {
-                $medialinktext .= "<li><a href=\"$familygroup_url" . "familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
+                $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
             } elseif (!$prow['linktype'] || $prow['linktype'] == "C") {
                 $query = "SELECT persfamID, sourceID, gedcom FROM $citations_table WHERE citationID = \"{$prow['personID']}\"";
                 $cresult = tng_query($query);
@@ -295,7 +286,7 @@ while ($row = tng_fetch_assoc($result)) {
                         if (!in_array($persfamID, $citelinks)) {
                             $citelinks[] = $persfamID;
                             if (substr($persfamID, 0, 1) == $tngconfig['personprefix'] || substr($persfamID, -1) == $tngconfig['personsuffix']) {
-                                $medialinktext .= "<li><a href=\"$getperson_url" . "personID=$persfamID&amp;tree={$crow['gedcom']}\">";
+                                $medialinktext .= "<li><a href=\"getperson.php?personID=$persfamID&amp;tree={$crow['gedcom']}\">";
                                 $presult2 = getPersonSimple($prow['gedcom'], $persfamID);
                                 if ($presult2) {
                                     $cprow = tng_fetch_assoc($presult2);
@@ -310,7 +301,7 @@ while ($row = tng_fetch_assoc($result)) {
                                 if ($presult2) {
                                     $famrow = tng_fetch_assoc($presult2);
                                     $familyname = getFamilyName($famrow);
-                                    $medialinktext .= "<li><a href=\"$familygroup_url" . "familyID=$persfamID&amp;tree={$crow['gedcom']}\">{$text['family']}: $familyname</a>";
+                                    $medialinktext .= "<li><a href=\"familygroup.php?familyID=$persfamID&amp;tree={$crow['gedcom']}\">{$text['family']}: $familyname</a>";
                                     tng_free_result($presult2);
                                 }
                             }
@@ -320,7 +311,7 @@ while ($row = tng_fetch_assoc($result)) {
                 }
             } else {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
-                $medialinktext .= "<li><a href=\"$placesearch_url" . "psearch={$prow['personID']}$treestr\">" . $prow['personID'];
+                $medialinktext .= "<li><a href=\"placesearch.php?psearch={$prow['personID']}$treestr\">" . $prow['personID'];
             }
             if ($prow['eventID']) {
                 $query = "SELECT display FROM $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
@@ -350,7 +341,7 @@ while ($row = tng_fetch_assoc($result)) {
     $uselink = getMediaHREF($row, 0);
 
     if ($numrows == $maxplus) {
-        $medialinktext .= "\n['<a href=\"$showmedia_url" . "mediaID={$row['mediaID']}&amp;ioffset=$maxsearchresults\">{$text['morelinks']}</a>']";
+        $medialinktext .= "\n['<a href=\"showmedia.php?mediaID={$row['mediaID']}&amp;ioffset=$maxsearchresults\">{$text['morelinks']}</a>']";
     }
 
     $imgsrc = getSmallPhoto($row);
@@ -416,7 +407,7 @@ while ($row = tng_fetch_assoc($result)) {
                 $row['cemname'] = $row['city'];
             }
             $plotstr = $row['plot'] ? "<br>" . nl2br($row['plot']) : "";
-            $mediatext .= "<td class='databack' width=\"30%\"><a href=\"$showmap_url" . "cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
+            $mediatext .= "<td class='databack' width=\"30%\"><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
             $mediatext .= "<td class='databack nw'>{$row['status']}&nbsp;</td>";
             $mediatext .= "<td class='databack' width=\"30%\">\n";
         } else {

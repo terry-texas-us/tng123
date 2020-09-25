@@ -6,14 +6,6 @@ global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
 include "searchlib.php";
 
-$searchform_url = getURL("searchform", 1);
-$search_url = getURL("search", 1);
-$placesearch_url = getURL("placesearch", 1);
-$getperson_url = getURL("getperson", 1);
-$showtree_url = getURL("showtree", 1);
-$pedigree_url = getURL("pedigree", 1);
-$heatmap_url = getURL("heatmap", 1);
-
 @set_time_limit(0);
 $maxsearchresults = $nr ? ($nr < 200 ? $nr : 200) : ($_SESSION['tng_nr'] ? $_SESSION['tng_nr'] : $maxsearchresults);
 if (!isset($mybool) || ($mybool != "AND" && $mybool != "OR")) {
@@ -360,12 +352,12 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 if (!$numrows) {
     $msg = $text['noresults'] . " $querystring. {$text['tryagain']}.";
-    header("Location: " . "$searchform_url" . "msg=" . urlencode($msg));
+    header("Location: searchform.php?msg=" . urlencode($msg));
     exit;
 } elseif ($numrows == 1 && !$offset) {
     $row = tng_fetch_assoc($result);
     tng_free_result($result);
-    header("Location: " . "$getperson_url" . "personID=" . $row['personID'] . "&tree=" . $row['gedcom']);
+    header("Location: getperson.php?personID=" . $row['personID'] . "&tree=" . $row['gedcom']);
     exit;
 }
 
@@ -380,7 +372,7 @@ if ($sitever != "mobile") {
     <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript">
         // <![CDATA[
-        var ajx_perspreview = '<?php echo getURL("ajx_perspreview", 0);?>';
+        const ajx_perspreview = 'ajx_perspreview.php"';
         // ]]>
     </script>
     <?php
@@ -390,7 +382,7 @@ if ($sitever != "mobile") {
     <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
 <?php
-$logstring = "<a href=\"$search_url" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
+$logstring = "<a href=\"search.php?" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -398,8 +390,8 @@ $numrowsplus = $numrows + $offset;
 
 echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} " . number_format($totrows) . " $querystring</p>";
 
-$pagenav = get_browseitems_nav($totrows, "$search_url" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-$heatmap = !$cejoin ? "<a href=\"$heatmap_url" . $_SERVER['QUERY_STRING'] . "\" class=\"snlink\">{$text['heatmap']}</a>" : "";
+$pagenav = get_browseitems_nav($totrows, "search.php?$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
+$heatmap = !$cejoin ? "<a href=\"heatmap.php?" . $_SERVER['QUERY_STRING'] . "\" class=\"snlink\">{$text['heatmap']}</a>" : "";
 if ($pagenav && !$cejoin) {
     $heatmap = " | " . $heatmap;
 }
@@ -531,8 +523,8 @@ while ($row = tng_fetch_assoc($result)) {
     if ($sitever != "mobile") {
         echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div></div>\n";
     }
-    echo "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> ";
-    echo "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$name</a>";
+    echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> ";
+    echo "<a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$name</a>";
 
     echo "</td>";
     if ($sitever != "mobile") {
@@ -558,7 +550,7 @@ while ($row = tng_fetch_assoc($result)) {
                 tng_free_result($spresult);
             }
         }
-        $spousestr = $spouse ? "<a href=\"$getperson_url" . "personID=$spouseID&amp;tree={$row['gedcom']}\">$spouse</a>&nbsp;" : "";
+        $spousestr = $spouse ? "<a href=\"getperson.php?personID=$spouseID&amp;tree={$row['gedcom']}\">$spouse</a>&nbsp;" : "";
     } else {
         $spousestr = "";
     }
@@ -593,7 +585,7 @@ while ($row = tng_fetch_assoc($result)) {
         echo "<td class='databack'>{$row['personID']} </td>";
     }
     if ($numtrees > 1 || $numbranches) {
-        echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>";
+        echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>";
         if ($row['branch']) {
             $branches = explode(",", $row['branch']);
             echo " | ";

@@ -93,7 +93,7 @@ if ($totnum_tests) {
                 $privacy = "";
             }
             if ($dbname) {
-                $dna_namestr = "<a href=\"$getperson_url" . "personID={$dna_test['tpersonID']}&tree={$dna_test['tgedcom']}\">" . getName($dprow) . "</a> $privacy";
+                $dna_namestr = "<a href=\"getperson.php?personID={$dna_test['tpersonID']}&tree={$dna_test['tgedcom']}\">" . getName($dprow) . "</a> $privacy";
             } else {
                 $dna_namestr = $person_name . $privacy;
             }
@@ -106,7 +106,7 @@ if ($totnum_tests) {
                 $persontext .= "</tr>\n<tr class=\"dnatest\" style=\"display:none;\">\n";
             }
             $markercount = ($dna_test['test_type'] == "Y-DNA") ? "-{$dna_test['markers']}" : "";
-            $persontext .= "<td class='databack'><a href=\"$dna_test_url" . "testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";
+            $persontext .= "<td class='databack'><a href=\"show_dna_test.php?testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";
             $persontext .= "<td class='databack'>$dna_namestr";
             $test_type = $dna_test['test_type'];
             if ($dna_test['test_type'] == "Y-DNA") {
@@ -157,7 +157,7 @@ if ($totnum_tests) {
                 $ancrow['allow_private'] = $ancrights['private'];
                 $vitalinfo = getBirthInfo($ancrow);
                 $anc_namestr = getName($ancrow);
-                $mdanc_namestr = "<a href=\"$getperson_url" . "personID={$dna_test['MD_ancestorID']}&tree={$dna_test['tgedcom']}\">$anc_namestr</a>" . $vitalinfo;
+                $mdanc_namestr = "<a href=\"getperson.php?personID={$dna_test['MD_ancestorID']}&tree={$dna_test['tgedcom']}\">$anc_namestr</a>" . $vitalinfo;
 
                 tng_free_result($dna_anc_result);
             }
@@ -173,7 +173,7 @@ if ($totnum_tests) {
                     $ancrow['allow_private'] = $ancrights['private'];
                     $vitalinfo = getBirthInfo($ancrow);
                     $anc_namestr = getName($ancrow);
-                    $mrcanc_namestr = "<a href=\"$getperson_url" . "personID={$dna_test['MRC_ancestorID']}&tree={$dna_test['tgedcom']}\">$anc_namestr</a>" . $vitalinfo;
+                    $mrcanc_namestr = "<a href=\"getperson.php?personID={$dna_test['MRC_ancestorID']}&tree={$dna_test['tgedcom']}\">$anc_namestr</a>" . $vitalinfo;
 
                     tng_free_result($dna_anc_result);
                 } else {
@@ -189,7 +189,7 @@ if ($totnum_tests) {
                         $ancrow['allow_private'] = $ancrights['private'];
                         $famname = getFamilyName($ancrow);
                         $fammarried = "<br>&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $ancrow['marrdate'];
-                        $mrcanc_namestr = $text['family'] . ": " . "<a href=\"$familygroup_url" . "familyID={$dna_test['MRC_ancestorID']}&tree={$dna_test['tgedcom']}\">$famname</a>" . $fammarried;
+                        $mrcanc_namestr = $text['family'] . ": " . "<a href=\"familygroup.php?familyID={$dna_test['MRC_ancestorID']}&tree={$dna_test['tgedcom']}\">$famname</a>" . $fammarried;
                     }
                 }
             }

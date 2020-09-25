@@ -9,19 +9,6 @@ if (!$psearch) {
 }
 include "personlib.php";
 
-$searchform_url = getURL("searchform", 1);
-$search_url = getURL("search", 1);
-$placesearch_url = getURL("placesearch", 1);
-$getperson_url = getURL("getperson", 1);
-$showtree_url = getURL("showtree", 1);
-$pedigree_url = getURL("pedigree", 1);
-$showmedia_url = getURL("showmedia", 1);
-$familygroup_url = getURL("familygroup", 1);
-$showsource_url = getURL("showsource", 1);
-$showrepo_url = getURL("showrepo", 1);
-$showalbum_url = getURL("showalbum", 1);
-$showmap_url = getURL("showmap", 1);
-
 @set_time_limit(0);
 $psearch = preg_replace("/[<>{};!=]/", '', $psearch);
 $psearchns = $psearch;
@@ -62,7 +49,7 @@ if ($order == "date") {
 
 function processEvents($prefix, $stdevents, $displaymsgs) {
     global $eventtypes_table, $text, $tree, $people_table, $families_table, $trees_table, $offset, $page, $psearch, $maxsearchresults, $numtrees;
-    global $placesearch_url, $psearchns, $urlstring, $familygroup_url, $pedigree_url, $getperson_url, $events_table, $showtree_url, $order, $namesort, $datesort;
+    global $psearchns, $urlstring, $events_table, $order, $namesort, $datesort;
 
     if ($prefix === "I") {
         $table = $people_table;
@@ -190,7 +177,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 
             echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
 
-            $pagenav = get_browseitems_nav($totrows, "$placesearch_url" . "$urlstring&amp;psearch=" . urlencode($psearchns) . "&amp;order=$order&amp;offset", $maxsearchresults, $max_browsesearch_pages);
+            $pagenav = get_browseitems_nav($totrows, "placesearch.php?$urlstring&amp;psearch=" . urlencode($psearchns) . "&amp;order=$order&amp;offset", $maxsearchresults, $max_browsesearch_pages);
             if ($pagenav) {
                 echo "<p>$pagenav</p>";
             }
@@ -226,17 +213,17 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                     $i++;
                     echo "<td class='databack'><span class='normal'>";
                     if ($prefix == "F") {
-                        echo "<a href=\"$familygroup_url" . "familyID={$row['familyID']}&amp;tree={$row['gedcom']}\">{$row['p1lastname']} / {$row['p2lastname']}</a>";
+                        echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\">{$row['p1lastname']} / {$row['p2lastname']}</a>";
                     } elseif ($prefix == "I") {
                         $name = getNameRev($row);
-                        echo "<a href=\"$pedigree_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
+                        echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
                     }
                     echo "&nbsp;</span></td>";
                     echo "<td class='databack'><span class='normal'>&nbsp;" . displayDate($dateval) . "</span></td>";
                     echo "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
                     echo "<td class='databack'><span class='normal'>{$row[$idfield]} </span></td>";
                     if ($numtrees > 1) {
-                        echo "<td class='databack'><span class='normal'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+                        echo "<td class='databack'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
                     }
                     echo "</tr>\n";
                 }
@@ -277,7 +264,7 @@ if (!$tngconfig['places1tree']) {
     $treename = "";
 }
 
-$logstring = "<a href=\"$placesearch_url" . "psearch=$psearchns$logurlstring\">{$text['searchresults']} $querystring</a>";
+$logstring = "<a href=\"placesearch.php?psearch=$psearchns$logurlstring\">{$text['searchresults']} $querystring</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -403,7 +390,7 @@ while ($prow = tng_fetch_assoc($presult)) {
     }
     $cemdata .= "<tr>\n";
     $cemdata .= "<td class='databack'>$i.</td>\n";
-    $cemdata .= "<td class='databack'><a href=\"$showmap_url" . "cemeteryID={$prow['cemeteryID']}\">{$prow['cemname']}</a></td>\n";
+    $cemdata .= "<td class='databack'><a href=\"showmap.php?cemeteryID={$prow['cemeteryID']}\">{$prow['cemname']}</a></td>\n";
     $cemdata .= "<td class='databack'>$location</td>\n";
     $cemdata .= "</tr>\n";
     $i++;

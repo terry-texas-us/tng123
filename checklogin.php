@@ -95,7 +95,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && (!$
             exit;
         } elseif ($requirelogin) {
             if (!substr_count($_SERVER['SCRIPT_NAME'], "/index.") && !substr_count($_SERVER['SCRIPT_NAME'], "/ajx_tnginstall.php")) {
-                header("Location: " . getURL("login", 0));
+                header("Location: login.php");
                 exit;
             }
         } else {

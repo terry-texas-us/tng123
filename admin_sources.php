@@ -82,7 +82,6 @@ function addCriteria($field, $value, $operator) {
     return $criteria;
 }
 
-$showsource_url = getURL("showsource", 1);
 if ($tree) {
     $allwhere = "$sources_table.gedcom = \"$tree\" AND $sources_table.gedcom = $trees_table.gedcom";
 } else {
@@ -233,7 +232,7 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $showsource_url . "sourceID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showsource.php?sourceID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['sourceID'], $actionstr);

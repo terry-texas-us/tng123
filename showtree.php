@@ -2,9 +2,6 @@
 $textpart = "trees";
 include "tng_begin.php";
 
-$showtree_url = getURL("showtree", 1);
-$statistics_url = getURL("statistics", 0);
-
 function showFact($text, $fact, $numflag = 0) {
     echo "<tr>\n";
     echo "<td class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\">" . $text . "&nbsp;</span></td>\n";
@@ -25,8 +22,8 @@ $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
-writelog("<a href=\"$showtree_url" . "tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
-preparebookmark("<a href=\"$showtree_url" . "tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
+writelog("<a href=\"showtree.php?tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
+preparebookmark("<a href=\"showtree.php?tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
 
@@ -91,7 +88,7 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
     </table>
     <br>
 <?php
-echo "<a href=\"$statistics_url\">{$text['morestats']}</a>\n";
+echo "<a href='statistics.php'>{$text['morestats']}</a>\n";
 ?>
     <br><br>
 

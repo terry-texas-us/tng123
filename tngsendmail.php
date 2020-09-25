@@ -62,12 +62,11 @@ if ($msg_exclude) {
     }
 }
 
-$suggest_url = getURL("suggest", 1);
-
 if ($enttype == "I") {
     $typestr = "person";
-    $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, sex, nameorder, living, private, branch, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) AS death
-		FROM $people_table, $trees_table WHERE personID = \"$ID\" AND $people_table.gedcom = \"$tree\" AND $people_table.gedcom = $trees_table.gedcom";
+    $query = "SELECT firstname, lnprefix, lastname, prefix, suffix, sex, nameorder, living, private, branch, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) AS death ";
+    $query .= "FROM $people_table people, $trees_table trees ";
+    $query .= "WHERE personID = '$ID' AND people.gedcom = '$tree' AND people.gedcom = trees.gedcom";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
 
@@ -77,7 +76,7 @@ if ($enttype == "I") {
     $row['allow_private'] = $rights['private'];
 
     $name = getName($row) . " ($ID)";
-    $pagelink = "$tngwebsite/" . getURL("getperson", 1) . "personID=$ID&tree=$tree";
+    $pagelink = "$tngwebsite/getperson.php?personID=$ID&tree=$tree";
     tng_free_result($result);
 } elseif ($enttype == "F") {
     $typestr = "family";
@@ -91,21 +90,21 @@ if ($enttype == "I") {
     $row['allow_private'] = $rights['private'];
 
     $name = $text['family'] . ": " . getFamilyName($row);
-    $pagelink = "$tngwebsite/" . getURL("familygroup", 1) . "familyID=$ID&tree=$tree";
+    $pagelink = "$tngwebsite/familygroup.php?familyID=$ID&tree=$tree";
     tng_free_result($result);
 } elseif ($enttype == "S") {
     $query = "SELECT title FROM $sources_table WHERE sourceID = \"$ID\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $name = $text['source'] . ": {$row['title']} ($ID)";
-    $pagelink = "$tngwebsite/" . getURL("showsource", 1) . "sourceID=$ID&tree=$tree";
+    $pagelink = "$tngwebsite/showsource.php?sourceID=$ID&tree=$tree";
     tng_free_result($result);
 } elseif ($enttype == "R") {
     $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$ID\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $name = $text['repository'] . ": {$row['reponame']} ($ID)";
-    $pagelink = "$tngwebsite/" . getURL("showrepo", 1) . "repoID=$ID&tree=$tree";
+    $pagelink = "$tngwebsite/showrepo.php?repoID=$ID&tree=$tree";
     tng_free_result($result);
 } elseif ($enttype == "L") {
     $name = $ID;
@@ -114,7 +113,7 @@ if ($enttype == "I") {
     } else {
         $treestr = "";
     }
-    $pagelink = "$tngwebsite/" . getURL("placesearch", 1) . "{$treestr}psearch=" . urlencode($name);
+    $pagelink = "$tngwebsite/placesearch.php{$treestr}psearch=" . urlencode($name);
 }
 if ($enttype) {
     $subject = $text['proposed'] . ": $name";
@@ -143,4 +142,4 @@ $emailtouse = $tngconfig['fromadmin'] == 1 ? $emailaddr : $youremail;
 $success = tng_sendmail($yourname, $emailtouse, $owner, $sendemail, $subject, $body, $emailaddr, $youremail);
 $message = $success ? "mailsent" : $message = "mailnotsent&sowner=" . urlencode($owner) . "&ssendemail=" . urlencode($sendemail);
 
-header("Location: $suggest_url" . "enttype=$enttype&ID=$ID&tree=$tree&message=$message");
+header("Location: suggest.php?enttype=$enttype&ID=$ID&tree=$tree&message=$message");

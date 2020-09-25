@@ -76,8 +76,6 @@ function addCriteria($field, $value, $operator) {
     }
     return $criteria;
 }
-
-$placesearch_url = getURL("placesearch", 1);
 if ($tree) {
     $allwhere = "$places_table.gedcom = \"$tree\"";
 } else {
@@ -325,7 +323,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                         if ($allow_delete) {
                             $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"" . $placesearch_url . "psearch=zzz";
+                        $actionstr .= "<a href=\"placesearch.php?psearch=zzz";
                         if (!$tngconfig['places1tree']) {
                             $actionstr .= "&amp;tree=yyy";
                         }

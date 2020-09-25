@@ -18,8 +18,6 @@ if ($sitever != "mobile") {
 $dadlabel = getTemplateMessage('t16_dadside');
 $momlabel = getTemplateMessage('t16_momside');
 $title = getTemplateMessage('t16_maintitle');
-$whatsnew_url = getURL("whatsnew", 0);
-$surnames_url = getURL("surnames", 0);
 
 $rp_maxwidth = "300";
 $rp_maxheight = "300";
@@ -211,11 +209,11 @@ $search .= "</form>\n";
                         }
                         ?>
                         <div class="tblock">
-                            <h2><?php echo $text['whatsnew'] . " | <a href=\"$whatsnew_url\">" . $text['more'] . "</a>"; ?></h2>
+                            <h2><?php echo $text['whatsnew'] . " | <a href='whatsnew.php'>" . $text['more'] . "</a>"; ?></h2>
                             <?php include "widget_whatsnew.php"; ?>
                         </div>
                         <div class="tblock">
-                            <h2><?php echo $text['surnames'] . " | <a href=\"$surnames_url\">" . $text['more'] . "</a>"; ?></h2>
+                            <h2><?php echo $text['surnames'] . " | <a href='surnames.php'>" . $text['more'] . "</a>"; ?></h2>
                             <?php
                             $nc = new surname_cloud();
                             $nc->display();

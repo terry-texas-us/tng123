@@ -220,7 +220,7 @@ function findLivingPrivate($mediaID, $tree) {
 function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlinks = true) {
     global $allow_admin, $allow_media_edit, $albumname, $albumID, $offset;
     global $tree, $page, $maxsearchresults, $linktype, $showall, $tnggallery, $text;
-    global $showalbum_url, $browsemedia_url, $familygroup_url, $showsource_url, $showrepo_url, $placesearch_url, $showmedia_url, $tngconfig;
+    global $tngconfig;
     global $totalpages, $all;
 
     $mediaperpage = 1;
@@ -235,20 +235,20 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
         if ($albumlinkID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"$showalbum_url" . "albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class=\"snlink\">&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"showalbum.php?albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class=\"snlink\">&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
         } elseif (!$personID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"$browsemedia_url" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class=\"snlink\">&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class=\"snlink\">&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
         } else {
             if ($linktype == "F") {
-                $pagenav .= "<a href=\"$familygroup_url" . "familyID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "S") {
-                $pagenav .= "<a href=\"$showsource_url" . "sourceID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "R") {
-                $pagenav .= "<a href=\"$showrepo_url" . "repoID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "L") {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree=$tree";
-                $pagenav .= "<a href=\"$placesearch_url" . "psearch=$personID$treestr\" class=\"snlink\">&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class=\"snlink\">&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
             }
         }
     }
@@ -267,27 +267,27 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
         if ($page > 1) {
             $prevpage = $page - 1;
-            $prevlink = get_media_link($result, $showmedia_url, $prevpage, "jump", $text['text_prev'], "&laquo;" . $text['text_prev'], $allstr, $showlinks);
+            $prevlink = get_media_link($result, "showmedia.php?", $prevpage, "jump", $text['text_prev'], "&laquo;" . $text['text_prev'], $allstr, $showlinks);
         }
         if ($page < $totalpages) {
             $nextpage = $page + 1;
-            $nextlink = get_media_link($result, $showmedia_url, $nextpage, "jumpnext", $text['text_next'], $text['text_next'] . "&raquo;", $allstr, $showlinks);
+            $nextlink = get_media_link($result, "showmedia.php?", $nextpage, "jumpnext", $text['text_next'], $text['text_next'] . "&raquo;", $allstr, $showlinks);
         }
         $curpage = 0;
         $numlinks = "";
         while ($curpage++ < $totalpages) {
             if (($curpage <= $page - $max_showmedia_pages || $curpage >= $page + $max_showmedia_pages) && $max_showmedia_pages != 0) {
                 if ($curpage == 1) {
-                    $firstlink = get_media_link($result, $showmedia_url, $curpage, "jump", $text['firstpage'], "&laquo;1", $allstr, $showlinks) . "...";
+                    $firstlink = get_media_link($result, "showmedia.php?", $curpage, "jump", $text['firstpage'], "&laquo;1", $allstr, $showlinks) . "...";
                 }
                 if ($curpage == $totalpages) {
-                    $lastlink = "..." . get_media_link($result, $showmedia_url, $curpage, "jump", $text['lastpage'], "$totalpages&raquo;", $allstr, $showlinks);
+                    $lastlink = "..." . get_media_link($result, "showmedia.php?", $curpage, "jump", $text['lastpage'], "$totalpages&raquo;", $allstr, $showlinks);
                 }
             } else {
                 if ($curpage == $page) {
                     $numlinks .= " <span class=\"snlink snlinkact\">$curpage</span> ";
                 } else {
-                    $numlinks .= get_media_link($result, $showmedia_url, $curpage, "jump", $curpage, $curpage, $allstr, $showlinks);
+                    $numlinks .= get_media_link($result, "showmedia.php?", $curpage, "jump", $curpage, $curpage, $allstr, $showlinks);
                 }
             }
         }
@@ -298,7 +298,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 }
 
 function getAlbumLinkText($mediaID) {
-    global $albums_table, $albumlinks_table, $showalbum_url;
+    global $albums_table, $albumlinks_table;
 
     $albumlinktext = "";
     //get all albumlink records for this mediaID, joined with album tables
@@ -310,7 +310,7 @@ function getAlbumLinkText($mediaID) {
         if ($albumlinktext) {
             $albumlinktext .= ", ";
         }
-        $albumlinktext .= "<a href=\"$showalbum_url" . "albumID={$row['albumID']}\">" . $row['albumname'] . "</a>";
+        $albumlinktext .= "<a href=\"showalbum.php?albumID={$row['albumID']}\">" . $row['albumname'] . "</a>";
     }
     tng_free_result($result);
 
@@ -319,7 +319,7 @@ function getAlbumLinkText($mediaID) {
 
 function getMediaLinkText($mediaID, $ioffset) {
     global $text, $admtext, $medialinks_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
-    global $showmedia_url, $showrepo_url, $showsource_url, $getperson_url, $familygroup_url, $placesearch_url, $tngconfig, $citations_table;
+    global $tngconfig, $citations_table;
 
     if ($ioffset) {
         $ioffsetstr = "$ioffset, ";
@@ -366,17 +366,17 @@ function getMediaLinkText($mediaID, $ioffset) {
         $prow['allow_private'] = $prights['private'];
 
         if ($prow['personID2'] != NULL) {
-            $medialinktext .= "<a href=\"$getperson_url" . "personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
+            $medialinktext .= "<a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
             $medialinktext .= getName($prow) . "</a>";
         } elseif ($prow['sourceID'] != NULL) {
             $sourcetext = $prow['title'] ? $prow['title'] : $text['source'] . ": " . $prow['sourceID'];
-            $medialinktext .= "<a href=\"$showsource_url" . "sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">" . $sourcetext . "</a>";
+            $medialinktext .= "<a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">" . $sourcetext . "</a>";
         } elseif ($prow['repoID'] != NULL) {
             $repotext = $prow['reponame'] ? $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
-            $medialinktext .= "<a href=\"$showrepo_url" . "repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">" . $repotext . "</a>";
+            $medialinktext .= "<a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">" . $repotext . "</a>";
         } elseif ($prow['familyID'] != NULL) {
             $familyname = trim($prow['hlnprefix'] . " " . $prow['hlastname']) . "/" . trim($prow['wlnprefix'] . " " . $prow['wlastname']) . " ({$prow['familyID']})";
-            $medialinktext .= "<a href=\"$familygroup_url" . "familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: $familyname</a>";
+            $medialinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: $familyname</a>";
         } elseif (!$prow['linktype'] || $prow['linktype'] == "C") {
             $query = "SELECT persfamID, sourceID, gedcom FROM $citations_table WHERE citationID = \"{$prow['personID']}\"";
             $cresult = tng_query($query);
@@ -388,7 +388,7 @@ function getMediaLinkText($mediaID, $ioffset) {
                     if (!in_array($persfamID, $citelinks)) {
                         $citelinks[] = $persfamID;
                         if (substr($persfamID, 0, 1) == $tngconfig['personprefix'] || substr($persfamID, -1) == $tngconfig['personsuffix']) {
-                            $medialinktext .= "<a href=\"$getperson_url" . "personID=$persfamID&amp;tree={$crow['gedcom']}\">";
+                            $medialinktext .= "<a href=\"getperson.php?personID=$persfamID&amp;tree={$crow['gedcom']}\">";
                             $presult2 = getPersonSimple($prow['gedcom'], $persfamID);
                             if ($presult2) {
                                 $cprow = tng_fetch_assoc($presult2);
@@ -404,7 +404,7 @@ function getMediaLinkText($mediaID, $ioffset) {
                             if ($presult2) {
                                 $famrow = tng_fetch_assoc($presult);
                                 $familyname = getFamilyName($famrow);
-                                $medialinktext .= "<a href=\"$familygroup_url" . "familyID=$persfamID&amp;tree={$crow['gedcom']}\">{$text['family']}: $familyname</a>";
+                                $medialinktext .= "<a href=\"familygroup.php?familyID=$persfamID&amp;tree={$crow['gedcom']}\">{$text['family']}: $familyname</a>";
                                 $need_semicolon = true;
                                 tng_free_result($presult2);
                             }
@@ -415,7 +415,7 @@ function getMediaLinkText($mediaID, $ioffset) {
             tng_free_result($cresult);
         } else {
             $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
-            $medialinktext .= "<a href=\"$placesearch_url" . "psearch=" . urlencode($prow['personID']) . "$treestr\">" . $prow['personID'] . "</a>";
+            $medialinktext .= "<a href=\"placesearch.php?psearch=" . urlencode($prow['personID']) . "$treestr\">" . $prow['personID'] . "</a>";
         }
         if ($prow['eventID']) {
             $query = "SELECT display ";
@@ -437,15 +437,15 @@ function getMediaLinkText($mediaID, $ioffset) {
     }
     tng_free_result($presult);
     if ($numrows > $maxsearchresults) {
-        $medialinktext .= "\n['<a href=\"$showmedia_url" . "mediaID=$mediaID&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['morelinks']}</a>']";
+        $medialinktext .= "\n['<a href=\"showmedia.php?mediaID=$mediaID&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['morelinks']}</a>']";
     }
 
     return $medialinktext;
 }
 
 function showMediaSource($imgrow, $ss = false) {
-    global $text, $usefolder, $size, $imagetypes, $htmldocs, $histories_url, $tngconfig, $videotypes, $recordingtypes;
-    global $description, $showmedia_url, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
+    global $text, $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
+    global $description, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
 
     if ($sitever == "mobile") {
         $ss = false;
@@ -531,13 +531,13 @@ function showMediaSource($imgrow, $ss = false) {
                 }
                 if ($ss) {  //slideshow
                     $img = "<img src=\"$mediasrc\" $mapstr alt=\"$description\">";
-                    echo "<div id=\"slidearea\"><a href=\"$showmedia_url" . "mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border=\"0\" title=\"{$text['moreinfo']}\">$img</a></div>\n";
+                    echo "<div id=\"slidearea\"><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border=\"0\" title=\"{$text['moreinfo']}\">$img</a></div>\n";
                 } else {
                     $imgviewer = $tngconfig['imgviewer'];
                     if (!$imgviewer || in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
                         $maxvh = $tngconfig['imgvheight'];
                         $calcHeight = $maxvh ? ($height > $maxvh ? $maxvh : $height) : 1;
-                        echo "<div id=\"loadingdiv2\" class=\"rounded10\" style=\"position:static;\">{$text['loading']}</div><iframe name=\"iframe1\" id=\"iframe1\" src=\"" . getURL("img_viewer", 1) . "mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width=\"100%\" height='1' onload=\"calcHeight($calcHeight)\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\"></iframe>";
+                        echo "<div id=\"loadingdiv2\" class=\"rounded10\" style=\"position:static;\">{$text['loading']}</div><iframe name=\"iframe1\" id=\"iframe1\" src=\"img_viewer.php?mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width=\"100%\" height='1' onload=\"calcHeight($calcHeight)\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\"></iframe>";
                     } else {
                         echo "<div class=\"titlebox mediaalign\" id=\"imgdiv\"><img src=\"$mediasrc\" id=\"theimage\" $mapstr alt=\"$description\"></div>\n";
                     }
@@ -642,9 +642,8 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
 }
 
 function doCemPlusMap($imgrow, $tree) {
-    global $cemeteries_table, $media_table, $text, $rootpath, $headstonepath, $mediatypes_assoc, $mediapath, $showmedia_url, $thumbmaxw;
+    global $cemeteries_table, $media_table, $text, $rootpath, $headstonepath, $mediatypes_assoc, $mediapath, $thumbmaxw;
 
-    $showmap_url = getURL("showmap", 1);
     $query = "SELECT cemname, city, county, state, country, maplink, notes FROM $cemeteries_table WHERE cemeteryID = \"{$imgrow['cemeteryID']}\"";
     $cemresult = tng_query($query);
     $cemetery = tng_fetch_assoc($cemresult);
@@ -676,7 +675,7 @@ function doCemPlusMap($imgrow, $tree) {
         }
         $location .= $cemetery['country'];
     }
-    echo "<a href=\"$showmap_url" . "cemeteryID={$imgrow['cemeteryID']}&amp;tree=$tree\">$location</a>";
+    echo "<a href=\"showmap.php?cemeteryID={$imgrow['cemeteryID']}&amp;tree=$tree\">$location</a>";
     echo "</h3>\n";
     if ($cemetery['notes']) {
         echo "<p><strong>{$text['notes']}:</strong> " . nl2br($cemetery['notes']) . "</p>";
@@ -714,7 +713,7 @@ function doCemPlusMap($imgrow, $tree) {
             if ($hs['abspath'] || substr($hs['path'], 0, 4) == "http" || substr($hs['path'], 0, 1) == "/") {
                 $href = $hs['path'];
             } else {
-                $href = "$showmedia_url" . "mediaID=" . $hs['mediaID'];
+                $href = "showmedia.php?mediaID=" . $hs['mediaID'];
             }
 
             $targettext = $hs['newwindow'] ? " target=\"_blank\"" : "";

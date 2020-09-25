@@ -47,8 +47,6 @@ if ($assignedtree) {
     $tree = $assignedtree;
 }
 
-$showalbum_url = getURL("showalbum", 1);
-
 $query = "SELECT * ";
 $query .= "FROM $albums_table ";
 $query .= $searchstring ? "WHERE albumname LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR keywords LIKE \"%$searchstring%\"" : "";
@@ -138,7 +136,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     if ($allow_media_delete) {
                         $actionstr .= "<a href=\"#\" onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                     }
-                    $actionstr .= "<a href=\"" . $showalbum_url . "albumID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                    $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);

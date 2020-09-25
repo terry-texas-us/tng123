@@ -1,5 +1,4 @@
 <?php
-$search_url = getURL("search", 1);
 ?>
 <table class="sntable">
     <tr>
@@ -37,7 +36,7 @@ $search_url = getURL("search", 1);
                 $nofirstname = urlencode($text['nofirstname']);
                 while ($firstname = tng_fetch_assoc($result)) {
                     $firstname2 = urlencode($firstname['firstname']);
-                    $name = $firstname['firstname'] ? "<a href=\"$search_url" . "myfirstname=$firstname2&amp;fnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : "<a href=\"$search_url" . "myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\">{$text['nofirstname']}</a>";
+                    $name = $firstname['firstname'] ? "<a href=\"search.php?myfirstname=$firstname2&amp;fnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\">{$text['nofirstname']}</a>";
                     echo "$counter. $name ({$firstname['lncount']})<br>\n";
                     $counter++;
                     $num_in_col_ctr++;

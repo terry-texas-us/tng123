@@ -30,7 +30,7 @@ if ($medialinkID) {
 }
 
 if ($requirelogin && $treerestrict && $assignedtree && $row['gedcom'] && $row['gedcom'] != $assignedtree) {
-    header("location: $browsemedia_url");
+    header("location: browsemedia.php?");
     exit;
 }
 if (!tng_num_rows($result)) {
@@ -122,7 +122,7 @@ $float = strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 7") > 0 ? " style=\"float:lef
     echo "var imgctrls_msg = \"{$text['imgctrls']}\";\n";
     echo "var vwrctrls_msg = \"{$text['vwrctrls']}\";\n";
     echo "var close_msg = \"{$text['vwrclose']}\";\n";
-    echo "var imgnewwin_url = \"" . getURL("img_newwin", 1) . "\";\n";
+    echo "var imgnewwin_url = \"img_newwin.php?\";\n";
     echo "if(parent.document.getElementById(window.name)) {viewer = imageViewer(\"imgviewer\", \"$mediasrc\", \"$width\", \"$height\", $sa, \"$mediaID\", \"$medialinkID\", \"" . urlencode($imgrow['description']) . "\");}\n";
     ?>
 </script>

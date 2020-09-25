@@ -2,9 +2,6 @@
 $textpart = "reports";
 include "tng_begin.php";
 
-$showreport_url = getURL("showreport", 1);
-$reports_url = getURL("reports", 0);
-
 $query = "SELECT reportname, reportdesc, reportID FROM $reports_table WHERE active = 1 ORDER BY ranking, reportname";
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
@@ -51,7 +48,7 @@ if (!$numrows) {
     while ($row = tng_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td class='databack'><span class='normal'>$count.</span></td>";
-        echo "<td class='databack'><span class='normal'>&nbsp;<a href=\"$showreport_url" . "reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td>";
+        echo "<td class='databack'><span class='normal'>&nbsp;<a href=\"showreport.php?reportID={$row['reportID']}\">{$row['reportname']}</a>&nbsp;</span></td>";
         echo "<td class='databack'><span class='normal'>{$row['reportdesc']}&nbsp;</span></td>";
         echo "</tr>\n";
         $count++;

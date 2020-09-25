@@ -31,8 +31,8 @@ echo "<div id=\"loadingdiv2\" style=\"position:static;\">{$text['loading']}</div
 ?>
 
 <iframe name="iframe1" id="iframe1"
-        src="<?php echo getURL("img_viewer", 1); ?>sa=1&mediaID=<?php echo $_GET['mediaID']; ?>&medialinkID=<?php echo $_GET['medialinkID']; ?>"
-        width="100%" height="1" onLoad="calcHeight(1);" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">
+    src="img_viewer.php?sa=1&mediaID=<?php echo $_GET['mediaID']; ?>&medialinkID=<?php echo $_GET['medialinkID']; ?>"
+    width="100%" height="1" onLoad="calcHeight(1);" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">
 </iframe>
 </body>
 </html>

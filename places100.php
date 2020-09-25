@@ -5,21 +5,13 @@ require_once "./core/sql/extractWhereClause.php";
 
 $topnum = preg_replace("/[^0-9]/", '', $topnum);
 
-$placesearch_url = getURL("placesearch", 1);
-$places_oneletter_url = getURL("places-oneletter", 1);
-$places100_url = getURL("places100", 1);
-
 if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
-    $places_all_url = getURL("places-all", 1);
-    $places_url = getURL("places", 1);
-    $logstring = "<a href=\"$places100_url" . "topnum=$topnum&amp;tree=$tree\">" . xmlcharacters($text['placelist'] . ": {$text['top']} $topnum ({$text['tree']}: $tree)") . "</a>";
+    $logstring = "<a href=\"places100.php?topnum=$topnum&amp;tree=$tree\">" . xmlcharacters($text['placelist'] . ": {$text['top']} $topnum ({$text['tree']}: $tree)") . "</a>";
 } else {
     $treestr = $treestr2 = "";
-    $places_all_url = getURL("places-all", 0);
-    $places_url = getURL("places", 0);
-    $logstring = "<a href=\"$places100_url" . "topnum=$topnum\">" . xmlcharacters($text['placelist'] . ": {$text['top']} $topnum") . "</a>";
+    $logstring = "<a href=\"places100.php?topnum=$topnum\">" . xmlcharacters($text['placelist'] . ": {$text['top']} $topnum") . "</a>";
 }
 
 writelog($logstring);
@@ -60,7 +52,7 @@ echo getFORM("places100", "get", "", "");
             $decodedfirstchar = $text['top'] . " $topnum";
         }
         ?>
-        <br><br><?php echo "<a href=\"$places_url" . "{$treestr}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"$places_all_url" . "{$treestr2}\">{$text['showallplaces']}</a>"; ?>
+        <br><br><?php echo "<a href=\"places.php?{$treestr}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"places-all.php?{$treestr2}\">{$text['showallplaces']}</a>"; ?>
     </div>
 <?php echo "</form>\n"; ?>
     <br>
@@ -118,9 +110,9 @@ echo getFORM("places100", "get", "", "");
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
 
-                            $searchlink = $specificcount ? " <a href=\"$placesearch_url" . "{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
                             if ($place['placecount'] > 1 || !$specificcount) {
-                                $name = "<a href=\"$places_oneletter_url" . "offset=$offset&amp;{$treestr}psearch=$place2\">{$place['myplace']}</a>";
+                                $name = "<a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\">{$place['myplace']}</a>";
                                 echo "$counter. $name ({$place['placecount']}) $searchlink<br>\n";
                             } else {
                                 echo "$counter. {$place['myplace']} $searchlink<br>\n";

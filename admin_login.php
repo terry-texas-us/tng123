@@ -7,8 +7,7 @@ include "$mylanguage/admintext.php";
 include "tngmaillib.php";
 
 if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && $_SESSION['allow_admin'] && $currentuser) {
-    $admin_url = getURL("admin", 0);
-    header("Location:$admin_url");
+    header("Location:admin.php");
     $reset = 1;
 }
 

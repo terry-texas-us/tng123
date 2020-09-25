@@ -5,9 +5,6 @@ include "tng_begin.php";
 include "config/pedconfig.php";
 include "pedbox.php";
 
-$relate_url = getURL("relateform", 1);
-$relationship_url = getURL("relationship", 1);
-
 $totalRelationships = 0;
 $needmore = true;
 
@@ -272,11 +269,10 @@ if (tng_num_rows($result2)) {
 }
 tng_free_result($result2);
 
-writelog("<a href=\"$relationship_url" . "altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">{$text['relcalc']}: $logname ($primarypersonID) =&gt;$logname2 ($secondpersonID)</a>");
-preparebookmark("<a href=\"$relationship_url" . "altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">{$text['relcalc']}: $namestr ($primarypersonID) =&gt;$namestr2 ($secondpersonID)</a>");
+writelog("<a href=\"relationship.php?altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">{$text['relcalc']}: $logname ($primarypersonID) =&gt;$logname2 ($secondpersonID)</a>");
+preparebookmark("<a href=\"relationship.php?altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">{$text['relcalc']}: $namestr ($primarypersonID) =&gt;$namestr2 ($secondpersonID)</a>");
 
-$getperson_url = getURL("getperson", 1);
-$pedigree['url'] = getURL("pedigree", 1);
+$pedigree['url'] = "pedigree.php?";
 $pedigree['cellpad'] = 5;
 
 if ($pedigree['inclphotos'] && (trim($photopath) == "" || trim($photosext) == "")) {
@@ -348,7 +344,7 @@ function drawCouple($couple, $topflag, $linedown) {
 }
 
 function drawBox($drawpersonID, $spouseflag, $topflag) {
-    global $gens, $tree, $getperson_url, $pedigree;
+    global $gens, $tree, $pedigree;
     global $text, $personID1, $primarypersonID, $slot, $righttree;
 
     if ($spouseflag && !$topflag) {
@@ -375,7 +371,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
             $nameinfo = $nameinfo_org;
         }
         $row['birthdatetr'] = $row['altbirthdatetr'] = "0000-00-00"; //this is to suppress the age calculation on the chart
-        $pedigree['namelink'] = "<a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree=$tree\">$nameinfo</a>";
+        $pedigree['namelink'] = "<a href=\"getperson.php?personID={$row['personID']}&amp;tree=$tree\">$nameinfo</a>";
         $pedigree['namelink'] .= "<br><span class=\"pedyears\">" . getYears($row) . "</span>";
 
         $newoffset = $spouseflag ? $gens->offsetV : $gens->offsetV + $pedigree['puboxheight'] + 2 * $pedigree['boxVsep'];
@@ -826,7 +822,7 @@ for ($i = 1; $i <= $pedigree['maxupgen']; $i++) {
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit();\">{$text['refresh']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$relate_url" . "primaryID=$primarypersonID&amp;tree=$tree\" class=\"lightlink\">{$text['findanother']}</a>\n";
+$innermenu .= "<a href=\"relateform.php?primaryID=$primarypersonID&amp;tree=$tree\" class=\"lightlink\">{$text['findanother']}</a>\n";
 
 echo getFORM("relationship2", "get", "form1", "form1");
 echo tng_menu("I", "relate", $primarypersonID, $innermenu);

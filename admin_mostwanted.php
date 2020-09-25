@@ -7,7 +7,6 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-$mostwanted_url = getURL("mostwanted", 0);
 $helplang = findhelp("mostwanted_help.php");
 
 /**
@@ -134,7 +133,7 @@ tng_adminheader($admtext['mostwanted'], $flags);
     $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
     $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
     $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"$mostwanted_url\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
     $menu = doMenu($misctabs, "mostwanted", $innermenu);
     echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "img/misc_icon.gif", $menu, $message);
     ?>

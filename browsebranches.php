@@ -4,24 +4,15 @@ include "tng_begin.php";
 
 include "functions.php";
 
-$browsetrees_url = getURL("browsetrees", 1);
-$browsebranches_url = getURL("browsebranches", 1);
-$showtree_url = getURL("showtree", 1);
-$search_url = getURL("search", 1);
-$famsearch_url = getURL("famsearch", 1);
-$getperson_url = getURL("getperson", 1);
-
 function doBranchSearch($instance, $pagenav) {
     global $text, $branchsearch;
-
-    $browsebranches_noargs_url = getURL("browsebranches", 0);
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browsebranches", "GET", "BranchSearch$instance", "");
     $str .= "<input type='text' name=\"branchsearch\" value=\"$branchsearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($branchsearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"$browsebranches_noargs_url\">{$text['browsealltrees']}</a>";
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"browsebranches.php\">{$text['browsealltrees']}</a>";
     }
     $str .= "</form></span>\n";
 
@@ -74,7 +65,7 @@ $treerow = tng_fetch_assoc($treeresult);
 $numtrees = $treerow['treecount'];
 tng_free_result($treeresult);
 
-$logstring = "<a href=\"$browsebranches_url" . "tree=$tree&amp;offset=$offset&amp;branchsearch=$branchsearch\">" . xmlcharacters($text['branches']) . "</a>";
+$logstring = "<a href=\"browsebranches.php?tree=$tree&amp;offset=$offset&amp;branchsearch=$branchsearch\">" . xmlcharacters($text['branches']) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -93,7 +84,7 @@ if ($totrows) {
     echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
 
-$pagenav = get_browseitems_nav($totrows, $browsebranches_url . "branchsearch=$branchsearch&amp;offset", $maxsearchresults, $max_browsebranch_pages);
+$pagenav = get_browseitems_nav($totrows, "browsebranches.php?branchsearch=$branchsearch&amp;offset", $maxsearchresults, $max_browsebranch_pages);
 if ($pagenav || $branchsearch) {
     echo doBranchSearch(1, $pagenav);
 }
@@ -162,11 +153,11 @@ while ($row = tng_fetch_assoc($result)) {
     echo "<td class='databack'>$i</td>\n";
     echo "<td class='databack'>{$row['description']}&nbsp;</td>";
     if ($numtrees > 1) {
-        echo "<td class='databack'><a href=\"$showtree_url" . "tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+        echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
     }
-    echo "<td class='databack'><a href=\"$getperson_url" . "personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>&nbsp;</td>";
-    echo "<td class='databack' align=\"right\"><a href=\"$search_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($indrow['pcount']) . "</a>&nbsp;</td>";
-    echo "<td class='databack' align=\"right\"><a href=\"$famsearch_url" . "tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
+    echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$namestr</a>&nbsp;</td>";
+    echo "<td class='databack' align=\"right\"><a href=\"search.php?tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($indrow['pcount']) . "</a>&nbsp;</td>";
+    echo "<td class='databack' align=\"right\"><a href=\"famsearch.php?tree={$row['gedcom']}&amp;branch={$row['branch']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
     echo "</tr>\n";
     $i++;
 }

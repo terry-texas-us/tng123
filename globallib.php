@@ -1012,8 +1012,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
             if ($type) {
                 $prefix = "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\"$targettext>";
             } else {
-                $showmedia_url = getURL("showmedia", 1);
-                $prefix = "<a href=\"$showmedia_url" . "mediaID={$row['mediaID']}&amp;medialinkID={$row['medialinkID']}\" title=\"" . str_replace("\"", "&#34;", $alttext) . "\"$targettext>";
+                $prefix = "<a href=\"showmedia.php?mediaID={$row['mediaID']}&amp;medialinkID={$row['medialinkID']}\" title=\"" . str_replace("\"", "&#34;", $alttext) . "\"$targettext>";
             }
             $suffix = "</a>";
         }
@@ -1064,9 +1063,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
 }
 
 function placeImage($place) {
-    global $placesearch_url;
-
-    return "<a href=\"$placesearch_url" . "psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
+    return "<a href=\"placesearch.php?psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
 }
 
 function checkMaintenanceMode($area) {
@@ -1074,8 +1071,8 @@ function checkMaintenanceMode($area) {
 
     if (strpos($_SERVER['SCRIPT_NAME'], "/suggest.php") === FALSE && strpos($_SERVER['SCRIPT_NAME'], "admin") === FALSE && isset($tngconfig['maint']) && $tngconfig['maint']
         && (!$_SESSION['allow_admin'] || $_SESSION['assignedtree']) && strpos($_SERVER['SCRIPT_NAME'], "/index.") === FALSE) {
-        $maint_url = $area ? "adminmaint.php" : getURL("maint", 0);
-        header("Location:$maint_url");
+        $maint_url = $area ? "adminmaint.php" : "maint.php";
+        header("Location: $maint_url");
         exit;
     }
 }

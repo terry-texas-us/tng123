@@ -240,14 +240,12 @@ class HeadElementPublic
         $script .= "var tnglitbox;\n";
         $script .= "var share = 0;\n";
         $script .= "var closeimg = 'img/tng_close.gif';\n";
-        $script .= "var smallimage_url = '" . getURL("ajx_smallimage", 1) . "';\n";
         $script .= "const loadingmsg = '{$text['loading']}';\n";
         $script .= "const expand_msg = '{$text['expand']}';\n";
         $script .= "const collapse_msg = '{$text['collapse']}';\n";
 
         if (isset($error) && $error) {
-            $login_url = getURL("ajx_login", 1);
-            $script .= "jQuery(document).ready(function(){openLogin('{$login_url}p=" . urlencode("") . "&message={$error}');});\n";
+            $script .= "jQuery(document).ready(function(){openLogin('ajx_login.php?p=" . urlencode("") . "&message={$error}');});\n";
         }
         $script .= "</script>";
         return $script;

@@ -9,12 +9,9 @@ $timeline = $_SESSION['timeline'];
 $tng_message = $_SESSION['tng_message'];
 $primaryID = preg_replace("/[^A-Za-z0-9_\-. ]/", '', $primaryID);
 if (!is_array($timeline)) {
-    header("Location:" . getURL("timeline", 1) . "primaryID=$primaryID&tree=$tree");
+    header("Location: timeline.php?primaryID=$primaryID&tree=$tree");
     exit;
 }
-
-$findpersonform_url = getURL("findpersonform", 1);
-$getperson_url = getURL("getperson", 1);
 
 $tlmonths[0] = "";
 $tlmonths[1] = $dates['JAN'];
@@ -68,7 +65,7 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 tng_free_result($treeResult);
 
 function getEvents($person) {
-    global $text, $ratio, $getperson_url, $righttree;
+    global $text, $ratio, $righttree;
 
     $personID = $person['personID'];
     $tree = $person['tree'];
@@ -136,7 +133,7 @@ function getEvents($person) {
             $spouserow['allow_private'] = $srights['private'];
             if ($spouserow['firstname'] || $spouserow['lastname']) {
                 $spousename = getName($spouserow);
-                $spouselink = "<a href=\"$getperson_url" . "personID={$spouserow['personID']}&amp;tree=$tree\">$spousename</a>";
+                $spouselink = "<a href=\"getperson.php?personID={$spouserow['personID']}&amp;tree=$tree\">$spousename</a>";
             }
             tng_free_result($spouseresult);
         } else {
@@ -171,7 +168,7 @@ function getEvents($person) {
             if ($crights['both']) {
                 if ($child['firstname'] || $child['lastname']) {
                     $childname = getName($child);
-                    $childlink = "<a href=\"$getperson_url" . "personID={$child['personID']}&amp;tree={$person['tree']}\">$childname</a>";
+                    $childlink = "<a href=\"getperson.php?personID={$child['personID']}&amp;tree={$person['tree']}\">$childname</a>";
                 } else {
                     $childlink = "";
                 }
@@ -233,9 +230,8 @@ function getEvents($person) {
     return $eventstr;
 }
 
-$timeline_url = getURL("timeline", 1);
-writelog("<a href=\"$timeline_url" . "primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($logname)</a>");
-preparebookmark("<a href=\"$timeline_url" . "primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($namestr)</a>");
+writelog("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($logname)</a>");
+preparebookmark("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($namestr)</a>");
 
 $keeparray = array();
 $earliest = intval(date('Y'));
@@ -286,7 +282,7 @@ foreach ($timeline as $timeentry) {
                 $latest = $newtimeentry['death'];
             }
         }
-        $newtimeentry['name'] = "<a href=\"$getperson_url" . "personID={$output['timeperson']}&amp;tree={$output['timetree']}\">$namestr2</a>";
+        $newtimeentry['name'] = "<a href=\"getperson.php?personID={$output['timeperson']}&amp;tree={$output['timetree']}\">$namestr2</a>";
         array_push($keeparray, $newtimeentry);
         tng_free_result($result2);
     }
@@ -375,8 +371,8 @@ if ($row['death']) {
 if ($pedigree['simile']) {
     $flags['scripting'] .= "<script type=\"text/javascript\">
 		var tlstartdate = \"" . ($row['birth'] + floor($deathage / 2)) . "\";
-		var xmlfamfile = \"" . getURL("ajx_famtimelinexml", 1) . "earliest=$earliest&latest=$latest&primary=$primaryID\";
-		var xmleventfile = \"" . getURL("ajx_timelinexml", 1) . "earliest=$earliest&latest=$latest\";
+		var xmlfamfile = \"ajx_famtimelinexml.php?earliest=$earliest&latest=$latest&primary=$primaryID\";
+		var xmleventfile = \"ajx_timelinexml.php?earliest=$earliest&latest=$latest\";
 		var band1_pct = \"" . $band1_pct . "%\";
 		var band1_interval = \"" . $band1_interval . "\";
 		var band1_multiple = " . $band1_multiple . ";
