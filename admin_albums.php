@@ -72,7 +72,7 @@ $helplang = findhelp("albums_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['albums'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 <?php echo "</head>"; ?>
 <body class="admin-body">
 

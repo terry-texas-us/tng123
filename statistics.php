@@ -370,7 +370,7 @@ tng_header($text['databasestatistics'], $flags);
         <div id="living_chart"></div>
         <div id="media_chart"></div>
     </div>
-    <script type="text/javascript">
+    <script>
         var gender_chart = c3.generate({
             bindto: '#gender_chart',
             data: {

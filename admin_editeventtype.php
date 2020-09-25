@@ -41,8 +41,8 @@ $helplang = findhelp("eventtypes_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyeventtype'], $flags);
 ?>
-<script type="text/javascript" src="js/eventtypes.js"></script>
-<script type="text/javascript">
+<script src="js/eventtypes.js"></script>
+<script>
     var display = "";
 
     function addToDisplay(lang, newdisplay) {
@@ -266,7 +266,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
 
 </table>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     populateTags(<?php echo "\"{$row['type']}\",\"{$row['tag']}\""; ?>);
 </script>
 </body>

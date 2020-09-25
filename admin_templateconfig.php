@@ -44,10 +44,10 @@ $helplang = findhelp("templateconfig_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytemplatesettings'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
-<script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/admin.js"></script>
+<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/selectutils.js"></script>
+<script>
     function switchTemplates(newtemp) {
         jQuery('div.tsection').each(function (index, item) {
             item.style.display = item.id == "t" + newtemp ? '' : 'none';

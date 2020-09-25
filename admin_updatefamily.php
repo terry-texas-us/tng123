@@ -134,7 +134,7 @@ if ($media == "1") {
         <html lang="en">
 
         <body>
-        <script type="text/javascript">
+        <script>
             top.close();
         </script>
         </body>

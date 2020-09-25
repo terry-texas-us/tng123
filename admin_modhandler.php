@@ -277,7 +277,7 @@ body {
 // ADJUST LISTING TO BOTTOM OF HEADER MENUS
 $headclass = $options['fix_header'] == YES && $sitever != 'mobile' ? 'mmhead-fixed' : 'mmhead-scroll';
 echo "
-<script type=\"text/javascript\" src=\"js/admin.js\"></script>
+<script src=\"js/admin.js\"></script>
 </head>
 <body class=\"admin-body\">
 <div id=\"mmhead\" class=\"$headclass adminback\">
@@ -353,7 +353,7 @@ $confirm = empty($options['delete_support']) ?
     $admtext['confdelmod1'] :
     $admtext['confdelmod'];
 echo "
-<script type=\"text/javascript\">
+<script>
 jQuery(document).ready(function() {
 ";
 

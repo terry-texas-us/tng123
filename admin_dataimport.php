@@ -31,10 +31,10 @@ $helplang = findhelp("data_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/dataimport.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript">
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/dataimport.js?v<?php echo $tng_version; ?>"></script>
+<script>
     const opening = "<?php echo $admtext['opening']; ?>";
     const uploading = "<?php echo $admtext['uploading']; ?>";
     const peoplelbl = "<?php echo $admtext['people']; ?>";

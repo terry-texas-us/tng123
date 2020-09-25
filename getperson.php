@@ -88,9 +88,9 @@ writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['in
 preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $namestr ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 if (empty($tngconfig['hidedna'])) {
-    $flags['scripting'] .= "<script type = 'text/javascript' language = 'javascript'>
+    $flags['scripting'] .= "<script language = 'javascript'>
 function togglednaicon() {
    if ($('.toggleicon2').attr('src').indexOf('desc') > 0) {
       $('.toggleicon2').attr('src','img/tng_sort_asc.gif')
@@ -122,7 +122,7 @@ function hide_dnatest() {
     $showdnatest = $hidednatest = "";
 }
 if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 $headstr = $namestr;
 if ($rights['both']) {
@@ -820,8 +820,8 @@ if ($allowpdf) {
 $rightbranch = $org_rightbranch;
 echo tng_menu("I", "person", $personID, $innermenu);
 ?>
-    <script type="text/javascript" src="js/getperson.js"></script>
-    <script type="text/javascript">
+    <script src="js/getperson.js"></script>
+    <script>
         function infoToggle(part) {
             if (part == "all") {
                 jQuery('#info').show();
@@ -884,19 +884,19 @@ if (!isset($flags['more'])) {
     $flags['more'] = "";
 }
 if ($map['key'] && $locations2map && $tngconfig['istart']) {
-    $flags['more'] .= "\n<script type=\"text/javascript\">";
+    $flags['more'] .= "\n<script>";
     $flags['more'] .= "window.onload = function() {\$('#eventmap').hide();};\n";
     $flags['more'] .= "</script>\n";
 }
 
-$flags['more'] .= "<script type=\"text/javascript\" src=\"js/rpt_utils.js\"></script>\n";
+$flags['more'] .= "<script src=\"js/rpt_utils.js\"></script>\n";
 if ($tentative_edit) {
-    $flags['more'] .= "<script type=\"text/javascript\">\n";
+    $flags['more'] .= "<script>\n";
     $flags['more'] .= "var preferEuro = " . ($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false") . ";\n";
     $flags['more'] .= "var preferDateFormat = '$preferDateFormat';\n";
     $flags['more'] .= "</script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/tentedit.js\"></script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/datevalidation.js\"></script>\n";
+    $flags['more'] .= "<script src=\"js/tentedit.js\"></script>\n";
+    $flags['more'] .= "<script src=\"js/datevalidation.js\"></script>\n";
 }
 tng_footer($flags);
 ?>

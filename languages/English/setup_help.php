@@ -25,7 +25,7 @@ echo help_header("Help: Setup");
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
+            <script>
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
                         pageLanguage: 'en',
@@ -35,7 +35,7 @@ echo help_header("Help: Setup");
                 }
 
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <a id="config"><h4 class="subheadbold">Configuration</h4></a>
             <p>This page contains access points to various categories of TNG settings. Edit the settings in each category to reflect your web site's

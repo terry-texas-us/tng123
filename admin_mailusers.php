@@ -13,7 +13,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['emailusers'], $flags);
 ?>
 <script src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script>
     <?php
     include "branchlibjs.php";
     ?>

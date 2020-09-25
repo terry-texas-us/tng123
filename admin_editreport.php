@@ -159,7 +159,7 @@ tng_adminheader($admtext['modifyreport'], $flags);
 ?>
 <script src="js/selectutils.js"></script>
 <script src="js/reports.js"></script>
-<script type="text/javascript">
+<script>
     function validateForm() {
         let rval = true;
         if (document.form1.reportname.value.length == 0) {

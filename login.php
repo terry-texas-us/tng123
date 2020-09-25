@@ -17,7 +17,7 @@ $loginbtnclass = "btn";
 include "loginlib.php";
 ?>
 
-    <script type="text/javascript">
+    <script>
         document.form1.tngusername.focus();
     </script>
 <?php

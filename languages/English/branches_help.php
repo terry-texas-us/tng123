@@ -27,7 +27,7 @@ echo help_header("Help: Branches");
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
+            <script>
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
                         pageLanguage: 'en',
@@ -37,7 +37,7 @@ echo help_header("Help: Branches");
                 }
 
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <a id="what"><h4 class="subheadbold">What is a Branch?</h4></a>
             <p>A <strong>Branch</strong> is a set of individuals within a tree that all share a common label. This label allows TNG to restrict access

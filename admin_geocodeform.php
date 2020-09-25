@@ -14,7 +14,7 @@ $helplang = findhelp("places_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['places'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

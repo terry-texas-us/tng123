@@ -539,7 +539,7 @@ var nicEditorIFrameInstance = nicEditorInstance.extend({
         B.designMode = "on";
         B.open();
         var A = this.ne.options.externalCSS;
-        B.write("<html><head>" + ((A) ? '<link href="' + A + '" rel="stylesheet" type="text/css">' : "") + '</head><body id="nicEditContent" style="margin: 0 !important; background-color: transparent !important;">' + this.initialContent + "</body></html>");
+        B.write("<html><head>" + ((A) ? '<link href="' + A + '" rel="stylesheet">' : "") + '</head><body id="nicEditContent" style="margin: 0 !important; background-color: transparent !important;">' + this.initialContent + "</body></html>");
         B.close();
         this.frameDoc = B;
         this.frameWin = $BK(this.elmFrame.contentWindow);

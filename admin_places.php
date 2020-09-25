@@ -174,7 +174,7 @@ $helplang = findhelp("places_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['places'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function validateForm() {
         let rval = true;
         if (document.form1.searchstring.value.length == 0) {
@@ -201,7 +201,7 @@ tng_adminheader($admtext['places'], $flags);
         document.form1.temples.checked = false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

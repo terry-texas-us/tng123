@@ -115,8 +115,8 @@ if ($sitever != "mobile") {
 
 tng_adminheader($admtext['administration'], "");
 ?>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript">
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script>
 
     jQuery(document).ready(function () {
         let tngadminmsg = getCookie('tngadminmsg');

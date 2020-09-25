@@ -43,7 +43,7 @@ if ($result) {
 
 $personID = preg_replace("/[^A-Za-z0-9_\-. ]/", '', $primaryID);
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\" src=\"js/selectutils.js\"></script>\n";
+$flags['scripting'] = "<script src=\"js/selectutils.js\"></script>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";

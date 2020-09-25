@@ -281,7 +281,7 @@
         }
         if (document.body == null) {
             try {
-                document.write("<script src='" + url + "' type='text/javascript'></script>");
+                document.write("<script src='" + url + "'></script>");
             } catch (e) {
                 createScriptElement();
             }

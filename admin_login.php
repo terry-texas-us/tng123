@@ -172,7 +172,7 @@ if (!empty($reset)) {
         </td>
     </tr>
 </table>
-<script type="text/javascript">
+<script>
     document.form1.tngusername.focus();
 </script>
 </body>

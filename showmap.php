@@ -80,7 +80,7 @@ preparebookmark($logstring);
 $size = @GetImageSize("$rootpath$headstonepath/" . $cemetery['maplink']);
 
 if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";

@@ -130,15 +130,15 @@ if (file_exists("$rootpath$photoref")) {
     $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"border-width:1;border-style:solid;margin-right:10px\">";
 }
 ?>
-<script type="text/javascript">
+<script>
     var entity = "<?php echo $personID; ?>";
     var tree = "<?php echo $tree; ?>";
     var album = "";
     var orderaction = "order";
 </script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/mediautils.js"></script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/mediautils.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body" onLoad="startMediaSort()">

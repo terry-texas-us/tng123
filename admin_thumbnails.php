@@ -19,9 +19,9 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
-<script type="text/javascript" src="js/mediautils.js"></script>
-<script type="text/javascript">
+<script src="js/admin.js"></script>
+<script src="js/mediautils.js"></script>
+<script>
     function toggleAll(display) {
         toggleSection('thumbs', 'plus1', display);
         toggleSection('defaults', 'plus2', display);

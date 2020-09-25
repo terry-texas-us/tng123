@@ -550,7 +550,7 @@ function showMediaSource($imgrow, $ss = false) {
                     $flvheight = $imgrow['height'] ? $imgrow['height'] : 300;
                     $flvwidth = $imgrow['width'] ? $imgrow['width'] : 400;
                     $preview_img = str_replace('.flv', '.jpg', $mediasrc);
-                    echo "<script type=\"text/javascript\" src=\"flvsupport/flowplayer-3.2.8.min.js\"></script>";
+                    echo "<script src=\"flvsupport/flowplayer-3.2.8.min.js\"></script>";
                     echo "<a href=\"$mediasrc\"";
                     echo "style=\"display:block;width:{$flvwidth}px;height:{$flvheight}px;\" id=\"videoplayer\">";
                     if (file_exists(str_replace("%20", " ", $preview_img))) {
@@ -559,7 +559,7 @@ function showMediaSource($imgrow, $ss = false) {
                         echo "<img src='flvsupport/flvicon.png' alt='Click here to play this video...'>";
                     }
                     echo "</a>";
-                    echo "<script type=\"text/javascript\">flowplayer('videoplayer','flvsupport/flowplayer-3.2.9.swf');</script>";
+                    echo "<script>flowplayer('videoplayer','flvsupport/flowplayer-3.2.9.swf');</script>";
                 } elseif (in_array($imgrow['form'], array("MOV", "MP4", "WEBM", "OGG"))) {
                     echo "<video $widthstr$heightstr controls>\n<source src=\"$mediasrc\">\n</video>\n";
                 } else {

@@ -93,7 +93,7 @@ $helplang = findhelp("notes_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['notes'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function validateForm() {
         let rval = true;
         if (document.form1.searchstring.value.length === 0) {
@@ -114,7 +114,7 @@ tng_adminheader($admtext['notes'], $flags);
         document.form1.tree.selectedIndex = 0;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 <?php echo "</head>"; ?>
 
 <body class="admin-body">

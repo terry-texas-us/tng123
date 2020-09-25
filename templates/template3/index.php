@@ -175,7 +175,7 @@ $title = getTemplateMessage('t3_maintitle');
             ?>
         </div> <!-- end footer div -->
     </div> <!-- end center div -->
-    <script type="text/javascript">
+    <script>
         document.forms.form1.mylastname.focus();
     </script>
 

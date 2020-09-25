@@ -26,7 +26,7 @@ if (empty($row['placelevel'])) {
 $mcharsetstr = "&amp;oe=$session_charset";
 ?>
 
-<script type="text/javascript">
+<script>
     //<![CDATA[
     var startlat = '<?php echo $startlat; ?>';
     var startlong = '<?php echo $startlong; ?>';

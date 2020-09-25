@@ -55,7 +55,7 @@ echo "<html lang='en'>\n";
 
 tng_header($text['searchnames'], $flags);
 ?>
-    <script type="text/javascript">
+    <script>
         //<![CDATA[
         <?php include "branchlibjs.php"; ?>
 

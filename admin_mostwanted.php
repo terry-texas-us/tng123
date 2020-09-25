@@ -86,10 +86,10 @@ function showDiv(string $type) {
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['mostwanted'], $flags);
 ?>
-    <script type="text/javascript" src="js/mostwanted.js"></script>
-    <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript" src="js/selectutils.js"></script>
-    <script type="text/javascript">
+    <script src="js/mostwanted.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/selectutils.js"></script>
+    <script>
         var mwlitbox;
         var tnglitbox;
         const entertitle = "<?php echo $admtext['entertitle']; ?>";

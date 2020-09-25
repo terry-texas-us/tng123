@@ -21,7 +21,7 @@ $helplang = findhelp("mapconfig_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifymapsettings'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function validateWidth(width) {
         if (width.indexOf('%') >= 0)
             return Math.min(parseInt(width), 100) + '%';

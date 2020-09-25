@@ -163,7 +163,7 @@ if (!empty($action) && $action == EDITP) {
  *************************************************************************/
 if ($sitever != 'mobile' && $options['adjust_headers']) {
     echo "
-<script type=\"text/javascript\">
+<script>
    window.scroll(0,0);
    jQuery(document).ready(function() {
       // set position of the title bar (tbar) relative to mmhead

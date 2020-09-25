@@ -73,7 +73,7 @@ tng_adminheader($admtext['addnewfamily'], $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script type="text/javascript">
+<script>
     var persfamID = "";
     var allow_cites = false;
     var allow_notes = false;
@@ -159,7 +159,7 @@ include_once "eventlib_js.php";
         return false
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body" onload="generateID('family',document.form1.familyID,document.form1.tree1);">
@@ -346,7 +346,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
     </table>
 </form>
 
-<script type="text/javascript">
+<script>
     <?php
     echo $swapbranches;
     echo "tree = \"$firsttree\";\n";

@@ -3,7 +3,7 @@
  *
  *  Include this file in your HTML file as follows:
  *
- *    <script src="http://simile.mit.edu/ajax/api/simile-ajax-api.js" type="text/javascript"></script>
+ *    <script src="http://simile.mit.edu/ajax/api/simile-ajax-api.js"></script>
  *
  *==================================================
  */
@@ -51,8 +51,7 @@ if (typeof SimileAjax == "undefined") {
             try {
                 var q = "'" + onerror.replace(/'/g, '&apos') + "'"; // "
                 doc.write("<script src='" + url + "' onerror=" + q +
-                    (charset ? " charset='" + charset + "'" : "") +
-                    " type='text/javascript'>" + onerror + "</script>");
+                    (charset ? " charset='" + charset + "'" : "") + ">" + onerror + "</script>");
                 return;
             } catch (e) {
                 // fall through
@@ -85,7 +84,7 @@ if (typeof SimileAjax == "undefined") {
     SimileAjax.includeCssFile = function (doc, url) {
         if (doc.body == null) {
             try {
-                doc.write("<link rel='stylesheet' href='" + url + "' type='text/css'>");
+                doc.write("<link rel='stylesheet' href='" + url + "'>");
                 return;
             } catch (e) {
                 // fall through
@@ -94,7 +93,6 @@ if (typeof SimileAjax == "undefined") {
 
         var link = doc.createElement("link");
         link.setAttribute("rel", "stylesheet");
-        link.setAttribute("type", "text/css");
         link.setAttribute("href", url);
         getHead(doc).appendChild(link);
     };

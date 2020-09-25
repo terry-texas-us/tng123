@@ -123,7 +123,7 @@ echo "</td></tr></table><!--outter-->";
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
     echo "
-<script type=\"text/javascript\">
+<script>
    jQuery(document).ready(function() {
       // set position of mm2table relative to mmhead
       jQuery('#m2table').position({
@@ -136,7 +136,7 @@ if ($sitever != 'mobile' && $options['adjust_headers']) {
 </script>";
 }
 echo "
-<script type=\"text/javascript\">
+<script>
 function toggleSection(sectionName) {
    var section = document.getElementById(sectionName + 'div');
    var link = document.getElementById(sectionName + 'link');

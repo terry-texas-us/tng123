@@ -21,7 +21,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Validation'), $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

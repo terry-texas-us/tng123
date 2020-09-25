@@ -694,8 +694,8 @@ $revstar = checkReview("I");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['merge'], $flags);
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script>
     var tree = "<?php echo $tree; ?>";
 
     function validateForm() {
@@ -747,7 +747,7 @@ tng_adminheader($admtext['merge'], $flags);
         }
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

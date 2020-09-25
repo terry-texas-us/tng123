@@ -216,7 +216,7 @@ if ($newmedia == "return") {
         <html lang="en">
 
         <body>
-        <script type="text/javascript">
+        <script>
             top.close();
         </script>
         </body>

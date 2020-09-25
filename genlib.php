@@ -156,7 +156,7 @@ function tng_footer($flags) {
             echo $flags['more'];
         }
         if (!$tngprint) {
-            echo "<script type=\"text/javascript\" src=\"js/litbox.js\"></script>\n";
+            echo "<script src=\"js/litbox.js\"></script>\n";
         }
         if (!empty($map['key']) && !empty($map['pins'])) {
             tng_map_pins();
@@ -198,7 +198,7 @@ function tng_basicfooter($flags) {
 
     if (isset($flags['imgprev'])) {
         ?>
-        <script type="text/javascript">
+        <script>
             jQuery(document).ready(function () {
                 jQuery('.media-preview').on('mouseover touchstart', function (e) {
                     e.preventDefault();
@@ -869,7 +869,7 @@ function tng_icons($instance, $title = "") {
         }
 
         if ($menu) {
-            $fullmenu .= '<script type="text/javascript">';
+            $fullmenu .= '<script>';
             $fullmenu .= 'var tngdd=new tngdd.dd("tngdd");';
             $fullmenu .= 'tngdd.init("tngdd","menuhover");';
             $fullmenu .= "</script>\n";

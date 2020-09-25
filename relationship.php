@@ -879,7 +879,7 @@ if ($error) {
     }
 }
 ?>
-    <script type="text/javascript">jQuery(document).ready(function () {
+    <script>jQuery(document).ready(function () {
             jQuery('#searching').hide();
         });</script>
 <?php

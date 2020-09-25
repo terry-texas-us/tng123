@@ -607,6 +607,7 @@ input[type="reset"],
 input[type="password"],
 button,
 input[type="text"],
+input[type="search"],
 textarea,
 select {
     border: 1px solid gray;
@@ -621,7 +622,9 @@ button {
     cursor: pointer;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+input[type="search"],
+textarea {
     padding: 3px 6px;
 }
 

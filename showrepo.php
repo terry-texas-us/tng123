@@ -151,7 +151,7 @@ if ($media || $notes) {
 $rightbranch = 1;
 echo tng_menu("R", "repo", $repoID, $innermenu);
 ?>
-    <script type="text/javascript">
+    <script>
         function innerToggle(part, subpart, subpartlink) {
             if (part == subpart)
                 turnOn(subpart, subpartlink);

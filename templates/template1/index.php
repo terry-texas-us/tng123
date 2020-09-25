@@ -44,11 +44,11 @@ $title = getTemplateMessage('t1_maintitle');
                     <form method="get" name="searchform" action="search.php">
                         <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                         <br>
-                        <input type="text" value="" name="myfirstname">
+                        <input type="search" value="" name="myfirstname">
                         <br>
                         <label for="mylastname"><?php echo $text['lastname']; ?></label>
                         <br>
-                        <input type="text" value="" name="mylastname">
+                        <input type="search" value="" name="mylastname">
                         <br>
                         <input type="hidden" name="mybool" value="AND">
                         <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>">

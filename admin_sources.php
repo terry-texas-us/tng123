@@ -125,14 +125,14 @@ $helplang = findhelp("sources_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sources'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function confirmDelete(ID) {
         if (confirm('<?php echo $admtext['confdeletesrc']; ?>'))
             deleteIt('source', ID);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

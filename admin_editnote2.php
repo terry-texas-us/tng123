@@ -28,7 +28,7 @@ $helplang = findhelp("misc_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifynote'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function validateForm(form) {
         let rval = true;
         if (form.note.value.length == 0) {

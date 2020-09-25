@@ -144,8 +144,8 @@ foreach ($mediatypes as $mediatype) {
 }
 $sttypestr = implode(",", $standardtypes);
 ?>
-<script type="text/javascript" src="js/mediautils.js"></script>
-<script type="text/javascript">
+<script src="js/mediautils.js"></script>
+<script>
     var tnglitbox;
     const entercollid = "<?php echo $admtext['entercollid']; ?>";
     const entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
@@ -212,7 +212,7 @@ $sttypestr = implode(",", $standardtypes);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">
@@ -574,7 +574,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 </table>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
 </body>
-<script type="text/javascript">
+<script>
     toggleHeadstoneCriteria('<?php echo $mediatypeID; ?>');
 </script>
 </html>

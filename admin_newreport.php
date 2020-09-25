@@ -150,9 +150,9 @@ $helplang = findhelp("reports_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewreport'], $flags);
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/reports.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script src="js/reports.js"></script>
+<script>
     function validateForm() {
         let rval = true;
         if (document.form1.reportname.value.length == 0) {

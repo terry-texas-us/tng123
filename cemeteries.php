@@ -26,7 +26,7 @@ echo "<html lang='en'>\n";
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
 
-<script type="text/javascript">
+<script>
     const collapsemsg = "<?php echo $text['collapse']; ?>";
     const expandmsg = "<?php echo $text['expand']; ?>";
 

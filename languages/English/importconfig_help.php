@@ -20,7 +20,7 @@ echo help_header("Help: Import Settings");
         <tr class="databack">
             <td class="tngshadow">
                 <div id="google_translate_element" style="float:right;"></div>
-                <script type="text/javascript">
+                <script>
                     function googleTranslateElementInit() {
                         new google.translate.TranslateElement({
                             pageLanguage: 'en',
@@ -30,7 +30,7 @@ echo help_header("Help: Import Settings");
                     }
 
                 </script>
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
                 <h5 class="optionhead">GEDCOM Folder (Import/Export)</h5>
                 <p>The name of the folder from which TNG will import GEDCOM files, and the location where TNG will store exported GEDCOM files.</p>

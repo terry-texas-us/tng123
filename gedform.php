@@ -25,7 +25,7 @@ if (($disallowgedcreate && (!$allow_ged || !$rightbranch)) || !$personID) {
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">
+$flags['scripting'] = "<script>
 function validateForm() {
 	if( document.gedform.email.value == \"\" ) {
 		alert('{$text['enteremail']}');

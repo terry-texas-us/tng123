@@ -352,7 +352,7 @@ $ratio = $totalspan ? $chartwidth / $totalspan : 0;
 $spanheight = 30 + count($keeparray) * 29;
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\" src=\"js/selectutils.js\"></script>\n";
+$flags['scripting'] = "<script src=\"js/selectutils.js\"></script>\n";
 $personID = $primaryID;
 
 $mpct = $pedigree['mpct'] ? $pedigree['mpct'] : 0;
@@ -369,7 +369,7 @@ if ($row['death']) {
 }
 
 if ($pedigree['simile']) {
-    $flags['scripting'] .= "<script type=\"text/javascript\">
+    $flags['scripting'] .= "<script>
 		var tlstartdate = \"" . ($row['birth'] + floor($deathage / 2)) . "\";
 		var xmlfamfile = \"ajx_famtimelinexml.php?earliest=$earliest&latest=$latest&primary=$primaryID\";
 		var xmleventfile = \"ajx_timelinexml.php?earliest=$earliest&latest=$latest\";
@@ -389,10 +389,10 @@ if ($pedigree['simile']) {
 	    var Timeline_urlPrefix = \"" . "timeline_2.3.1/timeline_js/\";
 		var Timeline_parameters = 'bundle=true';
 	</script>\n";
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . "js/timeline.js\"></script>\n";
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"" . "timeline_2.3.1/timeline_js/timeline-api.js\"></script>\n";
+    $flags['scripting'] .= "<script src=\"js/timeline.js\"></script>\n";
+    $flags['scripting'] .= "<script src=\"" . "timeline_2.3.1/timeline_js/timeline-api.js\"></script>\n";
 }
-$flags['scripting'] .= "<link href=\"css/timeline.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] .= "<link href='css/timeline.css' rel='stylesheet'>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -581,7 +581,7 @@ if ($counter) {
     <?php
 }
 ?>
-    <script type="text/javascript">
+    <script>
         var lastpopup = "";
         var tnglitbox;
         for (var h = 1; h <= <?php echo $numlines; ?>; h++) {

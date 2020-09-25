@@ -19,7 +19,7 @@ echo help_header("Help: Map Settings");
         </tr>
         <tr class="databack">
             <td class="tngshadow"><span class="normal">
-		<div id="google_translate_element" style="float:right;"></div><script type="text/javascript">
+		<div id="google_translate_element" style="float:right;"></div><script>
 		                function googleTranslateElementInit() {
                             new google.translate.TranslateElement({
                                 pageLanguage: 'en',
@@ -28,7 +28,7 @@ echo help_header("Help: Map Settings");
                             }, 'google_translate_element');
                         }
 
-		</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 		<h5 class="optionhead">Map Key</h5>
 		<p>As of June 2016, you must get a map <strong>key</strong> from Google in order to use Google Maps on your site. You can obtain a key here:

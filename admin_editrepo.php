@@ -47,12 +47,12 @@ $photo = showSmallPhoto($repoID, $row['reponame'], 1, 0, "R");
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script type="text/javascript">
+<script>
     var persfamID = "<?php echo $repoID; ?>";
     var allow_cites = false;
     var allow_notes = true;
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

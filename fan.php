@@ -191,7 +191,7 @@ echo <<< FAN_DOC
 <canvas id="infoCanvas" width="{$fan_info_width}" height="{$fan_info_height}" style="border: 1px solid black; background-color:white; border-radius: 6px; position: absolute; left:-1000px; top:100px; z-index: 1;"></canvas>
 </div>
 
-<script type="text/javascript">
+<script>
 // <![CDATA[
 	var generations={$generations};
 	width={$fan_width};
@@ -740,7 +740,7 @@ INFO_BOX;
 echo("//]]>\n");
 echo("</script>\n");
 ?>
-<script type="text/javascript" src="js/rpt_utils.js"></script>
+<script src="js/rpt_utils.js"></script>
 <?php
 tng_footer($flags);
 ?>

@@ -48,7 +48,7 @@ writelog("<a href=\"register.php?personID=$personID&amp;tree=$tree\">{$text['des
 preparebookmark("<a href=\"register.php?personID=$personID&amp;tree=$tree\">{$text['descendfor']} {$row['name']} ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -211,7 +211,7 @@ echo "</form>\n";
         ?>
 
     </div>
-    <script type="text/javascript" src="js/rpt_utils.js"></script>
+    <script src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");
 ?>

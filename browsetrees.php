@@ -166,7 +166,7 @@ if ($totrows > 1) {
     <div id="charts" style="display:inline-block; width:400px; vertical-align:top;text-align:center;">
         <div id="trees_chart"></div>
     </div>
-    <script type="text/javascript">
+    <script>
         var trees_chart = c3.generate({
             bindto: '#trees_chart',
             data: {

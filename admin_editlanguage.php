@@ -23,8 +23,8 @@ $helplang = findhelp("languages_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifylanguage'], $flags);
 ?>
-    <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript">
+    <script src="js/admin.js"></script>
+    <script>
         function validateForm() {
             let rval = true;
             if (document.form1.folder.value.length == 0) {

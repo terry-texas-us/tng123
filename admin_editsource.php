@@ -53,13 +53,13 @@ $photo = showSmallPhoto($sourceID, $sourcename, 1, 0, "S");
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script type="text/javascript">
+<script>
     var persfamID = "<?php echo $sourceID; ?>";
     var allow_cites = false;
     var allow_notes = true;
 </script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

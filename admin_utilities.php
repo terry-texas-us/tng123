@@ -67,7 +67,7 @@ if (!isset($message)) {
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['backuprestore'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function toggleAll(flag) {
         for (var i = 0; i < document.form1.elements.length; i++) {
             if (document.form1.elements[i].type == "checkbox") {

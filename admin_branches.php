@@ -101,14 +101,14 @@ $helplang = findhelp("branches_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['branches'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function confirmDelete(ID, tree) {
         if (confirm('<?php echo $admtext['confbranchdelete']; ?>'))
             deleteIt('branch', ID, tree);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

@@ -61,8 +61,8 @@ if ($currentuser) {
 tng_free_result($result);
 ?>
 <?php if ($sitever != "mobile") { ?>
-    <script type="text/javascript" src="js/search.js"></script>
-    <script type="text/javascript">
+    <script src="js/search.js"></script>
+    <script>
         // <![CDATA[
         const ajx_perspreview = 'ajx_perspreview.php';
         const ajx_fampreview = 'ajx_fampreview.php';

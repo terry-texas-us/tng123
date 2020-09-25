@@ -67,7 +67,7 @@ writelog("<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree\">" . xmlch
 preparebookmark("<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree\">" . xmlcharacters($text['ahnentafel'] . ": " . $row['name'] . " ($personID)") . "</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -410,5 +410,5 @@ echo "</form>\n";
         ?>
     </div>
 
-    <script type="text/javascript" src="js/rpt_utils.js"></script>
+    <script src="js/rpt_utils.js"></script>
 <?php tng_footer(""); ?>

@@ -43,8 +43,8 @@ include "showmedialib.php";
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $imgrow = $info['imgrow'];
 
-$flags['link'] = "<link href=\"css/img_viewer.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-$flags['scripting'] = "<script type=\"text/javascript\" src=\"js/img_viewer.js\"></script>\n";
+$flags['link'] = "<link href='css/img_viewer.css' rel='stylesheet'>\n";
+$flags['scripting'] = "<script src='js/img_viewer.js'></script>\n";
 $flags['noheader'] = 1;
 $flags['noicons'] = 1;
 $flags['nobody'] = true;
@@ -107,7 +107,7 @@ $float = strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 7") > 0 ? " style=\"float:lef
     }
     ?>
 </div>
-<script type="text/javascript">
+<script>
     <?php
     echo "var magmode_msg = \"{$text['magmode']}\";\n";
     echo "var zoomin_msg = \"{$text['zoomin']}\";\n";

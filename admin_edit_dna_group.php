@@ -28,8 +28,8 @@ $helplang = findhelp("dna_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifygroup'], $flags);
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script>
     function validateForm() {
         let rval = true;
         var form = document.form1;

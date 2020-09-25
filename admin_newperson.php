@@ -32,7 +32,7 @@ tng_adminheader($admtext['addnewperson'], $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script type="text/javascript">
+<script>
     var persfamID = "";
     var allow_cites = false;
     var allow_notes = false;
@@ -296,7 +296,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
     </table>
 </form>
 
-<script type="text/javascript">
+<script>
     <?php
     echo $swapbranches;
     echo "tree = \"$firsttree\";\n";

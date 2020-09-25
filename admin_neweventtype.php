@@ -19,8 +19,8 @@ $helplang = findhelp("eventtypes_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewevtype'], $flags);
 ?>
-<script type="text/javascript" src="js/eventtypes.js"></script>
-<script type="text/javascript">
+<script src="js/eventtypes.js"></script>
+<script>
     function validateForm() {
         let rval = true;
         var display = "";
@@ -67,7 +67,7 @@ tng_adminheader($admtext['addnewevtype'], $flags);
     }
     ?>
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">
@@ -184,7 +184,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
 </table>
 </body>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     populateTags("I", "");
 </script>
 </html>

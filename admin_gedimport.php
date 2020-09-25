@@ -337,7 +337,7 @@ if (!empty($old)) {
     }
 } else {
     ?>
-    <script type="text/javascript">
+    <script>
         var idivs, timeoutID;
         parent.started = <?php echo $clearedtogo; ?>;
         var icount = parent.document.getElementById('personcount');
@@ -500,7 +500,7 @@ if ($fp !== false) {
     } else {
         echo "<div class=\"impc\"><span id=\"pr\">500</span><span id=\"ic\">" . $savestate['icount'] . "</span><span id=\"fc\">" . $savestate['fcount'] . "</span><span id=\"sc\">" . $savestate['scount'] . "</span><span id=\"nc\">" . $savestate['ncount'] . "</span><span id=\"mc\">" . $savestate['mcount'] . "</span><span id=\"pc\">" . $savestate['pcount'] . "</span></div>\n";
         ?>
-        <script type="text/javascript">
+        <script>
             parent.done = true;
         </script>
         <?php

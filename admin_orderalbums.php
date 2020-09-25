@@ -120,15 +120,15 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($sortstr, $flags);
 
 ?>
-<script type="text/javascript">
+<script>
     var entity = "<?php echo $personID; ?>";
     var album = "<?php echo $albumID; ?>";
     var tree = "<?php echo $tree; ?>";
     var orderaction = "alborder";
 </script>
-<script type="text/javascript" src="js/albums.js"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/mediautils.js"></script>
+<script src="js/albums.js"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/mediautils.js"></script>
 </head>
 
 <body class="admin-body" onload="startMediaSort()">

@@ -33,9 +33,9 @@ $helplang = findhelp("users_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewuser'], $flags);
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/users.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script src="js/users.js"></script>
+<script>
     <?php
     include "branchlibjs.php";
     ?>
@@ -442,7 +442,7 @@ echo "</select>\n";
 <?php
 if ($row['ucount']) {
     ?>
-    <script type="text/javascript">
+    <script>
         var tree = getTree();
         if (tree) {
             <?php

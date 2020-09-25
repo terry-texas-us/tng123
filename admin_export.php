@@ -40,7 +40,7 @@ $helplang = findhelp("data_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['gedexport'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     <?php
     include "branchlibjs.php";
     ?>

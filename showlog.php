@@ -17,7 +17,7 @@ if ($maxloglines) {
 }
 
 if (isset($autorefresh)) {
-    $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/net.js\"></script>\n";
+    $flags['scripting'] = "<script src=\"js/net.js\"></script>\n";
 }
 $owner = $sitename ? $sitename : $dbowner;
 
@@ -54,7 +54,7 @@ if (isset($autorefresh)) {
 <?php
 if (isset($autorefresh)) {
     ?>
-    <script type="text/javascript">
+    <script>
         function refreshPage() {
             var loader1 = new net.ContentLoader('ajx_logxml.php', FillPage, null, "POST", '');
             var timer = setTimeout("refreshPage()", 30000);

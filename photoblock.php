@@ -9,8 +9,8 @@ include "checklogin.php";
 
 <html>
 <head>
-    <link href="genstyle.css" rel="stylesheet" type="text/css">
-    <link href="mytngstyle.css" rel="stylesheet" type="text/css">
+    <link href="genstyle.css" rel="stylesheet">
+    <link href="mytngstyle.css" rel="stylesheet">
 </head>
 <body>
 

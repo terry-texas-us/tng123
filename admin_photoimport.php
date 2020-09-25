@@ -117,9 +117,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
 
 </table>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript" src="js/admin.js"></script>
-<script type="text/javascript" src="js/mediautils.js"></script>
-<script type="text/javascript">
+<script src="js/admin.js"></script>
+<script src="js/mediautils.js"></script>
+<script>
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
     const entercollid = "<?php echo $admtext['entercollid']; ?>";

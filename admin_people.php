@@ -206,7 +206,7 @@ $revstar = checkReview("I");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['people'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function confirmDelete(ID) {
         if (confirm('<?php echo $admtext['confdeletepers']; ?>'))
             deleteIt('person', ID, '<?php echo $tree; ?>');
@@ -224,7 +224,7 @@ tng_adminheader($admtext['people'], $flags);
         document.form1.nospouse.checked = false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

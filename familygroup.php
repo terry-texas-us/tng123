@@ -585,7 +585,7 @@ if ($allowpdf) {
 
 echo tng_menu("F", "family", $familyID, $innermenu);
 ?>
-    <script type="text/javascript">
+    <script>
         function innerToggle(part, subpart, subpartlink) {
             if (part == subpart)
                 turnOn(subpart, subpartlink);
@@ -654,14 +654,14 @@ echo $famtext;
     <br>
 
 <?php
-$flags['more'] = "<script type=\"text/javascript\" src=\"js/rpt_utils.js\"></script>\n";
+$flags['more'] = "<script src=\"js/rpt_utils.js\"></script>\n";
 if ($tentative_edit) {
-    $flags['more'] .= "<script type=\"text/javascript\">\n";
+    $flags['more'] .= "<script>\n";
     $flags['more'] .= "var preferEuro = " . ($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false") . ";\n";
     $flags['more'] .= "var preferDateFormat = '$preferDateFormat';\n";
     $flags['more'] .= "</script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/tentedit.js\"></script>\n";
-    $flags['more'] .= "<script type=\"text/javascript\" src=\"js/datevalidation.js\"></script>\n";
+    $flags['more'] .= "<script src=\"js/tentedit.js\"></script>\n";
+    $flags['more'] .= "<script src=\"js/datevalidation.js\"></script>\n";
 }
 tng_footer($flags);
 ?>

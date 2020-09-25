@@ -27,7 +27,7 @@ echo help_header("Help: Sources");
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
+            <script>
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
                         pageLanguage: 'en',
@@ -37,7 +37,7 @@ echo help_header("Help: Sources");
                 }
 
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <a id="search"><h4 class="subheadbold">Search</h4></a>
             <p>Locate existing sources by searching for all or part of the <strong>Source ID, Source Title, Author, Call Number</strong> or <strong>Publisher</strong>.

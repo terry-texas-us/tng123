@@ -45,8 +45,8 @@ class HeadElementPublic
      */
     public function getHtml(): string {
         $head = "<head>\n";
-        $head .= "<title>$this->title$this->sitePrefix</title>\n";
         $head .= implode("\n", $this->metas) . "\n";
+        $head .= "<title>$this->title$this->sitePrefix</title>\n";
         $head .= implode("\n", $this->links) . "\n";
         $head .= implode("\n", $this->scripts) . "\n";
         $head .= implode("\n", $this->styles) . "\n";
@@ -97,36 +97,36 @@ class HeadElementPublic
 
         $scripts = [];
         if ($isConnected) {
-            $scripts[] = "<script src='https://code.jquery.com/jquery-3.3.1.min.js' type='text/javascript' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
-            $scripts[] = "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' type='text/javascript' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>";
+            $scripts[] = "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
+            $scripts[] = "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>";
         } else {
-            $scripts[] = "<script type='text/javascript'>// <![CDATA[\nwindow.jQuery || document.write('<script src=\'js/jquery-3.3.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
-            $scripts[] = "<script type='text/javascript'>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
+            $scripts[] = "<script>// <![CDATA[\nwindow.jQuery || document.write('<script src=\'js/jquery-3.3.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
+            $scripts[] = "<script>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
         }
-        $scripts[] = "<script type='text/javascript' src='js/net.js'></script>";
+        $scripts[] = "<script src='js/net.js'></script>";
 
         if (isset($this->flags['scripting'])) {
             $scripts[] = $this->flags['scripting'];
         }
         if (!empty($tngconfig['showshare']) && $isConnected && $sitever != "mobile") {
             $w = $http == "https" ? "ws" : "w";
-            $scripts[] = "<script type='text/javascript' src='{$http}://{$w}.sharethis.com/button/buttons.js'></script>";
-            $scripts[] = "<script type='text/javascript'>stLight.options({publisher: 'be4e16ed-3cf4-460b-aaa4-6ac3d0e3004b',doNotHash:true,doNotCopy:true,hashAddressBar:false});</script>";
+            $scripts[] = "<script src='{$http}://{$w}.sharethis.com/button/buttons.js'></script>";
+            $scripts[] = "<script>stLight.options({publisher: 'be4e16ed-3cf4-460b-aaa4-6ac3d0e3004b', doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>";
         }
         if ($tngconfig['menu'] < 2 && !$tngprint && $sitever != "mobile") {
-            $scripts[] = "<script type='text/javascript' src='js/tngmenuhover2.js'></script>";
+            $scripts[] = "<script src='js/tngmenuhover2.js'></script>";
         }
         if ($sitever != "standard" && $responsivetables) {
-            $scripts[] = "<script type='text/javascript' src='js/tablesaw.js'></script>";
+            $scripts[] = "<script src='js/tablesaw.js'></script>";
             $scripts[] = "<!--[if lt IE 9]>";
-            $scripts[] = "<script type='text/javascript' src='js/respond.js'></script>";
+            $scripts[] = "<script src='js/respond.js'></script>";
             $scripts[] = "<![endif]-->";
         }
         $scripts[] = self::getLitBoxScript($this->flags['error']);
 
         if (!empty($tngconfig['cookieapproval']) && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
             $scripts[] = self::getCookieApprovalScript();
-            $scripts[] = "<script type = 'text/javascript' src = 'js/cookiebanner.js'></script >";
+            $scripts[] = "<script src = 'js/cookiebanner.js'></script >";
         }
         return $scripts;
     }
@@ -150,18 +150,18 @@ class HeadElementPublic
         $links = [];
         $links[] = "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
         if ($sitever != "standard" && $responsivetables) {
-            $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet' type='text/css'>";
+            $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
         }
-        $links[] = "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
+        $links[] = "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet'>";
         if (isset($this->flags['tabs'])) {
-            $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}?v=$tng_version' rel='stylesheet' type='text/css'>";
+            $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}?v=$tng_version' rel='stylesheet'>";
         }
-        $links[] = "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
+        $links[] = "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet'>";
         if ($sitever == "mobile") {
-            $links[] = "<link href='css/tngmobile.css?v=$tng_version' rel='stylesheet' type='text/css'>";
-            $links[] = "<link href='{$templatepath}css/tngmobile.css?v=$tng_version' rel='stylesheet' type='text/css'>";
+            $links[] = "<link href='css/tngmobile.css?v=$tng_version' rel='stylesheet'>";
+            $links[] = "<link href='{$templatepath}css/tngmobile.css?v=$tng_version' rel='stylesheet'>";
         }
-        $links[] = "<link href='{$templatepath}css/mytngstyle.css?v=$tng_version' rel='stylesheet' type='text/css'>";
+        $links[] = "<link href='{$templatepath}css/mytngstyle.css?v=$tng_version' rel='stylesheet'>";
         if (isset($this->flags['link'])) {
             $links[] = $this->flags['link'];
         }
@@ -176,7 +176,7 @@ class HeadElementPublic
         }
         $links[] = "<link rel='alternate' type='application/rss+xml' title='RSS' href='tngrss.php'>";
         if ($tngprint) {
-            $links[] = "<link href='css/tngprint.css' rel='stylesheet' type='text/css'>";
+            $links[] = "<link href='css/tngprint.css' rel='stylesheet'>";
         }
         return $links;
     }
@@ -187,8 +187,10 @@ class HeadElementPublic
     public function getMetaElements(): array {
         global $custommeta, $fbOGimage, $pageURL, $site_desc, $sitename, $sitever, $tngdomain;
 
-        $metas[] = "<meta name='author' content='Darrin Lythgoe'>";
         $metas[] = "<meta charset='utf-8'>";
+        $metas[] = "<meta name='author' content='Darrin Lythgoe'>";
+        $metas[] = "<meta name='Description' content='$this->title$this->sitePrefix'>";
+        $metas[] = "<meta name='Keywords' content='$site_desc'>";
         $metas[] = "<meta name='viewport' content='width=device-width, initial-scale=1'>";
         if (isset($this->flags['norobots'])) {
             $metas[] = $this->flags['norobots'];
@@ -196,8 +198,6 @@ class HeadElementPublic
         if ($sitever == "mobile" || $sitever == "tablet") {
             $metas[] = "<meta name='apple-mobile-web-app-capable' content='yes'>";
         }
-        $metas[] = "<meta name='Keywords' content='$site_desc'>";
-        $metas[] = "<meta name='Description' content='$this->title$this->sitePrefix'>";
 
         if ($fbOGimage) { // Facebook Open Graph protocol
             $metas[] = "<meta property='og:title' content='$sitename'>";
@@ -217,7 +217,7 @@ class HeadElementPublic
      */
     public static function getCookieApprovalScript(): string {
         global $text;
-        $script = "<script type='text/javascript'>\n";
+        $script = "<script>\n";
         $script .= "window.CookieHinweis_options = {\n";
         $script .= "message: '{$text['cookieuse']}<br>',\n";
         $script .= "agree: '{$text['understand']}',\n";
@@ -226,7 +226,7 @@ class HeadElementPublic
         $script .= "theme: 'hell-unten-rechts'\n";
         $script .= "};\n";
         $script .= "</script >";
-        $script .= "<script type = 'text/javascript' src = 'js/cookiebanner.js'></script >\n";
+        $script .= "<script src = 'js/cookiebanner.js'></script >\n";
         return $script;
     }
 
@@ -236,7 +236,7 @@ class HeadElementPublic
      */
     public static function getLitBoxScript($error): string {
         global $text;
-        $script = "<script type='text/javascript'>\n";
+        $script = "<script>\n";
         $script .= "var tnglitbox;\n";
         $script .= "var share = 0;\n";
         $script .= "var closeimg = 'img/tng_close.gif';\n";
@@ -252,7 +252,7 @@ class HeadElementPublic
     }
 
     public static function getFamilyChartScript(): string {
-        $script = "<script type='text/javascript'>\n";
+        $script = "<script>\n";
         $script .= "function toggle(elem) {\n";
         $script .= "if (document.getElementById(elem).style.display) {\n";
         $script .= "document.getElementById(elem).style.display = '';\n";

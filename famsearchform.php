@@ -38,7 +38,7 @@ echo "<html lang='en'>\n";
 
 tng_header($text['searchfams'], $flags);
 ?>
-    <script type="text/javascript">
+    <script>
         //<![CDATA[
         function resetValues() {
             <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) {

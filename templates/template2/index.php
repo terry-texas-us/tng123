@@ -15,7 +15,7 @@ if ($sitever != "mobile") {
 $title = getTemplateMessage('t2_maintitle');
 ?>
 
-    <script type="text/javascript">
+    <script>
         pedigreeoff = new Image(162, 24);
         pedigreeoff.src = "<?php echo $templatepath; ?>img/pedigreeoff.gif";
         pedigreeon = new Image(162, 24);
@@ -240,7 +240,7 @@ $title = getTemplateMessage('t2_maintitle');
             ?>
         </div> <!-- end footer div -->
     </div> <!-- end of center div -->
-    <script type="text/javascript">
+    <script>
         document.forms.searchform.myfirstname.focus();
     </script>
 

@@ -262,7 +262,7 @@ if ($sitever != "standard") {
 }
 echo $header;
 ?>
-<script type="text/javascript">
+<script>
     function toggleAll(flag) {
         for (var i = 0; i < document.form2.elements.length; i++) {
             if (document.form2.elements[i].type == "checkbox") {

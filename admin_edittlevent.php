@@ -20,7 +20,7 @@ $helplang = findhelp("tlevents_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytlevent'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function validateForm() {
         let rval = true;
         if (document.form1.evyear.value.length == 0) {

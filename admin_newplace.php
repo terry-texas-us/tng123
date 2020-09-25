@@ -33,10 +33,10 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewplace'], $flags);
 
 if ($map['key'] && $isConnected) {
-    echo "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 ?>
-<script type="text/javascript">
+<script>
     function validateForm() {
         let rval = true;
         if (document.form1.place.value.length == 0) {

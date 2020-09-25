@@ -5,7 +5,7 @@
     <script src="js/popupwindow.js"></script>
     <script src="js/anchorposition.js"></script>
     <script src="js/colorpicker2.js"></script>
-    <script type="text/javascript">
+    <script>
         var cp = new ColorPicker('window');
     </script>
 </head>

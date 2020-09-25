@@ -89,7 +89,7 @@ $photo = showSmallPhoto($familyID, $namestr, 1, 0, "F");
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script type="text/javascript">
+<script>
     var persfamID = "<?php echo $familyID; ?>";
     var childcount = <?php echo $kidcount; ?>;
     var allow_cites = true;

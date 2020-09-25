@@ -53,8 +53,8 @@ tng_header($text['anniversaries'], $flags);
 
 if ($sitever != "mobile") {
     ?>
-    <script type="text/javascript" src="js/search.js"></script>
-    <script type="text/javascript">
+    <script src="js/search.js"></script>
+    <script>
         // <![CDATA[
         const ajx_perspreview = 'ajx_perspreview.php';
         //]]>
@@ -62,7 +62,7 @@ if ($sitever != "mobile") {
     <?php
 }
 ?>
-    <script type="text/javascript">
+    <script>
         // <![CDATA[
         function resetForm() {
             var myform = document.form1;

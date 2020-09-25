@@ -88,9 +88,7 @@ if ($tngSiteKey && $tngSecret) {
 
     <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
         <div class="g-recaptcha" data-sitekey="<?php echo $tngSiteKey; ?>" data-theme="<?php echo $captchatheme; ?>"></div>
-        <script type="text/javascript"
-                src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang; ?>">
-        </script>
+        <script src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang; ?>"></script>
         <br>
         <input type="submit" value="<?php echo $admtext['text_continue']; ?>">
         <input type="hidden" name="enttype" value="<?php echo $enttype; ?>">

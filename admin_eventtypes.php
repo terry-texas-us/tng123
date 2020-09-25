@@ -94,14 +94,14 @@ $helplang = findhelp("eventtypes_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['eventtypes'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function confirmDelete(ID) {
         if (confirm('<?php echo $admtext['confdeleteevtype']; ?>'))
             deleteIt('eventtype', ID);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

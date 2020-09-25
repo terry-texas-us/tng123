@@ -17,8 +17,8 @@ $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Validation'), $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
-<script type="text/javascript">
+<script src="js/admin.js"></script>
+<script>
     jQuery(document).ready(function () {
         jQuery('.valreport').bind('click', function (e) {
             var linkval = $(this).attr('href');

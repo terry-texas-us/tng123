@@ -1,6 +1,6 @@
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/datevalidation.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script src="js/datevalidation.js"></script>
+<script>
     var tnglitbox;
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';

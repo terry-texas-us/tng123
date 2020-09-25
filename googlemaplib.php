@@ -48,7 +48,7 @@ function tng_map_pins() {
     $centLong = $minLong + ((abs($minLong) - abs($maxLong)) / 2);
 
     ?>
-    <script type="text/javascript">
+    <script>
         //<![CDATA[
         //more setup needed here?
         var maploaded = false;

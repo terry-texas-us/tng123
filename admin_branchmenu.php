@@ -33,8 +33,8 @@ $helplang = findhelp("branches_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['labelbranches'], $flags);
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script>
     var tree = "<?php echo $tree; ?>";
 
     function toggleClear(option) {

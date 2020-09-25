@@ -105,7 +105,7 @@ body {
 // ADJUST LISTING TO BOTTOM OF HEADER MENUS
 $headclass = $options['fix_header'] == YES && $sitever != 'mobile' ? 'mmhead-fixed' : 'mmhead-scroll';
 echo "
-<script type=\"text/javascript\" src=\"js/admin.js\"></script>
+<script src=\"js/admin.js\"></script>
 </head>
 <body class=\"admin-body\">
 <div id=\"mmhead\" class=\"$headclass adminback\">
@@ -175,7 +175,7 @@ function fix_header($options) {
 
     if ($sitever != 'mobile' && $options['adjust_headers']) {
         echo "
-   <script type=\"text/javascript\">
+   <script>
       jQuery(document).ready(function() {
          // set position of parse-sec div relative to mmhead
          jQuery('#parse-sec').position({
@@ -236,7 +236,7 @@ function set_innermenu_links($tng_version) {
  * JQUERY/JAVASCRIPT FUNCTIONS
  *************************************************************************/
 echo "
-<script type=\"text/javascript\">
+<script>
 jQuery(document).ready(function() {
 ";
 

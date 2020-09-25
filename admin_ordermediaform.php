@@ -26,10 +26,10 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
-<script type="text/javascript" src="js/net.js"></script>
-<script type="text/javascript" src="js/mediafind.js"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/net.js"></script>
+<script src="js/mediafind.js"></script>
+<script src="js/selectutils.js"></script>
+<script>
     var findopen;
     var album = '';
     var media = '';

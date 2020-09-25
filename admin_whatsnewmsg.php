@@ -23,7 +23,7 @@ $helplang = findhelp("misc_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['whatsnew'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     //<![CDATA[
     <?php include "niceditmsgs.php"; ?>
     //]]>
@@ -62,8 +62,8 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "im
     </tr>
 </table>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript" src="js/nicedit.js"></script>
-<script type="text/javascript">
+<script src="js/nicedit.js"></script>
+<script>
     //<![CDATA[
     bkLib.onDomLoaded(function () {
         new nicEditor({fullPanel: true}).panelInstance('whatsnewmsg');

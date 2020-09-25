@@ -23,7 +23,7 @@ echo help_header("Help: Notes");
         <tr class="databack">
             <td class="tngshadow">
                 <div id="google_translate_element" style="float:right;"></div>
-                <script type="text/javascript">
+                <script>
                     function googleTranslateElementInit() {
                         new google.translate.TranslateElement({
                             pageLanguage: 'en',
@@ -33,7 +33,7 @@ echo help_header("Help: Notes");
                     }
 
                 </script>
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
                 <a id="notes"><h4 class="subheadbold">Notes</h4></a>
                 <p>From the <strong>Notes</strong> page, you can search for notes directly based on their content. You don't have to know who or

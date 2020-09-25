@@ -27,13 +27,13 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewcemetery'], $flags);
 
 if ($map['key'] && $isConnected) {
-    echo "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 ?>
-<script type="text/javascript" src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script>
     const nothingtodelete = "<?php echo $admtext['nothingtodelete']; ?>";
     const confdeleteentity = "<?php echo $admtext['confdeleteentity']; ?>";
     const pleaseenter = "<?php echo $admtext['pleaseenter']; ?>";

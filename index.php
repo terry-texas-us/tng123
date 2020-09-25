@@ -36,13 +36,13 @@ if ($currentuser) {
         <tr>
             <td>
                 <small><?php echo $text['mnulastname']; ?>:</small><br>
-                <input type="text" name="mylastname" size="14">
+                <input type="search" name="mylastname" size="14">
             </td>
         </tr>
         <tr>
             <td>
                 <small><?php echo $text['mnufirstname']; ?>:</small><br>
-                <input type="text" name="myfirstname" size="14">
+                <input type="search" name="myfirstname" size="14">
             </td>
         </tr>
         <tr>

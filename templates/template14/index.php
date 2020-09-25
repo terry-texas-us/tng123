@@ -278,7 +278,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
 
     </div>
 
-    <script type="text/javascript">
+    <script>
         document.forms.searchform.myfirstname.focus();
     </script>
 

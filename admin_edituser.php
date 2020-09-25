@@ -55,9 +55,9 @@ $style->addSelector("table td", ["padding" => "10px"]);
 echo $style->getStyle();
 
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/users.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script src="js/users.js"></script>
+<script>
     <?php
     include "branchlibjs.php";
     ?>

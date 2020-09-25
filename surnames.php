@@ -187,7 +187,7 @@ if ($result) {
     <link href="css/c3.css" rel="stylesheet">
     <script src="js/d3.min.js"></script>
     <script src="js/c3.min.js"></script>
-    <script type="text/javascript">
+    <script>
         let whole_chart = c3.generate({
             bindto: '#whole_chart',
             data: {

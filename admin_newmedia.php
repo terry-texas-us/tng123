@@ -337,7 +337,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     </table>
 </form>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
     var trees = new Array();
@@ -421,11 +421,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
         return false;
     }
 </script>
-<script type="text/javascript" src="js/net.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript">
+<script src="js/net.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
     switchOnType(document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value);
@@ -433,8 +433,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     include "niceditmsgs.php";
     ?>
 </script>
-<script type="text/javascript" src="js/nicedit.js"></script>
-<script type="text/javascript">
+<script src="js/nicedit.js"></script>
+<script>
     //<![CDATA[
     bkLib.onDomLoaded(function () {
         new nicEditor({fullPanel: true}).panelInstance('bodytext');

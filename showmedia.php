@@ -151,10 +151,10 @@ if (!$personID) {
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['link'] = "<link href=\"css/media.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['link'] = "<link href='css/media.css' rel='stylesheet'>\n";
 if (!$tngprint) {
-    $flags['scripting'] = "<script type=\"text/javascript\" src=\"js/slideshow.js\"></script>\n";
-    $flags['scripting'] .= "<script type=\"text/javascript\">\n";
+    $flags['scripting'] = "<script src=\"js/slideshow.js\"></script>\n";
+    $flags['scripting'] .= "<script>\n";
     $flags['scripting'] .= "var showmediaxmlfile = 'ajx_showmediaxml.php?';\n";
     $flags['scripting'] .= "</script>\n";
 }
@@ -314,7 +314,7 @@ if (!$tngprint && !$tngconfig['ssdisabled']) {
     ?>
     </div>
     <?php
-    $flags['more'] = "<script type=\"text/javascript\">\n//<![CDATA[\nvar timeoutID;\nvar myslides;\nvar resumemsg='&gt; {$text['slideresume']}';\n";
+    $flags['more'] = "<script>\n//<![CDATA[\nvar timeoutID;\nvar myslides;\nvar resumemsg='&gt; {$text['slideresume']}';\n";
     $flags['more'] .= "var slidestopmsg = '&gt; {$text['slidestop']}';\n";
     $flags['more'] .= "var startmsg='&gt; {$text['slidestart']}';\n";
     $flags['more'] .= "var plussecsmsg = \"{$text['plussecs']}\";\n";

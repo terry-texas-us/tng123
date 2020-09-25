@@ -138,7 +138,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
 } else {
     echo "<div style=\"text-align: center;\"><span class='normal'>{$tng_title}, v . {$tng_version}</span></div>\n";
     ?>
-    <script type="text/javascript">
+    <script>
         function validateTreeForm(form) {
             let rval = true;
             if (form.gedcom.value.length == 0) {

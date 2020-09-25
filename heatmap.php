@@ -228,7 +228,7 @@ $numrows = tng_num_rows($result);
 //we'll then construct a large JS object to feed into the code below
 
 if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
 }
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -352,11 +352,11 @@ foreach ($uniquePlaces as $place) {
 }
 if ($markermap) {
     ?>
-    <script type="text/javascript" src="js/markerclusterer.js"></script>
+    <script src="js/markerclusterer.js"></script>
     <?php
 }
 ?>
-    <script type="text/javascript">
+    <script>
         //<![CDATA[
         var maploaded = false;
         var map = null;

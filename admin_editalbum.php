@@ -91,10 +91,10 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
     $photo = "<img src=\"" . str_replace("%2F", "/", rawurlencode($photoref)) . "?" . time() . "\" alt=\"\" width=\"$photowtouse\" height=\"$photohtouse\" align=\"left\" style=\"border-width:1;border-style:solid;margin-right:10px\">";
 }
 ?>
-<script type="text/javascript" src="js/mediafind.js"></script>
-<script type="text/javascript" src="js/mediautils.js"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/mediafind.js"></script>
+<script src="js/mediautils.js"></script>
+<script src="js/selectutils.js"></script>
+<script>
     <!--
     var tnglitbox;
     var album = "<?php echo $albumID; ?>";
@@ -465,7 +465,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 </form>
 
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     var findform = document.form1;
 </script>
 </body>

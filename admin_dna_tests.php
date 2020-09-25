@@ -121,7 +121,7 @@ $helplang = findhelp("dna_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['dna_tests'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     var tnglitbox;
     var allow_edit = <?php echo($allow_edit ? "1" : "0"); ?>;
     var allow_delete = <?php echo($allow_delete ? "1" : "0"); ?>;
@@ -140,7 +140,7 @@ tng_adminheader($admtext['dna_tests'], $flags);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

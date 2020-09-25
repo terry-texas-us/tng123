@@ -254,7 +254,7 @@ writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generatio
 preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $pedname ($personID)") . "</a> $generations " . $gentext);
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -301,7 +301,7 @@ echo "</form>\n";
             ?>
         </tr>
     </table>
-    <script type="text/javascript" src="js/rpt_utils.js"></script>
+    <script src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");
 ?>

@@ -43,8 +43,8 @@ writelog("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;gene
 preparebookmark("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $gens " . $gentext);
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
-$flags['link'] = "<link href=\"css/verticalchart.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
+$flags['link'] = "<link href='css/verticalchart.css' rel='stylesheet'>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";

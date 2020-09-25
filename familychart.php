@@ -584,7 +584,7 @@ function famStylesheet() {
 	font-size: 10pt;
 }
 </style>
-<script type='text/javascript'>
+<script>
 function toggle(elem) {
   if (document.getElementById(elem).style.display)
 	document.getElementById(elem).style.display = '';

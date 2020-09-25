@@ -671,7 +671,7 @@ $flags['style'] .= ".spouse {width: 100%;}\n";
 $flags['style'] .= ".shadow {background-color: {$pedigree['shadowcolor']}; position: absolute;}\n";
 $flags['style'] .= ".boxborder {background-color: {$pedigree['bordercolor']};}\n";
 $flags['style'] .= "</style>\n";
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -746,7 +746,7 @@ $maxwidth += $pedigree['boxwidth'] + $pedigree['borderwidth'] + (2 * $pedigee['o
         ?>
     </div>
 
-    <script type="text/javascript">
+    <script>
         //<![CDATA[
         var timerleft = false;
 
@@ -776,7 +776,7 @@ $maxwidth += $pedigree['boxwidth'] + $pedigree['borderwidth'] + (2 * $pedigee['o
 <?php
 if ($display != "compact" && $pedigree['usepopups']) {
     ?>
-    <script type="text/javascript">
+    <script>
         //<![CDATA[
         var lastpopup = "";
         for (var h = 1; h <= <?php echo $numboxes; ?>; h++) {
@@ -817,7 +817,7 @@ if ($display != "compact" && $pedigree['usepopups']) {
     <?php
 }
 ?>
-    <script type="text/javascript" src="js/rpt_utils.js"></script>
+    <script src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");
 ?>

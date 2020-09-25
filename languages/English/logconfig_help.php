@@ -20,7 +20,7 @@ echo help_header("Help: Log Settings");
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
+            <script>
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
                         pageLanguage: 'en',
@@ -30,7 +30,7 @@ echo help_header("Help: Log Settings");
                 }
 
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <h5 class="optionhead">Log File Name</h5>
             <p>The Log File Name is the file where visitor actions are recorded. You shouldn't have to change this from "genlog.txt".</p>

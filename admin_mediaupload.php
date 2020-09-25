@@ -26,12 +26,12 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
-<script type="text/javascript" src="js/net.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/mediafind.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript">
+<script src="js/net.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediafind.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
     var findopen;

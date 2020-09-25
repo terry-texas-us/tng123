@@ -25,7 +25,7 @@ echo help_header("Help: Collections");
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
+            <script>
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
                         pageLanguage: 'en',
@@ -35,7 +35,7 @@ echo help_header("Help: Collections");
                 }
 
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <a id="what"><h4 class="subheadbold">What are Collections?</h4></a>
 

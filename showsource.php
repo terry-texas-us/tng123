@@ -235,7 +235,7 @@ if ($notes || $media) {
 
 echo tng_menu("S", "source", $sourceID, $innermenu);
 ?>
-    <script type="text/javascript">
+    <script>
         function innerToggle(part, subpart, subpartlink) {
             if (part == subpart)
                 turnOn(subpart, subpartlink);

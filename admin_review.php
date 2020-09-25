@@ -228,7 +228,7 @@ tng_adminheader($admtext['review'], $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script type="text/javascript">
+<script>
     var persfamID = "<?php echo $personID; ?>";
 </script>
 </head>

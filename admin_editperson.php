@@ -143,7 +143,7 @@ $photo = showSmallPhoto($personID, $namestr, 1, 0, "I", $row['sex']);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-    <script type="text/javascript">
+    <script>
         var persfamID = "<?php echo $personID; ?>";
         var allow_cites = true;
         var allow_notes = true;

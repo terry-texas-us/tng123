@@ -26,8 +26,8 @@ $helplang = findhelp("repositories_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewrepo'], $flags);
 ?>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/selectutils.js"></script>
+<script>
     function validateForm() {
         var rval = true;
 

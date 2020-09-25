@@ -62,7 +62,7 @@ $helplang = findhelp("trees_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['trees'], $flags);
 ?>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

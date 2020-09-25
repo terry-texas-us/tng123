@@ -296,8 +296,8 @@ tng_header($text['searchresults'], $flags);
 <?php
 if ($sitever != "mobile") {
     ?>
-    <script type="text/javascript" src="js/search.js"></script>
-    <script type="text/javascript">
+    <script src="js/search.js"></script>
+    <script>
         // <![CDATA[
         const ajx_fampreview = 'ajx_fampreview.php';
         // ]]>

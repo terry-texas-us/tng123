@@ -23,7 +23,7 @@ echo help_header("Help: More");
     <tr class="databack">
         <td class="tngshadow">
             <div id="google_translate_element" style="float:right;"></div>
-            <script type="text/javascript">
+            <script>
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement({
                         pageLanguage: 'en',
@@ -33,7 +33,7 @@ echo help_header("Help: More");
                 }
 
             </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <a id="more"><h4 class="subheadbold">More Information</h4></a>
             <p>This screen allows you to enter additional information related to TNG's standard event types. When one or more of these fields are

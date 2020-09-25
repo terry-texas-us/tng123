@@ -163,7 +163,7 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
     </table>
 </form>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
 
@@ -185,11 +185,11 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
         return false;
     }
 </script>
-<script type="text/javascript" src="js/net.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript">
+<script src="js/net.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/selectutils.js"></script>
+<script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
 </script>

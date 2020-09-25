@@ -6,7 +6,7 @@ $_SESSION['tng_email'] = generatePassword(1);
 $_SESSION['tng_comments'] = generatePassword(1);
 $_SESSION['tng_yourname'] = generatePassword(1);
 
-$flags['scripting'] = "<script type=\"text/javascript\">
+$flags['scripting'] = "<script>
 function validateForm() {
 	if( document.suggest." . $_SESSION['tng_yourname'] . ".value == \"\" ) {
 		alert(\"{$text['entername']}\");

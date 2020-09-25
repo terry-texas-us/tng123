@@ -75,14 +75,14 @@ $helplang = findhelp("users_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['users'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function confirmDelete(ID) {
         if (confirm('<?php echo $admtext['confuserdelete']; ?>'))
             deleteIt('user', ID);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

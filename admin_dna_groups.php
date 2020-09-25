@@ -95,14 +95,14 @@ $helplang = findhelp("dna_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['dna_groups'], $flags);
 ?>
-<script type="text/javascript">
+<script>
     function confirmDelete(ID, tree) {
         if (confirm('<?php echo $admtext['confgroupdelete']; ?>'))
             deleteIt('dnagroup', ID, tree);
         return false;
     }
 </script>
-<script type="text/javascript" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </head>
 
 <body class="admin-body">

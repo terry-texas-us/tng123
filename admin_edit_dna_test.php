@@ -674,7 +674,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
     </table>
 </form>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
     <?php
@@ -701,12 +701,12 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
         return false;
     }
 </script>
-<script type="text/javascript" src="js/net.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/selectutils.js"></script>
-<script type="text/javascript" src="js/dna_tests.js"></script>
-<script type="text/javascript">
+<script src="js/net.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/dna_tests.js"></script>
+<script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
     var findform = document.form1;

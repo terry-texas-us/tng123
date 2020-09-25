@@ -138,7 +138,7 @@ writelog("<a href=\"extrastree.php?personID=$personID&amp;tree=$tree\">{$text['f
 preparebookmark("<a href=\"extrastree.php?personID=$personID&amp;tree=$tree\">{$text['familyof']} $pedname ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -218,7 +218,7 @@ displayIndividual($personID, 1, $slot, 0);
             </td>
         </tr>
     </table>
-    <script type="text/javascript" src="js/rpt_utils.js"></script>
+    <script src="js/rpt_utils.js"></script>
 
 <?php
 tng_footer("");

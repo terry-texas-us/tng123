@@ -438,7 +438,7 @@ function showBox($generation, $slot) {
 if (!$tngprint) {
     $tngprint = 0;
 }
-$flags['scripting'] .= "<script type=\"text/javascript\">\n//<![CDATA[\n";
+$flags['scripting'] .= "<script>\n//<![CDATA[\n";
 $flags['scripting'] .= "var lastpopup = '';\n";
 $flags['scripting'] .= "var tree = '$tree';\n";
 $flags['scripting'] .= "var tnglitbox;\n";
@@ -499,9 +499,9 @@ $flags['scripting'] .= "var endslotctr;\n";
 $flags['scripting'] .= "var firstperson = '', topparams = '', botparams = '', toplinks = '', botlinks = '';\n";
 $flags['scripting'] .= "var pedjsonfile = 'ajx_pedjson.php?';\n";
 $flags['scripting'] .= "//]]>\n</script>\n";
-$flags['scripting'] .= "<script src=\"js/tngpedigree.js\" type=\"text/javascript\"></script>\n";
+$flags['scripting'] .= "<script src=\"js/tngpedigree.js\"></script>\n";
 if ($allow_edit || $allow_add) {
-    $flags['scripting'] .= "<script src=\"js/tngpededit.js\" type=\"text/javascript\"></script>\n";
+    $flags['scripting'] .= "<script src=\"js/tngpededit.js\"></script>\n";
 }
 
 $flags['scripting'] .= "<style type=\"text/css\">\n";
@@ -579,8 +579,8 @@ if (!$tngprint) {
         echo $boxes;
         ?>
     </div>
-    <script type="text/javascript" src="js/rpt_utils.js"></script>
-    <script type="text/javascript">
+    <script src="js/rpt_utils.js"></script>
+    <script>
         //<![CDATA[
         for (var c = 1; c < slotceiling; c++) {
             var slot = document.getElementById('box' + c);

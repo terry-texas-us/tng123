@@ -113,7 +113,7 @@ if ($row['path'] && ($form == "JPG" || $form == "JPEG" || $form == "GIF" || $for
     $isphoto = FALSE;
 }
 if ($map['key'] && $isConnected) {
-    echo "<script type=\"text/javascript\" src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 ?>
 <?php
@@ -651,7 +651,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 </form>
 
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
-<script type="text/javascript">
+<script>
     var tree = "";
     var type = "media";
     var treename = new Array();
@@ -744,12 +744,12 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
         return false;
     }
 </script>
-<script type="text/javascript" src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/mediafind.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript" src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
-<script type="text/javascript">
+<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediafind.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
     switchOnType(document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value);
@@ -759,8 +759,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     include "niceditmsgs.php";
     ?>
 </script>
-<script type="text/javascript" src="js/nicedit.js"></script>
-<script type="text/javascript">
+<script src="js/nicedit.js"></script>
+<script>
     //<![CDATA[
     bkLib.onDomLoaded(function () {
         new nicEditor({fullPanel: true}).panelInstance('bodytext');

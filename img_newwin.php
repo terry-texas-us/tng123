@@ -19,8 +19,8 @@ header("Content-type:text/html;charset=" . $session_charset);
     $siteprefix = $sitename ? htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
     $title = htmlspecialchars($title, ENT_QUOTES, $session_charset);
     ?>
-    <link href="css/img_viewer.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="js/img_viewer.js"></script>
+    <link href="css/img_viewer.css" rel="stylesheet">
+    <script src="js/img_viewer.js"></script>
     <title><?php echo $title; ?></title>
 </head>
 

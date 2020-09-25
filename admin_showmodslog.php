@@ -112,7 +112,7 @@ if ($options['fix_header'] == YES && $sitever != 'mobile') {
 }
 
 echo "
-<script type=\"text/javascript\" src=\"js/admin.js\"></script>
+<script src=\"js/admin.js\"></script>
 </head>
 <body class=\"admin-body\" style=\"margin:0;\">
 <div id=\"mmhead\" class=\"$headclass adminback\">
@@ -302,7 +302,7 @@ function set_innermenu_links($tng_version) {
 
 if ($sitever != 'mobile' && $options['adjust_headers']) {
     echo "
-<script type=\"text/javascript\">
+<script>
    jQuery(document).ready(function() {
 	   // set position of table relative to inner menu
 	   jQuery('#infobar').position({

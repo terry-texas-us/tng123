@@ -54,8 +54,8 @@ $helplang = findhelp("places_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['mergeplaces'], $flags);
 ?>
-<script type="text/javascript" src="js/mergeplaces.js"></script>
-<script type="text/javascript">
+<script src="js/mergeplaces.js"></script>
+<script>
     const enterplace = "<?php echo $admtext['enterplace']; ?>";
     const enterkeep = "<?php echo $admtext['enterkeep']; ?>";
     const successmsg = "<?php echo $admtext['pmsucc']; ?>";
