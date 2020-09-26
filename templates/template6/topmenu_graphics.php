@@ -21,7 +21,7 @@ global $text, $tmp;
                 <?php
                 echo tng_icons(1);
                 global $currentuser, $currentuserdesc, $flags;
-                $flags['noicons'] = 1;
+                $flags['noicons'] = true;
 
                 if ($currentuser) {
                     echo "<span class=\"headertext\">{$text['welcome']}, $currentuserdesc</span>&nbsp;";

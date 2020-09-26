@@ -664,6 +664,9 @@ tng_free_result($treeResult);
 writelog("<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=$display\">" . xmlcharacters($text['descendfor'] . " $logname ($personID)") . "</a>");
 preparebookmark("<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=$display\">{$text['descendfor']} " . $row['name'] . " ($personID)</a>");
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['style'] = "<style>\n";
 $flags['style'] .= ".desc {margin: 0 0 10px 0;}\n";
@@ -672,9 +675,6 @@ $flags['style'] .= ".shadow {background-color: {$pedigree['shadowcolor']}; posit
 $flags['style'] .= ".boxborder {background-color: {$pedigree['bordercolor']};}\n";
 $flags['style'] .= "</style>\n";
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 
 tng_header($text['descendfor'] . " " . $row['name'], $flags);
 

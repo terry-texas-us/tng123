@@ -5,7 +5,7 @@ $dadlabel = getTemplateMessage('t16_dadside');
 $momlabel = getTemplateMessage('t16_momside');
 $title = getTemplateMessage('t16_maintitle');
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> homebody">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> homebody">
 
 <?php
 //begin HEADER IMAGE (default: picture of the Henefer, Utah cemetery, plus "Our Family History")

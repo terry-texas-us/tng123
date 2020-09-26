@@ -268,14 +268,14 @@ $logstring = "<a href=\"placesearch.php?psearch=$psearchns$logurlstring\">{$text
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $flags['tabs'] = $tngconfig['tabs'];
 
 if ($map['key'] && $isConnected) {
     $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 
 tng_header($psearchns, $flags);
 

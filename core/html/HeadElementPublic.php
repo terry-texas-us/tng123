@@ -11,6 +11,11 @@ class HeadElementPublic
     private array $styles;
     private string $icons;
 
+    /**
+     * HeadElementPublic constructor.
+     * @param string $title
+     * @param $flags 'nomobile'
+     */
     function __construct(string $title, $flags) {
         global $session_charset, $sitename, $sitever, $tngconfig;
         $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);

@@ -41,13 +41,13 @@ preparebookmark($logstring);
 
 $ldsOK = determineLDSRights();
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $flags['style'] = "<style>\n";
 $flags['style'] .= "table {width: 100%; border-collapse: separate; border-spacing: 1px;}\n";
 $flags['style'] .= "table th, table td {padding: 3px;}\n";
 $flags['style'] .= "</style>\n";
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 
 tng_header($text['anniversaries'], $flags);
 

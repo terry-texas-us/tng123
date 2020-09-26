@@ -1,10 +1,16 @@
 <?php
+
+global $sitever, $allow_admin;
+
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['noicons'] = 1;
+$flags['noicons'] = true;
 
-tng_header($sitename ? "" : $text['mnuheader'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever == "mobile") {
     ?>
     <div class="headerrow"

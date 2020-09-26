@@ -1,20 +1,23 @@
 <?php
 
+global $sitever;
+
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
-tng_header($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
 }
 
 $dadlabel = getTemplateMessage('t11_dadside');
 $momlabel = getTemplateMessage('t11_momside');
 $title = getTemplateMessage('t11_maintitle');
 ?>
-
     <div id="art-main">
         <div class="cleared reset-box"></div>
         <div class="art-nav">

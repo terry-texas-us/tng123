@@ -1,7 +1,11 @@
 <?php
 include "tng_begin.php";
 
+initMediaTypes();
+
+
 if ($templateswitching && $templatenum) {
+    require_once "templates/defaultTemplateClass.php";
     include "templates/$templatepfx$templatenum/index.php";
     exit;
 }
@@ -17,7 +21,6 @@ $headElement->addStyleElement(
 
 echo $headElement->getHtml();
 
-initMediaTypes();
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 ?>
 

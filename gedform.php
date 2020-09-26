@@ -24,6 +24,9 @@ if (($disallowgedcreate && (!$allow_ged || !$rightbranch)) || !$personID) {
     exit;
 }
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>
 function validateForm() {
@@ -34,9 +37,6 @@ function validateForm() {
 	else return true;
 }
 </script>\n";
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 
 tng_header($text['creategedfor'] . ": {$text['gedstartfrom']} $name", $flags);
 ?>

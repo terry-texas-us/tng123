@@ -1,7 +1,7 @@
 <?php
 global $text, $tmp;
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
 <table class="tableborder rounded10 t3shadow w-100" cellspacing="0" cellpadding="5">
     <tr>
         <td class="t3hdr rounded10">

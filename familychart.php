@@ -481,11 +481,12 @@ function doheader($tree, $family) {
     $logname = $tngconfig['nnpriv'] && $family['private'] ? $admtext['text_private'] : ($nonames && $family['living'] ? $text['living'] : $familyname);
     writelog("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $logname ($familyID)</a>");
     preparebookmark("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $familyname ($familyID)</a>");
-    $flags['tabs'] = $tngconfig['tabs'];
-    $flags['scripting'] = famStylesheet();
 
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
+
+    $flags['tabs'] = $tngconfig['tabs'];
+    $flags['scripting'] = famStylesheet();
 
     tng_header($text['family'] . " " . $familyname . " ($familyID)", $flags);
     $photostr = showSmallPhoto($familyID, $familyname, $rights['both'], 0);

@@ -4,10 +4,10 @@ include "tng_begin.php";
 
 session_start();
 
-$flags['error'] = "";
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['error'] = "";
 
 tng_header($text['login'], $flags);
 

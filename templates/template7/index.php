@@ -1,14 +1,20 @@
 <?php
 
+global $sitever, $allow_admin;
+
 $tngconfig['showshare'] = false;
+
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
-tng_header($sitename ? "" : $text['ourpages'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
 }
 ?>
 <div>

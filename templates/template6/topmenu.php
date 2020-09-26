@@ -1,7 +1,7 @@
 <?php
 global $text, $tmp;
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> templatebody">
 <table class="page">
     <tr class="row60">
         <td colspan="4" class="headertitle">
@@ -44,7 +44,7 @@ global $text, $tmp;
             }
             echo tng_icons(1, $title);
             global $currentuser, $currentuserdesc, $flags;
-            $flags['noicons'] = 1;
+            $flags['noicons'] = true;
 
             if ($currentuser) {
                 echo "<span class=\"headertext\">{$text['welcome']}, $currentuserdesc</span>&nbsp;";

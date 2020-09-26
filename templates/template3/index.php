@@ -1,5 +1,7 @@
 <?php
 
+global $sitever, $allow_admin;
+
 $tngconfig['showshare'] = false;
 
 echo "<!doctype html>\n";
@@ -7,9 +9,12 @@ echo "<html lang='en'>\n";
 
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
-tng_header($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody\">\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . " homebody'>\n";
 }
 $title = getTemplateMessage('t3_maintitle');
 ?>
@@ -55,7 +60,7 @@ $title = getTemplateMessage('t3_maintitle');
                         <label for="myfirstname" class="normal"><?php echo $text['mnufirstname']; ?>:</label>
                         <br>
                         <input type="search" name="myfirstname" id="myfirstname" size="14">
-                        <br><br>
+                        <br>
                         <label for="mylastname" class="normal"><?php echo $text['mnulastname']; ?>:</label>
                         <br>
                         <input type="search" name="mylastname" id="mylastname" size="14">

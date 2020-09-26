@@ -1,17 +1,22 @@
 <?php
 
+global $sitever;
+
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['noicons'] = 0;
+global $tngconfig;
 
-tng_header($sitename ? "" : $text['mnuheader'], $flags);
+$flags['noicons'] = false;
+
+$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever == "standard") {
     ?>
     <br style="clear: both;"><br>
-    <?php
-}
-?>
+<?php } ?>
     <div class="content-sidebar-wrap">
         <main class="content">
             <div class="home-top widget-area">

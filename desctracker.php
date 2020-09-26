@@ -306,10 +306,10 @@ if ($nextperson) {
     preparebookmark("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">{$text['descendfor']} $descname ($personID)</a>");
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 tng_header($descname, $flags);
 

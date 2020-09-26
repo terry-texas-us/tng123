@@ -1,7 +1,7 @@
 <?php
 global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url;
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicbody">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> publicbody">
     <a id="top"></a>
 <div id="cb-main">
     <header class="cb-header clearfix">

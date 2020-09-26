@@ -150,12 +150,13 @@ if ($enttype == "I") {
     $typestr = "";
 }
 if ($enttype) {
-    $flags['tabs'] = $tngconfig['tabs'];
     $headline = $text['suggestchange'] . ": $name";
     $comments = $text['comments'];
 
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
+
+    $flags['tabs'] = $tngconfig['tabs'];
 
     tng_header($headline, $flags);
 

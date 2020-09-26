@@ -1,5 +1,7 @@
 <?php
 
+global $sitever, $allow_admin;
+
 $tngconfig['showshare'] = false;
 
 echo "<!doctype html>\n";
@@ -9,12 +11,10 @@ $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
 
-initMediaTypes();
-
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 
 if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
 }
 $title = getTemplateMessage('t1_maintitle');
 ?>

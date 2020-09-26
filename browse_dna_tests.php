@@ -159,9 +159,7 @@ tng_header($admtext['dna_tests'], $flags);
 
 <h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $test_hdr; ?></h2>
 <br style="clear: left;">
-<?php
-echo "<div class='normal'>\n";
-?>
+<?php echo "<div class='normal'>\n"; ?>
 
 <form action="browse_dna_tests.php" method="post" name="form1" id="form1">
     <table class="normal">

@@ -137,11 +137,11 @@ $key = $personID;
 writelog("<a href=\"extrastree.php?personID=$personID&amp;tree=$tree\">{$text['familyof']} $logname ($personID)</a>");
 preparebookmark("<a href=\"extrastree.php?personID=$personID&amp;tree=$tree\">{$text['familyof']} $pedname ($personID)</a>");
 
-$flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script>var tnglitbox;</script>\n";
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($text['media'] . ": {$text['familyof']} $pedname", $flags);
 ?>

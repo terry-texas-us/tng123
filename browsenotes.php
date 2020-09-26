@@ -70,14 +70,14 @@ $logstring = "<a href=\"browsenotes.php?tree=$tree&amp;offset=$offset&amp;notese
 writelog($logstring);
 preparebookmark($logstring);
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $flags['style'] = "<style>\n";
 $flags['style'] .= "table {border-collapse: separate; border-spacing: 1px;}\n";
 $flags['style'] .= "table th, table td {padding: 3px;}\n";
 $flags['style'] .= "tbody td {vertical-align: top;}\n";
 $flags['style'] .= "</style>\n";
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 
 tng_header($text['notes'], $flags);
 ?>

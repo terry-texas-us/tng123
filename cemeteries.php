@@ -18,10 +18,10 @@ $logstring = "<a href=\"cemeteries.php?tree=$tree\">{$text['cemeteriesheadstones
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['link'] = "<link href=\"css/cemeteries.css\" rel=\"stylesheet\" type=\"text/css\">\n";
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['link'] = "<link href=\"css/cemeteries.css\" rel=\"stylesheet\" type=\"text/css\">\n";
 
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>

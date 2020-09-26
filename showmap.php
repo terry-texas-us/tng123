@@ -79,12 +79,12 @@ preparebookmark($logstring);
 
 $size = @GetImageSize("$rootpath$headstonepath/" . $cemetery['maplink']);
 
-if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
-}
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
+if ($map['key'] && $isConnected) {
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+}
 tng_header($location, $flags);
 ?>
     <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $location; ?></h2>

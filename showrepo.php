@@ -35,10 +35,10 @@ $logstring = "<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\">" . $text['
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 tng_header($reporow['reponame'], $flags);
 

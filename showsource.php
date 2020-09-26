@@ -50,11 +50,12 @@ $logstring = "<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\">" . x
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['tabs'] = $tngconfig['tabs'];
 $headtext = $srcrow['title'] ? $srcrow['title'] : $srcrow['shorttitle'];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 tng_header($headtext, $flags);
 

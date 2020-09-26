@@ -2,6 +2,8 @@
 
 include "tng_begin.php";
 
+initMediaTypes();
+
 $logstring = "<a href=\"histories/family1.php\">Your Family 1 Story</a>";
 writelog($logstring);
 preparebookmark($logstring);
@@ -15,7 +17,10 @@ $flags['noicons'] = false; // generate the TNG menu bar
 $flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
 $flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
 
-tng_header("Your Family 1 Story Title", $flags);
+$headElement = new HeadElementPublic("Your Family 1 Story Title", $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 ?>
 <h1>Family 1 Story</h1>
 <p>

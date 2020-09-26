@@ -22,18 +22,13 @@ if ($msg) {
 $fieldclass = $sitever == "mobile" ? "medfield" : "longfield";
 
 $onsubmit = "return searchGoogleWebSite('" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "')";
-$formstr = getFORM("", "GET", "searchsite", "", $onsubmit);
-echo $formstr;
+echo getFORM("", "GET", "searchsite", "", $onsubmit);
 ?>
     <div class="searchformbox">
-        <table cellspacing="1" cellpadding="4" class="normal">
-            <tr>
-                <td class="fieldnameback fieldname"><?php echo $text['searchfor']; ?>:</td>
-                <td class="databack">
-                    <input type="text" name="s" id="GoogleText" type="search" class="<?php echo $fieldclass; ?>">
-                </td>
-            </tr>
-        </table>
+        <div class="normal">
+            <label for="GoogleText" class="fieldnameback fieldname p-1"><?php echo $text['searchfor']; ?>:</label>
+            <input id="GoogleText" class="<?php echo $fieldclass; ?>" name="s" type="search" placeholder="<?php echo $text['searchsite']; ?> ...">
+        </div>
 
         <?php
         if ($sitever != "mobile") {
@@ -54,10 +49,7 @@ echo $formstr;
             <a href="famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
         </p>
     </div>
-
-    </form>
-    <div style="height:200px;"></div>
+<?php echo "</form>\n"; ?>
+    <div style="height: 200px;"></div>
     <br style="clear: both;">
-<?php
-tng_footer("");
-?>
+<?php tng_footer(""); ?>

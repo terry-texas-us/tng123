@@ -1,5 +1,7 @@
 <?php
 
+global $sitever, $allow_admin;
+
 $tngconfig['showshare'] = false;
 
 echo "<!doctype html>\n";
@@ -7,16 +9,18 @@ echo "<html lang='en'>\n";
 
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
-tng_header($sitename ? "" : $text['mnuheader'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
 }
 $dadlabel = getTemplateMessage('t14_dadside');
 $momlabel = getTemplateMessage('t14_momside');
 $title = getTemplateMessage('t14_maintitle');
 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
 ?>
-
     <div id="art-main">
         <div class="cleared reset-box"></div>
         <div class="art-nav">
@@ -24,9 +28,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 <div class="art-nav-wrapper">
                     <div class="art-nav-inner">
                         <ul class="art-hmenu">
-                            <?php
-                            if ($dadlabel) {
-                                ?>
+                            <?php if ($dadlabel) { ?>
                                 <li>
                                     <a href="pedigree.php?personID=<?php echo $tmp['t14_dadperson']; ?>&amp;tree=<?php echo $tmp['t14_dadtree']; ?>"><span
                                             class="l"></span><span class="r"></span><span

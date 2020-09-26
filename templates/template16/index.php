@@ -1,6 +1,7 @@
 <?php
 
-include "surname_cloud.class.php";
+global $sitever;
+
 $tngconfig['showshare'] = false;
 
 echo "<!doctype html>\n";
@@ -8,9 +9,12 @@ echo "<html lang='en'>\n";
 
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true, 'bodyclass' => "homebody"];
 
-tng_header($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody\">\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . " homebody'>\n";
 }
 
 $dadlabel = getTemplateMessage('t16_dadside');
@@ -21,18 +25,18 @@ $rp_maxwidth = "300";
 $rp_maxheight = "300";
 
 $search = "<h3>{$text['search']}</h3>\n";
-$search .= "<form action=\"search.php\" method=\"get\">\n";
-$search .= "<label class=\"formfield\" for=\"myfirstname\" style=\"padding-top:0;\">{$text['mnufirstname']}:</label>\n";
-$search .= "<input type='text' name=\"myfirstname\" class=\"formfield\" size=\"14\">\n";
-$search .= "<label class=\"formfield\" for=\"mylastname\">{$text['mnulastname']}: </label>\n";
-$search .= "<input type='text' name=\"mylastname\" class=\"formfield\" size=\"14\"><br>\n";
-$search .= "<input type='hidden' name=\"mybool\" value=\"AND\">\n";
-$search .= "<div style=\"float:left; margin-right:10px; margin-bottom:5px;\">\n";
-$search .= "<input type='submit' name=\"search\" value=\"{$text['mnusearchfornames']}\" class=\"btn\" id=\"searchbtn\">\n";
+$search .= "<form action='search.php' method='get'>\n";
+$search .= "<label class='formfield' for='myfirstname' style='padding-top: 0;'>{$text['mnufirstname']}:</label>\n";
+$search .= "<input type='search' name='myfirstname' class='formfield' size='14'>\n";
+$search .= "<label class='formfield' for='mylastname'>{$text['mnulastname']}: </label>\n";
+$search .= "<input type='search' name='mylastname' class='formfield' size='14'><br>\n";
+$search .= "<input type='hidden' name='mybool' value='AND'>\n";
+$search .= "<div style='float: left; margin-right: 10px; margin-bottom: 5px;'>\n";
+$search .= "<input type='submit' name='search' value='{$text['mnusearchfornames']}' class='btn' id='searchbtn'>\n";
 $search .= "</div>\n";
-$search .= "<a href=\"searchform.php\">{$text['mnuadvancedsearch']}</a><br>\n";
-$search .= "<a href=\"surnames.php\">{$text['mnulastnames']}</a>\n";
-$search .= "<br style=\"clear: both;\">\n";
+$search .= "<a href='searchform.php'>{$text['mnuadvancedsearch']}</a><br>\n";
+$search .= "<a href='surnames.php'>{$text['mnulastnames']}</a>\n";
+$search .= "<br style='clear: both;'>\n";
 $search .= "</form>\n";
 ?>
 
@@ -213,6 +217,7 @@ $search .= "</form>\n";
                         <div class="tblock">
                             <h2><?php echo $text['surnames'] . " | <a href='surnames.php'>" . $text['more'] . "</a>"; ?></h2>
                             <?php
+                            include "surname_cloud.class.php";
                             $nc = new surname_cloud();
                             $nc->display();
                             ?>

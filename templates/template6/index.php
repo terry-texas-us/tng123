@@ -1,5 +1,7 @@
 <?php
 
+global $sitever;
+
 if (!isset($title) || !$title) {
     $title = getTemplateMessage('t6_maintitle');
 }
@@ -7,7 +9,10 @@ if (!isset($title) || !$title) {
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-tng_header($sitename ? "" : $text['mnuheader'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 //if it's  not the mobile site, then this part is handled in the custom header (topmenu.php)
 if ($sitever == "mobile") {
     ?>

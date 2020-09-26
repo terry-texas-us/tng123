@@ -776,10 +776,11 @@ function swapPeople() {
 }
 
 $personID = $primarypersonID;
-$flags['tabs'] = $tngconfig['tabs'];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 tng_header($text['relcalc'], $flags);
 

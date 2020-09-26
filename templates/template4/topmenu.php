@@ -1,7 +1,7 @@
 <?php
 global $text, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes;
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicback">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> publicback">
 
 <div class="center">
     <table class="page">

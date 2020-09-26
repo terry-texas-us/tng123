@@ -66,11 +66,11 @@ tng_free_result($treeResult);
 writelog("<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree\">" . xmlcharacters($text['ahnentafel'] . ": $logname ($personID)") . "</a>");
 preparebookmark("<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree\">" . xmlcharacters($text['ahnentafel'] . ": " . $row['name'] . " ($personID)") . "</a>");
 
-$flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<script>var tnglitbox;</script>\n";
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
+$flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($row['name'], $flags);
 

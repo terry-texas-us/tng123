@@ -1,7 +1,7 @@
 <?php
 global $text, $tmp;
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
 <div class="center">
     <table class="maintable">
         <tr>

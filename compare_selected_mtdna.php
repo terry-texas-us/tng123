@@ -20,10 +20,10 @@ $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $dnatree . "&amp;testsear
 $headline = "{$text['dnatestscompare_mtdna']}";
 $text['dnatestscompare_mtdna'] .= ": " . $test_group;
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 tng_header($text['dnatestscompare_mtdna'], $flags);
 

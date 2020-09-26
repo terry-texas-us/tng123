@@ -69,7 +69,6 @@ $numlinks = tng_num_rows($result2);
 $helplang = findhelp("media_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
-
 tng_adminheader($admtext['modifymedia'], $flags);
 
 $standardtypes = [];

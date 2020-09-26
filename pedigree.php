@@ -518,10 +518,10 @@ $gentext = xmlcharacters($text['generations']);
 writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $logname ($personID)") . "</a> $generations " . $gentext);
 preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $generations " . $gentext);
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 tng_header($text['pedigreefor'] . " $pedname", $flags);
 

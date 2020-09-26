@@ -1,14 +1,19 @@
 <?php
-include "surname_cloud.class.php";
+
+global $sitever;
+
+$tngconfig['showshare'] = false;
+$tngconfig['showprint'] = 1;
+$tngconfig['showbmarks'] = 1;
+
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
 $flags = ['noicons' => true, 'noheader' => false];
 
-tng_header($sitename ? "" : $text['mnuheader'], $flags);
-$tngconfig['showshare'] = 0;
-$tngconfig['showprint'] = 1;
-$tngconfig['showbmarks'] = 1;
+$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 
 if ($sitever != "mobile") {
     ?>
@@ -20,9 +25,7 @@ if ($sitever != "mobile") {
             ?>
         </div>
     </div>
-    <?php
-}
-?>
+<?php } ?>
     <div class="cb-layout-wrapper clearfix">
         <div class="cb-content-layout">
             <div class="cb-content-layout-row">
@@ -70,6 +73,7 @@ if ($sitever != "mobile") {
                                             <br>
                                             <div>
                                                 <?php
+                                                include "surname_cloud.class.php";
                                                 $nc = new surname_cloud();
                                                 $nc->display(100);
                                                 ?>

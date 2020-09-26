@@ -402,12 +402,12 @@ if (!$rightbranch) {
 
 $famnotes = getNotes($familyID, "F");
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 $years = $famrow['marrdate'] && $rights['both'] ? $text['marrabbr'] . " " . displayDate($famrow['marrdate']) : "";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['tabs'] = $tngconfig['tabs'];
 
 if ($rights['both']) {
     tng_header($text['familygroupfor'] . " $famname $years ", $flags);

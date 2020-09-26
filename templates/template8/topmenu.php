@@ -2,7 +2,7 @@
 
 global $text, $currentuser, $allow_admin, $tmp;
 ?>
-<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
+<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> templatebody">
 <table class="page">
     <tr>
         <td class="mainborder" rowspan="5">
@@ -70,7 +70,7 @@ global $text, $currentuser, $allow_admin, $tmp;
                 }
                 echo tng_icons(1, $title);
                 global $currentuserdesc, $flags;
-                $flags['noicons'] = 1;
+                $flags['noicons'] = true;
 
                 if ($currentuser) {
                     echo "<span class=\"logintext\">{$text['welcome']}, $currentuser</span>";

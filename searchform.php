@@ -48,7 +48,7 @@ $mysplname = $_SESSION['tng_search_mysplname'];
 $spqualify = $_SESSION['tng_search_spqualify'];
 $nr = $_SESSION['tng_nr'];
 
-$dontdo = array("ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX", "NPFX");
+$dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX", "NPFX"];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";

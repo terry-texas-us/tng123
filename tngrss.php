@@ -25,16 +25,16 @@ function doMedia($mediatypeID) {
     global $livedefault, $wherestr2, $events_table, $eventtypes_table;
 
     if ($mediatypeID == "headstones") {
-        $hsfields = ", $media_table.cemeteryID, cemname";
+        $hsfields = ", media.cemeteryID, cemname";
         $hsjoin = "LEFT JOIN $cemeteries_table cemeteries ON media.cemeteryID = cemeteries.cemeteryID ";
     } else {
         $hsfields = $hsjoin = "";
     }
-
+    // todo unresolved error, wherestr/wherestr2? undefined
     $query = "SELECT distinct media.mediaID AS mediaID, description, media.notes, thumbpath, path, form, mediatypeID, media.gedcom AS gedcom, alwayson, usecollfolder, DATE_FORMAT(changedate,'%a, %d %b %Y %T') AS changedatef, status, abspath, newwindow $hsfields ";
     $query .= "FROM $media_table media ";
     $query .= "$hsjoin";
-    $query .= "WHERE $cutoffstr $wherestr AND mediatypeID = \"$mediatypeID\" ";
+    $query .= "WHERE $cutoffstr $wherestr AND mediatypeID = '$mediatypeID' ";
     $query .= "ORDER BY changedate DESC, description ";
     $query .= "LIMIT $change_limit";
     $mediaresult = tng_query($query);

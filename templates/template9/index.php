@@ -1,5 +1,7 @@
 <?php
 
+global $sitever, $allow_admin;
+
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
@@ -12,9 +14,12 @@ if ($sitever != "mobile") {
 }
 $flags['style'] .= "</style>\n";
 
-tng_header($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+echo $headElement->getHtml();
+preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
 if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
 }
 
 $dadlabel = getTemplateMessage('t9_dadside');

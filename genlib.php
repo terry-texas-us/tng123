@@ -45,7 +45,7 @@ if (!$tree && $defaulttree) {
 
 /**
  * @param $headElement
- * @param array $flags
+ * @param array $flags 'nobody' 'bodyclass' 'noicons' 'noheader'
  * @param $maint
  */
 function preHeaderVariants($headElement, array $flags, $maint): void {
