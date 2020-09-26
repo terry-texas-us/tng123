@@ -311,7 +311,7 @@ function clearForm(form) {
 }
 
 function openHelp(filename) {
-    var newwindow = window.open(filename, 'newwindow', 'height=700,width=800,resizable=yes,scrollbars=yes');
+    let newwindow = window.open(filename, 'newwindow', 'height=700, width=800, resizable=yes, scrollbars=yes');
     newwindow.focus();
 
     return false;

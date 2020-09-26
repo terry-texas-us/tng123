@@ -1,27 +1,20 @@
 <?php
-$register_globals = (bool)ini_get('register_globals');
 
 if (isset($_GET['nologin']) || isset($_POST['nologin'])) {
     die("Sorry!");
 }
 
-if (!$register_globals) {
-    if ($_SERVER && is_array($_SERVER)) {
-        foreach ($_SERVER as $key => $value) {
-            ${$key} = $value;
-        }
-    }
-    if ($_ENV && is_array($_ENV)) {
-        foreach ($_ENV as $key => $value) {
-            ${$key} = $value;
-        }
-    }
-    if ($_FILES && is_array($_FILES)) {
-        foreach ($_FILES as $key => $value) {
-            ${$key} = $value['tmp_name'];
-        }
+if ($_ENV && is_array($_ENV)) {
+    foreach ($_ENV as $key => $value) {
+        ${$key} = $value;
     }
 }
+if ($_FILES && is_array($_FILES)) {
+    foreach ($_FILES as $key => $value) {
+        ${$key} = $value['tmp_name'];
+    }
+}
+
 if ($_GET && is_array($_GET)) {
     foreach ($_GET as $key => $value) {
         if ($key == 'lang' || $key == 'mylanguage') {

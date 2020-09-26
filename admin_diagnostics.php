@@ -17,32 +17,29 @@ error_reporting(E_ERROR | E_PARSE);    //	Disable error reporting for anything b
 
 $helplang = findhelp("setup_help.php");
 
-$red = "<img src=\"img/tng_close.gif\" width=\"18\" height=\"18\" align=\"left\" align=\"left\">";
-$orange = "<img src=\"img/orange.gif\" width=\"18\" height=\"18\" align=\"left\" align=\"left\">";
-$green = "<img src=\"img/tng_check.gif\" width=\"18\" height=\"18\" align=\"left\" align=\"left\">";
+$red = "<img src='img/tng_close.gif'>";
+$orange = "<img src='img/orange.gif'>";
+$green = "<img src='img/tng_check.gif'>";
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['diagnostics'], $flags);
+echo "</head>\n";
 ?>
-    </head>
 
     <body class="admin-body">
 
     <?php
-    $setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
-    $setuptabs[1] = array(1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics");
-    $setuptabs[2] = array(1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation");
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/setup_help.php#diagnostics');\" class=\"lightlink\">{$admtext['help']}</a>";
+    $setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
+    $setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
+    $setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
+    $innermenu = "<a href='#' class='lightlink'>{$admtext['help']} onclick='return openHelp(\"$helplang/setup_help.php#diagnostics\");'</a>";
     $menu = doMenu($setuptabs, "diagnostics", $innermenu);
     echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'], "img/setup_icon.gif", $menu, "");
     ?>
 
     <table class="lightback normal w-100" cellpadding="10" cellspacing="2">
         <tr>
-            <td class="tngshadow databack"
-            " colspan="2">
-            <em><?php echo $admtext['sysinfo']; ?></em>
-            </td>
+            <td class="tngshadow databack" colspan="2"><em><?php echo $admtext['sysinfo']; ?></em></td>
         </tr>
         <tr>
             <td class="tngshadow databack"><?php echo $admtext['phpver']; ?>:<br><em><?php echo $admtext['phpreq']; ?></em></td>
@@ -247,13 +244,14 @@ tng_adminheader($admtext['diagnostics'], $flags);
         </tr>
         <tr>
             <td colspan="2" class="tngshadow databack">
-                <p><img src="img/tng_check.gif" width="18" height="18">&nbsp;= <?php echo $admtext['acceptable']; ?></p>
-                <p><img src="img/orange.gif" width="18" height="18">&nbsp;= <?php echo $admtext['restricted']; ?></p>
-                <p><img src="img/tng_close.gif" width="18" height="18">&nbsp;= <?php echo $admtext['needchngs']; ?></p>
-                <br><?php echo $admtext['yourbrowser'] . $_SERVER['HTTP_USER_AGENT']; ?></td>
+                <p><img src="img/tng_check.gif"> = <?php echo $admtext['acceptable']; ?></p>
+                <p><img src="img/orange.gif"> = <?php echo $admtext['restricted']; ?></p>
+                <p><img src="img/tng_close.gif"> = <?php echo $admtext['needchngs']; ?></p>
+                <p><?php echo "{$admtext['yourbrowser']} {$_SERVER['HTTP_USER_AGENT']}"; ?></p>
+            </td>
         </tr>
     </table>
-    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+    <?php echo "<div style='text-align: center;'><span class='normal'>$tng_title</span></div>"; ?>
     </body>
     </html>
 <?php
@@ -283,7 +281,7 @@ function fileReadWrite($myuserid, $mygroupid, $fileref) {
     }
 
     return $rval;
-} // function fileReadWrite()
+}
 
 function dirExists($dirref) {
     $rval = false;
@@ -322,7 +320,7 @@ function dirReadWrite($myuserid, $mygroupid, $dirref) {
     }
 
     return $rval;
-} // function dirReadWrite()
+}
 
 function readPerms($in_Perms) {
     $sP = '';
@@ -352,5 +350,5 @@ function readPerms($in_Perms) {
     // world
     $sP .= (($in_Perms & 0x0004) ? 'r' : '-') . (($in_Perms & 0x0002) ? 'w' : '-') . (($in_Perms & 0x0001) ? (($in_Perms & 0x0200) ? 't' : 'x') : (($in_Perms & 0x0200) ? 'T' : '-'));
     return $sP;
-} // function readPerms()
+}
 ?>
