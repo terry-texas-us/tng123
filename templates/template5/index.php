@@ -1,21 +1,19 @@
 <?php
 
 $tngconfig['showshare'] = false;
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-$flags['nobody'] = true;
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
+
 tng_header($sitename ? "" : $tmp['t5_maintitle'], $flags);
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 $title = getTemplateMessage('t5_maintitle');
 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
 ?>
-
     <div class="center">
         <table class="maintable">
             <tr>

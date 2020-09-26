@@ -2,13 +2,11 @@
 
 include "surname_cloud.class.php";
 $tngconfig['showshare'] = false;
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-$flags['nobody'] = true;
-$flags['bodyclass'] = "homebody";
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true, 'bodyclass' => "homebody"];
 
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {

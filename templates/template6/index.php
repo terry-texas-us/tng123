@@ -1,4 +1,5 @@
 <?php
+
 if (!isset($title) || !$title) {
     $title = getTemplateMessage('t6_maintitle');
 }

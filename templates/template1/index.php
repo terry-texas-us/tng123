@@ -158,10 +158,7 @@ $title = getTemplateMessage('t1_maintitle');
             </tr>
         </table>
         <hr>
-        <?php
-        $flags['basicfooter'] = true;
-        tng_footer($flags);
-        ?>
+        <?php tng_footer(['basicfooter' => true]); ?>
     </div>
 <?php echo "</body>\n"; ?>
 <?php echo "</html>"; ?>

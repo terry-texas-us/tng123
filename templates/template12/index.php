@@ -1,10 +1,9 @@
 <?php
 include "surname_cloud.class.php";
-$flags['noicons'] = true;
-$flags['noheader'] = false;
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags = ['noicons' => true, 'noheader' => false];
 
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 $tngconfig['showshare'] = 0;

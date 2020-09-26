@@ -1,8 +1,8 @@
 <?php
-$flags['noicons'] = 1;
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags['noicons'] = 1;
 
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 if ($sitever == "mobile") {

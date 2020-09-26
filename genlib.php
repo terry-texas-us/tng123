@@ -106,7 +106,7 @@ function tng_header($title, $flags) {
     preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 }
 
-function tng_footer($flags) {
+function tng_footer($flags = ['basicfooter' => true]) {
     global $customfooter, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $sitever, $tngconfig;
 
     $needtherest = true;
@@ -117,13 +117,13 @@ function tng_footer($flags) {
                 $printfooter .= " - ";
             }
             if ($tngconfig['dataprotect'] && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
-                $data_protection_link = " | <a href='data_protection_policy.php' class=\"footer\" title=\"{$text['dataprotect']}\" target=\"_blank\">{$text['dataprotect']}</a>.\n";
+                $data_protection_link = " | <a href='data_protection_policy.php' class='footer' title='{$text['dataprotect']}' target='_blank'>{$text['dataprotect']}</a>.\n";
             } else {
                 $data_protection_link = "";
             }
-            $printfooter .= $text['maintby'] . " <a href='suggest.php' class=\"footer\" title=\"{$text['contactus']}\">$dbowner</a>.{$data_protection_link}";
+            $printfooter .= $text['maintby'] . " <a href='suggest.php' class='footer' title='{$text['contactus']}'>$dbowner</a>.{$data_protection_link}";
         }
-        echo "<p class=\"smaller\">" . $printfooter . "<br>\n$tngdomain</p>";
+        echo "<p class='smaller'>" . $printfooter . "<br>\n$tngdomain</p>";
     } else {
         if ($sitever == "mobile") {
             echo tng_basicfooter($flags);
@@ -144,7 +144,7 @@ function tng_footer($flags) {
             echo $flags['more'];
         }
         if (!$tngprint) {
-            echo "<script src=\"js/litbox.js\"></script>\n";
+            echo "<script src='js/litbox.js'></script>\n";
         }
         if (!empty($map['key']) && !empty($map['pins'])) {
             tng_map_pins();
@@ -177,8 +177,8 @@ function tng_basicfooter($flags) {
             $gotover = "mobile";
             $message = $text['switchm'];
         }
-        $footer .= "<p class=\"smaller center\">\n";
-        $footer .= "<a href=\"$thispage{$con}sitever=$gotover\" class=\"fieldnameback lightlink2 rounded4\">&nbsp;{$message}&nbsp;</a>\n";
+        $footer .= "<p class='smaller center'>\n";
+        $footer .= "<a href='$thispage{$con}sitever=$gotover' class='fieldnameback lightlink2 rounded4'>&nbsp;{$message}&nbsp;</a>\n";
         $footer .= "</p><br>\n";
     }
     include "stdsitecredit.php";
@@ -188,18 +188,19 @@ function tng_basicfooter($flags) {
         ?>
         <script>
             jQuery(document).ready(function () {
-                jQuery('.media-preview').on('mouseover touchstart', function (e) {
+                let $previewSelection = jQuery('.media-preview');
+                $previewSelection.on('mouseover touchstart', function (e) {
                     e.preventDefault();
                     var items = this.id.match(/img-(\d+)-(\d+)-(.*)/);
-                    var key = items[2] && items[2] != "0" ? items[1] + "_" + items[2] : items[1];
-                    if (jQuery('#prev' + key).css('display') == "none")
+                    var key = items[2] && items[2] !== "0" ? items[1] + "_" + items[2] : items[1];
+                    if (jQuery('#prev' + key).css('display') === "none")
                         showPreview(items[1], items[2], items[3], key, '<?php echo $sitever; ?>');
                     else
                         closePreview(key);
                 });
-                jQuery('.media-preview').on('mouseout', function (e) {
+                $previewSelection.on('mouseout', function (e) {
                     var items = this.id.match(/img-(\d+)-(\d+)-(.*)/);
-                    var key = items[2] && items[2] != "0" ? items[1] + "_" + items[2] : items[1];
+                    var key = items[2] && items[2] !== "0" ? items[1] + "_" + items[2] : items[1];
                     closePreview(key);
                 });
                 jQuery(document).on('click touchstart', '.prev-close img', function (e) {
@@ -207,7 +208,7 @@ function tng_basicfooter($flags) {
                     items = this.id.match(/close-(\d+)_(\d+)/);
                     if (!items)
                         items = this.id.match(/close-(\d+)/);
-                    var key = items[2] && items[2] != "0" ? items[1] + "_" + items[2] : items[1];
+                    var key = items[2] && items[2] !== "0" ? items[1] + "_" + items[2] : items[1];
                     closePreview(key);
                 });
             });

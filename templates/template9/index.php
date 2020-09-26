@@ -1,8 +1,9 @@
 <?php
 
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-$flags['nobody'] = true;
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 $flags['style'] = "<style>\n";
 $flags['style'] .= "body {background-image: url('{$templatepath}img/Bottom_texture.jpg'); background-repeat: repeat; background-attachment: fixed; background-position: top left;}\n";
@@ -11,12 +12,9 @@ if ($sitever != "mobile") {
 }
 $flags['style'] .= "</style>\n";
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {
-    echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 
 $dadlabel = getTemplateMessage('t9_dadside');

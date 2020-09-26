@@ -1,16 +1,14 @@
 <?php
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-$flags['nobody'] = true;
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 if ($sitever != "mobile") {
     $flags['style'] = "<style>\n";
     $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t10_headimg']}'); background-repeat: no-repeat;width: 420px; height: 150px;}\n";
     $flags['style'] .= "</style>\n";
 }
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {
     echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";

@@ -1,24 +1,21 @@
 <?php
 
 $tngconfig['showshare'] = false;
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-$flags['nobody'] = true;
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 tng_header($sitename ? "" : $text['ourhist'], $flags);
 if ($sitever != "mobile") {
     echo "<body id=\"bodytop\" class=\"" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "\">\n";
 }
-
 $dadlabel = getTemplateMessage('t13_dadside');
 $momlabel = getTemplateMessage('t13_momside');
 $title = getTemplateMessage('t13_maintitle');
 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
 ?>
-
     <div id="art-main">
         <div class="cleared reset-box"></div>
         <div class="art-nav">
