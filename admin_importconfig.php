@@ -212,6 +212,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</div>"; ?>
 </body>
 </html>

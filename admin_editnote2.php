@@ -78,12 +78,12 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                 <input type="hidden" name="gedcom" value="<?php echo $row['gedcom']; ?>">
                 <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">
                 <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>"
-                       onClick="window.location.href='admin_notelist.php';">
+                    onClick="window.location.href='admin_notelist.php';">
             </form>
         </td>
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

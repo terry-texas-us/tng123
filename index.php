@@ -17,7 +17,7 @@ $headElement->addStyleElement(
 
 echo $headElement->getHtml();
 
-tng_header0($headElement, $flags);
+initMediaTypes();
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 ?>
 
@@ -28,33 +28,18 @@ if ($currentuser) {
     echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
 }
 ?>
-
 <h2><?php echo $text['mnusearchfornames']; ?></h2>
 
-<form action="search.php" method="get">
-    <table>
-        <tr>
-            <td>
-                <small><?php echo $text['mnulastname']; ?>:</small><br>
-                <input type="search" name="mylastname" size="14">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <small><?php echo $text['mnufirstname']; ?>:</small><br>
-                <input type="search" name="myfirstname" size="14">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="hidden" name="mybool" value="AND">
-                <input type="hidden" name="offset" value="0">
-                <input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>">
-            </td>
-        </tr>
-    </table>
+<form name="searchform" action="search.php" method="get">
+    <label for="myfirstname"><?php echo $text['firstname']; ?></label>
+    <input id="myfirstname" name="myfirstname" type="search">
+    <label for="mylastname"><?php echo $text['lastname']; ?></label>
+    <input id="mylastname" name="mylastname" type="search">
+    <input name="mybool" type="hidden" value="AND">
+    <input name="offset" type="hidden" value="0">
+    <input name="search" type="submit" value="<?php echo $text['search']; ?>">
 </form>
-
+<hr>
 <h2><?php echo $text['mnufeatures']; ?></h2>
 
 <ul>

@@ -155,6 +155,6 @@ tng_adminheader($admtext['mostwanted'], $flags);
             </td>
         </tr>
     </table>
-    <div style="text-align: right;"><span class="normal"><?php echo "$tng_title, v.$tng_version"; ?></span></div>
+    <div style="text-align: right;"><span class="normal"><?php echo "$tng_title"; ?></span></div>
     </body>
 <?php echo "</html>\n"; ?>

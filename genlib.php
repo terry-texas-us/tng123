@@ -93,24 +93,12 @@ function preHeaderVariants($headElement, array $flags, $maint): void {
 }
 
 /**
- * @param $headElement
- * @param array $flags
+ * @param $title
+ * @param $flags
  */
-function tng_header0($headElement, array $flags) {
-    global $tng_version;
-
-    if (!$tng_version) {
-        $tng_version = "12.3";
-    }
-    initMediaTypes();
-}
-
 function tng_header($title, $flags) {
-    global $tngconfig, $tng_version;
+    global $tngconfig;
 
-    if (!$tng_version) {
-        $tng_version = "12.3";
-    }
     initMediaTypes();
 
     $headElement = new HeadElementPublic($title, $flags);

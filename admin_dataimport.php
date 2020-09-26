@@ -31,9 +31,9 @@ $helplang = findhelp("data_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
 ?>
-<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/dataimport.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js"></script>
+<script src="js/mediautils.js"></script>
+<script src="js/dataimport.js"></script>
 <script>
     const opening = "<?php echo $admtext['opening']; ?>";
     const uploading = "<?php echo $admtext['uploading']; ?>";
@@ -244,6 +244,6 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
 } ?>0" width="<?php if ($debug) {
     echo "40";
 } ?>0" frameborder="0" name="results" onload="iframeLoaded();"/>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

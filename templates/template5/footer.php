@@ -1,4 +1,4 @@
-<?php global $text, $tng_version, $flags; ?>
+<?php global $text, $flags; ?>
 
 </td></tr></table></td></tr>
 <tr>

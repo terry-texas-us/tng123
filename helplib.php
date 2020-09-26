@@ -14,9 +14,9 @@ function help_header($helptitle) {
     $header .= "<title>$helptitle</title>\n";
     $header .= "<meta name='author' content='Darrin Lythgoe'>\n";
     $header .= "<link href='{$relpath}css/bootstrap-reboot.min.css' rel='stylesheet'>\n";
-    $header .= "<link href='{$relpath}css/genstyle.css?v=$tng_version' rel='stylesheet'>\n";
-    $header .= "<link href='{$relpath}{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet'>\n";
-    $header .= "<link href='{$relpath}{$templatepath}css/mytngstyle.css?v=$tng_version' rel='stylesheet'>\n";
+    $header .= "<link href='{$relpath}css/genstyle.css' rel='stylesheet'>\n";
+    $header .= "<link href='{$relpath}{$templatepath}css/templatestyle.css' rel='stylesheet'>\n";
+    $header .= "<link href='{$relpath}{$templatepath}css/mytngstyle.css' rel='stylesheet'>\n";
     $header .= file_get_contents($relpath . "adminmeta.php");
     $header .= "</head>";
 

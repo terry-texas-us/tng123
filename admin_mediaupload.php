@@ -26,11 +26,11 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
-<script src="js/net.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/mediafind.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/net.js"></script>
+<script src="js/mediafind.js"></script>
+<script src="js/mediautils.js"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/datevalidation.js"></script>
 <script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';
@@ -320,7 +320,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">

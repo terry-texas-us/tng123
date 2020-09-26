@@ -1,4 +1,4 @@
-<?php global $text, $currentuser, $mylanguage, $tmp, $tng_version, $flags; ?>
+<?php global $text, $currentuser, $mylanguage, $tmp, $flags; ?>
 <br>
 </div>
 <div id="subfooter">

@@ -266,14 +266,14 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="art-blockcontent-cc"></div>
                                     <div class="art-blockcontent-body">
                                         <div>
-                                            <form method="get" name="searchform" action="search.php">
+                                            <form name="searchform" action="search.php" method="get">
                                                 <label for="myfirstname"><?php echo $text['firstname']; ?></label>
-                                                <input type="text" value="" name="myfirstname" style="width: 95%;">
+                                                <input type="search" value="" name="myfirstname" style="width: 95%;">
                                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
-                                                <input type="text" value="" name="mylastname" style="width: 95%;">
+                                                <input type="search" value="" name="mylastname" style="width: 95%;">
                                                 <input type="hidden" name="mybool" value="AND">
                                                 <input type="submit" style="margin-top:5px; margin-bottom:5px;"
-                                                       value="<?php echo $text['search']; ?>">
+                                                    value="<?php echo $text['search']; ?>">
                                             </form>
                                             <ul class="home-menus">
                                                 <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>

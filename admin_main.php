@@ -115,7 +115,7 @@ if ($sitever != "mobile") {
 
 tng_adminheader($admtext['administration'], "");
 ?>
-<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/admin.js"></script>
 <script>
 
     jQuery(document).ready(function () {

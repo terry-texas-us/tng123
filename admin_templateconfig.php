@@ -45,7 +45,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytemplatesettings'], $flags);
 ?>
 <script src="js/admin.js"></script>
-<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediautils.js"></script>
 <script src="js/selectutils.js"></script>
 <script>
     function switchTemplates(newtemp) {
@@ -327,6 +327,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 
 </table>
 </form>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

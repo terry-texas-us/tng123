@@ -1,4 +1,5 @@
 <?php
+
 $tngconfig['showshare'] = false;
 
 echo "<!doctype html>\n";
@@ -8,7 +9,7 @@ $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
 
-tng_header0($headElement, $flags);
+initMediaTypes();
 
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 
@@ -41,17 +42,14 @@ $title = getTemplateMessage('t1_maintitle');
                     ?>
                     <h2><?php echo $text['mnusearchfornames']; ?></h2>
 
-                    <form method="get" name="searchform" action="search.php">
+                    <form name="searchform" action="search.php" method="get">
                         <label for="myfirstname"><?php echo $text['firstname']; ?></label>
-                        <br>
-                        <input type="search" value="" name="myfirstname">
-                        <br>
+                        <input id="myfirstname" name="myfirstname" type="search" value="">
                         <label for="mylastname"><?php echo $text['lastname']; ?></label>
-                        <br>
-                        <input type="search" value="" name="mylastname">
-                        <br>
-                        <input type="hidden" name="mybool" value="AND">
-                        <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>">
+                        <input id="mylastname" name="mylastname" type="search" value="">
+                        <input name="mybool" type="hidden" value="AND">
+                        <input name="offset" type="hidden" value="0">
+                        <input id="search-submit" type="submit" value="<?php echo $text['search']; ?>">
                     </form>
 
                     <br>

@@ -1,5 +1,5 @@
 <!-- begin footer -->
-<?php global $text, $flags, $tng_version; ?>
+<?php global $text, $flags; ?>
 </div>
 <div class="footer-widgets">
     <div class="wrap">

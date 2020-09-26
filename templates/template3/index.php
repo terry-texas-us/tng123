@@ -52,14 +52,14 @@ $title = getTemplateMessage('t3_maintitle');
                 <div id="searchpane"><br>
                     <h2 class="header"><?php echo $text['mnusearchfornames']; ?></h2>
                     <!-- Do not change the form action or field names! -->
-                    <form action="search.php" method="get" id="form1">
+                    <form id="form1" action="search.php" method="get">
                         <label for="myfirstname" class="normal"><?php echo $text['mnufirstname']; ?>:</label>
                         <br>
-                        <input type="text" name="myfirstname" id="myfirstname" size="14">
+                        <input type="search" name="myfirstname" id="myfirstname" size="14">
                         <br><br>
                         <label for="mylastname" class="normal"><?php echo $text['mnulastname']; ?>:</label>
                         <br>
-                        <input type="text" name="mylastname" id="mylastname" size="14">
+                        <input type="search" name="mylastname" id="mylastname" size="14">
                         <br>
                         <input type="hidden" name="mybool" value="AND">
                         <input type="hidden" name="offset" value="0">

@@ -116,7 +116,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         </td>
                         <td><a href="#"
                                onclick="return findItem(document.find.linktype1.options[document.find.linktype1.selectedIndex].value,'newlink1',null,document.find.tree1.options[document.find.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                               title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+                                title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                     </tr>
                 </table>
 
@@ -126,6 +126,6 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

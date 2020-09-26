@@ -146,22 +146,22 @@ class HeadElementPublic
      * @return array
      */
     public function getLinkElements(): array {
-        global $responsivetables, $sitever, $templatepath, $tngconfig, $tngdomain, $tngprint, $tng_version;
+        global $responsivetables, $sitever, $templatepath, $tngconfig, $tngdomain, $tngprint;
         $links = [];
         $links[] = "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
         if ($sitever != "standard" && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
         }
-        $links[] = "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet'>";
+        $links[] = "<link href='css/genstyle.css' rel='stylesheet'>";
         if (isset($this->flags['tabs'])) {
-            $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}?v=$tng_version' rel='stylesheet'>";
+            $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}' rel='stylesheet'>";
         }
-        $links[] = "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet'>";
+        $links[] = "<link href='{$templatepath}css/templatestyle.css' rel='stylesheet'>";
         if ($sitever == "mobile") {
-            $links[] = "<link href='css/tngmobile.css?v=$tng_version' rel='stylesheet'>";
-            $links[] = "<link href='{$templatepath}css/tngmobile.css?v=$tng_version' rel='stylesheet'>";
+            $links[] = "<link href='css/tngmobile.css' rel='stylesheet'>";
+            $links[] = "<link href='{$templatepath}css/tngmobile.css' rel='stylesheet'>";
         }
-        $links[] = "<link href='{$templatepath}css/mytngstyle.css?v=$tng_version' rel='stylesheet'>";
+        $links[] = "<link href='{$templatepath}css/mytngstyle.css' rel='stylesheet'>";
         if (isset($this->flags['link'])) {
             $links[] = $this->flags['link'];
         }

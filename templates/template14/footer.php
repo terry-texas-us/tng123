@@ -1,4 +1,4 @@
-<?php global $text, $tng_version, $flags; ?>
+<?php global $text, $flags; ?>
 
 <div class="cleared"></div>
 </div>

@@ -69,17 +69,17 @@
             </table>
         </td>
         <td class="align-top" align="right">
-            <form action="search.php" method="get" id="topsearch" style="margin:0;">
+            <form id="topsearch" action="search.php" method="get" style="margin:0;">
                 <table cellspacing="0">
                     <tr>
                         <td class="topmenu">
                             <span class="headertitle"><?php echo $text['search']; ?></span><br>
                             <?php echo $text['firstname']; ?>:<br>
-                            <input type="text" name="myfirstname" class="searchbox" size="10">
+                            <input type="search" name="myfirstname" class="searchbox" size="10">
                             <br>
                             <img src="img/spacer.gif" alt="" width="100%" height="3"><br>
                             <?php echo $text['lastname']; ?>: <br>
-                            <input type="text" name="mylastname" size="10" class="searchbox">
+                            <input type="search" name="mylastname" size="10" class="searchbox">
                             <br>
                             <input type="hidden" name="mybool" value="AND">
                         </td>

@@ -650,7 +650,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     </table>
 </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script>
     var tree = "";
     var type = "media";
@@ -744,11 +744,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
         return false;
     }
 </script>
-<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/mediafind.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/mediautils.js"></script>
+<script src="js/mediafind.js"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/datevalidation.js"></script>
 <script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;
     var preferDateFormat = '<?php echo $preferDateFormat; ?>';

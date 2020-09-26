@@ -373,6 +373,6 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

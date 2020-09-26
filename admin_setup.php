@@ -108,7 +108,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
                     <?php echo $admtext['collation']; ?>:
                     <input type="text" name="collation" value="utf8_general_ci"> <?php echo $admtext['collationexpl']; ?><br><br>
                     <input type="button" value="<?php echo $admtext['createtables']; ?>"
-                           onClick="if( confirm( '<?php echo $admtext['conftabledelete']; ?>' ) ) window.location.href = 'admin_tablecreate.php';">
+                        onClick="if( confirm( '<?php echo $admtext['conftabledelete']; ?>' ) ) window.location.href = 'admin_tablecreate.php';">
                 </form>
                 <?php
             }
@@ -116,6 +116,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

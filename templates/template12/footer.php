@@ -1,5 +1,5 @@
 <?php
-global $tng_version, $flags;
+global $flags;
 
 if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false) {
     echo "</div>";

@@ -168,7 +168,7 @@ $item .= "<atom:link href=\"" . $tngdomain . "/tngrss.php\" rel=\"self\" type=\"
 
 $tngscript = basename($_SERVER['SCRIPT_NAME'], ".php");
 
-$item .= "<copyright>$tng_title, v.$tng_version ($tng_date), Written by Darrin Lythgoe, $tng_copyright</copyright>\n";
+$item .= "<copyright>$tng_title ($tng_date), Written by Darrin Lythgoe, $tng_copyright</copyright>\n";
 $item .= "<lastBuildDate>$date</lastBuildDate>\n";
 
 //you will need to define $site_desc and $sitename in your customconfig.php file

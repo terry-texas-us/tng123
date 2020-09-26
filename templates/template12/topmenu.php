@@ -27,14 +27,13 @@ global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig
                                 </td>
                             </tr>
                             <tr>
-                                <form class="cb-search" id="topsearchform" name="topsearchform" method="get"
-                                      action="search.php">
+                                <form id="topsearchform" class="cb-search" name="topsearchform" action="search.php" method="get">
                                     <td class="col1and2">
                                         <input type="hidden" value="AND" name="mybool">
-                                        <input size="17" name="myfirstname" type="text" id="myfirstname">
+                                        <input size="17" name="myfirstname" type="search" id="myfirstname">
                                     </td>
                                     <td class="col1and2">
-                                        <input size="17" name="mylastname" type="text" id="mylastname">
+                                        <input size="17" name="mylastname" type="search" id="mylastname">
                                     </td>
                                     <td>
                                         <input class="cb-search-button" type="submit" value="&nbsp;&nbsp;">

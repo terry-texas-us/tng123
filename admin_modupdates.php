@@ -100,7 +100,7 @@ echo "
          </td>
       </tr>
       </table>";
-echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>";
+echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>";
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
     global $admtext;

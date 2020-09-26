@@ -30,9 +30,9 @@ if ($map['key'] && $isConnected) {
     echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 ?>
-<script src="js/selectutils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/mediautils.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/selectutils.js"></script>
+<script src="js/mediautils.js"></script>
+<script src="js/admin.js"></script>
 <script>
     const nothingtodelete = "<?php echo $admtext['nothingtodelete']; ?>";
     const confdeleteentity = "<?php echo $admtext['confdeleteentity']; ?>";
@@ -227,6 +227,6 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
     </table>
 </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

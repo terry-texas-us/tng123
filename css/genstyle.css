@@ -172,7 +172,6 @@ a:visited {
     float: left;
 }
 
-
 .rounded10 {
     border-radius: 10px;
 }
@@ -195,8 +194,6 @@ ul.nopad {
     padding-left: 0;
 }
 
-
-/* Added in 4.0.0 */
 /* For links on dark background */
 .lightlink:link, .lightlink:visited {
     color: #fff;
@@ -447,7 +444,6 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     /*height:420px;*/
 }
 
-/*moved here from showmedia.php in 7.0.0*/
 #slideshow {
     position: relative;
 }
@@ -516,7 +512,6 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     visibility: hidden;
 }
 
-
 .person-img {
     height: 1px;
     margin: 0 0 0;
@@ -529,7 +524,6 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     padding: 20px 0 0 20px;
     height: 480px;
 }
-
 
 * html .person-prev {
     background: url(../img/media-prevbg.gif) no-repeat 0 0;
@@ -622,12 +616,6 @@ button {
     cursor: pointer;
 }
 
-input[type="text"],
-input[type="search"],
-textarea {
-    padding: 3px 6px;
-}
-
 select {
     padding: 2px 4px;
 }
@@ -639,13 +627,21 @@ button {
     background-color: #ddd;
 }
 
-input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, button:active {
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active {
     color: white;
     border: 1px solid #fc0;
     background-color: #ccc;
 }
 
-.btn, .disabled, input[type="button"].btn, input[type="submit"].btn, input[type="submit"].disabled, input[type="reset"].btn {
+.btn,
+.disabled,
+input[type="button"].btn,
+input[type="submit"].btn,
+input[type="submit"].disabled,
+input[type="reset"].btn {
     border: 1px solid gray;
     padding: 5px 12px;
 }
@@ -895,10 +891,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
     border-radius: 8px;
 }
 
-/*
-* html .LB_window {position:absolute;}
-*/
-
 #LB_closeWindow {
     padding: 10px 25px 10px 0;
 }
@@ -927,7 +919,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 #LB_titletext {
     margin: 0 0 0 5px;
 }
-
 
 /* The following classes were added when converting the Help screens to php file for the template look and feel */
 /* subheadbold: subheading text in Help screens */
@@ -998,7 +989,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
     z-index: 5;
 }
 
-/*added in 7.1.0*/
 /*popup for import progress bar*/
 .impcontainer {
     margin: 20px;
@@ -1008,7 +998,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
 .impheader {
     height: 40px;
 }
-
 
 /*import counter labels, ie People, Families, Sources*/
 .implabel {
@@ -1184,7 +1173,6 @@ p.menu {
     border-width: 0;
 }
 
-
 .spaceonleft {
     padding-left: 20px;
     padding-top: 5px;
@@ -1242,12 +1230,6 @@ a.admincell {
     border-radius: 4px;
 }
 
-/* commenting this out will allow the admin cells to grow if necessary
-a.admincell {
-	height:45px;
-}
-*/
-
 .tngmsgarea {
     background-color: #999;
     color: #fff;
@@ -1271,11 +1253,15 @@ a.admincell {
 }
 
 .tngmsgarea,
-a.admincell, .leftlink, .whiteheader, .whitetext {
+a.admincell,
+.leftlink,
+.whiteheader,
+.whitetext {
     text-shadow: 1px 1px 1px #000;
 }
 
-a.admincell:hover, a.leftlink:hover {
+a.admincell:hover,
+a.leftlink:hover {
     background-color: #336399;
 }
 
@@ -1358,7 +1344,8 @@ a.admincell:hover, a.leftlink:hover {
     width: 240px;
 }
 
-.pad5, .mappad5 {
+.pad5,
+.mappad5 {
     padding: 5px;
 }
 
@@ -1559,11 +1546,13 @@ ul.tngdd ul li a {
     border-radius: 0;
 }
 
-ul.tngdd ul li:first-child, ul.tngdd ul li:first-child a {
+ul.tngdd ul li:first-child,
+ul.tngdd ul li:first-child a {
     border-radius: 6px 6px 0 0;
 }
 
-ul.tngdd ul li:last-child, ul.tngdd ul li:last-child a {
+ul.tngdd ul li:last-child,
+ul.tngdd ul li:last-child a {
     border-radius: 0 0 6px 6px;
 }
 
@@ -1615,7 +1604,9 @@ ul.tngdd .stubmenu-rt {
     border-radius: 6px 0 0 6px;
 }
 
-div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
+div.innercontainer,
+ul.tngdd .langmenu,
+ul.tngdd .stubmenu {
     border-bottom: 1px solid #aaa;
     background-color: #e0e0f7;
 }
@@ -1650,27 +1641,33 @@ ul.tngdd ul li a .menu-icon {
     background-position: -19px 0;
 }
 
-#albums-hdr-icon, #albums-icon {
+#albums-hdr-icon,
+#albums-icon {
     background-position: -38px 0;
 }
 
-#bookmarks-hdr-icon, #bookmarks-icon {
+#bookmarks-hdr-icon,
+#bookmarks-icon {
     background-position: -57px 0;
 }
 
-#contact-hdr-icon, #contact-icon {
+#contact-hdr-icon,
+#contact-icon {
     background-position: -76px 0;
 }
 
-#dates-hdr-icon, #dates-icon {
+#dates-hdr-icon,
+#dates-icon {
     background-position: -95px 0;
 }
 
-#documents-hdr-icon, #documents-icon {
+#documents-hdr-icon,
+#documents-icon {
     background-position: -114px 0;
 }
 
-#fsearch-hdr-icon, #fsearch-icon {
+#fsearch-hdr-icon,
+#fsearch-icon {
     background-position: -133px 0;
 }
 
@@ -1686,11 +1683,15 @@ ul.tngdd ul li a .menu-icon {
     background-position: -190px 0;
 }
 
-#headstones-hdr-icon, #headstones-icon, #cemeteries-hdr-icon, #cemeteries-icon {
+#headstones-hdr-icon,
+#headstones-icon,
+#cemeteries-hdr-icon,
+#cemeteries-icon {
     background-position: -209px 0;
 }
 
-#unlock-icon, #unlock-hdr-icon {
+#unlock-icon,
+#unlock-hdr-icon {
     background-position: -228px 0;
 }
 
@@ -1943,7 +1944,8 @@ ul.tngdd ul li a .menu-icon {
 }
 
 /* styles for home page surname cloud post */
-.surnames-cloud, .surnames-cloud a {
+.surnames-cloud,
+.surnames-cloud a {
     font-family: Verdana, Tahoma, Arial, sans-serif;
     padding: 2px 2px 2px 2px;
     letter-spacing: 0.0em;
@@ -2058,7 +2060,8 @@ a.size0 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
-.scroll-to-top a, .scroll-to-top a:hover {
+.scroll-to-top a,
+.scroll-to-top a:hover {
     text-decoration: none;
 }
 
@@ -2082,7 +2085,8 @@ a.size0 {
     padding-right: 5px;
 }
 
-a.famlink, a.famlink:link {
+a.famlink,
+a.famlink:link {
     color: #aaa;
 }
 
@@ -2305,7 +2309,8 @@ thead th {
 }
 
 /*bootstrap*/
-.btn, .disabled {
+.btn,
+.disabled {
     display: inline-block;
     padding: 5px 12px;
     margin-bottom: 0;
@@ -2452,5 +2457,3 @@ thead th {
         margin-bottom: 20px;
     }
 }
-
-/* Classes for TNG Mods to be added below */

@@ -55,8 +55,8 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
                         <tr class="strip">
                             <td class="fieldnameback">
                 <span class="fieldname">
-								&nbsp; <?php echo $text['mnufirstname']; ?>: <input type="text" name="myfirstname" size="18">
-								&nbsp; <?php echo $text['mnulastname']; ?>: <input type="text" name="mylastname" size="18">
+								&nbsp; <?php echo $text['mnufirstname']; ?>: <input type="search" name="myfirstname" size="18">
+								&nbsp; <?php echo $text['mnulastname']; ?>: <input type="search" name="mylastname" size="18">
 								  <input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0">
 								  <input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>">
 								</span>

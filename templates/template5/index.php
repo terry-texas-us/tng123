@@ -160,12 +160,12 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                         <table class="indexbox rounded4" id="searchbox">
                                             <tr>
                                                 <td class="padding"><span class="boxback"><?php echo $text['mnufirstname']; ?>:<br>
-							          <input type="text" name="myfirstname" class="searchbox" size="14"></span>
+							          <input type="search" name="myfirstname" class="searchbox" size="14"></span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="padding"><span class="boxback"><?php echo $text['mnulastname']; ?>:<br>
-							          <input type="text" name="mylastname" class="searchbox" size="14"></span>
+							          <input type="search" name="mylastname" class="searchbox" size="14"></span>
                                                 </td>
                                             </tr>
                                             <tr>

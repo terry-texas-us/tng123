@@ -341,6 +341,6 @@ echo "
 </script>";
 
 echo "
-<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version ($mm_version)</span></div>
+<div style=\"text-align: center;\"><span class='normal'>$tng_title ($mm_version)</span></div>
 </body>
 </html>";

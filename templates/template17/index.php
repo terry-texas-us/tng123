@@ -107,15 +107,15 @@ $title = getTemplateMessage('t17_maintitle');
                 <li class="linkcol">
                     <article class="post">
                         <h2 class="entry-title"><?php echo $text['search']; ?></h2>
-                        <form method="get" name="searchform" action="search.php" class="entry-content" style="border:1px solid #e2c2a9;padding:10px;">
+                        <form class="entry-content" name="searchform" action="search.php" method="get" style="border:1px solid #e2c2a9;padding:10px;">
                             <div style="display:inline-block;">
                                 <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                                 <br>
-                                <input type="text" value="" name="myfirstname">
+                                <input type="search" value="" name="myfirstname">
                                 <br><br>
                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
                                 <br>
-                                <input type="text" value="" name="mylastname">
+                                <input type="search" value="" name="mylastname">
                                 <br>
                                 <input type="hidden" name="mybool" value="AND">
                             </div>

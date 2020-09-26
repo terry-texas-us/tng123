@@ -34,11 +34,11 @@ $pagetitle = getTemplateMessage('t15_maintitle');
                 }
                 ?>
                 <li class="search-menu-item">
-                    <form id="topsearchform" name="topsearchform" method="get" action="search.php">
+                    <form id="topsearchform" name="topsearchform" action="search.php" method="get">
                         <?php echo getFORM("search", "get", "", ""); ?>
                         <input type="hidden" value="AND" name="mybool">
-                        <?php echo $text['firstname']; ?>:&nbsp;<input size="12" name="myfirstname" type="text" id="myfirstname"> &nbsp;
-                        <?php echo $text['lastname']; ?>:&nbsp;<input size="12" name="mylastname" type="text" id="mylastname"> &nbsp;
+                        <?php echo $text['firstname']; ?>:&nbsp;<input size="12" name="myfirstname" type="search" id="myfirstname"> &nbsp;
+                        <?php echo $text['lastname']; ?>:&nbsp;<input size="12" name="mylastname" type="search" id="mylastname"> &nbsp;
                         <input type="submit" value="<?php echo $text['search']; ?>">
                     </form>
                 </li>

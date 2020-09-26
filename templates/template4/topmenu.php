@@ -14,12 +14,12 @@ global $text, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes;
                 <form action="search.php" method="get">
                     <table class="menuback">
                         <tr>
-                            <td><span class="fieldname"><?php echo $text['mnufirstname']; ?>:<br><input type="text" name="myfirstname"
-                                                                                                        class="searchbox" size="14"></span></td>
+                            <td><span class="fieldname"><?php echo $text['mnufirstname']; ?>:<br><input type="search" name="myfirstname"
+                                        class="searchbox" size="14"></span></td>
                         </tr>
                         <tr>
-                            <td><span class="fieldname"><?php echo $text['mnulastname']; ?>: <br><input type="text" name="mylastname"
-                                                                                                        class="searchbox" size="14"></span></td>
+                            <td><span class="fieldname"><?php echo $text['mnulastname']; ?>: <br><input type="search" name="mylastname"
+                                        class="searchbox" size="14"></span></td>
                         </tr>
                         <tr>
                             <td>

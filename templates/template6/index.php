@@ -86,21 +86,21 @@ if ($sitever == "mobile") {
 
 	</span>
                 <br><br>
-                <form id="form1" method="get" action="search.php">
+                <form id="form1" action="search.php" method="get">
                     <div>
                         <input type="hidden" value="AND" name="mybool">
                         <table width="297" cellspacing="0">
                             <tr>
                                 <td><?php echo $text['firstname']; ?>:</td>
                                 <td class="searchbox">
-                                    <input name="myfirstname" type="text" id="myfirstname">
+                                    <input name="myfirstname" type="search" id="myfirstname">
                                 </td>
 
                             </tr>
                             <tr>
                                 <td class="normal"><?php echo $text['lastname']; ?>:</td>
                                 <td class="searchbox">
-                                    <input name="mylastname" type="text" id="mylastname">
+                                    <input name="mylastname" type="search" id="mylastname">
                                 </td>
                                 <td rowspan="2">
                                     <input type="image" name="imageField" src="<?php echo $templatepath; ?>img/searchbutton.gif">

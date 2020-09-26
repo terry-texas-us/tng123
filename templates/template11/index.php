@@ -113,12 +113,12 @@ $title = getTemplateMessage('t11_maintitle');
                                     <div class="art-blockcontent">
                                         <div class="art-blockcontent-body">
                                             <div>
-                                                <form method="get" name="searchform" action="search.php">
+                                                <form name="searchform" action="search.php" method="get">
                                                     <label for="myfirstname"><?php echo $text['firstname']; ?></label>
-                                                    <input type="text" value="" name="myfirstname">
+                                                    <input type="search" value="" name="myfirstname">
                                                     <br>
                                                     <label for="mylastname"><?php echo $text['lastname']; ?></label>
-                                                    <input type="text" value="" name="mylastname">
+                                                    <input type="search" value="" name="mylastname">
                                                     <input type="hidden" name="mybool" value="AND">
                                                     <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>">
                                                 </form>

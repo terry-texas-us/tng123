@@ -136,7 +136,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
 <?php if ($beforeimport) {
     echo "</div>\n";
 } else {
-    echo "<div style=\"text-align: center;\"><span class='normal'>{$tng_title}, v . {$tng_version}</span></div>\n";
+    echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>\n";
     ?>
     <script>
         function validateTreeForm(form) {

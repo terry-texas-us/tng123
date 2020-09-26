@@ -15,11 +15,8 @@ $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $htt
 $isConnected = isConnected();
 
 function tng_adminheader($title, $flags) {
-    global $tng_title, $tng_version, $tng_date, $tng_copyright, $session_charset, $sitename, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
+    global $session_charset, $sitename, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
 
-    if (!$tng_version) {
-        $tng_version = "12.3";
-    }
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
@@ -33,18 +30,18 @@ function tng_adminheader($title, $flags) {
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
     echo "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
-    echo "<link href='css/genstyle.css?v=$tng_version' rel='stylesheet'>\n";
+    echo "<link href='css/genstyle.css' rel='stylesheet'>\n";
     if (isset($flags['modmgr'])) {
         echo "<link href='css/modmanager.css' rel='stylesheet'>\n";
     }
     if ($sitever == "mobile") {
-        echo "<link href='css/tngmobile.css?v=$tng_version' rel='stylesheet'>\n";
+        echo "<link href='css/tngmobile.css' rel='stylesheet'>\n";
     }
     if (isset($flags['tabs'])) {
         echo "<link href='{$templatepath}css/{$flags['tabs']}' rel='stylesheet'>\n";
     }
-    echo "<link href='{$templatepath}css/templatestyle.css?v=$tng_version' rel='stylesheet'>\n";
-    echo "<link href='{$templatepath}css/mytngstyle.css?v=$tng_version' rel='stylesheet'>\n";
+    echo "<link href='{$templatepath}css/templatestyle.css' rel='stylesheet'>\n";
+    echo "<link href='{$templatepath}css/mytngstyle.css' rel='stylesheet'>\n";
     if ($sitever != "mobile" && $sitever != "tablet") {
         echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     }

@@ -106,15 +106,15 @@ $momlabel = getTemplateMessage('t18_momside');
                 <li class="linkcol">
                     <article class="post">
                         <h2 class="entry-title"><?php echo $text['search']; ?></h2>
-                        <form method="get" name="searchform" action="search.php" class="entry-content" id="home-search-box">
+                        <form id="home-search-box" class="entry-content" name="searchform" action="search.php" method="get">
                             <div style="display:inline-block;">
                                 <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                                 <br>
-                                <input type="text" value="" name="myfirstname">
+                                <input type="search" value="" name="myfirstname">
                                 <br><br>
                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
                                 <br>
-                                <input type="text" value="" name="mylastname">
+                                <input type="search" value="" name="mylastname">
                                 <br>
                                 <input type="hidden" name="mybool" value="AND">
                             </div>

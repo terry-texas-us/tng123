@@ -113,6 +113,6 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['addgroup'
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

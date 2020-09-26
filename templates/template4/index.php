@@ -1,12 +1,11 @@
 <?php
 
 $tngconfig['showshare'] = false;
-$flags['noicons'] = true;
-$flags['noheader'] = true;
-$flags['nobody'] = true;
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
+
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 tng_header($sitename ? "" : $text['ourpages'], $flags);
 if ($sitever != "mobile") {

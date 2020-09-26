@@ -27,7 +27,7 @@ echo "</head>\n";
     <table>
         <tr>
             <td>
-                <h4 class="whiteheader"><?php echo "$tng_title, v.$tng_version" . ($maint ? " <small class='yellow'>{$text['mainton']}</small>" : ""); ?></h4>
+                <h4 class="whiteheader"><?php echo "$tng_title" . ($maint ? " <small class='yellow'>{$text['mainton']}</small>" : ""); ?></h4>
             </td>
             <td style="float: right;">
                 <?php

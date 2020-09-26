@@ -43,15 +43,14 @@ global $text, $currentuser, $allow_admin, $tmp;
 
                     </td>
                     <td class="searchtext">
-                        <form id="topsearchform" name="topsearchform" method="get" action="search.php">
-                            <input type="hidden" value="AND" name="mybool">
+                        <form id="topsearchform" name="topsearchform" action="search.php" method="get">
                             <span class="subsearch"><?php echo $text['mnufirstname']; ?>:&nbsp;</span>
-                            <input size="8" name="myfirstname" type="text" id="myfirstname">
+                            <input size="8" name="myfirstname" type="search" id="myfirstname">
                             <span class="subsearch"><?php echo $text['mnulastname']; ?>:&nbsp;</span>
-                            <input
-                                size="10" name="mylastname" type="text" id="mylastname">
+                            <input size="10" name="mylastname" type="search" id="mylastname">
+                            <input type="hidden" value="AND" name="mybool">
                             <input alt="Submit Search" style="vertical-align: bottom; border:none;" type="image" name="imageField"
-                                   src="<?php echo $templatepath; ?>img/searchbutton.gif">
+                                src="<?php echo $templatepath; ?>img/searchbutton.gif">
                             <br>
                             [<a class="subsearch" href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]&nbsp;&nbsp;[<a
                                 class="subsearch"

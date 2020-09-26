@@ -673,7 +673,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
 
     </table>
 </form>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title, v.$tng_version</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script>
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
@@ -701,9 +701,9 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
         return false;
     }
 </script>
-<script src="js/net.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/admin.js?v<?php echo $tng_version; ?>"></script>
-<script src="js/datevalidation.js?v<?php echo $tng_version; ?>"></script>
+<script src="js/net.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/datevalidation.js"></script>
 <script src="js/selectutils.js"></script>
 <script src="js/dna_tests.js"></script>
 <script>
