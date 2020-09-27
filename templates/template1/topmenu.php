@@ -1,6 +1,6 @@
 <?php global $text, $tmp; ?>
 
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <?php if ($tmp['t1_titlechoice'] == "text") { ?>
     <div style="float:left;"><img src="<?php echo $templatepath; ?>img/header-image.gif" alt="" width="93" height="72"></div>

@@ -6,7 +6,7 @@ $dadlabel = getTemplateMessage('t13_dadside');
 $momlabel = getTemplateMessage('t13_momside');
 ?>
 
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <div id="art-main">
     <div class="cleared reset-box"></div>
     <div class="art-nav">

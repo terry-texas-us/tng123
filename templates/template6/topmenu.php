@@ -1,7 +1,7 @@
 <?php
 global $text, $tmp;
 ?>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> templatebody">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
 <table class="page">
     <tr class="row60">
         <td colspan="4" class="headertitle">

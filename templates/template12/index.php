@@ -1,21 +1,18 @@
 <?php
 
-global $sitever;
-
 $tngconfig['showshare'] = false;
 $tngconfig['showprint'] = 1;
 $tngconfig['showbmarks'] = 1;
+$flags = ['noicons' => true, 'noheader' => false];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
-$flags = ['noicons' => true, 'noheader' => false];
 
 $headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
 echo $headElement->getHtml();
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 
-if ($sitever != "mobile") {
+if (!isMobile()) {
     ?>
     <div class="cb-tng-area" style="height:24px;">
         <div style="margin-left: 10px; margin-right: 10px;">

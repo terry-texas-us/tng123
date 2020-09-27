@@ -1,26 +1,27 @@
 <?php
 
-global $sitever;
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
-if ($sitever != "mobile") {
+if (!isMobile()) {
     $flags['style'] = "<style>\n";
     $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t10_headimg']}'); background-repeat: no-repeat;width: 420px; height: 150px;}\n";
     $flags['style'] .= "</style>\n";
 }
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-preHeaderVariants($headElement, $flags, $tngconfig['maint']);
-
-if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
+if (isMobile()) {
+    mobileHeaderVariants($headElement, $flags);
+} else {
+    standardHeaderVariants($headElement, $flags);
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
-
+if ($tngconfig['maint']) {
+    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+}
 $dadlabel = getTemplateMessage('t10_dadside');
 $momlabel = getTemplateMessage('t10_momside');
 $title = getTemplateMessage('t10_maintitle');

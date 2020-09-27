@@ -447,7 +447,7 @@ function showMediaSource($imgrow, $ss = false) {
     global $text, $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
     global $description, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
 
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $ss = false;
     }
     if ($imgrow['form']) {

@@ -90,7 +90,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                     $topnum = tng_num_rows($result);
                     if ($result) {
                         $snnum = 1;
-                        if ($sitever == "mobile") {
+                        if (isMobile()) {
                             $numcols = 2;
                         } elseif (!isset($numcols) || $numcols > 5) {
                             $numcols = 5;

@@ -247,7 +247,7 @@ $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
-if ($sitever != "standard") {
+if (isMobile()) {
     if ($tabletype == "toggle") {
         $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
     } elseif ($tabletype == "stack") {

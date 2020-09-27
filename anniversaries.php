@@ -468,7 +468,7 @@ if ($tngneedresults) {
                 echo "<p>$pagenav</p>";
             }
 
-            if ($sitever != "standard") {
+            if (isMobile()) {
                 if ($tabletype == "toggle") {
                     $tabletype = "columntoggle";
                 }

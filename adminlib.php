@@ -34,7 +34,7 @@ function tng_adminheader($title, $flags) {
     if (isset($flags['modmgr'])) {
         echo "<link href='css/modmanager.css' rel='stylesheet'>\n";
     }
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         echo "<link href='css/tngmobile.css' rel='stylesheet'>\n";
     }
     if (isset($flags['tabs'])) {
@@ -42,7 +42,7 @@ function tng_adminheader($title, $flags) {
     }
     echo "<link href='{$templatepath}css/templatestyle.css' rel='stylesheet'>\n";
     echo "<link href='{$templatepath}css/mytngstyle.css' rel='stylesheet'>\n";
-    if ($sitever != "mobile" && $sitever != "tablet") {
+    if (!isMobile()) {
         echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     }
     echo "<script>\n";
@@ -120,7 +120,7 @@ function doMenu($tabs, $currtab, $innermenu = 0) {
             }
         }
     }
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $menu .= "<li>\n<a class=\"here\">\n<select id=\"tngtabselect\" onchange=\"window.location.href=this.options[this.selectedIndex].value\">\n$choices</select>\n</a>\n</li>\n";
     } else {
         $menu .= $choices;

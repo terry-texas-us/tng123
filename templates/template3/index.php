@@ -1,73 +1,52 @@
 <?php
 
-global $sitever, $allow_admin;
+global $allow_admin;
 
 $tngconfig['showshare'] = false;
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-preHeaderVariants($headElement, $flags, $tngconfig['maint']);
-
-if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . defaultTemplateClass() . " homebody'>\n";
+if (isMobile()) {
+    mobileHeaderVariants($headElement, $flags);
+} else {
+    standardHeaderVariants($headElement, $flags);
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody'>\n";
+}
+if ($tngconfig['maint']) {
+    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $title = getTemplateMessage('t3_maintitle');
 ?>
     <div class="center">
         <div class="indexpage" style="display: table;">
-            <?php
-            //begin TITLE IMAGE (default: "Our Family Genealogy Pages")
-            //Actual file name has been replaced with t3_titleimage variable, configurable from Template Settings. Default name of actual image is "title.gif"
-            //You can replace the t3_titleimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-
-            if ($tmp['t3_titlechoice'] == "text" || $sitever == "mobile") {
-                ?>
+            <?php if ($tmp['t3_titlechoice'] == "text" || isMobile()) { ?>
                 <div style="padding:10px;">
-                    <em class="maintitle">
-
-                        <?php echo $title; ?>
-
-                    </em>
+                    <em class="maintitle"><?php echo $title; ?></em>
                 </div>
-                <?php
-            } else {
-                ?>
-                <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_titleimage']; ?>" alt="" class="titleimg" width="630"
-                     height="93">
-                <?php
-            }
-            //end TITLE IMAGE
-            ?>
+            <?php } else { ?>
+                <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_titleimage']; ?>" alt="" class="titleimg" width="630" height="93">
+            <?php } ?>
             <div id="tcontainer">
-                <?php
-                //begin MAIN IMAGE (default: large picture of Main Street, Mt. Pleasant, Utah, ca. 1910)
-                //Actual file name has been replaced with t3_mainimage variable, configurable from Template Settings. Default name of actual image is "mainstreet.jpg"
-                //You can replace the t3_mainimage PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-                ?>
                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_mainimage']; ?>" alt="" class="mainimg">
-                <?php
-                //end MAIN IMAGE
-                ?>
                 <div id="searchpane"><br>
                     <h2 class="header"><?php echo $text['mnusearchfornames']; ?></h2>
-                    <!-- Do not change the form action or field names! -->
+
                     <form id="form1" action="search.php" method="get">
-                        <label for="myfirstname" class="normal"><?php echo $text['mnufirstname']; ?>:</label>
+                        <label class="normal" for="myfirstname"><?php echo $text['mnufirstname']; ?>:</label>
                         <br>
-                        <input type="search" name="myfirstname" id="myfirstname" size="14">
+                        <input id="myfirstname" name="myfirstname" type="search">
                         <br>
-                        <label for="mylastname" class="normal"><?php echo $text['mnulastname']; ?>:</label>
+                        <label class="normal" for="mylastname"><?php echo $text['mnulastname']; ?>:</label>
                         <br>
-                        <input type="search" name="mylastname" id="mylastname" size="14">
+                        <input id="mylastname" name="mylastname" type="search">
                         <br>
-                        <input type="hidden" name="mybool" value="AND">
-                        <input type="hidden" name="offset" value="0">
-                        <input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>">
+                        <input name="mybool" type="hidden" value="AND">
+                        <input name="offset" type="hidden" value="0">
+                        <input name="search" type="submit" value="<?php echo $text['mnusearchfornames']; ?>">
                     </form>
                     <br>
                     <div class="subheader">
@@ -84,19 +63,19 @@ $title = getTemplateMessage('t3_maintitle');
 
                             if ($numlangs > 1) {
                                 echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                echo "<select id='newlanguage3' name='newlanguage3' style='font-size: 11px;' onchange='document.tngmenu3.submit();'>";
 
                                 while ($row = tng_fetch_assoc($result)) {
-                                    echo "<option value=\"{$row['languageID']}\"";
+                                    echo "<option value='{$row['languageID']}'";
                                     if ($languages_path . $row['folder'] == $mylanguage) {
                                         echo " selected";
                                     }
                                     echo ">{$row['display']}</option>\n";
                                 }
                                 echo "</select>\n";
-                                echo "<input type='hidden' name='instance' value='3'></form>\n";
+                                echo "<input type='hidden' name='instance' value='3'>";
+                                echo "</form>\n";
                             }
-
                             tng_free_result($result);
                         }
                         ?>
@@ -107,10 +86,9 @@ $title = getTemplateMessage('t3_maintitle');
         <?php
         $mainpara = getTemplateMessage('t3_mainpara');
         if ($mainpara) {
-            echo "<br><div class=\"tcontainer\"><div style=\"display:inline-block;max-width:700px;text-align:left;\">$mainpara</div></div>\n";
+            echo "<br><div class='tcontainer'><div style='display: inline-block; max-width: 700px; text-align: left;'>$mainpara</div></div>\n";
         }
-
-        if ($sitever != "mobile") {
+        if (!isMobile()) {
             ?>
             <div class="mainmenu">
                 <br>
@@ -118,7 +96,7 @@ $title = getTemplateMessage('t3_maintitle');
                 <?php
                 foreach ($mediatypes as $mediatype) {
                     if (!$mediatype['disabled']) {
-                        echo "<a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a> &nbsp;|&nbsp;\n";
+                        echo "<a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a> &nbsp;|&nbsp;\n";
                     }
                 }
                 ?>
@@ -136,13 +114,9 @@ $title = getTemplateMessage('t3_maintitle');
                 <br>
                 <a href="browsesources.php"><?php echo $text['mnusources']; ?></a> &nbsp;|&nbsp;
                 <a href="browserepos.php"><?php echo $text['repositories']; ?></a> &nbsp;|&nbsp;
-                <?php
-                if (!$tngconfig['hidedna']) {
-                    ?>
+                <?php if (!$tngconfig['hidedna']) { ?>
                     <a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a> &nbsp;|&nbsp;
-                    <?php
-                }
-                ?>
+                <?php } ?>
                 <a href="reports.php"><?php echo $text['mnureports']; ?></a> &nbsp;|&nbsp;
                 <a href="browsenotes.php"><?php echo $text['notes']; ?></a> &nbsp;|&nbsp;
                 <a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a> &nbsp;|&nbsp;
@@ -150,14 +124,14 @@ $title = getTemplateMessage('t3_maintitle');
                 <br>
                 <?php
                 if ($currentuser) {
-                    echo "<a href=\"logout.php\">{$text['mnulogout']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href='logout.php'>{$text['mnulogout']}</a> &nbsp;|&nbsp;\n";
                 } else {
-                    echo "<a href=\"login.php\">{$text['mnulogon']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href='login.php'>{$text['mnulogon']}</a> &nbsp;|&nbsp;\n";
                 }
 
                 if ($allow_admin) {
-                    echo "<a href=\"showlog.php\">{$text['mnushowlog']}</a> &nbsp;|&nbsp;\n";
-                    echo "<a href=\"admin.php\">{$text['mnuadmin']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href='showlog.php'>{$text['mnushowlog']}</a> &nbsp;|&nbsp;\n";
+                    echo "<a href='admin.php'>{$text['mnuadmin']}</a> &nbsp;|&nbsp;\n";
                 }
                 if (!$currentuser && !$tngconfig['disallowreg']) {
                     ?>
@@ -167,9 +141,7 @@ $title = getTemplateMessage('t3_maintitle');
                 ?>
                 <a href="suggest.php?page=<?php echo $title; ?>"><?php echo $text['contactus']; ?></a>
             </div>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <div class="footer" style="text-align: center;">
             <br><br>
 
@@ -177,8 +149,8 @@ $title = getTemplateMessage('t3_maintitle');
             $flags['basicfooter'] = true;
             tng_footer($flags);
             ?>
-        </div> <!-- end footer div -->
-    </div> <!-- end center div -->
+        </div>
+    </div>
     <script>
         document.forms.form1.mylastname.focus();
     </script>

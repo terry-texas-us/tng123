@@ -1,5 +1,5 @@
 <?php global $text, $tmp; ?>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> bodytopmenu">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
 <table cellspacing="0" class="page" width="100%">
     <tr>

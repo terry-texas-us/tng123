@@ -32,8 +32,8 @@ $linkstr2col1 = "";
 $linkstr2col2 = "";
 $linkstr3col1 = "";
 $linkstr3col2 = "";
-$collen = $sitever == "mobile" ? 15 : 10;
-$cols = $sitever == "mobile" ? 2 : 3;
+$collen = isMobile() ? 15 : 10;
+$cols = isMobile() ? 2 : 3;
 
 $offsetorg = $offset;
 $offset = $offset ? $offset + 1 : 1;

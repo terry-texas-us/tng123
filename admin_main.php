@@ -15,7 +15,7 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     global $sitever;
 
     $menu = "";
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $iconstr = $msgstr = "";
     } else {
         $iconstr = "<img src=\"img/{$icon}_icon.gif\" alt='$label' class='adminicon'>\n";
@@ -65,7 +65,7 @@ function getTotal($table, $where = "") {
     return $total;
 }
 
-if ($sitever != "mobile") {
+if (!isMobile()) {
     $genmsg = $mediamsg = "";
     if ($allow_add) {
         $genmsg .= $admtext['add'] . " | ";
@@ -276,7 +276,7 @@ tng_adminheader($admtext['administration'], "");
             if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
                 echo adminMenuItem("admin_misc.php", $admtext['misc'], "", $admtext['miscitems'], "misc");
             }
-            if ($sitever != "mobile") {
+            if (!isMobile()) {
             ?>
         </td>
         <td class="admincol">
@@ -307,7 +307,7 @@ tng_adminheader($admtext['administration'], "");
 </table>
 <?php
 $newsitever = getSiteVersion(true);
-if ($sitever == "mobile") {
+if (isMobile()) {
     echo "<p class=\"smaller\"><a href=\"admin.php?sitever=$newsitever\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchs']}&nbsp;</a></p>\n";
 } elseif ($sitever != $newsitever) {
     echo "<p class=\"smaller\"><a href=\"admin.php?sitever=mobile\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";

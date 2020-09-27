@@ -1,7 +1,7 @@
 <?php
 global $text, $tmp;
 ?>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <table class="tableborder rounded10 t3shadow w-100" cellspacing="0" cellpadding="5">
     <tr>
         <td class="t3hdr rounded10">
@@ -11,7 +11,7 @@ global $text, $tmp;
             //You can replace the t3_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
             ?>
             <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headimg']; ?>" alt="" class="headerphoto" width="186"
-                 height="110">
+                height="110">
             <?php
             //end HEADER IMAGE
             ?>

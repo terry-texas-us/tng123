@@ -8,17 +8,24 @@ writelog($logstring);
 preparebookmark($logstring);
 
 // for multi-language pages, you can use $text variables for your Feature Story Title
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['noicons'] = false; // generate the TNG menu bar
 $flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
 $flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
 
-$headElement = new HeadElementPublic("Your Feature 1 Story Title", $flags);
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
+$headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
 echo $headElement->getHtml();
-preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+if (isMobile()) {
+    mobileHeaderVariants($headElement, $flags);
+} else {
+    standardHeaderVariants($headElement, $flags);
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+}
+if ($tngconfig['maint']) {
+    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+}
 
 ?>
 <h1>Feature 1 Story</h1>

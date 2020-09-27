@@ -1,19 +1,17 @@
 <?php
 
-global $sitever;
+$flags['noicons'] = false;
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
 global $tngconfig;
 
-$flags['noicons'] = false;
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
 echo $headElement->getHtml();
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 
-if ($sitever == "standard") {
+if (!isMobile()) {
     ?>
     <br style="clear: both;"><br>
 <?php } ?>

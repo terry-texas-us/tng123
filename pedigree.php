@@ -220,7 +220,7 @@ if (!$pedigree['maxgen']) {
 if ($generations > $pedigree['maxgen']) {
     $generations = intval($pedigree['maxgen']);
 } elseif (!$generations) {
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $pedigree['initpedgens'] = 3;
     }
     $generations = $pedigree['initpedgens'] >= 2 ? intval($pedigree['initpedgens']) : 2;

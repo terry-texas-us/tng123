@@ -6,7 +6,7 @@ $dadlabel = getTemplateMessage('t15_dadside');
 $momlabel = getTemplateMessage('t15_momside');
 $pagetitle = getTemplateMessage('t15_maintitle');
 ?>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> home-page content-sidebar tng-nav tng-home">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> home-page content-sidebar tng-nav tng-home">
 <div class="scroll-to-top"><a href="#"><img src="img/backtotop.png" alt=""></a></div>
 <div class="site-container">
     <nav class="nav-primary">

@@ -110,7 +110,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 }
 
 /* row:  added to replace bgcolor="#4E7076"  */
-.row {
+.row-5 {
     border: 1px;
     border-collapse: collapse;
     border-color: black;

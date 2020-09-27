@@ -107,7 +107,7 @@ if ($order == "death") {
     }
 }
 
-$nametitle = $sitever == "mobile" ? $text['name'] : $text['lastfirst'];
+$nametitle = isMobile() ? $text['name'] : $text['lastfirst'];
 if ($order == "name") {
     $orderstr = "p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
     $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=nameup\" class=\"lightlink\">$nametitle <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
@@ -410,7 +410,7 @@ if ($enableminimap) {
     $headerr = $headerr;
 }
 
-if ($sitever != "standard") {
+if (isMobile()) {
     if ($tabletype == "toggle") {
         $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
     } elseif ($tabletype == "stack") {
@@ -457,7 +457,7 @@ echo $header;
             <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['spouse']; ?>&nbsp;</th>
             <?php
         }
-        if ($sitever == "mobile") {
+        if (isMobile()) {
             ?>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $text['personid']; ?></b>&nbsp;</th>
             <?php
@@ -581,7 +581,7 @@ while ($row = tng_fetch_assoc($result)) {
         echo "<td class='databack'>$spousestr</td>";
     }
 
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         echo "<td class='databack'>{$row['personID']} </td>";
     }
     if ($numtrees > 1 || $numbranches) {

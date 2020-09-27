@@ -593,9 +593,7 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
 }
 
 function doMenuItem($index, $link, $image, $label, $page, $thispage) {
-    global $sitever;
-
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $selected = $page == $thispage ? " selected" : "";
         $item = "<option value=\"$link\"$selected>$label</option>\n";
     } else {

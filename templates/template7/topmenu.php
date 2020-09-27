@@ -2,7 +2,7 @@
 
 global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
 ?>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <div>
     <table class="headertitle w-100" cellspacing="0">

@@ -11,7 +11,7 @@ tng_adminheader($admtext['mainmenu'], "");
 
 echo "</head>";
 
-if ($sitever == "mobile" || $sitever == "tablet") {
+if (isMobile()) {
     ?>
     <frameset rows="64,*,0">
         <frame name="rightbanner" src="admin_rightbanner.php" id="rightbanner" scrolling="No">

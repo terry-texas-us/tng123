@@ -4,7 +4,7 @@ global $text, $tmp;
 $dadlabel = getTemplateMessage('t17_dadside');
 $momlabel = getTemplateMessage('t17_momside');
 ?>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?> homebody">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> homebody">
 
 <div class="theader">
     <div id="thomemast" class="mast">

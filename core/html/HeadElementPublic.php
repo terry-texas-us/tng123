@@ -17,7 +17,7 @@ class HeadElementPublic
      * @param $flags 'nomobile'
      */
     function __construct(string $title, $flags) {
-        global $session_charset, $sitename, $sitever, $tngconfig;
+        global $session_charset, $sitename, $tngconfig;
         $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
         $this->title = $title;
         $this->flags = $flags;
@@ -29,7 +29,7 @@ class HeadElementPublic
         $this->styles = $this->getStyleElements();
 
         $this->icons = "";
-        if ($sitever == "mobile") {
+        if (isMobile()) {
             if (!isset($flags['nomobile']) || !$flags['nomobile']) {
                 $this->icons = tng_mobileicons($title);
                 $this->icons .= "<div id='mcontent'>\n";
@@ -98,7 +98,7 @@ class HeadElementPublic
      * @return array
      */
     public function getScriptElements(): array {
-        global $http, $isConnected, $responsivetables, $sitever, $tngconfig, $tngprint;
+        global $http, $isConnected, $responsivetables, $tngconfig, $tngprint;
 
         $scripts = [];
         if ($isConnected) {
@@ -113,15 +113,15 @@ class HeadElementPublic
         if (isset($this->flags['scripting'])) {
             $scripts[] = $this->flags['scripting'];
         }
-        if (!empty($tngconfig['showshare']) && $isConnected && $sitever != "mobile") {
+        if (!empty($tngconfig['showshare']) && $isConnected && !isMobile()) {
             $w = $http == "https" ? "ws" : "w";
             $scripts[] = "<script src='{$http}://{$w}.sharethis.com/button/buttons.js'></script>";
             $scripts[] = "<script>stLight.options({publisher: 'be4e16ed-3cf4-460b-aaa4-6ac3d0e3004b', doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>";
         }
-        if ($tngconfig['menu'] < 2 && !$tngprint && $sitever != "mobile") {
+        if ($tngconfig['menu'] < 2 && !$tngprint && !isMobile()) {
             $scripts[] = "<script src='js/tngmenuhover2.js'></script>";
         }
-        if ($sitever != "standard" && $responsivetables) {
+        if (isMobile() && $responsivetables) {
             $scripts[] = "<script src='js/tablesaw.js'></script>";
             $scripts[] = "<!--[if lt IE 9]>";
             $scripts[] = "<script src='js/respond.js'></script>";
@@ -151,10 +151,10 @@ class HeadElementPublic
      * @return array
      */
     public function getLinkElements(): array {
-        global $responsivetables, $sitever, $templatepath, $tngconfig, $tngdomain, $tngprint;
+        global $responsivetables, $templatepath, $tngconfig, $tngdomain, $tngprint;
         $links = [];
         $links[] = "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
-        if ($sitever != "standard" && $responsivetables) {
+        if (isMobile() && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
         }
         $links[] = "<link href='css/genstyle.css' rel='stylesheet'>";
@@ -162,7 +162,7 @@ class HeadElementPublic
             $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}' rel='stylesheet'>";
         }
         $links[] = "<link href='{$templatepath}css/templatestyle.css' rel='stylesheet'>";
-        if ($sitever == "mobile") {
+        if (isMobile()) {
             $links[] = "<link href='css/tngmobile.css' rel='stylesheet'>";
             $links[] = "<link href='{$templatepath}css/tngmobile.css' rel='stylesheet'>";
         }
@@ -170,7 +170,7 @@ class HeadElementPublic
         if (isset($this->flags['link'])) {
             $links[] = $this->flags['link'];
         }
-        if ($sitever == "mobile" || $sitever == "tablet") {
+        if (isMobile()) {
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='144x144' href='$tngdomain/img/tng-apple-icon-144.png'>";
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='114x114' href='$tngdomain/img/tng-apple-icon-114.png'>";
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='72x72' href='$tngdomain/img/tng-apple-icon-72.png'>";
@@ -190,7 +190,7 @@ class HeadElementPublic
      * @return array
      */
     public function getMetaElements(): array {
-        global $custommeta, $fbOGimage, $pageURL, $site_desc, $sitename, $sitever, $tngdomain;
+        global $custommeta, $fbOGimage, $pageURL, $site_desc, $sitename, $tngdomain;
 
         $metas[] = "<meta charset='utf-8'>";
         $metas[] = "<meta name='author' content='Darrin Lythgoe'>";
@@ -200,7 +200,7 @@ class HeadElementPublic
         if (isset($this->flags['norobots'])) {
             $metas[] = $this->flags['norobots'];
         }
-        if ($sitever == "mobile" || $sitever == "tablet") {
+        if (isMobile()) {
             $metas[] = "<meta name='apple-mobile-web-app-capable' content='yes'>";
         }
 

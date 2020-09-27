@@ -12,7 +12,7 @@ $momlabel = getTemplateMessage('t9_momside');
         height: 150px;
     }
 </style>
-<body id="bodytop" class="<?php echo defaultTemplateClass(); ?>">
+<body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <div id="art-main">
     <div class="cleared reset-box"></div>
     <div class="art-sheet">

@@ -1,20 +1,17 @@
 <?php
 
-global $sitever;
-
 $tngconfig['showshare'] = false;
+$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true, 'bodyclass' => "homebody"];
 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
-$flags = ['noicons' => true, 'noheader' => true, 'nobody' => true, 'bodyclass' => "homebody"];
 
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
 preHeaderVariants($headElement, $flags, $tngconfig['maint']);
 
-if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . defaultTemplateClass() . " homebody'>\n";
+if (!isMobile()) {
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody'>\n";
 }
 
 $dadlabel = getTemplateMessage('t16_dadside');
@@ -70,9 +67,7 @@ $search .= "</form>\n";
                     </div>
                 </div>
                 <div id="tbody">
-                    <?php
-                    if ($sitever != "mobile") {
-                        ?>
+                    <?php if (!isMobile()) { ?>
                         <div id="tsidebar">
                             <div class="tsidesection">
                                 <?php echo $search; ?>
@@ -189,7 +184,7 @@ $search .= "</form>\n";
                                                         class="emailimg"><?php echo $text['contactus_long']; ?></p>
 
                                 <?php
-                                if ($sitever == "mobile") {
+                                if (isMobile()) {
                                     echo $search;
                                 }
                                 ?>

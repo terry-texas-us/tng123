@@ -26,7 +26,7 @@ if (!$numrows) {
     $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
     $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
-    if ($sitever != "standard") {
+    if (isMobile()) {
         if ($tabletype == "toggle") {
             $tabletype = "columntoggle";
         }

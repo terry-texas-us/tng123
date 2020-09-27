@@ -333,7 +333,7 @@ if ($enableminimap) {
     $headerr = $headerr;
 }
 
-if ($sitever != "standard") {
+if (isMobile()) {
     if ($tabletype == "toggle") {
         $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" data-tablesaw-mode=\"columntoggle\"" . $headerr;
     } elseif ($tabletype == "stack") {

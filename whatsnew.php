@@ -75,9 +75,9 @@ tng_free_result($result);
 $numtrees = 0;
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true]);
 
-$nametitle = $sitever == "mobile" ? $text['name'] : $text['lastfirst'];
+$nametitle = isMobile() ? $text['name'] : $text['lastfirst'];
 
-if ($sitever != "standard") {
+if (isMobile()) {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }

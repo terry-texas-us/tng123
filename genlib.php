@@ -43,33 +43,26 @@ if (!$tree && $defaulttree) {
     $tree = "";
 }
 
+
 /**
  * @param $headElement
- * @param array $flags 'nobody' 'bodyclass' 'noicons' 'noheader'
- * @param $maint
+ * @param array $flags 'bodyclass' 'noheader'
  */
-function preHeaderVariants($headElement, array $flags, $maint): void {
-    global $customheader, $sitever, $templatenum, $templatepath, $text, $tmp;
+function mobileHeaderVariants($headElement, array $flags): void {
+    global $templatenum, $text, $tmp;
     global $tngprint;
 
-    $title = $headElement->getTitle();
     $icons = $headElement->getIcons();
 
-    if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
-        include $templatepath . $customheader;
-    } elseif (!isset($flags['nobody']) || !$flags['nobody'] || $sitever == "mobile") {
-        $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
-        echo "<body class='{$class}'>\n";
-        echo "<div class='scroll-to-top'>\n";
-        echo "<a href='#'><img src='img/backtotop.png' alt=''></a>\n";
-        echo "</div>\n";
-    }
-    if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
-        $icons = tng_icons(1, $title);
-    }
+    $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
+    echo "<body class='{$class}'>\n";
+    echo "<div class='scroll-to-top'>\n";
+    echo "<a href='#'><img src='img/backtotop.png' alt=''></a>\n";
+    echo "</div>\n";
+
     echo $icons;
 
-    if ($sitever == "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+    if (!$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
         $ttitle = "t{$templatenum}_maintitle";
         if ($tmp[$ttitle]) {
             $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
@@ -87,8 +80,71 @@ function preHeaderVariants($headElement, array $flags, $maint): void {
             echo "<hr class='mtitlehr'/><br>\n";
         }
     }
-    if ($maint) {
-        echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+}
+
+/**
+ * @param $headElement
+ * @param array $flags 'noicons' 'noheader'
+ */
+function standardHeaderVariants($headElement, array $flags): void {
+    global $customheader, $templatepath;
+    global $tngprint;
+
+    $title = $headElement->getTitle();
+    $icons = $headElement->getIcons();
+
+    if (!$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        include $templatepath . $customheader;
+    }
+    if ((!isset($flags['noicons']) || !$flags['noicons'])) {
+        $icons = tng_icons(1, $title);
+    }
+    echo $icons;
+}
+
+/**
+ * @param $headElement
+ * @param array $flags 'nobody' 'bodyclass' 'noicons' 'noheader'
+ * @param $maint
+ */
+function preHeaderVariants($headElement, array $flags, $maint): void {
+    global $customheader, $sitever, $templatenum, $templatepath, $text, $tmp;
+    global $tngprint;
+
+    $title = $headElement->getTitle();
+    $icons = $headElement->getIcons();
+
+    if ($sitever != "mobile" && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        include $templatepath . $customheader;
+    } elseif (!isset($flags['nobody']) || !$flags['nobody'] || isMobile()) {
+        $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
+        echo "<body class='{$class}'>\n";
+        echo "<div class='scroll-to-top'>\n";
+        echo "<a href='#'><img src='img/backtotop.png' alt=''></a>\n";
+        echo "</div>\n";
+    }
+    if ($sitever != "mobile" && (!isset($flags['noicons']) || !$flags['noicons'])) {
+        $icons = tng_icons(1, $title);
+    }
+    echo $icons;
+
+    if (isMobile() && !$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        $ttitle = "t{$templatenum}_maintitle";
+        if ($tmp[$ttitle]) {
+            $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
+        } else {
+            $ttitle = "t{$templatenum}_headtitle";
+            $i = 1;
+            $mtitle = "";
+            while ($tmp[$ttitle . $i]) {
+                $mtitle .= getTemplateMessage($ttitle . $i) . " ";
+                $i++;
+            }
+        }
+        if ($mtitle) {
+            echo "<h3 class='mmaintitle'>" . $mtitle . "</h3>\n";
+            echo "<hr class='mtitlehr'/><br>\n";
+        }
     }
 }
 
@@ -125,7 +181,7 @@ function tng_footer($flags = ['basicfooter' => true]) {
         }
         echo "<p class='smaller'>" . $printfooter . "<br>\n$tngdomain</p>";
     } else {
-        if ($sitever == "mobile") {
+        if (isMobile()) {
             echo tng_basicfooter($flags);
             if (!isset($flags['nomobile']) || !$flags['nomobile']) {
                 echo "</div>\n";
@@ -162,12 +218,12 @@ function tng_basicfooter($flags) {
     $footer = "";
     $newsitever = getSiteVersion();
 
-    if ($sitever == "mobile" || $newsitever != "standard") {
+    if (isMobile() || $newsitever != "standard") {
         $thispage = getScriptName(false);
         $thispage = preg_replace('/\??\&?sitever=(mobile|standard|tablet)/', "", $thispage);
         $con = strpos($thispage, "?") == false ? "?" : "&amp;";
 
-        if ($sitever == "mobile") {
+        if (isMobile()) {
             $gotover = $newsitever == "mobile" ? "standard" : $newsitever;
             $message = $text['switchs'];
             if (file_exists($templatepath . "mobile_footer.php")) {
@@ -369,7 +425,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
         } elseif ($emailaddr) {
             $choices .= doMenuItem($nexttab, "suggest.php?enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", $text['suggest'], $currpage, "suggest");
         }
-        if ($sitever == "mobile") {
+        if (isMobile()) {
             $menu .= "<li>\n<a class=\"here\">\n<select id=\"tngtabselect\" onchange=\"window.location.href=this.options[this.selectedIndex].value\">\n$choices</select>\n</a>\n</li>\n";
         } else {
             $menu .= $choices;
@@ -408,10 +464,10 @@ function tng_smallIcon($options) {
     $url = isset($options['url']) ? $options['url'] : "#";
     $onclick = isset($options['onclick']) ? "onclick=\"{$options['onclick']}\"" : "";
     $targetloc = $target ? "target=\"$target\"" : "";
-    $class = $sitever == "mobile" ? "mobileicon" : (isset($options['class']) ? $options['class'] : "tngsmallicon");
+    $class = isMobile() ? "mobileicon" : (isset($options['class']) ? $options['class'] : "tngsmallicon");
     $rel = isset($options['rel']) ? "rel=\"{$options['rel']}\"" : "";
 
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $begin = "<li>";
         $end = "</li>\n";
     } else {
@@ -445,7 +501,7 @@ function tng_getLeftIcons() {
     $profilelink = $userparen = "";
     if ($currentuser) {
         if ($allow_profile && $sitever != "mobile") {
-            $label = $sitever == "mobile" ? $text['editprofile'] : "({$text['editprofile']}: $currentuser)";
+            $label = isMobile() ? $text['editprofile'] : "({$text['editprofile']}: $currentuser)";
             $profilelink = tng_smallIcon(['label' => $label, 'class' => "tngsmallicon3", 'id' => "profile",
                 'onclick' => "tnglitbox = new LITBox('ajx_editprofile.php?p=" . urlencode("") . "', {width: 580, height: 750}); return false"]);
             $tngconfig['menucount']++;
@@ -873,7 +929,7 @@ function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
     global $text, $sitever;
 
     $uselabel = $labelliteral ? $label : $text[$label];
-    if ($sitever == "mobile") {
+    if (isMobile()) {
         $ddrow = "<li><a href=\"$link\" class=\"mobileicon\" id=\"$id\" title=\"$uselabel\">$uselabel</a></li>\n";
     } else {
         $ddrow = "<li><a href=\"$link\">";

@@ -93,7 +93,7 @@ $pagenav = get_browseitems_nav($totrows, "browsenotes.php?notesearch=$notesearch
 echo doNoteSearch(1, $pagenav);
 echo "<br>\n";
 
-if ($sitever != "standard") {
+if (isMobile()) {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }

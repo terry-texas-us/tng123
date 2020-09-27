@@ -1,27 +1,29 @@
 <?php
 
-global $sitever, $allow_admin;
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
+global $allow_admin;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 $flags['style'] = "<style>\n";
 $flags['style'] .= "body {background-image: url('{$templatepath}img/Bottom_texture.jpg'); background-repeat: repeat; background-attachment: fixed; background-position: top left;}\n";
-if ($sitever != "mobile") {
+if (!isMobile()) {
     $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t9_headimg']}'); background-repeat: no-repeat; width: 432px; height: 150px;}\n";
 }
 $flags['style'] .= "</style>\n";
 
+echo "<!doctype html>\n";
+echo "<html lang='en'>\n";
+
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-preHeaderVariants($headElement, $flags, $tngconfig['maint']);
-
-if ($sitever != "mobile") {
-    echo "<body id='bodytop' class='" . defaultTemplateClass() . "'>\n";
+if (isMobile()) {
+    mobileHeaderVariants($headElement, $flags);
+} else {
+    standardHeaderVariants($headElement, $flags);
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
-
+if ($tngconfig['maint']) {
+    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+}
 $dadlabel = getTemplateMessage('t9_dadside');
 $momlabel = getTemplateMessage('t9_momside');
 $title = getTemplateMessage('t9_maintitle');
@@ -109,7 +111,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                             <?php
                                             foreach ($mediatypes as $mediatype) {
                                                 if (!$mediatype['disabled']) {
-                                                    echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\"><span class=\"l\"></span><span class=\"r\"></span><span class=\"t\">{$mediatype['display']}</span></a></li>\n";
+                                                    echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'><span class='l'></span><span class='r'></span><span class='t'>{$mediatype['display']}</span></a></li>\n";
                                                 }
                                             }
                                             ?>
@@ -184,10 +186,10 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
 
                                             if ($numlangs > 1) {
                                                 echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                                echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                                echo "<select name='newlanguage3' id='newlanguage3' style='font-size:11px;' onchange='document.tngmenu3.submit();'>";
 
                                                 while ($row = tng_fetch_assoc($result)) {
-                                                    echo "<option value=\"{$row['languageID']}\"";
+                                                    echo "<option value='{$row['languageID']}'";
                                                     if ($languages_path . $row['folder'] == $mylanguage) {
                                                         echo " selected";
                                                     }
@@ -201,17 +203,17 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                         }
 
                                         if ($currentuser) {
-                                            echo "<p class='subhead'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href=\"logout.php\">{$text['mnulogout']}</a></p>\n";
+                                            echo "<p class='subhead'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href='logout.php'>{$text['mnulogout']}</a></p>\n";
                                         } else {
                                             $loginContent = "";
                                             if (!$tngconfig['showlogin']) {
-                                                $loginContent = "<a href=\"login.php\">{$text['mnulogon']}</a>";
+                                                $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
                                             }
                                             if (!$tngconfig['disallowreg']) {
                                                 if ($loginContent) {
                                                     $loginContent .= " | ";
                                                 }
-                                                $loginContent .= "<a href=\"newacctform.php\">{$text['mnuregister']}</a>";
+                                                $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
                                             }
                                             if ($loginContent) {
                                                 echo "<p class='subhead'>$loginContent</p>\n";
@@ -264,12 +266,11 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                         <div>
                                             <form name="searchform" action="search.php" method="get">
                                                 <label for="myfirstname"><?php echo $text['firstname']; ?></label>
-                                                <input type="search" value="" name="myfirstname" style="width: 95%;">
+                                                <input id="myfirstname" name="myfirstname" type="search" value="" style="width: 95%;">
                                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
-                                                <input type="search" value="" name="mylastname" style="width: 95%;">
+                                                <input id="mylastname" name="mylastname" type="search" value="" style="width: 95%;">
                                                 <input type="hidden" name="mybool" value="AND">
-                                                <input type="submit" style="margin-top:5px; margin-bottom:5px;"
-                                                    value="<?php echo $text['search']; ?>">
+                                                <input type="submit" style="margin-top: 5px; margin-bottom: 5px;" value="<?php echo $text['search']; ?>">
                                             </form>
                                             <ul class="home-menus">
                                                 <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>

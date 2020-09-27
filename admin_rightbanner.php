@@ -16,7 +16,7 @@ include "version.php";
 $home_url = $homepage;
 
 $helplang = findhelp("index_help.php");
-if ($sitever == "mobile") {
+if (isMobile()) {
     $tng_title = $tng_abbrev;
 }
 tng_adminheader($admtext['administration'],
@@ -89,14 +89,14 @@ echo "</head>\n";
                 <?php if ($allow_admin) { ?>
                     <a class="lightlink" href="adminshowlog.php" target="main"><?php echo $admtext['showlog']; ?></a>&nbsp;|&nbsp;
                 <?php } ?>
-                <?php if ($sitever != "mobile") { ?>
+                <?php if (!isMobile()) { ?>
                     <a class="lightlink" href="#"
-                       onclick="return openHelp('<?php echo $helplang; ?>/index_help.php');"><?php echo $admtext['getstart']; ?></a>&nbsp;|&nbsp;
+                        onclick="return openHelp('<?php echo $helplang; ?>/index_help.php');"><?php echo $admtext['getstart']; ?></a>&nbsp;|&nbsp;
                     <a class="lightlink" href="https://tng.lythgoes.net/wiki" target="_blank">TNG Wiki</a>&nbsp;|&nbsp;
                     <a class="lightlink" href="https://tng.community" target="_blank">TNG Forum</a>&nbsp;|&nbsp;
                 <?php } ?>
                 <a class="lightlink" href="logout.php?admin_login=1"
-                   target="_parent"><?php echo $admtext['logout'] . "&nbsp; (<strong>$currentuser</strong>)"; ?></a>
+                    target="_parent"><?php echo $admtext['logout'] . "&nbsp; (<strong>$currentuser</strong>)"; ?></a>
             </td>
         </tr>
     </table>
