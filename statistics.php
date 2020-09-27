@@ -347,7 +347,7 @@ tng_header($text['databasestatistics'], $flags);
         echo "</table>\n";
 
         echo "<br><br>\n";
-        $width = $sitever == "standard" ? "500px" : "100%";
+        $width = !isMobile() ? "500px" : "100%";
         echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\">\n";
         echo "<tr>";
         echo "<td class='fieldnameback fieldname align-top'><small>1</small></td>";

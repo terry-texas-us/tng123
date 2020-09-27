@@ -31,7 +31,7 @@ echo getFORM("", "GET", "searchsite", "", $onsubmit);
         </div>
 
         <?php
-        if ($sitever != "mobile") {
+        if (!isMobile()) {
             echo "<br><br>\n";
         }
         ?>

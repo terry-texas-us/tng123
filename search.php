@@ -367,7 +367,7 @@ echo "<html lang='en'>\n";
 tng_header($text['searchresults'], $flags);
 ?>
 <?php
-if ($sitever != "mobile") {
+if (!isMobile()) {
     ?>
     <script src="js/search.js"></script>
     <script>
@@ -430,7 +430,7 @@ echo $header;
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
         <th data-tablesaw-priority="1" class="fieldnameback nw"><span class="fieldname">&nbsp;<?php echo $namesort; ?>&nbsp;</span></th>
         <?php
-        if ($sitever != "mobile") {
+        if (!isMobile()) {
             ?>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $text['personid']; ?></b>&nbsp;</th>
             <?php if ($myprefix) { ?>
@@ -520,14 +520,14 @@ while ($row = tng_fetch_assoc($result)) {
     echo "<td class='databack'>$i</td>\n";
     $i++;
     echo "<td class='databack nw'>";
-    if ($sitever != "mobile") {
+    if (!isMobile()) {
         echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div></div>\n";
     }
     echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> ";
     echo "<a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$name</a>";
 
     echo "</td>";
-    if ($sitever != "mobile") {
+    if (!isMobile()) {
         echo "<td class='databack'>{$row['personID']} </td>";
     }
 
@@ -555,7 +555,7 @@ while ($row = tng_fetch_assoc($result)) {
         $spousestr = "";
     }
 
-    if ($sitever != "mobile") {
+    if (!isMobile()) {
         if ($myprefix) {
             echo "<td class='databack'>$prefix &nbsp;</td>";
         }

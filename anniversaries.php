@@ -51,7 +51,7 @@ $flags['style'] .= "</style>\n";
 
 tng_header($text['anniversaries'], $flags);
 
-if ($sitever != "mobile") {
+if (!isMobile()) {
     ?>
     <script src="js/search.js"></script>
     <script>
@@ -534,7 +534,7 @@ if ($tngneedresults) {
                         $name = getNameRev($row);
                         $personIDstr = $row['hpersonID'];
 
-                        if ($sitever != "mobile") {
+                        if (!isMobile()) {
                             $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
                         }
                         $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
@@ -565,7 +565,7 @@ if ($tngneedresults) {
                         if ($namestr) {
                             $namestr .= "<br>";
                         }
-                        if ($sitever != "mobile") {
+                        if (!isMobile()) {
                             $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
                         }
                         $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
@@ -578,7 +578,7 @@ if ($tngneedresults) {
                     $name = getNameRev($row);
                     $personIDstr = $row['personID'];
 
-                    if ($sitever != "mobile") {
+                    if (!isMobile()) {
                         $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
                     }
                     $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";

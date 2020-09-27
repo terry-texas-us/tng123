@@ -497,7 +497,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         <div id="childrenlist">
                             <?php
                             if ($children && $kidcount) {
-                                if ($sitever == "standard") {
+                                if (!isMobile()) {
                                     $hidecode = "class=\"smaller hide-right\"";
                                 } else {
                                     $hidecode = "class=\"smaller\" style=\"float:right\"";
@@ -509,7 +509,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
 
                                     if ($child['firstname'] || $child['lastname']) {
                                         echo "<div class=\"sortrow\" id=\"child_{$child['pID']}\" style=\"width:500px;clear:both\"";
-                                        if ($allow_delete && $sitever == "standard") {
+                                        if ($allow_delete && !isMobile()) {
                                             echo " onmouseover=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','hidden');\"";
                                         }
                                         echo ">\n";

@@ -15,7 +15,7 @@ $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $htt
 $isConnected = isConnected();
 
 function tng_adminheader($title, $flags) {
-    global $session_charset, $sitename, $templatepath, $text, $sitever, $tngdomain, $tngconfig, $isConnected;
+    global $session_charset, $sitename, $templatepath, $text, $tngdomain, $tngconfig, $isConnected;
 
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
@@ -105,7 +105,7 @@ function findhelp($helpfile) {
 }
 
 function doMenu($tabs, $currtab, $innermenu = 0) {
-    global $newbrowser, $sitever;
+    global $newbrowser;
 
     $tabctr = 0;
     $menu = "<div style=\"width:100%;\">\n";

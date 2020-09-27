@@ -294,7 +294,7 @@ echo "<html lang='en'>\n";
 tng_header($text['searchresults'], $flags);
 ?>
 <?php
-if ($sitever != "mobile") {
+if (!isMobile()) {
     ?>
     <script src="js/search.js"></script>
     <script>
@@ -415,7 +415,7 @@ while ($row = tng_fetch_assoc($result)) {
     $i++;
 
     echo "<td class='databack'>$famidstr";
-    if ($sitever != "mobile") {
+    if (!isMobile()) {
         echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div></div>\n";
     }
     echo "&nbsp;</td>";

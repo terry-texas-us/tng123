@@ -61,7 +61,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['showlogfile'], $flags);
 
-$min_width = $sitever == 'mobile' ? '0' : '640px';
+$min_width = isMobile() ? '0' : '640px';
 echo "
 <style type='text/css'>
 body {
@@ -101,7 +101,7 @@ $first_menu = TRUE;
 
 $clearmmlog = empty($_GET['clearmmlog']) ? false : true;
 
-if ($options['fix_header'] == YES && $sitever != 'mobile') {
+if ($options['fix_header'] == YES && !isMobile()) {
     $headclass = 'mmhead-fixed';
     $ibarclass = 'ibar-fixed';
     $mmlogclass = 'mmlog-fixed';
@@ -300,7 +300,7 @@ function set_innermenu_links($tng_version) {
  * JQUERY/JAVASCRIPT FUNCTIONS
  *************************************************************************/
 
-if ($sitever != 'mobile' && $options['adjust_headers']) {
+if (!isMobile() && $options['adjust_headers']) {
     echo "
 <script>
    jQuery(document).ready(function() {

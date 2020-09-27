@@ -445,7 +445,7 @@ function getMediaLinkText($mediaID, $ioffset) {
 
 function showMediaSource($imgrow, $ss = false) {
     global $text, $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
-    global $description, $medialinkID, $albumlinkID, $mediatypes_like, $sitever;
+    global $description, $medialinkID, $albumlinkID, $mediatypes_like;
 
     if (isMobile()) {
         $ss = false;
@@ -489,7 +489,7 @@ function showMediaSource($imgrow, $ss = false) {
                 $width = $size[0];
                 $height = $size[1];
                 if ($ss) {
-                    if ($sitever == "standard") {
+                    if (!isMobile()) {
                         $maxw = 860;
                         $maxh = 550;
                     } else {

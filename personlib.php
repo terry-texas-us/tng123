@@ -706,7 +706,7 @@ function showEvent($data) {
         if (!isset($sitever)) {
             $sitever = '';
         }
-        $doThumbs = isset($tngconfig['mediathumbs']) && $mediacount > 1 ? $sitever != "mobile" && $tngconfig['mediathumbs'] == "1" : false;
+        $doThumbs = isset($tngconfig['mediathumbs']) && $mediacount > 1 ? !isMobile() && $tngconfig['mediathumbs'] == "1" : false;
         foreach ($media_array as $item) {
             if ($doThumbs) {
                 $thumbdivs .= "<div class=\"inline-thumb\">{$item['imgsrc']}</div>";
@@ -1159,14 +1159,14 @@ function getMedia($entity, $linktype, $all = false) {
 }
 
 function writeMedia($media_array, $mediatypeID, $prefix = "") {
-    global $tableid, $cellnumber, $text, $datewidth, $mediatypes_display, $mediatypes_like, $tngconfig, $sitever, $num_collapsed;
+    global $tableid, $cellnumber, $text, $datewidth, $mediatypes_display, $mediatypes_like, $tngconfig, $num_collapsed;
 
     $mediatext = "";
 
     $media = isset($media_array['-x--general--x-'][$mediatypeID]) ? $media_array['-x--general--x-'][$mediatypeID] : "";
 
     $cellid = $tableid && !$cellnumber ? " id=\"$tableid" . "1\"" : "";
-    $doThumbs = isset($tngconfig['mediathumbs']) ? $sitever != "mobile" && $tngconfig['mediathumbs'] == "1" : false;
+    $doThumbs = isset($tngconfig['mediathumbs']) ? !isMobile() && $tngconfig['mediathumbs'] == "1" : false;
 
     if (is_array($media)) {
         $totalmedia = count($media);
@@ -1239,7 +1239,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                 }
                 $mediacount++;
             }
-            if (empty($tngconfig['ssdisabled']) && $mediacount >= 3 && $slidelink && $sitever != "mobile") {
+            if (empty($tngconfig['ssdisabled']) && $mediacount >= 3 && $slidelink && !isMobile()) {
                 $titlemsg .= "<div id=\"ssm{$prefix}{$mediatypeID}\"";
                 if ($hidemedia) {
                     $titlemsg .= " style=\"display:none;\"";

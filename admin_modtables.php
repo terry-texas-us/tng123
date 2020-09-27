@@ -92,7 +92,7 @@ $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
 // ADJUST WIDTH FOR MOBILE DEVICES
-$min_width = $sitever == 'mobile' ? '0' : '640px';
+$min_width = isMobile() ? '0' : '640px';
 echo "
 <style type='text/css'>
 body {
@@ -103,7 +103,7 @@ body {
 </style>";
 
 // ADJUST LISTING TO BOTTOM OF HEADER MENUS
-$headclass = $options['fix_header'] == YES && $sitever != 'mobile' ? 'mmhead-fixed' : 'mmhead-scroll';
+$headclass = $options['fix_header'] == YES && !isMobile() ? 'mmhead-fixed' : 'mmhead-scroll';
 echo "
 <script src=\"js/admin.js\"></script>
 </head>
@@ -171,9 +171,7 @@ echo "
 exit;
 
 function fix_header($options) {
-    global $sitever;
-
-    if ($sitever != 'mobile' && $options['adjust_headers']) {
+    if (!isMobile() && $options['adjust_headers']) {
         echo "
    <script>
       jQuery(document).ready(function() {
@@ -241,7 +239,7 @@ jQuery(document).ready(function() {
 ";
 
 
-if ($sitever != 'mobile' && $options['adjust_headers']) {
+if (!isMobile() && $options['adjust_headers']) {
     echo "
    window.scroll(0,0);
 

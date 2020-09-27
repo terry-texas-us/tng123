@@ -13,7 +13,7 @@ if (!$personID && !isset($needperson)) {
 // how many generations to show?
 $generations = intval($generations);
 if (!$generations) {
-    if ($sitever != "mobile") {
+    if (!isMobile()) {
         $generations = $fan_gen_default;
     } else {
         $generations = 3;

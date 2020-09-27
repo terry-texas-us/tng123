@@ -60,7 +60,7 @@ if ($currentuser) {
 }
 tng_free_result($result);
 ?>
-<?php if ($sitever != "mobile") { ?>
+<?php if (!isMobile()) { ?>
     <script src="js/search.js"></script>
     <script>
         // <![CDATA[
@@ -190,7 +190,7 @@ if (tng_num_rows($result)) {
             echo "<tr>\n";
             echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
             echo "<td class='databack'>\n";
-            if ($sitever != "mobile") {
+            if (!isMobile()) {
                 echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
                 echo "<div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
                 echo "</div>\n";
@@ -287,7 +287,7 @@ if (tng_num_rows($famresult)) {
             echo "<tr>\n";
             echo "<td class='databack'>\n";
             echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']}</a>\n";
-            if ($sitever != "mobile") {
+            if (!isMobile()) {
                 echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
                 echo "<div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
                 echo "</div>\n";

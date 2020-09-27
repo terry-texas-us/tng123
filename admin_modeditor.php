@@ -114,7 +114,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
-$min_width = $sitever == 'mobile' ? '0' : '640px';
+$min_width = isMobile() ? '0' : '640px';
 echo "
 <style type='text/css'>
 body {
@@ -124,7 +124,7 @@ body {
 }
 </style>";
 
-if ($options['fix_header'] == YES && $sitever != 'mobile') {
+if ($options['fix_header'] == YES && !isMobile()) {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
 } else {
@@ -161,7 +161,7 @@ if (!empty($action) && $action == EDITP) {
 /*************************************************************************
  * SHOW EDIT FORM
  *************************************************************************/
-if ($sitever != 'mobile' && $options['adjust_headers']) {
+if (!isMobile() && $options['adjust_headers']) {
     echo "
 <script>
    window.scroll(0,0);

@@ -101,7 +101,7 @@ function toggleAll(display) {
 }
 </script>";
 
-$min_width = $sitever == 'mobile' ? '0' : '640px';
+$min_width = isMobile() ? '0' : '640px';
 echo "
 <style type='text/css'>
 body {
@@ -126,7 +126,7 @@ if (!isset($message)) {
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
 
-if ($options['fix_header'] == YES && $sitever != 'mobile') {
+if ($options['fix_header'] == YES && !isMobile()) {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
 } else {
@@ -530,7 +530,7 @@ function set_innermenu_links($tng_version) {
  * JAVASCRIPT SUPPORT
  *************************************************************************/
 
-if ($sitever != 'mobile' && $options['adjust_headers']) {
+if (!isMobile() && $options['adjust_headers']) {
     echo "
 <script>
    jQuery(document).ready(function() {

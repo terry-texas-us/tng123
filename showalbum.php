@@ -431,7 +431,7 @@ if ($tnggallery) {
     }
 }
 
-if ($firsthref && $sitever != "mobile") {
+if ($firsthref && !isMobile()) {
     $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref&amp;ss=1\" class=\"snlink\">&raquo; {$text['slidestart']}</a>";
 }
 $toplinks .= "</p>";
