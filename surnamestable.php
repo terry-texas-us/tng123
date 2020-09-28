@@ -4,7 +4,7 @@
     <tr>
         <td class="sncol">
             <?php
-            $wherestr = $tree ? "WHERE gedcom = \"$tree\"" : "";
+            $wherestr = $tree ? "WHERE gedcom = '$tree'" : "";
             $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
             $more = getLivingPrivateRestrictions($people_table, false, false);

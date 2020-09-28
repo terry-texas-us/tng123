@@ -44,7 +44,6 @@ $helplang = findhelp("templateconfig_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytemplatesettings'], $flags);
 ?>
-<script src="js/admin.js"></script>
 <script src="js/mediautils.js"></script>
 <script src="js/selectutils.js"></script>
 <script>
@@ -119,16 +118,16 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
         });
     });
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
 $setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
 $setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
 $setuptabs[3] = [1, "#", $admtext['templateconfigsettings'], "template"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/templateconfig_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/templateconfig_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($setuptabs, "template", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['templateconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>
@@ -267,7 +266,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     }
                     $sections[$n] .= "> <label for=\"form_{$key}_text\">{$admtext['ttitletext']}</label> &nbsp;";
                 } else {
-                    $sections[$n] .= "<input type='text' class=\"longfield\" name=\"form_$key\" id=\"form_$key\" value=\"$value\">\n";
+                    $sections[$n] .= "<input type='text' class=\"longfield\" name=\"form_$key\" id=\"form_$key\" value='$value'>\n";
                     if (strpos($key, "img") !== false || strpos($key, "image") !== false || strpos($key, "thumb") !== false || strpos($key, "photol") !== false || strpos($key, "photor") !== false) {
                         $sections[$n] .= " <input type='button' onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"{$admtext['preview']}\"> <input type='button' onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"{$admtext['change']}\" >\n";
                         $size = @GetImageSize($rootpath . "templates/{$folders[$n]}/$value");
@@ -279,7 +278,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         $sections[$n] .= "<div id=\"div_$key\" style=\"display:none;\"></div>";
                     } elseif (substr($label, -6) == "person") {
                         $treefield = str_replace("person", "tree", $key);
-                        $sections[$n] .= "<a href=\"#\" onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
+                        $sections[$n] .= "<a href='#' onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
                         $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class=\"alignmiddle\" width='20' height='20' style=\"margin-left:2px; margin-bottom:4px;\">\n";
                         $sections[$n] .= "</a>\n";
                     }

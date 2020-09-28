@@ -86,19 +86,13 @@ $allow_user_change = true;
                                 } ?>:
                             </td>
                             <td>
-                                <?php
-                                if ($allow_user_change) {
-                                    ?>
+                                <?php if ($allow_user_change) { ?>
                                     <input name="username" type="text" value="<?php echo $row['username']; ?>" size="20" maxlength="100" onblur="checkNewUser(this,document.editprofile.orguser);">
                                     <span id="checkmsg" class="normal"></span>
-                                    <?php
-                                } else {
-                                    echo "<strong>" . $row['username'] . "</strong>\n";
-                                    ?>
+                                <?php } else { ?>
+                                    <?php echo "<strong>" . $row['username'] . "</strong>\n"; ?>
                                     <input type="hidden" name="username" value="<?php echo $row['username']; ?>">
-                                    <?php
-                                }
-                                ?>
+                                <?php } ?>
                             </td>
                         </tr>
                         <tr>

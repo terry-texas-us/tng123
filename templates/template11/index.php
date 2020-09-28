@@ -1,5 +1,6 @@
 <?php
 
+global $allow_admin;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 echo "<!doctype html>\n";
@@ -28,9 +29,7 @@ $title = getTemplateMessage('t11_maintitle');
                 <div class="art-nav-wrapper">
                     <div class="art-nav-inner">
                         <ul class="art-hmenu">
-                            <?php
-                            if ($dadlabel) {
-                                ?>
+                            <?php if ($dadlabel) { ?>
                                 <li>
                                     <a href="pedigree.php?personID=<?php echo $tmp['t11_dadperson']; ?>&amp;tree=<?php echo $tmp['t11_dadtree']; ?>"><span
                                             class="l"></span><span class="r"></span><span
@@ -215,23 +214,15 @@ $title = getTemplateMessage('t11_maintitle');
                                     <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
                                     <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
                                     <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
-                                    <?php
-                                    if (!$tngconfig['hidedna']) {
-                                        ?>
+                                    <?php if (!$tngconfig['hidedna']) { ?>
                                         <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
-                                        <?php
-                                    }
-                                    ?>
+                                    <?php } ?>
                                     <li><a href="statistics.php"><?php echo $text['mnustatistics']; ?></a></li>
                                     <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
-                                    <?php
-                                    if ($allow_admin) {
-                                        ?>
+                                    <?php if ($allow_admin) { ?>
                                         <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
                                         <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
-                                        <?php
-                                    }
-                                    ?>
+                                    <?php } ?>
                                 </ul>
                             </div>
                             <div class="cleared"></div>

@@ -10,10 +10,11 @@ include "checklogin.php";
 include "version.php";
 
 tng_adminheader($admtext['maintmode'], '');
-echo "</head>";
+
+echo "</head>\n";
+echo tng_adminlayout();
 ?>
 
-<body class="admin-body">
 <div class="lightback">
     <div style="padding:10px;" class="databack normal">
         <p class="plainheader"><?php echo $admtext['maintmode']; ?></p>

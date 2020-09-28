@@ -16,16 +16,14 @@ $helplang = findhelp("second_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['secondarymaint'], $flags);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
 $datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
 $datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/second_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/second_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "second", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarymaint'] . " &gt;&gt; " . $secaction, "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
@@ -40,8 +38,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             echo $admtext['families'] . ":<br>\n";
             $fcount = 0;
             if ($tree != "--all--") {
-                $wherestr = "WHERE $families_table.gedcom = \"$tree\"";
-                $wherestr2 = "AND $children_table.gedcom = \"$tree\"";
+                $wherestr = "WHERE $families_table.gedcom = '$tree'";
+                $wherestr2 = "AND $children_table.gedcom = '$tree'";
             }
             $query = "SELECT familyID, gedcom FROM $families_table $wherestr";
             $result = tng_query($query);
@@ -71,7 +69,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             echo $admtext['people'] . ":<br>\n";
             $fcount = 0;
             if ($tree != "--all--") {
-                $wherestr = " AND $families_table.gedcom = \"$tree\"";
+                $wherestr = " AND $families_table.gedcom = '$tree'";
             }
             //first do husbands
             $query = "SELECT personID, families.gedcom AS gedcom ";
@@ -143,7 +141,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                 $gendexout = "$rootpath$gendexfile/gendex.txt";
                 $gendexURL = "$tngdomain/$gendexfile/gendex.txt";
             } else {
-                $wherestr = "WHERE gedcom = \"$tree\"";
+                $wherestr = "WHERE gedcom = '$tree'";
                 $gendexout = $tree ? "$rootpath$gendexfile/$tree.txt" : "$rootpath$gendexfile/blanktree.txt";
                 $gendexURL = $tree ? "$tngdomain/$gendexfile/$tree.txt" : "$tngdomain/$gendexfile/blanktree.txt";
             }
@@ -201,13 +199,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
             $query = "UPDATE $children_table SET haskids = 0";
             if ($tree != "--all--") {
-                $query .= " WHERE gedcom = \"$tree\"";
+                $query .= " WHERE gedcom = '$tree'";
             }
             $result2 = tng_query($query);
 
             $fcount = 0;
             if ($tree != "--all--") {
-                $wherestr = "AND $families_table.gedcom = \"$tree\"";
+                $wherestr = "AND $families_table.gedcom = '$tree'";
             }
             $query = "SELECT distinct ($families_table.familyID), husband, wife, $families_table.gedcom AS gedcom FROM ($children_table, $families_table) WHERE $families_table.familyID = $children_table.familyID AND $families_table.gedcom = $children_table.gedcom $wherestr";
             $result = tng_query($query);
@@ -231,7 +229,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             $fcount = 0;
             echo "<p>" . $admtext['relabeling'] . "</p>";
             if ($tree != "--all--") {
-                $wherestr = "WHERE gedcom = \"$tree\"";
+                $wherestr = "WHERE gedcom = '$tree'";
             }
             $query = "SELECT branch, persfamID, gedcom FROM $branchlinks_table $wherestr";
             $result = tng_query($query);
@@ -316,7 +314,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             $changedToLiving = $changedToDeceased = $counted = 0;
 
             if ($tree != "--all--") {
-                $wherestr = "WHERE gedcom = \"$tree\"";
+                $wherestr = "WHERE gedcom = '$tree'";
             }
 
             $query = "SELECT ID, birthdate, birthdatetr, altbirthdatetr, deathdate, deathplace, deathdatetr, burialdate, burialplace, burialdatetr, living, personID, gedcom FROM $people_table $wherestr";
@@ -395,7 +393,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                 $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
 
                 if ($tree != "--all--") {
-                    $wherestr = "AND gedcom = \"$tree\"";
+                    $wherestr = "AND gedcom = '$tree'";
                 }
 
                 $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != '1' AND living != '1' $wherestr";

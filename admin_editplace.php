@@ -18,7 +18,7 @@ if (is_numeric($ID)) {
 } else {
     $wherestr = "place = \"$ID\"";
     if ($tree && !$tngconfig['places1tree']) {
-        $wherestr .= " AND gedcom = \"$tree\"";
+        $wherestr .= " AND gedcom = '$tree'";
     }
 }
 $query = "SELECT * FROM $places_table WHERE $wherestr";
@@ -34,7 +34,7 @@ if (!$tngconfig['places1tree']) {
         $treerow = getTree($trees_table, $row['gedcom']);
     } else {
         if ($assignedtree) {
-            $wherestr = "WHERE gedcom = \"$assignedtree\"";
+            $wherestr = "WHERE gedcom = '$assignedtree'";
         } else {
             $wherestr = "";
         }
@@ -52,7 +52,6 @@ if ($map['key'] && $isConnected) {
     echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 ?>
-<script src="js/admin.js"></script>
 <script>
     function validateForm() {
         let rval = true;
@@ -159,9 +158,9 @@ $placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
 $placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
 $placetabs[4] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID={$row['place']}&amp;tree=$tree&amp;linktype=L\" class=\"lightlink\">{$admtext['addmedia']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID={$row['place']}&amp;tree=$tree&amp;linktype=L\" class='lightlink'>{$admtext['addmedia']}</a>";
 $menu = doMenu($placetabs, "edit", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace'], "img/places_icon.gif", $menu, $message);
 ?>
@@ -175,10 +174,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     <tr>
                         <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
-                            <?php
-                            if (!$tngconfig['places1tree']) {
-                                if (!$row['gedcom']) {
-                                    ?>
+                            <?php if (!$tngconfig['places1tree']) { ?>
+                                <?php if (!$row['gedcom']) { ?>
                                     <select name="newtree">
                                         <option value=""></option>
                                         <?php
@@ -188,15 +185,11 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                         tng_free_result($treeresult);
                                         ?>
                                     </select>
-                                    <?php
-                                } else {
-                                    ?>
+                                <?php } else { ?>
                                     <?php echo $treerow['treename']; ?>
                                     <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
-                                    <?php
-                                }
-                            }
-                            ?>
+                                <?php } ?>
+                            <?php } ?>
                         </td>
                     </tr>
                     <tr>
@@ -209,7 +202,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     if (determineLDSRights()) {
                         echo "<tr>";
                         echo "<td>&nbsp;</td>";
-                        echo "<td><input type=\"checkbox\" name=\"temple\" value=\"1\"";
+                        echo "<td><input type=\"checkbox\" name=\"temple\" value='1'";
                         if ($row['temple']) {
                             echo " checked";
                         }
@@ -228,9 +221,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                 </div>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['latitude']; ?>:</td>
                         <td>
@@ -243,9 +234,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                             <input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox">
                         </td>
                     </tr>
-                    <?php
-                    if ($map['key']) {
-                        ?>
+                    <?php if ($map['key']) { ?>
                         <tr>
                             <td><?php echo $admtext['zoom']; ?>:</td>
                             <td>
@@ -304,9 +293,9 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                             }
                                             $location .= $cemrow['country'];
                                         }
-                                        $actionstr = $allow_delete ? "<a href=\"#\" onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "&nbsp;";
+                                        $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "&nbsp;";
                                         if ($allow_edit) {
-                                            $actionstr .= "<a href=\"#\" onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"></a>";
+                                            $actionstr .= "<a href='#' onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"></a>";
                                         }
                                         echo "<tr id=\"row_{$cemrow['cemeteryID']}\">";
                                         echo "<td class=\"nw\">$actionstr</td>";
@@ -320,24 +309,18 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                 <img src="img/earth.gif" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"> = <?php echo $admtext['geocopy']; ?>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                         <td><textarea cols="50" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
                     </tr>
-                    <?php
-                    if (!$assignedbranch) {
-                        ?>
+                    <?php if (!$assignedbranch) { ?>
                         <tr>
                             <td class="align-top" colspan="2">
                                 <input type="checkbox" name="propagate" value="1" checked> <?php echo $admtext['propagate']; ?>:
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td class="align-top" colspan="2">&nbsp;</td>
                     </tr>

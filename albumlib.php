@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @param $albumID
+ * @param $albumname
+ * @return string
+ */
 function getAlbumPhoto($albumID, $albumname) {
     global $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
     global $mediatypes_assoc, $mediapath, $tngconfig, $sitever, $livedefault, $tree;

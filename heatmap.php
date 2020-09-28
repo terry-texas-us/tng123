@@ -53,7 +53,7 @@ if ($psearch) {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE \"%$psearch%\" AND latitude != \"\" AND longitude != \"\"";
     $querystring = $text['text_for'] . " " . $text['place'] . " " . $text['contains'] . " " . $psearch;
     if ($tree && !$tngconfig['places1tree']) {
-        $query .= " AND gedcom = \"$tree\"";
+        $query .= " AND gedcom = '$tree'";
         $querystring .= " {$text['cap_and']} " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
     }
     $headline = $text['placelist'] . " | " . $text['heatmap'] . " | " . $psearch;
@@ -61,7 +61,7 @@ if ($psearch) {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE \"$firstchar%\" AND latitude != \"\" AND longitude != \"\"";
     $querystring = $text['text_for'] . " " . $text['place'] . " " . $text['startswith'] . " " . $firstchar;
     if ($tree && !$tngconfig['places1tree']) {
-        $query .= " AND gedcom = \"$tree\"";
+        $query .= " AND gedcom = '$tree'";
         $querystring .= " {$text['cap_and']} " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
     }
     $headline = $text['placelist'] . " | " . $text['heatmap'];
@@ -160,7 +160,7 @@ if ($psearch) {
         if ($allwhere) {
             $allwhere = "($allwhere) AND";
         }
-        $allwhere .= " p.gedcom=\"$tree\"";
+        $allwhere .= " p.gedcom = '$tree'";
 
         if ($branch) {
             $urlstring .= "&amp;branch=$branch";
@@ -212,7 +212,7 @@ if ($psearch) {
 } else {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE latitude != \"\" AND longitude != \"\"";
     if ($tree && !$tngconfig['places1tree']) {
-        $query .= " AND gedcom = \"$tree\"";
+        $query .= " AND gedcom = '$tree'";
         $querystring = $text['text_for'] . " " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
     }
     $headline = $text['placelist'] . " | " . $text['heatmap'];
@@ -353,9 +353,7 @@ foreach ($uniquePlaces as $place) {
 if ($markermap) {
     ?>
     <script src="js/markerclusterer.js"></script>
-    <?php
-}
-?>
+<?php } ?>
     <script>
         //<![CDATA[
         var maploaded = false;
@@ -364,57 +362,41 @@ if ($markermap) {
         var data = {
             "places": [<?php echo $markerOutput; ?>]
         }
-        <?php
-        if($markermap) {
-        ?>
-        var markerClusterer = null;
-        var infoWindow = new google.maps.InfoWindow();
-        var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
-        <?php
-        }
-        ?>
+        <?php if ($markermap) { ?>
+            var markerClusterer = null;
+            var infoWindow = new google.maps.InfoWindow();
+            var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
+        <?php } ?>
 
         function refreshMap() {
-            <?php
-            if($markermap) {
-            ?>
-            var markers = [];
-            var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
-            <?php
-            }
-            ?>
+            <?php if ($markermap) { ?>
+                var markers = [];
+                var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
+            <?php } ?>
 
             for (var i = 0; i < data.places.length; i++) {
                 var latLng = new google.maps.LatLng(data.places[i].latitude, data.places[i].longitude)
 
-                <?php
-                if($markermap) {
-                ?>
-                var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
-                var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
+                <?php if ($markermap) { ?>
+                    var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
+                    var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
 
-                var marker = new google.maps.Marker({
-                    'position': latLng
-                });
+                    var marker = new google.maps.Marker({
+                        'position': latLng
+                    });
 
-                var fn = markerClickFunction(data.places[i], latLng);
-                google.maps.event.addListener(marker, 'click', fn);
-                markers.push(marker);
-                <?php
-                }
-                ?>
+                    var fn = markerClickFunction(data.places[i], latLng);
+                    google.maps.event.addListener(marker, 'click', fn);
+                    markers.push(marker);
+                <?php } ?>
                 bounds.extend(latLng);
             }
 
-            <?php
-            if($markermap) {
-            ?>
-            markerClusterer = new MarkerClusterer(map, markers, {
-                imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
-            });
-            <?php
-            }
-            ?>
+            <?php if ($markermap) { ?>
+                markerClusterer = new MarkerClusterer(map, markers, {
+                    imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
+                });
+            <?php } ?>
 
             if (data.places.length > 1) {
                 google.maps.event.addListenerOnce(map, 'zoom_changed', function () {
@@ -433,46 +415,42 @@ if ($markermap) {
             }
         }
 
-        <?php
-        if($markermap) {
-        ?>
-        var markerClickFunction = function (place, latlng) {
-            return function (e) {
-                e.cancelBubble = true;
-                e.returnValue = false;
-                if (e.stopPropagation) {
-                    e.stopPropagation();
-                    e.preventDefault();
-                }
+        <?php if ($markermap) { ?>
+            var markerClickFunction = function (place, latlng) {
+                return function (e) {
+                    e.cancelBubble = true;
+                    e.returnValue = false;
+                    if (e.stopPropagation) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }
 
-                var people = "";
-                for (var i = 0; i < place.people.length; i++) {
-                    people += place.people[i].name;
-                    if (place.people[i].birthdate)
-                        people += " (" + place.people[i].birthdate + ")";
-                    people += "<br>";
-                }
-                var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
-                if (people != "")
-                    infoHtml += '<div class="info-body">' + people + '</div>';
-                if (place.notes != "")
-                    infoHtml += '<div class="info-body">' + place.notes + '</div>';
-                infoHtml += '</div>';
+                    var people = "";
+                    for (var i = 0; i < place.people.length; i++) {
+                        people += place.people[i].name;
+                        if (place.people[i].birthdate)
+                            people += " (" + place.people[i].birthdate + ")";
+                        people += "<br>";
+                    }
+                    var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
+                    if (people != "")
+                        infoHtml += '<div class="info-body">' + people + '</div>';
+                    if (place.notes != "")
+                        infoHtml += '<div class="info-body">' + place.notes + '</div>';
+                    infoHtml += '</div>';
 
-                infoWindow.setContent(infoHtml);
-                infoWindow.setPosition(latlng);
-                infoWindow.open(map);
+                    infoWindow.setContent(infoHtml);
+                    infoWindow.setPosition(latlng);
+                    infoWindow.open(map);
+                };
             };
-        };
 
-        function clearClusters(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            markerClusterer.clearMarkers();
-        }
-        <?php
-        }
-        ?>
+            function clearClusters(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                markerClusterer.clearMarkers();
+            }
+        <?php } ?>
 
         function ShowTheMap() {
             var myOptions = {
@@ -483,31 +461,23 @@ if ($markermap) {
             map = new google.maps.Map(document.getElementById('map'), myOptions);
             bounds = new google.maps.LatLngBounds();
 
-            <?php
-            if($heatmap) {
-            ?>
-            var heatMapData = [<?php echo $heatOutput; ?>];
+            <?php if ($heatmap) { ?>
+                var heatMapData = [<?php echo $heatOutput; ?>];
 
-            var heatmap = new google.maps.visualization.HeatmapLayer({
-                data: heatMapData
-            });
-            heatmap.setOptions({radius: heatmap.get('20')});
-            heatmap.setMap(map);
-            <?php
-            }
-            ?>
+                var heatmap = new google.maps.visualization.HeatmapLayer({
+                    data: heatMapData
+                });
+                heatmap.setOptions({radius: heatmap.get('20')});
+                heatmap.setMap(map);
+            <?php } ?>
 
-            <?php
-            if($markermap) {
-            ?>
-            var refresh = document.getElementById('refresh');
-            google.maps.event.addDomListener(refresh, 'click', refreshMap);
+            <?php if ($markermap) { ?>
+                var refresh = document.getElementById('refresh');
+                google.maps.event.addDomListener(refresh, 'click', refreshMap);
 
-            var clear = document.getElementById('clear');
-            google.maps.event.addDomListener(clear, 'click', clearClusters);
-            <?php
-            }
-            ?>
+                var clear = document.getElementById('clear');
+                google.maps.event.addDomListener(clear, 'click', clearClusters);
+            <?php } ?>
             refreshMap();
 
             maploaded = true;
@@ -524,18 +494,12 @@ if ($markermap) {
     </script>
 
     <div id="map" class="rounded10" style="width: 100%; height: 500px;"></div>
-<?php
-if ($markermap) {
-    ?>
-    <br>
-    <div id="inline-actions">
-        <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item">
-        <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
-    </div>
-    <?php
-}
-?>
+    <?php if ($markermap) { ?>
+        <br>
+        <div id="inline-actions">
+            <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item">
+            <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
+        </div>
+    <?php } ?>
 
-<?php
-tng_footer("");
-?>
+<?php tng_footer(""); ?>

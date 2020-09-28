@@ -234,10 +234,10 @@ if ($type == "child") {
     $rval .= "</td>\n";
     $rval .= "<td class='lightback normal childblock'>\n";
 
-    $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
+    $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
     $personlink = getName($row);
     if ($newperson != "ajax") {
-        $personlink = "<a href=\"#\" onclick=\"EditChild('$personID');\">$personlink</a>";
+        $personlink = "<a href='#' onclick=\"EditChild('$personID');\">$personlink</a>";
     }
     $rval .= "$personlink - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
     echo $rval;

@@ -14,7 +14,7 @@ if (!$allow_add) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $firsttree = $assignedtree;
 } else {
     $wherestr = "";
@@ -52,7 +52,7 @@ tng_adminheader($admtext['addnewrepo'], $flags);
 $repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
 $repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($repotabs, "addrepo", $innermenu);
 echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewrepo'], "img/repos_icon.gif", $menu, $message);
 ?>

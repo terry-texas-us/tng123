@@ -633,7 +633,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= "<td class='databack'>\n";
     $persontext .= "<div id=\"map\" class=\"rounded10\" style=\"width: {$map['indw']}; height: {$map['indh']};\">";
     if ($map['pstartoff']) {
-        $persontext .= "<a href=\"#\" onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">{$text['loadmap']}<br><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" ></div></a>";
+        $persontext .= "<a href='#' onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">{$text['loadmap']}<br><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" ></div></a>";
     }
     $persontext .= "</div>\n";
     $persontext .= "</td>\n";
@@ -794,26 +794,26 @@ if (!empty($media) || $notes || $citedispctr || $map['key']) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"{$showdnatest}return toggleCollapsed(0)\" class=\"lightlink\">{$text['expandall']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"{$hidednatest}return toggleCollapsed(1)\" class=\"lightlink\">{$text['collapseall']}</a> &nbsp;</div>" : "";
-    $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['persinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href='#' onclick=\"{$showdnatest}return toggleCollapsed(0)\" class='lightlink'>{$text['expandall']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"{$hidednatest}return toggleCollapsed(1)\" class='lightlink'>{$text['collapseall']}</a> &nbsp;</div>" : "";
+    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['persinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if (!empty($media)) {
-        $innermenu .= "<a href=\"#\" class=\"$tng_mlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class=\"$tng_mlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($citedispctr) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('citations');\" id=\"tng_clink\">{$text['sources']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('citations');\" id=\"tng_clink\">{$text['sources']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($map['key'] && $locations2map) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('eventmap');\" id=\"tng_glink\">{$text['gmapevent']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('eventmap');\" id=\"tng_glink\">{$text['gmapevent']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
 } else {
     $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">{$text['persinfo']}</span>\n";
 }
 if ($allowpdf) {
-    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ind&amp;personID=$personID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 

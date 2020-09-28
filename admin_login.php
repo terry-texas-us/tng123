@@ -84,16 +84,14 @@ if (!isset($_SESSION['logged_in']) && isset($_COOKIE[$loggedin]) && !empty($rese
     $message = $admtext['sessexp'];
 }
 tng_adminheader($admtext['login'], "");
-?>
-</head>
-
-<?php
 if (!empty($reset)) {
     $_COOKIE[$loggedin] = "";
 }
-?>
-<body class="admin-body">
 
+echo "</head>\n";
+echo tng_adminlayout();
+
+?>
 <table class="w-75 m-auto" cellpadding="10" bgcolor="#fff">
     <tr>
         <td class="fieldnameback rounded10">

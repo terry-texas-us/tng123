@@ -17,16 +17,15 @@ $helplang = findhelp("misc_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['misc'], $flags);
-?>
-</head>
-<body class="admin-body">
 
-<?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
 $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
 $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
 $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/misc_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/misc_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($misctabs, "misc", $innermenu);
 echo displayHeadline($admtext['misc'], "img/misc_icon.gif", $menu, $message);
 ?>

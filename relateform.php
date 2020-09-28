@@ -157,7 +157,7 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                                         echo " selected";
                                     }
                                     echo ">{$admtext['yes']}</option>\n";
-                                    echo "<option value=\"1\"";
+                                    echo "<option value='1'";
                                     if (!$dospouses) {
                                         echo " selected";
                                     }

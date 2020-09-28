@@ -55,7 +55,7 @@ if (!isset($wifestr)) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $firsttree = $assignedtree;
 } else {
     $wherestr = "";
@@ -105,7 +105,7 @@ include_once "eventlib_js.php";
     function EditSpouse(field) {
         var tree = getTree(document.form1.tree1);
         if (field.value.length)
-            deepOpen('admin_editperson.php?personID=' + field.value + '&tree=' + tree + '&cw=1', 'editspouse');
+            window.open('admin_editperson.php?personID=' + field.value + '&tree=' + tree + '&cw=1');
     }
 
     function RemoveSpouse(spouse, spousedisplay) {
@@ -159,7 +159,7 @@ include_once "eventlib_js.php";
         return false
     }
 </script>
-<script src="js/admin.js"></script>
+
 </head>
 
 <body class="admin-body" onload="generateID('family',document.form1.familyID,document.form1.tree1);">
@@ -168,8 +168,8 @@ include_once "eventlib_js.php";
 $familytabs[0] = [1, "admin_families.php", $admtext['search'], "findfamily"];
 $familytabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
 $familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/families_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/families_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($familytabs, "addfamily", $innermenu);
 echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamily'], "img/families_icon.gif", $menu, $message);
 ?>
@@ -231,7 +231,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                             $select .= ">{$admtext['nobranch']}</option>\n";
 
                             $select .= "$options</select>\n";
-                            echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                            echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                             ?>
                             <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                  onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -315,9 +315,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                             <td><?php echo $admtext['place']; ?></td>
                             <td colspan="4">&nbsp;</td>
                         </tr>
-                        <?php
-                        echo showEventRow('marrdate', 'marrplace', 'MARR', '');
-                        ?>
+                        <?php echo showEventRow('marrdate', 'marrplace', 'MARR', ''); ?>
                         <tr>
                             <td><?php echo $admtext['marriagetype']; ?>:</td>
                             <td colspan="6">

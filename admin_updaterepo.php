@@ -31,12 +31,12 @@ if ($addressID) {
     $query = "UPDATE $address_table SET address1=\"$address1\", address2=\"$address2\", city=\"$city\", state=\"$state\", zip=\"$zip\", country=\"$country\", phone=\"$phone\", email='$email', www=\"$www\" WHERE addressID = \"$addressID\"";
     $result = tng_query($query);
 } elseif ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
-    $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www)  VALUES(\"$address1\", \"$address2\", \"$city\", \"$state\", \"$zip\", \"$country\", \"$tree\", \"$phone\", '$email', \"$www\")";
+    $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www)  VALUES(\"$address1\", \"$address2\", \"$city\", \"$state\", \"$zip\", \"$country\", '$tree', \"$phone\", '$email', \"$www\")";
     $result = tng_query($query);
     $addressID = tng_insert_id();
 }
 
-$query = "UPDATE $repositories_table SET reponame=\"$reponame\",addressID=\"$addressID\",changedate=\"$newdate\",changedby=\"$currentuser\" WHERE repoID=\"$repoID\" AND gedcom = \"$tree\"";
+$query = "UPDATE $repositories_table SET reponame=\"$reponame\",addressID=\"$addressID\",changedate=\"$newdate\",changedby=\"$currentuser\" WHERE repoID=\"$repoID\" AND gedcom = '$tree'";
 $result = tng_query($query);
 
 adminwritelog("<a href=\"editrepo.php?repoID=$repoID&tree=$tree\">{$admtext['modifyrepo']}: $tree/$repoID</a>");

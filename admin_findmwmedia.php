@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";

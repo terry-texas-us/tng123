@@ -113,7 +113,6 @@ if (!isMobile()) {
 
 tng_adminheader($admtext['administration'], "");
 ?>
-<script src="js/admin.js"></script>
 <script>
 
     jQuery(document).ready(function () {
@@ -247,9 +246,7 @@ tng_adminheader($admtext['administration'], "");
                 </div>
             </td>
         </tr>
-        <?php
-    }
-    ?>
+    <?php } ?>
     <tr>
         <td class="admincol">
             <?php

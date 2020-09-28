@@ -56,9 +56,7 @@ $momlabel = getTemplateMessage('t10_momside');
                 <div class="art-nav-r"></div>
                 <div class="art-nav-outer">
                     <ul class="art-hmenu">
-                        <?php
-                        if ($dadlabel) {
-                            ?>
+                        <?php if ($dadlabel) { ?>
                             <li>
                                 <a href="pedigree.php?personID=<?php echo $tmp['t10_dadperson']; ?>&amp;tree=<?php echo $tmp['t10_dadtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $dadlabel; ?></span></a>
@@ -71,9 +69,7 @@ $momlabel = getTemplateMessage('t10_momside');
                                 <a href="pedigree.php?personID=<?php echo $tmp['t10_momperson']; ?>&amp;tree=<?php echo $tmp['t10_momtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $momlabel; ?></span></a>
                             </li>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <li>
                             <a href="suggest.php?page=<?php echo urlencode(str_replace("?", "", $title)); ?>"><span
                                     class="l"></span><span class="t"><?php echo $text['contactus']; ?></span></a>

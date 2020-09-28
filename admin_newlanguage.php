@@ -18,7 +18,6 @@ $helplang = findhelp("languages_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewlanguage'], $flags);
 ?>
-<script src="js/admin.js"></script>
 <script>
     function validateForm() {
         let rval = true;
@@ -32,14 +31,14 @@ tng_adminheader($admtext['addnewlanguage'], $flags);
         return rval;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $langtabs[0] = [1, "admin_languages.php", $admtext['search'], "findlang"];
 $langtabs[1] = [$allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/languages_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($langtabs, "addlanguage", $innermenu);
 echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['addnewlanguage'], "img/languages_icon.gif", $menu, $message);
 ?>

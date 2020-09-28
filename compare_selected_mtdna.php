@@ -29,13 +29,13 @@ tng_header($text['dnatestscompare_mtdna'], $flags);
 
 
 $comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
-$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target=\"_blank\" class=\"lightlink\">{$text['help']}</a>";
+$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target=\"_blank\" class='lightlink'>{$text['help']}</a>";
 // Y-DNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class=\"lightlink\">{$admtext['ydna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class='lightlink'>{$admtext['ydna_test']}</a>";
 // mtDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class=\"lightlink\">{$admtext['mtdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class='lightlink'>{$admtext['mtdna_test']}</a>";
 // atDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class=\"lightlink\">{$admtext['atdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class='lightlink'>{$admtext['atdna_test']}</a>";
 
 $menu = doMenu($comptabs, "", $innermenu);
 ?>
@@ -103,9 +103,7 @@ echo $header;
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
                 <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
-                <?php
-            }
-            ?>
+            <?php } ?>
             <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
             <th data-tablesaw-priority="3" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
             <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>

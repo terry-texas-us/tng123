@@ -72,7 +72,7 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -89,7 +89,7 @@ function addCriteria($field, $value, $operator) {
     $criteria = "";
 
     if ($operator == "=") {
-        $criteria = " OR $field $operator \"$value\"";
+        $criteria = " OR $field $operator '$value'";
     } else {
         $innercriteria = "";
         $terms = explode(' ', $value);
@@ -97,7 +97,7 @@ function addCriteria($field, $value, $operator) {
             if ($innercriteria) {
                 $innercriteria .= " AND ";
             }
-            $innercriteria .= "$field $operator \"%$term%\"";
+            $innercriteria .= "$field $operator '%$term%'";
         }
         if ($innercriteria) {
             $criteria = " OR ($innercriteria)";
@@ -108,12 +108,12 @@ function addCriteria($field, $value, $operator) {
 }
 
 if ($tree) {
-    $allwhere = "people.gedcom = \"$tree\" AND people.gedcom = trees.gedcom ";
+    $allwhere = "people.gedcom = '$tree' AND people.gedcom = trees.gedcom ";
 } else {
     $allwhere = "people.gedcom = trees.gedcom ";
 }
 if ($assignedbranch) {
-    $allwhere .= " AND people.branch LIKE \"%$assignedbranch%\"";
+    $allwhere .= " AND people.branch LIKE '%$assignedbranch%'";
 }
 
 if ($searchstring) {
@@ -129,10 +129,10 @@ if ($searchstring) {
     $allwhere .= ")";
 }
 if ($living == "yes") {
-    $allwhere .= " AND people.living = \"1\"";
+    $allwhere .= " AND people.living = '1'";
 }
 if ($private == "yes") {
-    $allwhere .= " AND people.private = \"1\"";
+    $allwhere .= " AND people.private = '1'";
 }
 
 if ($noparents) {
@@ -171,7 +171,7 @@ if ($nokids) {
 $query = "SET SQL_BIG_SELECTS=1";
 $result = tng_query($query);
 
-$query = "SELECT people.ID, people.personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, birthdate, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate,\"%d %b %Y\") AS changedate $nokidselect ";
+$query = "SELECT people.ID, people.personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, birthdate, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate,'%d %b %Y') AS changedate $nokidselect ";
 $query .= "FROM ($people_table people, $trees_table trees) $nokidjoin $noparentjoin $nospousejoin ";
 $query .= "WHERE $allwhere $nokidgroup $nokidhaving ";
 $query .= "ORDER BY lastname, lnprefix, firstname, birthyear, altbirthyear ";
@@ -224,17 +224,16 @@ tng_adminheader($admtext['people'], $flags);
         document.form1.nospouse.checked = false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $peopletabs['0'] = [1, "admin_people.php", $admtext['search'], "findperson"];
 $peopletabs['1'] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
 $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
 $peopletabs['3'] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "findperson", $innermenu);
 if (!isset($message)) {
     $message = '';
@@ -252,10 +251,8 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
-                                <?php
-                                include "treequery.php";
-                                ?>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <?php include "treequery.php"; ?>
+                                <input type="search" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -266,26 +263,26 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                             <td>&nbsp;
                             </td>
                             <td colspan="2">
-				<span class="normal">
-				<input type="checkbox" name="living" value="yes"<?php if ($living == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['livingonly']; ?>
-				<input type="checkbox" name="private" value="yes"<?php if ($private == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['privateonly']; ?>
-				<input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['exactmatch']; ?>
-				<input type="checkbox" name="nokids" value="yes"<?php if ($nokids == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['nokids']; ?>
-				<input type="checkbox" name="noparents" value="yes"<?php if ($noparents == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['noparents']; ?>
-				<input type="checkbox" name="nospouse" value="yes"<?php if ($nospouse == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['nospouse']; ?>
-				</span>
+                                <span class="normal">
+                                <input type="checkbox" name="living" value="yes"<?php if ($living == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['livingonly']; ?>
+                                <input type="checkbox" name="private" value="yes"<?php if ($private == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['privateonly']; ?>
+                                <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['exactmatch']; ?>
+                                <input type="checkbox" name="nokids" value="yes"<?php if ($nokids == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['nokids']; ?>
+                                <input type="checkbox" name="noparents" value="yes"<?php if ($noparents == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['noparents']; ?>
+                                <input type="checkbox" name="nospouse" value="yes"<?php if ($nospouse == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['nospouse']; ?>
+                                </span>
                             </td>
                         </tr>
                     </table>
@@ -302,22 +299,18 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_people.php?searchstring=$searchstring&amp;living=$living&amp;private=$private&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xperaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
-                    <table class="normal">
+                    <table class="normal w-100">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
                             <?php if ($allow_delete) { ?>
@@ -341,12 +334,12 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editperson.php?personID=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href='admin_editperson.php?personID=xxx&amp;tree=yyy' title='{$admtext['edit']}' class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('zzz');\" title='{$admtext['text_delete']}' class='smallicon admin-delete-icon'></a>";
                         }
-                        $actionstr .= "<a href=\"getperson.php?personID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href='getperson.php?personID=xxx&amp;tree=yyy' target='_blank' title='{$admtext['test']}' class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $rights = determineLivingPrivateRights($row);
@@ -369,13 +362,13 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                             $newactionstr = preg_replace("/zzz/", $row['ID'], $newactionstr);
                             $editlink = "admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}";
                             if ($allow_edit) {
-                                $id = "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['personID'] . "</a>";
+                                $id = "<a href='$editlink' title='{$admtext['edit']}'>" . $row['personID'] . "</a>";
                             } else {
                                 $id = $row['personID'];
                             }
-                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id='row_{$row['ID']}'><td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name='del{$row['ID']}' value='1'></td>";
                             }
                             echo "<td class='lightback'><span class='normal'>&nbsp;$id&nbsp;</span></td>\n";
                             echo "<td class='lightback'><span class='normal'>&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
@@ -393,7 +386,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -406,6 +399,6 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+<?php echo "<div style='text-align: center;'><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

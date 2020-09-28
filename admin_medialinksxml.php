@@ -29,7 +29,7 @@ function showAction($entityID, $num = null) {
         if ($gotit) {
             $lines .= "display:none";
         }
-        $lines .= "\"><a href=\"#\" onclick=\"return addMedia2EntityLink(findform, '" . urlencode($entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
+        $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . urlencode($entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
         $lines .= "<div id=\"linked_$id\" style=\"text-align:center;width:50px;";
         if (!$gotit) {
             $lines .= "display:none";
@@ -37,7 +37,7 @@ function showAction($entityID, $num = null) {
         $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
-        $lines .= "\"><a href=\"#\" onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
+        $lines .= "\"><a href='#' onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
     }
     $lines .= "</div>";
     $lines .= "</td>";
@@ -56,9 +56,9 @@ function doPeople($firstname, $lastname) {
     $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['deathdate'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
-    $allwhere = "gedcom = \"$tree\"";
+    $allwhere = "gedcom = '$tree'";
     if ($assignedbranch) {
-        $allwhere .= " AND branch LIKE \"%$assignedbranch%\"";
+        $allwhere .= " AND branch LIKE '%$assignedbranch%'";
     }
     if ($firstname) {
         $allwhere .= " AND firstname LIKE \"%$firstname%\"";
@@ -121,10 +121,10 @@ function doFamilies($husbname, $wifename) {
     $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['wifename'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
-    $allwhere = "families.gedcom = \"$tree\"";
+    $allwhere = "families.gedcom = '$tree'";
     $joinon = "";
     if ($assignedbranch) {
-        $allwhere .= " AND families.branch LIKE \"%$assignedbranch%\"";
+        $allwhere .= " AND families.branch LIKE '%$assignedbranch%'";
     }
 
     $allwhere2 = "";
@@ -135,7 +135,7 @@ function doFamilies($husbname, $wifename) {
             if ($allwhere2) {
                 $allwhere2 .= " AND ";
             }
-            $allwhere2 .= "CONCAT_WS(' ',wifepeople.firstname,TRIM(CONCAT_WS(' ',wifepeople.lnprefix,wifepeople.lastname))) LIKE \"%$term%\"";
+            $allwhere2 .= "CONCAT_WS(' ',wifepeople.firstname,TRIM(CONCAT_WS(' ',wifepeople.lnprefix,wifepeople.lastname))) LIKE '%$term%'";
         }
     }
 
@@ -145,7 +145,7 @@ function doFamilies($husbname, $wifename) {
             if ($allwhere2) {
                 $allwhere2 .= " AND ";
             }
-            $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE \"%$term%\"";
+            $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE '%$term%'";
         }
     }
     if ($allwhere2) {
@@ -246,7 +246,7 @@ function doPlaces($place) {
     $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['place'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
-    $allwhere = "gedcom = \"$tree\"";
+    $allwhere = "gedcom = '$tree'";
     if ($place) {
         $allwhere .= " AND place LIKE \"%$place%\"";
     }

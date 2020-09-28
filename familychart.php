@@ -498,7 +498,7 @@ function doheader($tree, $family) {
     $treerow = tng_fetch_assoc($treeResult);
     $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
     if ($allowpdf) {
-        $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+        $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
         $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
     }
 

@@ -63,7 +63,7 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -108,15 +108,14 @@ tng_adminheader($admtext['branches'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $branchtabs['0'] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
 $branchtabs['1'] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/branches_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($branchtabs, "findbranch", $innermenu);
 echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $message);
 ?>
@@ -172,17 +171,13 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xbranchaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <table class="normal">
                         <tr class="fieldnameback fieldname nw">
                             <th><?php echo $admtext['action']; ?></th>
@@ -205,7 +200,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         }
                         if ($allow_delete) {
                             if (!$assignedtree) {
-                                $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                             }
                         }
 

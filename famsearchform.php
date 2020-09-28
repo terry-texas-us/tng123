@@ -163,9 +163,7 @@ echo $formstr;
                         <?php echo treeSelect($result); ?>
                     </td>
                 </tr>
-                <?php
-            }
-            ?>
+            <?php } ?>
             <tr>
                 <td colspan="2"><strong><?php echo $text['fathername']; ?></strong></td>
             </tr>

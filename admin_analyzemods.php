@@ -185,16 +185,16 @@ function set_innermenu_links($tng_version) {
     $helplang = findhelp("modhandler_help.php");
 
     // inner menu help
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/modhandler_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/modhandler_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 
     // MM syntax
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class=\"lightlink\">{$admtext['modsyntax']}</a>";
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class='lightlink'>{$admtext['modsyntax']}</a>";
 
     // mod guidelines
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class=\"lightlink\">{$admtext['modguidelines']}</a>";
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class='lightlink'>{$admtext['modguidelines']}</a>";
 
     // mods for TNGv10
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class=\"lightlink\">$tngmodver</a>";
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class='lightlink'>$tngmodver</a>";
     return $innermenu;
 }
 
@@ -254,7 +254,7 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
     $contentstr = nl2br($contentstr);
     $sections = array_map('trim', explode("%target:", $contentstr));
     echo "<span class=\"mmfilenmfont\">$modfile</span>&nbsp;&nbsp;";
-    echo "<a href=\"#\" id=\"{$id}link\" onclick=\"return toggleSection('$id');\">{$admtext['show']}&nbsp;{$admtext['modifications']}</a><br>";
+    echo "<a href='#' id=\"{$id}link\" onclick=\"return toggleSection('$id');\">{$admtext['show']}&nbsp;{$admtext['modifications']}</a><br>";
     echo "<div id=\"{$id}div\" style=\"display:none;\"><br>";
     for ($i = 1; isset($sections[$i]); $i++) {
         $target_file = trim(preg_replace("#([^%]*)%.*#s", "\${1}", $sections[$i]));

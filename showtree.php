@@ -16,7 +16,7 @@ function showFact($text, $fact, $numflag = 0) {
 $query = "SELECT count(personID) AS pcount, trees.gedcom, treename, description, owner, secret, address, email, city, state, zip, country, phone ";
 $query .= "FROM $trees_table trees ";
 $query .= "LEFT JOIN $people_table people ON trees.gedcom = people.gedcom ";
-$query .= "WHERE trees.gedcom = \"$tree\" ";
+$query .= "WHERE trees.gedcom = '$tree' ";
 $query .= "GROUP BY trees.gedcom";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);

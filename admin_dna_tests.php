@@ -68,12 +68,12 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
-    $wherestr2 = " AND $dna_links_table.gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
+    $wherestr2 = " AND $dna_links_table.gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
     if ($tree) {
-        $wherestr2 = " AND $dna_links_table.gedcom = \"$tree\"";
+        $wherestr2 = " AND $dna_links_table.gedcom = '$tree'";
     }
 }
 $orgwherestr = $wherestr;
@@ -83,9 +83,9 @@ $originalstring = preg_replace("/\"/", "&#34;", $searchstring);
 $searchstring = addslashes($searchstring);
 $wherestr = $searchstring ? "(test_number LIKE \"%$searchstring%\" OR vendor LIKE \"%$searchstring%\" OR urls LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR dna_group LIKE \"%$searchstring%\" OR dna_group_desc LIKE \"%$searchstring%\" OR surnames LIKE \"%$searchstring%\" OR ydna_haplogroup LIKE \"%$searchstring%\" OR mtdna_haplogroup LIKE \"%$searchstring%\")" : "";
 if ($assignedtree) {
-    $wherestr .= $wherestr ? " AND (dna_tests.gedcom = \"$tree\" || dna_tests.gedcom = \"\")" : "(dna_tests.gedcom = \"$tree\" || dna_tests.gedcom = \"\")";
+    $wherestr .= $wherestr ? " AND (dna_tests.gedcom = '$tree' || dna_tests.gedcom = \"\")" : "(dna_tests.gedcom = '$tree' || dna_tests.gedcom = \"\")";
 } elseif ($tree) {
-    $wherestr .= $wherestr ? " AND dna_tests.gedcom = \"$tree\"" : "dna_tests.gedcom = \"$tree\"";
+    $wherestr .= $wherestr ? " AND dna_tests.gedcom = '$tree'" : "dna_tests.gedcom = '$tree'";
 }
 if ($test_type) {
     $wherestr .= $wherestr ? " AND test_type = \"$test_type\"" : "test_type = \"$test_type\"";
@@ -140,16 +140,15 @@ tng_adminheader($admtext['dna_tests'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $dnatabs[0] = [1, "admin_dna_tests.php", $admtext['search'], "findtest"];
 $dnatabs[1] = [$allow_add, "admin_new_dna_test.php", $admtext['addnew'], "addtest"];
 $dnatabs[2] = [$allow_add, "admin_dna_groups.php", $admtext['dna_groups'], "dnagroups"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/dna_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/dna_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($dnatabs, "findtest", $innermenu);
 echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message);
 ?>
@@ -240,24 +239,16 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselecteddna.php" method="post" name="form2">
-                    <?php
-                    if ($allow_media_delete || $allow_media_edit) {
-                        ?>
+                    <?php if ($allow_media_delete || $allow_media_edit) { ?>
                         <p class="nw">
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
-                            <?php
-                            if ($allow_delete) {
-                                ?>
+                            <?php if ($allow_delete) { ?>
                                 <input type="submit" name="xdnaaction" value="<?php echo $admtext['deleteselected']; ?>"
                                        onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">&nbsp;&nbsp;
-                                <?php
-                            }
-                            ?>
+                            <?php } ?>
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -283,7 +274,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                             $actionstr .= "<a href=\"admin_edit_dna_test.php?testID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"show_dna_test.php?testID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 

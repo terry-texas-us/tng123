@@ -7,7 +7,7 @@ $cemresult = tng_query($query);
 $numcems = $tngconfig['cemrows'] ? $tngconfig['cemrows'] : max(floor(tng_num_rows($cemresult) / 2), 10);
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$wherestr = ($tree) ? "AND $medialinks_table.gedcom = \"$tree\"" : "";
+$wherestr = ($tree) ? "AND $medialinks_table.gedcom = '$tree'" : "";
 
 $query = "SELECT $medialinks_table.personID AS personID FROM $medialinks_table, $media_table WHERE $media_table.mediaID = $medialinks_table.mediaID AND mediatypeID=\"headstones\" AND cemeteryID = \"\" $wherestr";
 $hsresult = tng_query($query);

@@ -89,10 +89,10 @@ function frmFiles() {
     <tr class="fieldnameback">
         <td align="left" width="60"><span class="fieldname"><b><?php echo $admtext['action']; ?></b></span></td>
         <td nowrap><span
-                class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'name') . "\" class=\"lightlink\">{$admtext['filename']} <img src=\"img/tng_sort_{$namedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
+                class="fieldname"><b><?php echo "<a href='#' onclick=\"return " . mfpGetUrl(0, 'name') . "\" class='lightlink'>{$admtext['filename']} <img src=\"img/tng_sort_{$namedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
         </td>
         <td align="center"><span
-                class="fieldname"><b><?php echo "<a href=\"#\" onclick=\"return " . mfpGetUrl(0, 'date') . "\" class=\"lightlink\">{$admtext['date']} <img src=\"img/tng_sort_{$datedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
+                class="fieldname"><b><?php echo "<a href='#' onclick=\"return " . mfpGetUrl(0, 'date') . "\" class='lightlink'>{$admtext['date']} <img src=\"img/tng_sort_{$datedir}.gif\" width=\"15\" height=\"8\" alt=\"\"></a>"; ?></b></span>
         </td>
         <td align="center"><span class="fieldname"><b><?php echo $admtext['size']; ?></b></span></td>
         <td align="center"><span class="fieldname"><b><?php echo $admtext['dimensions']; ?></b></span></td>
@@ -160,7 +160,7 @@ function frmFiles() {
                     echo "<td align=\"left\" class='lightback'><div class=\"action-btns\">\n";
                     echo "<a href=\"javascript:ReturnFile('$img$subdir" . addslashes($file) . "')\" title=\"{$admtext['select']}\" class=\"smallicon admin-edit-icon\"></a>";
                     if ($allow_delete) {
-                        echo "<a href=\"#\" onclick=\"return deleteIt('file','$nImageNr','$tngpath/$subdir" . addslashes($file) . "');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        echo "<a href='#' onclick=\"return deleteIt('file','$nImageNr','$tngpath/$subdir" . addslashes($file) . "');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                     }
                     echo "<a href=\"javascript:ShowFile('$tngpath/$subdir" . addslashes($file) . "')\" title=\"{$admtext['preview']}\" class=\"smallicon admin-test-icon\"></a>\n";
                     ?>
@@ -271,9 +271,6 @@ function lCountFiles() {
     return $nFileCount;
 } // function lCountFiles()
 
-?>
-
-<?php
 function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
     global $text;
 
@@ -320,7 +317,7 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
 
 function mfpLink($pagenum, $label, $active = false) {
     if (!$active) {
-        echo "<a href=\"#\" onclick=\"return " . mfpGetUrl($pagenum) . "\" class=\"snlink\">$label</a>\n";
+        echo "<a href='#' onclick=\"return " . mfpGetUrl($pagenum) . "\" class=\"snlink\">$label</a>\n";
     } else {
         echo "<span class=\"snlink snlinkact\">$label</span>\n";
     }

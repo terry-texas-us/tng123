@@ -19,7 +19,6 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
-<script src="js/admin.js"></script>
 <script src="js/mediautils.js"></script>
 <script>
     function toggleAll(display) {
@@ -28,19 +27,19 @@ tng_adminheader($admtext['sortmedia'], $flags);
         return false;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
 $mediatabs[3] = [$allow_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [$allow_media_add, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add && !$assignedtree, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#thumbs');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#thumbs');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($mediatabs, "thumbs", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], "img/photos_icon.gif", $menu, $message);
 ?>
@@ -70,9 +69,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
                     </div>
                 </td>
             </tr>
-            <?php
-        }
-        ?>
+        <?php } ?>
 
         <tr class="databack">
             <td class="tngshadow normal">
@@ -102,9 +99,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
                 </div>
             </td>
         </tr>
-        <?php
-    }
-    ?>
+    <?php } ?>
 </table>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 </body>

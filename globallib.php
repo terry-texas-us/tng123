@@ -404,7 +404,7 @@ function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {
         }
         if ($assignedtree) {
             //rights are limited to a tree or tree+branch
-            $atreestr = $assignedbranch ? " OR ({$table}gedcom = \"$assignedtree\" AND {$table}branch LIKE \"%$assignedbranch%\")" : " OR {$table}gedcom = \"$assignedtree\"";
+            $atreestr = $assignedbranch ? " OR ({$table}gedcom = '$assignedtree' AND {$table}branch LIKE '%$assignedbranch%')" : " OR {$table}gedcom = '$assignedtree'";
         }
         if (($livingNameRestrictions && $privateNameRestrictions) || ($allOtherInput && !$allLivingRights && !$allPrivateRights)) {
             if ($limitedLivingRights && $limitedPrivateRights) {

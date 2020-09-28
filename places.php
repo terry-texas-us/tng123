@@ -126,7 +126,7 @@ if ($result) {
         <?php
         echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
-            echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+            echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
         }
         echo "<input type='hidden' name=\"stretch\" value='1'>\n";
         echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
@@ -152,14 +152,10 @@ if ($result) {
                     ?>
                     <td class="aligntop">
                         <table class="normal table-histogram">
-                            <?php
-                            echo $linkstr2col[$i];
-                            ?>
+                            <?php echo $linkstr2col[$i]; ?>
                         </table>
                     </td>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </tr>
             <tr>
                 <td colspan="5">
@@ -169,7 +165,7 @@ if ($result) {
                     echo $text['showtop'];
                     echo " <input type='text' name=\"topnum\" value=\"100\" size=\"4\" maxlength=\"4\"> {$text['byoccurrence']}\n";
                     if ($tree && !$tngconfig['places1tree']) {
-                        echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+                        echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
                     }
                     echo "<input type='submit' value=\"{$text['go']}\"></form>\n";
                     ?>

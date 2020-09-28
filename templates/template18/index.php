@@ -161,9 +161,7 @@ $momlabel = getTemplateMessage('t18_momside');
                                 tng_free_result($result);
                                 ?>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
 
                         <div class="left-indent">
                             <h3 class="entry-title"><?php echo $text['contactus']; ?></h3>
@@ -185,9 +183,7 @@ $momlabel = getTemplateMessage('t18_momside');
                             if ($tl1) {
                                 ?>
                                 <p><a class="footer-link" href="<?php echo $tl1; ?>"><?php echo $text['more']; ?> ...</a></p>
-                                <?php
-                            }
-                            ?>
+                            <?php } ?>
                         </div>
                     </article>
                 </li>
@@ -206,9 +202,7 @@ $momlabel = getTemplateMessage('t18_momside');
                 if ($tl2) {
                     ?>
                     <p><a class="footer-link" href="<?php echo $tl2; ?>"><?php echo $text['more']; ?> ...</a></p>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </div>
         </div>
         <div style="clear:left;"></div>
@@ -239,22 +233,14 @@ $momlabel = getTemplateMessage('t18_momside');
                 <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
                 <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
                 <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
-                <?php
-                if (!$tngconfig['hidedna']) {
-                    ?>
+                <?php if (!$tngconfig['hidedna']) { ?>
                     <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
-                    <?php
-                }
-                ?>
+                <?php } ?>
                 <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
-                <?php
-                if ($allow_admin) {
-                    ?>
+                <?php if ($allow_admin) { ?>
                     <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
                     <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </ul>
         </div>
         <div style="clear:left;"></div>

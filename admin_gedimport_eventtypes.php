@@ -29,15 +29,14 @@ $helplang = findhelp("data_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
-echo "</head>";
-?>
 
-<body class="admin-body">
-<?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
 $datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
 $datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "import", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>

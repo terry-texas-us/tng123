@@ -47,7 +47,7 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -58,7 +58,7 @@ function addCriteria($field, $value, $operator) {
     $criteria = "";
 
     if ($operator == "=") {
-        $criteria = " OR $field $operator \"$value\"";
+        $criteria = " OR $field $operator '$value'";
     } else {
         $innercriteria = "";
         $terms = explode(' ', $value);
@@ -66,7 +66,7 @@ function addCriteria($field, $value, $operator) {
             if ($innercriteria) {
                 $innercriteria .= " AND ";
             }
-            $innercriteria .= "$field $operator \"%$term%\"";
+            $innercriteria .= "$field $operator '%$term%'";
         }
         if ($innercriteria) {
             $criteria = " OR ($innercriteria)";
@@ -76,7 +76,7 @@ function addCriteria($field, $value, $operator) {
     return $criteria;
 }
 if ($tree) {
-    $allwhere = "$repositories_table.gedcom = \"$tree\" AND $repositories_table.gedcom = $trees_table.gedcom";
+    $allwhere = "$repositories_table.gedcom = '$tree' AND $repositories_table.gedcom = $trees_table.gedcom";
 } else {
     $allwhere = "$repositories_table.gedcom = $trees_table.gedcom";
 }
@@ -120,16 +120,15 @@ tng_adminheader($admtext['repositories'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
 $repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($repotabs, "findrepo", $innermenu);
 echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $message);
 ?>
@@ -144,9 +143,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
-                                <?php
-                                include "treequery.php";
-                                ?>
+                                <?php include "treequery.php"; ?>
                                 <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                             </td>
                             <td>
@@ -182,17 +179,13 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xrepoaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -213,7 +206,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                             $actionstr .= "<a href=\"admin_editrepo.php?repoID=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"showrepo.php?repoID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 

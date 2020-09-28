@@ -16,7 +16,7 @@ if ($numtrees > 1) {
     }
     echo "</select>\n";
 } else {
-    echo "<input type='hidden' name=\"tree\" value=\"$assignedtree\">\n";
+    echo "<input type='hidden' name=\"tree\" value='$assignedtree'>\n";
 }
 tng_free_result($treeresult);
 

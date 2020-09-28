@@ -23,19 +23,17 @@ $green = "<img src='img/tng_check.gif'>";
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['diagnostics'], $flags);
+
 echo "</head>\n";
+echo tng_adminlayout();
+
+$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
+$innermenu = "<a href='#' class='lightlink'>{$admtext['help']} onclick='return openHelp(\"$helplang/setup_help.php#diagnostics\");'</a>";
+$menu = doMenu($setuptabs, "diagnostics", $innermenu);
+echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'], "img/setup_icon.gif", $menu, "");
 ?>
-
-    <body class="admin-body">
-
-    <?php
-    $setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
-    $setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
-    $setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
-    $innermenu = "<a href='#' class='lightlink'>{$admtext['help']} onclick='return openHelp(\"$helplang/setup_help.php#diagnostics\");'</a>";
-    $menu = doMenu($setuptabs, "diagnostics", $innermenu);
-    echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'], "img/setup_icon.gif", $menu, "");
-    ?>
 
     <table class="lightback normal w-100" cellpadding="10" cellspacing="2">
         <tr>

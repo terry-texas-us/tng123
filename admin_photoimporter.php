@@ -37,7 +37,7 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
                     $form = strtoupper($fileparts["extension"]);
                     $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
                     $query = "INSERT IGNORE INTO $media_table (mediatypeID,mediakey,gedcom,path,thumbpath,description,notes,width,height,datetaken,placetaken,owner,changedate,form,alwayson,map,abspath,status,cemeteryID,showmap,linktocem,latitude,longitude,zoom,bodytext,usenl,newwindow,usecollfolder)
-						VALUES (\"$mediatypeID\",\"$path/$filename\",\"$tree\",\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",\"0\",\"\",\"0\",\"\",\"\",\"0\",\"0\",\"\",\"\",\"0\",\"\",\"0\",\"0\",'1')";
+						VALUES (\"$mediatypeID\",\"$path/$filename\",'$tree',\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",\"0\",\"\",\"0\",\"\",\"\",\"0\",\"0\",\"\",\"\",\"0\",\"\",\"0\",\"0\",'1')";
                     $result = @tng_query($query);
                     $success = tng_affected_rows();
 
@@ -70,19 +70,17 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader(_todo_('Photo Import'), $flags);
 
 $tngpath = $mediatypes_assoc[$mediatypeID];
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
 $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [!$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [!$assignedtree, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "import", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img/photos_icon.gif", $menu, $message);
 ?>

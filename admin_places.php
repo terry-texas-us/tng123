@@ -62,7 +62,7 @@ if ($offset) {
 
 if ($assignedtree && !$tngconfig['places1tree']) {
     $tree = $assignedtree;
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
 }
@@ -70,14 +70,14 @@ if ($assignedtree && !$tngconfig['places1tree']) {
 function addCriteria($field, $value, $operator) {
 
     if ($operator == "=") {
-        $criteria = " OR $field $operator \"$value\"";
+        $criteria = " OR $field $operator '$value'";
     } else {
         $criteria = " OR $field $operator \"%$value%\"";
     }
     return $criteria;
 }
 if ($tree) {
-    $allwhere = "$places_table.gedcom = \"$tree\"";
+    $allwhere = "$places_table.gedcom = '$tree'";
 } else {
     $allwhere = "1 = 1";
 }
@@ -201,17 +201,16 @@ tng_adminheader($admtext['places'], $flags);
         document.form1.temples.checked = false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
 $placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php?place=$searchstring&amp;place2=$place2", $admtext['merge'], "merge"];
 $placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($placetabs, "findplace", $innermenu);
 echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message);
 ?>
@@ -281,17 +280,13 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xplacaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -321,7 +316,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                             $actionstr .= "<a href=\"admin_editplace.php?ID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"placesearch.php?psearch=zzz";
                         if (!$tngconfig['places1tree']) {

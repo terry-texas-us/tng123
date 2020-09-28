@@ -148,7 +148,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="fbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                      onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">
@@ -179,9 +179,7 @@ include_once "eventlib.php";
                             <td><?php echo $admtext['place']; ?></td>
                             <td colspan="4">&nbsp;</td>
                         </tr>
-                        <?php
-                        echo showEventRow('marrdate', 'marrplace', 'MARR', '');
-                        ?>
+                        <?php echo showEventRow('marrdate', 'marrplace', 'MARR', ''); ?>
                         <tr>
                             <td><?php echo $admtext['marriagetype']; ?>:</td>
                             <td colspan="6">

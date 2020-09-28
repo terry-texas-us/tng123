@@ -126,8 +126,8 @@ if ($rrow['sqlselect']) {
     $query = str_replace(";", "", $rrow['sqlselect']);
 } else {
     if ($tree) {
-        $peopletreestr = "$people_table.gedcom = \"$tree\"";
-        $childrentreestr = "$children_table.gedcom = \"$tree\"";
+        $peopletreestr = "$people_table.gedcom = '$tree'";
+        $childrentreestr = "$children_table.gedcom = '$tree'";
     } else {
         $peopletreestr = "";
         $childrentreestr = "";

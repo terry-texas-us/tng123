@@ -220,7 +220,7 @@ if (!$personID && !$familyID) {             // only feed the changes when not mo
 $cutoffstr .= " AND";
 
 if ($tree) {
-    $allwhere = "AND people.gedcom = \"$tree\"";
+    $allwhere = "AND people.gedcom = '$tree'";
 } else {
     $allwhere = "";
 }

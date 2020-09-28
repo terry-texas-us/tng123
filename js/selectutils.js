@@ -112,15 +112,15 @@ function getActionButtons(vars, type, notesflag, citesflag) {
     var onstr = type == "Citation" ? "-on" : "-off";
 
     if (vars.allow_edit)
-        celltext += "<a href=\"#\" onclick=\"return edit" + type + "('" + vars.id + "');\" title=\"" + editmsg + "\" class=\"smallicon admin-edit-icon\"></a>";
+        celltext += "<a href='#' onclick=\"return edit" + type + "('" + vars.id + "');\" title=\"" + editmsg + "\" class=\"smallicon admin-edit-icon\"></a>";
     if (vars.allow_delete)
-        celltext += "<a href=\"#\" onclick=\"return delete" + type + "('" + vars.id + "','" + vars.persfamID + "','" + vars.tree + "','" + vars.eventID + "');\" title=\"" + delmsg + "\" class=\"smallicon admin-delete-icon\"></a>";
+        celltext += "<a href='#' onclick=\"return delete" + type + "('" + vars.id + "','" + vars.persfamID + "','" + vars.tree + "','" + vars.eventID + "');\" title=\"" + delmsg + "\" class=\"smallicon admin-delete-icon\"></a>";
     if (vars.allow_cite)
-        celltext += "<a href=\"#\" onclick=\"return showCitationsInside('N" + vars.id + "','','" + vars.persfamID + "');\" title=\"" + citemsg + "\" id=\"citesiconN" + vars.id + "\" class=\"smallicon admin-cite" + onstr + "-icon\"></a>";
+        celltext += "<a href='#' onclick=\"return showCitationsInside('N" + vars.id + "','','" + vars.persfamID + "');\" title=\"" + citemsg + "\" id=\"citesiconN" + vars.id + "\" class=\"smallicon admin-cite" + onstr + "-icon\"></a>";
     if (notesflag)
-        celltext += "<a href=\"#\" onclick=\"return showNotes('" + vars.id + "','" + vars.persfamID + "');\" title=\"" + notemsg + "\" id=\"notesicon" + vars.id + "\" class=\"smallicon admin-note-off-icon\"></a>";
+        celltext += "<a href='#' onclick=\"return showNotes('" + vars.id + "','" + vars.persfamID + "');\" title=\"" + notemsg + "\" id=\"notesicon" + vars.id + "\" class=\"smallicon admin-note-off-icon\"></a>";
     if (citesflag)
-        celltext += "<a href=\"#\" onclick=\"return showCitations('" + vars.id + "','" + vars.persfamID + "');\" title=\"" + citemsg + "\" id=\"citesicon" + vars.id + "\" class=\"smallicon admin-cite-off-icon\"></a>";
+        celltext += "<a href='#' onclick=\"return showCitations('" + vars.id + "','" + vars.persfamID + "');\" title=\"" + citemsg + "\" id=\"citesicon" + vars.id + "\" class=\"smallicon admin-cite-off-icon\"></a>";
 
     return celltext;
 }

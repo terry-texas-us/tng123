@@ -57,17 +57,13 @@ tng_header($text['regnewacct'], $flags);
                 alert("<?php echo $text['emailsmatch']; ?>");
                 rval = false;
             }
-            <?php
-            if($tngconfig['askconsent']) {
-            ?>
+            <?php if ($tngconfig['askconsent']) { ?>
         else
             if (!form.tng_user_consent.checked) {
                 alert("<?php echo $text['consentreq']; ?>");
                 return false;
             }
-            <?php
-            }
-            ?>
+            <?php } ?>
             return rval;
         }
     </script>
@@ -191,9 +187,7 @@ if (!$tngconfig['disallowreg']) {
                     </tr>
                 </table>
                 <p class="normal">
-                    <?php
-                    if ($tngconfig['askconsent']) {
-                        ?>
+                    <?php if ($tngconfig['askconsent']) { ?>
                         <input type="checkbox" name="tng_user_consent" value="1">
                         <?php
                         echo $text['consent'];

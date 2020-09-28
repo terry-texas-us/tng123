@@ -14,9 +14,7 @@
                         if ($tl1) {
                             ?>
                             <p><a class="footer-link" href="<?php echo $tl1; ?>"><?php echo $text['more']; ?> ...</a></p>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                     </div>
                 </div>
             </section>
@@ -32,9 +30,7 @@
                         if ($tl2) {
                             ?>
                             <p><a class="footer-link" href="<?php echo $tl2; ?>"><?php echo $text['more']; ?> ...</a></p>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                     </div>
                 </div>
             </section>

@@ -194,8 +194,8 @@ if (tng_num_rows($hsresult)) {
 tng_free_result($hsresult);
 
 if ($tree) {
-    $wherestr = " AND (media.gedcom = \"$tree\" || media.gedcom = \"\")";
-    $wherestr2 = " AND medialinks.gedcom = \"$tree\"";
+    $wherestr = " AND (media.gedcom = '$tree' || media.gedcom = \"\")";
+    $wherestr2 = " AND medialinks.gedcom = '$tree'";
 } else {
     $wherestr = $wherestr2 = "";
 }
@@ -214,7 +214,7 @@ if ($numrows) {
     $body .= "<h3 class='subhead'>{$text['headstone']}</h3>\n";
 
     if ($numrows == $maxsearchresults || $offsetplus > 1) {
-        $query = "SELECT count(DISTINCT $media_table.mediaID) AS hscount FROM $media_table LEFT JOIN $medialinks_table ON $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != \"1\"";
+        $query = "SELECT count(DISTINCT $media_table.mediaID) AS hscount FROM $media_table LEFT JOIN $medialinks_table ON $media_table.mediaID = $medialinks_table.mediaID WHERE cemeteryID = \"$cemeteryID\"$typeclause $wherestr AND linktocem != '1'";
         $result2 = tng_query($query);
         $row = tng_fetch_assoc($result2);
         $totrows = $row['hscount'];
@@ -369,7 +369,7 @@ if ($numrows) {
 tng_free_result($hsresult);
 
 if ($cemetery['place']) {
-    $treestr = $tree ? "and $people_table.gedcom = \"$tree\"" : "";
+    $treestr = $tree ? "and $people_table.gedcom = '$tree'" : "";
     $query = "SELECT * FROM ($people_table, $trees_table) WHERE burialplace = \"" . addslashes($cemetery['place']) . "\" and $people_table.gedcom = $trees_table.gedcom $treestr ORDER BY lastname, firstname";
     $result = tng_query($query);
     if (tng_num_rows($result)) {

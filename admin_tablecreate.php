@@ -28,16 +28,14 @@ if (!$badtables) {
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['tablecreation'], $flags);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
 $setuptabs[1] = [1, "admin_setup.php?sub=diagnostics", $admtext['diagnostics'], "diagnostics"];
 $setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/setup_help.php#tables');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/setup_help.php#tables');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($setuptabs, "tablecreation", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['tablecreation'], "img/setup_icon.gif", $menu, $message);
 ?>

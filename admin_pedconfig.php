@@ -36,18 +36,17 @@ tng_adminheader($admtext['modifypedsettings'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
 $setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
 $setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
 $setuptabs[3] = [1, "#", $admtext['pedconfigsettings'], "ped"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/pedconfig_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/pedconfig_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($setuptabs, "ped", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['pedconfigsettings'], "img/setup_icon.gif", $menu, "");
 

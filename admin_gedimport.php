@@ -113,26 +113,21 @@ function getAlbumLinksToSave() {
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 if (!empty($old)) {
     $datatabs['0'] = [1, "admin_dataimport.php", $admtext['import'], "import"];
     $datatabs['1'] = [$allow_export, "admin_export.php", $admtext['export'], "export"];
     $datatabs['2'] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>{$admtext['help']}</a>";
     $menu = doMenu($datatabs, "import", $innermenu);
     echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, $message);
 
     echo "<div class='lightback' style=\"padding:2px;\">\n";
     echo "<div class='databack normal' style=\"padding:5px;\">\n";
 }
-?>
-
-<?php
 $stdevents = ["BIRT", "SEX", "DEAT", "BURI", "MARR", "SLGS", "SLGC", "NICK", "NSFX", "TITL", "BAPL", "CONL", "INIT", "ENDL", "CHAN", "CALN", "AUTH", "PUBL", "ABBR", "TEXT"];
 $pciteevents = ["NAME", "BIRT", "CHR", "DEAT", "BURI", "BAPL", "CONL", "INIT", "ENDL", "SLGC"];
 $fciteevents = ["MARR", "DIV", "SLGS"];
@@ -218,7 +213,7 @@ if (isset($remotefile) && $remotefile && $remotefile != "none") {
 $allcount = 0;
 if ($savestate['filename']) {
     $tree = $tree1; //selected
-    $query = "UPDATE $trees_table SET lastimportdate=\"$today\", importfilename=\"$savegedfilename\" WHERE gedcom=\"$tree\"";
+    $query = "UPDATE $trees_table SET lastimportdate=\"$today\", importfilename=\"$savegedfilename\" WHERE gedcom = '$tree'";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
     if ($del == "append") {
@@ -271,7 +266,7 @@ if ($savestate['filename']) {
         $result = @tng_query($query);
 
         $sql = "INSERT INTO $saveimport_table (filename, icount, ioffset, fcount, foffset, scount, soffset, mcount, pcount, ncount, noffset, roffset, offset, delvar, ucaselast, norecalc, neweronly, allevents, media, gedcom, branch)  
-			VALUES(\"{$savestate['filename']}\", 0, \"{$savestate['ioffset']}\", 0, \"{$savestate['foffset']}\", 0, \"{$savestate['soffset']}\", 0, 0, 0, \"{$savestate['noffset']}\", \"{$savestate['roffset']}\", 0, \"$del\", {$savestate['ucaselast']}, {$savestate['norecalc']}, {$savestate['neweronly']}, {$savestate['allevents']}, $mll, \"$tree\", \"{$savestate['branch']}\")";
+			VALUES(\"{$savestate['filename']}\", 0, \"{$savestate['ioffset']}\", 0, \"{$savestate['foffset']}\", 0, \"{$savestate['soffset']}\", 0, 0, 0, \"{$savestate['noffset']}\", \"{$savestate['roffset']}\", 0, \"$del\", {$savestate['ucaselast']}, {$savestate['norecalc']}, {$savestate['neweronly']}, {$savestate['allevents']}, $mll, '$tree', \"{$savestate['branch']}\")";
         $result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $sql");
     }
 } elseif ($saveimport && !$openmsg) {

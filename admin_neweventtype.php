@@ -67,15 +67,14 @@ tng_adminheader($admtext['addnewevtype'], $flags);
     }
     ?>
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $evtabs[0] = [1, "admin_eventtypes.php", $admtext['search'], "findevent"];
 $evtabs[1] = [$allow_add, "admin_neweventtype.php", $admtext['addnew'], "addevent"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/eventtypes_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/eventtypes_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($evtabs, "addevent", $innermenu);
 echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['addnewevtype'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>

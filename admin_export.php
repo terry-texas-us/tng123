@@ -26,7 +26,7 @@ if (!$allow_ged && $assignedtree) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
 }
@@ -52,15 +52,15 @@ tng_adminheader($admtext['gedexport'], $flags);
             jQuery('#exprows').slideUp(400);
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
 $datatabs[1] = [$allow_ged, "admin_export.php", $admtext['export'], "export"];
 $datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php#export');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php#export');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "export", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
 ?>
@@ -161,7 +161,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             echo "<tr>";
                             echo "<td><input type=\"checkbox\" name=\"incl_$msgID\" value='1' checked></td>\n";
                             echo "<td>" . $mediatype['display'] . ":</td>\n";
-                            echo "<td><input type='text' value=\"$value\" name=\"exp_path_$msgID\" class=\"verylongfield\"></td>";
+                            echo "<td><input type='text' value='$value' name=\"exp_path_$msgID\" class=\"verylongfield\"></td>";
                             echo "</tr>\n";
                         }
                         ?>

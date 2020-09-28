@@ -4,7 +4,7 @@ $debug = $_GET['debug'] ?? false;  //get URL debug parameter
 //search for dna tests, if any found do the following
 $query = "SELECT $dna_tests_table.testID, $dna_tests_table.personID AS tpersonID, $dna_tests_table.gedcom AS tgedcom, test_type, test_number, test_date, match_date, markers, mtdna_haplogroup, ydna_haplogroup, hvr1_results, hvr2_results, y_results, person_name, mtdna_confirmed, ydna_confirmed, notes, markeropt, notesopt, linksopt, surnamesopt, private_dna,urls, surnames, MD_ancestorID, MRC_ancestorID, admin_notes, medialinks, ref_seq, xtra_mut, coding_reg, shared_cMs, shared_segments, chromosome, segment_start, segment_end, centiMorgans, matching_SNPs, x_match, relationship_range, suggested_relationship, actual_relationship, related_side, GEDmatchID, private_test 
 			FROM $dna_tests_table, $dna_links_table
-			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID
+			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = '$tree' AND $dna_links_table.testID = $dna_tests_table.testID
 			ORDER BY match_date DESC, test_type ASC, markers * 1 ASC,  test_number * 1 ASC";
 $dna_results = tng_query($query);
 $num_tests = tng_num_rows($dna_results);
@@ -16,7 +16,7 @@ if ($debug) {
 // following query added to check if this is a Private Test
 $pquery = "SELECT $dna_tests_table.testID, $dna_tests_table.personID AS tpersonID, $dna_tests_table.gedcom AS tgedcom,private_test
 			FROM $dna_tests_table, $dna_links_table
-			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.private_test = '1'
+			WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = '$tree' AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.private_test = '1'
 			ORDER BY test_type, markers * 1 ASC, test_date, test_number * 1 ASC";
 $priv_results = tng_query($pquery);
 $dnarow = tng_fetch_assoc($priv_results);    // added for Private Test check
@@ -39,7 +39,7 @@ if ($totnum_tests) {
     $displayclass = "dnatest";
 
     $uquery = "SELECT $dna_tests_table.testID, $dna_tests_table.personID, $dna_tests_table.gedcom FROM $dna_tests_table, $dna_links_table
-				WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = \"$tree\" AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.personID != \"$personID\"";
+				WHERE $dna_links_table.personID = \"$personID\" AND $dna_links_table.gedcom = '$tree' AND $dna_links_table.testID = $dna_tests_table.testID AND $dna_tests_table.personID != \"$personID\"";
     $dna_uresults = tng_query($uquery);
     $num_utests = tng_num_rows($dna_uresults);
     tng_free_result($dna_uresults);
@@ -63,7 +63,7 @@ if ($totnum_tests) {
     $persontext .= "<tr>\n";
     $persontext .= "<td class=\"fieldnameback fieldname align-top\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
     $persontext .= "<td colspan=\"4\" class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
-    $persontext .= "<a href=\"#\" title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
+    $persontext .= "<a href='#' title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
     $persontext .= "</td>\n";
     $persontext .= "</tr>\n";
     $persontext .= "<tr id=\"dnatest\" class=\"$displayclass\" style=\"$displaystyle\">\n";

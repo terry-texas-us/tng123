@@ -98,7 +98,7 @@ function getCitations($persfamID, $shortcite = 1) {
     $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, citations.note AS note, citations.sourceID, description, eventID{$actualtext} ";
     $citquery .= "FROM $citations_table citations ";
     $citquery .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
-    $citquery .= "WHERE persfamID = \"$persfamID\" AND citations.gedcom = \"$tree\" ";
+    $citquery .= "WHERE persfamID = \"$persfamID\" AND citations.gedcom = '$tree' ";
     $citquery .= "ORDER BY ordernum, citationID";
     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
 
@@ -264,13 +264,13 @@ function getNotes($persfamID, $flag) {
         $postcusttitles = [];
     }
 
-    $secretstr = $allow_private ? "" : " AND secret != \"1\"";
+    $secretstr = $allow_private ? "" : " AND secret != '1'";
     $query = "SELECT display, xnotes.note AS note, notelinks.eventID AS eventID, notelinks.xnoteID AS xnoteID, notelinks.ID AS ID, noteID ";
     $query .= "FROM $notelinks_table notelinks ";
     $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
     $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
     $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
-    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" $secretstr ";
+    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom = '$tree' $secretstr ";
     $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
     $notelinks = tng_query($query);
 
@@ -895,11 +895,11 @@ function getLinkTypeMisc($entity, $linktype) {
     switch ($linktype) {
         case "I":
             $misc['personID'] = $entity['personID'];
-            $misc['always'] = $entity['allow_living'] && $entity['allow_private'] ? "" : "AND alwayson = \"1\"";
+            $misc['always'] = $entity['allow_living'] && $entity['allow_private'] ? "" : "AND alwayson = '1'";
             break;
         case "F":
             $misc['personID'] = $entity['familyID'];
-            $misc['always'] = $entity['allow_living'] && $entity['allow_private'] ? "" : "AND alwayson = \"1\"";
+            $misc['always'] = $entity['allow_living'] && $entity['allow_private'] ? "" : "AND alwayson = '1'";
             break;
         case "S":
             $misc['personID'] = $entity['sourceID'];
@@ -1075,7 +1075,7 @@ function getMedia($entity, $linktype, $all = false) {
 		WHERE $medialinks_table.personID=\"$personID\"
 		AND $media_table.mediaID = $medialinks_table.mediaID and dontshow != 1";
     if ($tree) {
-        $query .= " AND ($medialinks_table.gedcom = \"$tree\")";
+        $query .= " AND ($medialinks_table.gedcom = '$tree')";
     }
     $query .= " $always	ORDER BY eventID, mediatypeID, ordernum";
     $medialinks = tng_query($query);

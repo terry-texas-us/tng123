@@ -26,11 +26,11 @@ tng_free_result($result);
 
 $dquery = "DELETE FROM $places_table WHERE ";
 
-$dquery .= $tngconfig['places1tree'] ? "" : " gedcom = \"$tree\" AND (";
+$dquery .= $tngconfig['places1tree'] ? "" : " gedcom = '$tree' AND (";
 $addtoquery = "";
 $mergelist = explode(',', $places);
 
-$treestr = $tngconfig['places1tree'] ? "" : "AND gedcom=\"$tree\"";
+$treestr = $tngconfig['places1tree'] ? "" : "AND gedcom = '$tree'";
 
 foreach ($mergelist as $val) {
     if ($addtoquery) {

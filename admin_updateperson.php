@@ -84,13 +84,13 @@ if (!$editconflict) {
         $oldbranches = explode(",", $orgbranch);
         foreach ($oldbranches as $b) {
             if ($b && !in_array($b, $branch)) {
-                $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$personID\" AND gedcom = \"$tree\" AND branch = \"$b\"";
+                $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$personID\" AND gedcom = '$tree' AND branch = \"$b\"";
                 $result = tng_query($query);
             }
         }
         foreach ($branch as $b) {
             if ($b && !in_array($b, $oldbranches)) {
-                $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(\"$b\",\"$tree\",\"$personID\")";
+                $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(\"$b\",'$tree',\"$personID\")";
                 $result = tng_query($query);
             }
         }
@@ -143,7 +143,7 @@ if (!$editconflict) {
             eval("\$sealpdatetr = convertdate( \$sealpdate{$parent['familyID']} );");
             eval("\$frel = \$frel{$parent['familyID']};");
             eval("\$mrel = \$mrel{$parent['familyID']};");
-            $query = "UPDATE $children_table SET sealdate=\"$sealpdate\", sealdatetr=\"$sealpdatetr\", sealplace=\"$sealpplace\", frel=\"$frel\", mrel=\"$mrel\" WHERE familyID = \"{$parent['familyID']}\" AND personID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $children_table SET sealdate=\"$sealpdate\", sealdatetr=\"$sealpdatetr\", sealplace=\"$sealpplace\", frel=\"$frel\", mrel=\"$mrel\" WHERE familyID = \"{$parent['familyID']}\" AND personID = \"$personID\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
             if (!$famc) {
                 $famc = $parent['familyID'];
@@ -166,7 +166,7 @@ if (!$editconflict) {
     $query = "UPDATE $people_table SET firstname=\"$firstname\", lnprefix=\"$lnprefix\", lastname=\"$lastname\", nickname=\"$nickname\", prefix=\"$prefix\", suffix=\"$suffix\", title=\"$title\", nameorder=\"$pnameorder\", living=\"$living\", private=\"$private\",
 		birthdate=\"$birthdate\", birthdatetr=\"$birthdatetr\", birthplace=\"$birthplace\", sex=\"$sex\", altbirthdate=\"$altbirthdate\", altbirthdatetr=\"$altbirthdatetr\", altbirthplace=\"$altbirthplace\",
 		deathdate=\"$deathdate\", deathdatetr=\"$deathdatetr\", deathplace=\"$deathplace\", burialdate=\"$burialdate\", burialdatetr=\"$burialdatetr\", burialplace=\"$burialplace\", burialtype=\"$burialtype\",
-		baptdate=\"$baptdate\", baptdatetr=\"$baptdatetr\", baptplace=\"$baptplace\", confdate=\"$confdate\", confdatetr=\"$confdatetr\", confplace=\"$confplace\", initdate=\"$initdate\", initdatetr=\"$initdatetr\", initplace=\"$initplace\", endldate=\"$endldate\", endldatetr=\"$endldatetr\", endlplace=\"$endlplace\", changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\",metaphone=\"$meta\" $famcstr WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+		baptdate=\"$baptdate\", baptdatetr=\"$baptdatetr\", baptplace=\"$baptplace\", confdate=\"$confdate\", confdatetr=\"$confdatetr\", confplace=\"$confplace\", initdate=\"$initdate\", initdatetr=\"$initdatetr\", initplace=\"$initplace\", endldate=\"$endldate\", endldatetr=\"$endldatetr\", endlplace=\"$endlplace\", changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\",metaphone=\"$meta\" $famcstr WHERE personID=\"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
 
     if ($sex == "M") {
@@ -211,7 +211,7 @@ if (!$editconflict) {
             $familyliving = ($living || $spouseliving) ? 1 : 0;
             $familyprivate = ($private || $spouseprivate) ? 1 : 0;
 
-            $query = "UPDATE $families_table SET living = \"$familyliving\", private = \"$familyprivate\" WHERE familyID = \"{$marriagerow['familyID']}\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $families_table SET living = \"$familyliving\", private = \"$familyprivate\" WHERE familyID = \"{$marriagerow['familyID']}\" AND gedcom = '$tree'";
             $spouseresult = @tng_query($query);
         }
     }

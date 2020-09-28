@@ -59,16 +59,13 @@ $helplang = findhelp("tlevents_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['tlevents'], $flags);
-?>
-<script src="js/admin.js"></script>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $timelinetabs[0] = [1, "admin_timelineevents.php", $admtext['search'], "findtimeline"];
 $timelinetabs[1] = [$allow_add, "admin_newtlevent.php", $admtext['addnew'], "addtlevent"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/tlevents_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/tlevents_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($timelinetabs, "findtimeline", $innermenu);
 echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $message);
 ?>
@@ -97,17 +94,13 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xtimeaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <table class="normal">
                         <tr>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
@@ -126,7 +119,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                             $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
 
                         while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {

@@ -103,10 +103,10 @@ foreach (array_keys($_POST) as $key) {
             $tree = $row['gedcom'];
             $items[] = $row['gedcom'] . "/" . $row['familyID'];
 
-            $fquery = "DELETE FROM $children_table WHERE familyID='$familyID' AND gedcom = \"$tree\"";
+            $fquery = "DELETE FROM $children_table WHERE familyID='$familyID' AND gedcom = '$tree'";
             $result = @tng_query($fquery);
 
-            $pquery = "UPDATE $people_table SET famc=\"\" WHERE gedcom = \"$tree\" AND famc='$familyID'";
+            $pquery = "UPDATE $people_table SET famc=\"\" WHERE gedcom = '$tree' AND famc='$familyID'";
             $result = tng_query($pquery);
 
             updateHasKidsFamily($familyID);
@@ -123,7 +123,7 @@ foreach (array_keys($_POST) as $key) {
             $tree = $row['gedcom'];
             $items[] = $row['gedcom'] . "/" . $row['sourceID'];
 
-            $squery = "DELETE FROM $citations_table WHERE sourceID=\"$sourceID\" AND gedcom = \"$tree\"";
+            $squery = "DELETE FROM $citations_table WHERE sourceID=\"$sourceID\" AND gedcom = '$tree'";
             $result = @tng_query($squery);
 
             deleteEvents($sourceID, $tree);
@@ -145,7 +145,7 @@ foreach (array_keys($_POST) as $key) {
             $rquery = "DELETE FROM $address_table WHERE addressID=\"{$row['addressID']}\"";
             $result = @tng_query($rquery);
 
-            $rquery = "UPDATE $sources_table SET repoID = \"\" WHERE repoID=\"$repoID\" AND gedcom = \"$tree\"";
+            $rquery = "UPDATE $sources_table SET repoID = \"\" WHERE repoID=\"$repoID\" AND gedcom = '$tree'";
             $result = @tng_query($rquery);
 
             deleteEvents($repoID, $tree);

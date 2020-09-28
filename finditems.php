@@ -56,7 +56,7 @@ function showAction($entityID, $num = null) {
         if ($gotit) {
             $lines .= "display:none";
         }
-        $lines .= "\"><a href=\"#\" onclick=\"return addMedia2EntityLink(findform, '" . str_replace("&#39;", "\\'", $entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
+        $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . str_replace("&#39;", "\\'", $entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
         $lines .= "<div id=\"linked_$id\" style=\"text-align:center;width:50px;";
         if (!$gotit) {
             $lines .= "display:none";
@@ -64,7 +64,7 @@ function showAction($entityID, $num = null) {
         $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
-        $lines .= "\"><a href=\"#\" onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
+        $lines .= "\"><a href='#' onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
     }
     $lines .= "</div>";
     $lines .= "</td>\n";
@@ -79,7 +79,7 @@ switch ($type) {
         $myffirstname = trim($myffirstname);
         $myflastname = trim($myflastname);
         $myfpersonID = trim($myfpersonID);
-        $allwhere = "gedcom = \"$tree\"";
+        $allwhere = "gedcom = '$tree'";
         if ($branch) {
             $allwhere .= " AND branch LIKE \"%$branch%\"";
         }
@@ -157,7 +157,7 @@ switch ($type) {
                     $lines .= showAction($row['personID']);
                 }
                 $lines .= "<td class='lightback'>{$row['personID']}</td>\n";
-                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['personID']}');\" id=\"item_{$row['personID']}\">$namestr</a></td>\n";
+                $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['personID']}');\" id=\"item_{$row['personID']}\">$namestr</a></td>\n";
                 $lines .= "<td class='lightback'><span id=\"birth_{$row['personID']}\">$birthdate</span></td>\n";
                 $lines .= "<td class='lightback'>$deathdate</td>\n";
                 $lines .= "</tr>\n";
@@ -263,7 +263,7 @@ switch ($type) {
                     $lines .= showAction($row['familyID']);
                 }
                 $lines .= "<td class='lightback'>" . $row['familyID'] . "</td>\n";
-                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['familyID']}');\" id=\"item_{$row['familyID']}\">$thishusb</a></td>\n";
+                $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['familyID']}');\" id=\"item_{$row['familyID']}\">$thishusb</a></td>\n";
                 $lines .= "<td class='lightback'>$thiswife</td></tr>\n";
             }
         }
@@ -271,7 +271,7 @@ switch ($type) {
     case "S":
         $query = "SELECT sourceID, title, shorttitle ";
         $query .= "FROM $sources_table ";
-        $query .= "WHERE gedcom = \"$tree\" AND (title LIKE \"$f$criteria%\" OR shorttitle LIKE \"$f$criteria%\") ";
+        $query .= "WHERE gedcom = '$tree' AND (title LIKE \"$f$criteria%\" OR shorttitle LIKE \"$f$criteria%\") ";
         $query .= "ORDER BY title ";
         $query .= "LIMIT " . MODAL_FIND_RESULTS_LIMIT;
         $result = tng_query($query);
@@ -290,7 +290,7 @@ switch ($type) {
                 }
                 $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
-                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['sourceID']}');\" id=\"item_{$row['sourceID']}\">" . truncateIt($title, 100) . "</a></td>\n";
+                $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['sourceID']}');\" id=\"item_{$row['sourceID']}\">" . truncateIt($title, 100) . "</a></td>\n";
                 $lines .= "</tr>\n";
             }
         }
@@ -301,7 +301,7 @@ switch ($type) {
         //return citation ID
         $query = "SELECT citationID, title, shorttitle, persfamID, citations.sourceID, eventID, page ";
         $query .= "FROM $citations_table citations, $sources_table sources ";
-        $query .= "WHERE citations.gedcom = \"$tree\" AND citations.gedcom = sources.gedcom AND citations.sourceID = sources.sourceID AND (title LIKE \"$f$criteria%\" OR shorttitle LIKE \"$f$criteria%\") ";
+        $query .= "WHERE citations.gedcom = '$tree' AND citations.gedcom = sources.gedcom AND citations.sourceID = sources.sourceID AND (title LIKE \"$f$criteria%\" OR shorttitle LIKE \"$f$criteria%\") ";
         $query .= "ORDER BY title, shorttitle ";
         $query .= "LIMIT " . MODAL_FIND_RESULTS_LIMIT;
         $result = tng_query($query);
@@ -325,7 +325,7 @@ switch ($type) {
                 $lines .= "<td class='lightback'>" . $row['citationID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
                 $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
-                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['citationID']}');\" id=\"item_{$row['citationID']}\">" . truncateIt($title, 100) . "</a></td>\n";
+                $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['citationID']}');\" id=\"item_{$row['citationID']}\">" . truncateIt($title, 100) . "</a></td>\n";
                 $lines .= "<td class='lightback'>" . $row['page'] . "</td>\n";
                 $lines .= "<td class='lightback'>" . $row['persfamID'] . "</td>\n";
                 $lines .= "<td class='lightback'>" . $row['eventID'] . "</td>\n";
@@ -350,13 +350,13 @@ switch ($type) {
                     $lines .= showAction($row['repoID']);
                 }
                 $lines .= "<td class='lightback'>" . $row['repoID'] . "</td>\n";
-                $lines .= "<td class='lightback'><a href=\"#\" onclick=\"return retItem('{$row['repoID']}');\" id=\"item_{$row['repoID']}\">" . truncateIt($row['reponame'], 75) . "</a></td>\n";
+                $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['repoID']}');\" id=\"item_{$row['repoID']}\">" . truncateIt($row['reponame'], 75) . "</a></td>\n";
                 $lines .= "</tr>\n";
             }
         }
         break;
     case "L":
-        $allwhere = $tree && !$tngconfig['places1tree'] ? "gedcom = \"$tree\"" : "1=1";
+        $allwhere = $tree && !$tngconfig['places1tree'] ? "gedcom = '$tree'" : "1=1";
         if ($criteria) {
             $allwhere .= " AND place LIKE \"$f$criteria%\"";
         }
@@ -381,7 +381,7 @@ switch ($type) {
                 if ($mediaquery) {
                     $lines .= showAction($row['place'], $num);
                 }
-                $lines .= "<td class='lightback'><a href=\"#\" onclick='return retItem(\"{$row['ID']}\",true);' class=\"rplace\" id=\"item_{$row['ID']}\">{$row['place']}</a>$notes</td>\n";
+                $lines .= "<td class='lightback'><a href='#' onclick='return retItem(\"{$row['ID']}\",true);' class=\"rplace\" id=\"item_{$row['ID']}\">{$row['place']}</a>$notes</td>\n";
                 $lines .= "</tr>\n";
                 $num++;
             }

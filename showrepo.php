@@ -129,21 +129,21 @@ if ($notes) {
 $repotext .= "</ul>\n";
 
 $tng_alink = $tng_plink = "lightlink";
-$innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
+$innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href='#' onclick=\"return toggleCollapsed(0)\" class='lightlink'>Expand all</a> &nbsp | &nbsp; <a href='#' onclick=\"return toggleCollapsed(1)\" class='lightlink'>Collapse all</a> &nbsp;</div>" : "";
 if ($media || $notes) {
     if ($tngconfig['istart']) {
         $tng_plink = "lightlink3";
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['repoinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['repoinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if ($media) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
 } else {
     $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['repoinfo']}</span>\n";
 }

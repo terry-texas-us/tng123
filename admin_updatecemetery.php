@@ -74,10 +74,10 @@ if ($place) {
             $latitude = $longitude = "";
             $zoom = 0;
         }
-        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,latitude,longitude,zoom,notes) VALUES (\"$tree\",\"$place\",\"0\",\"$latitude\",\"$longitude\",\"$zoom\",\"$notes\")";
+        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,latitude,longitude,zoom,notes) VALUES ('$tree',\"$place\",\"0\",\"$latitude\",\"$longitude\",\"$zoom\",\"$notes\")";
         $result3 = tng_query($query);
     } elseif (isset($usecoords)) {
-        $treestr = $tree && $tngconfig['places1tree'] ? "gedcom=\"$tree\" AND " : "";
+        $treestr = $tree && $tngconfig['places1tree'] ? "gedcom = '$tree' AND " : "";
         $query = "UPDATE $places_table SET latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\" WHERE {$treestr}place=\"$place\"";
         $result3 = tng_query($query);
     }

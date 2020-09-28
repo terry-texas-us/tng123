@@ -406,7 +406,7 @@ echo getFORM("timeline", "post", "form1", "form1");
 
 $innermenu = $text['chartwidth'] . ": &nbsp;";
 $innermenu .= "<input type='text' name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength=\"4\" size=\"4\"> &nbsp;&nbsp; ";
-$innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit();\">{$text['refresh']}</a>\n";
+$innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">{$text['refresh']}</a>\n";
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);
 
@@ -428,7 +428,7 @@ for ($i = $lineoffset; $i <= ($lineoffset + $chartwidth); $i += ($chartwidth / $
     $iadj = $i - 12;
     echo "<div class=\"yeardiv normal\" style=\"left:$iadj" . "px;\">";
     if ($pedigree['simile']) {
-        echo "<a href=\"#\" onclick=\"return centerTimeline($displayyear);\">$displayyear</a>";
+        echo "<a href='#' onclick=\"return centerTimeline($displayyear);\">$displayyear</a>";
     } else {
         echo $displayyear;
     }
@@ -538,7 +538,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
                 echo "</select>\n";
                 $treestr = "document.form1.nexttree$x.options[document.form1.nexttree$x.selectedIndex].value";
             } else {
-                echo "<input type='hidden' name=\"nexttree$x\" value=\"$tree\">";
+                echo "<input type='hidden' name=\"nexttree$x\" value='$tree'>";
                 $treestr = "'" . $tree . "'";
             }
             echo "<input type='text' name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type='button' name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
@@ -556,9 +556,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
     </div>
     </form><br>
 
-<?php
-if ($counter) {
-    ?>
+<?php if ($counter) { ?>
     <a name="events" id="events"></a>
     <table cellpadding="3" cellspacing="1" width="100%" class="whiteback">
         <tr>
@@ -578,9 +576,7 @@ if ($counter) {
         }
         ?>
     </table><br>
-    <?php
-}
-?>
+<?php } ?>
     <script>
         var lastpopup = "";
         var tnglitbox;

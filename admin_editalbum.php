@@ -51,7 +51,7 @@ if (!$thumbmaxw) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -132,7 +132,7 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
     -->
 </script>
 <script src="js/albums.js"></script>
-<script src="js/admin.js"></script>
+
 </head>
 
 <body class="admin-body" onload="startMediaSort()">
@@ -142,8 +142,8 @@ $albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
 $albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
 $albumtabs[3] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/albums_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($albumtabs, "edit", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum'], "img/albums_icon.gif", $menu, "");
 ?>
@@ -158,7 +158,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     } ?>"><?php echo $photo; ?></div>
                     <span class="plainheader"><?php echo $row['albumname'] . ": </span><br>" . $row['description']; ?></div>
                 <?php
-                echo "<a href=\"#\" onclick=\"return removeDefault();\" class=\"smaller\" id=\"removedefault\"";
+                echo "<a href='#' onclick=\"return removeDefault();\" class=\"smaller\" id=\"removedefault\"";
                 if (!$photo) {
                     echo " style=\"visibility:hidden\"";
                 }
@@ -248,9 +248,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             echo "</td>\n";
 
                             echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
-                            echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>Top</a></div>\n";
+                            echo "<div style=\"padding-bottom:5px;\"><a href='#' onclick=\"return moveItemInList('{$lrow['albumlinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>Top</a></div>\n";
                             echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$lrow['albumlinkID']}\" id=\"move{$lrow['albumlinkID']}\" value=\"$count\" onkeypress=\"return handleMediaEnter('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val(),event);\">\n";
-                            echo "<a href=\"#\" onclick=\"return moveItemInList('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val());\" title=\"{$admtext['movetop']}\">Go</a>\n";
+                            echo "<a href='#' onclick=\"return moveItemInList('{$lrow['albumlinkID']}',jQuery('#move{$lrow['albumlinkID']}').val());\" title=\"{$admtext['movetop']}\">Go</a>\n";
                             echo "</td>\n";
 
                             echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
@@ -270,7 +270,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                 echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
                                 echo " &nbsp;|&nbsp; ";
                             }
-                            echo "<a href=\"#\" onclick=\"return removeFromAlbum('{$lrow['mediaID']}','{$lrow['albumlinkID']}');\">{$admtext['remove']}</a>";
+                            echo "<a href='#' onclick=\"return removeFromAlbum('{$lrow['mediaID']}','{$lrow['albumlinkID']}');\">{$admtext['remove']}</a>";
                             echo "</div></td>\n";
                             echo "<td class='lightback normal' style=\"width:150px;\">{$lrow['datetaken']}&nbsp;</td>\n";
                             echo "<td class='lightback normal' style=\"width:100px;\">" . $label . "&nbsp;</td>\n";
@@ -416,9 +416,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 
                                 echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='lightback text-center'>\n";
                                 if ($type != "place") {
-                                    echo "<a href=\"#\" title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                                    echo "<a href='#' title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                                 }
-                                echo "<a href=\"#\" title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>\n";
+                                echo "<a href='#' title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>\n";
                                 echo "</td>\n";
                                 echo "<td class='lightback normal'>" . $type . "</td>\n";
                                 echo "<td class='lightback normal'>$name$id&nbsp;</td>\n";

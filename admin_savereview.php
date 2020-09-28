@@ -40,9 +40,9 @@ if ($choice == $admtext['savedel']) {
         $result = tng_query($query);
 
         if ($row['type'] == "F") {
-            $query = "UPDATE $families_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
+            $query = "UPDATE $families_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE familyID = '$familyID' AND gedcom = '$tree'";
         } else {
-            $query = "UPDATE $people_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $people_table SET changedate = \"$changedate\", changedby = \"{$row['user']}\" WHERE personID = \"$personID\" AND gedcom = '$tree'";
         }
         $result = tng_query($query);
     } else {
@@ -127,13 +127,13 @@ if ($choice == $admtext['savedel']) {
         }
 
         if ($needfamilies) {
-            $query = "UPDATE $families_table SET $fieldstr WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
+            $query = "UPDATE $families_table SET $fieldstr WHERE familyID = '$familyID' AND gedcom = '$tree'";
         } elseif ($needchildren) {
-            $query = "UPDATE $people_table SET changedate = \"$changedate\", changedby=\"{$row['user']}\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $people_table SET changedate = \"$changedate\", changedby=\"{$row['user']}\" WHERE personID = \"$personID\" AND gedcom = '$tree'";
             $result = tng_query($query);
-            $query = "UPDATE $children_table SET $fieldstr WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $children_table SET $fieldstr WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = '$tree'";
         } else {
-            $query = "UPDATE $people_table SET $fieldstr WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $people_table SET $fieldstr WHERE personID = \"$personID\" AND gedcom = '$tree'";
         }
         $result = tng_query($query);
     }

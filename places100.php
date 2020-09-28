@@ -44,7 +44,7 @@ echo getFORM("places100", "get", "", "");
         <?php
         echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
-            echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+            echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
         }
         echo "<input type='hidden' name=\"stretch\" value='1'>\n";
         echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";

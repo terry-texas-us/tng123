@@ -26,7 +26,7 @@ if ($place) {
     $query = "SELECT ID, place, longitude, latitude, gedcom FROM $places_table
 		WHERE ";
     if (!$tngconfig['places1tree']) {
-        $query .= "gedcom = \"$tree\" AND ";
+        $query .= "gedcom = '$tree' AND ";
     }
     $query .= $pwherestr . " ORDER BY place, gedcom, ID";
     $result = tng_query($query);
@@ -66,16 +66,16 @@ tng_adminheader($admtext['mergeplaces'], $flags);
         return false;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
 $placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
 $placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#merge');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($placetabs, "merge", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces'], "img/places_icon.gif", $menu, $message);
 ?>
@@ -87,9 +87,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
 
             <form action="admin_mergeplaces.php" method="post" name="form1" onSubmit="return validateForm1();">
                 <table class="normal">
-                    <?php
-                    if (!$tngconfig['places1tree']) {
-                        ?>
+                    <?php if (!$tngconfig['places1tree']) { ?>
                         <tr>
                             <td><?php echo $admtext['tree']; ?>:</td>
                             <td>
@@ -108,9 +106,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                                 </select>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['searchfor']; ?>:</td>
                         <td>
@@ -169,9 +165,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                     <input type="submit" value="<?php echo $admtext['mergeplaces']; ?>">
                     <span id="successmsg2" class="normal msgapproved"></span>
                 </form>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </td>
     </tr>
 

@@ -75,7 +75,7 @@ $photofound = 0;
 $photo = "";
 
 $query = "SELECT alwayson, thumbpath, $media_table.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID FROM ($media_table, $medialinks_table)
-	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
+	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
 $result = tng_query($query);
 if ($result) {
     $row = tng_fetch_assoc($result);
@@ -137,7 +137,7 @@ tng_adminheader($sortstr, $flags);
 $albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
 $albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#sort');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/albums_help.php#sort');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, "");
 ?>
@@ -172,9 +172,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         echo "</td>\n";
 
                         echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
-                        echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
+                        echo "<div style=\"padding-bottom:5px;\"><a href='#' onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
                         echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\">\n";
-                        echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
+                        echo "<a href='#' onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
 
                         echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
@@ -195,7 +195,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
                         echo "<td class='lightback normal'><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br>$truncated<br>";
-                        echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden;\"><a href=\"#\" onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
+                        echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden;\"><a href='#' onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
                         echo "</tr></table>";
                         echo "</div>\n";
                         $count++;

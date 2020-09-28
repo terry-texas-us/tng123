@@ -881,7 +881,6 @@ ul.tngdd ul li a,
 	}
 	#tsearchbox {
 		box-shadow:none;
-		moz-box-shadow:none;
 		webkit-box-shadow:none;
 	}
 	#tsearchbox input[type=text] {

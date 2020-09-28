@@ -179,16 +179,16 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $query .= "FROM $families_table families ";
     if ($ind['sex'] == "M") {
         $query .= "LEFT JOIN $people_table people ON families.wife = people.personID AND families.gedcom = people.gedcom ";
-        $query .= "WHERE husband = \"{$ind['personID']}\" AND people.gedcom = \"$tree\" $restriction ";
+        $query .= "WHERE husband = \"{$ind['personID']}\" AND people.gedcom = '$tree' $restriction ";
         $query .= "ORDER BY husborder";
     } else {
         if ($ind['sex'] = "F") {
             $query .= "LEFT JOIN $people_table people ON families.husband = people.personID AND families.gedcom = people.gedcom ";
-            $query .= "WHERE wife = \"{$ind['personID']}\" AND people.gedcom = \"$tree\" $restriction ";
+            $query .= "WHERE wife = \"{$ind['personID']}\" AND people.gedcom = '$tree' $restriction ";
             $query .= "ORDER BY wifeorder";
         } else {
             $query .= "LEFT JOIN $people_table people ON (families.husband = people.personID OR families.wife = people.personID) AND families.gedcom = people.gedcom ";
-            $query .= "WHERE (wife = \"{$ind['personID']}\" && husband = \"{$ind['personID']}\") AND people.gedcom = \"$tree\"";
+            $query .= "WHERE (wife = \"{$ind['personID']}\" && husband = \"{$ind['personID']}\") AND people.gedcom = '$tree'";
         }
     }
     $spresult = tng_query($query);

@@ -50,4 +50,4 @@ $pedigree['tcwidth'] = "500";
 $pedigree['simile'] = "1";
 $pedigree['tcheight'] = "400";
 $pedigree['tcevents'] = "0";
-?>
+

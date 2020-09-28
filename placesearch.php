@@ -36,15 +36,15 @@ $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_S
 $numtrees = getTreesCount($trees_table);
 
 if ($order == "name") {
-    $namesort = "<a href=\"$placesearch_url$currargs&amp;order=nameup\" class=\"lightlink\">xxx <img src=\"img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $namesort = "<a href=\"$placesearch_url$currargs&amp;order=nameup\" class='lightlink'>xxx <img src=\"img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 } else {
-    $namesort = "<a href=\"$placesearch_url$currargs&amp;order=name\" class=\"lightlink\">xxx <img src=\"img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $namesort = "<a href=\"$placesearch_url$currargs&amp;order=name\" class='lightlink'>xxx <img src=\"img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 }
 
 if ($order == "date") {
-    $datesort = "<a href=\"$placesearch_url$currargs&amp;order=dateup\" class=\"lightlink\">yyy <img src=\"img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $datesort = "<a href=\"$placesearch_url$currargs&amp;order=dateup\" class='lightlink'>yyy <img src=\"img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 } else {
-    $datesort = "<a href=\"$placesearch_url$currargs&amp;order=date\" class=\"lightlink\">yyy <img src=\"img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $datesort = "<a href=\"$placesearch_url$currargs&amp;order=date\" class='lightlink'>yyy <img src=\"img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
 }
 
 function processEvents($prefix, $stdevents, $displaymsgs) {

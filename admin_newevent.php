@@ -20,9 +20,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         ?>
         <span class="normal red"><em><?php echo urldecode($message); ?></em>
 	</span>
-        <?php
-    }
-    ?>
+    <?php } ?>
     <form action="" method="post" name="form1" id="form1" onSubmit="return addEvent(this);">
         <table cellpadding="2" class="normal">
             <tr>

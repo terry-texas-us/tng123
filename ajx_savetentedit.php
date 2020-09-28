@@ -14,7 +14,7 @@ if ($session_charset != "UTF-8") {
     $usernote = tng_utf8_decode($usernote);
 }
 $postdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
-$query = "INSERT INTO $temp_events_table (type,gedcom,personID,familyID,eventID,eventdate,eventplace,info,note,user,postdate) VALUES (\"$type\",\"$tree\",\"$personID\",'$familyID',\"$eventID\",\"$newdate\",\"$newplace\",\"$newinfo\",\"$usernote\",\"$currentuser\",\"$postdate\")";
+$query = "INSERT INTO $temp_events_table (type,gedcom,personID,familyID,eventID,eventdate,eventplace,info,note,user,postdate) VALUES (\"$type\",'$tree',\"$personID\",'$familyID',\"$eventID\",\"$newdate\",\"$newplace\",\"$newinfo\",\"$usernote\",\"$currentuser\",\"$postdate\")";
 $result = tng_query($query);
 
 $righttree = checktree($tree);

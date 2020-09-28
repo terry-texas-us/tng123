@@ -20,20 +20,17 @@ $orgtree = $tree;
 $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Validation'), $flags);
-?>
-<script src="js/admin.js"></script>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
 $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
 $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
 $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
 $misctabs[4] = [1, "admin_valreport.php?report=$report&amp;tree=$tree", $admtext['report'], "report"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "report", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'] . " &gt;&gt; " . $admtext[$report], "img/misc_icon.gif", $menu, $message);
 
@@ -52,7 +49,7 @@ if ($offset) {
 }
 
 $tree = $assignedtree ? $assignedtree : $tree;
-$treestr = $tree ? "AND $people_table.gedcom=\"$tree\"" : "";
+$treestr = $tree ? "AND $people_table.gedcom = '$tree'" : "";
 $orderby = "";
 
 switch ($report) {

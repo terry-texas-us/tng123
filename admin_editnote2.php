@@ -38,14 +38,14 @@ tng_adminheader($admtext['modifynote'], $flags);
         return rval;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $misctabs[0] = [1, "admin_notelist.php", $admtext['notes'], "notes"];
 $misctabs[1] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/notes2_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/notes2_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($misctabs, "edit", $innermenu);
 echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $message);
 ?>
@@ -63,7 +63,7 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                         <td>&nbsp;</td>
                         <td>
                             <?php
-                            echo "<input type=\"checkbox\" name=\"private\" value=\"1\"";
+                            echo "<input type=\"checkbox\" name=\"private\" value='1'";
                             if ($row['secret']) {
                                 echo " checked";
                             }

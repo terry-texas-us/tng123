@@ -144,9 +144,9 @@ $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $a
 $mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $mediatabs[6] = [$allow_media_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a> ";
-$innermenu .= "&nbsp;|&nbsp;<a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showmedia.php?mediaID=$mediaID\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>{$admtext['help']}</a> ";
+$innermenu .= "&nbsp;|&nbsp;<a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showmedia.php?mediaID=$mediaID\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($mediatabs, "edit", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediainfo'], "img/photos_icon.gif", $menu, "");
 ?>
@@ -167,9 +167,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             <?php echo $row['notes']; ?>
 
                             <div class="topbuffer bottombuffer smallest">
-                                <?php
-                                echo "<a href=\"#\" onclick=\"document.form1.fsubmit.click();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                ?>
+                                <?php echo "<a href='#' onclick=\"document.form1.fsubmit.click();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n"; ?>
                                 <br><br>
                             </div>
 
@@ -201,18 +199,14 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                     }
                                     ?>
                                 </select>
-                                <?php
-                                if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
-                                    ?>
+                                <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                            onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
                                     <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                            onclick="editMediatype(document.form1.mediatypeID);">
                                     <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                            onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
-                                    <?php
-                                }
-                                ?>
+                                <?php } ?>
                             </td>
                         </tr>
                         <tr>
@@ -261,9 +255,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             <td><textarea cols="100" rows="11" name="bodytext" id="bodytext"><?php echo $row['bodytext']; ?></textarea></td>
                         </tr>
 
-                        <?php
-                        if (function_exists("imageJpeg")) {
-                            ?>
+                        <?php if (function_exists("imageJpeg")) { ?>
                             <tr>
                                 <td class='align-top'><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></td>
                                 <td class='align-top'><br>
@@ -274,15 +266,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                            onClick="document.form1.newthumb.style.visibility='hidden'; document.form1.thumbselect.style.visibility='hidden'; prepopulateThumb(); document.form1.abspath.checked=false;"> <?php echo $admtext['autoimg']; ?>
                                 </td>
                             </tr>
-                            <?php
-                        } else {
-                            ?>
+                        <?php } else { ?>
                             <tr>
                                 <td colspan="2"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></td>
                             </tr>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <tr>
                             <td><?php echo $admtext['imagefiletoupload']; ?>*:</td>
                             <td>
@@ -515,9 +503,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                    class="smallicon admin-find-icon dn2px"></a>
                             </td>
                         </tr>
-                        <?php
-                        if ($map['key']) {
-                            ?>
+                        <?php if ($map['key']) { ?>
                             <tr>
                                 <td colspan="2">
                                     <div style="padding:0 10px 10px 0;">
@@ -528,9 +514,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                     </div>
                                 </td>
                             </tr>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <tr>
                             <td><?php echo $admtext['latitude']; ?>:</td>
                             <td>
@@ -543,18 +527,14 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                 <input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox">
                             </td>
                         </tr>
-                        <?php
-                        if ($map['key']) {
-                            ?>
+                        <?php if ($map['key']) { ?>
                             <tr>
                                 <td><?php echo $admtext['zoom']; ?>:</td>
                                 <td>
                                     <input type="text" name="zoom" value="<?php echo $row['zoom']; ?>" size="20" id="zoombox">
                                 </td>
                             </tr>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                     </table>
                 </div>
             </td>
@@ -746,7 +726,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
 <script src="js/mediautils.js"></script>
 <script src="js/mediafind.js"></script>
 <script src="js/selectutils.js"></script>
-<script src="js/admin.js"></script>
 <script src="js/datevalidation.js"></script>
 <script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;

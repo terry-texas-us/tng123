@@ -173,15 +173,15 @@ tng_adminheader($admtext['modifyreport'], $flags);
         return rval;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $reporttabs[0] = [1, "admin_reports.php", $admtext['search'], "findreport"];
 $reporttabs[1] = [$allow_add, "admin_newreport.php", $admtext['addnew'], "addreport"];
 $reporttabs['4'] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/reports_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/reports_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($reporttabs, "edit", $innermenu);
 echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport'], "img/reports_icon.gif", $menu, $message);
 ?>

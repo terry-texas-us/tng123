@@ -107,8 +107,8 @@ $header2 .= "</thead>\n";
 $footer = "</table>\n";
 
 if ($tree) {
-    $wherestr = "($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\") AND ";
-    $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+    $wherestr = "($media_table.gedcom = '$tree' || $media_table.gedcom = \"\") AND ";
+    $wherestr2 = " AND $medialinks_table.gedcom = '$tree'";
 } else {
     $wherestr = $wherestr2 = "";
 }

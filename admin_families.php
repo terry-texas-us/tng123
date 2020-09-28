@@ -57,7 +57,7 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -74,7 +74,7 @@ function addCriteria($field, $value, $operator) {
     $criteria = "";
 
     if ($operator == "=") {
-        $criteria = " OR $field $operator \"$value\"";
+        $criteria = " OR $field $operator '$value'";
     } else {
         $innercriteria = "";
         $terms = explode(' ', $value);
@@ -82,7 +82,7 @@ function addCriteria($field, $value, $operator) {
             if ($innercriteria) {
                 $innercriteria .= " AND ";
             }
-            $innercriteria .= "$field $operator \"%$term%\"";
+            $innercriteria .= "$field $operator '%$term%'";
         }
         if ($innercriteria) {
             $criteria = " OR ($innercriteria)";
@@ -124,12 +124,12 @@ if ($allwhere2) {
     $allwhere2 .= "AND $people_table.gedcom = $trees_table.gedcom";
     $allwhere .= " $allwhere2";
     if ($tree) {
-        $allwhere .= " AND $people_table.gedcom = \"$tree\"";
+        $allwhere .= " AND $people_table.gedcom = '$tree'";
     } else {
         $allwhere .= " AND $people_table.gedcom = $families_table.gedcom";
     }
     if ($assignedbranch) {
-        $allwhere .= " AND $families_table.branch LIKE \"%$assignedbranch%\"";
+        $allwhere .= " AND $families_table.branch LIKE '%$assignedbranch%'";
     }
     $people_join = ", $people_table";
     $otherfields = ", firstname, lnprefix, lastname, prefix, suffix, nameorder";
@@ -140,10 +140,10 @@ if ($allwhere2) {
     $sortstr = "";
 }
 if ($tree) {
-    $allwhere .= " AND $families_table.gedcom = \"$tree\"";
+    $allwhere .= " AND $families_table.gedcom = '$tree'";
 }
 if ($living == "yes") {
-    $allwhere .= " AND $families_table.living = \"1\"";
+    $allwhere .= " AND $families_table.living = '1'";
 }
 
 $query = "SELECT $families_table.ID AS ID, familyID, husband, wife, marrdate, $families_table.gedcom AS gedcom, treename, $families_table.changedby, DATE_FORMAT($families_table.changedate,\"%d %b %Y\") AS changedate $otherfields FROM ($families_table, $trees_table $people_join) WHERE $allwhere ORDER BY $sortstr familyID LIMIT $newoffset" . $maxsearchresults;
@@ -174,16 +174,15 @@ tng_adminheader($admtext['families'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $familytabs[0] = [1, "admin_families.php", $admtext['search'], "findfamily"];
 $familytabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
 $familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/families_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/families_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($familytabs, "findfamily", $innermenu);
 echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $message);
 ?>
@@ -198,9 +197,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         <tr>
                             <td><?php echo $admtext['searchfor']; ?>:</td>
                             <td>
-                                <?php
-                                include "treequery.php";
-                                ?>
+                                <?php include "treequery.php"; ?>
                                 <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
                             </td>
                             <td>
@@ -249,17 +246,13 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xfamaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -298,7 +291,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             $actionstr .= "<a href=\"admin_editfamily.php?familyID=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"familygroup.php?familyID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 

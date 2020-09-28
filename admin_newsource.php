@@ -14,7 +14,7 @@ if (!$allow_add) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $firsttree = $assignedtree;
 } else {
     $wherestr = "";
@@ -49,7 +49,7 @@ tng_adminheader($admtext['addnewsource'], $flags);
 $sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
 $sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
 $sourcetabs[2] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/sources_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/sources_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($sourcetabs, "addsource", $innermenu);
 echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource'], "img/sources_icon.gif", $menu, $message);
 ?>

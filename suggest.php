@@ -193,19 +193,14 @@ if ($message) {
 if ($enttype) {
     echo "<h3 class='subhead'>$headline</h3>\n";
 }
-?>
-
-<?php
 @include "TNG_captcha.php";
 
 $formstr = getFORM("tngsendmail", "post\" onsubmit=\"return validateForm();", "suggest", "suggest");
 echo $formstr;
-if ($typestr) {
-    ?>
-    <input type="hidden" name="<?php echo $typestr; ?>ID" value="<?php echo $ID; ?>">
-    <?php
-}
 ?>
+<?php if ($typestr) { ?>
+    <input type="hidden" name="<?php echo $typestr; ?>ID" value="<?php echo $ID; ?>">
+<?php } ?>
     <table cellspacing="1" cellpadding="4" class="whiteback normal">
         <tr>
             <td class="fieldnameback" width="20%"><span class="fieldname"><?php echo $text['yourname']; ?>:&nbsp; </span></td>
@@ -225,16 +220,12 @@ if ($typestr) {
                 <input type="text" name="em2" class="longfield" value="<?php echo $preemail; ?>">
             </td>
         </tr>
-        <?php
-        if ($page) {
-            ?>
+        <?php if ($page) { ?>
             <tr>
                 <td class="fieldnameback"><span class="fieldname"><?php echo $text['subject']; ?>:&nbsp; </span></td>
                 <td class="databack"><?php echo stripslashes($page); ?></td>
             </tr>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <tr>
             <td class="fieldnameback align-top"><span class="fieldname"><?php echo $comments; ?>:&nbsp; </span></td>
             <td class="databack">

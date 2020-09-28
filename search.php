@@ -89,9 +89,9 @@ $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
 if ($order == "birth") {
     $orderstr = "IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr), p.lastname, p.firstname";
-    $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birthup\" class=\"lightlink\">$birthlabel <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
+    $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birthup\" class='lightlink'>$birthlabel <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
 } else {
-    $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birth\" class=\"lightlink\">$birthlabel <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\"></a>";
+    $birthsort = $tngprint ? $birthlabel : "<a href=\"$search_url$currargs&amp;order=birth\" class='lightlink'>$birthlabel <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\"></a>";
     if ($order == "birthup") {
         $orderstr = "IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr) DESC, p.lastname, p.firstname";
     }
@@ -99,9 +99,9 @@ if ($order == "birth") {
 
 if ($order == "death") {
     $orderstr = "IF(p.deathdatetr, p.deathdatetr, p.burialdatetr), p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
-    $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=deathup\" class=\"lightlink\">{$text['diedburied']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=deathup\" class='lightlink'>{$text['diedburied']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=death\" class=\"lightlink\">{$text['diedburied']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $deathsort = $tngprint ? $text['diedburied'] : "<a href=\"$search_url$currargs&amp;order=death\" class='lightlink'>{$text['diedburied']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "deathup") {
         $orderstr = "IF(p.deathdatetr, p.deathdatetr, p.burialdatetr) DESC, p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
     }
@@ -110,9 +110,9 @@ if ($order == "death") {
 $nametitle = isMobile() ? $text['name'] : $text['lastfirst'];
 if ($order == "name") {
     $orderstr = "p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
-    $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=nameup\" class=\"lightlink\">$nametitle <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
+    $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=nameup\" class='lightlink'>$nametitle <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\" alt=\"\"></a>";
 } else {
-    $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=name\" class=\"lightlink\">$nametitle <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\"></a>";
+    $namesort = $tngprint ? $nametitle : "<a href=\"$search_url$currargs&amp;order=name\" class='lightlink'>$nametitle <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\" alt=\"\"></a>";
     if ($order == "nameup") {
         $orderstr = "p.lastname DESC, p.firstname DESC, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
     }
@@ -241,7 +241,7 @@ if ($tree) {
     if ($allwhere) {
         $allwhere = "($allwhere) AND";
     }
-    $allwhere .= " p.gedcom=\"$tree\"";
+    $allwhere .= " p.gedcom = '$tree'";
 
     if ($branch) {
         $urlstring .= "&amp;branch=$branch";
@@ -366,18 +366,14 @@ echo "<html lang='en'>\n";
 
 tng_header($text['searchresults'], $flags);
 ?>
-<?php
-if (!isMobile()) {
-    ?>
+<?php if (!isMobile()) { ?>
     <script src="js/search.js"></script>
     <script>
         // <![CDATA[
         const ajx_perspreview = 'ajx_perspreview.php"';
         // ]]>
     </script>
-    <?php
-}
-?>
+<?php } ?>
 
     <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
@@ -429,9 +425,7 @@ echo $header;
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
         <th data-tablesaw-priority="1" class="fieldnameback nw"><span class="fieldname">&nbsp;<?php echo $namesort; ?>&nbsp;</span></th>
-        <?php
-        if (!isMobile()) {
-            ?>
+        <?php if (!isMobile()) { ?>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $text['personid']; ?></b>&nbsp;</th>
             <?php if ($myprefix) { ?>
                 <th class="fieldnameback fieldname">&nbsp;<b><?php echo $text['prefix']; ?></b>&nbsp;</th><?php } ?>
@@ -441,36 +435,25 @@ echo $header;
                 <th class="fieldnameback fieldname">&nbsp;<b><?php echo $text['title']; ?></b>&nbsp;</th><?php } ?>
             <?php if ($mynickname) { ?>
                 <th class="fieldnameback fieldname">&nbsp;<b><?php echo $text['nickname']; ?></b>&nbsp;</th><?php } ?>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $birthsort; ?>&nbsp;</th>
         <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th>
-        <?php
-        if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) {
-            ?>
+        <?php if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) { ?>
             <th data-tablesaw-priority="6" class="fieldnameback fieldname nw">&nbsp;<?php echo $deathsort; ?>&nbsp;</th>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th><?php } ?>
-        <?php
-        if ($showspouse) {
-            ?>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['location']; ?>&nbsp;</th>
+        <?php } ?>
+        <?php if ($showspouse) { ?>
             <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['spouse']; ?>&nbsp;</th>
-            <?php
-        }
-        if (isMobile()) {
-            ?>
+        <?php } ?>
+        <?php if (isMobile()) { ?>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname nw">&nbsp;<b><?php echo $text['personid']; ?></b>&nbsp;</th>
-            <?php
-        }
-        if ($numtrees > 1 || $numbranches) {
-            ?>
+        <?php } ?>
+        <?php if ($numtrees > 1 || $numbranches) { ?>
             <th data-tablesaw-priority="6" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['tree']; ?><?php if ($numbranches) {
                     echo " | " . $text['branch'];
                 } ?>&nbsp;
             </th>
-            <?php
-        }
-        ?>
+        <?php } ?>
     </tr>
     </thead>
 <?php

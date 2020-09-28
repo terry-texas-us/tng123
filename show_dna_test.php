@@ -350,9 +350,7 @@ $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">{$text['test_info']}</
 
 $emailaddr = "";
 echo tng_menu("D", "dna", $testID, $innermenu);
-?>
 
-<?php
 echo $dnatext;
 ?>
     <br>

@@ -22,24 +22,12 @@
             <table cellspacing="0">
                 <tr>
                     <td align="center"><a href="index.php" class="toptitle">
-                            <?php
-                            //begin HEADER TITLE IMAGE (default: "Our Family Genealogy Pages")
-                            //Actual file name has been replaced with t2_headtitleimg variable, configurable from Template Settings. Default name of actual image is "headertitle.gif"
-                            //You can replace the t2_headtitleimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-
-                            if ($tmp['t2_titlechoice'] == "text") {
-                                ?>
+                            <?php if ($tmp['t2_titlechoice'] == "text") { ?>
                                 <em class="toptitle"><?php echo getTemplateMessage('t2_maintitle'); ?></em>
-                                <?php
-                            } else {
-                                ?>
-
+                            <?php } else { ?>
                                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_headtitleimg']; ?>"
                                      alt="<?php echo $text['ourpages']; ?>" width="312" height="78" class="noimgborder">
-                                <?php
-                            }
-                            //end HEADER TITLE IMAGE
-                            ?>
+                            <?php } ?>
 
                         </a></td>
                 </tr>

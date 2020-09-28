@@ -40,14 +40,14 @@ tng_adminheader($admtext['addnewtlevent'], $flags);
         return rval;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $timelinetabs[0] = [1, "admin_timelineevents.php", $admtext['search'], "findtimeline"];
 $timelinetabs[1] = [$allow_add, "admin_newtlevent.php", $admtext['addnew'], "addtlevent"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/tlevents_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/tlevents_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($timelinetabs, "addtlevent", $innermenu);
 echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtlevent'], "img/tlevents_icon.gif", $menu, "");
 ?>

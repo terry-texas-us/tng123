@@ -33,9 +33,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             } else {
                 ?>
                 <div style="width:400px; height:300px; border:1px solid #000;"><?php echo $text['living']; ?></div>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </div>
         <div id="div0" class="slide" style="display:none;"></div>
     </div>

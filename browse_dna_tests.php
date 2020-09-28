@@ -38,7 +38,7 @@ function doTestSearch($instance, $pagenav) {
     if ($testsearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"browse_dna_tests.php\">{$text['browsealltests']}</a>";
     }
-    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";
     $str .= "</form></span>\n";
 
     return $str;
@@ -56,7 +56,7 @@ if (!empty($offset)) {
 
 $testsearch = isset($testsearch) ? trim($testsearch) : '';
 if ($tree) {
-    $wherestr = "WHERE $dna_tests_table.gedcom = \"$tree\"";
+    $wherestr = "WHERE $dna_tests_table.gedcom = '$tree'";
     if ($testsearch) {
         $wherestr .= " AND (test_type LIKE \"%$testsearch%\" OR test_number LIKE \"%$testsearch%\" OR vendor LIKE \"%$testsearch%\" OR notes LIKE \"%$testsearch%\" OR dna_group LIKE \"%$testsearch%\" OR dna_group_desc LIKE \"%$testsearch%\" OR surnames LIKE \"%$testsearch%\")";
     }
@@ -295,16 +295,12 @@ if ($test_type == "mtDNA") {
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
         <?php if ($test_type && $test_type != "X-DNA") { ?>
             <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $admtext['select']; ?>&nbsp;</th>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_type']; ?>&nbsp;</th>
         <?php
         if ($allow_edit || $showtestnumbers) { ?>
             <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
         <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
         <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
@@ -429,7 +425,7 @@ if ($test_type == "mtDNA") {
             tng_free_result($presult);
 
             if ($dnalinktext) {
-                $more = "<a href=\"#\" onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
+                $more = "<a href='#' onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
                 $morediv = "<div style=\"display:none;\" id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
             } else {
                 $more = $morediv = "";

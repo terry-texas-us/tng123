@@ -92,9 +92,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </select>
                 </td>
             </tr>
-            <?php
-            if ($type != "album") {
-                ?>
+            <?php if ($type != "album") { ?>
                 <tr>
                     <td class='align-top'><?php echo $admtext['alttitle']; ?>:</td>
                     <td><textarea name="altdescription" rows="3" cols="40"><?php echo $row['altdescription']; ?></textarea></td>
@@ -105,33 +103,23 @@ header("Content-type:text/html; charset=" . $session_charset);
                 </tr>
                 <tr>
                     <td class="align-top" colspan="2">
-                        <?php
-                        if ($row['linktype'] != "C") {
-                            ?>
+                        <?php if ($row['linktype'] != "C") { ?>
                             <input type="checkbox" name="defphoto" value="1"<?php if ($row['defphoto']) {
                                 echo " checked";
                             } ?>> <?php echo $admtext['makedefault']; ?>*
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <input type="checkbox" name="show" value="1"<?php if (!$row['dontshow']) {
                             echo " checked";
                         } ?>> <?php echo $admtext['show']; ?>
                     </td>
                 </tr>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </table>
         <br>
-        <?php
-        if ($type != "album") {
-            ?>
+        <?php if ($type != "album") { ?>
             <input type="hidden" name="personID" value="<?php echo $entityID; ?>">
             <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
-            <?php
-        }
-        ?>
+        <?php } ?>
         <input type="hidden" name="linkID" value="<?php echo $linkID; ?>">
         <input type="hidden" name="type" value="<?php echo $type; ?>">
         <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">

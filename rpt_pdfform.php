@@ -169,9 +169,6 @@ header("Content-type:text/html; charset=" . $session_charset);
         echo "ERROR: There are no fonts installed to support character set $session_charset.";
         return;
     }
-    ?>
-
-    <?php
     echo getFORM($dest, "post", "pdfform", "pdfform");
     // determine if we need to draw a generations option
     if ($genmin > 0 || $genmax > 0) {
@@ -191,9 +188,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     <?php doGenOptions($generations, $genmin, $genmax); ?>
                 </td>
             </tr>
-            <?php
-            if ($pdftype == "ped" || $pdftype == "desc") {
-                ?>
+            <?php if ($pdftype == "ped" || $pdftype == "desc") { ?>
                 <tr>
                     <td class="ws">
                         <span class="normal"><?php echo $text['startnum']; ?>:</span>
@@ -202,9 +197,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                         <input type="text" name="startnum" value="1" size="4">
                     </td>
                 </tr>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </table>
 
         <?php
@@ -233,13 +226,13 @@ header("Content-type:text/html; charset=" . $session_charset);
     ?>
     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
 
-    <?php
-    // options specific to certain report types
-    if ($pdftype == "desc") {
-        ?>
-        <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle"><img
-                    src="img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
-            </a></div>
+    <?php if ($pdftype == "desc") { ?>
+        // options specific to certain report types
+        <div class="pdfblock subhead">
+            <a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle">
+                <img src="img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
+            </a>
+        </div>
         <div style="display:none;" id="dispopts">
             <table id="display" cellpadding="3" class="normal">
                 <tr>
@@ -270,9 +263,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </table>
             <br>
         </div>
-        <?php
-    }
-    ?>
+    <?php } ?>
 
     <!-- Font section -->
     <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('font','fonticon','');" class="pdftoggle"><img

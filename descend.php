@@ -294,7 +294,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         $vitalinfo = getVitalDates($person);
         if ($vitalinfo) {
             $boxstr .= "<div style=\"position: absolute; top:" . ($top + $pedigree['boxheight'] + (2 * $pedigree['borderwidth']) + $pedigree['shadowoffset'] + 1) . "px;left:" . ($left + intval(($pedigree['boxwidth'] - $pedigree['downarroww']) / 2) - 1) . "px;z-index:7;\" class=\"fakelink\">";
-            $boxstr .= "<a href=\"#\" onmouse{$pedigree['event']}=\"showPopup($numboxes,$top," . $pedigree['boxheight'] . ")\">" . $pedigree['downarrow'] . "</a></div>";
+            $boxstr .= "<a href='#' onmouse{$pedigree['event']}=\"showPopup($numboxes,$top," . $pedigree['boxheight'] . ")\">" . $pedigree['downarrow'] . "</a></div>";
 
             $boxstr .= "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; left:" . ($left - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
             $boxstr .= "<div><div class=\"tngshadow popinner\"><div class=\"pboxpopupdiv\">\n<table cellspacing=\"0\" cellpadding='1' border=\"0\" width=\"100%\">\n";
@@ -714,10 +714,10 @@ for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 $innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class=\"lightlink$slinkstyle\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
 $innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class=\"lightlink$clinkstyle\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink\">{$text['regformat']}</a>\n";
+$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>{$text['regformat']}</a>\n";
 if ($generations <= 12 && $allowpdf) {
-    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=desc&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
@@ -728,7 +728,7 @@ echo "</form>\n";
     <p class="normal">
         (<?php echo $text['scrollnote'];
         if ($pedigree['usepopups_real']) {
-            echo ($pedigree['downarrow'] ? " <img src=\"" . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><b>V</b></a>") . $text['popupnote1'];
+            echo ($pedigree['downarrow'] ? " <img src=\"" . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href='#'><b>V</b></a>") . $text['popupnote1'];
         }
         ?>)
     </p>
@@ -814,9 +814,7 @@ if ($display != "compact" && $pedigree['usepopups']) {
         }
         //]]>
     </script>
-    <?php
-}
-?>
+<?php } ?>
     <script src="js/rpt_utils.js"></script>
 <?php
 tng_footer("");

@@ -11,7 +11,7 @@ if ($session_charset != "UTF-8") {
     $mylastname = tng_utf8_decode($mylastname);
 }
 
-$allwhere = "gedcom = \"$tree\"";
+$allwhere = "gedcom = '$tree'";
 if ($personID) {
     $allwhere .= " AND personID = \"$personID\"";
 }
@@ -85,8 +85,8 @@ header("Content-type:text/html; charset=" . $session_charset);
             $jsnamestr = str_replace("&#34;", "&quot;", $namestr);
             $jsnamestr = preg_replace("/\"/", "&quot;", $namestr);
             echo "<tr>\n";
-            echo "<td class='align-top'><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">{$row['personID']}</a></span></td>\n";
-            echo "<td><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td>\n";
+            echo "<td class='align-top'><span class='normal'><a href='#' onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">{$row['personID']}</a></span></td>\n";
+            echo "<td><span class='normal'><a href='#' onClick=\"return returnName('{$row['personID']}','$jsnamestr','$type','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td>\n";
             echo "</tr>\n";
         }
         tng_free_result($result);

@@ -60,7 +60,7 @@ function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $al
         }
         $link = " <a href=\"$address$href\" class=\"snlink\" title=\"$title\">$label</a> ";
     } else {
-        $link = " <a href=\"#\" class=\"snlink\" onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
+        $link = " <a href='#' class=\"snlink\" onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
     }
 
     return $link;

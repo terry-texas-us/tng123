@@ -14,7 +14,7 @@ if (!$allow_media_add || $assignedtree) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
 }
@@ -42,19 +42,17 @@ foreach ($mediatypes as $mediatype) {
     $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
 }
 $sttypestr = implode(",", $standardtypes);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
 $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [!$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [!$assignedtree, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#import');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#import');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "import", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img/photos_icon.gif", $menu, $message);
 ?>
@@ -75,18 +73,14 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
                                 }
                                 ?>
                             </select>
-                            <?php
-                            if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
-                                ?>
+                            <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
                                 <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                        onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
                                 <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                        onclick="editMediatype(document.form1.mediatypeID);">
                                 <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                        onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
-                                <?php
-                            }
-                            ?>
+                            <?php } ?>
                         </td>
                     </tr>
                     <tr>
@@ -117,7 +111,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
 
 </table>
 <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-<script src="js/admin.js"></script>
 <script src="js/mediautils.js"></script>
 <script>
     var tree = "<?php echo $tree; ?>";

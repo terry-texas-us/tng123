@@ -114,14 +114,13 @@ tng_adminheader($admtext['notes'], $flags);
         document.form1.tree.selectedIndex = 0;
     }
 </script>
-<script src="js/admin.js"></script>
-<?php echo "</head>"; ?>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $misctabs[0] = [1, "admin_notelist.php", $admtext['notes'], "notes"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/notes2_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/notes2_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($misctabs, "notes", $innermenu);
 echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
 ?>
@@ -182,17 +181,13 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xnoteaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -213,7 +208,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             $actionstr .= "<a href=\"admin_editnote2.php?ID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {

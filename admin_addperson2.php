@@ -193,11 +193,11 @@ if ($result && tng_num_rows($result)) {
             $result = @tng_query($query);
             $famrow = tng_fetch_assoc($result);
             if ($famrow['husband']) {
-                $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"$tree\"";
+                $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['husband']}\" AND gedcom = '$tree'";
                 $result2 = @tng_query($query);
             }
             if ($famrow['wife']) {
-                $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"$tree\"";
+                $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['wife']}\" AND gedcom = '$tree'";
                 $result2 = @tng_query($query);
             }
             tng_free_result($result);
@@ -222,8 +222,8 @@ if ($result && tng_num_rows($result)) {
         $rval .= "<td class='lightback normal childblock'>\n";
 
         $name = getName($row);
-        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
-        $rval .= "<a href=\"#\" onclick=\"EditChild('$personID');\">" . $name . "</a> - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
+        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
+        $rval .= "<a href='#' onclick=\"EditChild('$personID');\">" . $name . "</a> - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
         echo $rval;
     } elseif ($type == "spouse") {
         $name = getName($row);

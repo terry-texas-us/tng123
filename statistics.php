@@ -52,8 +52,8 @@ tng_header($text['databasestatistics'], $flags);
         $lastimportdate = $treerow['lastimportdate'];
 
         if ($tree) {
-            $wherestr = "WHERE gedcom = \"$tree\"";
-            $wherestr2 = "AND gedcom= \"$tree\"";
+            $wherestr = "WHERE gedcom = '$tree'";
+            $wherestr2 = "AND gedcom= '$tree'";
         } else {
             $wherestr = "";
             $wherestr2 = "";
@@ -83,7 +83,7 @@ tng_header($text['databasestatistics'], $flags);
             $mediatypeID = $mediatype['ID'];
             if ($tree) {
                 $query = "SELECT count(distinct mediaID) AS mcount FROM $media_table
-	    WHERE mediatypeID = \"$mediatypeID\" AND (gedcom = \"$tree\" OR gedcom = \"\")";
+	    WHERE mediatypeID = \"$mediatypeID\" AND (gedcom = '$tree' OR gedcom = \"\")";
             } else {
                 $query = "SELECT count(mediaID) AS mcount FROM $media_table WHERE mediatypeID = \"$mediatypeID\"";
             }

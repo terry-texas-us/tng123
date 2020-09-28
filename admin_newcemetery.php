@@ -32,7 +32,6 @@ if ($map['key'] && $isConnected) {
 ?>
 <script src="js/selectutils.js"></script>
 <script src="js/mediautils.js"></script>
-<script src="js/admin.js"></script>
 <script>
     const nothingtodelete = "<?php echo $admtext['nothingtodelete']; ?>";
     const confdeleteentity = "<?php echo $admtext['confdeleteentity']; ?>";
@@ -80,7 +79,7 @@ if ($map['key']) {
 <?php
 $cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
 $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($cemtabs, "addcemetery", $innermenu);
 echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcemetery'], "img/cemeteries_icon.gif", $menu, $message);
 ?>
@@ -173,22 +172,15 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                         <td>
                             <input type="checkbox" name="usecoords" value="1" checked="checked"> <?php echo $admtext['usecemcoords']; ?></td>
                     </tr>
-                    <?php
-                    if ($map['key']) {
-                        ?>
+                    <?php if ($map['key']) { ?>
                         <tr>
                             <td colspan="2">
                                 <div style="padding:10px;">
-                                    <?php
-                                    // draw the map here
-                                    include "googlemapdrawthemap.php";
-                                    ?>
+                                    <?php include "googlemapdrawthemap.php"; ?>
                                 </div>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['latitude']; ?>:</td>
                         <td>
@@ -201,18 +193,14 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                             <input type="text" name="longitude" size="20" id="lonbox">
                         </td>
                     </tr>
-                    <?php
-                    if ($map['key']) {
-                        ?>
+                    <?php if ($map['key']) { ?>
                         <tr>
                             <td><?php echo $admtext['zoom']; ?>:</td>
                             <td>
                                 <input type="text" name="zoom" size="20" id="zoombox">
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                         <td><textarea cols="60" rows="8" name="notes"></textarea></td>

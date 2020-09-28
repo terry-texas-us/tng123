@@ -12,7 +12,7 @@ function doSourceSearch($instance, $pagenav) {
     $str .= getFORM("browsesources", "get", "SourceSearch$instance", "");
     $str .= "<input type='text' name=\"sourcesearch\" value=\"$sourcesearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
-    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";
     if ($sourcesearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browsesources.php'>{$text['browseallsources']}</a>";
     }
@@ -33,7 +33,7 @@ if ($offset) {
 
 $sourcesearch = cleanIt(trim($sourcesearch));
 if ($tree) {
-    $wherestr = "WHERE $sources_table.gedcom = \"$tree\"";
+    $wherestr = "WHERE $sources_table.gedcom = '$tree'";
     if ($sourcesearch) {
         $wherestr .= " AND (title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\")";
     }

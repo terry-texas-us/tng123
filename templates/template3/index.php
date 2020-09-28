@@ -136,9 +136,7 @@ $title = getTemplateMessage('t3_maintitle');
                 if (!$currentuser && !$tngconfig['disallowreg']) {
                     ?>
                     <a href="newacctform.php"><?php echo $text['mnuregister']; ?></a> &nbsp;|&nbsp;
-                    <?php
-                }
-                ?>
+                <?php } ?>
                 <a href="suggest.php?page=<?php echo $title; ?>"><?php echo $text['contactus']; ?></a>
             </div>
         <?php } ?>

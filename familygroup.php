@@ -278,16 +278,16 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $query .= "FROM $families_table families ";
     if ($ind['sex'] == "M") {
         $query .= "LEFT JOIN $people_table people ON families.wife = people.personID AND families.gedcom = people.gedcom ";
-        $query .= "WHERE husband = \"{$ind['personID']}\" AND people.gedcom = \"$tree\" $restriction ";
+        $query .= "WHERE husband = \"{$ind['personID']}\" AND people.gedcom = '$tree' $restriction ";
         $query .= "ORDER BY husborder";
     } else {
         if ($ind['sex'] = "F") {
             $query .= "LEFT JOIN $people_table people ON families.husband = people.personID AND families.gedcom = people.gedcom ";
-            $query .= "WHERE wife = \"{$ind['personID']}\" AND people.gedcom = \"$tree\" $restriction ";
+            $query .= "WHERE wife = \"{$ind['personID']}\" AND people.gedcom = '$tree' $restriction ";
             $query .= "ORDER BY wifeorder";
         } else {
             $query .= "LEFT JOIN $people_table people ON (families.husband = people.personID OR families.wife = people.personID) AND families.gedcom = people.gedcom ";
-            $query .= "WHERE (wife = \"{$ind['personID']}\" && husband = \"{$ind['personID']}\") AND $people_table.gedcom = \"$tree\"";
+            $query .= "WHERE (wife = \"{$ind['personID']}\" && husband = \"{$ind['personID']}\") AND $people_table.gedcom = '$tree'";
         }
     }
     $spresult = tng_query($query);
@@ -555,20 +555,20 @@ if ($media || $notes || $assoctext) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu = "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['faminfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu = "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['faminfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if ($media) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($assoctext) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('assoc');\" id=\"tng_xlink\">{$text['association']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('assoc');\" id=\"tng_xlink\">{$text['association']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($citedispctr) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('citations');\" id=\"tng_clink\">{$text['sources']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('citations');\" id=\"tng_clink\">{$text['sources']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
 } else {
     $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">{$text['faminfo']}</span>\n";
 }
@@ -579,7 +579,7 @@ $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
 if ($allowpdf) {
-    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 

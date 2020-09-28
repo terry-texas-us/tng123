@@ -125,16 +125,15 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
     }
     ?>
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $evtabs[0] = [1, "admin_eventtypes.php", $admtext['search'], "findevent"];
 $evtabs[1] = [$allow_add, "admin_neweventtype.php", $admtext['addnew'], "addevent"];
 $evtabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/eventtypes_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/eventtypes_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($evtabs, "edit", $innermenu);
 echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['modifyeventtype'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>
@@ -192,9 +191,7 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                             <input type="text" name="defdisplay" size="40" value="<?php echo $defdisplay; ?>">
                         </td>
                     </tr>
-                    <?php
-                    if ($displayrows) {
-                        ?>
+                    <?php if ($displayrows) { ?>
                         <tr>
                             <td class="align-top" colspan="2">
                                 <br>
@@ -204,17 +201,13 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
                                     <tr>
                                         <td class="align-top" colspan="2"><br><b><?php echo $admtext['allnone']; ?></b><br><br></td>
                                     </tr>
-                                    <?php
-                                    echo $displayrows;
-                                    ?>
+                                    <?php echo $displayrows; ?>
                                 </table>
                                 <hr style="margin-left:0; width:400px;">
                                 <br>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td class='align-top'><?php echo $admtext['displayorder']; ?>:</td>
                         <td>

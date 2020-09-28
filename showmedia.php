@@ -101,7 +101,7 @@ if ($personID && !$albumlinkID) {
             $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$personID\" AND gedcom = '$tree'";
         } elseif ($linktype == "I") {
             $query = "SELECT lastname, firstname, prefix, suffix, title, lnprefix, living, private, branch, $people_table.gedcom, birthdate, birthdatetr, altbirthdate, altbirthdatetr, deathdate, deathdatetr, burialdate, burialdatetr, sex, disallowgedcreate, IF(birthdatetr !='0000-00-00',YEAR(birthdatetr),YEAR(altbirthdatetr)) AS birth, IF(deathdatetr !='0000-00-00',YEAR(deathdatetr),YEAR(burialdatetr)) AS death
-				FROM $people_table, $trees_table WHERE personID = \"$personID\" AND $people_table.gedcom = \"$tree\" AND $people_table.gedcom = $trees_table.gedcom";
+				FROM $people_table, $trees_table WHERE personID = \"$personID\" AND $people_table.gedcom = '$tree' AND $people_table.gedcom = $trees_table.gedcom";
         }
         $result2 = tng_query($query);
         if ($result2) {
@@ -179,7 +179,7 @@ $size = @GetImageSize("$rootpath$usefolder/" . $imgrow['path'], $info);
 $adjheight = $size['1'] - 1;
 
 if (!$tngconfig['ssdisabled'] && !$tngprint && $numitems > 1) {
-    $sscontrols = " &nbsp;&nbsp;&nbsp; <a href=\"#\" onclick=\"return start();\" class=\"snlink\">&raquo; {$text['slidestart']}</a>\n";
+    $sscontrols = " &nbsp;&nbsp;&nbsp; <a href='#' onclick=\"return start();\" class=\"snlink\">&raquo; {$text['slidestart']}</a>\n";
 } else {
     $sscontrols = "";
 }

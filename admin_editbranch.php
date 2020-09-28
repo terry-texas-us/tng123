@@ -111,15 +111,15 @@ tng_adminheader($admtext['modifytree'], $flags);
         jQuery('#overwrite1').fadeIn(300);
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
 $branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
 $branchtabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/branches_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($branchtabs, "edit", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranch'], "img/branches_icon.gif", $menu, $message);
 ?>

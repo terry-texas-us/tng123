@@ -61,16 +61,13 @@ $helplang = findhelp("languages_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['languages'], $flags);
-?>
-<script src="js/admin.js"></script>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $langtabs['0'] = [1, "admin_languages.php", $admtext['search'], "findlang"];
 $langtabs['1'] = [$allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/languages_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($langtabs, "findlang", $innermenu);
 echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $message);
 ?>
@@ -115,7 +112,7 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                             $actionstr .= "<a href=\"admin_editlanguage.php?languageID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onclick=\"if(confirm('{$admtext['conflangdelete']}' )){deleteIt('language',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['conflangdelete']}' )){deleteIt('language',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['languageID'], $actionstr);

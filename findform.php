@@ -110,9 +110,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                 </tr>
             </table>
-            <?php
-        }
-        ?>
+        <?php } ?>
     </form>
     <div id="newlines" style="width:605px;height:390px;overflow:auto;"></div>
     <br>

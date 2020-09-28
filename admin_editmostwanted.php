@@ -56,7 +56,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     <select name="mwtree" onchange="tree=this.options[this.selectedIndex].value">
                         <?php
                         if ($assignedtree) {
-                            $wherestr = "WHERE gedcom = \"$assignedtree\"";
+                            $wherestr = "WHERE gedcom = '$assignedtree'";
                             $firsttree = $assignedtree;
                         } else {
                             $wherestr = "";

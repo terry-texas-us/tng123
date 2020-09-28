@@ -101,15 +101,14 @@ tng_adminheader($admtext['eventtypes'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $evtabs['0'] = [1, "admin_eventtypes.php", $admtext['search'], "findevent"];
 $evtabs['1'] = [$allow_add, "admin_neweventtype.php", $admtext['addnew'], "addevent"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/eventtypes_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/eventtypes_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($evtabs, "findevent", $innermenu);
 echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>
@@ -225,7 +224,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                             $actionstr .= "<a href=\"admin_editeventtype.php?eventtypeID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         while ($row = tng_fetch_assoc($result)) {
                             $keep = $row['keep'] ? $admtext['accept'] : $admtext['ignore'];

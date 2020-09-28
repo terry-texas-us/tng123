@@ -224,9 +224,7 @@ $title = getTemplateMessage('t17_maintitle');
                 <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
                 <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
                 <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
-                <?php
-                if (!$tngconfig['hidedna']) {
-                    ?>
+                <?php if (!$tngconfig['hidedna']) { ?>
                     <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
                 <?php } ?>
                 <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>

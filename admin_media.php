@@ -67,12 +67,12 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
-    $wherestr2 = " AND medialinks.gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
+    $wherestr2 = " AND medialinks.gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
     if ($tree) {
-        $wherestr2 = " AND medialinks.gedcom = \"$tree\"";
+        $wherestr2 = " AND medialinks.gedcom = '$tree'";
     }
 }
 $orgwherestr = $wherestr;
@@ -81,9 +81,9 @@ $orgtree = $tree;
 $originalstring = preg_replace("/\"/", "&#34;", $searchstring);
 $wherestr = $searchstring ? "($media_table.mediaID LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR path LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR bodytext LIKE \"%$searchstring%\" OR owner LIKE \"%$searchstring%\")" : "";
 if ($assignedtree) {
-    $wherestr .= $wherestr ? " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")" : "($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
+    $wherestr .= $wherestr ? " AND ($media_table.gedcom = '$tree' || $media_table.gedcom = \"\")" : "($media_table.gedcom = '$tree' || $media_table.gedcom = \"\")";
 } elseif ($tree) {
-    $wherestr .= $wherestr ? " AND $media_table.gedcom = \"$tree\"" : "$media_table.gedcom = \"$tree\"";
+    $wherestr .= $wherestr ? " AND $media_table.gedcom = '$tree'" : "$media_table.gedcom = '$tree'";
 }
 if ($mediatypeID) {
     $wherestr .= $wherestr ? " AND mediatypeID = \"$mediatypeID\"" : "mediatypeID = \"$mediatypeID\"";
@@ -193,38 +193,31 @@ $sttypestr = implode(",", $standardtypes);
 
     function confirmDelete(mediaID) {
         if (confirm('<?php echo $admtext['confdeletemedia']; ?>')) {
-            <?php
-            if( $tngconfig['mediadel'] == 2) {
-            ?>
-            if (confirm('<?php echo $admtext['confdelmediafile']; ?>'))
-                deleteIt('media', mediaID, '', 1);
-            else
-                deleteIt('media', mediaID, '', 0);
-            <?php
-            }
-            else {
-            ?>
+            <?php if ($tngconfig['mediadel'] == 2) { ?>
+                if (confirm('<?php echo $admtext['confdelmediafile']; ?>')) {
+                    deleteIt('media', mediaID, '', 1);
+                } else {
+                    deleteIt('media', mediaID, '', 0);
+                }
+            <?php } else { ?>
             deleteIt('media', mediaID);
-            <?php
-            }
-            ?>
+            <?php } ?>
         }
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
 $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "findmedia", $innermenu);
 echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 ?>
@@ -276,18 +269,14 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     }
                                     ?>
                                 </select>
-                                <?php
-                                if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) {
-                                    ?>
+                                <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
                                            onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
                                     <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
                                            onclick="editMediatype(document.form1.mediatypeID);">
                                     <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
                                            onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
-                                    <?php
-                                }
-                                ?>
+                                <?php } ?>
                             </td>
                         </tr>
                         <tr id="hsstatrow">
@@ -355,15 +344,11 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedmedia.php" method="post" name="form2">
-                    <?php
-                    if ($allow_media_delete || $allow_media_edit) {
-                        ?>
+                    <?php if ($allow_media_delete || $allow_media_edit) { ?>
                         <p class="nw">
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
-                            <?php
-                            if ($allow_media_delete) {
-                                ?>
+                            <?php if ($allow_media_delete) { ?>
                                 <input type="submit" name="xphaction" value="<?php echo $admtext['deleteselected']; ?>"
                                        onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">&nbsp;&nbsp;
                                 <?php
@@ -400,9 +385,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 }
                                 ?>
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -429,7 +412,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $actionstr .= "<a href=\"admin_editmedia.php?mediaID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_media_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"showmedia.php?mediaID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 

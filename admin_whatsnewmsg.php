@@ -28,11 +28,11 @@ tng_adminheader($admtext['whatsnew'], $flags);
     <?php include "niceditmsgs.php"; ?>
     //]]>
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
 $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
 $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];

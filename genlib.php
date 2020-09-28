@@ -805,19 +805,19 @@ function tng_icons($instance, $title = "") {
 
         $menu = "";
         if ($tngconfig['menu'] < 2) {
-            $menu .= "<li><a href=\"#\" class=\"menulink\">{$text['find_menu']}</a>\n";
+            $menu .= "<li><a href='#' class='menulink'>{$text['find_menu']}</a>\n";
             $menu .= "<ul>\n";
             $menu .= tng_getFindMenu();
             $menu .= "</ul>\n";
             $menu .= "</li>\n";
 
-            $menu .= "<li><a href=\"#\" class=\"menulink\">{$text['media']}</a>\n";
+            $menu .= "<li><a href='#' class='menulink'>{$text['media']}</a>\n";
             $menu .= "<ul>\n";
             $menu .= tng_getMediaMenu();
             $menu .= "</ul>\n";
             $menu .= "</li>\n";
 
-            $menu .= "<li><a href=\"#\" class=\"menulink\">{$text['info']}</a>\n";
+            $menu .= "<li><a href='#' class='menulink'>{$text['info']}</a>\n";
             $last = !$langmenu && !isset($custommenu) ? " class=\"last\"" : "";
             $menu .= "<ul{$last}>\n";
             $menu .= tng_getInfoMenu($title);
@@ -876,7 +876,7 @@ function tng_icons($instance, $title = "") {
 
             if (empty($tngconfig['searchchoice']) && empty($tngconfig['showsearch'])) {
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
-                $fullmenu .= "<a href=\"#\" onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"img/tng_close.gif\" alt=\"\"/></a>";
+                $fullmenu .= "<a href='#' onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"img/tng_close.gif\" alt=\"\"/></a>";
                 $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href='searchform.php'>{$text['mnuadvancedsearch']}</a> | <a href='famsearchform.php'>{$text['searchfams']}</a> | <a href='searchsite.php'>{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
                 $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type='text' name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
@@ -1198,7 +1198,7 @@ function custom_menu($custmenu, $items, $mobile = false) {
     if ($mobile) {
         $menu = "<ul id=\"mcustmenu\" class=\"mright\">\n" . $items . "</ul>\n";
     } else {
-        $menu = "<li><a href=\"#\" class=\"menulink\">$mtext</a>\n";
+        $menu = "<li><a href='#' class='menulink'>$mtext</a>\n";
         $menu .= "<ul class=\"last\">\n" . $items . "\n</ul>\n";
         $menu .= "</li>\n";
     }

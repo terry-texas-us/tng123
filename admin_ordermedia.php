@@ -85,7 +85,7 @@ adminwritelog("<a href=\"admin_ordermedia.php?personID=$personID&amp;tree=$tree\
 $photo = "";
 
 $query = "SELECT alwayson, thumbpath, $media_table.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID, $media_table.gedcom FROM ($media_table, $medialinks_table)
-	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
+	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
 $result = tng_query($query);
 if ($result) {
     $row = tng_fetch_assoc($result);
@@ -138,7 +138,7 @@ if (file_exists("$rootpath$photoref")) {
 </script>
 <script src="js/selectutils.js"></script>
 <script src="js/mediautils.js"></script>
-<script src="js/admin.js"></script>
+
 </head>
 
 <body class="admin-body" onLoad="startMediaSort()">
@@ -150,8 +150,8 @@ $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_s
 $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#sortfor');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$test_url" . "$testID=$personID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#sortfor');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"$test_url" . "$testID=$personID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($mediatabs, "sortmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "img/photos_icon.gif", $menu, $message);
 ?>
@@ -166,7 +166,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
             if (!$photo) {
                 echo " style=\"display:none;\"";
             }
-            echo "><a href=\"#\" onclick=\"return removeDefault();\">{$admtext['removedef']}</a></p>\n";
+            echo "><a href='#' onclick=\"return removeDefault();\">{$admtext['removedef']}</a></p>\n";
             ?>
             <table id="ordertbl" class="fieldname normal">
                 <tr>
@@ -195,9 +195,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         echo "</td>\n";
 
                         echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
-                        echo "<div style=\"padding-bottom:5px;\"><a href=\"#\" onclick=\"return moveItemInList('{$row['medialinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
+                        echo "<div style=\"padding-bottom:5px;\"><a href='#' onclick=\"return moveItemInList('{$row['medialinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
                         echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['medialinkID']}\" id=\"move{$row['medialinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val(),event);\">\n";
-                        echo "<a href=\"#\" onclick=\"return moveItemInList('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
+                        echo "<a href='#' onclick=\"return moveItemInList('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
 
                         echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
@@ -213,7 +213,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         echo "<span id=\"md_{$row['medialinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">\n";
                         echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$row['mediaID']}\"$checked onclick=\"makeDefault(this);\">{$admtext['makedefault']}\n";
                         echo " &nbsp;|&nbsp; ";
-                        echo "<a href=\"#\" onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";
+                        echo "<a href='#' onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";
                         echo "</span>&nbsp;</td>\n";
                         echo "<td class='lightback normal' style=\"width:45px;text-align:center;vertical-align:top;\">";
                         $checked = $row['dontshow'] ? "" : " checked";

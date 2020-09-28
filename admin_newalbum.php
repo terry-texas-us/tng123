@@ -28,16 +28,15 @@ tng_adminheader($admtext['addnewalbum'], $flags);
         return rval;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
 $albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/albums_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($albumtabs, "addalbum", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['addnewalbum'], "img/albums_icon.gif", $menu, $message);
 ?>

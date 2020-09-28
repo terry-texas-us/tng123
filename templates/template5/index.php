@@ -64,9 +64,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <a href="browsenotes.php" class="lightlink2"><?php echo $text['notes']; ?></a>
                                     | <a href="browsesources.php" class="lightlink2"><?php echo $text['mnusources']; ?></a>
                                     | <a href="browserepos.php" class="lightlink2"><?php echo $text['repositories']; ?></a>
-                                    <?php
-                                    if (!$tngconfig['hidedna']) {
-                                        ?>
+                                    <?php if (!$tngconfig['hidedna']) { ?>
                                         | <a href="browse_dna_tests.php" class="lightlink2"><?php echo $text['dna_tests']; ?></a>
                                     <?php } ?>
                                     | <a href="statistics.php" class="lightlink2"><?php echo $text['mnustatistics']; ?></a>

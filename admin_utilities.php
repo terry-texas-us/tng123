@@ -39,10 +39,10 @@ function doRow($table_name, $display_name) {
     global $admtext, $rootpath, $backuppath, $fileflag;
 
     echo "<tr>\n";
-    echo "<td class='lightback'><div class=\"action-btns\"><a href=\"#\" onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
-    echo "<a href=\"#\" onclick=\"return startBackup('$table_name');\" title=\"{$admtext['backup']}\" class=\"smallicon admin-save-icon\"></a>";
+    echo "<td class='lightback'><div class=\"action-btns\"><a href='#' onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
+    echo "<a href='#' onclick=\"return startBackup('$table_name');\" title=\"{$admtext['backup']}\" class=\"smallicon admin-save-icon\"></a>";
     $fileflag = $table_name && file_exists("$rootpath$backuppath/$table_name.bak");
-    echo "<a href=\"#\" id=\"rst_$table_name\" onclick=\"if( confirm('{$admtext['surerestore']}') ) {startRestore('$table_name') ;} return false;\" title=\"{$admtext['restore']}\" class=\"smallicon admin-rest-icon\"";
+    echo "<a href='#' id=\"rst_$table_name\" onclick=\"if( confirm('{$admtext['surerestore']}') ) {startRestore('$table_name') ;} return false;\" title=\"{$admtext['restore']}\" class=\"smallicon admin-rest-icon\"";
     if (!$fileflag) {
         echo " style=\"visibility:hidden\"";
     }
@@ -182,15 +182,15 @@ tng_adminheader($admtext['backuprestore'], $flags);
         return false;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $utiltabs['0'] = [1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables"];
 $utiltabs['1'] = [1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure"];
 $utiltabs['2'] = [1, "admin_renumbermenu.php", $admtext['renumber'], "renumber"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($utiltabs, $sub, $innermenu);
 $headline = $sub == "tables" ? $admtext['backuprestore'] . " &gt;&gt; " . $admtext['backuprestoretables'] : $admtext['backuprestore'] . " &gt;&gt; " . $admtext['backupstruct'];
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
@@ -316,9 +316,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                     </table>
 
                 </div>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </td>
     </tr>
 </table>

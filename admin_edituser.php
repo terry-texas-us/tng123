@@ -90,17 +90,16 @@ echo $style->getStyle();
     var enteremail = "<?php echo $text['enteremail']; ?>";
 </script>
 
-</head>
-
-<body class="admin-body">
-
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $usertabs[0] = [1, "admin_users.php", $admtext['search'], "finduser"];
 $usertabs[1] = [$allow_add, "admin_newuser.php", $admtext['addnew'], "adduser"];
 $usertabs[2] = [$allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review"];
 $usertabs[3] = [1, "admin_mailusers.php", $admtext['email'], "mail"];
 $usertabs['4'] = [1, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/users_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/users_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($usertabs, "edit", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], "img/users_icon.gif", $menu, $message);
 ?>
@@ -254,38 +253,28 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
                             </a>
                         </td>
                     </tr>
-                    <?php
-                    if ($row['dt_registered']) {
-                        ?>
+                    <?php if ($row['dt_registered']) { ?>
                         <tr>
                             <td><?php echo $admtext['dtregistered']; ?>:</span></td>
                             <td><span class="normal"><?php echo $row['dt_registered_fmt']; ?></span></td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['dtactivated']; ?>:</td>
                         <td><?php echo $row['dt_activated']; ?></td>
                     </tr>
-                    <?php
-                    if (substr($row['dt_consented'], 0, 4) != "0000") {
-                        ?>
+                    <?php if (substr($row['dt_consented'], 0, 4) != "0000") { ?>
                         <tr>
                             <td><?php echo $admtext['consentdate']; ?>:</span></td>
                             <td><span class="normal"><?php echo $row['dt_consented_fmt']; ?></span></td>
                         </tr>
-                        <?php
-                    } else {
-                        ?>
+                    <?php } else { ?>
                         <tr>
                             <td>&nbsp;</td>
                             <td>
                                 <input type="checkbox" name="consented" value="1"> <?php echo $admtext['consented']; ?></td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['lastlogin']; ?>:</td>
                         <td><?php echo $row['lastlogin']; ?></td>

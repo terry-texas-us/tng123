@@ -18,7 +18,7 @@ if (!$allow_edit || !$allow_delete) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
 }
@@ -91,15 +91,15 @@ function doRow($field, $textmsg, $boxname) {
 
     if ($r1field || $r2field) {
         echo "<tr>\n";
-        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-        echo "<td class='lightback' width=\"31%\"><span class='normal'>$r1field&nbsp;</span></td>";
+        echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
+        echo "<td class='lightback' width='31%'><span class='normal'>$r1field&nbsp;</span></td>";
         if (is_array($r2row)) {
-            echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td class=\"fieldnameback align-top\" width=\"15%\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td class='lightback' width=\"5\"><span class='normal'>";
+            echo "<td width='10'>&nbsp;&nbsp;</td>";
+            echo "<td class='fieldnameback align-top' width='15%' nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td class='lightback' width='5'><span class='normal'>";
             if ($boxname) {
                 if ($r2field) {
-                    echo "<input type=\"checkbox\" name=\"$boxname\" value=\"$field\"";
+                    echo "<input type='checkbox' name='$boxname' value='$field'";
                     if ($r2row[$field] && !$r1row[$field]) {
                         echo " checked";
                     }
@@ -111,12 +111,12 @@ function doRow($field, $textmsg, $boxname) {
                 echo "&nbsp;";
             }
             echo "</span></td>";
-            echo "<td width=\"31%\" class='lightback'><span class='normal'>$r2field&nbsp;</span></td>";
+            echo "<td width='31%' class='lightback'><span class='normal'>$r2field&nbsp;</span></td>";
         } else {
-            echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td width=\"5\" class='lightback'><span class='normal'>&nbsp;</span></td>";
-            echo "<td width=\"31%\" class='lightback'><span class='normal'>&nbsp;</span></td>";
+            echo "<td width='10'>&nbsp;&nbsp;</td>";
+            echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td width='5' class='lightback'><span class='normal'>&nbsp;</span></td>";
+            echo "<td width='31%' class='lightback'><span class='normal'>&nbsp;</span></td>";
         }
         echo "</tr>\n";
     }
@@ -136,25 +136,25 @@ function doNotes($persfam1, $persfam2, $varname) {
         if ($varname == "general") {
             $varname = "";
         }
-        $wherestr = "AND eventID = \"$varname\"";
+        $wherestr = "AND eventID = '$varname'";
     } else {
         $wherestr = "";
     }
 
     if ($ccombinenotes != "yes") {
-        $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = \"$tree\" $wherestr";
+        $query = "DELETE FROM $notelinks_table WHERE persfamID = '$persfam1' AND gedcom = '$tree' $wherestr";
         $noteresult = tng_query($query);
     }
-    $query = "UPDATE $notelinks_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = \"$tree\" $wherestr";
+    $query = "UPDATE $notelinks_table set persfamID = '$persfam1' WHERE persfamID = '$persfam2' AND gedcom = '$tree' $wherestr";
     $noteresult = tng_query($query);
 }
 
 $r1row = $r2row = "";
 if ($repoID1) {
-    $query = "SELECT reponame, repoID, repositories.addressID AS addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
+    $query = "SELECT reponame, repoID, repositories.addressID AS addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,'%d %b %Y %H:%i:%s') AS changedate ";
     $query .= "FROM $repositories_table repositories ";
     $query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
-    $query .= "WHERE repoID = \"$repoID1\" AND repositories.gedcom = \"$tree\"";
+    $query .= "WHERE repoID = '$repoID1' AND repositories.gedcom = '$tree'";
     $result = tng_query($query);
     if ($result && tng_num_rows($result)) {
         $r1row = tng_fetch_assoc($result);
@@ -167,10 +167,10 @@ if ($repoID1) {
 @set_time_limit(0);
 if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']) {
     if ($mergeaction == $admtext['nextmatch']) {
-        $wherestr2 = $repoID2 ? " AND repoID > \"$repoID2\"" : "";
-        $wherestr2 .= $repoID1 ? " AND repoID > \"$repoID1\"" : "";
+        $wherestr2 = $repoID2 ? " AND repoID > '$repoID2'" : "";
+        $wherestr2 .= $repoID1 ? " AND repoID > '$repoID1'" : "";
 
-        $wherestr = $repoID1 ? "AND repoID > \"$repoID1\"" : "";
+        $wherestr = $repoID1 ? "AND repoID > '$repoID1'" : "";
         $largechunk = 1000;
         $nextchunk = -1;
         $numrows = 0;
@@ -188,7 +188,7 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
                 while ($still_looking && $row = tng_fetch_assoc($result)) {
                     $wherestr2 = addCriteria($row);
 
-                    $query = "SELECT * FROM $repositories_table WHERE repoID > \"{$row['repoID']}\" AND gedcom = '$tree' $wherestr2 ORDER BY repoID";
+                    $query = "SELECT * FROM $repositories_table WHERE repoID > '{$row['repoID']}' AND gedcom = '$tree' $wherestr2 ORDER BY repoID";
                     $result2 = tng_query($query);
                     if ($result2 && tng_num_rows($result2)) {
                         //set repoID1, repoID2
@@ -208,10 +208,10 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
         }
     } else {
         //search with repoID1 for next duplicate
-        $wherestr2 = $repoID2 ? " AND repoID > \"$repoID2\"" : "";
+        $wherestr2 = $repoID2 ? " AND repoID > '$repoID2'" : "";
         $wherestr2 .= addCriteria($r1row);
 
-        $query = "SELECT * FROM $repositories_table WHERE repoID != \"{$r1row['repoID']}\" AND gedcom = '$tree' $wherestr2 ORDER BY repoID LIMIT 1";
+        $query = "SELECT * FROM $repositories_table WHERE repoID != '{$r1row['repoID']}' AND gedcom = '$tree' $wherestr2 ORDER BY repoID LIMIT 1";
         $result2 = tng_query($query);
         if ($result2 && tng_num_rows($result2)) {
             $r2row = tng_fetch_assoc($result2);
@@ -222,10 +222,10 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
         }
     }
 } elseif ($repoID2) {
-    $query = "SELECT reponame, repoID, repositories.addressID AS addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
+    $query = "SELECT reponame, repoID, repositories.addressID AS addressID, address1, address2, city, state, zip, country, DATE_FORMAT(changedate,'%d %b %Y %H:%i:%s') AS changedate ";
     $query .= "FROM $repositories_table repositories ";
     $query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
-    $query .= "WHERE repoID = \"$repoID2\" AND repositories.gedcom = \"$tree\"";
+    $query .= "WHERE repoID = '$repoID2' AND repositories.gedcom = '$tree'";
     $result2 = tng_query($query);
     if ($result2 && tng_num_rows($result2) && $repoID1 != $repoID2) {
         $r2row = tng_fetch_assoc($result2);
@@ -245,18 +245,18 @@ if ($mergeaction == $admtext['merge']) {
             case "p2":
                 $varname = substr($key, 2);
                 $r1row[$varname] = $r2row[$varname];
-                $updatestr .= ", $varname = \"{$r1row[$varname]}\" ";
+                $updatestr .= ", $varname = '{$r1row[$varname]}' ";
                 doNotes($repoID1, $repoID2, $varname);
                 break;
             case "ev":
                 if (strpos($key, "::")) {
                     $halves = explode("::", substr($key, 5));
                     $varname = substr(strstr($halves[0], "_"), 1);
-                    $query = "DELETE FROM $events_table WHERE persfamID = \"$repoID1\" AND gedcom = \"$tree\" and eventID = \"$varname\"";
+                    $query = "DELETE FROM $events_table WHERE persfamID = '$repoID1' AND gedcom = '$tree' and eventID = '$varname'";
                     $evresult = tng_query($query);
                     $varname = substr(strstr($halves[1], "_"), 1);
 
-                    $query = "SELECT eventID FROM $events_table WHERE persfamID = \"$repoID2\" AND  gedcom = '$tree' and eventID = \"$varname\"";
+                    $query = "SELECT eventID FROM $events_table WHERE persfamID = '$repoID2' AND  gedcom = '$tree' and eventID = '$varname'";
                     $evresult = tng_query($query);
                     while ($evrow = tng_fetch_assoc($evresult))
                         doNotes($repoID1, $repoID2, $evrow['eventID']);
@@ -266,7 +266,7 @@ if ($mergeaction == $admtext['merge']) {
                     doNotes($repoID1, $repoID2, $varname);
                 }
 
-                $query = "UPDATE $events_table set persfamID = \"$repoID1\" WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\" AND eventID = \"$varname\"";
+                $query = "UPDATE $events_table set persfamID = '$repoID1' WHERE persfamID = '$repoID2' AND gedcom = '$tree' AND eventID = '$varname'";
                 $evresult = @tng_query($query);
                 break;
         }
@@ -275,33 +275,33 @@ if ($mergeaction == $admtext['merge']) {
         doNotes($repoID1, $repoID2, "general");
 
         //convert all remaining notes and citations
-        $query = "UPDATE $notelinks_table set persfamID = \"$repoID1\" WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $notelinks_table set persfamID = '$repoID1' WHERE persfamID = '$repoID2' AND gedcom = '$tree'";
         $noteresult = tng_query($query);
     }
     if ($updatestr) {
         $updatestr = substr($updatestr, 2);
-        $query = "UPDATE $repositories_table set $updatestr WHERE repoID = \"$repoID1\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $repositories_table set $updatestr WHERE repoID = '$repoID1' AND gedcom = '$tree'";
         $combresult = tng_query($query);
     }
 
-    $query = "DELETE FROM $repositories_table WHERE repoID = \"$repoID2\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $repositories_table WHERE repoID = '$repoID2' AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
     //delete remaining notes & events for repo 2
-    $query = "DELETE FROM $events_table WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $events_table WHERE persfamID = '$repoID2' AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
-    $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$repoID2\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $notelinks_table WHERE persfamID = '$repoID2' AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
     //point sources for r2 to r1
-    $query = "UPDATE $sources_table set repoID = \"$repoID1\" WHERE repoID = \"$repoID2\" AND gedcom = \"$tree\"";
+    $query = "UPDATE $sources_table set repoID = '$repoID1' WHERE repoID = '$repoID2' AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
     //construct name for default photo 2
     $defaultphoto2 = $tree ? "$rootpath$photopath/$tree.$repoID2.$photosext" : "$rootpath$photopath/$repoID2.$photosext";
     if ($ccombineextras) {
-        $query = "UPDATE $medialinks_table set personID = \"$repoID1\", defphoto = \"\" WHERE personID = \"$repoID2\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $medialinks_table set personID = '$repoID1', defphoto = '' WHERE personID = '$repoID2' AND gedcom = '$tree'";
         $mediaresult = @tng_query($query);
 
         //construct name for default photo 1
@@ -312,7 +312,7 @@ if ($mergeaction == $admtext['merge']) {
             }
         }
     } else {
-        $query = "DELETE FROM $medialinks_table WHERE personID = \"$repoID2\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $medialinks_table WHERE personID = '$repoID2' AND gedcom = '$tree'";
         $mediaresult = tng_query($query);
     }
     $repoID2 = "";
@@ -355,16 +355,15 @@ tng_adminheader($admtext['merge'], $flags);
 
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $repotabs['0'] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
 $repotabs['1'] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs['3'] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php#merge');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($repotabs, "merge", $innermenu);
 echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge'], "img/repos_icon.gif", $menu, $message);
 ?>
@@ -383,14 +382,14 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                                 <?php
                                 $trees = "";
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
-                                    $trees .= "			<option value=\"{$treerow['gedcom']}\"";
+                                    $trees .= "			<option value='{$treerow['gedcom']}'";
                                     if ($treerow['gedcom'] == $tree) {
                                         $trees .= " selected";
                                     }
                                     $trees .= ">{$treerow['treename']}</option>\n";
                                 }
                                 echo $trees;
-                                $mergeclass = $repoID1 && $repoID2 ? "class=\"btn\"" : "class=\"disabled\" disabled";
+                                $mergeclass = $repoID1 && $repoID2 ? "class='btn'" : "class='disabled' disabled";
                                 ?>
                             </select>
                         </td>
@@ -454,13 +453,13 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     if (is_array($r1row)) {
                         $eventlist = [];
                         echo "<tr>\n";
-                        echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['repository']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r1row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                        echo "<td colspan='3'><strong class='subhead'>{$admtext['repository']} 1 | <a href='' onclick=\"window.open('admin_editrepo.php?repoID={$r1row['repoID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
                         if (is_array($r2row)) {
-                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['repository']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r2row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                            echo "<td colspan='3'><strong class='subhead'>{$admtext['repository']} 2 | <a href='' onclick=\"window.open('admin_editrepo.php?repoID={$r2row['repoID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
 
                             $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                             $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
-                            $query .= "WHERE persfamID = \"{$r2row['repoID']}\" AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
+                            $query .= "WHERE persfamID = '{$r2row['repoID']}' AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
                             $query .= "ORDER BY ordernum";
                             $evresult = tng_query($query);
                             $eventcount = tng_num_rows($evresult);
@@ -485,7 +484,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                         doRow("addressID", "address", "r2addressID");
                         $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                         $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
-                        $query .= "WHERE persfamID = \"{$r1row['repoID']}\" AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
+                        $query .= "WHERE persfamID = '{$r1row['repoID']}' AND gedcom = '$tree' AND events.eventtypeID = eventtypes.eventtypeID ";
                         $query .= "ORDER BY ordernum";
                         $evresult = tng_query($query);
                         $eventcount = tng_num_rows($evresult);
@@ -524,9 +523,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
                     <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction" onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchrepositories();">
                     <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </form>
         </div>
         </td>
@@ -534,6 +531,6 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
 
 </table>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+<?php echo "<div style='text-align: center;'><span class='normal'>$tng_title</span></div>"; ?>
 </body>
 </html>

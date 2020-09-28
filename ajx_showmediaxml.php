@@ -35,6 +35,4 @@ if ($noneliving || $imgrow['alwayson']) {
 } else {
     ?>
     <div class="livingbox rounded10"><?php echo $text['living']; ?></div>
-    <?php
-}
-?>
+<?php } ?>

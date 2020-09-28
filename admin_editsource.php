@@ -59,20 +59,19 @@ include_once "eventlib_js.php";
     var allow_notes = true;
 </script>
 <script src="js/selectutils.js"></script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
 $sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
 $sourcetabs[2] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
 $sourcetabs[3] = [$allow_edit, "admin_editsource.php?sourceID=$sourceID&tree=$tree", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/sources_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/sources_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$sourceID&amp;tree=$tree&amp;linktype=S\" class=\"lightlink\">{$admtext['addmedia']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$sourceID&amp;tree=$tree&amp;linktype=S\" class='lightlink'>{$admtext['addmedia']}</a>";
 }
 $menu = doMenu($sourcetabs, "edit", $innermenu);
 echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['modifysource'], "img/sources_icon.gif", $menu, $message);
@@ -94,8 +93,8 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['modifysource
 				<div class="topbuffer bottombuffer smallest">
 <?php
 $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
-echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+echo "<a href='#' onclick=\"return showNotes('', '$sourceID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
 ?>
                 <br style="clear: both;">
 				</div>
@@ -181,14 +180,10 @@ echo "<a href=\"#\" onclick=\"return showNotes('', '$sourceID');\" id=\"notesico
                     <tr>
                         <td class='align-top'>
                             <h3 class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>:</h3>
-                            <?php
-                            echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n";
-                            ?>
+                            <?php echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n"; ?>
                         </td>
                         <td class='align-top'>
-                            <?php
-                            showCustEvents($sourceID);
-                            ?>
+                            <?php showCustEvents($sourceID); ?>
                         </td>
                     </tr>
                 </table>

@@ -56,7 +56,7 @@ function getPdfSmallPhoto($persfamID, $rights, $gender = "") {
     global $photosext, $tree, $medialinks_table, $media_table, $tngconfig;
 
     $query = "SELECT $media_table.mediaID, medialinkID, alwayson, mediatypeID, usecollfolder, thumbpath, usecollfolder FROM ($media_table, $medialinks_table)
-		WHERE personID = \"$persfamID\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
+		WHERE personID = \"$persfamID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
 

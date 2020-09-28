@@ -154,8 +154,8 @@ $hiddenfields[] = ['name' => 'county', 'value' => $county];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'headstones', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
 if ($tree) {
-    $wherestr = " AND ($media_table.gedcom = \"$tree\" || $media_table.gedcom = \"\")";
-    $wherestr2 = " AND $medialinks_table.gedcom = \"$tree\"";
+    $wherestr = " AND ($media_table.gedcom = '$tree' || $media_table.gedcom = \"\")";
+    $wherestr2 = " AND $medialinks_table.gedcom = '$tree'";
 } else {
     $wherestr = $wherestr2 = "";
 }

@@ -15,7 +15,7 @@ if (!$allow_media_add) {
 
 if (!$tree) {
     if ($assignedtree) {
-        $wherestr = "WHERE gedcom = \"$assignedtree\"";
+        $wherestr = "WHERE gedcom = '$assignedtree'";
         $tree = $assignedtree;
     } else {
         $wherestr = "";
@@ -55,20 +55,18 @@ foreach ($mediatypes as $mediatype) {
     $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
 }
 $sttypestr = implode(",", $standardtypes);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
 $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [!$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a> ";
-$innermenu .= "&nbsp;|&nbsp;<a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#add');\" class='lightlink'>{$admtext['help']}</a> ";
+$innermenu .= "&nbsp;|&nbsp;<a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($mediatabs, "addmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'], "img/photos_icon.gif", $menu, "");
 ?>
@@ -89,9 +87,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
                             <td>
                                 <select name="mediatypeID" onChange="switchOnType(this.options[this.selectedIndex].value)">
-                                    <?php
-                                    echo $moptions;
-                                    ?>
+                                    <?php echo $moptions; ?>
                                 </select>
                                 <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
                                     <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
@@ -143,9 +139,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             <td class='align-top'><textarea cols="100" rows="12" name="bodytext" id="bodytext"></textarea></td>
                         </tr>
 
-                        <?php
-                        if (function_exists("imageJpeg")) {
-                            ?>
+                        <?php if (function_exists("imageJpeg")) { ?>
                             <tr>
                                 <td class='align-top'><span class="normal"><strong><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
                                 <td class='align-top'><span class="normal"><br>
@@ -155,15 +149,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                    onClick="document.form1.newthumb.style.visibility='hidden'; document.form1.thumbselect.style.visibility='hidden'; prepopulateThumb(); document.form1.abspath.checked=false;"> <?php echo $admtext['autoimg']; ?></span>
                                 </td>
                             </tr>
-                            <?php
-                        } else {
-                            ?>
+                        <?php } else { ?>
                             <tr>
                                 <td colspan="2"><strong><span class="normal"><br><?php echo $admtext['thumbnailfile']; ?></strong></span></td>
                             </tr>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['imagefiletoupload']; ?>*:</span></td>
                             <td>
@@ -421,9 +411,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
         return false;
     }
 </script>
-<script src="js/net.js"></script>
 <script src="js/mediautils.js"></script>
-<script src="js/admin.js"></script>
 <script src="js/datevalidation.js"></script>
 <script>
     var preferEuro = <?php echo($tngconfig['preferEuro'] ? $tngconfig['preferEuro'] : "false"); ?>;

@@ -161,7 +161,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="pbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('pbranch','pbranchedit','pbranchlist');">
                                     <?php

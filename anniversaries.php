@@ -59,9 +59,7 @@ if (!isMobile()) {
         const ajx_perspreview = 'ajx_perspreview.php';
         //]]>
     </script>
-    <?php
-}
-?>
+<?php } ?>
     <script>
         // <![CDATA[
         function resetForm() {
@@ -495,9 +493,7 @@ if ($tngneedresults) {
                 if ($numtrees > 1) {
                     ?>
                     <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </tr>
             </thead>
 

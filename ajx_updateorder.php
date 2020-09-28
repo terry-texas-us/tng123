@@ -109,7 +109,7 @@ switch ($action) {
         $count = count($clinks);
         for ($i = 0; $i < $count; $i++) {
             $order = $i + 1;
-            $query = "UPDATE $children_table SET ordernum=\"$order\" WHERE familyID = '$familyID' AND personID = \"{$clinks[$i]}\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $children_table SET ordernum=\"$order\" WHERE familyID = '$familyID' AND personID = \"{$clinks[$i]}\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
         }
         break;
@@ -118,10 +118,10 @@ switch ($action) {
         $count = count($plinks);
         for ($i = 0; $i < $count; $i++) {
             $order = $i + 1;
-            $query = "UPDATE $children_table SET parentorder=\"$order\" WHERE familyID = \"{$plinks[$i]}\" AND personID = \"$personID\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $children_table SET parentorder=\"$order\" WHERE familyID = \"{$plinks[$i]}\" AND personID = \"$personID\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
         }
-        $query = "UPDATE $people_table SET famc=\"{$plinks[0]}\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"{$plinks[0]}\" WHERE personID = \"$personID\" AND gedcom = '$tree'";
         $result3 = @tng_query($query);
         break;
     case "spouseorder":
@@ -129,7 +129,7 @@ switch ($action) {
         $count = count($slinks);
         for ($i = 0; $i < $count; $i++) {
             $order = $i + 1;
-            $query = "UPDATE $families_table SET $spouseorder=\"$order\" WHERE familyID = \"{$slinks[$i]}\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $families_table SET $spouseorder=\"$order\" WHERE familyID = \"{$slinks[$i]}\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
         }
         break;
@@ -167,37 +167,37 @@ switch ($action) {
             }
         }
         if ($delspousestr) {
-            $query = "UPDATE $families_table SET $delspousestr WHERE familyID = '$familyID' AND gedcom = \"$tree\"";
+            $query = "UPDATE $families_table SET $delspousestr WHERE familyID = '$familyID' AND gedcom = '$tree'";
             $spouseresult = @tng_query($query);
         }
         break;
     case "parentunlink":
-        $query = "DELETE FROM $children_table WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE familyID = '$familyID' AND personID = \"$personID\" AND gedcom = '$tree'";
         $result2 = @tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = \"$tree\" AND famc='$familyID'";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = '$tree' AND famc='$familyID'";
         $result2 = tng_query($query);
         break;
     case "addchild":
         $haskids = getHasKids($tree, $personID);
 
-        $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,mrel,frel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES ('$familyID',\"$personID\",$order,\"$tree\",\"\",\"\",$haskids,0,\"\",\"0000-00-00\",\"\")";
+        $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,mrel,frel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES ('$familyID',\"$personID\",$order,'$tree',\"\",\"\",$haskids,0,\"\",\"0000-00-00\",\"\")";
         $result = @tng_query($query);
 
         $query = "SELECT husband,wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";
         $result = @tng_query($query);
         $famrow = tng_fetch_assoc($result);
         if ($famrow['husband']) {
-            $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['husband']}\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['husband']}\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
         }
         if ($famrow['wife']) {
-            $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['wife']}\" AND gedcom = \"$tree\"";
+            $query = "UPDATE $children_table SET haskids='1' WHERE personID = \"{$famrow['wife']}\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
         }
         tng_free_result($result);
 
-        $query = "UPDATE $people_table SET famc='$familyID' WHERE personID = \"$personID\" AND gedcom = \"$tree\" and famc = \"\"";
+        $query = "UPDATE $people_table SET famc='$familyID' WHERE personID = \"$personID\" AND gedcom = '$tree' and famc = \"\"";
         $result = @tng_query($query);
 
         $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;\"";
@@ -208,13 +208,13 @@ switch ($action) {
         $rval .= "</td>\n";
         $rval .= "<td class='lightback normal childblock'>\n";
 
-        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href=\"#\" onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a>";
+        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a>";
         if ($allow_delete) {
-            $rval .= " &nbsp; | &nbsp; <a href=\"#\" onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a>";
+            $rval .= " &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a>";
         }
         $rval .= "</div>";
         $display = str_replace("|", "</a>", $display);
-        $rval .= "<a href=\"#\" onclick=\"EditChild('$personID');\">$display</div>\n</td>\n</tr>\n</table>\n</div>\n";
+        $rval .= "<a href='#' onclick=\"EditChild('$personID');\">$display</div>\n</td>\n</tr>\n</table>\n</div>\n";
         break;
     case "setdef":
         setDefault($tree, $entity, $media, $album);
@@ -264,7 +264,7 @@ switch ($action) {
 				WHERE albumID = \"$album\" AND $media_table.mediaID = $albumlinks_table.mediaID AND defphoto = '1'";
         } else {
             $query = "SELECT thumbpath, usecollfolder, mediatypeID, medialinkID FROM ($media_table, $medialinks_table)
-				WHERE personID = \"$entity\" AND $medialinks_table.gedcom = \"$tree\" AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
+				WHERE personID = \"$entity\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
         }
         $result = @tng_query($query);
         if ($result) {
@@ -428,7 +428,7 @@ switch ($action) {
         if ($linktype == "L" && $tngconfig['places1tree']) {
             $treestr = $tree = "";
         } else {
-            $treestr = " AND gedcom = \"$tree\"";
+            $treestr = " AND gedcom = '$tree'";
         }
 
         if ($type == "album") {
@@ -464,7 +464,7 @@ switch ($action) {
                 $joinonhusb = "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom";
                 $query = "SELECT wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, wifepeople.branch AS wbranch, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, husbpeople.branch AS hbranch ";
                 $query .= "FROM $families_table families $joinonwife $joinonhusb ";
-                $query .= "WHERE families.gedcom = \"$tree\" AND familyID = \"$entityID\"";
+                $query .= "WHERE families.gedcom = '$tree' AND familyID = \"$entityID\"";
                 $result = tng_query($query);
                 $row = tng_fetch_assoc($result);
                 $name = "";
@@ -548,7 +548,7 @@ switch ($action) {
                 $name = stripslashes($entityID);
 
                 if (!$numrows) {
-                    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,temple,latitude,longitude,zoom,notes,geoignore) VALUES (\"$tree\",\"$entityID\",\"0\",\"0\",\"\",\"\",\"13\",\"\",\"0\")";
+                    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,temple,latitude,longitude,zoom,notes,geoignore) VALUES ('$tree',\"$entityID\",\"0\",\"0\",\"\",\"\",\"13\",\"\",\"0\")";
                     $result = tng_query($query);
                     $numrows = 1;
                 }
@@ -557,9 +557,9 @@ switch ($action) {
 
         if ($numrows) {
             if ($type == "album") {
-                $query = "INSERT IGNORE INTO $album2entities_table (entityID,albumID,ordernum,gedcom,linktype) VALUES (\"$entityID\",\"$albumID\",\"$newrow\",\"$tree\",\"$linktype\")";
+                $query = "INSERT IGNORE INTO $album2entities_table (entityID,albumID,ordernum,gedcom,linktype) VALUES (\"$entityID\",\"$albumID\",\"$newrow\",'$tree',\"$linktype\")";
             } else {
-                $query = "INSERT IGNORE INTO $medialinks_table (personID,mediaID,ordernum,gedcom,linktype,eventID) VALUES (\"$entityID\",\"$mediaID\",\"$newrow\",\"$tree\",\"$linktype\",\"\")";
+                $query = "INSERT IGNORE INTO $medialinks_table (personID,mediaID,ordernum,gedcom,linktype,eventID) VALUES (\"$entityID\",\"$mediaID\",\"$newrow\",'$tree',\"$linktype\",\"\")";
             }
 
             $result = @tng_query($query);
@@ -588,7 +588,7 @@ switch ($action) {
         if ($linktype == "L" && $tngconfig['places1tree']) {
             $treestr = $tree = "";
         } else {
-            $treestr = " AND gedcom = \"$tree\"";
+            $treestr = " AND gedcom = '$tree'";
         }
 
         $query = "SELECT count(medialinkID) AS count FROM $medialinks_table WHERE personID = \"$entityID\"$treestr";
@@ -657,7 +657,7 @@ switch ($action) {
         tng_free_result($result);
 
         if ($numrows) {
-            $query = "INSERT IGNORE INTO $dna_links_table (personID,gedcom,testID) VALUES (\"$entityID\",\"$tree\",\"$testID\")";
+            $query = "INSERT IGNORE INTO $dna_links_table (personID,gedcom,testID) VALUES (\"$entityID\",'$tree',\"$testID\")";
 
             $result = @tng_query($query);
             $success = tng_affected_rows();

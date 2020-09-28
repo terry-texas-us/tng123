@@ -120,7 +120,7 @@ function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier
             $qualifystr = $text['dnexist'];
             break;
         default:
-            $criteria = "$yearstr1 = \"$value\"";
+            $criteria = "$yearstr1 = '$value'";
             $qualifystr = $text['equalto'];
             break;
     }

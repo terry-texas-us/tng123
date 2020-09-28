@@ -67,9 +67,7 @@ if ($totrows > 1) {
     <link href="css/c3.css" rel="stylesheet">
     <script src="js/d3.min.js"></script>
     <script src="js/c3.min.js"></script>
-    <?php
-}
-?>
+<?php } ?>
 
 <h2 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2>
 <br style="clear: left;">
@@ -116,9 +114,7 @@ if (isMobile()) {
         if ($numtrees > 1) {
             ?>
             <th data-tablesaw-priority="5" class="fieldnameback nw fieldname">&nbsp;</th>
-            <?php
-        }
-        ?>
+        <?php } ?>
     </tr>
     </thead>
     <?php
@@ -205,9 +201,7 @@ if ($totrows > 1) {
             }
         });
     </script>
-    <?php
-}
-?>
+<?php } ?>
 
 <br>
 <?php

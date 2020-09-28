@@ -39,9 +39,7 @@ function validateForm() {
 </script>\n";
 
 tng_header($text['creategedfor'] . ": {$text['gedstartfrom']} $name", $flags);
-?>
 
-<?php
 $photostr = showSmallPhoto($personID, $name, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $name, getYears($row));
 
@@ -72,9 +70,7 @@ echo $formstr;
                 <td class="fieldnameback"><span class="fieldname"><?php echo $text['email']; ?>:&nbsp; </span></td>
                 <td class="databack"><span class="normal"><input name="email" type="text" size="20"></span></td>
             </tr>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <tr>
             <td class="fieldnameback"><span class="fieldname"><?php echo $text['producegedfrom']; ?>:&nbsp; </span></td>
             <td class="databack">

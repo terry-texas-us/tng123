@@ -14,7 +14,7 @@ if (!$allow_media_edit) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -26,7 +26,6 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
-<script src="js/net.js"></script>
 <script src="js/mediafind.js"></script>
 <script src="js/mediautils.js"></script>
 <script src="js/selectutils.js"></script>
@@ -150,18 +149,18 @@ tng_adminheader($admtext['sortmedia'], $flags);
 </noscript>
 <!-- Shim to make HTML5 elements usable in older Internet Explorer versions -->
 <!--[if lt IE 9]><script src="<?php echo $http; ?>://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
 $mediatabs[3] = [!$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
 $mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#upload');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#upload');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "upload", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img/photos_icon.gif", $menu, $message);
 ?>

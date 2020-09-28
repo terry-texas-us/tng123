@@ -44,7 +44,7 @@ function addCriteria($field, $value, $operator) {
     $criteria = "";
 
     if ($operator == "=") {
-        $criteria = " OR $field $operator \"$value\"";
+        $criteria = " OR $field $operator '$value'";
     } else {
         $innercriteria = "";
         $terms = explode(' ', $value);
@@ -52,7 +52,7 @@ function addCriteria($field, $value, $operator) {
             if ($innercriteria) {
                 $innercriteria .= " AND ";
             }
-            $innercriteria .= "$field $operator \"%$term%\"";
+            $innercriteria .= "$field $operator '%$term%'";
         }
         if ($innercriteria) {
             $criteria = " OR ($innercriteria)";
@@ -99,15 +99,14 @@ tng_adminheader($admtext['cemeteries'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
 $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/cemeteries_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($cemtabs, "findcem", $innermenu);
 echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $message);
 ?>
@@ -145,17 +144,13 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xcemaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -180,7 +175,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                             $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"showmap.php?cemeteryID=xxx&amp\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 

@@ -401,9 +401,7 @@ if ($allow_living) {
         echo !$showLiving ? '<b>' . $text['notliving'] . '</b>' : '<a href="?living=0' . $args . '">' . $text['notliving'] . '</a>';
         ?>
     </div>
-    <?php
-}
-?>
+<?php } ?>
     <table align="center" class="calendar rounded10">
         <tr>
             <?php

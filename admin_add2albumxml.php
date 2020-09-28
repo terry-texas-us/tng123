@@ -32,28 +32,28 @@ function get_album_nav($total, $perpage, $pagenavpages) {
     if ($page > 1) {
         $prevpage = $page - 1;
         $navoffset = (($prevpage * $perpage) - $perpage);
-        $prevlink = " <a href=\"#\" onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$prevpage', '$albumID');\" title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
+        $prevlink = " <a href='#' onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$prevpage', '$albumID');\" title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
     }
     if ($page < $totalpages) {
         $nextpage = $page + 1;
         $navoffset = (($nextpage * $perpage) - $perpage);
-        $nextlink = "<a href=\"#\" onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$nextpage', '$albumID');\" title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
+        $nextlink = "<a href='#' onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$nextpage', '$albumID');\" title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
     }
     $curpage = 0;
     while ($curpage++ < $totalpages) {
         $navoffset = (($curpage - 1) * $perpage);
         if (($curpage <= $page - $pagenavpages || $curpage >= $page + $pagenavpages) && $pagenavpages) {
             if ($curpage == 1) {
-                $firstlink = " <a href=\"#\" onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$curpage', '$albumID');\" title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
+                $firstlink = " <a href='#' onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$curpage', '$albumID');\" title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
             }
             if ($curpage == $totalpages) {
-                $lastlink = "... <a href=\"#\" onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$curpage', '$albumID');\" title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
+                $lastlink = "... <a href='#' onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$curpage', '$albumID');\" title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
             }
         } else {
             if ($curpage == $page) {
                 $pagenav .= " [$curpage] ";
             } else {
-                $pagenav .= " <a href=\"#\" onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$curpage', '$albumID');\">$curpage</a> ";
+                $pagenav .= " <a href='#' onclick=\"return getMoreMedia('$searchstring', '$mediatypeID', '$hsstat', '$cemeteryID', '$navoffset', '$orgtree', '$curpage', '$albumID');\">$curpage</a> ";
             }
         }
     }
@@ -149,9 +149,9 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 echo " style=\"display:none;\"";
             }
             if ($albumID) {
-                echo "><a href=\"#\" onclick=\"return addToAlbum('{$row['mediaID']}');\">" . $admtext['add'] . "</a></div>";
+                echo "><a href='#' onclick=\"return addToAlbum('{$row['mediaID']}');\">" . $admtext['add'] . "</a></div>";
             } else {
-                echo "><a href=\"#\" onclick=\"return selectMedia('{$row['mediaID']}');\">" . $admtext['select'] . "</a></div>";
+                echo "><a href='#' onclick=\"return selectMedia('{$row['mediaID']}');\">" . $admtext['select'] . "</a></div>";
             }
             echo "<div id=\"added_{$row['mediaID']}\"";
             if (!$gotit) {

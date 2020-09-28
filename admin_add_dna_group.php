@@ -15,7 +15,7 @@ if (!$allow_add) {
 
 require "adminlog.php";
 
-$query = "INSERT INTO $dna_groups_table (dna_group,test_type,gedcom,description,action) VALUES (\"$dna_group\",\"$test_type\",\"$tree\",\"$description\",\"2\")";
+$query = "INSERT INTO $dna_groups_table (dna_group,test_type,gedcom,description,action) VALUES (\"$dna_group\",\"$test_type\",'$tree',\"$description\",\"2\")";
 $result = tng_query($query);
 $success = tng_affected_rows();
 

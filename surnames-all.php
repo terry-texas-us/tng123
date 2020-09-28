@@ -19,8 +19,8 @@ tng_header("{$text['surnamelist']} - {$text['allsurnames']}", $flags);
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
 if ($tree) {
-    $wherestr = "WHERE gedcom = \"$tree\"";
-    $wherestr2 = "AND gedcom = \"$tree\"";
+    $wherestr = "WHERE gedcom = '$tree'";
+    $wherestr2 = "AND gedcom = '$tree'";
 } else {
     $wherestr = "";
     $wherestr2 = "";

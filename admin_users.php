@@ -82,17 +82,16 @@ tng_adminheader($admtext['users'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $usertabs[0] = [1, "admin_users.php", $admtext['search'], "finduser"];
 $usertabs[1] = [$allow_add, "admin_newuser.php", $admtext['addnew'], "adduser"];
 $usertabs[2] = [$allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review"];
 $usertabs[3] = [1, "admin_mailusers.php", $admtext['email'], "mail"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/users_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/users_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($usertabs, "finduser", $innermenu);
 echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
 ?>
@@ -140,17 +139,13 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                 echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php
-                    if ($allow_delete) {
-                        ?>
+                    <?php if ($allow_delete) { ?>
                         <p>
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                             <input type="submit" name="xuseraction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                         </p>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
                     <table class="normal">
                         <tr>
@@ -180,7 +175,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $actionstr .= "<a href=\"admin_edituser.php?userID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {

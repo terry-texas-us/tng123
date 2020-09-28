@@ -178,7 +178,7 @@ switch ($_POST['subroutine']) {
     case 'tables':
         //try to create tables
         foreach ($_POST as $key => $value)
-            eval("\$$key = \"$value\";");
+            eval("\$$key = '$value';");
 
         if (!trim($database_port)) {
             $database_port = null;

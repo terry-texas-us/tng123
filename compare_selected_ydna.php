@@ -127,13 +127,13 @@ if (!function_exists('array_column')) {
 }
 
 $comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
-$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target=\"_blank\" class=\"lightlink\">{$text['help']}</a>";
+$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target=\"_blank\" class='lightlink'>{$text['help']}</a>";
 // Y-DNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class=\"lightlink\">{$admtext['ydna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class='lightlink'>{$admtext['ydna_test']}</a>";
 // mtDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class=\"lightlink\">{$admtext['mtdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class='lightlink'>{$admtext['mtdna_test']}</a>";
 // atDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class=\"lightlink\">{$admtext['atdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class='lightlink'>{$admtext['atdna_test']}</a>";
 $menu = doMenu($comptabs, "", $innermenu);
 
 // moved here so that we can control whether to show the markers 68-111 heading
@@ -208,9 +208,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 <?php
             } else { ?>
                 <th colspan="3" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
-                <?php
-            }
-            ?>
+            <?php } ?>
             // TODO the following for lines are likely mangled. Test if dna ever entered.
             <th class="center nw" colspan="11" style="<?php echo $style12 ?>"> {$text['12markers']} "</th>
             <th class="center nw" colspan="9" style="<?php echo $style25 ?>"> {$text['25markers']} "</th>

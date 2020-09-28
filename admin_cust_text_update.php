@@ -87,7 +87,7 @@ include $optionsfile;
 $options['show_updates'] = "0";    // Turn off to not show the Recommended Updates tab  - added by Ken
 $optionstring = "<?php";
 foreach ($options as $key => $value) {
-    $optionstring .= "\n\$options['$key'] = \"$value\";";
+    $optionstring .= "\n\$options['$key'] = '$value';";
 }
 $optionstring .= "\n?>";
 

@@ -17,7 +17,7 @@ if (!$allow_add) {
 
 if (!$tngconfig['places1tree']) {
     if ($assignedtree) {
-        $wherestr = "WHERE gedcom = \"$assignedtree\"";
+        $wherestr = "WHERE gedcom = '$assignedtree'";
         $firsttree = $assignedtree;
     } else {
         $wherestr = "";
@@ -64,7 +64,7 @@ $placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
 $placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
 $placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($placetabs, "addplace", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace'], "img/places_icon.gif", $menu, $message);
 ?>
@@ -74,9 +74,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
         <td class="tngshadow">
             <form action="admin_addplace.php" method="post" name="form1" onSubmit="return validateForm();">
                 <table class="normal" width="100%">
-                    <?php
-                    if (!$tngconfig['places1tree']) {
-                        ?>
+                    <?php if (!$tngconfig['places1tree']) { ?>
                         <tr>
                             <td><?php echo $admtext['tree']; ?>:</td>
                             <td width="90%">
@@ -94,18 +92,14 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                                 </select>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['place']; ?>:</td>
                         <td>
                             <input type="text" name="place" id="place" size="50">
                         </td>
                     </tr>
-                    <?php
-                    if (determineLDSRights()) {
-                        ?>
+                    <?php if (determineLDSRights()) { ?>
                         <tr>
                             <td>&nbsp;</td>
                             <td>
@@ -125,9 +119,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                                 </div>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td><?php echo $admtext['latitude']; ?>:</td>
                         <td>
@@ -140,9 +132,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                             <input type="text" name="longitude" size="20" id="lonbox">
                         </td>
                     </tr>
-                    <?php
-                    if ($map['key']) {
-                        ?>
+                    <?php if ($map['key']) { ?>
                         <tr>
                             <td><?php echo $admtext['zoom']; ?>:</td>
                             <td>
@@ -162,9 +152,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                                 </select>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <tr>
                         <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                         <td><textarea cols="50" rows="5" name="notes"></textarea></td>

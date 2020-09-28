@@ -141,14 +141,10 @@ tng_header($text['searchnames'], $flags);
 
             URL = "mybool=" + thisform.mybool[thisform.mybool.selectedIndex].value;
             URL = URL + "&nr=" + thisform.nr[thisform.nr.selectedIndex].value;
-            <?php
-            if( (!$requirelogin || !$treerestrict || !$assignedtree) && ($numtrees > 1 || $numbranches) ) {
-            ?>
+            <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && ($numtrees > 1 || $numbranches)) { ?>
             URL = URL + "&tree=" + thisform.tree[thisform.tree.selectedIndex].value;
             URL = URL + "&branch=" + thisform.branch[thisform.branch.selectedIndex].value;
-            <?php
-            }
-            ?>
+            <?php } ?>
 
             if (thisform.showdeath.checked)
                 URL = URL + "&showdeath=yes";
@@ -200,22 +196,14 @@ tng_header($text['searchnames'], $flags);
             return false;
         }
 
-        <?php
-        if($tree) {
-        ?>
-        jQuery(document).ready(function () {
-            swapBranches(document.search);
-            <?php
-            if($branch) {
-            ?>
-            jQuery('#branch').val('<?php echo $branch; ?>');
-            <?php
-            }
-            ?>
-        });
-        <?php
-        }
-        ?>
+        <?php if ($tree) { ?>
+            jQuery(document).ready(function () {
+                swapBranches(document.search);
+                <?php if ($branch) { ?>
+                    jQuery('#branch').val('<?php echo $branch; ?>');
+                <?php } ?>
+            });
+        <?php } ?>
         //]]>
     </script>
 
@@ -233,9 +221,7 @@ echo $formstr;
 ?>
     <div class="searchformbox">
         <table cellspacing="1" cellpadding="4" class="normal">
-            <?php
-            if ((!$requirelogin || !$treerestrict || !$assignedtree) && ($numtrees > 1 || $numbranches)) {
-                ?>
+            <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && ($numtrees > 1 || $numbranches)) { ?>
                 <tr>
                     <td class="fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
                             echo " | " . $text['branch'];
@@ -248,9 +234,7 @@ echo $formstr;
                         </select>
                     </td>
                 </tr>
-                <?php
-            }
-            ?>
+            <?php } ?>
             <tr>
                 <td class="fieldnameback fieldname"><?php echo $text['firstname']; ?>:</td>
                 <td class="databack">

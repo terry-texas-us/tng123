@@ -14,7 +14,7 @@ function doRepoSearch($instance, $pagenav) {
     if ($reposearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browserepos.php'>{$text['browseallrepos']}</a>";
     }
-    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";
     $str .= "</form></span>\n";
 
     return $str;
@@ -32,7 +32,7 @@ if ($offset) {
 
 $reposearch = cleanIt(trim($reposearch));
 if ($tree) {
-    $wherestr = "WHERE $repositories_table.gedcom = \"$tree\"";
+    $wherestr = "WHERE $repositories_table.gedcom = '$tree'";
     if ($reposearch) {
         $wherestr .= " AND reponame LIKE \"%$reposearch%\"";
     }

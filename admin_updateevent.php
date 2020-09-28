@@ -49,14 +49,14 @@ $eventdatetr = convertDate($eventdate);
 
 if ($addressID) {
     if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
-        $query = "UPDATE $address_table SET address1=\"$address1\", address2=\"$address2\", city=\"$city\", state=\"$state\", zip=\"$zip\", country=\"$country\", gedcom=\"$tree\", phone=\"$phone\", email='$email', www=\"$www\" WHERE addressID = \"$addressID\"";
+        $query = "UPDATE $address_table SET address1=\"$address1\", address2=\"$address2\", city=\"$city\", state=\"$state\", zip=\"$zip\", country=\"$country\", gedcom = '$tree', phone=\"$phone\", email='$email', www=\"$www\" WHERE addressID = \"$addressID\"";
     } else {
         $query = "DELETE FROM $address_table WHERE addressID = \"$addressID\"";
         $addressID = "";
     }
     $result = tng_query($query);
 } elseif ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
-    $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www)  VALUES(\"$address1\", \"$address2\", \"$city\", \"$state\", \"$zip\", \"$country\", \"$tree\", \"$phone\", '$email', \"$www\")";
+    $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www)  VALUES(\"$address1\", \"$address2\", \"$city\", \"$state\", \"$zip\", \"$country\", '$tree', \"$phone\", '$email', \"$www\")";
     $result = tng_query($query);
     $addressID = tng_insert_id();
 }
@@ -75,7 +75,7 @@ $display = htmlspecialchars(getEventDisplay($row['display']), ENT_QUOTES, $sessi
 if ($dupIDs) {
     $ids = explode(",", $dupIDs);
     foreach ($ids as $id) {
-        $query = "INSERT INTO $events_table (eventtypeID, persfamID, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, gedcom, parenttag)  VALUES(\"{$row['eventtypeID']}\", \"$id\", \"$eventdate\", \"$eventdatetr\", \"$eventplace\", \"$age\", \"$agency\", \"$cause\", \"{$row['addressID']}\", \"$info\", \"$tree\", \"\")";
+        $query = "INSERT INTO $events_table (eventtypeID, persfamID, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, gedcom, parenttag)  VALUES(\"{$row['eventtypeID']}\", \"$id\", \"$eventdate\", \"$eventdatetr\", \"$eventplace\", \"$age\", \"$agency\", \"$cause\", \"{$row['addressID']}\", \"$info\", '$tree', \"\")";
         $result = tng_query($query);
         $newEventID = tng_insert_id();
 

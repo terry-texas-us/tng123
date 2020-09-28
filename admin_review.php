@@ -231,11 +231,11 @@ include_once "eventlib_js.php";
 <script>
     var persfamID = "<?php echo $personID; ?>";
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 if ($row['type'] == "I") {
     $icon = "img/people_icon.gif";
     $hmsg = $admtext['people'];
@@ -250,7 +250,7 @@ if ($row['type'] == "I") {
     $peopletabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
     $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review"];
 }
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#review');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#review');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "review", $innermenu);
 echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
 ?>
@@ -298,7 +298,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             echo "<tr>";
                             echo "<td><strong>{$admtext['suggested']}:</strong></td>";
                             echo "<td class='align-top'><input type='text' name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
-                            echo "<td><a href=\"#\" onclick=\"return openFindPlaceForm('newplace');\" title=\"{$admtext['find']}\" class=\"smallicon admin-find-icon\"></a></td>";
+                            echo "<td><a href='#' onclick=\"return openFindPlaceForm('newplace');\" title=\"{$admtext['find']}\" class=\"smallicon admin-find-icon\"></a></td>";
                             echo "</tr>\n";
                         }
                         if ($factfield) {
@@ -322,10 +322,10 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                                 $citesicon = $gotcites ? "admin-cite-on-icon" : "admin-cite-off-icon";
                                 $moreicon = $gotmore ? "admin-more-on-icon" : "admin-more-off-icon";
                                 if (!is_numeric($eventID)) {
-                                    echo "<a href=\"#\" onclick=\"return showMore('$eventID','$persfamID');\" id=\"moreicon$eventID\" class=\"smallicon $moreicon\"></a>\n";
+                                    echo "<a href='#' onclick=\"return showMore('$eventID','$persfamID');\" id=\"moreicon$eventID\" class=\"smallicon $moreicon\"></a>\n";
                                 }
-                                echo "<a href=\"#\" onclick=\"return showNotes('$eventID','$persfamID');\" id=\"notesicon$eventID\" class=\"smallicon $notesicon\"></a>\n";
-                                echo "<a href=\"#\" onclick=\"return showCitations('$eventID','$persfamID');\" id=\"citesicon$eventID\" class=\"smallicon $citesicon\"></a>\n";
+                                echo "<a href='#' onclick=\"return showNotes('$eventID','$persfamID');\" id=\"notesicon$eventID\" class=\"smallicon $notesicon\"></a>\n";
+                                echo "<a href='#' onclick=\"return showCitations('$eventID','$persfamID');\" id=\"citesicon$eventID\" class=\"smallicon $citesicon\"></a>\n";
                                 ?>
                             </td>
                         </tr>

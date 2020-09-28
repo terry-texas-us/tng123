@@ -37,18 +37,15 @@ $helplang = findhelp("importconfig_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyimportsettings'], $flags);
-?>
-<script src="js/admin.js"></script>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
 $setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
 $setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
 $setuptabs[3] = [1, "#", $admtext['importconfigsettings'], "import"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/importconfig_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/importconfig_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($setuptabs, "import", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['importconfigsettings'], "img/setup_icon.gif", $menu, "");
 ?>

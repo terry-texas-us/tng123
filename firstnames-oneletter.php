@@ -35,7 +35,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
             <tr>
                 <td class="sncol">
                     <?php
-                    $wherestr = $tree ? "AND gedcom = \"$tree\"" : "";
+                    $wherestr = $tree ? "AND gedcom = '$tree'" : "";
                     $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
                     $more = getLivingPrivateRestrictions($people_table, false, false);

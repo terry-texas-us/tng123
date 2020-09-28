@@ -184,9 +184,7 @@ if ($tngconfig['maint']) {
                                             <tr>
                                                 <td class='align-top'>
                                                     <div class="normal">
-                                                        <?php
-                                                        include "randomphoto.php";
-                                                        ?>
+                                                        <?php include "randomphoto.php"; ?>
 
                                                     </div>
                                                 </td>

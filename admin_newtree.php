@@ -23,7 +23,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
     header("Content-type:text/html; charset=" . $session_charset);
     echo "<div class='databack ajaxwindow' id='newtree'>\n";
     echo "<h3 class='subhead'>{$admtext['addnewtree']} |\n";
-    echo "<a href=\"#\" onclick=\"return openHelp('{$helplang}/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['help']}></a></h3>";
+    echo "<a href='#' onclick=\"return openHelp('{$helplang}/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['help']}></a></h3>";
 } else {
     $flags['tabs'] = $tngconfig['tabs'];
     tng_adminheader($admtext['addnewtree'], $flags);
@@ -32,7 +32,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
     $allow_add_tree = $assignedtree ? 0 : $allow_add;
     $treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];
     $treetabs[1] = [$allow_add_tree, "admin_newtree.php", $admtext['addnew'], "addtree"];
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/trees_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/trees_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
     $menu = doMenu($treetabs, "addtree", $innermenu);
     echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['addnewtree'], "img/trees_icon.gif", $menu, $message);
 }

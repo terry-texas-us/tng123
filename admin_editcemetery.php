@@ -41,7 +41,6 @@ if ($map['key'] && $isConnected) {
 ?>
     <script src="js/selectutils.js"></script>
     <script src="js/mediautils.js"></script>
-    <script src="js/admin.js"></script>
     <script>
         const nothingtodelete = '<?php echo $admtext['nothingtodelete']; ?>';
         const confdeleteentity = '<?php echo $admtext['confdeleteentity']; ?>';
@@ -92,8 +91,8 @@ if ($map['key']) {
     $cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
     $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
     $cemtabs[2] = [$allow_add, "#", $admtext['edit'], "edit"];
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"showmap.php?cemeteryID=$cemeteryID&tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"showmap.php?cemeteryID=$cemeteryID&tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
     $menu = doMenu($cemtabs, "edit", $innermenu);
     echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['modifycemetery'], "img/cemeteries_icon.gif", $menu, $message);
     ?>
@@ -195,9 +194,7 @@ if ($map['key']) {
                             <td>
                                 <input type="checkbox" name="usecoords" value="1"> <?php echo $admtext['usecemcoords']; ?></td>
                         </tr>
-                        <?php
-                        if ($map['key']) {
-                            ?>
+                        <?php if ($map['key']) { ?>
                             <tr>
                                 <td colspan="2">
                                     <div style="padding:10px;">
@@ -208,9 +205,7 @@ if ($map['key']) {
                                     </div>
                                 </td>
                             </tr>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <tr>
                             <td><?php echo $admtext['latitude']; ?>:</td>
                             <td>
@@ -223,18 +218,14 @@ if ($map['key']) {
                                 <input id="lonbox" name="longitude" type="text" value="<?php echo $row['longitude']; ?>" size="20">
                             </td>
                         </tr>
-                        <?php
-                        if ($map['key']) {
-                            ?>
+                        <?php if ($map['key']) { ?>
                             <tr>
                                 <td><?php echo $admtext['zoom']; ?>:</td>
                                 <td>
                                     <input id="zoombox" name="zoom" type="text" value="<?php echo $row['zoom']; ?>" size="20">
                                 </td>
                             </tr>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <tr>
                             <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
                             <td>

@@ -17,7 +17,6 @@ $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Validation'), $flags);
 ?>
-<script src="js/admin.js"></script>
 <script>
     jQuery(document).ready(function () {
         jQuery('.valreport').bind('click', function (e) {
@@ -29,17 +28,17 @@ tng_adminheader(_todo_('Validation'), $flags);
         });
     });
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
 $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
 $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
 $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/misc_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/misc_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "validation", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'], "img/misc_icon.gif", $menu, $message);
 
@@ -51,9 +50,7 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
         <td class="tngshadow">
             <h3 class="subhead"><?php echo $admtext['dataval']; ?></h3>
 
-            <?php
-            if (!$assignedtree) {
-                ?>
+            <?php if (!$assignedtree) { ?>
                 <form action="admin_people.php" name="form1">
                     <table>
                         <tr>
@@ -78,9 +75,7 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
                         </tr>
                     </table>
                 </form><br>
-                <?php
-            }
-            ?>
+            <?php } ?>
             <table cellpadding="5" cellspacing="1" class="normal">
                 <tr>
                     <th class="fieldnameback fieldname">#</th>
@@ -95,9 +90,7 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
                         <td class="lightback">&nbsp;<a href="admin_valreport.php?report=<?php echo $this_report; ?>&amp;tree=<?php echo $assignedtree; ?>"
                                                        class="valreport"><?php echo $admtext[$this_report]; ?></a></td>
                     </tr>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </table>
 
             <?php

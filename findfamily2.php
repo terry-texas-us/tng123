@@ -11,10 +11,10 @@ if ($session_charset != "UTF-8") {
     $mywifename = tng_utf8_decode($mywifename);
 }
 
-$allwhere = "$families_table.gedcom = \"$tree\"";
+$allwhere = "$families_table.gedcom = '$tree'";
 $joinon = "";
 if ($assignedbranch) {
-    $allwhere .= " AND $families_table.branch LIKE \"%$assignedbranch%\"";
+    $allwhere .= " AND $families_table.branch LIKE '%$assignedbranch%'";
 }
 
 $allwhere2 = "";
@@ -25,7 +25,7 @@ if ($mywifename) {
         if ($allwhere2) {
             $allwhere2 .= " AND ";
         }
-        $allwhere2 .= "CONCAT_WS(' ',wifepeople.firstname,TRIM(CONCAT_WS(' ',wifepeople.lnprefix,wifepeople.lastname))) LIKE \"%$term%\"";
+        $allwhere2 .= "CONCAT_WS(' ',wifepeople.firstname,TRIM(CONCAT_WS(' ',wifepeople.lnprefix,wifepeople.lastname))) LIKE '%$term%'";
     }
 }
 
@@ -35,7 +35,7 @@ if ($myhusbname) {
         if ($allwhere2) {
             $allwhere2 .= " AND ";
         }
-        $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE \"%$term%\"";
+        $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE '%$term%'";
     }
 }
 
@@ -103,8 +103,8 @@ header("Content-type:text/html; charset=" . $session_charset);
                 $thisfamily .= getName($person);
             }
             echo "<tr>";
-            echo "<td class='align-top'><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td>";
-            echo "<td><span class='normal'><a href=\"#\" onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td>";
+            echo "<td class='align-top'><span class='normal'><a href='#' onClick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">{$row['familyID']}</a></span></td>";
+            echo "<td><span class='normal'><a href='#' onclick=\"return returnName('{$row['familyID']}','','text','{$row['familyID']}');\">$thisfamily</a></span></td>";
             echo "</tr>\n";
         }
         tng_free_result($result);

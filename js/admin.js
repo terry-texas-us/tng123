@@ -5,7 +5,7 @@ String.prototype.trim = function () {
 function deleteIt(type, id, tree, confirm) {
     var tds = jQuery('#row_' + id + ' td');
     jQuery.each(tds, function (index, item) {
-        jQuery(item).effect('highlight', {color: '#ff9999'}, 1500);
+        jQuery(item).effect('highlight', {color: '#f99'}, 1500);
     });
     var params = {t: type, id: id, desc: tree, confirm: confirm};
     jQuery.ajax({
@@ -122,7 +122,19 @@ function updateLivingBox(form, field) {
         form.living.checked = false;
 }
 
-function deepOpen(url, winName) {
-    window.open('deepindex.php?page=' + encodeURIComponent(url, winName));
-    return false;
+function toggleAdminMenu(arrow) {
+    let $menuSelection = jQuery('#leftmenu');
+    if ($menuSelection.position().left === 0) {
+        $menuSelection.css('overflow', 'hidden');
+        $menuSelection.animate({left: '-=135'}, 250, 'swing');
+        jQuery('#maincontent').animate({'paddingLeft': '-=135px'}, 250, 'swing');
+        jQuery('#dirarrow').attr('src', 'img/ArrowRight.gif');
+        jQuery.ajax({url: 'ajx_setsessionvar.php', data: {varname: 'tng_menuhidden', varvalue: 'on'}});
+    } else {
+        $menuSelection.css('overflow', 'auto');
+        jQuery('#maincontent').animate({'paddingLeft': '+=135px'}, 250, 'swing');
+        $menuSelection.animate({left: '+=135'}, 250, 'swing');
+        jQuery('#dirarrow').attr('src', 'img/ArrowLeft.gif');
+        jQuery.ajax({url: 'ajx_setsessionvar.php', data: {varname: 'tng_menuhidden', varvalue: 'off'}});
+    }
 }

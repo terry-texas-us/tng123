@@ -16,9 +16,7 @@ $title = getTemplateMessage('t16_maintitle');
                 </div>
                 <div id="tmenu">
                     <ul>
-                        <?php
-                        if ($dadlabel) {
-                            ?>
+                        <?php if ($dadlabel) { ?>
                             <li>
                                 <a href="pedigree.php?personID=<?php echo $tmp['t16_dadperson']; ?>&amp;tree=<?php echo $tmp['t16_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                             </li>

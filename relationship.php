@@ -805,7 +805,7 @@ if (!$disallowspouses) {
     $innermenu .= " selected";
 }
 $innermenu .= ">{$admtext['yes']}</option>\n";
-$innermenu .= "<option value=\"1\"";
+$innermenu .= "<option value='1'";
 if ($disallowspouses) {
     $innermenu .= " selected";
 }
@@ -822,14 +822,14 @@ for ($i = 1; $i <= $pedigree['maxupgen']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"document.form1.submit();\">{$text['refresh']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"relateform.php?primaryID=$primarypersonID&amp;tree=$tree\" class=\"lightlink\">{$text['findanother']}</a>\n";
+$innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">{$text['refresh']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"relateform.php?primaryID=$primarypersonID&amp;tree=$tree\" class='lightlink'>{$text['findanother']}</a>\n";
 
 echo getFORM("relationship2", "get", "form1", "form1");
 echo tng_menu("I", "relate", $primarypersonID, $innermenu);
 echo "<input type='hidden' name=\"primarypersonID\" value=\"$primarypersonID\">\n";
 echo "<input type='hidden' name=\"savedpersonID\" value=\"$secondpersonID\">\n";
-echo "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
 echo "</form>\n";
 ?>
     <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo $text['searching']; ?></div>

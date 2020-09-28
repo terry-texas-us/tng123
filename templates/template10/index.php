@@ -1,5 +1,7 @@
 <?php
 
+global $allow_admin;
+
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 if (!isMobile()) {
@@ -69,9 +71,7 @@ $title = getTemplateMessage('t10_maintitle');
                 <div class="art-nav-r"></div>
                 <div class="art-nav-outer">
                     <ul class="art-hmenu">
-                        <?php
-                        if ($dadlabel) {
-                            ?>
+                        <?php if ($dadlabel) { ?>
                             <li>
                                 <a href="pedigree.php?personID=<?php echo $tmp['t10_dadperson']; ?>&amp;tree=<?php echo $tmp['t10_dadtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $dadlabel; ?></span></a>
@@ -84,9 +84,7 @@ $title = getTemplateMessage('t10_maintitle');
                                 <a href="pedigree.php?personID=<?php echo $tmp['t10_momperson']; ?>&amp;tree=<?php echo $tmp['t10_momtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $momlabel; ?></span></a>
                             </li>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <li>
                             <a href="suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span
                                     class="t"><?php echo $text['contactus']; ?></span></a>
@@ -143,26 +141,18 @@ $title = getTemplateMessage('t10_maintitle');
                                                         class="t"><?php echo $text['mnusources']; ?></span></a></li>
                                             <li><a href="browserepos.php"><span class="l"></span><span class="r"></span><span
                                                         class="t"><?php echo $text['repositories']; ?></span></a></li>
-                                            <?php
-                                            if (!$tngconfig['hidedna']) {
-                                                ?>
+                                            <?php if (!$tngconfig['hidedna']) { ?>
                                                 <li><a href="browse_dna_tests.php"><span class="l"></span><span class="r"></span><span
                                                             class="t"><?php echo $text['dna_tests']; ?></span></a></li>
-                                                <?php
-                                            }
-                                            ?>
+                                            <?php } ?>
                                             <li><a href="statistics.php"><span class="l"></span><span class="r"></span><span
                                                         class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
-                                            <?php
-                                            if ($allow_admin) {
-                                                ?>
+                                            <?php if ($allow_admin) { ?>
                                                 <li><a href="showlog.php"><span class="l"></span><span class="r"></span><span
                                                             class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
                                                 <li><a href="admin.php"><span class="l"></span><span class="r"></span><span
                                                             class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
-                                                <?php
-                                            }
-                                            ?>
+                                            <?php } ?>
                                             <li><a href="bookmarks.php"><span class="l"></span><span class="r"></span><span
                                                         class="t"><?php echo $text['bookmarks']; ?></span></a></li>
                                         </ul>
@@ -322,9 +312,7 @@ $title = getTemplateMessage('t10_maintitle');
                                         <div>
                                             <p><?php echo getTemplateMessage('t10_featurepara'); ?></p>
                                             <ul class="home-menus">
-                                                <?php
-                                                echo showLinks($tmp['t10_featurelinks'], true);
-                                                ?>
+                                                <?php echo showLinks($tmp['t10_featurelinks'], true); ?>
                                             </ul>
                                         </div>
                                         <div class="cleared"></div>
@@ -362,9 +350,7 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="art-blockcontent-body">
                                         <div>
                                             <ul class="home-menus">
-                                                <?php
-                                                echo showLinks($tmp['t10_reslinks'], true);
-                                                ?>
+                                                <?php echo showLinks($tmp['t10_reslinks'], true); ?>
                                             </ul>
                                         </div>
                                         <div class="cleared"></div>

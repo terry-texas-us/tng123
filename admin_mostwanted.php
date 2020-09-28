@@ -58,20 +58,20 @@ function showDiv(string $type) {
         echo "</td>\n";
         echo "<td class='lightback normal'>";
         if ($allow_edit) {
-            echo "<a href=\"#\" onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\" id=\"title_{$lrow['mwID']}\">{$lrow['title']}</a>";
+            echo "<a href='#' onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\" id=\"title_{$lrow['mwID']}\">{$lrow['title']}</a>";
         } else {
             echo "<u id=\"title_{$lrow['mwID']}\">{$lrow['title']}</u>";
         }
         echo "<br><span id=\"desc_{$lrow['mwID']}\">$truncated</span><br>";
         echo "<div id=\"del_{$lrow['mwID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
         if ($allow_edit) {
-            echo "<a href=\"#\" onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['edit']}</a>";
+            echo "<a href='#' onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['edit']}</a>";
             if ($allow_delete) {
                 echo " | ";
             }
         }
         if ($allow_delete) {
-            echo "<a href=\"#\" onclick=\"return removeFromMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['text_delete']}</a>";
+            echo "<a href='#' onclick=\"return removeFromMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['text_delete']}</a>";
         }
         echo "</div>\n";
         echo "</td>\n";
@@ -87,7 +87,6 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['mostwanted'], $flags);
 ?>
     <script src="js/mostwanted.js"></script>
-    <script src="js/admin.js"></script>
     <script src="js/selectutils.js"></script>
     <script>
         var mwlitbox;
@@ -132,8 +131,8 @@ tng_adminheader($admtext['mostwanted'], $flags);
     $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
     $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
     $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
     $menu = doMenu($misctabs, "mostwanted", $innermenu);
     echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "img/misc_icon.gif", $menu, $message);
     ?>

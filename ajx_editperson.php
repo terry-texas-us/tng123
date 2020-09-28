@@ -95,10 +95,10 @@ include_once "eventlib.php";
                                     $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                     $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
                                     $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
-                                    echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                    echo "<a href=\"#\" onclick=\"return showNotes('', '$personID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
-                                    echo "<a href=\"#\" onclick=\"return showCitations('', '$personID');\" id=\"citesicon\" class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
-                                    echo "<a href=\"#\" onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
+                                    echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+                                    echo "<a href='#' onclick=\"return showNotes('', '$personID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+                                    echo "<a href='#' onclick=\"return showCitations('', '$personID');\" id='citesicon' class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
+                                    echo "<a href='#' onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
                                 }
                                 ?>
                                 <br style="clear: both;">
@@ -142,10 +142,10 @@ include_once "eventlib.php";
                                 <?php
                                 $notesicon = "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
                                 $citesicon = "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
-                                echo "<a href=\"#\" onclick=\"return showNotes('NAME','$personID');\">\n";
+                                echo "<a href='#' onclick=\"return showNotes('NAME','$personID');\">\n";
                                 echo "<img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" width='20' height='20' id=\"notesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
-                                echo "<a href=\"#\" onclick=\"return showCitations('NAME','$personID');\">\n";
+                                echo "<a href='#' onclick=\"return showCitations('NAME','$personID');\">\n";
                                 echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
                                 ?>
@@ -249,7 +249,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                      onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -305,9 +305,7 @@ include_once "eventlib.php";
                         <tr>
                             <td class='align-top'><?php echo $admtext['otherevents']; ?>:</td>
                             <td colspan="6">
-                                <?php
-                                echo "<input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('I','$personID','$tree');\">&nbsp;\n";
-                                ?>
+                                <?php echo "<input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('I','$personID','$tree');\">&nbsp;\n"; ?>
                             </td>
                         </tr>
                     </table>
@@ -352,7 +350,7 @@ include_once "eventlib.php";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
-                    echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
+                    echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href='#' onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
                     echo "<table class='normal'>";
                     echo "<tr>";
                     echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
@@ -460,12 +458,12 @@ include_once "eventlib.php";
         echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
         echo "<td>\n";
-        echo "<a href=\"#\" onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
+        echo "<a href='#' onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
         echo "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "<td>\n";
-        echo "<a href=\"#\" onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\">\n";
+        echo "<a href='#' onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\">\n";
         echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
@@ -475,9 +473,7 @@ include_once "eventlib.php";
         ?>
         <input type="hidden" name="sealpdate<?php echo $parent['familyID']; ?>" value="<?php echo $parent['sealdate']; ?>">
         <input type="hidden" name="sealpplace<?php echo $parent['familyID']; ?>" value="<?php echo $parent['sealplace']; ?>">
-        <?php
-    }
-    ?>
+    <?php } ?>
         </td>
     </table>
     </div>
@@ -531,7 +527,7 @@ include_once "eventlib.php";
                     echo "<td class='lightback normal'>\n";
                     echo "<table class='normal' width=\"100%\"><tr><td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td class='align-top' width=\"94%\">\n";
-                    echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\"><a href=\"#\" onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
+                    echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\"><a href='#' onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
 
                     echo $marriagerow['familyID'] . "\n</td></tr>";
                     if ($marriagerow[$spouse]) {

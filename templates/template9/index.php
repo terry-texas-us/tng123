@@ -61,9 +61,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 <div class="art-nav-r"></div>
                 <div class="art-nav-outer">
                     <ul class="art-hmenu">
-                        <?php
-                        if ($dadlabel) {
-                            ?>
+                        <?php if ($dadlabel) { ?>
                             <li>
                                 <a href="pedigree.php?personID=<?php echo $tmp['t9_dadperson']; ?>&amp;tree=<?php echo $tmp['t9_dadtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $dadlabel; ?></span></a>
@@ -76,9 +74,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                 <a href="pedigree.php?personID=<?php echo $tmp['t9_momperson']; ?>&amp;tree=<?php echo $tmp['t9_momtree']; ?>"><span
                                         class="l"></span><span class="t"><?php echo $momlabel; ?></span></a>
                             </li>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <li>
                             <a href="suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span
                                     class="t"><?php echo $text['contactus']; ?></span></a>
@@ -135,26 +131,18 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                         class="t"><?php echo $text['mnusources']; ?></span></a></li>
                                             <li><a href="browserepos.php"><span class="l"></span><span class="r"></span><span
                                                         class="t"><?php echo $text['repositories']; ?></span></a></li>
-                                            <?php
-                                            if (!$tngconfig['hidedna']) {
-                                                ?>
+                                            <?php if (!$tngconfig['hidedna']) { ?>
                                                 <li><a href="browse_dna_tests.php"><span class="l"></span><span class="r"></span><span
                                                             class="t"><?php echo $text['dna_tests']; ?></span></a></li>
-                                                <?php
-                                            }
-                                            ?>
+                                            <?php } ?>
                                             <li><a href="statistics.php"><span class="l"></span><span class="r"></span><span
                                                         class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
-                                            <?php
-                                            if ($allow_admin) {
-                                                ?>
+                                            <?php if ($allow_admin) { ?>
                                                 <li><a href="showlog.php"><span class="l"></span><span class="r"></span><span
                                                             class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
                                                 <li><a href="admin.php"><span class="l"></span><span class="r"></span><span
                                                             class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
-                                                <?php
-                                            }
-                                            ?>
+                                            <?php } ?>
                                             <li><a href="bookmarks.php"><span class="l"></span><span class="r"></span><span
                                                         class="t"><?php echo $text['bookmarks']; ?></span></a></li>
                                         </ul>
@@ -313,9 +301,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                         <div>
                                             <p><?php echo getTemplateMessage('t9_featurepara'); ?></p>
                                             <ul class="home-menus">
-                                                <?php
-                                                echo showLinks($tmp['t9_featurelinks'], true);
-                                                ?>
+                                                <?php echo showLinks($tmp['t9_featurelinks'], true); ?>
                                             </ul>
                                         </div>
                                         <div class="cleared"></div>
@@ -353,9 +339,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <div class="art-blockcontent-body">
                                         <div>
                                             <ul class="home-menus">
-                                                <?php
-                                                echo showLinks($tmp['t9_reslinks'], true);
-                                                ?>
+                                                <?php echo showLinks($tmp['t9_reslinks'], true); ?>
                                             </ul>
                                         </div>
                                         <div class="cleared"></div>

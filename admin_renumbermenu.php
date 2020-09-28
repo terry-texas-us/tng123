@@ -20,16 +20,14 @@ $helplang = findhelp("backuprestore_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['backuprestore'], $flags);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $utiltabs[0] = [1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables"];
 $utiltabs[1] = [1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure"];
 $utiltabs[2] = [1, "admin_renumbermenu.php", $admtext['renumber'], "renumber"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($utiltabs, "renumber", $innermenu);
 $headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);

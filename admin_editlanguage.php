@@ -23,7 +23,6 @@ $helplang = findhelp("languages_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifylanguage'], $flags);
 ?>
-    <script src="js/admin.js"></script>
     <script>
         function validateForm() {
             let rval = true;
@@ -37,18 +36,18 @@ tng_adminheader($admtext['modifylanguage'], $flags);
             return rval;
         }
     </script>
-<?php echo "</head>"; ?>
 
-    <body class="admin-body">
+<?php
+echo "</head>\n";
+echo tng_adminlayout();
 
-    <?php
-    $langtabs[0] = [1, "admin_languages.php", $admtext['search'], "findlang"];
-    $langtabs[1] = [$allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage"];
-    $langtabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-    $menu = doMenu($langtabs, "edit", $innermenu);
-    echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylanguage'], "img/languages_icon.gif", $menu, $message);
-    ?>
+$langtabs[0] = [1, "admin_languages.php", $admtext['search'], "findlang"];
+$langtabs[1] = [$allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage"];
+$langtabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/languages_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$menu = doMenu($langtabs, "edit", $innermenu);
+echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylanguage'], "img/languages_icon.gif", $menu, $message);
+?>
 
     <table class="lightback">
         <tr class="databack">
@@ -120,6 +119,6 @@ tng_adminheader($admtext['modifylanguage'], $flags);
             </td>
         </tr>
     </table>
-    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
     </body>
 <?php echo "</html>";

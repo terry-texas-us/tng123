@@ -40,7 +40,7 @@ if ($offset) {
 
 $wherestr = $searchstring ? "WHERE (gedcom LIKE \"%$searchstring%\" OR treename LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR owner LIKE \"%$searchstring%\")" : "";
 if ($assignedtree) {
-    $wherestr .= $wherestr ? " AND gedcom = \"$assignedtree\"" : "WHERE gedcom = \"$assignedtree\"";
+    $wherestr .= $wherestr ? " AND gedcom = '$assignedtree'" : "WHERE gedcom = '$assignedtree'";
 }
 
 $query = "SELECT gedcom, treename, description, owner, DATE_FORMAT(lastimportdate,\"%d %b %Y %H:%i:%s\") AS lastimportdate, importfilename FROM $trees_table $wherestr ORDER BY treename LIMIT $newoffset" . $maxsearchresults;
@@ -61,17 +61,14 @@ $helplang = findhelp("trees_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['trees'], $flags);
-?>
-<script src="js/admin.js"></script>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $allow_add_tree = $assignedtree ? 0 : $allow_add;
 $treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];
 $treetabs[1] = [$allow_add_tree, "admin_newtree.php", $admtext['addnew'], "addtree"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/trees_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/trees_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($treetabs, "findtree", $innermenu);
 echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
 ?>
@@ -120,7 +117,7 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     }
                     if ($allow_delete && !$assignedbranch) {
                         if (!$assignedtree) {
-                            $actionstr .= "<a href=\"#\" onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
                         $actionstr .= "<a href=\"admin_cleartree.php?tree=xxx\" onClick=\"return confirm('{$admtext['conftreeclear']}' );\" title=\"{$admtext['clear']}\" class=\"smallicon admin-clear-icon\"></a>";
                     }

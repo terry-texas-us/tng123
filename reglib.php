@@ -88,7 +88,7 @@ function getSpouseParents($personID, $sex) {
                     if ($fathrow['name'] == $admtext['text_private']) {
                         $fathrow['firstname'] = $admtext['text_private'];
                     }
-                    $parentstr .= "<a href=\"#\" onclick=\"if(jQuery('#p{$fathrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$fathrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$fathrow['personID']}&amp;tree=$tree';} return false;\">$fathname</a>";
+                    $parentstr .= "<a href='#' onclick=\"if(jQuery('#p{$fathrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$fathrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$fathrow['personID']}&amp;tree=$tree';} return false;\">$fathname</a>";
                 }
                 tng_free_result($gotfather);
             }
@@ -111,7 +111,7 @@ function getSpouseParents($personID, $sex) {
                     if ($parentstr) {
                         $parentstr .= " {$text['text_and']} ";
                     }
-                    $parentstr .= "<a href=\"#\" onclick=\"if(jQuery('#p{$mothrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$mothrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$mothrow['personID']}&amp;tree=$tree';} return false;\">$mothname</a>";
+                    $parentstr .= "<a href='#' onclick=\"if(jQuery('#p{$mothrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$mothrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$mothrow['personID']}&amp;tree=$tree';} return false;\">$mothname</a>";
                 }
                 tng_free_result($gotmother);
             }
@@ -307,7 +307,7 @@ function getRegNotes($persfamID, $flag) {
     $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
     $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
     $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
-    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom=\"$tree\" AND secret!='1' ";
+    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom = '$tree' AND secret!='1' ";
     $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
     $notelinks = tng_query($query);
 

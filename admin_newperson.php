@@ -14,7 +14,7 @@ if (!$allow_add) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $firsttree = $assignedtree;
 } else {
     $wherestr = "";
@@ -47,7 +47,7 @@ include_once "eventlib_js.php";
     if (!$assignedtree && !$assignedbranch) {
         include "branchlibjs.php";
     } else {
-        $query = "SELECT description FROM $branches_table WHERE gedcom = \"$assignedtree\" AND branch = \"$assignedbranch\" ORDER BY description";
+        $query = "SELECT description FROM $branches_table WHERE gedcom = '$assignedtree' AND branch = \"$assignedbranch\" ORDER BY description";
         $branchresult = tng_query($query);
         $branch = tng_fetch_assoc($branchresult);
         $dispname = $branch['description'];
@@ -66,7 +66,7 @@ include_once "eventlib_js.php";
         return rval;
     }
 </script>
-<script src="js/admin.js"></script>
+
 </head>
 
 <body class="admin-body" onload="generateID('person', document.form1.personID,document.form1.tree1);">
@@ -76,8 +76,8 @@ $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
 $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
 $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
 $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($peopletabs, "addperson", $innermenu);
 if (!isset($message)) {
     $message = '';
@@ -139,7 +139,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                             $select .= ">{$admtext['nobranch']}</option>\n";
 
                             $select .= "$options</select>\n";
-                            echo " &nbsp;<span class=\"nw\">(<a href=\"#\" onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                            echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                             ?>
                             <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                                 <?php

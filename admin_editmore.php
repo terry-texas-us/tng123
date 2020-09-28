@@ -9,7 +9,7 @@ include "checklogin.php";
 $query = "SELECT eventID, age, agency, cause, events.addressID, address1, address2, city, state, zip, country, info, phone, email, www ";
 $query .= "FROM $events_table events ";
 $query .= "LEFT JOIN $address_table address ON events.addressID = address.addressID ";
-$query .= "WHERE parenttag = \"$eventID\" AND events.persfamID = \"$persfamID\" AND events.gedcom = \"$tree\"";
+$query .= "WHERE parenttag = \"$eventID\" AND events.persfamID = \"$persfamID\" AND events.gedcom = '$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);

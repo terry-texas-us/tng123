@@ -121,10 +121,10 @@ switch ($t) {
         $query = "DELETE FROM $families_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND gedcom = '$tree'";
         $result = @tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = '$tree'";
         $result = tng_query($query);
 
         updateHasKidsFamily($familyID);
@@ -150,7 +150,7 @@ switch ($t) {
         $query = "DELETE FROM $sources_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
 
-        $query = "DELETE FROM $citations_table WHERE sourceID=\"$sourceID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $citations_table WHERE sourceID=\"$sourceID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
 
         deleteEvents($sourceID, $tree);
@@ -181,7 +181,7 @@ switch ($t) {
         $query = "DELETE FROM $repositories_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
 
-        $query = "UPDATE $sources_table SET repoID = \"\" WHERE repoID=\"$repoID\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $sources_table SET repoID = \"\" WHERE repoID=\"$repoID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
 
         deleteEvents($repoID, $tree);
@@ -327,10 +327,10 @@ switch ($t) {
         $logmsg = $admtext['deleted'] . " $id {$admtext['succdeleted']}.";
         break;
     case "child_unlink":
-        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND personID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND personID=\"$personID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
 
-        $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
 
         updateHasKidsFamily($familyID);
@@ -343,7 +343,7 @@ switch ($t) {
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
 
-        $query = "DELETE FROM $people_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
 
         deletePersonPlus($personID, $tree, $row['sex']);

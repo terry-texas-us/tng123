@@ -67,7 +67,7 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -76,11 +76,11 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $allwhere = "$temp_events_table.gedcom = $trees_table.gedcom";
 if ($tree) {
-    $allwhere .= " AND $temp_events_table.gedcom = \"$tree\"";
+    $allwhere .= " AND $temp_events_table.gedcom = '$tree'";
 }
 
 if ($assignedbranch) {
-    $allwhere .= " AND branch LIKE \"%$assignedbranch%\"";
+    $allwhere .= " AND branch LIKE '%$assignedbranch%'";
 }
 if ($reviewuser != "") {
     $allwhere .= " AND user = \"$reviewuser\"";
@@ -129,12 +129,11 @@ tng_adminheader($admtext['review'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 if ($type == "I") {
     $icon = "img/people_icon.gif";
     $hmsg = $admtext['people'];
@@ -150,7 +149,7 @@ if ($type == "I") {
     $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review"];
 }
 
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#review');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#review');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "review", $innermenu);
 echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
 ?>
@@ -238,7 +237,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                     <?php
                     $actionstr = "<a href=\"admin_review.php?tempID=xxx\" title=\"{$admtext['review']}\" class=\"smallicon admin-edit-icon\"></a>";
                     if ($allow_delete) {
-                        $actionstr .= "<a href=\"#\" onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                     }
 
                     while ($row = tng_fetch_assoc($result)) {

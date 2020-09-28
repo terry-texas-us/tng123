@@ -63,19 +63,19 @@ tng_adminheader($admtext['modifytree'], $flags);
             return rval;
         }
     </script>
-    </head>
 
-    <body class="admin-body">
+<?php
+echo "</head>\n";
+echo tng_adminlayout();
 
-    <?php
-    $allow_add_tree = $assignedtree ? 0 : $allow_add;
-    $treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];
-    $treetabs[1] = [$allow_add_tree, "admin_newtree.php", $admtext['addnew'], "addtree"];
-    $treetabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-    $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/trees_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
-    $menu = doMenu($treetabs, "edit", $innermenu);
-    echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['modifytree'], "img/trees_icon.gif", $menu, "");
-    ?>
+$allow_add_tree = $assignedtree ? 0 : $allow_add;
+$treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];
+$treetabs[1] = [$allow_add_tree, "admin_newtree.php", $admtext['addnew'], "addtree"];
+$treetabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/trees_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
+$menu = doMenu($treetabs, "edit", $innermenu);
+echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['modifytree'], "img/trees_icon.gif", $menu, "");
+?>
 
     <table class="lightback">
         <tr class="databack">
@@ -178,16 +178,16 @@ tng_adminheader($admtext['modifytree'], $flags);
                         </tr>
                     </table>
                     <span class="normal">
-	<input type="checkbox" name="private" value="1"<?php if ($row['secret']) {
-        echo " checked";
-    } ?>> <?php echo $admtext['keepprivate']; ?><br>
-	<input type="checkbox" name="disallowgedcreate" value="1"<?php if ($row['disallowgedcreate']) {
-        echo " checked";
-    } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
-	<input type="checkbox" name="disallowpdf" value="1"<?php if ($row['disallowpdf']) {
-        echo " checked";
-    } ?>> <?php echo $admtext['nopdf']; ?>
-	<br><br></span>
+<input type="checkbox" name="private" value="1"<?php if ($row['secret']) {
+    echo " checked";
+} ?>> <?php echo $admtext['keepprivate']; ?><br>
+<input type="checkbox" name="disallowgedcreate" value="1"<?php if ($row['disallowgedcreate']) {
+    echo " checked";
+} ?>> <?php echo $admtext['gedcomextraction']; ?><br>
+<input type="checkbox" name="disallowpdf" value="1"<?php if ($row['disallowpdf']) {
+    echo " checked";
+} ?>> <?php echo $admtext['nopdf']; ?>
+<br><br></span>
                     <input type="hidden" name="tree" value="<?php echo "$tree"; ?>">
                     <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
                 </form>
@@ -195,6 +195,6 @@ tng_adminheader($admtext['modifytree'], $flags);
         </tr>
 
     </table>
-    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
     </body>
 <?php echo "</html>"; ?>

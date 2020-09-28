@@ -9,7 +9,7 @@ include "checklogin.php";
 include "version.php";
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
 }
@@ -20,12 +20,10 @@ $helplang = findhelp("second_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['secondary'], $flags);
-?>
-</head>
 
-<body class="admin-body">
+echo "</head>\n";
+echo tng_adminlayout();
 
-<?php
 $allow_export = 1;
 if (!$allow_ged && $assignedtree) {
     $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = '$assignedtree'";
@@ -40,7 +38,7 @@ if (!$allow_ged && $assignedtree) {
 $datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
 $datatabs[1] = [$allow_export, "admin_export.php", $admtext['export'], "export"];
 $datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/second_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/second_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "second", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondary'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>

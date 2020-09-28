@@ -55,7 +55,7 @@ if ($tngconfig['places1tree']) {
     $updatetreestr = "";
     $treeurl = "";
 } else {
-    $updatetreestr = " AND gedcom=\"$tree\"";
+    $updatetreestr = " AND gedcom = '$tree'";
     $treeurl = "&tree=$tree";
 }
 

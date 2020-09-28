@@ -50,7 +50,7 @@ function doMediaSearch($instance, $pagenav) {
     $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"{$text['search']}\"> <input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='browsemedia.php?mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
     $str .= "<input type='hidden' name=\"mediatypeID\" value=\"$orgmediatypeID\">\n";
     $str .= $pagenav;
-    $str .= "<input type='hidden' name=\"tree\" value=\"$tree\">\n";
+    $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";
     $str .= "<input type='hidden' name=\"tnggallery\" value=\"$tnggallery\">\n";
     $str .= "</form>\n";
 

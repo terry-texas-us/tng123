@@ -18,7 +18,7 @@ $cellnumber = 0;
 
 $query = "SELECT sourceID, title, shorttitle, author, publisher, actualtext, reponame, sources.repoID AS repoID, callnum, other ";
 $query .= "FROM $sources_table sources ";
-$query .= "LEFT JOIN $repositories_table repositories ON sources.repoID = repositories.repoID AND sources.gedcom = repositories.gedcom WHERE sources.sourceID = \"$sourceID\" AND sources.gedcom = \"$tree\"";
+$query .= "LEFT JOIN $repositories_table repositories ON sources.repoID = repositories.repoID AND sources.gedcom = repositories.gedcom WHERE sources.sourceID = \"$sourceID\" AND sources.gedcom = '$tree'";
 $result = tng_query($query);
 $srcrow = tng_fetch_assoc($result);
 if (!tng_num_rows($result)) {
@@ -29,7 +29,7 @@ if (!tng_num_rows($result)) {
 tng_free_result($result);
 
 $query = "SELECT count(personID) AS ccount FROM $citations_table, $people_table
-	WHERE $citations_table.sourceID = '$sourceID' AND $citations_table.gedcom = \"$tree\" AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
+	WHERE $citations_table.sourceID = '$sourceID' AND $citations_table.gedcom = '$tree' AND $citations_table.persfamID = $people_table.personID AND $citations_table.gedcom = $people_table.gedcom
 	AND (living = '1' OR private = '1')";
 $sresult = tng_query($query);
 $srow = tng_fetch_assoc($sresult);
@@ -215,21 +215,21 @@ if ($notes) {
 $sourcetext .= "</ul>\n";
 
 $tng_alink = $tng_plink = "lightlink";
-$innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href=\"#\" onclick=\"return toggleCollapsed(0)\" class=\"lightlink\">Expand all</a> &nbsp | &nbsp; <a href=\"#\" onclick=\"return toggleCollapsed(1)\" class=\"lightlink\">Collapse all</a> &nbsp;</div>" : "";
+$innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href='#' onclick=\"return toggleCollapsed(0)\" class='lightlink'>Expand all</a> &nbsp | &nbsp; <a href='#' onclick=\"return toggleCollapsed(1)\" class='lightlink'>Collapse all</a> &nbsp;</div>" : "";
 if ($notes || $media) {
     if ($tngconfig['istart']) {
         $tng_plink = "lightlink3";
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu .= "<a href=\"#\" class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['srcinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['srcinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if ($media) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href=\"#\" class=\"lightlink\" onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href=\"#\" class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
 } else {
     $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['srcinfo']}</span>\n";
 }

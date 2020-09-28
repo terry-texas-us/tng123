@@ -43,7 +43,7 @@ if (!is_writeable($optionsfile)) {
 } else {
     $optionstring = "<?php";
     foreach ($options as $key => $value) {
-        $optionstring .= "\n\$options['$key'] = \"$value\";";
+        $optionstring .= "\n\$options['$key'] = '$value';";
     }
     $optionstring .= "\n?>";
     file_put_contents($optionsfile, $optionstring);

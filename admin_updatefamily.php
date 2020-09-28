@@ -83,13 +83,13 @@ if (!$editconflict) {
         $oldbranches = explode(",", $orgbranch);
         foreach ($oldbranches as $b) {
             if ($b && !in_array($b, $branch)) {
-                $query = "DELETE FROM $branchlinks_table WHERE persfamID = '$familyID' AND gedcom = \"$tree\" AND branch = \"$b\"";
+                $query = "DELETE FROM $branchlinks_table WHERE persfamID = '$familyID' AND gedcom = '$tree' AND branch = \"$b\"";
                 $result = tng_query($query);
             }
         }
         foreach ($branch as $b) {
             if ($b && !in_array($b, $oldbranches)) {
-                $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(\"$b\",\"$tree\",'$familyID')";
+                $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(\"$b\",'$tree','$familyID')";
                 $result = tng_query($query);
             }
         }
@@ -115,7 +115,7 @@ if (!$editconflict) {
         }
     }
 
-    $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\" WHERE familyID='$familyID' AND gedcom = \"$tree\"";
+    $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\" WHERE familyID='$familyID' AND gedcom = '$tree'";
     $result = tng_query($query);
 
     adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree&cw=$cw\">{$admtext['modifyfamily']}: $tree/$familyID</a>");

@@ -12,7 +12,7 @@ if ($session_charset != "UTF-8") {
     $mylastname = tng_utf8_decode($mylastname);
 }
 
-$allwhere = "gedcom = \"$tree\"";
+$allwhere = "gedcom = '$tree'";
 if ($personID) {
     $allwhere .= " AND personID = \"$personID\"";
 }
@@ -31,7 +31,7 @@ if ($livedefault < 2 && (!$allow_living_db || $assignedtree) && $nonames == 1) {
     $allwhere .= " AND ";
     if ($allow_living_db) {
         if ($assignedbranch) {
-            $allwhere .= "(living != 1 OR branch LIKE \"%$assignedbranch%\")";
+            $allwhere .= "(living != 1 OR branch LIKE '%$assignedbranch%')";
         } else {
             $allwhere .= "living != 1";
         }
@@ -104,8 +104,8 @@ header("Content-type:text/html; charset=" . $session_charset);
             $jsnamestr = str_replace("&#34;", "&lsquo;", $namestr);
             $jsnamestr = str_replace("\\\"", "&lsquo;", $namestr);
             echo "<tr>\n";
-            echo "<td class='align-top'><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">{$row['personID']}</a></span></td>\n";
-            echo "<td><span class='normal'><a href=\"#\" onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td>\n";
+            echo "<td class='align-top'><span class='normal'><a href='#' onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">{$row['personID']}</a></span></td>\n";
+            echo "<td><span class='normal'><a href='#' onClick=\"return returnName('{$row['personID']}','$jsnamestr','$fieldtype','$nameplusid');\">$name</a><br>$birthdate $deathdate</span></td>\n";
             echo "</tr>\n";
         }
         tng_free_result($result);

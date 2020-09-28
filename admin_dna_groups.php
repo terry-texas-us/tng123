@@ -56,7 +56,7 @@ if ($offset) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
     $tree = $assignedtree;
 } else {
     $wherestr = "";
@@ -102,16 +102,15 @@ tng_adminheader($admtext['dna_groups'], $flags);
         return false;
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $dnatabs['0'] = [1, "admin_dna_groups.php", $admtext['search'], "findgroup"];
 $dnatabs['1'] = [$allow_add, "admin_new_dna_group.php", $admtext['addnew'], "addgroup"];
 $dnatabs['2'] = [1, "admin_dna_tests.php", $admtext['dna_tests'], "findtest"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/dna_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/dna_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($dnatabs, "findgroup", $innermenu);
 echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message);
 ?>
@@ -189,7 +188,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                         }
                         if (!$assignedtree) {
-                            $actionstr .= "<a href=\"#\" onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {

@@ -18,7 +18,7 @@ if (!$allow_edit || !$allow_delete) {
 }
 
 if ($assignedtree) {
-    $wherestr = "WHERE gedcom = \"$assignedtree\"";
+    $wherestr = "WHERE gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
 }
@@ -125,10 +125,10 @@ function doNotes($persfam1, $persfam2, $varname) {
     }
 
     if ($ccombinenotes != "yes") {
-        $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = \"$tree\" $wherestr";
+        $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = '$tree' $wherestr";
         $noteresult = tng_query($query);
     }
-    $query = "UPDATE $notelinks_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = \"$tree\" $wherestr";
+    $query = "UPDATE $notelinks_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = '$tree' $wherestr";
     $noteresult = tng_query($query);
 }
 
@@ -233,7 +233,7 @@ if ($mergeaction == $admtext['merge']) {
                 if (strpos($key, "::")) {
                     $halves = explode("::", substr($key, 5));
                     $varname = substr(strstr($halves[0], "_"), 1);
-                    $query = "DELETE FROM $events_table WHERE persfamID = \"$sourceID1\" AND gedcom = \"$tree\" and eventID = \"$varname\"";
+                    $query = "DELETE FROM $events_table WHERE persfamID = \"$sourceID1\" AND gedcom = '$tree' and eventID = \"$varname\"";
                     $evresult = tng_query($query);
                     $varname = substr(strstr($halves[1], "_"), 1);
 
@@ -247,7 +247,7 @@ if ($mergeaction == $admtext['merge']) {
                     doNotes($sourceID1, $sourceID2, $varname);
                 }
 
-                $query = "UPDATE $events_table set persfamID = \"$sourceID1\" WHERE persfamID = \"$sourceID2\" AND gedcom = \"$tree\" AND eventID = \"$varname\"";
+                $query = "UPDATE $events_table set persfamID = \"$sourceID1\" WHERE persfamID = \"$sourceID2\" AND gedcom = '$tree' AND eventID = \"$varname\"";
                 $evresult = @tng_query($query);
                 break;
         }
@@ -256,33 +256,33 @@ if ($mergeaction == $admtext['merge']) {
         doNotes($sourceID1, $sourceID2, "general");
 
         //convert all remaining notes and citations
-        $query = "UPDATE $notelinks_table set persfamID = \"$sourceID1\" WHERE persfamID = \"$sourceID2\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $notelinks_table set persfamID = \"$sourceID1\" WHERE persfamID = \"$sourceID2\" AND gedcom = '$tree'";
         $noteresult = tng_query($query);
     }
     if ($updatestr) {
         $updatestr = substr($updatestr, 2);
-        $query = "UPDATE $sources_table set $updatestr WHERE sourceID = \"$sourceID1\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $sources_table set $updatestr WHERE sourceID = \"$sourceID1\" AND gedcom = '$tree'";
         $combresult = tng_query($query);
     }
 
-    $query = "DELETE FROM $sources_table WHERE sourceID = \"$sourceID2\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $sources_table WHERE sourceID = \"$sourceID2\" AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
     //delete remaining notes & events for source 2
-    $query = "DELETE FROM $events_table WHERE persfamID = \"$sourceID2\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $events_table WHERE persfamID = \"$sourceID2\" AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
-    $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$sourceID2\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$sourceID2\" AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
     //point citations for s2 to s1
-    $query = "UPDATE $citations_table set sourceID = \"$sourceID1\" WHERE sourceID = \"$sourceID2\" AND gedcom = \"$tree\"";
+    $query = "UPDATE $citations_table set sourceID = \"$sourceID1\" WHERE sourceID = \"$sourceID2\" AND gedcom = '$tree'";
     $combresult = tng_query($query);
 
     //construct name for default photo 2
     $defaultphoto2 = $tree ? "$rootpath$photopath/$tree.$sourceID2.$photosext" : "$rootpath$photopath/$sourceID2.$photosext";
     if ($ccombineextras) {
-        $query = "UPDATE $medialinks_table set personID = \"$sourceID1\", defphoto = \"\" WHERE personID = \"$sourceID2\" AND gedcom = \"$tree\"";
+        $query = "UPDATE $medialinks_table set personID = \"$sourceID1\", defphoto = \"\" WHERE personID = \"$sourceID2\" AND gedcom = '$tree'";
         $mediaresult = @tng_query($query);
 
         //construct name for default photo 1
@@ -295,7 +295,7 @@ if ($mergeaction == $admtext['merge']) {
             }
         }
     } else {
-        $query = "DELETE FROM $medialinks_table WHERE personID = \"$sourceID2\" AND gedcom = \"$tree\"";
+        $query = "DELETE FROM $medialinks_table WHERE personID = \"$sourceID2\" AND gedcom = '$tree'";
         $mediaresult = tng_query($query);
 
         if (file_exists($defaultphoto2)) {
@@ -342,16 +342,15 @@ tng_adminheader($admtext['merge'], $flags);
 
     }
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
 $sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
 $sourcetabs[3] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/sources_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/sources_help.php#merge');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($sourcetabs, "merge", $innermenu);
 echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "img/sources_icon.gif", $menu, $message);
 ?>
@@ -488,9 +487,9 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                         if (is_array($s1row)) {
                             $eventlist = [];
                             echo "<tr>\n";
-                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($s2row)) {
-                                echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 2 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
+                                echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 2 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
 
                                 $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                                 $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
@@ -554,9 +553,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                         }
                         ?>
                     </table>
-                    <?php
-                    if ($sourceID1 || $sourceID2) {
-                        ?>
+                    <?php if ($sourceID1 || $sourceID2) { ?>
                         <br>
                         <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
                         <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
@@ -564,9 +561,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                         <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction"
                                onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchsources();">
                         <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                 </form>
             </div>
         </td>

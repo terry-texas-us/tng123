@@ -71,16 +71,14 @@ $helplang = findhelp("albums_help.php");
 
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['albums'], $flags);
-?>
-<script src="js/admin.js"></script>
-<?php echo "</head>"; ?>
-<body class="admin-body">
 
-<?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
 $albumtabs[1] = [$allow_media_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_media_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/albums_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($albumtabs, "findalbum", $innermenu);
 echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message);
 ?>
@@ -134,7 +132,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $actionstr .= "<a href=\"admin_editalbum.php?albumID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
                     }
                     if ($allow_media_delete) {
-                        $actionstr .= "<a href=\"#\" onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                     }
                     $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
@@ -148,7 +146,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                         $query2 = "SELECT thumbpath, usecollfolder, mediatypeID ";
                         $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
-                        $query2 .= "WHERE albumID = \"{$row['albumID']}\" AND media.mediaID = albumlinks.mediaID AND defphoto=\"1\"";
+                        $query2 .= "WHERE albumID = \"{$row['albumID']}\" AND media.mediaID = albumlinks.mediaID AND defphoto='1'";
                         $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
                         $trow = tng_fetch_assoc($result2);
                         $tmediatypeID = $trow['mediatypeID'];
@@ -188,9 +186,9 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
                         $query .= "WHERE albumID = '{$row['albumID']}' ";
                         if ($assignedtree) {
-                            $query .= "AND album2entities.gedcom = \"$assignedtree\" ";
+                            $query .= "AND album2entities.gedcom = '$assignedtree' ";
                         } elseif ($tree) {
-                            $query .= "AND album2entities.gedcom = \"$tree\" ";
+                            $query .= "AND album2entities.gedcom = '$tree' ";
                         }
                         $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
                         $query .= "LIMIT 10";

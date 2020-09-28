@@ -21,7 +21,7 @@ $treerow = getTree($trees_table, $tree);
 $query = "SELECT reponame, changedby, repositories.addressID, address1, address2, city, state, zip, country, phone, email, www, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate ";
 $query .= "FROM $repositories_table repositories ";
 $query .= "LEFT JOIN $address_table address ON repositories.addressID = address.addressID ";
-$query .= "WHERE repoID = '$repoID' AND repositories.gedcom = \"$tree\"";
+$query .= "WHERE repoID = '$repoID' AND repositories.gedcom = '$tree'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -52,20 +52,19 @@ include_once "eventlib_js.php";
     var allow_cites = false;
     var allow_notes = true;
 </script>
-<script src="js/admin.js"></script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
 $repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
 $repotabs[3] = [$allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class=\"lightlink\">{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$repoID&amp;tree=$tree&amp;linktype=R\" class=\"lightlink\">{$admtext['addmedia']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$repoID&amp;tree=$tree&amp;linktype=R\" class='lightlink'>{$admtext['addmedia']}</a>";
 }
 $menu = doMenu($repotabs, "edit", $innermenu);
 echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyrepo'], "img/repos_icon.gif", $menu, $message);
@@ -88,8 +87,8 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                             <div class="topbuffer bottombuffer smallest">
                                 <?php
                                 $notesicon = "img/" . ($gotnotes['general'] ? "tng_anote_on.gif" : "tng_anote.gif");
-                                echo "<a href=\"#\" onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                echo "<a href=\"#\" onclick=\"return showNotes('', '$repoID');\" id=\"notesicon\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+                                echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
+                                echo "<a href='#' onclick=\"return showNotes('', '$repoID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
                                 ?>
                                 <br style="clear: both;">
                             </div>
@@ -179,14 +178,10 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                     <tr>
                         <td class='align-top'>
                             <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
-                            <?php
-                            echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('R','$repoID','$tree');\"></p>\n";
-                            ?>
+                            <?php echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('R','$repoID','$tree');\"></p>\n"; ?>
                         </td>
                         <td class='align-top'>
-                            <?php
-                            showCustEvents($repoID);
-                            ?>
+                            <?php showCustEvents($repoID); ?>
                         </td>
                     </tr>
                 </table>

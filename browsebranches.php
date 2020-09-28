@@ -36,7 +36,7 @@ if ($branchsearch) {
     $wherestr = "";
 }
 if ($tree) {
-    $wherestr .= " AND branches.gedcom = \"$tree\"";
+    $wherestr .= " AND branches.gedcom = '$tree'";
 }
 
 $query = "SELECT branches.branch, branches.gedcom, branches.description, treename, personID ";
@@ -110,9 +110,7 @@ echo $header;
         if ($numtrees > 1) {
             ?>
             <th data-tablesaw-priority="2" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
-            <?php
-        }
-        ?>
+        <?php } ?>
         <th data-tablesaw-priority="3" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>
         <th data-tablesaw-priority="4" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['individuals']; ?>&nbsp;</th>
         <th data-tablesaw-priority="5" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['families']; ?>&nbsp;</th>

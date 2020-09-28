@@ -31,7 +31,6 @@ $helplang = findhelp("data_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
 ?>
-<script src="js/admin.js"></script>
 <script src="js/mediautils.js"></script>
 <script src="js/dataimport.js"></script>
 <script>
@@ -74,11 +73,11 @@ tng_adminheader($admtext['datamaint'], $flags);
     }
     ?>
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $allow_export = 1;
 if (!$allow_ged && $assignedtree) {
     $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = '$assignedtree'";
@@ -93,7 +92,7 @@ if (!$allow_ged && $assignedtree) {
 $datatabs['0'] = [1, "admin_dataimport.php", $admtext['import'], "import"];
 $datatabs['1'] = [$allow_export, "admin_export.php", $admtext['export'], "export"];
 $datatabs['2'] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "import", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
@@ -159,15 +158,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                                 }
                                 ?>
                             </select>
-                            <?php
-                            if (!$assignedtree) {
-                                ?>
+                            <?php if (!$assignedtree) { ?>
                                 &nbsp;
                                 <input type="button" name="newtree" value="<?php echo $admtext['addnewtree']; ?>"
                                        onclick="tnglitbox = new LITBox('admin_newtree.php?beforeimport=yes', {width:600, height:530});">
-                                <?php
-                            }
-                            ?>
+                            <?php } ?>
                         </td>
                     </tr>
                     <tr id="destbranch" style="display:none;">

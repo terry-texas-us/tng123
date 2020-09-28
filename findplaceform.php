@@ -61,9 +61,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                                onclick="lastFilter = ''; applyFilter({form:'findform1', fieldId:'myplace', type:'L', tree:'<?php echo $tree; ?>', destdiv:'placeresults', temple:getTempleCheck()<?php echo $mediaoption; ?>});"> <?php echo $admtext['findtemples']; ?>
                     </td>
                 </tr>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </table>
     </form>
 

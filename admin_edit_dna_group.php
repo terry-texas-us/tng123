@@ -45,15 +45,15 @@ tng_adminheader($admtext['modifygroup'], $flags);
     }
 
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $dnatabs[0] = [1, "admin_dna_groups.php", $admtext['search'], "findtest"];
 $dnatabs[1] = [$allow_add, "admin_new_dna_group.php", $admtext['addgroup'], "addgroup"];
 $dnatabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/dna_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/dna_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($dnatabs, "edit", $innermenu);
 echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['modifygroup'], "img/dna_icon.gif", $menu, $message);
 ?>

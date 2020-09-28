@@ -101,15 +101,15 @@ tng_adminheader($admtext['labelbranches'], $flags);
             return false;
     }
 </script>
-</head>
-
-<body class="admin-body">
 
 <?php
+echo "</head>\n";
+echo tng_adminlayout();
+
 $branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
 $branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
 $branchtabs[2] = [$allow_edit, "#", $admtext['labelbranches'], "label"];
-$innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/branches_help.php#labelbranch');\" class=\"lightlink\">{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php#labelbranch');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($branchtabs, "label", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
 ?>

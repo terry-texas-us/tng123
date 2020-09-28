@@ -9,14 +9,14 @@ function deleteNoteLinks($id, $tree) {
         deleteNote($nrow['ID'], 0);
     tng_free_result($nresult);
 
-    $query = "DELETE FROM $notelinks_table WHERE persfamID=\"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $notelinks_table WHERE persfamID=\"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
 function deleteBranchLinks($id, $tree) {
     global $branchlinks_table;
 
-    $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
@@ -24,7 +24,7 @@ function deleteMediaLinks($id, $tree) {
     global $medialinks_table;
 
     $id = addslashes($id);
-    $query = "DELETE FROM $medialinks_table WHERE personID = \"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $medialinks_table WHERE personID = \"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
@@ -32,42 +32,42 @@ function deleteAlbumLinks($id, $tree) {
     global $album2entities_table;
 
     $id = addslashes($id);
-    $query = "DELETE FROM $album2entities_table WHERE entityID = \"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $album2entities_table WHERE entityID = \"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
 function deleteEvents($id, $tree) {
     global $events_table;
 
-    $query = "DELETE FROM $events_table WHERE persfamID=\"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $events_table WHERE persfamID=\"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
 function deleteCitations($id, $tree) {
     global $citations_table;
 
-    $query = "DELETE FROM $citations_table WHERE persfamID=\"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $citations_table WHERE persfamID=\"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
 function deleteChildren($id, $tree) {
     global $children_table;
 
-    $query = "DELETE FROM $children_table WHERE familyID=\"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $children_table WHERE familyID=\"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
 function deleteAssociations($id, $tree) {
     global $assoc_table;
 
-    $query = "DELETE FROM $assoc_table WHERE personID=\"$id\" OR passocID=\"$id\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $assoc_table WHERE personID=\"$id\" OR passocID=\"$id\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 }
 
 function deletePersonPlus($personID, $tree, $gender) {
     global $children_table, $families_table;
 
-    $query = "DELETE FROM $children_table WHERE personID=\"$personID\" AND gedcom = \"$tree\"";
+    $query = "DELETE FROM $children_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 
     deleteEvents($personID, $tree);
@@ -91,10 +91,10 @@ function deletePersonPlus($personID, $tree, $gender) {
         updateHasKidsFamily($frow['familyID']);
     tng_free_result($result);
 
-    $query = "UPDATE $families_table SET husband=\"\", husborder=\"\" WHERE husband=\"$personID\" AND gedcom = \"$tree\"";
+    $query = "UPDATE $families_table SET husband=\"\", husborder=\"\" WHERE husband=\"$personID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 
-    $query = "UPDATE $families_table SET wife=\"\", wifeorder=\"\" WHERE wife=\"$personID\" AND gedcom = \"$tree\"";
+    $query = "UPDATE $families_table SET wife=\"\", wifeorder=\"\" WHERE wife=\"$personID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
 
     deleteMediaLinks($personID, $tree);
@@ -116,7 +116,7 @@ function updateHasKids($spouseID, $spousestr) {
     }
     tng_free_result($result);
     if (!$numkids) {
-        $query = "UPDATE $children_table SET haskids=\"0\" WHERE personID=\"$spouseID\" AND gedcom=\"$tree\"";
+        $query = "UPDATE $children_table SET haskids=\"0\" WHERE personID=\"$spouseID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
     }
 }

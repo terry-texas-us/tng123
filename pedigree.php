@@ -546,12 +546,12 @@ $innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;pare
 $innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink$chtlinkstyle\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
 $innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink$clinkstyle\" id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
 $innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink$blinkstyle\" id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\" id=\"textlnk\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\" id=\"ahnlnk\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class=\"lightlink\">{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class=\"lightlink\" id=\"extralnk\">{$text['media']}</a>\n";
+$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink' id=\"textlnk\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink' id=\"ahnlnk\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class='lightlink' id=\"extralnk\">{$text['media']}</a>\n";
 if ($generations <= 6 && $allowpdf) {
-    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href=\"#\" class=\"lightlink\" ";
+    $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ped&amp;personID=' + firstperson + '&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
 
@@ -562,7 +562,7 @@ echo "</form>\n";
 if (!$tngprint) {
     echo "<span class='normal'>(" . $text['scrollnote'];
     if ($pedigree['usepopups_real']) {
-        echo ($pedigree['downarrow'] ? " <img src=\"{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href=\"#\"><span class='normal'><B>V</B></span></a>") . $text['popupnote1'];
+        echo ($pedigree['downarrow'] ? " <img src=\"{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href='#'><span class='normal'><B>V</B></span></a>") . $text['popupnote1'];
         if ($pedigree['popupchartlinks']) {
             echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . $text['popupnote2'];
         }
@@ -588,36 +588,28 @@ if (!$tngprint) {
         }
         getNewChart(personID, generations, parentset);
 
-        <?php
-        if($needperson && $allow_add) {
-        ?>
-        var nplitbox;
+        <?php if ($needperson && $allow_add) { ?>
+            var nplitbox;
 
-        function openCreatePersonForm() {
-            nplitbox = new LITBox('admin_newperson2.php?tree=<?php echo $tree; ?>&needped=1', {
-                width: 620, height: 600
-            });
-            generateID('person', document.npform.personID, '');
-            jQuery('#firstname').focus();
-            return false;
-        }
-        <?php
-        }
-        ?>
+            function openCreatePersonForm() {
+                nplitbox = new LITBox('admin_newperson2.php?tree=<?php echo $tree; ?>&needped=1', {
+                    width: 620, height: 600
+                });
+                generateID('person', document.npform.personID, '');
+                jQuery('#firstname').focus();
+                return false;
+            }
+        <?php } ?>
 
         jQuery(document).ready(function () {
-            <?php
-            if($generations > 4 && !$tngprint) {
-            ?>
-            jQuery('html, body').animate({scrollTop: jQuery('#box1').offset().top<?php echo $scrolldown; ?>}, 'slow');
+            <?php if ($generations > 4 && !$tngprint) { ?>
+                jQuery('html, body').animate({scrollTop: jQuery('#box1').offset().top<?php echo $scrolldown; ?>}, 'slow');
             <?php
             }
-            if($needperson && $allow_add) {
+            if ($needperson && $allow_add) {
             ?>
-            openCreatePersonForm();
-            <?php
-            }
-            ?>
+                openCreatePersonForm();
+            <?php } ?>
         });
         //]]>
     </script>
