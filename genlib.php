@@ -49,8 +49,7 @@ if (!$tree && $defaulttree) {
  * @param array $flags 'bodyclass' 'noheader'
  */
 function mobileHeaderVariants($headElement, array $flags): void {
-    global $templatenum, $text, $tmp;
-    global $tngprint;
+    global $templatenum, $tmp, $tngprint;
 
     $icons = $headElement->getIcons();
 
@@ -159,7 +158,16 @@ function tng_header($title, $flags) {
 
     $headElement = new HeadElementPublic($title, $flags);
     echo $headElement->getHtml();
-    preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
+    if (isMobile()) {
+        mobileHeaderVariants($headElement, $flags);
+    } else {
+        standardHeaderVariants($headElement, $flags);
+        echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+    }
+    if ($tngconfig['maint']) {
+        echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    }
 }
 
 function tng_footer($flags = ['basicfooter' => true]) {

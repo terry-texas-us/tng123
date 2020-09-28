@@ -17,7 +17,7 @@ if (isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t14_dadside');
 $momlabel = getTemplateMessage('t14_momside');
@@ -49,7 +49,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                 <?php
                             }
                             if ($tmp['t14_featurelinks']) {
-                                echo showLinks($tmp['t14_featurelinks'], false, "", "<span class=\"l\"></span><span class=\"r\"></span><span class=\"t\">xxx</span>");
+                                echo showLinks($tmp['t14_featurelinks'], false, "", "<span class='l'></span><span class='r'></span><span class='t'>xxx</span>");
                             }
                             ?>
                         </ul>
@@ -106,12 +106,12 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                                 <?php
                                                                 if ($currentuser) {
                                                                     echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
-                                                                    echo "<ul class=\"home-menus\">\n";
+                                                                    echo "<ul class='home-menus'>\n";
 
-                                                                    echo "<li><a href=\"logout.php\">{$text['mnulogout']}</a></li>\n";
+                                                                    echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
                                                                 } else {
-                                                                    echo "<ul class=\"home-menus\">\n";
-                                                                    echo "<li><a href=\"login.php\">{$text['mnulogon']}</a></li>";
+                                                                    echo "<ul class='home-menus'>\n";
+                                                                    echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>";
                                                                     if (!$tngconfig['disallowreg']) {
                                                                         ?>
                                                                         <li><a href="newacctform.php"><?php echo $text['mnuregister']; ?></a></li></p>
@@ -140,12 +140,10 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                         <div class="left-indent">
                                                             <h3><?php echo $text['contactus']; ?></h3>
                                                             <p class="contact"><img src="<?php echo $templatepath; ?>img/email.gif"
-                                                                                    alt="email image"
-                                                                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                                                                    alt="email image"
+                                                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
                                                         </div>
-                                                        <?php
-                                                        if ($chooselang) {
-                                                            ?>
+                                                        <?php if ($chooselang) { ?>
                                                             <div class="left-indent">
                                                                 <br>
                                                                 <?php
@@ -155,19 +153,19 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
 
                                                                 if ($numlangs > 1) {
                                                                     echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                                                    echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                                                    echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";
 
                                                                     while ($row = tng_fetch_assoc($result)) {
-                                                                        echo "<option value=\"{$row['languageID']}\"";
+                                                                        echo "<option value='{$row['languageID']}'";
                                                                         if ($languages_path . $row['folder'] == $mylanguage) {
                                                                             echo " selected";
                                                                         }
                                                                         echo ">{$row['display']}</option>\n";
                                                                     }
                                                                     echo "</select>\n";
-                                                                    echo "<input type='hidden' name='instance' value='3'></form>\n";
+                                                                    echo "<input name='instance' type='hidden' value='3'>\n";
+                                                                    echo "</form>\n";
                                                                 }
-
                                                                 tng_free_result($result);
                                                                 ?>
                                                             </div>
@@ -225,7 +223,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                             <?php
                                             foreach ($mediatypes as $mediatype) {
                                                 if (!$mediatype['disabled']) {
-                                                    echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a></li>\n";
+                                                    echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
                                                 }
                                             }
                                             ?>

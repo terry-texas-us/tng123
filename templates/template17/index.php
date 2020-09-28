@@ -1,5 +1,7 @@
 <?php
 
+global $allow_admin;
+
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
@@ -15,7 +17,7 @@ if (isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t17_dadside');
 $momlabel = getTemplateMessage('t17_momside');
@@ -26,7 +28,6 @@ $title = getTemplateMessage('t17_maintitle');
             margin: 0;
             background-color: #272727;
         }
-
         #mcontent {
             padding-top: 0;
         }
@@ -45,9 +46,7 @@ $title = getTemplateMessage('t17_maintitle');
         </div>
         <div id="tmenu">
             <ul>
-                <?php
-                if ($dadlabel) {
-                    ?>
+                <?php if ($dadlabel) { ?>
                     <li>
                         <a href="pedigree.php?personID=<?php echo $tmp['t17_dadperson']; ?>&amp;tree=<?php echo $tmp['t17_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                     </li>
@@ -79,52 +78,46 @@ $title = getTemplateMessage('t17_maintitle');
                 <li class="linkcol">
                     <article class="post">
                         <header class="entry-header">
-                            <h2 class="entry-title"><?php echo getTemplateMessage('t17_welcome'); ?></h2></a>
+                            <h2 class="entry-title"><?php echo getTemplateMessage('t17_welcome'); ?></h2>
                         </header>
                         <div class="entry-content">
                             <?php echo getTemplateMessage('t17_mainpara'); ?>
                         </div>
                         <?php
                         if ($currentuser) {
-                            echo "<p class=\"entry-content\"><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
-                            echo "<ul class=\"home-menus\">\n";
-
-                            echo "<li><a href=\"logout.php\">{$text['mnulogout']}</a></li>\n";
+                            echo "<p class='entry-content'><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
+                            echo "<ul class='home-menus'>\n";
+                            echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
+                        } else {
+                            echo "<ul class='home-menus'>\n";
+                            echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>\n";
+                            if (!$tngconfig['disallowreg']) {
+                                echo "<li><a href='newacctform.php'>{$text['mnuregister']}</a></li>\n";
+                            }
                         }
-                        else {
-                        echo "<ul class=\"home-menus\">\n";
-                        echo "<li><a href=\"login.php\">{$text['mnulogon']}</a></li>";
-                        if (!$tngconfig['disallowreg']) {
-                        ?>
-                <li><a href="newacctform.php"><?php echo $text['mnuregister']; ?></a></li>
-                </p>
-                <?php
-                }
-                }
-
-                echo "</ul>\n";
-                ?>
-                <br>
-                </article>
+                        echo "</ul>\n"; ?>
+                    </article>
                 </li>
                 <li class="linkcol">
                     <article class="post">
                         <h2 class="entry-title"><?php echo $text['search']; ?></h2>
-                        <form class="entry-content" name="searchform" action="search.php" method="get" style="border:1px solid #e2c2a9;padding:10px;">
-                            <div style="display:inline-block;">
+                        <form class="entry-content" name="searchform" action="search.php" method="get" style="border: 1px solid #e2c2a9; padding: 10px;">
+                            <div style="display: inline-block;">
                                 <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                                 <br>
-                                <input type="search" value="" name="myfirstname">
-                                <br><br>
+                                <input id="myfirstname" name="myfirstname" type="search" value="">
+                                <br>
+                                <br>
                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
                                 <br>
-                                <input type="search" value="" name="mylastname">
+                                <input id="mylastname" name="mylastname" type="search" value="">
                                 <br>
-                                <input type="hidden" name="mybool" value="AND">
+                                <input name="mybool" type="hidden" value="AND">
                             </div>
-                            <div style="display:inline-block;vertical-align:top;padding:15px;">
+                            <div style="display:inline-block; vertical-align: top; padding: 15px;">
                                 <input type="submit" id="search-submit" class="btn" value="<?php echo $text['search']; ?>">
-                                <br><br>
+                                <br>
+                                <br>
                                 <ul class="home-menus">
                                     <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
                                     <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
@@ -132,9 +125,7 @@ $title = getTemplateMessage('t17_maintitle');
                             </div>
                         </form>
 
-                        <?php
-                        if ($chooselang) {
-                            ?>
+                        <?php if ($chooselang) { ?>
                             <div class="left-indent">
                                 <br>
                                 <?php
@@ -144,10 +135,10 @@ $title = getTemplateMessage('t17_maintitle');
 
                                 if ($numlangs > 1) {
                                     echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                    echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                    echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";
 
                                     while ($row = tng_fetch_assoc($result)) {
-                                        echo "<option value=\"{$row['languageID']}\"";
+                                        echo "<option value='{$row['languageID']}'";
                                         if ($languages_path . $row['folder'] == $mylanguage) {
                                             echo " selected";
                                         }
@@ -156,26 +147,25 @@ $title = getTemplateMessage('t17_maintitle');
                                     echo "</select>\n";
                                     echo "<input type='hidden' name='instance' value='3'></form>\n";
                                 }
-
                                 tng_free_result($result);
                                 ?>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
 
                         <div class="left-indent">
                             <h3 class="entry-title"><?php echo $text['contactus']; ?></h3>
-                            <p class="entry-content"><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
-                                                          class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                            <p class="entry-content">
+                                <img src="<?php echo $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?>
+                            </p>
                         </div>
                     </article>
                 </li>
                 <li class="linkcol">
                     <article class="post">
                         <header class="entry-header">
-                            <a href="<?php echo $tmp['t17_featurelink1']; ?>" title="" class="alignnone"><h2
-                                    class="entry-title"><?php echo getTemplateMessage('t17_featuretitle1'); ?></h2></a>
+                            <a href="<?php echo $tmp['t17_featurelink1']; ?>" title="" class="alignnone">
+                                <h2 class="entry-title"><?php echo getTemplateMessage('t17_featuretitle1'); ?></h2>
+                            </a>
                         </header>
                         <div class="entry-content">
                             <?php
@@ -184,15 +174,13 @@ $title = getTemplateMessage('t17_maintitle');
                             if ($tl1) {
                                 ?>
                                 <p><a class="footer-link" href="<?php echo $tl1; ?>"><?php echo $text['more']; ?> ...</a></p>
-                                <?php
-                            }
-                            ?>
+                            <?php } ?>
                         </div>
                     </article>
                 </li>
             </ul>
         </div>
-        <div style="clear:left;"></div>
+        <div style="clear: left;"></div>
     </div>
     <div class="tblock" id="big-block-3">
         <h2><a href="<?php echo $tmp['t17_featurelink2']; ?>" title=""><?php echo getTemplateMessage('t17_featuretitle2'); ?></a></h2>
@@ -205,12 +193,10 @@ $title = getTemplateMessage('t17_maintitle');
                 if ($tl2) {
                     ?>
                     <p><a class="footer-link" href="<?php echo $tl2; ?>"><?php echo $text['more']; ?> ...</a></p>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </div>
         </div>
-        <div style="clear:left;"></div>
+        <div style="clear: left;"></div>
     </div>
     <div id="tfooter">
         <div class="other-features">
@@ -229,7 +215,7 @@ $title = getTemplateMessage('t17_maintitle');
                 <?php
                 foreach ($mediatypes as $mediatype) {
                     if (!$mediatype['disabled']) {
-                        echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a></li>\n";
+                        echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
                     }
                 }
                 ?>
@@ -242,21 +228,15 @@ $title = getTemplateMessage('t17_maintitle');
                 if (!$tngconfig['hidedna']) {
                     ?>
                     <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
-                    <?php
-                }
-                ?>
+                <?php } ?>
                 <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
-                <?php
-                if ($allow_admin) {
-                    ?>
+                <?php if ($allow_admin) { ?>
                     <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
                     <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
-                    <?php
-                }
-                ?>
+                <?php } ?>
             </ul>
         </div>
-        <div style="clear:left;"></div>
+        <div style="clear: left;"></div>
     </div>
     <div id="subfooter">
         <?php

@@ -8,7 +8,16 @@ echo "<html lang='en'>\n";
 
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-preHeaderVariants($headElement, $flags, $tngconfig['maint']);
+
+if (isMobile()) {
+    mobileHeaderVariants($headElement, $flags);
+} else {
+    standardHeaderVariants($headElement, $flags);
+    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+}
+if ($tngconfig['maint']) {
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+}
 
 if (!isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody'>\n";
@@ -23,11 +32,11 @@ $rp_maxheight = "300";
 
 $search = "<h3>{$text['search']}</h3>\n";
 $search .= "<form action='search.php' method='get'>\n";
-$search .= "<label class='formfield' for='myfirstname' style='padding-top: 0;'>{$text['mnufirstname']}:</label>\n";
-$search .= "<input type='search' name='myfirstname' class='formfield' size='14'>\n";
-$search .= "<label class='formfield' for='mylastname'>{$text['mnulastname']}: </label>\n";
-$search .= "<input type='search' name='mylastname' class='formfield' size='14'><br>\n";
-$search .= "<input type='hidden' name='mybool' value='AND'>\n";
+$search .= "<label for='myfirstname' class='formfield' style='padding-top: 0;'>{$text['mnufirstname']}:</label>\n";
+$search .= "<input id='myfirstname' class='formfield' name='myfirstname' type='search'>\n";
+$search .= "<label for='mylastname' class='formfield'>{$text['mnulastname']}: </label>\n";
+$search .= "<input id='mylastname' class='formfield' name='mylastname' type='search'><br>\n";
+$search .= "<input name='mybool' type='hidden' value='AND'>\n";
 $search .= "<div style='float: left; margin-right: 10px; margin-bottom: 5px;'>\n";
 $search .= "<input type='submit' name='search' value='{$text['mnusearchfornames']}' class='btn' id='searchbtn'>\n";
 $search .= "</div>\n";
@@ -36,7 +45,6 @@ $search .= "<a href='surnames.php'>{$text['mnulastnames']}</a>\n";
 $search .= "<br style='clear: both;'>\n";
 $search .= "</form>\n";
 ?>
-
     <div id="tcontainer">
         <div id="tbackground">
             <div id="tpage">
@@ -72,8 +80,6 @@ $search .= "</form>\n";
                             <div class="tsidesection">
                                 <?php echo $search; ?>
                             </div>
-                            <!-- RANDOM PHOTO CODE STARTS HERE -->
-                            <!-- If you don't want to have a random photo displayed, just remove this section down to 'RANDOM PHOTO CODE ENDS HERE' -->
                             <div class="tsidesection">
                                 <h3><?php echo $text['featphoto']; ?></h3>
                                 <?php
@@ -81,7 +87,6 @@ $search .= "</form>\n";
                                 include "randomphoto.php";
                                 ?>
                             </div>
-                            <!-- RANDOM PHOTO CODE ENDS HERE -->
                             <div class="tsidesection">
                                 <h3><?php echo $admtext['menu']; ?></h3>
                                 <ul class="vmenu">
@@ -90,7 +95,7 @@ $search .= "</form>\n";
                                     <?php
                                     foreach ($mediatypes as $mediatype) {
                                         if (!$mediatype['disabled']) {
-                                            echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a></li>\n";
+                                            echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
                                         }
                                     }
                                     ?>
@@ -104,36 +109,24 @@ $search .= "</form>\n";
                                     <li><a href="reports.php"><?php echo $text['reports']; ?></a></li>
                                     <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
                                     <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
-                                    <?php
-                                    if (!$tngconfig['hidedna']) {
-                                        ?>
+                                    <?php if (!$tngconfig['hidedna']) { ?>
                                         <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
-                                        <?php
-                                    }
-                                    ?>
+                                    <?php } ?>
                                     <li><a href="statistics.php"><?php echo $text['mnustatistics']; ?></a></li>
-                                    <?php
-                                    if ($allow_admin) {
-                                        ?>
+                                    <?php if ($allow_admin) { ?>
                                         <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
                                         <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
-                                        <?php
-                                    }
-                                    ?>
+                                    <?php } ?>
                                     <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
                     <div id="thomebody">
                         <div class="tblock" id="big-block-1">
                             <h2><?php echo getTemplateMessage('t16_welcome'); ?></h2>
                             <div class="left-indent mainsection">
-                                <?php
-                                if ($tmp['t16_mainimage']) {
-                                    ?>
+                                <?php if ($tmp['t16_mainimage']) { ?>
                                     <div id="mainphoto">
                                         <img src="<?php echo $templatepath . $tmp['t16_mainimage']; ?>" alt="" class="temppreview">
                                     </div>
@@ -145,33 +138,33 @@ $search .= "</form>\n";
 
                                 if ($numlangs > 1) {
                                     echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                    echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                    echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";
 
                                     while ($row = tng_fetch_assoc($result)) {
-                                        echo "<option value=\"{$row['languageID']}\"";
+                                        echo "<option value='{$row['languageID']}'";
                                         if ($languages_path . $row['folder'] == $mylanguage) {
                                             echo " selected";
                                         }
                                         echo ">{$row['display']}</option>\n";
                                     }
                                     echo "</select>\n";
-                                    echo "<input type='hidden' name='instance' value='3'></form><br>\n";
+                                    echo "<input type='hidden' name='instance' value='3'>\n";
+                                    echo "</form>\n";
                                 }
-
                                 tng_free_result($result);
 
                                 if ($currentuser) {
-                                    echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href=\"logout.php\">{$text['mnulogout']}</a></p>\n";
+                                    echo "<p class='mt-2'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href='logout.php'>{$text['mnulogout']}</a></p>\n";
                                 } else {
                                     $loginContent = "";
                                     if (!$tngconfig['showlogin']) {
-                                        $loginContent = "<a href=\"login.php\">{$text['mnulogon']}</a>";
+                                        $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
                                     }
                                     if (!$tngconfig['disallowreg']) {
                                         if ($loginContent) {
                                             $loginContent .= " | ";
                                         }
-                                        $loginContent .= "<a href=\"newacctform.php\">{$text['mnuregister']}</a>";
+                                        $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
                                     }
                                     if ($loginContent) {
                                         echo "<p>$loginContent</p>\n";
@@ -180,8 +173,9 @@ $search .= "</form>\n";
                                 echo getTemplateMessage('t16_mainpara');
                                 ?>
                                 <h3><?php echo $text['contactus']; ?></h3>
-                                <p class="contact"><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
-                                                        class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                                <p class="contact">
+                                    <img src="<?php echo $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?>
+                                </p>
 
                                 <?php
                                 if (isMobile()) {
@@ -202,9 +196,7 @@ $search .= "</form>\n";
                                     <?php echo $feature_text ?>
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <div class="tblock">
                             <h2><?php echo $text['whatsnew'] . " | <a href='whatsnew.php'>" . $text['more'] . "</a>"; ?></h2>
                             <?php include "widget_whatsnew.php"; ?>

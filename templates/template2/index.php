@@ -18,7 +18,7 @@ if (isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " bodyindex'>\n";
 }
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $title = getTemplateMessage('t2_maintitle');
 ?>

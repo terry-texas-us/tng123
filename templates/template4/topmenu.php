@@ -94,14 +94,9 @@ global $text, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes;
                     <tr>
                         <td>
                             <?php
-                            //begin TITLE IMAGE (default: "Our Family Genealogy Pages")
-                            //Actual file name has been replaced with t4_titleimg variable, configurable from Template Settings. Default name of actual image is "title.gif"
-                            //You can replace the t4_headtitleimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-
                             if ($tmp['t4_titlechoice'] == "text") {
                                 ?>
                                 <div>
-
                                     <span class="titletop"><?php echo getTemplateMessage('t4_headtitle1'); ?></span><br>
                                     <span class="titlebottom">&nbsp;<?php echo getTemplateMessage('t4_headtitle2'); ?></span>
 
@@ -110,22 +105,11 @@ global $text, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes;
                             } else {
                                 ?>
                                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t4_titleimg']; ?>" alt="" class="banner"
-                                     width="468" height="100">
-                                <?php
-                            }
-                            //end TITLE IMAGE
-                            ?>
+                                    width="468" height="100">
+                            <?php } ?>
 
                         </td>
-                        <?php
-                        //begin HEADER IMAGE (default: small picture of a girl at the top right)
-                        //Actual file name has been replaced with t4_headimg variable, configurable from Template Settings. Default name of actual image is "smallphoto.jpg"
-                        //You can replace the t4_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-                        ?>
                         <td><img src="<?php echo $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto"></td>
-                        <?php
-                        //end HEADER IMAGE
-                        ?>
                     </tr>
                     <tr>
                         <td colspan="2" class="line"></td>
@@ -133,4 +117,3 @@ global $text, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes;
                     <tr>
                         <td colspan="2">
                             <div class="normal" style="border-collapse:separate;"><br>
-                                <!-- topmenu for template 4 -->

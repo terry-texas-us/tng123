@@ -1,5 +1,7 @@
 <?php
 
+global $allow_admin;
+
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
@@ -15,12 +17,11 @@ if (isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t18_dadside');
 $momlabel = getTemplateMessage('t18_momside');
 ?>
-
     <style>
         body {
             margin: 0;
@@ -86,14 +87,14 @@ $momlabel = getTemplateMessage('t18_momside');
                         </div>
                         <?php
                         if ($currentuser) {
-                            echo "<p class=\"entry-content\"><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
-                            echo "<ul class=\"home-menus\">\n";
+                            echo "<p class='entry-content'><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
+                            echo "<ul class='home-menus'>\n";
 
-                            echo "<li><a href=\"logout.php\">{$text['mnulogout']}</a></li>\n";
+                            echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
                         }
                         else {
-                        echo "<ul class=\"home-menus\">\n";
-                        echo "<li><a href=\"login.php\">{$text['mnulogon']}</a></li>";
+                        echo "<ul class='home-menus'>\n";
+                        echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>";
                         if (!$tngconfig['disallowreg']) {
                         ?>
                 <li><a href="newacctform.php"><?php echo $text['mnuregister']; ?></a></li>
@@ -111,20 +112,22 @@ $momlabel = getTemplateMessage('t18_momside');
                     <article class="post">
                         <h2 class="entry-title"><?php echo $text['search']; ?></h2>
                         <form id="home-search-box" class="entry-content" name="searchform" action="search.php" method="get">
-                            <div style="display:inline-block;">
+                            <div style="display: inline-block;">
                                 <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                                 <br>
-                                <input type="search" value="" name="myfirstname">
-                                <br><br>
+                                <input id="myfirstname" name="myfirstname" type="search" value="">
+                                <br>
+                                <br>
                                 <label for="mylastname"><?php echo $text['lastname']; ?></label>
                                 <br>
-                                <input type="search" value="" name="mylastname">
+                                <input id="mylastname" name="mylastname" type="search" value="">
                                 <br>
                                 <input type="hidden" name="mybool" value="AND">
                             </div>
-                            <div style="display:inline-block;vertical-align:top;padding:15px;">
-                                <input type="submit" id="search-submit" class="btn" value="<?php echo $text['search']; ?>">
-                                <br><br>
+                            <div style="display: inline-block; vertical-align: top; padding: 15px;">
+                                <input id="search-submit" class="btn" type="submit" value="<?php echo $text['search']; ?>">
+                                <br>
+                                <br>
                                 <ul class="home-menus">
                                     <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
                                     <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
@@ -132,9 +135,7 @@ $momlabel = getTemplateMessage('t18_momside');
                             </div>
                         </form>
 
-                        <?php
-                        if ($chooselang) {
-                            ?>
+                        <?php if ($chooselang) { ?>
                             <div class="left-indent">
                                 <br>
                                 <?php
@@ -144,10 +145,10 @@ $momlabel = getTemplateMessage('t18_momside');
 
                                 if ($numlangs > 1) {
                                     echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                    echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                    echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";
 
                                     while ($row = tng_fetch_assoc($result)) {
-                                        echo "<option value=\"{$row['languageID']}\"";
+                                        echo "<option value='{$row['languageID']}'";
                                         if ($languages_path . $row['folder'] == $mylanguage) {
                                             echo " selected";
                                         }
@@ -229,7 +230,7 @@ $momlabel = getTemplateMessage('t18_momside');
                 <?php
                 foreach ($mediatypes as $mediatype) {
                     if (!$mediatype['disabled']) {
-                        echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\">{$mediatype['display']}</a></li>\n";
+                        echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
                     }
                 }
                 ?>

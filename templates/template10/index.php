@@ -20,7 +20,7 @@ if (isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t10_dadside');
 $momlabel = getTemplateMessage('t10_momside');
@@ -119,7 +119,7 @@ $title = getTemplateMessage('t10_maintitle');
                                             <?php
                                             foreach ($mediatypes as $mediatype) {
                                                 if (!$mediatype['disabled']) {
-                                                    echo "<li><a href=\"browsemedia.php?mediatypeID={$mediatype['ID']}\"><span class=\"l\"></span><span class=\"r\"></span><span class=\"t\">{$mediatype['display']}</span></a></li>\n";
+                                                    echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'><span class='l'></span><span class='r'></span><span class='t'>{$mediatype['display']}</span></a></li>\n";
                                                 }
                                             }
                                             ?>
@@ -194,34 +194,34 @@ $title = getTemplateMessage('t10_maintitle');
 
                                             if ($numlangs > 1) {
                                                 echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                                echo "<select name=\"newlanguage3\" id=\"newlanguage3\" style=\"font-size:11px;\" onchange=\"document.tngmenu3.submit();\">";
+                                                echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";
 
                                                 while ($row = tng_fetch_assoc($result)) {
-                                                    echo "<option value=\"{$row['languageID']}\"";
+                                                    echo "<option value='{$row['languageID']}'";
                                                     if ($languages_path . $row['folder'] == $mylanguage) {
                                                         echo " selected";
                                                     }
                                                     echo ">{$row['display']}</option>\n";
                                                 }
                                                 echo "</select>\n";
-                                                echo "<input type='hidden' name='instance' value='3'></form>\n";
+                                                echo "<input type='hidden' name='instance' value='3'>\n";
+                                                echo "</form>\n";
                                             }
-
                                             tng_free_result($result);
                                         }
 
                                         if ($currentuser) {
-                                            echo "<p class='subhead'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href=\"logout.php\">{$text['mnulogout']}</a></p>\n";
+                                            echo "<p class='subhead'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href='logout.php'>{$text['mnulogout']}</a></p>\n";
                                         } else {
                                             $loginContent = "";
                                             if (!$tngconfig['showlogin']) {
-                                                $loginContent = "<a href=\"login.php\">{$text['mnulogon']}</a>";
+                                                $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
                                             }
                                             if (!$tngconfig['disallowreg']) {
                                                 if ($loginContent) {
                                                     $loginContent .= " | ";
                                                 }
-                                                $loginContent .= "<a href=\"newacctform.php\">{$text['mnuregister']}</a>";
+                                                $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
                                             }
                                             if ($loginContent) {
                                                 echo "<p class='subhead'>$loginContent</p>\n";

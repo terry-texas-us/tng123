@@ -22,7 +22,7 @@ if (isMobile()) {
     echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 }
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow' style='padding: 3px;'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t9_dadside');
 $momlabel = getTemplateMessage('t9_momside');
@@ -186,7 +186,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
 
                                             if ($numlangs > 1) {
                                                 echo getFORM("savelanguage2", "get", "tngmenu3", "");
-                                                echo "<select name='newlanguage3' id='newlanguage3' style='font-size:11px;' onchange='document.tngmenu3.submit();'>";
+                                                echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";
 
                                                 while ($row = tng_fetch_assoc($result)) {
                                                     echo "<option value='{$row['languageID']}'";
@@ -196,9 +196,9 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                     echo ">{$row['display']}</option>\n";
                                                 }
                                                 echo "</select>\n";
-                                                echo "<input type='hidden' name='instance' value='3'></form>\n";
+                                                echo "<input name='instance' type='hidden' value='3'>\n";
+                                                echo "</form>\n";
                                             }
-
                                             tng_free_result($result);
                                         }
 
